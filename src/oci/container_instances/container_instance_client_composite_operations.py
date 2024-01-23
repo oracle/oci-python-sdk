@@ -51,8 +51,9 @@ class ContainerInstanceClientCompositeOperations(object):
         operation_result = self.client.change_container_instance_compartment(container_instance_id, change_container_instance_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -89,8 +90,9 @@ class ContainerInstanceClientCompositeOperations(object):
         operation_result = self.client.create_container_instance(create_container_instance_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -137,8 +139,9 @@ class ContainerInstanceClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -177,8 +180,9 @@ class ContainerInstanceClientCompositeOperations(object):
         operation_result = self.client.restart_container_instance(container_instance_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -217,8 +221,9 @@ class ContainerInstanceClientCompositeOperations(object):
         operation_result = self.client.start_container_instance(container_instance_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -257,8 +262,9 @@ class ContainerInstanceClientCompositeOperations(object):
         operation_result = self.client.stop_container_instance(container_instance_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -300,8 +306,9 @@ class ContainerInstanceClientCompositeOperations(object):
         operation_result = self.client.update_container(container_id, update_container_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -343,8 +350,9 @@ class ContainerInstanceClientCompositeOperations(object):
         operation_result = self.client.update_container_instance(container_instance_id, update_container_instance_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:

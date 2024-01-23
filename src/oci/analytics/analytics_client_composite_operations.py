@@ -49,8 +49,9 @@ class AnalyticsClientCompositeOperations(object):
         operation_result = self.client.change_analytics_instance_compartment(analytics_instance_id, change_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -90,8 +91,9 @@ class AnalyticsClientCompositeOperations(object):
         operation_result = self.client.change_analytics_instance_network_endpoint(analytics_instance_id, change_analytics_instance_network_endpoint_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -128,8 +130,9 @@ class AnalyticsClientCompositeOperations(object):
         operation_result = self.client.create_analytics_instance(create_analytics_instance_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -169,8 +172,9 @@ class AnalyticsClientCompositeOperations(object):
         operation_result = self.client.create_private_access_channel(analytics_instance_id, create_private_access_channel_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -210,8 +214,9 @@ class AnalyticsClientCompositeOperations(object):
         operation_result = self.client.create_vanity_url(analytics_instance_id, create_vanity_url_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -256,8 +261,9 @@ class AnalyticsClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -305,8 +311,9 @@ class AnalyticsClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -354,8 +361,9 @@ class AnalyticsClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -395,8 +403,9 @@ class AnalyticsClientCompositeOperations(object):
         operation_result = self.client.scale_analytics_instance(analytics_instance_id, scale_analytics_instance_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -436,8 +445,9 @@ class AnalyticsClientCompositeOperations(object):
         operation_result = self.client.set_kms_key(analytics_instance_id, set_kms_key_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -474,8 +484,9 @@ class AnalyticsClientCompositeOperations(object):
         operation_result = self.client.start_analytics_instance(analytics_instance_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -512,8 +523,9 @@ class AnalyticsClientCompositeOperations(object):
         operation_result = self.client.stop_analytics_instance(analytics_instance_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -554,7 +566,6 @@ class AnalyticsClientCompositeOperations(object):
         operation_result = self.client.update_analytics_instance(analytics_instance_id, update_analytics_instance_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         analytics_instance_id = operation_result.data.id
 
@@ -603,8 +614,9 @@ class AnalyticsClientCompositeOperations(object):
         operation_result = self.client.update_private_access_channel(private_access_channel_key, analytics_instance_id, update_private_access_channel_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -647,8 +659,9 @@ class AnalyticsClientCompositeOperations(object):
         operation_result = self.client.update_vanity_url(analytics_instance_id, vanity_url_key, update_vanity_url_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:

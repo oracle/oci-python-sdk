@@ -46,7 +46,6 @@ class KmsManagementClientCompositeOperations(object):
         operation_result = self.client.backup_key(key_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         key_id = operation_result.data.id
 
@@ -89,7 +88,6 @@ class KmsManagementClientCompositeOperations(object):
         operation_result = self.client.cancel_key_deletion(key_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         key_id = operation_result.data.id
 
@@ -135,7 +133,6 @@ class KmsManagementClientCompositeOperations(object):
         operation_result = self.client.cancel_key_version_deletion(key_id, key_version_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         key_version_id = operation_result.data.id
 
@@ -178,7 +175,6 @@ class KmsManagementClientCompositeOperations(object):
         operation_result = self.client.create_key(create_key_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         key_id = operation_result.data.id
 
@@ -221,7 +217,6 @@ class KmsManagementClientCompositeOperations(object):
         operation_result = self.client.create_key_version(key_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         key_version_id = operation_result.data.id
 
@@ -264,7 +259,6 @@ class KmsManagementClientCompositeOperations(object):
         operation_result = self.client.disable_key(key_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         key_id = operation_result.data.id
 
@@ -307,7 +301,6 @@ class KmsManagementClientCompositeOperations(object):
         operation_result = self.client.enable_key(key_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         key_id = operation_result.data.id
 
@@ -353,7 +346,6 @@ class KmsManagementClientCompositeOperations(object):
         operation_result = self.client.schedule_key_deletion(key_id, schedule_key_deletion_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         key_id = operation_result.data.id
 
@@ -402,7 +394,6 @@ class KmsManagementClientCompositeOperations(object):
         operation_result = self.client.schedule_key_version_deletion(key_id, key_version_id, schedule_key_version_deletion_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         key_version_id = operation_result.data.id
 
@@ -448,7 +439,6 @@ class KmsManagementClientCompositeOperations(object):
         operation_result = self.client.update_key(key_id, update_key_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         key_id = operation_result.data.id
 

@@ -51,8 +51,9 @@ class StackMonitoringClientCompositeOperations(object):
         operation_result = self.client.change_monitored_resource_compartment(monitored_resource_id, change_monitored_resource_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -89,7 +90,6 @@ class StackMonitoringClientCompositeOperations(object):
         operation_result = self.client.create_baselineable_metric(create_baselineable_metric_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         baselineable_metric_id = operation_result.data.id
 
@@ -132,7 +132,6 @@ class StackMonitoringClientCompositeOperations(object):
         operation_result = self.client.create_config(create_config_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         config_id = operation_result.data.id
 
@@ -175,7 +174,6 @@ class StackMonitoringClientCompositeOperations(object):
         operation_result = self.client.create_discovery_job(create_discovery_job_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         discovery_job_id = operation_result.data.id
 
@@ -218,7 +216,6 @@ class StackMonitoringClientCompositeOperations(object):
         operation_result = self.client.create_metric_extension(create_metric_extension_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         metric_extension_id = operation_result.data.id
 
@@ -261,8 +258,9 @@ class StackMonitoringClientCompositeOperations(object):
         operation_result = self.client.create_monitored_resource(create_monitored_resource_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -299,8 +297,9 @@ class StackMonitoringClientCompositeOperations(object):
         operation_result = self.client.create_monitored_resource_task(create_monitored_resource_task_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -337,7 +336,6 @@ class StackMonitoringClientCompositeOperations(object):
         operation_result = self.client.create_monitored_resource_type(create_monitored_resource_type_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         monitored_resource_type_id = operation_result.data.id
 
@@ -345,6 +343,48 @@ class StackMonitoringClientCompositeOperations(object):
             waiter_result = oci.wait_until(
                 self.client,
                 self.client.get_monitored_resource_type(monitored_resource_type_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def create_process_set_and_wait_for_state(self, create_process_set_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.stack_monitoring.StackMonitoringClient.create_process_set` and waits for the :py:class:`~oci.stack_monitoring.models.ProcessSet` acted upon
+        to enter the given state(s).
+
+        :param oci.stack_monitoring.models.CreateProcessSetDetails create_process_set_details: (required)
+            Summary of process set details.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.stack_monitoring.models.ProcessSet.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.stack_monitoring.StackMonitoringClient.create_process_set`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_process_set(create_process_set_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        process_set_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_process_set(process_set_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -389,7 +429,6 @@ class StackMonitoringClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -449,7 +488,6 @@ class StackMonitoringClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -509,7 +547,6 @@ class StackMonitoringClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -571,7 +608,6 @@ class StackMonitoringClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -632,8 +668,9 @@ class StackMonitoringClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -681,12 +718,70 @@ class StackMonitoringClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
             if ("succeed_on_not_found" in waiter_kwargs) and (waiter_kwargs["succeed_on_not_found"] is False):
                 self.client.base_client.logger.warning("The waiter kwarg succeed_on_not_found was passed as False for the delete composite operation delete_monitored_resource_type, this would result in the operation to fail if the resource is not found! Please, do not pass this kwarg if this was not intended")
+            else:
+                """
+                If the user does not send in this value, we set it to True by default.
+                We are doing this because during a delete resource scenario and waiting on its state, the service can
+                return a 404 NOT FOUND exception as the resource was deleted and a get on its state would fail
+                """
+                waiter_kwargs["succeed_on_not_found"] = True
+            waiter_result = oci.wait_until(
+                self.client,
+                initial_get_result,  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def delete_process_set_and_wait_for_state(self, process_set_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.stack_monitoring.StackMonitoringClient.delete_process_set` and waits for the :py:class:`~oci.stack_monitoring.models.ProcessSet` acted upon
+        to enter the given state(s).
+
+        :param str process_set_id: (required)
+            The Process Set ID
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.stack_monitoring.models.ProcessSet.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.stack_monitoring.StackMonitoringClient.delete_process_set`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        initial_get_result = self.client.get_process_set(process_set_id)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_process_set(process_set_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+
+        try:
+            if ("succeed_on_not_found" in waiter_kwargs) and (waiter_kwargs["succeed_on_not_found"] is False):
+                self.client.base_client.logger.warning("The waiter kwarg succeed_on_not_found was passed as False for the delete composite operation delete_process_set, this would result in the operation to fail if the resource is not found! Please, do not pass this kwarg if this was not intended")
             else:
                 """
                 If the user does not send in this value, we set it to True by default.
@@ -734,8 +829,9 @@ class StackMonitoringClientCompositeOperations(object):
         operation_result = self.client.disable_external_database(monitored_resource_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -777,8 +873,9 @@ class StackMonitoringClientCompositeOperations(object):
         operation_result = self.client.disable_metric_extension(metric_extension_id, disable_metric_extension_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -820,8 +917,9 @@ class StackMonitoringClientCompositeOperations(object):
         operation_result = self.client.enable_metric_extension(metric_extension_id, enable_metric_extension_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -860,7 +958,6 @@ class StackMonitoringClientCompositeOperations(object):
         operation_result = self.client.publish_metric_extension(metric_extension_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         metric_extension_id = operation_result.data.id
 
@@ -908,8 +1005,9 @@ class StackMonitoringClientCompositeOperations(object):
         operation_result = self.client.test_metric_extension(metric_extension_id, test_metric_extension_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -951,8 +1049,9 @@ class StackMonitoringClientCompositeOperations(object):
         operation_result = self.client.update_and_propagate_tags(monitored_resource_id, update_and_propagate_tags_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -992,7 +1091,6 @@ class StackMonitoringClientCompositeOperations(object):
         operation_result = self.client.update_baselineable_metric(update_baselineable_metric_details, baselineable_metric_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         baselineable_metric_id = operation_result.data.id
 
@@ -1038,7 +1136,6 @@ class StackMonitoringClientCompositeOperations(object):
         operation_result = self.client.update_config(config_id, update_config_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         config_id = operation_result.data.id
 
@@ -1086,7 +1183,6 @@ class StackMonitoringClientCompositeOperations(object):
         operation_result = self.client.update_metric_extension(metric_extension_id, update_metric_extension_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         metric_extension_id = operation_result.data.id
 
@@ -1134,8 +1230,9 @@ class StackMonitoringClientCompositeOperations(object):
         operation_result = self.client.update_monitored_resource(monitored_resource_id, update_monitored_resource_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1177,7 +1274,6 @@ class StackMonitoringClientCompositeOperations(object):
         operation_result = self.client.update_monitored_resource_task(monitored_resource_task_id, update_monitored_resource_task_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         monitored_resource_task_id = operation_result.data.id
 
@@ -1225,7 +1321,6 @@ class StackMonitoringClientCompositeOperations(object):
         operation_result = self.client.update_monitored_resource_type(monitored_resource_type_id, update_monitored_resource_type_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         monitored_resource_type_id = operation_result.data.id
 
@@ -1233,6 +1328,51 @@ class StackMonitoringClientCompositeOperations(object):
             waiter_result = oci.wait_until(
                 self.client,
                 self.client.get_monitored_resource_type(monitored_resource_type_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_process_set_and_wait_for_state(self, process_set_id, update_process_set_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.stack_monitoring.StackMonitoringClient.update_process_set` and waits for the :py:class:`~oci.stack_monitoring.models.ProcessSet` acted upon
+        to enter the given state(s).
+
+        :param str process_set_id: (required)
+            The Process Set ID
+
+        :param oci.stack_monitoring.models.UpdateProcessSetDetails update_process_set_details: (required)
+            The updated Process Set details.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.stack_monitoring.models.ProcessSet.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.stack_monitoring.StackMonitoringClient.update_process_set`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_process_set(process_set_id, update_process_set_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        process_set_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_process_set(process_set_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )

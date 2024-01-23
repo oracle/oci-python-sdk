@@ -46,7 +46,6 @@ class MediaServicesClientCompositeOperations(object):
         operation_result = self.client.create_media_asset(create_media_asset_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         media_asset_id = operation_result.data.id
 
@@ -89,7 +88,6 @@ class MediaServicesClientCompositeOperations(object):
         operation_result = self.client.create_media_workflow(create_media_workflow_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         media_workflow_id = operation_result.data.id
 
@@ -132,7 +130,6 @@ class MediaServicesClientCompositeOperations(object):
         operation_result = self.client.create_media_workflow_configuration(create_media_workflow_configuration_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         media_workflow_configuration_id = operation_result.data.id
 
@@ -175,7 +172,6 @@ class MediaServicesClientCompositeOperations(object):
         operation_result = self.client.create_media_workflow_job(create_media_workflow_job_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         media_workflow_job_id = operation_result.data.id
 
@@ -218,7 +214,6 @@ class MediaServicesClientCompositeOperations(object):
         operation_result = self.client.create_stream_cdn_config(create_stream_cdn_config_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         stream_cdn_config_id = operation_result.data.id
 
@@ -261,7 +256,6 @@ class MediaServicesClientCompositeOperations(object):
         operation_result = self.client.create_stream_distribution_channel(create_stream_distribution_channel_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         stream_distribution_channel_id = operation_result.data.id
 
@@ -304,7 +298,6 @@ class MediaServicesClientCompositeOperations(object):
         operation_result = self.client.create_stream_packaging_config(create_stream_packaging_config_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         stream_packaging_config_id = operation_result.data.id
 
@@ -356,7 +349,6 @@ class MediaServicesClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -416,7 +408,6 @@ class MediaServicesClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -476,7 +467,6 @@ class MediaServicesClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -536,7 +526,6 @@ class MediaServicesClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -596,7 +585,6 @@ class MediaServicesClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -656,7 +644,6 @@ class MediaServicesClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -716,7 +703,6 @@ class MediaServicesClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -770,7 +756,6 @@ class MediaServicesClientCompositeOperations(object):
         operation_result = self.client.update_media_asset(media_asset_id, update_media_asset_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         media_asset_id = operation_result.data.id
 
@@ -816,7 +801,6 @@ class MediaServicesClientCompositeOperations(object):
         operation_result = self.client.update_media_workflow(media_workflow_id, update_media_workflow_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         media_workflow_id = operation_result.data.id
 
@@ -862,7 +846,6 @@ class MediaServicesClientCompositeOperations(object):
         operation_result = self.client.update_media_workflow_configuration(media_workflow_configuration_id, update_media_workflow_configuration_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         media_workflow_configuration_id = operation_result.data.id
 
@@ -908,7 +891,6 @@ class MediaServicesClientCompositeOperations(object):
         operation_result = self.client.update_media_workflow_job(media_workflow_job_id, update_media_workflow_job_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         media_workflow_job_id = operation_result.data.id
 
@@ -954,7 +936,6 @@ class MediaServicesClientCompositeOperations(object):
         operation_result = self.client.update_stream_cdn_config(stream_cdn_config_id, update_stream_cdn_config_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         stream_cdn_config_id = operation_result.data.id
 
@@ -1000,7 +981,6 @@ class MediaServicesClientCompositeOperations(object):
         operation_result = self.client.update_stream_distribution_channel(stream_distribution_channel_id, update_stream_distribution_channel_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         stream_distribution_channel_id = operation_result.data.id
 
@@ -1046,7 +1026,6 @@ class MediaServicesClientCompositeOperations(object):
         operation_result = self.client.update_stream_packaging_config(stream_packaging_config_id, update_stream_packaging_config_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         stream_packaging_config_id = operation_result.data.id
 

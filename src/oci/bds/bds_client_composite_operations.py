@@ -52,8 +52,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.activate_bds_metastore_configuration(bds_instance_id, metastore_config_id, activate_bds_metastore_configuration_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -93,8 +94,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.add_auto_scaling_configuration(bds_instance_id, add_auto_scaling_configuration_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -134,8 +136,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.add_block_storage(bds_instance_id, add_block_storage_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -175,8 +178,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.add_cloud_sql(bds_instance_id, add_cloud_sql_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -216,8 +220,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.add_kafka(bds_instance_id, add_kafka_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -257,8 +262,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.add_master_nodes(bds_instance_id, add_master_nodes_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -298,8 +304,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.add_utility_nodes(bds_instance_id, add_utility_nodes_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -339,8 +346,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.add_worker_nodes(bds_instance_id, add_worker_nodes_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -380,8 +388,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.change_bds_instance_compartment(bds_instance_id, change_bds_instance_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -421,8 +430,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.change_shape(bds_instance_id, change_shape_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -462,8 +472,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.create_bds_api_key(bds_instance_id, create_bds_api_key_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -500,8 +511,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.create_bds_instance(create_bds_instance_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -541,8 +553,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.create_bds_metastore_configuration(bds_instance_id, create_bds_metastore_configuration_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -590,8 +603,9 @@ class BdsClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -636,8 +650,9 @@ class BdsClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -685,8 +700,9 @@ class BdsClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -726,8 +742,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.disable_certificate(bds_instance_id, disable_certificate_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -767,8 +784,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.enable_certificate(bds_instance_id, enable_certificate_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -808,8 +826,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.execute_bootstrap_script(bds_instance_id, execute_bootstrap_script_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -849,8 +868,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.install_os_patch(bds_instance_id, install_os_patch_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -890,8 +910,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.install_patch(bds_instance_id, install_patch_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -934,8 +955,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.remove_auto_scaling_configuration(bds_instance_id, auto_scaling_configuration_id, remove_auto_scaling_configuration_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -975,8 +997,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.remove_cloud_sql(bds_instance_id, remove_cloud_sql_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1016,8 +1039,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.remove_kafka(bds_instance_id, remove_kafka_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1057,8 +1081,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.remove_node(bds_instance_id, remove_node_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1098,8 +1123,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.renew_certificate(bds_instance_id, renew_certificate_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1139,8 +1165,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.restart_node(bds_instance_id, restart_node_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1180,8 +1207,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.start_bds_instance(bds_instance_id, start_bds_instance_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1221,8 +1249,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.stop_bds_instance(bds_instance_id, stop_bds_instance_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1265,8 +1294,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.test_bds_metastore_configuration(bds_instance_id, metastore_config_id, test_bds_metastore_configuration_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1309,8 +1339,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.test_bds_object_storage_connection(bds_instance_id, api_key_id, test_bds_object_storage_connection_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1353,8 +1384,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.update_auto_scaling_configuration(bds_instance_id, auto_scaling_configuration_id, update_auto_scaling_configuration_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1394,8 +1426,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.update_bds_instance(bds_instance_id, update_bds_instance_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1438,8 +1471,9 @@ class BdsClientCompositeOperations(object):
         operation_result = self.client.update_bds_metastore_configuration(bds_instance_id, metastore_config_id, update_bds_metastore_configuration_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:

@@ -51,8 +51,9 @@ class JavaManagementServiceClientCompositeOperations(object):
         operation_result = self.client.add_fleet_installation_sites(fleet_id, add_fleet_installation_sites_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -94,8 +95,9 @@ class JavaManagementServiceClientCompositeOperations(object):
         operation_result = self.client.change_fleet_compartment(fleet_id, change_fleet_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -137,8 +139,9 @@ class JavaManagementServiceClientCompositeOperations(object):
         operation_result = self.client.create_drs_file(fleet_id, create_drs_file_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -175,8 +178,9 @@ class JavaManagementServiceClientCompositeOperations(object):
         operation_result = self.client.create_fleet(create_fleet_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -226,8 +230,9 @@ class JavaManagementServiceClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -277,8 +282,9 @@ class JavaManagementServiceClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -325,8 +331,9 @@ class JavaManagementServiceClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -376,8 +383,9 @@ class JavaManagementServiceClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -427,8 +435,9 @@ class JavaManagementServiceClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -470,8 +479,9 @@ class JavaManagementServiceClientCompositeOperations(object):
         operation_result = self.client.disable_drs(fleet_id, disable_drs_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -513,8 +523,9 @@ class JavaManagementServiceClientCompositeOperations(object):
         operation_result = self.client.enable_drs(fleet_id, enable_drs_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -556,8 +567,9 @@ class JavaManagementServiceClientCompositeOperations(object):
         operation_result = self.client.remove_fleet_installation_sites(fleet_id, remove_fleet_installation_sites_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -599,8 +611,9 @@ class JavaManagementServiceClientCompositeOperations(object):
         operation_result = self.client.request_crypto_analyses(fleet_id, request_crypto_analyses_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -642,8 +655,9 @@ class JavaManagementServiceClientCompositeOperations(object):
         operation_result = self.client.request_java_migration_analyses(fleet_id, request_java_migration_analyses_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -685,8 +699,9 @@ class JavaManagementServiceClientCompositeOperations(object):
         operation_result = self.client.request_jfr_recordings(fleet_id, request_jfr_recordings_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -728,8 +743,9 @@ class JavaManagementServiceClientCompositeOperations(object):
         operation_result = self.client.request_performance_tuning_analyses(fleet_id, request_performance_tuning_analyses_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -771,8 +787,9 @@ class JavaManagementServiceClientCompositeOperations(object):
         operation_result = self.client.scan_java_server_usage(fleet_id, scan_java_server_usage_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -814,8 +831,9 @@ class JavaManagementServiceClientCompositeOperations(object):
         operation_result = self.client.scan_library_usage(fleet_id, scan_library_usage_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -860,8 +878,9 @@ class JavaManagementServiceClientCompositeOperations(object):
         operation_result = self.client.update_drs_file(fleet_id, update_drs_file_details, drs_file_key, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -903,8 +922,9 @@ class JavaManagementServiceClientCompositeOperations(object):
         operation_result = self.client.update_fleet(fleet_id, update_fleet_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -946,8 +966,9 @@ class JavaManagementServiceClientCompositeOperations(object):
         operation_result = self.client.update_fleet_agent_configuration(fleet_id, update_fleet_agent_configuration_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:

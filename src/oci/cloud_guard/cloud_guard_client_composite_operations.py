@@ -49,7 +49,6 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.add_compartment(security_zone_id, add_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         security_zone_id = operation_result.data.id
 
@@ -95,8 +94,9 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.change_data_source_compartment(data_source_id, change_data_source_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -133,7 +133,6 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.create_data_mask_rule(create_data_mask_rule_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         data_mask_rule_id = operation_result.data.id
 
@@ -176,8 +175,9 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.create_data_source(create_data_source_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -214,7 +214,6 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.create_detector_recipe(create_detector_recipe_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         detector_recipe_id = operation_result.data.id
 
@@ -260,7 +259,6 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.create_detector_recipe_detector_rule(detector_recipe_id, create_detector_recipe_detector_rule_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         detector_recipe_id = operation_result.data.id
 
@@ -303,7 +301,6 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.create_managed_list(create_managed_list_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         managed_list_id = operation_result.data.id
 
@@ -346,7 +343,6 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.create_responder_recipe(create_responder_recipe_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         responder_recipe_id = operation_result.data.id
 
@@ -389,7 +385,6 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.create_security_recipe(create_security_recipe_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         security_recipe_id = operation_result.data.id
 
@@ -432,7 +427,6 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.create_security_zone(create_security_zone_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         security_zone_id = operation_result.data.id
 
@@ -475,7 +469,6 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.create_target(create_target_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         target_id = operation_result.data.id
 
@@ -521,7 +514,6 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.create_target_detector_recipe(target_id, attach_target_detector_recipe_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         target_id = operation_result.data.id
 
@@ -573,7 +565,6 @@ class CloudGuardClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -632,8 +623,9 @@ class CloudGuardClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -679,7 +671,6 @@ class CloudGuardClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -739,7 +730,6 @@ class CloudGuardClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -799,7 +789,6 @@ class CloudGuardClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -859,7 +848,6 @@ class CloudGuardClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -919,7 +907,6 @@ class CloudGuardClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -979,7 +966,6 @@ class CloudGuardClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -1033,7 +1019,6 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.remove_compartment(security_zone_id, remove_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         security_zone_id = operation_result.data.id
 
@@ -1079,7 +1064,6 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.update_data_mask_rule(data_mask_rule_id, update_data_mask_rule_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         data_mask_rule_id = operation_result.data.id
 
@@ -1125,8 +1109,9 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.update_data_source(data_source_id, update_data_source_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1166,7 +1151,6 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.update_detector_recipe(detector_recipe_id, update_detector_recipe_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         detector_recipe_id = operation_result.data.id
 
@@ -1215,7 +1199,6 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.update_detector_recipe_detector_rule(detector_recipe_id, detector_rule_id, update_detector_recipe_detector_rule_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         detector_recipe_id = operation_result.data.id
 
@@ -1261,7 +1244,6 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.update_managed_list(managed_list_id, update_managed_list_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         managed_list_id = operation_result.data.id
 
@@ -1307,7 +1289,6 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.update_problem_status(problem_id, update_problem_status_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         problem_id = operation_result.data.id
 
@@ -1353,7 +1334,6 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.update_responder_recipe(responder_recipe_id, update_responder_recipe_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         responder_recipe_id = operation_result.data.id
 
@@ -1402,7 +1382,6 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.update_responder_recipe_responder_rule(responder_recipe_id, responder_rule_id, update_responder_recipe_responder_rule_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         responder_recipe_id = operation_result.data.id
 
@@ -1448,7 +1427,6 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.update_security_recipe(security_recipe_id, update_security_recipe_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         security_recipe_id = operation_result.data.id
 
@@ -1494,7 +1472,6 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.update_security_zone(security_zone_id, update_security_zone_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         security_zone_id = operation_result.data.id
 
@@ -1540,7 +1517,6 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.update_target(target_id, update_target_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         target_id = operation_result.data.id
 
@@ -1589,7 +1565,6 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.update_target_detector_recipe(target_id, target_detector_recipe_id, update_target_detector_recipe_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         target_id = operation_result.data.id
 
@@ -1641,7 +1616,6 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.update_target_detector_recipe_detector_rule(target_id, target_detector_recipe_id, detector_rule_id, update_target_detector_recipe_detector_rule_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         target_id = operation_result.data.id
 
@@ -1693,7 +1667,6 @@ class CloudGuardClientCompositeOperations(object):
         operation_result = self.client.update_target_responder_recipe_responder_rule(target_id, target_responder_recipe_id, responder_rule_id, update_target_responder_recipe_responder_rule_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         target_id = operation_result.data.id
 

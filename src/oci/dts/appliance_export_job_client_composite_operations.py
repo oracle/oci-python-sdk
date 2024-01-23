@@ -46,7 +46,6 @@ class ApplianceExportJobClientCompositeOperations(object):
         operation_result = self.client.create_appliance_export_job(create_appliance_export_job_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         appliance_export_job_id = operation_result.data.id
 
@@ -98,7 +97,6 @@ class ApplianceExportJobClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -152,7 +150,6 @@ class ApplianceExportJobClientCompositeOperations(object):
         operation_result = self.client.update_appliance_export_job(appliance_export_job_id, update_appliance_export_job_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         appliance_export_job_id = operation_result.data.id
 

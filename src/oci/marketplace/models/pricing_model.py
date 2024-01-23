@@ -87,6 +87,186 @@ class PricingModel(object):
     #: This constant has a value of "CLP"
     CURRENCY_CLP = "CLP"
 
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "ALL"
+    CURRENCY_ALL = "ALL"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "ARS"
+    CURRENCY_ARS = "ARS"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "AUD"
+    CURRENCY_AUD = "AUD"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "BDT"
+    CURRENCY_BDT = "BDT"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "BAM"
+    CURRENCY_BAM = "BAM"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "BGN"
+    CURRENCY_BGN = "BGN"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "CNY"
+    CURRENCY_CNY = "CNY"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "COP"
+    CURRENCY_COP = "COP"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "CRC"
+    CURRENCY_CRC = "CRC"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "HRK"
+    CURRENCY_HRK = "HRK"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "CZK"
+    CURRENCY_CZK = "CZK"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "DKK"
+    CURRENCY_DKK = "DKK"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "EGP"
+    CURRENCY_EGP = "EGP"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "HKD"
+    CURRENCY_HKD = "HKD"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "HUF"
+    CURRENCY_HUF = "HUF"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "ISK"
+    CURRENCY_ISK = "ISK"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "IDR"
+    CURRENCY_IDR = "IDR"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "ILS"
+    CURRENCY_ILS = "ILS"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "JMD"
+    CURRENCY_JMD = "JMD"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "KZT"
+    CURRENCY_KZT = "KZT"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "KES"
+    CURRENCY_KES = "KES"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "KRW"
+    CURRENCY_KRW = "KRW"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "KWD"
+    CURRENCY_KWD = "KWD"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "LBP"
+    CURRENCY_LBP = "LBP"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "MOP"
+    CURRENCY_MOP = "MOP"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "MYR"
+    CURRENCY_MYR = "MYR"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "MVR"
+    CURRENCY_MVR = "MVR"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "AED"
+    CURRENCY_AED = "AED"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "NZD"
+    CURRENCY_NZD = "NZD"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "NOK"
+    CURRENCY_NOK = "NOK"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "PKR"
+    CURRENCY_PKR = "PKR"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "PEN"
+    CURRENCY_PEN = "PEN"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "PHP"
+    CURRENCY_PHP = "PHP"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "PLN"
+    CURRENCY_PLN = "PLN"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "QAR"
+    CURRENCY_QAR = "QAR"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "RON"
+    CURRENCY_RON = "RON"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "SAR"
+    CURRENCY_SAR = "SAR"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "RSD"
+    CURRENCY_RSD = "RSD"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "SGD"
+    CURRENCY_SGD = "SGD"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "ZAR"
+    CURRENCY_ZAR = "ZAR"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "SEK"
+    CURRENCY_SEK = "SEK"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "TWD"
+    CURRENCY_TWD = "TWD"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "THB"
+    CURRENCY_THB = "THB"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "TRY"
+    CURRENCY_TRY = "TRY"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "VND"
+    CURRENCY_VND = "VND"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PricingModel object with values from keyword arguments.
@@ -106,7 +286,7 @@ class PricingModel(object):
 
         :param currency:
             The value to assign to the currency property of this PricingModel.
-            Allowed values for this property are: "USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR", "EUR", "CHF", "MXN", "CLP", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR", "EUR", "CHF", "MXN", "CLP", "ALL", "ARS", "AUD", "BDT", "BAM", "BGN", "CNY", "COP", "CRC", "HRK", "CZK", "DKK", "EGP", "HKD", "HUF", "ISK", "IDR", "ILS", "JMD", "KZT", "KES", "KRW", "KWD", "LBP", "MOP", "MYR", "MVR", "AED", "NZD", "NOK", "PKR", "PEN", "PHP", "PLN", "QAR", "RON", "SAR", "RSD", "SGD", "ZAR", "SEK", "TWD", "THB", "TRY", "VND", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type currency: str
 
@@ -207,7 +387,7 @@ class PricingModel(object):
         Gets the currency of this PricingModel.
         The currency of the pricing model.
 
-        Allowed values for this property are: "USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR", "EUR", "CHF", "MXN", "CLP", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR", "EUR", "CHF", "MXN", "CLP", "ALL", "ARS", "AUD", "BDT", "BAM", "BGN", "CNY", "COP", "CRC", "HRK", "CZK", "DKK", "EGP", "HKD", "HUF", "ISK", "IDR", "ILS", "JMD", "KZT", "KES", "KRW", "KWD", "LBP", "MOP", "MYR", "MVR", "AED", "NZD", "NOK", "PKR", "PEN", "PHP", "PLN", "QAR", "RON", "SAR", "RSD", "SGD", "ZAR", "SEK", "TWD", "THB", "TRY", "VND", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -226,7 +406,7 @@ class PricingModel(object):
         :param currency: The currency of this PricingModel.
         :type: str
         """
-        allowed_values = ["USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR", "EUR", "CHF", "MXN", "CLP"]
+        allowed_values = ["USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR", "EUR", "CHF", "MXN", "CLP", "ALL", "ARS", "AUD", "BDT", "BAM", "BGN", "CNY", "COP", "CRC", "HRK", "CZK", "DKK", "EGP", "HKD", "HUF", "ISK", "IDR", "ILS", "JMD", "KZT", "KES", "KRW", "KWD", "LBP", "MOP", "MYR", "MVR", "AED", "NZD", "NOK", "PKR", "PEN", "PHP", "PLN", "QAR", "RON", "SAR", "RSD", "SGD", "ZAR", "SEK", "TWD", "THB", "TRY", "VND"]
         if not value_allowed_none_or_none_sentinel(currency, allowed_values):
             currency = 'UNKNOWN_ENUM_VALUE'
         self._currency = currency

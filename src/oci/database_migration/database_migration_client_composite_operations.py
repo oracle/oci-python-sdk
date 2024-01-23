@@ -46,7 +46,6 @@ class DatabaseMigrationClientCompositeOperations(object):
         operation_result = self.client.abort_job(job_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         job_id = operation_result.data.id
 
@@ -92,8 +91,9 @@ class DatabaseMigrationClientCompositeOperations(object):
         operation_result = self.client.clone_migration(migration_id, clone_migration_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -130,8 +130,9 @@ class DatabaseMigrationClientCompositeOperations(object):
         operation_result = self.client.create_connection(create_connection_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -168,8 +169,9 @@ class DatabaseMigrationClientCompositeOperations(object):
         operation_result = self.client.create_migration(create_migration_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -214,8 +216,9 @@ class DatabaseMigrationClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -260,8 +263,9 @@ class DatabaseMigrationClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -307,7 +311,6 @@ class DatabaseMigrationClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -366,8 +369,9 @@ class DatabaseMigrationClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -404,8 +408,9 @@ class DatabaseMigrationClientCompositeOperations(object):
         operation_result = self.client.evaluate_migration(migration_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -442,7 +447,6 @@ class DatabaseMigrationClientCompositeOperations(object):
         operation_result = self.client.resume_job(job_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         job_id = operation_result.data.id
 
@@ -485,8 +489,9 @@ class DatabaseMigrationClientCompositeOperations(object):
         operation_result = self.client.start_migration(migration_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -526,7 +531,6 @@ class DatabaseMigrationClientCompositeOperations(object):
         operation_result = self.client.update_agent(agent_id, update_agent_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         agent_id = operation_result.data.id
 
@@ -572,8 +576,9 @@ class DatabaseMigrationClientCompositeOperations(object):
         operation_result = self.client.update_connection(connection_id, update_connection_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -613,7 +618,6 @@ class DatabaseMigrationClientCompositeOperations(object):
         operation_result = self.client.update_job(job_id, update_job_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         job_id = operation_result.data.id
 
@@ -659,8 +663,9 @@ class DatabaseMigrationClientCompositeOperations(object):
         operation_result = self.client.update_migration(migration_id, update_migration_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:

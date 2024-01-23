@@ -56,8 +56,9 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.add_ipv6_subnet_cidr(subnet_id, add_subnet_ipv6_cidr_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -93,8 +94,9 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.add_ipv6_vcn_cidr(vcn_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -132,7 +134,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.add_public_ip_pool_capacity(public_ip_pool_id, add_public_ip_pool_capacity_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         public_ip_pool_id = operation_result.data.id
 
@@ -181,8 +182,9 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.add_vcn_cidr(vcn_id, add_vcn_cidr_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -220,7 +222,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.attach_service_id(service_gateway_id, attach_service_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         service_gateway_id = operation_result.data.id
 
@@ -269,8 +270,9 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.change_capture_filter_compartment(capture_filter_id, change_capture_filter_compartment_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -309,8 +311,9 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.change_drg_compartment(drg_id, change_drg_compartment_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -349,8 +352,9 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.change_subnet_compartment(subnet_id, change_subnet_compartment_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -389,8 +393,9 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.change_vcn_compartment(vcn_id, change_vcn_compartment_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -429,8 +434,9 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.change_vlan_compartment(vlan_id, change_vlan_compartment_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -469,8 +475,9 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.change_vtap_compartment(vtap_id, change_vtap_compartment_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -503,7 +510,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.create_byoip_range(create_byoip_range_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         byoip_range_id = operation_result.data.id
 
@@ -546,7 +552,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.create_capture_filter(create_capture_filter_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         capture_filter_id = operation_result.data.id
 
@@ -589,7 +594,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.create_cross_connect(create_cross_connect_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         cross_connect_id = operation_result.data.id
 
@@ -632,7 +636,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.create_cross_connect_group(create_cross_connect_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         cross_connect_group_id = operation_result.data.id
 
@@ -675,7 +678,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.create_dhcp_options(create_dhcp_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         dhcp_id = operation_result.data.id
 
@@ -718,7 +720,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.create_drg(create_drg_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         drg_id = operation_result.data.id
 
@@ -761,7 +762,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.create_drg_attachment(create_drg_attachment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         drg_attachment_id = operation_result.data.id
 
@@ -804,7 +804,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.create_drg_route_distribution(create_drg_route_distribution_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         drg_route_distribution_id = operation_result.data.id
 
@@ -847,7 +846,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.create_drg_route_table(create_drg_route_table_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         drg_route_table_id = operation_result.data.id
 
@@ -890,7 +888,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.create_internet_gateway(create_internet_gateway_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         ig_id = operation_result.data.id
 
@@ -933,7 +930,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.create_ip_sec_connection(create_ip_sec_connection_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         ipsc_id = operation_result.data.id
 
@@ -976,7 +972,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.create_ipv6(create_ipv6_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         ipv6_id = operation_result.data.id
 
@@ -1019,7 +1014,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.create_local_peering_gateway(create_local_peering_gateway_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         local_peering_gateway_id = operation_result.data.id
 
@@ -1062,7 +1056,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.create_nat_gateway(create_nat_gateway_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         nat_gateway_id = operation_result.data.id
 
@@ -1105,7 +1098,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.create_network_security_group(create_network_security_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         network_security_group_id = operation_result.data.id
 
@@ -1148,7 +1140,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.create_public_ip(create_public_ip_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         public_ip_id = operation_result.data.id
 
@@ -1191,7 +1182,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.create_public_ip_pool(create_public_ip_pool_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         public_ip_pool_id = operation_result.data.id
 
@@ -1234,7 +1224,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.create_remote_peering_connection(create_remote_peering_connection_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         remote_peering_connection_id = operation_result.data.id
 
@@ -1277,7 +1266,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.create_route_table(create_route_table_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         rt_id = operation_result.data.id
 
@@ -1320,7 +1308,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.create_security_list(create_security_list_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         security_list_id = operation_result.data.id
 
@@ -1363,7 +1350,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.create_service_gateway(create_service_gateway_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         service_gateway_id = operation_result.data.id
 
@@ -1406,7 +1392,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.create_subnet(create_subnet_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         subnet_id = operation_result.data.id
 
@@ -1449,7 +1434,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.create_vcn(create_vcn_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         vcn_id = operation_result.data.id
 
@@ -1492,7 +1476,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.create_virtual_circuit(create_virtual_circuit_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         virtual_circuit_id = operation_result.data.id
 
@@ -1535,7 +1518,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.create_vlan(create_vlan_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         vlan_id = operation_result.data.id
 
@@ -1578,7 +1560,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.create_vtap(create_vtap_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         vtap_id = operation_result.data.id
 
@@ -1624,8 +1605,9 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.delete_byoip_range(byoip_range_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -1669,7 +1651,6 @@ class VirtualNetworkClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -1731,7 +1712,6 @@ class VirtualNetworkClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -1793,7 +1773,6 @@ class VirtualNetworkClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -1855,7 +1834,6 @@ class VirtualNetworkClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -1917,7 +1895,6 @@ class VirtualNetworkClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -1979,7 +1956,6 @@ class VirtualNetworkClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -2041,7 +2017,6 @@ class VirtualNetworkClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -2103,7 +2078,6 @@ class VirtualNetworkClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -2165,7 +2139,6 @@ class VirtualNetworkClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -2227,7 +2200,6 @@ class VirtualNetworkClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -2289,7 +2261,6 @@ class VirtualNetworkClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -2351,7 +2322,6 @@ class VirtualNetworkClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -2413,7 +2383,6 @@ class VirtualNetworkClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -2475,7 +2444,6 @@ class VirtualNetworkClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -2537,7 +2505,6 @@ class VirtualNetworkClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -2599,7 +2566,6 @@ class VirtualNetworkClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -2661,7 +2627,6 @@ class VirtualNetworkClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -2723,7 +2688,6 @@ class VirtualNetworkClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -2785,7 +2749,6 @@ class VirtualNetworkClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -2847,7 +2810,6 @@ class VirtualNetworkClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -2909,7 +2871,6 @@ class VirtualNetworkClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -2971,7 +2932,6 @@ class VirtualNetworkClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -3033,7 +2993,6 @@ class VirtualNetworkClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -3095,7 +3054,6 @@ class VirtualNetworkClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -3149,8 +3107,9 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.delete_vtap(vtap_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -3188,7 +3147,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.detach_service_id(service_gateway_id, detach_service_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         service_gateway_id = operation_result.data.id
 
@@ -3237,8 +3195,9 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.modify_vcn_cidr(vcn_id, modify_vcn_cidr_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -3273,7 +3232,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.remove_export_drg_route_distribution(drg_attachment_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         drg_attachment_id = operation_result.data.id
 
@@ -3318,7 +3276,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.remove_import_drg_route_distribution(drg_route_table_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         drg_route_table_id = operation_result.data.id
 
@@ -3367,8 +3324,9 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.remove_ipv6_subnet_cidr(subnet_id, remove_subnet_ipv6_cidr_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -3404,8 +3362,9 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.remove_ipv6_vcn_cidr(vcn_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -3443,7 +3402,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.remove_public_ip_pool_capacity(public_ip_pool_id, remove_public_ip_pool_capacity_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         public_ip_pool_id = operation_result.data.id
 
@@ -3492,8 +3450,9 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.remove_vcn_cidr(vcn_id, remove_vcn_cidr_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -3531,7 +3490,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_byoip_range(byoip_range_id, update_byoip_range_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         byoip_range_id = operation_result.data.id
 
@@ -3579,7 +3537,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_capture_filter(capture_filter_id, update_capture_filter_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         capture_filter_id = operation_result.data.id
 
@@ -3627,7 +3584,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_cross_connect(cross_connect_id, update_cross_connect_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         cross_connect_id = operation_result.data.id
 
@@ -3675,7 +3631,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_cross_connect_group(cross_connect_group_id, update_cross_connect_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         cross_connect_group_id = operation_result.data.id
 
@@ -3723,7 +3678,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_dhcp_options(dhcp_id, update_dhcp_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         dhcp_id = operation_result.data.id
 
@@ -3771,7 +3725,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_drg(drg_id, update_drg_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         drg_id = operation_result.data.id
 
@@ -3819,7 +3772,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_drg_attachment(drg_attachment_id, update_drg_attachment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         drg_attachment_id = operation_result.data.id
 
@@ -3867,7 +3819,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_drg_route_distribution(drg_route_distribution_id, update_drg_route_distribution_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         drg_route_distribution_id = operation_result.data.id
 
@@ -3915,7 +3866,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_drg_route_table(drg_route_table_id, update_drg_route_table_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         drg_route_table_id = operation_result.data.id
 
@@ -3963,7 +3913,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_internet_gateway(ig_id, update_internet_gateway_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         ig_id = operation_result.data.id
 
@@ -4011,7 +3960,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_ip_sec_connection(ipsc_id, update_ip_sec_connection_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         ipsc_id = operation_result.data.id
 
@@ -4064,7 +4012,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_ip_sec_connection_tunnel(ipsc_id, tunnel_id, update_ip_sec_connection_tunnel_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         ipsc_id = operation_result.data.id
 
@@ -4112,7 +4059,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_ipv6(ipv6_id, update_ipv6_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         ipv6_id = operation_result.data.id
 
@@ -4160,7 +4106,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_local_peering_gateway(local_peering_gateway_id, update_local_peering_gateway_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         local_peering_gateway_id = operation_result.data.id
 
@@ -4208,7 +4153,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_nat_gateway(nat_gateway_id, update_nat_gateway_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         nat_gateway_id = operation_result.data.id
 
@@ -4256,7 +4200,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_network_security_group(network_security_group_id, update_network_security_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         network_security_group_id = operation_result.data.id
 
@@ -4304,7 +4247,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_public_ip(public_ip_id, update_public_ip_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         public_ip_id = operation_result.data.id
 
@@ -4352,7 +4294,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_public_ip_pool(public_ip_pool_id, update_public_ip_pool_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         public_ip_pool_id = operation_result.data.id
 
@@ -4400,7 +4341,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_remote_peering_connection(remote_peering_connection_id, update_remote_peering_connection_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         remote_peering_connection_id = operation_result.data.id
 
@@ -4448,7 +4388,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_route_table(rt_id, update_route_table_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         rt_id = operation_result.data.id
 
@@ -4496,7 +4435,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_security_list(security_list_id, update_security_list_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         security_list_id = operation_result.data.id
 
@@ -4544,7 +4482,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_service_gateway(service_gateway_id, update_service_gateway_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         service_gateway_id = operation_result.data.id
 
@@ -4592,7 +4529,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_subnet(subnet_id, update_subnet_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         subnet_id = operation_result.data.id
 
@@ -4640,7 +4576,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_vcn(vcn_id, update_vcn_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         vcn_id = operation_result.data.id
 
@@ -4688,7 +4623,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_virtual_circuit(virtual_circuit_id, update_virtual_circuit_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         virtual_circuit_id = operation_result.data.id
 
@@ -4736,7 +4670,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_vlan(vlan_id, update_vlan_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         vlan_id = operation_result.data.id
 
@@ -4784,7 +4717,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_vnic(vnic_id, update_vnic_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         vnic_id = operation_result.data.id
 
@@ -4833,8 +4765,9 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_vtap(vtap_id, update_vtap_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -4872,7 +4805,6 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.update_vtap(vtap_id, update_vtap_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         vtap_id = operation_result.data.id
 
@@ -4918,8 +4850,9 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.upgrade_drg(drg_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -4955,8 +4888,9 @@ class VirtualNetworkClientCompositeOperations(object):
         operation_result = self.client.validate_byoip_range(byoip_range_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,

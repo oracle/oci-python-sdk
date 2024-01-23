@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.119.1 - 2024-01-23
+====================
+
+Added
+-----
+* Support for the Generative AI service
+* Support for additional currencies and countries for paid listings in the Marketplace service
+* Support for process sets in the Stack Monitoring service
+ 
+====================
 2.119.0 - 2024-01-16
 ====================
 

@@ -46,7 +46,6 @@ class RoverNodeClientCompositeOperations(object):
         operation_result = self.client.create_rover_node(create_rover_node_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         rover_node_id = operation_result.data.id
 
@@ -98,7 +97,6 @@ class RoverNodeClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -152,7 +150,6 @@ class RoverNodeClientCompositeOperations(object):
         operation_result = self.client.update_rover_node(rover_node_id, update_rover_node_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         rover_node_id = operation_result.data.id
 

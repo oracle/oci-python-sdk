@@ -46,8 +46,9 @@ class DiscoveryClientCompositeOperations(object):
         operation_result = self.client.create_asset_source(create_asset_source_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -84,7 +85,6 @@ class DiscoveryClientCompositeOperations(object):
         operation_result = self.client.create_discovery_schedule(create_discovery_schedule_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         discovery_schedule_id = operation_result.data.id
 
@@ -137,8 +137,9 @@ class DiscoveryClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -186,7 +187,6 @@ class DiscoveryClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -239,8 +239,9 @@ class DiscoveryClientCompositeOperations(object):
         operation_result = self.client.refresh_asset_source(asset_source_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -282,8 +283,9 @@ class DiscoveryClientCompositeOperations(object):
         operation_result = self.client.update_asset_source(asset_source_id, update_asset_source_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -325,7 +327,6 @@ class DiscoveryClientCompositeOperations(object):
         operation_result = self.client.update_discovery_schedule(update_discovery_schedule_details, discovery_schedule_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         discovery_schedule_id = operation_result.data.id
 

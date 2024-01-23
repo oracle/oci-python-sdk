@@ -59,6 +59,186 @@ class InternationalMarketPrice(object):
     #: This constant has a value of "CLP"
     CURRENCY_CODE_CLP = "CLP"
 
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "ALL"
+    CURRENCY_CODE_ALL = "ALL"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "ARS"
+    CURRENCY_CODE_ARS = "ARS"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "AUD"
+    CURRENCY_CODE_AUD = "AUD"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "BDT"
+    CURRENCY_CODE_BDT = "BDT"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "BAM"
+    CURRENCY_CODE_BAM = "BAM"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "BGN"
+    CURRENCY_CODE_BGN = "BGN"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "CNY"
+    CURRENCY_CODE_CNY = "CNY"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "COP"
+    CURRENCY_CODE_COP = "COP"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "CRC"
+    CURRENCY_CODE_CRC = "CRC"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "HRK"
+    CURRENCY_CODE_HRK = "HRK"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "CZK"
+    CURRENCY_CODE_CZK = "CZK"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "DKK"
+    CURRENCY_CODE_DKK = "DKK"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "EGP"
+    CURRENCY_CODE_EGP = "EGP"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "HKD"
+    CURRENCY_CODE_HKD = "HKD"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "HUF"
+    CURRENCY_CODE_HUF = "HUF"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "ISK"
+    CURRENCY_CODE_ISK = "ISK"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "IDR"
+    CURRENCY_CODE_IDR = "IDR"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "ILS"
+    CURRENCY_CODE_ILS = "ILS"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "JMD"
+    CURRENCY_CODE_JMD = "JMD"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "KZT"
+    CURRENCY_CODE_KZT = "KZT"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "KES"
+    CURRENCY_CODE_KES = "KES"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "KRW"
+    CURRENCY_CODE_KRW = "KRW"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "KWD"
+    CURRENCY_CODE_KWD = "KWD"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "LBP"
+    CURRENCY_CODE_LBP = "LBP"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "MOP"
+    CURRENCY_CODE_MOP = "MOP"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "MYR"
+    CURRENCY_CODE_MYR = "MYR"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "MVR"
+    CURRENCY_CODE_MVR = "MVR"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "AED"
+    CURRENCY_CODE_AED = "AED"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "NZD"
+    CURRENCY_CODE_NZD = "NZD"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "NOK"
+    CURRENCY_CODE_NOK = "NOK"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "PKR"
+    CURRENCY_CODE_PKR = "PKR"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "PEN"
+    CURRENCY_CODE_PEN = "PEN"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "PHP"
+    CURRENCY_CODE_PHP = "PHP"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "PLN"
+    CURRENCY_CODE_PLN = "PLN"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "QAR"
+    CURRENCY_CODE_QAR = "QAR"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "RON"
+    CURRENCY_CODE_RON = "RON"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "SAR"
+    CURRENCY_CODE_SAR = "SAR"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "RSD"
+    CURRENCY_CODE_RSD = "RSD"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "SGD"
+    CURRENCY_CODE_SGD = "SGD"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "ZAR"
+    CURRENCY_CODE_ZAR = "ZAR"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "SEK"
+    CURRENCY_CODE_SEK = "SEK"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "TWD"
+    CURRENCY_CODE_TWD = "TWD"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "THB"
+    CURRENCY_CODE_THB = "THB"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "TRY"
+    CURRENCY_CODE_TRY = "TRY"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "VND"
+    CURRENCY_CODE_VND = "VND"
+
     def __init__(self, **kwargs):
         """
         Initializes a new InternationalMarketPrice object with values from keyword arguments.
@@ -66,7 +246,7 @@ class InternationalMarketPrice(object):
 
         :param currency_code:
             The value to assign to the currency_code property of this InternationalMarketPrice.
-            Allowed values for this property are: "USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR", "EUR", "CHF", "MXN", "CLP", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR", "EUR", "CHF", "MXN", "CLP", "ALL", "ARS", "AUD", "BDT", "BAM", "BGN", "CNY", "COP", "CRC", "HRK", "CZK", "DKK", "EGP", "HKD", "HUF", "ISK", "IDR", "ILS", "JMD", "KZT", "KES", "KRW", "KWD", "LBP", "MOP", "MYR", "MVR", "AED", "NZD", "NOK", "PKR", "PEN", "PHP", "PLN", "QAR", "RON", "SAR", "RSD", "SGD", "ZAR", "SEK", "TWD", "THB", "TRY", "VND", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type currency_code: str
 
@@ -101,7 +281,7 @@ class InternationalMarketPrice(object):
         **[Required]** Gets the currency_code of this InternationalMarketPrice.
         The currency of the pricing model.
 
-        Allowed values for this property are: "USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR", "EUR", "CHF", "MXN", "CLP", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR", "EUR", "CHF", "MXN", "CLP", "ALL", "ARS", "AUD", "BDT", "BAM", "BGN", "CNY", "COP", "CRC", "HRK", "CZK", "DKK", "EGP", "HKD", "HUF", "ISK", "IDR", "ILS", "JMD", "KZT", "KES", "KRW", "KWD", "LBP", "MOP", "MYR", "MVR", "AED", "NZD", "NOK", "PKR", "PEN", "PHP", "PLN", "QAR", "RON", "SAR", "RSD", "SGD", "ZAR", "SEK", "TWD", "THB", "TRY", "VND", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -120,7 +300,7 @@ class InternationalMarketPrice(object):
         :param currency_code: The currency_code of this InternationalMarketPrice.
         :type: str
         """
-        allowed_values = ["USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR", "EUR", "CHF", "MXN", "CLP"]
+        allowed_values = ["USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR", "EUR", "CHF", "MXN", "CLP", "ALL", "ARS", "AUD", "BDT", "BAM", "BGN", "CNY", "COP", "CRC", "HRK", "CZK", "DKK", "EGP", "HKD", "HUF", "ISK", "IDR", "ILS", "JMD", "KZT", "KES", "KRW", "KWD", "LBP", "MOP", "MYR", "MVR", "AED", "NZD", "NOK", "PKR", "PEN", "PHP", "PLN", "QAR", "RON", "SAR", "RSD", "SGD", "ZAR", "SEK", "TWD", "THB", "TRY", "VND"]
         if not value_allowed_none_or_none_sentinel(currency_code, allowed_values):
             currency_code = 'UNKNOWN_ENUM_VALUE'
         self._currency_code = currency_code

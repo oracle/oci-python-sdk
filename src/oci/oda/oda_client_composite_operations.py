@@ -49,8 +49,9 @@ class OdaClientCompositeOperations(object):
         operation_result = self.client.change_oda_instance_compartment(oda_instance_id, change_oda_instance_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -87,8 +88,9 @@ class OdaClientCompositeOperations(object):
         operation_result = self.client.create_oda_instance(create_oda_instance_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -128,8 +130,9 @@ class OdaClientCompositeOperations(object):
         operation_result = self.client.create_oda_instance_attachment(oda_instance_id, create_oda_instance_attachment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -174,8 +177,9 @@ class OdaClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -223,8 +227,9 @@ class OdaClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -261,8 +266,9 @@ class OdaClientCompositeOperations(object):
         operation_result = self.client.start_oda_instance(oda_instance_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -299,8 +305,9 @@ class OdaClientCompositeOperations(object):
         operation_result = self.client.stop_oda_instance(oda_instance_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -340,7 +347,6 @@ class OdaClientCompositeOperations(object):
         operation_result = self.client.update_oda_instance(oda_instance_id, update_oda_instance_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         oda_instance_id = operation_result.data.id
 
@@ -389,8 +395,9 @@ class OdaClientCompositeOperations(object):
         operation_result = self.client.update_oda_instance_attachment(oda_instance_id, attachment_id, update_oda_instance_attachment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:

@@ -46,8 +46,9 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.activate_domain(domain_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -87,7 +88,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.add_tag_default_lock(tag_default_id, add_lock_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         tag_default_id = operation_result.data.id
 
@@ -133,7 +133,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.add_tag_namespace_lock(tag_namespace_id, add_lock_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         tag_namespace_id = operation_result.data.id
 
@@ -176,7 +175,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.add_user_to_group(add_user_to_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         user_group_membership_id = operation_result.data.id
 
@@ -222,8 +220,9 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.bulk_delete_resources(compartment_id, bulk_delete_resources_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -260,8 +259,9 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.bulk_delete_tags(bulk_delete_tags_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -295,8 +295,9 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.bulk_edit_tags(**operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -336,8 +337,9 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.bulk_move_resources(compartment_id, bulk_move_resources_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -374,8 +376,9 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.cascade_delete_tag_namespace(tag_namespace_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -415,8 +418,9 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.change_domain_compartment(domain_id, change_domain_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -456,8 +460,9 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.change_domain_license_type(domain_id, change_domain_license_type_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -494,7 +499,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.create_compartment(create_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         compartment_id = operation_result.data.id
 
@@ -537,8 +541,9 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.create_domain(create_domain_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -575,7 +580,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.create_dynamic_group(create_dynamic_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         dynamic_group_id = operation_result.data.id
 
@@ -618,7 +622,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.create_group(create_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         group_id = operation_result.data.id
 
@@ -661,7 +664,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.create_identity_provider(create_identity_provider_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         identity_provider_id = operation_result.data.id
 
@@ -707,7 +709,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.create_idp_group_mapping(create_idp_group_mapping_details, identity_provider_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         identity_provider_id = operation_result.data.id
 
@@ -750,7 +751,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.create_mfa_totp_device(user_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         mfa_totp_device_id = operation_result.data.id
 
@@ -793,7 +793,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.create_policy(create_policy_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         policy_id = operation_result.data.id
 
@@ -839,7 +838,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.create_tag(tag_namespace_id, create_tag_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         tag_namespace_id = operation_result.data.id
 
@@ -882,7 +880,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.create_tag_default(create_tag_default_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         tag_default_id = operation_result.data.id
 
@@ -925,7 +922,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.create_tag_namespace(create_tag_namespace_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         tag_namespace_id = operation_result.data.id
 
@@ -968,7 +964,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.create_user(create_user_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         user_id = operation_result.data.id
 
@@ -1011,8 +1006,9 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.deactivate_domain(domain_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1057,8 +1053,9 @@ class IdentityClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1103,8 +1100,9 @@ class IdentityClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1150,7 +1148,6 @@ class IdentityClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -1210,7 +1207,6 @@ class IdentityClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -1270,7 +1266,6 @@ class IdentityClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -1330,7 +1325,6 @@ class IdentityClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -1392,8 +1386,9 @@ class IdentityClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1439,7 +1434,6 @@ class IdentityClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -1499,7 +1493,6 @@ class IdentityClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -1559,7 +1552,6 @@ class IdentityClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -1613,8 +1605,9 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.enable_replication_to_region(domain_id, enable_replication_to_region_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1654,7 +1647,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.generate_totp_seed(user_id, mfa_totp_device_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         mfa_totp_device_id = operation_result.data.id
 
@@ -1694,8 +1686,9 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.import_standard_tags(**operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1735,8 +1728,9 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.move_compartment(compartment_id, move_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1773,7 +1767,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.recover_compartment(compartment_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         compartment_id = operation_result.data.id
 
@@ -1819,7 +1812,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.remove_tag_default_lock(tag_default_id, remove_lock_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         tag_default_id = operation_result.data.id
 
@@ -1865,7 +1857,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.remove_tag_namespace_lock(tag_namespace_id, remove_lock_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         tag_namespace_id = operation_result.data.id
 
@@ -1911,7 +1902,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.update_compartment(compartment_id, update_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         compartment_id = operation_result.data.id
 
@@ -1957,8 +1947,9 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.update_domain(domain_id, update_domain_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1998,7 +1989,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.update_dynamic_group(dynamic_group_id, update_dynamic_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         dynamic_group_id = operation_result.data.id
 
@@ -2044,7 +2034,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.update_group(group_id, update_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         group_id = operation_result.data.id
 
@@ -2090,7 +2079,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.update_identity_provider(identity_provider_id, update_identity_provider_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         identity_provider_id = operation_result.data.id
 
@@ -2139,7 +2127,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.update_idp_group_mapping(identity_provider_id, mapping_id, update_idp_group_mapping_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         identity_provider_id = operation_result.data.id
 
@@ -2185,7 +2172,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.update_policy(policy_id, update_policy_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         policy_id = operation_result.data.id
 
@@ -2234,7 +2220,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.update_tag(tag_namespace_id, tag_name, update_tag_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         tag_namespace_id = operation_result.data.id
 
@@ -2280,7 +2265,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.update_tag_default(tag_default_id, update_tag_default_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         tag_default_id = operation_result.data.id
 
@@ -2326,7 +2310,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.update_tag_namespace(tag_namespace_id, update_tag_namespace_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         tag_namespace_id = operation_result.data.id
 
@@ -2372,7 +2355,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.update_user(user_id, update_user_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         user_id = operation_result.data.id
 
@@ -2418,7 +2400,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.update_user_capabilities(user_id, update_user_capabilities_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         user_id = operation_result.data.id
 
@@ -2464,7 +2445,6 @@ class IdentityClientCompositeOperations(object):
         operation_result = self.client.update_user_state(user_id, update_state_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         user_id = operation_result.data.id
 

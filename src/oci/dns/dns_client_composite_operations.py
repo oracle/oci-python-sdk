@@ -49,7 +49,6 @@ class DnsClientCompositeOperations(object):
         operation_result = self.client.create_resolver_endpoint(resolver_id, create_resolver_endpoint_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         resolver_id = operation_result.data.id
 
@@ -92,7 +91,6 @@ class DnsClientCompositeOperations(object):
         operation_result = self.client.create_steering_policy(create_steering_policy_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         steering_policy_id = operation_result.data.id
 
@@ -135,7 +133,6 @@ class DnsClientCompositeOperations(object):
         operation_result = self.client.create_steering_policy_attachment(create_steering_policy_attachment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         steering_policy_attachment_id = operation_result.data.id
 
@@ -178,7 +175,6 @@ class DnsClientCompositeOperations(object):
         operation_result = self.client.create_tsig_key(create_tsig_key_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         tsig_key_id = operation_result.data.id
 
@@ -221,7 +217,6 @@ class DnsClientCompositeOperations(object):
         operation_result = self.client.create_view(create_view_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         view_id = operation_result.data.id
 
@@ -264,7 +259,6 @@ class DnsClientCompositeOperations(object):
         operation_result = self.client.create_zone(create_zone_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         zone_name_or_id = operation_result.data.id
 
@@ -316,7 +310,6 @@ class DnsClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -376,7 +369,6 @@ class DnsClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -436,7 +428,6 @@ class DnsClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -496,7 +487,6 @@ class DnsClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -556,7 +546,6 @@ class DnsClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -610,7 +599,6 @@ class DnsClientCompositeOperations(object):
         operation_result = self.client.update_resolver(resolver_id, update_resolver_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         resolver_id = operation_result.data.id
 
@@ -659,7 +647,6 @@ class DnsClientCompositeOperations(object):
         operation_result = self.client.update_resolver_endpoint(resolver_id, resolver_endpoint_name, update_resolver_endpoint_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         resolver_id = operation_result.data.id
 
@@ -705,7 +692,6 @@ class DnsClientCompositeOperations(object):
         operation_result = self.client.update_steering_policy(steering_policy_id, update_steering_policy_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         steering_policy_id = operation_result.data.id
 
@@ -751,7 +737,6 @@ class DnsClientCompositeOperations(object):
         operation_result = self.client.update_steering_policy_attachment(steering_policy_attachment_id, update_steering_policy_attachment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         steering_policy_attachment_id = operation_result.data.id
 
@@ -797,7 +782,6 @@ class DnsClientCompositeOperations(object):
         operation_result = self.client.update_tsig_key(tsig_key_id, update_tsig_key_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         tsig_key_id = operation_result.data.id
 
@@ -843,7 +827,6 @@ class DnsClientCompositeOperations(object):
         operation_result = self.client.update_view(view_id, update_view_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         view_id = operation_result.data.id
 
@@ -889,7 +872,6 @@ class DnsClientCompositeOperations(object):
         operation_result = self.client.update_zone(zone_name_or_id, update_zone_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         zone_name_or_id = operation_result.data.id
 

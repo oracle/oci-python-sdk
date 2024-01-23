@@ -56,8 +56,9 @@ class ComputeManagementClientCompositeOperations(object):
         operation_result = self.client.attach_instance_pool_instance(instance_pool_id, attach_instance_pool_instance_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -95,7 +96,6 @@ class ComputeManagementClientCompositeOperations(object):
         operation_result = self.client.attach_instance_pool_instance(instance_pool_id, attach_instance_pool_instance_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         instance_pool_id = operation_result.data.id
 
@@ -143,7 +143,6 @@ class ComputeManagementClientCompositeOperations(object):
         operation_result = self.client.attach_load_balancer(instance_pool_id, attach_load_balancer_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         instance_pool_id = operation_result.data.id
 
@@ -187,8 +186,9 @@ class ComputeManagementClientCompositeOperations(object):
         operation_result = self.client.create_cluster_network(create_cluster_network_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -221,7 +221,6 @@ class ComputeManagementClientCompositeOperations(object):
         operation_result = self.client.create_cluster_network(create_cluster_network_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         cluster_network_id = operation_result.data.id
 
@@ -264,7 +263,6 @@ class ComputeManagementClientCompositeOperations(object):
         operation_result = self.client.create_instance_pool(create_instance_pool_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         instance_pool_id = operation_result.data.id
 
@@ -313,8 +311,9 @@ class ComputeManagementClientCompositeOperations(object):
         operation_result = self.client.detach_instance_pool_instance(instance_pool_id, detach_instance_pool_instance_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -352,7 +351,6 @@ class ComputeManagementClientCompositeOperations(object):
         operation_result = self.client.detach_load_balancer(instance_pool_id, detach_load_balancer_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         instance_pool_id = operation_result.data.id
 
@@ -399,8 +397,9 @@ class ComputeManagementClientCompositeOperations(object):
         operation_result = self.client.launch_instance_configuration(instance_configuration_id, instance_configuration, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -435,7 +434,6 @@ class ComputeManagementClientCompositeOperations(object):
         operation_result = self.client.reset_instance_pool(instance_pool_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         instance_pool_id = operation_result.data.id
 
@@ -480,7 +478,6 @@ class ComputeManagementClientCompositeOperations(object):
         operation_result = self.client.softreset_instance_pool(instance_pool_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         instance_pool_id = operation_result.data.id
 
@@ -525,7 +522,6 @@ class ComputeManagementClientCompositeOperations(object):
         operation_result = self.client.softstop_instance_pool(instance_pool_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         instance_pool_id = operation_result.data.id
 
@@ -570,7 +566,6 @@ class ComputeManagementClientCompositeOperations(object):
         operation_result = self.client.start_instance_pool(instance_pool_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         instance_pool_id = operation_result.data.id
 
@@ -615,7 +610,6 @@ class ComputeManagementClientCompositeOperations(object):
         operation_result = self.client.stop_instance_pool(instance_pool_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         instance_pool_id = operation_result.data.id
 
@@ -661,8 +655,9 @@ class ComputeManagementClientCompositeOperations(object):
         operation_result = self.client.terminate_cluster_network(cluster_network_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -706,7 +701,6 @@ class ComputeManagementClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -762,7 +756,6 @@ class ComputeManagementClientCompositeOperations(object):
         operation_result = self.client.update_cluster_network(cluster_network_id, update_cluster_network_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         cluster_network_id = operation_result.data.id
 
@@ -810,7 +803,6 @@ class ComputeManagementClientCompositeOperations(object):
         operation_result = self.client.update_instance_pool(instance_pool_id, update_instance_pool_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         instance_pool_id = operation_result.data.id
 

@@ -46,7 +46,6 @@ class DashboardGroupClientCompositeOperations(object):
         operation_result = self.client.create_dashboard_group(create_dashboard_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         dashboard_group_id = operation_result.data.id
 
@@ -100,7 +99,6 @@ class DashboardGroupClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -156,7 +154,6 @@ class DashboardGroupClientCompositeOperations(object):
         operation_result = self.client.update_dashboard_group(dashboard_group_id, update_dashboard_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         dashboard_group_id = operation_result.data.id
 

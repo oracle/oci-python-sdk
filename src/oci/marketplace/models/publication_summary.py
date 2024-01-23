@@ -92,6 +92,18 @@ class PublicationSummary(object):
             The value to assign to the time_created property of this PublicationSummary.
         :type time_created: datetime
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this PublicationSummary.
+        :type defined_tags: dict(str, dict(str, object))
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this PublicationSummary.
+        :type freeform_tags: dict(str, str)
+
+        :param system_tags:
+            The value to assign to the system_tags property of this PublicationSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'lifecycle_state': 'str',
@@ -103,7 +115,10 @@ class PublicationSummary(object):
             'package_type': 'str',
             'supported_operating_systems': 'list[OperatingSystem]',
             'listing_type': 'str',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'defined_tags': 'dict(str, dict(str, object))',
+            'freeform_tags': 'dict(str, str)',
+            'system_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -116,7 +131,10 @@ class PublicationSummary(object):
             'package_type': 'packageType',
             'supported_operating_systems': 'supportedOperatingSystems',
             'listing_type': 'listingType',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'defined_tags': 'definedTags',
+            'freeform_tags': 'freeformTags',
+            'system_tags': 'systemTags'
         }
 
         self._lifecycle_state = None
@@ -129,6 +147,9 @@ class PublicationSummary(object):
         self._supported_operating_systems = None
         self._listing_type = None
         self._time_created = None
+        self._defined_tags = None
+        self._freeform_tags = None
+        self._system_tags = None
 
     @property
     def lifecycle_state(self):
@@ -391,6 +412,102 @@ class PublicationSummary(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this PublicationSummary.
+        The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this PublicationSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this PublicationSummary.
+        The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this PublicationSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this PublicationSummary.
+        The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this PublicationSummary.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this PublicationSummary.
+        The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this PublicationSummary.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this PublicationSummary.
+        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.
+        For more information, see `Resource Tags`__.
+        Example: `{orcl-cloud: {free-tier-retain: true}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The system_tags of this PublicationSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this PublicationSummary.
+        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.
+        For more information, see `Resource Tags`__.
+        Example: `{orcl-cloud: {free-tier-retain: true}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param system_tags: The system_tags of this PublicationSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

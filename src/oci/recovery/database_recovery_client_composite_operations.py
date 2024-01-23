@@ -49,8 +49,9 @@ class DatabaseRecoveryClientCompositeOperations(object):
         operation_result = self.client.change_protected_database_compartment(protected_database_id, change_protected_database_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -90,8 +91,9 @@ class DatabaseRecoveryClientCompositeOperations(object):
         operation_result = self.client.change_protection_policy_compartment(protection_policy_id, change_protection_policy_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -131,8 +133,9 @@ class DatabaseRecoveryClientCompositeOperations(object):
         operation_result = self.client.change_recovery_service_subnet_compartment(recovery_service_subnet_id, change_recovery_service_subnet_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -169,8 +172,9 @@ class DatabaseRecoveryClientCompositeOperations(object):
         operation_result = self.client.create_protected_database(create_protected_database_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -207,8 +211,9 @@ class DatabaseRecoveryClientCompositeOperations(object):
         operation_result = self.client.create_protection_policy(create_protection_policy_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -245,8 +250,9 @@ class DatabaseRecoveryClientCompositeOperations(object):
         operation_result = self.client.create_recovery_service_subnet(create_recovery_service_subnet_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -291,8 +297,9 @@ class DatabaseRecoveryClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -337,8 +344,9 @@ class DatabaseRecoveryClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -383,8 +391,9 @@ class DatabaseRecoveryClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -424,8 +433,9 @@ class DatabaseRecoveryClientCompositeOperations(object):
         operation_result = self.client.update_protected_database(protected_database_id, update_protected_database_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -465,8 +475,9 @@ class DatabaseRecoveryClientCompositeOperations(object):
         operation_result = self.client.update_protection_policy(protection_policy_id, update_protection_policy_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -506,8 +517,9 @@ class DatabaseRecoveryClientCompositeOperations(object):
         operation_result = self.client.update_recovery_service_subnet(recovery_service_subnet_id, update_recovery_service_subnet_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:

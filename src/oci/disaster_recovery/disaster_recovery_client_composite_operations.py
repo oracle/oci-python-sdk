@@ -51,8 +51,9 @@ class DisasterRecoveryClientCompositeOperations(object):
         operation_result = self.client.associate_dr_protection_group(associate_dr_protection_group_details, dr_protection_group_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -94,8 +95,9 @@ class DisasterRecoveryClientCompositeOperations(object):
         operation_result = self.client.cancel_dr_plan_execution(cancel_dr_plan_execution_details, dr_plan_execution_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -137,8 +139,9 @@ class DisasterRecoveryClientCompositeOperations(object):
         operation_result = self.client.change_dr_protection_group_compartment(change_dr_protection_group_compartment_details, dr_protection_group_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -175,8 +178,9 @@ class DisasterRecoveryClientCompositeOperations(object):
         operation_result = self.client.create_dr_plan(create_dr_plan_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -213,8 +217,9 @@ class DisasterRecoveryClientCompositeOperations(object):
         operation_result = self.client.create_dr_plan_execution(create_dr_plan_execution_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -251,8 +256,9 @@ class DisasterRecoveryClientCompositeOperations(object):
         operation_result = self.client.create_dr_protection_group(create_dr_protection_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -300,7 +306,6 @@ class DisasterRecoveryClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -361,8 +366,9 @@ class DisasterRecoveryClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -409,8 +415,9 @@ class DisasterRecoveryClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -452,8 +459,9 @@ class DisasterRecoveryClientCompositeOperations(object):
         operation_result = self.client.disassociate_dr_protection_group(disassociate_dr_protection_group_details, dr_protection_group_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -495,8 +503,9 @@ class DisasterRecoveryClientCompositeOperations(object):
         operation_result = self.client.ignore_dr_plan_execution(ignore_dr_plan_execution_details, dr_plan_execution_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -538,8 +547,9 @@ class DisasterRecoveryClientCompositeOperations(object):
         operation_result = self.client.pause_dr_plan_execution(pause_dr_plan_execution_details, dr_plan_execution_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -581,8 +591,9 @@ class DisasterRecoveryClientCompositeOperations(object):
         operation_result = self.client.resume_dr_plan_execution(resume_dr_plan_execution_details, dr_plan_execution_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -624,8 +635,9 @@ class DisasterRecoveryClientCompositeOperations(object):
         operation_result = self.client.retry_dr_plan_execution(retry_dr_plan_execution_details, dr_plan_execution_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -667,8 +679,9 @@ class DisasterRecoveryClientCompositeOperations(object):
         operation_result = self.client.update_dr_plan(update_dr_plan_details, dr_plan_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -710,8 +723,9 @@ class DisasterRecoveryClientCompositeOperations(object):
         operation_result = self.client.update_dr_plan_execution(update_dr_plan_execution_details, dr_plan_execution_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -753,8 +767,9 @@ class DisasterRecoveryClientCompositeOperations(object):
         operation_result = self.client.update_dr_protection_group(update_dr_protection_group_details, dr_protection_group_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -796,8 +811,9 @@ class DisasterRecoveryClientCompositeOperations(object):
         operation_result = self.client.update_dr_protection_group_role(update_dr_protection_group_role_details, dr_protection_group_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:

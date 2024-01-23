@@ -48,8 +48,9 @@ class ApplicationDependencyManagementClientCompositeOperations(object):
         operation_result = self.client.activate_remediation_recipe(remediation_recipe_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -86,7 +87,6 @@ class ApplicationDependencyManagementClientCompositeOperations(object):
         operation_result = self.client.cancel_remediation_run(remediation_run_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         remediation_run_id = operation_result.data.id
 
@@ -134,8 +134,9 @@ class ApplicationDependencyManagementClientCompositeOperations(object):
         operation_result = self.client.change_knowledge_base_compartment(knowledge_base_id, change_knowledge_base_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -177,8 +178,9 @@ class ApplicationDependencyManagementClientCompositeOperations(object):
         operation_result = self.client.change_remediation_recipe_compartment(remediation_recipe_id, change_remediation_recipe_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -215,8 +217,9 @@ class ApplicationDependencyManagementClientCompositeOperations(object):
         operation_result = self.client.create_knowledge_base(create_knowledge_base_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -253,8 +256,9 @@ class ApplicationDependencyManagementClientCompositeOperations(object):
         operation_result = self.client.create_remediation_recipe(create_remediation_recipe_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -291,7 +295,6 @@ class ApplicationDependencyManagementClientCompositeOperations(object):
         operation_result = self.client.create_remediation_run(create_remediation_run_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         remediation_run_id = operation_result.data.id
 
@@ -334,7 +337,6 @@ class ApplicationDependencyManagementClientCompositeOperations(object):
         operation_result = self.client.create_vulnerability_audit(create_vulnerability_audit_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         vulnerability_audit_id = operation_result.data.id
 
@@ -379,8 +381,9 @@ class ApplicationDependencyManagementClientCompositeOperations(object):
         operation_result = self.client.deactivate_remediation_recipe(remediation_recipe_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -427,8 +430,9 @@ class ApplicationDependencyManagementClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -475,8 +479,9 @@ class ApplicationDependencyManagementClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -522,7 +527,6 @@ class ApplicationDependencyManagementClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -582,7 +586,6 @@ class ApplicationDependencyManagementClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -638,8 +641,9 @@ class ApplicationDependencyManagementClientCompositeOperations(object):
         operation_result = self.client.update_knowledge_base(knowledge_base_id, update_knowledge_base_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -681,8 +685,9 @@ class ApplicationDependencyManagementClientCompositeOperations(object):
         operation_result = self.client.update_remediation_recipe(remediation_recipe_id, update_remediation_recipe_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -722,7 +727,6 @@ class ApplicationDependencyManagementClientCompositeOperations(object):
         operation_result = self.client.update_remediation_run(remediation_run_id, update_remediation_run_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         remediation_run_id = operation_result.data.id
 
@@ -768,7 +772,6 @@ class ApplicationDependencyManagementClientCompositeOperations(object):
         operation_result = self.client.update_vulnerability_audit(vulnerability_audit_id, update_vulnerability_audit_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         vulnerability_audit_id = operation_result.data.id
 

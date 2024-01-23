@@ -49,8 +49,9 @@ class AnomalyDetectionClientCompositeOperations(object):
         operation_result = self.client.change_ai_private_endpoint_compartment(ai_private_endpoint_id, change_ai_private_endpoint_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -90,7 +91,6 @@ class AnomalyDetectionClientCompositeOperations(object):
         operation_result = self.client.change_data_asset_compartment(data_asset_id, change_data_asset_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         data_asset_id = operation_result.data.id
 
@@ -133,8 +133,9 @@ class AnomalyDetectionClientCompositeOperations(object):
         operation_result = self.client.create_ai_private_endpoint(create_ai_private_endpoint_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -171,7 +172,6 @@ class AnomalyDetectionClientCompositeOperations(object):
         operation_result = self.client.create_data_asset(create_data_asset_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         data_asset_id = operation_result.data.id
 
@@ -222,7 +222,6 @@ class AnomalyDetectionClientCompositeOperations(object):
         operation_result = self.client.create_detect_anomaly_job(create_detect_anomaly_job_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         detect_anomaly_job_id = operation_result.data.id
 
@@ -265,8 +264,9 @@ class AnomalyDetectionClientCompositeOperations(object):
         operation_result = self.client.create_model(create_model_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -303,7 +303,6 @@ class AnomalyDetectionClientCompositeOperations(object):
         operation_result = self.client.create_project(create_project_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         project_id = operation_result.data.id
 
@@ -354,8 +353,9 @@ class AnomalyDetectionClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -401,7 +401,6 @@ class AnomalyDetectionClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -461,7 +460,6 @@ class AnomalyDetectionClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -520,8 +518,9 @@ class AnomalyDetectionClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -566,8 +565,9 @@ class AnomalyDetectionClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -607,8 +607,9 @@ class AnomalyDetectionClientCompositeOperations(object):
         operation_result = self.client.update_ai_private_endpoint(ai_private_endpoint_id, update_ai_private_endpoint_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -648,7 +649,6 @@ class AnomalyDetectionClientCompositeOperations(object):
         operation_result = self.client.update_data_asset(data_asset_id, update_data_asset_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         data_asset_id = operation_result.data.id
 
@@ -694,7 +694,6 @@ class AnomalyDetectionClientCompositeOperations(object):
         operation_result = self.client.update_detect_anomaly_job(detect_anomaly_job_id, update_detect_anomaly_job_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         detect_anomaly_job_id = operation_result.data.id
 
@@ -740,8 +739,9 @@ class AnomalyDetectionClientCompositeOperations(object):
         operation_result = self.client.update_model(model_id, update_model_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -781,7 +781,6 @@ class AnomalyDetectionClientCompositeOperations(object):
         operation_result = self.client.update_project(project_id, update_project_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         project_id = operation_result.data.id
 

@@ -46,7 +46,6 @@ class FileStorageClientCompositeOperations(object):
         operation_result = self.client.create_export(create_export_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         export_id = operation_result.data.id
 
@@ -89,7 +88,6 @@ class FileStorageClientCompositeOperations(object):
         operation_result = self.client.create_file_system(create_file_system_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         file_system_id = operation_result.data.id
 
@@ -132,7 +130,6 @@ class FileStorageClientCompositeOperations(object):
         operation_result = self.client.create_filesystem_snapshot_policy(create_filesystem_snapshot_policy_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         filesystem_snapshot_policy_id = operation_result.data.id
 
@@ -175,7 +172,6 @@ class FileStorageClientCompositeOperations(object):
         operation_result = self.client.create_mount_target(create_mount_target_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         mount_target_id = operation_result.data.id
 
@@ -218,7 +214,6 @@ class FileStorageClientCompositeOperations(object):
         operation_result = self.client.create_outbound_connector(create_outbound_connector_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         outbound_connector_id = operation_result.data.id
 
@@ -261,7 +256,6 @@ class FileStorageClientCompositeOperations(object):
         operation_result = self.client.create_replication(create_replication_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         replication_id = operation_result.data.id
 
@@ -304,7 +298,6 @@ class FileStorageClientCompositeOperations(object):
         operation_result = self.client.create_snapshot(create_snapshot_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         snapshot_id = operation_result.data.id
 
@@ -358,7 +351,6 @@ class FileStorageClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -420,7 +412,6 @@ class FileStorageClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -482,7 +473,6 @@ class FileStorageClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -544,7 +534,6 @@ class FileStorageClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -606,7 +595,6 @@ class FileStorageClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -668,7 +656,6 @@ class FileStorageClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -730,7 +717,6 @@ class FileStorageClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -792,7 +778,6 @@ class FileStorageClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -845,7 +830,6 @@ class FileStorageClientCompositeOperations(object):
         operation_result = self.client.pause_filesystem_snapshot_policy(filesystem_snapshot_policy_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         filesystem_snapshot_policy_id = operation_result.data.id
 
@@ -890,7 +874,6 @@ class FileStorageClientCompositeOperations(object):
         operation_result = self.client.unpause_filesystem_snapshot_policy(filesystem_snapshot_policy_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         filesystem_snapshot_policy_id = operation_result.data.id
 
@@ -938,7 +921,6 @@ class FileStorageClientCompositeOperations(object):
         operation_result = self.client.update_export(export_id, update_export_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         export_id = operation_result.data.id
 
@@ -986,7 +968,6 @@ class FileStorageClientCompositeOperations(object):
         operation_result = self.client.update_export_set(export_set_id, update_export_set_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         export_set_id = operation_result.data.id
 
@@ -1034,7 +1015,6 @@ class FileStorageClientCompositeOperations(object):
         operation_result = self.client.update_file_system(file_system_id, update_file_system_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         file_system_id = operation_result.data.id
 
@@ -1082,7 +1062,6 @@ class FileStorageClientCompositeOperations(object):
         operation_result = self.client.update_filesystem_snapshot_policy(filesystem_snapshot_policy_id, update_filesystem_snapshot_policy_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         filesystem_snapshot_policy_id = operation_result.data.id
 
@@ -1130,7 +1109,6 @@ class FileStorageClientCompositeOperations(object):
         operation_result = self.client.update_mount_target(mount_target_id, update_mount_target_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         mount_target_id = operation_result.data.id
 
@@ -1178,7 +1156,6 @@ class FileStorageClientCompositeOperations(object):
         operation_result = self.client.update_outbound_connector(outbound_connector_id, update_outbound_connector_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         outbound_connector_id = operation_result.data.id
 
@@ -1226,7 +1203,6 @@ class FileStorageClientCompositeOperations(object):
         operation_result = self.client.update_replication(replication_id, update_replication_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         replication_id = operation_result.data.id
 
@@ -1274,7 +1250,6 @@ class FileStorageClientCompositeOperations(object):
         operation_result = self.client.update_snapshot(snapshot_id, update_snapshot_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         snapshot_id = operation_result.data.id
 

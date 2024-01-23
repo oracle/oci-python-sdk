@@ -49,8 +49,9 @@ class DataLabelingManagementClientCompositeOperations(object):
         operation_result = self.client.add_dataset_labels(dataset_id, add_dataset_labels_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -90,8 +91,9 @@ class DataLabelingManagementClientCompositeOperations(object):
         operation_result = self.client.change_dataset_compartment(dataset_id, change_dataset_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -128,8 +130,9 @@ class DataLabelingManagementClientCompositeOperations(object):
         operation_result = self.client.create_dataset(create_dataset_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -174,8 +177,9 @@ class DataLabelingManagementClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -215,8 +219,9 @@ class DataLabelingManagementClientCompositeOperations(object):
         operation_result = self.client.generate_dataset_records(dataset_id, generate_dataset_records_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -256,8 +261,9 @@ class DataLabelingManagementClientCompositeOperations(object):
         operation_result = self.client.import_pre_annotated_data(dataset_id, import_pre_annotated_data_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -297,8 +303,9 @@ class DataLabelingManagementClientCompositeOperations(object):
         operation_result = self.client.remove_dataset_labels(dataset_id, remove_dataset_labels_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -338,8 +345,9 @@ class DataLabelingManagementClientCompositeOperations(object):
         operation_result = self.client.rename_dataset_labels(dataset_id, rename_dataset_labels_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -379,8 +387,9 @@ class DataLabelingManagementClientCompositeOperations(object):
         operation_result = self.client.snapshot_dataset(dataset_id, snapshot_dataset_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -420,7 +429,6 @@ class DataLabelingManagementClientCompositeOperations(object):
         operation_result = self.client.update_dataset(dataset_id, update_dataset_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         dataset_id = operation_result.data.id
 

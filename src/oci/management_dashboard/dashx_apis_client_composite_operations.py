@@ -49,7 +49,6 @@ class DashxApisClientCompositeOperations(object):
         operation_result = self.client.change_management_dashboards_compartment(management_dashboard_id, change_management_dashboards_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         management_dashboard_id = operation_result.data.id
 
@@ -95,7 +94,6 @@ class DashxApisClientCompositeOperations(object):
         operation_result = self.client.change_management_saved_searches_compartment(management_saved_search_id, change_management_saved_searches_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         management_saved_search_id = operation_result.data.id
 
@@ -138,7 +136,6 @@ class DashxApisClientCompositeOperations(object):
         operation_result = self.client.create_management_dashboard(create_management_dashboard_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         management_dashboard_id = operation_result.data.id
 
@@ -181,7 +178,6 @@ class DashxApisClientCompositeOperations(object):
         operation_result = self.client.create_management_saved_search(create_management_saved_search_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         management_saved_search_id = operation_result.data.id
 
@@ -233,7 +229,6 @@ class DashxApisClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -293,7 +288,6 @@ class DashxApisClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -347,7 +341,6 @@ class DashxApisClientCompositeOperations(object):
         operation_result = self.client.update_management_dashboard(management_dashboard_id, update_management_dashboard_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         management_dashboard_id = operation_result.data.id
 
@@ -393,7 +386,6 @@ class DashxApisClientCompositeOperations(object):
         operation_result = self.client.update_management_saved_search(management_saved_search_id, update_management_saved_search_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         management_saved_search_id = operation_result.data.id
 

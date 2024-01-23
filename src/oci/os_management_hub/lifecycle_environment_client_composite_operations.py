@@ -49,8 +49,9 @@ class LifecycleEnvironmentClientCompositeOperations(object):
         operation_result = self.client.attach_managed_instances_to_lifecycle_stage(lifecycle_stage_id, attach_managed_instances_to_lifecycle_stage_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -87,7 +88,6 @@ class LifecycleEnvironmentClientCompositeOperations(object):
         operation_result = self.client.create_lifecycle_environment(create_lifecycle_environment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         lifecycle_environment_id = operation_result.data.id
 
@@ -139,7 +139,6 @@ class LifecycleEnvironmentClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -193,8 +192,9 @@ class LifecycleEnvironmentClientCompositeOperations(object):
         operation_result = self.client.detach_managed_instances_from_lifecycle_stage(lifecycle_stage_id, detach_managed_instances_from_lifecycle_stage_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -234,8 +234,9 @@ class LifecycleEnvironmentClientCompositeOperations(object):
         operation_result = self.client.promote_software_source_to_lifecycle_stage(lifecycle_stage_id, promote_software_source_to_lifecycle_stage_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -275,7 +276,6 @@ class LifecycleEnvironmentClientCompositeOperations(object):
         operation_result = self.client.update_lifecycle_environment(lifecycle_environment_id, update_lifecycle_environment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         lifecycle_environment_id = operation_result.data.id
 

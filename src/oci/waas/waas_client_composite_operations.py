@@ -50,8 +50,9 @@ class WaasClientCompositeOperations(object):
         operation_result = self.client.accept_recommendations(waas_policy_id, protection_rule_keys, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -88,7 +89,6 @@ class WaasClientCompositeOperations(object):
         operation_result = self.client.create_address_list(create_address_list_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         address_list_id = operation_result.data.id
 
@@ -131,7 +131,6 @@ class WaasClientCompositeOperations(object):
         operation_result = self.client.create_certificate(create_certificate_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         certificate_id = operation_result.data.id
 
@@ -174,7 +173,6 @@ class WaasClientCompositeOperations(object):
         operation_result = self.client.create_custom_protection_rule(create_custom_protection_rule_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         custom_protection_rule_id = operation_result.data.id
 
@@ -217,8 +215,9 @@ class WaasClientCompositeOperations(object):
         operation_result = self.client.create_waas_policy(create_waas_policy_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -266,7 +265,6 @@ class WaasClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -328,7 +326,6 @@ class WaasClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -390,7 +387,6 @@ class WaasClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -451,8 +447,9 @@ class WaasClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -491,8 +488,9 @@ class WaasClientCompositeOperations(object):
         operation_result = self.client.purge_cache(waas_policy_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -533,8 +531,9 @@ class WaasClientCompositeOperations(object):
         operation_result = self.client.update_access_rules(waas_policy_id, access_rules, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -573,7 +572,6 @@ class WaasClientCompositeOperations(object):
         operation_result = self.client.update_address_list(address_list_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         address_list_id = operation_result.data.id
 
@@ -620,8 +618,9 @@ class WaasClientCompositeOperations(object):
         operation_result = self.client.update_caching_rules(waas_policy_id, caching_rules_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -663,8 +662,9 @@ class WaasClientCompositeOperations(object):
         operation_result = self.client.update_captchas(waas_policy_id, captchas, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -703,7 +703,6 @@ class WaasClientCompositeOperations(object):
         operation_result = self.client.update_certificate(certificate_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         certificate_id = operation_result.data.id
 
@@ -751,7 +750,6 @@ class WaasClientCompositeOperations(object):
         operation_result = self.client.update_custom_protection_rule(custom_protection_rule_id, update_custom_protection_rule_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         custom_protection_rule_id = operation_result.data.id
 
@@ -799,8 +797,9 @@ class WaasClientCompositeOperations(object):
         operation_result = self.client.update_device_fingerprint_challenge(waas_policy_id, update_device_fingerprint_challenge_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -841,8 +840,9 @@ class WaasClientCompositeOperations(object):
         operation_result = self.client.update_good_bots(waas_policy_id, good_bots, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -884,8 +884,9 @@ class WaasClientCompositeOperations(object):
         operation_result = self.client.update_human_interaction_challenge(waas_policy_id, update_human_interaction_challenge_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -927,8 +928,9 @@ class WaasClientCompositeOperations(object):
         operation_result = self.client.update_js_challenge(waas_policy_id, update_js_challenge_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -970,8 +972,9 @@ class WaasClientCompositeOperations(object):
         operation_result = self.client.update_policy_config(waas_policy_id, update_policy_config_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1012,8 +1015,9 @@ class WaasClientCompositeOperations(object):
         operation_result = self.client.update_protection_rules(waas_policy_id, protection_rules, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1055,8 +1059,9 @@ class WaasClientCompositeOperations(object):
         operation_result = self.client.update_protection_settings(waas_policy_id, update_protection_settings_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1098,8 +1103,9 @@ class WaasClientCompositeOperations(object):
         operation_result = self.client.update_threat_feeds(waas_policy_id, threat_feeds, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1141,8 +1147,9 @@ class WaasClientCompositeOperations(object):
         operation_result = self.client.update_waas_policy(waas_policy_id, update_waas_policy_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1183,8 +1190,9 @@ class WaasClientCompositeOperations(object):
         operation_result = self.client.update_waas_policy_custom_protection_rules(waas_policy_id, update_custom_protection_rules_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1226,8 +1234,9 @@ class WaasClientCompositeOperations(object):
         operation_result = self.client.update_waf_address_rate_limiting(waas_policy_id, update_waf_address_rate_limiting_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1269,8 +1278,9 @@ class WaasClientCompositeOperations(object):
         operation_result = self.client.update_waf_config(waas_policy_id, update_waf_config_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1311,8 +1321,9 @@ class WaasClientCompositeOperations(object):
         operation_result = self.client.update_whitelists(waas_policy_id, whitelists, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:

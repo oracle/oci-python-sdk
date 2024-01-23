@@ -46,7 +46,6 @@ class ArtifactsClientCompositeOperations(object):
         operation_result = self.client.create_container_image_signature(create_container_image_signature_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         image_signature_id = operation_result.data.id
 
@@ -89,7 +88,6 @@ class ArtifactsClientCompositeOperations(object):
         operation_result = self.client.create_container_repository(create_container_repository_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         repository_id = operation_result.data.id
 
@@ -132,7 +130,6 @@ class ArtifactsClientCompositeOperations(object):
         operation_result = self.client.create_repository(create_repository_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         repository_id = operation_result.data.id
 
@@ -188,7 +185,6 @@ class ArtifactsClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -252,7 +248,6 @@ class ArtifactsClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -316,7 +311,6 @@ class ArtifactsClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -380,7 +374,6 @@ class ArtifactsClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -444,7 +437,6 @@ class ArtifactsClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -502,7 +494,6 @@ class ArtifactsClientCompositeOperations(object):
         operation_result = self.client.remove_container_version(image_id, remove_container_version_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         image_id = operation_result.data.id
 
@@ -552,7 +543,6 @@ class ArtifactsClientCompositeOperations(object):
         operation_result = self.client.restore_container_image(image_id, restore_container_image_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         image_id = operation_result.data.id
 
@@ -602,7 +592,6 @@ class ArtifactsClientCompositeOperations(object):
         operation_result = self.client.update_container_image(image_id, update_container_image_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         image_id = operation_result.data.id
 
@@ -652,7 +641,6 @@ class ArtifactsClientCompositeOperations(object):
         operation_result = self.client.update_container_image_signature(image_signature_id, update_container_image_signature_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         image_signature_id = operation_result.data.id
 
@@ -702,7 +690,6 @@ class ArtifactsClientCompositeOperations(object):
         operation_result = self.client.update_container_repository(repository_id, update_container_repository_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         repository_id = operation_result.data.id
 
@@ -754,7 +741,6 @@ class ArtifactsClientCompositeOperations(object):
         operation_result = self.client.update_generic_artifact(artifact_id, update_generic_artifact_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         artifact_id = operation_result.data.id
 
@@ -804,7 +790,6 @@ class ArtifactsClientCompositeOperations(object):
         operation_result = self.client.update_repository(repository_id, update_repository_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         repository_id = operation_result.data.id
 

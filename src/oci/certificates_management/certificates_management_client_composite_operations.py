@@ -46,7 +46,6 @@ class CertificatesManagementClientCompositeOperations(object):
         operation_result = self.client.create_ca_bundle(create_ca_bundle_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         ca_bundle_id = operation_result.data.id
 
@@ -89,7 +88,6 @@ class CertificatesManagementClientCompositeOperations(object):
         operation_result = self.client.create_certificate(create_certificate_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         certificate_id = operation_result.data.id
 
@@ -132,7 +130,6 @@ class CertificatesManagementClientCompositeOperations(object):
         operation_result = self.client.create_certificate_authority(create_certificate_authority_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         certificate_authority_id = operation_result.data.id
 
@@ -184,7 +181,6 @@ class CertificatesManagementClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -238,7 +234,6 @@ class CertificatesManagementClientCompositeOperations(object):
         operation_result = self.client.update_ca_bundle(ca_bundle_id, update_ca_bundle_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         ca_bundle_id = operation_result.data.id
 
@@ -284,7 +279,6 @@ class CertificatesManagementClientCompositeOperations(object):
         operation_result = self.client.update_certificate(certificate_id, update_certificate_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         certificate_id = operation_result.data.id
 
@@ -330,7 +324,6 @@ class CertificatesManagementClientCompositeOperations(object):
         operation_result = self.client.update_certificate_authority(certificate_authority_id, update_certificate_authority_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         certificate_authority_id = operation_result.data.id
 

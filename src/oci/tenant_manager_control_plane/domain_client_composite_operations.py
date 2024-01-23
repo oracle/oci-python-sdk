@@ -46,8 +46,9 @@ class DomainClientCompositeOperations(object):
         operation_result = self.client.create_domain(create_domain_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -93,7 +94,6 @@ class DomainClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -147,7 +147,6 @@ class DomainClientCompositeOperations(object):
         operation_result = self.client.update_domain(domain_id, update_domain_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         domain_id = operation_result.data.id
 

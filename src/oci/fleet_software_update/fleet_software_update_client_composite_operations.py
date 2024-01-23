@@ -49,8 +49,9 @@ class FleetSoftwareUpdateClientCompositeOperations(object):
         operation_result = self.client.add_fsu_collection_targets(fsu_collection_id, add_fsu_collection_targets_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -90,8 +91,9 @@ class FleetSoftwareUpdateClientCompositeOperations(object):
         operation_result = self.client.change_fsu_action_compartment(fsu_action_id, change_fsu_action_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -131,8 +133,9 @@ class FleetSoftwareUpdateClientCompositeOperations(object):
         operation_result = self.client.change_fsu_collection_compartment(fsu_collection_id, change_fsu_collection_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -172,8 +175,9 @@ class FleetSoftwareUpdateClientCompositeOperations(object):
         operation_result = self.client.change_fsu_cycle_compartment(fsu_cycle_id, change_fsu_cycle_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -213,8 +217,9 @@ class FleetSoftwareUpdateClientCompositeOperations(object):
         operation_result = self.client.clone_fsu_cycle(fsu_cycle_id, clone_fsu_cycle_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -251,8 +256,9 @@ class FleetSoftwareUpdateClientCompositeOperations(object):
         operation_result = self.client.create_fsu_action(create_fsu_action_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -289,8 +295,9 @@ class FleetSoftwareUpdateClientCompositeOperations(object):
         operation_result = self.client.create_fsu_collection(create_fsu_collection_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -327,8 +334,9 @@ class FleetSoftwareUpdateClientCompositeOperations(object):
         operation_result = self.client.create_fsu_cycle(create_fsu_cycle_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -365,8 +373,9 @@ class FleetSoftwareUpdateClientCompositeOperations(object):
         operation_result = self.client.create_fsu_discovery(create_fsu_discovery_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -411,8 +420,9 @@ class FleetSoftwareUpdateClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -457,8 +467,9 @@ class FleetSoftwareUpdateClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -503,8 +514,9 @@ class FleetSoftwareUpdateClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -549,8 +561,9 @@ class FleetSoftwareUpdateClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -596,7 +609,6 @@ class FleetSoftwareUpdateClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -650,8 +662,9 @@ class FleetSoftwareUpdateClientCompositeOperations(object):
         operation_result = self.client.remove_fsu_collection_targets(fsu_collection_id, remove_fsu_collection_targets_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -691,8 +704,9 @@ class FleetSoftwareUpdateClientCompositeOperations(object):
         operation_result = self.client.update_fsu_action(fsu_action_id, update_fsu_action_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -732,8 +746,9 @@ class FleetSoftwareUpdateClientCompositeOperations(object):
         operation_result = self.client.update_fsu_collection(fsu_collection_id, update_fsu_collection_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -773,8 +788,9 @@ class FleetSoftwareUpdateClientCompositeOperations(object):
         operation_result = self.client.update_fsu_cycle(fsu_cycle_id, update_fsu_cycle_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -814,7 +830,6 @@ class FleetSoftwareUpdateClientCompositeOperations(object):
         operation_result = self.client.update_fsu_job(fsu_job_id, update_fsu_job_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         fsu_job_id = operation_result.data.id
 

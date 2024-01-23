@@ -46,8 +46,9 @@ class EsxiHostClientCompositeOperations(object):
         operation_result = self.client.create_esxi_host(create_esxi_host_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -94,8 +95,9 @@ class EsxiHostClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -134,8 +136,9 @@ class EsxiHostClientCompositeOperations(object):
         operation_result = self.client.inplace_upgrade(esxi_host_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -177,8 +180,9 @@ class EsxiHostClientCompositeOperations(object):
         operation_result = self.client.replace_host(esxi_host_id, replace_host_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -222,8 +226,9 @@ class EsxiHostClientCompositeOperations(object):
         operation_result = self.client.swap_billing(esxi_host_id, swap_billing_host_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -265,7 +270,6 @@ class EsxiHostClientCompositeOperations(object):
         operation_result = self.client.update_esxi_host(esxi_host_id, update_esxi_host_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         esxi_host_id = operation_result.data.id
 

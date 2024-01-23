@@ -49,8 +49,9 @@ class ApmDomainClientCompositeOperations(object):
         operation_result = self.client.change_apm_domain_compartment(apm_domain_id, change_apm_domain_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -87,8 +88,9 @@ class ApmDomainClientCompositeOperations(object):
         operation_result = self.client.create_apm_domain(create_apm_domain_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -133,8 +135,9 @@ class ApmDomainClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -174,8 +177,9 @@ class ApmDomainClientCompositeOperations(object):
         operation_result = self.client.generate_data_keys(generate_data_keys_list_details, apm_domain_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -215,8 +219,9 @@ class ApmDomainClientCompositeOperations(object):
         operation_result = self.client.remove_data_keys(apm_domain_id, remove_data_keys_list_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -256,8 +261,9 @@ class ApmDomainClientCompositeOperations(object):
         operation_result = self.client.update_apm_domain(apm_domain_id, update_apm_domain_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:

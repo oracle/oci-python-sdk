@@ -49,7 +49,6 @@ class BudgetClientCompositeOperations(object):
         operation_result = self.client.create_alert_rule(budget_id, create_alert_rule_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         alert_rule_id = operation_result.data.id
 
@@ -92,7 +91,6 @@ class BudgetClientCompositeOperations(object):
         operation_result = self.client.create_budget(create_budget_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         budget_id = operation_result.data.id
 
@@ -144,7 +142,6 @@ class BudgetClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -201,7 +198,6 @@ class BudgetClientCompositeOperations(object):
         operation_result = self.client.update_alert_rule(budget_id, alert_rule_id, update_alert_rule_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         alert_rule_id = operation_result.data.id
 
@@ -247,7 +243,6 @@ class BudgetClientCompositeOperations(object):
         operation_result = self.client.update_budget(budget_id, update_budget_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         budget_id = operation_result.data.id
 

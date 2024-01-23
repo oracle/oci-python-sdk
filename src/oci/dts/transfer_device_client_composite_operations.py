@@ -52,7 +52,6 @@ class TransferDeviceClientCompositeOperations(object):
         operation_result = self.client.update_transfer_device(id, transfer_device_label, update_transfer_device_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         id = operation_result.data.id
 

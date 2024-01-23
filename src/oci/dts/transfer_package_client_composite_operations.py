@@ -46,7 +46,6 @@ class TransferPackageClientCompositeOperations(object):
         operation_result = self.client.create_transfer_package(id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         id = operation_result.data.id
 
@@ -95,7 +94,6 @@ class TransferPackageClientCompositeOperations(object):
         operation_result = self.client.update_transfer_package(id, transfer_package_label, update_transfer_package_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         id = operation_result.data.id
 

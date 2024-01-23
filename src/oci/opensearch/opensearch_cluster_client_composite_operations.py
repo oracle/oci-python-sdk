@@ -49,8 +49,9 @@ class OpensearchClusterClientCompositeOperations(object):
         operation_result = self.client.backup_opensearch_cluster(opensearch_cluster_id, backup_opensearch_cluster_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -87,8 +88,9 @@ class OpensearchClusterClientCompositeOperations(object):
         operation_result = self.client.create_opensearch_cluster(create_opensearch_cluster_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -133,8 +135,9 @@ class OpensearchClusterClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -174,8 +177,9 @@ class OpensearchClusterClientCompositeOperations(object):
         operation_result = self.client.opensearch_cluster_restore(opensearch_cluster_id, restore_opensearch_cluster_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -215,8 +219,9 @@ class OpensearchClusterClientCompositeOperations(object):
         operation_result = self.client.resize_opensearch_cluster_horizontal(opensearch_cluster_id, resize_opensearch_cluster_horizontal_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -256,8 +261,9 @@ class OpensearchClusterClientCompositeOperations(object):
         operation_result = self.client.resize_opensearch_cluster_vertical(opensearch_cluster_id, resize_opensearch_cluster_vertical_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -297,8 +303,9 @@ class OpensearchClusterClientCompositeOperations(object):
         operation_result = self.client.update_opensearch_cluster(opensearch_cluster_id, update_opensearch_cluster_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:

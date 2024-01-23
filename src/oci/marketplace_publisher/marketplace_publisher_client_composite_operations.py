@@ -46,7 +46,6 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.activate_term_version(term_version_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         term_version_id = operation_result.data.id
 
@@ -89,8 +88,9 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.cascading_delete_listing(listing_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -127,8 +127,9 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.cascading_delete_listing_revision(listing_revision_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -165,7 +166,6 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.change_listing_revision_to_new_status(listing_revision_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         listing_revision_id = operation_result.data.id
 
@@ -208,8 +208,9 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.clone_listing_revision(listing_revision_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -246,8 +247,9 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.create_artifact(create_artifact_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -284,7 +286,6 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.create_listing(create_listing_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         listing_id = operation_result.data.id
 
@@ -327,7 +328,6 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.create_listing_revision(create_listing_revision_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         listing_revision_id = operation_result.data.id
 
@@ -370,7 +370,6 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.create_listing_revision_attachment(create_listing_revision_attachment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         listing_revision_attachment_id = operation_result.data.id
 
@@ -413,7 +412,6 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.create_listing_revision_note(create_listing_revision_note_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         listing_revision_note_id = operation_result.data.id
 
@@ -456,7 +454,6 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.create_listing_revision_package(create_listing_revision_package_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         listing_revision_package_id = operation_result.data.id
 
@@ -499,7 +496,6 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.create_term(create_term_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         term_id = operation_result.data.id
 
@@ -545,7 +541,6 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.create_term_version(create_term_version_content, term_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         term_version_id = operation_result.data.id
 
@@ -596,8 +591,9 @@ class MarketplacePublisherClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -643,7 +639,6 @@ class MarketplacePublisherClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -703,7 +698,6 @@ class MarketplacePublisherClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -763,7 +757,6 @@ class MarketplacePublisherClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -823,7 +816,6 @@ class MarketplacePublisherClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -883,7 +875,6 @@ class MarketplacePublisherClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -943,7 +934,6 @@ class MarketplacePublisherClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -1003,7 +993,6 @@ class MarketplacePublisherClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -1054,8 +1043,9 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.mark_listing_revision_package_as_default(listing_revision_package_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1092,8 +1082,9 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.publish_listing_revision(listing_revision_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1133,8 +1124,9 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.publish_listing_revision_as_private(publish_listing_revision_as_private_details, listing_revision_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1171,8 +1163,9 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.publish_listing_revision_package(listing_revision_package_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1212,7 +1205,6 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.submit_listing_revision_for_review(submit_listing_revision_for_review_details, listing_revision_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         listing_revision_id = operation_result.data.id
 
@@ -1255,8 +1247,9 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.un_publish_listing_revision_package(listing_revision_package_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1296,8 +1289,9 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.update_artifact(artifact_id, update_artifact_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1337,7 +1331,6 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.update_listing(listing_id, update_listing_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         listing_id = operation_result.data.id
 
@@ -1383,7 +1376,6 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.update_listing_revision(listing_revision_id, update_listing_revision_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         listing_revision_id = operation_result.data.id
 
@@ -1429,7 +1421,6 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.update_listing_revision_attachment(listing_revision_attachment_id, update_listing_revision_attachment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         listing_revision_attachment_id = operation_result.data.id
 
@@ -1475,7 +1466,6 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.update_listing_revision_attachment_content(listing_revision_attachment_id, update_listing_revision_attachment_content, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         listing_revision_attachment_id = operation_result.data.id
 
@@ -1521,7 +1511,6 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.update_listing_revision_icon_content(listing_revision_id, update_listing_revision_icon_content, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         listing_revision_id = operation_result.data.id
 
@@ -1567,7 +1556,6 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.update_listing_revision_package(listing_revision_package_id, update_listing_revision_package_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         listing_revision_package_id = operation_result.data.id
 
@@ -1613,7 +1601,6 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.update_term(term_id, update_term_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         term_id = operation_result.data.id
 
@@ -1659,7 +1646,6 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.update_term_version(term_version_id, update_term_version_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         term_version_id = operation_result.data.id
 
@@ -1705,7 +1691,6 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.update_term_version_content(term_version_id, update_term_version_content, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         term_version_id = operation_result.data.id
 
@@ -1748,8 +1733,9 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.validate_and_publish_artifact(artifact_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1786,8 +1772,9 @@ class MarketplacePublisherClientCompositeOperations(object):
         operation_result = self.client.withdraw_listing_revision(listing_revision_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:

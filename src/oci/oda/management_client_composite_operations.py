@@ -51,8 +51,9 @@ class ManagementClientCompositeOperations(object):
         operation_result = self.client.change_oda_private_endpoint_compartment(oda_private_endpoint_id, change_oda_private_endpoint_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -92,7 +93,6 @@ class ManagementClientCompositeOperations(object):
         operation_result = self.client.create_authentication_provider(oda_instance_id, create_authentication_provider_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         authentication_provider_id = operation_result.data.id
 
@@ -138,8 +138,9 @@ class ManagementClientCompositeOperations(object):
         operation_result = self.client.create_digital_assistant(oda_instance_id, create_digital_assistant_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -176,8 +177,9 @@ class ManagementClientCompositeOperations(object):
         operation_result = self.client.create_oda_private_endpoint(create_oda_private_endpoint_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -214,8 +216,9 @@ class ManagementClientCompositeOperations(object):
         operation_result = self.client.create_oda_private_endpoint_attachment(create_oda_private_endpoint_attachment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -257,8 +260,9 @@ class ManagementClientCompositeOperations(object):
         operation_result = self.client.create_oda_private_endpoint_scan_proxy(create_oda_private_endpoint_scan_proxy_details, oda_private_endpoint_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -298,8 +302,9 @@ class ManagementClientCompositeOperations(object):
         operation_result = self.client.create_skill(oda_instance_id, create_skill_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -342,7 +347,6 @@ class ManagementClientCompositeOperations(object):
         operation_result = self.client.create_skill_parameter(oda_instance_id, skill_id, create_skill_parameter_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         oda_instance_id = operation_result.data.id
 
@@ -388,7 +392,6 @@ class ManagementClientCompositeOperations(object):
         operation_result = self.client.create_translator(oda_instance_id, create_translator_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         translator_id = operation_result.data.id
 
@@ -441,8 +444,9 @@ class ManagementClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -489,8 +493,9 @@ class ManagementClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -540,8 +545,9 @@ class ManagementClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -584,8 +590,9 @@ class ManagementClientCompositeOperations(object):
         operation_result = self.client.export_digital_assistant(oda_instance_id, digital_assistant_id, export_digital_assistant_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -628,8 +635,9 @@ class ManagementClientCompositeOperations(object):
         operation_result = self.client.export_skill(oda_instance_id, skill_id, export_skill_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -669,8 +677,9 @@ class ManagementClientCompositeOperations(object):
         operation_result = self.client.import_bot(oda_instance_id, import_bot_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -710,7 +719,6 @@ class ManagementClientCompositeOperations(object):
         operation_result = self.client.publish_digital_assistant(oda_instance_id, digital_assistant_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         digital_assistant_id = operation_result.data.id
 
@@ -756,7 +764,6 @@ class ManagementClientCompositeOperations(object):
         operation_result = self.client.publish_skill(oda_instance_id, skill_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         skill_id = operation_result.data.id
 
@@ -802,7 +809,6 @@ class ManagementClientCompositeOperations(object):
         operation_result = self.client.start_channel(oda_instance_id, channel_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         channel_id = operation_result.data.id
 
@@ -848,7 +854,6 @@ class ManagementClientCompositeOperations(object):
         operation_result = self.client.stop_channel(oda_instance_id, channel_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         channel_id = operation_result.data.id
 
@@ -897,7 +902,6 @@ class ManagementClientCompositeOperations(object):
         operation_result = self.client.update_authentication_provider(oda_instance_id, authentication_provider_id, update_authentication_provider_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         authentication_provider_id = operation_result.data.id
 
@@ -946,7 +950,6 @@ class ManagementClientCompositeOperations(object):
         operation_result = self.client.update_channel(oda_instance_id, channel_id, update_channel_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         channel_id = operation_result.data.id
 
@@ -995,7 +998,6 @@ class ManagementClientCompositeOperations(object):
         operation_result = self.client.update_digital_assistant(oda_instance_id, digital_assistant_id, update_digital_assistant_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         digital_assistant_id = operation_result.data.id
 
@@ -1047,7 +1049,6 @@ class ManagementClientCompositeOperations(object):
         operation_result = self.client.update_digital_assistant_parameter(oda_instance_id, digital_assistant_id, parameter_name, update_digital_assistant_parameter_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         oda_instance_id = operation_result.data.id
 
@@ -1095,8 +1096,9 @@ class ManagementClientCompositeOperations(object):
         operation_result = self.client.update_oda_private_endpoint(oda_private_endpoint_id, update_oda_private_endpoint_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1139,7 +1141,6 @@ class ManagementClientCompositeOperations(object):
         operation_result = self.client.update_skill(oda_instance_id, skill_id, update_skill_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         skill_id = operation_result.data.id
 
@@ -1191,7 +1192,6 @@ class ManagementClientCompositeOperations(object):
         operation_result = self.client.update_skill_parameter(oda_instance_id, skill_id, parameter_name, update_skill_parameter_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         oda_instance_id = operation_result.data.id
 
@@ -1240,7 +1240,6 @@ class ManagementClientCompositeOperations(object):
         operation_result = self.client.update_translator(oda_instance_id, translator_id, update_translator_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         translator_id = operation_result.data.id
 

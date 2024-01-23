@@ -49,8 +49,9 @@ class ServiceCatalogClientCompositeOperations(object):
         operation_result = self.client.change_private_application_compartment(private_application_id, change_private_application_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -87,8 +88,9 @@ class ServiceCatalogClientCompositeOperations(object):
         operation_result = self.client.create_private_application(create_private_application_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -125,7 +127,6 @@ class ServiceCatalogClientCompositeOperations(object):
         operation_result = self.client.create_service_catalog(create_service_catalog_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         service_catalog_id = operation_result.data.id
 
@@ -176,8 +177,9 @@ class ServiceCatalogClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -223,7 +225,6 @@ class ServiceCatalogClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -277,8 +278,9 @@ class ServiceCatalogClientCompositeOperations(object):
         operation_result = self.client.update_private_application(private_application_id, update_private_application_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -318,7 +320,6 @@ class ServiceCatalogClientCompositeOperations(object):
         operation_result = self.client.update_service_catalog(service_catalog_id, update_service_catalog_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         service_catalog_id = operation_result.data.id
 

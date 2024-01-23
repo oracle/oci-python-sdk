@@ -46,7 +46,6 @@ class VaultsClientCompositeOperations(object):
         operation_result = self.client.create_secret(create_secret_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         secret_id = operation_result.data.id
 
@@ -92,7 +91,6 @@ class VaultsClientCompositeOperations(object):
         operation_result = self.client.update_secret(secret_id, update_secret_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         secret_id = operation_result.data.id
 

@@ -46,7 +46,6 @@ class EkmClientCompositeOperations(object):
         operation_result = self.client.create_ekms_private_endpoint(create_ekms_private_endpoint_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         ekms_private_endpoint_id = operation_result.data.id
 
@@ -98,7 +97,6 @@ class EkmClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -152,7 +150,6 @@ class EkmClientCompositeOperations(object):
         operation_result = self.client.update_ekms_private_endpoint(ekms_private_endpoint_id, update_ekms_private_endpoint_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         ekms_private_endpoint_id = operation_result.data.id
 

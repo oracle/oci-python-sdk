@@ -46,7 +46,6 @@ class DataLabelingClientCompositeOperations(object):
         operation_result = self.client.create_annotation(create_annotation_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         annotation_id = operation_result.data.id
 
@@ -89,7 +88,6 @@ class DataLabelingClientCompositeOperations(object):
         operation_result = self.client.create_record(create_record_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         record_id = operation_result.data.id
 
@@ -141,7 +139,6 @@ class DataLabelingClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -201,7 +198,6 @@ class DataLabelingClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -255,7 +251,6 @@ class DataLabelingClientCompositeOperations(object):
         operation_result = self.client.update_annotation(annotation_id, update_annotation_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         annotation_id = operation_result.data.id
 
@@ -301,7 +296,6 @@ class DataLabelingClientCompositeOperations(object):
         operation_result = self.client.update_record(record_id, update_record_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         record_id = operation_result.data.id
 

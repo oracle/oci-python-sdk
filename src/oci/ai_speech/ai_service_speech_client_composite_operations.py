@@ -46,7 +46,6 @@ class AIServiceSpeechClientCompositeOperations(object):
         operation_result = self.client.create_transcription_job(create_transcription_job_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         transcription_job_id = operation_result.data.id
 
@@ -92,7 +91,6 @@ class AIServiceSpeechClientCompositeOperations(object):
         operation_result = self.client.update_transcription_job(transcription_job_id, update_transcription_job_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         transcription_job_id = operation_result.data.id
 

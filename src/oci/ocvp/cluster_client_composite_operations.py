@@ -46,8 +46,9 @@ class ClusterClientCompositeOperations(object):
         operation_result = self.client.create_cluster(create_cluster_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -94,8 +95,9 @@ class ClusterClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -137,7 +139,6 @@ class ClusterClientCompositeOperations(object):
         operation_result = self.client.update_cluster(cluster_id, update_cluster_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         cluster_id = operation_result.data.id
 

@@ -46,7 +46,6 @@ class ComputeCloudAtCustomerClientCompositeOperations(object):
         operation_result = self.client.create_ccc_infrastructure(create_ccc_infrastructure_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         ccc_infrastructure_id = operation_result.data.id
 
@@ -89,7 +88,6 @@ class ComputeCloudAtCustomerClientCompositeOperations(object):
         operation_result = self.client.create_ccc_upgrade_schedule(create_ccc_upgrade_schedule_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         ccc_upgrade_schedule_id = operation_result.data.id
 
@@ -144,7 +142,6 @@ class ComputeCloudAtCustomerClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -207,7 +204,6 @@ class ComputeCloudAtCustomerClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -264,7 +260,6 @@ class ComputeCloudAtCustomerClientCompositeOperations(object):
         operation_result = self.client.update_ccc_infrastructure(ccc_infrastructure_id, update_ccc_infrastructure_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         ccc_infrastructure_id = operation_result.data.id
 
@@ -313,7 +308,6 @@ class ComputeCloudAtCustomerClientCompositeOperations(object):
         operation_result = self.client.update_ccc_upgrade_schedule(ccc_upgrade_schedule_id, update_ccc_upgrade_schedule_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         ccc_upgrade_schedule_id = operation_result.data.id
 

@@ -56,8 +56,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.activate_exadata_infrastructure(exadata_infrastructure_id, activate_exadata_infrastructure_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -95,7 +96,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.activate_exadata_infrastructure(exadata_infrastructure_id, activate_exadata_infrastructure_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         exadata_infrastructure_id = operation_result.data.id
 
@@ -141,8 +141,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.add_storage_capacity_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -177,7 +178,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.add_storage_capacity_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         cloud_exadata_infrastructure_id = operation_result.data.id
 
@@ -223,8 +223,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.add_storage_capacity_exadata_infrastructure(exadata_infrastructure_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -259,7 +260,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.add_storage_capacity_exadata_infrastructure(exadata_infrastructure_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         exadata_infrastructure_id = operation_result.data.id
 
@@ -308,8 +308,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.add_virtual_machine_to_cloud_vm_cluster(add_virtual_machine_to_cloud_vm_cluster_details, cloud_vm_cluster_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -347,7 +348,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.add_virtual_machine_to_cloud_vm_cluster(add_virtual_machine_to_cloud_vm_cluster_details, cloud_vm_cluster_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         cloud_vm_cluster_id = operation_result.data.id
 
@@ -396,8 +396,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.add_virtual_machine_to_vm_cluster(add_virtual_machine_to_vm_cluster_details, vm_cluster_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -435,7 +436,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.add_virtual_machine_to_vm_cluster(add_virtual_machine_to_vm_cluster_details, vm_cluster_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         vm_cluster_id = operation_result.data.id
 
@@ -484,8 +484,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.autonomous_database_manual_refresh(autonomous_database_id, autonomous_database_manual_refresh_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -523,7 +524,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.autonomous_database_manual_refresh(autonomous_database_id, autonomous_database_manual_refresh_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_database_id = operation_result.data.id
 
@@ -569,8 +569,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.cancel_backup(backup_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -609,8 +610,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.change_autonomous_container_database_compartment(change_compartment_details, autonomous_container_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -649,8 +651,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.change_autonomous_database_compartment(change_compartment_details, autonomous_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -689,8 +692,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.change_autonomous_exadata_infrastructure_compartment(change_compartment_details, autonomous_exadata_infrastructure_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -729,8 +733,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.change_autonomous_vm_cluster_compartment(change_autonomous_vm_cluster_compartment_details, autonomous_vm_cluster_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -769,8 +774,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.change_backup_destination_compartment(change_compartment_details, backup_destination_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -809,8 +815,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.change_cloud_autonomous_vm_cluster_compartment(change_cloud_autonomous_vm_cluster_compartment_details, cloud_autonomous_vm_cluster_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -849,8 +856,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.change_cloud_exadata_infrastructure_compartment(change_cloud_exadata_infrastructure_compartment_details, cloud_exadata_infrastructure_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -889,8 +897,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.change_cloud_vm_cluster_compartment(change_cloud_vm_cluster_compartment_details, cloud_vm_cluster_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -929,8 +938,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.change_database_software_image_compartment(change_compartment_details, database_software_image_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -969,8 +979,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.change_dataguard_role(change_dataguard_role_details, autonomous_container_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -1008,7 +1019,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.change_dataguard_role(change_dataguard_role_details, autonomous_container_database_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_container_database_id = operation_result.data.id
 
@@ -1064,8 +1074,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.change_db_system_compartment(change_compartment_details, db_system_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -1104,8 +1115,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.change_disaster_recovery_configuration(autonomous_database_id, change_disaster_recovery_configuration_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -1143,7 +1155,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.change_disaster_recovery_configuration(autonomous_database_id, change_disaster_recovery_configuration_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_database_id = operation_result.data.id
 
@@ -1192,8 +1203,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.change_exadata_infrastructure_compartment(change_exadata_infrastructure_compartment_details, exadata_infrastructure_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -1232,8 +1244,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.change_external_container_database_compartment(change_compartment_details, external_container_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -1272,8 +1285,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.change_external_non_container_database_compartment(change_compartment_details, external_non_container_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -1314,8 +1328,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.change_external_pluggable_database_compartment(change_compartment_details, external_pluggable_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -1354,8 +1369,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.change_key_store_compartment(change_key_store_compartment_details, key_store_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -1394,8 +1410,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.change_key_store_type(database_id, change_key_store_type_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -1434,8 +1451,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.change_oneoff_patch_compartment(change_compartment_details, oneoff_patch_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -1474,8 +1492,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.change_vm_cluster_compartment(change_vm_cluster_compartment_details, vm_cluster_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -1512,8 +1531,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.check_external_database_connector_connection_status(external_database_connector_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -1552,8 +1572,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.complete_external_backup_job(backup_id, complete_external_backup_job_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -1594,8 +1615,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.configure_autonomous_database_vault_key(autonomous_database_id, configure_autonomous_database_vault_key_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -1634,8 +1656,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.configure_saas_admin_user(autonomous_database_id, configure_saas_admin_user_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -1673,7 +1696,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.configure_saas_admin_user(autonomous_database_id, configure_saas_admin_user_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_database_id = operation_result.data.id
 
@@ -1722,8 +1744,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.convert_to_pdb(database_id, convert_to_pdb_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -1761,7 +1784,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.convert_to_pdb(database_id, convert_to_pdb_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         database_id = operation_result.data.id
 
@@ -1810,8 +1832,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.convert_to_regular_pluggable_database(convert_to_regular_pluggable_database_details, pluggable_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -1849,7 +1872,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.convert_to_regular_pluggable_database(convert_to_regular_pluggable_database_details, pluggable_database_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         pluggable_database_id = operation_result.data.id
 
@@ -1893,8 +1915,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_application_vip(create_application_vip_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -1927,7 +1950,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_application_vip(create_application_vip_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         application_vip_id = operation_result.data.id
 
@@ -1971,8 +1993,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_autonomous_container_database(create_autonomous_container_database_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -2005,7 +2028,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_autonomous_container_database(create_autonomous_container_database_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_container_database_id = operation_result.data.id
 
@@ -2054,8 +2076,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_autonomous_container_database_dataguard_association(autonomous_container_database_id, create_autonomous_container_database_dataguard_association_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -2093,7 +2116,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_autonomous_container_database_dataguard_association(autonomous_container_database_id, create_autonomous_container_database_dataguard_association_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_container_database_dataguard_association_id = operation_result.data.id
 
@@ -2137,8 +2159,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_autonomous_database(create_autonomous_database_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -2171,7 +2194,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_autonomous_database(create_autonomous_database_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_database_id = operation_result.data.id
 
@@ -2215,8 +2237,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_autonomous_database_backup(create_autonomous_database_backup_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -2249,7 +2272,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_autonomous_database_backup(create_autonomous_database_backup_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_database_backup_id = operation_result.data.id
 
@@ -2293,8 +2315,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_autonomous_vm_cluster(create_autonomous_vm_cluster_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -2327,7 +2350,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_autonomous_vm_cluster(create_autonomous_vm_cluster_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_vm_cluster_id = operation_result.data.id
 
@@ -2371,8 +2393,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_backup(create_backup_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -2405,7 +2428,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_backup(create_backup_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         backup_id = operation_result.data.id
 
@@ -2448,7 +2470,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_backup_destination(create_backup_destination_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         backup_destination_id = operation_result.data.id
 
@@ -2492,8 +2513,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_cloud_autonomous_vm_cluster(create_cloud_autonomous_vm_cluster_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -2526,7 +2548,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_cloud_autonomous_vm_cluster(create_cloud_autonomous_vm_cluster_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         cloud_autonomous_vm_cluster_id = operation_result.data.id
 
@@ -2572,8 +2593,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_cloud_exadata_infrastructure(create_cloud_exadata_infrastructure_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -2608,7 +2630,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_cloud_exadata_infrastructure(create_cloud_exadata_infrastructure_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         cloud_exadata_infrastructure_id = operation_result.data.id
 
@@ -2654,8 +2675,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_cloud_vm_cluster(create_cloud_vm_cluster_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -2690,7 +2712,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_cloud_vm_cluster(create_cloud_vm_cluster_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         cloud_vm_cluster_id = operation_result.data.id
 
@@ -2739,8 +2760,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_console_connection(create_console_connection_details, db_node_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -2778,7 +2800,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_console_connection(create_console_connection_details, db_node_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         console_connection_id = operation_result.data.id
 
@@ -2827,8 +2848,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_console_history(create_console_history_details, db_node_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -2866,7 +2888,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_console_history(create_console_history_details, db_node_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         console_history_id = operation_result.data.id
 
@@ -2915,8 +2936,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_data_guard_association(database_id, create_data_guard_association_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -2954,7 +2976,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_data_guard_association(database_id, create_data_guard_association_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         data_guard_association_id = operation_result.data.id
 
@@ -2998,8 +3019,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_database(create_new_database_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -3032,7 +3054,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_database(create_new_database_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         database_id = operation_result.data.id
 
@@ -3076,8 +3097,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_database_software_image(create_database_software_image_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -3110,7 +3132,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_database_software_image(create_database_software_image_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         database_software_image_id = operation_result.data.id
 
@@ -3154,8 +3175,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_db_home(create_db_home_with_db_system_id_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -3188,7 +3210,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_db_home(create_db_home_with_db_system_id_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         db_home_id = operation_result.data.id
 
@@ -3232,8 +3253,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_exadata_infrastructure(create_exadata_infrastructure_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -3266,7 +3288,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_exadata_infrastructure(create_exadata_infrastructure_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         exadata_infrastructure_id = operation_result.data.id
 
@@ -3310,8 +3331,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_external_backup_job(create_external_backup_job_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -3345,8 +3367,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_external_container_database(create_external_container_database_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -3379,7 +3402,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_external_container_database(create_external_container_database_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         external_container_database_id = operation_result.data.id
 
@@ -3423,8 +3445,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_external_database_connector(create_external_database_connector_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -3457,7 +3480,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_external_database_connector(create_external_database_connector_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         external_database_connector_id = operation_result.data.id
 
@@ -3501,8 +3523,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_external_non_container_database(create_external_non_container_database_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -3535,7 +3558,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_external_non_container_database(create_external_non_container_database_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         external_non_container_database_id = operation_result.data.id
 
@@ -3579,8 +3601,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_external_pluggable_database(create_external_pluggable_database_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -3613,7 +3636,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_external_pluggable_database(create_external_pluggable_database_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         external_pluggable_database_id = operation_result.data.id
 
@@ -3656,7 +3678,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_key_store(create_key_store_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         key_store_id = operation_result.data.id
 
@@ -3699,7 +3720,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_maintenance_run(create_maintenance_run_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         maintenance_run_id = operation_result.data.id
 
@@ -3743,8 +3763,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_oneoff_patch(create_oneoff_patch_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -3777,7 +3798,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_oneoff_patch(create_oneoff_patch_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         oneoff_patch_id = operation_result.data.id
 
@@ -3821,8 +3841,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_pluggable_database(create_pluggable_database_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -3855,7 +3876,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_pluggable_database(create_pluggable_database_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         pluggable_database_id = operation_result.data.id
 
@@ -3900,8 +3920,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_vm_cluster(create_vm_cluster_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -3935,7 +3956,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_vm_cluster(create_vm_cluster_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         vm_cluster_id = operation_result.data.id
 
@@ -3984,8 +4004,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_vm_cluster_network(exadata_infrastructure_id, vm_cluster_network_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -4023,7 +4044,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.create_vm_cluster_network(exadata_infrastructure_id, vm_cluster_network_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         vm_cluster_network_id = operation_result.data.id
 
@@ -4074,8 +4094,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.db_node_action(db_node_id, action, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -4115,7 +4136,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.db_node_action(db_node_id, action, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         db_node_id = operation_result.data.id
 
@@ -4161,8 +4181,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.delete_application_vip(application_vip_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -4198,8 +4219,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.delete_autonomous_database(autonomous_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -4235,8 +4257,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.delete_autonomous_database_backup(autonomous_database_backup_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -4272,8 +4295,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.delete_autonomous_vm_cluster(autonomous_vm_cluster_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -4309,8 +4333,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.delete_backup(backup_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -4354,7 +4379,6 @@ class DatabaseClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -4408,8 +4432,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.delete_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -4445,8 +4470,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.delete_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -4482,8 +4508,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.delete_cloud_vm_cluster(cloud_vm_cluster_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -4522,8 +4549,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.delete_console_connection(db_node_id, console_connection_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -4562,8 +4590,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.delete_console_history(db_node_id, console_history_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -4599,8 +4628,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.delete_database(database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -4636,8 +4666,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.delete_database_software_image(database_software_image_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -4673,8 +4704,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.delete_db_home(db_home_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -4710,8 +4742,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.delete_exadata_infrastructure(exadata_infrastructure_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -4747,8 +4780,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.delete_external_container_database(external_container_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -4785,8 +4819,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.delete_external_database_connector(external_database_connector_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -4822,8 +4857,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.delete_external_non_container_database(external_non_container_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -4859,8 +4895,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.delete_external_pluggable_database(external_pluggable_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -4904,7 +4941,6 @@ class DatabaseClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -4958,8 +4994,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.delete_oneoff_patch(oneoff_patch_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -4995,8 +5032,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.delete_pluggable_database(pluggable_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -5032,8 +5070,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.delete_vm_cluster(vm_cluster_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -5074,8 +5113,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.delete_vm_cluster_network(exadata_infrastructure_id, vm_cluster_network_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -5111,8 +5151,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.deregister_autonomous_database_data_safe(autonomous_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -5148,8 +5189,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.disable_autonomous_database_management(autonomous_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -5185,8 +5227,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.disable_autonomous_database_operations_insights(autonomous_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -5222,8 +5265,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.disable_database_management(database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -5258,7 +5302,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.disable_database_management(database_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         database_id = operation_result.data.id
 
@@ -5304,8 +5347,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.disable_external_container_database_database_management(external_container_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -5341,8 +5385,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.disable_external_container_database_stack_monitoring(external_container_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -5378,8 +5423,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.disable_external_non_container_database_database_management(external_non_container_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -5415,8 +5461,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.disable_external_non_container_database_operations_insights(external_non_container_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -5452,8 +5499,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.disable_external_non_container_database_stack_monitoring(external_non_container_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -5489,8 +5537,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.disable_external_pluggable_database_database_management(external_pluggable_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -5526,8 +5575,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.disable_external_pluggable_database_operations_insights(external_pluggable_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -5563,8 +5613,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.disable_external_pluggable_database_stack_monitoring(external_pluggable_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -5600,8 +5651,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.disable_pluggable_database_management(pluggable_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -5636,7 +5688,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.disable_pluggable_database_management(pluggable_database_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         pluggable_database_id = operation_result.data.id
 
@@ -5682,8 +5733,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.enable_autonomous_database_management(autonomous_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -5719,8 +5771,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.enable_autonomous_database_operations_insights(autonomous_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -5759,8 +5812,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.enable_database_management(database_id, enable_database_management_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -5798,7 +5852,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.enable_database_management(database_id, enable_database_management_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         database_id = operation_result.data.id
 
@@ -5847,8 +5900,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.enable_external_container_database_database_management(external_container_database_id, enable_external_container_database_database_management_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -5887,8 +5941,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.enable_external_container_database_stack_monitoring(external_container_database_id, enable_external_container_database_stack_monitoring_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -5927,8 +5982,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.enable_external_non_container_database_database_management(external_non_container_database_id, enable_external_non_container_database_database_management_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -5967,8 +6023,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.enable_external_non_container_database_operations_insights(external_non_container_database_id, enable_external_non_container_database_operations_insights_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -6007,8 +6064,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.enable_external_non_container_database_stack_monitoring(external_non_container_database_id, enable_external_non_container_database_stack_monitoring_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -6047,8 +6105,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.enable_external_pluggable_database_database_management(external_pluggable_database_id, enable_external_pluggable_database_database_management_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -6087,8 +6146,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.enable_external_pluggable_database_operations_insights(external_pluggable_database_id, enable_external_pluggable_database_operations_insights_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -6127,8 +6187,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.enable_external_pluggable_database_stack_monitoring(external_pluggable_database_id, enable_external_pluggable_database_stack_monitoring_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -6167,8 +6228,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.enable_pluggable_database_management(pluggable_database_id, enable_pluggable_database_management_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -6206,7 +6268,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.enable_pluggable_database_management(pluggable_database_id, enable_pluggable_database_management_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         pluggable_database_id = operation_result.data.id
 
@@ -6252,8 +6313,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.fail_over_autonomous_database(autonomous_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -6288,7 +6350,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.fail_over_autonomous_database(autonomous_database_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_database_id = operation_result.data.id
 
@@ -6339,8 +6400,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.failover_autonomous_container_database_dataguard_association(autonomous_container_database_id, autonomous_container_database_dataguard_association_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -6380,7 +6442,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.failover_autonomous_container_database_dataguard_association(autonomous_container_database_id, autonomous_container_database_dataguard_association_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_container_database_dataguard_association_id = operation_result.data.id
 
@@ -6434,8 +6495,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.failover_data_guard_association(database_id, data_guard_association_id, failover_data_guard_association_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -6478,7 +6540,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.failover_data_guard_association(database_id, data_guard_association_id, failover_data_guard_association_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         data_guard_association_id = operation_result.data.id
 
@@ -6522,8 +6583,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.launch_autonomous_exadata_infrastructure(launch_autonomous_exadata_infrastructure_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -6556,7 +6618,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.launch_autonomous_exadata_infrastructure(launch_autonomous_exadata_infrastructure_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_exadata_infrastructure_id = operation_result.data.id
 
@@ -6607,8 +6668,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.launch_db_system(launch_db_system_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -6648,7 +6710,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.launch_db_system(launch_db_system_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         db_system_id = operation_result.data.id
 
@@ -6697,8 +6758,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.local_clone_pluggable_database(local_clone_pluggable_database_details, pluggable_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -6736,7 +6798,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.local_clone_pluggable_database(local_clone_pluggable_database_details, pluggable_database_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         pluggable_database_id = operation_result.data.id
 
@@ -6782,8 +6843,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.migrate_exadata_db_system_resource_model(db_system_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -6822,8 +6884,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.migrate_vault_key(database_id, migrate_vault_key_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -6861,7 +6924,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.migrate_vault_key(database_id, migrate_vault_key_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         database_id = operation_result.data.id
 
@@ -6910,8 +6972,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.modify_database_management(database_id, modify_database_management_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -6949,7 +7012,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.modify_database_management(database_id, modify_database_management_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         database_id = operation_result.data.id
 
@@ -6998,8 +7060,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.modify_pluggable_database_management(pluggable_database_id, modify_pluggable_database_management_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -7037,7 +7100,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.modify_pluggable_database_management(pluggable_database_id, modify_pluggable_database_management_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         pluggable_database_id = operation_result.data.id
 
@@ -7083,8 +7145,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.refresh_pluggable_database(pluggable_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -7119,7 +7182,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.refresh_pluggable_database(pluggable_database_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         pluggable_database_id = operation_result.data.id
 
@@ -7165,8 +7227,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.register_autonomous_database_data_safe(autonomous_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -7207,8 +7270,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.reinstate_autonomous_container_database_dataguard_association(autonomous_container_database_id, autonomous_container_database_dataguard_association_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -7248,7 +7312,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.reinstate_autonomous_container_database_dataguard_association(autonomous_container_database_id, autonomous_container_database_dataguard_association_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_container_database_dataguard_association_id = operation_result.data.id
 
@@ -7302,8 +7365,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.reinstate_data_guard_association(database_id, data_guard_association_id, reinstate_data_guard_association_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -7346,7 +7410,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.reinstate_data_guard_association(database_id, data_guard_association_id, reinstate_data_guard_association_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         data_guard_association_id = operation_result.data.id
 
@@ -7395,8 +7458,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.remote_clone_pluggable_database(remote_clone_pluggable_database_details, pluggable_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -7434,7 +7498,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.remote_clone_pluggable_database(remote_clone_pluggable_database_details, pluggable_database_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         pluggable_database_id = operation_result.data.id
 
@@ -7483,8 +7546,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.remove_virtual_machine_from_cloud_vm_cluster(remove_virtual_machine_from_cloud_vm_cluster_details, cloud_vm_cluster_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -7522,7 +7586,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.remove_virtual_machine_from_cloud_vm_cluster(remove_virtual_machine_from_cloud_vm_cluster_details, cloud_vm_cluster_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         cloud_vm_cluster_id = operation_result.data.id
 
@@ -7571,8 +7634,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.remove_virtual_machine_from_vm_cluster(remove_virtual_machine_from_vm_cluster_details, vm_cluster_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -7610,7 +7674,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.remove_virtual_machine_from_vm_cluster(remove_virtual_machine_from_vm_cluster_details, vm_cluster_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         vm_cluster_id = operation_result.data.id
 
@@ -7664,8 +7727,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.resize_vm_cluster_network(exadata_infrastructure_id, vm_cluster_network_id, resize_vm_cluster_network_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -7708,7 +7772,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.resize_vm_cluster_network(exadata_infrastructure_id, vm_cluster_network_id, resize_vm_cluster_network_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         vm_cluster_network_id = operation_result.data.id
 
@@ -7754,8 +7817,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.restart_autonomous_container_database(autonomous_container_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -7790,7 +7854,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.restart_autonomous_container_database(autonomous_container_database_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_container_database_id = operation_result.data.id
 
@@ -7836,8 +7899,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.restart_autonomous_database(autonomous_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -7872,7 +7936,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.restart_autonomous_database(autonomous_database_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_database_id = operation_result.data.id
 
@@ -7921,8 +7984,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.restore_autonomous_database(autonomous_database_id, restore_autonomous_database_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -7960,7 +8024,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.restore_autonomous_database(autonomous_database_id, restore_autonomous_database_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_database_id = operation_result.data.id
 
@@ -8009,8 +8072,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.restore_database(database_id, restore_database_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -8048,7 +8112,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.restore_database(database_id, restore_database_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         database_id = operation_result.data.id
 
@@ -8094,8 +8157,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.rotate_autonomous_container_database_encryption_key(autonomous_container_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -8130,7 +8194,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.rotate_autonomous_container_database_encryption_key(autonomous_container_database_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_container_database_id = operation_result.data.id
 
@@ -8176,8 +8239,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.rotate_autonomous_database_encryption_key(autonomous_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -8212,7 +8276,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.rotate_autonomous_database_encryption_key(autonomous_database_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_database_id = operation_result.data.id
 
@@ -8261,8 +8324,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.rotate_autonomous_vm_cluster_ords_certs(rotate_autonomous_vm_cluster_ords_certs_details, autonomous_vm_cluster_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -8301,8 +8365,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.rotate_autonomous_vm_cluster_ssl_certs(rotate_autonomous_vm_cluster_ssl_certs_details, autonomous_vm_cluster_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -8338,8 +8403,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.rotate_cloud_autonomous_vm_cluster_ords_certs(cloud_autonomous_vm_cluster_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -8375,8 +8441,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.rotate_cloud_autonomous_vm_cluster_ssl_certs(cloud_autonomous_vm_cluster_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -8412,8 +8479,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.rotate_ords_certs(autonomous_exadata_infrastructure_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -8449,8 +8517,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.rotate_pluggable_database_encryption_key(pluggable_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -8486,8 +8555,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.rotate_ssl_certs(autonomous_exadata_infrastructure_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -8523,8 +8593,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.rotate_vault_key(database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -8559,7 +8630,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.rotate_vault_key(database_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         database_id = operation_result.data.id
 
@@ -8611,8 +8681,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.scan_external_container_database_pluggable_databases(external_container_database_id, external_database_connector_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -8648,8 +8719,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.shrink_autonomous_database(autonomous_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -8684,7 +8756,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.shrink_autonomous_database(autonomous_database_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_database_id = operation_result.data.id
 
@@ -8730,8 +8801,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.start_autonomous_database(autonomous_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -8766,7 +8838,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.start_autonomous_database(autonomous_database_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_database_id = operation_result.data.id
 
@@ -8812,8 +8883,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.start_pluggable_database(pluggable_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -8848,7 +8920,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.start_pluggable_database(pluggable_database_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         pluggable_database_id = operation_result.data.id
 
@@ -8894,8 +8965,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.stop_autonomous_database(autonomous_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -8930,7 +9002,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.stop_autonomous_database(autonomous_database_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_database_id = operation_result.data.id
 
@@ -8976,8 +9047,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.stop_pluggable_database(pluggable_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -9012,7 +9084,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.stop_pluggable_database(pluggable_database_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         pluggable_database_id = operation_result.data.id
 
@@ -9063,8 +9134,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.switchover_autonomous_container_database_dataguard_association(autonomous_container_database_id, autonomous_container_database_dataguard_association_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -9104,7 +9176,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.switchover_autonomous_container_database_dataguard_association(autonomous_container_database_id, autonomous_container_database_dataguard_association_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_container_database_dataguard_association_id = operation_result.data.id
 
@@ -9150,8 +9221,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.switchover_autonomous_database(autonomous_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -9186,7 +9258,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.switchover_autonomous_database(autonomous_database_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_database_id = operation_result.data.id
 
@@ -9240,8 +9311,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.switchover_data_guard_association(database_id, data_guard_association_id, switchover_data_guard_association_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -9284,7 +9356,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.switchover_data_guard_association(database_id, data_guard_association_id, switchover_data_guard_association_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         data_guard_association_id = operation_result.data.id
 
@@ -9330,8 +9401,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.terminate_autonomous_container_database(autonomous_container_database_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -9367,8 +9439,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.terminate_autonomous_exadata_infrastructure(autonomous_exadata_infrastructure_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -9404,8 +9477,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.terminate_db_system(db_system_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -9444,8 +9518,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_autonomous_container_database(autonomous_container_database_id, update_autonomous_container_database_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -9483,7 +9558,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_autonomous_container_database(autonomous_container_database_id, update_autonomous_container_database_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_container_database_id = operation_result.data.id
 
@@ -9537,8 +9611,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_autonomous_container_database_dataguard_association(autonomous_container_database_id, autonomous_container_database_dataguard_association_id, update_autonomous_container_database_data_guard_association_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -9581,7 +9656,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_autonomous_container_database_dataguard_association(autonomous_container_database_id, autonomous_container_database_dataguard_association_id, update_autonomous_container_database_data_guard_association_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_container_database_dataguard_association_id = operation_result.data.id
 
@@ -9630,8 +9704,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_autonomous_database(autonomous_database_id, update_autonomous_database_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -9669,7 +9744,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_autonomous_database(autonomous_database_id, update_autonomous_database_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_database_id = operation_result.data.id
 
@@ -9718,8 +9792,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_autonomous_database_backup(autonomous_database_backup_id, update_autonomous_database_backup_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -9757,7 +9832,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_autonomous_database_backup(autonomous_database_backup_id, update_autonomous_database_backup_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_database_backup_id = operation_result.data.id
 
@@ -9801,8 +9875,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_autonomous_database_regional_wallet(update_autonomous_database_wallet_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -9841,8 +9916,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_autonomous_database_wallet(autonomous_database_id, update_autonomous_database_wallet_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -9881,8 +9957,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_autonomous_exadata_infrastructure(autonomous_exadata_infrastructure_id, update_autonomous_exadata_infrastructures_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -9920,7 +9997,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_autonomous_exadata_infrastructure(autonomous_exadata_infrastructure_id, update_autonomous_exadata_infrastructures_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_exadata_infrastructure_id = operation_result.data.id
 
@@ -9969,8 +10045,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_autonomous_vm_cluster(autonomous_vm_cluster_id, update_autonomous_vm_cluster_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -10008,7 +10085,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_autonomous_vm_cluster(autonomous_vm_cluster_id, update_autonomous_vm_cluster_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         autonomous_vm_cluster_id = operation_result.data.id
 
@@ -10057,7 +10133,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_backup_destination(backup_destination_id, update_backup_destination_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         backup_destination_id = operation_result.data.id
 
@@ -10106,8 +10181,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id, update_cloud_autonomous_vm_cluster_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -10145,7 +10221,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id, update_cloud_autonomous_vm_cluster_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         cloud_autonomous_vm_cluster_id = operation_result.data.id
 
@@ -10194,8 +10269,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id, update_cloud_exadata_infrastructure_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -10233,7 +10309,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id, update_cloud_exadata_infrastructure_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         cloud_exadata_infrastructure_id = operation_result.data.id
 
@@ -10282,8 +10357,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_cloud_vm_cluster(cloud_vm_cluster_id, update_cloud_vm_cluster_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -10321,7 +10397,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_cloud_vm_cluster(cloud_vm_cluster_id, update_cloud_vm_cluster_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         cloud_vm_cluster_id = operation_result.data.id
 
@@ -10370,8 +10445,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_cloud_vm_cluster_iorm_config(cloud_vm_cluster_id, cloud_vm_cluster_iorm_config_update_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -10413,8 +10489,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_console_connection(db_node_id, console_connection_id, update_console_connection_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -10455,7 +10532,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_console_connection(db_node_id, console_connection_id, update_console_connection_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         console_connection_id = operation_result.data.id
 
@@ -10507,8 +10583,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_console_history(db_node_id, console_history_id, update_console_history_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -10549,7 +10626,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_console_history(db_node_id, console_history_id, update_console_history_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         console_history_id = operation_result.data.id
 
@@ -10603,8 +10679,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_data_guard_association(database_id, data_guard_association_id, update_data_guard_association_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -10647,7 +10724,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_data_guard_association(database_id, data_guard_association_id, update_data_guard_association_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         data_guard_association_id = operation_result.data.id
 
@@ -10696,8 +10772,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_database(database_id, update_database_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -10735,7 +10812,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_database(database_id, update_database_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         database_id = operation_result.data.id
 
@@ -10783,7 +10859,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_database_software_image(database_software_image_id, update_database_software_image_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         database_software_image_id = operation_result.data.id
 
@@ -10832,8 +10907,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_db_home(db_home_id, update_db_home_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -10871,7 +10947,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_db_home(db_home_id, update_db_home_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         db_home_id = operation_result.data.id
 
@@ -10920,8 +10995,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_db_node(db_node_id, update_db_node_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -10959,7 +11035,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_db_node(db_node_id, update_db_node_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         db_node_id = operation_result.data.id
 
@@ -11008,8 +11083,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_db_system(db_system_id, update_db_system_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -11047,7 +11123,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_db_system(db_system_id, update_db_system_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         db_system_id = operation_result.data.id
 
@@ -11096,8 +11171,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_exadata_infrastructure(exadata_infrastructure_id, update_exadata_infrastructure_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -11135,7 +11211,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_exadata_infrastructure(exadata_infrastructure_id, update_exadata_infrastructure_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         exadata_infrastructure_id = operation_result.data.id
 
@@ -11184,8 +11259,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_exadata_iorm_config(db_system_id, exadata_iorm_config_update_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -11223,7 +11299,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_exadata_iorm_config(db_system_id, exadata_iorm_config_update_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         db_system_id = operation_result.data.id
 
@@ -11273,8 +11348,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_external_container_database(external_container_database_id, update_external_container_database_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -11313,7 +11389,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_external_container_database(external_container_database_id, update_external_container_database_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         external_container_database_id = operation_result.data.id
 
@@ -11363,8 +11438,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_external_database_connector(external_database_connector_id, update_external_database_connector_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -11403,7 +11479,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_external_database_connector(external_database_connector_id, update_external_database_connector_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         external_database_connector_id = operation_result.data.id
 
@@ -11452,8 +11527,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_external_non_container_database(external_non_container_database_id, update_external_non_container_database_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -11491,7 +11567,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_external_non_container_database(external_non_container_database_id, update_external_non_container_database_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         external_non_container_database_id = operation_result.data.id
 
@@ -11540,8 +11615,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_external_pluggable_database(external_pluggable_database_id, update_external_pluggable_database_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -11579,7 +11655,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_external_pluggable_database(external_pluggable_database_id, update_external_pluggable_database_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         external_pluggable_database_id = operation_result.data.id
 
@@ -11627,7 +11702,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_key_store(key_store_id, update_key_store_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         key_store_id = operation_result.data.id
 
@@ -11673,7 +11747,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_maintenance_run(maintenance_run_id, update_maintenance_run_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         maintenance_run_id = operation_result.data.id
 
@@ -11721,7 +11794,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_oneoff_patch(oneoff_patch_id, update_oneoff_patch_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         oneoff_patch_id = operation_result.data.id
 
@@ -11770,8 +11842,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_pluggable_database(pluggable_database_id, update_pluggable_database_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -11809,7 +11882,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_pluggable_database(pluggable_database_id, update_pluggable_database_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         pluggable_database_id = operation_result.data.id
 
@@ -11858,8 +11930,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_vm_cluster(vm_cluster_id, update_vm_cluster_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -11897,7 +11970,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_vm_cluster(vm_cluster_id, update_vm_cluster_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         vm_cluster_id = operation_result.data.id
 
@@ -11951,8 +12023,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_vm_cluster_network(exadata_infrastructure_id, vm_cluster_network_id, update_vm_cluster_network_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -11995,7 +12068,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.update_vm_cluster_network(exadata_infrastructure_id, vm_cluster_network_id, update_vm_cluster_network_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         vm_cluster_network_id = operation_result.data.id
 
@@ -12044,8 +12116,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.upgrade_database(database_id, upgrade_database_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -12083,7 +12156,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.upgrade_database(database_id, upgrade_database_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         database_id = operation_result.data.id
 
@@ -12132,8 +12204,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.upgrade_db_system(db_system_id, upgrade_db_system_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -12171,7 +12244,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.upgrade_db_system(db_system_id, upgrade_db_system_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         db_system_id = operation_result.data.id
 
@@ -12222,8 +12294,9 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.validate_vm_cluster_network(exadata_infrastructure_id, vm_cluster_network_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -12263,7 +12336,6 @@ class DatabaseClientCompositeOperations(object):
         operation_result = self.client.validate_vm_cluster_network(exadata_infrastructure_id, vm_cluster_network_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         vm_cluster_network_id = operation_result.data.id
 

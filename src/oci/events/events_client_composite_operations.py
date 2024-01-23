@@ -46,7 +46,6 @@ class EventsClientCompositeOperations(object):
         operation_result = self.client.create_rule(create_rule_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         rule_id = operation_result.data.id
 
@@ -100,7 +99,6 @@ class EventsClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -156,7 +154,6 @@ class EventsClientCompositeOperations(object):
         operation_result = self.client.update_rule(rule_id, update_rule_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         rule_id = operation_result.data.id
 

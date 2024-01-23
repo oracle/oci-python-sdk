@@ -46,7 +46,6 @@ class RoverEntitlementClientCompositeOperations(object):
         operation_result = self.client.create_rover_entitlement(create_rover_entitlement_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         rover_entitlement_id = operation_result.data.id
 
@@ -98,7 +97,6 @@ class RoverEntitlementClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -152,7 +150,6 @@ class RoverEntitlementClientCompositeOperations(object):
         operation_result = self.client.update_rover_entitlement(rover_entitlement_id, update_rover_entitlement_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         rover_entitlement_id = operation_result.data.id
 
