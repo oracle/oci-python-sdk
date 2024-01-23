@@ -49,8 +49,9 @@ class FusionApplicationsClientCompositeOperations(object):
         operation_result = self.client.change_fusion_environment_compartment(fusion_environment_id, change_fusion_environment_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -90,8 +91,9 @@ class FusionApplicationsClientCompositeOperations(object):
         operation_result = self.client.change_fusion_environment_family_compartment(fusion_environment_family_id, change_fusion_environment_family_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -131,8 +133,9 @@ class FusionApplicationsClientCompositeOperations(object):
         operation_result = self.client.create_data_masking_activity(fusion_environment_id, create_data_masking_activity_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -169,8 +172,9 @@ class FusionApplicationsClientCompositeOperations(object):
         operation_result = self.client.create_fusion_environment(create_fusion_environment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -210,8 +214,9 @@ class FusionApplicationsClientCompositeOperations(object):
         operation_result = self.client.create_fusion_environment_admin_user(create_fusion_environment_admin_user_details, fusion_environment_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -248,8 +253,9 @@ class FusionApplicationsClientCompositeOperations(object):
         operation_result = self.client.create_fusion_environment_family(create_fusion_environment_family_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -289,8 +295,9 @@ class FusionApplicationsClientCompositeOperations(object):
         operation_result = self.client.create_refresh_activity(fusion_environment_id, create_refresh_activity_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -330,8 +337,9 @@ class FusionApplicationsClientCompositeOperations(object):
         operation_result = self.client.create_service_attachment(create_service_attachment_details, fusion_environment_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -376,8 +384,9 @@ class FusionApplicationsClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -425,8 +434,9 @@ class FusionApplicationsClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -471,8 +481,9 @@ class FusionApplicationsClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -520,8 +531,9 @@ class FusionApplicationsClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -569,8 +581,9 @@ class FusionApplicationsClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -613,8 +626,9 @@ class FusionApplicationsClientCompositeOperations(object):
         operation_result = self.client.reset_fusion_environment_password(reset_fusion_environment_password_details, fusion_environment_id, admin_username, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -654,8 +668,9 @@ class FusionApplicationsClientCompositeOperations(object):
         operation_result = self.client.update_fusion_environment(fusion_environment_id, update_fusion_environment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -695,8 +710,9 @@ class FusionApplicationsClientCompositeOperations(object):
         operation_result = self.client.update_fusion_environment_family(fusion_environment_family_id, update_fusion_environment_family_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -739,7 +755,6 @@ class FusionApplicationsClientCompositeOperations(object):
         operation_result = self.client.update_refresh_activity(fusion_environment_id, refresh_activity_id, update_refresh_activity_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         refresh_activity_id = operation_result.data.id
 

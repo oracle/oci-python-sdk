@@ -35,6 +35,7 @@ Stack Monitoring
     oci.stack_monitoring.models.ChangeMetricExtensionCompartmentDetails
     oci.stack_monitoring.models.ChangeMonitoredResourceCompartmentDetails
     oci.stack_monitoring.models.ChangeMonitoredResourceTaskCompartmentDetails
+    oci.stack_monitoring.models.ChangeProcessSetCompartmentDetails
     oci.stack_monitoring.models.Config
     oci.stack_monitoring.models.ConfigCollection
     oci.stack_monitoring.models.ConfigSummary
@@ -49,6 +50,7 @@ Stack Monitoring
     oci.stack_monitoring.models.CreateMonitoredResourceDetails
     oci.stack_monitoring.models.CreateMonitoredResourceTaskDetails
     oci.stack_monitoring.models.CreateMonitoredResourceTypeDetails
+    oci.stack_monitoring.models.CreateProcessSetDetails
     oci.stack_monitoring.models.CredentialCollection
     oci.stack_monitoring.models.CredentialDetails
     oci.stack_monitoring.models.CredentialProperty
@@ -106,6 +108,11 @@ Stack Monitoring
     oci.stack_monitoring.models.OsCommandUpdateQueryProperties
     oci.stack_monitoring.models.PlainTextCredentials
     oci.stack_monitoring.models.PreExistingCredentials
+    oci.stack_monitoring.models.ProcessSet
+    oci.stack_monitoring.models.ProcessSetCollection
+    oci.stack_monitoring.models.ProcessSetSpecification
+    oci.stack_monitoring.models.ProcessSetSpecificationDetails
+    oci.stack_monitoring.models.ProcessSetSummary
     oci.stack_monitoring.models.PropertyDetails
     oci.stack_monitoring.models.ResourceTypeMetadataDetails
     oci.stack_monitoring.models.ScriptFileDetails
@@ -132,6 +139,7 @@ Stack Monitoring
     oci.stack_monitoring.models.UpdateMonitoredResourceDetails
     oci.stack_monitoring.models.UpdateMonitoredResourceTaskDetails
     oci.stack_monitoring.models.UpdateMonitoredResourceTypeDetails
+    oci.stack_monitoring.models.UpdateProcessSetDetails
     oci.stack_monitoring.models.WorkRequest
     oci.stack_monitoring.models.WorkRequestError
     oci.stack_monitoring.models.WorkRequestErrorCollection

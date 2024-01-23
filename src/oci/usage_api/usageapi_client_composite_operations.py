@@ -46,7 +46,6 @@ class UsageapiClientCompositeOperations(object):
         operation_result = self.client.create_schedule(create_schedule_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         schedule_id = operation_result.data.id
 
@@ -98,7 +97,6 @@ class UsageapiClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -152,7 +150,6 @@ class UsageapiClientCompositeOperations(object):
         operation_result = self.client.update_schedule(update_schedule_details, schedule_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         schedule_id = operation_result.data.id
 

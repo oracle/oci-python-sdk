@@ -46,7 +46,6 @@ class AnnouncementSubscriptionClientCompositeOperations(object):
         operation_result = self.client.create_announcement_subscription(create_announcement_subscription_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         announcement_subscription_id = operation_result.data.id
 
@@ -98,7 +97,6 @@ class AnnouncementSubscriptionClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -152,7 +150,6 @@ class AnnouncementSubscriptionClientCompositeOperations(object):
         operation_result = self.client.update_announcement_subscription(announcement_subscription_id, update_announcement_subscription_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         announcement_subscription_id = operation_result.data.id
 

@@ -49,7 +49,6 @@ class LicenseManagerClientCompositeOperations(object):
         operation_result = self.client.create_license_record(create_license_record_details, product_license_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         license_record_id = operation_result.data.id
 
@@ -92,7 +91,6 @@ class LicenseManagerClientCompositeOperations(object):
         operation_result = self.client.create_product_license(create_product_license_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         product_license_id = operation_result.data.id
 
@@ -144,7 +142,6 @@ class LicenseManagerClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -204,7 +201,6 @@ class LicenseManagerClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -258,7 +254,6 @@ class LicenseManagerClientCompositeOperations(object):
         operation_result = self.client.update_license_record(license_record_id, update_license_record_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         license_record_id = operation_result.data.id
 
@@ -304,7 +299,6 @@ class LicenseManagerClientCompositeOperations(object):
         operation_result = self.client.update_product_license(product_license_id, update_product_license_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         product_license_id = operation_result.data.id
 

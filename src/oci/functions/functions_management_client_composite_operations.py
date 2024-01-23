@@ -46,7 +46,6 @@ class FunctionsManagementClientCompositeOperations(object):
         operation_result = self.client.create_application(create_application_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         application_id = operation_result.data.id
 
@@ -89,7 +88,6 @@ class FunctionsManagementClientCompositeOperations(object):
         operation_result = self.client.create_function(create_function_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         function_id = operation_result.data.id
 
@@ -143,7 +141,6 @@ class FunctionsManagementClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -205,7 +202,6 @@ class FunctionsManagementClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -261,7 +257,6 @@ class FunctionsManagementClientCompositeOperations(object):
         operation_result = self.client.update_application(application_id, update_application_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         application_id = operation_result.data.id
 
@@ -309,7 +304,6 @@ class FunctionsManagementClientCompositeOperations(object):
         operation_result = self.client.update_function(function_id, update_function_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         function_id = operation_result.data.id
 

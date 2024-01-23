@@ -130,6 +130,10 @@ class Publication(object):
             The value to assign to the freeform_tags property of this Publication.
         :type freeform_tags: dict(str, str)
 
+        :param system_tags:
+            The value to assign to the system_tags property of this Publication.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'lifecycle_state': 'str',
@@ -145,7 +149,8 @@ class Publication(object):
             'supported_operating_systems': 'list[OperatingSystem]',
             'time_created': 'datetime',
             'defined_tags': 'dict(str, dict(str, object))',
-            'freeform_tags': 'dict(str, str)'
+            'freeform_tags': 'dict(str, str)',
+            'system_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -162,7 +167,8 @@ class Publication(object):
             'supported_operating_systems': 'supportedOperatingSystems',
             'time_created': 'timeCreated',
             'defined_tags': 'definedTags',
-            'freeform_tags': 'freeformTags'
+            'freeform_tags': 'freeformTags',
+            'system_tags': 'systemTags'
         }
 
         self._lifecycle_state = None
@@ -179,6 +185,7 @@ class Publication(object):
         self._time_created = None
         self._defined_tags = None
         self._freeform_tags = None
+        self._system_tags = None
 
     @property
     def lifecycle_state(self):
@@ -559,6 +566,38 @@ class Publication(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this Publication.
+        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.
+        For more information, see `Resource Tags`__.
+        Example: `{orcl-cloud: {free-tier-retain: true}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The system_tags of this Publication.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this Publication.
+        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.
+        For more information, see `Resource Tags`__.
+        Example: `{orcl-cloud: {free-tier-retain: true}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param system_tags: The system_tags of this Publication.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

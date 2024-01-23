@@ -46,7 +46,6 @@ class VnMonitoringClientCompositeOperations(object):
         operation_result = self.client.create_path_analyzer_test(create_path_analyzer_test_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         path_analyzer_test_id = operation_result.data.id
 
@@ -100,7 +99,6 @@ class VnMonitoringClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -151,8 +149,9 @@ class VnMonitoringClientCompositeOperations(object):
         operation_result = self.client.get_path_analysis(get_path_analysis_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -194,7 +193,6 @@ class VnMonitoringClientCompositeOperations(object):
         operation_result = self.client.update_path_analyzer_test(path_analyzer_test_id, update_path_analyzer_test_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         path_analyzer_test_id = operation_result.data.id
 

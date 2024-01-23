@@ -46,7 +46,6 @@ class TransferJobClientCompositeOperations(object):
         operation_result = self.client.create_transfer_job(create_transfer_job_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         id = operation_result.data.id
 
@@ -98,7 +97,6 @@ class TransferJobClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -152,7 +150,6 @@ class TransferJobClientCompositeOperations(object):
         operation_result = self.client.update_transfer_job(id, update_transfer_job_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         id = operation_result.data.id
 

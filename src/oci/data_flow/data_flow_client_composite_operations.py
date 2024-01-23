@@ -49,8 +49,9 @@ class DataFlowClientCompositeOperations(object):
         operation_result = self.client.change_private_endpoint_compartment(private_endpoint_id, change_private_endpoint_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -90,8 +91,9 @@ class DataFlowClientCompositeOperations(object):
         operation_result = self.client.change_sql_endpoint_compartment(sql_endpoint_id, change_sql_endpoint_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -128,7 +130,6 @@ class DataFlowClientCompositeOperations(object):
         operation_result = self.client.create_application(create_application_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         application_id = operation_result.data.id
 
@@ -171,8 +172,9 @@ class DataFlowClientCompositeOperations(object):
         operation_result = self.client.create_pool(create_pool_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -209,8 +211,9 @@ class DataFlowClientCompositeOperations(object):
         operation_result = self.client.create_private_endpoint(create_private_endpoint_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -247,7 +250,6 @@ class DataFlowClientCompositeOperations(object):
         operation_result = self.client.create_run(create_run_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         run_id = operation_result.data.id
 
@@ -290,8 +292,9 @@ class DataFlowClientCompositeOperations(object):
         operation_result = self.client.create_sql_endpoint(create_sql_endpoint_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -331,7 +334,6 @@ class DataFlowClientCompositeOperations(object):
         operation_result = self.client.create_statement(create_statement_details, run_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         statement_id = operation_result.data.id
 
@@ -383,7 +385,6 @@ class DataFlowClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -443,7 +444,6 @@ class DataFlowClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -502,8 +502,9 @@ class DataFlowClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -549,7 +550,6 @@ class DataFlowClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -608,8 +608,9 @@ class DataFlowClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -646,8 +647,9 @@ class DataFlowClientCompositeOperations(object):
         operation_result = self.client.start_pool(pool_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -684,8 +686,9 @@ class DataFlowClientCompositeOperations(object):
         operation_result = self.client.stop_pool(pool_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -725,7 +728,6 @@ class DataFlowClientCompositeOperations(object):
         operation_result = self.client.update_application(update_application_details, application_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         application_id = operation_result.data.id
 
@@ -771,8 +773,9 @@ class DataFlowClientCompositeOperations(object):
         operation_result = self.client.update_pool(update_pool_details, pool_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -812,8 +815,9 @@ class DataFlowClientCompositeOperations(object):
         operation_result = self.client.update_private_endpoint(update_private_endpoint_details, private_endpoint_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -853,7 +857,6 @@ class DataFlowClientCompositeOperations(object):
         operation_result = self.client.update_run(update_run_details, run_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         run_id = operation_result.data.id
 
@@ -899,8 +902,9 @@ class DataFlowClientCompositeOperations(object):
         operation_result = self.client.update_sql_endpoint(update_sql_endpoint_details, sql_endpoint_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:

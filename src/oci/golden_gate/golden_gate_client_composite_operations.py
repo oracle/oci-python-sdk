@@ -49,8 +49,9 @@ class GoldenGateClientCompositeOperations(object):
         operation_result = self.client.cancel_deployment_backup(deployment_backup_id, cancel_deployment_backup_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -90,7 +91,6 @@ class GoldenGateClientCompositeOperations(object):
         operation_result = self.client.cancel_deployment_upgrade(deployment_upgrade_id, cancel_deployment_upgrade_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         deployment_upgrade_id = operation_result.data.id
 
@@ -138,8 +138,9 @@ class GoldenGateClientCompositeOperations(object):
         operation_result = self.client.change_connection_compartment(connection_id, change_connection_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -179,8 +180,9 @@ class GoldenGateClientCompositeOperations(object):
         operation_result = self.client.change_database_registration_compartment(database_registration_id, change_database_registration_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -220,8 +222,9 @@ class GoldenGateClientCompositeOperations(object):
         operation_result = self.client.change_deployment_compartment(deployment_id, change_deployment_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -261,8 +264,9 @@ class GoldenGateClientCompositeOperations(object):
         operation_result = self.client.collect_deployment_diagnostic(deployment_id, collect_deployment_diagnostic_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -302,8 +306,9 @@ class GoldenGateClientCompositeOperations(object):
         operation_result = self.client.copy_deployment_backup(deployment_backup_id, copy_deployment_backup_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -343,8 +348,9 @@ class GoldenGateClientCompositeOperations(object):
         operation_result = self.client.create_certificate(create_certificate_details, deployment_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -381,8 +387,9 @@ class GoldenGateClientCompositeOperations(object):
         operation_result = self.client.create_connection(create_connection_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -419,8 +426,9 @@ class GoldenGateClientCompositeOperations(object):
         operation_result = self.client.create_connection_assignment(create_connection_assignment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -457,8 +465,9 @@ class GoldenGateClientCompositeOperations(object):
         operation_result = self.client.create_database_registration(create_database_registration_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -495,8 +504,9 @@ class GoldenGateClientCompositeOperations(object):
         operation_result = self.client.create_deployment(create_deployment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -533,8 +543,9 @@ class GoldenGateClientCompositeOperations(object):
         operation_result = self.client.create_deployment_backup(create_deployment_backup_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -582,8 +593,9 @@ class GoldenGateClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -630,8 +642,9 @@ class GoldenGateClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -678,8 +691,9 @@ class GoldenGateClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -724,8 +738,9 @@ class GoldenGateClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -770,8 +785,9 @@ class GoldenGateClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -816,8 +832,9 @@ class GoldenGateClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -857,8 +874,9 @@ class GoldenGateClientCompositeOperations(object):
         operation_result = self.client.export_deployment_wallet(deployment_id, export_deployment_wallet_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -898,8 +916,9 @@ class GoldenGateClientCompositeOperations(object):
         operation_result = self.client.import_deployment_wallet(deployment_id, import_deployment_wallet_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -939,7 +958,6 @@ class GoldenGateClientCompositeOperations(object):
         operation_result = self.client.reschedule_deployment_upgrade(deployment_upgrade_id, reschedule_deployment_upgrade_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         deployment_upgrade_id = operation_result.data.id
 
@@ -985,8 +1003,9 @@ class GoldenGateClientCompositeOperations(object):
         operation_result = self.client.restore_deployment(deployment_backup_id, restore_deployment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1026,8 +1045,9 @@ class GoldenGateClientCompositeOperations(object):
         operation_result = self.client.rollback_deployment_upgrade(deployment_upgrade_id, rollback_deployment_upgrade_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1067,8 +1087,9 @@ class GoldenGateClientCompositeOperations(object):
         operation_result = self.client.start_deployment(deployment_id, start_deployment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1108,8 +1129,9 @@ class GoldenGateClientCompositeOperations(object):
         operation_result = self.client.stop_deployment(deployment_id, stop_deployment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1151,8 +1173,9 @@ class GoldenGateClientCompositeOperations(object):
         operation_result = self.client.update_connection(connection_id, update_connection_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1192,8 +1215,9 @@ class GoldenGateClientCompositeOperations(object):
         operation_result = self.client.update_database_registration(database_registration_id, update_database_registration_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1233,8 +1257,9 @@ class GoldenGateClientCompositeOperations(object):
         operation_result = self.client.update_deployment(deployment_id, update_deployment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1274,7 +1299,6 @@ class GoldenGateClientCompositeOperations(object):
         operation_result = self.client.update_deployment_backup(deployment_backup_id, update_deployment_backup_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         deployment_backup_id = operation_result.data.id
 
@@ -1320,8 +1344,9 @@ class GoldenGateClientCompositeOperations(object):
         operation_result = self.client.upgrade_deployment(deployment_id, upgrade_deployment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1361,8 +1386,9 @@ class GoldenGateClientCompositeOperations(object):
         operation_result = self.client.upgrade_deployment_upgrade(deployment_upgrade_id, upgrade_deployment_upgrade_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:

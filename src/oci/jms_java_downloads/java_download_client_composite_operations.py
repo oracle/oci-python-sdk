@@ -46,8 +46,9 @@ class JavaDownloadClientCompositeOperations(object):
         operation_result = self.client.create_java_download_report(create_java_download_report_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -84,8 +85,9 @@ class JavaDownloadClientCompositeOperations(object):
         operation_result = self.client.create_java_download_token(create_java_download_token_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -122,7 +124,6 @@ class JavaDownloadClientCompositeOperations(object):
         operation_result = self.client.create_java_license_acceptance_record(create_java_license_acceptance_record_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         java_license_acceptance_record_id = operation_result.data.id
 
@@ -173,8 +174,9 @@ class JavaDownloadClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -219,8 +221,9 @@ class JavaDownloadClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -266,7 +269,6 @@ class JavaDownloadClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -320,8 +322,9 @@ class JavaDownloadClientCompositeOperations(object):
         operation_result = self.client.update_java_download_token(java_download_token_id, update_java_download_token_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -361,7 +364,6 @@ class JavaDownloadClientCompositeOperations(object):
         operation_result = self.client.update_java_license_acceptance_record(java_license_acceptance_record_id, update_java_license_acceptance_record_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         java_license_acceptance_record_id = operation_result.data.id
 

@@ -49,8 +49,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.activate_target_database(activate_target_database_details, target_database_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -87,8 +88,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.add_masking_columns_from_sdm(masking_policy_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -125,8 +127,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.alerts_update(alerts_update_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -166,8 +169,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.apply_discovery_job_results(sensitive_data_model_id, apply_discovery_job_results_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -207,8 +211,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.apply_sdm_masking_policy_difference(masking_policy_id, apply_sdm_masking_policy_difference_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -248,8 +253,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.calculate_audit_volume_available(audit_profile_id, calculate_audit_volume_available_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -289,8 +295,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.calculate_audit_volume_collected(audit_profile_id, calculate_audit_volume_collected_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -330,8 +337,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.change_audit_archive_retrieval_compartment(audit_archive_retrieval_id, change_audit_archive_retrieval_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -371,8 +379,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.change_audit_policy_compartment(audit_policy_id, change_audit_policy_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -412,8 +421,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.change_audit_profile_compartment(audit_profile_id, change_audit_profile_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -453,8 +463,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.change_data_safe_private_endpoint_compartment(data_safe_private_endpoint_id, change_data_safe_private_endpoint_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -494,8 +505,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.change_database_security_config_compartment(database_security_config_id, change_database_security_config_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -535,8 +547,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.change_report_compartment(report_id, change_report_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -576,8 +589,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.change_report_definition_compartment(report_definition_id, change_report_definition_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -617,8 +631,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.change_retention(audit_profile_id, change_retention_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -658,8 +673,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.change_security_policy_compartment(security_policy_id, change_security_policy_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -699,8 +715,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.change_security_policy_deployment_compartment(security_policy_deployment_id, change_security_policy_deployment_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -740,8 +757,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.change_sql_collection_compartment(sql_collection_id, change_sql_collection_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -781,8 +799,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.change_sql_firewall_policy_compartment(sql_firewall_policy_id, change_sql_firewall_policy_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -822,8 +841,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.compare_security_assessment(security_assessment_id, compare_security_assessment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -863,8 +883,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.compare_user_assessment(user_assessment_id, compare_user_assessment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -901,8 +922,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.create_audit_archive_retrieval(create_audit_archive_retrieval_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -939,8 +961,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.create_data_safe_private_endpoint(create_data_safe_private_endpoint_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -977,8 +1000,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.create_discovery_job(create_discovery_job_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1015,8 +1039,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.create_library_masking_format(create_library_masking_format_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1056,8 +1081,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.create_masking_column(create_masking_column_details, masking_policy_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1094,8 +1120,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.create_masking_policy(create_masking_policy_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1132,8 +1159,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.create_on_prem_connector(create_on_prem_connector_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1173,8 +1201,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.create_peer_target_database(target_database_id, create_peer_target_database_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1211,8 +1240,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.create_report_definition(create_report_definition_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1249,8 +1279,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.create_sdm_masking_policy_difference(create_sdm_masking_policy_difference_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1287,8 +1318,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.create_security_assessment(create_security_assessment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1328,8 +1360,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.create_sensitive_column(sensitive_data_model_id, create_sensitive_column_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1366,8 +1399,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.create_sensitive_data_model(create_sensitive_data_model_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1404,8 +1438,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.create_sensitive_type(create_sensitive_type_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1442,8 +1477,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.create_sql_collection(create_sql_collection_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1480,8 +1516,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.create_target_alert_policy_association(create_target_alert_policy_association_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1518,8 +1555,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.create_target_database(create_target_database_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1556,8 +1594,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.create_user_assessment(create_user_assessment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1594,8 +1633,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.deactivate_target_database(target_database_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1640,8 +1680,9 @@ class DataSafeClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1686,8 +1727,9 @@ class DataSafeClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1732,8 +1774,9 @@ class DataSafeClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1778,8 +1821,9 @@ class DataSafeClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1825,7 +1869,6 @@ class DataSafeClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -1884,8 +1927,9 @@ class DataSafeClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1930,8 +1974,9 @@ class DataSafeClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1979,8 +2024,9 @@ class DataSafeClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -2025,8 +2071,9 @@ class DataSafeClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -2071,8 +2118,9 @@ class DataSafeClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -2117,8 +2165,9 @@ class DataSafeClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -2163,8 +2212,9 @@ class DataSafeClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -2210,7 +2260,6 @@ class DataSafeClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -2269,8 +2318,9 @@ class DataSafeClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -2315,8 +2365,9 @@ class DataSafeClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -2361,8 +2412,9 @@ class DataSafeClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -2407,8 +2459,9 @@ class DataSafeClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -2453,8 +2506,9 @@ class DataSafeClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -2491,8 +2545,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.discover_audit_trails(audit_profile_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -2529,8 +2584,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.enable_data_safe_configuration(enable_data_safe_configuration_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -2570,8 +2626,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.generate_discovery_report_for_download(sensitive_data_model_id, generate_discovery_report_for_download_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -2611,8 +2668,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.generate_masking_policy_for_download(masking_policy_id, generate_masking_policy_for_download_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -2652,8 +2710,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.generate_masking_report_for_download(masking_policy_id, generate_masking_report_for_download_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -2693,8 +2752,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.generate_report(report_definition_id, generate_report_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -2734,8 +2794,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.generate_security_assessment_report(security_assessment_id, generate_security_assessment_report_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -2775,8 +2836,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.generate_sensitive_data_model_for_download(sensitive_data_model_id, generate_sensitive_data_model_for_download_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -2813,8 +2875,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.generate_sql_firewall_policy(sql_collection_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -2854,8 +2917,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.generate_user_assessment_report(user_assessment_id, generate_user_assessment_report_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -2895,8 +2959,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.mask_data(masking_policy_id, mask_data_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -2936,8 +3001,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.modify_global_settings(modify_global_settings_details, compartment_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -2974,8 +3040,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.patch_alerts(patch_alerts_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -3015,8 +3082,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.patch_discovery_job_results(discovery_job_id, patch_discovery_job_result_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -3056,8 +3124,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.patch_masking_columns(masking_policy_id, patch_masking_columns_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -3097,8 +3166,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.patch_sdm_masking_policy_difference_columns(sdm_masking_policy_difference_id, patch_sdm_masking_policy_difference_columns_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -3138,8 +3208,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.patch_sensitive_columns(sensitive_data_model_id, patch_sensitive_column_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -3176,8 +3247,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.patch_target_alert_policy_association(patch_target_alert_policy_association_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -3217,8 +3289,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.provision_audit_policy(provision_audit_policy_details, audit_policy_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -3255,8 +3328,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.purge_sql_collection_logs(sql_collection_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -3293,8 +3367,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.refresh_database_security_configuration(database_security_config_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -3334,8 +3409,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.refresh_security_assessment(security_assessment_id, run_security_assessment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -3372,8 +3448,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.refresh_sql_collection_log_insights(sql_collection_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -3410,8 +3487,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.refresh_target_database(target_database_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -3451,8 +3529,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.refresh_user_assessment(user_assessment_id, run_user_assessment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -3489,8 +3568,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.remove_schedule_report(report_definition_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -3527,8 +3607,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.resume_audit_trail(audit_trail_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -3565,8 +3646,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.retrieve_audit_policies(audit_policy_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -3606,8 +3688,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.schedule_report(report_definition_id, schedule_report_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -3644,8 +3727,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.set_security_assessment_baseline(security_assessment_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -3682,8 +3766,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.set_user_assessment_baseline(user_assessment_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -3723,8 +3808,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.start_audit_trail(start_audit_trail_details, audit_trail_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -3761,8 +3847,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.start_sql_collection(sql_collection_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -3799,8 +3886,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.stop_audit_trail(audit_trail_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -3837,8 +3925,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.stop_sql_collection(sql_collection_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -3875,8 +3964,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.unset_security_assessment_baseline(security_assessment_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -3913,8 +4003,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.unset_user_assessment_baseline(user_assessment_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -3954,7 +4045,6 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_alert(alert_id, update_alert_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         alert_id = operation_result.data.id
 
@@ -4000,8 +4090,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_audit_archive_retrieval(audit_archive_retrieval_id, update_audit_archive_retrieval_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -4041,8 +4132,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_audit_policy(audit_policy_id, update_audit_policy_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -4082,8 +4174,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_audit_profile(audit_profile_id, update_audit_profile_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -4123,8 +4216,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_audit_trail(audit_trail_id, update_audit_trail_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -4164,8 +4258,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_data_safe_private_endpoint(data_safe_private_endpoint_id, update_data_safe_private_endpoint_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -4205,8 +4300,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_database_security_config(database_security_config_id, update_database_security_config_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -4249,8 +4345,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_finding(security_assessment_id, finding_key, update_finding_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -4290,8 +4387,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_library_masking_format(library_masking_format_id, update_library_masking_format_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -4334,8 +4432,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_masking_column(masking_column_key, masking_policy_id, update_masking_column_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -4375,8 +4474,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_masking_policy(masking_policy_id, update_masking_policy_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -4416,8 +4516,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_on_prem_connector(on_prem_connector_id, update_on_prem_connector_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -4457,8 +4558,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_on_prem_connector_wallet(update_on_prem_connector_wallet_details, on_prem_connector_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -4501,8 +4603,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_peer_target_database(target_database_id, peer_target_database_id, update_peer_target_database_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -4542,8 +4645,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_report(report_id, update_report_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -4583,8 +4687,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_report_definition(report_definition_id, update_report_definition_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -4624,8 +4729,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_sdm_masking_policy_difference(sdm_masking_policy_difference_id, update_sdm_masking_policy_difference_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -4665,8 +4771,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_security_assessment(security_assessment_id, update_security_assessment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -4706,8 +4813,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_security_policy(security_policy_id, update_security_policy_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -4747,8 +4855,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_security_policy_deployment(security_policy_deployment_id, update_security_policy_deployment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -4791,8 +4900,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_sensitive_column(sensitive_data_model_id, sensitive_column_key, update_sensitive_column_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -4832,8 +4942,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_sensitive_data_model(sensitive_data_model_id, update_sensitive_data_model_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -4873,8 +4984,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_sensitive_type(sensitive_type_id, update_sensitive_type_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -4914,8 +5026,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_sql_collection(sql_collection_id, update_sql_collection_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -4955,8 +5068,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_sql_firewall_policy(sql_firewall_policy_id, update_sql_firewall_policy_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -4996,8 +5110,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_target_alert_policy_association(target_alert_policy_association_id, update_target_alert_policy_association_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -5037,8 +5152,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_target_database(target_database_id, update_target_database_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -5078,8 +5194,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.update_user_assessment(user_assessment_id, update_user_assessment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -5119,8 +5236,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.upload_masking_policy(upload_masking_policy_details, masking_policy_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -5160,8 +5278,9 @@ class DataSafeClientCompositeOperations(object):
         operation_result = self.client.upload_sensitive_data_model(sensitive_data_model_id, upload_sensitive_data_model_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:

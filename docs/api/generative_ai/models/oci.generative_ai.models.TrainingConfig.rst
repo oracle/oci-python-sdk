@@ -1,0 +1,11 @@
+TrainingConfig
+==============
+
+.. currentmodule:: oci.generative_ai.models
+
+.. autoclass:: TrainingConfig
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

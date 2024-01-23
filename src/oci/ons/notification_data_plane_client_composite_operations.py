@@ -46,7 +46,6 @@ class NotificationDataPlaneClientCompositeOperations(object):
         operation_result = self.client.create_subscription(create_subscription_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         subscription_id = operation_result.data.id
 
@@ -100,7 +99,6 @@ class NotificationDataPlaneClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:

@@ -49,7 +49,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.add_catalog_lock(catalog_id, add_resource_lock_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -95,7 +94,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.add_catalog_private_endpoint_lock(catalog_private_endpoint_id, add_resource_lock_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_private_endpoint_id = operation_result.data.id
 
@@ -144,7 +142,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.add_data_selector_patterns(catalog_id, data_asset_key, data_selector_pattern_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -190,7 +187,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.add_metastore_lock(metastore_id, add_resource_lock_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         metastore_id = operation_result.data.id
 
@@ -239,7 +235,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.associate_custom_property(catalog_id, type_key, associate_custom_property_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -285,8 +280,9 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.attach_catalog_private_endpoint(attach_catalog_private_endpoint_details, catalog_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -326,8 +322,9 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.change_catalog_compartment(change_catalog_compartment_details, catalog_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -367,8 +364,9 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.change_catalog_private_endpoint_compartment(change_catalog_private_endpoint_compartment_details, catalog_private_endpoint_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -408,8 +406,9 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.change_metastore_compartment(change_metastore_compartment_details, metastore_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -455,7 +454,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.create_attribute(catalog_id, data_asset_key, entity_key, create_attribute_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -510,7 +508,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.create_attribute_tag(catalog_id, data_asset_key, entity_key, attribute_key, create_attribute_tag_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -553,8 +550,9 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.create_catalog(create_catalog_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -591,8 +589,9 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.create_catalog_private_endpoint(create_catalog_private_endpoint_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -635,7 +634,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.create_connection(catalog_id, data_asset_key, create_connection_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -684,7 +682,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.create_custom_property(catalog_id, namespace_id, create_custom_property_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -730,7 +727,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.create_data_asset(catalog_id, create_data_asset_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -779,7 +775,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.create_data_asset_tag(catalog_id, data_asset_key, create_data_asset_tag_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -828,7 +823,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.create_entity(catalog_id, data_asset_key, create_entity_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -880,7 +874,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.create_entity_tag(catalog_id, data_asset_key, entity_key, create_entity_tag_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -929,7 +922,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.create_folder(catalog_id, data_asset_key, create_folder_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -981,7 +973,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.create_folder_tag(catalog_id, data_asset_key, folder_key, create_folder_tag_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -1027,7 +1018,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.create_glossary(catalog_id, create_glossary_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -1073,7 +1063,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.create_job(catalog_id, create_job_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -1119,7 +1108,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.create_job_definition(catalog_id, create_job_definition_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -1168,7 +1156,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.create_job_execution(catalog_id, job_key, create_job_execution_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -1211,8 +1198,9 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.create_metastore(create_metastore_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1252,7 +1240,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.create_namespace(catalog_id, create_namespace_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         namespace_id = operation_result.data.id
 
@@ -1298,7 +1285,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.create_pattern(catalog_id, create_pattern_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -1347,7 +1333,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.create_term(catalog_id, glossary_key, create_term_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -1399,7 +1384,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.create_term_relationship(catalog_id, glossary_key, term_key, create_term_relationship_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -1450,8 +1434,9 @@ class DataCatalogClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1496,8 +1481,9 @@ class DataCatalogClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1542,8 +1528,9 @@ class DataCatalogClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1583,8 +1570,9 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.detach_catalog_private_endpoint(detach_catalog_private_endpoint_details, catalog_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1627,7 +1615,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.disassociate_custom_property(catalog_id, type_key, disassociate_custom_property_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -1673,7 +1660,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.remove_catalog_lock(catalog_id, remove_resource_lock_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -1719,7 +1705,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.remove_catalog_private_endpoint_lock(catalog_private_endpoint_id, remove_resource_lock_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_private_endpoint_id = operation_result.data.id
 
@@ -1768,7 +1753,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.remove_data_selector_patterns(catalog_id, data_asset_key, data_selector_pattern_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -1814,7 +1798,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.remove_metastore_lock(metastore_id, remove_resource_lock_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         metastore_id = operation_result.data.id
 
@@ -1869,7 +1852,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.update_attribute(catalog_id, data_asset_key, entity_key, attribute_key, update_attribute_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -1915,7 +1897,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.update_catalog(catalog_id, update_catalog_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -1961,8 +1942,9 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.update_catalog_private_endpoint(catalog_private_endpoint_id, update_catalog_private_endpoint_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -2008,7 +1990,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.update_connection(catalog_id, data_asset_key, connection_key, update_connection_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -2060,7 +2041,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.update_custom_property(catalog_id, namespace_id, custom_property_key, update_custom_property_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -2109,7 +2089,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.update_data_asset(catalog_id, data_asset_key, update_data_asset_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -2161,7 +2140,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.update_entity(catalog_id, data_asset_key, entity_key, update_entity_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -2213,7 +2191,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.update_folder(catalog_id, data_asset_key, folder_key, update_folder_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -2262,7 +2239,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.update_glossary(catalog_id, glossary_key, update_glossary_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -2311,7 +2287,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.update_job(catalog_id, job_key, update_job_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -2360,7 +2335,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.update_job_definition(catalog_id, job_definition_key, update_job_definition_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -2406,7 +2380,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.update_metastore(metastore_id, update_metastore_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         metastore_id = operation_result.data.id
 
@@ -2455,7 +2428,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.update_namespace(catalog_id, namespace_id, update_namespace_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         namespace_id = operation_result.data.id
 
@@ -2504,7 +2476,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.update_pattern(catalog_id, pattern_key, update_pattern_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -2556,7 +2527,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.update_term(catalog_id, glossary_key, term_key, update_term_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -2611,7 +2581,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.update_term_relationship(catalog_id, glossary_key, term_key, term_relationship_key, update_term_relationship_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 
@@ -2663,7 +2632,6 @@ class DataCatalogClientCompositeOperations(object):
         operation_result = self.client.upload_credentials(catalog_id, data_asset_key, connection_key, upload_credentials_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         catalog_id = operation_result.data.id
 

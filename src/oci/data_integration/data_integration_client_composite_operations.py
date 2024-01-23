@@ -49,8 +49,9 @@ class DataIntegrationClientCompositeOperations(object):
         operation_result = self.client.change_compartment(workspace_id, change_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -93,8 +94,9 @@ class DataIntegrationClientCompositeOperations(object):
         operation_result = self.client.change_dis_application_compartment(workspace_id, dis_application_id, change_dis_application_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -134,7 +136,6 @@ class DataIntegrationClientCompositeOperations(object):
         operation_result = self.client.create_application(workspace_id, create_application_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         workspace_id = operation_result.data.id
 
@@ -180,8 +181,9 @@ class DataIntegrationClientCompositeOperations(object):
         operation_result = self.client.create_copy_object_request(workspace_id, create_copy_object_request_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -221,7 +223,6 @@ class DataIntegrationClientCompositeOperations(object):
         operation_result = self.client.create_dis_application(workspace_id, create_dis_application_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         dis_application_id = operation_result.data.id
 
@@ -267,8 +268,9 @@ class DataIntegrationClientCompositeOperations(object):
         operation_result = self.client.create_export_request(workspace_id, create_export_request_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -308,8 +310,9 @@ class DataIntegrationClientCompositeOperations(object):
         operation_result = self.client.create_import_request(workspace_id, create_import_request_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -346,8 +349,9 @@ class DataIntegrationClientCompositeOperations(object):
         operation_result = self.client.create_workspace(create_workspace_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -392,8 +396,9 @@ class DataIntegrationClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -430,8 +435,9 @@ class DataIntegrationClientCompositeOperations(object):
         operation_result = self.client.start_workspace(workspace_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -468,8 +474,9 @@ class DataIntegrationClientCompositeOperations(object):
         operation_result = self.client.stop_workspace(workspace_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -512,7 +519,6 @@ class DataIntegrationClientCompositeOperations(object):
         operation_result = self.client.update_application(workspace_id, application_key, update_application_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         workspace_id = operation_result.data.id
 
@@ -561,7 +567,6 @@ class DataIntegrationClientCompositeOperations(object):
         operation_result = self.client.update_dis_application(workspace_id, dis_application_id, update_dis_application_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         dis_application_id = operation_result.data.id
 
@@ -607,8 +612,9 @@ class DataIntegrationClientCompositeOperations(object):
         operation_result = self.client.update_workspace(workspace_id, update_workspace_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:

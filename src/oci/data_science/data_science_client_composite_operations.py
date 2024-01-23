@@ -48,7 +48,6 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.activate_model(model_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         model_id = operation_result.data.id
 
@@ -93,8 +92,9 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.activate_model_deployment(model_deployment_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -133,8 +133,9 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.activate_notebook_session(notebook_session_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -174,8 +175,9 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.change_data_science_private_endpoint_compartment(data_science_private_endpoint_id, change_data_science_private_endpoint_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -217,8 +219,9 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.change_model_version_set_compartment(model_version_set_id, change_model_version_set_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -255,8 +258,9 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.create_data_science_private_endpoint(create_data_science_private_endpoint_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -293,7 +297,6 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.create_job(create_job_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         job_id = operation_result.data.id
 
@@ -336,7 +339,6 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.create_job_run(create_job_run_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         job_run_id = operation_result.data.id
 
@@ -379,7 +381,6 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.create_model(create_model_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         model_id = operation_result.data.id
 
@@ -422,8 +423,9 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.create_model_deployment(create_model_deployment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -460,7 +462,6 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.create_model_version_set(create_model_version_set_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         model_version_set_id = operation_result.data.id
 
@@ -503,8 +504,9 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.create_notebook_session(create_notebook_session_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -541,7 +543,6 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.create_pipeline(create_pipeline_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         pipeline_id = operation_result.data.id
 
@@ -584,7 +585,6 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.create_pipeline_run(create_pipeline_run_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         pipeline_run_id = operation_result.data.id
 
@@ -627,7 +627,6 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.create_project(create_project_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         project_id = operation_result.data.id
 
@@ -672,7 +671,6 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.deactivate_model(model_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         model_id = operation_result.data.id
 
@@ -717,8 +715,9 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.deactivate_model_deployment(model_deployment_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -757,8 +756,9 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.deactivate_notebook_session(notebook_session_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -803,8 +803,9 @@ class DataScienceClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -851,8 +852,9 @@ class DataScienceClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -900,7 +902,6 @@ class DataScienceClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -962,7 +963,6 @@ class DataScienceClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -1023,8 +1023,9 @@ class DataScienceClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1071,8 +1072,9 @@ class DataScienceClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1119,8 +1121,9 @@ class DataScienceClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1167,8 +1170,9 @@ class DataScienceClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1216,7 +1220,6 @@ class DataScienceClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -1277,8 +1280,9 @@ class DataScienceClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1320,8 +1324,9 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.export_model_artifact(model_id, export_model_artifact_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1363,8 +1368,9 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.import_model_artifact(model_id, import_model_artifact_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1404,8 +1410,9 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.update_data_science_private_endpoint(data_science_private_endpoint_id, update_data_science_private_endpoint_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1447,7 +1454,6 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.update_job(job_id, update_job_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         job_id = operation_result.data.id
 
@@ -1495,7 +1501,6 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.update_job_run(job_run_id, update_job_run_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         job_run_id = operation_result.data.id
 
@@ -1543,7 +1548,6 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.update_model(model_id, update_model_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         model_id = operation_result.data.id
 
@@ -1594,8 +1598,9 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.update_model_deployment(model_deployment_id, update_model_deployment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1637,7 +1642,6 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.update_model_version_set(model_version_set_id, update_model_version_set_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         model_version_set_id = operation_result.data.id
 
@@ -1686,7 +1690,6 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.update_notebook_session(notebook_session_id, update_notebook_session_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         notebook_session_id = operation_result.data.id
 
@@ -1734,7 +1737,6 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.update_pipeline(pipeline_id, update_pipeline_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         pipeline_id = operation_result.data.id
 
@@ -1782,7 +1784,6 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.update_pipeline_run(pipeline_run_id, update_pipeline_run_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         pipeline_run_id = operation_result.data.id
 
@@ -1830,7 +1831,6 @@ class DataScienceClientCompositeOperations(object):
         operation_result = self.client.update_project(project_id, update_project_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         project_id = operation_result.data.id
 

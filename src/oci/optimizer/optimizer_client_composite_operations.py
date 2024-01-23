@@ -49,8 +49,9 @@ class OptimizerClientCompositeOperations(object):
         operation_result = self.client.bulk_apply_recommendations(recommendation_id, bulk_apply_recommendations_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -87,7 +88,6 @@ class OptimizerClientCompositeOperations(object):
         operation_result = self.client.create_profile(create_profile_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         profile_id = operation_result.data.id
 
@@ -139,7 +139,6 @@ class OptimizerClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -193,7 +192,6 @@ class OptimizerClientCompositeOperations(object):
         operation_result = self.client.update_enrollment_status(enrollment_status_id, update_enrollment_status_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         enrollment_status_id = operation_result.data.id
 
@@ -239,7 +237,6 @@ class OptimizerClientCompositeOperations(object):
         operation_result = self.client.update_profile(profile_id, update_profile_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         profile_id = operation_result.data.id
 
@@ -285,7 +282,6 @@ class OptimizerClientCompositeOperations(object):
         operation_result = self.client.update_recommendation(recommendation_id, update_recommendation_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         recommendation_id = operation_result.data.id
 
@@ -331,7 +327,6 @@ class OptimizerClientCompositeOperations(object):
         operation_result = self.client.update_resource_action(resource_action_id, update_resource_action_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         resource_action_id = operation_result.data.id
 

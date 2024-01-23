@@ -46,7 +46,6 @@ class KmsVaultClientCompositeOperations(object):
         operation_result = self.client.backup_vault(vault_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         vault_id = operation_result.data.id
 
@@ -89,7 +88,6 @@ class KmsVaultClientCompositeOperations(object):
         operation_result = self.client.cancel_vault_deletion(vault_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         vault_id = operation_result.data.id
 
@@ -132,7 +130,6 @@ class KmsVaultClientCompositeOperations(object):
         operation_result = self.client.create_vault(create_vault_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         vault_id = operation_result.data.id
 
@@ -178,7 +175,6 @@ class KmsVaultClientCompositeOperations(object):
         operation_result = self.client.schedule_vault_deletion(vault_id, schedule_vault_deletion_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         vault_id = operation_result.data.id
 
@@ -224,7 +220,6 @@ class KmsVaultClientCompositeOperations(object):
         operation_result = self.client.update_vault(vault_id, update_vault_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         vault_id = operation_result.data.id
 

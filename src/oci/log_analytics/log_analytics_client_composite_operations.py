@@ -52,8 +52,9 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.append_lookup_data(namespace_name, lookup_name, append_lookup_file_body, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -93,8 +94,9 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.assign_encryption_key(namespace_name, assign_encryption_key_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -134,7 +136,6 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.create_ingest_time_rule(namespace_name, create_ingest_time_rule_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         ingest_time_rule_id = operation_result.data.id
 
@@ -180,7 +181,6 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.create_log_analytics_em_bridge(namespace_name, create_log_analytics_em_bridge_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         log_analytics_em_bridge_id = operation_result.data.id
 
@@ -226,7 +226,6 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.create_log_analytics_entity(namespace_name, create_log_analytics_entity_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         log_analytics_entity_id = operation_result.data.id
 
@@ -272,7 +271,6 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.create_log_analytics_object_collection_rule(namespace_name, create_log_analytics_object_collection_rule_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         log_analytics_object_collection_rule_id = operation_result.data.id
 
@@ -318,7 +316,6 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.create_scheduled_task(namespace_name, create_scheduled_task_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         scheduled_task_id = operation_result.data.id
 
@@ -364,8 +361,9 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.delete_associations(namespace_name, delete_log_analytics_association_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -413,8 +411,9 @@ class LogAnalyticsClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -457,8 +456,9 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.disable_auto_association(namespace_name, source_name, disable_auto_association_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -498,8 +498,9 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.disable_ingest_time_rule(namespace_name, ingest_time_rule_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -542,8 +543,9 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.enable_auto_association(namespace_name, source_name, enable_auto_association_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -583,8 +585,9 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.enable_ingest_time_rule(namespace_name, ingest_time_rule_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -621,8 +624,9 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.offboard_namespace(namespace_name, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -659,8 +663,9 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.onboard_namespace(namespace_name, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -701,7 +706,6 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.pause_scheduled_task(namespace_name, scheduled_task_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         scheduled_task_id = operation_result.data.id
 
@@ -747,8 +751,9 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.purge_storage_data(namespace_name, purge_storage_data_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -788,8 +793,9 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.query(namespace_name, query_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -829,8 +835,9 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.recall_archived_data(namespace_name, recall_archived_data_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -870,8 +877,9 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.release_recalled_data(namespace_name, release_recalled_data_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -912,7 +920,6 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.resume_scheduled_task(namespace_name, scheduled_task_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         scheduled_task_id = operation_result.data.id
 
@@ -961,7 +968,6 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.update_ingest_time_rule(namespace_name, ingest_time_rule_id, update_ingest_time_rule_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         ingest_time_rule_id = operation_result.data.id
 
@@ -1010,7 +1016,6 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.update_log_analytics_em_bridge(namespace_name, log_analytics_em_bridge_id, update_log_analytics_em_bridge_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         log_analytics_em_bridge_id = operation_result.data.id
 
@@ -1059,7 +1064,6 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.update_log_analytics_entity(namespace_name, log_analytics_entity_id, update_log_analytics_entity_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         log_analytics_entity_id = operation_result.data.id
 
@@ -1110,7 +1114,6 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.update_log_analytics_object_collection_rule(namespace_name, log_analytics_object_collection_rule_id, update_log_analytics_object_collection_rule_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         log_analytics_object_collection_rule_id = operation_result.data.id
 
@@ -1159,8 +1162,9 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.update_lookup_data(namespace_name, lookup_name, update_lookup_file_body, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1205,7 +1209,6 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.update_scheduled_task(namespace_name, scheduled_task_id, update_scheduled_task_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         scheduled_task_id = operation_result.data.id
 
@@ -1251,8 +1254,9 @@ class LogAnalyticsClientCompositeOperations(object):
         operation_result = self.client.upsert_associations(namespace_name, upsert_log_analytics_association_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:

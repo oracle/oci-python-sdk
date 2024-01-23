@@ -49,8 +49,9 @@ class NetworkFirewallClientCompositeOperations(object):
         operation_result = self.client.apply_network_firewall_policy(network_firewall_policy_id, apply_network_firewall_policy_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -90,8 +91,9 @@ class NetworkFirewallClientCompositeOperations(object):
         operation_result = self.client.bulk_upload_address_lists(network_firewall_policy_id, bulk_upload_address_lists_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -131,8 +133,9 @@ class NetworkFirewallClientCompositeOperations(object):
         operation_result = self.client.bulk_upload_application_groups(network_firewall_policy_id, bulk_upload_application_groups_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -172,8 +175,9 @@ class NetworkFirewallClientCompositeOperations(object):
         operation_result = self.client.bulk_upload_applications(network_firewall_policy_id, bulk_upload_applications_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -213,8 +217,9 @@ class NetworkFirewallClientCompositeOperations(object):
         operation_result = self.client.bulk_upload_decryption_profiles(network_firewall_policy_id, bulk_upload_decryption_profiles_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -254,8 +259,9 @@ class NetworkFirewallClientCompositeOperations(object):
         operation_result = self.client.bulk_upload_decryption_rules(network_firewall_policy_id, bulk_upload_decryption_rules_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -295,8 +301,9 @@ class NetworkFirewallClientCompositeOperations(object):
         operation_result = self.client.bulk_upload_mapped_secrets(network_firewall_policy_id, bulk_upload_mapped_secrets_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -336,8 +343,9 @@ class NetworkFirewallClientCompositeOperations(object):
         operation_result = self.client.bulk_upload_security_rules(network_firewall_policy_id, bulk_upload_security_rules_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -377,8 +385,9 @@ class NetworkFirewallClientCompositeOperations(object):
         operation_result = self.client.bulk_upload_service_lists(network_firewall_policy_id, bulk_upload_service_lists_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -418,8 +427,9 @@ class NetworkFirewallClientCompositeOperations(object):
         operation_result = self.client.bulk_upload_services(network_firewall_policy_id, bulk_upload_services_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -459,8 +469,9 @@ class NetworkFirewallClientCompositeOperations(object):
         operation_result = self.client.bulk_upload_url_lists(network_firewall_policy_id, bulk_upload_url_lists_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -502,8 +513,9 @@ class NetworkFirewallClientCompositeOperations(object):
         operation_result = self.client.change_network_firewall_compartment(network_firewall_id, change_network_firewall_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -543,8 +555,9 @@ class NetworkFirewallClientCompositeOperations(object):
         operation_result = self.client.clone_network_firewall_policy(network_firewall_policy_id, clone_network_firewall_policy_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -581,8 +594,9 @@ class NetworkFirewallClientCompositeOperations(object):
         operation_result = self.client.create_network_firewall(create_network_firewall_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -619,8 +633,9 @@ class NetworkFirewallClientCompositeOperations(object):
         operation_result = self.client.create_network_firewall_policy(create_network_firewall_policy_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -667,8 +682,9 @@ class NetworkFirewallClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -713,8 +729,9 @@ class NetworkFirewallClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -751,8 +768,9 @@ class NetworkFirewallClientCompositeOperations(object):
         operation_result = self.client.migrate_network_firewall_policy(network_firewall_policy_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -794,8 +812,9 @@ class NetworkFirewallClientCompositeOperations(object):
         operation_result = self.client.update_network_firewall(network_firewall_id, update_network_firewall_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -835,8 +854,9 @@ class NetworkFirewallClientCompositeOperations(object):
         operation_result = self.client.update_network_firewall_policy(network_firewall_policy_id, update_network_firewall_policy_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:

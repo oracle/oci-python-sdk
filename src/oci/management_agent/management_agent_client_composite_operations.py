@@ -46,7 +46,6 @@ class ManagementAgentClientCompositeOperations(object):
         operation_result = self.client.create_management_agent_install_key(create_management_agent_install_key_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         management_agent_install_key_id = operation_result.data.id
 
@@ -98,7 +97,6 @@ class ManagementAgentClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -158,7 +156,6 @@ class ManagementAgentClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -209,8 +206,9 @@ class ManagementAgentClientCompositeOperations(object):
         operation_result = self.client.deploy_plugins(deploy_plugins_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -250,7 +248,6 @@ class ManagementAgentClientCompositeOperations(object):
         operation_result = self.client.update_management_agent(management_agent_id, update_management_agent_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         management_agent_id = operation_result.data.id
 
@@ -296,7 +293,6 @@ class ManagementAgentClientCompositeOperations(object):
         operation_result = self.client.update_management_agent_install_key(management_agent_install_key_id, update_management_agent_install_key_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         management_agent_install_key_id = operation_result.data.id
 

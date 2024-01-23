@@ -53,8 +53,9 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.change_external_db_system_compartment(external_db_system_id, change_external_db_system_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -96,8 +97,9 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.change_external_exadata_infrastructure_compartment(external_exadata_infrastructure_id, change_external_exadata_infrastructure_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -136,7 +138,6 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.check_external_db_system_connector_connection_status(external_db_system_connector_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         external_db_system_connector_id = operation_result.data.id
 
@@ -179,8 +180,9 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.create_db_management_private_endpoint(create_db_management_private_endpoint_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -217,8 +219,9 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.create_external_db_system(create_external_db_system_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -255,7 +258,6 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.create_external_db_system_connector(create_external_db_system_connector_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         external_db_system_connector_id = operation_result.data.id
 
@@ -298,8 +300,9 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.create_external_db_system_discovery(create_external_db_system_discovery_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -336,7 +339,6 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.create_external_exadata_infrastructure(create_external_exadata_infrastructure_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         external_exadata_infrastructure_id = operation_result.data.id
 
@@ -379,7 +381,6 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.create_external_exadata_storage_connector(create_external_exadata_storage_connector_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         external_exadata_storage_connector_id = operation_result.data.id
 
@@ -422,7 +423,6 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.create_job(create_job_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         job_id = operation_result.data.id
 
@@ -465,7 +465,6 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.create_managed_database_group(create_managed_database_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         managed_database_group_id = operation_result.data.id
 
@@ -518,8 +517,9 @@ class DbManagementClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -566,8 +566,9 @@ class DbManagementClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -615,7 +616,6 @@ class DbManagementClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -677,7 +677,6 @@ class DbManagementClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -738,8 +737,9 @@ class DbManagementClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -787,7 +787,6 @@ class DbManagementClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -847,7 +846,6 @@ class DbManagementClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -909,7 +907,6 @@ class DbManagementClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -962,8 +959,9 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.disable_external_db_system_database_management(external_db_system_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1002,8 +1000,9 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.disable_external_db_system_stack_monitoring(external_db_system_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1042,8 +1041,9 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.disable_external_exadata_infrastructure_management(external_exadata_infrastructure_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1085,8 +1085,9 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.enable_external_db_system_database_management(external_db_system_id, enable_external_db_system_database_management_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1128,8 +1129,9 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.enable_external_db_system_stack_monitoring(external_db_system_id, enable_external_db_system_stack_monitoring_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1171,8 +1173,9 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.enable_external_exadata_infrastructure_management(external_exadata_infrastructure_id, enable_external_exadata_infrastructure_management_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1214,7 +1217,6 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.update_db_management_private_endpoint(db_management_private_endpoint_id, update_db_management_private_endpoint_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         db_management_private_endpoint_id = operation_result.data.id
 
@@ -1262,8 +1264,9 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.update_external_asm(external_asm_id, update_external_asm_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1305,8 +1308,9 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.update_external_cluster(external_cluster_id, update_external_cluster_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1348,8 +1352,9 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.update_external_cluster_instance(external_cluster_instance_id, update_external_cluster_instance_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1391,8 +1396,9 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.update_external_db_node(external_db_node_id, update_external_db_node_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1434,7 +1440,6 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.update_external_db_system(external_db_system_id, update_external_db_system_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         external_db_system_id = operation_result.data.id
 
@@ -1482,8 +1487,9 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.update_external_db_system_connector(external_db_system_connector_id, update_external_db_system_connector_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1525,7 +1531,6 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.update_external_db_system_discovery(external_db_system_discovery_id, update_external_db_system_discovery_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         external_db_system_discovery_id = operation_result.data.id
 
@@ -1573,7 +1578,6 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.update_external_exadata_infrastructure(external_exadata_infrastructure_id, update_external_exadata_infrastructure_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         external_exadata_infrastructure_id = operation_result.data.id
 
@@ -1621,7 +1625,6 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.update_external_exadata_storage_connector(external_exadata_storage_connector_id, update_external_exadata_storage_connector_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         external_exadata_storage_connector_id = operation_result.data.id
 
@@ -1669,8 +1672,9 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.update_external_listener(external_listener_id, update_external_listener_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -1710,7 +1714,6 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.update_job(job_id, update_job_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         job_id = operation_result.data.id
 
@@ -1758,7 +1761,6 @@ class DbManagementClientCompositeOperations(object):
         operation_result = self.client.update_managed_database_group(managed_database_group_id, update_managed_database_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         managed_database_group_id = operation_result.data.id
 

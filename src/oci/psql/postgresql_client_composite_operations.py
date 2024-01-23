@@ -49,8 +49,9 @@ class PostgresqlClientCompositeOperations(object):
         operation_result = self.client.change_backup_compartment(backup_id, change_backup_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -90,8 +91,9 @@ class PostgresqlClientCompositeOperations(object):
         operation_result = self.client.change_db_system_compartment(db_system_id, change_db_system_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -128,8 +130,9 @@ class PostgresqlClientCompositeOperations(object):
         operation_result = self.client.create_backup(create_backup_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -166,7 +169,6 @@ class PostgresqlClientCompositeOperations(object):
         operation_result = self.client.create_configuration(create_configuration_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         configuration_id = operation_result.data.id
 
@@ -209,8 +211,9 @@ class PostgresqlClientCompositeOperations(object):
         operation_result = self.client.create_db_system(create_db_system_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -255,8 +258,9 @@ class PostgresqlClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -302,7 +306,6 @@ class PostgresqlClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -361,8 +364,9 @@ class PostgresqlClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -402,8 +406,9 @@ class PostgresqlClientCompositeOperations(object):
         operation_result = self.client.failover_db_system(db_system_id, failover_db_system_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -443,8 +448,9 @@ class PostgresqlClientCompositeOperations(object):
         operation_result = self.client.patch_db_system(db_system_id, patch_db_system_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -484,8 +490,9 @@ class PostgresqlClientCompositeOperations(object):
         operation_result = self.client.reset_master_user_password(db_system_id, reset_master_user_password_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -525,8 +532,9 @@ class PostgresqlClientCompositeOperations(object):
         operation_result = self.client.restart_db_instance_in_db_system(db_system_id, restart_db_instance_in_db_system_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -566,8 +574,9 @@ class PostgresqlClientCompositeOperations(object):
         operation_result = self.client.restore_db_system(db_system_id, restore_db_system_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -607,7 +616,6 @@ class PostgresqlClientCompositeOperations(object):
         operation_result = self.client.update_backup(backup_id, update_backup_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         backup_id = operation_result.data.id
 
@@ -653,7 +661,6 @@ class PostgresqlClientCompositeOperations(object):
         operation_result = self.client.update_configuration(configuration_id, update_configuration_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         configuration_id = operation_result.data.id
 
@@ -699,8 +706,9 @@ class PostgresqlClientCompositeOperations(object):
         operation_result = self.client.update_db_system(db_system_id, update_db_system_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -743,8 +751,9 @@ class PostgresqlClientCompositeOperations(object):
         operation_result = self.client.update_db_system_db_instance(db_system_id, db_instance_id, update_db_system_db_instance_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:

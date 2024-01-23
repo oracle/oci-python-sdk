@@ -57,7 +57,6 @@ class ResourceManagerClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -113,8 +112,9 @@ class ResourceManagerClientCompositeOperations(object):
         operation_result = self.client.change_stack_compartment(stack_id, change_stack_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -151,7 +151,6 @@ class ResourceManagerClientCompositeOperations(object):
         operation_result = self.client.create_configuration_source_provider(create_configuration_source_provider_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         configuration_source_provider_id = operation_result.data.id
 
@@ -194,7 +193,6 @@ class ResourceManagerClientCompositeOperations(object):
         operation_result = self.client.create_job(create_job_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         job_id = operation_result.data.id
 
@@ -237,7 +235,6 @@ class ResourceManagerClientCompositeOperations(object):
         operation_result = self.client.create_private_endpoint(create_private_endpoint_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         private_endpoint_id = operation_result.data.id
 
@@ -280,8 +277,9 @@ class ResourceManagerClientCompositeOperations(object):
         operation_result = self.client.create_stack(create_stack_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -318,7 +316,6 @@ class ResourceManagerClientCompositeOperations(object):
         operation_result = self.client.create_template(create_template_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         template_id = operation_result.data.id
 
@@ -372,7 +369,6 @@ class ResourceManagerClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -434,7 +430,6 @@ class ResourceManagerClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -496,7 +491,6 @@ class ResourceManagerClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -558,7 +552,6 @@ class ResourceManagerClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -611,8 +604,9 @@ class ResourceManagerClientCompositeOperations(object):
         operation_result = self.client.detect_stack_drift(stack_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -654,7 +648,6 @@ class ResourceManagerClientCompositeOperations(object):
         operation_result = self.client.update_configuration_source_provider(configuration_source_provider_id, update_configuration_source_provider_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         configuration_source_provider_id = operation_result.data.id
 
@@ -702,7 +695,6 @@ class ResourceManagerClientCompositeOperations(object):
         operation_result = self.client.update_job(job_id, update_job_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         job_id = operation_result.data.id
 
@@ -750,7 +742,6 @@ class ResourceManagerClientCompositeOperations(object):
         operation_result = self.client.update_private_endpoint(private_endpoint_id, update_private_endpoint_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         private_endpoint_id = operation_result.data.id
 
@@ -798,7 +789,6 @@ class ResourceManagerClientCompositeOperations(object):
         operation_result = self.client.update_stack(stack_id, update_stack_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         stack_id = operation_result.data.id
 
@@ -846,7 +836,6 @@ class ResourceManagerClientCompositeOperations(object):
         operation_result = self.client.update_template(template_id, update_template_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         template_id = operation_result.data.id
 

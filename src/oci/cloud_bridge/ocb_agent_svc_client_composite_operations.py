@@ -49,7 +49,6 @@ class OcbAgentSvcClientCompositeOperations(object):
         operation_result = self.client.add_agent_dependency(environment_id, add_agent_dependency_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         environment_id = operation_result.data.id
 
@@ -95,8 +94,9 @@ class OcbAgentSvcClientCompositeOperations(object):
         operation_result = self.client.change_agent_compartment(agent_id, change_agent_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -136,8 +136,9 @@ class OcbAgentSvcClientCompositeOperations(object):
         operation_result = self.client.change_environment_compartment(environment_id, change_environment_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -174,7 +175,6 @@ class OcbAgentSvcClientCompositeOperations(object):
         operation_result = self.client.create_agent(create_agent_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         agent_id = operation_result.data.id
 
@@ -217,8 +217,9 @@ class OcbAgentSvcClientCompositeOperations(object):
         operation_result = self.client.create_agent_dependency(create_agent_dependency_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -255,7 +256,6 @@ class OcbAgentSvcClientCompositeOperations(object):
         operation_result = self.client.create_environment(create_environment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         environment_id = operation_result.data.id
 
@@ -307,7 +307,6 @@ class OcbAgentSvcClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -367,7 +366,6 @@ class OcbAgentSvcClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -427,7 +425,6 @@ class OcbAgentSvcClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -481,7 +478,6 @@ class OcbAgentSvcClientCompositeOperations(object):
         operation_result = self.client.remove_agent_dependency(environment_id, remove_agent_dependency_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         environment_id = operation_result.data.id
 
@@ -527,7 +523,6 @@ class OcbAgentSvcClientCompositeOperations(object):
         operation_result = self.client.update_agent(agent_id, update_agent_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         agent_id = operation_result.data.id
 
@@ -573,8 +568,9 @@ class OcbAgentSvcClientCompositeOperations(object):
         operation_result = self.client.update_agent_dependency(agent_dependency_id, update_agent_dependency_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -614,7 +610,6 @@ class OcbAgentSvcClientCompositeOperations(object):
         operation_result = self.client.update_environment(environment_id, update_environment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         environment_id = operation_result.data.id
 
@@ -663,7 +658,6 @@ class OcbAgentSvcClientCompositeOperations(object):
         operation_result = self.client.update_plugin(agent_id, plugin_name, update_plugin_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         agent_id = operation_result.data.id
 

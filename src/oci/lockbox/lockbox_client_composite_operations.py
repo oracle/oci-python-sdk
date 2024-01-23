@@ -46,8 +46,9 @@ class LockboxClientCompositeOperations(object):
         operation_result = self.client.create_access_request(create_access_request_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -84,7 +85,6 @@ class LockboxClientCompositeOperations(object):
         operation_result = self.client.create_approval_template(create_approval_template_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         approval_template_id = operation_result.data.id
 
@@ -127,7 +127,6 @@ class LockboxClientCompositeOperations(object):
         operation_result = self.client.create_lockbox(create_lockbox_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         lockbox_id = operation_result.data.id
 
@@ -179,7 +178,6 @@ class LockboxClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -239,7 +237,6 @@ class LockboxClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -293,8 +290,9 @@ class LockboxClientCompositeOperations(object):
         operation_result = self.client.handle_access_request(access_request_id, handle_access_request_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -334,7 +332,6 @@ class LockboxClientCompositeOperations(object):
         operation_result = self.client.update_approval_template(approval_template_id, update_approval_template_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         approval_template_id = operation_result.data.id
 
@@ -380,7 +377,6 @@ class LockboxClientCompositeOperations(object):
         operation_result = self.client.update_lockbox(lockbox_id, update_lockbox_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         lockbox_id = operation_result.data.id
 

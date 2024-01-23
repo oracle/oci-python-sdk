@@ -46,7 +46,6 @@ class OperatorControlAssignmentClientCompositeOperations(object):
         operation_result = self.client.create_operator_control_assignment(create_operator_control_assignment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         operator_control_assignment_id = operation_result.data.id
 
@@ -98,7 +97,6 @@ class OperatorControlAssignmentClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -152,7 +150,6 @@ class OperatorControlAssignmentClientCompositeOperations(object):
         operation_result = self.client.update_operator_control_assignment(operator_control_assignment_id, update_operator_control_assignment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         operator_control_assignment_id = operation_result.data.id
 

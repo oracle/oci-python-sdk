@@ -49,7 +49,6 @@ class InventoryClientCompositeOperations(object):
         operation_result = self.client.change_asset_tags(asset_id, change_asset_tags_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         asset_id = operation_result.data.id
 
@@ -92,7 +91,6 @@ class InventoryClientCompositeOperations(object):
         operation_result = self.client.create_asset(create_asset_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         asset_id = operation_result.data.id
 
@@ -135,8 +133,9 @@ class InventoryClientCompositeOperations(object):
         operation_result = self.client.create_inventory(create_inventory_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -182,7 +181,6 @@ class InventoryClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -241,8 +239,9 @@ class InventoryClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -279,8 +278,9 @@ class InventoryClientCompositeOperations(object):
         operation_result = self.client.get_inventory(inventory_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -320,8 +320,9 @@ class InventoryClientCompositeOperations(object):
         operation_result = self.client.import_inventory(import_inventory_details, inventory_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -361,7 +362,6 @@ class InventoryClientCompositeOperations(object):
         operation_result = self.client.update_asset(asset_id, update_asset_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         asset_id = operation_result.data.id
 
@@ -407,7 +407,6 @@ class InventoryClientCompositeOperations(object):
         operation_result = self.client.update_inventory(inventory_id, update_inventory_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         inventory_id = operation_result.data.id
 

@@ -23,6 +23,7 @@ from .change_config_compartment_details import ChangeConfigCompartmentDetails
 from .change_metric_extension_compartment_details import ChangeMetricExtensionCompartmentDetails
 from .change_monitored_resource_compartment_details import ChangeMonitoredResourceCompartmentDetails
 from .change_monitored_resource_task_compartment_details import ChangeMonitoredResourceTaskCompartmentDetails
+from .change_process_set_compartment_details import ChangeProcessSetCompartmentDetails
 from .config import Config
 from .config_collection import ConfigCollection
 from .config_summary import ConfigSummary
@@ -37,6 +38,7 @@ from .create_metric_extension_details import CreateMetricExtensionDetails
 from .create_monitored_resource_details import CreateMonitoredResourceDetails
 from .create_monitored_resource_task_details import CreateMonitoredResourceTaskDetails
 from .create_monitored_resource_type_details import CreateMonitoredResourceTypeDetails
+from .create_process_set_details import CreateProcessSetDetails
 from .credential_collection import CredentialCollection
 from .credential_details import CredentialDetails
 from .credential_property import CredentialProperty
@@ -94,6 +96,11 @@ from .os_command_query_properties import OsCommandQueryProperties
 from .os_command_update_query_properties import OsCommandUpdateQueryProperties
 from .plain_text_credentials import PlainTextCredentials
 from .pre_existing_credentials import PreExistingCredentials
+from .process_set import ProcessSet
+from .process_set_collection import ProcessSetCollection
+from .process_set_specification import ProcessSetSpecification
+from .process_set_specification_details import ProcessSetSpecificationDetails
+from .process_set_summary import ProcessSetSummary
 from .property_details import PropertyDetails
 from .resource_type_metadata_details import ResourceTypeMetadataDetails
 from .script_file_details import ScriptFileDetails
@@ -120,6 +127,7 @@ from .update_metric_extension_details import UpdateMetricExtensionDetails
 from .update_monitored_resource_details import UpdateMonitoredResourceDetails
 from .update_monitored_resource_task_details import UpdateMonitoredResourceTaskDetails
 from .update_monitored_resource_type_details import UpdateMonitoredResourceTypeDetails
+from .update_process_set_details import UpdateProcessSetDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_error_collection import WorkRequestErrorCollection
@@ -148,6 +156,7 @@ stack_monitoring_type_mapping = {
     "ChangeMetricExtensionCompartmentDetails": ChangeMetricExtensionCompartmentDetails,
     "ChangeMonitoredResourceCompartmentDetails": ChangeMonitoredResourceCompartmentDetails,
     "ChangeMonitoredResourceTaskCompartmentDetails": ChangeMonitoredResourceTaskCompartmentDetails,
+    "ChangeProcessSetCompartmentDetails": ChangeProcessSetCompartmentDetails,
     "Config": Config,
     "ConfigCollection": ConfigCollection,
     "ConfigSummary": ConfigSummary,
@@ -162,6 +171,7 @@ stack_monitoring_type_mapping = {
     "CreateMonitoredResourceDetails": CreateMonitoredResourceDetails,
     "CreateMonitoredResourceTaskDetails": CreateMonitoredResourceTaskDetails,
     "CreateMonitoredResourceTypeDetails": CreateMonitoredResourceTypeDetails,
+    "CreateProcessSetDetails": CreateProcessSetDetails,
     "CredentialCollection": CredentialCollection,
     "CredentialDetails": CredentialDetails,
     "CredentialProperty": CredentialProperty,
@@ -219,6 +229,11 @@ stack_monitoring_type_mapping = {
     "OsCommandUpdateQueryProperties": OsCommandUpdateQueryProperties,
     "PlainTextCredentials": PlainTextCredentials,
     "PreExistingCredentials": PreExistingCredentials,
+    "ProcessSet": ProcessSet,
+    "ProcessSetCollection": ProcessSetCollection,
+    "ProcessSetSpecification": ProcessSetSpecification,
+    "ProcessSetSpecificationDetails": ProcessSetSpecificationDetails,
+    "ProcessSetSummary": ProcessSetSummary,
     "PropertyDetails": PropertyDetails,
     "ResourceTypeMetadataDetails": ResourceTypeMetadataDetails,
     "ScriptFileDetails": ScriptFileDetails,
@@ -245,6 +260,7 @@ stack_monitoring_type_mapping = {
     "UpdateMonitoredResourceDetails": UpdateMonitoredResourceDetails,
     "UpdateMonitoredResourceTaskDetails": UpdateMonitoredResourceTaskDetails,
     "UpdateMonitoredResourceTypeDetails": UpdateMonitoredResourceTypeDetails,
+    "UpdateProcessSetDetails": UpdateProcessSetDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestErrorCollection": WorkRequestErrorCollection,

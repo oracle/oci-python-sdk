@@ -49,8 +49,9 @@ class ManagedInstanceGroupClientCompositeOperations(object):
         operation_result = self.client.attach_managed_instances_to_managed_instance_group(managed_instance_group_id, attach_managed_instances_to_managed_instance_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -87,7 +88,6 @@ class ManagedInstanceGroupClientCompositeOperations(object):
         operation_result = self.client.create_managed_instance_group(create_managed_instance_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         managed_instance_group_id = operation_result.data.id
 
@@ -139,7 +139,6 @@ class ManagedInstanceGroupClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -193,8 +192,9 @@ class ManagedInstanceGroupClientCompositeOperations(object):
         operation_result = self.client.disable_module_stream_on_managed_instance_group(managed_instance_group_id, disable_module_stream_on_managed_instance_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -234,8 +234,9 @@ class ManagedInstanceGroupClientCompositeOperations(object):
         operation_result = self.client.enable_module_stream_on_managed_instance_group(managed_instance_group_id, enable_module_stream_on_managed_instance_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -275,8 +276,9 @@ class ManagedInstanceGroupClientCompositeOperations(object):
         operation_result = self.client.install_module_stream_profile_on_managed_instance_group(managed_instance_group_id, install_module_stream_profile_on_managed_instance_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -316,8 +318,9 @@ class ManagedInstanceGroupClientCompositeOperations(object):
         operation_result = self.client.install_packages_on_managed_instance_group(managed_instance_group_id, install_packages_on_managed_instance_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -354,8 +357,9 @@ class ManagedInstanceGroupClientCompositeOperations(object):
         operation_result = self.client.list_managed_instance_group_modules(managed_instance_group_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -395,8 +399,9 @@ class ManagedInstanceGroupClientCompositeOperations(object):
         operation_result = self.client.manage_module_streams_on_managed_instance_group(managed_instance_group_id, manage_module_streams_on_managed_instance_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -436,8 +441,9 @@ class ManagedInstanceGroupClientCompositeOperations(object):
         operation_result = self.client.remove_module_stream_profile_from_managed_instance_group(managed_instance_group_id, remove_module_stream_profile_from_managed_instance_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -477,8 +483,9 @@ class ManagedInstanceGroupClientCompositeOperations(object):
         operation_result = self.client.remove_packages_from_managed_instance_group(managed_instance_group_id, remove_packages_from_managed_instance_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -518,8 +525,9 @@ class ManagedInstanceGroupClientCompositeOperations(object):
         operation_result = self.client.update_all_packages_on_managed_instance_group(managed_instance_group_id, update_all_packages_on_managed_instance_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -559,7 +567,6 @@ class ManagedInstanceGroupClientCompositeOperations(object):
         operation_result = self.client.update_managed_instance_group(managed_instance_group_id, update_managed_instance_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         managed_instance_group_id = operation_result.data.id
 

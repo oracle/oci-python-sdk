@@ -48,7 +48,6 @@ class QuotasClientCompositeOperations(object):
         operation_result = self.client.add_quota_lock(quota_id, add_lock_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         quota_id = operation_result.data.id
 
@@ -91,7 +90,6 @@ class QuotasClientCompositeOperations(object):
         operation_result = self.client.create_quota(create_quota_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         quota_id = operation_result.data.id
 
@@ -143,7 +141,6 @@ class QuotasClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -196,7 +193,6 @@ class QuotasClientCompositeOperations(object):
         operation_result = self.client.remove_quota_lock(quota_id, remove_lock_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         quota_id = operation_result.data.id
 
@@ -242,7 +238,6 @@ class QuotasClientCompositeOperations(object):
         operation_result = self.client.update_quota(quota_id, update_quota_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         quota_id = operation_result.data.id
 

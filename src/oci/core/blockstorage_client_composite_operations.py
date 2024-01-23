@@ -54,8 +54,9 @@ class BlockstorageClientCompositeOperations(object):
         operation_result = self.client.copy_boot_volume_backup(boot_volume_backup_id, copy_boot_volume_backup_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -91,7 +92,6 @@ class BlockstorageClientCompositeOperations(object):
         operation_result = self.client.copy_boot_volume_backup(boot_volume_backup_id, copy_boot_volume_backup_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         boot_volume_backup_id = operation_result.data.id
 
@@ -138,8 +138,9 @@ class BlockstorageClientCompositeOperations(object):
         operation_result = self.client.copy_volume_backup(volume_backup_id, copy_volume_backup_details, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         work_request_id = operation_result.headers['opc-work-request-id']
-
         try:
             waiter_result = oci.wait_until(
                 self._work_request_client,
@@ -175,7 +176,6 @@ class BlockstorageClientCompositeOperations(object):
         operation_result = self.client.copy_volume_backup(volume_backup_id, copy_volume_backup_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         volume_backup_id = operation_result.data.id
 
@@ -221,7 +221,6 @@ class BlockstorageClientCompositeOperations(object):
         operation_result = self.client.copy_volume_group_backup(volume_group_backup_id, copy_volume_group_backup_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         volume_group_backup_id = operation_result.data.id
 
@@ -264,7 +263,6 @@ class BlockstorageClientCompositeOperations(object):
         operation_result = self.client.create_boot_volume(create_boot_volume_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         boot_volume_id = operation_result.data.id
 
@@ -307,7 +305,6 @@ class BlockstorageClientCompositeOperations(object):
         operation_result = self.client.create_boot_volume_backup(create_boot_volume_backup_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         boot_volume_backup_id = operation_result.data.id
 
@@ -350,7 +347,6 @@ class BlockstorageClientCompositeOperations(object):
         operation_result = self.client.create_volume(create_volume_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         volume_id = operation_result.data.id
 
@@ -393,7 +389,6 @@ class BlockstorageClientCompositeOperations(object):
         operation_result = self.client.create_volume_backup(create_volume_backup_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         volume_backup_id = operation_result.data.id
 
@@ -436,7 +431,6 @@ class BlockstorageClientCompositeOperations(object):
         operation_result = self.client.create_volume_group(create_volume_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         volume_group_id = operation_result.data.id
 
@@ -479,7 +473,6 @@ class BlockstorageClientCompositeOperations(object):
         operation_result = self.client.create_volume_group_backup(create_volume_group_backup_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         volume_group_backup_id = operation_result.data.id
 
@@ -531,7 +524,6 @@ class BlockstorageClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -591,7 +583,6 @@ class BlockstorageClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -651,7 +642,6 @@ class BlockstorageClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -711,7 +701,6 @@ class BlockstorageClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -771,7 +760,6 @@ class BlockstorageClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -831,7 +819,6 @@ class BlockstorageClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -885,7 +872,6 @@ class BlockstorageClientCompositeOperations(object):
         operation_result = self.client.update_boot_volume(boot_volume_id, update_boot_volume_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         boot_volume_id = operation_result.data.id
 
@@ -931,7 +917,6 @@ class BlockstorageClientCompositeOperations(object):
         operation_result = self.client.update_boot_volume_backup(boot_volume_backup_id, update_boot_volume_backup_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         boot_volume_backup_id = operation_result.data.id
 
@@ -977,7 +962,6 @@ class BlockstorageClientCompositeOperations(object):
         operation_result = self.client.update_volume(volume_id, update_volume_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         volume_id = operation_result.data.id
 
@@ -1023,7 +1007,6 @@ class BlockstorageClientCompositeOperations(object):
         operation_result = self.client.update_volume_backup(volume_backup_id, update_volume_backup_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         volume_backup_id = operation_result.data.id
 
@@ -1069,7 +1052,6 @@ class BlockstorageClientCompositeOperations(object):
         operation_result = self.client.update_volume_group(volume_group_id, update_volume_group_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         volume_group_id = operation_result.data.id
 
@@ -1115,7 +1097,6 @@ class BlockstorageClientCompositeOperations(object):
         operation_result = self.client.update_volume_group_backup(volume_group_backup_id, update_volume_group_backup_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         volume_group_backup_id = operation_result.data.id
 

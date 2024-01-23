@@ -49,7 +49,6 @@ class AccessRequestsClientCompositeOperations(object):
         operation_result = self.client.interaction_request(access_request_id, interaction_request_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         access_request_id = operation_result.data.id
 
@@ -95,7 +94,6 @@ class AccessRequestsClientCompositeOperations(object):
         operation_result = self.client.review_access_request(access_request_id, review_access_request_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         access_request_id = operation_result.data.id
 

@@ -51,8 +51,9 @@ class NetworkLoadBalancerClientCompositeOperations(object):
         operation_result = self.client.change_network_load_balancer_compartment(network_load_balancer_id, change_network_load_balancer_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -99,8 +100,9 @@ class NetworkLoadBalancerClientCompositeOperations(object):
         operation_result = self.client.create_backend(network_load_balancer_id, create_backend_details, backend_set_name, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -142,8 +144,9 @@ class NetworkLoadBalancerClientCompositeOperations(object):
         operation_result = self.client.create_backend_set(network_load_balancer_id, create_backend_set_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -185,8 +188,9 @@ class NetworkLoadBalancerClientCompositeOperations(object):
         operation_result = self.client.create_listener(network_load_balancer_id, create_listener_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -223,8 +227,9 @@ class NetworkLoadBalancerClientCompositeOperations(object):
         operation_result = self.client.create_network_load_balancer(create_network_load_balancer_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -284,8 +289,9 @@ class NetworkLoadBalancerClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -337,8 +343,9 @@ class NetworkLoadBalancerClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -390,8 +397,9 @@ class NetworkLoadBalancerClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -438,8 +446,9 @@ class NetworkLoadBalancerClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -494,8 +503,9 @@ class NetworkLoadBalancerClientCompositeOperations(object):
         operation_result = self.client.update_backend(network_load_balancer_id, update_backend_details, backend_set_name, backend_name, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -542,8 +552,9 @@ class NetworkLoadBalancerClientCompositeOperations(object):
         operation_result = self.client.update_backend_set(network_load_balancer_id, update_backend_set_details, backend_set_name, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -590,8 +601,9 @@ class NetworkLoadBalancerClientCompositeOperations(object):
         operation_result = self.client.update_health_checker(network_load_balancer_id, update_health_checker_details, backend_set_name, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -638,8 +650,9 @@ class NetworkLoadBalancerClientCompositeOperations(object):
         operation_result = self.client.update_listener(network_load_balancer_id, update_listener_details, listener_name, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -681,8 +694,9 @@ class NetworkLoadBalancerClientCompositeOperations(object):
         operation_result = self.client.update_network_load_balancer(network_load_balancer_id, update_network_load_balancer_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -724,8 +738,9 @@ class NetworkLoadBalancerClientCompositeOperations(object):
         operation_result = self.client.update_network_security_groups(network_load_balancer_id, update_network_security_groups_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:

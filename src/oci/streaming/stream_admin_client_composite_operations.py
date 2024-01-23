@@ -46,7 +46,6 @@ class StreamAdminClientCompositeOperations(object):
         operation_result = self.client.create_connect_harness(create_connect_harness_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         connect_harness_id = operation_result.data.id
 
@@ -89,7 +88,6 @@ class StreamAdminClientCompositeOperations(object):
         operation_result = self.client.create_stream(create_stream_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         stream_id = operation_result.data.id
 
@@ -132,7 +130,6 @@ class StreamAdminClientCompositeOperations(object):
         operation_result = self.client.create_stream_pool(create_stream_pool_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         stream_pool_id = operation_result.data.id
 
@@ -184,7 +181,6 @@ class StreamAdminClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -244,7 +240,6 @@ class StreamAdminClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -304,7 +299,6 @@ class StreamAdminClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -358,7 +352,6 @@ class StreamAdminClientCompositeOperations(object):
         operation_result = self.client.update_connect_harness(connect_harness_id, update_connect_harness_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         connect_harness_id = operation_result.data.id
 
@@ -404,7 +397,6 @@ class StreamAdminClientCompositeOperations(object):
         operation_result = self.client.update_stream(stream_id, update_stream_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         stream_id = operation_result.data.id
 
@@ -450,7 +442,6 @@ class StreamAdminClientCompositeOperations(object):
         operation_result = self.client.update_stream_pool(stream_pool_id, update_stream_pool_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         stream_pool_id = operation_result.data.id
 

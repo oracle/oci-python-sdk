@@ -46,7 +46,6 @@ class AccessGovernanceCPClientCompositeOperations(object):
         operation_result = self.client.create_governance_instance(create_governance_instance_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         governance_instance_id = operation_result.data.id
 
@@ -98,7 +97,6 @@ class AccessGovernanceCPClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -152,7 +150,6 @@ class AccessGovernanceCPClientCompositeOperations(object):
         operation_result = self.client.update_governance_instance(update_governance_instance_details, governance_instance_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         governance_instance_id = operation_result.data.id
 

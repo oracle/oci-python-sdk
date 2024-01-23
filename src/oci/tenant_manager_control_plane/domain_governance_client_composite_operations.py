@@ -46,7 +46,6 @@ class DomainGovernanceClientCompositeOperations(object):
         operation_result = self.client.create_domain_governance(create_domain_governance_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         domain_governance_id = operation_result.data.id
 
@@ -98,7 +97,6 @@ class DomainGovernanceClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -152,7 +150,6 @@ class DomainGovernanceClientCompositeOperations(object):
         operation_result = self.client.update_domain_governance(domain_governance_id, update_domain_governance_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         domain_governance_id = operation_result.data.id
 

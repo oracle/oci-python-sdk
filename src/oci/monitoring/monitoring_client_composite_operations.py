@@ -46,7 +46,6 @@ class MonitoringClientCompositeOperations(object):
         operation_result = self.client.create_alarm(create_alarm_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         alarm_id = operation_result.data.id
 
@@ -89,7 +88,6 @@ class MonitoringClientCompositeOperations(object):
         operation_result = self.client.create_alarm_suppression(create_alarm_suppression_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         alarm_suppression_id = operation_result.data.id
 
@@ -143,7 +141,6 @@ class MonitoringClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -205,7 +202,6 @@ class MonitoringClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
 
         try:
@@ -261,7 +257,6 @@ class MonitoringClientCompositeOperations(object):
         operation_result = self.client.update_alarm(alarm_id, update_alarm_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
         alarm_id = operation_result.data.id
 

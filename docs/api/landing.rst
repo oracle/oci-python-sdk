@@ -89,6 +89,8 @@ API Reference
 * :doc:`Functions Management <functions/client/oci.functions.FunctionsManagementClient>`
 * :doc:`Fusion Applications <fusion_apps/client/oci.fusion_apps.FusionApplicationsClient>`
 * :doc:`Gateway <apigateway/client/oci.apigateway.GatewayClient>`
+* :doc:`Generative Ai <generative_ai/client/oci.generative_ai.GenerativeAiClient>`
+* :doc:`Generative Ai Inference <generative_ai_inference/client/oci.generative_ai_inference.GenerativeAiInferenceClient>`
 * :doc:`Generic Artifacts Content <generic_artifacts_content/client/oci.generic_artifacts_content.GenericArtifactsContentClient>`
 * :doc:`Golden Gate <golden_gate/client/oci.golden_gate.GoldenGateClient>`
 * :doc:`Governance <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.GovernanceClient>`
@@ -302,6 +304,8 @@ API Reference
     fleet_software_update
     functions
     fusion_apps
+    generative_ai
+    generative_ai_inference
     generic_artifacts_content
     golden_gate
     governance_rules_control_plane

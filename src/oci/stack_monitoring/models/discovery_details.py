@@ -67,6 +67,10 @@ class DiscoveryDetails(object):
     #: This constant has a value of "ORACLE_GOLDENGATE"
     RESOURCE_TYPE_ORACLE_GOLDENGATE = "ORACLE_GOLDENGATE"
 
+    #: A constant which can be used with the resource_type property of a DiscoveryDetails.
+    #: This constant has a value of "CUSTOM_RESOURCE"
+    RESOURCE_TYPE_CUSTOM_RESOURCE = "CUSTOM_RESOURCE"
+
     #: A constant which can be used with the license property of a DiscoveryDetails.
     #: This constant has a value of "STANDARD_EDITION"
     LICENSE_STANDARD_EDITION = "STANDARD_EDITION"
@@ -86,7 +90,7 @@ class DiscoveryDetails(object):
 
         :param resource_type:
             The value to assign to the resource_type property of this DiscoveryDetails.
-            Allowed values for this property are: "WEBLOGIC_DOMAIN", "EBS_INSTANCE", "SQL_SERVER", "APACHE_TOMCAT", "ORACLE_DATABASE", "OCI_ORACLE_DB", "OCI_ORACLE_CDB", "OCI_ORACLE_PDB", "HOST", "ORACLE_PSFT", "ORACLE_MFT", "APACHE_HTTP_SERVER", "ORACLE_GOLDENGATE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "WEBLOGIC_DOMAIN", "EBS_INSTANCE", "SQL_SERVER", "APACHE_TOMCAT", "ORACLE_DATABASE", "OCI_ORACLE_DB", "OCI_ORACLE_CDB", "OCI_ORACLE_PDB", "HOST", "ORACLE_PSFT", "ORACLE_MFT", "APACHE_HTTP_SERVER", "ORACLE_GOLDENGATE", "CUSTOM_RESOURCE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_type: str
 
@@ -171,7 +175,7 @@ class DiscoveryDetails(object):
         **[Required]** Gets the resource_type of this DiscoveryDetails.
         Resource Type.
 
-        Allowed values for this property are: "WEBLOGIC_DOMAIN", "EBS_INSTANCE", "SQL_SERVER", "APACHE_TOMCAT", "ORACLE_DATABASE", "OCI_ORACLE_DB", "OCI_ORACLE_CDB", "OCI_ORACLE_PDB", "HOST", "ORACLE_PSFT", "ORACLE_MFT", "APACHE_HTTP_SERVER", "ORACLE_GOLDENGATE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "WEBLOGIC_DOMAIN", "EBS_INSTANCE", "SQL_SERVER", "APACHE_TOMCAT", "ORACLE_DATABASE", "OCI_ORACLE_DB", "OCI_ORACLE_CDB", "OCI_ORACLE_PDB", "HOST", "ORACLE_PSFT", "ORACLE_MFT", "APACHE_HTTP_SERVER", "ORACLE_GOLDENGATE", "CUSTOM_RESOURCE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -190,7 +194,7 @@ class DiscoveryDetails(object):
         :param resource_type: The resource_type of this DiscoveryDetails.
         :type: str
         """
-        allowed_values = ["WEBLOGIC_DOMAIN", "EBS_INSTANCE", "SQL_SERVER", "APACHE_TOMCAT", "ORACLE_DATABASE", "OCI_ORACLE_DB", "OCI_ORACLE_CDB", "OCI_ORACLE_PDB", "HOST", "ORACLE_PSFT", "ORACLE_MFT", "APACHE_HTTP_SERVER", "ORACLE_GOLDENGATE"]
+        allowed_values = ["WEBLOGIC_DOMAIN", "EBS_INSTANCE", "SQL_SERVER", "APACHE_TOMCAT", "ORACLE_DATABASE", "OCI_ORACLE_DB", "OCI_ORACLE_CDB", "OCI_ORACLE_PDB", "HOST", "ORACLE_PSFT", "ORACLE_MFT", "APACHE_HTTP_SERVER", "ORACLE_GOLDENGATE", "CUSTOM_RESOURCE"]
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             resource_type = 'UNKNOWN_ENUM_VALUE'
         self._resource_type = resource_type

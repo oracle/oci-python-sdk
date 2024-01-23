@@ -51,8 +51,9 @@ class WaaClientCompositeOperations(object):
         operation_result = self.client.change_web_app_acceleration_compartment(web_app_acceleration_id, change_web_app_acceleration_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -94,8 +95,9 @@ class WaaClientCompositeOperations(object):
         operation_result = self.client.change_web_app_acceleration_policy_compartment(web_app_acceleration_policy_id, change_web_app_acceleration_policy_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -132,8 +134,9 @@ class WaaClientCompositeOperations(object):
         operation_result = self.client.create_web_app_acceleration(create_web_app_acceleration_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -170,8 +173,9 @@ class WaaClientCompositeOperations(object):
         operation_result = self.client.create_web_app_acceleration_policy(create_web_app_acceleration_policy_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -218,8 +222,9 @@ class WaaClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -266,8 +271,9 @@ class WaaClientCompositeOperations(object):
 
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -309,8 +315,9 @@ class WaaClientCompositeOperations(object):
         operation_result = self.client.purge_web_app_acceleration_cache(web_app_acceleration_id, purge_web_app_acceleration_cache_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -352,8 +359,9 @@ class WaaClientCompositeOperations(object):
         operation_result = self.client.update_web_app_acceleration(web_app_acceleration_id, update_web_app_acceleration_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
@@ -395,8 +403,9 @@ class WaaClientCompositeOperations(object):
         operation_result = self.client.update_web_app_acceleration_policy(web_app_acceleration_policy_id, update_web_app_acceleration_policy_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
-
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
         wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
