@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class DropSqlTuningTaskDetails(object):
     """
     The request to drop a SQL tuning task.
+    It takes either credentialDetails or databaseCredential. It's recommended to provide databaseCredential
     """
 
     def __init__(self, **kwargs):
@@ -28,19 +29,26 @@ class DropSqlTuningTaskDetails(object):
             The value to assign to the credential_details property of this DropSqlTuningTaskDetails.
         :type credential_details: oci.database_management.models.SqlTuningTaskCredentialDetails
 
+        :param database_credential:
+            The value to assign to the database_credential property of this DropSqlTuningTaskDetails.
+        :type database_credential: oci.database_management.models.DatabaseCredentialDetails
+
         """
         self.swagger_types = {
             'task_id': 'int',
-            'credential_details': 'SqlTuningTaskCredentialDetails'
+            'credential_details': 'SqlTuningTaskCredentialDetails',
+            'database_credential': 'DatabaseCredentialDetails'
         }
 
         self.attribute_map = {
             'task_id': 'taskId',
-            'credential_details': 'credentialDetails'
+            'credential_details': 'credentialDetails',
+            'database_credential': 'databaseCredential'
         }
 
         self._task_id = None
         self._credential_details = None
+        self._database_credential = None
 
     @property
     def task_id(self):
@@ -77,7 +85,7 @@ class DropSqlTuningTaskDetails(object):
     @property
     def credential_details(self):
         """
-        **[Required]** Gets the credential_details of this DropSqlTuningTaskDetails.
+        Gets the credential_details of this DropSqlTuningTaskDetails.
 
         :return: The credential_details of this DropSqlTuningTaskDetails.
         :rtype: oci.database_management.models.SqlTuningTaskCredentialDetails
@@ -93,6 +101,26 @@ class DropSqlTuningTaskDetails(object):
         :type: oci.database_management.models.SqlTuningTaskCredentialDetails
         """
         self._credential_details = credential_details
+
+    @property
+    def database_credential(self):
+        """
+        Gets the database_credential of this DropSqlTuningTaskDetails.
+
+        :return: The database_credential of this DropSqlTuningTaskDetails.
+        :rtype: oci.database_management.models.DatabaseCredentialDetails
+        """
+        return self._database_credential
+
+    @database_credential.setter
+    def database_credential(self, database_credential):
+        """
+        Sets the database_credential of this DropSqlTuningTaskDetails.
+
+        :param database_credential: The database_credential of this DropSqlTuningTaskDetails.
+        :type: oci.database_management.models.DatabaseCredentialDetails
+        """
+        self._database_credential = database_credential
 
     def __repr__(self):
         return formatted_flat_dict(self)

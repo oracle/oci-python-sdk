@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class StartSqlTuningTaskDetails(object):
     """
     The request to start a SQL tuning task.
+    It takes either credentialDetails or databaseCredential. It's recommended to provide databaseCredential
     """
 
     #: A constant which can be used with the scope property of a StartSqlTuningTaskDetails.
@@ -39,6 +40,10 @@ class StartSqlTuningTaskDetails(object):
         :param credential_details:
             The value to assign to the credential_details property of this StartSqlTuningTaskDetails.
         :type credential_details: oci.database_management.models.SqlTuningTaskCredentialDetails
+
+        :param database_credential:
+            The value to assign to the database_credential property of this StartSqlTuningTaskDetails.
+        :type database_credential: oci.database_management.models.DatabaseCredentialDetails
 
         :param total_time_limit_in_minutes:
             The value to assign to the total_time_limit_in_minutes property of this StartSqlTuningTaskDetails.
@@ -74,6 +79,7 @@ class StartSqlTuningTaskDetails(object):
             'task_name': 'str',
             'task_description': 'str',
             'credential_details': 'SqlTuningTaskCredentialDetails',
+            'database_credential': 'DatabaseCredentialDetails',
             'total_time_limit_in_minutes': 'int',
             'scope': 'str',
             'statement_time_limit_in_minutes': 'int',
@@ -87,6 +93,7 @@ class StartSqlTuningTaskDetails(object):
             'task_name': 'taskName',
             'task_description': 'taskDescription',
             'credential_details': 'credentialDetails',
+            'database_credential': 'databaseCredential',
             'total_time_limit_in_minutes': 'totalTimeLimitInMinutes',
             'scope': 'scope',
             'statement_time_limit_in_minutes': 'statementTimeLimitInMinutes',
@@ -99,6 +106,7 @@ class StartSqlTuningTaskDetails(object):
         self._task_name = None
         self._task_description = None
         self._credential_details = None
+        self._database_credential = None
         self._total_time_limit_in_minutes = None
         self._scope = None
         self._statement_time_limit_in_minutes = None
@@ -158,7 +166,7 @@ class StartSqlTuningTaskDetails(object):
     @property
     def credential_details(self):
         """
-        **[Required]** Gets the credential_details of this StartSqlTuningTaskDetails.
+        Gets the credential_details of this StartSqlTuningTaskDetails.
 
         :return: The credential_details of this StartSqlTuningTaskDetails.
         :rtype: oci.database_management.models.SqlTuningTaskCredentialDetails
@@ -174,6 +182,26 @@ class StartSqlTuningTaskDetails(object):
         :type: oci.database_management.models.SqlTuningTaskCredentialDetails
         """
         self._credential_details = credential_details
+
+    @property
+    def database_credential(self):
+        """
+        Gets the database_credential of this StartSqlTuningTaskDetails.
+
+        :return: The database_credential of this StartSqlTuningTaskDetails.
+        :rtype: oci.database_management.models.DatabaseCredentialDetails
+        """
+        return self._database_credential
+
+    @database_credential.setter
+    def database_credential(self, database_credential):
+        """
+        Sets the database_credential of this StartSqlTuningTaskDetails.
+
+        :param database_credential: The database_credential of this StartSqlTuningTaskDetails.
+        :type: oci.database_management.models.DatabaseCredentialDetails
+        """
+        self._database_credential = database_credential
 
     @property
     def total_time_limit_in_minutes(self):

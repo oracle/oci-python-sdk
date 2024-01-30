@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class DropTablespaceDetails(object):
     """
     The details required to drop a tablespace.
+    It takes either credentialDetails or databaseCredential. It's recommended to provide databaseCredential
     """
 
     def __init__(self, **kwargs):
@@ -23,6 +24,10 @@ class DropTablespaceDetails(object):
         :param credential_details:
             The value to assign to the credential_details property of this DropTablespaceDetails.
         :type credential_details: oci.database_management.models.TablespaceAdminCredentialDetails
+
+        :param database_credential:
+            The value to assign to the database_credential property of this DropTablespaceDetails.
+        :type database_credential: oci.database_management.models.DatabaseCredentialDetails
 
         :param is_including_contents:
             The value to assign to the is_including_contents property of this DropTablespaceDetails.
@@ -39,6 +44,7 @@ class DropTablespaceDetails(object):
         """
         self.swagger_types = {
             'credential_details': 'TablespaceAdminCredentialDetails',
+            'database_credential': 'DatabaseCredentialDetails',
             'is_including_contents': 'bool',
             'is_dropping_data_files': 'bool',
             'is_cascade_constraints': 'bool'
@@ -46,12 +52,14 @@ class DropTablespaceDetails(object):
 
         self.attribute_map = {
             'credential_details': 'credentialDetails',
+            'database_credential': 'databaseCredential',
             'is_including_contents': 'isIncludingContents',
             'is_dropping_data_files': 'isDroppingDataFiles',
             'is_cascade_constraints': 'isCascadeConstraints'
         }
 
         self._credential_details = None
+        self._database_credential = None
         self._is_including_contents = None
         self._is_dropping_data_files = None
         self._is_cascade_constraints = None
@@ -59,7 +67,7 @@ class DropTablespaceDetails(object):
     @property
     def credential_details(self):
         """
-        **[Required]** Gets the credential_details of this DropTablespaceDetails.
+        Gets the credential_details of this DropTablespaceDetails.
 
         :return: The credential_details of this DropTablespaceDetails.
         :rtype: oci.database_management.models.TablespaceAdminCredentialDetails
@@ -75,6 +83,26 @@ class DropTablespaceDetails(object):
         :type: oci.database_management.models.TablespaceAdminCredentialDetails
         """
         self._credential_details = credential_details
+
+    @property
+    def database_credential(self):
+        """
+        Gets the database_credential of this DropTablespaceDetails.
+
+        :return: The database_credential of this DropTablespaceDetails.
+        :rtype: oci.database_management.models.DatabaseCredentialDetails
+        """
+        return self._database_credential
+
+    @database_credential.setter
+    def database_credential(self, database_credential):
+        """
+        Sets the database_credential of this DropTablespaceDetails.
+
+        :param database_credential: The database_credential of this DropTablespaceDetails.
+        :type: oci.database_management.models.DatabaseCredentialDetails
+        """
+        self._database_credential = database_credential
 
     @property
     def is_including_contents(self):

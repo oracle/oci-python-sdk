@@ -31,6 +31,10 @@ class ImportObjectMetadataSummary(object):
     #: This constant has a value of "REPLACED"
     RESOLUTION_ACTION_REPLACED = "REPLACED"
 
+    #: A constant which can be used with the resolution_action property of a ImportObjectMetadataSummary.
+    #: This constant has a value of "EXCLUDED"
+    RESOLUTION_ACTION_EXCLUDED = "EXCLUDED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ImportObjectMetadataSummary object with values from keyword arguments.
@@ -74,7 +78,7 @@ class ImportObjectMetadataSummary(object):
 
         :param resolution_action:
             The value to assign to the resolution_action property of this ImportObjectMetadataSummary.
-            Allowed values for this property are: "CREATED", "RETAINED", "DUPLICATED", "REPLACED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATED", "RETAINED", "DUPLICATED", "REPLACED", "EXCLUDED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resolution_action: str
 
@@ -338,7 +342,7 @@ class ImportObjectMetadataSummary(object):
         Gets the resolution_action of this ImportObjectMetadataSummary.
         Object resolution action
 
-        Allowed values for this property are: "CREATED", "RETAINED", "DUPLICATED", "REPLACED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATED", "RETAINED", "DUPLICATED", "REPLACED", "EXCLUDED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -357,7 +361,7 @@ class ImportObjectMetadataSummary(object):
         :param resolution_action: The resolution_action of this ImportObjectMetadataSummary.
         :type: str
         """
-        allowed_values = ["CREATED", "RETAINED", "DUPLICATED", "REPLACED"]
+        allowed_values = ["CREATED", "RETAINED", "DUPLICATED", "REPLACED", "EXCLUDED"]
         if not value_allowed_none_or_none_sentinel(resolution_action, allowed_values):
             resolution_action = 'UNKNOWN_ENUM_VALUE'
         self._resolution_action = resolution_action

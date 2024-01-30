@@ -70,6 +70,8 @@ from .connection_from_my_sql import ConnectionFromMySQL
 from .connection_from_my_sql_details import ConnectionFromMySQLDetails
 from .connection_from_my_sql_heat_wave import ConnectionFromMySqlHeatWave
 from .connection_from_my_sql_heat_wave_details import ConnectionFromMySqlHeatWaveDetails
+from .connection_from_o_auth2 import ConnectionFromOAuth2
+from .connection_from_o_auth2_details import ConnectionFromOAuth2Details
 from .connection_from_object_storage import ConnectionFromObjectStorage
 from .connection_from_object_storage_details import ConnectionFromObjectStorageDetails
 from .connection_from_oracle import ConnectionFromOracle
@@ -97,6 +99,7 @@ from .connection_summary_from_jdbc import ConnectionSummaryFromJdbc
 from .connection_summary_from_lake import ConnectionSummaryFromLake
 from .connection_summary_from_my_sql import ConnectionSummaryFromMySQL
 from .connection_summary_from_my_sql_heat_wave import ConnectionSummaryFromMySqlHeatWave
+from .connection_summary_from_o_auth2 import ConnectionSummaryFromOAuth2
 from .connection_summary_from_object_storage import ConnectionSummaryFromObjectStorage
 from .connection_summary_from_oracle import ConnectionSummaryFromOracle
 from .connection_summary_from_oracle_ebs import ConnectionSummaryFromOracleEbs
@@ -128,6 +131,7 @@ from .create_connection_from_jdbc import CreateConnectionFromJdbc
 from .create_connection_from_lake import CreateConnectionFromLake
 from .create_connection_from_my_sql import CreateConnectionFromMySQL
 from .create_connection_from_my_sql_heat_wave import CreateConnectionFromMySqlHeatWave
+from .create_connection_from_o_auth2 import CreateConnectionFromOAuth2
 from .create_connection_from_object_storage import CreateConnectionFromObjectStorage
 from .create_connection_from_oracle import CreateConnectionFromOracle
 from .create_connection_from_oracle_ebs import CreateConnectionFromOracleEbs
@@ -529,6 +533,7 @@ from .update_connection_from_jdbc import UpdateConnectionFromJdbc
 from .update_connection_from_lake import UpdateConnectionFromLake
 from .update_connection_from_my_sql import UpdateConnectionFromMySQL
 from .update_connection_from_my_sql_heat_wave import UpdateConnectionFromMySqlHeatWave
+from .update_connection_from_o_auth2 import UpdateConnectionFromOAuth2
 from .update_connection_from_object_storage import UpdateConnectionFromObjectStorage
 from .update_connection_from_oracle import UpdateConnectionFromOracle
 from .update_connection_from_oracle_ebs import UpdateConnectionFromOracleEbs
@@ -661,6 +666,8 @@ data_integration_type_mapping = {
     "ConnectionFromMySQLDetails": ConnectionFromMySQLDetails,
     "ConnectionFromMySqlHeatWave": ConnectionFromMySqlHeatWave,
     "ConnectionFromMySqlHeatWaveDetails": ConnectionFromMySqlHeatWaveDetails,
+    "ConnectionFromOAuth2": ConnectionFromOAuth2,
+    "ConnectionFromOAuth2Details": ConnectionFromOAuth2Details,
     "ConnectionFromObjectStorage": ConnectionFromObjectStorage,
     "ConnectionFromObjectStorageDetails": ConnectionFromObjectStorageDetails,
     "ConnectionFromOracle": ConnectionFromOracle,
@@ -688,6 +695,7 @@ data_integration_type_mapping = {
     "ConnectionSummaryFromLake": ConnectionSummaryFromLake,
     "ConnectionSummaryFromMySQL": ConnectionSummaryFromMySQL,
     "ConnectionSummaryFromMySqlHeatWave": ConnectionSummaryFromMySqlHeatWave,
+    "ConnectionSummaryFromOAuth2": ConnectionSummaryFromOAuth2,
     "ConnectionSummaryFromObjectStorage": ConnectionSummaryFromObjectStorage,
     "ConnectionSummaryFromOracle": ConnectionSummaryFromOracle,
     "ConnectionSummaryFromOracleEbs": ConnectionSummaryFromOracleEbs,
@@ -719,6 +727,7 @@ data_integration_type_mapping = {
     "CreateConnectionFromLake": CreateConnectionFromLake,
     "CreateConnectionFromMySQL": CreateConnectionFromMySQL,
     "CreateConnectionFromMySqlHeatWave": CreateConnectionFromMySqlHeatWave,
+    "CreateConnectionFromOAuth2": CreateConnectionFromOAuth2,
     "CreateConnectionFromObjectStorage": CreateConnectionFromObjectStorage,
     "CreateConnectionFromOracle": CreateConnectionFromOracle,
     "CreateConnectionFromOracleEbs": CreateConnectionFromOracleEbs,
@@ -1120,6 +1129,7 @@ data_integration_type_mapping = {
     "UpdateConnectionFromLake": UpdateConnectionFromLake,
     "UpdateConnectionFromMySQL": UpdateConnectionFromMySQL,
     "UpdateConnectionFromMySqlHeatWave": UpdateConnectionFromMySqlHeatWave,
+    "UpdateConnectionFromOAuth2": UpdateConnectionFromOAuth2,
     "UpdateConnectionFromObjectStorage": UpdateConnectionFromObjectStorage,
     "UpdateConnectionFromOracle": UpdateConnectionFromOracle,
     "UpdateConnectionFromOracleEbs": UpdateConnectionFromOracleEbs,

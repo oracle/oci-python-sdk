@@ -170,6 +170,9 @@ class DiagnosabilityClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -209,7 +212,8 @@ class DiagnosabilityClient(object):
             "sort_order",
             "page",
             "limit",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -271,7 +275,8 @@ class DiagnosabilityClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -361,6 +366,9 @@ class DiagnosabilityClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -400,7 +408,8 @@ class DiagnosabilityClient(object):
             "sort_order",
             "page",
             "limit",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -462,7 +471,8 @@ class DiagnosabilityClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -547,6 +557,9 @@ class DiagnosabilityClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -585,7 +598,8 @@ class DiagnosabilityClient(object):
             "is_regular_expression",
             "page",
             "limit",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -639,7 +653,8 @@ class DiagnosabilityClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -724,6 +739,9 @@ class DiagnosabilityClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -762,7 +780,8 @@ class DiagnosabilityClient(object):
             "is_regular_expression",
             "page",
             "limit",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -816,7 +835,8 @@ class DiagnosabilityClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 

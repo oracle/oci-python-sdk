@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class ChangeSpaceBudgetDetails(object):
     """
     The details required to change the disk space limit for the SQL Management Base.
+    It takes either credentials or databaseCredential. It's recommended to provide databaseCredential
     """
 
     def __init__(self, **kwargs):
@@ -28,19 +29,26 @@ class ChangeSpaceBudgetDetails(object):
             The value to assign to the credentials property of this ChangeSpaceBudgetDetails.
         :type credentials: oci.database_management.models.ManagedDatabaseCredential
 
+        :param database_credential:
+            The value to assign to the database_credential property of this ChangeSpaceBudgetDetails.
+        :type database_credential: oci.database_management.models.DatabaseCredentialDetails
+
         """
         self.swagger_types = {
             'space_budget_percent': 'float',
-            'credentials': 'ManagedDatabaseCredential'
+            'credentials': 'ManagedDatabaseCredential',
+            'database_credential': 'DatabaseCredentialDetails'
         }
 
         self.attribute_map = {
             'space_budget_percent': 'spaceBudgetPercent',
-            'credentials': 'credentials'
+            'credentials': 'credentials',
+            'database_credential': 'databaseCredential'
         }
 
         self._space_budget_percent = None
         self._credentials = None
+        self._database_credential = None
 
     @property
     def space_budget_percent(self):
@@ -69,7 +77,7 @@ class ChangeSpaceBudgetDetails(object):
     @property
     def credentials(self):
         """
-        **[Required]** Gets the credentials of this ChangeSpaceBudgetDetails.
+        Gets the credentials of this ChangeSpaceBudgetDetails.
 
         :return: The credentials of this ChangeSpaceBudgetDetails.
         :rtype: oci.database_management.models.ManagedDatabaseCredential
@@ -85,6 +93,26 @@ class ChangeSpaceBudgetDetails(object):
         :type: oci.database_management.models.ManagedDatabaseCredential
         """
         self._credentials = credentials
+
+    @property
+    def database_credential(self):
+        """
+        Gets the database_credential of this ChangeSpaceBudgetDetails.
+
+        :return: The database_credential of this ChangeSpaceBudgetDetails.
+        :rtype: oci.database_management.models.DatabaseCredentialDetails
+        """
+        return self._database_credential
+
+    @database_credential.setter
+    def database_credential(self, database_credential):
+        """
+        Sets the database_credential of this ChangeSpaceBudgetDetails.
+
+        :param database_credential: The database_credential of this ChangeSpaceBudgetDetails.
+        :type: oci.database_management.models.DatabaseCredentialDetails
+        """
+        self._database_credential = database_credential
 
     def __repr__(self):
         return formatted_flat_dict(self)

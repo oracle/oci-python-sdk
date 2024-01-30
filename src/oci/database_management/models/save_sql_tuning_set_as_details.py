@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class SaveSqlTuningSetAsDetails(object):
     """
     Save current list of Sql statements into another Sql tuning set.
+    It takes either credentialDetails or databaseCredential. It's recommended to provide databaseCredential
     """
 
     #: A constant which can be used with the plan_filter property of a SaveSqlTuningSetAsDetails.
@@ -168,6 +169,10 @@ class SaveSqlTuningSetAsDetails(object):
             The value to assign to the credential_details property of this SaveSqlTuningSetAsDetails.
         :type credential_details: oci.database_management.models.SqlTuningSetAdminCredentialDetails
 
+        :param database_credential:
+            The value to assign to the database_credential property of this SaveSqlTuningSetAsDetails.
+        :type database_credential: oci.database_management.models.DatabaseCredentialDetails
+
         :param show_sql_only:
             The value to assign to the show_sql_only property of this SaveSqlTuningSetAsDetails.
         :type show_sql_only: int
@@ -267,6 +272,7 @@ class SaveSqlTuningSetAsDetails(object):
         """
         self.swagger_types = {
             'credential_details': 'SqlTuningSetAdminCredentialDetails',
+            'database_credential': 'DatabaseCredentialDetails',
             'show_sql_only': 'int',
             'owner': 'str',
             'name': 'str',
@@ -293,6 +299,7 @@ class SaveSqlTuningSetAsDetails(object):
 
         self.attribute_map = {
             'credential_details': 'credentialDetails',
+            'database_credential': 'databaseCredential',
             'show_sql_only': 'showSqlOnly',
             'owner': 'owner',
             'name': 'name',
@@ -318,6 +325,7 @@ class SaveSqlTuningSetAsDetails(object):
         }
 
         self._credential_details = None
+        self._database_credential = None
         self._show_sql_only = None
         self._owner = None
         self._name = None
@@ -344,7 +352,7 @@ class SaveSqlTuningSetAsDetails(object):
     @property
     def credential_details(self):
         """
-        **[Required]** Gets the credential_details of this SaveSqlTuningSetAsDetails.
+        Gets the credential_details of this SaveSqlTuningSetAsDetails.
 
         :return: The credential_details of this SaveSqlTuningSetAsDetails.
         :rtype: oci.database_management.models.SqlTuningSetAdminCredentialDetails
@@ -360,6 +368,26 @@ class SaveSqlTuningSetAsDetails(object):
         :type: oci.database_management.models.SqlTuningSetAdminCredentialDetails
         """
         self._credential_details = credential_details
+
+    @property
+    def database_credential(self):
+        """
+        Gets the database_credential of this SaveSqlTuningSetAsDetails.
+
+        :return: The database_credential of this SaveSqlTuningSetAsDetails.
+        :rtype: oci.database_management.models.DatabaseCredentialDetails
+        """
+        return self._database_credential
+
+    @database_credential.setter
+    def database_credential(self, database_credential):
+        """
+        Sets the database_credential of this SaveSqlTuningSetAsDetails.
+
+        :param database_credential: The database_credential of this SaveSqlTuningSetAsDetails.
+        :type: oci.database_management.models.DatabaseCredentialDetails
+        """
+        self._database_credential = database_credential
 
     @property
     def show_sql_only(self):

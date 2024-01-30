@@ -13,6 +13,8 @@ from oci.decorators import init_model_state_from_kwargs
 class DatabaseCredentials(object):
     """
     The database credentials used to perform management activity.
+    Provide one of the following attribute set.
+    (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
     """
 
     #: A constant which can be used with the role property of a DatabaseCredentials.

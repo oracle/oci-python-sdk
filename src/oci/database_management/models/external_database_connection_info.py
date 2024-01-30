@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class ExternalDatabaseConnectionInfo(ExternalDbSystemConnectionInfo):
     """
     The details required to connect to an external Oracle Database.
+    It takes either connectionCredentials or databaseCredential. It's recommended to provide databaseCredential
     """
 
     def __init__(self, **kwargs):
@@ -34,22 +35,29 @@ class ExternalDatabaseConnectionInfo(ExternalDbSystemConnectionInfo):
             The value to assign to the connection_credentials property of this ExternalDatabaseConnectionInfo.
         :type connection_credentials: oci.database_management.models.DatabaseConnectionCredentials
 
+        :param database_credential:
+            The value to assign to the database_credential property of this ExternalDatabaseConnectionInfo.
+        :type database_credential: oci.database_management.models.DatabaseCredentialDetails
+
         """
         self.swagger_types = {
             'component_type': 'str',
             'connection_string': 'DatabaseConnectionString',
-            'connection_credentials': 'DatabaseConnectionCredentials'
+            'connection_credentials': 'DatabaseConnectionCredentials',
+            'database_credential': 'DatabaseCredentialDetails'
         }
 
         self.attribute_map = {
             'component_type': 'componentType',
             'connection_string': 'connectionString',
-            'connection_credentials': 'connectionCredentials'
+            'connection_credentials': 'connectionCredentials',
+            'database_credential': 'databaseCredential'
         }
 
         self._component_type = None
         self._connection_string = None
         self._connection_credentials = None
+        self._database_credential = None
         self._component_type = 'DATABASE'
 
     @property
@@ -75,7 +83,7 @@ class ExternalDatabaseConnectionInfo(ExternalDbSystemConnectionInfo):
     @property
     def connection_credentials(self):
         """
-        **[Required]** Gets the connection_credentials of this ExternalDatabaseConnectionInfo.
+        Gets the connection_credentials of this ExternalDatabaseConnectionInfo.
 
         :return: The connection_credentials of this ExternalDatabaseConnectionInfo.
         :rtype: oci.database_management.models.DatabaseConnectionCredentials
@@ -91,6 +99,26 @@ class ExternalDatabaseConnectionInfo(ExternalDbSystemConnectionInfo):
         :type: oci.database_management.models.DatabaseConnectionCredentials
         """
         self._connection_credentials = connection_credentials
+
+    @property
+    def database_credential(self):
+        """
+        Gets the database_credential of this ExternalDatabaseConnectionInfo.
+
+        :return: The database_credential of this ExternalDatabaseConnectionInfo.
+        :rtype: oci.database_management.models.DatabaseCredentialDetails
+        """
+        return self._database_credential
+
+    @database_credential.setter
+    def database_credential(self, database_credential):
+        """
+        Sets the database_credential of this ExternalDatabaseConnectionInfo.
+
+        :param database_credential: The database_credential of this ExternalDatabaseConnectionInfo.
+        :type: oci.database_management.models.DatabaseCredentialDetails
+        """
+        self._database_credential = database_credential
 
     def __repr__(self):
         return formatted_flat_dict(self)

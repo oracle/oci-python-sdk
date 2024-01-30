@@ -1,0 +1,11 @@
+NamedCredentialContent
+======================
+
+.. currentmodule:: oci.database_management.models
+
+.. autoclass:: NamedCredentialContent
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

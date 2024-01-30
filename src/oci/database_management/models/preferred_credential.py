@@ -19,6 +19,10 @@ class PreferredCredential(object):
     #: This constant has a value of "BASIC"
     TYPE_BASIC = "BASIC"
 
+    #: A constant which can be used with the type property of a PreferredCredential.
+    #: This constant has a value of "NAMED_CREDENTIAL"
+    TYPE_NAMED_CREDENTIAL = "NAMED_CREDENTIAL"
+
     #: A constant which can be used with the status property of a PreferredCredential.
     #: This constant has a value of "SET"
     STATUS_SET = "SET"
@@ -32,13 +36,14 @@ class PreferredCredential(object):
         Initializes a new PreferredCredential object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.database_management.models.NamedPreferredCredential`
         * :class:`~oci.database_management.models.BasicPreferredCredential`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param type:
             The value to assign to the type property of this PreferredCredential.
-            Allowed values for this property are: "BASIC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "BASIC", "NAMED_CREDENTIAL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -84,6 +89,9 @@ class PreferredCredential(object):
         """
         type = object_dictionary['type']
 
+        if type == 'NAMED_CREDENTIAL':
+            return 'NamedPreferredCredential'
+
         if type == 'BASIC':
             return 'BasicPreferredCredential'
         else:
@@ -95,7 +103,7 @@ class PreferredCredential(object):
         Gets the type of this PreferredCredential.
         The type of preferred credential. Only 'BASIC' is supported currently.
 
-        Allowed values for this property are: "BASIC", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "BASIC", "NAMED_CREDENTIAL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -114,7 +122,7 @@ class PreferredCredential(object):
         :param type: The type of this PreferredCredential.
         :type: str
         """
-        allowed_values = ["BASIC"]
+        allowed_values = ["BASIC", "NAMED_CREDENTIAL"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

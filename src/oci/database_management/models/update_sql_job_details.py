@@ -70,6 +70,10 @@ class UpdateSqlJobDetails(UpdateJobDetails):
             The value to assign to the secret_id property of this UpdateSqlJobDetails.
         :type secret_id: str
 
+        :param named_credential_id:
+            The value to assign to the named_credential_id property of this UpdateSqlJobDetails.
+        :type named_credential_id: str
+
         :param role:
             The value to assign to the role property of this UpdateSqlJobDetails.
         :type role: str
@@ -88,6 +92,7 @@ class UpdateSqlJobDetails(UpdateJobDetails):
             'user_name': 'str',
             'password': 'str',
             'secret_id': 'str',
+            'named_credential_id': 'str',
             'role': 'str'
         }
 
@@ -104,6 +109,7 @@ class UpdateSqlJobDetails(UpdateJobDetails):
             'user_name': 'userName',
             'password': 'password',
             'secret_id': 'secretId',
+            'named_credential_id': 'namedCredentialId',
             'role': 'role'
         }
 
@@ -119,6 +125,7 @@ class UpdateSqlJobDetails(UpdateJobDetails):
         self._user_name = None
         self._password = None
         self._secret_id = None
+        self._named_credential_id = None
         self._role = None
         self._job_type = 'SQL'
 
@@ -285,6 +292,34 @@ class UpdateSqlJobDetails(UpdateJobDetails):
         :type: str
         """
         self._secret_id = secret_id
+
+    @property
+    def named_credential_id(self):
+        """
+        Gets the named_credential_id of this UpdateSqlJobDetails.
+        The `OCID`__ of the Named Credentials containing password secret.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The named_credential_id of this UpdateSqlJobDetails.
+        :rtype: str
+        """
+        return self._named_credential_id
+
+    @named_credential_id.setter
+    def named_credential_id(self, named_credential_id):
+        """
+        Sets the named_credential_id of this UpdateSqlJobDetails.
+        The `OCID`__ of the Named Credentials containing password secret.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param named_credential_id: The named_credential_id of this UpdateSqlJobDetails.
+        :type: str
+        """
+        self._named_credential_id = named_credential_id
 
     @property
     def role(self):

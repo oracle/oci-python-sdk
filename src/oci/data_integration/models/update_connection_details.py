@@ -83,6 +83,10 @@ class UpdateConnectionDetails(object):
     #: This constant has a value of "REST_BASIC_AUTH_CONNECTION"
     MODEL_TYPE_REST_BASIC_AUTH_CONNECTION = "REST_BASIC_AUTH_CONNECTION"
 
+    #: A constant which can be used with the model_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "OAUTH2_CONNECTION"
+    MODEL_TYPE_OAUTH2_CONNECTION = "OAUTH2_CONNECTION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateConnectionDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -94,6 +98,7 @@ class UpdateConnectionDetails(object):
         * :class:`~oci.data_integration.models.UpdateConnectionFromBICC`
         * :class:`~oci.data_integration.models.UpdateConnectionFromRestNoAuth`
         * :class:`~oci.data_integration.models.UpdateConnectionFromHdfs`
+        * :class:`~oci.data_integration.models.UpdateConnectionFromOAuth2`
         * :class:`~oci.data_integration.models.UpdateConnectionFromRestBasicAuth`
         * :class:`~oci.data_integration.models.UpdateConnectionFromOracleSiebel`
         * :class:`~oci.data_integration.models.UpdateConnectionFromMySqlHeatWave`
@@ -110,7 +115,7 @@ class UpdateConnectionDetails(object):
 
         :param model_type:
             The value to assign to the model_type property of this UpdateConnectionDetails.
-            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_CONNECTION", "ORACLE_PEOPLESOFT_CONNECTION", "ORACLE_EBS_CONNECTION", "ORACLE_SIEBEL_CONNECTION", "HDFS_CONNECTION", "MYSQL_HEATWAVE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION"
+            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_CONNECTION", "ORACLE_PEOPLESOFT_CONNECTION", "ORACLE_EBS_CONNECTION", "ORACLE_SIEBEL_CONNECTION", "HDFS_CONNECTION", "MYSQL_HEATWAVE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION", "OAUTH2_CONNECTION"
         :type model_type: str
 
         :param key:
@@ -220,6 +225,9 @@ class UpdateConnectionDetails(object):
         if type == 'HDFS_CONNECTION':
             return 'UpdateConnectionFromHdfs'
 
+        if type == 'OAUTH2_CONNECTION':
+            return 'UpdateConnectionFromOAuth2'
+
         if type == 'REST_BASIC_AUTH_CONNECTION':
             return 'UpdateConnectionFromRestBasicAuth'
 
@@ -261,7 +269,7 @@ class UpdateConnectionDetails(object):
         **[Required]** Gets the model_type of this UpdateConnectionDetails.
         The type of the connection.
 
-        Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_CONNECTION", "ORACLE_PEOPLESOFT_CONNECTION", "ORACLE_EBS_CONNECTION", "ORACLE_SIEBEL_CONNECTION", "HDFS_CONNECTION", "MYSQL_HEATWAVE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION"
+        Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_CONNECTION", "ORACLE_PEOPLESOFT_CONNECTION", "ORACLE_EBS_CONNECTION", "ORACLE_SIEBEL_CONNECTION", "HDFS_CONNECTION", "MYSQL_HEATWAVE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION", "OAUTH2_CONNECTION"
 
 
         :return: The model_type of this UpdateConnectionDetails.
@@ -279,7 +287,7 @@ class UpdateConnectionDetails(object):
         :param model_type: The model_type of this UpdateConnectionDetails.
         :type: str
         """
-        allowed_values = ["ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_CONNECTION", "ORACLE_PEOPLESOFT_CONNECTION", "ORACLE_EBS_CONNECTION", "ORACLE_SIEBEL_CONNECTION", "HDFS_CONNECTION", "MYSQL_HEATWAVE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION"]
+        allowed_values = ["ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_CONNECTION", "ORACLE_PEOPLESOFT_CONNECTION", "ORACLE_EBS_CONNECTION", "ORACLE_SIEBEL_CONNECTION", "HDFS_CONNECTION", "MYSQL_HEATWAVE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION", "OAUTH2_CONNECTION"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `model_type`, must be None or one of {allowed_values}"

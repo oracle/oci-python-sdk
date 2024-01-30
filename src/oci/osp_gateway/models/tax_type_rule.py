@@ -24,16 +24,23 @@ class TaxTypeRule(object):
             The value to assign to the fields property of this TaxTypeRule.
         :type fields: list[oci.osp_gateway.models.Field]
 
+        :param value_set:
+            The value to assign to the value_set property of this TaxTypeRule.
+        :type value_set: list[oci.osp_gateway.models.ValueSetEntity]
+
         """
         self.swagger_types = {
-            'fields': 'list[Field]'
+            'fields': 'list[Field]',
+            'value_set': 'list[ValueSetEntity]'
         }
 
         self.attribute_map = {
-            'fields': 'fields'
+            'fields': 'fields',
+            'value_set': 'valueSet'
         }
 
         self._fields = None
+        self._value_set = None
 
     @property
     def fields(self):
@@ -58,6 +65,30 @@ class TaxTypeRule(object):
         :type: list[oci.osp_gateway.models.Field]
         """
         self._fields = fields
+
+    @property
+    def value_set(self):
+        """
+        Gets the value_set of this TaxTypeRule.
+        Label value pair for allowed values. Used for GIRO
+
+
+        :return: The value_set of this TaxTypeRule.
+        :rtype: list[oci.osp_gateway.models.ValueSetEntity]
+        """
+        return self._value_set
+
+    @value_set.setter
+    def value_set(self, value_set):
+        """
+        Sets the value_set of this TaxTypeRule.
+        Label value pair for allowed values. Used for GIRO
+
+
+        :param value_set: The value_set of this TaxTypeRule.
+        :type: list[oci.osp_gateway.models.ValueSetEntity]
+        """
+        self._value_set = value_set
 
     def __repr__(self):
         return formatted_flat_dict(self)

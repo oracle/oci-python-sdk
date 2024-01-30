@@ -31,7 +31,7 @@ class BasicPreferredCredential(PreferredCredential):
 
         :param type:
             The value to assign to the type property of this BasicPreferredCredential.
-            Allowed values for this property are: "BASIC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "BASIC", "NAMED_CREDENTIAL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 

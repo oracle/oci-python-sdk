@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class AddDataFilesDetails(object):
     """
     The details required to add data files or temp files to the tablespace.
+    lease provide either credentialDetails or databaseCredential. It's recommended to provide databaseCredential
     """
 
     #: A constant which can be used with the file_type property of a AddDataFilesDetails.
@@ -31,6 +32,10 @@ class AddDataFilesDetails(object):
         :param credential_details:
             The value to assign to the credential_details property of this AddDataFilesDetails.
         :type credential_details: oci.database_management.models.TablespaceAdminCredentialDetails
+
+        :param database_credential:
+            The value to assign to the database_credential property of this AddDataFilesDetails.
+        :type database_credential: oci.database_management.models.DatabaseCredentialDetails
 
         :param file_type:
             The value to assign to the file_type property of this AddDataFilesDetails.
@@ -72,6 +77,7 @@ class AddDataFilesDetails(object):
         """
         self.swagger_types = {
             'credential_details': 'TablespaceAdminCredentialDetails',
+            'database_credential': 'DatabaseCredentialDetails',
             'file_type': 'str',
             'data_files': 'list[str]',
             'file_count': 'int',
@@ -85,6 +91,7 @@ class AddDataFilesDetails(object):
 
         self.attribute_map = {
             'credential_details': 'credentialDetails',
+            'database_credential': 'databaseCredential',
             'file_type': 'fileType',
             'data_files': 'dataFiles',
             'file_count': 'fileCount',
@@ -97,6 +104,7 @@ class AddDataFilesDetails(object):
         }
 
         self._credential_details = None
+        self._database_credential = None
         self._file_type = None
         self._data_files = None
         self._file_count = None
@@ -110,7 +118,7 @@ class AddDataFilesDetails(object):
     @property
     def credential_details(self):
         """
-        **[Required]** Gets the credential_details of this AddDataFilesDetails.
+        Gets the credential_details of this AddDataFilesDetails.
 
         :return: The credential_details of this AddDataFilesDetails.
         :rtype: oci.database_management.models.TablespaceAdminCredentialDetails
@@ -126,6 +134,26 @@ class AddDataFilesDetails(object):
         :type: oci.database_management.models.TablespaceAdminCredentialDetails
         """
         self._credential_details = credential_details
+
+    @property
+    def database_credential(self):
+        """
+        Gets the database_credential of this AddDataFilesDetails.
+
+        :return: The database_credential of this AddDataFilesDetails.
+        :rtype: oci.database_management.models.DatabaseCredentialDetails
+        """
+        return self._database_credential
+
+    @database_credential.setter
+    def database_credential(self, database_credential):
+        """
+        Sets the database_credential of this AddDataFilesDetails.
+
+        :param database_credential: The database_credential of this AddDataFilesDetails.
+        :type: oci.database_management.models.DatabaseCredentialDetails
+        """
+        self._database_credential = database_credential
 
     @property
     def file_type(self):

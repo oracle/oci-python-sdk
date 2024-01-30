@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class ChangeSqlPlanBaselinesAttributesDetails(object):
     """
     The details required to change SQL plan baseline attributes.
+    It takes either credentials or databaseCredential. It's recommended to provide databaseCredential
     """
 
     def __init__(self, **kwargs):
@@ -44,6 +45,10 @@ class ChangeSqlPlanBaselinesAttributesDetails(object):
             The value to assign to the credentials property of this ChangeSqlPlanBaselinesAttributesDetails.
         :type credentials: oci.database_management.models.ManagedDatabaseCredential
 
+        :param database_credential:
+            The value to assign to the database_credential property of this ChangeSqlPlanBaselinesAttributesDetails.
+        :type database_credential: oci.database_management.models.DatabaseCredentialDetails
+
         """
         self.swagger_types = {
             'sql_handle': 'str',
@@ -51,7 +56,8 @@ class ChangeSqlPlanBaselinesAttributesDetails(object):
             'is_enabled': 'bool',
             'is_fixed': 'bool',
             'is_auto_purged': 'bool',
-            'credentials': 'ManagedDatabaseCredential'
+            'credentials': 'ManagedDatabaseCredential',
+            'database_credential': 'DatabaseCredentialDetails'
         }
 
         self.attribute_map = {
@@ -60,7 +66,8 @@ class ChangeSqlPlanBaselinesAttributesDetails(object):
             'is_enabled': 'isEnabled',
             'is_fixed': 'isFixed',
             'is_auto_purged': 'isAutoPurged',
-            'credentials': 'credentials'
+            'credentials': 'credentials',
+            'database_credential': 'databaseCredential'
         }
 
         self._sql_handle = None
@@ -69,6 +76,7 @@ class ChangeSqlPlanBaselinesAttributesDetails(object):
         self._is_fixed = None
         self._is_auto_purged = None
         self._credentials = None
+        self._database_credential = None
 
     @property
     def sql_handle(self):
@@ -197,7 +205,7 @@ class ChangeSqlPlanBaselinesAttributesDetails(object):
     @property
     def credentials(self):
         """
-        **[Required]** Gets the credentials of this ChangeSqlPlanBaselinesAttributesDetails.
+        Gets the credentials of this ChangeSqlPlanBaselinesAttributesDetails.
 
         :return: The credentials of this ChangeSqlPlanBaselinesAttributesDetails.
         :rtype: oci.database_management.models.ManagedDatabaseCredential
@@ -213,6 +221,26 @@ class ChangeSqlPlanBaselinesAttributesDetails(object):
         :type: oci.database_management.models.ManagedDatabaseCredential
         """
         self._credentials = credentials
+
+    @property
+    def database_credential(self):
+        """
+        Gets the database_credential of this ChangeSqlPlanBaselinesAttributesDetails.
+
+        :return: The database_credential of this ChangeSqlPlanBaselinesAttributesDetails.
+        :rtype: oci.database_management.models.DatabaseCredentialDetails
+        """
+        return self._database_credential
+
+    @database_credential.setter
+    def database_credential(self, database_credential):
+        """
+        Sets the database_credential of this ChangeSqlPlanBaselinesAttributesDetails.
+
+        :param database_credential: The database_credential of this ChangeSqlPlanBaselinesAttributesDetails.
+        :type: oci.database_management.models.DatabaseCredentialDetails
+        """
+        self._database_credential = database_credential
 
     def __repr__(self):
         return formatted_flat_dict(self)

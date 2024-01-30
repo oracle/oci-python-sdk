@@ -40,6 +40,10 @@ class CreateImportRequestDetails(object):
             The value to assign to the object_key_for_import property of this CreateImportRequestDetails.
         :type object_key_for_import: str
 
+        :param are_data_asset_references_included:
+            The value to assign to the are_data_asset_references_included property of this CreateImportRequestDetails.
+        :type are_data_asset_references_included: bool
+
         :param import_conflict_resolution:
             The value to assign to the import_conflict_resolution property of this CreateImportRequestDetails.
         :type import_conflict_resolution: oci.data_integration.models.ImportConflictResolution
@@ -51,6 +55,7 @@ class CreateImportRequestDetails(object):
             'object_storage_tenancy_id': 'str',
             'object_storage_region': 'str',
             'object_key_for_import': 'str',
+            'are_data_asset_references_included': 'bool',
             'import_conflict_resolution': 'ImportConflictResolution'
         }
 
@@ -60,6 +65,7 @@ class CreateImportRequestDetails(object):
             'object_storage_tenancy_id': 'objectStorageTenancyId',
             'object_storage_region': 'objectStorageRegion',
             'object_key_for_import': 'objectKeyForImport',
+            'are_data_asset_references_included': 'areDataAssetReferencesIncluded',
             'import_conflict_resolution': 'importConflictResolution'
         }
 
@@ -68,6 +74,7 @@ class CreateImportRequestDetails(object):
         self._object_storage_tenancy_id = None
         self._object_storage_region = None
         self._object_key_for_import = None
+        self._are_data_asset_references_included = None
         self._import_conflict_resolution = None
 
     @property
@@ -189,6 +196,30 @@ class CreateImportRequestDetails(object):
         :type: str
         """
         self._object_key_for_import = object_key_for_import
+
+    @property
+    def are_data_asset_references_included(self):
+        """
+        Gets the are_data_asset_references_included of this CreateImportRequestDetails.
+        This field controls if the data asset references will be included during import.
+
+
+        :return: The are_data_asset_references_included of this CreateImportRequestDetails.
+        :rtype: bool
+        """
+        return self._are_data_asset_references_included
+
+    @are_data_asset_references_included.setter
+    def are_data_asset_references_included(self, are_data_asset_references_included):
+        """
+        Sets the are_data_asset_references_included of this CreateImportRequestDetails.
+        This field controls if the data asset references will be included during import.
+
+
+        :param are_data_asset_references_included: The are_data_asset_references_included of this CreateImportRequestDetails.
+        :type: bool
+        """
+        self._are_data_asset_references_included = are_data_asset_references_included
 
     @property
     def import_conflict_resolution(self):

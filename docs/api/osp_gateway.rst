@@ -61,5 +61,6 @@ Osp Gateway
     oci.osp_gateway.models.TaxInfo
     oci.osp_gateway.models.TaxTypeRule
     oci.osp_gateway.models.UpdateSubscriptionDetails
+    oci.osp_gateway.models.ValueSetEntity
     oci.osp_gateway.models.VerifyAddressDetails
     oci.osp_gateway.models.VerifyAddressReceipt

@@ -83,6 +83,10 @@ class ConnectionDetails(object):
     #: This constant has a value of "REST_BASIC_AUTH_CONNECTION"
     MODEL_TYPE_REST_BASIC_AUTH_CONNECTION = "REST_BASIC_AUTH_CONNECTION"
 
+    #: A constant which can be used with the model_type property of a ConnectionDetails.
+    #: This constant has a value of "OAUTH2_CONNECTION"
+    MODEL_TYPE_OAUTH2_CONNECTION = "OAUTH2_CONNECTION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ConnectionDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -99,6 +103,7 @@ class ConnectionDetails(object):
         * :class:`~oci.data_integration.models.ConnectionFromAtpDetails`
         * :class:`~oci.data_integration.models.ConnectionFromOraclePeopleSoftDetails`
         * :class:`~oci.data_integration.models.ConnectionFromRestBasicAuthDetails`
+        * :class:`~oci.data_integration.models.ConnectionFromOAuth2Details`
         * :class:`~oci.data_integration.models.ConnectionFromBICCDetails`
         * :class:`~oci.data_integration.models.ConnectionFromAdwcDetails`
         * :class:`~oci.data_integration.models.ConnectionFromOracleDetails`
@@ -110,7 +115,7 @@ class ConnectionDetails(object):
 
         :param model_type:
             The value to assign to the model_type property of this ConnectionDetails.
-            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_CONNECTION", "ORACLE_PEOPLESOFT_CONNECTION", "ORACLE_EBS_CONNECTION", "ORACLE_SIEBEL_CONNECTION", "HDFS_CONNECTION", "MYSQL_HEATWAVE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION"
+            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_CONNECTION", "ORACLE_PEOPLESOFT_CONNECTION", "ORACLE_EBS_CONNECTION", "ORACLE_SIEBEL_CONNECTION", "HDFS_CONNECTION", "MYSQL_HEATWAVE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION", "OAUTH2_CONNECTION"
         :type model_type: str
 
         :param key:
@@ -249,6 +254,9 @@ class ConnectionDetails(object):
         if type == 'REST_BASIC_AUTH_CONNECTION':
             return 'ConnectionFromRestBasicAuthDetails'
 
+        if type == 'OAUTH2_CONNECTION':
+            return 'ConnectionFromOAuth2Details'
+
         if type == 'BICC_CONNECTION':
             return 'ConnectionFromBICCDetails'
 
@@ -275,7 +283,7 @@ class ConnectionDetails(object):
         **[Required]** Gets the model_type of this ConnectionDetails.
         The type of the connection.
 
-        Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_CONNECTION", "ORACLE_PEOPLESOFT_CONNECTION", "ORACLE_EBS_CONNECTION", "ORACLE_SIEBEL_CONNECTION", "HDFS_CONNECTION", "MYSQL_HEATWAVE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION"
+        Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_CONNECTION", "ORACLE_PEOPLESOFT_CONNECTION", "ORACLE_EBS_CONNECTION", "ORACLE_SIEBEL_CONNECTION", "HDFS_CONNECTION", "MYSQL_HEATWAVE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION", "OAUTH2_CONNECTION"
 
 
         :return: The model_type of this ConnectionDetails.
@@ -293,7 +301,7 @@ class ConnectionDetails(object):
         :param model_type: The model_type of this ConnectionDetails.
         :type: str
         """
-        allowed_values = ["ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_CONNECTION", "ORACLE_PEOPLESOFT_CONNECTION", "ORACLE_EBS_CONNECTION", "ORACLE_SIEBEL_CONNECTION", "HDFS_CONNECTION", "MYSQL_HEATWAVE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION"]
+        allowed_values = ["ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_CONNECTION", "ORACLE_PEOPLESOFT_CONNECTION", "ORACLE_EBS_CONNECTION", "ORACLE_SIEBEL_CONNECTION", "HDFS_CONNECTION", "MYSQL_HEATWAVE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION", "OAUTH2_CONNECTION"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `model_type`, must be None or one of {allowed_values}"

@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class ConfigureAutomaticCaptureFiltersDetails(object):
     """
     The details required to configure automatic capture filters.
+    It takes either credentials or databaseCredential. It's recommended to provide databaseCredential
     """
 
     def __init__(self, **kwargs):
@@ -28,19 +29,26 @@ class ConfigureAutomaticCaptureFiltersDetails(object):
             The value to assign to the credentials property of this ConfigureAutomaticCaptureFiltersDetails.
         :type credentials: oci.database_management.models.ManagedDatabaseCredential
 
+        :param database_credential:
+            The value to assign to the database_credential property of this ConfigureAutomaticCaptureFiltersDetails.
+        :type database_credential: oci.database_management.models.DatabaseCredentialDetails
+
         """
         self.swagger_types = {
             'auto_capture_filters': 'list[AutomaticCaptureFilterDetails]',
-            'credentials': 'ManagedDatabaseCredential'
+            'credentials': 'ManagedDatabaseCredential',
+            'database_credential': 'DatabaseCredentialDetails'
         }
 
         self.attribute_map = {
             'auto_capture_filters': 'autoCaptureFilters',
-            'credentials': 'credentials'
+            'credentials': 'credentials',
+            'database_credential': 'databaseCredential'
         }
 
         self._auto_capture_filters = None
         self._credentials = None
+        self._database_credential = None
 
     @property
     def auto_capture_filters(self):
@@ -69,7 +77,7 @@ class ConfigureAutomaticCaptureFiltersDetails(object):
     @property
     def credentials(self):
         """
-        **[Required]** Gets the credentials of this ConfigureAutomaticCaptureFiltersDetails.
+        Gets the credentials of this ConfigureAutomaticCaptureFiltersDetails.
 
         :return: The credentials of this ConfigureAutomaticCaptureFiltersDetails.
         :rtype: oci.database_management.models.ManagedDatabaseCredential
@@ -85,6 +93,26 @@ class ConfigureAutomaticCaptureFiltersDetails(object):
         :type: oci.database_management.models.ManagedDatabaseCredential
         """
         self._credentials = credentials
+
+    @property
+    def database_credential(self):
+        """
+        Gets the database_credential of this ConfigureAutomaticCaptureFiltersDetails.
+
+        :return: The database_credential of this ConfigureAutomaticCaptureFiltersDetails.
+        :rtype: oci.database_management.models.DatabaseCredentialDetails
+        """
+        return self._database_credential
+
+    @database_credential.setter
+    def database_credential(self, database_credential):
+        """
+        Sets the database_credential of this ConfigureAutomaticCaptureFiltersDetails.
+
+        :param database_credential: The database_credential of this ConfigureAutomaticCaptureFiltersDetails.
+        :type: oci.database_management.models.DatabaseCredentialDetails
+        """
+        self._database_credential = database_credential
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -79,6 +79,7 @@ Database Management
     oci.database_management.models.AwrDbWaitEventCollection
     oci.database_management.models.AwrDbWaitEventSummary
     oci.database_management.models.AwrQueryResult
+    oci.database_management.models.BasicNamedCredentialContent
     oci.database_management.models.BasicPreferredCredential
     oci.database_management.models.ChangeDatabaseParameterDetails
     oci.database_management.models.ChangeDatabaseParametersDetails
@@ -87,6 +88,7 @@ Database Management
     oci.database_management.models.ChangeExternalExadataInfrastructureCompartmentDetails
     oci.database_management.models.ChangeJobCompartmentDetails
     oci.database_management.models.ChangeManagedDatabaseGroupCompartmentDetails
+    oci.database_management.models.ChangeNamedCredentialCompartmentDetails
     oci.database_management.models.ChangePlanRetentionDetails
     oci.database_management.models.ChangeSpaceBudgetDetails
     oci.database_management.models.ChangeSqlPlanBaselinesAttributesDetails
@@ -107,6 +109,7 @@ Database Management
     oci.database_management.models.CreateExternalExadataStorageConnectorDetails
     oci.database_management.models.CreateJobDetails
     oci.database_management.models.CreateManagedDatabaseGroupDetails
+    oci.database_management.models.CreateNamedCredentialDetails
     oci.database_management.models.CreateSqlJobDetails
     oci.database_management.models.CreateSqlTuningSetDetails
     oci.database_management.models.CreateTablespaceDetails
@@ -118,6 +121,7 @@ Database Management
     oci.database_management.models.DatabaseConnectionCredentials
     oci.database_management.models.DatabaseConnectionCredentialsByDetails
     oci.database_management.models.DatabaseConnectionString
+    oci.database_management.models.DatabaseCredentialDetails
     oci.database_management.models.DatabaseCredentials
     oci.database_management.models.DatabaseFleetHealthMetrics
     oci.database_management.models.DatabaseHomeMetricDefinition
@@ -125,11 +129,14 @@ Database Management
     oci.database_management.models.DatabaseIOAggregateMetrics
     oci.database_management.models.DatabaseInstanceHomeMetricsDefinition
     oci.database_management.models.DatabaseManagementConfig
+    oci.database_management.models.DatabaseNamedCredentialDetails
     oci.database_management.models.DatabaseParameterSummary
     oci.database_management.models.DatabaseParameterUpdateStatus
     oci.database_management.models.DatabaseParametersCollection
+    oci.database_management.models.DatabasePasswordCredentialDetails
     oci.database_management.models.DatabasePlan
     oci.database_management.models.DatabasePlanDirective
+    oci.database_management.models.DatabaseSecretCredentialDetails
     oci.database_management.models.DatabaseSslConnectionCredentials
     oci.database_management.models.DatabaseStorageAggregateMetrics
     oci.database_management.models.DatabaseTimeAggregateMetrics
@@ -312,6 +319,11 @@ Database Management
     oci.database_management.models.MySqlFleetMetricSummaryDefinition
     oci.database_management.models.MySqlFleetMetrics
     oci.database_management.models.MySqlFleetSummary
+    oci.database_management.models.NamedCredential
+    oci.database_management.models.NamedCredentialCollection
+    oci.database_management.models.NamedCredentialContent
+    oci.database_management.models.NamedCredentialSummary
+    oci.database_management.models.NamedPreferredCredential
     oci.database_management.models.ObjectPrivilegeCollection
     oci.database_management.models.ObjectPrivilegeSummary
     oci.database_management.models.ObjectStorageJobExecutionResultDetails
@@ -419,6 +431,9 @@ Database Management
     oci.database_management.models.TablespaceStorageSize
     oci.database_management.models.TablespaceSummary
     oci.database_management.models.TestBasicPreferredCredentialDetails
+    oci.database_management.models.TestNamedCredentialDetails
+    oci.database_management.models.TestNamedCredentialStatus
+    oci.database_management.models.TestNamedPreferredCredentialDetails
     oci.database_management.models.TestPreferredCredentialDetails
     oci.database_management.models.TestPreferredCredentialStatus
     oci.database_management.models.TimeSeriesMetricDataPoint
@@ -440,6 +455,8 @@ Database Management
     oci.database_management.models.UpdateExternalListenerDetails
     oci.database_management.models.UpdateJobDetails
     oci.database_management.models.UpdateManagedDatabaseGroupDetails
+    oci.database_management.models.UpdateNamedCredentialDetails
+    oci.database_management.models.UpdateNamedPreferredCredentialDetails
     oci.database_management.models.UpdatePreferredCredentialDetails
     oci.database_management.models.UpdateSqlJobDetails
     oci.database_management.models.UpdateTablespaceDetails

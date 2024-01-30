@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class LoadSqlTuningSetDetails(object):
     """
     The details required to load the Sql statements into the Sql tuning set.
+    It takes either credentialDetails or databaseCredential. It's recommended to provide databaseCredential
     """
 
     #: A constant which can be used with the load_type property of a LoadSqlTuningSetDetails.
@@ -164,6 +165,10 @@ class LoadSqlTuningSetDetails(object):
             The value to assign to the credential_details property of this LoadSqlTuningSetDetails.
         :type credential_details: oci.database_management.models.SqlTuningSetAdminCredentialDetails
 
+        :param database_credential:
+            The value to assign to the database_credential property of this LoadSqlTuningSetDetails.
+        :type database_credential: oci.database_management.models.DatabaseCredentialDetails
+
         :param show_sql_only:
             The value to assign to the show_sql_only property of this LoadSqlTuningSetDetails.
         :type show_sql_only: int
@@ -277,6 +282,7 @@ class LoadSqlTuningSetDetails(object):
         """
         self.swagger_types = {
             'credential_details': 'SqlTuningSetAdminCredentialDetails',
+            'database_credential': 'DatabaseCredentialDetails',
             'show_sql_only': 'int',
             'owner': 'str',
             'name': 'str',
@@ -306,6 +312,7 @@ class LoadSqlTuningSetDetails(object):
 
         self.attribute_map = {
             'credential_details': 'credentialDetails',
+            'database_credential': 'databaseCredential',
             'show_sql_only': 'showSqlOnly',
             'owner': 'owner',
             'name': 'name',
@@ -334,6 +341,7 @@ class LoadSqlTuningSetDetails(object):
         }
 
         self._credential_details = None
+        self._database_credential = None
         self._show_sql_only = None
         self._owner = None
         self._name = None
@@ -363,7 +371,7 @@ class LoadSqlTuningSetDetails(object):
     @property
     def credential_details(self):
         """
-        **[Required]** Gets the credential_details of this LoadSqlTuningSetDetails.
+        Gets the credential_details of this LoadSqlTuningSetDetails.
 
         :return: The credential_details of this LoadSqlTuningSetDetails.
         :rtype: oci.database_management.models.SqlTuningSetAdminCredentialDetails
@@ -379,6 +387,26 @@ class LoadSqlTuningSetDetails(object):
         :type: oci.database_management.models.SqlTuningSetAdminCredentialDetails
         """
         self._credential_details = credential_details
+
+    @property
+    def database_credential(self):
+        """
+        Gets the database_credential of this LoadSqlTuningSetDetails.
+
+        :return: The database_credential of this LoadSqlTuningSetDetails.
+        :rtype: oci.database_management.models.DatabaseCredentialDetails
+        """
+        return self._database_credential
+
+    @database_credential.setter
+    def database_credential(self, database_credential):
+        """
+        Sets the database_credential of this LoadSqlTuningSetDetails.
+
+        :param database_credential: The database_credential of this LoadSqlTuningSetDetails.
+        :type: oci.database_management.models.DatabaseCredentialDetails
+        """
+        self._database_credential = database_credential
 
     @property
     def show_sql_only(self):

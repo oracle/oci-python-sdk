@@ -19,18 +19,23 @@ class TestPreferredCredentialDetails(object):
     #: This constant has a value of "BASIC"
     TYPE_BASIC = "BASIC"
 
+    #: A constant which can be used with the type property of a TestPreferredCredentialDetails.
+    #: This constant has a value of "NAMED_CREDENTIAL"
+    TYPE_NAMED_CREDENTIAL = "NAMED_CREDENTIAL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new TestPreferredCredentialDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.database_management.models.TestNamedPreferredCredentialDetails`
         * :class:`~oci.database_management.models.TestBasicPreferredCredentialDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param type:
             The value to assign to the type property of this TestPreferredCredentialDetails.
-            Allowed values for this property are: "BASIC"
+            Allowed values for this property are: "BASIC", "NAMED_CREDENTIAL"
         :type type: str
 
         """
@@ -52,6 +57,9 @@ class TestPreferredCredentialDetails(object):
         """
         type = object_dictionary['type']
 
+        if type == 'NAMED_CREDENTIAL':
+            return 'TestNamedPreferredCredentialDetails'
+
         if type == 'BASIC':
             return 'TestBasicPreferredCredentialDetails'
         else:
@@ -63,7 +71,7 @@ class TestPreferredCredentialDetails(object):
         **[Required]** Gets the type of this TestPreferredCredentialDetails.
         The type of preferred credential. Only 'BASIC' is supported currently.
 
-        Allowed values for this property are: "BASIC"
+        Allowed values for this property are: "BASIC", "NAMED_CREDENTIAL"
 
 
         :return: The type of this TestPreferredCredentialDetails.
@@ -81,7 +89,7 @@ class TestPreferredCredentialDetails(object):
         :param type: The type of this TestPreferredCredentialDetails.
         :type: str
         """
-        allowed_values = ["BASIC"]
+        allowed_values = ["BASIC", "NAMED_CREDENTIAL"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 f"Invalid value for `type`, must be None or one of {allowed_values}"

@@ -133,6 +133,13 @@ class CreateZoneBaseDetails(object):
         **[Required]** Gets the name of this CreateZoneBaseDetails.
         The name of the zone.
 
+        Global zone names must be unique across all other zones within the realm. Private zone names must be unique
+        within their view.
+
+        Unicode characters will be converted into punycode, see `RFC 3492`__.
+
+        __ https://tools.ietf.org/html/rfc3492
+
 
         :return: The name of this CreateZoneBaseDetails.
         :rtype: str
@@ -144,6 +151,13 @@ class CreateZoneBaseDetails(object):
         """
         Sets the name of this CreateZoneBaseDetails.
         The name of the zone.
+
+        Global zone names must be unique across all other zones within the realm. Private zone names must be unique
+        within their view.
+
+        Unicode characters will be converted into punycode, see `RFC 3492`__.
+
+        __ https://tools.ietf.org/html/rfc3492
 
 
         :param name: The name of this CreateZoneBaseDetails.

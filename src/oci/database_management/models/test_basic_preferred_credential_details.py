@@ -31,7 +31,7 @@ class TestBasicPreferredCredentialDetails(TestPreferredCredentialDetails):
 
         :param type:
             The value to assign to the type property of this TestBasicPreferredCredentialDetails.
-            Allowed values for this property are: "BASIC"
+            Allowed values for this property are: "BASIC", "NAMED_CREDENTIAL"
         :type type: str
 
         :param user_name:

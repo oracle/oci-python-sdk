@@ -385,6 +385,9 @@ class DbManagementClient(object):
 
             Allowed values are: "ASC", "DESC"
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -418,7 +421,8 @@ class DbManagementClient(object):
             "page",
             "limit",
             "sort_by",
-            "sort_order"
+            "sort_order",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -462,7 +466,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -1230,6 +1235,130 @@ class DbManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=change_managed_database_group_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def change_named_credential_compartment(self, named_credential_id, change_named_credential_compartment_details, **kwargs):
+        """
+        Moves a named credential to a different compartment.
+        The destination compartment must not have a named credential
+        with the same name.
+
+
+        :param str named_credential_id: (required)
+            The `OCID`__ of the named credential.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.database_management.models.ChangeNamedCredentialCompartmentDetails change_named_credential_compartment_details: (required)
+            The `OCID`__ of the compartment to which the named credential should be moved.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/change_named_credential_compartment.py.html>`__ to see an example of how to use change_named_credential_compartment API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['namedCredentialId']
+        resource_path = "/namedCredentials/{namedCredentialId}/actions/changeCompartment"
+        method = "POST"
+        operation_name = "change_named_credential_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/ChangeNamedCredentialCompartment"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"change_named_credential_compartment got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "namedCredentialId": named_credential_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_named_credential_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_named_credential_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -2773,6 +2902,102 @@ class DbManagementClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def create_named_credential(self, create_named_credential_details, **kwargs):
+        """
+        Creates a named credential.
+
+
+        :param oci.database_management.models.CreateNamedCredentialDetails create_named_credential_details: (required)
+            The details required to create a named credential.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.NamedCredential`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/create_named_credential.py.html>`__ to see an example of how to use create_named_credential API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/namedCredentials"
+        method = "POST"
+        operation_name = "create_named_credential"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/CreateNamedCredential"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"create_named_credential got unknown kwargs: {extra_kwargs!r}")
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_named_credential_details,
+                response_type="NamedCredential",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_named_credential_details,
+                response_type="NamedCredential",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def create_tablespace(self, managed_database_id, create_tablespace_details, **kwargs):
         """
         Creates a tablespace within the Managed Database specified by managedDatabaseId.
@@ -3679,6 +3904,111 @@ class DbManagementClient(object):
 
         path_params = {
             "managedDatabaseGroupId": managed_database_group_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def delete_named_credential(self, named_credential_id, **kwargs):
+        """
+        Deletes the named credential specified by namedCredentialId.
+
+
+        :param str named_credential_id: (required)
+            The `OCID`__ of the named credential.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/delete_named_credential.py.html>`__ to see an example of how to use delete_named_credential API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['namedCredentialId']
+        resource_path = "/namedCredentials/{namedCredentialId}"
+        method = "DELETE"
+        operation_name = "delete_named_credential"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/DeleteNamedCredential"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"delete_named_credential got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "namedCredentialId": named_credential_id
         }
 
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
@@ -5767,6 +6097,9 @@ class DbManagementClient(object):
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -5797,7 +6130,8 @@ class DbManagementClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -5818,7 +6152,8 @@ class DbManagementClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -5910,6 +6245,9 @@ class DbManagementClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -5948,7 +6286,8 @@ class DbManagementClient(object):
             "container_id",
             "report_format",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -5996,7 +6335,8 @@ class DbManagementClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -6088,6 +6428,9 @@ class DbManagementClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -6125,7 +6468,8 @@ class DbManagementClient(object):
             "report_format",
             "container_id",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -6166,7 +6510,8 @@ class DbManagementClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -6784,6 +7129,9 @@ class DbManagementClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -6813,7 +7161,8 @@ class DbManagementClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -6833,7 +7182,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -8756,6 +9106,104 @@ class DbManagementClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_named_credential(self, named_credential_id, **kwargs):
+        """
+        Gets the details for the named credential specified by namedCredentialId.
+
+
+        :param str named_credential_id: (required)
+            The `OCID`__ of the named credential.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.NamedCredential`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/get_named_credential.py.html>`__ to see an example of how to use get_named_credential API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['namedCredentialId']
+        resource_path = "/namedCredentials/{namedCredentialId}"
+        method = "GET"
+        operation_name = "get_named_credential"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/GetNamedCredential"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_named_credential got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "namedCredentialId": named_credential_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="NamedCredential",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="NamedCredential",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def get_open_alert_history(self, external_exadata_storage_server_id, **kwargs):
         """
         Gets the open alerts from the specified Exadata storage server.
@@ -8876,6 +9324,9 @@ class DbManagementClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -8905,7 +9356,8 @@ class DbManagementClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -8931,7 +9383,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -8988,6 +9441,9 @@ class DbManagementClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -9017,7 +9473,8 @@ class DbManagementClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -9043,7 +9500,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -9097,6 +9555,9 @@ class DbManagementClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -9126,7 +9587,8 @@ class DbManagementClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -9147,7 +9609,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -9444,6 +9907,9 @@ class DbManagementClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -9473,7 +9939,8 @@ class DbManagementClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -9494,7 +9961,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -9547,6 +10015,9 @@ class DbManagementClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -9576,7 +10047,8 @@ class DbManagementClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -9596,7 +10068,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -9650,6 +10123,9 @@ class DbManagementClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -9679,7 +10155,8 @@ class DbManagementClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -9700,7 +10177,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -9852,6 +10330,9 @@ class DbManagementClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -9881,7 +10362,8 @@ class DbManagementClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -9902,7 +10384,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -10504,6 +10987,9 @@ class DbManagementClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -10544,7 +11030,8 @@ class DbManagementClient(object):
             "sort_by",
             "sort_order",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -10594,7 +11081,8 @@ class DbManagementClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -10679,6 +11167,9 @@ class DbManagementClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -10716,7 +11207,8 @@ class DbManagementClient(object):
             "sort_by",
             "sort_order",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -10762,7 +11254,8 @@ class DbManagementClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -10838,6 +11331,9 @@ class DbManagementClient(object):
             The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -10872,7 +11368,8 @@ class DbManagementClient(object):
             "sort_by",
             "sort_order",
             "limit",
-            "page"
+            "page",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -10916,7 +11413,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -10989,6 +11487,9 @@ class DbManagementClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -11023,7 +11524,8 @@ class DbManagementClient(object):
             "limit",
             "sort_by",
             "sort_order",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -11066,7 +11568,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -11143,6 +11646,9 @@ class DbManagementClient(object):
             The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -11177,7 +11683,8 @@ class DbManagementClient(object):
             "sort_by",
             "sort_order",
             "limit",
-            "page"
+            "page",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -11221,7 +11728,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -11297,6 +11805,9 @@ class DbManagementClient(object):
 
             Allowed values are: "ASC", "DESC"
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -11331,7 +11842,8 @@ class DbManagementClient(object):
             "name",
             "is_allowed_values_included",
             "sort_by",
-            "sort_order"
+            "sort_order",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -11381,7 +11893,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -11615,6 +12128,9 @@ class DbManagementClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -11648,7 +12164,8 @@ class DbManagementClient(object):
             "limit",
             "sort_by",
             "sort_order",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -11690,7 +12207,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -11910,6 +12428,9 @@ class DbManagementClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -11943,7 +12464,8 @@ class DbManagementClient(object):
             "limit",
             "sort_by",
             "sort_order",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -11985,7 +12507,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -13822,6 +14345,9 @@ class DbManagementClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -13855,7 +14381,8 @@ class DbManagementClient(object):
             "limit",
             "sort_by",
             "sort_order",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -13898,7 +14425,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -14954,6 +15482,178 @@ class DbManagementClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def list_named_credentials(self, compartment_id, **kwargs):
+        """
+        Gets a single named credential specified by the name or all the named credentials in a specific compartment.
+
+
+        :param str compartment_id: (required)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str associated_resource: (optional)
+            The resource associated to the named credential.
+
+        :param str type: (optional)
+            The type of database that is associated to the named credential.
+
+            Allowed values are: "ORACLE_DB"
+
+        :param str scope: (optional)
+            The scope of named credential.
+
+            Allowed values are: "RESOURCE", "GLOBAL"
+
+        :param str name: (optional)
+            The name of the named credential.
+
+        :param str page: (optional)
+            The page token representing the page from where the next set of paginated results
+            are retrieved. This is usually retrieved from a previous list call.
+
+        :param int limit: (optional)
+            The maximum number of records returned in the paginated response.
+
+        :param str sort_by: (optional)
+            The field to sort information by. Only one sortOrder can be used. The default sort order
+            for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+            The \u2018NAME\u2019 sort order is case-sensitive.
+
+            Allowed values are: "TIMECREATED", "NAME"
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.NamedCredentialCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/list_named_credentials.py.html>`__ to see an example of how to use list_named_credentials API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
+        resource_path = "/namedCredentials"
+        method = "GET"
+        operation_name = "list_named_credentials"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/ListNamedCredentials"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "associated_resource",
+            "type",
+            "scope",
+            "name",
+            "page",
+            "limit",
+            "sort_by",
+            "sort_order"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_named_credentials got unknown kwargs: {extra_kwargs!r}")
+
+        if 'type' in kwargs:
+            type_allowed_values = ["ORACLE_DB"]
+            if kwargs['type'] not in type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `type`, must be one of { type_allowed_values }"
+                )
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["RESOURCE", "GLOBAL"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "associatedResource": kwargs.get("associated_resource", missing),
+            "type": kwargs.get("type", missing),
+            "scope": kwargs.get("scope", missing),
+            "name": kwargs.get("name", missing),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="NamedCredentialCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="NamedCredentialCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_object_privileges(self, managed_database_id, user_name, **kwargs):
         """
         Gets the list of object privileges granted to a specific user.
@@ -14991,6 +15691,9 @@ class DbManagementClient(object):
             The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -15025,7 +15728,8 @@ class DbManagementClient(object):
             "sort_by",
             "sort_order",
             "limit",
-            "page"
+            "page",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -15069,7 +15773,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -15130,6 +15835,9 @@ class DbManagementClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -15161,7 +15869,8 @@ class DbManagementClient(object):
             "retry_strategy",
             "start_time_greater_than_or_equal_to",
             "end_time_less_than_or_equal_to",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -15187,7 +15896,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -15268,6 +15978,9 @@ class DbManagementClient(object):
             The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -15302,7 +16015,8 @@ class DbManagementClient(object):
             "task_type",
             "opc_request_id",
             "limit",
-            "page"
+            "page",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -15345,7 +16059,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -15438,6 +16153,9 @@ class DbManagementClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -15475,7 +16193,8 @@ class DbManagementClient(object):
             "filter_by",
             "sort_by",
             "sort_order",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -15528,7 +16247,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -15701,6 +16421,9 @@ class DbManagementClient(object):
             The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -15735,7 +16458,8 @@ class DbManagementClient(object):
             "sort_by",
             "sort_order",
             "limit",
-            "page"
+            "page",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -15779,7 +16503,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -15854,6 +16579,9 @@ class DbManagementClient(object):
             The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -15888,7 +16616,8 @@ class DbManagementClient(object):
             "sort_by",
             "sort_order",
             "limit",
-            "page"
+            "page",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -15932,7 +16661,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -16007,6 +16737,9 @@ class DbManagementClient(object):
             The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -16041,7 +16774,8 @@ class DbManagementClient(object):
             "sort_by",
             "sort_order",
             "limit",
-            "page"
+            "page",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -16085,7 +16819,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -16158,6 +16893,9 @@ class DbManagementClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -16192,7 +16930,8 @@ class DbManagementClient(object):
             "limit",
             "sort_by",
             "sort_order",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -16235,7 +16974,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -16331,15 +17071,34 @@ class DbManagementClient(object):
         :param str sort_by: (optional)
             The option to sort the SQL plan baseline summary data.
 
-            Allowed values are: "timeCreated", "timeLastModified"
+            Allowed values are: "timeCreated", "timeLastModified", "timeLastExecuted"
 
         :param str sort_order: (optional)
             The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
 
             Allowed values are: "ASC", "DESC"
 
+        :param bool is_auto_purged: (optional)
+            A filter to return only SQL plan baselines that are either auto-purged or not auto-purged.
+            By default, all SQL plan baselines are returned.
+
+        :param datetime time_last_executed_greater_than: (optional)
+            A filter to return only SQL plan baselines whose last execution time is
+            after the specified value. By default, all SQL plan baselines are returned.
+
+        :param datetime time_last_executed_less_than: (optional)
+            A filter to return only SQL plan baselines whose last execution time is
+            before the specified value. By default, all SQL plan baselines are returned.
+
+        :param bool is_never_executed: (optional)
+            A filter to return only SQL plan baselines that are not executed till now.
+            By default, all SQL plan baselines are returned.
+
         :param str opc_request_id: (optional)
             The client request ID for tracing.
+
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -16383,7 +17142,12 @@ class DbManagementClient(object):
             "limit",
             "sort_by",
             "sort_order",
-            "opc_request_id"
+            "is_auto_purged",
+            "time_last_executed_greater_than",
+            "time_last_executed_less_than",
+            "is_never_executed",
+            "opc_request_id",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -16408,7 +17172,7 @@ class DbManagementClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["timeCreated", "timeLastModified"]
+            sort_by_allowed_values = ["timeCreated", "timeLastModified", "timeLastExecuted"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
@@ -16434,14 +17198,19 @@ class DbManagementClient(object):
             "page": kwargs.get("page", missing),
             "limit": kwargs.get("limit", missing),
             "sortBy": kwargs.get("sort_by", missing),
-            "sortOrder": kwargs.get("sort_order", missing)
+            "sortOrder": kwargs.get("sort_order", missing),
+            "isAutoPurged": kwargs.get("is_auto_purged", missing),
+            "timeLastExecutedGreaterThan": kwargs.get("time_last_executed_greater_than", missing),
+            "timeLastExecutedLessThan": kwargs.get("time_last_executed_less_than", missing),
+            "isNeverExecuted": kwargs.get("is_never_executed", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -16518,6 +17287,9 @@ class DbManagementClient(object):
             The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -16552,7 +17324,8 @@ class DbManagementClient(object):
             "sort_by",
             "sort_order",
             "limit",
-            "page"
+            "page",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -16596,7 +17369,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -16648,6 +17422,9 @@ class DbManagementClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -16677,7 +17454,8 @@ class DbManagementClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -16697,7 +17475,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -16768,6 +17547,9 @@ class DbManagementClient(object):
         :param int limit: (optional)
             The maximum number of records returned in the paginated response.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -16802,7 +17584,8 @@ class DbManagementClient(object):
             "sort_by",
             "sort_order",
             "page",
-            "limit"
+            "limit",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -16845,7 +17628,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -16918,6 +17702,9 @@ class DbManagementClient(object):
             The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -16952,7 +17739,8 @@ class DbManagementClient(object):
             "sort_by",
             "sort_order",
             "limit",
-            "page"
+            "page",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -16995,7 +17783,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -18288,6 +19077,9 @@ class DbManagementClient(object):
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -18318,7 +19110,8 @@ class DbManagementClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -18339,7 +19132,8 @@ class DbManagementClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -18445,6 +19239,9 @@ class DbManagementClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -18486,7 +19283,8 @@ class DbManagementClient(object):
             "sort_by",
             "sort_order",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -18544,7 +19342,8 @@ class DbManagementClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -18648,6 +19447,9 @@ class DbManagementClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -18688,7 +19490,8 @@ class DbManagementClient(object):
             "sort_by",
             "sort_order",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -18739,7 +19542,8 @@ class DbManagementClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -18847,6 +19651,9 @@ class DbManagementClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -18887,7 +19694,8 @@ class DbManagementClient(object):
             "sort_by",
             "sort_order",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -18938,7 +19746,8 @@ class DbManagementClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -19070,6 +19879,9 @@ class DbManagementClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -19115,7 +19927,8 @@ class DbManagementClient(object):
             "sort_by",
             "sort_order",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -19191,7 +20004,8 @@ class DbManagementClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -19276,6 +20090,9 @@ class DbManagementClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -19313,7 +20130,8 @@ class DbManagementClient(object):
             "sort_by",
             "sort_order",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -19359,7 +20177,8 @@ class DbManagementClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -19463,6 +20282,9 @@ class DbManagementClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -19503,7 +20325,8 @@ class DbManagementClient(object):
             "sort_by",
             "sort_order",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -19554,7 +20377,8 @@ class DbManagementClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -19656,6 +20480,9 @@ class DbManagementClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -19696,7 +20523,8 @@ class DbManagementClient(object):
             "sort_by",
             "sort_order",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -19753,7 +20581,8 @@ class DbManagementClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -19866,6 +20695,9 @@ class DbManagementClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -19909,7 +20741,8 @@ class DbManagementClient(object):
             "sort_by",
             "sort_order",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -19963,7 +20796,8 @@ class DbManagementClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -20072,6 +20906,9 @@ class DbManagementClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -20114,7 +20951,8 @@ class DbManagementClient(object):
             "sort_by",
             "sort_order",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -20173,7 +21011,8 @@ class DbManagementClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -21174,6 +22013,9 @@ class DbManagementClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -21204,7 +22046,8 @@ class DbManagementClient(object):
             "allow_control_chars",
             "retry_strategy",
             "page",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -21229,7 +22072,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -21286,6 +22130,9 @@ class DbManagementClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_named_credential_id: (optional)
+            The OCID of the Named Credential.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -21316,7 +22163,8 @@ class DbManagementClient(object):
             "allow_control_chars",
             "retry_strategy",
             "page",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_named_credential_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -21341,7 +22189,8 @@ class DbManagementClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-named-credential-id": kwargs.get("opc_named_credential_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -21376,6 +22225,111 @@ class DbManagementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="SqlPlanBaselineAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def test_named_credential(self, named_credential_id, test_named_credential_details, **kwargs):
+        """
+        Tests the named credential.
+
+
+        :param str named_credential_id: (required)
+            The `OCID`__ of the named credential.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.database_management.models.TestNamedCredentialDetails test_named_credential_details: (required)
+            The `OCID`__ of the database against which the credential is to be tested.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.TestNamedCredentialStatus`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/test_named_credential.py.html>`__ to see an example of how to use test_named_credential API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['namedCredentialId']
+        resource_path = "/namedCredentials/{namedCredentialId}/actions/test"
+        method = "POST"
+        operation_name = "test_named_credential"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/TestNamedCredential"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"test_named_credential got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "namedCredentialId": named_credential_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=test_named_credential_details,
+                response_type="TestNamedCredentialStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=test_named_credential_details,
+                response_type="TestNamedCredentialStatus",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -22938,6 +23892,118 @@ class DbManagementClient(object):
                 header_params=header_params,
                 body=update_managed_database_group_details,
                 response_type="ManagedDatabaseGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def update_named_credential(self, named_credential_id, update_named_credential_details, **kwargs):
+        """
+        Updates the named credential specified by namedCredentialId.
+
+
+        :param str named_credential_id: (required)
+            The `OCID`__ of the named credential.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.database_management.models.UpdateNamedCredentialDetails update_named_credential_details: (required)
+            The details required to update a named credential.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.NamedCredential`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/update_named_credential.py.html>`__ to see an example of how to use update_named_credential API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['namedCredentialId']
+        resource_path = "/namedCredentials/{namedCredentialId}"
+        method = "PUT"
+        operation_name = "update_named_credential"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/NamedCredential/UpdateNamedCredential"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"update_named_credential got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "namedCredentialId": named_credential_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_named_credential_details,
+                response_type="NamedCredential",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_named_credential_details,
+                response_type="NamedCredential",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
