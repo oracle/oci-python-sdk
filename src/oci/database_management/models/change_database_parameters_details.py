@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class ChangeDatabaseParametersDetails(object):
     """
     The details required to change database parameter values.
+    It takes either credentials or databaseCredential. It's recommended to provide databaseCredential
     """
 
     #: A constant which can be used with the scope property of a ChangeDatabaseParametersDetails.
@@ -36,6 +37,10 @@ class ChangeDatabaseParametersDetails(object):
             The value to assign to the credentials property of this ChangeDatabaseParametersDetails.
         :type credentials: oci.database_management.models.DatabaseCredentials
 
+        :param database_credential:
+            The value to assign to the database_credential property of this ChangeDatabaseParametersDetails.
+        :type database_credential: oci.database_management.models.DatabaseCredentialDetails
+
         :param scope:
             The value to assign to the scope property of this ChangeDatabaseParametersDetails.
             Allowed values for this property are: "MEMORY", "SPFILE", "BOTH"
@@ -48,24 +53,27 @@ class ChangeDatabaseParametersDetails(object):
         """
         self.swagger_types = {
             'credentials': 'DatabaseCredentials',
+            'database_credential': 'DatabaseCredentialDetails',
             'scope': 'str',
             'parameters': 'list[ChangeDatabaseParameterDetails]'
         }
 
         self.attribute_map = {
             'credentials': 'credentials',
+            'database_credential': 'databaseCredential',
             'scope': 'scope',
             'parameters': 'parameters'
         }
 
         self._credentials = None
+        self._database_credential = None
         self._scope = None
         self._parameters = None
 
     @property
     def credentials(self):
         """
-        **[Required]** Gets the credentials of this ChangeDatabaseParametersDetails.
+        Gets the credentials of this ChangeDatabaseParametersDetails.
 
         :return: The credentials of this ChangeDatabaseParametersDetails.
         :rtype: oci.database_management.models.DatabaseCredentials
@@ -81,6 +89,26 @@ class ChangeDatabaseParametersDetails(object):
         :type: oci.database_management.models.DatabaseCredentials
         """
         self._credentials = credentials
+
+    @property
+    def database_credential(self):
+        """
+        Gets the database_credential of this ChangeDatabaseParametersDetails.
+
+        :return: The database_credential of this ChangeDatabaseParametersDetails.
+        :rtype: oci.database_management.models.DatabaseCredentialDetails
+        """
+        return self._database_credential
+
+    @database_credential.setter
+    def database_credential(self, database_credential):
+        """
+        Sets the database_credential of this ChangeDatabaseParametersDetails.
+
+        :param database_credential: The database_credential of this ChangeDatabaseParametersDetails.
+        :type: oci.database_management.models.DatabaseCredentialDetails
+        """
+        self._database_credential = database_credential
 
     @property
     def scope(self):

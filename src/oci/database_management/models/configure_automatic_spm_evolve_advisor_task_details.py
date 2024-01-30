@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class ConfigureAutomaticSpmEvolveAdvisorTaskDetails(object):
     """
     The configuration details of the Automatic SPM Evolve Advisor task.
+    It takes either credentials or databaseCredential. It's recommended to provide databaseCredential
     """
 
     def __init__(self, **kwargs):
@@ -28,19 +29,26 @@ class ConfigureAutomaticSpmEvolveAdvisorTaskDetails(object):
             The value to assign to the credentials property of this ConfigureAutomaticSpmEvolveAdvisorTaskDetails.
         :type credentials: oci.database_management.models.ManagedDatabaseCredential
 
+        :param database_credential:
+            The value to assign to the database_credential property of this ConfigureAutomaticSpmEvolveAdvisorTaskDetails.
+        :type database_credential: oci.database_management.models.DatabaseCredentialDetails
+
         """
         self.swagger_types = {
             'task_parameters': 'SpmEvolveTaskParameters',
-            'credentials': 'ManagedDatabaseCredential'
+            'credentials': 'ManagedDatabaseCredential',
+            'database_credential': 'DatabaseCredentialDetails'
         }
 
         self.attribute_map = {
             'task_parameters': 'taskParameters',
-            'credentials': 'credentials'
+            'credentials': 'credentials',
+            'database_credential': 'databaseCredential'
         }
 
         self._task_parameters = None
         self._credentials = None
+        self._database_credential = None
 
     @property
     def task_parameters(self):
@@ -65,7 +73,7 @@ class ConfigureAutomaticSpmEvolveAdvisorTaskDetails(object):
     @property
     def credentials(self):
         """
-        **[Required]** Gets the credentials of this ConfigureAutomaticSpmEvolveAdvisorTaskDetails.
+        Gets the credentials of this ConfigureAutomaticSpmEvolveAdvisorTaskDetails.
 
         :return: The credentials of this ConfigureAutomaticSpmEvolveAdvisorTaskDetails.
         :rtype: oci.database_management.models.ManagedDatabaseCredential
@@ -81,6 +89,26 @@ class ConfigureAutomaticSpmEvolveAdvisorTaskDetails(object):
         :type: oci.database_management.models.ManagedDatabaseCredential
         """
         self._credentials = credentials
+
+    @property
+    def database_credential(self):
+        """
+        Gets the database_credential of this ConfigureAutomaticSpmEvolveAdvisorTaskDetails.
+
+        :return: The database_credential of this ConfigureAutomaticSpmEvolveAdvisorTaskDetails.
+        :rtype: oci.database_management.models.DatabaseCredentialDetails
+        """
+        return self._database_credential
+
+    @database_credential.setter
+    def database_credential(self, database_credential):
+        """
+        Sets the database_credential of this ConfigureAutomaticSpmEvolveAdvisorTaskDetails.
+
+        :param database_credential: The database_credential of this ConfigureAutomaticSpmEvolveAdvisorTaskDetails.
+        :type: oci.database_management.models.DatabaseCredentialDetails
+        """
+        self._database_credential = database_credential
 
     def __repr__(self):
         return formatted_flat_dict(self)

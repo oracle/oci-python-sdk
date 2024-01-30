@@ -82,6 +82,8 @@ Data Integration
     oci.data_integration.models.ConnectionFromMySQLDetails
     oci.data_integration.models.ConnectionFromMySqlHeatWave
     oci.data_integration.models.ConnectionFromMySqlHeatWaveDetails
+    oci.data_integration.models.ConnectionFromOAuth2
+    oci.data_integration.models.ConnectionFromOAuth2Details
     oci.data_integration.models.ConnectionFromObjectStorage
     oci.data_integration.models.ConnectionFromObjectStorageDetails
     oci.data_integration.models.ConnectionFromOracle
@@ -109,6 +111,7 @@ Data Integration
     oci.data_integration.models.ConnectionSummaryFromLake
     oci.data_integration.models.ConnectionSummaryFromMySQL
     oci.data_integration.models.ConnectionSummaryFromMySqlHeatWave
+    oci.data_integration.models.ConnectionSummaryFromOAuth2
     oci.data_integration.models.ConnectionSummaryFromObjectStorage
     oci.data_integration.models.ConnectionSummaryFromOracle
     oci.data_integration.models.ConnectionSummaryFromOracleEbs
@@ -140,6 +143,7 @@ Data Integration
     oci.data_integration.models.CreateConnectionFromLake
     oci.data_integration.models.CreateConnectionFromMySQL
     oci.data_integration.models.CreateConnectionFromMySqlHeatWave
+    oci.data_integration.models.CreateConnectionFromOAuth2
     oci.data_integration.models.CreateConnectionFromObjectStorage
     oci.data_integration.models.CreateConnectionFromOracle
     oci.data_integration.models.CreateConnectionFromOracleEbs
@@ -541,6 +545,7 @@ Data Integration
     oci.data_integration.models.UpdateConnectionFromLake
     oci.data_integration.models.UpdateConnectionFromMySQL
     oci.data_integration.models.UpdateConnectionFromMySqlHeatWave
+    oci.data_integration.models.UpdateConnectionFromOAuth2
     oci.data_integration.models.UpdateConnectionFromObjectStorage
     oci.data_integration.models.UpdateConnectionFromOracle
     oci.data_integration.models.UpdateConnectionFromOracleEbs

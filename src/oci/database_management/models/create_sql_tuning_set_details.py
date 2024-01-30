@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class CreateSqlTuningSetDetails(object):
     """
     Create an empty Sql tuning sets.
+    It takes either credentialDetails or databaseCredential. It's recommended to provide databaseCredential
     """
 
     def __init__(self, **kwargs):
@@ -23,6 +24,10 @@ class CreateSqlTuningSetDetails(object):
         :param credential_details:
             The value to assign to the credential_details property of this CreateSqlTuningSetDetails.
         :type credential_details: oci.database_management.models.SqlTuningSetAdminCredentialDetails
+
+        :param database_credential:
+            The value to assign to the database_credential property of this CreateSqlTuningSetDetails.
+        :type database_credential: oci.database_management.models.DatabaseCredentialDetails
 
         :param name:
             The value to assign to the name property of this CreateSqlTuningSetDetails.
@@ -43,6 +48,7 @@ class CreateSqlTuningSetDetails(object):
         """
         self.swagger_types = {
             'credential_details': 'SqlTuningSetAdminCredentialDetails',
+            'database_credential': 'DatabaseCredentialDetails',
             'name': 'str',
             'owner': 'str',
             'description': 'str',
@@ -51,6 +57,7 @@ class CreateSqlTuningSetDetails(object):
 
         self.attribute_map = {
             'credential_details': 'credentialDetails',
+            'database_credential': 'databaseCredential',
             'name': 'name',
             'owner': 'owner',
             'description': 'description',
@@ -58,6 +65,7 @@ class CreateSqlTuningSetDetails(object):
         }
 
         self._credential_details = None
+        self._database_credential = None
         self._name = None
         self._owner = None
         self._description = None
@@ -66,7 +74,7 @@ class CreateSqlTuningSetDetails(object):
     @property
     def credential_details(self):
         """
-        **[Required]** Gets the credential_details of this CreateSqlTuningSetDetails.
+        Gets the credential_details of this CreateSqlTuningSetDetails.
 
         :return: The credential_details of this CreateSqlTuningSetDetails.
         :rtype: oci.database_management.models.SqlTuningSetAdminCredentialDetails
@@ -82,6 +90,26 @@ class CreateSqlTuningSetDetails(object):
         :type: oci.database_management.models.SqlTuningSetAdminCredentialDetails
         """
         self._credential_details = credential_details
+
+    @property
+    def database_credential(self):
+        """
+        Gets the database_credential of this CreateSqlTuningSetDetails.
+
+        :return: The database_credential of this CreateSqlTuningSetDetails.
+        :rtype: oci.database_management.models.DatabaseCredentialDetails
+        """
+        return self._database_credential
+
+    @database_credential.setter
+    def database_credential(self, database_credential):
+        """
+        Sets the database_credential of this CreateSqlTuningSetDetails.
+
+        :param database_credential: The database_credential of this CreateSqlTuningSetDetails.
+        :type: oci.database_management.models.DatabaseCredentialDetails
+        """
+        self._database_credential = database_credential
 
     @property
     def name(self):

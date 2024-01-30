@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class UpdateTablespaceDetails(object):
     """
     The details required to update a tablespace.
+    It takes either credentialDetails or databaseCredential. It's recommended to provide databaseCredential
     """
 
     #: A constant which can be used with the type property of a UpdateTablespaceDetails.
@@ -39,6 +40,10 @@ class UpdateTablespaceDetails(object):
         :param credential_details:
             The value to assign to the credential_details property of this UpdateTablespaceDetails.
         :type credential_details: oci.database_management.models.TablespaceAdminCredentialDetails
+
+        :param database_credential:
+            The value to assign to the database_credential property of this UpdateTablespaceDetails.
+        :type database_credential: oci.database_management.models.DatabaseCredentialDetails
 
         :param name:
             The value to assign to the name property of this UpdateTablespaceDetails.
@@ -81,6 +86,7 @@ class UpdateTablespaceDetails(object):
         """
         self.swagger_types = {
             'credential_details': 'TablespaceAdminCredentialDetails',
+            'database_credential': 'DatabaseCredentialDetails',
             'name': 'str',
             'type': 'str',
             'file_size': 'TablespaceStorageSize',
@@ -94,6 +100,7 @@ class UpdateTablespaceDetails(object):
 
         self.attribute_map = {
             'credential_details': 'credentialDetails',
+            'database_credential': 'databaseCredential',
             'name': 'name',
             'type': 'type',
             'file_size': 'fileSize',
@@ -106,6 +113,7 @@ class UpdateTablespaceDetails(object):
         }
 
         self._credential_details = None
+        self._database_credential = None
         self._name = None
         self._type = None
         self._file_size = None
@@ -119,7 +127,7 @@ class UpdateTablespaceDetails(object):
     @property
     def credential_details(self):
         """
-        **[Required]** Gets the credential_details of this UpdateTablespaceDetails.
+        Gets the credential_details of this UpdateTablespaceDetails.
 
         :return: The credential_details of this UpdateTablespaceDetails.
         :rtype: oci.database_management.models.TablespaceAdminCredentialDetails
@@ -135,6 +143,26 @@ class UpdateTablespaceDetails(object):
         :type: oci.database_management.models.TablespaceAdminCredentialDetails
         """
         self._credential_details = credential_details
+
+    @property
+    def database_credential(self):
+        """
+        Gets the database_credential of this UpdateTablespaceDetails.
+
+        :return: The database_credential of this UpdateTablespaceDetails.
+        :rtype: oci.database_management.models.DatabaseCredentialDetails
+        """
+        return self._database_credential
+
+    @database_credential.setter
+    def database_credential(self, database_credential):
+        """
+        Sets the database_credential of this UpdateTablespaceDetails.
+
+        :param database_credential: The database_credential of this UpdateTablespaceDetails.
+        :type: oci.database_management.models.DatabaseCredentialDetails
+        """
+        self._database_credential = database_credential
 
     @property
     def name(self):

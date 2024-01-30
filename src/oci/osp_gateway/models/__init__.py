@@ -43,6 +43,7 @@ from .subscription_summary import SubscriptionSummary
 from .tax_info import TaxInfo
 from .tax_type_rule import TaxTypeRule
 from .update_subscription_details import UpdateSubscriptionDetails
+from .value_set_entity import ValueSetEntity
 from .verify_address_details import VerifyAddressDetails
 from .verify_address_receipt import VerifyAddressReceipt
 
@@ -85,6 +86,7 @@ osp_gateway_type_mapping = {
     "TaxInfo": TaxInfo,
     "TaxTypeRule": TaxTypeRule,
     "UpdateSubscriptionDetails": UpdateSubscriptionDetails,
+    "ValueSetEntity": ValueSetEntity,
     "VerifyAddressDetails": VerifyAddressDetails,
     "VerifyAddressReceipt": VerifyAddressReceipt
 }

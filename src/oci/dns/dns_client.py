@@ -1771,7 +1771,7 @@ class DnsClient(object):
             Allowed values are: "GLOBAL", "PRIVATE"
 
         :param str view_id: (optional)
-            The OCID of the view the resource is associated with.
+            The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 
         :param str compartment_id: (optional)
             The OCID of the compartment the zone belongs to.
@@ -1929,7 +1929,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -2001,8 +2001,6 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
-        if retry_strategy is None:
-            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -2078,7 +2076,7 @@ class DnsClient(object):
             Allowed values are: "GLOBAL", "PRIVATE"
 
         :param str view_id: (optional)
-            The OCID of the view the resource is associated with.
+            The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2229,7 +2227,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -2300,8 +2298,6 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
-        if retry_strategy is None:
-            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -2366,7 +2362,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -2437,8 +2433,6 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
-        if retry_strategy is None:
-            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -2502,7 +2496,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -2573,8 +2567,6 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
-        if retry_strategy is None:
-            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -2643,7 +2635,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -2714,8 +2706,6 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
-        if retry_strategy is None:
-            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -2781,7 +2771,7 @@ class DnsClient(object):
             Allowed values are: "GLOBAL", "PRIVATE"
 
         :param str view_id: (optional)
-            The OCID of the view the resource is associated with.
+            The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 
         :param str compartment_id: (optional)
             The OCID of the compartment the zone belongs to.
@@ -2947,7 +2937,7 @@ class DnsClient(object):
             Allowed values are: "GLOBAL", "PRIVATE"
 
         :param str view_id: (optional)
-            The OCID of the view the resource is associated with.
+            The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 
         :param str sort_by: (optional)
             The field by which to sort records.
@@ -3437,7 +3427,7 @@ class DnsClient(object):
             Allowed values are: "GLOBAL", "PRIVATE"
 
         :param str view_id: (optional)
-            The OCID of the view the resource is associated with.
+            The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -4139,7 +4129,7 @@ class DnsClient(object):
             Allowed values are: "GLOBAL", "PRIVATE"
 
         :param str view_id: (optional)
-            The OCID of the view the resource is associated with.
+            The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 
         :param str compartment_id: (optional)
             The OCID of the compartment the zone belongs to.
@@ -4287,7 +4277,7 @@ class DnsClient(object):
             Allowed values are: "GLOBAL", "PRIVATE"
 
         :param str view_id: (optional)
-            The OCID of the view the resource is associated with.
+            The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -4473,7 +4463,7 @@ class DnsClient(object):
             Allowed values are: "GLOBAL", "PRIVATE"
 
         :param str view_id: (optional)
-            The OCID of the view the resource is associated with.
+            The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -6111,7 +6101,7 @@ class DnsClient(object):
             Allowed values are: "GLOBAL", "PRIVATE"
 
         :param str view_id: (optional)
-            The OCID of the view the resource is associated with.
+            The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 
         :param str compartment_id: (optional)
             The OCID of the compartment the zone belongs to.
@@ -6276,7 +6266,7 @@ class DnsClient(object):
             Allowed values are: "GLOBAL", "PRIVATE"
 
         :param str view_id: (optional)
-            The OCID of the view the resource is associated with.
+            The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 
         :param str compartment_id: (optional)
             The OCID of the compartment the zone belongs to.
@@ -6438,7 +6428,7 @@ class DnsClient(object):
             Allowed values are: "GLOBAL", "PRIVATE"
 
         :param str view_id: (optional)
-            The OCID of the view the resource is associated with.
+            The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 
         :param str compartment_id: (optional)
             The OCID of the compartment the zone belongs to.
@@ -6601,7 +6591,7 @@ class DnsClient(object):
             Allowed values are: "GLOBAL", "PRIVATE"
 
         :param str view_id: (optional)
-            The OCID of the view the resource is associated with.
+            The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 
         :param str compartment_id: (optional)
             The OCID of the compartment the zone belongs to.
@@ -7056,7 +7046,7 @@ class DnsClient(object):
             Allowed values are: "GLOBAL", "PRIVATE"
 
         :param str view_id: (optional)
-            The OCID of the view the resource is associated with.
+            The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 
         :param str compartment_id: (optional)
             The OCID of the compartment the zone belongs to.
@@ -7792,7 +7782,7 @@ class DnsClient(object):
             Allowed values are: "GLOBAL", "PRIVATE"
 
         :param str view_id: (optional)
-            The OCID of the view the resource is associated with.
+            The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 
         :param str compartment_id: (optional)
             The OCID of the compartment the zone belongs to.
@@ -7953,7 +7943,7 @@ class DnsClient(object):
             Allowed values are: "GLOBAL", "PRIVATE"
 
         :param str view_id: (optional)
-            The OCID of the view the resource is associated with.
+            The OCID of the view the zone is associated with. Required when accessing a private zone by name.
 
         :param str compartment_id: (optional)
             The OCID of the compartment the zone belongs to.

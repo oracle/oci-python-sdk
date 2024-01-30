@@ -59,6 +59,7 @@ from .awr_db_wait_event_bucket_summary import AwrDbWaitEventBucketSummary
 from .awr_db_wait_event_collection import AwrDbWaitEventCollection
 from .awr_db_wait_event_summary import AwrDbWaitEventSummary
 from .awr_query_result import AwrQueryResult
+from .basic_named_credential_content import BasicNamedCredentialContent
 from .basic_preferred_credential import BasicPreferredCredential
 from .change_database_parameter_details import ChangeDatabaseParameterDetails
 from .change_database_parameters_details import ChangeDatabaseParametersDetails
@@ -67,6 +68,7 @@ from .change_external_db_system_compartment_details import ChangeExternalDbSyste
 from .change_external_exadata_infrastructure_compartment_details import ChangeExternalExadataInfrastructureCompartmentDetails
 from .change_job_compartment_details import ChangeJobCompartmentDetails
 from .change_managed_database_group_compartment_details import ChangeManagedDatabaseGroupCompartmentDetails
+from .change_named_credential_compartment_details import ChangeNamedCredentialCompartmentDetails
 from .change_plan_retention_details import ChangePlanRetentionDetails
 from .change_space_budget_details import ChangeSpaceBudgetDetails
 from .change_sql_plan_baselines_attributes_details import ChangeSqlPlanBaselinesAttributesDetails
@@ -87,6 +89,7 @@ from .create_external_exadata_infrastructure_details import CreateExternalExadat
 from .create_external_exadata_storage_connector_details import CreateExternalExadataStorageConnectorDetails
 from .create_job_details import CreateJobDetails
 from .create_managed_database_group_details import CreateManagedDatabaseGroupDetails
+from .create_named_credential_details import CreateNamedCredentialDetails
 from .create_sql_job_details import CreateSqlJobDetails
 from .create_sql_tuning_set_details import CreateSqlTuningSetDetails
 from .create_tablespace_details import CreateTablespaceDetails
@@ -98,6 +101,7 @@ from .database_connection_credentails_by_name import DatabaseConnectionCredentai
 from .database_connection_credentials import DatabaseConnectionCredentials
 from .database_connection_credentials_by_details import DatabaseConnectionCredentialsByDetails
 from .database_connection_string import DatabaseConnectionString
+from .database_credential_details import DatabaseCredentialDetails
 from .database_credentials import DatabaseCredentials
 from .database_fleet_health_metrics import DatabaseFleetHealthMetrics
 from .database_home_metric_definition import DatabaseHomeMetricDefinition
@@ -105,11 +109,14 @@ from .database_home_metrics import DatabaseHomeMetrics
 from .database_io_aggregate_metrics import DatabaseIOAggregateMetrics
 from .database_instance_home_metrics_definition import DatabaseInstanceHomeMetricsDefinition
 from .database_management_config import DatabaseManagementConfig
+from .database_named_credential_details import DatabaseNamedCredentialDetails
 from .database_parameter_summary import DatabaseParameterSummary
 from .database_parameter_update_status import DatabaseParameterUpdateStatus
 from .database_parameters_collection import DatabaseParametersCollection
+from .database_password_credential_details import DatabasePasswordCredentialDetails
 from .database_plan import DatabasePlan
 from .database_plan_directive import DatabasePlanDirective
+from .database_secret_credential_details import DatabaseSecretCredentialDetails
 from .database_ssl_connection_credentials import DatabaseSslConnectionCredentials
 from .database_storage_aggregate_metrics import DatabaseStorageAggregateMetrics
 from .database_time_aggregate_metrics import DatabaseTimeAggregateMetrics
@@ -292,6 +299,11 @@ from .my_sql_fleet_metric_definition import MySqlFleetMetricDefinition
 from .my_sql_fleet_metric_summary_definition import MySqlFleetMetricSummaryDefinition
 from .my_sql_fleet_metrics import MySqlFleetMetrics
 from .my_sql_fleet_summary import MySqlFleetSummary
+from .named_credential import NamedCredential
+from .named_credential_collection import NamedCredentialCollection
+from .named_credential_content import NamedCredentialContent
+from .named_credential_summary import NamedCredentialSummary
+from .named_preferred_credential import NamedPreferredCredential
 from .object_privilege_collection import ObjectPrivilegeCollection
 from .object_privilege_summary import ObjectPrivilegeSummary
 from .object_storage_job_execution_result_details import ObjectStorageJobExecutionResultDetails
@@ -399,6 +411,9 @@ from .tablespace_collection import TablespaceCollection
 from .tablespace_storage_size import TablespaceStorageSize
 from .tablespace_summary import TablespaceSummary
 from .test_basic_preferred_credential_details import TestBasicPreferredCredentialDetails
+from .test_named_credential_details import TestNamedCredentialDetails
+from .test_named_credential_status import TestNamedCredentialStatus
+from .test_named_preferred_credential_details import TestNamedPreferredCredentialDetails
 from .test_preferred_credential_details import TestPreferredCredentialDetails
 from .test_preferred_credential_status import TestPreferredCredentialStatus
 from .time_series_metric_data_point import TimeSeriesMetricDataPoint
@@ -420,6 +435,8 @@ from .update_external_exadata_storage_connector_details import UpdateExternalExa
 from .update_external_listener_details import UpdateExternalListenerDetails
 from .update_job_details import UpdateJobDetails
 from .update_managed_database_group_details import UpdateManagedDatabaseGroupDetails
+from .update_named_credential_details import UpdateNamedCredentialDetails
+from .update_named_preferred_credential_details import UpdateNamedPreferredCredentialDetails
 from .update_preferred_credential_details import UpdatePreferredCredentialDetails
 from .update_sql_job_details import UpdateSqlJobDetails
 from .update_tablespace_details import UpdateTablespaceDetails
@@ -492,6 +509,7 @@ database_management_type_mapping = {
     "AwrDbWaitEventCollection": AwrDbWaitEventCollection,
     "AwrDbWaitEventSummary": AwrDbWaitEventSummary,
     "AwrQueryResult": AwrQueryResult,
+    "BasicNamedCredentialContent": BasicNamedCredentialContent,
     "BasicPreferredCredential": BasicPreferredCredential,
     "ChangeDatabaseParameterDetails": ChangeDatabaseParameterDetails,
     "ChangeDatabaseParametersDetails": ChangeDatabaseParametersDetails,
@@ -500,6 +518,7 @@ database_management_type_mapping = {
     "ChangeExternalExadataInfrastructureCompartmentDetails": ChangeExternalExadataInfrastructureCompartmentDetails,
     "ChangeJobCompartmentDetails": ChangeJobCompartmentDetails,
     "ChangeManagedDatabaseGroupCompartmentDetails": ChangeManagedDatabaseGroupCompartmentDetails,
+    "ChangeNamedCredentialCompartmentDetails": ChangeNamedCredentialCompartmentDetails,
     "ChangePlanRetentionDetails": ChangePlanRetentionDetails,
     "ChangeSpaceBudgetDetails": ChangeSpaceBudgetDetails,
     "ChangeSqlPlanBaselinesAttributesDetails": ChangeSqlPlanBaselinesAttributesDetails,
@@ -520,6 +539,7 @@ database_management_type_mapping = {
     "CreateExternalExadataStorageConnectorDetails": CreateExternalExadataStorageConnectorDetails,
     "CreateJobDetails": CreateJobDetails,
     "CreateManagedDatabaseGroupDetails": CreateManagedDatabaseGroupDetails,
+    "CreateNamedCredentialDetails": CreateNamedCredentialDetails,
     "CreateSqlJobDetails": CreateSqlJobDetails,
     "CreateSqlTuningSetDetails": CreateSqlTuningSetDetails,
     "CreateTablespaceDetails": CreateTablespaceDetails,
@@ -531,6 +551,7 @@ database_management_type_mapping = {
     "DatabaseConnectionCredentials": DatabaseConnectionCredentials,
     "DatabaseConnectionCredentialsByDetails": DatabaseConnectionCredentialsByDetails,
     "DatabaseConnectionString": DatabaseConnectionString,
+    "DatabaseCredentialDetails": DatabaseCredentialDetails,
     "DatabaseCredentials": DatabaseCredentials,
     "DatabaseFleetHealthMetrics": DatabaseFleetHealthMetrics,
     "DatabaseHomeMetricDefinition": DatabaseHomeMetricDefinition,
@@ -538,11 +559,14 @@ database_management_type_mapping = {
     "DatabaseIOAggregateMetrics": DatabaseIOAggregateMetrics,
     "DatabaseInstanceHomeMetricsDefinition": DatabaseInstanceHomeMetricsDefinition,
     "DatabaseManagementConfig": DatabaseManagementConfig,
+    "DatabaseNamedCredentialDetails": DatabaseNamedCredentialDetails,
     "DatabaseParameterSummary": DatabaseParameterSummary,
     "DatabaseParameterUpdateStatus": DatabaseParameterUpdateStatus,
     "DatabaseParametersCollection": DatabaseParametersCollection,
+    "DatabasePasswordCredentialDetails": DatabasePasswordCredentialDetails,
     "DatabasePlan": DatabasePlan,
     "DatabasePlanDirective": DatabasePlanDirective,
+    "DatabaseSecretCredentialDetails": DatabaseSecretCredentialDetails,
     "DatabaseSslConnectionCredentials": DatabaseSslConnectionCredentials,
     "DatabaseStorageAggregateMetrics": DatabaseStorageAggregateMetrics,
     "DatabaseTimeAggregateMetrics": DatabaseTimeAggregateMetrics,
@@ -725,6 +749,11 @@ database_management_type_mapping = {
     "MySqlFleetMetricSummaryDefinition": MySqlFleetMetricSummaryDefinition,
     "MySqlFleetMetrics": MySqlFleetMetrics,
     "MySqlFleetSummary": MySqlFleetSummary,
+    "NamedCredential": NamedCredential,
+    "NamedCredentialCollection": NamedCredentialCollection,
+    "NamedCredentialContent": NamedCredentialContent,
+    "NamedCredentialSummary": NamedCredentialSummary,
+    "NamedPreferredCredential": NamedPreferredCredential,
     "ObjectPrivilegeCollection": ObjectPrivilegeCollection,
     "ObjectPrivilegeSummary": ObjectPrivilegeSummary,
     "ObjectStorageJobExecutionResultDetails": ObjectStorageJobExecutionResultDetails,
@@ -832,6 +861,9 @@ database_management_type_mapping = {
     "TablespaceStorageSize": TablespaceStorageSize,
     "TablespaceSummary": TablespaceSummary,
     "TestBasicPreferredCredentialDetails": TestBasicPreferredCredentialDetails,
+    "TestNamedCredentialDetails": TestNamedCredentialDetails,
+    "TestNamedCredentialStatus": TestNamedCredentialStatus,
+    "TestNamedPreferredCredentialDetails": TestNamedPreferredCredentialDetails,
     "TestPreferredCredentialDetails": TestPreferredCredentialDetails,
     "TestPreferredCredentialStatus": TestPreferredCredentialStatus,
     "TimeSeriesMetricDataPoint": TimeSeriesMetricDataPoint,
@@ -853,6 +885,8 @@ database_management_type_mapping = {
     "UpdateExternalListenerDetails": UpdateExternalListenerDetails,
     "UpdateJobDetails": UpdateJobDetails,
     "UpdateManagedDatabaseGroupDetails": UpdateManagedDatabaseGroupDetails,
+    "UpdateNamedCredentialDetails": UpdateNamedCredentialDetails,
+    "UpdateNamedPreferredCredentialDetails": UpdateNamedPreferredCredentialDetails,
     "UpdatePreferredCredentialDetails": UpdatePreferredCredentialDetails,
     "UpdateSqlJobDetails": UpdateSqlJobDetails,
     "UpdateTablespaceDetails": UpdateTablespaceDetails,

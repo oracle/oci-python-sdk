@@ -31,6 +31,7 @@ In addition, all Oracle Cloud Infrastructure SDKs require:
   For an example of how to set up a new user, group, compartment, and policy, see
   `Adding Users`_ in the Getting Started Guide. For a list of other typical
   Oracle Cloud Infrastructure policies, see `Common Policies`_ in the User Guide.
+* Python version as mentioned in `Supported Python Versions`_.
 * A keypair used for signing API requests, with the public key uploaded to Oracle. Only the user calling
   the API should be in possession of the private key. (For more information, see `Configuring the SDK`_.)
 
@@ -221,3 +222,4 @@ When trying to use the SDK, if you get an exception related to SSL/TLS or certif
 .. _OpenSSL: https://www.openssl.org/
 .. _ConfiguringSDK: Configuring the SDK
 .. _OSXUsers: Verify OpenSSL Version
+.. _Supported Python Versions: https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/pythonsdk.htm#pythonsdk_topic-supported_python_versions

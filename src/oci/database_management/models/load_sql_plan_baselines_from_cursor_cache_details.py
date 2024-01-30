@@ -16,6 +16,7 @@ class LoadSqlPlanBaselinesFromCursorCacheDetails(object):
     the plans to load using SQL ID, plan identifier, or filterName and filterValue pair.
     You can also control the SQL plan baseline into which the plans are loaded using either
     SQL text or SQL handle.
+    It takes either credentials or databaseCredential. It's recommended to provide databaseCredential
     """
 
     #: A constant which can be used with the filter_name property of a LoadSqlPlanBaselinesFromCursorCacheDetails.
@@ -84,6 +85,10 @@ class LoadSqlPlanBaselinesFromCursorCacheDetails(object):
             The value to assign to the credentials property of this LoadSqlPlanBaselinesFromCursorCacheDetails.
         :type credentials: oci.database_management.models.ManagedDatabaseCredential
 
+        :param database_credential:
+            The value to assign to the database_credential property of this LoadSqlPlanBaselinesFromCursorCacheDetails.
+        :type database_credential: oci.database_management.models.DatabaseCredentialDetails
+
         """
         self.swagger_types = {
             'job_name': 'str',
@@ -96,7 +101,8 @@ class LoadSqlPlanBaselinesFromCursorCacheDetails(object):
             'filter_value': 'str',
             'is_fixed': 'bool',
             'is_enabled': 'bool',
-            'credentials': 'ManagedDatabaseCredential'
+            'credentials': 'ManagedDatabaseCredential',
+            'database_credential': 'DatabaseCredentialDetails'
         }
 
         self.attribute_map = {
@@ -110,7 +116,8 @@ class LoadSqlPlanBaselinesFromCursorCacheDetails(object):
             'filter_value': 'filterValue',
             'is_fixed': 'isFixed',
             'is_enabled': 'isEnabled',
-            'credentials': 'credentials'
+            'credentials': 'credentials',
+            'database_credential': 'databaseCredential'
         }
 
         self._job_name = None
@@ -124,6 +131,7 @@ class LoadSqlPlanBaselinesFromCursorCacheDetails(object):
         self._is_fixed = None
         self._is_enabled = None
         self._credentials = None
+        self._database_credential = None
 
     @property
     def job_name(self):
@@ -397,7 +405,7 @@ class LoadSqlPlanBaselinesFromCursorCacheDetails(object):
     @property
     def credentials(self):
         """
-        **[Required]** Gets the credentials of this LoadSqlPlanBaselinesFromCursorCacheDetails.
+        Gets the credentials of this LoadSqlPlanBaselinesFromCursorCacheDetails.
 
         :return: The credentials of this LoadSqlPlanBaselinesFromCursorCacheDetails.
         :rtype: oci.database_management.models.ManagedDatabaseCredential
@@ -413,6 +421,26 @@ class LoadSqlPlanBaselinesFromCursorCacheDetails(object):
         :type: oci.database_management.models.ManagedDatabaseCredential
         """
         self._credentials = credentials
+
+    @property
+    def database_credential(self):
+        """
+        Gets the database_credential of this LoadSqlPlanBaselinesFromCursorCacheDetails.
+
+        :return: The database_credential of this LoadSqlPlanBaselinesFromCursorCacheDetails.
+        :rtype: oci.database_management.models.DatabaseCredentialDetails
+        """
+        return self._database_credential
+
+    @database_credential.setter
+    def database_credential(self, database_credential):
+        """
+        Sets the database_credential of this LoadSqlPlanBaselinesFromCursorCacheDetails.
+
+        :param database_credential: The database_credential of this LoadSqlPlanBaselinesFromCursorCacheDetails.
+        :type: oci.database_management.models.DatabaseCredentialDetails
+        """
+        self._database_credential = database_credential
 
     def __repr__(self):
         return formatted_flat_dict(self)

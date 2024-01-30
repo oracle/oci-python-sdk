@@ -31,7 +31,7 @@ class UpdateBasicPreferredCredentialDetails(UpdatePreferredCredentialDetails):
 
         :param type:
             The value to assign to the type property of this UpdateBasicPreferredCredentialDetails.
-            Allowed values for this property are: "BASIC"
+            Allowed values for this property are: "BASIC", "NAMED_CREDENTIAL"
         :type type: str
 
         :param user_name:

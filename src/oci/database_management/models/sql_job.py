@@ -159,6 +159,10 @@ class SqlJob(Job):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type role: str
 
+        :param named_credential_id:
+            The value to assign to the named_credential_id property of this SqlJob.
+        :type named_credential_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -184,7 +188,8 @@ class SqlJob(Job):
             'out_binds': 'JobOutBindsDetails',
             'operation_type': 'str',
             'user_name': 'str',
-            'role': 'str'
+            'role': 'str',
+            'named_credential_id': 'str'
         }
 
         self.attribute_map = {
@@ -211,7 +216,8 @@ class SqlJob(Job):
             'out_binds': 'outBinds',
             'operation_type': 'operationType',
             'user_name': 'userName',
-            'role': 'role'
+            'role': 'role',
+            'named_credential_id': 'namedCredentialId'
         }
 
         self._id = None
@@ -238,6 +244,7 @@ class SqlJob(Job):
         self._operation_type = None
         self._user_name = None
         self._role = None
+        self._named_credential_id = None
         self._job_type = 'SQL'
 
     @property
@@ -419,6 +426,34 @@ class SqlJob(Job):
         if not value_allowed_none_or_none_sentinel(role, allowed_values):
             role = 'UNKNOWN_ENUM_VALUE'
         self._role = role
+
+    @property
+    def named_credential_id(self):
+        """
+        Gets the named_credential_id of this SqlJob.
+        The `OCID`__ of the Named Credentials containing password secret.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The named_credential_id of this SqlJob.
+        :rtype: str
+        """
+        return self._named_credential_id
+
+    @named_credential_id.setter
+    def named_credential_id(self, named_credential_id):
+        """
+        Sets the named_credential_id of this SqlJob.
+        The `OCID`__ of the Named Credentials containing password secret.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param named_credential_id: The named_credential_id of this SqlJob.
+        :type: str
+        """
+        self._named_credential_id = named_credential_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

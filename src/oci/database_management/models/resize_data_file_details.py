@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class ResizeDataFileDetails(object):
     """
     The details required to resize a data file or temp file within the tablespace.
+    It takes either credentialDetails or databaseCredential. It's recommended to provide databaseCredential
     """
 
     #: A constant which can be used with the file_type property of a ResizeDataFileDetails.
@@ -31,6 +32,10 @@ class ResizeDataFileDetails(object):
         :param credential_details:
             The value to assign to the credential_details property of this ResizeDataFileDetails.
         :type credential_details: oci.database_management.models.TablespaceAdminCredentialDetails
+
+        :param database_credential:
+            The value to assign to the database_credential property of this ResizeDataFileDetails.
+        :type database_credential: oci.database_management.models.DatabaseCredentialDetails
 
         :param file_type:
             The value to assign to the file_type property of this ResizeDataFileDetails.
@@ -64,6 +69,7 @@ class ResizeDataFileDetails(object):
         """
         self.swagger_types = {
             'credential_details': 'TablespaceAdminCredentialDetails',
+            'database_credential': 'DatabaseCredentialDetails',
             'file_type': 'str',
             'data_file': 'str',
             'file_size': 'TablespaceStorageSize',
@@ -75,6 +81,7 @@ class ResizeDataFileDetails(object):
 
         self.attribute_map = {
             'credential_details': 'credentialDetails',
+            'database_credential': 'databaseCredential',
             'file_type': 'fileType',
             'data_file': 'dataFile',
             'file_size': 'fileSize',
@@ -85,6 +92,7 @@ class ResizeDataFileDetails(object):
         }
 
         self._credential_details = None
+        self._database_credential = None
         self._file_type = None
         self._data_file = None
         self._file_size = None
@@ -96,7 +104,7 @@ class ResizeDataFileDetails(object):
     @property
     def credential_details(self):
         """
-        **[Required]** Gets the credential_details of this ResizeDataFileDetails.
+        Gets the credential_details of this ResizeDataFileDetails.
 
         :return: The credential_details of this ResizeDataFileDetails.
         :rtype: oci.database_management.models.TablespaceAdminCredentialDetails
@@ -112,6 +120,26 @@ class ResizeDataFileDetails(object):
         :type: oci.database_management.models.TablespaceAdminCredentialDetails
         """
         self._credential_details = credential_details
+
+    @property
+    def database_credential(self):
+        """
+        Gets the database_credential of this ResizeDataFileDetails.
+
+        :return: The database_credential of this ResizeDataFileDetails.
+        :rtype: oci.database_management.models.DatabaseCredentialDetails
+        """
+        return self._database_credential
+
+    @database_credential.setter
+    def database_credential(self, database_credential):
+        """
+        Sets the database_credential of this ResizeDataFileDetails.
+
+        :param database_credential: The database_credential of this ResizeDataFileDetails.
+        :type: oci.database_management.models.DatabaseCredentialDetails
+        """
+        self._database_credential = database_credential
 
     @property
     def file_type(self):

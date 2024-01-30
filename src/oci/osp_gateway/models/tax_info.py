@@ -40,13 +40,18 @@ class TaxInfo(object):
             The value to assign to the tax_cnpj property of this TaxInfo.
         :type tax_cnpj: str
 
+        :param giro:
+            The value to assign to the giro property of this TaxInfo.
+        :type giro: str
+
         """
         self.swagger_types = {
             'tax_payer_id': 'str',
             'tax_reg_number': 'str',
             'no_tax_reason_code': 'str',
             'no_tax_reason_code_details': 'str',
-            'tax_cnpj': 'str'
+            'tax_cnpj': 'str',
+            'giro': 'str'
         }
 
         self.attribute_map = {
@@ -54,7 +59,8 @@ class TaxInfo(object):
             'tax_reg_number': 'taxRegNumber',
             'no_tax_reason_code': 'noTaxReasonCode',
             'no_tax_reason_code_details': 'noTaxReasonCodeDetails',
-            'tax_cnpj': 'taxCnpj'
+            'tax_cnpj': 'taxCnpj',
+            'giro': 'giro'
         }
 
         self._tax_payer_id = None
@@ -62,6 +68,7 @@ class TaxInfo(object):
         self._no_tax_reason_code = None
         self._no_tax_reason_code_details = None
         self._tax_cnpj = None
+        self._giro = None
 
     @property
     def tax_payer_id(self):
@@ -182,6 +189,30 @@ class TaxInfo(object):
         :type: str
         """
         self._tax_cnpj = tax_cnpj
+
+    @property
+    def giro(self):
+        """
+        Gets the giro of this TaxInfo.
+        Companies' GIRO code
+
+
+        :return: The giro of this TaxInfo.
+        :rtype: str
+        """
+        return self._giro
+
+    @giro.setter
+    def giro(self, giro):
+        """
+        Sets the giro of this TaxInfo.
+        Companies' GIRO code
+
+
+        :param giro: The giro of this TaxInfo.
+        :type: str
+        """
+        self._giro = giro
 
     def __repr__(self):
         return formatted_flat_dict(self)

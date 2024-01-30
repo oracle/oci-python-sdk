@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class ChangePlanRetentionDetails(object):
     """
     The details required to change the plan retention period.
+    It takes either credentials or databaseCredential. It's recommended to provide databaseCredential
     """
 
     def __init__(self, **kwargs):
@@ -28,19 +29,26 @@ class ChangePlanRetentionDetails(object):
             The value to assign to the credentials property of this ChangePlanRetentionDetails.
         :type credentials: oci.database_management.models.ManagedDatabaseCredential
 
+        :param database_credential:
+            The value to assign to the database_credential property of this ChangePlanRetentionDetails.
+        :type database_credential: oci.database_management.models.DatabaseCredentialDetails
+
         """
         self.swagger_types = {
             'retention_weeks': 'int',
-            'credentials': 'ManagedDatabaseCredential'
+            'credentials': 'ManagedDatabaseCredential',
+            'database_credential': 'DatabaseCredentialDetails'
         }
 
         self.attribute_map = {
             'retention_weeks': 'retentionWeeks',
-            'credentials': 'credentials'
+            'credentials': 'credentials',
+            'database_credential': 'databaseCredential'
         }
 
         self._retention_weeks = None
         self._credentials = None
+        self._database_credential = None
 
     @property
     def retention_weeks(self):
@@ -69,7 +77,7 @@ class ChangePlanRetentionDetails(object):
     @property
     def credentials(self):
         """
-        **[Required]** Gets the credentials of this ChangePlanRetentionDetails.
+        Gets the credentials of this ChangePlanRetentionDetails.
 
         :return: The credentials of this ChangePlanRetentionDetails.
         :rtype: oci.database_management.models.ManagedDatabaseCredential
@@ -85,6 +93,26 @@ class ChangePlanRetentionDetails(object):
         :type: oci.database_management.models.ManagedDatabaseCredential
         """
         self._credentials = credentials
+
+    @property
+    def database_credential(self):
+        """
+        Gets the database_credential of this ChangePlanRetentionDetails.
+
+        :return: The database_credential of this ChangePlanRetentionDetails.
+        :rtype: oci.database_management.models.DatabaseCredentialDetails
+        """
+        return self._database_credential
+
+    @database_credential.setter
+    def database_credential(self, database_credential):
+        """
+        Sets the database_credential of this ChangePlanRetentionDetails.
+
+        :param database_credential: The database_credential of this ChangePlanRetentionDetails.
+        :type: oci.database_management.models.DatabaseCredentialDetails
+        """
+        self._database_credential = database_credential
 
     def __repr__(self):
         return formatted_flat_dict(self)

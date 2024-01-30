@@ -34,6 +34,7 @@ API Reference
 * :doc:`Block Storage <core/client/oci.core.BlockstorageClient>`
 * :doc:`Blockchain Platform <blockchain/client/oci.blockchain.BlockchainPlatformClient>`
 * :doc:`Budget <budget/client/oci.budget.BudgetClient>`
+* :doc:`Capacity Management <capacity_management/client/oci.capacity_management.CapacityManagementClient>`
 * :doc:`Certificates <certificates/client/oci.certificates.CertificatesClient>`
 * :doc:`Certificates Management <certificates_management/client/oci.certificates_management.CertificatesManagementClient>`
 * :doc:`Channels <mysql/client/oci.mysql.ChannelsClient>`
@@ -270,6 +271,7 @@ API Reference
     bds
     blockchain
     budget
+    capacity_management
     certificates
     certificates_management
     cims

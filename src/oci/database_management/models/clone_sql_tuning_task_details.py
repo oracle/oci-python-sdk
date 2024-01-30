@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class CloneSqlTuningTaskDetails(object):
     """
     The request to clone and run a SQL tuning task. The new task uses the same inputs as the one being cloned.
+    It takes either credentialDetails or databaseCredential. It's recommended to provide databaseCredential
     """
 
     def __init__(self, **kwargs):
@@ -36,25 +37,32 @@ class CloneSqlTuningTaskDetails(object):
             The value to assign to the credential_details property of this CloneSqlTuningTaskDetails.
         :type credential_details: oci.database_management.models.SqlTuningTaskCredentialDetails
 
+        :param database_credential:
+            The value to assign to the database_credential property of this CloneSqlTuningTaskDetails.
+        :type database_credential: oci.database_management.models.DatabaseCredentialDetails
+
         """
         self.swagger_types = {
             'task_name': 'str',
             'original_task_id': 'int',
             'task_description': 'str',
-            'credential_details': 'SqlTuningTaskCredentialDetails'
+            'credential_details': 'SqlTuningTaskCredentialDetails',
+            'database_credential': 'DatabaseCredentialDetails'
         }
 
         self.attribute_map = {
             'task_name': 'taskName',
             'original_task_id': 'originalTaskId',
             'task_description': 'taskDescription',
-            'credential_details': 'credentialDetails'
+            'credential_details': 'credentialDetails',
+            'database_credential': 'databaseCredential'
         }
 
         self._task_name = None
         self._original_task_id = None
         self._task_description = None
         self._credential_details = None
+        self._database_credential = None
 
     @property
     def task_name(self):
@@ -139,7 +147,7 @@ class CloneSqlTuningTaskDetails(object):
     @property
     def credential_details(self):
         """
-        **[Required]** Gets the credential_details of this CloneSqlTuningTaskDetails.
+        Gets the credential_details of this CloneSqlTuningTaskDetails.
 
         :return: The credential_details of this CloneSqlTuningTaskDetails.
         :rtype: oci.database_management.models.SqlTuningTaskCredentialDetails
@@ -155,6 +163,26 @@ class CloneSqlTuningTaskDetails(object):
         :type: oci.database_management.models.SqlTuningTaskCredentialDetails
         """
         self._credential_details = credential_details
+
+    @property
+    def database_credential(self):
+        """
+        Gets the database_credential of this CloneSqlTuningTaskDetails.
+
+        :return: The database_credential of this CloneSqlTuningTaskDetails.
+        :rtype: oci.database_management.models.DatabaseCredentialDetails
+        """
+        return self._database_credential
+
+    @database_credential.setter
+    def database_credential(self, database_credential):
+        """
+        Sets the database_credential of this CloneSqlTuningTaskDetails.
+
+        :param database_credential: The database_credential of this CloneSqlTuningTaskDetails.
+        :type: oci.database_management.models.DatabaseCredentialDetails
+        """
+        self._database_credential = database_credential
 
     def __repr__(self):
         return formatted_flat_dict(self)

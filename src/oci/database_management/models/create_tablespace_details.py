@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class CreateTablespaceDetails(object):
     """
     The details required to create a tablespace.
+    It takes either credentialDetails or databaseCredential. It's recommended to provide databaseCredential
     """
 
     #: A constant which can be used with the type property of a CreateTablespaceDetails.
@@ -63,6 +64,10 @@ class CreateTablespaceDetails(object):
         :param credential_details:
             The value to assign to the credential_details property of this CreateTablespaceDetails.
         :type credential_details: oci.database_management.models.TablespaceAdminCredentialDetails
+
+        :param database_credential:
+            The value to assign to the database_credential property of this CreateTablespaceDetails.
+        :type database_credential: oci.database_management.models.DatabaseCredentialDetails
 
         :param name:
             The value to assign to the name property of this CreateTablespaceDetails.
@@ -152,6 +157,7 @@ class CreateTablespaceDetails(object):
         """
         self.swagger_types = {
             'credential_details': 'TablespaceAdminCredentialDetails',
+            'database_credential': 'DatabaseCredentialDetails',
             'name': 'str',
             'type': 'str',
             'is_bigfile': 'bool',
@@ -176,6 +182,7 @@ class CreateTablespaceDetails(object):
 
         self.attribute_map = {
             'credential_details': 'credentialDetails',
+            'database_credential': 'databaseCredential',
             'name': 'name',
             'type': 'type',
             'is_bigfile': 'isBigfile',
@@ -199,6 +206,7 @@ class CreateTablespaceDetails(object):
         }
 
         self._credential_details = None
+        self._database_credential = None
         self._name = None
         self._type = None
         self._is_bigfile = None
@@ -223,7 +231,7 @@ class CreateTablespaceDetails(object):
     @property
     def credential_details(self):
         """
-        **[Required]** Gets the credential_details of this CreateTablespaceDetails.
+        Gets the credential_details of this CreateTablespaceDetails.
 
         :return: The credential_details of this CreateTablespaceDetails.
         :rtype: oci.database_management.models.TablespaceAdminCredentialDetails
@@ -239,6 +247,26 @@ class CreateTablespaceDetails(object):
         :type: oci.database_management.models.TablespaceAdminCredentialDetails
         """
         self._credential_details = credential_details
+
+    @property
+    def database_credential(self):
+        """
+        Gets the database_credential of this CreateTablespaceDetails.
+
+        :return: The database_credential of this CreateTablespaceDetails.
+        :rtype: oci.database_management.models.DatabaseCredentialDetails
+        """
+        return self._database_credential
+
+    @database_credential.setter
+    def database_credential(self, database_credential):
+        """
+        Sets the database_credential of this CreateTablespaceDetails.
+
+        :param database_credential: The database_credential of this CreateTablespaceDetails.
+        :type: oci.database_management.models.DatabaseCredentialDetails
+        """
+        self._database_credential = database_credential
 
     @property
     def name(self):

@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class FetchSqlTuningSetDetails(object):
     """
     The details required to fetch the Sql tuning set details.
+    It takes either credentialDetails or databaseCredential. It's recommended to provide databaseCredential
     """
 
     #: A constant which can be used with the recursive_sql property of a FetchSqlTuningSetDetails.
@@ -104,6 +105,10 @@ class FetchSqlTuningSetDetails(object):
             The value to assign to the credential_details property of this FetchSqlTuningSetDetails.
         :type credential_details: oci.database_management.models.SqlTuningSetAdminCredentialDetails
 
+        :param database_credential:
+            The value to assign to the database_credential property of this FetchSqlTuningSetDetails.
+        :type database_credential: oci.database_management.models.DatabaseCredentialDetails
+
         :param owner:
             The value to assign to the owner property of this FetchSqlTuningSetDetails.
         :type owner: str
@@ -147,6 +152,7 @@ class FetchSqlTuningSetDetails(object):
         """
         self.swagger_types = {
             'credential_details': 'SqlTuningSetAdminCredentialDetails',
+            'database_credential': 'DatabaseCredentialDetails',
             'owner': 'str',
             'name': 'str',
             'basic_filter': 'str',
@@ -160,6 +166,7 @@ class FetchSqlTuningSetDetails(object):
 
         self.attribute_map = {
             'credential_details': 'credentialDetails',
+            'database_credential': 'databaseCredential',
             'owner': 'owner',
             'name': 'name',
             'basic_filter': 'basicFilter',
@@ -172,6 +179,7 @@ class FetchSqlTuningSetDetails(object):
         }
 
         self._credential_details = None
+        self._database_credential = None
         self._owner = None
         self._name = None
         self._basic_filter = None
@@ -185,7 +193,7 @@ class FetchSqlTuningSetDetails(object):
     @property
     def credential_details(self):
         """
-        **[Required]** Gets the credential_details of this FetchSqlTuningSetDetails.
+        Gets the credential_details of this FetchSqlTuningSetDetails.
 
         :return: The credential_details of this FetchSqlTuningSetDetails.
         :rtype: oci.database_management.models.SqlTuningSetAdminCredentialDetails
@@ -201,6 +209,26 @@ class FetchSqlTuningSetDetails(object):
         :type: oci.database_management.models.SqlTuningSetAdminCredentialDetails
         """
         self._credential_details = credential_details
+
+    @property
+    def database_credential(self):
+        """
+        Gets the database_credential of this FetchSqlTuningSetDetails.
+
+        :return: The database_credential of this FetchSqlTuningSetDetails.
+        :rtype: oci.database_management.models.DatabaseCredentialDetails
+        """
+        return self._database_credential
+
+    @database_credential.setter
+    def database_credential(self, database_credential):
+        """
+        Sets the database_credential of this FetchSqlTuningSetDetails.
+
+        :param database_credential: The database_credential of this FetchSqlTuningSetDetails.
+        :type: oci.database_management.models.DatabaseCredentialDetails
+        """
+        self._database_credential = database_credential
 
     @property
     def owner(self):

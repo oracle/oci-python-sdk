@@ -64,6 +64,10 @@ class PreferredCredentialSummary(object):
             The value to assign to the password_secret_id property of this PreferredCredentialSummary.
         :type password_secret_id: str
 
+        :param named_credential_id:
+            The value to assign to the named_credential_id property of this PreferredCredentialSummary.
+        :type named_credential_id: str
+
         """
         self.swagger_types = {
             'credential_name': 'str',
@@ -71,7 +75,8 @@ class PreferredCredentialSummary(object):
             'is_accessible': 'bool',
             'user_name': 'str',
             'role': 'str',
-            'password_secret_id': 'str'
+            'password_secret_id': 'str',
+            'named_credential_id': 'str'
         }
 
         self.attribute_map = {
@@ -80,7 +85,8 @@ class PreferredCredentialSummary(object):
             'is_accessible': 'isAccessible',
             'user_name': 'userName',
             'role': 'role',
-            'password_secret_id': 'passwordSecretId'
+            'password_secret_id': 'passwordSecretId',
+            'named_credential_id': 'namedCredentialId'
         }
 
         self._credential_name = None
@@ -89,6 +95,7 @@ class PreferredCredentialSummary(object):
         self._user_name = None
         self._role = None
         self._password_secret_id = None
+        self._named_credential_id = None
 
     @property
     def credential_name(self):
@@ -249,6 +256,34 @@ class PreferredCredentialSummary(object):
         :type: str
         """
         self._password_secret_id = password_secret_id
+
+    @property
+    def named_credential_id(self):
+        """
+        Gets the named_credential_id of this PreferredCredentialSummary.
+        The `OCID`__ of the Named Credential that contains the database user password metadata.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The named_credential_id of this PreferredCredentialSummary.
+        :rtype: str
+        """
+        return self._named_credential_id
+
+    @named_credential_id.setter
+    def named_credential_id(self, named_credential_id):
+        """
+        Sets the named_credential_id of this PreferredCredentialSummary.
+        The `OCID`__ of the Named Credential that contains the database user password metadata.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param named_credential_id: The named_credential_id of this PreferredCredentialSummary.
+        :type: str
+        """
+        self._named_credential_id = named_credential_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

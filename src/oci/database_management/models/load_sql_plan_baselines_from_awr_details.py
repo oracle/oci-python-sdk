@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class LoadSqlPlanBaselinesFromAwrDetails(object):
     """
     The details required to load plans from Automatic Workload Repository (AWR).
+    It takes either credentials or databaseCredential. It's recommended to provide databaseCredential
     """
 
     def __init__(self, **kwargs):
@@ -52,6 +53,10 @@ class LoadSqlPlanBaselinesFromAwrDetails(object):
             The value to assign to the credentials property of this LoadSqlPlanBaselinesFromAwrDetails.
         :type credentials: oci.database_management.models.ManagedDatabaseCredential
 
+        :param database_credential:
+            The value to assign to the database_credential property of this LoadSqlPlanBaselinesFromAwrDetails.
+        :type database_credential: oci.database_management.models.DatabaseCredentialDetails
+
         """
         self.swagger_types = {
             'job_name': 'str',
@@ -61,7 +66,8 @@ class LoadSqlPlanBaselinesFromAwrDetails(object):
             'sql_text_filter': 'str',
             'is_fixed': 'bool',
             'is_enabled': 'bool',
-            'credentials': 'ManagedDatabaseCredential'
+            'credentials': 'ManagedDatabaseCredential',
+            'database_credential': 'DatabaseCredentialDetails'
         }
 
         self.attribute_map = {
@@ -72,7 +78,8 @@ class LoadSqlPlanBaselinesFromAwrDetails(object):
             'sql_text_filter': 'sqlTextFilter',
             'is_fixed': 'isFixed',
             'is_enabled': 'isEnabled',
-            'credentials': 'credentials'
+            'credentials': 'credentials',
+            'database_credential': 'databaseCredential'
         }
 
         self._job_name = None
@@ -83,6 +90,7 @@ class LoadSqlPlanBaselinesFromAwrDetails(object):
         self._is_fixed = None
         self._is_enabled = None
         self._credentials = None
+        self._database_credential = None
 
     @property
     def job_name(self):
@@ -265,7 +273,7 @@ class LoadSqlPlanBaselinesFromAwrDetails(object):
     @property
     def credentials(self):
         """
-        **[Required]** Gets the credentials of this LoadSqlPlanBaselinesFromAwrDetails.
+        Gets the credentials of this LoadSqlPlanBaselinesFromAwrDetails.
 
         :return: The credentials of this LoadSqlPlanBaselinesFromAwrDetails.
         :rtype: oci.database_management.models.ManagedDatabaseCredential
@@ -281,6 +289,26 @@ class LoadSqlPlanBaselinesFromAwrDetails(object):
         :type: oci.database_management.models.ManagedDatabaseCredential
         """
         self._credentials = credentials
+
+    @property
+    def database_credential(self):
+        """
+        Gets the database_credential of this LoadSqlPlanBaselinesFromAwrDetails.
+
+        :return: The database_credential of this LoadSqlPlanBaselinesFromAwrDetails.
+        :rtype: oci.database_management.models.DatabaseCredentialDetails
+        """
+        return self._database_credential
+
+    @database_credential.setter
+    def database_credential(self, database_credential):
+        """
+        Sets the database_credential of this LoadSqlPlanBaselinesFromAwrDetails.
+
+        :param database_credential: The database_credential of this LoadSqlPlanBaselinesFromAwrDetails.
+        :type: oci.database_management.models.DatabaseCredentialDetails
+        """
+        self._database_credential = database_credential
 
     def __repr__(self):
         return formatted_flat_dict(self)

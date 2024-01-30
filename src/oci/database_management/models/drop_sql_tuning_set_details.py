@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class DropSqlTuningSetDetails(object):
     """
     The details required to drop a Sql tuning set.
+    It takes either credentialDetails or databaseCredential. It's recommended to provide databaseCredential
     """
 
     def __init__(self, **kwargs):
@@ -23,6 +24,10 @@ class DropSqlTuningSetDetails(object):
         :param credential_details:
             The value to assign to the credential_details property of this DropSqlTuningSetDetails.
         :type credential_details: oci.database_management.models.SqlTuningSetAdminCredentialDetails
+
+        :param database_credential:
+            The value to assign to the database_credential property of this DropSqlTuningSetDetails.
+        :type database_credential: oci.database_management.models.DatabaseCredentialDetails
 
         :param name:
             The value to assign to the name property of this DropSqlTuningSetDetails.
@@ -39,6 +44,7 @@ class DropSqlTuningSetDetails(object):
         """
         self.swagger_types = {
             'credential_details': 'SqlTuningSetAdminCredentialDetails',
+            'database_credential': 'DatabaseCredentialDetails',
             'name': 'str',
             'owner': 'str',
             'show_sql_only': 'int'
@@ -46,12 +52,14 @@ class DropSqlTuningSetDetails(object):
 
         self.attribute_map = {
             'credential_details': 'credentialDetails',
+            'database_credential': 'databaseCredential',
             'name': 'name',
             'owner': 'owner',
             'show_sql_only': 'showSqlOnly'
         }
 
         self._credential_details = None
+        self._database_credential = None
         self._name = None
         self._owner = None
         self._show_sql_only = None
@@ -59,7 +67,7 @@ class DropSqlTuningSetDetails(object):
     @property
     def credential_details(self):
         """
-        **[Required]** Gets the credential_details of this DropSqlTuningSetDetails.
+        Gets the credential_details of this DropSqlTuningSetDetails.
 
         :return: The credential_details of this DropSqlTuningSetDetails.
         :rtype: oci.database_management.models.SqlTuningSetAdminCredentialDetails
@@ -75,6 +83,26 @@ class DropSqlTuningSetDetails(object):
         :type: oci.database_management.models.SqlTuningSetAdminCredentialDetails
         """
         self._credential_details = credential_details
+
+    @property
+    def database_credential(self):
+        """
+        Gets the database_credential of this DropSqlTuningSetDetails.
+
+        :return: The database_credential of this DropSqlTuningSetDetails.
+        :rtype: oci.database_management.models.DatabaseCredentialDetails
+        """
+        return self._database_credential
+
+    @database_credential.setter
+    def database_credential(self, database_credential):
+        """
+        Sets the database_credential of this DropSqlTuningSetDetails.
+
+        :param database_credential: The database_credential of this DropSqlTuningSetDetails.
+        :type: oci.database_management.models.DatabaseCredentialDetails
+        """
+        self._database_credential = database_credential
 
     @property
     def name(self):
