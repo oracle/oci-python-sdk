@@ -51,6 +51,22 @@ class Secret(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the rotation_status property of a Secret.
+    #: This constant has a value of "IN_PROGRESS"
+    ROTATION_STATUS_IN_PROGRESS = "IN_PROGRESS"
+
+    #: A constant which can be used with the rotation_status property of a Secret.
+    #: This constant has a value of "SCHEDULED"
+    ROTATION_STATUS_SCHEDULED = "SCHEDULED"
+
+    #: A constant which can be used with the rotation_status property of a Secret.
+    #: This constant has a value of "NOT_ENABLED"
+    ROTATION_STATUS_NOT_ENABLED = "NOT_ENABLED"
+
+    #: A constant which can be used with the rotation_status property of a Secret.
+    #: This constant has a value of "CANCELLING"
+    ROTATION_STATUS_CANCELLING = "CANCELLING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Secret object with values from keyword arguments.
@@ -98,6 +114,24 @@ class Secret(object):
             The value to assign to the metadata property of this Secret.
         :type metadata: dict(str, object)
 
+        :param rotation_config:
+            The value to assign to the rotation_config property of this Secret.
+        :type rotation_config: oci.vault.models.RotationConfig
+
+        :param rotation_status:
+            The value to assign to the rotation_status property of this Secret.
+            Allowed values for this property are: "IN_PROGRESS", "SCHEDULED", "NOT_ENABLED", "CANCELLING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type rotation_status: str
+
+        :param last_rotation_time:
+            The value to assign to the last_rotation_time property of this Secret.
+        :type last_rotation_time: datetime
+
+        :param next_rotation_time:
+            The value to assign to the next_rotation_time property of this Secret.
+        :type next_rotation_time: datetime
+
         :param secret_name:
             The value to assign to the secret_name property of this Secret.
         :type secret_name: str
@@ -134,6 +168,10 @@ class Secret(object):
             'lifecycle_details': 'str',
             'lifecycle_state': 'str',
             'metadata': 'dict(str, object)',
+            'rotation_config': 'RotationConfig',
+            'rotation_status': 'str',
+            'last_rotation_time': 'datetime',
+            'next_rotation_time': 'datetime',
             'secret_name': 'str',
             'secret_rules': 'list[SecretRule]',
             'time_created': 'datetime',
@@ -153,6 +191,10 @@ class Secret(object):
             'lifecycle_details': 'lifecycleDetails',
             'lifecycle_state': 'lifecycleState',
             'metadata': 'metadata',
+            'rotation_config': 'rotationConfig',
+            'rotation_status': 'rotationStatus',
+            'last_rotation_time': 'lastRotationTime',
+            'next_rotation_time': 'nextRotationTime',
             'secret_name': 'secretName',
             'secret_rules': 'secretRules',
             'time_created': 'timeCreated',
@@ -171,6 +213,10 @@ class Secret(object):
         self._lifecycle_details = None
         self._lifecycle_state = None
         self._metadata = None
+        self._rotation_config = None
+        self._rotation_status = None
+        self._last_rotation_time = None
+        self._next_rotation_time = None
         self._secret_name = None
         self._secret_rules = None
         self._time_created = None
@@ -443,6 +489,116 @@ class Secret(object):
         :type: dict(str, object)
         """
         self._metadata = metadata
+
+    @property
+    def rotation_config(self):
+        """
+        Gets the rotation_config of this Secret.
+
+        :return: The rotation_config of this Secret.
+        :rtype: oci.vault.models.RotationConfig
+        """
+        return self._rotation_config
+
+    @rotation_config.setter
+    def rotation_config(self, rotation_config):
+        """
+        Sets the rotation_config of this Secret.
+
+        :param rotation_config: The rotation_config of this Secret.
+        :type: oci.vault.models.RotationConfig
+        """
+        self._rotation_config = rotation_config
+
+    @property
+    def rotation_status(self):
+        """
+        Gets the rotation_status of this Secret.
+        Additional information about the status of the secret rotation
+
+        Allowed values for this property are: "IN_PROGRESS", "SCHEDULED", "NOT_ENABLED", "CANCELLING", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The rotation_status of this Secret.
+        :rtype: str
+        """
+        return self._rotation_status
+
+    @rotation_status.setter
+    def rotation_status(self, rotation_status):
+        """
+        Sets the rotation_status of this Secret.
+        Additional information about the status of the secret rotation
+
+
+        :param rotation_status: The rotation_status of this Secret.
+        :type: str
+        """
+        allowed_values = ["IN_PROGRESS", "SCHEDULED", "NOT_ENABLED", "CANCELLING"]
+        if not value_allowed_none_or_none_sentinel(rotation_status, allowed_values):
+            rotation_status = 'UNKNOWN_ENUM_VALUE'
+        self._rotation_status = rotation_status
+
+    @property
+    def last_rotation_time(self):
+        """
+        Gets the last_rotation_time of this Secret.
+        A property indicating when the secret was last rotated successfully, expressed in `RFC 3339`__ timestamp format.
+        Example: `2019-04-03T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The last_rotation_time of this Secret.
+        :rtype: datetime
+        """
+        return self._last_rotation_time
+
+    @last_rotation_time.setter
+    def last_rotation_time(self, last_rotation_time):
+        """
+        Sets the last_rotation_time of this Secret.
+        A property indicating when the secret was last rotated successfully, expressed in `RFC 3339`__ timestamp format.
+        Example: `2019-04-03T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param last_rotation_time: The last_rotation_time of this Secret.
+        :type: datetime
+        """
+        self._last_rotation_time = last_rotation_time
+
+    @property
+    def next_rotation_time(self):
+        """
+        Gets the next_rotation_time of this Secret.
+        A property indicating when the secret is scheduled to be rotated, expressed in `RFC 3339`__ timestamp format.
+        Example: `2019-04-03T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The next_rotation_time of this Secret.
+        :rtype: datetime
+        """
+        return self._next_rotation_time
+
+    @next_rotation_time.setter
+    def next_rotation_time(self, next_rotation_time):
+        """
+        Sets the next_rotation_time of this Secret.
+        A property indicating when the secret is scheduled to be rotated, expressed in `RFC 3339`__ timestamp format.
+        Example: `2019-04-03T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param next_rotation_time: The next_rotation_time of this Secret.
+        :type: datetime
+        """
+        self._next_rotation_time = next_rotation_time
 
     @property
     def secret_name(self):

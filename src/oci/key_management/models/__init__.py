@@ -11,9 +11,11 @@ from .backup_location import BackupLocation
 from .backup_location_bucket import BackupLocationBucket
 from .backup_location_uri import BackupLocationURI
 from .backup_vault_details import BackupVaultDetails
+from .change_hsm_cluster_compartment_details import ChangeHsmClusterCompartmentDetails
 from .change_key_compartment_details import ChangeKeyCompartmentDetails
 from .change_vault_compartment_details import ChangeVaultCompartmentDetails
 from .create_ekms_private_endpoint_details import CreateEkmsPrivateEndpointDetails
+from .create_hsm_cluster_details import CreateHsmClusterDetails
 from .create_key_details import CreateKeyDetails
 from .create_vault_details import CreateVaultDetails
 from .create_vault_replica_details import CreateVaultReplicaDetails
@@ -33,6 +35,12 @@ from .external_key_reference_details import ExternalKeyReferenceDetails
 from .external_key_version_reference import ExternalKeyVersionReference
 from .generate_key_details import GenerateKeyDetails
 from .generated_key import GeneratedKey
+from .hsm_cluster import HsmCluster
+from .hsm_cluster_collection import HsmClusterCollection
+from .hsm_cluster_summary import HsmClusterSummary
+from .hsm_partition import HsmPartition
+from .hsm_partition_collection import HsmPartitionCollection
+from .hsm_partition_summary import HsmPartitionSummary
 from .import_key_details import ImportKeyDetails
 from .import_key_version_details import ImportKeyVersionDetails
 from .key import Key
@@ -44,18 +52,23 @@ from .key_version_replica_details import KeyVersionReplicaDetails
 from .key_version_summary import KeyVersionSummary
 from .oauth_metadata import OauthMetadata
 from .oauth_metadata_summary import OauthMetadataSummary
+from .port_information import PortInformation
+from .pre_co_user_credentials import PreCoUserCredentials
 from .replica_details import ReplicaDetails
 from .replication_status_details import ReplicationStatusDetails
 from .restore_key_from_object_store_details import RestoreKeyFromObjectStoreDetails
 from .restore_vault_from_object_store_details import RestoreVaultFromObjectStoreDetails
+from .schedule_hsm_cluster_deletion_details import ScheduleHsmClusterDeletionDetails
 from .schedule_key_deletion_details import ScheduleKeyDeletionDetails
 from .schedule_key_version_deletion_details import ScheduleKeyVersionDeletionDetails
 from .schedule_vault_deletion_details import ScheduleVaultDeletionDetails
 from .sign_data_details import SignDataDetails
 from .signed_data import SignedData
 from .update_ekms_private_endpoint_details import UpdateEkmsPrivateEndpointDetails
+from .update_hsm_cluster_details import UpdateHsmClusterDetails
 from .update_key_details import UpdateKeyDetails
 from .update_vault_details import UpdateVaultDetails
+from .upload_partition_certificates_details import UploadPartitionCertificatesDetails
 from .vault import Vault
 from .vault_replica_details import VaultReplicaDetails
 from .vault_replica_summary import VaultReplicaSummary
@@ -73,9 +86,11 @@ key_management_type_mapping = {
     "BackupLocationBucket": BackupLocationBucket,
     "BackupLocationURI": BackupLocationURI,
     "BackupVaultDetails": BackupVaultDetails,
+    "ChangeHsmClusterCompartmentDetails": ChangeHsmClusterCompartmentDetails,
     "ChangeKeyCompartmentDetails": ChangeKeyCompartmentDetails,
     "ChangeVaultCompartmentDetails": ChangeVaultCompartmentDetails,
     "CreateEkmsPrivateEndpointDetails": CreateEkmsPrivateEndpointDetails,
+    "CreateHsmClusterDetails": CreateHsmClusterDetails,
     "CreateKeyDetails": CreateKeyDetails,
     "CreateVaultDetails": CreateVaultDetails,
     "CreateVaultReplicaDetails": CreateVaultReplicaDetails,
@@ -95,6 +110,12 @@ key_management_type_mapping = {
     "ExternalKeyVersionReference": ExternalKeyVersionReference,
     "GenerateKeyDetails": GenerateKeyDetails,
     "GeneratedKey": GeneratedKey,
+    "HsmCluster": HsmCluster,
+    "HsmClusterCollection": HsmClusterCollection,
+    "HsmClusterSummary": HsmClusterSummary,
+    "HsmPartition": HsmPartition,
+    "HsmPartitionCollection": HsmPartitionCollection,
+    "HsmPartitionSummary": HsmPartitionSummary,
     "ImportKeyDetails": ImportKeyDetails,
     "ImportKeyVersionDetails": ImportKeyVersionDetails,
     "Key": Key,
@@ -106,18 +127,23 @@ key_management_type_mapping = {
     "KeyVersionSummary": KeyVersionSummary,
     "OauthMetadata": OauthMetadata,
     "OauthMetadataSummary": OauthMetadataSummary,
+    "PortInformation": PortInformation,
+    "PreCoUserCredentials": PreCoUserCredentials,
     "ReplicaDetails": ReplicaDetails,
     "ReplicationStatusDetails": ReplicationStatusDetails,
     "RestoreKeyFromObjectStoreDetails": RestoreKeyFromObjectStoreDetails,
     "RestoreVaultFromObjectStoreDetails": RestoreVaultFromObjectStoreDetails,
+    "ScheduleHsmClusterDeletionDetails": ScheduleHsmClusterDeletionDetails,
     "ScheduleKeyDeletionDetails": ScheduleKeyDeletionDetails,
     "ScheduleKeyVersionDeletionDetails": ScheduleKeyVersionDeletionDetails,
     "ScheduleVaultDeletionDetails": ScheduleVaultDeletionDetails,
     "SignDataDetails": SignDataDetails,
     "SignedData": SignedData,
     "UpdateEkmsPrivateEndpointDetails": UpdateEkmsPrivateEndpointDetails,
+    "UpdateHsmClusterDetails": UpdateHsmClusterDetails,
     "UpdateKeyDetails": UpdateKeyDetails,
     "UpdateVaultDetails": UpdateVaultDetails,
+    "UploadPartitionCertificatesDetails": UploadPartitionCertificatesDetails,
     "Vault": Vault,
     "VaultReplicaDetails": VaultReplicaDetails,
     "VaultReplicaSummary": VaultReplicaSummary,

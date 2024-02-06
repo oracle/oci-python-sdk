@@ -69,6 +69,7 @@ from .replica import Replica
 from .replica_overrides import ReplicaOverrides
 from .replica_summary import ReplicaSummary
 from .restart_db_system_details import RestartDbSystemDetails
+from .secure_connection_details import SecureConnectionDetails
 from .shape_summary import ShapeSummary
 from .stop_db_system_details import StopDbSystemDetails
 from .update_backup_details import UpdateBackupDetails
@@ -157,6 +158,7 @@ mysql_type_mapping = {
     "ReplicaOverrides": ReplicaOverrides,
     "ReplicaSummary": ReplicaSummary,
     "RestartDbSystemDetails": RestartDbSystemDetails,
+    "SecureConnectionDetails": SecureConnectionDetails,
     "ShapeSummary": ShapeSummary,
     "StopDbSystemDetails": StopDbSystemDetails,
     "UpdateBackupDetails": UpdateBackupDetails,

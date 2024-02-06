@@ -31,6 +31,18 @@ class WorkRequest(object):
     #: This constant has a value of "AGENTIMAGE_UPGRADE"
     OPERATION_TYPE_AGENTIMAGE_UPGRADE = "AGENTIMAGE_UPGRADE"
 
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_DATA_SOURCE"
+    OPERATION_TYPE_CREATE_DATA_SOURCE = "CREATE_DATA_SOURCE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_DATA_SOURCE"
+    OPERATION_TYPE_UPDATE_DATA_SOURCE = "UPDATE_DATA_SOURCE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_DATA_SOURCE"
+    OPERATION_TYPE_DELETE_DATA_SOURCE = "DELETE_DATA_SOURCE"
+
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "CREATED"
     STATUS_CREATED = "CREATED"
@@ -66,7 +78,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "DEPLOY_PLUGIN", "UPGRADE_PLUGIN", "CREATE_UPGRADE_PLUGINS", "AGENTIMAGE_UPGRADE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DEPLOY_PLUGIN", "UPGRADE_PLUGIN", "CREATE_UPGRADE_PLUGINS", "AGENTIMAGE_UPGRADE", "CREATE_DATA_SOURCE", "UPDATE_DATA_SOURCE", "DELETE_DATA_SOURCE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -145,7 +157,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         Type of the work request
 
-        Allowed values for this property are: "DEPLOY_PLUGIN", "UPGRADE_PLUGIN", "CREATE_UPGRADE_PLUGINS", "AGENTIMAGE_UPGRADE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DEPLOY_PLUGIN", "UPGRADE_PLUGIN", "CREATE_UPGRADE_PLUGINS", "AGENTIMAGE_UPGRADE", "CREATE_DATA_SOURCE", "UPDATE_DATA_SOURCE", "DELETE_DATA_SOURCE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -164,7 +176,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["DEPLOY_PLUGIN", "UPGRADE_PLUGIN", "CREATE_UPGRADE_PLUGINS", "AGENTIMAGE_UPGRADE"]
+        allowed_values = ["DEPLOY_PLUGIN", "UPGRADE_PLUGIN", "CREATE_UPGRADE_PLUGINS", "AGENTIMAGE_UPGRADE", "CREATE_DATA_SOURCE", "UPDATE_DATA_SOURCE", "DELETE_DATA_SOURCE"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

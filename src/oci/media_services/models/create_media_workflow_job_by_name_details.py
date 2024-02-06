@@ -50,6 +50,10 @@ class CreateMediaWorkflowJobByNameDetails(CreateMediaWorkflowJobDetails):
             The value to assign to the defined_tags property of this CreateMediaWorkflowJobByNameDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param locks:
+            The value to assign to the locks property of this CreateMediaWorkflowJobByNameDetails.
+        :type locks: list[oci.media_services.models.ResourceLock]
+
         :param media_workflow_name:
             The value to assign to the media_workflow_name property of this CreateMediaWorkflowJobByNameDetails.
         :type media_workflow_name: str
@@ -63,6 +67,7 @@ class CreateMediaWorkflowJobByNameDetails(CreateMediaWorkflowJobDetails):
             'parameters': 'dict(str, object)',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[ResourceLock]',
             'media_workflow_name': 'str'
         }
 
@@ -74,6 +79,7 @@ class CreateMediaWorkflowJobByNameDetails(CreateMediaWorkflowJobDetails):
             'parameters': 'parameters',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'locks': 'locks',
             'media_workflow_name': 'mediaWorkflowName'
         }
 
@@ -84,6 +90,7 @@ class CreateMediaWorkflowJobByNameDetails(CreateMediaWorkflowJobDetails):
         self._parameters = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._locks = None
         self._media_workflow_name = None
         self._workflow_identifier_type = 'NAME'
 

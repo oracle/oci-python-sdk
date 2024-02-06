@@ -120,7 +120,7 @@ class MediaStreamClient(object):
 
     def generate_playlist(self, stream_packaging_config_id, media_asset_id, **kwargs):
         """
-        Gets the playlist content for the specified Packaging Configuration and Media Asset combination.
+        Gets the playlist content for the specified Packaging Configuration and Media Asset combination. This API call is made using the MediaStreamsClient, which requires the endpoint to be set with the value of the distribution channel domain name (for example, https://example_channel.dc.mediaservices.example_region.oci.oraclecloud.com) to generate a session token or playlist for a media asset registered in this distribution channel.
 
 
         :param str stream_packaging_config_id: (required)
@@ -222,7 +222,7 @@ class MediaStreamClient(object):
 
     def generate_session_token(self, generate_session_token_details, **kwargs):
         """
-        Generate a new streaming session token.
+        Generate a new streaming session token. This API call is made using the MediaStreamsClient, which requires the endpoint to be set with the value of the distribution channel domain name (for example, https://example_channel.dc.mediaservices.example_region.oci.oraclecloud.com) to generate a session token or playlist for a media asset registered in this distribution channel.
 
 
         :param oci.media_services.models.GenerateSessionTokenDetails generate_session_token_details: (required)

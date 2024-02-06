@@ -52,6 +52,10 @@ class Replica(object):
         Initializes a new Replica object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param secure_connections:
+            The value to assign to the secure_connections property of this Replica.
+        :type secure_connections: oci.mysql.models.SecureConnectionDetails
+
         :param id:
             The value to assign to the id property of this Replica.
         :type id: str
@@ -140,6 +144,7 @@ class Replica(object):
 
         """
         self.swagger_types = {
+            'secure_connections': 'SecureConnectionDetails',
             'id': 'str',
             'db_system_id': 'str',
             'compartment_id': 'str',
@@ -164,6 +169,7 @@ class Replica(object):
         }
 
         self.attribute_map = {
+            'secure_connections': 'secureConnections',
             'id': 'id',
             'db_system_id': 'dbSystemId',
             'compartment_id': 'compartmentId',
@@ -187,6 +193,7 @@ class Replica(object):
             'replica_overrides': 'replicaOverrides'
         }
 
+        self._secure_connections = None
         self._id = None
         self._db_system_id = None
         self._compartment_id = None
@@ -208,6 +215,26 @@ class Replica(object):
         self._shape_name = None
         self._configuration_id = None
         self._replica_overrides = None
+
+    @property
+    def secure_connections(self):
+        """
+        Gets the secure_connections of this Replica.
+
+        :return: The secure_connections of this Replica.
+        :rtype: oci.mysql.models.SecureConnectionDetails
+        """
+        return self._secure_connections
+
+    @secure_connections.setter
+    def secure_connections(self, secure_connections):
+        """
+        Sets the secure_connections of this Replica.
+
+        :param secure_connections: The secure_connections of this Replica.
+        :type: oci.mysql.models.SecureConnectionDetails
+        """
+        self._secure_connections = secure_connections
 
     @property
     def id(self):

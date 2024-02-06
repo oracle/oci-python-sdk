@@ -188,6 +188,10 @@ class ManagementAgent(object):
             The value to assign to the management_agent_properties property of this ManagementAgent.
         :type management_agent_properties: list[oci.management_agent.models.ManagementAgentProperty]
 
+        :param data_source_list:
+            The value to assign to the data_source_list property of this ManagementAgent.
+        :type data_source_list: list[oci.management_agent.models.DataSource]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ManagementAgent.
         :type freeform_tags: dict(str, str)
@@ -221,6 +225,7 @@ class ManagementAgent(object):
             'is_customer_deployed': 'bool',
             'install_type': 'str',
             'management_agent_properties': 'list[ManagementAgentProperty]',
+            'data_source_list': 'list[DataSource]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -249,6 +254,7 @@ class ManagementAgent(object):
             'is_customer_deployed': 'isCustomerDeployed',
             'install_type': 'installType',
             'management_agent_properties': 'managementAgentProperties',
+            'data_source_list': 'dataSourceList',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -276,6 +282,7 @@ class ManagementAgent(object):
         self._is_customer_deployed = None
         self._install_type = None
         self._management_agent_properties = None
+        self._data_source_list = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -862,6 +869,30 @@ class ManagementAgent(object):
         :type: list[oci.management_agent.models.ManagementAgentProperty]
         """
         self._management_agent_properties = management_agent_properties
+
+    @property
+    def data_source_list(self):
+        """
+        Gets the data_source_list of this ManagementAgent.
+        list of dataSources associated with the agent
+
+
+        :return: The data_source_list of this ManagementAgent.
+        :rtype: list[oci.management_agent.models.DataSource]
+        """
+        return self._data_source_list
+
+    @data_source_list.setter
+    def data_source_list(self, data_source_list):
+        """
+        Sets the data_source_list of this ManagementAgent.
+        list of dataSources associated with the agent
+
+
+        :param data_source_list: The data_source_list of this ManagementAgent.
+        :type: list[oci.management_agent.models.DataSource]
+        """
+        self._data_source_list = data_source_list
 
     @property
     def freeform_tags(self):

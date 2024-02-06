@@ -28,6 +28,10 @@ class MediaWorkflowJob(object):
     LIFECYCLE_STATE_WAITING = "WAITING"
 
     #: A constant which can be used with the lifecycle_state property of a MediaWorkflowJob.
+    #: This constant has a value of "REJECTED"
+    LIFECYCLE_STATE_REJECTED = "REJECTED"
+
+    #: A constant which can be used with the lifecycle_state property of a MediaWorkflowJob.
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
@@ -70,7 +74,7 @@ class MediaWorkflowJob(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this MediaWorkflowJob.
-            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "REJECTED", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -110,6 +114,10 @@ class MediaWorkflowJob(object):
             The value to assign to the time_ended property of this MediaWorkflowJob.
         :type time_ended: datetime
 
+        :param locks:
+            The value to assign to the locks property of this MediaWorkflowJob.
+        :type locks: list[oci.media_services.models.ResourceLock]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this MediaWorkflowJob.
         :type freeform_tags: dict(str, str)
@@ -139,6 +147,7 @@ class MediaWorkflowJob(object):
             'outputs': 'list[JobOutput]',
             'time_started': 'datetime',
             'time_ended': 'datetime',
+            'locks': 'list[ResourceLock]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -160,6 +169,7 @@ class MediaWorkflowJob(object):
             'outputs': 'outputs',
             'time_started': 'timeStarted',
             'time_ended': 'timeEnded',
+            'locks': 'locks',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -180,6 +190,7 @@ class MediaWorkflowJob(object):
         self._outputs = None
         self._time_started = None
         self._time_ended = None
+        self._locks = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -310,7 +321,7 @@ class MediaWorkflowJob(object):
         Gets the lifecycle_state of this MediaWorkflowJob.
         The current state of the MediaWorkflowJob.
 
-        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "REJECTED", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -329,7 +340,7 @@ class MediaWorkflowJob(object):
         :param lifecycle_state: The lifecycle_state of this MediaWorkflowJob.
         :type: str
         """
-        allowed_values = ["ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
+        allowed_values = ["ACCEPTED", "IN_PROGRESS", "WAITING", "REJECTED", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -559,6 +570,30 @@ class MediaWorkflowJob(object):
         :type: datetime
         """
         self._time_ended = time_ended
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this MediaWorkflowJob.
+        Locks associated with this resource.
+
+
+        :return: The locks of this MediaWorkflowJob.
+        :rtype: list[oci.media_services.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this MediaWorkflowJob.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this MediaWorkflowJob.
+        :type: list[oci.media_services.models.ResourceLock]
+        """
+        self._locks = locks
 
     @property
     def freeform_tags(self):

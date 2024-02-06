@@ -1,0 +1,11 @@
+SecureConnectionDetails
+=======================
+
+.. currentmodule:: oci.mysql.models
+
+.. autoclass:: SecureConnectionDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

@@ -91,6 +91,7 @@ Mysql
     oci.mysql.models.ReplicaOverrides
     oci.mysql.models.ReplicaSummary
     oci.mysql.models.RestartDbSystemDetails
+    oci.mysql.models.SecureConnectionDetails
     oci.mysql.models.ShapeSummary
     oci.mysql.models.StopDbSystemDetails
     oci.mysql.models.UpdateBackupDetails

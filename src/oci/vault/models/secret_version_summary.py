@@ -80,6 +80,10 @@ class SecretVersionSummary(object):
             The value to assign to the version_number property of this SecretVersionSummary.
         :type version_number: int
 
+        :param system_tags:
+            The value to assign to the system_tags property of this SecretVersionSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'content_type': 'str',
@@ -89,7 +93,8 @@ class SecretVersionSummary(object):
             'time_created': 'datetime',
             'time_of_deletion': 'datetime',
             'time_of_expiry': 'datetime',
-            'version_number': 'int'
+            'version_number': 'int',
+            'system_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -100,7 +105,8 @@ class SecretVersionSummary(object):
             'time_created': 'timeCreated',
             'time_of_deletion': 'timeOfDeletion',
             'time_of_expiry': 'timeOfExpiry',
-            'version_number': 'versionNumber'
+            'version_number': 'versionNumber',
+            'system_tags': 'systemTags'
         }
 
         self._content_type = None
@@ -111,6 +117,7 @@ class SecretVersionSummary(object):
         self._time_of_deletion = None
         self._time_of_expiry = None
         self._version_number = None
+        self._system_tags = None
 
     @property
     def content_type(self):
@@ -343,6 +350,34 @@ class SecretVersionSummary(object):
         :type: int
         """
         self._version_number = version_number
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this SecretVersionSummary.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this SecretVersionSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this SecretVersionSummary.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this SecretVersionSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

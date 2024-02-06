@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.121.0 - 2024-02-06
+====================
+
+Added
+-----
+* Support for the Globally Distributed Database service
+* Support for secret auto-rotation in the Secret Management service
+* Support for dedicated key management in the Key Management service
+* Support for resource locking operations in the Digital Media service
+* Support for data sources, including prometheus emitter, in the Management Agent service
+* Support for Bring Your Own Certificates (BYOC) in the MySQL HeatWave Database service
+ 
+Breaking
+--------
+* Models `MediaWorkflowJobFact`, `MediaWorkflowJobFactCollection` and `MediaWorkflowJobFactSummary` were removed from the Digital Media service
+* Methods `get_media_workflow_job_fact` and `list_media_workflow_job_facts` were removed from the Digital Media service
+ 
+====================
 2.120.0 - 2024-01-30
 ====================
 

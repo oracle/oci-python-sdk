@@ -44,6 +44,10 @@ class CreateStreamCdnConfigDetails(object):
             The value to assign to the defined_tags property of this CreateStreamCdnConfigDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param locks:
+            The value to assign to the locks property of this CreateStreamCdnConfigDetails.
+        :type locks: list[oci.media_services.models.ResourceLock]
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -51,7 +55,8 @@ class CreateStreamCdnConfigDetails(object):
             'is_enabled': 'bool',
             'config': 'StreamCdnConfigSection',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -60,7 +65,8 @@ class CreateStreamCdnConfigDetails(object):
             'is_enabled': 'isEnabled',
             'config': 'config',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'locks': 'locks'
         }
 
         self._display_name = None
@@ -69,6 +75,7 @@ class CreateStreamCdnConfigDetails(object):
         self._config = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._locks = None
 
     @property
     def display_name(self):
@@ -213,6 +220,30 @@ class CreateStreamCdnConfigDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this CreateStreamCdnConfigDetails.
+        Locks associated with this resource.
+
+
+        :return: The locks of this CreateStreamCdnConfigDetails.
+        :rtype: list[oci.media_services.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this CreateStreamCdnConfigDetails.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this CreateStreamCdnConfigDetails.
+        :type: list[oci.media_services.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

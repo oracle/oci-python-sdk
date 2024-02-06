@@ -118,6 +118,860 @@ class MediaServicesClient(object):
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
 
+    def add_media_asset_lock(self, add_lock_details, media_asset_id, **kwargs):
+        """
+        Add a lock to an MediaAsset.
+
+
+        :param oci.media_services.models.AddLockDetails add_lock_details: (required)
+            The details to be updated for the AddLock.
+
+        :param str media_asset_id: (required)
+            Unique MediaAsset identifier
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without the risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.media_services.models.MediaAsset`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/add_media_asset_lock.py.html>`__ to see an example of how to use add_media_asset_lock API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaAssetId']
+        resource_path = "/mediaAssets/{mediaAssetId}/actions/addLock"
+        method = "POST"
+        operation_name = "add_media_asset_lock"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/AddMediaAssetLock"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"add_media_asset_lock got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "mediaAssetId": media_asset_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_lock_details,
+                response_type="MediaAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_lock_details,
+                response_type="MediaAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def add_media_workflow_configuration_lock(self, add_resource_lock_details, media_workflow_configuration_id, **kwargs):
+        """
+        Add a lock to a MediaWorkflowConfiguration.
+
+
+        :param oci.media_services.models.AddLockDetails add_resource_lock_details: (required)
+            AddResourceLockDetails body parameter
+
+        :param str media_workflow_configuration_id: (required)
+            Unique MediaWorkflowConfiguration identifier.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without the risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.media_services.models.MediaWorkflowConfiguration`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/add_media_workflow_configuration_lock.py.html>`__ to see an example of how to use add_media_workflow_configuration_lock API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaWorkflowConfigurationId']
+        resource_path = "/mediaWorkflowConfigurations/{mediaWorkflowConfigurationId}/actions/addLock"
+        method = "POST"
+        operation_name = "add_media_workflow_configuration_lock"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/AddMediaWorkflowConfigurationLock"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"add_media_workflow_configuration_lock got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "mediaWorkflowConfigurationId": media_workflow_configuration_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_resource_lock_details,
+                response_type="MediaWorkflowConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_resource_lock_details,
+                response_type="MediaWorkflowConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def add_media_workflow_job_lock(self, add_lock_details, media_workflow_job_id, **kwargs):
+        """
+        Add a lock to a MediaWorkflowJob.
+
+
+        :param oci.media_services.models.AddLockDetails add_lock_details: (required)
+            The details to be updated for the AddLock.
+
+        :param str media_workflow_job_id: (required)
+            Unique MediaWorkflowJob identifier.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without the risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.media_services.models.MediaWorkflowJob`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/add_media_workflow_job_lock.py.html>`__ to see an example of how to use add_media_workflow_job_lock API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaWorkflowJobId']
+        resource_path = "/mediaWorkflowJobs/{mediaWorkflowJobId}/actions/addLock"
+        method = "POST"
+        operation_name = "add_media_workflow_job_lock"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/AddMediaWorkflowJobLock"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"add_media_workflow_job_lock got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "mediaWorkflowJobId": media_workflow_job_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_lock_details,
+                response_type="MediaWorkflowJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_lock_details,
+                response_type="MediaWorkflowJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def add_media_workflow_lock(self, add_resource_lock_details, media_workflow_id, **kwargs):
+        """
+        Add a lock to a MediaWorkflow.
+
+
+        :param oci.media_services.models.AddLockDetails add_resource_lock_details: (required)
+            AddResourceLockDetails body parameter
+
+        :param str media_workflow_id: (required)
+            Unique MediaWorkflow identifier.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without the risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.media_services.models.MediaWorkflow`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/add_media_workflow_lock.py.html>`__ to see an example of how to use add_media_workflow_lock API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaWorkflowId']
+        resource_path = "/mediaWorkflows/{mediaWorkflowId}/actions/addLock"
+        method = "POST"
+        operation_name = "add_media_workflow_lock"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/AddMediaWorkflowLock"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"add_media_workflow_lock got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "mediaWorkflowId": media_workflow_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_resource_lock_details,
+                response_type="MediaWorkflow",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_resource_lock_details,
+                response_type="MediaWorkflow",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def add_stream_cdn_config_lock(self, add_resource_lock_details, stream_cdn_config_id, **kwargs):
+        """
+        Add a lock to a StreamCdnConfig.
+
+
+        :param oci.media_services.models.AddLockDetails add_resource_lock_details: (required)
+            AddResourceLockDetails body parameter
+
+        :param str stream_cdn_config_id: (required)
+            Unique StreamCdnConfig identifier.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without the risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.media_services.models.StreamCdnConfig`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/add_stream_cdn_config_lock.py.html>`__ to see an example of how to use add_stream_cdn_config_lock API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamCdnConfigId']
+        resource_path = "/streamCdnConfigs/{streamCdnConfigId}/actions/addLock"
+        method = "POST"
+        operation_name = "add_stream_cdn_config_lock"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/AddStreamCdnConfigLock"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"add_stream_cdn_config_lock got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "streamCdnConfigId": stream_cdn_config_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_resource_lock_details,
+                response_type="StreamCdnConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_resource_lock_details,
+                response_type="StreamCdnConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def add_stream_distribution_channel_lock(self, add_resource_lock_details, stream_distribution_channel_id, **kwargs):
+        """
+        Add a lock to a StreamDistributionChannel.
+
+
+        :param oci.media_services.models.AddLockDetails add_resource_lock_details: (required)
+            AddResourceLockDetails body parameter
+
+        :param str stream_distribution_channel_id: (required)
+            Unique Stream Distribution Channel path identifier.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without the risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.media_services.models.StreamDistributionChannel`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/add_stream_distribution_channel_lock.py.html>`__ to see an example of how to use add_stream_distribution_channel_lock API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamDistributionChannelId']
+        resource_path = "/streamDistributionChannels/{streamDistributionChannelId}/actions/addLock"
+        method = "POST"
+        operation_name = "add_stream_distribution_channel_lock"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/AddStreamDistributionChannelLock"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"add_stream_distribution_channel_lock got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "streamDistributionChannelId": stream_distribution_channel_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_resource_lock_details,
+                response_type="StreamDistributionChannel",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_resource_lock_details,
+                response_type="StreamDistributionChannel",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def add_stream_packaging_config_lock(self, add_resource_lock_details, stream_packaging_config_id, **kwargs):
+        """
+        Add a lock to a StreamPackagingConfig.
+
+
+        :param oci.media_services.models.AddLockDetails add_resource_lock_details: (required)
+            AddResourceLockDetails body parameter
+
+        :param str stream_packaging_config_id: (required)
+            Unique Stream Packaging Configuration path identifier.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without the risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.media_services.models.StreamPackagingConfig`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/add_stream_packaging_config_lock.py.html>`__ to see an example of how to use add_stream_packaging_config_lock API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamPackagingConfigId']
+        resource_path = "/streamPackagingConfigs/{streamPackagingConfigId}/actions/addLock"
+        method = "POST"
+        operation_name = "add_stream_packaging_config_lock"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/AddStreamPackagingConfigLock"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"add_stream_packaging_config_lock got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "streamPackagingConfigId": stream_packaging_config_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_resource_lock_details,
+                response_type="StreamPackagingConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_resource_lock_details,
+                response_type="StreamPackagingConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def change_media_asset_compartment(self, media_asset_id, change_media_asset_compartment_details, **kwargs):
         """
         Moves a MediaAsset resource from one compartment identifier to another.
@@ -128,6 +982,9 @@ class MediaServicesClient(object):
 
         :param oci.media_services.models.ChangeMediaAssetCompartmentDetails change_media_asset_compartment_details: (required)
             The information to be updated.
+
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -175,6 +1032,7 @@ class MediaServicesClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "is_lock_override",
             "opc_retry_token",
             "if_match",
             "opc_request_id"
@@ -193,6 +1051,11 @@ class MediaServicesClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -220,6 +1083,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=change_media_asset_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -231,6 +1095,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=change_media_asset_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -248,6 +1113,9 @@ class MediaServicesClient(object):
 
         :param oci.media_services.models.ChangeMediaWorkflowCompartmentDetails change_media_workflow_compartment_details: (required)
             The change compartment payload.
+
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -295,6 +1163,7 @@ class MediaServicesClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "is_lock_override",
             "opc_retry_token",
             "if_match",
             "opc_request_id"
@@ -313,6 +1182,11 @@ class MediaServicesClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -340,6 +1214,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=change_media_workflow_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -351,6 +1226,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=change_media_workflow_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -368,6 +1244,9 @@ class MediaServicesClient(object):
 
         :param oci.media_services.models.ChangeMediaWorkflowConfigurationCompartmentDetails change_media_workflow_configuration_compartment_details: (required)
             The information to be updated.
+
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -415,6 +1294,7 @@ class MediaServicesClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "is_lock_override",
             "opc_retry_token",
             "if_match",
             "opc_request_id"
@@ -433,6 +1313,11 @@ class MediaServicesClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -460,6 +1345,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=change_media_workflow_configuration_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -471,6 +1357,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=change_media_workflow_configuration_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -488,6 +1375,9 @@ class MediaServicesClient(object):
 
         :param oci.media_services.models.ChangeMediaWorkflowJobCompartmentDetails change_media_workflow_job_compartment_details: (required)
             The change compartment payload.
+
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -535,6 +1425,7 @@ class MediaServicesClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "is_lock_override",
             "opc_retry_token",
             "if_match",
             "opc_request_id"
@@ -553,6 +1444,11 @@ class MediaServicesClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -580,6 +1476,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=change_media_workflow_job_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -591,6 +1488,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=change_media_workflow_job_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -608,6 +1506,9 @@ class MediaServicesClient(object):
 
         :param oci.media_services.models.ChangeStreamDistributionChannelCompartmentDetails change_stream_distribution_channel_compartment_details: (required)
             The change compartment payload.
+
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -655,6 +1556,7 @@ class MediaServicesClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "is_lock_override",
             "opc_retry_token",
             "if_match",
             "opc_request_id"
@@ -673,6 +1575,11 @@ class MediaServicesClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -700,6 +1607,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=change_stream_distribution_channel_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -711,6 +1619,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=change_stream_distribution_channel_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -1412,6 +2321,9 @@ class MediaServicesClient(object):
         :param str media_asset_id: (required)
             Unique MediaAsset identifier
 
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
+
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
             for a resource, set the `if-match` parameter to the value of the
@@ -1456,6 +2368,7 @@ class MediaServicesClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "is_lock_override",
             "if_match",
             "opc_request_id",
             "delete_mode"
@@ -1483,6 +2396,7 @@ class MediaServicesClient(object):
                 )
 
         query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing),
             "deleteMode": kwargs.get("delete_mode", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
@@ -1540,6 +2454,9 @@ class MediaServicesClient(object):
         :param str distribution_channel_id: (required)
             Unique DistributionChannel identifier.
 
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
+
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
             for a resource, set the `if-match` parameter to the value of the
@@ -1582,6 +2499,7 @@ class MediaServicesClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "is_lock_override",
             "if_match",
             "opc_request_id",
             "version"
@@ -1603,6 +2521,7 @@ class MediaServicesClient(object):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing),
             "version": kwargs.get("version", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
@@ -1657,6 +2576,9 @@ class MediaServicesClient(object):
         :param str media_workflow_id: (required)
             Unique MediaWorkflow identifier.
 
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
+
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
@@ -1696,6 +2618,7 @@ class MediaServicesClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "is_lock_override",
             "opc_request_id",
             "if_match"
         ]
@@ -1713,6 +2636,11 @@ class MediaServicesClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -1738,6 +2666,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -1748,6 +2677,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -1761,6 +2691,9 @@ class MediaServicesClient(object):
 
         :param str media_workflow_configuration_id: (required)
             Unique MediaWorkflowConfiguration identifier.
+
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -1801,6 +2734,7 @@ class MediaServicesClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "is_lock_override",
             "if_match",
             "opc_request_id"
         ]
@@ -1818,6 +2752,11 @@ class MediaServicesClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -1843,6 +2782,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -1853,6 +2793,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -1866,6 +2807,9 @@ class MediaServicesClient(object):
 
         :param str media_workflow_job_id: (required)
             Unique MediaWorkflowJob identifier.
+
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1906,6 +2850,7 @@ class MediaServicesClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "is_lock_override",
             "opc_request_id",
             "if_match"
         ]
@@ -1923,6 +2868,11 @@ class MediaServicesClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -1948,6 +2898,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -1958,6 +2909,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -1971,6 +2923,9 @@ class MediaServicesClient(object):
 
         :param str stream_cdn_config_id: (required)
             Unique StreamCdnConfig identifier.
+
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2011,6 +2966,7 @@ class MediaServicesClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "is_lock_override",
             "opc_request_id",
             "if_match"
         ]
@@ -2028,6 +2984,11 @@ class MediaServicesClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -2053,6 +3014,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -2063,6 +3025,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -2076,6 +3039,9 @@ class MediaServicesClient(object):
 
         :param str stream_distribution_channel_id: (required)
             Unique Stream Distribution Channel path identifier.
+
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2116,6 +3082,7 @@ class MediaServicesClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "is_lock_override",
             "opc_request_id",
             "if_match"
         ]
@@ -2133,6 +3100,11 @@ class MediaServicesClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -2158,6 +3130,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -2168,6 +3141,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -2181,6 +3155,9 @@ class MediaServicesClient(object):
 
         :param str stream_packaging_config_id: (required)
             Unique Stream Packaging Configuration path identifier.
+
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2221,6 +3198,7 @@ class MediaServicesClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "is_lock_override",
             "opc_request_id",
             "if_match"
         ]
@@ -2238,6 +3216,11 @@ class MediaServicesClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -2263,6 +3246,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -2273,6 +3257,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -2779,108 +3764,6 @@ class MediaServicesClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="MediaWorkflowJob",
-                allow_control_chars=kwargs.get('allow_control_chars'),
-                operation_name=operation_name,
-                api_reference_link=api_reference_link,
-                required_arguments=required_arguments)
-
-    def get_media_workflow_job_fact(self, media_workflow_job_id, key, **kwargs):
-        """
-        Get the MediaWorkflowJobFact identified by the mediaWorkflowJobId and Fact ID.
-
-
-        :param str media_workflow_job_id: (required)
-            Unique MediaWorkflowJob identifier.
-
-        :param int key: (required)
-            Identifier of the MediaWorkflowJobFact within a MediaWorkflowJob.
-
-        :param str opc_request_id: (optional)
-            The client request ID for tracing.
-
-        :param obj retry_strategy: (optional)
-            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
-
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
-            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
-
-            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
-
-        :param bool allow_control_chars: (optional)
-            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
-            By default, the response will not allow control characters in strings
-
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.media_services.models.MediaWorkflowJobFact`
-        :rtype: :class:`~oci.response.Response`
-
-        :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/get_media_workflow_job_fact.py.html>`__ to see an example of how to use get_media_workflow_job_fact API.
-        """
-        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
-        required_arguments = ['mediaWorkflowJobId', 'key']
-        resource_path = "/mediaWorkflowJobs/{mediaWorkflowJobId}/facts/{key}"
-        method = "GET"
-        operation_name = "get_media_workflow_job_fact"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJobFact/GetMediaWorkflowJobFact"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "allow_control_chars",
-            "retry_strategy",
-            "opc_request_id"
-        ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                f"get_media_workflow_job_fact got unknown kwargs: {extra_kwargs!r}")
-
-        path_params = {
-            "mediaWorkflowJobId": media_workflow_job_id,
-            "key": key
-        }
-
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
-
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
-        }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
-
-        retry_strategy = self.base_client.get_preferred_retry_strategy(
-            operation_retry_strategy=kwargs.get('retry_strategy'),
-            client_retry_strategy=self.retry_strategy
-        )
-        if retry_strategy is None:
-            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
-
-        if retry_strategy:
-            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
-                self.base_client.add_opc_client_retries_header(header_params)
-                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
-            return retry_strategy.make_retrying_call(
-                self.base_client.call_api,
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                header_params=header_params,
-                response_type="MediaWorkflowJobFact",
-                allow_control_chars=kwargs.get('allow_control_chars'),
-                operation_name=operation_name,
-                api_reference_link=api_reference_link,
-                required_arguments=required_arguments)
-        else:
-            return self.base_client.call_api(
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                header_params=header_params,
-                response_type="MediaWorkflowJobFact",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -3810,168 +4693,6 @@ class MediaServicesClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def list_media_workflow_job_facts(self, media_workflow_job_id, **kwargs):
-        """
-        Internal API to get a point-in-time snapshot of a MediaWorkflowJob.
-
-
-        :param str media_workflow_job_id: (required)
-            Unique MediaWorkflowJob identifier.
-
-        :param int key: (optional)
-            Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
-
-        :param str type: (optional)
-            Types of details to include.
-
-            Allowed values are: "runnableJob", "taskDeclaration", "workflow", "configuration", "parameterResolutionEvent"
-
-        :param str sort_by: (optional)
-            Types of details to include.
-
-            Allowed values are: "key"
-
-        :param str sort_order: (optional)
-            The sort order to use, either 'ASC' or 'DESC'.
-
-            Allowed values are: "ASC", "DESC"
-
-        :param str page: (optional)
-            A token representing the position at which to start retrieving results. This must come from the
-            `opc-next-page` header field of a previous response.
-
-        :param int limit: (optional)
-            The maximum number of items to return.
-
-        :param str opc_request_id: (optional)
-            The client request ID for tracing.
-
-        :param obj retry_strategy: (optional)
-            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
-
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
-            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
-
-            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
-
-        :param bool allow_control_chars: (optional)
-            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
-            By default, the response will not allow control characters in strings
-
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.media_services.models.MediaWorkflowJobFactCollection`
-        :rtype: :class:`~oci.response.Response`
-
-        :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/list_media_workflow_job_facts.py.html>`__ to see an example of how to use list_media_workflow_job_facts API.
-        """
-        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
-        required_arguments = ['mediaWorkflowJobId']
-        resource_path = "/mediaWorkflowJobs/{mediaWorkflowJobId}/facts"
-        method = "GET"
-        operation_name = "list_media_workflow_job_facts"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJobFact/ListMediaWorkflowJobFacts"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "allow_control_chars",
-            "retry_strategy",
-            "key",
-            "type",
-            "sort_by",
-            "sort_order",
-            "page",
-            "limit",
-            "opc_request_id"
-        ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                f"list_media_workflow_job_facts got unknown kwargs: {extra_kwargs!r}")
-
-        path_params = {
-            "mediaWorkflowJobId": media_workflow_job_id
-        }
-
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
-
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
-
-        if 'type' in kwargs:
-            type_allowed_values = ["runnableJob", "taskDeclaration", "workflow", "configuration", "parameterResolutionEvent"]
-            if kwargs['type'] not in type_allowed_values:
-                raise ValueError(
-                    f"Invalid value for `type`, must be one of { type_allowed_values }"
-                )
-
-        if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["key"]
-            if kwargs['sort_by'] not in sort_by_allowed_values:
-                raise ValueError(
-                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
-                )
-
-        if 'sort_order' in kwargs:
-            sort_order_allowed_values = ["ASC", "DESC"]
-            if kwargs['sort_order'] not in sort_order_allowed_values:
-                raise ValueError(
-                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
-                )
-
-        query_params = {
-            "key": kwargs.get("key", missing),
-            "type": kwargs.get("type", missing),
-            "sortBy": kwargs.get("sort_by", missing),
-            "sortOrder": kwargs.get("sort_order", missing),
-            "page": kwargs.get("page", missing),
-            "limit": kwargs.get("limit", missing)
-        }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
-        }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
-
-        retry_strategy = self.base_client.get_preferred_retry_strategy(
-            operation_retry_strategy=kwargs.get('retry_strategy'),
-            client_retry_strategy=self.retry_strategy
-        )
-        if retry_strategy is None:
-            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
-
-        if retry_strategy:
-            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
-                self.base_client.add_opc_client_retries_header(header_params)
-                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
-            return retry_strategy.make_retrying_call(
-                self.base_client.call_api,
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                query_params=query_params,
-                header_params=header_params,
-                response_type="MediaWorkflowJobFactCollection",
-                allow_control_chars=kwargs.get('allow_control_chars'),
-                operation_name=operation_name,
-                api_reference_link=api_reference_link,
-                required_arguments=required_arguments)
-        else:
-            return self.base_client.call_api(
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                query_params=query_params,
-                header_params=header_params,
-                response_type="MediaWorkflowJobFactCollection",
-                allow_control_chars=kwargs.get('allow_control_chars'),
-                operation_name=operation_name,
-                api_reference_link=api_reference_link,
-                required_arguments=required_arguments)
-
     def list_media_workflow_jobs(self, **kwargs):
         """
         Lists the MediaWorkflowJobs.
@@ -3992,7 +4713,7 @@ class MediaServicesClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only the resources with lifecycleState matching the given lifecycleState.
 
-            Allowed values are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"
+            Allowed values are: "ACCEPTED", "IN_PROGRESS", "WAITING", "REJECTED", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"
 
         :param str page: (optional)
             A token representing the position at which to start retrieving results. This must come from the
@@ -4060,7 +4781,7 @@ class MediaServicesClient(object):
                 f"list_media_workflow_jobs got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
+            lifecycle_state_allowed_values = ["ACCEPTED", "IN_PROGRESS", "WAITING", "REJECTED", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
@@ -5036,6 +5757,860 @@ class MediaServicesClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def remove_media_asset_lock(self, remove_lock_details, media_asset_id, **kwargs):
+        """
+        Remove a lock to an MediaAsset.
+
+
+        :param oci.media_services.models.RemoveLockDetails remove_lock_details: (required)
+            The details to be updated for the RemoveLock.
+
+        :param str media_asset_id: (required)
+            Unique MediaAsset identifier
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without the risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.media_services.models.MediaAsset`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/remove_media_asset_lock.py.html>`__ to see an example of how to use remove_media_asset_lock API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaAssetId']
+        resource_path = "/mediaAssets/{mediaAssetId}/actions/removeLock"
+        method = "POST"
+        operation_name = "remove_media_asset_lock"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/RemoveMediaAssetLock"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"remove_media_asset_lock got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "mediaAssetId": media_asset_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_lock_details,
+                response_type="MediaAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_lock_details,
+                response_type="MediaAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def remove_media_workflow_configuration_lock(self, remove_resource_lock_details, media_workflow_configuration_id, **kwargs):
+        """
+        Remove a lock from a MediaWorkflowConfiguration.
+
+
+        :param oci.media_services.models.RemoveLockDetails remove_resource_lock_details: (required)
+            RemoveResourceLockDetails body parameter
+
+        :param str media_workflow_configuration_id: (required)
+            Unique MediaWorkflowConfiguration identifier.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without the risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.media_services.models.MediaWorkflowConfiguration`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/remove_media_workflow_configuration_lock.py.html>`__ to see an example of how to use remove_media_workflow_configuration_lock API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaWorkflowConfigurationId']
+        resource_path = "/mediaWorkflowConfigurations/{mediaWorkflowConfigurationId}/actions/removeLock"
+        method = "POST"
+        operation_name = "remove_media_workflow_configuration_lock"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/RemoveMediaWorkflowConfigurationLock"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"remove_media_workflow_configuration_lock got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "mediaWorkflowConfigurationId": media_workflow_configuration_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_resource_lock_details,
+                response_type="MediaWorkflowConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_resource_lock_details,
+                response_type="MediaWorkflowConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def remove_media_workflow_job_lock(self, remove_lock_details, media_workflow_job_id, **kwargs):
+        """
+        Remove a lock from a MediaWorkflowJob.
+
+
+        :param oci.media_services.models.RemoveLockDetails remove_lock_details: (required)
+            The details to be updated for the RemoveLock.
+
+        :param str media_workflow_job_id: (required)
+            Unique MediaWorkflowJob identifier.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without the risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.media_services.models.MediaWorkflowJob`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/remove_media_workflow_job_lock.py.html>`__ to see an example of how to use remove_media_workflow_job_lock API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaWorkflowJobId']
+        resource_path = "/mediaWorkflowJobs/{mediaWorkflowJobId}/actions/removeLock"
+        method = "POST"
+        operation_name = "remove_media_workflow_job_lock"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/RemoveMediaWorkflowJobLock"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"remove_media_workflow_job_lock got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "mediaWorkflowJobId": media_workflow_job_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_lock_details,
+                response_type="MediaWorkflowJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_lock_details,
+                response_type="MediaWorkflowJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def remove_media_workflow_lock(self, remove_resource_lock_details, media_workflow_id, **kwargs):
+        """
+        Remove a lock from a MediaWorkflow.
+
+
+        :param oci.media_services.models.RemoveLockDetails remove_resource_lock_details: (required)
+            RemoveResourceLockDetails body parameter
+
+        :param str media_workflow_id: (required)
+            Unique MediaWorkflow identifier.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without the risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.media_services.models.MediaWorkflow`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/remove_media_workflow_lock.py.html>`__ to see an example of how to use remove_media_workflow_lock API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['mediaWorkflowId']
+        resource_path = "/mediaWorkflows/{mediaWorkflowId}/actions/removeLock"
+        method = "POST"
+        operation_name = "remove_media_workflow_lock"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/RemoveMediaWorkflowLock"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"remove_media_workflow_lock got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "mediaWorkflowId": media_workflow_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_resource_lock_details,
+                response_type="MediaWorkflow",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_resource_lock_details,
+                response_type="MediaWorkflow",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def remove_stream_cdn_config_lock(self, remove_resource_lock_details, stream_cdn_config_id, **kwargs):
+        """
+        Remove a lock from a StreamCdnConfig.
+
+
+        :param oci.media_services.models.RemoveLockDetails remove_resource_lock_details: (required)
+            RemoveResourceLockDetails body parameter
+
+        :param str stream_cdn_config_id: (required)
+            Unique StreamCdnConfig identifier.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without the risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.media_services.models.StreamCdnConfig`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/remove_stream_cdn_config_lock.py.html>`__ to see an example of how to use remove_stream_cdn_config_lock API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamCdnConfigId']
+        resource_path = "/streamCdnConfigs/{streamCdnConfigId}/actions/removeLock"
+        method = "POST"
+        operation_name = "remove_stream_cdn_config_lock"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/RemoveStreamCdnConfigLock"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"remove_stream_cdn_config_lock got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "streamCdnConfigId": stream_cdn_config_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_resource_lock_details,
+                response_type="StreamCdnConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_resource_lock_details,
+                response_type="StreamCdnConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def remove_stream_distribution_channel_lock(self, remove_resource_lock_details, stream_distribution_channel_id, **kwargs):
+        """
+        Remove a lock to a StreamDistributionChannel.
+
+
+        :param oci.media_services.models.RemoveLockDetails remove_resource_lock_details: (required)
+            RemoveResourceLockDetails body parameter
+
+        :param str stream_distribution_channel_id: (required)
+            Unique Stream Distribution Channel path identifier.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without the risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.media_services.models.StreamDistributionChannel`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/remove_stream_distribution_channel_lock.py.html>`__ to see an example of how to use remove_stream_distribution_channel_lock API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamDistributionChannelId']
+        resource_path = "/streamDistributionChannels/{streamDistributionChannelId}/actions/removeLock"
+        method = "POST"
+        operation_name = "remove_stream_distribution_channel_lock"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/RemoveStreamDistributionChannelLock"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"remove_stream_distribution_channel_lock got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "streamDistributionChannelId": stream_distribution_channel_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_resource_lock_details,
+                response_type="StreamDistributionChannel",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_resource_lock_details,
+                response_type="StreamDistributionChannel",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def remove_stream_packaging_config_lock(self, remove_resource_lock_details, stream_packaging_config_id, **kwargs):
+        """
+        Remove a lock from a StreamPackagingConfig.
+
+
+        :param oci.media_services.models.RemoveLockDetails remove_resource_lock_details: (required)
+            RemoveResourceLockDetails body parameter
+
+        :param str stream_packaging_config_id: (required)
+            Unique Stream Packaging Configuration path identifier.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without the risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.media_services.models.StreamPackagingConfig`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/mediaservices/remove_stream_packaging_config_lock.py.html>`__ to see an example of how to use remove_stream_packaging_config_lock API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['streamPackagingConfigId']
+        resource_path = "/streamPackagingConfigs/{streamPackagingConfigId}/actions/removeLock"
+        method = "POST"
+        operation_name = "remove_stream_packaging_config_lock"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/RemoveStreamPackagingConfigLock"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"remove_stream_packaging_config_lock got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "streamPackagingConfigId": stream_packaging_config_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_resource_lock_details,
+                response_type="StreamPackagingConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_resource_lock_details,
+                response_type="StreamPackagingConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def update_media_asset(self, media_asset_id, update_media_asset_details, **kwargs):
         """
         Updates the MediaAsset.
@@ -5046,6 +6621,9 @@ class MediaServicesClient(object):
 
         :param oci.media_services.models.UpdateMediaAssetDetails update_media_asset_details: (required)
             The information to be updated.
+
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -5086,6 +6664,7 @@ class MediaServicesClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "is_lock_override",
             "if_match",
             "opc_request_id"
         ]
@@ -5103,6 +6682,11 @@ class MediaServicesClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -5128,6 +6712,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_media_asset_details,
                 response_type="MediaAsset",
@@ -5140,6 +6725,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_media_asset_details,
                 response_type="MediaAsset",
@@ -5158,6 +6744,9 @@ class MediaServicesClient(object):
 
         :param oci.media_services.models.UpdateMediaWorkflowDetails update_media_workflow_details: (required)
             The information to be updated.
+
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -5198,6 +6787,7 @@ class MediaServicesClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "is_lock_override",
             "if_match",
             "opc_request_id"
         ]
@@ -5215,6 +6805,11 @@ class MediaServicesClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -5240,6 +6835,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_media_workflow_details,
                 response_type="MediaWorkflow",
@@ -5252,6 +6848,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_media_workflow_details,
                 response_type="MediaWorkflow",
@@ -5270,6 +6867,9 @@ class MediaServicesClient(object):
 
         :param oci.media_services.models.UpdateMediaWorkflowConfigurationDetails update_media_workflow_configuration_details: (required)
             The information to be updated.
+
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -5310,6 +6910,7 @@ class MediaServicesClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "is_lock_override",
             "if_match",
             "opc_request_id"
         ]
@@ -5327,6 +6928,11 @@ class MediaServicesClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -5352,6 +6958,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_media_workflow_configuration_details,
                 response_type="MediaWorkflowConfiguration",
@@ -5364,6 +6971,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_media_workflow_configuration_details,
                 response_type="MediaWorkflowConfiguration",
@@ -5382,6 +6990,9 @@ class MediaServicesClient(object):
 
         :param oci.media_services.models.UpdateMediaWorkflowJobDetails update_media_workflow_job_details: (required)
             The information to be updated.
+
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -5422,6 +7033,7 @@ class MediaServicesClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "is_lock_override",
             "if_match",
             "opc_request_id"
         ]
@@ -5439,6 +7051,11 @@ class MediaServicesClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -5464,6 +7081,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_media_workflow_job_details,
                 response_type="MediaWorkflowJob",
@@ -5476,6 +7094,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_media_workflow_job_details,
                 response_type="MediaWorkflowJob",
@@ -5494,6 +7113,9 @@ class MediaServicesClient(object):
 
         :param oci.media_services.models.UpdateStreamCdnConfigDetails update_stream_cdn_config_details: (required)
             The information to be updated.
+
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -5534,6 +7156,7 @@ class MediaServicesClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "is_lock_override",
             "if_match",
             "opc_request_id"
         ]
@@ -5551,6 +7174,11 @@ class MediaServicesClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -5576,6 +7204,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_stream_cdn_config_details,
                 response_type="StreamCdnConfig",
@@ -5588,6 +7217,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_stream_cdn_config_details,
                 response_type="StreamCdnConfig",
@@ -5606,6 +7236,9 @@ class MediaServicesClient(object):
 
         :param oci.media_services.models.UpdateStreamDistributionChannelDetails update_stream_distribution_channel_details: (required)
             The information to be updated.
+
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -5646,6 +7279,7 @@ class MediaServicesClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "is_lock_override",
             "if_match",
             "opc_request_id"
         ]
@@ -5663,6 +7297,11 @@ class MediaServicesClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -5688,6 +7327,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_stream_distribution_channel_details,
                 response_type="StreamDistributionChannel",
@@ -5700,6 +7340,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_stream_distribution_channel_details,
                 response_type="StreamDistributionChannel",
@@ -5718,6 +7359,9 @@ class MediaServicesClient(object):
 
         :param oci.media_services.models.UpdateStreamPackagingConfigDetails update_stream_packaging_config_details: (required)
             The information to be updated.
+
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -5758,6 +7402,7 @@ class MediaServicesClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "is_lock_override",
             "if_match",
             "opc_request_id"
         ]
@@ -5775,6 +7420,11 @@ class MediaServicesClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -5800,6 +7450,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_stream_packaging_config_details,
                 response_type="StreamPackagingConfig",
@@ -5812,6 +7463,7 @@ class MediaServicesClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_stream_packaging_config_details,
                 response_type="StreamPackagingConfig",

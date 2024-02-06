@@ -165,7 +165,7 @@ class GenerativeAiInferenceClient(object):
         resource_path = "/actions/embedText"
         method = "POST"
         operation_name = "embed_text"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai-inference/20231130/EmbedTextResult/EmbedText"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -263,7 +263,7 @@ class GenerativeAiInferenceClient(object):
         resource_path = "/actions/generateText"
         method = "POST"
         operation_name = "generate_text"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai-inference/20231130/GenerateTextResult/GenerateText"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -361,7 +361,7 @@ class GenerativeAiInferenceClient(object):
         resource_path = "/actions/summarizeText"
         method = "POST"
         operation_name = "summarize_text"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai-inference/20231130/SummarizeTextResult/SummarizeText"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

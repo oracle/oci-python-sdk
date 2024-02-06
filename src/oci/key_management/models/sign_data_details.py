@@ -94,13 +94,18 @@ class SignDataDetails(object):
             Allowed values for this property are: "SHA_224_RSA_PKCS_PSS", "SHA_256_RSA_PKCS_PSS", "SHA_384_RSA_PKCS_PSS", "SHA_512_RSA_PKCS_PSS", "SHA_224_RSA_PKCS1_V1_5", "SHA_256_RSA_PKCS1_V1_5", "SHA_384_RSA_PKCS1_V1_5", "SHA_512_RSA_PKCS1_V1_5", "ECDSA_SHA_256", "ECDSA_SHA_384", "ECDSA_SHA_512"
         :type signing_algorithm: str
 
+        :param logging_context:
+            The value to assign to the logging_context property of this SignDataDetails.
+        :type logging_context: dict(str, str)
+
         """
         self.swagger_types = {
             'message': 'str',
             'key_id': 'str',
             'key_version_id': 'str',
             'message_type': 'str',
-            'signing_algorithm': 'str'
+            'signing_algorithm': 'str',
+            'logging_context': 'dict(str, str)'
         }
 
         self.attribute_map = {
@@ -108,7 +113,8 @@ class SignDataDetails(object):
             'key_id': 'keyId',
             'key_version_id': 'keyVersionId',
             'message_type': 'messageType',
-            'signing_algorithm': 'signingAlgorithm'
+            'signing_algorithm': 'signingAlgorithm',
+            'logging_context': 'loggingContext'
         }
 
         self._message = None
@@ -116,6 +122,7 @@ class SignDataDetails(object):
         self._key_version_id = None
         self._message_type = None
         self._signing_algorithm = None
+        self._logging_context = None
 
     @property
     def message(self):
@@ -262,6 +269,32 @@ class SignDataDetails(object):
                 f"Invalid value for `signing_algorithm`, must be None or one of {allowed_values}"
             )
         self._signing_algorithm = signing_algorithm
+
+    @property
+    def logging_context(self):
+        """
+        Gets the logging_context of this SignDataDetails.
+        Information that can be used to provide context for audit logging. It is a map that contains any additional
+        data that you provide to include with audit logs, if audit logging is enabled.
+
+
+        :return: The logging_context of this SignDataDetails.
+        :rtype: dict(str, str)
+        """
+        return self._logging_context
+
+    @logging_context.setter
+    def logging_context(self, logging_context):
+        """
+        Sets the logging_context of this SignDataDetails.
+        Information that can be used to provide context for audit logging. It is a map that contains any additional
+        data that you provide to include with audit logs, if audit logging is enabled.
+
+
+        :param logging_context: The logging_context of this SignDataDetails.
+        :type: dict(str, str)
+        """
+        self._logging_context = logging_context
 
     def __repr__(self):
         return formatted_flat_dict(self)

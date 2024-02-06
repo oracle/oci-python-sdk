@@ -107,6 +107,7 @@ API Reference
 * :doc:`Java Download <jms_java_downloads/client/oci.jms_java_downloads.JavaDownloadClient>`
 * :doc:`Java Management Service <jms/client/oci.jms.JavaManagementServiceClient>`
 * :doc:`Kms Crypto <key_management/client/oci.key_management.KmsCryptoClient>`
+* :doc:`Kms Hsm Cluster <key_management/client/oci.key_management.KmsHsmClusterClient>`
 * :doc:`Kms Management <key_management/client/oci.key_management.KmsManagementClient>`
 * :doc:`Kms Vault <key_management/client/oci.key_management.KmsVaultClient>`
 * :doc:`License Manager <license_manager/client/oci.license_manager.LicenseManagerClient>`
@@ -189,6 +190,7 @@ API Reference
 * :doc:`Service Manager Proxy <service_manager_proxy/client/oci.service_manager_proxy.ServiceManagerProxyClient>`
 * :doc:`Service Mesh <service_mesh/client/oci.service_mesh.ServiceMeshClient>`
 * :doc:`Shape <rover/client/oci.rover.ShapeClient>`
+* :doc:`Sharded Database Service <globally_distributed_database/client/oci.globally_distributed_database.ShardedDatabaseServiceClient>`
 * :doc:`Shipping Vendors <dts/client/oci.dts.ShippingVendorsClient>`
 * :doc:`Software Source <os_management_hub/client/oci.os_management_hub.SoftwareSourceClient>`
 * :doc:`Sql Tuning <database_management/client/oci.database_management.SqlTuningClient>`
@@ -309,6 +311,7 @@ API Reference
     generative_ai
     generative_ai_inference
     generic_artifacts_content
+    globally_distributed_database
     golden_gate
     governance_rules_control_plane
     healthchecks

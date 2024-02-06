@@ -11,10 +11,12 @@ from .ekm_client import EkmClient
 from .ekm_client_composite_operations import EkmClientCompositeOperations
 from .kms_crypto_client import KmsCryptoClient
 from .kms_crypto_client_composite_operations import KmsCryptoClientCompositeOperations
+from .kms_hsm_cluster_client import KmsHsmClusterClient
+from .kms_hsm_cluster_client_composite_operations import KmsHsmClusterClientCompositeOperations
 from .kms_management_client import KmsManagementClient
 from .kms_management_client_composite_operations import KmsManagementClientCompositeOperations
 from .kms_vault_client import KmsVaultClient
 from .kms_vault_client_composite_operations import KmsVaultClientCompositeOperations
 from . import models
 
-__all__ = ["EkmClient", "EkmClientCompositeOperations", "KmsCryptoClient", "KmsCryptoClientCompositeOperations", "KmsManagementClient", "KmsManagementClientCompositeOperations", "KmsVaultClient", "KmsVaultClientCompositeOperations", "models"]
+__all__ = ["EkmClient", "EkmClientCompositeOperations", "KmsCryptoClient", "KmsCryptoClientCompositeOperations", "KmsHsmClusterClient", "KmsHsmClusterClientCompositeOperations", "KmsManagementClient", "KmsManagementClientCompositeOperations", "KmsVaultClient", "KmsVaultClientCompositeOperations", "models"]

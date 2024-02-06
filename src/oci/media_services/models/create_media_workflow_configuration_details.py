@@ -40,13 +40,18 @@ class CreateMediaWorkflowConfigurationDetails(object):
             The value to assign to the defined_tags property of this CreateMediaWorkflowConfigurationDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param locks:
+            The value to assign to the locks property of this CreateMediaWorkflowConfigurationDetails.
+        :type locks: list[oci.media_services.models.ResourceLock]
+
         """
         self.swagger_types = {
             'display_name': 'str',
             'parameters': 'dict(str, object)',
             'compartment_id': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -54,7 +59,8 @@ class CreateMediaWorkflowConfigurationDetails(object):
             'parameters': 'parameters',
             'compartment_id': 'compartmentId',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'locks': 'locks'
         }
 
         self._display_name = None
@@ -62,6 +68,7 @@ class CreateMediaWorkflowConfigurationDetails(object):
         self._compartment_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._locks = None
 
     @property
     def display_name(self):
@@ -192,6 +199,30 @@ class CreateMediaWorkflowConfigurationDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this CreateMediaWorkflowConfigurationDetails.
+        Locks associated with this resource.
+
+
+        :return: The locks of this CreateMediaWorkflowConfigurationDetails.
+        :rtype: list[oci.media_services.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this CreateMediaWorkflowConfigurationDetails.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this CreateMediaWorkflowConfigurationDetails.
+        :type: list[oci.media_services.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

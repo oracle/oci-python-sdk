@@ -55,6 +55,10 @@ class ManagementAgentImageSummary(object):
     #: This constant has a value of "M1"
     PACKAGE_ARCHITECTURE_TYPE_M1 = "M1"
 
+    #: A constant which can be used with the package_architecture_type property of a ManagementAgentImageSummary.
+    #: This constant has a value of "AARCH64"
+    PACKAGE_ARCHITECTURE_TYPE_AARCH64 = "AARCH64"
+
     #: A constant which can be used with the lifecycle_state property of a ManagementAgentImageSummary.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -114,7 +118,7 @@ class ManagementAgentImageSummary(object):
 
         :param package_architecture_type:
             The value to assign to the package_architecture_type property of this ManagementAgentImageSummary.
-            Allowed values for this property are: "X86_64", "SPARC", "X86", "M1", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X86_64", "SPARC", "X86", "M1", "AARCH64", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type package_architecture_type: str
 
@@ -299,7 +303,7 @@ class ManagementAgentImageSummary(object):
         Gets the package_architecture_type of this ManagementAgentImageSummary.
         The installation package target architecture type
 
-        Allowed values for this property are: "X86_64", "SPARC", "X86", "M1", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "X86_64", "SPARC", "X86", "M1", "AARCH64", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -318,7 +322,7 @@ class ManagementAgentImageSummary(object):
         :param package_architecture_type: The package_architecture_type of this ManagementAgentImageSummary.
         :type: str
         """
-        allowed_values = ["X86_64", "SPARC", "X86", "M1"]
+        allowed_values = ["X86_64", "SPARC", "X86", "M1", "AARCH64"]
         if not value_allowed_none_or_none_sentinel(package_architecture_type, allowed_values):
             package_architecture_type = 'UNKNOWN_ENUM_VALUE'
         self._package_architecture_type = package_architecture_type

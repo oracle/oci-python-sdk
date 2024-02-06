@@ -60,6 +60,10 @@ class MediaWorkflowJobSummary(object):
             The value to assign to the system_tags property of this MediaWorkflowJobSummary.
         :type system_tags: dict(str, dict(str, object))
 
+        :param locks:
+            The value to assign to the locks property of this MediaWorkflowJobSummary.
+        :type locks: list[oci.media_services.models.ResourceLock]
+
         """
         self.swagger_types = {
             'media_workflow_id': 'str',
@@ -71,7 +75,8 @@ class MediaWorkflowJobSummary(object):
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -84,7 +89,8 @@ class MediaWorkflowJobSummary(object):
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'locks': 'locks'
         }
 
         self._media_workflow_id = None
@@ -97,6 +103,7 @@ class MediaWorkflowJobSummary(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._locks = None
 
     @property
     def media_workflow_id(self):
@@ -343,6 +350,30 @@ class MediaWorkflowJobSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this MediaWorkflowJobSummary.
+        Locks associated with this resource.
+
+
+        :return: The locks of this MediaWorkflowJobSummary.
+        :rtype: list[oci.media_services.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this MediaWorkflowJobSummary.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this MediaWorkflowJobSummary.
+        :type: list[oci.media_services.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

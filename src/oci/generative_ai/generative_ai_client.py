@@ -179,7 +179,7 @@ class GenerativeAiClient(object):
         resource_path = "/dedicatedAiClusters/{dedicatedAiClusterId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_dedicated_ai_cluster_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/DedicatedAiCluster/ChangeDedicatedAiClusterCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -305,7 +305,7 @@ class GenerativeAiClient(object):
         resource_path = "/endpoints/{endpointId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_endpoint_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Endpoint/ChangeEndpointCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -429,7 +429,7 @@ class GenerativeAiClient(object):
         resource_path = "/models/{modelId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_model_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Model/ChangeModelCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -542,7 +542,7 @@ class GenerativeAiClient(object):
         resource_path = "/dedicatedAiClusters"
         method = "POST"
         operation_name = "create_dedicated_ai_cluster"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/DedicatedAiCluster/CreateDedicatedAiCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -645,7 +645,7 @@ class GenerativeAiClient(object):
         resource_path = "/endpoints"
         method = "POST"
         operation_name = "create_endpoint"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Endpoint/CreateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -748,7 +748,7 @@ class GenerativeAiClient(object):
         resource_path = "/models"
         method = "POST"
         operation_name = "create_model"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Model/CreateModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -852,7 +852,7 @@ class GenerativeAiClient(object):
         resource_path = "/dedicatedAiClusters/{dedicatedAiClusterId}"
         method = "DELETE"
         operation_name = "delete_dedicated_ai_cluster"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/DedicatedAiCluster/DeleteDedicatedAiCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -961,7 +961,7 @@ class GenerativeAiClient(object):
         resource_path = "/endpoints/{endpointId}"
         method = "DELETE"
         operation_name = "delete_endpoint"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Endpoint/DeleteEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1068,7 +1068,7 @@ class GenerativeAiClient(object):
         resource_path = "/models/{modelId}"
         method = "DELETE"
         operation_name = "delete_model"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Model/DeleteModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1171,7 +1171,7 @@ class GenerativeAiClient(object):
         resource_path = "/dedicatedAiClusters/{dedicatedAiClusterId}"
         method = "GET"
         operation_name = "get_dedicated_ai_cluster"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/DedicatedAiCluster/GetDedicatedAiCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1274,7 +1274,7 @@ class GenerativeAiClient(object):
         resource_path = "/endpoints/{endpointId}"
         method = "GET"
         operation_name = "get_endpoint"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Endpoint/GetEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1375,7 +1375,7 @@ class GenerativeAiClient(object):
         resource_path = "/models/{modelId}"
         method = "GET"
         operation_name = "get_model"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Model/GetModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1478,7 +1478,7 @@ class GenerativeAiClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1619,7 +1619,7 @@ class GenerativeAiClient(object):
         resource_path = "/dedicatedAiClusters"
         method = "GET"
         operation_name = "list_dedicated_ai_clusters"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/DedicatedAiClusterCollection/ListDedicatedAiClusters"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1790,7 +1790,7 @@ class GenerativeAiClient(object):
         resource_path = "/endpoints"
         method = "GET"
         operation_name = "list_endpoints"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/EndpointCollection/ListEndpoints"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1966,7 +1966,7 @@ class GenerativeAiClient(object):
         resource_path = "/models"
         method = "GET"
         operation_name = "list_models"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/ModelCollection/ListModels"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2135,7 +2135,7 @@ class GenerativeAiClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2290,7 +2290,7 @@ class GenerativeAiClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2460,7 +2460,7 @@ class GenerativeAiClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2602,7 +2602,7 @@ class GenerativeAiClient(object):
         resource_path = "/dedicatedAiClusters/{dedicatedAiClusterId}"
         method = "PUT"
         operation_name = "update_dedicated_ai_cluster"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/DedicatedAiCluster/UpdateDedicatedAiCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2718,7 +2718,7 @@ class GenerativeAiClient(object):
         resource_path = "/endpoints/{endpointId}"
         method = "PUT"
         operation_name = "update_endpoint"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Endpoint/UpdateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2832,7 +2832,7 @@ class GenerativeAiClient(object):
         resource_path = "/models/{modelId}"
         method = "PUT"
         operation_name = "update_model"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai/20231130/Model/UpdateModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

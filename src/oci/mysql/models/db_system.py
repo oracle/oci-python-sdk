@@ -206,6 +206,10 @@ class DbSystem(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_management: str
 
+        :param secure_connections:
+            The value to assign to the secure_connections property of this DbSystem.
+        :type secure_connections: oci.mysql.models.SecureConnectionDetails
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -241,7 +245,8 @@ class DbSystem(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'crash_recovery': 'str',
             'point_in_time_recovery_details': 'PointInTimeRecoveryDetails',
-            'database_management': 'str'
+            'database_management': 'str',
+            'secure_connections': 'SecureConnectionDetails'
         }
 
         self.attribute_map = {
@@ -278,7 +283,8 @@ class DbSystem(object):
             'defined_tags': 'definedTags',
             'crash_recovery': 'crashRecovery',
             'point_in_time_recovery_details': 'pointInTimeRecoveryDetails',
-            'database_management': 'databaseManagement'
+            'database_management': 'databaseManagement',
+            'secure_connections': 'secureConnections'
         }
 
         self._id = None
@@ -315,6 +321,7 @@ class DbSystem(object):
         self._crash_recovery = None
         self._point_in_time_recovery_details = None
         self._database_management = None
+        self._secure_connections = None
 
     @property
     def id(self):
@@ -1171,6 +1178,26 @@ class DbSystem(object):
         if not value_allowed_none_or_none_sentinel(database_management, allowed_values):
             database_management = 'UNKNOWN_ENUM_VALUE'
         self._database_management = database_management
+
+    @property
+    def secure_connections(self):
+        """
+        Gets the secure_connections of this DbSystem.
+
+        :return: The secure_connections of this DbSystem.
+        :rtype: oci.mysql.models.SecureConnectionDetails
+        """
+        return self._secure_connections
+
+    @secure_connections.setter
+    def secure_connections(self, secure_connections):
+        """
+        Sets the secure_connections of this DbSystem.
+
+        :param secure_connections: The secure_connections of this DbSystem.
+        :type: oci.mysql.models.SecureConnectionDetails
+        """
+        self._secure_connections = secure_connections
 
     def __repr__(self):
         return formatted_flat_dict(self)

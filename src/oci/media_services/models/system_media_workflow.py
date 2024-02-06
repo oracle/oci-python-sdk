@@ -36,25 +36,32 @@ class SystemMediaWorkflow(object):
             The value to assign to the tasks property of this SystemMediaWorkflow.
         :type tasks: list[oci.media_services.models.MediaWorkflowTask]
 
+        :param locks:
+            The value to assign to the locks property of this SystemMediaWorkflow.
+        :type locks: list[oci.media_services.models.ResourceLock]
+
         """
         self.swagger_types = {
             'name': 'str',
             'description': 'str',
             'parameters': 'dict(str, object)',
-            'tasks': 'list[MediaWorkflowTask]'
+            'tasks': 'list[MediaWorkflowTask]',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
             'parameters': 'parameters',
-            'tasks': 'tasks'
+            'tasks': 'tasks',
+            'locks': 'locks'
         }
 
         self._name = None
         self._description = None
         self._parameters = None
         self._tasks = None
+        self._locks = None
 
     @property
     def name(self):
@@ -161,6 +168,30 @@ class SystemMediaWorkflow(object):
         :type: list[oci.media_services.models.MediaWorkflowTask]
         """
         self._tasks = tasks
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this SystemMediaWorkflow.
+        Locks associated with this resource.
+
+
+        :return: The locks of this SystemMediaWorkflow.
+        :rtype: list[oci.media_services.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this SystemMediaWorkflow.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this SystemMediaWorkflow.
+        :type: list[oci.media_services.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -44,6 +44,10 @@ class UpdateSecretDetails(object):
             The value to assign to the secret_content property of this UpdateSecretDetails.
         :type secret_content: oci.vault.models.SecretContentDetails
 
+        :param rotation_config:
+            The value to assign to the rotation_config property of this UpdateSecretDetails.
+        :type rotation_config: oci.vault.models.RotationConfig
+
         :param secret_rules:
             The value to assign to the secret_rules property of this UpdateSecretDetails.
         :type secret_rules: list[oci.vault.models.SecretRule]
@@ -56,6 +60,7 @@ class UpdateSecretDetails(object):
             'freeform_tags': 'dict(str, str)',
             'metadata': 'dict(str, object)',
             'secret_content': 'SecretContentDetails',
+            'rotation_config': 'RotationConfig',
             'secret_rules': 'list[SecretRule]'
         }
 
@@ -66,6 +71,7 @@ class UpdateSecretDetails(object):
             'freeform_tags': 'freeformTags',
             'metadata': 'metadata',
             'secret_content': 'secretContent',
+            'rotation_config': 'rotationConfig',
             'secret_rules': 'secretRules'
         }
 
@@ -75,6 +81,7 @@ class UpdateSecretDetails(object):
         self._freeform_tags = None
         self._metadata = None
         self._secret_content = None
+        self._rotation_config = None
         self._secret_rules = None
 
     @property
@@ -240,6 +247,26 @@ class UpdateSecretDetails(object):
         :type: oci.vault.models.SecretContentDetails
         """
         self._secret_content = secret_content
+
+    @property
+    def rotation_config(self):
+        """
+        Gets the rotation_config of this UpdateSecretDetails.
+
+        :return: The rotation_config of this UpdateSecretDetails.
+        :rtype: oci.vault.models.RotationConfig
+        """
+        return self._rotation_config
+
+    @rotation_config.setter
+    def rotation_config(self, rotation_config):
+        """
+        Sets the rotation_config of this UpdateSecretDetails.
+
+        :param rotation_config: The rotation_config of this UpdateSecretDetails.
+        :type: oci.vault.models.RotationConfig
+        """
+        self._rotation_config = rotation_config
 
     @property
     def secret_rules(self):

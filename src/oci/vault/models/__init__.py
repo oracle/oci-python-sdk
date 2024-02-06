@@ -6,9 +6,12 @@
 
 from __future__ import absolute_import
 
+from .adb_target_system_details import AdbTargetSystemDetails
 from .base64_secret_content_details import Base64SecretContentDetails
 from .change_secret_compartment_details import ChangeSecretCompartmentDetails
 from .create_secret_details import CreateSecretDetails
+from .function_target_system_details import FunctionTargetSystemDetails
+from .rotation_config import RotationConfig
 from .schedule_secret_deletion_details import ScheduleSecretDeletionDetails
 from .schedule_secret_version_deletion_details import ScheduleSecretVersionDeletionDetails
 from .secret import Secret
@@ -19,13 +22,17 @@ from .secret_rule import SecretRule
 from .secret_summary import SecretSummary
 from .secret_version import SecretVersion
 from .secret_version_summary import SecretVersionSummary
+from .target_system_details import TargetSystemDetails
 from .update_secret_details import UpdateSecretDetails
 
 # Maps type names to classes for vault services.
 vault_type_mapping = {
+    "AdbTargetSystemDetails": AdbTargetSystemDetails,
     "Base64SecretContentDetails": Base64SecretContentDetails,
     "ChangeSecretCompartmentDetails": ChangeSecretCompartmentDetails,
     "CreateSecretDetails": CreateSecretDetails,
+    "FunctionTargetSystemDetails": FunctionTargetSystemDetails,
+    "RotationConfig": RotationConfig,
     "ScheduleSecretDeletionDetails": ScheduleSecretDeletionDetails,
     "ScheduleSecretVersionDeletionDetails": ScheduleSecretVersionDeletionDetails,
     "Secret": Secret,
@@ -36,5 +43,6 @@ vault_type_mapping = {
     "SecretSummary": SecretSummary,
     "SecretVersion": SecretVersion,
     "SecretVersionSummary": SecretVersionSummary,
+    "TargetSystemDetails": TargetSystemDetails,
     "UpdateSecretDetails": UpdateSecretDetails
 }

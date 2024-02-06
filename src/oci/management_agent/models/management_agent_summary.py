@@ -180,6 +180,10 @@ class ManagementAgentSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type install_type: str
 
+        :param data_source_summary_list:
+            The value to assign to the data_source_summary_list property of this ManagementAgentSummary.
+        :type data_source_summary_list: list[oci.management_agent.models.DataSourceSummaryItem]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ManagementAgentSummary.
         :type freeform_tags: dict(str, str)
@@ -211,6 +215,7 @@ class ManagementAgentSummary(object):
             'lifecycle_details': 'str',
             'is_customer_deployed': 'bool',
             'install_type': 'str',
+            'data_source_summary_list': 'list[DataSourceSummaryItem]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -237,6 +242,7 @@ class ManagementAgentSummary(object):
             'lifecycle_details': 'lifecycleDetails',
             'is_customer_deployed': 'isCustomerDeployed',
             'install_type': 'installType',
+            'data_source_summary_list': 'dataSourceSummaryList',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -262,6 +268,7 @@ class ManagementAgentSummary(object):
         self._lifecycle_details = None
         self._is_customer_deployed = None
         self._install_type = None
+        self._data_source_summary_list = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -800,6 +807,30 @@ class ManagementAgentSummary(object):
         if not value_allowed_none_or_none_sentinel(install_type, allowed_values):
             install_type = 'UNKNOWN_ENUM_VALUE'
         self._install_type = install_type
+
+    @property
+    def data_source_summary_list(self):
+        """
+        Gets the data_source_summary_list of this ManagementAgentSummary.
+        list of dataSources summaries associated with the agent
+
+
+        :return: The data_source_summary_list of this ManagementAgentSummary.
+        :rtype: list[oci.management_agent.models.DataSourceSummaryItem]
+        """
+        return self._data_source_summary_list
+
+    @data_source_summary_list.setter
+    def data_source_summary_list(self, data_source_summary_list):
+        """
+        Sets the data_source_summary_list of this ManagementAgentSummary.
+        list of dataSources summaries associated with the agent
+
+
+        :param data_source_summary_list: The data_source_summary_list of this ManagementAgentSummary.
+        :type: list[oci.management_agent.models.DataSourceSummaryItem]
+        """
+        self._data_source_summary_list = data_source_summary_list
 
     @property
     def freeform_tags(self):

@@ -138,6 +138,10 @@ class CreateDbSystemDetails(object):
             Allowed values for this property are: "ENABLED", "DISABLED"
         :type database_management: str
 
+        :param secure_connections:
+            The value to assign to the secure_connections property of this CreateDbSystemDetails.
+        :type secure_connections: oci.mysql.models.SecureConnectionDetails
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -164,7 +168,8 @@ class CreateDbSystemDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'deletion_policy': 'CreateDeletionPolicyDetails',
             'crash_recovery': 'str',
-            'database_management': 'str'
+            'database_management': 'str',
+            'secure_connections': 'SecureConnectionDetails'
         }
 
         self.attribute_map = {
@@ -192,7 +197,8 @@ class CreateDbSystemDetails(object):
             'defined_tags': 'definedTags',
             'deletion_policy': 'deletionPolicy',
             'crash_recovery': 'crashRecovery',
-            'database_management': 'databaseManagement'
+            'database_management': 'databaseManagement',
+            'secure_connections': 'secureConnections'
         }
 
         self._display_name = None
@@ -220,6 +226,7 @@ class CreateDbSystemDetails(object):
         self._deletion_policy = None
         self._crash_recovery = None
         self._database_management = None
+        self._secure_connections = None
 
     @property
     def display_name(self):
@@ -894,6 +901,26 @@ class CreateDbSystemDetails(object):
                 f"Invalid value for `database_management`, must be None or one of {allowed_values}"
             )
         self._database_management = database_management
+
+    @property
+    def secure_connections(self):
+        """
+        Gets the secure_connections of this CreateDbSystemDetails.
+
+        :return: The secure_connections of this CreateDbSystemDetails.
+        :rtype: oci.mysql.models.SecureConnectionDetails
+        """
+        return self._secure_connections
+
+    @secure_connections.setter
+    def secure_connections(self, secure_connections):
+        """
+        Sets the secure_connections of this CreateDbSystemDetails.
+
+        :param secure_connections: The secure_connections of this CreateDbSystemDetails.
+        :type: oci.mysql.models.SecureConnectionDetails
+        """
+        self._secure_connections = secure_connections
 
     def __repr__(self):
         return formatted_flat_dict(self)
