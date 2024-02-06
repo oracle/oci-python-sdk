@@ -21,6 +21,7 @@ SERVICE_ENDPOINTS = {
     "health_checks": "https://healthchecks.{domain}",
     "identity": "https://identity.{domain}",
     "kms_crypto": "https://kms.{domain}",
+    "kms_hsm_cluster": "https://kms.{domain}",
     "kms_management": "https://kms.{domain}",
     "kms_vault": "https://kms.{domain}",
     "load_balancer": "https://iaas.{domain}",

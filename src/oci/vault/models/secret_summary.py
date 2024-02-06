@@ -72,6 +72,10 @@ class SecretSummary(object):
             The value to assign to the freeform_tags property of this SecretSummary.
         :type freeform_tags: dict(str, str)
 
+        :param system_tags:
+            The value to assign to the system_tags property of this SecretSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param key_id:
             The value to assign to the key_id property of this SecretSummary.
         :type key_id: str
@@ -89,6 +93,22 @@ class SecretSummary(object):
             Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "SCHEDULING_DELETION", "PENDING_DELETION", "CANCELLING_DELETION", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
+
+        :param rotation_config:
+            The value to assign to the rotation_config property of this SecretSummary.
+        :type rotation_config: oci.vault.models.RotationConfig
+
+        :param rotation_status:
+            The value to assign to the rotation_status property of this SecretSummary.
+        :type rotation_status: str
+
+        :param last_rotation_time:
+            The value to assign to the last_rotation_time property of this SecretSummary.
+        :type last_rotation_time: datetime
+
+        :param next_rotation_time:
+            The value to assign to the next_rotation_time property of this SecretSummary.
+        :type next_rotation_time: datetime
 
         :param secret_name:
             The value to assign to the secret_name property of this SecretSummary.
@@ -116,10 +136,15 @@ class SecretSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'description': 'str',
             'freeform_tags': 'dict(str, str)',
+            'system_tags': 'dict(str, dict(str, object))',
             'key_id': 'str',
             'id': 'str',
             'lifecycle_details': 'str',
             'lifecycle_state': 'str',
+            'rotation_config': 'RotationConfig',
+            'rotation_status': 'str',
+            'last_rotation_time': 'datetime',
+            'next_rotation_time': 'datetime',
             'secret_name': 'str',
             'time_created': 'datetime',
             'time_of_current_version_expiry': 'datetime',
@@ -132,10 +157,15 @@ class SecretSummary(object):
             'defined_tags': 'definedTags',
             'description': 'description',
             'freeform_tags': 'freeformTags',
+            'system_tags': 'systemTags',
             'key_id': 'keyId',
             'id': 'id',
             'lifecycle_details': 'lifecycleDetails',
             'lifecycle_state': 'lifecycleState',
+            'rotation_config': 'rotationConfig',
+            'rotation_status': 'rotationStatus',
+            'last_rotation_time': 'lastRotationTime',
+            'next_rotation_time': 'nextRotationTime',
             'secret_name': 'secretName',
             'time_created': 'timeCreated',
             'time_of_current_version_expiry': 'timeOfCurrentVersionExpiry',
@@ -147,10 +177,15 @@ class SecretSummary(object):
         self._defined_tags = None
         self._description = None
         self._freeform_tags = None
+        self._system_tags = None
         self._key_id = None
         self._id = None
         self._lifecycle_details = None
         self._lifecycle_state = None
+        self._rotation_config = None
+        self._rotation_status = None
+        self._last_rotation_time = None
+        self._next_rotation_time = None
         self._secret_name = None
         self._time_created = None
         self._time_of_current_version_expiry = None
@@ -270,6 +305,34 @@ class SecretSummary(object):
         self._freeform_tags = freeform_tags
 
     @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this SecretSummary.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this SecretSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this SecretSummary.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this SecretSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
+
+    @property
     def key_id(self):
         """
         Gets the key_id of this SecretSummary.
@@ -370,6 +433,110 @@ class SecretSummary(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def rotation_config(self):
+        """
+        Gets the rotation_config of this SecretSummary.
+
+        :return: The rotation_config of this SecretSummary.
+        :rtype: oci.vault.models.RotationConfig
+        """
+        return self._rotation_config
+
+    @rotation_config.setter
+    def rotation_config(self, rotation_config):
+        """
+        Sets the rotation_config of this SecretSummary.
+
+        :param rotation_config: The rotation_config of this SecretSummary.
+        :type: oci.vault.models.RotationConfig
+        """
+        self._rotation_config = rotation_config
+
+    @property
+    def rotation_status(self):
+        """
+        Gets the rotation_status of this SecretSummary.
+        Additional information about the status of the secret rotation
+
+
+        :return: The rotation_status of this SecretSummary.
+        :rtype: str
+        """
+        return self._rotation_status
+
+    @rotation_status.setter
+    def rotation_status(self, rotation_status):
+        """
+        Sets the rotation_status of this SecretSummary.
+        Additional information about the status of the secret rotation
+
+
+        :param rotation_status: The rotation_status of this SecretSummary.
+        :type: str
+        """
+        self._rotation_status = rotation_status
+
+    @property
+    def last_rotation_time(self):
+        """
+        Gets the last_rotation_time of this SecretSummary.
+        A property indicating when the secret was last rotated successfully, expressed in `RFC 3339`__ timestamp format.
+        Example: `2019-04-03T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The last_rotation_time of this SecretSummary.
+        :rtype: datetime
+        """
+        return self._last_rotation_time
+
+    @last_rotation_time.setter
+    def last_rotation_time(self, last_rotation_time):
+        """
+        Sets the last_rotation_time of this SecretSummary.
+        A property indicating when the secret was last rotated successfully, expressed in `RFC 3339`__ timestamp format.
+        Example: `2019-04-03T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param last_rotation_time: The last_rotation_time of this SecretSummary.
+        :type: datetime
+        """
+        self._last_rotation_time = last_rotation_time
+
+    @property
+    def next_rotation_time(self):
+        """
+        Gets the next_rotation_time of this SecretSummary.
+        A property indicating when the secret is scheduled to be rotated, expressed in `RFC 3339`__ timestamp format.
+        Example: `2019-04-03T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The next_rotation_time of this SecretSummary.
+        :rtype: datetime
+        """
+        return self._next_rotation_time
+
+    @next_rotation_time.setter
+    def next_rotation_time(self, next_rotation_time):
+        """
+        Sets the next_rotation_time of this SecretSummary.
+        A property indicating when the secret is scheduled to be rotated, expressed in `RFC 3339`__ timestamp format.
+        Example: `2019-04-03T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param next_rotation_time: The next_rotation_time of this SecretSummary.
+        :type: datetime
+        """
+        self._next_rotation_time = next_rotation_time
 
     @property
     def secret_name(self):

@@ -81,7 +81,7 @@ class MediaWorkflowTask(object):
     @property
     def type(self):
         """
-        Gets the type of this MediaWorkflowTask.
+        **[Required]** Gets the type of this MediaWorkflowTask.
         The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
 
 
@@ -237,7 +237,7 @@ class MediaWorkflowTask(object):
     @property
     def parameters(self):
         """
-        Gets the parameters of this MediaWorkflowTask.
+        **[Required]** Gets the parameters of this MediaWorkflowTask.
         Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema
         specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may
         contain values or references to other parameters.

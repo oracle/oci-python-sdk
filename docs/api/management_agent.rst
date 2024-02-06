@@ -20,8 +20,16 @@ Management Agent
 
     oci.management_agent.models.AutoUpgradableConfig
     oci.management_agent.models.AvailabilityHistorySummary
+    oci.management_agent.models.CreateDataSourceDetails
     oci.management_agent.models.CreateManagementAgentInstallKeyDetails
+    oci.management_agent.models.CreatePrometheusEmitterDataSourceDetails
+    oci.management_agent.models.DataSource
+    oci.management_agent.models.DataSourceSummary
+    oci.management_agent.models.DataSourceSummaryItem
     oci.management_agent.models.DeployPluginsDetails
+    oci.management_agent.models.KubernetesClusterDataSource
+    oci.management_agent.models.KubernetesClusterDataSourceSummary
+    oci.management_agent.models.KubernetesClusterDataSourceSummaryItem
     oci.management_agent.models.ManagementAgent
     oci.management_agent.models.ManagementAgentAggregation
     oci.management_agent.models.ManagementAgentAggregationCollection
@@ -39,10 +47,16 @@ Management Agent
     oci.management_agent.models.ManagementAgentPluginSummary
     oci.management_agent.models.ManagementAgentProperty
     oci.management_agent.models.ManagementAgentSummary
+    oci.management_agent.models.MetricDimension
     oci.management_agent.models.ObjectDetails
+    oci.management_agent.models.PrometheusEmitterDataSource
+    oci.management_agent.models.PrometheusEmitterDataSourceSummary
+    oci.management_agent.models.PrometheusEmitterDataSourceSummaryItem
     oci.management_agent.models.SetAutoUpgradableConfigDetails
+    oci.management_agent.models.UpdateDataSourceDetails
     oci.management_agent.models.UpdateManagementAgentDetails
     oci.management_agent.models.UpdateManagementAgentInstallKeyDetails
+    oci.management_agent.models.UpdatePrometheusEmitterDataSourceDetails
     oci.management_agent.models.WorkRequest
     oci.management_agent.models.WorkRequestError
     oci.management_agent.models.WorkRequestLogEntry

@@ -1,9 +1,9 @@
-MediaWorkflowJobFact
+HsmClusterCollection
 ====================
 
-.. currentmodule:: oci.media_services.models
+.. currentmodule:: oci.key_management.models
 
-.. autoclass:: MediaWorkflowJobFact
+.. autoclass:: HsmClusterCollection
     :show-inheritance:
     :special-members: __init__
     :members:

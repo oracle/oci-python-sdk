@@ -48,6 +48,10 @@ class CreateSecretDetails(object):
             The value to assign to the secret_content property of this CreateSecretDetails.
         :type secret_content: oci.vault.models.SecretContentDetails
 
+        :param rotation_config:
+            The value to assign to the rotation_config property of this CreateSecretDetails.
+        :type rotation_config: oci.vault.models.RotationConfig
+
         :param secret_name:
             The value to assign to the secret_name property of this CreateSecretDetails.
         :type secret_name: str
@@ -69,6 +73,7 @@ class CreateSecretDetails(object):
             'key_id': 'str',
             'metadata': 'dict(str, object)',
             'secret_content': 'SecretContentDetails',
+            'rotation_config': 'RotationConfig',
             'secret_name': 'str',
             'secret_rules': 'list[SecretRule]',
             'vault_id': 'str'
@@ -82,6 +87,7 @@ class CreateSecretDetails(object):
             'key_id': 'keyId',
             'metadata': 'metadata',
             'secret_content': 'secretContent',
+            'rotation_config': 'rotationConfig',
             'secret_name': 'secretName',
             'secret_rules': 'secretRules',
             'vault_id': 'vaultId'
@@ -94,6 +100,7 @@ class CreateSecretDetails(object):
         self._key_id = None
         self._metadata = None
         self._secret_content = None
+        self._rotation_config = None
         self._secret_name = None
         self._secret_rules = None
         self._vault_id = None
@@ -265,7 +272,7 @@ class CreateSecretDetails(object):
     @property
     def secret_content(self):
         """
-        **[Required]** Gets the secret_content of this CreateSecretDetails.
+        Gets the secret_content of this CreateSecretDetails.
 
         :return: The secret_content of this CreateSecretDetails.
         :rtype: oci.vault.models.SecretContentDetails
@@ -281,6 +288,26 @@ class CreateSecretDetails(object):
         :type: oci.vault.models.SecretContentDetails
         """
         self._secret_content = secret_content
+
+    @property
+    def rotation_config(self):
+        """
+        Gets the rotation_config of this CreateSecretDetails.
+
+        :return: The rotation_config of this CreateSecretDetails.
+        :rtype: oci.vault.models.RotationConfig
+        """
+        return self._rotation_config
+
+    @rotation_config.setter
+    def rotation_config(self, rotation_config):
+        """
+        Sets the rotation_config of this CreateSecretDetails.
+
+        :param rotation_config: The rotation_config of this CreateSecretDetails.
+        :type: oci.vault.models.RotationConfig
+        """
+        self._rotation_config = rotation_config
 
     @property
     def secret_name(self):

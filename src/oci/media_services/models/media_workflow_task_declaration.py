@@ -36,25 +36,32 @@ class MediaWorkflowTaskDeclaration(object):
             The value to assign to the parameters_schema_allowing_references property of this MediaWorkflowTaskDeclaration.
         :type parameters_schema_allowing_references: dict(str, object)
 
+        :param locks:
+            The value to assign to the locks property of this MediaWorkflowTaskDeclaration.
+        :type locks: list[oci.media_services.models.ResourceLock]
+
         """
         self.swagger_types = {
             'name': 'str',
             'version': 'int',
             'parameters_schema': 'dict(str, object)',
-            'parameters_schema_allowing_references': 'dict(str, object)'
+            'parameters_schema_allowing_references': 'dict(str, object)',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
             'name': 'name',
             'version': 'version',
             'parameters_schema': 'parametersSchema',
-            'parameters_schema_allowing_references': 'parametersSchemaAllowingReferences'
+            'parameters_schema_allowing_references': 'parametersSchemaAllowingReferences',
+            'locks': 'locks'
         }
 
         self._name = None
         self._version = None
         self._parameters_schema = None
         self._parameters_schema_allowing_references = None
+        self._locks = None
 
     @property
     def name(self):
@@ -159,6 +166,30 @@ class MediaWorkflowTaskDeclaration(object):
         :type: dict(str, object)
         """
         self._parameters_schema_allowing_references = parameters_schema_allowing_references
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this MediaWorkflowTaskDeclaration.
+        Locks associated with this resource.
+
+
+        :return: The locks of this MediaWorkflowTaskDeclaration.
+        :rtype: list[oci.media_services.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this MediaWorkflowTaskDeclaration.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this MediaWorkflowTaskDeclaration.
+        :type: list[oci.media_services.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

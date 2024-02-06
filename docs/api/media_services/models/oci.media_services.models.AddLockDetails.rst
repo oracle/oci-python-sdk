@@ -1,9 +1,9 @@
-MediaWorkflowJobFactCollection
-==============================
+AddLockDetails
+==============
 
 .. currentmodule:: oci.media_services.models
 
-.. autoclass:: MediaWorkflowJobFactCollection
+.. autoclass:: AddLockDetails
     :show-inheritance:
     :special-members: __init__
     :members:

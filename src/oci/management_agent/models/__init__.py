@@ -8,8 +8,16 @@ from __future__ import absolute_import
 
 from .auto_upgradable_config import AutoUpgradableConfig
 from .availability_history_summary import AvailabilityHistorySummary
+from .create_data_source_details import CreateDataSourceDetails
 from .create_management_agent_install_key_details import CreateManagementAgentInstallKeyDetails
+from .create_prometheus_emitter_data_source_details import CreatePrometheusEmitterDataSourceDetails
+from .data_source import DataSource
+from .data_source_summary import DataSourceSummary
+from .data_source_summary_item import DataSourceSummaryItem
 from .deploy_plugins_details import DeployPluginsDetails
+from .kubernetes_cluster_data_source import KubernetesClusterDataSource
+from .kubernetes_cluster_data_source_summary import KubernetesClusterDataSourceSummary
+from .kubernetes_cluster_data_source_summary_item import KubernetesClusterDataSourceSummaryItem
 from .management_agent import ManagementAgent
 from .management_agent_aggregation import ManagementAgentAggregation
 from .management_agent_aggregation_collection import ManagementAgentAggregationCollection
@@ -27,10 +35,16 @@ from .management_agent_plugin_details import ManagementAgentPluginDetails
 from .management_agent_plugin_summary import ManagementAgentPluginSummary
 from .management_agent_property import ManagementAgentProperty
 from .management_agent_summary import ManagementAgentSummary
+from .metric_dimension import MetricDimension
 from .object_details import ObjectDetails
+from .prometheus_emitter_data_source import PrometheusEmitterDataSource
+from .prometheus_emitter_data_source_summary import PrometheusEmitterDataSourceSummary
+from .prometheus_emitter_data_source_summary_item import PrometheusEmitterDataSourceSummaryItem
 from .set_auto_upgradable_config_details import SetAutoUpgradableConfigDetails
+from .update_data_source_details import UpdateDataSourceDetails
 from .update_management_agent_details import UpdateManagementAgentDetails
 from .update_management_agent_install_key_details import UpdateManagementAgentInstallKeyDetails
+from .update_prometheus_emitter_data_source_details import UpdatePrometheusEmitterDataSourceDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_log_entry import WorkRequestLogEntry
@@ -42,8 +56,16 @@ from .work_submission_key import WorkSubmissionKey
 management_agent_type_mapping = {
     "AutoUpgradableConfig": AutoUpgradableConfig,
     "AvailabilityHistorySummary": AvailabilityHistorySummary,
+    "CreateDataSourceDetails": CreateDataSourceDetails,
     "CreateManagementAgentInstallKeyDetails": CreateManagementAgentInstallKeyDetails,
+    "CreatePrometheusEmitterDataSourceDetails": CreatePrometheusEmitterDataSourceDetails,
+    "DataSource": DataSource,
+    "DataSourceSummary": DataSourceSummary,
+    "DataSourceSummaryItem": DataSourceSummaryItem,
     "DeployPluginsDetails": DeployPluginsDetails,
+    "KubernetesClusterDataSource": KubernetesClusterDataSource,
+    "KubernetesClusterDataSourceSummary": KubernetesClusterDataSourceSummary,
+    "KubernetesClusterDataSourceSummaryItem": KubernetesClusterDataSourceSummaryItem,
     "ManagementAgent": ManagementAgent,
     "ManagementAgentAggregation": ManagementAgentAggregation,
     "ManagementAgentAggregationCollection": ManagementAgentAggregationCollection,
@@ -61,10 +83,16 @@ management_agent_type_mapping = {
     "ManagementAgentPluginSummary": ManagementAgentPluginSummary,
     "ManagementAgentProperty": ManagementAgentProperty,
     "ManagementAgentSummary": ManagementAgentSummary,
+    "MetricDimension": MetricDimension,
     "ObjectDetails": ObjectDetails,
+    "PrometheusEmitterDataSource": PrometheusEmitterDataSource,
+    "PrometheusEmitterDataSourceSummary": PrometheusEmitterDataSourceSummary,
+    "PrometheusEmitterDataSourceSummaryItem": PrometheusEmitterDataSourceSummaryItem,
     "SetAutoUpgradableConfigDetails": SetAutoUpgradableConfigDetails,
+    "UpdateDataSourceDetails": UpdateDataSourceDetails,
     "UpdateManagementAgentDetails": UpdateManagementAgentDetails,
     "UpdateManagementAgentInstallKeyDetails": UpdateManagementAgentInstallKeyDetails,
+    "UpdatePrometheusEmitterDataSourceDetails": UpdatePrometheusEmitterDataSourceDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestLogEntry": WorkRequestLogEntry,

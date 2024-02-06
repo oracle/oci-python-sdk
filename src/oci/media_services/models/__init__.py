@@ -6,6 +6,7 @@
 
 from __future__ import absolute_import
 
+from .add_lock_details import AddLockDetails
 from .akamai_manual_stream_cdn_config import AkamaiManualStreamCdnConfig
 from .asset_metadata_entry_details import AssetMetadataEntryDetails
 from .change_media_asset_compartment_details import ChangeMediaAssetCompartmentDetails
@@ -43,9 +44,6 @@ from .media_workflow_configuration_collection import MediaWorkflowConfigurationC
 from .media_workflow_configuration_summary import MediaWorkflowConfigurationSummary
 from .media_workflow_job import MediaWorkflowJob
 from .media_workflow_job_collection import MediaWorkflowJobCollection
-from .media_workflow_job_fact import MediaWorkflowJobFact
-from .media_workflow_job_fact_collection import MediaWorkflowJobFactCollection
-from .media_workflow_job_fact_summary import MediaWorkflowJobFactSummary
 from .media_workflow_job_summary import MediaWorkflowJobSummary
 from .media_workflow_summary import MediaWorkflowSummary
 from .media_workflow_task import MediaWorkflowTask
@@ -53,6 +51,8 @@ from .media_workflow_task_declaration import MediaWorkflowTaskDeclaration
 from .media_workflow_task_declaration_collection import MediaWorkflowTaskDeclarationCollection
 from .media_workflow_task_state import MediaWorkflowTaskState
 from .metadata import Metadata
+from .remove_lock_details import RemoveLockDetails
+from .resource_lock import ResourceLock
 from .session_token import SessionToken
 from .stream_cdn_config import StreamCdnConfig
 from .stream_cdn_config_collection import StreamCdnConfigCollection
@@ -79,6 +79,7 @@ from .update_stream_packaging_config_details import UpdateStreamPackagingConfigD
 
 # Maps type names to classes for media_services services.
 media_services_type_mapping = {
+    "AddLockDetails": AddLockDetails,
     "AkamaiManualStreamCdnConfig": AkamaiManualStreamCdnConfig,
     "AssetMetadataEntryDetails": AssetMetadataEntryDetails,
     "ChangeMediaAssetCompartmentDetails": ChangeMediaAssetCompartmentDetails,
@@ -116,9 +117,6 @@ media_services_type_mapping = {
     "MediaWorkflowConfigurationSummary": MediaWorkflowConfigurationSummary,
     "MediaWorkflowJob": MediaWorkflowJob,
     "MediaWorkflowJobCollection": MediaWorkflowJobCollection,
-    "MediaWorkflowJobFact": MediaWorkflowJobFact,
-    "MediaWorkflowJobFactCollection": MediaWorkflowJobFactCollection,
-    "MediaWorkflowJobFactSummary": MediaWorkflowJobFactSummary,
     "MediaWorkflowJobSummary": MediaWorkflowJobSummary,
     "MediaWorkflowSummary": MediaWorkflowSummary,
     "MediaWorkflowTask": MediaWorkflowTask,
@@ -126,6 +124,8 @@ media_services_type_mapping = {
     "MediaWorkflowTaskDeclarationCollection": MediaWorkflowTaskDeclarationCollection,
     "MediaWorkflowTaskState": MediaWorkflowTaskState,
     "Metadata": Metadata,
+    "RemoveLockDetails": RemoveLockDetails,
+    "ResourceLock": ResourceLock,
     "SessionToken": SessionToken,
     "StreamCdnConfig": StreamCdnConfig,
     "StreamCdnConfigCollection": StreamCdnConfigCollection,

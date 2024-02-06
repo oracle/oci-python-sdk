@@ -20,6 +20,7 @@ Media Services
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.media_services.models.AddLockDetails
     oci.media_services.models.AkamaiManualStreamCdnConfig
     oci.media_services.models.AssetMetadataEntryDetails
     oci.media_services.models.ChangeMediaAssetCompartmentDetails
@@ -57,9 +58,6 @@ Media Services
     oci.media_services.models.MediaWorkflowConfigurationSummary
     oci.media_services.models.MediaWorkflowJob
     oci.media_services.models.MediaWorkflowJobCollection
-    oci.media_services.models.MediaWorkflowJobFact
-    oci.media_services.models.MediaWorkflowJobFactCollection
-    oci.media_services.models.MediaWorkflowJobFactSummary
     oci.media_services.models.MediaWorkflowJobSummary
     oci.media_services.models.MediaWorkflowSummary
     oci.media_services.models.MediaWorkflowTask
@@ -67,6 +65,8 @@ Media Services
     oci.media_services.models.MediaWorkflowTaskDeclarationCollection
     oci.media_services.models.MediaWorkflowTaskState
     oci.media_services.models.Metadata
+    oci.media_services.models.RemoveLockDetails
+    oci.media_services.models.ResourceLock
     oci.media_services.models.SessionToken
     oci.media_services.models.StreamCdnConfig
     oci.media_services.models.StreamCdnConfigCollection

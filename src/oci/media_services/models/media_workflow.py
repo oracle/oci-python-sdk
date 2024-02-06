@@ -78,6 +78,10 @@ class MediaWorkflow(object):
             The value to assign to the version property of this MediaWorkflow.
         :type version: int
 
+        :param locks:
+            The value to assign to the locks property of this MediaWorkflow.
+        :type locks: list[oci.media_services.models.ResourceLock]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this MediaWorkflow.
         :type freeform_tags: dict(str, str)
@@ -103,6 +107,7 @@ class MediaWorkflow(object):
             'lifecycle_state': 'str',
             'lifecyle_details': 'str',
             'version': 'int',
+            'locks': 'list[ResourceLock]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -120,6 +125,7 @@ class MediaWorkflow(object):
             'lifecycle_state': 'lifecycleState',
             'lifecyle_details': 'lifecyleDetails',
             'version': 'version',
+            'locks': 'locks',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -136,6 +142,7 @@ class MediaWorkflow(object):
         self._lifecycle_state = None
         self._lifecyle_details = None
         self._version = None
+        self._locks = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -215,7 +222,7 @@ class MediaWorkflow(object):
     @property
     def tasks(self):
         """
-        Gets the tasks of this MediaWorkflow.
+        **[Required]** Gets the tasks of this MediaWorkflow.
         The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array is unique
         within the array.  The order of the items is preserved from the order of the tasks array in
         CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
@@ -423,6 +430,30 @@ class MediaWorkflow(object):
         :type: int
         """
         self._version = version
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this MediaWorkflow.
+        Locks associated with this resource.
+
+
+        :return: The locks of this MediaWorkflow.
+        :rtype: list[oci.media_services.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this MediaWorkflow.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this MediaWorkflow.
+        :type: list[oci.media_services.models.ResourceLock]
+        """
+        self._locks = locks
 
     @property
     def freeform_tags(self):

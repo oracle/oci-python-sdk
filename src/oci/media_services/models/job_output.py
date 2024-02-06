@@ -48,6 +48,10 @@ class JobOutput(object):
     ASSET_TYPE_TEXT_ANALYSIS = "TEXT_ANALYSIS"
 
     #: A constant which can be used with the asset_type property of a JobOutput.
+    #: This constant has a value of "INPUT_FILE"
+    ASSET_TYPE_INPUT_FILE = "INPUT_FILE"
+
+    #: A constant which can be used with the asset_type property of a JobOutput.
     #: This constant has a value of "OTHER"
     ASSET_TYPE_OTHER = "OTHER"
 
@@ -58,7 +62,7 @@ class JobOutput(object):
 
         :param asset_type:
             The value to assign to the asset_type property of this JobOutput.
-            Allowed values for this property are: "AUDIO", "VIDEO", "PLAYLIST", "IMAGE", "CAPTION_FILE", "TRANSCRIPTION_JOB", "VISION_JOB", "TEXT_ANALYSIS", "OTHER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AUDIO", "VIDEO", "PLAYLIST", "IMAGE", "CAPTION_FILE", "TRANSCRIPTION_JOB", "VISION_JOB", "TEXT_ANALYSIS", "INPUT_FILE", "OTHER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type asset_type: str
 
@@ -107,7 +111,7 @@ class JobOutput(object):
         Gets the asset_type of this JobOutput.
         Type of job output.
 
-        Allowed values for this property are: "AUDIO", "VIDEO", "PLAYLIST", "IMAGE", "CAPTION_FILE", "TRANSCRIPTION_JOB", "VISION_JOB", "TEXT_ANALYSIS", "OTHER", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AUDIO", "VIDEO", "PLAYLIST", "IMAGE", "CAPTION_FILE", "TRANSCRIPTION_JOB", "VISION_JOB", "TEXT_ANALYSIS", "INPUT_FILE", "OTHER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -126,7 +130,7 @@ class JobOutput(object):
         :param asset_type: The asset_type of this JobOutput.
         :type: str
         """
-        allowed_values = ["AUDIO", "VIDEO", "PLAYLIST", "IMAGE", "CAPTION_FILE", "TRANSCRIPTION_JOB", "VISION_JOB", "TEXT_ANALYSIS", "OTHER"]
+        allowed_values = ["AUDIO", "VIDEO", "PLAYLIST", "IMAGE", "CAPTION_FILE", "TRANSCRIPTION_JOB", "VISION_JOB", "TEXT_ANALYSIS", "INPUT_FILE", "OTHER"]
         if not value_allowed_none_or_none_sentinel(asset_type, allowed_values):
             asset_type = 'UNKNOWN_ENUM_VALUE'
         self._asset_type = asset_type

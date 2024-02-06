@@ -66,6 +66,10 @@ class MediaAssetDistributionChannelAttachmentSummary(object):
             The value to assign to the media_workflow_job_id property of this MediaAssetDistributionChannelAttachmentSummary.
         :type media_workflow_job_id: str
 
+        :param locks:
+            The value to assign to the locks property of this MediaAssetDistributionChannelAttachmentSummary.
+        :type locks: list[oci.media_services.models.ResourceLock]
+
         """
         self.swagger_types = {
             'media_asset_id': 'str',
@@ -74,7 +78,8 @@ class MediaAssetDistributionChannelAttachmentSummary(object):
             'version': 'int',
             'lifecycle_state': 'str',
             'metadata_ref': 'str',
-            'media_workflow_job_id': 'str'
+            'media_workflow_job_id': 'str',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -84,7 +89,8 @@ class MediaAssetDistributionChannelAttachmentSummary(object):
             'version': 'version',
             'lifecycle_state': 'lifecycleState',
             'metadata_ref': 'metadataRef',
-            'media_workflow_job_id': 'mediaWorkflowJobId'
+            'media_workflow_job_id': 'mediaWorkflowJobId',
+            'locks': 'locks'
         }
 
         self._media_asset_id = None
@@ -94,6 +100,7 @@ class MediaAssetDistributionChannelAttachmentSummary(object):
         self._lifecycle_state = None
         self._metadata_ref = None
         self._media_workflow_job_id = None
+        self._locks = None
 
     @property
     def media_asset_id(self):
@@ -268,6 +275,30 @@ class MediaAssetDistributionChannelAttachmentSummary(object):
         :type: str
         """
         self._media_workflow_job_id = media_workflow_job_id
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this MediaAssetDistributionChannelAttachmentSummary.
+        Locks associated with this resource.
+
+
+        :return: The locks of this MediaAssetDistributionChannelAttachmentSummary.
+        :rtype: list[oci.media_services.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this MediaAssetDistributionChannelAttachmentSummary.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this MediaAssetDistributionChannelAttachmentSummary.
+        :type: list[oci.media_services.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

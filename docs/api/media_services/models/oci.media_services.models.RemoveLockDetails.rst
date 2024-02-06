@@ -1,9 +1,9 @@
-MediaWorkflowJobFactSummary
-===========================
+RemoveLockDetails
+=================
 
 .. currentmodule:: oci.media_services.models
 
-.. autoclass:: MediaWorkflowJobFactSummary
+.. autoclass:: RemoveLockDetails
     :show-inheritance:
     :special-members: __init__
     :members:

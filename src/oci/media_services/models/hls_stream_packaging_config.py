@@ -75,6 +75,10 @@ class HlsStreamPackagingConfig(StreamPackagingConfig):
             The value to assign to the system_tags property of this HlsStreamPackagingConfig.
         :type system_tags: dict(str, dict(str, object))
 
+        :param locks:
+            The value to assign to the locks property of this HlsStreamPackagingConfig.
+        :type locks: list[oci.media_services.models.ResourceLock]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -89,7 +93,8 @@ class HlsStreamPackagingConfig(StreamPackagingConfig):
             'lifecycle_state': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -105,7 +110,8 @@ class HlsStreamPackagingConfig(StreamPackagingConfig):
             'lifecycle_state': 'lifecycleState',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'locks': 'locks'
         }
 
         self._id = None
@@ -121,6 +127,7 @@ class HlsStreamPackagingConfig(StreamPackagingConfig):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._locks = None
         self._stream_packaging_format = 'HLS'
 
     def __repr__(self):
