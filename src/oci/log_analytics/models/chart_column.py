@@ -59,6 +59,10 @@ class ChartColumn(AbstractColumn):
             The value to assign to the is_evaluable property of this ChartColumn.
         :type is_evaluable: bool
 
+        :param is_hidden:
+            The value to assign to the is_hidden property of this ChartColumn.
+        :type is_hidden: bool
+
         :param value_type:
             The value to assign to the value_type property of this ChartColumn.
             Allowed values for this property are: "BOOLEAN", "STRING", "DOUBLE", "FLOAT", "LONG", "INTEGER", "TIMESTAMP", "FACET", "TABLE"
@@ -99,6 +103,7 @@ class ChartColumn(AbstractColumn):
             'is_case_sensitive': 'bool',
             'is_groupable': 'bool',
             'is_evaluable': 'bool',
+            'is_hidden': 'bool',
             'value_type': 'str',
             'original_display_name': 'str',
             'internal_name': 'str',
@@ -118,6 +123,7 @@ class ChartColumn(AbstractColumn):
             'is_case_sensitive': 'isCaseSensitive',
             'is_groupable': 'isGroupable',
             'is_evaluable': 'isEvaluable',
+            'is_hidden': 'isHidden',
             'value_type': 'valueType',
             'original_display_name': 'originalDisplayName',
             'internal_name': 'internalName',
@@ -136,6 +142,7 @@ class ChartColumn(AbstractColumn):
         self._is_case_sensitive = None
         self._is_groupable = None
         self._is_evaluable = None
+        self._is_hidden = None
         self._value_type = None
         self._original_display_name = None
         self._internal_name = None

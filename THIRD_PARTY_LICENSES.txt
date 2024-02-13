@@ -112,6 +112,12 @@ cffi
 * Source code: https://pypi.org/project/cffi/#files
 * Project home: https://cffi.readthedocs.io/en/latest
 
+sseclient
+* Copyright 2024 Maxime Petazzoni maxime.petazzoni@bulix.org
+* License: Apache License 2.0
+* Source code: https://github.com/mpetazzoni/sseclient
+* Project home: https://github.com/mpetazzoni/sseclient
+
 =============================== Licenses ===============================
 
 ------------------------------ MIT License -----------------------------

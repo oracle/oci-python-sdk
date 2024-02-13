@@ -64,6 +64,14 @@ class CreateLogAnalyticsEntityDetails(object):
             The value to assign to the defined_tags property of this CreateLogAnalyticsEntityDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param time_last_discovered:
+            The value to assign to the time_last_discovered property of this CreateLogAnalyticsEntityDetails.
+        :type time_last_discovered: datetime
+
+        :param metadata:
+            The value to assign to the metadata property of this CreateLogAnalyticsEntityDetails.
+        :type metadata: oci.log_analytics.models.LogAnalyticsMetadataDetails
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -76,7 +84,9 @@ class CreateLogAnalyticsEntityDetails(object):
             'source_id': 'str',
             'properties': 'dict(str, str)',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'time_last_discovered': 'datetime',
+            'metadata': 'LogAnalyticsMetadataDetails'
         }
 
         self.attribute_map = {
@@ -90,7 +100,9 @@ class CreateLogAnalyticsEntityDetails(object):
             'source_id': 'sourceId',
             'properties': 'properties',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'time_last_discovered': 'timeLastDiscovered',
+            'metadata': 'metadata'
         }
 
         self._name = None
@@ -104,6 +116,8 @@ class CreateLogAnalyticsEntityDetails(object):
         self._properties = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._time_last_discovered = None
+        self._metadata = None
 
     @property
     def name(self):
@@ -382,6 +396,50 @@ class CreateLogAnalyticsEntityDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def time_last_discovered(self):
+        """
+        Gets the time_last_discovered of this CreateLogAnalyticsEntityDetails.
+        The date and time the resource was last discovered, in the format defined by RFC3339.
+
+
+        :return: The time_last_discovered of this CreateLogAnalyticsEntityDetails.
+        :rtype: datetime
+        """
+        return self._time_last_discovered
+
+    @time_last_discovered.setter
+    def time_last_discovered(self, time_last_discovered):
+        """
+        Sets the time_last_discovered of this CreateLogAnalyticsEntityDetails.
+        The date and time the resource was last discovered, in the format defined by RFC3339.
+
+
+        :param time_last_discovered: The time_last_discovered of this CreateLogAnalyticsEntityDetails.
+        :type: datetime
+        """
+        self._time_last_discovered = time_last_discovered
+
+    @property
+    def metadata(self):
+        """
+        Gets the metadata of this CreateLogAnalyticsEntityDetails.
+
+        :return: The metadata of this CreateLogAnalyticsEntityDetails.
+        :rtype: oci.log_analytics.models.LogAnalyticsMetadataDetails
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """
+        Sets the metadata of this CreateLogAnalyticsEntityDetails.
+
+        :param metadata: The metadata of this CreateLogAnalyticsEntityDetails.
+        :type: oci.log_analytics.models.LogAnalyticsMetadataDetails
+        """
+        self._metadata = metadata
 
     def __repr__(self):
         return formatted_flat_dict(self)

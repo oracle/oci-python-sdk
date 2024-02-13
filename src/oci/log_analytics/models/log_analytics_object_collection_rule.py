@@ -43,6 +43,14 @@ class LogAnalyticsObjectCollectionRule(object):
     #: This constant has a value of "INACTIVE"
     LIFECYCLE_STATE_INACTIVE = "INACTIVE"
 
+    #: A constant which can be used with the log_type property of a LogAnalyticsObjectCollectionRule.
+    #: This constant has a value of "LOG"
+    LOG_TYPE_LOG = "LOG"
+
+    #: A constant which can be used with the log_type property of a LogAnalyticsObjectCollectionRule.
+    #: This constant has a value of "LOG_EVENTS"
+    LOG_TYPE_LOG_EVENTS = "LOG_EVENTS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new LogAnalyticsObjectCollectionRule object with values from keyword arguments.
@@ -150,6 +158,16 @@ class LogAnalyticsObjectCollectionRule(object):
             The value to assign to the object_name_filters property of this LogAnalyticsObjectCollectionRule.
         :type object_name_filters: list[str]
 
+        :param log_type:
+            The value to assign to the log_type property of this LogAnalyticsObjectCollectionRule.
+            Allowed values for this property are: "LOG", "LOG_EVENTS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type log_type: str
+
+        :param is_force_historic_collection:
+            The value to assign to the is_force_historic_collection property of this LogAnalyticsObjectCollectionRule.
+        :type is_force_historic_collection: bool
+
         :param defined_tags:
             The value to assign to the defined_tags property of this LogAnalyticsObjectCollectionRule.
         :type defined_tags: dict(str, dict(str, object))
@@ -184,6 +202,8 @@ class LogAnalyticsObjectCollectionRule(object):
             'time_updated': 'datetime',
             'is_enabled': 'bool',
             'object_name_filters': 'list[str]',
+            'log_type': 'str',
+            'is_force_historic_collection': 'bool',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
@@ -213,6 +233,8 @@ class LogAnalyticsObjectCollectionRule(object):
             'time_updated': 'timeUpdated',
             'is_enabled': 'isEnabled',
             'object_name_filters': 'objectNameFilters',
+            'log_type': 'logType',
+            'is_force_historic_collection': 'isForceHistoricCollection',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
@@ -241,6 +263,8 @@ class LogAnalyticsObjectCollectionRule(object):
         self._time_updated = None
         self._is_enabled = None
         self._object_name_filters = None
+        self._log_type = None
+        self._is_force_historic_collection = None
         self._defined_tags = None
         self._freeform_tags = None
 
@@ -883,6 +907,60 @@ class LogAnalyticsObjectCollectionRule(object):
         :type: list[str]
         """
         self._object_name_filters = object_name_filters
+
+    @property
+    def log_type(self):
+        """
+        Gets the log_type of this LogAnalyticsObjectCollectionRule.
+        Type of files/objects in this object collection rule.
+
+        Allowed values for this property are: "LOG", "LOG_EVENTS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The log_type of this LogAnalyticsObjectCollectionRule.
+        :rtype: str
+        """
+        return self._log_type
+
+    @log_type.setter
+    def log_type(self, log_type):
+        """
+        Sets the log_type of this LogAnalyticsObjectCollectionRule.
+        Type of files/objects in this object collection rule.
+
+
+        :param log_type: The log_type of this LogAnalyticsObjectCollectionRule.
+        :type: str
+        """
+        allowed_values = ["LOG", "LOG_EVENTS"]
+        if not value_allowed_none_or_none_sentinel(log_type, allowed_values):
+            log_type = 'UNKNOWN_ENUM_VALUE'
+        self._log_type = log_type
+
+    @property
+    def is_force_historic_collection(self):
+        """
+        Gets the is_force_historic_collection of this LogAnalyticsObjectCollectionRule.
+        Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+
+
+        :return: The is_force_historic_collection of this LogAnalyticsObjectCollectionRule.
+        :rtype: bool
+        """
+        return self._is_force_historic_collection
+
+    @is_force_historic_collection.setter
+    def is_force_historic_collection(self, is_force_historic_collection):
+        """
+        Sets the is_force_historic_collection of this LogAnalyticsObjectCollectionRule.
+        Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+
+
+        :param is_force_historic_collection: The is_force_historic_collection of this LogAnalyticsObjectCollectionRule.
+        :type: bool
+        """
+        self._is_force_historic_collection = is_force_historic_collection
 
     @property
     def defined_tags(self):

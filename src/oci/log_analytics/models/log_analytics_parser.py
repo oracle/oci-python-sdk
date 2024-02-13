@@ -174,6 +174,18 @@ class LogAnalyticsParser(object):
             The value to assign to the categories property of this LogAnalyticsParser.
         :type categories: list[oci.log_analytics.models.LogAnalyticsCategory]
 
+        :param is_position_aware:
+            The value to assign to the is_position_aware property of this LogAnalyticsParser.
+        :type is_position_aware: bool
+
+        :param dependent_sources:
+            The value to assign to the dependent_sources property of this LogAnalyticsParser.
+        :type dependent_sources: list[oci.log_analytics.models.DependentSource]
+
+        :param dependent_parsers:
+            The value to assign to the dependent_parsers property of this LogAnalyticsParser.
+        :type dependent_parsers: list[oci.log_analytics.models.DependentParser]
+
         """
         self.swagger_types = {
             'content': 'str',
@@ -208,7 +220,10 @@ class LogAnalyticsParser(object):
             'type': 'str',
             'is_user_deleted': 'bool',
             'is_namespace_aware': 'bool',
-            'categories': 'list[LogAnalyticsCategory]'
+            'categories': 'list[LogAnalyticsCategory]',
+            'is_position_aware': 'bool',
+            'dependent_sources': 'list[DependentSource]',
+            'dependent_parsers': 'list[DependentParser]'
         }
 
         self.attribute_map = {
@@ -244,7 +259,10 @@ class LogAnalyticsParser(object):
             'type': 'type',
             'is_user_deleted': 'isUserDeleted',
             'is_namespace_aware': 'isNamespaceAware',
-            'categories': 'categories'
+            'categories': 'categories',
+            'is_position_aware': 'isPositionAware',
+            'dependent_sources': 'dependentSources',
+            'dependent_parsers': 'dependentParsers'
         }
 
         self._content = None
@@ -280,6 +298,9 @@ class LogAnalyticsParser(object):
         self._is_user_deleted = None
         self._is_namespace_aware = None
         self._categories = None
+        self._is_position_aware = None
+        self._dependent_sources = None
+        self._dependent_parsers = None
 
     @property
     def content(self):
@@ -1078,6 +1099,78 @@ class LogAnalyticsParser(object):
         :type: list[oci.log_analytics.models.LogAnalyticsCategory]
         """
         self._categories = categories
+
+    @property
+    def is_position_aware(self):
+        """
+        Gets the is_position_aware of this LogAnalyticsParser.
+        A flag indicating whether the parser is positionally aware.
+
+
+        :return: The is_position_aware of this LogAnalyticsParser.
+        :rtype: bool
+        """
+        return self._is_position_aware
+
+    @is_position_aware.setter
+    def is_position_aware(self, is_position_aware):
+        """
+        Sets the is_position_aware of this LogAnalyticsParser.
+        A flag indicating whether the parser is positionally aware.
+
+
+        :param is_position_aware: The is_position_aware of this LogAnalyticsParser.
+        :type: bool
+        """
+        self._is_position_aware = is_position_aware
+
+    @property
+    def dependent_sources(self):
+        """
+        Gets the dependent_sources of this LogAnalyticsParser.
+        A list of sources that depend on the parser, either directly or indirectly.
+
+
+        :return: The dependent_sources of this LogAnalyticsParser.
+        :rtype: list[oci.log_analytics.models.DependentSource]
+        """
+        return self._dependent_sources
+
+    @dependent_sources.setter
+    def dependent_sources(self, dependent_sources):
+        """
+        Sets the dependent_sources of this LogAnalyticsParser.
+        A list of sources that depend on the parser, either directly or indirectly.
+
+
+        :param dependent_sources: The dependent_sources of this LogAnalyticsParser.
+        :type: list[oci.log_analytics.models.DependentSource]
+        """
+        self._dependent_sources = dependent_sources
+
+    @property
+    def dependent_parsers(self):
+        """
+        Gets the dependent_parsers of this LogAnalyticsParser.
+        A list of sub parsers used by this parser.
+
+
+        :return: The dependent_parsers of this LogAnalyticsParser.
+        :rtype: list[oci.log_analytics.models.DependentParser]
+        """
+        return self._dependent_parsers
+
+    @dependent_parsers.setter
+    def dependent_parsers(self, dependent_parsers):
+        """
+        Sets the dependent_parsers of this LogAnalyticsParser.
+        A list of sub parsers used by this parser.
+
+
+        :param dependent_parsers: The dependent_parsers of this LogAnalyticsParser.
+        :type: list[oci.log_analytics.models.DependentParser]
+        """
+        self._dependent_parsers = dependent_parsers
 
     def __repr__(self):
         return formatted_flat_dict(self)

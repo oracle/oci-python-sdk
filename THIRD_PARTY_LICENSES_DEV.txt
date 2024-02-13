@@ -186,7 +186,11 @@ urllib3
 * Source code: https://github.com/urllib3/urllib3
 * Project home: https://urllib3.readthedocs.io
 
-
+sseclient
+* Copyright 2024 Maxime Petazzoni maxime.petazzoni@bulix.org
+* License: Apache License 2.0
+* Source code: https://github.com/mpetazzoni/sseclient
+* Project home: https://github.com/mpetazzoni/sseclient
 
 =============================== Licenses ===============================
 

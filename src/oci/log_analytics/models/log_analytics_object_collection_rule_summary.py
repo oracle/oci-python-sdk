@@ -39,6 +39,14 @@ class LogAnalyticsObjectCollectionRuleSummary(object):
     #: This constant has a value of "INACTIVE"
     LIFECYCLE_STATE_INACTIVE = "INACTIVE"
 
+    #: A constant which can be used with the log_type property of a LogAnalyticsObjectCollectionRuleSummary.
+    #: This constant has a value of "LOG"
+    LOG_TYPE_LOG = "LOG"
+
+    #: A constant which can be used with the log_type property of a LogAnalyticsObjectCollectionRuleSummary.
+    #: This constant has a value of "LOG_EVENTS"
+    LOG_TYPE_LOG_EVENTS = "LOG_EVENTS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new LogAnalyticsObjectCollectionRuleSummary object with values from keyword arguments.
@@ -100,6 +108,12 @@ class LogAnalyticsObjectCollectionRuleSummary(object):
             The value to assign to the object_name_filters property of this LogAnalyticsObjectCollectionRuleSummary.
         :type object_name_filters: list[str]
 
+        :param log_type:
+            The value to assign to the log_type property of this LogAnalyticsObjectCollectionRuleSummary.
+            Allowed values for this property are: "LOG", "LOG_EVENTS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type log_type: str
+
         :param defined_tags:
             The value to assign to the defined_tags property of this LogAnalyticsObjectCollectionRuleSummary.
         :type defined_tags: dict(str, dict(str, object))
@@ -123,6 +137,7 @@ class LogAnalyticsObjectCollectionRuleSummary(object):
             'time_updated': 'datetime',
             'is_enabled': 'bool',
             'object_name_filters': 'list[str]',
+            'log_type': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
@@ -141,6 +156,7 @@ class LogAnalyticsObjectCollectionRuleSummary(object):
             'time_updated': 'timeUpdated',
             'is_enabled': 'isEnabled',
             'object_name_filters': 'objectNameFilters',
+            'log_type': 'logType',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
@@ -158,6 +174,7 @@ class LogAnalyticsObjectCollectionRuleSummary(object):
         self._time_updated = None
         self._is_enabled = None
         self._object_name_filters = None
+        self._log_type = None
         self._defined_tags = None
         self._freeform_tags = None
 
@@ -502,6 +519,36 @@ class LogAnalyticsObjectCollectionRuleSummary(object):
         :type: list[str]
         """
         self._object_name_filters = object_name_filters
+
+    @property
+    def log_type(self):
+        """
+        Gets the log_type of this LogAnalyticsObjectCollectionRuleSummary.
+        Type of files/objects in this object collection rule.
+
+        Allowed values for this property are: "LOG", "LOG_EVENTS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The log_type of this LogAnalyticsObjectCollectionRuleSummary.
+        :rtype: str
+        """
+        return self._log_type
+
+    @log_type.setter
+    def log_type(self, log_type):
+        """
+        Sets the log_type of this LogAnalyticsObjectCollectionRuleSummary.
+        Type of files/objects in this object collection rule.
+
+
+        :param log_type: The log_type of this LogAnalyticsObjectCollectionRuleSummary.
+        :type: str
+        """
+        allowed_values = ["LOG", "LOG_EVENTS"]
+        if not value_allowed_none_or_none_sentinel(log_type, allowed_values):
+            log_type = 'UNKNOWN_ENUM_VALUE'
+        self._log_type = log_type
 
     @property
     def defined_tags(self):

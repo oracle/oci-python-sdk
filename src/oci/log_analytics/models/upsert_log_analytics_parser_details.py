@@ -145,6 +145,10 @@ class UpsertLogAnalyticsParserDetails(object):
             The value to assign to the categories property of this UpsertLogAnalyticsParserDetails.
         :type categories: list[oci.log_analytics.models.LogAnalyticsCategory]
 
+        :param is_position_aware:
+            The value to assign to the is_position_aware property of this UpsertLogAnalyticsParserDetails.
+        :type is_position_aware: bool
+
         """
         self.swagger_types = {
             'content': 'str',
@@ -172,7 +176,8 @@ class UpsertLogAnalyticsParserDetails(object):
             'field_qualifier': 'str',
             'type': 'str',
             'is_namespace_aware': 'bool',
-            'categories': 'list[LogAnalyticsCategory]'
+            'categories': 'list[LogAnalyticsCategory]',
+            'is_position_aware': 'bool'
         }
 
         self.attribute_map = {
@@ -201,7 +206,8 @@ class UpsertLogAnalyticsParserDetails(object):
             'field_qualifier': 'fieldQualifier',
             'type': 'type',
             'is_namespace_aware': 'isNamespaceAware',
-            'categories': 'categories'
+            'categories': 'categories',
+            'is_position_aware': 'isPositionAware'
         }
 
         self._content = None
@@ -230,6 +236,7 @@ class UpsertLogAnalyticsParserDetails(object):
         self._type = None
         self._is_namespace_aware = None
         self._categories = None
+        self._is_position_aware = None
 
     @property
     def content(self):
@@ -865,6 +872,30 @@ class UpsertLogAnalyticsParserDetails(object):
         :type: list[oci.log_analytics.models.LogAnalyticsCategory]
         """
         self._categories = categories
+
+    @property
+    def is_position_aware(self):
+        """
+        Gets the is_position_aware of this UpsertLogAnalyticsParserDetails.
+        A flag indicating whether the parser is positionally aware.
+
+
+        :return: The is_position_aware of this UpsertLogAnalyticsParserDetails.
+        :rtype: bool
+        """
+        return self._is_position_aware
+
+    @is_position_aware.setter
+    def is_position_aware(self, is_position_aware):
+        """
+        Sets the is_position_aware of this UpsertLogAnalyticsParserDetails.
+        A flag indicating whether the parser is positionally aware.
+
+
+        :param is_position_aware: The is_position_aware of this UpsertLogAnalyticsParserDetails.
+        :type: bool
+        """
+        self._is_position_aware = is_position_aware
 
     def __repr__(self):
         return formatted_flat_dict(self)

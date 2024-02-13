@@ -21,7 +21,7 @@ import csv
 
 
 class ShowOCIOutput(object):
-    version = "23.12.20"
+    version = "24.02.06"
 
     ##########################################################################
     # spaces for align
@@ -1510,7 +1510,7 @@ class ShowOCIOutput(object):
         try:
             print(self.taba + "DBaaS   : " + dbs['name'] + " - " + dbs['version'] + " " + dbs['version_date'])
             print(self.tabs + "Created : " + dbs['time_created'][0:16])
-            print(self.tabs + "AD      : " + dbs['availability_domain'])
+            print(self.tabs + "AD      : " + dbs['availability_domain'] + ", " + dbs['fault_domains'])
 
             if 'cpu_core_count' in dbs:
                 print(self.tabs + "Cores   : " + str(dbs['cpu_core_count']))
@@ -1605,7 +1605,7 @@ class ShowOCIOutput(object):
 
                 # db nodes
                 for db_node in dbs['db_nodes']:
-                    print(self.tabs + db_node['desc'])
+                    print(self.tabs + "Node    : " + db_node['desc'] + ", Software Size: " + db_node['software_storage_size_in_gb'] + "GB")
                     if 'nsg_names' in db_node:
                         if db_node['nsg_names']:
                             print(self.tabs + "        : SecGrp : " + db_node['nsg_names'])
@@ -2107,7 +2107,7 @@ class ShowOCIOutput(object):
             for arr in errors:
                 is_warning = "Warning: " if arr['is_warning'] == 'True' else "Error:   "
                 compartment = ", Compartment " + arr['compartment'] if arr['compartment'] else ""
-                print(self.taba + is_warning + arr['class'] + ":" + arr['function'] + compartment + ", " + arr['error'][0:60])
+                print(self.taba + is_warning + arr['class'] + ":" + arr['function'] + ", " + arr['region'] + compartment + ", " + arr['error'][0:60])
             print("")
 
         except Exception as e:
@@ -2591,6 +2591,16 @@ class ShowOCIOutput(object):
                 for val in data_ai['data_integration']:
                     description = (" (" + val['description'] + ")") if val['description'] != "None" else ""
                     print(self.taba + val['display_name'] + description + ", Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
+                print("")
+
+            # GenAI
+            if 'genai' in data_ai:
+                self.print_header("Generative AI", 2)
+                for val in data_ai['genai']:
+                    description = (" (" + val['description'] + ")") if val['description'] != "None" else ""
+                    print(self.taba + val['display_name'] + description + ", Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
+                    print(self.tabs + "   Type    : " + val['type'] + ", Unit: " + val['unit_shape'] + ", Count: " + val['unit_count'])
+                    print(self.tabs + "   Capacity: " + val['capacity_type'] + ", Total: " + val['capacity_total_endpoint_capacity'] + ", Used: " + val['capacity_used_endpoint_capacity'])
                 print("")
 
         except Exception as e:
@@ -3320,6 +3330,12 @@ class ShowOCISummary(object):
                 array = [x for x in data_ai['data_integration'] if x['lifecycle_state'] != 'ACTIVE']
                 self.__summary_core_size(array, add_info="Stopped ")
 
+            if 'gen_ai' in data_ai:
+                array = [x for x in data_ai['gen_ai'] if x['lifecycle_state'] == 'ACTIVE']
+                self.__summary_core_size(array)
+                array = [x for x in data_ai['gen_ai'] if x['lifecycle_state'] != 'ACTIVE']
+                self.__summary_core_size(array, add_info="Stopped ")
+
         except Exception as e:
             self.__print_error("__summary_data_ai_main", e)
 
@@ -3564,10 +3580,11 @@ class ShowOCISummary(object):
                     if 'cpu_core_count' in dbs:
                         if 'db_nodes' in dbs:
                             for dbnode in dbs['db_nodes']:
-                                if dbnode['lifecycle_state'] == 'STOPPED':
-                                    self.summary_global_list.append({'type': 'Total Stopped OCPUs - VM/BM Database', 'size': float(dbs['cpu_core_count'])})
-                                else:
-                                    self.summary_global_list.append({'type': 'Total OCPUs - VM/BM Database', 'size': float(dbs['cpu_core_count'])})
+                                if 'cpu_core_count' in dbnode:
+                                    if dbnode['lifecycle_state'] == 'STOPPED':
+                                        self.summary_global_list.append({'type': 'Total Stopped OCPUs - VM/BM Database', 'size': float(dbnode['cpu_core_count'])})
+                                    else:
+                                        self.summary_global_list.append({'type': 'Total OCPUs - VM/BM Database', 'size': float(dbnode['cpu_core_count'])})
 
                 # if Exa add Exadata CPUs
                 else:
@@ -5220,6 +5237,7 @@ class ShowOCICSV(object):
                     'class': err['class'],
                     'function': err['function'],
                     'compartment': err['compartment'],
+                    'region': err['region'],
                     'is_warning': err['is_warning'],
                     'error': err['error']
                 }
@@ -5816,6 +5834,32 @@ class ShowOCICSV(object):
     ##########################################################################
     # csv database db systems
     ##########################################################################
+    def __csv_add_numbers_in_array(self, array, field=""):
+        try:
+            if not array:
+                return ""
+
+            total = 0
+
+            # if specific field in the array
+            if field:
+                for ar in array:
+                    if field:
+                        if field in ar:
+                            if str(ar[field]).replace(".", "").isnumeric():
+                                total += int(ar[field])
+                    else:
+                        if str(ar).replace(".", "").isnumeric():
+                            total += int(ar)
+
+            return str(total)
+
+        except Exception as e:
+            self.__print_error("__csv_add_numbers_in_array", e)
+
+    ##########################################################################
+    # csv database db systems
+    ##########################################################################
     def __csv_database_db_system(self, region_name, list_db_systems):
 
         try:
@@ -5824,6 +5868,7 @@ class ShowOCICSV(object):
                 # Db System CSV
                 dbsd = {'region_name': region_name,
                         'availability_domain': dbs['availability_domain'],
+                        'fault_domains': dbs['fault_domains'],
                         'compartment_name': dbs['compartment_name'],
                         'compartment_path': dbs['compartment_path'],
                         'status': dbs['lifecycle_state'],
@@ -5857,6 +5902,20 @@ class ShowOCICSV(object):
                         'maintenance_window': dbs['maintenance_window']['display'] if dbs['maintenance_window'] else "",
                         'last_maintenance_run': dbs['last_maintenance_run']['maintenance_display'] if dbs['last_maintenance_run'] else "",
                         'next_maintenance_run': dbs['next_maintenance_run']['maintenance_display'] if dbs['next_maintenance_run'] else "",
+                        'nsg_ids_names': dbs['nsg_ids_names'],
+                        'nsg_ids': str(', '.join(x for x in dbs['nsg_ids'])) if dbs['nsg_ids'] else "",
+                        'backup_network_nsg_ids_names': dbs['backup_network_nsg_ids_names'],
+                        'backup_network_nsg_ids': str(', '.join(x for x in dbs['backup_network_nsg_ids'])) if dbs['backup_network_nsg_ids'] else "",
+                        'memory_size_in_gbs': dbs['memory_size_in_gbs'],
+                        'storage_volume_performance_mode': dbs['storage_volume_performance_mode'],
+                        'time_zone': dbs['time_zone'],
+                        'kms_key_id': dbs['kms_key_id'],
+                        'os_version': dbs['os_version'],
+                        'disk_redundancy': dbs['disk_redundancy'],
+                        'point_in_time_data_disk_clone_timestamp': dbs['point_in_time_data_disk_clone_timestamp'],
+                        'data_storage_size_in_gbs': dbs['data_storage_size_in_gbs'],
+                        'reco_storage_size_in_gb': dbs['reco_storage_size_in_gb'],
+                        'db_nodes_software_size_gb': str(self.__csv_add_numbers_in_array(dbs['db_nodes'], 'software_storage_size_in_gb')),
                         'id': dbs['id'],
                         'infra_id': ''
                         }

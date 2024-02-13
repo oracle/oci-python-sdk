@@ -78,6 +78,14 @@ class LogAnalyticsEntitySummary(object):
             The value to assign to the time_updated property of this LogAnalyticsEntitySummary.
         :type time_updated: datetime
 
+        :param time_last_discovered:
+            The value to assign to the time_last_discovered property of this LogAnalyticsEntitySummary.
+        :type time_last_discovered: datetime
+
+        :param metadata:
+            The value to assign to the metadata property of this LogAnalyticsEntitySummary.
+        :type metadata: oci.log_analytics.models.LogAnalyticsMetadataCollection
+
         :param are_logs_collected:
             The value to assign to the are_logs_collected property of this LogAnalyticsEntitySummary.
         :type are_logs_collected: bool
@@ -112,6 +120,8 @@ class LogAnalyticsEntitySummary(object):
             'timezone_region': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'time_last_discovered': 'datetime',
+            'metadata': 'LogAnalyticsMetadataCollection',
             'are_logs_collected': 'bool',
             'source_id': 'str',
             'creation_source': 'CreationSource',
@@ -132,6 +142,8 @@ class LogAnalyticsEntitySummary(object):
             'timezone_region': 'timezoneRegion',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'time_last_discovered': 'timeLastDiscovered',
+            'metadata': 'metadata',
             'are_logs_collected': 'areLogsCollected',
             'source_id': 'sourceId',
             'creation_source': 'creationSource',
@@ -151,6 +163,8 @@ class LogAnalyticsEntitySummary(object):
         self._timezone_region = None
         self._time_created = None
         self._time_updated = None
+        self._time_last_discovered = None
+        self._metadata = None
         self._are_logs_collected = None
         self._source_id = None
         self._creation_source = None
@@ -458,6 +472,50 @@ class LogAnalyticsEntitySummary(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def time_last_discovered(self):
+        """
+        Gets the time_last_discovered of this LogAnalyticsEntitySummary.
+        The date and time the resource was last discovered, in the format defined by RFC3339.
+
+
+        :return: The time_last_discovered of this LogAnalyticsEntitySummary.
+        :rtype: datetime
+        """
+        return self._time_last_discovered
+
+    @time_last_discovered.setter
+    def time_last_discovered(self, time_last_discovered):
+        """
+        Sets the time_last_discovered of this LogAnalyticsEntitySummary.
+        The date and time the resource was last discovered, in the format defined by RFC3339.
+
+
+        :param time_last_discovered: The time_last_discovered of this LogAnalyticsEntitySummary.
+        :type: datetime
+        """
+        self._time_last_discovered = time_last_discovered
+
+    @property
+    def metadata(self):
+        """
+        Gets the metadata of this LogAnalyticsEntitySummary.
+
+        :return: The metadata of this LogAnalyticsEntitySummary.
+        :rtype: oci.log_analytics.models.LogAnalyticsMetadataCollection
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """
+        Sets the metadata of this LogAnalyticsEntitySummary.
+
+        :param metadata: The metadata of this LogAnalyticsEntitySummary.
+        :type: oci.log_analytics.models.LogAnalyticsMetadataCollection
+        """
+        self._metadata = metadata
 
     @property
     def are_logs_collected(self):

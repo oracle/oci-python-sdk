@@ -66,6 +66,14 @@ class OverlappingRecallSummary(object):
             The value to assign to the created_by property of this OverlappingRecallSummary.
         :type created_by: str
 
+        :param collection_id:
+            The value to assign to the collection_id property of this OverlappingRecallSummary.
+        :type collection_id: int
+
+        :param recall_id:
+            The value to assign to the recall_id property of this OverlappingRecallSummary.
+        :type recall_id: int
+
         """
         self.swagger_types = {
             'time_data_started': 'datetime',
@@ -75,7 +83,9 @@ class OverlappingRecallSummary(object):
             'purpose': 'str',
             'query_string': 'str',
             'log_sets': 'str',
-            'created_by': 'str'
+            'created_by': 'str',
+            'collection_id': 'int',
+            'recall_id': 'int'
         }
 
         self.attribute_map = {
@@ -86,7 +96,9 @@ class OverlappingRecallSummary(object):
             'purpose': 'purpose',
             'query_string': 'queryString',
             'log_sets': 'logSets',
-            'created_by': 'createdBy'
+            'created_by': 'createdBy',
+            'collection_id': 'collectionId',
+            'recall_id': 'recallId'
         }
 
         self._time_data_started = None
@@ -97,6 +109,8 @@ class OverlappingRecallSummary(object):
         self._query_string = None
         self._log_sets = None
         self._created_by = None
+        self._collection_id = None
+        self._recall_id = None
 
     @property
     def time_data_started(self):
@@ -295,6 +309,54 @@ class OverlappingRecallSummary(object):
         :type: str
         """
         self._created_by = created_by
+
+    @property
+    def collection_id(self):
+        """
+        **[Required]** Gets the collection_id of this OverlappingRecallSummary.
+        This is the id of the associated recalled data collection
+
+
+        :return: The collection_id of this OverlappingRecallSummary.
+        :rtype: int
+        """
+        return self._collection_id
+
+    @collection_id.setter
+    def collection_id(self, collection_id):
+        """
+        Sets the collection_id of this OverlappingRecallSummary.
+        This is the id of the associated recalled data collection
+
+
+        :param collection_id: The collection_id of this OverlappingRecallSummary.
+        :type: int
+        """
+        self._collection_id = collection_id
+
+    @property
+    def recall_id(self):
+        """
+        **[Required]** Gets the recall_id of this OverlappingRecallSummary.
+        This is the id for the recall request
+
+
+        :return: The recall_id of this OverlappingRecallSummary.
+        :rtype: int
+        """
+        return self._recall_id
+
+    @recall_id.setter
+    def recall_id(self, recall_id):
+        """
+        Sets the recall_id of this OverlappingRecallSummary.
+        This is the id for the recall request
+
+
+        :param recall_id: The recall_id of this OverlappingRecallSummary.
+        :type: int
+        """
+        self._recall_id = recall_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

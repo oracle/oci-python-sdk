@@ -20,7 +20,7 @@ import sys
 
 
 class ShowOCIData(object):
-    version = "23.12.20"
+    version = "24.02.06"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -1513,7 +1513,7 @@ class ShowOCIData(object):
                     'sum_size_gb': bv['size_in_gbs'],
                     'size': bv['size_in_gbs'],
                     'desc': (str(bv['size_in_gbs']) + "GB - " + str(bv['display_name']) + " (" + bv['vpus_per_gb'] + " vpus) " + bv['backup_policy'] + volume_group + comp_text + encrypted),
-                    'backup_policy': "None" if bv['backup_policy'] == "" else bv['backup_policy'],
+                    'backup_policy': bv['backup_policy'],
                     'vpus_per_gb': bv['vpus_per_gb'],
                     'volume_group_name': bv['volume_group_name'],
                     'compartment_name': bv['compartment_name'],
@@ -2744,60 +2744,73 @@ class ShowOCIData(object):
             list_db_systems = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_DBSYSTEMS, 'region_name', region_name, 'compartment_id', compartment['id'])
 
             for dbs in list_db_systems:
-                value = {'id': dbs['id'],
-                         'name': dbs['display_name'] + " - " + dbs['shape'] + " - " + dbs['lifecycle_state'],
-                         'shape': dbs['shape'],
-                         'shape_ocpu': dbs['shape_ocpu'],
-                         'shape_memory_gb': dbs['shape_memory_gb'],
-                         'shape_storage_tb': dbs['shape_storage_tb'],
-                         'display_name': dbs['display_name'],
-                         'lifecycle_state': dbs['lifecycle_state'],
-                         'sum_info': 'Database ' + dbs['database_edition_short'] + " - " + dbs['shape'] + " - " + dbs['license_model'],
-                         'sum_info_storage': 'Database - Storage (GB)',
-                         'sum_size_gb': dbs['data_storage_size_in_gbs'],
-                         'database_edition': dbs['database_edition'],
-                         'database_edition_short': dbs['database_edition_short'],
-                         'license_model': dbs['license_model'],
-                         'database_version': dbs['version'],
-                         'availability_domain': dbs['availability_domain'],
-                         'cpu_core_count': dbs['cpu_core_count'],
-                         'node_count': dbs['node_count'],
-                         'version': (dbs['version'] + " - ") if dbs['version'] != "None" else "" + ((dbs['database_edition'] + " - ") if dbs['database_edition'] != "None" else "") + dbs['license_model'],
-                         'version_only': dbs['version'],
-                         'version_date': dbs['version_date'],
-                         'host': dbs['hostname'],
-                         'domain': dbs['domain'],
-                         'data_subnet': dbs['data_subnet'],
-                         'data_subnet_id': dbs['data_subnet_id'],
-                         'backup_subnet': dbs['backup_subnet'],
-                         'backup_subnet_id': dbs['backup_subnet_id'],
-                         'scan_dns': dbs['scan_dns_record_id'],
-                         'scan_ips': dbs['scan_ips'],
-                         'data_storage_size_in_gbs': dbs['data_storage_size_in_gbs'],
-                         'reco_storage_size_in_gb': dbs['reco_storage_size_in_gb'],
-                         'sparse_diskgroup': dbs['sparse_diskgroup'],
-                         'storage_management': dbs['storage_management'],
-                         'vip_ips': dbs['vip_ips'],
-                         'zone_id': dbs['zone_id'],
-                         'scan_dns_name': dbs['scan_dns_name'],
-                         'compartment_name': dbs['compartment_name'],
-                         'compartment_path': dbs['compartment_path'],
-                         'compartment_id': dbs['compartment_id'],
-                         'cluster_name': dbs['cluster_name'],
-                         'time_created': dbs['time_created'],
-                         'defined_tags': dbs['defined_tags'],
-                         'freeform_tags': dbs['freeform_tags'],
-                         'listener_port': dbs['listener_port'],
-                         'last_maintenance_run': dbs['last_maintenance_run'],
-                         'next_maintenance_run': dbs['next_maintenance_run'],
-                         'maintenance_window': dbs['maintenance_window'],
-                         'patches': self.__get_database_db_patches(dbs['patches']),
-                         'db_homes': self.__get_database_db_homes(dbs['db_homes']),
-                         'db_nodes': self.__get_database_db_nodes(dbs['db_nodes'])
-                         }
+                value = {
+                    'id': dbs['id'],
+                    'name': dbs['display_name'] + " - " + dbs['shape'] + " - " + dbs['lifecycle_state'],
+                    'shape': dbs['shape'],
+                    'shape_ocpu': dbs['shape_ocpu'],
+                    'shape_memory_gb': dbs['shape_memory_gb'],
+                    'shape_storage_tb': dbs['shape_storage_tb'],
+                    'display_name': dbs['display_name'],
+                    'lifecycle_state': dbs['lifecycle_state'],
+                    'sum_info': 'Database ' + dbs['database_edition_short'] + " - " + dbs['shape'] + " - " + dbs['license_model'],
+                    'sum_info_storage': 'Database - Storage (GB)',
+                    'sum_size_gb': dbs['data_storage_size_in_gbs'],
+                    'database_edition': dbs['database_edition'],
+                    'database_edition_short': dbs['database_edition_short'],
+                    'license_model': dbs['license_model'],
+                    'database_version': dbs['version'],
+                    'availability_domain': dbs['availability_domain'],
+                    'cpu_core_count': dbs['cpu_core_count'],
+                    'node_count': dbs['node_count'],
+                    'version': (dbs['version'] + " - ") if dbs['version'] != "None" else "" + ((dbs['database_edition'] + " - ") if dbs['database_edition'] != "None" else "") + dbs['license_model'],
+                    'version_only': dbs['version'],
+                    'version_date': dbs['version_date'],
+                    'host': dbs['hostname'],
+                    'domain': dbs['domain'],
+                    'data_subnet': dbs['data_subnet'],
+                    'data_subnet_id': dbs['data_subnet_id'],
+                    'backup_subnet': dbs['backup_subnet'],
+                    'backup_subnet_id': dbs['backup_subnet_id'],
+                    'scan_dns': dbs['scan_dns_record_id'],
+                    'scan_ips': dbs['scan_ips'],
+                    'data_storage_size_in_gbs': dbs['data_storage_size_in_gbs'],
+                    'reco_storage_size_in_gb': dbs['reco_storage_size_in_gb'],
+                    'sparse_diskgroup': dbs['sparse_diskgroup'],
+                    'storage_management': dbs['storage_management'],
+                    'vip_ips': dbs['vip_ips'],
+                    'zone_id': dbs['zone_id'],
+                    'scan_dns_name': dbs['scan_dns_name'],
+                    'compartment_name': dbs['compartment_name'],
+                    'compartment_path': dbs['compartment_path'],
+                    'compartment_id': dbs['compartment_id'],
+                    'cluster_name': dbs['cluster_name'],
+                    'time_created': dbs['time_created'],
+                    'defined_tags': dbs['defined_tags'],
+                    'freeform_tags': dbs['freeform_tags'],
+                    'listener_port': dbs['listener_port'],
+                    'last_maintenance_run': dbs['last_maintenance_run'],
+                    'next_maintenance_run': dbs['next_maintenance_run'],
+                    'maintenance_window': dbs['maintenance_window'],
+                    'nsg_ids': dbs['nsg_ids'],
+                    'nsg_ids_names': dbs['nsg_ids_names'],
+                    'backup_network_nsg_ids': dbs['backup_network_nsg_ids'],
+                    'backup_network_nsg_ids_names': dbs['backup_network_nsg_ids_names'],
+                    'fault_domains': dbs['fault_domains'],
+                    'memory_size_in_gbs': dbs['memory_size_in_gbs'],
+                    'storage_volume_performance_mode': dbs['storage_volume_performance_mode'],
+                    'time_zone': dbs['time_zone'],
+                    'kms_key_id': dbs['kms_key_id'],
+                    'os_version': dbs['os_version'],
+                    'disk_redundancy': dbs['disk_redundancy'],
+                    'point_in_time_data_disk_clone_timestamp': dbs['point_in_time_data_disk_clone_timestamp'],
+                    'patches': self.__get_database_db_patches(dbs['patches']),
+                    'db_homes': self.__get_database_db_homes(dbs['db_homes']),
+                    'db_nodes': self.__get_database_db_nodes(dbs['db_nodes'])
+                }
 
                 if dbs['data_storage_size_in_gbs']:
-                    value['data'] = str(dbs['data_storage_size_in_gbs']) + "GB - " + str(dbs['data_storage_percentage']) + "%" + (" - " + dbs['storage_management'] if dbs['storage_management'] else "")
+                    value['data'] = str(dbs['data_storage_size_in_gbs']) + "GB - " + str(dbs['data_storage_percentage']) + "%" + (" - " + dbs['storage_management'] if dbs['storage_management'] else "") + (" - Reco: " + dbs['reco_storage_size_in_gb'] + "GB" if dbs['reco_storage_size_in_gb'] else "")
                 else:
                     value['data'] = str(dbs['data_storage_percentage']) + "%" + (" - " + dbs['storage_management'] if dbs['storage_management'] else "")
 
@@ -4416,6 +4429,11 @@ class ShowOCIData(object):
             di = self.service.search_multi_items(self.service.C_DATA_AI, self.service.C_DATA_AI_DI, 'region_name', region_name, 'compartment_id', compartment['id'])
             if di:
                 data_ai['data_integration'] = di
+
+            # Gen AI
+            di = self.service.search_multi_items(self.service.C_DATA_AI, self.service.C_DATA_AI_GENAI, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if di:
+                data_ai['genai'] = di
 
             return data_ai
 

@@ -61,6 +61,10 @@ class RecallArchivedDataDetails(object):
             The value to assign to the is_recall_new_data_only property of this RecallArchivedDataDetails.
         :type is_recall_new_data_only: bool
 
+        :param is_use_recommended_data_set:
+            The value to assign to the is_use_recommended_data_set property of this RecallArchivedDataDetails.
+        :type is_use_recommended_data_set: bool
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -70,7 +74,8 @@ class RecallArchivedDataDetails(object):
             'log_sets': 'str',
             'query': 'str',
             'purpose': 'str',
-            'is_recall_new_data_only': 'bool'
+            'is_recall_new_data_only': 'bool',
+            'is_use_recommended_data_set': 'bool'
         }
 
         self.attribute_map = {
@@ -81,7 +86,8 @@ class RecallArchivedDataDetails(object):
             'log_sets': 'logSets',
             'query': 'query',
             'purpose': 'purpose',
-            'is_recall_new_data_only': 'isRecallNewDataOnly'
+            'is_recall_new_data_only': 'isRecallNewDataOnly',
+            'is_use_recommended_data_set': 'isUseRecommendedDataSet'
         }
 
         self._compartment_id = None
@@ -92,6 +98,7 @@ class RecallArchivedDataDetails(object):
         self._query = None
         self._purpose = None
         self._is_recall_new_data_only = None
+        self._is_use_recommended_data_set = None
 
     @property
     def compartment_id(self):
@@ -291,6 +298,30 @@ class RecallArchivedDataDetails(object):
         :type: bool
         """
         self._is_recall_new_data_only = is_recall_new_data_only
+
+    @property
+    def is_use_recommended_data_set(self):
+        """
+        Gets the is_use_recommended_data_set of this RecallArchivedDataDetails.
+        This indicates if user checked system recommended time range
+
+
+        :return: The is_use_recommended_data_set of this RecallArchivedDataDetails.
+        :rtype: bool
+        """
+        return self._is_use_recommended_data_set
+
+    @is_use_recommended_data_set.setter
+    def is_use_recommended_data_set(self, is_use_recommended_data_set):
+        """
+        Sets the is_use_recommended_data_set of this RecallArchivedDataDetails.
+        This indicates if user checked system recommended time range
+
+
+        :param is_use_recommended_data_set: The is_use_recommended_data_set of this RecallArchivedDataDetails.
+        :type: bool
+        """
+        self._is_use_recommended_data_set = is_use_recommended_data_set
 
     def __repr__(self):
         return formatted_flat_dict(self)

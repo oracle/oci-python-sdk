@@ -9,3 +9,4 @@ from . import idna  # noqa: F401
 from . import six  # noqa: F401
 from . import urllib3  # noqa: F401
 from . import requests  # noqa: F401
+from . import sseclient  # noqa: F401

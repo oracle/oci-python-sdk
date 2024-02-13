@@ -62,6 +62,7 @@ from .create_log_analytics_log_group_details import CreateLogAnalyticsLogGroupDe
 from .create_log_analytics_object_collection_rule_details import CreateLogAnalyticsObjectCollectionRuleDetails
 from .create_scheduled_task_details import CreateScheduledTaskDetails
 from .create_standard_task_details import CreateStandardTaskDetails
+from .create_table_command_descriptor import CreateTableCommandDescriptor
 from .create_view_command_descriptor import CreateViewCommandDescriptor
 from .creation_source import CreationSource
 from .credential_endpoint import CredentialEndpoint
@@ -72,6 +73,9 @@ from .delete_log_analytics_association import DeleteLogAnalyticsAssociation
 from .delete_log_analytics_association_details import DeleteLogAnalyticsAssociationDetails
 from .delta_command_descriptor import DeltaCommandDescriptor
 from .demo_mode_command_descriptor import DemoModeCommandDescriptor
+from .dependency import Dependency
+from .dependent_parser import DependentParser
+from .dependent_source import DependentSource
 from .disable_auto_association_detail import DisableAutoAssociationDetail
 from .disable_auto_association_details import DisableAutoAssociationDetails
 from .distinct_command_descriptor import DistinctCommandDescriptor
@@ -200,6 +204,10 @@ from .log_analytics_meta_function_argument import LogAnalyticsMetaFunctionArgume
 from .log_analytics_meta_function_collection import LogAnalyticsMetaFunctionCollection
 from .log_analytics_meta_source_type import LogAnalyticsMetaSourceType
 from .log_analytics_meta_source_type_collection import LogAnalyticsMetaSourceTypeCollection
+from .log_analytics_metadata import LogAnalyticsMetadata
+from .log_analytics_metadata_collection import LogAnalyticsMetadataCollection
+from .log_analytics_metadata_details import LogAnalyticsMetadataDetails
+from .log_analytics_metadata_summary import LogAnalyticsMetadataSummary
 from .log_analytics_metric import LogAnalyticsMetric
 from .log_analytics_object_collection_rule import LogAnalyticsObjectCollectionRule
 from .log_analytics_object_collection_rule_collection import LogAnalyticsObjectCollectionRuleCollection
@@ -305,6 +313,7 @@ from .scheduler_resource import SchedulerResource
 from .scope_filter import ScopeFilter
 from .search_command_descriptor import SearchCommandDescriptor
 from .search_lookup_command_descriptor import SearchLookupCommandDescriptor
+from .sequence_command_descriptor import SequenceCommandDescriptor
 from .sort_command_descriptor import SortCommandDescriptor
 from .sort_field import SortField
 from .source_mapping_response import SourceMappingResponse
@@ -441,6 +450,7 @@ log_analytics_type_mapping = {
     "CreateLogAnalyticsObjectCollectionRuleDetails": CreateLogAnalyticsObjectCollectionRuleDetails,
     "CreateScheduledTaskDetails": CreateScheduledTaskDetails,
     "CreateStandardTaskDetails": CreateStandardTaskDetails,
+    "CreateTableCommandDescriptor": CreateTableCommandDescriptor,
     "CreateViewCommandDescriptor": CreateViewCommandDescriptor,
     "CreationSource": CreationSource,
     "CredentialEndpoint": CredentialEndpoint,
@@ -451,6 +461,9 @@ log_analytics_type_mapping = {
     "DeleteLogAnalyticsAssociationDetails": DeleteLogAnalyticsAssociationDetails,
     "DeltaCommandDescriptor": DeltaCommandDescriptor,
     "DemoModeCommandDescriptor": DemoModeCommandDescriptor,
+    "Dependency": Dependency,
+    "DependentParser": DependentParser,
+    "DependentSource": DependentSource,
     "DisableAutoAssociationDetail": DisableAutoAssociationDetail,
     "DisableAutoAssociationDetails": DisableAutoAssociationDetails,
     "DistinctCommandDescriptor": DistinctCommandDescriptor,
@@ -579,6 +592,10 @@ log_analytics_type_mapping = {
     "LogAnalyticsMetaFunctionCollection": LogAnalyticsMetaFunctionCollection,
     "LogAnalyticsMetaSourceType": LogAnalyticsMetaSourceType,
     "LogAnalyticsMetaSourceTypeCollection": LogAnalyticsMetaSourceTypeCollection,
+    "LogAnalyticsMetadata": LogAnalyticsMetadata,
+    "LogAnalyticsMetadataCollection": LogAnalyticsMetadataCollection,
+    "LogAnalyticsMetadataDetails": LogAnalyticsMetadataDetails,
+    "LogAnalyticsMetadataSummary": LogAnalyticsMetadataSummary,
     "LogAnalyticsMetric": LogAnalyticsMetric,
     "LogAnalyticsObjectCollectionRule": LogAnalyticsObjectCollectionRule,
     "LogAnalyticsObjectCollectionRuleCollection": LogAnalyticsObjectCollectionRuleCollection,
@@ -684,6 +701,7 @@ log_analytics_type_mapping = {
     "ScopeFilter": ScopeFilter,
     "SearchCommandDescriptor": SearchCommandDescriptor,
     "SearchLookupCommandDescriptor": SearchLookupCommandDescriptor,
+    "SequenceCommandDescriptor": SequenceCommandDescriptor,
     "SortCommandDescriptor": SortCommandDescriptor,
     "SortField": SortField,
     "SourceMappingResponse": SourceMappingResponse,

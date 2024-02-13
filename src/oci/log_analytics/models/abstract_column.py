@@ -158,6 +158,10 @@ class AbstractColumn(object):
             The value to assign to the is_evaluable property of this AbstractColumn.
         :type is_evaluable: bool
 
+        :param is_hidden:
+            The value to assign to the is_hidden property of this AbstractColumn.
+        :type is_hidden: bool
+
         :param value_type:
             The value to assign to the value_type property of this AbstractColumn.
             Allowed values for this property are: "BOOLEAN", "STRING", "DOUBLE", "FLOAT", "LONG", "INTEGER", "TIMESTAMP", "FACET", "TABLE", 'UNKNOWN_ENUM_VALUE'.
@@ -183,6 +187,7 @@ class AbstractColumn(object):
             'is_case_sensitive': 'bool',
             'is_groupable': 'bool',
             'is_evaluable': 'bool',
+            'is_hidden': 'bool',
             'value_type': 'str',
             'original_display_name': 'str',
             'internal_name': 'str'
@@ -198,6 +203,7 @@ class AbstractColumn(object):
             'is_case_sensitive': 'isCaseSensitive',
             'is_groupable': 'isGroupable',
             'is_evaluable': 'isEvaluable',
+            'is_hidden': 'isHidden',
             'value_type': 'valueType',
             'original_display_name': 'originalDisplayName',
             'internal_name': 'internalName'
@@ -212,6 +218,7 @@ class AbstractColumn(object):
         self._is_case_sensitive = None
         self._is_groupable = None
         self._is_evaluable = None
+        self._is_hidden = None
         self._value_type = None
         self._original_display_name = None
         self._internal_name = None
@@ -486,6 +493,30 @@ class AbstractColumn(object):
         :type: bool
         """
         self._is_evaluable = is_evaluable
+
+    @property
+    def is_hidden(self):
+        """
+        Gets the is_hidden of this AbstractColumn.
+        Identifies if this column should be hidden by default but can be displayed in the UI on demand.
+
+
+        :return: The is_hidden of this AbstractColumn.
+        :rtype: bool
+        """
+        return self._is_hidden
+
+    @is_hidden.setter
+    def is_hidden(self, is_hidden):
+        """
+        Sets the is_hidden of this AbstractColumn.
+        Identifies if this column should be hidden by default but can be displayed in the UI on demand.
+
+
+        :param is_hidden: The is_hidden of this AbstractColumn.
+        :type: bool
+        """
+        self._is_hidden = is_hidden
 
     @property
     def value_type(self):

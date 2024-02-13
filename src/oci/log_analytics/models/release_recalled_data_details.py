@@ -45,25 +45,32 @@ class ReleaseRecalledDataDetails(object):
             Allowed values for this property are: "LOG", "LOOKUP"
         :type data_type: str
 
+        :param collection_id:
+            The value to assign to the collection_id property of this ReleaseRecalledDataDetails.
+        :type collection_id: int
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
             'time_data_ended': 'datetime',
             'time_data_started': 'datetime',
-            'data_type': 'str'
+            'data_type': 'str',
+            'collection_id': 'int'
         }
 
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'time_data_ended': 'timeDataEnded',
             'time_data_started': 'timeDataStarted',
-            'data_type': 'dataType'
+            'data_type': 'dataType',
+            'collection_id': 'collectionId'
         }
 
         self._compartment_id = None
         self._time_data_ended = None
         self._time_data_started = None
         self._data_type = None
+        self._collection_id = None
 
     @property
     def compartment_id(self):
@@ -167,6 +174,32 @@ class ReleaseRecalledDataDetails(object):
                 f"Invalid value for `data_type`, must be None or one of {allowed_values}"
             )
         self._data_type = data_type
+
+    @property
+    def collection_id(self):
+        """
+        Gets the collection_id of this ReleaseRecalledDataDetails.
+        This is the id for the recalled data collection to be released.
+        If specified, only this collection will be released
+
+
+        :return: The collection_id of this ReleaseRecalledDataDetails.
+        :rtype: int
+        """
+        return self._collection_id
+
+    @collection_id.setter
+    def collection_id(self, collection_id):
+        """
+        Sets the collection_id of this ReleaseRecalledDataDetails.
+        This is the id for the recalled data collection to be released.
+        If specified, only this collection will be released
+
+
+        :param collection_id: The collection_id of this ReleaseRecalledDataDetails.
+        :type: int
+        """
+        self._collection_id = collection_id
 
     def __repr__(self):
         return formatted_flat_dict(self)
