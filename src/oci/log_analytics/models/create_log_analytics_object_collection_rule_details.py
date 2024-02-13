@@ -31,6 +31,14 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
     #: This constant has a value of "OBJECT_PATH"
     LOG_SET_KEY_OBJECT_PATH = "OBJECT_PATH"
 
+    #: A constant which can be used with the log_type property of a CreateLogAnalyticsObjectCollectionRuleDetails.
+    #: This constant has a value of "LOG"
+    LOG_TYPE_LOG = "LOG"
+
+    #: A constant which can be used with the log_type property of a CreateLogAnalyticsObjectCollectionRuleDetails.
+    #: This constant has a value of "LOG_EVENTS"
+    LOG_TYPE_LOG_EVENTS = "LOG_EVENTS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateLogAnalyticsObjectCollectionRuleDetails object with values from keyword arguments.
@@ -114,6 +122,15 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
             The value to assign to the object_name_filters property of this CreateLogAnalyticsObjectCollectionRuleDetails.
         :type object_name_filters: list[str]
 
+        :param log_type:
+            The value to assign to the log_type property of this CreateLogAnalyticsObjectCollectionRuleDetails.
+            Allowed values for this property are: "LOG", "LOG_EVENTS"
+        :type log_type: str
+
+        :param is_force_historic_collection:
+            The value to assign to the is_force_historic_collection property of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        :type is_force_historic_collection: bool
+
         :param defined_tags:
             The value to assign to the defined_tags property of this CreateLogAnalyticsObjectCollectionRuleDetails.
         :type defined_tags: dict(str, dict(str, object))
@@ -143,6 +160,8 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
             'log_set_ext_regex': 'str',
             'overrides': 'dict(str, list[PropertyOverride])',
             'object_name_filters': 'list[str]',
+            'log_type': 'str',
+            'is_force_historic_collection': 'bool',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
@@ -167,6 +186,8 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
             'log_set_ext_regex': 'logSetExtRegex',
             'overrides': 'overrides',
             'object_name_filters': 'objectNameFilters',
+            'log_type': 'logType',
+            'is_force_historic_collection': 'isForceHistoricCollection',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
@@ -190,6 +211,8 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
         self._log_set_ext_regex = None
         self._overrides = None
         self._object_name_filters = None
+        self._log_type = None
+        self._is_force_historic_collection = None
         self._defined_tags = None
         self._freeform_tags = None
 
@@ -704,6 +727,61 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
         :type: list[str]
         """
         self._object_name_filters = object_name_filters
+
+    @property
+    def log_type(self):
+        """
+        Gets the log_type of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        Type of files/objects in this object collection rule.
+
+        Allowed values for this property are: "LOG", "LOG_EVENTS"
+
+
+        :return: The log_type of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        :rtype: str
+        """
+        return self._log_type
+
+    @log_type.setter
+    def log_type(self, log_type):
+        """
+        Sets the log_type of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        Type of files/objects in this object collection rule.
+
+
+        :param log_type: The log_type of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        :type: str
+        """
+        allowed_values = ["LOG", "LOG_EVENTS"]
+        if not value_allowed_none_or_none_sentinel(log_type, allowed_values):
+            raise ValueError(
+                f"Invalid value for `log_type`, must be None or one of {allowed_values}"
+            )
+        self._log_type = log_type
+
+    @property
+    def is_force_historic_collection(self):
+        """
+        Gets the is_force_historic_collection of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+
+
+        :return: The is_force_historic_collection of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        :rtype: bool
+        """
+        return self._is_force_historic_collection
+
+    @is_force_historic_collection.setter
+    def is_force_historic_collection(self, is_force_historic_collection):
+        """
+        Sets the is_force_historic_collection of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
+
+
+        :param is_force_historic_collection: The is_force_historic_collection of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        :type: bool
+        """
+        self._is_force_historic_collection = is_force_historic_collection
 
     @property
     def defined_tags(self):

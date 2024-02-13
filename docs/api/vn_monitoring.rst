@@ -200,6 +200,7 @@ Vn Monitoring
     oci.vn_monitoring.models.NoRouteRoutingAction
     oci.vn_monitoring.models.NoRouteRoutingActionDetails
     oci.vn_monitoring.models.NsgConfiguration
+    oci.vn_monitoring.models.OnPremEndpoint
     oci.vn_monitoring.models.Path
     oci.vn_monitoring.models.PathAnalysisWorkRequestResult
     oci.vn_monitoring.models.PathAnalyzerTest

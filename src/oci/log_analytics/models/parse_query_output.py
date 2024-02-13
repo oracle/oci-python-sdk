@@ -36,6 +36,10 @@ class ParseQueryOutput(object):
             The value to assign to the response_time_in_ms property of this ParseQueryOutput.
         :type response_time_in_ms: int
 
+        :param time_filter:
+            The value to assign to the time_filter property of this ParseQueryOutput.
+        :type time_filter: oci.log_analytics.models.TimeRange
+
         :param commands:
             The value to assign to the commands property of this ParseQueryOutput.
         :type commands: list[oci.log_analytics.models.AbstractCommandDescriptor]
@@ -46,6 +50,7 @@ class ParseQueryOutput(object):
             'internal_query_string': 'str',
             'columns': 'list[AbstractColumn]',
             'response_time_in_ms': 'int',
+            'time_filter': 'TimeRange',
             'commands': 'list[AbstractCommandDescriptor]'
         }
 
@@ -54,6 +59,7 @@ class ParseQueryOutput(object):
             'internal_query_string': 'internalQueryString',
             'columns': 'columns',
             'response_time_in_ms': 'responseTimeInMs',
+            'time_filter': 'timeFilter',
             'commands': 'commands'
         }
 
@@ -61,6 +67,7 @@ class ParseQueryOutput(object):
         self._internal_query_string = None
         self._columns = None
         self._response_time_in_ms = None
+        self._time_filter = None
         self._commands = None
 
     @property
@@ -158,6 +165,26 @@ class ParseQueryOutput(object):
         :type: int
         """
         self._response_time_in_ms = response_time_in_ms
+
+    @property
+    def time_filter(self):
+        """
+        Gets the time_filter of this ParseQueryOutput.
+
+        :return: The time_filter of this ParseQueryOutput.
+        :rtype: oci.log_analytics.models.TimeRange
+        """
+        return self._time_filter
+
+    @time_filter.setter
+    def time_filter(self, time_filter):
+        """
+        Sets the time_filter of this ParseQueryOutput.
+
+        :param time_filter: The time_filter of this ParseQueryOutput.
+        :type: oci.log_analytics.models.TimeRange
+        """
+        self._time_filter = time_filter
 
     @property
     def commands(self):

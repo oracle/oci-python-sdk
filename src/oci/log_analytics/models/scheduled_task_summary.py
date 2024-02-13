@@ -66,6 +66,10 @@ class ScheduledTaskSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type task_type: str
 
+        :param target_service:
+            The value to assign to the target_service property of this ScheduledTaskSummary.
+        :type target_service: str
+
         :param compartment_id:
             The value to assign to the compartment_id property of this ScheduledTaskSummary.
         :type compartment_id: str
@@ -122,6 +126,7 @@ class ScheduledTaskSummary(object):
         self.swagger_types = {
             'id': 'str',
             'task_type': 'str',
+            'target_service': 'str',
             'compartment_id': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
@@ -139,6 +144,7 @@ class ScheduledTaskSummary(object):
         self.attribute_map = {
             'id': 'id',
             'task_type': 'taskType',
+            'target_service': 'targetService',
             'compartment_id': 'compartmentId',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
@@ -155,6 +161,7 @@ class ScheduledTaskSummary(object):
 
         self._id = None
         self._task_type = None
+        self._target_service = None
         self._compartment_id = None
         self._time_created = None
         self._time_updated = None
@@ -225,6 +232,30 @@ class ScheduledTaskSummary(object):
         if not value_allowed_none_or_none_sentinel(task_type, allowed_values):
             task_type = 'UNKNOWN_ENUM_VALUE'
         self._task_type = task_type
+
+    @property
+    def target_service(self):
+        """
+        Gets the target_service of this ScheduledTaskSummary.
+        Target Service
+
+
+        :return: The target_service of this ScheduledTaskSummary.
+        :rtype: str
+        """
+        return self._target_service
+
+    @target_service.setter
+    def target_service(self, target_service):
+        """
+        Sets the target_service of this ScheduledTaskSummary.
+        Target Service
+
+
+        :param target_service: The target_service of this ScheduledTaskSummary.
+        :type: str
+        """
+        self._target_service = target_service
 
     @property
     def compartment_id(self):

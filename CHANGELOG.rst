@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.121.1 - 2024-02-13
+====================
+
+Added
+-----
+* Support for adding automatic backups during cross region operations and disaster recovery in the Autonomous Database service
+* Support for overlapping CIDR in network path analyzer in the Virtual Network Monitoring service
+* Support for additional attributes in entity and topology in the Log Analytics service
+* Support for historic collection and log type while creating object collection rules in the Log Analytics service
+* Support for position aware parsers in the Log Analytics service
+* Support for filtering log sources, detection rules and scheduled tasks based on target service in the Log Analytics service
+* Support for additional recall and release attributes in the Log Analytics service
+* Support for opc-meta-properties header while uploading log events in the Log Analytics service
+* Support for Generative AI Inference service
+ 
+====================
 2.121.0 - 2024-02-06
 ====================
 

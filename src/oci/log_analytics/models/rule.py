@@ -82,6 +82,10 @@ class Rule(object):
             Allowed values for this property are: "INGEST_TIME", "SAVED_SEARCH"
         :type kind: str
 
+        :param target_service:
+            The value to assign to the target_service property of this Rule.
+        :type target_service: str
+
         :param display_name:
             The value to assign to the display_name property of this Rule.
         :type display_name: str
@@ -110,6 +114,7 @@ class Rule(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'lifecycle_state': 'str',
             'kind': 'str',
+            'target_service': 'str',
             'display_name': 'str',
             'is_enabled': 'bool',
             'last_execution_status': 'str',
@@ -126,6 +131,7 @@ class Rule(object):
             'defined_tags': 'definedTags',
             'lifecycle_state': 'lifecycleState',
             'kind': 'kind',
+            'target_service': 'targetService',
             'display_name': 'displayName',
             'is_enabled': 'isEnabled',
             'last_execution_status': 'lastExecutionStatus',
@@ -141,6 +147,7 @@ class Rule(object):
         self._defined_tags = None
         self._lifecycle_state = None
         self._kind = None
+        self._target_service = None
         self._display_name = None
         self._is_enabled = None
         self._last_execution_status = None
@@ -385,6 +392,30 @@ class Rule(object):
                 f"Invalid value for `kind`, must be None or one of {allowed_values}"
             )
         self._kind = kind
+
+    @property
+    def target_service(self):
+        """
+        Gets the target_service of this Rule.
+        The target service.
+
+
+        :return: The target_service of this Rule.
+        :rtype: str
+        """
+        return self._target_service
+
+    @target_service.setter
+    def target_service(self, target_service):
+        """
+        Sets the target_service of this Rule.
+        The target service.
+
+
+        :param target_service: The target_service of this Rule.
+        :type: str
+        """
+        self._target_service = target_service
 
     @property
     def display_name(self):

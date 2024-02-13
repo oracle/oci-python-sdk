@@ -74,6 +74,7 @@ Log Analytics
     oci.log_analytics.models.CreateLogAnalyticsObjectCollectionRuleDetails
     oci.log_analytics.models.CreateScheduledTaskDetails
     oci.log_analytics.models.CreateStandardTaskDetails
+    oci.log_analytics.models.CreateTableCommandDescriptor
     oci.log_analytics.models.CreateViewCommandDescriptor
     oci.log_analytics.models.CreationSource
     oci.log_analytics.models.CredentialEndpoint
@@ -84,6 +85,9 @@ Log Analytics
     oci.log_analytics.models.DeleteLogAnalyticsAssociationDetails
     oci.log_analytics.models.DeltaCommandDescriptor
     oci.log_analytics.models.DemoModeCommandDescriptor
+    oci.log_analytics.models.Dependency
+    oci.log_analytics.models.DependentParser
+    oci.log_analytics.models.DependentSource
     oci.log_analytics.models.DisableAutoAssociationDetail
     oci.log_analytics.models.DisableAutoAssociationDetails
     oci.log_analytics.models.DistinctCommandDescriptor
@@ -212,6 +216,10 @@ Log Analytics
     oci.log_analytics.models.LogAnalyticsMetaFunctionCollection
     oci.log_analytics.models.LogAnalyticsMetaSourceType
     oci.log_analytics.models.LogAnalyticsMetaSourceTypeCollection
+    oci.log_analytics.models.LogAnalyticsMetadata
+    oci.log_analytics.models.LogAnalyticsMetadataCollection
+    oci.log_analytics.models.LogAnalyticsMetadataDetails
+    oci.log_analytics.models.LogAnalyticsMetadataSummary
     oci.log_analytics.models.LogAnalyticsMetric
     oci.log_analytics.models.LogAnalyticsObjectCollectionRule
     oci.log_analytics.models.LogAnalyticsObjectCollectionRuleCollection
@@ -317,6 +325,7 @@ Log Analytics
     oci.log_analytics.models.ScopeFilter
     oci.log_analytics.models.SearchCommandDescriptor
     oci.log_analytics.models.SearchLookupCommandDescriptor
+    oci.log_analytics.models.SequenceCommandDescriptor
     oci.log_analytics.models.SortCommandDescriptor
     oci.log_analytics.models.SortField
     oci.log_analytics.models.SourceMappingResponse

@@ -41,22 +41,29 @@ class ChangeDisasterRecoveryConfigurationDetails(object):
             The value to assign to the is_snapshot_standby property of this ChangeDisasterRecoveryConfigurationDetails.
         :type is_snapshot_standby: bool
 
+        :param is_replicate_automatic_backups:
+            The value to assign to the is_replicate_automatic_backups property of this ChangeDisasterRecoveryConfigurationDetails.
+        :type is_replicate_automatic_backups: bool
+
         """
         self.swagger_types = {
             'disaster_recovery_type': 'str',
             'time_snapshot_standby_enabled_till': 'datetime',
-            'is_snapshot_standby': 'bool'
+            'is_snapshot_standby': 'bool',
+            'is_replicate_automatic_backups': 'bool'
         }
 
         self.attribute_map = {
             'disaster_recovery_type': 'disasterRecoveryType',
             'time_snapshot_standby_enabled_till': 'timeSnapshotStandbyEnabledTill',
-            'is_snapshot_standby': 'isSnapshotStandby'
+            'is_snapshot_standby': 'isSnapshotStandby',
+            'is_replicate_automatic_backups': 'isReplicateAutomaticBackups'
         }
 
         self._disaster_recovery_type = None
         self._time_snapshot_standby_enabled_till = None
         self._is_snapshot_standby = None
+        self._is_replicate_automatic_backups = None
 
     @property
     def disaster_recovery_type(self):
@@ -140,6 +147,30 @@ class ChangeDisasterRecoveryConfigurationDetails(object):
         :type: bool
         """
         self._is_snapshot_standby = is_snapshot_standby
+
+    @property
+    def is_replicate_automatic_backups(self):
+        """
+        Gets the is_replicate_automatic_backups of this ChangeDisasterRecoveryConfigurationDetails.
+        If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+
+
+        :return: The is_replicate_automatic_backups of this ChangeDisasterRecoveryConfigurationDetails.
+        :rtype: bool
+        """
+        return self._is_replicate_automatic_backups
+
+    @is_replicate_automatic_backups.setter
+    def is_replicate_automatic_backups(self, is_replicate_automatic_backups):
+        """
+        Sets the is_replicate_automatic_backups of this ChangeDisasterRecoveryConfigurationDetails.
+        If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+
+
+        :param is_replicate_automatic_backups: The is_replicate_automatic_backups of this ChangeDisasterRecoveryConfigurationDetails.
+        :type: bool
+        """
+        self._is_replicate_automatic_backups = is_replicate_automatic_backups
 
     def __repr__(self):
         return formatted_flat_dict(self)

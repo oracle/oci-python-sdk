@@ -20,7 +20,7 @@ import copy
 import _strptime  # noqa: F401
 from datetime import date, datetime, timezone
 from timeit import default_timer as timer
-from ._vendor import requests, six, urllib3
+from ._vendor import requests, six, urllib3, sseclient
 from dateutil.parser import parse
 from dateutil import tz
 
@@ -97,6 +97,8 @@ def _sanitize_headers_for_requests(headers):
 
 STREAM_RESPONSE_TYPE = 'stream'
 BYTES_RESPONSE_TYPE = 'bytes'
+SSE_RESPONSE_HEADER_VALUE = 'text/event-stream'
+APPLICATION_JSON_CONTENT_HEADER_VALUE = 'application/json'
 
 # Default timeout value(second)
 DEFAULT_CONNECTION_TIMEOUT = 10.0
@@ -665,6 +667,10 @@ class BaseClient(object):
         stream = False
         if request.response_type == STREAM_RESPONSE_TYPE:
             stream = True
+        # If there is a possibility that the response could return a stream, then assume it is a stream by default
+        # This will allow us to NOT consume the entire response in case of a streaming response
+        if SSE_RESPONSE_HEADER_VALUE in request.header_params.get("accept", "empty"):
+            stream = True
 
         try:
             start = timer()
@@ -720,8 +726,16 @@ class BaseClient(object):
                 self.raise_service_error(request, response, service_code, message, operation_name, api_reference_link, target_service, request_endpoint, client_version, timestamp, deserialized_data)
 
         if stream:
-            # Don't unpack a streaming response body
-            deserialized_data = response
+            if response.headers.get("content-type", "empty").lower() == SSE_RESPONSE_HEADER_VALUE:
+                self.logger.warning("Received SSE response, returning an SSE client")
+                # Return the SSE response as received
+                deserialized_data = sseclient.SSEClient(response)
+            elif response_type and response_type != STREAM_RESPONSE_TYPE and response.headers.get("content-type", "empty").lower() == APPLICATION_JSON_CONTENT_HEADER_VALUE:
+                # If the response is non-streaming (in case of SSE), proceed with regular deserialization
+                deserialized_data = self.deserialize_response_data(response.content, response_type, allow_control_chars)
+            else:
+                # Don't unpack a streaming response body
+                deserialized_data = response
         elif response_type == BYTES_RESPONSE_TYPE:
             # Don't deserialize data responses.
             deserialized_data = response.content

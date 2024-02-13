@@ -84,6 +84,10 @@ class RuleSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type kind: str
 
+        :param target_service:
+            The value to assign to the target_service property of this RuleSummary.
+        :type target_service: str
+
         :param display_name:
             The value to assign to the display_name property of this RuleSummary.
         :type display_name: str
@@ -113,6 +117,7 @@ class RuleSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'lifecycle_state': 'str',
             'kind': 'str',
+            'target_service': 'str',
             'display_name': 'str',
             'is_enabled': 'bool',
             'last_execution_status': 'str',
@@ -129,6 +134,7 @@ class RuleSummary(object):
             'defined_tags': 'definedTags',
             'lifecycle_state': 'lifecycleState',
             'kind': 'kind',
+            'target_service': 'targetService',
             'display_name': 'displayName',
             'is_enabled': 'isEnabled',
             'last_execution_status': 'lastExecutionStatus',
@@ -144,6 +150,7 @@ class RuleSummary(object):
         self._defined_tags = None
         self._lifecycle_state = None
         self._kind = None
+        self._target_service = None
         self._display_name = None
         self._is_enabled = None
         self._last_execution_status = None
@@ -386,6 +393,30 @@ class RuleSummary(object):
         if not value_allowed_none_or_none_sentinel(kind, allowed_values):
             kind = 'UNKNOWN_ENUM_VALUE'
         self._kind = kind
+
+    @property
+    def target_service(self):
+        """
+        Gets the target_service of this RuleSummary.
+        The target service.
+
+
+        :return: The target_service of this RuleSummary.
+        :rtype: str
+        """
+        return self._target_service
+
+    @target_service.setter
+    def target_service(self, target_service):
+        """
+        Sets the target_service of this RuleSummary.
+        The target service.
+
+
+        :param target_service: The target_service of this RuleSummary.
+        :type: str
+        """
+        self._target_service = target_service
 
     @property
     def display_name(self):

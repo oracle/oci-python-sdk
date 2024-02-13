@@ -188,6 +188,7 @@ from .networking_topology import NetworkingTopology
 from .no_route_routing_action import NoRouteRoutingAction
 from .no_route_routing_action_details import NoRouteRoutingActionDetails
 from .nsg_configuration import NsgConfiguration
+from .on_prem_endpoint import OnPremEndpoint
 from .path import Path
 from .path_analysis_work_request_result import PathAnalysisWorkRequestResult
 from .path_analyzer_test import PathAnalyzerTest
@@ -512,6 +513,7 @@ vn_monitoring_type_mapping = {
     "NoRouteRoutingAction": NoRouteRoutingAction,
     "NoRouteRoutingActionDetails": NoRouteRoutingActionDetails,
     "NsgConfiguration": NsgConfiguration,
+    "OnPremEndpoint": OnPremEndpoint,
     "Path": Path,
     "PathAnalysisWorkRequestResult": PathAnalysisWorkRequestResult,
     "PathAnalyzerTest": PathAnalyzerTest,

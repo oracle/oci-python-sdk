@@ -170,6 +170,10 @@ class LogAnalyticsParserSummary(object):
             The value to assign to the is_namespace_aware property of this LogAnalyticsParserSummary.
         :type is_namespace_aware: bool
 
+        :param is_position_aware:
+            The value to assign to the is_position_aware property of this LogAnalyticsParserSummary.
+        :type is_position_aware: bool
+
         """
         self.swagger_types = {
             'content': 'str',
@@ -203,7 +207,8 @@ class LogAnalyticsParserSummary(object):
             'field_qualifier': 'str',
             'type': 'str',
             'is_user_deleted': 'bool',
-            'is_namespace_aware': 'bool'
+            'is_namespace_aware': 'bool',
+            'is_position_aware': 'bool'
         }
 
         self.attribute_map = {
@@ -238,7 +243,8 @@ class LogAnalyticsParserSummary(object):
             'field_qualifier': 'fieldQualifier',
             'type': 'type',
             'is_user_deleted': 'isUserDeleted',
-            'is_namespace_aware': 'isNamespaceAware'
+            'is_namespace_aware': 'isNamespaceAware',
+            'is_position_aware': 'isPositionAware'
         }
 
         self._content = None
@@ -273,6 +279,7 @@ class LogAnalyticsParserSummary(object):
         self._type = None
         self._is_user_deleted = None
         self._is_namespace_aware = None
+        self._is_position_aware = None
 
     @property
     def content(self):
@@ -1045,6 +1052,30 @@ class LogAnalyticsParserSummary(object):
         :type: bool
         """
         self._is_namespace_aware = is_namespace_aware
+
+    @property
+    def is_position_aware(self):
+        """
+        Gets the is_position_aware of this LogAnalyticsParserSummary.
+        A flag indicating whether the parser is positionally aware.
+
+
+        :return: The is_position_aware of this LogAnalyticsParserSummary.
+        :rtype: bool
+        """
+        return self._is_position_aware
+
+    @is_position_aware.setter
+    def is_position_aware(self, is_position_aware):
+        """
+        Sets the is_position_aware of this LogAnalyticsParserSummary.
+        A flag indicating whether the parser is positionally aware.
+
+
+        :param is_position_aware: The is_position_aware of this LogAnalyticsParserSummary.
+        :type: bool
+        """
+        self._is_position_aware = is_position_aware
 
     def __repr__(self):
         return formatted_flat_dict(self)

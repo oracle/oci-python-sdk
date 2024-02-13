@@ -78,6 +78,18 @@ class RecalledData(object):
             The value to assign to the created_by property of this RecalledData.
         :type created_by: str
 
+        :param collection_id:
+            The value to assign to the collection_id property of this RecalledData.
+        :type collection_id: int
+
+        :param time_recalled_data_started:
+            The value to assign to the time_recalled_data_started property of this RecalledData.
+        :type time_recalled_data_started: datetime
+
+        :param time_recalled_data_ended:
+            The value to assign to the time_recalled_data_ended property of this RecalledData.
+        :type time_recalled_data_ended: datetime
+
         """
         self.swagger_types = {
             'time_data_ended': 'datetime',
@@ -90,7 +102,10 @@ class RecalledData(object):
             'purpose': 'str',
             'query_string': 'str',
             'log_sets': 'str',
-            'created_by': 'str'
+            'created_by': 'str',
+            'collection_id': 'int',
+            'time_recalled_data_started': 'datetime',
+            'time_recalled_data_ended': 'datetime'
         }
 
         self.attribute_map = {
@@ -104,7 +119,10 @@ class RecalledData(object):
             'purpose': 'purpose',
             'query_string': 'queryString',
             'log_sets': 'logSets',
-            'created_by': 'createdBy'
+            'created_by': 'createdBy',
+            'collection_id': 'collectionId',
+            'time_recalled_data_started': 'timeRecalledDataStarted',
+            'time_recalled_data_ended': 'timeRecalledDataEnded'
         }
 
         self._time_data_ended = None
@@ -118,6 +136,9 @@ class RecalledData(object):
         self._query_string = None
         self._log_sets = None
         self._created_by = None
+        self._collection_id = None
+        self._time_recalled_data_started = None
+        self._time_recalled_data_ended = None
 
     @property
     def time_data_ended(self):
@@ -390,6 +411,78 @@ class RecalledData(object):
         :type: str
         """
         self._created_by = created_by
+
+    @property
+    def collection_id(self):
+        """
+        **[Required]** Gets the collection_id of this RecalledData.
+        This is the id for the recalled data collection
+
+
+        :return: The collection_id of this RecalledData.
+        :rtype: int
+        """
+        return self._collection_id
+
+    @collection_id.setter
+    def collection_id(self, collection_id):
+        """
+        Sets the collection_id of this RecalledData.
+        This is the id for the recalled data collection
+
+
+        :param collection_id: The collection_id of this RecalledData.
+        :type: int
+        """
+        self._collection_id = collection_id
+
+    @property
+    def time_recalled_data_started(self):
+        """
+        **[Required]** Gets the time_recalled_data_started of this RecalledData.
+        This is the recalled date start time
+
+
+        :return: The time_recalled_data_started of this RecalledData.
+        :rtype: datetime
+        """
+        return self._time_recalled_data_started
+
+    @time_recalled_data_started.setter
+    def time_recalled_data_started(self, time_recalled_data_started):
+        """
+        Sets the time_recalled_data_started of this RecalledData.
+        This is the recalled date start time
+
+
+        :param time_recalled_data_started: The time_recalled_data_started of this RecalledData.
+        :type: datetime
+        """
+        self._time_recalled_data_started = time_recalled_data_started
+
+    @property
+    def time_recalled_data_ended(self):
+        """
+        **[Required]** Gets the time_recalled_data_ended of this RecalledData.
+        This is the recalled data end time
+
+
+        :return: The time_recalled_data_ended of this RecalledData.
+        :rtype: datetime
+        """
+        return self._time_recalled_data_ended
+
+    @time_recalled_data_ended.setter
+    def time_recalled_data_ended(self, time_recalled_data_ended):
+        """
+        Sets the time_recalled_data_ended of this RecalledData.
+        This is the recalled data end time
+
+
+        :param time_recalled_data_ended: The time_recalled_data_ended of this RecalledData.
+        :type: datetime
+        """
+        self._time_recalled_data_ended = time_recalled_data_ended
 
     def __repr__(self):
         return formatted_flat_dict(self)

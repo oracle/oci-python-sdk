@@ -13029,7 +13029,7 @@ class LogAnalyticsClient(object):
         :param list[str] creation_source_type: (optional)
             A filter to return only those log analytics entities with the specified auto-creation source.
 
-            Allowed values are: "EM_BRIDGE", "BULK_DISCOVERY", "SERVICE_CONNECTOR_HUB", "DISCOVERY", "NONE"
+            Allowed values are: "EM_BRIDGE", "BULK_DISCOVERY", "SERVICE_CONNECTOR_HUB", "DISCOVERY", "LOGGING_ANALYTICS", "NONE"
 
         :param str creation_source_details: (optional)
             A filter to return only log analytics entities whose auto-creation source details contains the specified string.
@@ -13053,6 +13053,10 @@ class LogAnalyticsClient(object):
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
+
+        :param list[str] metadata_equals: (optional)
+            A filter to return only log analytics entities whose metadata name, value and type matches the specified string.
+            Each item in the array has the format \"{name}:{value}:{type}\".  All inputs are case-insensitive.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -13099,7 +13103,8 @@ class LogAnalyticsClient(object):
             "page",
             "sort_order",
             "sort_by",
-            "opc_request_id"
+            "opc_request_id",
+            "metadata_equals"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -13131,7 +13136,7 @@ class LogAnalyticsClient(object):
                 )
 
         if 'creation_source_type' in kwargs:
-            creation_source_type_allowed_values = ["EM_BRIDGE", "BULK_DISCOVERY", "SERVICE_CONNECTOR_HUB", "DISCOVERY", "NONE"]
+            creation_source_type_allowed_values = ["EM_BRIDGE", "BULK_DISCOVERY", "SERVICE_CONNECTOR_HUB", "DISCOVERY", "LOGGING_ANALYTICS", "NONE"]
             for creation_source_type_item in kwargs['creation_source_type']:
                 if creation_source_type_item not in creation_source_type_allowed_values:
                     raise ValueError(
@@ -13169,7 +13174,8 @@ class LogAnalyticsClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
-            "sortBy": kwargs.get("sort_by", missing)
+            "sortBy": kwargs.get("sort_by", missing),
+            "metadataEquals": self.base_client.generate_collection_format_param(kwargs.get("metadata_equals", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -13251,6 +13257,10 @@ class LogAnalyticsClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param list[str] metadata_equals: (optional)
+            A filter to return only log analytics entities whose metadata name, value and type matches the specified string.
+            Each item in the array has the format \"{name}:{value}:{type}\".  All inputs are case-insensitive.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -13285,7 +13295,8 @@ class LogAnalyticsClient(object):
             "page",
             "sort_order",
             "sort_by",
-            "opc_request_id"
+            "opc_request_id",
+            "metadata_equals"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -13329,7 +13340,8 @@ class LogAnalyticsClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
-            "sortBy": kwargs.get("sort_by", missing)
+            "sortBy": kwargs.get("sort_by", missing),
+            "metadataEquals": self.base_client.generate_collection_format_param(kwargs.get("metadata_equals", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -14016,9 +14028,9 @@ class LogAnalyticsClient(object):
             The Logging Analytics namespace used for the request.
 
         :param str type: (required)
-            The lookup type.  Valid values are Lookup or Dictionary.
+            The lookup type.  Valid values are Lookup, Dictionary or Module.
 
-            Allowed values are: "Lookup", "Dictionary"
+            Allowed values are: "Lookup", "Dictionary", "Module"
 
         :param str lookup_display_text: (optional)
             The lookup text used for filtering.  Only lookups with the specified name
@@ -14116,7 +14128,7 @@ class LogAnalyticsClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
-        type_allowed_values = ["Lookup", "Dictionary"]
+        type_allowed_values = ["Lookup", "Dictionary", "Module"]
         if type not in type_allowed_values:
             raise ValueError(
                 f"Invalid value for `type`, must be one of { type_allowed_values }"
@@ -15755,6 +15767,9 @@ class LogAnalyticsClient(object):
 
             Allowed values are: "INGEST_TIME", "SAVED_SEARCH", "ALL"
 
+        :param str target_service: (optional)
+            The target service to use for filtering.
+
         :param str lifecycle_state: (optional)
             The rule lifecycle state used for filtering. Currently supported
             values are ACTIVE and DELETED.
@@ -15811,6 +15826,7 @@ class LogAnalyticsClient(object):
             "retry_strategy",
             "display_name",
             "kind",
+            "target_service",
             "lifecycle_state",
             "limit",
             "page",
@@ -15865,6 +15881,7 @@ class LogAnalyticsClient(object):
             "compartmentId": compartment_id,
             "displayName": kwargs.get("display_name", missing),
             "kind": kwargs.get("kind", missing),
+            "targetService": kwargs.get("target_service", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
@@ -15961,6 +15978,9 @@ class LogAnalyticsClient(object):
         :param str display_name_contains: (optional)
             A filter to return only resources whose display name contains the substring.
 
+        :param str target_service: (optional)
+            The target service to use for filtering.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -15997,7 +16017,8 @@ class LogAnalyticsClient(object):
             "sort_order",
             "sort_by",
             "saved_search_id",
-            "display_name_contains"
+            "display_name_contains",
+            "target_service"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -16043,7 +16064,8 @@ class LogAnalyticsClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "savedSearchId": kwargs.get("saved_search_id", missing),
-            "displayNameContains": kwargs.get("display_name_contains", missing)
+            "displayNameContains": kwargs.get("display_name_contains", missing),
+            "targetService": kwargs.get("target_service", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -17069,6 +17091,9 @@ class LogAnalyticsClient(object):
             A filter to return only log analytics entities whose name matches the entire name given. The match
             is case-insensitive.
 
+        :param str source_type: (optional)
+            The source type.
+
         :param str categories: (optional)
             A comma-separated list of categories used for filtering
 
@@ -17119,6 +17144,7 @@ class LogAnalyticsClient(object):
             "limit",
             "page",
             "name",
+            "source_type",
             "categories",
             "is_simplified",
             "opc_request_id"
@@ -17169,6 +17195,7 @@ class LogAnalyticsClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "name": kwargs.get("name", missing),
+            "sourceType": kwargs.get("source_type", missing),
             "categories": kwargs.get("categories", missing),
             "isSimplified": kwargs.get("is_simplified", missing),
             "compartmentId": compartment_id
@@ -19729,9 +19756,9 @@ class LogAnalyticsClient(object):
             The Logging Analytics namespace used for the request.
 
         :param str type: (required)
-            The lookup type.  Valid values are Lookup or Dictionary.
+            The lookup type.  Valid values are Lookup, Dictionary or Module.
 
-            Allowed values are: "Lookup", "Dictionary"
+            Allowed values are: "Lookup", "Dictionary", "Module"
 
         :param stream register_lookup_content_file_body: (required)
             file containing data for lookup creation
@@ -19824,7 +19851,7 @@ class LogAnalyticsClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
-        type_allowed_values = ["Lookup", "Dictionary"]
+        type_allowed_values = ["Lookup", "Dictionary", "Module"]
         if type not in type_allowed_values:
             raise ValueError(
                 f"Invalid value for `type`, must be one of { type_allowed_values }"
@@ -22856,6 +22883,9 @@ class LogAnalyticsClient(object):
 
             Allowed values are: "ENTITY", "K8S_OBJECTS"
 
+        :param str log_group_id: (optional)
+            The log group OCID that gets mapped to the logs in the discovery data.
+
         :param str payload_type: (optional)
             Identifies the type of request payload.
 
@@ -22916,6 +22946,7 @@ class LogAnalyticsClient(object):
             "opc_request_id",
             "opc_meta_properties",
             "discovery_data_type",
+            "log_group_id",
             "payload_type",
             "content_type",
             "opc_retry_token",
@@ -22952,6 +22983,7 @@ class LogAnalyticsClient(object):
 
         query_params = {
             "discoveryDataType": kwargs.get("discovery_data_type", missing),
+            "logGroupId": kwargs.get("log_group_id", missing),
             "payloadType": kwargs.get("payload_type", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
@@ -23069,6 +23101,9 @@ class LogAnalyticsClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
+        :param str opc_meta_properties: (optional)
+            Metadata key and value pairs separated by a semicolon. Example k1:v1;k2:v2;k3:v3
+
         :param str expect: (optional)
             A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent.
             If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
@@ -23116,6 +23151,7 @@ class LogAnalyticsClient(object):
             "payload_type",
             "content_type",
             "opc_retry_token",
+            "opc_meta_properties",
             "expect"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -23152,6 +23188,7 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "content-type": kwargs.get("content_type", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-meta-properties": kwargs.get("opc_meta_properties", missing),
             "expect": kwargs.get("expect", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}

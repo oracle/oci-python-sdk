@@ -167,7 +167,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/privateEndpoints/{privateEndpointId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_private_endpoint_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/PrivateEndpoint/ChangePrivateEndpointCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -287,7 +287,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/shardedDatabases/{shardedDatabaseId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_sharded_database_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/ChangeShardedDatabaseCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -410,7 +410,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/shardedDatabases/{shardedDatabaseId}/actions/configureGsms"
         method = "POST"
         operation_name = "configure_sharded_database_gsms"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/ConfigureShardedDatabaseGsms"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -535,7 +535,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/shardedDatabases/{shardedDatabaseId}/actions/configureSharding"
         method = "POST"
         operation_name = "configure_sharding"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/ConfigureSharding"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -854,7 +854,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/privateEndpoints/{privateEndpointId}"
         method = "DELETE"
         operation_name = "delete_private_endpoint"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/PrivateEndpoint/DeletePrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -969,7 +969,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/shardedDatabases/{shardedDatabaseId}"
         method = "DELETE"
         operation_name = "delete_sharded_database"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/DeleteShardedDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1087,7 +1087,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/shardedDatabases/{shardedDatabaseId}/actions/downloadGsmCertificateSigningRequest"
         method = "POST"
         operation_name = "download_gsm_certificate_signing_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/DownloadGsmCertificateSigningRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1204,7 +1204,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/shardedDatabases/{shardedDatabaseId}/actions/getConnectionString"
         method = "POST"
         operation_name = "fetch_connection_string"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/FetchConnectionString"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1314,7 +1314,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/shardedDatabases/actions/listShardableCloudAutonomousVmClusters"
         method = "POST"
         operation_name = "fetch_shardable_cloud_autonomous_vm_clusters"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/FetchShardableCloudAutonomousVmClusters"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1421,7 +1421,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/shardedDatabases/{shardedDatabaseId}/actions/generateGsmCertificateSigningRequest"
         method = "POST"
         operation_name = "generate_gsm_certificate_signing_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/GenerateGsmCertificateSigningRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1539,7 +1539,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/shardedDatabases/{shardedDatabaseId}/actions/generateWallet"
         method = "POST"
         operation_name = "generate_wallet"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/GenerateWallet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1644,7 +1644,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/privateEndpoints/{privateEndpointId}"
         method = "GET"
         operation_name = "get_private_endpoint"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/PrivateEndpoint/GetPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1746,7 +1746,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/shardedDatabases/{shardedDatabaseId}"
         method = "GET"
         operation_name = "get_sharded_database"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/GetShardedDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1852,7 +1852,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1974,7 +1974,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/privateEndpoints"
         method = "GET"
         operation_name = "list_private_endpoints"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/PrivateEndpointCollection/ListPrivateEndpoints"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2124,7 +2124,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/shardedDatabases"
         method = "GET"
         operation_name = "list_sharded_databases"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabaseCollection/ListShardedDatabases"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2266,7 +2266,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2408,7 +2408,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2561,7 +2561,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2701,7 +2701,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/shardedDatabases/{shardedDatabaseId}"
         method = "PATCH"
         operation_name = "patch_sharded_database"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/PatchShardedDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2811,7 +2811,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/shardedDatabases/actions/prevalidate"
         method = "POST"
         operation_name = "prevalidate_sharded_database"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/PrevalidateShardedDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2923,7 +2923,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/shardedDatabases/{shardedDatabaseId}/actions/startDatabase"
         method = "POST"
         operation_name = "start_sharded_database"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/StartShardedDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3038,7 +3038,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/shardedDatabases/{shardedDatabaseId}/actions/stopDatabase"
         method = "POST"
         operation_name = "stop_sharded_database"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/StopShardedDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3156,7 +3156,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/privateEndpoints/{privateEndpointId}"
         method = "PUT"
         operation_name = "update_private_endpoint"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/PrivateEndpoint/UpdatePrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3271,7 +3271,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/shardedDatabases/{shardedDatabaseId}"
         method = "PUT"
         operation_name = "update_sharded_database"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/UpdateShardedDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3393,7 +3393,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/shardedDatabases/{shardedDatabaseId}/actions/uploadSignedCertificateAndGenerateWallet"
         method = "POST"
         operation_name = "upload_signed_certificate_and_generate_wallet"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/UploadSignedCertificateAndGenerateWallet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3519,7 +3519,7 @@ class ShardedDatabaseServiceClient(object):
         resource_path = "/shardedDatabases/{shardedDatabaseId}/actions/validateNetwork"
         method = "POST"
         operation_name = "validate_network"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/ShardedDatabase/ValidateNetwork"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

@@ -24,6 +24,10 @@ class AbstractParserTestResultLogEntry(object):
             The value to assign to the extra_info_attributes property of this AbstractParserTestResultLogEntry.
         :type extra_info_attributes: dict(str, str)
 
+        :param field_map:
+            The value to assign to the field_map property of this AbstractParserTestResultLogEntry.
+        :type field_map: dict(str, str)
+
         :param field_name_value_map:
             The value to assign to the field_name_value_map property of this AbstractParserTestResultLogEntry.
         :type field_name_value_map: dict(str, str)
@@ -51,6 +55,7 @@ class AbstractParserTestResultLogEntry(object):
         """
         self.swagger_types = {
             'extra_info_attributes': 'dict(str, str)',
+            'field_map': 'dict(str, str)',
             'field_name_value_map': 'dict(str, str)',
             'field_position_value_map': 'dict(str, str)',
             'fields': 'dict(str, str)',
@@ -61,6 +66,7 @@ class AbstractParserTestResultLogEntry(object):
 
         self.attribute_map = {
             'extra_info_attributes': 'extraInfoAttributes',
+            'field_map': 'fieldMap',
             'field_name_value_map': 'fieldNameValueMap',
             'field_position_value_map': 'fieldPositionValueMap',
             'fields': 'fields',
@@ -70,6 +76,7 @@ class AbstractParserTestResultLogEntry(object):
         }
 
         self._extra_info_attributes = None
+        self._field_map = None
         self._field_name_value_map = None
         self._field_position_value_map = None
         self._fields = None
@@ -100,6 +107,30 @@ class AbstractParserTestResultLogEntry(object):
         :type: dict(str, str)
         """
         self._extra_info_attributes = extra_info_attributes
+
+    @property
+    def field_map(self):
+        """
+        Gets the field_map of this AbstractParserTestResultLogEntry.
+        The field map.
+
+
+        :return: The field_map of this AbstractParserTestResultLogEntry.
+        :rtype: dict(str, str)
+        """
+        return self._field_map
+
+    @field_map.setter
+    def field_map(self, field_map):
+        """
+        Sets the field_map of this AbstractParserTestResultLogEntry.
+        The field map.
+
+
+        :param field_map: The field_map of this AbstractParserTestResultLogEntry.
+        :type: dict(str, str)
+        """
+        self._field_map = field_map
 
     @property
     def field_name_value_map(self):

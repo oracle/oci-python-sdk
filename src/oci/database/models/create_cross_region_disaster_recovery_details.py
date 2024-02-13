@@ -270,6 +270,10 @@ class CreateCrossRegionDisasterRecoveryDetails(CreateAutonomousDatabaseBase):
             The value to assign to the remote_disaster_recovery_type property of this CreateCrossRegionDisasterRecoveryDetails.
         :type remote_disaster_recovery_type: str
 
+        :param is_replicate_automatic_backups:
+            The value to assign to the is_replicate_automatic_backups property of this CreateCrossRegionDisasterRecoveryDetails.
+        :type is_replicate_automatic_backups: bool
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -322,7 +326,8 @@ class CreateCrossRegionDisasterRecoveryDetails(CreateAutonomousDatabaseBase):
             'secret_id': 'str',
             'secret_version_number': 'int',
             'source_id': 'str',
-            'remote_disaster_recovery_type': 'str'
+            'remote_disaster_recovery_type': 'str',
+            'is_replicate_automatic_backups': 'bool'
         }
 
         self.attribute_map = {
@@ -376,7 +381,8 @@ class CreateCrossRegionDisasterRecoveryDetails(CreateAutonomousDatabaseBase):
             'secret_id': 'secretId',
             'secret_version_number': 'secretVersionNumber',
             'source_id': 'sourceId',
-            'remote_disaster_recovery_type': 'remoteDisasterRecoveryType'
+            'remote_disaster_recovery_type': 'remoteDisasterRecoveryType',
+            'is_replicate_automatic_backups': 'isReplicateAutomaticBackups'
         }
 
         self._compartment_id = None
@@ -430,6 +436,7 @@ class CreateCrossRegionDisasterRecoveryDetails(CreateAutonomousDatabaseBase):
         self._secret_version_number = None
         self._source_id = None
         self._remote_disaster_recovery_type = None
+        self._is_replicate_automatic_backups = None
         self._source = 'CROSS_REGION_DISASTER_RECOVERY'
 
     @property
@@ -487,6 +494,30 @@ class CreateCrossRegionDisasterRecoveryDetails(CreateAutonomousDatabaseBase):
         :type: str
         """
         self._remote_disaster_recovery_type = remote_disaster_recovery_type
+
+    @property
+    def is_replicate_automatic_backups(self):
+        """
+        Gets the is_replicate_automatic_backups of this CreateCrossRegionDisasterRecoveryDetails.
+        If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+
+
+        :return: The is_replicate_automatic_backups of this CreateCrossRegionDisasterRecoveryDetails.
+        :rtype: bool
+        """
+        return self._is_replicate_automatic_backups
+
+    @is_replicate_automatic_backups.setter
+    def is_replicate_automatic_backups(self, is_replicate_automatic_backups):
+        """
+        Sets the is_replicate_automatic_backups of this CreateCrossRegionDisasterRecoveryDetails.
+        If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+
+
+        :param is_replicate_automatic_backups: The is_replicate_automatic_backups of this CreateCrossRegionDisasterRecoveryDetails.
+        :type: bool
+        """
+        self._is_replicate_automatic_backups = is_replicate_automatic_backups
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -40,6 +40,14 @@ class LabelSourceSummary(object):
             The value to assign to the label_condition property of this LabelSourceSummary.
         :type label_condition: str
 
+        :param condition_string:
+            The value to assign to the condition_string property of this LabelSourceSummary.
+        :type condition_string: str
+
+        :param condition_block:
+            The value to assign to the condition_block property of this LabelSourceSummary.
+        :type condition_block: oci.log_analytics.models.ConditionBlock
+
         :param label_field_displayname:
             The value to assign to the label_field_displayname property of this LabelSourceSummary.
         :type label_field_displayname: str
@@ -55,6 +63,8 @@ class LabelSourceSummary(object):
             'source_id': 'int',
             'label_operator_name': 'str',
             'label_condition': 'str',
+            'condition_string': 'str',
+            'condition_block': 'ConditionBlock',
             'label_field_displayname': 'str',
             'label_field_name': 'str'
         }
@@ -65,6 +75,8 @@ class LabelSourceSummary(object):
             'source_id': 'sourceId',
             'label_operator_name': 'labelOperatorName',
             'label_condition': 'labelCondition',
+            'condition_string': 'conditionString',
+            'condition_block': 'conditionBlock',
             'label_field_displayname': 'labelFieldDisplayname',
             'label_field_name': 'labelFieldName'
         }
@@ -74,6 +86,8 @@ class LabelSourceSummary(object):
         self._source_id = None
         self._label_operator_name = None
         self._label_condition = None
+        self._condition_string = None
+        self._condition_block = None
         self._label_field_displayname = None
         self._label_field_name = None
 
@@ -196,6 +210,50 @@ class LabelSourceSummary(object):
         :type: str
         """
         self._label_condition = label_condition
+
+    @property
+    def condition_string(self):
+        """
+        Gets the condition_string of this LabelSourceSummary.
+        String representation of the label condition.
+
+
+        :return: The condition_string of this LabelSourceSummary.
+        :rtype: str
+        """
+        return self._condition_string
+
+    @condition_string.setter
+    def condition_string(self, condition_string):
+        """
+        Sets the condition_string of this LabelSourceSummary.
+        String representation of the label condition.
+
+
+        :param condition_string: The condition_string of this LabelSourceSummary.
+        :type: str
+        """
+        self._condition_string = condition_string
+
+    @property
+    def condition_block(self):
+        """
+        Gets the condition_block of this LabelSourceSummary.
+
+        :return: The condition_block of this LabelSourceSummary.
+        :rtype: oci.log_analytics.models.ConditionBlock
+        """
+        return self._condition_block
+
+    @condition_block.setter
+    def condition_block(self, condition_block):
+        """
+        Sets the condition_block of this LabelSourceSummary.
+
+        :param condition_block: The condition_block of this LabelSourceSummary.
+        :type: oci.log_analytics.models.ConditionBlock
+        """
+        self._condition_block = condition_block
 
     @property
     def label_field_displayname(self):

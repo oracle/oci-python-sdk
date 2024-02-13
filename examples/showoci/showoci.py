@@ -76,6 +76,7 @@
 # - oci.network_firewall.NetworkFirewallClient
 # - oci.opensearch.OpensearchClusterClient
 # - oci.psql.PostgresqlClient
+# - oci.generative_ai.GenerativeAiClient
 #
 # Modules without CSV yet:
 # - datasciencemodeldeployment
@@ -127,7 +128,7 @@ import contextlib
 import os
 import time
 
-version = "23.12.20"
+version = "24.02.06"
 
 ##########################################################################
 # check OCI version

@@ -23,6 +23,10 @@ class LogAnalyticsLookup(object):
     #: This constant has a value of "Dictionary"
     TYPE_DICTIONARY = "Dictionary"
 
+    #: A constant which can be used with the type property of a LogAnalyticsLookup.
+    #: This constant has a value of "Module"
+    TYPE_MODULE = "Module"
+
     def __init__(self, **kwargs):
         """
         Initializes a new LogAnalyticsLookup object with values from keyword arguments.
@@ -58,7 +62,7 @@ class LogAnalyticsLookup(object):
 
         :param type:
             The value to assign to the type property of this LogAnalyticsLookup.
-            Allowed values for this property are: "Lookup", "Dictionary", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "Lookup", "Dictionary", "Module", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -322,9 +326,9 @@ class LogAnalyticsLookup(object):
     def type(self):
         """
         Gets the type of this LogAnalyticsLookup.
-        The lookup type.  Valid values are LOOKUP or DICTIONARY.
+        The lookup type. Valid values are Lookup, Dictionary or Module.
 
-        Allowed values for this property are: "Lookup", "Dictionary", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "Lookup", "Dictionary", "Module", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -337,13 +341,13 @@ class LogAnalyticsLookup(object):
     def type(self, type):
         """
         Sets the type of this LogAnalyticsLookup.
-        The lookup type.  Valid values are LOOKUP or DICTIONARY.
+        The lookup type. Valid values are Lookup, Dictionary or Module.
 
 
         :param type: The type of this LogAnalyticsLookup.
         :type: str
         """
-        allowed_values = ["Lookup", "Dictionary"]
+        allowed_values = ["Lookup", "Dictionary", "Module"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

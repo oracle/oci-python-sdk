@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+24.01.30 - 24.01.30
+=====================
+* Added Gen AI
+
+=====================
 23.12.20 - 23.12.20
 =====================
 * Added CSV for Announcements

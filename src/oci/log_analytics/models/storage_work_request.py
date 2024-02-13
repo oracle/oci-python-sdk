@@ -204,6 +204,10 @@ class StorageWorkRequest(object):
             The value to assign to the is_recall_new_data_only property of this StorageWorkRequest.
         :type is_recall_new_data_only: bool
 
+        :param is_use_recommended_data_set:
+            The value to assign to the is_use_recommended_data_set property of this StorageWorkRequest.
+        :type is_use_recommended_data_set: bool
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -230,7 +234,8 @@ class StorageWorkRequest(object):
             'log_sets': 'str',
             'purpose': 'str',
             'query': 'str',
-            'is_recall_new_data_only': 'bool'
+            'is_recall_new_data_only': 'bool',
+            'is_use_recommended_data_set': 'bool'
         }
 
         self.attribute_map = {
@@ -258,7 +263,8 @@ class StorageWorkRequest(object):
             'log_sets': 'logSets',
             'purpose': 'purpose',
             'query': 'query',
-            'is_recall_new_data_only': 'isRecallNewDataOnly'
+            'is_recall_new_data_only': 'isRecallNewDataOnly',
+            'is_use_recommended_data_set': 'isUseRecommendedDataSet'
         }
 
         self._id = None
@@ -286,6 +292,7 @@ class StorageWorkRequest(object):
         self._purpose = None
         self._query = None
         self._is_recall_new_data_only = None
+        self._is_use_recommended_data_set = None
 
     @property
     def id(self):
@@ -914,6 +921,30 @@ class StorageWorkRequest(object):
         :type: bool
         """
         self._is_recall_new_data_only = is_recall_new_data_only
+
+    @property
+    def is_use_recommended_data_set(self):
+        """
+        Gets the is_use_recommended_data_set of this StorageWorkRequest.
+        This indicates if user checked system recommended time range
+
+
+        :return: The is_use_recommended_data_set of this StorageWorkRequest.
+        :rtype: bool
+        """
+        return self._is_use_recommended_data_set
+
+    @is_use_recommended_data_set.setter
+    def is_use_recommended_data_set(self, is_use_recommended_data_set):
+        """
+        Sets the is_use_recommended_data_set of this StorageWorkRequest.
+        This indicates if user checked system recommended time range
+
+
+        :param is_use_recommended_data_set: The is_use_recommended_data_set of this StorageWorkRequest.
+        :type: bool
+        """
+        self._is_use_recommended_data_set = is_use_recommended_data_set
 
     def __repr__(self):
         return formatted_flat_dict(self)
