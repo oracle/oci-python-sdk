@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.122.0 - 2024-02-20
+====================
+
+
+Added
+-----
+* Support for calling Oracle Cloud Infrastructure services in the me-dcc-doha-1 region
+* Support for Secure Desktops service
+* Support for enabling and disabling Simultaneous Multithreading (SMT) for virtual machines in the Compute service
+* Support for Bring Your Own Container Jobs (BYOC v2) in the Data Science service
+* Support for expanded language translation in the AI Language service
+* Support for additional flags for ignoring transliteration and text length to be considered for determining dominant language in the AI Language service
+ 
+Breaking
+--------
+* The model `PreTrainedPhiModelDetails` was removed in the AI Language service
+* The field `system_tags` has changed type from `dict(str, object)` to `dict(str, dict(str, object))` in the models `endpoint`, `endpoint_summary`, `model`, `model_summary`, `project`, and `project_summary` in the AI Language service
+ 
+====================
 2.121.1 - 2024-02-13
 ====================
 

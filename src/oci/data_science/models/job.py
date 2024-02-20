@@ -76,6 +76,10 @@ class Job(object):
             The value to assign to the job_infrastructure_configuration_details property of this Job.
         :type job_infrastructure_configuration_details: oci.data_science.models.JobInfrastructureConfigurationDetails
 
+        :param job_environment_configuration_details:
+            The value to assign to the job_environment_configuration_details property of this Job.
+        :type job_environment_configuration_details: oci.data_science.models.JobEnvironmentConfigurationDetails
+
         :param job_log_configuration_details:
             The value to assign to the job_log_configuration_details property of this Job.
         :type job_log_configuration_details: oci.data_science.models.JobLogConfigurationDetails
@@ -113,6 +117,7 @@ class Job(object):
             'description': 'str',
             'job_configuration_details': 'JobConfigurationDetails',
             'job_infrastructure_configuration_details': 'JobInfrastructureConfigurationDetails',
+            'job_environment_configuration_details': 'JobEnvironmentConfigurationDetails',
             'job_log_configuration_details': 'JobLogConfigurationDetails',
             'job_storage_mount_configuration_details_list': 'list[StorageMountConfigurationDetails]',
             'lifecycle_state': 'str',
@@ -131,6 +136,7 @@ class Job(object):
             'description': 'description',
             'job_configuration_details': 'jobConfigurationDetails',
             'job_infrastructure_configuration_details': 'jobInfrastructureConfigurationDetails',
+            'job_environment_configuration_details': 'jobEnvironmentConfigurationDetails',
             'job_log_configuration_details': 'jobLogConfigurationDetails',
             'job_storage_mount_configuration_details_list': 'jobStorageMountConfigurationDetailsList',
             'lifecycle_state': 'lifecycleState',
@@ -148,6 +154,7 @@ class Job(object):
         self._description = None
         self._job_configuration_details = None
         self._job_infrastructure_configuration_details = None
+        self._job_environment_configuration_details = None
         self._job_log_configuration_details = None
         self._job_storage_mount_configuration_details_list = None
         self._lifecycle_state = None
@@ -384,6 +391,26 @@ class Job(object):
         :type: oci.data_science.models.JobInfrastructureConfigurationDetails
         """
         self._job_infrastructure_configuration_details = job_infrastructure_configuration_details
+
+    @property
+    def job_environment_configuration_details(self):
+        """
+        Gets the job_environment_configuration_details of this Job.
+
+        :return: The job_environment_configuration_details of this Job.
+        :rtype: oci.data_science.models.JobEnvironmentConfigurationDetails
+        """
+        return self._job_environment_configuration_details
+
+    @job_environment_configuration_details.setter
+    def job_environment_configuration_details(self, job_environment_configuration_details):
+        """
+        Sets the job_environment_configuration_details of this Job.
+
+        :param job_environment_configuration_details: The job_environment_configuration_details of this Job.
+        :type: oci.data_science.models.JobEnvironmentConfigurationDetails
+        """
+        self._job_environment_configuration_details = job_environment_configuration_details
 
     @property
     def job_log_configuration_details(self):

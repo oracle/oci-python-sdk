@@ -98,7 +98,6 @@ Ai Language
     oci.ai_language.models.PreTrainedKeyPhraseExtractionModelDetails
     oci.ai_language.models.PreTrainedLanguageDetectionModelDetails
     oci.ai_language.models.PreTrainedNamedEntityRecognitionModelDetails
-    oci.ai_language.models.PreTrainedPhiModelDetails
     oci.ai_language.models.PreTrainedPiiModelDetails
     oci.ai_language.models.PreTrainedSentimentAnalysisModelDetails
     oci.ai_language.models.PreTrainedSummarization

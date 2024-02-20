@@ -68,6 +68,10 @@ class DataSciencePrivateEndpointSummary(object):
             The value to assign to the freeform_tags property of this DataSciencePrivateEndpointSummary.
         :type freeform_tags: dict(str, str)
 
+        :param system_tags:
+            The value to assign to the system_tags property of this DataSciencePrivateEndpointSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param id:
             The value to assign to the id property of this DataSciencePrivateEndpointSummary.
         :type id: str
@@ -118,6 +122,7 @@ class DataSciencePrivateEndpointSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
+            'system_tags': 'dict(str, dict(str, object))',
             'id': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
@@ -135,6 +140,7 @@ class DataSciencePrivateEndpointSummary(object):
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
+            'system_tags': 'systemTags',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
@@ -151,6 +157,7 @@ class DataSciencePrivateEndpointSummary(object):
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
+        self._system_tags = None
         self._id = None
         self._lifecycle_state = None
         self._lifecycle_details = None
@@ -273,6 +280,32 @@ class DataSciencePrivateEndpointSummary(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this DataSciencePrivateEndpointSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this DataSciencePrivateEndpointSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this DataSciencePrivateEndpointSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this DataSciencePrivateEndpointSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def id(self):

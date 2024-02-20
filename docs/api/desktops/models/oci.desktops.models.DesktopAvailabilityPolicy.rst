@@ -1,9 +1,9 @@
-PreTrainedPhiModelDetails
+DesktopAvailabilityPolicy
 =========================
 
-.. currentmodule:: oci.ai_language.models
+.. currentmodule:: oci.desktops.models
 
-.. autoclass:: PreTrainedPhiModelDetails
+.. autoclass:: DesktopAvailabilityPolicy
     :show-inheritance:
     :special-members: __init__
     :members:

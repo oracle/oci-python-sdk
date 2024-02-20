@@ -72,6 +72,7 @@ API Reference
 * :doc:`Db Management <database_management/client/oci.database_management.DbManagementClient>`
 * :doc:`Db System <mysql/client/oci.mysql.DbSystemClient>`
 * :doc:`Deployment <apigateway/client/oci.apigateway.DeploymentClient>`
+* :doc:`Desktop Service <desktops/client/oci.desktops.DesktopServiceClient>`
 * :doc:`Devops <devops/client/oci.devops.DevopsClient>`
 * :doc:`Diagnosability <database_management/client/oci.database_management.DiagnosabilityClient>`
 * :doc:`Disaster Recovery <disaster_recovery/client/oci.disaster_recovery.DisasterRecoveryClient>`
@@ -297,6 +298,7 @@ API Reference
     database_management
     database_migration
     database_tools
+    desktops
     devops
     disaster_recovery
     dns

@@ -96,6 +96,10 @@ class JobRun(object):
             The value to assign to the job_infrastructure_configuration_details property of this JobRun.
         :type job_infrastructure_configuration_details: oci.data_science.models.JobInfrastructureConfigurationDetails
 
+        :param job_environment_configuration_override_details:
+            The value to assign to the job_environment_configuration_override_details property of this JobRun.
+        :type job_environment_configuration_override_details: oci.data_science.models.JobEnvironmentConfigurationDetails
+
         :param job_log_configuration_override_details:
             The value to assign to the job_log_configuration_override_details property of this JobRun.
         :type job_log_configuration_override_details: oci.data_science.models.JobLogConfigurationDetails
@@ -139,6 +143,7 @@ class JobRun(object):
             'display_name': 'str',
             'job_configuration_override_details': 'JobConfigurationDetails',
             'job_infrastructure_configuration_details': 'JobInfrastructureConfigurationDetails',
+            'job_environment_configuration_override_details': 'JobEnvironmentConfigurationDetails',
             'job_log_configuration_override_details': 'JobLogConfigurationDetails',
             'job_storage_mount_configuration_details_list': 'list[StorageMountConfigurationDetails]',
             'log_details': 'JobRunLogDetails',
@@ -160,6 +165,7 @@ class JobRun(object):
             'display_name': 'displayName',
             'job_configuration_override_details': 'jobConfigurationOverrideDetails',
             'job_infrastructure_configuration_details': 'jobInfrastructureConfigurationDetails',
+            'job_environment_configuration_override_details': 'jobEnvironmentConfigurationOverrideDetails',
             'job_log_configuration_override_details': 'jobLogConfigurationOverrideDetails',
             'job_storage_mount_configuration_details_list': 'jobStorageMountConfigurationDetailsList',
             'log_details': 'logDetails',
@@ -180,6 +186,7 @@ class JobRun(object):
         self._display_name = None
         self._job_configuration_override_details = None
         self._job_infrastructure_configuration_details = None
+        self._job_environment_configuration_override_details = None
         self._job_log_configuration_override_details = None
         self._job_storage_mount_configuration_details_list = None
         self._log_details = None
@@ -475,6 +482,26 @@ class JobRun(object):
         :type: oci.data_science.models.JobInfrastructureConfigurationDetails
         """
         self._job_infrastructure_configuration_details = job_infrastructure_configuration_details
+
+    @property
+    def job_environment_configuration_override_details(self):
+        """
+        Gets the job_environment_configuration_override_details of this JobRun.
+
+        :return: The job_environment_configuration_override_details of this JobRun.
+        :rtype: oci.data_science.models.JobEnvironmentConfigurationDetails
+        """
+        return self._job_environment_configuration_override_details
+
+    @job_environment_configuration_override_details.setter
+    def job_environment_configuration_override_details(self, job_environment_configuration_override_details):
+        """
+        Sets the job_environment_configuration_override_details of this JobRun.
+
+        :param job_environment_configuration_override_details: The job_environment_configuration_override_details of this JobRun.
+        :type: oci.data_science.models.JobEnvironmentConfigurationDetails
+        """
+        self._job_environment_configuration_override_details = job_environment_configuration_override_details
 
     @property
     def job_log_configuration_override_details(self):

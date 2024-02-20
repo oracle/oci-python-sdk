@@ -93,6 +93,10 @@ class UpdateInstanceDetails(object):
             The value to assign to the dedicated_vm_host_id property of this UpdateInstanceDetails.
         :type dedicated_vm_host_id: str
 
+        :param platform_config:
+            The value to assign to the platform_config property of this UpdateInstanceDetails.
+        :type platform_config: oci.core.models.UpdateInstancePlatformConfig
+
         """
         self.swagger_types = {
             'capacity_reservation_id': 'str',
@@ -110,7 +114,8 @@ class UpdateInstanceDetails(object):
             'launch_options': 'UpdateLaunchOptions',
             'availability_config': 'UpdateInstanceAvailabilityConfigDetails',
             'time_maintenance_reboot_due': 'datetime',
-            'dedicated_vm_host_id': 'str'
+            'dedicated_vm_host_id': 'str',
+            'platform_config': 'UpdateInstancePlatformConfig'
         }
 
         self.attribute_map = {
@@ -129,7 +134,8 @@ class UpdateInstanceDetails(object):
             'launch_options': 'launchOptions',
             'availability_config': 'availabilityConfig',
             'time_maintenance_reboot_due': 'timeMaintenanceRebootDue',
-            'dedicated_vm_host_id': 'dedicatedVmHostId'
+            'dedicated_vm_host_id': 'dedicatedVmHostId',
+            'platform_config': 'platformConfig'
         }
 
         self._capacity_reservation_id = None
@@ -148,6 +154,7 @@ class UpdateInstanceDetails(object):
         self._availability_config = None
         self._time_maintenance_reboot_due = None
         self._dedicated_vm_host_id = None
+        self._platform_config = None
 
     @property
     def capacity_reservation_id(self):
@@ -709,6 +716,26 @@ class UpdateInstanceDetails(object):
         :type: str
         """
         self._dedicated_vm_host_id = dedicated_vm_host_id
+
+    @property
+    def platform_config(self):
+        """
+        Gets the platform_config of this UpdateInstanceDetails.
+
+        :return: The platform_config of this UpdateInstanceDetails.
+        :rtype: oci.core.models.UpdateInstancePlatformConfig
+        """
+        return self._platform_config
+
+    @platform_config.setter
+    def platform_config(self, platform_config):
+        """
+        Sets the platform_config of this UpdateInstanceDetails.
+
+        :param platform_config: The platform_config of this UpdateInstanceDetails.
+        :type: oci.core.models.UpdateInstancePlatformConfig
+        """
+        self._platform_config = platform_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

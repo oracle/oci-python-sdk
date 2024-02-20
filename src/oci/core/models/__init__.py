@@ -31,6 +31,7 @@ from .amd_rome_bm_launch_instance_platform_config import AmdRomeBmLaunchInstance
 from .amd_rome_bm_platform_config import AmdRomeBmPlatformConfig
 from .amd_vm_launch_instance_platform_config import AmdVmLaunchInstancePlatformConfig
 from .amd_vm_platform_config import AmdVmPlatformConfig
+from .amd_vm_update_instance_platform_config import AmdVmUpdateInstancePlatformConfig
 from .app_catalog_listing import AppCatalogListing
 from .app_catalog_listing_resource_version import AppCatalogListingResourceVersion
 from .app_catalog_listing_resource_version_agreements import AppCatalogListingResourceVersionAgreements
@@ -373,6 +374,7 @@ from .intel_skylake_bm_launch_instance_platform_config import IntelSkylakeBmLaun
 from .intel_skylake_bm_platform_config import IntelSkylakeBmPlatformConfig
 from .intel_vm_launch_instance_platform_config import IntelVmLaunchInstancePlatformConfig
 from .intel_vm_platform_config import IntelVmPlatformConfig
+from .intel_vm_update_instance_platform_config import IntelVmUpdateInstancePlatformConfig
 from .internet_gateway import InternetGateway
 from .ipsec_tunnel_drg_attachment_network_details import IpsecTunnelDrgAttachmentNetworkDetails
 from .ipv6 import Ipv6
@@ -506,6 +508,7 @@ from .update_instance_availability_config_details import UpdateInstanceAvailabil
 from .update_instance_configuration_details import UpdateInstanceConfigurationDetails
 from .update_instance_console_connection_details import UpdateInstanceConsoleConnectionDetails
 from .update_instance_details import UpdateInstanceDetails
+from .update_instance_platform_config import UpdateInstancePlatformConfig
 from .update_instance_pool_details import UpdateInstancePoolDetails
 from .update_instance_pool_placement_configuration_details import UpdateInstancePoolPlacementConfigurationDetails
 from .update_instance_shape_config_details import UpdateInstanceShapeConfigDetails
@@ -607,6 +610,7 @@ core_type_mapping = {
     "AmdRomeBmPlatformConfig": AmdRomeBmPlatformConfig,
     "AmdVmLaunchInstancePlatformConfig": AmdVmLaunchInstancePlatformConfig,
     "AmdVmPlatformConfig": AmdVmPlatformConfig,
+    "AmdVmUpdateInstancePlatformConfig": AmdVmUpdateInstancePlatformConfig,
     "AppCatalogListing": AppCatalogListing,
     "AppCatalogListingResourceVersion": AppCatalogListingResourceVersion,
     "AppCatalogListingResourceVersionAgreements": AppCatalogListingResourceVersionAgreements,
@@ -949,6 +953,7 @@ core_type_mapping = {
     "IntelSkylakeBmPlatformConfig": IntelSkylakeBmPlatformConfig,
     "IntelVmLaunchInstancePlatformConfig": IntelVmLaunchInstancePlatformConfig,
     "IntelVmPlatformConfig": IntelVmPlatformConfig,
+    "IntelVmUpdateInstancePlatformConfig": IntelVmUpdateInstancePlatformConfig,
     "InternetGateway": InternetGateway,
     "IpsecTunnelDrgAttachmentNetworkDetails": IpsecTunnelDrgAttachmentNetworkDetails,
     "Ipv6": Ipv6,
@@ -1082,6 +1087,7 @@ core_type_mapping = {
     "UpdateInstanceConfigurationDetails": UpdateInstanceConfigurationDetails,
     "UpdateInstanceConsoleConnectionDetails": UpdateInstanceConsoleConnectionDetails,
     "UpdateInstanceDetails": UpdateInstanceDetails,
+    "UpdateInstancePlatformConfig": UpdateInstancePlatformConfig,
     "UpdateInstancePoolDetails": UpdateInstancePoolDetails,
     "UpdateInstancePoolPlacementConfigurationDetails": UpdateInstancePoolPlacementConfigurationDetails,
     "UpdateInstanceShapeConfigDetails": UpdateInstanceShapeConfigDetails,

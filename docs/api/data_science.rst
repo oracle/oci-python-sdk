@@ -56,6 +56,7 @@ Data Science
     oci.data_science.models.InstanceConfiguration
     oci.data_science.models.Job
     oci.data_science.models.JobConfigurationDetails
+    oci.data_science.models.JobEnvironmentConfigurationDetails
     oci.data_science.models.JobInfrastructureConfigurationDetails
     oci.data_science.models.JobLogConfigurationDetails
     oci.data_science.models.JobRun
@@ -89,6 +90,7 @@ Data Science
     oci.data_science.models.NotebookSessionShapeSummary
     oci.data_science.models.NotebookSessionSummary
     oci.data_science.models.ObjectStorageMountConfigurationDetails
+    oci.data_science.models.OcirContainerJobEnvironmentConfigurationDetails
     oci.data_science.models.OcirModelDeploymentEnvironmentConfigurationDetails
     oci.data_science.models.Pipeline
     oci.data_science.models.PipelineConfigurationDetails

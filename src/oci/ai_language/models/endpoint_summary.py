@@ -70,7 +70,7 @@ class EndpointSummary(object):
 
         :param system_tags:
             The value to assign to the system_tags property of this EndpointSummary.
-        :type system_tags: dict(str, object)
+        :type system_tags: dict(str, dict(str, object))
 
         """
         self.swagger_types = {
@@ -86,7 +86,7 @@ class EndpointSummary(object):
             'model_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, object)'
+            'system_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -432,7 +432,7 @@ class EndpointSummary(object):
 
 
         :return: The system_tags of this EndpointSummary.
-        :rtype: dict(str, object)
+        :rtype: dict(str, dict(str, object))
         """
         return self._system_tags
 
@@ -445,7 +445,7 @@ class EndpointSummary(object):
 
 
         :param system_tags: The system_tags of this EndpointSummary.
-        :type: dict(str, object)
+        :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
 

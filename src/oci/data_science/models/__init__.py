@@ -44,6 +44,7 @@ from .import_model_artifact_details import ImportModelArtifactDetails
 from .instance_configuration import InstanceConfiguration
 from .job import Job
 from .job_configuration_details import JobConfigurationDetails
+from .job_environment_configuration_details import JobEnvironmentConfigurationDetails
 from .job_infrastructure_configuration_details import JobInfrastructureConfigurationDetails
 from .job_log_configuration_details import JobLogConfigurationDetails
 from .job_run import JobRun
@@ -77,6 +78,7 @@ from .notebook_session_shape_config_details import NotebookSessionShapeConfigDet
 from .notebook_session_shape_summary import NotebookSessionShapeSummary
 from .notebook_session_summary import NotebookSessionSummary
 from .object_storage_mount_configuration_details import ObjectStorageMountConfigurationDetails
+from .ocir_container_job_environment_configuration_details import OcirContainerJobEnvironmentConfigurationDetails
 from .ocir_model_deployment_environment_configuration_details import OcirModelDeploymentEnvironmentConfigurationDetails
 from .pipeline import Pipeline
 from .pipeline_configuration_details import PipelineConfigurationDetails
@@ -169,6 +171,7 @@ data_science_type_mapping = {
     "InstanceConfiguration": InstanceConfiguration,
     "Job": Job,
     "JobConfigurationDetails": JobConfigurationDetails,
+    "JobEnvironmentConfigurationDetails": JobEnvironmentConfigurationDetails,
     "JobInfrastructureConfigurationDetails": JobInfrastructureConfigurationDetails,
     "JobLogConfigurationDetails": JobLogConfigurationDetails,
     "JobRun": JobRun,
@@ -202,6 +205,7 @@ data_science_type_mapping = {
     "NotebookSessionShapeSummary": NotebookSessionShapeSummary,
     "NotebookSessionSummary": NotebookSessionSummary,
     "ObjectStorageMountConfigurationDetails": ObjectStorageMountConfigurationDetails,
+    "OcirContainerJobEnvironmentConfigurationDetails": OcirContainerJobEnvironmentConfigurationDetails,
     "OcirModelDeploymentEnvironmentConfigurationDetails": OcirModelDeploymentEnvironmentConfigurationDetails,
     "Pipeline": Pipeline,
     "PipelineConfigurationDetails": PipelineConfigurationDetails,

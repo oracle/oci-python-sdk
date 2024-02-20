@@ -86,7 +86,6 @@ from .pre_trained_health_nlu_model_details import PreTrainedHealthNluModelDetail
 from .pre_trained_key_phrase_extraction_model_details import PreTrainedKeyPhraseExtractionModelDetails
 from .pre_trained_language_detection_model_details import PreTrainedLanguageDetectionModelDetails
 from .pre_trained_named_entity_recognition_model_details import PreTrainedNamedEntityRecognitionModelDetails
-from .pre_trained_phi_model_details import PreTrainedPhiModelDetails
 from .pre_trained_pii_model_details import PreTrainedPiiModelDetails
 from .pre_trained_sentiment_analysis_model_details import PreTrainedSentimentAnalysisModelDetails
 from .pre_trained_summarization import PreTrainedSummarization
@@ -202,7 +201,6 @@ ai_language_type_mapping = {
     "PreTrainedKeyPhraseExtractionModelDetails": PreTrainedKeyPhraseExtractionModelDetails,
     "PreTrainedLanguageDetectionModelDetails": PreTrainedLanguageDetectionModelDetails,
     "PreTrainedNamedEntityRecognitionModelDetails": PreTrainedNamedEntityRecognitionModelDetails,
-    "PreTrainedPhiModelDetails": PreTrainedPhiModelDetails,
     "PreTrainedPiiModelDetails": PreTrainedPiiModelDetails,
     "PreTrainedSentimentAnalysisModelDetails": PreTrainedSentimentAnalysisModelDetails,
     "PreTrainedSummarization": PreTrainedSummarization,
