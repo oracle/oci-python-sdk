@@ -49,6 +49,7 @@ Core Services
     oci.core.models.AmdRomeBmPlatformConfig
     oci.core.models.AmdVmLaunchInstancePlatformConfig
     oci.core.models.AmdVmPlatformConfig
+    oci.core.models.AmdVmUpdateInstancePlatformConfig
     oci.core.models.AppCatalogListing
     oci.core.models.AppCatalogListingResourceVersion
     oci.core.models.AppCatalogListingResourceVersionAgreements
@@ -391,6 +392,7 @@ Core Services
     oci.core.models.IntelSkylakeBmPlatformConfig
     oci.core.models.IntelVmLaunchInstancePlatformConfig
     oci.core.models.IntelVmPlatformConfig
+    oci.core.models.IntelVmUpdateInstancePlatformConfig
     oci.core.models.InternetGateway
     oci.core.models.IpsecTunnelDrgAttachmentNetworkDetails
     oci.core.models.Ipv6
@@ -524,6 +526,7 @@ Core Services
     oci.core.models.UpdateInstanceConfigurationDetails
     oci.core.models.UpdateInstanceConsoleConnectionDetails
     oci.core.models.UpdateInstanceDetails
+    oci.core.models.UpdateInstancePlatformConfig
     oci.core.models.UpdateInstancePoolDetails
     oci.core.models.UpdateInstancePoolPlacementConfigurationDetails
     oci.core.models.UpdateInstanceShapeConfigDetails

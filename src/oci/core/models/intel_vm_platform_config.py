@@ -42,13 +42,18 @@ class IntelVmPlatformConfig(PlatformConfig):
             The value to assign to the is_memory_encryption_enabled property of this IntelVmPlatformConfig.
         :type is_memory_encryption_enabled: bool
 
+        :param is_symmetric_multi_threading_enabled:
+            The value to assign to the is_symmetric_multi_threading_enabled property of this IntelVmPlatformConfig.
+        :type is_symmetric_multi_threading_enabled: bool
+
         """
         self.swagger_types = {
             'type': 'str',
             'is_secure_boot_enabled': 'bool',
             'is_trusted_platform_module_enabled': 'bool',
             'is_measured_boot_enabled': 'bool',
-            'is_memory_encryption_enabled': 'bool'
+            'is_memory_encryption_enabled': 'bool',
+            'is_symmetric_multi_threading_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -56,7 +61,8 @@ class IntelVmPlatformConfig(PlatformConfig):
             'is_secure_boot_enabled': 'isSecureBootEnabled',
             'is_trusted_platform_module_enabled': 'isTrustedPlatformModuleEnabled',
             'is_measured_boot_enabled': 'isMeasuredBootEnabled',
-            'is_memory_encryption_enabled': 'isMemoryEncryptionEnabled'
+            'is_memory_encryption_enabled': 'isMemoryEncryptionEnabled',
+            'is_symmetric_multi_threading_enabled': 'isSymmetricMultiThreadingEnabled'
         }
 
         self._type = None
@@ -64,7 +70,44 @@ class IntelVmPlatformConfig(PlatformConfig):
         self._is_trusted_platform_module_enabled = None
         self._is_measured_boot_enabled = None
         self._is_memory_encryption_enabled = None
+        self._is_symmetric_multi_threading_enabled = None
         self._type = 'INTEL_VM'
+
+    @property
+    def is_symmetric_multi_threading_enabled(self):
+        """
+        Gets the is_symmetric_multi_threading_enabled of this IntelVmPlatformConfig.
+        Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also
+        called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+
+        Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple
+        independent threads of execution, to better use the resources and increase the efficiency
+        of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which
+        can provide higher or more predictable performance for some workloads.
+
+
+        :return: The is_symmetric_multi_threading_enabled of this IntelVmPlatformConfig.
+        :rtype: bool
+        """
+        return self._is_symmetric_multi_threading_enabled
+
+    @is_symmetric_multi_threading_enabled.setter
+    def is_symmetric_multi_threading_enabled(self, is_symmetric_multi_threading_enabled):
+        """
+        Sets the is_symmetric_multi_threading_enabled of this IntelVmPlatformConfig.
+        Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also
+        called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+
+        Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple
+        independent threads of execution, to better use the resources and increase the efficiency
+        of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which
+        can provide higher or more predictable performance for some workloads.
+
+
+        :param is_symmetric_multi_threading_enabled: The is_symmetric_multi_threading_enabled of this IntelVmPlatformConfig.
+        :type: bool
+        """
+        self._is_symmetric_multi_threading_enabled = is_symmetric_multi_threading_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

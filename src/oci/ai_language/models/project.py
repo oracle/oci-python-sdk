@@ -88,7 +88,7 @@ class Project(object):
 
         :param system_tags:
             The value to assign to the system_tags property of this Project.
-        :type system_tags: dict(str, object)
+        :type system_tags: dict(str, dict(str, object))
 
         """
         self.swagger_types = {
@@ -102,7 +102,7 @@ class Project(object):
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, object)'
+            'system_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -402,7 +402,7 @@ class Project(object):
 
 
         :return: The system_tags of this Project.
-        :rtype: dict(str, object)
+        :rtype: dict(str, dict(str, object))
         """
         return self._system_tags
 
@@ -415,7 +415,7 @@ class Project(object):
 
 
         :param system_tags: The system_tags of this Project.
-        :type: dict(str, object)
+        :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
 

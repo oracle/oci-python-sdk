@@ -44,6 +44,10 @@ class CreateJobRunDetails(object):
             The value to assign to the job_log_configuration_override_details property of this CreateJobRunDetails.
         :type job_log_configuration_override_details: oci.data_science.models.JobLogConfigurationDetails
 
+        :param job_environment_configuration_override_details:
+            The value to assign to the job_environment_configuration_override_details property of this CreateJobRunDetails.
+        :type job_environment_configuration_override_details: oci.data_science.models.JobEnvironmentConfigurationDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateJobRunDetails.
         :type freeform_tags: dict(str, str)
@@ -60,6 +64,7 @@ class CreateJobRunDetails(object):
             'job_id': 'str',
             'job_configuration_override_details': 'JobConfigurationDetails',
             'job_log_configuration_override_details': 'JobLogConfigurationDetails',
+            'job_environment_configuration_override_details': 'JobEnvironmentConfigurationDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -71,6 +76,7 @@ class CreateJobRunDetails(object):
             'job_id': 'jobId',
             'job_configuration_override_details': 'jobConfigurationOverrideDetails',
             'job_log_configuration_override_details': 'jobLogConfigurationOverrideDetails',
+            'job_environment_configuration_override_details': 'jobEnvironmentConfigurationOverrideDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -81,6 +87,7 @@ class CreateJobRunDetails(object):
         self._job_id = None
         self._job_configuration_override_details = None
         self._job_log_configuration_override_details = None
+        self._job_environment_configuration_override_details = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -231,6 +238,26 @@ class CreateJobRunDetails(object):
         :type: oci.data_science.models.JobLogConfigurationDetails
         """
         self._job_log_configuration_override_details = job_log_configuration_override_details
+
+    @property
+    def job_environment_configuration_override_details(self):
+        """
+        Gets the job_environment_configuration_override_details of this CreateJobRunDetails.
+
+        :return: The job_environment_configuration_override_details of this CreateJobRunDetails.
+        :rtype: oci.data_science.models.JobEnvironmentConfigurationDetails
+        """
+        return self._job_environment_configuration_override_details
+
+    @job_environment_configuration_override_details.setter
+    def job_environment_configuration_override_details(self, job_environment_configuration_override_details):
+        """
+        Sets the job_environment_configuration_override_details of this CreateJobRunDetails.
+
+        :param job_environment_configuration_override_details: The job_environment_configuration_override_details of this CreateJobRunDetails.
+        :type: oci.data_science.models.JobEnvironmentConfigurationDetails
+        """
+        self._job_environment_configuration_override_details = job_environment_configuration_override_details
 
     @property
     def freeform_tags(self):

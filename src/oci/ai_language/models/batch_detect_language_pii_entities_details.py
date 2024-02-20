@@ -20,6 +20,10 @@ class BatchDetectLanguagePiiEntitiesDetails(object):
         Initializes a new BatchDetectLanguagePiiEntitiesDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param endpoint_id:
+            The value to assign to the endpoint_id property of this BatchDetectLanguagePiiEntitiesDetails.
+        :type endpoint_id: str
+
         :param compartment_id:
             The value to assign to the compartment_id property of this BatchDetectLanguagePiiEntitiesDetails.
         :type compartment_id: str
@@ -34,20 +38,47 @@ class BatchDetectLanguagePiiEntitiesDetails(object):
 
         """
         self.swagger_types = {
+            'endpoint_id': 'str',
             'compartment_id': 'str',
             'documents': 'list[TextDocument]',
             'masking': 'dict(str, PiiEntityMasking)'
         }
 
         self.attribute_map = {
+            'endpoint_id': 'endpointId',
             'compartment_id': 'compartmentId',
             'documents': 'documents',
             'masking': 'masking'
         }
 
+        self._endpoint_id = None
         self._compartment_id = None
         self._documents = None
         self._masking = None
+
+    @property
+    def endpoint_id(self):
+        """
+        Gets the endpoint_id of this BatchDetectLanguagePiiEntitiesDetails.
+        The endpoint which have to be used for inferencing. If endpointId and compartmentId is provided, then inference will be served from custom model which is mapped to this Endpoint.
+
+
+        :return: The endpoint_id of this BatchDetectLanguagePiiEntitiesDetails.
+        :rtype: str
+        """
+        return self._endpoint_id
+
+    @endpoint_id.setter
+    def endpoint_id(self, endpoint_id):
+        """
+        Sets the endpoint_id of this BatchDetectLanguagePiiEntitiesDetails.
+        The endpoint which have to be used for inferencing. If endpointId and compartmentId is provided, then inference will be served from custom model which is mapped to this Endpoint.
+
+
+        :param endpoint_id: The endpoint_id of this BatchDetectLanguagePiiEntitiesDetails.
+        :type: str
+        """
+        self._endpoint_id = endpoint_id
 
     @property
     def compartment_id(self):

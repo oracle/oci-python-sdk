@@ -20,6 +20,10 @@ class BatchDetectLanguageSentimentsDetails(object):
         Initializes a new BatchDetectLanguageSentimentsDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param endpoint_id:
+            The value to assign to the endpoint_id property of this BatchDetectLanguageSentimentsDetails.
+        :type endpoint_id: str
+
         :param compartment_id:
             The value to assign to the compartment_id property of this BatchDetectLanguageSentimentsDetails.
         :type compartment_id: str
@@ -30,17 +34,44 @@ class BatchDetectLanguageSentimentsDetails(object):
 
         """
         self.swagger_types = {
+            'endpoint_id': 'str',
             'compartment_id': 'str',
             'documents': 'list[TextDocument]'
         }
 
         self.attribute_map = {
+            'endpoint_id': 'endpointId',
             'compartment_id': 'compartmentId',
             'documents': 'documents'
         }
 
+        self._endpoint_id = None
         self._compartment_id = None
         self._documents = None
+
+    @property
+    def endpoint_id(self):
+        """
+        Gets the endpoint_id of this BatchDetectLanguageSentimentsDetails.
+        The endpoint which have to be used for inferencing. If endpointId and compartmentId is provided, then inference will be served from custom model which is mapped to this Endpoint.
+
+
+        :return: The endpoint_id of this BatchDetectLanguageSentimentsDetails.
+        :rtype: str
+        """
+        return self._endpoint_id
+
+    @endpoint_id.setter
+    def endpoint_id(self, endpoint_id):
+        """
+        Sets the endpoint_id of this BatchDetectLanguageSentimentsDetails.
+        The endpoint which have to be used for inferencing. If endpointId and compartmentId is provided, then inference will be served from custom model which is mapped to this Endpoint.
+
+
+        :param endpoint_id: The endpoint_id of this BatchDetectLanguageSentimentsDetails.
+        :type: str
+        """
+        self._endpoint_id = endpoint_id
 
     @property
     def compartment_id(self):

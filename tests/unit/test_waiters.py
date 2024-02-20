@@ -112,67 +112,69 @@ def test_wait_multiple_states(virtual_network, config):
     assert total_time < 60 * 5
 
 
-def test_invalid_operation(identity, config):
-    # Create User
-    request = oci.identity.models.CreateUserDetails()
+def test_invalid_operation(object_storage, config):
+    # Create Bucket
+    namespace_name = object_storage.get_namespace().data
+    request = oci.object_storage.models.CreateBucketDetails()
     request.compartment_id = config["tenancy"]
-    request.name = tests.util.unique_name('python_wait_test_user', ignore_vcr=True)
-    request.description = 'test user'
-    response = identity.create_user(request)
-    user_id = response.data.id
+    bucket_name = tests.util.unique_name('python_wait_test_bucket', ignore_vcr=True)
+    request.name = bucket_name
+    response = object_storage.create_bucket(namespace_name, request)
 
     with pytest.raises(oci.exceptions.WaitUntilNotSupported):
-        oci.wait_until(identity, response, 'name', 'test')
+        oci.wait_until(object_storage, response, 'name', 'test')
 
     with pytest.raises(ValueError):
-        response = identity.get_user(user_id)
-        oci.wait_until(identity, response, 'fake_property', 'test')
+        response = object_storage.get_bucket(namespace_name, bucket_name)
+        oci.wait_until(object_storage, response, 'fake_property', 'test')
 
-    # Delete User
-    response = identity.delete_user(user_id)
+    # Delete Bucket
+    response = object_storage.delete_bucket(namespace_name, bucket_name)
 
     with pytest.raises(oci.exceptions.WaitUntilNotSupported):
-        oci.wait_until(identity, response, 'not a real property', 'test')
+        oci.wait_until(object_storage, response, 'not a real property', 'test')
 
 
-def test_already_in_state(identity, config):
-    description = 'test user'
-    request = oci.identity.models.CreateUserDetails()
+def test_already_in_state(object_storage, config):
+    # Create Bucket
+    namespace_name = object_storage.get_namespace().data
+    request = oci.object_storage.models.CreateBucketDetails()
     request.compartment_id = config["tenancy"]
-    request.name = tests.util.unique_name('python_wait_test_user', ignore_vcr=True)
-    request.description = description
-    response = identity.create_user(request)
-    user_id = response.data.id
+    bucket_name = tests.util.unique_name('python_wait_test_bucket', ignore_vcr=True)
+    request.name = bucket_name
+    response = object_storage.create_bucket(namespace_name, request)
+    bucket_id = response.data.id
 
-    response = identity.get_user(user_id)
-    assert description == response.data.description
+    response = object_storage.get_bucket(namespace_name, bucket_name)
+    assert bucket_id == response.data.id
 
     start_time = time.time()
-    oci.wait_until(identity, response, 'description', description)
+    oci.wait_until(object_storage, response, 'id', bucket_id)
     assert start_time - time.time() < 1
 
     # clean up
-    identity.delete_user(user_id)
+    object_storage.delete_bucket(namespace_name, bucket_name)
 
 
-def test_wait_time_exceeded(identity, config):
-    description = 'test user'
-    request = oci.identity.models.CreateUserDetails()
+def test_wait_time_exceeded(object_storage, config):
+    # Create Bucket
+    namespace_name = object_storage.get_namespace().data
+    request = oci.object_storage.models.CreateBucketDetails()
     request.compartment_id = config["tenancy"]
-    request.name = tests.util.unique_name('python_wait_test_user', ignore_vcr=True)
-    request.description = description
-    response = identity.create_user(request)
-    user_id = response.data.id
+    bucket_name = tests.util.unique_name('python_wait_test_bucket', ignore_vcr=True)
+    request.name = bucket_name
+    response = object_storage.create_bucket(namespace_name, request)
+    bucket_id = response.data.id
 
-    response = identity.get_user(user_id)
-    assert description == response.data.description
+    response = object_storage.get_bucket(namespace_name, bucket_name)
+    assert bucket_id == response.data.id
 
     with pytest.raises(oci.exceptions.MaximumWaitTimeExceeded):
         # Wait on a property that will not change until we time out.
-        oci.wait_until(identity, response, 'name', 'test', max_wait_seconds=2)
+        oci.wait_until(object_storage, response, 'name', 'test', max_wait_seconds=2)
 
     # clean up
-    identity.delete_user(user_id)
+    object_storage.delete_bucket(namespace_name, bucket_name)
 
 
 def test_property_and_eval_function_provided(virtual_network):
@@ -182,70 +184,74 @@ def test_property_and_eval_function_provided(virtual_network):
     assert str(ve.value) == 'Invalid wait_until configuration - can not provide both evaluate_response function and property argument, only one should be specified'
 
 
-def test_eval_function_lambda(identity, config):
-    user_id = None
+def test_eval_function_lambda(object_storage, config):
+    bucket_id = None
+    namespace_name = ""
+    bucket_name = ""
     try:
-        description = 'test user'
-        request = oci.identity.models.CreateUserDetails()
+        namespace_name = object_storage.get_namespace().data
+        request = oci.object_storage.models.CreateBucketDetails()
         request.compartment_id = config["tenancy"]
-        request.name = tests.util.unique_name('python_wait_test_user', ignore_vcr=True)
-        request.description = description
-        response = identity.create_user(request)
-        user_id = response.data.id
+        bucket_name = tests.util.unique_name('python_wait_test_bucket', ignore_vcr=True)
+        request.name = bucket_name
+        response = object_storage.create_bucket(namespace_name, request)
+        bucket_id = response.data.id
 
-        response = identity.get_user(user_id)
-        assert description == response.data.description
+        response = object_storage.get_bucket(namespace_name, bucket_name)
+        assert bucket_id == response.data.id
 
-        response = oci.wait_until(identity, response, evaluate_response=lambda x: x.data.description == description and x.data.name == request.name and x.data.lifecycle_state == 'ACTIVE')
-        assert response.data.id == user_id
-        assert response.data.description == description
+        response = oci.wait_until(object_storage, response, evaluate_response=lambda x: x.data.id == bucket_id and x.data.name == request.name and x.data.namespace == namespace_name)
+        assert response.data.id == bucket_id
+        assert response.data.compartment_id == config["tenancy"]
         assert response.data.name == request.name
-        assert response.data.lifecycle_state == 'ACTIVE'
+        assert response.data.namespace == namespace_name
     finally:
-        if user_id:
-            identity.delete_user(user_id)
+        if bucket_id:
+            object_storage.delete_bucket(namespace_name, bucket_name)
 
 
-def test_eval_function_func_ref(identity, config):
-    user_id = None
+def test_eval_function_func_ref(object_storage, config):
+    bucket_id = None
+    namespace_name = ""
+    bucket_name = ""
     try:
-        description = 'test user'
-        request = oci.identity.models.CreateUserDetails()
+        namespace_name = object_storage.get_namespace().data
+        request = oci.object_storage.models.CreateBucketDetails()
         request.compartment_id = config["tenancy"]
-        request.name = tests.util.unique_name('python_wait_test_user', ignore_vcr=True)
-        request.description = description
-        response = identity.create_user(request)
-        user_id = response.data.id
+        bucket_name = tests.util.unique_name('python_wait_test_bucket', ignore_vcr=True)
+        request.name = bucket_name
+        response = object_storage.create_bucket(namespace_name, request)
+        bucket_id = response.data.id
 
-        response = identity.get_user(user_id)
-        assert description == response.data.description
+        response = object_storage.get_bucket(namespace_name, bucket_name)
+        assert bucket_id == response.data.id
 
-        def test_user_response(user_response):
-            print('Invoked function reference in test_user_response')
-            user = user_response.data
-            return user.description == description and user.name == request.name and user.lifecycle_state == 'ACTIVE'
+        def test_bucket_response(bucket_response):
+            print('Invoked function reference in test_bucket_response')
+            bucket = bucket_response.data
+            return bucket.id == bucket_id and bucket.name == request.name and bucket.compartment_id == config["tenancy"]
 
-        response = oci.wait_until(identity, response, evaluate_response=test_user_response)
-        assert response.data.id == user_id
-        assert response.data.description == description
+        response = oci.wait_until(object_storage, response, evaluate_response=test_bucket_response)
+        assert response.data.id == bucket_id
+        assert response.data.namespace == namespace_name
         assert response.data.name == request.name
-        assert response.data.lifecycle_state == 'ACTIVE'
+        assert response.data.compartment_id == config["tenancy"]
 
         times_called = {'counter': 0}
 
-        def test_user_response_for_timeout(user_response):
-            print('Invoked function reference in test_user_response_for_timeout')
-            user = user_response.data
+        def test_bucket_response_for_timeout(bucket_response):
+            print('Invoked function reference in test_bucket_response_for_timeout')
+            bucket = bucket_response.data
             times_called['counter'] += 1
-            return user.description == description and user.name == request.name and user.lifecycle_state == 'superman'
+            return bucket.id == bucket_id and bucket.name == request.name and bucket.compartment_id == 'superman'
 
         with pytest.raises(oci.exceptions.MaximumWaitTimeExceeded):
-            response = oci.wait_until(identity, response, evaluate_response=test_user_response_for_timeout, max_wait_seconds=45, max_interval_seconds=10)
+            response = oci.wait_until(object_storage, response, evaluate_response=test_bucket_response_for_timeout, max_wait_seconds=45, max_interval_seconds=10)
 
         assert times_called['counter'] >= 2
     finally:
-        if user_id:
-            identity.delete_user(user_id)
+        if bucket_id:
+            object_storage.delete_bucket(namespace_name, bucket_name)
 
 
 def test_callback_func(virtual_network, config):

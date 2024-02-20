@@ -20,6 +20,18 @@ class BatchDetectDominantLanguageDetails(object):
         Initializes a new BatchDetectDominantLanguageDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param should_ignore_transliteration:
+            The value to assign to the should_ignore_transliteration property of this BatchDetectDominantLanguageDetails.
+        :type should_ignore_transliteration: bool
+
+        :param chars_to_consider:
+            The value to assign to the chars_to_consider property of this BatchDetectDominantLanguageDetails.
+        :type chars_to_consider: int
+
+        :param endpoint_id:
+            The value to assign to the endpoint_id property of this BatchDetectDominantLanguageDetails.
+        :type endpoint_id: str
+
         :param compartment_id:
             The value to assign to the compartment_id property of this BatchDetectDominantLanguageDetails.
         :type compartment_id: str
@@ -30,17 +42,106 @@ class BatchDetectDominantLanguageDetails(object):
 
         """
         self.swagger_types = {
+            'should_ignore_transliteration': 'bool',
+            'chars_to_consider': 'int',
+            'endpoint_id': 'str',
             'compartment_id': 'str',
             'documents': 'list[DominantLanguageDocument]'
         }
 
         self.attribute_map = {
+            'should_ignore_transliteration': 'shouldIgnoreTransliteration',
+            'chars_to_consider': 'charsToConsider',
+            'endpoint_id': 'endpointId',
             'compartment_id': 'compartmentId',
             'documents': 'documents'
         }
 
+        self._should_ignore_transliteration = None
+        self._chars_to_consider = None
+        self._endpoint_id = None
         self._compartment_id = None
         self._documents = None
+
+    @property
+    def should_ignore_transliteration(self):
+        """
+        Gets the should_ignore_transliteration of this BatchDetectDominantLanguageDetails.
+        Specifies whether to consider or ignore transliteration. For example \"hi, aap kaise ho? sab kuch teek hai? I will call you tomorrow.\" would be detected as English when ignore transliteration=true, Hindi when ignoreTransliteration=false.
+
+
+        :return: The should_ignore_transliteration of this BatchDetectDominantLanguageDetails.
+        :rtype: bool
+        """
+        return self._should_ignore_transliteration
+
+    @should_ignore_transliteration.setter
+    def should_ignore_transliteration(self, should_ignore_transliteration):
+        """
+        Sets the should_ignore_transliteration of this BatchDetectDominantLanguageDetails.
+        Specifies whether to consider or ignore transliteration. For example \"hi, aap kaise ho? sab kuch teek hai? I will call you tomorrow.\" would be detected as English when ignore transliteration=true, Hindi when ignoreTransliteration=false.
+
+
+        :param should_ignore_transliteration: The should_ignore_transliteration of this BatchDetectDominantLanguageDetails.
+        :type: bool
+        """
+        self._should_ignore_transliteration = should_ignore_transliteration
+
+    @property
+    def chars_to_consider(self):
+        """
+        Gets the chars_to_consider of this BatchDetectDominantLanguageDetails.
+        default value is None.
+        Specifies maximum number of characters to consider for determining the dominant language.
+        If unspecified, then optimum number characters will be considered.
+        If 0 is specified then all the characters are used to determine the language.
+        If the value is greater than 0, then specified number of characters will be considered from the beginning of the text.
+
+
+        :return: The chars_to_consider of this BatchDetectDominantLanguageDetails.
+        :rtype: int
+        """
+        return self._chars_to_consider
+
+    @chars_to_consider.setter
+    def chars_to_consider(self, chars_to_consider):
+        """
+        Sets the chars_to_consider of this BatchDetectDominantLanguageDetails.
+        default value is None.
+        Specifies maximum number of characters to consider for determining the dominant language.
+        If unspecified, then optimum number characters will be considered.
+        If 0 is specified then all the characters are used to determine the language.
+        If the value is greater than 0, then specified number of characters will be considered from the beginning of the text.
+
+
+        :param chars_to_consider: The chars_to_consider of this BatchDetectDominantLanguageDetails.
+        :type: int
+        """
+        self._chars_to_consider = chars_to_consider
+
+    @property
+    def endpoint_id(self):
+        """
+        Gets the endpoint_id of this BatchDetectDominantLanguageDetails.
+        The endpoint which have to be used for inferencing. If endpointId and compartmentId is provided, then inference will be served from custom model which is mapped to this Endpoint.
+
+
+        :return: The endpoint_id of this BatchDetectDominantLanguageDetails.
+        :rtype: str
+        """
+        return self._endpoint_id
+
+    @endpoint_id.setter
+    def endpoint_id(self, endpoint_id):
+        """
+        Sets the endpoint_id of this BatchDetectDominantLanguageDetails.
+        The endpoint which have to be used for inferencing. If endpointId and compartmentId is provided, then inference will be served from custom model which is mapped to this Endpoint.
+
+
+        :param endpoint_id: The endpoint_id of this BatchDetectDominantLanguageDetails.
+        :type: str
+        """
+        self._endpoint_id = endpoint_id
 
     @property
     def compartment_id(self):

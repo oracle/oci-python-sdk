@@ -75,7 +75,6 @@ class ModelDetails(object):
         * :class:`~oci.ai_language.models.PreTrainedLanguageDetectionModelDetails`
         * :class:`~oci.ai_language.models.PreTrainedNamedEntityRecognitionModelDetails`
         * :class:`~oci.ai_language.models.PreTrainedSentimentAnalysisModelDetails`
-        * :class:`~oci.ai_language.models.PreTrainedPhiModelDetails`
         * :class:`~oci.ai_language.models.PreTrainedTextClassificationModelDetails`
         * :class:`~oci.ai_language.models.TextClassificationModelDetails`
         * :class:`~oci.ai_language.models.PreTrainedSummarization`
@@ -135,9 +134,6 @@ class ModelDetails(object):
 
         if type == 'PRE_TRAINED_SENTIMENT_ANALYSIS':
             return 'PreTrainedSentimentAnalysisModelDetails'
-
-        if type == 'PRE_TRAINED_PHI':
-            return 'PreTrainedPhiModelDetails'
 
         if type == 'PRE_TRAINED_TEXT_CLASSIFICATION':
             return 'PreTrainedTextClassificationModelDetails'
