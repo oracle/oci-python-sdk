@@ -98,8 +98,16 @@ class AutonomousDatabaseDataguardAssociation(object):
     PEER_AUTONOMOUS_DATABASE_LIFE_CYCLE_STATE_AVAILABLE = "AVAILABLE"
 
     #: A constant which can be used with the peer_autonomous_database_life_cycle_state property of a AutonomousDatabaseDataguardAssociation.
-    #: This constant has a value of "ROLE_CHANGE_IN_PROGRESS"
-    PEER_AUTONOMOUS_DATABASE_LIFE_CYCLE_STATE_ROLE_CHANGE_IN_PROGRESS = "ROLE_CHANGE_IN_PROGRESS"
+    #: This constant has a value of "STOPPING"
+    PEER_AUTONOMOUS_DATABASE_LIFE_CYCLE_STATE_STOPPING = "STOPPING"
+
+    #: A constant which can be used with the peer_autonomous_database_life_cycle_state property of a AutonomousDatabaseDataguardAssociation.
+    #: This constant has a value of "STOPPED"
+    PEER_AUTONOMOUS_DATABASE_LIFE_CYCLE_STATE_STOPPED = "STOPPED"
+
+    #: A constant which can be used with the peer_autonomous_database_life_cycle_state property of a AutonomousDatabaseDataguardAssociation.
+    #: This constant has a value of "STARTING"
+    PEER_AUTONOMOUS_DATABASE_LIFE_CYCLE_STATE_STARTING = "STARTING"
 
     #: A constant which can be used with the peer_autonomous_database_life_cycle_state property of a AutonomousDatabaseDataguardAssociation.
     #: This constant has a value of "TERMINATING"
@@ -110,16 +118,60 @@ class AutonomousDatabaseDataguardAssociation(object):
     PEER_AUTONOMOUS_DATABASE_LIFE_CYCLE_STATE_TERMINATED = "TERMINATED"
 
     #: A constant which can be used with the peer_autonomous_database_life_cycle_state property of a AutonomousDatabaseDataguardAssociation.
-    #: This constant has a value of "FAILED"
-    PEER_AUTONOMOUS_DATABASE_LIFE_CYCLE_STATE_FAILED = "FAILED"
-
-    #: A constant which can be used with the peer_autonomous_database_life_cycle_state property of a AutonomousDatabaseDataguardAssociation.
     #: This constant has a value of "UNAVAILABLE"
     PEER_AUTONOMOUS_DATABASE_LIFE_CYCLE_STATE_UNAVAILABLE = "UNAVAILABLE"
 
     #: A constant which can be used with the peer_autonomous_database_life_cycle_state property of a AutonomousDatabaseDataguardAssociation.
+    #: This constant has a value of "RESTORE_IN_PROGRESS"
+    PEER_AUTONOMOUS_DATABASE_LIFE_CYCLE_STATE_RESTORE_IN_PROGRESS = "RESTORE_IN_PROGRESS"
+
+    #: A constant which can be used with the peer_autonomous_database_life_cycle_state property of a AutonomousDatabaseDataguardAssociation.
+    #: This constant has a value of "RESTORE_FAILED"
+    PEER_AUTONOMOUS_DATABASE_LIFE_CYCLE_STATE_RESTORE_FAILED = "RESTORE_FAILED"
+
+    #: A constant which can be used with the peer_autonomous_database_life_cycle_state property of a AutonomousDatabaseDataguardAssociation.
+    #: This constant has a value of "BACKUP_IN_PROGRESS"
+    PEER_AUTONOMOUS_DATABASE_LIFE_CYCLE_STATE_BACKUP_IN_PROGRESS = "BACKUP_IN_PROGRESS"
+
+    #: A constant which can be used with the peer_autonomous_database_life_cycle_state property of a AutonomousDatabaseDataguardAssociation.
+    #: This constant has a value of "SCALE_IN_PROGRESS"
+    PEER_AUTONOMOUS_DATABASE_LIFE_CYCLE_STATE_SCALE_IN_PROGRESS = "SCALE_IN_PROGRESS"
+
+    #: A constant which can be used with the peer_autonomous_database_life_cycle_state property of a AutonomousDatabaseDataguardAssociation.
+    #: This constant has a value of "AVAILABLE_NEEDS_ATTENTION"
+    PEER_AUTONOMOUS_DATABASE_LIFE_CYCLE_STATE_AVAILABLE_NEEDS_ATTENTION = "AVAILABLE_NEEDS_ATTENTION"
+
+    #: A constant which can be used with the peer_autonomous_database_life_cycle_state property of a AutonomousDatabaseDataguardAssociation.
     #: This constant has a value of "UPDATING"
     PEER_AUTONOMOUS_DATABASE_LIFE_CYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the peer_autonomous_database_life_cycle_state property of a AutonomousDatabaseDataguardAssociation.
+    #: This constant has a value of "MAINTENANCE_IN_PROGRESS"
+    PEER_AUTONOMOUS_DATABASE_LIFE_CYCLE_STATE_MAINTENANCE_IN_PROGRESS = "MAINTENANCE_IN_PROGRESS"
+
+    #: A constant which can be used with the peer_autonomous_database_life_cycle_state property of a AutonomousDatabaseDataguardAssociation.
+    #: This constant has a value of "RESTARTING"
+    PEER_AUTONOMOUS_DATABASE_LIFE_CYCLE_STATE_RESTARTING = "RESTARTING"
+
+    #: A constant which can be used with the peer_autonomous_database_life_cycle_state property of a AutonomousDatabaseDataguardAssociation.
+    #: This constant has a value of "RECREATING"
+    PEER_AUTONOMOUS_DATABASE_LIFE_CYCLE_STATE_RECREATING = "RECREATING"
+
+    #: A constant which can be used with the peer_autonomous_database_life_cycle_state property of a AutonomousDatabaseDataguardAssociation.
+    #: This constant has a value of "ROLE_CHANGE_IN_PROGRESS"
+    PEER_AUTONOMOUS_DATABASE_LIFE_CYCLE_STATE_ROLE_CHANGE_IN_PROGRESS = "ROLE_CHANGE_IN_PROGRESS"
+
+    #: A constant which can be used with the peer_autonomous_database_life_cycle_state property of a AutonomousDatabaseDataguardAssociation.
+    #: This constant has a value of "UPGRADING"
+    PEER_AUTONOMOUS_DATABASE_LIFE_CYCLE_STATE_UPGRADING = "UPGRADING"
+
+    #: A constant which can be used with the peer_autonomous_database_life_cycle_state property of a AutonomousDatabaseDataguardAssociation.
+    #: This constant has a value of "INACCESSIBLE"
+    PEER_AUTONOMOUS_DATABASE_LIFE_CYCLE_STATE_INACCESSIBLE = "INACCESSIBLE"
+
+    #: A constant which can be used with the peer_autonomous_database_life_cycle_state property of a AutonomousDatabaseDataguardAssociation.
+    #: This constant has a value of "STANDBY"
+    PEER_AUTONOMOUS_DATABASE_LIFE_CYCLE_STATE_STANDBY = "STANDBY"
 
     #: A constant which can be used with the protection_mode property of a AutonomousDatabaseDataguardAssociation.
     #: This constant has a value of "MAXIMUM_AVAILABILITY"
@@ -170,7 +222,7 @@ class AutonomousDatabaseDataguardAssociation(object):
 
         :param peer_autonomous_database_life_cycle_state:
             The value to assign to the peer_autonomous_database_life_cycle_state property of this AutonomousDatabaseDataguardAssociation.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", "UNAVAILABLE", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING", "INACCESSIBLE", "STANDBY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type peer_autonomous_database_life_cycle_state: str
 
@@ -462,9 +514,9 @@ class AutonomousDatabaseDataguardAssociation(object):
     def peer_autonomous_database_life_cycle_state(self):
         """
         Gets the peer_autonomous_database_life_cycle_state of this AutonomousDatabaseDataguardAssociation.
-        The current state of Autonomous Data Guard.
+        The current state of the Autonomous Database.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", "UNAVAILABLE", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING", "INACCESSIBLE", "STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -477,13 +529,13 @@ class AutonomousDatabaseDataguardAssociation(object):
     def peer_autonomous_database_life_cycle_state(self, peer_autonomous_database_life_cycle_state):
         """
         Sets the peer_autonomous_database_life_cycle_state of this AutonomousDatabaseDataguardAssociation.
-        The current state of Autonomous Data Guard.
+        The current state of the Autonomous Database.
 
 
         :param peer_autonomous_database_life_cycle_state: The peer_autonomous_database_life_cycle_state of this AutonomousDatabaseDataguardAssociation.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", "UNAVAILABLE", "UPDATING"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING", "INACCESSIBLE", "STANDBY"]
         if not value_allowed_none_or_none_sentinel(peer_autonomous_database_life_cycle_state, allowed_values):
             peer_autonomous_database_life_cycle_state = 'UNKNOWN_ENUM_VALUE'
         self._peer_autonomous_database_life_cycle_state = peer_autonomous_database_life_cycle_state

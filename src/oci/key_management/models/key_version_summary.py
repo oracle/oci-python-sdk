@@ -108,6 +108,10 @@ class KeyVersionSummary(object):
             The value to assign to the external_key_reference_details property of this KeyVersionSummary.
         :type external_key_reference_details: oci.key_management.models.ExternalKeyReferenceDetails
 
+        :param is_auto_rotated:
+            The value to assign to the is_auto_rotated property of this KeyVersionSummary.
+        :type is_auto_rotated: bool
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -118,7 +122,8 @@ class KeyVersionSummary(object):
             'time_created': 'datetime',
             'time_of_deletion': 'datetime',
             'vault_id': 'str',
-            'external_key_reference_details': 'ExternalKeyReferenceDetails'
+            'external_key_reference_details': 'ExternalKeyReferenceDetails',
+            'is_auto_rotated': 'bool'
         }
 
         self.attribute_map = {
@@ -130,7 +135,8 @@ class KeyVersionSummary(object):
             'time_created': 'timeCreated',
             'time_of_deletion': 'timeOfDeletion',
             'vault_id': 'vaultId',
-            'external_key_reference_details': 'externalKeyReferenceDetails'
+            'external_key_reference_details': 'externalKeyReferenceDetails',
+            'is_auto_rotated': 'isAutoRotated'
         }
 
         self._compartment_id = None
@@ -142,6 +148,7 @@ class KeyVersionSummary(object):
         self._time_of_deletion = None
         self._vault_id = None
         self._external_key_reference_details = None
+        self._is_auto_rotated = None
 
     @property
     def compartment_id(self):
@@ -384,6 +391,30 @@ class KeyVersionSummary(object):
         :type: oci.key_management.models.ExternalKeyReferenceDetails
         """
         self._external_key_reference_details = external_key_reference_details
+
+    @property
+    def is_auto_rotated(self):
+        """
+        Gets the is_auto_rotated of this KeyVersionSummary.
+        An optional property indicating whether this keyversion is generated from auto rotatation.
+
+
+        :return: The is_auto_rotated of this KeyVersionSummary.
+        :rtype: bool
+        """
+        return self._is_auto_rotated
+
+    @is_auto_rotated.setter
+    def is_auto_rotated(self, is_auto_rotated):
+        """
+        Sets the is_auto_rotated of this KeyVersionSummary.
+        An optional property indicating whether this keyversion is generated from auto rotatation.
+
+
+        :param is_auto_rotated: The is_auto_rotated of this KeyVersionSummary.
+        :type: bool
+        """
+        self._is_auto_rotated = is_auto_rotated
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -278,6 +278,34 @@ class AccessRequest(object):
             The value to assign to the audit_type property of this AccessRequest.
         :type audit_type: list[str]
 
+        :param number_of_approvers_required:
+            The value to assign to the number_of_approvers_required property of this AccessRequest.
+        :type number_of_approvers_required: int
+
+        :param number_of_approvers:
+            The value to assign to the number_of_approvers property of this AccessRequest.
+        :type number_of_approvers: int
+
+        :param number_of_extension_approvers:
+            The value to assign to the number_of_extension_approvers property of this AccessRequest.
+        :type number_of_extension_approvers: int
+
+        :param approver_details:
+            The value to assign to the approver_details property of this AccessRequest.
+        :type approver_details: list[oci.operator_access_control.models.ApproverDetail]
+
+        :param extension_approver_details:
+            The value to assign to the extension_approver_details property of this AccessRequest.
+        :type extension_approver_details: list[oci.operator_access_control.models.ApproverDetail]
+
+        :param is_validate_assignment:
+            The value to assign to the is_validate_assignment property of this AccessRequest.
+        :type is_validate_assignment: bool
+
+        :param time_requested_for_future_access:
+            The value to assign to the time_requested_for_future_access property of this AccessRequest.
+        :type time_requested_for_future_access: datetime
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this AccessRequest.
         :type freeform_tags: dict(str, str)
@@ -317,6 +345,13 @@ class AccessRequest(object):
             'system_message': 'str',
             'opctl_additional_message': 'str',
             'audit_type': 'list[str]',
+            'number_of_approvers_required': 'int',
+            'number_of_approvers': 'int',
+            'number_of_extension_approvers': 'int',
+            'approver_details': 'list[ApproverDetail]',
+            'extension_approver_details': 'list[ApproverDetail]',
+            'is_validate_assignment': 'bool',
+            'time_requested_for_future_access': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -351,6 +386,13 @@ class AccessRequest(object):
             'system_message': 'systemMessage',
             'opctl_additional_message': 'opctlAdditionalMessage',
             'audit_type': 'auditType',
+            'number_of_approvers_required': 'numberOfApproversRequired',
+            'number_of_approvers': 'numberOfApprovers',
+            'number_of_extension_approvers': 'numberOfExtensionApprovers',
+            'approver_details': 'approverDetails',
+            'extension_approver_details': 'extensionApproverDetails',
+            'is_validate_assignment': 'isValidateAssignment',
+            'time_requested_for_future_access': 'timeRequestedForFutureAccess',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -384,6 +426,13 @@ class AccessRequest(object):
         self._system_message = None
         self._opctl_additional_message = None
         self._audit_type = None
+        self._number_of_approvers_required = None
+        self._number_of_approvers = None
+        self._number_of_extension_approvers = None
+        self._approver_details = None
+        self._extension_approver_details = None
+        self._is_validate_assignment = None
+        self._time_requested_for_future_access = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -1122,6 +1171,178 @@ class AccessRequest(object):
         :type: list[str]
         """
         self._audit_type = audit_type
+
+    @property
+    def number_of_approvers_required(self):
+        """
+        Gets the number_of_approvers_required of this AccessRequest.
+        Number of approvers required to approve an access request.
+
+
+        :return: The number_of_approvers_required of this AccessRequest.
+        :rtype: int
+        """
+        return self._number_of_approvers_required
+
+    @number_of_approvers_required.setter
+    def number_of_approvers_required(self, number_of_approvers_required):
+        """
+        Sets the number_of_approvers_required of this AccessRequest.
+        Number of approvers required to approve an access request.
+
+
+        :param number_of_approvers_required: The number_of_approvers_required of this AccessRequest.
+        :type: int
+        """
+        self._number_of_approvers_required = number_of_approvers_required
+
+    @property
+    def number_of_approvers(self):
+        """
+        Gets the number_of_approvers of this AccessRequest.
+        Number of approvers who have authorized an access request.
+
+
+        :return: The number_of_approvers of this AccessRequest.
+        :rtype: int
+        """
+        return self._number_of_approvers
+
+    @number_of_approvers.setter
+    def number_of_approvers(self, number_of_approvers):
+        """
+        Sets the number_of_approvers of this AccessRequest.
+        Number of approvers who have authorized an access request.
+
+
+        :param number_of_approvers: The number_of_approvers of this AccessRequest.
+        :type: int
+        """
+        self._number_of_approvers = number_of_approvers
+
+    @property
+    def number_of_extension_approvers(self):
+        """
+        Gets the number_of_extension_approvers of this AccessRequest.
+        Number of approvers who have authorized an access request for extension.
+
+
+        :return: The number_of_extension_approvers of this AccessRequest.
+        :rtype: int
+        """
+        return self._number_of_extension_approvers
+
+    @number_of_extension_approvers.setter
+    def number_of_extension_approvers(self, number_of_extension_approvers):
+        """
+        Sets the number_of_extension_approvers of this AccessRequest.
+        Number of approvers who have authorized an access request for extension.
+
+
+        :param number_of_extension_approvers: The number_of_extension_approvers of this AccessRequest.
+        :type: int
+        """
+        self._number_of_extension_approvers = number_of_extension_approvers
+
+    @property
+    def approver_details(self):
+        """
+        Gets the approver_details of this AccessRequest.
+        Contains the user ids who have approved the accessRequest for extension.
+
+
+        :return: The approver_details of this AccessRequest.
+        :rtype: list[oci.operator_access_control.models.ApproverDetail]
+        """
+        return self._approver_details
+
+    @approver_details.setter
+    def approver_details(self, approver_details):
+        """
+        Sets the approver_details of this AccessRequest.
+        Contains the user ids who have approved the accessRequest for extension.
+
+
+        :param approver_details: The approver_details of this AccessRequest.
+        :type: list[oci.operator_access_control.models.ApproverDetail]
+        """
+        self._approver_details = approver_details
+
+    @property
+    def extension_approver_details(self):
+        """
+        Gets the extension_approver_details of this AccessRequest.
+        Contains the user ids who have approved the accessRequest for extension.
+
+
+        :return: The extension_approver_details of this AccessRequest.
+        :rtype: list[oci.operator_access_control.models.ApproverDetail]
+        """
+        return self._extension_approver_details
+
+    @extension_approver_details.setter
+    def extension_approver_details(self, extension_approver_details):
+        """
+        Sets the extension_approver_details of this AccessRequest.
+        Contains the user ids who have approved the accessRequest for extension.
+
+
+        :param extension_approver_details: The extension_approver_details of this AccessRequest.
+        :type: list[oci.operator_access_control.models.ApproverDetail]
+        """
+        self._extension_approver_details = extension_approver_details
+
+    @property
+    def is_validate_assignment(self):
+        """
+        Gets the is_validate_assignment of this AccessRequest.
+        Whether the access request was requested for Validate Assignment.
+
+
+        :return: The is_validate_assignment of this AccessRequest.
+        :rtype: bool
+        """
+        return self._is_validate_assignment
+
+    @is_validate_assignment.setter
+    def is_validate_assignment(self, is_validate_assignment):
+        """
+        Sets the is_validate_assignment of this AccessRequest.
+        Whether the access request was requested for Validate Assignment.
+
+
+        :param is_validate_assignment: The is_validate_assignment of this AccessRequest.
+        :type: bool
+        """
+        self._is_validate_assignment = is_validate_assignment
+
+    @property
+    def time_requested_for_future_access(self):
+        """
+        Gets the time_requested_for_future_access of this AccessRequest.
+        Time in future when the user for the access request needs to be created in `RFC 3339`__timestamp format. Example: '2020-05-22T21:10:29.600Z'
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_requested_for_future_access of this AccessRequest.
+        :rtype: datetime
+        """
+        return self._time_requested_for_future_access
+
+    @time_requested_for_future_access.setter
+    def time_requested_for_future_access(self, time_requested_for_future_access):
+        """
+        Sets the time_requested_for_future_access of this AccessRequest.
+        Time in future when the user for the access request needs to be created in `RFC 3339`__timestamp format. Example: '2020-05-22T21:10:29.600Z'
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_requested_for_future_access: The time_requested_for_future_access of this AccessRequest.
+        :type: datetime
+        """
+        self._time_requested_for_future_access = time_requested_for_future_access
 
     @property
     def freeform_tags(self):

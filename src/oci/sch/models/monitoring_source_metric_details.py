@@ -62,7 +62,7 @@ class MonitoringSourceMetricDetails(object):
     def kind(self):
         """
         **[Required]** Gets the kind of this MonitoringSourceMetricDetails.
-        The type descriminator.
+        The type discriminator.
 
         Allowed values for this property are: "all", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -77,7 +77,7 @@ class MonitoringSourceMetricDetails(object):
     def kind(self, kind):
         """
         Sets the kind of this MonitoringSourceMetricDetails.
-        The type descriminator.
+        The type discriminator.
 
 
         :param kind: The kind of this MonitoringSourceMetricDetails.

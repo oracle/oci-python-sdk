@@ -26,6 +26,7 @@ Key Management
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.key_management.models.AutoKeyRotationDetails
     oci.key_management.models.BackupKeyDetails
     oci.key_management.models.BackupLocation
     oci.key_management.models.BackupLocationBucket

@@ -28,6 +28,14 @@ class ImportKeyDetails(object):
         Initializes a new ImportKeyDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param is_auto_rotation_enabled:
+            The value to assign to the is_auto_rotation_enabled property of this ImportKeyDetails.
+        :type is_auto_rotation_enabled: bool
+
+        :param auto_key_rotation_details:
+            The value to assign to the auto_key_rotation_details property of this ImportKeyDetails.
+        :type auto_key_rotation_details: oci.key_management.models.AutoKeyRotationDetails
+
         :param compartment_id:
             The value to assign to the compartment_id property of this ImportKeyDetails.
         :type compartment_id: str
@@ -59,6 +67,8 @@ class ImportKeyDetails(object):
 
         """
         self.swagger_types = {
+            'is_auto_rotation_enabled': 'bool',
+            'auto_key_rotation_details': 'AutoKeyRotationDetails',
             'compartment_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
@@ -69,6 +79,8 @@ class ImportKeyDetails(object):
         }
 
         self.attribute_map = {
+            'is_auto_rotation_enabled': 'isAutoRotationEnabled',
+            'auto_key_rotation_details': 'autoKeyRotationDetails',
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -78,6 +90,8 @@ class ImportKeyDetails(object):
             'protection_mode': 'protectionMode'
         }
 
+        self._is_auto_rotation_enabled = None
+        self._auto_key_rotation_details = None
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None
@@ -85,6 +99,50 @@ class ImportKeyDetails(object):
         self._key_shape = None
         self._wrapped_import_key = None
         self._protection_mode = None
+
+    @property
+    def is_auto_rotation_enabled(self):
+        """
+        Gets the is_auto_rotation_enabled of this ImportKeyDetails.
+        A parameter specifying whether the auto key rotation is enabled or not.
+
+
+        :return: The is_auto_rotation_enabled of this ImportKeyDetails.
+        :rtype: bool
+        """
+        return self._is_auto_rotation_enabled
+
+    @is_auto_rotation_enabled.setter
+    def is_auto_rotation_enabled(self, is_auto_rotation_enabled):
+        """
+        Sets the is_auto_rotation_enabled of this ImportKeyDetails.
+        A parameter specifying whether the auto key rotation is enabled or not.
+
+
+        :param is_auto_rotation_enabled: The is_auto_rotation_enabled of this ImportKeyDetails.
+        :type: bool
+        """
+        self._is_auto_rotation_enabled = is_auto_rotation_enabled
+
+    @property
+    def auto_key_rotation_details(self):
+        """
+        Gets the auto_key_rotation_details of this ImportKeyDetails.
+
+        :return: The auto_key_rotation_details of this ImportKeyDetails.
+        :rtype: oci.key_management.models.AutoKeyRotationDetails
+        """
+        return self._auto_key_rotation_details
+
+    @auto_key_rotation_details.setter
+    def auto_key_rotation_details(self, auto_key_rotation_details):
+        """
+        Sets the auto_key_rotation_details of this ImportKeyDetails.
+
+        :param auto_key_rotation_details: The auto_key_rotation_details of this ImportKeyDetails.
+        :type: oci.key_management.models.AutoKeyRotationDetails
+        """
+        self._auto_key_rotation_details = auto_key_rotation_details
 
     @property
     def compartment_id(self):

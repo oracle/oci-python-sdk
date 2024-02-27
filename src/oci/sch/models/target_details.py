@@ -12,15 +12,15 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TargetDetails(object):
     """
-    An object that represents the target of the flow defined by the service connector.
+    An object that represents the target of the flow defined by the connector.
     An example target is a stream (Streaming service).
-    For more information about flows defined by service connectors, see
-    `Service Connector Hub Overview`__.
+    For more information about flows defined by connectors, see
+    `Overview of Connector Hub`__.
     For configuration instructions, see
-    `To create a service connector`__.
+    `Creating a Connector`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm
-    __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm
     """
 
     #: A constant which can be used with the kind property of a TargetDetails.
@@ -110,7 +110,7 @@ class TargetDetails(object):
     def kind(self):
         """
         **[Required]** Gets the kind of this TargetDetails.
-        The type descriminator.
+        The type discriminator.
 
         Allowed values for this property are: "functions", "loggingAnalytics", "monitoring", "notifications", "objectStorage", "streaming", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -125,7 +125,7 @@ class TargetDetails(object):
     def kind(self, kind):
         """
         Sets the kind of this TargetDetails.
-        The type descriminator.
+        The type discriminator.
 
 
         :param kind: The kind of this TargetDetails.

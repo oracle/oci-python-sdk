@@ -94,6 +94,14 @@ class OperatorControlAssignmentSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_type: str
 
+        :param resource_name:
+            The value to assign to the resource_name property of this OperatorControlAssignmentSummary.
+        :type resource_name: str
+
+        :param op_control_name:
+            The value to assign to the op_control_name property of this OperatorControlAssignmentSummary.
+        :type op_control_name: str
+
         :param time_assignment_from:
             The value to assign to the time_assignment_from property of this OperatorControlAssignmentSummary.
         :type time_assignment_from: datetime
@@ -130,6 +138,10 @@ class OperatorControlAssignmentSummary(object):
             The value to assign to the remote_syslog_server_port property of this OperatorControlAssignmentSummary.
         :type remote_syslog_server_port: int
 
+        :param is_hypervisor_log_forwarded:
+            The value to assign to the is_hypervisor_log_forwarded property of this OperatorControlAssignmentSummary.
+        :type is_hypervisor_log_forwarded: bool
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this OperatorControlAssignmentSummary.
             Allowed values for this property are: "CREATED", "APPLIED", "APPLYFAILED", "UPDATING", "UPDATEFAILED", "DELETING", "DELETED", "DELETIONFAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -155,6 +167,8 @@ class OperatorControlAssignmentSummary(object):
             'resource_id': 'str',
             'compartment_id': 'str',
             'resource_type': 'str',
+            'resource_name': 'str',
+            'op_control_name': 'str',
             'time_assignment_from': 'datetime',
             'time_assignment_to': 'datetime',
             'is_enforced_always': 'bool',
@@ -164,6 +178,7 @@ class OperatorControlAssignmentSummary(object):
             'is_log_forwarded': 'bool',
             'remote_syslog_server_address': 'str',
             'remote_syslog_server_port': 'int',
+            'is_hypervisor_log_forwarded': 'bool',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -176,6 +191,8 @@ class OperatorControlAssignmentSummary(object):
             'resource_id': 'resourceId',
             'compartment_id': 'compartmentId',
             'resource_type': 'resourceType',
+            'resource_name': 'resourceName',
+            'op_control_name': 'opControlName',
             'time_assignment_from': 'timeAssignmentFrom',
             'time_assignment_to': 'timeAssignmentTo',
             'is_enforced_always': 'isEnforcedAlways',
@@ -185,6 +202,7 @@ class OperatorControlAssignmentSummary(object):
             'is_log_forwarded': 'isLogForwarded',
             'remote_syslog_server_address': 'remoteSyslogServerAddress',
             'remote_syslog_server_port': 'remoteSyslogServerPort',
+            'is_hypervisor_log_forwarded': 'isHypervisorLogForwarded',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
@@ -196,6 +214,8 @@ class OperatorControlAssignmentSummary(object):
         self._resource_id = None
         self._compartment_id = None
         self._resource_type = None
+        self._resource_name = None
+        self._op_control_name = None
         self._time_assignment_from = None
         self._time_assignment_to = None
         self._is_enforced_always = None
@@ -205,6 +225,7 @@ class OperatorControlAssignmentSummary(object):
         self._is_log_forwarded = None
         self._remote_syslog_server_address = None
         self._remote_syslog_server_port = None
+        self._is_hypervisor_log_forwarded = None
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._freeform_tags = None
@@ -335,6 +356,54 @@ class OperatorControlAssignmentSummary(object):
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             resource_type = 'UNKNOWN_ENUM_VALUE'
         self._resource_type = resource_type
+
+    @property
+    def resource_name(self):
+        """
+        Gets the resource_name of this OperatorControlAssignmentSummary.
+        Name of the target resource.
+
+
+        :return: The resource_name of this OperatorControlAssignmentSummary.
+        :rtype: str
+        """
+        return self._resource_name
+
+    @resource_name.setter
+    def resource_name(self, resource_name):
+        """
+        Sets the resource_name of this OperatorControlAssignmentSummary.
+        Name of the target resource.
+
+
+        :param resource_name: The resource_name of this OperatorControlAssignmentSummary.
+        :type: str
+        """
+        self._resource_name = resource_name
+
+    @property
+    def op_control_name(self):
+        """
+        Gets the op_control_name of this OperatorControlAssignmentSummary.
+        Name of the operator control name associated.
+
+
+        :return: The op_control_name of this OperatorControlAssignmentSummary.
+        :rtype: str
+        """
+        return self._op_control_name
+
+    @op_control_name.setter
+    def op_control_name(self, op_control_name):
+        """
+        Sets the op_control_name of this OperatorControlAssignmentSummary.
+        Name of the operator control name associated.
+
+
+        :param op_control_name: The op_control_name of this OperatorControlAssignmentSummary.
+        :type: str
+        """
+        self._op_control_name = op_control_name
 
     @property
     def time_assignment_from(self):
@@ -563,6 +632,30 @@ class OperatorControlAssignmentSummary(object):
         :type: int
         """
         self._remote_syslog_server_port = remote_syslog_server_port
+
+    @property
+    def is_hypervisor_log_forwarded(self):
+        """
+        Gets the is_hypervisor_log_forwarded of this OperatorControlAssignmentSummary.
+        If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+
+
+        :return: The is_hypervisor_log_forwarded of this OperatorControlAssignmentSummary.
+        :rtype: bool
+        """
+        return self._is_hypervisor_log_forwarded
+
+    @is_hypervisor_log_forwarded.setter
+    def is_hypervisor_log_forwarded(self, is_hypervisor_log_forwarded):
+        """
+        Sets the is_hypervisor_log_forwarded of this OperatorControlAssignmentSummary.
+        If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+
+
+        :param is_hypervisor_log_forwarded: The is_hypervisor_log_forwarded of this OperatorControlAssignmentSummary.
+        :type: bool
+        """
+        self._is_hypervisor_log_forwarded = is_hypervisor_log_forwarded
 
     @property
     def lifecycle_state(self):

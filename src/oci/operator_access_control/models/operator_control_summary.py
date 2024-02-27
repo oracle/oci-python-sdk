@@ -78,6 +78,10 @@ class OperatorControlSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_type: str
 
+        :param number_of_approvers:
+            The value to assign to the number_of_approvers property of this OperatorControlSummary.
+        :type number_of_approvers: int
+
         :param time_of_creation:
             The value to assign to the time_of_creation property of this OperatorControlSummary.
         :type time_of_creation: datetime
@@ -111,6 +115,7 @@ class OperatorControlSummary(object):
             'compartment_id': 'str',
             'is_fully_pre_approved': 'bool',
             'resource_type': 'str',
+            'number_of_approvers': 'int',
             'time_of_creation': 'datetime',
             'time_of_modification': 'datetime',
             'time_of_deletion': 'datetime',
@@ -125,6 +130,7 @@ class OperatorControlSummary(object):
             'compartment_id': 'compartmentId',
             'is_fully_pre_approved': 'isFullyPreApproved',
             'resource_type': 'resourceType',
+            'number_of_approvers': 'numberOfApprovers',
             'time_of_creation': 'timeOfCreation',
             'time_of_modification': 'timeOfModification',
             'time_of_deletion': 'timeOfDeletion',
@@ -138,6 +144,7 @@ class OperatorControlSummary(object):
         self._compartment_id = None
         self._is_fully_pre_approved = None
         self._resource_type = None
+        self._number_of_approvers = None
         self._time_of_creation = None
         self._time_of_modification = None
         self._time_of_deletion = None
@@ -270,6 +277,30 @@ class OperatorControlSummary(object):
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             resource_type = 'UNKNOWN_ENUM_VALUE'
         self._resource_type = resource_type
+
+    @property
+    def number_of_approvers(self):
+        """
+        Gets the number_of_approvers of this OperatorControlSummary.
+        Number of approvers required to approve an access request.
+
+
+        :return: The number_of_approvers of this OperatorControlSummary.
+        :rtype: int
+        """
+        return self._number_of_approvers
+
+    @number_of_approvers.setter
+    def number_of_approvers(self, number_of_approvers):
+        """
+        Sets the number_of_approvers of this OperatorControlSummary.
+        Number of approvers required to approve an access request.
+
+
+        :param number_of_approvers: The number_of_approvers of this OperatorControlSummary.
+        :type: int
+        """
+        self._number_of_approvers = number_of_approvers
 
     @property
     def time_of_creation(self):

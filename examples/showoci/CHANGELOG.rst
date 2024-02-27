@@ -5,9 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
-24.01.30 - 24.01.30
+24.03.02 - 24.03.02
+=====================
+* Added CSV Resources with all resources
+* Added Error array to Output CSV
+* Factor client creation
+
+=====================
+24.02.20 - 24.02.20
+=====================
+* Added additional parameters to Boot and Block Volumes
+
+=====================
+24.02.06 - 24.02.06
 =====================
 * Added Gen AI
+* Fixed cores count for RAC Base database
 
 =====================
 23.12.20 - 23.12.20

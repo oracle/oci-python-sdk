@@ -10719,6 +10719,9 @@ class ComputeClient(object):
         To preserve the boot volume associated with the instance, specify `true` for `PreserveBootVolumeQueryParam`.
         To delete the boot volume when the instance is deleted, specify `false` or do not specify a value for `PreserveBootVolumeQueryParam`.
 
+        To preserve data volumes created with the instance, specify `true` or do not specify a value for `PreserveDataVolumesQueryParam`.
+        To delete the data volumes when the instance itself is deleted, specify `false` for `PreserveDataVolumesQueryParam`.
+
         This is an asynchronous operation. The instance's `lifecycleState` changes to TERMINATING temporarily
         until the instance is completely deleted. After the instance is deleted, the record remains visible in the list of instances
         with the state TERMINATED for at least 12 hours, but no further action is needed.
@@ -10737,6 +10740,11 @@ class ComputeClient(object):
         :param bool preserve_boot_volume: (optional)
             Specifies whether to delete or preserve the boot volume when terminating an instance.
             When set to `true`, the boot volume is preserved. The default value is `false`.
+
+        :param bool preserve_data_volumes_created_at_launch: (optional)
+            Specifies whether to delete or preserve the data volumes created during launch when
+            terminating an instance. When set to `true`, the data volumes are preserved. The
+            default value is `true`.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -10768,7 +10776,8 @@ class ComputeClient(object):
             "allow_control_chars",
             "retry_strategy",
             "if_match",
-            "preserve_boot_volume"
+            "preserve_boot_volume",
+            "preserve_data_volumes_created_at_launch"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -10786,7 +10795,8 @@ class ComputeClient(object):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
-            "preserveBootVolume": kwargs.get("preserve_boot_volume", missing)
+            "preserveBootVolume": kwargs.get("preserve_boot_volume", missing),
+            "preserveDataVolumesCreatedAtLaunch": kwargs.get("preserve_data_volumes_created_at_launch", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ServiceConnectorSummary(object):
     """
-    A summary of properties for the specified service connector.
+    A summary of properties for the specified connector.
     """
 
     #: A constant which can be used with the lifecycle_state property of a ServiceConnectorSummary.
@@ -139,7 +139,7 @@ class ServiceConnectorSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this ServiceConnectorSummary.
-        The `OCID`__ of the service connector.
+        The `OCID`__ of the connector.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -153,7 +153,7 @@ class ServiceConnectorSummary(object):
     def id(self, id):
         """
         Sets the id of this ServiceConnectorSummary.
-        The `OCID`__ of the service connector.
+        The `OCID`__ of the connector.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -217,7 +217,7 @@ class ServiceConnectorSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ServiceConnectorSummary.
-        The `OCID`__ of the compartment containing the service connector.
+        The `OCID`__ of the compartment containing the connector.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -231,7 +231,7 @@ class ServiceConnectorSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ServiceConnectorSummary.
-        The `OCID`__ of the compartment containing the service connector.
+        The `OCID`__ of the compartment containing the connector.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -245,7 +245,7 @@ class ServiceConnectorSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this ServiceConnectorSummary.
-        The date and time when the service connector was created.
+        The date and time when the connector was created.
         Format is defined by `RFC3339`__.
         Example: `2020-01-25T21:10:29.600Z`
 
@@ -261,7 +261,7 @@ class ServiceConnectorSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ServiceConnectorSummary.
-        The date and time when the service connector was created.
+        The date and time when the connector was created.
         Format is defined by `RFC3339`__.
         Example: `2020-01-25T21:10:29.600Z`
 
@@ -277,7 +277,7 @@ class ServiceConnectorSummary(object):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this ServiceConnectorSummary.
-        The date and time when the service connector was updated.
+        The date and time when the connector was updated.
         Format is defined by `RFC3339`__.
         Example: `2020-01-25T21:10:29.600Z`
 
@@ -293,7 +293,7 @@ class ServiceConnectorSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this ServiceConnectorSummary.
-        The date and time when the service connector was updated.
+        The date and time when the connector was updated.
         Format is defined by `RFC3339`__.
         Example: `2020-01-25T21:10:29.600Z`
 
@@ -309,7 +309,7 @@ class ServiceConnectorSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this ServiceConnectorSummary.
-        The current state of the service connector.
+        The current state of the connector.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -324,7 +324,7 @@ class ServiceConnectorSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ServiceConnectorSummary.
-        The current state of the service connector.
+        The current state of the connector.
 
 
         :param lifecycle_state: The lifecycle_state of this ServiceConnectorSummary.

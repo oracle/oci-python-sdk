@@ -53,6 +53,14 @@ class CreateExternalExadataInfrastructureDetails(object):
             The value to assign to the storage_server_names property of this CreateExternalExadataInfrastructureDetails.
         :type storage_server_names: list[str]
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this CreateExternalExadataInfrastructureDetails.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this CreateExternalExadataInfrastructureDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'discovery_key': 'str',
@@ -60,7 +68,9 @@ class CreateExternalExadataInfrastructureDetails(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'db_system_ids': 'list[str]',
-            'storage_server_names': 'list[str]'
+            'storage_server_names': 'list[str]',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -69,7 +79,9 @@ class CreateExternalExadataInfrastructureDetails(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'db_system_ids': 'dbSystemIds',
-            'storage_server_names': 'storageServerNames'
+            'storage_server_names': 'storageServerNames',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
         self._discovery_key = None
@@ -78,6 +90,8 @@ class CreateExternalExadataInfrastructureDetails(object):
         self._display_name = None
         self._db_system_ids = None
         self._storage_server_names = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @property
     def discovery_key(self):
@@ -233,6 +247,70 @@ class CreateExternalExadataInfrastructureDetails(object):
         :type: list[str]
         """
         self._storage_server_names = storage_server_names
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this CreateExternalExadataInfrastructureDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this CreateExternalExadataInfrastructureDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this CreateExternalExadataInfrastructureDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this CreateExternalExadataInfrastructureDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this CreateExternalExadataInfrastructureDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this CreateExternalExadataInfrastructureDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this CreateExternalExadataInfrastructureDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this CreateExternalExadataInfrastructureDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

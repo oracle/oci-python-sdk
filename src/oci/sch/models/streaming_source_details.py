@@ -13,6 +13,10 @@ from oci.decorators import init_model_state_from_kwargs
 class StreamingSourceDetails(SourceDetails):
     """
     The Streaming source.
+    For configuration instructions, see
+    `Creating a Connector with a Streaming Source`__.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm
     """
 
     def __init__(self, **kwargs):
@@ -23,7 +27,7 @@ class StreamingSourceDetails(SourceDetails):
 
         :param kind:
             The value to assign to the kind property of this StreamingSourceDetails.
-            Allowed values for this property are: "logging", "monitoring", "streaming"
+            Allowed values for this property are: "logging", "monitoring", "streaming", "plugin"
         :type kind: str
 
         :param stream_id:

@@ -210,10 +210,6 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
             The value to assign to the is_auto_scaling_for_storage_enabled property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
         :type is_auto_scaling_for_storage_enabled: bool
 
-        :param max_cpu_core_count:
-            The value to assign to the max_cpu_core_count property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
-        :type max_cpu_core_count: int
-
         :param database_edition:
             The value to assign to the database_edition property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
         :type database_edition: str
@@ -293,7 +289,6 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
             'autonomous_maintenance_schedule_type': 'str',
             'scheduled_operations': 'list[ScheduledOperationDetails]',
             'is_auto_scaling_for_storage_enabled': 'bool',
-            'max_cpu_core_count': 'int',
             'database_edition': 'str',
             'db_tools_details': 'list[DatabaseTool]',
             'secret_id': 'str',
@@ -349,7 +344,6 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
             'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType',
             'scheduled_operations': 'scheduledOperations',
             'is_auto_scaling_for_storage_enabled': 'isAutoScalingForStorageEnabled',
-            'max_cpu_core_count': 'maxCpuCoreCount',
             'database_edition': 'databaseEdition',
             'db_tools_details': 'dbToolsDetails',
             'secret_id': 'secretId',
@@ -404,7 +398,6 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
         self._autonomous_maintenance_schedule_type = None
         self._scheduled_operations = None
         self._is_auto_scaling_for_storage_enabled = None
-        self._max_cpu_core_count = None
         self._database_edition = None
         self._db_tools_details = None
         self._secret_id = None

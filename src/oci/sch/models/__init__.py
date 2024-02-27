@@ -7,6 +7,9 @@
 from __future__ import absolute_import
 
 from .change_service_connector_compartment_details import ChangeServiceConnectorCompartmentDetails
+from .connector_plugin import ConnectorPlugin
+from .connector_plugin_collection import ConnectorPluginCollection
+from .connector_plugin_summary import ConnectorPluginSummary
 from .create_service_connector_details import CreateServiceConnectorDetails
 from .dimension_details import DimensionDetails
 from .dimension_value_details import DimensionValueDetails
@@ -28,14 +31,19 @@ from .monitoring_source_selected_namespace_details import MonitoringSourceSelect
 from .monitoring_target_details import MonitoringTargetDetails
 from .notifications_target_details import NotificationsTargetDetails
 from .object_storage_target_details import ObjectStorageTargetDetails
+from .plugin_source_details import PluginSourceDetails
 from .service_connector import ServiceConnector
 from .service_connector_collection import ServiceConnectorCollection
 from .service_connector_summary import ServiceConnectorSummary
+from .source_connector_plugin import SourceConnectorPlugin
+from .source_connector_plugin_summary import SourceConnectorPluginSummary
 from .source_details import SourceDetails
 from .static_dimension_value import StaticDimensionValue
 from .streaming_cursor_details import StreamingCursorDetails
 from .streaming_source_details import StreamingSourceDetails
 from .streaming_target_details import StreamingTargetDetails
+from .target_connector_plugin import TargetConnectorPlugin
+from .target_connector_plugin_summary import TargetConnectorPluginSummary
 from .target_details import TargetDetails
 from .task_details import TaskDetails
 from .trim_horizon_streaming_cursor import TrimHorizonStreamingCursor
@@ -51,6 +59,9 @@ from .work_request_resource import WorkRequestResource
 # Maps type names to classes for sch services.
 sch_type_mapping = {
     "ChangeServiceConnectorCompartmentDetails": ChangeServiceConnectorCompartmentDetails,
+    "ConnectorPlugin": ConnectorPlugin,
+    "ConnectorPluginCollection": ConnectorPluginCollection,
+    "ConnectorPluginSummary": ConnectorPluginSummary,
     "CreateServiceConnectorDetails": CreateServiceConnectorDetails,
     "DimensionDetails": DimensionDetails,
     "DimensionValueDetails": DimensionValueDetails,
@@ -72,14 +83,19 @@ sch_type_mapping = {
     "MonitoringTargetDetails": MonitoringTargetDetails,
     "NotificationsTargetDetails": NotificationsTargetDetails,
     "ObjectStorageTargetDetails": ObjectStorageTargetDetails,
+    "PluginSourceDetails": PluginSourceDetails,
     "ServiceConnector": ServiceConnector,
     "ServiceConnectorCollection": ServiceConnectorCollection,
     "ServiceConnectorSummary": ServiceConnectorSummary,
+    "SourceConnectorPlugin": SourceConnectorPlugin,
+    "SourceConnectorPluginSummary": SourceConnectorPluginSummary,
     "SourceDetails": SourceDetails,
     "StaticDimensionValue": StaticDimensionValue,
     "StreamingCursorDetails": StreamingCursorDetails,
     "StreamingSourceDetails": StreamingSourceDetails,
     "StreamingTargetDetails": StreamingTargetDetails,
+    "TargetConnectorPlugin": TargetConnectorPlugin,
+    "TargetConnectorPluginSummary": TargetConnectorPluginSummary,
     "TargetDetails": TargetDetails,
     "TaskDetails": TaskDetails,
     "TrimHorizonStreamingCursor": TrimHorizonStreamingCursor,

@@ -12,11 +12,11 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class FunctionsTargetDetails(TargetDetails):
     """
-    The function used for the Functions target.
+    The destination function for data transferred from the source.
     For configuration instructions, see
-    `To create a service connector`__.
+    `Creating a Connector`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm
     """
 
     def __init__(self, **kwargs):
@@ -34,19 +34,40 @@ class FunctionsTargetDetails(TargetDetails):
             The value to assign to the function_id property of this FunctionsTargetDetails.
         :type function_id: str
 
+        :param batch_size_in_kbs:
+            The value to assign to the batch_size_in_kbs property of this FunctionsTargetDetails.
+        :type batch_size_in_kbs: int
+
+        :param batch_size_in_num:
+            The value to assign to the batch_size_in_num property of this FunctionsTargetDetails.
+        :type batch_size_in_num: int
+
+        :param batch_time_in_sec:
+            The value to assign to the batch_time_in_sec property of this FunctionsTargetDetails.
+        :type batch_time_in_sec: int
+
         """
         self.swagger_types = {
             'kind': 'str',
-            'function_id': 'str'
+            'function_id': 'str',
+            'batch_size_in_kbs': 'int',
+            'batch_size_in_num': 'int',
+            'batch_time_in_sec': 'int'
         }
 
         self.attribute_map = {
             'kind': 'kind',
-            'function_id': 'functionId'
+            'function_id': 'functionId',
+            'batch_size_in_kbs': 'batchSizeInKbs',
+            'batch_size_in_num': 'batchSizeInNum',
+            'batch_time_in_sec': 'batchTimeInSec'
         }
 
         self._kind = None
         self._function_id = None
+        self._batch_size_in_kbs = None
+        self._batch_size_in_num = None
+        self._batch_time_in_sec = None
         self._kind = 'functions'
 
     @property
@@ -76,6 +97,78 @@ class FunctionsTargetDetails(TargetDetails):
         :type: str
         """
         self._function_id = function_id
+
+    @property
+    def batch_size_in_kbs(self):
+        """
+        Gets the batch_size_in_kbs of this FunctionsTargetDetails.
+        The batch rollover size in kilobytes.
+
+
+        :return: The batch_size_in_kbs of this FunctionsTargetDetails.
+        :rtype: int
+        """
+        return self._batch_size_in_kbs
+
+    @batch_size_in_kbs.setter
+    def batch_size_in_kbs(self, batch_size_in_kbs):
+        """
+        Sets the batch_size_in_kbs of this FunctionsTargetDetails.
+        The batch rollover size in kilobytes.
+
+
+        :param batch_size_in_kbs: The batch_size_in_kbs of this FunctionsTargetDetails.
+        :type: int
+        """
+        self._batch_size_in_kbs = batch_size_in_kbs
+
+    @property
+    def batch_size_in_num(self):
+        """
+        Gets the batch_size_in_num of this FunctionsTargetDetails.
+        The batch rollover size in number of messages.
+
+
+        :return: The batch_size_in_num of this FunctionsTargetDetails.
+        :rtype: int
+        """
+        return self._batch_size_in_num
+
+    @batch_size_in_num.setter
+    def batch_size_in_num(self, batch_size_in_num):
+        """
+        Sets the batch_size_in_num of this FunctionsTargetDetails.
+        The batch rollover size in number of messages.
+
+
+        :param batch_size_in_num: The batch_size_in_num of this FunctionsTargetDetails.
+        :type: int
+        """
+        self._batch_size_in_num = batch_size_in_num
+
+    @property
+    def batch_time_in_sec(self):
+        """
+        Gets the batch_time_in_sec of this FunctionsTargetDetails.
+        The batch rollover time in seconds.
+
+
+        :return: The batch_time_in_sec of this FunctionsTargetDetails.
+        :rtype: int
+        """
+        return self._batch_time_in_sec
+
+    @batch_time_in_sec.setter
+    def batch_time_in_sec(self, batch_time_in_sec):
+        """
+        Sets the batch_time_in_sec of this FunctionsTargetDetails.
+        The batch rollover time in seconds.
+
+
+        :param batch_time_in_sec: The batch_time_in_sec of this FunctionsTargetDetails.
+        :type: int
+        """
+        self._batch_time_in_sec = batch_time_in_sec
 
     def __repr__(self):
         return formatted_flat_dict(self)

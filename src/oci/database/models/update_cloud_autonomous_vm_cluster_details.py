@@ -179,7 +179,7 @@ class UpdateCloudAutonomousVmClusterDetails(object):
     def autonomous_data_storage_size_in_tbs(self):
         """
         Gets the autonomous_data_storage_size_in_tbs of this UpdateCloudAutonomousVmClusterDetails.
-        The new scaled up/down value for exadata storage in TBs for cloud autonomous VM cluster.
+        The new value of autonomous data storage (in TBs) for the Autonomous VM cluster.
 
 
         :return: The autonomous_data_storage_size_in_tbs of this UpdateCloudAutonomousVmClusterDetails.
@@ -191,7 +191,7 @@ class UpdateCloudAutonomousVmClusterDetails(object):
     def autonomous_data_storage_size_in_tbs(self, autonomous_data_storage_size_in_tbs):
         """
         Sets the autonomous_data_storage_size_in_tbs of this UpdateCloudAutonomousVmClusterDetails.
-        The new scaled up/down value for exadata storage in TBs for cloud autonomous VM cluster.
+        The new value of autonomous data storage (in TBs) for the Autonomous VM cluster.
 
 
         :param autonomous_data_storage_size_in_tbs: The autonomous_data_storage_size_in_tbs of this UpdateCloudAutonomousVmClusterDetails.
@@ -203,7 +203,7 @@ class UpdateCloudAutonomousVmClusterDetails(object):
     def cpu_core_count_per_node(self):
         """
         Gets the cpu_core_count_per_node of this UpdateCloudAutonomousVmClusterDetails.
-        The new scaled up/down value for ocpus for cloud autonomous VM cluster per node.
+        The new value of cpus per Autonomous VM cluster per node for the Autonomous VM cluster.
 
 
         :return: The cpu_core_count_per_node of this UpdateCloudAutonomousVmClusterDetails.
@@ -215,7 +215,7 @@ class UpdateCloudAutonomousVmClusterDetails(object):
     def cpu_core_count_per_node(self, cpu_core_count_per_node):
         """
         Sets the cpu_core_count_per_node of this UpdateCloudAutonomousVmClusterDetails.
-        The new scaled up/down value for ocpus for cloud autonomous VM cluster per node.
+        The new value of cpus per Autonomous VM cluster per node for the Autonomous VM cluster.
 
 
         :param cpu_core_count_per_node: The cpu_core_count_per_node of this UpdateCloudAutonomousVmClusterDetails.
@@ -227,7 +227,7 @@ class UpdateCloudAutonomousVmClusterDetails(object):
     def total_container_databases(self):
         """
         Gets the total_container_databases of this UpdateCloudAutonomousVmClusterDetails.
-        The new scaled up/down value for maxACD count for cloud autonomous VM cluster.
+        The new value of maximum number of ACDs for the Autonomous VM cluster.
 
 
         :return: The total_container_databases of this UpdateCloudAutonomousVmClusterDetails.
@@ -239,7 +239,7 @@ class UpdateCloudAutonomousVmClusterDetails(object):
     def total_container_databases(self, total_container_databases):
         """
         Sets the total_container_databases of this UpdateCloudAutonomousVmClusterDetails.
-        The new scaled up/down value for maxACD count for cloud autonomous VM cluster.
+        The new value of maximum number of ACDs for the Autonomous VM cluster.
 
 
         :param total_container_databases: The total_container_databases of this UpdateCloudAutonomousVmClusterDetails.
@@ -254,9 +254,9 @@ class UpdateCloudAutonomousVmClusterDetails(object):
         The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
         License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service.
         Note that when provisioning an `Autonomous Database on dedicated Exadata infrastructure`__, this attribute must be null. It is already set at the
-        Autonomous Exadata Infrastructure level. When provisioning an `Autonomous Database Serverless]`__ database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
+        Autonomous Exadata Infrastructure level. When provisioning an `Autonomous Database Serverless]`__ database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
 
-        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
@@ -276,9 +276,9 @@ class UpdateCloudAutonomousVmClusterDetails(object):
         The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
         License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service.
         Note that when provisioning an `Autonomous Database on dedicated Exadata infrastructure`__, this attribute must be null. It is already set at the
-        Autonomous Exadata Infrastructure level. When provisioning an `Autonomous Database Serverless]`__ database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
+        Autonomous Exadata Infrastructure level. When provisioning an `Autonomous Database Serverless]`__ database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
 
-        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html

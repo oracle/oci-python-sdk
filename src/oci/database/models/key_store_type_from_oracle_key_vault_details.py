@@ -118,7 +118,7 @@ class KeyStoreTypeFromOracleKeyVaultDetails(KeyStoreTypeDetails):
     def vault_id(self):
         """
         **[Required]** Gets the vault_id of this KeyStoreTypeFromOracleKeyVaultDetails.
-        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__.
+        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
@@ -133,7 +133,7 @@ class KeyStoreTypeFromOracleKeyVaultDetails(KeyStoreTypeDetails):
     def vault_id(self, vault_id):
         """
         Sets the vault_id of this KeyStoreTypeFromOracleKeyVaultDetails.
-        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__.
+        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts

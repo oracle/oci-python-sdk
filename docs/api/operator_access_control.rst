@@ -30,6 +30,9 @@ Operator Access Control
     oci.operator_access_control.models.AccessRequestHistorySummary
     oci.operator_access_control.models.AccessRequestSummary
     oci.operator_access_control.models.ApproveAccessRequestDetails
+    oci.operator_access_control.models.ApproverDetail
+    oci.operator_access_control.models.AssignmentValidationStatus
+    oci.operator_access_control.models.AuditLogReport
     oci.operator_access_control.models.ChangeOperatorControlAssignmentCompartmentDetails
     oci.operator_access_control.models.ChangeOperatorControlCompartmentDetails
     oci.operator_access_control.models.CreateOperatorControlAssignmentDetails
@@ -50,5 +53,7 @@ Operator Access Control
     oci.operator_access_control.models.RejectAccessRequestDetails
     oci.operator_access_control.models.ReviewAccessRequestDetails
     oci.operator_access_control.models.RevokeAccessRequestDetails
+    oci.operator_access_control.models.StatusDetail
     oci.operator_access_control.models.UpdateOperatorControlAssignmentDetails
     oci.operator_access_control.models.UpdateOperatorControlDetails
+    oci.operator_access_control.models.ValidateOperatorAssignmentDetails

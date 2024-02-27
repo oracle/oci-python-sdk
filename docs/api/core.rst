@@ -397,6 +397,10 @@ Core Services
     oci.core.models.IpsecTunnelDrgAttachmentNetworkDetails
     oci.core.models.Ipv6
     oci.core.models.Ipv6AddressIpv6SubnetCidrPairDetails
+    oci.core.models.LaunchAttachIScsiVolumeDetails
+    oci.core.models.LaunchAttachVolumeDetails
+    oci.core.models.LaunchCreateVolumeDetails
+    oci.core.models.LaunchCreateVolumeFromAttributes
     oci.core.models.LaunchInstanceAgentConfigDetails
     oci.core.models.LaunchInstanceAvailabilityConfigDetails
     oci.core.models.LaunchInstanceDetails

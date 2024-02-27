@@ -19,6 +19,8 @@ Data Catalog
     :template: autosummary/model_class.rst
 
     oci.data_catalog.models.AddResourceLockDetails
+    oci.data_catalog.models.AsynchronousExportDataAssetDetails
+    oci.data_catalog.models.AsynchronousExportDataAssetResult
     oci.data_catalog.models.AsynchronousExportGlossaryDetails
     oci.data_catalog.models.AsynchronousExportGlossaryResult
     oci.data_catalog.models.AsynchronousExportRequestDetails

@@ -14,9 +14,9 @@ class MonitoringSourceDetails(SourceDetails):
     """
     The Monitoring source.
     For configuration instructions, see
-    `To create a service connector`__.
+    `Creating a Connector with a Monitoring Source`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-monitoring-source.htm
     """
 
     def __init__(self, **kwargs):
@@ -27,7 +27,7 @@ class MonitoringSourceDetails(SourceDetails):
 
         :param kind:
             The value to assign to the kind property of this MonitoringSourceDetails.
-            Allowed values for this property are: "logging", "monitoring", "streaming"
+            Allowed values for this property are: "logging", "monitoring", "streaming", "plugin"
         :type kind: str
 
         :param monitoring_sources:
@@ -53,7 +53,7 @@ class MonitoringSourceDetails(SourceDetails):
     def monitoring_sources(self):
         """
         **[Required]** Gets the monitoring_sources of this MonitoringSourceDetails.
-        The list of metric namespaces to retrieve data from.
+        One or more compartment-specific lists of metric namespaces to retrieve data from.
 
 
         :return: The monitoring_sources of this MonitoringSourceDetails.
@@ -65,7 +65,7 @@ class MonitoringSourceDetails(SourceDetails):
     def monitoring_sources(self, monitoring_sources):
         """
         Sets the monitoring_sources of this MonitoringSourceDetails.
-        The list of metric namespaces to retrieve data from.
+        One or more compartment-specific lists of metric namespaces to retrieve data from.
 
 
         :param monitoring_sources: The monitoring_sources of this MonitoringSourceDetails.

@@ -323,7 +323,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
     def cpu_core_count(self):
         """
         Gets the cpu_core_count of this CreateDataGuardAssociationWithNewDbSystemDetails.
-        The number of OCPU cores available for AMD-based virtual machine DB systems.
+        The number of CPU cores available for AMD-based virtual machine DB systems.
 
 
         :return: The cpu_core_count of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -335,7 +335,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
     def cpu_core_count(self, cpu_core_count):
         """
         Sets the cpu_core_count of this CreateDataGuardAssociationWithNewDbSystemDetails.
-        The number of OCPU cores available for AMD-based virtual machine DB systems.
+        The number of CPU cores available for AMD-based virtual machine DB systems.
 
 
         :param cpu_core_count: The cpu_core_count of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -640,7 +640,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
     def license_model(self):
         """
         Gets the license_model of this CreateDataGuardAssociationWithNewDbSystemDetails.
-        The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+        The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
 
         Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
 
@@ -654,7 +654,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
     def license_model(self, license_model):
         """
         Sets the license_model of this CreateDataGuardAssociationWithNewDbSystemDetails.
-        The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED.
+        The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
 
 
         :param license_model: The license_model of this CreateDataGuardAssociationWithNewDbSystemDetails.

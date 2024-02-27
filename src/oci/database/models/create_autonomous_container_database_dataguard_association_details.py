@@ -40,6 +40,14 @@ class CreateAutonomousContainerDatabaseDataguardAssociationDetails(object):
             The value to assign to the peer_cloud_autonomous_vm_cluster_id property of this CreateAutonomousContainerDatabaseDataguardAssociationDetails.
         :type peer_cloud_autonomous_vm_cluster_id: str
 
+        :param peer_autonomous_vm_cluster_id:
+            The value to assign to the peer_autonomous_vm_cluster_id property of this CreateAutonomousContainerDatabaseDataguardAssociationDetails.
+        :type peer_autonomous_vm_cluster_id: str
+
+        :param peer_db_unique_name:
+            The value to assign to the peer_db_unique_name property of this CreateAutonomousContainerDatabaseDataguardAssociationDetails.
+        :type peer_db_unique_name: str
+
         :param peer_autonomous_container_database_backup_config:
             The value to assign to the peer_autonomous_container_database_backup_config property of this CreateAutonomousContainerDatabaseDataguardAssociationDetails.
         :type peer_autonomous_container_database_backup_config: oci.database.models.PeerAutonomousContainerDatabaseBackupConfig
@@ -66,6 +74,8 @@ class CreateAutonomousContainerDatabaseDataguardAssociationDetails(object):
             'peer_autonomous_container_database_display_name': 'str',
             'peer_autonomous_container_database_compartment_id': 'str',
             'peer_cloud_autonomous_vm_cluster_id': 'str',
+            'peer_autonomous_vm_cluster_id': 'str',
+            'peer_db_unique_name': 'str',
             'peer_autonomous_container_database_backup_config': 'PeerAutonomousContainerDatabaseBackupConfig',
             'is_automatic_failover_enabled': 'bool',
             'protection_mode': 'str',
@@ -77,6 +87,8 @@ class CreateAutonomousContainerDatabaseDataguardAssociationDetails(object):
             'peer_autonomous_container_database_display_name': 'peerAutonomousContainerDatabaseDisplayName',
             'peer_autonomous_container_database_compartment_id': 'peerAutonomousContainerDatabaseCompartmentId',
             'peer_cloud_autonomous_vm_cluster_id': 'peerCloudAutonomousVmClusterId',
+            'peer_autonomous_vm_cluster_id': 'peerAutonomousVmClusterId',
+            'peer_db_unique_name': 'peerDbUniqueName',
             'peer_autonomous_container_database_backup_config': 'peerAutonomousContainerDatabaseBackupConfig',
             'is_automatic_failover_enabled': 'isAutomaticFailoverEnabled',
             'protection_mode': 'protectionMode',
@@ -87,6 +99,8 @@ class CreateAutonomousContainerDatabaseDataguardAssociationDetails(object):
         self._peer_autonomous_container_database_display_name = None
         self._peer_autonomous_container_database_compartment_id = None
         self._peer_cloud_autonomous_vm_cluster_id = None
+        self._peer_autonomous_vm_cluster_id = None
+        self._peer_db_unique_name = None
         self._peer_autonomous_container_database_backup_config = None
         self._is_automatic_failover_enabled = None
         self._protection_mode = None
@@ -150,7 +164,7 @@ class CreateAutonomousContainerDatabaseDataguardAssociationDetails(object):
     @property
     def peer_cloud_autonomous_vm_cluster_id(self):
         """
-        **[Required]** Gets the peer_cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDataguardAssociationDetails.
+        Gets the peer_cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDataguardAssociationDetails.
         The `OCID`__ of the peer cloud Autonomous Exadata VM Cluster.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
@@ -174,6 +188,58 @@ class CreateAutonomousContainerDatabaseDataguardAssociationDetails(object):
         :type: str
         """
         self._peer_cloud_autonomous_vm_cluster_id = peer_cloud_autonomous_vm_cluster_id
+
+    @property
+    def peer_autonomous_vm_cluster_id(self):
+        """
+        Gets the peer_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDataguardAssociationDetails.
+        The `OCID`__ of the peer Autonomous Exadata VM Cluster.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The peer_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDataguardAssociationDetails.
+        :rtype: str
+        """
+        return self._peer_autonomous_vm_cluster_id
+
+    @peer_autonomous_vm_cluster_id.setter
+    def peer_autonomous_vm_cluster_id(self, peer_autonomous_vm_cluster_id):
+        """
+        Sets the peer_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDataguardAssociationDetails.
+        The `OCID`__ of the peer Autonomous Exadata VM Cluster.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param peer_autonomous_vm_cluster_id: The peer_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDataguardAssociationDetails.
+        :type: str
+        """
+        self._peer_autonomous_vm_cluster_id = peer_autonomous_vm_cluster_id
+
+    @property
+    def peer_db_unique_name(self):
+        """
+        Gets the peer_db_unique_name of this CreateAutonomousContainerDatabaseDataguardAssociationDetails.
+        Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+
+
+        :return: The peer_db_unique_name of this CreateAutonomousContainerDatabaseDataguardAssociationDetails.
+        :rtype: str
+        """
+        return self._peer_db_unique_name
+
+    @peer_db_unique_name.setter
+    def peer_db_unique_name(self, peer_db_unique_name):
+        """
+        Sets the peer_db_unique_name of this CreateAutonomousContainerDatabaseDataguardAssociationDetails.
+        Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+
+
+        :param peer_db_unique_name: The peer_db_unique_name of this CreateAutonomousContainerDatabaseDataguardAssociationDetails.
+        :type: str
+        """
+        self._peer_db_unique_name = peer_db_unique_name
 
     @property
     def peer_autonomous_container_database_backup_config(self):

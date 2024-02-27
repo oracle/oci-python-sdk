@@ -4,6 +4,36 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.123.0 - 2024-02-27
+====================
+
+Added
+-----
+* Support for specifying dialog version when creating skills entities in the Digital Assistant service
+* Support for bulk creation of skill entities in the Digital Assistant service
+* Support for training skill query entities in the Digital Assistant service
+* Support for cascading delete of skill custom entities in the Digital Assistant service
+* Support for creating autonomous dataguard associations in the Database service
+* Support for auto generation of secrets in the Secret Management service
+* Support for cluster placement groups in Cloud Exadata Infrastructure in the Database service
+* Support for retrieving previous logs of the container in the Container Instances service
+* Support for queue sources in the Connector Hub service
+* Support for automatic key rotation in the Key Management Service
+* Support for downloading operator activity reports and assignment healthchecks in the Operator Access Control service
+* Support for operator requesting access in the future time in the Operator Access Control service
+* Support for forwarding hypervisor logs in the Operator Access Control service
+* Support for asynchronous data asset export in the Data Catalog service
+* Support for launch with multiple volumes for virtual machines in the Compute Service
+* Support for tagging in Database Management service
+ 
+Breaking
+--------
+* Support for default retries on operations of the Connector Hub service
+* Property `max_cpu_core_count` was removed from models `UpdateAutonomousDatabaseDetails`, `CreateRefreshableAutonomousDatabaseCloneDetails`, `CreateCrossRegionDisasterRecoveryDetails`, `CreateCrossRegionAutonomousDatabaseDataGuardDetails`, `CreateAutonomousDatabaseFromBackupTimestampDetails`, `CreateAutonomousDatabaseFromBackupDetails`, `CreateAutonomousDatabaseDetails`, `CreateAutonomousDatabaseCloneDetails`, `CreateAutonomousDatabaseBase`, `AutonomousDatabase`, `AutonomousDatabaseSummary` in the Database service
+* Property `key_id` in model `CreateSecretDetails` is made required in the Vault service
+* Model `DatabaseConnectionCredentailsByName` was renamed to `DatabaseConnectionCredentialsByName` in the Database service
+ 
+====================
 2.122.0 - 2024-02-20
 ====================
 

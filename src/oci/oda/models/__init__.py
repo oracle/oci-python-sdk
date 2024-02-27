@@ -13,6 +13,7 @@ from .authentication_provider import AuthenticationProvider
 from .authentication_provider_collection import AuthenticationProviderCollection
 from .authentication_provider_summary import AuthenticationProviderSummary
 from .bot import Bot
+from .bulk_create_skill_entities_details import BulkCreateSkillEntitiesDetails
 from .change_oda_instance_compartment_details import ChangeOdaInstanceCompartmentDetails
 from .change_oda_private_endpoint_compartment_details import ChangeOdaPrivateEndpointCompartmentDetails
 from .channel import Channel
@@ -20,6 +21,7 @@ from .channel_collection import ChannelCollection
 from .channel_summary import ChannelSummary
 from .clone_digital_assistant_details import CloneDigitalAssistantDetails
 from .clone_skill_details import CloneSkillDetails
+from .composite_entity import CompositeEntity
 from .configure_digital_assistant_parameters_details import ConfigureDigitalAssistantParametersDetails
 from .cortana_channel import CortanaChannel
 from .create_android_channel_details import CreateAndroidChannelDetails
@@ -55,8 +57,11 @@ from .create_osvc_channel_details import CreateOsvcChannelDetails
 from .create_osvc_channel_result import CreateOsvcChannelResult
 from .create_service_cloud_channel_details import CreateServiceCloudChannelDetails
 from .create_service_cloud_channel_result import CreateServiceCloudChannelResult
+from .create_skill_composite_entity_details import CreateSkillCompositeEntityDetails
 from .create_skill_details import CreateSkillDetails
+from .create_skill_entity_details import CreateSkillEntityDetails
 from .create_skill_parameter_details import CreateSkillParameterDetails
+from .create_skill_value_list_entity_details import CreateSkillValueListEntityDetails
 from .create_skill_version_details import CreateSkillVersionDetails
 from .create_slack_channel_details import CreateSlackChannelDetails
 from .create_slack_channel_result import CreateSlackChannelResult
@@ -76,6 +81,14 @@ from .digital_assistant_parameter_collection import DigitalAssistantParameterCol
 from .digital_assistant_parameter_summary import DigitalAssistantParameterSummary
 from .digital_assistant_parameter_value import DigitalAssistantParameterValue
 from .digital_assistant_summary import DigitalAssistantSummary
+from .entity import Entity
+from .entity_action import EntityAction
+from .entity_action_argument import EntityActionArgument
+from .entity_action_argument_natural_language_mapping import EntityActionArgumentNaturalLanguageMapping
+from .entity_action_natural_language_mapping import EntityActionNaturalLanguageMapping
+from .entity_attribute import EntityAttribute
+from .entity_attribute_natural_language_mapping import EntityAttributeNaturalLanguageMapping
+from .entity_natural_language_mapping import EntityNaturalLanguageMapping
 from .error_body import ErrorBody
 from .export_bot_details import ExportBotDetails
 from .export_digital_assistant_details import ExportDigitalAssistantDetails
@@ -88,8 +101,10 @@ from .import_contract import ImportContract
 from .imported_package import ImportedPackage
 from .imported_package_summary import ImportedPackageSummary
 from .ios_channel import IosChannel
+from .language_mapping import LanguageMapping
 from .ms_teams_channel import MSTeamsChannel
 from .metadata_property import MetadataProperty
+from .name_mapping import NameMapping
 from .oss_channel import OSSChannel
 from .oda_instance import OdaInstance
 from .oda_instance_attachment import OdaInstanceAttachment
@@ -125,8 +140,13 @@ from .skill_parameter_collection import SkillParameterCollection
 from .skill_parameter_summary import SkillParameterSummary
 from .skill_summary import SkillSummary
 from .slack_channel import SlackChannel
+from .static_entity_value import StaticEntityValue
+from .static_entity_value_natural_language_mapping import StaticEntityValueNaturalLanguageMapping
 from .storage_location import StorageLocation
 from .test_channel import TestChannel
+from .train_skill_details import TrainSkillDetails
+from .train_skill_parameter import TrainSkillParameter
+from .train_skill_query_entity_parameter import TrainSkillQueryEntityParameter
 from .translator import Translator
 from .translator_collection import TranslatorCollection
 from .translator_summary import TranslatorSummary
@@ -156,6 +176,7 @@ from .update_translator_details import UpdateTranslatorDetails
 from .update_twilio_channel_details import UpdateTwilioChannelDetails
 from .update_web_channel_details import UpdateWebChannelDetails
 from .update_webhook_channel_details import UpdateWebhookChannelDetails
+from .value_list_entity import ValueListEntity
 from .web_channel import WebChannel
 from .webhook_channel import WebhookChannel
 from .work_request import WorkRequest
@@ -173,6 +194,7 @@ oda_type_mapping = {
     "AuthenticationProviderCollection": AuthenticationProviderCollection,
     "AuthenticationProviderSummary": AuthenticationProviderSummary,
     "Bot": Bot,
+    "BulkCreateSkillEntitiesDetails": BulkCreateSkillEntitiesDetails,
     "ChangeOdaInstanceCompartmentDetails": ChangeOdaInstanceCompartmentDetails,
     "ChangeOdaPrivateEndpointCompartmentDetails": ChangeOdaPrivateEndpointCompartmentDetails,
     "Channel": Channel,
@@ -180,6 +202,7 @@ oda_type_mapping = {
     "ChannelSummary": ChannelSummary,
     "CloneDigitalAssistantDetails": CloneDigitalAssistantDetails,
     "CloneSkillDetails": CloneSkillDetails,
+    "CompositeEntity": CompositeEntity,
     "ConfigureDigitalAssistantParametersDetails": ConfigureDigitalAssistantParametersDetails,
     "CortanaChannel": CortanaChannel,
     "CreateAndroidChannelDetails": CreateAndroidChannelDetails,
@@ -215,8 +238,11 @@ oda_type_mapping = {
     "CreateOsvcChannelResult": CreateOsvcChannelResult,
     "CreateServiceCloudChannelDetails": CreateServiceCloudChannelDetails,
     "CreateServiceCloudChannelResult": CreateServiceCloudChannelResult,
+    "CreateSkillCompositeEntityDetails": CreateSkillCompositeEntityDetails,
     "CreateSkillDetails": CreateSkillDetails,
+    "CreateSkillEntityDetails": CreateSkillEntityDetails,
     "CreateSkillParameterDetails": CreateSkillParameterDetails,
+    "CreateSkillValueListEntityDetails": CreateSkillValueListEntityDetails,
     "CreateSkillVersionDetails": CreateSkillVersionDetails,
     "CreateSlackChannelDetails": CreateSlackChannelDetails,
     "CreateSlackChannelResult": CreateSlackChannelResult,
@@ -236,6 +262,14 @@ oda_type_mapping = {
     "DigitalAssistantParameterSummary": DigitalAssistantParameterSummary,
     "DigitalAssistantParameterValue": DigitalAssistantParameterValue,
     "DigitalAssistantSummary": DigitalAssistantSummary,
+    "Entity": Entity,
+    "EntityAction": EntityAction,
+    "EntityActionArgument": EntityActionArgument,
+    "EntityActionArgumentNaturalLanguageMapping": EntityActionArgumentNaturalLanguageMapping,
+    "EntityActionNaturalLanguageMapping": EntityActionNaturalLanguageMapping,
+    "EntityAttribute": EntityAttribute,
+    "EntityAttributeNaturalLanguageMapping": EntityAttributeNaturalLanguageMapping,
+    "EntityNaturalLanguageMapping": EntityNaturalLanguageMapping,
     "ErrorBody": ErrorBody,
     "ExportBotDetails": ExportBotDetails,
     "ExportDigitalAssistantDetails": ExportDigitalAssistantDetails,
@@ -248,8 +282,10 @@ oda_type_mapping = {
     "ImportedPackage": ImportedPackage,
     "ImportedPackageSummary": ImportedPackageSummary,
     "IosChannel": IosChannel,
+    "LanguageMapping": LanguageMapping,
     "MSTeamsChannel": MSTeamsChannel,
     "MetadataProperty": MetadataProperty,
+    "NameMapping": NameMapping,
     "OSSChannel": OSSChannel,
     "OdaInstance": OdaInstance,
     "OdaInstanceAttachment": OdaInstanceAttachment,
@@ -285,8 +321,13 @@ oda_type_mapping = {
     "SkillParameterSummary": SkillParameterSummary,
     "SkillSummary": SkillSummary,
     "SlackChannel": SlackChannel,
+    "StaticEntityValue": StaticEntityValue,
+    "StaticEntityValueNaturalLanguageMapping": StaticEntityValueNaturalLanguageMapping,
     "StorageLocation": StorageLocation,
     "TestChannel": TestChannel,
+    "TrainSkillDetails": TrainSkillDetails,
+    "TrainSkillParameter": TrainSkillParameter,
+    "TrainSkillQueryEntityParameter": TrainSkillQueryEntityParameter,
     "Translator": Translator,
     "TranslatorCollection": TranslatorCollection,
     "TranslatorSummary": TranslatorSummary,
@@ -316,6 +357,7 @@ oda_type_mapping = {
     "UpdateTwilioChannelDetails": UpdateTwilioChannelDetails,
     "UpdateWebChannelDetails": UpdateWebChannelDetails,
     "UpdateWebhookChannelDetails": UpdateWebhookChannelDetails,
+    "ValueListEntity": ValueListEntity,
     "WebChannel": WebChannel,
     "WebhookChannel": WebhookChannel,
     "WorkRequest": WorkRequest,

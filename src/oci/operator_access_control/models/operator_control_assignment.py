@@ -165,6 +165,14 @@ class OperatorControlAssignment(object):
             The value to assign to the remote_syslog_server_ca_cert property of this OperatorControlAssignment.
         :type remote_syslog_server_ca_cert: str
 
+        :param is_hypervisor_log_forwarded:
+            The value to assign to the is_hypervisor_log_forwarded property of this OperatorControlAssignment.
+        :type is_hypervisor_log_forwarded: bool
+
+        :param op_control_name:
+            The value to assign to the op_control_name property of this OperatorControlAssignment.
+        :type op_control_name: str
+
         :param is_auto_approve_during_maintenance:
             The value to assign to the is_auto_approve_during_maintenance property of this OperatorControlAssignment.
         :type is_auto_approve_during_maintenance: bool
@@ -213,6 +221,8 @@ class OperatorControlAssignment(object):
             'remote_syslog_server_address': 'str',
             'remote_syslog_server_port': 'int',
             'remote_syslog_server_ca_cert': 'str',
+            'is_hypervisor_log_forwarded': 'bool',
+            'op_control_name': 'str',
             'is_auto_approve_during_maintenance': 'bool',
             'error_code': 'int',
             'error_message': 'str',
@@ -244,6 +254,8 @@ class OperatorControlAssignment(object):
             'remote_syslog_server_address': 'remoteSyslogServerAddress',
             'remote_syslog_server_port': 'remoteSyslogServerPort',
             'remote_syslog_server_ca_cert': 'remoteSyslogServerCACert',
+            'is_hypervisor_log_forwarded': 'isHypervisorLogForwarded',
+            'op_control_name': 'opControlName',
             'is_auto_approve_during_maintenance': 'isAutoApproveDuringMaintenance',
             'error_code': 'errorCode',
             'error_message': 'errorMessage',
@@ -274,6 +286,8 @@ class OperatorControlAssignment(object):
         self._remote_syslog_server_address = None
         self._remote_syslog_server_port = None
         self._remote_syslog_server_ca_cert = None
+        self._is_hypervisor_log_forwarded = None
+        self._op_control_name = None
         self._is_auto_approve_during_maintenance = None
         self._error_code = None
         self._error_message = None
@@ -840,6 +854,54 @@ class OperatorControlAssignment(object):
         :type: str
         """
         self._remote_syslog_server_ca_cert = remote_syslog_server_ca_cert
+
+    @property
+    def is_hypervisor_log_forwarded(self):
+        """
+        Gets the is_hypervisor_log_forwarded of this OperatorControlAssignment.
+        If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+
+
+        :return: The is_hypervisor_log_forwarded of this OperatorControlAssignment.
+        :rtype: bool
+        """
+        return self._is_hypervisor_log_forwarded
+
+    @is_hypervisor_log_forwarded.setter
+    def is_hypervisor_log_forwarded(self, is_hypervisor_log_forwarded):
+        """
+        Sets the is_hypervisor_log_forwarded of this OperatorControlAssignment.
+        If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+
+
+        :param is_hypervisor_log_forwarded: The is_hypervisor_log_forwarded of this OperatorControlAssignment.
+        :type: bool
+        """
+        self._is_hypervisor_log_forwarded = is_hypervisor_log_forwarded
+
+    @property
+    def op_control_name(self):
+        """
+        Gets the op_control_name of this OperatorControlAssignment.
+        Name of the operator control name associated.
+
+
+        :return: The op_control_name of this OperatorControlAssignment.
+        :rtype: str
+        """
+        return self._op_control_name
+
+    @op_control_name.setter
+    def op_control_name(self, op_control_name):
+        """
+        Sets the op_control_name of this OperatorControlAssignment.
+        Name of the operator control name associated.
+
+
+        :param op_control_name: The op_control_name of this OperatorControlAssignment.
+        :type: str
+        """
+        self._op_control_name = op_control_name
 
     @property
     def is_auto_approve_during_maintenance(self):

@@ -67,7 +67,7 @@ class ComputePerformanceSummary(object):
     def cpu_core_count(self):
         """
         **[Required]** Gets the cpu_core_count of this ComputePerformanceSummary.
-        The number of OCPU cores available.
+        The number of CPU cores available.
 
 
         :return: The cpu_core_count of this ComputePerformanceSummary.
@@ -79,7 +79,7 @@ class ComputePerformanceSummary(object):
     def cpu_core_count(self, cpu_core_count):
         """
         Sets the cpu_core_count of this ComputePerformanceSummary.
-        The number of OCPU cores available.
+        The number of CPU cores available.
 
 
         :param cpu_core_count: The cpu_core_count of this ComputePerformanceSummary.

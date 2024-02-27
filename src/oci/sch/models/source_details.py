@@ -12,15 +12,15 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SourceDetails(object):
     """
-    An object that represents the source of the flow defined by the service connector.
+    An object that represents the source of the flow defined by the connector.
     An example source is the VCNFlow logs within the NetworkLogs group.
-    For more information about flows defined by service connectors, see
-    `Service Connector Hub Overview`__.
+    For more information about flows defined by connectors, see
+    `Overview of Connector Hub`__.
     For configuration instructions, see
-    `To create a service connector`__.
+    `Creating a Connector`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm
-    __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm
     """
 
     #: A constant which can be used with the kind property of a SourceDetails.
@@ -35,6 +35,10 @@ class SourceDetails(object):
     #: This constant has a value of "streaming"
     KIND_STREAMING = "streaming"
 
+    #: A constant which can be used with the kind property of a SourceDetails.
+    #: This constant has a value of "plugin"
+    KIND_PLUGIN = "plugin"
+
     def __init__(self, **kwargs):
         """
         Initializes a new SourceDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -43,12 +47,13 @@ class SourceDetails(object):
         * :class:`~oci.sch.models.LoggingSourceDetails`
         * :class:`~oci.sch.models.MonitoringSourceDetails`
         * :class:`~oci.sch.models.StreamingSourceDetails`
+        * :class:`~oci.sch.models.PluginSourceDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param kind:
             The value to assign to the kind property of this SourceDetails.
-            Allowed values for this property are: "logging", "monitoring", "streaming", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "logging", "monitoring", "streaming", "plugin", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type kind: str
 
@@ -79,6 +84,9 @@ class SourceDetails(object):
 
         if type == 'streaming':
             return 'StreamingSourceDetails'
+
+        if type == 'plugin':
+            return 'PluginSourceDetails'
         else:
             return 'SourceDetails'
 
@@ -86,9 +94,9 @@ class SourceDetails(object):
     def kind(self):
         """
         **[Required]** Gets the kind of this SourceDetails.
-        The type descriminator.
+        The type discriminator.
 
-        Allowed values for this property are: "logging", "monitoring", "streaming", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "logging", "monitoring", "streaming", "plugin", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -101,13 +109,13 @@ class SourceDetails(object):
     def kind(self, kind):
         """
         Sets the kind of this SourceDetails.
-        The type descriminator.
+        The type discriminator.
 
 
         :param kind: The kind of this SourceDetails.
         :type: str
         """
-        allowed_values = ["logging", "monitoring", "streaming"]
+        allowed_values = ["logging", "monitoring", "streaming", "plugin"]
         if not value_allowed_none_or_none_sentinel(kind, allowed_values):
             kind = 'UNKNOWN_ENUM_VALUE'
         self._kind = kind

@@ -15,9 +15,9 @@ class FunctionTaskDetails(TaskDetails):
     The Functions task.
     Batch input for a function can be limited by either size or time. The first limit reached determines the boundary of the batch.
     For configuration instructions, see
-    `To create a service connector`__.
+    `Creating a Connector`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm
     """
 
     def __init__(self, **kwargs):

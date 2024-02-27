@@ -148,6 +148,14 @@ class Key(object):
             The value to assign to the is_primary property of this Key.
         :type is_primary: bool
 
+        :param is_auto_rotation_enabled:
+            The value to assign to the is_auto_rotation_enabled property of this Key.
+        :type is_auto_rotation_enabled: bool
+
+        :param auto_key_rotation_details:
+            The value to assign to the auto_key_rotation_details property of this Key.
+        :type auto_key_rotation_details: oci.key_management.models.AutoKeyRotationDetails
+
         :param external_key_reference_details:
             The value to assign to the external_key_reference_details property of this Key.
         :type external_key_reference_details: oci.key_management.models.ExternalKeyReferenceDetails
@@ -169,6 +177,8 @@ class Key(object):
             'restored_from_key_id': 'str',
             'replica_details': 'KeyReplicaDetails',
             'is_primary': 'bool',
+            'is_auto_rotation_enabled': 'bool',
+            'auto_key_rotation_details': 'AutoKeyRotationDetails',
             'external_key_reference_details': 'ExternalKeyReferenceDetails'
         }
 
@@ -188,6 +198,8 @@ class Key(object):
             'restored_from_key_id': 'restoredFromKeyId',
             'replica_details': 'replicaDetails',
             'is_primary': 'isPrimary',
+            'is_auto_rotation_enabled': 'isAutoRotationEnabled',
+            'auto_key_rotation_details': 'autoKeyRotationDetails',
             'external_key_reference_details': 'externalKeyReferenceDetails'
         }
 
@@ -206,6 +218,8 @@ class Key(object):
         self._restored_from_key_id = None
         self._replica_details = None
         self._is_primary = None
+        self._is_auto_rotation_enabled = None
+        self._auto_key_rotation_details = None
         self._external_key_reference_details = None
 
     @property
@@ -625,6 +639,50 @@ class Key(object):
         :type: bool
         """
         self._is_primary = is_primary
+
+    @property
+    def is_auto_rotation_enabled(self):
+        """
+        Gets the is_auto_rotation_enabled of this Key.
+        A parameter specifying whether the auto key rotation is enabled or not.
+
+
+        :return: The is_auto_rotation_enabled of this Key.
+        :rtype: bool
+        """
+        return self._is_auto_rotation_enabled
+
+    @is_auto_rotation_enabled.setter
+    def is_auto_rotation_enabled(self, is_auto_rotation_enabled):
+        """
+        Sets the is_auto_rotation_enabled of this Key.
+        A parameter specifying whether the auto key rotation is enabled or not.
+
+
+        :param is_auto_rotation_enabled: The is_auto_rotation_enabled of this Key.
+        :type: bool
+        """
+        self._is_auto_rotation_enabled = is_auto_rotation_enabled
+
+    @property
+    def auto_key_rotation_details(self):
+        """
+        Gets the auto_key_rotation_details of this Key.
+
+        :return: The auto_key_rotation_details of this Key.
+        :rtype: oci.key_management.models.AutoKeyRotationDetails
+        """
+        return self._auto_key_rotation_details
+
+    @auto_key_rotation_details.setter
+    def auto_key_rotation_details(self, auto_key_rotation_details):
+        """
+        Sets the auto_key_rotation_details of this Key.
+
+        :param auto_key_rotation_details: The auto_key_rotation_details of this Key.
+        :type: oci.key_management.models.AutoKeyRotationDetails
+        """
+        self._auto_key_rotation_details = auto_key_rotation_details
 
     @property
     def external_key_reference_details(self):

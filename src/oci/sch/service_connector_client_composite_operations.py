@@ -31,7 +31,7 @@ class ServiceConnectorClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str service_connector_id: (required)
-            The `OCID`__ of the service connector.
+            The `OCID`__ of the connector.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -72,12 +72,12 @@ class ServiceConnectorClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str service_connector_id: (required)
-            The `OCID`__ of the service connector.
+            The `OCID`__ of the connector.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.sch.models.ChangeServiceConnectorCompartmentDetails change_service_connector_compartment_details: (required)
-            The configuration details for moving a service connector to a different compartment.
+            The configuration details for moving a connector to a different compartment.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.sch.models.WorkRequest.status`
@@ -116,7 +116,7 @@ class ServiceConnectorClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.sch.models.CreateServiceConnectorDetails create_service_connector_details: (required)
-            Configuration details for the new service connector.
+            Configuration details for the new connector.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.sch.models.WorkRequest.status`
@@ -155,7 +155,7 @@ class ServiceConnectorClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str service_connector_id: (required)
-            The `OCID`__ of the service connector.
+            The `OCID`__ of the connector.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -196,7 +196,7 @@ class ServiceConnectorClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str service_connector_id: (required)
-            The `OCID`__ of the service connector.
+            The `OCID`__ of the connector.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -245,7 +245,7 @@ class ServiceConnectorClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str service_connector_id: (required)
-            The `OCID`__ of the service connector.
+            The `OCID`__ of the connector.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 

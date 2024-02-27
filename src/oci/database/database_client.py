@@ -6414,9 +6414,9 @@ class DatabaseClient(object):
     def create_maintenance_run(self, create_maintenance_run_details, **kwargs):
         """
         Creates a maintenance run with one of the following:
-        The latest available release update patch (RUP) for the Autonomous Container Database.
-        The latest available RUP and DST time zone (TZ) file updates for the Autonomous Container Database.
-        Creates a maintenance run to update the DST TZ file for the Autonomous Container Database.
+        1. The latest available release update patch (RUP) for the Autonomous Container Database.
+        2. The latest available RUP and DST time-zone (TZ) file updates for the Autonomous Container Database.
+        3. The DST TZ file updates for the Autonomous Container Database.
 
 
         :param oci.database.models.CreateMaintenanceRunDetails create_maintenance_run_details: (required)
@@ -12844,9 +12844,12 @@ class DatabaseClient(object):
 
     def fail_over_autonomous_database(self, autonomous_database_id, **kwargs):
         """
-        Initiates a failover the specified Autonomous Database to a standby. To perform a failover to a standby located in a remote region, specify the `OCID`__ of the remote standby using the `peerDbId` parameter.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        Initiates a failover of the specified Autonomous Database to the associated peer database. Applicable only to databases with Disaster Recovery enabled.
+        This API should be called in the remote region where the peer database resides.
+        Below parameter is optional:
+          - `peerDbId`
+            Use this parameter to specify the database OCID of the Disaster Recovery peer, which is located in a different (remote) region from the current peer database.
+            If this parameter is not provided, the failover will happen in the same region.
 
 
         :param str autonomous_database_id: (required)
@@ -12870,9 +12873,7 @@ class DatabaseClient(object):
             Unique identifier for the request.
 
         :param str peer_db_id: (optional)
-            The database `OCID`__ of the Autonomous Data Guard standby database located in a different (remote) region from the source primary Autonomous Database.
-
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            The database OCID(/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -22612,6 +22613,9 @@ class DatabaseClient(object):
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given. The match is not case sensitive.
 
+        :param str cluster_placement_group_id: (optional)
+            A filter to return only resources that match the given cluster placement group ID exactly.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -22647,7 +22651,8 @@ class DatabaseClient(object):
             "sort_by",
             "sort_order",
             "lifecycle_state",
-            "display_name"
+            "display_name",
+            "cluster_placement_group_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -22682,7 +22687,8 @@ class DatabaseClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
-            "displayName": kwargs.get("display_name", missing)
+            "displayName": kwargs.get("display_name", missing),
+            "clusterPlacementGroupId": kwargs.get("cluster_placement_group_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -32841,9 +32847,12 @@ class DatabaseClient(object):
 
     def switchover_autonomous_database(self, autonomous_database_id, **kwargs):
         """
-        Initiates a switchover of the specified Autonomous Database to the associated standby database. Applicable only to databases with Autonomous Data Guard enabled. To perform a switchover to a standby located in a remote region, specify the `OCID`__ of the remote standby using the `peerDbId` parameter.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        Initiates a switchover of the specified Autonomous Database to the associated peer database. Applicable only to databases with Disaster Recovery enabled.
+        This API should be called in the remote region where the peer database resides.
+        Below parameter is optional:
+          - `peerDbId`
+            Use this parameter to specify the database OCID of the Disaster Recovery peer, which is located in a different (remote) region from the current peer database.
+            If this parameter is not provided, the switchover will happen in the same region.
 
 
         :param str autonomous_database_id: (required)
@@ -32867,9 +32876,7 @@ class DatabaseClient(object):
             Unique identifier for the request.
 
         :param str peer_db_id: (optional)
-            The database `OCID`__ of the Autonomous Data Guard standby database located in a different (remote) region from the source primary Autonomous Database.
-
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            The database OCID(/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.

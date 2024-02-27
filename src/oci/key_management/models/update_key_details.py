@@ -20,6 +20,14 @@ class UpdateKeyDetails(object):
         Initializes a new UpdateKeyDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param is_auto_rotation_enabled:
+            The value to assign to the is_auto_rotation_enabled property of this UpdateKeyDetails.
+        :type is_auto_rotation_enabled: bool
+
+        :param auto_key_rotation_details:
+            The value to assign to the auto_key_rotation_details property of this UpdateKeyDetails.
+        :type auto_key_rotation_details: oci.key_management.models.AutoKeyRotationDetails
+
         :param defined_tags:
             The value to assign to the defined_tags property of this UpdateKeyDetails.
         :type defined_tags: dict(str, dict(str, object))
@@ -34,20 +42,70 @@ class UpdateKeyDetails(object):
 
         """
         self.swagger_types = {
+            'is_auto_rotation_enabled': 'bool',
+            'auto_key_rotation_details': 'AutoKeyRotationDetails',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)'
         }
 
         self.attribute_map = {
+            'is_auto_rotation_enabled': 'isAutoRotationEnabled',
+            'auto_key_rotation_details': 'autoKeyRotationDetails',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags'
         }
 
+        self._is_auto_rotation_enabled = None
+        self._auto_key_rotation_details = None
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
+
+    @property
+    def is_auto_rotation_enabled(self):
+        """
+        Gets the is_auto_rotation_enabled of this UpdateKeyDetails.
+        A parameter specifying whether the auto key rotation is enabled or not.
+
+
+        :return: The is_auto_rotation_enabled of this UpdateKeyDetails.
+        :rtype: bool
+        """
+        return self._is_auto_rotation_enabled
+
+    @is_auto_rotation_enabled.setter
+    def is_auto_rotation_enabled(self, is_auto_rotation_enabled):
+        """
+        Sets the is_auto_rotation_enabled of this UpdateKeyDetails.
+        A parameter specifying whether the auto key rotation is enabled or not.
+
+
+        :param is_auto_rotation_enabled: The is_auto_rotation_enabled of this UpdateKeyDetails.
+        :type: bool
+        """
+        self._is_auto_rotation_enabled = is_auto_rotation_enabled
+
+    @property
+    def auto_key_rotation_details(self):
+        """
+        Gets the auto_key_rotation_details of this UpdateKeyDetails.
+
+        :return: The auto_key_rotation_details of this UpdateKeyDetails.
+        :rtype: oci.key_management.models.AutoKeyRotationDetails
+        """
+        return self._auto_key_rotation_details
+
+    @auto_key_rotation_details.setter
+    def auto_key_rotation_details(self, auto_key_rotation_details):
+        """
+        Sets the auto_key_rotation_details of this UpdateKeyDetails.
+
+        :param auto_key_rotation_details: The auto_key_rotation_details of this UpdateKeyDetails.
+        :type: oci.key_management.models.AutoKeyRotationDetails
+        """
+        self._auto_key_rotation_details = auto_key_rotation_details
 
     @property
     def defined_tags(self):

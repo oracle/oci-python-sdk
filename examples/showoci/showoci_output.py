@@ -1,5 +1,5 @@
 ##########################################################################
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 #
 # showoci_output.py
@@ -18,10 +18,11 @@
 ##########################################################################
 from __future__ import print_function
 import csv
+import sys
 
 
 class ShowOCIOutput(object):
-    version = "24.02.06"
+    version = "24.03.02"
 
     ##########################################################################
     # spaces for align
@@ -241,7 +242,7 @@ class ShowOCIOutput(object):
             for domain in domains:
                 print(self.taba + domain['display_name'] + " - " + domain['description'] + " - Created: " + domain['time_created'])
                 print(self.tabs + "URL     : " + domain['url'])
-                print(self.tabs + "license : " + domain['license_type'])
+                print(self.tabs + "License : " + domain['license_type'])
                 print(self.tabs + "Type    : " + domain['type'])
                 print("")
 
@@ -395,7 +396,7 @@ class ShowOCIOutput(object):
 
                 print("\nCompartment " + c['compartment_path'] + ":")
                 for tag in tags:
-                    retired = "" if tag['is_retired'] == "False" else " Retired "
+                    retired = " Retired " if tag['is_retired'] == "True" else ""
                     print(self.taba + tag['name'] + retired + " (" + tag['lifecycle_state'] + "), " + tag['description'])
 
         except Exception as e:
@@ -626,7 +627,7 @@ class ShowOCIOutput(object):
         except Exception as e:
             self.__print_error("__print_core_network_vcn_security_groups", e)
 
-    ########################################################################
+    ##########################################################################
     # Print Network vcn Route Tables
     ##########################################################################
 
@@ -817,7 +818,7 @@ class ShowOCIOutput(object):
             self.__print_error("__print_core_network_firewall", e)
 
     ##########################################################################
-    # print network firewall Policies
+    # print network firewall policies
     ##########################################################################
     def __print_core_network_firewall_policies(self, nfws):
 
@@ -829,7 +830,7 @@ class ShowOCIOutput(object):
             self.print_header("Network Firewalls Policies", 2)
 
             for arr in nfws:
-                print(self.taba + arr['display_name'] + " - " + arr['lifecycle_state'] + ", Is Attached: " + arr['is_firewall_attached'])
+                print(self.taba + arr['display_name'] + " - " + arr['lifecycle_state'])
 
         except Exception as e:
             self.__print_error("__print_core_network_firewall_policies", e)
@@ -892,7 +893,7 @@ class ShowOCIOutput(object):
             self.__print_error("__print_core_network_ipsec", e)
 
     ##########################################################################
-    # print virtual cirtuicts
+    # print virtual circuits
     ##########################################################################
     def __print_core_network_virtual_circuit(self, virtual_circuit):
 
@@ -916,7 +917,7 @@ class ShowOCIOutput(object):
             self.__print_error("__print_core_network_virtual_circuit", e)
 
     ##########################################################################
-    # print network Main
+    # print network main
     ##########################################################################
 
     def __print_core_network_main(self, data):
@@ -942,7 +943,7 @@ class ShowOCIOutput(object):
             self.__print_error("__print_core_network", e)
 
     ##########################################################################
-    # print load balancer backedset
+    # print load balancer backendset
     ##########################################################################
     def __print_load_balancer_backendset(self, backendset):
 
@@ -1038,7 +1039,7 @@ class ShowOCIOutput(object):
             self.__print_error("__print_load_balancer_details", e)
 
     ##########################################################################
-    # print network_load balancer config
+    # print network load balancer config
     ##########################################################################
 
     def __print_load_balancer_network_details(self, load_balance_obj):
@@ -1069,7 +1070,7 @@ class ShowOCIOutput(object):
             self.__print_error("__print_load_balancer_network_details", e)
 
     ##########################################################################
-    # Load Balancer
+    # Load Balancer main
     ##########################################################################
 
     def __print_load_balancer_main(self, load_balancers):
@@ -1097,7 +1098,7 @@ class ShowOCIOutput(object):
             self.__print_error("__print_load_balancer_main", e)
 
     ##########################################################################
-    # Network Load Balancer
+    # Network Load Balancer main
     ##########################################################################
 
     def __print_load_balancer_network_main(self, load_balancers):
@@ -1848,14 +1849,14 @@ class ShowOCIOutput(object):
             if len(list_databases) == 0:
                 return
 
-            if 'exadata_infrustructure' in list_databases:
+            if 'exadata_infrastructure' in list_databases:
                 self.print_header("Exadata Infrastructure", 2)
-                self.__print_database_db_exadata_infra(list_databases['exadata_infrustructure'])
+                self.__print_database_db_exadata_infra(list_databases['exadata_infrastructure'])
                 print("")
 
-            if 'exacc_infrustructure' in list_databases:
+            if 'exacc_infrastructure' in list_databases:
                 self.print_header("ExaCC Infrastructure", 2)
-                self.__print_database_db_exacc_infra(list_databases['exacc_infrustructure'])
+                self.__print_database_db_exacc_infra(list_databases['exacc_infrastructure'])
                 print("")
 
             if 'db_system' in list_databases:
@@ -2518,10 +2519,10 @@ class ShowOCIOutput(object):
                               ", Created: " + log['time_created'][0:16])
                     print("")
 
-            # Logging unified agenets
-            if 'logging_unified_agenets' in security:
+            # Logging unified agents
+            if 'logging_unified_agents' in security:
                 self.print_header("Logging Unified Agents Configuration", 2)
-                for val in security['logging_unified_agenets']:
+                for val in security['logging_unified_agents']:
                     print(self.taba + val['display_name'] + ", (" + val['description'] + "), Is Enabled: " + val['is_enabled'] + ", Type: " + val['configuration_type'] + ", Created: " + val['time_created'][0:16])
                     print("")
 
@@ -3262,8 +3263,8 @@ class ShowOCISummary(object):
                 self.__summary_core_size(security['cloud_guard'])
             if 'logging' in security:
                 self.__summary_core_size(security['logging'])
-            if 'logging_unified_agenets' in security:
-                self.__summary_core_size(security['logging_unified_agenets'])
+            if 'logging_unified_agents' in security:
+                self.__summary_core_size(security['logging_unified_agents'])
             if 'bastions' in security:
                 self.__summary_core_size(security['bastions'])
             if 'kms_vaults' in security:
@@ -3508,11 +3509,11 @@ class ShowOCISummary(object):
             if len(list_databases) == 0:
                 return
 
-            if 'exadata_infrustructure' in list_databases:
-                self.__summary_database_db_exadata(list_databases['exadata_infrustructure'])
+            if 'exadata_infrastructure' in list_databases:
+                self.__summary_database_db_exadata(list_databases['exadata_infrastructure'])
 
-            if 'exacc_infrustructure' in list_databases:
-                self.__summary_database_db_exacc(list_databases['exacc_infrustructure'])
+            if 'exacc_infrastructure' in list_databases:
+                self.__summary_database_db_exacc(list_databases['exacc_infrastructure'])
 
             if 'db_system' in list_databases:
                 self.__summary_database_db_system(list_databases['db_system'])
@@ -4091,10 +4092,12 @@ class ShowOCICSV(object):
     # class variables
     ############################################
     error = 0
+    error_array = []
     csv_tags_to_cols = False
     csv_file_header = ""
     csv_announcements = []
     csv_errors = []
+    csv_resources = []
     csv_identity_compartments = []
     csv_identity_groups = []
     csv_identity_users = []
@@ -4197,6 +4200,24 @@ class ShowOCICSV(object):
         return self.error
 
     ##########################################################################
+    # __add_to_error_array
+    ##########################################################################
+    def __add_to_error_array(self, classname, caller_function, compartment_name, err, warning=False):
+
+        try:
+            error_info = {
+                'class': classname,
+                'function': caller_function,
+                'compartment': compartment_name,
+                'error': str(err),
+                'is_warning': str(warning)
+            }
+            self.error_array.append(error_info)
+
+        except Exception as e:
+            print("\nError in __add_to_error_array " + str(e))
+
+    ##########################################################################
     # generate_csv
     ##########################################################################
     def generate_csv(self, data, csv_file_header, tenancy, add_date_field=True, csv_columns=""):
@@ -4212,10 +4233,10 @@ class ShowOCICSV(object):
                     if d['type'] == "identity":
                         self.__csv_identity_main(d['data'])
 
-                    if d['type'] == "errors":
+                    elif d['type'] == "errors":
                         self.__csv_error_data(d['data'])
 
-                    if d['type'] == "announcement":
+                    elif d['type'] == "announcement":
                         self.__csv_announcements(d['data'])
 
                     elif d['type'] == "region":
@@ -4223,12 +4244,18 @@ class ShowOCICSV(object):
 
                         if 'limits' in d:
                             self.__csv_limits_main(d['region'], d['limits'])
-
                     else:
                         continue
 
+            # Run again for the error csv
+            for d in data:
+                if 'type' in d:
+                    if d['type'] == "errors":
+                        self.__csv_error_data(d['data'])
+
             # generate CSV files from each file
             self.__print_header("Processing CSV Files", 0)
+            self.__export_to_csv_file("all_resources", self.csv_resources)
             self.__export_to_csv_file("announcements", self.csv_announcements)
             self.__export_to_csv_file("errors", self.csv_errors)
             self.__export_to_csv_file("identity_compartments", self.csv_identity_compartments)
@@ -4413,12 +4440,20 @@ class ShowOCICSV(object):
     # print error
     ##########################################################################
     def __print_error(self, msg, e):
-        classname = type(self).__name__
-        self.error += 1
-        if isinstance(e, KeyError):
-            print("\nError in " + classname + ":" + msg + ": KeyError " + str(e.args))
-        else:
-            print("\nError in " + classname + ":" + msg + ": " + str(e))
+        try:
+
+            classname = type(self).__name__
+            caller_function = sys._getframe(2).f_code.co_name + ":" + sys._getframe(1).f_code.co_name
+            self.error += 1
+            if isinstance(e, KeyError):
+                print("\nError in " + classname + ":" + caller_function + ":" + msg + ": KeyError " + str(e.args))
+            else:
+                print("\nError in " + classname + ":" + caller_function + ":" + msg + ": " + str(e))
+
+            self.__add_to_error_array(classname, caller_function, "", e)
+
+        except Exception as e:
+            print("\nError in __print_error " + str(e))
 
     ##########################################################################
     # extract defined tags to string
@@ -4484,6 +4519,32 @@ class ShowOCICSV(object):
         return name == "ManagedCompartmentForPaaS"
 
     ##########################################################################
+    # Add to Service
+    ##########################################################################
+    def __csv_add_service(self, arr, service_type, col_name="name", col_id="id", col_info="info"):
+
+        try:
+            if col_name not in arr:
+                if 'display_name' in arr:
+                    col_name = 'display_name'
+
+            self.csv_resources.append({
+                'resource_type': service_type,
+                'region_name': arr['region_name'] if 'region_name' in arr else "",
+                'availability_domain': arr['availability_domain'] if 'availability_domain' in arr else "",
+                'compartment_name': arr['compartment_name'] if 'compartment_name' in arr else "",
+                'compartment_path': arr['compartment_path'] if 'compartment_path' in arr else "",
+                'resource_id': arr[col_id] if col_id in arr else "",
+                'resource_name': arr[col_name] if col_name in arr else "",
+                'resource_info': arr[col_info] if col_info in arr else "",
+                'freeform_tags': arr['freeform_tags'] if 'freeform_tags' in arr else "",
+                'defined_tags': arr['defined_tags'] if 'defined_tags' in arr else ""
+            })
+
+        except Exception as e:
+            self.__print_error("__csv_add_service", e)
+
+    ##########################################################################
     # CSV Identity Groups
     ##########################################################################
 
@@ -4532,13 +4593,17 @@ class ShowOCICSV(object):
 
                 # Check if credential exist
                 if 'api_keys' in user:
-                    data['api_keys'] = str(', '.join(x['id'] + " - " + x['lifecycle_state'] + " - " + x['time_created'] for x in user['api_keys']))
+                    if user['api_keys']:
+                        data['api_keys'] = str(', '.join(x['id'] + " - " + x['lifecycle_state'] + " - " + x['time_created'] for x in user['api_keys']))
                 if 'auth_token' in user:
-                    data['auth_token'] = str(', '.join(x['id'] + " - " + x['description'] + " - " + x['time_created'] for x in user['auth_token']))
+                    if data['auth_token']:
+                        data['auth_token'] = str(', '.join(x['id'] + " - " + x['description'] + " - " + x['time_created'] for x in user['auth_token']))
                 if 'secret_key' in user:
-                    data['secret_key'] = str(', '.join(x['id'] + " - " + x['display_name'] + " - " + x['time_created'] for x in user['secret_key']))
+                    if data['secret_key']:
+                        data['secret_key'] = str(', '.join(x['id'] + " - " + x['display_name'] + " - " + x['time_created'] for x in user['secret_key']))
                 if 'smtp_cred' in user:
-                    data['smtp_cred'] = str(', '.join(x['id'] + " - " + x['description'] + " - " + x['time_created'] for x in user['smtp_cred']))
+                    if data['smtp_cred']:
+                        data['smtp_cred'] = str(', '.join(x['id'] + " - " + x['description'] + " - " + x['time_created'] for x in user['smtp_cred']))
 
                 self.csv_identity_users.append(data)
 
@@ -4567,12 +4632,12 @@ class ShowOCICSV(object):
                     'freeform_tags': self.__get_freeform_tags(var['freeform_tags']),
                     'defined_tags': self.__get_defined_tags(var['defined_tags']),
                     'replica_regions': var['replica_regions'],
-                    'users': len(var['users']),
-                    'groups': len(var['groups']),
-                    'dynamic_groups': len(var['dynamic_groups']),
-                    'kmsi_setting': len(var['kmsi_setting']),
-                    'identity_providers': len(var['identity_providers']),
-                    'authentication_factor_settings': len(var['authentication_factor_settings'])
+                    'users': len(var['users']) if var['users'] else 0,
+                    'groups': len(var['groups']) if var['groups'] else 0,
+                    'dynamic_groups': len(var['dynamic_groups']) if var['dynamic_groups'] else 0,
+                    'kmsi_setting': len(var['kmsi_setting']) if var['kmsi_setting'] else 0,
+                    'identity_providers': len(var['identity_providers']) if var['identity_providers'] else 0,
+                    'authentication_factor_settings': len(var['authentication_factor_settings']) if var['authentication_factor_settings'] else 0
                 }
                 self.csv_identity_domains.append(data)
 
@@ -5237,12 +5302,34 @@ class ShowOCICSV(object):
                     'class': err['class'],
                     'function': err['function'],
                     'compartment': err['compartment'],
-                    'region': err['region'],
+                    'region': '',
                     'is_warning': err['is_warning'],
                     'error': err['error']
                 }
-
                 self.csv_errors.append(value)
+
+            # run on local errors
+            for err in self.error_array:
+                value = {
+                    'class': err['class'],
+                    'function': err['function'],
+                    'compartment': err['compartment'],
+                    'region': "",
+                    'is_warning': err['is_warning'],
+                    'error': err['error']
+                }
+                self.csv_errors.append(value)
+
+            # if no error post one line to clean old errors
+            if not self.csv_errors:
+                self.csv_errors.append({
+                    'class': "No Errors",
+                    'function': "",
+                    'compartment': "",
+                    'region': "",
+                    'is_warning': "",
+                    'error': ""
+                })
 
         except Exception as e:
             self.__print_error("__csv_error_data", e)
@@ -5544,14 +5631,6 @@ class ShowOCICSV(object):
                     'compartment_id': arr['compartment_id'],
                     'name': arr['display_name'],
                     'lifecycle_state': arr['lifecycle_state'],
-                    'url_lists': arr['url_lists'],
-                    'mapped_secrets': arr['mapped_secrets'],
-                    'application_lists': arr['application_lists'],
-                    'ip_address_lists': arr['ip_address_lists'],
-                    'security_rules': arr['security_rules'],
-                    'decryption_rules': arr['decryption_rules'],
-                    'decryption_profiles': arr['decryption_profiles'],
-                    'is_firewall_attached': arr['is_firewall_attached'],
                     'time_created': arr['time_created'],
                     'time_updated': arr['time_updated'],
                     'id': arr['id'],
@@ -5922,6 +6001,7 @@ class ShowOCICSV(object):
 
                 self.csv_db_all.append(dbsd)
                 self.csv_db_vm_bm.append(dbsd)
+                self.__csv_add_service(dbsd, "DB System")
 
                 # Build the database CSV
                 for db_home in dbs['db_homes']:
@@ -5965,12 +6045,14 @@ class ShowOCICSV(object):
                             'kms_key_id': db['kms_key_id'],
                             'vault_id': db['vault_id'],
                             'database_id': db['id'],
+                            'id': db['id'],
                             'dbsystem_id': dbs['id'],
                             'db_home': db_home['home_name'],
                             'db_home_version': db_home['home_version']
                         }
 
                         self.csv_database.append(data)
+                        self.__csv_add_service(data, "DB System Database")
 
                         # database Backups
                         if 'backups' in db:
@@ -6055,9 +6137,12 @@ class ShowOCICSV(object):
                         'maintenance_window': dbs['maintenance_window']['display'] if dbs['maintenance_window'] else "",
                         'last_maintenance_run': dbs['last_maintenance_run']['maintenance_display'] if dbs['last_maintenance_run'] else "",
                         'next_maintenance_run': dbs['next_maintenance_run']['maintenance_display'] if dbs['next_maintenance_run'] else "",
-                        'infra_id': dbs['id']
+                        'infra_id': dbs['id'],
+                        'info': dbs['shape'],
+                        'id': dbs['id']
                         }
                 self.csv_db_exa_infrastructure.append(infs)
+                self.__csv_add_service(infs, "DB ExaCS Infra")
 
                 for vm in dbs['vm_clusters']:
                     # Db Exa CSV
@@ -6097,11 +6182,13 @@ class ShowOCICSV(object):
                             'last_maintenance_run': dbs['last_maintenance_run']['maintenance_display'] if dbs['last_maintenance_run'] else "",
                             'next_maintenance_run': dbs['next_maintenance_run']['maintenance_display'] if dbs['next_maintenance_run'] else "",
                             'id': vm['id'],
+                            'info': "ocpus:" + str(dbs['shape_ocpu']),
                             'infra_id': dbs['id']
                             }
 
                     self.csv_db_all.append(dbsd)
                     self.csv_db_exacs_vmclusters.append(dbsd)
+                    self.__csv_add_service(dbsd, "DB ExaCS VMCluster")
 
                     # Build the database CSV
                     for db_home in vm['db_homes']:
@@ -6117,6 +6204,7 @@ class ShowOCICSV(object):
                                     'type': "ExaCS",
                                     'name': dbs['display_name'],
                                     'shape': dbs['shape'],
+                                    'info': dbs['shape'],
                                     'compute_model': 'OCPU',
                                     'compute_count': vm['cpu_core_count'],
                                     'cpu_core_count': vm['cpu_core_count'],
@@ -6142,12 +6230,14 @@ class ShowOCICSV(object):
                                     'freeform_tags': self.__get_freeform_tags(db['freeform_tags']),
                                     'defined_tags': self.__get_defined_tags(db['defined_tags']),
                                     'database_id': db['id'],
+                                    'id': db['id'],
                                     'dbsystem_id': vm['id'],
                                     'db_home': db_home['home_name'],
                                     'db_home_version': db_home['home_version']
                                     }
 
                             self.csv_database.append(data)
+                            self.__csv_add_service(dbsd, "DB ExaCS Database")
 
                             # database Backups
                             if 'backups' in db:
@@ -6172,6 +6262,7 @@ class ShowOCICSV(object):
                         'type': "ExaCC",
                         'name': dbs['display_name'],
                         'shape': dbs['shape'],
+                        'info': dbs['shape'],
                         'time_zone': dbs['time_zone'],
                         'cpus_enabled': dbs['cpus_enabled'],
                         'max_cpu_count': dbs['max_cpu_count'],
@@ -6203,9 +6294,11 @@ class ShowOCICSV(object):
                         'maintenance_window': dbs['maintenance_window']['display'] if dbs['maintenance_window'] else "",
                         'last_maintenance_run': dbs['last_maintenance_run']['maintenance_display'] if dbs['last_maintenance_run'] else "",
                         'next_maintenance_run': dbs['next_maintenance_run']['maintenance_display'] if dbs['next_maintenance_run'] else "",
-                        'infra_id': dbs['id']
+                        'infra_id': dbs['id'],
+                        'id': dbs['id']
                         }
                 self.csv_db_exa_infrastructure.append(infs)
+                self.__csv_add_service(infs, "DB ExaCC Infra")
 
                 # VM Clusters
                 for vm in dbs['vm_clusters']:
@@ -6246,11 +6339,15 @@ class ShowOCICSV(object):
                             'freeform_tags': self.__get_freeform_tags(vm['freeform_tags']),
                             'defined_tags': self.__get_defined_tags(vm['defined_tags']),
                             'id': vm['id'],
-                            'infra_id': dbs['id'],
+                            'info': "ocpus:" + str(vm['cpus_enabled']),
+                            'infra_id': dbs['id']
                             }
 
                     self.csv_db_all.append(dbsd)
                     self.csv_db_exacc_vmclusters.append(dbsd)
+
+                    # Add to CSV Service
+                    self.__csv_add_service(dbsd, "DB ExaCC VMCluster")
 
                     # Build the database CSV
                     for db_home in vm['db_homes']:
@@ -6266,6 +6363,7 @@ class ShowOCICSV(object):
                                     'type': "ExaCC",
                                     'name': dbs['display_name'],
                                     'shape': dbs['shape'],
+                                    'info': dbs['shape'],
                                     'compute_model': 'OCPU',
                                     'compute_count': vm['cpus_enabled'],
                                     'cpu_core_count': vm['cpus_enabled'],
@@ -6293,12 +6391,14 @@ class ShowOCICSV(object):
                                     'freeform_tags': self.__get_freeform_tags(db['freeform_tags']),
                                     'defined_tags': self.__get_defined_tags(db['defined_tags']),
                                     'database_id': db['id'],
+                                    'id': db['id'],
                                     'dbsystem_id': vm['id'],
                                     'db_home': db_home['home_name'],
                                     'db_home_version': db_home['home_version']
                                     }
 
                             self.csv_database.append(data)
+                            self.__csv_add_service(data, "DB ExaCC Database")
 
                             # database Backups
                             if 'backups' in db:
@@ -6328,6 +6428,7 @@ class ShowOCICSV(object):
                                     'compute_model': db['compute_model'],
                                     'compute_count': db['compute_count'],
                                     'cpu_core_count': db['cpu_core_count'],
+                                    'info': str(db['cpu_core_count']),
                                     'db_storage_gb': str(int(db['data_storage_size_in_tbs']) * 1024),
                                     'shape_ocpus': vm['ocpu_count'],
                                     'memory_gb': vm['memory_size_in_gbs'],
@@ -6350,11 +6451,14 @@ class ShowOCICSV(object):
                                     'freeform_tags': self.__get_freeform_tags(db['freeform_tags']),
                                     'defined_tags': self.__get_defined_tags(db['defined_tags']),
                                     'database_id': db['id'],
+                                    'id': db['id'],
                                     'dbsystem_id': vm['id'],
                                     'db_home': "",
                                     'db_home_version': ""
                                     }
                             self.csv_database.append(data)
+                            self.__csv_add_service(data, "DB ExaCC ADB")
+
         except Exception as e:
             self.__print_error("__csv_database_db_exacc_autonomous_dedicated", e)
 
@@ -6450,10 +6554,12 @@ class ShowOCICSV(object):
                         'vault_id': dbs['vault_id'],
                         'freeform_tags': self.__get_freeform_tags(dbs['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(dbs['defined_tags']),
+                        'info': "ocpus:" + str(dbs['cpu_core_count']),
                         'id': dbs['id']
                         }
 
                 self.csv_db_autonomous.append(dadb)
+                self.__csv_add_service(dadb, "DB ADB-S")
 
                 # database Backups
                 if 'backups' in dbs:
@@ -6523,11 +6629,15 @@ class ShowOCICSV(object):
                                     'freeform_tags': self.__get_freeform_tags(db['freeform_tags']),
                                     'defined_tags': self.__get_defined_tags(db['defined_tags']),
                                     'database_id': db['id'],
+                                    'id': db['id'],
                                     'dbsystem_id': vm['id'],
                                     'db_home': "",
+                                    'info': "ocpus:" + str(db['cpu_core_count']),
                                     'db_home_version': ""
                                     }
                             self.csv_database.append(data)
+                            self.__csv_add_service(data, "DB ADB-D")
+
         except Exception as e:
             self.__print_error("__csv_database_db_autonomous_dedicated", e)
 
@@ -6583,10 +6693,12 @@ class ShowOCICSV(object):
                                     'key_store_id': db['key_store_id'],
                                     'freeform_tags': self.__get_freeform_tags(db['freeform_tags']),
                                     'defined_tags': self.__get_defined_tags(db['defined_tags']),
+                                    'info': "ocpus" + str(db['cpu_core_count']),
                                     'id': db['id']
                                     }
 
                             self.csv_db_autonomous.append(dadb)
+                            self.__csv_add_service(dadb, "DB ADB-D")
 
                             # database Backups
                             if 'backups' in dbs:
@@ -6642,10 +6754,12 @@ class ShowOCICSV(object):
                         'deployment_type': db['deployment_type'],
                         'freeform_tags': self.__get_freeform_tags(db['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(db['defined_tags']),
+                        'info': "ocpus:" + str(db['cpu_core_count']),
                         'id': db['id']
                     }
 
                     self.csv_db_goldengate_deployments.append(gg)
+                    self.__csv_add_service(gg, "Golden Gate", col_name="display_name")
 
         except Exception as e:
             self.__print_error("__csv_database_goldengate", e)
@@ -6702,10 +6816,12 @@ class ShowOCICSV(object):
                     'data_storage_size_in_gbs': db['data_storage_size_in_gbs'],
                     'freeform_tags': self.__get_freeform_tags(db['freeform_tags']),
                     'defined_tags': self.__get_defined_tags(db['defined_tags']),
+                    'info': db['shape_name'] + ":" + str(db['shape_ocpu']) + ":" + str(db['shape_memory_gb']),
                     'id': db['id']
                 }
 
                 self.csv_db_mysql.append(var)
+                self.__csv_add_service(var, "MySQL", col_name="display_name")
 
                 for bk in db['backups']:
                     varb = {
@@ -6807,10 +6923,12 @@ class ShowOCICSV(object):
                     'source_type': db['source_type'],
                     'freeform_tags': self.__get_freeform_tags(db['freeform_tags']),
                     'defined_tags': self.__get_defined_tags(db['defined_tags']),
+                    'info': db['shape'],
                     'id': db['id']
                 }
 
                 self.csv_db_postgresql.append(var)
+                self.__csv_add_service(var, "Golden Gate", col_name="PostgreSQL")
 
                 for bk in db['backups']:
                     varb = {
@@ -6897,6 +7015,7 @@ class ShowOCICSV(object):
                 }
 
                 self.csv_db_nosql.append(arr)
+                self.__csv_add_service(arr, "NOSQL")
 
         except Exception as e:
             self.__print_error("__csv_database_goldengate", e)
@@ -6911,15 +7030,15 @@ class ShowOCICSV(object):
             if len(list_databases) == 0:
                 return
 
-            if 'exadata_infrustructure' in list_databases:
-                self.__csv_database_db_exadata(region_name, list_databases['exadata_infrustructure'])
-                self.__csv_database_db_autonomous_dedicated(region_name, list_databases['exadata_infrustructure'])
-                self.__csv_database_db_autonomous_databases(region_name, list_databases['exadata_infrustructure'])
+            if 'exadata_infrastructure' in list_databases:
+                self.__csv_database_db_exadata(region_name, list_databases['exadata_infrastructure'])
+                self.__csv_database_db_autonomous_dedicated(region_name, list_databases['exadata_infrastructure'])
+                self.__csv_database_db_autonomous_databases(region_name, list_databases['exadata_infrastructure'])
 
-            if 'exacc_infrustructure' in list_databases:
-                self.__csv_database_db_exacc(region_name, list_databases['exacc_infrustructure'])
-                self.__csv_database_db_exacc_autonomous_dedicated(region_name, list_databases['exacc_infrustructure'])
-                self.__csv_database_db_autonomous_databases(region_name, list_databases['exacc_infrustructure'])
+            if 'exacc_infrastructure' in list_databases:
+                self.__csv_database_db_exacc(region_name, list_databases['exacc_infrastructure'])
+                self.__csv_database_db_exacc_autonomous_dedicated(region_name, list_databases['exacc_infrastructure'])
+                self.__csv_database_db_autonomous_databases(region_name, list_databases['exacc_infrastructure'])
 
             if 'db_system' in list_databases:
                 self.__csv_database_db_system(region_name, list_databases['db_system'])
@@ -7064,7 +7183,9 @@ class ShowOCICSV(object):
                         'vnic_ids': "",
                         'freeform_tags': self.__get_freeform_tags(instance['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(instance['defined_tags']),
-                        'instance_id': instance['id']
+                        'instance_id': instance['id'],
+                        'info': instance['shape'] + ":" + str(instance['shape_ocpu']) + ":" + str(instance['shape_memory_gb']),
+                        'id': instance['id']
                         }
 
                 # add columns for csvcol parameter
@@ -7111,6 +7232,7 @@ class ShowOCICSV(object):
                     data['block_volumes_total_gb'] = str(bv_total_size)
 
                 self.csv_compute.append(data)
+                self.__csv_add_service(data, "Compute Instance", col_name="server_name")
 
         except Exception as e:
             self.__print_error("__csv_core_compute_instances", e)
@@ -7145,17 +7267,22 @@ class ShowOCICSV(object):
                             'is_pv_encryption_in_transit_enabled': bv['is_pv_encryption_in_transit_enabled'],
                             'encryption_in_transit_type': bv['encryption_in_transit_type'],
                             'is_hydrated': bv['is_hydrated'],
+                            'kms_key_id': bv['kms_key_id'],
+                            'kms_key_name': bv['kms_key_name'],
                             'is_read_only': "",
                             'is_shareable': "",
                             'is_multipath': "",
                             'iscsi_login_state': "",
+                            'bv_volume_replicas': ",".join(x['display_name'] + ":" + x['availability_domain'] for x in bv['bv_volume_replicas']),
                             'instance_id': instance['id'],
                             'id': bv['id'] + ((":" + instance['id']) if instance['id'] else ""),
                             'bv_id': bv['id'],
+                            'info': "size:" + str(bv['size']),
                             'freeform_tags': self.__get_freeform_tags(bv['freeform_tags']),
                             'defined_tags': self.__get_defined_tags(bv['defined_tags'])
                         }
                         self.csv_block_volumes.append(data)
+                        self.__csv_add_service(data, "Compute Boot Volume", col_name="display_name")
 
                 # Add block Volumes
                 if 'block_volume' in instance:
@@ -7176,17 +7303,22 @@ class ShowOCICSV(object):
                             'is_pv_encryption_in_transit_enabled': bv['is_pv_encryption_in_transit_enabled'],
                             'encryption_in_transit_type': "",
                             'is_hydrated': bv['is_hydrated'],
+                            'kms_key_id': bv['kms_key_id'],
+                            'kms_key_name': bv['kms_key_name'],
                             'is_read_only': bv['is_read_only'],
                             'is_shareable': bv['is_shareable'],
                             'is_multipath': bv['is_multipath'],
                             'iscsi_login_state': bv['iscsi_login_state'],
+                            'bv_volume_replicas': ",".join(x['display_name'] + ":" + x['availability_domain'] for x in bv['bv_volume_replicas']),
                             'instance_id': instance['id'],
                             'id': bv['id'] + ((":" + instance['id']) if instance['id'] else ""),
                             'bv_id': bv['id'],
+                            'info': "size:" + str(bv['size']),
                             'freeform_tags': self.__get_freeform_tags(bv['freeform_tags']),
                             'defined_tags': self.__get_defined_tags(bv['defined_tags'])
                         }
                         self.csv_block_volumes.append(data)
+                        self.__csv_add_service(data, "Compute Volume", col_name="display_name")
 
         except Exception as e:
             self.__print_error("__csv_core_compute_block_volumes", e)
@@ -7243,6 +7375,8 @@ class ShowOCICSV(object):
                     'compartment_name': bv['compartment_name'],
                     'compartment_path': bv['compartment_path'],
                     'id': bv['id'],
+                    'kms_key_id': bv['kms_key_id'],
+                    'kms_key_name': bv['kms_key_name'],
                     'display_name': bv['display_name'],
                     'size': bv['size'],
                     'backup_policy': bv['backup_policy'],
@@ -7250,10 +7384,13 @@ class ShowOCICSV(object):
                     'volume_group_name': bv['volume_group_name'],
                     'instance_name': '',
                     'instance_id': '',
+                    'bv_volume_replicas': ",".join(x['display_name'] + ":" + x['availability_domain'] for x in bv['bv_volume_replicas']),
+                    'info': "size:" + str(bv['size']),
                     'freeform_tags': self.__get_freeform_tags(bv['freeform_tags']),
                     'defined_tags': self.__get_defined_tags(bv['defined_tags'])
                 }
                 self.csv_block_volumes.append(data)
+                self.__csv_add_service(data, "Compute Volume Not Attached", col_name="display_name")
 
         except Exception as e:
             self.__print_error("__csv_core_compute_block_not_attached", e)
@@ -7369,6 +7506,7 @@ class ShowOCICSV(object):
                         'id': lb['id']
                         }
                 self.csv_load_balancer.append(data)
+                self.__csv_add_service(data, "Load Balancer")
 
                 # listeners
                 for listener in lb['listeners']:
@@ -7439,6 +7577,7 @@ class ShowOCICSV(object):
                         'id': lb['id']
                     }
                     self.csv_load_balancer.append(data)
+                    self.__csv_add_service(data, "Network Load Balancer")
 
                     # Listeners
                     for listener in lb['listeners']:
@@ -7534,14 +7673,16 @@ class ShowOCICSV(object):
                             'logs': str(', '.join(x['name'] for x in dp['logs'])),
                             'dp_id': dp['id'],
                             'api_id': api['id'],
+                            'id': api['id']
                             }
                     self.csv_apigw.append(data)
+                    self.__csv_add_service(data, "API Gateway", col_name="gw_name")
 
         except Exception as e:
             self.__print_error("__csv_apigw", e)
 
     ##########################################################################
-    # csv load balancer backedset
+    # csv load balancer backendset
     ##########################################################################
     def __csv_load_balancer_backendset(self, region_name, load_balance_obj):
 
@@ -7653,6 +7794,7 @@ class ShowOCICSV(object):
                             'display_name': fs['display_name'],
                             'kms_key_id': fs['kms_key_id'],
                             'size_gb': fs['size_gb'],
+                            'info': "size:" + str(fs['size_gb']),
                             'id': fs['id'],
                             'time_created': fs['time_created'],
                             'exports': exports,
@@ -7664,6 +7806,7 @@ class ShowOCICSV(object):
                             }
 
                     self.csv_file_storage.append(data)
+                    self.__csv_add_service(data, "File Storage", col_name="display_name")
 
         except Exception as e:
             self.__print_error("__csv_file_storage_main", e)
@@ -7688,6 +7831,7 @@ class ShowOCICSV(object):
                         'bucket_name': ar['name'],
                         'objects': ar['count'],
                         'size_gb': ar['sum_size_gb'],
+                        'info': "size:" + str(ar['sum_size_gb']),
                         'preauthenticated_requests': ar['preauthenticated_requests'],
                         'object_lifecycle': ar['object_lifecycle'],
                         'public_access_type': ar['public_access_type'],
@@ -7699,6 +7843,7 @@ class ShowOCICSV(object):
                         'auto_tiering': ar['auto_tiering'],
                         'kms_key_id': ar['kms_key_id'],
                         'bucket_id': ar['id'],
+                        'id': ar['id'],
                         'time_created': ar['time_created'],
                         'error_message': ar['error_message'],
                         'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
@@ -7707,6 +7852,7 @@ class ShowOCICSV(object):
                     }
 
                     self.csv_object_storage_buckets.append(data)
+                    self.__csv_add_service(data, "Object Storage", col_name="bucket_name")
 
         except Exception as e:
             self.__print_error("__csv_object_storage_main", e)
@@ -7726,8 +7872,8 @@ class ShowOCICSV(object):
             if 'logging' in data:
                 self.__csv_security_logging(region_name, data['logging'])
 
-            if 'logging_unified_agenets' in data:
-                self.__csv_security_logging_unified_agents(region_name, data['logging_unified_agenets'])
+            if 'logging_unified_agents' in data:
+                self.__csv_security_logging_unified_agents(region_name, data['logging_unified_agents'])
 
             if 'cloud_guard' in data:
                 self.__csv_security_cloud_guard(region_name, data['cloud_guard'])
@@ -7769,6 +7915,7 @@ class ShowOCICSV(object):
                     }
 
                     self.csv_security_bastions.append(data)
+                    self.__csv_add_service(data, "Bastion")
 
         except Exception as e:
             self.__print_error("__csv_security_bastions", e)
@@ -7862,6 +8009,7 @@ class ShowOCICSV(object):
                     }
 
                     self.csv_security_kms_vault.append(data)
+                    self.__csv_add_service(data, "KMS Vault")
 
         except Exception as e:
             self.__print_error("__csv_security_kms_vaults", e)
@@ -7910,16 +8058,16 @@ class ShowOCICSV(object):
             self.__print_error("__csv_security_logging", e)
 
     ##########################################################################
-    # Logging unified agenets
+    # Logging unified agents
     ##########################################################################
-    def __csv_security_logging_unified_agents(self, region_name, logging_unified_agenets):
+    def __csv_security_logging_unified_agents(self, region_name, logging_unified_agents):
         try:
 
-            if len(logging_unified_agenets) == 0:
+            if len(logging_unified_agents) == 0:
                 return
 
-            if logging_unified_agenets:
-                for ar in logging_unified_agenets:
+            if logging_unified_agents:
+                for ar in logging_unified_agents:
                     data = {
                         'region_name': region_name,
                         'compartment_name': ar['compartment_name'],
@@ -7992,6 +8140,7 @@ class ShowOCICSV(object):
                     }
 
                     self.csv_container.append(data)
+                    self.__csv_add_service(data, "OKE Container")
 
             # Containers nodepools
             if containers:
@@ -8075,6 +8224,7 @@ class ShowOCICSV(object):
                     }
 
                     self.csv_edge_waas_policies.append(data)
+                    self.__csv_add_service(data, "WaaS Policies")
 
         except Exception as e:
             self.__print_error("__csv_edge_waas_policies", e)
@@ -8108,6 +8258,7 @@ class ShowOCICSV(object):
                     }
 
                     self.csv_edge_waf.append(data)
+                    self.__csv_add_service(data, "WAF")
 
         except Exception as e:
             self.__print_error("__csv_edge_waf", e)
@@ -8141,12 +8292,13 @@ class ShowOCICSV(object):
                     }
 
                     self.csv_edge_dns_steering_policies.append(data)
+                    self.__csv_add_service(data, "DNS Steering Policies")
 
         except Exception as e:
             self.__print_error("__csv_edge_dns_steering", e)
 
     ##########################################################################
-    # Edge Healthchecl
+    # Edge Healthcheck
     ##########################################################################
     def __csv_edge_healthcheck(self, region_name, healthchecks):
         try:
@@ -8179,6 +8331,7 @@ class ShowOCICSV(object):
                     }
 
                     self.csv_edge_healthcheck.append(data)
+                    self.__csv_add_service(data, "Health Check HTTP", col_name="display_name")
 
             if 'ping' in healthchecks:
                 for ar in healthchecks['ping']:
@@ -8208,6 +8361,7 @@ class ShowOCICSV(object):
                     }
 
                     self.csv_edge_healthcheck.append(data)
+                    self.__csv_add_service(data, "Health Check Ping")
 
         except Exception as e:
             self.__print_error("__csv_edge_healthcheck", e)
@@ -8241,10 +8395,12 @@ class ShowOCICSV(object):
                         'consumption_model': ar['consumption_model'],
                         'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(ar['defined_tags']),
+                        'info': "msgpack:" + str(ar['message_packs']),
                         'id': ar['id']
                     }
 
                     self.csv_paas_oic.append(data)
+                    self.__csv_add_service(data, "OIC")
 
         except Exception as e:
             self.__print_error("__csv_paas_oic", e)
@@ -8285,6 +8441,7 @@ class ShowOCICSV(object):
                             }
 
                             self.csv_streams_queues.append(data)
+                            self.__csv_add_service(data, "Stream")
 
                 if 'queues' in services:
                     if services['queues']:
@@ -8312,6 +8469,7 @@ class ShowOCICSV(object):
                             }
 
                             self.csv_streams_queues.append(data)
+                            self.__csv_add_service(data, "Queue")
 
         except Exception as e:
             self.__print_error("__csv_streams_queues", e)
@@ -8346,10 +8504,12 @@ class ShowOCICSV(object):
                         'network_endpoint_details': ar['network_endpoint_details'],
                         'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(ar['defined_tags']),
+                        'info': ar['capacity_type'] + ":" + str(ar['capacity_value']),
                         'id': ar['id']
                     }
 
                     self.csv_paas_oac.append(data)
+                    self.__csv_add_service(data, "OAC")
 
         except Exception as e:
             self.__print_error("__csv_paas_oac", e)
@@ -8386,6 +8546,7 @@ class ShowOCICSV(object):
                     }
 
                     self.csv_paas_oce.append(data)
+                    self.__csv_add_service(data, "OCE")
 
         except Exception as e:
             self.__print_error("__csv_paas_oce", e)
@@ -8423,6 +8584,7 @@ class ShowOCICSV(object):
                     }
 
                     self.csv_paas_vb.append(data)
+                    self.__csv_add_service(data, "Visual Builder")
 
         except Exception as e:
             self.__print_error("__csv_paas_visualbuilder", e)
@@ -8483,12 +8645,13 @@ class ShowOCICSV(object):
                     }
 
                     self.csv_paas_open_search.append(data)
+                    self.__csv_add_service(data, "Search", col_name="display_name")
 
         except Exception as e:
             self.__print_error("__csv_paas_open_search", e)
 
     ##########################################################################
-    # Paas VB
+    # Paas DevOps
     ##########################################################################
     def __csv_paas_devops(self, region_name, services):
         try:
@@ -8516,6 +8679,7 @@ class ShowOCICSV(object):
                     }
 
                     self.csv_paas_devops.append(data)
+                    self.__csv_add_service(data, "DevOPS")
 
         except Exception as e:
             self.__print_error("__csv_paas_devops", e)
@@ -8562,10 +8726,12 @@ class ShowOCICSV(object):
                         'clusters': str(', '.join(x['display_name'] for x in ar['clusters'])),
                         'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(ar['defined_tags']),
+                        'info': "ocpus:" + str(ar['sddc_ocpus']),
                         'id': ar['id']
                     }
 
                     self.csv_paas_ocvs.append(data)
+                    self.__csv_add_service(data, "OCVS")
 
                     for cl in ar['clusters']:
                         nt = cl['network_configuration']
@@ -8610,6 +8776,7 @@ class ShowOCICSV(object):
                             'id': cl['id']
                         }
                         self.csv_paas_ocvs_clusters.append(cdata)
+                        self.__csv_add_service(data, "OCVS Cluster")
 
         except Exception as e:
             self.__print_error("__csv_paas_ocvs", e)
@@ -8708,6 +8875,7 @@ class ShowOCICSV(object):
                     }
 
                     self.csv_data_ai_oda.append(data)
+                    self.__csv_add_service(data, "ODA")
 
         except Exception as e:
             self.__print_error("__csv_data_ai_oda", e)
@@ -8771,6 +8939,7 @@ class ShowOCICSV(object):
                     }
 
                     self.csv_data_ai_bds.append(data)
+                    self.__csv_add_service(data, "BDS")
 
         except Exception as e:
             self.__print_error("__csv_data_ai_bds", e)
@@ -8805,6 +8974,7 @@ class ShowOCICSV(object):
                     }
 
                     self.csv_data_flow.append(data)
+                    self.__csv_add_service(data, "Data Flow")
 
         except Exception as e:
             self.__print_error("__csv_data_flow", e)
@@ -8836,6 +9006,7 @@ class ShowOCICSV(object):
                     }
 
                     self.csv_data_catalog.append(data)
+                    self.__csv_add_service(data, "Data Catalog")
 
         except Exception as e:
             self.__print_error("__csv_data_catalog", e)
@@ -8866,6 +9037,7 @@ class ShowOCICSV(object):
                     }
 
                     self.csv_data_integration.append(data)
+                    self.__csv_add_service(data, "Data Integration")
 
         except Exception as e:
             self.__print_error("__csv_data_integration", e)
@@ -8896,6 +9068,7 @@ class ShowOCICSV(object):
                     }
 
                     self.csv_data_science.append(data)
+                    self.__csv_add_service(data, "Data Science")
 
         except Exception as e:
             self.__print_error("__csv_data_science", e)
@@ -9026,6 +9199,7 @@ class ShowOCICSV(object):
                     }
 
                     self.csv_monitor_db_management.append(data)
+                    self.__csv_add_service(data, "DB Management")
 
         except Exception as e:
             self.__print_error("__csv_monitor_db_managements", e)
@@ -9060,6 +9234,7 @@ class ShowOCICSV(object):
                     }
 
                     self.csv_monitor_alarms.append(data)
+                    self.__csv_add_service(data, "Monitor Alarm", col_name='display_name')
 
         except Exception as e:
             self.__print_error("__csv_monitor_alarms", e)
@@ -9101,6 +9276,7 @@ class ShowOCICSV(object):
                         }
 
                         self.csv_notifications.append(data)
+                        self.__csv_add_service(data, "Notification", col_name="topic_name")
 
         except Exception as e:
             self.__print_error("__csv_notifications", e)

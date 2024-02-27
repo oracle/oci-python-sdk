@@ -234,6 +234,10 @@ class CloudVmCluster(object):
             The value to assign to the defined_tags property of this CloudVmCluster.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this CloudVmCluster.
+        :type system_tags: dict(str, dict(str, object))
+
         :param scan_dns_name:
             The value to assign to the scan_dns_name property of this CloudVmCluster.
         :type scan_dns_name: str
@@ -297,6 +301,7 @@ class CloudVmCluster(object):
             'scan_dns_record_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'scan_dns_name': 'str',
             'zone_id': 'str',
             'scan_listener_port_tcp': 'int',
@@ -346,6 +351,7 @@ class CloudVmCluster(object):
             'scan_dns_record_id': 'scanDnsRecordId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'scan_dns_name': 'scanDnsName',
             'zone_id': 'zoneId',
             'scan_listener_port_tcp': 'scanListenerPortTcp',
@@ -394,6 +400,7 @@ class CloudVmCluster(object):
         self._scan_dns_record_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._scan_dns_name = None
         self._zone_id = None
         self._scan_listener_port_tcp = None
@@ -1513,6 +1520,36 @@ class CloudVmCluster(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this CloudVmCluster.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The system_tags of this CloudVmCluster.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this CloudVmCluster.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param system_tags: The system_tags of this CloudVmCluster.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def scan_dns_name(self):

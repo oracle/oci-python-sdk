@@ -205,7 +205,7 @@ class UpdateAutonomousVmClusterDetails(object):
     def autonomous_data_storage_size_in_tbs(self):
         """
         Gets the autonomous_data_storage_size_in_tbs of this UpdateAutonomousVmClusterDetails.
-        The new scaled up/down value for autonomous data storage in TBs for Autonomous VM cluster.
+        The new value of autonomous data storage (in TBs) for the Autonomous VM cluster.
 
 
         :return: The autonomous_data_storage_size_in_tbs of this UpdateAutonomousVmClusterDetails.
@@ -217,7 +217,7 @@ class UpdateAutonomousVmClusterDetails(object):
     def autonomous_data_storage_size_in_tbs(self, autonomous_data_storage_size_in_tbs):
         """
         Sets the autonomous_data_storage_size_in_tbs of this UpdateAutonomousVmClusterDetails.
-        The new scaled up/down value for autonomous data storage in TBs for Autonomous VM cluster.
+        The new value of autonomous data storage (in TBs) for the Autonomous VM cluster.
 
 
         :param autonomous_data_storage_size_in_tbs: The autonomous_data_storage_size_in_tbs of this UpdateAutonomousVmClusterDetails.
@@ -229,7 +229,7 @@ class UpdateAutonomousVmClusterDetails(object):
     def cpu_core_count_per_node(self):
         """
         Gets the cpu_core_count_per_node of this UpdateAutonomousVmClusterDetails.
-        The new scaled up/down value for cpus per Autonomous VM cluster per node.
+        The new value of cpus per Autonomous VM cluster per node for the Autonomous VM cluster.
 
 
         :return: The cpu_core_count_per_node of this UpdateAutonomousVmClusterDetails.
@@ -241,7 +241,7 @@ class UpdateAutonomousVmClusterDetails(object):
     def cpu_core_count_per_node(self, cpu_core_count_per_node):
         """
         Sets the cpu_core_count_per_node of this UpdateAutonomousVmClusterDetails.
-        The new scaled up/down value for cpus per Autonomous VM cluster per node.
+        The new value of cpus per Autonomous VM cluster per node for the Autonomous VM cluster.
 
 
         :param cpu_core_count_per_node: The cpu_core_count_per_node of this UpdateAutonomousVmClusterDetails.
@@ -253,7 +253,7 @@ class UpdateAutonomousVmClusterDetails(object):
     def total_container_databases(self):
         """
         Gets the total_container_databases of this UpdateAutonomousVmClusterDetails.
-        The new scaled up/down value for maxACD count for Autonomous VM cluster.
+        The new value of maximum number of ACDs for the Autonomous VM cluster.
 
 
         :return: The total_container_databases of this UpdateAutonomousVmClusterDetails.
@@ -265,7 +265,7 @@ class UpdateAutonomousVmClusterDetails(object):
     def total_container_databases(self, total_container_databases):
         """
         Sets the total_container_databases of this UpdateAutonomousVmClusterDetails.
-        The new scaled up/down value for maxACD count for Autonomous VM cluster.
+        The new value of maximum number of ACDs for the Autonomous VM cluster.
 
 
         :param total_container_databases: The total_container_databases of this UpdateAutonomousVmClusterDetails.

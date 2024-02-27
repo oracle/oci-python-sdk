@@ -12,11 +12,11 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class NotificationsTargetDetails(TargetDetails):
     """
-    The topic used for the Notifications target.
+    The destination topic for data transferred from the source.
     For configuration instructions, see
-    `To create a service connector`__.
+    `Creating a Connector`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm
     """
 
     def __init__(self, **kwargs):
@@ -88,7 +88,7 @@ class NotificationsTargetDetails(TargetDetails):
     def enable_formatted_messaging(self):
         """
         Gets the enable_formatted_messaging of this NotificationsTargetDetails.
-        Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.
+        Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.
 
         Example: `true`
 
@@ -102,7 +102,7 @@ class NotificationsTargetDetails(TargetDetails):
     def enable_formatted_messaging(self, enable_formatted_messaging):
         """
         Sets the enable_formatted_messaging of this NotificationsTargetDetails.
-        Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.
+        Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.
 
         Example: `true`
 

@@ -1,5 +1,5 @@
 ##########################################################################
-# Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 #
 # showoci_data.py
@@ -20,7 +20,7 @@ import sys
 
 
 class ShowOCIData(object):
-    version = "24.02.06"
+    version = "24.03.02"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -70,7 +70,7 @@ class ShowOCIData(object):
         return self.service.load_service_data()
 
     ##########################################################################
-    # get_oci_main_data
+    # process_oci_data
     ##########################################################################
     def process_oci_data(self):
 
@@ -239,7 +239,7 @@ class ShowOCIData(object):
         try:
 
             # Loop on Compartments and call services
-            compartments = self.service.get_compartment()
+            compartments = self.service.get_compartments()
 
             # Loop on all relevant compartments
             print("\nProcessing...")
@@ -1525,6 +1525,11 @@ class ShowOCIData(object):
                     'auto_tuned_vpus_per_gb': bv['auto_tuned_vpus_per_gb'],
                     'time_created': bv['time_created'],
                     'display_name': bv['display_name'],
+                    'bv_volume_replicas': bv['bv_volume_replicas'],
+                    'autotune_policies': bv['autotune_policies'],
+                    'kms_key_id': bv['kms_key_id'],
+                    'kms_key_name': self.__get_vault_key_name(bv['kms_key_id']),
+                    'image_id': bv['image_id'],
                     'defined_tags': bv['defined_tags'],
                     'freeform_tags': bv['freeform_tags']
                 }
@@ -1581,6 +1586,10 @@ class ShowOCIData(object):
                     'is_auto_tune_enabled': bv['is_auto_tune_enabled'],
                     'auto_tuned_vpus_per_gb': bv['auto_tuned_vpus_per_gb'],
                     'iscsi_login_state': str(bva['iscsi_login_state']),
+                    'bv_volume_replicas': bv['bv_volume_replicas'],
+                    'autotune_policies': bv['autotune_policies'],
+                    'kms_key_id': bv['kms_key_id'],
+                    'kms_key_name': self.__get_vault_key_name(bv['kms_key_id']),
                     'defined_tags': bv['defined_tags'],
                     'freeform_tags': bv['freeform_tags']
                 }
@@ -1616,6 +1625,7 @@ class ShowOCIData(object):
                 value['source_name'] = backup['backup_name']
                 value['backup_type'] = backup['type']
                 value['kms_key_id'] = backup['kms_key_id']
+                value['kms_key_name'] = self.__get_vault_key_name(backup['kms_key_id'])
                 value['schedule_type'] = backup['source_type']
                 value['time_created'] = backup['time_created'][0:16]
                 value['expiration_time'] = backup['expiration_time'][0:16]
@@ -1673,6 +1683,9 @@ class ShowOCIData(object):
                         'compartment_path': compartment['path'],
                         'volume_group_name': vol['volume_group_name'],
                         'vpus_per_gb': vol['vpus_per_gb'],
+                        'kms_key_id': vol['kms_key_id'],
+                        'kms_key_name': self.__get_vault_key_name(vol['kms_key_id']),
+                        'bv_volume_replicas': vol['bv_volume_replicas'],
                         'sum_info': 'Compute - Block Storage (GB)',
                         'sum_size_gb': vol['size_in_gbs'],
                         'defined_tags': vol['defined_tags'],
@@ -1720,6 +1733,9 @@ class ShowOCIData(object):
                         'display_name': vol['display_name'],
                         'availability_domain': vol['availability_domain'],
                         'size': vol['size_in_gbs'],
+                        'kms_key_id': vol['kms_key_id'],
+                        'kms_key_name': self.__get_vault_key_name(vol['kms_key_id']),
+                        'bv_volume_replicas': vol['bv_volume_replicas'],
                         'backup_policy': vol['backup_policy'],
                         'vpus_per_gb': vol['vpus_per_gb'],
                         'compartment_name': compartment['name'],
@@ -1750,15 +1766,20 @@ class ShowOCIData(object):
             volgroups = self.service.search_multi_items(self.service.C_BLOCK, self.service.C_BLOCK_VOLGRP, 'region_name', region_name, 'compartment_id', compartment['id'])
 
             for vplgrp in volgroups:
-                value = {'id': vplgrp['id'],
-                         'name': vplgrp['display_name'],
-                         'size_in_gbs': vplgrp['size_in_gbs'],
-                         'compartment_name': str(vplgrp['compartment_name']),
-                         'compartment_path': str(vplgrp['compartment_path']),
-                         'volumes': [],
-                         'time_created': vplgrp['time_created'],
-                         'defined_tags': vplgrp['defined_tags'],
-                         'freeform_tags': vplgrp['freeform_tags']}
+                value = {
+                    'id': vplgrp['id'],
+                    'name': vplgrp['display_name'],
+                    'size_in_gbs': vplgrp['size_in_gbs'],
+                    'compartment_name': str(vplgrp['compartment_name']),
+                    'compartment_path': str(vplgrp['compartment_path']),
+                    'volumes': [],
+                    'bv_volume_replicas': vplgrp['bv_volume_replicas'],
+                    'is_hydrated': vplgrp['is_hydrated'],
+                    'time_created': vplgrp['time_created'],
+                    'defined_tags': vplgrp['defined_tags'],
+                    'freeform_tags': vplgrp['freeform_tags']
+                }
+
                 for vol_id in vplgrp['volume_ids']:
                     vol = self.service.search_unique_item(self.service.C_BLOCK, self.service.C_BLOCK_VOL, 'id', vol_id)
 
@@ -1769,6 +1790,7 @@ class ShowOCIData(object):
                     # if None continue
                     if vol is None:
                         continue
+
                     value['volumes'].append({
                         'id': vol['id'],
                         'display_name': vol['display_name'],
@@ -1870,7 +1892,8 @@ class ShowOCIData(object):
                     'ipxe_script': instance['ipxe_script'],
                     'launch_mode': instance['launch_mode'],
                     'is_cross_numa_node': instance['is_cross_numa_node'],
-                    'logs': self.service.get_logging_log(instance['id'])}
+                    'logs': self.service.get_logging_log(instance['id'])
+                }
 
                 # boot volumes attachments
                 boot_vol_attachement = self.service.search_multi_items(self.service.C_COMPUTE, self.service.C_COMPUTE_BOOT_VOL_ATTACH, 'instance_id', instance['id'])
@@ -2264,6 +2287,7 @@ class ShowOCIData(object):
                          'connection_strings_cdb': db['connection_strings_cdb'],
                          'source_database_point_in_time_recovery_timestamp': db['source_database_point_in_time_recovery_timestamp'],
                          'kms_key_id': db['kms_key_id'],
+                         'kms_key_name': self.__get_vault_key_name(db['kms_key_id']),
                          'vault_id': db['vault_id'],
                          'last_backup_timestamp': db['last_backup_timestamp'],
                          'id': db['id']
@@ -2334,6 +2358,7 @@ class ShowOCIData(object):
                         'shape': backup['shape'],
                         'version': backup['version'],
                         'kms_key_id': backup['kms_key_id'],
+                        'kms_key_name': self.__get_vault_key_name(backup['kms_key_id']),
                         'kms_key_version_id': backup['kms_key_version_id'],
                         'vault_id': backup['vault_id'],
                         'type': backup['type'],
@@ -2375,7 +2400,7 @@ class ShowOCIData(object):
             return data
 
     ##########################################################################
-    # __load_database_dbsystems_dbnodes
+    # __get_database_db_homes
     ##########################################################################
     def __get_database_db_homes(self, db_homes):
 
@@ -2400,7 +2425,7 @@ class ShowOCIData(object):
             return data
 
     ##########################################################################
-    # __load_database_dbsystems_dbnodes
+    # __get_database_db_dataguard
     ##########################################################################
     def __get_database_db_dataguard(self, dataguards):
 
@@ -2704,7 +2729,8 @@ class ShowOCIData(object):
                     'compartment_path': vm['compartment_path'],
                     'compartment_id': vm['compartment_id'],
                     'region_name': vm['region_name'],
-                    'containers': []}
+                    'containers': []
+                }
 
                 # fetch the containers
                 containers = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_ADB_D_CONTAINERS, 'autonomous_vm_cluster_id', vm['id'])
@@ -2801,6 +2827,7 @@ class ShowOCIData(object):
                     'storage_volume_performance_mode': dbs['storage_volume_performance_mode'],
                     'time_zone': dbs['time_zone'],
                     'kms_key_id': dbs['kms_key_id'],
+                    'kms_key_name': self.__get_vault_key_name(dbs['kms_key_id']),
                     'os_version': dbs['os_version'],
                     'disk_redundancy': dbs['disk_redundancy'],
                     'point_in_time_data_disk_clone_timestamp': dbs['point_in_time_data_disk_clone_timestamp'],
@@ -2851,6 +2878,7 @@ class ShowOCIData(object):
                         'shape': backup['shape'],
                         'version': backup['version'],
                         'kms_key_id': backup['kms_key_id'],
+                        'kms_key_name': self.__get_vault_key_name(backup['kms_key_id']),
                         'kms_key_version_id': backup['kms_key_version_id'],
                         'vault_id': backup['vault_id'],
                         'type': backup['type'],
@@ -2860,7 +2888,8 @@ class ShowOCIData(object):
                         'compartment_id': backup['compartment_id'],
                         'region_name': backup['region_name'],
                         'sum_info': 'Object Storage - DB Backup (GB)',
-                        'sum_size_gb': ssize})
+                        'sum_size_gb': ssize
+                    })
             return data
 
         except Exception as e:
@@ -2886,6 +2915,7 @@ class ShowOCIData(object):
                         'type': backup['type'],
                         'id': backup['id'],
                         'kms_key_id': backup['kms_key_id'],
+                        'kms_key_name': self.__get_vault_key_name(backup['kms_key_id']),
                         'vault_id': backup['vault_id'],
                         'is_automatic': backup['is_automatic']
                     }
@@ -2968,6 +2998,7 @@ class ShowOCIData(object):
                 'customer_contacts': dbs['customer_contacts'],
                 'supported_regions_to_clone_to': dbs['supported_regions_to_clone_to'],
                 'kms_key_id': dbs['kms_key_id'],
+                'kms_key_name': self.__get_vault_key_name(dbs['kms_key_id']),
                 'vault_id': dbs['vault_id'],
                 'key_store_wallet_name': dbs['key_store_wallet_name'],
                 'key_store_id': dbs['key_store_id'],
@@ -3357,12 +3388,12 @@ class ShowOCIData(object):
             data = self.__get_database_db_exadata(region_name, compartment)
             if data:
                 if len(data) > 0:
-                    return_data['exadata_infrustructure'] = data
+                    return_data['exadata_infrastructure'] = data
 
             data = self.__get_database_db_exacc(region_name, compartment)
             if data:
                 if len(data) > 0:
-                    return_data['exacc_infrustructure'] = data
+                    return_data['exacc_infrastructure'] = data
 
             data = self.__get_database_adb_databases(region_name, compartment)
             if data:
@@ -3546,6 +3577,7 @@ class ShowOCIData(object):
                            'compartment_path': fs['compartment_path'],
                            'compartment_id': fs['compartment_id'],
                            'kms_key_id': fs['kms_key_id'],
+                           'kms_key_name': self.__get_vault_key_name(fs['kms_key_id']),
                            'region_name': region_name,
                            'exports': self.__get_file_storage_exports(fs['id'])}
                 data.append(dataval)
@@ -3590,6 +3622,7 @@ class ShowOCIData(object):
                          'storage_tier': bucket['storage_tier'],
                          'object_events_enabled': bucket['object_events_enabled'],
                          'kms_key_id': bucket['kms_key_id'],
+                         'kms_key_name': self.__get_vault_key_name(bucket['kms_key_id']),
                          'object_lifecycle_policy_etag': bucket['object_lifecycle_policy_etag'],
                          'replication_enabled': bucket['replication_enabled'],
                          'is_read_only': bucket['is_read_only'],
@@ -4355,6 +4388,22 @@ class ShowOCIData(object):
             pass
 
     ##########################################################################
+    # get key name
+    ##########################################################################
+    def __get_vault_key_name(self, key_id):
+
+        data = ""
+        try:
+            if key_id:
+                key = self.service.search_unique_item(self.service.C_SECURITY, self.service.C_SECURITY_KEYS, 'id', key_id)
+                if key:
+                    data = key['name']
+            return data
+
+        except Exception as e:
+            self.__print_error(e)
+
+    ##########################################################################
     # Security and Logging
     ##########################################################################
 
@@ -4377,15 +4426,20 @@ class ShowOCIData(object):
             if log:
                 security_services['logging'] = log
 
-            # logging unified agenets
+            # logging unified agents
             logua = self.service.search_multi_items(self.service.C_SECURITY, self.service.C_SECURITY_LOGGING_UA, 'region_name', region_name, 'compartment_id', compartment['id'])
             if log:
-                security_services['logging_unified_agenets'] = logua
+                security_services['logging_unified_agents'] = logua
 
             # kms_vaults
             vaults = self.service.search_multi_items(self.service.C_SECURITY, self.service.C_SECURITY_VAULTS, 'region_name', region_name, 'compartment_id', compartment['id'])
             if vaults:
                 security_services['kms_vaults'] = vaults
+
+            # kms_keys
+            keys = self.service.search_multi_items(self.service.C_SECURITY, self.service.C_SECURITY_KEYS, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if keys:
+                security_services['kms_keys'] = keys
 
             return security_services
 

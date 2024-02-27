@@ -626,7 +626,7 @@ class BackupSummary(object):
     def kms_key_version_id(self):
         """
         Gets the kms_key_version_id of this BackupSummary.
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
 
 
         :return: The kms_key_version_id of this BackupSummary.
@@ -638,7 +638,7 @@ class BackupSummary(object):
     def kms_key_version_id(self, kms_key_version_id):
         """
         Sets the kms_key_version_id of this BackupSummary.
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
 
 
         :param kms_key_version_id: The kms_key_version_id of this BackupSummary.
@@ -650,7 +650,7 @@ class BackupSummary(object):
     def vault_id(self):
         """
         Gets the vault_id of this BackupSummary.
-        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__.
+        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
@@ -665,7 +665,7 @@ class BackupSummary(object):
     def vault_id(self, vault_id):
         """
         Sets the vault_id of this BackupSummary.
-        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__.
+        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
@@ -680,7 +680,7 @@ class BackupSummary(object):
     def key_store_id(self):
         """
         Gets the key_store_id of this BackupSummary.
-        The `OCID`__ of the key store.
+        The `OCID`__ of the key store of Oracle Vault.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -694,7 +694,7 @@ class BackupSummary(object):
     def key_store_id(self, key_store_id):
         """
         Sets the key_store_id of this BackupSummary.
-        The `OCID`__ of the key store.
+        The `OCID`__ of the key store of Oracle Vault.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

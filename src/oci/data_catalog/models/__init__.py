@@ -7,6 +7,8 @@
 from __future__ import absolute_import
 
 from .add_resource_lock_details import AddResourceLockDetails
+from .asynchronous_export_data_asset_details import AsynchronousExportDataAssetDetails
+from .asynchronous_export_data_asset_result import AsynchronousExportDataAssetResult
 from .asynchronous_export_glossary_details import AsynchronousExportGlossaryDetails
 from .asynchronous_export_glossary_result import AsynchronousExportGlossaryResult
 from .asynchronous_export_request_details import AsynchronousExportRequestDetails
@@ -187,6 +189,8 @@ from .work_request_resource import WorkRequestResource
 # Maps type names to classes for data_catalog services.
 data_catalog_type_mapping = {
     "AddResourceLockDetails": AddResourceLockDetails,
+    "AsynchronousExportDataAssetDetails": AsynchronousExportDataAssetDetails,
+    "AsynchronousExportDataAssetResult": AsynchronousExportDataAssetResult,
     "AsynchronousExportGlossaryDetails": AsynchronousExportGlossaryDetails,
     "AsynchronousExportGlossaryResult": AsynchronousExportGlossaryResult,
     "AsynchronousExportRequestDetails": AsynchronousExportRequestDetails,

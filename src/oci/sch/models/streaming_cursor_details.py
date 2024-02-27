@@ -12,9 +12,12 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class StreamingCursorDetails(object):
     """
-    The type of `cursor`__, which determines the starting point from which the stream will be consumed.
+    The `read setting`__, which determines where in the stream to start moving data.
+    For configuration instructions, see
+    `Creating a Connector with a Streaming Source`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm
     """
 
     #: A constant which can be used with the kind property of a StreamingCursorDetails.
@@ -72,7 +75,7 @@ class StreamingCursorDetails(object):
     def kind(self):
         """
         **[Required]** Gets the kind of this StreamingCursorDetails.
-        The type descriminator.
+        The type discriminator.
 
         Allowed values for this property are: "LATEST", "TRIM_HORIZON", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -87,7 +90,7 @@ class StreamingCursorDetails(object):
     def kind(self, kind):
         """
         Sets the kind of this StreamingCursorDetails.
-        The type descriminator.
+        The type discriminator.
 
 
         :param kind: The kind of this StreamingCursorDetails.

@@ -160,7 +160,8 @@ class AttachVolumeDetails(object):
     def instance_id(self):
         """
         **[Required]** Gets the instance_id of this AttachVolumeDetails.
-        The OCID of the instance.
+        The OCID of the instance. For AttachVolume operation, this is a required field for the request,
+        see :func:`attach_volume`.
 
 
         :return: The instance_id of this AttachVolumeDetails.
@@ -172,7 +173,8 @@ class AttachVolumeDetails(object):
     def instance_id(self, instance_id):
         """
         Sets the instance_id of this AttachVolumeDetails.
-        The OCID of the instance.
+        The OCID of the instance. For AttachVolume operation, this is a required field for the request,
+        see :func:`attach_volume`.
 
 
         :param instance_id: The instance_id of this AttachVolumeDetails.
@@ -262,7 +264,7 @@ class AttachVolumeDetails(object):
     def volume_id(self):
         """
         **[Required]** Gets the volume_id of this AttachVolumeDetails.
-        The OCID of the volume.
+        The OCID of the volume. If CreateVolumeDetails is specified, this field must be omitted from the request.
 
 
         :return: The volume_id of this AttachVolumeDetails.
@@ -274,7 +276,7 @@ class AttachVolumeDetails(object):
     def volume_id(self, volume_id):
         """
         Sets the volume_id of this AttachVolumeDetails.
-        The OCID of the volume.
+        The OCID of the volume. If CreateVolumeDetails is specified, this field must be omitted from the request.
 
 
         :param volume_id: The volume_id of this AttachVolumeDetails.

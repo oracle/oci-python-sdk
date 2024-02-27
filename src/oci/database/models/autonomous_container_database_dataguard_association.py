@@ -96,8 +96,8 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
     PEER_LIFECYCLE_STATE_AVAILABLE = "AVAILABLE"
 
     #: A constant which can be used with the peer_lifecycle_state property of a AutonomousContainerDatabaseDataguardAssociation.
-    #: This constant has a value of "ROLE_CHANGE_IN_PROGRESS"
-    PEER_LIFECYCLE_STATE_ROLE_CHANGE_IN_PROGRESS = "ROLE_CHANGE_IN_PROGRESS"
+    #: This constant has a value of "UPDATING"
+    PEER_LIFECYCLE_STATE_UPDATING = "UPDATING"
 
     #: A constant which can be used with the peer_lifecycle_state property of a AutonomousContainerDatabaseDataguardAssociation.
     #: This constant has a value of "TERMINATING"
@@ -112,12 +112,36 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
     PEER_LIFECYCLE_STATE_FAILED = "FAILED"
 
     #: A constant which can be used with the peer_lifecycle_state property of a AutonomousContainerDatabaseDataguardAssociation.
-    #: This constant has a value of "UNAVAILABLE"
-    PEER_LIFECYCLE_STATE_UNAVAILABLE = "UNAVAILABLE"
+    #: This constant has a value of "BACKUP_IN_PROGRESS"
+    PEER_LIFECYCLE_STATE_BACKUP_IN_PROGRESS = "BACKUP_IN_PROGRESS"
 
     #: A constant which can be used with the peer_lifecycle_state property of a AutonomousContainerDatabaseDataguardAssociation.
-    #: This constant has a value of "UPDATING"
-    PEER_LIFECYCLE_STATE_UPDATING = "UPDATING"
+    #: This constant has a value of "RESTORING"
+    PEER_LIFECYCLE_STATE_RESTORING = "RESTORING"
+
+    #: A constant which can be used with the peer_lifecycle_state property of a AutonomousContainerDatabaseDataguardAssociation.
+    #: This constant has a value of "RESTORE_FAILED"
+    PEER_LIFECYCLE_STATE_RESTORE_FAILED = "RESTORE_FAILED"
+
+    #: A constant which can be used with the peer_lifecycle_state property of a AutonomousContainerDatabaseDataguardAssociation.
+    #: This constant has a value of "RESTARTING"
+    PEER_LIFECYCLE_STATE_RESTARTING = "RESTARTING"
+
+    #: A constant which can be used with the peer_lifecycle_state property of a AutonomousContainerDatabaseDataguardAssociation.
+    #: This constant has a value of "MAINTENANCE_IN_PROGRESS"
+    PEER_LIFECYCLE_STATE_MAINTENANCE_IN_PROGRESS = "MAINTENANCE_IN_PROGRESS"
+
+    #: A constant which can be used with the peer_lifecycle_state property of a AutonomousContainerDatabaseDataguardAssociation.
+    #: This constant has a value of "ROLE_CHANGE_IN_PROGRESS"
+    PEER_LIFECYCLE_STATE_ROLE_CHANGE_IN_PROGRESS = "ROLE_CHANGE_IN_PROGRESS"
+
+    #: A constant which can be used with the peer_lifecycle_state property of a AutonomousContainerDatabaseDataguardAssociation.
+    #: This constant has a value of "ENABLING_AUTONOMOUS_DATA_GUARD"
+    PEER_LIFECYCLE_STATE_ENABLING_AUTONOMOUS_DATA_GUARD = "ENABLING_AUTONOMOUS_DATA_GUARD"
+
+    #: A constant which can be used with the peer_lifecycle_state property of a AutonomousContainerDatabaseDataguardAssociation.
+    #: This constant has a value of "UNAVAILABLE"
+    PEER_LIFECYCLE_STATE_UNAVAILABLE = "UNAVAILABLE"
 
     #: A constant which can be used with the protection_mode property of a AutonomousContainerDatabaseDataguardAssociation.
     #: This constant has a value of "MAXIMUM_AVAILABILITY"
@@ -172,7 +196,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
 
         :param peer_lifecycle_state:
             The value to assign to the peer_lifecycle_state property of this AutonomousContainerDatabaseDataguardAssociation.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", "UNAVAILABLE", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "BACKUP_IN_PROGRESS", "RESTORING", "RESTORE_FAILED", "RESTARTING", "MAINTENANCE_IN_PROGRESS", "ROLE_CHANGE_IN_PROGRESS", "ENABLING_AUTONOMOUS_DATA_GUARD", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type peer_lifecycle_state: str
 
@@ -304,7 +328,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
     def autonomous_container_database_id(self):
         """
         **[Required]** Gets the autonomous_container_database_id of this AutonomousContainerDatabaseDataguardAssociation.
-        The `OCID`__ of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database.
+        The `OCID`__ of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -318,7 +342,7 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
     def autonomous_container_database_id(self, autonomous_container_database_id):
         """
         Sets the autonomous_container_database_id of this AutonomousContainerDatabaseDataguardAssociation.
-        The `OCID`__ of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database.
+        The `OCID`__ of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -498,9 +522,9 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
     def peer_lifecycle_state(self):
         """
         Gets the peer_lifecycle_state of this AutonomousContainerDatabaseDataguardAssociation.
-        The current state of Autonomous Data Guard.
+        The current state of the Autonomous Container Database.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", "UNAVAILABLE", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "BACKUP_IN_PROGRESS", "RESTORING", "RESTORE_FAILED", "RESTARTING", "MAINTENANCE_IN_PROGRESS", "ROLE_CHANGE_IN_PROGRESS", "ENABLING_AUTONOMOUS_DATA_GUARD", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -513,13 +537,13 @@ class AutonomousContainerDatabaseDataguardAssociation(object):
     def peer_lifecycle_state(self, peer_lifecycle_state):
         """
         Sets the peer_lifecycle_state of this AutonomousContainerDatabaseDataguardAssociation.
-        The current state of Autonomous Data Guard.
+        The current state of the Autonomous Container Database.
 
 
         :param peer_lifecycle_state: The peer_lifecycle_state of this AutonomousContainerDatabaseDataguardAssociation.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "ROLE_CHANGE_IN_PROGRESS", "TERMINATING", "TERMINATED", "FAILED", "UNAVAILABLE", "UPDATING"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "BACKUP_IN_PROGRESS", "RESTORING", "RESTORE_FAILED", "RESTARTING", "MAINTENANCE_IN_PROGRESS", "ROLE_CHANGE_IN_PROGRESS", "ENABLING_AUTONOMOUS_DATA_GUARD", "UNAVAILABLE"]
         if not value_allowed_none_or_none_sentinel(peer_lifecycle_state, allowed_values):
             peer_lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._peer_lifecycle_state = peer_lifecycle_state

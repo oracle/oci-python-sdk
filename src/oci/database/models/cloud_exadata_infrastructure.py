@@ -56,6 +56,10 @@ class CloudExadataInfrastructure(object):
             The value to assign to the compartment_id property of this CloudExadataInfrastructure.
         :type compartment_id: str
 
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this CloudExadataInfrastructure.
+        :type cluster_placement_group_id: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this CloudExadataInfrastructure.
             Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MAINTENANCE_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
@@ -158,6 +162,10 @@ class CloudExadataInfrastructure(object):
             The value to assign to the defined_tags property of this CloudExadataInfrastructure.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this CloudExadataInfrastructure.
+        :type system_tags: dict(str, dict(str, object))
+
         :param customer_contacts:
             The value to assign to the customer_contacts property of this CloudExadataInfrastructure.
         :type customer_contacts: list[oci.database.models.CustomerContact]
@@ -182,6 +190,7 @@ class CloudExadataInfrastructure(object):
         self.swagger_types = {
             'id': 'str',
             'compartment_id': 'str',
+            'cluster_placement_group_id': 'str',
             'lifecycle_state': 'str',
             'display_name': 'str',
             'shape': 'str',
@@ -207,6 +216,7 @@ class CloudExadataInfrastructure(object):
             'next_maintenance_run_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'customer_contacts': 'list[CustomerContact]',
             'storage_server_version': 'str',
             'db_server_version': 'str',
@@ -217,6 +227,7 @@ class CloudExadataInfrastructure(object):
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
             'lifecycle_state': 'lifecycleState',
             'display_name': 'displayName',
             'shape': 'shape',
@@ -242,6 +253,7 @@ class CloudExadataInfrastructure(object):
             'next_maintenance_run_id': 'nextMaintenanceRunId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'customer_contacts': 'customerContacts',
             'storage_server_version': 'storageServerVersion',
             'db_server_version': 'dbServerVersion',
@@ -251,6 +263,7 @@ class CloudExadataInfrastructure(object):
 
         self._id = None
         self._compartment_id = None
+        self._cluster_placement_group_id = None
         self._lifecycle_state = None
         self._display_name = None
         self._shape = None
@@ -276,6 +289,7 @@ class CloudExadataInfrastructure(object):
         self._next_maintenance_run_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._customer_contacts = None
         self._storage_server_version = None
         self._db_server_version = None
@@ -337,6 +351,34 @@ class CloudExadataInfrastructure(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this CloudExadataInfrastructure.
+        The `OCID`__ of the cluster placement group of the Exadata Infrastructure.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The cluster_placement_group_id of this CloudExadataInfrastructure.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this CloudExadataInfrastructure.
+        The `OCID`__ of the cluster placement group of the Exadata Infrastructure.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this CloudExadataInfrastructure.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
 
     @property
     def lifecycle_state(self):
@@ -963,6 +1005,36 @@ class CloudExadataInfrastructure(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this CloudExadataInfrastructure.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The system_tags of this CloudExadataInfrastructure.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this CloudExadataInfrastructure.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param system_tags: The system_tags of this CloudExadataInfrastructure.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def customer_contacts(self):

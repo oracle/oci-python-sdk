@@ -29,6 +29,7 @@ Oda
     oci.oda.models.AuthenticationProviderCollection
     oci.oda.models.AuthenticationProviderSummary
     oci.oda.models.Bot
+    oci.oda.models.BulkCreateSkillEntitiesDetails
     oci.oda.models.ChangeOdaInstanceCompartmentDetails
     oci.oda.models.ChangeOdaPrivateEndpointCompartmentDetails
     oci.oda.models.Channel
@@ -36,6 +37,7 @@ Oda
     oci.oda.models.ChannelSummary
     oci.oda.models.CloneDigitalAssistantDetails
     oci.oda.models.CloneSkillDetails
+    oci.oda.models.CompositeEntity
     oci.oda.models.ConfigureDigitalAssistantParametersDetails
     oci.oda.models.CortanaChannel
     oci.oda.models.CreateAndroidChannelDetails
@@ -71,8 +73,11 @@ Oda
     oci.oda.models.CreateOsvcChannelResult
     oci.oda.models.CreateServiceCloudChannelDetails
     oci.oda.models.CreateServiceCloudChannelResult
+    oci.oda.models.CreateSkillCompositeEntityDetails
     oci.oda.models.CreateSkillDetails
+    oci.oda.models.CreateSkillEntityDetails
     oci.oda.models.CreateSkillParameterDetails
+    oci.oda.models.CreateSkillValueListEntityDetails
     oci.oda.models.CreateSkillVersionDetails
     oci.oda.models.CreateSlackChannelDetails
     oci.oda.models.CreateSlackChannelResult
@@ -92,6 +97,14 @@ Oda
     oci.oda.models.DigitalAssistantParameterSummary
     oci.oda.models.DigitalAssistantParameterValue
     oci.oda.models.DigitalAssistantSummary
+    oci.oda.models.Entity
+    oci.oda.models.EntityAction
+    oci.oda.models.EntityActionArgument
+    oci.oda.models.EntityActionArgumentNaturalLanguageMapping
+    oci.oda.models.EntityActionNaturalLanguageMapping
+    oci.oda.models.EntityAttribute
+    oci.oda.models.EntityAttributeNaturalLanguageMapping
+    oci.oda.models.EntityNaturalLanguageMapping
     oci.oda.models.ErrorBody
     oci.oda.models.ExportBotDetails
     oci.oda.models.ExportDigitalAssistantDetails
@@ -104,8 +117,10 @@ Oda
     oci.oda.models.ImportedPackage
     oci.oda.models.ImportedPackageSummary
     oci.oda.models.IosChannel
+    oci.oda.models.LanguageMapping
     oci.oda.models.MSTeamsChannel
     oci.oda.models.MetadataProperty
+    oci.oda.models.NameMapping
     oci.oda.models.OSSChannel
     oci.oda.models.OdaInstance
     oci.oda.models.OdaInstanceAttachment
@@ -141,8 +156,13 @@ Oda
     oci.oda.models.SkillParameterSummary
     oci.oda.models.SkillSummary
     oci.oda.models.SlackChannel
+    oci.oda.models.StaticEntityValue
+    oci.oda.models.StaticEntityValueNaturalLanguageMapping
     oci.oda.models.StorageLocation
     oci.oda.models.TestChannel
+    oci.oda.models.TrainSkillDetails
+    oci.oda.models.TrainSkillParameter
+    oci.oda.models.TrainSkillQueryEntityParameter
     oci.oda.models.Translator
     oci.oda.models.TranslatorCollection
     oci.oda.models.TranslatorSummary
@@ -172,6 +192,7 @@ Oda
     oci.oda.models.UpdateTwilioChannelDetails
     oci.oda.models.UpdateWebChannelDetails
     oci.oda.models.UpdateWebhookChannelDetails
+    oci.oda.models.ValueListEntity
     oci.oda.models.WebChannel
     oci.oda.models.WebhookChannel
     oci.oda.models.WorkRequest

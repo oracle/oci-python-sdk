@@ -1,10 +1,10 @@
 autodocsumm==0.1.11
 certifi
 coverage==4.5.2
-cryptography>=3.2.1,<42.0.0
+cryptography>=3.2.1,<43.0.0
 flake8>=3.6.0,<6
 mock==2.0.0
-pyOpenSSL>=17.5.0,<24.0.0
+pyOpenSSL>=17.5.0,<25.0.0
 pytest==4.1.0
 pytest-cov==2.6.1
 attrs==19.1.0
