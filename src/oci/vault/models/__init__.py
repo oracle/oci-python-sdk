@@ -8,20 +8,24 @@ from __future__ import absolute_import
 
 from .adb_target_system_details import AdbTargetSystemDetails
 from .base64_secret_content_details import Base64SecretContentDetails
+from .bytes_generation_context import BytesGenerationContext
 from .change_secret_compartment_details import ChangeSecretCompartmentDetails
 from .create_secret_details import CreateSecretDetails
 from .function_target_system_details import FunctionTargetSystemDetails
+from .passphrase_generation_context import PassphraseGenerationContext
 from .rotation_config import RotationConfig
 from .schedule_secret_deletion_details import ScheduleSecretDeletionDetails
 from .schedule_secret_version_deletion_details import ScheduleSecretVersionDeletionDetails
 from .secret import Secret
 from .secret_content_details import SecretContentDetails
 from .secret_expiry_rule import SecretExpiryRule
+from .secret_generation_context import SecretGenerationContext
 from .secret_reuse_rule import SecretReuseRule
 from .secret_rule import SecretRule
 from .secret_summary import SecretSummary
 from .secret_version import SecretVersion
 from .secret_version_summary import SecretVersionSummary
+from .ssh_key_generation_context import SshKeyGenerationContext
 from .target_system_details import TargetSystemDetails
 from .update_secret_details import UpdateSecretDetails
 
@@ -29,20 +33,24 @@ from .update_secret_details import UpdateSecretDetails
 vault_type_mapping = {
     "AdbTargetSystemDetails": AdbTargetSystemDetails,
     "Base64SecretContentDetails": Base64SecretContentDetails,
+    "BytesGenerationContext": BytesGenerationContext,
     "ChangeSecretCompartmentDetails": ChangeSecretCompartmentDetails,
     "CreateSecretDetails": CreateSecretDetails,
     "FunctionTargetSystemDetails": FunctionTargetSystemDetails,
+    "PassphraseGenerationContext": PassphraseGenerationContext,
     "RotationConfig": RotationConfig,
     "ScheduleSecretDeletionDetails": ScheduleSecretDeletionDetails,
     "ScheduleSecretVersionDeletionDetails": ScheduleSecretVersionDeletionDetails,
     "Secret": Secret,
     "SecretContentDetails": SecretContentDetails,
     "SecretExpiryRule": SecretExpiryRule,
+    "SecretGenerationContext": SecretGenerationContext,
     "SecretReuseRule": SecretReuseRule,
     "SecretRule": SecretRule,
     "SecretSummary": SecretSummary,
     "SecretVersion": SecretVersion,
     "SecretVersionSummary": SecretVersionSummary,
+    "SshKeyGenerationContext": SshKeyGenerationContext,
     "TargetSystemDetails": TargetSystemDetails,
     "UpdateSecretDetails": UpdateSecretDetails
 }

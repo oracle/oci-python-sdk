@@ -52,6 +52,14 @@ class UpdateSecretDetails(object):
             The value to assign to the secret_rules property of this UpdateSecretDetails.
         :type secret_rules: list[oci.vault.models.SecretRule]
 
+        :param secret_generation_context:
+            The value to assign to the secret_generation_context property of this UpdateSecretDetails.
+        :type secret_generation_context: oci.vault.models.SecretGenerationContext
+
+        :param enable_auto_generation:
+            The value to assign to the enable_auto_generation property of this UpdateSecretDetails.
+        :type enable_auto_generation: bool
+
         """
         self.swagger_types = {
             'current_version_number': 'int',
@@ -61,7 +69,9 @@ class UpdateSecretDetails(object):
             'metadata': 'dict(str, object)',
             'secret_content': 'SecretContentDetails',
             'rotation_config': 'RotationConfig',
-            'secret_rules': 'list[SecretRule]'
+            'secret_rules': 'list[SecretRule]',
+            'secret_generation_context': 'SecretGenerationContext',
+            'enable_auto_generation': 'bool'
         }
 
         self.attribute_map = {
@@ -72,7 +82,9 @@ class UpdateSecretDetails(object):
             'metadata': 'metadata',
             'secret_content': 'secretContent',
             'rotation_config': 'rotationConfig',
-            'secret_rules': 'secretRules'
+            'secret_rules': 'secretRules',
+            'secret_generation_context': 'secretGenerationContext',
+            'enable_auto_generation': 'enableAutoGeneration'
         }
 
         self._current_version_number = None
@@ -83,6 +95,8 @@ class UpdateSecretDetails(object):
         self._secret_content = None
         self._rotation_config = None
         self._secret_rules = None
+        self._secret_generation_context = None
+        self._enable_auto_generation = None
 
     @property
     def current_version_number(self):
@@ -291,6 +305,50 @@ class UpdateSecretDetails(object):
         :type: list[oci.vault.models.SecretRule]
         """
         self._secret_rules = secret_rules
+
+    @property
+    def secret_generation_context(self):
+        """
+        Gets the secret_generation_context of this UpdateSecretDetails.
+
+        :return: The secret_generation_context of this UpdateSecretDetails.
+        :rtype: oci.vault.models.SecretGenerationContext
+        """
+        return self._secret_generation_context
+
+    @secret_generation_context.setter
+    def secret_generation_context(self, secret_generation_context):
+        """
+        Sets the secret_generation_context of this UpdateSecretDetails.
+
+        :param secret_generation_context: The secret_generation_context of this UpdateSecretDetails.
+        :type: oci.vault.models.SecretGenerationContext
+        """
+        self._secret_generation_context = secret_generation_context
+
+    @property
+    def enable_auto_generation(self):
+        """
+        Gets the enable_auto_generation of this UpdateSecretDetails.
+        The value of this flag determines whether or not secret content will be generated automatically.
+
+
+        :return: The enable_auto_generation of this UpdateSecretDetails.
+        :rtype: bool
+        """
+        return self._enable_auto_generation
+
+    @enable_auto_generation.setter
+    def enable_auto_generation(self, enable_auto_generation):
+        """
+        Sets the enable_auto_generation of this UpdateSecretDetails.
+        The value of this flag determines whether or not secret content will be generated automatically.
+
+
+        :param enable_auto_generation: The enable_auto_generation of this UpdateSecretDetails.
+        :type: bool
+        """
+        self._enable_auto_generation = enable_auto_generation
 
     def __repr__(self):
         return formatted_flat_dict(self)

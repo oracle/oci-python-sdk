@@ -10,24 +10,24 @@ from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class DatabaseConnectionCredentailsByName(DatabaseConnectionCredentials):
+class DatabaseConnectionCredentialsByName(DatabaseConnectionCredentials):
     """
     Existing named credential used to connect to the database.
     """
 
     def __init__(self, **kwargs):
         """
-        Initializes a new DatabaseConnectionCredentailsByName object with values from keyword arguments. The default value of the :py:attr:`~oci.database.models.DatabaseConnectionCredentailsByName.credential_type` attribute
+        Initializes a new DatabaseConnectionCredentialsByName object with values from keyword arguments. The default value of the :py:attr:`~oci.database.models.DatabaseConnectionCredentialsByName.credential_type` attribute
         of this class is ``NAME_REFERENCE`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param credential_type:
-            The value to assign to the credential_type property of this DatabaseConnectionCredentailsByName.
+            The value to assign to the credential_type property of this DatabaseConnectionCredentialsByName.
             Allowed values for this property are: "NAME_REFERENCE", "DETAILS", "SSL_DETAILS"
         :type credential_type: str
 
         :param credential_name:
-            The value to assign to the credential_name property of this DatabaseConnectionCredentailsByName.
+            The value to assign to the credential_name property of this DatabaseConnectionCredentialsByName.
         :type credential_name: str
 
         """
@@ -48,7 +48,7 @@ class DatabaseConnectionCredentailsByName(DatabaseConnectionCredentials):
     @property
     def credential_name(self):
         """
-        **[Required]** Gets the credential_name of this DatabaseConnectionCredentailsByName.
+        **[Required]** Gets the credential_name of this DatabaseConnectionCredentialsByName.
         The name of the credential information that used to connect to the database. The name should be in \"x.y\" format, where
         the length of \"x\" has a maximum of 64 characters, and length of \"y\" has a maximum of 199 characters.
         The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for
@@ -60,7 +60,7 @@ class DatabaseConnectionCredentailsByName(DatabaseConnectionCredentials):
         For example: inventorydb.abc112233445566778899
 
 
-        :return: The credential_name of this DatabaseConnectionCredentailsByName.
+        :return: The credential_name of this DatabaseConnectionCredentialsByName.
         :rtype: str
         """
         return self._credential_name
@@ -68,7 +68,7 @@ class DatabaseConnectionCredentailsByName(DatabaseConnectionCredentials):
     @credential_name.setter
     def credential_name(self, credential_name):
         """
-        Sets the credential_name of this DatabaseConnectionCredentailsByName.
+        Sets the credential_name of this DatabaseConnectionCredentialsByName.
         The name of the credential information that used to connect to the database. The name should be in \"x.y\" format, where
         the length of \"x\" has a maximum of 64 characters, and length of \"y\" has a maximum of 199 characters.
         The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for
@@ -80,7 +80,7 @@ class DatabaseConnectionCredentailsByName(DatabaseConnectionCredentials):
         For example: inventorydb.abc112233445566778899
 
 
-        :param credential_name: The credential_name of this DatabaseConnectionCredentailsByName.
+        :param credential_name: The credential_name of this DatabaseConnectionCredentialsByName.
         :type: str
         """
         self._credential_name = credential_name

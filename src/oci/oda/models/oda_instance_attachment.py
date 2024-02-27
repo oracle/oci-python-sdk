@@ -19,6 +19,10 @@ class OdaInstanceAttachment(object):
     #: This constant has a value of "FUSION"
     ATTACHMENT_TYPE_FUSION = "FUSION"
 
+    #: A constant which can be used with the attachment_type property of a OdaInstanceAttachment.
+    #: This constant has a value of "MAX"
+    ATTACHMENT_TYPE_MAX = "MAX"
+
     #: A constant which can be used with the lifecycle_state property of a OdaInstanceAttachment.
     #: This constant has a value of "ATTACHING"
     LIFECYCLE_STATE_ATTACHING = "ATTACHING"
@@ -58,7 +62,7 @@ class OdaInstanceAttachment(object):
 
         :param attachment_type:
             The value to assign to the attachment_type property of this OdaInstanceAttachment.
-            Allowed values for this property are: "FUSION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "FUSION", "MAX", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type attachment_type: str
 
@@ -218,7 +222,7 @@ class OdaInstanceAttachment(object):
         **[Required]** Gets the attachment_type of this OdaInstanceAttachment.
         The type of attachment defined as an enum.
 
-        Allowed values for this property are: "FUSION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "FUSION", "MAX", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -237,7 +241,7 @@ class OdaInstanceAttachment(object):
         :param attachment_type: The attachment_type of this OdaInstanceAttachment.
         :type: str
         """
-        allowed_values = ["FUSION"]
+        allowed_values = ["FUSION", "MAX"]
         if not value_allowed_none_or_none_sentinel(attachment_type, allowed_values):
             attachment_type = 'UNKNOWN_ENUM_VALUE'
         self._attachment_type = attachment_type

@@ -7,8 +7,10 @@
 from __future__ import absolute_import
 
 
+from .connector_plugins_client import ConnectorPluginsClient
+from .connector_plugins_client_composite_operations import ConnectorPluginsClientCompositeOperations
 from .service_connector_client import ServiceConnectorClient
 from .service_connector_client_composite_operations import ServiceConnectorClientCompositeOperations
 from . import models
 
-__all__ = ["ServiceConnectorClient", "ServiceConnectorClientCompositeOperations", "models"]
+__all__ = ["ConnectorPluginsClient", "ConnectorPluginsClientCompositeOperations", "ServiceConnectorClient", "ServiceConnectorClientCompositeOperations", "models"]

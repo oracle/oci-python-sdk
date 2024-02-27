@@ -93,6 +93,10 @@ class JobDefinition(object):
     #: This constant has a value of "ASYNC_EXPORT_GLOSSARY"
     JOB_TYPE_ASYNC_EXPORT_GLOSSARY = "ASYNC_EXPORT_GLOSSARY"
 
+    #: A constant which can be used with the job_type property of a JobDefinition.
+    #: This constant has a value of "ASYNC_EXPORT_DATA_ASSET"
+    JOB_TYPE_ASYNC_EXPORT_DATA_ASSET = "ASYNC_EXPORT_DATA_ASSET"
+
     #: A constant which can be used with the lifecycle_state property of a JobDefinition.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -180,7 +184,7 @@ class JobDefinition(object):
 
         :param job_type:
             The value to assign to the job_type property of this JobDefinition.
-            Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY", "ASYNC_EXPORT_DATA_ASSET", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type job_type: str
 
@@ -423,7 +427,7 @@ class JobDefinition(object):
         Gets the job_type of this JobDefinition.
         Type of the job definition.
 
-        Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY", "ASYNC_EXPORT_DATA_ASSET", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -442,7 +446,7 @@ class JobDefinition(object):
         :param job_type: The job_type of this JobDefinition.
         :type: str
         """
-        allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY"]
+        allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY", "ASYNC_EXPORT_DATA_ASSET"]
         if not value_allowed_none_or_none_sentinel(job_type, allowed_values):
             job_type = 'UNKNOWN_ENUM_VALUE'
         self._job_type = job_type

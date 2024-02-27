@@ -692,6 +692,140 @@ class DataCatalogClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def asynchronous_export_data_asset(self, catalog_id, data_asset_key, asynchronous_export_data_asset_details, export_type, **kwargs):
+        """
+        Export technical objects from a Data Asset in Excel format. Returns details about the job which actually performs the export.
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str data_asset_key: (required)
+            Unique data asset key.
+
+        :param oci.data_catalog.models.AsynchronousExportDataAssetDetails asynchronous_export_data_asset_details: (required)
+            Details needed by the Data Asset export request.
+
+        :param oci.data_catalog.models.list[str] export_type: (required)
+            Type of export.
+
+            Allowed values are: "CUSTOM_PROPERTY_VALUES", "ALL"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.AsynchronousExportDataAssetResult`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/asynchronous_export_data_asset.py.html>`__ to see an example of how to use asynchronous_export_data_asset API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'exportType']
+        resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/actions/asynchronousExport"
+        method = "POST"
+        operation_name = "asynchronous_export_data_asset"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/AsynchronousExportDataAsset"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"asynchronous_export_data_asset got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "catalogId": catalog_id,
+            "dataAssetKey": data_asset_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        export_type_allowed_values = ["CUSTOM_PROPERTY_VALUES", "ALL"]
+        for export_type_item in export_type:
+            if export_type_item not in export_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `export_type`, must be one of { export_type_allowed_values }"
+                )
+
+        query_params = {
+            "exportType": self.base_client.generate_collection_format_param(export_type, 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=asynchronous_export_data_asset_details,
+                response_type="AsynchronousExportDataAssetResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=asynchronous_export_data_asset_details,
+                response_type="AsynchronousExportDataAssetResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def asynchronous_export_glossary(self, catalog_id, glossary_key, asynchronous_export_glossary_details, **kwargs):
         """
         Exports the contents of a glossary in Excel format. Returns details about the job which actually performs the export.
@@ -13173,7 +13307,7 @@ class DataCatalogClient(object):
         :param str job_type: (optional)
             Job type.
 
-            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY"
+            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY", "ASYNC_EXPORT_DATA_ASSET"
 
         :param bool is_incremental: (optional)
             Whether job definition is an incremental harvest (true) or a full harvest (false).
@@ -13310,7 +13444,7 @@ class DataCatalogClient(object):
                 )
 
         if 'job_type' in kwargs:
-            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY"]
+            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY", "ASYNC_EXPORT_DATA_ASSET"]
             if kwargs['job_type'] not in job_type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `job_type`, must be one of { job_type_allowed_values }"
@@ -13439,7 +13573,7 @@ class DataCatalogClient(object):
         :param str job_type: (optional)
             Job type.
 
-            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY"
+            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY", "ASYNC_EXPORT_DATA_ASSET"
 
         :param str sub_type: (optional)
             Sub-type of this job execution.
@@ -13577,7 +13711,7 @@ class DataCatalogClient(object):
                 )
 
         if 'job_type' in kwargs:
-            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY"]
+            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY", "ASYNC_EXPORT_DATA_ASSET"]
             if kwargs['job_type'] not in job_type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `job_type`, must be one of { job_type_allowed_values }"
@@ -14155,7 +14289,7 @@ class DataCatalogClient(object):
         :param str job_type: (optional)
             Job type.
 
-            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY"
+            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY", "ASYNC_EXPORT_DATA_ASSET"
 
         :param str job_definition_key: (optional)
             Unique job definition key.
@@ -14299,7 +14433,7 @@ class DataCatalogClient(object):
                 )
 
         if 'job_type' in kwargs:
-            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY"]
+            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY", "ASYNC_EXPORT_DATA_ASSET"]
             if kwargs['job_type'] not in job_type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `job_type`, must be one of { job_type_allowed_values }"

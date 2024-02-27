@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeServiceConnectorCompartmentDetails(object):
     """
-    The configuration details for moving a service connector to a different compartment.
+    The configuration details for moving a connector to a different compartment.
     """
 
     def __init__(self, **kwargs):
@@ -40,7 +40,7 @@ class ChangeServiceConnectorCompartmentDetails(object):
         """
         **[Required]** Gets the compartment_id of this ChangeServiceConnectorCompartmentDetails.
         The `OCID`__ of the compartment
-        to move the service connector to.
+        to move the connector to.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -55,7 +55,7 @@ class ChangeServiceConnectorCompartmentDetails(object):
         """
         Sets the compartment_id of this ChangeServiceConnectorCompartmentDetails.
         The `OCID`__ of the compartment
-        to move the service connector to.
+        to move the connector to.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 

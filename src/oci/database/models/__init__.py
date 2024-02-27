@@ -160,9 +160,9 @@ from .data_collection_options import DataCollectionOptions
 from .data_guard_association import DataGuardAssociation
 from .data_guard_association_summary import DataGuardAssociationSummary
 from .database import Database
-from .database_connection_credentails_by_name import DatabaseConnectionCredentailsByName
 from .database_connection_credentials import DatabaseConnectionCredentials
 from .database_connection_credentials_by_details import DatabaseConnectionCredentialsByDetails
+from .database_connection_credentials_by_name import DatabaseConnectionCredentialsByName
 from .database_connection_string import DatabaseConnectionString
 from .database_connection_string_profile import DatabaseConnectionStringProfile
 from .database_connection_strings import DatabaseConnectionStrings
@@ -529,9 +529,9 @@ database_type_mapping = {
     "DataGuardAssociation": DataGuardAssociation,
     "DataGuardAssociationSummary": DataGuardAssociationSummary,
     "Database": Database,
-    "DatabaseConnectionCredentailsByName": DatabaseConnectionCredentailsByName,
     "DatabaseConnectionCredentials": DatabaseConnectionCredentials,
     "DatabaseConnectionCredentialsByDetails": DatabaseConnectionCredentialsByDetails,
+    "DatabaseConnectionCredentialsByName": DatabaseConnectionCredentialsByName,
     "DatabaseConnectionString": DatabaseConnectionString,
     "DatabaseConnectionStringProfile": DatabaseConnectionStringProfile,
     "DatabaseConnectionStrings": DatabaseConnectionStrings,

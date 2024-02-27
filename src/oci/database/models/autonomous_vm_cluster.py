@@ -722,7 +722,9 @@ class AutonomousVmCluster(object):
     def compute_model(self):
         """
         Gets the compute_model of this AutonomousVmCluster.
-        The compute model of the Autonomous VM Cluster.
+        The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See `Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure`__ for more details.
+
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
 
         Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -737,7 +739,9 @@ class AutonomousVmCluster(object):
     def compute_model(self, compute_model):
         """
         Sets the compute_model of this AutonomousVmCluster.
-        The compute model of the Autonomous VM Cluster.
+        The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See `Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure`__ for more details.
+
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
 
 
         :param compute_model: The compute_model of this AutonomousVmCluster.
@@ -1092,7 +1096,7 @@ class AutonomousVmCluster(object):
     def provisionable_autonomous_container_databases(self):
         """
         Gets the provisionable_autonomous_container_databases of this AutonomousVmCluster.
-        The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+        **Deprecated.** Use field totalContainerDatabases.
 
 
         :return: The provisionable_autonomous_container_databases of this AutonomousVmCluster.
@@ -1104,7 +1108,7 @@ class AutonomousVmCluster(object):
     def provisionable_autonomous_container_databases(self, provisionable_autonomous_container_databases):
         """
         Sets the provisionable_autonomous_container_databases of this AutonomousVmCluster.
-        The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+        **Deprecated.** Use field totalContainerDatabases.
 
 
         :param provisionable_autonomous_container_databases: The provisionable_autonomous_container_databases of this AutonomousVmCluster.
@@ -1430,9 +1434,7 @@ class AutonomousVmCluster(object):
     def reclaimable_cpus(self):
         """
         Gets the reclaimable_cpus of this AutonomousVmCluster.
-        For Autonomous Databases on Dedicated Exadata Infrastructure:
-        - These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 
 
         :return: The reclaimable_cpus of this AutonomousVmCluster.
@@ -1444,9 +1446,7 @@ class AutonomousVmCluster(object):
     def reclaimable_cpus(self, reclaimable_cpus):
         """
         Sets the reclaimable_cpus of this AutonomousVmCluster.
-        For Autonomous Databases on Dedicated Exadata Infrastructure:
-        - These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 
 
         :param reclaimable_cpus: The reclaimable_cpus of this AutonomousVmCluster.
@@ -1626,7 +1626,7 @@ class AutonomousVmCluster(object):
     def exadata_storage_in_tbs_lowest_scaled_value(self):
         """
         Gets the exadata_storage_in_tbs_lowest_scaled_value of this AutonomousVmCluster.
-        The lowest value to which exadataStorage in TBs can be scaled down.
+        The lowest value to which exadataStorage(in TBs) can be scaled down.
 
 
         :return: The exadata_storage_in_tbs_lowest_scaled_value of this AutonomousVmCluster.
@@ -1638,7 +1638,7 @@ class AutonomousVmCluster(object):
     def exadata_storage_in_tbs_lowest_scaled_value(self, exadata_storage_in_tbs_lowest_scaled_value):
         """
         Sets the exadata_storage_in_tbs_lowest_scaled_value of this AutonomousVmCluster.
-        The lowest value to which exadataStorage in TBs can be scaled down.
+        The lowest value to which exadataStorage(in TBs) can be scaled down.
 
 
         :param exadata_storage_in_tbs_lowest_scaled_value: The exadata_storage_in_tbs_lowest_scaled_value of this AutonomousVmCluster.
@@ -1674,7 +1674,7 @@ class AutonomousVmCluster(object):
     def max_acds_lowest_scaled_value(self):
         """
         Gets the max_acds_lowest_scaled_value of this AutonomousVmCluster.
-        The lowest value to which ACDs can be scaled down.
+        The lowest value to which maximum number of ACDs can be scaled down.
 
 
         :return: The max_acds_lowest_scaled_value of this AutonomousVmCluster.
@@ -1686,7 +1686,7 @@ class AutonomousVmCluster(object):
     def max_acds_lowest_scaled_value(self, max_acds_lowest_scaled_value):
         """
         Sets the max_acds_lowest_scaled_value of this AutonomousVmCluster.
-        The lowest value to which ACDs can be scaled down.
+        The lowest value to which maximum number of ACDs can be scaled down.
 
 
         :param max_acds_lowest_scaled_value: The max_acds_lowest_scaled_value of this AutonomousVmCluster.

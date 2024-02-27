@@ -124,6 +124,10 @@ class KeyVersion(object):
             The value to assign to the external_key_reference_details property of this KeyVersion.
         :type external_key_reference_details: oci.key_management.models.ExternalKeyReferenceDetails
 
+        :param is_auto_rotated:
+            The value to assign to the is_auto_rotated property of this KeyVersion.
+        :type is_auto_rotated: bool
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -138,7 +142,8 @@ class KeyVersion(object):
             'restored_from_key_version_id': 'str',
             'replica_details': 'KeyVersionReplicaDetails',
             'is_primary': 'bool',
-            'external_key_reference_details': 'ExternalKeyReferenceDetails'
+            'external_key_reference_details': 'ExternalKeyReferenceDetails',
+            'is_auto_rotated': 'bool'
         }
 
         self.attribute_map = {
@@ -154,7 +159,8 @@ class KeyVersion(object):
             'restored_from_key_version_id': 'restoredFromKeyVersionId',
             'replica_details': 'replicaDetails',
             'is_primary': 'isPrimary',
-            'external_key_reference_details': 'externalKeyReferenceDetails'
+            'external_key_reference_details': 'externalKeyReferenceDetails',
+            'is_auto_rotated': 'isAutoRotated'
         }
 
         self._compartment_id = None
@@ -170,6 +176,7 @@ class KeyVersion(object):
         self._replica_details = None
         self._is_primary = None
         self._external_key_reference_details = None
+        self._is_auto_rotated = None
 
     @property
     def compartment_id(self):
@@ -508,6 +515,30 @@ class KeyVersion(object):
         :type: oci.key_management.models.ExternalKeyReferenceDetails
         """
         self._external_key_reference_details = external_key_reference_details
+
+    @property
+    def is_auto_rotated(self):
+        """
+        Gets the is_auto_rotated of this KeyVersion.
+        A Boolean Value indicating whether this keyversion is generated from auto rotation of key
+
+
+        :return: The is_auto_rotated of this KeyVersion.
+        :rtype: bool
+        """
+        return self._is_auto_rotated
+
+    @is_auto_rotated.setter
+    def is_auto_rotated(self, is_auto_rotated):
+        """
+        Sets the is_auto_rotated of this KeyVersion.
+        A Boolean Value indicating whether this keyversion is generated from auto rotation of key
+
+
+        :param is_auto_rotated: The is_auto_rotated of this KeyVersion.
+        :type: bool
+        """
+        self._is_auto_rotated = is_auto_rotated
 
     def __repr__(self):
         return formatted_flat_dict(self)

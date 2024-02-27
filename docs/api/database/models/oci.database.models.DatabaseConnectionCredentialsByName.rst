@@ -1,9 +1,9 @@
-DatabaseConnectionCredentailsByName
+DatabaseConnectionCredentialsByName
 ===================================
 
 .. currentmodule:: oci.database.models
 
-.. autoclass:: DatabaseConnectionCredentailsByName
+.. autoclass:: DatabaseConnectionCredentialsByName
     :show-inheritance:
     :special-members: __init__
     :members:

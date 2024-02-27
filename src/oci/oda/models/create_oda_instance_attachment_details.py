@@ -19,6 +19,10 @@ class CreateOdaInstanceAttachmentDetails(object):
     #: This constant has a value of "FUSION"
     ATTACHMENT_TYPE_FUSION = "FUSION"
 
+    #: A constant which can be used with the attachment_type property of a CreateOdaInstanceAttachmentDetails.
+    #: This constant has a value of "MAX"
+    ATTACHMENT_TYPE_MAX = "MAX"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateOdaInstanceAttachmentDetails object with values from keyword arguments.
@@ -30,7 +34,7 @@ class CreateOdaInstanceAttachmentDetails(object):
 
         :param attachment_type:
             The value to assign to the attachment_type property of this CreateOdaInstanceAttachmentDetails.
-            Allowed values for this property are: "FUSION"
+            Allowed values for this property are: "FUSION", "MAX"
         :type attachment_type: str
 
         :param attachment_metadata:
@@ -112,7 +116,7 @@ class CreateOdaInstanceAttachmentDetails(object):
         **[Required]** Gets the attachment_type of this CreateOdaInstanceAttachmentDetails.
         The type of target instance which this ODA instance is being attached.
 
-        Allowed values for this property are: "FUSION"
+        Allowed values for this property are: "FUSION", "MAX"
 
 
         :return: The attachment_type of this CreateOdaInstanceAttachmentDetails.
@@ -130,7 +134,7 @@ class CreateOdaInstanceAttachmentDetails(object):
         :param attachment_type: The attachment_type of this CreateOdaInstanceAttachmentDetails.
         :type: str
         """
-        allowed_values = ["FUSION"]
+        allowed_values = ["FUSION", "MAX"]
         if not value_allowed_none_or_none_sentinel(attachment_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `attachment_type`, must be None or one of {allowed_values}"

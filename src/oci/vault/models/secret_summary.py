@@ -130,6 +130,14 @@ class SecretSummary(object):
             The value to assign to the vault_id property of this SecretSummary.
         :type vault_id: str
 
+        :param secret_generation_context:
+            The value to assign to the secret_generation_context property of this SecretSummary.
+        :type secret_generation_context: oci.vault.models.SecretGenerationContext
+
+        :param is_auto_generation_enabled:
+            The value to assign to the is_auto_generation_enabled property of this SecretSummary.
+        :type is_auto_generation_enabled: bool
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -149,7 +157,9 @@ class SecretSummary(object):
             'time_created': 'datetime',
             'time_of_current_version_expiry': 'datetime',
             'time_of_deletion': 'datetime',
-            'vault_id': 'str'
+            'vault_id': 'str',
+            'secret_generation_context': 'SecretGenerationContext',
+            'is_auto_generation_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -170,7 +180,9 @@ class SecretSummary(object):
             'time_created': 'timeCreated',
             'time_of_current_version_expiry': 'timeOfCurrentVersionExpiry',
             'time_of_deletion': 'timeOfDeletion',
-            'vault_id': 'vaultId'
+            'vault_id': 'vaultId',
+            'secret_generation_context': 'secretGenerationContext',
+            'is_auto_generation_enabled': 'isAutoGenerationEnabled'
         }
 
         self._compartment_id = None
@@ -191,6 +203,8 @@ class SecretSummary(object):
         self._time_of_current_version_expiry = None
         self._time_of_deletion = None
         self._vault_id = None
+        self._secret_generation_context = None
+        self._is_auto_generation_enabled = None
 
     @property
     def compartment_id(self):
@@ -675,6 +689,50 @@ class SecretSummary(object):
         :type: str
         """
         self._vault_id = vault_id
+
+    @property
+    def secret_generation_context(self):
+        """
+        Gets the secret_generation_context of this SecretSummary.
+
+        :return: The secret_generation_context of this SecretSummary.
+        :rtype: oci.vault.models.SecretGenerationContext
+        """
+        return self._secret_generation_context
+
+    @secret_generation_context.setter
+    def secret_generation_context(self, secret_generation_context):
+        """
+        Sets the secret_generation_context of this SecretSummary.
+
+        :param secret_generation_context: The secret_generation_context of this SecretSummary.
+        :type: oci.vault.models.SecretGenerationContext
+        """
+        self._secret_generation_context = secret_generation_context
+
+    @property
+    def is_auto_generation_enabled(self):
+        """
+        Gets the is_auto_generation_enabled of this SecretSummary.
+        The value of this flag determines whether or not secret content will be generated automatically.
+
+
+        :return: The is_auto_generation_enabled of this SecretSummary.
+        :rtype: bool
+        """
+        return self._is_auto_generation_enabled
+
+    @is_auto_generation_enabled.setter
+    def is_auto_generation_enabled(self, is_auto_generation_enabled):
+        """
+        Sets the is_auto_generation_enabled of this SecretSummary.
+        The value of this flag determines whether or not secret content will be generated automatically.
+
+
+        :param is_auto_generation_enabled: The is_auto_generation_enabled of this SecretSummary.
+        :type: bool
+        """
+        self._is_auto_generation_enabled = is_auto_generation_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

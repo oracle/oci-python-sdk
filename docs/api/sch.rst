@@ -6,7 +6,9 @@ Sch
     :nosignatures:
     :template: autosummary/service_client.rst
 
+    oci.sch.ConnectorPluginsClient
     oci.sch.ServiceConnectorClient
+    oci.sch.ConnectorPluginsClientCompositeOperations
     oci.sch.ServiceConnectorClientCompositeOperations
 
 --------
@@ -19,6 +21,9 @@ Sch
     :template: autosummary/model_class.rst
 
     oci.sch.models.ChangeServiceConnectorCompartmentDetails
+    oci.sch.models.ConnectorPlugin
+    oci.sch.models.ConnectorPluginCollection
+    oci.sch.models.ConnectorPluginSummary
     oci.sch.models.CreateServiceConnectorDetails
     oci.sch.models.DimensionDetails
     oci.sch.models.DimensionValueDetails
@@ -40,14 +45,19 @@ Sch
     oci.sch.models.MonitoringTargetDetails
     oci.sch.models.NotificationsTargetDetails
     oci.sch.models.ObjectStorageTargetDetails
+    oci.sch.models.PluginSourceDetails
     oci.sch.models.ServiceConnector
     oci.sch.models.ServiceConnectorCollection
     oci.sch.models.ServiceConnectorSummary
+    oci.sch.models.SourceConnectorPlugin
+    oci.sch.models.SourceConnectorPluginSummary
     oci.sch.models.SourceDetails
     oci.sch.models.StaticDimensionValue
     oci.sch.models.StreamingCursorDetails
     oci.sch.models.StreamingSourceDetails
     oci.sch.models.StreamingTargetDetails
+    oci.sch.models.TargetConnectorPlugin
+    oci.sch.models.TargetConnectorPluginSummary
     oci.sch.models.TargetDetails
     oci.sch.models.TaskDetails
     oci.sch.models.TrimHorizonStreamingCursor

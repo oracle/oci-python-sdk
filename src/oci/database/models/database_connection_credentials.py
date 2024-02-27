@@ -32,8 +32,8 @@ class DatabaseConnectionCredentials(object):
         Initializes a new DatabaseConnectionCredentials object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
-        * :class:`~oci.database.models.DatabaseConnectionCredentailsByName`
         * :class:`~oci.database.models.DatabaseSslConnectionCredentials`
+        * :class:`~oci.database.models.DatabaseConnectionCredentialsByName`
         * :class:`~oci.database.models.DatabaseConnectionCredentialsByDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -63,11 +63,11 @@ class DatabaseConnectionCredentials(object):
         """
         type = object_dictionary['credentialType']
 
-        if type == 'NAME_REFERENCE':
-            return 'DatabaseConnectionCredentailsByName'
-
         if type == 'SSL_DETAILS':
             return 'DatabaseSslConnectionCredentials'
+
+        if type == 'NAME_REFERENCE':
+            return 'DatabaseConnectionCredentialsByName'
 
         if type == 'DETAILS':
             return 'DatabaseConnectionCredentialsByDetails'

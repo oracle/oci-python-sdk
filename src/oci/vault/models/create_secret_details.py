@@ -64,6 +64,14 @@ class CreateSecretDetails(object):
             The value to assign to the vault_id property of this CreateSecretDetails.
         :type vault_id: str
 
+        :param secret_generation_context:
+            The value to assign to the secret_generation_context property of this CreateSecretDetails.
+        :type secret_generation_context: oci.vault.models.SecretGenerationContext
+
+        :param enable_auto_generation:
+            The value to assign to the enable_auto_generation property of this CreateSecretDetails.
+        :type enable_auto_generation: bool
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -76,7 +84,9 @@ class CreateSecretDetails(object):
             'rotation_config': 'RotationConfig',
             'secret_name': 'str',
             'secret_rules': 'list[SecretRule]',
-            'vault_id': 'str'
+            'vault_id': 'str',
+            'secret_generation_context': 'SecretGenerationContext',
+            'enable_auto_generation': 'bool'
         }
 
         self.attribute_map = {
@@ -90,7 +100,9 @@ class CreateSecretDetails(object):
             'rotation_config': 'rotationConfig',
             'secret_name': 'secretName',
             'secret_rules': 'secretRules',
-            'vault_id': 'vaultId'
+            'vault_id': 'vaultId',
+            'secret_generation_context': 'secretGenerationContext',
+            'enable_auto_generation': 'enableAutoGeneration'
         }
 
         self._compartment_id = None
@@ -104,6 +116,8 @@ class CreateSecretDetails(object):
         self._secret_name = None
         self._secret_rules = None
         self._vault_id = None
+        self._secret_generation_context = None
+        self._enable_auto_generation = None
 
     @property
     def compartment_id(self):
@@ -220,7 +234,7 @@ class CreateSecretDetails(object):
     @property
     def key_id(self):
         """
-        Gets the key_id of this CreateSecretDetails.
+        **[Required]** Gets the key_id of this CreateSecretDetails.
         The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
 
 
@@ -380,6 +394,50 @@ class CreateSecretDetails(object):
         :type: str
         """
         self._vault_id = vault_id
+
+    @property
+    def secret_generation_context(self):
+        """
+        Gets the secret_generation_context of this CreateSecretDetails.
+
+        :return: The secret_generation_context of this CreateSecretDetails.
+        :rtype: oci.vault.models.SecretGenerationContext
+        """
+        return self._secret_generation_context
+
+    @secret_generation_context.setter
+    def secret_generation_context(self, secret_generation_context):
+        """
+        Sets the secret_generation_context of this CreateSecretDetails.
+
+        :param secret_generation_context: The secret_generation_context of this CreateSecretDetails.
+        :type: oci.vault.models.SecretGenerationContext
+        """
+        self._secret_generation_context = secret_generation_context
+
+    @property
+    def enable_auto_generation(self):
+        """
+        Gets the enable_auto_generation of this CreateSecretDetails.
+        The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
+
+
+        :return: The enable_auto_generation of this CreateSecretDetails.
+        :rtype: bool
+        """
+        return self._enable_auto_generation
+
+    @enable_auto_generation.setter
+    def enable_auto_generation(self, enable_auto_generation):
+        """
+        Sets the enable_auto_generation of this CreateSecretDetails.
+        The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
+
+
+        :param enable_auto_generation: The enable_auto_generation of this CreateSecretDetails.
+        :type: bool
+        """
+        self._enable_auto_generation = enable_auto_generation
 
     def __repr__(self):
         return formatted_flat_dict(self)

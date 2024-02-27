@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateServiceConnectorDetails(object):
     """
-    The configuration details for creating a service connector.
+    The configuration details for creating a connector.
     """
 
     def __init__(self, **kwargs):
@@ -115,7 +115,7 @@ class CreateServiceConnectorDetails(object):
         """
         **[Required]** Gets the compartment_id of this CreateServiceConnectorDetails.
         The `OCID`__ of the
-        comparment to create the service connector in.
+        comparment to create the connector in.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -130,7 +130,7 @@ class CreateServiceConnectorDetails(object):
         """
         Sets the compartment_id of this CreateServiceConnectorDetails.
         The `OCID`__ of the
-        comparment to create the service connector in.
+        comparment to create the connector in.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 

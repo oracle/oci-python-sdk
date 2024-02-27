@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateServiceConnectorDetails(object):
     """
-    The configuration details for updating a service connector.
+    The configuration details for updating a connector.
     """
 
     def __init__(self, **kwargs):

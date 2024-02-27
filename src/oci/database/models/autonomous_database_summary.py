@@ -736,10 +736,6 @@ class AutonomousDatabaseSummary(object):
             The value to assign to the actual_used_data_storage_size_in_tbs property of this AutonomousDatabaseSummary.
         :type actual_used_data_storage_size_in_tbs: float
 
-        :param max_cpu_core_count:
-            The value to assign to the max_cpu_core_count property of this AutonomousDatabaseSummary.
-        :type max_cpu_core_count: int
-
         :param database_edition:
             The value to assign to the database_edition property of this AutonomousDatabaseSummary.
             Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", 'UNKNOWN_ENUM_VALUE'.
@@ -872,7 +868,6 @@ class AutonomousDatabaseSummary(object):
             'is_auto_scaling_for_storage_enabled': 'bool',
             'allocated_storage_size_in_tbs': 'float',
             'actual_used_data_storage_size_in_tbs': 'float',
-            'max_cpu_core_count': 'int',
             'database_edition': 'str',
             'db_tools_details': 'list[DatabaseTool]',
             'local_disaster_recovery_type': 'str',
@@ -984,7 +979,6 @@ class AutonomousDatabaseSummary(object):
             'is_auto_scaling_for_storage_enabled': 'isAutoScalingForStorageEnabled',
             'allocated_storage_size_in_tbs': 'allocatedStorageSizeInTBs',
             'actual_used_data_storage_size_in_tbs': 'actualUsedDataStorageSizeInTBs',
-            'max_cpu_core_count': 'maxCpuCoreCount',
             'database_edition': 'databaseEdition',
             'db_tools_details': 'dbToolsDetails',
             'local_disaster_recovery_type': 'localDisasterRecoveryType',
@@ -1095,7 +1089,6 @@ class AutonomousDatabaseSummary(object):
         self._is_auto_scaling_for_storage_enabled = None
         self._allocated_storage_size_in_tbs = None
         self._actual_used_data_storage_size_in_tbs = None
-        self._max_cpu_core_count = None
         self._database_edition = None
         self._db_tools_details = None
         self._local_disaster_recovery_type = None
@@ -1241,7 +1234,7 @@ class AutonomousDatabaseSummary(object):
     def vault_id(self):
         """
         Gets the vault_id of this AutonomousDatabaseSummary.
-        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__.
+        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
@@ -1256,7 +1249,7 @@ class AutonomousDatabaseSummary(object):
     def vault_id(self, vault_id):
         """
         Sets the vault_id of this AutonomousDatabaseSummary.
-        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__.
+        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
@@ -1295,7 +1288,7 @@ class AutonomousDatabaseSummary(object):
     def kms_key_version_id(self):
         """
         Gets the kms_key_version_id of this AutonomousDatabaseSummary.
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
 
 
         :return: The kms_key_version_id of this AutonomousDatabaseSummary.
@@ -1307,7 +1300,7 @@ class AutonomousDatabaseSummary(object):
     def kms_key_version_id(self, kms_key_version_id):
         """
         Sets the kms_key_version_id of this AutonomousDatabaseSummary.
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
 
 
         :param kms_key_version_id: The kms_key_version_id of this AutonomousDatabaseSummary.
@@ -1397,7 +1390,7 @@ class AutonomousDatabaseSummary(object):
     def in_memory_percentage(self):
         """
         Gets the in_memory_percentage of this AutonomousDatabaseSummary.
-        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
 
 
         :return: The in_memory_percentage of this AutonomousDatabaseSummary.
@@ -1409,7 +1402,7 @@ class AutonomousDatabaseSummary(object):
     def in_memory_percentage(self, in_memory_percentage):
         """
         Sets the in_memory_percentage of this AutonomousDatabaseSummary.
-        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
 
 
         :param in_memory_percentage: The in_memory_percentage of this AutonomousDatabaseSummary.
@@ -1639,7 +1632,7 @@ class AutonomousDatabaseSummary(object):
     def cpu_core_count(self):
         """
         Gets the cpu_core_count of this AutonomousDatabaseSummary.
-        The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
+        The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
 
         **Note:** This parameter cannot be used with the `ocpuCount` parameter.
 
@@ -1655,7 +1648,7 @@ class AutonomousDatabaseSummary(object):
     def cpu_core_count(self, cpu_core_count):
         """
         Sets the cpu_core_count of this AutonomousDatabaseSummary.
-        The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
+        The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
 
         **Note:** This parameter cannot be used with the `ocpuCount` parameter.
 
@@ -1695,7 +1688,7 @@ class AutonomousDatabaseSummary(object):
     def compute_model(self):
         """
         Gets the compute_model of this AutonomousDatabaseSummary.
-        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 
         Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -1710,7 +1703,7 @@ class AutonomousDatabaseSummary(object):
     def compute_model(self, compute_model):
         """
         Sets the compute_model of this AutonomousDatabaseSummary.
-        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 
 
         :param compute_model: The compute_model of this AutonomousDatabaseSummary.
@@ -1725,8 +1718,8 @@ class AutonomousDatabaseSummary(object):
     def compute_count(self):
         """
         Gets the compute_count of this AutonomousDatabaseSummary.
-        The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
-        For an Autonomous Database Serverless instance, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        The compute amount (CPUs) available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
+        For an Autonomous Database Serverless instance, the 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
 
 
         :return: The compute_count of this AutonomousDatabaseSummary.
@@ -1738,8 +1731,8 @@ class AutonomousDatabaseSummary(object):
     def compute_count(self, compute_count):
         """
         Sets the compute_count of this AutonomousDatabaseSummary.
-        The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
-        For an Autonomous Database Serverless instance, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        The compute amount (CPUs) available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
+        For an Autonomous Database Serverless instance, the 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
 
 
         :param compute_count: The compute_count of this AutonomousDatabaseSummary.
@@ -1803,7 +1796,8 @@ class AutonomousDatabaseSummary(object):
 
         The following points apply:
         - For Autonomous Databases on Dedicated Exadata Infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Database Serverless instances.)
-        - To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
+        - To provision cores, enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both serverless and dedicated Exadata infrastructure.
+        - For Autonomous Database Serverless instances, this parameter is not used.
 
         For Autonomous Databases on Dedicated Exadata Infrastructure, the maximum number of cores is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
 
@@ -1825,7 +1819,8 @@ class AutonomousDatabaseSummary(object):
 
         The following points apply:
         - For Autonomous Databases on Dedicated Exadata Infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Database Serverless instances.)
-        - To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
+        - To provision cores, enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both serverless and dedicated Exadata infrastructure.
+        - For Autonomous Database Serverless instances, this parameter is not used.
 
         For Autonomous Databases on Dedicated Exadata Infrastructure, the maximum number of cores is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
 
@@ -1891,7 +1886,7 @@ class AutonomousDatabaseSummary(object):
     def memory_per_oracle_compute_unit_in_gbs(self):
         """
         Gets the memory_per_oracle_compute_unit_in_gbs of this AutonomousDatabaseSummary.
-        The amount of memory (in GBs) enabled per OCPU or ECPU.
+        The amount of memory (in GBs) enabled per ECPU or OCPU.
 
 
         :return: The memory_per_oracle_compute_unit_in_gbs of this AutonomousDatabaseSummary.
@@ -1903,7 +1898,7 @@ class AutonomousDatabaseSummary(object):
     def memory_per_oracle_compute_unit_in_gbs(self, memory_per_oracle_compute_unit_in_gbs):
         """
         Sets the memory_per_oracle_compute_unit_in_gbs of this AutonomousDatabaseSummary.
-        The amount of memory (in GBs) enabled per OCPU or ECPU.
+        The amount of memory (in GBs) enabled per ECPU or OCPU.
 
 
         :param memory_per_oracle_compute_unit_in_gbs: The memory_per_oracle_compute_unit_in_gbs of this AutonomousDatabaseSummary.
@@ -2021,7 +2016,7 @@ class AutonomousDatabaseSummary(object):
     def autonomous_container_database_id(self):
         """
         Gets the autonomous_container_database_id of this AutonomousDatabaseSummary.
-        The Autonomous Container Database `OCID`__.
+        The Autonomous Container Database `OCID`__. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -2035,7 +2030,7 @@ class AutonomousDatabaseSummary(object):
     def autonomous_container_database_id(self, autonomous_container_database_id):
         """
         Sets the autonomous_container_database_id of this AutonomousDatabaseSummary.
-        The Autonomous Container Database `OCID`__.
+        The Autonomous Container Database `OCID`__. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -2168,9 +2163,9 @@ class AutonomousDatabaseSummary(object):
         The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
         License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service.
         Note that when provisioning an `Autonomous Database on dedicated Exadata infrastructure`__, this attribute must be null. It is already set at the
-        Autonomous Exadata Infrastructure level. When provisioning an `Autonomous Database Serverless]`__ database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
+        Autonomous Exadata Infrastructure level. When provisioning an `Autonomous Database Serverless]`__ database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
 
-        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
@@ -2191,9 +2186,9 @@ class AutonomousDatabaseSummary(object):
         The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
         License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service.
         Note that when provisioning an `Autonomous Database on dedicated Exadata infrastructure`__, this attribute must be null. It is already set at the
-        Autonomous Exadata Infrastructure level. When provisioning an `Autonomous Database Serverless]`__ database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
+        Autonomous Exadata Infrastructure level. When provisioning an `Autonomous Database Serverless]`__ database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
 
-        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
@@ -2403,7 +2398,10 @@ class AutonomousDatabaseSummary(object):
     def private_endpoint_label(self):
         """
         Gets the private_endpoint_label of this AutonomousDatabaseSummary.
-        The resource's private endpoint label. Setting this to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
+        The resource's private endpoint label.
+        - Setting the endpoint label to a non-empty string creates a private endpoint database.
+        - Resetting the endpoint label to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
+        - Setting the endpoint label to a non-empty string value, updates to a new private endpoint database, when the database is disabled and re-enabled.
 
         This setting cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
@@ -2417,7 +2415,10 @@ class AutonomousDatabaseSummary(object):
     def private_endpoint_label(self, private_endpoint_label):
         """
         Sets the private_endpoint_label of this AutonomousDatabaseSummary.
-        The resource's private endpoint label. Setting this to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
+        The resource's private endpoint label.
+        - Setting the endpoint label to a non-empty string creates a private endpoint database.
+        - Resetting the endpoint label to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
+        - Setting the endpoint label to a non-empty string value, updates to a new private endpoint database, when the database is disabled and re-enabled.
 
         This setting cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 
@@ -2553,7 +2554,7 @@ class AutonomousDatabaseSummary(object):
          if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console.
         When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
 
-        This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
+        This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform. For Autonomous Database Serverless instances, `whitelistedIps` is used.
 
 
         :return: The is_access_control_enabled of this AutonomousDatabaseSummary.
@@ -2571,7 +2572,7 @@ class AutonomousDatabaseSummary(object):
          if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console.
         When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
 
-        This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
+        This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform. For Autonomous Database Serverless instances, `whitelistedIps` is used.
 
 
         :param is_access_control_enabled: The is_access_control_enabled of this AutonomousDatabaseSummary.
@@ -2585,9 +2586,10 @@ class AutonomousDatabaseSummary(object):
         Gets the whitelisted_ips of this AutonomousDatabaseSummary.
         The client IP access control list (ACL). This feature is available for `Autonomous Database Serverless]`__ and on Exadata Cloud@Customer.
         Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
 
         For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
-        Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs.
+        Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if it\u2019s other configurations that need multiple pieces of information then its each piece is connected with semicolon (;) as a delimiter.
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.<unique_id>\",\"ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1\",\"ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16\"]`
         For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations.
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"1.1.2.25\"]`
@@ -2610,9 +2612,10 @@ class AutonomousDatabaseSummary(object):
         Sets the whitelisted_ips of this AutonomousDatabaseSummary.
         The client IP access control list (ACL). This feature is available for `Autonomous Database Serverless]`__ and on Exadata Cloud@Customer.
         Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
 
         For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
-        Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs.
+        Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if it\u2019s other configurations that need multiple pieces of information then its each piece is connected with semicolon (;) as a delimiter.
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.<unique_id>\",\"ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1\",\"ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16\"]`
         For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations.
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"1.1.2.25\"]`
@@ -2663,9 +2666,10 @@ class AutonomousDatabaseSummary(object):
         Gets the standby_whitelisted_ips of this AutonomousDatabaseSummary.
         The client IP access control list (ACL). This feature is available for `Autonomous Database Serverless]`__ and on Exadata Cloud@Customer.
         Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
 
         For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
-        Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs.
+        Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if it\u2019s other configurations that need multiple pieces of information then its each piece is connected with semicolon (;) as a delimiter.
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.<unique_id>\",\"ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1\",\"ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16\"]`
         For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations.
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"1.1.2.25\"]`
@@ -2688,9 +2692,10 @@ class AutonomousDatabaseSummary(object):
         Sets the standby_whitelisted_ips of this AutonomousDatabaseSummary.
         The client IP access control list (ACL). This feature is available for `Autonomous Database Serverless]`__ and on Exadata Cloud@Customer.
         Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+        If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
 
         For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
-        Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs.
+        Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if it\u2019s other configurations that need multiple pieces of information then its each piece is connected with semicolon (;) as a delimiter.
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.<unique_id>\",\"ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1\",\"ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16\"]`
         For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations.
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"1.1.2.25\"]`
@@ -2735,7 +2740,7 @@ class AutonomousDatabaseSummary(object):
     def is_auto_scaling_enabled(self):
         """
         Gets the is_auto_scaling_enabled of this AutonomousDatabaseSummary.
-        Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
+        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
 
 
         :return: The is_auto_scaling_enabled of this AutonomousDatabaseSummary.
@@ -2747,7 +2752,7 @@ class AutonomousDatabaseSummary(object):
     def is_auto_scaling_enabled(self, is_auto_scaling_enabled):
         """
         Sets the is_auto_scaling_enabled of this AutonomousDatabaseSummary.
-        Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
+        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
 
 
         :param is_auto_scaling_enabled: The is_auto_scaling_enabled of this AutonomousDatabaseSummary.
@@ -3395,7 +3400,7 @@ class AutonomousDatabaseSummary(object):
     def key_store_id(self):
         """
         Gets the key_store_id of this AutonomousDatabaseSummary.
-        The `OCID`__ of the key store.
+        The `OCID`__ of the key store of Oracle Vault.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -3409,7 +3414,7 @@ class AutonomousDatabaseSummary(object):
     def key_store_id(self, key_store_id):
         """
         Sets the key_store_id of this AutonomousDatabaseSummary.
-        The `OCID`__ of the key store.
+        The `OCID`__ of the key store of Oracle Vault.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -3603,7 +3608,7 @@ class AutonomousDatabaseSummary(object):
         Gets the is_mtls_connection_required of this AutonomousDatabaseSummary.
         Specifies if the Autonomous Database requires mTLS connections.
 
-        This may not be updated in parallel with any of the following: licenseModel, databaseEdition, cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds, customerContacts, dbVersion, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+        This may not be updated in parallel with any of the following: licenseModel, databaseEdition, cpuCoreCount, computeCount, dataStorageSizeInTBs, whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds, customerContacts, dbVersion, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
         Service Change: The default value of the isMTLSConnectionRequired attribute will change from true to false on July 1, 2023 in the following APIs:
         - CreateAutonomousDatabase
@@ -3625,7 +3630,7 @@ class AutonomousDatabaseSummary(object):
         Sets the is_mtls_connection_required of this AutonomousDatabaseSummary.
         Specifies if the Autonomous Database requires mTLS connections.
 
-        This may not be updated in parallel with any of the following: licenseModel, databaseEdition, cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds, customerContacts, dbVersion, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+        This may not be updated in parallel with any of the following: licenseModel, databaseEdition, cpuCoreCount, computeCount, dataStorageSizeInTBs, whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds, customerContacts, dbVersion, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
         Service Change: The default value of the isMTLSConnectionRequired attribute will change from true to false on July 1, 2023 in the following APIs:
         - CreateAutonomousDatabase
@@ -3797,7 +3802,7 @@ class AutonomousDatabaseSummary(object):
     def scheduled_operations(self):
         """
         Gets the scheduled_operations of this AutonomousDatabaseSummary.
-        The list of scheduled operations.
+        The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
@@ -3811,7 +3816,7 @@ class AutonomousDatabaseSummary(object):
     def scheduled_operations(self, scheduled_operations):
         """
         Sets the scheduled_operations of this AutonomousDatabaseSummary.
-        The list of scheduled operations.
+        The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
 
         This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
 
@@ -3896,30 +3901,6 @@ class AutonomousDatabaseSummary(object):
         :type: float
         """
         self._actual_used_data_storage_size_in_tbs = actual_used_data_storage_size_in_tbs
-
-    @property
-    def max_cpu_core_count(self):
-        """
-        Gets the max_cpu_core_count of this AutonomousDatabaseSummary.
-        The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
-
-
-        :return: The max_cpu_core_count of this AutonomousDatabaseSummary.
-        :rtype: int
-        """
-        return self._max_cpu_core_count
-
-    @max_cpu_core_count.setter
-    def max_cpu_core_count(self, max_cpu_core_count):
-        """
-        Sets the max_cpu_core_count of this AutonomousDatabaseSummary.
-        The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
-
-
-        :param max_cpu_core_count: The max_cpu_core_count of this AutonomousDatabaseSummary.
-        :type: int
-        """
-        self._max_cpu_core_count = max_cpu_core_count
 
     @property
     def database_edition(self):

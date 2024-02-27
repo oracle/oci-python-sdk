@@ -1760,6 +1760,10 @@ class ContainerInstanceClient(object):
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
+        :param bool is_previous: (optional)
+            Returns the logs for the previous run of the container in a pod if the pod exists.
+            If the container fails for some reason, this parameter is useful to determine the root cause of the failure.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1789,7 +1793,8 @@ class ContainerInstanceClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "is_previous"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1805,6 +1810,11 @@ class ContainerInstanceClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isPrevious": kwargs.get("is_previous", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json, text/plain",
@@ -1829,6 +1839,7 @@ class ContainerInstanceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -1840,6 +1851,7 @@ class ContainerInstanceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),

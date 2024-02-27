@@ -6,6 +6,7 @@
 
 from __future__ import absolute_import
 
+from .auto_key_rotation_details import AutoKeyRotationDetails
 from .backup_key_details import BackupKeyDetails
 from .backup_location import BackupLocation
 from .backup_location_bucket import BackupLocationBucket
@@ -81,6 +82,7 @@ from .wrapping_key import WrappingKey
 
 # Maps type names to classes for key_management services.
 key_management_type_mapping = {
+    "AutoKeyRotationDetails": AutoKeyRotationDetails,
     "BackupKeyDetails": BackupKeyDetails,
     "BackupLocation": BackupLocation,
     "BackupLocationBucket": BackupLocationBucket,

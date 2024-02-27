@@ -120,6 +120,10 @@ class OperatorControl(object):
             The value to assign to the time_of_modification property of this OperatorControl.
         :type time_of_modification: datetime
 
+        :param number_of_approvers:
+            The value to assign to the number_of_approvers property of this OperatorControl.
+        :type number_of_approvers: int
+
         :param is_default_operator_control:
             The value to assign to the is_default_operator_control property of this OperatorControl.
         :type is_default_operator_control: bool
@@ -157,6 +161,7 @@ class OperatorControl(object):
             'lifecycle_state': 'str',
             'time_of_creation': 'datetime',
             'time_of_modification': 'datetime',
+            'number_of_approvers': 'int',
             'is_default_operator_control': 'bool',
             'time_of_deletion': 'datetime',
             'last_modified_info': 'str',
@@ -180,6 +185,7 @@ class OperatorControl(object):
             'lifecycle_state': 'lifecycleState',
             'time_of_creation': 'timeOfCreation',
             'time_of_modification': 'timeOfModification',
+            'number_of_approvers': 'numberOfApprovers',
             'is_default_operator_control': 'isDefaultOperatorControl',
             'time_of_deletion': 'timeOfDeletion',
             'last_modified_info': 'lastModifiedInfo',
@@ -202,6 +208,7 @@ class OperatorControl(object):
         self._lifecycle_state = None
         self._time_of_creation = None
         self._time_of_modification = None
+        self._number_of_approvers = None
         self._is_default_operator_control = None
         self._time_of_deletion = None
         self._last_modified_info = None
@@ -595,6 +602,30 @@ class OperatorControl(object):
         :type: datetime
         """
         self._time_of_modification = time_of_modification
+
+    @property
+    def number_of_approvers(self):
+        """
+        Gets the number_of_approvers of this OperatorControl.
+        Number of approvers required to approve an access request.
+
+
+        :return: The number_of_approvers of this OperatorControl.
+        :rtype: int
+        """
+        return self._number_of_approvers
+
+    @number_of_approvers.setter
+    def number_of_approvers(self, number_of_approvers):
+        """
+        Sets the number_of_approvers of this OperatorControl.
+        Number of approvers required to approve an access request.
+
+
+        :param number_of_approvers: The number_of_approvers of this OperatorControl.
+        :type: int
+        """
+        self._number_of_approvers = number_of_approvers
 
     @property
     def is_default_operator_control(self):

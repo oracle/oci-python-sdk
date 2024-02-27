@@ -52,6 +52,14 @@ class CreateKeyDetails(object):
             The value to assign to the key_shape property of this CreateKeyDetails.
         :type key_shape: oci.key_management.models.KeyShape
 
+        :param is_auto_rotation_enabled:
+            The value to assign to the is_auto_rotation_enabled property of this CreateKeyDetails.
+        :type is_auto_rotation_enabled: bool
+
+        :param auto_key_rotation_details:
+            The value to assign to the auto_key_rotation_details property of this CreateKeyDetails.
+        :type auto_key_rotation_details: oci.key_management.models.AutoKeyRotationDetails
+
         :param protection_mode:
             The value to assign to the protection_mode property of this CreateKeyDetails.
             Allowed values for this property are: "HSM", "SOFTWARE", "EXTERNAL"
@@ -68,6 +76,8 @@ class CreateKeyDetails(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'key_shape': 'KeyShape',
+            'is_auto_rotation_enabled': 'bool',
+            'auto_key_rotation_details': 'AutoKeyRotationDetails',
             'protection_mode': 'str',
             'external_key_reference': 'ExternalKeyReference'
         }
@@ -78,6 +88,8 @@ class CreateKeyDetails(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'key_shape': 'keyShape',
+            'is_auto_rotation_enabled': 'isAutoRotationEnabled',
+            'auto_key_rotation_details': 'autoKeyRotationDetails',
             'protection_mode': 'protectionMode',
             'external_key_reference': 'externalKeyReference'
         }
@@ -87,6 +99,8 @@ class CreateKeyDetails(object):
         self._display_name = None
         self._freeform_tags = None
         self._key_shape = None
+        self._is_auto_rotation_enabled = None
+        self._auto_key_rotation_details = None
         self._protection_mode = None
         self._external_key_reference = None
 
@@ -223,6 +237,50 @@ class CreateKeyDetails(object):
         :type: oci.key_management.models.KeyShape
         """
         self._key_shape = key_shape
+
+    @property
+    def is_auto_rotation_enabled(self):
+        """
+        Gets the is_auto_rotation_enabled of this CreateKeyDetails.
+        A parameter specifying whether the auto key rotation is enabled or not.
+
+
+        :return: The is_auto_rotation_enabled of this CreateKeyDetails.
+        :rtype: bool
+        """
+        return self._is_auto_rotation_enabled
+
+    @is_auto_rotation_enabled.setter
+    def is_auto_rotation_enabled(self, is_auto_rotation_enabled):
+        """
+        Sets the is_auto_rotation_enabled of this CreateKeyDetails.
+        A parameter specifying whether the auto key rotation is enabled or not.
+
+
+        :param is_auto_rotation_enabled: The is_auto_rotation_enabled of this CreateKeyDetails.
+        :type: bool
+        """
+        self._is_auto_rotation_enabled = is_auto_rotation_enabled
+
+    @property
+    def auto_key_rotation_details(self):
+        """
+        Gets the auto_key_rotation_details of this CreateKeyDetails.
+
+        :return: The auto_key_rotation_details of this CreateKeyDetails.
+        :rtype: oci.key_management.models.AutoKeyRotationDetails
+        """
+        return self._auto_key_rotation_details
+
+    @auto_key_rotation_details.setter
+    def auto_key_rotation_details(self, auto_key_rotation_details):
+        """
+        Sets the auto_key_rotation_details of this CreateKeyDetails.
+
+        :param auto_key_rotation_details: The auto_key_rotation_details of this CreateKeyDetails.
+        :type: oci.key_management.models.AutoKeyRotationDetails
+        """
+        self._auto_key_rotation_details = auto_key_rotation_details
 
     @property
     def protection_mode(self):

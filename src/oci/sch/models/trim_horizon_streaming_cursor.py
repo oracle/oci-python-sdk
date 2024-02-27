@@ -12,9 +12,11 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TrimHorizonStreamingCursor(StreamingCursorDetails):
     """
-    `TRIM_HORIZON` cursor type. Sets the starting point for consuming the stream at the oldest available message in the stream. For more information about Streaming cursors, see `Using Cursors`__.
+    `TRIM_HORIZON` cursor type. Starts reading from the oldest available message in the stream.
+    For configuration instructions, see
+    `Creating a Connector with a Streaming Source`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm
     """
 
     def __init__(self, **kwargs):

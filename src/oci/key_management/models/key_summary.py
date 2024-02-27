@@ -146,6 +146,10 @@ class KeySummary(object):
             The value to assign to the external_key_reference_details property of this KeySummary.
         :type external_key_reference_details: oci.key_management.models.ExternalKeyReferenceDetails
 
+        :param is_auto_rotation_enabled:
+            The value to assign to the is_auto_rotation_enabled property of this KeySummary.
+        :type is_auto_rotation_enabled: bool
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -158,7 +162,8 @@ class KeySummary(object):
             'vault_id': 'str',
             'protection_mode': 'str',
             'algorithm': 'str',
-            'external_key_reference_details': 'ExternalKeyReferenceDetails'
+            'external_key_reference_details': 'ExternalKeyReferenceDetails',
+            'is_auto_rotation_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -172,7 +177,8 @@ class KeySummary(object):
             'vault_id': 'vaultId',
             'protection_mode': 'protectionMode',
             'algorithm': 'algorithm',
-            'external_key_reference_details': 'externalKeyReferenceDetails'
+            'external_key_reference_details': 'externalKeyReferenceDetails',
+            'is_auto_rotation_enabled': 'isAutoRotationEnabled'
         }
 
         self._compartment_id = None
@@ -186,6 +192,7 @@ class KeySummary(object):
         self._protection_mode = None
         self._algorithm = None
         self._external_key_reference_details = None
+        self._is_auto_rotation_enabled = None
 
     @property
     def compartment_id(self):
@@ -508,6 +515,30 @@ class KeySummary(object):
         :type: oci.key_management.models.ExternalKeyReferenceDetails
         """
         self._external_key_reference_details = external_key_reference_details
+
+    @property
+    def is_auto_rotation_enabled(self):
+        """
+        Gets the is_auto_rotation_enabled of this KeySummary.
+        A parameter specifying whether the auto key rotation is enabled or not.
+
+
+        :return: The is_auto_rotation_enabled of this KeySummary.
+        :rtype: bool
+        """
+        return self._is_auto_rotation_enabled
+
+    @is_auto_rotation_enabled.setter
+    def is_auto_rotation_enabled(self, is_auto_rotation_enabled):
+        """
+        Sets the is_auto_rotation_enabled of this KeySummary.
+        A parameter specifying whether the auto key rotation is enabled or not.
+
+
+        :param is_auto_rotation_enabled: The is_auto_rotation_enabled of this KeySummary.
+        :type: bool
+        """
+        self._is_auto_rotation_enabled = is_auto_rotation_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

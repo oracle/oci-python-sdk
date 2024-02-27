@@ -117,6 +117,10 @@ class LaunchInstanceDetails(object):
             The value to assign to the subnet_id property of this LaunchInstanceDetails.
         :type subnet_id: str
 
+        :param launch_volume_attachments:
+            The value to assign to the launch_volume_attachments property of this LaunchInstanceDetails.
+        :type launch_volume_attachments: list[oci.core.models.LaunchAttachVolumeDetails]
+
         :param is_pv_encryption_in_transit_enabled:
             The value to assign to the is_pv_encryption_in_transit_enabled property of this LaunchInstanceDetails.
         :type is_pv_encryption_in_transit_enabled: bool
@@ -155,6 +159,7 @@ class LaunchInstanceDetails(object):
             'shape_config': 'LaunchInstanceShapeConfigDetails',
             'source_details': 'InstanceSourceDetails',
             'subnet_id': 'str',
+            'launch_volume_attachments': 'list[LaunchAttachVolumeDetails]',
             'is_pv_encryption_in_transit_enabled': 'bool',
             'platform_config': 'LaunchInstancePlatformConfig',
             'instance_configuration_id': 'str'
@@ -185,6 +190,7 @@ class LaunchInstanceDetails(object):
             'shape_config': 'shapeConfig',
             'source_details': 'sourceDetails',
             'subnet_id': 'subnetId',
+            'launch_volume_attachments': 'launchVolumeAttachments',
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
             'platform_config': 'platformConfig',
             'instance_configuration_id': 'instanceConfigurationId'
@@ -214,6 +220,7 @@ class LaunchInstanceDetails(object):
         self._shape_config = None
         self._source_details = None
         self._subnet_id = None
+        self._launch_volume_attachments = None
         self._is_pv_encryption_in_transit_enabled = None
         self._platform_config = None
         self._instance_configuration_id = None
@@ -1021,6 +1028,30 @@ class LaunchInstanceDetails(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def launch_volume_attachments(self):
+        """
+        Gets the launch_volume_attachments of this LaunchInstanceDetails.
+        Volume attachments to create as part of the launch instance operation.
+
+
+        :return: The launch_volume_attachments of this LaunchInstanceDetails.
+        :rtype: list[oci.core.models.LaunchAttachVolumeDetails]
+        """
+        return self._launch_volume_attachments
+
+    @launch_volume_attachments.setter
+    def launch_volume_attachments(self, launch_volume_attachments):
+        """
+        Sets the launch_volume_attachments of this LaunchInstanceDetails.
+        Volume attachments to create as part of the launch instance operation.
+
+
+        :param launch_volume_attachments: The launch_volume_attachments of this LaunchInstanceDetails.
+        :type: list[oci.core.models.LaunchAttachVolumeDetails]
+        """
+        self._launch_volume_attachments = launch_volume_attachments
 
     @property
     def is_pv_encryption_in_transit_enabled(self):

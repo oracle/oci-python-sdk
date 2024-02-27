@@ -12,11 +12,11 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LogRuleTaskDetails(TaskDetails):
     """
-    The log rule task.
+    The log filter task.
     For configuration instructions, see
-    `To create a service connector`__.
+    `Creating a Connector`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm
     """
 
     def __init__(self, **kwargs):
@@ -53,7 +53,7 @@ class LogRuleTaskDetails(TaskDetails):
     def condition(self):
         """
         **[Required]** Gets the condition of this LogRuleTaskDetails.
-        A filter or mask to limit the source used in the flow defined by the service connector.
+        A filter or mask to limit the source used in the flow defined by the connector.
 
 
         :return: The condition of this LogRuleTaskDetails.
@@ -65,7 +65,7 @@ class LogRuleTaskDetails(TaskDetails):
     def condition(self, condition):
         """
         Sets the condition of this LogRuleTaskDetails.
-        A filter or mask to limit the source used in the flow defined by the service connector.
+        A filter or mask to limit the source used in the flow defined by the connector.
 
 
         :param condition: The condition of this LogRuleTaskDetails.

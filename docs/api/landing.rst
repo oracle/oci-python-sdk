@@ -50,6 +50,7 @@ API Reference
 * :doc:`Computed Usage <osub_usage/client/oci.osub_usage.ComputedUsageClient>`
 * :doc:`Computed Usage <osub_usage/client/oci.osub_usage.ComputedUsageClient>`
 * :doc:`Config <apm_config/client/oci.apm_config.ConfigClient>`
+* :doc:`Connector Plugins <sch/client/oci.sch.ConnectorPluginsClient>`
 * :doc:`Container Engine <container_engine/client/oci.container_engine.ContainerEngineClient>`
 * :doc:`Container Instance <container_instances/client/oci.container_instances.ContainerInstanceClient>`
 * :doc:`DNS <dns/client/oci.dns.DnsClient>`

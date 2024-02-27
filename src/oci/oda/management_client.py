@@ -116,6 +116,243 @@ class ManagementClient(object):
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
 
+    def bulk_create_skill_entities(self, oda_instance_id, skill_id, bulk_create_skill_entities_details, **kwargs):
+        """
+        Bulk create composite and value list entities into a skill.
+
+
+        :param str oda_instance_id: (required)
+            Unique Digital Assistant instance identifier.
+
+        :param str skill_id: (required)
+            Unique Skill identifier.
+
+        :param oci.oda.models.BulkCreateSkillEntitiesDetails bulk_create_skill_entities_details: (required)
+            Property values for bulk creating a list of skill entities.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing. This value is included in the opc-request-id response header.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so that you can retry the request if there's
+            a timeout or server error without the risk of executing that same action again.
+
+            Retry tokens expire after 24 hours, but they can become invalid before then if there are
+            conflicting operations. For example, if an instance was deleted and purged from the system,
+            then the service might reject a retry of the original creation request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/bulk_create_skill_entities.py.html>`__ to see an example of how to use bulk_create_skill_entities API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'skillId']
+        resource_path = "/odaInstances/{odaInstanceId}/skills/{skillId}/actions/bulkCreateEntities"
+        method = "POST"
+        operation_name = "bulk_create_skill_entities"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/BulkCreateSkillEntities"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"bulk_create_skill_entities got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "odaInstanceId": oda_instance_id,
+            "skillId": skill_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=bulk_create_skill_entities_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=bulk_create_skill_entities_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def cascading_delete_skill_custom_entities(self, oda_instance_id, skill_id, **kwargs):
+        """
+        Cascading delete of the custom entities in a skill.
+
+
+        :param str oda_instance_id: (required)
+            Unique Digital Assistant instance identifier.
+
+        :param str skill_id: (required)
+            Unique Skill identifier.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control in a PUT or DELETE call for
+            a Digital Assistant instance, set the `if-match` query parameter
+            to the value of the `ETAG` header from a previous GET or POST
+            response for that instance. The service updates or deletes the
+            instance only if the etag that you provide matches the instance's
+            current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing. This value is included in the opc-request-id response header.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so that you can retry the request if there's
+            a timeout or server error without the risk of executing that same action again.
+
+            Retry tokens expire after 24 hours, but they can become invalid before then if there are
+            conflicting operations. For example, if an instance was deleted and purged from the system,
+            then the service might reject a retry of the original creation request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/cascading_delete_skill_custom_entities.py.html>`__ to see an example of how to use cascading_delete_skill_custom_entities API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'skillId']
+        resource_path = "/odaInstances/{odaInstanceId}/skills/{skillId}/actions/cascadingDeleteCustomEntities"
+        method = "POST"
+        operation_name = "cascading_delete_skill_custom_entities"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/CascadingDeleteSkillCustomEntities"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"cascading_delete_skill_custom_entities got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "odaInstanceId": oda_instance_id,
+            "skillId": skill_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def change_oda_private_endpoint_compartment(self, oda_private_endpoint_id, change_oda_private_endpoint_compartment_details, **kwargs):
         """
         Starts an asynchronous job to move the specified ODA Private Endpoint into a different compartment.
@@ -6164,6 +6401,132 @@ class ManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="Channel",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def train_skill(self, oda_instance_id, skill_id, train_skill_details, **kwargs):
+        """
+        Train a skill.
+
+
+        :param str oda_instance_id: (required)
+            Unique Digital Assistant instance identifier.
+
+        :param str skill_id: (required)
+            Unique Skill identifier.
+
+        :param oci.oda.models.TrainSkillDetails train_skill_details: (required)
+            Metadata for training a skill.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control in a PUT or DELETE call for
+            a Digital Assistant instance, set the `if-match` query parameter
+            to the value of the `ETAG` header from a previous GET or POST
+            response for that instance. The service updates or deletes the
+            instance only if the etag that you provide matches the instance's
+            current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing. This value is included in the opc-request-id response header.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so that you can retry the request if there's
+            a timeout or server error without the risk of executing that same action again.
+
+            Retry tokens expire after 24 hours, but they can become invalid before then if there are
+            conflicting operations. For example, if an instance was deleted and purged from the system,
+            then the service might reject a retry of the original creation request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/train_skill.py.html>`__ to see an example of how to use train_skill API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['odaInstanceId', 'skillId']
+        resource_path = "/odaInstances/{odaInstanceId}/skills/{skillId}/actions/train"
+        method = "POST"
+        operation_name = "train_skill"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/TrainSkill"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"train_skill got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "odaInstanceId": oda_instance_id,
+            "skillId": skill_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=train_skill_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=train_skill_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,

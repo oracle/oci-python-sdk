@@ -12,11 +12,11 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ServiceConnector(object):
     """
-    The configuration details of the flow defined by the service connector.
-    For more information about flows defined by service connectors, see
-    `Service Connector Hub Overview`__.
+    The configuration details of the flow defined by the connector.
+    For more information about flows defined by connectors, see
+    `Overview of Connector Hub`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a ServiceConnector.
@@ -164,7 +164,7 @@ class ServiceConnector(object):
     def id(self):
         """
         **[Required]** Gets the id of this ServiceConnector.
-        The `OCID`__ of the service connector.
+        The `OCID`__ of the connector.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -178,7 +178,7 @@ class ServiceConnector(object):
     def id(self, id):
         """
         Sets the id of this ServiceConnector.
-        The `OCID`__ of the service connector.
+        The `OCID`__ of the connector.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -242,7 +242,7 @@ class ServiceConnector(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ServiceConnector.
-        The `OCID`__ of the compartment containing the service connector.
+        The `OCID`__ of the compartment containing the connector.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -256,7 +256,7 @@ class ServiceConnector(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ServiceConnector.
-        The `OCID`__ of the compartment containing the service connector.
+        The `OCID`__ of the compartment containing the connector.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -270,7 +270,7 @@ class ServiceConnector(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this ServiceConnector.
-        The date and time when the service connector was created.
+        The date and time when the connector was created.
         Format is defined by `RFC3339`__.
         Example: `2020-01-25T21:10:29.600Z`
 
@@ -286,7 +286,7 @@ class ServiceConnector(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ServiceConnector.
-        The date and time when the service connector was created.
+        The date and time when the connector was created.
         Format is defined by `RFC3339`__.
         Example: `2020-01-25T21:10:29.600Z`
 
@@ -302,7 +302,7 @@ class ServiceConnector(object):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this ServiceConnector.
-        The date and time when the service connector was updated.
+        The date and time when the connector was updated.
         Format is defined by `RFC3339`__.
         Example: `2020-01-25T21:10:29.600Z`
 
@@ -318,7 +318,7 @@ class ServiceConnector(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this ServiceConnector.
-        The date and time when the service connector was updated.
+        The date and time when the connector was updated.
         Format is defined by `RFC3339`__.
         Example: `2020-01-25T21:10:29.600Z`
 
@@ -334,7 +334,7 @@ class ServiceConnector(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this ServiceConnector.
-        The current state of the service connector.
+        The current state of the connector.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -349,7 +349,7 @@ class ServiceConnector(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ServiceConnector.
-        The current state of the service connector.
+        The current state of the connector.
 
 
         :param lifecycle_state: The lifecycle_state of this ServiceConnector.

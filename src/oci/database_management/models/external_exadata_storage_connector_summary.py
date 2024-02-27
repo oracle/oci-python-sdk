@@ -81,6 +81,14 @@ class ExternalExadataStorageConnectorSummary(DbmResource):
             The value to assign to the agent_id property of this ExternalExadataStorageConnectorSummary.
         :type agent_id: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this ExternalExadataStorageConnectorSummary.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this ExternalExadataStorageConnectorSummary.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -96,7 +104,9 @@ class ExternalExadataStorageConnectorSummary(DbmResource):
             'resource_type': 'str',
             'connection_uri': 'str',
             'storage_server_id': 'str',
-            'agent_id': 'str'
+            'agent_id': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -113,7 +123,9 @@ class ExternalExadataStorageConnectorSummary(DbmResource):
             'resource_type': 'resourceType',
             'connection_uri': 'connectionUri',
             'storage_server_id': 'storageServerId',
-            'agent_id': 'agentId'
+            'agent_id': 'agentId',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
         self._id = None
@@ -130,6 +142,8 @@ class ExternalExadataStorageConnectorSummary(DbmResource):
         self._connection_uri = None
         self._storage_server_id = None
         self._agent_id = None
+        self._freeform_tags = None
+        self._defined_tags = None
         self._resource_type = 'STORAGE_CONNECTOR_SUMMARY'
 
     @property
@@ -211,6 +225,70 @@ class ExternalExadataStorageConnectorSummary(DbmResource):
         :type: str
         """
         self._agent_id = agent_id
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this ExternalExadataStorageConnectorSummary.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this ExternalExadataStorageConnectorSummary.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this ExternalExadataStorageConnectorSummary.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this ExternalExadataStorageConnectorSummary.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this ExternalExadataStorageConnectorSummary.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this ExternalExadataStorageConnectorSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this ExternalExadataStorageConnectorSummary.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this ExternalExadataStorageConnectorSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

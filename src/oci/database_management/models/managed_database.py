@@ -190,6 +190,10 @@ class ManagedDatabase(object):
             The value to assign to the time_created property of this ManagedDatabase.
         :type time_created: datetime
 
+        :param database_version:
+            The value to assign to the database_version property of this ManagedDatabase.
+        :type database_version: str
+
         :param database_status:
             The value to assign to the database_status property of this ManagedDatabase.
             Allowed values for this property are: "UP", "DOWN", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
@@ -224,6 +228,14 @@ class ManagedDatabase(object):
             The value to assign to the additional_details property of this ManagedDatabase.
         :type additional_details: dict(str, str)
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this ManagedDatabase.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this ManagedDatabase.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -240,6 +252,7 @@ class ManagedDatabase(object):
             'db_system_id': 'str',
             'storage_system_id': 'str',
             'time_created': 'datetime',
+            'database_version': 'str',
             'database_status': 'str',
             'parent_container_name': 'str',
             'parent_container_compartment_id': 'str',
@@ -247,7 +260,9 @@ class ManagedDatabase(object):
             'instance_details': 'list[InstanceDetails]',
             'pdb_count': 'int',
             'pdb_status': 'list[PdbStatusDetails]',
-            'additional_details': 'dict(str, str)'
+            'additional_details': 'dict(str, str)',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -265,6 +280,7 @@ class ManagedDatabase(object):
             'db_system_id': 'dbSystemId',
             'storage_system_id': 'storageSystemId',
             'time_created': 'timeCreated',
+            'database_version': 'databaseVersion',
             'database_status': 'databaseStatus',
             'parent_container_name': 'parentContainerName',
             'parent_container_compartment_id': 'parentContainerCompartmentId',
@@ -272,7 +288,9 @@ class ManagedDatabase(object):
             'instance_details': 'instanceDetails',
             'pdb_count': 'pdbCount',
             'pdb_status': 'pdbStatus',
-            'additional_details': 'additionalDetails'
+            'additional_details': 'additionalDetails',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
         self._id = None
@@ -289,6 +307,7 @@ class ManagedDatabase(object):
         self._db_system_id = None
         self._storage_system_id = None
         self._time_created = None
+        self._database_version = None
         self._database_status = None
         self._parent_container_name = None
         self._parent_container_compartment_id = None
@@ -297,6 +316,8 @@ class ManagedDatabase(object):
         self._pdb_count = None
         self._pdb_status = None
         self._additional_details = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @property
     def id(self):
@@ -691,6 +712,30 @@ class ManagedDatabase(object):
         self._time_created = time_created
 
     @property
+    def database_version(self):
+        """
+        Gets the database_version of this ManagedDatabase.
+        The Oracle Database version.
+
+
+        :return: The database_version of this ManagedDatabase.
+        :rtype: str
+        """
+        return self._database_version
+
+    @database_version.setter
+    def database_version(self, database_version):
+        """
+        Sets the database_version of this ManagedDatabase.
+        The Oracle Database version.
+
+
+        :param database_version: The database_version of this ManagedDatabase.
+        :type: str
+        """
+        self._database_version = database_version
+
+    @property
     def database_status(self):
         """
         Gets the database_status of this ManagedDatabase.
@@ -899,6 +944,70 @@ class ManagedDatabase(object):
         :type: dict(str, str)
         """
         self._additional_details = additional_details
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this ManagedDatabase.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this ManagedDatabase.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this ManagedDatabase.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this ManagedDatabase.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this ManagedDatabase.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this ManagedDatabase.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this ManagedDatabase.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this ManagedDatabase.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

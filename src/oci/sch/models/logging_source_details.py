@@ -14,9 +14,9 @@ class LoggingSourceDetails(SourceDetails):
     """
     The Logging source.
     For configuration instructions, see
-    `To create a service connector`__.
+    `Creating a Connector with a Logging Source`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-logging-source.htm
     """
 
     def __init__(self, **kwargs):
@@ -27,7 +27,7 @@ class LoggingSourceDetails(SourceDetails):
 
         :param kind:
             The value to assign to the kind property of this LoggingSourceDetails.
-            Allowed values for this property are: "logging", "monitoring", "streaming"
+            Allowed values for this property are: "logging", "monitoring", "streaming", "plugin"
         :type kind: str
 
         :param log_sources:

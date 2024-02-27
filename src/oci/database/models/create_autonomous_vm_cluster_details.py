@@ -422,7 +422,7 @@ class CreateAutonomousVmClusterDetails(object):
     def compute_model(self):
         """
         Gets the compute_model of this CreateAutonomousVmClusterDetails.
-        The compute model of the Autonomous VM Cluster.
+        The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy.
 
         Allowed values for this property are: "ECPU", "OCPU"
 
@@ -436,7 +436,7 @@ class CreateAutonomousVmClusterDetails(object):
     def compute_model(self, compute_model):
         """
         Sets the compute_model of this CreateAutonomousVmClusterDetails.
-        The compute model of the Autonomous VM Cluster.
+        The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy.
 
 
         :param compute_model: The compute_model of this CreateAutonomousVmClusterDetails.

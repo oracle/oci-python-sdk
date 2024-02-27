@@ -113,6 +113,14 @@ class ExternalExadataInfrastructureSummary(DbmResource):
             The value to assign to the grid_home_path property of this ExternalExadataInfrastructureSummary.
         :type grid_home_path: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this ExternalExadataInfrastructureSummary.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this ExternalExadataInfrastructureSummary.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -129,7 +137,9 @@ class ExternalExadataInfrastructureSummary(DbmResource):
             'rack_size': 'str',
             'compartment_id': 'str',
             'license_model': 'str',
-            'grid_home_path': 'str'
+            'grid_home_path': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -147,7 +157,9 @@ class ExternalExadataInfrastructureSummary(DbmResource):
             'rack_size': 'rackSize',
             'compartment_id': 'compartmentId',
             'license_model': 'licenseModel',
-            'grid_home_path': 'gridHomePath'
+            'grid_home_path': 'gridHomePath',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
         self._id = None
@@ -165,6 +177,8 @@ class ExternalExadataInfrastructureSummary(DbmResource):
         self._compartment_id = None
         self._license_model = None
         self._grid_home_path = None
+        self._freeform_tags = None
+        self._defined_tags = None
         self._resource_type = 'INFRASTRUCTURE_SUMMARY'
 
     @property
@@ -278,6 +292,70 @@ class ExternalExadataInfrastructureSummary(DbmResource):
         :type: str
         """
         self._grid_home_path = grid_home_path
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this ExternalExadataInfrastructureSummary.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this ExternalExadataInfrastructureSummary.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this ExternalExadataInfrastructureSummary.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this ExternalExadataInfrastructureSummary.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this ExternalExadataInfrastructureSummary.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this ExternalExadataInfrastructureSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this ExternalExadataInfrastructureSummary.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this ExternalExadataInfrastructureSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -98,6 +98,10 @@ class CreateOperatorControlAssignmentDetails(object):
             The value to assign to the remote_syslog_server_ca_cert property of this CreateOperatorControlAssignmentDetails.
         :type remote_syslog_server_ca_cert: str
 
+        :param is_hypervisor_log_forwarded:
+            The value to assign to the is_hypervisor_log_forwarded property of this CreateOperatorControlAssignmentDetails.
+        :type is_hypervisor_log_forwarded: bool
+
         :param is_auto_approve_during_maintenance:
             The value to assign to the is_auto_approve_during_maintenance property of this CreateOperatorControlAssignmentDetails.
         :type is_auto_approve_during_maintenance: bool
@@ -126,6 +130,7 @@ class CreateOperatorControlAssignmentDetails(object):
             'remote_syslog_server_address': 'str',
             'remote_syslog_server_port': 'int',
             'remote_syslog_server_ca_cert': 'str',
+            'is_hypervisor_log_forwarded': 'bool',
             'is_auto_approve_during_maintenance': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -146,6 +151,7 @@ class CreateOperatorControlAssignmentDetails(object):
             'remote_syslog_server_address': 'remoteSyslogServerAddress',
             'remote_syslog_server_port': 'remoteSyslogServerPort',
             'remote_syslog_server_ca_cert': 'remoteSyslogServerCACert',
+            'is_hypervisor_log_forwarded': 'isHypervisorLogForwarded',
             'is_auto_approve_during_maintenance': 'isAutoApproveDuringMaintenance',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -165,6 +171,7 @@ class CreateOperatorControlAssignmentDetails(object):
         self._remote_syslog_server_address = None
         self._remote_syslog_server_port = None
         self._remote_syslog_server_ca_cert = None
+        self._is_hypervisor_log_forwarded = None
         self._is_auto_approve_during_maintenance = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -519,6 +526,30 @@ class CreateOperatorControlAssignmentDetails(object):
         :type: str
         """
         self._remote_syslog_server_ca_cert = remote_syslog_server_ca_cert
+
+    @property
+    def is_hypervisor_log_forwarded(self):
+        """
+        Gets the is_hypervisor_log_forwarded of this CreateOperatorControlAssignmentDetails.
+        If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+
+
+        :return: The is_hypervisor_log_forwarded of this CreateOperatorControlAssignmentDetails.
+        :rtype: bool
+        """
+        return self._is_hypervisor_log_forwarded
+
+    @is_hypervisor_log_forwarded.setter
+    def is_hypervisor_log_forwarded(self, is_hypervisor_log_forwarded):
+        """
+        Sets the is_hypervisor_log_forwarded of this CreateOperatorControlAssignmentDetails.
+        If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+
+
+        :param is_hypervisor_log_forwarded: The is_hypervisor_log_forwarded of this CreateOperatorControlAssignmentDetails.
+        :type: bool
+        """
+        self._is_hypervisor_log_forwarded = is_hypervisor_log_forwarded
 
     @property
     def is_auto_approve_during_maintenance(self):

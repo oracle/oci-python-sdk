@@ -48,6 +48,10 @@ class UpdateOperatorControlDetails(object):
             The value to assign to the email_id_list property of this UpdateOperatorControlDetails.
         :type email_id_list: list[str]
 
+        :param number_of_approvers:
+            The value to assign to the number_of_approvers property of this UpdateOperatorControlDetails.
+        :type number_of_approvers: int
+
         :param system_message:
             The value to assign to the system_message property of this UpdateOperatorControlDetails.
         :type system_message: str
@@ -69,6 +73,7 @@ class UpdateOperatorControlDetails(object):
             'pre_approved_op_action_list': 'list[str]',
             'is_fully_pre_approved': 'bool',
             'email_id_list': 'list[str]',
+            'number_of_approvers': 'int',
             'system_message': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -82,6 +87,7 @@ class UpdateOperatorControlDetails(object):
             'pre_approved_op_action_list': 'preApprovedOpActionList',
             'is_fully_pre_approved': 'isFullyPreApproved',
             'email_id_list': 'emailIdList',
+            'number_of_approvers': 'numberOfApprovers',
             'system_message': 'systemMessage',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -94,6 +100,7 @@ class UpdateOperatorControlDetails(object):
         self._pre_approved_op_action_list = None
         self._is_fully_pre_approved = None
         self._email_id_list = None
+        self._number_of_approvers = None
         self._system_message = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -269,6 +276,30 @@ class UpdateOperatorControlDetails(object):
         :type: list[str]
         """
         self._email_id_list = email_id_list
+
+    @property
+    def number_of_approvers(self):
+        """
+        Gets the number_of_approvers of this UpdateOperatorControlDetails.
+        Number of approvers required to approve an access request.
+
+
+        :return: The number_of_approvers of this UpdateOperatorControlDetails.
+        :rtype: int
+        """
+        return self._number_of_approvers
+
+    @number_of_approvers.setter
+    def number_of_approvers(self, number_of_approvers):
+        """
+        Sets the number_of_approvers of this UpdateOperatorControlDetails.
+        Number of approvers required to approve an access request.
+
+
+        :param number_of_approvers: The number_of_approvers of this UpdateOperatorControlDetails.
+        :type: int
+        """
+        self._number_of_approvers = number_of_approvers
 
     @property
     def system_message(self):

@@ -6705,11 +6705,55 @@ class DbManagementClient(object):
         :param str filter_by_database_sub_type: (optional)
             The filter used to filter the databases in the fleet by a specific Oracle Database subtype.
 
+        :param str page: (optional)
+            The page token representing the page from where the next set of paginated results
+            are retrieved. This is usually retrieved from a previous list call.
+
+        :param int limit: (optional)
+            The maximum number of records returned in the paginated response.
+
+        :param str sort_by: (optional)
+            The field to sort information by. Only one sortOrder can be used. The default sort order
+            for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+            The \u2018NAME\u2019 sort order is case-sensitive.
+
+            Allowed values are: "TIMECREATED", "NAME"
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+
+            Allowed values are: "ASC", "DESC"
+
         :param str filter_by_database_deployment_type: (optional)
             The filter used to filter the databases in the fleet by a specific Oracle Database deployment type.
 
         :param str filter_by_database_version: (optional)
             The filter used to filter the databases in the fleet by a specific Oracle Database version.
+
+        :param list[str] defined_tag_equals: (optional)
+            A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+            Each item in the list has the format \"{namespace}.{tagName}.{value}\".  All inputs are case-insensitive.
+            Multiple values for the same key (i.e. same namespace and tag name) are interpreted as \"OR\".
+            Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as \"AND\".
+
+        :param list[str] freeform_tag_equals: (optional)
+            A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+            The key for each tag is \"{tagName}.{value}\".  All inputs are case-insensitive.
+            Multiple values for the same tag name are interpreted as \"OR\".  Values for different tag names are interpreted as \"AND\".
+
+        :param list[str] defined_tag_exists: (optional)
+            A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+            Each item in the list has the format \"{namespace}.{tagName}.true\" (for checking existence of a defined tag)
+            or \"{namespace}.true\".  All inputs are case-insensitive.
+            Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
+            Multiple values for the same key (i.e. same namespace and tag name) are interpreted as \"OR\".
+            Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as \"AND\".
+
+        :param list[str] freeform_tag_exists: (optional)
+            A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+            The key for each tag is \"{tagName}.true\".  All inputs are case-insensitive.
+            Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
+            Multiple values for different tag names are interpreted as \"AND\".
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -6747,8 +6791,16 @@ class DbManagementClient(object):
             "filter_by_metric_names",
             "filter_by_database_type",
             "filter_by_database_sub_type",
+            "page",
+            "limit",
+            "sort_by",
+            "sort_order",
             "filter_by_database_deployment_type",
-            "filter_by_database_version"
+            "filter_by_database_version",
+            "defined_tag_equals",
+            "freeform_tag_equals",
+            "defined_tag_exists",
+            "freeform_tag_exists"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -6762,6 +6814,20 @@ class DbManagementClient(object):
                     f"Invalid value for `compare_type`, must be one of { compare_type_allowed_values }"
                 )
 
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
         query_params = {
             "managedDatabaseGroupId": kwargs.get("managed_database_group_id", missing),
             "compartmentId": kwargs.get("compartment_id", missing),
@@ -6771,8 +6837,16 @@ class DbManagementClient(object):
             "filterByMetricNames": kwargs.get("filter_by_metric_names", missing),
             "filterByDatabaseType": kwargs.get("filter_by_database_type", missing),
             "filterByDatabaseSubType": kwargs.get("filter_by_database_sub_type", missing),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
             "filterByDatabaseDeploymentType": kwargs.get("filter_by_database_deployment_type", missing),
-            "filterByDatabaseVersion": kwargs.get("filter_by_database_version", missing)
+            "filterByDatabaseVersion": kwargs.get("filter_by_database_version", missing),
+            "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
+            "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
+            "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -22665,6 +22739,118 @@ class DbManagementClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def update_external_asm_instance(self, external_asm_instance_id, update_external_asm_instance_details, **kwargs):
+        """
+        Updates the external ASM instance specified by `externalAsmInstanceId`.
+
+
+        :param str external_asm_instance_id: (required)
+            The `OCID`__ of the external ASM instance.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.database_management.models.UpdateExternalAsmInstanceDetails update_external_asm_instance_details: (required)
+            The details required to update an external ASM instance.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.ExternalAsmInstance`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/update_external_asm_instance.py.html>`__ to see an example of how to use update_external_asm_instance API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalAsmInstanceId']
+        resource_path = "/externalAsmInstances/{externalAsmInstanceId}"
+        method = "PUT"
+        operation_name = "update_external_asm_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalAsmInstance/UpdateExternalAsmInstance"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"update_external_asm_instance got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "externalAsmInstanceId": external_asm_instance_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_external_asm_instance_details,
+                response_type="ExternalAsmInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_external_asm_instance_details,
+                response_type="ExternalAsmInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def update_external_cluster(self, external_cluster_id, update_external_cluster_details, **kwargs):
         """
         Updates the external cluster specified by `externalClusterId`.
@@ -22880,6 +23066,118 @@ class DbManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_external_cluster_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def update_external_db_home(self, external_db_home_id, update_external_db_home_details, **kwargs):
+        """
+        Updates the external DB home specified by `externalDbHomeId`.
+
+
+        :param str external_db_home_id: (required)
+            The `OCID`__ of the external database home.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.database_management.models.UpdateExternalDbHomeDetails update_external_db_home_details: (required)
+            The details required to update an external DB home.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.ExternalDbHome`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/update_external_db_home.py.html>`__ to see an example of how to use update_external_db_home API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalDbHomeId']
+        resource_path = "/externalDbHomes/{externalDbHomeId}"
+        method = "PUT"
+        operation_name = "update_external_db_home"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbHome/UpdateExternalDbHome"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"update_external_db_home got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "externalDbHomeId": external_db_home_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_external_db_home_details,
+                response_type="ExternalDbHome",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_external_db_home_details,
+                response_type="ExternalDbHome",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -23565,6 +23863,230 @@ class DbManagementClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def update_external_exadata_storage_grid(self, external_exadata_storage_grid_id, update_external_exadata_storage_grid_details, **kwargs):
+        """
+        Updates the Exadata storage server grid specified by exadataStorageGridId.
+
+
+        :param str external_exadata_storage_grid_id: (required)
+            The `OCID`__ of the Exadata storage grid.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.database_management.models.UpdateExternalExadataStorageGridDetails update_external_exadata_storage_grid_details: (required)
+            The details required to update an external Exadata storage grid.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.ExternalExadataStorageGrid`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/update_external_exadata_storage_grid.py.html>`__ to see an example of how to use update_external_exadata_storage_grid API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalExadataStorageGridId']
+        resource_path = "/externalExadataStorageGrids/{externalExadataStorageGridId}"
+        method = "PUT"
+        operation_name = "update_external_exadata_storage_grid"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageGrid/UpdateExternalExadataStorageGrid"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"update_external_exadata_storage_grid got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "externalExadataStorageGridId": external_exadata_storage_grid_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_external_exadata_storage_grid_details,
+                response_type="ExternalExadataStorageGrid",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_external_exadata_storage_grid_details,
+                response_type="ExternalExadataStorageGrid",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def update_external_exadata_storage_server(self, external_exadata_storage_server_id, update_external_exadata_storage_server_details, **kwargs):
+        """
+        Updates the Exadata storage server specified by exadataStorageServerId.
+
+
+        :param str external_exadata_storage_server_id: (required)
+            The `OCID`__ of the Exadata storage server.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.database_management.models.UpdateExternalExadataStorageServerDetails update_external_exadata_storage_server_details: (required)
+            The details required to update an external Exadata storage server.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.ExternalExadataStorageServer`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/update_external_exadata_storage_server.py.html>`__ to see an example of how to use update_external_exadata_storage_server API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['externalExadataStorageServerId']
+        resource_path = "/externalExadataStorageServers/{externalExadataStorageServerId}"
+        method = "PUT"
+        operation_name = "update_external_exadata_storage_server"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageServer/UpdateExternalExadataStorageServer"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"update_external_exadata_storage_server got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "externalExadataStorageServerId": external_exadata_storage_server_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_external_exadata_storage_server_details,
+                response_type="ExternalExadataStorageServer",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_external_exadata_storage_server_details,
+                response_type="ExternalExadataStorageServer",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def update_external_listener(self, external_listener_id, update_external_listener_details, **kwargs):
         """
         Updates the external listener specified by `externalListenerId`.
@@ -23780,6 +24302,118 @@ class DbManagementClient(object):
                 header_params=header_params,
                 body=update_job_details,
                 response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def update_managed_database(self, managed_database_id, update_managed_database_details, **kwargs):
+        """
+        Updates the Managed Database specified by managedDatabaseId.
+
+
+        :param str managed_database_id: (required)
+            The `OCID`__ of the Managed Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.database_management.models.UpdateManagedDatabaseDetails update_managed_database_details: (required)
+            The details required to update a Managed Database.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.ManagedDatabase`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/update_managed_database.py.html>`__ to see an example of how to use update_managed_database API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedDatabaseId']
+        resource_path = "/managedDatabases/{managedDatabaseId}"
+        method = "PUT"
+        operation_name = "update_managed_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/UpdateManagedDatabase"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"update_managed_database got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "managedDatabaseId": managed_database_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_managed_database_details,
+                response_type="ManagedDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_managed_database_details,
+                response_type="ManagedDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,

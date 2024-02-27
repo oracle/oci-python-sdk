@@ -423,8 +423,10 @@ from .update_basic_preferred_credential_details import UpdateBasicPreferredCrede
 from .update_database_parameters_result import UpdateDatabaseParametersResult
 from .update_db_management_private_endpoint_details import UpdateDbManagementPrivateEndpointDetails
 from .update_external_asm_details import UpdateExternalAsmDetails
+from .update_external_asm_instance_details import UpdateExternalAsmInstanceDetails
 from .update_external_cluster_details import UpdateExternalClusterDetails
 from .update_external_cluster_instance_details import UpdateExternalClusterInstanceDetails
+from .update_external_db_home_details import UpdateExternalDbHomeDetails
 from .update_external_db_node_details import UpdateExternalDbNodeDetails
 from .update_external_db_system_connector_details import UpdateExternalDbSystemConnectorDetails
 from .update_external_db_system_details import UpdateExternalDbSystemDetails
@@ -432,8 +434,11 @@ from .update_external_db_system_discovery_details import UpdateExternalDbSystemD
 from .update_external_db_system_macs_connector_details import UpdateExternalDbSystemMacsConnectorDetails
 from .update_external_exadata_infrastructure_details import UpdateExternalExadataInfrastructureDetails
 from .update_external_exadata_storage_connector_details import UpdateExternalExadataStorageConnectorDetails
+from .update_external_exadata_storage_grid_details import UpdateExternalExadataStorageGridDetails
+from .update_external_exadata_storage_server_details import UpdateExternalExadataStorageServerDetails
 from .update_external_listener_details import UpdateExternalListenerDetails
 from .update_job_details import UpdateJobDetails
+from .update_managed_database_details import UpdateManagedDatabaseDetails
 from .update_managed_database_group_details import UpdateManagedDatabaseGroupDetails
 from .update_named_credential_details import UpdateNamedCredentialDetails
 from .update_named_preferred_credential_details import UpdateNamedPreferredCredentialDetails
@@ -873,8 +878,10 @@ database_management_type_mapping = {
     "UpdateDatabaseParametersResult": UpdateDatabaseParametersResult,
     "UpdateDbManagementPrivateEndpointDetails": UpdateDbManagementPrivateEndpointDetails,
     "UpdateExternalAsmDetails": UpdateExternalAsmDetails,
+    "UpdateExternalAsmInstanceDetails": UpdateExternalAsmInstanceDetails,
     "UpdateExternalClusterDetails": UpdateExternalClusterDetails,
     "UpdateExternalClusterInstanceDetails": UpdateExternalClusterInstanceDetails,
+    "UpdateExternalDbHomeDetails": UpdateExternalDbHomeDetails,
     "UpdateExternalDbNodeDetails": UpdateExternalDbNodeDetails,
     "UpdateExternalDbSystemConnectorDetails": UpdateExternalDbSystemConnectorDetails,
     "UpdateExternalDbSystemDetails": UpdateExternalDbSystemDetails,
@@ -882,8 +889,11 @@ database_management_type_mapping = {
     "UpdateExternalDbSystemMacsConnectorDetails": UpdateExternalDbSystemMacsConnectorDetails,
     "UpdateExternalExadataInfrastructureDetails": UpdateExternalExadataInfrastructureDetails,
     "UpdateExternalExadataStorageConnectorDetails": UpdateExternalExadataStorageConnectorDetails,
+    "UpdateExternalExadataStorageGridDetails": UpdateExternalExadataStorageGridDetails,
+    "UpdateExternalExadataStorageServerDetails": UpdateExternalExadataStorageServerDetails,
     "UpdateExternalListenerDetails": UpdateExternalListenerDetails,
     "UpdateJobDetails": UpdateJobDetails,
+    "UpdateManagedDatabaseDetails": UpdateManagedDatabaseDetails,
     "UpdateManagedDatabaseGroupDetails": UpdateManagedDatabaseGroupDetails,
     "UpdateNamedCredentialDetails": UpdateNamedCredentialDetails,
     "UpdateNamedPreferredCredentialDetails": UpdateNamedPreferredCredentialDetails,

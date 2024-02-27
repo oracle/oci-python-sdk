@@ -38,6 +38,10 @@ class CloneSkillDetails(CreateSkillDetails):
             The value to assign to the platform_version property of this CloneSkillDetails.
         :type platform_version: str
 
+        :param dialog_version:
+            The value to assign to the dialog_version property of this CloneSkillDetails.
+        :type dialog_version: str
+
         :param multilingual_mode:
             The value to assign to the multilingual_mode property of this CloneSkillDetails.
             Allowed values for this property are: "NATIVE", "TRANSLATION"
@@ -77,6 +81,7 @@ class CloneSkillDetails(CreateSkillDetails):
             'category': 'str',
             'description': 'str',
             'platform_version': 'str',
+            'dialog_version': 'str',
             'multilingual_mode': 'str',
             'primary_language_tag': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -92,6 +97,7 @@ class CloneSkillDetails(CreateSkillDetails):
             'category': 'category',
             'description': 'description',
             'platform_version': 'platformVersion',
+            'dialog_version': 'dialogVersion',
             'multilingual_mode': 'multilingualMode',
             'primary_language_tag': 'primaryLanguageTag',
             'freeform_tags': 'freeformTags',
@@ -106,6 +112,7 @@ class CloneSkillDetails(CreateSkillDetails):
         self._category = None
         self._description = None
         self._platform_version = None
+        self._dialog_version = None
         self._multilingual_mode = None
         self._primary_language_tag = None
         self._freeform_tags = None

@@ -56,6 +56,10 @@ class CreateCloudExadataInfrastructureDetails(object):
             The value to assign to the defined_tags property of this CreateCloudExadataInfrastructureDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this CreateCloudExadataInfrastructureDetails.
+        :type cluster_placement_group_id: str
+
         :param customer_contacts:
             The value to assign to the customer_contacts property of this CreateCloudExadataInfrastructureDetails.
         :type customer_contacts: list[oci.database.models.CustomerContact]
@@ -71,6 +75,7 @@ class CreateCloudExadataInfrastructureDetails(object):
             'maintenance_window': 'MaintenanceWindow',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'cluster_placement_group_id': 'str',
             'customer_contacts': 'list[CustomerContact]'
         }
 
@@ -84,6 +89,7 @@ class CreateCloudExadataInfrastructureDetails(object):
             'maintenance_window': 'maintenanceWindow',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
             'customer_contacts': 'customerContacts'
         }
 
@@ -96,6 +102,7 @@ class CreateCloudExadataInfrastructureDetails(object):
         self._maintenance_window = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._cluster_placement_group_id = None
         self._customer_contacts = None
 
     @property
@@ -329,6 +336,34 @@ class CreateCloudExadataInfrastructureDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this CreateCloudExadataInfrastructureDetails.
+        The `OCID`__ of the cluster placement group of the Exadata Infrastructure.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The cluster_placement_group_id of this CreateCloudExadataInfrastructureDetails.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this CreateCloudExadataInfrastructureDetails.
+        The `OCID`__ of the cluster placement group of the Exadata Infrastructure.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this CreateCloudExadataInfrastructureDetails.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
 
     @property
     def customer_contacts(self):

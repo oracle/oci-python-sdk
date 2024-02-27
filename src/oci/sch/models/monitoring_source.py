@@ -46,7 +46,7 @@ class MonitoringSource(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this MonitoringSource.
-        The `OCID`__ of the compartment containing the metric namespaces you want to use for the Monitoring source.
+        The `OCID`__ of a compartment containing metric namespaces you want to use for the Monitoring source.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -60,7 +60,7 @@ class MonitoringSource(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this MonitoringSource.
-        The `OCID`__ of the compartment containing the metric namespaces you want to use for the Monitoring source.
+        The `OCID`__ of a compartment containing metric namespaces you want to use for the Monitoring source.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 

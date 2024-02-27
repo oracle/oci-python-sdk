@@ -12,11 +12,11 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ObjectStorageTargetDetails(TargetDetails):
     """
-    The bucket used for the Object Storage target.
+    The destination bucket for data transferred from the source.
     For configuration instructions, see
-    `To create a service connector`__.
+    `Creating a Connector`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm
     """
 
     def __init__(self, **kwargs):
@@ -105,7 +105,9 @@ class ObjectStorageTargetDetails(TargetDetails):
     def bucket_name(self):
         """
         **[Required]** Gets the bucket_name of this ObjectStorageTargetDetails.
-        The name of the bucket. Avoid entering confidential information.
+        The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-),
+        underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace.
+        Avoid entering confidential information. Example: my-new-bucket1
 
 
         :return: The bucket_name of this ObjectStorageTargetDetails.
@@ -117,7 +119,9 @@ class ObjectStorageTargetDetails(TargetDetails):
     def bucket_name(self, bucket_name):
         """
         Sets the bucket_name of this ObjectStorageTargetDetails.
-        The name of the bucket. Avoid entering confidential information.
+        The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-),
+        underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace.
+        Avoid entering confidential information. Example: my-new-bucket1
 
 
         :param bucket_name: The bucket_name of this ObjectStorageTargetDetails.

@@ -48,7 +48,7 @@ class DimensionDetails(object):
         **[Required]** Gets the name of this DimensionDetails.
         Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces.
         Custom dimension keys are acceptable. Avoid entering confidential information.
-        Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`.
+        Due to use by Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`.
         For information on valid dimension keys and values, see :func:`metric_data_details`.
         Example: `type`
 
@@ -64,7 +64,7 @@ class DimensionDetails(object):
         Sets the name of this DimensionDetails.
         Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces.
         Custom dimension keys are acceptable. Avoid entering confidential information.
-        Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`.
+        Due to use by Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`.
         For information on valid dimension keys and values, see :func:`metric_data_details`.
         Example: `type`
 

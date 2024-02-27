@@ -940,7 +940,7 @@ class LaunchDbSystemBase(object):
     def kms_key_version_id(self):
         """
         Gets the kms_key_version_id of this LaunchDbSystemBase.
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
 
 
         :return: The kms_key_version_id of this LaunchDbSystemBase.
@@ -952,7 +952,7 @@ class LaunchDbSystemBase(object):
     def kms_key_version_id(self, kms_key_version_id):
         """
         Sets the kms_key_version_id of this LaunchDbSystemBase.
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
 
 
         :param kms_key_version_id: The kms_key_version_id of this LaunchDbSystemBase.

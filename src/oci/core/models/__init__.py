@@ -379,6 +379,10 @@ from .internet_gateway import InternetGateway
 from .ipsec_tunnel_drg_attachment_network_details import IpsecTunnelDrgAttachmentNetworkDetails
 from .ipv6 import Ipv6
 from .ipv6_address_ipv6_subnet_cidr_pair_details import Ipv6AddressIpv6SubnetCidrPairDetails
+from .launch_attach_i_scsi_volume_details import LaunchAttachIScsiVolumeDetails
+from .launch_attach_volume_details import LaunchAttachVolumeDetails
+from .launch_create_volume_details import LaunchCreateVolumeDetails
+from .launch_create_volume_from_attributes import LaunchCreateVolumeFromAttributes
 from .launch_instance_agent_config_details import LaunchInstanceAgentConfigDetails
 from .launch_instance_availability_config_details import LaunchInstanceAvailabilityConfigDetails
 from .launch_instance_details import LaunchInstanceDetails
@@ -958,6 +962,10 @@ core_type_mapping = {
     "IpsecTunnelDrgAttachmentNetworkDetails": IpsecTunnelDrgAttachmentNetworkDetails,
     "Ipv6": Ipv6,
     "Ipv6AddressIpv6SubnetCidrPairDetails": Ipv6AddressIpv6SubnetCidrPairDetails,
+    "LaunchAttachIScsiVolumeDetails": LaunchAttachIScsiVolumeDetails,
+    "LaunchAttachVolumeDetails": LaunchAttachVolumeDetails,
+    "LaunchCreateVolumeDetails": LaunchCreateVolumeDetails,
+    "LaunchCreateVolumeFromAttributes": LaunchCreateVolumeFromAttributes,
     "LaunchInstanceAgentConfigDetails": LaunchInstanceAgentConfigDetails,
     "LaunchInstanceAvailabilityConfigDetails": LaunchInstanceAvailabilityConfigDetails,
     "LaunchInstanceDetails": LaunchInstanceDetails,

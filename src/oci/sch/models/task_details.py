@@ -12,15 +12,15 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TaskDetails(object):
     """
-    An object that represents a task within the flow defined by the service connector.
+    An object that represents a task within the flow defined by the connector.
     An example task is a filter for error logs.
-    For more information about flows defined by service connectors, see
-    `Service Connector Hub Overview`__.
+    For more information about flows defined by connectors, see
+    `Overview of Connector Hub`__.
     For configuration instructions, see
-    `To create a service connector`__.
+    `Creating a Connector`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm
-    __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm
     """
 
     #: A constant which can be used with the kind property of a TaskDetails.
@@ -78,7 +78,7 @@ class TaskDetails(object):
     def kind(self):
         """
         **[Required]** Gets the kind of this TaskDetails.
-        The type descriminator.
+        The type discriminator.
 
         Allowed values for this property are: "function", "logRule", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -93,7 +93,7 @@ class TaskDetails(object):
     def kind(self, kind):
         """
         Sets the kind of this TaskDetails.
-        The type descriminator.
+        The type discriminator.
 
 
         :param kind: The kind of this TaskDetails.

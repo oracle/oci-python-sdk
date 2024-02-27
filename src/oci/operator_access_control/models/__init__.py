@@ -12,6 +12,9 @@ from .access_request_history_collection import AccessRequestHistoryCollection
 from .access_request_history_summary import AccessRequestHistorySummary
 from .access_request_summary import AccessRequestSummary
 from .approve_access_request_details import ApproveAccessRequestDetails
+from .approver_detail import ApproverDetail
+from .assignment_validation_status import AssignmentValidationStatus
+from .audit_log_report import AuditLogReport
 from .change_operator_control_assignment_compartment_details import ChangeOperatorControlAssignmentCompartmentDetails
 from .change_operator_control_compartment_details import ChangeOperatorControlCompartmentDetails
 from .create_operator_control_assignment_details import CreateOperatorControlAssignmentDetails
@@ -32,8 +35,10 @@ from .operator_control_summary import OperatorControlSummary
 from .reject_access_request_details import RejectAccessRequestDetails
 from .review_access_request_details import ReviewAccessRequestDetails
 from .revoke_access_request_details import RevokeAccessRequestDetails
+from .status_detail import StatusDetail
 from .update_operator_control_assignment_details import UpdateOperatorControlAssignmentDetails
 from .update_operator_control_details import UpdateOperatorControlDetails
+from .validate_operator_assignment_details import ValidateOperatorAssignmentDetails
 
 # Maps type names to classes for operator_access_control services.
 operator_access_control_type_mapping = {
@@ -43,6 +48,9 @@ operator_access_control_type_mapping = {
     "AccessRequestHistorySummary": AccessRequestHistorySummary,
     "AccessRequestSummary": AccessRequestSummary,
     "ApproveAccessRequestDetails": ApproveAccessRequestDetails,
+    "ApproverDetail": ApproverDetail,
+    "AssignmentValidationStatus": AssignmentValidationStatus,
+    "AuditLogReport": AuditLogReport,
     "ChangeOperatorControlAssignmentCompartmentDetails": ChangeOperatorControlAssignmentCompartmentDetails,
     "ChangeOperatorControlCompartmentDetails": ChangeOperatorControlCompartmentDetails,
     "CreateOperatorControlAssignmentDetails": CreateOperatorControlAssignmentDetails,
@@ -63,6 +71,8 @@ operator_access_control_type_mapping = {
     "RejectAccessRequestDetails": RejectAccessRequestDetails,
     "ReviewAccessRequestDetails": ReviewAccessRequestDetails,
     "RevokeAccessRequestDetails": RevokeAccessRequestDetails,
+    "StatusDetail": StatusDetail,
     "UpdateOperatorControlAssignmentDetails": UpdateOperatorControlAssignmentDetails,
-    "UpdateOperatorControlDetails": UpdateOperatorControlDetails
+    "UpdateOperatorControlDetails": UpdateOperatorControlDetails,
+    "ValidateOperatorAssignmentDetails": ValidateOperatorAssignmentDetails
 }

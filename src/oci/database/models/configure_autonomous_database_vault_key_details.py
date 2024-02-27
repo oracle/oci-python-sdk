@@ -79,7 +79,7 @@ class ConfigureAutonomousDatabaseVaultKeyDetails(object):
     def vault_id(self):
         """
         Gets the vault_id of this ConfigureAutonomousDatabaseVaultKeyDetails.
-        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__.
+        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
@@ -94,7 +94,7 @@ class ConfigureAutonomousDatabaseVaultKeyDetails(object):
     def vault_id(self, vault_id):
         """
         Sets the vault_id of this ConfigureAutonomousDatabaseVaultKeyDetails.
-        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__.
+        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts

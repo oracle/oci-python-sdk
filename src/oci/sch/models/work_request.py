@@ -15,14 +15,14 @@ class WorkRequest(object):
     An object representing an asynchronous work flow.
 
     Many of the API requests you use to create and configure
-    service connectors do not take effect immediately. In these
+    connectors do not take effect immediately. In these
     cases, the request spawns an asynchronous work flow to fulfill
     the request. WorkRequest objects provide visibility for
     in-progress work flows. For more information about work
     requests, see
     `Viewing the State of a Work Request`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/workrequests.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/workrequests.htm
     """
 
     #: A constant which can be used with the operation_type property of a WorkRequest.

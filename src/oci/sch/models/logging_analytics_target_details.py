@@ -12,11 +12,11 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LoggingAnalyticsTargetDetails(TargetDetails):
     """
-    The log group used for the Logging Analytics target.
+    The destination log group for data transferred from the source.
     For configuration instructions, see
-    `To create a service connector`__.
+    `Creating a Connector`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create
+    __ https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm
     """
 
     def __init__(self, **kwargs):
@@ -88,7 +88,7 @@ class LoggingAnalyticsTargetDetails(TargetDetails):
     def log_source_identifier(self):
         """
         Gets the log_source_identifier of this LoggingAnalyticsTargetDetails.
-        Identifier of the log source that you want to use for processing data received from the service connector source.
+        Identifier of the log source that you want to use for processing data received from the connector source.
         Applies to `StreamingSource` only.
         Equivalent to `name` at :class:`LogAnalyticsSource`.
 
@@ -102,7 +102,7 @@ class LoggingAnalyticsTargetDetails(TargetDetails):
     def log_source_identifier(self, log_source_identifier):
         """
         Sets the log_source_identifier of this LoggingAnalyticsTargetDetails.
-        Identifier of the log source that you want to use for processing data received from the service connector source.
+        Identifier of the log source that you want to use for processing data received from the connector source.
         Applies to `StreamingSource` only.
         Equivalent to `name` at :class:`LogAnalyticsSource`.
 

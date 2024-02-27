@@ -443,8 +443,10 @@ Database Management
     oci.database_management.models.UpdateDatabaseParametersResult
     oci.database_management.models.UpdateDbManagementPrivateEndpointDetails
     oci.database_management.models.UpdateExternalAsmDetails
+    oci.database_management.models.UpdateExternalAsmInstanceDetails
     oci.database_management.models.UpdateExternalClusterDetails
     oci.database_management.models.UpdateExternalClusterInstanceDetails
+    oci.database_management.models.UpdateExternalDbHomeDetails
     oci.database_management.models.UpdateExternalDbNodeDetails
     oci.database_management.models.UpdateExternalDbSystemConnectorDetails
     oci.database_management.models.UpdateExternalDbSystemDetails
@@ -452,8 +454,11 @@ Database Management
     oci.database_management.models.UpdateExternalDbSystemMacsConnectorDetails
     oci.database_management.models.UpdateExternalExadataInfrastructureDetails
     oci.database_management.models.UpdateExternalExadataStorageConnectorDetails
+    oci.database_management.models.UpdateExternalExadataStorageGridDetails
+    oci.database_management.models.UpdateExternalExadataStorageServerDetails
     oci.database_management.models.UpdateExternalListenerDetails
     oci.database_management.models.UpdateJobDetails
+    oci.database_management.models.UpdateManagedDatabaseDetails
     oci.database_management.models.UpdateManagedDatabaseGroupDetails
     oci.database_management.models.UpdateNamedCredentialDetails
     oci.database_management.models.UpdateNamedPreferredCredentialDetails

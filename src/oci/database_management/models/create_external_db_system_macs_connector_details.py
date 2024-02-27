@@ -45,13 +45,23 @@ class CreateExternalDbSystemMacsConnectorDetails(CreateExternalDbSystemConnector
             The value to assign to the connection_info property of this CreateExternalDbSystemMacsConnectorDetails.
         :type connection_info: oci.database_management.models.ExternalDbSystemConnectionInfo
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this CreateExternalDbSystemMacsConnectorDetails.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this CreateExternalDbSystemMacsConnectorDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'connector_type': 'str',
             'display_name': 'str',
             'external_db_system_id': 'str',
             'agent_id': 'str',
-            'connection_info': 'ExternalDbSystemConnectionInfo'
+            'connection_info': 'ExternalDbSystemConnectionInfo',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -59,7 +69,9 @@ class CreateExternalDbSystemMacsConnectorDetails(CreateExternalDbSystemConnector
             'display_name': 'displayName',
             'external_db_system_id': 'externalDbSystemId',
             'agent_id': 'agentId',
-            'connection_info': 'connectionInfo'
+            'connection_info': 'connectionInfo',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
         self._connector_type = None
@@ -67,6 +79,8 @@ class CreateExternalDbSystemMacsConnectorDetails(CreateExternalDbSystemConnector
         self._external_db_system_id = None
         self._agent_id = None
         self._connection_info = None
+        self._freeform_tags = None
+        self._defined_tags = None
         self._connector_type = 'MACS'
 
     @property
@@ -118,6 +132,70 @@ class CreateExternalDbSystemMacsConnectorDetails(CreateExternalDbSystemConnector
         :type: oci.database_management.models.ExternalDbSystemConnectionInfo
         """
         self._connection_info = connection_info
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this CreateExternalDbSystemMacsConnectorDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this CreateExternalDbSystemMacsConnectorDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this CreateExternalDbSystemMacsConnectorDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this CreateExternalDbSystemMacsConnectorDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this CreateExternalDbSystemMacsConnectorDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this CreateExternalDbSystemMacsConnectorDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this CreateExternalDbSystemMacsConnectorDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this CreateExternalDbSystemMacsConnectorDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

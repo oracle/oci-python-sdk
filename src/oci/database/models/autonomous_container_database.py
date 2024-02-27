@@ -761,7 +761,7 @@ class AutonomousContainerDatabase(object):
     def vault_id(self):
         """
         Gets the vault_id of this AutonomousContainerDatabase.
-        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__.
+        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
@@ -776,7 +776,7 @@ class AutonomousContainerDatabase(object):
     def vault_id(self, vault_id):
         """
         Sets the vault_id of this AutonomousContainerDatabase.
-        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__.
+        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__. This parameter and `secretId` are required for Customer Managed Keys.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
@@ -791,7 +791,7 @@ class AutonomousContainerDatabase(object):
     def kms_key_version_id(self):
         """
         Gets the kms_key_version_id of this AutonomousContainerDatabase.
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
 
 
         :return: The kms_key_version_id of this AutonomousContainerDatabase.
@@ -803,7 +803,7 @@ class AutonomousContainerDatabase(object):
     def kms_key_version_id(self, kms_key_version_id):
         """
         Sets the kms_key_version_id of this AutonomousContainerDatabase.
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
 
 
         :param kms_key_version_id: The kms_key_version_id of this AutonomousContainerDatabase.
@@ -1155,7 +1155,7 @@ class AutonomousContainerDatabase(object):
     def dst_file_version(self):
         """
         Gets the dst_file_version of this AutonomousContainerDatabase.
-        DST Time Zone File version of the Autonomous Container Database.
+        DST Time-zone File version of the Autonomous Container Database.
 
 
         :return: The dst_file_version of this AutonomousContainerDatabase.
@@ -1167,7 +1167,7 @@ class AutonomousContainerDatabase(object):
     def dst_file_version(self, dst_file_version):
         """
         Sets the dst_file_version of this AutonomousContainerDatabase.
-        DST Time Zone File version of the Autonomous Container Database.
+        DST Time-zone File version of the Autonomous Container Database.
 
 
         :param dst_file_version: The dst_file_version of this AutonomousContainerDatabase.
@@ -1341,7 +1341,7 @@ class AutonomousContainerDatabase(object):
     def key_store_id(self):
         """
         Gets the key_store_id of this AutonomousContainerDatabase.
-        The `OCID`__ of the key store.
+        The `OCID`__ of the key store of Oracle Vault.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -1355,7 +1355,7 @@ class AutonomousContainerDatabase(object):
     def key_store_id(self, key_store_id):
         """
         Sets the key_store_id of this AutonomousContainerDatabase.
-        The `OCID`__ of the key store.
+        The `OCID`__ of the key store of Oracle Vault.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -1393,7 +1393,7 @@ class AutonomousContainerDatabase(object):
     def memory_per_oracle_compute_unit_in_gbs(self):
         """
         Gets the memory_per_oracle_compute_unit_in_gbs of this AutonomousContainerDatabase.
-        The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
+        The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
 
 
         :return: The memory_per_oracle_compute_unit_in_gbs of this AutonomousContainerDatabase.
@@ -1405,7 +1405,7 @@ class AutonomousContainerDatabase(object):
     def memory_per_oracle_compute_unit_in_gbs(self, memory_per_oracle_compute_unit_in_gbs):
         """
         Sets the memory_per_oracle_compute_unit_in_gbs of this AutonomousContainerDatabase.
-        The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
+        The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
 
 
         :param memory_per_oracle_compute_unit_in_gbs: The memory_per_oracle_compute_unit_in_gbs of this AutonomousContainerDatabase.
@@ -1417,8 +1417,7 @@ class AutonomousContainerDatabase(object):
     def available_cpus(self):
         """
         Gets the available_cpus of this AutonomousContainerDatabase.
-        Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br>
-        For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.
 
 
         :return: The available_cpus of this AutonomousContainerDatabase.
@@ -1430,8 +1429,7 @@ class AutonomousContainerDatabase(object):
     def available_cpus(self, available_cpus):
         """
         Sets the available_cpus of this AutonomousContainerDatabase.
-        Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br>
-        For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.
 
 
         :param available_cpus: The available_cpus of this AutonomousContainerDatabase.
@@ -1443,8 +1441,7 @@ class AutonomousContainerDatabase(object):
     def total_cpus(self):
         """
         Gets the total_cpus of this AutonomousContainerDatabase.
-        The number of CPUs allocated to the Autonomous VM cluster.<br>
-        For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        The number of CPUs allocated to the Autonomous VM cluster.
 
 
         :return: The total_cpus of this AutonomousContainerDatabase.
@@ -1456,8 +1453,7 @@ class AutonomousContainerDatabase(object):
     def total_cpus(self, total_cpus):
         """
         Sets the total_cpus of this AutonomousContainerDatabase.
-        The number of CPUs allocated to the Autonomous VM cluster.<br>
-        For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        The number of CPUs allocated to the Autonomous VM cluster.
 
 
         :param total_cpus: The total_cpus of this AutonomousContainerDatabase.
@@ -1469,9 +1465,7 @@ class AutonomousContainerDatabase(object):
     def reclaimable_cpus(self):
         """
         Gets the reclaimable_cpus of this AutonomousContainerDatabase.
-        For Autonomous Databases on Dedicated Exadata Infrastructure:
-        - These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 
 
         :return: The reclaimable_cpus of this AutonomousContainerDatabase.
@@ -1483,9 +1477,7 @@ class AutonomousContainerDatabase(object):
     def reclaimable_cpus(self, reclaimable_cpus):
         """
         Sets the reclaimable_cpus of this AutonomousContainerDatabase.
-        For Autonomous Databases on Dedicated Exadata Infrastructure:
-        - These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 
 
         :param reclaimable_cpus: The reclaimable_cpus of this AutonomousContainerDatabase.
@@ -1497,8 +1489,7 @@ class AutonomousContainerDatabase(object):
     def provisionable_cpus(self):
         """
         Gets the provisionable_cpus of this AutonomousContainerDatabase.
-        An array of CPU values that can be used to successfully provision a single Autonomous Database.\\
-        For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        An array of CPU values that can be used to successfully provision a single Autonomous Database.
 
 
         :return: The provisionable_cpus of this AutonomousContainerDatabase.
@@ -1510,8 +1501,7 @@ class AutonomousContainerDatabase(object):
     def provisionable_cpus(self, provisionable_cpus):
         """
         Sets the provisionable_cpus of this AutonomousContainerDatabase.
-        An array of CPU values that can be used to successfully provision a single Autonomous Database.\\
-        For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        An array of CPU values that can be used to successfully provision a single Autonomous Database.
 
 
         :param provisionable_cpus: The provisionable_cpus of this AutonomousContainerDatabase.
@@ -1523,7 +1513,9 @@ class AutonomousContainerDatabase(object):
     def compute_model(self):
         """
         Gets the compute_model of this AutonomousContainerDatabase.
-        The compute model of the Autonomous VM Cluster.
+        The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
+
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
 
         Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -1538,7 +1530,9 @@ class AutonomousContainerDatabase(object):
     def compute_model(self, compute_model):
         """
         Sets the compute_model of this AutonomousContainerDatabase.
-        The compute model of the Autonomous VM Cluster.
+        The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
+
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
 
 
         :param compute_model: The compute_model of this AutonomousContainerDatabase.

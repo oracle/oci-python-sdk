@@ -174,6 +174,18 @@ class ManagedDatabaseSummary(object):
             The value to assign to the time_created property of this ManagedDatabaseSummary.
         :type time_created: datetime
 
+        :param database_version:
+            The value to assign to the database_version property of this ManagedDatabaseSummary.
+        :type database_version: str
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this ManagedDatabaseSummary.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this ManagedDatabaseSummary.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -188,7 +200,10 @@ class ManagedDatabaseSummary(object):
             'parent_container_id': 'str',
             'db_system_id': 'str',
             'storage_system_id': 'str',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'database_version': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -204,7 +219,10 @@ class ManagedDatabaseSummary(object):
             'parent_container_id': 'parentContainerId',
             'db_system_id': 'dbSystemId',
             'storage_system_id': 'storageSystemId',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'database_version': 'databaseVersion',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
         self._id = None
@@ -220,6 +238,9 @@ class ManagedDatabaseSummary(object):
         self._db_system_id = None
         self._storage_system_id = None
         self._time_created = None
+        self._database_version = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @property
     def id(self):
@@ -588,6 +609,94 @@ class ManagedDatabaseSummary(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def database_version(self):
+        """
+        Gets the database_version of this ManagedDatabaseSummary.
+        The Oracle Database version.
+
+
+        :return: The database_version of this ManagedDatabaseSummary.
+        :rtype: str
+        """
+        return self._database_version
+
+    @database_version.setter
+    def database_version(self, database_version):
+        """
+        Sets the database_version of this ManagedDatabaseSummary.
+        The Oracle Database version.
+
+
+        :param database_version: The database_version of this ManagedDatabaseSummary.
+        :type: str
+        """
+        self._database_version = database_version
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this ManagedDatabaseSummary.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this ManagedDatabaseSummary.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this ManagedDatabaseSummary.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this ManagedDatabaseSummary.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this ManagedDatabaseSummary.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this ManagedDatabaseSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this ManagedDatabaseSummary.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this ManagedDatabaseSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

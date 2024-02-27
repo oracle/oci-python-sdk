@@ -222,6 +222,10 @@ class AccessRequestSummary(object):
             The value to assign to the is_auto_approved property of this AccessRequestSummary.
         :type is_auto_approved: bool
 
+        :param time_requested_for_future_access:
+            The value to assign to the time_requested_for_future_access property of this AccessRequestSummary.
+        :type time_requested_for_future_access: datetime
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this AccessRequestSummary.
         :type freeform_tags: dict(str, str)
@@ -249,6 +253,7 @@ class AccessRequestSummary(object):
             'extend_duration': 'int',
             'severity': 'str',
             'is_auto_approved': 'bool',
+            'time_requested_for_future_access': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -271,6 +276,7 @@ class AccessRequestSummary(object):
             'extend_duration': 'extendDuration',
             'severity': 'severity',
             'is_auto_approved': 'isAutoApproved',
+            'time_requested_for_future_access': 'timeRequestedForFutureAccess',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -292,6 +298,7 @@ class AccessRequestSummary(object):
         self._extend_duration = None
         self._severity = None
         self._is_auto_approved = None
+        self._time_requested_for_future_access = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -734,6 +741,34 @@ class AccessRequestSummary(object):
         :type: bool
         """
         self._is_auto_approved = is_auto_approved
+
+    @property
+    def time_requested_for_future_access(self):
+        """
+        Gets the time_requested_for_future_access of this AccessRequestSummary.
+        Time in future when the user for the access request needs to be created in `RFC 3339`__timestamp format. Example: '2020-05-22T21:10:29.600Z'
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_requested_for_future_access of this AccessRequestSummary.
+        :rtype: datetime
+        """
+        return self._time_requested_for_future_access
+
+    @time_requested_for_future_access.setter
+    def time_requested_for_future_access(self, time_requested_for_future_access):
+        """
+        Sets the time_requested_for_future_access of this AccessRequestSummary.
+        Time in future when the user for the access request needs to be created in `RFC 3339`__timestamp format. Example: '2020-05-22T21:10:29.600Z'
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_requested_for_future_access: The time_requested_for_future_access of this AccessRequestSummary.
+        :type: datetime
+        """
+        self._time_requested_for_future_access = time_requested_for_future_access
 
     @property
     def freeform_tags(self):

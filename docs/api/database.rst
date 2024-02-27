@@ -172,9 +172,9 @@ Database
     oci.database.models.DataGuardAssociation
     oci.database.models.DataGuardAssociationSummary
     oci.database.models.Database
-    oci.database.models.DatabaseConnectionCredentailsByName
     oci.database.models.DatabaseConnectionCredentials
     oci.database.models.DatabaseConnectionCredentialsByDetails
+    oci.database.models.DatabaseConnectionCredentialsByName
     oci.database.models.DatabaseConnectionString
     oci.database.models.DatabaseConnectionStringProfile
     oci.database.models.DatabaseConnectionStrings

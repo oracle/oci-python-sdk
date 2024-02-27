@@ -108,6 +108,10 @@ class Skill(object):
             The value to assign to the platform_version property of this Skill.
         :type platform_version: str
 
+        :param dialog_version:
+            The value to assign to the dialog_version property of this Skill.
+        :type dialog_version: str
+
         :param base_id:
             The value to assign to the base_id property of this Skill.
         :type base_id: str
@@ -154,6 +158,7 @@ class Skill(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'platform_version': 'str',
+            'dialog_version': 'str',
             'base_id': 'str',
             'multilingual_mode': 'str',
             'primary_language_tag': 'str',
@@ -175,6 +180,7 @@ class Skill(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'platform_version': 'platformVersion',
+            'dialog_version': 'dialogVersion',
             'base_id': 'baseId',
             'multilingual_mode': 'multilingualMode',
             'primary_language_tag': 'primaryLanguageTag',
@@ -195,6 +201,7 @@ class Skill(object):
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._platform_version = None
+        self._dialog_version = None
         self._base_id = None
         self._multilingual_mode = None
         self._primary_language_tag = None
@@ -455,6 +462,30 @@ class Skill(object):
         :type: str
         """
         self._platform_version = platform_version
+
+    @property
+    def dialog_version(self):
+        """
+        Gets the dialog_version of this Skill.
+        The resource's dialog version.
+
+
+        :return: The dialog_version of this Skill.
+        :rtype: str
+        """
+        return self._dialog_version
+
+    @dialog_version.setter
+    def dialog_version(self, dialog_version):
+        """
+        Sets the dialog_version of this Skill.
+        The resource's dialog version.
+
+
+        :param dialog_version: The dialog_version of this Skill.
+        :type: str
+        """
+        self._dialog_version = dialog_version
 
     @property
     def base_id(self):
