@@ -83,6 +83,10 @@ class ParavirtualizedVolumeAttachment(VolumeAttachment):
             Allowed values for this property are: "UNKNOWN", "LOGGING_IN", "LOGIN_SUCCEEDED", "LOGIN_FAILED", "LOGGING_OUT", "LOGOUT_SUCCEEDED", "LOGOUT_FAILED"
         :type iscsi_login_state: str
 
+        :param is_volume_created_during_launch:
+            The value to assign to the is_volume_created_during_launch property of this ParavirtualizedVolumeAttachment.
+        :type is_volume_created_during_launch: bool
+
         """
         self.swagger_types = {
             'attachment_type': 'str',
@@ -99,7 +103,8 @@ class ParavirtualizedVolumeAttachment(VolumeAttachment):
             'volume_id': 'str',
             'is_pv_encryption_in_transit_enabled': 'bool',
             'is_multipath': 'bool',
-            'iscsi_login_state': 'str'
+            'iscsi_login_state': 'str',
+            'is_volume_created_during_launch': 'bool'
         }
 
         self.attribute_map = {
@@ -117,7 +122,8 @@ class ParavirtualizedVolumeAttachment(VolumeAttachment):
             'volume_id': 'volumeId',
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
             'is_multipath': 'isMultipath',
-            'iscsi_login_state': 'iscsiLoginState'
+            'iscsi_login_state': 'iscsiLoginState',
+            'is_volume_created_during_launch': 'isVolumeCreatedDuringLaunch'
         }
 
         self._attachment_type = None
@@ -135,6 +141,7 @@ class ParavirtualizedVolumeAttachment(VolumeAttachment):
         self._is_pv_encryption_in_transit_enabled = None
         self._is_multipath = None
         self._iscsi_login_state = None
+        self._is_volume_created_during_launch = None
         self._attachment_type = 'paravirtualized'
 
     def __repr__(self):

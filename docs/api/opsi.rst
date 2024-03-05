@@ -443,6 +443,7 @@ Opsi
     oci.opsi.models.UpdateOpsiUxConfigurationDetails
     oci.opsi.models.UpdatePeComanagedDatabaseInsightDetails
     oci.opsi.models.UpdatePeComanagedExadataInsightDetails
+    oci.opsi.models.UpdatePeComanagedHostInsightDetails
     oci.opsi.models.UxConfigurationItemsCollection
     oci.opsi.models.VmClusterSummary
     oci.opsi.models.WarehouseDataObjectCollection

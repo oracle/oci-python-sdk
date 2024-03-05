@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.124.0 - 2024-03-05
+====================
+
+Added
+-----
+* Support for Linux capabilities configuration for the containers in the Container Instances service
+* Support for service platforms in the Oracle Store Platform Gateway service
+* Support for whisper models and delete job operation in the Speech service
+* Support for new SQL insight content types in news reports in the Operations Insights service
+* Support for launching virtual machines with multiple volumes in the Compute service
+ 
+Breaking
+--------
+* The property `CapacityPlanningResources` has been made optional in the model `NewsContentTypes` in the Operations Insights service
+ 
+====================
 2.123.0 - 2024-02-27
 ====================
 

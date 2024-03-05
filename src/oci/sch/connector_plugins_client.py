@@ -154,7 +154,7 @@ class ConnectorPluginsClient(object):
         resource_path = "/connectorPlugins/{connectorPluginName}"
         method = "GET"
         operation_name = "get_connector_plugin"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ConnectorPlugin/GetConnectorPlugin"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -292,7 +292,7 @@ class ConnectorPluginsClient(object):
         resource_path = "/connectorPlugins"
         method = "GET"
         operation_name = "list_connector_plugins"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ConnectorPluginSummary/ListConnectorPlugins"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

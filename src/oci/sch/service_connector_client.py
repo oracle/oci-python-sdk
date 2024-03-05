@@ -178,7 +178,7 @@ class ServiceConnectorClient(object):
         resource_path = "/serviceConnectors/{serviceConnectorId}/actions/activate"
         method = "POST"
         operation_name = "activate_service_connector"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/ActivateServiceConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -298,7 +298,7 @@ class ServiceConnectorClient(object):
         resource_path = "/serviceConnectors/{serviceConnectorId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_service_connector_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/ChangeServiceConnectorCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -431,7 +431,7 @@ class ServiceConnectorClient(object):
         resource_path = "/serviceConnectors"
         method = "POST"
         operation_name = "create_service_connector"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/CreateServiceConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -544,7 +544,7 @@ class ServiceConnectorClient(object):
         resource_path = "/serviceConnectors/{serviceConnectorId}/actions/deactivate"
         method = "POST"
         operation_name = "deactivate_service_connector"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/DeactivateServiceConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -662,7 +662,7 @@ class ServiceConnectorClient(object):
         resource_path = "/serviceConnectors/{serviceConnectorId}"
         method = "DELETE"
         operation_name = "delete_service_connector"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/DeleteServiceConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -767,7 +767,7 @@ class ServiceConnectorClient(object):
         resource_path = "/serviceConnectors/{serviceConnectorId}"
         method = "GET"
         operation_name = "get_service_connector"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/GetServiceConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -872,7 +872,7 @@ class ServiceConnectorClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1014,7 +1014,7 @@ class ServiceConnectorClient(object):
         resource_path = "/serviceConnectors"
         method = "GET"
         operation_name = "list_service_connectors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/ListServiceConnectors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1161,7 +1161,7 @@ class ServiceConnectorClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1290,7 +1290,7 @@ class ServiceConnectorClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1419,7 +1419,7 @@ class ServiceConnectorClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1537,7 +1537,7 @@ class ServiceConnectorClient(object):
         resource_path = "/serviceConnectors/{serviceConnectorId}"
         method = "PUT"
         operation_name = "update_service_connector"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/UpdateServiceConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

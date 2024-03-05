@@ -1749,7 +1749,7 @@ class ContainerInstanceClient(object):
 
     def retrieve_logs(self, container_id, **kwargs):
         """
-        Retrieves recent logs from the specified container. The most recent 256 KB of logs are returned.
+        Returns the most recent 256 KB of logs from the specified container.
 
 
         :param str container_id: (required)
@@ -1761,8 +1761,8 @@ class ContainerInstanceClient(object):
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param bool is_previous: (optional)
-            Returns the logs for the previous run of the container in a pod if the pod exists.
-            If the container fails for some reason, this parameter is useful to determine the root cause of the failure.
+            Returns the logs for the previous run of the container in a pod.
+            If the container fails, this parameter can help you to determine the root cause of the failure.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.

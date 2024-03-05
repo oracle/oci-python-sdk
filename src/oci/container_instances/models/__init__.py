@@ -9,6 +9,7 @@ from __future__ import absolute_import
 from .basic_image_pull_secret import BasicImagePullSecret
 from .change_container_instance_compartment_details import ChangeContainerInstanceCompartmentDetails
 from .container import Container
+from .container_capabilities import ContainerCapabilities
 from .container_collection import ContainerCollection
 from .container_command_health_check import ContainerCommandHealthCheck
 from .container_config_file import ContainerConfigFile
@@ -73,6 +74,7 @@ container_instances_type_mapping = {
     "BasicImagePullSecret": BasicImagePullSecret,
     "ChangeContainerInstanceCompartmentDetails": ChangeContainerInstanceCompartmentDetails,
     "Container": Container,
+    "ContainerCapabilities": ContainerCapabilities,
     "ContainerCollection": ContainerCollection,
     "ContainerCommandHealthCheck": ContainerCommandHealthCheck,
     "ContainerConfigFile": ContainerConfigFile,

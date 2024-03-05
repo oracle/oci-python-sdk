@@ -39,7 +39,7 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "24.03.02"
+    version = "24.03.03"
     oci_compatible_version = "2.119.1"
     thread_lock = threading.Lock()
 
@@ -10623,7 +10623,6 @@ class ShowOCIService(object):
                              'is_auto_scaling_for_storage_enabled': self.get_value(dbs.is_auto_scaling_for_storage_enabled),
                              'allocated_storage_size_in_tbs': self.get_value(dbs.allocated_storage_size_in_tbs),
                              'actual_used_data_storage_size_in_tbs': self.get_value(dbs.actual_used_data_storage_size_in_tbs),
-                             'max_cpu_core_count': self.get_value(dbs.max_cpu_core_count),
                              'database_edition': self.get_value(dbs.database_edition),
                              'local_disaster_recovery_type': self.get_value(dbs.local_disaster_recovery_type),
                              'disaster_recovery_region_type': self.get_value(dbs.disaster_recovery_region_type),

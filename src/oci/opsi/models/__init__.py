@@ -431,6 +431,7 @@ from .update_opsi_configuration_details import UpdateOpsiConfigurationDetails
 from .update_opsi_ux_configuration_details import UpdateOpsiUxConfigurationDetails
 from .update_pe_comanaged_database_insight_details import UpdatePeComanagedDatabaseInsightDetails
 from .update_pe_comanaged_exadata_insight_details import UpdatePeComanagedExadataInsightDetails
+from .update_pe_comanaged_host_insight_details import UpdatePeComanagedHostInsightDetails
 from .ux_configuration_items_collection import UxConfigurationItemsCollection
 from .vm_cluster_summary import VmClusterSummary
 from .warehouse_data_object_collection import WarehouseDataObjectCollection
@@ -874,6 +875,7 @@ opsi_type_mapping = {
     "UpdateOpsiUxConfigurationDetails": UpdateOpsiUxConfigurationDetails,
     "UpdatePeComanagedDatabaseInsightDetails": UpdatePeComanagedDatabaseInsightDetails,
     "UpdatePeComanagedExadataInsightDetails": UpdatePeComanagedExadataInsightDetails,
+    "UpdatePeComanagedHostInsightDetails": UpdatePeComanagedHostInsightDetails,
     "UxConfigurationItemsCollection": UxConfigurationItemsCollection,
     "VmClusterSummary": VmClusterSummary,
     "WarehouseDataObjectCollection": WarehouseDataObjectCollection,
