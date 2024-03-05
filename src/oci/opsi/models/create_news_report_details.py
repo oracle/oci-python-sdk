@@ -35,6 +35,34 @@ class CreateNewsReportDetails(object):
     #: This constant has a value of "TERMINATED"
     STATUS_TERMINATED = "TERMINATED"
 
+    #: A constant which can be used with the day_of_week property of a CreateNewsReportDetails.
+    #: This constant has a value of "MONDAY"
+    DAY_OF_WEEK_MONDAY = "MONDAY"
+
+    #: A constant which can be used with the day_of_week property of a CreateNewsReportDetails.
+    #: This constant has a value of "TUESDAY"
+    DAY_OF_WEEK_TUESDAY = "TUESDAY"
+
+    #: A constant which can be used with the day_of_week property of a CreateNewsReportDetails.
+    #: This constant has a value of "WEDNESDAY"
+    DAY_OF_WEEK_WEDNESDAY = "WEDNESDAY"
+
+    #: A constant which can be used with the day_of_week property of a CreateNewsReportDetails.
+    #: This constant has a value of "THURSDAY"
+    DAY_OF_WEEK_THURSDAY = "THURSDAY"
+
+    #: A constant which can be used with the day_of_week property of a CreateNewsReportDetails.
+    #: This constant has a value of "FRIDAY"
+    DAY_OF_WEEK_FRIDAY = "FRIDAY"
+
+    #: A constant which can be used with the day_of_week property of a CreateNewsReportDetails.
+    #: This constant has a value of "SATURDAY"
+    DAY_OF_WEEK_SATURDAY = "SATURDAY"
+
+    #: A constant which can be used with the day_of_week property of a CreateNewsReportDetails.
+    #: This constant has a value of "SUNDAY"
+    DAY_OF_WEEK_SUNDAY = "SUNDAY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateNewsReportDetails object with values from keyword arguments.
@@ -83,6 +111,15 @@ class CreateNewsReportDetails(object):
             Allowed values for this property are: "DISABLED", "ENABLED", "TERMINATED"
         :type status: str
 
+        :param day_of_week:
+            The value to assign to the day_of_week property of this CreateNewsReportDetails.
+            Allowed values for this property are: "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"
+        :type day_of_week: str
+
+        :param are_child_compartments_included:
+            The value to assign to the are_child_compartments_included property of this CreateNewsReportDetails.
+        :type are_child_compartments_included: bool
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -94,7 +131,9 @@ class CreateNewsReportDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'content_types': 'NewsContentTypes',
             'locale': 'str',
-            'status': 'str'
+            'status': 'str',
+            'day_of_week': 'str',
+            'are_child_compartments_included': 'bool'
         }
 
         self.attribute_map = {
@@ -107,7 +146,9 @@ class CreateNewsReportDetails(object):
             'defined_tags': 'definedTags',
             'content_types': 'contentTypes',
             'locale': 'locale',
-            'status': 'status'
+            'status': 'status',
+            'day_of_week': 'dayOfWeek',
+            'are_child_compartments_included': 'areChildCompartmentsIncluded'
         }
 
         self._name = None
@@ -120,6 +161,8 @@ class CreateNewsReportDetails(object):
         self._content_types = None
         self._locale = None
         self._status = None
+        self._day_of_week = None
+        self._are_child_compartments_included = None
 
     @property
     def name(self):
@@ -385,6 +428,61 @@ class CreateNewsReportDetails(object):
                 f"Invalid value for `status`, must be None or one of {allowed_values}"
             )
         self._status = status
+
+    @property
+    def day_of_week(self):
+        """
+        Gets the day_of_week of this CreateNewsReportDetails.
+        Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+
+        Allowed values for this property are: "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"
+
+
+        :return: The day_of_week of this CreateNewsReportDetails.
+        :rtype: str
+        """
+        return self._day_of_week
+
+    @day_of_week.setter
+    def day_of_week(self, day_of_week):
+        """
+        Sets the day_of_week of this CreateNewsReportDetails.
+        Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+
+
+        :param day_of_week: The day_of_week of this CreateNewsReportDetails.
+        :type: str
+        """
+        allowed_values = ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"]
+        if not value_allowed_none_or_none_sentinel(day_of_week, allowed_values):
+            raise ValueError(
+                f"Invalid value for `day_of_week`, must be None or one of {allowed_values}"
+            )
+        self._day_of_week = day_of_week
+
+    @property
+    def are_child_compartments_included(self):
+        """
+        Gets the are_child_compartments_included of this CreateNewsReportDetails.
+        A flag to consider the resources within a given compartment and all sub-compartments.
+
+
+        :return: The are_child_compartments_included of this CreateNewsReportDetails.
+        :rtype: bool
+        """
+        return self._are_child_compartments_included
+
+    @are_child_compartments_included.setter
+    def are_child_compartments_included(self, are_child_compartments_included):
+        """
+        Sets the are_child_compartments_included of this CreateNewsReportDetails.
+        A flag to consider the resources within a given compartment and all sub-compartments.
+
+
+        :param are_child_compartments_included: The are_child_compartments_included of this CreateNewsReportDetails.
+        :type: bool
+        """
+        self._are_child_compartments_included = are_child_compartments_included
 
     def __repr__(self):
         return formatted_flat_dict(self)

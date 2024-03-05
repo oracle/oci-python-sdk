@@ -144,6 +144,10 @@ class VolumeAttachment(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type iscsi_login_state: str
 
+        :param is_volume_created_during_launch:
+            The value to assign to the is_volume_created_during_launch property of this VolumeAttachment.
+        :type is_volume_created_during_launch: bool
+
         """
         self.swagger_types = {
             'attachment_type': 'str',
@@ -160,7 +164,8 @@ class VolumeAttachment(object):
             'volume_id': 'str',
             'is_pv_encryption_in_transit_enabled': 'bool',
             'is_multipath': 'bool',
-            'iscsi_login_state': 'str'
+            'iscsi_login_state': 'str',
+            'is_volume_created_during_launch': 'bool'
         }
 
         self.attribute_map = {
@@ -178,7 +183,8 @@ class VolumeAttachment(object):
             'volume_id': 'volumeId',
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
             'is_multipath': 'isMultipath',
-            'iscsi_login_state': 'iscsiLoginState'
+            'iscsi_login_state': 'iscsiLoginState',
+            'is_volume_created_during_launch': 'isVolumeCreatedDuringLaunch'
         }
 
         self._attachment_type = None
@@ -196,6 +202,7 @@ class VolumeAttachment(object):
         self._is_pv_encryption_in_transit_enabled = None
         self._is_multipath = None
         self._iscsi_login_state = None
+        self._is_volume_created_during_launch = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -609,6 +616,32 @@ class VolumeAttachment(object):
         if not value_allowed_none_or_none_sentinel(iscsi_login_state, allowed_values):
             iscsi_login_state = 'UNKNOWN_ENUM_VALUE'
         self._iscsi_login_state = iscsi_login_state
+
+    @property
+    def is_volume_created_during_launch(self):
+        """
+        Gets the is_volume_created_during_launch of this VolumeAttachment.
+        Flag indicating if this volume was created for the customer as part of a simplified launch.
+        Used to determine whether the volume requires deletion on instance termination.
+
+
+        :return: The is_volume_created_during_launch of this VolumeAttachment.
+        :rtype: bool
+        """
+        return self._is_volume_created_during_launch
+
+    @is_volume_created_during_launch.setter
+    def is_volume_created_during_launch(self, is_volume_created_during_launch):
+        """
+        Sets the is_volume_created_during_launch of this VolumeAttachment.
+        Flag indicating if this volume was created for the customer as part of a simplified launch.
+        Used to determine whether the volume requires deletion on instance termination.
+
+
+        :param is_volume_created_during_launch: The is_volume_created_during_launch of this VolumeAttachment.
+        :type: bool
+        """
+        self._is_volume_created_during_launch = is_volume_created_during_launch
 
     def __repr__(self):
         return formatted_flat_dict(self)

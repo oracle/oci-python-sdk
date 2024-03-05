@@ -21,6 +21,7 @@ Container Instances
     oci.container_instances.models.BasicImagePullSecret
     oci.container_instances.models.ChangeContainerInstanceCompartmentDetails
     oci.container_instances.models.Container
+    oci.container_instances.models.ContainerCapabilities
     oci.container_instances.models.ContainerCollection
     oci.container_instances.models.ContainerCommandHealthCheck
     oci.container_instances.models.ContainerConfigFile

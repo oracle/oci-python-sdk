@@ -41,13 +41,18 @@ class CreateLinuxSecurityContextDetails(CreateSecurityContextDetails):
             The value to assign to the is_root_file_system_readonly property of this CreateLinuxSecurityContextDetails.
         :type is_root_file_system_readonly: bool
 
+        :param capabilities:
+            The value to assign to the capabilities property of this CreateLinuxSecurityContextDetails.
+        :type capabilities: oci.container_instances.models.ContainerCapabilities
+
         """
         self.swagger_types = {
             'security_context_type': 'str',
             'run_as_user': 'int',
             'run_as_group': 'int',
             'is_non_root_user_check_enabled': 'bool',
-            'is_root_file_system_readonly': 'bool'
+            'is_root_file_system_readonly': 'bool',
+            'capabilities': 'ContainerCapabilities'
         }
 
         self.attribute_map = {
@@ -55,7 +60,8 @@ class CreateLinuxSecurityContextDetails(CreateSecurityContextDetails):
             'run_as_user': 'runAsUser',
             'run_as_group': 'runAsGroup',
             'is_non_root_user_check_enabled': 'isNonRootUserCheckEnabled',
-            'is_root_file_system_readonly': 'isRootFileSystemReadonly'
+            'is_root_file_system_readonly': 'isRootFileSystemReadonly',
+            'capabilities': 'capabilities'
         }
 
         self._security_context_type = None
@@ -63,6 +69,7 @@ class CreateLinuxSecurityContextDetails(CreateSecurityContextDetails):
         self._run_as_group = None
         self._is_non_root_user_check_enabled = None
         self._is_root_file_system_readonly = None
+        self._capabilities = None
         self._security_context_type = 'LINUX'
 
     @property
@@ -160,6 +167,26 @@ class CreateLinuxSecurityContextDetails(CreateSecurityContextDetails):
         :type: bool
         """
         self._is_root_file_system_readonly = is_root_file_system_readonly
+
+    @property
+    def capabilities(self):
+        """
+        Gets the capabilities of this CreateLinuxSecurityContextDetails.
+
+        :return: The capabilities of this CreateLinuxSecurityContextDetails.
+        :rtype: oci.container_instances.models.ContainerCapabilities
+        """
+        return self._capabilities
+
+    @capabilities.setter
+    def capabilities(self, capabilities):
+        """
+        Sets the capabilities of this CreateLinuxSecurityContextDetails.
+
+        :param capabilities: The capabilities of this CreateLinuxSecurityContextDetails.
+        :type: oci.container_instances.models.ContainerCapabilities
+        """
+        self._capabilities = capabilities
 
     def __repr__(self):
         return formatted_flat_dict(self)

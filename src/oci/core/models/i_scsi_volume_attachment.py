@@ -93,6 +93,10 @@ class IScsiVolumeAttachment(VolumeAttachment):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type iscsi_login_state: str
 
+        :param is_volume_created_during_launch:
+            The value to assign to the is_volume_created_during_launch property of this IScsiVolumeAttachment.
+        :type is_volume_created_during_launch: bool
+
         :param chap_secret:
             The value to assign to the chap_secret property of this IScsiVolumeAttachment.
         :type chap_secret: str
@@ -144,6 +148,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
             'is_pv_encryption_in_transit_enabled': 'bool',
             'is_multipath': 'bool',
             'iscsi_login_state': 'str',
+            'is_volume_created_during_launch': 'bool',
             'chap_secret': 'str',
             'chap_username': 'str',
             'ipv4': 'str',
@@ -170,6 +175,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
             'is_multipath': 'isMultipath',
             'iscsi_login_state': 'iscsiLoginState',
+            'is_volume_created_during_launch': 'isVolumeCreatedDuringLaunch',
             'chap_secret': 'chapSecret',
             'chap_username': 'chapUsername',
             'ipv4': 'ipv4',
@@ -195,6 +201,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
         self._is_pv_encryption_in_transit_enabled = None
         self._is_multipath = None
         self._iscsi_login_state = None
+        self._is_volume_created_during_launch = None
         self._chap_secret = None
         self._chap_username = None
         self._ipv4 = None

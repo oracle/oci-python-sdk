@@ -153,7 +153,7 @@ class DesktopServiceClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/WorkRequest/CancelWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -260,7 +260,7 @@ class DesktopServiceClient(object):
         resource_path = "/desktopPools/{desktopPoolId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_desktop_pool_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/DesktopPool/ChangeDesktopPoolCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -366,7 +366,7 @@ class DesktopServiceClient(object):
         resource_path = "/desktopPools"
         method = "POST"
         operation_name = "create_desktop_pool"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/DesktopPool/CreateDesktopPool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -460,7 +460,7 @@ class DesktopServiceClient(object):
         resource_path = "/desktops/{desktopId}"
         method = "DELETE"
         operation_name = "delete_desktop"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/Desktop/DeleteDesktop"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -564,7 +564,7 @@ class DesktopServiceClient(object):
         resource_path = "/desktopPools/{desktopPoolId}"
         method = "DELETE"
         operation_name = "delete_desktop_pool"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/DesktopPool/DeleteDesktopPool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -670,7 +670,7 @@ class DesktopServiceClient(object):
         resource_path = "/desktops/{desktopId}"
         method = "GET"
         operation_name = "get_desktop"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/Desktop/GetDesktop"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -768,7 +768,7 @@ class DesktopServiceClient(object):
         resource_path = "/desktopPools/{desktopPoolId}"
         method = "GET"
         operation_name = "get_desktop_pool"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/DesktopPool/GetDesktopPool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -866,7 +866,7 @@ class DesktopServiceClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -995,7 +995,7 @@ class DesktopServiceClient(object):
         resource_path = "/desktopPools/{desktopPoolId}/desktops"
         method = "GET"
         operation_name = "list_desktop_pool_desktops"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/DesktopPool/ListDesktopPoolDesktops"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1161,7 +1161,7 @@ class DesktopServiceClient(object):
         resource_path = "/desktopPools/{desktopPoolId}/volumes"
         method = "GET"
         operation_name = "list_desktop_pool_volumes"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/DesktopPool/ListDesktopPoolVolumes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1324,7 +1324,7 @@ class DesktopServiceClient(object):
         resource_path = "/desktopPools"
         method = "GET"
         operation_name = "list_desktop_pools"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/DesktopPool/ListDesktopPools"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1478,7 +1478,7 @@ class DesktopServiceClient(object):
         resource_path = "/desktops"
         method = "GET"
         operation_name = "list_desktops"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/Desktop/ListDesktops"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1619,7 +1619,7 @@ class DesktopServiceClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1761,7 +1761,7 @@ class DesktopServiceClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1914,7 +1914,7 @@ class DesktopServiceClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2048,7 +2048,7 @@ class DesktopServiceClient(object):
         resource_path = "/desktops/{desktopId}/actions/start"
         method = "POST"
         operation_name = "start_desktop"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/Desktop/StartDesktop"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2155,7 +2155,7 @@ class DesktopServiceClient(object):
         resource_path = "/desktopPools/{desktopPoolId}/actions/start"
         method = "POST"
         operation_name = "start_desktop_pool"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/DesktopPool/StartDesktopPool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2262,7 +2262,7 @@ class DesktopServiceClient(object):
         resource_path = "/desktops/{desktopId}/actions/stop"
         method = "POST"
         operation_name = "stop_desktop"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/Desktop/StopDesktop"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2369,7 +2369,7 @@ class DesktopServiceClient(object):
         resource_path = "/desktopPools/{desktopPoolId}/actions/stop"
         method = "POST"
         operation_name = "stop_desktop_pool"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/DesktopPool/StopDesktopPool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2476,7 +2476,7 @@ class DesktopServiceClient(object):
         resource_path = "/desktops/{desktopId}"
         method = "PUT"
         operation_name = "update_desktop"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/Desktop/UpdateDesktop"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2582,7 +2582,7 @@ class DesktopServiceClient(object):
         resource_path = "/desktopPools/{desktopPoolId}"
         method = "PUT"
         operation_name = "update_desktop_pool"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/DesktopPool/UpdateDesktopPool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

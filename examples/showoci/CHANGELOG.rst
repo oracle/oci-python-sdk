@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+24.03.03 - 24.03.03
+=====================
+* Remove max_cpu_core_count from Autonomous Database
+
+=====================
 24.03.02 - 24.03.02
 =====================
 * Added CSV Resources with all resources

@@ -63,6 +63,34 @@ class NewsReport(object):
     #: This constant has a value of "NEEDS_ATTENTION"
     LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
 
+    #: A constant which can be used with the day_of_week property of a NewsReport.
+    #: This constant has a value of "MONDAY"
+    DAY_OF_WEEK_MONDAY = "MONDAY"
+
+    #: A constant which can be used with the day_of_week property of a NewsReport.
+    #: This constant has a value of "TUESDAY"
+    DAY_OF_WEEK_TUESDAY = "TUESDAY"
+
+    #: A constant which can be used with the day_of_week property of a NewsReport.
+    #: This constant has a value of "WEDNESDAY"
+    DAY_OF_WEEK_WEDNESDAY = "WEDNESDAY"
+
+    #: A constant which can be used with the day_of_week property of a NewsReport.
+    #: This constant has a value of "THURSDAY"
+    DAY_OF_WEEK_THURSDAY = "THURSDAY"
+
+    #: A constant which can be used with the day_of_week property of a NewsReport.
+    #: This constant has a value of "FRIDAY"
+    DAY_OF_WEEK_FRIDAY = "FRIDAY"
+
+    #: A constant which can be used with the day_of_week property of a NewsReport.
+    #: This constant has a value of "SATURDAY"
+    DAY_OF_WEEK_SATURDAY = "SATURDAY"
+
+    #: A constant which can be used with the day_of_week property of a NewsReport.
+    #: This constant has a value of "SUNDAY"
+    DAY_OF_WEEK_SUNDAY = "SUNDAY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new NewsReport object with values from keyword arguments.
@@ -140,6 +168,16 @@ class NewsReport(object):
             The value to assign to the lifecycle_details property of this NewsReport.
         :type lifecycle_details: str
 
+        :param day_of_week:
+            The value to assign to the day_of_week property of this NewsReport.
+            Allowed values for this property are: "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type day_of_week: str
+
+        :param are_child_compartments_included:
+            The value to assign to the are_child_compartments_included property of this NewsReport.
+        :type are_child_compartments_included: bool
+
         """
         self.swagger_types = {
             'news_frequency': 'str',
@@ -157,7 +195,9 @@ class NewsReport(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
-            'lifecycle_details': 'str'
+            'lifecycle_details': 'str',
+            'day_of_week': 'str',
+            'are_child_compartments_included': 'bool'
         }
 
         self.attribute_map = {
@@ -176,7 +216,9 @@ class NewsReport(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
-            'lifecycle_details': 'lifecycleDetails'
+            'lifecycle_details': 'lifecycleDetails',
+            'day_of_week': 'dayOfWeek',
+            'are_child_compartments_included': 'areChildCompartmentsIncluded'
         }
 
         self._news_frequency = None
@@ -195,6 +237,8 @@ class NewsReport(object):
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._day_of_week = None
+        self._are_child_compartments_included = None
 
     @property
     def news_frequency(self):
@@ -617,6 +661,60 @@ class NewsReport(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def day_of_week(self):
+        """
+        Gets the day_of_week of this NewsReport.
+        Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+
+        Allowed values for this property are: "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The day_of_week of this NewsReport.
+        :rtype: str
+        """
+        return self._day_of_week
+
+    @day_of_week.setter
+    def day_of_week(self, day_of_week):
+        """
+        Sets the day_of_week of this NewsReport.
+        Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+
+
+        :param day_of_week: The day_of_week of this NewsReport.
+        :type: str
+        """
+        allowed_values = ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"]
+        if not value_allowed_none_or_none_sentinel(day_of_week, allowed_values):
+            day_of_week = 'UNKNOWN_ENUM_VALUE'
+        self._day_of_week = day_of_week
+
+    @property
+    def are_child_compartments_included(self):
+        """
+        Gets the are_child_compartments_included of this NewsReport.
+        A flag to consider the resources within a given compartment and all sub-compartments.
+
+
+        :return: The are_child_compartments_included of this NewsReport.
+        :rtype: bool
+        """
+        return self._are_child_compartments_included
+
+    @are_child_compartments_included.setter
+    def are_child_compartments_included(self, are_child_compartments_included):
+        """
+        Sets the are_child_compartments_included of this NewsReport.
+        A flag to consider the resources within a given compartment and all sub-compartments.
+
+
+        :param are_child_compartments_included: The are_child_compartments_included of this NewsReport.
+        :type: bool
+        """
+        self._are_child_compartments_included = are_child_compartments_included
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -59,10 +59,242 @@ class TranscriptionModelDetails(object):
     #: This constant has a value of "it-IT"
     LANGUAGE_CODE_IT_IT = "it-IT"
 
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "af"
+    LANGUAGE_CODE_AF = "af"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "ar"
+    LANGUAGE_CODE_AR = "ar"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "az"
+    LANGUAGE_CODE_AZ = "az"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "be"
+    LANGUAGE_CODE_BE = "be"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "bg"
+    LANGUAGE_CODE_BG = "bg"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "bs"
+    LANGUAGE_CODE_BS = "bs"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "ca"
+    LANGUAGE_CODE_CA = "ca"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "cs"
+    LANGUAGE_CODE_CS = "cs"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "cy"
+    LANGUAGE_CODE_CY = "cy"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "da"
+    LANGUAGE_CODE_DA = "da"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "de"
+    LANGUAGE_CODE_DE = "de"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "el"
+    LANGUAGE_CODE_EL = "el"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "en"
+    LANGUAGE_CODE_EN = "en"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "es"
+    LANGUAGE_CODE_ES = "es"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "et"
+    LANGUAGE_CODE_ET = "et"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "fa"
+    LANGUAGE_CODE_FA = "fa"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "fi"
+    LANGUAGE_CODE_FI = "fi"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "fr"
+    LANGUAGE_CODE_FR = "fr"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "gl"
+    LANGUAGE_CODE_GL = "gl"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "he"
+    LANGUAGE_CODE_HE = "he"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "hi"
+    LANGUAGE_CODE_HI = "hi"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "hr"
+    LANGUAGE_CODE_HR = "hr"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "hu"
+    LANGUAGE_CODE_HU = "hu"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "hy"
+    LANGUAGE_CODE_HY = "hy"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "id"
+    LANGUAGE_CODE_ID = "id"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "is"
+    LANGUAGE_CODE_IS = "is"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "it"
+    LANGUAGE_CODE_IT = "it"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "ja"
+    LANGUAGE_CODE_JA = "ja"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "kk"
+    LANGUAGE_CODE_KK = "kk"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "kn"
+    LANGUAGE_CODE_KN = "kn"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "ko"
+    LANGUAGE_CODE_KO = "ko"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "lt"
+    LANGUAGE_CODE_LT = "lt"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "lv"
+    LANGUAGE_CODE_LV = "lv"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "mi"
+    LANGUAGE_CODE_MI = "mi"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "mk"
+    LANGUAGE_CODE_MK = "mk"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "mr"
+    LANGUAGE_CODE_MR = "mr"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "ms"
+    LANGUAGE_CODE_MS = "ms"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "ne"
+    LANGUAGE_CODE_NE = "ne"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "nl"
+    LANGUAGE_CODE_NL = "nl"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "no"
+    LANGUAGE_CODE_NO = "no"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "pl"
+    LANGUAGE_CODE_PL = "pl"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "pt"
+    LANGUAGE_CODE_PT = "pt"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "ro"
+    LANGUAGE_CODE_RO = "ro"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "ru"
+    LANGUAGE_CODE_RU = "ru"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "sk"
+    LANGUAGE_CODE_SK = "sk"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "sl"
+    LANGUAGE_CODE_SL = "sl"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "sr"
+    LANGUAGE_CODE_SR = "sr"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "sv"
+    LANGUAGE_CODE_SV = "sv"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "sw"
+    LANGUAGE_CODE_SW = "sw"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "ta"
+    LANGUAGE_CODE_TA = "ta"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "th"
+    LANGUAGE_CODE_TH = "th"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "tl"
+    LANGUAGE_CODE_TL = "tl"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "tr"
+    LANGUAGE_CODE_TR = "tr"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "uk"
+    LANGUAGE_CODE_UK = "uk"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "ur"
+    LANGUAGE_CODE_UR = "ur"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "vi"
+    LANGUAGE_CODE_VI = "vi"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "zh"
+    LANGUAGE_CODE_ZH = "zh"
+
     def __init__(self, **kwargs):
         """
         Initializes a new TranscriptionModelDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param model_type:
+            The value to assign to the model_type property of this TranscriptionModelDetails.
+        :type model_type: str
 
         :param domain:
             The value to assign to the domain property of this TranscriptionModelDetails.
@@ -72,7 +304,7 @@ class TranscriptionModelDetails(object):
 
         :param language_code:
             The value to assign to the language_code property of this TranscriptionModelDetails.
-            Allowed values for this property are: "en-US", "es-ES", "pt-BR", "en-GB", "en-AU", "en-IN", "hi-IN", "fr-FR", "de-DE", "it-IT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "en-US", "es-ES", "pt-BR", "en-GB", "en-AU", "en-IN", "hi-IN", "fr-FR", "de-DE", "it-IT", "af", "ar", "az", "be", "bg", "bs", "ca", "cs", "cy", "da", "de", "el", "en", "es", "et", "fa", "fi", "fr", "gl", "he", "hi", "hr", "hu", "hy", "id", "is", "it", "ja", "kk", "kn", "ko", "lt", "lv", "mi", "mk", "mr", "ms", "ne", "nl", "no", "pl", "pt", "ro", "ru", "sk", "sl", "sr", "sv", "sw", "ta", "th", "tl", "tr", "uk", "ur", "vi", "zh", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type language_code: str
 
@@ -82,20 +314,53 @@ class TranscriptionModelDetails(object):
 
         """
         self.swagger_types = {
+            'model_type': 'str',
             'domain': 'str',
             'language_code': 'str',
             'transcription_settings': 'TranscriptionSettings'
         }
 
         self.attribute_map = {
+            'model_type': 'modelType',
             'domain': 'domain',
             'language_code': 'languageCode',
             'transcription_settings': 'transcriptionSettings'
         }
 
+        self._model_type = None
         self._domain = None
         self._language_code = None
         self._transcription_settings = None
+
+    @property
+    def model_type(self):
+        """
+        Gets the model_type of this TranscriptionModelDetails.
+        Select a model to use for generating transcriptions. Currently supported models are:
+        - ORACLE
+        - WHISPER_MEDIUM
+        - WHISPER_LARGE_V2 (upon service request)
+
+
+        :return: The model_type of this TranscriptionModelDetails.
+        :rtype: str
+        """
+        return self._model_type
+
+    @model_type.setter
+    def model_type(self, model_type):
+        """
+        Sets the model_type of this TranscriptionModelDetails.
+        Select a model to use for generating transcriptions. Currently supported models are:
+        - ORACLE
+        - WHISPER_MEDIUM
+        - WHISPER_LARGE_V2 (upon service request)
+
+
+        :param model_type: The model_type of this TranscriptionModelDetails.
+        :type: str
+        """
+        self._model_type = model_type
 
     @property
     def domain(self):
@@ -131,8 +396,8 @@ class TranscriptionModelDetails(object):
     def language_code(self):
         """
         Gets the language_code of this TranscriptionModelDetails.
-        Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
-        - en-US: English - United States
+        Oracle supported language codes are (Oracle models are locale specific).
+        - en-US: English - United States (default)
         - es-ES: Spanish - Spain
         - pt-BR: Portuguese - Brazil
         - en-GB: English - Great Britain
@@ -143,7 +408,66 @@ class TranscriptionModelDetails(object):
         - de-DE: German - Germany
         - it-IT: Italian - Italy
 
-        Allowed values for this property are: "en-US", "es-ES", "pt-BR", "en-GB", "en-AU", "en-IN", "hi-IN", "fr-FR", "de-DE", "it-IT", 'UNKNOWN_ENUM_VALUE'.
+        Whisper supported language codes are (Whisper models are locale agnostic).
+        - af: Afrikaans
+        - ar: Arabic
+        - az: Azerbaijani
+        - be: Belarusian
+        - bg: Bulgarian
+        - bs: Bosnian
+        - ca: Catalan
+        - cs: Czech
+        - cy: Welsh
+        - da: Danish
+        - de: German
+        - el: Greek
+        - en: English (default)
+        - es: Spanish
+        - et: Estonian
+        - fa: Persian
+        - fi: Finnish
+        - fr: French
+        - gl: Galician
+        - he: Hebrew
+        - hi: Hindi
+        - hr: Croatian
+        - hu: Hungarian
+        - hy: Armenian
+        - id: Indonesian
+        - is: Icelandic
+        - it: Italian
+        - ja: Japanese
+        - kk: Kazakh
+        - kn: Kannada
+        - ko: Korean
+        - lt: Lithuanian
+        - lv: Latvian
+        - mi: Maori
+        - mk: Macedonian
+        - mr: Marathi
+        - ms: Malay
+        - ne: Nepali
+        - nl: Dutch
+        - no: Norwegian
+        - pl: Polish
+        - pt: Portuguese
+        - ro: Romanian
+        - ru: Russian
+        - sk: Slovak
+        - sl: Slovenian
+        - sr: Serbian
+        - sv: Swedish
+        - sw: Swahili
+        - ta: Tamil
+        - th: Thai
+        - tl: Tagalog
+        - tr: Turkish
+        - uk: Ukrainian
+        - ur: Urdu
+        - vi: Vietnamese
+        - zh: Chinese
+
+        Allowed values for this property are: "en-US", "es-ES", "pt-BR", "en-GB", "en-AU", "en-IN", "hi-IN", "fr-FR", "de-DE", "it-IT", "af", "ar", "az", "be", "bg", "bs", "ca", "cs", "cy", "da", "de", "el", "en", "es", "et", "fa", "fi", "fr", "gl", "he", "hi", "hr", "hu", "hy", "id", "is", "it", "ja", "kk", "kn", "ko", "lt", "lv", "mi", "mk", "mr", "ms", "ne", "nl", "no", "pl", "pt", "ro", "ru", "sk", "sl", "sr", "sv", "sw", "ta", "th", "tl", "tr", "uk", "ur", "vi", "zh", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -156,8 +480,8 @@ class TranscriptionModelDetails(object):
     def language_code(self, language_code):
         """
         Sets the language_code of this TranscriptionModelDetails.
-        Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
-        - en-US: English - United States
+        Oracle supported language codes are (Oracle models are locale specific).
+        - en-US: English - United States (default)
         - es-ES: Spanish - Spain
         - pt-BR: Portuguese - Brazil
         - en-GB: English - Great Britain
@@ -168,11 +492,70 @@ class TranscriptionModelDetails(object):
         - de-DE: German - Germany
         - it-IT: Italian - Italy
 
+        Whisper supported language codes are (Whisper models are locale agnostic).
+        - af: Afrikaans
+        - ar: Arabic
+        - az: Azerbaijani
+        - be: Belarusian
+        - bg: Bulgarian
+        - bs: Bosnian
+        - ca: Catalan
+        - cs: Czech
+        - cy: Welsh
+        - da: Danish
+        - de: German
+        - el: Greek
+        - en: English (default)
+        - es: Spanish
+        - et: Estonian
+        - fa: Persian
+        - fi: Finnish
+        - fr: French
+        - gl: Galician
+        - he: Hebrew
+        - hi: Hindi
+        - hr: Croatian
+        - hu: Hungarian
+        - hy: Armenian
+        - id: Indonesian
+        - is: Icelandic
+        - it: Italian
+        - ja: Japanese
+        - kk: Kazakh
+        - kn: Kannada
+        - ko: Korean
+        - lt: Lithuanian
+        - lv: Latvian
+        - mi: Maori
+        - mk: Macedonian
+        - mr: Marathi
+        - ms: Malay
+        - ne: Nepali
+        - nl: Dutch
+        - no: Norwegian
+        - pl: Polish
+        - pt: Portuguese
+        - ro: Romanian
+        - ru: Russian
+        - sk: Slovak
+        - sl: Slovenian
+        - sr: Serbian
+        - sv: Swedish
+        - sw: Swahili
+        - ta: Tamil
+        - th: Thai
+        - tl: Tagalog
+        - tr: Turkish
+        - uk: Ukrainian
+        - ur: Urdu
+        - vi: Vietnamese
+        - zh: Chinese
+
 
         :param language_code: The language_code of this TranscriptionModelDetails.
         :type: str
         """
-        allowed_values = ["en-US", "es-ES", "pt-BR", "en-GB", "en-AU", "en-IN", "hi-IN", "fr-FR", "de-DE", "it-IT"]
+        allowed_values = ["en-US", "es-ES", "pt-BR", "en-GB", "en-AU", "en-IN", "hi-IN", "fr-FR", "de-DE", "it-IT", "af", "ar", "az", "be", "bg", "bs", "ca", "cs", "cy", "da", "de", "el", "en", "es", "et", "fa", "fi", "fr", "gl", "he", "hi", "hr", "hu", "hy", "id", "is", "it", "ja", "kk", "kn", "ko", "lt", "lv", "mi", "mk", "mr", "ms", "ne", "nl", "no", "pl", "pt", "ro", "ru", "sk", "sl", "sr", "sv", "sw", "ta", "th", "tl", "tr", "uk", "ur", "vi", "zh"]
         if not value_allowed_none_or_none_sentinel(language_code, allowed_values):
             language_code = 'UNKNOWN_ENUM_VALUE'
         self._language_code = language_code

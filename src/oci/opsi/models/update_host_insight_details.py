@@ -39,6 +39,7 @@ class UpdateHostInsightDetails(object):
         * :class:`~oci.opsi.models.UpdateEmManagedExternalHostInsightDetails`
         * :class:`~oci.opsi.models.UpdateMacsManagedExternalHostInsightDetails`
         * :class:`~oci.opsi.models.UpdateMacsManagedCloudHostInsightDetails`
+        * :class:`~oci.opsi.models.UpdatePeComanagedHostInsightDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -88,6 +89,9 @@ class UpdateHostInsightDetails(object):
 
         if type == 'MACS_MANAGED_CLOUD_HOST':
             return 'UpdateMacsManagedCloudHostInsightDetails'
+
+        if type == 'PE_COMANAGED_HOST':
+            return 'UpdatePeComanagedHostInsightDetails'
         else:
             return 'UpdateHostInsightDetails'
 

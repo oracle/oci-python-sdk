@@ -20,7 +20,7 @@ import sys
 
 
 class ShowOCIData(object):
-    version = "24.03.02"
+    version = "24.03.03"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -3029,7 +3029,6 @@ class ShowOCIData(object):
                 'is_auto_scaling_for_storage_enabled': dbs['is_auto_scaling_for_storage_enabled'],
                 'allocated_storage_size_in_tbs': dbs['allocated_storage_size_in_tbs'],
                 'actual_used_data_storage_size_in_tbs': dbs['actual_used_data_storage_size_in_tbs'],
-                'max_cpu_core_count': dbs['max_cpu_core_count'],
                 'database_edition': dbs['database_edition'],
                 'local_disaster_recovery_type': dbs['local_disaster_recovery_type'],
                 'disaster_recovery_region_type': dbs['disaster_recovery_region_type'],
