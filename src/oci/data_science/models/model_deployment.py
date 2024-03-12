@@ -92,6 +92,10 @@ class ModelDeployment(object):
             The value to assign to the model_deployment_url property of this ModelDeployment.
         :type model_deployment_url: str
 
+        :param model_deployment_system_data:
+            The value to assign to the model_deployment_system_data property of this ModelDeployment.
+        :type model_deployment_system_data: oci.data_science.models.ModelDeploymentSystemData
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ModelDeployment.
             Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "FAILED", "INACTIVE", "UPDATING", "DELETED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
@@ -122,6 +126,7 @@ class ModelDeployment(object):
             'model_deployment_configuration_details': 'ModelDeploymentConfigurationDetails',
             'category_log_details': 'CategoryLogDetails',
             'model_deployment_url': 'str',
+            'model_deployment_system_data': 'ModelDeploymentSystemData',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -139,6 +144,7 @@ class ModelDeployment(object):
             'model_deployment_configuration_details': 'modelDeploymentConfigurationDetails',
             'category_log_details': 'categoryLogDetails',
             'model_deployment_url': 'modelDeploymentUrl',
+            'model_deployment_system_data': 'modelDeploymentSystemData',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
@@ -155,6 +161,7 @@ class ModelDeployment(object):
         self._model_deployment_configuration_details = None
         self._category_log_details = None
         self._model_deployment_url = None
+        self._model_deployment_system_data = None
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._freeform_tags = None
@@ -415,6 +422,26 @@ class ModelDeployment(object):
         :type: str
         """
         self._model_deployment_url = model_deployment_url
+
+    @property
+    def model_deployment_system_data(self):
+        """
+        Gets the model_deployment_system_data of this ModelDeployment.
+
+        :return: The model_deployment_system_data of this ModelDeployment.
+        :rtype: oci.data_science.models.ModelDeploymentSystemData
+        """
+        return self._model_deployment_system_data
+
+    @model_deployment_system_data.setter
+    def model_deployment_system_data(self, model_deployment_system_data):
+        """
+        Sets the model_deployment_system_data of this ModelDeployment.
+
+        :param model_deployment_system_data: The model_deployment_system_data of this ModelDeployment.
+        :type: oci.data_science.models.ModelDeploymentSystemData
+        """
+        self._model_deployment_system_data = model_deployment_system_data
 
     @property
     def lifecycle_state(self):

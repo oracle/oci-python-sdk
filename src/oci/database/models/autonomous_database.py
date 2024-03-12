@@ -291,6 +291,14 @@ class AutonomousDatabase(object):
     #: This constant has a value of "REMOTE"
     DISASTER_RECOVERY_REGION_TYPE_REMOTE = "REMOTE"
 
+    #: A constant which can be used with the net_services_architecture property of a AutonomousDatabase.
+    #: This constant has a value of "DEDICATED"
+    NET_SERVICES_ARCHITECTURE_DEDICATED = "DEDICATED"
+
+    #: A constant which can be used with the net_services_architecture property of a AutonomousDatabase.
+    #: This constant has a value of "SHARED"
+    NET_SERVICES_ARCHITECTURE_SHARED = "SHARED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AutonomousDatabase object with values from keyword arguments.
@@ -517,6 +525,10 @@ class AutonomousDatabase(object):
             Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type db_workload: str
+
+        :param is_dev_tier:
+            The value to assign to the is_dev_tier property of this AutonomousDatabase.
+        :type is_dev_tier: bool
 
         :param is_access_control_enabled:
             The value to assign to the is_access_control_enabled property of this AutonomousDatabase.
@@ -762,6 +774,12 @@ class AutonomousDatabase(object):
             The value to assign to the remote_disaster_recovery_configuration property of this AutonomousDatabase.
         :type remote_disaster_recovery_configuration: oci.database.models.DisasterRecoveryConfiguration
 
+        :param net_services_architecture:
+            The value to assign to the net_services_architecture property of this AutonomousDatabase.
+            Allowed values for this property are: "DEDICATED", "SHARED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type net_services_architecture: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -817,6 +835,7 @@ class AutonomousDatabase(object):
             'db_version': 'str',
             'is_preview': 'bool',
             'db_workload': 'str',
+            'is_dev_tier': 'bool',
             'is_access_control_enabled': 'bool',
             'whitelisted_ips': 'list[str]',
             'are_primary_whitelisted_ips_used': 'bool',
@@ -871,7 +890,8 @@ class AutonomousDatabase(object):
             'local_disaster_recovery_type': 'str',
             'disaster_recovery_region_type': 'str',
             'time_disaster_recovery_role_changed': 'datetime',
-            'remote_disaster_recovery_configuration': 'DisasterRecoveryConfiguration'
+            'remote_disaster_recovery_configuration': 'DisasterRecoveryConfiguration',
+            'net_services_architecture': 'str'
         }
 
         self.attribute_map = {
@@ -928,6 +948,7 @@ class AutonomousDatabase(object):
             'db_version': 'dbVersion',
             'is_preview': 'isPreview',
             'db_workload': 'dbWorkload',
+            'is_dev_tier': 'isDevTier',
             'is_access_control_enabled': 'isAccessControlEnabled',
             'whitelisted_ips': 'whitelistedIps',
             'are_primary_whitelisted_ips_used': 'arePrimaryWhitelistedIpsUsed',
@@ -982,7 +1003,8 @@ class AutonomousDatabase(object):
             'local_disaster_recovery_type': 'localDisasterRecoveryType',
             'disaster_recovery_region_type': 'disasterRecoveryRegionType',
             'time_disaster_recovery_role_changed': 'timeDisasterRecoveryRoleChanged',
-            'remote_disaster_recovery_configuration': 'remoteDisasterRecoveryConfiguration'
+            'remote_disaster_recovery_configuration': 'remoteDisasterRecoveryConfiguration',
+            'net_services_architecture': 'netServicesArchitecture'
         }
 
         self._id = None
@@ -1038,6 +1060,7 @@ class AutonomousDatabase(object):
         self._db_version = None
         self._is_preview = None
         self._db_workload = None
+        self._is_dev_tier = None
         self._is_access_control_enabled = None
         self._whitelisted_ips = None
         self._are_primary_whitelisted_ips_used = None
@@ -1093,6 +1116,7 @@ class AutonomousDatabase(object):
         self._disaster_recovery_region_type = None
         self._time_disaster_recovery_role_changed = None
         self._remote_disaster_recovery_configuration = None
+        self._net_services_architecture = None
 
     @property
     def id(self):
@@ -2541,6 +2565,30 @@ class AutonomousDatabase(object):
         if not value_allowed_none_or_none_sentinel(db_workload, allowed_values):
             db_workload = 'UNKNOWN_ENUM_VALUE'
         self._db_workload = db_workload
+
+    @property
+    def is_dev_tier(self):
+        """
+        Gets the is_dev_tier of this AutonomousDatabase.
+        This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev , memory and CPU cannot be scaled
+
+
+        :return: The is_dev_tier of this AutonomousDatabase.
+        :rtype: bool
+        """
+        return self._is_dev_tier
+
+    @is_dev_tier.setter
+    def is_dev_tier(self, is_dev_tier):
+        """
+        Sets the is_dev_tier of this AutonomousDatabase.
+        This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev , memory and CPU cannot be scaled
+
+
+        :param is_dev_tier: The is_dev_tier of this AutonomousDatabase.
+        :type: bool
+        """
+        self._is_dev_tier = is_dev_tier
 
     @property
     def is_access_control_enabled(self):
@@ -4059,6 +4107,36 @@ class AutonomousDatabase(object):
         :type: oci.database.models.DisasterRecoveryConfiguration
         """
         self._remote_disaster_recovery_configuration = remote_disaster_recovery_configuration
+
+    @property
+    def net_services_architecture(self):
+        """
+        Gets the net_services_architecture of this AutonomousDatabase.
+        Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+
+        Allowed values for this property are: "DEDICATED", "SHARED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The net_services_architecture of this AutonomousDatabase.
+        :rtype: str
+        """
+        return self._net_services_architecture
+
+    @net_services_architecture.setter
+    def net_services_architecture(self, net_services_architecture):
+        """
+        Sets the net_services_architecture of this AutonomousDatabase.
+        Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+
+
+        :param net_services_architecture: The net_services_architecture of this AutonomousDatabase.
+        :type: str
+        """
+        allowed_values = ["DEDICATED", "SHARED"]
+        if not value_allowed_none_or_none_sentinel(net_services_architecture, allowed_values):
+            net_services_architecture = 'UNKNOWN_ENUM_VALUE'
+        self._net_services_architecture = net_services_architecture
 
     def __repr__(self):
         return formatted_flat_dict(self)

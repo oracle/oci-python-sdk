@@ -22,7 +22,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "24.03.03"
+    version = "24.03.12"
 
     ##########################################################################
     # spaces for align

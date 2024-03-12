@@ -135,6 +135,22 @@ class AutonomousContainerDatabase(object):
     #: This constant has a value of "OCPU"
     COMPUTE_MODEL_OCPU = "OCPU"
 
+    #: A constant which can be used with the distribution_affinity property of a AutonomousContainerDatabase.
+    #: This constant has a value of "MINIMUM_DISTRIBUTION"
+    DISTRIBUTION_AFFINITY_MINIMUM_DISTRIBUTION = "MINIMUM_DISTRIBUTION"
+
+    #: A constant which can be used with the distribution_affinity property of a AutonomousContainerDatabase.
+    #: This constant has a value of "MAXIMUM_DISTRIBUTION"
+    DISTRIBUTION_AFFINITY_MAXIMUM_DISTRIBUTION = "MAXIMUM_DISTRIBUTION"
+
+    #: A constant which can be used with the net_services_architecture property of a AutonomousContainerDatabase.
+    #: This constant has a value of "DEDICATED"
+    NET_SERVICES_ARCHITECTURE_DEDICATED = "DEDICATED"
+
+    #: A constant which can be used with the net_services_architecture property of a AutonomousContainerDatabase.
+    #: This constant has a value of "SHARED"
+    NET_SERVICES_ARCHITECTURE_SHARED = "SHARED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AutonomousContainerDatabase object with values from keyword arguments.
@@ -334,6 +350,26 @@ class AutonomousContainerDatabase(object):
             The value to assign to the time_of_last_backup property of this AutonomousContainerDatabase.
         :type time_of_last_backup: datetime
 
+        :param db_split_threshold:
+            The value to assign to the db_split_threshold property of this AutonomousContainerDatabase.
+        :type db_split_threshold: int
+
+        :param vm_failover_reservation:
+            The value to assign to the vm_failover_reservation property of this AutonomousContainerDatabase.
+        :type vm_failover_reservation: int
+
+        :param distribution_affinity:
+            The value to assign to the distribution_affinity property of this AutonomousContainerDatabase.
+            Allowed values for this property are: "MINIMUM_DISTRIBUTION", "MAXIMUM_DISTRIBUTION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type distribution_affinity: str
+
+        :param net_services_architecture:
+            The value to assign to the net_services_architecture property of this AutonomousContainerDatabase.
+            Allowed values for this property are: "DEDICATED", "SHARED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type net_services_architecture: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -380,7 +416,11 @@ class AutonomousContainerDatabase(object):
             'provisioned_cpus': 'float',
             'reserved_cpus': 'float',
             'largest_provisionable_autonomous_database_in_cpus': 'float',
-            'time_of_last_backup': 'datetime'
+            'time_of_last_backup': 'datetime',
+            'db_split_threshold': 'int',
+            'vm_failover_reservation': 'int',
+            'distribution_affinity': 'str',
+            'net_services_architecture': 'str'
         }
 
         self.attribute_map = {
@@ -428,7 +468,11 @@ class AutonomousContainerDatabase(object):
             'provisioned_cpus': 'provisionedCpus',
             'reserved_cpus': 'reservedCpus',
             'largest_provisionable_autonomous_database_in_cpus': 'largestProvisionableAutonomousDatabaseInCpus',
-            'time_of_last_backup': 'timeOfLastBackup'
+            'time_of_last_backup': 'timeOfLastBackup',
+            'db_split_threshold': 'dbSplitThreshold',
+            'vm_failover_reservation': 'vmFailoverReservation',
+            'distribution_affinity': 'distributionAffinity',
+            'net_services_architecture': 'netServicesArchitecture'
         }
 
         self._id = None
@@ -476,6 +520,10 @@ class AutonomousContainerDatabase(object):
         self._reserved_cpus = None
         self._largest_provisionable_autonomous_database_in_cpus = None
         self._time_of_last_backup = None
+        self._db_split_threshold = None
+        self._vm_failover_reservation = None
+        self._distribution_affinity = None
+        self._net_services_architecture = None
 
     @property
     def id(self):
@@ -1638,6 +1686,114 @@ class AutonomousContainerDatabase(object):
         :type: datetime
         """
         self._time_of_last_backup = time_of_last_backup
+
+    @property
+    def db_split_threshold(self):
+        """
+        Gets the db_split_threshold of this AutonomousContainerDatabase.
+        The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the \"CPU per VM\" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the \"CPU per VM\" value.
+
+
+        :return: The db_split_threshold of this AutonomousContainerDatabase.
+        :rtype: int
+        """
+        return self._db_split_threshold
+
+    @db_split_threshold.setter
+    def db_split_threshold(self, db_split_threshold):
+        """
+        Sets the db_split_threshold of this AutonomousContainerDatabase.
+        The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the \"CPU per VM\" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the \"CPU per VM\" value.
+
+
+        :param db_split_threshold: The db_split_threshold of this AutonomousContainerDatabase.
+        :type: int
+        """
+        self._db_split_threshold = db_split_threshold
+
+    @property
+    def vm_failover_reservation(self):
+        """
+        Gets the vm_failover_reservation of this AutonomousContainerDatabase.
+        The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+
+
+        :return: The vm_failover_reservation of this AutonomousContainerDatabase.
+        :rtype: int
+        """
+        return self._vm_failover_reservation
+
+    @vm_failover_reservation.setter
+    def vm_failover_reservation(self, vm_failover_reservation):
+        """
+        Sets the vm_failover_reservation of this AutonomousContainerDatabase.
+        The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+
+
+        :param vm_failover_reservation: The vm_failover_reservation of this AutonomousContainerDatabase.
+        :type: int
+        """
+        self._vm_failover_reservation = vm_failover_reservation
+
+    @property
+    def distribution_affinity(self):
+        """
+        Gets the distribution_affinity of this AutonomousContainerDatabase.
+        This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+
+        Allowed values for this property are: "MINIMUM_DISTRIBUTION", "MAXIMUM_DISTRIBUTION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The distribution_affinity of this AutonomousContainerDatabase.
+        :rtype: str
+        """
+        return self._distribution_affinity
+
+    @distribution_affinity.setter
+    def distribution_affinity(self, distribution_affinity):
+        """
+        Sets the distribution_affinity of this AutonomousContainerDatabase.
+        This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+
+
+        :param distribution_affinity: The distribution_affinity of this AutonomousContainerDatabase.
+        :type: str
+        """
+        allowed_values = ["MINIMUM_DISTRIBUTION", "MAXIMUM_DISTRIBUTION"]
+        if not value_allowed_none_or_none_sentinel(distribution_affinity, allowed_values):
+            distribution_affinity = 'UNKNOWN_ENUM_VALUE'
+        self._distribution_affinity = distribution_affinity
+
+    @property
+    def net_services_architecture(self):
+        """
+        Gets the net_services_architecture of this AutonomousContainerDatabase.
+        Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+
+        Allowed values for this property are: "DEDICATED", "SHARED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The net_services_architecture of this AutonomousContainerDatabase.
+        :rtype: str
+        """
+        return self._net_services_architecture
+
+    @net_services_architecture.setter
+    def net_services_architecture(self, net_services_architecture):
+        """
+        Sets the net_services_architecture of this AutonomousContainerDatabase.
+        Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+
+
+        :param net_services_architecture: The net_services_architecture of this AutonomousContainerDatabase.
+        :type: str
+        """
+        allowed_values = ["DEDICATED", "SHARED"]
+        if not value_allowed_none_or_none_sentinel(net_services_architecture, allowed_values):
+            net_services_architecture = 'UNKNOWN_ENUM_VALUE'
+        self._net_services_architecture = net_services_architecture
 
     def __repr__(self):
         return formatted_flat_dict(self)

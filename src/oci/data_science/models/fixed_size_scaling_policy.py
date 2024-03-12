@@ -23,7 +23,7 @@ class FixedSizeScalingPolicy(ScalingPolicy):
 
         :param policy_type:
             The value to assign to the policy_type property of this FixedSizeScalingPolicy.
-            Allowed values for this property are: "FIXED_SIZE"
+            Allowed values for this property are: "FIXED_SIZE", "AUTOSCALING"
         :type policy_type: str
 
         :param instance_count:

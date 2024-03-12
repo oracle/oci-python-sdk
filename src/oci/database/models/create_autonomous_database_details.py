@@ -104,6 +104,10 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
             The value to assign to the is_auto_scaling_enabled property of this CreateAutonomousDatabaseDetails.
         :type is_auto_scaling_enabled: bool
 
+        :param is_dev_tier:
+            The value to assign to the is_dev_tier property of this CreateAutonomousDatabaseDetails.
+        :type is_dev_tier: bool
+
         :param is_dedicated:
             The value to assign to the is_dedicated property of this CreateAutonomousDatabaseDetails.
         :type is_dedicated: bool
@@ -240,6 +244,7 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
             'license_model': 'str',
             'is_preview_version_with_service_terms_accepted': 'bool',
             'is_auto_scaling_enabled': 'bool',
+            'is_dev_tier': 'bool',
             'is_dedicated': 'bool',
             'autonomous_container_database_id': 'str',
             'in_memory_percentage': 'int',
@@ -291,6 +296,7 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
             'license_model': 'licenseModel',
             'is_preview_version_with_service_terms_accepted': 'isPreviewVersionWithServiceTermsAccepted',
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
+            'is_dev_tier': 'isDevTier',
             'is_dedicated': 'isDedicated',
             'autonomous_container_database_id': 'autonomousContainerDatabaseId',
             'in_memory_percentage': 'inMemoryPercentage',
@@ -341,6 +347,7 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
         self._license_model = None
         self._is_preview_version_with_service_terms_accepted = None
         self._is_auto_scaling_enabled = None
+        self._is_dev_tier = None
         self._is_dedicated = None
         self._autonomous_container_database_id = None
         self._in_memory_percentage = None
