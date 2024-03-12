@@ -10,6 +10,8 @@ from .artifact_export_details import ArtifactExportDetails
 from .artifact_export_details_object_storage import ArtifactExportDetailsObjectStorage
 from .artifact_import_details import ArtifactImportDetails
 from .artifact_import_details_object_storage import ArtifactImportDetailsObjectStorage
+from .auto_scaling_policy import AutoScalingPolicy
+from .auto_scaling_policy_details import AutoScalingPolicyDetails
 from .category_log_details import CategoryLogDetails
 from .change_data_science_private_endpoint_compartment_details import ChangeDataSciencePrivateEndpointCompartmentDetails
 from .change_job_compartment_details import ChangeJobCompartmentDetails
@@ -32,6 +34,8 @@ from .create_notebook_session_details import CreateNotebookSessionDetails
 from .create_pipeline_details import CreatePipelineDetails
 from .create_pipeline_run_details import CreatePipelineRunDetails
 from .create_project_details import CreateProjectDetails
+from .custom_expression_query_scaling_configuration import CustomExpressionQueryScalingConfiguration
+from .custom_metric_expression_rule import CustomMetricExpressionRule
 from .data_science_private_endpoint import DataSciencePrivateEndpoint
 from .data_science_private_endpoint_summary import DataSciencePrivateEndpointSummary
 from .default_job_configuration_details import DefaultJobConfigurationDetails
@@ -42,6 +46,7 @@ from .file_storage_mount_configuration_details import FileStorageMountConfigurat
 from .fixed_size_scaling_policy import FixedSizeScalingPolicy
 from .import_model_artifact_details import ImportModelArtifactDetails
 from .instance_configuration import InstanceConfiguration
+from .instance_pool_model_deployment_system_data import InstancePoolModelDeploymentSystemData
 from .job import Job
 from .job_configuration_details import JobConfigurationDetails
 from .job_environment_configuration_details import JobEnvironmentConfigurationDetails
@@ -56,6 +61,7 @@ from .job_summary import JobSummary
 from .log_details import LogDetails
 from .managed_egress_standalone_job_infrastructure_configuration_details import ManagedEgressStandaloneJobInfrastructureConfigurationDetails
 from .metadata import Metadata
+from .metric_expression_rule import MetricExpressionRule
 from .model import Model
 from .model_configuration_details import ModelConfigurationDetails
 from .model_deployment import ModelDeployment
@@ -64,6 +70,7 @@ from .model_deployment_environment_configuration_details import ModelDeploymentE
 from .model_deployment_instance_shape_config_details import ModelDeploymentInstanceShapeConfigDetails
 from .model_deployment_shape_summary import ModelDeploymentShapeSummary
 from .model_deployment_summary import ModelDeploymentSummary
+from .model_deployment_system_data import ModelDeploymentSystemData
 from .model_provenance import ModelProvenance
 from .model_summary import ModelSummary
 from .model_version_set import ModelVersionSet
@@ -101,12 +108,16 @@ from .pipeline_step_override_details import PipelineStepOverrideDetails
 from .pipeline_step_run import PipelineStepRun
 from .pipeline_step_update_details import PipelineStepUpdateDetails
 from .pipeline_summary import PipelineSummary
+from .predefined_expression_threshold_scaling_configuration import PredefinedExpressionThresholdScalingConfiguration
+from .predefined_metric_expression_rule import PredefinedMetricExpressionRule
 from .project import Project
 from .project_summary import ProjectSummary
+from .scaling_configuration import ScalingConfiguration
 from .scaling_policy import ScalingPolicy
 from .single_model_deployment_configuration_details import SingleModelDeploymentConfigurationDetails
 from .standalone_job_infrastructure_configuration_details import StandaloneJobInfrastructureConfigurationDetails
 from .storage_mount_configuration_details import StorageMountConfigurationDetails
+from .threshold_based_auto_scaling_policy_details import ThresholdBasedAutoScalingPolicyDetails
 from .update_category_log_details import UpdateCategoryLogDetails
 from .update_data_science_private_endpoint_details import UpdateDataSciencePrivateEndpointDetails
 from .update_default_model_deployment_environment_configuration_details import UpdateDefaultModelDeploymentEnvironmentConfigurationDetails
@@ -137,6 +148,8 @@ data_science_type_mapping = {
     "ArtifactExportDetailsObjectStorage": ArtifactExportDetailsObjectStorage,
     "ArtifactImportDetails": ArtifactImportDetails,
     "ArtifactImportDetailsObjectStorage": ArtifactImportDetailsObjectStorage,
+    "AutoScalingPolicy": AutoScalingPolicy,
+    "AutoScalingPolicyDetails": AutoScalingPolicyDetails,
     "CategoryLogDetails": CategoryLogDetails,
     "ChangeDataSciencePrivateEndpointCompartmentDetails": ChangeDataSciencePrivateEndpointCompartmentDetails,
     "ChangeJobCompartmentDetails": ChangeJobCompartmentDetails,
@@ -159,6 +172,8 @@ data_science_type_mapping = {
     "CreatePipelineDetails": CreatePipelineDetails,
     "CreatePipelineRunDetails": CreatePipelineRunDetails,
     "CreateProjectDetails": CreateProjectDetails,
+    "CustomExpressionQueryScalingConfiguration": CustomExpressionQueryScalingConfiguration,
+    "CustomMetricExpressionRule": CustomMetricExpressionRule,
     "DataSciencePrivateEndpoint": DataSciencePrivateEndpoint,
     "DataSciencePrivateEndpointSummary": DataSciencePrivateEndpointSummary,
     "DefaultJobConfigurationDetails": DefaultJobConfigurationDetails,
@@ -169,6 +184,7 @@ data_science_type_mapping = {
     "FixedSizeScalingPolicy": FixedSizeScalingPolicy,
     "ImportModelArtifactDetails": ImportModelArtifactDetails,
     "InstanceConfiguration": InstanceConfiguration,
+    "InstancePoolModelDeploymentSystemData": InstancePoolModelDeploymentSystemData,
     "Job": Job,
     "JobConfigurationDetails": JobConfigurationDetails,
     "JobEnvironmentConfigurationDetails": JobEnvironmentConfigurationDetails,
@@ -183,6 +199,7 @@ data_science_type_mapping = {
     "LogDetails": LogDetails,
     "ManagedEgressStandaloneJobInfrastructureConfigurationDetails": ManagedEgressStandaloneJobInfrastructureConfigurationDetails,
     "Metadata": Metadata,
+    "MetricExpressionRule": MetricExpressionRule,
     "Model": Model,
     "ModelConfigurationDetails": ModelConfigurationDetails,
     "ModelDeployment": ModelDeployment,
@@ -191,6 +208,7 @@ data_science_type_mapping = {
     "ModelDeploymentInstanceShapeConfigDetails": ModelDeploymentInstanceShapeConfigDetails,
     "ModelDeploymentShapeSummary": ModelDeploymentShapeSummary,
     "ModelDeploymentSummary": ModelDeploymentSummary,
+    "ModelDeploymentSystemData": ModelDeploymentSystemData,
     "ModelProvenance": ModelProvenance,
     "ModelSummary": ModelSummary,
     "ModelVersionSet": ModelVersionSet,
@@ -228,12 +246,16 @@ data_science_type_mapping = {
     "PipelineStepRun": PipelineStepRun,
     "PipelineStepUpdateDetails": PipelineStepUpdateDetails,
     "PipelineSummary": PipelineSummary,
+    "PredefinedExpressionThresholdScalingConfiguration": PredefinedExpressionThresholdScalingConfiguration,
+    "PredefinedMetricExpressionRule": PredefinedMetricExpressionRule,
     "Project": Project,
     "ProjectSummary": ProjectSummary,
+    "ScalingConfiguration": ScalingConfiguration,
     "ScalingPolicy": ScalingPolicy,
     "SingleModelDeploymentConfigurationDetails": SingleModelDeploymentConfigurationDetails,
     "StandaloneJobInfrastructureConfigurationDetails": StandaloneJobInfrastructureConfigurationDetails,
     "StorageMountConfigurationDetails": StorageMountConfigurationDetails,
+    "ThresholdBasedAutoScalingPolicyDetails": ThresholdBasedAutoScalingPolicyDetails,
     "UpdateCategoryLogDetails": UpdateCategoryLogDetails,
     "UpdateDataSciencePrivateEndpointDetails": UpdateDataSciencePrivateEndpointDetails,
     "UpdateDefaultModelDeploymentEnvironmentConfigurationDetails": UpdateDefaultModelDeploymentEnvironmentConfigurationDetails,

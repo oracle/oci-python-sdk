@@ -188,6 +188,10 @@ class CreateAutonomousDatabaseBase(object):
             The value to assign to the is_auto_scaling_enabled property of this CreateAutonomousDatabaseBase.
         :type is_auto_scaling_enabled: bool
 
+        :param is_dev_tier:
+            The value to assign to the is_dev_tier property of this CreateAutonomousDatabaseBase.
+        :type is_dev_tier: bool
+
         :param is_dedicated:
             The value to assign to the is_dedicated property of this CreateAutonomousDatabaseBase.
         :type is_dedicated: bool
@@ -324,6 +328,7 @@ class CreateAutonomousDatabaseBase(object):
             'license_model': 'str',
             'is_preview_version_with_service_terms_accepted': 'bool',
             'is_auto_scaling_enabled': 'bool',
+            'is_dev_tier': 'bool',
             'is_dedicated': 'bool',
             'autonomous_container_database_id': 'str',
             'in_memory_percentage': 'int',
@@ -375,6 +380,7 @@ class CreateAutonomousDatabaseBase(object):
             'license_model': 'licenseModel',
             'is_preview_version_with_service_terms_accepted': 'isPreviewVersionWithServiceTermsAccepted',
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
+            'is_dev_tier': 'isDevTier',
             'is_dedicated': 'isDedicated',
             'autonomous_container_database_id': 'autonomousContainerDatabaseId',
             'in_memory_percentage': 'inMemoryPercentage',
@@ -425,6 +431,7 @@ class CreateAutonomousDatabaseBase(object):
         self._license_model = None
         self._is_preview_version_with_service_terms_accepted = None
         self._is_auto_scaling_enabled = None
+        self._is_dev_tier = None
         self._is_dedicated = None
         self._autonomous_container_database_id = None
         self._in_memory_percentage = None
@@ -1107,6 +1114,30 @@ class CreateAutonomousDatabaseBase(object):
         :type: bool
         """
         self._is_auto_scaling_enabled = is_auto_scaling_enabled
+
+    @property
+    def is_dev_tier(self):
+        """
+        Gets the is_dev_tier of this CreateAutonomousDatabaseBase.
+        This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev , memory and CPU cannot be scaled
+
+
+        :return: The is_dev_tier of this CreateAutonomousDatabaseBase.
+        :rtype: bool
+        """
+        return self._is_dev_tier
+
+    @is_dev_tier.setter
+    def is_dev_tier(self, is_dev_tier):
+        """
+        Sets the is_dev_tier of this CreateAutonomousDatabaseBase.
+        This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev , memory and CPU cannot be scaled
+
+
+        :param is_dev_tier: The is_dev_tier of this CreateAutonomousDatabaseBase.
+        :type: bool
+        """
+        self._is_dev_tier = is_dev_tier
 
     @property
     def is_dedicated(self):

@@ -107,6 +107,10 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the long_term_backup_schedule property of this UpdateAutonomousDatabaseDetails.
         :type long_term_backup_schedule: oci.database.models.LongTermBackUpScheduleDetails
 
+        :param is_dev_tier:
+            The value to assign to the is_dev_tier property of this UpdateAutonomousDatabaseDetails.
+        :type is_dev_tier: bool
+
         :param compute_count:
             The value to assign to the compute_count property of this UpdateAutonomousDatabaseDetails.
         :type compute_count: float
@@ -276,6 +280,7 @@ class UpdateAutonomousDatabaseDetails(object):
             'local_adg_auto_failover_max_data_loss_limit': 'int',
             'cpu_core_count': 'int',
             'long_term_backup_schedule': 'LongTermBackUpScheduleDetails',
+            'is_dev_tier': 'bool',
             'compute_count': 'float',
             'ocpu_count': 'float',
             'data_storage_size_in_tbs': 'int',
@@ -324,6 +329,7 @@ class UpdateAutonomousDatabaseDetails(object):
             'local_adg_auto_failover_max_data_loss_limit': 'localAdgAutoFailoverMaxDataLossLimit',
             'cpu_core_count': 'cpuCoreCount',
             'long_term_backup_schedule': 'longTermBackupSchedule',
+            'is_dev_tier': 'isDevTier',
             'compute_count': 'computeCount',
             'ocpu_count': 'ocpuCount',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
@@ -371,6 +377,7 @@ class UpdateAutonomousDatabaseDetails(object):
         self._local_adg_auto_failover_max_data_loss_limit = None
         self._cpu_core_count = None
         self._long_term_backup_schedule = None
+        self._is_dev_tier = None
         self._compute_count = None
         self._ocpu_count = None
         self._data_storage_size_in_tbs = None
@@ -571,6 +578,30 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: oci.database.models.LongTermBackUpScheduleDetails
         """
         self._long_term_backup_schedule = long_term_backup_schedule
+
+    @property
+    def is_dev_tier(self):
+        """
+        Gets the is_dev_tier of this UpdateAutonomousDatabaseDetails.
+        This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev , memory and CPU cannot be scaled
+
+
+        :return: The is_dev_tier of this UpdateAutonomousDatabaseDetails.
+        :rtype: bool
+        """
+        return self._is_dev_tier
+
+    @is_dev_tier.setter
+    def is_dev_tier(self, is_dev_tier):
+        """
+        Sets the is_dev_tier of this UpdateAutonomousDatabaseDetails.
+        This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev , memory and CPU cannot be scaled
+
+
+        :param is_dev_tier: The is_dev_tier of this UpdateAutonomousDatabaseDetails.
+        :type: bool
+        """
+        self._is_dev_tier = is_dev_tier
 
     @property
     def compute_count(self):

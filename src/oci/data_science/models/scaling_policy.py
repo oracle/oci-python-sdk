@@ -19,18 +19,23 @@ class ScalingPolicy(object):
     #: This constant has a value of "FIXED_SIZE"
     POLICY_TYPE_FIXED_SIZE = "FIXED_SIZE"
 
+    #: A constant which can be used with the policy_type property of a ScalingPolicy.
+    #: This constant has a value of "AUTOSCALING"
+    POLICY_TYPE_AUTOSCALING = "AUTOSCALING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ScalingPolicy object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.data_science.models.AutoScalingPolicy`
         * :class:`~oci.data_science.models.FixedSizeScalingPolicy`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param policy_type:
             The value to assign to the policy_type property of this ScalingPolicy.
-            Allowed values for this property are: "FIXED_SIZE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "FIXED_SIZE", "AUTOSCALING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type policy_type: str
 
@@ -53,6 +58,9 @@ class ScalingPolicy(object):
         """
         type = object_dictionary['policyType']
 
+        if type == 'AUTOSCALING':
+            return 'AutoScalingPolicy'
+
         if type == 'FIXED_SIZE':
             return 'FixedSizeScalingPolicy'
         else:
@@ -64,7 +72,7 @@ class ScalingPolicy(object):
         **[Required]** Gets the policy_type of this ScalingPolicy.
         The type of scaling policy.
 
-        Allowed values for this property are: "FIXED_SIZE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "FIXED_SIZE", "AUTOSCALING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -83,7 +91,7 @@ class ScalingPolicy(object):
         :param policy_type: The policy_type of this ScalingPolicy.
         :type: str
         """
-        allowed_values = ["FIXED_SIZE"]
+        allowed_values = ["FIXED_SIZE", "AUTOSCALING"]
         if not value_allowed_none_or_none_sentinel(policy_type, allowed_values):
             policy_type = 'UNKNOWN_ENUM_VALUE'
         self._policy_type = policy_type

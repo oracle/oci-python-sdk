@@ -36,25 +36,32 @@ class ModelConfigurationDetails(object):
             The value to assign to the bandwidth_mbps property of this ModelConfigurationDetails.
         :type bandwidth_mbps: int
 
+        :param maximum_bandwidth_mbps:
+            The value to assign to the maximum_bandwidth_mbps property of this ModelConfigurationDetails.
+        :type maximum_bandwidth_mbps: int
+
         """
         self.swagger_types = {
             'model_id': 'str',
             'instance_configuration': 'InstanceConfiguration',
             'scaling_policy': 'ScalingPolicy',
-            'bandwidth_mbps': 'int'
+            'bandwidth_mbps': 'int',
+            'maximum_bandwidth_mbps': 'int'
         }
 
         self.attribute_map = {
             'model_id': 'modelId',
             'instance_configuration': 'instanceConfiguration',
             'scaling_policy': 'scalingPolicy',
-            'bandwidth_mbps': 'bandwidthMbps'
+            'bandwidth_mbps': 'bandwidthMbps',
+            'maximum_bandwidth_mbps': 'maximumBandwidthMbps'
         }
 
         self._model_id = None
         self._instance_configuration = None
         self._scaling_policy = None
         self._bandwidth_mbps = None
+        self._maximum_bandwidth_mbps = None
 
     @property
     def model_id(self):
@@ -143,6 +150,30 @@ class ModelConfigurationDetails(object):
         :type: int
         """
         self._bandwidth_mbps = bandwidth_mbps
+
+    @property
+    def maximum_bandwidth_mbps(self):
+        """
+        Gets the maximum_bandwidth_mbps of this ModelConfigurationDetails.
+        The maximum network bandwidth for the model deployment.
+
+
+        :return: The maximum_bandwidth_mbps of this ModelConfigurationDetails.
+        :rtype: int
+        """
+        return self._maximum_bandwidth_mbps
+
+    @maximum_bandwidth_mbps.setter
+    def maximum_bandwidth_mbps(self, maximum_bandwidth_mbps):
+        """
+        Sets the maximum_bandwidth_mbps of this ModelConfigurationDetails.
+        The maximum network bandwidth for the model deployment.
+
+
+        :param maximum_bandwidth_mbps: The maximum_bandwidth_mbps of this ModelConfigurationDetails.
+        :type: int
+        """
+        self._maximum_bandwidth_mbps = maximum_bandwidth_mbps
 
     def __repr__(self):
         return formatted_flat_dict(self)

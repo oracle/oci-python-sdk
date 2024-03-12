@@ -39,7 +39,7 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "24.03.03"
+    version = "24.03.12"
     oci_compatible_version = "2.119.1"
     thread_lock = threading.Lock()
 
@@ -269,6 +269,8 @@ class ShowOCIService(object):
     ##########################################################################
     EXCLUDE_NETWORK = 'NETWORK'
     EXCLUDE_LIMITS = 'LIMITS'
+    EXCLUDE_OCE = 'OCE'
+    EXCLUDE_GENAI = 'GENAI'
     EXCLUDE_QUOTAS = 'QUOTAS'
     EXCLUDE_DNSZONE = 'DNSZONE'
     EXCLUDE_VCIRCUITS = 'VCIRCUITS'
@@ -1101,9 +1103,13 @@ class ShowOCIService(object):
     ##########################################################################
     # Create client
     ##########################################################################
-    def __create_client(self, client, service_endpoint=None):
+    def __create_client(self, client, service_endpoint=None, key=None):
 
         c = None
+
+        # if key exists for exclude
+        if key and key in self.flags.exclude:
+            return c
 
         # If client has service endpoint:
         if service_endpoint:
@@ -1303,6 +1309,20 @@ class ShowOCIService(object):
     ##########################################################################
     def __if_managed_paas_compartment(self, name):
         return name == "ManagedCompartmentForPaaS"
+
+    ##########################################################################
+    # print excluded
+    ##########################################################################
+    def __load_print_thread_exclude(self, header):
+
+        str_cnt = str("(-)").ljust(7)
+
+        if self.flags.skip_threads:
+            print(" " + str_cnt + " - excluded")
+        else:
+            # lock for printing
+            with self.thread_lock:
+                print("--> " + header.ljust(32) + "<-- excluded")
 
     ##########################################################################
     # print count result for Thread
@@ -14439,44 +14459,24 @@ class ShowOCIService(object):
             print("Native, Data and AI ...")
 
             # For Native
-            oic_client = oci.integration.IntegrationInstanceClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
-            oac_client = oci.analytics.AnalyticsClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
-            oce_client = oci.oce.OceInstanceClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
-            ocvs_client = oci.ocvp.SddcClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
-            esxi_client = oci.ocvp.EsxiHostClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
-            cluster_client = oci.ocvp.ClusterClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
-            vb_client = oci.visual_builder.VbInstanceClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
-            opensearch_client = oci.opensearch.OpensearchClusterClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
-            virtual_network = oci.core.VirtualNetworkClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
-            devops_client = oci.devops.DevopsClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
+            oic_client = self.__create_client(oci.integration.IntegrationInstanceClient)
+            oac_client = self.__create_client(oci.analytics.AnalyticsClient)
+            ocvs_client = self.__create_client(oci.ocvp.SddcClient)
+            esxi_client = self.__create_client(oci.ocvp.EsxiHostClient)
+            cluster_client = self.__create_client(oci.integration.IntegrationInstanceClient)
+            vb_client = self.__create_client(oci.visual_builder.VbInstanceClient)
+            opensearch_client = self.__create_client(oci.opensearch.OpensearchClusterClient)
+            virtual_network = self.__create_client(oci.core.VirtualNetworkClient)
+            devops_client = self.__create_client(oci.devops.DevopsClient)
+            oce_client = self.__create_client(oci.oce.OceInstanceClient, key=self.EXCLUDE_OCE)
 
-            ds_client = oci.data_science.DataScienceClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
-            dc_client = oci.data_catalog.DataCatalogClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
-            df_client = oci.data_flow.DataFlowClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
-            oda_client = oci.oda.OdaClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
-            bds_client = oci.bds.BdsClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
-            di_client = oci.data_integration.DataIntegrationClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
-            genai_client = oci.generative_ai.GenerativeAiClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
-
-            if self.flags.proxy:
-                oic_client.base_client.session.proxies = {'https': self.flags.proxy}
-                oac_client.base_client.session.proxies = {'https': self.flags.proxy}
-                oce_client.base_client.session.proxies = {'https': self.flags.proxy}
-                ocvs_client.base_client.session.proxies = {'https': self.flags.proxy}
-                vb_client.base_client.session.proxies = {'https': self.flags.proxy}
-                esxi_client.base_client.session.proxies = {'https': self.flags.proxy}
-                cluster_client.base_client.session.proxies = {'https': self.flags.proxy}
-                virtual_network.base_client.session.proxies = {'https': self.flags.proxy}
-                opensearch_client.base_client.session.proxies = {'https': self.flags.proxy}
-                devops_client.base_client.session.proxies = {'https': self.flags.proxy}
-
-                ds_client.base_client.session.proxies = {'https': self.flags.proxy}
-                dc_client.base_client.session.proxies = {'https': self.flags.proxy}
-                df_client.base_client.session.proxies = {'https': self.flags.proxy}
-                oda_client.base_client.session.proxies = {'https': self.flags.proxy}
-                bds_client.base_client.session.proxies = {'https': self.flags.proxy}
-                di_client.base_client.session.proxies = {'https': self.flags.proxy}
-                genai_client.base_client.session.proxies = {'https': self.flags.proxy}
+            ds_client = self.__create_client(oci.data_science.DataScienceClient)
+            dc_client = self.__create_client(oci.data_catalog.DataCatalogClient)
+            df_client = self.__create_client(oci.data_flow.DataFlowClient)
+            oda_client = self.__create_client(oci.oda.OdaClient)
+            bds_client = self.__create_client(oci.bds.BdsClient)
+            di_client = self.__create_client(oci.data_integration.DataIntegrationClient)
+            genai_client = self.__create_client(oci.generative_ai.GenerativeAiClient, key=self.EXCLUDE_GENAI)
 
             # reference to compartments
             compartments = self.get_compartments()
@@ -15251,9 +15251,14 @@ class ShowOCIService(object):
         start_time = time.time()
 
         try:
+
             errstr = ""
             header = "Generative AI"
             self.__load_print_status_with_threads(header)
+
+            if self.EXCLUDE_GENAI in self.flags.exclude:
+                self.__load_print_thread_exclude(header)
+                return data
 
             # loop on all compartments
             for compartment in compartments:
@@ -15877,9 +15882,14 @@ class ShowOCIService(object):
         start_time = time.time()
 
         try:
+
             errstr = ""
             header = "OCE Native"
             self.__load_print_status_with_threads(header)
+
+            if self.EXCLUDE_OCE in self.flags.exclude:
+                self.__load_print_thread_exclude(header)
+                return data
 
             # loop on all compartments
             for compartment in compartments:
@@ -16317,13 +16327,14 @@ class ShowOCIService(object):
         cnt = 0
         start_time = time.time()
 
-        if self.EXCLUDE_LIMITS in self.flags.exclude:
-            return data
-
         try:
             errstr = ""
             header = "Limits"
             self.__load_print_status_with_threads(header)
+
+            if self.EXCLUDE_LIMITS in self.flags.exclude:
+                self.__load_print_thread_exclude(header)
+                return data
 
             services = []
             try:
@@ -17787,7 +17798,6 @@ class ShowOCIDomains(object):
                 search_request = oci.identity_domains.models.OAuth2ClientCredentialSearchRequest(filter='user.ocid eq "' + self.get_value(ocid) + '"', schemas=["urn:ietf:params:scim:api:messages:2.0:SearchRequest"])
                 result = identity_domain_client.search_o_auth2_client_credentials(o_auth2_client_credential_search_request=search_request)
                 for r in result.data.resources:
-                    print(">> " + str(r))
                     k = {
                         "ocid": r.ocid,
                         "description": r.description,

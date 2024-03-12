@@ -22,6 +22,8 @@ Data Science
     oci.data_science.models.ArtifactExportDetailsObjectStorage
     oci.data_science.models.ArtifactImportDetails
     oci.data_science.models.ArtifactImportDetailsObjectStorage
+    oci.data_science.models.AutoScalingPolicy
+    oci.data_science.models.AutoScalingPolicyDetails
     oci.data_science.models.CategoryLogDetails
     oci.data_science.models.ChangeDataSciencePrivateEndpointCompartmentDetails
     oci.data_science.models.ChangeJobCompartmentDetails
@@ -44,6 +46,8 @@ Data Science
     oci.data_science.models.CreatePipelineDetails
     oci.data_science.models.CreatePipelineRunDetails
     oci.data_science.models.CreateProjectDetails
+    oci.data_science.models.CustomExpressionQueryScalingConfiguration
+    oci.data_science.models.CustomMetricExpressionRule
     oci.data_science.models.DataSciencePrivateEndpoint
     oci.data_science.models.DataSciencePrivateEndpointSummary
     oci.data_science.models.DefaultJobConfigurationDetails
@@ -54,6 +58,7 @@ Data Science
     oci.data_science.models.FixedSizeScalingPolicy
     oci.data_science.models.ImportModelArtifactDetails
     oci.data_science.models.InstanceConfiguration
+    oci.data_science.models.InstancePoolModelDeploymentSystemData
     oci.data_science.models.Job
     oci.data_science.models.JobConfigurationDetails
     oci.data_science.models.JobEnvironmentConfigurationDetails
@@ -68,6 +73,7 @@ Data Science
     oci.data_science.models.LogDetails
     oci.data_science.models.ManagedEgressStandaloneJobInfrastructureConfigurationDetails
     oci.data_science.models.Metadata
+    oci.data_science.models.MetricExpressionRule
     oci.data_science.models.Model
     oci.data_science.models.ModelConfigurationDetails
     oci.data_science.models.ModelDeployment
@@ -76,6 +82,7 @@ Data Science
     oci.data_science.models.ModelDeploymentInstanceShapeConfigDetails
     oci.data_science.models.ModelDeploymentShapeSummary
     oci.data_science.models.ModelDeploymentSummary
+    oci.data_science.models.ModelDeploymentSystemData
     oci.data_science.models.ModelProvenance
     oci.data_science.models.ModelSummary
     oci.data_science.models.ModelVersionSet
@@ -113,12 +120,16 @@ Data Science
     oci.data_science.models.PipelineStepRun
     oci.data_science.models.PipelineStepUpdateDetails
     oci.data_science.models.PipelineSummary
+    oci.data_science.models.PredefinedExpressionThresholdScalingConfiguration
+    oci.data_science.models.PredefinedMetricExpressionRule
     oci.data_science.models.Project
     oci.data_science.models.ProjectSummary
+    oci.data_science.models.ScalingConfiguration
     oci.data_science.models.ScalingPolicy
     oci.data_science.models.SingleModelDeploymentConfigurationDetails
     oci.data_science.models.StandaloneJobInfrastructureConfigurationDetails
     oci.data_science.models.StorageMountConfigurationDetails
+    oci.data_science.models.ThresholdBasedAutoScalingPolicyDetails
     oci.data_science.models.UpdateCategoryLogDetails
     oci.data_science.models.UpdateDataSciencePrivateEndpointDetails
     oci.data_science.models.UpdateDefaultModelDeploymentEnvironmentConfigurationDetails

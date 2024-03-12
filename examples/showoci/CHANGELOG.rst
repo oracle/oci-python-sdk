@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+24.03.12 - 24.03.12
+=====================
+* Added exclude for GENAI and OCE
+* Factor Client Creation for rest of services
+
+=====================
 24.03.03 - 24.03.03
 =====================
 * Remove max_cpu_core_count from Autonomous Database

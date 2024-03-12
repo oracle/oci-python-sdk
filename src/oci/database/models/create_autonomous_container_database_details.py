@@ -47,6 +47,22 @@ class CreateAutonomousContainerDatabaseDetails(object):
     #: This constant has a value of "LATEST_RELEASE_UPDATE"
     VERSION_PREFERENCE_LATEST_RELEASE_UPDATE = "LATEST_RELEASE_UPDATE"
 
+    #: A constant which can be used with the distribution_affinity property of a CreateAutonomousContainerDatabaseDetails.
+    #: This constant has a value of "MINIMUM_DISTRIBUTION"
+    DISTRIBUTION_AFFINITY_MINIMUM_DISTRIBUTION = "MINIMUM_DISTRIBUTION"
+
+    #: A constant which can be used with the distribution_affinity property of a CreateAutonomousContainerDatabaseDetails.
+    #: This constant has a value of "MAXIMUM_DISTRIBUTION"
+    DISTRIBUTION_AFFINITY_MAXIMUM_DISTRIBUTION = "MAXIMUM_DISTRIBUTION"
+
+    #: A constant which can be used with the net_services_architecture property of a CreateAutonomousContainerDatabaseDetails.
+    #: This constant has a value of "DEDICATED"
+    NET_SERVICES_ARCHITECTURE_DEDICATED = "DEDICATED"
+
+    #: A constant which can be used with the net_services_architecture property of a CreateAutonomousContainerDatabaseDetails.
+    #: This constant has a value of "SHARED"
+    NET_SERVICES_ARCHITECTURE_SHARED = "SHARED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateAutonomousContainerDatabaseDetails object with values from keyword arguments.
@@ -180,6 +196,24 @@ class CreateAutonomousContainerDatabaseDetails(object):
             The value to assign to the key_store_id property of this CreateAutonomousContainerDatabaseDetails.
         :type key_store_id: str
 
+        :param db_split_threshold:
+            The value to assign to the db_split_threshold property of this CreateAutonomousContainerDatabaseDetails.
+        :type db_split_threshold: int
+
+        :param vm_failover_reservation:
+            The value to assign to the vm_failover_reservation property of this CreateAutonomousContainerDatabaseDetails.
+        :type vm_failover_reservation: int
+
+        :param distribution_affinity:
+            The value to assign to the distribution_affinity property of this CreateAutonomousContainerDatabaseDetails.
+            Allowed values for this property are: "MINIMUM_DISTRIBUTION", "MAXIMUM_DISTRIBUTION"
+        :type distribution_affinity: str
+
+        :param net_services_architecture:
+            The value to assign to the net_services_architecture property of this CreateAutonomousContainerDatabaseDetails.
+            Allowed values for this property are: "DEDICATED", "SHARED"
+        :type net_services_architecture: str
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -212,7 +246,11 @@ class CreateAutonomousContainerDatabaseDetails(object):
             'kms_key_id': 'str',
             'kms_key_version_id': 'str',
             'vault_id': 'str',
-            'key_store_id': 'str'
+            'key_store_id': 'str',
+            'db_split_threshold': 'int',
+            'vm_failover_reservation': 'int',
+            'distribution_affinity': 'str',
+            'net_services_architecture': 'str'
         }
 
         self.attribute_map = {
@@ -246,7 +284,11 @@ class CreateAutonomousContainerDatabaseDetails(object):
             'kms_key_id': 'kmsKeyId',
             'kms_key_version_id': 'kmsKeyVersionId',
             'vault_id': 'vaultId',
-            'key_store_id': 'keyStoreId'
+            'key_store_id': 'keyStoreId',
+            'db_split_threshold': 'dbSplitThreshold',
+            'vm_failover_reservation': 'vmFailoverReservation',
+            'distribution_affinity': 'distributionAffinity',
+            'net_services_architecture': 'netServicesArchitecture'
         }
 
         self._display_name = None
@@ -280,6 +322,10 @@ class CreateAutonomousContainerDatabaseDetails(object):
         self._kms_key_version_id = None
         self._vault_id = None
         self._key_store_id = None
+        self._db_split_threshold = None
+        self._vm_failover_reservation = None
+        self._distribution_affinity = None
+        self._net_services_architecture = None
 
     @property
     def display_name(self):
@@ -1098,6 +1144,116 @@ class CreateAutonomousContainerDatabaseDetails(object):
         :type: str
         """
         self._key_store_id = key_store_id
+
+    @property
+    def db_split_threshold(self):
+        """
+        Gets the db_split_threshold of this CreateAutonomousContainerDatabaseDetails.
+        The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the \"CPU per VM\" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the \"CPU per VM\" value.
+
+
+        :return: The db_split_threshold of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: int
+        """
+        return self._db_split_threshold
+
+    @db_split_threshold.setter
+    def db_split_threshold(self, db_split_threshold):
+        """
+        Sets the db_split_threshold of this CreateAutonomousContainerDatabaseDetails.
+        The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the \"CPU per VM\" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the \"CPU per VM\" value.
+
+
+        :param db_split_threshold: The db_split_threshold of this CreateAutonomousContainerDatabaseDetails.
+        :type: int
+        """
+        self._db_split_threshold = db_split_threshold
+
+    @property
+    def vm_failover_reservation(self):
+        """
+        Gets the vm_failover_reservation of this CreateAutonomousContainerDatabaseDetails.
+        The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+
+
+        :return: The vm_failover_reservation of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: int
+        """
+        return self._vm_failover_reservation
+
+    @vm_failover_reservation.setter
+    def vm_failover_reservation(self, vm_failover_reservation):
+        """
+        Sets the vm_failover_reservation of this CreateAutonomousContainerDatabaseDetails.
+        The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+
+
+        :param vm_failover_reservation: The vm_failover_reservation of this CreateAutonomousContainerDatabaseDetails.
+        :type: int
+        """
+        self._vm_failover_reservation = vm_failover_reservation
+
+    @property
+    def distribution_affinity(self):
+        """
+        Gets the distribution_affinity of this CreateAutonomousContainerDatabaseDetails.
+        This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+
+        Allowed values for this property are: "MINIMUM_DISTRIBUTION", "MAXIMUM_DISTRIBUTION"
+
+
+        :return: The distribution_affinity of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: str
+        """
+        return self._distribution_affinity
+
+    @distribution_affinity.setter
+    def distribution_affinity(self, distribution_affinity):
+        """
+        Sets the distribution_affinity of this CreateAutonomousContainerDatabaseDetails.
+        This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+
+
+        :param distribution_affinity: The distribution_affinity of this CreateAutonomousContainerDatabaseDetails.
+        :type: str
+        """
+        allowed_values = ["MINIMUM_DISTRIBUTION", "MAXIMUM_DISTRIBUTION"]
+        if not value_allowed_none_or_none_sentinel(distribution_affinity, allowed_values):
+            raise ValueError(
+                f"Invalid value for `distribution_affinity`, must be None or one of {allowed_values}"
+            )
+        self._distribution_affinity = distribution_affinity
+
+    @property
+    def net_services_architecture(self):
+        """
+        Gets the net_services_architecture of this CreateAutonomousContainerDatabaseDetails.
+        Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+
+        Allowed values for this property are: "DEDICATED", "SHARED"
+
+
+        :return: The net_services_architecture of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: str
+        """
+        return self._net_services_architecture
+
+    @net_services_architecture.setter
+    def net_services_architecture(self, net_services_architecture):
+        """
+        Sets the net_services_architecture of this CreateAutonomousContainerDatabaseDetails.
+        Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+
+
+        :param net_services_architecture: The net_services_architecture of this CreateAutonomousContainerDatabaseDetails.
+        :type: str
+        """
+        allowed_values = ["DEDICATED", "SHARED"]
+        if not value_allowed_none_or_none_sentinel(net_services_architecture, allowed_values):
+            raise ValueError(
+                f"Invalid value for `net_services_architecture`, must be None or one of {allowed_values}"
+            )
+        self._net_services_architecture = net_services_architecture
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -128,7 +128,7 @@ import contextlib
 import os
 import time
 
-version = "24.03.03"
+version = "24.03.12"
 
 ##########################################################################
 # check OCI version
@@ -349,7 +349,7 @@ def set_parser_arguments(argsList=[]):
     parser.add_argument('-paas', '-dataai', action='store_true', default=False, dest='paas_native', help='Print Native, Data and AI.')
     parser.add_argument('-n', '-l', action='store_true', default=False, dest='network', help='Print Network.')
 
-    parser.add_argument('-exclude', default="", dest='exclude', help='Exclude Services, Currently support NETWORK, QUOTAS, LIMITS, DNSZONE, VCIRCUITS.')
+    parser.add_argument('-exclude', default="", dest='exclude', help='Exclude Services, Currently support NETWORK, QUOTAS, LIMITS, DNSZONE, VCIRCUITS, OCE, GENAI.')
     parser.add_argument('-noparallel', action='store_true', default=False, dest='skip_threads', help='Do not run in parallel processing (Threads).')
     parser.add_argument('-threads', default=8, dest='threads', type=int, help='Threads Processes when running with Threads (default=8).')
     parser.add_argument('-nobackups', action='store_true', default=False, dest='skip_backups', help='Do not process backups.')
