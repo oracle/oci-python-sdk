@@ -15,6 +15,14 @@ class Trace(object):
     Definition of a trace object.
     """
 
+    #: A constant which can be used with the source_name property of a Trace.
+    #: This constant has a value of "TRACES"
+    SOURCE_NAME_TRACES = "TRACES"
+
+    #: A constant which can be used with the source_name property of a Trace.
+    #: This constant has a value of "SYN_TRACES"
+    SOURCE_NAME_SYN_TRACES = "SYN_TRACES"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Trace object with values from keyword arguments.
@@ -84,6 +92,12 @@ class Trace(object):
             The value to assign to the service_summaries property of this Trace.
         :type service_summaries: list[oci.apm_traces.models.TraceServiceSummary]
 
+        :param source_name:
+            The value to assign to the source_name property of this Trace.
+            Allowed values for this property are: "TRACES", "SYN_TRACES", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type source_name: str
+
         :param span_summary:
             The value to assign to the span_summary property of this Trace.
         :type span_summary: oci.apm_traces.models.TraceSpanSummary
@@ -110,6 +124,7 @@ class Trace(object):
             'trace_error_type': 'str',
             'trace_error_code': 'str',
             'service_summaries': 'list[TraceServiceSummary]',
+            'source_name': 'str',
             'span_summary': 'TraceSpanSummary',
             'spans': 'list[Span]'
         }
@@ -131,6 +146,7 @@ class Trace(object):
             'trace_error_type': 'traceErrorType',
             'trace_error_code': 'traceErrorCode',
             'service_summaries': 'serviceSummaries',
+            'source_name': 'sourceName',
             'span_summary': 'spanSummary',
             'spans': 'spans'
         }
@@ -151,6 +167,7 @@ class Trace(object):
         self._trace_error_type = None
         self._trace_error_code = None
         self._service_summaries = None
+        self._source_name = None
         self._span_summary = None
         self._spans = None
 
@@ -559,6 +576,36 @@ class Trace(object):
         :type: list[oci.apm_traces.models.TraceServiceSummary]
         """
         self._service_summaries = service_summaries
+
+    @property
+    def source_name(self):
+        """
+        Gets the source_name of this Trace.
+        Source of trace (traces, syn_traces).
+
+        Allowed values for this property are: "TRACES", "SYN_TRACES", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The source_name of this Trace.
+        :rtype: str
+        """
+        return self._source_name
+
+    @source_name.setter
+    def source_name(self, source_name):
+        """
+        Sets the source_name of this Trace.
+        Source of trace (traces, syn_traces).
+
+
+        :param source_name: The source_name of this Trace.
+        :type: str
+        """
+        allowed_values = ["TRACES", "SYN_TRACES"]
+        if not value_allowed_none_or_none_sentinel(source_name, allowed_values):
+            source_name = 'UNKNOWN_ENUM_VALUE'
+        self._source_name = source_name
 
     @property
     def span_summary(self):

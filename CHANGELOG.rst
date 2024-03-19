@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.124.2 - 2024-03-19
+====================
+
+Added
+-----
+* Support for standalone Oracle HTTP server discovery and monitoring in the Stack Monitoring service
+* Support for attribute management for traces in the Application Performance Monitoring service
+* Support for async jobs and document translations in the AI language service
+ 
+====================
 2.124.1 - 2024-03-12
 ====================
 

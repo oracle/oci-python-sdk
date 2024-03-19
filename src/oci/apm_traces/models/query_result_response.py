@@ -30,19 +30,33 @@ class QueryResultResponse(object):
             The value to assign to the query_result_rows property of this QueryResultResponse.
         :type query_result_rows: list[oci.apm_traces.models.QueryResultRow]
 
+        :param query_result_metadata:
+            The value to assign to the query_result_metadata property of this QueryResultResponse.
+        :type query_result_metadata: dict(str, object)
+
+        :param query_result_warnings:
+            The value to assign to the query_result_warnings property of this QueryResultResponse.
+        :type query_result_warnings: list[oci.apm_traces.models.QueryResultWarning]
+
         """
         self.swagger_types = {
             'query_result_metadata_summary': 'QueryResultMetadataSummary',
-            'query_result_rows': 'list[QueryResultRow]'
+            'query_result_rows': 'list[QueryResultRow]',
+            'query_result_metadata': 'dict(str, object)',
+            'query_result_warnings': 'list[QueryResultWarning]'
         }
 
         self.attribute_map = {
             'query_result_metadata_summary': 'queryResultMetadataSummary',
-            'query_result_rows': 'queryResultRows'
+            'query_result_rows': 'queryResultRows',
+            'query_result_metadata': 'queryResultMetadata',
+            'query_result_warnings': 'queryResultWarnings'
         }
 
         self._query_result_metadata_summary = None
         self._query_result_rows = None
+        self._query_result_metadata = None
+        self._query_result_warnings = None
 
     @property
     def query_result_metadata_summary(self):
@@ -91,6 +105,54 @@ class QueryResultResponse(object):
         :type: list[oci.apm_traces.models.QueryResultRow]
         """
         self._query_result_rows = query_result_rows
+
+    @property
+    def query_result_metadata(self):
+        """
+        Gets the query_result_metadata of this QueryResultResponse.
+        A map containing metadata or additional information.
+
+
+        :return: The query_result_metadata of this QueryResultResponse.
+        :rtype: dict(str, object)
+        """
+        return self._query_result_metadata
+
+    @query_result_metadata.setter
+    def query_result_metadata(self, query_result_metadata):
+        """
+        Sets the query_result_metadata of this QueryResultResponse.
+        A map containing metadata or additional information.
+
+
+        :param query_result_metadata: The query_result_metadata of this QueryResultResponse.
+        :type: dict(str, object)
+        """
+        self._query_result_metadata = query_result_metadata
+
+    @property
+    def query_result_warnings(self):
+        """
+        Gets the query_result_warnings of this QueryResultResponse.
+        A structure that provides warnings, if any, along with the query results.
+
+
+        :return: The query_result_warnings of this QueryResultResponse.
+        :rtype: list[oci.apm_traces.models.QueryResultWarning]
+        """
+        return self._query_result_warnings
+
+    @query_result_warnings.setter
+    def query_result_warnings(self, query_result_warnings):
+        """
+        Sets the query_result_warnings of this QueryResultResponse.
+        A structure that provides warnings, if any, along with the query results.
+
+
+        :param query_result_warnings: The query_result_warnings of this QueryResultResponse.
+        :type: list[oci.apm_traces.models.QueryResultWarning]
+        """
+        self._query_result_warnings = query_result_warnings
 
     def __repr__(self):
         return formatted_flat_dict(self)

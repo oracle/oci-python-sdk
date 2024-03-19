@@ -62,7 +62,8 @@ REGIONS_SHORT_NAMES = {
     'str': 'eu-frankfurt-2',
     'beg': 'eu-jovanovac-1',
     'doh': 'me-dcc-doha-1',
-    'avz': 'eu-dcc-zurich-1'
+    'avz': 'eu-dcc-zurich-1',
+    'ahu': 'me-abudhabi-3'
 }
 REGION_REALMS = {
     'ap-chuncheon-1': 'oc1',
@@ -135,7 +136,9 @@ REGION_REALMS = {
 
     'me-dcc-doha-1': 'oc21',
 
-    'eu-dcc-zurich-1': 'oc24'
+    'eu-dcc-zurich-1': 'oc24',
+
+    'me-abudhabi-3': 'oc26'
 }
 REALMS = {
     'oc1': 'oraclecloud.com',
@@ -149,7 +152,8 @@ REALMS = {
     'oc19': 'oraclecloud.eu',
     'oc20': 'oraclecloud20.com',
     'oc21': 'oraclecloud21.com',
-    'oc24': 'oraclecloud24.com'
+    'oc24': 'oraclecloud24.com',
+    'oc26': 'oraclecloud26.com'
 }
 REGIONS = [
     'ap-chuncheon-1',
@@ -211,5 +215,6 @@ REGIONS = [
     'eu-frankfurt-2',
     'eu-jovanovac-1',
     'me-dcc-doha-1',
-    'eu-dcc-zurich-1'
+    'eu-dcc-zurich-1',
+    'me-abudhabi-3'
 ]

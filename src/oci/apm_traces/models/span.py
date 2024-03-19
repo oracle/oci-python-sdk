@@ -15,6 +15,14 @@ class Span(object):
     Definition of a span object.
     """
 
+    #: A constant which can be used with the source_name property of a Span.
+    #: This constant has a value of "SPANS"
+    SOURCE_NAME_SPANS = "SPANS"
+
+    #: A constant which can be used with the source_name property of a Span.
+    #: This constant has a value of "SYN_SPANS"
+    SOURCE_NAME_SYN_SPANS = "SYN_SPANS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Span object with values from keyword arguments.
@@ -60,6 +68,10 @@ class Span(object):
             The value to assign to the tags property of this Span.
         :type tags: list[oci.apm_traces.models.Tag]
 
+        :param tags_metadata:
+            The value to assign to the tags_metadata property of this Span.
+        :type tags_metadata: dict(str, TagMetadata)
+
         :param logs:
             The value to assign to the logs property of this Span.
         :type logs: list[oci.apm_traces.models.SpanLogCollection]
@@ -67,6 +79,12 @@ class Span(object):
         :param is_error:
             The value to assign to the is_error property of this Span.
         :type is_error: bool
+
+        :param source_name:
+            The value to assign to the source_name property of this Span.
+            Allowed values for this property are: "SPANS", "SYN_SPANS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type source_name: str
 
         """
         self.swagger_types = {
@@ -80,8 +98,10 @@ class Span(object):
             'service_name': 'str',
             'kind': 'str',
             'tags': 'list[Tag]',
+            'tags_metadata': 'dict(str, TagMetadata)',
             'logs': 'list[SpanLogCollection]',
-            'is_error': 'bool'
+            'is_error': 'bool',
+            'source_name': 'str'
         }
 
         self.attribute_map = {
@@ -95,8 +115,10 @@ class Span(object):
             'service_name': 'serviceName',
             'kind': 'kind',
             'tags': 'tags',
+            'tags_metadata': 'tagsMetadata',
             'logs': 'logs',
-            'is_error': 'isError'
+            'is_error': 'isError',
+            'source_name': 'sourceName'
         }
 
         self._key = None
@@ -109,8 +131,10 @@ class Span(object):
         self._service_name = None
         self._kind = None
         self._tags = None
+        self._tags_metadata = None
         self._logs = None
         self._is_error = None
+        self._source_name = None
 
     @property
     def key(self):
@@ -357,6 +381,30 @@ class Span(object):
         self._tags = tags
 
     @property
+    def tags_metadata(self):
+        """
+        Gets the tags_metadata of this Span.
+        Metadata about the tags in the span.
+
+
+        :return: The tags_metadata of this Span.
+        :rtype: dict(str, TagMetadata)
+        """
+        return self._tags_metadata
+
+    @tags_metadata.setter
+    def tags_metadata(self, tags_metadata):
+        """
+        Sets the tags_metadata of this Span.
+        Metadata about the tags in the span.
+
+
+        :param tags_metadata: The tags_metadata of this Span.
+        :type: dict(str, TagMetadata)
+        """
+        self._tags_metadata = tags_metadata
+
+    @property
     def logs(self):
         """
         Gets the logs of this Span.
@@ -403,6 +451,36 @@ class Span(object):
         :type: bool
         """
         self._is_error = is_error
+
+    @property
+    def source_name(self):
+        """
+        Gets the source_name of this Span.
+        Source of span (spans, syn_spans).
+
+        Allowed values for this property are: "SPANS", "SYN_SPANS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The source_name of this Span.
+        :rtype: str
+        """
+        return self._source_name
+
+    @source_name.setter
+    def source_name(self, source_name):
+        """
+        Sets the source_name of this Span.
+        Source of span (spans, syn_spans).
+
+
+        :param source_name: The source_name of this Span.
+        :type: str
+        """
+        allowed_values = ["SPANS", "SYN_SPANS"]
+        if not value_allowed_none_or_none_sentinel(source_name, allowed_values):
+            source_name = 'UNKNOWN_ENUM_VALUE'
+        self._source_name = source_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

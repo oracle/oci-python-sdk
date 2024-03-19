@@ -108,9 +108,39 @@ class TranslationDocumentResult(object):
     def source_language_code(self):
         """
         **[Required]** Gets the source_language_code of this TranslationDocumentResult.
-        Language code of the document. Please refer to respective model `API documentation`__ for supported languages.
-
-        __ https://docs.cloud.oracle.com/iaas/language/using/overview.htm
+        Language code supported
+        Automatically detect language - auto
+        Arabic - ar
+        Brazilian Portuguese -  pt-BR
+        Canadian French - fr-CA
+        Croatian - hr
+        Czech - cs
+        Danish - da
+        Dutch - nl
+        English - en
+        Finnish - fi
+        French - fr
+        German - de
+        Greek - el
+        Hebrew - he
+        Hungarian - hu
+        Italian - it
+        Japanese - ja
+        Korean - ko
+        Norwegian - no
+        Polish - pl
+        Portuguese - pt
+        Romanian - ro
+        Russian - ru
+        Simplified Chinese - zh-CN
+        Slovak - sk
+        Slovenian - sl
+        Spanish - es
+        Swedish - sv
+        Thai - th
+        Traditional Chinese - zh-TW
+        Turkish - tr
+        Vietnamese - vi
 
 
         :return: The source_language_code of this TranslationDocumentResult.
@@ -122,9 +152,39 @@ class TranslationDocumentResult(object):
     def source_language_code(self, source_language_code):
         """
         Sets the source_language_code of this TranslationDocumentResult.
-        Language code of the document. Please refer to respective model `API documentation`__ for supported languages.
-
-        __ https://docs.cloud.oracle.com/iaas/language/using/overview.htm
+        Language code supported
+        Automatically detect language - auto
+        Arabic - ar
+        Brazilian Portuguese -  pt-BR
+        Canadian French - fr-CA
+        Croatian - hr
+        Czech - cs
+        Danish - da
+        Dutch - nl
+        English - en
+        Finnish - fi
+        French - fr
+        German - de
+        Greek - el
+        Hebrew - he
+        Hungarian - hu
+        Italian - it
+        Japanese - ja
+        Korean - ko
+        Norwegian - no
+        Polish - pl
+        Portuguese - pt
+        Romanian - ro
+        Russian - ru
+        Simplified Chinese - zh-CN
+        Slovak - sk
+        Slovenian - sl
+        Spanish - es
+        Swedish - sv
+        Thai - th
+        Traditional Chinese - zh-TW
+        Turkish - tr
+        Vietnamese - vi
 
 
         :param source_language_code: The source_language_code of this TranslationDocumentResult.
@@ -136,9 +196,38 @@ class TranslationDocumentResult(object):
     def target_language_code(self):
         """
         **[Required]** Gets the target_language_code of this TranslationDocumentResult.
-        Language code of the document. Please refer to respective model `API documentation`__ for supported languages.
-
-        __ https://docs.cloud.oracle.com/iaas/language/using/overview.htm
+        Language code supported
+        Arabic - ar
+        Brazilian Portuguese -  pt-BR
+        Canadian French - fr-CA
+        Croatian - hr
+        Czech - cs
+        Danish - da
+        Dutch - nl
+        English - en
+        Finnish - fi
+        French - fr
+        German - de
+        Greek - el
+        Hebrew - he
+        Hungarian - hu
+        Italian - it
+        Japanese - ja
+        Korean - ko
+        Norwegian - no
+        Polish - pl
+        Portuguese - pt
+        Romanian - ro
+        Russian - ru
+        Simplified Chinese - zh-CN
+        Slovak - sk
+        Slovenian - sl
+        Spanish - es
+        Swedish - sv
+        Thai - th
+        Traditional Chinese - zh-TW
+        Turkish - tr
+        Vietnamese - vi
 
 
         :return: The target_language_code of this TranslationDocumentResult.
@@ -150,9 +239,38 @@ class TranslationDocumentResult(object):
     def target_language_code(self, target_language_code):
         """
         Sets the target_language_code of this TranslationDocumentResult.
-        Language code of the document. Please refer to respective model `API documentation`__ for supported languages.
-
-        __ https://docs.cloud.oracle.com/iaas/language/using/overview.htm
+        Language code supported
+        Arabic - ar
+        Brazilian Portuguese -  pt-BR
+        Canadian French - fr-CA
+        Croatian - hr
+        Czech - cs
+        Danish - da
+        Dutch - nl
+        English - en
+        Finnish - fi
+        French - fr
+        German - de
+        Greek - el
+        Hebrew - he
+        Hungarian - hu
+        Italian - it
+        Japanese - ja
+        Korean - ko
+        Norwegian - no
+        Polish - pl
+        Portuguese - pt
+        Romanian - ro
+        Russian - ru
+        Simplified Chinese - zh-CN
+        Slovak - sk
+        Slovenian - sl
+        Spanish - es
+        Swedish - sv
+        Thai - th
+        Traditional Chinese - zh-TW
+        Turkish - tr
+        Vietnamese - vi
 
 
         :param target_language_code: The target_language_code of this TranslationDocumentResult.

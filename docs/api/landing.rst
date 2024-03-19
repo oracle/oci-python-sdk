@@ -25,6 +25,7 @@ API Reference
 * :doc:`Application Migration <application_migration/client/oci.application_migration.ApplicationMigrationClient>`
 * :doc:`Appmgmt Control <appmgmt_control/client/oci.appmgmt_control.AppmgmtControlClient>`
 * :doc:`Artifacts <artifacts/client/oci.artifacts.ArtifactsClient>`
+* :doc:`Attributes <apm_traces/client/oci.apm_traces.AttributesClient>`
 * :doc:`Audit <audit/client/oci.audit.AuditClient>`
 * :doc:`Auto Scaling <autoscaling/client/oci.autoscaling.AutoScalingClient>`
 * :doc:`Bastion <bastion/client/oci.bastion.BastionClient>`

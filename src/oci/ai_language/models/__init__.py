@@ -23,14 +23,17 @@ from .batch_language_translation_result import BatchLanguageTranslationResult
 from .capabilities import Capabilities
 from .capability import Capability
 from .change_endpoint_compartment_details import ChangeEndpointCompartmentDetails
+from .change_job_compartment_details import ChangeJobCompartmentDetails
 from .change_model_compartment_details import ChangeModelCompartmentDetails
 from .change_project_compartment_details import ChangeProjectCompartmentDetails
 from .class_metrics import ClassMetrics
 from .classification_multi_class_mode_details import ClassificationMultiClassModeDetails
 from .classification_multi_label_mode_details import ClassificationMultiLabelModeDetails
 from .classification_type import ClassificationType
+from .configuration_details import ConfigurationDetails
 from .confusion_matrix_details import ConfusionMatrixDetails
 from .create_endpoint_details import CreateEndpointDetails
+from .create_job_details import CreateJobDetails
 from .create_model_details import CreateModelDetails
 from .create_project_details import CreateProjectDetails
 from .data_science_labeling_dataset import DataScienceLabelingDataset
@@ -47,6 +50,7 @@ from .detect_language_text_classification_details import DetectLanguageTextClass
 from .detect_language_text_classification_result import DetectLanguageTextClassificationResult
 from .detected_language import DetectedLanguage
 from .document_error import DocumentError
+from .documents_configuration import DocumentsConfiguration
 from .dominant_language_document import DominantLanguageDocument
 from .dominant_language_document_result import DominantLanguageDocumentResult
 from .endpoint import Endpoint
@@ -61,12 +65,18 @@ from .evaluation_result_collection import EvaluationResultCollection
 from .evaluation_result_summary import EvaluationResultSummary
 from .evaluation_results import EvaluationResults
 from .hierarchical_entity import HierarchicalEntity
+from .input_configuration import InputConfiguration
+from .input_location import InputLocation
+from .job import Job
+from .job_collection import JobCollection
+from .job_summary import JobSummary
 from .key_phrase import KeyPhrase
 from .key_phrase_document_result import KeyPhraseDocumentResult
 from .location_details import LocationDetails
 from .model import Model
 from .model_collection import ModelCollection
 from .model_details import ModelDetails
+from .model_metadata_details import ModelMetadataDetails
 from .model_summary import ModelSummary
 from .model_type_info import ModelTypeInfo
 from .named_entity_recognition_evaluation_result import NamedEntityRecognitionEvaluationResult
@@ -74,7 +84,10 @@ from .named_entity_recognition_evaluation_results import NamedEntityRecognitionE
 from .named_entity_recognition_model_details import NamedEntityRecognitionModelDetails
 from .named_entity_recognition_model_metrics import NamedEntityRecognitionModelMetrics
 from .object_list_dataset import ObjectListDataset
+from .object_prefix_output_location import ObjectPrefixOutputLocation
 from .object_storage_dataset import ObjectStorageDataset
+from .object_storage_file_name_location import ObjectStorageFileNameLocation
+from .object_storage_prefix_location import ObjectStoragePrefixLocation
 from .pii_entity import PiiEntity
 from .pii_entity_document_result import PiiEntityDocumentResult
 from .pii_entity_mask import PiiEntityMask
@@ -108,6 +121,7 @@ from .text_classification_model_metrics import TextClassificationModelMetrics
 from .text_document import TextDocument
 from .translation_document_result import TranslationDocumentResult
 from .update_endpoint_details import UpdateEndpointDetails
+from .update_job_details import UpdateJobDetails
 from .update_model_details import UpdateModelDetails
 from .update_project_details import UpdateProjectDetails
 from .work_request import WorkRequest
@@ -138,14 +152,17 @@ ai_language_type_mapping = {
     "Capabilities": Capabilities,
     "Capability": Capability,
     "ChangeEndpointCompartmentDetails": ChangeEndpointCompartmentDetails,
+    "ChangeJobCompartmentDetails": ChangeJobCompartmentDetails,
     "ChangeModelCompartmentDetails": ChangeModelCompartmentDetails,
     "ChangeProjectCompartmentDetails": ChangeProjectCompartmentDetails,
     "ClassMetrics": ClassMetrics,
     "ClassificationMultiClassModeDetails": ClassificationMultiClassModeDetails,
     "ClassificationMultiLabelModeDetails": ClassificationMultiLabelModeDetails,
     "ClassificationType": ClassificationType,
+    "ConfigurationDetails": ConfigurationDetails,
     "ConfusionMatrixDetails": ConfusionMatrixDetails,
     "CreateEndpointDetails": CreateEndpointDetails,
+    "CreateJobDetails": CreateJobDetails,
     "CreateModelDetails": CreateModelDetails,
     "CreateProjectDetails": CreateProjectDetails,
     "DataScienceLabelingDataset": DataScienceLabelingDataset,
@@ -162,6 +179,7 @@ ai_language_type_mapping = {
     "DetectLanguageTextClassificationResult": DetectLanguageTextClassificationResult,
     "DetectedLanguage": DetectedLanguage,
     "DocumentError": DocumentError,
+    "DocumentsConfiguration": DocumentsConfiguration,
     "DominantLanguageDocument": DominantLanguageDocument,
     "DominantLanguageDocumentResult": DominantLanguageDocumentResult,
     "Endpoint": Endpoint,
@@ -176,12 +194,18 @@ ai_language_type_mapping = {
     "EvaluationResultSummary": EvaluationResultSummary,
     "EvaluationResults": EvaluationResults,
     "HierarchicalEntity": HierarchicalEntity,
+    "InputConfiguration": InputConfiguration,
+    "InputLocation": InputLocation,
+    "Job": Job,
+    "JobCollection": JobCollection,
+    "JobSummary": JobSummary,
     "KeyPhrase": KeyPhrase,
     "KeyPhraseDocumentResult": KeyPhraseDocumentResult,
     "LocationDetails": LocationDetails,
     "Model": Model,
     "ModelCollection": ModelCollection,
     "ModelDetails": ModelDetails,
+    "ModelMetadataDetails": ModelMetadataDetails,
     "ModelSummary": ModelSummary,
     "ModelTypeInfo": ModelTypeInfo,
     "NamedEntityRecognitionEvaluationResult": NamedEntityRecognitionEvaluationResult,
@@ -189,7 +213,10 @@ ai_language_type_mapping = {
     "NamedEntityRecognitionModelDetails": NamedEntityRecognitionModelDetails,
     "NamedEntityRecognitionModelMetrics": NamedEntityRecognitionModelMetrics,
     "ObjectListDataset": ObjectListDataset,
+    "ObjectPrefixOutputLocation": ObjectPrefixOutputLocation,
     "ObjectStorageDataset": ObjectStorageDataset,
+    "ObjectStorageFileNameLocation": ObjectStorageFileNameLocation,
+    "ObjectStoragePrefixLocation": ObjectStoragePrefixLocation,
     "PiiEntity": PiiEntity,
     "PiiEntityDocumentResult": PiiEntityDocumentResult,
     "PiiEntityMask": PiiEntityMask,
@@ -223,6 +250,7 @@ ai_language_type_mapping = {
     "TextDocument": TextDocument,
     "TranslationDocumentResult": TranslationDocumentResult,
     "UpdateEndpointDetails": UpdateEndpointDetails,
+    "UpdateJobDetails": UpdateJobDetails,
     "UpdateModelDetails": UpdateModelDetails,
     "UpdateProjectDetails": UpdateProjectDetails,
     "WorkRequest": WorkRequest,
