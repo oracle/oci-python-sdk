@@ -7,10 +7,12 @@
 from __future__ import absolute_import
 
 
+from .attributes_client import AttributesClient
+from .attributes_client_composite_operations import AttributesClientCompositeOperations
 from .query_client import QueryClient
 from .query_client_composite_operations import QueryClientCompositeOperations
 from .trace_client import TraceClient
 from .trace_client_composite_operations import TraceClientCompositeOperations
 from . import models
 
-__all__ = ["QueryClient", "QueryClientCompositeOperations", "TraceClient", "TraceClientCompositeOperations", "models"]
+__all__ = ["AttributesClient", "AttributesClientCompositeOperations", "QueryClient", "QueryClientCompositeOperations", "TraceClient", "TraceClientCompositeOperations", "models"]

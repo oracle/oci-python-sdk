@@ -122,7 +122,7 @@ class TraceClient(object):
 
 
         :param str apm_domain_id: (required)
-            The APM Domain ID the request is intended for.
+            The APM Domain ID for the intended request.
 
         :param str trace_key: (required)
             Unique Application Performance Monitoring trace identifier (traceId).
@@ -130,6 +130,18 @@ class TraceClient(object):
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a
             particular request, please provide the request ID.
+
+        :param str service_name: (optional)
+            Name associated with the service.
+
+        :param str server_name: (optional)
+            Name of the server.
+
+        :param str span_key: (optional)
+            Unique Application Performance Monitoring span identifier (spanId).
+
+        :param str span_name: (optional)
+            Name of the span associated with the trace.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -160,7 +172,11 @@ class TraceClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "service_name",
+            "server_name",
+            "span_key",
+            "span_name"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -178,7 +194,11 @@ class TraceClient(object):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
-            "apmDomainId": apm_domain_id
+            "apmDomainId": apm_domain_id,
+            "serviceName": kwargs.get("service_name", missing),
+            "serverName": kwargs.get("server_name", missing),
+            "spanKey": kwargs.get("span_key", missing),
+            "spanName": kwargs.get("span_name", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -229,7 +249,7 @@ class TraceClient(object):
 
 
         :param str apm_domain_id: (required)
-            The APM Domain ID the request is intended for.
+            The APM Domain ID for the intended request.
 
         :param str span_key: (required)
             Unique Application Performance Monitoring span identifier (spanId).
@@ -240,6 +260,17 @@ class TraceClient(object):
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a
             particular request, please provide the request ID.
+
+        :param datetime time_span_started_greater_than_or_equal_to: (optional)
+            Include spans that have a `spanStartTime` equal to or greater than this value.
+
+        :param datetime time_span_started_less_than: (optional)
+            Include spans that have a `spanStartTime`less than this value.
+
+        :param str span_namespace: (optional)
+            Name space from which the span details need to be retrieved.
+
+            Allowed values are: "TRACES", "SYNTHETIC"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -270,7 +301,10 @@ class TraceClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "time_span_started_greater_than_or_equal_to",
+            "time_span_started_less_than",
+            "span_namespace"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -288,8 +322,18 @@ class TraceClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
+        if 'span_namespace' in kwargs:
+            span_namespace_allowed_values = ["TRACES", "SYNTHETIC"]
+            if kwargs['span_namespace'] not in span_namespace_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `span_namespace`, must be one of { span_namespace_allowed_values }"
+                )
+
         query_params = {
-            "apmDomainId": apm_domain_id
+            "apmDomainId": apm_domain_id,
+            "timeSpanStartedGreaterThanOrEqualTo": kwargs.get("time_span_started_greater_than_or_equal_to", missing),
+            "timeSpanStartedLessThan": kwargs.get("time_span_started_less_than", missing),
+            "spanNamespace": kwargs.get("span_namespace", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -340,7 +384,7 @@ class TraceClient(object):
 
 
         :param str apm_domain_id: (required)
-            The APM Domain ID the request is intended for.
+            The APM Domain ID for the intended request.
 
         :param str trace_key: (required)
             Unique Application Performance Monitoring trace identifier (traceId).
@@ -348,6 +392,17 @@ class TraceClient(object):
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a
             particular request, please provide the request ID.
+
+        :param datetime time_trace_started_greater_than_or_equal_to: (optional)
+            Include traces that have a `minTraceStartTime` equal to or greater than this value.
+
+        :param datetime time_trace_started_less_than: (optional)
+            Include traces that have a `minTraceStartTime` less than this value.
+
+        :param str trace_namespace: (optional)
+            Name space from which the trace details need to be retrieved.
+
+            Allowed values are: "TRACES", "SYNTHETIC"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -378,7 +433,10 @@ class TraceClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "time_trace_started_greater_than_or_equal_to",
+            "time_trace_started_less_than",
+            "trace_namespace"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -395,8 +453,18 @@ class TraceClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
+        if 'trace_namespace' in kwargs:
+            trace_namespace_allowed_values = ["TRACES", "SYNTHETIC"]
+            if kwargs['trace_namespace'] not in trace_namespace_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `trace_namespace`, must be one of { trace_namespace_allowed_values }"
+                )
+
         query_params = {
-            "apmDomainId": apm_domain_id
+            "apmDomainId": apm_domain_id,
+            "timeTraceStartedGreaterThanOrEqualTo": kwargs.get("time_trace_started_greater_than_or_equal_to", missing),
+            "timeTraceStartedLessThan": kwargs.get("time_trace_started_less_than", missing),
+            "traceNamespace": kwargs.get("trace_namespace", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -447,7 +515,7 @@ class TraceClient(object):
 
 
         :param str apm_domain_id: (required)
-            The APM Domain ID the request is intended for.
+            The APM Domain ID for the intended request.
 
         :param str trace_key: (required)
             Unique Application Performance Monitoring trace identifier (traceId).
@@ -457,10 +525,10 @@ class TraceClient(object):
             particular request, please provide the request ID.
 
         :param bool is_summarized: (optional)
-            If enabled, then only span level details will be sent.
+            If enabled, only span level details are sent.
 
         :param str thread_id: (optional)
-            Thread id for which snapshots needs to be retrieved. This is an identifier of a thread, and is a positive long number generated when when a thread is created.
+            Thread ID for which snapshots need to be retrieved. This identifier of a thread is a long positive number generated when a thread is created.
 
         :param str snapshot_time: (optional)
             Epoch time of snapshot.

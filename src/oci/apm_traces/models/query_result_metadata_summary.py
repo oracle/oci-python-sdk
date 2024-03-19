@@ -36,6 +36,10 @@ class QueryResultMetadataSummary(object):
             The value to assign to the query_results_ordered_by property of this QueryResultMetadataSummary.
         :type query_results_ordered_by: list[oci.apm_traces.models.QueryResultsOrderedBySummary]
 
+        :param query_results_topology_info:
+            The value to assign to the query_results_topology_info property of this QueryResultMetadataSummary.
+        :type query_results_topology_info: oci.apm_traces.models.QueryResultsTopologyInfo
+
         :param time_series_interval_in_mins:
             The value to assign to the time_series_interval_in_mins property of this QueryResultMetadataSummary.
         :type time_series_interval_in_mins: int
@@ -46,6 +50,7 @@ class QueryResultMetadataSummary(object):
             'source_name': 'str',
             'query_results_grouped_by': 'list[QueryResultsGroupedBySummary]',
             'query_results_ordered_by': 'list[QueryResultsOrderedBySummary]',
+            'query_results_topology_info': 'QueryResultsTopologyInfo',
             'time_series_interval_in_mins': 'int'
         }
 
@@ -54,6 +59,7 @@ class QueryResultMetadataSummary(object):
             'source_name': 'sourceName',
             'query_results_grouped_by': 'queryResultsGroupedBy',
             'query_results_ordered_by': 'queryResultsOrderedBy',
+            'query_results_topology_info': 'queryResultsTopologyInfo',
             'time_series_interval_in_mins': 'timeSeriesIntervalInMins'
         }
 
@@ -61,6 +67,7 @@ class QueryResultMetadataSummary(object):
         self._source_name = None
         self._query_results_grouped_by = None
         self._query_results_ordered_by = None
+        self._query_results_topology_info = None
         self._time_series_interval_in_mins = None
 
     @property
@@ -164,6 +171,26 @@ class QueryResultMetadataSummary(object):
         :type: list[oci.apm_traces.models.QueryResultsOrderedBySummary]
         """
         self._query_results_ordered_by = query_results_ordered_by
+
+    @property
+    def query_results_topology_info(self):
+        """
+        Gets the query_results_topology_info of this QueryResultMetadataSummary.
+
+        :return: The query_results_topology_info of this QueryResultMetadataSummary.
+        :rtype: oci.apm_traces.models.QueryResultsTopologyInfo
+        """
+        return self._query_results_topology_info
+
+    @query_results_topology_info.setter
+    def query_results_topology_info(self, query_results_topology_info):
+        """
+        Sets the query_results_topology_info of this QueryResultMetadataSummary.
+
+        :param query_results_topology_info: The query_results_topology_info of this QueryResultMetadataSummary.
+        :type: oci.apm_traces.models.QueryResultsTopologyInfo
+        """
+        self._query_results_topology_info = query_results_topology_info
 
     @property
     def time_series_interval_in_mins(self):

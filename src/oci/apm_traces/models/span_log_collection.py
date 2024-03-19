@@ -24,6 +24,10 @@ class SpanLogCollection(object):
             The value to assign to the time_created property of this SpanLogCollection.
         :type time_created: datetime
 
+        :param event_name:
+            The value to assign to the event_name property of this SpanLogCollection.
+        :type event_name: str
+
         :param span_logs:
             The value to assign to the span_logs property of this SpanLogCollection.
         :type span_logs: list[oci.apm_traces.models.SpanLog]
@@ -31,15 +35,18 @@ class SpanLogCollection(object):
         """
         self.swagger_types = {
             'time_created': 'datetime',
+            'event_name': 'str',
             'span_logs': 'list[SpanLog]'
         }
 
         self.attribute_map = {
             'time_created': 'timeCreated',
+            'event_name': 'eventName',
             'span_logs': 'spanLogs'
         }
 
         self._time_created = None
+        self._event_name = None
         self._span_logs = None
 
     @property
@@ -65,6 +72,30 @@ class SpanLogCollection(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def event_name(self):
+        """
+        Gets the event_name of this SpanLogCollection.
+        Name of the event for which the log is created.
+
+
+        :return: The event_name of this SpanLogCollection.
+        :rtype: str
+        """
+        return self._event_name
+
+    @event_name.setter
+    def event_name(self, event_name):
+        """
+        Sets the event_name of this SpanLogCollection.
+        Name of the event for which the log is created.
+
+
+        :param event_name: The event_name of this SpanLogCollection.
+        :type: str
+        """
+        self._event_name = event_name
 
     @property
     def span_logs(self):

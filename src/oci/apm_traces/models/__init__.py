@@ -8,13 +8,47 @@ from __future__ import absolute_import
 
 from .aggregated_snapshot import AggregatedSnapshot
 from .aggregated_stack_trace import AggregatedStackTrace
+from .attribute_pin_response import AttributePinResponse
+from .attribute_response import AttributeResponse
+from .attribute_unpin_response import AttributeUnpinResponse
+from .attribute_update_notes_response import AttributeUpdateNotesResponse
+from .attribute_update_response import AttributeUpdateResponse
+from .auto_activate_status import AutoActivateStatus
+from .auto_activate_toggle_status import AutoActivateToggleStatus
+from .bulk_activate_attribute_detail import BulkActivateAttributeDetail
+from .bulk_activate_attribute_details import BulkActivateAttributeDetails
+from .bulk_activation_metadata import BulkActivationMetadata
+from .bulk_activation_status import BulkActivationStatus
+from .bulk_de_activate_attribute_detail import BulkDeActivateAttributeDetail
+from .bulk_de_activate_attribute_details import BulkDeActivateAttributeDetails
+from .bulk_de_activation_metadata import BulkDeActivationMetadata
+from .bulk_de_activation_status import BulkDeActivationStatus
+from .bulk_pin_attribute_detail import BulkPinAttributeDetail
+from .bulk_pin_attribute_details import BulkPinAttributeDetails
+from .bulk_pin_metadata import BulkPinMetadata
+from .bulk_pin_status import BulkPinStatus
+from .bulk_unpin_attribute_detail import BulkUnpinAttributeDetail
+from .bulk_unpin_attribute_details import BulkUnpinAttributeDetails
+from .bulk_unpin_metadata import BulkUnpinMetadata
+from .bulk_unpin_status import BulkUnpinStatus
+from .bulk_update_attribute_detail import BulkUpdateAttributeDetail
+from .bulk_update_attribute_details import BulkUpdateAttributeDetails
+from .bulk_update_attribute_metadata import BulkUpdateAttributeMetadata
+from .bulk_update_attribute_notes_detail import BulkUpdateAttributeNotesDetail
+from .bulk_update_attribute_notes_details import BulkUpdateAttributeNotesDetails
+from .bulk_update_attribute_status import BulkUpdateAttributeStatus
+from .bulk_update_notes_metadata import BulkUpdateNotesMetadata
+from .bulk_update_notes_status import BulkUpdateNotesStatus
 from .query_details import QueryDetails
 from .query_result_metadata_summary import QueryResultMetadataSummary
 from .query_result_response import QueryResultResponse
 from .query_result_row import QueryResultRow
 from .query_result_row_type_summary import QueryResultRowTypeSummary
+from .query_result_warning import QueryResultWarning
 from .query_results_grouped_by_summary import QueryResultsGroupedBySummary
 from .query_results_ordered_by_summary import QueryResultsOrderedBySummary
+from .query_results_topology_info import QueryResultsTopologyInfo
+from .query_results_topology_node_info import QueryResultsTopologyNodeInfo
 from .quick_pick_summary import QuickPickSummary
 from .snapshot_detail import SnapshotDetail
 from .span import Span
@@ -23,6 +57,7 @@ from .span_log_collection import SpanLogCollection
 from .span_snapshot import SpanSnapshot
 from .stack_trace_element import StackTraceElement
 from .tag import Tag
+from .tag_metadata import TagMetadata
 from .thread_snapshot import ThreadSnapshot
 from .trace import Trace
 from .trace_service_summary import TraceServiceSummary
@@ -33,13 +68,47 @@ from .trace_span_summary import TraceSpanSummary
 apm_traces_type_mapping = {
     "AggregatedSnapshot": AggregatedSnapshot,
     "AggregatedStackTrace": AggregatedStackTrace,
+    "AttributePinResponse": AttributePinResponse,
+    "AttributeResponse": AttributeResponse,
+    "AttributeUnpinResponse": AttributeUnpinResponse,
+    "AttributeUpdateNotesResponse": AttributeUpdateNotesResponse,
+    "AttributeUpdateResponse": AttributeUpdateResponse,
+    "AutoActivateStatus": AutoActivateStatus,
+    "AutoActivateToggleStatus": AutoActivateToggleStatus,
+    "BulkActivateAttributeDetail": BulkActivateAttributeDetail,
+    "BulkActivateAttributeDetails": BulkActivateAttributeDetails,
+    "BulkActivationMetadata": BulkActivationMetadata,
+    "BulkActivationStatus": BulkActivationStatus,
+    "BulkDeActivateAttributeDetail": BulkDeActivateAttributeDetail,
+    "BulkDeActivateAttributeDetails": BulkDeActivateAttributeDetails,
+    "BulkDeActivationMetadata": BulkDeActivationMetadata,
+    "BulkDeActivationStatus": BulkDeActivationStatus,
+    "BulkPinAttributeDetail": BulkPinAttributeDetail,
+    "BulkPinAttributeDetails": BulkPinAttributeDetails,
+    "BulkPinMetadata": BulkPinMetadata,
+    "BulkPinStatus": BulkPinStatus,
+    "BulkUnpinAttributeDetail": BulkUnpinAttributeDetail,
+    "BulkUnpinAttributeDetails": BulkUnpinAttributeDetails,
+    "BulkUnpinMetadata": BulkUnpinMetadata,
+    "BulkUnpinStatus": BulkUnpinStatus,
+    "BulkUpdateAttributeDetail": BulkUpdateAttributeDetail,
+    "BulkUpdateAttributeDetails": BulkUpdateAttributeDetails,
+    "BulkUpdateAttributeMetadata": BulkUpdateAttributeMetadata,
+    "BulkUpdateAttributeNotesDetail": BulkUpdateAttributeNotesDetail,
+    "BulkUpdateAttributeNotesDetails": BulkUpdateAttributeNotesDetails,
+    "BulkUpdateAttributeStatus": BulkUpdateAttributeStatus,
+    "BulkUpdateNotesMetadata": BulkUpdateNotesMetadata,
+    "BulkUpdateNotesStatus": BulkUpdateNotesStatus,
     "QueryDetails": QueryDetails,
     "QueryResultMetadataSummary": QueryResultMetadataSummary,
     "QueryResultResponse": QueryResultResponse,
     "QueryResultRow": QueryResultRow,
     "QueryResultRowTypeSummary": QueryResultRowTypeSummary,
+    "QueryResultWarning": QueryResultWarning,
     "QueryResultsGroupedBySummary": QueryResultsGroupedBySummary,
     "QueryResultsOrderedBySummary": QueryResultsOrderedBySummary,
+    "QueryResultsTopologyInfo": QueryResultsTopologyInfo,
+    "QueryResultsTopologyNodeInfo": QueryResultsTopologyNodeInfo,
     "QuickPickSummary": QuickPickSummary,
     "SnapshotDetail": SnapshotDetail,
     "Span": Span,
@@ -48,6 +117,7 @@ apm_traces_type_mapping = {
     "SpanSnapshot": SpanSnapshot,
     "StackTraceElement": StackTraceElement,
     "Tag": Tag,
+    "TagMetadata": TagMetadata,
     "ThreadSnapshot": ThreadSnapshot,
     "Trace": Trace,
     "TraceServiceSummary": TraceServiceSummary,

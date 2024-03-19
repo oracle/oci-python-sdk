@@ -885,7 +885,7 @@ class StackMonitoringClient(object):
         resource_path = "/baselineableMetrics"
         method = "POST"
         operation_name = "create_baselineable_metric"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/CreateBaselineableMetricDetails/CreateBaselineableMetric"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/BaselineableMetric/CreateBaselineableMetric"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2921,7 +2921,7 @@ class StackMonitoringClient(object):
         resource_path = "/baselineableMetrics/{baselineableMetricId}/actions/evaluate"
         method = "POST"
         operation_name = "evaluate_baselineable_metric"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/EvaluateBaselineableMetricResult/EvaluateBaselineableMetric"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/BaselineableMetric/EvaluateBaselineableMetric"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4091,7 +4091,7 @@ class StackMonitoringClient(object):
         resource_path = "/baselineableMetrics"
         method = "GET"
         operation_name = "list_baselineable_metrics"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/BaselineableMetricSummary/ListBaselineableMetrics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/BaselineableMetric/ListBaselineableMetrics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7328,7 +7328,7 @@ class StackMonitoringClient(object):
         resource_path = "/baselineableMetrics/{baselineableMetricId}"
         method = "PUT"
         operation_name = "update_baselineable_metric"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/UpdateBaselineableMetricDetails/UpdateBaselineableMetric"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/BaselineableMetric/UpdateBaselineableMetric"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
