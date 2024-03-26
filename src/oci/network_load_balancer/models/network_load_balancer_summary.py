@@ -100,6 +100,10 @@ class NetworkLoadBalancerSummary(object):
             The value to assign to the is_preserve_source_destination property of this NetworkLoadBalancerSummary.
         :type is_preserve_source_destination: bool
 
+        :param is_symmetric_hash_enabled:
+            The value to assign to the is_symmetric_hash_enabled property of this NetworkLoadBalancerSummary.
+        :type is_symmetric_hash_enabled: bool
+
         :param subnet_id:
             The value to assign to the subnet_id property of this NetworkLoadBalancerSummary.
         :type subnet_id: str
@@ -141,6 +145,7 @@ class NetworkLoadBalancerSummary(object):
             'ip_addresses': 'list[IpAddress]',
             'is_private': 'bool',
             'is_preserve_source_destination': 'bool',
+            'is_symmetric_hash_enabled': 'bool',
             'subnet_id': 'str',
             'network_security_group_ids': 'list[str]',
             'listeners': 'dict(str, Listener)',
@@ -162,6 +167,7 @@ class NetworkLoadBalancerSummary(object):
             'ip_addresses': 'ipAddresses',
             'is_private': 'isPrivate',
             'is_preserve_source_destination': 'isPreserveSourceDestination',
+            'is_symmetric_hash_enabled': 'isSymmetricHashEnabled',
             'subnet_id': 'subnetId',
             'network_security_group_ids': 'networkSecurityGroupIds',
             'listeners': 'listeners',
@@ -182,6 +188,7 @@ class NetworkLoadBalancerSummary(object):
         self._ip_addresses = None
         self._is_private = None
         self._is_preserve_source_destination = None
+        self._is_symmetric_hash_enabled = None
         self._subnet_id = None
         self._network_security_group_ids = None
         self._listeners = None
@@ -459,7 +466,7 @@ class NetworkLoadBalancerSummary(object):
         Example: `true`
 
         __ https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm
-        __ https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works
+        __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm
 
 
         :return: The is_private of this NetworkLoadBalancerSummary.
@@ -486,7 +493,7 @@ class NetworkLoadBalancerSummary(object):
         Example: `true`
 
         __ https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm
-        __ https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works
+        __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm
 
 
         :param is_private: The is_private of this NetworkLoadBalancerSummary.
@@ -519,6 +526,32 @@ class NetworkLoadBalancerSummary(object):
         :type: bool
         """
         self._is_preserve_source_destination = is_preserve_source_destination
+
+    @property
+    def is_symmetric_hash_enabled(self):
+        """
+        Gets the is_symmetric_hash_enabled of this NetworkLoadBalancerSummary.
+        This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.
+        This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+
+
+        :return: The is_symmetric_hash_enabled of this NetworkLoadBalancerSummary.
+        :rtype: bool
+        """
+        return self._is_symmetric_hash_enabled
+
+    @is_symmetric_hash_enabled.setter
+    def is_symmetric_hash_enabled(self, is_symmetric_hash_enabled):
+        """
+        Sets the is_symmetric_hash_enabled of this NetworkLoadBalancerSummary.
+        This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.
+        This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+
+
+        :param is_symmetric_hash_enabled: The is_symmetric_hash_enabled of this NetworkLoadBalancerSummary.
+        :type: bool
+        """
+        self._is_symmetric_hash_enabled = is_symmetric_hash_enabled
 
     @property
     def subnet_id(self):

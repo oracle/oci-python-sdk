@@ -2620,7 +2620,7 @@ class DevopsClient(object):
 
     def delete_ref(self, repository_id, ref_name, **kwargs):
         """
-        Deletes a Repository's Ref by its name. Returns an error if the name is ambiguous. Can be disambiguated by using full names like \"heads/<name>\" or \"tags/<name>\".
+        Deletes a Repository's Ref by its name. Returns an error if the name is ambiguous. Can be disambiguated by using full names like \"heads/<name>\" or \"tags/<name>\". This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized when refName has '/'. This will be replaced by \"/repositories/{repositoryId}/actions/deleteGitRef\".
 
 
         :param str repository_id: (required)
@@ -4587,7 +4587,7 @@ class DevopsClient(object):
 
     def get_ref(self, repository_id, ref_name, **kwargs):
         """
-        Retrieves a repository's reference by its name with preference for branches over tags if the name is ambiguous. This can be disambiguated by using full names like \"heads/<name>\" or \"tags/<name>\".
+        This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized when refName has '/'. This will be replaced by \"/repositories/{repositoryId}/refs\". Retrieves a repository's reference by its name with preference for branches over tags if the name is ambiguous. This can be disambiguated by using full names like \"heads/<name>\" or \"tags/<name>\".
 
 
         :param str repository_id: (required)
@@ -8860,7 +8860,7 @@ class DevopsClient(object):
 
     def put_repository_ref(self, repository_id, ref_name, put_repository_ref_details, **kwargs):
         """
-        Creates a new reference or updates an existing one.
+        Creates a new reference or updates an existing one. This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized when refName has '/'. This will be replaced by \"/repositories/{repositoryId}/actions/createOrUpdateGitRef\".
 
 
         :param str repository_id: (required)

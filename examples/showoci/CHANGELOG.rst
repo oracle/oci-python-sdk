@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+24.03.19 - 24.03.19
+=====================
+* Added -excludelist to generate exclude filter flags
+* Added certificates, certificate authorities, certificate ca bundle which are part of -sec
+* Added Data Safe information including assesments (use -dsa for report), assesments extract to JSON or CSV
+* Added description for network security rules and security groups
+
+=====================
 24.03.12 - 24.03.12
 =====================
 * Added exclude for GENAI and OCE

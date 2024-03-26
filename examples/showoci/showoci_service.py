@@ -39,7 +39,7 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "24.03.12"
+    version = "24.03.19"
     oci_compatible_version = "2.119.1"
     thread_lock = threading.Lock()
 
@@ -166,6 +166,7 @@ class ShowOCIService(object):
     C_DATABASE_EXTERNAL_CDB = "external_cdb"
     C_DATABASE_EXTERNAL_PDB = "external_pdb"
     C_DATABASE_EXTERNAL_NONPDB = "external_nonpdb"
+    C_DATABASE_DATASAFE = "datasafe"
 
     # Container
     C_CONTAINER = "container"
@@ -256,6 +257,13 @@ class ShowOCIService(object):
     C_SECURITY_SCORES_GUARD_SECURITY_SCORES = "cloud_guard_security_scores"
     C_SECURITY_SCORES_GUARD_RISK_SCORES = "cloud_guard_risk_scores"
 
+    # Security Certificates
+    C_CERTIFICATE = "certificate"
+    C_CERTIFICATE_CERTIFICATES = "certificates"
+    C_CERTIFICATE_ASSOCIATIONS = "associations"
+    C_CERTIFICATE_CA_BUNDLES = "ca_bundles"
+    C_CERTIFICATE_AUTHORITIES = "certificates_authorities"
+
     # Error flag and reboot migration
     error = 0
     error_array = []
@@ -269,11 +277,26 @@ class ShowOCIService(object):
     ##########################################################################
     EXCLUDE_NETWORK = 'NETWORK'
     EXCLUDE_LIMITS = 'LIMITS'
-    EXCLUDE_OCE = 'OCE'
-    EXCLUDE_GENAI = 'GENAI'
     EXCLUDE_QUOTAS = 'QUOTAS'
+    EXCLUDE_CERTIFICATES = 'CERTIFICATES'
     EXCLUDE_DNSZONE = 'DNSZONE'
     EXCLUDE_VCIRCUITS = 'VCIRCUITS'
+    EXCLUDE_OIC = "OIC"
+    EXCLUDE_OAC = "OAC"
+    EXCLUDE_OCE = 'OCE'
+    EXCLUDE_OCVS = "OCVS"
+    EXCLUDE_VB = "VB"
+    EXCLUDE_OPENSEARCH = "OPENSEARCH"
+    EXCLUDE_DEVOPS = "DEVOPS"
+    EXCLUDE_DATASCIENCE = "DATASCIENCE"
+    EXCLUDE_DATACATALOG = "DATACATALOG"
+    EXCLUDE_DATAFLOW = "DATAFLOW"
+    EXCLUDE_ODA = "ODA"
+    EXCLUDE_BDS = "BDS"
+    EXCLUDE_DI = "DI"
+    EXCLUDE_KMS = "KMS"
+    EXCLUDE_GENAI = 'GENAI'
+    EXCLUDE_DATASAFE = 'DATASAFE'
 
     ##########################################################################
     # Service not yet available - need to remove on availability
@@ -446,25 +469,6 @@ class ShowOCIService(object):
     # Database Version Date
     ##########################################################################
     database_version_array = [
-        {'date': '2019-04', 'version': '18.6'},
-        {'date': '2019-07', 'version': '18.7'},
-        {'date': '2019-10', 'version': '18.8'},
-        {'date': '2020-01', 'version': '18.9'},
-        {'date': '2020-04', 'version': '18.10'},
-        {'date': '2020-07', 'version': '18.11'},
-        {'date': '2020-10', 'version': '18.12'},
-        {'date': '2021-01', 'version': '18.13'},
-        {'date': '2021-04', 'version': '18.14'},
-        {'date': '2021-07', 'version': '18.15'},
-        {'date': '2021-10', 'version': '18.16'},
-        {'date': '2022-01', 'version': '18.17'},
-        {'date': '2022-04', 'version': '18.18'},
-        {'date': '2022-07', 'version': '18.19'},
-        {'date': '2022-10', 'version': '18.20'},
-        {'date': '2023-01', 'version': '18.21'},
-        {'date': '2023-04', 'version': '18.22'},
-        {'date': '2023-07', 'version': '18.23'},
-        {'date': '2023-10', 'version': '18.24'},
         {'date': '2021-01', 'version': '19.6'},
         {'date': '2021-04', 'version': '19.7'},
         {'date': '2021-07', 'version': '19.8'},
@@ -481,6 +485,11 @@ class ShowOCIService(object):
         {'date': '2023-04', 'version': '19.19'},
         {'date': '2023-07', 'version': '19.20'},
         {'date': '2023-10', 'version': '19.21'},
+        {'date': '2024-01', 'version': '19.22'},
+        {'date': '2024-04', 'version': '19.23'},
+        {'date': '2024-07', 'version': '19.24'},
+        {'date': '2024-10', 'version': '19.25'},
+        {'date': '2025-01', 'version': '19.26'},
         {'date': '2020-12', 'version': '21.1'},
         {'date': '2021-04', 'version': '21.2'},
         {'date': '2021-07', 'version': '21.3'},
@@ -493,6 +502,10 @@ class ShowOCIService(object):
         {'date': '2023-04', 'version': '21.10'},
         {'date': '2023-07', 'version': '21.11'},
         {'date': '2023-10', 'version': '21.12'},
+        {'date': '2024-01', 'version': '21.13'},
+        {'date': '2024-04', 'version': '21.14'},
+        {'date': '2024-07', 'version': '21.15'},
+        {'date': '2024-10', 'version': '21.16'},
     ]
 
     ##########################################################################
@@ -719,6 +732,18 @@ class ShowOCIService(object):
     def get_tenancy(self):
         return self.data[self.C_IDENTITY][self.C_IDENTITY_TENANCY]
 
+    ##########################################################################
+    # return tenancy data
+    ##########################################################################
+    def generate_exclude_list(self):
+        try:
+            print("Below are the exclude list options for the -exclude flag:")
+
+            for value in sorted([v for k, v in vars(ShowOCIService).items() if k.startswith('EXCLUDE_')]):
+                print(f"   {value}")
+        except Exception as e:
+            self.__print_error(e)
+
     ##################################################################################
     # get_date
     # Example of Date 2022-08-20T23:32:54.491Z -> 2022-08-20 23:32
@@ -773,6 +798,31 @@ class ShowOCIService(object):
                 if c['id'] == compartment_id:
                     return c
             return {}
+        except Exception as e:
+            self.__print_error(e)
+
+    ##########################################################################
+    # return resource name from id
+    ##########################################################################
+    def get_resource_name_by_id(self, id):
+        try:
+            # top level data
+            for topkey, topvalue in self.data.items():
+
+                # 2nd level data
+                if topvalue and isinstance(topvalue, dict):
+                    for key, value in topvalue.items():
+
+                        # go over the array
+                        if value and isinstance(value, list):
+                            for arr in value:
+                                if 'id' in arr and arr['id'] == id:
+                                    if 'name' in arr:
+                                        return arr['name']
+                                    if 'display_name' in arr:
+                                        return arr['display_name']
+
+            return ""
         except Exception as e:
             self.__print_error(e)
 
@@ -1138,8 +1188,6 @@ class ShowOCIService(object):
     def __load_print_status_with_threads(self, msg):
         if self.flags.skip_threads:
             print("--> " + msg.ljust(32) + "<-- ", end="")
-        # else:
-            # print("=== Running " + msg + "...")
 
     ##########################################################################
     # Print Section Time
@@ -1313,16 +1361,16 @@ class ShowOCIService(object):
     ##########################################################################
     # print excluded
     ##########################################################################
-    def __load_print_thread_exclude(self, header):
+    def __load_print_thread_exclude(self, header, msg="excluded"):
 
         str_cnt = str("(-)").ljust(7)
 
         if self.flags.skip_threads:
-            print(" " + str_cnt + " - excluded")
+            print(" " + str_cnt + " - " + msg)
         else:
             # lock for printing
             with self.thread_lock:
-                print("--> " + header.ljust(32) + "<-- excluded")
+                print("--> " + header.ljust(32) + "<-- " + msg)
 
     ##########################################################################
     # print count result for Thread
@@ -3345,8 +3393,9 @@ class ShowOCIService(object):
         protocol_name = self.__load_core_network_seclst_protocl_name(str(security_rule.protocol))
         value = {
             'is_stateless': str(security_rule.is_stateless),
-            'protocol': str(security_rule.protocol),
-            'protocol_name': protocol_name,
+            'description': self.get_value(security_rule.description),
+            'protocol': self.get_value(security_rule.protocol),
+            'protocol_name': self.get_value(protocol_name),
             'source': "",
             'src_port_min': "",
             'src_port_max': "",
@@ -3443,6 +3492,10 @@ class ShowOCIService(object):
         if security_rule.is_stateless:
             line += " (Stateless) "
 
+        # add description
+        if security_rule.description:
+            line += ", " + str(security_rule.description)
+
         # Check security_alert
         value['security_alert'] = self.__load_core_network_check_security_alert(value)
         if value['security_alert']:
@@ -3534,15 +3587,19 @@ class ShowOCIService(object):
                         sec_rules.append(self.__load_core_network_seclst_rule("Egress", sle))
 
                     # Add info
-                    val = {'id': str(sl.id), 'vcn_id': str(sl.vcn_id), 'name': str(sl.display_name),
-                           'time_created': str(sl.time_created),
-                           'sec_rules': sec_rules,
-                           'compartment_name': str(compartment['name']),
-                           'compartment_path': str(compartment['path']),
-                           'compartment_id': str(compartment['id']),
-                           'defined_tags': [] if sl.defined_tags is None else sl.defined_tags,
-                           'freeform_tags': [] if sl.freeform_tags is None else sl.freeform_tags,
-                           'region_name': str(self.config['region'])}
+                    val = {
+                        'id': self.get_value(sl.id),
+                        'vcn_id': self.get_value(sl.vcn_id),
+                        'name': self.get_value(sl.display_name),
+                        'time_created': self.get_value(sl.time_created, trim_date=True),
+                        'sec_rules': sec_rules,
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'defined_tags': [] if sl.defined_tags is None else sl.defined_tags,
+                        'freeform_tags': [] if sl.freeform_tags is None else sl.freeform_tags,
+                        'region_name': str(self.config['region'])
+                    }
                     data.append(val)
                     cnt += 1
 
@@ -3704,6 +3761,10 @@ class ShowOCIService(object):
         # Stateless
         if security_rule.is_stateless:
             line += " (Stateless) "
+
+        # Description
+        if security_rule.description:
+            line += ", " + str(security_rule.description)
 
         # Check security_alert
         value['security_alert'] = self.__load_core_network_check_security_alert(value)
@@ -5567,7 +5628,7 @@ class ShowOCIService(object):
                     # agent_status
                     plugins = []
                     try:
-                        # arr = oci.compute_instance_agent.models.InstanceAgentPluginSummary
+                        # plugins = oci.compute_instance_agent.models.InstanceAgentPluginSummary
                         plugins = plugin_client.list_instance_agent_plugins(compartment_id=arr.compartment_id, instanceagent_id=arr.id).data
                         for plugin in plugins:
                             val['agent_plugin_status'].append({'name': plugin.name, 'status': plugin.status, 'time_last_updated_utc': str(plugin.time_last_updated_utc)})
@@ -8453,7 +8514,7 @@ class ShowOCIService(object):
             mysql_backup_client = self.__create_client(oci.mysql.DbBackupsClient)
             postgresql_client = self.__create_client(oci.psql.PostgresqlClient)
             gg_client = self.__create_client(oci.golden_gate.GoldenGateClient)
-            # datasafe_client = self.__create_client(oci.data_safe.DataSafeClient)
+            datasafe_client = self.__create_client(oci.data_safe.DataSafeClient, key=self.EXCLUDE_DATASAFE)
 
             # reference to compartments
             compartments = self.get_compartments()
@@ -8482,6 +8543,7 @@ class ShowOCIService(object):
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_EXTERNAL_CDB)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_EXTERNAL_PDB)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_EXTERNAL_NONPDB)
+            self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_DATASAFE)
 
             # reference to orm
             db = self.data[self.C_DATABASE]
@@ -8512,6 +8574,7 @@ class ShowOCIService(object):
                 db[self.C_DATABASE_EXTERNAL_CDB] += self.__load_database_external_cdb(database_client, compartments)
                 db[self.C_DATABASE_EXTERNAL_PDB] += self.__load_database_external_pdb(database_client, compartments)
                 db[self.C_DATABASE_EXTERNAL_NONPDB] += self.__load_database_external_nonpdb(database_client, compartments)
+                db[self.C_DATABASE_DATASAFE] += self.__load_datasafe_main(datasafe_client, compartments)
 
             ##########################
             # if parallel execution
@@ -8536,6 +8599,7 @@ class ShowOCIService(object):
                     future_EXTERNAL_CDB = executor.submit(self.__load_database_external_cdb, database_client, compartments)
                     future_EXTERNAL_PDB = executor.submit(self.__load_database_external_pdb, database_client, compartments)
                     future_EXTERNAL_NONPDB = executor.submit(self.__load_database_external_nonpdb, database_client, compartments)
+                    future_DATASAFE = executor.submit(self.__load_datasafe_main, datasafe_client, compartments)
 
                     # db homes fetch backups which depends on standalone backups
                     db[self.C_DATABASE_BACKUPS] += next(as_completed([future_BACKUPS])).result()
@@ -8567,6 +8631,7 @@ class ShowOCIService(object):
                     db[self.C_DATABASE_EXTERNAL_CDB] += next(as_completed([future_EXTERNAL_CDB])).result()
                     db[self.C_DATABASE_EXTERNAL_PDB] += next(as_completed([future_EXTERNAL_PDB])).result()
                     db[self.C_DATABASE_EXTERNAL_NONPDB] += next(as_completed([future_EXTERNAL_NONPDB])).result()
+                    db[self.C_DATABASE_DATASAFE] += next(as_completed([future_DATASAFE])).result()
 
             # Complete Database
             self.__load_print_section_time(section_start_time)
@@ -11989,6 +12054,648 @@ class ShowOCIService(object):
             return data
 
     ##########################################################################
+    # __load_datasafe_alert_policies
+    ##########################################################################
+    def __load_datasafe_alert_policies(self, datasafe_client, compartment):
+        values = []
+
+        try:
+            list_values = oci.pagination.list_call_get_all_results(
+                datasafe_client.list_alert_policies,
+                compartment['id'],
+                sort_by="displayName",
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
+            # loop on the Data Safe Alert Policies
+            # val = oci.data_safe.models.AlertPolicySummary
+
+            for val in list_values:
+                if not self.check_lifecycle_state_active(val.lifecycle_state):
+                    continue
+
+                value = {
+                    'region_name': str(self.config['region']),
+                    'compartment_name': str(compartment['name']),
+                    'compartment_path': str(compartment['path']),
+                    'compartment_id': str(compartment['id']),
+                    'id': self.get_value(val.id),
+                    'display_name': self.get_value(val.display_name),
+                    'description': self.get_value(val.description),
+                    'alert_policy_type': self.get_value(val.alert_policy_type),
+                    'severity': self.get_value(val.severity),
+                    'is_user_defined': self.get_value(val.is_user_defined),
+                    'time_created': self.get_value(val.time_created, trim_date=True),
+                    'time_updated': self.get_value(val.time_updated, trim_date=True),
+                    'lifecycle_state': self.get_value(val.lifecycle_state),
+                    'defined_tags': [] if val.defined_tags is None else val.defined_tags,
+                    'freeform_tags': [] if val.freeform_tags is None else val.freeform_tags
+                }
+
+                # add the data
+                values.append(value)
+
+            return values
+
+        except oci.exceptions.ServiceError as e:
+            if self.__check_service_error(e, compartment):
+                self.__load_print_auth_warning("a", False, to_print=self.flags.skip_threads)
+                return values
+            else:
+                self.__load_print_error(e, compartment)
+                return values
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e, compartment):
+                return values
+            else:
+                self.__load_print_error(e, compartment)
+                return values
+        except Exception as e:
+            self.__print_error(e, compartment)
+            return values
+
+    ##########################################################################
+    # __load_datasafe_audit_policies
+    ##########################################################################
+    def __load_datasafe_audit_policies(self, datasafe_client, compartment):
+
+        values = []
+
+        try:
+            list_values = oci.pagination.list_call_get_all_results(
+                datasafe_client.list_audit_policies,
+                compartment['id'],
+                sort_by="DISPLAYNAME",
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
+            # loop on the Data Safe Audit Policies
+            # val = oci.data_safe.models.AuditPolicySummary
+            for val in list_values:
+
+                if not self.check_lifecycle_state_active(val.lifecycle_state):
+                    continue
+
+                value = {
+                    'id': self.get_value(val.id),
+                    'display_name': self.get_value(val.display_name),
+                    'description': self.get_value(val.description),
+                    'audit_specifications': [{
+                        'audit_policy_category': self.get_value(spec.audit_policy_category),
+                        'audit_policy_name': self.get_value(spec.audit_policy_name),
+                        'database_policy_names': [] if spec.database_policy_names is None else spec.database_policy_names,
+                        'enable_status': self.get_value(spec.enable_status),
+                        'enabled_entities': self.get_value(spec.enabled_entities),
+                        'is_created': self.get_value(spec.is_created),
+                        'is_enabled_for_all_users': self.get_value(spec.is_enabled_for_all_users),
+                        'is_seeded_in_data_safe': self.get_value(spec.is_seeded_in_data_safe),
+                        'is_seeded_in_target': self.get_value(spec.is_seeded_in_target),
+                        'is_view_only': self.get_value(spec.is_view_only),
+                        'partially_enabled_msg': self.get_value(spec.partially_enabled_msg)
+                    } for spec in val.audit_specifications] if val.audit_specifications else [],
+                    'is_data_safe_service_account_excluded': self.get_value(val.is_data_safe_service_account_excluded),
+                    'time_created': self.get_value(val.time_created, trim_date=True),
+                    'lifecycle_state': self.get_value(val.lifecycle_state),
+                    'lifecycle_details': self.get_value(val.lifecycle_details),
+                    'defined_tags': [] if val.defined_tags is None else val.defined_tags,
+                    'freeform_tags': [] if val.freeform_tags is None else val.freeform_tags
+                }
+
+                # add the data
+                values.append(value)
+            return values
+
+        except oci.exceptions.ServiceError as e:
+            if self.__check_service_error(e, compartment):
+                self.__load_print_auth_warning("a", False, to_print=self.flags.skip_threads)
+                return values
+            else:
+                self.__load_print_error(e, compartment)
+                return values
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e, compartment):
+                return values
+            else:
+                self.__load_print_error(e, compartment)
+                return values
+        except Exception as e:
+            self.__print_error(e, compartment)
+            return values
+
+    ##########################################################################
+    # __load_datasafe_audit_profiles
+    ##########################################################################
+    def __load_datasafe_audit_profiles(self, datasafe_client, compartment):
+        values = []
+        try:
+            list_values = oci.pagination.list_call_get_all_results(
+                datasafe_client.list_audit_profiles,
+                compartment['id'],
+                sort_by="DISPLAYNAME",
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
+            # loop on the Data Safe Audit Profiles
+            # val = oci.data_safe.models.AuditProfileSummary
+
+            for val in list_values:
+                if not self.check_lifecycle_state_active(val.lifecycle_state):
+                    continue
+
+                value = {
+                    'id': self.get_value(val.id),
+                    'display_name': self.get_value(val.display_name),
+                    'description': self.get_value(val.description),
+                    'audit_collected_volume': self.get_value(val.audit_collected_volume),
+                    'is_override_global_retention_setting': self.get_value(val.is_override_global_retention_setting),
+                    'is_paid_usage_enabled': self.get_value(val.is_paid_usage_enabled),
+                    'online_months': self.get_value(val.online_months),
+                    'offline_months': self.get_value(val.offline_months),
+                    'target_id': self.get_value(val.target_id),
+                    'time_created': self.get_value(val.time_created, trim_date=True),
+                    'lifecycle_state': self.get_value(val.lifecycle_state),
+                    'lifecycle_details': self.get_value(val.lifecycle_details),
+                    'defined_tags': [] if val.defined_tags is None else val.defined_tags,
+                    'freeform_tags': [] if val.freeform_tags is None else val.freeform_tags
+                }
+
+                # add the data
+                values.append(value)
+            return values
+
+        except oci.exceptions.ServiceError as e:
+            if self.__check_service_error(e, compartment):
+                self.__load_print_auth_warning("a", False, to_print=self.flags.skip_threads)
+                return values
+            else:
+                self.__load_print_error(e, compartment)
+                return values
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e, compartment):
+                return values
+            else:
+                self.__load_print_error(e, compartment)
+                return values
+        except Exception as e:
+            self.__print_error(e, compartment)
+            return values
+
+    ##########################################################################
+    # __load_datasafe_private_endpoints
+    ##########################################################################
+    def __load_datasafe_private_endpoints(self, datasafe_client, compartment):
+        values = []
+
+        try:
+            list_values = oci.pagination.list_call_get_all_results(
+                datasafe_client.list_data_safe_private_endpoints,
+                compartment['id'],
+                sort_by="DISPLAYNAME",
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
+            # loop on the Data Safe Private Endpoints
+            # val = oci.data_safe.models.DataSafePrivateEndpointSummary
+            for val in list_values:
+                if not self.check_lifecycle_state_active(val.lifecycle_state):
+                    continue
+
+                value = {
+                    'id': self.get_value(val.id),
+                    'display_name': self.get_value(val.display_name),
+                    'description': self.get_value(val.description),
+                    'private_endpoint_id': self.get_value(val.private_endpoint_id),
+                    'subnet_id': self.get_value(val.subnet_id),
+                    'subnet_name': self.get_network_subnet(val.subnet_id, detailed=True),
+                    'vcn_id': self.get_value(val.vcn_id),
+                    'time_created': self.get_value(val.time_created, trim_date=True),
+                    'lifecycle_state': self.get_value(val.lifecycle_state),
+                    'lifecycle_details': "",
+                    'defined_tags': [] if val.defined_tags is None else val.defined_tags,
+                    'freeform_tags': [] if val.freeform_tags is None else val.freeform_tags
+                }
+
+                # add the data
+                values.append(value)
+            return values
+
+        except oci.exceptions.ServiceError as e:
+            if self.__check_service_error(e, compartment):
+                self.__load_print_auth_warning("a", False, to_print=self.flags.skip_threads)
+                return values
+            else:
+                self.__load_print_error(e, compartment)
+                return values
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e, compartment):
+                return values
+            else:
+                self.__load_print_error(e, compartment)
+                return values
+        except Exception as e:
+            self.__print_error(e, compartment)
+            return values
+
+    ##########################################################################
+    # __load_datasafe_onprem_connectors
+    ##########################################################################
+    def __load_datasafe_onprem_connectors(self, datasafe_client, compartment):
+        values = []
+        try:
+            list_values = oci.pagination.list_call_get_all_results(
+                datasafe_client.list_on_prem_connectors,
+                compartment['id'],
+                sort_by="DISPLAYNAME",
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
+            # loop on the Data Safe OnPrem Connectors
+            # val = oci.data_safe.models.OnPremConnectorSummary
+            for val in list_values:
+                if not self.check_lifecycle_state_active(val.lifecycle_state):
+                    continue
+
+                value = {
+                    'id': self.get_value(val.id),
+                    'display_name': self.get_value(val.display_name),
+                    'description': self.get_value(val.description),
+                    'time_created': self.get_value(val.time_created, trim_date=True),
+                    'lifecycle_state': self.get_value(val.lifecycle_state),
+                    'lifecycle_details': self.get_value(val.lifecycle_details),
+                    'defined_tags': [] if val.defined_tags is None else val.defined_tags,
+                    'freeform_tags': [] if val.freeform_tags is None else val.freeform_tags
+                }
+
+                # add the data
+                values.append(value)
+            return values
+
+        except oci.exceptions.ServiceError as e:
+            if self.__check_service_error(e, compartment):
+                self.__load_print_auth_warning("a", False, to_print=self.flags.skip_threads)
+                return values
+            else:
+                self.__load_print_error(e, compartment)
+                return values
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e, compartment):
+                return values
+            else:
+                self.__load_print_error(e, compartment)
+                return values
+        except Exception as e:
+            self.__print_error(e, compartment)
+            return values
+
+    ##########################################################################
+    # __load_datasafe_security_assessments
+    ##########################################################################
+    def __get_statistic_values(self, value):
+
+        if value is None:
+            return ''
+        ret = {
+            'targets_count': self.get_value(value.targets_count),
+            'auditing_findings_count': self.get_value(value.auditing_findings_count),
+            'authorization_control_findings_count': self.get_value(value.authorization_control_findings_count),
+            'data_encryption_findings_count': self.get_value(value.data_encryption_findings_count),
+            'db_configuration_findings_count': self.get_value(value.db_configuration_findings_count),
+            'fine_grained_access_control_findings_count': self.get_value(value.fine_grained_access_control_findings_count),
+            'privileges_and_roles_findings_count': self.get_value(value.privileges_and_roles_findings_count),
+            'user_accounts_findings_count': self.get_value(value.user_accounts_findings_count)
+        }
+        return ret
+
+    ##########################################################################
+    # __get_datasafe_map
+    ##########################################################################
+    def __get_datasafe_map(self, in_value):
+
+        val = {}
+        try:
+            if in_value:
+                for k in in_value.keys():
+                    val[k] = oci.util.to_dict(in_value[k])
+            return val
+
+        except Exception as e:
+            self.__print_error(e)
+            return val
+
+    ##########################################################################
+    # __get_datasafe_maps
+    ##########################################################################
+    def __get_datasafe_maps(self, in_value):
+
+        val = []
+        try:
+            if in_value:
+                for i in in_value:
+                    val.append(self.__get_datasafe_map(i))
+            return val
+
+        except Exception as e:
+            self.__print_error(e)
+            return val
+
+    ##########################################################################
+    # __get_datasafe_security_statistics
+    ##########################################################################
+    def __get_datasafe_security_statistics(self, stats):
+
+        try:
+            if not stats:
+                return {}
+
+            return {
+                'advisory': oci.util.to_dict(stats.advisory),
+                'deferred': oci.util.to_dict(stats.deferred),
+                'evaluate': oci.util.to_dict(stats.evaluate),
+                'high_risk': oci.util.to_dict(stats.high_risk),
+                'low_risk': oci.util.to_dict(stats.low_risk),
+                'medium_risk': oci.util.to_dict(stats.medium_risk),
+                'targets_count': self.get_value(stats.targets_count)
+            }
+        except Exception as e:
+            self.__print_error(e)
+            return {}
+
+    ##########################################################################
+    # __load_datasafe_security_assessments
+    ##########################################################################
+    def __load_datasafe_security_assessments(self, datasafe_client, compartment):
+        values = []
+
+        try:
+            list_values = oci.pagination.list_call_get_all_results(
+                datasafe_client.list_security_assessments,
+                compartment['id'],
+                sort_by='displayName',
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
+            # loop on the Data Safe Security Assessments
+            # val = oci.data_safe.models.SecurityAssessmentSummary
+            for val in list_values:
+                if not self.check_lifecycle_state_active(val.lifecycle_state):
+                    continue
+
+                value = {
+                    'id': self.get_value(val.id),
+                    'display_name': self.get_value(val.display_name),
+                    'description': self.get_value(val.description),
+                    'ignored_assessment_ids': self.__get_datasafe_maps(val.ignored_assessment_ids),
+                    'ignored_target_ids': self.__get_datasafe_maps(val.ignored_target_ids),
+                    'is_baseline': self.get_value(val.is_baseline),
+                    'is_deviated_from_baseline': self.get_value(val.is_deviated_from_baseline),
+                    'last_compared_baseline_id': self.get_value(val.last_compared_baseline_id),
+                    'link': self.get_value(val.link),
+                    'schedule': self.get_value(val.schedule),
+                    'schedule_security_assessment_id': self.get_value(val.schedule_security_assessment_id),
+                    'statistics': self.__get_datasafe_security_statistics(val.statistics),
+                    # 'target_ids': self.get_values(val.target_ids),
+                    'triggered_by': self.get_value(val.triggered_by),
+                    'time_created': self.get_value(val.time_created),
+                    'lifecycle_state': self.get_value(val.lifecycle_state),
+                    'lifecycle_details': self.get_value(val.lifecycle_details),
+                    'defined_tags': [] if val.defined_tags is None else val.defined_tags,
+                    'freeform_tags': [] if val.freeform_tags is None else val.freeform_tags
+                }
+
+                # add the data
+                values.append(value)
+            return values
+
+        except oci.exceptions.ServiceError as e:
+            if self.__check_service_error(e, compartment):
+                self.__load_print_auth_warning('a', False, to_print=self.flags.skip_threads)
+                return values
+            else:
+                self.__load_print_error(e, compartment)
+                return values
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e, compartment):
+                return values
+            else:
+                self.__load_print_error(e, compartment)
+                return values
+        except Exception as e:
+            self.__print_error(e, compartment)
+            return values
+
+    ##########################################################################
+    # __load_datasafe_user_assessments
+    ##########################################################################
+    def __load_datasafe_user_assessments(self, datasafe_client, compartment):
+        values = []
+
+        try:
+            list_values = oci.pagination.list_call_get_all_results(
+                datasafe_client.list_user_assessments,
+                compartment['id'],
+                sort_by="displayName",
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
+            # loop on the Data Safe User Assessments
+            # val = oci.data_safe.models.UserAssessmentSummary
+            for val in list_values:
+                if not self.check_lifecycle_state_active(val.lifecycle_state):
+                    continue
+
+                value = {
+                    'id': self.get_value(val.id),
+                    'display_name': self.get_value(val.display_name),
+                    'description': self.get_value(val.description),
+                    'ignored_assessment_ids': self.__get_datasafe_maps(val.ignored_assessment_ids),
+                    'ignored_targets': self.__get_datasafe_maps(val.ignored_targets),
+                    'is_baseline': self.get_value(val.is_baseline),
+                    'is_deviated_from_baseline': self.get_value(val.is_deviated_from_baseline),
+                    'last_compared_baseline_id': self.get_value(val.last_compared_baseline_id),
+                    'schedule': self.get_value(val.schedule),
+                    'schedule_assessment_id': self.get_value(val.schedule_assessment_id),
+                    'statistics': self.__get_datasafe_map(val.statistics),
+                    # 'target_ids': self.get_values(val.target_ids),
+                    'triggered_by': self.get_value(val.triggered_by),
+                    'time_created': self.get_value(val.time_created, trim_date=True),
+                    'lifecycle_state': self.get_value(val.lifecycle_state),
+                    'lifecycle_details': self.get_value(val.lifecycle_details),
+                    'defined_tags': [] if val.defined_tags is None else val.defined_tags,
+                    'freeform_tags': [] if val.freeform_tags is None else val.freeform_tags
+                }
+                # add the data
+                values.append(value)
+
+            return values
+
+        except oci.exceptions.ServiceError as e:
+            if self.__check_service_error(e, compartment):
+                self.__load_print_auth_warning("a", False, to_print=self.flags.skip_threads)
+                return values
+            else:
+                self.__load_print_error(e, compartment)
+                return values
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e, compartment):
+                return values
+            else:
+                self.__load_print_error(e, compartment)
+                return values
+        except Exception as e:
+            self.__print_error(e, compartment)
+            return values
+
+    ##########################################################################
+    # __load_datasafe_targets
+    ##########################################################################
+    def __load_datasafe_targets(self, datasafe_client, compartment):
+
+        values = []
+        try:
+            list_targets = oci.pagination.list_call_get_all_results(
+                datasafe_client.list_target_databases,
+                compartment['id'],
+                sort_by="DISPLAYNAME",
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
+            # loop on the Data Safe Targets
+            # tbs = oci.data_safe.models.TargetDatabaseSummary
+            for tbs in list_targets:
+                if not self.check_lifecycle_state_active(tbs.lifecycle_state):
+                    continue
+
+                value = {
+                    'region_name': str(self.config['region']),
+                    'compartment_name': str(compartment['name']),
+                    'compartment_path': str(compartment['path']),
+                    'compartment_id': str(compartment['id']),
+                    'id': self.get_value(tbs.id),
+                    'display_name': self.get_value(tbs.display_name),
+                    'description': self.get_value(tbs.description),
+                    'database_type': self.get_value(tbs.database_type),
+                    'infrastructure_type': self.get_value(tbs.infrastructure_type),
+                    'associated_resource_ids': [] if tbs.associated_resource_ids is None else tbs.associated_resource_ids,
+                    'associated_resource_names': [],
+                    'time_created': self.get_value(tbs.time_created),
+                    'lifecycle_state': self.get_value(tbs.lifecycle_state),
+                    'lifecycle_details': self.get_value(tbs.lifecycle_details),
+                    'defined_tags': [] if tbs.defined_tags is None else tbs.defined_tags,
+                    'freeform_tags': [] if tbs.freeform_tags is None else tbs.freeform_tags,
+                }
+                # add the data
+                values.append(value)
+            return values
+
+        except oci.exceptions.ServiceError as e:
+            if self.__check_service_error(e, compartment):
+                self.__load_print_auth_warning("a", False, to_print=self.flags.skip_threads)
+                return values
+            else:
+                self.__load_print_error(e, compartment)
+                return values
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e, compartment):
+                return values
+            else:
+                self.__load_print_error(e, compartment)
+                return values
+        except Exception as e:
+            self.__print_error(e, compartment)
+            return values
+
+    ##########################################################################
+    # __load_datasafe_main
+    ##########################################################################
+    def __load_datasafe_main(self, datasafe_client, compartments):
+        ds = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            errstr = ""
+            header = "Data Safe"
+            self.__load_print_status_with_threads(header)
+
+            if not datasafe_client:
+                self.__load_print_thread_exclude(header)
+                return ds
+
+            # Check if datasafe is enabled
+            config = datasafe_client.get_data_safe_configuration().data
+            config_data = {
+                'data_safe_nat_gateway_ip_address': self.get_value(config.data_safe_nat_gateway_ip_address),
+                'is_paid_usage': self.get_value(config.global_settings.is_paid_usage) if config.global_settings else "",
+                'offline_retention_period': self.get_value(config.global_settings.offline_retention_period) if config.global_settings else "",
+                'online_retention_period': self.get_value(config.global_settings.online_retention_period) if config.global_settings else "",
+                'is_enabled': self.get_value(config.is_enabled),
+                'lifecycle_state': self.get_value(config.lifecycle_state),
+                'time_enabled': self.get_value(config.time_enabled, trim_date=True),
+                'url': self.get_value(config.url),
+                'defined_tags': [] if config.defined_tags is None else config.defined_tags,
+                'freeform_tags': [] if config.freeform_tags is None else config.freeform_tags,
+            }
+
+            if not config.is_enabled:
+                self.__load_print_thread_exclude(header, msg="Not Enabled")
+                return ds
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    if self.flags.skip_threads:
+                        print('.', end='')
+                    continue
+
+                targets = self.__load_datasafe_targets(datasafe_client, compartment)
+                if targets:
+                    data = {
+                        'region_name': str(self.config['region']),
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'global_config': config_data,
+                        'targets': targets,
+                        'sum_info': "Datasafe Targets",
+                        'sum_size_gb': str(len(targets)),
+                        'private_endpoints': self.__load_datasafe_private_endpoints(datasafe_client, compartment),
+                        'audit_profiles': self.__load_datasafe_audit_profiles(datasafe_client, compartment),
+                        'audit_policies': self.__load_datasafe_audit_policies(datasafe_client, compartment),
+                        'alert_policies': self.__load_datasafe_alert_policies(datasafe_client, compartment),
+                        'on_prem_connectors': self.__load_datasafe_onprem_connectors(datasafe_client, compartment),
+                        'security_assessments': [],
+                        'user_assessments': [],
+                        'info_assessments': ""
+                    }
+
+                    if self.flags.read_datasafe_assessments:
+                        data['security_assessments'] = self.__load_datasafe_security_assessments(datasafe_client, compartment)
+                        data['user_assessments'] = self.__load_datasafe_user_assessments(datasafe_client, compartment)
+                    else:
+                        data['info_assessments'] = "Use -dsa flag to extract user and security assesments"
+
+                    ds.append(data)
+                    cnt += 1
+
+                if self.flags.skip_threads:
+                    print('.', end='')
+
+            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+            return ds
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return ds
+            else:
+                self.__load_print_error(e)
+                return ds
+        except Exception as e:
+            self.__print_error(e)
+            return ds
+
+    ##########################################################################
     # __load_container_node_pools
     ##########################################################################
     def __load_container_node_pools(self, container_client, compartments):
@@ -13150,7 +13857,7 @@ class ShowOCIService(object):
 
         try:
             section_start_time = time.time()
-            print("Monitoring, Notifications, Events, Bastion, Logging, KMS, Limits, Quotas, E-Mail, Budget...")
+            print("Monitoring, Notifications, Events, Bastion, Logging, KMS, Limits, Quotas, E-Mail, Budget, Certificates...")
 
             monitor_client = self.__create_client(oci.monitoring.MonitoringClient)
             ons_cp_client = self.__create_client(oci.ons.NotificationControlPlaneClient)
@@ -13161,12 +13868,13 @@ class ShowOCIService(object):
             bs_client = self.__create_client(oci.bastion.BastionClient)
             cg_client = self.__create_client(oci.cloud_guard.CloudGuardClient)
             log_client = self.__create_client(oci.logging.LoggingManagementClient)
-            kms_client = self.__create_client(oci.key_management.KmsVaultClient)
-            limits_client = self.__create_client(oci.limits.LimitsClient)
-            quotas_client = self.__create_client(oci.limits.QuotasClient)
+            kms_client = self.__create_client(oci.key_management.KmsVaultClient, key=self.EXCLUDE_KMS)
+            limits_client = self.__create_client(oci.limits.LimitsClient, key=self.EXCLUDE_LIMITS)
+            quotas_client = self.__create_client(oci.limits.QuotasClient, key=self.EXCLUDE_QUOTAS)
             email_client = self.__create_client(oci.email.EmailClient)
             budget_client = self.__create_client(oci.budget.BudgetClient)
             search_client = self.__create_client(oci.resource_search.ResourceSearchClient)
+            certificates_client = self.__create_client(oci.certificates_management.CertificatesManagementClient, key=self.EXCLUDE_CERTIFICATES)
 
             # reference to tenancy
             tenancy = self.get_tenancy()
@@ -13193,12 +13901,18 @@ class ShowOCIService(object):
             self.__initialize_data_key(self.C_EMAIL, self.C_EMAIL_SUPPRESSIONS)
             self.__initialize_data_key(self.C_BUDGETS, self.C_BUDGETS_BUDGETS)
 
+            self.__initialize_data_key(self.C_CERTIFICATE, self.C_CERTIFICATE_CERTIFICATES)
+            self.__initialize_data_key(self.C_CERTIFICATE, self.C_CERTIFICATE_ASSOCIATIONS)
+            self.__initialize_data_key(self.C_CERTIFICATE, self.C_CERTIFICATE_CA_BUNDLES)
+            self.__initialize_data_key(self.C_CERTIFICATE, self.C_CERTIFICATE_AUTHORITIES)
+
             monitor = self.data[self.C_MONITORING]
             notifications = self.data[self.C_NOTIFICATIONS]
             sec = self.data[self.C_SECURITY]
             limits = self.data[self.C_LIMITS]
             email = self.data[self.C_EMAIL]
             budget = self.data[self.C_BUDGETS]
+            certificate = self.data[self.C_CERTIFICATE]
 
             ##########################
             # if serial execution
@@ -13213,7 +13927,7 @@ class ShowOCIService(object):
                 notifications[self.C_NOTIFICATIONS_SUBSCRIPTIONS] += self.__load_notifications_subscriptions(ons_dp_client, compartments)
 
                 sec[self.C_SECURITY_BASTION] += self.__load_security_bastions(bs_client, compartments)
-                sec[self.C_SECURITY_LOGGING_UA] += self.__load_security_log_unified_agents(bs_client, compartments)
+                sec[self.C_SECURITY_LOGGING_UA] += self.__load_security_log_unified_agents(log_client, compartments)
                 sec[self.C_SECURITY_LOGGING] += self.__load_security_log_groups(log_client, compartments)
                 sec[self.C_SECURITY_VAULTS] += self.__load_security_kms_vaults(kms_client, compartments)
                 sec[self.C_SECURITY_KEYS] += self.__load_security_kms_keys(search_client)
@@ -13225,6 +13939,11 @@ class ShowOCIService(object):
 
                 limits[self.C_LIMITS_SERVICES] += self.__load_limits(limits_client, tenancy['id'], compartments)
                 limits[self.C_LIMITS_QUOTAS] += self.__load_quotas(quotas_client, compartments)
+
+                certificate[self.C_CERTIFICATE_CERTIFICATES] += self.__load_certificate_certificates(certificates_client, compartments)
+                certificate[self.C_CERTIFICATE_ASSOCIATIONS] += self.__load_certificate_associations(certificates_client, compartments)
+                certificate[self.C_CERTIFICATE_CA_BUNDLES] += self.__load_certificate_ca_bundles(certificates_client, compartments)
+                certificate[self.C_CERTIFICATE_AUTHORITIES] += self.__load_certificate_authorities(certificates_client, compartments)
 
             ##########################
             # if parallel execution
@@ -13248,6 +13967,10 @@ class ShowOCIService(object):
                     future_BUDGETS_BUDGETS = executor.submit(self.__load_budgets_budgets, budget_client, tenancy['id'])
                     future_LIMITS_SERVICES = executor.submit(self.__load_limits, limits_client, tenancy['id'], compartments)
                     future_LIMITS_QUOTAS = executor.submit(self.__load_quotas, quotas_client, compartments)
+                    future_CERTIFICATE_CERTIFICATES = executor.submit(self.__load_certificate_certificates, certificates_client, compartments)
+                    future_CERTIFICATE_ASSOCIATIONS = executor.submit(self.__load_certificate_associations, certificates_client, compartments)
+                    future_CERTIFICATE_CA_BUNDLES = executor.submit(self.__load_certificate_ca_bundles, certificates_client, compartments)
+                    future_CERTIFICATE_AUTHORITIES = executor.submit(self.__load_certificate_authorities, certificates_client, compartments)
 
                     monitor[self.C_MONITORING_ALARMS] += next(as_completed([future_MONITORING_ALARMS])).result()
                     monitor[self.C_MONITORING_EVENTS] += next(as_completed([future_MONITORING_EVENTS])).result()
@@ -13266,6 +13989,10 @@ class ShowOCIService(object):
                     budget[self.C_BUDGETS_BUDGETS] += next(as_completed([future_BUDGETS_BUDGETS])).result()
                     limits[self.C_LIMITS_SERVICES] += next(as_completed([future_LIMITS_SERVICES])).result()
                     limits[self.C_LIMITS_QUOTAS] += next(as_completed([future_LIMITS_QUOTAS])).result()
+                    certificate[self.C_CERTIFICATE_CERTIFICATES] += next(as_completed([future_CERTIFICATE_CERTIFICATES])).result()
+                    certificate[self.C_CERTIFICATE_ASSOCIATIONS] += next(as_completed([future_CERTIFICATE_ASSOCIATIONS])).result()
+                    certificate[self.C_CERTIFICATE_CA_BUNDLES] += next(as_completed([future_CERTIFICATE_CA_BUNDLES])).result()
+                    certificate[self.C_CERTIFICATE_AUTHORITIES] += next(as_completed([future_CERTIFICATE_AUTHORITIES])).result()
 
             self.__load_print_section_time(section_start_time)
             print('')
@@ -13823,7 +14550,8 @@ class ShowOCIService(object):
             print("Edge Services...")
 
             healthcheck_client = self.__create_client(oci.healthchecks.HealthChecksClient)
-            dns = self.__create_client(oci.dns.DnsClient)
+            dnszone = self.__create_client(oci.dns.DnsClient, key=self.EXCLUDE_DNSZONE)
+            dnssteering = self.__create_client(oci.dns.DnsClient)
             waas = self.__create_client(oci.waas.WaasClient)
             waf = self.__create_client(oci.waf.WafClient)
 
@@ -13847,13 +14575,10 @@ class ShowOCIService(object):
             if self.flags.skip_threads:
                 edge[self.C_EDGE_HEALTHCHECK_PING] += self.__load_edge_healthchecks_ping(healthcheck_client, compartments)
                 edge[self.C_EDGE_HEALTHCHECK_HTTP] += self.__load_edge_healthchecks_http(healthcheck_client, compartments)
-                edge[self.C_EDGE_DNS_STEERING] += self.__load_edge_dns_steering(dns, compartments)
+                edge[self.C_EDGE_DNS_STEERING] += self.__load_edge_dns_steering(dnssteering, compartments)
                 edge[self.C_EDGE_WAAS_POLICIES] += self.__load_edge_waas_policies(waas, compartments)
                 edge[self.C_EDGE_WAF] += self.__load_edge_waf(waf, compartments)
-
-                # DNS Zone is the slowest API option to skip
-                if self.EXCLUDE_DNSZONE not in self.flags.exclude:
-                    edge[self.C_EDGE_DNS_ZONE] += self.__load_edge_dns_zone(dns, compartments)
+                edge[self.C_EDGE_DNS_ZONE] += self.__load_edge_dns_zone(dnszone, compartments)
 
             ##########################
             # if parallel execution
@@ -13862,15 +14587,12 @@ class ShowOCIService(object):
                 with ThreadPoolExecutor(max_workers=self.flags.threads) as executor:
                     future_EDGE_HEALTHCHECK_PING = executor.submit(self.__load_edge_healthchecks_ping, healthcheck_client, compartments)
                     future_EDGE_HEALTHCHECK_HTTP = executor.submit(self.__load_edge_healthchecks_http, healthcheck_client, compartments)
-                    future_EDGE_DNS_STEERING = executor.submit(self.__load_edge_dns_steering, dns, compartments)
+                    future_EDGE_DNS_STEERING = executor.submit(self.__load_edge_dns_steering, dnssteering, compartments)
                     future_EDGE_WAAS_POLICIES = executor.submit(self.__load_edge_waas_policies, waas, compartments)
                     future_EDGE_WAF = executor.submit(self.__load_edge_waf, waf, compartments)
+                    future_EDGE_DNS_ZONE = executor.submit(self.__load_edge_dns_zone, dnszone, compartments)
 
-                    # DNS Zone is the slowest API option to skip
-                    if self.EXCLUDE_DNSZONE not in self.flags.exclude:
-                        future_EDGE_DNS_ZONE = executor.submit(self.__load_edge_dns_zone, dns, compartments)
-                        edge[self.C_EDGE_DNS_ZONE] += next(as_completed([future_EDGE_DNS_ZONE])).result()
-
+                    edge[self.C_EDGE_DNS_ZONE] += next(as_completed([future_EDGE_DNS_ZONE])).result()
                     edge[self.C_EDGE_HEALTHCHECK_PING] += next(as_completed([future_EDGE_HEALTHCHECK_PING])).result()
                     edge[self.C_EDGE_HEALTHCHECK_HTTP] += next(as_completed([future_EDGE_HEALTHCHECK_HTTP])).result()
                     edge[self.C_EDGE_DNS_STEERING] += next(as_completed([future_EDGE_DNS_STEERING])).result()
@@ -14112,6 +14834,10 @@ class ShowOCIService(object):
             errstr = ""
             header = "DNS Zone"
             self.__load_print_status_with_threads(header)
+
+            if not dns_client:
+                self.__load_print_thread_exclude(header)
+                return data
 
             # loop on all compartments
             for compartment in compartments:
@@ -14459,23 +15185,23 @@ class ShowOCIService(object):
             print("Native, Data and AI ...")
 
             # For Native
-            oic_client = self.__create_client(oci.integration.IntegrationInstanceClient)
-            oac_client = self.__create_client(oci.analytics.AnalyticsClient)
-            ocvs_client = self.__create_client(oci.ocvp.SddcClient)
-            esxi_client = self.__create_client(oci.ocvp.EsxiHostClient)
-            cluster_client = self.__create_client(oci.integration.IntegrationInstanceClient)
-            vb_client = self.__create_client(oci.visual_builder.VbInstanceClient)
-            opensearch_client = self.__create_client(oci.opensearch.OpensearchClusterClient)
+            oic_client = self.__create_client(oci.integration.IntegrationInstanceClient, key=self.EXCLUDE_OIC)
+            oac_client = self.__create_client(oci.analytics.AnalyticsClient, key=self.EXCLUDE_OAC)
+            ocvs_client = self.__create_client(oci.ocvp.SddcClient, key=self.EXCLUDE_OCVS)
+            esxi_client = self.__create_client(oci.ocvp.EsxiHostClient, key=self.EXCLUDE_OCVS)
+            cluster_client = self.__create_client(oci.ocvp.ClusterClient, key=self.EXCLUDE_OCVS)
+            vb_client = self.__create_client(oci.visual_builder.VbInstanceClient, key=self.EXCLUDE_VB)
+            opensearch_client = self.__create_client(oci.opensearch.OpensearchClusterClient, key=self.EXCLUDE_OPENSEARCH)
             virtual_network = self.__create_client(oci.core.VirtualNetworkClient)
-            devops_client = self.__create_client(oci.devops.DevopsClient)
+            devops_client = self.__create_client(oci.devops.DevopsClient, key=self.EXCLUDE_DEVOPS)
             oce_client = self.__create_client(oci.oce.OceInstanceClient, key=self.EXCLUDE_OCE)
 
-            ds_client = self.__create_client(oci.data_science.DataScienceClient)
-            dc_client = self.__create_client(oci.data_catalog.DataCatalogClient)
-            df_client = self.__create_client(oci.data_flow.DataFlowClient)
-            oda_client = self.__create_client(oci.oda.OdaClient)
-            bds_client = self.__create_client(oci.bds.BdsClient)
-            di_client = self.__create_client(oci.data_integration.DataIntegrationClient)
+            ds_client = self.__create_client(oci.data_science.DataScienceClient, key=self.EXCLUDE_DATASCIENCE)
+            dc_client = self.__create_client(oci.data_catalog.DataCatalogClient, key=self.EXCLUDE_DATACATALOG)
+            df_client = self.__create_client(oci.data_flow.DataFlowClient, key=self.EXCLUDE_DATAFLOW)
+            oda_client = self.__create_client(oci.oda.OdaClient, key=self.EXCLUDE_ODA)
+            bds_client = self.__create_client(oci.bds.BdsClient, key=self.EXCLUDE_BDS)
+            di_client = self.__create_client(oci.data_integration.DataIntegrationClient, key=self.EXCLUDE_DI)
             genai_client = self.__create_client(oci.generative_ai.GenerativeAiClient, key=self.EXCLUDE_GENAI)
 
             # reference to compartments
@@ -14579,6 +15305,10 @@ class ShowOCIService(object):
             header = "Data Catalog"
             self.__load_print_status_with_threads(header)
 
+            if not dc_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
             # loop on all compartments
             for compartment in compartments:
 
@@ -14671,6 +15401,10 @@ class ShowOCIService(object):
             header = "Data Science"
             self.__load_print_status_with_threads(header)
 
+            if not ds_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
             # loop on all compartments
             for compartment in compartments:
 
@@ -14760,6 +15494,10 @@ class ShowOCIService(object):
             errstr = ""
             header = "Data Flow"
             self.__load_print_status_with_threads(header)
+
+            if not df_client:
+                self.__load_print_thread_exclude(header)
+                return data
 
             # loop on all compartments
             for compartment in compartments:
@@ -14855,6 +15593,10 @@ class ShowOCIService(object):
             header = "Data Assistant"
             self.__load_print_status_with_threads(header)
 
+            if not oda_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
             # loop on all compartments
             for compartment in compartments:
 
@@ -14949,6 +15691,10 @@ class ShowOCIService(object):
             errstr = ""
             header = "Big Data Service"
             self.__load_print_status_with_threads(header)
+
+            if not bds_client:
+                self.__load_print_thread_exclude(header)
+                return data
 
             # loop on all compartments
             for compartment in compartments:
@@ -15166,6 +15912,10 @@ class ShowOCIService(object):
             header = "Data Integration"
             self.__load_print_status_with_threads(header)
 
+            if not di_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
             # loop on all compartments
             for compartment in compartments:
 
@@ -15256,7 +16006,7 @@ class ShowOCIService(object):
             header = "Generative AI"
             self.__load_print_status_with_threads(header)
 
-            if self.EXCLUDE_GENAI in self.flags.exclude:
+            if not ai_client:
                 self.__load_print_thread_exclude(header)
                 return data
 
@@ -15358,6 +16108,10 @@ class ShowOCIService(object):
             errstr = ""
             header = "OIC Native"
             self.__load_print_status_with_threads(header)
+
+            if not oic_client:
+                self.__load_print_thread_exclude(header)
+                return data
 
             # loop on all compartments
             for compartment in compartments:
@@ -15461,6 +16215,10 @@ class ShowOCIService(object):
             errstr = ""
             header = "OCVS Native - VMWare"
             self.__load_print_status_with_threads(header)
+
+            if not ocvs_client:
+                self.__load_print_thread_exclude(header)
+                return data
 
             # loop on all compartments
             for compartment in compartments:
@@ -15774,6 +16532,10 @@ class ShowOCIService(object):
             header = "OAC Native"
             self.__load_print_status_with_threads(header)
 
+            if not oac_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
             # loop on all compartments
             for compartment in compartments:
 
@@ -15887,7 +16649,7 @@ class ShowOCIService(object):
             header = "OCE Native"
             self.__load_print_status_with_threads(header)
 
-            if self.EXCLUDE_OCE in self.flags.exclude:
+            if not oce_client:
                 self.__load_print_thread_exclude(header)
                 return data
 
@@ -15988,6 +16750,10 @@ class ShowOCIService(object):
             header = "Visual Builder"
             self.__load_print_status_with_threads(header)
 
+            if not vb_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
             # loop on all compartments
             for compartment in compartments:
 
@@ -16081,6 +16847,10 @@ class ShowOCIService(object):
             errstr = ""
             header = "Open Search Cluster"
             self.__load_print_status_with_threads(header)
+
+            if not open_client:
+                self.__load_print_thread_exclude(header)
+                return data
 
             # loop on all compartments
             for compartment in compartments:
@@ -16240,6 +17010,10 @@ class ShowOCIService(object):
             header = "DevOps Project"
             self.__load_print_status_with_threads(header)
 
+            if not devops_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
             # loop on all compartments
             for compartment in compartments:
 
@@ -16332,7 +17106,7 @@ class ShowOCIService(object):
             header = "Limits"
             self.__load_print_status_with_threads(header)
 
-            if self.EXCLUDE_LIMITS in self.flags.exclude:
+            if not limits_client:
                 self.__load_print_thread_exclude(header)
                 return data
 
@@ -16451,12 +17225,13 @@ class ShowOCIService(object):
         start_time = time.time()
 
         try:
-            if self.EXCLUDE_QUOTAS in self.flags.exclude:
-                return data
-
             errstr = ""
             header = "Quotas"
             self.__load_print_status_with_threads(header)
+
+            if not quotas_client:
+                self.__load_print_thread_exclude(header)
+                return data
 
             # loop on all compartments
             for compartment in compartments:
@@ -16812,6 +17587,10 @@ class ShowOCIService(object):
             header = "Key Vaults"
             self.__load_print_status_with_threads(header)
 
+            if not kms_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
             # loop on all compartments
             for compartment in compartments:
 
@@ -17050,6 +17829,10 @@ class ShowOCIService(object):
             header = "Logging Groups"
             self.__load_print_status_with_threads(header)
 
+            if not log_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
             # loop on all compartments
             for compartment in compartments:
 
@@ -17220,6 +18003,10 @@ class ShowOCIService(object):
             header = "Logging Unified Agents"
             self.__load_print_status_with_threads(header)
 
+            if not log_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
             # loop on all compartments
             for compartment in compartments:
 
@@ -17349,6 +18136,10 @@ class ShowOCIService(object):
             header = "Bastions"
             self.__load_print_status_with_threads(header)
 
+            if not bs_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
             # loop on all compartments
             for compartment in compartments:
 
@@ -17405,6 +18196,443 @@ class ShowOCIService(object):
                             'lifecycle_details': str(bs.lifecycle_details),
                             'sum_info': "Bastions",
                             'sum_size_gb': str(1),
+                            'compartment_name': str(compartment['name']),
+                            'compartment_path': str(compartment['path']),
+                            'compartment_id': str(compartment['id']),
+                            'region_name': str(self.config['region'])
+                        }
+
+                        cnt += 1
+                        data.append(val)
+
+            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            else:
+                self.__load_print_error(e)
+                return data
+        except Exception as e:
+            self.__print_error(e)
+            return data
+
+    ##########################################################################
+    # __load_certificate_certificates
+    ##########################################################################
+    def __load_certificate_certificates(self, cert_client, compartments):
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            errstr = ""
+            header = "Certificates"
+            self.__load_print_status_with_threads(header)
+
+            if not cert_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    continue
+
+                crts = []
+                try:
+                    crts = oci.pagination.list_call_get_all_results(
+                        cert_client.list_certificates,
+                        compartment_id=compartment['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e, compartment):
+                        self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                        errstr += "a"
+                        continue
+                    else:
+                        self.__load_print_error(e, compartment)
+                        errstr += "e"
+                        continue
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                    errstr += "a"
+                    break
+
+                except Exception as e:
+                    self.__load_print_error(e, compartment)
+                    errstr += "e"
+                    continue
+
+                if self.flags.skip_threads:
+                    print(".", end="")
+
+                # crt = oci.certificates_management.models.CertificateSummary
+                for crt in crts:
+                    if self.check_lifecycle_state_active(crt.lifecycle_state):
+                        vs = crt.current_version_summary
+                        val = {
+                            'id': self.get_value(crt.id),
+                            'issuer_certificate_authority_id': self.get_value(crt.issuer_certificate_authority_id),
+                            'name': self.get_value(crt.name),
+                            'description': self.get_value(crt.description),
+                            'time_created': self.get_value(crt.time_created, trim_date=True),
+                            'time_of_deletion': self.get_value(crt.time_of_deletion, trim_date=True),
+                            'lifecycle_state': self.get_value(crt.lifecycle_state),
+                            'certificate_rules': [{
+                                'rule_type': self.get_value(y.rule_type),
+                                'renewal_interval': self.get_value(y.renewal_interval) if y.rule_type == 'CERTIFICATE_RENEWAL_RULE' else "",
+                                'advance_renewal_period': self.get_value(y.advance_renewal_period) if y.rule_type == 'CERTIFICATE_RENEWAL_RULE' else ""
+                            } for y in crt.certificate_rules] if crt.certificate_rules else [],
+                            'current_certificate_id': self.get_value(vs.certificate_id) if vs else "",
+                            'current_serial_number': self.get_value(vs.serial_number) if vs else "",
+                            'current_time_created': self.get_value(vs.time_created, trim_date=True) if vs else "",
+                            'current_version_number': self.get_value(vs.version_number) if vs else "",
+                            'current_issuer_ca_version_number': self.get_value(vs.issuer_ca_version_number) if vs else "",
+                            'current_version_name': self.get_value(vs.version_name) if vs else "",
+                            'current_time_of_deletion': self.get_value(vs.time_of_deletion) if vs else "",
+                            'current_validity_not_before': self.get_value(vs.validity.time_of_validity_not_before, trim_date=True) if vs and vs.validity else "",
+                            'current_validity_not_after': self.get_value(vs.validity.time_of_validity_not_after, trim_date=True) if vs and vs.validity else "",
+                            'current_time_of_revocation': self.get_value(vs.revocation_status.time_of_revocation, trim_date=True) if vs and vs.revocation_status else "",
+                            'current_revocation_reason': self.get_value(vs.revocation_status.revocation_reason) if vs and vs.revocation_status else "",
+                            'common_name': self.get_value(crt.subject.common_name) if crt.subject else "",
+                            'country': self.get_value(crt.subject.country) if crt.subject else "",
+                            'domain_component': self.get_value(crt.subject.domain_component) if crt.subject else "",
+                            'distinguished_name_qualifier': self.get_value(crt.subject.distinguished_name_qualifier) if crt.subject else "",
+                            'generation_qualifier': self.get_value(crt.subject.generation_qualifier) if crt.subject else "",
+                            'given_name': self.get_value(crt.subject.given_name) if crt.subject else "",
+                            'locality_name': self.get_value(crt.subject.locality_name) if crt.subject else "",
+                            'organization': self.get_value(crt.subject.organization) if crt.subject else "",
+                            'organizational_unit': self.get_value(crt.subject.organizational_unit) if crt.subject else "",
+                            'pseudonym': self.get_value(crt.subject.pseudonym) if crt.subject else "",
+                            'serial_number': self.get_value(crt.subject.serial_number) if crt.subject else "",
+                            'state_or_province_name': self.get_value(crt.subject.state_or_province_name) if crt.subject else "",
+                            'street': self.get_value(crt.subject.street) if crt.subject else "",
+                            'surname': self.get_value(crt.subject.surname) if crt.subject else "",
+                            'user_id': self.get_value(crt.subject.user_id) if crt.subject else "",
+                            'config_type': self.get_value(crt.config_type),
+                            'key_algorithm': self.get_value(crt.key_algorithm),
+                            'signature_algorithm': self.get_value(crt.signature_algorithm),
+                            'certificate_profile_type': self.get_value(crt.certificate_profile_type),
+                            'defined_tags': [] if crt.defined_tags is None else crt.defined_tags,
+                            'freeform_tags': [] if crt.freeform_tags is None else crt.freeform_tags,
+                            'sum_info': "Certificates",
+                            'sum_size_gb': str(1),
+                            'associated_resource_ids': "",
+                            'associated_resource_names': "",
+                            'compartment_name': str(compartment['name']),
+                            'compartment_path': str(compartment['path']),
+                            'compartment_id': str(compartment['id']),
+                            'region_name': str(self.config['region'])
+                        }
+
+                        cnt += 1
+                        data.append(val)
+
+            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            else:
+                self.__load_print_error(e)
+                return data
+        except Exception as e:
+            self.__print_error(e)
+            return data
+
+    ##########################################################################
+    # __load_certificate_associations
+    ##########################################################################
+    def __load_certificate_associations(self, cert_client, compartments):
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            errstr = ""
+            header = "Certificates Associations"
+            self.__load_print_status_with_threads(header)
+
+            if not cert_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    continue
+
+                crts = []
+                try:
+                    crts = oci.pagination.list_call_get_all_results(
+                        cert_client.list_associations,
+                        compartment_id=compartment['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e, compartment):
+                        self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                        errstr += "a"
+                        continue
+                    else:
+                        self.__load_print_error(e, compartment)
+                        errstr += "e"
+                        continue
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                    errstr += "a"
+                    break
+
+                except Exception as e:
+                    self.__load_print_error(e, compartment)
+                    errstr += "e"
+                    continue
+
+                if self.flags.skip_threads:
+                    print(".", end="")
+
+                # crt = oci.certificates_management.models.AssociationSummary
+                for crt in crts:
+                    if self.check_lifecycle_state_active(crt.lifecycle_state):
+                        val = {
+                            'id': self.get_value(crt.id),
+                            'name': self.get_value(crt.name),
+                            'time_created': self.get_value(crt.time_created, trim_date=True),
+                            'lifecycle_state': self.get_value(crt.lifecycle_state),
+                            'certificates_resource_id': self.get_value(crt.certificates_resource_id),
+                            'associated_resource_id': self.get_value(crt.associated_resource_id),
+                            'association_type': self.get_value(crt.association_type),
+                            'sum_info': "Certificates Associations",
+                            'sum_size_gb': str(1),
+                            'compartment_name': str(compartment['name']),
+                            'compartment_path': str(compartment['path']),
+                            'compartment_id': str(compartment['id']),
+                            'region_name': str(self.config['region'])
+                        }
+
+                        cnt += 1
+                        data.append(val)
+
+            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            else:
+                self.__load_print_error(e)
+                return data
+        except Exception as e:
+            self.__print_error(e)
+            return data
+
+    ##########################################################################
+    # __load_certificate_ca_bundles
+    ##########################################################################
+    def __load_certificate_ca_bundles(self, cert_client, compartments):
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            errstr = ""
+            header = "Certificates CA Bundles"
+            self.__load_print_status_with_threads(header)
+
+            if not cert_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    continue
+
+                crts = []
+                try:
+                    crts = oci.pagination.list_call_get_all_results(
+                        cert_client.list_ca_bundles,
+                        compartment_id=compartment['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e, compartment):
+                        self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                        errstr += "a"
+                        continue
+                    else:
+                        self.__load_print_error(e, compartment)
+                        errstr += "e"
+                        continue
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                    errstr += "a"
+                    break
+
+                except Exception as e:
+                    self.__load_print_error(e, compartment)
+                    errstr += "e"
+                    continue
+
+                if self.flags.skip_threads:
+                    print(".", end="")
+
+                # crt = oci.certificates_management.models.CaBundleSummary
+                for crt in crts:
+                    if self.check_lifecycle_state_active(crt.lifecycle_state):
+                        val = {
+                            'id': self.get_value(crt.id),
+                            'name': self.get_value(crt.name),
+                            'description': self.get_value(crt.description),
+                            'time_created': self.get_value(crt.time_created, trim_date=True),
+                            'lifecycle_state': self.get_value(crt.lifecycle_state),
+                            'defined_tags': [] if crt.defined_tags is None else crt.defined_tags,
+                            'freeform_tags': [] if crt.freeform_tags is None else crt.freeform_tags,
+                            'sum_info': "Certificates CA Bundles",
+                            'sum_size_gb': str(1),
+                            'associated_resource_ids': "",
+                            'associated_resource_names': "",
+                            'compartment_name': str(compartment['name']),
+                            'compartment_path': str(compartment['path']),
+                            'compartment_id': str(compartment['id']),
+                            'region_name': str(self.config['region'])
+                        }
+
+                        cnt += 1
+                        data.append(val)
+
+            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            else:
+                self.__load_print_error(e)
+                return data
+        except Exception as e:
+            self.__print_error(e)
+            return data
+
+    ##########################################################################
+    # __load_certificate_authorities
+    ##########################################################################
+    def __load_certificate_authorities(self, cert_client, compartments):
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            errstr = ""
+            header = "Certificates Authorites"
+            self.__load_print_status_with_threads(header)
+
+            if not cert_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    continue
+
+                crts = []
+                try:
+                    crts = oci.pagination.list_call_get_all_results(
+                        cert_client.list_certificate_authorities,
+                        compartment_id=compartment['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e, compartment):
+                        self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                        errstr += "a"
+                        continue
+                    else:
+                        self.__load_print_error(e, compartment)
+                        errstr += "e"
+                        continue
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                    errstr += "a"
+                    break
+
+                except Exception as e:
+                    self.__load_print_error(e, compartment)
+                    errstr += "e"
+                    continue
+
+                if self.flags.skip_threads:
+                    print(".", end="")
+
+                # crt = oci.certificates_management.models.CertificateAuthoritySummary
+                for crt in crts:
+                    if self.check_lifecycle_state_active(crt.lifecycle_state):
+                        vs = crt.current_version_summary
+                        val = {
+                            'id': self.get_value(crt.id),
+                            'issuer_certificate_authority_id': self.get_value(crt.issuer_certificate_authority_id),
+                            'name': self.get_value(crt.name),
+                            'description': self.get_value(crt.description),
+                            'time_created': self.get_value(crt.time_created, trim_date=True),
+                            'time_of_deletion': self.get_value(crt.time_of_deletion, trim_date=True),
+                            'kms_key_id': self.get_value(crt.kms_key_id),
+                            'lifecycle_state': self.get_value(crt.lifecycle_state),
+                            'certificate_authority_rules': [{
+                                'rule_type': self.get_value(y.rule_type),
+                                'leaf_certificate_max_validity_duration': self.get_value(y.leaf_certificate_max_validity_duration) if y.rule_type == 'CERTIFICATE_AUTHORITY_ISSUANCE_EXPIRY_RULE' else "",
+                                'certificate_authority_max_validity_duration': self.get_value(y.certificate_authority_max_validity_duration) if y.rule_type == 'CERTIFICATE_AUTHORITY_ISSUANCE_EXPIRY_RULE' else ""
+                            } for y in crt.certificate_authority_rules] if crt.certificate_authority_rules else [],
+                            'current_certificate_authority_id': self.get_value(vs.certificate_authority_id) if vs else "",
+                            'current_issuer_ca_version_number': self.get_value(vs.issuer_ca_version_number) if vs else "",
+                            'current_serial_number': self.get_value(vs.serial_number) if vs else "",
+                            'current_time_created': self.get_value(vs.time_created, trim_date=True) if vs else "",
+                            'current_version_number': self.get_value(vs.version_number) if vs else "",
+                            'current_version_name': self.get_value(vs.version_name) if crt.current_version_summary else "",
+                            'current_time_of_deletion': self.get_value(vs.time_of_deletion, trim_date=True) if crt.current_version_summary else "",
+                            'current_validity_not_before': self.get_value(vs.validity.time_of_validity_not_before, trim_date=True) if vs and vs.validity else "",
+                            'current_validity_not_after': self.get_value(vs.validity.time_of_validity_not_after, trim_date=True) if vs and vs.validity else "",
+                            'current_time_of_revocation': self.get_value(vs.revocation_status.time_of_revocation, trim_date=True) if vs and vs.revocation_status else "",
+                            'current_revocation_reason': self.get_value(vs.revocation_status.revocation_reason) if vs and vs.revocation_status else "",
+                            'common_name': self.get_value(crt.subject.common_name) if crt.subject else "",
+                            'country': self.get_value(crt.subject.country) if crt.subject else "",
+                            'domain_component': self.get_value(crt.subject.domain_component) if crt.subject else "",
+                            'distinguished_name_qualifier': self.get_value(crt.subject.distinguished_name_qualifier) if crt.subject else "",
+                            'generation_qualifier': self.get_value(crt.subject.generation_qualifier) if crt.subject else "",
+                            'given_name': self.get_value(crt.subject.given_name) if crt.subject else "",
+                            'locality_name': self.get_value(crt.subject.locality_name) if crt.subject else "",
+                            'organization': self.get_value(crt.subject.organization) if crt.subject else "",
+                            'organizational_unit': self.get_value(crt.subject.organizational_unit) if crt.subject else "",
+                            'pseudonym': self.get_value(crt.subject.pseudonym) if crt.subject else "",
+                            'serial_number': self.get_value(crt.subject.serial_number) if crt.subject else "",
+                            'state_or_province_name': self.get_value(crt.subject.state_or_province_name) if crt.subject else "",
+                            'street': self.get_value(crt.subject.street) if crt.subject else "",
+                            'surname': self.get_value(crt.subject.surname) if crt.subject else "",
+                            'user_id': self.get_value(crt.subject.user_id) if crt.subject else "",
+                            'config_type': self.get_value(crt.config_type),
+                            'signing_algorithm': self.get_value(crt.signing_algorithm),
+                            'defined_tags': [] if crt.defined_tags is None else crt.defined_tags,
+                            'freeform_tags': [] if crt.freeform_tags is None else crt.freeform_tags,
+                            'sum_info': "Certificates Authorities",
+                            'sum_size_gb': str(1),
+                            'associated_resource_ids': "",
+                            'associated_resource_names': "",
                             'compartment_name': str(compartment['name']),
                             'compartment_path': str(compartment['path']),
                             'compartment_id': str(compartment['id']),
@@ -17550,6 +18778,7 @@ class ShowOCIFlags(object):
     read_network = False
     read_compute = False
     read_database = False
+    read_datasafe_assessments = False
     read_file_storage = False
     read_object_storage = False
     read_load_balancer = False
@@ -17574,6 +18803,7 @@ class ShowOCIFlags(object):
     skip_threads = False
     threads = 8
     skip_dbhomes = False
+    excludelist = False
     exclude = []
     connection_timeout = 20
     read_timeout = 150

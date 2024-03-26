@@ -15,7 +15,7 @@ class CreateBackendDetails(object):
     The configuration of a backend server that is a member of a network load balancer backend set.
     For more information, see `Managing Backend Servers`__.
 
-    __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendservers.htm
+    __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/BackendServers/backend-server-management.htm
     """
 
     def __init__(self, **kwargs):
@@ -205,7 +205,7 @@ class CreateBackendDetails(object):
 
         Example: `3`
 
-        __ https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm
+        __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introducton.htm#Policies
 
 
         :return: The weight of this CreateBackendDetails.
@@ -225,7 +225,7 @@ class CreateBackendDetails(object):
 
         Example: `3`
 
-        __ https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm
+        __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introducton.htm#Policies
 
 
         :param weight: The weight of this CreateBackendDetails.

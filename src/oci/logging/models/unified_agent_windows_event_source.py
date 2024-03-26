@@ -27,7 +27,7 @@ class UnifiedAgentWindowsEventSource(UnifiedAgentLoggingSource):
 
         :param source_type:
             The value to assign to the source_type property of this UnifiedAgentWindowsEventSource.
-            Allowed values for this property are: "LOG_TAIL", "WINDOWS_EVENT_LOG"
+            Allowed values for this property are: "LOG_TAIL", "WINDOWS_EVENT_LOG", "CUSTOM_PLUGIN"
         :type source_type: str
 
         :param channels:

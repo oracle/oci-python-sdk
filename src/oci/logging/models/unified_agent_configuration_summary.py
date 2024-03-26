@@ -43,6 +43,10 @@ class UnifiedAgentConfigurationSummary(object):
     #: This constant has a value of "LOGGING"
     CONFIGURATION_TYPE_LOGGING = "LOGGING"
 
+    #: A constant which can be used with the configuration_type property of a UnifiedAgentConfigurationSummary.
+    #: This constant has a value of "MONITORING"
+    CONFIGURATION_TYPE_MONITORING = "MONITORING"
+
     #: A constant which can be used with the configuration_state property of a UnifiedAgentConfigurationSummary.
     #: This constant has a value of "VALID"
     CONFIGURATION_STATE_VALID = "VALID"
@@ -100,7 +104,7 @@ class UnifiedAgentConfigurationSummary(object):
 
         :param configuration_type:
             The value to assign to the configuration_type property of this UnifiedAgentConfigurationSummary.
-            Allowed values for this property are: "LOGGING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LOGGING", "MONITORING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type configuration_type: str
 
@@ -426,7 +430,7 @@ class UnifiedAgentConfigurationSummary(object):
         **[Required]** Gets the configuration_type of this UnifiedAgentConfigurationSummary.
         Type of Unified Agent service configuration.
 
-        Allowed values for this property are: "LOGGING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LOGGING", "MONITORING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -445,7 +449,7 @@ class UnifiedAgentConfigurationSummary(object):
         :param configuration_type: The configuration_type of this UnifiedAgentConfigurationSummary.
         :type: str
         """
-        allowed_values = ["LOGGING"]
+        allowed_values = ["LOGGING", "MONITORING"]
         if not value_allowed_none_or_none_sentinel(configuration_type, allowed_values):
             configuration_type = 'UNKNOWN_ENUM_VALUE'
         self._configuration_type = configuration_type

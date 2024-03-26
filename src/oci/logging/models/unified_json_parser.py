@@ -35,7 +35,7 @@ class UnifiedJSONParser(UnifiedAgentParser):
 
         :param parser_type:
             The value to assign to the parser_type property of this UnifiedJSONParser.
-            Allowed values for this property are: "AUDITD", "CRI", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AUDITD", "CRI", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK", "OPENMETRICS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type parser_type: str
 
@@ -77,6 +77,14 @@ class UnifiedJSONParser(UnifiedAgentParser):
             The value to assign to the time_format property of this UnifiedJSONParser.
         :type time_format: str
 
+        :param parse_nested:
+            The value to assign to the parse_nested property of this UnifiedJSONParser.
+        :type parse_nested: bool
+
+        :param separator:
+            The value to assign to the separator property of this UnifiedJSONParser.
+        :type separator: str
+
         """
         self.swagger_types = {
             'parser_type': 'str',
@@ -88,7 +96,9 @@ class UnifiedJSONParser(UnifiedAgentParser):
             'is_keep_time_key': 'bool',
             'timeout_in_milliseconds': 'int',
             'time_type': 'str',
-            'time_format': 'str'
+            'time_format': 'str',
+            'parse_nested': 'bool',
+            'separator': 'str'
         }
 
         self.attribute_map = {
@@ -101,7 +111,9 @@ class UnifiedJSONParser(UnifiedAgentParser):
             'is_keep_time_key': 'isKeepTimeKey',
             'timeout_in_milliseconds': 'timeoutInMilliseconds',
             'time_type': 'timeType',
-            'time_format': 'timeFormat'
+            'time_format': 'timeFormat',
+            'parse_nested': 'parseNested',
+            'separator': 'separator'
         }
 
         self._parser_type = None
@@ -114,6 +126,8 @@ class UnifiedJSONParser(UnifiedAgentParser):
         self._timeout_in_milliseconds = None
         self._time_type = None
         self._time_format = None
+        self._parse_nested = None
+        self._separator = None
         self._parser_type = 'JSON'
 
     @property
@@ -169,6 +183,54 @@ class UnifiedJSONParser(UnifiedAgentParser):
         :type: str
         """
         self._time_format = time_format
+
+    @property
+    def parse_nested(self):
+        """
+        Gets the parse_nested of this UnifiedJSONParser.
+        If true, a separator parameter can be further defined.
+
+
+        :return: The parse_nested of this UnifiedJSONParser.
+        :rtype: bool
+        """
+        return self._parse_nested
+
+    @parse_nested.setter
+    def parse_nested(self, parse_nested):
+        """
+        Sets the parse_nested of this UnifiedJSONParser.
+        If true, a separator parameter can be further defined.
+
+
+        :param parse_nested: The parse_nested of this UnifiedJSONParser.
+        :type: bool
+        """
+        self._parse_nested = parse_nested
+
+    @property
+    def separator(self):
+        """
+        Gets the separator of this UnifiedJSONParser.
+        Keys of adjacent levels are joined by the separator.
+
+
+        :return: The separator of this UnifiedJSONParser.
+        :rtype: str
+        """
+        return self._separator
+
+    @separator.setter
+    def separator(self, separator):
+        """
+        Sets the separator of this UnifiedJSONParser.
+        Keys of adjacent levels are joined by the separator.
+
+
+        :param separator: The separator of this UnifiedJSONParser.
+        :type: str
+        """
+        self._separator = separator
 
     def __repr__(self):
         return formatted_flat_dict(self)

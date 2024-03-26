@@ -71,6 +71,10 @@ class UnifiedAgentParser(object):
     #: This constant has a value of "MULTILINE_GROK"
     PARSER_TYPE_MULTILINE_GROK = "MULTILINE_GROK"
 
+    #: A constant which can be used with the parser_type property of a UnifiedAgentParser.
+    #: This constant has a value of "OPENMETRICS"
+    PARSER_TYPE_OPENMETRICS = "OPENMETRICS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UnifiedAgentParser object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -81,6 +85,7 @@ class UnifiedAgentParser(object):
         * :class:`~oci.logging.models.UnifiedAgentGrokParser`
         * :class:`~oci.logging.models.UnifiedAgentNoneParser`
         * :class:`~oci.logging.models.UnifiedAgentSyslogParser`
+        * :class:`~oci.logging.models.UnifiedAgentOpenmetricsParser`
         * :class:`~oci.logging.models.UnifiedAgentAuditdParser`
         * :class:`~oci.logging.models.UnifiedAgentApache2Parser`
         * :class:`~oci.logging.models.UnifiedAgentRegexParser`
@@ -95,7 +100,7 @@ class UnifiedAgentParser(object):
 
         :param parser_type:
             The value to assign to the parser_type property of this UnifiedAgentParser.
-            Allowed values for this property are: "AUDITD", "CRI", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AUDITD", "CRI", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK", "OPENMETRICS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type parser_type: str
 
@@ -182,6 +187,9 @@ class UnifiedAgentParser(object):
         if type == 'SYSLOG':
             return 'UnifiedAgentSyslogParser'
 
+        if type == 'OPENMETRICS':
+            return 'UnifiedAgentOpenmetricsParser'
+
         if type == 'AUDITD':
             return 'UnifiedAgentAuditdParser'
 
@@ -217,7 +225,7 @@ class UnifiedAgentParser(object):
         **[Required]** Gets the parser_type of this UnifiedAgentParser.
         Type of fluent parser.
 
-        Allowed values for this property are: "AUDITD", "CRI", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AUDITD", "CRI", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK", "OPENMETRICS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -236,7 +244,7 @@ class UnifiedAgentParser(object):
         :param parser_type: The parser_type of this UnifiedAgentParser.
         :type: str
         """
-        allowed_values = ["AUDITD", "CRI", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK"]
+        allowed_values = ["AUDITD", "CRI", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK", "OPENMETRICS"]
         if not value_allowed_none_or_none_sentinel(parser_type, allowed_values):
             parser_type = 'UNKNOWN_ENUM_VALUE'
         self._parser_type = parser_type

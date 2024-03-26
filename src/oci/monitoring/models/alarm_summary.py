@@ -110,6 +110,18 @@ class AlarmSummary(object):
             The value to assign to the lifecycle_state property of this AlarmSummary.
         :type lifecycle_state: str
 
+        :param overrides:
+            The value to assign to the overrides property of this AlarmSummary.
+        :type overrides: list[oci.monitoring.models.AlarmOverride]
+
+        :param rule_name:
+            The value to assign to the rule_name property of this AlarmSummary.
+        :type rule_name: str
+
+        :param notification_version:
+            The value to assign to the notification_version property of this AlarmSummary.
+        :type notification_version: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -125,7 +137,10 @@ class AlarmSummary(object):
             'is_notifications_per_metric_dimension_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'lifecycle_state': 'str'
+            'lifecycle_state': 'str',
+            'overrides': 'list[AlarmOverride]',
+            'rule_name': 'str',
+            'notification_version': 'str'
         }
 
         self.attribute_map = {
@@ -142,7 +157,10 @@ class AlarmSummary(object):
             'is_notifications_per_metric_dimension_enabled': 'isNotificationsPerMetricDimensionEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'lifecycle_state': 'lifecycleState'
+            'lifecycle_state': 'lifecycleState',
+            'overrides': 'overrides',
+            'rule_name': 'ruleName',
+            'notification_version': 'notificationVersion'
         }
 
         self._id = None
@@ -159,6 +177,9 @@ class AlarmSummary(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._lifecycle_state = None
+        self._overrides = None
+        self._rule_name = None
+        self._notification_version = None
 
     @property
     def id(self):
@@ -625,6 +646,92 @@ class AlarmSummary(object):
         :type: str
         """
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def overrides(self):
+        """
+        Gets the overrides of this AlarmSummary.
+        A set of overrides that control evaluations of the alarm.
+
+        Each override can specify values for query, severity, body, and pending duration.
+        When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`),
+        and then evaluates the alarm's base values (`ruleName` value of `BASE`).
+
+
+        :return: The overrides of this AlarmSummary.
+        :rtype: list[oci.monitoring.models.AlarmOverride]
+        """
+        return self._overrides
+
+    @overrides.setter
+    def overrides(self, overrides):
+        """
+        Sets the overrides of this AlarmSummary.
+        A set of overrides that control evaluations of the alarm.
+
+        Each override can specify values for query, severity, body, and pending duration.
+        When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`),
+        and then evaluates the alarm's base values (`ruleName` value of `BASE`).
+
+
+        :param overrides: The overrides of this AlarmSummary.
+        :type: list[oci.monitoring.models.AlarmOverride]
+        """
+        self._overrides = overrides
+
+    @property
+    def rule_name(self):
+        """
+        Gets the rule_name of this AlarmSummary.
+        Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
+        A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
+        Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see :func:`alarm_override`.
+
+
+        :return: The rule_name of this AlarmSummary.
+        :rtype: str
+        """
+        return self._rule_name
+
+    @rule_name.setter
+    def rule_name(self, rule_name):
+        """
+        Sets the rule_name of this AlarmSummary.
+        Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
+        A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
+        Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see :func:`alarm_override`.
+
+
+        :param rule_name: The rule_name of this AlarmSummary.
+        :type: str
+        """
+        self._rule_name = rule_name
+
+    @property
+    def notification_version(self):
+        """
+        Gets the notification_version of this AlarmSummary.
+        The version of the alarm notification to be delivered. Allowed value: `1.X`
+        The value must start with a number (up to four digits), followed by a period and an uppercase X.
+
+
+        :return: The notification_version of this AlarmSummary.
+        :rtype: str
+        """
+        return self._notification_version
+
+    @notification_version.setter
+    def notification_version(self, notification_version):
+        """
+        Sets the notification_version of this AlarmSummary.
+        The version of the alarm notification to be delivered. Allowed value: `1.X`
+        The value must start with a number (up to four digits), followed by a period and an uppercase X.
+
+
+        :param notification_version: The notification_version of this AlarmSummary.
+        :type: str
+        """
+        self._notification_version = notification_version
 
     def __repr__(self):
         return formatted_flat_dict(self)

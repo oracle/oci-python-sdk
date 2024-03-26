@@ -23,7 +23,7 @@ class CreateNetworkLoadBalancerDetails(object):
     `About the API`__. For information about available SDKs and tools, see
     `SDKS and Other Tools`__.
 
-    __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingloadbalancer.htm
+    __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/NetworkLoadBalancers/network-load-balancer-management.htm
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm
     __ https://docs.cloud.oracle.com/Content/API/Concepts/sdks.htm
@@ -53,6 +53,10 @@ class CreateNetworkLoadBalancerDetails(object):
         :param is_preserve_source_destination:
             The value to assign to the is_preserve_source_destination property of this CreateNetworkLoadBalancerDetails.
         :type is_preserve_source_destination: bool
+
+        :param is_symmetric_hash_enabled:
+            The value to assign to the is_symmetric_hash_enabled property of this CreateNetworkLoadBalancerDetails.
+        :type is_symmetric_hash_enabled: bool
 
         :param reserved_ips:
             The value to assign to the reserved_ips property of this CreateNetworkLoadBalancerDetails.
@@ -96,6 +100,7 @@ class CreateNetworkLoadBalancerDetails(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'is_preserve_source_destination': 'bool',
+            'is_symmetric_hash_enabled': 'bool',
             'reserved_ips': 'list[ReservedIP]',
             'is_private': 'bool',
             'subnet_id': 'str',
@@ -111,6 +116,7 @@ class CreateNetworkLoadBalancerDetails(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'is_preserve_source_destination': 'isPreserveSourceDestination',
+            'is_symmetric_hash_enabled': 'isSymmetricHashEnabled',
             'reserved_ips': 'reservedIps',
             'is_private': 'isPrivate',
             'subnet_id': 'subnetId',
@@ -125,6 +131,7 @@ class CreateNetworkLoadBalancerDetails(object):
         self._compartment_id = None
         self._display_name = None
         self._is_preserve_source_destination = None
+        self._is_symmetric_hash_enabled = None
         self._reserved_ips = None
         self._is_private = None
         self._subnet_id = None
@@ -214,6 +221,32 @@ class CreateNetworkLoadBalancerDetails(object):
         self._is_preserve_source_destination = is_preserve_source_destination
 
     @property
+    def is_symmetric_hash_enabled(self):
+        """
+        Gets the is_symmetric_hash_enabled of this CreateNetworkLoadBalancerDetails.
+        This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.
+        This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+
+
+        :return: The is_symmetric_hash_enabled of this CreateNetworkLoadBalancerDetails.
+        :rtype: bool
+        """
+        return self._is_symmetric_hash_enabled
+
+    @is_symmetric_hash_enabled.setter
+    def is_symmetric_hash_enabled(self, is_symmetric_hash_enabled):
+        """
+        Sets the is_symmetric_hash_enabled of this CreateNetworkLoadBalancerDetails.
+        This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.
+        This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+
+
+        :param is_symmetric_hash_enabled: The is_symmetric_hash_enabled of this CreateNetworkLoadBalancerDetails.
+        :type: bool
+        """
+        self._is_symmetric_hash_enabled = is_symmetric_hash_enabled
+
+    @property
     def reserved_ips(self):
         """
         Gets the reserved_ips of this CreateNetworkLoadBalancerDetails.
@@ -256,7 +289,7 @@ class CreateNetworkLoadBalancerDetails(object):
         Example: `true`
 
         __ https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm
-        __ https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works
+        __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm
 
 
         :return: The is_private of this CreateNetworkLoadBalancerDetails.
@@ -283,7 +316,7 @@ class CreateNetworkLoadBalancerDetails(object):
         Example: `true`
 
         __ https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm
-        __ https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works
+        __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm
 
 
         :param is_private: The is_private of this CreateNetworkLoadBalancerDetails.

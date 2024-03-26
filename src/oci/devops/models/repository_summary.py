@@ -189,7 +189,7 @@ class RepositorySummary(object):
     def name(self):
         """
         Gets the name of this RepositorySummary.
-        Unique name of a repository. This value is mutable.
+        Name of the repository. Should be unique within the project. This value is mutable.
 
 
         :return: The name of this RepositorySummary.
@@ -201,7 +201,7 @@ class RepositorySummary(object):
     def name(self, name):
         """
         Sets the name of this RepositorySummary.
-        Unique name of a repository. This value is mutable.
+        Name of the repository. Should be unique within the project. This value is mutable.
 
 
         :param name: The name of this RepositorySummary.

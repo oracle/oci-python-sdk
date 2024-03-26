@@ -45,6 +45,10 @@ class RepositoryTagSummary(RepositoryRefSummary):
             The value to assign to the defined_tags property of this RepositoryTagSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this RepositoryTagSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param object_id:
             The value to assign to the object_id property of this RepositoryTagSummary.
         :type object_id: str
@@ -57,6 +61,7 @@ class RepositoryTagSummary(RepositoryRefSummary):
             'repository_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'object_id': 'str'
         }
 
@@ -67,6 +72,7 @@ class RepositoryTagSummary(RepositoryRefSummary):
             'repository_id': 'repositoryId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'object_id': 'objectId'
         }
 
@@ -76,6 +82,7 @@ class RepositoryTagSummary(RepositoryRefSummary):
         self._repository_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._object_id = None
         self._ref_type = 'TAG'
 

@@ -44,6 +44,14 @@ class Repository(object):
     TRIGGER_BUILD_EVENTS_PUSH = "PUSH"
 
     #: A constant which can be used with the trigger_build_events property of a Repository.
+    #: This constant has a value of "PULL_REQUEST_CREATED"
+    TRIGGER_BUILD_EVENTS_PULL_REQUEST_CREATED = "PULL_REQUEST_CREATED"
+
+    #: A constant which can be used with the trigger_build_events property of a Repository.
+    #: This constant has a value of "PULL_REQUEST_UPDATED"
+    TRIGGER_BUILD_EVENTS_PULL_REQUEST_UPDATED = "PULL_REQUEST_UPDATED"
+
+    #: A constant which can be used with the trigger_build_events property of a Repository.
     #: This constant has a value of "COMMIT_UPDATES"
     TRIGGER_BUILD_EVENTS_COMMIT_UPDATES = "COMMIT_UPDATES"
 
@@ -134,7 +142,7 @@ class Repository(object):
 
         :param trigger_build_events:
             The value to assign to the trigger_build_events property of this Repository.
-            Allowed values for items in this list are: "PUSH", "COMMIT_UPDATES", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "PUSH", "PULL_REQUEST_CREATED", "PULL_REQUEST_UPDATED", "COMMIT_UPDATES", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type trigger_build_events: list[str]
 
@@ -255,7 +263,7 @@ class Repository(object):
     def name(self):
         """
         Gets the name of this Repository.
-        Unique name of a repository. This value is mutable.
+        Name of the repository. Should be unique within the project. This value is mutable.
 
 
         :return: The name of this Repository.
@@ -267,7 +275,7 @@ class Repository(object):
     def name(self, name):
         """
         Sets the name of this Repository.
-        Unique name of a repository. This value is mutable.
+        Name of the repository. Should be unique within the project. This value is mutable.
 
 
         :param name: The name of this Repository.
@@ -709,9 +717,11 @@ class Repository(object):
         Gets the trigger_build_events of this Repository.
         Trigger build events supported for this repository:
         PUSH - Build is triggered when a push event occurs.
+        PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository.
+        PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request.
         COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
 
-        Allowed values for items in this list are: "PUSH", "COMMIT_UPDATES", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "PUSH", "PULL_REQUEST_CREATED", "PULL_REQUEST_UPDATED", "COMMIT_UPDATES", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -726,13 +736,15 @@ class Repository(object):
         Sets the trigger_build_events of this Repository.
         Trigger build events supported for this repository:
         PUSH - Build is triggered when a push event occurs.
+        PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository.
+        PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request.
         COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
 
 
         :param trigger_build_events: The trigger_build_events of this Repository.
         :type: list[str]
         """
-        allowed_values = ["PUSH", "COMMIT_UPDATES"]
+        allowed_values = ["PUSH", "PULL_REQUEST_CREATED", "PULL_REQUEST_UPDATED", "COMMIT_UPDATES"]
         if trigger_build_events:
             trigger_build_events[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in trigger_build_events]
         self._trigger_build_events = trigger_build_events

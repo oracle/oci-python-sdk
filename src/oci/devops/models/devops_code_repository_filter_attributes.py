@@ -46,7 +46,7 @@ class DevopsCodeRepositoryFilterAttributes(object):
     def head_ref(self):
         """
         Gets the head_ref of this DevopsCodeRepositoryFilterAttributes.
-        Branch for push event.
+        Branch for push event; source branch for pull requests
 
 
         :return: The head_ref of this DevopsCodeRepositoryFilterAttributes.
@@ -58,7 +58,7 @@ class DevopsCodeRepositoryFilterAttributes(object):
     def head_ref(self, head_ref):
         """
         Sets the head_ref of this DevopsCodeRepositoryFilterAttributes.
-        Branch for push event.
+        Branch for push event; source branch for pull requests
 
 
         :param head_ref: The head_ref of this DevopsCodeRepositoryFilterAttributes.

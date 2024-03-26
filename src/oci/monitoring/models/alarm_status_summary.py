@@ -78,6 +78,10 @@ class AlarmStatusSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type severity: str
 
+        :param rule_name:
+            The value to assign to the rule_name property of this AlarmStatusSummary.
+        :type rule_name: str
+
         :param timestamp_triggered:
             The value to assign to the timestamp_triggered property of this AlarmStatusSummary.
         :type timestamp_triggered: datetime
@@ -97,6 +101,7 @@ class AlarmStatusSummary(object):
             'id': 'str',
             'display_name': 'str',
             'severity': 'str',
+            'rule_name': 'str',
             'timestamp_triggered': 'datetime',
             'status': 'str',
             'suppression': 'Suppression'
@@ -106,6 +111,7 @@ class AlarmStatusSummary(object):
             'id': 'id',
             'display_name': 'displayName',
             'severity': 'severity',
+            'rule_name': 'ruleName',
             'timestamp_triggered': 'timestampTriggered',
             'status': 'status',
             'suppression': 'suppression'
@@ -114,6 +120,7 @@ class AlarmStatusSummary(object):
         self._id = None
         self._display_name = None
         self._severity = None
+        self._rule_name = None
         self._timestamp_triggered = None
         self._status = None
         self._suppression = None
@@ -207,6 +214,34 @@ class AlarmStatusSummary(object):
         if not value_allowed_none_or_none_sentinel(severity, allowed_values):
             severity = 'UNKNOWN_ENUM_VALUE'
         self._severity = severity
+
+    @property
+    def rule_name(self):
+        """
+        **[Required]** Gets the rule_name of this AlarmStatusSummary.
+        Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
+        A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
+        Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see :func:`alarm_override`.
+
+
+        :return: The rule_name of this AlarmStatusSummary.
+        :rtype: str
+        """
+        return self._rule_name
+
+    @rule_name.setter
+    def rule_name(self, rule_name):
+        """
+        Sets the rule_name of this AlarmStatusSummary.
+        Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
+        A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
+        Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see :func:`alarm_override`.
+
+
+        :param rule_name: The rule_name of this AlarmStatusSummary.
+        :type: str
+        """
+        self._rule_name = rule_name
 
     @property
     def timestamp_triggered(self):

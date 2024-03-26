@@ -27,7 +27,7 @@ class UnifiedAgentTailLogSource(UnifiedAgentLoggingSource):
 
         :param source_type:
             The value to assign to the source_type property of this UnifiedAgentTailLogSource.
-            Allowed values for this property are: "LOG_TAIL", "WINDOWS_EVENT_LOG"
+            Allowed values for this property are: "LOG_TAIL", "WINDOWS_EVENT_LOG", "CUSTOM_PLUGIN"
         :type source_type: str
 
         :param paths:
@@ -38,25 +38,32 @@ class UnifiedAgentTailLogSource(UnifiedAgentLoggingSource):
             The value to assign to the parser property of this UnifiedAgentTailLogSource.
         :type parser: oci.logging.models.UnifiedAgentParser
 
+        :param advanced_options:
+            The value to assign to the advanced_options property of this UnifiedAgentTailLogSource.
+        :type advanced_options: oci.logging.models.UnifiedAgentTailSourceAdvancedOptions
+
         """
         self.swagger_types = {
             'name': 'str',
             'source_type': 'str',
             'paths': 'list[str]',
-            'parser': 'UnifiedAgentParser'
+            'parser': 'UnifiedAgentParser',
+            'advanced_options': 'UnifiedAgentTailSourceAdvancedOptions'
         }
 
         self.attribute_map = {
             'name': 'name',
             'source_type': 'sourceType',
             'paths': 'paths',
-            'parser': 'parser'
+            'parser': 'parser',
+            'advanced_options': 'advancedOptions'
         }
 
         self._name = None
         self._source_type = None
         self._paths = None
         self._parser = None
+        self._advanced_options = None
         self._source_type = 'LOG_TAIL'
 
     @property
@@ -102,6 +109,26 @@ class UnifiedAgentTailLogSource(UnifiedAgentLoggingSource):
         :type: oci.logging.models.UnifiedAgentParser
         """
         self._parser = parser
+
+    @property
+    def advanced_options(self):
+        """
+        Gets the advanced_options of this UnifiedAgentTailLogSource.
+
+        :return: The advanced_options of this UnifiedAgentTailLogSource.
+        :rtype: oci.logging.models.UnifiedAgentTailSourceAdvancedOptions
+        """
+        return self._advanced_options
+
+    @advanced_options.setter
+    def advanced_options(self, advanced_options):
+        """
+        Sets the advanced_options of this UnifiedAgentTailLogSource.
+
+        :param advanced_options: The advanced_options of this UnifiedAgentTailLogSource.
+        :type: oci.logging.models.UnifiedAgentTailSourceAdvancedOptions
+        """
+        self._advanced_options = advanced_options
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -15,6 +15,14 @@ class OkeHelmChartDeployStageSummary(DeployStageSummary):
     Specifies the OKE cluster deployment stage using Helm charts.
     """
 
+    #: A constant which can be used with the purpose property of a OkeHelmChartDeployStageSummary.
+    #: This constant has a value of "EXECUTE_HELM_UPGRADE"
+    PURPOSE_EXECUTE_HELM_UPGRADE = "EXECUTE_HELM_UPGRADE"
+
+    #: A constant which can be used with the purpose property of a OkeHelmChartDeployStageSummary.
+    #: This constant has a value of "EXECUTE_HELM_COMMAND"
+    PURPOSE_EXECUTE_HELM_COMMAND = "EXECUTE_HELM_COMMAND"
+
     def __init__(self, **kwargs):
         """
         Initializes a new OkeHelmChartDeployStageSummary object with values from keyword arguments. The default value of the :py:attr:`~oci.devops.models.OkeHelmChartDeployStageSummary.deploy_stage_type` attribute
@@ -97,6 +105,20 @@ class OkeHelmChartDeployStageSummary(DeployStageSummary):
             The value to assign to the release_name property of this OkeHelmChartDeployStageSummary.
         :type release_name: str
 
+        :param is_uninstall_on_stage_delete:
+            The value to assign to the is_uninstall_on_stage_delete property of this OkeHelmChartDeployStageSummary.
+        :type is_uninstall_on_stage_delete: bool
+
+        :param helm_command_artifact_ids:
+            The value to assign to the helm_command_artifact_ids property of this OkeHelmChartDeployStageSummary.
+        :type helm_command_artifact_ids: list[str]
+
+        :param purpose:
+            The value to assign to the purpose property of this OkeHelmChartDeployStageSummary.
+            Allowed values for this property are: "EXECUTE_HELM_UPGRADE", "EXECUTE_HELM_COMMAND", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type purpose: str
+
         :param namespace:
             The value to assign to the namespace property of this OkeHelmChartDeployStageSummary.
         :type namespace: str
@@ -178,6 +200,9 @@ class OkeHelmChartDeployStageSummary(DeployStageSummary):
             'helm_chart_deploy_artifact_id': 'str',
             'values_artifact_ids': 'list[str]',
             'release_name': 'str',
+            'is_uninstall_on_stage_delete': 'bool',
+            'helm_command_artifact_ids': 'list[str]',
+            'purpose': 'str',
             'namespace': 'str',
             'timeout_in_seconds': 'int',
             'rollback_policy': 'DeployStageRollbackPolicy',
@@ -215,6 +240,9 @@ class OkeHelmChartDeployStageSummary(DeployStageSummary):
             'helm_chart_deploy_artifact_id': 'helmChartDeployArtifactId',
             'values_artifact_ids': 'valuesArtifactIds',
             'release_name': 'releaseName',
+            'is_uninstall_on_stage_delete': 'isUninstallOnStageDelete',
+            'helm_command_artifact_ids': 'helmCommandArtifactIds',
+            'purpose': 'purpose',
             'namespace': 'namespace',
             'timeout_in_seconds': 'timeoutInSeconds',
             'rollback_policy': 'rollbackPolicy',
@@ -251,6 +279,9 @@ class OkeHelmChartDeployStageSummary(DeployStageSummary):
         self._helm_chart_deploy_artifact_id = None
         self._values_artifact_ids = None
         self._release_name = None
+        self._is_uninstall_on_stage_delete = None
+        self._helm_command_artifact_ids = None
+        self._purpose = None
         self._namespace = None
         self._timeout_in_seconds = None
         self._rollback_policy = None
@@ -363,6 +394,84 @@ class OkeHelmChartDeployStageSummary(DeployStageSummary):
         :type: str
         """
         self._release_name = release_name
+
+    @property
+    def is_uninstall_on_stage_delete(self):
+        """
+        Gets the is_uninstall_on_stage_delete of this OkeHelmChartDeployStageSummary.
+        Uninstall the Helm chart release on deleting the stage.
+
+
+        :return: The is_uninstall_on_stage_delete of this OkeHelmChartDeployStageSummary.
+        :rtype: bool
+        """
+        return self._is_uninstall_on_stage_delete
+
+    @is_uninstall_on_stage_delete.setter
+    def is_uninstall_on_stage_delete(self, is_uninstall_on_stage_delete):
+        """
+        Sets the is_uninstall_on_stage_delete of this OkeHelmChartDeployStageSummary.
+        Uninstall the Helm chart release on deleting the stage.
+
+
+        :param is_uninstall_on_stage_delete: The is_uninstall_on_stage_delete of this OkeHelmChartDeployStageSummary.
+        :type: bool
+        """
+        self._is_uninstall_on_stage_delete = is_uninstall_on_stage_delete
+
+    @property
+    def helm_command_artifact_ids(self):
+        """
+        Gets the helm_command_artifact_ids of this OkeHelmChartDeployStageSummary.
+        List of Helm command artifact OCIDs.
+
+
+        :return: The helm_command_artifact_ids of this OkeHelmChartDeployStageSummary.
+        :rtype: list[str]
+        """
+        return self._helm_command_artifact_ids
+
+    @helm_command_artifact_ids.setter
+    def helm_command_artifact_ids(self, helm_command_artifact_ids):
+        """
+        Sets the helm_command_artifact_ids of this OkeHelmChartDeployStageSummary.
+        List of Helm command artifact OCIDs.
+
+
+        :param helm_command_artifact_ids: The helm_command_artifact_ids of this OkeHelmChartDeployStageSummary.
+        :type: list[str]
+        """
+        self._helm_command_artifact_ids = helm_command_artifact_ids
+
+    @property
+    def purpose(self):
+        """
+        Gets the purpose of this OkeHelmChartDeployStageSummary.
+        The purpose of running this Helm stage
+
+        Allowed values for this property are: "EXECUTE_HELM_UPGRADE", "EXECUTE_HELM_COMMAND", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The purpose of this OkeHelmChartDeployStageSummary.
+        :rtype: str
+        """
+        return self._purpose
+
+    @purpose.setter
+    def purpose(self, purpose):
+        """
+        Sets the purpose of this OkeHelmChartDeployStageSummary.
+        The purpose of running this Helm stage
+
+
+        :param purpose: The purpose of this OkeHelmChartDeployStageSummary.
+        :type: str
+        """
+        allowed_values = ["EXECUTE_HELM_UPGRADE", "EXECUTE_HELM_COMMAND"]
+        if not value_allowed_none_or_none_sentinel(purpose, allowed_values):
+            purpose = 'UNKNOWN_ENUM_VALUE'
+        self._purpose = purpose
 
     @property
     def namespace(self):

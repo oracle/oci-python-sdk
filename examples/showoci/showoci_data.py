@@ -20,7 +20,7 @@ import sys
 
 
 class ShowOCIData(object):
-    version = "24.03.12"
+    version = "24.03.19"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -47,6 +47,10 @@ class ShowOCIData(object):
 
         # Initiate data list everytime class is instantiated
         self.data = []
+
+        # if exclude list requested
+        if flags.excludelist:
+            self.service.generate_exclude_list()
 
     ############################################
     # get service data
@@ -141,7 +145,8 @@ class ShowOCIData(object):
             'program': "showoci.py",
             'author': "Adi Zohar",
             'contributors': "Olaf Heimburger",
-            'disclaimer': "This is not an official Oracle application, it is not supported by Oracle. It should NOT be used for utilization calculation purposes. If you run into issues using this, please file an issue at https://github.com/oracle/oci-python-sdk/issues rather than contacting support",
+            'disclaimer1': "This is not an official Oracle application, it is not supported by Oracle. It should NOT be used for utilization calculation purposes.",
+            'disclaimer2': "If you run into issues using this, please file an issue at https://github.com/oracle/oci-python-sdk/issues rather than contacting support",
             'config_file': self.service.flags.config_file,
             'config_profile': self.service.flags.config_section,
             'connection_timeout': self.service.flags.connection_timeout,
@@ -3452,6 +3457,20 @@ class ShowOCIData(object):
                 if len(data) > 0:
                     return_data['db_external_nonpdb'] = data
 
+            # Data Safe
+            data = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_DATASAFE, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if data and len(data) > 0:
+
+                # add resource name
+                for db in data:
+                    for tg in db['targets']:
+                        for asst in tg['associated_resource_ids']:
+                            name = self.service.get_resource_name_by_id(asst)
+                            if name:
+                                tg['associated_resource_names'].append(name)
+
+                return_data["datasafe"] = data
+
             return return_data
 
         except Exception as e:
@@ -4439,6 +4458,41 @@ class ShowOCIData(object):
             keys = self.service.search_multi_items(self.service.C_SECURITY, self.service.C_SECURITY_KEYS, 'region_name', region_name, 'compartment_id', compartment['id'])
             if keys:
                 security_services['kms_keys'] = keys
+
+            # certificate
+            certificates = self.service.search_multi_items(self.service.C_CERTIFICATE, self.service.C_CERTIFICATE_CERTIFICATES, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if certificates:
+                for crt in certificates:
+                    assoc = self.service.search_multi_items(self.service.C_CERTIFICATE, self.service.C_CERTIFICATE_ASSOCIATIONS, 'region_name', region_name, 'certificates_resource_id', crt['id'])
+                    if assoc:
+                        crt['associated_resource_ids'] = ','.join(x['associated_resource_id'] for x in assoc)
+                        crt['associated_resource_names'] = ','.join(self.service.get_resource_name_by_id(x['associated_resource_id']) for x in assoc)
+                security_services['certificates'] = certificates
+
+            # certificate associations
+            certificate_associations = self.service.search_multi_items(self.service.C_CERTIFICATE, self.service.C_CERTIFICATE_ASSOCIATIONS, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if certificate_associations:
+                security_services['certificate_associations'] = certificate_associations
+
+            # certificate ca bundle
+            certificate_ca_bundles = self.service.search_multi_items(self.service.C_CERTIFICATE, self.service.C_CERTIFICATE_CA_BUNDLES, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if certificate_ca_bundles:
+                for crt in certificate_ca_bundles:
+                    assoc = self.service.search_multi_items(self.service.C_CERTIFICATE, self.service.C_CERTIFICATE_ASSOCIATIONS, 'region_name', region_name, 'certificates_resource_id', crt['id'])
+                    if assoc:
+                        crt['associated_resource_ids'] = ','.join(x['associated_resource_id'] for x in assoc)
+                        crt['associated_resource_names'] = ','.join(self.service.get_resource_name_by_id(x['associated_resource_id']) for x in assoc)
+                security_services['certificate_ca_bundles'] = certificate_ca_bundles
+
+            # certificate authorities
+            certificate_authorities = self.service.search_multi_items(self.service.C_CERTIFICATE, self.service.C_CERTIFICATE_AUTHORITIES, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if certificate_authorities:
+                for crt in certificate_authorities:
+                    assoc = self.service.search_multi_items(self.service.C_CERTIFICATE, self.service.C_CERTIFICATE_ASSOCIATIONS, 'region_name', region_name, 'certificates_resource_id', crt['id'])
+                    if assoc:
+                        crt['associated_resource_ids'] = ','.join(x['associated_resource_id'] for x in assoc)
+                        crt['associated_resource_names'] = ','.join(self.service.get_resource_name_by_id(x['associated_resource_id']) for x in assoc)
+                security_services['certificate_authorities'] = certificate_authorities
 
             return security_services
 

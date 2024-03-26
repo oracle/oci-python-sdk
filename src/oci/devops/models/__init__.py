@@ -268,6 +268,7 @@ from .gitlab_server_trigger_summary import GitlabServerTriggerSummary
 from .gitlab_trigger import GitlabTrigger
 from .gitlab_trigger_create_result import GitlabTriggerCreateResult
 from .gitlab_trigger_summary import GitlabTriggerSummary
+from .helm_command_spec_artifact_source import HelmCommandSpecArtifactSource
 from .helm_repository_deploy_artifact_source import HelmRepositoryDeployArtifactSource
 from .helm_set_value import HelmSetValue
 from .helm_set_value_collection import HelmSetValueCollection
@@ -720,6 +721,7 @@ devops_type_mapping = {
     "GitlabTrigger": GitlabTrigger,
     "GitlabTriggerCreateResult": GitlabTriggerCreateResult,
     "GitlabTriggerSummary": GitlabTriggerSummary,
+    "HelmCommandSpecArtifactSource": HelmCommandSpecArtifactSource,
     "HelmRepositoryDeployArtifactSource": HelmRepositoryDeployArtifactSource,
     "HelmSetValue": HelmSetValue,
     "HelmSetValueCollection": HelmSetValueCollection,

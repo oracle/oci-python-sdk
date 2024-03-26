@@ -118,6 +118,138 @@ class ManagedMySqlDatabasesClient(object):
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
 
+    def get_heat_wave_fleet_metric(self, compartment_id, start_time, end_time, **kwargs):
+        """
+        Gets the health metrics for a fleet of HeatWave clusters in a compartment.
+
+
+        :param str compartment_id: (required)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str start_time: (required)
+            The start time of the time range to retrieve the health metrics of a Managed Database
+            in UTC in ISO-8601 format, which is \"yyyy-MM-dd'T'hh:mm:ss.sss'Z'\".
+
+        :param str end_time: (required)
+            The end time of the time range to retrieve the health metrics of a Managed Database
+            in UTC in ISO-8601 format, which is \"yyyy-MM-dd'T'hh:mm:ss.sss'Z'\".
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str filter_by_metric_names: (optional)
+            The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
+
+        :param str filter_by_heat_wave_status: (optional)
+            The parameter to filter by HeatWave cluster status.
+
+            Allowed values are: "UP", "DOWN", "UNKNOWN"
+
+        :param str filter_by_heat_wave_shape: (optional)
+            The parameter to filter by HeatWave node shape.
+
+        :param bool is_heat_wave_lakehouse_enabled: (optional)
+            The parameter to filter based on whether HeatWave Lakehouse is enabled for the cluster.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.HeatWaveFleetMetrics`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/get_heat_wave_fleet_metric.py.html>`__ to see an example of how to use get_heat_wave_fleet_metric API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'startTime', 'endTime']
+        resource_path = "/heatWaveFleetMetrics"
+        method = "GET"
+        operation_name = "get_heat_wave_fleet_metric"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/HeatWaveFleetMetrics/GetHeatWaveFleetMetric"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "filter_by_metric_names",
+            "filter_by_heat_wave_status",
+            "filter_by_heat_wave_shape",
+            "is_heat_wave_lakehouse_enabled"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_heat_wave_fleet_metric got unknown kwargs: {extra_kwargs!r}")
+
+        if 'filter_by_heat_wave_status' in kwargs:
+            filter_by_heat_wave_status_allowed_values = ["UP", "DOWN", "UNKNOWN"]
+            if kwargs['filter_by_heat_wave_status'] not in filter_by_heat_wave_status_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `filter_by_heat_wave_status`, must be one of { filter_by_heat_wave_status_allowed_values }"
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "filterByMetricNames": kwargs.get("filter_by_metric_names", missing),
+            "startTime": start_time,
+            "endTime": end_time,
+            "filterByHeatWaveStatus": kwargs.get("filter_by_heat_wave_status", missing),
+            "filterByHeatWaveShape": kwargs.get("filter_by_heat_wave_shape", missing),
+            "isHeatWaveLakehouseEnabled": kwargs.get("is_heat_wave_lakehouse_enabled", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="HeatWaveFleetMetrics",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="HeatWaveFleetMetrics",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def get_managed_my_sql_database(self, managed_my_sql_database_id, **kwargs):
         """
         Retrieves the general information for a specific MySQL Database.
@@ -256,6 +388,9 @@ class ManagedMySqlDatabasesClient(object):
         :param str filter_by_my_sql_database_version: (optional)
             The parameter to filter by MySQL database version.
 
+        :param bool is_heat_wave_enabled: (optional)
+            The parameter to filter based on whether HeatWave is enabled for the database.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -290,7 +425,8 @@ class ManagedMySqlDatabasesClient(object):
             "filter_by_my_sql_deployment_type_param",
             "filter_by_mds_deployment_type",
             "filter_by_my_sql_status",
-            "filter_by_my_sql_database_version"
+            "filter_by_my_sql_database_version",
+            "is_heat_wave_enabled"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -326,7 +462,8 @@ class ManagedMySqlDatabasesClient(object):
             "filterByMySqlDeploymentTypeParam": kwargs.get("filter_by_my_sql_deployment_type_param", missing),
             "filterByMdsDeploymentType": kwargs.get("filter_by_mds_deployment_type", missing),
             "filterByMySqlStatus": kwargs.get("filter_by_my_sql_status", missing),
-            "filterByMySqlDatabaseVersion": kwargs.get("filter_by_my_sql_database_version", missing)
+            "filterByMySqlDatabaseVersion": kwargs.get("filter_by_my_sql_database_version", missing),
+            "isHeatWaveEnabled": kwargs.get("is_heat_wave_enabled", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -532,6 +669,7 @@ class ManagedMySqlDatabasesClient(object):
 
         :param str filter_column: (optional)
             The parameter to filter results by key criteria which include :
+            - AVG_TIMER_WAIT
             - SUM_TIMER_WAIT
             - COUNT_STAR
             - SUM_ERRORS
@@ -543,6 +681,8 @@ class ManagedMySqlDatabasesClient(object):
             - SUM_NO_GOOD_INDEX_USED
             - FIRST_SEEN
             - LAST_SEEN
+            - HEATWAVE_OFFLOADED
+            - HEATWAVE_OUT_OF_MEMORY
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.

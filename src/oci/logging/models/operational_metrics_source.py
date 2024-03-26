@@ -112,7 +112,7 @@ class OperationalMetricsSource(object):
     @property
     def record_input(self):
         """
-        Gets the record_input of this OperationalMetricsSource.
+        **[Required]** Gets the record_input of this OperationalMetricsSource.
 
         :return: The record_input of this OperationalMetricsSource.
         :rtype: oci.logging.models.OperationalMetricsRecordInput
