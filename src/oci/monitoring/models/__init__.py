@@ -12,6 +12,7 @@ from .alarm_dimension_states_collection import AlarmDimensionStatesCollection
 from .alarm_dimension_states_entry import AlarmDimensionStatesEntry
 from .alarm_history_collection import AlarmHistoryCollection
 from .alarm_history_entry import AlarmHistoryEntry
+from .alarm_override import AlarmOverride
 from .alarm_status_summary import AlarmStatusSummary
 from .alarm_summary import AlarmSummary
 from .alarm_suppression import AlarmSuppression
@@ -46,6 +47,7 @@ monitoring_type_mapping = {
     "AlarmDimensionStatesEntry": AlarmDimensionStatesEntry,
     "AlarmHistoryCollection": AlarmHistoryCollection,
     "AlarmHistoryEntry": AlarmHistoryEntry,
+    "AlarmOverride": AlarmOverride,
     "AlarmStatusSummary": AlarmStatusSummary,
     "AlarmSummary": AlarmSummary,
     "AlarmSuppression": AlarmSuppression,

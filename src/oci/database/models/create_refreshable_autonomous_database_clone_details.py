@@ -23,6 +23,14 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
     #: This constant has a value of "MANUAL"
     REFRESHABLE_MODE_MANUAL = "MANUAL"
 
+    #: A constant which can be used with the open_mode property of a CreateRefreshableAutonomousDatabaseCloneDetails.
+    #: This constant has a value of "READ_ONLY"
+    OPEN_MODE_READ_ONLY = "READ_ONLY"
+
+    #: A constant which can be used with the open_mode property of a CreateRefreshableAutonomousDatabaseCloneDetails.
+    #: This constant has a value of "READ_WRITE"
+    OPEN_MODE_READ_WRITE = "READ_WRITE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateRefreshableAutonomousDatabaseCloneDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.database.models.CreateRefreshableAutonomousDatabaseCloneDetails.source` attribute
@@ -239,6 +247,23 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             Allowed values for this property are: "AUTOMATIC", "MANUAL"
         :type refreshable_mode: str
 
+        :param auto_refresh_frequency_in_seconds:
+            The value to assign to the auto_refresh_frequency_in_seconds property of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :type auto_refresh_frequency_in_seconds: int
+
+        :param auto_refresh_point_lag_in_seconds:
+            The value to assign to the auto_refresh_point_lag_in_seconds property of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :type auto_refresh_point_lag_in_seconds: int
+
+        :param time_of_auto_refresh_start:
+            The value to assign to the time_of_auto_refresh_start property of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :type time_of_auto_refresh_start: datetime
+
+        :param open_mode:
+            The value to assign to the open_mode property of this CreateRefreshableAutonomousDatabaseCloneDetails.
+            Allowed values for this property are: "READ_ONLY", "READ_WRITE"
+        :type open_mode: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -291,7 +316,11 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             'secret_id': 'str',
             'secret_version_number': 'int',
             'source_id': 'str',
-            'refreshable_mode': 'str'
+            'refreshable_mode': 'str',
+            'auto_refresh_frequency_in_seconds': 'int',
+            'auto_refresh_point_lag_in_seconds': 'int',
+            'time_of_auto_refresh_start': 'datetime',
+            'open_mode': 'str'
         }
 
         self.attribute_map = {
@@ -345,7 +374,11 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             'secret_id': 'secretId',
             'secret_version_number': 'secretVersionNumber',
             'source_id': 'sourceId',
-            'refreshable_mode': 'refreshableMode'
+            'refreshable_mode': 'refreshableMode',
+            'auto_refresh_frequency_in_seconds': 'autoRefreshFrequencyInSeconds',
+            'auto_refresh_point_lag_in_seconds': 'autoRefreshPointLagInSeconds',
+            'time_of_auto_refresh_start': 'timeOfAutoRefreshStart',
+            'open_mode': 'openMode'
         }
 
         self._compartment_id = None
@@ -399,6 +432,10 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
         self._secret_version_number = None
         self._source_id = None
         self._refreshable_mode = None
+        self._auto_refresh_frequency_in_seconds = None
+        self._auto_refresh_point_lag_in_seconds = None
+        self._time_of_auto_refresh_start = None
+        self._open_mode = None
         self._source = 'CLONE_TO_REFRESHABLE'
 
     @property
@@ -459,6 +496,113 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
                 f"Invalid value for `refreshable_mode`, must be None or one of {allowed_values}"
             )
         self._refreshable_mode = refreshable_mode
+
+    @property
+    def auto_refresh_frequency_in_seconds(self):
+        """
+        Gets the auto_refresh_frequency_in_seconds of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
+
+
+        :return: The auto_refresh_frequency_in_seconds of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :rtype: int
+        """
+        return self._auto_refresh_frequency_in_seconds
+
+    @auto_refresh_frequency_in_seconds.setter
+    def auto_refresh_frequency_in_seconds(self, auto_refresh_frequency_in_seconds):
+        """
+        Sets the auto_refresh_frequency_in_seconds of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
+
+
+        :param auto_refresh_frequency_in_seconds: The auto_refresh_frequency_in_seconds of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :type: int
+        """
+        self._auto_refresh_frequency_in_seconds = auto_refresh_frequency_in_seconds
+
+    @property
+    def auto_refresh_point_lag_in_seconds(self):
+        """
+        Gets the auto_refresh_point_lag_in_seconds of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
+
+
+        :return: The auto_refresh_point_lag_in_seconds of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :rtype: int
+        """
+        return self._auto_refresh_point_lag_in_seconds
+
+    @auto_refresh_point_lag_in_seconds.setter
+    def auto_refresh_point_lag_in_seconds(self, auto_refresh_point_lag_in_seconds):
+        """
+        Sets the auto_refresh_point_lag_in_seconds of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
+
+
+        :param auto_refresh_point_lag_in_seconds: The auto_refresh_point_lag_in_seconds of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :type: int
+        """
+        self._auto_refresh_point_lag_in_seconds = auto_refresh_point_lag_in_seconds
+
+    @property
+    def time_of_auto_refresh_start(self):
+        """
+        Gets the time_of_auto_refresh_start of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+
+
+        :return: The time_of_auto_refresh_start of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :rtype: datetime
+        """
+        return self._time_of_auto_refresh_start
+
+    @time_of_auto_refresh_start.setter
+    def time_of_auto_refresh_start(self, time_of_auto_refresh_start):
+        """
+        Sets the time_of_auto_refresh_start of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+
+
+        :param time_of_auto_refresh_start: The time_of_auto_refresh_start of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :type: datetime
+        """
+        self._time_of_auto_refresh_start = time_of_auto_refresh_start
+
+    @property
+    def open_mode(self):
+        """
+        Gets the open_mode of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
+
+        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+
+        Allowed values for this property are: "READ_ONLY", "READ_WRITE"
+
+
+        :return: The open_mode of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :rtype: str
+        """
+        return self._open_mode
+
+    @open_mode.setter
+    def open_mode(self, open_mode):
+        """
+        Sets the open_mode of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
+
+        This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+
+
+        :param open_mode: The open_mode of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :type: str
+        """
+        allowed_values = ["READ_ONLY", "READ_WRITE"]
+        if not value_allowed_none_or_none_sentinel(open_mode, allowed_values):
+            raise ValueError(
+                f"Invalid value for `open_mode`, must be None or one of {allowed_values}"
+            )
+        self._open_mode = open_mode
 
     def __repr__(self):
         return formatted_flat_dict(self)

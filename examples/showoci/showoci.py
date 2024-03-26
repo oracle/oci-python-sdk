@@ -77,6 +77,8 @@
 # - oci.opensearch.OpensearchClusterClient
 # - oci.psql.PostgresqlClient
 # - oci.generative_ai.GenerativeAiClient
+# - oci.certificates_management.CertificatesManagementClient
+# - oci.data_safe.DataSafeClient
 #
 # Modules without CSV yet:
 # - datasciencemodeldeployment
@@ -96,11 +98,9 @@
 # - oci.appmgmt_control.AppmgmtControlClient
 # - oci.application_migration.ApplicationMigrationClient
 # - oci.artifacts.ArtifactsClient
-# - oci.certificates_management.CertificatesManagementClient
 # - oci.cloud_migrations.MigrationClient
 # - oci.container_instances.ContainerInstanceClient
 # - oci.data_labeling_service.DataLabelingManagementClient
-# - oci.data_safe.DataSafeClient
 # - oci.disaster_recovery.DisasterRecoveryClient
 # - oci.fusion_apps.FusionApplicationsClient
 # - oci.jms.JavaManagementServiceClient
@@ -128,7 +128,7 @@ import contextlib
 import os
 import time
 
-version = "24.03.12"
+version = "24.03.19"
 
 ##########################################################################
 # check OCI version
@@ -177,6 +177,8 @@ def execute_extract():
     # create data instance
     ############################################
     data = ShowOCIData(flags)
+    if flags.excludelist:
+        return
 
     ############################################
     # output and summary instances
@@ -337,6 +339,7 @@ def set_parser_arguments(argsList=[]):
     parser.add_argument('-andays', default=30, dest='announcement_days', type=int, help='Announcement Last X Days (Default=30).')
     parser.add_argument('-c', '-cn', action='store_true', default=False, dest='compute', help='Print Compute and Containers.')
     parser.add_argument('-d', action='store_true', default=False, dest='database', help='Print Database.')
+    parser.add_argument('-dsa', '--datasafe-assessments', action='store_true', default=False, dest='datasafe_assessments', help='When Data Safe is implemented, get the assessments, too.')
     parser.add_argument('-edge', action='store_true', default=False, dest='edge', help='Print Edge, DNS Services and WAAS policies, DNS Zone is slow can be excluded using -exclude DNSZONE.')
     parser.add_argument('-f', '-o', action='store_true', default=False, dest='file', help='Print File and Object Storage.')
     parser.add_argument('-i', action='store_true', default=False, dest='identity', help='Print Identity and Identity Domains.')
@@ -345,11 +348,12 @@ def set_parser_arguments(argsList=[]):
 
     parser.add_argument('-s', '-api', '-rm', '-fun', action='store_true', default=False, dest='streams_queues', help='Print API, Functions, Resource management, Gateways, Streams and Queues.')
 
-    parser.add_argument('-m', '-sec', '-lq', '-e', '-b', action='store_true', default=False, dest='monitoring', help='Print Monitor, Events, Agents, Security, Quotas, E-Mail, Limits...')
+    parser.add_argument('-m', '-sec', '-lq', '-e', '-b', action='store_true', default=False, dest='monitoring', help='Print Monitor, Events, Agents, Security, Quotas, E-Mail, Limits, Cert...')
     parser.add_argument('-paas', '-dataai', action='store_true', default=False, dest='paas_native', help='Print Native, Data and AI.')
     parser.add_argument('-n', '-l', action='store_true', default=False, dest='network', help='Print Network.')
 
-    parser.add_argument('-exclude', default="", dest='exclude', help='Exclude Services, Currently support NETWORK, QUOTAS, LIMITS, DNSZONE, VCIRCUITS, OCE, GENAI.')
+    parser.add_argument('-exclude', default="", dest='exclude', help='Exclude Services, use -excludelist to for list of values')
+    parser.add_argument('-excludelist', action='store_true', default=False, dest='excludelist', help='Generate Exclude List for -exclude command')
     parser.add_argument('-noparallel', action='store_true', default=False, dest='skip_threads', help='Do not run in parallel processing (Threads).')
     parser.add_argument('-threads', default=8, dest='threads', type=int, help='Threads Processes when running with Threads (default=8).')
     parser.add_argument('-nobackups', action='store_true', default=False, dest='skip_backups', help='Do not process backups.')
@@ -357,7 +361,7 @@ def set_parser_arguments(argsList=[]):
     parser.add_argument('-readtimeout', default=20, dest='readtimeout', type=int, help='Timeout for REST API Connection (default=20).')
     parser.add_argument('-conntimeout', default=150, dest='conntimeout', type=int, help='Timeout for REST API Read (default=150).')
     parser.add_argument('-so', action='store_true', default=False, dest='sumonly', help='Print Summary Only.')
-    parser.add_argument('-mc', action='store_true', default=False, dest='mgdcompart', help='exclude ManagedCompartmentForPaaS.')
+    parser.add_argument('-mc', action='store_true', default=False, dest='mgdcompart', help='Exclude ManagedCompartmentForPaaS.')
     parser.add_argument('-nr', action='store_true', default=False, dest='noroot', help='Not include root compartment.')
     parser.add_argument('-ip', action='store_true', default=False, dest='instance_principals', help='Use Instance Principals for authentication.')
     parser.add_argument('-rp', action='store_true', default=False, dest='resource_principals', help='Use Resource Principals for authentication.')
@@ -401,7 +405,7 @@ def set_parser_arguments(argsList=[]):
 
     if not (result.all or result.allnoiam or result.network or result.identity or result.identity_compartments or
             result.compute or result.database or result.file or result.streams_queues or result.monitoring or
-            result.edge or result.announcement or result.paas_native):
+            result.edge or result.announcement or result.paas_native or result.excludelist):
 
         parser.print_help()
 
@@ -476,6 +480,9 @@ def set_service_extract_flags(cmd):
     if cmd.skip_backups:
         prm.skip_backups = True
 
+    if cmd.datasafe_assessments:
+        prm.read_datasafe_assessments = True
+
     if cmd.skip_threads:
         prm.skip_threads = True
 
@@ -484,6 +491,9 @@ def set_service_extract_flags(cmd):
 
     if cmd.exclude:
         prm.exclude = str(cmd.exclude).split(",")
+
+    if cmd.excludelist:
+        prm.excludelist = True
 
     if cmd.conntimeout:
         prm.connection_timeout = cmd.conntimeout

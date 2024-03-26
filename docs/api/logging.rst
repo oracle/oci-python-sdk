@@ -29,6 +29,8 @@ Logging
     oci.logging.models.CreateLogGroupDetails
     oci.logging.models.CreateLogSavedSearchDetails
     oci.logging.models.CreateUnifiedAgentConfigurationDetails
+    oci.logging.models.GrepFilterAllowRule
+    oci.logging.models.GrepFilterDenyRule
     oci.logging.models.GrokPattern
     oci.logging.models.GroupAssociationDetails
     oci.logging.models.Log
@@ -44,6 +46,7 @@ Logging
     oci.logging.models.OperationalMetricsRecordInput
     oci.logging.models.OperationalMetricsSource
     oci.logging.models.Parameter
+    oci.logging.models.RecordTransformerPair
     oci.logging.models.ResourceType
     oci.logging.models.ServiceSummary
     oci.logging.models.Source
@@ -56,20 +59,43 @@ Logging
     oci.logging.models.UnifiedAgentConfigurationSummary
     oci.logging.models.UnifiedAgentCriParser
     oci.logging.models.UnifiedAgentCsvParser
+    oci.logging.models.UnifiedAgentCustomFilter
+    oci.logging.models.UnifiedAgentCustomPluginLogSource
+    oci.logging.models.UnifiedAgentCustomSection
     oci.logging.models.UnifiedAgentGrokParser
+    oci.logging.models.UnifiedAgentKubernetesConfigurationDetails
+    oci.logging.models.UnifiedAgentKubernetesFilter
+    oci.logging.models.UnifiedAgentKubernetesScrapeTarget
+    oci.logging.models.UnifiedAgentKubernetesSource
     oci.logging.models.UnifiedAgentLoggingConfiguration
     oci.logging.models.UnifiedAgentLoggingDestination
+    oci.logging.models.UnifiedAgentLoggingFilter
+    oci.logging.models.UnifiedAgentLoggingGrepFilter
+    oci.logging.models.UnifiedAgentLoggingRecordTransformerFilter
     oci.logging.models.UnifiedAgentLoggingSource
+    oci.logging.models.UnifiedAgentMonitoringApplicationConfigurationDetails
+    oci.logging.models.UnifiedAgentMonitoringConfigurationDetails
+    oci.logging.models.UnifiedAgentMonitoringDestination
+    oci.logging.models.UnifiedAgentMonitoringFilter
+    oci.logging.models.UnifiedAgentMonitoringUrlSource
     oci.logging.models.UnifiedAgentMsgpackParser
     oci.logging.models.UnifiedAgentMultilineGrokParser
     oci.logging.models.UnifiedAgentMultilineParser
     oci.logging.models.UnifiedAgentNoneParser
+    oci.logging.models.UnifiedAgentOpenmetricsParser
+    oci.logging.models.UnifiedAgentOpenmetricsParserRecord
+    oci.logging.models.UnifiedAgentOpenmetricsTailConfigurationDetails
     oci.logging.models.UnifiedAgentParser
+    oci.logging.models.UnifiedAgentParserFilter
     oci.logging.models.UnifiedAgentRegexParser
     oci.logging.models.UnifiedAgentServiceConfigurationDetails
     oci.logging.models.UnifiedAgentSyslogParser
     oci.logging.models.UnifiedAgentTailLogSource
+    oci.logging.models.UnifiedAgentTailSourceAdvancedOptions
     oci.logging.models.UnifiedAgentTsvParser
+    oci.logging.models.UnifiedAgentUrlConfigurationDetails
+    oci.logging.models.UnifiedAgentUrlFilter
+    oci.logging.models.UnifiedAgentUrlScrapeTarget
     oci.logging.models.UnifiedAgentWindowsEventSource
     oci.logging.models.UnifiedJSONParser
     oci.logging.models.UpdateConfigurationDetails

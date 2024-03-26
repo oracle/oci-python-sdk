@@ -8,7 +8,7 @@ Output can be printer friendly, CSV files or JSON file with an option to load th
  [cost analysis](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/costanalysisoverview.htm)
  and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm) features should be used instead.**
 
-Developed by Adi Zohar, 2018-2024, Contributers: Olaf Heimburger
+Developed by Adi Zohar, 2018-2024, Contributors: Olaf Heimburger
 
 ## Content
 
@@ -95,6 +95,8 @@ Developed by Adi Zohar, 2018-2024, Contributers: Olaf Heimburger
 - oci.network_firewall.NetworkFirewallClient
 - oci.opensearch.OpensearchClusterClient
 - oci.psql.PostgresqlClient
+- oci.certificates_management.CertificatesManagementClient
+- oci.data_safe.DataSafeClient
 
 ## 2. Executing using Cloud Shell
 

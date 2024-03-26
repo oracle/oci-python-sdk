@@ -148,6 +148,14 @@ class MySqlDataSummary(object):
             The value to assign to the quantile999 property of this MySqlDataSummary.
         :type quantile999: float
 
+        :param heat_wave_offloaded:
+            The value to assign to the heat_wave_offloaded property of this MySqlDataSummary.
+        :type heat_wave_offloaded: float
+
+        :param heat_wave_out_of_memory:
+            The value to assign to the heat_wave_out_of_memory property of this MySqlDataSummary.
+        :type heat_wave_out_of_memory: float
+
         """
         self.swagger_types = {
             'schema_name': 'str',
@@ -181,7 +189,9 @@ class MySqlDataSummary(object):
             'last_seen': 'datetime',
             'quantile95': 'float',
             'quantile99': 'float',
-            'quantile999': 'float'
+            'quantile999': 'float',
+            'heat_wave_offloaded': 'float',
+            'heat_wave_out_of_memory': 'float'
         }
 
         self.attribute_map = {
@@ -216,7 +226,9 @@ class MySqlDataSummary(object):
             'last_seen': 'lastSeen',
             'quantile95': 'quantile95',
             'quantile99': 'quantile99',
-            'quantile999': 'quantile999'
+            'quantile999': 'quantile999',
+            'heat_wave_offloaded': 'heatWaveOffloaded',
+            'heat_wave_out_of_memory': 'heatWaveOutOfMemory'
         }
 
         self._schema_name = None
@@ -251,6 +263,8 @@ class MySqlDataSummary(object):
         self._quantile95 = None
         self._quantile99 = None
         self._quantile999 = None
+        self._heat_wave_offloaded = None
+        self._heat_wave_out_of_memory = None
 
     @property
     def schema_name(self):
@@ -1019,6 +1033,54 @@ class MySqlDataSummary(object):
         :type: float
         """
         self._quantile999 = quantile999
+
+    @property
+    def heat_wave_offloaded(self):
+        """
+        Gets the heat_wave_offloaded of this MySqlDataSummary.
+        The number of query executions offloaded to HeatWave.
+
+
+        :return: The heat_wave_offloaded of this MySqlDataSummary.
+        :rtype: float
+        """
+        return self._heat_wave_offloaded
+
+    @heat_wave_offloaded.setter
+    def heat_wave_offloaded(self, heat_wave_offloaded):
+        """
+        Sets the heat_wave_offloaded of this MySqlDataSummary.
+        The number of query executions offloaded to HeatWave.
+
+
+        :param heat_wave_offloaded: The heat_wave_offloaded of this MySqlDataSummary.
+        :type: float
+        """
+        self._heat_wave_offloaded = heat_wave_offloaded
+
+    @property
+    def heat_wave_out_of_memory(self):
+        """
+        Gets the heat_wave_out_of_memory of this MySqlDataSummary.
+        The number of query executions with HeatWave out-of-memory errors.
+
+
+        :return: The heat_wave_out_of_memory of this MySqlDataSummary.
+        :rtype: float
+        """
+        return self._heat_wave_out_of_memory
+
+    @heat_wave_out_of_memory.setter
+    def heat_wave_out_of_memory(self, heat_wave_out_of_memory):
+        """
+        Sets the heat_wave_out_of_memory of this MySqlDataSummary.
+        The number of query executions with HeatWave out-of-memory errors.
+
+
+        :param heat_wave_out_of_memory: The heat_wave_out_of_memory of this MySqlDataSummary.
+        :type: float
+        """
+        self._heat_wave_out_of_memory = heat_wave_out_of_memory
 
     def __repr__(self):
         return formatted_flat_dict(self)

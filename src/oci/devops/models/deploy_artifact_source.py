@@ -39,6 +39,7 @@ class DeployArtifactSource(object):
         * :class:`~oci.devops.models.GenericDeployArtifactSource`
         * :class:`~oci.devops.models.HelmRepositoryDeployArtifactSource`
         * :class:`~oci.devops.models.OcirDeployArtifactSource`
+        * :class:`~oci.devops.models.HelmCommandSpecArtifactSource`
         * :class:`~oci.devops.models.InlineDeployArtifactSource`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -76,6 +77,9 @@ class DeployArtifactSource(object):
 
         if type == 'OCIR':
             return 'OcirDeployArtifactSource'
+
+        if type == 'HELM_COMMAND_SPEC':
+            return 'HelmCommandSpecArtifactSource'
 
         if type == 'INLINE':
             return 'InlineDeployArtifactSource'

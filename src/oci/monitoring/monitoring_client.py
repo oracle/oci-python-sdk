@@ -820,12 +820,13 @@ class MonitoringClient(object):
             request, please provide the complete request ID.
 
         :param str alarm_historytype: (optional)
-            The type of history entries to retrieve. State history (STATE_HISTORY) or state transition history (STATE_TRANSITION_HISTORY).
-            If not specified, entries of both types are retrieved.
+            The type of history entries to retrieve.
+            State history (STATE_HISTORY), state transition history (STATE_TRANSITION_HISTORY), rule history (RULE_HISTORY) or rule transition history (RULE_TRANSITION_HISTORY).
+            If not specified, entries of all types are retrieved.
 
             Example: `STATE_HISTORY`
 
-            Allowed values are: "STATE_HISTORY", "STATE_TRANSITION_HISTORY"
+            Allowed values are: "STATE_HISTORY", "STATE_TRANSITION_HISTORY", "RULE_HISTORY", "RULE_TRANSITION_HISTORY"
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -907,7 +908,7 @@ class MonitoringClient(object):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'alarm_historytype' in kwargs:
-            alarm_historytype_allowed_values = ["STATE_HISTORY", "STATE_TRANSITION_HISTORY"]
+            alarm_historytype_allowed_values = ["STATE_HISTORY", "STATE_TRANSITION_HISTORY", "RULE_HISTORY", "RULE_TRANSITION_HISTORY"]
             if kwargs['alarm_historytype'] not in alarm_historytype_allowed_values:
                 raise ValueError(
                     f"Invalid value for `alarm_historytype`, must be one of { alarm_historytype_allowed_values }"

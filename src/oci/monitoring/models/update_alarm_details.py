@@ -109,6 +109,18 @@ class UpdateAlarmDetails(object):
             The value to assign to the defined_tags property of this UpdateAlarmDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param overrides:
+            The value to assign to the overrides property of this UpdateAlarmDetails.
+        :type overrides: list[oci.monitoring.models.AlarmOverride]
+
+        :param rule_name:
+            The value to assign to the rule_name property of this UpdateAlarmDetails.
+        :type rule_name: str
+
+        :param notification_version:
+            The value to assign to the notification_version property of this UpdateAlarmDetails.
+        :type notification_version: str
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -129,7 +141,10 @@ class UpdateAlarmDetails(object):
             'suppression': 'Suppression',
             'is_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'overrides': 'list[AlarmOverride]',
+            'rule_name': 'str',
+            'notification_version': 'str'
         }
 
         self.attribute_map = {
@@ -151,7 +166,10 @@ class UpdateAlarmDetails(object):
             'suppression': 'suppression',
             'is_enabled': 'isEnabled',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'overrides': 'overrides',
+            'rule_name': 'ruleName',
+            'notification_version': 'notificationVersion'
         }
 
         self._display_name = None
@@ -173,6 +191,9 @@ class UpdateAlarmDetails(object):
         self._is_enabled = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._overrides = None
+        self._rule_name = None
+        self._notification_version = None
 
     @property
     def display_name(self):
@@ -824,6 +845,92 @@ class UpdateAlarmDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def overrides(self):
+        """
+        Gets the overrides of this UpdateAlarmDetails.
+        A set of overrides that control evaluations of the alarm.
+
+        Each override can specify values for query, severity, body, and pending duration.
+        When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`),
+        and then evaluates the alarm's base values (`ruleName` value of `BASE`).
+
+
+        :return: The overrides of this UpdateAlarmDetails.
+        :rtype: list[oci.monitoring.models.AlarmOverride]
+        """
+        return self._overrides
+
+    @overrides.setter
+    def overrides(self, overrides):
+        """
+        Sets the overrides of this UpdateAlarmDetails.
+        A set of overrides that control evaluations of the alarm.
+
+        Each override can specify values for query, severity, body, and pending duration.
+        When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`),
+        and then evaluates the alarm's base values (`ruleName` value of `BASE`).
+
+
+        :param overrides: The overrides of this UpdateAlarmDetails.
+        :type: list[oci.monitoring.models.AlarmOverride]
+        """
+        self._overrides = overrides
+
+    @property
+    def rule_name(self):
+        """
+        Gets the rule_name of this UpdateAlarmDetails.
+        Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
+        A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
+        Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see :func:`alarm_override`.
+
+
+        :return: The rule_name of this UpdateAlarmDetails.
+        :rtype: str
+        """
+        return self._rule_name
+
+    @rule_name.setter
+    def rule_name(self, rule_name):
+        """
+        Sets the rule_name of this UpdateAlarmDetails.
+        Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
+        A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
+        Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see :func:`alarm_override`.
+
+
+        :param rule_name: The rule_name of this UpdateAlarmDetails.
+        :type: str
+        """
+        self._rule_name = rule_name
+
+    @property
+    def notification_version(self):
+        """
+        Gets the notification_version of this UpdateAlarmDetails.
+        The version of the alarm notification to be delivered. Allowed value: `1.X`
+        The value must start with a number (up to four digits), followed by a period and an uppercase X.
+
+
+        :return: The notification_version of this UpdateAlarmDetails.
+        :rtype: str
+        """
+        return self._notification_version
+
+    @notification_version.setter
+    def notification_version(self, notification_version):
+        """
+        Sets the notification_version of this UpdateAlarmDetails.
+        The version of the alarm notification to be delivered. Allowed value: `1.X`
+        The value must start with a number (up to four digits), followed by a period and an uppercase X.
+
+
+        :param notification_version: The notification_version of this UpdateAlarmDetails.
+        :type: str
+        """
+        self._notification_version = notification_version
 
     def __repr__(self):
         return formatted_flat_dict(self)

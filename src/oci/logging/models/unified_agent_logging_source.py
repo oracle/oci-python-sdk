@@ -23,11 +23,16 @@ class UnifiedAgentLoggingSource(object):
     #: This constant has a value of "WINDOWS_EVENT_LOG"
     SOURCE_TYPE_WINDOWS_EVENT_LOG = "WINDOWS_EVENT_LOG"
 
+    #: A constant which can be used with the source_type property of a UnifiedAgentLoggingSource.
+    #: This constant has a value of "CUSTOM_PLUGIN"
+    SOURCE_TYPE_CUSTOM_PLUGIN = "CUSTOM_PLUGIN"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UnifiedAgentLoggingSource object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.logging.models.UnifiedAgentCustomPluginLogSource`
         * :class:`~oci.logging.models.UnifiedAgentWindowsEventSource`
         * :class:`~oci.logging.models.UnifiedAgentTailLogSource`
 
@@ -39,7 +44,7 @@ class UnifiedAgentLoggingSource(object):
 
         :param source_type:
             The value to assign to the source_type property of this UnifiedAgentLoggingSource.
-            Allowed values for this property are: "LOG_TAIL", "WINDOWS_EVENT_LOG", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LOG_TAIL", "WINDOWS_EVENT_LOG", "CUSTOM_PLUGIN", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type source_type: str
 
@@ -64,6 +69,9 @@ class UnifiedAgentLoggingSource(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['sourceType']
+
+        if type == 'CUSTOM_PLUGIN':
+            return 'UnifiedAgentCustomPluginLogSource'
 
         if type == 'WINDOWS_EVENT_LOG':
             return 'UnifiedAgentWindowsEventSource'
@@ -103,7 +111,7 @@ class UnifiedAgentLoggingSource(object):
         **[Required]** Gets the source_type of this UnifiedAgentLoggingSource.
         Unified schema logging source type.
 
-        Allowed values for this property are: "LOG_TAIL", "WINDOWS_EVENT_LOG", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LOG_TAIL", "WINDOWS_EVENT_LOG", "CUSTOM_PLUGIN", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -122,7 +130,7 @@ class UnifiedAgentLoggingSource(object):
         :param source_type: The source_type of this UnifiedAgentLoggingSource.
         :type: str
         """
-        allowed_values = ["LOG_TAIL", "WINDOWS_EVENT_LOG"]
+        allowed_values = ["LOG_TAIL", "WINDOWS_EVENT_LOG", "CUSTOM_PLUGIN"]
         if not value_allowed_none_or_none_sentinel(source_type, allowed_values):
             source_type = 'UNKNOWN_ENUM_VALUE'
         self._source_type = source_type

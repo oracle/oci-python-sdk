@@ -232,6 +232,18 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the nsg_ids property of this UpdateAutonomousDatabaseDetails.
         :type nsg_ids: list[str]
 
+        :param auto_refresh_frequency_in_seconds:
+            The value to assign to the auto_refresh_frequency_in_seconds property of this UpdateAutonomousDatabaseDetails.
+        :type auto_refresh_frequency_in_seconds: int
+
+        :param auto_refresh_point_lag_in_seconds:
+            The value to assign to the auto_refresh_point_lag_in_seconds property of this UpdateAutonomousDatabaseDetails.
+        :type auto_refresh_point_lag_in_seconds: int
+
+        :param time_of_auto_refresh_start:
+            The value to assign to the time_of_auto_refresh_start property of this UpdateAutonomousDatabaseDetails.
+        :type time_of_auto_refresh_start: datetime
+
         :param customer_contacts:
             The value to assign to the customer_contacts property of this UpdateAutonomousDatabaseDetails.
         :type customer_contacts: list[oci.database.models.CustomerContact]
@@ -310,6 +322,9 @@ class UpdateAutonomousDatabaseDetails(object):
             'private_endpoint_label': 'str',
             'private_endpoint_ip': 'str',
             'nsg_ids': 'list[str]',
+            'auto_refresh_frequency_in_seconds': 'int',
+            'auto_refresh_point_lag_in_seconds': 'int',
+            'time_of_auto_refresh_start': 'datetime',
             'customer_contacts': 'list[CustomerContact]',
             'is_mtls_connection_required': 'bool',
             'resource_pool_leader_id': 'str',
@@ -359,6 +374,9 @@ class UpdateAutonomousDatabaseDetails(object):
             'private_endpoint_label': 'privateEndpointLabel',
             'private_endpoint_ip': 'privateEndpointIp',
             'nsg_ids': 'nsgIds',
+            'auto_refresh_frequency_in_seconds': 'autoRefreshFrequencyInSeconds',
+            'auto_refresh_point_lag_in_seconds': 'autoRefreshPointLagInSeconds',
+            'time_of_auto_refresh_start': 'timeOfAutoRefreshStart',
             'customer_contacts': 'customerContacts',
             'is_mtls_connection_required': 'isMtlsConnectionRequired',
             'resource_pool_leader_id': 'resourcePoolLeaderId',
@@ -407,6 +425,9 @@ class UpdateAutonomousDatabaseDetails(object):
         self._private_endpoint_label = None
         self._private_endpoint_ip = None
         self._nsg_ids = None
+        self._auto_refresh_frequency_in_seconds = None
+        self._auto_refresh_point_lag_in_seconds = None
+        self._time_of_auto_refresh_start = None
         self._customer_contacts = None
         self._is_mtls_connection_required = None
         self._resource_pool_leader_id = None
@@ -1623,6 +1644,78 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def auto_refresh_frequency_in_seconds(self):
+        """
+        Gets the auto_refresh_frequency_in_seconds of this UpdateAutonomousDatabaseDetails.
+        The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
+
+
+        :return: The auto_refresh_frequency_in_seconds of this UpdateAutonomousDatabaseDetails.
+        :rtype: int
+        """
+        return self._auto_refresh_frequency_in_seconds
+
+    @auto_refresh_frequency_in_seconds.setter
+    def auto_refresh_frequency_in_seconds(self, auto_refresh_frequency_in_seconds):
+        """
+        Sets the auto_refresh_frequency_in_seconds of this UpdateAutonomousDatabaseDetails.
+        The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
+
+
+        :param auto_refresh_frequency_in_seconds: The auto_refresh_frequency_in_seconds of this UpdateAutonomousDatabaseDetails.
+        :type: int
+        """
+        self._auto_refresh_frequency_in_seconds = auto_refresh_frequency_in_seconds
+
+    @property
+    def auto_refresh_point_lag_in_seconds(self):
+        """
+        Gets the auto_refresh_point_lag_in_seconds of this UpdateAutonomousDatabaseDetails.
+        The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
+
+
+        :return: The auto_refresh_point_lag_in_seconds of this UpdateAutonomousDatabaseDetails.
+        :rtype: int
+        """
+        return self._auto_refresh_point_lag_in_seconds
+
+    @auto_refresh_point_lag_in_seconds.setter
+    def auto_refresh_point_lag_in_seconds(self, auto_refresh_point_lag_in_seconds):
+        """
+        Sets the auto_refresh_point_lag_in_seconds of this UpdateAutonomousDatabaseDetails.
+        The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
+
+
+        :param auto_refresh_point_lag_in_seconds: The auto_refresh_point_lag_in_seconds of this UpdateAutonomousDatabaseDetails.
+        :type: int
+        """
+        self._auto_refresh_point_lag_in_seconds = auto_refresh_point_lag_in_seconds
+
+    @property
+    def time_of_auto_refresh_start(self):
+        """
+        Gets the time_of_auto_refresh_start of this UpdateAutonomousDatabaseDetails.
+        The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+
+
+        :return: The time_of_auto_refresh_start of this UpdateAutonomousDatabaseDetails.
+        :rtype: datetime
+        """
+        return self._time_of_auto_refresh_start
+
+    @time_of_auto_refresh_start.setter
+    def time_of_auto_refresh_start(self, time_of_auto_refresh_start):
+        """
+        Sets the time_of_auto_refresh_start of this UpdateAutonomousDatabaseDetails.
+        The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+
+
+        :param time_of_auto_refresh_start: The time_of_auto_refresh_start of this UpdateAutonomousDatabaseDetails.
+        :type: datetime
+        """
+        self._time_of_auto_refresh_start = time_of_auto_refresh_start
 
     @property
     def customer_contacts(self):

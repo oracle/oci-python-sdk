@@ -17,6 +17,8 @@ from .create_log_details import CreateLogDetails
 from .create_log_group_details import CreateLogGroupDetails
 from .create_log_saved_search_details import CreateLogSavedSearchDetails
 from .create_unified_agent_configuration_details import CreateUnifiedAgentConfigurationDetails
+from .grep_filter_allow_rule import GrepFilterAllowRule
+from .grep_filter_deny_rule import GrepFilterDenyRule
 from .grok_pattern import GrokPattern
 from .group_association_details import GroupAssociationDetails
 from .log import Log
@@ -32,6 +34,7 @@ from .operational_metrics_destination import OperationalMetricsDestination
 from .operational_metrics_record_input import OperationalMetricsRecordInput
 from .operational_metrics_source import OperationalMetricsSource
 from .parameter import Parameter
+from .record_transformer_pair import RecordTransformerPair
 from .resource_type import ResourceType
 from .service_summary import ServiceSummary
 from .source import Source
@@ -44,20 +47,43 @@ from .unified_agent_configuration_collection import UnifiedAgentConfigurationCol
 from .unified_agent_configuration_summary import UnifiedAgentConfigurationSummary
 from .unified_agent_cri_parser import UnifiedAgentCriParser
 from .unified_agent_csv_parser import UnifiedAgentCsvParser
+from .unified_agent_custom_filter import UnifiedAgentCustomFilter
+from .unified_agent_custom_plugin_log_source import UnifiedAgentCustomPluginLogSource
+from .unified_agent_custom_section import UnifiedAgentCustomSection
 from .unified_agent_grok_parser import UnifiedAgentGrokParser
+from .unified_agent_kubernetes_configuration_details import UnifiedAgentKubernetesConfigurationDetails
+from .unified_agent_kubernetes_filter import UnifiedAgentKubernetesFilter
+from .unified_agent_kubernetes_scrape_target import UnifiedAgentKubernetesScrapeTarget
+from .unified_agent_kubernetes_source import UnifiedAgentKubernetesSource
 from .unified_agent_logging_configuration import UnifiedAgentLoggingConfiguration
 from .unified_agent_logging_destination import UnifiedAgentLoggingDestination
+from .unified_agent_logging_filter import UnifiedAgentLoggingFilter
+from .unified_agent_logging_grep_filter import UnifiedAgentLoggingGrepFilter
+from .unified_agent_logging_record_transformer_filter import UnifiedAgentLoggingRecordTransformerFilter
 from .unified_agent_logging_source import UnifiedAgentLoggingSource
+from .unified_agent_monitoring_application_configuration_details import UnifiedAgentMonitoringApplicationConfigurationDetails
+from .unified_agent_monitoring_configuration_details import UnifiedAgentMonitoringConfigurationDetails
+from .unified_agent_monitoring_destination import UnifiedAgentMonitoringDestination
+from .unified_agent_monitoring_filter import UnifiedAgentMonitoringFilter
+from .unified_agent_monitoring_url_source import UnifiedAgentMonitoringUrlSource
 from .unified_agent_msgpack_parser import UnifiedAgentMsgpackParser
 from .unified_agent_multiline_grok_parser import UnifiedAgentMultilineGrokParser
 from .unified_agent_multiline_parser import UnifiedAgentMultilineParser
 from .unified_agent_none_parser import UnifiedAgentNoneParser
+from .unified_agent_openmetrics_parser import UnifiedAgentOpenmetricsParser
+from .unified_agent_openmetrics_parser_record import UnifiedAgentOpenmetricsParserRecord
+from .unified_agent_openmetrics_tail_configuration_details import UnifiedAgentOpenmetricsTailConfigurationDetails
 from .unified_agent_parser import UnifiedAgentParser
+from .unified_agent_parser_filter import UnifiedAgentParserFilter
 from .unified_agent_regex_parser import UnifiedAgentRegexParser
 from .unified_agent_service_configuration_details import UnifiedAgentServiceConfigurationDetails
 from .unified_agent_syslog_parser import UnifiedAgentSyslogParser
 from .unified_agent_tail_log_source import UnifiedAgentTailLogSource
+from .unified_agent_tail_source_advanced_options import UnifiedAgentTailSourceAdvancedOptions
 from .unified_agent_tsv_parser import UnifiedAgentTsvParser
+from .unified_agent_url_configuration_details import UnifiedAgentUrlConfigurationDetails
+from .unified_agent_url_filter import UnifiedAgentUrlFilter
+from .unified_agent_url_scrape_target import UnifiedAgentUrlScrapeTarget
 from .unified_agent_windows_event_source import UnifiedAgentWindowsEventSource
 from .unified_json_parser import UnifiedJSONParser
 from .update_configuration_details import UpdateConfigurationDetails
@@ -84,6 +110,8 @@ logging_type_mapping = {
     "CreateLogGroupDetails": CreateLogGroupDetails,
     "CreateLogSavedSearchDetails": CreateLogSavedSearchDetails,
     "CreateUnifiedAgentConfigurationDetails": CreateUnifiedAgentConfigurationDetails,
+    "GrepFilterAllowRule": GrepFilterAllowRule,
+    "GrepFilterDenyRule": GrepFilterDenyRule,
     "GrokPattern": GrokPattern,
     "GroupAssociationDetails": GroupAssociationDetails,
     "Log": Log,
@@ -99,6 +127,7 @@ logging_type_mapping = {
     "OperationalMetricsRecordInput": OperationalMetricsRecordInput,
     "OperationalMetricsSource": OperationalMetricsSource,
     "Parameter": Parameter,
+    "RecordTransformerPair": RecordTransformerPair,
     "ResourceType": ResourceType,
     "ServiceSummary": ServiceSummary,
     "Source": Source,
@@ -111,20 +140,43 @@ logging_type_mapping = {
     "UnifiedAgentConfigurationSummary": UnifiedAgentConfigurationSummary,
     "UnifiedAgentCriParser": UnifiedAgentCriParser,
     "UnifiedAgentCsvParser": UnifiedAgentCsvParser,
+    "UnifiedAgentCustomFilter": UnifiedAgentCustomFilter,
+    "UnifiedAgentCustomPluginLogSource": UnifiedAgentCustomPluginLogSource,
+    "UnifiedAgentCustomSection": UnifiedAgentCustomSection,
     "UnifiedAgentGrokParser": UnifiedAgentGrokParser,
+    "UnifiedAgentKubernetesConfigurationDetails": UnifiedAgentKubernetesConfigurationDetails,
+    "UnifiedAgentKubernetesFilter": UnifiedAgentKubernetesFilter,
+    "UnifiedAgentKubernetesScrapeTarget": UnifiedAgentKubernetesScrapeTarget,
+    "UnifiedAgentKubernetesSource": UnifiedAgentKubernetesSource,
     "UnifiedAgentLoggingConfiguration": UnifiedAgentLoggingConfiguration,
     "UnifiedAgentLoggingDestination": UnifiedAgentLoggingDestination,
+    "UnifiedAgentLoggingFilter": UnifiedAgentLoggingFilter,
+    "UnifiedAgentLoggingGrepFilter": UnifiedAgentLoggingGrepFilter,
+    "UnifiedAgentLoggingRecordTransformerFilter": UnifiedAgentLoggingRecordTransformerFilter,
     "UnifiedAgentLoggingSource": UnifiedAgentLoggingSource,
+    "UnifiedAgentMonitoringApplicationConfigurationDetails": UnifiedAgentMonitoringApplicationConfigurationDetails,
+    "UnifiedAgentMonitoringConfigurationDetails": UnifiedAgentMonitoringConfigurationDetails,
+    "UnifiedAgentMonitoringDestination": UnifiedAgentMonitoringDestination,
+    "UnifiedAgentMonitoringFilter": UnifiedAgentMonitoringFilter,
+    "UnifiedAgentMonitoringUrlSource": UnifiedAgentMonitoringUrlSource,
     "UnifiedAgentMsgpackParser": UnifiedAgentMsgpackParser,
     "UnifiedAgentMultilineGrokParser": UnifiedAgentMultilineGrokParser,
     "UnifiedAgentMultilineParser": UnifiedAgentMultilineParser,
     "UnifiedAgentNoneParser": UnifiedAgentNoneParser,
+    "UnifiedAgentOpenmetricsParser": UnifiedAgentOpenmetricsParser,
+    "UnifiedAgentOpenmetricsParserRecord": UnifiedAgentOpenmetricsParserRecord,
+    "UnifiedAgentOpenmetricsTailConfigurationDetails": UnifiedAgentOpenmetricsTailConfigurationDetails,
     "UnifiedAgentParser": UnifiedAgentParser,
+    "UnifiedAgentParserFilter": UnifiedAgentParserFilter,
     "UnifiedAgentRegexParser": UnifiedAgentRegexParser,
     "UnifiedAgentServiceConfigurationDetails": UnifiedAgentServiceConfigurationDetails,
     "UnifiedAgentSyslogParser": UnifiedAgentSyslogParser,
     "UnifiedAgentTailLogSource": UnifiedAgentTailLogSource,
+    "UnifiedAgentTailSourceAdvancedOptions": UnifiedAgentTailSourceAdvancedOptions,
     "UnifiedAgentTsvParser": UnifiedAgentTsvParser,
+    "UnifiedAgentUrlConfigurationDetails": UnifiedAgentUrlConfigurationDetails,
+    "UnifiedAgentUrlFilter": UnifiedAgentUrlFilter,
+    "UnifiedAgentUrlScrapeTarget": UnifiedAgentUrlScrapeTarget,
     "UnifiedAgentWindowsEventSource": UnifiedAgentWindowsEventSource,
     "UnifiedJSONParser": UnifiedJSONParser,
     "UpdateConfigurationDetails": UpdateConfigurationDetails,

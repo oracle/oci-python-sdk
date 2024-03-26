@@ -243,6 +243,13 @@ from .fleet_metric_definition import FleetMetricDefinition
 from .fleet_metric_summary_definition import FleetMetricSummaryDefinition
 from .fleet_status_by_category import FleetStatusByCategory
 from .fleet_summary import FleetSummary
+from .heat_wave_cluster_usage_metrics import HeatWaveClusterUsageMetrics
+from .heat_wave_fleet_by_category import HeatWaveFleetByCategory
+from .heat_wave_fleet_metric_definition import HeatWaveFleetMetricDefinition
+from .heat_wave_fleet_metric_summary_definition import HeatWaveFleetMetricSummaryDefinition
+from .heat_wave_fleet_metrics import HeatWaveFleetMetrics
+from .heat_wave_fleet_summary import HeatWaveFleetSummary
+from .heat_wave_node import HeatWaveNode
 from .historic_addm_result import HistoricAddmResult
 from .implement_optimizer_statistics_advisor_recommendations_details import ImplementOptimizerStatisticsAdvisorRecommendationsDetails
 from .implement_optimizer_statistics_advisor_recommendations_job import ImplementOptimizerStatisticsAdvisorRecommendationsJob
@@ -698,6 +705,13 @@ database_management_type_mapping = {
     "FleetMetricSummaryDefinition": FleetMetricSummaryDefinition,
     "FleetStatusByCategory": FleetStatusByCategory,
     "FleetSummary": FleetSummary,
+    "HeatWaveClusterUsageMetrics": HeatWaveClusterUsageMetrics,
+    "HeatWaveFleetByCategory": HeatWaveFleetByCategory,
+    "HeatWaveFleetMetricDefinition": HeatWaveFleetMetricDefinition,
+    "HeatWaveFleetMetricSummaryDefinition": HeatWaveFleetMetricSummaryDefinition,
+    "HeatWaveFleetMetrics": HeatWaveFleetMetrics,
+    "HeatWaveFleetSummary": HeatWaveFleetSummary,
+    "HeatWaveNode": HeatWaveNode,
     "HistoricAddmResult": HistoricAddmResult,
     "ImplementOptimizerStatisticsAdvisorRecommendationsDetails": ImplementOptimizerStatisticsAdvisorRecommendationsDetails,
     "ImplementOptimizerStatisticsAdvisorRecommendationsJob": ImplementOptimizerStatisticsAdvisorRecommendationsJob,

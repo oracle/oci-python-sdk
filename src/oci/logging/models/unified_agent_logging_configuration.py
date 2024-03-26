@@ -23,12 +23,16 @@ class UnifiedAgentLoggingConfiguration(UnifiedAgentServiceConfigurationDetails):
 
         :param configuration_type:
             The value to assign to the configuration_type property of this UnifiedAgentLoggingConfiguration.
-            Allowed values for this property are: "LOGGING"
+            Allowed values for this property are: "LOGGING", "MONITORING"
         :type configuration_type: str
 
         :param sources:
             The value to assign to the sources property of this UnifiedAgentLoggingConfiguration.
         :type sources: list[oci.logging.models.UnifiedAgentLoggingSource]
+
+        :param filter:
+            The value to assign to the filter property of this UnifiedAgentLoggingConfiguration.
+        :type filter: list[oci.logging.models.UnifiedAgentLoggingFilter]
 
         :param destination:
             The value to assign to the destination property of this UnifiedAgentLoggingConfiguration.
@@ -38,17 +42,20 @@ class UnifiedAgentLoggingConfiguration(UnifiedAgentServiceConfigurationDetails):
         self.swagger_types = {
             'configuration_type': 'str',
             'sources': 'list[UnifiedAgentLoggingSource]',
+            'filter': 'list[UnifiedAgentLoggingFilter]',
             'destination': 'UnifiedAgentLoggingDestination'
         }
 
         self.attribute_map = {
             'configuration_type': 'configurationType',
             'sources': 'sources',
+            'filter': 'filter',
             'destination': 'destination'
         }
 
         self._configuration_type = None
         self._sources = None
+        self._filter = None
         self._destination = None
         self._configuration_type = 'LOGGING'
 
@@ -75,6 +82,30 @@ class UnifiedAgentLoggingConfiguration(UnifiedAgentServiceConfigurationDetails):
         :type: list[oci.logging.models.UnifiedAgentLoggingSource]
         """
         self._sources = sources
+
+    @property
+    def filter(self):
+        """
+        Gets the filter of this UnifiedAgentLoggingConfiguration.
+        Logging filter object.
+
+
+        :return: The filter of this UnifiedAgentLoggingConfiguration.
+        :rtype: list[oci.logging.models.UnifiedAgentLoggingFilter]
+        """
+        return self._filter
+
+    @filter.setter
+    def filter(self, filter):
+        """
+        Sets the filter of this UnifiedAgentLoggingConfiguration.
+        Logging filter object.
+
+
+        :param filter: The filter of this UnifiedAgentLoggingConfiguration.
+        :type: list[oci.logging.models.UnifiedAgentLoggingFilter]
+        """
+        self._filter = filter
 
     @property
     def destination(self):

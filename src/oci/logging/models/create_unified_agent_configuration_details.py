@@ -87,7 +87,7 @@ class CreateUnifiedAgentConfigurationDetails(object):
     @property
     def display_name(self):
         """
-        Gets the display_name of this CreateUnifiedAgentConfigurationDetails.
+        **[Required]** Gets the display_name of this CreateUnifiedAgentConfigurationDetails.
         The user-friendly display name. This must be unique within the enclosing resource,
         and it's changeable. Avoid entering confidential information.
 
@@ -247,7 +247,7 @@ class CreateUnifiedAgentConfigurationDetails(object):
     @property
     def description(self):
         """
-        Gets the description of this CreateUnifiedAgentConfigurationDetails.
+        **[Required]** Gets the description of this CreateUnifiedAgentConfigurationDetails.
         Description for this resource.
 
 

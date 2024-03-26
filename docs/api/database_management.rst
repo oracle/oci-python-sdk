@@ -263,6 +263,13 @@ Database Management
     oci.database_management.models.FleetMetricSummaryDefinition
     oci.database_management.models.FleetStatusByCategory
     oci.database_management.models.FleetSummary
+    oci.database_management.models.HeatWaveClusterUsageMetrics
+    oci.database_management.models.HeatWaveFleetByCategory
+    oci.database_management.models.HeatWaveFleetMetricDefinition
+    oci.database_management.models.HeatWaveFleetMetricSummaryDefinition
+    oci.database_management.models.HeatWaveFleetMetrics
+    oci.database_management.models.HeatWaveFleetSummary
+    oci.database_management.models.HeatWaveNode
     oci.database_management.models.HistoricAddmResult
     oci.database_management.models.ImplementOptimizerStatisticsAdvisorRecommendationsDetails
     oci.database_management.models.ImplementOptimizerStatisticsAdvisorRecommendationsJob

@@ -45,6 +45,10 @@ class RepositoryBranchSummary(RepositoryRefSummary):
             The value to assign to the defined_tags property of this RepositoryBranchSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this RepositoryBranchSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param commit_id:
             The value to assign to the commit_id property of this RepositoryBranchSummary.
         :type commit_id: str
@@ -57,6 +61,7 @@ class RepositoryBranchSummary(RepositoryRefSummary):
             'repository_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'commit_id': 'str'
         }
 
@@ -67,6 +72,7 @@ class RepositoryBranchSummary(RepositoryRefSummary):
             'repository_id': 'repositoryId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'commit_id': 'commitId'
         }
 
@@ -76,6 +82,7 @@ class RepositoryBranchSummary(RepositoryRefSummary):
         self._repository_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._commit_id = None
         self._ref_type = 'BRANCH'
 

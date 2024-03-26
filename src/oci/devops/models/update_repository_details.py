@@ -81,7 +81,7 @@ class UpdateRepositoryDetails(object):
     def name(self):
         """
         Gets the name of this UpdateRepositoryDetails.
-        Unique name of a repository.
+        Name of the repository. Should be unique within the project.
 
 
         :return: The name of this UpdateRepositoryDetails.
@@ -93,7 +93,7 @@ class UpdateRepositoryDetails(object):
     def name(self, name):
         """
         Sets the name of this UpdateRepositoryDetails.
-        Unique name of a repository.
+        Name of the repository. Should be unique within the project.
 
 
         :param name: The name of this UpdateRepositoryDetails.

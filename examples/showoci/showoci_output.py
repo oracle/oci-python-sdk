@@ -22,7 +22,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "24.03.12"
+    version = "24.03.19"
 
     ##########################################################################
     # spaces for align
@@ -120,7 +120,8 @@ class ShowOCIOutput(object):
             self.print_header(data['program'], 1)
             print("Author          : " + data['author'])
             print("Contributors    : " + data['contributors'])
-            print("Disclaimer      : " + data['disclaimer'])
+            print("Disclaimer      : " + data['disclaimer1'])
+            print("                : " + data['disclaimer2'])
             print("Machine         : " + data['machine'])
             print("Python Version  : " + data['python'])
             if data['use_instance_principals']:
@@ -1724,6 +1725,39 @@ class ShowOCIOutput(object):
             self.__print_error("__print_database_external", e)
 
     ##########################################################################
+    # print datasafe targets
+    ##########################################################################
+    def __print_datasafe(self, dbs):
+        try:
+            for db in dbs:
+                cfg = db['global_config']
+                print(self.taba + "Global    : " + cfg['data_safe_nat_gateway_ip_address'] + ", Enabled: " + cfg['is_enabled'] + ", State: " + cfg['lifecycle_state'] + ", Time Enabled: " + cfg['time_enabled'])
+                print("")
+
+                for target in db['targets']:
+                    print(self.taba + "Target    : " + target['display_name'] + " - " + target['description'] + " - " + target['database_type'] + " - " + target['infrastructure_type'])
+                    print(self.tabs + "Created   : " + target['time_created'][0:16] + " (" + target['lifecycle_state'] + ")")
+                    if target['lifecycle_details']:
+                        print(self.tabs + "Details   : " + target['lifecycle_details'][0:130] + "...")
+                    for trg in target['associated_resource_ids']:
+                        print(self.tabs + "Assoc Id  : " + trg)
+                    for trg in target['associated_resource_names']:
+                        print(self.tabs + "Assoc Name: " + trg)
+                    print("")
+
+                for target in db['private_endpoints']:
+                    print(self.taba + "End Point : " + target['display_name'] + " - " + target['description'] + " - " + target['lifecycle_state'] + " - " + target['time_created'])
+                    print(self.tabs + "Subnet    : " + target['subnet_name'])
+                    print("")
+
+                for target in db['on_prem_connectors']:
+                    print(self.taba + "On Prem   : " + target['display_name'] + " - " + target['description'] + " - " + target['lifecycle_state'] + " - " + target['time_created'])
+                    print("")
+
+        except Exception as e:
+            self.__print_error("__print_datasafe", e)
+
+    ##########################################################################
     # print database nosql
     ##########################################################################
 
@@ -1924,6 +1958,10 @@ class ShowOCIOutput(object):
             if 'db_external_nonpdb' in list_databases:
                 self.print_header("Database External NON-PDB", 2)
                 self.__print_database_external(list_databases['db_external_nonpdb'])
+
+            if 'datasafe' in list_databases:
+                self.print_header("Datasafe", 2)
+                self.__print_datasafe(list_databases['datasafe'])
 
         except Exception as e:
             self.__print_error("__print_database_main", e)
@@ -2524,6 +2562,44 @@ class ShowOCIOutput(object):
                 self.print_header("Logging Unified Agents Configuration", 2)
                 for val in security['logging_unified_agents']:
                     print(self.taba + val['display_name'] + ", (" + val['description'] + "), Is Enabled: " + val['is_enabled'] + ", Type: " + val['configuration_type'] + ", Created: " + val['time_created'][0:16])
+                    print("")
+
+            # Certificates
+            if 'certificates' in security:
+                self.print_header("Certificates", 2)
+                for val in security['certificates']:
+                    print(self.taba + val['name'] + ", " + val['description'] + ", Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
+                    print(self.tabs + "Validity Between: " + val['current_validity_not_before'] + " - " + val['current_validity_not_after'])
+                    if val['associated_resource_ids']:
+                        print(self.tabs + "Associate Ids   : " + val['associated_resource_ids'])
+                        print(self.tabs + "Associate Names : " + val['associated_resource_names'])
+                    else:
+                        print(self.tabs + "No Associations")
+                    print("")
+
+            # Certificate Authorities
+            if 'certificate_authorities' in security:
+                self.print_header("Certificate Authorities", 2)
+                for val in security['certificate_authorities']:
+                    print(self.taba + val['name'] + ", " + val['description'] + ", Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
+                    print(self.tabs + "Validity Between: " + val['current_validity_not_before'] + " - " + val['current_validity_not_after'])
+                    if val['associated_resource_ids']:
+                        print(self.tabs + "Associate Ids   : " + val['associated_resource_ids'])
+                        print(self.tabs + "Associate Names : " + val['associated_resource_names'])
+                    else:
+                        print(self.tabs + "No Associations")
+                    print("")
+
+            # Certificates CA Bundle
+            if 'certificate_ca_bundles' in security:
+                self.print_header("Certificate CA Bundle", 2)
+                for val in security['certificate_ca_bundles']:
+                    print(self.taba + val['name'] + ", " + val['description'] + ", Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
+                    if val['associated_resource_ids']:
+                        print(self.tabs + "Associate Ids   : " + val['associated_resource_ids'])
+                        print(self.tabs + "Associate Names : " + val['associated_resource_names'])
+                    else:
+                        print(self.tabs + "No Associations")
                     print("")
 
         except Exception as e:
@@ -3271,6 +3347,14 @@ class ShowOCISummary(object):
                 self.__summary_core_size(security['kms_vaults'])
                 self.__summary_core_size(security['kms_vaults'], "sum_info_hsm", 'key_count')
                 self.__summary_core_size(security['kms_vaults'], "sum_info_soft", 'software_key_count')
+            if 'certificates' in security:
+                self.__summary_core_size(security['certificates'])
+            if 'certificate_associations' in security:
+                self.__summary_core_size(security['certificate_associations'])
+            if 'certificate_ca_bundles' in security:
+                self.__summary_core_size(security['certificate_ca_bundles'])
+            if 'certificate_authorities' in security:
+                self.__summary_core_size(security['certificate_authorities'])
 
         except Exception as e:
             self.__print_error("__summary_security", e)
@@ -3547,6 +3631,9 @@ class ShowOCISummary(object):
 
             if 'db_external_nonpdb' in list_databases:
                 self.__summary_database_external(list_databases['db_external_nonpdb'])
+
+            if 'datasafe' in list_databases:
+                self.__summary_database_external(list_databases['datasafe'])
 
         except Exception as e:
             self.__print_error("__summary_database_main", e)
@@ -4098,6 +4185,8 @@ class ShowOCICSV(object):
     csv_announcements = []
     csv_errors = []
     csv_resources = []
+    csv_certificates = []
+    csv_certificate_ca_bundle = []
     csv_identity_compartments = []
     csv_identity_groups = []
     csv_identity_users = []
@@ -4121,6 +4210,13 @@ class ShowOCICSV(object):
     csv_db_vm_bm = []
     csv_db_all = []
     csv_db_autonomous = []
+    csv_datasafe_targets = []
+    csv_datasafe_audit_profiles = []
+    csv_datasafe_audit_policies = []
+    csv_datasafe_alert_profiles = []
+    csv_datasafe_connectors = []
+    csv_datasafe_user_assessment = []
+    csv_datasafe_security_assessment = []
     csv_database = []
     csv_database_backups = []
     csv_db_goldengate_deployments = []
@@ -4303,6 +4399,15 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("database_postgresql", self.csv_db_postgresql)
             self.__export_to_csv_file("database_postgresql_backups", self.csv_db_postgresql_backups)
             self.__export_to_csv_file("database_nosql", self.csv_db_nosql)
+
+            self.__export_to_csv_file("datasafe_targets", self.csv_datasafe_targets)
+            self.__export_to_csv_file("datasafe_audit_policies", self.csv_datasafe_audit_policies)
+            self.__export_to_csv_file("datasafe_audit_profiles", self.csv_datasafe_audit_profiles)
+            self.__export_to_csv_file("datasafe_alert_profiles", self.csv_datasafe_alert_profiles)
+            self.__export_to_csv_file("datasafe_connectors", self.csv_datasafe_connectors)
+            self.__export_to_csv_file("datasafe_user_assessment", self.csv_datasafe_user_assessment)
+            self.__export_to_csv_file("datasafe_security_assessment", self.csv_datasafe_security_assessment)
+
             self.__export_to_csv_file("load_balancers", self.csv_load_balancer)
             self.__export_to_csv_file("load_balancer_listeners", self.csv_load_balancer_listeners)
             self.__export_to_csv_file("load_balancer_backendset", self.csv_load_balancer_bs)
@@ -4342,6 +4447,9 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("monitor_events", self.csv_monitor_events)
             self.__export_to_csv_file("monitor_topics_subs", self.csv_notifications)
             self.__export_to_csv_file("streams_queues", self.csv_streams_queues)
+
+            self.__export_to_csv_file("certificates", self.csv_certificates)
+            self.__export_to_csv_file("certificates_ca_bundles", self.csv_certificate_ca_bundle)
 
             print("")
         except Exception as e:
@@ -5422,6 +5530,7 @@ class ShowOCICSV(object):
                             'sec_compartment_path': sl['compartment_path'],
                             'sec_protocol': "",
                             'is_stateless': "",
+                            'description': "",
                             'sec_rules': "Empty",
                             'time_created': sl['time_created'][0:16],
                             'vcn_id': vcn['id'],
@@ -5443,6 +5552,7 @@ class ShowOCICSV(object):
                                 'sec_compartment_path': sl['compartment_path'],
                                 'sec_protocol': slr['protocol_name'],
                                 'is_stateless': slr['is_stateless'],
+                                'description': slr['description'],
                                 'sec_rules': slr['desc'],
                                 'time_created': sl['time_created'],
                                 'vcn_id': vcn['id'],
@@ -5663,6 +5773,7 @@ class ShowOCICSV(object):
                             'sec_compartment_path': sl['compartment_path'],
                             'sec_protocol': "",
                             'is_stateless': "",
+                            'description': "",
                             'sec_rules': "Empty",
                             'time_created': sl['time_created'],
                             'vcn_id': vcn['id'],
@@ -5684,6 +5795,7 @@ class ShowOCICSV(object):
                                 'sec_compartment_path': sl['compartment_path'],
                                 'sec_protocol': slr['protocol_name'],
                                 'is_stateless': slr['is_stateless'],
+                                'description': slr['description'],
                                 'sec_rules': slr['desc'],
                                 'time_created': sl['time_created'],
                                 'vcn_id': vcn['id'],
@@ -6408,7 +6520,7 @@ class ShowOCICSV(object):
             self.__print_error("__csv_database_db_exacc", e)
 
     ##########################################################################
-    # csv database autonouns dedicated
+    # csv database autonomous dedicated
     ##########################################################################
 
     def __csv_database_db_exacc_autonomous_dedicated(self, region_name, databases):
@@ -7021,6 +7133,253 @@ class ShowOCICSV(object):
             self.__print_error("__csv_database_goldengate", e)
 
     ##########################################################################
+    # __csv_datasafe
+    ##########################################################################
+    def __csv_datasafe_get_target_info(self, targets, target_id):
+        try:
+            for tg in targets:
+                if tg['id'] == target_id:
+                    return tg['display_name'] + ":" + tg['infrastructure_type'] + ":" + tg['database_type']
+            return ""
+
+        except Exception as e:
+            self.__print_error("__csv_datasafe_get_target_info", e)
+
+    ##########################################################################
+    # __csv_datasafe
+    ##########################################################################
+    def __csv_datasafe(self, region_name, list_datasafe):
+        try:
+            issue_location = ""
+            for ds in list_datasafe:
+                config = ds['global_config']
+
+                # Targets
+                issue_location = "targets"
+                for target in ds['targets']:
+                    arr = {
+                        'region_name': region_name,
+                        'compartment_name': ds['compartment_name'],
+                        'compartment_path': ds['compartment_path'],
+                        'display_name': target['display_name'],
+                        'description': target['description'],
+                        'infrastructure_type': target['infrastructure_type'],
+                        'database_type': target['database_type'],
+                        'lifecycle_state': target['lifecycle_state'],
+                        'lifecycle_details': target['lifecycle_details'],
+                        'time_created': target['time_created'],
+                        'associated_resource_ids': str(','.join(x for x in target['associated_resource_ids'])),
+                        'associated_resource_names': str(','.join(x for x in target['associated_resource_names'])),
+                        'freeform_tags': self.__get_freeform_tags(target['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(target['defined_tags']),
+                        'global_ip_address': config['data_safe_nat_gateway_ip_address'],
+                        'global_is_paid_usage': config['is_paid_usage'],
+                        'global_is_enabled': config['is_enabled'],
+                        'global_time_enabled': config['time_enabled'],
+                        'global_lifecycle_state': config['lifecycle_state'],
+                        'id': target['id']
+                    }
+
+                    self.csv_datasafe_targets.append(arr)
+                    self.__csv_add_service(arr, "Datasafe Target")
+
+                # Audit Profiled
+                issue_location = "audit_profiles"
+                for adt in ds['audit_profiles']:
+                    arr = {
+                        'region_name': region_name,
+                        'compartment_name': ds['compartment_name'],
+                        'compartment_path': ds['compartment_path'],
+                        'display_name': adt['display_name'],
+                        'description': adt['description'],
+                        'audit_collected_volume': adt['audit_collected_volume'],
+                        'is_override_global_retention_setting': adt['is_override_global_retention_setting'],
+                        'is_paid_usage_enabled': adt['is_paid_usage_enabled'],
+                        'online_months': adt['online_months'],
+                        'offline_months': adt['offline_months'],
+                        'target_id': adt['target_id'],
+                        'target_name': self.__csv_datasafe_get_target_info(ds['targets'], adt['target_id']),
+                        'time_created': adt['time_created'],
+                        'lifecycle_state': adt['lifecycle_state'],
+                        'lifecycle_details': adt['lifecycle_details'],
+                        'freeform_tags': self.__get_freeform_tags(adt['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(adt['defined_tags']),
+                        'id': adt['id']
+                    }
+
+                    self.csv_datasafe_audit_profiles.append(arr)
+                    self.__csv_add_service(arr, "Datasafe Audit Profiles")
+
+                # Audit Policies
+                issue_location = "audit_policies"
+                for adt in ds['audit_policies']:
+                    for spc in adt['audit_specifications']:
+                        arr = {
+                            'region_name': region_name,
+                            'compartment_name': ds['compartment_name'],
+                            'compartment_path': ds['compartment_path'],
+                            'display_name': adt['display_name'],
+                            'description': adt['description'],
+                            'is_data_safe_service_account_excluded': adt['is_data_safe_service_account_excluded'],
+
+                            'audit_policy_category': spc['audit_policy_category'],
+                            'audit_policy_name': spc['audit_policy_name'],
+                            'database_policy_names': str(','.join(x for x in spc['database_policy_names'])),
+                            'enable_status': spc['enable_status'],
+                            'enabled_entities': spc['enabled_entities'],
+                            'is_created': spc['is_created'],
+                            'is_enabled_for_all_users': spc['is_enabled_for_all_users'],
+                            'is_seeded_in_data_safe': spc['is_seeded_in_data_safe'],
+                            'is_seeded_in_target': spc['is_seeded_in_target'],
+                            'is_view_only': spc['is_view_only'],
+                            'partially_enabled_msg': spc['partially_enabled_msg'],
+
+                            'time_created': adt['time_created'],
+                            'lifecycle_state': adt['lifecycle_state'],
+                            'lifecycle_details': adt['lifecycle_details'],
+                            'freeform_tags': self.__get_freeform_tags(adt['freeform_tags']),
+                            'defined_tags': self.__get_defined_tags(adt['defined_tags']),
+                            'id': adt['id']
+                        }
+
+                        self.csv_datasafe_audit_policies.append(arr)
+
+                # Alert Policies
+                issue_location = "alert_policies"
+                for adt in ds['alert_policies']:
+                    arr = {
+                        'region_name': region_name,
+                        'compartment_name': ds['compartment_name'],
+                        'compartment_path': ds['compartment_path'],
+                        'display_name': adt['display_name'],
+                        'description': adt['description'],
+                        'alert_policy_type': adt['alert_policy_type'],
+                        'severity': adt['severity'],
+                        'is_user_defined': adt['is_user_defined'],
+                        'time_created': adt['time_created'],
+                        'lifecycle_state': adt['lifecycle_state'],
+                        'freeform_tags': self.__get_freeform_tags(adt['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(adt['defined_tags']),
+                        'id': adt['id']
+                    }
+
+                    self.csv_datasafe_alert_profiles.append(arr)
+
+                # Connectors
+                issue_location = "on_prem_connectors"
+                for adt in ds['on_prem_connectors']:
+                    arr = {
+                        'region_name': region_name,
+                        'compartment_name': ds['compartment_name'],
+                        'compartment_path': ds['compartment_path'],
+                        'type': "On Prem Connector",
+                        'display_name': adt['display_name'],
+                        'description': adt['description'],
+                        'time_created': adt['time_created'],
+                        'lifecycle_state': adt['lifecycle_state'],
+                        'lifecycle_details': adt['lifecycle_details'],
+                        'freeform_tags': self.__get_freeform_tags(adt['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(adt['defined_tags']),
+                        'id': adt['id']
+                    }
+
+                    self.csv_datasafe_connectors.append(arr)
+
+                # Connectors
+                issue_location = "private_endpoints"
+                for adt in ds['private_endpoints']:
+                    arr = {
+                        'region_name': region_name,
+                        'compartment_name': ds['compartment_name'],
+                        'compartment_path': ds['compartment_path'],
+                        'type': "Private End Point",
+                        'display_name': adt['display_name'],
+                        'description': adt['description'],
+                        'time_created': adt['time_created'],
+                        'lifecycle_state': adt['lifecycle_state'],
+                        'lifecycle_details': adt['lifecycle_details'],
+                        'subnet_id': adt['subnet_id'],
+                        'subnet_name': adt['subnet_name'],
+                        'vcn_id': adt['vcn_id'],
+                        'freeform_tags': self.__get_freeform_tags(adt['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(adt['defined_tags']),
+                        'id': adt['id']
+                    }
+
+                    self.csv_datasafe_connectors.append(arr)
+
+                # User Assesments
+                issue_location = "user_assessments"
+                for adt in ds['user_assessments']:
+                    stats = adt['statistics']
+                    arr = {
+                        'region_name': region_name,
+                        'compartment_name': ds['compartment_name'],
+                        'compartment_path': ds['compartment_path'],
+                        'display_name': adt['display_name'],
+                        'description': adt['description'],
+                        'ignored_assessment_ids': str(','.join(x for x in adt['ignored_assessment_ids'])),
+                        'ignored_targets': str(','.join(x for x in adt['ignored_targets'])),
+                        'is_baseline': adt['is_baseline'],
+                        'is_deviated_from_baseline': adt['is_deviated_from_baseline'],
+                        'last_compared_baseline_id': adt['last_compared_baseline_id'],
+                        'schedule': adt['schedule'],
+                        'schedule_assessment_id': adt['schedule_assessment_id'],
+                        'stat_critical': str(stats['critical']) if 'critical' in stats else "",
+                        'stat_high': str(stats['high']) if 'high' in stats else "",
+                        'stat_medium': str(stats['medium']) if 'medium' in stats else "",
+                        'stat_low': str(stats['low']) if 'low' in stats else "",
+                        'triggered_by': adt['triggered_by'],
+                        'time_created': adt['time_created'],
+                        'lifecycle_state': adt['lifecycle_state'],
+                        'lifecycle_details': adt['lifecycle_details'],
+                        'freeform_tags': self.__get_freeform_tags(adt['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(adt['defined_tags']),
+                        'id': adt['id']
+                    }
+
+                    self.csv_datasafe_user_assessment.append(arr)
+
+                # Security Assesments
+                issue_location = "security_assessments"
+                for adt in ds['security_assessments']:
+                    stats = adt['statistics']
+                    arr = {
+                        'region_name': region_name,
+                        'compartment_name': ds['compartment_name'],
+                        'compartment_path': ds['compartment_path'],
+                        'display_name': adt['display_name'],
+                        'description': adt['description'],
+                        'ignored_assessment_ids': str(','.join(x for x in adt['ignored_assessment_ids'])),
+                        'ignored_target_ids': str(','.join(x for x in adt['ignored_target_ids'])),
+                        'is_baseline': adt['is_baseline'],
+                        'is_deviated_from_baseline': adt['is_deviated_from_baseline'],
+                        'last_compared_baseline_id': adt['last_compared_baseline_id'],
+                        'link': adt['link'],
+                        'schedule': adt['schedule'],
+                        'schedule_security_assessment_id': adt['schedule_security_assessment_id'],
+                        'stat_advisory': str(stats['advisory']) if 'advisory' in stats else "",
+                        'stat_deferred': str(stats['deferred']) if 'deferred' in stats else "",
+                        'stat_evaluate': str(stats['evaluate']) if 'evaluate' in stats else "",
+                        'stat_high': str(stats['high_risk']) if 'high_risk' in stats else "",
+                        'stat_medium': str(stats['medium_risk']) if 'medium_risk' in stats else "",
+                        'stat_low': str(stats['low_risk']) if 'low_risk' in stats else "",
+                        'targets_count': str(stats['targets_count']) if 'targets_count' in stats else "",
+                        'triggered_by': adt['triggered_by'],
+                        'time_created': adt['time_created'],
+                        'lifecycle_state': adt['lifecycle_state'],
+                        'lifecycle_details': adt['lifecycle_details'],
+                        'freeform_tags': self.__get_freeform_tags(adt['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(adt['defined_tags']),
+                        'id': adt['id']
+                    }
+
+                    self.csv_datasafe_security_assessment.append(arr)
+
+        except Exception as e:
+            self.__print_error("__csv_datasafe:" + issue_location, e)
+
+    ##########################################################################
     # database
     ##########################################################################
 
@@ -7066,6 +7425,12 @@ class ShowOCICSV(object):
 
             if 'postgresql_standalone_backups' in list_databases:
                 self.__csv_database_postgresql_standalone_backups(region_name, list_databases['postgresql_standalone_backups'])
+
+            if 'datasafe_targets' in list_databases:
+                self.__csv_datasafe_targets(region_name, list_databases['datasafe_targets'])
+
+            if 'datasafe' in list_databases:
+                self.__csv_datasafe(region_name, list_databases['datasafe'])
 
         except Exception as e:
             self.__print_error("__print_database_main", e)
@@ -7881,6 +8246,15 @@ class ShowOCICSV(object):
             if 'kms_vaults' in data:
                 self.__csv_security_kms_vaults(region_name, data['kms_vaults'])
 
+            if 'certificates' in data:
+                self.__csv_certificate_certificates(region_name, data['certificates'])
+
+            if 'certificate_authorities' in data:
+                self.__csv_certificate_authorities(region_name, data['certificate_authorities'])
+
+            if 'certificate_ca_bundles' in data:
+                self.__csv_certificate_ca_bundles(region_name, data['certificate_ca_bundles'])
+
         except Exception as e:
             self.__print_error("__csv_security_main", e)
 
@@ -7919,6 +8293,175 @@ class ShowOCICSV(object):
 
         except Exception as e:
             self.__print_error("__csv_security_bastions", e)
+
+    ##########################################################################
+    # Certificates
+    ##########################################################################
+    def __csv_certificate_certificates(self, region_name, certs):
+        try:
+
+            if len(certs) == 0:
+                return
+
+            if certs:
+                for ar in certs:
+
+                    data = {
+                        'region_name': region_name,
+                        'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
+                        'type': 'Certificate',
+                        'name': ar['name'],
+                        'description': ar['description'],
+                        'config_type': ar['config_type'],
+                        'time_created': ar['time_created'],
+                        'time_of_deletion': ar['time_of_deletion'],
+                        'certificate_rules': str(','.join(x['rule_type'] + ":" + x['renewal_interval'] + ":" + x['advance_renewal_period'] for x in ar['certificate_rules'])),
+                        'current_certificate_id': ar['current_certificate_id'],
+                        'current_serial_number': ar['current_serial_number'],
+                        'current_time_created': ar['current_time_created'],
+                        'current_version_number': ar['current_version_number'],
+                        'current_issuer_ca_version_number': ar['current_issuer_ca_version_number'],
+                        'current_version_name': ar['current_version_name'],
+                        'current_time_of_deletion': ar['current_time_of_deletion'],
+                        'current_validity_not_before': ar['current_validity_not_before'],
+                        'current_validity_not_after': ar['current_validity_not_after'],
+                        'current_time_of_revocation': ar['current_time_of_revocation'],
+                        'current_revocation_reason': ar['current_revocation_reason'],
+                        'common_name': ar['common_name'],
+                        'country': ar['country'],
+                        'domain_component': ar['domain_component'],
+                        'distinguished_name_qualifier': ar['distinguished_name_qualifier'],
+                        'generation_qualifier': ar['generation_qualifier'],
+                        'given_name': ar['given_name'],
+                        'locality_name': ar['locality_name'],
+                        'organization': ar['organization'],
+                        'organizational_unit': ar['organizational_unit'],
+                        'pseudonym': ar['pseudonym'],
+                        'serial_number': ar['serial_number'],
+                        'state_or_province_name': ar['state_or_province_name'],
+                        'street': ar['street'],
+                        'surname': ar['surname'],
+                        'user_id': ar['user_id'],
+                        'key_algorithm': ar['key_algorithm'],
+                        'signature_algorithm': ar['signature_algorithm'],
+                        'certificate_profile_type': ar['certificate_profile_type'],
+                        'lifecycle_state': ar['lifecycle_state'],
+                        'associated_resource_ids': ar['associated_resource_ids'],
+                        'associated_resource_names': ar['associated_resource_names'],
+                        'id': ar['id'],
+                        'kms_key_id': "",
+                        'issuer_certificate_authority_id': ar['issuer_certificate_authority_id'],
+                        'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(ar['defined_tags'])
+                    }
+
+                    self.csv_certificates.append(data)
+                    self.__csv_add_service(data, "Certificates")
+
+        except Exception as e:
+            self.__print_error("__csv_certificate_certificates", e)
+
+    ##########################################################################
+    # Certificates Authorities
+    ##########################################################################
+    def __csv_certificate_authorities(self, region_name, certs):
+        try:
+
+            if len(certs) == 0:
+                return
+
+            if certs:
+                for ar in certs:
+
+                    data = {
+                        'region_name': region_name,
+                        'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
+                        'type': 'Certificate Authorities',
+                        'name': ar['name'],
+                        'description': ar['description'],
+                        'config_type': ar['config_type'],
+                        'time_created': ar['time_created'],
+                        'time_of_deletion': ar['time_of_deletion'],
+                        'certificate_rules': str(','.join(x['rule_type'] + ":" + x['leaf_certificate_max_validity_duration'] + ":" + x['certificate_authority_max_validity_duration'] for x in ar['certificate_authority_rules'])),
+                        'current_certificate_authority_id': ar['current_certificate_authority_id'],
+                        'current_issuer_ca_version_number': ar['current_issuer_ca_version_number'],
+                        'current_serial_number': ar['current_serial_number'],
+                        'current_time_created': ar['current_time_created'],
+                        'current_version_number': ar['current_version_number'],
+                        'current_version_name': ar['current_version_name'],
+                        'current_time_of_deletion': ar['current_time_of_deletion'],
+                        'current_validity_not_before': ar['current_validity_not_before'],
+                        'current_validity_not_after': ar['current_validity_not_after'],
+                        'current_time_of_revocation': ar['current_time_of_revocation'],
+                        'current_revocation_reason': ar['current_revocation_reason'],
+                        'common_name': ar['common_name'],
+                        'country': ar['country'],
+                        'domain_component': ar['domain_component'],
+                        'distinguished_name_qualifier': ar['distinguished_name_qualifier'],
+                        'generation_qualifier': ar['generation_qualifier'],
+                        'given_name': ar['given_name'],
+                        'locality_name': ar['locality_name'],
+                        'organization': ar['organization'],
+                        'organizational_unit': ar['organizational_unit'],
+                        'pseudonym': ar['pseudonym'],
+                        'serial_number': ar['serial_number'],
+                        'state_or_province_name': ar['state_or_province_name'],
+                        'street': ar['street'],
+                        'surname': ar['surname'],
+                        'user_id': ar['user_id'],
+                        'signature_algorithm': ar['signing_algorithm'],
+                        'key_algorithm': "",
+                        'certificate_profile_type': "",
+                        'lifecycle_state': ar['lifecycle_state'],
+                        'associated_resource_ids': ar['associated_resource_ids'],
+                        'associated_resource_names': ar['associated_resource_names'],
+                        'id': ar['id'],
+                        'kms_key_id': ar['kms_key_id'],
+                        'issuer_certificate_authority_id': ar['issuer_certificate_authority_id'],
+                        'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(ar['defined_tags'])
+                    }
+
+                    self.csv_certificates.append(data)
+                    self.__csv_add_service(data, "Certificates Authorities")
+
+        except Exception as e:
+            self.__print_error("__csv_certificate_authorities", e)
+
+    ##########################################################################
+    # Certificates CA Bundle
+    ##########################################################################
+    def __csv_certificate_ca_bundles(self, region_name, certs):
+        try:
+
+            if len(certs) == 0:
+                return
+
+            if certs:
+                for ar in certs:
+
+                    data = {
+                        'region_name': region_name,
+                        'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
+                        'name': ar['name'],
+                        'description': ar['description'],
+                        'time_created': ar['time_created'],
+                        'lifecycle_state': ar['lifecycle_state'],
+                        'associated_resource_ids': ar['associated_resource_ids'],
+                        'associated_resource_names': ar['associated_resource_names'],
+                        'id': ar['id'],
+                        'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(ar['defined_tags'])
+                    }
+
+                    self.csv_certificate_ca_bundle.append(data)
+                    self.__csv_add_service(data, "Certificates CA Bundle")
+
+        except Exception as e:
+            self.__print_error("__csv_certificate_ca_bundles", e)
 
     ##########################################################################
     # Cloud Guard
@@ -8208,7 +8751,7 @@ class ShowOCICSV(object):
             if len(waas_policies) == 0:
                 return
 
-            # Containers
+            # WAAS policies
             if waas_policies:
                 for ar in waas_policies:
 

@@ -66,6 +66,18 @@ class MySqlDatabaseUsageMetrics(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_status: str
 
+        :param is_heat_wave_enabled:
+            The value to assign to the is_heat_wave_enabled property of this MySqlDatabaseUsageMetrics.
+        :type is_heat_wave_enabled: bool
+
+        :param heat_wave_cluster_display_name:
+            The value to assign to the heat_wave_cluster_display_name property of this MySqlDatabaseUsageMetrics.
+        :type heat_wave_cluster_display_name: str
+
+        :param heat_wave_node_count:
+            The value to assign to the heat_wave_node_count property of this MySqlDatabaseUsageMetrics.
+        :type heat_wave_node_count: int
+
         :param metrics:
             The value to assign to the metrics property of this MySqlDatabaseUsageMetrics.
         :type metrics: list[oci.database_management.models.MySqlFleetMetricDefinition]
@@ -80,6 +92,9 @@ class MySqlDatabaseUsageMetrics(object):
             'database_version': 'str',
             'db_id': 'str',
             'database_status': 'str',
+            'is_heat_wave_enabled': 'bool',
+            'heat_wave_cluster_display_name': 'str',
+            'heat_wave_node_count': 'int',
             'metrics': 'list[MySqlFleetMetricDefinition]'
         }
 
@@ -92,6 +107,9 @@ class MySqlDatabaseUsageMetrics(object):
             'database_version': 'databaseVersion',
             'db_id': 'dbId',
             'database_status': 'databaseStatus',
+            'is_heat_wave_enabled': 'isHeatWaveEnabled',
+            'heat_wave_cluster_display_name': 'heatWaveClusterDisplayName',
+            'heat_wave_node_count': 'heatWaveNodeCount',
             'metrics': 'metrics'
         }
 
@@ -103,6 +121,9 @@ class MySqlDatabaseUsageMetrics(object):
         self._database_version = None
         self._db_id = None
         self._database_status = None
+        self._is_heat_wave_enabled = None
+        self._heat_wave_cluster_display_name = None
+        self._heat_wave_node_count = None
         self._metrics = None
 
     @property
@@ -304,6 +325,78 @@ class MySqlDatabaseUsageMetrics(object):
         if not value_allowed_none_or_none_sentinel(database_status, allowed_values):
             database_status = 'UNKNOWN_ENUM_VALUE'
         self._database_status = database_status
+
+    @property
+    def is_heat_wave_enabled(self):
+        """
+        Gets the is_heat_wave_enabled of this MySqlDatabaseUsageMetrics.
+        If HeatWave is enabled for this db system or not.
+
+
+        :return: The is_heat_wave_enabled of this MySqlDatabaseUsageMetrics.
+        :rtype: bool
+        """
+        return self._is_heat_wave_enabled
+
+    @is_heat_wave_enabled.setter
+    def is_heat_wave_enabled(self, is_heat_wave_enabled):
+        """
+        Sets the is_heat_wave_enabled of this MySqlDatabaseUsageMetrics.
+        If HeatWave is enabled for this db system or not.
+
+
+        :param is_heat_wave_enabled: The is_heat_wave_enabled of this MySqlDatabaseUsageMetrics.
+        :type: bool
+        """
+        self._is_heat_wave_enabled = is_heat_wave_enabled
+
+    @property
+    def heat_wave_cluster_display_name(self):
+        """
+        Gets the heat_wave_cluster_display_name of this MySqlDatabaseUsageMetrics.
+        The name of the HeatWave cluster.
+
+
+        :return: The heat_wave_cluster_display_name of this MySqlDatabaseUsageMetrics.
+        :rtype: str
+        """
+        return self._heat_wave_cluster_display_name
+
+    @heat_wave_cluster_display_name.setter
+    def heat_wave_cluster_display_name(self, heat_wave_cluster_display_name):
+        """
+        Sets the heat_wave_cluster_display_name of this MySqlDatabaseUsageMetrics.
+        The name of the HeatWave cluster.
+
+
+        :param heat_wave_cluster_display_name: The heat_wave_cluster_display_name of this MySqlDatabaseUsageMetrics.
+        :type: str
+        """
+        self._heat_wave_cluster_display_name = heat_wave_cluster_display_name
+
+    @property
+    def heat_wave_node_count(self):
+        """
+        Gets the heat_wave_node_count of this MySqlDatabaseUsageMetrics.
+        The number of nodes in the HeatWave cluster.
+
+
+        :return: The heat_wave_node_count of this MySqlDatabaseUsageMetrics.
+        :rtype: int
+        """
+        return self._heat_wave_node_count
+
+    @heat_wave_node_count.setter
+    def heat_wave_node_count(self, heat_wave_node_count):
+        """
+        Sets the heat_wave_node_count of this MySqlDatabaseUsageMetrics.
+        The number of nodes in the HeatWave cluster.
+
+
+        :param heat_wave_node_count: The heat_wave_node_count of this MySqlDatabaseUsageMetrics.
+        :type: int
+        """
+        self._heat_wave_node_count = heat_wave_node_count
 
     @property
     def metrics(self):

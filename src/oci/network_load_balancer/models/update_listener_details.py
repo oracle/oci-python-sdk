@@ -16,7 +16,7 @@ class UpdateListenerDetails(object):
     For more information about backend set configuration, see
     `Managing Network Load Balancer Listeners`__.
 
-    __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managinglisteners.htm
+    __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/Listeners/listener-management.htm
     """
 
     #: A constant which can be used with the protocol property of a UpdateListenerDetails.
@@ -147,10 +147,9 @@ class UpdateListenerDetails(object):
         """
         Gets the protocol of this UpdateListenerDetails.
         The protocol on which the listener accepts connection requests.
-        For public network load balancers, ANY protocol refers to TCP/UDP.
+        For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port.
         For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true).
-        To get a list of valid protocols, use the :func:`list_network_load_balancers_protocols`
-        operation.
+        \"ListNetworkLoadBalancersProtocols\" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.
 
         Example: `TCP`
 
@@ -167,10 +166,9 @@ class UpdateListenerDetails(object):
         """
         Sets the protocol of this UpdateListenerDetails.
         The protocol on which the listener accepts connection requests.
-        For public network load balancers, ANY protocol refers to TCP/UDP.
+        For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port.
         For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true).
-        To get a list of valid protocols, use the :func:`list_network_load_balancers_protocols`
-        operation.
+        \"ListNetworkLoadBalancersProtocols\" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.
 
         Example: `TCP`
 

@@ -88,7 +88,7 @@ class CreateRepositoryDetails(object):
     def name(self):
         """
         **[Required]** Gets the name of this CreateRepositoryDetails.
-        Unique name of a repository.
+        Name of the repository. Should be unique within the project.
 
 
         :return: The name of this CreateRepositoryDetails.
@@ -100,7 +100,7 @@ class CreateRepositoryDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateRepositoryDetails.
-        Unique name of a repository.
+        Name of the repository. Should be unique within the project.
 
 
         :param name: The name of this CreateRepositoryDetails.

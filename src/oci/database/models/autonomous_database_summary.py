@@ -676,6 +676,18 @@ class AutonomousDatabaseSummary(object):
             The value to assign to the key_store_wallet_name property of this AutonomousDatabaseSummary.
         :type key_store_wallet_name: str
 
+        :param auto_refresh_frequency_in_seconds:
+            The value to assign to the auto_refresh_frequency_in_seconds property of this AutonomousDatabaseSummary.
+        :type auto_refresh_frequency_in_seconds: int
+
+        :param auto_refresh_point_lag_in_seconds:
+            The value to assign to the auto_refresh_point_lag_in_seconds property of this AutonomousDatabaseSummary.
+        :type auto_refresh_point_lag_in_seconds: int
+
+        :param time_of_auto_refresh_start:
+            The value to assign to the time_of_auto_refresh_start property of this AutonomousDatabaseSummary.
+        :type time_of_auto_refresh_start: datetime
+
         :param supported_regions_to_clone_to:
             The value to assign to the supported_regions_to_clone_to property of this AutonomousDatabaseSummary.
         :type supported_regions_to_clone_to: list[str]
@@ -870,6 +882,9 @@ class AutonomousDatabaseSummary(object):
             'available_upgrade_versions': 'list[str]',
             'key_store_id': 'str',
             'key_store_wallet_name': 'str',
+            'auto_refresh_frequency_in_seconds': 'int',
+            'auto_refresh_point_lag_in_seconds': 'int',
+            'time_of_auto_refresh_start': 'datetime',
             'supported_regions_to_clone_to': 'list[str]',
             'customer_contacts': 'list[CustomerContact]',
             'time_local_data_guard_enabled': 'datetime',
@@ -983,6 +998,9 @@ class AutonomousDatabaseSummary(object):
             'available_upgrade_versions': 'availableUpgradeVersions',
             'key_store_id': 'keyStoreId',
             'key_store_wallet_name': 'keyStoreWalletName',
+            'auto_refresh_frequency_in_seconds': 'autoRefreshFrequencyInSeconds',
+            'auto_refresh_point_lag_in_seconds': 'autoRefreshPointLagInSeconds',
+            'time_of_auto_refresh_start': 'timeOfAutoRefreshStart',
             'supported_regions_to_clone_to': 'supportedRegionsToCloneTo',
             'customer_contacts': 'customerContacts',
             'time_local_data_guard_enabled': 'timeLocalDataGuardEnabled',
@@ -1095,6 +1113,9 @@ class AutonomousDatabaseSummary(object):
         self._available_upgrade_versions = None
         self._key_store_id = None
         self._key_store_wallet_name = None
+        self._auto_refresh_frequency_in_seconds = None
+        self._auto_refresh_point_lag_in_seconds = None
+        self._time_of_auto_refresh_start = None
         self._supported_regions_to_clone_to = None
         self._customer_contacts = None
         self._time_local_data_guard_enabled = None
@@ -3495,6 +3516,78 @@ class AutonomousDatabaseSummary(object):
         :type: str
         """
         self._key_store_wallet_name = key_store_wallet_name
+
+    @property
+    def auto_refresh_frequency_in_seconds(self):
+        """
+        Gets the auto_refresh_frequency_in_seconds of this AutonomousDatabaseSummary.
+        The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
+
+
+        :return: The auto_refresh_frequency_in_seconds of this AutonomousDatabaseSummary.
+        :rtype: int
+        """
+        return self._auto_refresh_frequency_in_seconds
+
+    @auto_refresh_frequency_in_seconds.setter
+    def auto_refresh_frequency_in_seconds(self, auto_refresh_frequency_in_seconds):
+        """
+        Sets the auto_refresh_frequency_in_seconds of this AutonomousDatabaseSummary.
+        The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
+
+
+        :param auto_refresh_frequency_in_seconds: The auto_refresh_frequency_in_seconds of this AutonomousDatabaseSummary.
+        :type: int
+        """
+        self._auto_refresh_frequency_in_seconds = auto_refresh_frequency_in_seconds
+
+    @property
+    def auto_refresh_point_lag_in_seconds(self):
+        """
+        Gets the auto_refresh_point_lag_in_seconds of this AutonomousDatabaseSummary.
+        The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
+
+
+        :return: The auto_refresh_point_lag_in_seconds of this AutonomousDatabaseSummary.
+        :rtype: int
+        """
+        return self._auto_refresh_point_lag_in_seconds
+
+    @auto_refresh_point_lag_in_seconds.setter
+    def auto_refresh_point_lag_in_seconds(self, auto_refresh_point_lag_in_seconds):
+        """
+        Sets the auto_refresh_point_lag_in_seconds of this AutonomousDatabaseSummary.
+        The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
+
+
+        :param auto_refresh_point_lag_in_seconds: The auto_refresh_point_lag_in_seconds of this AutonomousDatabaseSummary.
+        :type: int
+        """
+        self._auto_refresh_point_lag_in_seconds = auto_refresh_point_lag_in_seconds
+
+    @property
+    def time_of_auto_refresh_start(self):
+        """
+        Gets the time_of_auto_refresh_start of this AutonomousDatabaseSummary.
+        The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+
+
+        :return: The time_of_auto_refresh_start of this AutonomousDatabaseSummary.
+        :rtype: datetime
+        """
+        return self._time_of_auto_refresh_start
+
+    @time_of_auto_refresh_start.setter
+    def time_of_auto_refresh_start(self, time_of_auto_refresh_start):
+        """
+        Sets the time_of_auto_refresh_start of this AutonomousDatabaseSummary.
+        The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+
+
+        :param time_of_auto_refresh_start: The time_of_auto_refresh_start of this AutonomousDatabaseSummary.
+        :type: datetime
+        """
+        self._time_of_auto_refresh_start = time_of_auto_refresh_start
 
     @property
     def supported_regions_to_clone_to(self):

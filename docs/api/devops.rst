@@ -280,6 +280,7 @@ Devops
     oci.devops.models.GitlabTrigger
     oci.devops.models.GitlabTriggerCreateResult
     oci.devops.models.GitlabTriggerSummary
+    oci.devops.models.HelmCommandSpecArtifactSource
     oci.devops.models.HelmRepositoryDeployArtifactSource
     oci.devops.models.HelmSetValue
     oci.devops.models.HelmSetValueCollection

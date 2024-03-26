@@ -24,6 +24,7 @@ Monitoring
     oci.monitoring.models.AlarmDimensionStatesEntry
     oci.monitoring.models.AlarmHistoryCollection
     oci.monitoring.models.AlarmHistoryEntry
+    oci.monitoring.models.AlarmOverride
     oci.monitoring.models.AlarmStatusSummary
     oci.monitoring.models.AlarmSummary
     oci.monitoring.models.AlarmSuppression

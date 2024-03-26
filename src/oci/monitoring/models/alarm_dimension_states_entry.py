@@ -38,6 +38,10 @@ class AlarmDimensionStatesEntry(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
+        :param rule_name:
+            The value to assign to the rule_name property of this AlarmDimensionStatesEntry.
+        :type rule_name: str
+
         :param timestamp:
             The value to assign to the timestamp property of this AlarmDimensionStatesEntry.
         :type timestamp: datetime
@@ -46,17 +50,20 @@ class AlarmDimensionStatesEntry(object):
         self.swagger_types = {
             'dimensions': 'dict(str, str)',
             'status': 'str',
+            'rule_name': 'str',
             'timestamp': 'datetime'
         }
 
         self.attribute_map = {
             'dimensions': 'dimensions',
             'status': 'status',
+            'rule_name': 'ruleName',
             'timestamp': 'timestamp'
         }
 
         self._dimensions = None
         self._status = None
+        self._rule_name = None
         self._timestamp = None
 
     @property
@@ -116,6 +123,34 @@ class AlarmDimensionStatesEntry(object):
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status
+
+    @property
+    def rule_name(self):
+        """
+        **[Required]** Gets the rule_name of this AlarmDimensionStatesEntry.
+        Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
+        A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
+        Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see :func:`alarm_override`.
+
+
+        :return: The rule_name of this AlarmDimensionStatesEntry.
+        :rtype: str
+        """
+        return self._rule_name
+
+    @rule_name.setter
+    def rule_name(self, rule_name):
+        """
+        Sets the rule_name of this AlarmDimensionStatesEntry.
+        Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
+        A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
+        Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see :func:`alarm_override`.
+
+
+        :param rule_name: The rule_name of this AlarmDimensionStatesEntry.
+        :type: str
+        """
+        self._rule_name = rule_name
 
     @property
     def timestamp(self):
