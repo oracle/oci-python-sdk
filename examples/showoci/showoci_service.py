@@ -39,7 +39,7 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "24.03.19"
+    version = "24.04.02"
     oci_compatible_version = "2.119.1"
     thread_lock = threading.Lock()
 
@@ -1584,7 +1584,7 @@ class ShowOCIService(object):
                 # Load Identity Domains
                 print("")
                 showoci_domains = ShowOCIDomains(self.config, self.signer, self.flags)
-                domains_data = showoci_domains.load_identity_domains_main()
+                domains_data = showoci_domains.load_identity_domains_main(self.get_compartments())
                 self.error += showoci_domains.error
                 self.error_array += showoci_domains.error_array
                 self.warning += showoci_domains.warning
@@ -19434,12 +19434,18 @@ class ShowOCIDomains(object):
                 ext_credential = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_user_credentials_user
 
                 if ext_credential and not self.skip_identity_user_credential:
-                    user_value['api_keys'] = self.__get_api_keys(identity_domain_client, var.ocid, ext_credential)
-                    user_value['customer_secret_keys'] = self.__get_customer_secret_keys(identity_domain_client, var.ocid, ext_credential)
-                    user_value['auth_tokens'] = self.__get_auth_tokens(identity_domain_client, var.ocid, ext_credential)
-                    user_value['smtp_credentials'] = self.__get_smtp_credentials(identity_domain_client, var.ocid, ext_credential)
-                    user_value['o_auth2_client_credentials'] = self.__get_o_auth2_client_credentials(identity_domain_client, var.ocid, ext_credential)
-                    user_value['db_credentials'] = self.__get_user_db_credentials(identity_domain_client, var.ocid, ext_credential)
+                    if ext_credential.api_keys:
+                        user_value['api_keys'] = self.__get_api_keys(identity_domain_client, var.ocid, ext_credential)
+                    if ext_credential.customer_secret_keys:
+                        user_value['customer_secret_keys'] = self.__get_customer_secret_keys(identity_domain_client, var.ocid, ext_credential)
+                    if ext_credential.auth_tokens:
+                        user_value['auth_tokens'] = self.__get_auth_tokens(identity_domain_client, var.ocid, ext_credential)
+                    if ext_credential.smtp_credentials:
+                        user_value['smtp_credentials'] = self.__get_smtp_credentials(identity_domain_client, var.ocid, ext_credential)
+                    if ext_credential.o_auth2_client_credentials:
+                        user_value['o_auth2_client_credentials'] = self.__get_o_auth2_client_credentials(identity_domain_client, var.ocid, ext_credential)
+                    if ext_credential.db_credentials:
+                        user_value['db_credentials'] = self.__get_user_db_credentials(identity_domain_client, var.ocid, ext_credential)
 
                 data.append(user_value)
 
@@ -20396,7 +20402,7 @@ class ShowOCIDomains(object):
     ##########################################################################
     # Identity Module
     ##########################################################################
-    def load_identity_domains_main(self):
+    def load_identity_domains_main(self, compartments):
         try:
             print("Identity Domains...")
 
@@ -20409,87 +20415,90 @@ class ShowOCIDomains(object):
             if self.proxy:
                 identity_client.base_client.session.proxies = {'https': self.proxy}
 
-            # get tenancy id from the config file
-            tenant_id = self.config['tenancy']
+            # get compartments from the class
+            for compartment in compartments:
 
-            # get all domains
-            list_domains = identity_client.list_domains(
-                tenant_id,
-                lifecycle_state='ACTIVE',
-                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
-            ).data
+                # get all domains across all compartments
+                list_domains = identity_client.list_domains(
+                    compartment['id'],
+                    lifecycle_state='ACTIVE',
+                    retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                ).data
 
-            # oci.identity.models.DomainSummary
-            for domain in list_domains:
+                # oci.identity.models.DomainSummary
+                for domain in list_domains:
 
-                # Create Identity Domain Client
-                identity_domain_client = oci.identity_domains.IdentityDomainsClient(
-                    config=self.config,
-                    signer=self.signer,
-                    service_endpoint=domain.url,
-                    timeout=(self.connection_timeout, self.read_timeout)
-                )
-                if self.proxy:
-                    identity_domain_client.base_client.session.proxies = {'https': self.proxy}
+                    # Create Identity Domain Client
+                    identity_domain_client = oci.identity_domains.IdentityDomainsClient(
+                        config=self.config,
+                        signer=self.signer,
+                        service_endpoint=domain.url,
+                        timeout=(self.connection_timeout, self.read_timeout)
+                    )
+                    if self.proxy:
+                        identity_domain_client.base_client.session.proxies = {'https': self.proxy}
 
-                domain_data = {
-                    'id': self.get_value(domain.id),
-                    'display_name': self.get_value(domain.display_name),
-                    'description': self.get_value(domain.description),
-                    'url': self.get_value(domain.url),
-                    'home_region_url': self.get_value(domain.home_region_url),
-                    'home_region': self.get_value(domain.home_region),
-                    'type': self.get_value(domain.type),
-                    'license_type': self.get_value(domain.license_type),
-                    'is_hidden_on_login': self.get_value(domain.is_hidden_on_login),
-                    'time_created': self.get_value(domain.time_created)[0:16],
-                    'lifecycle_state': self.get_value(domain.lifecycle_state),
-                    'defined_tags': [] if domain.defined_tags is None else domain.defined_tags,
-                    'freeform_tags': [] if domain.freeform_tags is None else domain.freeform_tags,
-                    'replica_regions': str(','.join(x.region for x in domain.replica_regions)) if domain.replica_regions else "",
-                    'users': [],
-                    'groups': [],
-                    'dynamic_groups': [],
-                    'kmsi_setting': [],
-                    'identity_providers': [],
-                    'authentication_factor_settings': [],
-                    'password_policies': []
-                }
+                    domain_data = {
+                        'id': self.get_value(domain.id),
+                        'display_name': self.get_value(domain.display_name),
+                        'description': self.get_value(domain.description),
+                        'url': self.get_value(domain.url),
+                        'home_region_url': self.get_value(domain.home_region_url),
+                        'home_region': self.get_value(domain.home_region),
+                        'type': self.get_value(domain.type),
+                        'license_type': self.get_value(domain.license_type),
+                        'is_hidden_on_login': self.get_value(domain.is_hidden_on_login),
+                        'time_created': self.get_value(domain.time_created)[0:16],
+                        'lifecycle_state': self.get_value(domain.lifecycle_state),
+                        'defined_tags': [] if domain.defined_tags is None else domain.defined_tags,
+                        'freeform_tags': [] if domain.freeform_tags is None else domain.freeform_tags,
+                        'replica_regions': str(','.join(x.region for x in domain.replica_regions)) if domain.replica_regions else "",
+                        'users': [],
+                        'groups': [],
+                        'dynamic_groups': [],
+                        'kmsi_setting': [],
+                        'identity_providers': [],
+                        'authentication_factor_settings': [],
+                        'password_policies': [],
+                        'compartment_name': str(compartment['name']),
+                        'compartment_id': str(compartment['id']),
+                        'compartment_path': str(compartment['path'])
+                    }
 
-                ##########################
-                # if serial execution
-                ##########################
-                if self.skip_threads:
-                    domain_data['users'] = self.__load_identity_domain_users(identity_domain_client, domain.display_name)
-                    domain_data['groups'] = self.__load_identity_domain_groups(identity_domain_client, domain.display_name)
-                    domain_data['dynamic_groups'] = self.__load_identity_domain_dynamic_resource_groups(identity_domain_client, domain.display_name)
-                    domain_data['kmsi_setting'] = self.__load_identity_domain_kmsi_setting(identity_domain_client, domain.display_name)
-                    domain_data['identity_providers'] = self.__load_identity_domain_identity_providers(identity_domain_client, domain.display_name)
-                    domain_data['authentication_factor_settings'] = self.__load_identity_domain_authentication_factor_settings(identity_domain_client, domain.display_name)
-                    domain_data['password_policies'] = self.__load_identity_domain_password_policies(identity_domain_client, domain.display_name)
+                    ##########################
+                    # if serial execution
+                    ##########################
+                    if self.skip_threads:
+                        domain_data['users'] = self.__load_identity_domain_users(identity_domain_client, domain.display_name)
+                        domain_data['groups'] = self.__load_identity_domain_groups(identity_domain_client, domain.display_name)
+                        domain_data['dynamic_groups'] = self.__load_identity_domain_dynamic_resource_groups(identity_domain_client, domain.display_name)
+                        domain_data['kmsi_setting'] = self.__load_identity_domain_kmsi_setting(identity_domain_client, domain.display_name)
+                        domain_data['identity_providers'] = self.__load_identity_domain_identity_providers(identity_domain_client, domain.display_name)
+                        domain_data['authentication_factor_settings'] = self.__load_identity_domain_authentication_factor_settings(identity_domain_client, domain.display_name)
+                        domain_data['password_policies'] = self.__load_identity_domain_password_policies(identity_domain_client, domain.display_name)
 
-                ##########################
-                # if parallel execution
-                ##########################
-                else:
-                    with ThreadPoolExecutor(max_workers=8) as executor:
-                        future_users = executor.submit(self.__load_identity_domain_users, identity_domain_client, domain.display_name)
-                        future_groups = executor.submit(self.__load_identity_domain_groups, identity_domain_client, domain.display_name)
-                        future_dynamic_groups = executor.submit(self.__load_identity_domain_dynamic_resource_groups, identity_domain_client, domain.display_name)
-                        future_kmsi_setting = executor.submit(self.__load_identity_domain_kmsi_setting, identity_domain_client, domain.display_name)
-                        future_identity_providers = executor.submit(self.__load_identity_domain_identity_providers, identity_domain_client, domain.display_name)
-                        future_authentication_factor_settings = executor.submit(self.__load_identity_domain_authentication_factor_settings, identity_domain_client, domain.display_name)
-                        future_password_policies = executor.submit(self.__load_identity_domain_password_policies, identity_domain_client, domain.display_name)
+                    ##########################
+                    # if parallel execution
+                    ##########################
+                    else:
+                        with ThreadPoolExecutor(max_workers=8) as executor:
+                            future_users = executor.submit(self.__load_identity_domain_users, identity_domain_client, domain.display_name)
+                            future_groups = executor.submit(self.__load_identity_domain_groups, identity_domain_client, domain.display_name)
+                            future_dynamic_groups = executor.submit(self.__load_identity_domain_dynamic_resource_groups, identity_domain_client, domain.display_name)
+                            future_kmsi_setting = executor.submit(self.__load_identity_domain_kmsi_setting, identity_domain_client, domain.display_name)
+                            future_identity_providers = executor.submit(self.__load_identity_domain_identity_providers, identity_domain_client, domain.display_name)
+                            future_authentication_factor_settings = executor.submit(self.__load_identity_domain_authentication_factor_settings, identity_domain_client, domain.display_name)
+                            future_password_policies = executor.submit(self.__load_identity_domain_password_policies, identity_domain_client, domain.display_name)
 
-                        domain_data['users'] = next(as_completed([future_users])).result()
-                        domain_data['groups'] = next(as_completed([future_groups])).result()
-                        domain_data['dynamic_groups'] = next(as_completed([future_dynamic_groups])).result()
-                        domain_data['kmsi_setting'] = next(as_completed([future_kmsi_setting])).result()
-                        domain_data['identity_providers'] = next(as_completed([future_identity_providers])).result()
-                        domain_data['authentication_factor_settings'] = next(as_completed([future_authentication_factor_settings])).result()
-                        domain_data['password_policies'] = next(as_completed([future_password_policies])).result()
+                            domain_data['users'] = next(as_completed([future_users])).result()
+                            domain_data['groups'] = next(as_completed([future_groups])).result()
+                            domain_data['dynamic_groups'] = next(as_completed([future_dynamic_groups])).result()
+                            domain_data['kmsi_setting'] = next(as_completed([future_kmsi_setting])).result()
+                            domain_data['identity_providers'] = next(as_completed([future_identity_providers])).result()
+                            domain_data['authentication_factor_settings'] = next(as_completed([future_authentication_factor_settings])).result()
+                            domain_data['password_policies'] = next(as_completed([future_password_policies])).result()
 
-                self.data.append(domain_data)
+                    self.data.append(domain_data)
 
             print('')
             return self.data

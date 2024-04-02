@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Configuration(object):
     """
-    Cloud Guard configuration details of a tenancy.
+    Specifies several key settings for a Cloud Guard tenancy, identified by tenancy root compartment OCID.
     """
 
     #: A constant which can be used with the status property of a Configuration.

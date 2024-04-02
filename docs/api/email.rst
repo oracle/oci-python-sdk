@@ -20,6 +20,7 @@ Email
 
     oci.email.models.ChangeEmailDomainCompartmentDetails
     oci.email.models.ChangeSenderCompartmentDetails
+    oci.email.models.Configuration
     oci.email.models.CreateDkimDetails
     oci.email.models.CreateEmailDomainDetails
     oci.email.models.CreateSenderDetails

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PolicySummary(object):
     """
-    Global policy statement
+    A policy summary (PolicySummary object) contains a list of all current global policy statements (policy attributes).
     """
 
     def __init__(self, **kwargs):

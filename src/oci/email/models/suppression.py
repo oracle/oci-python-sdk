@@ -232,7 +232,9 @@ class Suppression(object):
         """
         Gets the time_created of this Suppression.
         The date and time the suppression was added in \"YYYY-MM-ddThh:mmZ\"
-        format with a Z offset, as defined by RFC 3339.
+        format with a Z offset, as defined by `RFC 3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_created of this Suppression.
@@ -245,7 +247,9 @@ class Suppression(object):
         """
         Sets the time_created of this Suppression.
         The date and time the suppression was added in \"YYYY-MM-ddThh:mmZ\"
-        format with a Z offset, as defined by RFC 3339.
+        format with a Z offset, as defined by `RFC 3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_created: The time_created of this Suppression.
@@ -259,7 +263,9 @@ class Suppression(object):
         Gets the time_last_suppressed of this Suppression.
         The last date and time the suppression prevented submission
         in \"YYYY-MM-ddThh:mmZ\"
-        format with a Z offset, as defined by RFC 3339.
+        format with a Z offset, as defined by `RFC 3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_last_suppressed of this Suppression.
@@ -273,7 +279,9 @@ class Suppression(object):
         Sets the time_last_suppressed of this Suppression.
         The last date and time the suppression prevented submission
         in \"YYYY-MM-ddThh:mmZ\"
-        format with a Z offset, as defined by RFC 3339.
+        format with a Z offset, as defined by `RFC 3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_last_suppressed: The time_last_suppressed of this Suppression.

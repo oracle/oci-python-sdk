@@ -461,7 +461,7 @@ class CloudGuardClient(object):
 
     def change_detector_recipe_compartment(self, detector_recipe_id, change_detector_recipe_compartment_details, **kwargs):
         """
-        Moves the DetectorRecipe from current compartment to another.
+        Moves the detector recipe (DetectorRecipe object), identified by detectorRecipeId, from the current compartment to another compartment.
 
 
         :param str detector_recipe_id: (required)
@@ -579,7 +579,7 @@ class CloudGuardClient(object):
 
     def change_managed_list_compartment(self, managed_list_id, change_managed_list_compartment_details, **kwargs):
         """
-        Moves the ManagedList from current compartment to another.
+        Moves the managed list (ManagedList object), identified by managedListId, from the current compartment to another compartment.
 
 
         :param str managed_list_id: (required)
@@ -1051,7 +1051,7 @@ class CloudGuardClient(object):
 
     def create_data_mask_rule(self, create_data_mask_rule_details, **kwargs):
         """
-        Creates a new Data Mask Rule Definition
+        Creates a new DataMaskRule object definition.
 
 
         :param oci.cloud_guard.models.CreateDataMaskRuleDetails create_data_mask_rule_details: (required)
@@ -1241,7 +1241,7 @@ class CloudGuardClient(object):
 
     def create_detector_recipe(self, create_detector_recipe_details, **kwargs):
         """
-        Creates a DetectorRecipe
+        Creates a new DetectorRecipe object.
 
 
         :param oci.cloud_guard.models.CreateDetectorRecipeDetails create_detector_recipe_details: (required)
@@ -1448,7 +1448,7 @@ class CloudGuardClient(object):
 
     def create_managed_list(self, create_managed_list_details, **kwargs):
         """
-        Creates a new ManagedList.
+        Creates a new ManagedList object.
 
 
         :param oci.cloud_guard.models.CreateManagedListDetails create_managed_list_details: (required)
@@ -2150,7 +2150,7 @@ class CloudGuardClient(object):
 
     def delete_data_mask_rule(self, data_mask_rule_id, **kwargs):
         """
-        Deletes a DataMaskRule identified by dataMaskRuleId
+        Deletes a DataMaskRule object, identified by dataMaskRuleId.
 
 
         :param str data_mask_rule_id: (required)
@@ -2366,7 +2366,7 @@ class CloudGuardClient(object):
 
     def delete_detector_recipe(self, detector_recipe_id, **kwargs):
         """
-        Deletes a DetectorRecipe identified by detectorRecipeId
+        Deletes a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
 
 
         :param str detector_recipe_id: (required)
@@ -2697,7 +2697,7 @@ class CloudGuardClient(object):
 
     def delete_managed_list(self, managed_list_id, **kwargs):
         """
-        Deletes a managed list identified by managedListId
+        Deletes a managed list identified by managedListId.
 
 
         :param str managed_list_id: (required)
@@ -3565,7 +3565,7 @@ class CloudGuardClient(object):
 
     def get_condition_metadata_type(self, condition_metadata_type_id, **kwargs):
         """
-        Returns ConditionType with its details.
+        Returns a ConditionMetatDataType object with its details.
 
 
         :param str condition_metadata_type_id: (required)
@@ -3679,7 +3679,7 @@ class CloudGuardClient(object):
 
     def get_configuration(self, compartment_id, **kwargs):
         """
-        GET Cloud Guard Configuration Details for a Tenancy.
+        Returns the configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
 
 
         :param str compartment_id: (required)
@@ -3770,7 +3770,7 @@ class CloudGuardClient(object):
 
     def get_data_mask_rule(self, data_mask_rule_id, **kwargs):
         """
-        Returns a DataMaskRule identified by DataMaskRuleId
+        Returns a DataMaskRule object, identified by DataMaskRuleId.
 
 
         :param str data_mask_rule_id: (required)
@@ -3962,7 +3962,7 @@ class CloudGuardClient(object):
 
     def get_detector(self, detector_id, **kwargs):
         """
-        Returns a Detector identified by detectorId.
+        Returns a Detector object, identified by detectorId.
 
 
         :param str detector_id: (required)
@@ -4058,7 +4058,7 @@ class CloudGuardClient(object):
 
     def get_detector_recipe(self, detector_recipe_id, **kwargs):
         """
-        Returns a DetectorRecipe identified by detectorRecipeId
+        Returns a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
 
 
         :param str detector_recipe_id: (required)
@@ -4154,7 +4154,7 @@ class CloudGuardClient(object):
 
     def get_detector_recipe_detector_rule(self, detector_recipe_id, detector_rule_id, **kwargs):
         """
-        Get DetectorRule by identifier
+        Returns a detector rule (DetectorRule object) identified by detectorRuleId.
 
 
         :param str detector_recipe_id: (required)
@@ -4254,7 +4254,7 @@ class CloudGuardClient(object):
 
     def get_detector_rule(self, detector_id, detector_rule_id, **kwargs):
         """
-        Returns a Detector Rule identified by detectorRuleId
+        Returns a detector rule (DetectorRule object) identified by detectorRuleId.
 
 
         :param str detector_id: (required)
@@ -4354,7 +4354,7 @@ class CloudGuardClient(object):
 
     def get_managed_list(self, managed_list_id, **kwargs):
         """
-        Returns a managed list identified by managedListId
+        Returns a managed list identified by managedListId.
 
 
         :param str managed_list_id: (required)
@@ -4450,7 +4450,7 @@ class CloudGuardClient(object):
 
     def get_problem(self, problem_id, **kwargs):
         """
-        Returns a Problems response
+        Returns the Problem object identified by a problemId.
 
 
         :param str problem_id: (required)
@@ -6014,7 +6014,7 @@ class CloudGuardClient(object):
 
     def list_condition_metadata_types(self, compartment_id, **kwargs):
         """
-        Returns a list of condition types.
+        Returns a list of ConditionMetadataType objects.
 
 
         :param str compartment_id: (required)
@@ -6157,7 +6157,7 @@ class CloudGuardClient(object):
 
     def list_data_mask_rules(self, compartment_id, **kwargs):
         """
-        Returns a list of all Data Mask Rules in the root 'compartmentId' passed.
+        Returns a list of all DataMaskRule objects in the specified compartmentId (OCID) and its subcompartments.
 
 
         :param str compartment_id: (required)
@@ -6713,7 +6713,7 @@ class CloudGuardClient(object):
 
     def list_detector_recipe_detector_rules(self, detector_recipe_id, compartment_id, **kwargs):
         """
-        Returns a list of DetectorRule associated with DetectorRecipe.
+        Returns a list of detector rules (DetectorRule objects) for a detector recipe (DetectorRecipe object), identified by detectorRecipeId.
 
 
         :param str detector_recipe_id: (required)
@@ -6876,7 +6876,7 @@ class CloudGuardClient(object):
 
     def list_detector_recipes(self, compartment_id, **kwargs):
         """
-        Returns a list of all Detector Recipes in a compartment
+        Returns a list of all detector recipes (DetectorRecipe objects) in a compartment, identified by compartmentId.
 
         The ListDetectorRecipes operation returns only the detector recipes in `compartmentId` passed.
         The list does not include any subcompartments of the compartmentId passed.
@@ -7071,7 +7071,7 @@ class CloudGuardClient(object):
 
     def list_detector_rules(self, detector_id, compartment_id, **kwargs):
         """
-        Returns a list of detector rules for the detectorId passed.
+        Returns a list of detector rules for the DetectorRecipe object identified by detectorId.
 
 
         :param str detector_id: (required)
@@ -7234,7 +7234,7 @@ class CloudGuardClient(object):
 
     def list_detectors(self, compartment_id, **kwargs):
         """
-        Returns detector catalog - list of detectors supported by Cloud Guard
+        Returns a detector catalog (DetectorCollection object) with a list of DetectorSummary objects.
 
 
         :param str compartment_id: (required)
@@ -7377,7 +7377,7 @@ class CloudGuardClient(object):
 
     def list_impacted_resources(self, problem_id, **kwargs):
         """
-        Returns a list of Impacted Resources for a CloudGuard Problem
+        Returns a list of impacted resources for a Cloud Guard problem with a specified problem ID.
 
 
         :param str problem_id: (required)
@@ -7517,7 +7517,7 @@ class CloudGuardClient(object):
 
     def list_managed_list_types(self, compartment_id, **kwargs):
         """
-        Returns all ManagedList types supported by Cloud Guard
+        Returns all managed list types (listType parameter) that Cloud Guard supports.
 
 
         :param str compartment_id: (required)
@@ -7660,7 +7660,7 @@ class CloudGuardClient(object):
 
     def list_managed_lists(self, compartment_id, **kwargs):
         """
-        Returns a list of ListManagedLists.
+        Returns a list of all ManagedList objects in a compartment, identified by compartmentId.
         The ListManagedLists operation returns only the managed lists in `compartmentId` passed.
         The list does not include any subcompartments of the compartmentId passed.
 
@@ -7695,7 +7695,7 @@ class CloudGuardClient(object):
         :param str list_type: (optional)
             The type of the ManagedList.
 
-            Allowed values are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC"
+            Allowed values are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION"
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -7785,7 +7785,7 @@ class CloudGuardClient(object):
                 )
 
         if 'list_type' in kwargs:
-            list_type_allowed_values = ["CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC"]
+            list_type_allowed_values = ["CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION"]
             if kwargs['list_type'] not in list_type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `list_type`, must be one of { list_type_allowed_values }"
@@ -7868,7 +7868,7 @@ class CloudGuardClient(object):
 
     def list_policies(self, compartment_id, **kwargs):
         """
-        Returns the list of global policy statements needed by Cloud Guard when enabling
+        Returns the list of global policy statements (policy attributes) needed to fully enable Cloud Guard.
 
 
         :param str compartment_id: (required)
@@ -7997,7 +7997,7 @@ class CloudGuardClient(object):
 
     def list_problem_endpoints(self, problem_id, **kwargs):
         """
-        Returns a list of endpoints associated with a cloud guard problem
+        Returns a list of endpoints associated with a problem, identified by problemId.
 
 
         :param str problem_id: (required)
@@ -8277,7 +8277,7 @@ class CloudGuardClient(object):
 
     def list_problem_histories(self, compartment_id, problem_id, **kwargs):
         """
-        Returns a list of Actions done on CloudGuard Problem
+        Returns a list of actions taken on a Cloud Guard problem.
 
 
         :param str compartment_id: (required)
@@ -8421,7 +8421,7 @@ class CloudGuardClient(object):
 
     def list_problems(self, compartment_id, **kwargs):
         """
-        Returns a list of all Problems identified by the Cloud Guard
+        Returns a list of all Problems identified by Cloud Guard which are currently in the database and meet the filtering criteria.
 
         The ListProblems operation returns only the problems in `compartmentId` passed.
         The list does not include any subcompartments of the compartmentId passed.
@@ -13374,7 +13374,7 @@ class CloudGuardClient(object):
 
     def request_summarized_activity_problems(self, compartment_id, **kwargs):
         """
-        Returns the summary of Activity type problems identified by cloud guard, for a given set of dimensions.
+        Returns the summary of problems generated by OCI Activity Detector rules, identified by parameters specified.
 
         The parameter `accessLevel` specifies whether to return only those compartments for which the
         requestor has INSPECT permissions on at least one resource directly
@@ -13522,7 +13522,7 @@ class CloudGuardClient(object):
 
     def request_summarized_problems(self, list_dimensions, compartment_id, **kwargs):
         """
-        Returns the number of problems identified by cloud guard, for a given set of dimensions.
+        Returns the number of problems matching the key-value pairs in dimensionMap.
 
         The parameter `accessLevel` specifies whether to return only those compartments for which the
         requestor has INSPECT permissions on at least one resource directly
@@ -14214,7 +14214,7 @@ class CloudGuardClient(object):
 
     def request_summarized_trend_problems(self, compartment_id, **kwargs):
         """
-        Returns the number of problems identified by cloud guard, for a given time period.
+        Returns a ProblemTrendAggregationCollection resource for a compartment, identified by compartmentId, for the specified time period. The ProblemTrendAggregationCollection resource contains a list of ProblemTrendAggregation resources.
 
         The parameter `accessLevel` specifies whether to return only those compartments for which the
         requestor has INSPECT permissions on at least one resource directly
@@ -14971,7 +14971,7 @@ class CloudGuardClient(object):
 
     def trigger_responder(self, problem_id, trigger_responder_details, **kwargs):
         """
-        push the problem to responder
+        Sends the problem identified by problemId to the responder engine, to be processed by rule that\u2019s identified by responderRuleId, in the TriggerResponderDetails resource that\u2019s passed.
 
 
         :param str problem_id: (required)
@@ -15089,8 +15089,7 @@ class CloudGuardClient(object):
 
     def update_bulk_problem_status(self, update_bulk_problem_status_details, **kwargs):
         """
-        Updates the statuses in bulk for a list of problems
-        The operation is atomic in nature
+        Changes the status for all problems listed in the problemIds array, passed through the UpdateBulkProblemStatusDetails resource, from the current status to the status set in UpdateBulkProblemStatusDetails.
 
 
         :param oci.cloud_guard.models.UpdateBulkProblemStatusDetails update_bulk_problem_status_details: (required)
@@ -15174,7 +15173,7 @@ class CloudGuardClient(object):
 
     def update_configuration(self, update_configuration_details, compartment_id, **kwargs):
         """
-        Enable/Disable Cloud Guard. The reporting region cannot be updated once created.
+        Update configuration details for a Cloud Guard tenancy, identified by root compartment OCID. The reporting region cannot be updated once created.
 
 
         :param oci.cloud_guard.models.UpdateConfigurationDetails update_configuration_details: (required)
@@ -15289,7 +15288,7 @@ class CloudGuardClient(object):
 
     def update_data_mask_rule(self, data_mask_rule_id, update_data_mask_rule_details, **kwargs):
         """
-        Updates a DataMaskRule identified by dataMaskRuleId
+        Updates a data mask rule (DataMaskRule object) identified by dataMaskRuleId.
 
 
         :param str data_mask_rule_id: (required)
@@ -15517,7 +15516,7 @@ class CloudGuardClient(object):
 
     def update_detector_recipe(self, detector_recipe_id, update_detector_recipe_details, **kwargs):
         """
-        Updates a detector recipe identified by detectorRecipeId
+        Updates a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
 
 
         :param str detector_recipe_id: (required)
@@ -15637,7 +15636,7 @@ class CloudGuardClient(object):
 
     def update_detector_recipe_detector_rule(self, detector_recipe_id, detector_rule_id, update_detector_recipe_detector_rule_details, **kwargs):
         """
-        Update the DetectorRule by identifier
+        Updates a detector rule (DetectorRule object) identified by detectorRuleId.
 
 
         :param str detector_recipe_id: (required)
@@ -15751,7 +15750,7 @@ class CloudGuardClient(object):
 
     def update_managed_list(self, managed_list_id, update_managed_list_details, **kwargs):
         """
-        Updates a managed list identified by managedListId
+        Updates a ManagedList object, identified by managedList.
 
 
         :param str managed_list_id: (required)
@@ -15871,7 +15870,7 @@ class CloudGuardClient(object):
 
     def update_problem_status(self, problem_id, update_problem_status_details, **kwargs):
         """
-        updates the problem details
+        Changes the current status of the problem, identified by problemId, to the status specified in the UpdateProblemStatusDetails resource that you pass.
 
 
         :param str problem_id: (required)

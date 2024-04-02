@@ -25,6 +25,10 @@ class UpdateNetworkLoadBalancerDetails(object):
     #: This constant has a value of "IPV4_AND_IPV6"
     NLB_IP_VERSION_IPV4_AND_IPV6 = "IPV4_AND_IPV6"
 
+    #: A constant which can be used with the nlb_ip_version property of a UpdateNetworkLoadBalancerDetails.
+    #: This constant has a value of "IPV6"
+    NLB_IP_VERSION_IPV6 = "IPV6"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateNetworkLoadBalancerDetails object with values from keyword arguments.
@@ -44,8 +48,16 @@ class UpdateNetworkLoadBalancerDetails(object):
 
         :param nlb_ip_version:
             The value to assign to the nlb_ip_version property of this UpdateNetworkLoadBalancerDetails.
-            Allowed values for this property are: "IPV4", "IPV4_AND_IPV6"
+            Allowed values for this property are: "IPV4", "IPV4_AND_IPV6", "IPV6"
         :type nlb_ip_version: str
+
+        :param subnet_ipv6_cidr:
+            The value to assign to the subnet_ipv6_cidr property of this UpdateNetworkLoadBalancerDetails.
+        :type subnet_ipv6_cidr: str
+
+        :param assigned_ipv6:
+            The value to assign to the assigned_ipv6 property of this UpdateNetworkLoadBalancerDetails.
+        :type assigned_ipv6: str
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateNetworkLoadBalancerDetails.
@@ -61,6 +73,8 @@ class UpdateNetworkLoadBalancerDetails(object):
             'is_preserve_source_destination': 'bool',
             'is_symmetric_hash_enabled': 'bool',
             'nlb_ip_version': 'str',
+            'subnet_ipv6_cidr': 'str',
+            'assigned_ipv6': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -70,6 +84,8 @@ class UpdateNetworkLoadBalancerDetails(object):
             'is_preserve_source_destination': 'isPreserveSourceDestination',
             'is_symmetric_hash_enabled': 'isSymmetricHashEnabled',
             'nlb_ip_version': 'nlbIpVersion',
+            'subnet_ipv6_cidr': 'subnetIpv6Cidr',
+            'assigned_ipv6': 'assignedIpv6',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -78,6 +94,8 @@ class UpdateNetworkLoadBalancerDetails(object):
         self._is_preserve_source_destination = None
         self._is_symmetric_hash_enabled = None
         self._nlb_ip_version = None
+        self._subnet_ipv6_cidr = None
+        self._assigned_ipv6 = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -169,7 +187,7 @@ class UpdateNetworkLoadBalancerDetails(object):
         Gets the nlb_ip_version of this UpdateNetworkLoadBalancerDetails.
         IP version associated with the NLB.
 
-        Allowed values for this property are: "IPV4", "IPV4_AND_IPV6"
+        Allowed values for this property are: "IPV4", "IPV4_AND_IPV6", "IPV6"
 
 
         :return: The nlb_ip_version of this UpdateNetworkLoadBalancerDetails.
@@ -187,12 +205,64 @@ class UpdateNetworkLoadBalancerDetails(object):
         :param nlb_ip_version: The nlb_ip_version of this UpdateNetworkLoadBalancerDetails.
         :type: str
         """
-        allowed_values = ["IPV4", "IPV4_AND_IPV6"]
+        allowed_values = ["IPV4", "IPV4_AND_IPV6", "IPV6"]
         if not value_allowed_none_or_none_sentinel(nlb_ip_version, allowed_values):
             raise ValueError(
                 f"Invalid value for `nlb_ip_version`, must be None or one of {allowed_values}"
             )
         self._nlb_ip_version = nlb_ip_version
+
+    @property
+    def subnet_ipv6_cidr(self):
+        """
+        Gets the subnet_ipv6_cidr of this UpdateNetworkLoadBalancerDetails.
+        IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+
+
+        :return: The subnet_ipv6_cidr of this UpdateNetworkLoadBalancerDetails.
+        :rtype: str
+        """
+        return self._subnet_ipv6_cidr
+
+    @subnet_ipv6_cidr.setter
+    def subnet_ipv6_cidr(self, subnet_ipv6_cidr):
+        """
+        Sets the subnet_ipv6_cidr of this UpdateNetworkLoadBalancerDetails.
+        IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+
+
+        :param subnet_ipv6_cidr: The subnet_ipv6_cidr of this UpdateNetworkLoadBalancerDetails.
+        :type: str
+        """
+        self._subnet_ipv6_cidr = subnet_ipv6_cidr
+
+    @property
+    def assigned_ipv6(self):
+        """
+        Gets the assigned_ipv6 of this UpdateNetworkLoadBalancerDetails.
+        IPv6 address to be assigned to the network load balancer being created.
+        This IP address has to be part of one of the prefixes supported by the subnet.
+        Example: \"2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789\"
+
+
+        :return: The assigned_ipv6 of this UpdateNetworkLoadBalancerDetails.
+        :rtype: str
+        """
+        return self._assigned_ipv6
+
+    @assigned_ipv6.setter
+    def assigned_ipv6(self, assigned_ipv6):
+        """
+        Sets the assigned_ipv6 of this UpdateNetworkLoadBalancerDetails.
+        IPv6 address to be assigned to the network load balancer being created.
+        This IP address has to be part of one of the prefixes supported by the subnet.
+        Example: \"2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789\"
+
+
+        :param assigned_ipv6: The assigned_ipv6 of this UpdateNetworkLoadBalancerDetails.
+        :type: str
+        """
+        self._assigned_ipv6 = assigned_ipv6
 
     @property
     def freeform_tags(self):

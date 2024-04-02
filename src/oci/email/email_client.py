@@ -22,12 +22,11 @@ missing = Sentinel("Missing")
 
 class EmailClient(object):
     """
-    API for the Email Delivery service. Use this API to send high-volume, application-generated
-    emails. For more information, see [Overview of the Email Delivery Service](/iaas/Content/Email/Concepts/overview.htm).
+    Use the Email Delivery API to do the necessary set up to send high-volume and application-generated emails through the OCI Email Delivery service.
+    For more information, see [Overview of the Email Delivery Service](/iaas/Content/Email/Concepts/overview.htm).
 
-
-    **Note:** Write actions (POST, UPDATE, DELETE) may take several minutes to propagate and be reflected by the API.
-    If a subsequent read request fails to reflect your changes, wait a few minutes and try again.
+     **Note:** Write actions (POST, UPDATE, DELETE) may take several minutes to propagate and be reflected by the API.
+     If a subsequent read request fails to reflect your changes, wait a few minutes and try again.
     """
 
     def __init__(self, config, **kwargs):
@@ -123,12 +122,12 @@ class EmailClient(object):
 
     def change_email_domain_compartment(self, email_domain_id, change_email_domain_compartment_details, **kwargs):
         """
-        Moves a email domain into a different compartment.
+        Moves an email domain into a different compartment.
         When provided, If-Match is checked against ETag value of the resource.
         For information about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
 
-        **Note:** All Dkim objects associated with this email domain will also be moved into the provided compartment.
+        **Note:** All DKIM objects associated with this email domain will also be moved into the provided compartment.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
@@ -354,10 +353,10 @@ class EmailClient(object):
 
     def create_dkim(self, create_dkim_details, **kwargs):
         """
-        Creates a new DKIM for a email domain.
-        This DKIM will sign all approved senders in the tenancy that are in this email domain.
+        Creates a new DKIM for an email domain.
+        This DKIM signs all approved senders in the tenancy that are in this email domain.
         Best security practices indicate to periodically rotate the DKIM that is doing the signing.
-        When a second DKIM is applied, all senders will seamlessly pick up the new key
+        When a second DKIM is applied, all senders seamlessly pick up the new key
         without interruption in signing.
 
 
@@ -730,7 +729,7 @@ class EmailClient(object):
         will stop signing the domain's outgoing mail.
         DKIM keys are left in DELETING state for about a day to allow DKIM signatures on
         in-transit mail to be validated.
-        Consider instead of deletion creating a new DKIM for this domain so the signing can be rotated to it.
+        Consider creating a new DKIM for this domain so the signing can be rotated to it instead of deletion.
 
 
         :param str dkim_id: (required)
@@ -833,7 +832,7 @@ class EmailClient(object):
 
     def delete_email_domain(self, email_domain_id, **kwargs):
         """
-        Deletes a email domain.
+        Deletes an email domain.
 
 
         :param str email_domain_id: (required)
@@ -1229,6 +1228,97 @@ class EmailClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_email_configuration(self, compartment_id, **kwargs):
+        """
+        Returns  email configuration associated with the specified compartment.
+
+
+        :param str compartment_id: (required)
+            The OCID for the compartment.
+
+        :param str opc_request_id: (optional)
+            The request ID for tracing from the system
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.email.models.Configuration`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/email/get_email_configuration.py.html>`__ to see an example of how to use get_email_configuration API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
+        resource_path = "/configuration"
+        method = "GET"
+        operation_name = "get_email_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Configuration/GetEmailConfiguration"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_email_configuration got unknown kwargs: {extra_kwargs!r}")
+
+        query_params = {
+            "compartmentId": compartment_id
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="Configuration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="Configuration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def get_email_domain(self, email_domain_id, **kwargs):
         """
         Retrieves the specified email domain.
@@ -1618,7 +1708,7 @@ class EmailClient(object):
 
     def list_dkims(self, email_domain_id, **kwargs):
         """
-        Lists DKIMs for a email domain.
+        Lists DKIMs for an email domain.
 
 
         :param str email_domain_id: (required)
@@ -2138,9 +2228,11 @@ class EmailClient(object):
             returned list (inclusive). Specifying this parameter without the
             corresponding `timeCreatedLessThan` parameter will retrieve suppressions created from the
             given `timeCreatedGreaterThanOrEqualTo` to the current time, in \"YYYY-MM-ddThh:mmZ\" format with a
-            Z offset, as defined by RFC 3339.
+            Z offset, as defined by `RFC 3339`__.
 
             **Example:** 2016-12-19T16:39:57.600Z
+
+            __ https://tools.ietf.org/html/rfc3339
 
         :param datetime time_created_less_than: (optional)
             Search for suppressions that were created within a specific date range,
@@ -2148,9 +2240,11 @@ class EmailClient(object):
             list (exclusive). Specifying this parameter without the corresponding
             `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all suppressions created before the
             specified end date, in \"YYYY-MM-ddThh:mmZ\" format with a Z offset, as
-            defined by RFC 3339.
+            defined by `RFC 3339`__.
 
             **Example:** 2016-12-19T16:39:57.600Z
+
+            __ https://tools.ietf.org/html/rfc3339
 
         :param str page: (optional)
             For list pagination. The value of the opc-next-page response header from the previous \"List\" call.
@@ -2751,7 +2845,7 @@ class EmailClient(object):
 
     def update_email_domain(self, email_domain_id, update_email_domain_details, **kwargs):
         """
-        Modifies a email domain.
+        Modifies an email domain.
 
 
         :param str email_domain_id: (required)

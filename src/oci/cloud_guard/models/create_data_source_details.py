@@ -15,6 +15,14 @@ class CreateDataSourceDetails(object):
     Creation of Data Source.
     """
 
+    #: A constant which can be used with the status property of a CreateDataSourceDetails.
+    #: This constant has a value of "ENABLED"
+    STATUS_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the status property of a CreateDataSourceDetails.
+    #: This constant has a value of "DISABLED"
+    STATUS_DISABLED = "DISABLED"
+
     #: A constant which can be used with the data_source_feed_provider property of a CreateDataSourceDetails.
     #: This constant has a value of "LOGGINGQUERY"
     DATA_SOURCE_FEED_PROVIDER_LOGGINGQUERY = "LOGGINGQUERY"
@@ -27,6 +35,11 @@ class CreateDataSourceDetails(object):
         :param display_name:
             The value to assign to the display_name property of this CreateDataSourceDetails.
         :type display_name: str
+
+        :param status:
+            The value to assign to the status property of this CreateDataSourceDetails.
+            Allowed values for this property are: "ENABLED", "DISABLED"
+        :type status: str
 
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateDataSourceDetails.
@@ -52,6 +65,7 @@ class CreateDataSourceDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'status': 'str',
             'compartment_id': 'str',
             'data_source_feed_provider': 'str',
             'data_source_details': 'DataSourceDetails',
@@ -61,6 +75,7 @@ class CreateDataSourceDetails(object):
 
         self.attribute_map = {
             'display_name': 'displayName',
+            'status': 'status',
             'compartment_id': 'compartmentId',
             'data_source_feed_provider': 'dataSourceFeedProvider',
             'data_source_details': 'dataSourceDetails',
@@ -69,6 +84,7 @@ class CreateDataSourceDetails(object):
         }
 
         self._display_name = None
+        self._status = None
         self._compartment_id = None
         self._data_source_feed_provider = None
         self._data_source_details = None
@@ -98,6 +114,37 @@ class CreateDataSourceDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def status(self):
+        """
+        Gets the status of this CreateDataSourceDetails.
+        Status of DataSource. Default value is DISABLED.
+
+        Allowed values for this property are: "ENABLED", "DISABLED"
+
+
+        :return: The status of this CreateDataSourceDetails.
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """
+        Sets the status of this CreateDataSourceDetails.
+        Status of DataSource. Default value is DISABLED.
+
+
+        :param status: The status of this CreateDataSourceDetails.
+        :type: str
+        """
+        allowed_values = ["ENABLED", "DISABLED"]
+        if not value_allowed_none_or_none_sentinel(status, allowed_values):
+            raise ValueError(
+                f"Invalid value for `status`, must be None or one of {allowed_values}"
+            )
+        self._status = status
 
     @property
     def compartment_id(self):

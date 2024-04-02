@@ -37,6 +37,10 @@ class CreateNetworkLoadBalancerDetails(object):
     #: This constant has a value of "IPV4_AND_IPV6"
     NLB_IP_VERSION_IPV4_AND_IPV6 = "IPV4_AND_IPV6"
 
+    #: A constant which can be used with the nlb_ip_version property of a CreateNetworkLoadBalancerDetails.
+    #: This constant has a value of "IPV6"
+    NLB_IP_VERSION_IPV6 = "IPV6"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateNetworkLoadBalancerDetails object with values from keyword arguments.
@@ -76,8 +80,20 @@ class CreateNetworkLoadBalancerDetails(object):
 
         :param nlb_ip_version:
             The value to assign to the nlb_ip_version property of this CreateNetworkLoadBalancerDetails.
-            Allowed values for this property are: "IPV4", "IPV4_AND_IPV6"
+            Allowed values for this property are: "IPV4", "IPV4_AND_IPV6", "IPV6"
         :type nlb_ip_version: str
+
+        :param subnet_ipv6_cidr:
+            The value to assign to the subnet_ipv6_cidr property of this CreateNetworkLoadBalancerDetails.
+        :type subnet_ipv6_cidr: str
+
+        :param assigned_private_ipv4:
+            The value to assign to the assigned_private_ipv4 property of this CreateNetworkLoadBalancerDetails.
+        :type assigned_private_ipv4: str
+
+        :param assigned_ipv6:
+            The value to assign to the assigned_ipv6 property of this CreateNetworkLoadBalancerDetails.
+        :type assigned_ipv6: str
 
         :param listeners:
             The value to assign to the listeners property of this CreateNetworkLoadBalancerDetails.
@@ -106,6 +122,9 @@ class CreateNetworkLoadBalancerDetails(object):
             'subnet_id': 'str',
             'network_security_group_ids': 'list[str]',
             'nlb_ip_version': 'str',
+            'subnet_ipv6_cidr': 'str',
+            'assigned_private_ipv4': 'str',
+            'assigned_ipv6': 'str',
             'listeners': 'dict(str, ListenerDetails)',
             'backend_sets': 'dict(str, BackendSetDetails)',
             'freeform_tags': 'dict(str, str)',
@@ -122,6 +141,9 @@ class CreateNetworkLoadBalancerDetails(object):
             'subnet_id': 'subnetId',
             'network_security_group_ids': 'networkSecurityGroupIds',
             'nlb_ip_version': 'nlbIpVersion',
+            'subnet_ipv6_cidr': 'subnetIpv6Cidr',
+            'assigned_private_ipv4': 'assignedPrivateIpv4',
+            'assigned_ipv6': 'assignedIpv6',
             'listeners': 'listeners',
             'backend_sets': 'backendSets',
             'freeform_tags': 'freeformTags',
@@ -137,6 +159,9 @@ class CreateNetworkLoadBalancerDetails(object):
         self._subnet_id = None
         self._network_security_group_ids = None
         self._nlb_ip_version = None
+        self._subnet_ipv6_cidr = None
+        self._assigned_private_ipv4 = None
+        self._assigned_ipv6 = None
         self._listeners = None
         self._backend_sets = None
         self._freeform_tags = None
@@ -410,7 +435,7 @@ class CreateNetworkLoadBalancerDetails(object):
         Gets the nlb_ip_version of this CreateNetworkLoadBalancerDetails.
         IP version associated with the NLB.
 
-        Allowed values for this property are: "IPV4", "IPV4_AND_IPV6"
+        Allowed values for this property are: "IPV4", "IPV4_AND_IPV6", "IPV6"
 
 
         :return: The nlb_ip_version of this CreateNetworkLoadBalancerDetails.
@@ -428,12 +453,92 @@ class CreateNetworkLoadBalancerDetails(object):
         :param nlb_ip_version: The nlb_ip_version of this CreateNetworkLoadBalancerDetails.
         :type: str
         """
-        allowed_values = ["IPV4", "IPV4_AND_IPV6"]
+        allowed_values = ["IPV4", "IPV4_AND_IPV6", "IPV6"]
         if not value_allowed_none_or_none_sentinel(nlb_ip_version, allowed_values):
             raise ValueError(
                 f"Invalid value for `nlb_ip_version`, must be None or one of {allowed_values}"
             )
         self._nlb_ip_version = nlb_ip_version
+
+    @property
+    def subnet_ipv6_cidr(self):
+        """
+        Gets the subnet_ipv6_cidr of this CreateNetworkLoadBalancerDetails.
+        IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+
+
+        :return: The subnet_ipv6_cidr of this CreateNetworkLoadBalancerDetails.
+        :rtype: str
+        """
+        return self._subnet_ipv6_cidr
+
+    @subnet_ipv6_cidr.setter
+    def subnet_ipv6_cidr(self, subnet_ipv6_cidr):
+        """
+        Sets the subnet_ipv6_cidr of this CreateNetworkLoadBalancerDetails.
+        IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+
+
+        :param subnet_ipv6_cidr: The subnet_ipv6_cidr of this CreateNetworkLoadBalancerDetails.
+        :type: str
+        """
+        self._subnet_ipv6_cidr = subnet_ipv6_cidr
+
+    @property
+    def assigned_private_ipv4(self):
+        """
+        Gets the assigned_private_ipv4 of this CreateNetworkLoadBalancerDetails.
+        Private IP address to be assigned to the network load balancer being created.
+        This IP address has to be in the CIDR range of the subnet where network load balancer is being created
+        Example: \"10.0.0.1\"
+
+
+        :return: The assigned_private_ipv4 of this CreateNetworkLoadBalancerDetails.
+        :rtype: str
+        """
+        return self._assigned_private_ipv4
+
+    @assigned_private_ipv4.setter
+    def assigned_private_ipv4(self, assigned_private_ipv4):
+        """
+        Sets the assigned_private_ipv4 of this CreateNetworkLoadBalancerDetails.
+        Private IP address to be assigned to the network load balancer being created.
+        This IP address has to be in the CIDR range of the subnet where network load balancer is being created
+        Example: \"10.0.0.1\"
+
+
+        :param assigned_private_ipv4: The assigned_private_ipv4 of this CreateNetworkLoadBalancerDetails.
+        :type: str
+        """
+        self._assigned_private_ipv4 = assigned_private_ipv4
+
+    @property
+    def assigned_ipv6(self):
+        """
+        Gets the assigned_ipv6 of this CreateNetworkLoadBalancerDetails.
+        IPv6 address to be assigned to the network load balancer being created.
+        This IP address has to be part of one of the prefixes supported by the subnet.
+        Example: \"2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789\"
+
+
+        :return: The assigned_ipv6 of this CreateNetworkLoadBalancerDetails.
+        :rtype: str
+        """
+        return self._assigned_ipv6
+
+    @assigned_ipv6.setter
+    def assigned_ipv6(self, assigned_ipv6):
+        """
+        Sets the assigned_ipv6 of this CreateNetworkLoadBalancerDetails.
+        IPv6 address to be assigned to the network load balancer being created.
+        This IP address has to be part of one of the prefixes supported by the subnet.
+        Example: \"2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789\"
+
+
+        :param assigned_ipv6: The assigned_ipv6 of this CreateNetworkLoadBalancerDetails.
+        :type: str
+        """
+        self._assigned_ipv6 = assigned_ipv6
 
     @property
     def listeners(self):

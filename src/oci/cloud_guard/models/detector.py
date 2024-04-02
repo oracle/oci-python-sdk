@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Detector(object):
     """
-    A single Detector
+    Information for a single detector category. For example, IAAS_ACTIVITY_DETECTOR or IAAS_CONFIGURATION_DETECTOR.
     """
 
     #: A constant which can be used with the lifecycle_state property of a Detector.

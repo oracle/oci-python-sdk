@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataMaskRule(object):
     """
-    Description of DataMaskRule.
+    A data mask rule specifies the conditions in which the value for a sensitive data field in the UI is to be hidden or displayed when viewed by specified groups of users. The DataMaskRule object contains the parameters for a data mask rule.
     """
 
     #: A constant which can be used with the data_mask_categories property of a DataMaskRule.
