@@ -84,6 +84,7 @@ API Reference
 * :doc:`Ekm <key_management/client/oci.key_management.EkmClient>`
 * :doc:`Em Warehouse <em_warehouse/client/oci.em_warehouse.EmWarehouseClient>`
 * :doc:`Email <email/client/oci.email.EmailClient>`
+* :doc:`Email Dp <email_data_plane/client/oci.email_data_plane.EmailDPClient>`
 * :doc:`Esxi Host <ocvp/client/oci.ocvp.EsxiHostClient>`
 * :doc:`Event <os_management/client/oci.os_management.EventClient>`
 * :doc:`Events <events/client/oci.events.EventsClient>`
@@ -307,6 +308,7 @@ API Reference
     dts
     em_warehouse
     email
+    email_data_plane
     events
     file_storage
     fleet_software_update

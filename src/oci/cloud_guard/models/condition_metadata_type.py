@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConditionMetadataType(object):
     """
-    condition type provided by cloud guard
+    The metadata definition of the requested condition type.
     """
 
     def __init__(self, **kwargs):

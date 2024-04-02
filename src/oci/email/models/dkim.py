@@ -434,7 +434,7 @@ class Dkim(object):
         """
         Gets the dns_subdomain_name of this Dkim.
         The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures.
-        It is usually created with a CNAME record set to the cnameRecordValue
+        It is usually created with a CNAME record set to the cnameRecordValue.
 
 
         :return: The dns_subdomain_name of this Dkim.
@@ -447,7 +447,7 @@ class Dkim(object):
         """
         Sets the dns_subdomain_name of this Dkim.
         The name of the DNS subdomain that must be provisioned to enable email recipients to verify DKIM signatures.
-        It is usually created with a CNAME record set to the cnameRecordValue
+        It is usually created with a CNAME record set to the cnameRecordValue.
 
 
         :param dns_subdomain_name: The dns_subdomain_name of this Dkim.
@@ -484,9 +484,9 @@ class Dkim(object):
         """
         Gets the txt_record_value of this Dkim.
         The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record.
-        This is used in cases where a CNAME can not be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry.
-        This can also be used by customers who have an existing procedure to directly provision TXT records for DKIM.
-        Be aware that many DNS APIs will require you to break this string into segments of less than 255 characters.
+        This is used in cases where a CNAME cannot be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry.
+        You can also use this if you have an existing procedure to directly provision TXT records for DKIM.
+        Many DNS APIs require you to break this string into segments of fewer than 255 characters.
 
 
         :return: The txt_record_value of this Dkim.
@@ -499,9 +499,9 @@ class Dkim(object):
         """
         Sets the txt_record_value of this Dkim.
         The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record.
-        This is used in cases where a CNAME can not be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry.
-        This can also be used by customers who have an existing procedure to directly provision TXT records for DKIM.
-        Be aware that many DNS APIs will require you to break this string into segments of less than 255 characters.
+        This is used in cases where a CNAME cannot be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry.
+        You can also use this if you have an existing procedure to directly provision TXT records for DKIM.
+        Many DNS APIs require you to break this string into segments of fewer than 255 characters.
 
 
         :param txt_record_value: The txt_record_value of this Dkim.

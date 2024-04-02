@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ActivityProblemAggregation(object):
     """
-    Provides the dimensions and their corresponding count.
+    Provides the parameters and their corresponding count.
     """
 
     def __init__(self, **kwargs):

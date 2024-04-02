@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DkimCollection(object):
     """
-    Results of a search. Contains boh DkimSummary items and other information, such as metadata.
+    Results of a search. Contains both DkimSummary items and other information, such as metadata.
     """
 
     def __init__(self, **kwargs):

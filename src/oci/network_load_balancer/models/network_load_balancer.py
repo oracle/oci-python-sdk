@@ -61,6 +61,10 @@ class NetworkLoadBalancer(object):
     #: This constant has a value of "IPV4_AND_IPV6"
     NLB_IP_VERSION_IPV4_AND_IPV6 = "IPV4_AND_IPV6"
 
+    #: A constant which can be used with the nlb_ip_version property of a NetworkLoadBalancer.
+    #: This constant has a value of "IPV6"
+    NLB_IP_VERSION_IPV6 = "IPV6"
+
     def __init__(self, **kwargs):
         """
         Initializes a new NetworkLoadBalancer object with values from keyword arguments.
@@ -90,7 +94,7 @@ class NetworkLoadBalancer(object):
 
         :param nlb_ip_version:
             The value to assign to the nlb_ip_version property of this NetworkLoadBalancer.
-            Allowed values for this property are: "IPV4", "IPV4_AND_IPV6", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IPV4", "IPV4_AND_IPV6", "IPV6", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type nlb_ip_version: str
 
@@ -357,7 +361,7 @@ class NetworkLoadBalancer(object):
         Gets the nlb_ip_version of this NetworkLoadBalancer.
         IP version associated with the NLB.
 
-        Allowed values for this property are: "IPV4", "IPV4_AND_IPV6", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IPV4", "IPV4_AND_IPV6", "IPV6", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -376,7 +380,7 @@ class NetworkLoadBalancer(object):
         :param nlb_ip_version: The nlb_ip_version of this NetworkLoadBalancer.
         :type: str
         """
-        allowed_values = ["IPV4", "IPV4_AND_IPV6"]
+        allowed_values = ["IPV4", "IPV4_AND_IPV6", "IPV6"]
         if not value_allowed_none_or_none_sentinel(nlb_ip_version, allowed_values):
             nlb_ip_version = 'UNKNOWN_ENUM_VALUE'
         self._nlb_ip_version = nlb_ip_version

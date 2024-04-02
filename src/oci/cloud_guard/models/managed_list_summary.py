@@ -63,6 +63,14 @@ class ManagedListSummary(object):
     #: This constant has a value of "GENERIC"
     LIST_TYPE_GENERIC = "GENERIC"
 
+    #: A constant which can be used with the list_type property of a ManagedListSummary.
+    #: This constant has a value of "FUSION_APPS_ROLE"
+    LIST_TYPE_FUSION_APPS_ROLE = "FUSION_APPS_ROLE"
+
+    #: A constant which can be used with the list_type property of a ManagedListSummary.
+    #: This constant has a value of "FUSION_APPS_PERMISSION"
+    LIST_TYPE_FUSION_APPS_PERMISSION = "FUSION_APPS_PERMISSION"
+
     #: A constant which can be used with the feed_provider property of a ManagedListSummary.
     #: This constant has a value of "CUSTOMER"
     FEED_PROVIDER_CUSTOMER = "CUSTOMER"
@@ -126,7 +134,7 @@ class ManagedListSummary(object):
 
         :param list_type:
             The value to assign to the list_type property of this ManagedListSummary.
-            Allowed values for this property are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type list_type: str
 
@@ -356,7 +364,7 @@ class ManagedListSummary(object):
         **[Required]** Gets the list_type of this ManagedListSummary.
         type of the list
 
-        Allowed values for this property are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -375,7 +383,7 @@ class ManagedListSummary(object):
         :param list_type: The list_type of this ManagedListSummary.
         :type: str
         """
-        allowed_values = ["CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC"]
+        allowed_values = ["CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION"]
         if not value_allowed_none_or_none_sentinel(list_type, allowed_values):
             list_type = 'UNKNOWN_ENUM_VALUE'
         self._list_type = list_type

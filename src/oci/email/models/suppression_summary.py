@@ -197,7 +197,9 @@ class SuppressionSummary(object):
         Gets the time_created of this SuppressionSummary.
         The date and time a recipient's email address was added to the
         suppression list, in \"YYYY-MM-ddThh:mmZ\" format with a Z offset, as
-        defined by RFC 3339.
+        defined by `RFC 3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_created of this SuppressionSummary.
@@ -211,7 +213,9 @@ class SuppressionSummary(object):
         Sets the time_created of this SuppressionSummary.
         The date and time a recipient's email address was added to the
         suppression list, in \"YYYY-MM-ddThh:mmZ\" format with a Z offset, as
-        defined by RFC 3339.
+        defined by `RFC 3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_created: The time_created of this SuppressionSummary.

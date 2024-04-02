@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ProblemTrendAggregation(object):
     """
-    Provides the dimensions and their corresponding time and count.
+    Provides aggregated information on trends for counts of problems by specified parameters.
     """
 
     def __init__(self, **kwargs):

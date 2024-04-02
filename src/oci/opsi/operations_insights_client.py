@@ -170,7 +170,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/{exadataInsightId}/actions/addMembers"
         method = "POST"
         operation_name = "add_exadata_insight_members"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/AddExadataInsightMembers"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -290,7 +290,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/{databaseInsightId}/actions/changeAutonomousDatabaseInsightAdvancedFeatures"
         method = "POST"
         operation_name = "change_autonomous_database_insight_advanced_features"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ChangeAutonomousDatabaseInsightAdvancedFeatures"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -410,7 +410,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubSources/{awrHubSourceId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_awr_hub_source_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/ChangeAwrHubSourceCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -530,7 +530,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/{databaseInsightId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_database_insight_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ChangeDatabaseInsightCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -642,7 +642,7 @@ class OperationsInsightsClient(object):
         resource_path = "/enterpriseManagerBridges/{enterpriseManagerBridgeId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_enterprise_manager_bridge_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/ChangeEnterpriseManagerBridgeCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -759,7 +759,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/{exadataInsightId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_exadata_insight_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/ChangeExadataInsightCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -879,7 +879,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/{hostInsightId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_host_insight_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ChangeHostInsightCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -999,7 +999,7 @@ class OperationsInsightsClient(object):
         resource_path = "/newsReports/{newsReportId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_news_report_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReports/ChangeNewsReportCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1121,7 +1121,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsPrivateEndpoints/{operationsInsightsPrivateEndpointId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_operations_insights_private_endpoint_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/ChangeOperationsInsightsPrivateEndpointCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1241,7 +1241,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouses/{operationsInsightsWarehouseId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_operations_insights_warehouse_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/ChangeOperationsInsightsWarehouseCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1363,7 +1363,7 @@ class OperationsInsightsClient(object):
         resource_path = "/opsiConfigurations/{opsiConfigurationId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_opsi_configuration_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/ChangeOpsiConfigurationCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1483,7 +1483,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/{databaseInsightId}/actions/changePeComanagedDatabaseInsightDetails"
         method = "POST"
         operation_name = "change_pe_comanaged_database_insight"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ChangePeComanagedDatabaseInsight"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1596,7 +1596,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs"
         method = "POST"
         operation_name = "create_awr_hub"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/CreateAwrHub"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1696,7 +1696,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubSources"
         method = "POST"
         operation_name = "create_awr_hub_source"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/CreateAwrHubSource"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1796,7 +1796,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights"
         method = "POST"
         operation_name = "create_database_insight"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/CreateDatabaseInsight"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1896,7 +1896,7 @@ class OperationsInsightsClient(object):
         resource_path = "/enterpriseManagerBridges"
         method = "POST"
         operation_name = "create_enterprise_manager_bridge"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/CreateEnterpriseManagerBridge"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1996,7 +1996,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights"
         method = "POST"
         operation_name = "create_exadata_insight"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/CreateExadataInsight"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2096,7 +2096,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights"
         method = "POST"
         operation_name = "create_host_insight"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/CreateHostInsight"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2196,7 +2196,7 @@ class OperationsInsightsClient(object):
         resource_path = "/newsReports"
         method = "POST"
         operation_name = "create_news_report"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReports/CreateNewsReport"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2297,7 +2297,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsPrivateEndpoints"
         method = "POST"
         operation_name = "create_operations_insights_private_endpoint"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/CreateOperationsInsightsPrivateEndpoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2399,7 +2399,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouses"
         method = "POST"
         operation_name = "create_operations_insights_warehouse"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/CreateOperationsInsightsWarehouse"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2500,7 +2500,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouseUsers"
         method = "POST"
         operation_name = "create_operations_insights_warehouse_user"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouseUsers/CreateOperationsInsightsWarehouseUser"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2619,7 +2619,7 @@ class OperationsInsightsClient(object):
         resource_path = "/opsiConfigurations"
         method = "POST"
         operation_name = "create_opsi_configuration"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/CreateOpsiConfiguration"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2754,7 +2754,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}"
         method = "DELETE"
         operation_name = "delete_awr_hub"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/DeleteAwrHub"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2861,7 +2861,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubObjects/awrHubSources/{awrHubSourceId}/o/{objectName}"
         method = "DELETE"
         operation_name = "delete_awr_hub_object"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubObjects/DeleteAwrHubObject"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2966,7 +2966,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubSources/{awrHubSourceId}"
         method = "DELETE"
         operation_name = "delete_awr_hub_source"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/DeleteAwrHubSource"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3070,7 +3070,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/{databaseInsightId}"
         method = "DELETE"
         operation_name = "delete_database_insight"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/DeleteDatabaseInsight"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3174,7 +3174,7 @@ class OperationsInsightsClient(object):
         resource_path = "/enterpriseManagerBridges/{enterpriseManagerBridgeId}"
         method = "DELETE"
         operation_name = "delete_enterprise_manager_bridge"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/DeleteEnterpriseManagerBridge"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3278,7 +3278,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/{exadataInsightId}"
         method = "DELETE"
         operation_name = "delete_exadata_insight"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/DeleteExadataInsight"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3382,7 +3382,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/{hostInsightId}"
         method = "DELETE"
         operation_name = "delete_host_insight"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/DeleteHostInsight"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3486,7 +3486,7 @@ class OperationsInsightsClient(object):
         resource_path = "/newsReports/{newsReportId}"
         method = "DELETE"
         operation_name = "delete_news_report"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReports/DeleteNewsReport"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3592,7 +3592,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsPrivateEndpoints/{operationsInsightsPrivateEndpointId}"
         method = "DELETE"
         operation_name = "delete_operations_insights_private_endpoint"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/DeleteOperationsInsightsPrivateEndpoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3699,7 +3699,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouses/{operationsInsightsWarehouseId}"
         method = "DELETE"
         operation_name = "delete_operations_insights_warehouse"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/DeleteOperationsInsightsWarehouse"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3803,7 +3803,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouseUsers/{operationsInsightsWarehouseUserId}"
         method = "DELETE"
         operation_name = "delete_operations_insights_warehouse_user"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouseUsers/DeleteOperationsInsightsWarehouseUser"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3909,7 +3909,7 @@ class OperationsInsightsClient(object):
         resource_path = "/opsiConfigurations/{opsiConfigurationId}"
         method = "DELETE"
         operation_name = "delete_opsi_configuration"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/DeleteOpsiConfiguration"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4021,7 +4021,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/{databaseInsightId}/actions/disableAutonomousDatabaseInsightAdvancedFeatures"
         method = "POST"
         operation_name = "disable_autonomous_database_insight_advanced_features"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/DisableAutonomousDatabaseInsightAdvancedFeatures"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4136,7 +4136,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubSources/{awrHubSourceId}/actions/disable"
         method = "POST"
         operation_name = "disable_awr_hub_source"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/DisableAwrHubSource"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4251,7 +4251,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/{databaseInsightId}/actions/disable"
         method = "POST"
         operation_name = "disable_database_insight"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/DisableDatabaseInsight"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4366,7 +4366,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/{exadataInsightId}/actions/disable"
         method = "POST"
         operation_name = "disable_exadata_insight"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/DisableExadataInsight"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4481,7 +4481,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/{hostInsightId}/actions/disable"
         method = "POST"
         operation_name = "disable_host_insight"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/DisableHostInsight"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4594,7 +4594,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouses/{operationsInsightsWarehouseId}/actions/downloadWarehouseWallet"
         method = "POST"
         operation_name = "download_operations_insights_warehouse_wallet"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/DownloadOperationsInsightsWarehouseWallet"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4714,7 +4714,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/{databaseInsightId}/actions/enableAutonomousDatabaseInsightAdvancedFeatures"
         method = "POST"
         operation_name = "enable_autonomous_database_insight_advanced_features"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/EnableAutonomousDatabaseInsightAdvancedFeatures"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4831,7 +4831,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubSources/{awrHubSourceId}/actions/enable"
         method = "POST"
         operation_name = "enable_awr_hub_source"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/EnableAwrHubSource"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4949,7 +4949,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/{databaseInsightId}/actions/enable"
         method = "POST"
         operation_name = "enable_database_insight"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/EnableDatabaseInsight"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5069,7 +5069,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/{exadataInsightId}/actions/enable"
         method = "POST"
         operation_name = "enable_exadata_insight"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/EnableExadataInsight"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5189,7 +5189,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/{hostInsightId}/actions/enable"
         method = "POST"
         operation_name = "enable_host_insight"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/EnableHostInsight"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5325,7 +5325,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrDatabaseReport"
         method = "GET"
         operation_name = "get_awr_database_report"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/GetAwrDatabaseReport"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5489,7 +5489,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrDatabaseSqlReport"
         method = "GET"
         operation_name = "get_awr_database_sql_report"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/GetAwrDatabaseSqlReport"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5615,7 +5615,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}"
         method = "GET"
         operation_name = "get_awr_hub"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/GetAwrHub"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5717,7 +5717,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubObjects/awrHubSources/{awrHubSourceId}/o/{objectName}"
         method = "GET"
         operation_name = "get_awr_hub_object"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubObjects/GetAwrHubObject"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5817,7 +5817,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubSources/{awrHubSourceId}"
         method = "GET"
         operation_name = "get_awr_hub_source"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/GetAwrHubSource"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5940,7 +5940,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrReport"
         method = "GET"
         operation_name = "get_awr_report"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/GetAwrReport"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6065,7 +6065,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/{databaseInsightId}"
         method = "GET"
         operation_name = "get_database_insight"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/GetDatabaseInsight"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6164,7 +6164,7 @@ class OperationsInsightsClient(object):
         resource_path = "/enterpriseManagerBridges/{enterpriseManagerBridgeId}"
         method = "GET"
         operation_name = "get_enterprise_manager_bridge"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/GetEnterpriseManagerBridge"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6263,7 +6263,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/{exadataInsightId}"
         method = "GET"
         operation_name = "get_exadata_insight"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/GetExadataInsight"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6362,7 +6362,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/{hostInsightId}"
         method = "GET"
         operation_name = "get_host_insight"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/GetHostInsight"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6461,7 +6461,7 @@ class OperationsInsightsClient(object):
         resource_path = "/newsReports/{newsReportId}"
         method = "GET"
         operation_name = "get_news_report"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReports/GetNewsReport"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6562,7 +6562,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsPrivateEndpoints/{operationsInsightsPrivateEndpointId}"
         method = "GET"
         operation_name = "get_operations_insights_private_endpoint"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/GetOperationsInsightsPrivateEndpoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6662,7 +6662,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouses/{operationsInsightsWarehouseId}"
         method = "GET"
         operation_name = "get_operations_insights_warehouse"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/GetOperationsInsightsWarehouse"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6761,7 +6761,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouseUsers/{operationsInsightsWarehouseUserId}"
         method = "GET"
         operation_name = "get_operations_insights_warehouse_user"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouseUsers/GetOperationsInsightsWarehouseUser"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6883,7 +6883,7 @@ class OperationsInsightsClient(object):
         resource_path = "/opsiConfigurations/{opsiConfigurationId}"
         method = "GET"
         operation_name = "get_opsi_configuration"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/GetOpsiConfiguration"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7025,7 +7025,7 @@ class OperationsInsightsClient(object):
         resource_path = "/opsiDataObjects/{opsiDataObjectIdentifier}"
         method = "GET"
         operation_name = "get_opsi_data_object"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiDataObjects/GetOpsiDataObject"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7131,7 +7131,7 @@ class OperationsInsightsClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/WorkRequests/GetWorkRequest"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7233,7 +7233,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubObjects/awrHubSources/{awrHubSourceId}/o/{objectName}"
         method = "HEAD"
         operation_name = "head_awr_hub_object"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubObjects/HeadAwrHubObject"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7355,7 +7355,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/actions/ingestAddmReports"
         method = "POST"
         operation_name = "ingest_addm_reports"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestAddmReports"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7482,7 +7482,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/actions/ingestDatabaseConfiguration"
         method = "POST"
         operation_name = "ingest_database_configuration"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestDatabaseConfiguration"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7604,7 +7604,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/actions/ingestHostConfiguration"
         method = "POST"
         operation_name = "ingest_host_configuration"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/IngestHostConfiguration"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7723,7 +7723,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/actions/ingestHostMetrics"
         method = "POST"
         operation_name = "ingest_host_metrics"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/IngestHostMetrics"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7853,7 +7853,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/actions/ingestSqlBucket"
         method = "POST"
         operation_name = "ingest_sql_bucket"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestSqlBucket"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7988,7 +7988,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/actions/ingestSqlPlanLines"
         method = "POST"
         operation_name = "ingest_sql_plan_lines"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestSqlPlanLines"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8118,7 +8118,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/actions/ingestSqlStatsMetric"
         method = "POST"
         operation_name = "ingest_sql_stats"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestSqlStats"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8252,7 +8252,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/actions/ingestSqlText"
         method = "POST"
         operation_name = "ingest_sql_text"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestSqlText"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8424,7 +8424,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/addmDbFindingCategories"
         method = "GET"
         operation_name = "list_addm_db_finding_categories"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbFindingCategories"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8639,7 +8639,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/addmDbFindingsTimeSeries"
         method = "GET"
         operation_name = "list_addm_db_findings_time_series"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbFindingsTimeSeries"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8843,7 +8843,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/addmDbParameterCategories"
         method = "GET"
         operation_name = "list_addm_db_parameter_categories"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbParameterCategories"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9039,7 +9039,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/addmDbRecommendationCategories"
         method = "GET"
         operation_name = "list_addm_db_recommendation_categories"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbRecommendationCategories"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9270,7 +9270,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/addmDbRecommendationsTimeSeries"
         method = "GET"
         operation_name = "list_addm_db_recommendations_time_series"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbRecommendationsTimeSeries"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9495,7 +9495,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/addmDbs"
         method = "GET"
         operation_name = "list_addm_dbs"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbs"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9677,7 +9677,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrDatabaseSnapshots"
         method = "GET"
         operation_name = "list_awr_database_snapshots"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/ListAwrDatabaseSnapshots"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9850,7 +9850,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrDatabases"
         method = "GET"
         operation_name = "list_awr_databases"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/ListAwrDatabases"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10026,7 +10026,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubObjects/awrHubSources/{awrHubSourceId}/o"
         method = "GET"
         operation_name = "list_awr_hub_objects"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubObjects/ListAwrHubObjects"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10207,7 +10207,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubSources"
         method = "GET"
         operation_name = "list_awr_hub_sources"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/ListAwrHubSources"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10401,7 +10401,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs"
         method = "GET"
         operation_name = "list_awr_hubs"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/ListAwrHubs"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10569,7 +10569,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrSnapshots"
         method = "GET"
         operation_name = "list_awr_snapshots"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/ListAwrSnapshots"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10791,7 +10791,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/databaseConfigurations"
         method = "GET"
         operation_name = "list_database_configurations"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListDatabaseConfigurations"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11016,7 +11016,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights"
         method = "GET"
         operation_name = "list_database_insights"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListDatabaseInsights"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11228,7 +11228,7 @@ class OperationsInsightsClient(object):
         resource_path = "/enterpriseManagerBridges"
         method = "GET"
         operation_name = "list_enterprise_manager_bridges"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/ListEnterpriseManagerBridges"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11423,7 +11423,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/exadataConfigurations"
         method = "GET"
         operation_name = "list_exadata_configurations"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/ListExadataConfigurations"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11606,7 +11606,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights"
         method = "GET"
         operation_name = "list_exadata_insights"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/ListExadataInsights"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11841,7 +11841,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/hostConfigurations"
         method = "GET"
         operation_name = "list_host_configurations"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ListHostConfigurations"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12057,7 +12057,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights"
         method = "GET"
         operation_name = "list_host_insights"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ListHostInsights"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12288,7 +12288,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/hostedEntities"
         method = "GET"
         operation_name = "list_hosted_entities"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ListHostedEntities"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12459,7 +12459,7 @@ class OperationsInsightsClient(object):
         resource_path = "/importableAgentEntities"
         method = "GET"
         operation_name = "list_importable_agent_entities"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ListImportableAgentEntities"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12609,7 +12609,7 @@ class OperationsInsightsClient(object):
         resource_path = "/importableComputeEntities"
         method = "GET"
         operation_name = "list_importable_compute_entities"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ListImportableComputeEntities"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12750,7 +12750,7 @@ class OperationsInsightsClient(object):
         resource_path = "/enterpriseManagerBridges/{enterpriseManagerBridgeId}/importableEnterpriseManagerEntities"
         method = "GET"
         operation_name = "list_importable_enterprise_manager_entities"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/ListImportableEnterpriseManagerEntities"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12909,7 +12909,7 @@ class OperationsInsightsClient(object):
         resource_path = "/newsReports"
         method = "GET"
         operation_name = "list_news_reports"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReport/ListNewsReports"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13100,7 +13100,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsPrivateEndpoints"
         method = "GET"
         operation_name = "list_operations_insights_private_endpoints"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/ListOperationsInsightsPrivateEndpoints"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13279,7 +13279,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouseUsers"
         method = "GET"
         operation_name = "list_operations_insights_warehouse_users"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouseUsers/ListOperationsInsightsWarehouseUsers"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13451,7 +13451,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouses"
         method = "GET"
         operation_name = "list_operations_insights_warehouses"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/ListOperationsInsightsWarehouses"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13623,7 +13623,7 @@ class OperationsInsightsClient(object):
         resource_path = "/opsiConfigurations"
         method = "GET"
         operation_name = "list_opsi_configurations"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/ListOpsiConfigurations"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13803,7 +13803,7 @@ class OperationsInsightsClient(object):
         resource_path = "/opsiDataObjects"
         method = "GET"
         operation_name = "list_opsi_data_objects"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiDataObjects/ListOpsiDataObjects"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13963,7 +13963,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/sqlPlans"
         method = "GET"
         operation_name = "list_sql_plans"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListSqlPlans"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14126,7 +14126,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/sqlSearches"
         method = "GET"
         operation_name = "list_sql_searches"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListSqlSearches"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14290,7 +14290,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/sqlTexts"
         method = "GET"
         operation_name = "list_sql_texts"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListSqlTexts"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14450,7 +14450,7 @@ class OperationsInsightsClient(object):
         resource_path = "/{warehouseType}/{warehouseId}/dataObjects"
         method = "GET"
         operation_name = "list_warehouse_data_objects"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiWarehouseDataObjects/ListWarehouseDataObjects"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14628,7 +14628,7 @@ class OperationsInsightsClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/WorkRequests/ListWorkRequestErrors"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14781,7 +14781,7 @@ class OperationsInsightsClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/WorkRequests/ListWorkRequestLogs"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14950,7 +14950,7 @@ class OperationsInsightsClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/WorkRequests/ListWorkRequests"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15100,7 +15100,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubObjects/awrHubSources/{awrHubSourceId}/o/{objectName}"
         method = "PUT"
         operation_name = "put_awr_hub_object"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubObjects/PutAwrHubObject"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15247,7 +15247,7 @@ class OperationsInsightsClient(object):
         resource_path = "/opsiDataObjects/actions/queryData"
         method = "POST"
         operation_name = "query_opsi_data_object_data"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiDataObjects/QueryOpsiDataObjectData"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15374,7 +15374,7 @@ class OperationsInsightsClient(object):
         resource_path = "/{warehouseType}/{warehouseId}/actions/queryData"
         method = "POST"
         operation_name = "query_warehouse_data_object_data"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiWarehouseDataObjects/QueryWarehouseDataObjectData"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15491,7 +15491,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouses/{operationsInsightsWarehouseId}/actions/rotateWarehouseWallet"
         method = "POST"
         operation_name = "rotate_operations_insights_warehouse_wallet"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/RotateOperationsInsightsWarehouseWallet"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15675,7 +15675,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/addmDbFindings"
         method = "GET"
         operation_name = "summarize_addm_db_findings"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbFindings"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15905,7 +15905,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/addmDbParameterChanges"
         method = "GET"
         operation_name = "summarize_addm_db_parameter_changes"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbParameterChanges"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16156,7 +16156,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/addmDbParameters"
         method = "GET"
         operation_name = "summarize_addm_db_parameters"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbParameters"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16427,7 +16427,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/addmDbRecommendations"
         method = "GET"
         operation_name = "summarize_addm_db_recommendations"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbRecommendations"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16647,7 +16647,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/addmDbSchemaObjects"
         method = "GET"
         operation_name = "summarize_addm_db_schema_objects"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbSchemaObjects"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16837,7 +16837,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/addmDbSqlStatements"
         method = "GET"
         operation_name = "summarize_addm_db_sql_statements"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbSqlStatements"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17011,7 +17011,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrDatabaseCpuUsages"
         method = "GET"
         operation_name = "summarize_awr_database_cpu_usages"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseCpuUsages"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17209,7 +17209,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrDatabaseMetrics"
         method = "GET"
         operation_name = "summarize_awr_database_metrics"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseMetrics"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17403,7 +17403,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrDatabaseParameterChanges"
         method = "GET"
         operation_name = "summarize_awr_database_parameter_changes"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseParameterChanges"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17621,7 +17621,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrDatabaseParameters"
         method = "GET"
         operation_name = "summarize_awr_database_parameters"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseParameters"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17825,7 +17825,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrDatabaseSnapshotRanges"
         method = "GET"
         operation_name = "summarize_awr_database_snapshot_ranges"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseSnapshotRanges"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18009,7 +18009,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrDatabaseSysstats"
         method = "GET"
         operation_name = "summarize_awr_database_sysstats"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseSysstats"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18188,7 +18188,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrDatabaseTopWaitEvents"
         method = "GET"
         operation_name = "summarize_awr_database_top_wait_events"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseTopWaitEvents"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18393,7 +18393,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrDatabaseWaitEventBuckets"
         method = "GET"
         operation_name = "summarize_awr_database_wait_event_buckets"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseWaitEventBuckets"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18594,7 +18594,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrDatabaseWaitEvents"
         method = "GET"
         operation_name = "summarize_awr_database_wait_events"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseWaitEvents"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18777,7 +18777,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrSourcesSummary"
         method = "GET"
         operation_name = "summarize_awr_sources_summaries"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrSourcesSummaries"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18943,7 +18943,7 @@ class OperationsInsightsClient(object):
         resource_path = "/opsiConfigurations/configurationItems"
         method = "GET"
         operation_name = "summarize_configuration_items"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/SummarizeConfigurationItems"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19190,7 +19190,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/resourceCapacityTrend"
         method = "GET"
         operation_name = "summarize_database_insight_resource_capacity_trend"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceCapacityTrend"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19498,7 +19498,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/resourceForecastTrend"
         method = "GET"
         operation_name = "summarize_database_insight_resource_forecast_trend"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceForecastTrend"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19804,7 +19804,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/resourceStatistics"
         method = "GET"
         operation_name = "summarize_database_insight_resource_statistics"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceStatistics"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20072,7 +20072,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/resourceUsageSummary"
         method = "GET"
         operation_name = "summarize_database_insight_resource_usage"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceUsage"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20318,7 +20318,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/resourceUsageTrend"
         method = "GET"
         operation_name = "summarize_database_insight_resource_usage_trend"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceUsageTrend"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20578,7 +20578,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/resourceUtilizationInsight"
         method = "GET"
         operation_name = "summarize_database_insight_resource_utilization_insight"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceUtilizationInsight"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20770,7 +20770,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/tablespaceUsageTrend"
         method = "GET"
         operation_name = "summarize_database_insight_tablespace_usage_trend"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightTablespaceUsageTrend"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20968,7 +20968,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/resourceCapacityTrend"
         method = "GET"
         operation_name = "summarize_exadata_insight_resource_capacity_trend"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceCapacityTrend"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21196,7 +21196,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/resourceCapacityTrendAggregated"
         method = "GET"
         operation_name = "summarize_exadata_insight_resource_capacity_trend_aggregated"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceCapacityTrendAggregated"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21447,7 +21447,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/resourceForecastTrend"
         method = "GET"
         operation_name = "summarize_exadata_insight_resource_forecast_trend"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceForecastTrend"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21713,7 +21713,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/resourceForecastTrendAggregated"
         method = "GET"
         operation_name = "summarize_exadata_insight_resource_forecast_trend_aggregated"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceForecastTrendAggregated"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21930,7 +21930,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/resourceStatistics"
         method = "GET"
         operation_name = "summarize_exadata_insight_resource_statistics"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceStatistics"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22165,7 +22165,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/resourceUsageSummary"
         method = "GET"
         operation_name = "summarize_exadata_insight_resource_usage"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceUsage"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22391,7 +22391,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/resourceUsageSummaryAggregated"
         method = "GET"
         operation_name = "summarize_exadata_insight_resource_usage_aggregated"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceUsageAggregated"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22604,7 +22604,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/resourceUtilizationInsight"
         method = "GET"
         operation_name = "summarize_exadata_insight_resource_utilization_insight"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceUtilizationInsight"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22762,7 +22762,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/exadataMembers"
         method = "GET"
         operation_name = "summarize_exadata_members"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataMembers"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22916,7 +22916,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/diskStatistics"
         method = "GET"
         operation_name = "summarize_host_insight_disk_statistics"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightDiskStatistics"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23077,7 +23077,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/hostRecommendation"
         method = "GET"
         operation_name = "summarize_host_insight_host_recommendation"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightHostRecommendation"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23244,7 +23244,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/networkUsageTrend"
         method = "GET"
         operation_name = "summarize_host_insight_network_usage_trend"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightNetworkUsageTrend"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23477,7 +23477,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/resourceCapacityTrend"
         method = "GET"
         operation_name = "summarize_host_insight_resource_capacity_trend"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceCapacityTrend"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23777,7 +23777,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/resourceForecastTrend"
         method = "GET"
         operation_name = "summarize_host_insight_resource_forecast_trend"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceForecastTrend"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24076,7 +24076,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/resourceStatistics"
         method = "GET"
         operation_name = "summarize_host_insight_resource_statistics"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceStatistics"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24335,7 +24335,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/resourceUsageSummary"
         method = "GET"
         operation_name = "summarize_host_insight_resource_usage"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceUsage"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24572,7 +24572,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/resourceUsageTrend"
         method = "GET"
         operation_name = "summarize_host_insight_resource_usage_trend"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceUsageTrend"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24823,7 +24823,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/resourceUtilizationInsight"
         method = "GET"
         operation_name = "summarize_host_insight_resource_utilization_insight"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceUtilizationInsight"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25014,7 +25014,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/storageUsageTrend"
         method = "GET"
         operation_name = "summarize_host_insight_storage_usage_trend"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightStorageUsageTrend"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25196,7 +25196,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/topProcessesUsage"
         method = "GET"
         operation_name = "summarize_host_insight_top_processes_usage"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightTopProcessesUsage"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25381,7 +25381,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/topProcessesUsageTrend"
         method = "GET"
         operation_name = "summarize_host_insight_top_processes_usage_trend"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightTopProcessesUsageTrend"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25503,7 +25503,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouses/{operationsInsightsWarehouseId}/resourceUsageSummary"
         method = "GET"
         operation_name = "summarize_operations_insights_warehouse_resource_usage"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/SummarizeOperationsInsightsWarehouseResourceUsage"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25692,7 +25692,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/sqlInsights"
         method = "GET"
         operation_name = "summarize_sql_insights"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlInsights"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25871,7 +25871,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/sqlPlanInsights"
         method = "GET"
         operation_name = "summarize_sql_plan_insights"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlPlanInsights"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26021,7 +26021,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/sqlResponseTimeDistributions"
         method = "GET"
         operation_name = "summarize_sql_response_time_distributions"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlResponseTimeDistributions"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26247,7 +26247,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/sqlStatistics"
         method = "GET"
         operation_name = "summarize_sql_statistics"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlStatistics"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26500,7 +26500,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/sqlStatisticsTimeSeries"
         method = "GET"
         operation_name = "summarize_sql_statistics_time_series"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlStatisticsTimeSeries"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26668,7 +26668,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/sqlStatisticsTimeSeriesByPlan"
         method = "GET"
         operation_name = "summarize_sql_statistics_time_series_by_plan"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlStatisticsTimeSeriesByPlan"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26783,7 +26783,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}"
         method = "PUT"
         operation_name = "update_awr_hub"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/UpdateAwrHub"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26892,7 +26892,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubSources/{awrHubSourceId}"
         method = "PUT"
         operation_name = "update_awr_hub_source"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/UpdateAwrHubSource"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27001,7 +27001,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/{databaseInsightId}"
         method = "PUT"
         operation_name = "update_database_insight"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/UpdateDatabaseInsight"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27110,7 +27110,7 @@ class OperationsInsightsClient(object):
         resource_path = "/enterpriseManagerBridges/{enterpriseManagerBridgeId}"
         method = "PUT"
         operation_name = "update_enterprise_manager_bridge"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/UpdateEnterpriseManagerBridge"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27219,7 +27219,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/{exadataInsightId}"
         method = "PUT"
         operation_name = "update_exadata_insight"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/UpdateExadataInsight"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27328,7 +27328,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/{hostInsightId}"
         method = "PUT"
         operation_name = "update_host_insight"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/UpdateHostInsight"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27437,7 +27437,7 @@ class OperationsInsightsClient(object):
         resource_path = "/newsReports/{newsReportId}"
         method = "PUT"
         operation_name = "update_news_report"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReports/UpdateNewsReport"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27548,7 +27548,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsPrivateEndpoints/{operationsInsightsPrivateEndpointId}"
         method = "PUT"
         operation_name = "update_operations_insights_private_endpoint"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/UpdateOperationsInsightsPrivateEndpoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27658,7 +27658,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouses/{operationsInsightsWarehouseId}"
         method = "PUT"
         operation_name = "update_operations_insights_warehouse"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/UpdateOperationsInsightsWarehouse"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27767,7 +27767,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouseUsers/{operationsInsightsWarehouseUserId}"
         method = "PUT"
         operation_name = "update_operations_insights_warehouse_user"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouseUsers/UpdateOperationsInsightsWarehouseUser"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27878,7 +27878,7 @@ class OperationsInsightsClient(object):
         resource_path = "/opsiConfigurations/{opsiConfigurationId}"
         method = "PUT"
         operation_name = "update_opsi_configuration"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/UpdateOpsiConfiguration"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [

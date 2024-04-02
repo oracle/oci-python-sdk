@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Problem(object):
     """
-    Problem Definition.
+    Problems are at the core of Cloud Guard\u2019s functionality. A Problem object is created whenever an action or a configuration on a resource triggers a rule in a detector that\u2019s attached to the target containing the compartment where the resource is located. Each Problem object contains all the details for a single problem. This is the information for the problem that appears on the Cloud Guard Problems page.
     """
 
     #: A constant which can be used with the risk_level property of a Problem.

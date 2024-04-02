@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.125.1 - 2024-04-02
+====================
+
+Added
+-----
+* Support for assigned private IP and single stack IPV6 feature for Network Load Balancer Service
+* Support for Configuration API in Email Delivery Service
+* Support for the status field in creating data source resource for Cloud Guard Service
+* Support for TLSv1.3 in Load Balancer Service
+* Support for sending mails via HTTPS for Email Delivery Service
+ 
+====================
 2.125.0 - 2024-03-26
 ====================
 

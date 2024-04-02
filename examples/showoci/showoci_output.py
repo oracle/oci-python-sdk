@@ -22,7 +22,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "24.03.19"
+    version = "24.04.02"
 
     ##########################################################################
     # spaces for align
@@ -242,9 +242,10 @@ class ShowOCIOutput(object):
 
             for domain in domains:
                 print(self.taba + domain['display_name'] + " - " + domain['description'] + " - Created: " + domain['time_created'])
-                print(self.tabs + "URL     : " + domain['url'])
-                print(self.tabs + "License : " + domain['license_type'])
-                print(self.tabs + "Type    : " + domain['type'])
+                print(self.tabs + "Compartment : " + domain['compartment_path'])
+                print(self.tabs + "URL         : " + domain['url'])
+                print(self.tabs + "License     : " + domain['license_type'])
+                print(self.tabs + "Type        : " + domain['type'])
                 print("")
 
             for domain in domains:
@@ -4745,7 +4746,10 @@ class ShowOCICSV(object):
                     'dynamic_groups': len(var['dynamic_groups']) if var['dynamic_groups'] else 0,
                     'kmsi_setting': len(var['kmsi_setting']) if var['kmsi_setting'] else 0,
                     'identity_providers': len(var['identity_providers']) if var['identity_providers'] else 0,
-                    'authentication_factor_settings': len(var['authentication_factor_settings']) if var['authentication_factor_settings'] else 0
+                    'authentication_factor_settings': len(var['authentication_factor_settings']) if var['authentication_factor_settings'] else 0,
+                    'compartment_id': var['compartment_id'],
+                    'compartment_path': var['compartment_path'],
+                    'compartment_name': var['compartment_name']
                 }
                 self.csv_identity_domains.append(data)
 
@@ -4880,13 +4884,13 @@ class ShowOCICSV(object):
                     'can_use_smtp_credentials': var['ext_capabilities']['can_use_smtp_credentials'],
                     'can_use_db_credentials': var['ext_capabilities']['can_use_db_credentials'],
                     'roles': str(', '.join(x['value'] + ":" + x['type'] for x in var['roles'])),
-                    'api_keys': str(', '.join(x['ocid'] for x in var['api_keys'])),
-                    'customer_secret_keys': str(', '.join(x['ocid'] for x in var['customer_secret_keys'])),
-                    'auth_tokens': str(', '.join(x['ocid'] for x in var['auth_tokens'])),
-                    'smtp_credentials': str(', '.join(x['ocid'] for x in var['smtp_credentials'])),
-                    'o_auth2_client_credentials': str(', '.join(x['ocid'] for x in var['o_auth2_client_credentials'])),
-                    'db_credentials': str(', '.join(x['ocid'] for x in var['db_credentials'])),
-                    'allow_self_change': str(', '.join(x['ocid'] for x in var['allow_self_change']))
+                    'api_keys': str(', '.join(x['ocid'] + ":" + x['time_created'] for x in var['api_keys'])),
+                    'customer_secret_keys': str(', '.join(x['ocid'] + ":" + x['time_created'] for x in var['customer_secret_keys'])),
+                    'auth_tokens': str(', '.join(x['ocid'] + ":" + x['time_created'] for x in var['auth_tokens'])),
+                    'smtp_credentials': str(', '.join(x['ocid'] + ":" + x['time_created'] for x in var['smtp_credentials'])),
+                    'o_auth2_client_credentials': str(', '.join(x['ocid'] + ":" + x['time_created'] for x in var['o_auth2_client_credentials'])),
+                    'db_credentials': str(', '.join(x['ocid'] + ":" + x['time_created'] for x in var['db_credentials'])),
+                    'allow_self_change': var['allow_self_change']
                 }
 
                 self.csv_identity_domains_users.append(data)

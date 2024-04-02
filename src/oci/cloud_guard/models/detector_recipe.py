@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DetectorRecipe(object):
     """
-    Details of Detector recipe
+    A detector recipe is a collection of rules that can be configured to trigger problems that appear on the Cloud Guard Problems page. A DetectorRecipe object contains settings for a specific detector recipe, plus a list of the detector rules (DetectorRecipeDetectorRule objects) belonging to the DetectorRecipe object.
     """
 
     #: A constant which can be used with the owner property of a DetectorRecipe.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class EmailDomainCollection(object):
     """
-    Results of an EmailDomain search. Contains boh EmailDomainSummary items and other information, such as metadata.
+    Results of an EmailDomain search. Contains both EmailDomainSummary items and other information, such as metadata.
     """
 
     def __init__(self, **kwargs):

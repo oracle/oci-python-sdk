@@ -56,6 +56,14 @@ class WorkRequestSummary(object):
     STATUS_IN_PROGRESS = "IN_PROGRESS"
 
     #: A constant which can be used with the status property of a WorkRequestSummary.
+    #: This constant has a value of "WAITING"
+    STATUS_WAITING = "WAITING"
+
+    #: A constant which can be used with the status property of a WorkRequestSummary.
+    #: This constant has a value of "NEEDS_ATTENTION"
+    STATUS_NEEDS_ATTENTION = "NEEDS_ATTENTION"
+
+    #: A constant which can be used with the status property of a WorkRequestSummary.
     #: This constant has a value of "FAILED"
     STATUS_FAILED = "FAILED"
 
@@ -84,7 +92,7 @@ class WorkRequestSummary(object):
 
         :param status:
             The value to assign to the status property of this WorkRequestSummary.
-            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "NEEDS_ATTENTION", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -187,7 +195,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the status of this WorkRequestSummary.
         Status of current work request.
 
-        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "NEEDS_ATTENTION", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -206,7 +214,7 @@ class WorkRequestSummary(object):
         :param status: The status of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
+        allowed_values = ["ACCEPTED", "IN_PROGRESS", "WAITING", "NEEDS_ATTENTION", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status
@@ -239,7 +247,7 @@ class WorkRequestSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this WorkRequestSummary.
-        The ocid of the compartment that contains the work request. Work requests should be scoped to
+        The OCID of the compartment that contains the work request. Work requests should be scoped to
         the same compartment as the resource the work request affects. If the work request affects multiple resources,
         and those resources are not in the same compartment, it is up to the service team to pick the primary
         resource whose compartment should be used
@@ -254,7 +262,7 @@ class WorkRequestSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this WorkRequestSummary.
-        The ocid of the compartment that contains the work request. Work requests should be scoped to
+        The OCID of the compartment that contains the work request. Work requests should be scoped to
         the same compartment as the resource the work request affects. If the work request affects multiple resources,
         and those resources are not in the same compartment, it is up to the service team to pick the primary
         resource whose compartment should be used

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagedListTypeSummary(object):
     """
-    Summary of the ManagedListType.
+    A managed list type summary (ManagedListTypeSummary object) contains summary information for a managed list type (ManagedListType object).
     """
 
     #: A constant which can be used with the lifecycle_state property of a ManagedListTypeSummary.

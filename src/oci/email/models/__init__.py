@@ -8,6 +8,7 @@ from __future__ import absolute_import
 
 from .change_email_domain_compartment_details import ChangeEmailDomainCompartmentDetails
 from .change_sender_compartment_details import ChangeSenderCompartmentDetails
+from .configuration import Configuration
 from .create_dkim_details import CreateDkimDetails
 from .create_email_domain_details import CreateEmailDomainDetails
 from .create_sender_details import CreateSenderDetails
@@ -38,6 +39,7 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 email_type_mapping = {
     "ChangeEmailDomainCompartmentDetails": ChangeEmailDomainCompartmentDetails,
     "ChangeSenderCompartmentDetails": ChangeSenderCompartmentDetails,
+    "Configuration": Configuration,
     "CreateDkimDetails": CreateDkimDetails,
     "CreateEmailDomainDetails": CreateEmailDomainDetails,
     "CreateSenderDetails": CreateSenderDetails,

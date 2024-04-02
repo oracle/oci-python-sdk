@@ -12,8 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class EmailDomainSummary(object):
     """
-    The properties that define a email domain.
-    A Email Domain contains configuration used to assert responsibility for emails sent from that domain.
+    The properties that define an email domain.
+    An email domain contains configuration used to assert responsibility for emails sent from that domain.
     """
 
     def __init__(self, **kwargs):
@@ -105,7 +105,7 @@ class EmailDomainSummary(object):
         **[Required]** Gets the name of this EmailDomainSummary.
         The name of the email domain in the Internet Domain Name System (DNS).
 
-        Example: `example.net`
+        Example: `mydomain.example.com`
 
 
         :return: The name of this EmailDomainSummary.
@@ -119,7 +119,7 @@ class EmailDomainSummary(object):
         Sets the name of this EmailDomainSummary.
         The name of the email domain in the Internet Domain Name System (DNS).
 
-        Example: `example.net`
+        Example: `mydomain.example.com`
 
 
         :param name: The name of this EmailDomainSummary.
@@ -241,7 +241,7 @@ class EmailDomainSummary(object):
     def description(self):
         """
         Gets the description of this EmailDomainSummary.
-        The description of a email domain.
+        The description of an email domain.
 
 
         :return: The description of this EmailDomainSummary.
@@ -253,7 +253,7 @@ class EmailDomainSummary(object):
     def description(self, description):
         """
         Sets the description of this EmailDomainSummary.
-        The description of a email domain.
+        The description of an email domain.
 
 
         :param description: The description of this EmailDomainSummary.

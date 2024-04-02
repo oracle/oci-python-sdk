@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ImpactedResourceSummary(object):
     """
-    Impacted Resource summary Definition.
+    A summary of detailed information on a resource that\u2019s been impacted by a detected problem.
     """
 
     def __init__(self, **kwargs):

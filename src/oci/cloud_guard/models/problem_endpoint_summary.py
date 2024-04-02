@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ProblemEndpointSummary(object):
     """
-    Problem endpoints summary.
+    Summary information for endpoints associated with a problem (Problem object).
     """
 
     def __init__(self, **kwargs):
