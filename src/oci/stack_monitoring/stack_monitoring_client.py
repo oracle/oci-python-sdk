@@ -653,7 +653,7 @@ class StackMonitoringClient(object):
         resource_path = "/monitoredResourceTasks/{monitoredResourceTaskId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_monitored_resource_task_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/monitoredResourceTask/ChangeMonitoredResourceTaskCompartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResourceTask/ChangeMonitoredResourceTaskCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5230,6 +5230,11 @@ class StackMonitoringClient(object):
         :param str work_request_id: (optional)
             A filter to return resources which were impacted as part of this work request identifier.
 
+        :param str status: (optional)
+            A filter to return only resources with matching lifecycleState.
+
+            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided.
             Default order for timeCreated is descending. Default order for resources is ascending.
@@ -5290,6 +5295,7 @@ class StackMonitoringClient(object):
             "retry_strategy",
             "name",
             "work_request_id",
+            "status",
             "sort_by",
             "sort_order",
             "limit",
@@ -5300,6 +5306,13 @@ class StackMonitoringClient(object):
         if extra_kwargs:
             raise ValueError(
                 f"list_monitored_resources got unknown kwargs: {extra_kwargs!r}")
+
+        if 'status' in kwargs:
+            status_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+            if kwargs['status'] not in status_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `status`, must be one of { status_allowed_values }"
+                )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["NAME", "TIME_CREATED"]
@@ -5319,6 +5332,7 @@ class StackMonitoringClient(object):
             "compartmentId": compartment_id,
             "name": kwargs.get("name", missing),
             "workRequestId": kwargs.get("work_request_id", missing),
+            "status": kwargs.get("status", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "limit": kwargs.get("limit", missing),

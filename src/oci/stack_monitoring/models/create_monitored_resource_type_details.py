@@ -17,6 +17,46 @@ class CreateMonitoredResourceTypeDetails(object):
     for all tenancies. Service provided resource types can not be duplicated or overwritten in any tenancy.
     """
 
+    #: A constant which can be used with the source_type property of a CreateMonitoredResourceTypeDetails.
+    #: This constant has a value of "SM_MGMT_AGENT_MONITORED"
+    SOURCE_TYPE_SM_MGMT_AGENT_MONITORED = "SM_MGMT_AGENT_MONITORED"
+
+    #: A constant which can be used with the source_type property of a CreateMonitoredResourceTypeDetails.
+    #: This constant has a value of "SM_REPO_ONLY"
+    SOURCE_TYPE_SM_REPO_ONLY = "SM_REPO_ONLY"
+
+    #: A constant which can be used with the source_type property of a CreateMonitoredResourceTypeDetails.
+    #: This constant has a value of "OCI_NATIVE"
+    SOURCE_TYPE_OCI_NATIVE = "OCI_NATIVE"
+
+    #: A constant which can be used with the source_type property of a CreateMonitoredResourceTypeDetails.
+    #: This constant has a value of "PROMETHEUS"
+    SOURCE_TYPE_PROMETHEUS = "PROMETHEUS"
+
+    #: A constant which can be used with the source_type property of a CreateMonitoredResourceTypeDetails.
+    #: This constant has a value of "TELEGRAF"
+    SOURCE_TYPE_TELEGRAF = "TELEGRAF"
+
+    #: A constant which can be used with the source_type property of a CreateMonitoredResourceTypeDetails.
+    #: This constant has a value of "COLLECTD"
+    SOURCE_TYPE_COLLECTD = "COLLECTD"
+
+    #: A constant which can be used with the resource_category property of a CreateMonitoredResourceTypeDetails.
+    #: This constant has a value of "APPLICATION"
+    RESOURCE_CATEGORY_APPLICATION = "APPLICATION"
+
+    #: A constant which can be used with the resource_category property of a CreateMonitoredResourceTypeDetails.
+    #: This constant has a value of "DATABASE"
+    RESOURCE_CATEGORY_DATABASE = "DATABASE"
+
+    #: A constant which can be used with the resource_category property of a CreateMonitoredResourceTypeDetails.
+    #: This constant has a value of "MIDDLEWARE"
+    RESOURCE_CATEGORY_MIDDLEWARE = "MIDDLEWARE"
+
+    #: A constant which can be used with the resource_category property of a CreateMonitoredResourceTypeDetails.
+    #: This constant has a value of "UNKNOWN"
+    RESOURCE_CATEGORY_UNKNOWN = "UNKNOWN"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateMonitoredResourceTypeDetails object with values from keyword arguments.
@@ -42,6 +82,16 @@ class CreateMonitoredResourceTypeDetails(object):
             The value to assign to the metric_namespace property of this CreateMonitoredResourceTypeDetails.
         :type metric_namespace: str
 
+        :param source_type:
+            The value to assign to the source_type property of this CreateMonitoredResourceTypeDetails.
+            Allowed values for this property are: "SM_MGMT_AGENT_MONITORED", "SM_REPO_ONLY", "OCI_NATIVE", "PROMETHEUS", "TELEGRAF", "COLLECTD"
+        :type source_type: str
+
+        :param resource_category:
+            The value to assign to the resource_category property of this CreateMonitoredResourceTypeDetails.
+            Allowed values for this property are: "APPLICATION", "DATABASE", "MIDDLEWARE", "UNKNOWN"
+        :type resource_category: str
+
         :param metadata:
             The value to assign to the metadata property of this CreateMonitoredResourceTypeDetails.
         :type metadata: oci.stack_monitoring.models.ResourceTypeMetadataDetails
@@ -61,6 +111,8 @@ class CreateMonitoredResourceTypeDetails(object):
             'description': 'str',
             'compartment_id': 'str',
             'metric_namespace': 'str',
+            'source_type': 'str',
+            'resource_category': 'str',
             'metadata': 'ResourceTypeMetadataDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -72,6 +124,8 @@ class CreateMonitoredResourceTypeDetails(object):
             'description': 'description',
             'compartment_id': 'compartmentId',
             'metric_namespace': 'metricNamespace',
+            'source_type': 'sourceType',
+            'resource_category': 'resourceCategory',
             'metadata': 'metadata',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -82,6 +136,8 @@ class CreateMonitoredResourceTypeDetails(object):
         self._description = None
         self._compartment_id = None
         self._metric_namespace = None
+        self._source_type = None
+        self._resource_category = None
         self._metadata = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -211,6 +267,68 @@ class CreateMonitoredResourceTypeDetails(object):
         :type: str
         """
         self._metric_namespace = metric_namespace
+
+    @property
+    def source_type(self):
+        """
+        Gets the source_type of this CreateMonitoredResourceTypeDetails.
+        Source type to indicate if the resource is stack monitoring discovered, OCI native resource, etc.
+
+        Allowed values for this property are: "SM_MGMT_AGENT_MONITORED", "SM_REPO_ONLY", "OCI_NATIVE", "PROMETHEUS", "TELEGRAF", "COLLECTD"
+
+
+        :return: The source_type of this CreateMonitoredResourceTypeDetails.
+        :rtype: str
+        """
+        return self._source_type
+
+    @source_type.setter
+    def source_type(self, source_type):
+        """
+        Sets the source_type of this CreateMonitoredResourceTypeDetails.
+        Source type to indicate if the resource is stack monitoring discovered, OCI native resource, etc.
+
+
+        :param source_type: The source_type of this CreateMonitoredResourceTypeDetails.
+        :type: str
+        """
+        allowed_values = ["SM_MGMT_AGENT_MONITORED", "SM_REPO_ONLY", "OCI_NATIVE", "PROMETHEUS", "TELEGRAF", "COLLECTD"]
+        if not value_allowed_none_or_none_sentinel(source_type, allowed_values):
+            raise ValueError(
+                f"Invalid value for `source_type`, must be None or one of {allowed_values}"
+            )
+        self._source_type = source_type
+
+    @property
+    def resource_category(self):
+        """
+        Gets the resource_category of this CreateMonitoredResourceTypeDetails.
+        Resource Category to indicate the kind of resource type.
+
+        Allowed values for this property are: "APPLICATION", "DATABASE", "MIDDLEWARE", "UNKNOWN"
+
+
+        :return: The resource_category of this CreateMonitoredResourceTypeDetails.
+        :rtype: str
+        """
+        return self._resource_category
+
+    @resource_category.setter
+    def resource_category(self, resource_category):
+        """
+        Sets the resource_category of this CreateMonitoredResourceTypeDetails.
+        Resource Category to indicate the kind of resource type.
+
+
+        :param resource_category: The resource_category of this CreateMonitoredResourceTypeDetails.
+        :type: str
+        """
+        allowed_values = ["APPLICATION", "DATABASE", "MIDDLEWARE", "UNKNOWN"]
+        if not value_allowed_none_or_none_sentinel(resource_category, allowed_values):
+            raise ValueError(
+                f"Invalid value for `resource_category`, must be None or one of {allowed_values}"
+            )
+        self._resource_category = resource_category
 
     @property
     def metadata(self):

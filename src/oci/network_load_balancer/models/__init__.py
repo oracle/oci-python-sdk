@@ -21,6 +21,7 @@ from .create_backend_details import CreateBackendDetails
 from .create_backend_set_details import CreateBackendSetDetails
 from .create_listener_details import CreateListenerDetails
 from .create_network_load_balancer_details import CreateNetworkLoadBalancerDetails
+from .dns_health_checker_details import DnsHealthCheckerDetails
 from .health_check_result import HealthCheckResult
 from .health_checker import HealthChecker
 from .health_checker_details import HealthCheckerDetails
@@ -70,6 +71,7 @@ network_load_balancer_type_mapping = {
     "CreateBackendSetDetails": CreateBackendSetDetails,
     "CreateListenerDetails": CreateListenerDetails,
     "CreateNetworkLoadBalancerDetails": CreateNetworkLoadBalancerDetails,
+    "DnsHealthCheckerDetails": DnsHealthCheckerDetails,
     "HealthCheckResult": HealthCheckResult,
     "HealthChecker": HealthChecker,
     "HealthCheckerDetails": HealthCheckerDetails,

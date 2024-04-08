@@ -164,7 +164,7 @@ class ApplicationMigrationClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/WorkRequest/CancelWorkRequest"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -281,7 +281,7 @@ class ApplicationMigrationClient(object):
         resource_path = "/migrations/{migrationId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_migration_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Migration/ChangeMigrationCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -403,7 +403,7 @@ class ApplicationMigrationClient(object):
         resource_path = "/sources/{sourceId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_source_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Source/ChangeSourceCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -750,7 +750,7 @@ class ApplicationMigrationClient(object):
         resource_path = "/migrations/{migrationId}"
         method = "DELETE"
         operation_name = "delete_migration"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Migration/DeleteMigration"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -858,7 +858,7 @@ class ApplicationMigrationClient(object):
         resource_path = "/sources/{sourceId}"
         method = "DELETE"
         operation_name = "delete_source"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Source/DeleteSource"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -957,7 +957,7 @@ class ApplicationMigrationClient(object):
         resource_path = "/migrations/{migrationId}"
         method = "GET"
         operation_name = "get_migration"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Migration/GetMigration"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1056,7 +1056,7 @@ class ApplicationMigrationClient(object):
         resource_path = "/sources/{sourceId}"
         method = "GET"
         operation_name = "get_source"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Source/GetSource"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1155,7 +1155,7 @@ class ApplicationMigrationClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/WorkRequest/GetWorkRequest"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1291,7 +1291,7 @@ class ApplicationMigrationClient(object):
         resource_path = "/migrations"
         method = "GET"
         operation_name = "list_migrations"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/MigrationSummary/ListMigrations"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1454,7 +1454,7 @@ class ApplicationMigrationClient(object):
         resource_path = "/sources/{sourceId}/applications"
         method = "GET"
         operation_name = "list_source_applications"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/SourceApplicationSummary/ListSourceApplications"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1624,7 +1624,7 @@ class ApplicationMigrationClient(object):
         resource_path = "/sources"
         method = "GET"
         operation_name = "list_sources"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/SourceSummary/ListSources"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1770,7 +1770,7 @@ class ApplicationMigrationClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/WorkRequestError/ListWorkRequestErrors"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1905,7 +1905,7 @@ class ApplicationMigrationClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/WorkRequestLogEntry/ListWorkRequestLogs"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2040,7 +2040,7 @@ class ApplicationMigrationClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/WorkRequestSummary/ListWorkRequests"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2162,7 +2162,7 @@ class ApplicationMigrationClient(object):
         resource_path = "/migrations/{migrationId}/actions/migrate"
         method = "POST"
         operation_name = "migrate_application"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Migration/MigrateApplication"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2309,7 +2309,7 @@ class ApplicationMigrationClient(object):
         resource_path = "/migrations/{migrationId}"
         method = "PUT"
         operation_name = "update_migration"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Migration/UpdateMigration"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2424,7 +2424,7 @@ class ApplicationMigrationClient(object):
         resource_path = "/sources/{sourceId}"
         method = "PUT"
         operation_name = "update_source"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Source/UpdateSource"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [

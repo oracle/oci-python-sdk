@@ -33,6 +33,7 @@ Network Load Balancer
     oci.network_load_balancer.models.CreateBackendSetDetails
     oci.network_load_balancer.models.CreateListenerDetails
     oci.network_load_balancer.models.CreateNetworkLoadBalancerDetails
+    oci.network_load_balancer.models.DnsHealthCheckerDetails
     oci.network_load_balancer.models.HealthCheckResult
     oci.network_load_balancer.models.HealthChecker
     oci.network_load_balancer.models.HealthCheckerDetails

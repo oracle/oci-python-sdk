@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+24.04.09 - 24.04.09
+=====================
+* Exclude GENAI until the service deployed on all regions to avoid process hung
+
+=====================
+24.04.02 - 24.04.02
+=====================
+* Added is_symmetric_hash_enabled flag for network load balancers
+
+=====================
 24.04.02 - 24.04.02
 =====================
 * Added support for IAM Domains across different compartments
