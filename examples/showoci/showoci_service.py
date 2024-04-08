@@ -39,8 +39,8 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "24.04.02"
-    oci_compatible_version = "2.119.1"
+    version = "24.04.09"
+    oci_compatible_version = "2.125.0"
     thread_lock = threading.Lock()
 
     ##########################################################################
@@ -683,6 +683,11 @@ class ShowOCIService(object):
                 delegation_token = delegation_token_file.read().strip()
                 # get signer from delegation token
                 self.signer = oci.auth.signers.InstancePrincipalsDelegationTokenSigner(delegation_token=delegation_token)
+
+            print('**********************************************************************')
+            print('* Cloud Shell has 20 minutes timeout, this process may not complete! *')
+            print('* Please use dedicated VM if hung                                    *')
+            print('**********************************************************************')
 
         except KeyError:
             print('**********************************************************************')
@@ -7545,6 +7550,8 @@ class ShowOCIService(object):
                            'time_updated': self.get_value(arr.time_updated)[0:16],
                            'is_private': self.get_value(arr.is_private),
                            'is_preserve_source_destination': self.get_value(arr.is_preserve_source_destination),
+                           'nlb_ip_version': self.get_value(arr.nlb_ip_version),
+                           'is_symmetric_hash_enabled': self.get_value(arr.is_symmetric_hash_enabled),
                            'subnet_id': self.get_value(arr.subnet_id),
                            'subnet_name': "" if arr.subnet_id is None else self.get_network_subnet(arr.subnet_id, True),
                            'status': str(status),
@@ -15202,7 +15209,7 @@ class ShowOCIService(object):
             oda_client = self.__create_client(oci.oda.OdaClient, key=self.EXCLUDE_ODA)
             bds_client = self.__create_client(oci.bds.BdsClient, key=self.EXCLUDE_BDS)
             di_client = self.__create_client(oci.data_integration.DataIntegrationClient, key=self.EXCLUDE_DI)
-            genai_client = self.__create_client(oci.generative_ai.GenerativeAiClient, key=self.EXCLUDE_GENAI)
+            # genai_client = self.__create_client(oci.generative_ai.GenerativeAiClient, key=self.EXCLUDE_GENAI)
 
             # reference to compartments
             compartments = self.get_compartments()
@@ -15244,7 +15251,7 @@ class ShowOCIService(object):
                 data_ai[self.C_DATA_AI_ODA] += self.__load_data_ai_oda(oda_client, compartments)
                 data_ai[self.C_DATA_AI_BDS] += self.__load_data_ai_bds(bds_client, compartments)
                 data_ai[self.C_DATA_AI_DI] += self.__load_data_ai_data_integration(di_client, compartments)
-                data_ai[self.C_DATA_AI_GENAI] += self.__load_data_ai_data_genai(genai_client, compartments)
+                # data_ai[self.C_DATA_AI_GENAI] += self.__load_data_ai_data_genai(genai_client, compartments)
 
             ##########################
             # if parallel execution
@@ -15265,7 +15272,7 @@ class ShowOCIService(object):
                     future_DATA_AI_ODA = executor.submit(self.__load_data_ai_oda, oda_client, compartments)
                     future_DATA_AI_BDS = executor.submit(self.__load_data_ai_bds, bds_client, compartments)
                     future_DATA_AI_DI = executor.submit(self.__load_data_ai_data_integration, di_client, compartments)
-                    future_DATA_AI_GENAI = executor.submit(self.__load_data_ai_data_genai, genai_client, compartments)
+                    # future_DATA_AI_GENAI = executor.submit(self.__load_data_ai_data_genai, genai_client, compartments)
 
                     paas = self.data[self.C_PAAS_NATIVE]
                     paas[self.C_PAAS_NATIVE_OCVS] += next(as_completed([future_PAAS_NATIVE_OCVS])).result()
@@ -15283,7 +15290,7 @@ class ShowOCIService(object):
                     data_ai[self.C_DATA_AI_ODA] += next(as_completed([future_DATA_AI_ODA])).result()
                     data_ai[self.C_DATA_AI_BDS] += next(as_completed([future_DATA_AI_BDS])).result()
                     data_ai[self.C_DATA_AI_DI] += next(as_completed([future_DATA_AI_DI])).result()
-                    data_ai[self.C_DATA_AI_GENAI] += next(as_completed([future_DATA_AI_GENAI])).result()
+                    # data_ai[self.C_DATA_AI_GENAI] += next(as_completed([future_DATA_AI_GENAI])).result()
 
             self.__load_print_section_time(section_start_time)
             print("")

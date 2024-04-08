@@ -47,6 +47,46 @@ class MonitoredResourceSummary(object):
     #: This constant has a value of "ENTERPRISE_EDITION"
     LICENSE_ENTERPRISE_EDITION = "ENTERPRISE_EDITION"
 
+    #: A constant which can be used with the source_type property of a MonitoredResourceSummary.
+    #: This constant has a value of "SM_MGMT_AGENT_MONITORED"
+    SOURCE_TYPE_SM_MGMT_AGENT_MONITORED = "SM_MGMT_AGENT_MONITORED"
+
+    #: A constant which can be used with the source_type property of a MonitoredResourceSummary.
+    #: This constant has a value of "SM_REPO_ONLY"
+    SOURCE_TYPE_SM_REPO_ONLY = "SM_REPO_ONLY"
+
+    #: A constant which can be used with the source_type property of a MonitoredResourceSummary.
+    #: This constant has a value of "OCI_NATIVE"
+    SOURCE_TYPE_OCI_NATIVE = "OCI_NATIVE"
+
+    #: A constant which can be used with the source_type property of a MonitoredResourceSummary.
+    #: This constant has a value of "PROMETHEUS"
+    SOURCE_TYPE_PROMETHEUS = "PROMETHEUS"
+
+    #: A constant which can be used with the source_type property of a MonitoredResourceSummary.
+    #: This constant has a value of "TELEGRAF"
+    SOURCE_TYPE_TELEGRAF = "TELEGRAF"
+
+    #: A constant which can be used with the source_type property of a MonitoredResourceSummary.
+    #: This constant has a value of "COLLECTD"
+    SOURCE_TYPE_COLLECTD = "COLLECTD"
+
+    #: A constant which can be used with the resource_category property of a MonitoredResourceSummary.
+    #: This constant has a value of "APPLICATION"
+    RESOURCE_CATEGORY_APPLICATION = "APPLICATION"
+
+    #: A constant which can be used with the resource_category property of a MonitoredResourceSummary.
+    #: This constant has a value of "DATABASE"
+    RESOURCE_CATEGORY_DATABASE = "DATABASE"
+
+    #: A constant which can be used with the resource_category property of a MonitoredResourceSummary.
+    #: This constant has a value of "MIDDLEWARE"
+    RESOURCE_CATEGORY_MIDDLEWARE = "MIDDLEWARE"
+
+    #: A constant which can be used with the resource_category property of a MonitoredResourceSummary.
+    #: This constant has a value of "UNKNOWN"
+    RESOURCE_CATEGORY_UNKNOWN = "UNKNOWN"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MonitoredResourceSummary object with values from keyword arguments.
@@ -108,6 +148,18 @@ class MonitoredResourceSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type license: str
 
+        :param source_type:
+            The value to assign to the source_type property of this MonitoredResourceSummary.
+            Allowed values for this property are: "SM_MGMT_AGENT_MONITORED", "SM_REPO_ONLY", "OCI_NATIVE", "PROMETHEUS", "TELEGRAF", "COLLECTD", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type source_type: str
+
+        :param resource_category:
+            The value to assign to the resource_category property of this MonitoredResourceSummary.
+            Allowed values for this property are: "APPLICATION", "DATABASE", "MIDDLEWARE", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type resource_category: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this MonitoredResourceSummary.
         :type freeform_tags: dict(str, str)
@@ -135,6 +187,8 @@ class MonitoredResourceSummary(object):
             'lifecycle_state': 'str',
             'properties': 'list[MonitoredResourceProperty]',
             'license': 'str',
+            'source_type': 'str',
+            'resource_category': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -154,6 +208,8 @@ class MonitoredResourceSummary(object):
             'lifecycle_state': 'lifecycleState',
             'properties': 'properties',
             'license': 'license',
+            'source_type': 'sourceType',
+            'resource_category': 'resourceCategory',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -172,6 +228,8 @@ class MonitoredResourceSummary(object):
         self._lifecycle_state = None
         self._properties = None
         self._license = None
+        self._source_type = None
+        self._resource_category = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -517,6 +575,66 @@ class MonitoredResourceSummary(object):
         if not value_allowed_none_or_none_sentinel(license, allowed_values):
             license = 'UNKNOWN_ENUM_VALUE'
         self._license = license
+
+    @property
+    def source_type(self):
+        """
+        Gets the source_type of this MonitoredResourceSummary.
+        Source type to indicate if the resource is stack monitoring discovered, OCI native resource, etc.
+
+        Allowed values for this property are: "SM_MGMT_AGENT_MONITORED", "SM_REPO_ONLY", "OCI_NATIVE", "PROMETHEUS", "TELEGRAF", "COLLECTD", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The source_type of this MonitoredResourceSummary.
+        :rtype: str
+        """
+        return self._source_type
+
+    @source_type.setter
+    def source_type(self, source_type):
+        """
+        Sets the source_type of this MonitoredResourceSummary.
+        Source type to indicate if the resource is stack monitoring discovered, OCI native resource, etc.
+
+
+        :param source_type: The source_type of this MonitoredResourceSummary.
+        :type: str
+        """
+        allowed_values = ["SM_MGMT_AGENT_MONITORED", "SM_REPO_ONLY", "OCI_NATIVE", "PROMETHEUS", "TELEGRAF", "COLLECTD"]
+        if not value_allowed_none_or_none_sentinel(source_type, allowed_values):
+            source_type = 'UNKNOWN_ENUM_VALUE'
+        self._source_type = source_type
+
+    @property
+    def resource_category(self):
+        """
+        Gets the resource_category of this MonitoredResourceSummary.
+        Resource Category to indicate the kind of resource type.
+
+        Allowed values for this property are: "APPLICATION", "DATABASE", "MIDDLEWARE", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The resource_category of this MonitoredResourceSummary.
+        :rtype: str
+        """
+        return self._resource_category
+
+    @resource_category.setter
+    def resource_category(self, resource_category):
+        """
+        Sets the resource_category of this MonitoredResourceSummary.
+        Resource Category to indicate the kind of resource type.
+
+
+        :param resource_category: The resource_category of this MonitoredResourceSummary.
+        :type: str
+        """
+        allowed_values = ["APPLICATION", "DATABASE", "MIDDLEWARE", "UNKNOWN"]
+        if not value_allowed_none_or_none_sentinel(resource_category, allowed_values):
+            resource_category = 'UNKNOWN_ENUM_VALUE'
+        self._resource_category = resource_category
 
     @property
     def freeform_tags(self):

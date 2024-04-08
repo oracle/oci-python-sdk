@@ -60,6 +60,14 @@ class BackendSetDetails(object):
             The value to assign to the is_preserve_source property of this BackendSetDetails.
         :type is_preserve_source: bool
 
+        :param is_fail_open:
+            The value to assign to the is_fail_open property of this BackendSetDetails.
+        :type is_fail_open: bool
+
+        :param is_instant_failover_enabled:
+            The value to assign to the is_instant_failover_enabled property of this BackendSetDetails.
+        :type is_instant_failover_enabled: bool
+
         :param backends:
             The value to assign to the backends property of this BackendSetDetails.
         :type backends: list[oci.network_load_balancer.models.Backend]
@@ -73,6 +81,8 @@ class BackendSetDetails(object):
             'policy': 'str',
             'ip_version': 'str',
             'is_preserve_source': 'bool',
+            'is_fail_open': 'bool',
+            'is_instant_failover_enabled': 'bool',
             'backends': 'list[Backend]',
             'health_checker': 'HealthChecker'
         }
@@ -81,6 +91,8 @@ class BackendSetDetails(object):
             'policy': 'policy',
             'ip_version': 'ipVersion',
             'is_preserve_source': 'isPreserveSource',
+            'is_fail_open': 'isFailOpen',
+            'is_instant_failover_enabled': 'isInstantFailoverEnabled',
             'backends': 'backends',
             'health_checker': 'healthChecker'
         }
@@ -88,6 +100,8 @@ class BackendSetDetails(object):
         self._policy = None
         self._ip_version = None
         self._is_preserve_source = None
+        self._is_fail_open = None
+        self._is_instant_failover_enabled = None
         self._backends = None
         self._health_checker = None
 
@@ -184,6 +198,56 @@ class BackendSetDetails(object):
         :type: bool
         """
         self._is_preserve_source = is_preserve_source
+
+    @property
+    def is_fail_open(self):
+        """
+        Gets the is_fail_open of this BackendSetDetails.
+        If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy.
+        The value is false by default.
+
+
+        :return: The is_fail_open of this BackendSetDetails.
+        :rtype: bool
+        """
+        return self._is_fail_open
+
+    @is_fail_open.setter
+    def is_fail_open(self, is_fail_open):
+        """
+        Sets the is_fail_open of this BackendSetDetails.
+        If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy.
+        The value is false by default.
+
+
+        :param is_fail_open: The is_fail_open of this BackendSetDetails.
+        :type: bool
+        """
+        self._is_fail_open = is_fail_open
+
+    @property
+    def is_instant_failover_enabled(self):
+        """
+        Gets the is_instant_failover_enabled of this BackendSetDetails.
+        If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+
+
+        :return: The is_instant_failover_enabled of this BackendSetDetails.
+        :rtype: bool
+        """
+        return self._is_instant_failover_enabled
+
+    @is_instant_failover_enabled.setter
+    def is_instant_failover_enabled(self, is_instant_failover_enabled):
+        """
+        Sets the is_instant_failover_enabled of this BackendSetDetails.
+        If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+
+
+        :param is_instant_failover_enabled: The is_instant_failover_enabled of this BackendSetDetails.
+        :type: bool
+        """
+        self._is_instant_failover_enabled = is_instant_failover_enabled
 
     @property
     def backends(self):

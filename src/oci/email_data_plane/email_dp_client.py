@@ -151,7 +151,7 @@ class EmailDPClient(object):
         resource_path = "/actions/submitEmail"
         method = "POST"
         operation_name = "submit_email"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildeliverysubmission/20220926/EmailSubmittedResponse/SubmitEmail"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

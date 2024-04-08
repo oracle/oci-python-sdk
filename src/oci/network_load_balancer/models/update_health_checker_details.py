@@ -31,6 +31,10 @@ class UpdateHealthCheckerDetails(object):
     #: This constant has a value of "UDP"
     PROTOCOL_UDP = "UDP"
 
+    #: A constant which can be used with the protocol property of a UpdateHealthCheckerDetails.
+    #: This constant has a value of "DNS"
+    PROTOCOL_DNS = "DNS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateHealthCheckerDetails object with values from keyword arguments.
@@ -38,7 +42,7 @@ class UpdateHealthCheckerDetails(object):
 
         :param protocol:
             The value to assign to the protocol property of this UpdateHealthCheckerDetails.
-            Allowed values for this property are: "HTTP", "HTTPS", "TCP", "UDP"
+            Allowed values for this property are: "HTTP", "HTTPS", "TCP", "UDP", "DNS"
         :type protocol: str
 
         :param port:
@@ -77,6 +81,10 @@ class UpdateHealthCheckerDetails(object):
             The value to assign to the response_data property of this UpdateHealthCheckerDetails.
         :type response_data: str
 
+        :param dns:
+            The value to assign to the dns property of this UpdateHealthCheckerDetails.
+        :type dns: oci.network_load_balancer.models.DnsHealthCheckerDetails
+
         """
         self.swagger_types = {
             'protocol': 'str',
@@ -88,7 +96,8 @@ class UpdateHealthCheckerDetails(object):
             'response_body_regex': 'str',
             'return_code': 'int',
             'request_data': 'str',
-            'response_data': 'str'
+            'response_data': 'str',
+            'dns': 'DnsHealthCheckerDetails'
         }
 
         self.attribute_map = {
@@ -101,7 +110,8 @@ class UpdateHealthCheckerDetails(object):
             'response_body_regex': 'responseBodyRegex',
             'return_code': 'returnCode',
             'request_data': 'requestData',
-            'response_data': 'responseData'
+            'response_data': 'responseData',
+            'dns': 'dns'
         }
 
         self._protocol = None
@@ -114,6 +124,7 @@ class UpdateHealthCheckerDetails(object):
         self._return_code = None
         self._request_data = None
         self._response_data = None
+        self._dns = None
 
     @property
     def protocol(self):
@@ -123,7 +134,7 @@ class UpdateHealthCheckerDetails(object):
 
         Example: `HTTP`
 
-        Allowed values for this property are: "HTTP", "HTTPS", "TCP", "UDP"
+        Allowed values for this property are: "HTTP", "HTTPS", "TCP", "UDP", "DNS"
 
 
         :return: The protocol of this UpdateHealthCheckerDetails.
@@ -143,7 +154,7 @@ class UpdateHealthCheckerDetails(object):
         :param protocol: The protocol of this UpdateHealthCheckerDetails.
         :type: str
         """
-        allowed_values = ["HTTP", "HTTPS", "TCP", "UDP"]
+        allowed_values = ["HTTP", "HTTPS", "TCP", "UDP", "DNS"]
         if not value_allowed_none_or_none_sentinel(protocol, allowed_values):
             raise ValueError(
                 f"Invalid value for `protocol`, must be None or one of {allowed_values}"
@@ -399,6 +410,26 @@ class UpdateHealthCheckerDetails(object):
         :type: str
         """
         self._response_data = response_data
+
+    @property
+    def dns(self):
+        """
+        Gets the dns of this UpdateHealthCheckerDetails.
+
+        :return: The dns of this UpdateHealthCheckerDetails.
+        :rtype: oci.network_load_balancer.models.DnsHealthCheckerDetails
+        """
+        return self._dns
+
+    @dns.setter
+    def dns(self, dns):
+        """
+        Sets the dns of this UpdateHealthCheckerDetails.
+
+        :param dns: The dns of this UpdateHealthCheckerDetails.
+        :type: oci.network_load_balancer.models.DnsHealthCheckerDetails
+        """
+        self._dns = dns
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -34,6 +34,10 @@ class HealthChecker(object):
     #: This constant has a value of "UDP"
     PROTOCOL_UDP = "UDP"
 
+    #: A constant which can be used with the protocol property of a HealthChecker.
+    #: This constant has a value of "DNS"
+    PROTOCOL_DNS = "DNS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new HealthChecker object with values from keyword arguments.
@@ -41,7 +45,7 @@ class HealthChecker(object):
 
         :param protocol:
             The value to assign to the protocol property of this HealthChecker.
-            Allowed values for this property are: "HTTP", "HTTPS", "TCP", "UDP", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "HTTP", "HTTPS", "TCP", "UDP", "DNS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type protocol: str
 
@@ -81,6 +85,10 @@ class HealthChecker(object):
             The value to assign to the response_data property of this HealthChecker.
         :type response_data: str
 
+        :param dns:
+            The value to assign to the dns property of this HealthChecker.
+        :type dns: oci.network_load_balancer.models.DnsHealthCheckerDetails
+
         """
         self.swagger_types = {
             'protocol': 'str',
@@ -92,7 +100,8 @@ class HealthChecker(object):
             'response_body_regex': 'str',
             'return_code': 'int',
             'request_data': 'str',
-            'response_data': 'str'
+            'response_data': 'str',
+            'dns': 'DnsHealthCheckerDetails'
         }
 
         self.attribute_map = {
@@ -105,7 +114,8 @@ class HealthChecker(object):
             'response_body_regex': 'responseBodyRegex',
             'return_code': 'returnCode',
             'request_data': 'requestData',
-            'response_data': 'responseData'
+            'response_data': 'responseData',
+            'dns': 'dns'
         }
 
         self._protocol = None
@@ -118,6 +128,7 @@ class HealthChecker(object):
         self._return_code = None
         self._request_data = None
         self._response_data = None
+        self._dns = None
 
     @property
     def protocol(self):
@@ -127,7 +138,7 @@ class HealthChecker(object):
 
         Example: `HTTP`
 
-        Allowed values for this property are: "HTTP", "HTTPS", "TCP", "UDP", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "HTTP", "HTTPS", "TCP", "UDP", "DNS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -148,7 +159,7 @@ class HealthChecker(object):
         :param protocol: The protocol of this HealthChecker.
         :type: str
         """
-        allowed_values = ["HTTP", "HTTPS", "TCP", "UDP"]
+        allowed_values = ["HTTP", "HTTPS", "TCP", "UDP", "DNS"]
         if not value_allowed_none_or_none_sentinel(protocol, allowed_values):
             protocol = 'UNKNOWN_ENUM_VALUE'
         self._protocol = protocol
@@ -404,6 +415,26 @@ class HealthChecker(object):
         :type: str
         """
         self._response_data = response_data
+
+    @property
+    def dns(self):
+        """
+        Gets the dns of this HealthChecker.
+
+        :return: The dns of this HealthChecker.
+        :rtype: oci.network_load_balancer.models.DnsHealthCheckerDetails
+        """
+        return self._dns
+
+    @dns.setter
+    def dns(self, dns):
+        """
+        Sets the dns of this HealthChecker.
+
+        :param dns: The dns of this HealthChecker.
+        :type: oci.network_load_balancer.models.DnsHealthCheckerDetails
+        """
+        self._dns = dns
 
     def __repr__(self):
         return formatted_flat_dict(self)

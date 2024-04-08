@@ -22,7 +22,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "24.04.02"
+    version = "24.04.09"
 
     ##########################################################################
     # spaces for align
@@ -1047,9 +1047,12 @@ class ShowOCIOutput(object):
     def __print_load_balancer_network_details(self, load_balance_obj):
         try:
             lb = load_balance_obj
+            sym = lb['is_symmetric_hash_enabled'] if lb['is_symmetric_hash_enabled'] else "False"
+            prsv = lb['is_preserve_source_destination'] if lb['is_preserve_source_destination'] else "False"
             print(self.taba + "Name       : " + lb['name'])
             print(self.tabs + "Status     : " + lb['status'])
             print(self.tabs + "Subnet     : " + lb['subnet_name'])
+            print(self.tabs + "Flags      : is_symmetric_hash_enabled = " + sym + ", is_preserve_source_destination = " + prsv)
 
             if 'nsg_names' in lb:
                 if lb['nsg_names']:
@@ -7858,6 +7861,8 @@ class ShowOCICSV(object):
                         'shape': lb['shape_name'],
                         'type': ("Private" if lb['is_private'] else "Public"),
                         'is_preserve_source_destination': "",
+                        'nlb_ip_version': "",
+                        'is_symmetric_hash_enabled': "",
                         'ip_addresses': str(', '.join(x for x in lb['ips'])),
                         'listeners': str(', '.join(x['desc'] for x in lb['listeners'])),
                         'log_errors': log_errors,
@@ -7936,6 +7941,8 @@ class ShowOCICSV(object):
                         'time_updated': lb['time_updated'],
                         'type': ("Private" if lb['is_private'] else "Public"),
                         'is_preserve_source_destination': lb['is_preserve_source_destination'],
+                        'nlb_ip_version': lb['nlb_ip_version'],
+                        'is_symmetric_hash_enabled': lb['is_symmetric_hash_enabled'],
                         'subnets': lb['subnet_name'],
                         'nsg_names': lb['nsg_names'],
                         'ip_addresses': str(', '.join(x for x in lb['ips'])),

@@ -20,7 +20,7 @@ import sys
 
 
 class ShowOCIData(object):
-    version = "24.04.02"
+    version = "24.04.09"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -3875,6 +3875,8 @@ class ShowOCIData(object):
             data['time_created'] = lb['time_created']
             data['time_updated'] = lb['time_updated']
             data['is_preserve_source_destination'] = lb['is_preserve_source_destination']
+            data['nlb_ip_version'] = lb['nlb_ip_version']
+            data['is_symmetric_hash_enabled'] = lb['is_symmetric_hash_enabled']
             data['is_private'] = lb['is_private']
             data['ips'] = lb['ip_addresses']
             data['nsg_ids'] = lb['nsg_ids']
