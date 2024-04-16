@@ -46,6 +46,10 @@ class CreateRedisClusterDetails(object):
             The value to assign to the subnet_id property of this CreateRedisClusterDetails.
         :type subnet_id: str
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this CreateRedisClusterDetails.
+        :type nsg_ids: list[str]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateRedisClusterDetails.
         :type freeform_tags: dict(str, str)
@@ -62,6 +66,7 @@ class CreateRedisClusterDetails(object):
             'software_version': 'str',
             'node_memory_in_gbs': 'float',
             'subnet_id': 'str',
+            'nsg_ids': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -73,6 +78,7 @@ class CreateRedisClusterDetails(object):
             'software_version': 'softwareVersion',
             'node_memory_in_gbs': 'nodeMemoryInGBs',
             'subnet_id': 'subnetId',
+            'nsg_ids': 'nsgIds',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -83,6 +89,7 @@ class CreateRedisClusterDetails(object):
         self._software_version = None
         self._node_memory_in_gbs = None
         self._subnet_id = None
+        self._nsg_ids = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -237,6 +244,30 @@ class CreateRedisClusterDetails(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this CreateRedisClusterDetails.
+        OCIDs of the NSGs to control access in the customer network
+
+
+        :return: The nsg_ids of this CreateRedisClusterDetails.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this CreateRedisClusterDetails.
+        OCIDs of the NSGs to control access in the customer network
+
+
+        :param nsg_ids: The nsg_ids of this CreateRedisClusterDetails.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
 
     @property
     def freeform_tags(self):

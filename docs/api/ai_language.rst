@@ -18,8 +18,11 @@ Ai Language
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.ai_language.models.AssertionDetails
     oci.ai_language.models.BatchDetectDominantLanguageDetails
     oci.ai_language.models.BatchDetectDominantLanguageResult
+    oci.ai_language.models.BatchDetectHealthEntityDetails
+    oci.ai_language.models.BatchDetectHealthEntityResult
     oci.ai_language.models.BatchDetectLanguageEntitiesDetails
     oci.ai_language.models.BatchDetectLanguageEntitiesResult
     oci.ai_language.models.BatchDetectLanguageKeyPhrasesDetails
@@ -76,6 +79,8 @@ Ai Language
     oci.ai_language.models.EvaluationResultCollection
     oci.ai_language.models.EvaluationResultSummary
     oci.ai_language.models.EvaluationResults
+    oci.ai_language.models.HealthEntity
+    oci.ai_language.models.HealthEntityDocumentResult
     oci.ai_language.models.HierarchicalEntity
     oci.ai_language.models.InputConfiguration
     oci.ai_language.models.InputLocation
@@ -85,6 +90,8 @@ Ai Language
     oci.ai_language.models.KeyPhrase
     oci.ai_language.models.KeyPhraseDocumentResult
     oci.ai_language.models.LocationDetails
+    oci.ai_language.models.MelConcept
+    oci.ai_language.models.MelConceptDetails
     oci.ai_language.models.Model
     oci.ai_language.models.ModelCollection
     oci.ai_language.models.ModelDetails
@@ -106,6 +113,7 @@ Ai Language
     oci.ai_language.models.PiiEntityMasking
     oci.ai_language.models.PiiEntityRemove
     oci.ai_language.models.PiiEntityReplace
+    oci.ai_language.models.PiiModelDetails
     oci.ai_language.models.PreDeployedLanguageModels
     oci.ai_language.models.PreTrainedHealthNluModelDetails
     oci.ai_language.models.PreTrainedKeyPhraseExtractionModelDetails
@@ -116,9 +124,13 @@ Ai Language
     oci.ai_language.models.PreTrainedSummarization
     oci.ai_language.models.PreTrainedTextClassificationModelDetails
     oci.ai_language.models.PreTrainedUniversalModel
+    oci.ai_language.models.Profile
     oci.ai_language.models.Project
     oci.ai_language.models.ProjectCollection
     oci.ai_language.models.ProjectSummary
+    oci.ai_language.models.RelationEntity
+    oci.ai_language.models.ResolvedEntities
+    oci.ai_language.models.ResolvedEntity
     oci.ai_language.models.SentimentAspect
     oci.ai_language.models.SentimentDocumentResult
     oci.ai_language.models.SentimentSentence

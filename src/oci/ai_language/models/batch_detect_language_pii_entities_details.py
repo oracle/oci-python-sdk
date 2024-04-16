@@ -36,25 +36,32 @@ class BatchDetectLanguagePiiEntitiesDetails(object):
             The value to assign to the masking property of this BatchDetectLanguagePiiEntitiesDetails.
         :type masking: dict(str, PiiEntityMasking)
 
+        :param profile:
+            The value to assign to the profile property of this BatchDetectLanguagePiiEntitiesDetails.
+        :type profile: oci.ai_language.models.Profile
+
         """
         self.swagger_types = {
             'endpoint_id': 'str',
             'compartment_id': 'str',
             'documents': 'list[TextDocument]',
-            'masking': 'dict(str, PiiEntityMasking)'
+            'masking': 'dict(str, PiiEntityMasking)',
+            'profile': 'Profile'
         }
 
         self.attribute_map = {
             'endpoint_id': 'endpointId',
             'compartment_id': 'compartmentId',
             'documents': 'documents',
-            'masking': 'masking'
+            'masking': 'masking',
+            'profile': 'profile'
         }
 
         self._endpoint_id = None
         self._compartment_id = None
         self._documents = None
         self._masking = None
+        self._profile = None
 
     @property
     def endpoint_id(self):
@@ -155,6 +162,26 @@ class BatchDetectLanguagePiiEntitiesDetails(object):
         :type: dict(str, PiiEntityMasking)
         """
         self._masking = masking
+
+    @property
+    def profile(self):
+        """
+        Gets the profile of this BatchDetectLanguagePiiEntitiesDetails.
+
+        :return: The profile of this BatchDetectLanguagePiiEntitiesDetails.
+        :rtype: oci.ai_language.models.Profile
+        """
+        return self._profile
+
+    @profile.setter
+    def profile(self, profile):
+        """
+        Sets the profile of this BatchDetectLanguagePiiEntitiesDetails.
+
+        :param profile: The profile of this BatchDetectLanguagePiiEntitiesDetails.
+        :type: oci.ai_language.models.Profile
+        """
+        self._profile = profile
 
     def __repr__(self):
         return formatted_flat_dict(self)

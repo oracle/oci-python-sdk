@@ -20,7 +20,7 @@ import sys
 
 
 class ShowOCIData(object):
-    version = "24.04.09"
+    version = "24.04.16"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -2192,12 +2192,17 @@ class ShowOCIData(object):
         try:
             for db_node in db_nodes:
 
-                vnic_desc = ""
+                ip_desc = ""
                 nsg_names = ""
                 nsg_ids = ""
+                if 'host_ip' in db_node:
+                    if db_node['host_ip']:
+                        ip_desc = " - " + db_node['host_ip']
+
                 if 'vnic_details' in db_node:
-                    if 'dbdesc' in db_node['vnic_details']:
-                        vnic_desc = " - " + db_node['vnic_details']['dbdesc']
+
+                    if 'dbdesc' in db_node['vnic_details'] and not ip_desc:
+                        ip_desc = " - " + db_node['vnic_details']['dbdesc']
 
                     if 'nsg_names' in db_node['vnic_details']:
                         nsg_names = db_node['vnic_details']['nsg_names']
@@ -2205,26 +2210,39 @@ class ShowOCIData(object):
                     if 'nsg_ids' in db_node['vnic_details']:
                         nsg_ids = db_node['vnic_details']['nsg_ids']
 
-                value = {'desc': "",
-                         'software_storage_size_in_gb': db_node['software_storage_size_in_gb'],
-                         'lifecycle_state': db_node['lifecycle_state'],
-                         'hostname': db_node['hostname'],
-                         'nsg_names': nsg_names,
-                         'nsg_ids': nsg_ids,
-                         'vnic_id': db_node['vnic_id'],
-                         'backup_vnic_id': ("" if db_node['backup_vnic_id'] == "None" else db_node['backup_vnic_id']),
-                         'vnic_details': db_node['vnic_details'],
-                         'backup_vnic_details': db_node['backup_vnic_details'],
-                         'maintenance_type': db_node['maintenance_type'],
-                         'time_maintenance_window_start': db_node['time_maintenance_window_start'],
-                         'time_maintenance_window_end': db_node['time_maintenance_window_end'],
-                         'fault_domain': ("" if db_node['fault_domain'] == "None" else db_node['fault_domain']),
-                         'cpu_core_count': db_node['cpu_core_count'],
-                         'memory_size_in_gbs': db_node['memory_size_in_gbs'],
-                         'db_node_storage_size_in_gbs': db_node['db_node_storage_size_in_gbs'],
-                         'db_server_id': str(db_node['db_server_id']),
-                         'db_server_name': ""
-                         }
+                value = {
+                    'desc': "",
+                    'software_storage_size_in_gb': db_node['software_storage_size_in_gb'],
+                    'lifecycle_state': db_node['lifecycle_state'],
+                    'hostname': db_node['hostname'],
+                    'nsg_names': nsg_names,
+                    'nsg_ids': nsg_ids,
+                    'vnic_id': db_node['vnic_id'],
+                    'backup_vnic_id': db_node['backup_vnic_id'],
+                    'vnic_details': db_node['vnic_details'],
+                    'backup_vnic_details': db_node['backup_vnic_details'],
+                    'maintenance_type': db_node['maintenance_type'],
+                    'time_maintenance_window_start': db_node['time_maintenance_window_start'],
+                    'time_maintenance_window_end': db_node['time_maintenance_window_end'],
+                    'fault_domain': db_node['fault_domain'],
+                    'cpu_core_count': db_node['cpu_core_count'],
+                    'memory_size_in_gbs': db_node['memory_size_in_gbs'],
+                    'db_node_storage_size_in_gbs': db_node['db_node_storage_size_in_gbs'],
+                    'db_server_id': str(db_node['db_server_id']),
+                    'db_server_name': "",
+                    # Added 4/5/2024
+                    'host_ip_id': db_node['host_ip_id'],
+                    'host_ip': db_node['host_ip'],
+                    'backup_ip_id': db_node['backup_ip_id'],
+                    'backup_ip': db_node['backup_ip'],
+                    'vnic2_id': db_node['vnic2_id'],
+                    'vnic2_details': db_node['vnic2_details'],
+                    'backup_vnic2_id': db_node['backup_vnic2_id'],
+                    'backup_vnic2_details': db_node['backup_vnic2_details'],
+                    'time_created': db_node['time_created'],
+                    'defined_tags': db_node['defined_tags'],
+                    'freeform_tags': db_node['freeform_tags']
+                }
 
                 # get db server name
                 dbserver_info = ""
@@ -2236,18 +2254,18 @@ class ShowOCIData(object):
 
                 # cpu + mem
                 cpu_info = ""
-                if db_node['cpu_core_count'] != 'None':
+                if db_node['cpu_core_count']:
                     cpu_info = " - Cores: " + db_node['cpu_core_count']
-                if db_node['memory_size_in_gbs'] != 'None':
+                if db_node['memory_size_in_gbs']:
                     cpu_info += " - Mem: " + db_node['memory_size_in_gbs']
-                if db_node['db_node_storage_size_in_gbs'] != 'None':
+                if db_node['db_node_storage_size_in_gbs']:
                     cpu_info += " - Disk: " + db_node['db_node_storage_size_in_gbs']
 
                 lifecycle = (" - " + str(db_node['lifecycle_state'])) if db_node['lifecycle_state'] else ""
-                fault_domain = ("" if db_node['fault_domain'] == "None" else " - " + str(db_node['fault_domain']))
+                fault_domain = ("" if db_node['fault_domain'] == "" else " - " + str(db_node['fault_domain']))
 
                 # desc
-                value['desc'] = str(db_node['hostname']) + dbserver_info + lifecycle + cpu_info + vnic_desc + fault_domain
+                value['desc'] = str(db_node['hostname']) + dbserver_info + lifecycle + cpu_info + ip_desc + fault_domain + " - " + db_node['time_created']
 
                 data.append(value)
 

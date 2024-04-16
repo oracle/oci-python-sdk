@@ -26,17 +26,44 @@ class NfsDataTransferMediumDetails(DataTransferMediumDetailsV2):
             Allowed values for this property are: "DBLINK", "OBJECT_STORAGE", "AWS_S3", "NFS"
         :type type: str
 
+        :param object_storage_bucket:
+            The value to assign to the object_storage_bucket property of this NfsDataTransferMediumDetails.
+        :type object_storage_bucket: oci.database_migration.models.ObjectStoreBucket
+
         """
         self.swagger_types = {
-            'type': 'str'
+            'type': 'str',
+            'object_storage_bucket': 'ObjectStoreBucket'
         }
 
         self.attribute_map = {
-            'type': 'type'
+            'type': 'type',
+            'object_storage_bucket': 'objectStorageBucket'
         }
 
         self._type = None
+        self._object_storage_bucket = None
         self._type = 'NFS'
+
+    @property
+    def object_storage_bucket(self):
+        """
+        Gets the object_storage_bucket of this NfsDataTransferMediumDetails.
+
+        :return: The object_storage_bucket of this NfsDataTransferMediumDetails.
+        :rtype: oci.database_migration.models.ObjectStoreBucket
+        """
+        return self._object_storage_bucket
+
+    @object_storage_bucket.setter
+    def object_storage_bucket(self, object_storage_bucket):
+        """
+        Sets the object_storage_bucket of this NfsDataTransferMediumDetails.
+
+        :param object_storage_bucket: The object_storage_bucket of this NfsDataTransferMediumDetails.
+        :type: oci.database_migration.models.ObjectStoreBucket
+        """
+        self._object_storage_bucket = object_storage_bucket
 
     def __repr__(self):
         return formatted_flat_dict(self)

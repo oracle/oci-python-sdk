@@ -96,6 +96,10 @@ class Endpoint(object):
             The value to assign to the content_moderation_config property of this Endpoint.
         :type content_moderation_config: oci.generative_ai.models.ContentModerationConfig
 
+        :param previous_state:
+            The value to assign to the previous_state property of this Endpoint.
+        :type previous_state: oci.generative_ai.models.Endpoint
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Endpoint.
         :type freeform_tags: dict(str, str)
@@ -121,6 +125,7 @@ class Endpoint(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'content_moderation_config': 'ContentModerationConfig',
+            'previous_state': 'Endpoint',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -138,6 +143,7 @@ class Endpoint(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'content_moderation_config': 'contentModerationConfig',
+            'previous_state': 'previousState',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -154,6 +160,7 @@ class Endpoint(object):
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._content_moderation_config = None
+        self._previous_state = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -423,6 +430,26 @@ class Endpoint(object):
         :type: oci.generative_ai.models.ContentModerationConfig
         """
         self._content_moderation_config = content_moderation_config
+
+    @property
+    def previous_state(self):
+        """
+        Gets the previous_state of this Endpoint.
+
+        :return: The previous_state of this Endpoint.
+        :rtype: oci.generative_ai.models.Endpoint
+        """
+        return self._previous_state
+
+    @previous_state.setter
+    def previous_state(self, previous_state):
+        """
+        Sets the previous_state of this Endpoint.
+
+        :param previous_state: The previous_state of this Endpoint.
+        :type: oci.generative_ai.models.Endpoint
+        """
+        self._previous_state = previous_state
 
     @property
     def freeform_tags(self):

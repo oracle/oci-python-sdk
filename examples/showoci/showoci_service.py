@@ -39,9 +39,10 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "24.04.09"
+    version = "24.04.16"
     oci_compatible_version = "2.125.0"
     thread_lock = threading.Lock()
+    collection_ljust = 40
 
     ##########################################################################
     # Global Constants
@@ -1192,7 +1193,7 @@ class ShowOCIService(object):
     ##########################################################################
     def __load_print_status_with_threads(self, msg):
         if self.flags.skip_threads:
-            print("--> " + msg.ljust(32) + "<-- ", end="")
+            print("--> " + msg.ljust(self.collection_ljust) + "<-- ", end="")
 
     ##########################################################################
     # Print Section Time
@@ -1375,7 +1376,7 @@ class ShowOCIService(object):
         else:
             # lock for printing
             with self.thread_lock:
-                print("--> " + header.ljust(32) + "<-- " + msg)
+                print("--> " + header.ljust(self.collection_ljust) + "<-- " + msg)
 
     ##########################################################################
     # print count result for Thread
@@ -1391,7 +1392,7 @@ class ShowOCIService(object):
         else:
             # lock for printing
             with self.thread_lock:
-                str1 = "--> " + header.ljust(32) + "<-- "
+                str1 = "--> " + header.ljust(self.collection_ljust) + "<-- "
                 str2 = str_cnt + " - " + str_time + ((" - " + errstr) if errstr else '')
                 print(str1 + str2)
 
@@ -9907,23 +9908,39 @@ class ShowOCIService(object):
 
             # db_node = oci.database.models.DbNodeSummary
             for db_node in db_nodes:
-                data.append(
-                    {'id': str(db_node.id),
-                     'hostname': str(db_node.hostname),
-                     'fault_domain': str(db_node.fault_domain),
-                     'lifecycle_state': str(db_node.lifecycle_state),
-                     'vnic_id': str(db_node.vnic_id),
-                     'backup_vnic_id': str(db_node.backup_vnic_id),
-                     'cpu_core_count': str(db_node.cpu_core_count),
-                     'memory_size_in_gbs': str(db_node.memory_size_in_gbs),
-                     'db_node_storage_size_in_gbs': str(db_node.db_node_storage_size_in_gbs),
-                     'db_server_id': str(db_node.db_server_id),
-                     'maintenance_type': str(db_node.maintenance_type),
-                     'time_maintenance_window_start': str(db_node.time_maintenance_window_start),
-                     'time_maintenance_window_end': str(db_node.time_maintenance_window_end),
-                     'vnic_details': self.__load_core_compute_vnic(virtual_network, db_node.vnic_id, compartment),
-                     'backup_vnic_details': self.__load_core_compute_vnic(virtual_network, db_node.backup_vnic_id, compartment),
-                     'software_storage_size_in_gb': str(db_node.software_storage_size_in_gb)})
+                var = {
+                    'id': self.get_value(db_node.id),
+                    'hostname': self.get_value(db_node.hostname),
+                    'fault_domain': self.get_value(db_node.fault_domain),
+                    'lifecycle_state': self.get_value(db_node.lifecycle_state),
+                    'vnic_id': self.get_value(db_node.vnic_id),
+                    'backup_vnic_id': self.get_value(db_node.backup_vnic_id),
+                    'cpu_core_count': self.get_value(db_node.cpu_core_count),
+                    'memory_size_in_gbs': self.get_value(db_node.memory_size_in_gbs),
+                    'db_node_storage_size_in_gbs': self.get_value(db_node.db_node_storage_size_in_gbs),
+                    'db_server_id': self.get_value(db_node.db_server_id),
+                    'maintenance_type': self.get_value(db_node.maintenance_type),
+                    'time_maintenance_window_start': self.get_value(db_node.time_maintenance_window_start),
+                    'time_maintenance_window_end': self.get_value(db_node.time_maintenance_window_end),
+                    'vnic_details': self.__load_core_compute_vnic(virtual_network, db_node.vnic_id, compartment),
+                    'backup_vnic_details': self.__load_core_compute_vnic(virtual_network, db_node.backup_vnic_id, compartment),
+                    'software_storage_size_in_gb': str(db_node.software_storage_size_in_gb),
+                    # Added 4/5/2024
+                    'host_ip_id': self.get_value(db_node.host_ip_id),
+                    'host_ip': self.__load_core_network_single_privateip(virtual_network, db_node.host_ip_id),
+                    'backup_ip_id': self.get_value(db_node.backup_ip_id),
+                    'backup_ip': self.__load_core_network_single_privateip(virtual_network, db_node.backup_ip_id),
+                    'vnic2_id': self.get_value(db_node.vnic2_id),
+                    'vnic2_details': self.__load_core_compute_vnic(virtual_network, db_node.vnic2_id, compartment),
+                    'backup_vnic2_id': self.get_value(db_node.backup_vnic2_id),
+                    'backup_vnic2_details': self.__load_core_compute_vnic(virtual_network, db_node.backup_vnic2_id, compartment),
+                    'time_created': self.get_value(db_node.time_created, trim_date=True),
+                    'additional_details': self.get_value(db_node.additional_details),
+                    'defined_tags': [] if db_node.defined_tags is None else db_node.defined_tags,
+                    'freeform_tags': [] if db_node.freeform_tags is None else db_node.freeform_tags
+                }
+
+                data.append(var)
 
                 # mark reboot migration flag
                 if db_node.maintenance_type is not None:
@@ -18912,6 +18929,7 @@ class ShowOCIDomains(object):
     skip_identity_user_credential = False
     skip_threads = False
     thread_lock = threading.Lock()
+    collection_ljust = 40
 
     ##########################################################################
     # init class
@@ -19108,7 +19126,7 @@ class ShowOCIDomains(object):
         else:
             # lock for printing
             with self.thread_lock:
-                str1 = "--> " + header.ljust(32) + "<-- " + errstr
+                str1 = "--> " + header.ljust(self.collection_ljust) + "<-- " + errstr
                 str2 = str_cnt + " - " + str_time
                 print(str1 + str2)
 
@@ -19117,7 +19135,7 @@ class ShowOCIDomains(object):
     ##########################################################################
     def __load_print_status_with_threads(self, msg):
         if self.skip_threads:
-            print("--> " + msg.ljust(32) + "<-- ", end="")
+            print("--> " + msg.ljust(self.collection_ljust) + "<-- ", end="")
         # else:
             # print("=== Running " + msg + "...")
 
@@ -19357,7 +19375,7 @@ class ShowOCIDomains(object):
 
         data = []
         errstr = ""
-        header = domain_name[0:10] + ".Users"
+        header = domain_name[0:21] + ".Users"
         self.__load_print_status_with_threads(header)
 
         start_time = time.time()
@@ -19399,8 +19417,8 @@ class ShowOCIDomains(object):
                     'idcs_prevented_operations': str(','.join(x for x in var.idcs_prevented_operations)) if var.idcs_prevented_operations else "",
                     'idcs_created_by': var.idcs_created_by.value if var.idcs_created_by else "",
                     'idcs_last_modified_by': var.idcs_last_modified_by.value if var.idcs_last_modified_by else "",
-                    'family_name': var.name.family_name if var.name else "",
-                    'given_name': var.name.given_name if var.name else "",
+                    'family_name': self.get_value(var.name.family_name) if var.name else "",
+                    'given_name': self.get_value(var.name.given_name) if var.name else "",
                     'tags': [{'key': x.key, 'value': x.value} for x in var.tags] if var.tags else [],
                     'freeform_tags': self.__get_tags(var.urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags, False),
                     'defined_tags': self.__get_tags(var.urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags, True),
@@ -19794,7 +19812,7 @@ class ShowOCIDomains(object):
         data = []
 
         errstr = ""
-        header = domain_name[0:10] + ".Groups"
+        header = domain_name[0:21] + ".Groups"
         self.__load_print_status_with_threads(header)
 
         start_time = time.time()
@@ -19889,7 +19907,7 @@ class ShowOCIDomains(object):
         data = []
 
         errstr = ""
-        header = domain_name[0:10] + ".Dynamic Groups"
+        header = domain_name[0:21] + ".Dynamic Groups"
         self.__load_print_status_with_threads(header)
 
         start_time = time.time()
@@ -19967,7 +19985,7 @@ class ShowOCIDomains(object):
         data = []
 
         errstr = ""
-        header = domain_name[0:10] + ".IDPs"
+        header = domain_name[0:21] + ".IDPs"
         self.__load_print_status_with_threads(header)
 
         start_time = time.time()
@@ -20109,7 +20127,7 @@ class ShowOCIDomains(object):
         data = []
 
         errstr = ""
-        header = domain_name[0:10] + ".Kmsi Setting"
+        header = domain_name[0:21] + ".Kmsi Setting"
         self.__load_print_status_with_threads(header)
 
         start_time = time.time()
@@ -20174,7 +20192,7 @@ class ShowOCIDomains(object):
         data = []
 
         errstr = ""
-        header = domain_name[0:10] + ".AuthN Factors"
+        header = domain_name[0:21] + ".AuthN Factors"
         self.__load_print_status_with_threads(header)
 
         start_time = time.time()
@@ -20313,7 +20331,7 @@ class ShowOCIDomains(object):
         data = []
 
         errstr = ""
-        header = domain_name[0:10] + ".Password Policies"
+        header = domain_name[0:21] + ".Password Policies"
         self.__load_print_status_with_threads(header)
 
         start_time = time.time()

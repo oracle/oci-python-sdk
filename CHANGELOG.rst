@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.125.3 - 2024-04-16
+====================
+
+	
+Added
+-----
+* Support for calling Oracle Cloud Infrastructure services in the me-abudhabi-3 region
+* Support for new Image resource for an Autonomous Database in the Database service
+* Support for creating Autonomous Container Database using Autonomous Database Software Image in the Database service
+* Support for new dedicated AI cluster unit shape in the Generative AI service
+* Support for Chat API for LLM models in the Generative AI service
+* Support for network security groups (NSGs) in the Redis service
+* Support for custom public egress on model deployments in the Data Science service
+* Support for a new data transfer parameter for AWS S3 bucket in the Database Migration service
+* Support for Oracle Process Automation instance start and stop operations in the Process Automation service
+* Support for healthcare Natural Language Processing (NLP) in the AI Language service
+* Support for identification and de-identification of Private Health Information (PHI) service in the AI Language service
+* Support for multilingual content for using machine learning models in the AI Language service
+* Support for usage statements in cost management in the Usage service
+ 
+====================
 2.125.2 - 2024-04-09
 ====================
 

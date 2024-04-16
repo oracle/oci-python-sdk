@@ -36,6 +36,9 @@ from .autonomous_database_console_token_details import AutonomousDatabaseConsole
 from .autonomous_database_dataguard_association import AutonomousDatabaseDataguardAssociation
 from .autonomous_database_key_history_entry import AutonomousDatabaseKeyHistoryEntry
 from .autonomous_database_manual_refresh_details import AutonomousDatabaseManualRefreshDetails
+from .autonomous_database_software_image import AutonomousDatabaseSoftwareImage
+from .autonomous_database_software_image_collection import AutonomousDatabaseSoftwareImageCollection
+from .autonomous_database_software_image_summary import AutonomousDatabaseSoftwareImageSummary
 from .autonomous_database_standby_summary import AutonomousDatabaseStandbySummary
 from .autonomous_database_summary import AutonomousDatabaseSummary
 from .autonomous_database_wallet import AutonomousDatabaseWallet
@@ -59,6 +62,7 @@ from .backup_destination import BackupDestination
 from .backup_destination_details import BackupDestinationDetails
 from .backup_destination_summary import BackupDestinationSummary
 from .backup_summary import BackupSummary
+from .change_autonomous_database_software_image_compartment_details import ChangeAutonomousDatabaseSoftwareImageCompartmentDetails
 from .change_autonomous_vm_cluster_compartment_details import ChangeAutonomousVmClusterCompartmentDetails
 from .change_cloud_autonomous_vm_cluster_compartment_details import ChangeCloudAutonomousVmClusterCompartmentDetails
 from .change_cloud_exadata_infrastructure_compartment_details import ChangeCloudExadataInfrastructureCompartmentDetails
@@ -102,6 +106,7 @@ from .create_autonomous_database_clone_details import CreateAutonomousDatabaseCl
 from .create_autonomous_database_details import CreateAutonomousDatabaseDetails
 from .create_autonomous_database_from_backup_details import CreateAutonomousDatabaseFromBackupDetails
 from .create_autonomous_database_from_backup_timestamp_details import CreateAutonomousDatabaseFromBackupTimestampDetails
+from .create_autonomous_database_software_image_details import CreateAutonomousDatabaseSoftwareImageDetails
 from .create_autonomous_vm_cluster_details import CreateAutonomousVmClusterDetails
 from .create_backup_destination_details import CreateBackupDestinationDetails
 from .create_backup_details import CreateBackupDetails
@@ -326,6 +331,7 @@ from .update_autonomous_container_database_data_guard_association_details import
 from .update_autonomous_container_database_details import UpdateAutonomousContainerDatabaseDetails
 from .update_autonomous_database_backup_details import UpdateAutonomousDatabaseBackupDetails
 from .update_autonomous_database_details import UpdateAutonomousDatabaseDetails
+from .update_autonomous_database_software_image_details import UpdateAutonomousDatabaseSoftwareImageDetails
 from .update_autonomous_database_wallet_details import UpdateAutonomousDatabaseWalletDetails
 from .update_autonomous_exadata_infrastructure_details import UpdateAutonomousExadataInfrastructureDetails
 from .update_autonomous_vm_cluster_details import UpdateAutonomousVmClusterDetails
@@ -405,6 +411,9 @@ database_type_mapping = {
     "AutonomousDatabaseDataguardAssociation": AutonomousDatabaseDataguardAssociation,
     "AutonomousDatabaseKeyHistoryEntry": AutonomousDatabaseKeyHistoryEntry,
     "AutonomousDatabaseManualRefreshDetails": AutonomousDatabaseManualRefreshDetails,
+    "AutonomousDatabaseSoftwareImage": AutonomousDatabaseSoftwareImage,
+    "AutonomousDatabaseSoftwareImageCollection": AutonomousDatabaseSoftwareImageCollection,
+    "AutonomousDatabaseSoftwareImageSummary": AutonomousDatabaseSoftwareImageSummary,
     "AutonomousDatabaseStandbySummary": AutonomousDatabaseStandbySummary,
     "AutonomousDatabaseSummary": AutonomousDatabaseSummary,
     "AutonomousDatabaseWallet": AutonomousDatabaseWallet,
@@ -428,6 +437,7 @@ database_type_mapping = {
     "BackupDestinationDetails": BackupDestinationDetails,
     "BackupDestinationSummary": BackupDestinationSummary,
     "BackupSummary": BackupSummary,
+    "ChangeAutonomousDatabaseSoftwareImageCompartmentDetails": ChangeAutonomousDatabaseSoftwareImageCompartmentDetails,
     "ChangeAutonomousVmClusterCompartmentDetails": ChangeAutonomousVmClusterCompartmentDetails,
     "ChangeCloudAutonomousVmClusterCompartmentDetails": ChangeCloudAutonomousVmClusterCompartmentDetails,
     "ChangeCloudExadataInfrastructureCompartmentDetails": ChangeCloudExadataInfrastructureCompartmentDetails,
@@ -471,6 +481,7 @@ database_type_mapping = {
     "CreateAutonomousDatabaseDetails": CreateAutonomousDatabaseDetails,
     "CreateAutonomousDatabaseFromBackupDetails": CreateAutonomousDatabaseFromBackupDetails,
     "CreateAutonomousDatabaseFromBackupTimestampDetails": CreateAutonomousDatabaseFromBackupTimestampDetails,
+    "CreateAutonomousDatabaseSoftwareImageDetails": CreateAutonomousDatabaseSoftwareImageDetails,
     "CreateAutonomousVmClusterDetails": CreateAutonomousVmClusterDetails,
     "CreateBackupDestinationDetails": CreateBackupDestinationDetails,
     "CreateBackupDetails": CreateBackupDetails,
@@ -695,6 +706,7 @@ database_type_mapping = {
     "UpdateAutonomousContainerDatabaseDetails": UpdateAutonomousContainerDatabaseDetails,
     "UpdateAutonomousDatabaseBackupDetails": UpdateAutonomousDatabaseBackupDetails,
     "UpdateAutonomousDatabaseDetails": UpdateAutonomousDatabaseDetails,
+    "UpdateAutonomousDatabaseSoftwareImageDetails": UpdateAutonomousDatabaseSoftwareImageDetails,
     "UpdateAutonomousDatabaseWalletDetails": UpdateAutonomousDatabaseWalletDetails,
     "UpdateAutonomousExadataInfrastructureDetails": UpdateAutonomousExadataInfrastructureDetails,
     "UpdateAutonomousVmClusterDetails": UpdateAutonomousVmClusterDetails,

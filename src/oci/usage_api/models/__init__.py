@@ -12,6 +12,7 @@ from .configuration import Configuration
 from .configuration_aggregation import ConfigurationAggregation
 from .cost_analysis_ui import CostAnalysisUI
 from .create_custom_table_details import CreateCustomTableDetails
+from .create_email_recipients_group_details import CreateEmailRecipientsGroupDetails
 from .create_query_details import CreateQueryDetails
 from .create_schedule_details import CreateScheduleDetails
 from .create_usage_carbon_emissions_query_details import CreateUsageCarbonEmissionsQueryDetails
@@ -21,6 +22,10 @@ from .custom_table_summary import CustomTableSummary
 from .date_range import DateRange
 from .dimension import Dimension
 from .dynamic_date_range import DynamicDateRange
+from .email_recipient import EmailRecipient
+from .email_recipients_group import EmailRecipientsGroup
+from .email_recipients_group_collection import EmailRecipientsGroupCollection
+from .email_recipients_group_summary import EmailRecipientsGroupSummary
 from .filter import Filter
 from .forecast import Forecast
 from .object_storage_location import ObjectStorageLocation
@@ -43,6 +48,7 @@ from .scheduled_run_summary import ScheduledRunSummary
 from .static_date_range import StaticDateRange
 from .tag import Tag
 from .update_custom_table_details import UpdateCustomTableDetails
+from .update_email_recipients_group_details import UpdateEmailRecipientsGroupDetails
 from .update_query_details import UpdateQueryDetails
 from .update_schedule_details import UpdateScheduleDetails
 from .update_usage_carbon_emissions_query_details import UpdateUsageCarbonEmissionsQueryDetails
@@ -64,6 +70,7 @@ usage_api_type_mapping = {
     "ConfigurationAggregation": ConfigurationAggregation,
     "CostAnalysisUI": CostAnalysisUI,
     "CreateCustomTableDetails": CreateCustomTableDetails,
+    "CreateEmailRecipientsGroupDetails": CreateEmailRecipientsGroupDetails,
     "CreateQueryDetails": CreateQueryDetails,
     "CreateScheduleDetails": CreateScheduleDetails,
     "CreateUsageCarbonEmissionsQueryDetails": CreateUsageCarbonEmissionsQueryDetails,
@@ -73,6 +80,10 @@ usage_api_type_mapping = {
     "DateRange": DateRange,
     "Dimension": Dimension,
     "DynamicDateRange": DynamicDateRange,
+    "EmailRecipient": EmailRecipient,
+    "EmailRecipientsGroup": EmailRecipientsGroup,
+    "EmailRecipientsGroupCollection": EmailRecipientsGroupCollection,
+    "EmailRecipientsGroupSummary": EmailRecipientsGroupSummary,
     "Filter": Filter,
     "Forecast": Forecast,
     "ObjectStorageLocation": ObjectStorageLocation,
@@ -95,6 +106,7 @@ usage_api_type_mapping = {
     "StaticDateRange": StaticDateRange,
     "Tag": Tag,
     "UpdateCustomTableDetails": UpdateCustomTableDetails,
+    "UpdateEmailRecipientsGroupDetails": UpdateEmailRecipientsGroupDetails,
     "UpdateQueryDetails": UpdateQueryDetails,
     "UpdateScheduleDetails": UpdateScheduleDetails,
     "UpdateUsageCarbonEmissionsQueryDetails": UpdateUsageCarbonEmissionsQueryDetails,

@@ -13,8 +13,9 @@ from oci.decorators import init_model_state_from_kwargs
 class InputLocation(object):
     """
     document location and other meta data about documents
-    For TXT both ObjectStoragePrefixLocation and ObjectStorageFileNameLocation supported
+    For TXT only ObjectStoragePrefixLocation supported
     For CSV only ObjectStorageFileNameLocation is supported
+    For this release only one file is supported for ObjectStorageFileNameLocation i.e CSV file type
     """
 
     #: A constant which can be used with the location_type property of a InputLocation.

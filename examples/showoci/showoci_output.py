@@ -22,7 +22,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "24.04.09"
+    version = "24.04.16"
 
     ##########################################################################
     # spaces for align
@@ -269,26 +269,32 @@ class ShowOCIOutput(object):
             header = domain_name + ":Users"
             self.print_header(header, 2)
 
+            # Calculate ljust for printout aligned
+            ljust_value = 0
             for user in users:
-                last_login = ", Last Login = " + user['ext_user_state']['last_successful_login_date'] if user['ext_user_state']['last_successful_login_date'] else ""
+                val = len(user['user_name'] + user['family_name'] + user['given_name']) + 2
+                ljust_value = val if val > ljust_value else ljust_value
+            ljust_value = 50 if ljust_value > 50 else ljust_value
+
+            for user in users:
+                username = user['user_name']
+                family_name = user['family_name'] if user['family_name'] != username else ""
+                given_name = user['given_name'] if user['given_name'] != username else ""
+                family_given_name = (" (" + family_name + " " + given_name + ")") if family_name or given_name else ""
+
+                last_login = ", Last Login = " + user['ext_user_state']['last_successful_login_date'] if user['ext_user_state']['last_successful_login_date'] else ", Last Login = None            "
                 mfa_enabled = "" if user['ext_mfa']['mfa_enabled_on'] == "False" else ", MFA Enabled"
-                print(self.taba + str(user['user_name']) + " (" + str(user['family_name']) + " " + str(user['given_name']) + ")" + mfa_enabled + last_login)
 
-                if user['groups']:
-                    print(self.tabs + "Groups   : " + ', '.join(x['display'] for x in user['groups']))
+                groups = (", Groups: " + ', '.join(x['display'] for x in user['groups'])) if user['groups'] else ""
+                api_keys = ", API: " + str(len(user['api_keys'])) if user['api_keys'] else ""
+                roles = ", Roles: " + str(len(user['roles'])) if user['roles'] else ""
+                customer_secret_keys = ", Secrets: " + str(len(user['customer_secret_keys'])) if user['customer_secret_keys'] else ""
+                auth_tokens = ", AuthToken: " + str(len(user['auth_tokens'])) if user['auth_tokens'] else ""
+                smtp_credentials = ", SMTP: " + str(len(user['smtp_credentials'])) if user['smtp_credentials'] else ""
+                o_auth2_client_credentials = ", OAuth: " + str(len(user['o_auth2_client_credentials'])) if user['o_auth2_client_credentials'] else ""
+                db_credentials = ", DBCred: " + str(len(user['db_credentials'])) if user['db_credentials'] else ""
 
-                api_keys = "API Keys: " + str(len(user['api_keys'])) if user['api_keys'] else ""
-                roles = " Roles: " + str(len(user['roles'])) if user['roles'] else ""
-                customer_secret_keys = " Secrets: " + str(len(user['customer_secret_keys'])) if user['customer_secret_keys'] else ""
-                auth_tokens = " Auth Tokens: " + str(len(user['auth_tokens'])) if user['auth_tokens'] else ""
-                smtp_credentials = " SMTP Cred: " + str(len(user['smtp_credentials'])) if user['smtp_credentials'] else ""
-                o_auth2_client_credentials = " OAuth: " + str(len(user['o_auth2_client_credentials'])) if user['o_auth2_client_credentials'] else ""
-                db_credentials = " DB Cred: " + str(len(user['db_credentials'])) if user['db_credentials'] else ""
-
-                if user['api_keys'] and user['roles'] and user['customer_secret_keys'] and user['auth_tokens'] and user['smtp_credentials'] and user['o_auth2_client_credentials'] and user['db_credentials']:
-                    print(self.tabs + "Keys     : " + api_keys + roles + customer_secret_keys + auth_tokens + smtp_credentials + o_auth2_client_credentials + db_credentials)
-
-                print("")
+                print(self.taba + (username + family_given_name).ljust(ljust_value) + last_login + mfa_enabled + api_keys + roles + customer_secret_keys + auth_tokens + smtp_credentials + o_auth2_client_credentials + db_credentials + groups)
 
         except Exception as e:
             self.__print_error("__print_identity_domains_users", e)
@@ -305,7 +311,6 @@ class ShowOCIOutput(object):
                 print(self.taba + val['display_name'] + " (" + val['ext_group']['description'] + ")")
                 if val['members']:
                     print(self.tabs + "Users    : " + ', '.join(x['name'] for x in val['members']))
-                print("")
 
         except Exception as e:
             self.__print_error("__print_identity_domains_groups", e)
@@ -1295,7 +1300,7 @@ class ShowOCIOutput(object):
 
                         if 'time_maintenance_window_start' in db_node:
                             if db_node['maintenance_type'] != "None":
-                                print(self.tabs + self.tabs + "     Maintenance: " + db_node['maintenance_type'] + "  " + db_node['time_maintenance_window_start'][0:16] + " - " + db_node['time_maintenance_window_end'][0:16])
+                                print(self.tabs + self.tabs + "        Maintenance: " + db_node['maintenance_type'] + "  " + db_node['time_maintenance_window_start'][0:16] + " - " + db_node['time_maintenance_window_end'][0:16])
 
                     # db homes
                     for db_home in vm['db_homes']:
@@ -1316,7 +1321,7 @@ class ShowOCIOutput(object):
 
                             # print backups
                             for backup in db['backups']:
-                                print(self.tabs + self.tabs + "      " + backup['name'] + " - " + backup['time'] + " - " + backup['size'])
+                                print(self.tabs + self.tabs + "        " + backup['name'] + " - " + backup['time'] + " - " + backup['size'])
 
                         print(self.tabs + "          : " + '-' * 90)
 
@@ -1453,7 +1458,7 @@ class ShowOCIOutput(object):
 
                         if 'time_maintenance_window_start' in db_node:
                             if db_node['maintenance_type'] != "None":
-                                print(self.tabs + self.tabs + "     Maintenance: " + db_node['maintenance_type'] + "  " + db_node['time_maintenance_window_start'][0:16] + " - " + db_node['time_maintenance_window_end'][0:16])
+                                print(self.tabs + self.tabs + "          Maintenance: " + db_node['maintenance_type'] + "  " + db_node['time_maintenance_window_start'][0:16] + " - " + db_node['time_maintenance_window_end'][0:16])
 
                     # db homes
                     for db_home in vm['db_homes']:
@@ -1570,7 +1575,8 @@ class ShowOCIOutput(object):
                 print(self.tabs + "Port    : " + dbs['listener_port'])
 
             if 'cluster_name' in dbs:
-                print(self.tabs + "Cluster : " + dbs['cluster_name'])
+                if dbs['cluster_name']:
+                    print(self.tabs + "Cluster : " + dbs['cluster_name'])
 
             if 'patches' in dbs:
                 for p in dbs['patches']:
@@ -1618,7 +1624,7 @@ class ShowOCIOutput(object):
 
                     if 'time_maintenance_window_start' in db_node:
                         if db_node['maintenance_type'] != "None":
-                            print(self.tabs + self.tabs + "     Maintenance: " + db_node['maintenance_type'] + "  " + db_node['time_maintenance_window_start'][0:16] + " - " + db_node['time_maintenance_window_end'][0:16])
+                            print(self.tabs + self.tabs + "      Maintenance: " + db_node['maintenance_type'] + "  " + db_node['time_maintenance_window_start'][0:16] + " - " + db_node['time_maintenance_window_end'][0:16])
 
                 # db homes
                 for db_home in dbs['db_homes']:

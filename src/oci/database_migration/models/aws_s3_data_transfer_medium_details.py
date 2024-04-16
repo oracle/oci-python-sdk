@@ -43,13 +43,18 @@ class AwsS3DataTransferMediumDetails(DataTransferMediumDetailsV2):
             The value to assign to the secret_access_key property of this AwsS3DataTransferMediumDetails.
         :type secret_access_key: str
 
+        :param object_storage_bucket:
+            The value to assign to the object_storage_bucket property of this AwsS3DataTransferMediumDetails.
+        :type object_storage_bucket: oci.database_migration.models.ObjectStoreBucket
+
         """
         self.swagger_types = {
             'type': 'str',
             'name': 'str',
             'region': 'str',
             'access_key_id': 'str',
-            'secret_access_key': 'str'
+            'secret_access_key': 'str',
+            'object_storage_bucket': 'ObjectStoreBucket'
         }
 
         self.attribute_map = {
@@ -57,7 +62,8 @@ class AwsS3DataTransferMediumDetails(DataTransferMediumDetailsV2):
             'name': 'name',
             'region': 'region',
             'access_key_id': 'accessKeyId',
-            'secret_access_key': 'secretAccessKey'
+            'secret_access_key': 'secretAccessKey',
+            'object_storage_bucket': 'objectStorageBucket'
         }
 
         self._type = None
@@ -65,6 +71,7 @@ class AwsS3DataTransferMediumDetails(DataTransferMediumDetailsV2):
         self._region = None
         self._access_key_id = None
         self._secret_access_key = None
+        self._object_storage_bucket = None
         self._type = 'AWS_S3'
 
     @property
@@ -170,6 +177,26 @@ class AwsS3DataTransferMediumDetails(DataTransferMediumDetailsV2):
         :type: str
         """
         self._secret_access_key = secret_access_key
+
+    @property
+    def object_storage_bucket(self):
+        """
+        Gets the object_storage_bucket of this AwsS3DataTransferMediumDetails.
+
+        :return: The object_storage_bucket of this AwsS3DataTransferMediumDetails.
+        :rtype: oci.database_migration.models.ObjectStoreBucket
+        """
+        return self._object_storage_bucket
+
+    @object_storage_bucket.setter
+    def object_storage_bucket(self, object_storage_bucket):
+        """
+        Sets the object_storage_bucket of this AwsS3DataTransferMediumDetails.
+
+        :param object_storage_bucket: The object_storage_bucket of this AwsS3DataTransferMediumDetails.
+        :type: oci.database_migration.models.ObjectStoreBucket
+        """
+        self._object_storage_bucket = object_storage_bucket
 
     def __repr__(self):
         return formatted_flat_dict(self)

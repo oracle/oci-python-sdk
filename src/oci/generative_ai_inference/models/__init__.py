@@ -6,45 +6,75 @@
 
 from __future__ import absolute_import
 
+from .base_chat_request import BaseChatRequest
+from .base_chat_response import BaseChatResponse
+from .chat_choice import ChatChoice
+from .chat_content import ChatContent
+from .chat_details import ChatDetails
+from .chat_result import ChatResult
 from .choice import Choice
+from .citation import Citation
+from .cohere_chat_request import CohereChatRequest
+from .cohere_chat_response import CohereChatResponse
 from .cohere_llm_inference_request import CohereLlmInferenceRequest
 from .cohere_llm_inference_response import CohereLlmInferenceResponse
+from .cohere_message import CohereMessage
 from .dedicated_serving_mode import DedicatedServingMode
 from .embed_text_details import EmbedTextDetails
 from .embed_text_result import EmbedTextResult
 from .generate_text_details import GenerateTextDetails
 from .generate_text_result import GenerateTextResult
 from .generated_text import GeneratedText
+from .generic_chat_request import GenericChatRequest
+from .generic_chat_response import GenericChatResponse
 from .llama_llm_inference_request import LlamaLlmInferenceRequest
 from .llama_llm_inference_response import LlamaLlmInferenceResponse
 from .llm_inference_request import LlmInferenceRequest
 from .llm_inference_response import LlmInferenceResponse
 from .logprobs import Logprobs
+from .message import Message
 from .on_demand_serving_mode import OnDemandServingMode
+from .search_query import SearchQuery
 from .serving_mode import ServingMode
 from .summarize_text_details import SummarizeTextDetails
 from .summarize_text_result import SummarizeTextResult
+from .text_content import TextContent
 from .token_likelihood import TokenLikelihood
 
 # Maps type names to classes for generative_ai_inference services.
 generative_ai_inference_type_mapping = {
+    "BaseChatRequest": BaseChatRequest,
+    "BaseChatResponse": BaseChatResponse,
+    "ChatChoice": ChatChoice,
+    "ChatContent": ChatContent,
+    "ChatDetails": ChatDetails,
+    "ChatResult": ChatResult,
     "Choice": Choice,
+    "Citation": Citation,
+    "CohereChatRequest": CohereChatRequest,
+    "CohereChatResponse": CohereChatResponse,
     "CohereLlmInferenceRequest": CohereLlmInferenceRequest,
     "CohereLlmInferenceResponse": CohereLlmInferenceResponse,
+    "CohereMessage": CohereMessage,
     "DedicatedServingMode": DedicatedServingMode,
     "EmbedTextDetails": EmbedTextDetails,
     "EmbedTextResult": EmbedTextResult,
     "GenerateTextDetails": GenerateTextDetails,
     "GenerateTextResult": GenerateTextResult,
     "GeneratedText": GeneratedText,
+    "GenericChatRequest": GenericChatRequest,
+    "GenericChatResponse": GenericChatResponse,
     "LlamaLlmInferenceRequest": LlamaLlmInferenceRequest,
     "LlamaLlmInferenceResponse": LlamaLlmInferenceResponse,
     "LlmInferenceRequest": LlmInferenceRequest,
     "LlmInferenceResponse": LlmInferenceResponse,
     "Logprobs": Logprobs,
+    "Message": Message,
     "OnDemandServingMode": OnDemandServingMode,
+    "SearchQuery": SearchQuery,
     "ServingMode": ServingMode,
     "SummarizeTextDetails": SummarizeTextDetails,
     "SummarizeTextResult": SummarizeTextResult,
+    "TextContent": TextContent,
     "TokenLikelihood": TokenLikelihood
 }

@@ -20,6 +20,10 @@ class PiiEntity(object):
         Initializes a new PiiEntity object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param id:
+            The value to assign to the id property of this PiiEntity.
+        :type id: str
+
         :param offset:
             The value to assign to the offset property of this PiiEntity.
         :type offset: int
@@ -42,6 +46,7 @@ class PiiEntity(object):
 
         """
         self.swagger_types = {
+            'id': 'str',
             'offset': 'int',
             'length': 'int',
             'text': 'str',
@@ -50,6 +55,7 @@ class PiiEntity(object):
         }
 
         self.attribute_map = {
+            'id': 'id',
             'offset': 'offset',
             'length': 'length',
             'text': 'text',
@@ -57,6 +63,7 @@ class PiiEntity(object):
             'score': 'score'
         }
 
+        self._id = None
         self._offset = None
         self._length = None
         self._text = None
@@ -64,9 +71,33 @@ class PiiEntity(object):
         self._score = None
 
     @property
+    def id(self):
+        """
+        Gets the id of this PiiEntity.
+        Unique id of the entity.
+
+
+        :return: The id of this PiiEntity.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this PiiEntity.
+        Unique id of the entity.
+
+
+        :param id: The id of this PiiEntity.
+        :type: str
+        """
+        self._id = id
+
+    @property
     def offset(self):
         """
-        Gets the offset of this PiiEntity.
+        **[Required]** Gets the offset of this PiiEntity.
         The number of Unicode code points preceding this entity in the submitted text.
 
 
@@ -90,7 +121,7 @@ class PiiEntity(object):
     @property
     def length(self):
         """
-        Gets the length of this PiiEntity.
+        **[Required]** Gets the length of this PiiEntity.
         Length of PII entity text.
 
 
@@ -114,7 +145,7 @@ class PiiEntity(object):
     @property
     def text(self):
         """
-        Gets the text of this PiiEntity.
+        **[Required]** Gets the text of this PiiEntity.
         Entity text like name of person, Organization and so on.
 
 
@@ -138,8 +169,48 @@ class PiiEntity(object):
     @property
     def type(self):
         """
-        Gets the type of this PiiEntity.
-        Type of PII entity text like PER, LOC.
+        **[Required]** Gets the type of this PiiEntity.
+        Entity type supported
+        PERSON
+        ADDRESS
+        AGE
+        DATE_TIME
+        SSN_OR_TAXPAYER
+        EMAIL
+        PASSPORT_NUMBER_US
+        TELEPHONE_NUMBER
+        DRIVER_ID_US
+        BANK_ACCOUNT_NUMBER
+        BANK_SWIFT
+        BANK_ROUTING
+        CREDIT_DEBIT_NUMBER
+        IP_ADDRESS
+        MAC_ADDRESS
+        COOKIE
+        XSRF_TOKEN
+        AUTH_BASIC
+        AUTH_BEARER
+        JSON_WEB_TOKEN
+        PRIVATE_KEY
+        PUBLIC_KEY
+        OCI_OCID_USER
+        OCI_OCID_TENANCY
+        OCI_SMTP_USERNAME
+        OCI_OCID_REFERENCE
+        OCI_FINGERPRINT
+        OCI_CREDENTIAL
+        OCI_PRE_AUTH_REQUEST
+        OCI_STORAGE_SIGNED_URL
+        OCI_CUSTOMER_SECRET_KEY
+        OCI_ACCESS_KEy
+        MEDICAL_RECORD_NUMBER
+        HEALTH_PLAN_ID
+        URL
+        CERTIFICATE_NUMBER
+        FIN
+        GUIDs
+        VEHICLE_LICENSE_PLATE_US
+        VEHICLE_IDENTIFIER_US
 
 
         :return: The type of this PiiEntity.
@@ -151,7 +222,47 @@ class PiiEntity(object):
     def type(self, type):
         """
         Sets the type of this PiiEntity.
-        Type of PII entity text like PER, LOC.
+        Entity type supported
+        PERSON
+        ADDRESS
+        AGE
+        DATE_TIME
+        SSN_OR_TAXPAYER
+        EMAIL
+        PASSPORT_NUMBER_US
+        TELEPHONE_NUMBER
+        DRIVER_ID_US
+        BANK_ACCOUNT_NUMBER
+        BANK_SWIFT
+        BANK_ROUTING
+        CREDIT_DEBIT_NUMBER
+        IP_ADDRESS
+        MAC_ADDRESS
+        COOKIE
+        XSRF_TOKEN
+        AUTH_BASIC
+        AUTH_BEARER
+        JSON_WEB_TOKEN
+        PRIVATE_KEY
+        PUBLIC_KEY
+        OCI_OCID_USER
+        OCI_OCID_TENANCY
+        OCI_SMTP_USERNAME
+        OCI_OCID_REFERENCE
+        OCI_FINGERPRINT
+        OCI_CREDENTIAL
+        OCI_PRE_AUTH_REQUEST
+        OCI_STORAGE_SIGNED_URL
+        OCI_CUSTOMER_SECRET_KEY
+        OCI_ACCESS_KEy
+        MEDICAL_RECORD_NUMBER
+        HEALTH_PLAN_ID
+        URL
+        CERTIFICATE_NUMBER
+        FIN
+        GUIDs
+        VEHICLE_LICENSE_PLATE_US
+        VEHICLE_IDENTIFIER_US
 
 
         :param type: The type of this PiiEntity.
@@ -162,7 +273,7 @@ class PiiEntity(object):
     @property
     def score(self):
         """
-        Gets the score of this PiiEntity.
+        **[Required]** Gets the score of this PiiEntity.
         Score or confidence for detected PII entity.
 
 

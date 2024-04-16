@@ -328,6 +328,10 @@ class AutonomousContainerDatabase(object):
             The value to assign to the provisionable_cpus property of this AutonomousContainerDatabase.
         :type provisionable_cpus: list[float]
 
+        :param list_one_off_patches:
+            The value to assign to the list_one_off_patches property of this AutonomousContainerDatabase.
+        :type list_one_off_patches: list[str]
+
         :param compute_model:
             The value to assign to the compute_model property of this AutonomousContainerDatabase.
             Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
@@ -412,6 +416,7 @@ class AutonomousContainerDatabase(object):
             'total_cpus': 'int',
             'reclaimable_cpus': 'float',
             'provisionable_cpus': 'list[float]',
+            'list_one_off_patches': 'list[str]',
             'compute_model': 'str',
             'provisioned_cpus': 'float',
             'reserved_cpus': 'float',
@@ -464,6 +469,7 @@ class AutonomousContainerDatabase(object):
             'total_cpus': 'totalCpus',
             'reclaimable_cpus': 'reclaimableCpus',
             'provisionable_cpus': 'provisionableCpus',
+            'list_one_off_patches': 'listOneOffPatches',
             'compute_model': 'computeModel',
             'provisioned_cpus': 'provisionedCpus',
             'reserved_cpus': 'reservedCpus',
@@ -515,6 +521,7 @@ class AutonomousContainerDatabase(object):
         self._total_cpus = None
         self._reclaimable_cpus = None
         self._provisionable_cpus = None
+        self._list_one_off_patches = None
         self._compute_model = None
         self._provisioned_cpus = None
         self._reserved_cpus = None
@@ -1556,6 +1563,30 @@ class AutonomousContainerDatabase(object):
         :type: list[float]
         """
         self._provisionable_cpus = provisionable_cpus
+
+    @property
+    def list_one_off_patches(self):
+        """
+        Gets the list_one_off_patches of this AutonomousContainerDatabase.
+        List of One-Off patches that has been successfully applied to Autonomous Container Database
+
+
+        :return: The list_one_off_patches of this AutonomousContainerDatabase.
+        :rtype: list[str]
+        """
+        return self._list_one_off_patches
+
+    @list_one_off_patches.setter
+    def list_one_off_patches(self, list_one_off_patches):
+        """
+        Sets the list_one_off_patches of this AutonomousContainerDatabase.
+        List of One-Off patches that has been successfully applied to Autonomous Container Database
+
+
+        :param list_one_off_patches: The list_one_off_patches of this AutonomousContainerDatabase.
+        :type: list[str]
+        """
+        self._list_one_off_patches = list_one_off_patches
 
     @property
     def compute_model(self):

@@ -73,6 +73,10 @@ class DedicatedAiCluster(object):
     #: This constant has a value of "LLAMA2_70"
     UNIT_SHAPE_LLAMA2_70 = "LLAMA2_70"
 
+    #: A constant which can be used with the unit_shape property of a DedicatedAiCluster.
+    #: This constant has a value of "LARGE_COHERE_V2"
+    UNIT_SHAPE_LARGE_COHERE_V2 = "LARGE_COHERE_V2"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DedicatedAiCluster object with values from keyword arguments.
@@ -124,13 +128,17 @@ class DedicatedAiCluster(object):
 
         :param unit_shape:
             The value to assign to the unit_shape property of this DedicatedAiCluster.
-            Allowed values for this property are: "LARGE_COHERE", "SMALL_COHERE", "EMBED_COHERE", "LLAMA2_70", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LARGE_COHERE", "SMALL_COHERE", "EMBED_COHERE", "LLAMA2_70", "LARGE_COHERE_V2", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type unit_shape: str
 
         :param capacity:
             The value to assign to the capacity property of this DedicatedAiCluster.
         :type capacity: oci.generative_ai.models.DedicatedAiClusterCapacity
+
+        :param previous_state:
+            The value to assign to the previous_state property of this DedicatedAiCluster.
+        :type previous_state: oci.generative_ai.models.DedicatedAiCluster
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this DedicatedAiCluster.
@@ -158,6 +166,7 @@ class DedicatedAiCluster(object):
             'unit_count': 'int',
             'unit_shape': 'str',
             'capacity': 'DedicatedAiClusterCapacity',
+            'previous_state': 'DedicatedAiCluster',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -176,6 +185,7 @@ class DedicatedAiCluster(object):
             'unit_count': 'unitCount',
             'unit_shape': 'unitShape',
             'capacity': 'capacity',
+            'previous_state': 'previousState',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -193,6 +203,7 @@ class DedicatedAiCluster(object):
         self._unit_count = None
         self._unit_shape = None
         self._capacity = None
+        self._previous_state = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -459,7 +470,7 @@ class DedicatedAiCluster(object):
         **[Required]** Gets the unit_shape of this DedicatedAiCluster.
         The shape of dedicated unit in this AI cluster. The underlying hardware configuration is hidden from customers.
 
-        Allowed values for this property are: "LARGE_COHERE", "SMALL_COHERE", "EMBED_COHERE", "LLAMA2_70", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LARGE_COHERE", "SMALL_COHERE", "EMBED_COHERE", "LLAMA2_70", "LARGE_COHERE_V2", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -478,7 +489,7 @@ class DedicatedAiCluster(object):
         :param unit_shape: The unit_shape of this DedicatedAiCluster.
         :type: str
         """
-        allowed_values = ["LARGE_COHERE", "SMALL_COHERE", "EMBED_COHERE", "LLAMA2_70"]
+        allowed_values = ["LARGE_COHERE", "SMALL_COHERE", "EMBED_COHERE", "LLAMA2_70", "LARGE_COHERE_V2"]
         if not value_allowed_none_or_none_sentinel(unit_shape, allowed_values):
             unit_shape = 'UNKNOWN_ENUM_VALUE'
         self._unit_shape = unit_shape
@@ -502,6 +513,26 @@ class DedicatedAiCluster(object):
         :type: oci.generative_ai.models.DedicatedAiClusterCapacity
         """
         self._capacity = capacity
+
+    @property
+    def previous_state(self):
+        """
+        Gets the previous_state of this DedicatedAiCluster.
+
+        :return: The previous_state of this DedicatedAiCluster.
+        :rtype: oci.generative_ai.models.DedicatedAiCluster
+        """
+        return self._previous_state
+
+    @previous_state.setter
+    def previous_state(self, previous_state):
+        """
+        Sets the previous_state of this DedicatedAiCluster.
+
+        :param previous_state: The previous_state of this DedicatedAiCluster.
+        :type: oci.generative_ai.models.DedicatedAiCluster
+        """
+        self._previous_state = previous_state
 
     @property
     def freeform_tags(self):

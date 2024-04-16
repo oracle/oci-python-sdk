@@ -6,8 +6,11 @@
 
 from __future__ import absolute_import
 
+from .assertion_details import AssertionDetails
 from .batch_detect_dominant_language_details import BatchDetectDominantLanguageDetails
 from .batch_detect_dominant_language_result import BatchDetectDominantLanguageResult
+from .batch_detect_health_entity_details import BatchDetectHealthEntityDetails
+from .batch_detect_health_entity_result import BatchDetectHealthEntityResult
 from .batch_detect_language_entities_details import BatchDetectLanguageEntitiesDetails
 from .batch_detect_language_entities_result import BatchDetectLanguageEntitiesResult
 from .batch_detect_language_key_phrases_details import BatchDetectLanguageKeyPhrasesDetails
@@ -64,6 +67,8 @@ from .error_details import ErrorDetails
 from .evaluation_result_collection import EvaluationResultCollection
 from .evaluation_result_summary import EvaluationResultSummary
 from .evaluation_results import EvaluationResults
+from .health_entity import HealthEntity
+from .health_entity_document_result import HealthEntityDocumentResult
 from .hierarchical_entity import HierarchicalEntity
 from .input_configuration import InputConfiguration
 from .input_location import InputLocation
@@ -73,6 +78,8 @@ from .job_summary import JobSummary
 from .key_phrase import KeyPhrase
 from .key_phrase_document_result import KeyPhraseDocumentResult
 from .location_details import LocationDetails
+from .mel_concept import MelConcept
+from .mel_concept_details import MelConceptDetails
 from .model import Model
 from .model_collection import ModelCollection
 from .model_details import ModelDetails
@@ -94,6 +101,7 @@ from .pii_entity_mask import PiiEntityMask
 from .pii_entity_masking import PiiEntityMasking
 from .pii_entity_remove import PiiEntityRemove
 from .pii_entity_replace import PiiEntityReplace
+from .pii_model_details import PiiModelDetails
 from .pre_deployed_language_models import PreDeployedLanguageModels
 from .pre_trained_health_nlu_model_details import PreTrainedHealthNluModelDetails
 from .pre_trained_key_phrase_extraction_model_details import PreTrainedKeyPhraseExtractionModelDetails
@@ -104,9 +112,13 @@ from .pre_trained_sentiment_analysis_model_details import PreTrainedSentimentAna
 from .pre_trained_summarization import PreTrainedSummarization
 from .pre_trained_text_classification_model_details import PreTrainedTextClassificationModelDetails
 from .pre_trained_universal_model import PreTrainedUniversalModel
+from .profile import Profile
 from .project import Project
 from .project_collection import ProjectCollection
 from .project_summary import ProjectSummary
+from .relation_entity import RelationEntity
+from .resolved_entities import ResolvedEntities
+from .resolved_entity import ResolvedEntity
 from .sentiment_aspect import SentimentAspect
 from .sentiment_document_result import SentimentDocumentResult
 from .sentiment_sentence import SentimentSentence
@@ -135,8 +147,11 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 
 # Maps type names to classes for ai_language services.
 ai_language_type_mapping = {
+    "AssertionDetails": AssertionDetails,
     "BatchDetectDominantLanguageDetails": BatchDetectDominantLanguageDetails,
     "BatchDetectDominantLanguageResult": BatchDetectDominantLanguageResult,
+    "BatchDetectHealthEntityDetails": BatchDetectHealthEntityDetails,
+    "BatchDetectHealthEntityResult": BatchDetectHealthEntityResult,
     "BatchDetectLanguageEntitiesDetails": BatchDetectLanguageEntitiesDetails,
     "BatchDetectLanguageEntitiesResult": BatchDetectLanguageEntitiesResult,
     "BatchDetectLanguageKeyPhrasesDetails": BatchDetectLanguageKeyPhrasesDetails,
@@ -193,6 +208,8 @@ ai_language_type_mapping = {
     "EvaluationResultCollection": EvaluationResultCollection,
     "EvaluationResultSummary": EvaluationResultSummary,
     "EvaluationResults": EvaluationResults,
+    "HealthEntity": HealthEntity,
+    "HealthEntityDocumentResult": HealthEntityDocumentResult,
     "HierarchicalEntity": HierarchicalEntity,
     "InputConfiguration": InputConfiguration,
     "InputLocation": InputLocation,
@@ -202,6 +219,8 @@ ai_language_type_mapping = {
     "KeyPhrase": KeyPhrase,
     "KeyPhraseDocumentResult": KeyPhraseDocumentResult,
     "LocationDetails": LocationDetails,
+    "MelConcept": MelConcept,
+    "MelConceptDetails": MelConceptDetails,
     "Model": Model,
     "ModelCollection": ModelCollection,
     "ModelDetails": ModelDetails,
@@ -223,6 +242,7 @@ ai_language_type_mapping = {
     "PiiEntityMasking": PiiEntityMasking,
     "PiiEntityRemove": PiiEntityRemove,
     "PiiEntityReplace": PiiEntityReplace,
+    "PiiModelDetails": PiiModelDetails,
     "PreDeployedLanguageModels": PreDeployedLanguageModels,
     "PreTrainedHealthNluModelDetails": PreTrainedHealthNluModelDetails,
     "PreTrainedKeyPhraseExtractionModelDetails": PreTrainedKeyPhraseExtractionModelDetails,
@@ -233,9 +253,13 @@ ai_language_type_mapping = {
     "PreTrainedSummarization": PreTrainedSummarization,
     "PreTrainedTextClassificationModelDetails": PreTrainedTextClassificationModelDetails,
     "PreTrainedUniversalModel": PreTrainedUniversalModel,
+    "Profile": Profile,
     "Project": Project,
     "ProjectCollection": ProjectCollection,
     "ProjectSummary": ProjectSummary,
+    "RelationEntity": RelationEntity,
+    "ResolvedEntities": ResolvedEntities,
+    "ResolvedEntity": ResolvedEntity,
     "SentimentAspect": SentimentAspect,
     "SentimentDocumentResult": SentimentDocumentResult,
     "SentimentSentence": SentimentSentence,
