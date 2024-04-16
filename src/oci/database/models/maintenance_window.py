@@ -80,6 +80,10 @@ class MaintenanceWindow(object):
             The value to assign to the lead_time_in_weeks property of this MaintenanceWindow.
         :type lead_time_in_weeks: int
 
+        :param skip_ru:
+            The value to assign to the skip_ru property of this MaintenanceWindow.
+        :type skip_ru: list[bool]
+
         """
         self.swagger_types = {
             'preference': 'str',
@@ -91,7 +95,8 @@ class MaintenanceWindow(object):
             'weeks_of_month': 'list[int]',
             'days_of_week': 'list[DayOfWeek]',
             'hours_of_day': 'list[int]',
-            'lead_time_in_weeks': 'int'
+            'lead_time_in_weeks': 'int',
+            'skip_ru': 'list[bool]'
         }
 
         self.attribute_map = {
@@ -104,7 +109,8 @@ class MaintenanceWindow(object):
             'weeks_of_month': 'weeksOfMonth',
             'days_of_week': 'daysOfWeek',
             'hours_of_day': 'hoursOfDay',
-            'lead_time_in_weeks': 'leadTimeInWeeks'
+            'lead_time_in_weeks': 'leadTimeInWeeks',
+            'skip_ru': 'skipRu'
         }
 
         self._preference = None
@@ -117,6 +123,7 @@ class MaintenanceWindow(object):
         self._days_of_week = None
         self._hours_of_day = None
         self._lead_time_in_weeks = None
+        self._skip_ru = None
 
     @property
     def preference(self):
@@ -385,6 +392,30 @@ class MaintenanceWindow(object):
         :type: int
         """
         self._lead_time_in_weeks = lead_time_in_weeks
+
+    @property
+    def skip_ru(self):
+        """
+        Gets the skip_ru of this MaintenanceWindow.
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+
+
+        :return: The skip_ru of this MaintenanceWindow.
+        :rtype: list[bool]
+        """
+        return self._skip_ru
+
+    @skip_ru.setter
+    def skip_ru(self, skip_ru):
+        """
+        Sets the skip_ru of this MaintenanceWindow.
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+
+
+        :param skip_ru: The skip_ru of this MaintenanceWindow.
+        :type: list[bool]
+        """
+        self._skip_ru = skip_ru
 
     def __repr__(self):
         return formatted_flat_dict(self)

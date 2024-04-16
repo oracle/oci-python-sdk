@@ -104,7 +104,7 @@ class EmbedTextDetails(object):
     def inputs(self):
         """
         **[Required]** Gets the inputs of this EmbedTextDetails.
-        The list of strings for embeddings.
+        Provide a list of strings with a maximum number of 96 entries. Each string can be words, a phrase, or a paragraph. The maximum length of each string entry in the list is 512 tokens.
 
 
         :return: The inputs of this EmbedTextDetails.
@@ -116,7 +116,7 @@ class EmbedTextDetails(object):
     def inputs(self, inputs):
         """
         Sets the inputs of this EmbedTextDetails.
-        The list of strings for embeddings.
+        Provide a list of strings with a maximum number of 96 entries. Each string can be words, a phrase, or a paragraph. The maximum length of each string entry in the list is 512 tokens.
 
 
         :param inputs: The inputs of this EmbedTextDetails.

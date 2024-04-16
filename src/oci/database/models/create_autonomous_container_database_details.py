@@ -93,6 +93,10 @@ class CreateAutonomousContainerDatabaseDetails(object):
             The value to assign to the db_version property of this CreateAutonomousContainerDatabaseDetails.
         :type db_version: str
 
+        :param database_software_image_id:
+            The value to assign to the database_software_image_id property of this CreateAutonomousContainerDatabaseDetails.
+        :type database_software_image_id: str
+
         :param peer_autonomous_exadata_infrastructure_id:
             The value to assign to the peer_autonomous_exadata_infrastructure_id property of this CreateAutonomousContainerDatabaseDetails.
         :type peer_autonomous_exadata_infrastructure_id: str
@@ -222,6 +226,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
             'service_level_agreement_type': 'str',
             'autonomous_exadata_infrastructure_id': 'str',
             'db_version': 'str',
+            'database_software_image_id': 'str',
             'peer_autonomous_exadata_infrastructure_id': 'str',
             'peer_autonomous_container_database_display_name': 'str',
             'protection_mode': 'str',
@@ -260,6 +265,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
             'service_level_agreement_type': 'serviceLevelAgreementType',
             'autonomous_exadata_infrastructure_id': 'autonomousExadataInfrastructureId',
             'db_version': 'dbVersion',
+            'database_software_image_id': 'databaseSoftwareImageId',
             'peer_autonomous_exadata_infrastructure_id': 'peerAutonomousExadataInfrastructureId',
             'peer_autonomous_container_database_display_name': 'peerAutonomousContainerDatabaseDisplayName',
             'protection_mode': 'protectionMode',
@@ -297,6 +303,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
         self._service_level_agreement_type = None
         self._autonomous_exadata_infrastructure_id = None
         self._db_version = None
+        self._database_software_image_id = None
         self._peer_autonomous_exadata_infrastructure_id = None
         self._peer_autonomous_container_database_display_name = None
         self._protection_mode = None
@@ -477,6 +484,34 @@ class CreateAutonomousContainerDatabaseDetails(object):
         :type: str
         """
         self._db_version = db_version
+
+    @property
+    def database_software_image_id(self):
+        """
+        Gets the database_software_image_id of this CreateAutonomousContainerDatabaseDetails.
+        The Autonomous Database Software Image `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The database_software_image_id of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: str
+        """
+        return self._database_software_image_id
+
+    @database_software_image_id.setter
+    def database_software_image_id(self, database_software_image_id):
+        """
+        Sets the database_software_image_id of this CreateAutonomousContainerDatabaseDetails.
+        The Autonomous Database Software Image `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param database_software_image_id: The database_software_image_id of this CreateAutonomousContainerDatabaseDetails.
+        :type: str
+        """
+        self._database_software_image_id = database_software_image_id
 
     @property
     def peer_autonomous_exadata_infrastructure_id(self):

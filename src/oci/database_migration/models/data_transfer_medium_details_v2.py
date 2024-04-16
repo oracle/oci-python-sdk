@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataTransferMediumDetailsV2(object):
     """
-    Optional additional properties for dump transfer in source or target host. Default kind is CURL
+    Optional additional properties for dump transfer in source or target host.
     """
 
     #: A constant which can be used with the type property of a DataTransferMediumDetailsV2.

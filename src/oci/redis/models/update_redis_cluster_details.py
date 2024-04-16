@@ -32,6 +32,10 @@ class UpdateRedisClusterDetails(object):
             The value to assign to the node_memory_in_gbs property of this UpdateRedisClusterDetails.
         :type node_memory_in_gbs: float
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this UpdateRedisClusterDetails.
+        :type nsg_ids: list[str]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateRedisClusterDetails.
         :type freeform_tags: dict(str, str)
@@ -45,6 +49,7 @@ class UpdateRedisClusterDetails(object):
             'display_name': 'str',
             'node_count': 'int',
             'node_memory_in_gbs': 'float',
+            'nsg_ids': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -53,6 +58,7 @@ class UpdateRedisClusterDetails(object):
             'display_name': 'displayName',
             'node_count': 'nodeCount',
             'node_memory_in_gbs': 'nodeMemoryInGBs',
+            'nsg_ids': 'nsgIds',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -60,6 +66,7 @@ class UpdateRedisClusterDetails(object):
         self._display_name = None
         self._node_count = None
         self._node_memory_in_gbs = None
+        self._nsg_ids = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -134,6 +141,30 @@ class UpdateRedisClusterDetails(object):
         :type: float
         """
         self._node_memory_in_gbs = node_memory_in_gbs
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this UpdateRedisClusterDetails.
+        OCIDs of the NSGs to control access in the customer network
+
+
+        :return: The nsg_ids of this UpdateRedisClusterDetails.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this UpdateRedisClusterDetails.
+        OCIDs of the NSGs to control access in the customer network
+
+
+        :param nsg_ids: The nsg_ids of this UpdateRedisClusterDetails.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
 
     @property
     def freeform_tags(self):

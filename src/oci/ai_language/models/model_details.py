@@ -63,6 +63,10 @@ class ModelDetails(object):
     #: This constant has a value of "PRE_TRAINED_UNIVERSAL"
     MODEL_TYPE_PRE_TRAINED_UNIVERSAL = "PRE_TRAINED_UNIVERSAL"
 
+    #: A constant which can be used with the model_type property of a ModelDetails.
+    #: This constant has a value of "PII"
+    MODEL_TYPE_PII = "PII"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ModelDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -72,6 +76,7 @@ class ModelDetails(object):
         * :class:`~oci.ai_language.models.PreTrainedHealthNluModelDetails`
         * :class:`~oci.ai_language.models.PreTrainedUniversalModel`
         * :class:`~oci.ai_language.models.NamedEntityRecognitionModelDetails`
+        * :class:`~oci.ai_language.models.PiiModelDetails`
         * :class:`~oci.ai_language.models.PreTrainedLanguageDetectionModelDetails`
         * :class:`~oci.ai_language.models.PreTrainedNamedEntityRecognitionModelDetails`
         * :class:`~oci.ai_language.models.PreTrainedSentimentAnalysisModelDetails`
@@ -88,7 +93,7 @@ class ModelDetails(object):
 
         :param model_type:
             The value to assign to the model_type property of this ModelDetails.
-            Allowed values for this property are: "NAMED_ENTITY_RECOGNITION", "TEXT_CLASSIFICATION", "PRE_TRAINED_NAMED_ENTITY_RECOGNITION", "PRE_TRAINED_TEXT_CLASSIFICATION", "PRE_TRAINED_SENTIMENT_ANALYSIS", "PRE_TRAINED_KEYPHRASE_EXTRACTION", "PRE_TRAINED_LANGUAGE_DETECTION", "PRE_TRAINED_PII", "PRE_TRAINED_TRANSLATION", "PRE_TRAINED_HEALTH_NLU", "PRE_TRAINED_SUMMARIZATION", "PRE_TRAINED_UNIVERSAL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NAMED_ENTITY_RECOGNITION", "TEXT_CLASSIFICATION", "PRE_TRAINED_NAMED_ENTITY_RECOGNITION", "PRE_TRAINED_TEXT_CLASSIFICATION", "PRE_TRAINED_SENTIMENT_ANALYSIS", "PRE_TRAINED_KEYPHRASE_EXTRACTION", "PRE_TRAINED_LANGUAGE_DETECTION", "PRE_TRAINED_PII", "PRE_TRAINED_TRANSLATION", "PRE_TRAINED_HEALTH_NLU", "PRE_TRAINED_SUMMARIZATION", "PRE_TRAINED_UNIVERSAL", "PII", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -125,6 +130,9 @@ class ModelDetails(object):
 
         if type == 'NAMED_ENTITY_RECOGNITION':
             return 'NamedEntityRecognitionModelDetails'
+
+        if type == 'PII':
+            return 'PiiModelDetails'
 
         if type == 'PRE_TRAINED_LANGUAGE_DETECTION':
             return 'PreTrainedLanguageDetectionModelDetails'
@@ -179,7 +187,7 @@ class ModelDetails(object):
         **[Required]** Gets the model_type of this ModelDetails.
         Model type
 
-        Allowed values for this property are: "NAMED_ENTITY_RECOGNITION", "TEXT_CLASSIFICATION", "PRE_TRAINED_NAMED_ENTITY_RECOGNITION", "PRE_TRAINED_TEXT_CLASSIFICATION", "PRE_TRAINED_SENTIMENT_ANALYSIS", "PRE_TRAINED_KEYPHRASE_EXTRACTION", "PRE_TRAINED_LANGUAGE_DETECTION", "PRE_TRAINED_PII", "PRE_TRAINED_TRANSLATION", "PRE_TRAINED_HEALTH_NLU", "PRE_TRAINED_SUMMARIZATION", "PRE_TRAINED_UNIVERSAL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "NAMED_ENTITY_RECOGNITION", "TEXT_CLASSIFICATION", "PRE_TRAINED_NAMED_ENTITY_RECOGNITION", "PRE_TRAINED_TEXT_CLASSIFICATION", "PRE_TRAINED_SENTIMENT_ANALYSIS", "PRE_TRAINED_KEYPHRASE_EXTRACTION", "PRE_TRAINED_LANGUAGE_DETECTION", "PRE_TRAINED_PII", "PRE_TRAINED_TRANSLATION", "PRE_TRAINED_HEALTH_NLU", "PRE_TRAINED_SUMMARIZATION", "PRE_TRAINED_UNIVERSAL", "PII", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -198,7 +206,7 @@ class ModelDetails(object):
         :param model_type: The model_type of this ModelDetails.
         :type: str
         """
-        allowed_values = ["NAMED_ENTITY_RECOGNITION", "TEXT_CLASSIFICATION", "PRE_TRAINED_NAMED_ENTITY_RECOGNITION", "PRE_TRAINED_TEXT_CLASSIFICATION", "PRE_TRAINED_SENTIMENT_ANALYSIS", "PRE_TRAINED_KEYPHRASE_EXTRACTION", "PRE_TRAINED_LANGUAGE_DETECTION", "PRE_TRAINED_PII", "PRE_TRAINED_TRANSLATION", "PRE_TRAINED_HEALTH_NLU", "PRE_TRAINED_SUMMARIZATION", "PRE_TRAINED_UNIVERSAL"]
+        allowed_values = ["NAMED_ENTITY_RECOGNITION", "TEXT_CLASSIFICATION", "PRE_TRAINED_NAMED_ENTITY_RECOGNITION", "PRE_TRAINED_TEXT_CLASSIFICATION", "PRE_TRAINED_SENTIMENT_ANALYSIS", "PRE_TRAINED_KEYPHRASE_EXTRACTION", "PRE_TRAINED_LANGUAGE_DETECTION", "PRE_TRAINED_PII", "PRE_TRAINED_TRANSLATION", "PRE_TRAINED_HEALTH_NLU", "PRE_TRAINED_SUMMARIZATION", "PRE_TRAINED_UNIVERSAL", "PII"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type

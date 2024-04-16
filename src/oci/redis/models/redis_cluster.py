@@ -118,6 +118,10 @@ class RedisCluster(object):
             The value to assign to the node_collection property of this RedisCluster.
         :type node_collection: oci.redis.models.NodeCollection
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this RedisCluster.
+        :type nsg_ids: list[str]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this RedisCluster.
         :type freeform_tags: dict(str, str)
@@ -148,6 +152,7 @@ class RedisCluster(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'node_collection': 'NodeCollection',
+            'nsg_ids': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -170,6 +175,7 @@ class RedisCluster(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'node_collection': 'nodeCollection',
+            'nsg_ids': 'nsgIds',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -191,6 +197,7 @@ class RedisCluster(object):
         self._time_created = None
         self._time_updated = None
         self._node_collection = None
+        self._nsg_ids = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -606,6 +613,30 @@ class RedisCluster(object):
         :type: oci.redis.models.NodeCollection
         """
         self._node_collection = node_collection
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this RedisCluster.
+        OCIDs of the NSGs to control access in the customer network
+
+
+        :return: The nsg_ids of this RedisCluster.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this RedisCluster.
+        OCIDs of the NSGs to control access in the customer network
+
+
+        :param nsg_ids: The nsg_ids of this RedisCluster.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
 
     @property
     def freeform_tags(self):

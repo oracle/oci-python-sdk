@@ -23,7 +23,7 @@ class CohereLlmInferenceResponse(LlmInferenceResponse):
 
         :param runtime_type:
             The value to assign to the runtime_type property of this CohereLlmInferenceResponse.
-            Allowed values for this property are: "COHERE", "LLAMA"
+            Allowed values for this property are: "COHERE", "LLAMA", "OPENAI", "DALLE3"
         :type runtime_type: str
 
         :param generated_texts:

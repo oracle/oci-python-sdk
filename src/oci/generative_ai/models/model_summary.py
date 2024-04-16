@@ -31,6 +31,10 @@ class ModelSummary(object):
     #: This constant has a value of "FINE_TUNE"
     CAPABILITIES_FINE_TUNE = "FINE_TUNE"
 
+    #: A constant which can be used with the capabilities property of a ModelSummary.
+    #: This constant has a value of "CHAT"
+    CAPABILITIES_CHAT = "CHAT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ModelSummary object with values from keyword arguments.
@@ -46,7 +50,7 @@ class ModelSummary(object):
 
         :param capabilities:
             The value to assign to the capabilities property of this ModelSummary.
-            Allowed values for items in this list are: "TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type capabilities: list[str]
 
@@ -226,7 +230,7 @@ class ModelSummary(object):
         **[Required]** Gets the capabilities of this ModelSummary.
         Describes what this model can be used for.
 
-        Allowed values for items in this list are: "TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -245,7 +249,7 @@ class ModelSummary(object):
         :param capabilities: The capabilities of this ModelSummary.
         :type: list[str]
         """
-        allowed_values = ["TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE"]
+        allowed_values = ["TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT"]
         if capabilities:
             capabilities[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in capabilities]
         self._capabilities = capabilities

@@ -24,6 +24,7 @@ Usage Api
     oci.usage_api.models.ConfigurationAggregation
     oci.usage_api.models.CostAnalysisUI
     oci.usage_api.models.CreateCustomTableDetails
+    oci.usage_api.models.CreateEmailRecipientsGroupDetails
     oci.usage_api.models.CreateQueryDetails
     oci.usage_api.models.CreateScheduleDetails
     oci.usage_api.models.CreateUsageCarbonEmissionsQueryDetails
@@ -33,6 +34,10 @@ Usage Api
     oci.usage_api.models.DateRange
     oci.usage_api.models.Dimension
     oci.usage_api.models.DynamicDateRange
+    oci.usage_api.models.EmailRecipient
+    oci.usage_api.models.EmailRecipientsGroup
+    oci.usage_api.models.EmailRecipientsGroupCollection
+    oci.usage_api.models.EmailRecipientsGroupSummary
     oci.usage_api.models.Filter
     oci.usage_api.models.Forecast
     oci.usage_api.models.ObjectStorageLocation
@@ -55,6 +60,7 @@ Usage Api
     oci.usage_api.models.StaticDateRange
     oci.usage_api.models.Tag
     oci.usage_api.models.UpdateCustomTableDetails
+    oci.usage_api.models.UpdateEmailRecipientsGroupDetails
     oci.usage_api.models.UpdateQueryDetails
     oci.usage_api.models.UpdateScheduleDetails
     oci.usage_api.models.UpdateUsageCarbonEmissionsQueryDetails

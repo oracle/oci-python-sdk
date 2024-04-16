@@ -23,6 +23,14 @@ class LlmInferenceResponse(object):
     #: This constant has a value of "LLAMA"
     RUNTIME_TYPE_LLAMA = "LLAMA"
 
+    #: A constant which can be used with the runtime_type property of a LlmInferenceResponse.
+    #: This constant has a value of "OPENAI"
+    RUNTIME_TYPE_OPENAI = "OPENAI"
+
+    #: A constant which can be used with the runtime_type property of a LlmInferenceResponse.
+    #: This constant has a value of "DALLE3"
+    RUNTIME_TYPE_DALLE3 = "DALLE3"
+
     def __init__(self, **kwargs):
         """
         Initializes a new LlmInferenceResponse object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -35,7 +43,7 @@ class LlmInferenceResponse(object):
 
         :param runtime_type:
             The value to assign to the runtime_type property of this LlmInferenceResponse.
-            Allowed values for this property are: "COHERE", "LLAMA", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "COHERE", "LLAMA", "OPENAI", "DALLE3", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type runtime_type: str
 
@@ -72,7 +80,7 @@ class LlmInferenceResponse(object):
         **[Required]** Gets the runtime_type of this LlmInferenceResponse.
         The runtime of the provided model.
 
-        Allowed values for this property are: "COHERE", "LLAMA", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "COHERE", "LLAMA", "OPENAI", "DALLE3", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -91,7 +99,7 @@ class LlmInferenceResponse(object):
         :param runtime_type: The runtime_type of this LlmInferenceResponse.
         :type: str
         """
-        allowed_values = ["COHERE", "LLAMA"]
+        allowed_values = ["COHERE", "LLAMA", "OPENAI", "DALLE3"]
         if not value_allowed_none_or_none_sentinel(runtime_type, allowed_values):
             runtime_type = 'UNKNOWN_ENUM_VALUE'
         self._runtime_type = runtime_type

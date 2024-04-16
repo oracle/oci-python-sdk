@@ -28,19 +28,26 @@ class InstanceConfiguration(object):
             The value to assign to the model_deployment_instance_shape_config_details property of this InstanceConfiguration.
         :type model_deployment_instance_shape_config_details: oci.data_science.models.ModelDeploymentInstanceShapeConfigDetails
 
+        :param subnet_id:
+            The value to assign to the subnet_id property of this InstanceConfiguration.
+        :type subnet_id: str
+
         """
         self.swagger_types = {
             'instance_shape_name': 'str',
-            'model_deployment_instance_shape_config_details': 'ModelDeploymentInstanceShapeConfigDetails'
+            'model_deployment_instance_shape_config_details': 'ModelDeploymentInstanceShapeConfigDetails',
+            'subnet_id': 'str'
         }
 
         self.attribute_map = {
             'instance_shape_name': 'instanceShapeName',
-            'model_deployment_instance_shape_config_details': 'modelDeploymentInstanceShapeConfigDetails'
+            'model_deployment_instance_shape_config_details': 'modelDeploymentInstanceShapeConfigDetails',
+            'subnet_id': 'subnetId'
         }
 
         self._instance_shape_name = None
         self._model_deployment_instance_shape_config_details = None
+        self._subnet_id = None
 
     @property
     def instance_shape_name(self):
@@ -85,6 +92,34 @@ class InstanceConfiguration(object):
         :type: oci.data_science.models.ModelDeploymentInstanceShapeConfigDetails
         """
         self._model_deployment_instance_shape_config_details = model_deployment_instance_shape_config_details
+
+    @property
+    def subnet_id(self):
+        """
+        Gets the subnet_id of this InstanceConfiguration.
+        A model deployment instance is provided with a VNIC for network access.  This specifies the `OCID`__ of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subnet_id of this InstanceConfiguration.
+        :rtype: str
+        """
+        return self._subnet_id
+
+    @subnet_id.setter
+    def subnet_id(self, subnet_id):
+        """
+        Sets the subnet_id of this InstanceConfiguration.
+        A model deployment instance is provided with a VNIC for network access.  This specifies the `OCID`__ of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param subnet_id: The subnet_id of this InstanceConfiguration.
+        :type: str
+        """
+        self._subnet_id = subnet_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

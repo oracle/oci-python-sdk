@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+24.04.16 - 24.04.16
+=====================
+* Added more details to DBNode of database areas
+
+=====================
 24.04.09 - 24.04.09
 =====================
 * Exclude GENAI until the service deployed on all regions to avoid process hung

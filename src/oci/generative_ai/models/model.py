@@ -38,6 +38,10 @@ class Model(object):
     #: This constant has a value of "FINE_TUNE"
     CAPABILITIES_FINE_TUNE = "FINE_TUNE"
 
+    #: A constant which can be used with the capabilities property of a Model.
+    #: This constant has a value of "CHAT"
+    CAPABILITIES_CHAT = "CHAT"
+
     #: A constant which can be used with the lifecycle_state property of a Model.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -85,7 +89,7 @@ class Model(object):
 
         :param capabilities:
             The value to assign to the capabilities property of this Model.
-            Allowed values for items in this list are: "TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type capabilities: list[str]
 
@@ -145,6 +149,10 @@ class Model(object):
             The value to assign to the time_deprecated property of this Model.
         :type time_deprecated: datetime
 
+        :param previous_state:
+            The value to assign to the previous_state property of this Model.
+        :type previous_state: oci.generative_ai.models.Model
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Model.
         :type freeform_tags: dict(str, str)
@@ -176,6 +184,7 @@ class Model(object):
             'model_metrics': 'ModelMetrics',
             'is_long_term_supported': 'bool',
             'time_deprecated': 'datetime',
+            'previous_state': 'Model',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -199,6 +208,7 @@ class Model(object):
             'model_metrics': 'modelMetrics',
             'is_long_term_supported': 'isLongTermSupported',
             'time_deprecated': 'timeDeprecated',
+            'previous_state': 'previousState',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -221,6 +231,7 @@ class Model(object):
         self._model_metrics = None
         self._is_long_term_supported = None
         self._time_deprecated = None
+        self._previous_state = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -303,7 +314,7 @@ class Model(object):
         **[Required]** Gets the capabilities of this Model.
         Describes what this model can be used for.
 
-        Allowed values for items in this list are: "TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -322,7 +333,7 @@ class Model(object):
         :param capabilities: The capabilities of this Model.
         :type: list[str]
         """
-        allowed_values = ["TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE"]
+        allowed_values = ["TEXT_GENERATION", "TEXT_SUMMARIZATION", "TEXT_EMBEDDINGS", "FINE_TUNE", "CHAT"]
         if capabilities:
             capabilities[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in capabilities]
         self._capabilities = capabilities
@@ -642,6 +653,26 @@ class Model(object):
         :type: datetime
         """
         self._time_deprecated = time_deprecated
+
+    @property
+    def previous_state(self):
+        """
+        Gets the previous_state of this Model.
+
+        :return: The previous_state of this Model.
+        :rtype: oci.generative_ai.models.Model
+        """
+        return self._previous_state
+
+    @previous_state.setter
+    def previous_state(self, previous_state):
+        """
+        Sets the previous_state of this Model.
+
+        :param previous_state: The previous_state of this Model.
+        :type: oci.generative_ai.models.Model
+        """
+        self._previous_state = previous_state
 
     @property
     def freeform_tags(self):

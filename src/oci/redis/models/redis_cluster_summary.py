@@ -82,6 +82,10 @@ class RedisClusterSummary(object):
             The value to assign to the time_updated property of this RedisClusterSummary.
         :type time_updated: datetime
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this RedisClusterSummary.
+        :type nsg_ids: list[str]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this RedisClusterSummary.
         :type freeform_tags: dict(str, str)
@@ -111,6 +115,7 @@ class RedisClusterSummary(object):
             'subnet_id': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'nsg_ids': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -132,6 +137,7 @@ class RedisClusterSummary(object):
             'subnet_id': 'subnetId',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'nsg_ids': 'nsgIds',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -152,6 +158,7 @@ class RedisClusterSummary(object):
         self._subnet_id = None
         self._time_created = None
         self._time_updated = None
+        self._nsg_ids = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -535,6 +542,30 @@ class RedisClusterSummary(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this RedisClusterSummary.
+        OCIDs of the NSGs to control access in the customer network
+
+
+        :return: The nsg_ids of this RedisClusterSummary.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this RedisClusterSummary.
+        OCIDs of the NSGs to control access in the customer network
+
+
+        :param nsg_ids: The nsg_ids of this RedisClusterSummary.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
 
     @property
     def freeform_tags(self):

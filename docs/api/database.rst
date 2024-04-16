@@ -48,6 +48,9 @@ Database
     oci.database.models.AutonomousDatabaseDataguardAssociation
     oci.database.models.AutonomousDatabaseKeyHistoryEntry
     oci.database.models.AutonomousDatabaseManualRefreshDetails
+    oci.database.models.AutonomousDatabaseSoftwareImage
+    oci.database.models.AutonomousDatabaseSoftwareImageCollection
+    oci.database.models.AutonomousDatabaseSoftwareImageSummary
     oci.database.models.AutonomousDatabaseStandbySummary
     oci.database.models.AutonomousDatabaseSummary
     oci.database.models.AutonomousDatabaseWallet
@@ -71,6 +74,7 @@ Database
     oci.database.models.BackupDestinationDetails
     oci.database.models.BackupDestinationSummary
     oci.database.models.BackupSummary
+    oci.database.models.ChangeAutonomousDatabaseSoftwareImageCompartmentDetails
     oci.database.models.ChangeAutonomousVmClusterCompartmentDetails
     oci.database.models.ChangeCloudAutonomousVmClusterCompartmentDetails
     oci.database.models.ChangeCloudExadataInfrastructureCompartmentDetails
@@ -114,6 +118,7 @@ Database
     oci.database.models.CreateAutonomousDatabaseDetails
     oci.database.models.CreateAutonomousDatabaseFromBackupDetails
     oci.database.models.CreateAutonomousDatabaseFromBackupTimestampDetails
+    oci.database.models.CreateAutonomousDatabaseSoftwareImageDetails
     oci.database.models.CreateAutonomousVmClusterDetails
     oci.database.models.CreateBackupDestinationDetails
     oci.database.models.CreateBackupDetails
@@ -338,6 +343,7 @@ Database
     oci.database.models.UpdateAutonomousContainerDatabaseDetails
     oci.database.models.UpdateAutonomousDatabaseBackupDetails
     oci.database.models.UpdateAutonomousDatabaseDetails
+    oci.database.models.UpdateAutonomousDatabaseSoftwareImageDetails
     oci.database.models.UpdateAutonomousDatabaseWalletDetails
     oci.database.models.UpdateAutonomousExadataInfrastructureDetails
     oci.database.models.UpdateAutonomousVmClusterDetails
