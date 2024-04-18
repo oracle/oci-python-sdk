@@ -3,7 +3,6 @@
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 import random
-from oci._vendor import six
 
 
 def get_tenancy_id_from_certificate(cert):
@@ -21,10 +20,7 @@ def get_tenancy_id_from_certificate(cert):
 
 
 def sanitize_certificate_string(cert_string):
-    if six.PY3:
-        string_to_replace = cert_string.decode('ascii')
-    else:
-        string_to_replace = cert_string
+    string_to_replace = cert_string.decode('ascii')
 
     return string_to_replace \
         .replace('-----BEGIN CERTIFICATE-----', '') \

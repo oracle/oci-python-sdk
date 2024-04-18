@@ -10,7 +10,6 @@ from oci.exceptions import ServiceError
 
 import oci.retry
 import os.path
-from oci._vendor import six
 import threading
 import logging
 import pprint
@@ -119,7 +118,7 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
         else:
             self.logger.disabled = True
 
-        if self.passphrase and isinstance(self.passphrase, six.text_type):
+        if self.passphrase and isinstance(self.passphrase, str):
             self.passphrase = self.passphrase.encode('ascii')
 
         self._refresh_lock = threading.Lock()
@@ -207,7 +206,7 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
         """
         import oci.signer
 
-        downloaded_certificate = six.BytesIO()
+        downloaded_certificate = io.BytesIO()
         self.logger.debug("Requesting certificate from : %s " % (self.cert_url))
         response = self.requests_session.get(self.cert_url, stream=True, timeout=(10, 60))
         self.logger.debug("Receiving certificate response......\n{}\n".format(pprint.pformat(
@@ -224,13 +223,13 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
 
         self.certificate_and_private_key['certificate'] = downloaded_certificate.getvalue().strip()
         downloaded_certificate.close()
-        if isinstance(self.certificate_and_private_key['certificate'], six.text_type):
+        if isinstance(self.certificate_and_private_key['certificate'], str):
             self.certificate_and_private_key['certificate'] = self.certificate_and_private_key['certificate'].encode('ascii')
 
         self._check_valid_certificate_string(self.certificate_and_private_key['certificate'])
 
         if self.private_key_url:
-            downloaded_private_key_raw = six.BytesIO()
+            downloaded_private_key_raw = io.BytesIO()
             self.logger.debug("Requesting private key from : %s " % (self.private_key_url))
             response = self.requests_session.get(self.private_key_url, stream=True, timeout=(10, 60))
 
@@ -249,7 +248,7 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
             self.certificate_and_private_key['private_key_pem'] = downloaded_private_key_raw.getvalue().strip()
             downloaded_private_key_raw.close()
 
-            if isinstance(self.certificate_and_private_key['private_key_pem'], six.text_type):
+            if isinstance(self.certificate_and_private_key['private_key_pem'], str):
                 self.certificate_and_private_key['private_key_pem'] = self.certificate_and_private_key['private_key_pem'].encode('ascii')
 
             try:
@@ -306,13 +305,13 @@ class PEMStringCertificateRetriever(AbstractCertificateRetriever):
         if 'certificate_pem' not in kwargs:
             raise TypeError('certificate_pem must be supplied as a keyword argument')
 
-        if isinstance(kwargs['certificate_pem'], six.text_type):
+        if isinstance(kwargs['certificate_pem'], str):
             self.certificate_and_private_key['certificate'] = kwargs['certificate_pem'].encode('ascii')
         else:
             self.certificate_and_private_key['certificate'] = kwargs['certificate_pem']
 
         if 'private_key_pem' in kwargs and kwargs['private_key_pem']:
-            if isinstance(kwargs['private_key_pem'], six.text_type):
+            if isinstance(kwargs['private_key_pem'], str):
                 self.certificate_and_private_key['private_key_pem'] = kwargs['private_key_pem'].encode('ascii')
             else:
                 self.certificate_and_private_key['private_key_pem'] = kwargs['private_key_pem']
