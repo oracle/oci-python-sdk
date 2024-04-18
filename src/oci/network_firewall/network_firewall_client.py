@@ -7,7 +7,6 @@
 from __future__ import absolute_import
 
 from oci._vendor import requests  # noqa: F401
-from oci._vendor import six
 
 from oci import retry, circuit_breaker  # noqa: F401
 from oci.base_client import BaseClient
@@ -178,7 +177,7 @@ class NetworkFirewallClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"apply_network_firewall_policy got unknown kwargs: {extra_kwargs!r}")
@@ -187,10 +186,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -200,7 +199,7 @@ class NetworkFirewallClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -308,7 +307,7 @@ class NetworkFirewallClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"bulk_upload_address_lists got unknown kwargs: {extra_kwargs!r}")
@@ -317,10 +316,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -329,7 +328,7 @@ class NetworkFirewallClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "if-match": kwargs.get("if_match", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
         try:
@@ -338,7 +337,7 @@ class NetworkFirewallClient(object):
             bulk_upload_address_lists_details = kwargs.get("bulk_upload_address_lists_details", missing)
 
         if bulk_upload_address_lists_details is not missing and bulk_upload_address_lists_details is not None:
-            if (not isinstance(bulk_upload_address_lists_details, (six.binary_type, six.string_types)) and
+            if (not isinstance(bulk_upload_address_lists_details, (bytes, str)) and
                     not hasattr(bulk_upload_address_lists_details, "read")):
                 raise TypeError('The body must be a string, bytes, or provide a read() method.')
 
@@ -456,7 +455,7 @@ class NetworkFirewallClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"bulk_upload_application_groups got unknown kwargs: {extra_kwargs!r}")
@@ -465,10 +464,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -477,7 +476,7 @@ class NetworkFirewallClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "if-match": kwargs.get("if_match", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
         try:
@@ -486,7 +485,7 @@ class NetworkFirewallClient(object):
             bulk_upload_application_groups_details = kwargs.get("bulk_upload_application_groups_details", missing)
 
         if bulk_upload_application_groups_details is not missing and bulk_upload_application_groups_details is not None:
-            if (not isinstance(bulk_upload_application_groups_details, (six.binary_type, six.string_types)) and
+            if (not isinstance(bulk_upload_application_groups_details, (bytes, str)) and
                     not hasattr(bulk_upload_application_groups_details, "read")):
                 raise TypeError('The body must be a string, bytes, or provide a read() method.')
 
@@ -604,7 +603,7 @@ class NetworkFirewallClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"bulk_upload_applications got unknown kwargs: {extra_kwargs!r}")
@@ -613,10 +612,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -625,7 +624,7 @@ class NetworkFirewallClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "if-match": kwargs.get("if_match", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
         try:
@@ -634,7 +633,7 @@ class NetworkFirewallClient(object):
             bulk_upload_applications_details = kwargs.get("bulk_upload_applications_details", missing)
 
         if bulk_upload_applications_details is not missing and bulk_upload_applications_details is not None:
-            if (not isinstance(bulk_upload_applications_details, (six.binary_type, six.string_types)) and
+            if (not isinstance(bulk_upload_applications_details, (bytes, str)) and
                     not hasattr(bulk_upload_applications_details, "read")):
                 raise TypeError('The body must be a string, bytes, or provide a read() method.')
 
@@ -752,7 +751,7 @@ class NetworkFirewallClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"bulk_upload_decryption_profiles got unknown kwargs: {extra_kwargs!r}")
@@ -761,10 +760,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -773,7 +772,7 @@ class NetworkFirewallClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "if-match": kwargs.get("if_match", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
         try:
@@ -782,7 +781,7 @@ class NetworkFirewallClient(object):
             bulk_upload_decryption_profiles_details = kwargs.get("bulk_upload_decryption_profiles_details", missing)
 
         if bulk_upload_decryption_profiles_details is not missing and bulk_upload_decryption_profiles_details is not None:
-            if (not isinstance(bulk_upload_decryption_profiles_details, (six.binary_type, six.string_types)) and
+            if (not isinstance(bulk_upload_decryption_profiles_details, (bytes, str)) and
                     not hasattr(bulk_upload_decryption_profiles_details, "read")):
                 raise TypeError('The body must be a string, bytes, or provide a read() method.')
 
@@ -900,7 +899,7 @@ class NetworkFirewallClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"bulk_upload_decryption_rules got unknown kwargs: {extra_kwargs!r}")
@@ -909,10 +908,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -921,7 +920,7 @@ class NetworkFirewallClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "if-match": kwargs.get("if_match", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
         try:
@@ -930,7 +929,7 @@ class NetworkFirewallClient(object):
             bulk_upload_decryption_rules_details = kwargs.get("bulk_upload_decryption_rules_details", missing)
 
         if bulk_upload_decryption_rules_details is not missing and bulk_upload_decryption_rules_details is not None:
-            if (not isinstance(bulk_upload_decryption_rules_details, (six.binary_type, six.string_types)) and
+            if (not isinstance(bulk_upload_decryption_rules_details, (bytes, str)) and
                     not hasattr(bulk_upload_decryption_rules_details, "read")):
                 raise TypeError('The body must be a string, bytes, or provide a read() method.')
 
@@ -1048,7 +1047,7 @@ class NetworkFirewallClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"bulk_upload_mapped_secrets got unknown kwargs: {extra_kwargs!r}")
@@ -1057,10 +1056,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -1069,7 +1068,7 @@ class NetworkFirewallClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "if-match": kwargs.get("if_match", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
         try:
@@ -1078,7 +1077,7 @@ class NetworkFirewallClient(object):
             bulk_upload_mapped_secrets_details = kwargs.get("bulk_upload_mapped_secrets_details", missing)
 
         if bulk_upload_mapped_secrets_details is not missing and bulk_upload_mapped_secrets_details is not None:
-            if (not isinstance(bulk_upload_mapped_secrets_details, (six.binary_type, six.string_types)) and
+            if (not isinstance(bulk_upload_mapped_secrets_details, (bytes, str)) and
                     not hasattr(bulk_upload_mapped_secrets_details, "read")):
                 raise TypeError('The body must be a string, bytes, or provide a read() method.')
 
@@ -1196,7 +1195,7 @@ class NetworkFirewallClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"bulk_upload_security_rules got unknown kwargs: {extra_kwargs!r}")
@@ -1205,10 +1204,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -1217,7 +1216,7 @@ class NetworkFirewallClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "if-match": kwargs.get("if_match", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
         try:
@@ -1226,7 +1225,7 @@ class NetworkFirewallClient(object):
             bulk_upload_security_rules_details = kwargs.get("bulk_upload_security_rules_details", missing)
 
         if bulk_upload_security_rules_details is not missing and bulk_upload_security_rules_details is not None:
-            if (not isinstance(bulk_upload_security_rules_details, (six.binary_type, six.string_types)) and
+            if (not isinstance(bulk_upload_security_rules_details, (bytes, str)) and
                     not hasattr(bulk_upload_security_rules_details, "read")):
                 raise TypeError('The body must be a string, bytes, or provide a read() method.')
 
@@ -1344,7 +1343,7 @@ class NetworkFirewallClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"bulk_upload_service_lists got unknown kwargs: {extra_kwargs!r}")
@@ -1353,10 +1352,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -1365,7 +1364,7 @@ class NetworkFirewallClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "if-match": kwargs.get("if_match", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
         try:
@@ -1374,7 +1373,7 @@ class NetworkFirewallClient(object):
             bulk_upload_service_lists_details = kwargs.get("bulk_upload_service_lists_details", missing)
 
         if bulk_upload_service_lists_details is not missing and bulk_upload_service_lists_details is not None:
-            if (not isinstance(bulk_upload_service_lists_details, (six.binary_type, six.string_types)) and
+            if (not isinstance(bulk_upload_service_lists_details, (bytes, str)) and
                     not hasattr(bulk_upload_service_lists_details, "read")):
                 raise TypeError('The body must be a string, bytes, or provide a read() method.')
 
@@ -1492,7 +1491,7 @@ class NetworkFirewallClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"bulk_upload_services got unknown kwargs: {extra_kwargs!r}")
@@ -1501,10 +1500,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -1513,7 +1512,7 @@ class NetworkFirewallClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "if-match": kwargs.get("if_match", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
         try:
@@ -1522,7 +1521,7 @@ class NetworkFirewallClient(object):
             bulk_upload_services_details = kwargs.get("bulk_upload_services_details", missing)
 
         if bulk_upload_services_details is not missing and bulk_upload_services_details is not None:
-            if (not isinstance(bulk_upload_services_details, (six.binary_type, six.string_types)) and
+            if (not isinstance(bulk_upload_services_details, (bytes, str)) and
                     not hasattr(bulk_upload_services_details, "read")):
                 raise TypeError('The body must be a string, bytes, or provide a read() method.')
 
@@ -1640,7 +1639,7 @@ class NetworkFirewallClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"bulk_upload_url_lists got unknown kwargs: {extra_kwargs!r}")
@@ -1649,10 +1648,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -1661,7 +1660,7 @@ class NetworkFirewallClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "if-match": kwargs.get("if_match", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
         try:
@@ -1670,7 +1669,7 @@ class NetworkFirewallClient(object):
             bulk_upload_url_lists_details = kwargs.get("bulk_upload_url_lists_details", missing)
 
         if bulk_upload_url_lists_details is not missing and bulk_upload_url_lists_details is not None:
-            if (not isinstance(bulk_upload_url_lists_details, (six.binary_type, six.string_types)) and
+            if (not isinstance(bulk_upload_url_lists_details, (bytes, str)) and
                     not hasattr(bulk_upload_url_lists_details, "read")):
                 raise TypeError('The body must be a string, bytes, or provide a read() method.')
 
@@ -1769,7 +1768,7 @@ class NetworkFirewallClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"cancel_work_request got unknown kwargs: {extra_kwargs!r}")
@@ -1778,10 +1777,10 @@ class NetworkFirewallClient(object):
             "workRequestId": work_request_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -1790,7 +1789,7 @@ class NetworkFirewallClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -1887,7 +1886,7 @@ class NetworkFirewallClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"change_network_firewall_compartment got unknown kwargs: {extra_kwargs!r}")
@@ -1896,10 +1895,10 @@ class NetworkFirewallClient(object):
             "networkFirewallId": network_firewall_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -1909,7 +1908,7 @@ class NetworkFirewallClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -2007,7 +2006,7 @@ class NetworkFirewallClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"change_network_firewall_policy_compartment got unknown kwargs: {extra_kwargs!r}")
@@ -2016,10 +2015,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -2029,7 +2028,7 @@ class NetworkFirewallClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -2127,7 +2126,7 @@ class NetworkFirewallClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"clone_network_firewall_policy got unknown kwargs: {extra_kwargs!r}")
@@ -2136,10 +2135,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -2149,7 +2148,7 @@ class NetworkFirewallClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -2241,7 +2240,7 @@ class NetworkFirewallClient(object):
             "opc_retry_token",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"create_address_list got unknown kwargs: {extra_kwargs!r}")
@@ -2250,10 +2249,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -2262,7 +2261,7 @@ class NetworkFirewallClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -2354,7 +2353,7 @@ class NetworkFirewallClient(object):
             "opc_retry_token",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"create_application got unknown kwargs: {extra_kwargs!r}")
@@ -2363,10 +2362,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -2375,7 +2374,7 @@ class NetworkFirewallClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -2467,7 +2466,7 @@ class NetworkFirewallClient(object):
             "opc_retry_token",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"create_application_group got unknown kwargs: {extra_kwargs!r}")
@@ -2476,10 +2475,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -2488,7 +2487,7 @@ class NetworkFirewallClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -2580,7 +2579,7 @@ class NetworkFirewallClient(object):
             "opc_retry_token",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"create_decryption_profile got unknown kwargs: {extra_kwargs!r}")
@@ -2589,10 +2588,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -2601,7 +2600,7 @@ class NetworkFirewallClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -2693,7 +2692,7 @@ class NetworkFirewallClient(object):
             "opc_retry_token",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"create_decryption_rule got unknown kwargs: {extra_kwargs!r}")
@@ -2702,10 +2701,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -2714,7 +2713,7 @@ class NetworkFirewallClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -2806,7 +2805,7 @@ class NetworkFirewallClient(object):
             "opc_retry_token",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"create_mapped_secret got unknown kwargs: {extra_kwargs!r}")
@@ -2815,10 +2814,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -2827,7 +2826,7 @@ class NetworkFirewallClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -2916,7 +2915,7 @@ class NetworkFirewallClient(object):
             "opc_retry_token",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"create_network_firewall got unknown kwargs: {extra_kwargs!r}")
@@ -2927,7 +2926,7 @@ class NetworkFirewallClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -3014,7 +3013,7 @@ class NetworkFirewallClient(object):
             "opc_retry_token",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"create_network_firewall_policy got unknown kwargs: {extra_kwargs!r}")
@@ -3025,7 +3024,7 @@ class NetworkFirewallClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -3115,7 +3114,7 @@ class NetworkFirewallClient(object):
             "opc_retry_token",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"create_security_rule got unknown kwargs: {extra_kwargs!r}")
@@ -3124,10 +3123,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3136,7 +3135,7 @@ class NetworkFirewallClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -3228,7 +3227,7 @@ class NetworkFirewallClient(object):
             "opc_retry_token",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"create_service got unknown kwargs: {extra_kwargs!r}")
@@ -3237,10 +3236,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3249,7 +3248,7 @@ class NetworkFirewallClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -3341,7 +3340,7 @@ class NetworkFirewallClient(object):
             "opc_retry_token",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"create_service_list got unknown kwargs: {extra_kwargs!r}")
@@ -3350,10 +3349,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3362,7 +3361,7 @@ class NetworkFirewallClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -3454,7 +3453,7 @@ class NetworkFirewallClient(object):
             "opc_retry_token",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"create_url_list got unknown kwargs: {extra_kwargs!r}")
@@ -3463,10 +3462,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3475,7 +3474,7 @@ class NetworkFirewallClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -3567,7 +3566,7 @@ class NetworkFirewallClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"delete_address_list got unknown kwargs: {extra_kwargs!r}")
@@ -3577,10 +3576,10 @@ class NetworkFirewallClient(object):
             "addressListName": address_list_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3589,7 +3588,7 @@ class NetworkFirewallClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -3676,7 +3675,7 @@ class NetworkFirewallClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"delete_application got unknown kwargs: {extra_kwargs!r}")
@@ -3686,10 +3685,10 @@ class NetworkFirewallClient(object):
             "applicationName": application_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3698,7 +3697,7 @@ class NetworkFirewallClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -3785,7 +3784,7 @@ class NetworkFirewallClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"delete_application_group got unknown kwargs: {extra_kwargs!r}")
@@ -3795,10 +3794,10 @@ class NetworkFirewallClient(object):
             "applicationGroupName": application_group_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3807,7 +3806,7 @@ class NetworkFirewallClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -3894,7 +3893,7 @@ class NetworkFirewallClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"delete_decryption_profile got unknown kwargs: {extra_kwargs!r}")
@@ -3904,10 +3903,10 @@ class NetworkFirewallClient(object):
             "decryptionProfileName": decryption_profile_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3916,7 +3915,7 @@ class NetworkFirewallClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -4003,7 +4002,7 @@ class NetworkFirewallClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"delete_decryption_rule got unknown kwargs: {extra_kwargs!r}")
@@ -4013,10 +4012,10 @@ class NetworkFirewallClient(object):
             "decryptionRuleName": decryption_rule_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -4025,7 +4024,7 @@ class NetworkFirewallClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -4112,7 +4111,7 @@ class NetworkFirewallClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"delete_mapped_secret got unknown kwargs: {extra_kwargs!r}")
@@ -4122,10 +4121,10 @@ class NetworkFirewallClient(object):
             "mappedSecretName": mapped_secret_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -4134,7 +4133,7 @@ class NetworkFirewallClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -4220,7 +4219,7 @@ class NetworkFirewallClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"delete_network_firewall got unknown kwargs: {extra_kwargs!r}")
@@ -4229,10 +4228,10 @@ class NetworkFirewallClient(object):
             "networkFirewallId": network_firewall_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -4241,7 +4240,7 @@ class NetworkFirewallClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -4325,7 +4324,7 @@ class NetworkFirewallClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"delete_network_firewall_policy got unknown kwargs: {extra_kwargs!r}")
@@ -4334,10 +4333,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -4346,7 +4345,7 @@ class NetworkFirewallClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -4433,7 +4432,7 @@ class NetworkFirewallClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"delete_security_rule got unknown kwargs: {extra_kwargs!r}")
@@ -4443,10 +4442,10 @@ class NetworkFirewallClient(object):
             "securityRuleName": security_rule_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -4455,7 +4454,7 @@ class NetworkFirewallClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -4542,7 +4541,7 @@ class NetworkFirewallClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"delete_service got unknown kwargs: {extra_kwargs!r}")
@@ -4552,10 +4551,10 @@ class NetworkFirewallClient(object):
             "serviceName": service_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -4564,7 +4563,7 @@ class NetworkFirewallClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -4651,7 +4650,7 @@ class NetworkFirewallClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"delete_service_list got unknown kwargs: {extra_kwargs!r}")
@@ -4661,10 +4660,10 @@ class NetworkFirewallClient(object):
             "serviceListName": service_list_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -4673,7 +4672,7 @@ class NetworkFirewallClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -4760,7 +4759,7 @@ class NetworkFirewallClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"delete_url_list got unknown kwargs: {extra_kwargs!r}")
@@ -4770,10 +4769,10 @@ class NetworkFirewallClient(object):
             "urlListName": url_list_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -4782,7 +4781,7 @@ class NetworkFirewallClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -4861,7 +4860,7 @@ class NetworkFirewallClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_address_list got unknown kwargs: {extra_kwargs!r}")
@@ -4871,10 +4870,10 @@ class NetworkFirewallClient(object):
             "addressListName": address_list_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -4882,7 +4881,7 @@ class NetworkFirewallClient(object):
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -4971,7 +4970,7 @@ class NetworkFirewallClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_application got unknown kwargs: {extra_kwargs!r}")
@@ -4981,24 +4980,24 @@ class NetworkFirewallClient(object):
             "applicationName": application_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -5081,7 +5080,7 @@ class NetworkFirewallClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_application_group got unknown kwargs: {extra_kwargs!r}")
@@ -5091,10 +5090,10 @@ class NetworkFirewallClient(object):
             "applicationGroupName": application_group_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -5102,7 +5101,7 @@ class NetworkFirewallClient(object):
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -5183,7 +5182,7 @@ class NetworkFirewallClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_decryption_profile got unknown kwargs: {extra_kwargs!r}")
@@ -5193,10 +5192,10 @@ class NetworkFirewallClient(object):
             "decryptionProfileName": decryption_profile_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -5204,7 +5203,7 @@ class NetworkFirewallClient(object):
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -5293,7 +5292,7 @@ class NetworkFirewallClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_decryption_rule got unknown kwargs: {extra_kwargs!r}")
@@ -5303,24 +5302,24 @@ class NetworkFirewallClient(object):
             "decryptionRuleName": decryption_rule_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -5411,7 +5410,7 @@ class NetworkFirewallClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_mapped_secret got unknown kwargs: {extra_kwargs!r}")
@@ -5421,24 +5420,24 @@ class NetworkFirewallClient(object):
             "mappedSecretName": mapped_secret_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -5520,7 +5519,7 @@ class NetworkFirewallClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_network_firewall got unknown kwargs: {extra_kwargs!r}")
@@ -5529,10 +5528,10 @@ class NetworkFirewallClient(object):
             "networkFirewallId": network_firewall_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -5540,7 +5539,7 @@ class NetworkFirewallClient(object):
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -5618,7 +5617,7 @@ class NetworkFirewallClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_network_firewall_policy got unknown kwargs: {extra_kwargs!r}")
@@ -5627,10 +5626,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -5638,7 +5637,7 @@ class NetworkFirewallClient(object):
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -5719,7 +5718,7 @@ class NetworkFirewallClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_security_rule got unknown kwargs: {extra_kwargs!r}")
@@ -5729,10 +5728,10 @@ class NetworkFirewallClient(object):
             "securityRuleName": security_rule_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -5740,7 +5739,7 @@ class NetworkFirewallClient(object):
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -5829,7 +5828,7 @@ class NetworkFirewallClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_service got unknown kwargs: {extra_kwargs!r}")
@@ -5839,24 +5838,24 @@ class NetworkFirewallClient(object):
             "serviceName": service_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -5939,7 +5938,7 @@ class NetworkFirewallClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_service_list got unknown kwargs: {extra_kwargs!r}")
@@ -5949,10 +5948,10 @@ class NetworkFirewallClient(object):
             "serviceListName": service_list_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -5960,7 +5959,7 @@ class NetworkFirewallClient(object):
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -6041,7 +6040,7 @@ class NetworkFirewallClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_url_list got unknown kwargs: {extra_kwargs!r}")
@@ -6051,10 +6050,10 @@ class NetworkFirewallClient(object):
             "urlListName": url_list_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -6062,7 +6061,7 @@ class NetworkFirewallClient(object):
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -6140,7 +6139,7 @@ class NetworkFirewallClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_work_request got unknown kwargs: {extra_kwargs!r}")
@@ -6149,10 +6148,10 @@ class NetworkFirewallClient(object):
             "workRequestId": work_request_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -6160,7 +6159,7 @@ class NetworkFirewallClient(object):
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -6262,7 +6261,7 @@ class NetworkFirewallClient(object):
             "opc_request_id",
             "display_name"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_address_lists got unknown kwargs: {extra_kwargs!r}")
@@ -6271,10 +6270,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
@@ -6298,14 +6297,14 @@ class NetworkFirewallClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "displayName": kwargs.get("display_name", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -6409,7 +6408,7 @@ class NetworkFirewallClient(object):
             "opc_request_id",
             "display_name"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_application_groups got unknown kwargs: {extra_kwargs!r}")
@@ -6418,10 +6417,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
@@ -6445,14 +6444,14 @@ class NetworkFirewallClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "displayName": kwargs.get("display_name", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -6556,7 +6555,7 @@ class NetworkFirewallClient(object):
             "opc_request_id",
             "display_name"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_applications got unknown kwargs: {extra_kwargs!r}")
@@ -6565,10 +6564,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
@@ -6592,14 +6591,14 @@ class NetworkFirewallClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "displayName": kwargs.get("display_name", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -6703,7 +6702,7 @@ class NetworkFirewallClient(object):
             "opc_request_id",
             "display_name"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_decryption_profiles got unknown kwargs: {extra_kwargs!r}")
@@ -6712,10 +6711,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
@@ -6739,14 +6738,14 @@ class NetworkFirewallClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "displayName": kwargs.get("display_name", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -6854,7 +6853,7 @@ class NetworkFirewallClient(object):
             "display_name",
             "decryption_rule_priority_order"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_decryption_rules got unknown kwargs: {extra_kwargs!r}")
@@ -6863,10 +6862,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
@@ -6891,14 +6890,14 @@ class NetworkFirewallClient(object):
             "displayName": kwargs.get("display_name", missing),
             "decryptionRulePriorityOrder": kwargs.get("decryption_rule_priority_order", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -7002,7 +7001,7 @@ class NetworkFirewallClient(object):
             "opc_request_id",
             "display_name"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_mapped_secrets got unknown kwargs: {extra_kwargs!r}")
@@ -7011,10 +7010,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
@@ -7038,14 +7037,14 @@ class NetworkFirewallClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "displayName": kwargs.get("display_name", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -7159,7 +7158,7 @@ class NetworkFirewallClient(object):
             "sort_by",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_network_firewall_policies got unknown kwargs: {extra_kwargs!r}")
@@ -7195,14 +7194,14 @@ class NetworkFirewallClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -7326,7 +7325,7 @@ class NetworkFirewallClient(object):
             "sort_by",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_network_firewalls got unknown kwargs: {extra_kwargs!r}")
@@ -7364,14 +7363,14 @@ class NetworkFirewallClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -7477,7 +7476,7 @@ class NetworkFirewallClient(object):
             "display_name",
             "security_rule_priority_order"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_security_rules got unknown kwargs: {extra_kwargs!r}")
@@ -7486,10 +7485,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
@@ -7514,14 +7513,14 @@ class NetworkFirewallClient(object):
             "displayName": kwargs.get("display_name", missing),
             "securityRulePriorityOrder": kwargs.get("security_rule_priority_order", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -7625,7 +7624,7 @@ class NetworkFirewallClient(object):
             "opc_request_id",
             "display_name"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_service_lists got unknown kwargs: {extra_kwargs!r}")
@@ -7634,10 +7633,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
@@ -7661,14 +7660,14 @@ class NetworkFirewallClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "displayName": kwargs.get("display_name", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -7772,7 +7771,7 @@ class NetworkFirewallClient(object):
             "opc_request_id",
             "display_name"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_services got unknown kwargs: {extra_kwargs!r}")
@@ -7781,10 +7780,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
@@ -7808,14 +7807,14 @@ class NetworkFirewallClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "displayName": kwargs.get("display_name", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -7919,7 +7918,7 @@ class NetworkFirewallClient(object):
             "opc_request_id",
             "display_name"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_url_lists got unknown kwargs: {extra_kwargs!r}")
@@ -7928,10 +7927,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
@@ -7955,14 +7954,14 @@ class NetworkFirewallClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "displayName": kwargs.get("display_name", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -8062,7 +8061,7 @@ class NetworkFirewallClient(object):
             "sort_by",
             "sort_order"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_work_request_errors got unknown kwargs: {extra_kwargs!r}")
@@ -8071,10 +8070,10 @@ class NetworkFirewallClient(object):
             "workRequestId": work_request_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
@@ -8097,14 +8096,14 @@ class NetworkFirewallClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -8204,7 +8203,7 @@ class NetworkFirewallClient(object):
             "sort_by",
             "sort_order"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_work_request_logs got unknown kwargs: {extra_kwargs!r}")
@@ -8213,10 +8212,10 @@ class NetworkFirewallClient(object):
             "workRequestId": work_request_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
@@ -8239,14 +8238,14 @@ class NetworkFirewallClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -8360,7 +8359,7 @@ class NetworkFirewallClient(object):
             "sort_order",
             "sort_by"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
@@ -8396,14 +8395,14 @@ class NetworkFirewallClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -8497,7 +8496,7 @@ class NetworkFirewallClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"migrate_network_firewall_policy got unknown kwargs: {extra_kwargs!r}")
@@ -8506,10 +8505,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -8519,7 +8518,7 @@ class NetworkFirewallClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -8610,7 +8609,7 @@ class NetworkFirewallClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"update_address_list got unknown kwargs: {extra_kwargs!r}")
@@ -8620,10 +8619,10 @@ class NetworkFirewallClient(object):
             "addressListName": address_list_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -8632,7 +8631,7 @@ class NetworkFirewallClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -8726,7 +8725,7 @@ class NetworkFirewallClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"update_application got unknown kwargs: {extra_kwargs!r}")
@@ -8736,10 +8735,10 @@ class NetworkFirewallClient(object):
             "applicationName": application_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -8748,7 +8747,7 @@ class NetworkFirewallClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -8842,7 +8841,7 @@ class NetworkFirewallClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"update_application_group got unknown kwargs: {extra_kwargs!r}")
@@ -8852,10 +8851,10 @@ class NetworkFirewallClient(object):
             "applicationGroupName": application_group_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -8864,7 +8863,7 @@ class NetworkFirewallClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -8958,7 +8957,7 @@ class NetworkFirewallClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"update_decryption_profile got unknown kwargs: {extra_kwargs!r}")
@@ -8968,10 +8967,10 @@ class NetworkFirewallClient(object):
             "decryptionProfileName": decryption_profile_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -8980,7 +8979,7 @@ class NetworkFirewallClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -9074,7 +9073,7 @@ class NetworkFirewallClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"update_decryption_rule got unknown kwargs: {extra_kwargs!r}")
@@ -9084,10 +9083,10 @@ class NetworkFirewallClient(object):
             "decryptionRuleName": decryption_rule_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -9096,7 +9095,7 @@ class NetworkFirewallClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -9190,7 +9189,7 @@ class NetworkFirewallClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"update_mapped_secret got unknown kwargs: {extra_kwargs!r}")
@@ -9200,10 +9199,10 @@ class NetworkFirewallClient(object):
             "mappedSecretName": mapped_secret_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -9212,7 +9211,7 @@ class NetworkFirewallClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -9305,7 +9304,7 @@ class NetworkFirewallClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"update_network_firewall got unknown kwargs: {extra_kwargs!r}")
@@ -9314,10 +9313,10 @@ class NetworkFirewallClient(object):
             "networkFirewallId": network_firewall_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -9326,7 +9325,7 @@ class NetworkFirewallClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -9415,7 +9414,7 @@ class NetworkFirewallClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"update_network_firewall_policy got unknown kwargs: {extra_kwargs!r}")
@@ -9424,10 +9423,10 @@ class NetworkFirewallClient(object):
             "networkFirewallPolicyId": network_firewall_policy_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -9436,7 +9435,7 @@ class NetworkFirewallClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -9528,7 +9527,7 @@ class NetworkFirewallClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"update_security_rule got unknown kwargs: {extra_kwargs!r}")
@@ -9538,10 +9537,10 @@ class NetworkFirewallClient(object):
             "securityRuleName": security_rule_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -9550,7 +9549,7 @@ class NetworkFirewallClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -9644,7 +9643,7 @@ class NetworkFirewallClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"update_service got unknown kwargs: {extra_kwargs!r}")
@@ -9654,10 +9653,10 @@ class NetworkFirewallClient(object):
             "serviceName": service_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -9666,7 +9665,7 @@ class NetworkFirewallClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -9760,7 +9759,7 @@ class NetworkFirewallClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"update_service_list got unknown kwargs: {extra_kwargs!r}")
@@ -9770,10 +9769,10 @@ class NetworkFirewallClient(object):
             "serviceListName": service_list_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -9782,7 +9781,7 @@ class NetworkFirewallClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -9876,7 +9875,7 @@ class NetworkFirewallClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"update_url_list got unknown kwargs: {extra_kwargs!r}")
@@ -9886,10 +9885,10 @@ class NetworkFirewallClient(object):
             "urlListName": url_list_name
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -9898,7 +9897,7 @@ class NetworkFirewallClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),

@@ -6,7 +6,6 @@ import os
 import base64
 import math
 import json
-from oci._vendor import six
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives.ciphers import Cipher, modes
 from threading import Lock
@@ -67,15 +66,15 @@ def _validate_encryption_context(encryption_context):
     invalid_keys = []
     invalid_values = []
     invalid_prefix_keys = []
-    for key, value in six.iteritems(encryption_context):
+    for key, value in encryption_context.items():
         # keys and values must be str and not bytes
         # in python 2 'bytes' is just an alias for 'str' so it is okay
-        if (str != bytes and isinstance(key, bytes)) or not isinstance(key, six.string_types):
+        if (str != bytes and isinstance(key, bytes)) or not isinstance(key, str):
             invalid_keys.append(key)
         elif key.startswith("oci-"):
             invalid_prefix_keys.append(key)
 
-        if (str != bytes and isinstance(value, bytes)) or not isinstance(value, six.string_types):
+        if (str != bytes and isinstance(value, bytes)) or not isinstance(value, str):
             invalid_values.append(value)
 
     if invalid_keys or invalid_values:

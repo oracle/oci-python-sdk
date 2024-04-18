@@ -7,7 +7,6 @@
 from __future__ import absolute_import
 
 from oci._vendor import requests  # noqa: F401
-from oci._vendor import six
 
 from oci import retry, circuit_breaker  # noqa: F401
 from oci.base_client import BaseClient
@@ -166,7 +165,7 @@ class TransferApplianceClient(object):
             "opc_retry_token",
             "create_transfer_appliance_details"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"create_transfer_appliance got unknown kwargs: {extra_kwargs!r}")
@@ -175,10 +174,10 @@ class TransferApplianceClient(object):
             "id": id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -186,7 +185,7 @@ class TransferApplianceClient(object):
             "content-type": "application/json",
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -274,7 +273,7 @@ class TransferApplianceClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"create_transfer_appliance_admin_credentials got unknown kwargs: {extra_kwargs!r}")
@@ -284,10 +283,10 @@ class TransferApplianceClient(object):
             "transferApplianceLabel": transfer_appliance_label
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -295,7 +294,7 @@ class TransferApplianceClient(object):
             "content-type": "application/json",
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -381,7 +380,7 @@ class TransferApplianceClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"delete_transfer_appliance got unknown kwargs: {extra_kwargs!r}")
@@ -391,10 +390,10 @@ class TransferApplianceClient(object):
             "transferApplianceLabel": transfer_appliance_label
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -402,7 +401,7 @@ class TransferApplianceClient(object):
             "content-type": "application/json",
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -472,7 +471,7 @@ class TransferApplianceClient(object):
         api_reference_link = ""
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_transfer_appliance got unknown kwargs: {extra_kwargs!r}")
@@ -482,10 +481,10 @@ class TransferApplianceClient(object):
             "transferApplianceLabel": transfer_appliance_label
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -562,7 +561,7 @@ class TransferApplianceClient(object):
         api_reference_link = ""
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_transfer_appliance_certificate_authority_certificate got unknown kwargs: {extra_kwargs!r}")
@@ -572,10 +571,10 @@ class TransferApplianceClient(object):
             "transferApplianceLabel": transfer_appliance_label
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -652,7 +651,7 @@ class TransferApplianceClient(object):
         api_reference_link = ""
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_transfer_appliance_encryption_passphrase got unknown kwargs: {extra_kwargs!r}")
@@ -662,10 +661,10 @@ class TransferApplianceClient(object):
             "transferApplianceLabel": transfer_appliance_label
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -749,7 +748,7 @@ class TransferApplianceClient(object):
             "retry_strategy",
             "lifecycle_state"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_transfer_appliances got unknown kwargs: {extra_kwargs!r}")
@@ -758,10 +757,10 @@ class TransferApplianceClient(object):
             "id": id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
@@ -774,7 +773,7 @@ class TransferApplianceClient(object):
         query_params = {
             "lifecycleState": kwargs.get("lifecycle_state", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -864,7 +863,7 @@ class TransferApplianceClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"update_transfer_appliance got unknown kwargs: {extra_kwargs!r}")
@@ -874,10 +873,10 @@ class TransferApplianceClient(object):
             "transferApplianceLabel": transfer_appliance_label
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -885,7 +884,7 @@ class TransferApplianceClient(object):
             "content-type": "application/json",
             "if-match": kwargs.get("if_match", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),

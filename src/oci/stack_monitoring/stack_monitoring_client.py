@@ -7,7 +7,6 @@
 from __future__ import absolute_import
 
 from oci._vendor import requests  # noqa: F401
-from oci._vendor import six
 
 from oci import retry, circuit_breaker  # noqa: F401
 from oci.base_client import BaseClient
@@ -177,7 +176,7 @@ class StackMonitoringClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"associate_monitored_resources got unknown kwargs: {extra_kwargs!r}")
@@ -189,7 +188,7 @@ class StackMonitoringClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "if-match": kwargs.get("if_match", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -296,7 +295,7 @@ class StackMonitoringClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"change_config_compartment got unknown kwargs: {extra_kwargs!r}")
@@ -305,10 +304,10 @@ class StackMonitoringClient(object):
             "configId": config_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -318,7 +317,7 @@ class StackMonitoringClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -420,7 +419,7 @@ class StackMonitoringClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"change_metric_extension_compartment got unknown kwargs: {extra_kwargs!r}")
@@ -429,10 +428,10 @@ class StackMonitoringClient(object):
             "metricExtensionId": metric_extension_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -442,7 +441,7 @@ class StackMonitoringClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -542,7 +541,7 @@ class StackMonitoringClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"change_monitored_resource_compartment got unknown kwargs: {extra_kwargs!r}")
@@ -551,10 +550,10 @@ class StackMonitoringClient(object):
             "monitoredResourceId": monitored_resource_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -564,7 +563,7 @@ class StackMonitoringClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -663,7 +662,7 @@ class StackMonitoringClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"change_monitored_resource_task_compartment got unknown kwargs: {extra_kwargs!r}")
@@ -672,10 +671,10 @@ class StackMonitoringClient(object):
             "monitoredResourceTaskId": monitored_resource_task_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -685,7 +684,7 @@ class StackMonitoringClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -784,7 +783,7 @@ class StackMonitoringClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"change_process_set_compartment got unknown kwargs: {extra_kwargs!r}")
@@ -793,10 +792,10 @@ class StackMonitoringClient(object):
             "processSetId": process_set_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -806,7 +805,7 @@ class StackMonitoringClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -894,7 +893,7 @@ class StackMonitoringClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"create_baselineable_metric got unknown kwargs: {extra_kwargs!r}")
@@ -905,7 +904,7 @@ class StackMonitoringClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -999,7 +998,7 @@ class StackMonitoringClient(object):
             "opc_retry_token",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"create_config got unknown kwargs: {extra_kwargs!r}")
@@ -1010,7 +1009,7 @@ class StackMonitoringClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -1098,7 +1097,7 @@ class StackMonitoringClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"create_discovery_job got unknown kwargs: {extra_kwargs!r}")
@@ -1109,7 +1108,7 @@ class StackMonitoringClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -1195,7 +1194,7 @@ class StackMonitoringClient(object):
             "opc_retry_token",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"create_metric_extension got unknown kwargs: {extra_kwargs!r}")
@@ -1206,7 +1205,7 @@ class StackMonitoringClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -1301,7 +1300,7 @@ class StackMonitoringClient(object):
             "opc_request_id",
             "external_resource_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"create_monitored_resource got unknown kwargs: {extra_kwargs!r}")
@@ -1313,7 +1312,7 @@ class StackMonitoringClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "external-resource-id": kwargs.get("external_resource_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -1399,7 +1398,7 @@ class StackMonitoringClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"create_monitored_resource_task got unknown kwargs: {extra_kwargs!r}")
@@ -1410,7 +1409,7 @@ class StackMonitoringClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -1498,7 +1497,7 @@ class StackMonitoringClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"create_monitored_resource_type got unknown kwargs: {extra_kwargs!r}")
@@ -1509,7 +1508,7 @@ class StackMonitoringClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -1597,7 +1596,7 @@ class StackMonitoringClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"create_process_set got unknown kwargs: {extra_kwargs!r}")
@@ -1608,7 +1607,7 @@ class StackMonitoringClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -1696,7 +1695,7 @@ class StackMonitoringClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"delete_baselineable_metric got unknown kwargs: {extra_kwargs!r}")
@@ -1705,10 +1704,10 @@ class StackMonitoringClient(object):
             "baselineableMetricId": baselineable_metric_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -1717,7 +1716,7 @@ class StackMonitoringClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "if-match": kwargs.get("if_match", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -1802,7 +1801,7 @@ class StackMonitoringClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"delete_config got unknown kwargs: {extra_kwargs!r}")
@@ -1811,10 +1810,10 @@ class StackMonitoringClient(object):
             "configId": config_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -1823,7 +1822,7 @@ class StackMonitoringClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -1908,7 +1907,7 @@ class StackMonitoringClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"delete_discovery_job got unknown kwargs: {extra_kwargs!r}")
@@ -1917,10 +1916,10 @@ class StackMonitoringClient(object):
             "discoveryJobId": discovery_job_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -1929,7 +1928,7 @@ class StackMonitoringClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -2016,7 +2015,7 @@ class StackMonitoringClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"delete_metric_extension got unknown kwargs: {extra_kwargs!r}")
@@ -2025,10 +2024,10 @@ class StackMonitoringClient(object):
             "metricExtensionId": metric_extension_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -2037,7 +2036,7 @@ class StackMonitoringClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -2132,7 +2131,7 @@ class StackMonitoringClient(object):
             "opc_request_id",
             "is_delete_members"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"delete_monitored_resource got unknown kwargs: {extra_kwargs!r}")
@@ -2141,16 +2140,16 @@ class StackMonitoringClient(object):
             "monitoredResourceId": monitored_resource_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "isDeleteMembers": kwargs.get("is_delete_members", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -2158,7 +2157,7 @@ class StackMonitoringClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -2247,7 +2246,7 @@ class StackMonitoringClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"delete_monitored_resource_type got unknown kwargs: {extra_kwargs!r}")
@@ -2256,10 +2255,10 @@ class StackMonitoringClient(object):
             "monitoredResourceTypeId": monitored_resource_type_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -2268,7 +2267,7 @@ class StackMonitoringClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -2351,7 +2350,7 @@ class StackMonitoringClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"delete_process_set got unknown kwargs: {extra_kwargs!r}")
@@ -2360,10 +2359,10 @@ class StackMonitoringClient(object):
             "processSetId": process_set_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -2372,7 +2371,7 @@ class StackMonitoringClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -2468,7 +2467,7 @@ class StackMonitoringClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"disable_external_database got unknown kwargs: {extra_kwargs!r}")
@@ -2477,10 +2476,10 @@ class StackMonitoringClient(object):
             "monitoredResourceId": monitored_resource_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -2490,7 +2489,7 @@ class StackMonitoringClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "if-match": kwargs.get("if_match", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -2587,7 +2586,7 @@ class StackMonitoringClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"disable_metric_extension got unknown kwargs: {extra_kwargs!r}")
@@ -2596,10 +2595,10 @@ class StackMonitoringClient(object):
             "metricExtensionId": metric_extension_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -2609,7 +2608,7 @@ class StackMonitoringClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -2703,7 +2702,7 @@ class StackMonitoringClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"disassociate_monitored_resources got unknown kwargs: {extra_kwargs!r}")
@@ -2715,7 +2714,7 @@ class StackMonitoringClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "if-match": kwargs.get("if_match", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -2812,7 +2811,7 @@ class StackMonitoringClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"enable_metric_extension got unknown kwargs: {extra_kwargs!r}")
@@ -2821,10 +2820,10 @@ class StackMonitoringClient(object):
             "metricExtensionId": metric_extension_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -2834,7 +2833,7 @@ class StackMonitoringClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -2931,7 +2930,7 @@ class StackMonitoringClient(object):
             "if_match",
             "opc_retry_token"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"evaluate_baselineable_metric got unknown kwargs: {extra_kwargs!r}")
@@ -2940,10 +2939,10 @@ class StackMonitoringClient(object):
             "baselineableMetricId": baselineable_metric_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -2953,7 +2952,7 @@ class StackMonitoringClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -3054,7 +3053,7 @@ class StackMonitoringClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"export_metric_extension got unknown kwargs: {extra_kwargs!r}")
@@ -3063,10 +3062,10 @@ class StackMonitoringClient(object):
             "metricExtensionId": metric_extension_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3076,7 +3075,7 @@ class StackMonitoringClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -3156,7 +3155,7 @@ class StackMonitoringClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_baselineable_metric got unknown kwargs: {extra_kwargs!r}")
@@ -3165,10 +3164,10 @@ class StackMonitoringClient(object):
             "baselineableMetricId": baselineable_metric_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3176,7 +3175,7 @@ class StackMonitoringClient(object):
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -3255,7 +3254,7 @@ class StackMonitoringClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_config got unknown kwargs: {extra_kwargs!r}")
@@ -3264,10 +3263,10 @@ class StackMonitoringClient(object):
             "configId": config_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3275,7 +3274,7 @@ class StackMonitoringClient(object):
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -3354,7 +3353,7 @@ class StackMonitoringClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_discovery_job got unknown kwargs: {extra_kwargs!r}")
@@ -3363,10 +3362,10 @@ class StackMonitoringClient(object):
             "discoveryJobId": discovery_job_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3374,7 +3373,7 @@ class StackMonitoringClient(object):
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -3455,7 +3454,7 @@ class StackMonitoringClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_metric_extension got unknown kwargs: {extra_kwargs!r}")
@@ -3464,10 +3463,10 @@ class StackMonitoringClient(object):
             "metricExtensionId": metric_extension_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3475,7 +3474,7 @@ class StackMonitoringClient(object):
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -3558,7 +3557,7 @@ class StackMonitoringClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_monitored_resource got unknown kwargs: {extra_kwargs!r}")
@@ -3567,10 +3566,10 @@ class StackMonitoringClient(object):
             "monitoredResourceId": monitored_resource_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3578,7 +3577,7 @@ class StackMonitoringClient(object):
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -3661,7 +3660,7 @@ class StackMonitoringClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_monitored_resource_task got unknown kwargs: {extra_kwargs!r}")
@@ -3670,10 +3669,10 @@ class StackMonitoringClient(object):
             "monitoredResourceTaskId": monitored_resource_task_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3681,7 +3680,7 @@ class StackMonitoringClient(object):
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -3764,7 +3763,7 @@ class StackMonitoringClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_monitored_resource_type got unknown kwargs: {extra_kwargs!r}")
@@ -3773,10 +3772,10 @@ class StackMonitoringClient(object):
             "monitoredResourceTypeId": monitored_resource_type_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3784,7 +3783,7 @@ class StackMonitoringClient(object):
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -3863,7 +3862,7 @@ class StackMonitoringClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_process_set got unknown kwargs: {extra_kwargs!r}")
@@ -3872,10 +3871,10 @@ class StackMonitoringClient(object):
             "processSetId": process_set_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3883,7 +3882,7 @@ class StackMonitoringClient(object):
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -3964,7 +3963,7 @@ class StackMonitoringClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"get_work_request got unknown kwargs: {extra_kwargs!r}")
@@ -3973,10 +3972,10 @@ class StackMonitoringClient(object):
             "workRequestId": work_request_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -3984,7 +3983,7 @@ class StackMonitoringClient(object):
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -4108,7 +4107,7 @@ class StackMonitoringClient(object):
             "sort_order",
             "sort_by"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_baselineable_metrics got unknown kwargs: {extra_kwargs!r}")
@@ -4138,14 +4137,14 @@ class StackMonitoringClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -4270,7 +4269,7 @@ class StackMonitoringClient(object):
             "sort_by",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_configs got unknown kwargs: {extra_kwargs!r}")
@@ -4313,14 +4312,14 @@ class StackMonitoringClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -4433,7 +4432,7 @@ class StackMonitoringClient(object):
             "sort_by",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_discovery_job_logs got unknown kwargs: {extra_kwargs!r}")
@@ -4442,10 +4441,10 @@ class StackMonitoringClient(object):
             "discoveryJobId": discovery_job_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'log_type' in kwargs:
@@ -4476,14 +4475,14 @@ class StackMonitoringClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -4596,7 +4595,7 @@ class StackMonitoringClient(object):
             "sort_by",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_discovery_jobs got unknown kwargs: {extra_kwargs!r}")
@@ -4623,14 +4622,14 @@ class StackMonitoringClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -4762,7 +4761,7 @@ class StackMonitoringClient(object):
             "enabled_on_resource_id",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_metric_extensions got unknown kwargs: {extra_kwargs!r}")
@@ -4807,14 +4806,14 @@ class StackMonitoringClient(object):
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "enabledOnResourceId": kwargs.get("enabled_on_resource_id", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -4931,7 +4930,7 @@ class StackMonitoringClient(object):
             "page",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_monitored_resource_tasks got unknown kwargs: {extra_kwargs!r}")
@@ -4965,14 +4964,14 @@ class StackMonitoringClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -5134,7 +5133,7 @@ class StackMonitoringClient(object):
             "fields",
             "exclude_fields"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_monitored_resource_types got unknown kwargs: {extra_kwargs!r}")
@@ -5173,14 +5172,14 @@ class StackMonitoringClient(object):
             "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
             "excludeFields": self.base_client.generate_collection_format_param(kwargs.get("exclude_fields", missing), 'multi')
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -5302,7 +5301,7 @@ class StackMonitoringClient(object):
             "page",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_monitored_resources got unknown kwargs: {extra_kwargs!r}")
@@ -5338,14 +5337,14 @@ class StackMonitoringClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -5456,7 +5455,7 @@ class StackMonitoringClient(object):
             "sort_by",
             "display_name"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_process_sets got unknown kwargs: {extra_kwargs!r}")
@@ -5483,14 +5482,14 @@ class StackMonitoringClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "displayName": kwargs.get("display_name", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -5599,7 +5598,7 @@ class StackMonitoringClient(object):
             "sort_order",
             "sort_by"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_work_request_errors got unknown kwargs: {extra_kwargs!r}")
@@ -5608,10 +5607,10 @@ class StackMonitoringClient(object):
             "workRequestId": work_request_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
@@ -5634,14 +5633,14 @@ class StackMonitoringClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -5752,7 +5751,7 @@ class StackMonitoringClient(object):
             "sort_order",
             "sort_by"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_work_request_logs got unknown kwargs: {extra_kwargs!r}")
@@ -5761,10 +5760,10 @@ class StackMonitoringClient(object):
             "workRequestId": work_request_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
@@ -5787,14 +5786,14 @@ class StackMonitoringClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -5917,7 +5916,7 @@ class StackMonitoringClient(object):
             "sort_order",
             "sort_by"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
@@ -5953,14 +5952,14 @@ class StackMonitoringClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -6064,7 +6063,7 @@ class StackMonitoringClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"manage_license got unknown kwargs: {extra_kwargs!r}")
@@ -6073,10 +6072,10 @@ class StackMonitoringClient(object):
             "monitoredResourceId": monitored_resource_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -6086,7 +6085,7 @@ class StackMonitoringClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "if-match": kwargs.get("if_match", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -6184,7 +6183,7 @@ class StackMonitoringClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"publish_metric_extension got unknown kwargs: {extra_kwargs!r}")
@@ -6193,10 +6192,10 @@ class StackMonitoringClient(object):
             "metricExtensionId": metric_extension_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -6206,7 +6205,7 @@ class StackMonitoringClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "if-match": kwargs.get("if_match", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -6328,7 +6327,7 @@ class StackMonitoringClient(object):
             "page",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"request_monitored_resources_summarized_count got unknown kwargs: {extra_kwargs!r}")
@@ -6371,14 +6370,14 @@ class StackMonitoringClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -6516,7 +6515,7 @@ class StackMonitoringClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"search_associated_resources got unknown kwargs: {extra_kwargs!r}")
@@ -6527,7 +6526,7 @@ class StackMonitoringClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -6536,7 +6535,7 @@ class StackMonitoringClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "if-match": kwargs.get("if_match", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -6650,7 +6649,7 @@ class StackMonitoringClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"search_monitored_resource_associations got unknown kwargs: {extra_kwargs!r}")
@@ -6659,7 +6658,7 @@ class StackMonitoringClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -6668,7 +6667,7 @@ class StackMonitoringClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "if-match": kwargs.get("if_match", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -6801,7 +6800,7 @@ class StackMonitoringClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"search_monitored_resource_members got unknown kwargs: {extra_kwargs!r}")
@@ -6810,10 +6809,10 @@ class StackMonitoringClient(object):
             "monitoredResourceId": monitored_resource_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
@@ -6836,7 +6835,7 @@ class StackMonitoringClient(object):
             "page": kwargs.get("page", missing),
             "limit": kwargs.get("limit", missing)
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -6845,7 +6844,7 @@ class StackMonitoringClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "if-match": kwargs.get("if_match", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -6987,7 +6986,7 @@ class StackMonitoringClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"search_monitored_resources got unknown kwargs: {extra_kwargs!r}")
@@ -6998,7 +6997,7 @@ class StackMonitoringClient(object):
             "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
             "excludeFields": self.base_client.generate_collection_format_param(kwargs.get("exclude_fields", missing), 'multi')
         }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+        query_params = {k: v for (k, v) in query_params.items() if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -7007,7 +7006,7 @@ class StackMonitoringClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "if-match": kwargs.get("if_match", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -7110,7 +7109,7 @@ class StackMonitoringClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"test_metric_extension got unknown kwargs: {extra_kwargs!r}")
@@ -7119,10 +7118,10 @@ class StackMonitoringClient(object):
             "metricExtensionId": metric_extension_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -7132,7 +7131,7 @@ class StackMonitoringClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -7238,7 +7237,7 @@ class StackMonitoringClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"update_and_propagate_tags got unknown kwargs: {extra_kwargs!r}")
@@ -7247,10 +7246,10 @@ class StackMonitoringClient(object):
             "monitoredResourceId": monitored_resource_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -7260,7 +7259,7 @@ class StackMonitoringClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "if-match": kwargs.get("if_match", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -7351,7 +7350,7 @@ class StackMonitoringClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"update_baselineable_metric got unknown kwargs: {extra_kwargs!r}")
@@ -7360,10 +7359,10 @@ class StackMonitoringClient(object):
             "baselineableMetricId": baselineable_metric_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -7372,7 +7371,7 @@ class StackMonitoringClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -7464,7 +7463,7 @@ class StackMonitoringClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"update_config got unknown kwargs: {extra_kwargs!r}")
@@ -7473,10 +7472,10 @@ class StackMonitoringClient(object):
             "configId": config_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -7485,7 +7484,7 @@ class StackMonitoringClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -7579,7 +7578,7 @@ class StackMonitoringClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"update_metric_extension got unknown kwargs: {extra_kwargs!r}")
@@ -7588,10 +7587,10 @@ class StackMonitoringClient(object):
             "metricExtensionId": metric_extension_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -7600,7 +7599,7 @@ class StackMonitoringClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -7696,7 +7695,7 @@ class StackMonitoringClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"update_monitored_resource got unknown kwargs: {extra_kwargs!r}")
@@ -7705,10 +7704,10 @@ class StackMonitoringClient(object):
             "monitoredResourceId": monitored_resource_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -7717,7 +7716,7 @@ class StackMonitoringClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -7809,7 +7808,7 @@ class StackMonitoringClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"update_monitored_resource_task got unknown kwargs: {extra_kwargs!r}")
@@ -7818,10 +7817,10 @@ class StackMonitoringClient(object):
             "monitoredResourceTaskId": monitored_resource_task_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -7830,7 +7829,7 @@ class StackMonitoringClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -7924,7 +7923,7 @@ class StackMonitoringClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"update_monitored_resource_type got unknown kwargs: {extra_kwargs!r}")
@@ -7933,10 +7932,10 @@ class StackMonitoringClient(object):
             "monitoredResourceTypeId": monitored_resource_type_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -7945,7 +7944,7 @@ class StackMonitoringClient(object):
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),
@@ -8035,7 +8034,7 @@ class StackMonitoringClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"update_process_set got unknown kwargs: {extra_kwargs!r}")
@@ -8044,10 +8043,10 @@ class StackMonitoringClient(object):
             "processSetId": process_set_id
         }
 
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+        path_params = {k: v for (k, v) in path_params.items() if v is not missing}
 
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+        for (k, v) in path_params.items():
+            if v is None or (isinstance(v, str) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
@@ -8056,7 +8055,7 @@ class StackMonitoringClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "if-match": kwargs.get("if_match", missing)
         }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        header_params = {k: v for (k, v) in header_params.items() if v is not missing and v is not None}
 
         retry_strategy = self.base_client.get_preferred_retry_strategy(
             operation_retry_strategy=kwargs.get('retry_strategy'),

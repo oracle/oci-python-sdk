@@ -29,7 +29,6 @@ import configparser
 import os
 import re
 import logging
-from oci._vendor import six
 
 from .exceptions import ConfigFileNotFound, ProfileNotFound, InvalidConfig, InvalidKeyFilePath
 from .auth import signers
@@ -154,7 +153,7 @@ def validate_config(config, **kwargs):
             else:
                 errors[required_key] = "missing"
 
-    for key, pattern in six.iteritems(PATTERNS):
+    for key, pattern in PATTERNS.items():
         if key in errors:
             # key is missing, can't possibly match pattern
             continue

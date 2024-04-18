@@ -7,7 +7,6 @@
 from __future__ import absolute_import
 
 from oci._vendor import requests  # noqa: F401
-from oci._vendor import six
 
 from oci import retry, circuit_breaker  # noqa: F401
 from oci.base_client import BaseClient
@@ -147,7 +146,7 @@ class ShippingVendorsClient(object):
         api_reference_link = ""
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        extra_kwargs = [_key for _key in kwargs.keys() if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_shipping_vendors got unknown kwargs: {extra_kwargs!r}")
