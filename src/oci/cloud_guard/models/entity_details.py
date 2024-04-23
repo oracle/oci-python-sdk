@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class EntityDetails(object):
     """
-    Entities Details for a data source
+    Detailed information for the entities mapped to a data source.
     """
 
     def __init__(self, **kwargs):

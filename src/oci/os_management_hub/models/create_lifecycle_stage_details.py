@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateLifecycleStageDetails(object):
     """
-    The information about a lifecycle stage.
+    Provides the information used to create a lifecycle stage.
     """
 
     def __init__(self, **kwargs):
@@ -60,7 +60,7 @@ class CreateLifecycleStageDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateLifecycleStageDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 
 
         :return: The display_name of this CreateLifecycleStageDetails.
@@ -72,7 +72,7 @@ class CreateLifecycleStageDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateLifecycleStageDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateLifecycleStageDetails.
@@ -84,8 +84,7 @@ class CreateLifecycleStageDetails(object):
     def rank(self):
         """
         **[Required]** Gets the rank of this CreateLifecycleStageDetails.
-        User specified rank for the lifecycle stage.
-        Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
+        User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
 
 
         :return: The rank of this CreateLifecycleStageDetails.
@@ -97,8 +96,7 @@ class CreateLifecycleStageDetails(object):
     def rank(self, rank):
         """
         Sets the rank of this CreateLifecycleStageDetails.
-        User specified rank for the lifecycle stage.
-        Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
+        User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
 
 
         :param rank: The rank of this CreateLifecycleStageDetails.

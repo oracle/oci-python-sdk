@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateSecurityPolicyDetails(object):
     """
-    The information to be updated.
+    Parameters to be used to update a security policy.
     """
 
     def __init__(self, **kwargs):
@@ -53,7 +53,7 @@ class UpdateSecurityPolicyDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this UpdateSecurityPolicyDetails.
-        SecurityPolicy Identifier
+        Dis;lay name for the security policy
 
 
         :return: The display_name of this UpdateSecurityPolicyDetails.
@@ -65,7 +65,7 @@ class UpdateSecurityPolicyDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateSecurityPolicyDetails.
-        SecurityPolicy Identifier
+        Dis;lay name for the security policy
 
 
         :param display_name: The display_name of this UpdateSecurityPolicyDetails.

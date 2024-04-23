@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConfigValue(object):
     """
-    configuration item for multi list data type
+    Details for a configuration value for a managed list.
     """
 
     #: A constant which can be used with the list_type property of a ConfigValue.
@@ -63,7 +63,7 @@ class ConfigValue(object):
     def list_type(self):
         """
         **[Required]** Gets the list_type of this ConfigValue.
-        configuration list item type, either CUSTOM or MANAGED
+        Configuration list item type (CUSTOM or MANAGED)
 
         Allowed values for this property are: "MANAGED", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -78,7 +78,7 @@ class ConfigValue(object):
     def list_type(self, list_type):
         """
         Sets the list_type of this ConfigValue.
-        configuration list item type, either CUSTOM or MANAGED
+        Configuration list item type (CUSTOM or MANAGED)
 
 
         :param list_type: The list_type of this ConfigValue.
@@ -93,7 +93,7 @@ class ConfigValue(object):
     def managed_list_type(self):
         """
         **[Required]** Gets the managed_list_type of this ConfigValue.
-        type of the managed list
+        Type of content in the managed list
 
 
         :return: The managed_list_type of this ConfigValue.
@@ -105,7 +105,7 @@ class ConfigValue(object):
     def managed_list_type(self, managed_list_type):
         """
         Sets the managed_list_type of this ConfigValue.
-        type of the managed list
+        Type of content in the managed list
 
 
         :param managed_list_type: The managed_list_type of this ConfigValue.
@@ -117,7 +117,7 @@ class ConfigValue(object):
     def value(self):
         """
         **[Required]** Gets the value of this ConfigValue.
-        configuration value
+        Configuration value
 
 
         :return: The value of this ConfigValue.
@@ -129,7 +129,7 @@ class ConfigValue(object):
     def value(self, value):
         """
         Sets the value of this ConfigValue.
-        configuration value
+        Configuration value
 
 
         :param value: The value of this ConfigValue.

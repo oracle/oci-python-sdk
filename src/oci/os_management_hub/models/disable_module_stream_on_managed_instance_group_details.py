@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DisableModuleStreamOnManagedInstanceGroupDetails(object):
     """
-    The work request details for the module stream operation on the managed instance group.
+    Provides the details for disabling a module stream on a managed instance group.
     """
 
     def __init__(self, **kwargs):
@@ -28,6 +28,10 @@ class DisableModuleStreamOnManagedInstanceGroupDetails(object):
             The value to assign to the stream_name property of this DisableModuleStreamOnManagedInstanceGroupDetails.
         :type stream_name: str
 
+        :param software_source_id:
+            The value to assign to the software_source_id property of this DisableModuleStreamOnManagedInstanceGroupDetails.
+        :type software_source_id: str
+
         :param work_request_details:
             The value to assign to the work_request_details property of this DisableModuleStreamOnManagedInstanceGroupDetails.
         :type work_request_details: oci.os_management_hub.models.WorkRequestDetails
@@ -36,24 +40,27 @@ class DisableModuleStreamOnManagedInstanceGroupDetails(object):
         self.swagger_types = {
             'module_name': 'str',
             'stream_name': 'str',
+            'software_source_id': 'str',
             'work_request_details': 'WorkRequestDetails'
         }
 
         self.attribute_map = {
             'module_name': 'moduleName',
             'stream_name': 'streamName',
+            'software_source_id': 'softwareSourceId',
             'work_request_details': 'workRequestDetails'
         }
 
         self._module_name = None
         self._stream_name = None
+        self._software_source_id = None
         self._work_request_details = None
 
     @property
     def module_name(self):
         """
-        Gets the module_name of this DisableModuleStreamOnManagedInstanceGroupDetails.
-        The name of a module.
+        **[Required]** Gets the module_name of this DisableModuleStreamOnManagedInstanceGroupDetails.
+        The name of the module.
 
 
         :return: The module_name of this DisableModuleStreamOnManagedInstanceGroupDetails.
@@ -65,7 +72,7 @@ class DisableModuleStreamOnManagedInstanceGroupDetails(object):
     def module_name(self, module_name):
         """
         Sets the module_name of this DisableModuleStreamOnManagedInstanceGroupDetails.
-        The name of a module.
+        The name of the module.
 
 
         :param module_name: The module_name of this DisableModuleStreamOnManagedInstanceGroupDetails.
@@ -96,6 +103,34 @@ class DisableModuleStreamOnManagedInstanceGroupDetails(object):
         :type: str
         """
         self._stream_name = stream_name
+
+    @property
+    def software_source_id(self):
+        """
+        Gets the software_source_id of this DisableModuleStreamOnManagedInstanceGroupDetails.
+        The `OCID`__ of the software source that provides the module stream
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The software_source_id of this DisableModuleStreamOnManagedInstanceGroupDetails.
+        :rtype: str
+        """
+        return self._software_source_id
+
+    @software_source_id.setter
+    def software_source_id(self, software_source_id):
+        """
+        Sets the software_source_id of this DisableModuleStreamOnManagedInstanceGroupDetails.
+        The `OCID`__ of the software source that provides the module stream
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param software_source_id: The software_source_id of this DisableModuleStreamOnManagedInstanceGroupDetails.
+        :type: str
+        """
+        self._software_source_id = software_source_id
 
     @property
     def work_request_details(self):

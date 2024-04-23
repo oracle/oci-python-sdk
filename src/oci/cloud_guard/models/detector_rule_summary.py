@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DetectorRuleSummary(object):
     """
-    Summary of the Detector Rules.
+    Summary information for a detector rule.
     """
 
     #: A constant which can be used with the detector property of a DetectorRuleSummary.
@@ -30,6 +30,10 @@ class DetectorRuleSummary(object):
     #: A constant which can be used with the detector property of a DetectorRuleSummary.
     #: This constant has a value of "IAAS_LOG_INSIGHT_DETECTOR"
     DETECTOR_IAAS_LOG_INSIGHT_DETECTOR = "IAAS_LOG_INSIGHT_DETECTOR"
+
+    #: A constant which can be used with the detector property of a DetectorRuleSummary.
+    #: This constant has a value of "IAAS_INSTANCE_SECURITY_DETECTOR"
+    DETECTOR_IAAS_INSTANCE_SECURITY_DETECTOR = "IAAS_INSTANCE_SECURITY_DETECTOR"
 
     #: A constant which can be used with the managed_list_types property of a DetectorRuleSummary.
     #: This constant has a value of "CIDR_BLOCK"
@@ -138,7 +142,7 @@ class DetectorRuleSummary(object):
 
         :param detector:
             The value to assign to the detector property of this DetectorRuleSummary.
-            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type detector: str
 
@@ -260,7 +264,7 @@ class DetectorRuleSummary(object):
     def display_name(self):
         """
         Gets the display_name of this DetectorRuleSummary.
-        DetectorTemplate Identifier, can be renamed
+        Display name for the detector rule
 
 
         :return: The display_name of this DetectorRuleSummary.
@@ -272,7 +276,7 @@ class DetectorRuleSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this DetectorRuleSummary.
-        DetectorTemplate Identifier, can be renamed
+        Display name for the detector rule
 
 
         :param display_name: The display_name of this DetectorRuleSummary.
@@ -284,7 +288,7 @@ class DetectorRuleSummary(object):
     def description(self):
         """
         Gets the description of this DetectorRuleSummary.
-        Description for detector rule
+        Description for the detector rule
 
 
         :return: The description of this DetectorRuleSummary.
@@ -296,7 +300,7 @@ class DetectorRuleSummary(object):
     def description(self, description):
         """
         Sets the description of this DetectorRuleSummary.
-        Description for detector rule
+        Description for the detector rule
 
 
         :param description: The description of this DetectorRuleSummary.
@@ -308,7 +312,7 @@ class DetectorRuleSummary(object):
     def recommendation(self):
         """
         Gets the recommendation of this DetectorRuleSummary.
-        Recommendation for detector rule
+        Recommendation for the detector rule
 
 
         :return: The recommendation of this DetectorRuleSummary.
@@ -320,7 +324,7 @@ class DetectorRuleSummary(object):
     def recommendation(self, recommendation):
         """
         Sets the recommendation of this DetectorRuleSummary.
-        Recommendation for detector rule
+        Recommendation for the detector rule
 
 
         :param recommendation: The recommendation of this DetectorRuleSummary.
@@ -332,9 +336,9 @@ class DetectorRuleSummary(object):
     def detector(self):
         """
         **[Required]** Gets the detector of this DetectorRuleSummary.
-        possible type of detectors
+        Possible types of detectors
 
-        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -347,13 +351,13 @@ class DetectorRuleSummary(object):
     def detector(self, detector):
         """
         Sets the detector of this DetectorRuleSummary.
-        possible type of detectors
+        Possible types of detectors
 
 
         :param detector: The detector of this DetectorRuleSummary.
         :type: str
         """
-        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR"]
+        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR"]
         if not value_allowed_none_or_none_sentinel(detector, allowed_values):
             detector = 'UNKNOWN_ENUM_VALUE'
         self._detector = detector
@@ -362,7 +366,7 @@ class DetectorRuleSummary(object):
     def service_type(self):
         """
         Gets the service_type of this DetectorRuleSummary.
-        service type of the configuration to which the rule is applied
+        Service type of the configuration to which the rule is applied
 
 
         :return: The service_type of this DetectorRuleSummary.
@@ -374,7 +378,7 @@ class DetectorRuleSummary(object):
     def service_type(self, service_type):
         """
         Sets the service_type of this DetectorRuleSummary.
-        service type of the configuration to which the rule is applied
+        Service type of the configuration to which the rule is applied
 
 
         :param service_type: The service_type of this DetectorRuleSummary.
@@ -386,7 +390,7 @@ class DetectorRuleSummary(object):
     def resource_type(self):
         """
         Gets the resource_type of this DetectorRuleSummary.
-        resource type of the configuration to which the rule is applied
+        Resource type of the configuration to which the rule is applied
 
 
         :return: The resource_type of this DetectorRuleSummary.
@@ -398,7 +402,7 @@ class DetectorRuleSummary(object):
     def resource_type(self, resource_type):
         """
         Sets the resource_type of this DetectorRuleSummary.
-        resource type of the configuration to which the rule is applied
+        Resource type of the configuration to which the rule is applied
 
 
         :param resource_type: The resource_type of this DetectorRuleSummary.
@@ -410,7 +414,7 @@ class DetectorRuleSummary(object):
     def managed_list_types(self):
         """
         Gets the managed_list_types of this DetectorRuleSummary.
-        List of cloudguard managed list types related to this rule
+        List of managed list types related to this rule
 
         Allowed values for items in this list are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -425,7 +429,7 @@ class DetectorRuleSummary(object):
     def managed_list_types(self, managed_list_types):
         """
         Sets the managed_list_types of this DetectorRuleSummary.
-        List of cloudguard managed list types related to this rule
+        List of managed list types related to this rule
 
 
         :param managed_list_types: The managed_list_types of this DetectorRuleSummary.
@@ -440,7 +444,7 @@ class DetectorRuleSummary(object):
     def candidate_responder_rules(self):
         """
         Gets the candidate_responder_rules of this DetectorRuleSummary.
-        List of CandidateResponderRule related to this rule
+        List of responder rules that can be used to remediate a problem triggered by this detector rule
 
 
         :return: The candidate_responder_rules of this DetectorRuleSummary.
@@ -452,7 +456,7 @@ class DetectorRuleSummary(object):
     def candidate_responder_rules(self, candidate_responder_rules):
         """
         Sets the candidate_responder_rules of this DetectorRuleSummary.
-        List of CandidateResponderRule related to this rule
+        List of responder rules that can be used to remediate a problem triggered by this detector rule
 
 
         :param candidate_responder_rules: The candidate_responder_rules of this DetectorRuleSummary.
@@ -484,7 +488,7 @@ class DetectorRuleSummary(object):
     def time_created(self):
         """
         Gets the time_created of this DetectorRuleSummary.
-        The date and time the detector rule was created. Format defined by RFC3339.
+        The date and time the detector rule was first created. Format defined by RFC3339.
 
 
         :return: The time_created of this DetectorRuleSummary.
@@ -496,7 +500,7 @@ class DetectorRuleSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this DetectorRuleSummary.
-        The date and time the detector rule was created. Format defined by RFC3339.
+        The date and time the detector rule was first created. Format defined by RFC3339.
 
 
         :param time_created: The time_created of this DetectorRuleSummary.
@@ -508,7 +512,7 @@ class DetectorRuleSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this DetectorRuleSummary.
-        The date and time the detector rule was updated. Format defined by RFC3339.
+        The date and time the detector rule was last updated. Format defined by RFC3339.
 
 
         :return: The time_updated of this DetectorRuleSummary.
@@ -520,7 +524,7 @@ class DetectorRuleSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this DetectorRuleSummary.
-        The date and time the detector rule was updated. Format defined by RFC3339.
+        The date and time the detector rule was last updated. Format defined by RFC3339.
 
 
         :param time_updated: The time_updated of this DetectorRuleSummary.
@@ -532,7 +536,7 @@ class DetectorRuleSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this DetectorRuleSummary.
-        The current state of the detector rule
+        The current lifecycle state of the detector rule
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -547,7 +551,7 @@ class DetectorRuleSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this DetectorRuleSummary.
-        The current state of the detector rule
+        The current lifecycle state of the detector rule
 
 
         :param lifecycle_state: The lifecycle_state of this DetectorRuleSummary.

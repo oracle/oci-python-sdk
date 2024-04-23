@@ -31,6 +31,10 @@ class DetectorRule(object):
     #: This constant has a value of "IAAS_LOG_INSIGHT_DETECTOR"
     DETECTOR_IAAS_LOG_INSIGHT_DETECTOR = "IAAS_LOG_INSIGHT_DETECTOR"
 
+    #: A constant which can be used with the detector property of a DetectorRule.
+    #: This constant has a value of "IAAS_INSTANCE_SECURITY_DETECTOR"
+    DETECTOR_IAAS_INSTANCE_SECURITY_DETECTOR = "IAAS_INSTANCE_SECURITY_DETECTOR"
+
     #: A constant which can be used with the managed_list_types property of a DetectorRule.
     #: This constant has a value of "CIDR_BLOCK"
     MANAGED_LIST_TYPES_CIDR_BLOCK = "CIDR_BLOCK"
@@ -138,7 +142,7 @@ class DetectorRule(object):
 
         :param detector:
             The value to assign to the detector property of this DetectorRule.
-            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type detector: str
 
@@ -182,6 +186,10 @@ class DetectorRule(object):
             The value to assign to the lifecycle_details property of this DetectorRule.
         :type lifecycle_details: str
 
+        :param locks:
+            The value to assign to the locks property of this DetectorRule.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -197,7 +205,8 @@ class DetectorRule(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
-            'lifecycle_details': 'str'
+            'lifecycle_details': 'str',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -214,7 +223,8 @@ class DetectorRule(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
-            'lifecycle_details': 'lifecycleDetails'
+            'lifecycle_details': 'lifecycleDetails',
+            'locks': 'locks'
         }
 
         self._id = None
@@ -231,12 +241,13 @@ class DetectorRule(object):
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._locks = None
 
     @property
     def id(self):
         """
         **[Required]** Gets the id of this DetectorRule.
-        The unique identifier of the detector rule.
+        The unique identifier of the detector rule
 
 
         :return: The id of this DetectorRule.
@@ -248,7 +259,7 @@ class DetectorRule(object):
     def id(self, id):
         """
         Sets the id of this DetectorRule.
-        The unique identifier of the detector rule.
+        The unique identifier of the detector rule
 
 
         :param id: The id of this DetectorRule.
@@ -260,7 +271,7 @@ class DetectorRule(object):
     def display_name(self):
         """
         Gets the display_name of this DetectorRule.
-        Display name for DetectorRule.
+        Display name for the detector rule
 
 
         :return: The display_name of this DetectorRule.
@@ -272,7 +283,7 @@ class DetectorRule(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this DetectorRule.
-        Display name for DetectorRule.
+        Display name for the detector rule
 
 
         :param display_name: The display_name of this DetectorRule.
@@ -284,7 +295,7 @@ class DetectorRule(object):
     def description(self):
         """
         Gets the description of this DetectorRule.
-        Description for DetectorRule.
+        Description for the detector rule
 
 
         :return: The description of this DetectorRule.
@@ -296,7 +307,7 @@ class DetectorRule(object):
     def description(self, description):
         """
         Sets the description of this DetectorRule.
-        Description for DetectorRule.
+        Description for the detector rule
 
 
         :param description: The description of this DetectorRule.
@@ -308,7 +319,7 @@ class DetectorRule(object):
     def recommendation(self):
         """
         Gets the recommendation of this DetectorRule.
-        recommendation for DetectorRule
+        Recommendation for the detector rule
 
 
         :return: The recommendation of this DetectorRule.
@@ -320,7 +331,7 @@ class DetectorRule(object):
     def recommendation(self, recommendation):
         """
         Sets the recommendation of this DetectorRule.
-        recommendation for DetectorRule
+        Recommendation for the detector rule
 
 
         :param recommendation: The recommendation of this DetectorRule.
@@ -332,9 +343,9 @@ class DetectorRule(object):
     def detector(self):
         """
         **[Required]** Gets the detector of this DetectorRule.
-        detector for the rule
+        Detector recipe for the rule
 
-        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -347,13 +358,13 @@ class DetectorRule(object):
     def detector(self, detector):
         """
         Sets the detector of this DetectorRule.
-        detector for the rule
+        Detector recipe for the rule
 
 
         :param detector: The detector of this DetectorRule.
         :type: str
         """
-        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR"]
+        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR"]
         if not value_allowed_none_or_none_sentinel(detector, allowed_values):
             detector = 'UNKNOWN_ENUM_VALUE'
         self._detector = detector
@@ -362,7 +373,7 @@ class DetectorRule(object):
     def service_type(self):
         """
         **[Required]** Gets the service_type of this DetectorRule.
-        service type of the configuration to which the rule is applied
+        Service type of the configuration to which the rule is applied
 
 
         :return: The service_type of this DetectorRule.
@@ -374,7 +385,7 @@ class DetectorRule(object):
     def service_type(self, service_type):
         """
         Sets the service_type of this DetectorRule.
-        service type of the configuration to which the rule is applied
+        Service type of the configuration to which the rule is applied
 
 
         :param service_type: The service_type of this DetectorRule.
@@ -386,7 +397,7 @@ class DetectorRule(object):
     def resource_type(self):
         """
         **[Required]** Gets the resource_type of this DetectorRule.
-        resource type of the configuration to which the rule is applied
+        Resource type of the configuration to which the rule is applied
 
 
         :return: The resource_type of this DetectorRule.
@@ -398,7 +409,7 @@ class DetectorRule(object):
     def resource_type(self, resource_type):
         """
         Sets the resource_type of this DetectorRule.
-        resource type of the configuration to which the rule is applied
+        Resource type of the configuration to which the rule is applied
 
 
         :param resource_type: The resource_type of this DetectorRule.
@@ -430,7 +441,7 @@ class DetectorRule(object):
     def managed_list_types(self):
         """
         Gets the managed_list_types of this DetectorRule.
-        List of cloudguard managed list types related to this rule
+        List of managed list types related to this rule
 
         Allowed values for items in this list are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -445,7 +456,7 @@ class DetectorRule(object):
     def managed_list_types(self, managed_list_types):
         """
         Sets the managed_list_types of this DetectorRule.
-        List of cloudguard managed list types related to this rule
+        List of managed list types related to this rule
 
 
         :param managed_list_types: The managed_list_types of this DetectorRule.
@@ -460,7 +471,7 @@ class DetectorRule(object):
     def candidate_responder_rules(self):
         """
         Gets the candidate_responder_rules of this DetectorRule.
-        List of CandidateResponderRule related to this rule
+        List of responder rules that could be used to remediate a problem triggered by this detector rule
 
 
         :return: The candidate_responder_rules of this DetectorRule.
@@ -472,7 +483,7 @@ class DetectorRule(object):
     def candidate_responder_rules(self, candidate_responder_rules):
         """
         Sets the candidate_responder_rules of this DetectorRule.
-        List of CandidateResponderRule related to this rule
+        List of responder rules that could be used to remediate a problem triggered by this detector rule
 
 
         :param candidate_responder_rules: The candidate_responder_rules of this DetectorRule.
@@ -532,7 +543,7 @@ class DetectorRule(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this DetectorRule.
-        The current state of the DetectorRule.
+        The current state of the detector rule
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -547,7 +558,7 @@ class DetectorRule(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this DetectorRule.
-        The current state of the DetectorRule.
+        The current state of the detector rule
 
 
         :param lifecycle_state: The lifecycle_state of this DetectorRule.
@@ -581,6 +592,30 @@ class DetectorRule(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this DetectorRule.
+        Locks associated with this resource.
+
+
+        :return: The locks of this DetectorRule.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this DetectorRule.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this DetectorRule.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

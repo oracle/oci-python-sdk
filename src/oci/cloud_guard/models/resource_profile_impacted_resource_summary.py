@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourceProfileImpactedResourceSummary(object):
     """
-    Resource Profile impacted resource summary.
+    Summary information on impacted resource in resource profile.
     """
 
     def __init__(self, **kwargs):
@@ -133,7 +133,7 @@ class ResourceProfileImpactedResourceSummary(object):
     def resource_profile_id(self):
         """
         **[Required]** Gets the resource_profile_id of this ResourceProfileImpactedResourceSummary.
-        Resource profile Id associated with the imacted resource
+        Resource profile ID associated with the impacted resource
 
 
         :return: The resource_profile_id of this ResourceProfileImpactedResourceSummary.
@@ -145,7 +145,7 @@ class ResourceProfileImpactedResourceSummary(object):
     def resource_profile_id(self, resource_profile_id):
         """
         Sets the resource_profile_id of this ResourceProfileImpactedResourceSummary.
-        Resource profile Id associated with the imacted resource
+        Resource profile ID associated with the impacted resource
 
 
         :param resource_profile_id: The resource_profile_id of this ResourceProfileImpactedResourceSummary.
@@ -157,7 +157,7 @@ class ResourceProfileImpactedResourceSummary(object):
     def problem_id(self):
         """
         Gets the problem_id of this ResourceProfileImpactedResourceSummary.
-        Problem Id for impacted resource
+        Problem ID associated with the impacted resource
 
 
         :return: The problem_id of this ResourceProfileImpactedResourceSummary.
@@ -169,7 +169,7 @@ class ResourceProfileImpactedResourceSummary(object):
     def problem_id(self, problem_id):
         """
         Sets the problem_id of this ResourceProfileImpactedResourceSummary.
-        Problem Id for impacted resource
+        Problem ID associated with the impacted resource
 
 
         :param problem_id: The problem_id of this ResourceProfileImpactedResourceSummary.
@@ -181,7 +181,7 @@ class ResourceProfileImpactedResourceSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ResourceProfileImpactedResourceSummary.
-        Compartment Id for impacted resource
+        Compartment ID for impacted resource
 
 
         :return: The compartment_id of this ResourceProfileImpactedResourceSummary.
@@ -193,7 +193,7 @@ class ResourceProfileImpactedResourceSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ResourceProfileImpactedResourceSummary.
-        Compartment Id for impacted resource
+        Compartment ID for impacted resource
 
 
         :param compartment_id: The compartment_id of this ResourceProfileImpactedResourceSummary.
@@ -205,7 +205,7 @@ class ResourceProfileImpactedResourceSummary(object):
     def resource_id(self):
         """
         **[Required]** Gets the resource_id of this ResourceProfileImpactedResourceSummary.
-        Impacted resource Id
+        Impacted resource ID
 
 
         :return: The resource_id of this ResourceProfileImpactedResourceSummary.
@@ -217,7 +217,7 @@ class ResourceProfileImpactedResourceSummary(object):
     def resource_id(self, resource_id):
         """
         Sets the resource_id of this ResourceProfileImpactedResourceSummary.
-        Impacted resource Id
+        Impacted resource ID
 
 
         :param resource_id: The resource_id of this ResourceProfileImpactedResourceSummary.
@@ -229,7 +229,7 @@ class ResourceProfileImpactedResourceSummary(object):
     def resource_name(self):
         """
         **[Required]** Gets the resource_name of this ResourceProfileImpactedResourceSummary.
-        Resource name
+        Impacted resource name
 
 
         :return: The resource_name of this ResourceProfileImpactedResourceSummary.
@@ -241,7 +241,7 @@ class ResourceProfileImpactedResourceSummary(object):
     def resource_name(self, resource_name):
         """
         Sets the resource_name of this ResourceProfileImpactedResourceSummary.
-        Resource name
+        Impacted resource name
 
 
         :param resource_name: The resource_name of this ResourceProfileImpactedResourceSummary.
@@ -253,7 +253,7 @@ class ResourceProfileImpactedResourceSummary(object):
     def resource_type(self):
         """
         **[Required]** Gets the resource_type of this ResourceProfileImpactedResourceSummary.
-        Resource type
+        Impacted resource type
 
 
         :return: The resource_type of this ResourceProfileImpactedResourceSummary.
@@ -265,7 +265,7 @@ class ResourceProfileImpactedResourceSummary(object):
     def resource_type(self, resource_type):
         """
         Sets the resource_type of this ResourceProfileImpactedResourceSummary.
-        Resource type
+        Impacted resource type
 
 
         :param resource_type: The resource_type of this ResourceProfileImpactedResourceSummary.
@@ -277,7 +277,7 @@ class ResourceProfileImpactedResourceSummary(object):
     def sighting_type(self):
         """
         **[Required]** Gets the sighting_type of this ResourceProfileImpactedResourceSummary.
-        Identifier for the sighting type
+        Sighting type for impacted resource
 
 
         :return: The sighting_type of this ResourceProfileImpactedResourceSummary.
@@ -289,7 +289,7 @@ class ResourceProfileImpactedResourceSummary(object):
     def sighting_type(self, sighting_type):
         """
         Sets the sighting_type of this ResourceProfileImpactedResourceSummary.
-        Identifier for the sighting type
+        Sighting type for impacted resource
 
 
         :param sighting_type: The sighting_type of this ResourceProfileImpactedResourceSummary.
@@ -301,7 +301,7 @@ class ResourceProfileImpactedResourceSummary(object):
     def sighting_type_display_name(self):
         """
         **[Required]** Gets the sighting_type_display_name of this ResourceProfileImpactedResourceSummary.
-        Name of the sighting type
+        Display name of the sighting type
 
 
         :return: The sighting_type_display_name of this ResourceProfileImpactedResourceSummary.
@@ -313,7 +313,7 @@ class ResourceProfileImpactedResourceSummary(object):
     def sighting_type_display_name(self, sighting_type_display_name):
         """
         Sets the sighting_type_display_name of this ResourceProfileImpactedResourceSummary.
-        Name of the sighting type
+        Display name of the sighting type
 
 
         :param sighting_type_display_name: The sighting_type_display_name of this ResourceProfileImpactedResourceSummary.
@@ -349,7 +349,7 @@ class ResourceProfileImpactedResourceSummary(object):
     def time_identified(self):
         """
         **[Required]** Gets the time_identified of this ResourceProfileImpactedResourceSummary.
-        Time when the impacted resource is identified for given resource profile.
+        Time when the impacted resource is identified for the resource profile.
 
 
         :return: The time_identified of this ResourceProfileImpactedResourceSummary.
@@ -361,7 +361,7 @@ class ResourceProfileImpactedResourceSummary(object):
     def time_identified(self, time_identified):
         """
         Sets the time_identified of this ResourceProfileImpactedResourceSummary.
-        Time when the impacted resource is identified for given resource profile.
+        Time when the impacted resource is identified for the resource profile.
 
 
         :param time_identified: The time_identified of this ResourceProfileImpactedResourceSummary.

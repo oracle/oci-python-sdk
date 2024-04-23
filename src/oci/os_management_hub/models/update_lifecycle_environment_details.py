@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateLifecycleEnvironmentDetails(object):
     """
-    The information to be updated.
+    Provides the information used to update the lifecycle environment.
     """
 
     def __init__(self, **kwargs):
@@ -67,7 +67,7 @@ class UpdateLifecycleEnvironmentDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateLifecycleEnvironmentDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name for the lifecycle environment. Does not have to be unique. Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateLifecycleEnvironmentDetails.
@@ -79,7 +79,7 @@ class UpdateLifecycleEnvironmentDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateLifecycleEnvironmentDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name for the lifecycle environment. Does not have to be unique. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateLifecycleEnvironmentDetails.
@@ -91,7 +91,7 @@ class UpdateLifecycleEnvironmentDetails(object):
     def description(self):
         """
         Gets the description of this UpdateLifecycleEnvironmentDetails.
-        User specified information about the lifecycle environment. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        User-specified list of lifecycle stages used within the lifecycle environment. Avoid entering confidential information.
 
 
         :return: The description of this UpdateLifecycleEnvironmentDetails.
@@ -103,7 +103,7 @@ class UpdateLifecycleEnvironmentDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateLifecycleEnvironmentDetails.
-        User specified information about the lifecycle environment. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        User-specified list of lifecycle stages used within the lifecycle environment. Avoid entering confidential information.
 
 
         :param description: The description of this UpdateLifecycleEnvironmentDetails.

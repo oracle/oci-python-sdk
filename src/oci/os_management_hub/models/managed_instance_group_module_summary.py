@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagedInstanceGroupModuleSummary(object):
     """
-    Summary information pertaining to a module on a managed instance group.
+    Provides the summary information about a module on a managed instance group.
     """
 
     def __init__(self, **kwargs):
@@ -60,7 +60,7 @@ class ManagedInstanceGroupModuleSummary(object):
     def name(self):
         """
         **[Required]** Gets the name of this ManagedInstanceGroupModuleSummary.
-        The name of the module that contains the stream.
+        The name of the module.
 
 
         :return: The name of this ManagedInstanceGroupModuleSummary.
@@ -72,7 +72,7 @@ class ManagedInstanceGroupModuleSummary(object):
     def name(self, name):
         """
         Sets the name of this ManagedInstanceGroupModuleSummary.
-        The name of the module that contains the stream.
+        The name of the module.
 
 
         :param name: The name of this ManagedInstanceGroupModuleSummary.
@@ -84,7 +84,7 @@ class ManagedInstanceGroupModuleSummary(object):
     def enabled_stream(self):
         """
         Gets the enabled_stream of this ManagedInstanceGroupModuleSummary.
-        The name of the module that contains the stream.
+        The name of the module stream that is enabled for the group.
 
 
         :return: The enabled_stream of this ManagedInstanceGroupModuleSummary.
@@ -96,7 +96,7 @@ class ManagedInstanceGroupModuleSummary(object):
     def enabled_stream(self, enabled_stream):
         """
         Sets the enabled_stream of this ManagedInstanceGroupModuleSummary.
-        The name of the module that contains the stream.
+        The name of the module stream that is enabled for the group.
 
 
         :param enabled_stream: The enabled_stream of this ManagedInstanceGroupModuleSummary.
@@ -132,7 +132,9 @@ class ManagedInstanceGroupModuleSummary(object):
     def software_source_id(self):
         """
         Gets the software_source_id of this ManagedInstanceGroupModuleSummary.
-        The OCID of the software source that provides this module stream.
+        The `OCID`__ of the software source that provides this module stream.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_source_id of this ManagedInstanceGroupModuleSummary.
@@ -144,7 +146,9 @@ class ManagedInstanceGroupModuleSummary(object):
     def software_source_id(self, software_source_id):
         """
         Sets the software_source_id of this ManagedInstanceGroupModuleSummary.
-        The OCID of the software source that provides this module stream.
+        The `OCID`__ of the software source that provides this module stream.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_source_id: The software_source_id of this ManagedInstanceGroupModuleSummary.

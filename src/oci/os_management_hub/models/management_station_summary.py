@@ -43,6 +43,14 @@ class ManagementStationSummary(object):
     #: This constant has a value of "UNAVAILABLE"
     OVERALL_STATE_UNAVAILABLE = "UNAVAILABLE"
 
+    #: A constant which can be used with the health_state property of a ManagementStationSummary.
+    #: This constant has a value of "HEALTHY"
+    HEALTH_STATE_HEALTHY = "HEALTHY"
+
+    #: A constant which can be used with the health_state property of a ManagementStationSummary.
+    #: This constant has a value of "UNHEALTHY"
+    HEALTH_STATE_UNHEALTHY = "UNHEALTHY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ManagementStationSummary object with values from keyword arguments.
@@ -90,6 +98,12 @@ class ManagementStationSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type overall_state: str
 
+        :param health_state:
+            The value to assign to the health_state property of this ManagementStationSummary.
+            Allowed values for this property are: "HEALTHY", "UNHEALTHY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type health_state: str
+
         :param overall_percentage:
             The value to assign to the overall_percentage property of this ManagementStationSummary.
         :type overall_percentage: int
@@ -126,6 +140,7 @@ class ManagementStationSummary(object):
             'description': 'str',
             'hostname': 'str',
             'overall_state': 'str',
+            'health_state': 'str',
             'overall_percentage': 'int',
             'mirror_capacity': 'int',
             'lifecycle_state': 'str',
@@ -145,6 +160,7 @@ class ManagementStationSummary(object):
             'description': 'description',
             'hostname': 'hostname',
             'overall_state': 'overallState',
+            'health_state': 'healthState',
             'overall_percentage': 'overallPercentage',
             'mirror_capacity': 'mirrorCapacity',
             'lifecycle_state': 'lifecycleState',
@@ -163,6 +179,7 @@ class ManagementStationSummary(object):
         self._description = None
         self._hostname = None
         self._overall_state = None
+        self._health_state = None
         self._overall_percentage = None
         self._mirror_capacity = None
         self._lifecycle_state = None
@@ -174,7 +191,9 @@ class ManagementStationSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this ManagementStationSummary.
-        OCID for the Management Station
+        The `OCID`__ of the management station.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ManagementStationSummary.
@@ -186,7 +205,9 @@ class ManagementStationSummary(object):
     def id(self, id):
         """
         Sets the id of this ManagementStationSummary.
-        OCID for the Management Station
+        The `OCID`__ of the management station.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ManagementStationSummary.
@@ -198,7 +219,9 @@ class ManagementStationSummary(object):
     def managed_instance_id(self):
         """
         Gets the managed_instance_id of this ManagementStationSummary.
-        OCID for the Instance associated with the Management Station
+        The `OCID`__ of the instance that is acting as the management station.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_instance_id of this ManagementStationSummary.
@@ -210,7 +233,9 @@ class ManagementStationSummary(object):
     def managed_instance_id(self, managed_instance_id):
         """
         Sets the managed_instance_id of this ManagementStationSummary.
-        OCID for the Instance associated with the Management Station
+        The `OCID`__ of the instance that is acting as the management station.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_instance_id: The managed_instance_id of this ManagementStationSummary.
@@ -222,7 +247,9 @@ class ManagementStationSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ManagementStationSummary.
-        The OCID of the tenancy containing the Management Station.
+        The `OCID`__ of the compartment that contains the management station.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ManagementStationSummary.
@@ -234,7 +261,9 @@ class ManagementStationSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ManagementStationSummary.
-        The OCID of the tenancy containing the Management Station.
+        The `OCID`__ of the compartment that contains the management station.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ManagementStationSummary.
@@ -246,7 +275,9 @@ class ManagementStationSummary(object):
     def profile_id(self):
         """
         Gets the profile_id of this ManagementStationSummary.
-        OCID of the Registration Profile associated with the Management Station
+        The `OCID`__ of the registration profile used for the management station.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The profile_id of this ManagementStationSummary.
@@ -258,7 +289,9 @@ class ManagementStationSummary(object):
     def profile_id(self, profile_id):
         """
         Sets the profile_id of this ManagementStationSummary.
-        OCID of the Registration Profile associated with the Management Station
+        The `OCID`__ of the registration profile used for the management station.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param profile_id: The profile_id of this ManagementStationSummary.
@@ -270,7 +303,9 @@ class ManagementStationSummary(object):
     def scheduled_job_id(self):
         """
         Gets the scheduled_job_id of this ManagementStationSummary.
-        OCID of the Scheduled Job for mirror sync
+        The `OCID`__ of the scheduled job for the mirror sync.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The scheduled_job_id of this ManagementStationSummary.
@@ -282,7 +317,9 @@ class ManagementStationSummary(object):
     def scheduled_job_id(self, scheduled_job_id):
         """
         Sets the scheduled_job_id of this ManagementStationSummary.
-        OCID of the Scheduled Job for mirror sync
+        The `OCID`__ of the scheduled job for the mirror sync.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param scheduled_job_id: The scheduled_job_id of this ManagementStationSummary.
@@ -294,7 +331,9 @@ class ManagementStationSummary(object):
     def time_next_execution(self):
         """
         Gets the time_next_execution of this ManagementStationSummary.
-        the time/date of the next scheduled execution of the Scheduled Job
+        The date and time of the next scheduled mirror sync (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_next_execution of this ManagementStationSummary.
@@ -306,7 +345,9 @@ class ManagementStationSummary(object):
     def time_next_execution(self, time_next_execution):
         """
         Sets the time_next_execution of this ManagementStationSummary.
-        the time/date of the next scheduled execution of the Scheduled Job
+        The date and time of the next scheduled mirror sync (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_next_execution: The time_next_execution of this ManagementStationSummary.
@@ -318,7 +359,7 @@ class ManagementStationSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this ManagementStationSummary.
-        ManagementStation name
+        User-friendly name for the management station.
 
 
         :return: The display_name of this ManagementStationSummary.
@@ -330,7 +371,7 @@ class ManagementStationSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ManagementStationSummary.
-        ManagementStation name
+        User-friendly name for the management station.
 
 
         :param display_name: The display_name of this ManagementStationSummary.
@@ -342,7 +383,7 @@ class ManagementStationSummary(object):
     def description(self):
         """
         Gets the description of this ManagementStationSummary.
-        Details describing the Management Station config.
+        User-specified description of the management station.
 
 
         :return: The description of this ManagementStationSummary.
@@ -354,7 +395,7 @@ class ManagementStationSummary(object):
     def description(self, description):
         """
         Sets the description of this ManagementStationSummary.
-        Details describing the Management Station config.
+        User-specified description of the management station.
 
 
         :param description: The description of this ManagementStationSummary.
@@ -366,7 +407,7 @@ class ManagementStationSummary(object):
     def hostname(self):
         """
         **[Required]** Gets the hostname of this ManagementStationSummary.
-        Name of the host
+        Hostname of the management station.
 
 
         :return: The hostname of this ManagementStationSummary.
@@ -378,7 +419,7 @@ class ManagementStationSummary(object):
     def hostname(self, hostname):
         """
         Sets the hostname of this ManagementStationSummary.
-        Name of the host
+        Hostname of the management station.
 
 
         :param hostname: The hostname of this ManagementStationSummary.
@@ -390,7 +431,7 @@ class ManagementStationSummary(object):
     def overall_state(self):
         """
         Gets the overall_state of this ManagementStationSummary.
-        Current state of the mirroring
+        Current state of the mirror sync for the management station.
 
         Allowed values for this property are: "NORMAL", "REGISTRATIONERROR", "SYNCING", "SYNCFAILED", "WARNING", "ERROR", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -405,7 +446,7 @@ class ManagementStationSummary(object):
     def overall_state(self, overall_state):
         """
         Sets the overall_state of this ManagementStationSummary.
-        Current state of the mirroring
+        Current state of the mirror sync for the management station.
 
 
         :param overall_state: The overall_state of this ManagementStationSummary.
@@ -417,10 +458,40 @@ class ManagementStationSummary(object):
         self._overall_state = overall_state
 
     @property
+    def health_state(self):
+        """
+        Gets the health_state of this ManagementStationSummary.
+        Overall health status of the managment station.
+
+        Allowed values for this property are: "HEALTHY", "UNHEALTHY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The health_state of this ManagementStationSummary.
+        :rtype: str
+        """
+        return self._health_state
+
+    @health_state.setter
+    def health_state(self, health_state):
+        """
+        Sets the health_state of this ManagementStationSummary.
+        Overall health status of the managment station.
+
+
+        :param health_state: The health_state of this ManagementStationSummary.
+        :type: str
+        """
+        allowed_values = ["HEALTHY", "UNHEALTHY"]
+        if not value_allowed_none_or_none_sentinel(health_state, allowed_values):
+            health_state = 'UNKNOWN_ENUM_VALUE'
+        self._health_state = health_state
+
+    @property
     def overall_percentage(self):
         """
         Gets the overall_percentage of this ManagementStationSummary.
-        A decimal number representing the completeness percentage
+        A decimal number representing the progress of the current mirror sync.
 
 
         :return: The overall_percentage of this ManagementStationSummary.
@@ -432,7 +503,7 @@ class ManagementStationSummary(object):
     def overall_percentage(self, overall_percentage):
         """
         Sets the overall_percentage of this ManagementStationSummary.
-        A decimal number representing the completeness percentage
+        A decimal number representing the progress of the current mirror sync.
 
 
         :param overall_percentage: The overall_percentage of this ManagementStationSummary.
@@ -444,7 +515,7 @@ class ManagementStationSummary(object):
     def mirror_capacity(self):
         """
         Gets the mirror_capacity of this ManagementStationSummary.
-        A decimal number representing the mirror capacity
+        A decimal number representing the amount of mirror capacity used by the sync.
 
 
         :return: The mirror_capacity of this ManagementStationSummary.
@@ -456,7 +527,7 @@ class ManagementStationSummary(object):
     def mirror_capacity(self, mirror_capacity):
         """
         Sets the mirror_capacity of this ManagementStationSummary.
-        A decimal number representing the mirror capacity
+        A decimal number representing the amount of mirror capacity used by the sync.
 
 
         :param mirror_capacity: The mirror_capacity of this ManagementStationSummary.
@@ -468,7 +539,7 @@ class ManagementStationSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this ManagementStationSummary.
-        The current state of the Management Station config.
+        The current state of the management station.
 
 
         :return: The lifecycle_state of this ManagementStationSummary.
@@ -480,7 +551,7 @@ class ManagementStationSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ManagementStationSummary.
-        The current state of the Management Station config.
+        The current state of the management station.
 
 
         :param lifecycle_state: The lifecycle_state of this ManagementStationSummary.

@@ -128,7 +128,7 @@ import contextlib
 import os
 import time
 
-version = "24.04.16"
+version = "24.04.23"
 
 ##########################################################################
 # check OCI version
@@ -343,6 +343,7 @@ def set_parser_arguments(argsList=[]):
     parser.add_argument('-edge', action='store_true', default=False, dest='edge', help='Print Edge, DNS Services and WAAS policies, DNS Zone is slow can be excluded using -exclude DNSZONE.')
     parser.add_argument('-f', '-o', action='store_true', default=False, dest='file', help='Print File and Object Storage.')
     parser.add_argument('-i', action='store_true', default=False, dest='identity', help='Print Identity and Identity Domains.')
+    parser.add_argument('-iold', action='store_true', default=False, dest='identity_old', help='Print Identity from the old APIs when choosing identity extract.')
     parser.add_argument('-ic', action='store_true', default=False, dest='identity_compartments', help='Print Identity Compartments only.')
     parser.add_argument('-isc', action='store_true', default=False, dest='skip_identity_user_credential', help='Skip Identity User Credential extract.')
 
@@ -537,6 +538,9 @@ def set_service_extract_flags(cmd):
 
     if cmd.security_token:
         prm.use_security_token = True
+
+    if cmd.identity_old:
+        prm.read_identity_old = True
 
     if cmd.skip_identity_user_credential:
         prm.skip_identity_user_credential = True

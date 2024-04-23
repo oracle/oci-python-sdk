@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MirrorSyncStatus(object):
     """
-    Status summary of all repos
+    Status summary of the mirror sync.
     """
 
     def __init__(self, **kwargs):
@@ -67,7 +67,7 @@ class MirrorSyncStatus(object):
     def unsynced(self):
         """
         **[Required]** Gets the unsynced of this MirrorSyncStatus.
-        Total of mirrors in 'failed' state
+        Total number of software sources that have not yet been synced.
 
 
         :return: The unsynced of this MirrorSyncStatus.
@@ -79,7 +79,7 @@ class MirrorSyncStatus(object):
     def unsynced(self, unsynced):
         """
         Sets the unsynced of this MirrorSyncStatus.
-        Total of mirrors in 'failed' state
+        Total number of software sources that have not yet been synced.
 
 
         :param unsynced: The unsynced of this MirrorSyncStatus.
@@ -91,7 +91,7 @@ class MirrorSyncStatus(object):
     def queued(self):
         """
         **[Required]** Gets the queued of this MirrorSyncStatus.
-        Total of mirrors in 'queued' state
+        Total number of software sources that are queued for sync.
 
 
         :return: The queued of this MirrorSyncStatus.
@@ -103,7 +103,7 @@ class MirrorSyncStatus(object):
     def queued(self, queued):
         """
         Sets the queued of this MirrorSyncStatus.
-        Total of mirrors in 'queued' state
+        Total number of software sources that are queued for sync.
 
 
         :param queued: The queued of this MirrorSyncStatus.
@@ -115,7 +115,7 @@ class MirrorSyncStatus(object):
     def syncing(self):
         """
         **[Required]** Gets the syncing of this MirrorSyncStatus.
-        Total of mirrors in 'syncing' state
+        Total number of software sources currently syncing.
 
 
         :return: The syncing of this MirrorSyncStatus.
@@ -127,7 +127,7 @@ class MirrorSyncStatus(object):
     def syncing(self, syncing):
         """
         Sets the syncing of this MirrorSyncStatus.
-        Total of mirrors in 'syncing' state
+        Total number of software sources currently syncing.
 
 
         :param syncing: The syncing of this MirrorSyncStatus.
@@ -139,7 +139,7 @@ class MirrorSyncStatus(object):
     def synced(self):
         """
         **[Required]** Gets the synced of this MirrorSyncStatus.
-        Total of mirrors in 'synced' state
+        Total number of software sources that successfully synced.
 
 
         :return: The synced of this MirrorSyncStatus.
@@ -151,7 +151,7 @@ class MirrorSyncStatus(object):
     def synced(self, synced):
         """
         Sets the synced of this MirrorSyncStatus.
-        Total of mirrors in 'synced' state
+        Total number of software sources that successfully synced.
 
 
         :param synced: The synced of this MirrorSyncStatus.
@@ -163,7 +163,7 @@ class MirrorSyncStatus(object):
     def failed(self):
         """
         **[Required]** Gets the failed of this MirrorSyncStatus.
-        Total of mirrors in 'failed' state
+        Total number of software sources that failed to sync.
 
 
         :return: The failed of this MirrorSyncStatus.
@@ -175,7 +175,7 @@ class MirrorSyncStatus(object):
     def failed(self, failed):
         """
         Sets the failed of this MirrorSyncStatus.
-        Total of mirrors in 'failed' state
+        Total number of software sources that failed to sync.
 
 
         :param failed: The failed of this MirrorSyncStatus.

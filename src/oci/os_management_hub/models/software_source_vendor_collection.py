@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SoftwareSourceVendorCollection(object):
     """
-    Results of a SoftwareSourceVendor search. Contains boh SoftwareSourceVendorSummary items and other information, such as metadata.
+    Th set of software source vendors returned for the :func:`list_software_source_vendors` operation.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class SoftwareSourceVendorCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this SoftwareSourceVendorCollection.
-        List of SoftwareSourceVendor.
+        List of software source vendors.
 
 
         :return: The items of this SoftwareSourceVendorCollection.
@@ -51,7 +51,7 @@ class SoftwareSourceVendorCollection(object):
     def items(self, items):
         """
         Sets the items of this SoftwareSourceVendorCollection.
-        List of SoftwareSourceVendor.
+        List of software source vendors.
 
 
         :param items: The items of this SoftwareSourceVendorCollection.

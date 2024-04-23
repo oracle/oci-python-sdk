@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ModuleStreamProfile(object):
     """
-    A module stream profile provided by a software source.
+    An object that defines a module stream profile provide by a software source.
     """
 
     def __init__(self, **kwargs):

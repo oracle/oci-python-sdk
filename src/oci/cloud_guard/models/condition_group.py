@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConditionGroup(object):
     """
-    Condition configured on a target
+    Details for a condition configured on a target.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class ConditionGroup(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ConditionGroup.
-        compartment associated with condition
+        Compartment OCID associated with condition
 
 
         :return: The compartment_id of this ConditionGroup.
@@ -58,7 +58,7 @@ class ConditionGroup(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ConditionGroup.
-        compartment associated with condition
+        Compartment OCID associated with condition
 
 
         :param compartment_id: The compartment_id of this ConditionGroup.

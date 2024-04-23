@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateTargetDetectorRecipeDetails(object):
     """
-    The information to be updated in DetectorRecipe
+    Parameters to be used to update a target detector recipe.
     """
 
     def __init__(self, **kwargs):
@@ -53,7 +53,7 @@ class UpdateTargetDetectorRecipeDetails(object):
     def detector_recipe_id(self):
         """
         Gets the detector_recipe_id of this UpdateTargetDetectorRecipeDetails.
-        Detector recipe identifier associated with the target
+        Unique identifier for the target detector recipe
 
 
         :return: The detector_recipe_id of this UpdateTargetDetectorRecipeDetails.
@@ -65,7 +65,7 @@ class UpdateTargetDetectorRecipeDetails(object):
     def detector_recipe_id(self, detector_recipe_id):
         """
         Sets the detector_recipe_id of this UpdateTargetDetectorRecipeDetails.
-        Detector recipe identifier associated with the target
+        Unique identifier for the target detector recipe
 
 
         :param detector_recipe_id: The detector_recipe_id of this UpdateTargetDetectorRecipeDetails.
@@ -77,7 +77,7 @@ class UpdateTargetDetectorRecipeDetails(object):
     def is_validation_only_query(self):
         """
         Gets the is_validation_only_query of this UpdateTargetDetectorRecipeDetails.
-        When enabled, validation is performed for attaching the detector recipe.
+        Is validation to be performed for attaching the detector recipe?
 
 
         :return: The is_validation_only_query of this UpdateTargetDetectorRecipeDetails.
@@ -89,7 +89,7 @@ class UpdateTargetDetectorRecipeDetails(object):
     def is_validation_only_query(self, is_validation_only_query):
         """
         Sets the is_validation_only_query of this UpdateTargetDetectorRecipeDetails.
-        When enabled, validation is performed for attaching the detector recipe.
+        Is validation to be performed for attaching the detector recipe?
 
 
         :param is_validation_only_query: The is_validation_only_query of this UpdateTargetDetectorRecipeDetails.
@@ -101,7 +101,7 @@ class UpdateTargetDetectorRecipeDetails(object):
     def detector_rules(self):
         """
         Gets the detector_rules of this UpdateTargetDetectorRecipeDetails.
-        Update detector rules associated with detector recipe in a target.
+        List of updates to be applied to detector rules in target detector recipe
 
 
         :return: The detector_rules of this UpdateTargetDetectorRecipeDetails.
@@ -113,7 +113,7 @@ class UpdateTargetDetectorRecipeDetails(object):
     def detector_rules(self, detector_rules):
         """
         Sets the detector_rules of this UpdateTargetDetectorRecipeDetails.
-        Update detector rules associated with detector recipe in a target.
+        List of updates to be applied to detector rules in target detector recipe
 
 
         :param detector_rules: The detector_rules of this UpdateTargetDetectorRecipeDetails.

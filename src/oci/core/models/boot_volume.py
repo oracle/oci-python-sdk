@@ -91,6 +91,10 @@ class BootVolume(object):
             The value to assign to the is_hydrated property of this BootVolume.
         :type is_hydrated: bool
 
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this BootVolume.
+        :type cluster_placement_group_id: str
+
         :param vpus_per_gb:
             The value to assign to the vpus_per_gb property of this BootVolume.
         :type vpus_per_gb: int
@@ -152,6 +156,7 @@ class BootVolume(object):
             'id': 'str',
             'image_id': 'str',
             'is_hydrated': 'bool',
+            'cluster_placement_group_id': 'str',
             'vpus_per_gb': 'int',
             'lifecycle_state': 'str',
             'size_in_gbs': 'int',
@@ -176,6 +181,7 @@ class BootVolume(object):
             'id': 'id',
             'image_id': 'imageId',
             'is_hydrated': 'isHydrated',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
             'vpus_per_gb': 'vpusPerGB',
             'lifecycle_state': 'lifecycleState',
             'size_in_gbs': 'sizeInGBs',
@@ -199,6 +205,7 @@ class BootVolume(object):
         self._id = None
         self._image_id = None
         self._is_hydrated = None
+        self._cluster_placement_group_id = None
         self._vpus_per_gb = None
         self._lifecycle_state = None
         self._size_in_gbs = None
@@ -457,6 +464,30 @@ class BootVolume(object):
         :type: bool
         """
         self._is_hydrated = is_hydrated
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this BootVolume.
+        The clusterPlacementGroup Id of the volume for volume placement.
+
+
+        :return: The cluster_placement_group_id of this BootVolume.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this BootVolume.
+        The clusterPlacementGroup Id of the volume for volume placement.
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this BootVolume.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
 
     @property
     def vpus_per_gb(self):

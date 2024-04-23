@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SecurityZoneTargetDetails(TargetDetails):
     """
-    Details about Security Zone Target.
+    Target details for a security zone target.
     """
 
     def __init__(self, **kwargs):
@@ -63,7 +63,7 @@ class SecurityZoneTargetDetails(TargetDetails):
     def security_zone_id(self):
         """
         Gets the security_zone_id of this SecurityZoneTargetDetails.
-        The OCID of the security zone to associate this compartment with.
+        The OCID of the security zone to associate with this compartment
 
 
         :return: The security_zone_id of this SecurityZoneTargetDetails.
@@ -75,7 +75,7 @@ class SecurityZoneTargetDetails(TargetDetails):
     def security_zone_id(self, security_zone_id):
         """
         Sets the security_zone_id of this SecurityZoneTargetDetails.
-        The OCID of the security zone to associate this compartment with.
+        The OCID of the security zone to associate with this compartment
 
 
         :param security_zone_id: The security_zone_id of this SecurityZoneTargetDetails.
@@ -87,7 +87,7 @@ class SecurityZoneTargetDetails(TargetDetails):
     def security_zone_display_name(self):
         """
         Gets the security_zone_display_name of this SecurityZoneTargetDetails.
-        The name of the security zone to associate this compartment with.
+        The name of the security zone to associate with this compartment.
 
 
         :return: The security_zone_display_name of this SecurityZoneTargetDetails.
@@ -99,7 +99,7 @@ class SecurityZoneTargetDetails(TargetDetails):
     def security_zone_display_name(self, security_zone_display_name):
         """
         Sets the security_zone_display_name of this SecurityZoneTargetDetails.
-        The name of the security zone to associate this compartment with.
+        The name of the security zone to associate with this compartment.
 
 
         :param security_zone_display_name: The security_zone_display_name of this SecurityZoneTargetDetails.
@@ -111,7 +111,7 @@ class SecurityZoneTargetDetails(TargetDetails):
     def target_security_zone_recipes(self):
         """
         Gets the target_security_zone_recipes of this SecurityZoneTargetDetails.
-        The list of security zone recipes to associate this compartment with.
+        The list of security zone recipes to associate with this compartment
 
 
         :return: The target_security_zone_recipes of this SecurityZoneTargetDetails.
@@ -123,7 +123,7 @@ class SecurityZoneTargetDetails(TargetDetails):
     def target_security_zone_recipes(self, target_security_zone_recipes):
         """
         Sets the target_security_zone_recipes of this SecurityZoneTargetDetails.
-        The list of security zone recipes to associate this compartment with.
+        The list of security zone recipes to associate with this compartment
 
 
         :param target_security_zone_recipes: The target_security_zone_recipes of this SecurityZoneTargetDetails.

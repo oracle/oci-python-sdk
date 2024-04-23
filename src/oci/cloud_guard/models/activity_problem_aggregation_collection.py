@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ActivityProblemAggregationCollection(object):
     """
-    Activity Problem Aggregation Collection.
+    A collection of ProblemAggregation resources for problem analytics.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class ActivityProblemAggregationCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ActivityProblemAggregationCollection.
-        The items consists of all the ActivityProblemAggregation objects.
+        List of all the ActivityProblemAggregation resources
 
 
         :return: The items of this ActivityProblemAggregationCollection.
@@ -51,7 +51,7 @@ class ActivityProblemAggregationCollection(object):
     def items(self, items):
         """
         Sets the items of this ActivityProblemAggregationCollection.
-        The items consists of all the ActivityProblemAggregation objects.
+        List of all the ActivityProblemAggregation resources
 
 
         :param items: The items of this ActivityProblemAggregationCollection.

@@ -83,7 +83,7 @@ class Detector(object):
     def id(self):
         """
         **[Required]** Gets the id of this Detector.
-        detector key
+        Unique identifier for detector
 
 
         :return: The id of this Detector.
@@ -95,7 +95,7 @@ class Detector(object):
     def id(self, id):
         """
         Sets the id of this Detector.
-        detector key
+        Unique identifier for detector
 
 
         :param id: The id of this Detector.
@@ -107,7 +107,7 @@ class Detector(object):
     def description(self):
         """
         **[Required]** Gets the description of this Detector.
-        detector description
+        Detector description
 
 
         :return: The description of this Detector.
@@ -119,7 +119,7 @@ class Detector(object):
     def description(self, description):
         """
         Sets the description of this Detector.
-        detector description
+        Detector description
 
 
         :param description: The description of this Detector.
@@ -131,7 +131,7 @@ class Detector(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this Detector.
-        The current state of the resource.
+        The current lifecycle state of the resource.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -146,7 +146,7 @@ class Detector(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Detector.
-        The current state of the resource.
+        The current lifecycle state of the resource.
 
 
         :param lifecycle_state: The lifecycle_state of this Detector.

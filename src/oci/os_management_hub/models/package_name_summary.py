@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PackageNameSummary(object):
     """
-    A simple representation of a package using its displayName and NEVRA parts.
+    Provides summary information about a package.
     """
 
     #: A constant which can be used with the architecture property of a PackageNameSummary.
@@ -89,7 +89,7 @@ class PackageNameSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this PackageNameSummary.
-        Full package NEVRA name - this value should be unique.
+        Full package name in NERVA format. This value should be unique.
 
 
         :return: The display_name of this PackageNameSummary.
@@ -101,7 +101,7 @@ class PackageNameSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this PackageNameSummary.
-        Full package NEVRA name - this value should be unique.
+        Full package name in NERVA format. This value should be unique.
 
 
         :param display_name: The display_name of this PackageNameSummary.
@@ -161,7 +161,7 @@ class PackageNameSummary(object):
     def version(self):
         """
         Gets the version of this PackageNameSummary.
-        Version of the installed package.
+        The version of the software package.
 
 
         :return: The version of this PackageNameSummary.
@@ -173,7 +173,7 @@ class PackageNameSummary(object):
     def version(self, version):
         """
         Sets the version of this PackageNameSummary.
-        Version of the installed package.
+        The version of the software package.
 
 
         :param version: The version of this PackageNameSummary.
@@ -185,7 +185,7 @@ class PackageNameSummary(object):
     def architecture(self):
         """
         Gets the architecture of this PackageNameSummary.
-        The architecture for which this package was built.
+        The CPU architecture type for which this package was built.
 
         Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -200,7 +200,7 @@ class PackageNameSummary(object):
     def architecture(self, architecture):
         """
         Sets the architecture of this PackageNameSummary.
-        The architecture for which this package was built.
+        The CPU architecture type for which this package was built.
 
 
         :param architecture: The architecture of this PackageNameSummary.

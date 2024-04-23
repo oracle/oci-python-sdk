@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateWorkRequestDetails(object):
     """
-    Detail information for updating a work request.
+    Provides the information used to update a work request.
     """
 
     #: A constant which can be used with the status property of a UpdateWorkRequestDetails.

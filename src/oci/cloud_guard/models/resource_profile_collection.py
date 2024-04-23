@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourceProfileCollection(object):
     """
-    Collection of resource profile summary.
+    Collection of resource profile summaries.
     """
 
     def __init__(self, **kwargs):
@@ -24,22 +24,29 @@ class ResourceProfileCollection(object):
             The value to assign to the items property of this ResourceProfileCollection.
         :type items: list[oci.cloud_guard.models.ResourceProfileSummary]
 
+        :param locks:
+            The value to assign to the locks property of this ResourceProfileCollection.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
-            'items': 'list[ResourceProfileSummary]'
+            'items': 'list[ResourceProfileSummary]',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
-            'items': 'items'
+            'items': 'items',
+            'locks': 'locks'
         }
 
         self._items = None
+        self._locks = None
 
     @property
     def items(self):
         """
         **[Required]** Gets the items of this ResourceProfileCollection.
-        List of resource profiles
+        List of ResourceProfileSummary resources
 
 
         :return: The items of this ResourceProfileCollection.
@@ -51,13 +58,37 @@ class ResourceProfileCollection(object):
     def items(self, items):
         """
         Sets the items of this ResourceProfileCollection.
-        List of resource profiles
+        List of ResourceProfileSummary resources
 
 
         :param items: The items of this ResourceProfileCollection.
         :type: list[oci.cloud_guard.models.ResourceProfileSummary]
         """
         self._items = items
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this ResourceProfileCollection.
+        Locks associated with this resource.
+
+
+        :return: The locks of this ResourceProfileCollection.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this ResourceProfileCollection.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this ResourceProfileCollection.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TargetIdsSelected(TargetSelected):
     """
-    Target selection on basis of TargetIds.
+    Target selection on basis of target IDs.
     """
 
     def __init__(self, **kwargs):
@@ -49,7 +49,7 @@ class TargetIdsSelected(TargetSelected):
     def values(self):
         """
         Gets the values of this TargetIdsSelected.
-        Ids of Target
+        IDs of targets
 
 
         :return: The values of this TargetIdsSelected.
@@ -61,7 +61,7 @@ class TargetIdsSelected(TargetSelected):
     def values(self, values):
         """
         Sets the values of this TargetIdsSelected.
-        Ids of Target
+        IDs of targets
 
 
         :param values: The values of this TargetIdsSelected.

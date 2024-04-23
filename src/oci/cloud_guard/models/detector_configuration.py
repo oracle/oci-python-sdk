@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DetectorConfiguration(object):
     """
-    A single configuration applied to a detector
+    Configuration details for a detector.
     """
 
     def __init__(self, **kwargs):
@@ -40,13 +40,23 @@ class DetectorConfiguration(object):
             The value to assign to the values property of this DetectorConfiguration.
         :type values: list[oci.cloud_guard.models.ConfigValue]
 
+        :param allowed_values_data_type:
+            The value to assign to the allowed_values_data_type property of this DetectorConfiguration.
+        :type allowed_values_data_type: str
+
+        :param allowed_values:
+            The value to assign to the allowed_values property of this DetectorConfiguration.
+        :type allowed_values: list[oci.cloud_guard.models.PropertyTuple]
+
         """
         self.swagger_types = {
             'config_key': 'str',
             'name': 'str',
             'value': 'str',
             'data_type': 'str',
-            'values': 'list[ConfigValue]'
+            'values': 'list[ConfigValue]',
+            'allowed_values_data_type': 'str',
+            'allowed_values': 'list[PropertyTuple]'
         }
 
         self.attribute_map = {
@@ -54,7 +64,9 @@ class DetectorConfiguration(object):
             'name': 'name',
             'value': 'value',
             'data_type': 'dataType',
-            'values': 'values'
+            'values': 'values',
+            'allowed_values_data_type': 'allowedValuesDataType',
+            'allowed_values': 'allowedValues'
         }
 
         self._config_key = None
@@ -62,12 +74,14 @@ class DetectorConfiguration(object):
         self._value = None
         self._data_type = None
         self._values = None
+        self._allowed_values_data_type = None
+        self._allowed_values = None
 
     @property
     def config_key(self):
         """
         **[Required]** Gets the config_key of this DetectorConfiguration.
-        Unique name of the configuration
+        Unique identifier of the configuration
 
 
         :return: The config_key of this DetectorConfiguration.
@@ -79,7 +93,7 @@ class DetectorConfiguration(object):
     def config_key(self, config_key):
         """
         Sets the config_key of this DetectorConfiguration.
-        Unique name of the configuration
+        Unique identifier of the configuration
 
 
         :param config_key: The config_key of this DetectorConfiguration.
@@ -91,7 +105,7 @@ class DetectorConfiguration(object):
     def name(self):
         """
         **[Required]** Gets the name of this DetectorConfiguration.
-        configuration name
+        Configuration name
 
 
         :return: The name of this DetectorConfiguration.
@@ -103,7 +117,7 @@ class DetectorConfiguration(object):
     def name(self, name):
         """
         Sets the name of this DetectorConfiguration.
-        configuration name
+        Configuration name
 
 
         :param name: The name of this DetectorConfiguration.
@@ -115,7 +129,7 @@ class DetectorConfiguration(object):
     def value(self):
         """
         Gets the value of this DetectorConfiguration.
-        configuration value
+        Configuration value
 
 
         :return: The value of this DetectorConfiguration.
@@ -127,7 +141,7 @@ class DetectorConfiguration(object):
     def value(self, value):
         """
         Sets the value of this DetectorConfiguration.
-        configuration value
+        Configuration value
 
 
         :param value: The value of this DetectorConfiguration.
@@ -139,7 +153,7 @@ class DetectorConfiguration(object):
     def data_type(self):
         """
         Gets the data_type of this DetectorConfiguration.
-        configuration data type
+        Configuration data type
 
 
         :return: The data_type of this DetectorConfiguration.
@@ -151,7 +165,7 @@ class DetectorConfiguration(object):
     def data_type(self, data_type):
         """
         Sets the data_type of this DetectorConfiguration.
-        configuration data type
+        Configuration data type
 
 
         :param data_type: The data_type of this DetectorConfiguration.
@@ -182,6 +196,54 @@ class DetectorConfiguration(object):
         :type: list[oci.cloud_guard.models.ConfigValue]
         """
         self._values = values
+
+    @property
+    def allowed_values_data_type(self):
+        """
+        Gets the allowed_values_data_type of this DetectorConfiguration.
+        Map property Value data type
+
+
+        :return: The allowed_values_data_type of this DetectorConfiguration.
+        :rtype: str
+        """
+        return self._allowed_values_data_type
+
+    @allowed_values_data_type.setter
+    def allowed_values_data_type(self, allowed_values_data_type):
+        """
+        Sets the allowed_values_data_type of this DetectorConfiguration.
+        Map property Value data type
+
+
+        :param allowed_values_data_type: The allowed_values_data_type of this DetectorConfiguration.
+        :type: str
+        """
+        self._allowed_values_data_type = allowed_values_data_type
+
+    @property
+    def allowed_values(self):
+        """
+        Gets the allowed_values of this DetectorConfiguration.
+        Map of possible values for configuration
+
+
+        :return: The allowed_values of this DetectorConfiguration.
+        :rtype: list[oci.cloud_guard.models.PropertyTuple]
+        """
+        return self._allowed_values
+
+    @allowed_values.setter
+    def allowed_values(self, allowed_values):
+        """
+        Sets the allowed_values of this DetectorConfiguration.
+        Map of possible values for configuration
+
+
+        :param allowed_values: The allowed_values of this DetectorConfiguration.
+        :type: list[oci.cloud_guard.models.PropertyTuple]
+        """
+        self._allowed_values = allowed_values
 
     def __repr__(self):
         return formatted_flat_dict(self)

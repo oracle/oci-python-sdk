@@ -12,7 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AvailableSoftwareSourceCollection(object):
     """
-    Results of searching for available software sources for a managed instance.
+    The set of available software sources returned for the :func:`list_managed_instance_available_software_sources` or the
+    :func:`list_managed_instance_group_available_software_sources` operation.
     """
 
     def __init__(self, **kwargs):

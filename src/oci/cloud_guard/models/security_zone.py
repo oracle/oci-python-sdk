@@ -12,7 +12,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SecurityZone(object):
     """
-    A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone's compartment (and any subcompartments in the zone) that violate a policy are denied.
+    A security zone is associated with a security zone recipe and enforces
+    all security zone policies in the recipe. Any actions in the zone's compartment
+    (and any subcompartments in the zone) that violate a policy are denied.
     """
 
     #: A constant which can be used with the lifecycle_state property of a SecurityZone.
@@ -160,7 +162,7 @@ class SecurityZone(object):
     def id(self):
         """
         **[Required]** Gets the id of this SecurityZone.
-        Unique identifier that is immutable on creation
+        Unique identifier that can\u2019t be changed after creation
 
 
         :return: The id of this SecurityZone.
@@ -172,7 +174,7 @@ class SecurityZone(object):
     def id(self, id):
         """
         Sets the id of this SecurityZone.
-        Unique identifier that is immutable on creation
+        Unique identifier that can\u2019t be changed after creation
 
 
         :param id: The id of this SecurityZone.
@@ -184,7 +186,7 @@ class SecurityZone(object):
     def display_name(self):
         """
         Gets the display_name of this SecurityZone.
-        The security zone's name
+        The security zone's display name
 
 
         :return: The display_name of this SecurityZone.
@@ -196,7 +198,7 @@ class SecurityZone(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this SecurityZone.
-        The security zone's name
+        The security zone's display name
 
 
         :param display_name: The display_name of this SecurityZone.
@@ -256,7 +258,7 @@ class SecurityZone(object):
     def security_zone_recipe_id(self):
         """
         **[Required]** Gets the security_zone_recipe_id of this SecurityZone.
-        The OCID of the recipe (`SecurityRecipe`) for the security zone
+        The OCID of the recipe (`SecurityRecipe` resource) for the security zone
 
 
         :return: The security_zone_recipe_id of this SecurityZone.
@@ -268,7 +270,7 @@ class SecurityZone(object):
     def security_zone_recipe_id(self, security_zone_recipe_id):
         """
         Sets the security_zone_recipe_id of this SecurityZone.
-        The OCID of the recipe (`SecurityRecipe`) for the security zone
+        The OCID of the recipe (`SecurityRecipe` resource) for the security zone
 
 
         :param security_zone_recipe_id: The security_zone_recipe_id of this SecurityZone.
@@ -376,7 +378,7 @@ class SecurityZone(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this SecurityZone.
-        The current state of the security zone
+        The current lifecycle state of the security zone
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -391,7 +393,7 @@ class SecurityZone(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this SecurityZone.
-        The current state of the security zone
+        The current lifecycle state of the security zone
 
 
         :param lifecycle_state: The lifecycle_state of this SecurityZone.

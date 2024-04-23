@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateTargetResponderRecipeResponderRuleDetails(object):
     """
-    The details to be updated in ResponderRule
+    Parameters to update a responder rule for a responder recipe attached to a target.
     """
 
     def __init__(self, **kwargs):

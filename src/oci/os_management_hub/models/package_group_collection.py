@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PackageGroupCollection(object):
     """
-    Results of a package group search. Contains both package group summary items and other information, such as metadata.
+    The set of package groups returned for the :func:`list_package_groups` :func:`search_software_source_package_groups` operation.
     """
 
     def __init__(self, **kwargs):

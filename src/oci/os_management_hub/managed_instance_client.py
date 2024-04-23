@@ -22,7 +22,8 @@ missing = Sentinel("Missing")
 
 class ManagedInstanceClient(object):
     """
-    Use the OS Management Hub API to manage and monitor updates and patches for the operating system environments in your private data centers through a single management console. For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+    Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
+    For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -116,6 +117,129 @@ class ManagedInstanceClient(object):
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
 
+    def attach_profile_to_managed_instance(self, managed_instance_id, attach_profile_to_managed_instance_details, **kwargs):
+        """
+        Adds profile to a managed instance. After the profile has been added,
+        the instance can be registered as a managed instance.
+
+
+        :param str managed_instance_id: (required)
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.os_management_hub.models.AttachProfileToManagedInstanceDetails attach_profile_to_managed_instance_details: (required)
+            Details of the registration profile to be attached to a managed instance.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/attach_profile_to_managed_instance.py.html>`__ to see an example of how to use attach_profile_to_managed_instance API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedInstanceId']
+        resource_path = "/managedInstances/{managedInstanceId}/actions/attachProfile"
+        method = "POST"
+        operation_name = "attach_profile_to_managed_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/AttachProfileToManagedInstance"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"attach_profile_to_managed_instance got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "managedInstanceId": managed_instance_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=attach_profile_to_managed_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=attach_profile_to_managed_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def attach_software_sources_to_managed_instance(self, managed_instance_id, attach_software_sources_to_managed_instance_details, **kwargs):
         """
         Adds software sources to a managed instance. After the software source has been added,
@@ -123,7 +247,9 @@ class ManagedInstanceClient(object):
 
 
         :param str managed_instance_id: (required)
-            The OCID of the managed instance.
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.AttachSoftwareSourcesToManagedInstanceDetails attach_software_sources_to_managed_instance_details: (required)
             Details of software sources to be attached to a managed instance.
@@ -237,6 +363,232 @@ class ManagedInstanceClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def delete_managed_instance(self, managed_instance_id, **kwargs):
+        """
+        Unregisters the specified managed instance from the service. Once unregistered, the service will no longer manage the instance.
+        For Linux instances, yum or DNF repository files will be restored to their state prior to registration.
+
+
+        :param str managed_instance_id: (required)
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/delete_managed_instance.py.html>`__ to see an example of how to use delete_managed_instance API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedInstanceId']
+        resource_path = "/managedInstances/{managedInstanceId}"
+        method = "DELETE"
+        operation_name = "delete_managed_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/DeleteManagedInstance"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"delete_managed_instance got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "managedInstanceId": managed_instance_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def detach_profile_from_managed_instance(self, managed_instance_id, **kwargs):
+        """
+        Detaches profile from a managed instance. After the profile has been removed,
+        the instance cannot be registered as a managed instance.
+
+
+        :param str managed_instance_id: (required)
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/detach_profile_from_managed_instance.py.html>`__ to see an example of how to use detach_profile_from_managed_instance API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedInstanceId']
+        resource_path = "/managedInstances/{managedInstanceId}/actions/detachProfile"
+        method = "POST"
+        operation_name = "detach_profile_from_managed_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/DetachProfileFromManagedInstance"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"detach_profile_from_managed_instance got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "managedInstanceId": managed_instance_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def detach_software_sources_from_managed_instance(self, managed_instance_id, detach_software_sources_from_managed_instance_details, **kwargs):
         """
         Removes software sources from a managed instance.
@@ -244,7 +596,9 @@ class ManagedInstanceClient(object):
 
 
         :param str managed_instance_id: (required)
-            The OCID of the managed instance.
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.DetachSoftwareSourcesFromManagedInstanceDetails detach_software_sources_from_managed_instance_details: (required)
             Details of software sources to be detached from a managed instance.
@@ -367,7 +721,9 @@ class ManagedInstanceClient(object):
 
 
         :param str managed_instance_id: (required)
-            The OCID of the managed instance.
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.DisableModuleStreamOnManagedInstanceDetails disable_module_stream_on_managed_instance_details: (required)
             The details of the module stream to be disabled on a managed instance.
@@ -491,7 +847,9 @@ class ManagedInstanceClient(object):
 
 
         :param str managed_instance_id: (required)
-            The OCID of the managed instance.
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.EnableModuleStreamOnManagedInstanceDetails enable_module_stream_on_managed_instance_details: (required)
             The details of the module stream to be enabled on a managed instance.
@@ -611,7 +969,9 @@ class ManagedInstanceClient(object):
 
 
         :param str managed_instance_id: (required)
-            The OCID of the managed instance.
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -703,6 +1063,210 @@ class ManagedInstanceClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_windows_update(self, windows_update_id, **kwargs):
+        """
+        Returns a Windows Update object.
+
+
+        :param str windows_update_id: (required)
+            The unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.
+            Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.WindowsUpdate`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/get_windows_update.py.html>`__ to see an example of how to use get_windows_update API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['windowsUpdateId']
+        resource_path = "/windowsUpdates/{windowsUpdateId}"
+        method = "GET"
+        operation_name = "get_windows_update"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/WindowsUpdate/GetWindowsUpdate"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_windows_update got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "windowsUpdateId": windows_update_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="WindowsUpdate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="WindowsUpdate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def install_all_windows_updates_on_managed_instances_in_compartment(self, install_all_windows_updates_on_managed_instances_in_compartment_details, **kwargs):
+        """
+        Installs all of the available Windows updates for managed instances in a compartment. This applies only to standalone Windows instances. This will not update instances that belong to a group.
+
+
+        :param oci.os_management_hub.models.InstallAllWindowsUpdatesOnManagedInstancesInCompartmentDetails install_all_windows_updates_on_managed_instances_in_compartment_details: (required)
+            The details about Windows update types to be installed on all managed instances in a compartment.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/install_all_windows_updates_on_managed_instances_in_compartment.py.html>`__ to see an example of how to use install_all_windows_updates_on_managed_instances_in_compartment API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/managedInstances/actions/installWindowsUpdates"
+        method = "POST"
+        operation_name = "install_all_windows_updates_on_managed_instances_in_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/InstallAllWindowsUpdatesOnManagedInstancesInCompartment"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"install_all_windows_updates_on_managed_instances_in_compartment got unknown kwargs: {extra_kwargs!r}")
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=install_all_windows_updates_on_managed_instances_in_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=install_all_windows_updates_on_managed_instances_in_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def install_module_stream_profile_on_managed_instance(self, managed_instance_id, install_module_stream_profile_on_managed_instance_details, **kwargs):
         """
         Installs a profile for an module stream.  The stream must be
@@ -711,7 +1275,9 @@ class ManagedInstanceClient(object):
 
 
         :param str managed_instance_id: (required)
-            The OCID of the managed instance.
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.InstallModuleStreamProfileOnManagedInstanceDetails install_module_stream_profile_on_managed_instance_details: (required)
             The details of the module stream profile to be installed on a managed instance.
@@ -831,7 +1397,9 @@ class ManagedInstanceClient(object):
 
 
         :param str managed_instance_id: (required)
-            The OCID of the managed instance.
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.InstallPackagesOnManagedInstanceDetails install_packages_on_managed_instance_details: (required)
             Details about packages to be installed on a managed instance.
@@ -945,13 +1513,137 @@ class ManagedInstanceClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def list_managed_instance_available_packages(self, managed_instance_id, **kwargs):
+    def install_windows_updates_on_managed_instance(self, managed_instance_id, install_windows_updates_on_managed_instance_details, **kwargs):
         """
-        Returns a list of available packages for a managed instance.
+        Installs Windows updates on the specified managed instance.
 
 
         :param str managed_instance_id: (required)
-            The OCID of the managed instance.
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.os_management_hub.models.InstallWindowsUpdatesOnManagedInstanceDetails install_windows_updates_on_managed_instance_details: (required)
+            Details about Windows updates to be installed on a managed instance.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/install_windows_updates_on_managed_instance.py.html>`__ to see an example of how to use install_windows_updates_on_managed_instance API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedInstanceId']
+        resource_path = "/managedInstances/{managedInstanceId}/actions/installWindowsUpdates"
+        method = "POST"
+        operation_name = "install_windows_updates_on_managed_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/InstallWindowsUpdatesOnManagedInstance"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"install_windows_updates_on_managed_instance got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "managedInstanceId": managed_instance_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=install_windows_updates_on_managed_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=install_windows_updates_on_managed_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_managed_instance_available_packages(self, managed_instance_id, **kwargs):
+        """
+        Returns a list of packages that are available for installation on a managed instance.
+
+
+        :param str managed_instance_id: (required)
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] display_name: (optional)
             A filter to return resources that match the given display names.
@@ -960,7 +1652,7 @@ class ManagedInstanceClient(object):
             A filter to return resources that may partially match the given display name.
 
         :param str compartment_id: (optional)
-            The OCID of the compartment that contains the resources to list.
+            The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
@@ -1114,11 +1806,13 @@ class ManagedInstanceClient(object):
 
     def list_managed_instance_available_software_sources(self, managed_instance_id, **kwargs):
         """
-        Returns a list of available software sources for a managed instance.
+        Returns a list of software sources that can be attached to the specified managed instance. Any software sources already attached to the instance are not included in the list.
 
 
         :param str managed_instance_id: (required)
-            The OCID of the managed instance.
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] display_name: (optional)
             A filter to return resources that match the given display names.
@@ -1127,7 +1821,7 @@ class ManagedInstanceClient(object):
             A filter to return resources that may partially match the given display name.
 
         :param str compartment_id: (optional)
-            The OCID of the compartment that contains the resources to list.
+            The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
@@ -1279,18 +1973,224 @@ class ManagedInstanceClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def list_managed_instance_available_windows_updates(self, managed_instance_id, **kwargs):
+        """
+        Returns a list of Windows updates that can be installed on the specified managed instance.
+
+
+        :param str managed_instance_id: (required)
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] classification_type: (optional)
+            A filter to return only packages that match the given update classification type.
+
+            Allowed values are: "SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER"
+
+        :param list[str] name: (optional)
+            A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.
+            Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
+
+        :param str display_name: (optional)
+            A filter to return resources that match the given user-friendly name.
+
+        :param str display_name_contains: (optional)
+            A filter to return resources that may partially match the given display name.
+
+        :param str is_installable: (optional)
+            Indicates if the update can be installed by the OS Management Hub service.
+
+            Allowed values are: "INSTALLABLE", "NOT_INSTALLABLE"
+
+        :param str compartment_id: (optional)
+            The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
+            For important details about how pagination works, see `List Pagination`__.
+
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
+            For important details about how pagination works, see `List Pagination`__.
+
+            Example: `3`
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'ASC' or 'DESC'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeInstalled is descending. Default order for name or displayName is ascending.
+
+            Allowed values are: "timeCreated", "name", "displayName"
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.AvailableWindowsUpdateCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/list_managed_instance_available_windows_updates.py.html>`__ to see an example of how to use list_managed_instance_available_windows_updates API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedInstanceId']
+        resource_path = "/managedInstances/{managedInstanceId}/availableWindowsUpdates"
+        method = "GET"
+        operation_name = "list_managed_instance_available_windows_updates"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceAvailableWindowsUpdates"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "classification_type",
+            "name",
+            "display_name",
+            "display_name_contains",
+            "is_installable",
+            "compartment_id",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_managed_instance_available_windows_updates got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "managedInstanceId": managed_instance_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'classification_type' in kwargs:
+            classification_type_allowed_values = ["SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER"]
+            for classification_type_item in kwargs['classification_type']:
+                if classification_type_item not in classification_type_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `classification_type`, must be one of { classification_type_allowed_values }"
+                    )
+
+        if 'is_installable' in kwargs:
+            is_installable_allowed_values = ["INSTALLABLE", "NOT_INSTALLABLE"]
+            if kwargs['is_installable'] not in is_installable_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `is_installable`, must be one of { is_installable_allowed_values }"
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "name", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        query_params = {
+            "classificationType": self.base_client.generate_collection_format_param(kwargs.get("classification_type", missing), 'multi'),
+            "name": self.base_client.generate_collection_format_param(kwargs.get("name", missing), 'multi'),
+            "displayName": kwargs.get("display_name", missing),
+            "displayNameContains": kwargs.get("display_name_contains", missing),
+            "isInstallable": kwargs.get("is_installable", missing),
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AvailableWindowsUpdateCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AvailableWindowsUpdateCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_managed_instance_errata(self, managed_instance_id, **kwargs):
         """
         Returns a list of applicable errata on the managed instance.
 
 
         :param str managed_instance_id: (required)
-            The OCID of the managed instance.
+            The `OCID`__ of the managed instance.
 
-        :param list[str] advisory_type: (optional)
-            A filter to return only errata that match the given advisory types.
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-            Allowed values are: "SECURITY", "BUGFIX", "ENHANCEMENT"
+        :param list[str] classification_type: (optional)
+            A filter to return only packages that match the given update classification type.
+
+            Allowed values are: "SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER"
 
         :param list[str] name: (optional)
             The assigned erratum name. It's unique and not changeable.
@@ -1301,7 +2201,7 @@ class ManagedInstanceClient(object):
             A filter to return resources that may partially match the erratum name given.
 
         :param str compartment_id: (optional)
-            The OCID of the compartment that contains the resources to list.
+            The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
@@ -1361,7 +2261,7 @@ class ManagedInstanceClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "advisory_type",
+            "classification_type",
             "name",
             "name_contains",
             "compartment_id",
@@ -1386,12 +2286,12 @@ class ManagedInstanceClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
-        if 'advisory_type' in kwargs:
-            advisory_type_allowed_values = ["SECURITY", "BUGFIX", "ENHANCEMENT"]
-            for advisory_type_item in kwargs['advisory_type']:
-                if advisory_type_item not in advisory_type_allowed_values:
+        if 'classification_type' in kwargs:
+            classification_type_allowed_values = ["SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER"]
+            for classification_type_item in kwargs['classification_type']:
+                if classification_type_item not in classification_type_allowed_values:
                     raise ValueError(
-                        f"Invalid value for `advisory_type`, must be one of { advisory_type_allowed_values }"
+                        f"Invalid value for `classification_type`, must be one of { classification_type_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
@@ -1409,7 +2309,7 @@ class ManagedInstanceClient(object):
                 )
 
         query_params = {
-            "advisoryType": self.base_client.generate_collection_format_param(kwargs.get("advisory_type", missing), 'multi'),
+            "classificationType": self.base_client.generate_collection_format_param(kwargs.get("classification_type", missing), 'multi'),
             "name": self.base_client.generate_collection_format_param(kwargs.get("name", missing), 'multi'),
             "nameContains": kwargs.get("name_contains", missing),
             "compartmentId": kwargs.get("compartment_id", missing),
@@ -1469,7 +2369,9 @@ class ManagedInstanceClient(object):
 
 
         :param str managed_instance_id: (required)
-            The OCID of the managed instance.
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] display_name: (optional)
             A filter to return resources that match the given display names.
@@ -1483,12 +2385,12 @@ class ManagedInstanceClient(object):
             Example: 2017-07-14T02:40:00.000Z
 
         :param datetime time_install_date_end: (optional)
-            The install date before which to list all packages, in ISO 8601 format.
+            A filter to return only packages that were installed on or before the date provided, in ISO 8601 format.
 
             Example: 2017-07-14T02:40:00.000Z
 
         :param str compartment_id: (optional)
-            The OCID of the compartment that contains the resources to list.
+            The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
@@ -1644,27 +2546,193 @@ class ManagedInstanceClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def list_managed_instance_modules(self, managed_instance_id, **kwargs):
+    def list_managed_instance_installed_windows_updates(self, managed_instance_id, **kwargs):
         """
-        Retrieve a list of modules, along with streams of the modules,
-        from a managed instance.  Filters may be applied to select
-        a subset of modules based on the filter criteria.
-
-        The 'name' attribute filters against the name of a module.
-        It accepts strings of the format \"<string>\".
-
-        The 'nameContains' attribute filters against the name of a module
-        based on partial match. It accepts strings of the format \"<string>\".
-        If this attribute is defined, only matching modules are included
-        in the result set. If it is not defined, the request  is not subject
-        to this filter.
+        Returns a list of Windows updates that have been installed on the specified managed instance.
 
 
         :param str managed_instance_id: (required)
-            The OCID of the managed instance.
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] name: (optional)
+            A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.
+            Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
+
+        :param str display_name: (optional)
+            A filter to return resources that match the given user-friendly name.
+
+        :param str display_name_contains: (optional)
+            A filter to return resources that may partially match the given display name.
 
         :param str compartment_id: (optional)
-            The OCID of the compartment that contains the resources to list.
+            The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
+            For important details about how pagination works, see `List Pagination`__.
+
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
+            For important details about how pagination works, see `List Pagination`__.
+
+            Example: `3`
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'ASC' or 'DESC'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeInstalled is descending. Default order for name or displayName is ascending.
+
+            Allowed values are: "timeCreated", "name", "displayName"
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.InstalledWindowsUpdateCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/list_managed_instance_installed_windows_updates.py.html>`__ to see an example of how to use list_managed_instance_installed_windows_updates API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedInstanceId']
+        resource_path = "/managedInstances/{managedInstanceId}/installedWindowsUpdates"
+        method = "GET"
+        operation_name = "list_managed_instance_installed_windows_updates"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceInstalledWindowsUpdates"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "name",
+            "display_name",
+            "display_name_contains",
+            "compartment_id",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_managed_instance_installed_windows_updates got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "managedInstanceId": managed_instance_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "name", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        query_params = {
+            "name": self.base_client.generate_collection_format_param(kwargs.get("name", missing), 'multi'),
+            "displayName": kwargs.get("display_name", missing),
+            "displayNameContains": kwargs.get("display_name_contains", missing),
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="InstalledWindowsUpdateCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="InstalledWindowsUpdateCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_managed_instance_modules(self, managed_instance_id, **kwargs):
+        """
+        Retrieves a list of modules, along with streams of the modules, from a managed instance. Filters may be applied to select a subset of modules based on the filter criteria.
+
+
+        :param str managed_instance_id: (required)
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str compartment_id: (optional)
+            The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 
         :param str name: (optional)
             The resource name.
@@ -1828,7 +2896,9 @@ class ManagedInstanceClient(object):
 
 
         :param str managed_instance_id: (required)
-            The OCID of the managed instance.
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] classification_type: (optional)
             A filter to return only packages that match the given update classification type.
@@ -1847,7 +2917,7 @@ class ManagedInstanceClient(object):
             Example: `ELSA-2020-5804`
 
         :param str compartment_id: (optional)
-            The OCID of the compartment that contains the resources to list.
+            The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
@@ -2017,7 +3087,7 @@ class ManagedInstanceClient(object):
 
 
         :param str compartment_id: (optional)
-            The OCID of the compartment that contains the resources to list.
+            The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 
         :param list[str] display_name: (optional)
             A filter to return resources that match the given display names.
@@ -2026,12 +3096,14 @@ class ManagedInstanceClient(object):
             A filter to return resources that may partially match the given display name.
 
         :param str managed_instance_id: (optional)
-            The OCID of the managed instance for which to list resources.
+            The `OCID`__ of the managed instance. This filter returns resources associated with this managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] status: (optional)
-            A filter to return only instances whose managed instance status matches the given status.
+            A filter to return only managed instances whose status matches the status provided.
 
-            Allowed values are: "NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR"
+            Allowed values are: "NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING"
 
         :param list[str] arch_type: (optional)
             A filter to return only instances whose architecture type matches the given architecture.
@@ -2039,12 +3111,12 @@ class ManagedInstanceClient(object):
             Allowed values are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC"
 
         :param list[str] os_family: (optional)
-            A filter to return only instances whose OS family type matches the given OS family.
+            A filter to return only resources that match the given operating system family.
 
-            Allowed values are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7"
+            Allowed values are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"
 
         :param bool is_management_station: (optional)
-            A filter to return only managed instances acting as management stations.
+            A filter to return only managed instances that are acting as management stations.
 
         :param str group: (optional)
             A filter to return only managed instances that are attached to the specified group.
@@ -2062,12 +3134,44 @@ class ManagedInstanceClient(object):
             A filter to return only managed instances that are attached to the specified group or lifecycle environment.
 
         :param str software_source_id: (optional)
-            The OCID for the software source.
+            The `OCID`__ of the software source. This filter returns resources associated with this software source.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] advisory_name: (optional)
             The assigned erratum name. It's unique and not changeable.
 
             Example: `ELSA-2020-5804`
+
+        :param str lifecycle_environment: (optional)
+            A filter to return only managed instances in a specific lifecycle environment.
+
+        :param str lifecycle_environment_not_equal_to: (optional)
+            A filter to return only managed instances that aren't in a specific lifecycle environment.
+
+        :param list[str] location: (optional)
+            A filter to return only resources whose location matches the given value.
+
+            Allowed values are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"
+
+        :param list[str] location_not_equal_to: (optional)
+            A filter to return only resources whose location does not match the given value.
+
+            Allowed values are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"
+
+        :param list[str] profile: (optional)
+            A multi filter to return only managed instances that match the given profile ids.
+
+        :param list[str] profile_not_equal_to: (optional)
+            A multi filter to return only managed instances that don't contain the given profile `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param bool is_profile_attached: (optional)
+            A filter to return only managed instances with a registration profile attached.
+
+        :param bool is_managed_by_autonomous_linux: (optional)
+            Indicates whether to list only resources managed by the Autonomous Linux service.
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
@@ -2142,6 +3246,14 @@ class ManagedInstanceClient(object):
             "is_attached_to_group_or_lifecycle_stage",
             "software_source_id",
             "advisory_name",
+            "lifecycle_environment",
+            "lifecycle_environment_not_equal_to",
+            "location",
+            "location_not_equal_to",
+            "profile",
+            "profile_not_equal_to",
+            "is_profile_attached",
+            "is_managed_by_autonomous_linux",
             "limit",
             "page",
             "sort_order",
@@ -2154,7 +3266,7 @@ class ManagedInstanceClient(object):
                 f"list_managed_instances got unknown kwargs: {extra_kwargs!r}")
 
         if 'status' in kwargs:
-            status_allowed_values = ["NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR"]
+            status_allowed_values = ["NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING"]
             for status_item in kwargs['status']:
                 if status_item not in status_allowed_values:
                     raise ValueError(
@@ -2170,11 +3282,27 @@ class ManagedInstanceClient(object):
                     )
 
         if 'os_family' in kwargs:
-            os_family_allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7"]
+            os_family_allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"]
             for os_family_item in kwargs['os_family']:
                 if os_family_item not in os_family_allowed_values:
                     raise ValueError(
                         f"Invalid value for `os_family`, must be one of { os_family_allowed_values }"
+                    )
+
+        if 'location' in kwargs:
+            location_allowed_values = ["ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"]
+            for location_item in kwargs['location']:
+                if location_item not in location_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `location`, must be one of { location_allowed_values }"
+                    )
+
+        if 'location_not_equal_to' in kwargs:
+            location_not_equal_to_allowed_values = ["ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"]
+            for location_not_equal_to_item in kwargs['location_not_equal_to']:
+                if location_not_equal_to_item not in location_not_equal_to_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `location_not_equal_to`, must be one of { location_not_equal_to_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
@@ -2207,6 +3335,14 @@ class ManagedInstanceClient(object):
             "isAttachedToGroupOrLifecycleStage": kwargs.get("is_attached_to_group_or_lifecycle_stage", missing),
             "softwareSourceId": kwargs.get("software_source_id", missing),
             "advisoryName": self.base_client.generate_collection_format_param(kwargs.get("advisory_name", missing), 'multi'),
+            "lifecycleEnvironment": kwargs.get("lifecycle_environment", missing),
+            "lifecycleEnvironmentNotEqualTo": kwargs.get("lifecycle_environment_not_equal_to", missing),
+            "location": self.base_client.generate_collection_format_param(kwargs.get("location", missing), 'multi'),
+            "locationNotEqualTo": self.base_client.generate_collection_format_param(kwargs.get("location_not_equal_to", missing), 'multi'),
+            "profile": self.base_client.generate_collection_format_param(kwargs.get("profile", missing), 'multi'),
+            "profileNotEqualTo": self.base_client.generate_collection_format_param(kwargs.get("profile_not_equal_to", missing), 'multi'),
+            "isProfileAttached": kwargs.get("is_profile_attached", missing),
+            "isManagedByAutonomousLinux": kwargs.get("is_managed_by_autonomous_linux", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
@@ -2255,72 +3391,187 @@ class ManagedInstanceClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def list_windows_updates(self, compartment_id, **kwargs):
+        """
+        Lists Windows updates that have been reported to the service.
+
+
+        :param str compartment_id: (required)
+            The `OCID`__ of the compartment. This parameter is required and returns only resources contained within the specified compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] classification_type: (optional)
+            A filter to return only packages that match the given update classification type.
+
+            Allowed values are: "SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER"
+
+        :param list[str] name: (optional)
+            A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.
+            Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
+
+        :param str display_name_contains: (optional)
+            A filter to return resources that may partially match the given display name.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
+            For important details about how pagination works, see `List Pagination`__.
+
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
+            For important details about how pagination works, see `List Pagination`__.
+
+            Example: `3`
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'ASC' or 'DESC'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeInstalled is descending. Default order for name or displayName is ascending.
+
+            Allowed values are: "timeCreated", "name", "displayName"
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management_hub.models.WindowsUpdateCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/list_windows_updates.py.html>`__ to see an example of how to use list_windows_updates API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
+        resource_path = "/windowsUpdates"
+        method = "GET"
+        operation_name = "list_windows_updates"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/WindowsUpdateCollection/ListWindowsUpdates"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "classification_type",
+            "name",
+            "display_name_contains",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_windows_updates got unknown kwargs: {extra_kwargs!r}")
+
+        if 'classification_type' in kwargs:
+            classification_type_allowed_values = ["SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER"]
+            for classification_type_item in kwargs['classification_type']:
+                if classification_type_item not in classification_type_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `classification_type`, must be one of { classification_type_allowed_values }"
+                    )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "name", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        query_params = {
+            "classificationType": self.base_client.generate_collection_format_param(kwargs.get("classification_type", missing), 'multi'),
+            "name": self.base_client.generate_collection_format_param(kwargs.get("name", missing), 'multi'),
+            "displayNameContains": kwargs.get("display_name_contains", missing),
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="WindowsUpdateCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="WindowsUpdateCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def manage_module_streams_on_managed_instance(self, managed_instance_id, manage_module_streams_on_managed_instance_details, **kwargs):
         """
-        Perform an operation involving modules, streams, and profiles on a
-        managed instance.  Each operation may enable or disable an arbitrary
-        amount of module streams, and install or remove an arbitrary number
-        of module stream profiles.  When the operation is complete, the
-        state of the modules, streams, and profiles on the managed instance
-        will match the state indicated in the operation.
-
-        Each module stream specified in the list of module streams to enable
-        will be in the \"ENABLED\" state upon completion of the operation.
-        If there was already a stream of that module enabled, any work
-        required to switch from the current stream to the new stream is
-        performed implicitly.
-
-        Each module stream specified in the list of module streams to disable
-        will be in the \"DISABLED\" state upon completion of the operation.
-        Any profiles that are installed for the module stream will be removed
-        as part of the operation.
-
-        Each module stream profile specified in the list of profiles to install
-        will be in the \"INSTALLED\" state upon completion of the operation,
-        indicating that any packages that are part of the profile are installed
-        on the managed instance.  If the module stream containing the profile
-        is not enabled, it will be enabled as part of the operation.  There
-        is an exception when attempting to install a stream of a profile when
-        another stream of the same module is enabled.  It is an error to attempt
-        to install a profile of another module stream, unless enabling the
-        new module stream is explicitly included in this operation.
-
-        Each module stream profile specified in the list of profiles to remove
-        will be in the \"AVAILABLE\" state upon completion of the operation.
-        The status of packages within the profile after the operation is
-        complete is defined by the package manager on the managed instance.
-
-        Operations that contain one or more elements that are not allowed
-        are rejected.
-
-        The result of this request is a work request object.  The returned
-        work request is the parent of a structure of other WorkRequests.  Taken
-        as a whole, this structure indicates the entire set of work to be
-        performed to complete the operation.
-
-        This interface can also be used to perform a dry run of the operation
-        rather than committing it to a managed instance.  If a dry run is
-        requested, the OS Management Hub service will evaluate the operation
-        against the current module, stream, and profile state on the managed
-        instance.  It will calculate the impact of the operation on all
-        modules, streams, and profiles on the managed instance, including those
-        that are implicitly impacted by the operation.
-
-        The WorkRequest resulting from a dry run behaves differently than
-        a WorkRequest resulting from a committable operation.  Dry run
-        WorkRequests are always singletons and never have children.  The
-        impact of the operation is returned using the log and error
-        facilities of work requests.  The impact of operations that are
-        allowed by the OS Management Hub service are communicated as one or
-        more work request log entries.  Operations that are not allowed
-        by the OS Management Hub service are communicated as one or more
-        work request error entries.  Each entry, for either logs or errors,
-        contains a structured message containing the results of one
-        or more operations.
+        Enables or disables module streams and installs or removes module stream profiles. Once complete, the state of the modules, streams, and
+        profiles will match the state indicated in the operation. See :func:`manage_module_streams_on_managed_instance_details`
+        for more information. You can preform this operation as a dry run. For a dry run, the service evaluates the operation against the
+        current module, stream, and profile state on the managed instance, but does not commit the changes. Instead, the service returns work request log or error entries indicating the impact of the operation.
 
 
         :param str managed_instance_id: (required)
-            The OCID of the managed instance.
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.ManageModuleStreamsOnManagedInstanceDetails manage_module_streams_on_managed_instance_details: (required)
             A description of an operation to perform against the modules, streams, and profiles of a managed instance.
@@ -2436,11 +3687,13 @@ class ManagedInstanceClient(object):
 
     def refresh_software_on_managed_instance(self, managed_instance_id, **kwargs):
         """
-        Refresh all installed and updatable software information on a managed instance.
+        Refreshes the package or Windows update information on a managed instance with the latest data from the software source. This does not update packages on the instance. It provides the service with the latest package data.
 
 
         :param str managed_instance_id: (required)
-            The OCID of the managed instance.
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -2557,7 +3810,9 @@ class ManagedInstanceClient(object):
 
 
         :param str managed_instance_id: (required)
-            The OCID of the managed instance.
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.RemoveModuleStreamProfileFromManagedInstanceDetails remove_module_stream_profile_from_managed_instance_details: (required)
             The details of the module stream profile to be removed from a managed instance.
@@ -2677,7 +3932,9 @@ class ManagedInstanceClient(object):
 
 
         :param str managed_instance_id: (required)
-            The OCID of the managed instance.
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.RemovePackagesFromManagedInstanceDetails remove_packages_from_managed_instance_details: (required)
             Details about packages to be removed on a managed instance.
@@ -2800,7 +4057,9 @@ class ManagedInstanceClient(object):
 
 
         :param str managed_instance_id: (required)
-            The OCID of the managed instance.
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.SwitchModuleStreamOnManagedInstanceDetails switch_module_stream_on_managed_instance_details: (required)
             The details of the module stream to be switched on a managed instance.
@@ -2916,7 +4175,7 @@ class ManagedInstanceClient(object):
 
     def update_all_packages_on_managed_instances_in_compartment(self, update_all_packages_on_managed_instances_in_compartment_details, **kwargs):
         """
-        Install all of the available package updates for all of the managed instances in a compartment.
+        Install all of the available package updates for all of the managed instances in a compartment. This applies only to standalone non-Windows instances. This will not update instances that belong to a group or lifecycle environment.
 
 
         :param oci.os_management_hub.models.UpdateAllPackagesOnManagedInstancesInCompartmentDetails update_all_packages_on_managed_instances_in_compartment_details: (required)
@@ -3021,11 +4280,13 @@ class ManagedInstanceClient(object):
 
     def update_managed_instance(self, managed_instance_id, update_managed_instance_details, **kwargs):
         """
-        Updates the managed instance.
+        Updates the specified managed instance information, such as description, ONS topic, and associated management station.
 
 
         :param str managed_instance_id: (required)
-            The OCID of the managed instance.
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.UpdateManagedInstanceDetails update_managed_instance_details: (required)
             Details about a managed instance to be updated.
@@ -3137,7 +4398,9 @@ class ManagedInstanceClient(object):
 
 
         :param str managed_instance_id: (required)
-            The OCID of the managed instance.
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.UpdatePackagesOnManagedInstanceDetails update_packages_on_managed_instance_details: (required)
             Details about packages to be updated on a managed instance.

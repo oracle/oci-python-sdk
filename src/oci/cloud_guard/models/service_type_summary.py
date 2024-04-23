@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ServiceTypeSummary(object):
     """
-    Summary of Service type
+    Summary information for a service type.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class ServiceTypeSummary(object):
     def name(self):
         """
         **[Required]** Gets the name of this ServiceTypeSummary.
-        name of the service type
+        Name of the service type
 
 
         :return: The name of this ServiceTypeSummary.
@@ -58,7 +58,7 @@ class ServiceTypeSummary(object):
     def name(self, name):
         """
         Sets the name of this ServiceTypeSummary.
-        name of the service type
+        Name of the service type
 
 
         :param name: The name of this ServiceTypeSummary.
@@ -70,7 +70,7 @@ class ServiceTypeSummary(object):
     def resource_types(self):
         """
         **[Required]** Gets the resource_types of this ServiceTypeSummary.
-        List of Resource
+        List of resource types
 
 
         :return: The resource_types of this ServiceTypeSummary.
@@ -82,7 +82,7 @@ class ServiceTypeSummary(object):
     def resource_types(self, resource_types):
         """
         Sets the resource_types of this ServiceTypeSummary.
-        List of Resource
+        List of resource types
 
 
         :param resource_types: The resource_types of this ServiceTypeSummary.

@@ -27,6 +27,26 @@ class LifecycleStage(object):
     #: This constant has a value of "ORACLE_LINUX_7"
     OS_FAMILY_ORACLE_LINUX_7 = "ORACLE_LINUX_7"
 
+    #: A constant which can be used with the os_family property of a LifecycleStage.
+    #: This constant has a value of "ORACLE_LINUX_6"
+    OS_FAMILY_ORACLE_LINUX_6 = "ORACLE_LINUX_6"
+
+    #: A constant which can be used with the os_family property of a LifecycleStage.
+    #: This constant has a value of "WINDOWS_SERVER_2016"
+    OS_FAMILY_WINDOWS_SERVER_2016 = "WINDOWS_SERVER_2016"
+
+    #: A constant which can be used with the os_family property of a LifecycleStage.
+    #: This constant has a value of "WINDOWS_SERVER_2019"
+    OS_FAMILY_WINDOWS_SERVER_2019 = "WINDOWS_SERVER_2019"
+
+    #: A constant which can be used with the os_family property of a LifecycleStage.
+    #: This constant has a value of "WINDOWS_SERVER_2022"
+    OS_FAMILY_WINDOWS_SERVER_2022 = "WINDOWS_SERVER_2022"
+
+    #: A constant which can be used with the os_family property of a LifecycleStage.
+    #: This constant has a value of "ALL"
+    OS_FAMILY_ALL = "ALL"
+
     #: A constant which can be used with the arch_type property of a LifecycleStage.
     #: This constant has a value of "X86_64"
     ARCH_TYPE_X86_64 = "X86_64"
@@ -50,6 +70,30 @@ class LifecycleStage(object):
     #: A constant which can be used with the vendor_name property of a LifecycleStage.
     #: This constant has a value of "ORACLE"
     VENDOR_NAME_ORACLE = "ORACLE"
+
+    #: A constant which can be used with the vendor_name property of a LifecycleStage.
+    #: This constant has a value of "MICROSOFT"
+    VENDOR_NAME_MICROSOFT = "MICROSOFT"
+
+    #: A constant which can be used with the location property of a LifecycleStage.
+    #: This constant has a value of "ON_PREMISE"
+    LOCATION_ON_PREMISE = "ON_PREMISE"
+
+    #: A constant which can be used with the location property of a LifecycleStage.
+    #: This constant has a value of "OCI_COMPUTE"
+    LOCATION_OCI_COMPUTE = "OCI_COMPUTE"
+
+    #: A constant which can be used with the location property of a LifecycleStage.
+    #: This constant has a value of "AZURE"
+    LOCATION_AZURE = "AZURE"
+
+    #: A constant which can be used with the location property of a LifecycleStage.
+    #: This constant has a value of "EC2"
+    LOCATION_EC2 = "EC2"
+
+    #: A constant which can be used with the location property of a LifecycleStage.
+    #: This constant has a value of "GCP"
+    LOCATION_GCP = "GCP"
 
     #: A constant which can be used with the lifecycle_state property of a LifecycleStage.
     #: This constant has a value of "CREATING"
@@ -102,7 +146,7 @@ class LifecycleStage(object):
 
         :param os_family:
             The value to assign to the os_family property of this LifecycleStage.
-            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type os_family: str
 
@@ -114,13 +158,19 @@ class LifecycleStage(object):
 
         :param vendor_name:
             The value to assign to the vendor_name property of this LifecycleStage.
-            Allowed values for this property are: "ORACLE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE", "MICROSOFT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type vendor_name: str
 
         :param managed_instance_ids:
             The value to assign to the managed_instance_ids property of this LifecycleStage.
         :type managed_instance_ids: list[oci.os_management_hub.models.ManagedInstanceDetails]
+
+        :param location:
+            The value to assign to the location property of this LifecycleStage.
+            Allowed values for this property are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type location: str
 
         :param software_source_id:
             The value to assign to the software_source_id property of this LifecycleStage.
@@ -163,6 +213,7 @@ class LifecycleStage(object):
             'arch_type': 'str',
             'vendor_name': 'str',
             'managed_instance_ids': 'list[ManagedInstanceDetails]',
+            'location': 'str',
             'software_source_id': 'SoftwareSourceDetails',
             'time_created': 'datetime',
             'time_modified': 'datetime',
@@ -182,6 +233,7 @@ class LifecycleStage(object):
             'arch_type': 'archType',
             'vendor_name': 'vendorName',
             'managed_instance_ids': 'managedInstanceIds',
+            'location': 'location',
             'software_source_id': 'softwareSourceId',
             'time_created': 'timeCreated',
             'time_modified': 'timeModified',
@@ -200,6 +252,7 @@ class LifecycleStage(object):
         self._arch_type = None
         self._vendor_name = None
         self._managed_instance_ids = None
+        self._location = None
         self._software_source_id = None
         self._time_created = None
         self._time_modified = None
@@ -212,7 +265,9 @@ class LifecycleStage(object):
     def id(self):
         """
         Gets the id of this LifecycleStage.
-        The lifecycle stage OCID that is immutable on creation.
+        The `OCID`__ of the lifecycle stage.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this LifecycleStage.
@@ -224,7 +279,9 @@ class LifecycleStage(object):
     def id(self, id):
         """
         Sets the id of this LifecycleStage.
-        The lifecycle stage OCID that is immutable on creation.
+        The `OCID`__ of the lifecycle stage.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this LifecycleStage.
@@ -236,7 +293,9 @@ class LifecycleStage(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this LifecycleStage.
-        The OCID of the tenancy containing the lifecycle stage.
+        The `OCID`__ of the compartment that contains the lifecycle stage.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this LifecycleStage.
@@ -248,7 +307,9 @@ class LifecycleStage(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this LifecycleStage.
-        The OCID of the tenancy containing the lifecycle stage.
+        The `OCID`__ of the compartment that contains the lifecycle stage.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this LifecycleStage.
@@ -260,7 +321,7 @@ class LifecycleStage(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this LifecycleStage.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        The user-friendly name for the lifecycle stage.
 
 
         :return: The display_name of this LifecycleStage.
@@ -272,7 +333,7 @@ class LifecycleStage(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this LifecycleStage.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        The user-friendly name for the lifecycle stage.
 
 
         :param display_name: The display_name of this LifecycleStage.
@@ -284,7 +345,9 @@ class LifecycleStage(object):
     def lifecycle_environment_id(self):
         """
         Gets the lifecycle_environment_id of this LifecycleStage.
-        The OCID of the lifecycle environment for the lifecycle stage.
+        The `OCID`__ of the lifecycle environment that contains the lifecycle stage.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The lifecycle_environment_id of this LifecycleStage.
@@ -296,7 +359,9 @@ class LifecycleStage(object):
     def lifecycle_environment_id(self, lifecycle_environment_id):
         """
         Sets the lifecycle_environment_id of this LifecycleStage.
-        The OCID of the lifecycle environment for the lifecycle stage.
+        The `OCID`__ of the lifecycle environment that contains the lifecycle stage.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param lifecycle_environment_id: The lifecycle_environment_id of this LifecycleStage.
@@ -308,8 +373,7 @@ class LifecycleStage(object):
     def rank(self):
         """
         **[Required]** Gets the rank of this LifecycleStage.
-        User specified rank for the lifecycle stage.
-        Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
+        User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
 
 
         :return: The rank of this LifecycleStage.
@@ -321,8 +385,7 @@ class LifecycleStage(object):
     def rank(self, rank):
         """
         Sets the rank of this LifecycleStage.
-        User specified rank for the lifecycle stage.
-        Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
+        User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
 
 
         :param rank: The rank of this LifecycleStage.
@@ -334,9 +397,9 @@ class LifecycleStage(object):
     def os_family(self):
         """
         Gets the os_family of this LifecycleStage.
-        The operating system type of the target instances.
+        The operating system of the managed instances in the lifecycle stage.
 
-        Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -349,13 +412,13 @@ class LifecycleStage(object):
     def os_family(self, os_family):
         """
         Sets the os_family of this LifecycleStage.
-        The operating system type of the target instances.
+        The operating system of the managed instances in the lifecycle stage.
 
 
         :param os_family: The os_family of this LifecycleStage.
         :type: str
         """
-        allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7"]
+        allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"]
         if not value_allowed_none_or_none_sentinel(os_family, allowed_values):
             os_family = 'UNKNOWN_ENUM_VALUE'
         self._os_family = os_family
@@ -364,7 +427,7 @@ class LifecycleStage(object):
     def arch_type(self):
         """
         Gets the arch_type of this LifecycleStage.
-        The CPU architecture of the target instances.
+        The CPU architecture of the managed instances in the lifecycle stage.
 
         Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -379,7 +442,7 @@ class LifecycleStage(object):
     def arch_type(self, arch_type):
         """
         Sets the arch_type of this LifecycleStage.
-        The CPU architecture of the target instances.
+        The CPU architecture of the managed instances in the lifecycle stage.
 
 
         :param arch_type: The arch_type of this LifecycleStage.
@@ -394,9 +457,9 @@ class LifecycleStage(object):
     def vendor_name(self):
         """
         Gets the vendor_name of this LifecycleStage.
-        The software source vendor name.
+        The vendor of the operating system used by the managed instances in the lifecycle stage.
 
-        Allowed values for this property are: "ORACLE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE", "MICROSOFT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -409,13 +472,13 @@ class LifecycleStage(object):
     def vendor_name(self, vendor_name):
         """
         Sets the vendor_name of this LifecycleStage.
-        The software source vendor name.
+        The vendor of the operating system used by the managed instances in the lifecycle stage.
 
 
         :param vendor_name: The vendor_name of this LifecycleStage.
         :type: str
         """
-        allowed_values = ["ORACLE"]
+        allowed_values = ["ORACLE", "MICROSOFT"]
         if not value_allowed_none_or_none_sentinel(vendor_name, allowed_values):
             vendor_name = 'UNKNOWN_ENUM_VALUE'
         self._vendor_name = vendor_name
@@ -424,7 +487,7 @@ class LifecycleStage(object):
     def managed_instance_ids(self):
         """
         Gets the managed_instance_ids of this LifecycleStage.
-        The list of managed instances specified lifecycle stage.
+        The list of managed instances associated with the lifecycle stage.
 
 
         :return: The managed_instance_ids of this LifecycleStage.
@@ -436,13 +499,43 @@ class LifecycleStage(object):
     def managed_instance_ids(self, managed_instance_ids):
         """
         Sets the managed_instance_ids of this LifecycleStage.
-        The list of managed instances specified lifecycle stage.
+        The list of managed instances associated with the lifecycle stage.
 
 
         :param managed_instance_ids: The managed_instance_ids of this LifecycleStage.
         :type: list[oci.os_management_hub.models.ManagedInstanceDetails]
         """
         self._managed_instance_ids = managed_instance_ids
+
+    @property
+    def location(self):
+        """
+        Gets the location of this LifecycleStage.
+        The location of managed instances associated with the lifecycle stage.
+
+        Allowed values for this property are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The location of this LifecycleStage.
+        :rtype: str
+        """
+        return self._location
+
+    @location.setter
+    def location(self, location):
+        """
+        Sets the location of this LifecycleStage.
+        The location of managed instances associated with the lifecycle stage.
+
+
+        :param location: The location of this LifecycleStage.
+        :type: str
+        """
+        allowed_values = ["ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"]
+        if not value_allowed_none_or_none_sentinel(location, allowed_values):
+            location = 'UNKNOWN_ENUM_VALUE'
+        self._location = location
 
     @property
     def software_source_id(self):
@@ -468,7 +561,9 @@ class LifecycleStage(object):
     def time_created(self):
         """
         Gets the time_created of this LifecycleStage.
-        The time the lifecycle stage was created. An RFC3339 formatted datetime string.
+        The time the lifecycle stage was created (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_created of this LifecycleStage.
@@ -480,7 +575,9 @@ class LifecycleStage(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this LifecycleStage.
-        The time the lifecycle stage was created. An RFC3339 formatted datetime string.
+        The time the lifecycle stage was created (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_created: The time_created of this LifecycleStage.
@@ -492,7 +589,9 @@ class LifecycleStage(object):
     def time_modified(self):
         """
         Gets the time_modified of this LifecycleStage.
-        The time the lifecycle stage was last modified. An RFC3339 formatted datetime string.
+        The time the lifecycle stage was last modified (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_modified of this LifecycleStage.
@@ -504,7 +603,9 @@ class LifecycleStage(object):
     def time_modified(self, time_modified):
         """
         Sets the time_modified of this LifecycleStage.
-        The time the lifecycle stage was last modified. An RFC3339 formatted datetime string.
+        The time the lifecycle stage was last modified (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_modified: The time_modified of this LifecycleStage.

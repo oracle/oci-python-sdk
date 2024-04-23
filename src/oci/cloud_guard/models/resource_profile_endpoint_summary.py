@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourceProfileEndpointSummary(object):
     """
-    Resource Profile Endpoints summary.
+    Summary information for resource profile endpoints.
     """
 
     def __init__(self, **kwargs):
@@ -161,7 +161,7 @@ class ResourceProfileEndpointSummary(object):
     def resource_profile_id(self):
         """
         **[Required]** Gets the resource_profile_id of this ResourceProfileEndpointSummary.
-        Resource profile Id associated with the imacted resource
+        Resource profile ID associated with the impacted resource
 
 
         :return: The resource_profile_id of this ResourceProfileEndpointSummary.
@@ -173,7 +173,7 @@ class ResourceProfileEndpointSummary(object):
     def resource_profile_id(self, resource_profile_id):
         """
         Sets the resource_profile_id of this ResourceProfileEndpointSummary.
-        Resource profile Id associated with the imacted resource
+        Resource profile ID associated with the impacted resource
 
 
         :param resource_profile_id: The resource_profile_id of this ResourceProfileEndpointSummary.
@@ -185,7 +185,7 @@ class ResourceProfileEndpointSummary(object):
     def problem_id(self):
         """
         Gets the problem_id of this ResourceProfileEndpointSummary.
-        Problem Id for sighting endpoints
+        Problem ID for sighting endpoints
 
 
         :return: The problem_id of this ResourceProfileEndpointSummary.
@@ -197,7 +197,7 @@ class ResourceProfileEndpointSummary(object):
     def problem_id(self, problem_id):
         """
         Sets the problem_id of this ResourceProfileEndpointSummary.
-        Problem Id for sighting endpoints
+        Problem ID for sighting endpoints
 
 
         :param problem_id: The problem_id of this ResourceProfileEndpointSummary.
@@ -209,7 +209,7 @@ class ResourceProfileEndpointSummary(object):
     def sighting_type(self):
         """
         **[Required]** Gets the sighting_type of this ResourceProfileEndpointSummary.
-        Identifier for the sighting type
+        Type of sighting for sighting endpoints
 
 
         :return: The sighting_type of this ResourceProfileEndpointSummary.
@@ -221,7 +221,7 @@ class ResourceProfileEndpointSummary(object):
     def sighting_type(self, sighting_type):
         """
         Sets the sighting_type of this ResourceProfileEndpointSummary.
-        Identifier for the sighting type
+        Type of sighting for sighting endpoints
 
 
         :param sighting_type: The sighting_type of this ResourceProfileEndpointSummary.
@@ -233,7 +233,7 @@ class ResourceProfileEndpointSummary(object):
     def sighting_type_display_name(self):
         """
         **[Required]** Gets the sighting_type_display_name of this ResourceProfileEndpointSummary.
-        Name of the sighting type
+        Display name of the sighting type
 
 
         :return: The sighting_type_display_name of this ResourceProfileEndpointSummary.
@@ -245,7 +245,7 @@ class ResourceProfileEndpointSummary(object):
     def sighting_type_display_name(self, sighting_type_display_name):
         """
         Sets the sighting_type_display_name of this ResourceProfileEndpointSummary.
-        Name of the sighting type
+        Display name of the sighting type
 
 
         :param sighting_type_display_name: The sighting_type_display_name of this ResourceProfileEndpointSummary.
@@ -257,7 +257,7 @@ class ResourceProfileEndpointSummary(object):
     def ip_address(self):
         """
         **[Required]** Gets the ip_address of this ResourceProfileEndpointSummary.
-        IP Address
+        IP address for sighting
 
 
         :return: The ip_address of this ResourceProfileEndpointSummary.
@@ -269,7 +269,7 @@ class ResourceProfileEndpointSummary(object):
     def ip_address(self, ip_address):
         """
         Sets the ip_address of this ResourceProfileEndpointSummary.
-        IP Address
+        IP address for sighting
 
 
         :param ip_address: The ip_address of this ResourceProfileEndpointSummary.
@@ -281,7 +281,7 @@ class ResourceProfileEndpointSummary(object):
     def ip_address_type(self):
         """
         **[Required]** Gets the ip_address_type of this ResourceProfileEndpointSummary.
-        IP Address type
+        Type of IP address for sighting
 
 
         :return: The ip_address_type of this ResourceProfileEndpointSummary.
@@ -293,7 +293,7 @@ class ResourceProfileEndpointSummary(object):
     def ip_address_type(self, ip_address_type):
         """
         Sets the ip_address_type of this ResourceProfileEndpointSummary.
-        IP Address type
+        Type of IP address for sighting
 
 
         :param ip_address_type: The ip_address_type of this ResourceProfileEndpointSummary.
@@ -305,7 +305,7 @@ class ResourceProfileEndpointSummary(object):
     def ip_classification_type(self):
         """
         Gets the ip_classification_type of this ResourceProfileEndpointSummary.
-        IP Address classification type
+        IP address classification type
 
 
         :return: The ip_classification_type of this ResourceProfileEndpointSummary.
@@ -317,7 +317,7 @@ class ResourceProfileEndpointSummary(object):
     def ip_classification_type(self, ip_classification_type):
         """
         Sets the ip_classification_type of this ResourceProfileEndpointSummary.
-        IP Address classification type
+        IP address classification type
 
 
         :param ip_classification_type: The ip_classification_type of this ResourceProfileEndpointSummary.
@@ -329,7 +329,7 @@ class ResourceProfileEndpointSummary(object):
     def country(self):
         """
         Gets the country of this ResourceProfileEndpointSummary.
-        Country
+        Country of sighting
 
 
         :return: The country of this ResourceProfileEndpointSummary.
@@ -341,7 +341,7 @@ class ResourceProfileEndpointSummary(object):
     def country(self, country):
         """
         Sets the country of this ResourceProfileEndpointSummary.
-        Country
+        Country of sighting
 
 
         :param country: The country of this ResourceProfileEndpointSummary.
@@ -353,7 +353,7 @@ class ResourceProfileEndpointSummary(object):
     def latitude(self):
         """
         Gets the latitude of this ResourceProfileEndpointSummary.
-        Latitude
+        Latitude of sighting
 
 
         :return: The latitude of this ResourceProfileEndpointSummary.
@@ -365,7 +365,7 @@ class ResourceProfileEndpointSummary(object):
     def latitude(self, latitude):
         """
         Sets the latitude of this ResourceProfileEndpointSummary.
-        Latitude
+        Latitude of sighting
 
 
         :param latitude: The latitude of this ResourceProfileEndpointSummary.
@@ -377,7 +377,7 @@ class ResourceProfileEndpointSummary(object):
     def longitude(self):
         """
         Gets the longitude of this ResourceProfileEndpointSummary.
-        Longitude
+        Longitude of sighting
 
 
         :return: The longitude of this ResourceProfileEndpointSummary.
@@ -389,7 +389,7 @@ class ResourceProfileEndpointSummary(object):
     def longitude(self, longitude):
         """
         Sets the longitude of this ResourceProfileEndpointSummary.
-        Longitude
+        Longitude of sighting
 
 
         :param longitude: The longitude of this ResourceProfileEndpointSummary.
@@ -401,7 +401,7 @@ class ResourceProfileEndpointSummary(object):
     def asn_number(self):
         """
         Gets the asn_number of this ResourceProfileEndpointSummary.
-        ASN number
+        ASN number of sighting
 
 
         :return: The asn_number of this ResourceProfileEndpointSummary.
@@ -413,7 +413,7 @@ class ResourceProfileEndpointSummary(object):
     def asn_number(self, asn_number):
         """
         Sets the asn_number of this ResourceProfileEndpointSummary.
-        ASN number
+        ASN number of sighting
 
 
         :param asn_number: The asn_number of this ResourceProfileEndpointSummary.
@@ -425,7 +425,7 @@ class ResourceProfileEndpointSummary(object):
     def regions(self):
         """
         Gets the regions of this ResourceProfileEndpointSummary.
-        Regions where activities were performed from this IP
+        Regions where activities were performed from this IP address
 
 
         :return: The regions of this ResourceProfileEndpointSummary.
@@ -437,7 +437,7 @@ class ResourceProfileEndpointSummary(object):
     def regions(self, regions):
         """
         Sets the regions of this ResourceProfileEndpointSummary.
-        Regions where activities were performed from this IP
+        Regions where activities were performed from this IP address
 
 
         :param regions: The regions of this ResourceProfileEndpointSummary.
@@ -449,7 +449,7 @@ class ResourceProfileEndpointSummary(object):
     def services(self):
         """
         Gets the services of this ResourceProfileEndpointSummary.
-        Services where activities were performed from this IP
+        List of services where activities were performed from this IP address
 
 
         :return: The services of this ResourceProfileEndpointSummary.
@@ -461,7 +461,7 @@ class ResourceProfileEndpointSummary(object):
     def services(self, services):
         """
         Sets the services of this ResourceProfileEndpointSummary.
-        Services where activities were performed from this IP
+        List of services where activities were performed from this IP address
 
 
         :param services: The services of this ResourceProfileEndpointSummary.
@@ -473,7 +473,7 @@ class ResourceProfileEndpointSummary(object):
     def time_last_detected(self):
         """
         **[Required]** Gets the time_last_detected of this ResourceProfileEndpointSummary.
-        Time when activities were created
+        Date and time when activities were created
 
 
         :return: The time_last_detected of this ResourceProfileEndpointSummary.
@@ -485,7 +485,7 @@ class ResourceProfileEndpointSummary(object):
     def time_last_detected(self, time_last_detected):
         """
         Sets the time_last_detected of this ResourceProfileEndpointSummary.
-        Time when activities were created
+        Date and time when activities were created
 
 
         :param time_last_detected: The time_last_detected of this ResourceProfileEndpointSummary.

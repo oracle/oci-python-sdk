@@ -4,6 +4,29 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.126.0 - 2024-04-23
+====================
+
+Added
+-----
+* Support for the Cluster Placement Groups service
+* Support for new optional parameter for managing approval template in the Managed Access service
+* Support for cluster placement groups in the Compute service
+* Support for replacing boot volume for virtual machines in the Compute service
+* Support for assigning a cluster placement group to boot and block volumes in the Block Storage service
+* Support for container workload integration in the Cloud Guard service
+* Support for instances in OCI and 3rd party clouds in the OS Management service
+ 
+Breaking
+--------
+* Support for default retries on the operations of the Managed Access service
+* The Application Migration service was decommissioned and removed
+* The property `instance_location` was removed from the method `get_managed_instance_analytic_content` and `summarize_managed_instance_analytics` in the `ReportingManagedInstanceClient` in the OS Management service
+* The property `display_name` was removed from the method `list_software_packages` in the `SoftwareSourceClient` in the OS Management service
+* The property `AdvisoryType` was removed from the method `list_managed_instance_errata` in the `ManagedInstanceClient` in the OS Management service
+* The type of property `Architecture` was changed from `string` to `SoftwarePackageArchitecture` in the models `SoftwarePackage` and `SoftwarePackageSummary` in the OS Management service
+ 
+====================
 2.125.3 - 2024-04-16
 ====================
 

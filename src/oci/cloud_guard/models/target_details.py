@@ -74,7 +74,7 @@ class TargetDetails(object):
     def target_resource_type(self):
         """
         **[Required]** Gets the target_resource_type of this TargetDetails.
-        Possible type of targets.
+        Target type, determined by the type of resource for which the target was created
 
         Allowed values for this property are: "COMPARTMENT", "ERPCLOUD", "HCMCLOUD", "SECURITY_ZONE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -89,7 +89,7 @@ class TargetDetails(object):
     def target_resource_type(self, target_resource_type):
         """
         Sets the target_resource_type of this TargetDetails.
-        Possible type of targets.
+        Target type, determined by the type of resource for which the target was created
 
 
         :param target_resource_type: The target_resource_type of this TargetDetails.

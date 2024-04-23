@@ -12,7 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResponderExecutionCollection(object):
     """
-    Provides the summary of responder executions and their corresponding count value.
+    Collection of aggregated responder execution information,
+    including their corresponding count values.
     """
 
     def __init__(self, **kwargs):
@@ -24,22 +25,29 @@ class ResponderExecutionCollection(object):
             The value to assign to the items property of this ResponderExecutionCollection.
         :type items: list[oci.cloud_guard.models.ResponderExecutionSummary]
 
+        :param locks:
+            The value to assign to the locks property of this ResponderExecutionCollection.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
-            'items': 'list[ResponderExecutionSummary]'
+            'items': 'list[ResponderExecutionSummary]',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
-            'items': 'items'
+            'items': 'items',
+            'locks': 'locks'
         }
 
         self._items = None
+        self._locks = None
 
     @property
     def items(self):
         """
         **[Required]** Gets the items of this ResponderExecutionCollection.
-        List of ResponderExecutionSummary
+        List of ResponderExecutionSummary resources
 
 
         :return: The items of this ResponderExecutionCollection.
@@ -51,13 +59,37 @@ class ResponderExecutionCollection(object):
     def items(self, items):
         """
         Sets the items of this ResponderExecutionCollection.
-        List of ResponderExecutionSummary
+        List of ResponderExecutionSummary resources
 
 
         :param items: The items of this ResponderExecutionCollection.
         :type: list[oci.cloud_guard.models.ResponderExecutionSummary]
         """
         self._items = items
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this ResponderExecutionCollection.
+        Locks associated with this resource.
+
+
+        :return: The locks of this ResponderExecutionCollection.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this ResponderExecutionCollection.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this ResponderExecutionCollection.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

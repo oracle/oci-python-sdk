@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ProblemEndpointCollection(object):
     """
-    Provides the list of problem endpoints
+    Collection of problem endpoint summaries.
     """
 
     def __init__(self, **kwargs):
@@ -24,22 +24,29 @@ class ProblemEndpointCollection(object):
             The value to assign to the items property of this ProblemEndpointCollection.
         :type items: list[oci.cloud_guard.models.ProblemEndpointSummary]
 
+        :param locks:
+            The value to assign to the locks property of this ProblemEndpointCollection.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
-            'items': 'list[ProblemEndpointSummary]'
+            'items': 'list[ProblemEndpointSummary]',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
-            'items': 'items'
+            'items': 'items',
+            'locks': 'locks'
         }
 
         self._items = None
+        self._locks = None
 
     @property
     def items(self):
         """
         **[Required]** Gets the items of this ProblemEndpointCollection.
-        List of problem endpoints
+        List of ProblemEndpointSummary resources
 
 
         :return: The items of this ProblemEndpointCollection.
@@ -51,13 +58,37 @@ class ProblemEndpointCollection(object):
     def items(self, items):
         """
         Sets the items of this ProblemEndpointCollection.
-        List of problem endpoints
+        List of ProblemEndpointSummary resources
 
 
         :param items: The items of this ProblemEndpointCollection.
         :type: list[oci.cloud_guard.models.ProblemEndpointSummary]
         """
         self._items = items
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this ProblemEndpointCollection.
+        Locks associated with this resource.
+
+
+        :return: The locks of this ProblemEndpointCollection.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this ProblemEndpointCollection.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this ProblemEndpointCollection.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

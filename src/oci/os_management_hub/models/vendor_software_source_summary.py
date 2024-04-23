@@ -12,12 +12,16 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VendorSoftwareSourceSummary(SoftwareSourceSummary):
     """
-    A vendor software source summary summarizes a vendor software source.
+    Provides summary information for a vendor software source.
     """
 
     #: A constant which can be used with the vendor_name property of a VendorSoftwareSourceSummary.
     #: This constant has a value of "ORACLE"
     VENDOR_NAME_ORACLE = "ORACLE"
+
+    #: A constant which can be used with the vendor_name property of a VendorSoftwareSourceSummary.
+    #: This constant has a value of "MICROSOFT"
+    VENDOR_NAME_MICROSOFT = "MICROSOFT"
 
     def __init__(self, **kwargs):
         """
@@ -65,13 +69,19 @@ class VendorSoftwareSourceSummary(SoftwareSourceSummary):
 
         :param availability:
             The value to assign to the availability property of this VendorSoftwareSourceSummary.
-            Allowed values for this property are: "AVAILABLE", "SELECTED", "RESTRICTED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AVAILABLE", "SELECTED", "RESTRICTED", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type availability: str
 
+        :param availability_at_oci:
+            The value to assign to the availability_at_oci property of this VendorSoftwareSourceSummary.
+            Allowed values for this property are: "AVAILABLE", "SELECTED", "RESTRICTED", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type availability_at_oci: str
+
         :param os_family:
             The value to assign to the os_family property of this VendorSoftwareSourceSummary.
-            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type os_family: str
 
@@ -89,6 +99,10 @@ class VendorSoftwareSourceSummary(SoftwareSourceSummary):
             The value to assign to the lifecycle_state property of this VendorSoftwareSourceSummary.
         :type lifecycle_state: str
 
+        :param size:
+            The value to assign to the size property of this VendorSoftwareSourceSummary.
+        :type size: float
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this VendorSoftwareSourceSummary.
         :type freeform_tags: dict(str, str)
@@ -103,9 +117,13 @@ class VendorSoftwareSourceSummary(SoftwareSourceSummary):
 
         :param vendor_name:
             The value to assign to the vendor_name property of this VendorSoftwareSourceSummary.
-            Allowed values for this property are: "ORACLE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE", "MICROSOFT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type vendor_name: str
+
+        :param is_mandatory_for_autonomous_linux:
+            The value to assign to the is_mandatory_for_autonomous_linux property of this VendorSoftwareSourceSummary.
+        :type is_mandatory_for_autonomous_linux: bool
 
         """
         self.swagger_types = {
@@ -119,14 +137,17 @@ class VendorSoftwareSourceSummary(SoftwareSourceSummary):
             'description': 'str',
             'software_source_type': 'str',
             'availability': 'str',
+            'availability_at_oci': 'str',
             'os_family': 'str',
             'arch_type': 'str',
             'package_count': 'int',
             'lifecycle_state': 'str',
+            'size': 'float',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
-            'vendor_name': 'str'
+            'vendor_name': 'str',
+            'is_mandatory_for_autonomous_linux': 'bool'
         }
 
         self.attribute_map = {
@@ -140,14 +161,17 @@ class VendorSoftwareSourceSummary(SoftwareSourceSummary):
             'description': 'description',
             'software_source_type': 'softwareSourceType',
             'availability': 'availability',
+            'availability_at_oci': 'availabilityAtOci',
             'os_family': 'osFamily',
             'arch_type': 'archType',
             'package_count': 'packageCount',
             'lifecycle_state': 'lifecycleState',
+            'size': 'size',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
-            'vendor_name': 'vendorName'
+            'vendor_name': 'vendorName',
+            'is_mandatory_for_autonomous_linux': 'isMandatoryForAutonomousLinux'
         }
 
         self._id = None
@@ -160,14 +184,17 @@ class VendorSoftwareSourceSummary(SoftwareSourceSummary):
         self._description = None
         self._software_source_type = None
         self._availability = None
+        self._availability_at_oci = None
         self._os_family = None
         self._arch_type = None
         self._package_count = None
         self._lifecycle_state = None
+        self._size = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
         self._vendor_name = None
+        self._is_mandatory_for_autonomous_linux = None
         self._software_source_type = 'VENDOR'
 
     @property
@@ -176,7 +203,7 @@ class VendorSoftwareSourceSummary(SoftwareSourceSummary):
         **[Required]** Gets the vendor_name of this VendorSoftwareSourceSummary.
         Name of the vendor providing the software source.
 
-        Allowed values for this property are: "ORACLE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE", "MICROSOFT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -195,10 +222,34 @@ class VendorSoftwareSourceSummary(SoftwareSourceSummary):
         :param vendor_name: The vendor_name of this VendorSoftwareSourceSummary.
         :type: str
         """
-        allowed_values = ["ORACLE"]
+        allowed_values = ["ORACLE", "MICROSOFT"]
         if not value_allowed_none_or_none_sentinel(vendor_name, allowed_values):
             vendor_name = 'UNKNOWN_ENUM_VALUE'
         self._vendor_name = vendor_name
+
+    @property
+    def is_mandatory_for_autonomous_linux(self):
+        """
+        Gets the is_mandatory_for_autonomous_linux of this VendorSoftwareSourceSummary.
+        Indicates whether the software source is required for the Autonomous Linux service.
+
+
+        :return: The is_mandatory_for_autonomous_linux of this VendorSoftwareSourceSummary.
+        :rtype: bool
+        """
+        return self._is_mandatory_for_autonomous_linux
+
+    @is_mandatory_for_autonomous_linux.setter
+    def is_mandatory_for_autonomous_linux(self, is_mandatory_for_autonomous_linux):
+        """
+        Sets the is_mandatory_for_autonomous_linux of this VendorSoftwareSourceSummary.
+        Indicates whether the software source is required for the Autonomous Linux service.
+
+
+        :param is_mandatory_for_autonomous_linux: The is_mandatory_for_autonomous_linux of this VendorSoftwareSourceSummary.
+        :type: bool
+        """
+        self._is_mandatory_for_autonomous_linux = is_mandatory_for_autonomous_linux
 
     def __repr__(self):
         return formatted_flat_dict(self)

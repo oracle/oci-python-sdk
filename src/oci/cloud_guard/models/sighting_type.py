@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SightingType(object):
     """
-    Specific behavior that can trigger a Sighting
+    Information for a sighting type
     """
 
     def __init__(self, **kwargs):
@@ -74,7 +74,7 @@ class SightingType(object):
     def id(self):
         """
         Gets the id of this SightingType.
-        The unique identifier of sighting type
+        The unique identifier of the sighting type
 
 
         :return: The id of this SightingType.
@@ -86,7 +86,7 @@ class SightingType(object):
     def id(self, id):
         """
         Sets the id of this SightingType.
-        The unique identifier of sighting type
+        The unique identifier of the sighting type
 
 
         :param id: The id of this SightingType.
@@ -98,7 +98,7 @@ class SightingType(object):
     def display_name(self):
         """
         Gets the display_name of this SightingType.
-        Name of the sighting type
+        Display name of the sighting type
 
 
         :return: The display_name of this SightingType.
@@ -110,7 +110,7 @@ class SightingType(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this SightingType.
-        Name of the sighting type
+        Display name of the sighting type
 
 
         :param display_name: The display_name of this SightingType.
@@ -146,7 +146,7 @@ class SightingType(object):
     def mitre_link(self):
         """
         Gets the mitre_link of this SightingType.
-        Link of the sighting type
+        MITRE ATT@CK framework link for the sighting type
 
 
         :return: The mitre_link of this SightingType.
@@ -158,7 +158,7 @@ class SightingType(object):
     def mitre_link(self, mitre_link):
         """
         Sets the mitre_link of this SightingType.
-        Link of the sighting type
+        MITRE ATT@CK framework link for the sighting type
 
 
         :param mitre_link: The mitre_link of this SightingType.
@@ -170,7 +170,7 @@ class SightingType(object):
     def tactic(self):
         """
         Gets the tactic of this SightingType.
-        Mitre Att&ck tactic
+        MITRE ATT@CK framework tactic for the sighting type
 
 
         :return: The tactic of this SightingType.
@@ -182,7 +182,7 @@ class SightingType(object):
     def tactic(self, tactic):
         """
         Sets the tactic of this SightingType.
-        Mitre Att&ck tactic
+        MITRE ATT@CK framework tactic for the sighting type
 
 
         :param tactic: The tactic of this SightingType.
@@ -194,7 +194,7 @@ class SightingType(object):
     def techniques(self):
         """
         Gets the techniques of this SightingType.
-        List of Mitre Att&ck Techniques
+        List of MITRE ATT@CK framework techniques for the sighting type
 
 
         :return: The techniques of this SightingType.
@@ -206,7 +206,7 @@ class SightingType(object):
     def techniques(self, techniques):
         """
         Sets the techniques of this SightingType.
-        List of Mitre Att&ck Techniques
+        List of MITRE ATT@CK framework techniques for the sighting type
 
 
         :param techniques: The techniques of this SightingType.

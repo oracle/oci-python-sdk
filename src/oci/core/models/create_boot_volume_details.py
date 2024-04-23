@@ -52,6 +52,10 @@ class CreateBootVolumeDetails(object):
             The value to assign to the size_in_gbs property of this CreateBootVolumeDetails.
         :type size_in_gbs: int
 
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this CreateBootVolumeDetails.
+        :type cluster_placement_group_id: str
+
         :param vpus_per_gb:
             The value to assign to the vpus_per_gb property of this CreateBootVolumeDetails.
         :type vpus_per_gb: int
@@ -82,6 +86,7 @@ class CreateBootVolumeDetails(object):
             'freeform_tags': 'dict(str, str)',
             'kms_key_id': 'str',
             'size_in_gbs': 'int',
+            'cluster_placement_group_id': 'str',
             'vpus_per_gb': 'int',
             'source_details': 'BootVolumeSourceDetails',
             'is_auto_tune_enabled': 'bool',
@@ -98,6 +103,7 @@ class CreateBootVolumeDetails(object):
             'freeform_tags': 'freeformTags',
             'kms_key_id': 'kmsKeyId',
             'size_in_gbs': 'sizeInGBs',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
             'vpus_per_gb': 'vpusPerGB',
             'source_details': 'sourceDetails',
             'is_auto_tune_enabled': 'isAutoTuneEnabled',
@@ -113,6 +119,7 @@ class CreateBootVolumeDetails(object):
         self._freeform_tags = None
         self._kms_key_id = None
         self._size_in_gbs = None
+        self._cluster_placement_group_id = None
         self._vpus_per_gb = None
         self._source_details = None
         self._is_auto_tune_enabled = None
@@ -340,6 +347,30 @@ class CreateBootVolumeDetails(object):
         :type: int
         """
         self._size_in_gbs = size_in_gbs
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this CreateBootVolumeDetails.
+        The clusterPlacementGroup Id of the volume for volume placement.
+
+
+        :return: The cluster_placement_group_id of this CreateBootVolumeDetails.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this CreateBootVolumeDetails.
+        The clusterPlacementGroup Id of the volume for volume placement.
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this CreateBootVolumeDetails.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
 
     @property
     def vpus_per_gb(self):

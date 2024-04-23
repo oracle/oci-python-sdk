@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SearchSoftwareSourcePackageGroupsDetails(object):
     """
-    Contains a list of software sources to get the list of associated package groups.
+    Provides the software sources and search parameters to get a list of associated package groups.
     """
 
     #: A constant which can be used with the sort_order property of a SearchSoftwareSourcePackageGroupsDetails.
@@ -81,7 +81,9 @@ class SearchSoftwareSourcePackageGroupsDetails(object):
     def software_source_ids(self):
         """
         **[Required]** Gets the software_source_ids of this SearchSoftwareSourcePackageGroupsDetails.
-        List of software source OCIDs.
+        List of software source `OCIDs`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_source_ids of this SearchSoftwareSourcePackageGroupsDetails.
@@ -93,7 +95,9 @@ class SearchSoftwareSourcePackageGroupsDetails(object):
     def software_source_ids(self, software_source_ids):
         """
         Sets the software_source_ids of this SearchSoftwareSourcePackageGroupsDetails.
-        List of software source OCIDs.
+        List of software source `OCIDs`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_source_ids: The software_source_ids of this SearchSoftwareSourcePackageGroupsDetails.
@@ -167,7 +171,7 @@ class SearchSoftwareSourcePackageGroupsDetails(object):
     def name_contains(self):
         """
         Gets the name_contains of this SearchSoftwareSourcePackageGroupsDetails.
-        filters results, allowing only those with a Name which contains the string.
+        A filter that returns package groups with a name that contains the given string.
 
 
         :return: The name_contains of this SearchSoftwareSourcePackageGroupsDetails.
@@ -179,7 +183,7 @@ class SearchSoftwareSourcePackageGroupsDetails(object):
     def name_contains(self, name_contains):
         """
         Sets the name_contains of this SearchSoftwareSourcePackageGroupsDetails.
-        filters results, allowing only those with a Name which contains the string.
+        A filter that returns package groups with a name that contains the given string.
 
 
         :param name_contains: The name_contains of this SearchSoftwareSourcePackageGroupsDetails.

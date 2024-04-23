@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DetectorRuleCollection(object):
     """
-    Summary of the DetectorRule.
+    Summary information for the collection of detector rules.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class DetectorRuleCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this DetectorRuleCollection.
-        List of DetectorRuleSummary
+        List of DetectorRuleSummary resources
 
 
         :return: The items of this DetectorRuleCollection.
@@ -51,7 +51,7 @@ class DetectorRuleCollection(object):
     def items(self, items):
         """
         Sets the items of this DetectorRuleCollection.
-        List of DetectorRuleSummary
+        List of DetectorRuleSummary resources
 
 
         :param items: The items of this DetectorRuleCollection.

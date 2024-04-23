@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateVersionedCustomSoftwareSourceDetails(CreateSoftwareSourceDetails):
     """
-    Description of a versioned custom software source to be created.
+    Provides the information used to create a versioned custom software source.
     """
 
     def __init__(self, **kwargs):
@@ -58,6 +58,18 @@ class CreateVersionedCustomSoftwareSourceDetails(CreateSoftwareSourceDetails):
             The value to assign to the software_source_version property of this CreateVersionedCustomSoftwareSourceDetails.
         :type software_source_version: str
 
+        :param is_auto_resolve_dependencies:
+            The value to assign to the is_auto_resolve_dependencies property of this CreateVersionedCustomSoftwareSourceDetails.
+        :type is_auto_resolve_dependencies: bool
+
+        :param is_created_from_package_list:
+            The value to assign to the is_created_from_package_list property of this CreateVersionedCustomSoftwareSourceDetails.
+        :type is_created_from_package_list: bool
+
+        :param packages:
+            The value to assign to the packages property of this CreateVersionedCustomSoftwareSourceDetails.
+        :type packages: list[str]
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -68,7 +80,10 @@ class CreateVersionedCustomSoftwareSourceDetails(CreateSoftwareSourceDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'vendor_software_sources': 'list[Id]',
             'custom_software_source_filter': 'CustomSoftwareSourceFilter',
-            'software_source_version': 'str'
+            'software_source_version': 'str',
+            'is_auto_resolve_dependencies': 'bool',
+            'is_created_from_package_list': 'bool',
+            'packages': 'list[str]'
         }
 
         self.attribute_map = {
@@ -80,7 +95,10 @@ class CreateVersionedCustomSoftwareSourceDetails(CreateSoftwareSourceDetails):
             'defined_tags': 'definedTags',
             'vendor_software_sources': 'vendorSoftwareSources',
             'custom_software_source_filter': 'customSoftwareSourceFilter',
-            'software_source_version': 'softwareSourceVersion'
+            'software_source_version': 'softwareSourceVersion',
+            'is_auto_resolve_dependencies': 'isAutoResolveDependencies',
+            'is_created_from_package_list': 'isCreatedFromPackageList',
+            'packages': 'packages'
         }
 
         self._compartment_id = None
@@ -92,6 +110,9 @@ class CreateVersionedCustomSoftwareSourceDetails(CreateSoftwareSourceDetails):
         self._vendor_software_sources = None
         self._custom_software_source_filter = None
         self._software_source_version = None
+        self._is_auto_resolve_dependencies = None
+        self._is_created_from_package_list = None
+        self._packages = None
         self._software_source_type = 'VERSIONED'
 
     @property
@@ -161,6 +182,78 @@ class CreateVersionedCustomSoftwareSourceDetails(CreateSoftwareSourceDetails):
         :type: str
         """
         self._software_source_version = software_source_version
+
+    @property
+    def is_auto_resolve_dependencies(self):
+        """
+        Gets the is_auto_resolve_dependencies of this CreateVersionedCustomSoftwareSourceDetails.
+        Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+
+
+        :return: The is_auto_resolve_dependencies of this CreateVersionedCustomSoftwareSourceDetails.
+        :rtype: bool
+        """
+        return self._is_auto_resolve_dependencies
+
+    @is_auto_resolve_dependencies.setter
+    def is_auto_resolve_dependencies(self, is_auto_resolve_dependencies):
+        """
+        Sets the is_auto_resolve_dependencies of this CreateVersionedCustomSoftwareSourceDetails.
+        Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+
+
+        :param is_auto_resolve_dependencies: The is_auto_resolve_dependencies of this CreateVersionedCustomSoftwareSourceDetails.
+        :type: bool
+        """
+        self._is_auto_resolve_dependencies = is_auto_resolve_dependencies
+
+    @property
+    def is_created_from_package_list(self):
+        """
+        Gets the is_created_from_package_list of this CreateVersionedCustomSoftwareSourceDetails.
+        Indicates whether the service should create the software source from a list of packages provided by the user.
+
+
+        :return: The is_created_from_package_list of this CreateVersionedCustomSoftwareSourceDetails.
+        :rtype: bool
+        """
+        return self._is_created_from_package_list
+
+    @is_created_from_package_list.setter
+    def is_created_from_package_list(self, is_created_from_package_list):
+        """
+        Sets the is_created_from_package_list of this CreateVersionedCustomSoftwareSourceDetails.
+        Indicates whether the service should create the software source from a list of packages provided by the user.
+
+
+        :param is_created_from_package_list: The is_created_from_package_list of this CreateVersionedCustomSoftwareSourceDetails.
+        :type: bool
+        """
+        self._is_created_from_package_list = is_created_from_package_list
+
+    @property
+    def packages(self):
+        """
+        Gets the packages of this CreateVersionedCustomSoftwareSourceDetails.
+        A property used for compatibility only. It doesn't provide a complete list of packages. See :func:`add_packages_to_software_source_details` for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
+
+
+        :return: The packages of this CreateVersionedCustomSoftwareSourceDetails.
+        :rtype: list[str]
+        """
+        return self._packages
+
+    @packages.setter
+    def packages(self, packages):
+        """
+        Sets the packages of this CreateVersionedCustomSoftwareSourceDetails.
+        A property used for compatibility only. It doesn't provide a complete list of packages. See :func:`add_packages_to_software_source_details` for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
+
+
+        :param packages: The packages of this CreateVersionedCustomSoftwareSourceDetails.
+        :type: list[str]
+        """
+        self._packages = packages
 
     def __repr__(self):
         return formatted_flat_dict(self)

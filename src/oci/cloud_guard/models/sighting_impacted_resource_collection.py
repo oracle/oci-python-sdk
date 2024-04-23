@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SightingImpactedResourceCollection(object):
     """
-    Provides the summary of sighting impacted resource
+    Collection of sighting impacted resource summaries.
     """
 
     def __init__(self, **kwargs):
@@ -24,22 +24,29 @@ class SightingImpactedResourceCollection(object):
             The value to assign to the items property of this SightingImpactedResourceCollection.
         :type items: list[oci.cloud_guard.models.SightingImpactedResourceSummary]
 
+        :param locks:
+            The value to assign to the locks property of this SightingImpactedResourceCollection.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
-            'items': 'list[SightingImpactedResourceSummary]'
+            'items': 'list[SightingImpactedResourceSummary]',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
-            'items': 'items'
+            'items': 'items',
+            'locks': 'locks'
         }
 
         self._items = None
+        self._locks = None
 
     @property
     def items(self):
         """
         **[Required]** Gets the items of this SightingImpactedResourceCollection.
-        List of SightingImpactedResourceSummary
+        List of SightingImpactedResourceSummary resources
 
 
         :return: The items of this SightingImpactedResourceCollection.
@@ -51,13 +58,37 @@ class SightingImpactedResourceCollection(object):
     def items(self, items):
         """
         Sets the items of this SightingImpactedResourceCollection.
-        List of SightingImpactedResourceSummary
+        List of SightingImpactedResourceSummary resources
 
 
         :param items: The items of this SightingImpactedResourceCollection.
         :type: list[oci.cloud_guard.models.SightingImpactedResourceSummary]
         """
         self._items = items
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this SightingImpactedResourceCollection.
+        Locks associated with this resource.
+
+
+        :return: The locks of this SightingImpactedResourceCollection.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this SightingImpactedResourceCollection.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this SightingImpactedResourceCollection.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

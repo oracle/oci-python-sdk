@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Condition(object):
     """
-    Base condition object
+    The base condition resource.
     """
 
     #: A constant which can be used with the kind property of a Condition.
@@ -70,7 +70,7 @@ class Condition(object):
     def kind(self):
         """
         **[Required]** Gets the kind of this Condition.
-        Type of condition object
+        Type of condition resource
 
         Allowed values for this property are: "COMPOSITE", "SIMPLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -85,7 +85,7 @@ class Condition(object):
     def kind(self, kind):
         """
         Sets the kind of this Condition.
-        Type of condition object
+        Type of condition resource
 
 
         :param kind: The kind of this Condition.

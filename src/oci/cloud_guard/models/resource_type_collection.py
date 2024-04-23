@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourceTypeCollection(object):
     """
-    resource type provided by cloud guard
+    Collection of supported resource types.
     """
 
     def __init__(self, **kwargs):
@@ -24,22 +24,29 @@ class ResourceTypeCollection(object):
             The value to assign to the items property of this ResourceTypeCollection.
         :type items: list[oci.cloud_guard.models.ResourceTypeSummary]
 
+        :param locks:
+            The value to assign to the locks property of this ResourceTypeCollection.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
-            'items': 'list[ResourceTypeSummary]'
+            'items': 'list[ResourceTypeSummary]',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
-            'items': 'items'
+            'items': 'items',
+            'locks': 'locks'
         }
 
         self._items = None
+        self._locks = None
 
     @property
     def items(self):
         """
         **[Required]** Gets the items of this ResourceTypeCollection.
-        collection of resource types
+        List of ResourceTypeSummary resources
 
 
         :return: The items of this ResourceTypeCollection.
@@ -51,13 +58,37 @@ class ResourceTypeCollection(object):
     def items(self, items):
         """
         Sets the items of this ResourceTypeCollection.
-        collection of resource types
+        List of ResourceTypeSummary resources
 
 
         :param items: The items of this ResourceTypeCollection.
         :type: list[oci.cloud_guard.models.ResourceTypeSummary]
         """
         self._items = items
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this ResourceTypeCollection.
+        Locks associated with this resource.
+
+
+        :return: The locks of this ResourceTypeCollection.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this ResourceTypeCollection.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this ResourceTypeCollection.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

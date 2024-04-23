@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateSecurityRecipeDetails(object):
     """
-    Details about a new security zone recipe
+    Parameters to be used to create a security recipe.
     """
 
     def __init__(self, **kwargs):
@@ -74,7 +74,9 @@ class CreateSecurityRecipeDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateSecurityRecipeDetails.
-        The recipe's name
+        The recipe's display name.
+
+        Avoid entering confidential information.
 
 
         :return: The display_name of this CreateSecurityRecipeDetails.
@@ -86,7 +88,9 @@ class CreateSecurityRecipeDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateSecurityRecipeDetails.
-        The recipe's name
+        The recipe's display name.
+
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateSecurityRecipeDetails.
@@ -122,7 +126,7 @@ class CreateSecurityRecipeDetails(object):
     def security_policies(self):
         """
         **[Required]** Gets the security_policies of this CreateSecurityRecipeDetails.
-        The list of `SecurityPolicy` ids to include in the recipe
+        The list of security policy IDs to include in the recipe
 
 
         :return: The security_policies of this CreateSecurityRecipeDetails.
@@ -134,7 +138,7 @@ class CreateSecurityRecipeDetails(object):
     def security_policies(self, security_policies):
         """
         Sets the security_policies of this CreateSecurityRecipeDetails.
-        The list of `SecurityPolicy` ids to include in the recipe
+        The list of security policy IDs to include in the recipe
 
 
         :param security_policies: The security_policies of this CreateSecurityRecipeDetails.
@@ -146,7 +150,7 @@ class CreateSecurityRecipeDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateSecurityRecipeDetails.
-        The compartment in which to create the recipe
+        The OCID of the compartment in which to create the recipe
 
 
         :return: The compartment_id of this CreateSecurityRecipeDetails.
@@ -158,7 +162,7 @@ class CreateSecurityRecipeDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateSecurityRecipeDetails.
-        The compartment in which to create the recipe
+        The OCID of the compartment in which to create the recipe
 
 
         :param compartment_id: The compartment_id of this CreateSecurityRecipeDetails.

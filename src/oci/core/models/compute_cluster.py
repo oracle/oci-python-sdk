@@ -17,8 +17,7 @@ class ComputeCluster(object):
     A cluster network on a `compute cluster`__ is a group of
     high performance computing (HPC), GPU, or optimized instances that are connected with an ultra low-latency network.
 
-    Use compute clusters when you want to manage instances in the cluster individually, or when you want
-    to use different types of instances in the RDMA network group.
+    Use compute clusters when you want to manage instances in the cluster individually in the RDMA network group.
 
     For details about cluster networks that use instance pools to manage groups of identical instances,
     see :class:`ClusterNetwork`.

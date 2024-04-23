@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResponderRecipeSummary(object):
     """
-    Summary of the ResponderRecipe.
+    Summary information for a responder recipe.
     """
 
     #: A constant which can be used with the owner property of a ResponderRecipeSummary.
@@ -170,7 +170,7 @@ class ResponderRecipeSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this ResponderRecipeSummary.
-        Identifier for ResponderRecipe.
+        Unique identifier for the responder recipe
 
 
         :return: The id of this ResponderRecipeSummary.
@@ -182,7 +182,7 @@ class ResponderRecipeSummary(object):
     def id(self, id):
         """
         Sets the id of this ResponderRecipeSummary.
-        Identifier for ResponderRecipe.
+        Unique identifier for the responder recipe
 
 
         :param id: The id of this ResponderRecipeSummary.
@@ -194,7 +194,7 @@ class ResponderRecipeSummary(object):
     def display_name(self):
         """
         Gets the display_name of this ResponderRecipeSummary.
-        ResponderRecipe display name.
+        Responder recipe display name
 
 
         :return: The display_name of this ResponderRecipeSummary.
@@ -206,7 +206,7 @@ class ResponderRecipeSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ResponderRecipeSummary.
-        ResponderRecipe display name.
+        Responder recipe display name
 
 
         :param display_name: The display_name of this ResponderRecipeSummary.
@@ -218,7 +218,7 @@ class ResponderRecipeSummary(object):
     def description(self):
         """
         Gets the description of this ResponderRecipeSummary.
-        ResponderRecipe description.
+        Responder recipe description
 
 
         :return: The description of this ResponderRecipeSummary.
@@ -230,7 +230,7 @@ class ResponderRecipeSummary(object):
     def description(self, description):
         """
         Sets the description of this ResponderRecipeSummary.
-        ResponderRecipe description.
+        Responder recipe description
 
 
         :param description: The description of this ResponderRecipeSummary.
@@ -242,7 +242,7 @@ class ResponderRecipeSummary(object):
     def owner(self):
         """
         Gets the owner of this ResponderRecipeSummary.
-        Owner of ResponderRecipe
+        Responder recipe description
 
         Allowed values for this property are: "CUSTOMER", "ORACLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -257,7 +257,7 @@ class ResponderRecipeSummary(object):
     def owner(self, owner):
         """
         Sets the owner of this ResponderRecipeSummary.
-        Owner of ResponderRecipe
+        Responder recipe description
 
 
         :param owner: The owner of this ResponderRecipeSummary.
@@ -272,7 +272,7 @@ class ResponderRecipeSummary(object):
     def responder_rules(self):
         """
         Gets the responder_rules of this ResponderRecipeSummary.
-        List of responder rules associated with the recipe
+        List of responder rules associated with the responder recipe
 
 
         :return: The responder_rules of this ResponderRecipeSummary.
@@ -284,7 +284,7 @@ class ResponderRecipeSummary(object):
     def responder_rules(self, responder_rules):
         """
         Sets the responder_rules of this ResponderRecipeSummary.
-        List of responder rules associated with the recipe
+        List of responder rules associated with the responder recipe
 
 
         :param responder_rules: The responder_rules of this ResponderRecipeSummary.
@@ -296,7 +296,7 @@ class ResponderRecipeSummary(object):
     def source_responder_recipe_id(self):
         """
         Gets the source_responder_recipe_id of this ResponderRecipeSummary.
-        The id of the source responder recipe.
+        Unique identifier of the source responder recipe
 
 
         :return: The source_responder_recipe_id of this ResponderRecipeSummary.
@@ -308,7 +308,7 @@ class ResponderRecipeSummary(object):
     def source_responder_recipe_id(self, source_responder_recipe_id):
         """
         Sets the source_responder_recipe_id of this ResponderRecipeSummary.
-        The id of the source responder recipe.
+        Unique identifier of the source responder recipe
 
 
         :param source_responder_recipe_id: The source_responder_recipe_id of this ResponderRecipeSummary.
@@ -320,7 +320,7 @@ class ResponderRecipeSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ResponderRecipeSummary.
-        Compartment Identifier
+        Compartment OCID
 
 
         :return: The compartment_id of this ResponderRecipeSummary.
@@ -332,7 +332,7 @@ class ResponderRecipeSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ResponderRecipeSummary.
-        Compartment Identifier
+        Compartment OCID
 
 
         :param compartment_id: The compartment_id of this ResponderRecipeSummary.
@@ -368,7 +368,7 @@ class ResponderRecipeSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this ResponderRecipeSummary.
-        The date and time the responder recipe was updated. Format defined by RFC3339.
+        The date and time the responder recipe was last updated. Format defined by RFC3339.
 
 
         :return: The time_updated of this ResponderRecipeSummary.
@@ -380,7 +380,7 @@ class ResponderRecipeSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this ResponderRecipeSummary.
-        The date and time the responder recipe was updated. Format defined by RFC3339.
+        The date and time the responder recipe was last updated. Format defined by RFC3339.
 
 
         :param time_updated: The time_updated of this ResponderRecipeSummary.
@@ -392,7 +392,7 @@ class ResponderRecipeSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this ResponderRecipeSummary.
-        The current state of the Example.
+        The current lifecycle state of the example
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -407,7 +407,7 @@ class ResponderRecipeSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ResponderRecipeSummary.
-        The current state of the Example.
+        The current lifecycle state of the example
 
 
         :param lifecycle_state: The lifecycle_state of this ResponderRecipeSummary.

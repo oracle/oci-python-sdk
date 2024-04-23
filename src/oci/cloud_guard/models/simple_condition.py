@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SimpleCondition(Condition):
     """
-    Simple Condition object.
+    Information for a simple condition.
     """
 
     #: A constant which can be used with the operator property of a SimpleCondition.
@@ -99,7 +99,7 @@ class SimpleCondition(Condition):
     def parameter(self):
         """
         Gets the parameter of this SimpleCondition.
-        parameter Key
+        Parameter key
 
 
         :return: The parameter of this SimpleCondition.
@@ -111,7 +111,7 @@ class SimpleCondition(Condition):
     def parameter(self, parameter):
         """
         Sets the parameter of this SimpleCondition.
-        parameter Key
+        Parameter key
 
 
         :param parameter: The parameter of this SimpleCondition.
@@ -123,7 +123,7 @@ class SimpleCondition(Condition):
     def operator(self):
         """
         Gets the operator of this SimpleCondition.
-        type of operator
+        Type of operator
 
         Allowed values for this property are: "IN", "NOT_IN", "EQUALS", "NOT_EQUALS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -138,7 +138,7 @@ class SimpleCondition(Condition):
     def operator(self, operator):
         """
         Sets the operator of this SimpleCondition.
-        type of operator
+        Type of operator
 
 
         :param operator: The operator of this SimpleCondition.
@@ -153,7 +153,7 @@ class SimpleCondition(Condition):
     def value(self):
         """
         Gets the value of this SimpleCondition.
-        type of operator
+        Value of operator in condition
 
 
         :return: The value of this SimpleCondition.
@@ -165,7 +165,7 @@ class SimpleCondition(Condition):
     def value(self, value):
         """
         Sets the value of this SimpleCondition.
-        type of operator
+        Value of operator in condition
 
 
         :param value: The value of this SimpleCondition.
@@ -177,7 +177,7 @@ class SimpleCondition(Condition):
     def value_type(self):
         """
         Gets the value_type of this SimpleCondition.
-        type of value
+        Type of value in condition
 
         Allowed values for this property are: "MANAGED", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -192,7 +192,7 @@ class SimpleCondition(Condition):
     def value_type(self, value_type):
         """
         Sets the value_type of this SimpleCondition.
-        type of value
+        Type of value in condition
 
 
         :param value_type: The value_type of this SimpleCondition.

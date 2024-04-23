@@ -64,6 +64,10 @@ class UpdateInstanceDetails(object):
             The value to assign to the shape_config property of this UpdateInstanceDetails.
         :type shape_config: oci.core.models.UpdateInstanceShapeConfigDetails
 
+        :param source_details:
+            The value to assign to the source_details property of this UpdateInstanceDetails.
+        :type source_details: oci.core.models.UpdateInstanceSourceDetails
+
         :param update_operation_constraint:
             The value to assign to the update_operation_constraint property of this UpdateInstanceDetails.
             Allowed values for this property are: "ALLOW_DOWNTIME", "AVOID_DOWNTIME"
@@ -108,6 +112,7 @@ class UpdateInstanceDetails(object):
             'extended_metadata': 'dict(str, object)',
             'shape': 'str',
             'shape_config': 'UpdateInstanceShapeConfigDetails',
+            'source_details': 'UpdateInstanceSourceDetails',
             'update_operation_constraint': 'str',
             'instance_options': 'InstanceOptions',
             'fault_domain': 'str',
@@ -128,6 +133,7 @@ class UpdateInstanceDetails(object):
             'extended_metadata': 'extendedMetadata',
             'shape': 'shape',
             'shape_config': 'shapeConfig',
+            'source_details': 'sourceDetails',
             'update_operation_constraint': 'updateOperationConstraint',
             'instance_options': 'instanceOptions',
             'fault_domain': 'faultDomain',
@@ -147,6 +153,7 @@ class UpdateInstanceDetails(object):
         self._extended_metadata = None
         self._shape = None
         self._shape_config = None
+        self._source_details = None
         self._update_operation_constraint = None
         self._instance_options = None
         self._fault_domain = None
@@ -479,6 +486,26 @@ class UpdateInstanceDetails(object):
         :type: oci.core.models.UpdateInstanceShapeConfigDetails
         """
         self._shape_config = shape_config
+
+    @property
+    def source_details(self):
+        """
+        Gets the source_details of this UpdateInstanceDetails.
+
+        :return: The source_details of this UpdateInstanceDetails.
+        :rtype: oci.core.models.UpdateInstanceSourceDetails
+        """
+        return self._source_details
+
+    @source_details.setter
+    def source_details(self, source_details):
+        """
+        Sets the source_details of this UpdateInstanceDetails.
+
+        :param source_details: The source_details of this UpdateInstanceDetails.
+        :type: oci.core.models.UpdateInstanceSourceDetails
+        """
+        self._source_details = source_details
 
     @property
     def update_operation_constraint(self):

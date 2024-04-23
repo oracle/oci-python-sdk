@@ -12,12 +12,16 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataSource(object):
     """
-    Details of Data source
+    Detailed information for a data source (DataSource resource).
     """
 
     #: A constant which can be used with the data_source_feed_provider property of a DataSource.
     #: This constant has a value of "LOGGINGQUERY"
     DATA_SOURCE_FEED_PROVIDER_LOGGINGQUERY = "LOGGINGQUERY"
+
+    #: A constant which can be used with the data_source_feed_provider property of a DataSource.
+    #: This constant has a value of "SCHEDULEDQUERY"
+    DATA_SOURCE_FEED_PROVIDER_SCHEDULEDQUERY = "SCHEDULEDQUERY"
 
     #: A constant which can be used with the status property of a DataSource.
     #: This constant has a value of "ENABLED"
@@ -70,7 +74,7 @@ class DataSource(object):
 
         :param data_source_feed_provider:
             The value to assign to the data_source_feed_provider property of this DataSource.
-            Allowed values for this property are: "LOGGINGQUERY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LOGGINGQUERY", "SCHEDULEDQUERY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type data_source_feed_provider: str
 
@@ -110,6 +114,10 @@ class DataSource(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param locks:
+            The value to assign to the locks property of this DataSource.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this DataSource.
         :type freeform_tags: dict(str, str)
@@ -135,6 +143,7 @@ class DataSource(object):
             'data_source_detector_mapping_info': 'list[DataSourceMappingInfo]',
             'region_status_detail': 'list[RegionStatusDetail]',
             'lifecycle_state': 'str',
+            'locks': 'list[ResourceLock]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -152,6 +161,7 @@ class DataSource(object):
             'data_source_detector_mapping_info': 'dataSourceDetectorMappingInfo',
             'region_status_detail': 'regionStatusDetail',
             'lifecycle_state': 'lifecycleState',
+            'locks': 'locks',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -168,6 +178,7 @@ class DataSource(object):
         self._data_source_detector_mapping_info = None
         self._region_status_detail = None
         self._lifecycle_state = None
+        self._locks = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -176,7 +187,7 @@ class DataSource(object):
     def id(self):
         """
         **[Required]** Gets the id of this DataSource.
-        Ocid for Data source
+        OCID for the data source
 
 
         :return: The id of this DataSource.
@@ -188,7 +199,7 @@ class DataSource(object):
     def id(self, id):
         """
         Sets the id of this DataSource.
-        Ocid for Data source
+        OCID for the data source
 
 
         :param id: The id of this DataSource.
@@ -200,7 +211,7 @@ class DataSource(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this DataSource.
-        DisplayName of Data source.
+        Display name of the data source
 
 
         :return: The display_name of this DataSource.
@@ -212,7 +223,7 @@ class DataSource(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this DataSource.
-        DisplayName of Data source.
+        Display name of the data source
 
 
         :param display_name: The display_name of this DataSource.
@@ -226,7 +237,7 @@ class DataSource(object):
         **[Required]** Gets the data_source_feed_provider of this DataSource.
         Possible type of dataSourceFeed Provider(LoggingQuery)
 
-        Allowed values for this property are: "LOGGINGQUERY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LOGGINGQUERY", "SCHEDULEDQUERY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -245,7 +256,7 @@ class DataSource(object):
         :param data_source_feed_provider: The data_source_feed_provider of this DataSource.
         :type: str
         """
-        allowed_values = ["LOGGINGQUERY"]
+        allowed_values = ["LOGGINGQUERY", "SCHEDULEDQUERY"]
         if not value_allowed_none_or_none_sentinel(data_source_feed_provider, allowed_values):
             data_source_feed_provider = 'UNKNOWN_ENUM_VALUE'
         self._data_source_feed_provider = data_source_feed_provider
@@ -254,7 +265,7 @@ class DataSource(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this DataSource.
-        CompartmentId of Data source.
+        Compartment OCID of data source
 
 
         :return: The compartment_id of this DataSource.
@@ -266,7 +277,7 @@ class DataSource(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this DataSource.
-        CompartmentId of Data source.
+        Compartment OCID of data source
 
 
         :param compartment_id: The compartment_id of this DataSource.
@@ -322,7 +333,7 @@ class DataSource(object):
     def time_updated(self):
         """
         Gets the time_updated of this DataSource.
-        The date and time the Data source was updated. Format defined by RFC3339.
+        The date and time the data source was updated. Format defined by RFC3339.
 
 
         :return: The time_updated of this DataSource.
@@ -334,7 +345,7 @@ class DataSource(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this DataSource.
-        The date and time the Data source was updated. Format defined by RFC3339.
+        The date and time the data source was updated. Format defined by RFC3339.
 
 
         :param time_updated: The time_updated of this DataSource.
@@ -346,7 +357,7 @@ class DataSource(object):
     def status(self):
         """
         Gets the status of this DataSource.
-        Status of data Source
+        Enablement status of the data source
 
         Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -361,7 +372,7 @@ class DataSource(object):
     def status(self, status):
         """
         Sets the status of this DataSource.
-        Status of data Source
+        Enablement status of the data source
 
 
         :param status: The status of this DataSource.
@@ -424,7 +435,7 @@ class DataSource(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this DataSource.
-        The current state of the resource.
+        The current lifecycle state of the resource.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -439,7 +450,7 @@ class DataSource(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this DataSource.
-        The current state of the resource.
+        The current lifecycle state of the resource.
 
 
         :param lifecycle_state: The lifecycle_state of this DataSource.
@@ -449,6 +460,30 @@ class DataSource(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this DataSource.
+        Locks associated with this resource.
+
+
+        :return: The locks of this DataSource.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this DataSource.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this DataSource.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     @property
     def freeform_tags(self):

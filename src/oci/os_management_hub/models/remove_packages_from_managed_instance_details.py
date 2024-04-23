@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RemovePackagesFromManagedInstanceDetails(object):
     """
-    The details about the software packages to be removed.
+    Provides the information used to remove software packages from a managed instance.
     """
 
     def __init__(self, **kwargs):

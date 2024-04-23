@@ -516,6 +516,9 @@ from .update_instance_platform_config import UpdateInstancePlatformConfig
 from .update_instance_pool_details import UpdateInstancePoolDetails
 from .update_instance_pool_placement_configuration_details import UpdateInstancePoolPlacementConfigurationDetails
 from .update_instance_shape_config_details import UpdateInstanceShapeConfigDetails
+from .update_instance_source_details import UpdateInstanceSourceDetails
+from .update_instance_source_via_boot_volume_details import UpdateInstanceSourceViaBootVolumeDetails
+from .update_instance_source_via_image_details import UpdateInstanceSourceViaImageDetails
 from .update_internet_gateway_details import UpdateInternetGatewayDetails
 from .update_ipv6_details import UpdateIpv6Details
 from .update_launch_options import UpdateLaunchOptions
@@ -1099,6 +1102,9 @@ core_type_mapping = {
     "UpdateInstancePoolDetails": UpdateInstancePoolDetails,
     "UpdateInstancePoolPlacementConfigurationDetails": UpdateInstancePoolPlacementConfigurationDetails,
     "UpdateInstanceShapeConfigDetails": UpdateInstanceShapeConfigDetails,
+    "UpdateInstanceSourceDetails": UpdateInstanceSourceDetails,
+    "UpdateInstanceSourceViaBootVolumeDetails": UpdateInstanceSourceViaBootVolumeDetails,
+    "UpdateInstanceSourceViaImageDetails": UpdateInstanceSourceViaImageDetails,
     "UpdateInternetGatewayDetails": UpdateInternetGatewayDetails,
     "UpdateIpv6Details": UpdateIpv6Details,
     "UpdateLaunchOptions": UpdateLaunchOptions,

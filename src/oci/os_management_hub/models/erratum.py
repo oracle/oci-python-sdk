@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Erratum(object):
     """
-    Details about the erratum.
+    An object that defines an erratum..
     """
 
     #: A constant which can be used with the classification_type property of a Erratum.
@@ -30,6 +30,18 @@ class Erratum(object):
     #: A constant which can be used with the classification_type property of a Erratum.
     #: This constant has a value of "OTHER"
     CLASSIFICATION_TYPE_OTHER = "OTHER"
+
+    #: A constant which can be used with the advisory_type property of a Erratum.
+    #: This constant has a value of "SECURITY"
+    ADVISORY_TYPE_SECURITY = "SECURITY"
+
+    #: A constant which can be used with the advisory_type property of a Erratum.
+    #: This constant has a value of "BUGFIX"
+    ADVISORY_TYPE_BUGFIX = "BUGFIX"
+
+    #: A constant which can be used with the advisory_type property of a Erratum.
+    #: This constant has a value of "ENHANCEMENT"
+    ADVISORY_TYPE_ENHANCEMENT = "ENHANCEMENT"
 
     #: A constant which can be used with the advisory_severity property of a Erratum.
     #: This constant has a value of "LOW"
@@ -78,6 +90,12 @@ class Erratum(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type classification_type: str
 
+        :param advisory_type:
+            The value to assign to the advisory_type property of this Erratum.
+            Allowed values for this property are: "SECURITY", "BUGFIX", "ENHANCEMENT", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type advisory_type: str
+
         :param _from:
             The value to assign to the _from property of this Erratum.
         :type _from: str
@@ -120,6 +138,7 @@ class Erratum(object):
             'description': 'str',
             'time_updated': 'datetime',
             'classification_type': 'str',
+            'advisory_type': 'str',
             '_from': 'str',
             'solution': 'str',
             'references': 'str',
@@ -137,6 +156,7 @@ class Erratum(object):
             'description': 'description',
             'time_updated': 'timeUpdated',
             'classification_type': 'classificationType',
+            'advisory_type': 'advisoryType',
             '_from': 'from',
             'solution': 'solution',
             'references': 'references',
@@ -153,6 +173,7 @@ class Erratum(object):
         self._description = None
         self._time_updated = None
         self._classification_type = None
+        self._advisory_type = None
         self.__from = None
         self._solution = None
         self._references = None
@@ -214,8 +235,7 @@ class Erratum(object):
     def time_issued(self):
         """
         Gets the time_issued of this Erratum.
-        Date the erratum was issued, as described
-        in `RFC 3339`__, section 14.29.
+        The date and time the erratum was issued (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -229,8 +249,7 @@ class Erratum(object):
     def time_issued(self, time_issued):
         """
         Sets the time_issued of this Erratum.
-        Date the erratum was issued, as described
-        in `RFC 3339`__, section 14.29.
+        The date and time the erratum was issued (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -268,8 +287,7 @@ class Erratum(object):
     def time_updated(self):
         """
         Gets the time_updated of this Erratum.
-        Most recent date the erratum was updated, as described
-        in `RFC 3339`__, section 14.29.
+        The date and time the erratum was updated (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -283,8 +301,7 @@ class Erratum(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this Erratum.
-        Most recent date the erratum was updated, as described
-        in `RFC 3339`__, section 14.29.
+        The date and time the erratum was updated (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -298,7 +315,7 @@ class Erratum(object):
     def classification_type(self):
         """
         Gets the classification_type of this Erratum.
-        Type of the erratum.
+        Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
 
         Allowed values for this property are: "SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -313,7 +330,7 @@ class Erratum(object):
     def classification_type(self, classification_type):
         """
         Sets the classification_type of this Erratum.
-        Type of the erratum.
+        Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
 
 
         :param classification_type: The classification_type of this Erratum.
@@ -323,6 +340,36 @@ class Erratum(object):
         if not value_allowed_none_or_none_sentinel(classification_type, allowed_values):
             classification_type = 'UNKNOWN_ENUM_VALUE'
         self._classification_type = classification_type
+
+    @property
+    def advisory_type(self):
+        """
+        Gets the advisory_type of this Erratum.
+        The advisory type of the erratum.
+
+        Allowed values for this property are: "SECURITY", "BUGFIX", "ENHANCEMENT", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The advisory_type of this Erratum.
+        :rtype: str
+        """
+        return self._advisory_type
+
+    @advisory_type.setter
+    def advisory_type(self, advisory_type):
+        """
+        Sets the advisory_type of this Erratum.
+        The advisory type of the erratum.
+
+
+        :param advisory_type: The advisory_type of this Erratum.
+        :type: str
+        """
+        allowed_values = ["SECURITY", "BUGFIX", "ENHANCEMENT"]
+        if not value_allowed_none_or_none_sentinel(advisory_type, allowed_values):
+            advisory_type = 'UNKNOWN_ENUM_VALUE'
+        self._advisory_type = advisory_type
 
     @property
     def _from(self):
@@ -448,7 +495,7 @@ class Erratum(object):
     def packages(self):
         """
         Gets the packages of this Erratum.
-        List of Packages affected by this erratum.
+        List of packages affected by this erratum.
 
 
         :return: The packages of this Erratum.
@@ -460,7 +507,7 @@ class Erratum(object):
     def packages(self, packages):
         """
         Sets the packages of this Erratum.
-        List of Packages affected by this erratum.
+        List of packages affected by this erratum.
 
 
         :param packages: The packages of this Erratum.

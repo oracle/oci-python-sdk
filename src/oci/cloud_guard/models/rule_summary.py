@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RuleSummary(object):
     """
-    Summary of rules
+    Summary information for a rule.
     """
 
     def __init__(self, **kwargs):
@@ -53,7 +53,7 @@ class RuleSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this RuleSummary.
-        id of the rule
+        Unique identifier of the rule
 
 
         :return: The id of this RuleSummary.
@@ -65,7 +65,7 @@ class RuleSummary(object):
     def id(self, id):
         """
         Sets the id of this RuleSummary.
-        id of the rule
+        Unique identifier of the rule
 
 
         :param id: The id of this RuleSummary.
@@ -77,7 +77,7 @@ class RuleSummary(object):
     def description(self):
         """
         **[Required]** Gets the description of this RuleSummary.
-        description of the rule
+        Description of the rule
 
 
         :return: The description of this RuleSummary.
@@ -89,7 +89,7 @@ class RuleSummary(object):
     def description(self, description):
         """
         Sets the description of this RuleSummary.
-        description of the rule
+        Description of the rule
 
 
         :param description: The description of this RuleSummary.
@@ -101,7 +101,7 @@ class RuleSummary(object):
     def parameters(self):
         """
         **[Required]** Gets the parameters of this RuleSummary.
-        List of parameters applicable for rule
+        List of parameters applicable for the rule
 
 
         :return: The parameters of this RuleSummary.
@@ -113,7 +113,7 @@ class RuleSummary(object):
     def parameters(self, parameters):
         """
         Sets the parameters of this RuleSummary.
-        List of parameters applicable for rule
+        List of parameters applicable for the rule
 
 
         :param parameters: The parameters of this RuleSummary.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class EntitlementSummary(object):
     """
-    A summary of an entitlement.
+    Provides summary information for an entitlement.
     """
 
     def __init__(self, **kwargs):
@@ -53,7 +53,9 @@ class EntitlementSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this EntitlementSummary.
-        The OCID of the tenancy containing the entitlement.
+        The `OCID`__ of the tenancy containing the entitlement.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this EntitlementSummary.
@@ -65,7 +67,9 @@ class EntitlementSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this EntitlementSummary.
-        The OCID of the tenancy containing the entitlement.
+        The `OCID`__ of the tenancy containing the entitlement.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this EntitlementSummary.
@@ -77,7 +81,7 @@ class EntitlementSummary(object):
     def csi(self):
         """
         **[Required]** Gets the csi of this EntitlementSummary.
-        The Customer Support Identifier (CSI). CSI is a unique key given to a customer to unlock software sources. It uniquely identifies the entitlement.
+        The Customer Support Identifier (CSI) which unlocks the software sources. The CSI is is a unique key given to a customer and it uniquely identifies the entitlement.
 
 
         :return: The csi of this EntitlementSummary.
@@ -89,7 +93,7 @@ class EntitlementSummary(object):
     def csi(self, csi):
         """
         Sets the csi of this EntitlementSummary.
-        The Customer Support Identifier (CSI). CSI is a unique key given to a customer to unlock software sources. It uniquely identifies the entitlement.
+        The Customer Support Identifier (CSI) which unlocks the software sources. The CSI is is a unique key given to a customer and it uniquely identifies the entitlement.
 
 
         :param csi: The csi of this EntitlementSummary.

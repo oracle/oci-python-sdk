@@ -31,7 +31,7 @@ class ScheduledJobClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.os_management_hub.models.CreateScheduledJobDetails create_scheduled_job_details: (required)
-            Details for the new scheduled job.
+            Provides the information used to create the scheduled job.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.os_management_hub.models.ScheduledJob.lifecycle_state`
@@ -73,7 +73,9 @@ class ScheduledJobClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str scheduled_job_id: (required)
-            The OCID of the scheduled job.
+            The `OCID`__ of the scheduled job.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.os_management_hub.models.ScheduledJob.lifecycle_state`
@@ -132,10 +134,12 @@ class ScheduledJobClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str scheduled_job_id: (required)
-            The OCID of the scheduled job.
+            The `OCID`__ of the scheduled job.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.UpdateScheduledJobDetails update_scheduled_job_details: (required)
-            The information to be updated.
+            Provides the information used to update the job.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.os_management_hub.models.ScheduledJob.lifecycle_state`

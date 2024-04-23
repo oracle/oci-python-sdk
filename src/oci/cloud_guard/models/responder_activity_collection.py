@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResponderActivityCollection(object):
     """
-    Provides the summary of responder activities and their corresponding count value.
+    Provides a summary of responder activities and their corresponding count values.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class ResponderActivityCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ResponderActivityCollection.
-        List of ResponderActivitySummary
+        List of ResponderActivitySummary resources
 
 
         :return: The items of this ResponderActivityCollection.
@@ -51,7 +51,7 @@ class ResponderActivityCollection(object):
     def items(self, items):
         """
         Sets the items of this ResponderActivityCollection.
-        List of ResponderActivitySummary
+        List of ResponderActivitySummary resources
 
 
         :param items: The items of this ResponderActivityCollection.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeManagedListCompartmentDetails(object):
     """
-    Changing compartmentId for ManagedList
+    Parameters to use to move a managed list to a different compartment.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class ChangeManagedListCompartmentDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ChangeManagedListCompartmentDetails.
-        The OCID of the compartment into which the ManagedList should be moved
+        The OCID of the compartment into which the managed list is to be moved
 
 
         :return: The compartment_id of this ChangeManagedListCompartmentDetails.
@@ -51,7 +51,7 @@ class ChangeManagedListCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ChangeManagedListCompartmentDetails.
-        The OCID of the compartment into which the ManagedList should be moved
+        The OCID of the compartment into which the managed list is to be moved
 
 
         :param compartment_id: The compartment_id of this ChangeManagedListCompartmentDetails.

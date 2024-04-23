@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateManagementStationDetails(object):
     """
-    Information for creating an ManagementStation
+    Provides the information used to create a management station.
     """
 
     def __init__(self, **kwargs):
@@ -88,7 +88,9 @@ class CreateManagementStationDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateManagementStationDetails.
-        The OCID of the tenancy containing the Management Station.
+        The `OCID`__ of the compartment that contains the management station.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateManagementStationDetails.
@@ -100,7 +102,9 @@ class CreateManagementStationDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateManagementStationDetails.
-        The OCID of the tenancy containing the Management Station.
+        The `OCID`__ of the compartment that contains the management station.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateManagementStationDetails.
@@ -112,7 +116,7 @@ class CreateManagementStationDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateManagementStationDetails.
-        Management Station name
+        User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 
 
         :return: The display_name of this CreateManagementStationDetails.
@@ -124,7 +128,7 @@ class CreateManagementStationDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateManagementStationDetails.
-        Management Station name
+        User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateManagementStationDetails.
@@ -136,7 +140,7 @@ class CreateManagementStationDetails(object):
     def description(self):
         """
         Gets the description of this CreateManagementStationDetails.
-        Details describing the Management Station config.
+        User-specified description of the management station. Avoid entering confidential information.
 
 
         :return: The description of this CreateManagementStationDetails.
@@ -148,7 +152,7 @@ class CreateManagementStationDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateManagementStationDetails.
-        Details describing the Management Station config.
+        User-specified description of the management station. Avoid entering confidential information.
 
 
         :param description: The description of this CreateManagementStationDetails.
@@ -160,7 +164,7 @@ class CreateManagementStationDetails(object):
     def hostname(self):
         """
         **[Required]** Gets the hostname of this CreateManagementStationDetails.
-        Name of the host
+        Hostname of the management station.
 
 
         :return: The hostname of this CreateManagementStationDetails.
@@ -172,7 +176,7 @@ class CreateManagementStationDetails(object):
     def hostname(self, hostname):
         """
         Sets the hostname of this CreateManagementStationDetails.
-        Name of the host
+        Hostname of the management station.
 
 
         :param hostname: The hostname of this CreateManagementStationDetails.

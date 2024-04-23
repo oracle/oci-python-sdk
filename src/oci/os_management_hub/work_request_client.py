@@ -22,7 +22,8 @@ missing = Sentinel("Missing")
 
 class WorkRequestClient(object):
     """
-    Use the OS Management Hub API to manage and monitor updates and patches for the operating system environments in your private data centers through a single management console. For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+    Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
+    For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -122,7 +123,9 @@ class WorkRequestClient(object):
 
 
         :param str work_request_id: (required)
-            The OCID of the work request.
+            The `OCID`__ of the work request.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -220,7 +223,9 @@ class WorkRequestClient(object):
 
 
         :param str work_request_id: (required)
-            The OCID of the work request.
+            The `OCID`__ of the work request.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -373,7 +378,9 @@ class WorkRequestClient(object):
 
 
         :param str work_request_id: (required)
-            The OCID of the work request.
+            The `OCID`__ of the work request.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -527,10 +534,12 @@ class WorkRequestClient(object):
 
 
         :param str compartment_id: (optional)
-            The OCID of the compartment that contains the resources to list.
+            The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 
         :param str work_request_id: (optional)
-            The OCID of the work request.
+            The `OCID`__ of the work request.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] status: (optional)
             A filter to return work requests that match the given status.
@@ -538,7 +547,9 @@ class WorkRequestClient(object):
             Allowed values are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"
 
         :param str resource_id: (optional)
-            The OCID of the resource affected by the work request.
+            The `OCID`__ of the resource. This filter returns resources associated with the specified resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -571,21 +582,45 @@ class WorkRequestClient(object):
             Allowed values are: "timeCreated", "displayName"
 
         :param str initiator_id: (optional)
-            The OCID of the schedule job that initiated the work request.
+            The `OCID`__ of the schedule job that initiated the work request.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str parent_id: (optional)
-            The OCID of the parent work request.
+            The `OCID`__ of the parent work request.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] parent_resources_not_equal_to: (optional)
-            A filter to return the resources whose parent resources are not the same as the given resource OCID(s).
+            A filter to return the resources whose parent resources are not the same as the given resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] operation_type: (optional)
             The asynchronous operation tracked by this work request. The filter returns only resources that match the given OperationType.
 
-            Allowed values are: "INSTALL_PACKAGES", "REMOVE_PACKAGES", "UPDATE_PACKAGES", "UPDATE_ALL_PACKAGES", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_KERNEL", "UPDATE_KSPLICE_USERSPACE", "ENABLE_MODULE_STREAMS", "DISABLE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "INSTALL_MODULE_PROFILES", "REMOVE_MODULE_PROFILES", "SET_SOFTWARE_SOURCES", "LIST_PACKAGES", "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "UPDATE", "MODULE_ACTIONS", "LIFECYCLE_PROMOTION", "CREATE_SOFTWARE_SOURCE", "UPDATE_SOFTWARE_SOURCE"
+            Allowed values are: "INSTALL_PACKAGES", "REMOVE_PACKAGES", "UPDATE_PACKAGES", "UPDATE_ALL_PACKAGES", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_KERNEL", "UPDATE_KSPLICE_USERSPACE", "ENABLE_MODULE_STREAMS", "DISABLE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "INSTALL_MODULE_PROFILES", "REMOVE_MODULE_PROFILES", "SET_SOFTWARE_SOURCES", "LIST_PACKAGES", "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "UPDATE", "MODULE_ACTIONS", "LIFECYCLE_PROMOTION", "CREATE_SOFTWARE_SOURCE", "UPDATE_SOFTWARE_SOURCE", "IMPORT_CONTENT", "SYNC_AGENT_CONFIG", "INSTALL_WINDOWS_UPDATES", "LIST_WINDOWS_UPDATE", "GET_WINDOWS_UPDATE_DETAILS", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REMOVE_CONTENT", "UNREGISTER_MANAGED_INSTANCE"
 
         :param str display_name_contains: (optional)
             A filter to return resources that may partially match the given display name.
+
+        :param str retry_of_id: (optional)
+            A filter to return the work requests that are a retry of the given work request `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param datetime time_created_less_than: (optional)
+            A filter to return work requests that were created before the date provided (in `RFC 3339`__ format). Example: '2023-08-25T21:10:29.600Z'
+
+            __ https://tools.ietf.org/rfc/rfc3339
+
+        :param datetime time_created_greater_than_or_equal_to: (optional)
+            A filter to return work requests that were created on or after the date provided (in `RFC 3339`__ format). Example: '2023-08-25T21:10:29.600Z'
+
+            __ https://tools.ietf.org/rfc/rfc3339
+
+        :param bool is_managed_by_autonomous_linux: (optional)
+            Indicates whether to list only resources managed by the Autonomous Linux service.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -629,7 +664,11 @@ class WorkRequestClient(object):
             "parent_id",
             "parent_resources_not_equal_to",
             "operation_type",
-            "display_name_contains"
+            "display_name_contains",
+            "retry_of_id",
+            "time_created_less_than",
+            "time_created_greater_than_or_equal_to",
+            "is_managed_by_autonomous_linux"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -659,7 +698,7 @@ class WorkRequestClient(object):
                 )
 
         if 'operation_type' in kwargs:
-            operation_type_allowed_values = ["INSTALL_PACKAGES", "REMOVE_PACKAGES", "UPDATE_PACKAGES", "UPDATE_ALL_PACKAGES", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_KERNEL", "UPDATE_KSPLICE_USERSPACE", "ENABLE_MODULE_STREAMS", "DISABLE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "INSTALL_MODULE_PROFILES", "REMOVE_MODULE_PROFILES", "SET_SOFTWARE_SOURCES", "LIST_PACKAGES", "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "UPDATE", "MODULE_ACTIONS", "LIFECYCLE_PROMOTION", "CREATE_SOFTWARE_SOURCE", "UPDATE_SOFTWARE_SOURCE"]
+            operation_type_allowed_values = ["INSTALL_PACKAGES", "REMOVE_PACKAGES", "UPDATE_PACKAGES", "UPDATE_ALL_PACKAGES", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_KERNEL", "UPDATE_KSPLICE_USERSPACE", "ENABLE_MODULE_STREAMS", "DISABLE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "INSTALL_MODULE_PROFILES", "REMOVE_MODULE_PROFILES", "SET_SOFTWARE_SOURCES", "LIST_PACKAGES", "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "UPDATE", "MODULE_ACTIONS", "LIFECYCLE_PROMOTION", "CREATE_SOFTWARE_SOURCE", "UPDATE_SOFTWARE_SOURCE", "IMPORT_CONTENT", "SYNC_AGENT_CONFIG", "INSTALL_WINDOWS_UPDATES", "LIST_WINDOWS_UPDATE", "GET_WINDOWS_UPDATE_DETAILS", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REMOVE_CONTENT", "UNREGISTER_MANAGED_INSTANCE"]
             for operation_type_item in kwargs['operation_type']:
                 if operation_type_item not in operation_type_allowed_values:
                     raise ValueError(
@@ -679,7 +718,11 @@ class WorkRequestClient(object):
             "parentId": kwargs.get("parent_id", missing),
             "parentResourcesNotEqualTo": self.base_client.generate_collection_format_param(kwargs.get("parent_resources_not_equal_to", missing), 'multi'),
             "operationType": self.base_client.generate_collection_format_param(kwargs.get("operation_type", missing), 'multi'),
-            "displayNameContains": kwargs.get("display_name_contains", missing)
+            "displayNameContains": kwargs.get("display_name_contains", missing),
+            "retryOfId": kwargs.get("retry_of_id", missing),
+            "timeCreatedLessThan": kwargs.get("time_created_less_than", missing),
+            "timeCreatedGreaterThanOrEqualTo": kwargs.get("time_created_greater_than_or_equal_to", missing),
+            "isManagedByAutonomousLinux": kwargs.get("is_managed_by_autonomous_linux", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

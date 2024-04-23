@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResponderExecutionTrendAggregationCollection(object):
     """
-    Responder Execution Trend Collection
+    Collection of ResponderExecutionTrendAggregation resources.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class ResponderExecutionTrendAggregationCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ResponderExecutionTrendAggregationCollection.
-        The items consist of all the ResponderExecutionTrendAggregation objects.
+        List of all the ResponderExecutionTrendAggregation resources.
 
 
         :return: The items of this ResponderExecutionTrendAggregationCollection.
@@ -51,7 +51,7 @@ class ResponderExecutionTrendAggregationCollection(object):
     def items(self, items):
         """
         Sets the items of this ResponderExecutionTrendAggregationCollection.
-        The items consist of all the ResponderExecutionTrendAggregation objects.
+        List of all the ResponderExecutionTrendAggregation resources.
 
 
         :param items: The items of this ResponderExecutionTrendAggregationCollection.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ErratumCollection(object):
     """
-    Results of a Erratum search. Contains boh ErratumSummary items and other information, such as metadata.
+    The set of errata returned for the :func:`list_errata` operation.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class ErratumCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ErratumCollection.
-        List of Errata.
+        List of errata.
 
 
         :return: The items of this ErratumCollection.
@@ -51,7 +51,7 @@ class ErratumCollection(object):
     def items(self, items):
         """
         Sets the items of this ErratumCollection.
-        List of Errata.
+        List of errata.
 
 
         :param items: The items of this ErratumCollection.

@@ -31,7 +31,7 @@ class OnboardingClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.os_management_hub.models.CreateProfileDetails create_profile_details: (required)
-            Details for the new registration profile.
+            Provides the information used to create the registration profile.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.os_management_hub.models.Profile.lifecycle_state`
@@ -73,7 +73,9 @@ class OnboardingClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str profile_id: (required)
-            The OCID of the registration profile.
+            The `OCID`__ of the registration profile.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.os_management_hub.models.Profile.lifecycle_state`
@@ -132,7 +134,9 @@ class OnboardingClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str profile_id: (required)
-            The OCID of the registration profile.
+            The `OCID`__ of the registration profile.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.UpdateProfileDetails update_profile_details: (required)
             The information to be updated.

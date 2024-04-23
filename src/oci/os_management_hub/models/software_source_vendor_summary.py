@@ -12,12 +12,16 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SoftwareSourceVendorSummary(object):
     """
-    Software vendor name, list of osFamily and archType.
+    Provides summary information about a software source vendor, including name, operating system family, and architecture type.
     """
 
     #: A constant which can be used with the name property of a SoftwareSourceVendorSummary.
     #: This constant has a value of "ORACLE"
     NAME_ORACLE = "ORACLE"
+
+    #: A constant which can be used with the name property of a SoftwareSourceVendorSummary.
+    #: This constant has a value of "MICROSOFT"
+    NAME_MICROSOFT = "MICROSOFT"
 
     #: A constant which can be used with the os_families property of a SoftwareSourceVendorSummary.
     #: This constant has a value of "ORACLE_LINUX_9"
@@ -30,6 +34,26 @@ class SoftwareSourceVendorSummary(object):
     #: A constant which can be used with the os_families property of a SoftwareSourceVendorSummary.
     #: This constant has a value of "ORACLE_LINUX_7"
     OS_FAMILIES_ORACLE_LINUX_7 = "ORACLE_LINUX_7"
+
+    #: A constant which can be used with the os_families property of a SoftwareSourceVendorSummary.
+    #: This constant has a value of "ORACLE_LINUX_6"
+    OS_FAMILIES_ORACLE_LINUX_6 = "ORACLE_LINUX_6"
+
+    #: A constant which can be used with the os_families property of a SoftwareSourceVendorSummary.
+    #: This constant has a value of "WINDOWS_SERVER_2016"
+    OS_FAMILIES_WINDOWS_SERVER_2016 = "WINDOWS_SERVER_2016"
+
+    #: A constant which can be used with the os_families property of a SoftwareSourceVendorSummary.
+    #: This constant has a value of "WINDOWS_SERVER_2019"
+    OS_FAMILIES_WINDOWS_SERVER_2019 = "WINDOWS_SERVER_2019"
+
+    #: A constant which can be used with the os_families property of a SoftwareSourceVendorSummary.
+    #: This constant has a value of "WINDOWS_SERVER_2022"
+    OS_FAMILIES_WINDOWS_SERVER_2022 = "WINDOWS_SERVER_2022"
+
+    #: A constant which can be used with the os_families property of a SoftwareSourceVendorSummary.
+    #: This constant has a value of "ALL"
+    OS_FAMILIES_ALL = "ALL"
 
     #: A constant which can be used with the arch_types property of a SoftwareSourceVendorSummary.
     #: This constant has a value of "X86_64"
@@ -58,13 +82,13 @@ class SoftwareSourceVendorSummary(object):
 
         :param name:
             The value to assign to the name property of this SoftwareSourceVendorSummary.
-            Allowed values for this property are: "ORACLE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE", "MICROSOFT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type name: str
 
         :param os_families:
             The value to assign to the os_families property of this SoftwareSourceVendorSummary.
-            Allowed values for items in this list are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type os_families: list[str]
 
@@ -97,7 +121,7 @@ class SoftwareSourceVendorSummary(object):
         **[Required]** Gets the name of this SoftwareSourceVendorSummary.
         Name of the vendor providing the software source.
 
-        Allowed values for this property are: "ORACLE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE", "MICROSOFT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -116,7 +140,7 @@ class SoftwareSourceVendorSummary(object):
         :param name: The name of this SoftwareSourceVendorSummary.
         :type: str
         """
-        allowed_values = ["ORACLE"]
+        allowed_values = ["ORACLE", "MICROSOFT"]
         if not value_allowed_none_or_none_sentinel(name, allowed_values):
             name = 'UNKNOWN_ENUM_VALUE'
         self._name = name
@@ -125,9 +149,9 @@ class SoftwareSourceVendorSummary(object):
     def os_families(self):
         """
         **[Required]** Gets the os_families of this SoftwareSourceVendorSummary.
-        List of corresponding osFamilies.
+        List of corresponding operating system families.
 
-        Allowed values for items in this list are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -140,13 +164,13 @@ class SoftwareSourceVendorSummary(object):
     def os_families(self, os_families):
         """
         Sets the os_families of this SoftwareSourceVendorSummary.
-        List of corresponding osFamilies.
+        List of corresponding operating system families.
 
 
         :param os_families: The os_families of this SoftwareSourceVendorSummary.
         :type: list[str]
         """
-        allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7"]
+        allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"]
         if os_families:
             os_families[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in os_families]
         self._os_families = os_families
@@ -155,7 +179,7 @@ class SoftwareSourceVendorSummary(object):
     def arch_types(self):
         """
         **[Required]** Gets the arch_types of this SoftwareSourceVendorSummary.
-        List of corresponding archTypes.
+        List of corresponding architecture types.
 
         Allowed values for items in this list are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -170,7 +194,7 @@ class SoftwareSourceVendorSummary(object):
     def arch_types(self, arch_types):
         """
         Sets the arch_types of this SoftwareSourceVendorSummary.
-        List of corresponding archTypes.
+        List of corresponding architecture types.
 
 
         :param arch_types: The arch_types of this SoftwareSourceVendorSummary.

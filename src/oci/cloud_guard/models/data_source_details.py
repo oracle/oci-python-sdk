@@ -19,18 +19,23 @@ class DataSourceDetails(object):
     #: This constant has a value of "LOGGINGQUERY"
     DATA_SOURCE_FEED_PROVIDER_LOGGINGQUERY = "LOGGINGQUERY"
 
+    #: A constant which can be used with the data_source_feed_provider property of a DataSourceDetails.
+    #: This constant has a value of "SCHEDULEDQUERY"
+    DATA_SOURCE_FEED_PROVIDER_SCHEDULEDQUERY = "SCHEDULEDQUERY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DataSourceDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.cloud_guard.models.ScheduledQueryDataSourceObjDetails`
         * :class:`~oci.cloud_guard.models.LoggingQueryDataSourceDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param data_source_feed_provider:
             The value to assign to the data_source_feed_provider property of this DataSourceDetails.
-            Allowed values for this property are: "LOGGINGQUERY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LOGGINGQUERY", "SCHEDULEDQUERY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type data_source_feed_provider: str
 
@@ -53,6 +58,9 @@ class DataSourceDetails(object):
         """
         type = object_dictionary['dataSourceFeedProvider']
 
+        if type == 'SCHEDULEDQUERY':
+            return 'ScheduledQueryDataSourceObjDetails'
+
         if type == 'LOGGINGQUERY':
             return 'LoggingQueryDataSourceDetails'
         else:
@@ -62,9 +70,9 @@ class DataSourceDetails(object):
     def data_source_feed_provider(self):
         """
         **[Required]** Gets the data_source_feed_provider of this DataSourceDetails.
-        Possible type of dataSourceFeed Provider(LoggingQuery)
+        Type of data source feed provider (LoggingQuery)
 
-        Allowed values for this property are: "LOGGINGQUERY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LOGGINGQUERY", "SCHEDULEDQUERY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -77,13 +85,13 @@ class DataSourceDetails(object):
     def data_source_feed_provider(self, data_source_feed_provider):
         """
         Sets the data_source_feed_provider of this DataSourceDetails.
-        Possible type of dataSourceFeed Provider(LoggingQuery)
+        Type of data source feed provider (LoggingQuery)
 
 
         :param data_source_feed_provider: The data_source_feed_provider of this DataSourceDetails.
         :type: str
         """
-        allowed_values = ["LOGGINGQUERY"]
+        allowed_values = ["LOGGINGQUERY", "SCHEDULEDQUERY"]
         if not value_allowed_none_or_none_sentinel(data_source_feed_provider, allowed_values):
             data_source_feed_provider = 'UNKNOWN_ENUM_VALUE'
         self._data_source_feed_provider = data_source_feed_provider

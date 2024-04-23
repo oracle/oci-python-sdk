@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateManagedListDetails(object):
     """
-    Create ManagedList
+    Parameters to use to create details for a new managed list.
     """
 
     #: A constant which can be used with the list_type property of a CreateManagedListDetails.
@@ -173,7 +173,7 @@ class CreateManagedListDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateManagedListDetails.
-        Compartment Identifier
+        Compartment OCID
 
 
         :return: The compartment_id of this CreateManagedListDetails.
@@ -185,7 +185,7 @@ class CreateManagedListDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateManagedListDetails.
-        Compartment Identifier
+        Compartment OCID
 
 
         :param compartment_id: The compartment_id of this CreateManagedListDetails.
@@ -197,7 +197,7 @@ class CreateManagedListDetails(object):
     def source_managed_list_id(self):
         """
         Gets the source_managed_list_id of this CreateManagedListDetails.
-        OCID of the Source ManagedList
+        OCID of the source managed list
 
 
         :return: The source_managed_list_id of this CreateManagedListDetails.
@@ -209,7 +209,7 @@ class CreateManagedListDetails(object):
     def source_managed_list_id(self, source_managed_list_id):
         """
         Sets the source_managed_list_id of this CreateManagedListDetails.
-        OCID of the Source ManagedList
+        OCID of the source managed list
 
 
         :param source_managed_list_id: The source_managed_list_id of this CreateManagedListDetails.
@@ -221,7 +221,7 @@ class CreateManagedListDetails(object):
     def description(self):
         """
         Gets the description of this CreateManagedListDetails.
-        Managed list description.
+        Managed list description
 
         Avoid entering confidential information.
 
@@ -235,7 +235,7 @@ class CreateManagedListDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateManagedListDetails.
-        Managed list description.
+        Managed list description
 
         Avoid entering confidential information.
 
@@ -249,7 +249,7 @@ class CreateManagedListDetails(object):
     def list_type(self):
         """
         Gets the list_type of this CreateManagedListDetails.
-        type of the list
+        Type of information stored in the list
 
         Allowed values for this property are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION"
 
@@ -263,7 +263,7 @@ class CreateManagedListDetails(object):
     def list_type(self, list_type):
         """
         Sets the list_type of this CreateManagedListDetails.
-        type of the list
+        Type of information stored in the list
 
 
         :param list_type: The list_type of this CreateManagedListDetails.
@@ -280,7 +280,7 @@ class CreateManagedListDetails(object):
     def list_items(self):
         """
         Gets the list_items of this CreateManagedListDetails.
-        List of ManagedListItem
+        List of items in the managed list
 
 
         :return: The list_items of this CreateManagedListDetails.
@@ -292,7 +292,7 @@ class CreateManagedListDetails(object):
     def list_items(self, list_items):
         """
         Sets the list_items of this CreateManagedListDetails.
-        List of ManagedListItem
+        List of items in the managed list
 
 
         :param list_items: The list_items of this CreateManagedListDetails.

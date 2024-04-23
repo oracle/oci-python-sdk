@@ -102,6 +102,10 @@ class Volume(object):
             The value to assign to the vpus_per_gb property of this Volume.
         :type vpus_per_gb: int
 
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this Volume.
+        :type cluster_placement_group_id: str
+
         :param size_in_gbs:
             The value to assign to the size_in_gbs property of this Volume.
         :type size_in_gbs: int
@@ -151,6 +155,7 @@ class Volume(object):
             'kms_key_id': 'str',
             'lifecycle_state': 'str',
             'vpus_per_gb': 'int',
+            'cluster_placement_group_id': 'str',
             'size_in_gbs': 'int',
             'size_in_mbs': 'int',
             'source_details': 'VolumeSourceDetails',
@@ -174,6 +179,7 @@ class Volume(object):
             'kms_key_id': 'kmsKeyId',
             'lifecycle_state': 'lifecycleState',
             'vpus_per_gb': 'vpusPerGB',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
             'size_in_gbs': 'sizeInGBs',
             'size_in_mbs': 'sizeInMBs',
             'source_details': 'sourceDetails',
@@ -196,6 +202,7 @@ class Volume(object):
         self._kms_key_id = None
         self._lifecycle_state = None
         self._vpus_per_gb = None
+        self._cluster_placement_group_id = None
         self._size_in_gbs = None
         self._size_in_mbs = None
         self._source_details = None
@@ -535,6 +542,30 @@ class Volume(object):
         :type: int
         """
         self._vpus_per_gb = vpus_per_gb
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this Volume.
+        The clusterPlacementGroup Id of the volume for volume placement.
+
+
+        :return: The cluster_placement_group_id of this Volume.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this Volume.
+        The clusterPlacementGroup Id of the volume for volume placement.
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this Volume.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
 
     @property
     def size_in_gbs(self):

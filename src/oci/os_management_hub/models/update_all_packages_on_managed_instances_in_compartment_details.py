@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateAllPackagesOnManagedInstancesInCompartmentDetails(object):
     """
-    The details about the package types to be updated.
+    Provides the information used to update all packages of a specified type on managed instances within the specified compartment.
     """
 
     #: A constant which can be used with the update_types property of a UpdateAllPackagesOnManagedInstancesInCompartmentDetails.
@@ -82,7 +82,9 @@ class UpdateAllPackagesOnManagedInstancesInCompartmentDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this UpdateAllPackagesOnManagedInstancesInCompartmentDetails.
-        The compartment being targeted by this operation.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this UpdateAllPackagesOnManagedInstancesInCompartmentDetails.
@@ -94,7 +96,9 @@ class UpdateAllPackagesOnManagedInstancesInCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this UpdateAllPackagesOnManagedInstancesInCompartmentDetails.
-        The compartment being targeted by this operation.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this UpdateAllPackagesOnManagedInstancesInCompartmentDetails.
@@ -106,7 +110,7 @@ class UpdateAllPackagesOnManagedInstancesInCompartmentDetails(object):
     def update_types(self):
         """
         Gets the update_types of this UpdateAllPackagesOnManagedInstancesInCompartmentDetails.
-        The type of updates to be applied.
+        The types of updates to be applied.
 
         Allowed values for items in this list are: "SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER", "KSPLICE_KERNEL", "KSPLICE_USERSPACE", "ALL"
 
@@ -120,7 +124,7 @@ class UpdateAllPackagesOnManagedInstancesInCompartmentDetails(object):
     def update_types(self, update_types):
         """
         Sets the update_types of this UpdateAllPackagesOnManagedInstancesInCompartmentDetails.
-        The type of updates to be applied.
+        The types of updates to be applied.
 
 
         :param update_types: The update_types of this UpdateAllPackagesOnManagedInstancesInCompartmentDetails.

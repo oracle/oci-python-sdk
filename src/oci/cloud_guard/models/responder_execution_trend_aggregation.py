@@ -60,7 +60,7 @@ class ResponderExecutionTrendAggregation(object):
     def dimensions_map(self):
         """
         **[Required]** Gets the dimensions_map of this ResponderExecutionTrendAggregation.
-        The key-value pairs of dimensions and their names.
+        The key-value pairs of dimensions and their names
 
 
         :return: The dimensions_map of this ResponderExecutionTrendAggregation.
@@ -72,7 +72,7 @@ class ResponderExecutionTrendAggregation(object):
     def dimensions_map(self, dimensions_map):
         """
         Sets the dimensions_map of this ResponderExecutionTrendAggregation.
-        The key-value pairs of dimensions and their names.
+        The key-value pairs of dimensions and their names
 
 
         :param dimensions_map: The dimensions_map of this ResponderExecutionTrendAggregation.
@@ -84,7 +84,7 @@ class ResponderExecutionTrendAggregation(object):
     def start_timestamp(self):
         """
         **[Required]** Gets the start_timestamp of this ResponderExecutionTrendAggregation.
-        Start Time in epoch seconds
+        Start time in epoch seconds
 
 
         :return: The start_timestamp of this ResponderExecutionTrendAggregation.
@@ -96,7 +96,7 @@ class ResponderExecutionTrendAggregation(object):
     def start_timestamp(self, start_timestamp):
         """
         Sets the start_timestamp of this ResponderExecutionTrendAggregation.
-        Start Time in epoch seconds
+        Start time in epoch seconds
 
 
         :param start_timestamp: The start_timestamp of this ResponderExecutionTrendAggregation.
@@ -132,7 +132,7 @@ class ResponderExecutionTrendAggregation(object):
     def count(self):
         """
         **[Required]** Gets the count of this ResponderExecutionTrendAggregation.
-        The number of remediations for a given time.
+        The number of remediations for a given time
 
 
         :return: The count of this ResponderExecutionTrendAggregation.
@@ -144,7 +144,7 @@ class ResponderExecutionTrendAggregation(object):
     def count(self, count):
         """
         Sets the count of this ResponderExecutionTrendAggregation.
-        The number of remediations for a given time.
+        The number of remediations for a given time
 
 
         :param count: The count of this ResponderExecutionTrendAggregation.

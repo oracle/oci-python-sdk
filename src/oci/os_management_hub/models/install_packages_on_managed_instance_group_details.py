@@ -45,7 +45,7 @@ class InstallPackagesOnManagedInstanceGroupDetails(object):
     @property
     def package_names(self):
         """
-        Gets the package_names of this InstallPackagesOnManagedInstanceGroupDetails.
+        **[Required]** Gets the package_names of this InstallPackagesOnManagedInstanceGroupDetails.
         The list of package names.
 
 

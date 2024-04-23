@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TargetDetectorDetails(object):
     """
-    Overriden settings of a Detector Rule applied on target
+    Overriden settings of a detector rule in recipe attached to target.
     """
 
     #: A constant which can be used with the risk_level property of a TargetDetectorDetails.
@@ -117,7 +117,7 @@ class TargetDetectorDetails(object):
     def is_enabled(self):
         """
         **[Required]** Gets the is_enabled of this TargetDetectorDetails.
-        Enables the control
+        Enablement state of the detector rule
 
 
         :return: The is_enabled of this TargetDetectorDetails.
@@ -129,7 +129,7 @@ class TargetDetectorDetails(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this TargetDetectorDetails.
-        Enables the control
+        Enablement state of the detector rule
 
 
         :param is_enabled: The is_enabled of this TargetDetectorDetails.
@@ -141,7 +141,7 @@ class TargetDetectorDetails(object):
     def risk_level(self):
         """
         Gets the risk_level of this TargetDetectorDetails.
-        The Risk Level
+        The risk level of the detector rule
 
         Allowed values for this property are: "CRITICAL", "HIGH", "MEDIUM", "LOW", "MINOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -156,7 +156,7 @@ class TargetDetectorDetails(object):
     def risk_level(self, risk_level):
         """
         Sets the risk_level of this TargetDetectorDetails.
-        The Risk Level
+        The risk level of the detector rule
 
 
         :param risk_level: The risk_level of this TargetDetectorDetails.
@@ -171,7 +171,7 @@ class TargetDetectorDetails(object):
     def configurations(self):
         """
         Gets the configurations of this TargetDetectorDetails.
-        Configuration details
+        List of detector rule configurations
 
 
         :return: The configurations of this TargetDetectorDetails.
@@ -183,7 +183,7 @@ class TargetDetectorDetails(object):
     def configurations(self, configurations):
         """
         Sets the configurations of this TargetDetectorDetails.
-        Configuration details
+        List of detector rule configurations
 
 
         :param configurations: The configurations of this TargetDetectorDetails.
@@ -219,7 +219,7 @@ class TargetDetectorDetails(object):
     def labels(self):
         """
         Gets the labels of this TargetDetectorDetails.
-        user defined labels for a detector rule
+        User-defined labels for a detector rule
 
 
         :return: The labels of this TargetDetectorDetails.
@@ -231,7 +231,7 @@ class TargetDetectorDetails(object):
     def labels(self, labels):
         """
         Sets the labels of this TargetDetectorDetails.
-        user defined labels for a detector rule
+        User-defined labels for a detector rule
 
 
         :param labels: The labels of this TargetDetectorDetails.
@@ -243,7 +243,7 @@ class TargetDetectorDetails(object):
     def is_configuration_allowed(self):
         """
         Gets the is_configuration_allowed of this TargetDetectorDetails.
-        configuration allowed or not
+        Configuration allowed or not
 
 
         :return: The is_configuration_allowed of this TargetDetectorDetails.
@@ -255,7 +255,7 @@ class TargetDetectorDetails(object):
     def is_configuration_allowed(self, is_configuration_allowed):
         """
         Sets the is_configuration_allowed of this TargetDetectorDetails.
-        configuration allowed or not
+        Configuration allowed or not
 
 
         :param is_configuration_allowed: The is_configuration_allowed of this TargetDetectorDetails.
@@ -267,7 +267,7 @@ class TargetDetectorDetails(object):
     def problem_threshold(self):
         """
         Gets the problem_threshold of this TargetDetectorDetails.
-        Cutover point for an elevated resource Risk Score to create a Problem
+        Point at which an elevated resource risk score creates a problem
 
 
         :return: The problem_threshold of this TargetDetectorDetails.
@@ -279,7 +279,7 @@ class TargetDetectorDetails(object):
     def problem_threshold(self, problem_threshold):
         """
         Sets the problem_threshold of this TargetDetectorDetails.
-        Cutover point for an elevated resource Risk Score to create a Problem
+        Point at which an elevated resource risk score creates a problem
 
 
         :param problem_threshold: The problem_threshold of this TargetDetectorDetails.

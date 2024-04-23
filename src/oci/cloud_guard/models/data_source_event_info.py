@@ -12,12 +12,18 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataSourceEventInfo(object):
     """
-    Event info of a data source.
+    This resource can have multiple subtypes, depending on the dataSourceFeedProvider
+    value. For example, if dataSourceFeedProvider is LOGGINGQUERY, this resource
+    will be of type LoggingEventInfo.
     """
 
     #: A constant which can be used with the data_source_feed_provider property of a DataSourceEventInfo.
     #: This constant has a value of "LOGGINGQUERY"
     DATA_SOURCE_FEED_PROVIDER_LOGGINGQUERY = "LOGGINGQUERY"
+
+    #: A constant which can be used with the data_source_feed_provider property of a DataSourceEventInfo.
+    #: This constant has a value of "SCHEDULEDQUERY"
+    DATA_SOURCE_FEED_PROVIDER_SCHEDULEDQUERY = "SCHEDULEDQUERY"
 
     def __init__(self, **kwargs):
         """
@@ -30,7 +36,7 @@ class DataSourceEventInfo(object):
 
         :param data_source_feed_provider:
             The value to assign to the data_source_feed_provider property of this DataSourceEventInfo.
-            Allowed values for this property are: "LOGGINGQUERY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LOGGINGQUERY", "SCHEDULEDQUERY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type data_source_feed_provider: str
 
@@ -62,9 +68,9 @@ class DataSourceEventInfo(object):
     def data_source_feed_provider(self):
         """
         **[Required]** Gets the data_source_feed_provider of this DataSourceEventInfo.
-        Possible type of dataSourceFeed Provider(LoggingQuery)
+        Possible type of dataSourceFeed Provider (LoggingQuery)
 
-        Allowed values for this property are: "LOGGINGQUERY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LOGGINGQUERY", "SCHEDULEDQUERY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -77,13 +83,13 @@ class DataSourceEventInfo(object):
     def data_source_feed_provider(self, data_source_feed_provider):
         """
         Sets the data_source_feed_provider of this DataSourceEventInfo.
-        Possible type of dataSourceFeed Provider(LoggingQuery)
+        Possible type of dataSourceFeed Provider (LoggingQuery)
 
 
         :param data_source_feed_provider: The data_source_feed_provider of this DataSourceEventInfo.
         :type: str
         """
-        allowed_values = ["LOGGINGQUERY"]
+        allowed_values = ["LOGGINGQUERY", "SCHEDULEDQUERY"]
         if not value_allowed_none_or_none_sentinel(data_source_feed_provider, allowed_values):
             data_source_feed_provider = 'UNKNOWN_ENUM_VALUE'
         self._data_source_feed_provider = data_source_feed_provider

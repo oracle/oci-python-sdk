@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateTargetDetectorRecipe(object):
     """
-    The information to be updated in attached Target DetectorRecipe
+    Parameters to update a detector recipe attached to a target.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class UpdateTargetDetectorRecipe(object):
     def target_detector_recipe_id(self):
         """
         **[Required]** Gets the target_detector_recipe_id of this UpdateTargetDetectorRecipe.
-        Identifier for DetectorRecipe.
+        Unique identifier for target detector recipe
 
 
         :return: The target_detector_recipe_id of this UpdateTargetDetectorRecipe.
@@ -58,7 +58,7 @@ class UpdateTargetDetectorRecipe(object):
     def target_detector_recipe_id(self, target_detector_recipe_id):
         """
         Sets the target_detector_recipe_id of this UpdateTargetDetectorRecipe.
-        Identifier for DetectorRecipe.
+        Unique identifier for target detector recipe
 
 
         :param target_detector_recipe_id: The target_detector_recipe_id of this UpdateTargetDetectorRecipe.
@@ -70,7 +70,7 @@ class UpdateTargetDetectorRecipe(object):
     def detector_rules(self):
         """
         **[Required]** Gets the detector_rules of this UpdateTargetDetectorRecipe.
-        Updates to be applied to Detector Rule associated with the target
+        Updates to be applied to detector rules in target detector recipe
 
 
         :return: The detector_rules of this UpdateTargetDetectorRecipe.
@@ -82,7 +82,7 @@ class UpdateTargetDetectorRecipe(object):
     def detector_rules(self, detector_rules):
         """
         Sets the detector_rules of this UpdateTargetDetectorRecipe.
-        Updates to be applied to Detector Rule associated with the target
+        Updates to be applied to detector rules in target detector recipe
 
 
         :param detector_rules: The detector_rules of this UpdateTargetDetectorRecipe.

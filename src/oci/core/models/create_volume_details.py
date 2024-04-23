@@ -53,6 +53,10 @@ class CreateVolumeDetails(object):
             The value to assign to the vpus_per_gb property of this CreateVolumeDetails.
         :type vpus_per_gb: int
 
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this CreateVolumeDetails.
+        :type cluster_placement_group_id: str
+
         :param size_in_gbs:
             The value to assign to the size_in_gbs property of this CreateVolumeDetails.
         :type size_in_gbs: int
@@ -91,6 +95,7 @@ class CreateVolumeDetails(object):
             'freeform_tags': 'dict(str, str)',
             'kms_key_id': 'str',
             'vpus_per_gb': 'int',
+            'cluster_placement_group_id': 'str',
             'size_in_gbs': 'int',
             'size_in_mbs': 'int',
             'source_details': 'VolumeSourceDetails',
@@ -109,6 +114,7 @@ class CreateVolumeDetails(object):
             'freeform_tags': 'freeformTags',
             'kms_key_id': 'kmsKeyId',
             'vpus_per_gb': 'vpusPerGB',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
             'size_in_gbs': 'sizeInGBs',
             'size_in_mbs': 'sizeInMBs',
             'source_details': 'sourceDetails',
@@ -126,6 +132,7 @@ class CreateVolumeDetails(object):
         self._freeform_tags = None
         self._kms_key_id = None
         self._vpus_per_gb = None
+        self._cluster_placement_group_id = None
         self._size_in_gbs = None
         self._size_in_mbs = None
         self._source_details = None
@@ -387,6 +394,30 @@ class CreateVolumeDetails(object):
         :type: int
         """
         self._vpus_per_gb = vpus_per_gb
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this CreateVolumeDetails.
+        The clusterPlacementGroup Id of the volume for volume placement.
+
+
+        :return: The cluster_placement_group_id of this CreateVolumeDetails.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this CreateVolumeDetails.
+        The clusterPlacementGroup Id of the volume for volume placement.
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this CreateVolumeDetails.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
 
     @property
     def size_in_gbs(self):

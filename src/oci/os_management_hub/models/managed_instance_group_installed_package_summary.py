@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagedInstanceGroupInstalledPackageSummary(object):
     """
-    Summary information pertaining to an installed package on a managed instance group.
+    Provides summary information for a package installed on a managed instance group.
     """
 
     def __init__(self, **kwargs):

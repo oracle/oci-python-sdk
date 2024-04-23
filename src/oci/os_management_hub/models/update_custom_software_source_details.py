@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateCustomSoftwareSourceDetails(UpdateSoftwareSourceDetails):
     """
-    Information for updating a custom or software source.
+    Provides the information used to update a custom software source.
     """
 
     def __init__(self, **kwargs):
@@ -58,6 +58,10 @@ class UpdateCustomSoftwareSourceDetails(UpdateSoftwareSourceDetails):
             The value to assign to the is_automatically_updated property of this UpdateCustomSoftwareSourceDetails.
         :type is_automatically_updated: bool
 
+        :param is_auto_resolve_dependencies:
+            The value to assign to the is_auto_resolve_dependencies property of this UpdateCustomSoftwareSourceDetails.
+        :type is_auto_resolve_dependencies: bool
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -68,7 +72,8 @@ class UpdateCustomSoftwareSourceDetails(UpdateSoftwareSourceDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'vendor_software_sources': 'list[Id]',
             'custom_software_source_filter': 'CustomSoftwareSourceFilter',
-            'is_automatically_updated': 'bool'
+            'is_automatically_updated': 'bool',
+            'is_auto_resolve_dependencies': 'bool'
         }
 
         self.attribute_map = {
@@ -80,7 +85,8 @@ class UpdateCustomSoftwareSourceDetails(UpdateSoftwareSourceDetails):
             'defined_tags': 'definedTags',
             'vendor_software_sources': 'vendorSoftwareSources',
             'custom_software_source_filter': 'customSoftwareSourceFilter',
-            'is_automatically_updated': 'isAutomaticallyUpdated'
+            'is_automatically_updated': 'isAutomaticallyUpdated',
+            'is_auto_resolve_dependencies': 'isAutoResolveDependencies'
         }
 
         self._compartment_id = None
@@ -92,13 +98,14 @@ class UpdateCustomSoftwareSourceDetails(UpdateSoftwareSourceDetails):
         self._vendor_software_sources = None
         self._custom_software_source_filter = None
         self._is_automatically_updated = None
+        self._is_auto_resolve_dependencies = None
         self._software_source_type = 'CUSTOM'
 
     @property
     def vendor_software_sources(self):
         """
         Gets the vendor_software_sources of this UpdateCustomSoftwareSourceDetails.
-        List of vendor software sources.
+        List of vendor software sources that are used for the basis of the custom software source.
 
 
         :return: The vendor_software_sources of this UpdateCustomSoftwareSourceDetails.
@@ -110,7 +117,7 @@ class UpdateCustomSoftwareSourceDetails(UpdateSoftwareSourceDetails):
     def vendor_software_sources(self, vendor_software_sources):
         """
         Sets the vendor_software_sources of this UpdateCustomSoftwareSourceDetails.
-        List of vendor software sources.
+        List of vendor software sources that are used for the basis of the custom software source.
 
 
         :param vendor_software_sources: The vendor_software_sources of this UpdateCustomSoftwareSourceDetails.
@@ -142,7 +149,7 @@ class UpdateCustomSoftwareSourceDetails(UpdateSoftwareSourceDetails):
     def is_automatically_updated(self):
         """
         Gets the is_automatically_updated of this UpdateCustomSoftwareSourceDetails.
-        Indicates whether service should automatically update the custom software source for the user.
+        Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
 
 
         :return: The is_automatically_updated of this UpdateCustomSoftwareSourceDetails.
@@ -154,13 +161,37 @@ class UpdateCustomSoftwareSourceDetails(UpdateSoftwareSourceDetails):
     def is_automatically_updated(self, is_automatically_updated):
         """
         Sets the is_automatically_updated of this UpdateCustomSoftwareSourceDetails.
-        Indicates whether service should automatically update the custom software source for the user.
+        Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
 
 
         :param is_automatically_updated: The is_automatically_updated of this UpdateCustomSoftwareSourceDetails.
         :type: bool
         """
         self._is_automatically_updated = is_automatically_updated
+
+    @property
+    def is_auto_resolve_dependencies(self):
+        """
+        Gets the is_auto_resolve_dependencies of this UpdateCustomSoftwareSourceDetails.
+        Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+
+
+        :return: The is_auto_resolve_dependencies of this UpdateCustomSoftwareSourceDetails.
+        :rtype: bool
+        """
+        return self._is_auto_resolve_dependencies
+
+    @is_auto_resolve_dependencies.setter
+    def is_auto_resolve_dependencies(self, is_auto_resolve_dependencies):
+        """
+        Sets the is_auto_resolve_dependencies of this UpdateCustomSoftwareSourceDetails.
+        Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+
+
+        :param is_auto_resolve_dependencies: The is_auto_resolve_dependencies of this UpdateCustomSoftwareSourceDetails.
+        :type: bool
+        """
+        self._is_auto_resolve_dependencies = is_auto_resolve_dependencies
 
     def __repr__(self):
         return formatted_flat_dict(self)

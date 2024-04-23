@@ -22,7 +22,8 @@ missing = Sentinel("Missing")
 
 class ManagedInstanceGroupClient(object):
     """
-    Use the OS Management Hub API to manage and monitor updates and patches for the operating system environments in your private data centers through a single management console. For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+    Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
+    For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -118,17 +119,18 @@ class ManagedInstanceGroupClient(object):
 
     def attach_managed_instances_to_managed_instance_group(self, managed_instance_group_id, attach_managed_instances_to_managed_instance_group_details, **kwargs):
         """
-        Adds managed instances to the specified managed instance group. After the managed
-        instances have been added, then operations can be performed on the managed
-        instance group which will then apply to all managed instances in the
-        group.
+        Adds managed instances to the specified managed instance group. After adding instances to the group, any operation applied to the group will be applied to all instances in the group.
 
 
         :param str managed_instance_group_id: (required)
-            The managed instance group OCID.
+            The `OCID`__ of the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.AttachManagedInstancesToManagedInstanceGroupDetails attach_managed_instances_to_managed_instance_group_details: (required)
-            Details for managed instances to attach to the managed instance group.
+            The managed instances `OCIDs`__ to attach to the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -241,14 +243,18 @@ class ManagedInstanceGroupClient(object):
 
     def attach_software_sources_to_managed_instance_group(self, managed_instance_group_id, attach_software_sources_to_managed_instance_group_details, **kwargs):
         """
-        Attaches software sources to the specified managed instance group. The software sources must be compatible with the content for the managed instance group.
+        Attaches software sources to the specified managed instance group. The software sources must be compatible with the type of instances in the group.
 
 
         :param str managed_instance_group_id: (required)
-            The managed instance group OCID.
+            The `OCID`__ of the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.AttachSoftwareSourcesToManagedInstanceGroupDetails attach_software_sources_to_managed_instance_group_details: (required)
-            Details for software sources to attach to the managed instance group.
+            The software source `OCIDs`__ to attach to the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -359,13 +365,139 @@ class ManagedInstanceGroupClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def change_managed_instance_group_compartment(self, managed_instance_group_id, change_managed_instance_group_compartment_details, **kwargs):
+        """
+        Moves the specified managed instance group to a different compartment within the same tenancy. For information about moving resources between compartments, see `Moving Resources to a Different Compartment`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+
+
+        :param str managed_instance_group_id: (required)
+            The `OCID`__ of the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.os_management_hub.models.ChangeManagedInstanceGroupCompartmentDetails change_managed_instance_group_compartment_details: (required)
+            The `OCID`__ of the compartment to move the group to.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/change_managed_instance_group_compartment.py.html>`__ to see an example of how to use change_managed_instance_group_compartment API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedInstanceGroupId']
+        resource_path = "/managedInstanceGroups/{managedInstanceGroupId}/actions/changeCompartment"
+        method = "POST"
+        operation_name = "change_managed_instance_group_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ChangeManagedInstanceGroupCompartment"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"change_managed_instance_group_compartment got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "managedInstanceGroupId": managed_instance_group_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_managed_instance_group_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_managed_instance_group_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def create_managed_instance_group(self, create_managed_instance_group_details, **kwargs):
         """
         Creates a new managed instance group.
 
 
         :param oci.os_management_hub.models.CreateManagedInstanceGroupDetails create_managed_instance_group_details: (required)
-            Details for the new managed instance group.
+            Provides the information used to create the managed instance group.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -459,11 +591,13 @@ class ManagedInstanceGroupClient(object):
 
     def delete_managed_instance_group(self, managed_instance_group_id, **kwargs):
         """
-        Deletes a specified managed instance group.
+        Deletes the specified managed instance group.
 
 
         :param str managed_instance_group_id: (required)
-            The managed instance group OCID.
+            The `OCID`__ of the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -568,10 +702,14 @@ class ManagedInstanceGroupClient(object):
 
 
         :param str managed_instance_group_id: (required)
-            The managed instance group OCID.
+            The `OCID`__ of the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.DetachManagedInstancesFromManagedInstanceGroupDetails detach_managed_instances_from_managed_instance_group_details: (required)
-            Details for managed instances to detach from the managed instance group.
+            The managed instance `OCIDs`__ to detach from the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -684,14 +822,18 @@ class ManagedInstanceGroupClient(object):
 
     def detach_software_sources_from_managed_instance_group(self, managed_instance_group_id, detach_software_sources_from_managed_instance_group_details, **kwargs):
         """
-        Detaches software sources from a group.
+        Detaches the specified software sources from a managed instance group.
 
 
         :param str managed_instance_group_id: (required)
-            The managed instance group OCID.
+            The `OCID`__ of the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.DetachSoftwareSourcesFromManagedInstanceGroupDetails detach_software_sources_from_managed_instance_group_details: (required)
-            Details for software sources to attach to the specified managed instance group.
+            The software source `OCIDs`__ to detach from the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -804,17 +946,16 @@ class ManagedInstanceGroupClient(object):
 
     def disable_module_stream_on_managed_instance_group(self, managed_instance_group_id, disable_module_stream_on_managed_instance_group_details, **kwargs):
         """
-        Disables a module stream on a managed instance group. After the stream is
-        disabled, it is no longer possible to install the profiles that are
-        contained by the stream. All installed profiles must be removed prior
-        to disabling a module stream.
+        Disables a module stream on a managed instance group. After the stream is disabled, you can no longer install the profiles contained by the stream.  Before removing the stream, you must remove all installed profiles for the stream by using the :func:`remove_module_stream_profile_from_managed_instance_group` operation.
 
 
         :param str managed_instance_group_id: (required)
-            The managed instance group OCID.
+            The `OCID`__ of the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.DisableModuleStreamOnManagedInstanceGroupDetails disable_module_stream_on_managed_instance_group_details: (required)
-            Details for modules to disable on the managed instance group.
+            The details used to disable modules on the managed instance group.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -927,18 +1068,16 @@ class ManagedInstanceGroupClient(object):
 
     def enable_module_stream_on_managed_instance_group(self, managed_instance_group_id, enable_module_stream_on_managed_instance_group_details, **kwargs):
         """
-        Enables a module stream on a managed instance group.  After the stream is
-        enabled, it is possible to install the profiles that are contained
-        by the stream.  Enabling a stream that is already enabled will
-        succeed.  Attempting to enable a different stream for a module that
-        already has a stream enabled results in an error.
+        Enables a module stream on a managed instance group.  After the stream is enabled, you can install a module stream profile. Enabling a stream that is already enabled will succeed.  Enabling a different stream for a module that already has a stream enabled results in an error. Instead, use the :func:`switch_module_stream_on_managed_instance_group` operation.
 
 
         :param str managed_instance_group_id: (required)
-            The managed instance group OCID.
+            The `OCID`__ of the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.EnableModuleStreamOnManagedInstanceGroupDetails enable_module_stream_on_managed_instance_group_details: (required)
-            Details for modules to enable on the managed instance group.
+            The details used to enable the module stream on the managed instance group.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -1055,7 +1194,9 @@ class ManagedInstanceGroupClient(object):
 
 
         :param str managed_instance_group_id: (required)
-            The managed instance group OCID.
+            The `OCID`__ of the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -1149,16 +1290,16 @@ class ManagedInstanceGroupClient(object):
 
     def install_module_stream_profile_on_managed_instance_group(self, managed_instance_group_id, install_module_stream_profile_on_managed_instance_group_details, **kwargs):
         """
-        Installs a profile for an module stream. The stream must be
-        enabled before a profile can be installed. If a module stream
-        defines multiple profiles, each one can be installed independently.
+        Installs a profile for an enabled module stream. If a module stream defines multiple profiles, you can install each one independently.
 
 
         :param str managed_instance_group_id: (required)
-            The managed instance group OCID.
+            The `OCID`__ of the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.InstallModuleStreamProfileOnManagedInstanceGroupDetails install_module_stream_profile_on_managed_instance_group_details: (required)
-            Details for profiles to install on the managed instance group.
+            The details used to install module stream profiles on a managed instance gorup.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -1271,15 +1412,16 @@ class ManagedInstanceGroupClient(object):
 
     def install_packages_on_managed_instance_group(self, managed_instance_group_id, install_packages_on_managed_instance_group_details, **kwargs):
         """
-        Installs package(s) on each managed instance in a managed instance group. The package must be compatible with the
-        instances in the managed instance group.
+        Installs the specified packages on each managed instance in a managed instance group. The package must be compatible with the instances in the group.
 
 
         :param str managed_instance_group_id: (required)
-            The managed instance group OCID.
+            The `OCID`__ of the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.InstallPackagesOnManagedInstanceGroupDetails install_packages_on_managed_instance_group_details: (required)
-            Details for packages to install on the specified managed instance group.
+            The names of packages to install on the specified managed instance group.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -1390,17 +1532,140 @@ class ManagedInstanceGroupClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def list_managed_instance_group_available_modules(self, managed_instance_group_id, **kwargs):
+    def install_windows_updates_on_managed_instance_group(self, managed_instance_group_id, install_windows_updates_on_managed_instance_group_details, **kwargs):
         """
-        Lists available modules that for the specified managed instance group. Filter the list against a variety of
-        criteria including but not limited to its name.
+        Installs Windows updates on each managed instance in the managed instance group.
 
 
         :param str managed_instance_group_id: (required)
-            The managed instance group OCID.
+            The `OCID`__ of the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.os_management_hub.models.InstallWindowsUpdatesOnManagedInstanceGroupDetails install_windows_updates_on_managed_instance_group_details: (required)
+            Provides the details used to install Windows updates on a managed instance group.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/install_windows_updates_on_managed_instance_group.py.html>`__ to see an example of how to use install_windows_updates_on_managed_instance_group API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedInstanceGroupId']
+        resource_path = "/managedInstanceGroups/{managedInstanceGroupId}/actions/installWindowsUpdates"
+        method = "POST"
+        operation_name = "install_windows_updates_on_managed_instance_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/InstallWindowsUpdatesOnManagedInstanceGroup"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"install_windows_updates_on_managed_instance_group got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "managedInstanceGroupId": managed_instance_group_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=install_windows_updates_on_managed_instance_group_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=install_windows_updates_on_managed_instance_group_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_managed_instance_group_available_modules(self, managed_instance_group_id, **kwargs):
+        """
+        List modules that are available for installation on the specified managed instance group. Filter the list against a variety of criteria including but not limited to module name.
+
+
+        :param str managed_instance_group_id: (required)
+            The `OCID`__ of the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
-            The OCID of the compartment that contains the resources to list.
+            The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 
         :param str name: (optional)
             The resource name.
@@ -1565,7 +1830,9 @@ class ManagedInstanceGroupClient(object):
 
 
         :param str managed_instance_group_id: (required)
-            The managed instance group OCID.
+            The `OCID`__ of the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] display_name: (optional)
             A filter to return resources that match the given display names.
@@ -1574,7 +1841,7 @@ class ManagedInstanceGroupClient(object):
             A filter to return resources that may partially match the given display name.
 
         :param str compartment_id: (optional)
-            The OCID of the compartment that contains the resources to list.
+            The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
@@ -1603,9 +1870,7 @@ class ManagedInstanceGroupClient(object):
             Allowed values are: "timeCreated", "displayName"
 
         :param bool is_latest: (optional)
-            A boolean variable that is used to list only the latest versions of packages, module streams,
-            and stream profiles when set to true. All packages, module streams, and stream profiles are
-            returned when set to false.
+            Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -1735,12 +2000,13 @@ class ManagedInstanceGroupClient(object):
 
     def list_managed_instance_group_available_software_sources(self, managed_instance_group_id, **kwargs):
         """
-        Lists available software sources for a specified managed instance group. Filter the list against a variety of
-        criteria including but not limited to its name.
+        Lists available software sources for a specified managed instance group. Filter the list against a variety of criteria including but not limited to the software source name. The results list only software sources that have not already been added to the group.
 
 
         :param str managed_instance_group_id: (required)
-            The managed instance group OCID.
+            The `OCID`__ of the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] display_name: (optional)
             A filter to return resources that match the given display names.
@@ -1749,7 +2015,7 @@ class ManagedInstanceGroupClient(object):
             A filter to return resources that may partially match the given display name.
 
         :param str compartment_id: (optional)
-            The OCID of the compartment that contains the resources to list.
+            The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
@@ -1908,7 +2174,9 @@ class ManagedInstanceGroupClient(object):
 
 
         :param str managed_instance_group_id: (required)
-            The managed instance group OCID.
+            The `OCID`__ of the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] display_name: (optional)
             A filter to return resources that match the given display names.
@@ -1922,12 +2190,12 @@ class ManagedInstanceGroupClient(object):
             Example: 2017-07-14T02:40:00.000Z
 
         :param datetime time_install_date_end: (optional)
-            The install date before which to list all packages, in ISO 8601 format.
+            A filter to return only packages that were installed on or before the date provided, in ISO 8601 format.
 
             Example: 2017-07-14T02:40:00.000Z
 
         :param str compartment_id: (optional)
-            The OCID of the compartment that contains the resources to list.
+            The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
@@ -2109,10 +2377,12 @@ class ManagedInstanceGroupClient(object):
 
 
         :param str managed_instance_group_id: (required)
-            The managed instance group OCID.
+            The `OCID`__ of the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
-            The OCID of the compartment that contains the resources to list.
+            The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 
         :param str name: (optional)
             The resource name.
@@ -2121,8 +2391,7 @@ class ManagedInstanceGroupClient(object):
             A filter to return resources that may partially match the name given.
 
         :param str stream_name: (optional)
-            The name of the stream of the containing module.  This parameter
-            is required if a profileName is specified.
+            The name of the module stream. This parameter is required if a profile name is specified.
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
@@ -2278,18 +2547,23 @@ class ManagedInstanceGroupClient(object):
 
     def list_managed_instance_groups(self, **kwargs):
         """
-        Lists managed instance groups that match the specified compartment or managed instance group OCID. Filter the
-        list against a variety of criteria including but not limited to its name, status, architecture, and OS family.
+        Lists managed instance groups that match the specified compartment or managed instance group `OCID`__. Filter the list against a variety of criteria including but not limited to name, status, architecture, and OS family.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str compartment_id: (optional)
-            The OCID of the compartment that contains the resources to list.
+            The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 
         :param str managed_instance_group_id: (optional)
-            The OCID of the managed instance group for which to list resources.
+            The `OCID`__ of the managed instance group. This filter returns resources associated with this group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str software_source_id: (optional)
-            The OCID for the software source.
+            The `OCID`__ of the software source. This filter returns resources associated with this software source.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] display_name: (optional)
             A filter to return resources that match the given display names.
@@ -2303,9 +2577,9 @@ class ManagedInstanceGroupClient(object):
             Allowed values are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC"
 
         :param str os_family: (optional)
-            A filter to return only profiles that match the given osFamily.
+            A filter to return only resources that match the given operating system family.
 
-            Allowed values are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7"
+            Allowed values are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
@@ -2324,9 +2598,22 @@ class ManagedInstanceGroupClient(object):
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources their lifecycle state matches the given lifecycle state.
+            A filter to return only managed instance groups that are in the specified state.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+
+        :param list[str] location: (optional)
+            A filter to return only resources whose location matches the given value.
+
+            Allowed values are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"
+
+        :param list[str] location_not_equal_to: (optional)
+            A filter to return only resources whose location does not match the given value.
+
+            Allowed values are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"
+
+        :param bool is_managed_by_autonomous_linux: (optional)
+            Indicates whether to list only resources managed by the Autonomous Linux service.
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -2380,6 +2667,9 @@ class ManagedInstanceGroupClient(object):
             "limit",
             "page",
             "lifecycle_state",
+            "location",
+            "location_not_equal_to",
+            "is_managed_by_autonomous_linux",
             "sort_order",
             "sort_by",
             "opc_request_id"
@@ -2397,7 +2687,7 @@ class ManagedInstanceGroupClient(object):
                 )
 
         if 'os_family' in kwargs:
-            os_family_allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7"]
+            os_family_allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"]
             if kwargs['os_family'] not in os_family_allowed_values:
                 raise ValueError(
                     f"Invalid value for `os_family`, must be one of { os_family_allowed_values }"
@@ -2409,6 +2699,22 @@ class ManagedInstanceGroupClient(object):
                 raise ValueError(
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
+
+        if 'location' in kwargs:
+            location_allowed_values = ["ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"]
+            for location_item in kwargs['location']:
+                if location_item not in location_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `location`, must be one of { location_allowed_values }"
+                    )
+
+        if 'location_not_equal_to' in kwargs:
+            location_not_equal_to_allowed_values = ["ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"]
+            for location_not_equal_to_item in kwargs['location_not_equal_to']:
+                if location_not_equal_to_item not in location_not_equal_to_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `location_not_equal_to`, must be one of { location_not_equal_to_allowed_values }"
+                    )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
@@ -2435,6 +2741,9 @@ class ManagedInstanceGroupClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "location": self.base_client.generate_collection_format_param(kwargs.get("location", missing), 'multi'),
+            "locationNotEqualTo": self.base_client.generate_collection_format_param(kwargs.get("location_not_equal_to", missing), 'multi'),
+            "isManagedByAutonomousLinux": kwargs.get("is_managed_by_autonomous_linux", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing)
         }
@@ -2483,73 +2792,17 @@ class ManagedInstanceGroupClient(object):
 
     def manage_module_streams_on_managed_instance_group(self, managed_instance_group_id, manage_module_streams_on_managed_instance_group_details, **kwargs):
         """
-        Perform an operation involving modules, streams, and profiles on a
-        managed instance group.  Each operation may enable or disable an arbitrary
-        amount of module streams, and install or remove an arbitrary number
-        of module stream profiles.  When the operation is complete, the
-        state of the modules, streams, and profiles on the managed instance group
-        will match the state indicated in the operation.
-
-        Each module stream specified in the list of module streams to enable
-        will be in the \"ENABLED\" state upon completion of the operation.
-        If there was already a stream of that module enabled, any work
-        required to switch from the current stream to the new stream is
-        performed implicitly.
-
-        Each module stream specified in the list of module streams to disable
-        will be in the \"DISABLED\" state upon completion of the operation.
-        Any profiles that are installed for the module stream will be removed
-        as part of the operation.
-
-        Each module stream profile specified in the list of profiles to install
-        will be in the \"INSTALLED\" state upon completion of the operation,
-        indicating that any packages that are part of the profile are installed
-        on the managed instance.  If the module stream containing the profile
-        is not enabled, it will be enabled as part of the operation. There
-        is an exception when attempting to install a stream of a profile when
-        another stream of the same module is enabled.  It is an error to attempt
-        to install a profile of another module stream, unless enabling the
-        new module stream is explicitly included in this operation.
-
-        Each module stream profile specified in the list of profiles to remove
-        will be in the \"AVAILABLE\" state upon completion of the operation.
-        The status of packages within the profile after the operation is
-        complete is defined by the package manager on the managed instance group.
-
-        Operations that contain one or more elements that are not allowed
-        are rejected.
-
-        The result of this request is a work request object. The returned
-        work request is the parent of a structure of other work requests.  Taken
-        as a whole, this structure indicates the entire set of work to be
-        performed to complete the operation.
-
-        This interface can also be used to perform a dry run of the operation
-        rather than committing it to a managed instance group.  If a dry run is
-        requested, the OS Management Hub service will evaluate the operation
-        against the current module, stream, and profile state on the managed
-        instance.  It will calculate the impact of the operation on all
-        modules, streams, and profiles on the managed instance, including those
-        that are implicitly impacted by the operation.
-
-        The work request resulting from a dry run behaves differently than
-        a work request resulting from a committable operation.  Dry run
-        work requests are always singletons and never have children. The
-        impact of the operation is returned using the log and error
-        facilities of work requests. The impact of operations that are
-        allowed by the OS Management Hub service are communicated as one or
-        more work request log entries.  Operations that are not allowed
-        by the OS Management Hub service are communicated as one or more
-        work request error entries.  Each entry, for either logs or errors,
-        contains a structured message containing the results of one
-        or more operations.
+        Enables or disables module streams and installs or removes module stream profiles. Once complete, the state of the modules, streams, and profiles will match the state indicated in the operation. See :func:`manage_module_streams_on_managed_instance_group_details` for more information.
+        You can preform this operation as a dry run. For a dry run, the service evaluates the operation against the current module, stream, and profile state on the managed instance, but does not commit the changes. Instead, the service returns work request log or error entries indicating the impact of the operation.
 
 
         :param str managed_instance_group_id: (required)
-            The managed instance group OCID.
+            The `OCID`__ of the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.ManageModuleStreamsOnManagedInstanceGroupDetails manage_module_streams_on_managed_instance_group_details: (required)
-            A description of an operation to perform against the modules, streams, and profiles of a managed instance group
+            The set of changes to make to the modules, streams, and profiles on a managed instance group.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -2662,16 +2915,16 @@ class ManagedInstanceGroupClient(object):
 
     def remove_module_stream_profile_from_managed_instance_group(self, managed_instance_group_id, remove_module_stream_profile_from_managed_instance_group_details, **kwargs):
         """
-        Removes a profile for a module stream that is installed on a managed instance group.
-        If a module stream is provided, rather than a fully qualified profile, all
-        profiles that have been installed for the module stream will be removed.
+        Removes a profile for a module stream that is installed on a managed instance group. Providing the module stream name (without specifying a profile name) removes all profiles that have been installed for the module stream.
 
 
         :param str managed_instance_group_id: (required)
-            The managed instance group OCID.
+            The `OCID`__ of the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.RemoveModuleStreamProfileFromManagedInstanceGroupDetails remove_module_stream_profile_from_managed_instance_group_details: (required)
-            Details for profiles to remove from the managed instance group.
+            The details used to remove profiles from the managed instance group. Providing the module stream name (without specifying a profile name) removes all profiles that have been installed for the module stream.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -2784,14 +3037,16 @@ class ManagedInstanceGroupClient(object):
 
     def remove_packages_from_managed_instance_group(self, managed_instance_group_id, remove_packages_from_managed_instance_group_details, **kwargs):
         """
-        Removes package(s) from each managed instance in a specified managed instance group.
+        Removes the specified packages from each managed instance in a managed instance group.
 
 
         :param str managed_instance_group_id: (required)
-            The managed instance group OCID.
+            The `OCID`__ of the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.RemovePackagesFromManagedInstanceGroupDetails remove_packages_from_managed_instance_group_details: (required)
-            Details for packages to remove from the managed instance group.
+            The names of packages to remove from the specified managed instance group.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -2902,13 +3157,140 @@ class ManagedInstanceGroupClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def switch_module_stream_on_managed_instance_group(self, managed_instance_group_id, switch_module_stream_on_managed_instance_group_details, **kwargs):
+        """
+        Enables a new stream for a module that already has a stream enabled.
+        If any profiles or packages from the original module are installed,
+        switching to a new stream will remove the existing packages and
+        install their counterparts in the new stream.
+
+
+        :param str managed_instance_group_id: (required)
+            The `OCID`__ of the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.os_management_hub.models.SwitchModuleStreamOnManagedInstanceGroupDetails switch_module_stream_on_managed_instance_group_details: (required)
+            Provides the details used to switch module streams on a managed instance group.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/switch_module_stream_on_managed_instance_group.py.html>`__ to see an example of how to use switch_module_stream_on_managed_instance_group API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['managedInstanceGroupId']
+        resource_path = "/managedInstanceGroups/{managedInstanceGroupId}/actions/moduleStreams/switchModuleStream"
+        method = "POST"
+        operation_name = "switch_module_stream_on_managed_instance_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/SwitchModuleStreamOnManagedInstanceGroup"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"switch_module_stream_on_managed_instance_group got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "managedInstanceGroupId": managed_instance_group_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=switch_module_stream_on_managed_instance_group_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=switch_module_stream_on_managed_instance_group_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def update_all_packages_on_managed_instance_group(self, managed_instance_group_id, update_all_packages_on_managed_instance_group_details, **kwargs):
         """
         Updates all packages on each managed instance in the specified managed instance group.
 
 
         :param str managed_instance_group_id: (required)
-            The managed instance group OCID.
+            The `OCID`__ of the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.UpdateAllPackagesOnManagedInstanceGroupDetails update_all_packages_on_managed_instance_group_details: (required)
             Details for update operation on the managed instance group.
@@ -3028,10 +3410,12 @@ class ManagedInstanceGroupClient(object):
 
 
         :param str managed_instance_group_id: (required)
-            The managed instance group OCID.
+            The `OCID`__ of the managed instance group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.UpdateManagedInstanceGroupDetails update_managed_instance_group_details: (required)
-            The information to be updated.
+            Provides the details used to update the managed instance group.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call

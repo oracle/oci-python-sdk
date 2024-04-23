@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourceProfile(object):
     """
-    Resource profile details
+    Resource profile details.
     """
 
     #: A constant which can be used with the risk_level property of a ResourceProfile.
@@ -102,6 +102,10 @@ class ResourceProfile(object):
             The value to assign to the tactics property of this ResourceProfile.
         :type tactics: list[oci.cloud_guard.models.TacticSummary]
 
+        :param locks:
+            The value to assign to the locks property of this ResourceProfile.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
             'sightings_count': 'int',
@@ -118,7 +122,8 @@ class ResourceProfile(object):
             'time_peak_score': 'datetime',
             'time_first_detected': 'datetime',
             'time_last_detected': 'datetime',
-            'tactics': 'list[TacticSummary]'
+            'tactics': 'list[TacticSummary]',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -136,7 +141,8 @@ class ResourceProfile(object):
             'time_peak_score': 'timePeakScore',
             'time_first_detected': 'timeFirstDetected',
             'time_last_detected': 'timeLastDetected',
-            'tactics': 'tactics'
+            'tactics': 'tactics',
+            'locks': 'locks'
         }
 
         self._sightings_count = None
@@ -154,12 +160,13 @@ class ResourceProfile(object):
         self._time_first_detected = None
         self._time_last_detected = None
         self._tactics = None
+        self._locks = None
 
     @property
     def sightings_count(self):
         """
         Gets the sightings_count of this ResourceProfile.
-        Number of sightings associated with this resource profile
+        Number of sightings associated with the resource profile
 
 
         :return: The sightings_count of this ResourceProfile.
@@ -171,7 +178,7 @@ class ResourceProfile(object):
     def sightings_count(self, sightings_count):
         """
         Sets the sightings_count of this ResourceProfile.
-        Number of sightings associated with this resource profile
+        Number of sightings associated with the resource profile
 
 
         :param sightings_count: The sightings_count of this ResourceProfile.
@@ -183,7 +190,7 @@ class ResourceProfile(object):
     def id(self):
         """
         **[Required]** Gets the id of this ResourceProfile.
-        Unique identifier for resource profile
+        Unique identifier for the resource profile
 
 
         :return: The id of this ResourceProfile.
@@ -195,7 +202,7 @@ class ResourceProfile(object):
     def id(self, id):
         """
         Sets the id of this ResourceProfile.
-        Unique identifier for resource profile
+        Unique identifier for the resource profile
 
 
         :param id: The id of this ResourceProfile.
@@ -207,7 +214,7 @@ class ResourceProfile(object):
     def resource_id(self):
         """
         **[Required]** Gets the resource_id of this ResourceProfile.
-        Unique identifier for resource profile
+        Unique identifier for the resource associated with the resource profile
 
 
         :return: The resource_id of this ResourceProfile.
@@ -219,7 +226,7 @@ class ResourceProfile(object):
     def resource_id(self, resource_id):
         """
         Sets the resource_id of this ResourceProfile.
-        Unique identifier for resource profile
+        Unique identifier for the resource associated with the resource profile
 
 
         :param resource_id: The resource_id of this ResourceProfile.
@@ -231,7 +238,7 @@ class ResourceProfile(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this ResourceProfile.
-        Resource name for resource profile
+        Display name for the resource profile
 
 
         :return: The display_name of this ResourceProfile.
@@ -243,7 +250,7 @@ class ResourceProfile(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ResourceProfile.
-        Resource name for resource profile
+        Display name for the resource profile
 
 
         :param display_name: The display_name of this ResourceProfile.
@@ -255,7 +262,7 @@ class ResourceProfile(object):
     def type(self):
         """
         **[Required]** Gets the type of this ResourceProfile.
-        Resource type for resource profile
+        Resource type for the resource profile
 
 
         :return: The type of this ResourceProfile.
@@ -267,7 +274,7 @@ class ResourceProfile(object):
     def type(self, type):
         """
         Sets the type of this ResourceProfile.
-        Resource type for resource profile
+        Resource type for the resource profile
 
 
         :param type: The type of this ResourceProfile.
@@ -279,7 +286,7 @@ class ResourceProfile(object):
     def problem_ids(self):
         """
         Gets the problem_ids of this ResourceProfile.
-        List of Problems associated with the resource profile.
+        List of problems IDs associated with the resource profile
 
 
         :return: The problem_ids of this ResourceProfile.
@@ -291,7 +298,7 @@ class ResourceProfile(object):
     def problem_ids(self, problem_ids):
         """
         Sets the problem_ids of this ResourceProfile.
-        List of Problems associated with the resource profile.
+        List of problems IDs associated with the resource profile
 
 
         :param problem_ids: The problem_ids of this ResourceProfile.
@@ -303,7 +310,7 @@ class ResourceProfile(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ResourceProfile.
-        Compartment Id for resource profile
+        Compartment OCID for the resource profile
 
 
         :return: The compartment_id of this ResourceProfile.
@@ -315,7 +322,7 @@ class ResourceProfile(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ResourceProfile.
-        Compartment Id for resource profile
+        Compartment OCID for the resource profile
 
 
         :param compartment_id: The compartment_id of this ResourceProfile.
@@ -327,7 +334,7 @@ class ResourceProfile(object):
     def target_id(self):
         """
         Gets the target_id of this ResourceProfile.
-        Target Id for resource profile
+        Unique target ID for the resource profile
 
 
         :return: The target_id of this ResourceProfile.
@@ -339,7 +346,7 @@ class ResourceProfile(object):
     def target_id(self, target_id):
         """
         Sets the target_id of this ResourceProfile.
-        Target Id for resource profile
+        Unique target ID for the resource profile
 
 
         :param target_id: The target_id of this ResourceProfile.
@@ -351,7 +358,7 @@ class ResourceProfile(object):
     def risk_score(self):
         """
         **[Required]** Gets the risk_score of this ResourceProfile.
-        Risk Score for the resource profile
+        Risk score for the resource profile
 
 
         :return: The risk_score of this ResourceProfile.
@@ -363,7 +370,7 @@ class ResourceProfile(object):
     def risk_score(self, risk_score):
         """
         Sets the risk_score of this ResourceProfile.
-        Risk Score for the resource profile
+        Risk score for the resource profile
 
 
         :param risk_score: The risk_score of this ResourceProfile.
@@ -375,7 +382,7 @@ class ResourceProfile(object):
     def risk_level(self):
         """
         Gets the risk_level of this ResourceProfile.
-        Risk Level associated with resource profile
+        Risk level associated with resource profile
 
         Allowed values for this property are: "CRITICAL", "HIGH", "MEDIUM", "LOW", "MINOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -390,7 +397,7 @@ class ResourceProfile(object):
     def risk_level(self, risk_level):
         """
         Sets the risk_level of this ResourceProfile.
-        Risk Level associated with resource profile
+        Risk level associated with resource profile
 
 
         :param risk_level: The risk_level of this ResourceProfile.
@@ -405,7 +412,7 @@ class ResourceProfile(object):
     def peak_risk_score(self):
         """
         Gets the peak_risk_score of this ResourceProfile.
-        Peak Risk Score for the resource profile
+        Peak risk score for the resource profile
 
 
         :return: The peak_risk_score of this ResourceProfile.
@@ -417,7 +424,7 @@ class ResourceProfile(object):
     def peak_risk_score(self, peak_risk_score):
         """
         Sets the peak_risk_score of this ResourceProfile.
-        Peak Risk Score for the resource profile
+        Peak risk score for the resource profile
 
 
         :param peak_risk_score: The peak_risk_score of this ResourceProfile.
@@ -429,7 +436,7 @@ class ResourceProfile(object):
     def time_peak_score(self):
         """
         Gets the time_peak_score of this ResourceProfile.
-        The date and time for peak risk score. Format defined by RFC3339.
+        The date and time for the peak risk score. Format defined by RFC3339.
 
 
         :return: The time_peak_score of this ResourceProfile.
@@ -441,7 +448,7 @@ class ResourceProfile(object):
     def time_peak_score(self, time_peak_score):
         """
         Sets the time_peak_score of this ResourceProfile.
-        The date and time for peak risk score. Format defined by RFC3339.
+        The date and time for the peak risk score. Format defined by RFC3339.
 
 
         :param time_peak_score: The time_peak_score of this ResourceProfile.
@@ -501,7 +508,7 @@ class ResourceProfile(object):
     def tactics(self):
         """
         **[Required]** Gets the tactics of this ResourceProfile.
-        List of tactic summary associated with the resource profile.
+        List of tactic summaries associated with the resource profile
 
 
         :return: The tactics of this ResourceProfile.
@@ -513,13 +520,37 @@ class ResourceProfile(object):
     def tactics(self, tactics):
         """
         Sets the tactics of this ResourceProfile.
-        List of tactic summary associated with the resource profile.
+        List of tactic summaries associated with the resource profile
 
 
         :param tactics: The tactics of this ResourceProfile.
         :type: list[oci.cloud_guard.models.TacticSummary]
         """
         self._tactics = tactics
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this ResourceProfile.
+        Locks associated with this resource.
+
+
+        :return: The locks of this ResourceProfile.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this ResourceProfile.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this ResourceProfile.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

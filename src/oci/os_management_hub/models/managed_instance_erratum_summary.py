@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagedInstanceErratumSummary(object):
     """
-    An erratum associated with a managed instance.
+    Provides summary information about an erratum associated with a managed instance.
     """
 
     #: A constant which can be used with the advisory_type property of a ManagedInstanceErratumSummary.
@@ -116,7 +116,7 @@ class ManagedInstanceErratumSummary(object):
     def advisory_type(self):
         """
         **[Required]** Gets the advisory_type of this ManagedInstanceErratumSummary.
-        The type of the erratum.
+        The advisory type of the erratum.
 
         Allowed values for this property are: "SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -131,7 +131,7 @@ class ManagedInstanceErratumSummary(object):
     def advisory_type(self, advisory_type):
         """
         Sets the advisory_type of this ManagedInstanceErratumSummary.
-        The type of the erratum.
+        The advisory type of the erratum.
 
 
         :param advisory_type: The advisory_type of this ManagedInstanceErratumSummary.
@@ -146,8 +146,7 @@ class ManagedInstanceErratumSummary(object):
     def time_issued(self):
         """
         Gets the time_issued of this ManagedInstanceErratumSummary.
-        The date and time the package was issued by a providing erratum (if available), as described in
-        `RFC 3339`__, section 14.29.
+        The date and time the package was issued by a providing erratum (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -161,8 +160,7 @@ class ManagedInstanceErratumSummary(object):
     def time_issued(self, time_issued):
         """
         Sets the time_issued of this ManagedInstanceErratumSummary.
-        The date and time the package was issued by a providing erratum (if available), as described in
-        `RFC 3339`__, section 14.29.
+        The date and time the package was issued by a providing erratum (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -176,7 +174,7 @@ class ManagedInstanceErratumSummary(object):
     def synopsis(self):
         """
         Gets the synopsis of this ManagedInstanceErratumSummary.
-        Summary description of the erratum.
+        A summary description of the erratum.
 
 
         :return: The synopsis of this ManagedInstanceErratumSummary.
@@ -188,7 +186,7 @@ class ManagedInstanceErratumSummary(object):
     def synopsis(self, synopsis):
         """
         Sets the synopsis of this ManagedInstanceErratumSummary.
-        Summary description of the erratum.
+        A summary description of the erratum.
 
 
         :param synopsis: The synopsis of this ManagedInstanceErratumSummary.
@@ -200,7 +198,7 @@ class ManagedInstanceErratumSummary(object):
     def related_cves(self):
         """
         Gets the related_cves of this ManagedInstanceErratumSummary.
-        List of CVEs applicable to this erratum.
+        The list of CVEs applicable to this erratum.
 
 
         :return: The related_cves of this ManagedInstanceErratumSummary.
@@ -212,7 +210,7 @@ class ManagedInstanceErratumSummary(object):
     def related_cves(self, related_cves):
         """
         Sets the related_cves of this ManagedInstanceErratumSummary.
-        List of CVEs applicable to this erratum.
+        The list of CVEs applicable to this erratum.
 
 
         :param related_cves: The related_cves of this ManagedInstanceErratumSummary.
@@ -224,7 +222,7 @@ class ManagedInstanceErratumSummary(object):
     def packages(self):
         """
         **[Required]** Gets the packages of this ManagedInstanceErratumSummary.
-        The list of Packages affected by this erratum.
+        The list of packages affected by this erratum.
 
 
         :return: The packages of this ManagedInstanceErratumSummary.
@@ -236,7 +234,7 @@ class ManagedInstanceErratumSummary(object):
     def packages(self, packages):
         """
         Sets the packages of this ManagedInstanceErratumSummary.
-        The list of Packages affected by this erratum.
+        The list of packages affected by this erratum.
 
 
         :param packages: The packages of this ManagedInstanceErratumSummary.

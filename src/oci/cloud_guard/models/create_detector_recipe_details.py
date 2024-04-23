@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDetectorRecipeDetails(object):
     """
-    Create of Detector recipe.
+    Parameters to use to create details for a detector recipe.
     """
 
     #: A constant which can be used with the detector property of a CreateDetectorRecipeDetails.
@@ -31,6 +31,10 @@ class CreateDetectorRecipeDetails(object):
     #: This constant has a value of "IAAS_LOG_INSIGHT_DETECTOR"
     DETECTOR_IAAS_LOG_INSIGHT_DETECTOR = "IAAS_LOG_INSIGHT_DETECTOR"
 
+    #: A constant which can be used with the detector property of a CreateDetectorRecipeDetails.
+    #: This constant has a value of "IAAS_INSTANCE_SECURITY_DETECTOR"
+    DETECTOR_IAAS_INSTANCE_SECURITY_DETECTOR = "IAAS_INSTANCE_SECURITY_DETECTOR"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDetectorRecipeDetails object with values from keyword arguments.
@@ -46,7 +50,7 @@ class CreateDetectorRecipeDetails(object):
 
         :param detector:
             The value to assign to the detector property of this CreateDetectorRecipeDetails.
-            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR"
+            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR"
         :type detector: str
 
         :param source_detector_recipe_id:
@@ -161,9 +165,9 @@ class CreateDetectorRecipeDetails(object):
     def detector(self):
         """
         Gets the detector of this CreateDetectorRecipeDetails.
-        detector for the rule
+        Detector for the rule
 
-        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR"
+        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR"
 
 
         :return: The detector of this CreateDetectorRecipeDetails.
@@ -175,13 +179,13 @@ class CreateDetectorRecipeDetails(object):
     def detector(self, detector):
         """
         Sets the detector of this CreateDetectorRecipeDetails.
-        detector for the rule
+        Detector for the rule
 
 
         :param detector: The detector of this CreateDetectorRecipeDetails.
         :type: str
         """
-        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR"]
+        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR"]
         if not value_allowed_none_or_none_sentinel(detector, allowed_values):
             raise ValueError(
                 f"Invalid value for `detector`, must be None or one of {allowed_values}"
@@ -192,7 +196,7 @@ class CreateDetectorRecipeDetails(object):
     def source_detector_recipe_id(self):
         """
         Gets the source_detector_recipe_id of this CreateDetectorRecipeDetails.
-        The id of the source detector recipe.
+        The ID of the source detector recipe
 
 
         :return: The source_detector_recipe_id of this CreateDetectorRecipeDetails.
@@ -204,7 +208,7 @@ class CreateDetectorRecipeDetails(object):
     def source_detector_recipe_id(self, source_detector_recipe_id):
         """
         Sets the source_detector_recipe_id of this CreateDetectorRecipeDetails.
-        The id of the source detector recipe.
+        The ID of the source detector recipe
 
 
         :param source_detector_recipe_id: The source_detector_recipe_id of this CreateDetectorRecipeDetails.
@@ -216,7 +220,7 @@ class CreateDetectorRecipeDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateDetectorRecipeDetails.
-        Compartment Identifier
+        Compartment OCID
 
 
         :return: The compartment_id of this CreateDetectorRecipeDetails.
@@ -228,7 +232,7 @@ class CreateDetectorRecipeDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateDetectorRecipeDetails.
-        Compartment Identifier
+        Compartment OCID
 
 
         :param compartment_id: The compartment_id of this CreateDetectorRecipeDetails.
@@ -240,7 +244,7 @@ class CreateDetectorRecipeDetails(object):
     def detector_rules(self):
         """
         Gets the detector_rules of this CreateDetectorRecipeDetails.
-        Detector Rules to override from source detector recipe
+        Detector rules to override from source detector recipe
 
 
         :return: The detector_rules of this CreateDetectorRecipeDetails.
@@ -252,7 +256,7 @@ class CreateDetectorRecipeDetails(object):
     def detector_rules(self, detector_rules):
         """
         Sets the detector_rules of this CreateDetectorRecipeDetails.
-        Detector Rules to override from source detector recipe
+        Detector rules to override from source detector recipe
 
 
         :param detector_rules: The detector_rules of this CreateDetectorRecipeDetails.

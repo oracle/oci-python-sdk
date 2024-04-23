@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateResponderRecipeDetails(object):
     """
-    The details to be updated in ResponderRecipe
+    Parameters to use to update a responder recipe.
     """
 
     def __init__(self, **kwargs):
@@ -67,7 +67,7 @@ class UpdateResponderRecipeDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this UpdateResponderRecipeDetails.
-        Responder recipe identifier.
+        Responder recipe display name.
 
         Avoid entering confidential information.
 
@@ -81,7 +81,7 @@ class UpdateResponderRecipeDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateResponderRecipeDetails.
-        Responder recipe identifier.
+        Responder recipe display name.
 
         Avoid entering confidential information.
 
@@ -95,7 +95,7 @@ class UpdateResponderRecipeDetails(object):
     def description(self):
         """
         Gets the description of this UpdateResponderRecipeDetails.
-        Responder recipe description.
+        Responder recipe description
 
         Avoid entering confidential information.
 
@@ -109,7 +109,7 @@ class UpdateResponderRecipeDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateResponderRecipeDetails.
-        Responder recipe description.
+        Responder recipe description
 
         Avoid entering confidential information.
 
@@ -123,7 +123,7 @@ class UpdateResponderRecipeDetails(object):
     def responder_rules(self):
         """
         Gets the responder_rules of this UpdateResponderRecipeDetails.
-        Responder Rules to Update
+        List of responder rules to update
 
 
         :return: The responder_rules of this UpdateResponderRecipeDetails.
@@ -135,7 +135,7 @@ class UpdateResponderRecipeDetails(object):
     def responder_rules(self, responder_rules):
         """
         Sets the responder_rules of this UpdateResponderRecipeDetails.
-        Responder Rules to Update
+        List of responder rules to update
 
 
         :param responder_rules: The responder_rules of this UpdateResponderRecipeDetails.

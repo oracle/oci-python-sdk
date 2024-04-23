@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RemoveModuleStreamProfileFromManagedInstanceGroupDetails(object):
     """
-    The work request details for the module stream profile operation on the managed instance group.
+    Provides the details for removing a module stream profile from a managed instance group.
     """
 
     def __init__(self, **kwargs):
@@ -32,6 +32,10 @@ class RemoveModuleStreamProfileFromManagedInstanceGroupDetails(object):
             The value to assign to the profile_name property of this RemoveModuleStreamProfileFromManagedInstanceGroupDetails.
         :type profile_name: str
 
+        :param software_source_id:
+            The value to assign to the software_source_id property of this RemoveModuleStreamProfileFromManagedInstanceGroupDetails.
+        :type software_source_id: str
+
         :param work_request_details:
             The value to assign to the work_request_details property of this RemoveModuleStreamProfileFromManagedInstanceGroupDetails.
         :type work_request_details: oci.os_management_hub.models.WorkRequestDetails
@@ -41,6 +45,7 @@ class RemoveModuleStreamProfileFromManagedInstanceGroupDetails(object):
             'module_name': 'str',
             'stream_name': 'str',
             'profile_name': 'str',
+            'software_source_id': 'str',
             'work_request_details': 'WorkRequestDetails'
         }
 
@@ -48,19 +53,21 @@ class RemoveModuleStreamProfileFromManagedInstanceGroupDetails(object):
             'module_name': 'moduleName',
             'stream_name': 'streamName',
             'profile_name': 'profileName',
+            'software_source_id': 'softwareSourceId',
             'work_request_details': 'workRequestDetails'
         }
 
         self._module_name = None
         self._stream_name = None
         self._profile_name = None
+        self._software_source_id = None
         self._work_request_details = None
 
     @property
     def module_name(self):
         """
-        Gets the module_name of this RemoveModuleStreamProfileFromManagedInstanceGroupDetails.
-        The name of a module.
+        **[Required]** Gets the module_name of this RemoveModuleStreamProfileFromManagedInstanceGroupDetails.
+        The name of the module.
 
 
         :return: The module_name of this RemoveModuleStreamProfileFromManagedInstanceGroupDetails.
@@ -72,7 +79,7 @@ class RemoveModuleStreamProfileFromManagedInstanceGroupDetails(object):
     def module_name(self, module_name):
         """
         Sets the module_name of this RemoveModuleStreamProfileFromManagedInstanceGroupDetails.
-        The name of a module.
+        The name of the module.
 
 
         :param module_name: The module_name of this RemoveModuleStreamProfileFromManagedInstanceGroupDetails.
@@ -127,6 +134,34 @@ class RemoveModuleStreamProfileFromManagedInstanceGroupDetails(object):
         :type: str
         """
         self._profile_name = profile_name
+
+    @property
+    def software_source_id(self):
+        """
+        Gets the software_source_id of this RemoveModuleStreamProfileFromManagedInstanceGroupDetails.
+        The `OCID`__ of the software source that provides the module stream
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The software_source_id of this RemoveModuleStreamProfileFromManagedInstanceGroupDetails.
+        :rtype: str
+        """
+        return self._software_source_id
+
+    @software_source_id.setter
+    def software_source_id(self, software_source_id):
+        """
+        Sets the software_source_id of this RemoveModuleStreamProfileFromManagedInstanceGroupDetails.
+        The `OCID`__ of the software source that provides the module stream
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param software_source_id: The software_source_id of this RemoveModuleStreamProfileFromManagedInstanceGroupDetails.
+        :type: str
+        """
+        self._software_source_id = software_source_id
 
     @property
     def work_request_details(self):

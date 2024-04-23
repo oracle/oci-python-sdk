@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDetectorRecipeDetails(object):
     """
-    Update of detector recipe
+    Parameters to use to update details for a detector recipe.
     """
 
     def __init__(self, **kwargs):
@@ -123,7 +123,7 @@ class UpdateDetectorRecipeDetails(object):
     def detector_rules(self):
         """
         Gets the detector_rules of this UpdateDetectorRecipeDetails.
-        Detector Rules to update
+        List of detector rules to update
 
 
         :return: The detector_rules of this UpdateDetectorRecipeDetails.
@@ -135,7 +135,7 @@ class UpdateDetectorRecipeDetails(object):
     def detector_rules(self, detector_rules):
         """
         Sets the detector_rules of this UpdateDetectorRecipeDetails.
-        Detector Rules to update
+        List of detector rules to update
 
 
         :param detector_rules: The detector_rules of this UpdateDetectorRecipeDetails.
@@ -147,7 +147,8 @@ class UpdateDetectorRecipeDetails(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this UpdateDetectorRecipeDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Simple key-value pair that is applied without any predefined
+        name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
         Avoid entering confidential information.
@@ -162,7 +163,8 @@ class UpdateDetectorRecipeDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this UpdateDetectorRecipeDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Simple key-value pair that is applied without any predefined
+        name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
         Avoid entering confidential information.

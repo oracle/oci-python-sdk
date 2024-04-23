@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DetectorDetails(object):
     """
-    Details of a Detector Rule
+    Detailed information for a detector.
     """
 
     #: A constant which can be used with the risk_level property of a DetectorDetails.
@@ -78,6 +78,22 @@ class DetectorDetails(object):
             The value to assign to the sighting_types property of this DetectorDetails.
         :type sighting_types: list[oci.cloud_guard.models.SightingType]
 
+        :param description:
+            The value to assign to the description property of this DetectorDetails.
+        :type description: str
+
+        :param recommendation:
+            The value to assign to the recommendation property of this DetectorDetails.
+        :type recommendation: str
+
+        :param data_source_id:
+            The value to assign to the data_source_id property of this DetectorDetails.
+        :type data_source_id: str
+
+        :param entities_mappings:
+            The value to assign to the entities_mappings property of this DetectorDetails.
+        :type entities_mappings: list[oci.cloud_guard.models.EntitiesMapping]
+
         """
         self.swagger_types = {
             'is_enabled': 'bool',
@@ -88,7 +104,11 @@ class DetectorDetails(object):
             'is_configuration_allowed': 'bool',
             'problem_threshold': 'int',
             'target_types': 'list[str]',
-            'sighting_types': 'list[SightingType]'
+            'sighting_types': 'list[SightingType]',
+            'description': 'str',
+            'recommendation': 'str',
+            'data_source_id': 'str',
+            'entities_mappings': 'list[EntitiesMapping]'
         }
 
         self.attribute_map = {
@@ -100,7 +120,11 @@ class DetectorDetails(object):
             'is_configuration_allowed': 'isConfigurationAllowed',
             'problem_threshold': 'problemThreshold',
             'target_types': 'targetTypes',
-            'sighting_types': 'sightingTypes'
+            'sighting_types': 'sightingTypes',
+            'description': 'description',
+            'recommendation': 'recommendation',
+            'data_source_id': 'dataSourceId',
+            'entities_mappings': 'entitiesMappings'
         }
 
         self._is_enabled = None
@@ -112,12 +136,16 @@ class DetectorDetails(object):
         self._problem_threshold = None
         self._target_types = None
         self._sighting_types = None
+        self._description = None
+        self._recommendation = None
+        self._data_source_id = None
+        self._entities_mappings = None
 
     @property
     def is_enabled(self):
         """
         **[Required]** Gets the is_enabled of this DetectorDetails.
-        Enables the control
+        Enablement status for the rule
 
 
         :return: The is_enabled of this DetectorDetails.
@@ -129,7 +157,7 @@ class DetectorDetails(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this DetectorDetails.
-        Enables the control
+        Enablement status for the rule
 
 
         :param is_enabled: The is_enabled of this DetectorDetails.
@@ -141,7 +169,7 @@ class DetectorDetails(object):
     def risk_level(self):
         """
         Gets the risk_level of this DetectorDetails.
-        The Risk Level
+        The risk level for the rule
 
         Allowed values for this property are: "CRITICAL", "HIGH", "MEDIUM", "LOW", "MINOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -156,7 +184,7 @@ class DetectorDetails(object):
     def risk_level(self, risk_level):
         """
         Sets the risk_level of this DetectorDetails.
-        The Risk Level
+        The risk level for the rule
 
 
         :param risk_level: The risk_level of this DetectorDetails.
@@ -171,7 +199,7 @@ class DetectorDetails(object):
     def configurations(self):
         """
         Gets the configurations of this DetectorDetails.
-        Configuration details
+        List of detector rule configurations
 
 
         :return: The configurations of this DetectorDetails.
@@ -183,7 +211,7 @@ class DetectorDetails(object):
     def configurations(self, configurations):
         """
         Sets the configurations of this DetectorDetails.
-        Configuration details
+        List of detector rule configurations
 
 
         :param configurations: The configurations of this DetectorDetails.
@@ -215,7 +243,7 @@ class DetectorDetails(object):
     def labels(self):
         """
         Gets the labels of this DetectorDetails.
-        user defined labels for a detector rule
+        User-defined labels for a detector rule
 
 
         :return: The labels of this DetectorDetails.
@@ -227,7 +255,7 @@ class DetectorDetails(object):
     def labels(self, labels):
         """
         Sets the labels of this DetectorDetails.
-        user defined labels for a detector rule
+        User-defined labels for a detector rule
 
 
         :param labels: The labels of this DetectorDetails.
@@ -239,7 +267,7 @@ class DetectorDetails(object):
     def is_configuration_allowed(self):
         """
         Gets the is_configuration_allowed of this DetectorDetails.
-        configuration allowed or not
+        Can the rule be configured?
 
 
         :return: The is_configuration_allowed of this DetectorDetails.
@@ -251,7 +279,7 @@ class DetectorDetails(object):
     def is_configuration_allowed(self, is_configuration_allowed):
         """
         Sets the is_configuration_allowed of this DetectorDetails.
-        configuration allowed or not
+        Can the rule be configured?
 
 
         :param is_configuration_allowed: The is_configuration_allowed of this DetectorDetails.
@@ -263,7 +291,7 @@ class DetectorDetails(object):
     def problem_threshold(self):
         """
         Gets the problem_threshold of this DetectorDetails.
-        Cutover point for an elevated resource Risk Score to create a Problem
+        The point at which an elevated resource risk score creates a problem
 
 
         :return: The problem_threshold of this DetectorDetails.
@@ -275,7 +303,7 @@ class DetectorDetails(object):
     def problem_threshold(self, problem_threshold):
         """
         Sets the problem_threshold of this DetectorDetails.
-        Cutover point for an elevated resource Risk Score to create a Problem
+        The point at which an elevated resource risk score creates a problem
 
 
         :param problem_threshold: The problem_threshold of this DetectorDetails.
@@ -330,6 +358,102 @@ class DetectorDetails(object):
         :type: list[oci.cloud_guard.models.SightingType]
         """
         self._sighting_types = sighting_types
+
+    @property
+    def description(self):
+        """
+        Gets the description of this DetectorDetails.
+        Description for detector recipe detector rule
+
+
+        :return: The description of this DetectorDetails.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """
+        Sets the description of this DetectorDetails.
+        Description for detector recipe detector rule
+
+
+        :param description: The description of this DetectorDetails.
+        :type: str
+        """
+        self._description = description
+
+    @property
+    def recommendation(self):
+        """
+        Gets the recommendation of this DetectorDetails.
+        Recommendation for detector recipe detector rule
+
+
+        :return: The recommendation of this DetectorDetails.
+        :rtype: str
+        """
+        return self._recommendation
+
+    @recommendation.setter
+    def recommendation(self, recommendation):
+        """
+        Sets the recommendation of this DetectorDetails.
+        Recommendation for detector recipe detector rule
+
+
+        :param recommendation: The recommendation of this DetectorDetails.
+        :type: str
+        """
+        self._recommendation = recommendation
+
+    @property
+    def data_source_id(self):
+        """
+        Gets the data_source_id of this DetectorDetails.
+        The ID of the attached data source
+
+
+        :return: The data_source_id of this DetectorDetails.
+        :rtype: str
+        """
+        return self._data_source_id
+
+    @data_source_id.setter
+    def data_source_id(self, data_source_id):
+        """
+        Sets the data_source_id of this DetectorDetails.
+        The ID of the attached data source
+
+
+        :param data_source_id: The data_source_id of this DetectorDetails.
+        :type: str
+        """
+        self._data_source_id = data_source_id
+
+    @property
+    def entities_mappings(self):
+        """
+        Gets the entities_mappings of this DetectorDetails.
+        Data source entities mapping for a detector rule
+
+
+        :return: The entities_mappings of this DetectorDetails.
+        :rtype: list[oci.cloud_guard.models.EntitiesMapping]
+        """
+        return self._entities_mappings
+
+    @entities_mappings.setter
+    def entities_mappings(self, entities_mappings):
+        """
+        Sets the entities_mappings of this DetectorDetails.
+        Data source entities mapping for a detector rule
+
+
+        :param entities_mappings: The entities_mappings of this DetectorDetails.
+        :type: list[oci.cloud_guard.models.EntitiesMapping]
+        """
+        self._entities_mappings = entities_mappings
 
     def __repr__(self):
         return formatted_flat_dict(self)

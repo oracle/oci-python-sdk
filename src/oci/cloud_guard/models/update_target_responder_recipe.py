@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateTargetResponderRecipe(object):
     """
-    The information to be updated in attached Target ResponderRecipe
+    Parameters to update a responder recipe attached to a target
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class UpdateTargetResponderRecipe(object):
     def target_responder_recipe_id(self):
         """
         **[Required]** Gets the target_responder_recipe_id of this UpdateTargetResponderRecipe.
-        Identifier for ResponderRecipe.
+        Unique identifier for the target responder recipe
 
 
         :return: The target_responder_recipe_id of this UpdateTargetResponderRecipe.
@@ -58,7 +58,7 @@ class UpdateTargetResponderRecipe(object):
     def target_responder_recipe_id(self, target_responder_recipe_id):
         """
         Sets the target_responder_recipe_id of this UpdateTargetResponderRecipe.
-        Identifier for ResponderRecipe.
+        Unique identifier for the target responder recipe
 
 
         :param target_responder_recipe_id: The target_responder_recipe_id of this UpdateTargetResponderRecipe.
@@ -70,7 +70,7 @@ class UpdateTargetResponderRecipe(object):
     def responder_rules(self):
         """
         **[Required]** Gets the responder_rules of this UpdateTargetResponderRecipe.
-        Update responder rules associated with reponder recipe in a target.
+        List of responder rules to be updated in the target responder recipe
 
 
         :return: The responder_rules of this UpdateTargetResponderRecipe.
@@ -82,7 +82,7 @@ class UpdateTargetResponderRecipe(object):
     def responder_rules(self, responder_rules):
         """
         Sets the responder_rules of this UpdateTargetResponderRecipe.
-        Update responder rules associated with reponder recipe in a target.
+        List of responder rules to be updated in the target responder recipe
 
 
         :param responder_rules: The responder_rules of this UpdateTargetResponderRecipe.

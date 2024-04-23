@@ -12,12 +12,18 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VendorSoftwareSource(SoftwareSource):
     """
-    A vendor software source contains a collection of packages.
+    The object that defines a vendor software source. A software source is a collection of packages. For more information, see `Managing Software Sources`__.
+
+    __ https://docs.cloud.oracle.com/iaas/osmh/doc/software-sources.htm
     """
 
     #: A constant which can be used with the vendor_name property of a VendorSoftwareSource.
     #: This constant has a value of "ORACLE"
     VENDOR_NAME_ORACLE = "ORACLE"
+
+    #: A constant which can be used with the vendor_name property of a VendorSoftwareSource.
+    #: This constant has a value of "MICROSOFT"
+    VENDOR_NAME_MICROSOFT = "MICROSOFT"
 
     def __init__(self, **kwargs):
         """
@@ -53,9 +59,15 @@ class VendorSoftwareSource(SoftwareSource):
 
         :param availability:
             The value to assign to the availability property of this VendorSoftwareSource.
-            Allowed values for this property are: "AVAILABLE", "SELECTED", "RESTRICTED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AVAILABLE", "SELECTED", "RESTRICTED", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type availability: str
+
+        :param availability_at_oci:
+            The value to assign to the availability_at_oci property of this VendorSoftwareSource.
+            Allowed values for this property are: "AVAILABLE", "SELECTED", "RESTRICTED", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type availability_at_oci: str
 
         :param repo_id:
             The value to assign to the repo_id property of this VendorSoftwareSource.
@@ -63,7 +75,7 @@ class VendorSoftwareSource(SoftwareSource):
 
         :param os_family:
             The value to assign to the os_family property of this VendorSoftwareSource.
-            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type os_family: str
 
@@ -75,7 +87,7 @@ class VendorSoftwareSource(SoftwareSource):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this VendorSoftwareSource.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -105,6 +117,10 @@ class VendorSoftwareSource(SoftwareSource):
             The value to assign to the gpg_key_fingerprint property of this VendorSoftwareSource.
         :type gpg_key_fingerprint: str
 
+        :param size:
+            The value to assign to the size property of this VendorSoftwareSource.
+        :type size: float
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this VendorSoftwareSource.
         :type freeform_tags: dict(str, str)
@@ -119,9 +135,17 @@ class VendorSoftwareSource(SoftwareSource):
 
         :param vendor_name:
             The value to assign to the vendor_name property of this VendorSoftwareSource.
-            Allowed values for this property are: "ORACLE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE", "MICROSOFT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type vendor_name: str
+
+        :param origin_software_source_id:
+            The value to assign to the origin_software_source_id property of this VendorSoftwareSource.
+        :type origin_software_source_id: str
+
+        :param is_mandatory_for_autonomous_linux:
+            The value to assign to the is_mandatory_for_autonomous_linux property of this VendorSoftwareSource.
+        :type is_mandatory_for_autonomous_linux: bool
 
         """
         self.swagger_types = {
@@ -132,6 +156,7 @@ class VendorSoftwareSource(SoftwareSource):
             'description': 'str',
             'software_source_type': 'str',
             'availability': 'str',
+            'availability_at_oci': 'str',
             'repo_id': 'str',
             'os_family': 'str',
             'arch_type': 'str',
@@ -142,10 +167,13 @@ class VendorSoftwareSource(SoftwareSource):
             'gpg_key_url': 'str',
             'gpg_key_id': 'str',
             'gpg_key_fingerprint': 'str',
+            'size': 'float',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
-            'vendor_name': 'str'
+            'vendor_name': 'str',
+            'origin_software_source_id': 'str',
+            'is_mandatory_for_autonomous_linux': 'bool'
         }
 
         self.attribute_map = {
@@ -156,6 +184,7 @@ class VendorSoftwareSource(SoftwareSource):
             'description': 'description',
             'software_source_type': 'softwareSourceType',
             'availability': 'availability',
+            'availability_at_oci': 'availabilityAtOci',
             'repo_id': 'repoId',
             'os_family': 'osFamily',
             'arch_type': 'archType',
@@ -166,10 +195,13 @@ class VendorSoftwareSource(SoftwareSource):
             'gpg_key_url': 'gpgKeyUrl',
             'gpg_key_id': 'gpgKeyId',
             'gpg_key_fingerprint': 'gpgKeyFingerprint',
+            'size': 'size',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
-            'vendor_name': 'vendorName'
+            'vendor_name': 'vendorName',
+            'origin_software_source_id': 'originSoftwareSourceId',
+            'is_mandatory_for_autonomous_linux': 'isMandatoryForAutonomousLinux'
         }
 
         self._id = None
@@ -179,6 +211,7 @@ class VendorSoftwareSource(SoftwareSource):
         self._description = None
         self._software_source_type = None
         self._availability = None
+        self._availability_at_oci = None
         self._repo_id = None
         self._os_family = None
         self._arch_type = None
@@ -189,10 +222,13 @@ class VendorSoftwareSource(SoftwareSource):
         self._gpg_key_url = None
         self._gpg_key_id = None
         self._gpg_key_fingerprint = None
+        self._size = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
         self._vendor_name = None
+        self._origin_software_source_id = None
+        self._is_mandatory_for_autonomous_linux = None
         self._software_source_type = 'VENDOR'
 
     @property
@@ -201,7 +237,7 @@ class VendorSoftwareSource(SoftwareSource):
         **[Required]** Gets the vendor_name of this VendorSoftwareSource.
         Name of the vendor providing the software source.
 
-        Allowed values for this property are: "ORACLE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE", "MICROSOFT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -220,10 +256,62 @@ class VendorSoftwareSource(SoftwareSource):
         :param vendor_name: The vendor_name of this VendorSoftwareSource.
         :type: str
         """
-        allowed_values = ["ORACLE"]
+        allowed_values = ["ORACLE", "MICROSOFT"]
         if not value_allowed_none_or_none_sentinel(vendor_name, allowed_values):
             vendor_name = 'UNKNOWN_ENUM_VALUE'
         self._vendor_name = vendor_name
+
+    @property
+    def origin_software_source_id(self):
+        """
+        Gets the origin_software_source_id of this VendorSoftwareSource.
+        This property applies only to replicated vendor software sources. This is the `OCID`__ of the vendor software source in the root compartment.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The origin_software_source_id of this VendorSoftwareSource.
+        :rtype: str
+        """
+        return self._origin_software_source_id
+
+    @origin_software_source_id.setter
+    def origin_software_source_id(self, origin_software_source_id):
+        """
+        Sets the origin_software_source_id of this VendorSoftwareSource.
+        This property applies only to replicated vendor software sources. This is the `OCID`__ of the vendor software source in the root compartment.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param origin_software_source_id: The origin_software_source_id of this VendorSoftwareSource.
+        :type: str
+        """
+        self._origin_software_source_id = origin_software_source_id
+
+    @property
+    def is_mandatory_for_autonomous_linux(self):
+        """
+        Gets the is_mandatory_for_autonomous_linux of this VendorSoftwareSource.
+        Indicates whether the software source is required for the Autonomous Linux service.
+
+
+        :return: The is_mandatory_for_autonomous_linux of this VendorSoftwareSource.
+        :rtype: bool
+        """
+        return self._is_mandatory_for_autonomous_linux
+
+    @is_mandatory_for_autonomous_linux.setter
+    def is_mandatory_for_autonomous_linux(self, is_mandatory_for_autonomous_linux):
+        """
+        Sets the is_mandatory_for_autonomous_linux of this VendorSoftwareSource.
+        Indicates whether the software source is required for the Autonomous Linux service.
+
+
+        :param is_mandatory_for_autonomous_linux: The is_mandatory_for_autonomous_linux of this VendorSoftwareSource.
+        :type: bool
+        """
+        self._is_mandatory_for_autonomous_linux = is_mandatory_for_autonomous_linux
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourceRiskScoreAggregationCollection(object):
     """
-    Collection of Resource risk scores
+    Collection of risk score aggregations.
     """
 
     def __init__(self, **kwargs):
@@ -60,7 +60,7 @@ class ResourceRiskScoreAggregationCollection(object):
     def filter_type(self):
         """
         **[Required]** Gets the filter_type of this ResourceRiskScoreAggregationCollection.
-        Type of filter. Valid Values - problem_id and resource_id
+        Type of filter
 
 
         :return: The filter_type of this ResourceRiskScoreAggregationCollection.
@@ -72,7 +72,7 @@ class ResourceRiskScoreAggregationCollection(object):
     def filter_type(self, filter_type):
         """
         Sets the filter_type of this ResourceRiskScoreAggregationCollection.
-        Type of filter. Valid Values - problem_id and resource_id
+        Type of filter
 
 
         :param filter_type: The filter_type of this ResourceRiskScoreAggregationCollection.
@@ -84,7 +84,7 @@ class ResourceRiskScoreAggregationCollection(object):
     def filter_id(self):
         """
         **[Required]** Gets the filter_id of this ResourceRiskScoreAggregationCollection.
-        Id value on which risk scores are filtered
+        ID for filter that to be used to filter risk scores
 
 
         :return: The filter_id of this ResourceRiskScoreAggregationCollection.
@@ -96,7 +96,7 @@ class ResourceRiskScoreAggregationCollection(object):
     def filter_id(self, filter_id):
         """
         Sets the filter_id of this ResourceRiskScoreAggregationCollection.
-        Id value on which risk scores are filtered
+        ID for filter that to be used to filter risk scores
 
 
         :param filter_id: The filter_id of this ResourceRiskScoreAggregationCollection.
@@ -108,7 +108,7 @@ class ResourceRiskScoreAggregationCollection(object):
     def risk_threshold(self):
         """
         Gets the risk_threshold of this ResourceRiskScoreAggregationCollection.
-        Risk Score
+        Risk score value that triggers a problem
 
 
         :return: The risk_threshold of this ResourceRiskScoreAggregationCollection.
@@ -120,7 +120,7 @@ class ResourceRiskScoreAggregationCollection(object):
     def risk_threshold(self, risk_threshold):
         """
         Sets the risk_threshold of this ResourceRiskScoreAggregationCollection.
-        Risk Score
+        Risk score value that triggers a problem
 
 
         :param risk_threshold: The risk_threshold of this ResourceRiskScoreAggregationCollection.
@@ -132,7 +132,7 @@ class ResourceRiskScoreAggregationCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ResourceRiskScoreAggregationCollection.
-        List of ResourceRiskScoreAggregation
+        List of ResourceRiskScoreAggregation resources
 
 
         :return: The items of this ResourceRiskScoreAggregationCollection.
@@ -144,7 +144,7 @@ class ResourceRiskScoreAggregationCollection(object):
     def items(self, items):
         """
         Sets the items of this ResourceRiskScoreAggregationCollection.
-        List of ResourceRiskScoreAggregation
+        List of ResourceRiskScoreAggregation resources
 
 
         :param items: The items of this ResourceRiskScoreAggregationCollection.

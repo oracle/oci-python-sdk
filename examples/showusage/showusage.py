@@ -1,11 +1,12 @@
 # coding: utf-8
-# Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 ##########################################################################
 # showusage.py
 #
-# @author: Adi Zohar, Oct 07 2021, Updated Dec 04 2023
+# @author: Adi Zohar, Oct 07 2021, Updated Apr 17 2024
+# Added OSR Eligible for tenant grouping
 #
 # Supports Python 3
 ##########################################################################
@@ -19,7 +20,7 @@
 #   -ds date     - Start Date in YYYY-MM-DD format
 #   -de date     - End Date in YYYY-MM-DD format (Not Inclusive)
 #   -ld days     - Add Days Combined with Start Date (de is ignored if specified)
-#   -report type - Report Type = PRODUCT, DAILY, REGION, SERVICE, RESOURCE
+#   -report type - Report Type = PRODUCT, DAILY, REGION, SERVICE, RESOURCE, TENANT
 #
 #
 ##########################################################################
@@ -56,7 +57,7 @@ import oci
 import os
 import platform
 
-version = "2023.11.21"
+version = "2024.04.17"
 
 
 ##########################################################################
@@ -199,6 +200,7 @@ def usage_daily_product(usageClient, tenant_id, time_usage_started, time_usage_e
             data.append({
                 'sku': item.sku_part_number,
                 'sku_name': item.sku_name if item.sku_part_number in item.sku_name else item.sku_part_number + " - " + item.sku_name,
+                'sku_part_number': item.sku_part_number,
                 'cost': item.computed_amount if item.computed_amount else 0,
                 'quantity': item.computed_quantity if item.computed_quantity else 0,
                 'currency': item.currency,
@@ -219,8 +221,15 @@ def usage_daily_product(usageClient, tenant_id, time_usage_started, time_usage_e
         for item in data:
             sku = item['sku']
             if sku not in gdata:
-                gdata[sku] = {'cost': item['cost'], 'quantity': item['quantity'], 'sku_name': item['sku_name'], 'currency': item['currency']}
+                gdata[sku] = {
+                    'osr_eligible': osr_eligible_cost(item['sku_part_number'], item['sku_name'], item['cost']),
+                    'cost': item['cost'],
+                    'quantity': item['quantity'],
+                    'sku_name': item['sku_name'],
+                    'currency': item['currency']
+                }
             else:
+                gdata[sku]['osr_eligible'] += osr_eligible_cost(item['sku_part_number'], item['sku_name'], item['cost'])
                 gdata[sku]['cost'] += item['cost']
                 gdata[sku]['quantity'] += item['quantity']
 
@@ -231,6 +240,7 @@ def usage_daily_product(usageClient, tenant_id, time_usage_started, time_usage_e
             'product': 65,
             'quantity': 14,
             'days': 10,
+            'osr_eligible': 13,
             'cost': 13,
             'month': 13,
             'year': 13
@@ -245,6 +255,7 @@ def usage_daily_product(usageClient, tenant_id, time_usage_started, time_usage_e
             "Product".ljust(col['product']) +
             " Days".rjust(col['days']) +
             " Quantity".rjust(col['quantity']) +
+            " OSR Eligible".rjust(col['osr_eligible']) +
             " Cost".rjust(col['cost']) +
             " Month-31".rjust(col['month']) +
             " Year".rjust(col['year'])
@@ -254,20 +265,24 @@ def usage_daily_product(usageClient, tenant_id, time_usage_started, time_usage_e
             "".ljust(col['product'], '=') +
             " ".ljust(col['days'], '=') +
             " ".ljust(col['quantity'], '=') +
+            " ".ljust(col['osr_eligible'], '=') +
             " ".ljust(col['cost'], '=') +
             " ".ljust(col['month'], '=') +
             " ".ljust(col['year'], '=')
         )
 
         total = 0
+        osr_total = 0
         for item_key in sorted(gdata, key=lambda x: gdata[x]['cost']):
             item = gdata[item_key]
             if item['cost'] == 0:
                 continue
             total += item['cost']
+            osr_total += item['osr_eligible']
             line = item['sku_name'].ljust(col['product'])[0:col['product']]
             line += "{:8,.0f}".format(days).rjust(col['days'])
             line += "{:8,.1f}".format(item['quantity']).rjust(col['quantity'])
+            line += "{:8,.1f}".format(item['osr_eligible']).rjust(col['osr_eligible'])
             line += "{:8,.1f}".format(item['cost']).rjust(col['cost'])
             line += "{:9,.0f}".format(item['cost'] / days * 31).rjust(col['month'])
             line += "{:9,.0f}".format(item['cost'] / days * 365).rjust(col['year'])
@@ -278,12 +293,14 @@ def usage_daily_product(usageClient, tenant_id, time_usage_started, time_usage_e
             "".ljust(col['product'], '=') +
             " ".ljust(col['days'], '=') +
             " ".ljust(col['quantity'], '=') +
+            " ".ljust(col['osr_eligible'], '=') +
             " ".ljust(col['cost'], '=') +
             " ".ljust(col['month'], '=') +
             " ".ljust(col['year'], '=')
         )
         print(
             "Total ".ljust(col['product'] + col['days'] + col['quantity']) +
+            " {:8,.1f}".format(osr_total).rjust(col['osr_eligible']) +
             " {:8,.1f}".format(total).rjust(col['cost']) +
             " {:9,.0f}".format(total / days * 31).rjust(col['month']) +
             " {:9,.0f}".format(total / days * 365).rjust(col['year'])
@@ -423,6 +440,166 @@ def usage_daily_region(usageClient, tenant_id, time_usage_started, time_usage_en
 
     except Exception as e:
         print("\nException Error at 'usage_daily_region' - " + str(e))
+
+
+##########################################################################
+# Usage Daily by Tenant
+##########################################################################
+def osr_eligible_cost(sku_part_number, sku_name, cost):
+
+    # IF Windows or VMWare
+    if 'windows' in sku_name.lower() or 'vmware' in sku_name.lower():
+        return 0
+
+    # if Market Image with MP
+    if str(sku_part_number).lower()[0:1] == 'mp':
+        return 0
+    return cost
+
+
+##########################################################################
+# Usage Daily by Tenant
+##########################################################################
+def usage_daily_tenant(usageClient, tenant_id, time_usage_started, time_usage_ended):
+
+    try:
+        # oci.usage_api.models.RequestSummarizedUsagesDetails
+        requestSummarizedUsagesDetails = oci.usage_api.models.RequestSummarizedUsagesDetails(
+            tenant_id=tenant_id,
+            granularity='DAILY',
+            query_type='COST',
+            group_by=['tenantName', 'skuPartNumber', 'skuName'],
+            time_usage_started=time_usage_started.strftime('%Y-%m-%dT%H:%M:%SZ'),
+            time_usage_ended=time_usage_ended.strftime('%Y-%m-%dT%H:%M:%SZ')
+        )
+
+        # usageClient.request_summarized_usages
+        request_summarized_usages = usageClient.request_summarized_usages(
+            requestSummarizedUsagesDetails,
+            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+        )
+
+        ################################
+        # Add all data to array data
+        ################################
+        data = []
+        min_date = None
+        max_date = None
+        currency = ""
+        for item in request_summarized_usages.data.items:
+            data.append({
+                'tenant': item.tenant_name,
+                'sku_part_number': item.sku_part_number,
+                'sku_name': item.sku_name,
+                'cost': item.computed_amount if item.computed_amount else 0,
+                'quantity': item.computed_quantity if item.computed_quantity else 0,
+                'currency': item.currency,
+                'time_usage_started': item.time_usage_started,
+                'time_usage_ended': item.time_usage_ended
+            })
+            if item.currency:
+                currency = item.currency
+            if not min_date or item.time_usage_started < min_date:
+                min_date = item.time_usage_started
+            if not max_date or item.time_usage_started > max_date:
+                max_date = item.time_usage_started
+
+        ################################
+        # Grouped Dict
+        ################################
+        gdata = {}
+        for item in data:
+            tenant = item['tenant']
+            if tenant not in gdata:
+                gdata[tenant] = {
+                    'cost': item['cost'],
+                    'osr_eligible': osr_eligible_cost(item['sku_part_number'], item['sku_name'], item['cost']),
+                    'quantity': item['quantity'],
+                    'currency': item['currency']
+                }
+            else:
+                gdata[tenant]['osr_eligible'] += osr_eligible_cost(item['sku_part_number'], item['sku_name'], item['cost'])
+                gdata[tenant]['cost'] += item['cost']
+                gdata[tenant]['quantity'] += item['quantity']
+
+        ################################
+        # Compact based on SKUs
+        ################################
+        col = {
+            'tenant': 30,
+            'quantity': 14,
+            'days': 10,
+            'osr_eligible': 15,
+            'cost': 15,
+            'month': 13,
+            'year': 13
+        }
+
+        days = (max_date - min_date).days + 1
+
+        product_header = "Tenant Summary for " + min_date.strftime('%m/%d/%Y') + " - " + max_date.strftime('%m/%d/%Y') + " in " + currency
+        print_header(product_header, 3)
+        print("")
+        print(
+            "Tenant".ljust(col['tenant']) +
+            " Days".rjust(col['days']) +
+            " Quantity".rjust(col['quantity']) +
+            " OSR Eligible".rjust(col['osr_eligible']) +
+            " Cost".rjust(col['cost']) +
+            " Month-31".rjust(col['month']) +
+            " Year".rjust(col['year'])
+        )
+
+        print(
+            "".ljust(col['tenant'], '=') +
+            " ".ljust(col['days'], '=') +
+            " ".ljust(col['quantity'], '=') +
+            " ".ljust(col['cost'], '=') +
+            " ".ljust(col['osr_eligible'], '=') +
+            " ".ljust(col['month'], '=') +
+            " ".ljust(col['year'], '=')
+        )
+
+        total = 0
+        osr_total = 0
+        for item_key in sorted(gdata, key=lambda x: gdata[x]['cost']):
+            item = gdata[item_key]
+            if item['cost'] == 0:
+                continue
+            total += item['cost']
+            osr_total += item['osr_eligible']
+            line = item_key.ljust(col['tenant'])
+            line += "{:8,.0f}".format(days).rjust(col['days'])
+            line += "{:8,.1f}".format(item['quantity']).rjust(col['quantity'])
+            line += "{:8,.1f}".format(item['osr_eligible']).rjust(col['osr_eligible'])
+            line += "{:8,.1f}".format(item['cost']).rjust(col['cost'])
+            line += "{:9,.0f}".format(item['cost'] / days * 31).rjust(col['month'])
+            line += "{:9,.0f}".format(item['cost'] / days * 365).rjust(col['year'])
+            print(line)
+
+        # Total
+        print(
+            "".ljust(col['tenant'], '=') +
+            " ".ljust(col['days'], '=') +
+            " ".ljust(col['quantity'], '=') +
+            " ".ljust(col['osr_eligible'], '=') +
+            " ".ljust(col['cost'], '=') +
+            " ".ljust(col['month'], '=') +
+            " ".ljust(col['year'], '=')
+        )
+        print(
+            "Total ".ljust(col['tenant'] + col['days'] + col['quantity']) +
+            " {:8,.1f}".format(osr_total).rjust(col['osr_eligible']) +
+            " {:8,.1f}".format(total).rjust(col['cost']) +
+            " {:9,.0f}".format(total / days * 31).rjust(col['month']) +
+            " {:9,.0f}".format(total / days * 365).rjust(col['year'])
+        )
+
+    except oci.exceptions.ServiceError as e:
+        print("\nService Error at 'usage_daily_tenant' - " + str(e))
+
+    except Exception as e:
+        print("\nException Error at 'usage_daily_tenant' - " + str(e))
 
 
 ##########################################################################
@@ -811,14 +988,14 @@ def main():
     parser.add_argument("-ds", default=None, dest='date_start', help="Start Date - format YYYY-MM-DD", type=valid_date_type)
     parser.add_argument("-de", default=None, dest='date_end', help="End Date - format YYYY-MM-DD, (Not Inclusive)", type=valid_date_type)
     parser.add_argument("-days", default=None, dest='days', help="Add Days Combined with Start Date (de is ignored if specified)", type=int)
-    parser.add_argument("-report", default="ALL", dest='report', help="Report Type = PRODUCT / DAILY / REGION / SERVICE / RESOURCE / ALL ( Default = ALL )")
+    parser.add_argument("-report", default="ALL", dest='report', help="Report Type = PRODUCT / DAILY / REGION / SERVICE / RESOURCE / TENANT / ALL ( Default = ALL )")
     cmd = parser.parse_args()
 
     if len(sys.argv) < 2:
         parser.print_help()
         return
 
-    if not cmd.report or not (cmd.report == "DAILY" or cmd.report == "SERVICE" or cmd.report == "PRODUCT" or cmd.report == "REGION" or cmd.report == "RESOURCE" or cmd.report == "ALL"):
+    if not cmd.report or not (cmd.report == "DAILY" or cmd.report == "SERVICE" or cmd.report == "PRODUCT" or cmd.report == "REGION" or cmd.report == "RESOURCE" or cmd.report == "TENANT" or cmd.report == "ALL"):
 
         parser.print_help()
         print("")
@@ -951,6 +1128,9 @@ def main():
 
         if report_type == 'RESOURCE' or report_type == 'ALL':
             usage_daily_resource(usage_client, tenant_id, time_usage_started, time_usage_ended)
+
+        if report_type == 'TENANT' or report_type == 'ALL':
+            usage_daily_tenant(usage_client, tenant_id, time_usage_started, time_usage_ended)
 
     except Exception as e:
         raise RuntimeError("\nError at main function - " + str(e))

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PackageFilter(object):
     """
-    Used to select packages from VendorSoftwareSources to create/update CustomSoftwareSources.
+    Provides the information used to create a filter for packages from a vendor software source to create or update a custom software source.
     """
 
     #: A constant which can be used with the filter_type property of a PackageFilter.
@@ -142,7 +142,7 @@ class PackageFilter(object):
     def filter_type(self):
         """
         **[Required]** Gets the filter_type of this PackageFilter.
-        The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+        The type of the filter.
 
         Allowed values for this property are: "INCLUDE", "EXCLUDE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -157,7 +157,7 @@ class PackageFilter(object):
     def filter_type(self, filter_type):
         """
         Sets the filter_type of this PackageFilter.
-        The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+        The type of the filter.
 
 
         :param filter_type: The filter_type of this PackageFilter.

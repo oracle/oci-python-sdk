@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AllTargetsSelected(TargetSelected):
     """
-    All Targets selected.
+    Parameter to use when all targets are selected.
     """
 
     def __init__(self, **kwargs):

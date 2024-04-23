@@ -12,7 +12,19 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TargetDetectorRecipe(object):
     """
-    Target Detector recipe
+    A TargetDetectorRecipe resource contains a specific instance of one of the
+    supported detector types (for example, activity, configuration, or threat)
+    in which some settings can be modified specifically for a single target.
+
+    A TargetDetectorRecipe resource:
+    * Is effectively a copy of a DetectorRecipe resource in which users can make
+    very limited changes if it\u2019s Oracle-managed, and more changes if it\u2019s user-managed.
+    * Is visible on the Cloud Guard Targets, Target Details page.
+    * Is located in a specific OCI compartment.
+    * Can be modified by users, programmatically or through the UI.
+    * Changes that can be made here override any settings in the corresponding
+    DetectorRecipe, of which the TargetDetectorRecipe resource is effectively a copy,
+    created when the detector recipe is attached to the target.
     """
 
     #: A constant which can be used with the owner property of a TargetDetectorRecipe.
@@ -38,6 +50,10 @@ class TargetDetectorRecipe(object):
     #: A constant which can be used with the detector property of a TargetDetectorRecipe.
     #: This constant has a value of "IAAS_LOG_INSIGHT_DETECTOR"
     DETECTOR_IAAS_LOG_INSIGHT_DETECTOR = "IAAS_LOG_INSIGHT_DETECTOR"
+
+    #: A constant which can be used with the detector property of a TargetDetectorRecipe.
+    #: This constant has a value of "IAAS_INSTANCE_SECURITY_DETECTOR"
+    DETECTOR_IAAS_INSTANCE_SECURITY_DETECTOR = "IAAS_INSTANCE_SECURITY_DETECTOR"
 
     #: A constant which can be used with the lifecycle_state property of a TargetDetectorRecipe.
     #: This constant has a value of "CREATING"
@@ -66,6 +82,22 @@ class TargetDetectorRecipe(object):
     #: A constant which can be used with the lifecycle_state property of a TargetDetectorRecipe.
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
+
+    #: A constant which can be used with the detector_recipe_type property of a TargetDetectorRecipe.
+    #: This constant has a value of "LIMITED"
+    DETECTOR_RECIPE_TYPE_LIMITED = "LIMITED"
+
+    #: A constant which can be used with the detector_recipe_type property of a TargetDetectorRecipe.
+    #: This constant has a value of "BASIC"
+    DETECTOR_RECIPE_TYPE_BASIC = "BASIC"
+
+    #: A constant which can be used with the detector_recipe_type property of a TargetDetectorRecipe.
+    #: This constant has a value of "STANDARD"
+    DETECTOR_RECIPE_TYPE_STANDARD = "STANDARD"
+
+    #: A constant which can be used with the detector_recipe_type property of a TargetDetectorRecipe.
+    #: This constant has a value of "ENTERPRISE"
+    DETECTOR_RECIPE_TYPE_ENTERPRISE = "ENTERPRISE"
 
     def __init__(self, **kwargs):
         """
@@ -100,7 +132,7 @@ class TargetDetectorRecipe(object):
 
         :param detector:
             The value to assign to the detector property of this TargetDetectorRecipe.
-            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type detector: str
 
@@ -126,6 +158,16 @@ class TargetDetectorRecipe(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param locks:
+            The value to assign to the locks property of this TargetDetectorRecipe.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
+        :param detector_recipe_type:
+            The value to assign to the detector_recipe_type property of this TargetDetectorRecipe.
+            Allowed values for this property are: "LIMITED", "BASIC", "STANDARD", "ENTERPRISE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type detector_recipe_type: str
+
         :param source_data_retention:
             The value to assign to the source_data_retention property of this TargetDetectorRecipe.
         :type source_data_retention: int
@@ -144,6 +186,8 @@ class TargetDetectorRecipe(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
+            'locks': 'list[ResourceLock]',
+            'detector_recipe_type': 'str',
             'source_data_retention': 'int'
         }
 
@@ -160,6 +204,8 @@ class TargetDetectorRecipe(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
+            'locks': 'locks',
+            'detector_recipe_type': 'detectorRecipeType',
             'source_data_retention': 'sourceDataRetention'
         }
 
@@ -175,13 +221,15 @@ class TargetDetectorRecipe(object):
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
+        self._locks = None
+        self._detector_recipe_type = None
         self._source_data_retention = None
 
     @property
     def id(self):
         """
         **[Required]** Gets the id of this TargetDetectorRecipe.
-        Ocid for detector recipe
+        OCID for the detector recipe
 
 
         :return: The id of this TargetDetectorRecipe.
@@ -193,7 +241,7 @@ class TargetDetectorRecipe(object):
     def id(self, id):
         """
         Sets the id of this TargetDetectorRecipe.
-        Ocid for detector recipe
+        OCID for the detector recipe
 
 
         :param id: The id of this TargetDetectorRecipe.
@@ -205,7 +253,7 @@ class TargetDetectorRecipe(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this TargetDetectorRecipe.
-        Display name of detector recipe.
+        Display name of the detector recipe
 
 
         :return: The display_name of this TargetDetectorRecipe.
@@ -217,7 +265,7 @@ class TargetDetectorRecipe(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this TargetDetectorRecipe.
-        Display name of detector recipe.
+        Display name of the detector recipe
 
 
         :param display_name: The display_name of this TargetDetectorRecipe.
@@ -253,7 +301,7 @@ class TargetDetectorRecipe(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this TargetDetectorRecipe.
-        compartmentId of detector recipe
+        Compartment OCID of the detector recipe
 
 
         :return: The compartment_id of this TargetDetectorRecipe.
@@ -265,7 +313,7 @@ class TargetDetectorRecipe(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this TargetDetectorRecipe.
-        compartmentId of detector recipe
+        Compartment OCID of the detector recipe
 
 
         :param compartment_id: The compartment_id of this TargetDetectorRecipe.
@@ -277,7 +325,7 @@ class TargetDetectorRecipe(object):
     def detector_recipe_id(self):
         """
         **[Required]** Gets the detector_recipe_id of this TargetDetectorRecipe.
-        Unique identifier for Detector Recipe of which this is an extension
+        Unique identifier for of original Oracle-managed detector recipe on which the TargetDetectorRecipe is based
 
 
         :return: The detector_recipe_id of this TargetDetectorRecipe.
@@ -289,7 +337,7 @@ class TargetDetectorRecipe(object):
     def detector_recipe_id(self, detector_recipe_id):
         """
         Sets the detector_recipe_id of this TargetDetectorRecipe.
-        Unique identifier for Detector Recipe of which this is an extension
+        Unique identifier for of original Oracle-managed detector recipe on which the TargetDetectorRecipe is based
 
 
         :param detector_recipe_id: The detector_recipe_id of this TargetDetectorRecipe.
@@ -301,7 +349,7 @@ class TargetDetectorRecipe(object):
     def owner(self):
         """
         **[Required]** Gets the owner of this TargetDetectorRecipe.
-        Owner of detector recipe
+        Owner of the detector recipe
 
         Allowed values for this property are: "CUSTOMER", "ORACLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -316,7 +364,7 @@ class TargetDetectorRecipe(object):
     def owner(self, owner):
         """
         Sets the owner of this TargetDetectorRecipe.
-        Owner of detector recipe
+        Owner of the detector recipe
 
 
         :param owner: The owner of this TargetDetectorRecipe.
@@ -333,7 +381,7 @@ class TargetDetectorRecipe(object):
         **[Required]** Gets the detector of this TargetDetectorRecipe.
         Type of detector
 
-        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -352,7 +400,7 @@ class TargetDetectorRecipe(object):
         :param detector: The detector of this TargetDetectorRecipe.
         :type: str
         """
-        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR"]
+        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR"]
         if not value_allowed_none_or_none_sentinel(detector, allowed_values):
             detector = 'UNKNOWN_ENUM_VALUE'
         self._detector = detector
@@ -361,7 +409,7 @@ class TargetDetectorRecipe(object):
     def detector_rules(self):
         """
         Gets the detector_rules of this TargetDetectorRecipe.
-        List of detector rules for the detector type for recipe - user input
+        List of detector rules for the detector recipe - user input
 
 
         :return: The detector_rules of this TargetDetectorRecipe.
@@ -373,7 +421,7 @@ class TargetDetectorRecipe(object):
     def detector_rules(self, detector_rules):
         """
         Sets the detector_rules of this TargetDetectorRecipe.
-        List of detector rules for the detector type for recipe - user input
+        List of detector rules for the detector recipe - user input
 
 
         :param detector_rules: The detector_rules of this TargetDetectorRecipe.
@@ -385,7 +433,7 @@ class TargetDetectorRecipe(object):
     def effective_detector_rules(self):
         """
         Gets the effective_detector_rules of this TargetDetectorRecipe.
-        List of effective detector rules for the detector type for recipe after applying defaults
+        List of currently enabled detector rules for the detector type for recipe after applying defaults
 
 
         :return: The effective_detector_rules of this TargetDetectorRecipe.
@@ -397,7 +445,7 @@ class TargetDetectorRecipe(object):
     def effective_detector_rules(self, effective_detector_rules):
         """
         Sets the effective_detector_rules of this TargetDetectorRecipe.
-        List of effective detector rules for the detector type for recipe after applying defaults
+        List of currently enabled detector rules for the detector type for recipe after applying defaults
 
 
         :param effective_detector_rules: The effective_detector_rules of this TargetDetectorRecipe.
@@ -433,7 +481,7 @@ class TargetDetectorRecipe(object):
     def time_updated(self):
         """
         Gets the time_updated of this TargetDetectorRecipe.
-        The date and time the target detector recipe was updated. Format defined by RFC3339.
+        The date and time the target detector recipe was last updated. Format defined by RFC3339.
 
 
         :return: The time_updated of this TargetDetectorRecipe.
@@ -445,7 +493,7 @@ class TargetDetectorRecipe(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this TargetDetectorRecipe.
-        The date and time the target detector recipe was updated. Format defined by RFC3339.
+        The date and time the target detector recipe was last updated. Format defined by RFC3339.
 
 
         :param time_updated: The time_updated of this TargetDetectorRecipe.
@@ -457,7 +505,7 @@ class TargetDetectorRecipe(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this TargetDetectorRecipe.
-        The current state of the resource.
+        The current lifecycle state of the resource
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -472,7 +520,7 @@ class TargetDetectorRecipe(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this TargetDetectorRecipe.
-        The current state of the resource.
+        The current lifecycle state of the resource
 
 
         :param lifecycle_state: The lifecycle_state of this TargetDetectorRecipe.
@@ -482,6 +530,60 @@ class TargetDetectorRecipe(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this TargetDetectorRecipe.
+        Locks associated with this resource.
+
+
+        :return: The locks of this TargetDetectorRecipe.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this TargetDetectorRecipe.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this TargetDetectorRecipe.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
+
+    @property
+    def detector_recipe_type(self):
+        """
+        Gets the detector_recipe_type of this TargetDetectorRecipe.
+        Recipe type ( STANDARD, ENTERPRISE )
+
+        Allowed values for this property are: "LIMITED", "BASIC", "STANDARD", "ENTERPRISE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The detector_recipe_type of this TargetDetectorRecipe.
+        :rtype: str
+        """
+        return self._detector_recipe_type
+
+    @detector_recipe_type.setter
+    def detector_recipe_type(self, detector_recipe_type):
+        """
+        Sets the detector_recipe_type of this TargetDetectorRecipe.
+        Recipe type ( STANDARD, ENTERPRISE )
+
+
+        :param detector_recipe_type: The detector_recipe_type of this TargetDetectorRecipe.
+        :type: str
+        """
+        allowed_values = ["LIMITED", "BASIC", "STANDARD", "ENTERPRISE"]
+        if not value_allowed_none_or_none_sentinel(detector_recipe_type, allowed_values):
+            detector_recipe_type = 'UNKNOWN_ENUM_VALUE'
+        self._detector_recipe_type = detector_recipe_type
 
     @property
     def source_data_retention(self):

@@ -269,7 +269,7 @@ class CreateImageDetails(object):
         """
         Gets the launch_mode of this CreateImageDetails.
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-        * `NATIVE` - VM instances launch with paravirtualized boot and VFIO devices. The default value for platform images.
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
         * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
@@ -287,7 +287,7 @@ class CreateImageDetails(object):
         """
         Sets the launch_mode of this CreateImageDetails.
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
-        * `NATIVE` - VM instances launch with paravirtualized boot and VFIO devices. The default value for platform images.
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
         * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.

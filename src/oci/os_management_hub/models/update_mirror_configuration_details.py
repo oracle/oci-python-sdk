@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateMirrorConfigurationDetails(object):
     """
-    Information for updating a mirror configuration
+    Provides the information used to update the mirror configuration for a management station.
     """
 
     def __init__(self, **kwargs):
@@ -60,7 +60,7 @@ class UpdateMirrorConfigurationDetails(object):
     def directory(self):
         """
         **[Required]** Gets the directory of this UpdateMirrorConfigurationDetails.
-        Directory for the mirroring
+        Path to the data volume on the management station where software source mirrors are stored.
 
 
         :return: The directory of this UpdateMirrorConfigurationDetails.
@@ -72,7 +72,7 @@ class UpdateMirrorConfigurationDetails(object):
     def directory(self, directory):
         """
         Sets the directory of this UpdateMirrorConfigurationDetails.
-        Directory for the mirroring
+        Path to the data volume on the management station where software source mirrors are stored.
 
 
         :param directory: The directory of this UpdateMirrorConfigurationDetails.
@@ -84,7 +84,7 @@ class UpdateMirrorConfigurationDetails(object):
     def port(self):
         """
         **[Required]** Gets the port of this UpdateMirrorConfigurationDetails.
-        Default port for the mirror
+        Default mirror listening port for http.
 
 
         :return: The port of this UpdateMirrorConfigurationDetails.
@@ -96,7 +96,7 @@ class UpdateMirrorConfigurationDetails(object):
     def port(self, port):
         """
         Sets the port of this UpdateMirrorConfigurationDetails.
-        Default port for the mirror
+        Default mirror listening port for http.
 
 
         :param port: The port of this UpdateMirrorConfigurationDetails.
@@ -108,7 +108,7 @@ class UpdateMirrorConfigurationDetails(object):
     def sslport(self):
         """
         **[Required]** Gets the sslport of this UpdateMirrorConfigurationDetails.
-        Default sslport for the mirror
+        Default mirror listening port for https.
 
 
         :return: The sslport of this UpdateMirrorConfigurationDetails.
@@ -120,7 +120,7 @@ class UpdateMirrorConfigurationDetails(object):
     def sslport(self, sslport):
         """
         Sets the sslport of this UpdateMirrorConfigurationDetails.
-        Default sslport for the mirror
+        Default mirror listening port for https.
 
 
         :param sslport: The sslport of this UpdateMirrorConfigurationDetails.
@@ -132,7 +132,7 @@ class UpdateMirrorConfigurationDetails(object):
     def sslcert(self):
         """
         Gets the sslcert of this UpdateMirrorConfigurationDetails.
-        Local path for the sslcert
+        Path to the SSL cerfificate.
 
 
         :return: The sslcert of this UpdateMirrorConfigurationDetails.
@@ -144,7 +144,7 @@ class UpdateMirrorConfigurationDetails(object):
     def sslcert(self, sslcert):
         """
         Sets the sslcert of this UpdateMirrorConfigurationDetails.
-        Local path for the sslcert
+        Path to the SSL cerfificate.
 
 
         :param sslcert: The sslcert of this UpdateMirrorConfigurationDetails.

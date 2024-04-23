@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ModuleStreamSummary(object):
     """
-    Summary information pertaining to a module stream provided by a software source.
+    Provides the summary information for a module stream contained within a software source.
     """
 
     def __init__(self, **kwargs):
@@ -163,7 +163,9 @@ class ModuleStreamSummary(object):
     def software_source_id(self):
         """
         Gets the software_source_id of this ModuleStreamSummary.
-        The software source id for the the module stream.
+        The `OCID`__ of the software source that contains the the module stream.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_source_id of this ModuleStreamSummary.
@@ -175,7 +177,9 @@ class ModuleStreamSummary(object):
     def software_source_id(self, software_source_id):
         """
         Sets the software_source_id of this ModuleStreamSummary.
-        The software source id for the the module stream.
+        The `OCID`__ of the software source that contains the the module stream.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_source_id: The software_source_id of this ModuleStreamSummary.

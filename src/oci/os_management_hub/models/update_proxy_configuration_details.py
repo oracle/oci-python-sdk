@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateProxyConfigurationDetails(object):
     """
-    Information for updating a proxy configuration
+    Provides the information used to update the proxy configuration for a management station.
     """
 
     def __init__(self, **kwargs):
@@ -60,7 +60,7 @@ class UpdateProxyConfigurationDetails(object):
     def is_enabled(self):
         """
         **[Required]** Gets the is_enabled of this UpdateProxyConfigurationDetails.
-        To enable or disable the proxy (default true)
+        Indicates if the proxy should be enabled or disabled. Default is enabled.
 
 
         :return: The is_enabled of this UpdateProxyConfigurationDetails.
@@ -72,7 +72,7 @@ class UpdateProxyConfigurationDetails(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this UpdateProxyConfigurationDetails.
-        To enable or disable the proxy (default true)
+        Indicates if the proxy should be enabled or disabled. Default is enabled.
 
 
         :param is_enabled: The is_enabled of this UpdateProxyConfigurationDetails.
@@ -84,7 +84,7 @@ class UpdateProxyConfigurationDetails(object):
     def hosts(self):
         """
         Gets the hosts of this UpdateProxyConfigurationDetails.
-        List of hosts
+        List of hosts.
 
 
         :return: The hosts of this UpdateProxyConfigurationDetails.
@@ -96,7 +96,7 @@ class UpdateProxyConfigurationDetails(object):
     def hosts(self, hosts):
         """
         Sets the hosts of this UpdateProxyConfigurationDetails.
-        List of hosts
+        List of hosts.
 
 
         :param hosts: The hosts of this UpdateProxyConfigurationDetails.
@@ -108,7 +108,7 @@ class UpdateProxyConfigurationDetails(object):
     def port(self):
         """
         Gets the port of this UpdateProxyConfigurationDetails.
-        Port that the proxy will use
+        Listening port used for the proxy.
 
 
         :return: The port of this UpdateProxyConfigurationDetails.
@@ -120,7 +120,7 @@ class UpdateProxyConfigurationDetails(object):
     def port(self, port):
         """
         Sets the port of this UpdateProxyConfigurationDetails.
-        Port that the proxy will use
+        Listening port used for the proxy.
 
 
         :param port: The port of this UpdateProxyConfigurationDetails.
@@ -132,7 +132,7 @@ class UpdateProxyConfigurationDetails(object):
     def forward(self):
         """
         Gets the forward of this UpdateProxyConfigurationDetails.
-        URL that the proxy will forward to
+        The URL the proxy will forward to.
 
 
         :return: The forward of this UpdateProxyConfigurationDetails.
@@ -144,7 +144,7 @@ class UpdateProxyConfigurationDetails(object):
     def forward(self, forward):
         """
         Sets the forward of this UpdateProxyConfigurationDetails.
-        URL that the proxy will forward to
+        The URL the proxy will forward to.
 
 
         :param forward: The forward of this UpdateProxyConfigurationDetails.

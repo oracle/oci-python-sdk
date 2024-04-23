@@ -59,6 +59,10 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             The value to assign to the compartment_id property of this InstanceConfigurationLaunchInstanceDetails.
         :type compartment_id: str
 
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this InstanceConfigurationLaunchInstanceDetails.
+        :type cluster_placement_group_id: str
+
         :param create_vnic_details:
             The value to assign to the create_vnic_details property of this InstanceConfigurationLaunchInstanceDetails.
         :type create_vnic_details: oci.core.models.InstanceConfigurationCreateVnicDetails
@@ -152,6 +156,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             'availability_domain': 'str',
             'capacity_reservation_id': 'str',
             'compartment_id': 'str',
+            'cluster_placement_group_id': 'str',
             'create_vnic_details': 'InstanceConfigurationCreateVnicDetails',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
@@ -179,6 +184,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             'availability_domain': 'availabilityDomain',
             'capacity_reservation_id': 'capacityReservationId',
             'compartment_id': 'compartmentId',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
             'create_vnic_details': 'createVnicDetails',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -205,6 +211,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         self._availability_domain = None
         self._capacity_reservation_id = None
         self._compartment_id = None
+        self._cluster_placement_group_id = None
         self._create_vnic_details = None
         self._defined_tags = None
         self._display_name = None
@@ -306,6 +313,30 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this InstanceConfigurationLaunchInstanceDetails.
+        The OCID of the cluster placement group of the instance.
+
+
+        :return: The cluster_placement_group_id of this InstanceConfigurationLaunchInstanceDetails.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this InstanceConfigurationLaunchInstanceDetails.
+        The OCID of the cluster placement group of the instance.
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this InstanceConfigurationLaunchInstanceDetails.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
 
     @property
     def create_vnic_details(self):

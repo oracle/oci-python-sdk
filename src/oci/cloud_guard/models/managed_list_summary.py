@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagedListSummary(object):
     """
-    Summary of ManagedList
+    Summary information for a managed list.
     """
 
     #: A constant which can be used with the list_type property of a ManagedListSummary.
@@ -242,7 +242,7 @@ class ManagedListSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this ManagedListSummary.
-        Unique identifier that is immutable on creation
+        Unique identifier that can't be changed after creation
 
 
         :return: The id of this ManagedListSummary.
@@ -254,7 +254,7 @@ class ManagedListSummary(object):
     def id(self, id):
         """
         Sets the id of this ManagedListSummary.
-        Unique identifier that is immutable on creation
+        Unique identifier that can't be changed after creation
 
 
         :param id: The id of this ManagedListSummary.
@@ -266,7 +266,7 @@ class ManagedListSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this ManagedListSummary.
-        ManagedList display name
+        Managed list display name
 
 
         :return: The display_name of this ManagedListSummary.
@@ -278,7 +278,7 @@ class ManagedListSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ManagedListSummary.
-        ManagedList display name
+        Managed list display name
 
 
         :param display_name: The display_name of this ManagedListSummary.
@@ -290,7 +290,7 @@ class ManagedListSummary(object):
     def description(self):
         """
         Gets the description of this ManagedListSummary.
-        ManagedList description
+        Managed list description
 
 
         :return: The description of this ManagedListSummary.
@@ -302,7 +302,7 @@ class ManagedListSummary(object):
     def description(self, description):
         """
         Sets the description of this ManagedListSummary.
-        ManagedList description
+        Managed list description
 
 
         :param description: The description of this ManagedListSummary.
@@ -314,7 +314,7 @@ class ManagedListSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ManagedListSummary.
-        Compartment Identifier where the resource is created
+        Compartment OCID where the resource is created
 
 
         :return: The compartment_id of this ManagedListSummary.
@@ -326,7 +326,7 @@ class ManagedListSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ManagedListSummary.
-        Compartment Identifier where the resource is created
+        Compartment OCID where the resource is created
 
 
         :param compartment_id: The compartment_id of this ManagedListSummary.
@@ -338,7 +338,7 @@ class ManagedListSummary(object):
     def source_managed_list_id(self):
         """
         Gets the source_managed_list_id of this ManagedListSummary.
-        OCID of the Source ManagedList
+        OCID of the source managed list
 
 
         :return: The source_managed_list_id of this ManagedListSummary.
@@ -350,7 +350,7 @@ class ManagedListSummary(object):
     def source_managed_list_id(self, source_managed_list_id):
         """
         Sets the source_managed_list_id of this ManagedListSummary.
-        OCID of the Source ManagedList
+        OCID of the source managed list
 
 
         :param source_managed_list_id: The source_managed_list_id of this ManagedListSummary.
@@ -362,7 +362,7 @@ class ManagedListSummary(object):
     def list_type(self):
         """
         **[Required]** Gets the list_type of this ManagedListSummary.
-        type of the list
+        Type of information stored in the managed list
 
         Allowed values for this property are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -377,7 +377,7 @@ class ManagedListSummary(object):
     def list_type(self, list_type):
         """
         Sets the list_type of this ManagedListSummary.
-        type of the list
+        Type of information stored in the managed list
 
 
         :param list_type: The list_type of this ManagedListSummary.
@@ -392,7 +392,7 @@ class ManagedListSummary(object):
     def feed_provider(self):
         """
         **[Required]** Gets the feed_provider of this ManagedListSummary.
-        provider of the feed
+        Provider of the feed
 
         Allowed values for this property are: "CUSTOMER", "ORACLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -407,7 +407,7 @@ class ManagedListSummary(object):
     def feed_provider(self, feed_provider):
         """
         Sets the feed_provider of this ManagedListSummary.
-        provider of the feed
+        Provider of the feed
 
 
         :param feed_provider: The feed_provider of this ManagedListSummary.
@@ -422,7 +422,7 @@ class ManagedListSummary(object):
     def is_editable(self):
         """
         Gets the is_editable of this ManagedListSummary.
-        If this list is editable or not
+        Is this list editable?
 
 
         :return: The is_editable of this ManagedListSummary.
@@ -434,7 +434,7 @@ class ManagedListSummary(object):
     def is_editable(self, is_editable):
         """
         Sets the is_editable of this ManagedListSummary.
-        If this list is editable or not
+        Is this list editable?
 
 
         :param is_editable: The is_editable of this ManagedListSummary.
@@ -446,7 +446,7 @@ class ManagedListSummary(object):
     def list_items(self):
         """
         **[Required]** Gets the list_items of this ManagedListSummary.
-        List of ManagedListItem
+        List of items in the managed list
 
 
         :return: The list_items of this ManagedListSummary.
@@ -458,7 +458,7 @@ class ManagedListSummary(object):
     def list_items(self, list_items):
         """
         Sets the list_items of this ManagedListSummary.
-        List of ManagedListItem
+        List of items in the managed list
 
 
         :param list_items: The list_items of this ManagedListSummary.
@@ -494,7 +494,7 @@ class ManagedListSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this ManagedListSummary.
-        The date and time the managed list was updated. Format defined by RFC3339.
+        The date and time the managed list was last updated. Format defined by RFC3339.
 
 
         :return: The time_updated of this ManagedListSummary.
@@ -506,7 +506,7 @@ class ManagedListSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this ManagedListSummary.
-        The date and time the managed list was updated. Format defined by RFC3339.
+        The date and time the managed list was last updated. Format defined by RFC3339.
 
 
         :param time_updated: The time_updated of this ManagedListSummary.
@@ -518,7 +518,7 @@ class ManagedListSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this ManagedListSummary.
-        The current state of the resource.
+        The current lifecycle state of the resource
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -533,7 +533,7 @@ class ManagedListSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ManagedListSummary.
-        The current state of the resource.
+        The current lifecycle state of the resource
 
 
         :param lifecycle_state: The lifecycle_state of this ManagedListSummary.
@@ -548,7 +548,7 @@ class ManagedListSummary(object):
     def lifecyle_details(self):
         """
         Gets the lifecyle_details of this ManagedListSummary.
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
 
 
         :return: The lifecyle_details of this ManagedListSummary.
@@ -560,7 +560,7 @@ class ManagedListSummary(object):
     def lifecyle_details(self, lifecyle_details):
         """
         Sets the lifecyle_details of this ManagedListSummary.
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
 
 
         :param lifecyle_details: The lifecyle_details of this ManagedListSummary.

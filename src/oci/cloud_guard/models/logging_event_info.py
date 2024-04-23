@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LoggingEventInfo(DataSourceEventInfo):
     """
-    The information about new Logging event detail of DataSource.
+    Information for a logging event for a data source.
     """
 
     def __init__(self, **kwargs):
@@ -23,7 +23,7 @@ class LoggingEventInfo(DataSourceEventInfo):
 
         :param data_source_feed_provider:
             The value to assign to the data_source_feed_provider property of this LoggingEventInfo.
-            Allowed values for this property are: "LOGGINGQUERY"
+            Allowed values for this property are: "LOGGINGQUERY", "SCHEDULEDQUERY"
         :type data_source_feed_provider: str
 
         :param observed_value:
@@ -70,6 +70,8 @@ class LoggingEventInfo(DataSourceEventInfo):
     def observed_value(self):
         """
         Gets the observed_value of this LoggingEventInfo.
+        Observed value of DataSource for a Problem
+
 
         :return: The observed_value of this LoggingEventInfo.
         :rtype: str
@@ -80,6 +82,8 @@ class LoggingEventInfo(DataSourceEventInfo):
     def observed_value(self, observed_value):
         """
         Sets the observed_value of this LoggingEventInfo.
+        Observed value of DataSource for a Problem
+
 
         :param observed_value: The observed_value of this LoggingEventInfo.
         :type: str
@@ -90,6 +94,8 @@ class LoggingEventInfo(DataSourceEventInfo):
     def trigger_value(self):
         """
         Gets the trigger_value of this LoggingEventInfo.
+        Triggered value of DataSource for a Problem
+
 
         :return: The trigger_value of this LoggingEventInfo.
         :rtype: str
@@ -100,6 +106,8 @@ class LoggingEventInfo(DataSourceEventInfo):
     def trigger_value(self, trigger_value):
         """
         Sets the trigger_value of this LoggingEventInfo.
+        Triggered value of DataSource for a Problem
+
 
         :param trigger_value: The trigger_value of this LoggingEventInfo.
         :type: str
@@ -110,6 +118,8 @@ class LoggingEventInfo(DataSourceEventInfo):
     def operator(self):
         """
         Gets the operator of this LoggingEventInfo.
+        Operator details of DataSource for a Problem
+
 
         :return: The operator of this LoggingEventInfo.
         :rtype: str
@@ -120,6 +130,8 @@ class LoggingEventInfo(DataSourceEventInfo):
     def operator(self, operator):
         """
         Sets the operator of this LoggingEventInfo.
+        Operator details of DataSource for a Problem
+
 
         :param operator: The operator of this LoggingEventInfo.
         :type: str
@@ -130,6 +142,8 @@ class LoggingEventInfo(DataSourceEventInfo):
     def log_result(self):
         """
         Gets the log_result of this LoggingEventInfo.
+        Log result details of DataSource for a Problem
+
 
         :return: The log_result of this LoggingEventInfo.
         :rtype: str
@@ -140,6 +154,8 @@ class LoggingEventInfo(DataSourceEventInfo):
     def log_result(self, log_result):
         """
         Sets the log_result of this LoggingEventInfo.
+        Log result details of DataSource for a Problem
+
 
         :param log_result: The log_result of this LoggingEventInfo.
         :type: str

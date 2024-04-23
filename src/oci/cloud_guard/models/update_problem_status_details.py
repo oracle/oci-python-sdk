@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateProblemStatusDetails(object):
     """
-    The additional details for the problem
+    The additional details to be updated for the problem.
     """
 
     #: A constant which can be used with the status property of a UpdateProblemStatusDetails.
@@ -94,7 +94,7 @@ class UpdateProblemStatusDetails(object):
     def comment(self):
         """
         Gets the comment of this UpdateProblemStatusDetails.
-        User Comments
+        User comments
 
 
         :return: The comment of this UpdateProblemStatusDetails.
@@ -106,7 +106,7 @@ class UpdateProblemStatusDetails(object):
     def comment(self, comment):
         """
         Sets the comment of this UpdateProblemStatusDetails.
-        User Comments
+        User comments
 
 
         :param comment: The comment of this UpdateProblemStatusDetails.

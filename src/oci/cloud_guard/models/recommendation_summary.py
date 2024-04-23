@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RecommendationSummary(object):
     """
-    Recommendation Definition.
+    Recommendation definition.
     """
 
     #: A constant which can be used with the type property of a RecommendationSummary.
@@ -206,7 +206,7 @@ class RecommendationSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this RecommendationSummary.
-        Unique identifier for Recommendation
+        Unique identifier for the recommendation
 
 
         :return: The id of this RecommendationSummary.
@@ -218,7 +218,7 @@ class RecommendationSummary(object):
     def id(self, id):
         """
         Sets the id of this RecommendationSummary.
-        Unique identifier for Recommendation
+        Unique identifier for the recommendation
 
 
         :param id: The id of this RecommendationSummary.
@@ -260,7 +260,7 @@ class RecommendationSummary(object):
     def tenant_id(self):
         """
         Gets the tenant_id of this RecommendationSummary.
-        Tenant Identifier
+        Tenant identifier
 
 
         :return: The tenant_id of this RecommendationSummary.
@@ -272,7 +272,7 @@ class RecommendationSummary(object):
     def tenant_id(self, tenant_id):
         """
         Sets the tenant_id of this RecommendationSummary.
-        Tenant Identifier
+        Tenant identifier
 
 
         :param tenant_id: The tenant_id of this RecommendationSummary.
@@ -284,7 +284,7 @@ class RecommendationSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this RecommendationSummary.
-        Compartment Identifier
+        Compartment OCID
 
 
         :return: The compartment_id of this RecommendationSummary.
@@ -296,7 +296,7 @@ class RecommendationSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this RecommendationSummary.
-        Compartment Identifier
+        Compartment OCID
 
 
         :param compartment_id: The compartment_id of this RecommendationSummary.
@@ -308,7 +308,7 @@ class RecommendationSummary(object):
     def target_id(self):
         """
         **[Required]** Gets the target_id of this RecommendationSummary.
-        targetId associated with the problem
+        Target ID associated with the problem
 
 
         :return: The target_id of this RecommendationSummary.
@@ -320,7 +320,7 @@ class RecommendationSummary(object):
     def target_id(self, target_id):
         """
         Sets the target_id of this RecommendationSummary.
-        targetId associated with the problem
+        Target ID associated with the problem
 
 
         :param target_id: The target_id of this RecommendationSummary.
@@ -356,7 +356,7 @@ class RecommendationSummary(object):
     def risk_level(self):
         """
         Gets the risk_level of this RecommendationSummary.
-        The Risk Level
+        The risk level of the problem
 
         Allowed values for this property are: "CRITICAL", "HIGH", "MEDIUM", "LOW", "MINOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -371,7 +371,7 @@ class RecommendationSummary(object):
     def risk_level(self, risk_level):
         """
         Sets the risk_level of this RecommendationSummary.
-        The Risk Level
+        The risk level of the problem
 
 
         :param risk_level: The risk_level of this RecommendationSummary.
@@ -410,7 +410,7 @@ class RecommendationSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this RecommendationSummary.
-        The current state of the Recommendation.
+        The current lifecycle state of the recommendation
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -425,7 +425,7 @@ class RecommendationSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this RecommendationSummary.
-        The current state of the Recommendation.
+        The current lifecycle state of the recommendation
 
 
         :param lifecycle_state: The lifecycle_state of this RecommendationSummary.
@@ -440,7 +440,7 @@ class RecommendationSummary(object):
     def lifecycle_detail(self):
         """
         **[Required]** Gets the lifecycle_detail of this RecommendationSummary.
-        The lifecycleDetail will give more detail on the substate of the lifecycleState.
+        Additional details on the substate of the lifecycle state
 
         Allowed values for this property are: "OPEN", "RESOLVED", "DISMISSED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -455,7 +455,7 @@ class RecommendationSummary(object):
     def lifecycle_detail(self, lifecycle_detail):
         """
         Sets the lifecycle_detail of this RecommendationSummary.
-        The lifecycleDetail will give more detail on the substate of the lifecycleState.
+        Additional details on the substate of the lifecycle state
 
 
         :param lifecycle_detail: The lifecycle_detail of this RecommendationSummary.
@@ -470,7 +470,7 @@ class RecommendationSummary(object):
     def time_created(self):
         """
         Gets the time_created of this RecommendationSummary.
-        problem creating time
+        The date and time the problem was first created
 
 
         :return: The time_created of this RecommendationSummary.
@@ -482,7 +482,7 @@ class RecommendationSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this RecommendationSummary.
-        problem creating time
+        The date and time the problem was first created
 
 
         :param time_created: The time_created of this RecommendationSummary.
@@ -494,7 +494,7 @@ class RecommendationSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this RecommendationSummary.
-        problem updating time
+        The date and time the problem was last updated
 
 
         :return: The time_updated of this RecommendationSummary.
@@ -506,7 +506,7 @@ class RecommendationSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this RecommendationSummary.
-        problem updating time
+        The date and time the problem was last updated
 
 
         :param time_updated: The time_updated of this RecommendationSummary.
@@ -518,7 +518,7 @@ class RecommendationSummary(object):
     def name(self):
         """
         **[Required]** Gets the name of this RecommendationSummary.
-        recommendation string showing on UX
+        Recommendation string that appears in the UI for the problem
 
 
         :return: The name of this RecommendationSummary.
@@ -530,7 +530,7 @@ class RecommendationSummary(object):
     def name(self, name):
         """
         Sets the name of this RecommendationSummary.
-        recommendation string showing on UX
+        Recommendation string that appears in the UI for the problem
 
 
         :param name: The name of this RecommendationSummary.
@@ -542,7 +542,7 @@ class RecommendationSummary(object):
     def description(self):
         """
         **[Required]** Gets the description of this RecommendationSummary.
-        description of the recommendation
+        Description of the recommendation
 
 
         :return: The description of this RecommendationSummary.
@@ -554,7 +554,7 @@ class RecommendationSummary(object):
     def description(self, description):
         """
         Sets the description of this RecommendationSummary.
-        description of the recommendation
+        Description of the recommendation
 
 
         :param description: The description of this RecommendationSummary.

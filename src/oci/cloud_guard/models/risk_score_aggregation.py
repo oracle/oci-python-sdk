@@ -46,7 +46,7 @@ class RiskScoreAggregation(object):
     def dimensions_map(self):
         """
         **[Required]** Gets the dimensions_map of this RiskScoreAggregation.
-        The key-value pairs of dimensions and their names.
+        The key-value pairs of dimensions and their names
 
 
         :return: The dimensions_map of this RiskScoreAggregation.
@@ -58,7 +58,7 @@ class RiskScoreAggregation(object):
     def dimensions_map(self, dimensions_map):
         """
         Sets the dimensions_map of this RiskScoreAggregation.
-        The key-value pairs of dimensions and their names.
+        The key-value pairs of dimensions and their names
 
 
         :param dimensions_map: The dimensions_map of this RiskScoreAggregation.

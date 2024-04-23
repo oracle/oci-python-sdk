@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDetectorRuleDetails(object):
     """
-    Details of a Detector Rule to be overriden in Detector Recipe
+    Parameters to be updated for a detector rule within a detector recipe.
     """
 
     #: A constant which can be used with the risk_level property of a UpdateDetectorRuleDetails.
@@ -116,7 +116,7 @@ class UpdateDetectorRuleDetails(object):
     def is_enabled(self):
         """
         **[Required]** Gets the is_enabled of this UpdateDetectorRuleDetails.
-        Enables the control
+        Enablement status of the detector rule
 
 
         :return: The is_enabled of this UpdateDetectorRuleDetails.
@@ -128,7 +128,7 @@ class UpdateDetectorRuleDetails(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this UpdateDetectorRuleDetails.
-        Enables the control
+        Enablement status of the detector rule
 
 
         :param is_enabled: The is_enabled of this UpdateDetectorRuleDetails.
@@ -140,7 +140,7 @@ class UpdateDetectorRuleDetails(object):
     def risk_level(self):
         """
         Gets the risk_level of this UpdateDetectorRuleDetails.
-        The Risk Level
+        The risk level of the detector rule
 
         Allowed values for this property are: "CRITICAL", "HIGH", "MEDIUM", "LOW", "MINOR"
 
@@ -154,7 +154,7 @@ class UpdateDetectorRuleDetails(object):
     def risk_level(self, risk_level):
         """
         Sets the risk_level of this UpdateDetectorRuleDetails.
-        The Risk Level
+        The risk level of the detector rule
 
 
         :param risk_level: The risk_level of this UpdateDetectorRuleDetails.
@@ -171,7 +171,7 @@ class UpdateDetectorRuleDetails(object):
     def configurations(self):
         """
         Gets the configurations of this UpdateDetectorRuleDetails.
-        Configuration details
+        List of detector rule configurations
 
 
         :return: The configurations of this UpdateDetectorRuleDetails.
@@ -183,7 +183,7 @@ class UpdateDetectorRuleDetails(object):
     def configurations(self, configurations):
         """
         Sets the configurations of this UpdateDetectorRuleDetails.
-        Configuration details
+        List of detector rule configurations
 
 
         :param configurations: The configurations of this UpdateDetectorRuleDetails.
@@ -215,7 +215,7 @@ class UpdateDetectorRuleDetails(object):
     def labels(self):
         """
         Gets the labels of this UpdateDetectorRuleDetails.
-        user defined labels for a detector rule
+        User-defined labels for a detector rule
 
 
         :return: The labels of this UpdateDetectorRuleDetails.
@@ -227,7 +227,7 @@ class UpdateDetectorRuleDetails(object):
     def labels(self, labels):
         """
         Sets the labels of this UpdateDetectorRuleDetails.
-        user defined labels for a detector rule
+        User-defined labels for a detector rule
 
 
         :param labels: The labels of this UpdateDetectorRuleDetails.
@@ -239,7 +239,7 @@ class UpdateDetectorRuleDetails(object):
     def description(self):
         """
         Gets the description of this UpdateDetectorRuleDetails.
-        Description for DetectorRecipeDetectorRule.
+        Description for the detector rule
 
 
         :return: The description of this UpdateDetectorRuleDetails.
@@ -251,7 +251,7 @@ class UpdateDetectorRuleDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateDetectorRuleDetails.
-        Description for DetectorRecipeDetectorRule.
+        Description for the detector rule
 
 
         :param description: The description of this UpdateDetectorRuleDetails.
@@ -263,7 +263,7 @@ class UpdateDetectorRuleDetails(object):
     def recommendation(self):
         """
         Gets the recommendation of this UpdateDetectorRuleDetails.
-        Recommendation for DetectorRecipeDetectorRule
+        Recommendation for the detector rule
 
 
         :return: The recommendation of this UpdateDetectorRuleDetails.
@@ -275,7 +275,7 @@ class UpdateDetectorRuleDetails(object):
     def recommendation(self, recommendation):
         """
         Sets the recommendation of this UpdateDetectorRuleDetails.
-        Recommendation for DetectorRecipeDetectorRule
+        Recommendation for the detector rule
 
 
         :param recommendation: The recommendation of this UpdateDetectorRuleDetails.
@@ -287,7 +287,7 @@ class UpdateDetectorRuleDetails(object):
     def data_source_id(self):
         """
         Gets the data_source_id of this UpdateDetectorRuleDetails.
-        The id of the attached DataSource.
+        The unique identifier of the attached data source
 
 
         :return: The data_source_id of this UpdateDetectorRuleDetails.
@@ -299,7 +299,7 @@ class UpdateDetectorRuleDetails(object):
     def data_source_id(self, data_source_id):
         """
         Sets the data_source_id of this UpdateDetectorRuleDetails.
-        The id of the attached DataSource.
+        The unique identifier of the attached data source
 
 
         :param data_source_id: The data_source_id of this UpdateDetectorRuleDetails.
@@ -311,7 +311,7 @@ class UpdateDetectorRuleDetails(object):
     def entities_mappings(self):
         """
         Gets the entities_mappings of this UpdateDetectorRuleDetails.
-        Data Source entities mapping for a Detector Rule
+        Data source entities mapping for a detector rule
 
 
         :return: The entities_mappings of this UpdateDetectorRuleDetails.
@@ -323,7 +323,7 @@ class UpdateDetectorRuleDetails(object):
     def entities_mappings(self, entities_mappings):
         """
         Sets the entities_mappings of this UpdateDetectorRuleDetails.
-        Data Source entities mapping for a Detector Rule
+        Data source entities mapping for a detector rule
 
 
         :param entities_mappings: The entities_mappings of this UpdateDetectorRuleDetails.

@@ -12,12 +12,16 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataSourceSummary(object):
     """
-    Summary of Data Source
+    Summary information for a specific data source.
     """
 
     #: A constant which can be used with the data_source_feed_provider property of a DataSourceSummary.
     #: This constant has a value of "LOGGINGQUERY"
     DATA_SOURCE_FEED_PROVIDER_LOGGINGQUERY = "LOGGINGQUERY"
+
+    #: A constant which can be used with the data_source_feed_provider property of a DataSourceSummary.
+    #: This constant has a value of "SCHEDULEDQUERY"
+    DATA_SOURCE_FEED_PROVIDER_SCHEDULEDQUERY = "SCHEDULEDQUERY"
 
     #: A constant which can be used with the status property of a DataSourceSummary.
     #: This constant has a value of "ENABLED"
@@ -70,7 +74,7 @@ class DataSourceSummary(object):
 
         :param data_source_feed_provider:
             The value to assign to the data_source_feed_provider property of this DataSourceSummary.
-            Allowed values for this property are: "LOGGINGQUERY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LOGGINGQUERY", "SCHEDULEDQUERY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type data_source_feed_provider: str
 
@@ -176,7 +180,7 @@ class DataSourceSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this DataSourceSummary.
-        Ocid for Data Source
+        OCID for the data source
 
 
         :return: The id of this DataSourceSummary.
@@ -188,7 +192,7 @@ class DataSourceSummary(object):
     def id(self, id):
         """
         Sets the id of this DataSourceSummary.
-        Ocid for Data Source
+        OCID for the data source
 
 
         :param id: The id of this DataSourceSummary.
@@ -200,7 +204,7 @@ class DataSourceSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this DataSourceSummary.
-        DisplayName of Data Source
+        Display name of the data source
 
 
         :return: The display_name of this DataSourceSummary.
@@ -212,7 +216,7 @@ class DataSourceSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this DataSourceSummary.
-        DisplayName of Data Source
+        Display name of the data source
 
 
         :param display_name: The display_name of this DataSourceSummary.
@@ -224,9 +228,9 @@ class DataSourceSummary(object):
     def data_source_feed_provider(self):
         """
         **[Required]** Gets the data_source_feed_provider of this DataSourceSummary.
-        Possible type of dataSourceFeed Provider(LoggingQuery)
+        Type of data source feed provider(LoggingQuery)
 
-        Allowed values for this property are: "LOGGINGQUERY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LOGGINGQUERY", "SCHEDULEDQUERY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -239,13 +243,13 @@ class DataSourceSummary(object):
     def data_source_feed_provider(self, data_source_feed_provider):
         """
         Sets the data_source_feed_provider of this DataSourceSummary.
-        Possible type of dataSourceFeed Provider(LoggingQuery)
+        Type of data source feed provider(LoggingQuery)
 
 
         :param data_source_feed_provider: The data_source_feed_provider of this DataSourceSummary.
         :type: str
         """
-        allowed_values = ["LOGGINGQUERY"]
+        allowed_values = ["LOGGINGQUERY", "SCHEDULEDQUERY"]
         if not value_allowed_none_or_none_sentinel(data_source_feed_provider, allowed_values):
             data_source_feed_provider = 'UNKNOWN_ENUM_VALUE'
         self._data_source_feed_provider = data_source_feed_provider
@@ -254,7 +258,7 @@ class DataSourceSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this DataSourceSummary.
-        CompartmentId of Data Source.
+        Compartment OCID of the data source
 
 
         :return: The compartment_id of this DataSourceSummary.
@@ -266,7 +270,7 @@ class DataSourceSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this DataSourceSummary.
-        CompartmentId of Data Source.
+        Compartment OCID of the data source
 
 
         :param compartment_id: The compartment_id of this DataSourceSummary.
@@ -346,7 +350,7 @@ class DataSourceSummary(object):
     def status(self):
         """
         Gets the status of this DataSourceSummary.
-        Status of data Source
+        Status of data source
 
         Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -361,7 +365,7 @@ class DataSourceSummary(object):
     def status(self, status):
         """
         Sets the status of this DataSourceSummary.
-        Status of data Source
+        Status of data source
 
 
         :param status: The status of this DataSourceSummary.
@@ -396,7 +400,7 @@ class DataSourceSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this DataSourceSummary.
-        The current state of the resource.
+        The current lifecycle state of the resource
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -411,7 +415,7 @@ class DataSourceSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this DataSourceSummary.
-        The current state of the resource.
+        The current lifecycle state of the resource
 
 
         :param lifecycle_state: The lifecycle_state of this DataSourceSummary.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SecurityScoreTrendAggregationCollection(object):
     """
-    Security Score Trend Aggregation Collection.
+    Collection of security trend aggregation information.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class SecurityScoreTrendAggregationCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this SecurityScoreTrendAggregationCollection.
-        The items consist of all the SecurityScoreTrendAggregation objects.
+        List of all the SecurityScoreTrendAggregation resources
 
 
         :return: The items of this SecurityScoreTrendAggregationCollection.
@@ -51,7 +51,7 @@ class SecurityScoreTrendAggregationCollection(object):
     def items(self, items):
         """
         Sets the items of this SecurityScoreTrendAggregationCollection.
-        The items consist of all the SecurityScoreTrendAggregation objects.
+        List of all the SecurityScoreTrendAggregation resources
 
 
         :param items: The items of this SecurityScoreTrendAggregationCollection.

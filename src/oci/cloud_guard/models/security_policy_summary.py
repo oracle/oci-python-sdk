@@ -12,7 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SecurityPolicySummary(object):
     """
-    Summary information for a security zone policy. A security policy defines a security requirement for resources in a security zone. If a security zone enables a policy (using a recipe), then any action that attempts to violate that policy is denied.
+    Summary information for a Security Zones policy. A security policy
+    defines a security requirement for resources in a security zone.
     """
 
     #: A constant which can be used with the owner property of a SecurityPolicySummary.
@@ -177,7 +178,7 @@ class SecurityPolicySummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this SecurityPolicySummary.
-        Unique identifier that is immutable on creation
+        Unique identifier that can\u2019t be changed after creation
 
 
         :return: The id of this SecurityPolicySummary.
@@ -189,7 +190,7 @@ class SecurityPolicySummary(object):
     def id(self, id):
         """
         Sets the id of this SecurityPolicySummary.
-        Unique identifier that is immutable on creation
+        Unique identifier that can\u2019t be changed after creation
 
 
         :param id: The id of this SecurityPolicySummary.
@@ -225,7 +226,7 @@ class SecurityPolicySummary(object):
     def display_name(self):
         """
         Gets the display_name of this SecurityPolicySummary.
-        The security policy's full name
+        The security policy's display name
 
 
         :return: The display_name of this SecurityPolicySummary.
@@ -237,7 +238,7 @@ class SecurityPolicySummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this SecurityPolicySummary.
-        The security policy's full name
+        The security policy's display name
 
 
         :param display_name: The display_name of this SecurityPolicySummary.
@@ -273,7 +274,7 @@ class SecurityPolicySummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this SecurityPolicySummary.
-        The id of the security policy's compartment
+        The OCID of the security policy's compartment
 
 
         :return: The compartment_id of this SecurityPolicySummary.
@@ -285,7 +286,7 @@ class SecurityPolicySummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this SecurityPolicySummary.
-        The id of the security policy's compartment
+        The OCID of the security policy's compartment
 
 
         :param compartment_id: The compartment_id of this SecurityPolicySummary.
@@ -327,7 +328,7 @@ class SecurityPolicySummary(object):
     def category(self):
         """
         Gets the category of this SecurityPolicySummary.
-        The category of security policy
+        The category of the security policy
 
 
         :return: The category of this SecurityPolicySummary.
@@ -339,7 +340,7 @@ class SecurityPolicySummary(object):
     def category(self, category):
         """
         Sets the category of this SecurityPolicySummary.
-        The category of security policy
+        The category of the security policy
 
 
         :param category: The category of this SecurityPolicySummary.
@@ -375,7 +376,7 @@ class SecurityPolicySummary(object):
     def time_created(self):
         """
         Gets the time_created of this SecurityPolicySummary.
-        The time the security policy was created. An RFC3339 formatted datetime string.
+        The date and time the security policy was created. An RFC3339 formatted datetime string.
 
 
         :return: The time_created of this SecurityPolicySummary.
@@ -387,7 +388,7 @@ class SecurityPolicySummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this SecurityPolicySummary.
-        The time the security policy was created. An RFC3339 formatted datetime string.
+        The date and time the security policy was created. An RFC3339 formatted datetime string.
 
 
         :param time_created: The time_created of this SecurityPolicySummary.
@@ -399,7 +400,7 @@ class SecurityPolicySummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this SecurityPolicySummary.
-        The time the security policy was last updated. An RFC3339 formatted datetime string.
+        The date and time the security policy was last updated. An RFC3339 formatted datetime string.
 
 
         :return: The time_updated of this SecurityPolicySummary.
@@ -411,7 +412,7 @@ class SecurityPolicySummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this SecurityPolicySummary.
-        The time the security policy was last updated. An RFC3339 formatted datetime string.
+        The date and time the security policy was last updated. An RFC3339 formatted datetime string.
 
 
         :param time_updated: The time_updated of this SecurityPolicySummary.
@@ -423,7 +424,7 @@ class SecurityPolicySummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this SecurityPolicySummary.
-        The current state of the security policy
+        The current lifecycle state of the security policy
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -438,7 +439,7 @@ class SecurityPolicySummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this SecurityPolicySummary.
-        The current state of the security policy
+        The current lifecycle state of the security policy
 
 
         :param lifecycle_state: The lifecycle_state of this SecurityPolicySummary.

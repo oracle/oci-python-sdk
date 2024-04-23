@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateResponderRuleDetails(object):
     """
-    Details of UpdateResponderRuleDetails.
+    Parameters to be updated for a responder rule within a responder recipe.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class UpdateResponderRuleDetails(object):
     def is_enabled(self):
         """
         **[Required]** Gets the is_enabled of this UpdateResponderRuleDetails.
-        Identifies state for ResponderRule
+        Enablement state for the responder rule
 
 
         :return: The is_enabled of this UpdateResponderRuleDetails.
@@ -51,7 +51,7 @@ class UpdateResponderRuleDetails(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this UpdateResponderRuleDetails.
-        Identifies state for ResponderRule
+        Enablement state for the responder rule
 
 
         :param is_enabled: The is_enabled of this UpdateResponderRuleDetails.

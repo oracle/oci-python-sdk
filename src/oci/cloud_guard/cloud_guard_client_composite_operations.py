@@ -31,10 +31,10 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str security_zone_id: (required)
-            The unique identifier of the security zone (`SecurityZone`)
+            The unique identifier of the security zone (`SecurityZone` resource).
 
         :param oci.cloud_guard.models.AddCompartmentDetails add_compartment_details: (required)
-            The compartment to add to the security zone.
+            Parameters for an existing compartment to be added to a security zone
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.SecurityZone.lifecycle_state`
@@ -76,10 +76,10 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str data_source_id: (required)
-            DataSource OCID
+            Data source OCID.
 
         :param oci.cloud_guard.models.ChangeDataSourceCompartmentDetails change_data_source_compartment_details: (required)
-            The compartment id of the DataSource
+            The compartment OCID of the DataSource resource
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.WorkRequest.status`
@@ -112,13 +112,55 @@ class CloudGuardClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def create_adhoc_query_and_wait_for_state(self, create_adhoc_query_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.cloud_guard.CloudGuardClient.create_adhoc_query` and waits for the :py:class:`~oci.cloud_guard.models.AdhocQuery` acted upon
+        to enter the given state(s).
+
+        :param oci.cloud_guard.models.CreateAdhocQueryDetails create_adhoc_query_details: (required)
+            Details for the new AdhocQuery resource
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.AdhocQuery.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.cloud_guard.CloudGuardClient.create_adhoc_query`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_adhoc_query(create_adhoc_query_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        adhoc_query_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_adhoc_query(adhoc_query_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def create_data_mask_rule_and_wait_for_state(self, create_data_mask_rule_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.cloud_guard.CloudGuardClient.create_data_mask_rule` and waits for the :py:class:`~oci.cloud_guard.models.DataMaskRule` acted upon
         to enter the given state(s).
 
         :param oci.cloud_guard.models.CreateDataMaskRuleDetails create_data_mask_rule_details: (required)
-            Definition for the new Data Mask Rule.
+            Definition for the new data mask rule
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.DataMaskRule.lifecycle_state`
@@ -160,7 +202,7 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.cloud_guard.models.CreateDataSourceDetails create_data_source_details: (required)
-            Details for the new DataSource.
+            Details for the new DataSource resource
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.WorkRequest.status`
@@ -199,7 +241,7 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.cloud_guard.models.CreateDetectorRecipeDetails create_detector_recipe_details: (required)
-            Details for the new DetectorRecipe.
+            Details for the new DetectorRecipe
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.DetectorRecipe.lifecycle_state`
@@ -241,10 +283,10 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str detector_recipe_id: (required)
-            DetectorRecipe OCID
+            Detector recipe OCID
 
         :param oci.cloud_guard.models.CreateDetectorRecipeDetectorRuleDetails create_detector_recipe_detector_rule_details: (required)
-            The details with which detector rule has to be created.
+            The details with which detector rule is to be created.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.DetectorRecipeDetectorRule.lifecycle_state`
@@ -286,7 +328,7 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.cloud_guard.models.CreateManagedListDetails create_managed_list_details: (required)
-            Details for the new ManagedList.
+            Details for the new ManagedList resources
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.ManagedList.lifecycle_state`
@@ -328,7 +370,7 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.cloud_guard.models.CreateResponderRecipeDetails create_responder_recipe_details: (required)
-            Details for ResponderRecipe.
+            Details for ResponderRecipe
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.ResponderRecipe.lifecycle_state`
@@ -364,13 +406,55 @@ class CloudGuardClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def create_saved_query_and_wait_for_state(self, create_saved_query_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.cloud_guard.CloudGuardClient.create_saved_query` and waits for the :py:class:`~oci.cloud_guard.models.SavedQuery` acted upon
+        to enter the given state(s).
+
+        :param oci.cloud_guard.models.CreateSavedQueryDetails create_saved_query_details: (required)
+            Details for the new SavedQuery resource
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.SavedQuery.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.cloud_guard.CloudGuardClient.create_saved_query`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_saved_query(create_saved_query_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        saved_query_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_saved_query(saved_query_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def create_security_recipe_and_wait_for_state(self, create_security_recipe_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.cloud_guard.CloudGuardClient.create_security_recipe` and waits for the :py:class:`~oci.cloud_guard.models.SecurityRecipe` acted upon
         to enter the given state(s).
 
         :param oci.cloud_guard.models.CreateSecurityRecipeDetails create_security_recipe_details: (required)
-            Details for the new `SecurityRecipe`.
+            Details for the new `SecurityRecipe` resource
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.SecurityRecipe.lifecycle_state`
@@ -412,7 +496,7 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.cloud_guard.models.CreateSecurityZoneDetails create_security_zone_details: (required)
-            Details for the new `SecurityZone`.
+            Details for the new `SecurityZone` resource
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.SecurityZone.lifecycle_state`
@@ -454,7 +538,7 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.cloud_guard.models.CreateTargetDetails create_target_details: (required)
-            Details for the new Target.
+            Contains generic target information which is required for all target types
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.Target.lifecycle_state`
@@ -496,10 +580,10 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str target_id: (required)
-            OCID of target
+            OCID of the target
 
         :param oci.cloud_guard.models.AttachTargetDetectorRecipeDetails attach_target_detector_recipe_details: (required)
-            Details for associating DetectorRecipe to Target
+            Details for associating DetectorRecipe with Target
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.TargetDetectorRecipe.lifecycle_state`
@@ -535,13 +619,72 @@ class CloudGuardClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def delete_adhoc_query_and_wait_for_state(self, adhoc_query_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.cloud_guard.CloudGuardClient.delete_adhoc_query` and waits for the :py:class:`~oci.cloud_guard.models.AdhocQuery` acted upon
+        to enter the given state(s).
+
+        :param str adhoc_query_id: (required)
+            Adhoc query OCID.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.AdhocQuery.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.cloud_guard.CloudGuardClient.delete_adhoc_query`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        initial_get_result = self.client.get_adhoc_query(adhoc_query_id)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_adhoc_query(adhoc_query_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+
+        try:
+            if ("succeed_on_not_found" in waiter_kwargs) and (waiter_kwargs["succeed_on_not_found"] is False):
+                self.client.base_client.logger.warning("The waiter kwarg succeed_on_not_found was passed as False for the delete composite operation delete_adhoc_query, this would result in the operation to fail if the resource is not found! Please, do not pass this kwarg if this was not intended")
+            else:
+                """
+                If the user does not send in this value, we set it to True by default.
+                We are doing this because during a delete resource scenario and waiting on its state, the service can
+                return a 404 NOT FOUND exception as the resource was deleted and a get on its state would fail
+                """
+                waiter_kwargs["succeed_on_not_found"] = True
+            waiter_result = oci.wait_until(
+                self.client,
+                initial_get_result,  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def delete_data_mask_rule_and_wait_for_state(self, data_mask_rule_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.cloud_guard.CloudGuardClient.delete_data_mask_rule` and waits for the :py:class:`~oci.cloud_guard.models.DataMaskRule` acted upon
         to enter the given state(s).
 
         :param str data_mask_rule_id: (required)
-            OCID of dataMaskRule
+            OCID of the data mask rule
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.DataMaskRule.lifecycle_state`
@@ -600,7 +743,7 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str data_source_id: (required)
-            DataSource OCID
+            Data source OCID.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.WorkRequest.status`
@@ -647,7 +790,7 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str detector_recipe_id: (required)
-            DetectorRecipe OCID
+            Detector recipe OCID
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.DetectorRecipe.lifecycle_state`
@@ -706,7 +849,7 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str managed_list_id: (required)
-            The cloudguard list OCID to be passed in the request.
+            The managed list OCID to be passed in the request.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.ManagedList.lifecycle_state`
@@ -765,7 +908,7 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str responder_recipe_id: (required)
-            OCID of ResponderRecipe
+            OCID of the responder recipe.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.ResponderRecipe.lifecycle_state`
@@ -818,13 +961,72 @@ class CloudGuardClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def delete_saved_query_and_wait_for_state(self, saved_query_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.cloud_guard.CloudGuardClient.delete_saved_query` and waits for the :py:class:`~oci.cloud_guard.models.SavedQuery` acted upon
+        to enter the given state(s).
+
+        :param str saved_query_id: (required)
+            Saved query OCID
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.SavedQuery.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.cloud_guard.CloudGuardClient.delete_saved_query`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        initial_get_result = self.client.get_saved_query(saved_query_id)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_saved_query(saved_query_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+
+        try:
+            if ("succeed_on_not_found" in waiter_kwargs) and (waiter_kwargs["succeed_on_not_found"] is False):
+                self.client.base_client.logger.warning("The waiter kwarg succeed_on_not_found was passed as False for the delete composite operation delete_saved_query, this would result in the operation to fail if the resource is not found! Please, do not pass this kwarg if this was not intended")
+            else:
+                """
+                If the user does not send in this value, we set it to True by default.
+                We are doing this because during a delete resource scenario and waiting on its state, the service can
+                return a 404 NOT FOUND exception as the resource was deleted and a get on its state would fail
+                """
+                waiter_kwargs["succeed_on_not_found"] = True
+            waiter_result = oci.wait_until(
+                self.client,
+                initial_get_result,  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def delete_security_recipe_and_wait_for_state(self, security_recipe_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.cloud_guard.CloudGuardClient.delete_security_recipe` and waits for the :py:class:`~oci.cloud_guard.models.SecurityRecipe` acted upon
         to enter the given state(s).
 
         :param str security_recipe_id: (required)
-            The unique identifier of the security zone recipe (`SecurityRecipe`)
+            The unique identifier of the security zone recipe. (`SecurityRecipe`)
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.SecurityRecipe.lifecycle_state`
@@ -883,7 +1085,7 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str security_zone_id: (required)
-            The unique identifier of the security zone (`SecurityZone`)
+            The unique identifier of the security zone (`SecurityZone` resource).
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.SecurityZone.lifecycle_state`
@@ -942,7 +1144,7 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str target_id: (required)
-            OCID of target
+            OCID of the target
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.Target.lifecycle_state`
@@ -1001,10 +1203,10 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str security_zone_id: (required)
-            The unique identifier of the security zone (`SecurityZone`)
+            The unique identifier of the security zone (`SecurityZone` resource).
 
         :param oci.cloud_guard.models.RemoveCompartmentDetails remove_compartment_details: (required)
-            The compartment to remove from the security zone.
+            The compartment to remove from the security zone
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.SecurityZone.lifecycle_state`
@@ -1046,10 +1248,10 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str data_mask_rule_id: (required)
-            OCID of dataMaskRule
+            OCID of the data mask rule
 
         :param oci.cloud_guard.models.UpdateDataMaskRuleDetails update_data_mask_rule_details: (required)
-            The information to be updated.
+            The data mask rule information to be updated
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.DataMaskRule.lifecycle_state`
@@ -1091,10 +1293,10 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str data_source_id: (required)
-            DataSource OCID
+            Data source OCID.
 
         :param oci.cloud_guard.models.UpdateDataSourceDetails update_data_source_details: (required)
-            Details for the DataSource to be updated
+            Details for the DataSource resource to be updated
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.WorkRequest.status`
@@ -1133,7 +1335,7 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str detector_recipe_id: (required)
-            DetectorRecipe OCID
+            Detector recipe OCID
 
         :param oci.cloud_guard.models.UpdateDetectorRecipeDetails update_detector_recipe_details: (required)
             Details for the DetectorRecipe to be updated
@@ -1178,13 +1380,13 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str detector_recipe_id: (required)
-            DetectorRecipe OCID
+            Detector recipe OCID
 
         :param str detector_rule_id: (required)
-            The key of Detector Rule.
+            The unique identifier of a detector rule.
 
         :param oci.cloud_guard.models.UpdateDetectorRecipeDetectorRuleDetails update_detector_recipe_detector_rule_details: (required)
-            The details to be updated for DetectorRule.
+            The details to be updated for DetectorRule
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.DetectorRecipeDetectorRule.lifecycle_state`
@@ -1226,10 +1428,10 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str managed_list_id: (required)
-            The cloudguard list OCID to be passed in the request.
+            The managed list OCID to be passed in the request.
 
         :param oci.cloud_guard.models.UpdateManagedListDetails update_managed_list_details: (required)
-            Details for the ManagedList to be updated
+            Details for the ManagedList resource to be updated
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.ManagedList.lifecycle_state`
@@ -1271,10 +1473,10 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str problem_id: (required)
-            OCId of the problem.
+            OCID of the problem.
 
         :param oci.cloud_guard.models.UpdateProblemStatusDetails update_problem_status_details: (required)
-            The additional details for the problem.
+            The additional details for the problem
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.Problem.lifecycle_state`
@@ -1316,10 +1518,10 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str responder_recipe_id: (required)
-            OCID of ResponderRecipe
+            OCID of the responder recipe.
 
         :param oci.cloud_guard.models.UpdateResponderRecipeDetails update_responder_recipe_details: (required)
-            The details to be updated.
+            The details to be updated
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.ResponderRecipe.lifecycle_state`
@@ -1361,13 +1563,13 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str responder_recipe_id: (required)
-            OCID of ResponderRecipe
+            OCID of the responder recipe.
 
         :param str responder_rule_id: (required)
-            The id of ResponderRule
+            Unique identifier of the responder rule.
 
         :param oci.cloud_guard.models.UpdateResponderRecipeResponderRuleDetails update_responder_recipe_responder_rule_details: (required)
-            The details to be updated for ResponderRule.
+            The details to be updated for responder rule
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.ResponderRecipeResponderRule.lifecycle_state`
@@ -1403,16 +1605,61 @@ class CloudGuardClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def update_saved_query_and_wait_for_state(self, saved_query_id, update_saved_query_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.cloud_guard.CloudGuardClient.update_saved_query` and waits for the :py:class:`~oci.cloud_guard.models.SavedQuery` acted upon
+        to enter the given state(s).
+
+        :param str saved_query_id: (required)
+            Saved query OCID
+
+        :param oci.cloud_guard.models.UpdateSavedQueryDetails update_saved_query_details: (required)
+            Details for the SavedQuery resource to be updated
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.SavedQuery.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.cloud_guard.CloudGuardClient.update_saved_query`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_saved_query(saved_query_id, update_saved_query_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        saved_query_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_saved_query(saved_query_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def update_security_recipe_and_wait_for_state(self, security_recipe_id, update_security_recipe_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.cloud_guard.CloudGuardClient.update_security_recipe` and waits for the :py:class:`~oci.cloud_guard.models.SecurityRecipe` acted upon
         to enter the given state(s).
 
         :param str security_recipe_id: (required)
-            The unique identifier of the security zone recipe (`SecurityRecipe`)
+            The unique identifier of the security zone recipe. (`SecurityRecipe`)
 
         :param oci.cloud_guard.models.UpdateSecurityRecipeDetails update_security_recipe_details: (required)
-            The information to be updated in the security zone recipe.
+            The information to be updated in the security zone recipe
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.SecurityRecipe.lifecycle_state`
@@ -1454,10 +1701,10 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str security_zone_id: (required)
-            The unique identifier of the security zone (`SecurityZone`)
+            The unique identifier of the security zone (`SecurityZone` resource).
 
         :param oci.cloud_guard.models.UpdateSecurityZoneDetails update_security_zone_details: (required)
-            The security zone information to be updated.
+            The security zone information to be updated
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.SecurityZone.lifecycle_state`
@@ -1499,10 +1746,10 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str target_id: (required)
-            OCID of target
+            OCID of the target
 
         :param oci.cloud_guard.models.UpdateTargetDetails update_target_details: (required)
-            The information to be updated.
+            The information to be updated
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.Target.lifecycle_state`
@@ -1544,13 +1791,13 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str target_id: (required)
-            OCID of target
+            OCID of the target
 
         :param str target_detector_recipe_id: (required)
-            OCID of TargetDetectorRecipe
+            OCID of the target detector recipe.
 
         :param oci.cloud_guard.models.UpdateTargetDetectorRecipeDetails update_target_detector_recipe_details: (required)
-            The details to be updated.
+            The details to be updated
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.TargetDetectorRecipe.lifecycle_state`
@@ -1592,16 +1839,16 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str target_id: (required)
-            OCID of target
+            OCID of the target
 
         :param str target_detector_recipe_id: (required)
-            OCID of TargetDetectorRecipe
+            OCID of the target detector recipe.
 
         :param str detector_rule_id: (required)
-            The id of DetectorRule
+            The unique identifier of the detector rule.
 
         :param oci.cloud_guard.models.UpdateTargetDetectorRecipeDetectorRuleDetails update_target_detector_recipe_detector_rule_details: (required)
-            The details to be updated for DetectorRule.
+            The details to be updated for the detector rule
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.TargetDetectorRecipeDetectorRule.lifecycle_state`
@@ -1643,16 +1890,16 @@ class CloudGuardClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str target_id: (required)
-            OCID of target
+            OCID of the target
 
         :param str target_responder_recipe_id: (required)
-            OCID of TargetResponderRecipe
+            OCID of the target responder recipe.
 
         :param str responder_rule_id: (required)
-            The id of ResponderRule
+            Unique identifier of the responder rule.
 
         :param oci.cloud_guard.models.UpdateTargetResponderRecipeResponderRuleDetails update_target_responder_recipe_responder_rule_details: (required)
-            The details to be updated for ResponderRule.
+            The details to be updated for the ResponderRule resource.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.cloud_guard.models.TargetResponderRecipeResponderRule.lifecycle_state`

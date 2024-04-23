@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SoftwarePackagesDetails(object):
     """
-    The details about the software packages to be installed/removed/updated.
+    Provides the information used to install, remove, or update software packages.
     """
 
     def __init__(self, **kwargs):

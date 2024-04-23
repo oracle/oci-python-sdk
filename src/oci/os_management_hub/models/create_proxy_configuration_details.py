@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateProxyConfigurationDetails(object):
     """
-    Information for creating a proxy configuration
+    Information used to create the proxy configuration for a management station.
     """
 
     def __init__(self, **kwargs):
@@ -60,7 +60,7 @@ class CreateProxyConfigurationDetails(object):
     def is_enabled(self):
         """
         **[Required]** Gets the is_enabled of this CreateProxyConfigurationDetails.
-        To enable or disable the proxy (default true)
+        Indicates if the proxy should be enabled or disabled. Default is enabled.
 
 
         :return: The is_enabled of this CreateProxyConfigurationDetails.
@@ -72,7 +72,7 @@ class CreateProxyConfigurationDetails(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this CreateProxyConfigurationDetails.
-        To enable or disable the proxy (default true)
+        Indicates if the proxy should be enabled or disabled. Default is enabled.
 
 
         :param is_enabled: The is_enabled of this CreateProxyConfigurationDetails.
@@ -84,7 +84,7 @@ class CreateProxyConfigurationDetails(object):
     def hosts(self):
         """
         Gets the hosts of this CreateProxyConfigurationDetails.
-        List of hosts
+        List of hosts.
 
 
         :return: The hosts of this CreateProxyConfigurationDetails.
@@ -96,7 +96,7 @@ class CreateProxyConfigurationDetails(object):
     def hosts(self, hosts):
         """
         Sets the hosts of this CreateProxyConfigurationDetails.
-        List of hosts
+        List of hosts.
 
 
         :param hosts: The hosts of this CreateProxyConfigurationDetails.
@@ -108,7 +108,7 @@ class CreateProxyConfigurationDetails(object):
     def port(self):
         """
         Gets the port of this CreateProxyConfigurationDetails.
-        Port that the proxy will use
+        Listening port used for the proxy.
 
 
         :return: The port of this CreateProxyConfigurationDetails.
@@ -120,7 +120,7 @@ class CreateProxyConfigurationDetails(object):
     def port(self, port):
         """
         Sets the port of this CreateProxyConfigurationDetails.
-        Port that the proxy will use
+        Listening port used for the proxy.
 
 
         :param port: The port of this CreateProxyConfigurationDetails.
@@ -132,7 +132,7 @@ class CreateProxyConfigurationDetails(object):
     def forward(self):
         """
         Gets the forward of this CreateProxyConfigurationDetails.
-        URL that the proxy will forward to
+        The URL the proxy will forward to.
 
 
         :return: The forward of this CreateProxyConfigurationDetails.
@@ -144,7 +144,7 @@ class CreateProxyConfigurationDetails(object):
     def forward(self, forward):
         """
         Sets the forward of this CreateProxyConfigurationDetails.
-        URL that the proxy will forward to
+        The URL the proxy will forward to.
 
 
         :param forward: The forward of this CreateProxyConfigurationDetails.

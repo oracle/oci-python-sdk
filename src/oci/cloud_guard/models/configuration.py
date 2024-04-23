@@ -38,6 +38,10 @@ class Configuration(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
+        :param service_configurations:
+            The value to assign to the service_configurations property of this Configuration.
+        :type service_configurations: list[oci.cloud_guard.models.ServiceConfiguration]
+
         :param self_manage_resources:
             The value to assign to the self_manage_resources property of this Configuration.
         :type self_manage_resources: bool
@@ -46,24 +50,27 @@ class Configuration(object):
         self.swagger_types = {
             'reporting_region': 'str',
             'status': 'str',
+            'service_configurations': 'list[ServiceConfiguration]',
             'self_manage_resources': 'bool'
         }
 
         self.attribute_map = {
             'reporting_region': 'reportingRegion',
             'status': 'status',
+            'service_configurations': 'serviceConfigurations',
             'self_manage_resources': 'selfManageResources'
         }
 
         self._reporting_region = None
         self._status = None
+        self._service_configurations = None
         self._self_manage_resources = None
 
     @property
     def reporting_region(self):
         """
         **[Required]** Gets the reporting_region of this Configuration.
-        The reporting region value
+        The reporting region
 
 
         :return: The reporting_region of this Configuration.
@@ -75,7 +82,7 @@ class Configuration(object):
     def reporting_region(self, reporting_region):
         """
         Sets the reporting_region of this Configuration.
-        The reporting region value
+        The reporting region
 
 
         :param reporting_region: The reporting_region of this Configuration.
@@ -87,7 +94,7 @@ class Configuration(object):
     def status(self):
         """
         Gets the status of this Configuration.
-        Status of Cloud Guard Tenant
+        Status of the Cloud Guard tenant
 
         Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -102,7 +109,7 @@ class Configuration(object):
     def status(self, status):
         """
         Sets the status of this Configuration.
-        Status of Cloud Guard Tenant
+        Status of the Cloud Guard tenant
 
 
         :param status: The status of this Configuration.
@@ -114,10 +121,34 @@ class Configuration(object):
         self._status = status
 
     @property
+    def service_configurations(self):
+        """
+        Gets the service_configurations of this Configuration.
+        List of service configurations for this tenant
+
+
+        :return: The service_configurations of this Configuration.
+        :rtype: list[oci.cloud_guard.models.ServiceConfiguration]
+        """
+        return self._service_configurations
+
+    @service_configurations.setter
+    def service_configurations(self, service_configurations):
+        """
+        Sets the service_configurations of this Configuration.
+        List of service configurations for this tenant
+
+
+        :param service_configurations: The service_configurations of this Configuration.
+        :type: list[oci.cloud_guard.models.ServiceConfiguration]
+        """
+        self._service_configurations = service_configurations
+
+    @property
     def self_manage_resources(self):
         """
         Gets the self_manage_resources of this Configuration.
-        Identifies if Oracle managed resources were created by customers
+        Were Oracle-managed resources created by customer?
 
 
         :return: The self_manage_resources of this Configuration.
@@ -129,7 +160,7 @@ class Configuration(object):
     def self_manage_resources(self, self_manage_resources):
         """
         Sets the self_manage_resources of this Configuration.
-        Identifies if Oracle managed resources were created by customers
+        Were Oracle-managed resources created by customer?
 
 
         :param self_manage_resources: The self_manage_resources of this Configuration.

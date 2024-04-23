@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataMaskRuleSummary(object):
     """
-    Summary of DataMaskRule.
+    Summary information for a data mask rule.
     """
 
     #: A constant which can be used with the data_mask_categories property of a DataMaskRuleSummary.
@@ -203,7 +203,7 @@ class DataMaskRuleSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this DataMaskRuleSummary.
-        Unique identifier that is immutable on creation
+        Unique identifier that can't be changed after creation
 
 
         :return: The id of this DataMaskRuleSummary.
@@ -215,7 +215,7 @@ class DataMaskRuleSummary(object):
     def id(self, id):
         """
         Sets the id of this DataMaskRuleSummary.
-        Unique identifier that is immutable on creation
+        Unique identifier that can't be changed after creation
 
 
         :param id: The id of this DataMaskRuleSummary.
@@ -227,7 +227,7 @@ class DataMaskRuleSummary(object):
     def display_name(self):
         """
         Gets the display_name of this DataMaskRuleSummary.
-        Data Mask Rule Name.
+        Data mask rule display name
 
 
         :return: The display_name of this DataMaskRuleSummary.
@@ -239,7 +239,7 @@ class DataMaskRuleSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this DataMaskRuleSummary.
-        Data Mask Rule Name.
+        Data mask rule display name
 
 
         :param display_name: The display_name of this DataMaskRuleSummary.
@@ -251,7 +251,7 @@ class DataMaskRuleSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this DataMaskRuleSummary.
-        Compartment Identifier where the resource is created
+        Compartment OCID where the resource is created
 
 
         :return: The compartment_id of this DataMaskRuleSummary.
@@ -263,7 +263,7 @@ class DataMaskRuleSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this DataMaskRuleSummary.
-        Compartment Identifier where the resource is created
+        Compartment OCID where the resource is created
 
 
         :param compartment_id: The compartment_id of this DataMaskRuleSummary.
@@ -275,7 +275,7 @@ class DataMaskRuleSummary(object):
     def description(self):
         """
         Gets the description of this DataMaskRuleSummary.
-        The data mask rule description.
+        The data mask rule description
 
 
         :return: The description of this DataMaskRuleSummary.
@@ -287,7 +287,7 @@ class DataMaskRuleSummary(object):
     def description(self, description):
         """
         Sets the description of this DataMaskRuleSummary.
-        The data mask rule description.
+        The data mask rule description
 
 
         :param description: The description of this DataMaskRuleSummary.
@@ -299,7 +299,7 @@ class DataMaskRuleSummary(object):
     def iam_group_id(self):
         """
         **[Required]** Gets the iam_group_id of this DataMaskRuleSummary.
-        IAM Group id associated with the data mask rule
+        IAM group ID associated with the data mask rule
 
 
         :return: The iam_group_id of this DataMaskRuleSummary.
@@ -311,7 +311,7 @@ class DataMaskRuleSummary(object):
     def iam_group_id(self, iam_group_id):
         """
         Sets the iam_group_id of this DataMaskRuleSummary.
-        IAM Group id associated with the data mask rule
+        IAM group ID associated with the data mask rule
 
 
         :param iam_group_id: The iam_group_id of this DataMaskRuleSummary.
@@ -343,7 +343,7 @@ class DataMaskRuleSummary(object):
     def data_mask_categories(self):
         """
         Gets the data_mask_categories of this DataMaskRuleSummary.
-        Data Mask Categories
+        List of data mask rule categories
 
         Allowed values for items in this list are: "ACTOR", "PII", "PHI", "FINANCIAL", "LOCATION", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -358,7 +358,7 @@ class DataMaskRuleSummary(object):
     def data_mask_categories(self, data_mask_categories):
         """
         Sets the data_mask_categories of this DataMaskRuleSummary.
-        Data Mask Categories
+        List of data mask rule categories
 
 
         :param data_mask_categories: The data_mask_categories of this DataMaskRuleSummary.
@@ -421,7 +421,7 @@ class DataMaskRuleSummary(object):
     def data_mask_rule_status(self):
         """
         Gets the data_mask_rule_status of this DataMaskRuleSummary.
-        The status of the dataMaskRule.
+        The current status of the data mask rule
 
         Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -436,7 +436,7 @@ class DataMaskRuleSummary(object):
     def data_mask_rule_status(self, data_mask_rule_status):
         """
         Sets the data_mask_rule_status of this DataMaskRuleSummary.
-        The status of the dataMaskRule.
+        The current status of the data mask rule
 
 
         :param data_mask_rule_status: The data_mask_rule_status of this DataMaskRuleSummary.
@@ -451,7 +451,7 @@ class DataMaskRuleSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this DataMaskRuleSummary.
-        The current state of the DataMaskRule.
+        The current lifecycle state of the data mask rule
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -466,7 +466,7 @@ class DataMaskRuleSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this DataMaskRuleSummary.
-        The current state of the DataMaskRule.
+        The current lifecycle state of the data mask rule
 
 
         :param lifecycle_state: The lifecycle_state of this DataMaskRuleSummary.
@@ -481,7 +481,7 @@ class DataMaskRuleSummary(object):
     def lifecyle_details(self):
         """
         Gets the lifecyle_details of this DataMaskRuleSummary.
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
 
 
         :return: The lifecyle_details of this DataMaskRuleSummary.
@@ -493,7 +493,7 @@ class DataMaskRuleSummary(object):
     def lifecyle_details(self, lifecyle_details):
         """
         Sets the lifecyle_details of this DataMaskRuleSummary.
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
 
 
         :param lifecyle_details: The lifecyle_details of this DataMaskRuleSummary.

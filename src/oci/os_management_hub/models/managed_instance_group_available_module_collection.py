@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagedInstanceGroupAvailableModuleCollection(object):
     """
-    Results of a module stream profile search. Contains both ModuleStreamProfileSummary items and other information, such as metadata.
+    A set of modules returned for the :func:`list_managed_instance_group_available_modules` operation.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class ManagedInstanceGroupAvailableModuleCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ManagedInstanceGroupAvailableModuleCollection.
-        List of module stream profile.
+        List of available modules.
 
 
         :return: The items of this ManagedInstanceGroupAvailableModuleCollection.
@@ -51,7 +51,7 @@ class ManagedInstanceGroupAvailableModuleCollection(object):
     def items(self, items):
         """
         Sets the items of this ManagedInstanceGroupAvailableModuleCollection.
-        List of module stream profile.
+        List of available modules.
 
 
         :param items: The items of this ManagedInstanceGroupAvailableModuleCollection.

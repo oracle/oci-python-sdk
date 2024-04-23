@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ContinuousQueryStartPolicy(object):
     """
-    Continuous query start policy object
+    Start policy for continuous query
     """
 
     #: A constant which can be used with the start_policy_type property of a ContinuousQueryStartPolicy.
@@ -70,7 +70,7 @@ class ContinuousQueryStartPolicy(object):
     def start_policy_type(self):
         """
         **[Required]** Gets the start_policy_type of this ContinuousQueryStartPolicy.
-        policy used for deciding the query start time
+        Start policy delay timing
 
         Allowed values for this property are: "NO_DELAY_START_POLICY", "ABSOLUTE_TIME_START_POLICY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -85,7 +85,7 @@ class ContinuousQueryStartPolicy(object):
     def start_policy_type(self, start_policy_type):
         """
         Sets the start_policy_type of this ContinuousQueryStartPolicy.
-        policy used for deciding the query start time
+        Start policy delay timing
 
 
         :param start_policy_type: The start_policy_type of this ContinuousQueryStartPolicy.

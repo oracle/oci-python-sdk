@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VersionedCustomSoftwareSourceSummary(SoftwareSourceSummary):
     """
-    An immutable custom software source that is assigned a version and contains a custom collection of packages.
+    Provides summary information for a versioned custom software source.
     """
 
     def __init__(self, **kwargs):
@@ -60,12 +60,17 @@ class VersionedCustomSoftwareSourceSummary(SoftwareSourceSummary):
 
         :param availability:
             The value to assign to the availability property of this VersionedCustomSoftwareSourceSummary.
-            Allowed values for this property are: "AVAILABLE", "SELECTED", "RESTRICTED"
+            Allowed values for this property are: "AVAILABLE", "SELECTED", "RESTRICTED", "UNAVAILABLE"
         :type availability: str
+
+        :param availability_at_oci:
+            The value to assign to the availability_at_oci property of this VersionedCustomSoftwareSourceSummary.
+            Allowed values for this property are: "AVAILABLE", "SELECTED", "RESTRICTED", "UNAVAILABLE"
+        :type availability_at_oci: str
 
         :param os_family:
             The value to assign to the os_family property of this VersionedCustomSoftwareSourceSummary.
-            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7"
+            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"
         :type os_family: str
 
         :param arch_type:
@@ -80,6 +85,10 @@ class VersionedCustomSoftwareSourceSummary(SoftwareSourceSummary):
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this VersionedCustomSoftwareSourceSummary.
         :type lifecycle_state: str
+
+        :param size:
+            The value to assign to the size property of this VersionedCustomSoftwareSourceSummary.
+        :type size: float
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this VersionedCustomSoftwareSourceSummary.
@@ -113,10 +122,12 @@ class VersionedCustomSoftwareSourceSummary(SoftwareSourceSummary):
             'description': 'str',
             'software_source_type': 'str',
             'availability': 'str',
+            'availability_at_oci': 'str',
             'os_family': 'str',
             'arch_type': 'str',
             'package_count': 'int',
             'lifecycle_state': 'str',
+            'size': 'float',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
@@ -135,10 +146,12 @@ class VersionedCustomSoftwareSourceSummary(SoftwareSourceSummary):
             'description': 'description',
             'software_source_type': 'softwareSourceType',
             'availability': 'availability',
+            'availability_at_oci': 'availabilityAtOci',
             'os_family': 'osFamily',
             'arch_type': 'archType',
             'package_count': 'packageCount',
             'lifecycle_state': 'lifecycleState',
+            'size': 'size',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
@@ -156,10 +169,12 @@ class VersionedCustomSoftwareSourceSummary(SoftwareSourceSummary):
         self._description = None
         self._software_source_type = None
         self._availability = None
+        self._availability_at_oci = None
         self._os_family = None
         self._arch_type = None
         self._package_count = None
         self._lifecycle_state = None
+        self._size = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -171,7 +186,7 @@ class VersionedCustomSoftwareSourceSummary(SoftwareSourceSummary):
     def vendor_software_sources(self):
         """
         **[Required]** Gets the vendor_software_sources of this VersionedCustomSoftwareSourceSummary.
-        List of vendor software sources.
+        List of vendor software sources that are used for the basis of the versioned custom software source.
 
 
         :return: The vendor_software_sources of this VersionedCustomSoftwareSourceSummary.
@@ -183,7 +198,7 @@ class VersionedCustomSoftwareSourceSummary(SoftwareSourceSummary):
     def vendor_software_sources(self, vendor_software_sources):
         """
         Sets the vendor_software_sources of this VersionedCustomSoftwareSourceSummary.
-        List of vendor software sources.
+        List of vendor software sources that are used for the basis of the versioned custom software source.
 
 
         :param vendor_software_sources: The vendor_software_sources of this VersionedCustomSoftwareSourceSummary.

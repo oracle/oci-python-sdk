@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DetectorRecipeDetectorRuleCollection(object):
     """
-    Summary of the DetectorRule.
+    Collection of summary information for detector rules in a detector recipe.
     """
 
     def __init__(self, **kwargs):
@@ -24,22 +24,29 @@ class DetectorRecipeDetectorRuleCollection(object):
             The value to assign to the items property of this DetectorRecipeDetectorRuleCollection.
         :type items: list[oci.cloud_guard.models.DetectorRecipeDetectorRuleSummary]
 
+        :param locks:
+            The value to assign to the locks property of this DetectorRecipeDetectorRuleCollection.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
-            'items': 'list[DetectorRecipeDetectorRuleSummary]'
+            'items': 'list[DetectorRecipeDetectorRuleSummary]',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
-            'items': 'items'
+            'items': 'items',
+            'locks': 'locks'
         }
 
         self._items = None
+        self._locks = None
 
     @property
     def items(self):
         """
         **[Required]** Gets the items of this DetectorRecipeDetectorRuleCollection.
-        List of DetectorRecipeDetectorRuleSummary
+        List of DetectorRecipeDetectorRuleSummary resources
 
 
         :return: The items of this DetectorRecipeDetectorRuleCollection.
@@ -51,13 +58,37 @@ class DetectorRecipeDetectorRuleCollection(object):
     def items(self, items):
         """
         Sets the items of this DetectorRecipeDetectorRuleCollection.
-        List of DetectorRecipeDetectorRuleSummary
+        List of DetectorRecipeDetectorRuleSummary resources
 
 
         :param items: The items of this DetectorRecipeDetectorRuleCollection.
         :type: list[oci.cloud_guard.models.DetectorRecipeDetectorRuleSummary]
         """
         self._items = items
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this DetectorRecipeDetectorRuleCollection.
+        Locks associated with this resource.
+
+
+        :return: The locks of this DetectorRecipeDetectorRuleCollection.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this DetectorRecipeDetectorRuleCollection.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this DetectorRecipeDetectorRuleCollection.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

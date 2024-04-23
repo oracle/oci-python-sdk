@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateTargetRecipeDetectorRuleDetails(object):
     """
-    The details to be updated in TargetDetectorRecipeDetectorRule
+    Parameters to be used to update a detector rule in a target detector recipe.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class UpdateTargetRecipeDetectorRuleDetails(object):
     def detector_rule_id(self):
         """
         **[Required]** Gets the detector_rule_id of this UpdateTargetRecipeDetectorRuleDetails.
-        Identifier for DetectorRule.
+        Unique identifier for the detector rule
 
 
         :return: The detector_rule_id of this UpdateTargetRecipeDetectorRuleDetails.
@@ -58,7 +58,7 @@ class UpdateTargetRecipeDetectorRuleDetails(object):
     def detector_rule_id(self, detector_rule_id):
         """
         Sets the detector_rule_id of this UpdateTargetRecipeDetectorRuleDetails.
-        Identifier for DetectorRule.
+        Unique identifier for the detector rule
 
 
         :param detector_rule_id: The detector_rule_id of this UpdateTargetRecipeDetectorRuleDetails.

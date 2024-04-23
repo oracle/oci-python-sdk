@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateManagedListDetails(object):
     """
-    Update ManagedList
+    Parameters to use to update details for a managed list.
     """
 
     def __init__(self, **kwargs):
@@ -121,7 +121,7 @@ class UpdateManagedListDetails(object):
     def list_items(self):
         """
         Gets the list_items of this UpdateManagedListDetails.
-        List of ManagedListItem
+        List of managed list items
 
 
         :return: The list_items of this UpdateManagedListDetails.
@@ -133,7 +133,7 @@ class UpdateManagedListDetails(object):
     def list_items(self, list_items):
         """
         Sets the list_items of this UpdateManagedListDetails.
-        List of ManagedListItem
+        List of managed list items
 
 
         :param list_items: The list_items of this UpdateManagedListDetails.

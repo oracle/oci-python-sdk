@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ModuleCollection(object):
     """
-    Results of a Module search. Contains module summary items and other information, such as metadata.
+    The set of modules returned for the :func:`search_software_source_modules` operation.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class ModuleCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ModuleCollection.
-        List of Modules.
+        List of modules.
 
 
         :return: The items of this ModuleCollection.
@@ -51,7 +51,7 @@ class ModuleCollection(object):
     def items(self, items):
         """
         Sets the items of this ModuleCollection.
-        List of Modules.
+        List of modules.
 
 
         :param items: The items of this ModuleCollection.

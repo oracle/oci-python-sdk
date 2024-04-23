@@ -5590,6 +5590,9 @@ class BlockstorageClient(object):
         :param str volume_group_id: (optional)
             The OCID of the volume group.
 
+        :param str cluster_placement_group_id: (optional)
+            A filter to return only resources that match the given cluster placement group Id exactly.
+
         :param str lifecycle_state: (optional)
             A filter to only return resources that match the given lifecycle state. The state
             value is case-insensitive.
@@ -5633,6 +5636,7 @@ class BlockstorageClient(object):
             "sort_by",
             "sort_order",
             "volume_group_id",
+            "cluster_placement_group_id",
             "lifecycle_state"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -5670,6 +5674,7 @@ class BlockstorageClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "volumeGroupId": kwargs.get("volume_group_id", missing),
+            "clusterPlacementGroupId": kwargs.get("cluster_placement_group_id", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourceProfileRiskScoreAggregationSummaryCollection(object):
     """
-    Collection of resource profile risk score trends.
+    Collection of resource profile risk score aggregation summaries.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class ResourceProfileRiskScoreAggregationSummaryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ResourceProfileRiskScoreAggregationSummaryCollection.
-        List of ResourceProfileRiskScoreAggregationSummary
+        List of ResourceProfileRiskScoreAggregationSummary resources
 
 
         :return: The items of this ResourceProfileRiskScoreAggregationSummaryCollection.
@@ -51,7 +51,7 @@ class ResourceProfileRiskScoreAggregationSummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this ResourceProfileRiskScoreAggregationSummaryCollection.
-        List of ResourceProfileRiskScoreAggregationSummary
+        List of ResourceProfileRiskScoreAggregationSummary resources
 
 
         :param items: The items of this ResourceProfileRiskScoreAggregationSummaryCollection.

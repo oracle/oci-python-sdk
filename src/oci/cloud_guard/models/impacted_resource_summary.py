@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ImpactedResourceSummary(object):
     """
-    A summary of detailed information on a resource that\u2019s been impacted by a detected problem.
+    Summary of information on a resource that\u2019s been impacted by a detected problem.
     """
 
     def __init__(self, **kwargs):
@@ -126,7 +126,7 @@ class ImpactedResourceSummary(object):
     def resource_id(self):
         """
         **[Required]** Gets the resource_id of this ImpactedResourceSummary.
-        Unique id of the Impacted Resource
+        Unique identifier of the impacted resource
 
 
         :return: The resource_id of this ImpactedResourceSummary.
@@ -138,7 +138,7 @@ class ImpactedResourceSummary(object):
     def resource_id(self, resource_id):
         """
         Sets the resource_id of this ImpactedResourceSummary.
-        Unique id of the Impacted Resource
+        Unique identifier of the impacted resource
 
 
         :param resource_id: The resource_id of this ImpactedResourceSummary.
@@ -150,7 +150,7 @@ class ImpactedResourceSummary(object):
     def problem_id(self):
         """
         **[Required]** Gets the problem_id of this ImpactedResourceSummary.
-        Problem Id to which the Impacted Resource is associated
+        Problem ID associated with the Impacted resource
 
 
         :return: The problem_id of this ImpactedResourceSummary.
@@ -162,7 +162,7 @@ class ImpactedResourceSummary(object):
     def problem_id(self, problem_id):
         """
         Sets the problem_id of this ImpactedResourceSummary.
-        Problem Id to which the Impacted Resource is associated
+        Problem ID associated with the Impacted resource
 
 
         :param problem_id: The problem_id of this ImpactedResourceSummary.
@@ -174,7 +174,7 @@ class ImpactedResourceSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ImpactedResourceSummary.
-        Compartment Id where the resource is created
+        Compartment OCID where the impacted resource is created
 
 
         :return: The compartment_id of this ImpactedResourceSummary.
@@ -186,7 +186,7 @@ class ImpactedResourceSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ImpactedResourceSummary.
-        Compartment Id where the resource is created
+        Compartment OCID where the impacted resource is created
 
 
         :param compartment_id: The compartment_id of this ImpactedResourceSummary.
@@ -198,7 +198,7 @@ class ImpactedResourceSummary(object):
     def sighting_type(self):
         """
         Gets the sighting_type of this ImpactedResourceSummary.
-        Identifier for the sighting type
+        Sighting type involved
 
 
         :return: The sighting_type of this ImpactedResourceSummary.
@@ -210,7 +210,7 @@ class ImpactedResourceSummary(object):
     def sighting_type(self, sighting_type):
         """
         Sets the sighting_type of this ImpactedResourceSummary.
-        Identifier for the sighting type
+        Sighting type involved
 
 
         :param sighting_type: The sighting_type of this ImpactedResourceSummary.
@@ -222,7 +222,7 @@ class ImpactedResourceSummary(object):
     def sighting_type_display_name(self):
         """
         Gets the sighting_type_display_name of this ImpactedResourceSummary.
-        Name of the sighting type
+        Display name of the sighting type
 
 
         :return: The sighting_type_display_name of this ImpactedResourceSummary.
@@ -234,7 +234,7 @@ class ImpactedResourceSummary(object):
     def sighting_type_display_name(self, sighting_type_display_name):
         """
         Sets the sighting_type_display_name of this ImpactedResourceSummary.
-        Name of the sighting type
+        Display name of the sighting type
 
 
         :param sighting_type_display_name: The sighting_type_display_name of this ImpactedResourceSummary.
@@ -246,7 +246,7 @@ class ImpactedResourceSummary(object):
     def resource_name(self):
         """
         **[Required]** Gets the resource_name of this ImpactedResourceSummary.
-        Name of the Impacted Resource
+        Name of the impacted resource
 
 
         :return: The resource_name of this ImpactedResourceSummary.
@@ -258,7 +258,7 @@ class ImpactedResourceSummary(object):
     def resource_name(self, resource_name):
         """
         Sets the resource_name of this ImpactedResourceSummary.
-        Name of the Impacted Resource
+        Name of the impacted resource
 
 
         :param resource_name: The resource_name of this ImpactedResourceSummary.
@@ -270,7 +270,7 @@ class ImpactedResourceSummary(object):
     def resource_type(self):
         """
         **[Required]** Gets the resource_type of this ImpactedResourceSummary.
-        Type of the Impacted Resource
+        Type of the impacted resource
 
 
         :return: The resource_type of this ImpactedResourceSummary.
@@ -282,7 +282,7 @@ class ImpactedResourceSummary(object):
     def resource_type(self, resource_type):
         """
         Sets the resource_type of this ImpactedResourceSummary.
-        Type of the Impacted Resource
+        Type of the impacted resource
 
 
         :param resource_type: The resource_type of this ImpactedResourceSummary.
@@ -318,7 +318,7 @@ class ImpactedResourceSummary(object):
     def time_identified(self):
         """
         **[Required]** Gets the time_identified of this ImpactedResourceSummary.
-        Time when the problem was identified
+        Date and time when the problem was identified
 
 
         :return: The time_identified of this ImpactedResourceSummary.
@@ -330,7 +330,7 @@ class ImpactedResourceSummary(object):
     def time_identified(self, time_identified):
         """
         Sets the time_identified of this ImpactedResourceSummary.
-        Time when the problem was identified
+        Date and time when the problem was identified
 
 
         :param time_identified: The time_identified of this ImpactedResourceSummary.

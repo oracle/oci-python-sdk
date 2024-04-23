@@ -8,7 +8,7 @@ Output is printer friendly.
 [cost analysis](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/costanalysisoverview.htm) 
 and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm) features should be used instead.**
 
-**Developed by Adi Zohar, 2021-2023**
+**Developed by Adi Zohar, 2021-2024**
 
 ## Modules Included:  
 - oci.identity.IdentityClient            
@@ -81,7 +81,7 @@ optional arguments:
   -ds DATE_START     Start Date - format YYYY-MM-DD
   -de DATE_END       End Date - format YYYY-MM-DD, (Not Inclusive)
   -days DAYS         Add Days Combined with Start Date (de is ignored if specified)
-  -report REPORT     Report Type = PRODUCT / DAILY / REGION / SERVICE / RESOURCE / ALL ( Default = ALL )
+  -report REPORT     Report Type = PRODUCT / DAILY / REGION / SERVICE / RESOURCE / TENANT / ALL ( Default = ALL )
 
 ```
 
@@ -95,11 +95,11 @@ Author          : Adi Zohar
 Disclaimer      : This is not an official Oracle application,  It does not supported by Oracle, It should NOT be used for utilization calculation purposes !
                 : Last 2 days may not be filled and should not be used
 Machine         : adiwrk (x86_64)
-App Version     : 2021.10.07
+App Version     : 2024.04.17
 OCI SDK Version : 2.45.1
 Python Version  : 3.6.8
 Authentication  : Config File
-Date/Time       : 2021-10-07 12:57:15
+Date/Time       : 2024-04-17 12:57:15
 Command Line    : -ds 2021-09-01 -de 2021-10-01
 Start Date      : 09/01/2021
 End Date        : 10/01/2021 Not Included
@@ -209,5 +209,16 @@ B92683 - Oracle Analytics - Enterprise                                   30     
 Total                                                                                          7,937.5        8,202       96,572
 
 * Above costs are demo costs for the readme.
+
+#####################################################################################
+#                 Tenant Summary for 03/01/2024 - 03/31/2024 in USD                 #
+#####################################################################################
+
+Tenant                              Days      Quantity   OSR Eligible           Cost     Month-31         Year
+============================== ========= ============= ============== ============== ============ ============
+orasenatdpltdetestparent              31           0.0            0.0            0.0            0            0
+orasenatdpltdetestchild1              31   1,084,589.8       11,146.7       11,154.4       11,154      131,334
+============================== ========= ============= ============== ============== ============ ============
+Total                                                        11,154.4       11,154.4       11,154      131,334
 
 ```

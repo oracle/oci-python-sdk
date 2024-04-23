@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstalledPackageCollection(object):
     """
-    Results of an installed package search on a managed instance.
+    The set of installed packages on a managed instance.
     """
 
     def __init__(self, **kwargs):

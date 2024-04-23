@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagedListTypeCollection(object):
     """
-    Summary of the ManagedListType.
+    Collection of managed list type summaries.
     """
 
     def __init__(self, **kwargs):
@@ -24,22 +24,29 @@ class ManagedListTypeCollection(object):
             The value to assign to the items property of this ManagedListTypeCollection.
         :type items: list[oci.cloud_guard.models.ManagedListTypeSummary]
 
+        :param locks:
+            The value to assign to the locks property of this ManagedListTypeCollection.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
-            'items': 'list[ManagedListTypeSummary]'
+            'items': 'list[ManagedListTypeSummary]',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
-            'items': 'items'
+            'items': 'items',
+            'locks': 'locks'
         }
 
         self._items = None
+        self._locks = None
 
     @property
     def items(self):
         """
         **[Required]** Gets the items of this ManagedListTypeCollection.
-        List of ManagedListTypeSummary
+        List of ManagedListTypeSummary resources
 
 
         :return: The items of this ManagedListTypeCollection.
@@ -51,13 +58,37 @@ class ManagedListTypeCollection(object):
     def items(self, items):
         """
         Sets the items of this ManagedListTypeCollection.
-        List of ManagedListTypeSummary
+        List of ManagedListTypeSummary resources
 
 
         :param items: The items of this ManagedListTypeCollection.
         :type: list[oci.cloud_guard.models.ManagedListTypeSummary]
         """
         self._items = items
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this ManagedListTypeCollection.
+        Locks associated with this resource.
+
+
+        :return: The locks of this ManagedListTypeCollection.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this ManagedListTypeCollection.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this ManagedListTypeCollection.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

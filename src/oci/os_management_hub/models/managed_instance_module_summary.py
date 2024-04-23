@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagedInstanceModuleSummary(object):
     """
-    Summary information pertaining to a module on a managed instance.
+    Provides summary information for a module on a managed instance.
     """
 
     def __init__(self, **kwargs):
@@ -194,7 +194,9 @@ class ManagedInstanceModuleSummary(object):
     def software_source_id(self):
         """
         Gets the software_source_id of this ManagedInstanceModuleSummary.
-        The OCID of the software source that provides this module and the associated streams.
+        The `OCID`__ of the software source that provides this module and the associated streams.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_source_id of this ManagedInstanceModuleSummary.
@@ -206,7 +208,9 @@ class ManagedInstanceModuleSummary(object):
     def software_source_id(self, software_source_id):
         """
         Sets the software_source_id of this ManagedInstanceModuleSummary.
-        The OCID of the software source that provides this module and the associated streams.
+        The `OCID`__ of the software source that provides this module and the associated streams.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_source_id: The software_source_id of this ManagedInstanceModuleSummary.

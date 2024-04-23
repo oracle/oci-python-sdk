@@ -331,7 +331,7 @@ class VirtualNetworkClient(object):
 
 
         :param str subnet_id: (required)
-            The `OCID`__ of the subnet.
+            Specify the `OCID`__ of the subnet.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -451,7 +451,7 @@ class VirtualNetworkClient(object):
 
 
         :param str vcn_id: (required)
-            The `OCID`__ of the VCN.
+            Specify the `OCID`__ of the VCN.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -786,7 +786,7 @@ class VirtualNetworkClient(object):
 
 
         :param str vcn_id: (required)
-            The `OCID`__ of the VCN.
+            Specify the `OCID`__ of the VCN.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -3420,7 +3420,7 @@ class VirtualNetworkClient(object):
 
 
         :param str subnet_id: (required)
-            The `OCID`__ of the subnet.
+            Specify the `OCID`__ of the subnet.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -3536,7 +3536,7 @@ class VirtualNetworkClient(object):
 
 
         :param str vcn_id: (required)
-            The `OCID`__ of the VCN.
+            Specify the `OCID`__ of the VCN.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -9574,7 +9574,7 @@ class VirtualNetworkClient(object):
 
 
         :param str subnet_id: (required)
-            The `OCID`__ of the subnet.
+            Specify the `OCID`__ of the subnet.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -9677,7 +9677,7 @@ class VirtualNetworkClient(object):
 
 
         :param str vcn_id: (required)
-            The `OCID`__ of the VCN.
+            Specify the `OCID`__ of the VCN.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -14241,7 +14241,7 @@ class VirtualNetworkClient(object):
 
 
         :param str subnet_id: (required)
-            The `OCID`__ of the subnet.
+            Specify the `OCID`__ of the subnet.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -14806,7 +14806,7 @@ class VirtualNetworkClient(object):
 
 
         :param str vcn_id: (required)
-            The `OCID`__ of the VCN.
+            Specify the `OCID`__ of the VCN.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -14894,7 +14894,7 @@ class VirtualNetworkClient(object):
 
 
         :param str vcn_id: (required)
-            The `OCID`__ of the VCN.
+            Specify the `OCID`__ of the VCN.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -22353,7 +22353,7 @@ class VirtualNetworkClient(object):
 
 
         :param str vcn_id: (required)
-            The `OCID`__ of the VCN.
+            Specify the `OCID`__ of the VCN.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -22867,7 +22867,7 @@ class VirtualNetworkClient(object):
 
 
         :param str subnet_id: (required)
-            The `OCID`__ of the subnet.
+            Specify the `OCID`__ of the subnet.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -22986,7 +22986,7 @@ class VirtualNetworkClient(object):
 
 
         :param str vcn_id: (required)
-            The `OCID`__ of the VCN.
+            Specify the `OCID`__ of the VCN.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -23316,7 +23316,7 @@ class VirtualNetworkClient(object):
 
 
         :param str vcn_id: (required)
-            The `OCID`__ of the VCN.
+            Specify the `OCID`__ of the VCN.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -26506,7 +26506,7 @@ class VirtualNetworkClient(object):
 
 
         :param str subnet_id: (required)
-            The `OCID`__ of the subnet.
+            Specify the `OCID`__ of the subnet.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -26742,7 +26742,7 @@ class VirtualNetworkClient(object):
 
 
         :param str vcn_id: (required)
-            The `OCID`__ of the VCN.
+            Specify the `OCID`__ of the VCN.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 

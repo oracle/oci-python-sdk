@@ -108,6 +108,10 @@ class Instance(object):
             The value to assign to the compartment_id property of this Instance.
         :type compartment_id: str
 
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this Instance.
+        :type cluster_placement_group_id: str
+
         :param dedicated_vm_host_id:
             The value to assign to the dedicated_vm_host_id property of this Instance.
         :type dedicated_vm_host_id: str
@@ -225,6 +229,7 @@ class Instance(object):
             'availability_domain': 'str',
             'capacity_reservation_id': 'str',
             'compartment_id': 'str',
+            'cluster_placement_group_id': 'str',
             'dedicated_vm_host_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
@@ -258,6 +263,7 @@ class Instance(object):
             'availability_domain': 'availabilityDomain',
             'capacity_reservation_id': 'capacityReservationId',
             'compartment_id': 'compartmentId',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
             'dedicated_vm_host_id': 'dedicatedVmHostId',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
@@ -290,6 +296,7 @@ class Instance(object):
         self._availability_domain = None
         self._capacity_reservation_id = None
         self._compartment_id = None
+        self._cluster_placement_group_id = None
         self._dedicated_vm_host_id = None
         self._defined_tags = None
         self._display_name = None
@@ -401,6 +408,30 @@ class Instance(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this Instance.
+        The OCID of the cluster placement group of the instance.
+
+
+        :return: The cluster_placement_group_id of this Instance.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this Instance.
+        The OCID of the cluster placement group of the instance.
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this Instance.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
 
     @property
     def dedicated_vm_host_id(self):

@@ -12,7 +12,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AvailableSoftwareSourceSummary(object):
     """
-    A software source which can be added to a managed instance. Once a software source is added, packages from that software source can be installed on that managed instance.
+    Provides summary information about an available software source.
+    An available software source can be added to a managed instance.
+    After a software source is added, packages from that software source can be installed on that managed instance.
     """
 
     def __init__(self, **kwargs):
@@ -53,7 +55,9 @@ class AvailableSoftwareSourceSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this AvailableSoftwareSourceSummary.
-        unique identifier that is immutable on creation.
+        The `OCID`__ of the software source.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this AvailableSoftwareSourceSummary.
@@ -65,7 +69,9 @@ class AvailableSoftwareSourceSummary(object):
     def id(self, id):
         """
         Sets the id of this AvailableSoftwareSourceSummary.
-        unique identifier that is immutable on creation.
+        The `OCID`__ of the software source.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this AvailableSoftwareSourceSummary.
@@ -77,7 +83,9 @@ class AvailableSoftwareSourceSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this AvailableSoftwareSourceSummary.
-        The OCID for the compartment.
+        The `OCID`__ of the compartment that contains the software source.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this AvailableSoftwareSourceSummary.
@@ -89,7 +97,9 @@ class AvailableSoftwareSourceSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this AvailableSoftwareSourceSummary.
-        The OCID for the compartment.
+        The `OCID`__ of the compartment that contains the software source.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this AvailableSoftwareSourceSummary.
@@ -101,7 +111,7 @@ class AvailableSoftwareSourceSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this AvailableSoftwareSourceSummary.
-        User friendly name for the software source.
+        User-friendly name for the software source.
 
 
         :return: The display_name of this AvailableSoftwareSourceSummary.
@@ -113,7 +123,7 @@ class AvailableSoftwareSourceSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this AvailableSoftwareSourceSummary.
-        User friendly name for the software source.
+        User-friendly name for the software source.
 
 
         :param display_name: The display_name of this AvailableSoftwareSourceSummary.

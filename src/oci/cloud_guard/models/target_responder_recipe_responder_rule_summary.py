@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TargetResponderRecipeResponderRuleSummary(object):
     """
-    Summary of ResponderRule.
+    Summary information for a target responder recipe responder rule.
     """
 
     #: A constant which can be used with the type property of a TargetResponderRecipeResponderRuleSummary.
@@ -166,7 +166,7 @@ class TargetResponderRecipeResponderRuleSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this TargetResponderRecipeResponderRuleSummary.
-        Identifier for ResponderRule.
+        Unique identifier for the responder rule
 
 
         :return: The id of this TargetResponderRecipeResponderRuleSummary.
@@ -178,7 +178,7 @@ class TargetResponderRecipeResponderRuleSummary(object):
     def id(self, id):
         """
         Sets the id of this TargetResponderRecipeResponderRuleSummary.
-        Identifier for ResponderRule.
+        Unique identifier for the responder rule
 
 
         :param id: The id of this TargetResponderRecipeResponderRuleSummary.
@@ -190,7 +190,7 @@ class TargetResponderRecipeResponderRuleSummary(object):
     def display_name(self):
         """
         Gets the display_name of this TargetResponderRecipeResponderRuleSummary.
-        ResponderRule Display Name
+        Responder rule display name
 
 
         :return: The display_name of this TargetResponderRecipeResponderRuleSummary.
@@ -202,7 +202,7 @@ class TargetResponderRecipeResponderRuleSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this TargetResponderRecipeResponderRuleSummary.
-        ResponderRule Display Name
+        Responder rule display name
 
 
         :param display_name: The display_name of this TargetResponderRecipeResponderRuleSummary.
@@ -214,7 +214,7 @@ class TargetResponderRecipeResponderRuleSummary(object):
     def description(self):
         """
         Gets the description of this TargetResponderRecipeResponderRuleSummary.
-        ResponderRule Description
+        Responder rule description
 
 
         :return: The description of this TargetResponderRecipeResponderRuleSummary.
@@ -226,7 +226,7 @@ class TargetResponderRecipeResponderRuleSummary(object):
     def description(self, description):
         """
         Sets the description of this TargetResponderRecipeResponderRuleSummary.
-        ResponderRule Description
+        Responder rule description
 
 
         :param description: The description of this TargetResponderRecipeResponderRuleSummary.
@@ -238,7 +238,7 @@ class TargetResponderRecipeResponderRuleSummary(object):
     def type(self):
         """
         Gets the type of this TargetResponderRecipeResponderRuleSummary.
-        Type of Responder
+        Type of responder
 
         Allowed values for this property are: "REMEDIATION", "NOTIFICATION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -253,7 +253,7 @@ class TargetResponderRecipeResponderRuleSummary(object):
     def type(self, type):
         """
         Sets the type of this TargetResponderRecipeResponderRuleSummary.
-        Type of Responder
+        Type of responder
 
 
         :param type: The type of this TargetResponderRecipeResponderRuleSummary.
@@ -268,7 +268,7 @@ class TargetResponderRecipeResponderRuleSummary(object):
     def policies(self):
         """
         Gets the policies of this TargetResponderRecipeResponderRuleSummary.
-        List of Policy
+        List of policies
 
 
         :return: The policies of this TargetResponderRecipeResponderRuleSummary.
@@ -280,7 +280,7 @@ class TargetResponderRecipeResponderRuleSummary(object):
     def policies(self, policies):
         """
         Sets the policies of this TargetResponderRecipeResponderRuleSummary.
-        List of Policy
+        List of policies
 
 
         :param policies: The policies of this TargetResponderRecipeResponderRuleSummary.
@@ -292,7 +292,7 @@ class TargetResponderRecipeResponderRuleSummary(object):
     def supported_modes(self):
         """
         Gets the supported_modes of this TargetResponderRecipeResponderRuleSummary.
-        Supported Execution Modes
+        Supported execution modes for the responder rule
 
         Allowed values for items in this list are: "AUTOACTION", "USERACTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -307,7 +307,7 @@ class TargetResponderRecipeResponderRuleSummary(object):
     def supported_modes(self, supported_modes):
         """
         Sets the supported_modes of this TargetResponderRecipeResponderRuleSummary.
-        Supported Execution Modes
+        Supported execution modes for the responder rule
 
 
         :param supported_modes: The supported_modes of this TargetResponderRecipeResponderRuleSummary.
@@ -342,7 +342,7 @@ class TargetResponderRecipeResponderRuleSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this TargetResponderRecipeResponderRuleSummary.
-        Compartment Identifier
+        Compartment OCID
 
 
         :return: The compartment_id of this TargetResponderRecipeResponderRuleSummary.
@@ -354,7 +354,7 @@ class TargetResponderRecipeResponderRuleSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this TargetResponderRecipeResponderRuleSummary.
-        Compartment Identifier
+        Compartment OCID
 
 
         :param compartment_id: The compartment_id of this TargetResponderRecipeResponderRuleSummary.
@@ -390,7 +390,7 @@ class TargetResponderRecipeResponderRuleSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this TargetResponderRecipeResponderRuleSummary.
-        The date and time the target responder recipe rule was updated. Format defined by RFC3339.
+        The date and time the target responder recipe rule was last updated. Format defined by RFC3339.
 
 
         :return: The time_updated of this TargetResponderRecipeResponderRuleSummary.
@@ -402,7 +402,7 @@ class TargetResponderRecipeResponderRuleSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this TargetResponderRecipeResponderRuleSummary.
-        The date and time the target responder recipe rule was updated. Format defined by RFC3339.
+        The date and time the target responder recipe rule was last updated. Format defined by RFC3339.
 
 
         :param time_updated: The time_updated of this TargetResponderRecipeResponderRuleSummary.
@@ -414,7 +414,7 @@ class TargetResponderRecipeResponderRuleSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this TargetResponderRecipeResponderRuleSummary.
-        The current state of the ResponderRule.
+        The current lifecycle state of the responder rule
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -429,7 +429,7 @@ class TargetResponderRecipeResponderRuleSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this TargetResponderRecipeResponderRuleSummary.
-        The current state of the ResponderRule.
+        The current lifecycle state of the responder rule
 
 
         :param lifecycle_state: The lifecycle_state of this TargetResponderRecipeResponderRuleSummary.

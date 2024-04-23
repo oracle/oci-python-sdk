@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateScheduledJobDetails(object):
     """
-    Information for updating a scheduled job.
+    Provides the information used to update a scheduled job.
     """
 
     #: A constant which can be used with the schedule_type property of a UpdateScheduledJobDetails.
@@ -61,6 +61,10 @@ class UpdateScheduledJobDetails(object):
             The value to assign to the defined_tags property of this UpdateScheduledJobDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param retry_intervals:
+            The value to assign to the retry_intervals property of this UpdateScheduledJobDetails.
+        :type retry_intervals: list[int]
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -70,7 +74,8 @@ class UpdateScheduledJobDetails(object):
             'recurring_rule': 'str',
             'operations': 'list[ScheduledJobOperation]',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'retry_intervals': 'list[int]'
         }
 
         self.attribute_map = {
@@ -81,7 +86,8 @@ class UpdateScheduledJobDetails(object):
             'recurring_rule': 'recurringRule',
             'operations': 'operations',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'retry_intervals': 'retryIntervals'
         }
 
         self._display_name = None
@@ -92,12 +98,13 @@ class UpdateScheduledJobDetails(object):
         self._operations = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._retry_intervals = None
 
     @property
     def display_name(self):
         """
         Gets the display_name of this UpdateScheduledJobDetails.
-        Scheduled job name.
+        User-friendly name for the scheduled job. Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateScheduledJobDetails.
@@ -109,7 +116,7 @@ class UpdateScheduledJobDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateScheduledJobDetails.
-        Scheduled job name.
+        User-friendly name for the scheduled job. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateScheduledJobDetails.
@@ -121,7 +128,7 @@ class UpdateScheduledJobDetails(object):
     def description(self):
         """
         Gets the description of this UpdateScheduledJobDetails.
-        Details describing the scheduled job.
+        User-specified description for the scheduled job. Avoid entering confidential information.
 
 
         :return: The description of this UpdateScheduledJobDetails.
@@ -133,7 +140,7 @@ class UpdateScheduledJobDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateScheduledJobDetails.
-        Details describing the scheduled job.
+        User-specified description for the scheduled job. Avoid entering confidential information.
 
 
         :param description: The description of this UpdateScheduledJobDetails.
@@ -145,7 +152,7 @@ class UpdateScheduledJobDetails(object):
     def schedule_type(self):
         """
         Gets the schedule_type of this UpdateScheduledJobDetails.
-        The type of scheduling this scheduled job follows.
+        The type of scheduling frequency for the job.
 
         Allowed values for this property are: "ONETIME", "RECURRING"
 
@@ -159,7 +166,7 @@ class UpdateScheduledJobDetails(object):
     def schedule_type(self, schedule_type):
         """
         Sets the schedule_type of this UpdateScheduledJobDetails.
-        The type of scheduling this scheduled job follows.
+        The type of scheduling frequency for the job.
 
 
         :param schedule_type: The schedule_type of this UpdateScheduledJobDetails.
@@ -176,7 +183,9 @@ class UpdateScheduledJobDetails(object):
     def time_next_execution(self):
         """
         Gets the time_next_execution of this UpdateScheduledJobDetails.
-        The desired time for the next execution of this scheduled job.
+        The desired time of the next execution of this scheduled job (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_next_execution of this UpdateScheduledJobDetails.
@@ -188,7 +197,9 @@ class UpdateScheduledJobDetails(object):
     def time_next_execution(self, time_next_execution):
         """
         Sets the time_next_execution of this UpdateScheduledJobDetails.
-        The desired time for the next execution of this scheduled job.
+        The desired time of the next execution of this scheduled job (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_next_execution: The time_next_execution of this UpdateScheduledJobDetails.
@@ -200,7 +211,7 @@ class UpdateScheduledJobDetails(object):
     def recurring_rule(self):
         """
         Gets the recurring_rule of this UpdateScheduledJobDetails.
-        The recurring rule for a recurring scheduled job.
+        The frequency schedule for a recurring scheduled job.
 
 
         :return: The recurring_rule of this UpdateScheduledJobDetails.
@@ -212,7 +223,7 @@ class UpdateScheduledJobDetails(object):
     def recurring_rule(self, recurring_rule):
         """
         Sets the recurring_rule of this UpdateScheduledJobDetails.
-        The recurring rule for a recurring scheduled job.
+        The frequency schedule for a recurring scheduled job.
 
 
         :param recurring_rule: The recurring_rule of this UpdateScheduledJobDetails.
@@ -224,7 +235,16 @@ class UpdateScheduledJobDetails(object):
     def operations(self):
         """
         Gets the operations of this UpdateScheduledJobDetails.
-        The list of operations this scheduled job needs to perform (can only support one operation if the operationType is not UPDATE_PACKAGES/UPDATE_ALL/UPDATE_SECURITY/UPDATE_BUGFIX/UPDATE_ENHANCEMENT/UPDATE_OTHER/UPDATE_KSPLICE_USERSPACE/UPDATE_KSPLICE_KERNEL).
+        The list of operations this scheduled job needs to perform.
+        A scheduled job supports only one operation type, unless it is one of the following:
+        * UPDATE_PACKAGES
+        * UPDATE_ALL
+        * UPDATE_SECURITY
+        * UPDATE_BUGFIX
+        * UPDATE_ENHANCEMENT
+        * UPDATE_OTHER
+        * UPDATE_KSPLICE_USERSPACE
+        * UPDATE_KSPLICE_KERNEL
 
 
         :return: The operations of this UpdateScheduledJobDetails.
@@ -236,7 +256,16 @@ class UpdateScheduledJobDetails(object):
     def operations(self, operations):
         """
         Sets the operations of this UpdateScheduledJobDetails.
-        The list of operations this scheduled job needs to perform (can only support one operation if the operationType is not UPDATE_PACKAGES/UPDATE_ALL/UPDATE_SECURITY/UPDATE_BUGFIX/UPDATE_ENHANCEMENT/UPDATE_OTHER/UPDATE_KSPLICE_USERSPACE/UPDATE_KSPLICE_KERNEL).
+        The list of operations this scheduled job needs to perform.
+        A scheduled job supports only one operation type, unless it is one of the following:
+        * UPDATE_PACKAGES
+        * UPDATE_ALL
+        * UPDATE_SECURITY
+        * UPDATE_BUGFIX
+        * UPDATE_ENHANCEMENT
+        * UPDATE_OTHER
+        * UPDATE_KSPLICE_USERSPACE
+        * UPDATE_KSPLICE_KERNEL
 
 
         :param operations: The operations of this UpdateScheduledJobDetails.
@@ -307,6 +336,36 @@ class UpdateScheduledJobDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def retry_intervals(self):
+        """
+        Gets the retry_intervals of this UpdateScheduledJobDetails.
+        The amount of time in minutes to wait until retrying the scheduled job. If set, the service will automatically
+        retry a failed scheduled job after the interval. For example, you could set the interval to [2,5,10]. If the
+        initial execution of the job fails, the service waits 2 minutes and then retries. If that fails, the service
+        waits 5 minutes and then retries. If that fails, the service waits 10 minutes and then retries.
+
+
+        :return: The retry_intervals of this UpdateScheduledJobDetails.
+        :rtype: list[int]
+        """
+        return self._retry_intervals
+
+    @retry_intervals.setter
+    def retry_intervals(self, retry_intervals):
+        """
+        Sets the retry_intervals of this UpdateScheduledJobDetails.
+        The amount of time in minutes to wait until retrying the scheduled job. If set, the service will automatically
+        retry a failed scheduled job after the interval. For example, you could set the interval to [2,5,10]. If the
+        initial execution of the job fails, the service waits 2 minutes and then retries. If that fails, the service
+        waits 5 minutes and then retries. If that fails, the service waits 10 minutes and then retries.
+
+
+        :param retry_intervals: The retry_intervals of this UpdateScheduledJobDetails.
+        :type: list[int]
+        """
+        self._retry_intervals = retry_intervals
 
     def __repr__(self):
         return formatted_flat_dict(self)

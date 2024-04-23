@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResponderRuleDetails(object):
     """
-    Details of ResponderRule.
+    Detailed information for a responder rule
     """
 
     #: A constant which can be used with the mode property of a ResponderRuleDetails.
@@ -90,7 +90,7 @@ class ResponderRuleDetails(object):
     def configurations(self):
         """
         Gets the configurations of this ResponderRuleDetails.
-        ResponderRule configurations
+        List of responder rule configurations
 
 
         :return: The configurations of this ResponderRuleDetails.
@@ -102,7 +102,7 @@ class ResponderRuleDetails(object):
     def configurations(self, configurations):
         """
         Sets the configurations of this ResponderRuleDetails.
-        ResponderRule configurations
+        List of responder rule configurations
 
 
         :param configurations: The configurations of this ResponderRuleDetails.
@@ -114,7 +114,7 @@ class ResponderRuleDetails(object):
     def is_enabled(self):
         """
         **[Required]** Gets the is_enabled of this ResponderRuleDetails.
-        Identifies state for ResponderRule
+        Enabled state for the responder rule
 
 
         :return: The is_enabled of this ResponderRuleDetails.
@@ -126,7 +126,7 @@ class ResponderRuleDetails(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this ResponderRuleDetails.
-        Identifies state for ResponderRule
+        Enabled state for the responder rule
 
 
         :param is_enabled: The is_enabled of this ResponderRuleDetails.
@@ -138,7 +138,7 @@ class ResponderRuleDetails(object):
     def mode(self):
         """
         Gets the mode of this ResponderRuleDetails.
-        Execution Mode for ResponderRule
+        Execution mode for the responder rule
 
         Allowed values for this property are: "AUTOACTION", "USERACTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -153,7 +153,7 @@ class ResponderRuleDetails(object):
     def mode(self, mode):
         """
         Sets the mode of this ResponderRuleDetails.
-        Execution Mode for ResponderRule
+        Execution mode for the responder rule
 
 
         :param mode: The mode of this ResponderRuleDetails.

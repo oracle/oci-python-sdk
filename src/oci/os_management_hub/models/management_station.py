@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagementStation(object):
     """
-    Detailed information about an ManagementStation config
+    Provides information about the management station, including name, state, and configuration.
     """
 
     #: A constant which can be used with the overall_state property of a ManagementStation.
@@ -134,6 +134,10 @@ class ManagementStation(object):
             The value to assign to the mirror property of this ManagementStation.
         :type mirror: oci.os_management_hub.models.MirrorConfiguration
 
+        :param health:
+            The value to assign to the health property of this ManagementStation.
+        :type health: oci.os_management_hub.models.StationHealth
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ManagementStation.
             Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -169,6 +173,7 @@ class ManagementStation(object):
             'mirror_sync_status': 'MirrorSyncStatus',
             'proxy': 'ProxyConfiguration',
             'mirror': 'MirrorConfiguration',
+            'health': 'StationHealth',
             'lifecycle_state': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -191,6 +196,7 @@ class ManagementStation(object):
             'mirror_sync_status': 'mirrorSyncStatus',
             'proxy': 'proxy',
             'mirror': 'mirror',
+            'health': 'health',
             'lifecycle_state': 'lifecycleState',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -212,6 +218,7 @@ class ManagementStation(object):
         self._mirror_sync_status = None
         self._proxy = None
         self._mirror = None
+        self._health = None
         self._lifecycle_state = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -221,7 +228,9 @@ class ManagementStation(object):
     def id(self):
         """
         **[Required]** Gets the id of this ManagementStation.
-        OCID for the ManagementStation config
+        The `OCID`__ of the management station.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ManagementStation.
@@ -233,7 +242,9 @@ class ManagementStation(object):
     def id(self, id):
         """
         Sets the id of this ManagementStation.
-        OCID for the ManagementStation config
+        The `OCID`__ of the management station.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ManagementStation.
@@ -245,7 +256,9 @@ class ManagementStation(object):
     def managed_instance_id(self):
         """
         Gets the managed_instance_id of this ManagementStation.
-        OCID for the Instance associated with the Management Station.
+        The `OCID`__ of the instance that is acting as the management station.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_instance_id of this ManagementStation.
@@ -257,7 +270,9 @@ class ManagementStation(object):
     def managed_instance_id(self, managed_instance_id):
         """
         Sets the managed_instance_id of this ManagementStation.
-        OCID for the Instance associated with the Management Station.
+        The `OCID`__ of the instance that is acting as the management station.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_instance_id: The managed_instance_id of this ManagementStation.
@@ -269,7 +284,9 @@ class ManagementStation(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ManagementStation.
-        The OCID of the tenancy containing the Management Station.
+        The `OCID`__ of the compartment that contains the management station.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ManagementStation.
@@ -281,7 +298,9 @@ class ManagementStation(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ManagementStation.
-        The OCID of the tenancy containing the Management Station.
+        The `OCID`__ of the compartment that contains the management station.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ManagementStation.
@@ -293,7 +312,9 @@ class ManagementStation(object):
     def scheduled_job_id(self):
         """
         Gets the scheduled_job_id of this ManagementStation.
-        OCID of the Scheduled Job for mirror sync
+        The `OCID`__ of the scheduled job for the mirror sync.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The scheduled_job_id of this ManagementStation.
@@ -305,7 +326,9 @@ class ManagementStation(object):
     def scheduled_job_id(self, scheduled_job_id):
         """
         Sets the scheduled_job_id of this ManagementStation.
-        OCID of the Scheduled Job for mirror sync
+        The `OCID`__ of the scheduled job for the mirror sync.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param scheduled_job_id: The scheduled_job_id of this ManagementStation.
@@ -317,7 +340,9 @@ class ManagementStation(object):
     def profile_id(self):
         """
         Gets the profile_id of this ManagementStation.
-        OCID of the Profile associated with the Station
+        The `OCID`__ of the registration profile used for the management station.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The profile_id of this ManagementStation.
@@ -329,7 +354,9 @@ class ManagementStation(object):
     def profile_id(self, profile_id):
         """
         Sets the profile_id of this ManagementStation.
-        OCID of the Profile associated with the Station
+        The `OCID`__ of the registration profile used for the management station.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param profile_id: The profile_id of this ManagementStation.
@@ -341,7 +368,7 @@ class ManagementStation(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this ManagementStation.
-        ManagementStation name
+        A user-friendly name for the management station.
 
 
         :return: The display_name of this ManagementStation.
@@ -353,7 +380,7 @@ class ManagementStation(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ManagementStation.
-        ManagementStation name
+        A user-friendly name for the management station.
 
 
         :param display_name: The display_name of this ManagementStation.
@@ -365,7 +392,7 @@ class ManagementStation(object):
     def description(self):
         """
         Gets the description of this ManagementStation.
-        Details describing the ManagementStation config.
+        User-specified description for the management station.
 
 
         :return: The description of this ManagementStation.
@@ -377,7 +404,7 @@ class ManagementStation(object):
     def description(self, description):
         """
         Sets the description of this ManagementStation.
-        Details describing the ManagementStation config.
+        User-specified description for the management station.
 
 
         :param description: The description of this ManagementStation.
@@ -389,7 +416,7 @@ class ManagementStation(object):
     def hostname(self):
         """
         **[Required]** Gets the hostname of this ManagementStation.
-        Name of the host
+        Hostname of the management station.
 
 
         :return: The hostname of this ManagementStation.
@@ -401,7 +428,7 @@ class ManagementStation(object):
     def hostname(self, hostname):
         """
         Sets the hostname of this ManagementStation.
-        Name of the host
+        Hostname of the management station.
 
 
         :param hostname: The hostname of this ManagementStation.
@@ -413,7 +440,7 @@ class ManagementStation(object):
     def overall_state(self):
         """
         Gets the overall_state of this ManagementStation.
-        Current state of the mirroring
+        Current state of the mirror sync for the management station.
 
         Allowed values for this property are: "NORMAL", "REGISTRATIONERROR", "SYNCING", "SYNCFAILED", "WARNING", "ERROR", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -428,7 +455,7 @@ class ManagementStation(object):
     def overall_state(self, overall_state):
         """
         Sets the overall_state of this ManagementStation.
-        Current state of the mirroring
+        Current state of the mirror sync for the management station.
 
 
         :param overall_state: The overall_state of this ManagementStation.
@@ -443,7 +470,7 @@ class ManagementStation(object):
     def overall_percentage(self):
         """
         Gets the overall_percentage of this ManagementStation.
-        A decimal number representing the completeness percentage
+        A decimal number representing the progress of the current mirror sync.
 
 
         :return: The overall_percentage of this ManagementStation.
@@ -455,7 +482,7 @@ class ManagementStation(object):
     def overall_percentage(self, overall_percentage):
         """
         Sets the overall_percentage of this ManagementStation.
-        A decimal number representing the completeness percentage
+        A decimal number representing the progress of the current mirror sync.
 
 
         :param overall_percentage: The overall_percentage of this ManagementStation.
@@ -467,7 +494,7 @@ class ManagementStation(object):
     def mirror_capacity(self):
         """
         Gets the mirror_capacity of this ManagementStation.
-        A decimal number representing the mirror capacity
+        A decimal number representing the amount of mirror capacity used by the sync.
 
 
         :return: The mirror_capacity of this ManagementStation.
@@ -479,7 +506,7 @@ class ManagementStation(object):
     def mirror_capacity(self, mirror_capacity):
         """
         Sets the mirror_capacity of this ManagementStation.
-        A decimal number representing the mirror capacity
+        A decimal number representing the amount of mirror capacity used by the sync.
 
 
         :param mirror_capacity: The mirror_capacity of this ManagementStation.
@@ -491,7 +518,7 @@ class ManagementStation(object):
     def total_mirrors(self):
         """
         Gets the total_mirrors of this ManagementStation.
-        A decimal number representing the total of repos
+        The number of software sources that the station is mirroring.
 
 
         :return: The total_mirrors of this ManagementStation.
@@ -503,7 +530,7 @@ class ManagementStation(object):
     def total_mirrors(self, total_mirrors):
         """
         Sets the total_mirrors of this ManagementStation.
-        A decimal number representing the total of repos
+        The number of software sources that the station is mirroring.
 
 
         :param total_mirrors: The total_mirrors of this ManagementStation.
@@ -572,10 +599,30 @@ class ManagementStation(object):
         self._mirror = mirror
 
     @property
+    def health(self):
+        """
+        Gets the health of this ManagementStation.
+
+        :return: The health of this ManagementStation.
+        :rtype: oci.os_management_hub.models.StationHealth
+        """
+        return self._health
+
+    @health.setter
+    def health(self, health):
+        """
+        Sets the health of this ManagementStation.
+
+        :param health: The health of this ManagementStation.
+        :type: oci.os_management_hub.models.StationHealth
+        """
+        self._health = health
+
+    @property
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this ManagementStation.
-        The current state of the Management Station config.
+        The current state of the management station.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -590,7 +637,7 @@ class ManagementStation(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ManagementStation.
-        The current state of the Management Station config.
+        The current state of the management station.
 
 
         :param lifecycle_state: The lifecycle_state of this ManagementStation.

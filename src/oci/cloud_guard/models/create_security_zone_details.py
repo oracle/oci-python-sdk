@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateSecurityZoneDetails(object):
     """
-    Details for a new security zone
+    Parameters to be used to create a new security zone.
     """
 
     def __init__(self, **kwargs):
@@ -74,7 +74,7 @@ class CreateSecurityZoneDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateSecurityZoneDetails.
-        The security zone's name
+        The security zone's display name
 
 
         :return: The display_name of this CreateSecurityZoneDetails.
@@ -86,7 +86,7 @@ class CreateSecurityZoneDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateSecurityZoneDetails.
-        The security zone's name
+        The security zone's display name
 
 
         :param display_name: The display_name of this CreateSecurityZoneDetails.
@@ -122,7 +122,7 @@ class CreateSecurityZoneDetails(object):
     def security_zone_recipe_id(self):
         """
         **[Required]** Gets the security_zone_recipe_id of this CreateSecurityZoneDetails.
-        The OCID of the recipe (`SecurityRecipe`) for the security zone
+        The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
 
 
         :return: The security_zone_recipe_id of this CreateSecurityZoneDetails.
@@ -134,7 +134,7 @@ class CreateSecurityZoneDetails(object):
     def security_zone_recipe_id(self, security_zone_recipe_id):
         """
         Sets the security_zone_recipe_id of this CreateSecurityZoneDetails.
-        The OCID of the recipe (`SecurityRecipe`) for the security zone
+        The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
 
 
         :param security_zone_recipe_id: The security_zone_recipe_id of this CreateSecurityZoneDetails.

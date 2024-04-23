@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SightingEndpointSummary(object):
     """
-    Sighting Endpoints summary.
+    A summary of sighting endpoints.
     """
 
     def __init__(self, **kwargs):
@@ -147,7 +147,7 @@ class SightingEndpointSummary(object):
     def sighting_id(self):
         """
         **[Required]** Gets the sighting_id of this SightingEndpointSummary.
-        Sighitng Id for sighting endpoints
+        Sighting ID for sighting endpoints
 
 
         :return: The sighting_id of this SightingEndpointSummary.
@@ -159,7 +159,7 @@ class SightingEndpointSummary(object):
     def sighting_id(self, sighting_id):
         """
         Sets the sighting_id of this SightingEndpointSummary.
-        Sighitng Id for sighting endpoints
+        Sighting ID for sighting endpoints
 
 
         :param sighting_id: The sighting_id of this SightingEndpointSummary.
@@ -171,7 +171,7 @@ class SightingEndpointSummary(object):
     def problem_id(self):
         """
         Gets the problem_id of this SightingEndpointSummary.
-        Problem Id for sighting endpoints
+        Problem ID for sighting endpoints
 
 
         :return: The problem_id of this SightingEndpointSummary.
@@ -183,7 +183,7 @@ class SightingEndpointSummary(object):
     def problem_id(self, problem_id):
         """
         Sets the problem_id of this SightingEndpointSummary.
-        Problem Id for sighting endpoints
+        Problem ID for sighting endpoints
 
 
         :param problem_id: The problem_id of this SightingEndpointSummary.
@@ -195,7 +195,7 @@ class SightingEndpointSummary(object):
     def ip_address(self):
         """
         **[Required]** Gets the ip_address of this SightingEndpointSummary.
-        IP Address
+        IP address involved in sighting
 
 
         :return: The ip_address of this SightingEndpointSummary.
@@ -207,7 +207,7 @@ class SightingEndpointSummary(object):
     def ip_address(self, ip_address):
         """
         Sets the ip_address of this SightingEndpointSummary.
-        IP Address
+        IP address involved in sighting
 
 
         :param ip_address: The ip_address of this SightingEndpointSummary.
@@ -219,7 +219,7 @@ class SightingEndpointSummary(object):
     def ip_address_type(self):
         """
         **[Required]** Gets the ip_address_type of this SightingEndpointSummary.
-        IP Address type
+        Type of IP address involved in sighting
 
 
         :return: The ip_address_type of this SightingEndpointSummary.
@@ -231,7 +231,7 @@ class SightingEndpointSummary(object):
     def ip_address_type(self, ip_address_type):
         """
         Sets the ip_address_type of this SightingEndpointSummary.
-        IP Address type
+        Type of IP address involved in sighting
 
 
         :param ip_address_type: The ip_address_type of this SightingEndpointSummary.
@@ -243,7 +243,7 @@ class SightingEndpointSummary(object):
     def ip_classification_type(self):
         """
         Gets the ip_classification_type of this SightingEndpointSummary.
-        IP Address classification type
+        IP address classification type
 
 
         :return: The ip_classification_type of this SightingEndpointSummary.
@@ -255,7 +255,7 @@ class SightingEndpointSummary(object):
     def ip_classification_type(self, ip_classification_type):
         """
         Sets the ip_classification_type of this SightingEndpointSummary.
-        IP Address classification type
+        IP address classification type
 
 
         :param ip_classification_type: The ip_classification_type of this SightingEndpointSummary.
@@ -267,7 +267,7 @@ class SightingEndpointSummary(object):
     def country(self):
         """
         Gets the country of this SightingEndpointSummary.
-        Country
+        Country involved in sighting
 
 
         :return: The country of this SightingEndpointSummary.
@@ -279,7 +279,7 @@ class SightingEndpointSummary(object):
     def country(self, country):
         """
         Sets the country of this SightingEndpointSummary.
-        Country
+        Country involved in sighting
 
 
         :param country: The country of this SightingEndpointSummary.
@@ -291,7 +291,7 @@ class SightingEndpointSummary(object):
     def latitude(self):
         """
         Gets the latitude of this SightingEndpointSummary.
-        Latitude
+        Latitude of sighting
 
 
         :return: The latitude of this SightingEndpointSummary.
@@ -303,7 +303,7 @@ class SightingEndpointSummary(object):
     def latitude(self, latitude):
         """
         Sets the latitude of this SightingEndpointSummary.
-        Latitude
+        Latitude of sighting
 
 
         :param latitude: The latitude of this SightingEndpointSummary.
@@ -315,7 +315,7 @@ class SightingEndpointSummary(object):
     def longitude(self):
         """
         Gets the longitude of this SightingEndpointSummary.
-        Longitude
+        Longitude of sighting
 
 
         :return: The longitude of this SightingEndpointSummary.
@@ -327,7 +327,7 @@ class SightingEndpointSummary(object):
     def longitude(self, longitude):
         """
         Sets the longitude of this SightingEndpointSummary.
-        Longitude
+        Longitude of sighting
 
 
         :param longitude: The longitude of this SightingEndpointSummary.
@@ -339,7 +339,7 @@ class SightingEndpointSummary(object):
     def asn_number(self):
         """
         Gets the asn_number of this SightingEndpointSummary.
-        ASN number
+        ASN number of sighting
 
 
         :return: The asn_number of this SightingEndpointSummary.
@@ -351,7 +351,7 @@ class SightingEndpointSummary(object):
     def asn_number(self, asn_number):
         """
         Sets the asn_number of this SightingEndpointSummary.
-        ASN number
+        ASN number of sighting
 
 
         :param asn_number: The asn_number of this SightingEndpointSummary.
@@ -363,7 +363,7 @@ class SightingEndpointSummary(object):
     def regions(self):
         """
         Gets the regions of this SightingEndpointSummary.
-        Regions where activities were performed from this IP
+        List of regions where activities were performed from this IP address
 
 
         :return: The regions of this SightingEndpointSummary.
@@ -375,7 +375,7 @@ class SightingEndpointSummary(object):
     def regions(self, regions):
         """
         Sets the regions of this SightingEndpointSummary.
-        Regions where activities were performed from this IP
+        List of regions where activities were performed from this IP address
 
 
         :param regions: The regions of this SightingEndpointSummary.
@@ -387,7 +387,7 @@ class SightingEndpointSummary(object):
     def services(self):
         """
         Gets the services of this SightingEndpointSummary.
-        Services where activities were performed from this IP
+        List of services where activities were performed from this IP address
 
 
         :return: The services of this SightingEndpointSummary.
@@ -399,7 +399,7 @@ class SightingEndpointSummary(object):
     def services(self, services):
         """
         Sets the services of this SightingEndpointSummary.
-        Services where activities were performed from this IP
+        List of services where activities were performed from this IP address
 
 
         :param services: The services of this SightingEndpointSummary.
@@ -411,7 +411,7 @@ class SightingEndpointSummary(object):
     def time_last_detected(self):
         """
         **[Required]** Gets the time_last_detected of this SightingEndpointSummary.
-        Time when activities were created
+        Date and time when activities were created
 
 
         :return: The time_last_detected of this SightingEndpointSummary.
@@ -423,7 +423,7 @@ class SightingEndpointSummary(object):
     def time_last_detected(self, time_last_detected):
         """
         Sets the time_last_detected of this SightingEndpointSummary.
-        Time when activities were created
+        Date and time when activities were created
 
 
         :param time_last_detected: The time_last_detected of this SightingEndpointSummary.

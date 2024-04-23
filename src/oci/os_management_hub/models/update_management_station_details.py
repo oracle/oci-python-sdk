@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateManagementStationDetails(object):
     """
-    Information for updating an ManagementStation
+    Provides the information used to update the management station.
     """
 
     def __init__(self, **kwargs):
@@ -81,7 +81,7 @@ class UpdateManagementStationDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateManagementStationDetails.
-        ManagementStation name
+        User-friendly name for the management station. Does not have to be unique. Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateManagementStationDetails.
@@ -93,7 +93,7 @@ class UpdateManagementStationDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateManagementStationDetails.
-        ManagementStation name
+        User-friendly name for the management station. Does not have to be unique. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateManagementStationDetails.
@@ -105,7 +105,7 @@ class UpdateManagementStationDetails(object):
     def description(self):
         """
         Gets the description of this UpdateManagementStationDetails.
-        Details describing the ManagementStation config.
+        User-specified description of the management station. Avoid entering confidential information.
 
 
         :return: The description of this UpdateManagementStationDetails.
@@ -117,7 +117,7 @@ class UpdateManagementStationDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateManagementStationDetails.
-        Details describing the ManagementStation config.
+        User-specified description of the management station. Avoid entering confidential information.
 
 
         :param description: The description of this UpdateManagementStationDetails.
@@ -129,7 +129,7 @@ class UpdateManagementStationDetails(object):
     def hostname(self):
         """
         Gets the hostname of this UpdateManagementStationDetails.
-        Name of the host
+        Hostname of the management station.
 
 
         :return: The hostname of this UpdateManagementStationDetails.
@@ -141,7 +141,7 @@ class UpdateManagementStationDetails(object):
     def hostname(self, hostname):
         """
         Sets the hostname of this UpdateManagementStationDetails.
-        Name of the host
+        Hostname of the management station.
 
 
         :param hostname: The hostname of this UpdateManagementStationDetails.

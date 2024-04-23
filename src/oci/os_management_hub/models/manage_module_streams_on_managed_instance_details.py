@@ -106,7 +106,8 @@ class ManageModuleStreamsOnManagedInstanceDetails(object):
     def enable(self):
         """
         Gets the enable of this ManageModuleStreamsOnManagedInstanceDetails.
-        The set of module streams to enable.
+        The set of module streams to enable. If any streams of a module are already enabled, the service switches from the current stream to the new stream.
+        Once complete, the streams will be in 'ENABLED' status.
 
 
         :return: The enable of this ManageModuleStreamsOnManagedInstanceDetails.
@@ -118,7 +119,8 @@ class ManageModuleStreamsOnManagedInstanceDetails(object):
     def enable(self, enable):
         """
         Sets the enable of this ManageModuleStreamsOnManagedInstanceDetails.
-        The set of module streams to enable.
+        The set of module streams to enable. If any streams of a module are already enabled, the service switches from the current stream to the new stream.
+        Once complete, the streams will be in 'ENABLED' status.
 
 
         :param enable: The enable of this ManageModuleStreamsOnManagedInstanceDetails.
@@ -130,7 +132,8 @@ class ManageModuleStreamsOnManagedInstanceDetails(object):
     def disable(self):
         """
         Gets the disable of this ManageModuleStreamsOnManagedInstanceDetails.
-        The set of module streams to disable.
+        The set of module streams to disable. Any profiles that are installed for the module stream will be removed as part of the operation.
+        Once complete, the streams will be in 'DISABLED' status.
 
 
         :return: The disable of this ManageModuleStreamsOnManagedInstanceDetails.
@@ -142,7 +145,8 @@ class ManageModuleStreamsOnManagedInstanceDetails(object):
     def disable(self, disable):
         """
         Sets the disable of this ManageModuleStreamsOnManagedInstanceDetails.
-        The set of module streams to disable.
+        The set of module streams to disable. Any profiles that are installed for the module stream will be removed as part of the operation.
+        Once complete, the streams will be in 'DISABLED' status.
 
 
         :param disable: The disable of this ManageModuleStreamsOnManagedInstanceDetails.
@@ -154,7 +158,8 @@ class ManageModuleStreamsOnManagedInstanceDetails(object):
     def install(self):
         """
         Gets the install of this ManageModuleStreamsOnManagedInstanceDetails.
-        The set of module stream profiles to install.
+        The set of module stream profiles to install. Any packages that are part of the profile are installed on the managed instance.
+        Once complete, the profile will be in 'INSTALLED' status. The operation will return an error if you attempt to install a profile from a disabled stream, unless enabling the new module stream is included in this operation.
 
 
         :return: The install of this ManageModuleStreamsOnManagedInstanceDetails.
@@ -166,7 +171,8 @@ class ManageModuleStreamsOnManagedInstanceDetails(object):
     def install(self, install):
         """
         Sets the install of this ManageModuleStreamsOnManagedInstanceDetails.
-        The set of module stream profiles to install.
+        The set of module stream profiles to install. Any packages that are part of the profile are installed on the managed instance.
+        Once complete, the profile will be in 'INSTALLED' status. The operation will return an error if you attempt to install a profile from a disabled stream, unless enabling the new module stream is included in this operation.
 
 
         :param install: The install of this ManageModuleStreamsOnManagedInstanceDetails.
@@ -178,7 +184,8 @@ class ManageModuleStreamsOnManagedInstanceDetails(object):
     def remove(self):
         """
         Gets the remove of this ManageModuleStreamsOnManagedInstanceDetails.
-        The set of module stream profiles to remove.
+        The set of module stream profiles to remove. Once complete, the profile will be in 'AVAILABLE' status.
+        The status of packages within the profile after the operation is complete is defined by the package manager on the managed instance group.
 
 
         :return: The remove of this ManageModuleStreamsOnManagedInstanceDetails.
@@ -190,7 +197,8 @@ class ManageModuleStreamsOnManagedInstanceDetails(object):
     def remove(self, remove):
         """
         Sets the remove of this ManageModuleStreamsOnManagedInstanceDetails.
-        The set of module stream profiles to remove.
+        The set of module stream profiles to remove. Once complete, the profile will be in 'AVAILABLE' status.
+        The status of packages within the profile after the operation is complete is defined by the package manager on the managed instance group.
 
 
         :param remove: The remove of this ManageModuleStreamsOnManagedInstanceDetails.

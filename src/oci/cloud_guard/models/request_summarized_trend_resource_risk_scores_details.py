@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RequestSummarizedTrendResourceRiskScoresDetails(object):
     """
-    ResourceRiskScores filter.
+    Details for requesting summarized trend risk scores.
     """
 
     #: A constant which can be used with the filter property of a RequestSummarizedTrendResourceRiskScoresDetails.
@@ -55,7 +55,7 @@ class RequestSummarizedTrendResourceRiskScoresDetails(object):
     def filter(self):
         """
         **[Required]** Gets the filter of this RequestSummarizedTrendResourceRiskScoresDetails.
-        The filter type.
+        The filter type
 
         Allowed values for this property are: "PROBLEM_ID", "RESOURCE_PROFILE_ID"
 
@@ -69,7 +69,7 @@ class RequestSummarizedTrendResourceRiskScoresDetails(object):
     def filter(self, filter):
         """
         Sets the filter of this RequestSummarizedTrendResourceRiskScoresDetails.
-        The filter type.
+        The filter type
 
 
         :param filter: The filter of this RequestSummarizedTrendResourceRiskScoresDetails.
@@ -86,7 +86,7 @@ class RequestSummarizedTrendResourceRiskScoresDetails(object):
     def filter_id(self):
         """
         **[Required]** Gets the filter_id of this RequestSummarizedTrendResourceRiskScoresDetails.
-        Id to be passed in to filter the risk scores.
+        ID to be passed in to filter the risk scores
 
 
         :return: The filter_id of this RequestSummarizedTrendResourceRiskScoresDetails.
@@ -98,7 +98,7 @@ class RequestSummarizedTrendResourceRiskScoresDetails(object):
     def filter_id(self, filter_id):
         """
         Sets the filter_id of this RequestSummarizedTrendResourceRiskScoresDetails.
-        Id to be passed in to filter the risk scores.
+        ID to be passed in to filter the risk scores
 
 
         :param filter_id: The filter_id of this RequestSummarizedTrendResourceRiskScoresDetails.

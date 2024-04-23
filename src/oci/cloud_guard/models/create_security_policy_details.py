@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateSecurityPolicyDetails(object):
     """
-    The information about new SecurityPolicy.
+    Parameters to be used to create a new security policy.
     """
 
     def __init__(self, **kwargs):
@@ -88,7 +88,7 @@ class CreateSecurityPolicyDetails(object):
     def friendly_name(self):
         """
         Gets the friendly_name of this CreateSecurityPolicyDetails.
-        SecurityPolicy friendly name
+        Short version of security policy name
 
 
         :return: The friendly_name of this CreateSecurityPolicyDetails.
@@ -100,7 +100,7 @@ class CreateSecurityPolicyDetails(object):
     def friendly_name(self, friendly_name):
         """
         Sets the friendly_name of this CreateSecurityPolicyDetails.
-        SecurityPolicy friendly name
+        Short version of security policy name
 
 
         :param friendly_name: The friendly_name of this CreateSecurityPolicyDetails.
@@ -112,7 +112,7 @@ class CreateSecurityPolicyDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateSecurityPolicyDetails.
-        SecurityPolicy Identifier
+        Security policy display name
 
 
         :return: The display_name of this CreateSecurityPolicyDetails.
@@ -124,7 +124,7 @@ class CreateSecurityPolicyDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateSecurityPolicyDetails.
-        SecurityPolicy Identifier
+        Security policy display name
 
 
         :param display_name: The display_name of this CreateSecurityPolicyDetails.
@@ -160,7 +160,7 @@ class CreateSecurityPolicyDetails(object):
     def category(self):
         """
         Gets the category of this CreateSecurityPolicyDetails.
-        The category of security policy.
+        The category of the security policy
 
 
         :return: The category of this CreateSecurityPolicyDetails.
@@ -172,7 +172,7 @@ class CreateSecurityPolicyDetails(object):
     def category(self, category):
         """
         Sets the category of this CreateSecurityPolicyDetails.
-        The category of security policy.
+        The category of the security policy
 
 
         :param category: The category of this CreateSecurityPolicyDetails.
@@ -184,7 +184,7 @@ class CreateSecurityPolicyDetails(object):
     def services(self):
         """
         Gets the services of this CreateSecurityPolicyDetails.
-        The list of services for policy.
+        The list of services for the security policy
 
 
         :return: The services of this CreateSecurityPolicyDetails.
@@ -196,7 +196,7 @@ class CreateSecurityPolicyDetails(object):
     def services(self, services):
         """
         Sets the services of this CreateSecurityPolicyDetails.
-        The list of services for policy.
+        The list of services for the security policy
 
 
         :param services: The services of this CreateSecurityPolicyDetails.
@@ -208,7 +208,7 @@ class CreateSecurityPolicyDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateSecurityPolicyDetails.
-        Compartment Identifier
+        Compartment OCID
 
 
         :return: The compartment_id of this CreateSecurityPolicyDetails.
@@ -220,7 +220,7 @@ class CreateSecurityPolicyDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateSecurityPolicyDetails.
-        Compartment Identifier
+        Compartment OCID
 
 
         :param compartment_id: The compartment_id of this CreateSecurityPolicyDetails.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LoggingQueryDataSourceDetails(DataSourceDetails):
     """
-    The information about new Logging Query of type DataSource.
+    Information for a logging query for a data source.
     """
 
     #: A constant which can be used with the operator property of a LoggingQueryDataSourceDetails.
@@ -47,7 +47,7 @@ class LoggingQueryDataSourceDetails(DataSourceDetails):
 
         :param data_source_feed_provider:
             The value to assign to the data_source_feed_provider property of this LoggingQueryDataSourceDetails.
-            Allowed values for this property are: "LOGGINGQUERY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LOGGINGQUERY", "SCHEDULEDQUERY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type data_source_feed_provider: str
 
@@ -134,7 +134,7 @@ class LoggingQueryDataSourceDetails(DataSourceDetails):
     def regions(self):
         """
         Gets the regions of this LoggingQueryDataSourceDetails.
-        Logging Query regions
+        List of logging query regions
 
 
         :return: The regions of this LoggingQueryDataSourceDetails.
@@ -146,7 +146,7 @@ class LoggingQueryDataSourceDetails(DataSourceDetails):
     def regions(self, regions):
         """
         Sets the regions of this LoggingQueryDataSourceDetails.
-        Logging Query regions
+        List of logging query regions
 
 
         :param regions: The regions of this LoggingQueryDataSourceDetails.
@@ -158,7 +158,7 @@ class LoggingQueryDataSourceDetails(DataSourceDetails):
     def query(self):
         """
         Gets the query of this LoggingQueryDataSourceDetails.
-        The continuous query expression that is run periodically.
+        The continuous query expression that is run periodicall
 
 
         :return: The query of this LoggingQueryDataSourceDetails.
@@ -170,7 +170,7 @@ class LoggingQueryDataSourceDetails(DataSourceDetails):
     def query(self, query):
         """
         Sets the query of this LoggingQueryDataSourceDetails.
-        The continuous query expression that is run periodically.
+        The continuous query expression that is run periodicall
 
 
         :param query: The query of this LoggingQueryDataSourceDetails.
@@ -206,7 +206,7 @@ class LoggingQueryDataSourceDetails(DataSourceDetails):
     def threshold(self):
         """
         Gets the threshold of this LoggingQueryDataSourceDetails.
-        The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+        The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
 
 
         :return: The threshold of this LoggingQueryDataSourceDetails.
@@ -218,7 +218,7 @@ class LoggingQueryDataSourceDetails(DataSourceDetails):
     def threshold(self, threshold):
         """
         Sets the threshold of this LoggingQueryDataSourceDetails.
-        The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+        The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
 
 
         :param threshold: The threshold of this LoggingQueryDataSourceDetails.
@@ -250,7 +250,7 @@ class LoggingQueryDataSourceDetails(DataSourceDetails):
     def operator(self):
         """
         Gets the operator of this LoggingQueryDataSourceDetails.
-        Operator used in Data Soruce
+        Operator used in data source
 
         Allowed values for this property are: "EQUAL", "GREATER", "GREATERTHANEQUALTO", "LESS", "LESSTHANEQUALTO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -265,7 +265,7 @@ class LoggingQueryDataSourceDetails(DataSourceDetails):
     def operator(self, operator):
         """
         Sets the operator of this LoggingQueryDataSourceDetails.
-        Operator used in Data Soruce
+        Operator used in data source
 
 
         :param operator: The operator of this LoggingQueryDataSourceDetails.
@@ -280,7 +280,7 @@ class LoggingQueryDataSourceDetails(DataSourceDetails):
     def logging_query_type(self):
         """
         Gets the logging_query_type of this LoggingQueryDataSourceDetails.
-        Logging query type for data source (Sighting/Insight)
+        Type of logging query for data source (Sighting/Insight)
 
         Allowed values for this property are: "INSIGHT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -295,7 +295,7 @@ class LoggingQueryDataSourceDetails(DataSourceDetails):
     def logging_query_type(self, logging_query_type):
         """
         Sets the logging_query_type of this LoggingQueryDataSourceDetails.
-        Logging query type for data source (Sighting/Insight)
+        Type of logging query for data source (Sighting/Insight)
 
 
         :param logging_query_type: The logging_query_type of this LoggingQueryDataSourceDetails.
@@ -310,7 +310,7 @@ class LoggingQueryDataSourceDetails(DataSourceDetails):
     def additional_entities_count(self):
         """
         Gets the additional_entities_count of this LoggingQueryDataSourceDetails.
-        The additional entities count used for data source query.
+        The additional entities count used for data source query
 
 
         :return: The additional_entities_count of this LoggingQueryDataSourceDetails.
@@ -322,7 +322,7 @@ class LoggingQueryDataSourceDetails(DataSourceDetails):
     def additional_entities_count(self, additional_entities_count):
         """
         Sets the additional_entities_count of this LoggingQueryDataSourceDetails.
-        The additional entities count used for data source query.
+        The additional entities count used for data source query
 
 
         :param additional_entities_count: The additional_entities_count of this LoggingQueryDataSourceDetails.

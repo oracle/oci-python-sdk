@@ -12,12 +12,16 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateStationProfileDetails(CreateProfileDetails):
     """
-    Description of a group registration profile to be created.
+    Provides the information used to create the management station profile.
     """
 
     #: A constant which can be used with the vendor_name property of a CreateStationProfileDetails.
     #: This constant has a value of "ORACLE"
     VENDOR_NAME_ORACLE = "ORACLE"
+
+    #: A constant which can be used with the vendor_name property of a CreateStationProfileDetails.
+    #: This constant has a value of "MICROSOFT"
+    VENDOR_NAME_MICROSOFT = "MICROSOFT"
 
     #: A constant which can be used with the os_family property of a CreateStationProfileDetails.
     #: This constant has a value of "ORACLE_LINUX_9"
@@ -30,6 +34,26 @@ class CreateStationProfileDetails(CreateProfileDetails):
     #: A constant which can be used with the os_family property of a CreateStationProfileDetails.
     #: This constant has a value of "ORACLE_LINUX_7"
     OS_FAMILY_ORACLE_LINUX_7 = "ORACLE_LINUX_7"
+
+    #: A constant which can be used with the os_family property of a CreateStationProfileDetails.
+    #: This constant has a value of "ORACLE_LINUX_6"
+    OS_FAMILY_ORACLE_LINUX_6 = "ORACLE_LINUX_6"
+
+    #: A constant which can be used with the os_family property of a CreateStationProfileDetails.
+    #: This constant has a value of "WINDOWS_SERVER_2016"
+    OS_FAMILY_WINDOWS_SERVER_2016 = "WINDOWS_SERVER_2016"
+
+    #: A constant which can be used with the os_family property of a CreateStationProfileDetails.
+    #: This constant has a value of "WINDOWS_SERVER_2019"
+    OS_FAMILY_WINDOWS_SERVER_2019 = "WINDOWS_SERVER_2019"
+
+    #: A constant which can be used with the os_family property of a CreateStationProfileDetails.
+    #: This constant has a value of "WINDOWS_SERVER_2022"
+    OS_FAMILY_WINDOWS_SERVER_2022 = "WINDOWS_SERVER_2022"
+
+    #: A constant which can be used with the os_family property of a CreateStationProfileDetails.
+    #: This constant has a value of "ALL"
+    OS_FAMILY_ALL = "ALL"
 
     #: A constant which can be used with the arch_type property of a CreateStationProfileDetails.
     #: This constant has a value of "X86_64"
@@ -75,8 +99,16 @@ class CreateStationProfileDetails(CreateProfileDetails):
 
         :param profile_type:
             The value to assign to the profile_type property of this CreateStationProfileDetails.
-            Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION"
+            Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE"
         :type profile_type: str
+
+        :param registration_type:
+            The value to assign to the registration_type property of this CreateStationProfileDetails.
+        :type registration_type: str
+
+        :param is_default_profile:
+            The value to assign to the is_default_profile property of this CreateStationProfileDetails.
+        :type is_default_profile: bool
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateStationProfileDetails.
@@ -88,12 +120,12 @@ class CreateStationProfileDetails(CreateProfileDetails):
 
         :param vendor_name:
             The value to assign to the vendor_name property of this CreateStationProfileDetails.
-            Allowed values for this property are: "ORACLE"
+            Allowed values for this property are: "ORACLE", "MICROSOFT"
         :type vendor_name: str
 
         :param os_family:
             The value to assign to the os_family property of this CreateStationProfileDetails.
-            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7"
+            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"
         :type os_family: str
 
         :param arch_type:
@@ -108,6 +140,8 @@ class CreateStationProfileDetails(CreateProfileDetails):
             'description': 'str',
             'management_station_id': 'str',
             'profile_type': 'str',
+            'registration_type': 'str',
+            'is_default_profile': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'vendor_name': 'str',
@@ -121,6 +155,8 @@ class CreateStationProfileDetails(CreateProfileDetails):
             'description': 'description',
             'management_station_id': 'managementStationId',
             'profile_type': 'profileType',
+            'registration_type': 'registrationType',
+            'is_default_profile': 'isDefaultProfile',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'vendor_name': 'vendorName',
@@ -133,6 +169,8 @@ class CreateStationProfileDetails(CreateProfileDetails):
         self._description = None
         self._management_station_id = None
         self._profile_type = None
+        self._registration_type = None
+        self._is_default_profile = None
         self._freeform_tags = None
         self._defined_tags = None
         self._vendor_name = None
@@ -144,9 +182,9 @@ class CreateStationProfileDetails(CreateProfileDetails):
     def vendor_name(self):
         """
         Gets the vendor_name of this CreateStationProfileDetails.
-        The software source vendor name.
+        The vendor of the operating system for the instance.
 
-        Allowed values for this property are: "ORACLE"
+        Allowed values for this property are: "ORACLE", "MICROSOFT"
 
 
         :return: The vendor_name of this CreateStationProfileDetails.
@@ -158,13 +196,13 @@ class CreateStationProfileDetails(CreateProfileDetails):
     def vendor_name(self, vendor_name):
         """
         Sets the vendor_name of this CreateStationProfileDetails.
-        The software source vendor name.
+        The vendor of the operating system for the instance.
 
 
         :param vendor_name: The vendor_name of this CreateStationProfileDetails.
         :type: str
         """
-        allowed_values = ["ORACLE"]
+        allowed_values = ["ORACLE", "MICROSOFT"]
         if not value_allowed_none_or_none_sentinel(vendor_name, allowed_values):
             raise ValueError(
                 f"Invalid value for `vendor_name`, must be None or one of {allowed_values}"
@@ -177,7 +215,7 @@ class CreateStationProfileDetails(CreateProfileDetails):
         Gets the os_family of this CreateStationProfileDetails.
         The operating system family.
 
-        Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7"
+        Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"
 
 
         :return: The os_family of this CreateStationProfileDetails.
@@ -195,7 +233,7 @@ class CreateStationProfileDetails(CreateProfileDetails):
         :param os_family: The os_family of this CreateStationProfileDetails.
         :type: str
         """
-        allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7"]
+        allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"]
         if not value_allowed_none_or_none_sentinel(os_family, allowed_values):
             raise ValueError(
                 f"Invalid value for `os_family`, must be None or one of {allowed_values}"

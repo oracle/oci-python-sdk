@@ -22,7 +22,8 @@ missing = Sentinel("Missing")
 
 class ReportingManagedInstanceClient(object):
     """
-    Use the OS Management Hub API to manage and monitor updates and patches for the operating system environments in your private data centers through a single management console. For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+    Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
+    For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -118,26 +119,34 @@ class ReportingManagedInstanceClient(object):
 
     def get_managed_instance_analytic_content(self, **kwargs):
         """
-        Returns a CSV format report of managed instances matching the given filters.
+        Returns a report of managed instances matching the given filters. You can select CSV, XML, or JSON format.
 
 
         :param str compartment_id: (optional)
-            This compartmentId is used to list managed instances within a compartment.
-            Or serve as an additional filter to restrict only managed instances with in certain compartment if other filter presents.
+            The `OCID`__ of the compartment.
+            This filter returns only resources contained within the specified compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str managed_instance_group_id: (optional)
-            The OCID of the managed instance group for which to list resources.
+            The `OCID`__ of the managed instance group. This filter returns resources associated with this group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_environment_id: (optional)
-            The OCID of the lifecycle environment.
+            The `OCID`__ of the lifecycle environment. This filter returns only resource contained with the specified lifecycle environment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_stage_id: (optional)
-            The OCID of the lifecycle stage for which to list resources.
+            The `OCID`__ of the lifecycle stage. This resource returns resources associated with this lifecycle stage.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] status: (optional)
-            A filter to return only instances whose managed instance status matches the given status.
+            A filter to return only managed instances whose status matches the status provided.
 
-            Allowed values are: "NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR"
+            Allowed values are: "NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING"
 
         :param list[str] display_name: (optional)
             A filter to return resources that match the given display names.
@@ -145,22 +154,45 @@ class ReportingManagedInstanceClient(object):
         :param str display_name_contains: (optional)
             A filter to return resources that may partially match the given display name.
 
-        :param str instance_location: (optional)
-            Filter instances by Location. Used when report target type is compartment or group.
-
-            Allowed values are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2"
-
         :param int security_updates_available_equals_to: (optional)
-            A filter to return instances with number of available security updates equals to the number specified.
+            A filter to return instances that have the specified number of available security updates.
 
         :param int bug_updates_available_equals_to: (optional)
-            A filter to return instances with number of available bug updates equals to the number specified.
+            A filter to return instances that have the specified number of available bug updates.
 
         :param int security_updates_available_greater_than: (optional)
-            A filter to return instances with number of available security updates greater than the number specified.
+            A filter to return instances that have more available security updates than the number specified.
 
         :param int bug_updates_available_greater_than: (optional)
-            A filter to return instances with number of available bug updates greater than the number specified.
+            A filter to return instances that have more available bug updates than the number specified.
+
+        :param list[str] location: (optional)
+            A filter to return only resources whose location matches the given value.
+
+            Allowed values are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"
+
+        :param list[str] location_not_equal_to: (optional)
+            A filter to return only resources whose location does not match the given value.
+
+            Allowed values are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"
+
+        :param list[str] os_family: (optional)
+            A filter to return only resources that match the given operating system family.
+
+            Allowed values are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"
+
+        :param bool is_managed_by_autonomous_linux: (optional)
+            Indicates whether to list only resources managed by the Autonomous Linux service.
+
+        :param str report_format: (optional)
+            The format of the report to download. Default is CSV.
+
+            Allowed values are: "csv", "json", "xml"
+
+        :param str report_type: (optional)
+            The type of the report the user wants to download. Default is ALL.
+
+            Allowed values are: "SECURITY", "BUGFIX", "ACTIVITY", "ALL"
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -201,11 +233,16 @@ class ReportingManagedInstanceClient(object):
             "status",
             "display_name",
             "display_name_contains",
-            "instance_location",
             "security_updates_available_equals_to",
             "bug_updates_available_equals_to",
             "security_updates_available_greater_than",
             "bug_updates_available_greater_than",
+            "location",
+            "location_not_equal_to",
+            "os_family",
+            "is_managed_by_autonomous_linux",
+            "report_format",
+            "report_type",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -214,18 +251,49 @@ class ReportingManagedInstanceClient(object):
                 f"get_managed_instance_analytic_content got unknown kwargs: {extra_kwargs!r}")
 
         if 'status' in kwargs:
-            status_allowed_values = ["NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR"]
+            status_allowed_values = ["NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING"]
             for status_item in kwargs['status']:
                 if status_item not in status_allowed_values:
                     raise ValueError(
                         f"Invalid value for `status`, must be one of { status_allowed_values }"
                     )
 
-        if 'instance_location' in kwargs:
-            instance_location_allowed_values = ["ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2"]
-            if kwargs['instance_location'] not in instance_location_allowed_values:
+        if 'location' in kwargs:
+            location_allowed_values = ["ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"]
+            for location_item in kwargs['location']:
+                if location_item not in location_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `location`, must be one of { location_allowed_values }"
+                    )
+
+        if 'location_not_equal_to' in kwargs:
+            location_not_equal_to_allowed_values = ["ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"]
+            for location_not_equal_to_item in kwargs['location_not_equal_to']:
+                if location_not_equal_to_item not in location_not_equal_to_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `location_not_equal_to`, must be one of { location_not_equal_to_allowed_values }"
+                    )
+
+        if 'os_family' in kwargs:
+            os_family_allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"]
+            for os_family_item in kwargs['os_family']:
+                if os_family_item not in os_family_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `os_family`, must be one of { os_family_allowed_values }"
+                    )
+
+        if 'report_format' in kwargs:
+            report_format_allowed_values = ["csv", "json", "xml"]
+            if kwargs['report_format'] not in report_format_allowed_values:
                 raise ValueError(
-                    f"Invalid value for `instance_location`, must be one of { instance_location_allowed_values }"
+                    f"Invalid value for `report_format`, must be one of { report_format_allowed_values }"
+                )
+
+        if 'report_type' in kwargs:
+            report_type_allowed_values = ["SECURITY", "BUGFIX", "ACTIVITY", "ALL"]
+            if kwargs['report_type'] not in report_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `report_type`, must be one of { report_type_allowed_values }"
                 )
 
         query_params = {
@@ -236,11 +304,16 @@ class ReportingManagedInstanceClient(object):
             "status": self.base_client.generate_collection_format_param(kwargs.get("status", missing), 'multi'),
             "displayName": self.base_client.generate_collection_format_param(kwargs.get("display_name", missing), 'multi'),
             "displayNameContains": kwargs.get("display_name_contains", missing),
-            "instanceLocation": kwargs.get("instance_location", missing),
             "securityUpdatesAvailableEqualsTo": kwargs.get("security_updates_available_equals_to", missing),
             "bugUpdatesAvailableEqualsTo": kwargs.get("bug_updates_available_equals_to", missing),
             "securityUpdatesAvailableGreaterThan": kwargs.get("security_updates_available_greater_than", missing),
-            "bugUpdatesAvailableGreaterThan": kwargs.get("bug_updates_available_greater_than", missing)
+            "bugUpdatesAvailableGreaterThan": kwargs.get("bug_updates_available_greater_than", missing),
+            "location": self.base_client.generate_collection_format_param(kwargs.get("location", missing), 'multi'),
+            "locationNotEqualTo": self.base_client.generate_collection_format_param(kwargs.get("location_not_equal_to", missing), 'multi'),
+            "osFamily": self.base_client.generate_collection_format_param(kwargs.get("os_family", missing), 'multi'),
+            "isManagedByAutonomousLinux": kwargs.get("is_managed_by_autonomous_linux", missing),
+            "reportFormat": kwargs.get("report_format", missing),
+            "reportType": kwargs.get("report_type", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -285,13 +358,20 @@ class ReportingManagedInstanceClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def get_managed_instance_content(self, managed_instance_id, **kwargs):
+    def get_managed_instance_content(self, managed_instance_id, vulnerability_type, **kwargs):
         """
-        Returns a CSV format report of a single managed instance whose associated Erratas match the given filters.
+        Returns a report for a single managed instance whose associated erratas match the given filters. You can select CSV, XML, or JSON format.
 
 
         :param str managed_instance_id: (required)
-            The OCID of the managed instance.
+            The `OCID`__ of the managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.os_management_hub.models.list[str] vulnerability_type: (required)
+            A filter to return only vulnerabilities matching the given types.
+
+            Allowed values are: "SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER", "ALL"
 
         :param list[str] advisory_name: (optional)
             The assigned erratum name. It's unique and not changeable.
@@ -305,6 +385,17 @@ class ReportingManagedInstanceClient(object):
             A filter to return only errata that match the given advisory types.
 
             Allowed values are: "SECURITY", "BUGFIX", "ENHANCEMENT"
+
+        :param list[str] vulnerability_name: (optional)
+            A filter to return vulnerabilities that match the given name. For Linux instances, this refers to the advisory name. For Windows instances, this refers to the Windows update display name.
+
+        :param str vulnerability_name_contains: (optional)
+            A filter to return vulnerabilities that partially match the given name. For Linux instances, this refers to the advisory name. For Windows instances, this refers to the Windows update display name.
+
+        :param str report_format: (optional)
+            The format of the report to download. Default is CSV.
+
+            Allowed values are: "csv", "json", "xml"
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -328,7 +419,7 @@ class ReportingManagedInstanceClient(object):
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/get_managed_instance_content.py.html>`__ to see an example of how to use get_managed_instance_content API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
-        required_arguments = ['managedInstanceId']
+        required_arguments = ['managedInstanceId', 'vulnerabilityType']
         resource_path = "/managedInstances/{managedInstanceId}/content"
         method = "GET"
         operation_name = "get_managed_instance_content"
@@ -341,6 +432,9 @@ class ReportingManagedInstanceClient(object):
             "advisory_name",
             "advisory_name_contains",
             "advisory_type",
+            "vulnerability_name",
+            "vulnerability_name_contains",
+            "report_format",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -366,10 +460,28 @@ class ReportingManagedInstanceClient(object):
                         f"Invalid value for `advisory_type`, must be one of { advisory_type_allowed_values }"
                     )
 
+        vulnerability_type_allowed_values = ["SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER", "ALL"]
+        for vulnerability_type_item in vulnerability_type:
+            if vulnerability_type_item not in vulnerability_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `vulnerability_type`, must be one of { vulnerability_type_allowed_values }"
+                )
+
+        if 'report_format' in kwargs:
+            report_format_allowed_values = ["csv", "json", "xml"]
+            if kwargs['report_format'] not in report_format_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `report_format`, must be one of { report_format_allowed_values }"
+                )
+
         query_params = {
             "advisoryName": self.base_client.generate_collection_format_param(kwargs.get("advisory_name", missing), 'multi'),
             "advisoryNameContains": kwargs.get("advisory_name_contains", missing),
-            "advisoryType": self.base_client.generate_collection_format_param(kwargs.get("advisory_type", missing), 'multi')
+            "advisoryType": self.base_client.generate_collection_format_param(kwargs.get("advisory_type", missing), 'multi'),
+            "vulnerabilityName": self.base_client.generate_collection_format_param(kwargs.get("vulnerability_name", missing), 'multi'),
+            "vulnerabilityNameContains": kwargs.get("vulnerability_name_contains", missing),
+            "vulnerabilityType": self.base_client.generate_collection_format_param(vulnerability_type, 'multi'),
+            "reportFormat": kwargs.get("report_format", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -424,36 +536,57 @@ class ReportingManagedInstanceClient(object):
         :param oci.os_management_hub.models.list[str] metric_names: (required)
             A filter to return only metrics whose name matches the given metric names.
 
-            Allowed values are: "TOTAL_INSTANCE_COUNT", "INSTANCE_WITH_AVAILABLE_SECURITY_UPDATES_COUNT", "INSTANCE_WITH_AVAILABLE_BUGFIX_UPDATES_COUNT", "NORMAL_INSTANCE_COUNT", "ERROR_INSTANCE_COUNT", "WARNING_INSTANCE_COUNT", "UNREACHABLE_INSTANCE_COUNT", "REGISTRATION_FAILED_INSTANCE_COUNT", "INSTANCE_SECURITY_UPDATES_COUNT", "INSTANCE_BUGFIX_UPDATES_COUNT"
+            Allowed values are: "TOTAL_INSTANCE_COUNT", "INSTANCE_WITH_AVAILABLE_SECURITY_UPDATES_COUNT", "INSTANCE_WITH_AVAILABLE_BUGFIX_UPDATES_COUNT", "NORMAL_INSTANCE_COUNT", "ERROR_INSTANCE_COUNT", "WARNING_INSTANCE_COUNT", "UNREACHABLE_INSTANCE_COUNT", "REGISTRATION_FAILED_INSTANCE_COUNT", "DELETING_INSTANCE_COUNT", "ONBOARDING_INSTANCE_COUNT", "INSTANCE_SECURITY_UPDATES_COUNT", "INSTANCE_BUGFIX_UPDATES_COUNT", "INSTANCE_SECURITY_ADVISORY_COUNT", "INSTANCE_BUGFIX_ADVISORY_COUNT"
 
         :param str compartment_id: (optional)
-            This compartmentId is used to list managed instances within a compartment.
-            Or serve as an additional filter to restrict only managed instances with in certain compartment if other filter presents.
+            The `OCID`__ of the compartment.
+            This filter returns only resources contained within the specified compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str managed_instance_group_id: (optional)
-            The OCID of the managed instance group for which to list resources.
+            The `OCID`__ of the managed instance group. This filter returns resources associated with this group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_environment_id: (optional)
-            The OCID of the lifecycle environment.
+            The `OCID`__ of the lifecycle environment. This filter returns only resource contained with the specified lifecycle environment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_stage_id: (optional)
-            The OCID of the lifecycle stage for which to list resources.
+            The `OCID`__ of the lifecycle stage. This resource returns resources associated with this lifecycle stage.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] status: (optional)
-            A filter to return only instances whose managed instance status matches the given status.
+            A filter to return only managed instances whose status matches the status provided.
 
-            Allowed values are: "NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR"
+            Allowed values are: "NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING"
+
+        :param list[str] location: (optional)
+            A filter to return only resources whose location matches the given value.
+
+            Allowed values are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"
+
+        :param list[str] location_not_equal_to: (optional)
+            A filter to return only resources whose location does not match the given value.
+
+            Allowed values are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"
+
+        :param list[str] os_family: (optional)
+            A filter to return only resources that match the given operating system family.
+
+            Allowed values are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"
+
+        :param bool is_managed_by_autonomous_linux: (optional)
+            Indicates whether to list only resources managed by the Autonomous Linux service.
 
         :param list[str] display_name: (optional)
             A filter to return resources that match the given display names.
 
         :param str display_name_contains: (optional)
             A filter to return resources that may partially match the given display name.
-
-        :param str instance_location: (optional)
-            Filter instances by Location. Used when report target type is compartment or group.
-
-            Allowed values are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2"
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
@@ -472,9 +605,10 @@ class ReportingManagedInstanceClient(object):
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order for name is ascending.
+            The field to sort by. Only one sort order may be provided. The default is to sort in ascending order by metricName (previously name, which is now depricated).
+            You can also sort by displayName (default is ascending order).
 
-            Allowed values are: "name"
+            Allowed values are: "name", "metricName", "displayName"
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -518,9 +652,12 @@ class ReportingManagedInstanceClient(object):
             "lifecycle_environment_id",
             "lifecycle_stage_id",
             "status",
+            "location",
+            "location_not_equal_to",
+            "os_family",
+            "is_managed_by_autonomous_linux",
             "display_name",
             "display_name_contains",
-            "instance_location",
             "limit",
             "page",
             "sort_by",
@@ -532,7 +669,7 @@ class ReportingManagedInstanceClient(object):
             raise ValueError(
                 f"summarize_managed_instance_analytics got unknown kwargs: {extra_kwargs!r}")
 
-        metric_names_allowed_values = ["TOTAL_INSTANCE_COUNT", "INSTANCE_WITH_AVAILABLE_SECURITY_UPDATES_COUNT", "INSTANCE_WITH_AVAILABLE_BUGFIX_UPDATES_COUNT", "NORMAL_INSTANCE_COUNT", "ERROR_INSTANCE_COUNT", "WARNING_INSTANCE_COUNT", "UNREACHABLE_INSTANCE_COUNT", "REGISTRATION_FAILED_INSTANCE_COUNT", "INSTANCE_SECURITY_UPDATES_COUNT", "INSTANCE_BUGFIX_UPDATES_COUNT"]
+        metric_names_allowed_values = ["TOTAL_INSTANCE_COUNT", "INSTANCE_WITH_AVAILABLE_SECURITY_UPDATES_COUNT", "INSTANCE_WITH_AVAILABLE_BUGFIX_UPDATES_COUNT", "NORMAL_INSTANCE_COUNT", "ERROR_INSTANCE_COUNT", "WARNING_INSTANCE_COUNT", "UNREACHABLE_INSTANCE_COUNT", "REGISTRATION_FAILED_INSTANCE_COUNT", "DELETING_INSTANCE_COUNT", "ONBOARDING_INSTANCE_COUNT", "INSTANCE_SECURITY_UPDATES_COUNT", "INSTANCE_BUGFIX_UPDATES_COUNT", "INSTANCE_SECURITY_ADVISORY_COUNT", "INSTANCE_BUGFIX_ADVISORY_COUNT"]
         for metric_names_item in metric_names:
             if metric_names_item not in metric_names_allowed_values:
                 raise ValueError(
@@ -540,22 +677,39 @@ class ReportingManagedInstanceClient(object):
                 )
 
         if 'status' in kwargs:
-            status_allowed_values = ["NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR"]
+            status_allowed_values = ["NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING"]
             for status_item in kwargs['status']:
                 if status_item not in status_allowed_values:
                     raise ValueError(
                         f"Invalid value for `status`, must be one of { status_allowed_values }"
                     )
 
-        if 'instance_location' in kwargs:
-            instance_location_allowed_values = ["ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2"]
-            if kwargs['instance_location'] not in instance_location_allowed_values:
-                raise ValueError(
-                    f"Invalid value for `instance_location`, must be one of { instance_location_allowed_values }"
-                )
+        if 'location' in kwargs:
+            location_allowed_values = ["ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"]
+            for location_item in kwargs['location']:
+                if location_item not in location_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `location`, must be one of { location_allowed_values }"
+                    )
+
+        if 'location_not_equal_to' in kwargs:
+            location_not_equal_to_allowed_values = ["ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"]
+            for location_not_equal_to_item in kwargs['location_not_equal_to']:
+                if location_not_equal_to_item not in location_not_equal_to_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `location_not_equal_to`, must be one of { location_not_equal_to_allowed_values }"
+                    )
+
+        if 'os_family' in kwargs:
+            os_family_allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"]
+            for os_family_item in kwargs['os_family']:
+                if os_family_item not in os_family_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `os_family`, must be one of { os_family_allowed_values }"
+                    )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["name"]
+            sort_by_allowed_values = ["name", "metricName", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
@@ -575,9 +729,12 @@ class ReportingManagedInstanceClient(object):
             "lifecycleEnvironmentId": kwargs.get("lifecycle_environment_id", missing),
             "lifecycleStageId": kwargs.get("lifecycle_stage_id", missing),
             "status": self.base_client.generate_collection_format_param(kwargs.get("status", missing), 'multi'),
+            "location": self.base_client.generate_collection_format_param(kwargs.get("location", missing), 'multi'),
+            "locationNotEqualTo": self.base_client.generate_collection_format_param(kwargs.get("location_not_equal_to", missing), 'multi'),
+            "osFamily": self.base_client.generate_collection_format_param(kwargs.get("os_family", missing), 'multi'),
+            "isManagedByAutonomousLinux": kwargs.get("is_managed_by_autonomous_linux", missing),
             "displayName": self.base_client.generate_collection_format_param(kwargs.get("display_name", missing), 'multi'),
             "displayNameContains": kwargs.get("display_name_contains", missing),
-            "instanceLocation": kwargs.get("instance_location", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortBy": kwargs.get("sort_by", missing),

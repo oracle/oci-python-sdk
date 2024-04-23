@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataSourceCollection(object):
     """
-    Summary of the DataSource.
+    The collection of data source summaries (DataSourceSummary resources).
     """
 
     def __init__(self, **kwargs):
@@ -24,22 +24,29 @@ class DataSourceCollection(object):
             The value to assign to the items property of this DataSourceCollection.
         :type items: list[oci.cloud_guard.models.DataSourceSummary]
 
+        :param locks:
+            The value to assign to the locks property of this DataSourceCollection.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
-            'items': 'list[DataSourceSummary]'
+            'items': 'list[DataSourceSummary]',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
-            'items': 'items'
+            'items': 'items',
+            'locks': 'locks'
         }
 
         self._items = None
+        self._locks = None
 
     @property
     def items(self):
         """
         **[Required]** Gets the items of this DataSourceCollection.
-        List of DataSourceSummary
+        List of data source summaries (DataSourceSummary resources)
 
 
         :return: The items of this DataSourceCollection.
@@ -51,13 +58,37 @@ class DataSourceCollection(object):
     def items(self, items):
         """
         Sets the items of this DataSourceCollection.
-        List of DataSourceSummary
+        List of data source summaries (DataSourceSummary resources)
 
 
         :param items: The items of this DataSourceCollection.
         :type: list[oci.cloud_guard.models.DataSourceSummary]
         """
         self._items = items
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this DataSourceCollection.
+        Locks associated with this resource.
+
+
+        :return: The locks of this DataSourceCollection.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this DataSourceCollection.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this DataSourceCollection.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

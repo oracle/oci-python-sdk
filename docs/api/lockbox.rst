@@ -23,6 +23,7 @@ Lockbox
     oci.lockbox.models.AccessMaterials
     oci.lockbox.models.AccessRequest
     oci.lockbox.models.AccessRequestCollection
+    oci.lockbox.models.AccessRequestExt
     oci.lockbox.models.AccessRequestSummary
     oci.lockbox.models.ActivityLog
     oci.lockbox.models.ApprovalTemplate

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LoggingQueryDetails(object):
     """
-    Additional details specific to the data source type (Sighting/Insight).
+    Details for a logging query for a data source.
     """
 
     #: A constant which can be used with the logging_query_type property of a LoggingQueryDetails.
@@ -62,7 +62,7 @@ class LoggingQueryDetails(object):
     def logging_query_type(self):
         """
         **[Required]** Gets the logging_query_type of this LoggingQueryDetails.
-        Logging query type for data source (Sighting/Insight)
+        Logging query type for data source
 
         Allowed values for this property are: "INSIGHT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -77,7 +77,7 @@ class LoggingQueryDetails(object):
     def logging_query_type(self, logging_query_type):
         """
         Sets the logging_query_type of this LoggingQueryDetails.
-        Logging query type for data source (Sighting/Insight)
+        Logging query type for data source
 
 
         :param logging_query_type: The logging_query_type of this LoggingQueryDetails.

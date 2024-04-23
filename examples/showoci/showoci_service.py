@@ -39,7 +39,7 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "24.04.16"
+    version = "24.04.23"
     oci_compatible_version = "2.125.0"
     thread_lock = threading.Lock()
     collection_ljust = 40
@@ -575,10 +575,19 @@ class ShowOCIService(object):
                 pass_phrase=oci.config.get_config_value_or_default(self.config, "pass_phrase"),
                 private_key_content=self.config.get("key_content")
             )
+
         except oci.exceptions.ProfileNotFound as e:
             print("*********************************************************************")
             print(f'* {str(e)}')
             print("* Aborting.                                                         *")
+            print("*********************************************************************")
+            print('')
+            raise SystemExit
+
+        except Exception as e:
+            print("*********************************************************************")
+            print("* Error Authenticating using config file                            *")
+            print(f'* {str(e)}')
             print("*********************************************************************")
             print('')
             raise SystemExit
@@ -608,6 +617,7 @@ class ShowOCIService(object):
 
         except Exception as e:
             print("*********************************************************************")
+            print("* Error Authenticating using config file and Security Token         *")
             print("* " + str(e))
             print("* Aborting.                                                         *")
             print("*********************************************************************")
@@ -1251,7 +1261,7 @@ class ShowOCIService(object):
     ##########################################################################
     # print error
     ##########################################################################
-    def __print_error(self, e, compartment=[]):
+    def __print_error(self, e, compartment={}):
 
         try:
             classname = type(self).__name__
@@ -1603,6 +1613,12 @@ class ShowOCIService(object):
                     self.__load_identity_policies(identity)
                     self.__load_identity_cost_tracking_tags(identity, tenancy_id)
                     self.__load_identity_tag_namespace(identity)
+
+                    # if to read users and groups from the old APIs
+                    if self.flags.read_identity_old:
+                        print("\nIdentity Old API (Users and Groups) as requesed...")
+                        self.__load_identity_users_groups(identity, tenancy_id)
+                        self.__load_identity_dynamic_groups(identity, tenancy_id)
 
                 # if no identity domains
                 else:
@@ -18798,6 +18814,7 @@ class ShowOCIService(object):
 class ShowOCIFlags(object):
     # Read Flags
     read_identity = False
+    read_identity_old = False
     read_identity_compartments = False
     read_network = False
     read_compute = False
@@ -19187,30 +19204,37 @@ class ShowOCIDomains(object):
             self.error_array.append(error_info)
 
         except Exception as e:
-            print("\nError in __add_to_error_array " + str(e))
+            print(f'\nError in __add_to_error_array {str(e)}')
 
     ##########################################################################
-    # print print error
+    # print error
     ##########################################################################
-    def __print_error(self, e):
+    def __print_error(self, e, compartment={}):
 
         try:
             classname = type(self).__name__
             caller_function = sys._getframe(1).f_code.co_name
+            compartment_info = ''
+            compartment_name = ''
+
+            if compartment:
+                if 'name' in compartment:
+                    compartment_info = " in compartment " + compartment['name']
+                    compartment_name = compartment['name']
 
             if 'TooManyRequests' in str(e):
-                print(" - TooManyRequests Err in " + classname + ":" + caller_function)
+                print(f' - TooManyRequests Err in {classname}:{caller_function} {compartment_info}')
             elif isinstance(e, KeyError):
-                print("\nError in " + classname + ":" + caller_function + ": KeyError " + str(e.args))
+                print(f'\nError in {classname}:{caller_function}: KeyError {str(e.args)} {compartment_info}')
             else:
-                print("\nError in " + classname + ":" + caller_function + ": " + str(e))
+                print(f'\nError in {classname}:{caller_function}: {str(e)} {compartment_info}')
 
             self.error += 1
 
-            self.__add_to_error_array(classname, caller_function, "", e)
+            self.__add_to_error_array(classname, caller_function, compartment_name, e)
 
         except Exception as e:
-            print("\nError in __print_error " + str(e))
+            print(f'\nError in __print_error {str(e)}')
 
     ##########################################################################
     # check service error to warn instead of error
@@ -20428,6 +20452,7 @@ class ShowOCIDomains(object):
     # Identity Module
     ##########################################################################
     def load_identity_domains_main(self, compartments):
+        compartment = {}
         try:
             print("Identity Domains...")
 
@@ -20443,25 +20468,25 @@ class ShowOCIDomains(object):
             # get compartments from the class
             for compartment in compartments:
 
-                # get all domains across all compartments
-                list_domains = identity_client.list_domains(
-                    compartment['id'],
-                    lifecycle_state='ACTIVE',
-                    retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
-                ).data
+                list_domains = []
+                try:
+                    # get all domains across all compartments
+                    list_domains = identity_client.list_domains(
+                        compartment['id'],
+                        lifecycle_state='ACTIVE',
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if "is not enabled" in str(e):
+                        print("--> Identity Domains is not enabled.")
+                        return []
+                    else:
+                        self.__print_error(e, compartment)
+                        continue
 
                 # oci.identity.models.DomainSummary
                 for domain in list_domains:
-
-                    # Create Identity Domain Client
-                    identity_domain_client = oci.identity_domains.IdentityDomainsClient(
-                        config=self.config,
-                        signer=self.signer,
-                        service_endpoint=domain.url,
-                        timeout=(self.connection_timeout, self.read_timeout)
-                    )
-                    if self.proxy:
-                        identity_domain_client.base_client.session.proxies = {'https': self.proxy}
 
                     domain_data = {
                         'id': self.get_value(domain.id),
@@ -20490,38 +20515,54 @@ class ShowOCIDomains(object):
                         'compartment_path': str(compartment['path'])
                     }
 
-                    ##########################
-                    # if serial execution
-                    ##########################
-                    if self.skip_threads:
-                        domain_data['users'] = self.__load_identity_domain_users(identity_domain_client, domain.display_name)
-                        domain_data['groups'] = self.__load_identity_domain_groups(identity_domain_client, domain.display_name)
-                        domain_data['dynamic_groups'] = self.__load_identity_domain_dynamic_resource_groups(identity_domain_client, domain.display_name)
-                        domain_data['kmsi_setting'] = self.__load_identity_domain_kmsi_setting(identity_domain_client, domain.display_name)
-                        domain_data['identity_providers'] = self.__load_identity_domain_identity_providers(identity_domain_client, domain.display_name)
-                        domain_data['authentication_factor_settings'] = self.__load_identity_domain_authentication_factor_settings(identity_domain_client, domain.display_name)
-                        domain_data['password_policies'] = self.__load_identity_domain_password_policies(identity_domain_client, domain.display_name)
+                    ##################################
+                    # If no domain URL, skip
+                    ##################################
 
-                    ##########################
-                    # if parallel execution
-                    ##########################
-                    else:
-                        with ThreadPoolExecutor(max_workers=8) as executor:
-                            future_users = executor.submit(self.__load_identity_domain_users, identity_domain_client, domain.display_name)
-                            future_groups = executor.submit(self.__load_identity_domain_groups, identity_domain_client, domain.display_name)
-                            future_dynamic_groups = executor.submit(self.__load_identity_domain_dynamic_resource_groups, identity_domain_client, domain.display_name)
-                            future_kmsi_setting = executor.submit(self.__load_identity_domain_kmsi_setting, identity_domain_client, domain.display_name)
-                            future_identity_providers = executor.submit(self.__load_identity_domain_identity_providers, identity_domain_client, domain.display_name)
-                            future_authentication_factor_settings = executor.submit(self.__load_identity_domain_authentication_factor_settings, identity_domain_client, domain.display_name)
-                            future_password_policies = executor.submit(self.__load_identity_domain_password_policies, identity_domain_client, domain.display_name)
+                    if domain.url:
 
-                            domain_data['users'] = next(as_completed([future_users])).result()
-                            domain_data['groups'] = next(as_completed([future_groups])).result()
-                            domain_data['dynamic_groups'] = next(as_completed([future_dynamic_groups])).result()
-                            domain_data['kmsi_setting'] = next(as_completed([future_kmsi_setting])).result()
-                            domain_data['identity_providers'] = next(as_completed([future_identity_providers])).result()
-                            domain_data['authentication_factor_settings'] = next(as_completed([future_authentication_factor_settings])).result()
-                            domain_data['password_policies'] = next(as_completed([future_password_policies])).result()
+                        # Create Identity Domain Client
+                        identity_domain_client = oci.identity_domains.IdentityDomainsClient(
+                            config=self.config,
+                            signer=self.signer,
+                            service_endpoint=domain.url,
+                            timeout=(self.connection_timeout, self.read_timeout)
+                        )
+                        if self.proxy:
+                            identity_domain_client.base_client.session.proxies = {'https': self.proxy}
+
+                        ##########################
+                        # if serial execution
+                        ##########################
+                        if self.skip_threads:
+                            domain_data['users'] = self.__load_identity_domain_users(identity_domain_client, domain.display_name)
+                            domain_data['groups'] = self.__load_identity_domain_groups(identity_domain_client, domain.display_name)
+                            domain_data['dynamic_groups'] = self.__load_identity_domain_dynamic_resource_groups(identity_domain_client, domain.display_name)
+                            domain_data['kmsi_setting'] = self.__load_identity_domain_kmsi_setting(identity_domain_client, domain.display_name)
+                            domain_data['identity_providers'] = self.__load_identity_domain_identity_providers(identity_domain_client, domain.display_name)
+                            domain_data['authentication_factor_settings'] = self.__load_identity_domain_authentication_factor_settings(identity_domain_client, domain.display_name)
+                            domain_data['password_policies'] = self.__load_identity_domain_password_policies(identity_domain_client, domain.display_name)
+
+                        ##########################
+                        # if parallel execution
+                        ##########################
+                        else:
+                            with ThreadPoolExecutor(max_workers=8) as executor:
+                                future_users = executor.submit(self.__load_identity_domain_users, identity_domain_client, domain.display_name)
+                                future_groups = executor.submit(self.__load_identity_domain_groups, identity_domain_client, domain.display_name)
+                                future_dynamic_groups = executor.submit(self.__load_identity_domain_dynamic_resource_groups, identity_domain_client, domain.display_name)
+                                future_kmsi_setting = executor.submit(self.__load_identity_domain_kmsi_setting, identity_domain_client, domain.display_name)
+                                future_identity_providers = executor.submit(self.__load_identity_domain_identity_providers, identity_domain_client, domain.display_name)
+                                future_authentication_factor_settings = executor.submit(self.__load_identity_domain_authentication_factor_settings, identity_domain_client, domain.display_name)
+                                future_password_policies = executor.submit(self.__load_identity_domain_password_policies, identity_domain_client, domain.display_name)
+
+                                domain_data['users'] = next(as_completed([future_users])).result()
+                                domain_data['groups'] = next(as_completed([future_groups])).result()
+                                domain_data['dynamic_groups'] = next(as_completed([future_dynamic_groups])).result()
+                                domain_data['kmsi_setting'] = next(as_completed([future_kmsi_setting])).result()
+                                domain_data['identity_providers'] = next(as_completed([future_identity_providers])).result()
+                                domain_data['authentication_factor_settings'] = next(as_completed([future_authentication_factor_settings])).result()
+                                domain_data['password_policies'] = next(as_completed([future_password_policies])).result()
 
                     self.data.append(domain_data)
 
@@ -20533,13 +20574,13 @@ class ShowOCIDomains(object):
                 print("--> Identity Domains is not enabled.")
                 return []
             else:
-                self.__print_error(e)
+                self.__print_error(e, compartment)
                 return []
         except oci.exceptions.RequestException as e:
             if self.__check_request_error(e):
                 return []
             else:
-                self.__print_error(e)
+                self.__print_error(e, compartment)
                 return []
         except Exception as e:
-            self.__print_error(e)
+            self.__print_error(e, compartment)

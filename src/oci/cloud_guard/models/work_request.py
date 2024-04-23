@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequest(object):
     """
-    A description of workrequest status
+    Detailed information about a work request (WorkRequest resource).
     """
 
     #: A constant which can be used with the operation_type property of a WorkRequest.
@@ -104,6 +104,10 @@ class WorkRequest(object):
             The value to assign to the time_finished property of this WorkRequest.
         :type time_finished: datetime
 
+        :param locks:
+            The value to assign to the locks property of this WorkRequest.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -114,7 +118,8 @@ class WorkRequest(object):
             'percent_complete': 'float',
             'time_accepted': 'datetime',
             'time_started': 'datetime',
-            'time_finished': 'datetime'
+            'time_finished': 'datetime',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -126,7 +131,8 @@ class WorkRequest(object):
             'percent_complete': 'percentComplete',
             'time_accepted': 'timeAccepted',
             'time_started': 'timeStarted',
-            'time_finished': 'timeFinished'
+            'time_finished': 'timeFinished',
+            'locks': 'locks'
         }
 
         self._id = None
@@ -138,12 +144,13 @@ class WorkRequest(object):
         self._time_accepted = None
         self._time_started = None
         self._time_finished = None
+        self._locks = None
 
     @property
     def id(self):
         """
         **[Required]** Gets the id of this WorkRequest.
-        The id of the work request.
+        Unique identifier of the work request
 
 
         :return: The id of this WorkRequest.
@@ -155,7 +162,7 @@ class WorkRequest(object):
     def id(self, id):
         """
         Sets the id of this WorkRequest.
-        The id of the work request.
+        Unique identifier of the work request
 
 
         :param id: The id of this WorkRequest.
@@ -167,10 +174,10 @@ class WorkRequest(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this WorkRequest.
-        The ocid of the compartment that contains the work request. Work requests should be scoped to
+        The OCID of the compartment that contains the work request. Work requests should be scoped to
         the same compartment as the resource the work request affects. If the work request affects multiple resources,
         and those resources are not in the same compartment, it is up to the service team to pick the primary
-        resource whose compartment should be used
+        resource whose compartment should be used.
 
 
         :return: The compartment_id of this WorkRequest.
@@ -182,10 +189,10 @@ class WorkRequest(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this WorkRequest.
-        The ocid of the compartment that contains the work request. Work requests should be scoped to
+        The OCID of the compartment that contains the work request. Work requests should be scoped to
         the same compartment as the resource the work request affects. If the work request affects multiple resources,
         and those resources are not in the same compartment, it is up to the service team to pick the primary
-        resource whose compartment should be used
+        resource whose compartment should be used.
 
 
         :param compartment_id: The compartment_id of this WorkRequest.
@@ -197,7 +204,7 @@ class WorkRequest(object):
     def operation_type(self):
         """
         **[Required]** Gets the operation_type of this WorkRequest.
-        Operation type of the work request.
+        Operation type of the work request
 
         Allowed values for this property are: "CREATE", "UPDATE", "DELETE", "MOVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -212,7 +219,7 @@ class WorkRequest(object):
     def operation_type(self, operation_type):
         """
         Sets the operation_type of this WorkRequest.
-        Operation type of the work request.
+        Operation type of the work request
 
 
         :param operation_type: The operation_type of this WorkRequest.
@@ -227,7 +234,7 @@ class WorkRequest(object):
     def status(self):
         """
         **[Required]** Gets the status of this WorkRequest.
-        Operation status of the work request.
+        Operation status of the work request
 
         Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -242,7 +249,7 @@ class WorkRequest(object):
     def status(self, status):
         """
         Sets the status of this WorkRequest.
-        Operation status of the work request.
+        Operation status of the work request
 
 
         :param status: The status of this WorkRequest.
@@ -257,7 +264,7 @@ class WorkRequest(object):
     def resources(self):
         """
         **[Required]** Gets the resources of this WorkRequest.
-        The resources affected by this work request.
+        List of resources affected by the work request
 
 
         :return: The resources of this WorkRequest.
@@ -269,7 +276,7 @@ class WorkRequest(object):
     def resources(self, resources):
         """
         Sets the resources of this WorkRequest.
-        The resources affected by this work request.
+        List of resources affected by the work request
 
 
         :param resources: The resources of this WorkRequest.
@@ -281,7 +288,7 @@ class WorkRequest(object):
     def percent_complete(self):
         """
         **[Required]** Gets the percent_complete of this WorkRequest.
-        Percentage of the request completed.
+        Percentage of the work request that's completed
 
 
         :return: The percent_complete of this WorkRequest.
@@ -293,7 +300,7 @@ class WorkRequest(object):
     def percent_complete(self, percent_complete):
         """
         Sets the percent_complete of this WorkRequest.
-        Percentage of the request completed.
+        Percentage of the work request that's completed
 
 
         :param percent_complete: The percent_complete of this WorkRequest.
@@ -305,7 +312,7 @@ class WorkRequest(object):
     def time_accepted(self):
         """
         **[Required]** Gets the time_accepted of this WorkRequest.
-        The date and time the request was created
+        The date and time the work request was created
 
 
         :return: The time_accepted of this WorkRequest.
@@ -317,7 +324,7 @@ class WorkRequest(object):
     def time_accepted(self, time_accepted):
         """
         Sets the time_accepted of this WorkRequest.
-        The date and time the request was created
+        The date and time the work request was created
 
 
         :param time_accepted: The time_accepted of this WorkRequest.
@@ -329,7 +336,7 @@ class WorkRequest(object):
     def time_started(self):
         """
         Gets the time_started of this WorkRequest.
-        The date and time the request was started
+        The date and time the work request was started
 
 
         :return: The time_started of this WorkRequest.
@@ -341,7 +348,7 @@ class WorkRequest(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this WorkRequest.
-        The date and time the request was started
+        The date and time the work request was started
 
 
         :param time_started: The time_started of this WorkRequest.
@@ -353,7 +360,7 @@ class WorkRequest(object):
     def time_finished(self):
         """
         Gets the time_finished of this WorkRequest.
-        The date and time the object was finished
+        The date and time the work request was finished
 
 
         :return: The time_finished of this WorkRequest.
@@ -365,13 +372,37 @@ class WorkRequest(object):
     def time_finished(self, time_finished):
         """
         Sets the time_finished of this WorkRequest.
-        The date and time the object was finished
+        The date and time the work request was finished
 
 
         :param time_finished: The time_finished of this WorkRequest.
         :type: datetime
         """
         self._time_finished = time_finished
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this WorkRequest.
+        Locks associated with this resource.
+
+
+        :return: The locks of this WorkRequest.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this WorkRequest.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this WorkRequest.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

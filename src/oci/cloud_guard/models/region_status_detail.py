@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RegionStatusDetail(object):
     """
-    Status of Region query replication.
+    Status of replication of a data source query in a region
     """
 
     #: A constant which can be used with the status property of a RegionStatusDetail.
@@ -60,7 +60,7 @@ class RegionStatusDetail(object):
     def region(self):
         """
         **[Required]** Gets the region of this RegionStatusDetail.
-        Data Source replication region.
+        Data source replication region
 
 
         :return: The region of this RegionStatusDetail.
@@ -72,7 +72,7 @@ class RegionStatusDetail(object):
     def region(self, region):
         """
         Sets the region of this RegionStatusDetail.
-        Data Source replication region.
+        Data source replication region
 
 
         :param region: The region of this RegionStatusDetail.
@@ -84,7 +84,7 @@ class RegionStatusDetail(object):
     def status(self):
         """
         **[Required]** Gets the status of this RegionStatusDetail.
-        Data Source replication region status.
+        Data source replication region status
 
         Allowed values for this property are: "PROVISIONING", "FAILED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -99,7 +99,7 @@ class RegionStatusDetail(object):
     def status(self, status):
         """
         Sets the status of this RegionStatusDetail.
-        Data Source replication region status.
+        Data source replication region status
 
 
         :param status: The status of this RegionStatusDetail.

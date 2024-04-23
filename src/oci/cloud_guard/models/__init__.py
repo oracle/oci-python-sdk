@@ -10,6 +10,14 @@ from .absolute_time_start_policy import AbsoluteTimeStartPolicy
 from .activity_problem_aggregation import ActivityProblemAggregation
 from .activity_problem_aggregation_collection import ActivityProblemAggregationCollection
 from .add_compartment_details import AddCompartmentDetails
+from .adhoc_query import AdhocQuery
+from .adhoc_query_collection import AdhocQueryCollection
+from .adhoc_query_details import AdhocQueryDetails
+from .adhoc_query_regional_details import AdhocQueryRegionalDetails
+from .adhoc_query_resource import AdhocQueryResource
+from .adhoc_query_result_collection import AdhocQueryResultCollection
+from .adhoc_query_result_summary import AdhocQueryResultSummary
+from .adhoc_query_summary import AdhocQuerySummary
 from .all_targets_selected import AllTargetsSelected
 from .attach_target_detector_recipe_details import AttachTargetDetectorRecipeDetails
 from .attach_target_responder_recipe_details import AttachTargetResponderRecipeDetails
@@ -18,6 +26,7 @@ from .change_data_source_compartment_details import ChangeDataSourceCompartmentD
 from .change_detector_recipe_compartment_details import ChangeDetectorRecipeCompartmentDetails
 from .change_managed_list_compartment_details import ChangeManagedListCompartmentDetails
 from .change_responder_recipe_compartment_details import ChangeResponderRecipeCompartmentDetails
+from .change_saved_query_compartment_details import ChangeSavedQueryCompartmentDetails
 from .change_security_policy_compartment_details import ChangeSecurityPolicyCompartmentDetails
 from .change_security_recipe_compartment_details import ChangeSecurityRecipeCompartmentDetails
 from .change_security_zone_compartment_details import ChangeSecurityZoneCompartmentDetails
@@ -31,6 +40,7 @@ from .condition_operator import ConditionOperator
 from .config_value import ConfigValue
 from .configuration import Configuration
 from .continuous_query_start_policy import ContinuousQueryStartPolicy
+from .create_adhoc_query_details import CreateAdhocQueryDetails
 from .create_data_mask_rule_details import CreateDataMaskRuleDetails
 from .create_data_source_details import CreateDataSourceDetails
 from .create_detector_recipe_details import CreateDetectorRecipeDetails
@@ -38,12 +48,14 @@ from .create_detector_recipe_detector_rule_details import CreateDetectorRecipeDe
 from .create_detector_rule_details import CreateDetectorRuleDetails
 from .create_managed_list_details import CreateManagedListDetails
 from .create_responder_recipe_details import CreateResponderRecipeDetails
+from .create_saved_query_details import CreateSavedQueryDetails
 from .create_security_policy_details import CreateSecurityPolicyDetails
 from .create_security_recipe_details import CreateSecurityRecipeDetails
 from .create_security_zone_details import CreateSecurityZoneDetails
 from .create_target_details import CreateTargetDetails
 from .create_target_detector_recipe_details import CreateTargetDetectorRecipeDetails
 from .create_target_responder_recipe_details import CreateTargetResponderRecipeDetails
+from .create_wlp_agent_details import CreateWlpAgentDetails
 from .data_mask_rule import DataMaskRule
 from .data_mask_rule_collection import DataMaskRuleCollection
 from .data_mask_rule_summary import DataMaskRuleSummary
@@ -77,6 +89,7 @@ from .geographical_location import GeographicalLocation
 from .impacted_resource_collection import ImpactedResourceCollection
 from .impacted_resource_summary import ImpactedResourceSummary
 from .insight_type_logging_query_details import InsightTypeLoggingQueryDetails
+from .instance_security_service_configuration import InstanceSecurityServiceConfiguration
 from .logging_event_info import LoggingEventInfo
 from .logging_query_data_source_details import LoggingQueryDataSourceDetails
 from .logging_query_data_source_summary_details import LoggingQueryDataSourceSummaryDetails
@@ -88,6 +101,7 @@ from .managed_list_type_collection import ManagedListTypeCollection
 from .managed_list_type_summary import ManagedListTypeSummary
 from .no_delay_start_policy import NoDelayStartPolicy
 from .operator_summary import OperatorSummary
+from .package_detail import PackageDetail
 from .policy_collection import PolicyCollection
 from .policy_summary import PolicySummary
 from .political_location import PoliticalLocation
@@ -104,11 +118,18 @@ from .problem_history_summary import ProblemHistorySummary
 from .problem_summary import ProblemSummary
 from .problem_trend_aggregation import ProblemTrendAggregation
 from .problem_trend_aggregation_collection import ProblemTrendAggregationCollection
+from .property_tuple import PropertyTuple
 from .recommendation_summary import RecommendationSummary
 from .recommendation_summary_collection import RecommendationSummaryCollection
 from .region_status_detail import RegionStatusDetail
 from .remove_compartment_details import RemoveCompartmentDetails
 from .request_summarized_trend_resource_risk_scores_details import RequestSummarizedTrendResourceRiskScoresDetails
+from .resource import Resource
+from .resource_additional_details import ResourceAdditionalDetails
+from .resource_collection import ResourceCollection
+from .resource_lock import ResourceLock
+from .resource_port_collection import ResourcePortCollection
+from .resource_port_summary import ResourcePortSummary
 from .resource_profile import ResourceProfile
 from .resource_profile_collection import ResourceProfileCollection
 from .resource_profile_endpoint_collection import ResourceProfileEndpointCollection
@@ -120,8 +141,12 @@ from .resource_profile_risk_score_aggregation_summary_collection import Resource
 from .resource_profile_summary import ResourceProfileSummary
 from .resource_risk_score_aggregation import ResourceRiskScoreAggregation
 from .resource_risk_score_aggregation_collection import ResourceRiskScoreAggregationCollection
+from .resource_summary import ResourceSummary
 from .resource_type_collection import ResourceTypeCollection
 from .resource_type_summary import ResourceTypeSummary
+from .resource_vulnerability import ResourceVulnerability
+from .resource_vulnerability_collection import ResourceVulnerabilityCollection
+from .resource_vulnerability_summary import ResourceVulnerabilitySummary
 from .responder_activity_collection import ResponderActivityCollection
 from .responder_activity_summary import ResponderActivitySummary
 from .responder_configuration import ResponderConfiguration
@@ -146,6 +171,12 @@ from .responder_rule_summary import ResponderRuleSummary
 from .risk_score_aggregation import RiskScoreAggregation
 from .risk_score_aggregation_collection import RiskScoreAggregationCollection
 from .rule_summary import RuleSummary
+from .saved_query import SavedQuery
+from .saved_query_collection import SavedQueryCollection
+from .saved_query_summary import SavedQuerySummary
+from .scheduled_query_data_source_obj_details import ScheduledQueryDataSourceObjDetails
+from .scheduled_query_data_source_summary_obj_details import ScheduledQueryDataSourceSummaryObjDetails
+from .scheduled_query_scope_detail import ScheduledQueryScopeDetail
 from .security_policy import SecurityPolicy
 from .security_policy_collection import SecurityPolicyCollection
 from .security_policy_summary import SecurityPolicySummary
@@ -160,6 +191,7 @@ from .security_zone import SecurityZone
 from .security_zone_collection import SecurityZoneCollection
 from .security_zone_summary import SecurityZoneSummary
 from .security_zone_target_details import SecurityZoneTargetDetails
+from .service_configuration import ServiceConfiguration
 from .service_type_summary import ServiceTypeSummary
 from .sighting import Sighting
 from .sighting_collection import SightingCollection
@@ -210,6 +242,7 @@ from .update_responder_recipe_details import UpdateResponderRecipeDetails
 from .update_responder_recipe_responder_rule import UpdateResponderRecipeResponderRule
 from .update_responder_recipe_responder_rule_details import UpdateResponderRecipeResponderRuleDetails
 from .update_responder_rule_details import UpdateResponderRuleDetails
+from .update_saved_query_details import UpdateSavedQueryDetails
 from .update_security_policy_details import UpdateSecurityPolicyDetails
 from .update_security_recipe_details import UpdateSecurityRecipeDetails
 from .update_security_zone_details import UpdateSecurityZoneDetails
@@ -224,6 +257,10 @@ from .update_target_responder_recipe import UpdateTargetResponderRecipe
 from .update_target_responder_recipe_details import UpdateTargetResponderRecipeDetails
 from .update_target_responder_recipe_responder_rule_details import UpdateTargetResponderRecipeResponderRuleDetails
 from .update_target_responder_rule_details import UpdateTargetResponderRuleDetails
+from .update_wlp_agent_details import UpdateWlpAgentDetails
+from .wlp_agent import WlpAgent
+from .wlp_agent_collection import WlpAgentCollection
+from .wlp_agent_summary import WlpAgentSummary
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_error_collection import WorkRequestErrorCollection
@@ -239,6 +276,14 @@ cloud_guard_type_mapping = {
     "ActivityProblemAggregation": ActivityProblemAggregation,
     "ActivityProblemAggregationCollection": ActivityProblemAggregationCollection,
     "AddCompartmentDetails": AddCompartmentDetails,
+    "AdhocQuery": AdhocQuery,
+    "AdhocQueryCollection": AdhocQueryCollection,
+    "AdhocQueryDetails": AdhocQueryDetails,
+    "AdhocQueryRegionalDetails": AdhocQueryRegionalDetails,
+    "AdhocQueryResource": AdhocQueryResource,
+    "AdhocQueryResultCollection": AdhocQueryResultCollection,
+    "AdhocQueryResultSummary": AdhocQueryResultSummary,
+    "AdhocQuerySummary": AdhocQuerySummary,
     "AllTargetsSelected": AllTargetsSelected,
     "AttachTargetDetectorRecipeDetails": AttachTargetDetectorRecipeDetails,
     "AttachTargetResponderRecipeDetails": AttachTargetResponderRecipeDetails,
@@ -247,6 +292,7 @@ cloud_guard_type_mapping = {
     "ChangeDetectorRecipeCompartmentDetails": ChangeDetectorRecipeCompartmentDetails,
     "ChangeManagedListCompartmentDetails": ChangeManagedListCompartmentDetails,
     "ChangeResponderRecipeCompartmentDetails": ChangeResponderRecipeCompartmentDetails,
+    "ChangeSavedQueryCompartmentDetails": ChangeSavedQueryCompartmentDetails,
     "ChangeSecurityPolicyCompartmentDetails": ChangeSecurityPolicyCompartmentDetails,
     "ChangeSecurityRecipeCompartmentDetails": ChangeSecurityRecipeCompartmentDetails,
     "ChangeSecurityZoneCompartmentDetails": ChangeSecurityZoneCompartmentDetails,
@@ -260,6 +306,7 @@ cloud_guard_type_mapping = {
     "ConfigValue": ConfigValue,
     "Configuration": Configuration,
     "ContinuousQueryStartPolicy": ContinuousQueryStartPolicy,
+    "CreateAdhocQueryDetails": CreateAdhocQueryDetails,
     "CreateDataMaskRuleDetails": CreateDataMaskRuleDetails,
     "CreateDataSourceDetails": CreateDataSourceDetails,
     "CreateDetectorRecipeDetails": CreateDetectorRecipeDetails,
@@ -267,12 +314,14 @@ cloud_guard_type_mapping = {
     "CreateDetectorRuleDetails": CreateDetectorRuleDetails,
     "CreateManagedListDetails": CreateManagedListDetails,
     "CreateResponderRecipeDetails": CreateResponderRecipeDetails,
+    "CreateSavedQueryDetails": CreateSavedQueryDetails,
     "CreateSecurityPolicyDetails": CreateSecurityPolicyDetails,
     "CreateSecurityRecipeDetails": CreateSecurityRecipeDetails,
     "CreateSecurityZoneDetails": CreateSecurityZoneDetails,
     "CreateTargetDetails": CreateTargetDetails,
     "CreateTargetDetectorRecipeDetails": CreateTargetDetectorRecipeDetails,
     "CreateTargetResponderRecipeDetails": CreateTargetResponderRecipeDetails,
+    "CreateWlpAgentDetails": CreateWlpAgentDetails,
     "DataMaskRule": DataMaskRule,
     "DataMaskRuleCollection": DataMaskRuleCollection,
     "DataMaskRuleSummary": DataMaskRuleSummary,
@@ -306,6 +355,7 @@ cloud_guard_type_mapping = {
     "ImpactedResourceCollection": ImpactedResourceCollection,
     "ImpactedResourceSummary": ImpactedResourceSummary,
     "InsightTypeLoggingQueryDetails": InsightTypeLoggingQueryDetails,
+    "InstanceSecurityServiceConfiguration": InstanceSecurityServiceConfiguration,
     "LoggingEventInfo": LoggingEventInfo,
     "LoggingQueryDataSourceDetails": LoggingQueryDataSourceDetails,
     "LoggingQueryDataSourceSummaryDetails": LoggingQueryDataSourceSummaryDetails,
@@ -317,6 +367,7 @@ cloud_guard_type_mapping = {
     "ManagedListTypeSummary": ManagedListTypeSummary,
     "NoDelayStartPolicy": NoDelayStartPolicy,
     "OperatorSummary": OperatorSummary,
+    "PackageDetail": PackageDetail,
     "PolicyCollection": PolicyCollection,
     "PolicySummary": PolicySummary,
     "PoliticalLocation": PoliticalLocation,
@@ -333,11 +384,18 @@ cloud_guard_type_mapping = {
     "ProblemSummary": ProblemSummary,
     "ProblemTrendAggregation": ProblemTrendAggregation,
     "ProblemTrendAggregationCollection": ProblemTrendAggregationCollection,
+    "PropertyTuple": PropertyTuple,
     "RecommendationSummary": RecommendationSummary,
     "RecommendationSummaryCollection": RecommendationSummaryCollection,
     "RegionStatusDetail": RegionStatusDetail,
     "RemoveCompartmentDetails": RemoveCompartmentDetails,
     "RequestSummarizedTrendResourceRiskScoresDetails": RequestSummarizedTrendResourceRiskScoresDetails,
+    "Resource": Resource,
+    "ResourceAdditionalDetails": ResourceAdditionalDetails,
+    "ResourceCollection": ResourceCollection,
+    "ResourceLock": ResourceLock,
+    "ResourcePortCollection": ResourcePortCollection,
+    "ResourcePortSummary": ResourcePortSummary,
     "ResourceProfile": ResourceProfile,
     "ResourceProfileCollection": ResourceProfileCollection,
     "ResourceProfileEndpointCollection": ResourceProfileEndpointCollection,
@@ -349,8 +407,12 @@ cloud_guard_type_mapping = {
     "ResourceProfileSummary": ResourceProfileSummary,
     "ResourceRiskScoreAggregation": ResourceRiskScoreAggregation,
     "ResourceRiskScoreAggregationCollection": ResourceRiskScoreAggregationCollection,
+    "ResourceSummary": ResourceSummary,
     "ResourceTypeCollection": ResourceTypeCollection,
     "ResourceTypeSummary": ResourceTypeSummary,
+    "ResourceVulnerability": ResourceVulnerability,
+    "ResourceVulnerabilityCollection": ResourceVulnerabilityCollection,
+    "ResourceVulnerabilitySummary": ResourceVulnerabilitySummary,
     "ResponderActivityCollection": ResponderActivityCollection,
     "ResponderActivitySummary": ResponderActivitySummary,
     "ResponderConfiguration": ResponderConfiguration,
@@ -375,6 +437,12 @@ cloud_guard_type_mapping = {
     "RiskScoreAggregation": RiskScoreAggregation,
     "RiskScoreAggregationCollection": RiskScoreAggregationCollection,
     "RuleSummary": RuleSummary,
+    "SavedQuery": SavedQuery,
+    "SavedQueryCollection": SavedQueryCollection,
+    "SavedQuerySummary": SavedQuerySummary,
+    "ScheduledQueryDataSourceObjDetails": ScheduledQueryDataSourceObjDetails,
+    "ScheduledQueryDataSourceSummaryObjDetails": ScheduledQueryDataSourceSummaryObjDetails,
+    "ScheduledQueryScopeDetail": ScheduledQueryScopeDetail,
     "SecurityPolicy": SecurityPolicy,
     "SecurityPolicyCollection": SecurityPolicyCollection,
     "SecurityPolicySummary": SecurityPolicySummary,
@@ -389,6 +457,7 @@ cloud_guard_type_mapping = {
     "SecurityZoneCollection": SecurityZoneCollection,
     "SecurityZoneSummary": SecurityZoneSummary,
     "SecurityZoneTargetDetails": SecurityZoneTargetDetails,
+    "ServiceConfiguration": ServiceConfiguration,
     "ServiceTypeSummary": ServiceTypeSummary,
     "Sighting": Sighting,
     "SightingCollection": SightingCollection,
@@ -439,6 +508,7 @@ cloud_guard_type_mapping = {
     "UpdateResponderRecipeResponderRule": UpdateResponderRecipeResponderRule,
     "UpdateResponderRecipeResponderRuleDetails": UpdateResponderRecipeResponderRuleDetails,
     "UpdateResponderRuleDetails": UpdateResponderRuleDetails,
+    "UpdateSavedQueryDetails": UpdateSavedQueryDetails,
     "UpdateSecurityPolicyDetails": UpdateSecurityPolicyDetails,
     "UpdateSecurityRecipeDetails": UpdateSecurityRecipeDetails,
     "UpdateSecurityZoneDetails": UpdateSecurityZoneDetails,
@@ -453,6 +523,10 @@ cloud_guard_type_mapping = {
     "UpdateTargetResponderRecipeDetails": UpdateTargetResponderRecipeDetails,
     "UpdateTargetResponderRecipeResponderRuleDetails": UpdateTargetResponderRecipeResponderRuleDetails,
     "UpdateTargetResponderRuleDetails": UpdateTargetResponderRuleDetails,
+    "UpdateWlpAgentDetails": UpdateWlpAgentDetails,
+    "WlpAgent": WlpAgent,
+    "WlpAgentCollection": WlpAgentCollection,
+    "WlpAgentSummary": WlpAgentSummary,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestErrorCollection": WorkRequestErrorCollection,

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagedInstanceGroupDetails(object):
     """
-    Identifying information for the specified managed instance group.
+    Provides identifying information for the specified managed instance group.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,9 @@ class ManagedInstanceGroupDetails(object):
     def id(self):
         """
         **[Required]** Gets the id of this ManagedInstanceGroupDetails.
-        The OCID of the managed instance group.
+        The `OCID`__ of the managed instance group.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ManagedInstanceGroupDetails.
@@ -58,7 +60,9 @@ class ManagedInstanceGroupDetails(object):
     def id(self, id):
         """
         Sets the id of this ManagedInstanceGroupDetails.
-        The OCID of the managed instance group.
+        The `OCID`__ of the managed instance group.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ManagedInstanceGroupDetails.
@@ -70,7 +74,7 @@ class ManagedInstanceGroupDetails(object):
     def display_name(self):
         """
         Gets the display_name of this ManagedInstanceGroupDetails.
-        Managed instance group displayName.
+        Managed instance group name.
 
 
         :return: The display_name of this ManagedInstanceGroupDetails.
@@ -82,7 +86,7 @@ class ManagedInstanceGroupDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ManagedInstanceGroupDetails.
-        Managed instance group displayName.
+        Managed instance group name.
 
 
         :param display_name: The display_name of this ManagedInstanceGroupDetails.

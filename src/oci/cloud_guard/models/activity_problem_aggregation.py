@@ -60,7 +60,7 @@ class ActivityProblemAggregation(object):
     def dimensions_map(self):
         """
         **[Required]** Gets the dimensions_map of this ActivityProblemAggregation.
-        The key-value pairs of dimensions and their names.
+        The key-value pairs of dimensions and their names
 
 
         :return: The dimensions_map of this ActivityProblemAggregation.
@@ -72,7 +72,7 @@ class ActivityProblemAggregation(object):
     def dimensions_map(self, dimensions_map):
         """
         Sets the dimensions_map of this ActivityProblemAggregation.
-        The key-value pairs of dimensions and their names.
+        The key-value pairs of dimensions and their names
 
 
         :param dimensions_map: The dimensions_map of this ActivityProblemAggregation.
@@ -124,7 +124,7 @@ class ActivityProblemAggregation(object):
     def count(self):
         """
         **[Required]** Gets the count of this ActivityProblemAggregation.
-        The number of occurences with given dimension/s
+        The number of occurrences with given dimensions
 
 
         :return: The count of this ActivityProblemAggregation.
@@ -136,7 +136,7 @@ class ActivityProblemAggregation(object):
     def count(self, count):
         """
         Sets the count of this ActivityProblemAggregation.
-        The number of occurences with given dimension/s
+        The number of occurrences with given dimensions
 
 
         :param count: The count of this ActivityProblemAggregation.

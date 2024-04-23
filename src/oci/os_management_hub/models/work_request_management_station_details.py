@@ -77,7 +77,7 @@ class WorkRequestManagementStationDetails(object):
     def config(self):
         """
         Gets the config of this WorkRequestManagementStationDetails.
-        Target config needed for set management station config.
+        The configuration of the management station.
 
 
         :return: The config of this WorkRequestManagementStationDetails.
@@ -89,7 +89,7 @@ class WorkRequestManagementStationDetails(object):
     def config(self, config):
         """
         Sets the config of this WorkRequestManagementStationDetails.
-        Target config needed for set management station config.
+        The configuration of the management station.
 
 
         :param config: The config of this WorkRequestManagementStationDetails.

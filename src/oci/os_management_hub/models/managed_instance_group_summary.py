@@ -15,6 +15,26 @@ class ManagedInstanceGroupSummary(object):
     Summary of the managed instance group.
     """
 
+    #: A constant which can be used with the location property of a ManagedInstanceGroupSummary.
+    #: This constant has a value of "ON_PREMISE"
+    LOCATION_ON_PREMISE = "ON_PREMISE"
+
+    #: A constant which can be used with the location property of a ManagedInstanceGroupSummary.
+    #: This constant has a value of "OCI_COMPUTE"
+    LOCATION_OCI_COMPUTE = "OCI_COMPUTE"
+
+    #: A constant which can be used with the location property of a ManagedInstanceGroupSummary.
+    #: This constant has a value of "AZURE"
+    LOCATION_AZURE = "AZURE"
+
+    #: A constant which can be used with the location property of a ManagedInstanceGroupSummary.
+    #: This constant has a value of "EC2"
+    LOCATION_EC2 = "EC2"
+
+    #: A constant which can be used with the location property of a ManagedInstanceGroupSummary.
+    #: This constant has a value of "GCP"
+    LOCATION_GCP = "GCP"
+
     #: A constant which can be used with the os_family property of a ManagedInstanceGroupSummary.
     #: This constant has a value of "ORACLE_LINUX_9"
     OS_FAMILY_ORACLE_LINUX_9 = "ORACLE_LINUX_9"
@@ -26,6 +46,26 @@ class ManagedInstanceGroupSummary(object):
     #: A constant which can be used with the os_family property of a ManagedInstanceGroupSummary.
     #: This constant has a value of "ORACLE_LINUX_7"
     OS_FAMILY_ORACLE_LINUX_7 = "ORACLE_LINUX_7"
+
+    #: A constant which can be used with the os_family property of a ManagedInstanceGroupSummary.
+    #: This constant has a value of "ORACLE_LINUX_6"
+    OS_FAMILY_ORACLE_LINUX_6 = "ORACLE_LINUX_6"
+
+    #: A constant which can be used with the os_family property of a ManagedInstanceGroupSummary.
+    #: This constant has a value of "WINDOWS_SERVER_2016"
+    OS_FAMILY_WINDOWS_SERVER_2016 = "WINDOWS_SERVER_2016"
+
+    #: A constant which can be used with the os_family property of a ManagedInstanceGroupSummary.
+    #: This constant has a value of "WINDOWS_SERVER_2019"
+    OS_FAMILY_WINDOWS_SERVER_2019 = "WINDOWS_SERVER_2019"
+
+    #: A constant which can be used with the os_family property of a ManagedInstanceGroupSummary.
+    #: This constant has a value of "WINDOWS_SERVER_2022"
+    OS_FAMILY_WINDOWS_SERVER_2022 = "WINDOWS_SERVER_2022"
+
+    #: A constant which can be used with the os_family property of a ManagedInstanceGroupSummary.
+    #: This constant has a value of "ALL"
+    OS_FAMILY_ALL = "ALL"
 
     #: A constant which can be used with the arch_type property of a ManagedInstanceGroupSummary.
     #: This constant has a value of "X86_64"
@@ -50,6 +90,10 @@ class ManagedInstanceGroupSummary(object):
     #: A constant which can be used with the vendor_name property of a ManagedInstanceGroupSummary.
     #: This constant has a value of "ORACLE"
     VENDOR_NAME_ORACLE = "ORACLE"
+
+    #: A constant which can be used with the vendor_name property of a ManagedInstanceGroupSummary.
+    #: This constant has a value of "MICROSOFT"
+    VENDOR_NAME_MICROSOFT = "MICROSOFT"
 
     def __init__(self, **kwargs):
         """
@@ -76,6 +120,12 @@ class ManagedInstanceGroupSummary(object):
             The value to assign to the managed_instance_count property of this ManagedInstanceGroupSummary.
         :type managed_instance_count: int
 
+        :param location:
+            The value to assign to the location property of this ManagedInstanceGroupSummary.
+            Allowed values for this property are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type location: str
+
         :param time_created:
             The value to assign to the time_created property of this ManagedInstanceGroupSummary.
         :type time_created: datetime
@@ -90,7 +140,7 @@ class ManagedInstanceGroupSummary(object):
 
         :param os_family:
             The value to assign to the os_family property of this ManagedInstanceGroupSummary.
-            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type os_family: str
 
@@ -102,9 +152,21 @@ class ManagedInstanceGroupSummary(object):
 
         :param vendor_name:
             The value to assign to the vendor_name property of this ManagedInstanceGroupSummary.
-            Allowed values for this property are: "ORACLE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE", "MICROSOFT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type vendor_name: str
+
+        :param notification_topic_id:
+            The value to assign to the notification_topic_id property of this ManagedInstanceGroupSummary.
+        :type notification_topic_id: str
+
+        :param autonomous_settings:
+            The value to assign to the autonomous_settings property of this ManagedInstanceGroupSummary.
+        :type autonomous_settings: oci.os_management_hub.models.AutonomousSettings
+
+        :param is_managed_by_autonomous_linux:
+            The value to assign to the is_managed_by_autonomous_linux property of this ManagedInstanceGroupSummary.
+        :type is_managed_by_autonomous_linux: bool
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ManagedInstanceGroupSummary.
@@ -125,12 +187,16 @@ class ManagedInstanceGroupSummary(object):
             'display_name': 'str',
             'description': 'str',
             'managed_instance_count': 'int',
+            'location': 'str',
             'time_created': 'datetime',
             'time_modified': 'datetime',
             'lifecycle_state': 'str',
             'os_family': 'str',
             'arch_type': 'str',
             'vendor_name': 'str',
+            'notification_topic_id': 'str',
+            'autonomous_settings': 'AutonomousSettings',
+            'is_managed_by_autonomous_linux': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -142,12 +208,16 @@ class ManagedInstanceGroupSummary(object):
             'display_name': 'displayName',
             'description': 'description',
             'managed_instance_count': 'managedInstanceCount',
+            'location': 'location',
             'time_created': 'timeCreated',
             'time_modified': 'timeModified',
             'lifecycle_state': 'lifecycleState',
             'os_family': 'osFamily',
             'arch_type': 'archType',
             'vendor_name': 'vendorName',
+            'notification_topic_id': 'notificationTopicId',
+            'autonomous_settings': 'autonomousSettings',
+            'is_managed_by_autonomous_linux': 'isManagedByAutonomousLinux',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -158,12 +228,16 @@ class ManagedInstanceGroupSummary(object):
         self._display_name = None
         self._description = None
         self._managed_instance_count = None
+        self._location = None
         self._time_created = None
         self._time_modified = None
         self._lifecycle_state = None
         self._os_family = None
         self._arch_type = None
         self._vendor_name = None
+        self._notification_topic_id = None
+        self._autonomous_settings = None
+        self._is_managed_by_autonomous_linux = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -172,7 +246,9 @@ class ManagedInstanceGroupSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this ManagedInstanceGroupSummary.
-        Unique identifier that is immutable on creation.
+        The `OCID`__ of the managed instance group.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ManagedInstanceGroupSummary.
@@ -184,7 +260,9 @@ class ManagedInstanceGroupSummary(object):
     def id(self, id):
         """
         Sets the id of this ManagedInstanceGroupSummary.
-        Unique identifier that is immutable on creation.
+        The `OCID`__ of the managed instance group.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ManagedInstanceGroupSummary.
@@ -196,7 +274,7 @@ class ManagedInstanceGroupSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ManagedInstanceGroupSummary.
-        The `OCID`__ of the tenancy containing the managed instance groups to list.
+        The `OCID`__ of the compartment that contains the managed instance group
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -210,7 +288,7 @@ class ManagedInstanceGroupSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ManagedInstanceGroupSummary.
-        The `OCID`__ of the tenancy containing the managed instance groups to list.
+        The `OCID`__ of the compartment that contains the managed instance group
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -224,7 +302,7 @@ class ManagedInstanceGroupSummary(object):
     def display_name(self):
         """
         Gets the display_name of this ManagedInstanceGroupSummary.
-        A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name for the managed instance group.
 
 
         :return: The display_name of this ManagedInstanceGroupSummary.
@@ -236,7 +314,7 @@ class ManagedInstanceGroupSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ManagedInstanceGroupSummary.
-        A user-friendly name for the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name for the managed instance group.
 
 
         :param display_name: The display_name of this ManagedInstanceGroupSummary.
@@ -248,7 +326,7 @@ class ManagedInstanceGroupSummary(object):
     def description(self):
         """
         Gets the description of this ManagedInstanceGroupSummary.
-        managed instance group Description.
+        User-specified information about the managed instance group.
 
 
         :return: The description of this ManagedInstanceGroupSummary.
@@ -260,7 +338,7 @@ class ManagedInstanceGroupSummary(object):
     def description(self, description):
         """
         Sets the description of this ManagedInstanceGroupSummary.
-        managed instance group Description.
+        User-specified information about the managed instance group.
 
 
         :param description: The description of this ManagedInstanceGroupSummary.
@@ -272,7 +350,7 @@ class ManagedInstanceGroupSummary(object):
     def managed_instance_count(self):
         """
         Gets the managed_instance_count of this ManagedInstanceGroupSummary.
-        The number of Managed Instances in the managed instance group.
+        The number of managed instances in the group.
 
 
         :return: The managed_instance_count of this ManagedInstanceGroupSummary.
@@ -284,7 +362,7 @@ class ManagedInstanceGroupSummary(object):
     def managed_instance_count(self, managed_instance_count):
         """
         Sets the managed_instance_count of this ManagedInstanceGroupSummary.
-        The number of Managed Instances in the managed instance group.
+        The number of managed instances in the group.
 
 
         :param managed_instance_count: The managed_instance_count of this ManagedInstanceGroupSummary.
@@ -293,10 +371,42 @@ class ManagedInstanceGroupSummary(object):
         self._managed_instance_count = managed_instance_count
 
     @property
+    def location(self):
+        """
+        Gets the location of this ManagedInstanceGroupSummary.
+        The location of managed instances attached to the group.
+
+        Allowed values for this property are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The location of this ManagedInstanceGroupSummary.
+        :rtype: str
+        """
+        return self._location
+
+    @location.setter
+    def location(self, location):
+        """
+        Sets the location of this ManagedInstanceGroupSummary.
+        The location of managed instances attached to the group.
+
+
+        :param location: The location of this ManagedInstanceGroupSummary.
+        :type: str
+        """
+        allowed_values = ["ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"]
+        if not value_allowed_none_or_none_sentinel(location, allowed_values):
+            location = 'UNKNOWN_ENUM_VALUE'
+        self._location = location
+
+    @property
     def time_created(self):
         """
         Gets the time_created of this ManagedInstanceGroupSummary.
-        The time the managed instance group was created. An RFC3339 formatted datetime string.
+        The time the managed instance group was created (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_created of this ManagedInstanceGroupSummary.
@@ -308,7 +418,9 @@ class ManagedInstanceGroupSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ManagedInstanceGroupSummary.
-        The time the managed instance group was created. An RFC3339 formatted datetime string.
+        The time the managed instance group was created (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_created: The time_created of this ManagedInstanceGroupSummary.
@@ -320,7 +432,9 @@ class ManagedInstanceGroupSummary(object):
     def time_modified(self):
         """
         Gets the time_modified of this ManagedInstanceGroupSummary.
-        The time the managed instance group was last modified. An RFC3339 formatted datetime string.
+        The time the managed instance group was last modified (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_modified of this ManagedInstanceGroupSummary.
@@ -332,7 +446,9 @@ class ManagedInstanceGroupSummary(object):
     def time_modified(self, time_modified):
         """
         Sets the time_modified of this ManagedInstanceGroupSummary.
-        The time the managed instance group was last modified. An RFC3339 formatted datetime string.
+        The time the managed instance group was last modified (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_modified: The time_modified of this ManagedInstanceGroupSummary.
@@ -370,7 +486,7 @@ class ManagedInstanceGroupSummary(object):
         Gets the os_family of this ManagedInstanceGroupSummary.
         The operating system type of the instances in the managed instance group.
 
-        Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -389,7 +505,7 @@ class ManagedInstanceGroupSummary(object):
         :param os_family: The os_family of this ManagedInstanceGroupSummary.
         :type: str
         """
-        allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7"]
+        allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"]
         if not value_allowed_none_or_none_sentinel(os_family, allowed_values):
             os_family = 'UNKNOWN_ENUM_VALUE'
         self._os_family = os_family
@@ -428,9 +544,9 @@ class ManagedInstanceGroupSummary(object):
     def vendor_name(self):
         """
         Gets the vendor_name of this ManagedInstanceGroupSummary.
-        The software source vendor name.
+        The vendor of the operating system used by the managed instances in the group.
 
-        Allowed values for this property are: "ORACLE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE", "MICROSOFT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -443,16 +559,88 @@ class ManagedInstanceGroupSummary(object):
     def vendor_name(self, vendor_name):
         """
         Sets the vendor_name of this ManagedInstanceGroupSummary.
-        The software source vendor name.
+        The vendor of the operating system used by the managed instances in the group.
 
 
         :param vendor_name: The vendor_name of this ManagedInstanceGroupSummary.
         :type: str
         """
-        allowed_values = ["ORACLE"]
+        allowed_values = ["ORACLE", "MICROSOFT"]
         if not value_allowed_none_or_none_sentinel(vendor_name, allowed_values):
             vendor_name = 'UNKNOWN_ENUM_VALUE'
         self._vendor_name = vendor_name
+
+    @property
+    def notification_topic_id(self):
+        """
+        Gets the notification_topic_id of this ManagedInstanceGroupSummary.
+        The `OCID`__ for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The notification_topic_id of this ManagedInstanceGroupSummary.
+        :rtype: str
+        """
+        return self._notification_topic_id
+
+    @notification_topic_id.setter
+    def notification_topic_id(self, notification_topic_id):
+        """
+        Sets the notification_topic_id of this ManagedInstanceGroupSummary.
+        The `OCID`__ for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param notification_topic_id: The notification_topic_id of this ManagedInstanceGroupSummary.
+        :type: str
+        """
+        self._notification_topic_id = notification_topic_id
+
+    @property
+    def autonomous_settings(self):
+        """
+        Gets the autonomous_settings of this ManagedInstanceGroupSummary.
+
+        :return: The autonomous_settings of this ManagedInstanceGroupSummary.
+        :rtype: oci.os_management_hub.models.AutonomousSettings
+        """
+        return self._autonomous_settings
+
+    @autonomous_settings.setter
+    def autonomous_settings(self, autonomous_settings):
+        """
+        Sets the autonomous_settings of this ManagedInstanceGroupSummary.
+
+        :param autonomous_settings: The autonomous_settings of this ManagedInstanceGroupSummary.
+        :type: oci.os_management_hub.models.AutonomousSettings
+        """
+        self._autonomous_settings = autonomous_settings
+
+    @property
+    def is_managed_by_autonomous_linux(self):
+        """
+        Gets the is_managed_by_autonomous_linux of this ManagedInstanceGroupSummary.
+        Indicates whether the Autonomous Linux service manages the group.
+
+
+        :return: The is_managed_by_autonomous_linux of this ManagedInstanceGroupSummary.
+        :rtype: bool
+        """
+        return self._is_managed_by_autonomous_linux
+
+    @is_managed_by_autonomous_linux.setter
+    def is_managed_by_autonomous_linux(self, is_managed_by_autonomous_linux):
+        """
+        Sets the is_managed_by_autonomous_linux of this ManagedInstanceGroupSummary.
+        Indicates whether the Autonomous Linux service manages the group.
+
+
+        :param is_managed_by_autonomous_linux: The is_managed_by_autonomous_linux of this ManagedInstanceGroupSummary.
+        :type: bool
+        """
+        self._is_managed_by_autonomous_linux = is_managed_by_autonomous_linux
 
     @property
     def freeform_tags(self):

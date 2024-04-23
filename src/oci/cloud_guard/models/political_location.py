@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PoliticalLocation(object):
     """
-    Political location of a problem
+    The geographical location of a problem in terms of political units.
     """
 
     def __init__(self, **kwargs):
@@ -53,7 +53,7 @@ class PoliticalLocation(object):
     def city(self):
         """
         **[Required]** Gets the city of this PoliticalLocation.
-        City
+        City of problem's location
 
 
         :return: The city of this PoliticalLocation.
@@ -65,7 +65,7 @@ class PoliticalLocation(object):
     def city(self, city):
         """
         Sets the city of this PoliticalLocation.
-        City
+        City of problem's location
 
 
         :param city: The city of this PoliticalLocation.
@@ -77,7 +77,7 @@ class PoliticalLocation(object):
     def state(self):
         """
         **[Required]** Gets the state of this PoliticalLocation.
-        State
+        State or province of problem's location
 
 
         :return: The state of this PoliticalLocation.
@@ -89,7 +89,7 @@ class PoliticalLocation(object):
     def state(self, state):
         """
         Sets the state of this PoliticalLocation.
-        State
+        State or province of problem's location
 
 
         :param state: The state of this PoliticalLocation.
@@ -101,7 +101,7 @@ class PoliticalLocation(object):
     def country(self):
         """
         **[Required]** Gets the country of this PoliticalLocation.
-        Country
+        Country of problem's location
 
 
         :return: The country of this PoliticalLocation.
@@ -113,7 +113,7 @@ class PoliticalLocation(object):
     def country(self, country):
         """
         Sets the country of this PoliticalLocation.
-        Country
+        Country of problem's location
 
 
         :param country: The country of this PoliticalLocation.

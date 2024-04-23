@@ -274,61 +274,65 @@ python3 -m pip install --upgrade oci oci-cli oracledb pip
 ```text
 $ python3 showoci.py  
 
-usage: showoci.py [-h] [-a] [-ani] [-an] [-c] [-d] [-edge] [-f] [-i] [-ic] [-isc] [-s] [-m] [-paas] [-n] [-exclude EXCLUDE]
-                  [-noparallel] [-threads THREADS] [-nobackups] [-skipdbhomes] [-readtimeout READTIMEOUT]
-                  [-conntimeout CONNTIMEOUT] [-so] [-mc] [-nr] [-ip] [-is] [-dt] [-t PROFILE] [-p PROXY] [-rg REGION]
-                  [-rgn NOT_REGION] [-cp COMPART] [-cpr COMPART_RECUR] [-cpath COMPARTPATH] [-tenantid TENANTID] [-cf CONFIG]
-                  [-csv CSV] [-csvcol CSVCOL] [-csv_nodate] [-csv_notagstocols] [-jf JOUTFILE] [-js] [-sjf SJOUTFILE]
-                  [-cachef SERVICEFILE] [-caches] [--version]
+usage: showoci.py [-h] [-a] [-ani] [-an] [-andays ANNOUNCEMENT_DAYS] [-c] [-d] [-dsa] [-edge] [-f] [-i] [-iold] [-ic] [-isc] [-s]
+                  [-m] [-paas] [-n] [-exclude EXCLUDE] [-excludelist] [-noparallel] [-threads THREADS] [-nobackups] [-skipdbhomes]
+                  [-readtimeout READTIMEOUT] [-conntimeout CONNTIMEOUT] [-so] [-mc] [-nr] [-ip] [-rp] [-is] [-dt] [-t PROFILE]
+                  [-p PROXY] [-rg REGION] [-rgn NOT_REGION] [-cp COMPART] [-cpr COMPART_RECUR] [-cpath COMPARTPATH]
+                  [-tenantid TENANTID] [-cf CONFIG] [-csv CSV] [-csvcol CSVCOL] [-csv_nodate] [-csv_notagstocols] [-jf JOUTFILE]
+                  [-js] [-sjf SJOUTFILE] [-cachef SERVICEFILE] [-caches] [--version]
 
-options:
-  -h, --help                show this help message and exit
-  -a                        Print All Resources
-  -ani                      Print All Resources but identity
-  -an                       Print Announcements
-  -c, -cn                   Print Compute and Containers
-  -d                        Print Database
-  -edge                     Print Edge, DNS Services and WAAS policies, DNS Zone is slow can be excluded using -exclude DNSZONE
-  -f, -o                    Print File and Object Storage
-  -i                        Print Identity and Identity Domains
-  -ic                       Print Identity Compartments only
-  -isc                      Skip Identity User Credential extract
-  -s, -api, -rm, -fun       Print API, Functions, Resource management, Gateways, Streams and Queues
-  -m, -sec, -lq, -e, -b     Print Monitor, Events, Agents, Security, Quotas, E-Mail, Limits...
-  -paas, -dataai            Print Native, Data and AI
-  -n, -l                    Print Network
-  -exclude EXCLUDE          Exclude Services, Currently support NETWORK, QUOTAS, LIMITS, DNSZONE
-  -noparallel               Do not run in parallel processing (Threads)
-  -threads THREADS          Threads Processes when running with Threads (Default=8)
-  -nobackups                Do not process backups
-  -skipdbhomes              Do not process Database Homes and Below
-  -readtimeout READTIMEOUT  Timeout for REST API Connection (Default=20)
-  -conntimeout CONNTIMEOUT  Timeout for REST API Read (Default=150)
-  -so                       Print Summary Only
-  -mc                       exclude ManagedCompartmentForPaaS
-  -nr                       Not include root compartment
-  -ip                       Use Instance Principals for Authentication
-  -is                       Use Config and Security Token for Authentication
-  -dt                       Use Delegation Token (Cloud shell)
-  -t PROFILE                Config file section to use (tenancy profile)
-  -p PROXY                  Set Proxy (i.e. www-proxy-server.com:80)
-  -rg REGION                Filter by Region, partial name or comma seperated
-  -rgn NOT_REGION           Filter by Region, do not include region partial name or comma seperated
-  -cp COMPART               Filter by Compartment Name or OCID
-  -cpr COMPART_RECUR        Filter by Comp Name Recursive
-  -cpath COMPARTPATH        Filter by Compartment path ,(i.e. -cpath "Adi / Sub"
-  -tenantid TENANTID        Override confile file tenancy_id
-  -cf CONFIG                Config File (~/.oci/config)
-  -csv CSV                  Output to CSV files, Input as file header
-  -csvcol CSVCOL            Extract define tags as columns for Compute in CSV
-  -csv_nodate               Do not add date field to the csv
-  -csv_notagstocols         Do not Convert Tags to Columns in CSV Extract
-  -jf JOUTFILE              Output to file (JSON format)
-  -js                       Output to screen (JSON format)
-  -sjf SJOUTFILE            Output to screen (nice format) and JSON File
-  -cachef SERVICEFILE       Output Cache to file (JSON format)
-  -caches                   Output Cache to screen (JSON format)
-  --version                 show program's version number and exit
+optional arguments:
+  -h, --help                    show this help message and exit
+  -a                            Print All Resources.
+  -ani                          Print All Resources but identity.
+  -an                           Print Announcements.
+  -andays ANNOUNCEMENT_DAYS     Announcement Last X Days (Default=30).
+  -c, -cn                       Print Compute and Containers.
+  -d                            Print Database.
+  -dsa, --datasafe-assessments  When Data Safe is implemented, get the assessments, too.
+  -edge                         Print Edge, DNS Services and WAAS policies, DNS Zone is slow can be excluded using -exclude DNSZONE.
+  -f, -o                        Print File and Object Storage.
+  -i                            Print Identity and Identity Domains.
+  -iold                         Print Identity from the old APIs when choosing identity extract.
+  -ic                           Print Identity Compartments only.
+  -isc                          Skip Identity User Credential extract.
+  -s, -api, -rm, -fun           Print API, Functions, Resource management, Gateways, Streams and Queues.
+  -m, -sec, -lq, -e, -b         Print Monitor, Events, Agents, Security, Quotas, E-Mail, Limits, Cert...
+  -paas, -dataai                Print Native, Data and AI.
+  -n, -l                        Print Network.
+  -exclude EXCLUDE              Exclude Services, use -excludelist to for list of values
+  -excludelist                  Generate Exclude List for -exclude command
+  -noparallel                   Do not run in parallel processing (Threads).
+  -threads THREADS              Threads Processes when running with Threads (default=8).
+  -nobackups                    Do not process backups.
+  -skipdbhomes                  Do not process Database Homes and below.
+  -readtimeout READTIMEOUT      Timeout for REST API Connection (default=20).
+  -conntimeout CONNTIMEOUT      Timeout for REST API Read (default=150).
+  -so                           Print Summary Only.
+  -mc                           Exclude ManagedCompartmentForPaaS.
+  -nr                           Not include root compartment.
+  -ip                           Use Instance Principals for authentication.
+  -rp                           Use Resource Principals for authentication.
+  -is                           Use Config and Security Token for authentication.
+  -dt                           Use Delegation Token (Cloud Shell).
+  -t PROFILE                    Config file section to use (tenancy profile).
+  -p PROXY                      Set Proxy (i.e. www-proxy-server.com:80).
+  -rg REGION                    Filter by Region, partial name or comma seperated.
+  -rgn NOT_REGION               Filter by Region, do not include region partial name or comma seperated.
+  -cp COMPART                   Filter by Compartment Name or OCID.
+  -cpr COMPART_RECUR            Filter by Compartment Name Recursive.
+  -cpath COMPARTPATH            Filter by Compartment path (i.e. -cpath "Adi / Sub").
+  -tenantid TENANTID            Override confile file tenancy_id.
+  -cf CONFIG                    Config File (~/.oci/config).
+  -csv CSV                      Output to CSV files, Input as file header.
+  -csvcol CSVCOL                Extract define tags as columns for Compute in CSV.
+  -csv_nodate                   Do not add date field to the CSV.
+  -csv_notagstocols             Do not Convert Tags to Columns in CSV Extract.
+  -jf JOUTFILE                  Output to file (JSON format).
+  -js                           Output to screen (JSON format).
+  -sjf SJOUTFILE                Output to screen (nice format) and JSON File.
+  -cachef SERVICEFILE           Output Cache to file (JSON format).
+  -caches                       Output Cache to screen (JSON format).
   ```
 
 ## 9. Example of ShowOCI Reports

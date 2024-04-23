@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RiskScoreAggregationCollection(object):
     """
-    Risk Score Aggregation Collection.
+    Collection of RiskScoreAggregation resources.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class RiskScoreAggregationCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this RiskScoreAggregationCollection.
-        The items consist of all the RiskScoreAggregation objects.
+        The list of all the RiskScoreAggregation resources.
 
 
         :return: The items of this RiskScoreAggregationCollection.
@@ -51,7 +51,7 @@ class RiskScoreAggregationCollection(object):
     def items(self, items):
         """
         Sets the items of this RiskScoreAggregationCollection.
-        The items consist of all the RiskScoreAggregation objects.
+        The list of all the RiskScoreAggregation resources.
 
 
         :param items: The items of this RiskScoreAggregationCollection.

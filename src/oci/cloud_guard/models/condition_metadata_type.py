@@ -28,25 +28,32 @@ class ConditionMetadataType(object):
             The value to assign to the service_types property of this ConditionMetadataType.
         :type service_types: list[oci.cloud_guard.models.ServiceTypeSummary]
 
+        :param locks:
+            The value to assign to the locks property of this ConditionMetadataType.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
             'name': 'str',
-            'service_types': 'list[ServiceTypeSummary]'
+            'service_types': 'list[ServiceTypeSummary]',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
             'name': 'name',
-            'service_types': 'serviceTypes'
+            'service_types': 'serviceTypes',
+            'locks': 'locks'
         }
 
         self._name = None
         self._service_types = None
+        self._locks = None
 
     @property
     def name(self):
         """
         **[Required]** Gets the name of this ConditionMetadataType.
-        Name used to identify
+        Name used to identify the condition metadata type
 
 
         :return: The name of this ConditionMetadataType.
@@ -58,7 +65,7 @@ class ConditionMetadataType(object):
     def name(self, name):
         """
         Sets the name of this ConditionMetadataType.
-        Name used to identify
+        Name used to identify the condition metadata type
 
 
         :param name: The name of this ConditionMetadataType.
@@ -70,7 +77,7 @@ class ConditionMetadataType(object):
     def service_types(self):
         """
         **[Required]** Gets the service_types of this ConditionMetadataType.
-        collection of Service type
+        Collection of ServiceTypeSummary resources
 
 
         :return: The service_types of this ConditionMetadataType.
@@ -82,13 +89,37 @@ class ConditionMetadataType(object):
     def service_types(self, service_types):
         """
         Sets the service_types of this ConditionMetadataType.
-        collection of Service type
+        Collection of ServiceTypeSummary resources
 
 
         :param service_types: The service_types of this ConditionMetadataType.
         :type: list[oci.cloud_guard.models.ServiceTypeSummary]
         """
         self._service_types = service_types
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this ConditionMetadataType.
+        Locks associated with this resource.
+
+
+        :return: The locks of this ConditionMetadataType.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this ConditionMetadataType.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this ConditionMetadataType.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -161,7 +161,7 @@ class ProblemEndpointSummary(object):
     def sighting_id(self):
         """
         **[Required]** Gets the sighting_id of this ProblemEndpointSummary.
-        Unique id for sighting associated with the endpoint.
+        Unique identifier for sighting associated with the endpoint
 
 
         :return: The sighting_id of this ProblemEndpointSummary.
@@ -173,7 +173,7 @@ class ProblemEndpointSummary(object):
     def sighting_id(self, sighting_id):
         """
         Sets the sighting_id of this ProblemEndpointSummary.
-        Unique id for sighting associated with the endpoint.
+        Unique identifier for sighting associated with the endpoint
 
 
         :param sighting_id: The sighting_id of this ProblemEndpointSummary.
@@ -185,7 +185,7 @@ class ProblemEndpointSummary(object):
     def problem_id(self):
         """
         **[Required]** Gets the problem_id of this ProblemEndpointSummary.
-        Unique id for cloudguard problem
+        Unique identifier for problem associated with the endpoint
 
 
         :return: The problem_id of this ProblemEndpointSummary.
@@ -197,7 +197,7 @@ class ProblemEndpointSummary(object):
     def problem_id(self, problem_id):
         """
         Sets the problem_id of this ProblemEndpointSummary.
-        Unique id for cloudguard problem
+        Unique identifier for problem associated with the endpoint
 
 
         :param problem_id: The problem_id of this ProblemEndpointSummary.
@@ -209,7 +209,7 @@ class ProblemEndpointSummary(object):
     def sighting_type(self):
         """
         **[Required]** Gets the sighting_type of this ProblemEndpointSummary.
-        Identifier for the sighting type
+        Unique identifier for the sighting type associated with the endpoint
 
 
         :return: The sighting_type of this ProblemEndpointSummary.
@@ -221,7 +221,7 @@ class ProblemEndpointSummary(object):
     def sighting_type(self, sighting_type):
         """
         Sets the sighting_type of this ProblemEndpointSummary.
-        Identifier for the sighting type
+        Unique identifier for the sighting type associated with the endpoint
 
 
         :param sighting_type: The sighting_type of this ProblemEndpointSummary.
@@ -233,7 +233,7 @@ class ProblemEndpointSummary(object):
     def sighting_type_display_name(self):
         """
         **[Required]** Gets the sighting_type_display_name of this ProblemEndpointSummary.
-        Display Name of the sighting type
+        Display name of the sighting type
 
 
         :return: The sighting_type_display_name of this ProblemEndpointSummary.
@@ -245,7 +245,7 @@ class ProblemEndpointSummary(object):
     def sighting_type_display_name(self, sighting_type_display_name):
         """
         Sets the sighting_type_display_name of this ProblemEndpointSummary.
-        Display Name of the sighting type
+        Display name of the sighting type
 
 
         :param sighting_type_display_name: The sighting_type_display_name of this ProblemEndpointSummary.
@@ -257,7 +257,7 @@ class ProblemEndpointSummary(object):
     def ip_address(self):
         """
         **[Required]** Gets the ip_address of this ProblemEndpointSummary.
-        IP Address of the Endpoint
+        IP address of the endpoint
 
 
         :return: The ip_address of this ProblemEndpointSummary.
@@ -269,7 +269,7 @@ class ProblemEndpointSummary(object):
     def ip_address(self, ip_address):
         """
         Sets the ip_address of this ProblemEndpointSummary.
-        IP Address of the Endpoint
+        IP address of the endpoint
 
 
         :param ip_address: The ip_address of this ProblemEndpointSummary.
@@ -281,7 +281,7 @@ class ProblemEndpointSummary(object):
     def ip_address_type(self):
         """
         **[Required]** Gets the ip_address_type of this ProblemEndpointSummary.
-        IP Address type of the Endpoint
+        Type of IP address for the endpoint
 
 
         :return: The ip_address_type of this ProblemEndpointSummary.
@@ -293,7 +293,7 @@ class ProblemEndpointSummary(object):
     def ip_address_type(self, ip_address_type):
         """
         Sets the ip_address_type of this ProblemEndpointSummary.
-        IP Address type of the Endpoint
+        Type of IP address for the endpoint
 
 
         :param ip_address_type: The ip_address_type of this ProblemEndpointSummary.
@@ -305,7 +305,7 @@ class ProblemEndpointSummary(object):
     def ip_classification_type(self):
         """
         Gets the ip_classification_type of this ProblemEndpointSummary.
-        IP Address classification type of the endpoint
+        IP address classification type for the endpoint
 
 
         :return: The ip_classification_type of this ProblemEndpointSummary.
@@ -317,7 +317,7 @@ class ProblemEndpointSummary(object):
     def ip_classification_type(self, ip_classification_type):
         """
         Sets the ip_classification_type of this ProblemEndpointSummary.
-        IP Address classification type of the endpoint
+        IP address classification type for the endpoint
 
 
         :param ip_classification_type: The ip_classification_type of this ProblemEndpointSummary.
@@ -425,7 +425,7 @@ class ProblemEndpointSummary(object):
     def regions(self):
         """
         Gets the regions of this ProblemEndpointSummary.
-        Regions where activities were performed from this IP
+        Regions where activities were performed from this IP address
 
 
         :return: The regions of this ProblemEndpointSummary.
@@ -437,7 +437,7 @@ class ProblemEndpointSummary(object):
     def regions(self, regions):
         """
         Sets the regions of this ProblemEndpointSummary.
-        Regions where activities were performed from this IP
+        Regions where activities were performed from this IP address
 
 
         :param regions: The regions of this ProblemEndpointSummary.
@@ -449,7 +449,7 @@ class ProblemEndpointSummary(object):
     def services(self):
         """
         Gets the services of this ProblemEndpointSummary.
-        Services where activities were performed from this IP
+        List of services where activities were performed from this IP address
 
 
         :return: The services of this ProblemEndpointSummary.
@@ -461,7 +461,7 @@ class ProblemEndpointSummary(object):
     def services(self, services):
         """
         Sets the services of this ProblemEndpointSummary.
-        Services where activities were performed from this IP
+        List of services where activities were performed from this IP address
 
 
         :param services: The services of this ProblemEndpointSummary.

@@ -7,6 +7,8 @@
 from __future__ import absolute_import
 
 
+from .event_client import EventClient
+from .event_client_composite_operations import EventClientCompositeOperations
 from .lifecycle_environment_client import LifecycleEnvironmentClient
 from .lifecycle_environment_client_composite_operations import LifecycleEnvironmentClientCompositeOperations
 from .managed_instance_client import ManagedInstanceClient
@@ -27,4 +29,4 @@ from .work_request_client import WorkRequestClient
 from .work_request_client_composite_operations import WorkRequestClientCompositeOperations
 from . import models
 
-__all__ = ["LifecycleEnvironmentClient", "LifecycleEnvironmentClientCompositeOperations", "ManagedInstanceClient", "ManagedInstanceClientCompositeOperations", "ManagedInstanceGroupClient", "ManagedInstanceGroupClientCompositeOperations", "ManagementStationClient", "ManagementStationClientCompositeOperations", "OnboardingClient", "OnboardingClientCompositeOperations", "ReportingManagedInstanceClient", "ReportingManagedInstanceClientCompositeOperations", "ScheduledJobClient", "ScheduledJobClientCompositeOperations", "SoftwareSourceClient", "SoftwareSourceClientCompositeOperations", "WorkRequestClient", "WorkRequestClientCompositeOperations", "models"]
+__all__ = ["EventClient", "EventClientCompositeOperations", "LifecycleEnvironmentClient", "LifecycleEnvironmentClientCompositeOperations", "ManagedInstanceClient", "ManagedInstanceClientCompositeOperations", "ManagedInstanceGroupClient", "ManagedInstanceGroupClientCompositeOperations", "ManagementStationClient", "ManagementStationClientCompositeOperations", "OnboardingClient", "OnboardingClientCompositeOperations", "ReportingManagedInstanceClient", "ReportingManagedInstanceClientCompositeOperations", "ScheduledJobClient", "ScheduledJobClientCompositeOperations", "SoftwareSourceClient", "SoftwareSourceClientCompositeOperations", "WorkRequestClient", "WorkRequestClientCompositeOperations", "models"]

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateLifecycleStageDetails(object):
     """
-    The information to be updated.
+    Provides the information used to update the lifecycle stage.
     """
 
     def __init__(self, **kwargs):
@@ -60,7 +60,9 @@ class UpdateLifecycleStageDetails(object):
     def id(self):
         """
         **[Required]** Gets the id of this UpdateLifecycleStageDetails.
-        The lifecycle stage OCID that is immutable on creation.
+        The `OCID`__ of the lifecycle stage.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this UpdateLifecycleStageDetails.
@@ -72,7 +74,9 @@ class UpdateLifecycleStageDetails(object):
     def id(self, id):
         """
         Sets the id of this UpdateLifecycleStageDetails.
-        The lifecycle stage OCID that is immutable on creation.
+        The `OCID`__ of the lifecycle stage.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this UpdateLifecycleStageDetails.
@@ -84,7 +88,7 @@ class UpdateLifecycleStageDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateLifecycleStageDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name for the lifecycle stage. Does not have to be unique. Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateLifecycleStageDetails.
@@ -96,7 +100,7 @@ class UpdateLifecycleStageDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateLifecycleStageDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name for the lifecycle stage. Does not have to be unique. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateLifecycleStageDetails.

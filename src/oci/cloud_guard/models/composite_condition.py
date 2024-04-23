@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CompositeCondition(Condition):
     """
-    Composite Condition object with nested Condition
+    Composite condition resource with nested condition.
     """
 
     #: A constant which can be used with the composite_operator property of a CompositeCondition.
@@ -94,6 +94,8 @@ class CompositeCondition(Condition):
     def composite_operator(self):
         """
         Gets the composite_operator of this CompositeCondition.
+        Composite condition operator
+
         Allowed values for this property are: "AND", "OR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
@@ -107,6 +109,8 @@ class CompositeCondition(Condition):
     def composite_operator(self, composite_operator):
         """
         Sets the composite_operator of this CompositeCondition.
+        Composite condition operator
+
 
         :param composite_operator: The composite_operator of this CompositeCondition.
         :type: str

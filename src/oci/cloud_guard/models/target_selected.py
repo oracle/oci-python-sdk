@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TargetSelected(object):
     """
-    Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+    Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
     """
 
     #: A constant which can be used with the kind property of a TargetSelected.
@@ -78,7 +78,7 @@ class TargetSelected(object):
     def kind(self):
         """
         **[Required]** Gets the kind of this TargetSelected.
-        Target selection.
+        Kind of target selection to be used
 
         Allowed values for this property are: "ALL", "TARGETTYPES", "TARGETIDS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -93,7 +93,7 @@ class TargetSelected(object):
     def kind(self, kind):
         """
         Sets the kind of this TargetSelected.
-        Target selection.
+        Kind of target selection to be used
 
 
         :param kind: The kind of this TargetSelected.

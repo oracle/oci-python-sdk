@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateLifecycleProfileDetails(CreateProfileDetails):
     """
-    Description of a lifecycle registration profile to be created.
+    Provides the information used to create a lifecycle environment registration profile.
     """
 
     def __init__(self, **kwargs):
@@ -39,8 +39,16 @@ class CreateLifecycleProfileDetails(CreateProfileDetails):
 
         :param profile_type:
             The value to assign to the profile_type property of this CreateLifecycleProfileDetails.
-            Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION"
+            Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE"
         :type profile_type: str
+
+        :param registration_type:
+            The value to assign to the registration_type property of this CreateLifecycleProfileDetails.
+        :type registration_type: str
+
+        :param is_default_profile:
+            The value to assign to the is_default_profile property of this CreateLifecycleProfileDetails.
+        :type is_default_profile: bool
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateLifecycleProfileDetails.
@@ -61,6 +69,8 @@ class CreateLifecycleProfileDetails(CreateProfileDetails):
             'description': 'str',
             'management_station_id': 'str',
             'profile_type': 'str',
+            'registration_type': 'str',
+            'is_default_profile': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'lifecycle_stage_id': 'str'
@@ -72,6 +82,8 @@ class CreateLifecycleProfileDetails(CreateProfileDetails):
             'description': 'description',
             'management_station_id': 'managementStationId',
             'profile_type': 'profileType',
+            'registration_type': 'registrationType',
+            'is_default_profile': 'isDefaultProfile',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'lifecycle_stage_id': 'lifecycleStageId'
@@ -82,6 +94,8 @@ class CreateLifecycleProfileDetails(CreateProfileDetails):
         self._description = None
         self._management_station_id = None
         self._profile_type = None
+        self._registration_type = None
+        self._is_default_profile = None
         self._freeform_tags = None
         self._defined_tags = None
         self._lifecycle_stage_id = None
@@ -91,7 +105,9 @@ class CreateLifecycleProfileDetails(CreateProfileDetails):
     def lifecycle_stage_id(self):
         """
         **[Required]** Gets the lifecycle_stage_id of this CreateLifecycleProfileDetails.
-        The OCID of the lifecycle stage from which the registration profile will inherit its software source.
+        The `OCID`__ of the lifecycle stage that the instance will be associated with.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The lifecycle_stage_id of this CreateLifecycleProfileDetails.
@@ -103,7 +119,9 @@ class CreateLifecycleProfileDetails(CreateProfileDetails):
     def lifecycle_stage_id(self, lifecycle_stage_id):
         """
         Sets the lifecycle_stage_id of this CreateLifecycleProfileDetails.
-        The OCID of the lifecycle stage from which the registration profile will inherit its software source.
+        The `OCID`__ of the lifecycle stage that the instance will be associated with.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param lifecycle_stage_id: The lifecycle_stage_id of this CreateLifecycleProfileDetails.

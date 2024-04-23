@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagedInstanceAnalyticCollection(object):
     """
-    Collection of ManagedInstanceAnalyticSummary.
+    A set of managed instance metrics returned for the :func:`summarize_managed_instance_analytics` operation.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class ManagedInstanceAnalyticCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ManagedInstanceAnalyticCollection.
-        List of managed instance analytic summary.
+        List of managed instance analytic summary objects.
 
 
         :return: The items of this ManagedInstanceAnalyticCollection.
@@ -51,7 +51,7 @@ class ManagedInstanceAnalyticCollection(object):
     def items(self, items):
         """
         Sets the items of this ManagedInstanceAnalyticCollection.
-        List of managed instance analytic summary.
+        List of managed instance analytic summary objects.
 
 
         :param items: The items of this ManagedInstanceAnalyticCollection.

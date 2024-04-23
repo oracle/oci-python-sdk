@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExecuteResponderExecutionDetails(object):
     """
-    The details for Responder Configuration
+    The configuration details for a responder rule execution.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class ExecuteResponderExecutionDetails(object):
     def configurations(self):
         """
         Gets the configurations of this ExecuteResponderExecutionDetails.
-        ResponderRule configurations
+        List of responder rule configurations
 
 
         :return: The configurations of this ExecuteResponderExecutionDetails.
@@ -51,7 +51,7 @@ class ExecuteResponderExecutionDetails(object):
     def configurations(self, configurations):
         """
         Sets the configurations of this ExecuteResponderExecutionDetails.
-        ResponderRule configurations
+        List of responder rule configurations
 
 
         :param configurations: The configurations of this ExecuteResponderExecutionDetails.

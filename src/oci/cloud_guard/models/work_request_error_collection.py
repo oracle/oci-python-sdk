@@ -12,7 +12,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestErrorCollection(object):
     """
-    Results of a workRequestError search. Contains both WorkRequestError items and other information, such as metadata.
+    The collection of work request error resources. These result from a
+    workRequestError search. Contains WorkRequestError items and other
+    information, such as metadata.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +41,7 @@ class WorkRequestErrorCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this WorkRequestErrorCollection.
-        List of workRequestError objects.
+        List of workRequestError resources
 
 
         :return: The items of this WorkRequestErrorCollection.
@@ -51,7 +53,7 @@ class WorkRequestErrorCollection(object):
     def items(self, items):
         """
         Sets the items of this WorkRequestErrorCollection.
-        List of workRequestError objects.
+        List of workRequestError resources
 
 
         :param items: The items of this WorkRequestErrorCollection.

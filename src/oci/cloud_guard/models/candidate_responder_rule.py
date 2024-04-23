@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CandidateResponderRule(object):
     """
-    Candidate Responder Rule list in Detector rule
+    Information for a responder rule that can be used to remediate a problem triggered by specific detector rule.
     """
 
     def __init__(self, **kwargs):
@@ -53,7 +53,7 @@ class CandidateResponderRule(object):
     def id(self):
         """
         Gets the id of this CandidateResponderRule.
-        The unique identifier of the Responder rule
+        The unique identifier of the responder rule
 
 
         :return: The id of this CandidateResponderRule.
@@ -65,7 +65,7 @@ class CandidateResponderRule(object):
     def id(self, id):
         """
         Sets the id of this CandidateResponderRule.
-        The unique identifier of the Responder rule
+        The unique identifier of the responder rule
 
 
         :param id: The id of this CandidateResponderRule.
@@ -77,7 +77,7 @@ class CandidateResponderRule(object):
     def display_name(self):
         """
         Gets the display_name of this CandidateResponderRule.
-        The display name of the Responder rule
+        The display name of the responder rule
 
 
         :return: The display_name of this CandidateResponderRule.
@@ -89,7 +89,7 @@ class CandidateResponderRule(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CandidateResponderRule.
-        The display name of the Responder rule
+        The display name of the responder rule
 
 
         :param display_name: The display_name of this CandidateResponderRule.
@@ -101,7 +101,7 @@ class CandidateResponderRule(object):
     def is_preferred(self):
         """
         Gets the is_preferred of this CandidateResponderRule.
-        Preferred state
+        Is this the preferred state?
 
 
         :return: The is_preferred of this CandidateResponderRule.
@@ -113,7 +113,7 @@ class CandidateResponderRule(object):
     def is_preferred(self, is_preferred):
         """
         Sets the is_preferred of this CandidateResponderRule.
-        Preferred state
+        Is this the preferred state?
 
 
         :param is_preferred: The is_preferred of this CandidateResponderRule.

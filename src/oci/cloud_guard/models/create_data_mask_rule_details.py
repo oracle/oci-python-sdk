@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDataMaskRuleDetails(object):
     """
-    The information about new Data Mask Rule.
+    Parameters to us to create a new data mask rule.
     """
 
     #: A constant which can be used with the data_mask_categories property of a CreateDataMaskRuleDetails.
@@ -165,7 +165,7 @@ class CreateDataMaskRuleDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateDataMaskRuleDetails.
-        Data mask rule name.
+        Data mask rule display name
 
         Avoid entering confidential information.
 
@@ -179,7 +179,7 @@ class CreateDataMaskRuleDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateDataMaskRuleDetails.
-        Data mask rule name.
+        Data mask rule display name
 
         Avoid entering confidential information.
 
@@ -193,7 +193,7 @@ class CreateDataMaskRuleDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateDataMaskRuleDetails.
-        Compartment Identifier where the resource is created
+        Compartment OCID where the resource is created
 
 
         :return: The compartment_id of this CreateDataMaskRuleDetails.
@@ -205,7 +205,7 @@ class CreateDataMaskRuleDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateDataMaskRuleDetails.
-        Compartment Identifier where the resource is created
+        Compartment OCID where the resource is created
 
 
         :param compartment_id: The compartment_id of this CreateDataMaskRuleDetails.
@@ -217,7 +217,7 @@ class CreateDataMaskRuleDetails(object):
     def description(self):
         """
         Gets the description of this CreateDataMaskRuleDetails.
-        The data mask rule description.
+        The data mask rule description
         Avoid entering confidential information.
 
 
@@ -230,7 +230,7 @@ class CreateDataMaskRuleDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateDataMaskRuleDetails.
-        The data mask rule description.
+        The data mask rule description
         Avoid entering confidential information.
 
 
@@ -243,7 +243,7 @@ class CreateDataMaskRuleDetails(object):
     def iam_group_id(self):
         """
         **[Required]** Gets the iam_group_id of this CreateDataMaskRuleDetails.
-        IAM Group id associated with the data mask rule
+        IAM group ID associated with the data mask rule
 
 
         :return: The iam_group_id of this CreateDataMaskRuleDetails.
@@ -255,7 +255,7 @@ class CreateDataMaskRuleDetails(object):
     def iam_group_id(self, iam_group_id):
         """
         Sets the iam_group_id of this CreateDataMaskRuleDetails.
-        IAM Group id associated with the data mask rule
+        IAM group ID associated with the data mask rule
 
 
         :param iam_group_id: The iam_group_id of this CreateDataMaskRuleDetails.
@@ -287,7 +287,7 @@ class CreateDataMaskRuleDetails(object):
     def data_mask_categories(self):
         """
         **[Required]** Gets the data_mask_categories of this CreateDataMaskRuleDetails.
-        Data Mask Categories
+        Data mask rule categories
 
         Allowed values for items in this list are: "ACTOR", "PII", "PHI", "FINANCIAL", "LOCATION", "CUSTOM"
 
@@ -301,7 +301,7 @@ class CreateDataMaskRuleDetails(object):
     def data_mask_categories(self, data_mask_categories):
         """
         Sets the data_mask_categories of this CreateDataMaskRuleDetails.
-        Data Mask Categories
+        Data mask rule categories
 
 
         :param data_mask_categories: The data_mask_categories of this CreateDataMaskRuleDetails.
@@ -321,7 +321,7 @@ class CreateDataMaskRuleDetails(object):
     def data_mask_rule_status(self):
         """
         Gets the data_mask_rule_status of this CreateDataMaskRuleDetails.
-        The status of the dataMaskRule.
+        The current status of the data mask rule
 
         Allowed values for this property are: "ENABLED", "DISABLED"
 
@@ -335,7 +335,7 @@ class CreateDataMaskRuleDetails(object):
     def data_mask_rule_status(self, data_mask_rule_status):
         """
         Sets the data_mask_rule_status of this CreateDataMaskRuleDetails.
-        The status of the dataMaskRule.
+        The current status of the data mask rule
 
 
         :param data_mask_rule_status: The data_mask_rule_status of this CreateDataMaskRuleDetails.
@@ -352,7 +352,7 @@ class CreateDataMaskRuleDetails(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this CreateDataMaskRuleDetails.
-        The current state of the DataMaskRule.
+        The current lifecycle state of the data mask rule
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
@@ -366,7 +366,7 @@ class CreateDataMaskRuleDetails(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this CreateDataMaskRuleDetails.
-        The current state of the DataMaskRule.
+        The current lifecycle state of the data mask rule
 
 
         :param lifecycle_state: The lifecycle_state of this CreateDataMaskRuleDetails.

@@ -52,6 +52,10 @@ class CreateVolumeGroupDetails(object):
             The value to assign to the volume_group_replicas property of this CreateVolumeGroupDetails.
         :type volume_group_replicas: list[oci.core.models.VolumeGroupReplicaDetails]
 
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this CreateVolumeGroupDetails.
+        :type cluster_placement_group_id: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -61,7 +65,8 @@ class CreateVolumeGroupDetails(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'source_details': 'VolumeGroupSourceDetails',
-            'volume_group_replicas': 'list[VolumeGroupReplicaDetails]'
+            'volume_group_replicas': 'list[VolumeGroupReplicaDetails]',
+            'cluster_placement_group_id': 'str'
         }
 
         self.attribute_map = {
@@ -72,7 +77,8 @@ class CreateVolumeGroupDetails(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'source_details': 'sourceDetails',
-            'volume_group_replicas': 'volumeGroupReplicas'
+            'volume_group_replicas': 'volumeGroupReplicas',
+            'cluster_placement_group_id': 'clusterPlacementGroupId'
         }
 
         self._availability_domain = None
@@ -83,6 +89,7 @@ class CreateVolumeGroupDetails(object):
         self._freeform_tags = None
         self._source_details = None
         self._volume_group_replicas = None
+        self._cluster_placement_group_id = None
 
     @property
     def availability_domain(self):
@@ -297,6 +304,30 @@ class CreateVolumeGroupDetails(object):
         :type: list[oci.core.models.VolumeGroupReplicaDetails]
         """
         self._volume_group_replicas = volume_group_replicas
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this CreateVolumeGroupDetails.
+        The clusterPlacementGroup Id of the volume group for volume group placement.
+
+
+        :return: The cluster_placement_group_id of this CreateVolumeGroupDetails.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this CreateVolumeGroupDetails.
+        The clusterPlacementGroup Id of the volume group for volume group placement.
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this CreateVolumeGroupDetails.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

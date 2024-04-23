@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PackageGroup(object):
     """
-    Yum/DNF package group, category or environment.
+    Yum or DNF package group, category, or environment.
     """
 
     #: A constant which can be used with the group_type property of a PackageGroup.
@@ -157,7 +157,7 @@ class PackageGroup(object):
     def repositories(self):
         """
         Gets the repositories of this PackageGroup.
-        the IDs of the package group's repositories.
+        The repository IDs of the package group's repositories.
 
 
         :return: The repositories of this PackageGroup.
@@ -169,7 +169,7 @@ class PackageGroup(object):
     def repositories(self, repositories):
         """
         Sets the repositories of this PackageGroup.
-        the IDs of the package group's repositories.
+        The repository IDs of the package group's repositories.
 
 
         :param repositories: The repositories of this PackageGroup.
@@ -181,7 +181,7 @@ class PackageGroup(object):
     def description(self):
         """
         Gets the description of this PackageGroup.
-        description of the package group.
+        Description of the package group.
 
 
         :return: The description of this PackageGroup.
@@ -193,7 +193,7 @@ class PackageGroup(object):
     def description(self, description):
         """
         Sets the description of this PackageGroup.
-        description of the package group.
+        Description of the package group.
 
 
         :param description: The description of this PackageGroup.
@@ -205,7 +205,7 @@ class PackageGroup(object):
     def is_user_visible(self):
         """
         Gets the is_user_visible of this PackageGroup.
-        Indicates if this package group is visible by users.
+        Indicates if this package group is visible to users.
 
 
         :return: The is_user_visible of this PackageGroup.
@@ -217,7 +217,7 @@ class PackageGroup(object):
     def is_user_visible(self, is_user_visible):
         """
         Sets the is_user_visible of this PackageGroup.
-        Indicates if this package group is visible by users.
+        Indicates if this package group is visible to users.
 
 
         :param is_user_visible: The is_user_visible of this PackageGroup.
@@ -253,7 +253,7 @@ class PackageGroup(object):
     def group_type(self):
         """
         Gets the group_type of this PackageGroup.
-        Indicates if this is a group, category or environment.
+        Indicates if this is a group, category, or environment.
 
         Allowed values for this property are: "GROUP", "ENVIRONMENT", "CATEGORY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -268,7 +268,7 @@ class PackageGroup(object):
     def group_type(self, group_type):
         """
         Sets the group_type of this PackageGroup.
-        Indicates if this is a group, category or environment.
+        Indicates if this is a group, category, or environment.
 
 
         :param group_type: The group_type of this PackageGroup.

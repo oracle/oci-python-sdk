@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DetachSoftwareSourcesFromManagedInstanceGroupDetails(object):
     """
-    The software sources OCIDs to detach from the managed instance group.
+    Provides the information used to detach software sources from a managed instance group.
     """
 
     def __init__(self, **kwargs):
@@ -45,8 +45,10 @@ class DetachSoftwareSourcesFromManagedInstanceGroupDetails(object):
     @property
     def software_sources(self):
         """
-        Gets the software_sources of this DetachSoftwareSourcesFromManagedInstanceGroupDetails.
-        The list of software sources OCIDs to be detached.
+        **[Required]** Gets the software_sources of this DetachSoftwareSourcesFromManagedInstanceGroupDetails.
+        List of software source `OCIDs`__ to detach from the group.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_sources of this DetachSoftwareSourcesFromManagedInstanceGroupDetails.
@@ -58,7 +60,9 @@ class DetachSoftwareSourcesFromManagedInstanceGroupDetails(object):
     def software_sources(self, software_sources):
         """
         Sets the software_sources of this DetachSoftwareSourcesFromManagedInstanceGroupDetails.
-        The list of software sources OCIDs to be detached.
+        List of software source `OCIDs`__ to detach from the group.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_sources: The software_sources of this DetachSoftwareSourcesFromManagedInstanceGroupDetails.

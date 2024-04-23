@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourceProfileSummary(object):
     """
-    Resource profile summary.
+    Summary information for a resource profile.
     """
 
     def __init__(self, **kwargs):
@@ -102,7 +102,7 @@ class ResourceProfileSummary(object):
     def sightings_count(self):
         """
         Gets the sightings_count of this ResourceProfileSummary.
-        Number of sightings associated with this resource profile
+        Number of sightings associated with the resource profile
 
 
         :return: The sightings_count of this ResourceProfileSummary.
@@ -114,7 +114,7 @@ class ResourceProfileSummary(object):
     def sightings_count(self, sightings_count):
         """
         Sets the sightings_count of this ResourceProfileSummary.
-        Number of sightings associated with this resource profile
+        Number of sightings associated with the resource profile
 
 
         :param sightings_count: The sightings_count of this ResourceProfileSummary.
@@ -126,7 +126,7 @@ class ResourceProfileSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this ResourceProfileSummary.
-        Unique identifier for resource profile
+        Unique identifier for the resource profile
 
 
         :return: The id of this ResourceProfileSummary.
@@ -138,7 +138,7 @@ class ResourceProfileSummary(object):
     def id(self, id):
         """
         Sets the id of this ResourceProfileSummary.
-        Unique identifier for resource profile
+        Unique identifier for the resource profile
 
 
         :param id: The id of this ResourceProfileSummary.
@@ -150,7 +150,7 @@ class ResourceProfileSummary(object):
     def resource_id(self):
         """
         **[Required]** Gets the resource_id of this ResourceProfileSummary.
-        Unique identifier for resource profile
+        Unique identifier for the resource associated with the resource profile
 
 
         :return: The resource_id of this ResourceProfileSummary.
@@ -162,7 +162,7 @@ class ResourceProfileSummary(object):
     def resource_id(self, resource_id):
         """
         Sets the resource_id of this ResourceProfileSummary.
-        Unique identifier for resource profile
+        Unique identifier for the resource associated with the resource profile
 
 
         :param resource_id: The resource_id of this ResourceProfileSummary.
@@ -174,7 +174,7 @@ class ResourceProfileSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this ResourceProfileSummary.
-        Resource name for resource profile
+        Display name for the resource profile
 
 
         :return: The display_name of this ResourceProfileSummary.
@@ -186,7 +186,7 @@ class ResourceProfileSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ResourceProfileSummary.
-        Resource name for resource profile
+        Display name for the resource profile
 
 
         :param display_name: The display_name of this ResourceProfileSummary.
@@ -198,7 +198,7 @@ class ResourceProfileSummary(object):
     def type(self):
         """
         **[Required]** Gets the type of this ResourceProfileSummary.
-        Resource type for resource profile
+        Resource type for the resource profile
 
 
         :return: The type of this ResourceProfileSummary.
@@ -210,7 +210,7 @@ class ResourceProfileSummary(object):
     def type(self, type):
         """
         Sets the type of this ResourceProfileSummary.
-        Resource type for resource profile
+        Resource type for the resource profile
 
 
         :param type: The type of this ResourceProfileSummary.
@@ -222,7 +222,7 @@ class ResourceProfileSummary(object):
     def risk_score(self):
         """
         **[Required]** Gets the risk_score of this ResourceProfileSummary.
-        Risk Score for the resource profile
+        Risk score for the resource profile
 
 
         :return: The risk_score of this ResourceProfileSummary.
@@ -234,7 +234,7 @@ class ResourceProfileSummary(object):
     def risk_score(self, risk_score):
         """
         Sets the risk_score of this ResourceProfileSummary.
-        Risk Score for the resource profile
+        Risk score for the resource profile
 
 
         :param risk_score: The risk_score of this ResourceProfileSummary.
@@ -246,7 +246,7 @@ class ResourceProfileSummary(object):
     def tactics(self):
         """
         **[Required]** Gets the tactics of this ResourceProfileSummary.
-        List of tactic summary associated with the resource profile.
+        List of tactic summaries associated with the resource profile
 
 
         :return: The tactics of this ResourceProfileSummary.
@@ -258,7 +258,7 @@ class ResourceProfileSummary(object):
     def tactics(self, tactics):
         """
         Sets the tactics of this ResourceProfileSummary.
-        List of tactic summary associated with the resource profile.
+        List of tactic summaries associated with the resource profile
 
 
         :param tactics: The tactics of this ResourceProfileSummary.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ScheduledJobSummary(object):
     """
-    Summary of the scheduled job.
+    Provides summary information for a scheduled job.
     """
 
     #: A constant which can be used with the schedule_type property of a ScheduledJobSummary.
@@ -45,6 +45,10 @@ class ScheduledJobSummary(object):
             Allowed values for this property are: "ONETIME", "RECURRING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type schedule_type: str
+
+        :param locations:
+            The value to assign to the locations property of this ScheduledJobSummary.
+        :type locations: list[oci.os_management_hub.models.ManagedInstanceLocation]
 
         :param time_created:
             The value to assign to the time_created property of this ScheduledJobSummary.
@@ -86,6 +90,10 @@ class ScheduledJobSummary(object):
             The value to assign to the lifecycle_state property of this ScheduledJobSummary.
         :type lifecycle_state: str
 
+        :param is_managed_by_autonomous_linux:
+            The value to assign to the is_managed_by_autonomous_linux property of this ScheduledJobSummary.
+        :type is_managed_by_autonomous_linux: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ScheduledJobSummary.
         :type freeform_tags: dict(str, str)
@@ -94,13 +102,17 @@ class ScheduledJobSummary(object):
             The value to assign to the defined_tags property of this ScheduledJobSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this ScheduledJobSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param is_restricted:
             The value to assign to the is_restricted property of this ScheduledJobSummary.
         :type is_restricted: bool
 
-        :param system_tags:
-            The value to assign to the system_tags property of this ScheduledJobSummary.
-        :type system_tags: dict(str, dict(str, object))
+        :param retry_intervals:
+            The value to assign to the retry_intervals property of this ScheduledJobSummary.
+        :type retry_intervals: list[int]
 
         """
         self.swagger_types = {
@@ -108,6 +120,7 @@ class ScheduledJobSummary(object):
             'display_name': 'str',
             'compartment_id': 'str',
             'schedule_type': 'str',
+            'locations': 'list[ManagedInstanceLocation]',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'time_next_execution': 'datetime',
@@ -118,10 +131,12 @@ class ScheduledJobSummary(object):
             'lifecycle_stage_ids': 'list[str]',
             'operations': 'list[ScheduledJobOperation]',
             'lifecycle_state': 'str',
+            'is_managed_by_autonomous_linux': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'is_restricted': 'bool',
-            'system_tags': 'dict(str, dict(str, object))'
+            'retry_intervals': 'list[int]'
         }
 
         self.attribute_map = {
@@ -129,6 +144,7 @@ class ScheduledJobSummary(object):
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
             'schedule_type': 'scheduleType',
+            'locations': 'locations',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'time_next_execution': 'timeNextExecution',
@@ -139,16 +155,19 @@ class ScheduledJobSummary(object):
             'lifecycle_stage_ids': 'lifecycleStageIds',
             'operations': 'operations',
             'lifecycle_state': 'lifecycleState',
+            'is_managed_by_autonomous_linux': 'isManagedByAutonomousLinux',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'is_restricted': 'isRestricted',
-            'system_tags': 'systemTags'
+            'retry_intervals': 'retryIntervals'
         }
 
         self._id = None
         self._display_name = None
         self._compartment_id = None
         self._schedule_type = None
+        self._locations = None
         self._time_created = None
         self._time_updated = None
         self._time_next_execution = None
@@ -159,16 +178,20 @@ class ScheduledJobSummary(object):
         self._lifecycle_stage_ids = None
         self._operations = None
         self._lifecycle_state = None
+        self._is_managed_by_autonomous_linux = None
         self._freeform_tags = None
         self._defined_tags = None
-        self._is_restricted = None
         self._system_tags = None
+        self._is_restricted = None
+        self._retry_intervals = None
 
     @property
     def id(self):
         """
         **[Required]** Gets the id of this ScheduledJobSummary.
-        The OCID of the scheduled job.
+        The `OCID`__ of the scheduled job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ScheduledJobSummary.
@@ -180,7 +203,9 @@ class ScheduledJobSummary(object):
     def id(self, id):
         """
         Sets the id of this ScheduledJobSummary.
-        The OCID of the scheduled job.
+        The `OCID`__ of the scheduled job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ScheduledJobSummary.
@@ -192,7 +217,7 @@ class ScheduledJobSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this ScheduledJobSummary.
-        Scheduled job name.
+        User-friendly name for the scheduled job.
 
 
         :return: The display_name of this ScheduledJobSummary.
@@ -204,7 +229,7 @@ class ScheduledJobSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ScheduledJobSummary.
-        Scheduled job name.
+        User-friendly name for the scheduled job.
 
 
         :param display_name: The display_name of this ScheduledJobSummary.
@@ -216,7 +241,9 @@ class ScheduledJobSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ScheduledJobSummary.
-        The OCID of the compartment containing the scheduled job.
+        The `OCID`__ of the compartment that contains the scheduled job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ScheduledJobSummary.
@@ -228,7 +255,9 @@ class ScheduledJobSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ScheduledJobSummary.
-        The OCID of the compartment containing the scheduled job.
+        The `OCID`__ of the compartment that contains the scheduled job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ScheduledJobSummary.
@@ -267,10 +296,36 @@ class ScheduledJobSummary(object):
         self._schedule_type = schedule_type
 
     @property
+    def locations(self):
+        """
+        Gets the locations of this ScheduledJobSummary.
+        The list of locations this scheduled job should operate on for a job targeting on compartments. (Empty list means apply to all locations). This can only be set when managedCompartmentIds is not empty.
+
+
+        :return: The locations of this ScheduledJobSummary.
+        :rtype: list[oci.os_management_hub.models.ManagedInstanceLocation]
+        """
+        return self._locations
+
+    @locations.setter
+    def locations(self, locations):
+        """
+        Sets the locations of this ScheduledJobSummary.
+        The list of locations this scheduled job should operate on for a job targeting on compartments. (Empty list means apply to all locations). This can only be set when managedCompartmentIds is not empty.
+
+
+        :param locations: The locations of this ScheduledJobSummary.
+        :type: list[oci.os_management_hub.models.ManagedInstanceLocation]
+        """
+        self._locations = locations
+
+    @property
     def time_created(self):
         """
         **[Required]** Gets the time_created of this ScheduledJobSummary.
-        The time this scheduled job was created. An RFC3339 formatted datetime string.
+        The time this scheduled job was created (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_created of this ScheduledJobSummary.
@@ -282,7 +337,9 @@ class ScheduledJobSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ScheduledJobSummary.
-        The time this scheduled job was created. An RFC3339 formatted datetime string.
+        The time this scheduled job was created (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_created: The time_created of this ScheduledJobSummary.
@@ -294,7 +351,9 @@ class ScheduledJobSummary(object):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this ScheduledJobSummary.
-        The time this scheduled job was updated. An RFC3339 formatted datetime string.
+        The time this scheduled job was updated (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_updated of this ScheduledJobSummary.
@@ -306,7 +365,9 @@ class ScheduledJobSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this ScheduledJobSummary.
-        The time this scheduled job was updated. An RFC3339 formatted datetime string.
+        The time this scheduled job was updated (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_updated: The time_updated of this ScheduledJobSummary.
@@ -318,7 +379,9 @@ class ScheduledJobSummary(object):
     def time_next_execution(self):
         """
         **[Required]** Gets the time_next_execution of this ScheduledJobSummary.
-        The time/date of the next scheduled execution of this scheduled job.
+        The time of the next execution of this scheduled job (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_next_execution of this ScheduledJobSummary.
@@ -330,7 +393,9 @@ class ScheduledJobSummary(object):
     def time_next_execution(self, time_next_execution):
         """
         Sets the time_next_execution of this ScheduledJobSummary.
-        The time/date of the next scheduled execution of this scheduled job.
+        The time of the next execution of this scheduled job (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_next_execution: The time_next_execution of this ScheduledJobSummary.
@@ -342,7 +407,9 @@ class ScheduledJobSummary(object):
     def time_last_execution(self):
         """
         Gets the time_last_execution of this ScheduledJobSummary.
-        The time/date of the last execution of this scheduled job.
+        The time of the last execution of this scheduled job (in `RFC 3339`__ format).b.
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_last_execution of this ScheduledJobSummary.
@@ -354,7 +421,9 @@ class ScheduledJobSummary(object):
     def time_last_execution(self, time_last_execution):
         """
         Sets the time_last_execution of this ScheduledJobSummary.
-        The time/date of the last execution of this scheduled job.
+        The time of the last execution of this scheduled job (in `RFC 3339`__ format).b.
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_last_execution: The time_last_execution of this ScheduledJobSummary.
@@ -366,7 +435,11 @@ class ScheduledJobSummary(object):
     def managed_instance_ids(self):
         """
         Gets the managed_instance_ids of this ScheduledJobSummary.
-        The list of managed instance OCIDs this scheduled job operates on (mutually exclusive with managedInstanceGroupIds, managedCompartmentIds and lifecycleStageIds).
+        The managed instance `OCIDs`__ that this scheduled job operates on.
+        A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
+        managedInstanceGroupIds, managedCompartmentIds, and lifecycleStageIds.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_instance_ids of this ScheduledJobSummary.
@@ -378,7 +451,11 @@ class ScheduledJobSummary(object):
     def managed_instance_ids(self, managed_instance_ids):
         """
         Sets the managed_instance_ids of this ScheduledJobSummary.
-        The list of managed instance OCIDs this scheduled job operates on (mutually exclusive with managedInstanceGroupIds, managedCompartmentIds and lifecycleStageIds).
+        The managed instance `OCIDs`__ that this scheduled job operates on.
+        A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
+        managedInstanceGroupIds, managedCompartmentIds, and lifecycleStageIds.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_instance_ids: The managed_instance_ids of this ScheduledJobSummary.
@@ -390,7 +467,11 @@ class ScheduledJobSummary(object):
     def managed_instance_group_ids(self):
         """
         Gets the managed_instance_group_ids of this ScheduledJobSummary.
-        The list of managed instance group OCIDs this scheduled job operates on (mutually exclusive with managedInstances, managedCompartmentIds and lifecycleStageIds).
+        The managed instance group `OCIDs`__ that this scheduled job operates on.
+        A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
+        managedInstanceIds, managedCompartmentIds, and lifecycleStageIds.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_instance_group_ids of this ScheduledJobSummary.
@@ -402,7 +483,11 @@ class ScheduledJobSummary(object):
     def managed_instance_group_ids(self, managed_instance_group_ids):
         """
         Sets the managed_instance_group_ids of this ScheduledJobSummary.
-        The list of managed instance group OCIDs this scheduled job operates on (mutually exclusive with managedInstances, managedCompartmentIds and lifecycleStageIds).
+        The managed instance group `OCIDs`__ that this scheduled job operates on.
+        A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
+        managedInstanceIds, managedCompartmentIds, and lifecycleStageIds.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_instance_group_ids: The managed_instance_group_ids of this ScheduledJobSummary.
@@ -414,7 +499,11 @@ class ScheduledJobSummary(object):
     def managed_compartment_ids(self):
         """
         Gets the managed_compartment_ids of this ScheduledJobSummary.
-        The list of target compartment OCIDs if this scheduled job operates on a compartment level (mutually exclusive with managedInstances, managedInstanceGroupIds and lifecycleStageIds).
+        The compartment `OCIDs`__ that this scheduled job operates on.
+        A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
+        managedInstanceIds, managedInstanceGroupIds, and lifecycleStageIds.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_compartment_ids of this ScheduledJobSummary.
@@ -426,7 +515,11 @@ class ScheduledJobSummary(object):
     def managed_compartment_ids(self, managed_compartment_ids):
         """
         Sets the managed_compartment_ids of this ScheduledJobSummary.
-        The list of target compartment OCIDs if this scheduled job operates on a compartment level (mutually exclusive with managedInstances, managedInstanceGroupIds and lifecycleStageIds).
+        The compartment `OCIDs`__ that this scheduled job operates on.
+        A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
+        managedInstanceIds, managedInstanceGroupIds, and lifecycleStageIds.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_compartment_ids: The managed_compartment_ids of this ScheduledJobSummary.
@@ -438,7 +531,11 @@ class ScheduledJobSummary(object):
     def lifecycle_stage_ids(self):
         """
         Gets the lifecycle_stage_ids of this ScheduledJobSummary.
-        The list of target lifecycle stage OCIDs if this scheduled job operates on lifecycle stages (mutually exclusive with managedInstances, managedInstanceGroupIds and managedCompartmentIds).
+        The lifecycle stage `OCIDs`__ that this scheduled job operates on.
+        A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
+        managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The lifecycle_stage_ids of this ScheduledJobSummary.
@@ -450,7 +547,11 @@ class ScheduledJobSummary(object):
     def lifecycle_stage_ids(self, lifecycle_stage_ids):
         """
         Sets the lifecycle_stage_ids of this ScheduledJobSummary.
-        The list of target lifecycle stage OCIDs if this scheduled job operates on lifecycle stages (mutually exclusive with managedInstances, managedInstanceGroupIds and managedCompartmentIds).
+        The lifecycle stage `OCIDs`__ that this scheduled job operates on.
+        A scheduled job can only operate on one type of target, therefore this parameter is mutually exclusive with
+        managedInstanceIds, managedInstanceGroupIds, and managedCompartmentIds.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param lifecycle_stage_ids: The lifecycle_stage_ids of this ScheduledJobSummary.
@@ -462,7 +563,16 @@ class ScheduledJobSummary(object):
     def operations(self):
         """
         **[Required]** Gets the operations of this ScheduledJobSummary.
-        The list of operations this scheduled job needs to perform (can only support one operation if the operationType is not UPDATE_PACKAGES/UPDATE_ALL/UPDATE_SECURITY/UPDATE_BUGFIX/UPDATE_ENHANCEMENT/UPDATE_OTHER/UPDATE_KSPLICE_USERSPACE/UPDATE_KSPLICE_KERNEL).
+        The list of operations this scheduled job needs to perform.
+        A scheduled job supports only one operation type, unless it is one of the following:
+        * UPDATE_PACKAGES
+        * UPDATE_ALL
+        * UPDATE_SECURITY
+        * UPDATE_BUGFIX
+        * UPDATE_ENHANCEMENT
+        * UPDATE_OTHER
+        * UPDATE_KSPLICE_USERSPACE
+        * UPDATE_KSPLICE_KERNEL
 
 
         :return: The operations of this ScheduledJobSummary.
@@ -474,7 +584,16 @@ class ScheduledJobSummary(object):
     def operations(self, operations):
         """
         Sets the operations of this ScheduledJobSummary.
-        The list of operations this scheduled job needs to perform (can only support one operation if the operationType is not UPDATE_PACKAGES/UPDATE_ALL/UPDATE_SECURITY/UPDATE_BUGFIX/UPDATE_ENHANCEMENT/UPDATE_OTHER/UPDATE_KSPLICE_USERSPACE/UPDATE_KSPLICE_KERNEL).
+        The list of operations this scheduled job needs to perform.
+        A scheduled job supports only one operation type, unless it is one of the following:
+        * UPDATE_PACKAGES
+        * UPDATE_ALL
+        * UPDATE_SECURITY
+        * UPDATE_BUGFIX
+        * UPDATE_ENHANCEMENT
+        * UPDATE_OTHER
+        * UPDATE_KSPLICE_USERSPACE
+        * UPDATE_KSPLICE_KERNEL
 
 
         :param operations: The operations of this ScheduledJobSummary.
@@ -505,6 +624,30 @@ class ScheduledJobSummary(object):
         :type: str
         """
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def is_managed_by_autonomous_linux(self):
+        """
+        Gets the is_managed_by_autonomous_linux of this ScheduledJobSummary.
+        Indicates whether this scheduled job is managed by the Autonomous Linux service.
+
+
+        :return: The is_managed_by_autonomous_linux of this ScheduledJobSummary.
+        :rtype: bool
+        """
+        return self._is_managed_by_autonomous_linux
+
+    @is_managed_by_autonomous_linux.setter
+    def is_managed_by_autonomous_linux(self, is_managed_by_autonomous_linux):
+        """
+        Sets the is_managed_by_autonomous_linux of this ScheduledJobSummary.
+        Indicates whether this scheduled job is managed by the Autonomous Linux service.
+
+
+        :param is_managed_by_autonomous_linux: The is_managed_by_autonomous_linux of this ScheduledJobSummary.
+        :type: bool
+        """
+        self._is_managed_by_autonomous_linux = is_managed_by_autonomous_linux
 
     @property
     def freeform_tags(self):
@@ -571,30 +714,6 @@ class ScheduledJobSummary(object):
         self._defined_tags = defined_tags
 
     @property
-    def is_restricted(self):
-        """
-        Gets the is_restricted of this ScheduledJobSummary.
-        true, if the schedule job has its update/deletion capabilities restricted. (Used to track scheduled job for management station syncing).
-
-
-        :return: The is_restricted of this ScheduledJobSummary.
-        :rtype: bool
-        """
-        return self._is_restricted
-
-    @is_restricted.setter
-    def is_restricted(self, is_restricted):
-        """
-        Sets the is_restricted of this ScheduledJobSummary.
-        true, if the schedule job has its update/deletion capabilities restricted. (Used to track scheduled job for management station syncing).
-
-
-        :param is_restricted: The is_restricted of this ScheduledJobSummary.
-        :type: bool
-        """
-        self._is_restricted = is_restricted
-
-    @property
     def system_tags(self):
         """
         Gets the system_tags of this ScheduledJobSummary.
@@ -619,6 +738,62 @@ class ScheduledJobSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def is_restricted(self):
+        """
+        Gets the is_restricted of this ScheduledJobSummary.
+        Indicates if the schedule job has restricted update and deletion capabilities.
+        For restricted scheduled jobs, you can update only the timeNextExecution, recurringRule, and tags.
+
+
+        :return: The is_restricted of this ScheduledJobSummary.
+        :rtype: bool
+        """
+        return self._is_restricted
+
+    @is_restricted.setter
+    def is_restricted(self, is_restricted):
+        """
+        Sets the is_restricted of this ScheduledJobSummary.
+        Indicates if the schedule job has restricted update and deletion capabilities.
+        For restricted scheduled jobs, you can update only the timeNextExecution, recurringRule, and tags.
+
+
+        :param is_restricted: The is_restricted of this ScheduledJobSummary.
+        :type: bool
+        """
+        self._is_restricted = is_restricted
+
+    @property
+    def retry_intervals(self):
+        """
+        Gets the retry_intervals of this ScheduledJobSummary.
+        The amount of time in minutes to wait until retrying the scheduled job. If set, the service will automatically
+        retry a failed scheduled job after the interval. For example, you could set the interval to [2,5,10]. If the
+        initial execution of the job fails, the service waits 2 minutes and then retries. If that fails, the service waits
+        5 minutes and then retries. If that fails, the service waits 10 minutes and then retries.
+
+
+        :return: The retry_intervals of this ScheduledJobSummary.
+        :rtype: list[int]
+        """
+        return self._retry_intervals
+
+    @retry_intervals.setter
+    def retry_intervals(self, retry_intervals):
+        """
+        Sets the retry_intervals of this ScheduledJobSummary.
+        The amount of time in minutes to wait until retrying the scheduled job. If set, the service will automatically
+        retry a failed scheduled job after the interval. For example, you could set the interval to [2,5,10]. If the
+        initial execution of the job fails, the service waits 2 minutes and then retries. If that fails, the service waits
+        5 minutes and then retries. If that fails, the service waits 10 minutes and then retries.
+
+
+        :param retry_intervals: The retry_intervals of this ScheduledJobSummary.
+        :type: list[int]
+        """
+        self._retry_intervals = retry_intervals
 
     def __repr__(self):
         return formatted_flat_dict(self)
