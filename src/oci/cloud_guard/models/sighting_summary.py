@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SightingSummary(object):
     """
-    Sighting summary Definition.
+    Sighting summary definition.
     """
 
     #: A constant which can be used with the classification_status property of a SightingSummary.
@@ -224,7 +224,7 @@ class SightingSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this SightingSummary.
-        Unique identifier for finding event
+        Unique identifier for sighting
 
 
         :return: The id of this SightingSummary.
@@ -236,7 +236,7 @@ class SightingSummary(object):
     def id(self, id):
         """
         Sets the id of this SightingSummary.
-        Unique identifier for finding event
+        Unique identifier for sighting
 
 
         :param id: The id of this SightingSummary.
@@ -248,7 +248,7 @@ class SightingSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this SightingSummary.
-        Compartment Id where the resource is created
+        Compartment OCID where the impacted resource is created
 
 
         :return: The compartment_id of this SightingSummary.
@@ -260,7 +260,7 @@ class SightingSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this SightingSummary.
-        Compartment Id where the resource is created
+        Compartment OCID where the impacted resource is created
 
 
         :param compartment_id: The compartment_id of this SightingSummary.
@@ -272,7 +272,7 @@ class SightingSummary(object):
     def problem_id(self):
         """
         Gets the problem_id of this SightingSummary.
-        Problem Id to which the Sighting is associated
+        Problem ID associated with sighting
 
 
         :return: The problem_id of this SightingSummary.
@@ -284,7 +284,7 @@ class SightingSummary(object):
     def problem_id(self, problem_id):
         """
         Sets the problem_id of this SightingSummary.
-        Problem Id to which the Sighting is associated
+        Problem ID associated with sighting
 
 
         :param problem_id: The problem_id of this SightingSummary.
@@ -320,7 +320,7 @@ class SightingSummary(object):
     def actor_principal_name(self):
         """
         Gets the actor_principal_name of this SightingSummary.
-        Name of the principal actor
+        Name of principal actor
 
 
         :return: The actor_principal_name of this SightingSummary.
@@ -332,7 +332,7 @@ class SightingSummary(object):
     def actor_principal_name(self, actor_principal_name):
         """
         Sets the actor_principal_name of this SightingSummary.
-        Name of the principal actor
+        Name of principal actor
 
 
         :param actor_principal_name: The actor_principal_name of this SightingSummary.
@@ -344,7 +344,7 @@ class SightingSummary(object):
     def actor_principal_type(self):
         """
         Gets the actor_principal_type of this SightingSummary.
-        Type of the principal actor
+        Type of principal actor
 
 
         :return: The actor_principal_type of this SightingSummary.
@@ -356,7 +356,7 @@ class SightingSummary(object):
     def actor_principal_type(self, actor_principal_type):
         """
         Sets the actor_principal_type of this SightingSummary.
-        Type of the principal actor
+        Type of principal actor
 
 
         :param actor_principal_type: The actor_principal_type of this SightingSummary.
@@ -368,7 +368,7 @@ class SightingSummary(object):
     def detector_rule_id(self):
         """
         **[Required]** Gets the detector_rule_id of this SightingSummary.
-        Unique identifier of the rule
+        Unique identifier of the detector rule that was triggered
 
 
         :return: The detector_rule_id of this SightingSummary.
@@ -380,7 +380,7 @@ class SightingSummary(object):
     def detector_rule_id(self, detector_rule_id):
         """
         Sets the detector_rule_id of this SightingSummary.
-        Unique identifier of the rule
+        Unique identifier of the detector rule that was triggered
 
 
         :param detector_rule_id: The detector_rule_id of this SightingSummary.
@@ -392,7 +392,7 @@ class SightingSummary(object):
     def classification_status(self):
         """
         **[Required]** Gets the classification_status of this SightingSummary.
-        ClassificationStatus of the sighting event
+        Classification status of the sighting
 
         Allowed values for this property are: "FALSE_NEGATIVE", "TRUE_NEGATIVE", "FALSE_POSITIVE", "TRUE_POSITIVE", "NOT_CLASSIFIED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -407,7 +407,7 @@ class SightingSummary(object):
     def classification_status(self, classification_status):
         """
         Sets the classification_status of this SightingSummary.
-        ClassificationStatus of the sighting event
+        Classification status of the sighting
 
 
         :param classification_status: The classification_status of this SightingSummary.
@@ -422,7 +422,7 @@ class SightingSummary(object):
     def sighting_type(self):
         """
         **[Required]** Gets the sighting_type of this SightingSummary.
-        Identifier for the sighting type
+        Type of sighting
 
 
         :return: The sighting_type of this SightingSummary.
@@ -434,7 +434,7 @@ class SightingSummary(object):
     def sighting_type(self, sighting_type):
         """
         Sets the sighting_type of this SightingSummary.
-        Identifier for the sighting type
+        Type of sighting
 
 
         :param sighting_type: The sighting_type of this SightingSummary.
@@ -446,7 +446,7 @@ class SightingSummary(object):
     def sighting_type_display_name(self):
         """
         **[Required]** Gets the sighting_type_display_name of this SightingSummary.
-        Name of the sighting type
+        Display name of the sighting type
 
 
         :return: The sighting_type_display_name of this SightingSummary.
@@ -458,7 +458,7 @@ class SightingSummary(object):
     def sighting_type_display_name(self, sighting_type_display_name):
         """
         Sets the sighting_type_display_name of this SightingSummary.
-        Name of the sighting type
+        Display name of the sighting type
 
 
         :param sighting_type_display_name: The sighting_type_display_name of this SightingSummary.
@@ -470,7 +470,7 @@ class SightingSummary(object):
     def tactic_name(self):
         """
         **[Required]** Gets the tactic_name of this SightingSummary.
-        Name of the Mitre att&ck tactic
+        Name of the MITRE ATT@CK framework tactic
 
 
         :return: The tactic_name of this SightingSummary.
@@ -482,7 +482,7 @@ class SightingSummary(object):
     def tactic_name(self, tactic_name):
         """
         Sets the tactic_name of this SightingSummary.
-        Name of the Mitre att&ck tactic
+        Name of the MITRE ATT@CK framework tactic
 
 
         :param tactic_name: The tactic_name of this SightingSummary.
@@ -494,7 +494,7 @@ class SightingSummary(object):
     def technique_name(self):
         """
         **[Required]** Gets the technique_name of this SightingSummary.
-        Name of the Mitre att&ck technique
+        Name of the MITRE ATT@CK framework technique
 
 
         :return: The technique_name of this SightingSummary.
@@ -506,7 +506,7 @@ class SightingSummary(object):
     def technique_name(self, technique_name):
         """
         Sets the technique_name of this SightingSummary.
-        Name of the Mitre att&ck technique
+        Name of the MITRE ATT@CK framework technique
 
 
         :param technique_name: The technique_name of this SightingSummary.
@@ -572,7 +572,7 @@ class SightingSummary(object):
     def confidence(self):
         """
         **[Required]** Gets the confidence of this SightingSummary.
-        Confidence of the sighting
+        Confidence level that the sighting is not a false positive
 
         Allowed values for this property are: "CRITICAL", "HIGH", "MEDIUM", "LOW", "MINOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -587,7 +587,7 @@ class SightingSummary(object):
     def confidence(self, confidence):
         """
         Sets the confidence of this SightingSummary.
-        Confidence of the sighting
+        Confidence level that the sighting is not a false positive
 
 
         :param confidence: The confidence of this SightingSummary.
@@ -650,7 +650,7 @@ class SightingSummary(object):
     def regions(self):
         """
         **[Required]** Gets the regions of this SightingSummary.
-        Regions involved in the sighting
+        List of regions involved in the sighting
 
 
         :return: The regions of this SightingSummary.
@@ -662,7 +662,7 @@ class SightingSummary(object):
     def regions(self, regions):
         """
         Sets the regions of this SightingSummary.
-        Regions involved in the sighting
+        List of regions involved in the sighting
 
 
         :param regions: The regions of this SightingSummary.

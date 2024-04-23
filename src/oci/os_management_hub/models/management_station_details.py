@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagementStationDetails(object):
     """
-    The config details of the management stations to be configured for a managed instance.
+    Provides the management station details used to configure a managed instance.
     """
 
     def __init__(self, **kwargs):
@@ -53,7 +53,9 @@ class ManagementStationDetails(object):
     def primary_management_station_id(self):
         """
         **[Required]** Gets the primary_management_station_id of this ManagementStationDetails.
-        The OCID of a management station to be used as the preferred primary.
+        The `OCID`__ of the management station for the instance to use as primary management station.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The primary_management_station_id of this ManagementStationDetails.
@@ -65,7 +67,9 @@ class ManagementStationDetails(object):
     def primary_management_station_id(self, primary_management_station_id):
         """
         Sets the primary_management_station_id of this ManagementStationDetails.
-        The OCID of a management station to be used as the preferred primary.
+        The `OCID`__ of the management station for the instance to use as primary management station.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param primary_management_station_id: The primary_management_station_id of this ManagementStationDetails.
@@ -77,7 +81,9 @@ class ManagementStationDetails(object):
     def secondary_management_station_id(self):
         """
         Gets the secondary_management_station_id of this ManagementStationDetails.
-        The OCID of a management station to be used as the preferred secondary.
+        The `OCID`__ of the management station for the instance to use as secondary managment station.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The secondary_management_station_id of this ManagementStationDetails.
@@ -89,7 +95,9 @@ class ManagementStationDetails(object):
     def secondary_management_station_id(self, secondary_management_station_id):
         """
         Sets the secondary_management_station_id of this ManagementStationDetails.
-        The OCID of a management station to be used as the preferred secondary.
+        The `OCID`__ of the management station for the instance to use as secondary managment station.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param secondary_management_station_id: The secondary_management_station_id of this ManagementStationDetails.

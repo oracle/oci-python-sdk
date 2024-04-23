@@ -12,25 +12,30 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataSourceSummaryDetails(object):
     """
-    Summary specific to the data source type.
+    Summary information for a data source of a specified data source type.
     """
 
     #: A constant which can be used with the data_source_feed_provider property of a DataSourceSummaryDetails.
     #: This constant has a value of "LOGGINGQUERY"
     DATA_SOURCE_FEED_PROVIDER_LOGGINGQUERY = "LOGGINGQUERY"
 
+    #: A constant which can be used with the data_source_feed_provider property of a DataSourceSummaryDetails.
+    #: This constant has a value of "SCHEDULEDQUERY"
+    DATA_SOURCE_FEED_PROVIDER_SCHEDULEDQUERY = "SCHEDULEDQUERY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DataSourceSummaryDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.cloud_guard.models.ScheduledQueryDataSourceSummaryObjDetails`
         * :class:`~oci.cloud_guard.models.LoggingQueryDataSourceSummaryDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param data_source_feed_provider:
             The value to assign to the data_source_feed_provider property of this DataSourceSummaryDetails.
-            Allowed values for this property are: "LOGGINGQUERY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LOGGINGQUERY", "SCHEDULEDQUERY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type data_source_feed_provider: str
 
@@ -53,6 +58,9 @@ class DataSourceSummaryDetails(object):
         """
         type = object_dictionary['dataSourceFeedProvider']
 
+        if type == 'SCHEDULEDQUERY':
+            return 'ScheduledQueryDataSourceSummaryObjDetails'
+
         if type == 'LOGGINGQUERY':
             return 'LoggingQueryDataSourceSummaryDetails'
         else:
@@ -62,9 +70,9 @@ class DataSourceSummaryDetails(object):
     def data_source_feed_provider(self):
         """
         **[Required]** Gets the data_source_feed_provider of this DataSourceSummaryDetails.
-        Possible type of dataSourceFeed Provider(LoggingQuery)
+        Possible type of data source feed provider(LoggingQuery)
 
-        Allowed values for this property are: "LOGGINGQUERY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LOGGINGQUERY", "SCHEDULEDQUERY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -77,13 +85,13 @@ class DataSourceSummaryDetails(object):
     def data_source_feed_provider(self, data_source_feed_provider):
         """
         Sets the data_source_feed_provider of this DataSourceSummaryDetails.
-        Possible type of dataSourceFeed Provider(LoggingQuery)
+        Possible type of data source feed provider(LoggingQuery)
 
 
         :param data_source_feed_provider: The data_source_feed_provider of this DataSourceSummaryDetails.
         :type: str
         """
-        allowed_values = ["LOGGINGQUERY"]
+        allowed_values = ["LOGGINGQUERY", "SCHEDULEDQUERY"]
         if not value_allowed_none_or_none_sentinel(data_source_feed_provider, allowed_values):
             data_source_feed_provider = 'UNKNOWN_ENUM_VALUE'
         self._data_source_feed_provider = data_source_feed_provider

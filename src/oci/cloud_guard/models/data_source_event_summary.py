@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataSourceEventSummary(object):
     """
-    The information about Event details of DataSource.
+    Summary information about a data source event.
     """
 
     #: A constant which can be used with the status property of a DataSourceEventSummary.
@@ -115,7 +115,7 @@ class DataSourceEventSummary(object):
     def event_date(self):
         """
         **[Required]** Gets the event_date of this DataSourceEventSummary.
-        Data source event date time
+        Data source event date and time
 
 
         :return: The event_date of this DataSourceEventSummary.
@@ -127,7 +127,7 @@ class DataSourceEventSummary(object):
     def event_date(self, event_date):
         """
         Sets the event_date of this DataSourceEventSummary.
-        Data source event date time
+        Data source event date and time
 
 
         :param event_date: The event_date of this DataSourceEventSummary.
@@ -139,7 +139,7 @@ class DataSourceEventSummary(object):
     def data_source_id(self):
         """
         **[Required]** Gets the data_source_id of this DataSourceEventSummary.
-        Attached data Source
+        Unique identifier of data source.
 
 
         :return: The data_source_id of this DataSourceEventSummary.
@@ -151,7 +151,7 @@ class DataSourceEventSummary(object):
     def data_source_id(self, data_source_id):
         """
         Sets the data_source_id of this DataSourceEventSummary.
-        Attached data Source
+        Unique identifier of data source.
 
 
         :param data_source_id: The data_source_id of this DataSourceEventSummary.
@@ -163,7 +163,7 @@ class DataSourceEventSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this DataSourceEventSummary.
-        Data source event created time
+        Data source event creation date and time
 
 
         :return: The time_created of this DataSourceEventSummary.
@@ -175,7 +175,7 @@ class DataSourceEventSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this DataSourceEventSummary.
-        Data source event created time
+        Data source event creation date and time
 
 
         :param time_created: The time_created of this DataSourceEventSummary.

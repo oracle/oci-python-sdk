@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SightingEndpointCollection(object):
     """
-    Provides the summary of sighting endpoints
+    Collection of sighting endpoint summaries.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class SightingEndpointCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this SightingEndpointCollection.
-        List of SightingEndpointSummary
+        List of SightingEndpointSummary resources
 
 
         :return: The items of this SightingEndpointCollection.
@@ -51,7 +51,7 @@ class SightingEndpointCollection(object):
     def items(self, items):
         """
         Sets the items of this SightingEndpointCollection.
-        List of SightingEndpointSummary
+        List of SightingEndpointSummary resources
 
 
         :param items: The items of this SightingEndpointCollection.

@@ -162,6 +162,10 @@ class Sighting(object):
             The value to assign to the additional_details property of this Sighting.
         :type additional_details: dict(str, str)
 
+        :param locks:
+            The value to assign to the locks property of this Sighting.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -182,7 +186,8 @@ class Sighting(object):
             'time_first_detected': 'datetime',
             'time_last_detected': 'datetime',
             'regions': 'list[str]',
-            'additional_details': 'dict(str, str)'
+            'additional_details': 'dict(str, str)',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -204,7 +209,8 @@ class Sighting(object):
             'time_first_detected': 'timeFirstDetected',
             'time_last_detected': 'timeLastDetected',
             'regions': 'regions',
-            'additional_details': 'additionalDetails'
+            'additional_details': 'additionalDetails',
+            'locks': 'locks'
         }
 
         self._id = None
@@ -226,12 +232,13 @@ class Sighting(object):
         self._time_last_detected = None
         self._regions = None
         self._additional_details = None
+        self._locks = None
 
     @property
     def id(self):
         """
         **[Required]** Gets the id of this Sighting.
-        Unique identifier for sighting event
+        Unique identifier for the sighting
 
 
         :return: The id of this Sighting.
@@ -243,7 +250,7 @@ class Sighting(object):
     def id(self, id):
         """
         Sets the id of this Sighting.
-        Unique identifier for sighting event
+        Unique identifier for the sighting
 
 
         :param id: The id of this Sighting.
@@ -255,7 +262,7 @@ class Sighting(object):
     def description(self):
         """
         **[Required]** Gets the description of this Sighting.
-        Description of the sighting event
+        Description of the sighting
 
 
         :return: The description of this Sighting.
@@ -267,7 +274,7 @@ class Sighting(object):
     def description(self, description):
         """
         Sets the description of this Sighting.
-        Description of the sighting event
+        Description of the sighting
 
 
         :param description: The description of this Sighting.
@@ -279,7 +286,7 @@ class Sighting(object):
     def problem_id(self):
         """
         Gets the problem_id of this Sighting.
-        Problem Id to which the Sighting is associated
+        Problem ID associated the sighting
 
 
         :return: The problem_id of this Sighting.
@@ -291,7 +298,7 @@ class Sighting(object):
     def problem_id(self, problem_id):
         """
         Sets the problem_id of this Sighting.
-        Problem Id to which the Sighting is associated
+        Problem ID associated the sighting
 
 
         :param problem_id: The problem_id of this Sighting.
@@ -303,7 +310,7 @@ class Sighting(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this Sighting.
-        Compartment Id where the resource is created
+        Compartment OCID where the resource is created
 
 
         :return: The compartment_id of this Sighting.
@@ -315,7 +322,7 @@ class Sighting(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Sighting.
-        Compartment Id where the resource is created
+        Compartment OCID where the resource is created
 
 
         :param compartment_id: The compartment_id of this Sighting.
@@ -399,7 +406,7 @@ class Sighting(object):
     def classification_status(self):
         """
         **[Required]** Gets the classification_status of this Sighting.
-        ClassificationStatus of the sighting event
+        Classification status of the sighting
 
         Allowed values for this property are: "FALSE_NEGATIVE", "TRUE_NEGATIVE", "FALSE_POSITIVE", "TRUE_POSITIVE", "NOT_CLASSIFIED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -414,7 +421,7 @@ class Sighting(object):
     def classification_status(self, classification_status):
         """
         Sets the classification_status of this Sighting.
-        ClassificationStatus of the sighting event
+        Classification status of the sighting
 
 
         :param classification_status: The classification_status of this Sighting.
@@ -429,7 +436,7 @@ class Sighting(object):
     def sighting_type(self):
         """
         **[Required]** Gets the sighting_type of this Sighting.
-        Identifier for the sighting type
+        Type of sighting
 
 
         :return: The sighting_type of this Sighting.
@@ -441,7 +448,7 @@ class Sighting(object):
     def sighting_type(self, sighting_type):
         """
         Sets the sighting_type of this Sighting.
-        Identifier for the sighting type
+        Type of sighting
 
 
         :param sighting_type: The sighting_type of this Sighting.
@@ -477,7 +484,7 @@ class Sighting(object):
     def tactic_name(self):
         """
         **[Required]** Gets the tactic_name of this Sighting.
-        Name of the Mitre att&ck tactic
+        Name of the MITRE ATT@CK framework tactic
 
 
         :return: The tactic_name of this Sighting.
@@ -489,7 +496,7 @@ class Sighting(object):
     def tactic_name(self, tactic_name):
         """
         Sets the tactic_name of this Sighting.
-        Name of the Mitre att&ck tactic
+        Name of the MITRE ATT@CK framework tactic
 
 
         :param tactic_name: The tactic_name of this Sighting.
@@ -501,7 +508,7 @@ class Sighting(object):
     def technique_name(self):
         """
         **[Required]** Gets the technique_name of this Sighting.
-        Name of the Mitre att&ck technique
+        Name of the MITRE ATT@CK framework technique
 
 
         :return: The technique_name of this Sighting.
@@ -513,7 +520,7 @@ class Sighting(object):
     def technique_name(self, technique_name):
         """
         Sets the technique_name of this Sighting.
-        Name of the Mitre att&ck technique
+        Name of the MITRE ATT@CK framework technique
 
 
         :param technique_name: The technique_name of this Sighting.
@@ -579,7 +586,7 @@ class Sighting(object):
     def confidence(self):
         """
         **[Required]** Gets the confidence of this Sighting.
-        Confidence of the sighting
+        Level of confidence that the sighting is not a false positive
 
         Allowed values for this property are: "CRITICAL", "HIGH", "MEDIUM", "LOW", "MINOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -594,7 +601,7 @@ class Sighting(object):
     def confidence(self, confidence):
         """
         Sets the confidence of this Sighting.
-        Confidence of the sighting
+        Level of confidence that the sighting is not a false positive
 
 
         :param confidence: The confidence of this Sighting.
@@ -657,7 +664,7 @@ class Sighting(object):
     def regions(self):
         """
         **[Required]** Gets the regions of this Sighting.
-        regions involved in the sighting
+        List of regions involved in the sighting
 
 
         :return: The regions of this Sighting.
@@ -669,7 +676,7 @@ class Sighting(object):
     def regions(self, regions):
         """
         Sets the regions of this Sighting.
-        regions involved in the sighting
+        List of regions involved in the sighting
 
 
         :param regions: The regions of this Sighting.
@@ -681,7 +688,7 @@ class Sighting(object):
     def additional_details(self):
         """
         Gets the additional_details of this Sighting.
-        The additional details of the Sighting
+        The additional details for the sighting
 
 
         :return: The additional_details of this Sighting.
@@ -693,13 +700,37 @@ class Sighting(object):
     def additional_details(self, additional_details):
         """
         Sets the additional_details of this Sighting.
-        The additional details of the Sighting
+        The additional details for the sighting
 
 
         :param additional_details: The additional_details of this Sighting.
         :type: dict(str, str)
         """
         self._additional_details = additional_details
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this Sighting.
+        Locks associated with this resource.
+
+
+        :return: The locks of this Sighting.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this Sighting.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this Sighting.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

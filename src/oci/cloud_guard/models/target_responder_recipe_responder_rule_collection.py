@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TargetResponderRecipeResponderRuleCollection(object):
     """
-    Summary of the ResponderRule within Target.
+    Collection of summary information for target responder recipe responder rules.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class TargetResponderRecipeResponderRuleCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this TargetResponderRecipeResponderRuleCollection.
-        List of TargetResponderRecipeResponderRuleSummary
+        List of TargetResponderRecipeResponderRuleSummary resources
 
 
         :return: The items of this TargetResponderRecipeResponderRuleCollection.
@@ -51,7 +51,7 @@ class TargetResponderRecipeResponderRuleCollection(object):
     def items(self, items):
         """
         Sets the items of this TargetResponderRecipeResponderRuleCollection.
-        List of TargetResponderRecipeResponderRuleSummary
+        List of TargetResponderRecipeResponderRuleSummary resources
 
 
         :param items: The items of this TargetResponderRecipeResponderRuleCollection.

@@ -46,7 +46,7 @@ class WorkRequestLogEntry(object):
     def message(self):
         """
         **[Required]** Gets the message of this WorkRequestLogEntry.
-        Human-readable log message.
+        A human-readable log message
 
 
         :return: The message of this WorkRequestLogEntry.
@@ -58,7 +58,7 @@ class WorkRequestLogEntry(object):
     def message(self, message):
         """
         Sets the message of this WorkRequestLogEntry.
-        Human-readable log message.
+        A human-readable log message
 
 
         :param message: The message of this WorkRequestLogEntry.
@@ -70,7 +70,7 @@ class WorkRequestLogEntry(object):
     def timestamp(self):
         """
         **[Required]** Gets the timestamp of this WorkRequestLogEntry.
-        The time the log message was written.
+        The time the log message was written
 
 
         :return: The timestamp of this WorkRequestLogEntry.
@@ -82,7 +82,7 @@ class WorkRequestLogEntry(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this WorkRequestLogEntry.
-        The time the log message was written.
+        The time the log message was written
 
 
         :param timestamp: The timestamp of this WorkRequestLogEntry.

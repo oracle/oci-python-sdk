@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ProblemHistorySummary(object):
     """
-    Problem History Definition.
+    Problem history definition.
     """
 
     #: A constant which can be used with the actor_type property of a ProblemHistorySummary.
@@ -122,6 +122,10 @@ class ProblemHistorySummary(object):
             The value to assign to the comment property of this ProblemHistorySummary.
         :type comment: str
 
+        :param locks:
+            The value to assign to the locks property of this ProblemHistorySummary.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -133,7 +137,8 @@ class ProblemHistorySummary(object):
             'event_status': 'str',
             'time_created': 'datetime',
             'delta': 'str',
-            'comment': 'str'
+            'comment': 'str',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -146,7 +151,8 @@ class ProblemHistorySummary(object):
             'event_status': 'eventStatus',
             'time_created': 'timeCreated',
             'delta': 'delta',
-            'comment': 'comment'
+            'comment': 'comment',
+            'locks': 'locks'
         }
 
         self._id = None
@@ -159,6 +165,7 @@ class ProblemHistorySummary(object):
         self._time_created = None
         self._delta = None
         self._comment = None
+        self._locks = None
 
     @property
     def id(self):
@@ -188,7 +195,7 @@ class ProblemHistorySummary(object):
     def problem_id(self):
         """
         **[Required]** Gets the problem_id of this ProblemHistorySummary.
-        problemId for which history is associated to.
+        Problem ID with which history is associated
 
 
         :return: The problem_id of this ProblemHistorySummary.
@@ -200,7 +207,7 @@ class ProblemHistorySummary(object):
     def problem_id(self, problem_id):
         """
         Sets the problem_id of this ProblemHistorySummary.
-        problemId for which history is associated to.
+        Problem ID with which history is associated
 
 
         :param problem_id: The problem_id of this ProblemHistorySummary.
@@ -212,7 +219,7 @@ class ProblemHistorySummary(object):
     def actor_type(self):
         """
         **[Required]** Gets the actor_type of this ProblemHistorySummary.
-        Actor type who performed the operation
+        Type of actor who performed the operation
 
         Allowed values for this property are: "CLOUD_GUARD_SERVICE", "CORRELATION", "RESPONDER", "USER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -227,7 +234,7 @@ class ProblemHistorySummary(object):
     def actor_type(self, actor_type):
         """
         Sets the actor_type of this ProblemHistorySummary.
-        Actor type who performed the operation
+        Type of actor who performed the operation
 
 
         :param actor_type: The actor_type of this ProblemHistorySummary.
@@ -242,7 +249,7 @@ class ProblemHistorySummary(object):
     def actor_name(self):
         """
         **[Required]** Gets the actor_name of this ProblemHistorySummary.
-        Resource Name who performed activity
+        Resource name who performed the activity
 
 
         :return: The actor_name of this ProblemHistorySummary.
@@ -254,7 +261,7 @@ class ProblemHistorySummary(object):
     def actor_name(self, actor_name):
         """
         Sets the actor_name of this ProblemHistorySummary.
-        Resource Name who performed activity
+        Resource name who performed the activity
 
 
         :param actor_name: The actor_name of this ProblemHistorySummary.
@@ -290,7 +297,7 @@ class ProblemHistorySummary(object):
     def lifecycle_detail(self):
         """
         **[Required]** Gets the lifecycle_detail of this ProblemHistorySummary.
-        Problem Lifecycle Detail Status
+        Additional details on the substate of the lifecycle state
 
         Allowed values for this property are: "OPEN", "RESOLVED", "DISMISSED", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -305,7 +312,7 @@ class ProblemHistorySummary(object):
     def lifecycle_detail(self, lifecycle_detail):
         """
         Sets the lifecycle_detail of this ProblemHistorySummary.
-        Problem Lifecycle Detail Status
+        Additional details on the substate of the lifecycle state
 
 
         :param lifecycle_detail: The lifecycle_detail of this ProblemHistorySummary.
@@ -350,7 +357,7 @@ class ProblemHistorySummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this ProblemHistorySummary.
-        Type of the Entity
+        Date and time the problem was created
 
 
         :return: The time_created of this ProblemHistorySummary.
@@ -362,7 +369,7 @@ class ProblemHistorySummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ProblemHistorySummary.
-        Type of the Entity
+        Date and time the problem was created
 
 
         :param time_created: The time_created of this ProblemHistorySummary.
@@ -374,7 +381,7 @@ class ProblemHistorySummary(object):
     def delta(self):
         """
         **[Required]** Gets the delta of this ProblemHistorySummary.
-        Impacted Resource Names in a comma-separated string.
+        Impacted resource names in a comma-separated string
 
 
         :return: The delta of this ProblemHistorySummary.
@@ -386,7 +393,7 @@ class ProblemHistorySummary(object):
     def delta(self, delta):
         """
         Sets the delta of this ProblemHistorySummary.
-        Impacted Resource Names in a comma-separated string.
+        Impacted resource names in a comma-separated string
 
 
         :param delta: The delta of this ProblemHistorySummary.
@@ -398,7 +405,7 @@ class ProblemHistorySummary(object):
     def comment(self):
         """
         Gets the comment of this ProblemHistorySummary.
-        User Defined Comments
+        User-defined comments
 
 
         :return: The comment of this ProblemHistorySummary.
@@ -410,13 +417,37 @@ class ProblemHistorySummary(object):
     def comment(self, comment):
         """
         Sets the comment of this ProblemHistorySummary.
-        User Defined Comments
+        User-defined comments
 
 
         :param comment: The comment of this ProblemHistorySummary.
         :type: str
         """
         self._comment = comment
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this ProblemHistorySummary.
+        Locks associated with this resource.
+
+
+        :return: The locks of this ProblemHistorySummary.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this ProblemHistorySummary.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this ProblemHistorySummary.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

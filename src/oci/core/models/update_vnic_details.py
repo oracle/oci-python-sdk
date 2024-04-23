@@ -174,7 +174,7 @@ class UpdateVnicDetails(object):
         Must be unique across all VNICs in the subnet and comply with
         `RFC 952`__ and
         `RFC 1123`__.
-        The value appears in the :class:`Vnic` object and also the
+        The value appears in the `:class:`Vnic`` object and also the
         :class:`PrivateIp` object returned by
         :func:`list_private_ips` and
         :func:`get_private_ip`.
@@ -202,7 +202,7 @@ class UpdateVnicDetails(object):
         Must be unique across all VNICs in the subnet and comply with
         `RFC 952`__ and
         `RFC 1123`__.
-        The value appears in the :class:`Vnic` object and also the
+        The value appears in the `:class:`Vnic`` object and also the
         :class:`PrivateIp` object returned by
         :func:`list_private_ips` and
         :func:`get_private_ip`.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RemoveCompartmentDetails(object):
     """
-    An existing compartment to remove from a security zone
+    Detailed information on a compartment to be removed from a security zone.
     """
 
     def __init__(self, **kwargs):

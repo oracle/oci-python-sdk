@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagementStationCollection(object):
     """
-    Results of a managementstation search. Contains boh ManagementStationSummary items and other information, such as metadata.
+    A set of management stations returned for the :func:`list_management_stations` operation.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class ManagementStationCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ManagementStationCollection.
-        List of managementStations.
+        List of management stations.
 
 
         :return: The items of this ManagementStationCollection.
@@ -51,7 +51,7 @@ class ManagementStationCollection(object):
     def items(self, items):
         """
         Sets the items of this ManagementStationCollection.
-        List of managementStations.
+        List of management stations.
 
 
         :param items: The items of this ManagementStationCollection.

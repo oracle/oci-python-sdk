@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateScheduledJobDetails(object):
     """
-    Information for creating a scheduled job.
+    Provides the information used to create a scheduled job.
     """
 
     #: A constant which can be used with the schedule_type property of a CreateScheduledJobDetails.
@@ -44,6 +44,10 @@ class CreateScheduledJobDetails(object):
             The value to assign to the schedule_type property of this CreateScheduledJobDetails.
             Allowed values for this property are: "ONETIME", "RECURRING"
         :type schedule_type: str
+
+        :param locations:
+            The value to assign to the locations property of this CreateScheduledJobDetails.
+        :type locations: list[oci.os_management_hub.models.ManagedInstanceLocation]
 
         :param time_next_execution:
             The value to assign to the time_next_execution property of this CreateScheduledJobDetails.
@@ -85,12 +89,21 @@ class CreateScheduledJobDetails(object):
             The value to assign to the defined_tags property of this CreateScheduledJobDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param retry_intervals:
+            The value to assign to the retry_intervals property of this CreateScheduledJobDetails.
+        :type retry_intervals: list[int]
+
+        :param is_managed_by_autonomous_linux:
+            The value to assign to the is_managed_by_autonomous_linux property of this CreateScheduledJobDetails.
+        :type is_managed_by_autonomous_linux: bool
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
             'display_name': 'str',
             'description': 'str',
             'schedule_type': 'str',
+            'locations': 'list[ManagedInstanceLocation]',
             'time_next_execution': 'datetime',
             'recurring_rule': 'str',
             'managed_instance_ids': 'list[str]',
@@ -100,7 +113,9 @@ class CreateScheduledJobDetails(object):
             'is_subcompartment_included': 'bool',
             'operations': 'list[ScheduledJobOperation]',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'retry_intervals': 'list[int]',
+            'is_managed_by_autonomous_linux': 'bool'
         }
 
         self.attribute_map = {
@@ -108,6 +123,7 @@ class CreateScheduledJobDetails(object):
             'display_name': 'displayName',
             'description': 'description',
             'schedule_type': 'scheduleType',
+            'locations': 'locations',
             'time_next_execution': 'timeNextExecution',
             'recurring_rule': 'recurringRule',
             'managed_instance_ids': 'managedInstanceIds',
@@ -117,13 +133,16 @@ class CreateScheduledJobDetails(object):
             'is_subcompartment_included': 'isSubcompartmentIncluded',
             'operations': 'operations',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'retry_intervals': 'retryIntervals',
+            'is_managed_by_autonomous_linux': 'isManagedByAutonomousLinux'
         }
 
         self._compartment_id = None
         self._display_name = None
         self._description = None
         self._schedule_type = None
+        self._locations = None
         self._time_next_execution = None
         self._recurring_rule = None
         self._managed_instance_ids = None
@@ -134,12 +153,16 @@ class CreateScheduledJobDetails(object):
         self._operations = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._retry_intervals = None
+        self._is_managed_by_autonomous_linux = None
 
     @property
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateScheduledJobDetails.
-        The OCID of the compartment containing the scheduled job.
+        The `OCID`__ of the compartment that contains the scheduled job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateScheduledJobDetails.
@@ -151,7 +174,9 @@ class CreateScheduledJobDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateScheduledJobDetails.
-        The OCID of the compartment containing the scheduled job.
+        The `OCID`__ of the compartment that contains the scheduled job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateScheduledJobDetails.
@@ -163,7 +188,7 @@ class CreateScheduledJobDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateScheduledJobDetails.
-        Scheduled job name.
+        User-friendly name for the scheduled job. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 
 
         :return: The display_name of this CreateScheduledJobDetails.
@@ -175,7 +200,7 @@ class CreateScheduledJobDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateScheduledJobDetails.
-        Scheduled job name.
+        User-friendly name for the scheduled job. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateScheduledJobDetails.
@@ -187,7 +212,7 @@ class CreateScheduledJobDetails(object):
     def description(self):
         """
         Gets the description of this CreateScheduledJobDetails.
-        Details describing the scheduled job.
+        User-specified description of the scheduled job. Avoid entering confidential information.
 
 
         :return: The description of this CreateScheduledJobDetails.
@@ -199,7 +224,7 @@ class CreateScheduledJobDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateScheduledJobDetails.
-        Details describing the scheduled job.
+        User-specified description of the scheduled job. Avoid entering confidential information.
 
 
         :param description: The description of this CreateScheduledJobDetails.
@@ -211,7 +236,7 @@ class CreateScheduledJobDetails(object):
     def schedule_type(self):
         """
         **[Required]** Gets the schedule_type of this CreateScheduledJobDetails.
-        The type of scheduling this scheduled job follows.
+        The type of scheduling frequency for the scheduled job.
 
         Allowed values for this property are: "ONETIME", "RECURRING"
 
@@ -225,7 +250,7 @@ class CreateScheduledJobDetails(object):
     def schedule_type(self, schedule_type):
         """
         Sets the schedule_type of this CreateScheduledJobDetails.
-        The type of scheduling this scheduled job follows.
+        The type of scheduling frequency for the scheduled job.
 
 
         :param schedule_type: The schedule_type of this CreateScheduledJobDetails.
@@ -239,10 +264,36 @@ class CreateScheduledJobDetails(object):
         self._schedule_type = schedule_type
 
     @property
+    def locations(self):
+        """
+        Gets the locations of this CreateScheduledJobDetails.
+        The list of locations this scheduled job should operate on for a job targeting on compartments. (Empty list means apply to all locations). This can only be set when managedCompartmentIds is not empty.
+
+
+        :return: The locations of this CreateScheduledJobDetails.
+        :rtype: list[oci.os_management_hub.models.ManagedInstanceLocation]
+        """
+        return self._locations
+
+    @locations.setter
+    def locations(self, locations):
+        """
+        Sets the locations of this CreateScheduledJobDetails.
+        The list of locations this scheduled job should operate on for a job targeting on compartments. (Empty list means apply to all locations). This can only be set when managedCompartmentIds is not empty.
+
+
+        :param locations: The locations of this CreateScheduledJobDetails.
+        :type: list[oci.os_management_hub.models.ManagedInstanceLocation]
+        """
+        self._locations = locations
+
+    @property
     def time_next_execution(self):
         """
         **[Required]** Gets the time_next_execution of this CreateScheduledJobDetails.
-        The desired time for the next execution of this scheduled job.
+        The desired time of the next execution of this scheduled job (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_next_execution of this CreateScheduledJobDetails.
@@ -254,7 +305,9 @@ class CreateScheduledJobDetails(object):
     def time_next_execution(self, time_next_execution):
         """
         Sets the time_next_execution of this CreateScheduledJobDetails.
-        The desired time for the next execution of this scheduled job.
+        The desired time of the next execution of this scheduled job (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_next_execution: The time_next_execution of this CreateScheduledJobDetails.
@@ -266,7 +319,7 @@ class CreateScheduledJobDetails(object):
     def recurring_rule(self):
         """
         Gets the recurring_rule of this CreateScheduledJobDetails.
-        The recurring rule for a recurring scheduled job.
+        The frequency schedule for a recurring scheduled job.
 
 
         :return: The recurring_rule of this CreateScheduledJobDetails.
@@ -278,7 +331,7 @@ class CreateScheduledJobDetails(object):
     def recurring_rule(self, recurring_rule):
         """
         Sets the recurring_rule of this CreateScheduledJobDetails.
-        The recurring rule for a recurring scheduled job.
+        The frequency schedule for a recurring scheduled job.
 
 
         :param recurring_rule: The recurring_rule of this CreateScheduledJobDetails.
@@ -290,8 +343,11 @@ class CreateScheduledJobDetails(object):
     def managed_instance_ids(self):
         """
         Gets the managed_instance_ids of this CreateScheduledJobDetails.
-        The list of managed instance OCIDs this scheduled job operates on. Either this or
-        managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds must be supplied.
+        The managed instance `OCIDs`__ that this scheduled job operates on.
+        A scheduled job can only operate on one type of target, therefore you must supply either this or
+        managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_instance_ids of this CreateScheduledJobDetails.
@@ -303,8 +359,11 @@ class CreateScheduledJobDetails(object):
     def managed_instance_ids(self, managed_instance_ids):
         """
         Sets the managed_instance_ids of this CreateScheduledJobDetails.
-        The list of managed instance OCIDs this scheduled job operates on. Either this or
-        managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds must be supplied.
+        The managed instance `OCIDs`__ that this scheduled job operates on.
+        A scheduled job can only operate on one type of target, therefore you must supply either this or
+        managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_instance_ids: The managed_instance_ids of this CreateScheduledJobDetails.
@@ -316,8 +375,11 @@ class CreateScheduledJobDetails(object):
     def managed_instance_group_ids(self):
         """
         Gets the managed_instance_group_ids of this CreateScheduledJobDetails.
-        The list of managed instance group OCIDs this scheduled job operates on. Either this or
-        managedInstanceIds, or managedCompartmentIds, or lifecycleStageIds must be supplied.
+        The managed instance group `OCIDs`__ that this scheduled job operates on.
+        A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,
+        or managedCompartmentIds, or lifecycleStageIds.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_instance_group_ids of this CreateScheduledJobDetails.
@@ -329,8 +391,11 @@ class CreateScheduledJobDetails(object):
     def managed_instance_group_ids(self, managed_instance_group_ids):
         """
         Sets the managed_instance_group_ids of this CreateScheduledJobDetails.
-        The list of managed instance group OCIDs this scheduled job operates on. Either this or
-        managedInstanceIds, or managedCompartmentIds, or lifecycleStageIds must be supplied.
+        The managed instance group `OCIDs`__ that this scheduled job operates on.
+        A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,
+        or managedCompartmentIds, or lifecycleStageIds.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_instance_group_ids: The managed_instance_group_ids of this CreateScheduledJobDetails.
@@ -342,8 +407,12 @@ class CreateScheduledJobDetails(object):
     def managed_compartment_ids(self):
         """
         Gets the managed_compartment_ids of this CreateScheduledJobDetails.
-        The list of target compartment OCIDs if this scheduled job operates on a compartment level.
-        Either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds must be supplied.
+        The compartment `OCIDs`__ that this scheduled job operates on.
+        To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set
+        isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must
+        supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_compartment_ids of this CreateScheduledJobDetails.
@@ -355,8 +424,12 @@ class CreateScheduledJobDetails(object):
     def managed_compartment_ids(self, managed_compartment_ids):
         """
         Sets the managed_compartment_ids of this CreateScheduledJobDetails.
-        The list of target compartment OCIDs if this scheduled job operates on a compartment level.
-        Either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds must be supplied.
+        The compartment `OCIDs`__ that this scheduled job operates on.
+        To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set
+        isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must
+        supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_compartment_ids: The managed_compartment_ids of this CreateScheduledJobDetails.
@@ -368,8 +441,11 @@ class CreateScheduledJobDetails(object):
     def lifecycle_stage_ids(self):
         """
         Gets the lifecycle_stage_ids of this CreateScheduledJobDetails.
-        The list of lifecycle stage OCIDs this scheduled job operates on. Either this or
-        managedInstanceIds, or managedInstanceGroupIds, or managedCompartmentIds must be supplied.
+        The lifecycle stage `OCIDs`__ that this scheduled job operates on.
+        A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,
+        or managedInstanceGroupIds, or managedCompartmentIds.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The lifecycle_stage_ids of this CreateScheduledJobDetails.
@@ -381,8 +457,11 @@ class CreateScheduledJobDetails(object):
     def lifecycle_stage_ids(self, lifecycle_stage_ids):
         """
         Sets the lifecycle_stage_ids of this CreateScheduledJobDetails.
-        The list of lifecycle stage OCIDs this scheduled job operates on. Either this or
-        managedInstanceIds, or managedInstanceGroupIds, or managedCompartmentIds must be supplied.
+        The lifecycle stage `OCIDs`__ that this scheduled job operates on.
+        A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,
+        or managedInstanceGroupIds, or managedCompartmentIds.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param lifecycle_stage_ids: The lifecycle_stage_ids of this CreateScheduledJobDetails.
@@ -394,7 +473,10 @@ class CreateScheduledJobDetails(object):
     def is_subcompartment_included(self):
         """
         Gets the is_subcompartment_included of this CreateScheduledJobDetails.
-        Whether to create jobs for all compartments in the tenancy when managedCompartmentIds specifies the tenancy OCID.
+        Indicates whether to apply the scheduled job to all compartments in the tenancy when managedCompartmentIds specifies
+        the tenancy `OCID`__ (root compartment).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The is_subcompartment_included of this CreateScheduledJobDetails.
@@ -406,7 +488,10 @@ class CreateScheduledJobDetails(object):
     def is_subcompartment_included(self, is_subcompartment_included):
         """
         Sets the is_subcompartment_included of this CreateScheduledJobDetails.
-        Whether to create jobs for all compartments in the tenancy when managedCompartmentIds specifies the tenancy OCID.
+        Indicates whether to apply the scheduled job to all compartments in the tenancy when managedCompartmentIds specifies
+        the tenancy `OCID`__ (root compartment).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param is_subcompartment_included: The is_subcompartment_included of this CreateScheduledJobDetails.
@@ -418,7 +503,16 @@ class CreateScheduledJobDetails(object):
     def operations(self):
         """
         **[Required]** Gets the operations of this CreateScheduledJobDetails.
-        The list of operations this scheduled job needs to perform (can only support one operation if the operationType is not UPDATE_PACKAGES/UPDATE_ALL/UPDATE_SECURITY/UPDATE_BUGFIX/UPDATE_ENHANCEMENT/UPDATE_OTHER/UPDATE_KSPLICE_USERSPACE/UPDATE_KSPLICE_KERNEL).
+        The list of operations this scheduled job needs to perform.
+        A scheduled job supports only one operation type, unless it is one of the following:
+        * UPDATE_PACKAGES
+        * UPDATE_ALL
+        * UPDATE_SECURITY
+        * UPDATE_BUGFIX
+        * UPDATE_ENHANCEMENT
+        * UPDATE_OTHER
+        * UPDATE_KSPLICE_USERSPACE
+        * UPDATE_KSPLICE_KERNEL
 
 
         :return: The operations of this CreateScheduledJobDetails.
@@ -430,7 +524,16 @@ class CreateScheduledJobDetails(object):
     def operations(self, operations):
         """
         Sets the operations of this CreateScheduledJobDetails.
-        The list of operations this scheduled job needs to perform (can only support one operation if the operationType is not UPDATE_PACKAGES/UPDATE_ALL/UPDATE_SECURITY/UPDATE_BUGFIX/UPDATE_ENHANCEMENT/UPDATE_OTHER/UPDATE_KSPLICE_USERSPACE/UPDATE_KSPLICE_KERNEL).
+        The list of operations this scheduled job needs to perform.
+        A scheduled job supports only one operation type, unless it is one of the following:
+        * UPDATE_PACKAGES
+        * UPDATE_ALL
+        * UPDATE_SECURITY
+        * UPDATE_BUGFIX
+        * UPDATE_ENHANCEMENT
+        * UPDATE_OTHER
+        * UPDATE_KSPLICE_USERSPACE
+        * UPDATE_KSPLICE_KERNEL
 
 
         :param operations: The operations of this CreateScheduledJobDetails.
@@ -501,6 +604,60 @@ class CreateScheduledJobDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def retry_intervals(self):
+        """
+        Gets the retry_intervals of this CreateScheduledJobDetails.
+        The amount of time in minutes to wait until retrying the scheduled job. If set, the service will automatically
+        retry a failed scheduled job after the interval. For example, you could set the interval to [2,5,10]. If the
+        initial execution of the job fails, the service waits 2 minutes and then retries. If that fails, the service
+        waits 5 minutes and then retries. If that fails, the service waits 10 minutes and then retries.
+
+
+        :return: The retry_intervals of this CreateScheduledJobDetails.
+        :rtype: list[int]
+        """
+        return self._retry_intervals
+
+    @retry_intervals.setter
+    def retry_intervals(self, retry_intervals):
+        """
+        Sets the retry_intervals of this CreateScheduledJobDetails.
+        The amount of time in minutes to wait until retrying the scheduled job. If set, the service will automatically
+        retry a failed scheduled job after the interval. For example, you could set the interval to [2,5,10]. If the
+        initial execution of the job fails, the service waits 2 minutes and then retries. If that fails, the service
+        waits 5 minutes and then retries. If that fails, the service waits 10 minutes and then retries.
+
+
+        :param retry_intervals: The retry_intervals of this CreateScheduledJobDetails.
+        :type: list[int]
+        """
+        self._retry_intervals = retry_intervals
+
+    @property
+    def is_managed_by_autonomous_linux(self):
+        """
+        Gets the is_managed_by_autonomous_linux of this CreateScheduledJobDetails.
+        Indicates whether this scheduled job is managed by the Autonomous Linux service.
+
+
+        :return: The is_managed_by_autonomous_linux of this CreateScheduledJobDetails.
+        :rtype: bool
+        """
+        return self._is_managed_by_autonomous_linux
+
+    @is_managed_by_autonomous_linux.setter
+    def is_managed_by_autonomous_linux(self, is_managed_by_autonomous_linux):
+        """
+        Sets the is_managed_by_autonomous_linux of this CreateScheduledJobDetails.
+        Indicates whether this scheduled job is managed by the Autonomous Linux service.
+
+
+        :param is_managed_by_autonomous_linux: The is_managed_by_autonomous_linux of this CreateScheduledJobDetails.
+        :type: bool
+        """
+        self._is_managed_by_autonomous_linux = is_managed_by_autonomous_linux
 
     def __repr__(self):
         return formatted_flat_dict(self)

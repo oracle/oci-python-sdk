@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VersionedCustomSoftwareSource(SoftwareSource):
     """
-    An immutable custom software source that is assigned a version and contains a custom collection of packages.
+    The object that defines a versioned custom software source.
     """
 
     def __init__(self, **kwargs):
@@ -48,8 +48,13 @@ class VersionedCustomSoftwareSource(SoftwareSource):
 
         :param availability:
             The value to assign to the availability property of this VersionedCustomSoftwareSource.
-            Allowed values for this property are: "AVAILABLE", "SELECTED", "RESTRICTED"
+            Allowed values for this property are: "AVAILABLE", "SELECTED", "RESTRICTED", "UNAVAILABLE"
         :type availability: str
+
+        :param availability_at_oci:
+            The value to assign to the availability_at_oci property of this VersionedCustomSoftwareSource.
+            Allowed values for this property are: "AVAILABLE", "SELECTED", "RESTRICTED", "UNAVAILABLE"
+        :type availability_at_oci: str
 
         :param repo_id:
             The value to assign to the repo_id property of this VersionedCustomSoftwareSource.
@@ -57,7 +62,7 @@ class VersionedCustomSoftwareSource(SoftwareSource):
 
         :param os_family:
             The value to assign to the os_family property of this VersionedCustomSoftwareSource.
-            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7"
+            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"
         :type os_family: str
 
         :param arch_type:
@@ -67,7 +72,7 @@ class VersionedCustomSoftwareSource(SoftwareSource):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this VersionedCustomSoftwareSource.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
         :type lifecycle_state: str
 
         :param package_count:
@@ -95,6 +100,10 @@ class VersionedCustomSoftwareSource(SoftwareSource):
             The value to assign to the gpg_key_fingerprint property of this VersionedCustomSoftwareSource.
         :type gpg_key_fingerprint: str
 
+        :param size:
+            The value to assign to the size property of this VersionedCustomSoftwareSource.
+        :type size: float
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this VersionedCustomSoftwareSource.
         :type freeform_tags: dict(str, str)
@@ -119,6 +128,18 @@ class VersionedCustomSoftwareSource(SoftwareSource):
             The value to assign to the software_source_version property of this VersionedCustomSoftwareSource.
         :type software_source_version: str
 
+        :param is_auto_resolve_dependencies:
+            The value to assign to the is_auto_resolve_dependencies property of this VersionedCustomSoftwareSource.
+        :type is_auto_resolve_dependencies: bool
+
+        :param is_created_from_package_list:
+            The value to assign to the is_created_from_package_list property of this VersionedCustomSoftwareSource.
+        :type is_created_from_package_list: bool
+
+        :param packages:
+            The value to assign to the packages property of this VersionedCustomSoftwareSource.
+        :type packages: list[str]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -128,6 +149,7 @@ class VersionedCustomSoftwareSource(SoftwareSource):
             'description': 'str',
             'software_source_type': 'str',
             'availability': 'str',
+            'availability_at_oci': 'str',
             'repo_id': 'str',
             'os_family': 'str',
             'arch_type': 'str',
@@ -138,12 +160,16 @@ class VersionedCustomSoftwareSource(SoftwareSource):
             'gpg_key_url': 'str',
             'gpg_key_id': 'str',
             'gpg_key_fingerprint': 'str',
+            'size': 'float',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
             'vendor_software_sources': 'list[Id]',
             'custom_software_source_filter': 'CustomSoftwareSourceFilter',
-            'software_source_version': 'str'
+            'software_source_version': 'str',
+            'is_auto_resolve_dependencies': 'bool',
+            'is_created_from_package_list': 'bool',
+            'packages': 'list[str]'
         }
 
         self.attribute_map = {
@@ -154,6 +180,7 @@ class VersionedCustomSoftwareSource(SoftwareSource):
             'description': 'description',
             'software_source_type': 'softwareSourceType',
             'availability': 'availability',
+            'availability_at_oci': 'availabilityAtOci',
             'repo_id': 'repoId',
             'os_family': 'osFamily',
             'arch_type': 'archType',
@@ -164,12 +191,16 @@ class VersionedCustomSoftwareSource(SoftwareSource):
             'gpg_key_url': 'gpgKeyUrl',
             'gpg_key_id': 'gpgKeyId',
             'gpg_key_fingerprint': 'gpgKeyFingerprint',
+            'size': 'size',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
             'vendor_software_sources': 'vendorSoftwareSources',
             'custom_software_source_filter': 'customSoftwareSourceFilter',
-            'software_source_version': 'softwareSourceVersion'
+            'software_source_version': 'softwareSourceVersion',
+            'is_auto_resolve_dependencies': 'isAutoResolveDependencies',
+            'is_created_from_package_list': 'isCreatedFromPackageList',
+            'packages': 'packages'
         }
 
         self._id = None
@@ -179,6 +210,7 @@ class VersionedCustomSoftwareSource(SoftwareSource):
         self._description = None
         self._software_source_type = None
         self._availability = None
+        self._availability_at_oci = None
         self._repo_id = None
         self._os_family = None
         self._arch_type = None
@@ -189,19 +221,23 @@ class VersionedCustomSoftwareSource(SoftwareSource):
         self._gpg_key_url = None
         self._gpg_key_id = None
         self._gpg_key_fingerprint = None
+        self._size = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
         self._vendor_software_sources = None
         self._custom_software_source_filter = None
         self._software_source_version = None
+        self._is_auto_resolve_dependencies = None
+        self._is_created_from_package_list = None
+        self._packages = None
         self._software_source_type = 'VERSIONED'
 
     @property
     def vendor_software_sources(self):
         """
         **[Required]** Gets the vendor_software_sources of this VersionedCustomSoftwareSource.
-        List of vendor software sources.
+        List of vendor software sources that are used for the basis of the versioned custom software source.
 
 
         :return: The vendor_software_sources of this VersionedCustomSoftwareSource.
@@ -213,7 +249,7 @@ class VersionedCustomSoftwareSource(SoftwareSource):
     def vendor_software_sources(self, vendor_software_sources):
         """
         Sets the vendor_software_sources of this VersionedCustomSoftwareSource.
-        List of vendor software sources.
+        List of vendor software sources that are used for the basis of the versioned custom software source.
 
 
         :param vendor_software_sources: The vendor_software_sources of this VersionedCustomSoftwareSource.
@@ -264,6 +300,78 @@ class VersionedCustomSoftwareSource(SoftwareSource):
         :type: str
         """
         self._software_source_version = software_source_version
+
+    @property
+    def is_auto_resolve_dependencies(self):
+        """
+        Gets the is_auto_resolve_dependencies of this VersionedCustomSoftwareSource.
+        Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+
+
+        :return: The is_auto_resolve_dependencies of this VersionedCustomSoftwareSource.
+        :rtype: bool
+        """
+        return self._is_auto_resolve_dependencies
+
+    @is_auto_resolve_dependencies.setter
+    def is_auto_resolve_dependencies(self, is_auto_resolve_dependencies):
+        """
+        Sets the is_auto_resolve_dependencies of this VersionedCustomSoftwareSource.
+        Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+
+
+        :param is_auto_resolve_dependencies: The is_auto_resolve_dependencies of this VersionedCustomSoftwareSource.
+        :type: bool
+        """
+        self._is_auto_resolve_dependencies = is_auto_resolve_dependencies
+
+    @property
+    def is_created_from_package_list(self):
+        """
+        Gets the is_created_from_package_list of this VersionedCustomSoftwareSource.
+        Indicates whether the service should create the software source from a list of packages provided by the user.
+
+
+        :return: The is_created_from_package_list of this VersionedCustomSoftwareSource.
+        :rtype: bool
+        """
+        return self._is_created_from_package_list
+
+    @is_created_from_package_list.setter
+    def is_created_from_package_list(self, is_created_from_package_list):
+        """
+        Sets the is_created_from_package_list of this VersionedCustomSoftwareSource.
+        Indicates whether the service should create the software source from a list of packages provided by the user.
+
+
+        :param is_created_from_package_list: The is_created_from_package_list of this VersionedCustomSoftwareSource.
+        :type: bool
+        """
+        self._is_created_from_package_list = is_created_from_package_list
+
+    @property
+    def packages(self):
+        """
+        Gets the packages of this VersionedCustomSoftwareSource.
+        The packages in the software source.
+
+
+        :return: The packages of this VersionedCustomSoftwareSource.
+        :rtype: list[str]
+        """
+        return self._packages
+
+    @packages.setter
+    def packages(self, packages):
+        """
+        Sets the packages of this VersionedCustomSoftwareSource.
+        The packages in the software source.
+
+
+        :param packages: The packages of this VersionedCustomSoftwareSource.
+        :type: list[str]
+        """
+        self._packages = packages
 
     def __repr__(self):
         return formatted_flat_dict(self)

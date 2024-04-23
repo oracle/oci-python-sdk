@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LifecycleStageCollection(object):
     """
-    Results of a lifecycle stage search. Contains both lifecycle stage summary items and other data.
+    A set of lifecycle stages returned for the :func:`list_lifecycle_stages` operation.
     """
 
     def __init__(self, **kwargs):

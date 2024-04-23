@@ -45,7 +45,7 @@ class RemovePackagesFromManagedInstanceGroupDetails(object):
     @property
     def package_names(self):
         """
-        Gets the package_names of this RemovePackagesFromManagedInstanceGroupDetails.
+        **[Required]** Gets the package_names of this RemovePackagesFromManagedInstanceGroupDetails.
         The list of package names.
 
 

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TechniqueSummary(object):
     """
-    Technique summary.
+    Summary information for a technique.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class TechniqueSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this TechniqueSummary.
-        Unique identifier for the technique.
+        Unique identifier for the technique
 
 
         :return: The id of this TechniqueSummary.
@@ -58,7 +58,7 @@ class TechniqueSummary(object):
     def id(self, id):
         """
         Sets the id of this TechniqueSummary.
-        Unique identifier for the technique.
+        Unique identifier for the technique
 
 
         :param id: The id of this TechniqueSummary.

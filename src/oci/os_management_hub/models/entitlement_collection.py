@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class EntitlementCollection(object):
     """
-    Results of a Entitlement search. Contains boh EntitlementSummary items and other information, such as metadata.
+    The set of entitlements returned for the :func:`list_entitlements`.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class EntitlementCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this EntitlementCollection.
-        List of Entitlement.
+        List of entitlements.
 
 
         :return: The items of this EntitlementCollection.
@@ -51,7 +51,7 @@ class EntitlementCollection(object):
     def items(self, items):
         """
         Sets the items of this EntitlementCollection.
-        List of Entitlement.
+        List of entitlements.
 
 
         :param items: The items of this EntitlementCollection.

@@ -22,7 +22,8 @@ missing = Sentinel("Missing")
 
 class OnboardingClient(object):
     """
-    Use the OS Management Hub API to manage and monitor updates and patches for the operating system environments in your private data centers through a single management console. For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+    Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
+    For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -116,15 +117,137 @@ class OnboardingClient(object):
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
 
+    def change_profile_compartment(self, profile_id, change_profile_compartment_details, **kwargs):
+        """
+        Moves the profile to a different compartment.
+
+
+        :param str profile_id: (required)
+            The `OCID`__ of the registration profile.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.os_management_hub.models.ChangeProfileCompartmentDetails change_profile_compartment_details: (required)
+            The `OCID`__ of the compartment to move the profile to.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/change_profile_compartment.py.html>`__ to see an example of how to use change_profile_compartment API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['profileId']
+        resource_path = "/profiles/{profileId}/actions/changeCompartment"
+        method = "POST"
+        operation_name = "change_profile_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/ChangeProfileCompartment"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_retry_token",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"change_profile_compartment got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "profileId": profile_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_profile_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_profile_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def create_profile(self, create_profile_details, **kwargs):
         """
-        Creates a registration profile.
-        A profile is a supplementary file for the OS Management Hub agentry
-        that dictates the content for a managed instance at registration time.
+        Creates a registration profile. A profile defines the content applied to the instance when registering it with the service.
 
 
         :param oci.os_management_hub.models.CreateProfileDetails create_profile_details: (required)
-            Details for the new registration profile.
+            Provides the information used to create the registration profile.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -222,7 +345,9 @@ class OnboardingClient(object):
 
 
         :param str profile_id: (required)
-            The OCID of the registration profile.
+            The `OCID`__ of the registration profile.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -327,7 +452,9 @@ class OnboardingClient(object):
 
 
         :param str profile_id: (required)
-            The OCID of the registration profile.
+            The `OCID`__ of the registration profile.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -426,7 +553,7 @@ class OnboardingClient(object):
 
 
         :param str compartment_id: (optional)
-            The OCID of the compartment that contains the resources to list.
+            The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 
         :param list[str] display_name: (optional)
             A filter to return resources that match the given display names.
@@ -435,27 +562,38 @@ class OnboardingClient(object):
             A filter to return resources that may partially match the given display name.
 
         :param list[str] profile_type: (optional)
-            A filter to return registration profiles that match the given profileType.
+            A filter to return registration profiles that match the given profile type.
 
-            Allowed values are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION"
+            Allowed values are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE"
 
         :param str profile_id: (optional)
-            The OCID of the registration profile.
+            The `OCID`__ of the registration profile. A filter used to return the specified profile.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str os_family: (optional)
-            A filter to return only profiles that match the given osFamily.
+            A filter to return only resources that match the given operating system family.
 
-            Allowed values are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7"
+            Allowed values are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"
 
         :param str arch_type: (optional)
             A filter to return only profiles that match the given archType.
 
             Allowed values are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC"
 
-        :param str vendor_name: (optional)
-            A filter to return only profiles that match the given vendorName.
+        :param list[ProfileRegistrationType] registration_type: (optional)
+            A filter to return profiles that match the given instance type.
 
-            Allowed values are: "ORACLE"
+        :param bool is_default_profile: (optional)
+            A boolean variable that is used to list only the default profile resources.
+
+        :param bool is_service_provided_profile: (optional)
+            A filter to return only service-provided profiles.
+
+        :param str vendor_name: (optional)
+            A filter to return only resources that match the given vendor name.
+
+            Allowed values are: "ORACLE", "MICROSOFT"
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
@@ -474,7 +612,7 @@ class OnboardingClient(object):
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
-            A filter to return only registration profile whose lifecycleState matches the given lifecycleState.
+            A filter to return only registration profiles in the given state.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
 
@@ -529,6 +667,9 @@ class OnboardingClient(object):
             "profile_id",
             "os_family",
             "arch_type",
+            "registration_type",
+            "is_default_profile",
+            "is_service_provided_profile",
             "vendor_name",
             "limit",
             "page",
@@ -543,7 +684,7 @@ class OnboardingClient(object):
                 f"list_profiles got unknown kwargs: {extra_kwargs!r}")
 
         if 'profile_type' in kwargs:
-            profile_type_allowed_values = ["SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION"]
+            profile_type_allowed_values = ["SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE"]
             for profile_type_item in kwargs['profile_type']:
                 if profile_type_item not in profile_type_allowed_values:
                     raise ValueError(
@@ -551,7 +692,7 @@ class OnboardingClient(object):
                     )
 
         if 'os_family' in kwargs:
-            os_family_allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7"]
+            os_family_allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"]
             if kwargs['os_family'] not in os_family_allowed_values:
                 raise ValueError(
                     f"Invalid value for `os_family`, must be one of { os_family_allowed_values }"
@@ -565,7 +706,7 @@ class OnboardingClient(object):
                 )
 
         if 'vendor_name' in kwargs:
-            vendor_name_allowed_values = ["ORACLE"]
+            vendor_name_allowed_values = ["ORACLE", "MICROSOFT"]
             if kwargs['vendor_name'] not in vendor_name_allowed_values:
                 raise ValueError(
                     f"Invalid value for `vendor_name`, must be one of { vendor_name_allowed_values }"
@@ -600,6 +741,9 @@ class OnboardingClient(object):
             "profileId": kwargs.get("profile_id", missing),
             "osFamily": kwargs.get("os_family", missing),
             "archType": kwargs.get("arch_type", missing),
+            "registrationType": self.base_client.generate_collection_format_param(kwargs.get("registration_type", missing), 'multi'),
+            "isDefaultProfile": kwargs.get("is_default_profile", missing),
+            "isServiceProvidedProfile": kwargs.get("is_service_provided_profile", missing),
             "vendorName": kwargs.get("vendor_name", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
@@ -656,7 +800,9 @@ class OnboardingClient(object):
 
 
         :param str profile_id: (required)
-            The OCID of the registration profile.
+            The `OCID`__ of the registration profile.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.UpdateProfileDetails update_profile_details: (required)
             The information to be updated.

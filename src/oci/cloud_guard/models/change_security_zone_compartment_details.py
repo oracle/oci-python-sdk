@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeSecurityZoneCompartmentDetails(object):
     """
-    The compartment for the security zone
+    Parameters to be used to move a security zone to a different compartment.
     """
 
     def __init__(self, **kwargs):

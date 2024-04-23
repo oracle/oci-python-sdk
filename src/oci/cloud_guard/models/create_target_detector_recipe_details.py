@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateTargetDetectorRecipeDetails(object):
     """
-    The information required to create TargetDetectorRecipe
+    Parameters to use to create a target detector recipe.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class CreateTargetDetectorRecipeDetails(object):
     def detector_recipe_id(self):
         """
         **[Required]** Gets the detector_recipe_id of this CreateTargetDetectorRecipeDetails.
-        Identifier for DetectorRecipe.
+        Unique identifier for the target detector recipe
 
 
         :return: The detector_recipe_id of this CreateTargetDetectorRecipeDetails.
@@ -58,7 +58,7 @@ class CreateTargetDetectorRecipeDetails(object):
     def detector_recipe_id(self, detector_recipe_id):
         """
         Sets the detector_recipe_id of this CreateTargetDetectorRecipeDetails.
-        Identifier for DetectorRecipe.
+        Unique identifier for the target detector recipe
 
 
         :param detector_recipe_id: The detector_recipe_id of this CreateTargetDetectorRecipeDetails.
@@ -70,7 +70,7 @@ class CreateTargetDetectorRecipeDetails(object):
     def detector_rules(self):
         """
         Gets the detector_rules of this CreateTargetDetectorRecipeDetails.
-        Overrides to be applied to Detector Rule associated with the target
+        List of overrides to be applied to detector rules associated with the target
 
 
         :return: The detector_rules of this CreateTargetDetectorRecipeDetails.
@@ -82,7 +82,7 @@ class CreateTargetDetectorRecipeDetails(object):
     def detector_rules(self, detector_rules):
         """
         Sets the detector_rules of this CreateTargetDetectorRecipeDetails.
-        Overrides to be applied to Detector Rule associated with the target
+        List of overrides to be applied to detector rules associated with the target
 
 
         :param detector_rules: The detector_rules of this CreateTargetDetectorRecipeDetails.

@@ -75,7 +75,7 @@ class SecurityScoreAggregation(object):
     def dimensions_map(self):
         """
         **[Required]** Gets the dimensions_map of this SecurityScoreAggregation.
-        The key-value pairs of dimensions and their names.
+        The key-value pairs of dimensions and their names
 
 
         :return: The dimensions_map of this SecurityScoreAggregation.
@@ -87,7 +87,7 @@ class SecurityScoreAggregation(object):
     def dimensions_map(self, dimensions_map):
         """
         Sets the dimensions_map of this SecurityScoreAggregation.
-        The key-value pairs of dimensions and their names.
+        The key-value pairs of dimensions and their names
 
 
         :param dimensions_map: The dimensions_map of this SecurityScoreAggregation.
@@ -99,7 +99,7 @@ class SecurityScoreAggregation(object):
     def security_rating(self):
         """
         **[Required]** Gets the security_rating of this SecurityScoreAggregation.
-        The security rating with given dimension/s
+        The security rating with given parameters
 
         Allowed values for this property are: "EXCELLENT", "GOOD", "FAIR", "POOR", "NA", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -114,7 +114,7 @@ class SecurityScoreAggregation(object):
     def security_rating(self, security_rating):
         """
         Sets the security_rating of this SecurityScoreAggregation.
-        The security rating with given dimension/s
+        The security rating with given parameters
 
 
         :param security_rating: The security_rating of this SecurityScoreAggregation.
@@ -129,7 +129,7 @@ class SecurityScoreAggregation(object):
     def security_score(self):
         """
         **[Required]** Gets the security_score of this SecurityScoreAggregation.
-        The security score with given dimension/s
+        The security score with given parameters
 
 
         :return: The security_score of this SecurityScoreAggregation.
@@ -141,7 +141,7 @@ class SecurityScoreAggregation(object):
     def security_score(self, security_score):
         """
         Sets the security_score of this SecurityScoreAggregation.
-        The security score with given dimension/s
+        The security score with given parameters
 
 
         :param security_score: The security_score of this SecurityScoreAggregation.

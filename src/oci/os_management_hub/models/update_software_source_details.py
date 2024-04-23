@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateSoftwareSourceDetails(object):
     """
-    Information for updating a software source.
+    Provides the information used to update a software source.
     """
 
     #: A constant which can be used with the software_source_type property of a UpdateSoftwareSourceDetails.
@@ -33,6 +33,7 @@ class UpdateSoftwareSourceDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.os_management_hub.models.UpdateCustomSoftwareSourceDetails`
+        * :class:`~oci.os_management_hub.models.UpdateVersionedCustomSoftwareSourceDetails`
         * :class:`~oci.os_management_hub.models.UpdateVendorSoftwareSourceDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -99,6 +100,9 @@ class UpdateSoftwareSourceDetails(object):
         if type == 'CUSTOM':
             return 'UpdateCustomSoftwareSourceDetails'
 
+        if type == 'VERSIONED':
+            return 'UpdateVersionedCustomSoftwareSourceDetails'
+
         if type == 'VENDOR':
             return 'UpdateVendorSoftwareSourceDetails'
         else:
@@ -108,7 +112,9 @@ class UpdateSoftwareSourceDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this UpdateSoftwareSourceDetails.
-        The OCID of the tenancy containing the software source.
+        The `OCID`__ of the compartment that contains the software source.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this UpdateSoftwareSourceDetails.
@@ -120,7 +126,9 @@ class UpdateSoftwareSourceDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this UpdateSoftwareSourceDetails.
-        The OCID of the tenancy containing the software source.
+        The `OCID`__ of the compartment that contains the software source.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this UpdateSoftwareSourceDetails.
@@ -132,7 +140,7 @@ class UpdateSoftwareSourceDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateSoftwareSourceDetails.
-        User friendly name for the software source.
+        User-friendly name for the software source.
 
 
         :return: The display_name of this UpdateSoftwareSourceDetails.
@@ -144,7 +152,7 @@ class UpdateSoftwareSourceDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateSoftwareSourceDetails.
-        User friendly name for the software source.
+        User-friendly name for the software source.
 
 
         :param display_name: The display_name of this UpdateSoftwareSourceDetails.
@@ -156,7 +164,7 @@ class UpdateSoftwareSourceDetails(object):
     def description(self):
         """
         Gets the description of this UpdateSoftwareSourceDetails.
-        Information specified by the user about the software source.
+        User-specified description of the software source.
 
 
         :return: The description of this UpdateSoftwareSourceDetails.
@@ -168,7 +176,7 @@ class UpdateSoftwareSourceDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateSoftwareSourceDetails.
-        Information specified by the user about the software source.
+        User-specified description of the software source.
 
 
         :param description: The description of this UpdateSoftwareSourceDetails.

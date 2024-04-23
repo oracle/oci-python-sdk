@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateBulkProblemStatusDetails(object):
     """
-    List of problem ids to be passed in to update the Problem status.
+    List of problem IDs to be passed in to update problem status.
     """
 
     #: A constant which can be used with the status property of a UpdateBulkProblemStatusDetails.
@@ -101,7 +101,7 @@ class UpdateBulkProblemStatusDetails(object):
     def problem_ids(self):
         """
         **[Required]** Gets the problem_ids of this UpdateBulkProblemStatusDetails.
-        List of ProblemIds to be passed in to update the Problem status.
+        List of problem IDs to be passed in to update the problem status
 
 
         :return: The problem_ids of this UpdateBulkProblemStatusDetails.
@@ -113,7 +113,7 @@ class UpdateBulkProblemStatusDetails(object):
     def problem_ids(self, problem_ids):
         """
         Sets the problem_ids of this UpdateBulkProblemStatusDetails.
-        List of ProblemIds to be passed in to update the Problem status.
+        List of problem IDs to be passed in to update the problem status
 
 
         :param problem_ids: The problem_ids of this UpdateBulkProblemStatusDetails.
@@ -125,7 +125,7 @@ class UpdateBulkProblemStatusDetails(object):
     def comment(self):
         """
         Gets the comment of this UpdateBulkProblemStatusDetails.
-        User defined comment to be passed in to update the problem.
+        User-defined comment to be passed in to update the problem
 
 
         :return: The comment of this UpdateBulkProblemStatusDetails.
@@ -137,7 +137,7 @@ class UpdateBulkProblemStatusDetails(object):
     def comment(self, comment):
         """
         Sets the comment of this UpdateBulkProblemStatusDetails.
-        User defined comment to be passed in to update the problem.
+        User-defined comment to be passed in to update the problem
 
 
         :param comment: The comment of this UpdateBulkProblemStatusDetails.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagedInstanceGroupAvailablePackageSummary(object):
     """
-    Summary information pertaining to an available package for a managed instance group.
+    Provides summary information for an available package for a managed instance group.
     """
 
     #: A constant which can be used with the architecture property of a ManagedInstanceGroupAvailablePackageSummary.
@@ -127,7 +127,7 @@ class ManagedInstanceGroupAvailablePackageSummary(object):
     def name(self):
         """
         **[Required]** Gets the name of this ManagedInstanceGroupAvailablePackageSummary.
-        Unique identifier for the package. NOTE - This is not an OCID.
+        Unique identifier for the package. Note that this is not an OCID.
 
 
         :return: The name of this ManagedInstanceGroupAvailablePackageSummary.
@@ -139,7 +139,7 @@ class ManagedInstanceGroupAvailablePackageSummary(object):
     def name(self, name):
         """
         Sets the name of this ManagedInstanceGroupAvailablePackageSummary.
-        Unique identifier for the package. NOTE - This is not an OCID.
+        Unique identifier for the package. Note that this is not an OCID.
 
 
         :param name: The name of this ManagedInstanceGroupAvailablePackageSummary.
@@ -175,7 +175,7 @@ class ManagedInstanceGroupAvailablePackageSummary(object):
     def version(self):
         """
         **[Required]** Gets the version of this ManagedInstanceGroupAvailablePackageSummary.
-        Version of the installed package.
+        Version of the available package.
 
 
         :return: The version of this ManagedInstanceGroupAvailablePackageSummary.
@@ -187,7 +187,7 @@ class ManagedInstanceGroupAvailablePackageSummary(object):
     def version(self, version):
         """
         Sets the version of this ManagedInstanceGroupAvailablePackageSummary.
-        Version of the installed package.
+        Version of the available package.
 
 
         :param version: The version of this ManagedInstanceGroupAvailablePackageSummary.
@@ -253,7 +253,7 @@ class ManagedInstanceGroupAvailablePackageSummary(object):
     def is_latest(self):
         """
         Gets the is_latest of this ManagedInstanceGroupAvailablePackageSummary.
-        Flag to return only latest package versions.
+        Indicates whether this is the latest package version.
 
 
         :return: The is_latest of this ManagedInstanceGroupAvailablePackageSummary.
@@ -265,7 +265,7 @@ class ManagedInstanceGroupAvailablePackageSummary(object):
     def is_latest(self, is_latest):
         """
         Sets the is_latest of this ManagedInstanceGroupAvailablePackageSummary.
-        Flag to return only latest package versions.
+        Indicates whether this is the latest package version.
 
 
         :param is_latest: The is_latest of this ManagedInstanceGroupAvailablePackageSummary.

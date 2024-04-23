@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConditionMetadataTypeCollection(object):
     """
-    condition type provided by cloud guard
+    The collection of available condition types.
     """
 
     def __init__(self, **kwargs):
@@ -24,22 +24,29 @@ class ConditionMetadataTypeCollection(object):
             The value to assign to the items property of this ConditionMetadataTypeCollection.
         :type items: list[oci.cloud_guard.models.ConditionMetadataTypeSummary]
 
+        :param locks:
+            The value to assign to the locks property of this ConditionMetadataTypeCollection.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
-            'items': 'list[ConditionMetadataTypeSummary]'
+            'items': 'list[ConditionMetadataTypeSummary]',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
-            'items': 'items'
+            'items': 'items',
+            'locks': 'locks'
         }
 
         self._items = None
+        self._locks = None
 
     @property
     def items(self):
         """
         **[Required]** Gets the items of this ConditionMetadataTypeCollection.
-        collection of condition types
+        List of ConditionMetadataTypeSummary resources
 
 
         :return: The items of this ConditionMetadataTypeCollection.
@@ -51,13 +58,37 @@ class ConditionMetadataTypeCollection(object):
     def items(self, items):
         """
         Sets the items of this ConditionMetadataTypeCollection.
-        collection of condition types
+        List of ConditionMetadataTypeSummary resources
 
 
         :param items: The items of this ConditionMetadataTypeCollection.
         :type: list[oci.cloud_guard.models.ConditionMetadataTypeSummary]
         """
         self._items = items
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this ConditionMetadataTypeCollection.
+        Locks associated with this resource.
+
+
+        :return: The locks of this ConditionMetadataTypeCollection.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this ConditionMetadataTypeCollection.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this ConditionMetadataTypeCollection.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

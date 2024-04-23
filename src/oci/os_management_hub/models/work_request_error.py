@@ -103,7 +103,9 @@ class WorkRequestError(object):
     def timestamp(self):
         """
         **[Required]** Gets the timestamp of this WorkRequestError.
-        The time the error occured. An RFC3339 formatted datetime string.
+        The time the error occured. (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The timestamp of this WorkRequestError.
@@ -115,7 +117,9 @@ class WorkRequestError(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this WorkRequestError.
-        The time the error occured. An RFC3339 formatted datetime string.
+        The time the error occured. (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param timestamp: The timestamp of this WorkRequestError.

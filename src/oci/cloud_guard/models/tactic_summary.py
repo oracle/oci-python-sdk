@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TacticSummary(object):
     """
-    Tactic summary.
+    Summary information for a tactic.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class TacticSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this TacticSummary.
-        Unique identifier for the tactic.
+        Unique identifier for the tactic
 
 
         :return: The id of this TacticSummary.
@@ -58,7 +58,7 @@ class TacticSummary(object):
     def id(self, id):
         """
         Sets the id of this TacticSummary.
-        Unique identifier for the tactic.
+        Unique identifier for the tactic
 
 
         :param id: The id of this TacticSummary.

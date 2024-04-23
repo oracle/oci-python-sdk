@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateSoftwareSourceDetails(object):
     """
-    Description of a software source to be created.
+    Provides the information used to create a software source.
     """
 
     #: A constant which can be used with the software_source_type property of a CreateSoftwareSourceDetails.
@@ -33,6 +33,7 @@ class CreateSoftwareSourceDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.os_management_hub.models.CreateCustomSoftwareSourceDetails`
+        * :class:`~oci.os_management_hub.models.CreateVendorSoftwareSourceDetails`
         * :class:`~oci.os_management_hub.models.CreateVersionedCustomSoftwareSourceDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -99,6 +100,9 @@ class CreateSoftwareSourceDetails(object):
         if type == 'CUSTOM':
             return 'CreateCustomSoftwareSourceDetails'
 
+        if type == 'VENDOR':
+            return 'CreateVendorSoftwareSourceDetails'
+
         if type == 'VERSIONED':
             return 'CreateVersionedCustomSoftwareSourceDetails'
         else:
@@ -108,7 +112,9 @@ class CreateSoftwareSourceDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateSoftwareSourceDetails.
-        The OCID of the tenancy containing the software source.
+        The `OCID`__ of the compartment that contains the software source.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateSoftwareSourceDetails.
@@ -120,7 +126,9 @@ class CreateSoftwareSourceDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateSoftwareSourceDetails.
-        The OCID of the tenancy containing the software source.
+        The `OCID`__ of the compartment that contains the software source.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateSoftwareSourceDetails.
@@ -131,8 +139,8 @@ class CreateSoftwareSourceDetails(object):
     @property
     def display_name(self):
         """
-        **[Required]** Gets the display_name of this CreateSoftwareSourceDetails.
-        User friendly name for the software source.
+        Gets the display_name of this CreateSoftwareSourceDetails.
+        User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 
 
         :return: The display_name of this CreateSoftwareSourceDetails.
@@ -144,7 +152,7 @@ class CreateSoftwareSourceDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateSoftwareSourceDetails.
-        User friendly name for the software source.
+        User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateSoftwareSourceDetails.
@@ -156,7 +164,7 @@ class CreateSoftwareSourceDetails(object):
     def description(self):
         """
         Gets the description of this CreateSoftwareSourceDetails.
-        Information specified by the user about the software source.
+        User-specified description for the software source. Avoid entering confidential information.
 
 
         :return: The description of this CreateSoftwareSourceDetails.
@@ -168,7 +176,7 @@ class CreateSoftwareSourceDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateSoftwareSourceDetails.
-        Information specified by the user about the software source.
+        User-specified description for the software source. Avoid entering confidential information.
 
 
         :param description: The description of this CreateSoftwareSourceDetails.
@@ -180,7 +188,7 @@ class CreateSoftwareSourceDetails(object):
     def software_source_type(self):
         """
         **[Required]** Gets the software_source_type of this CreateSoftwareSourceDetails.
-        Type of the software source.
+        Type of software source.
 
         Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED"
 
@@ -194,7 +202,7 @@ class CreateSoftwareSourceDetails(object):
     def software_source_type(self, software_source_type):
         """
         Sets the software_source_type of this CreateSoftwareSourceDetails.
-        Type of the software source.
+        Type of software source.
 
 
         :param software_source_type: The software_source_type of this CreateSoftwareSourceDetails.

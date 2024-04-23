@@ -81,6 +81,10 @@ class BootVolumeAttachment(object):
             The value to assign to the time_created property of this BootVolumeAttachment.
         :type time_created: datetime
 
+        :param time_updated:
+            The value to assign to the time_updated property of this BootVolumeAttachment.
+        :type time_updated: datetime
+
         :param is_pv_encryption_in_transit_enabled:
             The value to assign to the is_pv_encryption_in_transit_enabled property of this BootVolumeAttachment.
         :type is_pv_encryption_in_transit_enabled: bool
@@ -101,6 +105,7 @@ class BootVolumeAttachment(object):
             'instance_id': 'str',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
+            'time_updated': 'datetime',
             'is_pv_encryption_in_transit_enabled': 'bool',
             'encryption_in_transit_type': 'str'
         }
@@ -114,6 +119,7 @@ class BootVolumeAttachment(object):
             'instance_id': 'instanceId',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
+            'time_updated': 'timeUpdated',
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
             'encryption_in_transit_type': 'encryptionInTransitType'
         }
@@ -126,6 +132,7 @@ class BootVolumeAttachment(object):
         self._instance_id = None
         self._lifecycle_state = None
         self._time_created = None
+        self._time_updated = None
         self._is_pv_encryption_in_transit_enabled = None
         self._encryption_in_transit_type = None
 
@@ -340,6 +347,38 @@ class BootVolumeAttachment(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def time_updated(self):
+        """
+        Gets the time_updated of this BootVolumeAttachment.
+        The date and time the boot volume attachment was updated, in the format defined by `RFC3339`__.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_updated of this BootVolumeAttachment.
+        :rtype: datetime
+        """
+        return self._time_updated
+
+    @time_updated.setter
+    def time_updated(self, time_updated):
+        """
+        Sets the time_updated of this BootVolumeAttachment.
+        The date and time the boot volume attachment was updated, in the format defined by `RFC3339`__.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_updated: The time_updated of this BootVolumeAttachment.
+        :type: datetime
+        """
+        self._time_updated = time_updated
 
     @property
     def is_pv_encryption_in_transit_enabled(self):

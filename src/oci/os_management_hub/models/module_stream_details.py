@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ModuleStreamDetails(object):
     """
-    Updatable information for a module stream.
+    Provides the information used to update a module stream.
     """
 
     def __init__(self, **kwargs):
@@ -28,19 +28,26 @@ class ModuleStreamDetails(object):
             The value to assign to the stream_name property of this ModuleStreamDetails.
         :type stream_name: str
 
+        :param software_source_id:
+            The value to assign to the software_source_id property of this ModuleStreamDetails.
+        :type software_source_id: str
+
         """
         self.swagger_types = {
             'module_name': 'str',
-            'stream_name': 'str'
+            'stream_name': 'str',
+            'software_source_id': 'str'
         }
 
         self.attribute_map = {
             'module_name': 'moduleName',
-            'stream_name': 'streamName'
+            'stream_name': 'streamName',
+            'software_source_id': 'softwareSourceId'
         }
 
         self._module_name = None
         self._stream_name = None
+        self._software_source_id = None
 
     @property
     def module_name(self):
@@ -89,6 +96,34 @@ class ModuleStreamDetails(object):
         :type: str
         """
         self._stream_name = stream_name
+
+    @property
+    def software_source_id(self):
+        """
+        Gets the software_source_id of this ModuleStreamDetails.
+        The `OCID`__ of the software source that contains the module stream.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The software_source_id of this ModuleStreamDetails.
+        :rtype: str
+        """
+        return self._software_source_id
+
+    @software_source_id.setter
+    def software_source_id(self, software_source_id):
+        """
+        Sets the software_source_id of this ModuleStreamDetails.
+        The `OCID`__ of the software source that contains the module stream.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param software_source_id: The software_source_id of this ModuleStreamDetails.
+        :type: str
+        """
+        self._software_source_id = software_source_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

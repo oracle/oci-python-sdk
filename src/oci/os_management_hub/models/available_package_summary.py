@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AvailablePackageSummary(PackageSummary):
     """
-    A software package available for install on a managed instance.
+    Provides summary information about a software package available for installation on a managed instance.
     """
 
     def __init__(self, **kwargs):

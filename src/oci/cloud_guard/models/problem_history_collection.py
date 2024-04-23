@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ProblemHistoryCollection(object):
     """
-    Collection of Problem History
+    Collection of problem history summary information.
     """
 
     def __init__(self, **kwargs):
@@ -24,22 +24,29 @@ class ProblemHistoryCollection(object):
             The value to assign to the items property of this ProblemHistoryCollection.
         :type items: list[oci.cloud_guard.models.ProblemHistorySummary]
 
+        :param locks:
+            The value to assign to the locks property of this ProblemHistoryCollection.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
-            'items': 'list[ProblemHistorySummary]'
+            'items': 'list[ProblemHistorySummary]',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
-            'items': 'items'
+            'items': 'items',
+            'locks': 'locks'
         }
 
         self._items = None
+        self._locks = None
 
     @property
     def items(self):
         """
         **[Required]** Gets the items of this ProblemHistoryCollection.
-        List of ProblemHistorySummary
+        List of ProblemHistorySummary resources
 
 
         :return: The items of this ProblemHistoryCollection.
@@ -51,13 +58,37 @@ class ProblemHistoryCollection(object):
     def items(self, items):
         """
         Sets the items of this ProblemHistoryCollection.
-        List of ProblemHistorySummary
+        List of ProblemHistorySummary resources
 
 
         :param items: The items of this ProblemHistoryCollection.
         :type: list[oci.cloud_guard.models.ProblemHistorySummary]
         """
         self._items = items
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this ProblemHistoryCollection.
+        Locks associated with this resource.
+
+
+        :return: The locks of this ProblemHistoryCollection.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this ProblemHistoryCollection.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this ProblemHistoryCollection.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

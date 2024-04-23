@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LoggingQueryDataSourceSummaryDetails(DataSourceSummaryDetails):
     """
-    The information about new Logging Query of type DataSourceSummary.
+    Summary information for a logging query for a data source.
     """
 
     def __init__(self, **kwargs):
@@ -23,7 +23,7 @@ class LoggingQueryDataSourceSummaryDetails(DataSourceSummaryDetails):
 
         :param data_source_feed_provider:
             The value to assign to the data_source_feed_provider property of this LoggingQueryDataSourceSummaryDetails.
-            Allowed values for this property are: "LOGGINGQUERY"
+            Allowed values for this property are: "LOGGINGQUERY", "SCHEDULEDQUERY"
         :type data_source_feed_provider: str
 
         :param regions:
@@ -63,7 +63,7 @@ class LoggingQueryDataSourceSummaryDetails(DataSourceSummaryDetails):
     def regions(self):
         """
         Gets the regions of this LoggingQueryDataSourceSummaryDetails.
-        DataSource customer specified regions
+        Data source customer-specified regions
 
 
         :return: The regions of this LoggingQueryDataSourceSummaryDetails.
@@ -75,7 +75,7 @@ class LoggingQueryDataSourceSummaryDetails(DataSourceSummaryDetails):
     def regions(self, regions):
         """
         Sets the regions of this LoggingQueryDataSourceSummaryDetails.
-        DataSource customer specified regions
+        Data source customer-specified regions
 
 
         :param regions: The regions of this LoggingQueryDataSourceSummaryDetails.
@@ -87,7 +87,7 @@ class LoggingQueryDataSourceSummaryDetails(DataSourceSummaryDetails):
     def data_source_detector_mapping_info(self):
         """
         Gets the data_source_detector_mapping_info of this LoggingQueryDataSourceSummaryDetails.
-        DataSource mapping with detectorRecipe and detectorRule
+        Data source mapping with detector recipe and detector rule
 
 
         :return: The data_source_detector_mapping_info of this LoggingQueryDataSourceSummaryDetails.
@@ -99,7 +99,7 @@ class LoggingQueryDataSourceSummaryDetails(DataSourceSummaryDetails):
     def data_source_detector_mapping_info(self, data_source_detector_mapping_info):
         """
         Sets the data_source_detector_mapping_info of this LoggingQueryDataSourceSummaryDetails.
-        DataSource mapping with detectorRecipe and detectorRule
+        Data source mapping with detector recipe and detector rule
 
 
         :param data_source_detector_mapping_info: The data_source_detector_mapping_info of this LoggingQueryDataSourceSummaryDetails.
@@ -111,7 +111,7 @@ class LoggingQueryDataSourceSummaryDetails(DataSourceSummaryDetails):
     def region_status_detail(self):
         """
         Gets the region_status_detail of this LoggingQueryDataSourceSummaryDetails.
-        DataSource query metadata replication region and status.
+        Data source query metadata replication region and status.
 
 
         :return: The region_status_detail of this LoggingQueryDataSourceSummaryDetails.
@@ -123,7 +123,7 @@ class LoggingQueryDataSourceSummaryDetails(DataSourceSummaryDetails):
     def region_status_detail(self, region_status_detail):
         """
         Sets the region_status_detail of this LoggingQueryDataSourceSummaryDetails.
-        DataSource query metadata replication region and status.
+        Data source query metadata replication region and status.
 
 
         :param region_status_detail: The region_status_detail of this LoggingQueryDataSourceSummaryDetails.

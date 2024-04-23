@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestResource(object):
     """
-    A resource created or operated on by a work request.
+    Parameters of a work request resource, which is created or operated on by a work request.
     """
 
     #: A constant which can be used with the action_type property of a WorkRequestResource.
@@ -93,7 +93,7 @@ class WorkRequestResource(object):
     def entity_type(self):
         """
         **[Required]** Gets the entity_type of this WorkRequestResource.
-        The resource type the work request affects.
+        The resource type the work request affects
 
 
         :return: The entity_type of this WorkRequestResource.
@@ -105,7 +105,7 @@ class WorkRequestResource(object):
     def entity_type(self, entity_type):
         """
         Sets the entity_type of this WorkRequestResource.
-        The resource type the work request affects.
+        The resource type the work request affects
 
 
         :param entity_type: The entity_type of this WorkRequestResource.
@@ -153,7 +153,7 @@ class WorkRequestResource(object):
     def identifier(self):
         """
         **[Required]** Gets the identifier of this WorkRequestResource.
-        The identifier of the resource the work request affects.
+        The identifier of the resource that the work request affects
 
 
         :return: The identifier of this WorkRequestResource.
@@ -165,7 +165,7 @@ class WorkRequestResource(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this WorkRequestResource.
-        The identifier of the resource the work request affects.
+        The identifier of the resource that the work request affects
 
 
         :param identifier: The identifier of this WorkRequestResource.
@@ -201,7 +201,7 @@ class WorkRequestResource(object):
     def metadata(self):
         """
         Gets the metadata of this WorkRequestResource.
-        Additional information that helps to explain the resource.
+        Additional information that helps to explain the resource
 
 
         :return: The metadata of this WorkRequestResource.
@@ -213,7 +213,7 @@ class WorkRequestResource(object):
     def metadata(self, metadata):
         """
         Sets the metadata of this WorkRequestResource.
-        Additional information that helps to explain the resource.
+        Additional information that helps to explain the resource
 
 
         :param metadata: The metadata of this WorkRequestResource.

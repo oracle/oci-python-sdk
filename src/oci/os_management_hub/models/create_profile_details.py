@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateProfileDetails(object):
     """
-    The information about new registration profile.
+    Provides the information used to create a new registration profile.
     """
 
     #: A constant which can be used with the profile_type property of a CreateProfileDetails.
@@ -30,6 +30,10 @@ class CreateProfileDetails(object):
     #: A constant which can be used with the profile_type property of a CreateProfileDetails.
     #: This constant has a value of "STATION"
     PROFILE_TYPE_STATION = "STATION"
+
+    #: A constant which can be used with the profile_type property of a CreateProfileDetails.
+    #: This constant has a value of "WINDOWS_STANDALONE"
+    PROFILE_TYPE_WINDOWS_STANDALONE = "WINDOWS_STANDALONE"
 
     def __init__(self, **kwargs):
         """
@@ -61,8 +65,16 @@ class CreateProfileDetails(object):
 
         :param profile_type:
             The value to assign to the profile_type property of this CreateProfileDetails.
-            Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION"
+            Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE"
         :type profile_type: str
+
+        :param registration_type:
+            The value to assign to the registration_type property of this CreateProfileDetails.
+        :type registration_type: str
+
+        :param is_default_profile:
+            The value to assign to the is_default_profile property of this CreateProfileDetails.
+        :type is_default_profile: bool
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateProfileDetails.
@@ -79,6 +91,8 @@ class CreateProfileDetails(object):
             'description': 'str',
             'management_station_id': 'str',
             'profile_type': 'str',
+            'registration_type': 'str',
+            'is_default_profile': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -89,6 +103,8 @@ class CreateProfileDetails(object):
             'description': 'description',
             'management_station_id': 'managementStationId',
             'profile_type': 'profileType',
+            'registration_type': 'registrationType',
+            'is_default_profile': 'isDefaultProfile',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -98,6 +114,8 @@ class CreateProfileDetails(object):
         self._description = None
         self._management_station_id = None
         self._profile_type = None
+        self._registration_type = None
+        self._is_default_profile = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -151,7 +169,9 @@ class CreateProfileDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateProfileDetails.
-        The OCID of the tenancy containing the registration profile.
+        The `OCID`__ of the compartment that contains the registration profile.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateProfileDetails.
@@ -163,7 +183,9 @@ class CreateProfileDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateProfileDetails.
-        The OCID of the tenancy containing the registration profile.
+        The `OCID`__ of the compartment that contains the registration profile.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateProfileDetails.
@@ -175,7 +197,7 @@ class CreateProfileDetails(object):
     def description(self):
         """
         Gets the description of this CreateProfileDetails.
-        The description of the registration profile.
+        User-specified description of the registration profile.
 
 
         :return: The description of this CreateProfileDetails.
@@ -187,7 +209,7 @@ class CreateProfileDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateProfileDetails.
-        The description of the registration profile.
+        User-specified description of the registration profile.
 
 
         :param description: The description of this CreateProfileDetails.
@@ -199,7 +221,9 @@ class CreateProfileDetails(object):
     def management_station_id(self):
         """
         Gets the management_station_id of this CreateProfileDetails.
-        The OCID of the management station.
+        The `OCID`__ of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The management_station_id of this CreateProfileDetails.
@@ -211,7 +235,9 @@ class CreateProfileDetails(object):
     def management_station_id(self, management_station_id):
         """
         Sets the management_station_id of this CreateProfileDetails.
-        The OCID of the management station.
+        The `OCID`__ of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param management_station_id: The management_station_id of this CreateProfileDetails.
@@ -223,9 +249,9 @@ class CreateProfileDetails(object):
     def profile_type(self):
         """
         **[Required]** Gets the profile_type of this CreateProfileDetails.
-        The type of registration profile. Either SOFTWARESOURCE, GROUP or LIFECYCLE.
+        The type of profile.
 
-        Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION"
+        Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE"
 
 
         :return: The profile_type of this CreateProfileDetails.
@@ -237,18 +263,66 @@ class CreateProfileDetails(object):
     def profile_type(self, profile_type):
         """
         Sets the profile_type of this CreateProfileDetails.
-        The type of registration profile. Either SOFTWARESOURCE, GROUP or LIFECYCLE.
+        The type of profile.
 
 
         :param profile_type: The profile_type of this CreateProfileDetails.
         :type: str
         """
-        allowed_values = ["SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION"]
+        allowed_values = ["SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE"]
         if not value_allowed_none_or_none_sentinel(profile_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `profile_type`, must be None or one of {allowed_values}"
             )
         self._profile_type = profile_type
+
+    @property
+    def registration_type(self):
+        """
+        Gets the registration_type of this CreateProfileDetails.
+        The type of instance to register.
+
+
+        :return: The registration_type of this CreateProfileDetails.
+        :rtype: str
+        """
+        return self._registration_type
+
+    @registration_type.setter
+    def registration_type(self, registration_type):
+        """
+        Sets the registration_type of this CreateProfileDetails.
+        The type of instance to register.
+
+
+        :param registration_type: The registration_type of this CreateProfileDetails.
+        :type: str
+        """
+        self._registration_type = registration_type
+
+    @property
+    def is_default_profile(self):
+        """
+        Gets the is_default_profile of this CreateProfileDetails.
+        Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+
+
+        :return: The is_default_profile of this CreateProfileDetails.
+        :rtype: bool
+        """
+        return self._is_default_profile
+
+    @is_default_profile.setter
+    def is_default_profile(self, is_default_profile):
+        """
+        Sets the is_default_profile of this CreateProfileDetails.
+        Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+
+
+        :param is_default_profile: The is_default_profile of this CreateProfileDetails.
+        :type: bool
+        """
+        self._is_default_profile = is_default_profile
 
     @property
     def freeform_tags(self):

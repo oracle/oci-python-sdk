@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PackageSummary(object):
     """
-    A software package summary.
+    Provides summary information for a software package.
     """
 
     #: A constant which can be used with the architecture property of a PackageSummary.
@@ -267,7 +267,7 @@ class PackageSummary(object):
     def software_sources(self):
         """
         Gets the software_sources of this PackageSummary.
-        list of software sources that provide the software package.
+        List of software sources that provide the software package.
 
 
         :return: The software_sources of this PackageSummary.
@@ -279,7 +279,7 @@ class PackageSummary(object):
     def software_sources(self, software_sources):
         """
         Sets the software_sources of this PackageSummary.
-        list of software sources that provide the software package.
+        List of software sources that provide the software package.
 
 
         :param software_sources: The software_sources of this PackageSummary.
@@ -291,7 +291,7 @@ class PackageSummary(object):
     def package_classification(self):
         """
         **[Required]** Gets the package_classification of this PackageSummary.
-        classifier for child instances of this object.
+        Status of the software package.
 
         Allowed values for this property are: "INSTALLED", "AVAILABLE", "UPDATABLE"
 
@@ -305,7 +305,7 @@ class PackageSummary(object):
     def package_classification(self, package_classification):
         """
         Sets the package_classification of this PackageSummary.
-        classifier for child instances of this object.
+        Status of the software package.
 
 
         :param package_classification: The package_classification of this PackageSummary.

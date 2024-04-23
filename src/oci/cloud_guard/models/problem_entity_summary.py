@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ProblemEntitySummary(object):
     """
-    The information about problem entities details of DataSource for a CloudGuard Problem.
+    Summary information about problem entities for a data source for a problem.
     """
 
     def __init__(self, **kwargs):
@@ -122,7 +122,7 @@ class ProblemEntitySummary(object):
     def problem_id(self):
         """
         **[Required]** Gets the problem_id of this ProblemEntitySummary.
-        Attached problem id
+        Attached problem ID
 
 
         :return: The problem_id of this ProblemEntitySummary.
@@ -134,7 +134,7 @@ class ProblemEntitySummary(object):
     def problem_id(self, problem_id):
         """
         Sets the problem_id of this ProblemEntitySummary.
-        Attached problem id
+        Attached problem ID
 
 
         :param problem_id: The problem_id of this ProblemEntitySummary.
@@ -170,7 +170,7 @@ class ProblemEntitySummary(object):
     def result_url(self):
         """
         Gets the result_url of this ProblemEntitySummary.
-        Log result query url for a data source query
+        Log result query URL for a data source query
 
 
         :return: The result_url of this ProblemEntitySummary.
@@ -182,7 +182,7 @@ class ProblemEntitySummary(object):
     def result_url(self, result_url):
         """
         Sets the result_url of this ProblemEntitySummary.
-        Log result query url for a data source query
+        Log result query URL for a data source query
 
 
         :param result_url: The result_url of this ProblemEntitySummary.
@@ -194,7 +194,7 @@ class ProblemEntitySummary(object):
     def entity_details(self):
         """
         Gets the entity_details of this ProblemEntitySummary.
-        List of event related to a DataSource
+        List of entity details related to a data source
 
 
         :return: The entity_details of this ProblemEntitySummary.
@@ -206,7 +206,7 @@ class ProblemEntitySummary(object):
     def entity_details(self, entity_details):
         """
         Sets the entity_details of this ProblemEntitySummary.
-        List of event related to a DataSource
+        List of entity details related to a data source
 
 
         :param entity_details: The entity_details of this ProblemEntitySummary.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateVendorSoftwareSourceDetails(UpdateSoftwareSourceDetails):
     """
-    Information for updating a vendor source. Tags only.
+    Provides the information for updating the tags of a vendor software source.
     """
 
     def __init__(self, **kwargs):

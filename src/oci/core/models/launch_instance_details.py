@@ -57,6 +57,10 @@ class LaunchInstanceDetails(object):
             The value to assign to the fault_domain property of this LaunchInstanceDetails.
         :type fault_domain: str
 
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this LaunchInstanceDetails.
+        :type cluster_placement_group_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this LaunchInstanceDetails.
         :type freeform_tags: dict(str, str)
@@ -144,6 +148,7 @@ class LaunchInstanceDetails(object):
             'display_name': 'str',
             'extended_metadata': 'dict(str, object)',
             'fault_domain': 'str',
+            'cluster_placement_group_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'compute_cluster_id': 'str',
             'hostname_label': 'str',
@@ -175,6 +180,7 @@ class LaunchInstanceDetails(object):
             'display_name': 'displayName',
             'extended_metadata': 'extendedMetadata',
             'fault_domain': 'faultDomain',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
             'freeform_tags': 'freeformTags',
             'compute_cluster_id': 'computeClusterId',
             'hostname_label': 'hostnameLabel',
@@ -205,6 +211,7 @@ class LaunchInstanceDetails(object):
         self._display_name = None
         self._extended_metadata = None
         self._fault_domain = None
+        self._cluster_placement_group_id = None
         self._freeform_tags = None
         self._compute_cluster_id = None
         self._hostname_label = None
@@ -500,6 +507,30 @@ class LaunchInstanceDetails(object):
         :type: str
         """
         self._fault_domain = fault_domain
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this LaunchInstanceDetails.
+        The OCID of the cluster placement group of the instance.
+
+
+        :return: The cluster_placement_group_id of this LaunchInstanceDetails.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this LaunchInstanceDetails.
+        The OCID of the cluster placement group of the instance.
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this LaunchInstanceDetails.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
 
     @property
     def freeform_tags(self):

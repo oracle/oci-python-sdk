@@ -60,6 +60,10 @@ class InstanceConfigurationCreateVolumeDetails(object):
             The value to assign to the vpus_per_gb property of this InstanceConfigurationCreateVolumeDetails.
         :type vpus_per_gb: int
 
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this InstanceConfigurationCreateVolumeDetails.
+        :type cluster_placement_group_id: str
+
         :param size_in_gbs:
             The value to assign to the size_in_gbs property of this InstanceConfigurationCreateVolumeDetails.
         :type size_in_gbs: int
@@ -84,6 +88,7 @@ class InstanceConfigurationCreateVolumeDetails(object):
             'freeform_tags': 'dict(str, str)',
             'kms_key_id': 'str',
             'vpus_per_gb': 'int',
+            'cluster_placement_group_id': 'str',
             'size_in_gbs': 'int',
             'source_details': 'InstanceConfigurationVolumeSourceDetails',
             'autotune_policies': 'list[InstanceConfigurationAutotunePolicy]'
@@ -100,6 +105,7 @@ class InstanceConfigurationCreateVolumeDetails(object):
             'freeform_tags': 'freeformTags',
             'kms_key_id': 'kmsKeyId',
             'vpus_per_gb': 'vpusPerGB',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
             'size_in_gbs': 'sizeInGBs',
             'source_details': 'sourceDetails',
             'autotune_policies': 'autotunePolicies'
@@ -115,6 +121,7 @@ class InstanceConfigurationCreateVolumeDetails(object):
         self._freeform_tags = None
         self._kms_key_id = None
         self._vpus_per_gb = None
+        self._cluster_placement_group_id = None
         self._size_in_gbs = None
         self._source_details = None
         self._autotune_policies = None
@@ -424,6 +431,30 @@ class InstanceConfigurationCreateVolumeDetails(object):
         :type: int
         """
         self._vpus_per_gb = vpus_per_gb
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this InstanceConfigurationCreateVolumeDetails.
+        The clusterPlacementGroup Id of the volume for volume placement.
+
+
+        :return: The cluster_placement_group_id of this InstanceConfigurationCreateVolumeDetails.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this InstanceConfigurationCreateVolumeDetails.
+        The clusterPlacementGroup Id of the volume for volume placement.
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this InstanceConfigurationCreateVolumeDetails.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
 
     @property
     def size_in_gbs(self):

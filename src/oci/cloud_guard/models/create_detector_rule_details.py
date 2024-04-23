@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDetectorRuleDetails(object):
     """
-    Details of a Detector Rule to be created in Detector Recipe
+    Details of a detector rule to be created in a detector recipe.
     """
 
     #: A constant which can be used with the risk_level property of a CreateDetectorRuleDetails.
@@ -130,7 +130,7 @@ class CreateDetectorRuleDetails(object):
     def source_detector_rule_id(self):
         """
         Gets the source_detector_rule_id of this CreateDetectorRuleDetails.
-        Id of source detector rule
+        ID of source detector rule
 
 
         :return: The source_detector_rule_id of this CreateDetectorRuleDetails.
@@ -142,7 +142,7 @@ class CreateDetectorRuleDetails(object):
     def source_detector_rule_id(self, source_detector_rule_id):
         """
         Sets the source_detector_rule_id of this CreateDetectorRuleDetails.
-        Id of source detector rule
+        ID of source detector rule
 
 
         :param source_detector_rule_id: The source_detector_rule_id of this CreateDetectorRuleDetails.
@@ -202,7 +202,7 @@ class CreateDetectorRuleDetails(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this CreateDetectorRuleDetails.
-        Identifies state for detector rule
+        Enablement state of the detector rule
 
 
         :return: The is_enabled of this CreateDetectorRuleDetails.
@@ -214,7 +214,7 @@ class CreateDetectorRuleDetails(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this CreateDetectorRuleDetails.
-        Identifies state for detector rule
+        Enablement state of the detector rule
 
 
         :param is_enabled: The is_enabled of this CreateDetectorRuleDetails.
@@ -226,7 +226,7 @@ class CreateDetectorRuleDetails(object):
     def risk_level(self):
         """
         Gets the risk_level of this CreateDetectorRuleDetails.
-        The Risk Level
+        The risk level for the detector rule
 
         Allowed values for this property are: "CRITICAL", "HIGH", "MEDIUM", "LOW", "MINOR"
 
@@ -240,7 +240,7 @@ class CreateDetectorRuleDetails(object):
     def risk_level(self, risk_level):
         """
         Sets the risk_level of this CreateDetectorRuleDetails.
-        The Risk Level
+        The risk level for the detector rule
 
 
         :param risk_level: The risk_level of this CreateDetectorRuleDetails.
@@ -257,7 +257,7 @@ class CreateDetectorRuleDetails(object):
     def configurations(self):
         """
         Gets the configurations of this CreateDetectorRuleDetails.
-        Configuration details
+        List of detector rule configurations
 
 
         :return: The configurations of this CreateDetectorRuleDetails.
@@ -269,7 +269,7 @@ class CreateDetectorRuleDetails(object):
     def configurations(self, configurations):
         """
         Sets the configurations of this CreateDetectorRuleDetails.
-        Configuration details
+        List of detector rule configurations
 
 
         :param configurations: The configurations of this CreateDetectorRuleDetails.
@@ -301,7 +301,7 @@ class CreateDetectorRuleDetails(object):
     def labels(self):
         """
         Gets the labels of this CreateDetectorRuleDetails.
-        user defined labels for a detector rule
+        User-defined labels for the detector rule
 
 
         :return: The labels of this CreateDetectorRuleDetails.
@@ -313,7 +313,7 @@ class CreateDetectorRuleDetails(object):
     def labels(self, labels):
         """
         Sets the labels of this CreateDetectorRuleDetails.
-        user defined labels for a detector rule
+        User-defined labels for the detector rule
 
 
         :param labels: The labels of this CreateDetectorRuleDetails.
@@ -325,7 +325,7 @@ class CreateDetectorRuleDetails(object):
     def recommendation(self):
         """
         Gets the recommendation of this CreateDetectorRuleDetails.
-        Recommendations of the detector rule
+        Recommendations for the detector rule
 
 
         :return: The recommendation of this CreateDetectorRuleDetails.
@@ -337,7 +337,7 @@ class CreateDetectorRuleDetails(object):
     def recommendation(self, recommendation):
         """
         Sets the recommendation of this CreateDetectorRuleDetails.
-        Recommendations of the detector rule
+        Recommendations for the detector rule
 
 
         :param recommendation: The recommendation of this CreateDetectorRuleDetails.
@@ -349,7 +349,7 @@ class CreateDetectorRuleDetails(object):
     def data_source_id(self):
         """
         Gets the data_source_id of this CreateDetectorRuleDetails.
-        ocid of the data source which needs to attached
+        OCID of the data source which is attached
 
 
         :return: The data_source_id of this CreateDetectorRuleDetails.
@@ -361,7 +361,7 @@ class CreateDetectorRuleDetails(object):
     def data_source_id(self, data_source_id):
         """
         Sets the data_source_id of this CreateDetectorRuleDetails.
-        ocid of the data source which needs to attached
+        OCID of the data source which is attached
 
 
         :param data_source_id: The data_source_id of this CreateDetectorRuleDetails.
@@ -373,7 +373,7 @@ class CreateDetectorRuleDetails(object):
     def entities_mappings(self):
         """
         Gets the entities_mappings of this CreateDetectorRuleDetails.
-        Data Source entities mapping for a Detector Rule
+        Data source entities mapping for the detector rule
 
 
         :return: The entities_mappings of this CreateDetectorRuleDetails.
@@ -385,7 +385,7 @@ class CreateDetectorRuleDetails(object):
     def entities_mappings(self, entities_mappings):
         """
         Sets the entities_mappings of this CreateDetectorRuleDetails.
-        Data Source entities mapping for a Detector Rule
+        Data source entities mapping for the detector rule
 
 
         :param entities_mappings: The entities_mappings of this CreateDetectorRuleDetails.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class GeographicalLocation(object):
     """
-    Geographical Location of a problem
+    The geographical location of a problem in terms of latitude and longitude.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class GeographicalLocation(object):
     def latitude(self):
         """
         **[Required]** Gets the latitude of this GeographicalLocation.
-        Latitude
+        Latitude of problem
 
 
         :return: The latitude of this GeographicalLocation.
@@ -58,7 +58,7 @@ class GeographicalLocation(object):
     def latitude(self, latitude):
         """
         Sets the latitude of this GeographicalLocation.
-        Latitude
+        Latitude of problem
 
 
         :param latitude: The latitude of this GeographicalLocation.
@@ -70,7 +70,7 @@ class GeographicalLocation(object):
     def longitude(self):
         """
         **[Required]** Gets the longitude of this GeographicalLocation.
-        Longitude
+        Longitude of problem
 
 
         :return: The longitude of this GeographicalLocation.
@@ -82,7 +82,7 @@ class GeographicalLocation(object):
     def longitude(self, longitude):
         """
         Sets the longitude of this GeographicalLocation.
-        Longitude
+        Longitude of problem
 
 
         :param longitude: The longitude of this GeographicalLocation.

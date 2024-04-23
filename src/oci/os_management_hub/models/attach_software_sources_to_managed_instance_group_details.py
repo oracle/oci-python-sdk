@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AttachSoftwareSourcesToManagedInstanceGroupDetails(object):
     """
-    The software sources OCIDs to attach to the managed instance group.
+    Provides the information used to attach software sources to a managed instance group.
     """
 
     def __init__(self, **kwargs):
@@ -45,8 +45,10 @@ class AttachSoftwareSourcesToManagedInstanceGroupDetails(object):
     @property
     def software_sources(self):
         """
-        Gets the software_sources of this AttachSoftwareSourcesToManagedInstanceGroupDetails.
-        The list of software sources OCIDs to be attached.
+        **[Required]** Gets the software_sources of this AttachSoftwareSourcesToManagedInstanceGroupDetails.
+        List of software source `OCIDs`__ to attach to the group.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_sources of this AttachSoftwareSourcesToManagedInstanceGroupDetails.
@@ -58,7 +60,9 @@ class AttachSoftwareSourcesToManagedInstanceGroupDetails(object):
     def software_sources(self, software_sources):
         """
         Sets the software_sources of this AttachSoftwareSourcesToManagedInstanceGroupDetails.
-        The list of software sources OCIDs to be attached.
+        List of software source `OCIDs`__ to attach to the group.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_sources: The software_sources of this AttachSoftwareSourcesToManagedInstanceGroupDetails.

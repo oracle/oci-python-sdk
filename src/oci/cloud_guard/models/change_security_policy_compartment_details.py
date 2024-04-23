@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeSecurityPolicyCompartmentDetails(object):
     """
-    The information to be updated.
+    Parameters to be used to move a security policy to a different compartment.
     """
 
     def __init__(self, **kwargs):

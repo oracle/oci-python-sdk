@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagedInstance(object):
     """
-    Detail information for an OCI Compute instance that is being managed.
+    An object that defines the instance being managed by the service.
     """
 
     #: A constant which can be used with the location property of a ManagedInstance.
@@ -30,6 +30,10 @@ class ManagedInstance(object):
     #: A constant which can be used with the location property of a ManagedInstance.
     #: This constant has a value of "EC2"
     LOCATION_EC2 = "EC2"
+
+    #: A constant which can be used with the location property of a ManagedInstance.
+    #: This constant has a value of "GCP"
+    LOCATION_GCP = "GCP"
 
     #: A constant which can be used with the architecture property of a ManagedInstance.
     #: This constant has a value of "X86_64"
@@ -63,6 +67,26 @@ class ManagedInstance(object):
     #: This constant has a value of "ORACLE_LINUX_7"
     OS_FAMILY_ORACLE_LINUX_7 = "ORACLE_LINUX_7"
 
+    #: A constant which can be used with the os_family property of a ManagedInstance.
+    #: This constant has a value of "ORACLE_LINUX_6"
+    OS_FAMILY_ORACLE_LINUX_6 = "ORACLE_LINUX_6"
+
+    #: A constant which can be used with the os_family property of a ManagedInstance.
+    #: This constant has a value of "WINDOWS_SERVER_2016"
+    OS_FAMILY_WINDOWS_SERVER_2016 = "WINDOWS_SERVER_2016"
+
+    #: A constant which can be used with the os_family property of a ManagedInstance.
+    #: This constant has a value of "WINDOWS_SERVER_2019"
+    OS_FAMILY_WINDOWS_SERVER_2019 = "WINDOWS_SERVER_2019"
+
+    #: A constant which can be used with the os_family property of a ManagedInstance.
+    #: This constant has a value of "WINDOWS_SERVER_2022"
+    OS_FAMILY_WINDOWS_SERVER_2022 = "WINDOWS_SERVER_2022"
+
+    #: A constant which can be used with the os_family property of a ManagedInstance.
+    #: This constant has a value of "ALL"
+    OS_FAMILY_ALL = "ALL"
+
     #: A constant which can be used with the status property of a ManagedInstance.
     #: This constant has a value of "NORMAL"
     STATUS_NORMAL = "NORMAL"
@@ -82,6 +106,14 @@ class ManagedInstance(object):
     #: A constant which can be used with the status property of a ManagedInstance.
     #: This constant has a value of "REGISTRATION_ERROR"
     STATUS_REGISTRATION_ERROR = "REGISTRATION_ERROR"
+
+    #: A constant which can be used with the status property of a ManagedInstance.
+    #: This constant has a value of "DELETING"
+    STATUS_DELETING = "DELETING"
+
+    #: A constant which can be used with the status property of a ManagedInstance.
+    #: This constant has a value of "ONBOARDING"
+    STATUS_ONBOARDING = "ONBOARDING"
 
     def __init__(self, **kwargs):
         """
@@ -110,7 +142,7 @@ class ManagedInstance(object):
 
         :param location:
             The value to assign to the location property of this ManagedInstance.
-            Allowed values for this property are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type location: str
 
@@ -146,13 +178,13 @@ class ManagedInstance(object):
 
         :param os_family:
             The value to assign to the os_family property of this ManagedInstance.
-            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type os_family: str
 
         :param status:
             The value to assign to the status property of this ManagedInstance.
-            Allowed values for this property are: "NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -196,6 +228,10 @@ class ManagedInstance(object):
             The value to assign to the installed_packages property of this ManagedInstance.
         :type installed_packages: int
 
+        :param installed_windows_updates:
+            The value to assign to the installed_windows_updates property of this ManagedInstance.
+        :type installed_windows_updates: int
+
         :param updates_available:
             The value to assign to the updates_available property of this ManagedInstance.
         :type updates_available: int
@@ -232,6 +268,18 @@ class ManagedInstance(object):
             The value to assign to the time_updated property of this ManagedInstance.
         :type time_updated: datetime
 
+        :param notification_topic_id:
+            The value to assign to the notification_topic_id property of this ManagedInstance.
+        :type notification_topic_id: str
+
+        :param autonomous_settings:
+            The value to assign to the autonomous_settings property of this ManagedInstance.
+        :type autonomous_settings: oci.os_management_hub.models.AutonomousSettings
+
+        :param is_managed_by_autonomous_linux:
+            The value to assign to the is_managed_by_autonomous_linux property of this ManagedInstance.
+        :type is_managed_by_autonomous_linux: bool
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -259,6 +307,7 @@ class ManagedInstance(object):
             'lifecycle_stage': 'Id',
             'is_reboot_required': 'bool',
             'installed_packages': 'int',
+            'installed_windows_updates': 'int',
             'updates_available': 'int',
             'security_updates_available': 'int',
             'bug_updates_available': 'int',
@@ -267,7 +316,10 @@ class ManagedInstance(object):
             'scheduled_job_count': 'int',
             'work_request_count': 'int',
             'time_created': 'datetime',
-            'time_updated': 'datetime'
+            'time_updated': 'datetime',
+            'notification_topic_id': 'str',
+            'autonomous_settings': 'AutonomousSettings',
+            'is_managed_by_autonomous_linux': 'bool'
         }
 
         self.attribute_map = {
@@ -296,6 +348,7 @@ class ManagedInstance(object):
             'lifecycle_stage': 'lifecycleStage',
             'is_reboot_required': 'isRebootRequired',
             'installed_packages': 'installedPackages',
+            'installed_windows_updates': 'installedWindowsUpdates',
             'updates_available': 'updatesAvailable',
             'security_updates_available': 'securityUpdatesAvailable',
             'bug_updates_available': 'bugUpdatesAvailable',
@@ -304,7 +357,10 @@ class ManagedInstance(object):
             'scheduled_job_count': 'scheduledJobCount',
             'work_request_count': 'workRequestCount',
             'time_created': 'timeCreated',
-            'time_updated': 'timeUpdated'
+            'time_updated': 'timeUpdated',
+            'notification_topic_id': 'notificationTopicId',
+            'autonomous_settings': 'autonomousSettings',
+            'is_managed_by_autonomous_linux': 'isManagedByAutonomousLinux'
         }
 
         self._id = None
@@ -332,6 +388,7 @@ class ManagedInstance(object):
         self._lifecycle_stage = None
         self._is_reboot_required = None
         self._installed_packages = None
+        self._installed_windows_updates = None
         self._updates_available = None
         self._security_updates_available = None
         self._bug_updates_available = None
@@ -341,12 +398,17 @@ class ManagedInstance(object):
         self._work_request_count = None
         self._time_created = None
         self._time_updated = None
+        self._notification_topic_id = None
+        self._autonomous_settings = None
+        self._is_managed_by_autonomous_linux = None
 
     @property
     def id(self):
         """
         **[Required]** Gets the id of this ManagedInstance.
-        The OCID for the managed instance.
+        The `OCID`__ of the managed instance.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ManagedInstance.
@@ -358,7 +420,9 @@ class ManagedInstance(object):
     def id(self, id):
         """
         Sets the id of this ManagedInstance.
-        The OCID for the managed instance.
+        The `OCID`__ of the managed instance.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ManagedInstance.
@@ -370,7 +434,7 @@ class ManagedInstance(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this ManagedInstance.
-        Managed instance identifier.
+        User-friendly name for the managed instance.
 
 
         :return: The display_name of this ManagedInstance.
@@ -382,7 +446,7 @@ class ManagedInstance(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ManagedInstance.
-        Managed instance identifier.
+        User-friendly name for the managed instance.
 
 
         :param display_name: The display_name of this ManagedInstance.
@@ -394,7 +458,7 @@ class ManagedInstance(object):
     def description(self):
         """
         Gets the description of this ManagedInstance.
-        Information specified by the user about the managed instance.
+        User-specified description for the managed instance.
 
 
         :return: The description of this ManagedInstance.
@@ -406,7 +470,7 @@ class ManagedInstance(object):
     def description(self, description):
         """
         Sets the description of this ManagedInstance.
-        Information specified by the user about the managed instance.
+        User-specified description for the managed instance.
 
 
         :param description: The description of this ManagedInstance.
@@ -418,7 +482,9 @@ class ManagedInstance(object):
     def tenancy_id(self):
         """
         **[Required]** Gets the tenancy_id of this ManagedInstance.
-        The OCID for the tenancy this managed instance resides in.
+        The `OCID`__ of the tenancy that the managed instance resides in.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The tenancy_id of this ManagedInstance.
@@ -430,7 +496,9 @@ class ManagedInstance(object):
     def tenancy_id(self, tenancy_id):
         """
         Sets the tenancy_id of this ManagedInstance.
-        The OCID for the tenancy this managed instance resides in.
+        The `OCID`__ of the tenancy that the managed instance resides in.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param tenancy_id: The tenancy_id of this ManagedInstance.
@@ -442,7 +510,9 @@ class ManagedInstance(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ManagedInstance.
-        The OCID for the compartment this managed instance resides in.
+        The `OCID`__ of the compartment that contains the managed instance.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ManagedInstance.
@@ -454,7 +524,9 @@ class ManagedInstance(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ManagedInstance.
-        The OCID for the compartment this managed instance resides in.
+        The `OCID`__ of the compartment that contains the managed instance.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ManagedInstance.
@@ -466,9 +538,9 @@ class ManagedInstance(object):
     def location(self):
         """
         Gets the location of this ManagedInstance.
-        location of the managed instance.
+        The location of the managed instance.
 
-        Allowed values for this property are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -481,13 +553,13 @@ class ManagedInstance(object):
     def location(self, location):
         """
         Sets the location of this ManagedInstance.
-        location of the managed instance.
+        The location of the managed instance.
 
 
         :param location: The location of this ManagedInstance.
         :type: str
         """
-        allowed_values = ["ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2"]
+        allowed_values = ["ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"]
         if not value_allowed_none_or_none_sentinel(location, allowed_values):
             location = 'UNKNOWN_ENUM_VALUE'
         self._location = location
@@ -496,8 +568,7 @@ class ManagedInstance(object):
     def time_last_checkin(self):
         """
         Gets the time_last_checkin of this ManagedInstance.
-        Time at which the instance last checked in, as described in
-        `RFC 3339`__, section 14.29.
+        Time that the instance last checked in with the service (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -511,8 +582,7 @@ class ManagedInstance(object):
     def time_last_checkin(self, time_last_checkin):
         """
         Sets the time_last_checkin of this ManagedInstance.
-        Time at which the instance last checked in, as described in
-        `RFC 3339`__, section 14.29.
+        Time that the instance last checked in with the service (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -526,8 +596,7 @@ class ManagedInstance(object):
     def time_last_boot(self):
         """
         Gets the time_last_boot of this ManagedInstance.
-        Time at which the instance last booted, as described in
-        `RFC 3339`__, section 14.29.
+        Time that the instance last booted (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -541,8 +610,7 @@ class ManagedInstance(object):
     def time_last_boot(self, time_last_boot):
         """
         Sets the time_last_boot of this ManagedInstance.
-        Time at which the instance last booted, as described in
-        `RFC 3339`__, section 14.29.
+        Time that the instance last booted (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -556,7 +624,7 @@ class ManagedInstance(object):
     def os_name(self):
         """
         Gets the os_name of this ManagedInstance.
-        Operating System Name.
+        Operating system name.
 
 
         :return: The os_name of this ManagedInstance.
@@ -568,7 +636,7 @@ class ManagedInstance(object):
     def os_name(self, os_name):
         """
         Sets the os_name of this ManagedInstance.
-        Operating System Name.
+        Operating system name.
 
 
         :param os_name: The os_name of this ManagedInstance.
@@ -580,7 +648,7 @@ class ManagedInstance(object):
     def os_version(self):
         """
         Gets the os_version of this ManagedInstance.
-        Operating System Version.
+        Operating system version.
 
 
         :return: The os_version of this ManagedInstance.
@@ -592,7 +660,7 @@ class ManagedInstance(object):
     def os_version(self, os_version):
         """
         Sets the os_version of this ManagedInstance.
-        Operating System Version.
+        Operating system version.
 
 
         :param os_version: The os_version of this ManagedInstance.
@@ -604,7 +672,7 @@ class ManagedInstance(object):
     def os_kernel_version(self):
         """
         Gets the os_kernel_version of this ManagedInstance.
-        Operating System Kernel Version.
+        Operating system kernel version.
 
 
         :return: The os_kernel_version of this ManagedInstance.
@@ -616,7 +684,7 @@ class ManagedInstance(object):
     def os_kernel_version(self, os_kernel_version):
         """
         Sets the os_kernel_version of this ManagedInstance.
-        Operating System Kernel Version.
+        Operating system kernel version.
 
 
         :param os_kernel_version: The os_kernel_version of this ManagedInstance.
@@ -682,9 +750,9 @@ class ManagedInstance(object):
     def os_family(self):
         """
         Gets the os_family of this ManagedInstance.
-        The Operating System type of the managed instance.
+        The operating system type of the managed instance.
 
-        Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -697,13 +765,13 @@ class ManagedInstance(object):
     def os_family(self, os_family):
         """
         Sets the os_family of this ManagedInstance.
-        The Operating System type of the managed instance.
+        The operating system type of the managed instance.
 
 
         :param os_family: The os_family of this ManagedInstance.
         :type: str
         """
-        allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7"]
+        allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"]
         if not value_allowed_none_or_none_sentinel(os_family, allowed_values):
             os_family = 'UNKNOWN_ENUM_VALUE'
         self._os_family = os_family
@@ -712,9 +780,9 @@ class ManagedInstance(object):
     def status(self):
         """
         **[Required]** Gets the status of this ManagedInstance.
-        status of the managed instance.
+        Current status of the managed instance.
 
-        Allowed values for this property are: "NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -727,13 +795,13 @@ class ManagedInstance(object):
     def status(self, status):
         """
         Sets the status of this ManagedInstance.
-        status of the managed instance.
+        Current status of the managed instance.
 
 
         :param status: The status of this ManagedInstance.
         :type: str
         """
-        allowed_values = ["NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR"]
+        allowed_values = ["NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status
@@ -742,7 +810,7 @@ class ManagedInstance(object):
     def profile(self):
         """
         Gets the profile of this ManagedInstance.
-        The content profile of this instance.
+        The profile that was used to register this instance with the service.
 
 
         :return: The profile of this ManagedInstance.
@@ -754,7 +822,7 @@ class ManagedInstance(object):
     def profile(self, profile):
         """
         Sets the profile of this ManagedInstance.
-        The content profile of this instance.
+        The profile that was used to register this instance with the service.
 
 
         :param profile: The profile of this ManagedInstance.
@@ -766,7 +834,7 @@ class ManagedInstance(object):
     def is_management_station(self):
         """
         Gets the is_management_station of this ManagedInstance.
-        Whether this managed instance is acting as an on-premise management station.
+        Indicates whether this managed instance is acting as an on-premises management station.
 
 
         :return: The is_management_station of this ManagedInstance.
@@ -778,7 +846,7 @@ class ManagedInstance(object):
     def is_management_station(self, is_management_station):
         """
         Sets the is_management_station of this ManagedInstance.
-        Whether this managed instance is acting as an on-premise management station.
+        Indicates whether this managed instance is acting as an on-premises management station.
 
 
         :param is_management_station: The is_management_station of this ManagedInstance.
@@ -790,7 +858,9 @@ class ManagedInstance(object):
     def primary_management_station_id(self):
         """
         Gets the primary_management_station_id of this ManagedInstance.
-        The OCID of a management station to be used as the preferred primary.
+        The `OCID`__ of the management station for the instance to use as primary management station.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The primary_management_station_id of this ManagedInstance.
@@ -802,7 +872,9 @@ class ManagedInstance(object):
     def primary_management_station_id(self, primary_management_station_id):
         """
         Sets the primary_management_station_id of this ManagedInstance.
-        The OCID of a management station to be used as the preferred primary.
+        The `OCID`__ of the management station for the instance to use as primary management station.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param primary_management_station_id: The primary_management_station_id of this ManagedInstance.
@@ -814,7 +886,9 @@ class ManagedInstance(object):
     def secondary_management_station_id(self):
         """
         Gets the secondary_management_station_id of this ManagedInstance.
-        The OCID of a management station to be used as the preferred secondary.
+        The `OCID`__ of the management station for the instance to use as secondary managment station.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The secondary_management_station_id of this ManagedInstance.
@@ -826,7 +900,9 @@ class ManagedInstance(object):
     def secondary_management_station_id(self, secondary_management_station_id):
         """
         Sets the secondary_management_station_id of this ManagedInstance.
-        The OCID of a management station to be used as the preferred secondary.
+        The `OCID`__ of the management station for the instance to use as secondary managment station.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param secondary_management_station_id: The secondary_management_station_id of this ManagedInstance.
@@ -946,7 +1022,7 @@ class ManagedInstance(object):
     def installed_packages(self):
         """
         Gets the installed_packages of this ManagedInstance.
-        Number of packages installed on the system.
+        Number of packages installed on the instance.
 
 
         :return: The installed_packages of this ManagedInstance.
@@ -958,7 +1034,7 @@ class ManagedInstance(object):
     def installed_packages(self, installed_packages):
         """
         Sets the installed_packages of this ManagedInstance.
-        Number of packages installed on the system.
+        Number of packages installed on the instance.
 
 
         :param installed_packages: The installed_packages of this ManagedInstance.
@@ -967,10 +1043,34 @@ class ManagedInstance(object):
         self._installed_packages = installed_packages
 
     @property
+    def installed_windows_updates(self):
+        """
+        Gets the installed_windows_updates of this ManagedInstance.
+        Number of Windows updates installed on the instance.
+
+
+        :return: The installed_windows_updates of this ManagedInstance.
+        :rtype: int
+        """
+        return self._installed_windows_updates
+
+    @installed_windows_updates.setter
+    def installed_windows_updates(self, installed_windows_updates):
+        """
+        Sets the installed_windows_updates of this ManagedInstance.
+        Number of Windows updates installed on the instance.
+
+
+        :param installed_windows_updates: The installed_windows_updates of this ManagedInstance.
+        :type: int
+        """
+        self._installed_windows_updates = installed_windows_updates
+
+    @property
     def updates_available(self):
         """
         Gets the updates_available of this ManagedInstance.
-        Number of updates available to be installed.
+        Number of updates available for installation.
 
 
         :return: The updates_available of this ManagedInstance.
@@ -982,7 +1082,7 @@ class ManagedInstance(object):
     def updates_available(self, updates_available):
         """
         Sets the updates_available of this ManagedInstance.
-        Number of updates available to be installed.
+        Number of updates available for installation.
 
 
         :param updates_available: The updates_available of this ManagedInstance.
@@ -994,7 +1094,7 @@ class ManagedInstance(object):
     def security_updates_available(self):
         """
         Gets the security_updates_available of this ManagedInstance.
-        Number of security type updates available to be installed.
+        Number of security type updates available for installation.
 
 
         :return: The security_updates_available of this ManagedInstance.
@@ -1006,7 +1106,7 @@ class ManagedInstance(object):
     def security_updates_available(self, security_updates_available):
         """
         Sets the security_updates_available of this ManagedInstance.
-        Number of security type updates available to be installed.
+        Number of security type updates available for installation.
 
 
         :param security_updates_available: The security_updates_available of this ManagedInstance.
@@ -1018,7 +1118,7 @@ class ManagedInstance(object):
     def bug_updates_available(self):
         """
         Gets the bug_updates_available of this ManagedInstance.
-        Number of bug fix type updates available to be installed.
+        Number of bug fix type updates available for installation.
 
 
         :return: The bug_updates_available of this ManagedInstance.
@@ -1030,7 +1130,7 @@ class ManagedInstance(object):
     def bug_updates_available(self, bug_updates_available):
         """
         Sets the bug_updates_available of this ManagedInstance.
-        Number of bug fix type updates available to be installed.
+        Number of bug fix type updates available for installation.
 
 
         :param bug_updates_available: The bug_updates_available of this ManagedInstance.
@@ -1042,7 +1142,7 @@ class ManagedInstance(object):
     def enhancement_updates_available(self):
         """
         Gets the enhancement_updates_available of this ManagedInstance.
-        Number of enhancement type updates available to be installed.
+        Number of enhancement type updates available for installation.
 
 
         :return: The enhancement_updates_available of this ManagedInstance.
@@ -1054,7 +1154,7 @@ class ManagedInstance(object):
     def enhancement_updates_available(self, enhancement_updates_available):
         """
         Sets the enhancement_updates_available of this ManagedInstance.
-        Number of enhancement type updates available to be installed.
+        Number of enhancement type updates available for installation.
 
 
         :param enhancement_updates_available: The enhancement_updates_available of this ManagedInstance.
@@ -1066,7 +1166,7 @@ class ManagedInstance(object):
     def other_updates_available(self):
         """
         Gets the other_updates_available of this ManagedInstance.
-        Number of non-classified updates available to be installed.
+        Number of non-classified (other) updates available for installation.
 
 
         :return: The other_updates_available of this ManagedInstance.
@@ -1078,7 +1178,7 @@ class ManagedInstance(object):
     def other_updates_available(self, other_updates_available):
         """
         Sets the other_updates_available of this ManagedInstance.
-        Number of non-classified updates available to be installed.
+        Number of non-classified (other) updates available for installation.
 
 
         :param other_updates_available: The other_updates_available of this ManagedInstance.
@@ -1138,8 +1238,7 @@ class ManagedInstance(object):
     def time_created(self):
         """
         Gets the time_created of this ManagedInstance.
-        The date and time the work request was created, as described in
-        `RFC 3339`__, section 14.29.
+        The date and time the instance was created (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -1153,8 +1252,7 @@ class ManagedInstance(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ManagedInstance.
-        The date and time the work request was created, as described in
-        `RFC 3339`__, section 14.29.
+        The date and time the instance was created (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -1168,8 +1266,7 @@ class ManagedInstance(object):
     def time_updated(self):
         """
         Gets the time_updated of this ManagedInstance.
-        The date and time the work request was updated, as described in
-        `RFC 3339`__, section 14.29.
+        The date and time the instance was last updated (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -1183,8 +1280,7 @@ class ManagedInstance(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this ManagedInstance.
-        The date and time the work request was updated, as described in
-        `RFC 3339`__, section 14.29.
+        The date and time the instance was last updated (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -1193,6 +1289,78 @@ class ManagedInstance(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def notification_topic_id(self):
+        """
+        Gets the notification_topic_id of this ManagedInstance.
+        The `OCID`__ for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The notification_topic_id of this ManagedInstance.
+        :rtype: str
+        """
+        return self._notification_topic_id
+
+    @notification_topic_id.setter
+    def notification_topic_id(self, notification_topic_id):
+        """
+        Sets the notification_topic_id of this ManagedInstance.
+        The `OCID`__ for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param notification_topic_id: The notification_topic_id of this ManagedInstance.
+        :type: str
+        """
+        self._notification_topic_id = notification_topic_id
+
+    @property
+    def autonomous_settings(self):
+        """
+        Gets the autonomous_settings of this ManagedInstance.
+
+        :return: The autonomous_settings of this ManagedInstance.
+        :rtype: oci.os_management_hub.models.AutonomousSettings
+        """
+        return self._autonomous_settings
+
+    @autonomous_settings.setter
+    def autonomous_settings(self, autonomous_settings):
+        """
+        Sets the autonomous_settings of this ManagedInstance.
+
+        :param autonomous_settings: The autonomous_settings of this ManagedInstance.
+        :type: oci.os_management_hub.models.AutonomousSettings
+        """
+        self._autonomous_settings = autonomous_settings
+
+    @property
+    def is_managed_by_autonomous_linux(self):
+        """
+        Gets the is_managed_by_autonomous_linux of this ManagedInstance.
+        Indicates whether the Autonomous Linux service manages the instance.
+
+
+        :return: The is_managed_by_autonomous_linux of this ManagedInstance.
+        :rtype: bool
+        """
+        return self._is_managed_by_autonomous_linux
+
+    @is_managed_by_autonomous_linux.setter
+    def is_managed_by_autonomous_linux(self, is_managed_by_autonomous_linux):
+        """
+        Sets the is_managed_by_autonomous_linux of this ManagedInstance.
+        Indicates whether the Autonomous Linux service manages the instance.
+
+
+        :param is_managed_by_autonomous_linux: The is_managed_by_autonomous_linux of this ManagedInstance.
+        :type: bool
+        """
+        self._is_managed_by_autonomous_linux = is_managed_by_autonomous_linux
 
     def __repr__(self):
         return formatted_flat_dict(self)

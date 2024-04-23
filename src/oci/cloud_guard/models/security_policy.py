@@ -12,7 +12,10 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SecurityPolicy(object):
     """
-    A security policy defines a security requirement for resources in a security zone. If a security zone enables a policy (using a recipe), then any action that attempts to violate that policy is denied.
+    A security policy (SecurityPolicy resource) defines security requirements
+    for resources in a security zone. If a security zone enables a security policy through
+    a security recipe (SecurityRecipe resource), then any action that would violate that
+    policy is blocked.
     """
 
     #: A constant which can be used with the owner property of a SecurityPolicy.
@@ -108,6 +111,10 @@ class SecurityPolicy(object):
             The value to assign to the lifecycle_details property of this SecurityPolicy.
         :type lifecycle_details: str
 
+        :param locks:
+            The value to assign to the locks property of this SecurityPolicy.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this SecurityPolicy.
         :type freeform_tags: dict(str, str)
@@ -134,6 +141,7 @@ class SecurityPolicy(object):
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'locks': 'list[ResourceLock]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -152,6 +160,7 @@ class SecurityPolicy(object):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'locks': 'locks',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -169,6 +178,7 @@ class SecurityPolicy(object):
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._locks = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -177,7 +187,7 @@ class SecurityPolicy(object):
     def id(self):
         """
         **[Required]** Gets the id of this SecurityPolicy.
-        Unique identifier that is immutable on creation
+        Unique identifier that can\u2019t be changed after creation
 
 
         :return: The id of this SecurityPolicy.
@@ -189,7 +199,7 @@ class SecurityPolicy(object):
     def id(self, id):
         """
         Sets the id of this SecurityPolicy.
-        Unique identifier that is immutable on creation
+        Unique identifier that can\u2019t be changed after creation
 
 
         :param id: The id of this SecurityPolicy.
@@ -225,7 +235,7 @@ class SecurityPolicy(object):
     def display_name(self):
         """
         Gets the display_name of this SecurityPolicy.
-        The security policy's full name
+        The security policy's display name
 
 
         :return: The display_name of this SecurityPolicy.
@@ -237,7 +247,7 @@ class SecurityPolicy(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this SecurityPolicy.
-        The security policy's full name
+        The security policy's display name
 
 
         :param display_name: The display_name of this SecurityPolicy.
@@ -273,7 +283,7 @@ class SecurityPolicy(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this SecurityPolicy.
-        The id of the security policy's compartment
+        The OCID of the security policy's compartment
 
 
         :return: The compartment_id of this SecurityPolicy.
@@ -285,7 +295,7 @@ class SecurityPolicy(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this SecurityPolicy.
-        The id of the security policy's compartment
+        The OCID of the security policy's compartment
 
 
         :param compartment_id: The compartment_id of this SecurityPolicy.
@@ -327,7 +337,7 @@ class SecurityPolicy(object):
     def category(self):
         """
         Gets the category of this SecurityPolicy.
-        The category of security policy
+        The category of the security policy
 
 
         :return: The category of this SecurityPolicy.
@@ -339,7 +349,7 @@ class SecurityPolicy(object):
     def category(self, category):
         """
         Sets the category of this SecurityPolicy.
-        The category of security policy
+        The category of the security policy
 
 
         :param category: The category of this SecurityPolicy.
@@ -423,7 +433,7 @@ class SecurityPolicy(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this SecurityPolicy.
-        The current state of the security policy
+        The current lifecycle state of the security policy
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -438,7 +448,7 @@ class SecurityPolicy(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this SecurityPolicy.
-        The current state of the security policy
+        The current lifecycle state of the security policy
 
 
         :param lifecycle_state: The lifecycle_state of this SecurityPolicy.
@@ -472,6 +482,30 @@ class SecurityPolicy(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this SecurityPolicy.
+        Locks associated with this resource.
+
+
+        :return: The locks of this SecurityPolicy.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this SecurityPolicy.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this SecurityPolicy.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     @property
     def freeform_tags(self):

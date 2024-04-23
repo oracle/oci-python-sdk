@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResponderExecutionSummary(object):
     """
-    Summary of the Responder Execution.
+    A summary of detailed information on responder execution.
     """
 
     #: A constant which can be used with the responder_rule_type property of a ResponderExecutionSummary.
@@ -229,7 +229,7 @@ class ResponderExecutionSummary(object):
     def responder_rule_id(self):
         """
         **[Required]** Gets the responder_rule_id of this ResponderExecutionSummary.
-        Responder Rule id for the responder execution
+        Responder rule ID for the responder execution
 
 
         :return: The responder_rule_id of this ResponderExecutionSummary.
@@ -241,7 +241,7 @@ class ResponderExecutionSummary(object):
     def responder_rule_id(self, responder_rule_id):
         """
         Sets the responder_rule_id of this ResponderExecutionSummary.
-        Responder Rule id for the responder execution
+        Responder rule ID for the responder execution
 
 
         :param responder_rule_id: The responder_rule_id of this ResponderExecutionSummary.
@@ -253,7 +253,7 @@ class ResponderExecutionSummary(object):
     def responder_rule_type(self):
         """
         **[Required]** Gets the responder_rule_type of this ResponderExecutionSummary.
-        Rule Type for the responder execution
+        Rule type for the responder execution
 
         Allowed values for this property are: "REMEDIATION", "NOTIFICATION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -268,7 +268,7 @@ class ResponderExecutionSummary(object):
     def responder_rule_type(self, responder_rule_type):
         """
         Sets the responder_rule_type of this ResponderExecutionSummary.
-        Rule Type for the responder execution
+        Rule type for the responder execution
 
 
         :param responder_rule_type: The responder_rule_type of this ResponderExecutionSummary.
@@ -307,7 +307,7 @@ class ResponderExecutionSummary(object):
     def problem_id(self):
         """
         **[Required]** Gets the problem_id of this ResponderExecutionSummary.
-        Problem id associated with the responder execution
+        Problem ID associated with the responder execution
 
 
         :return: The problem_id of this ResponderExecutionSummary.
@@ -319,7 +319,7 @@ class ResponderExecutionSummary(object):
     def problem_id(self, problem_id):
         """
         Sets the problem_id of this ResponderExecutionSummary.
-        Problem id associated with the responder execution
+        Problem ID associated with the responder execution
 
 
         :param problem_id: The problem_id of this ResponderExecutionSummary.
@@ -379,7 +379,7 @@ class ResponderExecutionSummary(object):
     def target_id(self):
         """
         **[Required]** Gets the target_id of this ResponderExecutionSummary.
-        Target Id of the problem for the responder execution
+        Target ID of the problem for the responder execution
 
 
         :return: The target_id of this ResponderExecutionSummary.
@@ -391,7 +391,7 @@ class ResponderExecutionSummary(object):
     def target_id(self, target_id):
         """
         Sets the target_id of this ResponderExecutionSummary.
-        Target Id of the problem for the responder execution
+        Target ID of the problem for the responder execution
 
 
         :param target_id: The target_id of this ResponderExecutionSummary.
@@ -403,7 +403,7 @@ class ResponderExecutionSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ResponderExecutionSummary.
-        compartment id of the problem for the responder execution
+        Compartment OCID of the problem for the responder execution
 
 
         :return: The compartment_id of this ResponderExecutionSummary.
@@ -415,7 +415,7 @@ class ResponderExecutionSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ResponderExecutionSummary.
-        compartment id of the problem for the responder execution
+        Compartment OCID of the problem for the responder execution
 
 
         :param compartment_id: The compartment_id of this ResponderExecutionSummary.
@@ -451,7 +451,7 @@ class ResponderExecutionSummary(object):
     def resource_name(self):
         """
         **[Required]** Gets the resource_name of this ResponderExecutionSummary.
-        resource name of the problem for the responder execution. TODO-DOC link to resource definition doc
+        Resource name of the problem for the responder execution.
 
 
         :return: The resource_name of this ResponderExecutionSummary.
@@ -463,7 +463,7 @@ class ResponderExecutionSummary(object):
     def resource_name(self, resource_name):
         """
         Sets the resource_name of this ResponderExecutionSummary.
-        resource name of the problem for the responder execution. TODO-DOC link to resource definition doc
+        Resource name of the problem for the responder execution.
 
 
         :param resource_name: The resource_name of this ResponderExecutionSummary.
@@ -523,7 +523,7 @@ class ResponderExecutionSummary(object):
     def responder_execution_status(self):
         """
         **[Required]** Gets the responder_execution_status of this ResponderExecutionSummary.
-        current execution status of the responder
+        Current execution status of the responder
 
         Allowed values for this property are: "STARTED", "AWAITING_CONFIRMATION", "AWAITING_INPUT", "SUCCEEDED", "FAILED", "SKIPPED", "ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -538,7 +538,7 @@ class ResponderExecutionSummary(object):
     def responder_execution_status(self, responder_execution_status):
         """
         Sets the responder_execution_status of this ResponderExecutionSummary.
-        current execution status of the responder
+        Current execution status of the responder
 
 
         :param responder_execution_status: The responder_execution_status of this ResponderExecutionSummary.
@@ -553,7 +553,7 @@ class ResponderExecutionSummary(object):
     def responder_execution_mode(self):
         """
         **[Required]** Gets the responder_execution_mode of this ResponderExecutionSummary.
-        possible type of responder execution modes
+        Possible type of responder execution modes
 
         Allowed values for this property are: "MANUAL", "AUTOMATED", "ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -568,7 +568,7 @@ class ResponderExecutionSummary(object):
     def responder_execution_mode(self, responder_execution_mode):
         """
         Sets the responder_execution_mode of this ResponderExecutionSummary.
-        possible type of responder execution modes
+        Possible type of responder execution modes
 
 
         :param responder_execution_mode: The responder_execution_mode of this ResponderExecutionSummary.

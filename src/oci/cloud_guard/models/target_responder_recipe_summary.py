@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TargetResponderRecipeSummary(object):
     """
-    Summary of ResponderRecipe
+    Summary information for a target responder recipe.
     """
 
     #: A constant which can be used with the owner property of a TargetResponderRecipeSummary.
@@ -100,6 +100,10 @@ class TargetResponderRecipeSummary(object):
             The value to assign to the lifecycle_details property of this TargetResponderRecipeSummary.
         :type lifecycle_details: str
 
+        :param locks:
+            The value to assign to the locks property of this TargetResponderRecipeSummary.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -111,7 +115,8 @@ class TargetResponderRecipeSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
-            'lifecycle_details': 'str'
+            'lifecycle_details': 'str',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -124,7 +129,8 @@ class TargetResponderRecipeSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
-            'lifecycle_details': 'lifecycleDetails'
+            'lifecycle_details': 'lifecycleDetails',
+            'locks': 'locks'
         }
 
         self._id = None
@@ -137,12 +143,13 @@ class TargetResponderRecipeSummary(object):
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._locks = None
 
     @property
     def id(self):
         """
         **[Required]** Gets the id of this TargetResponderRecipeSummary.
-        Unique identifier that is immutable on creation
+        Unique identifier that can't be changed after creation
 
 
         :return: The id of this TargetResponderRecipeSummary.
@@ -154,7 +161,7 @@ class TargetResponderRecipeSummary(object):
     def id(self, id):
         """
         Sets the id of this TargetResponderRecipeSummary.
-        Unique identifier that is immutable on creation
+        Unique identifier that can't be changed after creation
 
 
         :param id: The id of this TargetResponderRecipeSummary.
@@ -166,7 +173,7 @@ class TargetResponderRecipeSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this TargetResponderRecipeSummary.
-        Compartment Identifier
+        Compartment OCID
 
 
         :return: The compartment_id of this TargetResponderRecipeSummary.
@@ -178,7 +185,7 @@ class TargetResponderRecipeSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this TargetResponderRecipeSummary.
-        Compartment Identifier
+        Compartment OCID
 
 
         :param compartment_id: The compartment_id of this TargetResponderRecipeSummary.
@@ -190,7 +197,7 @@ class TargetResponderRecipeSummary(object):
     def responder_recipe_id(self):
         """
         **[Required]** Gets the responder_recipe_id of this TargetResponderRecipeSummary.
-        Unique identifier for Responder Recipe of which this is an extension
+        Unique identifier for responder recipe of which this is an extension
 
 
         :return: The responder_recipe_id of this TargetResponderRecipeSummary.
@@ -202,7 +209,7 @@ class TargetResponderRecipeSummary(object):
     def responder_recipe_id(self, responder_recipe_id):
         """
         Sets the responder_recipe_id of this TargetResponderRecipeSummary.
-        Unique identifier for Responder Recipe of which this is an extension
+        Unique identifier for responder recipe of which this is an extension
 
 
         :param responder_recipe_id: The responder_recipe_id of this TargetResponderRecipeSummary.
@@ -214,7 +221,7 @@ class TargetResponderRecipeSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this TargetResponderRecipeSummary.
-        ResponderRecipe Identifier Name
+        Display name of the responder recipe
 
 
         :return: The display_name of this TargetResponderRecipeSummary.
@@ -226,7 +233,7 @@ class TargetResponderRecipeSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this TargetResponderRecipeSummary.
-        ResponderRecipe Identifier Name
+        Display name of the responder recipe
 
 
         :param display_name: The display_name of this TargetResponderRecipeSummary.
@@ -238,7 +245,7 @@ class TargetResponderRecipeSummary(object):
     def description(self):
         """
         **[Required]** Gets the description of this TargetResponderRecipeSummary.
-        ResponderRecipe Description
+        Description of the responder recipe
 
 
         :return: The description of this TargetResponderRecipeSummary.
@@ -250,7 +257,7 @@ class TargetResponderRecipeSummary(object):
     def description(self, description):
         """
         Sets the description of this TargetResponderRecipeSummary.
-        ResponderRecipe Description
+        Description of the responder recipe
 
 
         :param description: The description of this TargetResponderRecipeSummary.
@@ -262,7 +269,7 @@ class TargetResponderRecipeSummary(object):
     def owner(self):
         """
         **[Required]** Gets the owner of this TargetResponderRecipeSummary.
-        Owner of ResponderRecipe
+        Owner of the responder recipe
 
         Allowed values for this property are: "CUSTOMER", "ORACLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -277,7 +284,7 @@ class TargetResponderRecipeSummary(object):
     def owner(self, owner):
         """
         Sets the owner of this TargetResponderRecipeSummary.
-        Owner of ResponderRecipe
+        Owner of the responder recipe
 
 
         :param owner: The owner of this TargetResponderRecipeSummary.
@@ -316,7 +323,7 @@ class TargetResponderRecipeSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this TargetResponderRecipeSummary.
-        The date and time the target responder recipe was updated. Format defined by RFC3339.
+        The date and time the target responder recipe was last updated. Format defined by RFC3339.
 
 
         :return: The time_updated of this TargetResponderRecipeSummary.
@@ -328,7 +335,7 @@ class TargetResponderRecipeSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this TargetResponderRecipeSummary.
-        The date and time the target responder recipe was updated. Format defined by RFC3339.
+        The date and time the target responder recipe was last updated. Format defined by RFC3339.
 
 
         :param time_updated: The time_updated of this TargetResponderRecipeSummary.
@@ -340,7 +347,7 @@ class TargetResponderRecipeSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this TargetResponderRecipeSummary.
-        The current state of the Example.
+        The current lifecycle state of the example
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -355,7 +362,7 @@ class TargetResponderRecipeSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this TargetResponderRecipeSummary.
-        The current state of the Example.
+        The current lifecycle state of the example
 
 
         :param lifecycle_state: The lifecycle_state of this TargetResponderRecipeSummary.
@@ -389,6 +396,30 @@ class TargetResponderRecipeSummary(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this TargetResponderRecipeSummary.
+        Locks associated with this resource.
+
+
+        :return: The locks of this TargetResponderRecipeSummary.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this TargetResponderRecipeSummary.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this TargetResponderRecipeSummary.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -36,6 +36,10 @@ class CapacityReservationInstanceSummary(object):
             The value to assign to the fault_domain property of this CapacityReservationInstanceSummary.
         :type fault_domain: str
 
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this CapacityReservationInstanceSummary.
+        :type cluster_placement_group_id: str
+
         :param shape_config:
             The value to assign to the shape_config property of this CapacityReservationInstanceSummary.
         :type shape_config: oci.core.models.InstanceReservationShapeConfigDetails
@@ -50,6 +54,7 @@ class CapacityReservationInstanceSummary(object):
             'availability_domain': 'str',
             'compartment_id': 'str',
             'fault_domain': 'str',
+            'cluster_placement_group_id': 'str',
             'shape_config': 'InstanceReservationShapeConfigDetails',
             'shape': 'str'
         }
@@ -59,6 +64,7 @@ class CapacityReservationInstanceSummary(object):
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
             'fault_domain': 'faultDomain',
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
             'shape_config': 'shapeConfig',
             'shape': 'shape'
         }
@@ -67,6 +73,7 @@ class CapacityReservationInstanceSummary(object):
         self._availability_domain = None
         self._compartment_id = None
         self._fault_domain = None
+        self._cluster_placement_group_id = None
         self._shape_config = None
         self._shape = None
 
@@ -165,6 +172,30 @@ class CapacityReservationInstanceSummary(object):
         :type: str
         """
         self._fault_domain = fault_domain
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this CapacityReservationInstanceSummary.
+        The OCID of the cluster placement group of the instance.
+
+
+        :return: The cluster_placement_group_id of this CapacityReservationInstanceSummary.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this CapacityReservationInstanceSummary.
+        The OCID of the cluster placement group of the instance.
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this CapacityReservationInstanceSummary.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
 
     @property
     def shape_config(self):

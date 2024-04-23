@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OperatorSummary(object):
     """
-    Summary of Operator
+    Summary information on available operators.
     """
 
     #: A constant which can be used with the filter_type property of a OperatorSummary.
@@ -91,7 +91,7 @@ class OperatorSummary(object):
     def name(self):
         """
         **[Required]** Gets the name of this OperatorSummary.
-        name of the operand
+        Name of the operand
 
 
         :return: The name of this OperatorSummary.
@@ -103,7 +103,7 @@ class OperatorSummary(object):
     def name(self, name):
         """
         Sets the name of this OperatorSummary.
-        name of the operand
+        Name of the operand
 
 
         :param name: The name of this OperatorSummary.
@@ -115,7 +115,7 @@ class OperatorSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this OperatorSummary.
-        display name of the operand
+        Display name of the operand
 
 
         :return: The display_name of this OperatorSummary.
@@ -127,7 +127,7 @@ class OperatorSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this OperatorSummary.
-        display name of the operand
+        Display name of the operand
 
 
         :param display_name: The display_name of this OperatorSummary.
@@ -139,7 +139,7 @@ class OperatorSummary(object):
     def datatype(self):
         """
         **[Required]** Gets the datatype of this OperatorSummary.
-        data type of operand
+        Data type of the operand
 
 
         :return: The datatype of this OperatorSummary.
@@ -151,7 +151,7 @@ class OperatorSummary(object):
     def datatype(self, datatype):
         """
         Sets the datatype of this OperatorSummary.
-        data type of operand
+        Data type of the operand
 
 
         :param datatype: The datatype of this OperatorSummary.
@@ -163,7 +163,7 @@ class OperatorSummary(object):
     def managed_listtype(self):
         """
         **[Required]** Gets the managed_listtype of this OperatorSummary.
-        operand list type
+        Operand list type
 
 
         :return: The managed_listtype of this OperatorSummary.
@@ -175,7 +175,7 @@ class OperatorSummary(object):
     def managed_listtype(self, managed_listtype):
         """
         Sets the managed_listtype of this OperatorSummary.
-        operand list type
+        Operand list type
 
 
         :param managed_listtype: The managed_listtype of this OperatorSummary.
@@ -187,7 +187,7 @@ class OperatorSummary(object):
     def filter_type(self):
         """
         **[Required]** Gets the filter_type of this OperatorSummary.
-        Filter type can be config filter or condition filter
+        Type of filter
 
         Allowed values for this property are: "CONDITION", "CONFIG", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -202,7 +202,7 @@ class OperatorSummary(object):
     def filter_type(self, filter_type):
         """
         Sets the filter_type of this OperatorSummary.
-        Filter type can be config filter or condition filter
+        Type of filter
 
 
         :param filter_type: The filter_type of this OperatorSummary.
@@ -241,7 +241,7 @@ class OperatorSummary(object):
     def multi_list_types(self):
         """
         Gets the multi_list_types of this OperatorSummary.
-        configuration value type list for multilist data type
+        Configuration value type list for multi-list data type
 
 
         :return: The multi_list_types of this OperatorSummary.
@@ -253,7 +253,7 @@ class OperatorSummary(object):
     def multi_list_types(self, multi_list_types):
         """
         Sets the multi_list_types of this OperatorSummary.
-        configuration value type list for multilist data type
+        Configuration value type list for multi-list data type
 
 
         :param multi_list_types: The multi_list_types of this OperatorSummary.

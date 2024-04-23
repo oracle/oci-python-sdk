@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ProfileSummary(object):
     """
-    Summary of the registration profile.
+    Provides summary information for a registration profile.
     """
 
     #: A constant which can be used with the profile_type property of a ProfileSummary.
@@ -31,9 +31,17 @@ class ProfileSummary(object):
     #: This constant has a value of "STATION"
     PROFILE_TYPE_STATION = "STATION"
 
+    #: A constant which can be used with the profile_type property of a ProfileSummary.
+    #: This constant has a value of "WINDOWS_STANDALONE"
+    PROFILE_TYPE_WINDOWS_STANDALONE = "WINDOWS_STANDALONE"
+
     #: A constant which can be used with the vendor_name property of a ProfileSummary.
     #: This constant has a value of "ORACLE"
     VENDOR_NAME_ORACLE = "ORACLE"
+
+    #: A constant which can be used with the vendor_name property of a ProfileSummary.
+    #: This constant has a value of "MICROSOFT"
+    VENDOR_NAME_MICROSOFT = "MICROSOFT"
 
     #: A constant which can be used with the os_family property of a ProfileSummary.
     #: This constant has a value of "ORACLE_LINUX_9"
@@ -46,6 +54,26 @@ class ProfileSummary(object):
     #: A constant which can be used with the os_family property of a ProfileSummary.
     #: This constant has a value of "ORACLE_LINUX_7"
     OS_FAMILY_ORACLE_LINUX_7 = "ORACLE_LINUX_7"
+
+    #: A constant which can be used with the os_family property of a ProfileSummary.
+    #: This constant has a value of "ORACLE_LINUX_6"
+    OS_FAMILY_ORACLE_LINUX_6 = "ORACLE_LINUX_6"
+
+    #: A constant which can be used with the os_family property of a ProfileSummary.
+    #: This constant has a value of "WINDOWS_SERVER_2016"
+    OS_FAMILY_WINDOWS_SERVER_2016 = "WINDOWS_SERVER_2016"
+
+    #: A constant which can be used with the os_family property of a ProfileSummary.
+    #: This constant has a value of "WINDOWS_SERVER_2019"
+    OS_FAMILY_WINDOWS_SERVER_2019 = "WINDOWS_SERVER_2019"
+
+    #: A constant which can be used with the os_family property of a ProfileSummary.
+    #: This constant has a value of "WINDOWS_SERVER_2022"
+    OS_FAMILY_WINDOWS_SERVER_2022 = "WINDOWS_SERVER_2022"
+
+    #: A constant which can be used with the os_family property of a ProfileSummary.
+    #: This constant has a value of "ALL"
+    OS_FAMILY_ALL = "ALL"
 
     #: A constant which can be used with the arch_type property of a ProfileSummary.
     #: This constant has a value of "X86_64"
@@ -94,19 +122,23 @@ class ProfileSummary(object):
 
         :param profile_type:
             The value to assign to the profile_type property of this ProfileSummary.
-            Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type profile_type: str
 
+        :param registration_type:
+            The value to assign to the registration_type property of this ProfileSummary.
+        :type registration_type: str
+
         :param vendor_name:
             The value to assign to the vendor_name property of this ProfileSummary.
-            Allowed values for this property are: "ORACLE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE", "MICROSOFT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type vendor_name: str
 
         :param os_family:
             The value to assign to the os_family property of this ProfileSummary.
-            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type os_family: str
 
@@ -123,6 +155,14 @@ class ProfileSummary(object):
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ProfileSummary.
         :type lifecycle_state: str
+
+        :param is_default_profile:
+            The value to assign to the is_default_profile property of this ProfileSummary.
+        :type is_default_profile: bool
+
+        :param is_service_provided_profile:
+            The value to assign to the is_service_provided_profile property of this ProfileSummary.
+        :type is_service_provided_profile: bool
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ProfileSummary.
@@ -144,11 +184,14 @@ class ProfileSummary(object):
             'compartment_id': 'str',
             'management_station_id': 'str',
             'profile_type': 'str',
+            'registration_type': 'str',
             'vendor_name': 'str',
             'os_family': 'str',
             'arch_type': 'str',
             'time_created': 'datetime',
             'lifecycle_state': 'str',
+            'is_default_profile': 'bool',
+            'is_service_provided_profile': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -161,11 +204,14 @@ class ProfileSummary(object):
             'compartment_id': 'compartmentId',
             'management_station_id': 'managementStationId',
             'profile_type': 'profileType',
+            'registration_type': 'registrationType',
             'vendor_name': 'vendorName',
             'os_family': 'osFamily',
             'arch_type': 'archType',
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
+            'is_default_profile': 'isDefaultProfile',
+            'is_service_provided_profile': 'isServiceProvidedProfile',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -177,11 +223,14 @@ class ProfileSummary(object):
         self._compartment_id = None
         self._management_station_id = None
         self._profile_type = None
+        self._registration_type = None
         self._vendor_name = None
         self._os_family = None
         self._arch_type = None
         self._time_created = None
         self._lifecycle_state = None
+        self._is_default_profile = None
+        self._is_service_provided_profile = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -190,7 +239,9 @@ class ProfileSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this ProfileSummary.
-        The OCID of the profile that is immutable on creation.
+        The `OCID`__ of the registration profile.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ProfileSummary.
@@ -202,7 +253,9 @@ class ProfileSummary(object):
     def id(self, id):
         """
         Sets the id of this ProfileSummary.
-        The OCID of the profile that is immutable on creation.
+        The `OCID`__ of the registration profile.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ProfileSummary.
@@ -214,7 +267,7 @@ class ProfileSummary(object):
     def display_name(self):
         """
         Gets the display_name of this ProfileSummary.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name for the profile.
 
 
         :return: The display_name of this ProfileSummary.
@@ -226,7 +279,7 @@ class ProfileSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ProfileSummary.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name for the profile.
 
 
         :param display_name: The display_name of this ProfileSummary.
@@ -238,7 +291,7 @@ class ProfileSummary(object):
     def description(self):
         """
         Gets the description of this ProfileSummary.
-        The description of the registration profile.
+        User-specified description of the registration profile.
 
 
         :return: The description of this ProfileSummary.
@@ -250,7 +303,7 @@ class ProfileSummary(object):
     def description(self, description):
         """
         Sets the description of this ProfileSummary.
-        The description of the registration profile.
+        User-specified description of the registration profile.
 
 
         :param description: The description of this ProfileSummary.
@@ -262,7 +315,9 @@ class ProfileSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ProfileSummary.
-        The OCID of the tenancy containing the registration profile.
+        The `OCID`__ of the compartment that contains the registration profile.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ProfileSummary.
@@ -274,7 +329,9 @@ class ProfileSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ProfileSummary.
-        The OCID of the tenancy containing the registration profile.
+        The `OCID`__ of the compartment that contains the registration profile.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ProfileSummary.
@@ -286,7 +343,9 @@ class ProfileSummary(object):
     def management_station_id(self):
         """
         Gets the management_station_id of this ProfileSummary.
-        The OCID of the management station.
+        The `OCID`__ of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The management_station_id of this ProfileSummary.
@@ -298,7 +357,9 @@ class ProfileSummary(object):
     def management_station_id(self, management_station_id):
         """
         Sets the management_station_id of this ProfileSummary.
-        The OCID of the management station.
+        The `OCID`__ of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param management_station_id: The management_station_id of this ProfileSummary.
@@ -310,9 +371,9 @@ class ProfileSummary(object):
     def profile_type(self):
         """
         Gets the profile_type of this ProfileSummary.
-        The type of registration profile. Either SOFTWARESOURCE, GROUP or LIFECYCLE.
+        The type of registration profile.
 
-        Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -325,24 +386,48 @@ class ProfileSummary(object):
     def profile_type(self, profile_type):
         """
         Sets the profile_type of this ProfileSummary.
-        The type of registration profile. Either SOFTWARESOURCE, GROUP or LIFECYCLE.
+        The type of registration profile.
 
 
         :param profile_type: The profile_type of this ProfileSummary.
         :type: str
         """
-        allowed_values = ["SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION"]
+        allowed_values = ["SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE"]
         if not value_allowed_none_or_none_sentinel(profile_type, allowed_values):
             profile_type = 'UNKNOWN_ENUM_VALUE'
         self._profile_type = profile_type
 
     @property
+    def registration_type(self):
+        """
+        Gets the registration_type of this ProfileSummary.
+        The type of instance to register.
+
+
+        :return: The registration_type of this ProfileSummary.
+        :rtype: str
+        """
+        return self._registration_type
+
+    @registration_type.setter
+    def registration_type(self, registration_type):
+        """
+        Sets the registration_type of this ProfileSummary.
+        The type of instance to register.
+
+
+        :param registration_type: The registration_type of this ProfileSummary.
+        :type: str
+        """
+        self._registration_type = registration_type
+
+    @property
     def vendor_name(self):
         """
         Gets the vendor_name of this ProfileSummary.
-        The software source vendor name.
+        The vendor of the operating system for the instance.
 
-        Allowed values for this property are: "ORACLE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE", "MICROSOFT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -355,13 +440,13 @@ class ProfileSummary(object):
     def vendor_name(self, vendor_name):
         """
         Sets the vendor_name of this ProfileSummary.
-        The software source vendor name.
+        The vendor of the operating system for the instance.
 
 
         :param vendor_name: The vendor_name of this ProfileSummary.
         :type: str
         """
-        allowed_values = ["ORACLE"]
+        allowed_values = ["ORACLE", "MICROSOFT"]
         if not value_allowed_none_or_none_sentinel(vendor_name, allowed_values):
             vendor_name = 'UNKNOWN_ENUM_VALUE'
         self._vendor_name = vendor_name
@@ -372,7 +457,7 @@ class ProfileSummary(object):
         Gets the os_family of this ProfileSummary.
         The operating system family.
 
-        Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -391,7 +476,7 @@ class ProfileSummary(object):
         :param os_family: The os_family of this ProfileSummary.
         :type: str
         """
-        allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7"]
+        allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"]
         if not value_allowed_none_or_none_sentinel(os_family, allowed_values):
             os_family = 'UNKNOWN_ENUM_VALUE'
         self._os_family = os_family
@@ -473,6 +558,54 @@ class ProfileSummary(object):
         :type: str
         """
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def is_default_profile(self):
+        """
+        Gets the is_default_profile of this ProfileSummary.
+        Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+
+
+        :return: The is_default_profile of this ProfileSummary.
+        :rtype: bool
+        """
+        return self._is_default_profile
+
+    @is_default_profile.setter
+    def is_default_profile(self, is_default_profile):
+        """
+        Sets the is_default_profile of this ProfileSummary.
+        Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+
+
+        :param is_default_profile: The is_default_profile of this ProfileSummary.
+        :type: bool
+        """
+        self._is_default_profile = is_default_profile
+
+    @property
+    def is_service_provided_profile(self):
+        """
+        Gets the is_service_provided_profile of this ProfileSummary.
+        Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
+
+
+        :return: The is_service_provided_profile of this ProfileSummary.
+        :rtype: bool
+        """
+        return self._is_service_provided_profile
+
+    @is_service_provided_profile.setter
+    def is_service_provided_profile(self, is_service_provided_profile):
+        """
+        Sets the is_service_provided_profile of this ProfileSummary.
+        Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
+
+
+        :param is_service_provided_profile: The is_service_provided_profile of this ProfileSummary.
+        :type: bool
+        """
+        self._is_service_provided_profile = is_service_provided_profile
 
     @property
     def freeform_tags(self):

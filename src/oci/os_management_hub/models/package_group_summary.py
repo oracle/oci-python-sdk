@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PackageGroupSummary(object):
     """
-    Yum/DNF package group that associated with a software source.
+    The yum or DNF package group that is associated with a software source.
     """
 
     def __init__(self, **kwargs):
@@ -136,7 +136,7 @@ class PackageGroupSummary(object):
     def description(self):
         """
         Gets the description of this PackageGroupSummary.
-        description of the package group.
+        Description of the package group.
 
 
         :return: The description of this PackageGroupSummary.
@@ -148,7 +148,7 @@ class PackageGroupSummary(object):
     def description(self, description):
         """
         Sets the description of this PackageGroupSummary.
-        description of the package group.
+        Description of the package group.
 
 
         :param description: The description of this PackageGroupSummary.
@@ -160,7 +160,7 @@ class PackageGroupSummary(object):
     def is_user_visible(self):
         """
         Gets the is_user_visible of this PackageGroupSummary.
-        Indicates if this package group is visible by users.
+        Indicates if this package group is visible to users.
 
 
         :return: The is_user_visible of this PackageGroupSummary.
@@ -172,7 +172,7 @@ class PackageGroupSummary(object):
     def is_user_visible(self, is_user_visible):
         """
         Sets the is_user_visible of this PackageGroupSummary.
-        Indicates if this package group is visible by users.
+        Indicates if this package group is visible to users.
 
 
         :param is_user_visible: The is_user_visible of this PackageGroupSummary.
@@ -208,7 +208,7 @@ class PackageGroupSummary(object):
     def repositories(self):
         """
         Gets the repositories of this PackageGroupSummary.
-        the IDs of the package group's repositories.
+        The repository IDs of the package group.
 
 
         :return: The repositories of this PackageGroupSummary.
@@ -220,7 +220,7 @@ class PackageGroupSummary(object):
     def repositories(self, repositories):
         """
         Sets the repositories of this PackageGroupSummary.
-        the IDs of the package group's repositories.
+        The repository IDs of the package group.
 
 
         :param repositories: The repositories of this PackageGroupSummary.

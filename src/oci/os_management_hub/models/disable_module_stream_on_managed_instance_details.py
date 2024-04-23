@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DisableModuleStreamOnManagedInstanceDetails(object):
     """
-    The details of the module stream to be disabled on a managed instance.
+    Provides the information used to disable a module stream on a managed instance.
     """
 
     def __init__(self, **kwargs):

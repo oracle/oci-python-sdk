@@ -194,7 +194,7 @@ class CreateDrgRouteDistributionDetails(object):
     def distribution_type(self):
         """
         **[Required]** Gets the distribution_type of this CreateDrgRouteDistributionDetails.
-        Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+        Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
 
         Allowed values for this property are: "IMPORT"
 
@@ -208,7 +208,7 @@ class CreateDrgRouteDistributionDetails(object):
     def distribution_type(self, distribution_type):
         """
         Sets the distribution_type of this CreateDrgRouteDistributionDetails.
-        Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+        Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
 
 
         :param distribution_type: The distribution_type of this CreateDrgRouteDistributionDetails.

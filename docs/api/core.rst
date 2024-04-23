@@ -534,6 +534,9 @@ Core Services
     oci.core.models.UpdateInstancePoolDetails
     oci.core.models.UpdateInstancePoolPlacementConfigurationDetails
     oci.core.models.UpdateInstanceShapeConfigDetails
+    oci.core.models.UpdateInstanceSourceDetails
+    oci.core.models.UpdateInstanceSourceViaBootVolumeDetails
+    oci.core.models.UpdateInstanceSourceViaImageDetails
     oci.core.models.UpdateInternetGatewayDetails
     oci.core.models.UpdateIpv6Details
     oci.core.models.UpdateLaunchOptions

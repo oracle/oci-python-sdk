@@ -12,8 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagedInstanceGroupModuleCollection(object):
     """
-    Results of a search for module streams on a managed instance group.
-    Contains both ModuleStreamOnManagedInstanceGroupSummary items and other data.
+    A set of module streams returned for the :func:`list_managed_instance_group_modules` operation.
     """
 
     def __init__(self, **kwargs):

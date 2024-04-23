@@ -11,6 +11,7 @@ from .access_context_attribute_collection import AccessContextAttributeCollectio
 from .access_materials import AccessMaterials
 from .access_request import AccessRequest
 from .access_request_collection import AccessRequestCollection
+from .access_request_ext import AccessRequestExt
 from .access_request_summary import AccessRequestSummary
 from .activity_log import ActivityLog
 from .approval_template import ApprovalTemplate
@@ -46,6 +47,7 @@ lockbox_type_mapping = {
     "AccessMaterials": AccessMaterials,
     "AccessRequest": AccessRequest,
     "AccessRequestCollection": AccessRequestCollection,
+    "AccessRequestExt": AccessRequestExt,
     "AccessRequestSummary": AccessRequestSummary,
     "ActivityLog": ActivityLog,
     "ApprovalTemplate": ApprovalTemplate,

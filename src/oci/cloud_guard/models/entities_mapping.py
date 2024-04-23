@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class EntitiesMapping(object):
     """
-    Data Source Entities mappings
+    Parameters for entities mapping to data source.
     """
 
     #: A constant which can be used with the entity_type property of a EntitiesMapping.
@@ -71,7 +71,7 @@ class EntitiesMapping(object):
     def display_name(self):
         """
         Gets the display_name of this EntitiesMapping.
-        The display name of entity
+        Display name of the entity
 
 
         :return: The display_name of this EntitiesMapping.
@@ -83,7 +83,7 @@ class EntitiesMapping(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this EntitiesMapping.
-        The display name of entity
+        Display name of the entity
 
 
         :param display_name: The display_name of this EntitiesMapping.
@@ -119,7 +119,7 @@ class EntitiesMapping(object):
     def entity_type(self):
         """
         Gets the entity_type of this EntitiesMapping.
-        Possible type of entity
+        Type of entity
 
         Allowed values for this property are: "EXTERNAL_IP", "INTERNAL_IP", "TEXT", "JSON_LIST", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -134,7 +134,7 @@ class EntitiesMapping(object):
     def entity_type(self, entity_type):
         """
         Sets the entity_type of this EntitiesMapping.
-        Possible type of entity
+        Type of entity
 
 
         :param entity_type: The entity_type of this EntitiesMapping.

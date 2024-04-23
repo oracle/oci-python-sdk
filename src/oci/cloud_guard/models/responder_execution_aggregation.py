@@ -70,7 +70,7 @@ class ResponderExecutionAggregation(object):
     def count(self):
         """
         **[Required]** Gets the count of this ResponderExecutionAggregation.
-        The number of occurences with given dimension(s)
+        The number of occurrences with given dimensions
 
 
         :return: The count of this ResponderExecutionAggregation.
@@ -82,7 +82,7 @@ class ResponderExecutionAggregation(object):
     def count(self, count):
         """
         Sets the count of this ResponderExecutionAggregation.
-        The number of occurences with given dimension(s)
+        The number of occurrences with given dimensions
 
 
         :param count: The count of this ResponderExecutionAggregation.

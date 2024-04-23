@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TargetResponderRecipeCollection(object):
     """
-    Collection of TargetResponderRecipe
+    Collection of target responder recipe summaries.
     """
 
     def __init__(self, **kwargs):
@@ -24,22 +24,29 @@ class TargetResponderRecipeCollection(object):
             The value to assign to the items property of this TargetResponderRecipeCollection.
         :type items: list[oci.cloud_guard.models.TargetResponderRecipeSummary]
 
+        :param locks:
+            The value to assign to the locks property of this TargetResponderRecipeCollection.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
-            'items': 'list[TargetResponderRecipeSummary]'
+            'items': 'list[TargetResponderRecipeSummary]',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
-            'items': 'items'
+            'items': 'items',
+            'locks': 'locks'
         }
 
         self._items = None
+        self._locks = None
 
     @property
     def items(self):
         """
         **[Required]** Gets the items of this TargetResponderRecipeCollection.
-        List of TargetResponderRecipeSummary
+        List of TargetResponderRecipeSummary resources
 
 
         :return: The items of this TargetResponderRecipeCollection.
@@ -51,13 +58,37 @@ class TargetResponderRecipeCollection(object):
     def items(self, items):
         """
         Sets the items of this TargetResponderRecipeCollection.
-        List of TargetResponderRecipeSummary
+        List of TargetResponderRecipeSummary resources
 
 
         :param items: The items of this TargetResponderRecipeCollection.
         :type: list[oci.cloud_guard.models.TargetResponderRecipeSummary]
         """
         self._items = items
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this TargetResponderRecipeCollection.
+        Locks associated with this resource.
+
+
+        :return: The locks of this TargetResponderRecipeCollection.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this TargetResponderRecipeCollection.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this TargetResponderRecipeCollection.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -31,7 +31,9 @@ class LifecycleEnvironmentClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str lifecycle_stage_id: (required)
-            The OCID of the lifecycle stage.
+            The `OCID`__ of the lifecycle stage.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.AttachManagedInstancesToLifecycleStageDetails attach_managed_instances_to_lifecycle_stage_details: (required)
             Details for managed instances to attach to the lifecycle stage.
@@ -115,7 +117,9 @@ class LifecycleEnvironmentClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str lifecycle_environment_id: (required)
-            The OCID of the lifecycle environment.
+            The `OCID`__ of the lifecycle environment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.os_management_hub.models.LifecycleEnvironment.lifecycle_state`
@@ -174,10 +178,12 @@ class LifecycleEnvironmentClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str lifecycle_stage_id: (required)
-            The OCID of the lifecycle stage.
+            The `OCID`__ of the lifecycle stage.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.DetachManagedInstancesFromLifecycleStageDetails detach_managed_instances_from_lifecycle_stage_details: (required)
-            Details for managed instances to detach from the lifecycle stage.
+            Details for the managed instance to detach from the lifecycle stage.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.os_management_hub.models.WorkRequest.status`
@@ -216,7 +222,9 @@ class LifecycleEnvironmentClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str lifecycle_stage_id: (required)
-            The OCID of the lifecycle stage.
+            The `OCID`__ of the lifecycle stage.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.PromoteSoftwareSourceToLifecycleStageDetails promote_software_source_to_lifecycle_stage_details: (required)
             Details for the software source promotion job.
@@ -258,7 +266,9 @@ class LifecycleEnvironmentClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str lifecycle_environment_id: (required)
-            The OCID of the lifecycle environment.
+            The `OCID`__ of the lifecycle environment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.UpdateLifecycleEnvironmentDetails update_lifecycle_environment_details: (required)
             The information to be updated.

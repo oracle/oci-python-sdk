@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestSummary(object):
     """
-    A summary of the status of a work request.
+    Summary information about a work request.
     """
 
     #: A constant which can be used with the operation_type property of a WorkRequestSummary.
@@ -173,7 +173,7 @@ class WorkRequestSummary(object):
     def status(self):
         """
         **[Required]** Gets the status of this WorkRequestSummary.
-        Status of current work request.
+        Status of current work request
 
         Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -188,7 +188,7 @@ class WorkRequestSummary(object):
     def status(self, status):
         """
         Sets the status of this WorkRequestSummary.
-        Status of current work request.
+        Status of current work request
 
 
         :param status: The status of this WorkRequestSummary.
@@ -203,7 +203,7 @@ class WorkRequestSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this WorkRequestSummary.
-        The id of the work request.
+        Unique identifier of the work request
 
 
         :return: The id of this WorkRequestSummary.
@@ -215,7 +215,7 @@ class WorkRequestSummary(object):
     def id(self, id):
         """
         Sets the id of this WorkRequestSummary.
-        The id of the work request.
+        Unique identifier of the work request
 
 
         :param id: The id of this WorkRequestSummary.
@@ -227,10 +227,10 @@ class WorkRequestSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this WorkRequestSummary.
-        The ocid of the compartment that contains the work request. Work requests should be scoped to
+        The OCID of the compartment that contains the work request. Work requests should be scoped to
         the same compartment as the resource the work request affects. If the work request affects multiple resources,
         and those resources are not in the same compartment, it is up to the service team to pick the primary
-        resource whose compartment should be used
+        resource whose compartment should be used.
 
 
         :return: The compartment_id of this WorkRequestSummary.
@@ -242,10 +242,10 @@ class WorkRequestSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this WorkRequestSummary.
-        The ocid of the compartment that contains the work request. Work requests should be scoped to
+        The OCID of the compartment that contains the work request. Work requests should be scoped to
         the same compartment as the resource the work request affects. If the work request affects multiple resources,
         and those resources are not in the same compartment, it is up to the service team to pick the primary
-        resource whose compartment should be used
+        resource whose compartment should be used.
 
 
         :param compartment_id: The compartment_id of this WorkRequestSummary.
@@ -257,7 +257,7 @@ class WorkRequestSummary(object):
     def resources(self):
         """
         **[Required]** Gets the resources of this WorkRequestSummary.
-        The resources affected by this work request.
+        List of resources affected by this work request
 
 
         :return: The resources of this WorkRequestSummary.
@@ -269,7 +269,7 @@ class WorkRequestSummary(object):
     def resources(self, resources):
         """
         Sets the resources of this WorkRequestSummary.
-        The resources affected by this work request.
+        List of resources affected by this work request
 
 
         :param resources: The resources of this WorkRequestSummary.
@@ -281,7 +281,7 @@ class WorkRequestSummary(object):
     def percent_complete(self):
         """
         **[Required]** Gets the percent_complete of this WorkRequestSummary.
-        Percentage of the request completed.
+        Percentage of work request completed
 
 
         :return: The percent_complete of this WorkRequestSummary.
@@ -293,7 +293,7 @@ class WorkRequestSummary(object):
     def percent_complete(self, percent_complete):
         """
         Sets the percent_complete of this WorkRequestSummary.
-        Percentage of the request completed.
+        Percentage of work request completed
 
 
         :param percent_complete: The percent_complete of this WorkRequestSummary.
@@ -353,7 +353,7 @@ class WorkRequestSummary(object):
     def time_finished(self):
         """
         Gets the time_finished of this WorkRequestSummary.
-        The date and time the object was finished
+        The date and time the request was finished
 
 
         :return: The time_finished of this WorkRequestSummary.
@@ -365,7 +365,7 @@ class WorkRequestSummary(object):
     def time_finished(self, time_finished):
         """
         Sets the time_finished of this WorkRequestSummary.
-        The date and time the object was finished
+        The date and time the request was finished
 
 
         :param time_finished: The time_finished of this WorkRequestSummary.

@@ -12,8 +12,36 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SoftwarePackageSummary(object):
     """
-    Summary information for a software package.
+    Provides summary information for a software package.
     """
+
+    #: A constant which can be used with the architecture property of a SoftwarePackageSummary.
+    #: This constant has a value of "I386"
+    ARCHITECTURE_I386 = "I386"
+
+    #: A constant which can be used with the architecture property of a SoftwarePackageSummary.
+    #: This constant has a value of "I686"
+    ARCHITECTURE_I686 = "I686"
+
+    #: A constant which can be used with the architecture property of a SoftwarePackageSummary.
+    #: This constant has a value of "AARCH64"
+    ARCHITECTURE_AARCH64 = "AARCH64"
+
+    #: A constant which can be used with the architecture property of a SoftwarePackageSummary.
+    #: This constant has a value of "X86_64"
+    ARCHITECTURE_X86_64 = "X86_64"
+
+    #: A constant which can be used with the architecture property of a SoftwarePackageSummary.
+    #: This constant has a value of "SRC"
+    ARCHITECTURE_SRC = "SRC"
+
+    #: A constant which can be used with the architecture property of a SoftwarePackageSummary.
+    #: This constant has a value of "NOARCH"
+    ARCHITECTURE_NOARCH = "NOARCH"
+
+    #: A constant which can be used with the architecture property of a SoftwarePackageSummary.
+    #: This constant has a value of "OTHER"
+    ARCHITECTURE_OTHER = "OTHER"
 
     def __init__(self, **kwargs):
         """
@@ -38,6 +66,8 @@ class SoftwarePackageSummary(object):
 
         :param architecture:
             The value to assign to the architecture property of this SoftwarePackageSummary.
+            Allowed values for this property are: "I386", "I686", "AARCH64", "X86_64", "SRC", "NOARCH", "OTHER", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type architecture: str
 
         :param checksum:
@@ -56,6 +86,10 @@ class SoftwarePackageSummary(object):
             The value to assign to the software_sources property of this SoftwarePackageSummary.
         :type software_sources: list[oci.os_management_hub.models.SoftwareSourceDetails]
 
+        :param os_families:
+            The value to assign to the os_families property of this SoftwarePackageSummary.
+        :type os_families: list[oci.os_management_hub.models.OsFamily]
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -66,7 +100,8 @@ class SoftwarePackageSummary(object):
             'checksum': 'str',
             'checksum_type': 'str',
             'is_latest': 'bool',
-            'software_sources': 'list[SoftwareSourceDetails]'
+            'software_sources': 'list[SoftwareSourceDetails]',
+            'os_families': 'list[OsFamily]'
         }
 
         self.attribute_map = {
@@ -78,7 +113,8 @@ class SoftwarePackageSummary(object):
             'checksum': 'checksum',
             'checksum_type': 'checksumType',
             'is_latest': 'isLatest',
-            'software_sources': 'softwareSources'
+            'software_sources': 'softwareSources',
+            'os_families': 'osFamilies'
         }
 
         self._display_name = None
@@ -90,6 +126,7 @@ class SoftwarePackageSummary(object):
         self._checksum_type = None
         self._is_latest = None
         self._software_sources = None
+        self._os_families = None
 
     @property
     def display_name(self):
@@ -119,7 +156,7 @@ class SoftwarePackageSummary(object):
     def name(self):
         """
         **[Required]** Gets the name of this SoftwarePackageSummary.
-        Unique identifier for the package. NOTE - This is not an OCID.
+        Unique identifier for the package. Note that this is not an OCID.
 
 
         :return: The name of this SoftwarePackageSummary.
@@ -131,7 +168,7 @@ class SoftwarePackageSummary(object):
     def name(self, name):
         """
         Sets the name of this SoftwarePackageSummary.
-        Unique identifier for the package. NOTE - This is not an OCID.
+        Unique identifier for the package. Note that this is not an OCID.
 
 
         :param name: The name of this SoftwarePackageSummary.
@@ -193,6 +230,9 @@ class SoftwarePackageSummary(object):
         Gets the architecture of this SoftwarePackageSummary.
         The architecture for which this software was built.
 
+        Allowed values for this property are: "I386", "I686", "AARCH64", "X86_64", "SRC", "NOARCH", "OTHER", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
 
         :return: The architecture of this SoftwarePackageSummary.
         :rtype: str
@@ -209,6 +249,9 @@ class SoftwarePackageSummary(object):
         :param architecture: The architecture of this SoftwarePackageSummary.
         :type: str
         """
+        allowed_values = ["I386", "I686", "AARCH64", "X86_64", "SRC", "NOARCH", "OTHER"]
+        if not value_allowed_none_or_none_sentinel(architecture, allowed_values):
+            architecture = 'UNKNOWN_ENUM_VALUE'
         self._architecture = architecture
 
     @property
@@ -287,7 +330,7 @@ class SoftwarePackageSummary(object):
     def software_sources(self):
         """
         Gets the software_sources of this SoftwarePackageSummary.
-        List of software sources that provide the software package.
+        List of software sources that provide the software package. This property is deprecated and it will be removed in a future API release.
 
 
         :return: The software_sources of this SoftwarePackageSummary.
@@ -299,13 +342,37 @@ class SoftwarePackageSummary(object):
     def software_sources(self, software_sources):
         """
         Sets the software_sources of this SoftwarePackageSummary.
-        List of software sources that provide the software package.
+        List of software sources that provide the software package. This property is deprecated and it will be removed in a future API release.
 
 
         :param software_sources: The software_sources of this SoftwarePackageSummary.
         :type: list[oci.os_management_hub.models.SoftwareSourceDetails]
         """
         self._software_sources = software_sources
+
+    @property
+    def os_families(self):
+        """
+        Gets the os_families of this SoftwarePackageSummary.
+        The OS families the package belongs to.
+
+
+        :return: The os_families of this SoftwarePackageSummary.
+        :rtype: list[oci.os_management_hub.models.OsFamily]
+        """
+        return self._os_families
+
+    @os_families.setter
+    def os_families(self, os_families):
+        """
+        Sets the os_families of this SoftwarePackageSummary.
+        The OS families the package belongs to.
+
+
+        :param os_families: The os_families of this SoftwarePackageSummary.
+        :type: list[oci.os_management_hub.models.OsFamily]
+        """
+        self._os_families = os_families
 
     def __repr__(self):
         return formatted_flat_dict(self)

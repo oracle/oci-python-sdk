@@ -6,15 +6,29 @@
 
 from __future__ import absolute_import
 
+from .add_packages_to_software_source_details import AddPackagesToSoftwareSourceDetails
+from .agent_event import AgentEvent
+from .agent_event_data import AgentEventData
 from .attach_managed_instances_to_lifecycle_stage_details import AttachManagedInstancesToLifecycleStageDetails
 from .attach_managed_instances_to_managed_instance_group_details import AttachManagedInstancesToManagedInstanceGroupDetails
+from .attach_profile_to_managed_instance_details import AttachProfileToManagedInstanceDetails
 from .attach_software_sources_to_managed_instance_details import AttachSoftwareSourcesToManagedInstanceDetails
 from .attach_software_sources_to_managed_instance_group_details import AttachSoftwareSourcesToManagedInstanceGroupDetails
+from .autonomous_settings import AutonomousSettings
 from .available_package_collection import AvailablePackageCollection
 from .available_package_summary import AvailablePackageSummary
 from .available_software_source_collection import AvailableSoftwareSourceCollection
 from .available_software_source_summary import AvailableSoftwareSourceSummary
+from .available_windows_update_collection import AvailableWindowsUpdateCollection
+from .available_windows_update_summary import AvailableWindowsUpdateSummary
 from .change_availability_of_software_sources_details import ChangeAvailabilityOfSoftwareSourcesDetails
+from .change_event_compartment_details import ChangeEventCompartmentDetails
+from .change_lifecycle_environment_compartment_details import ChangeLifecycleEnvironmentCompartmentDetails
+from .change_managed_instance_group_compartment_details import ChangeManagedInstanceGroupCompartmentDetails
+from .change_management_station_compartment_details import ChangeManagementStationCompartmentDetails
+from .change_profile_compartment_details import ChangeProfileCompartmentDetails
+from .change_scheduled_job_compartment_details import ChangeScheduledJobCompartmentDetails
+from .change_software_source_compartment_details import ChangeSoftwareSourceCompartmentDetails
 from .create_custom_software_source_details import CreateCustomSoftwareSourceDetails
 from .create_entitlement_details import CreateEntitlementDetails
 from .create_group_profile_details import CreateGroupProfileDetails
@@ -30,6 +44,7 @@ from .create_scheduled_job_details import CreateScheduledJobDetails
 from .create_software_source_details import CreateSoftwareSourceDetails
 from .create_software_source_profile_details import CreateSoftwareSourceProfileDetails
 from .create_station_profile_details import CreateStationProfileDetails
+from .create_vendor_software_source_details import CreateVendorSoftwareSourceDetails
 from .create_versioned_custom_software_source_details import CreateVersionedCustomSoftwareSourceDetails
 from .custom_software_source import CustomSoftwareSource
 from .custom_software_source_filter import CustomSoftwareSourceFilter
@@ -47,14 +62,34 @@ from .entitlement_summary import EntitlementSummary
 from .erratum import Erratum
 from .erratum_collection import ErratumCollection
 from .erratum_summary import ErratumSummary
+from .event import Event
+from .event_collection import EventCollection
+from .event_content import EventContent
+from .event_summary import EventSummary
+from .exploit_attempt_additional_details import ExploitAttemptAdditionalDetails
+from .exploit_attempt_event import ExploitAttemptEvent
+from .exploit_attempt_event_content import ExploitAttemptEventContent
+from .exploit_attempt_event_data import ExploitAttemptEventData
 from .group_profile import GroupProfile
 from .id import Id
+from .install_all_windows_updates_on_managed_instances_in_compartment_details import InstallAllWindowsUpdatesOnManagedInstancesInCompartmentDetails
 from .install_module_stream_profile_on_managed_instance_details import InstallModuleStreamProfileOnManagedInstanceDetails
 from .install_module_stream_profile_on_managed_instance_group_details import InstallModuleStreamProfileOnManagedInstanceGroupDetails
 from .install_packages_on_managed_instance_details import InstallPackagesOnManagedInstanceDetails
 from .install_packages_on_managed_instance_group_details import InstallPackagesOnManagedInstanceGroupDetails
+from .install_windows_updates_on_managed_instance_details import InstallWindowsUpdatesOnManagedInstanceDetails
+from .install_windows_updates_on_managed_instance_group_details import InstallWindowsUpdatesOnManagedInstanceGroupDetails
 from .installed_package_collection import InstalledPackageCollection
 from .installed_package_summary import InstalledPackageSummary
+from .installed_windows_update_collection import InstalledWindowsUpdateCollection
+from .installed_windows_update_summary import InstalledWindowsUpdateSummary
+from .kernel_crash_event import KernelCrashEvent
+from .kernel_event_additional_details import KernelEventAdditionalDetails
+from .kernel_event_content import KernelEventContent
+from .kernel_event_data import KernelEventData
+from .kernel_oops_event import KernelOopsEvent
+from .ksplice_update_event import KspliceUpdateEvent
+from .ksplice_update_event_data import KspliceUpdateEventData
 from .lifecycle_environment import LifecycleEnvironment
 from .lifecycle_environment_collection import LifecycleEnvironmentCollection
 from .lifecycle_environment_details import LifecycleEnvironmentDetails
@@ -93,6 +128,8 @@ from .managed_instances_details import ManagedInstancesDetails
 from .management_station import ManagementStation
 from .management_station_collection import ManagementStationCollection
 from .management_station_details import ManagementStationDetails
+from .management_station_event import ManagementStationEvent
+from .management_station_event_data import ManagementStationEventData
 from .management_station_summary import ManagementStationSummary
 from .mirror_configuration import MirrorConfiguration
 from .mirror_summary import MirrorSummary
@@ -145,19 +182,28 @@ from .software_source import SoftwareSource
 from .software_source_availability import SoftwareSourceAvailability
 from .software_source_collection import SoftwareSourceCollection
 from .software_source_details import SoftwareSourceDetails
+from .software_source_event import SoftwareSourceEvent
+from .software_source_event_data import SoftwareSourceEventData
 from .software_source_profile import SoftwareSourceProfile
 from .software_source_summary import SoftwareSourceSummary
 from .software_source_vendor_collection import SoftwareSourceVendorCollection
 from .software_source_vendor_summary import SoftwareSourceVendorSummary
 from .software_sources_details import SoftwareSourcesDetails
+from .software_update_event import SoftwareUpdateEvent
+from .software_update_event_data import SoftwareUpdateEventData
+from .station_health import StationHealth
 from .station_profile import StationProfile
 from .switch_module_stream_on_managed_instance_details import SwitchModuleStreamOnManagedInstanceDetails
+from .switch_module_stream_on_managed_instance_group_details import SwitchModuleStreamOnManagedInstanceGroupDetails
 from .synchronize_mirrors_details import SynchronizeMirrorsDetails
+from .system_details import SystemDetails
+from .updatable_autonomous_settings import UpdatableAutonomousSettings
 from .updatable_package_collection import UpdatablePackageCollection
 from .updatable_package_summary import UpdatablePackageSummary
 from .update_all_packages_on_managed_instance_group_details import UpdateAllPackagesOnManagedInstanceGroupDetails
 from .update_all_packages_on_managed_instances_in_compartment_details import UpdateAllPackagesOnManagedInstancesInCompartmentDetails
 from .update_custom_software_source_details import UpdateCustomSoftwareSourceDetails
+from .update_event_details import UpdateEventDetails
 from .update_lifecycle_environment_details import UpdateLifecycleEnvironmentDetails
 from .update_lifecycle_stage_details import UpdateLifecycleStageDetails
 from .update_managed_instance_details import UpdateManagedInstanceDetails
@@ -170,15 +216,22 @@ from .update_proxy_configuration_details import UpdateProxyConfigurationDetails
 from .update_scheduled_job_details import UpdateScheduledJobDetails
 from .update_software_source_details import UpdateSoftwareSourceDetails
 from .update_vendor_software_source_details import UpdateVendorSoftwareSourceDetails
+from .update_versioned_custom_software_source_details import UpdateVersionedCustomSoftwareSourceDetails
 from .update_work_request_details import UpdateWorkRequestDetails
 from .vendor_software_source import VendorSoftwareSource
 from .vendor_software_source_summary import VendorSoftwareSourceSummary
 from .versioned_custom_software_source import VersionedCustomSoftwareSource
 from .versioned_custom_software_source_summary import VersionedCustomSoftwareSourceSummary
+from .vmcore_details import VmcoreDetails
+from .windows_standalone_profile import WindowsStandaloneProfile
+from .windows_update import WindowsUpdate
+from .windows_update_collection import WindowsUpdateCollection
+from .windows_update_summary import WindowsUpdateSummary
 from .work_request import WorkRequest
 from .work_request_details import WorkRequestDetails
 from .work_request_error import WorkRequestError
 from .work_request_error_collection import WorkRequestErrorCollection
+from .work_request_event_data_additional_details import WorkRequestEventDataAdditionalDetails
 from .work_request_log_entry import WorkRequestLogEntry
 from .work_request_log_entry_collection import WorkRequestLogEntryCollection
 from .work_request_management_station_details import WorkRequestManagementStationDetails
@@ -188,15 +241,29 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 
 # Maps type names to classes for os_management_hub services.
 os_management_hub_type_mapping = {
+    "AddPackagesToSoftwareSourceDetails": AddPackagesToSoftwareSourceDetails,
+    "AgentEvent": AgentEvent,
+    "AgentEventData": AgentEventData,
     "AttachManagedInstancesToLifecycleStageDetails": AttachManagedInstancesToLifecycleStageDetails,
     "AttachManagedInstancesToManagedInstanceGroupDetails": AttachManagedInstancesToManagedInstanceGroupDetails,
+    "AttachProfileToManagedInstanceDetails": AttachProfileToManagedInstanceDetails,
     "AttachSoftwareSourcesToManagedInstanceDetails": AttachSoftwareSourcesToManagedInstanceDetails,
     "AttachSoftwareSourcesToManagedInstanceGroupDetails": AttachSoftwareSourcesToManagedInstanceGroupDetails,
+    "AutonomousSettings": AutonomousSettings,
     "AvailablePackageCollection": AvailablePackageCollection,
     "AvailablePackageSummary": AvailablePackageSummary,
     "AvailableSoftwareSourceCollection": AvailableSoftwareSourceCollection,
     "AvailableSoftwareSourceSummary": AvailableSoftwareSourceSummary,
+    "AvailableWindowsUpdateCollection": AvailableWindowsUpdateCollection,
+    "AvailableWindowsUpdateSummary": AvailableWindowsUpdateSummary,
     "ChangeAvailabilityOfSoftwareSourcesDetails": ChangeAvailabilityOfSoftwareSourcesDetails,
+    "ChangeEventCompartmentDetails": ChangeEventCompartmentDetails,
+    "ChangeLifecycleEnvironmentCompartmentDetails": ChangeLifecycleEnvironmentCompartmentDetails,
+    "ChangeManagedInstanceGroupCompartmentDetails": ChangeManagedInstanceGroupCompartmentDetails,
+    "ChangeManagementStationCompartmentDetails": ChangeManagementStationCompartmentDetails,
+    "ChangeProfileCompartmentDetails": ChangeProfileCompartmentDetails,
+    "ChangeScheduledJobCompartmentDetails": ChangeScheduledJobCompartmentDetails,
+    "ChangeSoftwareSourceCompartmentDetails": ChangeSoftwareSourceCompartmentDetails,
     "CreateCustomSoftwareSourceDetails": CreateCustomSoftwareSourceDetails,
     "CreateEntitlementDetails": CreateEntitlementDetails,
     "CreateGroupProfileDetails": CreateGroupProfileDetails,
@@ -212,6 +279,7 @@ os_management_hub_type_mapping = {
     "CreateSoftwareSourceDetails": CreateSoftwareSourceDetails,
     "CreateSoftwareSourceProfileDetails": CreateSoftwareSourceProfileDetails,
     "CreateStationProfileDetails": CreateStationProfileDetails,
+    "CreateVendorSoftwareSourceDetails": CreateVendorSoftwareSourceDetails,
     "CreateVersionedCustomSoftwareSourceDetails": CreateVersionedCustomSoftwareSourceDetails,
     "CustomSoftwareSource": CustomSoftwareSource,
     "CustomSoftwareSourceFilter": CustomSoftwareSourceFilter,
@@ -229,14 +297,34 @@ os_management_hub_type_mapping = {
     "Erratum": Erratum,
     "ErratumCollection": ErratumCollection,
     "ErratumSummary": ErratumSummary,
+    "Event": Event,
+    "EventCollection": EventCollection,
+    "EventContent": EventContent,
+    "EventSummary": EventSummary,
+    "ExploitAttemptAdditionalDetails": ExploitAttemptAdditionalDetails,
+    "ExploitAttemptEvent": ExploitAttemptEvent,
+    "ExploitAttemptEventContent": ExploitAttemptEventContent,
+    "ExploitAttemptEventData": ExploitAttemptEventData,
     "GroupProfile": GroupProfile,
     "Id": Id,
+    "InstallAllWindowsUpdatesOnManagedInstancesInCompartmentDetails": InstallAllWindowsUpdatesOnManagedInstancesInCompartmentDetails,
     "InstallModuleStreamProfileOnManagedInstanceDetails": InstallModuleStreamProfileOnManagedInstanceDetails,
     "InstallModuleStreamProfileOnManagedInstanceGroupDetails": InstallModuleStreamProfileOnManagedInstanceGroupDetails,
     "InstallPackagesOnManagedInstanceDetails": InstallPackagesOnManagedInstanceDetails,
     "InstallPackagesOnManagedInstanceGroupDetails": InstallPackagesOnManagedInstanceGroupDetails,
+    "InstallWindowsUpdatesOnManagedInstanceDetails": InstallWindowsUpdatesOnManagedInstanceDetails,
+    "InstallWindowsUpdatesOnManagedInstanceGroupDetails": InstallWindowsUpdatesOnManagedInstanceGroupDetails,
     "InstalledPackageCollection": InstalledPackageCollection,
     "InstalledPackageSummary": InstalledPackageSummary,
+    "InstalledWindowsUpdateCollection": InstalledWindowsUpdateCollection,
+    "InstalledWindowsUpdateSummary": InstalledWindowsUpdateSummary,
+    "KernelCrashEvent": KernelCrashEvent,
+    "KernelEventAdditionalDetails": KernelEventAdditionalDetails,
+    "KernelEventContent": KernelEventContent,
+    "KernelEventData": KernelEventData,
+    "KernelOopsEvent": KernelOopsEvent,
+    "KspliceUpdateEvent": KspliceUpdateEvent,
+    "KspliceUpdateEventData": KspliceUpdateEventData,
     "LifecycleEnvironment": LifecycleEnvironment,
     "LifecycleEnvironmentCollection": LifecycleEnvironmentCollection,
     "LifecycleEnvironmentDetails": LifecycleEnvironmentDetails,
@@ -275,6 +363,8 @@ os_management_hub_type_mapping = {
     "ManagementStation": ManagementStation,
     "ManagementStationCollection": ManagementStationCollection,
     "ManagementStationDetails": ManagementStationDetails,
+    "ManagementStationEvent": ManagementStationEvent,
+    "ManagementStationEventData": ManagementStationEventData,
     "ManagementStationSummary": ManagementStationSummary,
     "MirrorConfiguration": MirrorConfiguration,
     "MirrorSummary": MirrorSummary,
@@ -327,19 +417,28 @@ os_management_hub_type_mapping = {
     "SoftwareSourceAvailability": SoftwareSourceAvailability,
     "SoftwareSourceCollection": SoftwareSourceCollection,
     "SoftwareSourceDetails": SoftwareSourceDetails,
+    "SoftwareSourceEvent": SoftwareSourceEvent,
+    "SoftwareSourceEventData": SoftwareSourceEventData,
     "SoftwareSourceProfile": SoftwareSourceProfile,
     "SoftwareSourceSummary": SoftwareSourceSummary,
     "SoftwareSourceVendorCollection": SoftwareSourceVendorCollection,
     "SoftwareSourceVendorSummary": SoftwareSourceVendorSummary,
     "SoftwareSourcesDetails": SoftwareSourcesDetails,
+    "SoftwareUpdateEvent": SoftwareUpdateEvent,
+    "SoftwareUpdateEventData": SoftwareUpdateEventData,
+    "StationHealth": StationHealth,
     "StationProfile": StationProfile,
     "SwitchModuleStreamOnManagedInstanceDetails": SwitchModuleStreamOnManagedInstanceDetails,
+    "SwitchModuleStreamOnManagedInstanceGroupDetails": SwitchModuleStreamOnManagedInstanceGroupDetails,
     "SynchronizeMirrorsDetails": SynchronizeMirrorsDetails,
+    "SystemDetails": SystemDetails,
+    "UpdatableAutonomousSettings": UpdatableAutonomousSettings,
     "UpdatablePackageCollection": UpdatablePackageCollection,
     "UpdatablePackageSummary": UpdatablePackageSummary,
     "UpdateAllPackagesOnManagedInstanceGroupDetails": UpdateAllPackagesOnManagedInstanceGroupDetails,
     "UpdateAllPackagesOnManagedInstancesInCompartmentDetails": UpdateAllPackagesOnManagedInstancesInCompartmentDetails,
     "UpdateCustomSoftwareSourceDetails": UpdateCustomSoftwareSourceDetails,
+    "UpdateEventDetails": UpdateEventDetails,
     "UpdateLifecycleEnvironmentDetails": UpdateLifecycleEnvironmentDetails,
     "UpdateLifecycleStageDetails": UpdateLifecycleStageDetails,
     "UpdateManagedInstanceDetails": UpdateManagedInstanceDetails,
@@ -352,15 +451,22 @@ os_management_hub_type_mapping = {
     "UpdateScheduledJobDetails": UpdateScheduledJobDetails,
     "UpdateSoftwareSourceDetails": UpdateSoftwareSourceDetails,
     "UpdateVendorSoftwareSourceDetails": UpdateVendorSoftwareSourceDetails,
+    "UpdateVersionedCustomSoftwareSourceDetails": UpdateVersionedCustomSoftwareSourceDetails,
     "UpdateWorkRequestDetails": UpdateWorkRequestDetails,
     "VendorSoftwareSource": VendorSoftwareSource,
     "VendorSoftwareSourceSummary": VendorSoftwareSourceSummary,
     "VersionedCustomSoftwareSource": VersionedCustomSoftwareSource,
     "VersionedCustomSoftwareSourceSummary": VersionedCustomSoftwareSourceSummary,
+    "VmcoreDetails": VmcoreDetails,
+    "WindowsStandaloneProfile": WindowsStandaloneProfile,
+    "WindowsUpdate": WindowsUpdate,
+    "WindowsUpdateCollection": WindowsUpdateCollection,
+    "WindowsUpdateSummary": WindowsUpdateSummary,
     "WorkRequest": WorkRequest,
     "WorkRequestDetails": WorkRequestDetails,
     "WorkRequestError": WorkRequestError,
     "WorkRequestErrorCollection": WorkRequestErrorCollection,
+    "WorkRequestEventDataAdditionalDetails": WorkRequestEventDataAdditionalDetails,
     "WorkRequestLogEntry": WorkRequestLogEntry,
     "WorkRequestLogEntryCollection": WorkRequestLogEntryCollection,
     "WorkRequestManagementStationDetails": WorkRequestManagementStationDetails,

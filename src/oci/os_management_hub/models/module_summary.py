@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ModuleSummary(object):
     """
-    Summary information pertaining to a module provided by a software source.
+    Provides summary information about a module which is provided by a software source.
     """
 
     def __init__(self, **kwargs):
@@ -101,7 +101,9 @@ class ModuleSummary(object):
     def software_source_id(self):
         """
         **[Required]** Gets the software_source_id of this ModuleSummary.
-        The software source that provides the module.
+        The `OCID`__ of the software source.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_source_id of this ModuleSummary.
@@ -113,7 +115,9 @@ class ModuleSummary(object):
     def software_source_id(self, software_source_id):
         """
         Sets the software_source_id of this ModuleSummary.
-        The software source that provides the module.
+        The `OCID`__ of the software source.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_source_id: The software_source_id of this ModuleSummary.

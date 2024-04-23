@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourceTypeSummary(object):
     """
-    Summary of ResourceType
+    A summary of detailed information on a resource type.
     """
 
     def __init__(self, **kwargs):
@@ -32,28 +32,35 @@ class ResourceTypeSummary(object):
             The value to assign to the rules property of this ResourceTypeSummary.
         :type rules: list[oci.cloud_guard.models.RuleSummary]
 
+        :param locks:
+            The value to assign to the locks property of this ResourceTypeSummary.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
             'name': 'str',
             'display_name': 'str',
-            'rules': 'list[RuleSummary]'
+            'rules': 'list[RuleSummary]',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
             'name': 'name',
             'display_name': 'displayName',
-            'rules': 'rules'
+            'rules': 'rules',
+            'locks': 'locks'
         }
 
         self._name = None
         self._display_name = None
         self._rules = None
+        self._locks = None
 
     @property
     def name(self):
         """
         **[Required]** Gets the name of this ResourceTypeSummary.
-        name of the resource
+        Name of the resource
 
 
         :return: The name of this ResourceTypeSummary.
@@ -65,7 +72,7 @@ class ResourceTypeSummary(object):
     def name(self, name):
         """
         Sets the name of this ResourceTypeSummary.
-        name of the resource
+        Name of the resource
 
 
         :param name: The name of this ResourceTypeSummary.
@@ -77,7 +84,7 @@ class ResourceTypeSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this ResourceTypeSummary.
-        display name of the resource
+        Display name of the resource
 
 
         :return: The display_name of this ResourceTypeSummary.
@@ -89,7 +96,7 @@ class ResourceTypeSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ResourceTypeSummary.
-        display name of the resource
+        Display name of the resource
 
 
         :param display_name: The display_name of this ResourceTypeSummary.
@@ -120,6 +127,30 @@ class ResourceTypeSummary(object):
         :type: list[oci.cloud_guard.models.RuleSummary]
         """
         self._rules = rules
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this ResourceTypeSummary.
+        Locks associated with this resource.
+
+
+        :return: The locks of this ResourceTypeSummary.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this ResourceTypeSummary.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this ResourceTypeSummary.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

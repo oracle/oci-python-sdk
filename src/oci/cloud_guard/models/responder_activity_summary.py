@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResponderActivitySummary(object):
     """
-    Responder Activity summary Definition.
+    Responder activity summary definition.
     """
 
     #: A constant which can be used with the responder_type property of a ResponderActivitySummary.
@@ -145,7 +145,7 @@ class ResponderActivitySummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this ResponderActivitySummary.
-        Unique id for Responder activity.
+        Unique ID for responder activity
 
 
         :return: The id of this ResponderActivitySummary.
@@ -157,7 +157,7 @@ class ResponderActivitySummary(object):
     def id(self, id):
         """
         Sets the id of this ResponderActivitySummary.
-        Unique id for Responder activity.
+        Unique ID for responder activity
 
 
         :param id: The id of this ResponderActivitySummary.
@@ -169,7 +169,7 @@ class ResponderActivitySummary(object):
     def problem_id(self):
         """
         **[Required]** Gets the problem_id of this ResponderActivitySummary.
-        problemId for which Responder activity is associated to.
+        Unique ID of problem associated with responder activity
 
 
         :return: The problem_id of this ResponderActivitySummary.
@@ -181,7 +181,7 @@ class ResponderActivitySummary(object):
     def problem_id(self, problem_id):
         """
         Sets the problem_id of this ResponderActivitySummary.
-        problemId for which Responder activity is associated to.
+        Unique ID of problem associated with responder activity
 
 
         :param problem_id: The problem_id of this ResponderActivitySummary.
@@ -193,7 +193,7 @@ class ResponderActivitySummary(object):
     def responder_rule_id(self):
         """
         **[Required]** Gets the responder_rule_id of this ResponderActivitySummary.
-        Id of the responder rule for the problem
+        Unique ID of the responder rule associated with the problem
 
 
         :return: The responder_rule_id of this ResponderActivitySummary.
@@ -205,7 +205,7 @@ class ResponderActivitySummary(object):
     def responder_rule_id(self, responder_rule_id):
         """
         Sets the responder_rule_id of this ResponderActivitySummary.
-        Id of the responder rule for the problem
+        Unique ID of the responder rule associated with the problem
 
 
         :param responder_rule_id: The responder_rule_id of this ResponderActivitySummary.
@@ -217,7 +217,7 @@ class ResponderActivitySummary(object):
     def responder_type(self):
         """
         **[Required]** Gets the responder_type of this ResponderActivitySummary.
-        responder rule type for performing the operation
+        Responder rule type for performing the operation
 
         Allowed values for this property are: "REMEDIATION", "NOTIFICATION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -232,7 +232,7 @@ class ResponderActivitySummary(object):
     def responder_type(self, responder_type):
         """
         Sets the responder_type of this ResponderActivitySummary.
-        responder rule type for performing the operation
+        Responder rule type for performing the operation
 
 
         :param responder_type: The responder_type of this ResponderActivitySummary.
@@ -247,7 +247,7 @@ class ResponderActivitySummary(object):
     def responder_rule_name(self):
         """
         **[Required]** Gets the responder_rule_name of this ResponderActivitySummary.
-        responder rule name
+        Responder rule name
 
 
         :return: The responder_rule_name of this ResponderActivitySummary.
@@ -259,7 +259,7 @@ class ResponderActivitySummary(object):
     def responder_rule_name(self, responder_rule_name):
         """
         Sets the responder_rule_name of this ResponderActivitySummary.
-        responder rule name
+        Responder rule name
 
 
         :param responder_rule_name: The responder_rule_name of this ResponderActivitySummary.
@@ -271,7 +271,7 @@ class ResponderActivitySummary(object):
     def responder_activity_type(self):
         """
         **[Required]** Gets the responder_activity_type of this ResponderActivitySummary.
-        Responder activity types
+        Responder activity type
 
         Allowed values for this property are: "STARTED", "COMPLETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -286,7 +286,7 @@ class ResponderActivitySummary(object):
     def responder_activity_type(self, responder_activity_type):
         """
         Sets the responder_activity_type of this ResponderActivitySummary.
-        Responder activity types
+        Responder activity type
 
 
         :param responder_activity_type: The responder_activity_type of this ResponderActivitySummary.
@@ -301,7 +301,7 @@ class ResponderActivitySummary(object):
     def responder_execution_status(self):
         """
         **[Required]** Gets the responder_execution_status of this ResponderActivitySummary.
-        the responder execution status
+        Responder execution status
 
         Allowed values for this property are: "STARTED", "AWAITING_CONFIRMATION", "AWAITING_INPUT", "SUCCEEDED", "FAILED", "SKIPPED", "ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -316,7 +316,7 @@ class ResponderActivitySummary(object):
     def responder_execution_status(self, responder_execution_status):
         """
         Sets the responder_execution_status of this ResponderActivitySummary.
-        the responder execution status
+        Responder execution status
 
 
         :param responder_execution_status: The responder_execution_status of this ResponderActivitySummary.
@@ -331,7 +331,7 @@ class ResponderActivitySummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this ResponderActivitySummary.
-        responder activity starting time
+        Responder activity starting time
 
 
         :return: The time_created of this ResponderActivitySummary.
@@ -343,7 +343,7 @@ class ResponderActivitySummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ResponderActivitySummary.
-        responder activity starting time
+        Responder activity starting time
 
 
         :param time_created: The time_created of this ResponderActivitySummary.
@@ -355,7 +355,7 @@ class ResponderActivitySummary(object):
     def message(self):
         """
         **[Required]** Gets the message of this ResponderActivitySummary.
-        additional message related to this operation
+        Additional message related to this operation
 
 
         :return: The message of this ResponderActivitySummary.
@@ -367,7 +367,7 @@ class ResponderActivitySummary(object):
     def message(self, message):
         """
         Sets the message of this ResponderActivitySummary.
-        additional message related to this operation
+        Additional message related to this operation
 
 
         :param message: The message of this ResponderActivitySummary.

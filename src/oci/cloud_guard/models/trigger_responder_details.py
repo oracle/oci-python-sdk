@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TriggerResponderDetails(object):
     """
-    The Responder details to be pushed to responder
+    The responder triggering details to be pushed to responder rules.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class TriggerResponderDetails(object):
     def responder_rule_id(self):
         """
         **[Required]** Gets the responder_rule_id of this TriggerResponderDetails.
-        ResponderRule ID
+        Unique identifier for the responder rule
 
 
         :return: The responder_rule_id of this TriggerResponderDetails.
@@ -58,7 +58,7 @@ class TriggerResponderDetails(object):
     def responder_rule_id(self, responder_rule_id):
         """
         Sets the responder_rule_id of this TriggerResponderDetails.
-        ResponderRule ID
+        Unique identifier for the responder rule
 
 
         :param responder_rule_id: The responder_rule_id of this TriggerResponderDetails.
@@ -70,7 +70,7 @@ class TriggerResponderDetails(object):
     def configurations(self):
         """
         Gets the configurations of this TriggerResponderDetails.
-        ResponderRule configurations
+        List of responder rule configurations
 
 
         :return: The configurations of this TriggerResponderDetails.
@@ -82,7 +82,7 @@ class TriggerResponderDetails(object):
     def configurations(self, configurations):
         """
         Sets the configurations of this TriggerResponderDetails.
-        ResponderRule configurations
+        List of responder rule configurations
 
 
         :param configurations: The configurations of this TriggerResponderDetails.

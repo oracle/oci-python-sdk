@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LifecycleStageDetails(object):
     """
-    Identifying information for the specified lifecycle stage.
+    Provides identifying information for the specified lifecycle stage.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,9 @@ class LifecycleStageDetails(object):
     def id(self):
         """
         **[Required]** Gets the id of this LifecycleStageDetails.
-        The OCID of the lifecycle stage.
+        The `OCID`__ of the lifecycle stage.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this LifecycleStageDetails.
@@ -58,7 +60,9 @@ class LifecycleStageDetails(object):
     def id(self, id):
         """
         Sets the id of this LifecycleStageDetails.
-        The OCID of the lifecycle stage.
+        The `OCID`__ of the lifecycle stage.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this LifecycleStageDetails.

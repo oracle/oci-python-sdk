@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ModuleStream(object):
     """
-    A module stream provided by a software source.
+    An object that defines a module stream provided by a software source.
     """
 
     #: A constant which can be used with the arch_type property of a ModuleStream.
@@ -189,7 +189,9 @@ class ModuleStream(object):
     def software_source_id(self):
         """
         Gets the software_source_id of this ModuleStream.
-        The OCID of the software source that provides this module stream.
+        The `OCID`__ of the software source that provides this module stream.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_source_id of this ModuleStream.
@@ -201,7 +203,9 @@ class ModuleStream(object):
     def software_source_id(self, software_source_id):
         """
         Sets the software_source_id of this ModuleStream.
-        The OCID of the software source that provides this module stream.
+        The `OCID`__ of the software source that provides this module stream.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_source_id: The software_source_id of this ModuleStream.

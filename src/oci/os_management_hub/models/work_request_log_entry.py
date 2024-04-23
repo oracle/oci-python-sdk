@@ -70,7 +70,9 @@ class WorkRequestLogEntry(object):
     def timestamp(self):
         """
         **[Required]** Gets the timestamp of this WorkRequestLogEntry.
-        The time the log message was written. An RFC3339 formatted datetime string.
+        The date and time the log message was written (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The timestamp of this WorkRequestLogEntry.
@@ -82,7 +84,9 @@ class WorkRequestLogEntry(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this WorkRequestLogEntry.
-        The time the log message was written. An RFC3339 formatted datetime string.
+        The date and time the log message was written (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param timestamp: The timestamp of this WorkRequestLogEntry.

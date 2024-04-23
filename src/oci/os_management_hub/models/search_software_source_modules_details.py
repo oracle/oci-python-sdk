@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SearchSoftwareSourceModulesDetails(object):
     """
-    Contains a list of software sources to get the combined list of modules from all of those software sources.
+    Provides the information used to search for a set of modules from a list software sources.
     """
 
     #: A constant which can be used with the sort_order property of a SearchSoftwareSourceModulesDetails.
@@ -81,7 +81,9 @@ class SearchSoftwareSourceModulesDetails(object):
     def software_source_ids(self):
         """
         **[Required]** Gets the software_source_ids of this SearchSoftwareSourceModulesDetails.
-        List of software source OCIDs.
+        List of sofware source `OCIDs`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_source_ids of this SearchSoftwareSourceModulesDetails.
@@ -93,7 +95,9 @@ class SearchSoftwareSourceModulesDetails(object):
     def software_source_ids(self, software_source_ids):
         """
         Sets the software_source_ids of this SearchSoftwareSourceModulesDetails.
-        List of software source OCIDs.
+        List of sofware source `OCIDs`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_source_ids: The software_source_ids of this SearchSoftwareSourceModulesDetails.
@@ -160,7 +164,7 @@ class SearchSoftwareSourceModulesDetails(object):
     def name_contains(self):
         """
         Gets the name_contains of this SearchSoftwareSourceModulesDetails.
-        filters results, allowing only those with a name which contains the string.
+        A filter to return modules with a name that contains the given string.
 
 
         :return: The name_contains of this SearchSoftwareSourceModulesDetails.
@@ -172,7 +176,7 @@ class SearchSoftwareSourceModulesDetails(object):
     def name_contains(self, name_contains):
         """
         Sets the name_contains of this SearchSoftwareSourceModulesDetails.
-        filters results, allowing only those with a name which contains the string.
+        A filter to return modules with a name that contains the given string.
 
 
         :param name_contains: The name_contains of this SearchSoftwareSourceModulesDetails.

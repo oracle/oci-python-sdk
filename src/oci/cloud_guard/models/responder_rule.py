@@ -12,7 +12,15 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResponderRule(object):
     """
-    Definition of ResponderRule.
+    A ResponderRule resource contains the default settings for a single
+    responder rule that Cloud Guard provides.
+
+    A ResponderRule resource:
+    * Is used as the original source for a rule in an Oracle-managed
+    responder of the specified type.
+    * Is not directly visible in the Cloud Guard UI.
+    * Can\u2019t be modified by users, programmatically or through the UI.
+    * May be modified from time to time by Cloud Guard.
     """
 
     #: A constant which can be used with the type property of a ResponderRule.
@@ -114,6 +122,10 @@ class ResponderRule(object):
             The value to assign to the lifecycle_details property of this ResponderRule.
         :type lifecycle_details: str
 
+        :param locks:
+            The value to assign to the locks property of this ResponderRule.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -126,7 +138,8 @@ class ResponderRule(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
-            'lifecycle_details': 'str'
+            'lifecycle_details': 'str',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -140,7 +153,8 @@ class ResponderRule(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
-            'lifecycle_details': 'lifecycleDetails'
+            'lifecycle_details': 'lifecycleDetails',
+            'locks': 'locks'
         }
 
         self._id = None
@@ -154,12 +168,13 @@ class ResponderRule(object):
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._locks = None
 
     @property
     def id(self):
         """
         **[Required]** Gets the id of this ResponderRule.
-        Identifier for ResponderRule.
+        Unique identifier for the responder rule
 
 
         :return: The id of this ResponderRule.
@@ -171,7 +186,7 @@ class ResponderRule(object):
     def id(self, id):
         """
         Sets the id of this ResponderRule.
-        Identifier for ResponderRule.
+        Unique identifier for the responder rule
 
 
         :param id: The id of this ResponderRule.
@@ -183,7 +198,7 @@ class ResponderRule(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this ResponderRule.
-        ResponderRule Display Name
+        Responder rule display name
 
 
         :return: The display_name of this ResponderRule.
@@ -195,7 +210,7 @@ class ResponderRule(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ResponderRule.
-        ResponderRule Display Name
+        Responder rule display name
 
 
         :param display_name: The display_name of this ResponderRule.
@@ -207,7 +222,7 @@ class ResponderRule(object):
     def description(self):
         """
         **[Required]** Gets the description of this ResponderRule.
-        ResponderRule Description
+        Responder rule description
 
 
         :return: The description of this ResponderRule.
@@ -219,7 +234,7 @@ class ResponderRule(object):
     def description(self, description):
         """
         Sets the description of this ResponderRule.
-        ResponderRule Description
+        Responder rule description
 
 
         :param description: The description of this ResponderRule.
@@ -231,7 +246,7 @@ class ResponderRule(object):
     def type(self):
         """
         **[Required]** Gets the type of this ResponderRule.
-        Type of Responder
+        Type of responder
 
         Allowed values for this property are: "REMEDIATION", "NOTIFICATION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -246,7 +261,7 @@ class ResponderRule(object):
     def type(self, type):
         """
         Sets the type of this ResponderRule.
-        Type of Responder
+        Type of responder
 
 
         :param type: The type of this ResponderRule.
@@ -261,7 +276,7 @@ class ResponderRule(object):
     def policies(self):
         """
         Gets the policies of this ResponderRule.
-        List of Policy
+        List of policies
 
 
         :return: The policies of this ResponderRule.
@@ -273,7 +288,7 @@ class ResponderRule(object):
     def policies(self, policies):
         """
         Sets the policies of this ResponderRule.
-        List of Policy
+        List of policies
 
 
         :param policies: The policies of this ResponderRule.
@@ -285,7 +300,7 @@ class ResponderRule(object):
     def supported_modes(self):
         """
         Gets the supported_modes of this ResponderRule.
-        Supported Execution Modes
+        Supported execution modes for the responder rule
 
         Allowed values for items in this list are: "AUTOACTION", "USERACTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -300,7 +315,7 @@ class ResponderRule(object):
     def supported_modes(self, supported_modes):
         """
         Sets the supported_modes of this ResponderRule.
-        Supported Execution Modes
+        Supported execution modes for the responder rule
 
 
         :param supported_modes: The supported_modes of this ResponderRule.
@@ -359,7 +374,7 @@ class ResponderRule(object):
     def time_updated(self):
         """
         Gets the time_updated of this ResponderRule.
-        The date and time the responder rule was updated. Format defined by RFC3339.
+        The date and time the responder rule was last updated. Format defined by RFC3339.
 
 
         :return: The time_updated of this ResponderRule.
@@ -371,7 +386,7 @@ class ResponderRule(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this ResponderRule.
-        The date and time the responder rule was updated. Format defined by RFC3339.
+        The date and time the responder rule was last updated. Format defined by RFC3339.
 
 
         :param time_updated: The time_updated of this ResponderRule.
@@ -383,7 +398,7 @@ class ResponderRule(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this ResponderRule.
-        The current state of the ResponderRule.
+        The current lifecycle state of the responder rule.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -398,7 +413,7 @@ class ResponderRule(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ResponderRule.
-        The current state of the ResponderRule.
+        The current lifecycle state of the responder rule.
 
 
         :param lifecycle_state: The lifecycle_state of this ResponderRule.
@@ -432,6 +447,30 @@ class ResponderRule(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this ResponderRule.
+        Locks associated with this resource.
+
+
+        :return: The locks of this ResponderRule.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this ResponderRule.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this ResponderRule.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+24.04.23 - 24.04.23
+=====================
+* Added flag -iold to extract identity with old APIs
+* Added error handling for domains
+
+=====================
 24.04.16 - 24.04.16
 =====================
 * Added more details to DBNode of database areas

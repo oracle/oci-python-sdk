@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PolicyCollection(object):
     """
-    Collection of policy statements required by cloud guard
+    Collection of policy statements required by Cloud Guard.
     """
 
     def __init__(self, **kwargs):
@@ -24,16 +24,23 @@ class PolicyCollection(object):
             The value to assign to the items property of this PolicyCollection.
         :type items: list[oci.cloud_guard.models.PolicySummary]
 
+        :param locks:
+            The value to assign to the locks property of this PolicyCollection.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
-            'items': 'list[PolicySummary]'
+            'items': 'list[PolicySummary]',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
-            'items': 'items'
+            'items': 'items',
+            'locks': 'locks'
         }
 
         self._items = None
+        self._locks = None
 
     @property
     def items(self):
@@ -58,6 +65,30 @@ class PolicyCollection(object):
         :type: list[oci.cloud_guard.models.PolicySummary]
         """
         self._items = items
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this PolicyCollection.
+        Locks associated with this resource.
+
+
+        :return: The locks of this PolicyCollection.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this PolicyCollection.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this PolicyCollection.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

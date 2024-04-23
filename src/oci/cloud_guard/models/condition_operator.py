@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConditionOperator(object):
     """
-    Conditions related to the parameter data type
+    Conditions related to the parameter data type.
     """
 
     #: A constant which can be used with the name property of a ConditionOperator.
@@ -84,7 +84,7 @@ class ConditionOperator(object):
     def name(self):
         """
         **[Required]** Gets the name of this ConditionOperator.
-        operator name
+        Operator name
 
         Allowed values for this property are: "AND", "OR", "IN", "NOT_IN", "EQUALS", "NOT_EQUALS", "LESS_THAN", "GREATER_THAN", "RANGE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -99,7 +99,7 @@ class ConditionOperator(object):
     def name(self, name):
         """
         Sets the name of this ConditionOperator.
-        operator name
+        Operator name
 
 
         :param name: The name of this ConditionOperator.
@@ -114,7 +114,7 @@ class ConditionOperator(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this ConditionOperator.
-        display name of the operator
+        Display name of the operator
 
 
         :return: The display_name of this ConditionOperator.
@@ -126,7 +126,7 @@ class ConditionOperator(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ConditionOperator.
-        display name of the operator
+        Display name of the operator
 
 
         :param display_name: The display_name of this ConditionOperator.

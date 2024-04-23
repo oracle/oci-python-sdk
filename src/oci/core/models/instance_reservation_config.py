@@ -44,6 +44,10 @@ class InstanceReservationConfig(object):
             The value to assign to the used_count property of this InstanceReservationConfig.
         :type used_count: int
 
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this InstanceReservationConfig.
+        :type cluster_placement_group_id: str
+
         """
         self.swagger_types = {
             'fault_domain': 'str',
@@ -51,7 +55,8 @@ class InstanceReservationConfig(object):
             'instance_shape': 'str',
             'instance_shape_config': 'InstanceReservationShapeConfigDetails',
             'reserved_count': 'int',
-            'used_count': 'int'
+            'used_count': 'int',
+            'cluster_placement_group_id': 'str'
         }
 
         self.attribute_map = {
@@ -60,7 +65,8 @@ class InstanceReservationConfig(object):
             'instance_shape': 'instanceShape',
             'instance_shape_config': 'instanceShapeConfig',
             'reserved_count': 'reservedCount',
-            'used_count': 'usedCount'
+            'used_count': 'usedCount',
+            'cluster_placement_group_id': 'clusterPlacementGroupId'
         }
 
         self._fault_domain = None
@@ -69,6 +75,7 @@ class InstanceReservationConfig(object):
         self._instance_shape_config = None
         self._reserved_count = None
         self._used_count = None
+        self._cluster_placement_group_id = None
 
     @property
     def fault_domain(self):
@@ -217,6 +224,30 @@ class InstanceReservationConfig(object):
         :type: int
         """
         self._used_count = used_count
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this InstanceReservationConfig.
+        The OCID of the cluster placement group for this instance reservation capacity configuration.
+
+
+        :return: The cluster_placement_group_id of this InstanceReservationConfig.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this InstanceReservationConfig.
+        The OCID of the cluster placement group for this instance reservation capacity configuration.
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this InstanceReservationConfig.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

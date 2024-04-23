@@ -60,7 +60,7 @@ class ProblemTrendAggregation(object):
     def dimensions_map(self):
         """
         **[Required]** Gets the dimensions_map of this ProblemTrendAggregation.
-        The key-value pairs of dimensions and their names.
+        The key-value pairs of dimensions and their names
 
 
         :return: The dimensions_map of this ProblemTrendAggregation.
@@ -72,7 +72,7 @@ class ProblemTrendAggregation(object):
     def dimensions_map(self, dimensions_map):
         """
         Sets the dimensions_map of this ProblemTrendAggregation.
-        The key-value pairs of dimensions and their names.
+        The key-value pairs of dimensions and their names
 
 
         :param dimensions_map: The dimensions_map of this ProblemTrendAggregation.
@@ -84,7 +84,7 @@ class ProblemTrendAggregation(object):
     def start_timestamp(self):
         """
         **[Required]** Gets the start_timestamp of this ProblemTrendAggregation.
-        Start Time in epoch seconds
+        Start time in epoch seconds
 
 
         :return: The start_timestamp of this ProblemTrendAggregation.
@@ -96,7 +96,7 @@ class ProblemTrendAggregation(object):
     def start_timestamp(self, start_timestamp):
         """
         Sets the start_timestamp of this ProblemTrendAggregation.
-        Start Time in epoch seconds
+        Start time in epoch seconds
 
 
         :param start_timestamp: The start_timestamp of this ProblemTrendAggregation.
@@ -132,7 +132,7 @@ class ProblemTrendAggregation(object):
     def count(self):
         """
         **[Required]** Gets the count of this ProblemTrendAggregation.
-        The number of occurences with for the corresponding time range and dimensions.
+        The number of occurrences for the corresponding time range and dimensions.
 
 
         :return: The count of this ProblemTrendAggregation.
@@ -144,7 +144,7 @@ class ProblemTrendAggregation(object):
     def count(self, count):
         """
         Sets the count of this ProblemTrendAggregation.
-        The number of occurences with for the corresponding time range and dimensions.
+        The number of occurrences for the corresponding time range and dimensions.
 
 
         :param count: The count of this ProblemTrendAggregation.

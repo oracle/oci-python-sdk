@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateManagedInstanceGroupDetails(object):
     """
-    The information to be updated.
+    Provides the information used to update the managed instance group.
     """
 
     def __init__(self, **kwargs):
@@ -28,6 +28,14 @@ class UpdateManagedInstanceGroupDetails(object):
             The value to assign to the description property of this UpdateManagedInstanceGroupDetails.
         :type description: str
 
+        :param notification_topic_id:
+            The value to assign to the notification_topic_id property of this UpdateManagedInstanceGroupDetails.
+        :type notification_topic_id: str
+
+        :param autonomous_settings:
+            The value to assign to the autonomous_settings property of this UpdateManagedInstanceGroupDetails.
+        :type autonomous_settings: oci.os_management_hub.models.UpdatableAutonomousSettings
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateManagedInstanceGroupDetails.
         :type freeform_tags: dict(str, str)
@@ -40,6 +48,8 @@ class UpdateManagedInstanceGroupDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'description': 'str',
+            'notification_topic_id': 'str',
+            'autonomous_settings': 'UpdatableAutonomousSettings',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -47,12 +57,16 @@ class UpdateManagedInstanceGroupDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
+            'notification_topic_id': 'notificationTopicId',
+            'autonomous_settings': 'autonomousSettings',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._display_name = None
         self._description = None
+        self._notification_topic_id = None
+        self._autonomous_settings = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -60,7 +74,7 @@ class UpdateManagedInstanceGroupDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateManagedInstanceGroupDetails.
-        A user-friendly name for the managed instance group job. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name for the managed instance group. Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateManagedInstanceGroupDetails.
@@ -72,7 +86,7 @@ class UpdateManagedInstanceGroupDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateManagedInstanceGroupDetails.
-        A user-friendly name for the managed instance group job. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name for the managed instance group. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateManagedInstanceGroupDetails.
@@ -84,7 +98,7 @@ class UpdateManagedInstanceGroupDetails(object):
     def description(self):
         """
         Gets the description of this UpdateManagedInstanceGroupDetails.
-        User specified information about the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        User-specified description of the managed instance group. Avoid entering confidential information.
 
 
         :return: The description of this UpdateManagedInstanceGroupDetails.
@@ -96,13 +110,61 @@ class UpdateManagedInstanceGroupDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateManagedInstanceGroupDetails.
-        User specified information about the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        User-specified description of the managed instance group. Avoid entering confidential information.
 
 
         :param description: The description of this UpdateManagedInstanceGroupDetails.
         :type: str
         """
         self._description = description
+
+    @property
+    def notification_topic_id(self):
+        """
+        Gets the notification_topic_id of this UpdateManagedInstanceGroupDetails.
+        The `OCID`__ for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The notification_topic_id of this UpdateManagedInstanceGroupDetails.
+        :rtype: str
+        """
+        return self._notification_topic_id
+
+    @notification_topic_id.setter
+    def notification_topic_id(self, notification_topic_id):
+        """
+        Sets the notification_topic_id of this UpdateManagedInstanceGroupDetails.
+        The `OCID`__ for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param notification_topic_id: The notification_topic_id of this UpdateManagedInstanceGroupDetails.
+        :type: str
+        """
+        self._notification_topic_id = notification_topic_id
+
+    @property
+    def autonomous_settings(self):
+        """
+        Gets the autonomous_settings of this UpdateManagedInstanceGroupDetails.
+
+        :return: The autonomous_settings of this UpdateManagedInstanceGroupDetails.
+        :rtype: oci.os_management_hub.models.UpdatableAutonomousSettings
+        """
+        return self._autonomous_settings
+
+    @autonomous_settings.setter
+    def autonomous_settings(self, autonomous_settings):
+        """
+        Sets the autonomous_settings of this UpdateManagedInstanceGroupDetails.
+
+        :param autonomous_settings: The autonomous_settings of this UpdateManagedInstanceGroupDetails.
+        :type: oci.os_management_hub.models.UpdatableAutonomousSettings
+        """
+        self._autonomous_settings = autonomous_settings
 
     @property
     def freeform_tags(self):

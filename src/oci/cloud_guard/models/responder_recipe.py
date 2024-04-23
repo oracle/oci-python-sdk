@@ -12,7 +12,22 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResponderRecipe(object):
     """
-    Details of ResponderRecipe.
+    A ResponderRecipe resource contains a specific instance of one of
+    the supported detector types (for example, activity, configuration,
+    or threat).
+
+    A ResponderRecipe resource:
+    * Is effectively a copy of a Responder resource in which users can make
+    very limited changes if it\u2019s Oracle-managed, and more changes if it\u2019s user-managed.
+    * Can also be created by cloning an existing ResponderRecipe resource, either
+    user-managed or Oracle-managed.
+    * Is visible on Cloud Guard\u2019s Responder Recipes page.
+    * Is located in a specific OCI compartment.
+    * Can be modified by users, programmatically or through the UI.
+    * Changes that can be made here apply globally, to resources in all OCI compartments
+    mapped to a target that attaches the responder recipe, but are overridden by
+    any changes made in the corresponding TargetResponderRecipe resource (effectively
+    created when the responder recipe is attached to the target).
     """
 
     #: A constant which can be used with the owner property of a ResponderRecipe.
@@ -177,7 +192,7 @@ class ResponderRecipe(object):
     def id(self):
         """
         **[Required]** Gets the id of this ResponderRecipe.
-        Identifier for ResponderRecipe.
+        Unique identifier for the responder recip
 
 
         :return: The id of this ResponderRecipe.
@@ -189,7 +204,7 @@ class ResponderRecipe(object):
     def id(self, id):
         """
         Sets the id of this ResponderRecipe.
-        Identifier for ResponderRecipe.
+        Unique identifier for the responder recip
 
 
         :param id: The id of this ResponderRecipe.
@@ -201,7 +216,7 @@ class ResponderRecipe(object):
     def display_name(self):
         """
         Gets the display_name of this ResponderRecipe.
-        ResponderRecipe display name.
+        Responder recipe display name
 
 
         :return: The display_name of this ResponderRecipe.
@@ -213,7 +228,7 @@ class ResponderRecipe(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ResponderRecipe.
-        ResponderRecipe display name.
+        Responder recipe display name
 
 
         :param display_name: The display_name of this ResponderRecipe.
@@ -225,7 +240,7 @@ class ResponderRecipe(object):
     def description(self):
         """
         Gets the description of this ResponderRecipe.
-        ResponderRecipe description.
+        Responder recipe description
 
 
         :return: The description of this ResponderRecipe.
@@ -237,7 +252,7 @@ class ResponderRecipe(object):
     def description(self, description):
         """
         Sets the description of this ResponderRecipe.
-        ResponderRecipe description.
+        Responder recipe description
 
 
         :param description: The description of this ResponderRecipe.
@@ -249,7 +264,7 @@ class ResponderRecipe(object):
     def owner(self):
         """
         Gets the owner of this ResponderRecipe.
-        Owner of ResponderRecipe
+        Owner of responder recipe
 
         Allowed values for this property are: "CUSTOMER", "ORACLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -264,7 +279,7 @@ class ResponderRecipe(object):
     def owner(self, owner):
         """
         Sets the owner of this ResponderRecipe.
-        Owner of ResponderRecipe
+        Owner of responder recipe
 
 
         :param owner: The owner of this ResponderRecipe.
@@ -303,7 +318,7 @@ class ResponderRecipe(object):
     def effective_responder_rules(self):
         """
         Gets the effective_responder_rules of this ResponderRecipe.
-        List of responder rules associated with the recipe
+        List of currently enabled responder rules for the responder type, for recipe after applying defaults
 
 
         :return: The effective_responder_rules of this ResponderRecipe.
@@ -315,7 +330,7 @@ class ResponderRecipe(object):
     def effective_responder_rules(self, effective_responder_rules):
         """
         Sets the effective_responder_rules of this ResponderRecipe.
-        List of responder rules associated with the recipe
+        List of currently enabled responder rules for the responder type, for recipe after applying defaults
 
 
         :param effective_responder_rules: The effective_responder_rules of this ResponderRecipe.
@@ -327,7 +342,7 @@ class ResponderRecipe(object):
     def source_responder_recipe_id(self):
         """
         Gets the source_responder_recipe_id of this ResponderRecipe.
-        The id of the source responder recipe.
+        The unique identifier of the source responder recipe
 
 
         :return: The source_responder_recipe_id of this ResponderRecipe.
@@ -339,7 +354,7 @@ class ResponderRecipe(object):
     def source_responder_recipe_id(self, source_responder_recipe_id):
         """
         Sets the source_responder_recipe_id of this ResponderRecipe.
-        The id of the source responder recipe.
+        The unique identifier of the source responder recipe
 
 
         :param source_responder_recipe_id: The source_responder_recipe_id of this ResponderRecipe.
@@ -351,7 +366,7 @@ class ResponderRecipe(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ResponderRecipe.
-        Compartment Identifier
+        Compartment OCID
 
 
         :return: The compartment_id of this ResponderRecipe.
@@ -363,7 +378,7 @@ class ResponderRecipe(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ResponderRecipe.
-        Compartment Identifier
+        Compartment OCID
 
 
         :param compartment_id: The compartment_id of this ResponderRecipe.
@@ -399,7 +414,7 @@ class ResponderRecipe(object):
     def time_updated(self):
         """
         Gets the time_updated of this ResponderRecipe.
-        The date and time the responder recipe was updated. Format defined by RFC3339.
+        The date and time the responder recipe was last updated. Format defined by RFC3339.
 
 
         :return: The time_updated of this ResponderRecipe.
@@ -411,7 +426,7 @@ class ResponderRecipe(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this ResponderRecipe.
-        The date and time the responder recipe was updated. Format defined by RFC3339.
+        The date and time the responder recipe was last updated. Format defined by RFC3339.
 
 
         :param time_updated: The time_updated of this ResponderRecipe.
@@ -423,7 +438,7 @@ class ResponderRecipe(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this ResponderRecipe.
-        The current state of the Example.
+        The current lifecycle state of the example
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -438,7 +453,7 @@ class ResponderRecipe(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ResponderRecipe.
-        The current state of the Example.
+        The current lifecycle state of the example
 
 
         :param lifecycle_state: The lifecycle_state of this ResponderRecipe.

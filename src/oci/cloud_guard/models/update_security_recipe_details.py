@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateSecurityRecipeDetails(object):
     """
-    Information to update in an existing security zone recipe
+    Parameters to be used to update a Security Zones security recipe.
     """
 
     def __init__(self, **kwargs):
@@ -67,7 +67,7 @@ class UpdateSecurityRecipeDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this UpdateSecurityRecipeDetails.
-        The recipe's name
+        The recipe's display name
 
 
         :return: The display_name of this UpdateSecurityRecipeDetails.
@@ -79,7 +79,7 @@ class UpdateSecurityRecipeDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateSecurityRecipeDetails.
-        The recipe's name
+        The recipe's display name
 
 
         :param display_name: The display_name of this UpdateSecurityRecipeDetails.
@@ -115,7 +115,7 @@ class UpdateSecurityRecipeDetails(object):
     def security_policies(self):
         """
         Gets the security_policies of this UpdateSecurityRecipeDetails.
-        The list of `SecurityPolicy` ids to include in the recipe
+        The list of security policy IDs to include in the recipe
 
 
         :return: The security_policies of this UpdateSecurityRecipeDetails.
@@ -127,7 +127,7 @@ class UpdateSecurityRecipeDetails(object):
     def security_policies(self, security_policies):
         """
         Sets the security_policies of this UpdateSecurityRecipeDetails.
-        The list of `SecurityPolicy` ids to include in the recipe
+        The list of security policy IDs to include in the recipe
 
 
         :param security_policies: The security_policies of this UpdateSecurityRecipeDetails.

@@ -12,7 +12,10 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateTargetResponderRuleDetails(object):
     """
-    Details of ResponderRule.
+    Parameters to update details for a responder rule for a target responder recipe.
+    TargetResponderRuleDetails contains all configurations associated with the
+    ResponderRule, whereas UpdateTargetResponderRecipeResponderRuleDetails
+    refers to the details that are to be updated for ResponderRule.
     """
 
     #: A constant which can be used with the mode property of a UpdateTargetResponderRuleDetails.
@@ -82,7 +85,7 @@ class UpdateTargetResponderRuleDetails(object):
     def configurations(self):
         """
         Gets the configurations of this UpdateTargetResponderRuleDetails.
-        Configurations associated with the ResponderRule
+        List of responder rule configurations
 
 
         :return: The configurations of this UpdateTargetResponderRuleDetails.
@@ -94,7 +97,7 @@ class UpdateTargetResponderRuleDetails(object):
     def configurations(self, configurations):
         """
         Sets the configurations of this UpdateTargetResponderRuleDetails.
-        Configurations associated with the ResponderRule
+        List of responder rule configurations
 
 
         :param configurations: The configurations of this UpdateTargetResponderRuleDetails.
@@ -106,7 +109,7 @@ class UpdateTargetResponderRuleDetails(object):
     def mode(self):
         """
         Gets the mode of this UpdateTargetResponderRuleDetails.
-        Execution Mode for ResponderRule
+        Execution mode for the responder rule
 
         Allowed values for this property are: "AUTOACTION", "USERACTION"
 
@@ -120,7 +123,7 @@ class UpdateTargetResponderRuleDetails(object):
     def mode(self, mode):
         """
         Sets the mode of this UpdateTargetResponderRuleDetails.
-        Execution Mode for ResponderRule
+        Execution mode for the responder rule
 
 
         :param mode: The mode of this UpdateTargetResponderRuleDetails.

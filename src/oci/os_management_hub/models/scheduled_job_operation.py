@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ScheduledJobOperation(object):
     """
-    Defines an operation in a scheduled job.
+    Defines an operation that is performed by a scheduled job.
     """
 
     #: A constant which can be used with the operation_type property of a ScheduledJobOperation.
@@ -79,6 +79,30 @@ class ScheduledJobOperation(object):
     #: This constant has a value of "PROMOTE_LIFECYCLE"
     OPERATION_TYPE_PROMOTE_LIFECYCLE = "PROMOTE_LIFECYCLE"
 
+    #: A constant which can be used with the operation_type property of a ScheduledJobOperation.
+    #: This constant has a value of "INSTALL_WINDOWS_UPDATES"
+    OPERATION_TYPE_INSTALL_WINDOWS_UPDATES = "INSTALL_WINDOWS_UPDATES"
+
+    #: A constant which can be used with the operation_type property of a ScheduledJobOperation.
+    #: This constant has a value of "INSTALL_ALL_WINDOWS_UPDATES"
+    OPERATION_TYPE_INSTALL_ALL_WINDOWS_UPDATES = "INSTALL_ALL_WINDOWS_UPDATES"
+
+    #: A constant which can be used with the operation_type property of a ScheduledJobOperation.
+    #: This constant has a value of "INSTALL_SECURITY_WINDOWS_UPDATES"
+    OPERATION_TYPE_INSTALL_SECURITY_WINDOWS_UPDATES = "INSTALL_SECURITY_WINDOWS_UPDATES"
+
+    #: A constant which can be used with the operation_type property of a ScheduledJobOperation.
+    #: This constant has a value of "INSTALL_BUGFIX_WINDOWS_UPDATES"
+    OPERATION_TYPE_INSTALL_BUGFIX_WINDOWS_UPDATES = "INSTALL_BUGFIX_WINDOWS_UPDATES"
+
+    #: A constant which can be used with the operation_type property of a ScheduledJobOperation.
+    #: This constant has a value of "INSTALL_ENHANCEMENT_WINDOWS_UPDATES"
+    OPERATION_TYPE_INSTALL_ENHANCEMENT_WINDOWS_UPDATES = "INSTALL_ENHANCEMENT_WINDOWS_UPDATES"
+
+    #: A constant which can be used with the operation_type property of a ScheduledJobOperation.
+    #: This constant has a value of "INSTALL_OTHER_WINDOWS_UPDATES"
+    OPERATION_TYPE_INSTALL_OTHER_WINDOWS_UPDATES = "INSTALL_OTHER_WINDOWS_UPDATES"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ScheduledJobOperation object with values from keyword arguments.
@@ -86,13 +110,17 @@ class ScheduledJobOperation(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this ScheduledJobOperation.
-            Allowed values for this property are: "INSTALL_PACKAGES", "UPDATE_PACKAGES", "REMOVE_PACKAGES", "UPDATE_ALL", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_USERSPACE", "UPDATE_KSPLICE_KERNEL", "MANAGE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "ATTACH_SOFTWARE_SOURCES", "DETACH_SOFTWARE_SOURCES", "SYNC_MANAGEMENT_STATION_MIRROR", "PROMOTE_LIFECYCLE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INSTALL_PACKAGES", "UPDATE_PACKAGES", "REMOVE_PACKAGES", "UPDATE_ALL", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_USERSPACE", "UPDATE_KSPLICE_KERNEL", "MANAGE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "ATTACH_SOFTWARE_SOURCES", "DETACH_SOFTWARE_SOURCES", "SYNC_MANAGEMENT_STATION_MIRROR", "PROMOTE_LIFECYCLE", "INSTALL_WINDOWS_UPDATES", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
         :param package_names:
             The value to assign to the package_names property of this ScheduledJobOperation.
         :type package_names: list[str]
+
+        :param windows_update_names:
+            The value to assign to the windows_update_names property of this ScheduledJobOperation.
+        :type windows_update_names: list[str]
 
         :param manage_module_streams_details:
             The value to assign to the manage_module_streams_details property of this ScheduledJobOperation.
@@ -110,6 +138,7 @@ class ScheduledJobOperation(object):
         self.swagger_types = {
             'operation_type': 'str',
             'package_names': 'list[str]',
+            'windows_update_names': 'list[str]',
             'manage_module_streams_details': 'ManageModuleStreamsInScheduledJobDetails',
             'switch_module_streams_details': 'ModuleStreamDetails',
             'software_source_ids': 'list[str]'
@@ -118,6 +147,7 @@ class ScheduledJobOperation(object):
         self.attribute_map = {
             'operation_type': 'operationType',
             'package_names': 'packageNames',
+            'windows_update_names': 'windowsUpdateNames',
             'manage_module_streams_details': 'manageModuleStreamsDetails',
             'switch_module_streams_details': 'switchModuleStreamsDetails',
             'software_source_ids': 'softwareSourceIds'
@@ -125,6 +155,7 @@ class ScheduledJobOperation(object):
 
         self._operation_type = None
         self._package_names = None
+        self._windows_update_names = None
         self._manage_module_streams_details = None
         self._switch_module_streams_details = None
         self._software_source_ids = None
@@ -135,7 +166,7 @@ class ScheduledJobOperation(object):
         **[Required]** Gets the operation_type of this ScheduledJobOperation.
         The type of operation this scheduled job performs.
 
-        Allowed values for this property are: "INSTALL_PACKAGES", "UPDATE_PACKAGES", "REMOVE_PACKAGES", "UPDATE_ALL", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_USERSPACE", "UPDATE_KSPLICE_KERNEL", "MANAGE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "ATTACH_SOFTWARE_SOURCES", "DETACH_SOFTWARE_SOURCES", "SYNC_MANAGEMENT_STATION_MIRROR", "PROMOTE_LIFECYCLE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "INSTALL_PACKAGES", "UPDATE_PACKAGES", "REMOVE_PACKAGES", "UPDATE_ALL", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_USERSPACE", "UPDATE_KSPLICE_KERNEL", "MANAGE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "ATTACH_SOFTWARE_SOURCES", "DETACH_SOFTWARE_SOURCES", "SYNC_MANAGEMENT_STATION_MIRROR", "PROMOTE_LIFECYCLE", "INSTALL_WINDOWS_UPDATES", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -154,7 +185,7 @@ class ScheduledJobOperation(object):
         :param operation_type: The operation_type of this ScheduledJobOperation.
         :type: str
         """
-        allowed_values = ["INSTALL_PACKAGES", "UPDATE_PACKAGES", "REMOVE_PACKAGES", "UPDATE_ALL", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_USERSPACE", "UPDATE_KSPLICE_KERNEL", "MANAGE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "ATTACH_SOFTWARE_SOURCES", "DETACH_SOFTWARE_SOURCES", "SYNC_MANAGEMENT_STATION_MIRROR", "PROMOTE_LIFECYCLE"]
+        allowed_values = ["INSTALL_PACKAGES", "UPDATE_PACKAGES", "REMOVE_PACKAGES", "UPDATE_ALL", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_USERSPACE", "UPDATE_KSPLICE_KERNEL", "MANAGE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "ATTACH_SOFTWARE_SOURCES", "DETACH_SOFTWARE_SOURCES", "SYNC_MANAGEMENT_STATION_MIRROR", "PROMOTE_LIFECYCLE", "INSTALL_WINDOWS_UPDATES", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
@@ -163,7 +194,7 @@ class ScheduledJobOperation(object):
     def package_names(self):
         """
         Gets the package_names of this ScheduledJobOperation.
-        The names of the target packages (only if operation type is INSTALL_PACKAGES/UPDATE_PACKAGES/REMOVE_PACKAGES).
+        The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
 
 
         :return: The package_names of this ScheduledJobOperation.
@@ -175,13 +206,41 @@ class ScheduledJobOperation(object):
     def package_names(self, package_names):
         """
         Sets the package_names of this ScheduledJobOperation.
-        The names of the target packages (only if operation type is INSTALL_PACKAGES/UPDATE_PACKAGES/REMOVE_PACKAGES).
+        The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
 
 
         :param package_names: The package_names of this ScheduledJobOperation.
         :type: list[str]
         """
         self._package_names = package_names
+
+    @property
+    def windows_update_names(self):
+        """
+        Gets the windows_update_names of this ScheduledJobOperation.
+        Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates.
+        Note that this is not an OCID, but is a unique identifier assigned by Microsoft.
+        For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
+
+
+        :return: The windows_update_names of this ScheduledJobOperation.
+        :rtype: list[str]
+        """
+        return self._windows_update_names
+
+    @windows_update_names.setter
+    def windows_update_names(self, windows_update_names):
+        """
+        Sets the windows_update_names of this ScheduledJobOperation.
+        Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates.
+        Note that this is not an OCID, but is a unique identifier assigned by Microsoft.
+        For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
+
+
+        :param windows_update_names: The windows_update_names of this ScheduledJobOperation.
+        :type: list[str]
+        """
+        self._windows_update_names = windows_update_names
 
     @property
     def manage_module_streams_details(self):
@@ -227,7 +286,10 @@ class ScheduledJobOperation(object):
     def software_source_ids(self):
         """
         Gets the software_source_ids of this ScheduledJobOperation.
-        The OCIDs for the software sources (only if operation type is ATTACH_SOFTWARE_SOURCES/DETACH_SOFTWARE_SOURCES).
+        The software source `OCIDs`__.
+        This parameter only applies when the scheduled job is for attaching or detaching software sources.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_source_ids of this ScheduledJobOperation.
@@ -239,7 +301,10 @@ class ScheduledJobOperation(object):
     def software_source_ids(self, software_source_ids):
         """
         Sets the software_source_ids of this ScheduledJobOperation.
-        The OCIDs for the software sources (only if operation type is ATTACH_SOFTWARE_SOURCES/DETACH_SOFTWARE_SOURCES).
+        The software source `OCIDs`__.
+        This parameter only applies when the scheduled job is for attaching or detaching software sources.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_source_ids: The software_source_ids of this ScheduledJobOperation.

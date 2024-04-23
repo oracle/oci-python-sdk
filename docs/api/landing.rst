@@ -22,7 +22,6 @@ API Reference
 * :doc:`Apm Synthetic <apm_synthetics/client/oci.apm_synthetics.ApmSyntheticClient>`
 * :doc:`Appliance Export Job <dts/client/oci.dts.ApplianceExportJobClient>`
 * :doc:`Application Dependency Management <adm/client/oci.adm.ApplicationDependencyManagementClient>`
-* :doc:`Application Migration <application_migration/client/oci.application_migration.ApplicationMigrationClient>`
 * :doc:`Appmgmt Control <appmgmt_control/client/oci.appmgmt_control.AppmgmtControlClient>`
 * :doc:`Artifacts <artifacts/client/oci.artifacts.ArtifactsClient>`
 * :doc:`Attributes <apm_traces/client/oci.apm_traces.AttributesClient>`
@@ -41,6 +40,7 @@ API Reference
 * :doc:`Channels <mysql/client/oci.mysql.ChannelsClient>`
 * :doc:`Cloud Guard <cloud_guard/client/oci.cloud_guard.CloudGuardClient>`
 * :doc:`Cluster <ocvp/client/oci.ocvp.ClusterClient>`
+* :doc:`Cluster Placement Groups Cp <cluster_placement_groups/client/oci.cluster_placement_groups.ClusterPlacementGroupsCPClient>`
 * :doc:`Commitment <osub_subscription/client/oci.osub_subscription.CommitmentClient>`
 * :doc:`Commitment <osub_subscription/client/oci.osub_subscription.CommitmentClient>`
 * :doc:`Common <cloud_bridge/client/oci.cloud_bridge.CommonClient>`
@@ -86,7 +86,8 @@ API Reference
 * :doc:`Email <email/client/oci.email.EmailClient>`
 * :doc:`Email Dp <email_data_plane/client/oci.email_data_plane.EmailDPClient>`
 * :doc:`Esxi Host <ocvp/client/oci.ocvp.EsxiHostClient>`
-* :doc:`Event <os_management/client/oci.os_management.EventClient>`
+* :doc:`Event <os_management_hub/client/oci.os_management_hub.EventClient>`
+* :doc:`Event <os_management_hub/client/oci.os_management_hub.EventClient>`
 * :doc:`Events <events/client/oci.events.EventsClient>`
 * :doc:`File Storage <file_storage/client/oci.file_storage.FileStorageClient>`
 * :doc:`Fleet Software Update <fleet_software_update/client/oci.fleet_software_update.FleetSoftwareUpdateClient>`
@@ -268,7 +269,6 @@ API Reference
     apm_control_plane
     apm_synthetics
     apm_traces
-    application_migration
     appmgmt_control
     artifacts
     audit
@@ -284,6 +284,7 @@ API Reference
     cloud_bridge
     cloud_guard
     cloud_migrations
+    cluster_placement_groups
     compute_cloud_at_customer
     compute_instance_agent
     container_engine

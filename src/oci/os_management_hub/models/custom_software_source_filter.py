@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CustomSoftwareSourceFilter(object):
     """
-    Used to apply filters to a VendorSoftwareSource to create/update CustomSoftwareSources.
+    Provides the information used to apply filters to a vendor software source to create or update a custom software source.
     """
 
     def __init__(self, **kwargs):

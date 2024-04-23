@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstalledPackageSummary(PackageSummary):
     """
-    A software package installed on a managed instance.
+    Provides summary information for a software package installed on a managed instance.
     """
 
     def __init__(self, **kwargs):
@@ -131,8 +131,7 @@ class InstalledPackageSummary(PackageSummary):
     def time_issued(self):
         """
         Gets the time_issued of this InstalledPackageSummary.
-        The date and time the package was issued by a providing erratum (if available), as described in
-        `RFC 3339`__, section 14.29.
+        The date and time the package was issued by a providing erratum (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -146,8 +145,7 @@ class InstalledPackageSummary(PackageSummary):
     def time_issued(self, time_issued):
         """
         Sets the time_issued of this InstalledPackageSummary.
-        The date and time the package was issued by a providing erratum (if available), as described in
-        `RFC 3339`__, section 14.29.
+        The date and time the package was issued by a providing erratum (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 

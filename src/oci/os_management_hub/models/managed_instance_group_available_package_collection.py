@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagedInstanceGroupAvailablePackageCollection(object):
     """
-    Results of an available package search on a managed instance group.
+    A set of available packages returned for the :func:`list_managed_instance_group_available_packages` operation.
     """
 
     def __init__(self, **kwargs):

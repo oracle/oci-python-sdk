@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataSourceMappingInfo(object):
     """
-    Detail of resources which are mapped to DataSource.
+    Details of the detector recipe and detector rule mapped to the data source.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class DataSourceMappingInfo(object):
     def detector_recipe_id(self):
         """
         **[Required]** Gets the detector_recipe_id of this DataSourceMappingInfo.
-        Id of the attached detectorRecipeId to the Data Source.
+        ID of the detector recipe attached to the data source
 
 
         :return: The detector_recipe_id of this DataSourceMappingInfo.
@@ -58,7 +58,7 @@ class DataSourceMappingInfo(object):
     def detector_recipe_id(self, detector_recipe_id):
         """
         Sets the detector_recipe_id of this DataSourceMappingInfo.
-        Id of the attached detectorRecipeId to the Data Source.
+        ID of the detector recipe attached to the data source
 
 
         :param detector_recipe_id: The detector_recipe_id of this DataSourceMappingInfo.
@@ -70,7 +70,7 @@ class DataSourceMappingInfo(object):
     def detector_rule_id(self):
         """
         **[Required]** Gets the detector_rule_id of this DataSourceMappingInfo.
-        Id of the attached detectorRuleId to the Data Source.
+        ID of the detector rule attached to the data source
 
 
         :return: The detector_rule_id of this DataSourceMappingInfo.
@@ -82,7 +82,7 @@ class DataSourceMappingInfo(object):
     def detector_rule_id(self, detector_rule_id):
         """
         Sets the detector_rule_id of this DataSourceMappingInfo.
-        Id of the attached detectorRuleId to the Data Source.
+        ID of the detector rule attached to the data source
 
 
         :param detector_rule_id: The detector_rule_id of this DataSourceMappingInfo.

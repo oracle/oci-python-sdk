@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ModuleStreamProfileSummary(object):
     """
-    Summary information pertaining to a module stream profile provided by a software source.
+    Provides the summary information for a module stream profile contained within a software source.
     """
 
     def __init__(self, **kwargs):
@@ -132,7 +132,7 @@ class ModuleStreamProfileSummary(object):
     def is_default(self):
         """
         Gets the is_default of this ModuleStreamProfileSummary.
-        Indicates if this profile is the default for its module stream.
+        Indicates if this profile is the default for the module stream.
 
 
         :return: The is_default of this ModuleStreamProfileSummary.
@@ -144,7 +144,7 @@ class ModuleStreamProfileSummary(object):
     def is_default(self, is_default):
         """
         Sets the is_default of this ModuleStreamProfileSummary.
-        Indicates if this profile is the default for its module stream.
+        Indicates if this profile is the default for the module stream.
 
 
         :param is_default: The is_default of this ModuleStreamProfileSummary.

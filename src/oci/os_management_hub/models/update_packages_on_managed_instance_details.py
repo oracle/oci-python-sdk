@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdatePackagesOnManagedInstanceDetails(object):
     """
-    The details about the software packages to be updated.
+    Provides the information used to update software packages on a managed instance.
     """
 
     #: A constant which can be used with the update_types property of a UpdatePackagesOnManagedInstanceDetails.
@@ -106,7 +106,7 @@ class UpdatePackagesOnManagedInstanceDetails(object):
     def update_types(self):
         """
         Gets the update_types of this UpdatePackagesOnManagedInstanceDetails.
-        The type of updates to be applied.
+        The types of updates to be applied.
 
         Allowed values for items in this list are: "SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER", "KSPLICE_KERNEL", "KSPLICE_USERSPACE", "ALL"
 
@@ -120,7 +120,7 @@ class UpdatePackagesOnManagedInstanceDetails(object):
     def update_types(self, update_types):
         """
         Sets the update_types of this UpdatePackagesOnManagedInstanceDetails.
-        The type of updates to be applied.
+        The types of updates to be applied.
 
 
         :param update_types: The update_types of this UpdatePackagesOnManagedInstanceDetails.

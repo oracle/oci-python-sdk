@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TargetSummary(object):
     """
-    Summary of the Target.
+    Summary information for a target.
     """
 
     #: A constant which can be used with the target_resource_type property of a TargetSummary.
@@ -171,7 +171,7 @@ class TargetSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this TargetSummary.
-        Unique identifier that is immutable on creation
+        Unique identifier for target that can't be changed after creation
 
 
         :return: The id of this TargetSummary.
@@ -183,7 +183,7 @@ class TargetSummary(object):
     def id(self, id):
         """
         Sets the id of this TargetSummary.
-        Unique identifier that is immutable on creation
+        Unique identifier for target that can't be changed after creation
 
 
         :param id: The id of this TargetSummary.
@@ -195,7 +195,7 @@ class TargetSummary(object):
     def display_name(self):
         """
         Gets the display_name of this TargetSummary.
-        DetectorTemplate Identifier, can be renamed
+        Target display name
 
 
         :return: The display_name of this TargetSummary.
@@ -207,7 +207,7 @@ class TargetSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this TargetSummary.
-        DetectorTemplate Identifier, can be renamed
+        Target display name
 
 
         :param display_name: The display_name of this TargetSummary.
@@ -219,7 +219,7 @@ class TargetSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this TargetSummary.
-        Compartment Identifier where the resource is created
+        Compartment OCID where the resource is created
 
 
         :return: The compartment_id of this TargetSummary.
@@ -231,7 +231,7 @@ class TargetSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this TargetSummary.
-        Compartment Identifier where the resource is created
+        Compartment OCID where the resource is created
 
 
         :param compartment_id: The compartment_id of this TargetSummary.
@@ -243,7 +243,7 @@ class TargetSummary(object):
     def target_resource_type(self):
         """
         **[Required]** Gets the target_resource_type of this TargetSummary.
-        possible type of targets(compartment/HCMCloud/ERPCloud)
+        Type of resource that's associated with the target(compartment/HCMCloud/ERPCloud)
 
         Allowed values for this property are: "COMPARTMENT", "ERPCLOUD", "HCMCLOUD", "SECURITY_ZONE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -258,7 +258,7 @@ class TargetSummary(object):
     def target_resource_type(self, target_resource_type):
         """
         Sets the target_resource_type of this TargetSummary.
-        possible type of targets(compartment/HCMCloud/ERPCloud)
+        Type of resource that's associated with the target(compartment/HCMCloud/ERPCloud)
 
 
         :param target_resource_type: The target_resource_type of this TargetSummary.
@@ -345,7 +345,7 @@ class TargetSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this TargetSummary.
-        The date and time the target was updated. Format defined by RFC3339.
+        The date and time the target was last updated. Format defined by RFC3339.
 
 
         :return: The time_updated of this TargetSummary.
@@ -357,7 +357,7 @@ class TargetSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this TargetSummary.
-        The date and time the target was updated. Format defined by RFC3339.
+        The date and time the target was last updated. Format defined by RFC3339.
 
 
         :param time_updated: The time_updated of this TargetSummary.
@@ -369,7 +369,7 @@ class TargetSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this TargetSummary.
-        The current state of the resource.
+        The current lifecycle state of the resource
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -384,7 +384,7 @@ class TargetSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this TargetSummary.
-        The current state of the resource.
+        The current lifecycle state of the resource
 
 
         :param lifecycle_state: The lifecycle_state of this TargetSummary.
@@ -399,7 +399,7 @@ class TargetSummary(object):
     def lifecyle_details(self):
         """
         Gets the lifecyle_details of this TargetSummary.
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
 
 
         :return: The lifecyle_details of this TargetSummary.
@@ -411,7 +411,7 @@ class TargetSummary(object):
     def lifecyle_details(self, lifecyle_details):
         """
         Sets the lifecyle_details of this TargetSummary.
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
 
 
         :param lifecyle_details: The lifecyle_details of this TargetSummary.

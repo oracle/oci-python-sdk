@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstallPackagesOnManagedInstanceDetails(object):
     """
-    The details about the software packages to be installed.
+    Provides the information used to install software packages on a managed instance.
     """
 
     def __init__(self, **kwargs):

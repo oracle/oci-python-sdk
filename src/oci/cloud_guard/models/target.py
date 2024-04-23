@@ -12,7 +12,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Target(object):
     """
-    Description of Target.
+    A target defines the scope of resources that Cloud Guard
+    monitors and the rules to be enforced in that monitoring. A Target resource
+    contains the settings for a specific target.
     """
 
     #: A constant which can be used with the target_resource_type property of a Target.
@@ -206,7 +208,7 @@ class Target(object):
     def id(self):
         """
         **[Required]** Gets the id of this Target.
-        Unique identifier that is immutable on creation.
+        Unique identifier that can't be changed after creation
 
 
         :return: The id of this Target.
@@ -218,7 +220,7 @@ class Target(object):
     def id(self, id):
         """
         Sets the id of this Target.
-        Unique identifier that is immutable on creation.
+        Unique identifier that can't be changed after creation
 
 
         :param id: The id of this Target.
@@ -230,7 +232,7 @@ class Target(object):
     def display_name(self):
         """
         Gets the display_name of this Target.
-        Target display name, can be renamed.
+        Target display name
 
 
         :return: The display_name of this Target.
@@ -242,7 +244,7 @@ class Target(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Target.
-        Target display name, can be renamed.
+        Target display name
 
 
         :param display_name: The display_name of this Target.
@@ -254,7 +256,7 @@ class Target(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this Target.
-        Compartment Identifier where the resource is created
+        Compartment OCID where the resource is created
 
 
         :return: The compartment_id of this Target.
@@ -266,7 +268,7 @@ class Target(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Target.
-        Compartment Identifier where the resource is created
+        Compartment OCID where the resource is created
 
 
         :param compartment_id: The compartment_id of this Target.
@@ -278,7 +280,7 @@ class Target(object):
     def description(self):
         """
         Gets the description of this Target.
-        The target description.
+        The target description
 
 
         :return: The description of this Target.
@@ -290,7 +292,7 @@ class Target(object):
     def description(self, description):
         """
         Sets the description of this Target.
-        The target description.
+        The target description
 
 
         :param description: The description of this Target.
@@ -302,7 +304,7 @@ class Target(object):
     def target_resource_type(self):
         """
         **[Required]** Gets the target_resource_type of this Target.
-        possible type of targets
+        Type of target
 
         Allowed values for this property are: "COMPARTMENT", "ERPCLOUD", "HCMCLOUD", "SECURITY_ZONE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -317,7 +319,7 @@ class Target(object):
     def target_resource_type(self, target_resource_type):
         """
         Sets the target_resource_type of this Target.
-        possible type of targets
+        Type of target
 
 
         :param target_resource_type: The target_resource_type of this Target.
@@ -380,7 +382,7 @@ class Target(object):
     def target_detector_recipes(self):
         """
         Gets the target_detector_recipes of this Target.
-        List of detector recipes associated with target
+        List of detector recipes attached to target
 
 
         :return: The target_detector_recipes of this Target.
@@ -392,7 +394,7 @@ class Target(object):
     def target_detector_recipes(self, target_detector_recipes):
         """
         Sets the target_detector_recipes of this Target.
-        List of detector recipes associated with target
+        List of detector recipes attached to target
 
 
         :param target_detector_recipes: The target_detector_recipes of this Target.
@@ -404,7 +406,7 @@ class Target(object):
     def target_responder_recipes(self):
         """
         Gets the target_responder_recipes of this Target.
-        List of responder recipes associated with target
+        List of responder recipes attached to target
 
 
         :return: The target_responder_recipes of this Target.
@@ -416,7 +418,7 @@ class Target(object):
     def target_responder_recipes(self, target_responder_recipes):
         """
         Sets the target_responder_recipes of this Target.
-        List of responder recipes associated with target
+        List of responder recipes attached to target
 
 
         :param target_responder_recipes: The target_responder_recipes of this Target.
@@ -496,7 +498,7 @@ class Target(object):
     def time_updated(self):
         """
         Gets the time_updated of this Target.
-        The date and time the target was updated. Format defined by RFC3339.
+        The date and time the target was last updated. Format defined by RFC3339.
 
 
         :return: The time_updated of this Target.
@@ -508,7 +510,7 @@ class Target(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this Target.
-        The date and time the target was updated. Format defined by RFC3339.
+        The date and time the target was last updated. Format defined by RFC3339.
 
 
         :param time_updated: The time_updated of this Target.
@@ -520,7 +522,7 @@ class Target(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this Target.
-        The current state of the Target.
+        The current lifecycle state of the target
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -535,7 +537,7 @@ class Target(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Target.
-        The current state of the Target.
+        The current lifecycle state of the target
 
 
         :param lifecycle_state: The lifecycle_state of this Target.
@@ -550,7 +552,7 @@ class Target(object):
     def lifecyle_details(self):
         """
         Gets the lifecyle_details of this Target.
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
 
 
         :return: The lifecyle_details of this Target.
@@ -562,7 +564,7 @@ class Target(object):
     def lifecyle_details(self, lifecyle_details):
         """
         Sets the lifecyle_details of this Target.
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
 
 
         :param lifecyle_details: The lifecyle_details of this Target.

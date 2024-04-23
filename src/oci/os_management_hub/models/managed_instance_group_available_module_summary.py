@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagedInstanceGroupAvailableModuleSummary(object):
     """
-    Summary information pertaining to a module stream profile provided by a software source.
+    Provides summary information about a module stream made available to a managed instance group.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class ManagedInstanceGroupAvailableModuleSummary(object):
     def name(self):
         """
         **[Required]** Gets the name of this ManagedInstanceGroupAvailableModuleSummary.
-        The name of the module that is available to be enabled on the managed instance group.
+        The name of the module that is available to the managed instance group.
 
 
         :return: The name of this ManagedInstanceGroupAvailableModuleSummary.
@@ -58,7 +58,7 @@ class ManagedInstanceGroupAvailableModuleSummary(object):
     def name(self, name):
         """
         Sets the name of this ManagedInstanceGroupAvailableModuleSummary.
-        The name of the module that is available to be enabled on the managed instance group.
+        The name of the module that is available to the managed instance group.
 
 
         :param name: The name of this ManagedInstanceGroupAvailableModuleSummary.
@@ -70,7 +70,9 @@ class ManagedInstanceGroupAvailableModuleSummary(object):
     def software_source_id(self):
         """
         Gets the software_source_id of this ManagedInstanceGroupAvailableModuleSummary.
-        The OCID of the software source that provides this module.
+        The `OCID`__ of the software source that provides the module.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_source_id of this ManagedInstanceGroupAvailableModuleSummary.
@@ -82,7 +84,9 @@ class ManagedInstanceGroupAvailableModuleSummary(object):
     def software_source_id(self, software_source_id):
         """
         Sets the software_source_id of this ManagedInstanceGroupAvailableModuleSummary.
-        The OCID of the software source that provides this module.
+        The `OCID`__ of the software source that provides the module.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_source_id: The software_source_id of this ManagedInstanceGroupAvailableModuleSummary.

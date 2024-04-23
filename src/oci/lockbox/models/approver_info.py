@@ -38,19 +38,26 @@ class ApproverInfo(object):
             The value to assign to the approver_id property of this ApproverInfo.
         :type approver_id: str
 
+        :param domain_id:
+            The value to assign to the domain_id property of this ApproverInfo.
+        :type domain_id: str
+
         """
         self.swagger_types = {
             'approver_type': 'str',
-            'approver_id': 'str'
+            'approver_id': 'str',
+            'domain_id': 'str'
         }
 
         self.attribute_map = {
             'approver_type': 'approverType',
-            'approver_id': 'approverId'
+            'approver_id': 'approverId',
+            'domain_id': 'domainId'
         }
 
         self._approver_type = None
         self._approver_id = None
+        self._domain_id = None
 
     @property
     def approver_type(self):
@@ -105,6 +112,30 @@ class ApproverInfo(object):
         :type: str
         """
         self._approver_id = approver_id
+
+    @property
+    def domain_id(self):
+        """
+        Gets the domain_id of this ApproverInfo.
+        The identity domain ocid of the approver.
+
+
+        :return: The domain_id of this ApproverInfo.
+        :rtype: str
+        """
+        return self._domain_id
+
+    @domain_id.setter
+    def domain_id(self, domain_id):
+        """
+        Sets the domain_id of this ApproverInfo.
+        The identity domain ocid of the approver.
+
+
+        :param domain_id: The domain_id of this ApproverInfo.
+        :type: str
+        """
+        self._domain_id = domain_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

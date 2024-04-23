@@ -22,7 +22,8 @@ missing = Sentinel("Missing")
 
 class ScheduledJobClient(object):
     """
-    Use the OS Management Hub API to manage and monitor updates and patches for the operating system environments in your private data centers through a single management console. For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+    Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
+    For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -116,13 +117,137 @@ class ScheduledJobClient(object):
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
 
+    def change_scheduled_job_compartment(self, scheduled_job_id, change_scheduled_job_compartment_details, **kwargs):
+        """
+        Moves a scheduled job to another compartment.
+
+
+        :param str scheduled_job_id: (required)
+            The `OCID`__ of the scheduled job.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.os_management_hub.models.ChangeScheduledJobCompartmentDetails change_scheduled_job_compartment_details: (required)
+            The `OCID`__ of the compartment to move the scheduled job to.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagementhub/change_scheduled_job_compartment.py.html>`__ to see an example of how to use change_scheduled_job_compartment API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['scheduledJobId']
+        resource_path = "/scheduledJobs/{scheduledJobId}/actions/changeCompartment"
+        method = "POST"
+        operation_name = "change_scheduled_job_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ScheduledJob/ChangeScheduledJobCompartment"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"change_scheduled_job_compartment got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "scheduledJobId": scheduled_job_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_scheduled_job_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_scheduled_job_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def create_scheduled_job(self, create_scheduled_job_details, **kwargs):
         """
         Creates a new scheduled job.
 
 
         :param oci.os_management_hub.models.CreateScheduledJobDetails create_scheduled_job_details: (required)
-            Details for the new scheduled job.
+            Provides the information used to create the scheduled job.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -220,7 +345,9 @@ class ScheduledJobClient(object):
 
 
         :param str scheduled_job_id: (required)
-            The OCID of the scheduled job.
+            The `OCID`__ of the scheduled job.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -325,7 +452,9 @@ class ScheduledJobClient(object):
 
 
         :param str scheduled_job_id: (required)
-            The OCID of the scheduled job.
+            The `OCID`__ of the scheduled job.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -419,56 +548,62 @@ class ScheduledJobClient(object):
 
     def list_scheduled_jobs(self, **kwargs):
         """
-        Lists scheduled jobs that match the specified compartment or scheduled job OCID.
-        Filter the list against a variety of criteria including but not limited to its display name,
-        lifecycle state, operation type, and schedule type.
+        Lists scheduled jobs that match the specified compartment or scheduled job `OCID`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str compartment_id: (optional)
-            The OCID of the compartment that contains the resources to list.
+            The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
 
         :param str display_name: (optional)
-            A user-friendly name. Does not have to be unique, and it's changeable.
-
-            Example: `My new resource`
+            A filter to return resources that match the given user-friendly name.
 
         :param str display_name_contains: (optional)
             A filter to return resources that may partially match the given display name.
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources their lifecycleState matches the given lifecycleState.
+            A filter to return only scheduled jobs currently in the given state.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param str managed_instance_id: (optional)
-            The OCID of the managed instance for which to list resources.
+            The `OCID`__ of the managed instance. This filter returns resources associated with this managed instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str managed_instance_group_id: (optional)
-            The OCID of the managed instance group for which to list resources.
+            The `OCID`__ of the managed instance group. This filter returns resources associated with this group.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str managed_compartment_id: (optional)
-            The OCID of the managed compartment for which to list resources.
+            The `OCID`__ of the managed compartment. This filter returns resources associated with this compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_stage_id: (optional)
-            The OCID of the lifecycle stage for which to list resources.
+            The `OCID`__ of the lifecycle stage. This resource returns resources associated with this lifecycle stage.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str operation_type: (optional)
-            The operation type for which to list resources.
+            A filter to return only scheduled jobs with the given operation type.
 
-            Allowed values are: "INSTALL_PACKAGES", "UPDATE_PACKAGES", "REMOVE_PACKAGES", "UPDATE_ALL", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_USERSPACE", "UPDATE_KSPLICE_KERNEL", "MANAGE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "ATTACH_SOFTWARE_SOURCES", "DETACH_SOFTWARE_SOURCES", "SYNC_MANAGEMENT_STATION_MIRROR", "PROMOTE_LIFECYCLE"
+            Allowed values are: "INSTALL_PACKAGES", "UPDATE_PACKAGES", "REMOVE_PACKAGES", "UPDATE_ALL", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_USERSPACE", "UPDATE_KSPLICE_KERNEL", "MANAGE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "ATTACH_SOFTWARE_SOURCES", "DETACH_SOFTWARE_SOURCES", "SYNC_MANAGEMENT_STATION_MIRROR", "PROMOTE_LIFECYCLE", "INSTALL_WINDOWS_UPDATES", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES"
 
         :param str schedule_type: (optional)
-            The schedule type for which to list resources.
+            A filter to return only scheduled jobs of the given scheduling type (one-time or recurring).
 
             Allowed values are: "ONETIME", "RECURRING"
 
         :param datetime time_start: (optional)
-            The start time after which to list all schedules, in ISO 8601 format.
+            A filter to return only resources with a date on or after the given value, in ISO 8601 format.
 
             Example: 2017-07-14T02:40:00.000Z
 
         :param datetime time_end: (optional)
-            The cut-off time before which to list all upcoming schedules, in ISO 8601 format.
+            A filter to return only resources with a date on or before the given value, in ISO 8601 format.
 
             Example: 2017-07-14T02:40:00.000Z
 
@@ -502,13 +637,28 @@ class ScheduledJobClient(object):
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param bool is_restricted: (optional)
-            If true, will only filter out restricted scheduled job.
+            A filter to return only restricted scheduled jobs.
 
         :param str id: (optional)
-            The OCID of the scheduled job.
+            The `OCID`__ of the scheduled job. A filter to return the specified job.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param bool compartment_id_in_subtree: (optional)
-            Default is false. When set to true ,returns results from {compartmentId} or any of its subcompartment.
+            Indicates whether to include subcompartments in the returned results. Default is false.
+
+        :param list[str] location: (optional)
+            A filter to return only resources whose location matches the given value.
+
+            Allowed values are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"
+
+        :param list[str] location_not_equal_to: (optional)
+            A filter to return only resources whose location does not match the given value.
+
+            Allowed values are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"
+
+        :param bool is_managed_by_autonomous_linux: (optional)
+            Indicates whether to list only resources managed by the Autonomous Linux service.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -558,7 +708,10 @@ class ScheduledJobClient(object):
             "opc_request_id",
             "is_restricted",
             "id",
-            "compartment_id_in_subtree"
+            "compartment_id_in_subtree",
+            "location",
+            "location_not_equal_to",
+            "is_managed_by_autonomous_linux"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -573,7 +726,7 @@ class ScheduledJobClient(object):
                 )
 
         if 'operation_type' in kwargs:
-            operation_type_allowed_values = ["INSTALL_PACKAGES", "UPDATE_PACKAGES", "REMOVE_PACKAGES", "UPDATE_ALL", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_USERSPACE", "UPDATE_KSPLICE_KERNEL", "MANAGE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "ATTACH_SOFTWARE_SOURCES", "DETACH_SOFTWARE_SOURCES", "SYNC_MANAGEMENT_STATION_MIRROR", "PROMOTE_LIFECYCLE"]
+            operation_type_allowed_values = ["INSTALL_PACKAGES", "UPDATE_PACKAGES", "REMOVE_PACKAGES", "UPDATE_ALL", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_USERSPACE", "UPDATE_KSPLICE_KERNEL", "MANAGE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "ATTACH_SOFTWARE_SOURCES", "DETACH_SOFTWARE_SOURCES", "SYNC_MANAGEMENT_STATION_MIRROR", "PROMOTE_LIFECYCLE", "INSTALL_WINDOWS_UPDATES", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES"]
             if kwargs['operation_type'] not in operation_type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `operation_type`, must be one of { operation_type_allowed_values }"
@@ -600,6 +753,22 @@ class ScheduledJobClient(object):
                     f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
+        if 'location' in kwargs:
+            location_allowed_values = ["ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"]
+            for location_item in kwargs['location']:
+                if location_item not in location_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `location`, must be one of { location_allowed_values }"
+                    )
+
+        if 'location_not_equal_to' in kwargs:
+            location_not_equal_to_allowed_values = ["ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"]
+            for location_not_equal_to_item in kwargs['location_not_equal_to']:
+                if location_not_equal_to_item not in location_not_equal_to_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `location_not_equal_to`, must be one of { location_not_equal_to_allowed_values }"
+                    )
+
         query_params = {
             "compartmentId": kwargs.get("compartment_id", missing),
             "displayName": kwargs.get("display_name", missing),
@@ -619,7 +788,10 @@ class ScheduledJobClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "isRestricted": kwargs.get("is_restricted", missing),
             "id": kwargs.get("id", missing),
-            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "location": self.base_client.generate_collection_format_param(kwargs.get("location", missing), 'multi'),
+            "locationNotEqualTo": self.base_client.generate_collection_format_param(kwargs.get("location_not_equal_to", missing), 'multi'),
+            "isManagedByAutonomousLinux": kwargs.get("is_managed_by_autonomous_linux", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -666,12 +838,14 @@ class ScheduledJobClient(object):
 
     def run_scheduled_job_now(self, scheduled_job_id, **kwargs):
         """
-        Triggers an already created RECURRING scheduled job to run immediately instead of waiting
-        for its next regularly scheduled time. This operation does not support ONETIME scheduled job.
+        Triggers an already created recurring scheduled job to run immediately instead of waiting for its next regularly
+        scheduled time. This operation only applies to recurring jobs, not one-time scheduled jobs.
 
 
         :param str scheduled_job_id: (required)
-            The OCID of the scheduled job.
+            The `OCID`__ of the scheduled job.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -786,10 +960,12 @@ class ScheduledJobClient(object):
 
 
         :param str scheduled_job_id: (required)
-            The OCID of the scheduled job.
+            The `OCID`__ of the scheduled job.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.os_management_hub.models.UpdateScheduledJobDetails update_scheduled_job_details: (required)
-            The information to be updated.
+            Provides the information used to update the job.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call

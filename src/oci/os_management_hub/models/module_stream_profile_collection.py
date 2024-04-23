@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ModuleStreamProfileCollection(object):
     """
-    Results of a ModuleStreamProfile search. Contains both ModuleStreamProfileSummary items and other information, such as metadata.
+    The set of module stream profiles returned for the :func:`list_module_stream_profiles` operation.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class ModuleStreamProfileCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ModuleStreamProfileCollection.
-        List of ModuleStreamProfile.
+        List of module stream profiles.
 
 
         :return: The items of this ModuleStreamProfileCollection.
@@ -51,7 +51,7 @@ class ModuleStreamProfileCollection(object):
     def items(self, items):
         """
         Sets the items of this ModuleStreamProfileCollection.
-        List of ModuleStreamProfile.
+        List of module stream profiles.
 
 
         :param items: The items of this ModuleStreamProfileCollection.

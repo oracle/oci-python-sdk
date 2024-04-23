@@ -62,28 +62,35 @@ class ManagedListTypeSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param locks:
+            The value to assign to the locks property of this ManagedListTypeSummary.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
             'id': 'str',
             'description': 'str',
-            'lifecycle_state': 'str'
+            'lifecycle_state': 'str',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
             'id': 'id',
             'description': 'description',
-            'lifecycle_state': 'lifecycleState'
+            'lifecycle_state': 'lifecycleState',
+            'locks': 'locks'
         }
 
         self._id = None
         self._description = None
         self._lifecycle_state = None
+        self._locks = None
 
     @property
     def id(self):
         """
         **[Required]** Gets the id of this ManagedListTypeSummary.
-        ManagedListType Identifier
+        Unique identifier for a managed list type
 
 
         :return: The id of this ManagedListTypeSummary.
@@ -95,7 +102,7 @@ class ManagedListTypeSummary(object):
     def id(self, id):
         """
         Sets the id of this ManagedListTypeSummary.
-        ManagedListType Identifier
+        Unique identifier for a managed list type
 
 
         :param id: The id of this ManagedListTypeSummary.
@@ -107,7 +114,7 @@ class ManagedListTypeSummary(object):
     def description(self):
         """
         Gets the description of this ManagedListTypeSummary.
-        ManagedListType description
+        Managed list type description
 
 
         :return: The description of this ManagedListTypeSummary.
@@ -119,7 +126,7 @@ class ManagedListTypeSummary(object):
     def description(self, description):
         """
         Sets the description of this ManagedListTypeSummary.
-        ManagedListType description
+        Managed list type description
 
 
         :param description: The description of this ManagedListTypeSummary.
@@ -131,7 +138,7 @@ class ManagedListTypeSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this ManagedListTypeSummary.
-        The current state of the resource.
+        The current lifecycle state of the resource
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -146,7 +153,7 @@ class ManagedListTypeSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ManagedListTypeSummary.
-        The current state of the resource.
+        The current lifecycle state of the resource
 
 
         :param lifecycle_state: The lifecycle_state of this ManagedListTypeSummary.
@@ -156,6 +163,30 @@ class ManagedListTypeSummary(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this ManagedListTypeSummary.
+        Locks associated with this resource.
+
+
+        :return: The locks of this ManagedListTypeSummary.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this ManagedListTypeSummary.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this ManagedListTypeSummary.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

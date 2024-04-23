@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateTargetDetails(object):
     """
-    The information to be updated.
+    The target information to be updated.
     """
 
     #: A constant which can be used with the lifecycle_state property of a UpdateTargetDetails.
@@ -131,7 +131,7 @@ class UpdateTargetDetails(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this UpdateTargetDetails.
-        The current state of the Target.
+        The current lifecycle state of the Target.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
@@ -145,7 +145,7 @@ class UpdateTargetDetails(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this UpdateTargetDetails.
-        The current state of the Target.
+        The current lifecycle state of the Target.
 
 
         :param lifecycle_state: The lifecycle_state of this UpdateTargetDetails.
@@ -162,7 +162,7 @@ class UpdateTargetDetails(object):
     def target_detector_recipes(self):
         """
         Gets the target_detector_recipes of this UpdateTargetDetails.
-        The details of target detector recipes to be updated.
+        The details of target detector recipes to be updated
 
 
         :return: The target_detector_recipes of this UpdateTargetDetails.
@@ -174,7 +174,7 @@ class UpdateTargetDetails(object):
     def target_detector_recipes(self, target_detector_recipes):
         """
         Sets the target_detector_recipes of this UpdateTargetDetails.
-        The details of target detector recipes to be updated.
+        The details of target detector recipes to be updated
 
 
         :param target_detector_recipes: The target_detector_recipes of this UpdateTargetDetails.
@@ -186,7 +186,7 @@ class UpdateTargetDetails(object):
     def target_responder_recipes(self):
         """
         Gets the target_responder_recipes of this UpdateTargetDetails.
-        The details of target responder recipes to be updated.
+        The details of target responder recipes to be updated
 
 
         :return: The target_responder_recipes of this UpdateTargetDetails.
@@ -198,7 +198,7 @@ class UpdateTargetDetails(object):
     def target_responder_recipes(self, target_responder_recipes):
         """
         Sets the target_responder_recipes of this UpdateTargetDetails.
-        The details of target responder recipes to be updated.
+        The details of target responder recipes to be updated
 
 
         :param target_responder_recipes: The target_responder_recipes of this UpdateTargetDetails.

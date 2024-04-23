@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestDetails(object):
     """
-    The details of the user-friendly names to be used for actions.
+    Provides the name and description of the job.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class WorkRequestDetails(object):
     def display_name(self):
         """
         Gets the display_name of this WorkRequestDetails.
-        A user-friendly name for the resulting job. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
 
         :return: The display_name of this WorkRequestDetails.
@@ -58,7 +58,7 @@ class WorkRequestDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this WorkRequestDetails.
-        A user-friendly name for the resulting job. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this WorkRequestDetails.
@@ -70,7 +70,7 @@ class WorkRequestDetails(object):
     def description(self):
         """
         Gets the description of this WorkRequestDetails.
-        User specified information about the resulting job. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        User-specified information about the job. Avoid entering confidential information.
 
 
         :return: The description of this WorkRequestDetails.
@@ -82,7 +82,7 @@ class WorkRequestDetails(object):
     def description(self, description):
         """
         Sets the description of this WorkRequestDetails.
-        User specified information about the resulting job. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        User-specified information about the job. Avoid entering confidential information.
 
 
         :param description: The description of this WorkRequestDetails.

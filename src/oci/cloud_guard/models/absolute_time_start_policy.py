@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AbsoluteTimeStartPolicy(ContinuousQueryStartPolicy):
     """
-    Policy that defines the exact start time.
+    Start policy that defines the exact start time
     """
 
     def __init__(self, **kwargs):
@@ -49,7 +49,7 @@ class AbsoluteTimeStartPolicy(ContinuousQueryStartPolicy):
     def query_start_time(self):
         """
         Gets the query_start_time of this AbsoluteTimeStartPolicy.
-        Time when the query can start, if not specified it can start immediately.
+        Time when the query can start. If not specified it can start immediately
 
 
         :return: The query_start_time of this AbsoluteTimeStartPolicy.
@@ -61,7 +61,7 @@ class AbsoluteTimeStartPolicy(ContinuousQueryStartPolicy):
     def query_start_time(self, query_start_time):
         """
         Sets the query_start_time of this AbsoluteTimeStartPolicy.
-        Time when the query can start, if not specified it can start immediately.
+        Time when the query can start. If not specified it can start immediately
 
 
         :param query_start_time: The query_start_time of this AbsoluteTimeStartPolicy.

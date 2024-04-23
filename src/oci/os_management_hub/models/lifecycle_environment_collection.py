@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LifecycleEnvironmentCollection(object):
     """
-    Results of a lifecycle environment search. Contains both lifecycle environment summary items and other data.
+    A set of lifecycle environments returned for the :func:`list_lifecycle_environments` operation. The list contains a summary of each lifecycle environment and other information, such as metadata.
     """
 
     def __init__(self, **kwargs):

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDataSourceDetails(object):
     """
-    Creation of Data Source.
+    Parameters for creating a data source (DataSource resource).
     """
 
     #: A constant which can be used with the status property of a CreateDataSourceDetails.
@@ -26,6 +26,10 @@ class CreateDataSourceDetails(object):
     #: A constant which can be used with the data_source_feed_provider property of a CreateDataSourceDetails.
     #: This constant has a value of "LOGGINGQUERY"
     DATA_SOURCE_FEED_PROVIDER_LOGGINGQUERY = "LOGGINGQUERY"
+
+    #: A constant which can be used with the data_source_feed_provider property of a CreateDataSourceDetails.
+    #: This constant has a value of "SCHEDULEDQUERY"
+    DATA_SOURCE_FEED_PROVIDER_SCHEDULEDQUERY = "SCHEDULEDQUERY"
 
     def __init__(self, **kwargs):
         """
@@ -47,7 +51,7 @@ class CreateDataSourceDetails(object):
 
         :param data_source_feed_provider:
             The value to assign to the data_source_feed_provider property of this CreateDataSourceDetails.
-            Allowed values for this property are: "LOGGINGQUERY"
+            Allowed values for this property are: "LOGGINGQUERY", "SCHEDULEDQUERY"
         :type data_source_feed_provider: str
 
         :param data_source_details:
@@ -95,7 +99,7 @@ class CreateDataSourceDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateDataSourceDetails.
-        Data Source display name.
+        Data source display name
 
 
         :return: The display_name of this CreateDataSourceDetails.
@@ -107,7 +111,7 @@ class CreateDataSourceDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateDataSourceDetails.
-        Data Source display name.
+        Data source display name
 
 
         :param display_name: The display_name of this CreateDataSourceDetails.
@@ -119,7 +123,7 @@ class CreateDataSourceDetails(object):
     def status(self):
         """
         Gets the status of this CreateDataSourceDetails.
-        Status of DataSource. Default value is DISABLED.
+        Enablement status of data source.
 
         Allowed values for this property are: "ENABLED", "DISABLED"
 
@@ -133,7 +137,7 @@ class CreateDataSourceDetails(object):
     def status(self, status):
         """
         Sets the status of this CreateDataSourceDetails.
-        Status of DataSource. Default value is DISABLED.
+        Enablement status of data source.
 
 
         :param status: The status of this CreateDataSourceDetails.
@@ -150,7 +154,7 @@ class CreateDataSourceDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateDataSourceDetails.
-        CompartmentId of Data Source.
+        Compartment OCID of the data source
 
 
         :return: The compartment_id of this CreateDataSourceDetails.
@@ -162,7 +166,7 @@ class CreateDataSourceDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateDataSourceDetails.
-        CompartmentId of Data Source.
+        Compartment OCID of the data source
 
 
         :param compartment_id: The compartment_id of this CreateDataSourceDetails.
@@ -174,9 +178,9 @@ class CreateDataSourceDetails(object):
     def data_source_feed_provider(self):
         """
         **[Required]** Gets the data_source_feed_provider of this CreateDataSourceDetails.
-        Possible type of dataSourceFeed Provider(LoggingQuery)
+        Type of data source feed provider (LoggingQuery)
 
-        Allowed values for this property are: "LOGGINGQUERY"
+        Allowed values for this property are: "LOGGINGQUERY", "SCHEDULEDQUERY"
 
 
         :return: The data_source_feed_provider of this CreateDataSourceDetails.
@@ -188,13 +192,13 @@ class CreateDataSourceDetails(object):
     def data_source_feed_provider(self, data_source_feed_provider):
         """
         Sets the data_source_feed_provider of this CreateDataSourceDetails.
-        Possible type of dataSourceFeed Provider(LoggingQuery)
+        Type of data source feed provider (LoggingQuery)
 
 
         :param data_source_feed_provider: The data_source_feed_provider of this CreateDataSourceDetails.
         :type: str
         """
-        allowed_values = ["LOGGINGQUERY"]
+        allowed_values = ["LOGGINGQUERY", "SCHEDULEDQUERY"]
         if not value_allowed_none_or_none_sentinel(data_source_feed_provider, allowed_values):
             raise ValueError(
                 f"Invalid value for `data_source_feed_provider`, must be None or one of {allowed_values}"

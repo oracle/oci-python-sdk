@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstallModuleStreamProfileOnManagedInstanceDetails(object):
     """
-    The details of the module stream profile to be installed on a managed instance.
+    Provides the information used to install a module stream profile on a managed instance.
     """
 
     def __init__(self, **kwargs):

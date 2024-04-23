@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateAllPackagesOnManagedInstanceGroupDetails(object):
     """
-    The work request details for the update operation on the managed instance group.
+    Provides the details for updating the packages on the managed instance.
     """
 
     #: A constant which can be used with the update_types property of a UpdateAllPackagesOnManagedInstanceGroupDetails.

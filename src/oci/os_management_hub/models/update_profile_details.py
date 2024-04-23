@@ -28,6 +28,10 @@ class UpdateProfileDetails(object):
             The value to assign to the description property of this UpdateProfileDetails.
         :type description: str
 
+        :param is_default_profile:
+            The value to assign to the is_default_profile property of this UpdateProfileDetails.
+        :type is_default_profile: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateProfileDetails.
         :type freeform_tags: dict(str, str)
@@ -40,6 +44,7 @@ class UpdateProfileDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'description': 'str',
+            'is_default_profile': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -47,12 +52,14 @@ class UpdateProfileDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
+            'is_default_profile': 'isDefaultProfile',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._display_name = None
         self._description = None
+        self._is_default_profile = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -60,7 +67,7 @@ class UpdateProfileDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateProfileDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name for the profile. Does not have to be unique. Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateProfileDetails.
@@ -72,7 +79,7 @@ class UpdateProfileDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateProfileDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name for the profile. Does not have to be unique. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateProfileDetails.
@@ -84,7 +91,7 @@ class UpdateProfileDetails(object):
     def description(self):
         """
         Gets the description of this UpdateProfileDetails.
-        Details describing the scheduled job.
+        User-specified description of the profile.
 
 
         :return: The description of this UpdateProfileDetails.
@@ -96,13 +103,37 @@ class UpdateProfileDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateProfileDetails.
-        Details describing the scheduled job.
+        User-specified description of the profile.
 
 
         :param description: The description of this UpdateProfileDetails.
         :type: str
         """
         self._description = description
+
+    @property
+    def is_default_profile(self):
+        """
+        Gets the is_default_profile of this UpdateProfileDetails.
+        Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+
+
+        :return: The is_default_profile of this UpdateProfileDetails.
+        :rtype: bool
+        """
+        return self._is_default_profile
+
+    @is_default_profile.setter
+    def is_default_profile(self, is_default_profile):
+        """
+        Sets the is_default_profile of this UpdateProfileDetails.
+        Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+
+
+        :param is_default_profile: The is_default_profile of this UpdateProfileDetails.
+        :type: bool
+        """
+        self._is_default_profile = is_default_profile
 
     @property
     def freeform_tags(self):

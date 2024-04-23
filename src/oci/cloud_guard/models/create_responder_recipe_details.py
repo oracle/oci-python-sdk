@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateResponderRecipeDetails(object):
     """
-    Details of ResponderRecipe.
+    Parameters for creating a responder recipe.
     """
 
     def __init__(self, **kwargs):
@@ -137,7 +137,7 @@ class CreateResponderRecipeDetails(object):
     def source_responder_recipe_id(self):
         """
         **[Required]** Gets the source_responder_recipe_id of this CreateResponderRecipeDetails.
-        The id of the source responder recipe.
+        The unique identifier of the source responder recipe
 
 
         :return: The source_responder_recipe_id of this CreateResponderRecipeDetails.
@@ -149,7 +149,7 @@ class CreateResponderRecipeDetails(object):
     def source_responder_recipe_id(self, source_responder_recipe_id):
         """
         Sets the source_responder_recipe_id of this CreateResponderRecipeDetails.
-        The id of the source responder recipe.
+        The unique identifier of the source responder recipe
 
 
         :param source_responder_recipe_id: The source_responder_recipe_id of this CreateResponderRecipeDetails.
@@ -161,7 +161,7 @@ class CreateResponderRecipeDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateResponderRecipeDetails.
-        Compartment Identifier
+        Compartment OCID
 
 
         :return: The compartment_id of this CreateResponderRecipeDetails.
@@ -173,7 +173,7 @@ class CreateResponderRecipeDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateResponderRecipeDetails.
-        Compartment Identifier
+        Compartment OCID
 
 
         :param compartment_id: The compartment_id of this CreateResponderRecipeDetails.
@@ -185,7 +185,7 @@ class CreateResponderRecipeDetails(object):
     def responder_rules(self):
         """
         Gets the responder_rules of this CreateResponderRecipeDetails.
-        Responder Rules to override from source responder recipe
+        List of responder rules to override from source responder recipe
 
 
         :return: The responder_rules of this CreateResponderRecipeDetails.
@@ -197,7 +197,7 @@ class CreateResponderRecipeDetails(object):
     def responder_rules(self, responder_rules):
         """
         Sets the responder_rules of this CreateResponderRecipeDetails.
-        Responder Rules to override from source responder recipe
+        List of responder rules to override from source responder recipe
 
 
         :param responder_rules: The responder_rules of this CreateResponderRecipeDetails.

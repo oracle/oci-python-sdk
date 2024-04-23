@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AttachManagedInstancesToManagedInstanceGroupDetails(object):
     """
-    The managed instance OCIDs to attach to the managed instance group.
+    Provides the information used to attach managed instances to a group.
     """
 
     def __init__(self, **kwargs):
@@ -45,8 +45,10 @@ class AttachManagedInstancesToManagedInstanceGroupDetails(object):
     @property
     def managed_instances(self):
         """
-        Gets the managed_instances of this AttachManagedInstancesToManagedInstanceGroupDetails.
-        The list of managed instance OCIDs to be attached.
+        **[Required]** Gets the managed_instances of this AttachManagedInstancesToManagedInstanceGroupDetails.
+        List of managed instance `OCIDs`__ to attach to the group.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_instances of this AttachManagedInstancesToManagedInstanceGroupDetails.
@@ -58,7 +60,9 @@ class AttachManagedInstancesToManagedInstanceGroupDetails(object):
     def managed_instances(self, managed_instances):
         """
         Sets the managed_instances of this AttachManagedInstancesToManagedInstanceGroupDetails.
-        The list of managed instance OCIDs to be attached.
+        List of managed instance `OCIDs`__ to attach to the group.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_instances: The managed_instances of this AttachManagedInstancesToManagedInstanceGroupDetails.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateMirrorConfigurationDetails(object):
     """
-    Information for creating a mirror configuration
+    Information used to create the mirror configuration for a management station.
     """
 
     def __init__(self, **kwargs):
@@ -60,7 +60,7 @@ class CreateMirrorConfigurationDetails(object):
     def directory(self):
         """
         **[Required]** Gets the directory of this CreateMirrorConfigurationDetails.
-        Directory for the mirroring
+        Path to the data volume on the management station where software source mirrors are stored.
 
 
         :return: The directory of this CreateMirrorConfigurationDetails.
@@ -72,7 +72,7 @@ class CreateMirrorConfigurationDetails(object):
     def directory(self, directory):
         """
         Sets the directory of this CreateMirrorConfigurationDetails.
-        Directory for the mirroring
+        Path to the data volume on the management station where software source mirrors are stored.
 
 
         :param directory: The directory of this CreateMirrorConfigurationDetails.
@@ -84,7 +84,7 @@ class CreateMirrorConfigurationDetails(object):
     def port(self):
         """
         **[Required]** Gets the port of this CreateMirrorConfigurationDetails.
-        Default port for the mirror
+        Default mirror listening port for http.
 
 
         :return: The port of this CreateMirrorConfigurationDetails.
@@ -96,7 +96,7 @@ class CreateMirrorConfigurationDetails(object):
     def port(self, port):
         """
         Sets the port of this CreateMirrorConfigurationDetails.
-        Default port for the mirror
+        Default mirror listening port for http.
 
 
         :param port: The port of this CreateMirrorConfigurationDetails.
@@ -108,7 +108,7 @@ class CreateMirrorConfigurationDetails(object):
     def sslport(self):
         """
         **[Required]** Gets the sslport of this CreateMirrorConfigurationDetails.
-        Default sslport for the mirror
+        Default mirror listening port for https.
 
 
         :return: The sslport of this CreateMirrorConfigurationDetails.
@@ -120,7 +120,7 @@ class CreateMirrorConfigurationDetails(object):
     def sslport(self, sslport):
         """
         Sets the sslport of this CreateMirrorConfigurationDetails.
-        Default sslport for the mirror
+        Default mirror listening port for https.
 
 
         :param sslport: The sslport of this CreateMirrorConfigurationDetails.
@@ -132,7 +132,7 @@ class CreateMirrorConfigurationDetails(object):
     def sslcert(self):
         """
         Gets the sslcert of this CreateMirrorConfigurationDetails.
-        Local path for the sslcert
+        Path to the SSL cerfificate.
 
 
         :return: The sslcert of this CreateMirrorConfigurationDetails.
@@ -144,7 +144,7 @@ class CreateMirrorConfigurationDetails(object):
     def sslcert(self, sslcert):
         """
         Sets the sslcert of this CreateMirrorConfigurationDetails.
-        Local path for the sslcert
+        Path to the SSL cerfificate.
 
 
         :param sslcert: The sslcert of this CreateMirrorConfigurationDetails.

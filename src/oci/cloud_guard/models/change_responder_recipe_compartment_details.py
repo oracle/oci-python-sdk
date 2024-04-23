@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeResponderRecipeCompartmentDetails(object):
     """
-    Changing compartmentId for ResponderRecipe
+    Parameters to use to move a responder recipe to a different compartment.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class ChangeResponderRecipeCompartmentDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ChangeResponderRecipeCompartmentDetails.
-        The OCID of the compartment into which the ResponderRecipe should be moved
+        The OCID of the compartment into which the responder recipe is to be moved
 
 
         :return: The compartment_id of this ChangeResponderRecipeCompartmentDetails.
@@ -51,7 +51,7 @@ class ChangeResponderRecipeCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ChangeResponderRecipeCompartmentDetails.
-        The OCID of the compartment into which the ResponderRecipe should be moved
+        The OCID of the compartment into which the responder recipe is to be moved
 
 
         :param compartment_id: The compartment_id of this ChangeResponderRecipeCompartmentDetails.

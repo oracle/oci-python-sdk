@@ -89,7 +89,7 @@ class SecurityScoreTrendAggregation(object):
     def dimensions_map(self):
         """
         **[Required]** Gets the dimensions_map of this SecurityScoreTrendAggregation.
-        The key-value pairs of dimensions and their names.
+        The key-value pairs of dimensions and their names
 
 
         :return: The dimensions_map of this SecurityScoreTrendAggregation.
@@ -101,7 +101,7 @@ class SecurityScoreTrendAggregation(object):
     def dimensions_map(self, dimensions_map):
         """
         Sets the dimensions_map of this SecurityScoreTrendAggregation.
-        The key-value pairs of dimensions and their names.
+        The key-value pairs of dimensions and their names
 
 
         :param dimensions_map: The dimensions_map of this SecurityScoreTrendAggregation.
@@ -113,7 +113,7 @@ class SecurityScoreTrendAggregation(object):
     def start_timestamp(self):
         """
         **[Required]** Gets the start_timestamp of this SecurityScoreTrendAggregation.
-        Start Time in epoch seconds
+        Start time in epoch seconds
 
 
         :return: The start_timestamp of this SecurityScoreTrendAggregation.
@@ -125,7 +125,7 @@ class SecurityScoreTrendAggregation(object):
     def start_timestamp(self, start_timestamp):
         """
         Sets the start_timestamp of this SecurityScoreTrendAggregation.
-        Start Time in epoch seconds
+        Start time in epoch seconds
 
 
         :param start_timestamp: The start_timestamp of this SecurityScoreTrendAggregation.

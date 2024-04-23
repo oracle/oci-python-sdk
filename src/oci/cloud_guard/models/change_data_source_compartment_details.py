@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeDataSourceCompartmentDetails(object):
     """
-    Changing compartmentId for DataSource
+    The compartmentId for the compartment into which the data source is to be moved.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class ChangeDataSourceCompartmentDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ChangeDataSourceCompartmentDetails.
-        The OCID of the compartment into which the DataSource should be moved
+        The OCID of the compartment into which the data source is to be moved
 
 
         :return: The compartment_id of this ChangeDataSourceCompartmentDetails.
@@ -51,7 +51,7 @@ class ChangeDataSourceCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ChangeDataSourceCompartmentDetails.
-        The OCID of the compartment into which the DataSource should be moved
+        The OCID of the compartment into which the data source is to be moved
 
 
         :param compartment_id: The compartment_id of this ChangeDataSourceCompartmentDetails.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResponderRuleSummary(object):
     """
-    Summary of the ResponderRule.
+    Summary information for a responder rule.
     """
 
     #: A constant which can be used with the type property of a ResponderRuleSummary.
@@ -159,7 +159,7 @@ class ResponderRuleSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this ResponderRuleSummary.
-        Identifier for ResponderRule.
+        Unique identifier for responder rule
 
 
         :return: The id of this ResponderRuleSummary.
@@ -171,7 +171,7 @@ class ResponderRuleSummary(object):
     def id(self, id):
         """
         Sets the id of this ResponderRuleSummary.
-        Identifier for ResponderRule.
+        Unique identifier for responder rule
 
 
         :param id: The id of this ResponderRuleSummary.
@@ -183,7 +183,7 @@ class ResponderRuleSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this ResponderRuleSummary.
-        ResponderRule Display Name
+        Display name for responder rule
 
 
         :return: The display_name of this ResponderRuleSummary.
@@ -195,7 +195,7 @@ class ResponderRuleSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ResponderRuleSummary.
-        ResponderRule Display Name
+        Display name for responder rule
 
 
         :param display_name: The display_name of this ResponderRuleSummary.
@@ -207,7 +207,7 @@ class ResponderRuleSummary(object):
     def description(self):
         """
         **[Required]** Gets the description of this ResponderRuleSummary.
-        ResponderRule Description
+        Responder rule description
 
 
         :return: The description of this ResponderRuleSummary.
@@ -219,7 +219,7 @@ class ResponderRuleSummary(object):
     def description(self, description):
         """
         Sets the description of this ResponderRuleSummary.
-        ResponderRule Description
+        Responder rule description
 
 
         :param description: The description of this ResponderRuleSummary.
@@ -231,7 +231,7 @@ class ResponderRuleSummary(object):
     def type(self):
         """
         **[Required]** Gets the type of this ResponderRuleSummary.
-        Type of Responder
+        Type of responder
 
         Allowed values for this property are: "REMEDIATION", "NOTIFICATION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -246,7 +246,7 @@ class ResponderRuleSummary(object):
     def type(self, type):
         """
         Sets the type of this ResponderRuleSummary.
-        Type of Responder
+        Type of responder
 
 
         :param type: The type of this ResponderRuleSummary.
@@ -261,7 +261,7 @@ class ResponderRuleSummary(object):
     def policies(self):
         """
         Gets the policies of this ResponderRuleSummary.
-        List of Policy
+        List of policies
 
 
         :return: The policies of this ResponderRuleSummary.
@@ -273,7 +273,7 @@ class ResponderRuleSummary(object):
     def policies(self, policies):
         """
         Sets the policies of this ResponderRuleSummary.
-        List of Policy
+        List of policies
 
 
         :param policies: The policies of this ResponderRuleSummary.
@@ -285,7 +285,7 @@ class ResponderRuleSummary(object):
     def supported_modes(self):
         """
         Gets the supported_modes of this ResponderRuleSummary.
-        Supported Execution Modes
+        Supported execution modes for responder rule
 
         Allowed values for items in this list are: "AUTOACTION", "USERACTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -300,7 +300,7 @@ class ResponderRuleSummary(object):
     def supported_modes(self, supported_modes):
         """
         Sets the supported_modes of this ResponderRuleSummary.
-        Supported Execution Modes
+        Supported execution modes for responder rule
 
 
         :param supported_modes: The supported_modes of this ResponderRuleSummary.
@@ -359,7 +359,7 @@ class ResponderRuleSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this ResponderRuleSummary.
-        The date and time the responder rule was updated. Format defined by RFC3339.
+        The date and time the responder rule was last updated. Format defined by RFC3339.
 
 
         :return: The time_updated of this ResponderRuleSummary.
@@ -371,7 +371,7 @@ class ResponderRuleSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this ResponderRuleSummary.
-        The date and time the responder rule was updated. Format defined by RFC3339.
+        The date and time the responder rule was last updated. Format defined by RFC3339.
 
 
         :param time_updated: The time_updated of this ResponderRuleSummary.
@@ -383,7 +383,7 @@ class ResponderRuleSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this ResponderRuleSummary.
-        The current state of the ResponderRule.
+        The current lifecycle state of the responder rule
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -398,7 +398,7 @@ class ResponderRuleSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ResponderRuleSummary.
-        The current state of the ResponderRule.
+        The current lifecycle state of the responder rule
 
 
         :param lifecycle_state: The lifecycle_state of this ResponderRuleSummary.

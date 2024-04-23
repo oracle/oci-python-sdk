@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TargetDetectorRecipeSummary(object):
     """
-    Summary of DetectorRecipe
+    Summary information for a target detector recipe
     """
 
     #: A constant which can be used with the owner property of a TargetDetectorRecipeSummary.
@@ -38,6 +38,10 @@ class TargetDetectorRecipeSummary(object):
     #: A constant which can be used with the detector property of a TargetDetectorRecipeSummary.
     #: This constant has a value of "IAAS_LOG_INSIGHT_DETECTOR"
     DETECTOR_IAAS_LOG_INSIGHT_DETECTOR = "IAAS_LOG_INSIGHT_DETECTOR"
+
+    #: A constant which can be used with the detector property of a TargetDetectorRecipeSummary.
+    #: This constant has a value of "IAAS_INSTANCE_SECURITY_DETECTOR"
+    DETECTOR_IAAS_INSTANCE_SECURITY_DETECTOR = "IAAS_INSTANCE_SECURITY_DETECTOR"
 
     #: A constant which can be used with the lifecycle_state property of a TargetDetectorRecipeSummary.
     #: This constant has a value of "CREATING"
@@ -66,6 +70,22 @@ class TargetDetectorRecipeSummary(object):
     #: A constant which can be used with the lifecycle_state property of a TargetDetectorRecipeSummary.
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
+
+    #: A constant which can be used with the detector_recipe_type property of a TargetDetectorRecipeSummary.
+    #: This constant has a value of "LIMITED"
+    DETECTOR_RECIPE_TYPE_LIMITED = "LIMITED"
+
+    #: A constant which can be used with the detector_recipe_type property of a TargetDetectorRecipeSummary.
+    #: This constant has a value of "BASIC"
+    DETECTOR_RECIPE_TYPE_BASIC = "BASIC"
+
+    #: A constant which can be used with the detector_recipe_type property of a TargetDetectorRecipeSummary.
+    #: This constant has a value of "STANDARD"
+    DETECTOR_RECIPE_TYPE_STANDARD = "STANDARD"
+
+    #: A constant which can be used with the detector_recipe_type property of a TargetDetectorRecipeSummary.
+    #: This constant has a value of "ENTERPRISE"
+    DETECTOR_RECIPE_TYPE_ENTERPRISE = "ENTERPRISE"
 
     def __init__(self, **kwargs):
         """
@@ -100,7 +120,7 @@ class TargetDetectorRecipeSummary(object):
 
         :param detector:
             The value to assign to the detector property of this TargetDetectorRecipeSummary.
-            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type detector: str
 
@@ -122,6 +142,16 @@ class TargetDetectorRecipeSummary(object):
             The value to assign to the lifecycle_details property of this TargetDetectorRecipeSummary.
         :type lifecycle_details: str
 
+        :param locks:
+            The value to assign to the locks property of this TargetDetectorRecipeSummary.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
+        :param detector_recipe_type:
+            The value to assign to the detector_recipe_type property of this TargetDetectorRecipeSummary.
+            Allowed values for this property are: "LIMITED", "BASIC", "STANDARD", "ENTERPRISE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type detector_recipe_type: str
+
         :param source_data_retention:
             The value to assign to the source_data_retention property of this TargetDetectorRecipeSummary.
         :type source_data_retention: int
@@ -139,6 +169,8 @@ class TargetDetectorRecipeSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_details': 'str',
+            'locks': 'list[ResourceLock]',
+            'detector_recipe_type': 'str',
             'source_data_retention': 'int'
         }
 
@@ -154,6 +186,8 @@ class TargetDetectorRecipeSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_details': 'lifecycleDetails',
+            'locks': 'locks',
+            'detector_recipe_type': 'detectorRecipeType',
             'source_data_retention': 'sourceDataRetention'
         }
 
@@ -168,13 +202,15 @@ class TargetDetectorRecipeSummary(object):
         self._time_created = None
         self._time_updated = None
         self._lifecycle_details = None
+        self._locks = None
+        self._detector_recipe_type = None
         self._source_data_retention = None
 
     @property
     def id(self):
         """
         **[Required]** Gets the id of this TargetDetectorRecipeSummary.
-        Unique identifier that is immutable on creation
+        Unique identifier that can't be changed after creation
 
 
         :return: The id of this TargetDetectorRecipeSummary.
@@ -186,7 +222,7 @@ class TargetDetectorRecipeSummary(object):
     def id(self, id):
         """
         Sets the id of this TargetDetectorRecipeSummary.
-        Unique identifier that is immutable on creation
+        Unique identifier that can't be changed after creation
 
 
         :param id: The id of this TargetDetectorRecipeSummary.
@@ -198,7 +234,7 @@ class TargetDetectorRecipeSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this TargetDetectorRecipeSummary.
-        Compartment Identifier
+        Compartment OCID
 
 
         :return: The compartment_id of this TargetDetectorRecipeSummary.
@@ -210,7 +246,7 @@ class TargetDetectorRecipeSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this TargetDetectorRecipeSummary.
-        Compartment Identifier
+        Compartment OCID
 
 
         :param compartment_id: The compartment_id of this TargetDetectorRecipeSummary.
@@ -222,7 +258,7 @@ class TargetDetectorRecipeSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this TargetDetectorRecipeSummary.
-        DetectorRecipe Identifier Name
+        Detector recipe's display name
 
 
         :return: The display_name of this TargetDetectorRecipeSummary.
@@ -234,7 +270,7 @@ class TargetDetectorRecipeSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this TargetDetectorRecipeSummary.
-        DetectorRecipe Identifier Name
+        Detector recipe's display name
 
 
         :param display_name: The display_name of this TargetDetectorRecipeSummary.
@@ -246,7 +282,7 @@ class TargetDetectorRecipeSummary(object):
     def description(self):
         """
         **[Required]** Gets the description of this TargetDetectorRecipeSummary.
-        DetectorRecipe Description
+        Detector recipe's description
 
 
         :return: The description of this TargetDetectorRecipeSummary.
@@ -258,7 +294,7 @@ class TargetDetectorRecipeSummary(object):
     def description(self, description):
         """
         Sets the description of this TargetDetectorRecipeSummary.
-        DetectorRecipe Description
+        Detector recipe's description
 
 
         :param description: The description of this TargetDetectorRecipeSummary.
@@ -270,7 +306,7 @@ class TargetDetectorRecipeSummary(object):
     def owner(self):
         """
         **[Required]** Gets the owner of this TargetDetectorRecipeSummary.
-        Owner of DetectorRecipe
+        Detector recipe's owner
 
         Allowed values for this property are: "CUSTOMER", "ORACLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -285,7 +321,7 @@ class TargetDetectorRecipeSummary(object):
     def owner(self, owner):
         """
         Sets the owner of this TargetDetectorRecipeSummary.
-        Owner of DetectorRecipe
+        Detector recipe's owner
 
 
         :param owner: The owner of this TargetDetectorRecipeSummary.
@@ -300,7 +336,7 @@ class TargetDetectorRecipeSummary(object):
     def detector_recipe_id(self):
         """
         **[Required]** Gets the detector_recipe_id of this TargetDetectorRecipeSummary.
-        Unique identifier for Detector Recipe of which this is an extension
+        Unique identifier for detector recipe of which this is an extension
 
 
         :return: The detector_recipe_id of this TargetDetectorRecipeSummary.
@@ -312,7 +348,7 @@ class TargetDetectorRecipeSummary(object):
     def detector_recipe_id(self, detector_recipe_id):
         """
         Sets the detector_recipe_id of this TargetDetectorRecipeSummary.
-        Unique identifier for Detector Recipe of which this is an extension
+        Unique identifier for detector recipe of which this is an extension
 
 
         :param detector_recipe_id: The detector_recipe_id of this TargetDetectorRecipeSummary.
@@ -326,7 +362,7 @@ class TargetDetectorRecipeSummary(object):
         Gets the detector of this TargetDetectorRecipeSummary.
         Type of detector
 
-        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -345,7 +381,7 @@ class TargetDetectorRecipeSummary(object):
         :param detector: The detector of this TargetDetectorRecipeSummary.
         :type: str
         """
-        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR"]
+        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR"]
         if not value_allowed_none_or_none_sentinel(detector, allowed_values):
             detector = 'UNKNOWN_ENUM_VALUE'
         self._detector = detector
@@ -354,7 +390,7 @@ class TargetDetectorRecipeSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this TargetDetectorRecipeSummary.
-        The current state of the resource.
+        The current lifecycle state of the resource
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -369,7 +405,7 @@ class TargetDetectorRecipeSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this TargetDetectorRecipeSummary.
-        The current state of the resource.
+        The current lifecycle state of the resource
 
 
         :param lifecycle_state: The lifecycle_state of this TargetDetectorRecipeSummary.
@@ -408,7 +444,7 @@ class TargetDetectorRecipeSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this TargetDetectorRecipeSummary.
-        The date and time the target detector recipe was updated. Format defined by RFC3339.
+        The date and time the target detector recipe was last updated. Format defined by RFC3339.
 
 
         :return: The time_updated of this TargetDetectorRecipeSummary.
@@ -420,7 +456,7 @@ class TargetDetectorRecipeSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this TargetDetectorRecipeSummary.
-        The date and time the target detector recipe was updated. Format defined by RFC3339.
+        The date and time the target detector recipe was last updated. Format defined by RFC3339.
 
 
         :param time_updated: The time_updated of this TargetDetectorRecipeSummary.
@@ -451,6 +487,60 @@ class TargetDetectorRecipeSummary(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this TargetDetectorRecipeSummary.
+        Locks associated with this resource.
+
+
+        :return: The locks of this TargetDetectorRecipeSummary.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this TargetDetectorRecipeSummary.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this TargetDetectorRecipeSummary.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
+
+    @property
+    def detector_recipe_type(self):
+        """
+        Gets the detector_recipe_type of this TargetDetectorRecipeSummary.
+        Recipe type ( STANDARD, ENTERPRISE )
+
+        Allowed values for this property are: "LIMITED", "BASIC", "STANDARD", "ENTERPRISE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The detector_recipe_type of this TargetDetectorRecipeSummary.
+        :rtype: str
+        """
+        return self._detector_recipe_type
+
+    @detector_recipe_type.setter
+    def detector_recipe_type(self, detector_recipe_type):
+        """
+        Sets the detector_recipe_type of this TargetDetectorRecipeSummary.
+        Recipe type ( STANDARD, ENTERPRISE )
+
+
+        :param detector_recipe_type: The detector_recipe_type of this TargetDetectorRecipeSummary.
+        :type: str
+        """
+        allowed_values = ["LIMITED", "BASIC", "STANDARD", "ENTERPRISE"]
+        if not value_allowed_none_or_none_sentinel(detector_recipe_type, allowed_values):
+            detector_recipe_type = 'UNKNOWN_ENUM_VALUE'
+        self._detector_recipe_type = detector_recipe_type
 
     @property
     def source_data_retention(self):

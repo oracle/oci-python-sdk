@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SkipBulkResponderExecutionDetails(object):
     """
-    List of responder execution ids to skip the execution
+    Details of responders to skip execution.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class SkipBulkResponderExecutionDetails(object):
     def responder_execution_ids(self):
         """
         **[Required]** Gets the responder_execution_ids of this SkipBulkResponderExecutionDetails.
-        List of responder execution ids to skip the execution
+        List of responder execution IDs to skip execution
 
 
         :return: The responder_execution_ids of this SkipBulkResponderExecutionDetails.
@@ -51,7 +51,7 @@ class SkipBulkResponderExecutionDetails(object):
     def responder_execution_ids(self, responder_execution_ids):
         """
         Sets the responder_execution_ids of this SkipBulkResponderExecutionDetails.
-        List of responder execution ids to skip the execution
+        List of responder execution IDs to skip execution
 
 
         :param responder_execution_ids: The responder_execution_ids of this SkipBulkResponderExecutionDetails.

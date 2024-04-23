@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LifecycleProfile(Profile):
     """
-    Definition of a registration profile of type LIFECYCLE.
+    Provides the information for a lifecycle environment registration profile.
     """
 
     def __init__(self, **kwargs):
@@ -43,17 +43,17 @@ class LifecycleProfile(Profile):
 
         :param profile_type:
             The value to assign to the profile_type property of this LifecycleProfile.
-            Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION"
+            Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE"
         :type profile_type: str
 
         :param vendor_name:
             The value to assign to the vendor_name property of this LifecycleProfile.
-            Allowed values for this property are: "ORACLE"
+            Allowed values for this property are: "ORACLE", "MICROSOFT"
         :type vendor_name: str
 
         :param os_family:
             The value to assign to the os_family property of this LifecycleProfile.
-            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7"
+            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"
         :type os_family: str
 
         :param arch_type:
@@ -69,6 +69,19 @@ class LifecycleProfile(Profile):
             The value to assign to the lifecycle_state property of this LifecycleProfile.
             Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
         :type lifecycle_state: str
+
+        :param registration_type:
+            The value to assign to the registration_type property of this LifecycleProfile.
+            Allowed values for this property are: "OCI_LINUX", "NON_OCI_LINUX", "OCI_WINDOWS", "AUTONOMOUS_LINUX"
+        :type registration_type: str
+
+        :param is_default_profile:
+            The value to assign to the is_default_profile property of this LifecycleProfile.
+        :type is_default_profile: bool
+
+        :param is_service_provided_profile:
+            The value to assign to the is_service_provided_profile property of this LifecycleProfile.
+        :type is_service_provided_profile: bool
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this LifecycleProfile.
@@ -103,6 +116,9 @@ class LifecycleProfile(Profile):
             'arch_type': 'str',
             'time_created': 'datetime',
             'lifecycle_state': 'str',
+            'registration_type': 'str',
+            'is_default_profile': 'bool',
+            'is_service_provided_profile': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
@@ -122,6 +138,9 @@ class LifecycleProfile(Profile):
             'arch_type': 'archType',
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
+            'registration_type': 'registrationType',
+            'is_default_profile': 'isDefaultProfile',
+            'is_service_provided_profile': 'isServiceProvidedProfile',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
@@ -140,6 +159,9 @@ class LifecycleProfile(Profile):
         self._arch_type = None
         self._time_created = None
         self._lifecycle_state = None
+        self._registration_type = None
+        self._is_default_profile = None
+        self._is_service_provided_profile = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AddCompartmentDetails(object):
     """
-    An existing compartment to add to a security zone
+    Parameter for an existing compartment to be added to a security zone.
     """
 
     def __init__(self, **kwargs):

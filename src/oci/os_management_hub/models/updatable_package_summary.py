@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdatablePackageSummary(PackageSummary):
     """
-    A software package available for install on a managed instance.
+    Provides summary information for a software package available for installation on a managed instance.
     """
 
     #: A constant which can be used with the update_type property of a UpdatablePackageSummary.
@@ -133,7 +133,7 @@ class UpdatablePackageSummary(PackageSummary):
     def installed_version(self):
         """
         Gets the installed_version of this UpdatablePackageSummary.
-        The version of this upgradable package already installed on the instance.
+        The version of the package that is currently installed on the instance.
 
 
         :return: The installed_version of this UpdatablePackageSummary.
@@ -145,7 +145,7 @@ class UpdatablePackageSummary(PackageSummary):
     def installed_version(self, installed_version):
         """
         Sets the installed_version of this UpdatablePackageSummary.
-        The version of this upgradable package already installed on the instance.
+        The version of the package that is currently installed on the instance.
 
 
         :param installed_version: The installed_version of this UpdatablePackageSummary.
@@ -157,7 +157,7 @@ class UpdatablePackageSummary(PackageSummary):
     def update_type(self):
         """
         **[Required]** Gets the update_type of this UpdatablePackageSummary.
-        The classification of this update.
+        The type of update.
 
         Allowed values for this property are: "SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -172,7 +172,7 @@ class UpdatablePackageSummary(PackageSummary):
     def update_type(self, update_type):
         """
         Sets the update_type of this UpdatablePackageSummary.
-        The classification of this update.
+        The type of update.
 
 
         :param update_type: The update_type of this UpdatablePackageSummary.
@@ -187,7 +187,7 @@ class UpdatablePackageSummary(PackageSummary):
     def errata(self):
         """
         Gets the errata of this UpdatablePackageSummary.
-        List of errata containing this update.
+        List of errata applicable to this update.
 
 
         :return: The errata of this UpdatablePackageSummary.
@@ -199,7 +199,7 @@ class UpdatablePackageSummary(PackageSummary):
     def errata(self, errata):
         """
         Sets the errata of this UpdatablePackageSummary.
-        List of errata containing this update.
+        List of errata applicable to this update.
 
 
         :param errata: The errata of this UpdatablePackageSummary.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataMaskRuleCollection(object):
     """
-    Collection of Data Mask Rule
+    Collection of data mask rules.
     """
 
     def __init__(self, **kwargs):
@@ -24,22 +24,29 @@ class DataMaskRuleCollection(object):
             The value to assign to the items property of this DataMaskRuleCollection.
         :type items: list[oci.cloud_guard.models.DataMaskRuleSummary]
 
+        :param locks:
+            The value to assign to the locks property of this DataMaskRuleCollection.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
-            'items': 'list[DataMaskRuleSummary]'
+            'items': 'list[DataMaskRuleSummary]',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
-            'items': 'items'
+            'items': 'items',
+            'locks': 'locks'
         }
 
         self._items = None
+        self._locks = None
 
     @property
     def items(self):
         """
         **[Required]** Gets the items of this DataMaskRuleCollection.
-        List of Data Mask Rule Summary
+        List of DataMaskRuleSummary resources
 
 
         :return: The items of this DataMaskRuleCollection.
@@ -51,13 +58,37 @@ class DataMaskRuleCollection(object):
     def items(self, items):
         """
         Sets the items of this DataMaskRuleCollection.
-        List of Data Mask Rule Summary
+        List of DataMaskRuleSummary resources
 
 
         :param items: The items of this DataMaskRuleCollection.
         :type: list[oci.cloud_guard.models.DataMaskRuleSummary]
         """
         self._items = items
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this DataMaskRuleCollection.
+        Locks associated with this resource.
+
+
+        :return: The locks of this DataMaskRuleCollection.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this DataMaskRuleCollection.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this DataMaskRuleCollection.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

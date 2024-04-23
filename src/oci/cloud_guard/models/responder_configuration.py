@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResponderConfiguration(object):
     """
-    A single configuration applied to a responder
+    Details for a configuration to be applied to a responder.
     """
 
     def __init__(self, **kwargs):
@@ -53,7 +53,7 @@ class ResponderConfiguration(object):
     def config_key(self):
         """
         **[Required]** Gets the config_key of this ResponderConfiguration.
-        Unique name of the configuration
+        Unique identifier of the configuration
 
 
         :return: The config_key of this ResponderConfiguration.
@@ -65,7 +65,7 @@ class ResponderConfiguration(object):
     def config_key(self, config_key):
         """
         Sets the config_key of this ResponderConfiguration.
-        Unique name of the configuration
+        Unique identifier of the configuration
 
 
         :param config_key: The config_key of this ResponderConfiguration.
@@ -77,7 +77,7 @@ class ResponderConfiguration(object):
     def name(self):
         """
         **[Required]** Gets the name of this ResponderConfiguration.
-        configuration name
+        Configuration name
 
 
         :return: The name of this ResponderConfiguration.
@@ -89,7 +89,7 @@ class ResponderConfiguration(object):
     def name(self, name):
         """
         Sets the name of this ResponderConfiguration.
-        configuration name
+        Configuration name
 
 
         :param name: The name of this ResponderConfiguration.
@@ -101,7 +101,7 @@ class ResponderConfiguration(object):
     def value(self):
         """
         **[Required]** Gets the value of this ResponderConfiguration.
-        configuration value
+        Configuration value
 
 
         :return: The value of this ResponderConfiguration.
@@ -113,7 +113,7 @@ class ResponderConfiguration(object):
     def value(self, value):
         """
         Sets the value of this ResponderConfiguration.
-        configuration value
+        Configuration value
 
 
         :param value: The value of this ResponderConfiguration.

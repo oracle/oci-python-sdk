@@ -12,7 +12,11 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateTargetResponderRecipeDetails(object):
     """
-    The information to be updated in ResponderRecipe.
+    Parameters to update a responder recipe attached to a target.
+    UpdateTargetResponderRecipe contains the responder rules to be updated
+    that are associated with a responder recipe in a target. whereas
+    UpdateTargetResponderRecipeDetails refers to the information to be updated
+    in ResponderRecipe.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +43,7 @@ class UpdateTargetResponderRecipeDetails(object):
     def responder_rules(self):
         """
         **[Required]** Gets the responder_rules of this UpdateTargetResponderRecipeDetails.
-        Update responder rules associated with responder recipe in a target.
+        List of responder rules to be updated in a target responder recipe.
 
 
         :return: The responder_rules of this UpdateTargetResponderRecipeDetails.
@@ -51,7 +55,7 @@ class UpdateTargetResponderRecipeDetails(object):
     def responder_rules(self, responder_rules):
         """
         Sets the responder_rules of this UpdateTargetResponderRecipeDetails.
-        Update responder rules associated with responder recipe in a target.
+        List of responder rules to be updated in a target responder recipe.
 
 
         :param responder_rules: The responder_rules of this UpdateTargetResponderRecipeDetails.

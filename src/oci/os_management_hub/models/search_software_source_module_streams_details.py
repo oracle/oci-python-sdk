@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SearchSoftwareSourceModuleStreamsDetails(object):
     """
-    Contains a list of software sources to get the combined list of module streams from all of those software sources.
+    Provides the information used to search for a set of module streams from a list software sources.
     """
 
     #: A constant which can be used with the sort_order property of a SearchSoftwareSourceModuleStreamsDetails.
@@ -74,7 +74,9 @@ class SearchSoftwareSourceModuleStreamsDetails(object):
     def software_source_ids(self):
         """
         **[Required]** Gets the software_source_ids of this SearchSoftwareSourceModuleStreamsDetails.
-        List of software source OCIDs.
+        List of software source `OCIDs`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The software_source_ids of this SearchSoftwareSourceModuleStreamsDetails.
@@ -86,7 +88,9 @@ class SearchSoftwareSourceModuleStreamsDetails(object):
     def software_source_ids(self, software_source_ids):
         """
         Sets the software_source_ids of this SearchSoftwareSourceModuleStreamsDetails.
-        List of software source OCIDs.
+        List of software source `OCIDs`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param software_source_ids: The software_source_ids of this SearchSoftwareSourceModuleStreamsDetails.

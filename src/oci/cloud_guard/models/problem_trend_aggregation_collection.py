@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ProblemTrendAggregationCollection(object):
     """
-    Problem Trend Aggregation Collection.
+    Collection of problem trend aggregations
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class ProblemTrendAggregationCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ProblemTrendAggregationCollection.
-        The items consist of all the ProblemTrendAggregation objects.
+        List of problem trend aggregations (ProblemTrendAggregation resources)
 
 
         :return: The items of this ProblemTrendAggregationCollection.
@@ -51,7 +51,7 @@ class ProblemTrendAggregationCollection(object):
     def items(self, items):
         """
         Sets the items of this ProblemTrendAggregationCollection.
-        The items consist of all the ProblemTrendAggregation objects.
+        List of problem trend aggregations (ProblemTrendAggregation resources)
 
 
         :param items: The items of this ProblemTrendAggregationCollection.

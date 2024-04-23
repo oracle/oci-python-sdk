@@ -12,7 +12,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SoftwareSourceSummary(object):
     """
-    A software source contains a collection of packages.
+    Provides summary information for a software source. A software source contains a collection of packages. For more information, see `Managing Software Sources`__.
+
+    __ https://docs.cloud.oracle.com/iaas/osmh/doc/software-sources.htm
     """
 
     #: A constant which can be used with the software_source_type property of a SoftwareSourceSummary.
@@ -39,6 +41,26 @@ class SoftwareSourceSummary(object):
     #: This constant has a value of "RESTRICTED"
     AVAILABILITY_RESTRICTED = "RESTRICTED"
 
+    #: A constant which can be used with the availability property of a SoftwareSourceSummary.
+    #: This constant has a value of "UNAVAILABLE"
+    AVAILABILITY_UNAVAILABLE = "UNAVAILABLE"
+
+    #: A constant which can be used with the availability_at_oci property of a SoftwareSourceSummary.
+    #: This constant has a value of "AVAILABLE"
+    AVAILABILITY_AT_OCI_AVAILABLE = "AVAILABLE"
+
+    #: A constant which can be used with the availability_at_oci property of a SoftwareSourceSummary.
+    #: This constant has a value of "SELECTED"
+    AVAILABILITY_AT_OCI_SELECTED = "SELECTED"
+
+    #: A constant which can be used with the availability_at_oci property of a SoftwareSourceSummary.
+    #: This constant has a value of "RESTRICTED"
+    AVAILABILITY_AT_OCI_RESTRICTED = "RESTRICTED"
+
+    #: A constant which can be used with the availability_at_oci property of a SoftwareSourceSummary.
+    #: This constant has a value of "UNAVAILABLE"
+    AVAILABILITY_AT_OCI_UNAVAILABLE = "UNAVAILABLE"
+
     #: A constant which can be used with the os_family property of a SoftwareSourceSummary.
     #: This constant has a value of "ORACLE_LINUX_9"
     OS_FAMILY_ORACLE_LINUX_9 = "ORACLE_LINUX_9"
@@ -50,6 +72,26 @@ class SoftwareSourceSummary(object):
     #: A constant which can be used with the os_family property of a SoftwareSourceSummary.
     #: This constant has a value of "ORACLE_LINUX_7"
     OS_FAMILY_ORACLE_LINUX_7 = "ORACLE_LINUX_7"
+
+    #: A constant which can be used with the os_family property of a SoftwareSourceSummary.
+    #: This constant has a value of "ORACLE_LINUX_6"
+    OS_FAMILY_ORACLE_LINUX_6 = "ORACLE_LINUX_6"
+
+    #: A constant which can be used with the os_family property of a SoftwareSourceSummary.
+    #: This constant has a value of "WINDOWS_SERVER_2016"
+    OS_FAMILY_WINDOWS_SERVER_2016 = "WINDOWS_SERVER_2016"
+
+    #: A constant which can be used with the os_family property of a SoftwareSourceSummary.
+    #: This constant has a value of "WINDOWS_SERVER_2019"
+    OS_FAMILY_WINDOWS_SERVER_2019 = "WINDOWS_SERVER_2019"
+
+    #: A constant which can be used with the os_family property of a SoftwareSourceSummary.
+    #: This constant has a value of "WINDOWS_SERVER_2022"
+    OS_FAMILY_WINDOWS_SERVER_2022 = "WINDOWS_SERVER_2022"
+
+    #: A constant which can be used with the os_family property of a SoftwareSourceSummary.
+    #: This constant has a value of "ALL"
+    OS_FAMILY_ALL = "ALL"
 
     #: A constant which can be used with the arch_type property of a SoftwareSourceSummary.
     #: This constant has a value of "X86_64"
@@ -122,13 +164,19 @@ class SoftwareSourceSummary(object):
 
         :param availability:
             The value to assign to the availability property of this SoftwareSourceSummary.
-            Allowed values for this property are: "AVAILABLE", "SELECTED", "RESTRICTED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AVAILABLE", "SELECTED", "RESTRICTED", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type availability: str
 
+        :param availability_at_oci:
+            The value to assign to the availability_at_oci property of this SoftwareSourceSummary.
+            Allowed values for this property are: "AVAILABLE", "SELECTED", "RESTRICTED", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type availability_at_oci: str
+
         :param os_family:
             The value to assign to the os_family property of this SoftwareSourceSummary.
-            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type os_family: str
 
@@ -145,6 +193,10 @@ class SoftwareSourceSummary(object):
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this SoftwareSourceSummary.
         :type lifecycle_state: str
+
+        :param size:
+            The value to assign to the size property of this SoftwareSourceSummary.
+        :type size: float
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this SoftwareSourceSummary.
@@ -170,10 +222,12 @@ class SoftwareSourceSummary(object):
             'description': 'str',
             'software_source_type': 'str',
             'availability': 'str',
+            'availability_at_oci': 'str',
             'os_family': 'str',
             'arch_type': 'str',
             'package_count': 'int',
             'lifecycle_state': 'str',
+            'size': 'float',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -190,10 +244,12 @@ class SoftwareSourceSummary(object):
             'description': 'description',
             'software_source_type': 'softwareSourceType',
             'availability': 'availability',
+            'availability_at_oci': 'availabilityAtOci',
             'os_family': 'osFamily',
             'arch_type': 'archType',
             'package_count': 'packageCount',
             'lifecycle_state': 'lifecycleState',
+            'size': 'size',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -209,10 +265,12 @@ class SoftwareSourceSummary(object):
         self._description = None
         self._software_source_type = None
         self._availability = None
+        self._availability_at_oci = None
         self._os_family = None
         self._arch_type = None
         self._package_count = None
         self._lifecycle_state = None
+        self._size = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -240,7 +298,9 @@ class SoftwareSourceSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this SoftwareSourceSummary.
-        The OCID for the software source.
+        The `OCID`__ of the software source.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this SoftwareSourceSummary.
@@ -252,7 +312,9 @@ class SoftwareSourceSummary(object):
     def id(self, id):
         """
         Sets the id of this SoftwareSourceSummary.
-        The OCID for the software source.
+        The `OCID`__ of the software source.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this SoftwareSourceSummary.
@@ -264,7 +326,9 @@ class SoftwareSourceSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this SoftwareSourceSummary.
-        The OCID of the tenancy containing the software source.
+        The `OCID`__ of the compartment that contains the software source.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this SoftwareSourceSummary.
@@ -276,7 +340,9 @@ class SoftwareSourceSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this SoftwareSourceSummary.
-        The OCID of the tenancy containing the software source.
+        The `OCID`__ of the compartment that contains the software source.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this SoftwareSourceSummary.
@@ -288,7 +354,7 @@ class SoftwareSourceSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this SoftwareSourceSummary.
-        User friendly name for the software source.
+        User-friendly name for the software source.
 
 
         :return: The display_name of this SoftwareSourceSummary.
@@ -300,7 +366,7 @@ class SoftwareSourceSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this SoftwareSourceSummary.
-        User friendly name for the software source.
+        User-friendly name for the software source.
 
 
         :param display_name: The display_name of this SoftwareSourceSummary.
@@ -312,7 +378,7 @@ class SoftwareSourceSummary(object):
     def repo_id(self):
         """
         **[Required]** Gets the repo_id of this SoftwareSourceSummary.
-        The Repo ID for the software source.
+        The repository ID for the software source.
 
 
         :return: The repo_id of this SoftwareSourceSummary.
@@ -324,7 +390,7 @@ class SoftwareSourceSummary(object):
     def repo_id(self, repo_id):
         """
         Sets the repo_id of this SoftwareSourceSummary.
-        The Repo ID for the software source.
+        The repository ID for the software source.
 
 
         :param repo_id: The repo_id of this SoftwareSourceSummary.
@@ -336,7 +402,7 @@ class SoftwareSourceSummary(object):
     def url(self):
         """
         **[Required]** Gets the url of this SoftwareSourceSummary.
-        URL for the repository.
+        URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
 
 
         :return: The url of this SoftwareSourceSummary.
@@ -348,7 +414,7 @@ class SoftwareSourceSummary(object):
     def url(self, url):
         """
         Sets the url of this SoftwareSourceSummary.
-        URL for the repository.
+        URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
 
 
         :param url: The url of this SoftwareSourceSummary.
@@ -360,8 +426,7 @@ class SoftwareSourceSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this SoftwareSourceSummary.
-        The date and time the software source was created, as described in
-        `RFC 3339`__, section 14.29.
+        The date and time the software source was created (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -375,8 +440,7 @@ class SoftwareSourceSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this SoftwareSourceSummary.
-        The date and time the software source was created, as described in
-        `RFC 3339`__, section 14.29.
+        The date and time the software source was created (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -390,8 +454,7 @@ class SoftwareSourceSummary(object):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this SoftwareSourceSummary.
-        The date and time of when the software source was updated as described in
-        `RFC 3339`__, section 14.29.
+        The date and time the software source was updated (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -405,8 +468,7 @@ class SoftwareSourceSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this SoftwareSourceSummary.
-        The date and time of when the software source was updated as described in
-        `RFC 3339`__, section 14.29.
+        The date and time the software source was updated (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -420,7 +482,7 @@ class SoftwareSourceSummary(object):
     def description(self):
         """
         Gets the description of this SoftwareSourceSummary.
-        Information specified by the user about the software source.
+        Description of the software source. For custom software sources, this is user-specified.
 
 
         :return: The description of this SoftwareSourceSummary.
@@ -432,7 +494,7 @@ class SoftwareSourceSummary(object):
     def description(self, description):
         """
         Sets the description of this SoftwareSourceSummary.
-        Information specified by the user about the software source.
+        Description of the software source. For custom software sources, this is user-specified.
 
 
         :param description: The description of this SoftwareSourceSummary.
@@ -444,7 +506,7 @@ class SoftwareSourceSummary(object):
     def software_source_type(self):
         """
         **[Required]** Gets the software_source_type of this SoftwareSourceSummary.
-        Type of the software source.
+        Type of software source.
 
         Allowed values for this property are: "VENDOR", "CUSTOM", "VERSIONED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -459,7 +521,7 @@ class SoftwareSourceSummary(object):
     def software_source_type(self, software_source_type):
         """
         Sets the software_source_type of this SoftwareSourceSummary.
-        Type of the software source.
+        Type of software source.
 
 
         :param software_source_type: The software_source_type of this SoftwareSourceSummary.
@@ -474,9 +536,9 @@ class SoftwareSourceSummary(object):
     def availability(self):
         """
         **[Required]** Gets the availability of this SoftwareSourceSummary.
-        Possible availabilities of a software source.
+        Availability of the software source (for non-OCI environments).
 
-        Allowed values for this property are: "AVAILABLE", "SELECTED", "RESTRICTED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AVAILABLE", "SELECTED", "RESTRICTED", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -489,16 +551,46 @@ class SoftwareSourceSummary(object):
     def availability(self, availability):
         """
         Sets the availability of this SoftwareSourceSummary.
-        Possible availabilities of a software source.
+        Availability of the software source (for non-OCI environments).
 
 
         :param availability: The availability of this SoftwareSourceSummary.
         :type: str
         """
-        allowed_values = ["AVAILABLE", "SELECTED", "RESTRICTED"]
+        allowed_values = ["AVAILABLE", "SELECTED", "RESTRICTED", "UNAVAILABLE"]
         if not value_allowed_none_or_none_sentinel(availability, allowed_values):
             availability = 'UNKNOWN_ENUM_VALUE'
         self._availability = availability
+
+    @property
+    def availability_at_oci(self):
+        """
+        **[Required]** Gets the availability_at_oci of this SoftwareSourceSummary.
+        Availability of the software source (for OCI environments).
+
+        Allowed values for this property are: "AVAILABLE", "SELECTED", "RESTRICTED", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The availability_at_oci of this SoftwareSourceSummary.
+        :rtype: str
+        """
+        return self._availability_at_oci
+
+    @availability_at_oci.setter
+    def availability_at_oci(self, availability_at_oci):
+        """
+        Sets the availability_at_oci of this SoftwareSourceSummary.
+        Availability of the software source (for OCI environments).
+
+
+        :param availability_at_oci: The availability_at_oci of this SoftwareSourceSummary.
+        :type: str
+        """
+        allowed_values = ["AVAILABLE", "SELECTED", "RESTRICTED", "UNAVAILABLE"]
+        if not value_allowed_none_or_none_sentinel(availability_at_oci, allowed_values):
+            availability_at_oci = 'UNKNOWN_ENUM_VALUE'
+        self._availability_at_oci = availability_at_oci
 
     @property
     def os_family(self):
@@ -506,7 +598,7 @@ class SoftwareSourceSummary(object):
         **[Required]** Gets the os_family of this SoftwareSourceSummary.
         The OS family the software source belongs to.
 
-        Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -525,7 +617,7 @@ class SoftwareSourceSummary(object):
         :param os_family: The os_family of this SoftwareSourceSummary.
         :type: str
         """
-        allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7"]
+        allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"]
         if not value_allowed_none_or_none_sentinel(os_family, allowed_values):
             os_family = 'UNKNOWN_ENUM_VALUE'
         self._os_family = os_family
@@ -564,7 +656,7 @@ class SoftwareSourceSummary(object):
     def package_count(self):
         """
         Gets the package_count of this SoftwareSourceSummary.
-        Number of packages.
+        Number of packages the software source contains.
 
 
         :return: The package_count of this SoftwareSourceSummary.
@@ -576,7 +668,7 @@ class SoftwareSourceSummary(object):
     def package_count(self, package_count):
         """
         Sets the package_count of this SoftwareSourceSummary.
-        Number of packages.
+        Number of packages the software source contains.
 
 
         :param package_count: The package_count of this SoftwareSourceSummary.
@@ -607,6 +699,30 @@ class SoftwareSourceSummary(object):
         :type: str
         """
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def size(self):
+        """
+        Gets the size of this SoftwareSourceSummary.
+        The size of the software source in gigabytes (GB).
+
+
+        :return: The size of this SoftwareSourceSummary.
+        :rtype: float
+        """
+        return self._size
+
+    @size.setter
+    def size(self, size):
+        """
+        Sets the size of this SoftwareSourceSummary.
+        The size of the software source in gigabytes (GB).
+
+
+        :param size: The size of this SoftwareSourceSummary.
+        :type: float
+        """
+        self._size = size
 
     @property
     def freeform_tags(self):

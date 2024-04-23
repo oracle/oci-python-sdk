@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ScheduledJobCollection(object):
     """
-    Results of a scheduled job search. Contains boh ScheduledJobSummary items and other information, such as metadata.
+    The set of scheduled jobs returned for the :func:`list_scheduled_jobs` operation.
     """
 
     def __init__(self, **kwargs):

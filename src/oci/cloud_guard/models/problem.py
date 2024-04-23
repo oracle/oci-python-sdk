@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Problem(object):
     """
-    Problems are at the core of Cloud Guard\u2019s functionality. A Problem object is created whenever an action or a configuration on a resource triggers a rule in a detector that\u2019s attached to the target containing the compartment where the resource is located. Each Problem object contains all the details for a single problem. This is the information for the problem that appears on the Cloud Guard Problems page.
+    Problems are at the core of Cloud Guard\u2019s functionality. A Problem resource is created whenever an action or a configuration on a resource triggers a rule in a detector that\u2019s attached to the target containing the compartment where the resource is located. Each Problem resource contains all the details for a single problem. This is the information for the problem that appears on the Cloud Guard Problems page.
     """
 
     #: A constant which can be used with the risk_level property of a Problem.
@@ -74,6 +74,10 @@ class Problem(object):
     #: A constant which can be used with the detector_id property of a Problem.
     #: This constant has a value of "IAAS_LOG_INSIGHT_DETECTOR"
     DETECTOR_ID_IAAS_LOG_INSIGHT_DETECTOR = "IAAS_LOG_INSIGHT_DETECTOR"
+
+    #: A constant which can be used with the detector_id property of a Problem.
+    #: This constant has a value of "IAAS_INSTANCE_SECURITY_DETECTOR"
+    DETECTOR_ID_IAAS_INSTANCE_SECURITY_DETECTOR = "IAAS_INSTANCE_SECURITY_DETECTOR"
 
     def __init__(self, **kwargs):
         """
@@ -164,7 +168,7 @@ class Problem(object):
 
         :param detector_id:
             The value to assign to the detector_id property of this Problem.
-            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type detector_id: str
 
@@ -200,6 +204,10 @@ class Problem(object):
             The value to assign to the impacted_resource_type property of this Problem.
         :type impacted_resource_type: str
 
+        :param locks:
+            The value to assign to the locks property of this Problem.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -229,7 +237,8 @@ class Problem(object):
             'comment': 'str',
             'impacted_resource_id': 'str',
             'impacted_resource_name': 'str',
-            'impacted_resource_type': 'str'
+            'impacted_resource_type': 'str',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -260,7 +269,8 @@ class Problem(object):
             'comment': 'comment',
             'impacted_resource_id': 'impactedResourceId',
             'impacted_resource_name': 'impactedResourceName',
-            'impacted_resource_type': 'impactedResourceType'
+            'impacted_resource_type': 'impactedResourceType',
+            'locks': 'locks'
         }
 
         self._id = None
@@ -291,12 +301,13 @@ class Problem(object):
         self._impacted_resource_id = None
         self._impacted_resource_name = None
         self._impacted_resource_type = None
+        self._locks = None
 
     @property
     def id(self):
         """
         **[Required]** Gets the id of this Problem.
-        Unique identifier that is immutable on creation
+        Unique identifier that can't be changed after creation
 
 
         :return: The id of this Problem.
@@ -308,7 +319,7 @@ class Problem(object):
     def id(self, id):
         """
         Sets the id of this Problem.
-        Unique identifier that is immutable on creation
+        Unique identifier that can't be changed after creation
 
 
         :param id: The id of this Problem.
@@ -320,7 +331,7 @@ class Problem(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this Problem.
-        Compartment Identifier where the resource is created
+        Compartment OCID where the resource is created
 
 
         :return: The compartment_id of this Problem.
@@ -332,7 +343,7 @@ class Problem(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Problem.
-        Compartment Identifier where the resource is created
+        Compartment OCID where the resource is created
 
 
         :param compartment_id: The compartment_id of this Problem.
@@ -344,7 +355,7 @@ class Problem(object):
     def detector_rule_id(self):
         """
         Gets the detector_rule_id of this Problem.
-        Identifier of the rule
+        Unique identifier of the detector rule that triggered the problem
 
 
         :return: The detector_rule_id of this Problem.
@@ -356,7 +367,7 @@ class Problem(object):
     def detector_rule_id(self, detector_rule_id):
         """
         Sets the detector_rule_id of this Problem.
-        Identifier of the rule
+        Unique identifier of the detector rule that triggered the problem
 
 
         :param detector_rule_id: The detector_rule_id of this Problem.
@@ -416,7 +427,7 @@ class Problem(object):
     def risk_level(self):
         """
         Gets the risk_level of this Problem.
-        The Risk Level
+        The risk level for the problem
 
         Allowed values for this property are: "CRITICAL", "HIGH", "MEDIUM", "LOW", "MINOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -431,7 +442,7 @@ class Problem(object):
     def risk_level(self, risk_level):
         """
         Sets the risk_level of this Problem.
-        The Risk Level
+        The risk level for the problem
 
 
         :param risk_level: The risk_level of this Problem.
@@ -446,7 +457,7 @@ class Problem(object):
     def risk_score(self):
         """
         Gets the risk_score of this Problem.
-        Risk Score for the problem
+        The risk score for the problem
 
 
         :return: The risk_score of this Problem.
@@ -458,7 +469,7 @@ class Problem(object):
     def risk_score(self, risk_score):
         """
         Sets the risk_score of this Problem.
-        Risk Score for the problem
+        The risk score for the problem
 
 
         :param risk_score: The risk_score of this Problem.
@@ -470,7 +481,7 @@ class Problem(object):
     def peak_risk_score_date(self):
         """
         Gets the peak_risk_score_date of this Problem.
-        The date and time for the peak risk score that is observed. Format defined by RFC3339.
+        The date and time for the peak risk score that is observed for the problem. Format defined by RFC3339.
 
 
         :return: The peak_risk_score_date of this Problem.
@@ -482,7 +493,7 @@ class Problem(object):
     def peak_risk_score_date(self, peak_risk_score_date):
         """
         Sets the peak_risk_score_date of this Problem.
-        The date and time for the peak risk score that is observed. Format defined by RFC3339.
+        The date and time for the peak risk score that is observed for the problem. Format defined by RFC3339.
 
 
         :param peak_risk_score_date: The peak_risk_score_date of this Problem.
@@ -566,7 +577,7 @@ class Problem(object):
     def resource_id(self):
         """
         Gets the resource_id of this Problem.
-        Identifier of the Resource
+        Unique identifier of the resource affected by the problem
 
 
         :return: The resource_id of this Problem.
@@ -578,7 +589,7 @@ class Problem(object):
     def resource_id(self, resource_id):
         """
         Sets the resource_id of this Problem.
-        Identifier of the Resource
+        Unique identifier of the resource affected by the problem
 
 
         :param resource_id: The resource_id of this Problem.
@@ -590,7 +601,7 @@ class Problem(object):
     def resource_name(self):
         """
         Gets the resource_name of this Problem.
-        DisplayName of the Resource
+        Display name of the affected resource
 
 
         :return: The resource_name of this Problem.
@@ -602,7 +613,7 @@ class Problem(object):
     def resource_name(self, resource_name):
         """
         Sets the resource_name of this Problem.
-        DisplayName of the Resource
+        Display name of the affected resource
 
 
         :param resource_name: The resource_name of this Problem.
@@ -614,7 +625,7 @@ class Problem(object):
     def resource_type(self):
         """
         Gets the resource_type of this Problem.
-        Type of the Resource
+        Type of the affected resource
 
 
         :return: The resource_type of this Problem.
@@ -626,7 +637,7 @@ class Problem(object):
     def resource_type(self, resource_type):
         """
         Sets the resource_type of this Problem.
-        Type of the Resource
+        Type of the affected resource
 
 
         :param resource_type: The resource_type of this Problem.
@@ -638,7 +649,7 @@ class Problem(object):
     def labels(self):
         """
         Gets the labels of this Problem.
-        user defined labels on the problem
+        User-defined labels on the problem
 
 
         :return: The labels of this Problem.
@@ -650,7 +661,7 @@ class Problem(object):
     def labels(self, labels):
         """
         Sets the labels of this Problem.
-        user defined labels on the problem
+        User-defined labels on the problem
 
 
         :param labels: The labels of this Problem.
@@ -710,7 +721,7 @@ class Problem(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this Problem.
-        The current state of the Problem.
+        The current lifecycle state of the problem
 
         Allowed values for this property are: "ACTIVE", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -725,7 +736,7 @@ class Problem(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Problem.
-        The current state of the Problem.
+        The current lifecycle state of the problem
 
 
         :param lifecycle_state: The lifecycle_state of this Problem.
@@ -740,7 +751,7 @@ class Problem(object):
     def lifecycle_detail(self):
         """
         Gets the lifecycle_detail of this Problem.
-        The lifecycleDetail will give more detail on the substate of the lifecycleState.
+        Additional details on the substate of the lifecycle state
 
         Allowed values for this property are: "OPEN", "RESOLVED", "DISMISSED", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -755,7 +766,7 @@ class Problem(object):
     def lifecycle_detail(self, lifecycle_detail):
         """
         Sets the lifecycle_detail of this Problem.
-        The lifecycleDetail will give more detail on the substate of the lifecycleState.
+        Additional details on the substate of the lifecycle state
 
 
         :param lifecycle_detail: The lifecycle_detail of this Problem.
@@ -770,9 +781,9 @@ class Problem(object):
     def detector_id(self):
         """
         Gets the detector_id of this Problem.
-        Id of the detector associated with the Problem.
+        Unique identifier of the detector rule that triggered the problem
 
-        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -785,13 +796,13 @@ class Problem(object):
     def detector_id(self, detector_id):
         """
         Sets the detector_id of this Problem.
-        Id of the detector associated with the Problem.
+        Unique identifier of the detector rule that triggered the problem
 
 
         :param detector_id: The detector_id of this Problem.
         :type: str
         """
-        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR"]
+        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR"]
         if not value_allowed_none_or_none_sentinel(detector_id, allowed_values):
             detector_id = 'UNKNOWN_ENUM_VALUE'
         self._detector_id = detector_id
@@ -800,7 +811,7 @@ class Problem(object):
     def target_id(self):
         """
         Gets the target_id of this Problem.
-        targetId of the problem
+        Unique identifier of the target associated with the problem
 
 
         :return: The target_id of this Problem.
@@ -812,7 +823,7 @@ class Problem(object):
     def target_id(self, target_id):
         """
         Sets the target_id of this Problem.
-        targetId of the problem
+        Unique identifier of the target associated with the problem
 
 
         :param target_id: The target_id of this Problem.
@@ -824,7 +835,7 @@ class Problem(object):
     def additional_details(self):
         """
         Gets the additional_details of this Problem.
-        The additional details of the Problem
+        The additional details of the problem
 
 
         :return: The additional_details of this Problem.
@@ -836,7 +847,7 @@ class Problem(object):
     def additional_details(self, additional_details):
         """
         Sets the additional_details of this Problem.
-        The additional details of the Problem
+        The additional details of the problem
 
 
         :param additional_details: The additional_details of this Problem.
@@ -896,7 +907,7 @@ class Problem(object):
     def comment(self):
         """
         Gets the comment of this Problem.
-        User Comments
+        User comments on the problem
 
 
         :return: The comment of this Problem.
@@ -908,7 +919,7 @@ class Problem(object):
     def comment(self, comment):
         """
         Sets the comment of this Problem.
-        User Comments
+        User comments on the problem
 
 
         :param comment: The comment of this Problem.
@@ -920,7 +931,7 @@ class Problem(object):
     def impacted_resource_id(self):
         """
         Gets the impacted_resource_id of this Problem.
-        Identifier of the impacted Resource
+        Unique identifier of the resource impacted by the problem
 
 
         :return: The impacted_resource_id of this Problem.
@@ -932,7 +943,7 @@ class Problem(object):
     def impacted_resource_id(self, impacted_resource_id):
         """
         Sets the impacted_resource_id of this Problem.
-        Identifier of the impacted Resource
+        Unique identifier of the resource impacted by the problem
 
 
         :param impacted_resource_id: The impacted_resource_id of this Problem.
@@ -944,7 +955,7 @@ class Problem(object):
     def impacted_resource_name(self):
         """
         Gets the impacted_resource_name of this Problem.
-        DisplayName of the impacted  Resource
+        Display name of the impacted resource
 
 
         :return: The impacted_resource_name of this Problem.
@@ -956,7 +967,7 @@ class Problem(object):
     def impacted_resource_name(self, impacted_resource_name):
         """
         Sets the impacted_resource_name of this Problem.
-        DisplayName of the impacted  Resource
+        Display name of the impacted resource
 
 
         :param impacted_resource_name: The impacted_resource_name of this Problem.
@@ -968,7 +979,7 @@ class Problem(object):
     def impacted_resource_type(self):
         """
         Gets the impacted_resource_type of this Problem.
-        Type of the impacted Resource
+        Type of the impacted resource
 
 
         :return: The impacted_resource_type of this Problem.
@@ -980,13 +991,37 @@ class Problem(object):
     def impacted_resource_type(self, impacted_resource_type):
         """
         Sets the impacted_resource_type of this Problem.
-        Type of the impacted Resource
+        Type of the impacted resource
 
 
         :param impacted_resource_type: The impacted_resource_type of this Problem.
         :type: str
         """
         self._impacted_resource_type = impacted_resource_type
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this Problem.
+        Locks associated with this resource.
+
+
+        :return: The locks of this Problem.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this Problem.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this Problem.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

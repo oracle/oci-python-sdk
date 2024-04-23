@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Id(object):
     """
-    An id along with a name to simplify display for a user.
+    Id and name of a resource to simplify the display for the user.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,9 @@ class Id(object):
     def id(self):
         """
         **[Required]** Gets the id of this Id.
-        The OCID of the resource that is immutable on creation.
+        The `OCID`__ of the resource that is immutable on creation.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Id.
@@ -58,7 +60,9 @@ class Id(object):
     def id(self, id):
         """
         Sets the id of this Id.
-        The OCID of the resource that is immutable on creation.
+        The `OCID`__ of the resource that is immutable on creation.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Id.
@@ -70,7 +74,7 @@ class Id(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this Id.
-        User friendly name.
+        User-friendly name.
 
 
         :return: The display_name of this Id.
@@ -82,7 +86,7 @@ class Id(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Id.
-        User friendly name.
+        User-friendly name.
 
 
         :param display_name: The display_name of this Id.

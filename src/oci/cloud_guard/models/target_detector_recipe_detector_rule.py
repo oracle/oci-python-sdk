@@ -12,7 +12,22 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TargetDetectorRecipeDetectorRule(object):
     """
-    Detector Recipe Rule
+    A TargetDetectorRecipeDetectorRule resource contains a specific instance of a
+    single detector rule in one of the supported detector types (for example,
+    activity, configuration, or threat).
+
+    A TargetDetectorRecipeDetectorRule resource:
+    * Is effectively a copy of a DetectorRecipeRule resource (made when
+    a detector recipe is attached to a target) in which users can make
+    certain changes if it\u2019s Oracle-managed, and other changes if it\u2019s user-managed.
+    * Is visible on the Cloud Guard Targets, Target Details page.
+    * Is effectively located in a specific OCI compartment, through the
+    ThreatDetectorRecipe resource to which it belongs.
+    * Can be modified by users, programmatically or through the UI.
+    * Changes that can be made here apply locally, to resources in OCI compartments
+    mapped to the target that attaches the associated detector recipe
+    (in a TargetDetectorRecipe resource), and override any changes made in rules
+    associated with the corresponding DetectorRecipe resource.
     """
 
     #: A constant which can be used with the detector property of a TargetDetectorRecipeDetectorRule.
@@ -30,6 +45,10 @@ class TargetDetectorRecipeDetectorRule(object):
     #: A constant which can be used with the detector property of a TargetDetectorRecipeDetectorRule.
     #: This constant has a value of "IAAS_LOG_INSIGHT_DETECTOR"
     DETECTOR_IAAS_LOG_INSIGHT_DETECTOR = "IAAS_LOG_INSIGHT_DETECTOR"
+
+    #: A constant which can be used with the detector property of a TargetDetectorRecipeDetectorRule.
+    #: This constant has a value of "IAAS_INSTANCE_SECURITY_DETECTOR"
+    DETECTOR_IAAS_INSTANCE_SECURITY_DETECTOR = "IAAS_INSTANCE_SECURITY_DETECTOR"
 
     #: A constant which can be used with the managed_list_types property of a TargetDetectorRecipeDetectorRule.
     #: This constant has a value of "CIDR_BLOCK"
@@ -138,7 +157,7 @@ class TargetDetectorRecipeDetectorRule(object):
 
         :param detector:
             The value to assign to the detector property of this TargetDetectorRecipeDetectorRule.
-            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type detector: str
 
@@ -186,6 +205,10 @@ class TargetDetectorRecipeDetectorRule(object):
             The value to assign to the entities_mappings property of this TargetDetectorRecipeDetectorRule.
         :type entities_mappings: list[oci.cloud_guard.models.EntitiesMapping]
 
+        :param locks:
+            The value to assign to the locks property of this TargetDetectorRecipeDetectorRule.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
             'detector_rule_id': 'str',
@@ -202,7 +225,8 @@ class TargetDetectorRecipeDetectorRule(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'data_source_id': 'str',
-            'entities_mappings': 'list[EntitiesMapping]'
+            'entities_mappings': 'list[EntitiesMapping]',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -220,7 +244,8 @@ class TargetDetectorRecipeDetectorRule(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'data_source_id': 'dataSourceId',
-            'entities_mappings': 'entitiesMappings'
+            'entities_mappings': 'entitiesMappings',
+            'locks': 'locks'
         }
 
         self._detector_rule_id = None
@@ -238,12 +263,13 @@ class TargetDetectorRecipeDetectorRule(object):
         self._lifecycle_details = None
         self._data_source_id = None
         self._entities_mappings = None
+        self._locks = None
 
     @property
     def detector_rule_id(self):
         """
         **[Required]** Gets the detector_rule_id of this TargetDetectorRecipeDetectorRule.
-        The unique identifier of the detector rule.
+        The unique identifier of the detector rule
 
 
         :return: The detector_rule_id of this TargetDetectorRecipeDetectorRule.
@@ -255,7 +281,7 @@ class TargetDetectorRecipeDetectorRule(object):
     def detector_rule_id(self, detector_rule_id):
         """
         Sets the detector_rule_id of this TargetDetectorRecipeDetectorRule.
-        The unique identifier of the detector rule.
+        The unique identifier of the detector rule
 
 
         :param detector_rule_id: The detector_rule_id of this TargetDetectorRecipeDetectorRule.
@@ -267,7 +293,7 @@ class TargetDetectorRecipeDetectorRule(object):
     def display_name(self):
         """
         Gets the display_name of this TargetDetectorRecipeDetectorRule.
-        Display name for TargetDetectorRecipeDetectorRule. information.
+        Display name for TargetDetectorRecipeDetectorRule resource
 
 
         :return: The display_name of this TargetDetectorRecipeDetectorRule.
@@ -279,7 +305,7 @@ class TargetDetectorRecipeDetectorRule(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this TargetDetectorRecipeDetectorRule.
-        Display name for TargetDetectorRecipeDetectorRule. information.
+        Display name for TargetDetectorRecipeDetectorRule resource
 
 
         :param display_name: The display_name of this TargetDetectorRecipeDetectorRule.
@@ -291,7 +317,7 @@ class TargetDetectorRecipeDetectorRule(object):
     def description(self):
         """
         Gets the description of this TargetDetectorRecipeDetectorRule.
-        Description for TargetDetectorRecipeDetectorRule. information.
+        Description for TargetDetectorRecipeDetectorRule resource
 
 
         :return: The description of this TargetDetectorRecipeDetectorRule.
@@ -303,7 +329,7 @@ class TargetDetectorRecipeDetectorRule(object):
     def description(self, description):
         """
         Sets the description of this TargetDetectorRecipeDetectorRule.
-        Description for TargetDetectorRecipeDetectorRule. information.
+        Description for TargetDetectorRecipeDetectorRule resource
 
 
         :param description: The description of this TargetDetectorRecipeDetectorRule.
@@ -315,7 +341,7 @@ class TargetDetectorRecipeDetectorRule(object):
     def recommendation(self):
         """
         Gets the recommendation of this TargetDetectorRecipeDetectorRule.
-        Recommendation for TargetDetectorRecipeDetectorRule
+        Recommendation for TargetDetectorRecipeDetectorRule resource
 
 
         :return: The recommendation of this TargetDetectorRecipeDetectorRule.
@@ -327,7 +353,7 @@ class TargetDetectorRecipeDetectorRule(object):
     def recommendation(self, recommendation):
         """
         Sets the recommendation of this TargetDetectorRecipeDetectorRule.
-        Recommendation for TargetDetectorRecipeDetectorRule
+        Recommendation for TargetDetectorRecipeDetectorRule resource
 
 
         :param recommendation: The recommendation of this TargetDetectorRecipeDetectorRule.
@@ -339,9 +365,9 @@ class TargetDetectorRecipeDetectorRule(object):
     def detector(self):
         """
         **[Required]** Gets the detector of this TargetDetectorRecipeDetectorRule.
-        detector for the rule
+        Detector type for the rule
 
-        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -354,13 +380,13 @@ class TargetDetectorRecipeDetectorRule(object):
     def detector(self, detector):
         """
         Sets the detector of this TargetDetectorRecipeDetectorRule.
-        detector for the rule
+        Detector type for the rule
 
 
         :param detector: The detector of this TargetDetectorRecipeDetectorRule.
         :type: str
         """
-        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR"]
+        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR"]
         if not value_allowed_none_or_none_sentinel(detector, allowed_values):
             detector = 'UNKNOWN_ENUM_VALUE'
         self._detector = detector
@@ -369,7 +395,7 @@ class TargetDetectorRecipeDetectorRule(object):
     def service_type(self):
         """
         **[Required]** Gets the service_type of this TargetDetectorRecipeDetectorRule.
-        service type of the configuration to which the rule is applied
+        Service type of the configuration to which the rule is applied
 
 
         :return: The service_type of this TargetDetectorRecipeDetectorRule.
@@ -381,7 +407,7 @@ class TargetDetectorRecipeDetectorRule(object):
     def service_type(self, service_type):
         """
         Sets the service_type of this TargetDetectorRecipeDetectorRule.
-        service type of the configuration to which the rule is applied
+        Service type of the configuration to which the rule is applied
 
 
         :param service_type: The service_type of this TargetDetectorRecipeDetectorRule.
@@ -393,7 +419,13 @@ class TargetDetectorRecipeDetectorRule(object):
     def resource_type(self):
         """
         **[Required]** Gets the resource_type of this TargetDetectorRecipeDetectorRule.
-        resource type of the configuration to which the rule is applied
+        The type of resource which is monitored by the detector rule.
+        For example, Instance, Database, VCN, Policy. To find the resource type for a
+        particular rule, see [Detector Recipe Reference]
+        (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
+
+        Or try [Detector Recipe Reference]
+        (/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
 
 
         :return: The resource_type of this TargetDetectorRecipeDetectorRule.
@@ -405,7 +437,13 @@ class TargetDetectorRecipeDetectorRule(object):
     def resource_type(self, resource_type):
         """
         Sets the resource_type of this TargetDetectorRecipeDetectorRule.
-        resource type of the configuration to which the rule is applied
+        The type of resource which is monitored by the detector rule.
+        For example, Instance, Database, VCN, Policy. To find the resource type for a
+        particular rule, see [Detector Recipe Reference]
+        (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
+
+        Or try [Detector Recipe Reference]
+        (/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
 
 
         :param resource_type: The resource_type of this TargetDetectorRecipeDetectorRule.
@@ -437,7 +475,7 @@ class TargetDetectorRecipeDetectorRule(object):
     def managed_list_types(self):
         """
         Gets the managed_list_types of this TargetDetectorRecipeDetectorRule.
-        List of cloudguard managed list types related to this rule
+        List of managed list types related to this rule
 
         Allowed values for items in this list are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -452,7 +490,7 @@ class TargetDetectorRecipeDetectorRule(object):
     def managed_list_types(self, managed_list_types):
         """
         Sets the managed_list_types of this TargetDetectorRecipeDetectorRule.
-        List of cloudguard managed list types related to this rule
+        List of managed list types related to this rule
 
 
         :param managed_list_types: The managed_list_types of this TargetDetectorRecipeDetectorRule.
@@ -491,7 +529,7 @@ class TargetDetectorRecipeDetectorRule(object):
     def time_updated(self):
         """
         Gets the time_updated of this TargetDetectorRecipeDetectorRule.
-        The date and time the target detector recipe rule was updated. Format defined by RFC3339.
+        The date and time the target detector recipe rule was last updated. Format defined by RFC3339.
 
 
         :return: The time_updated of this TargetDetectorRecipeDetectorRule.
@@ -503,7 +541,7 @@ class TargetDetectorRecipeDetectorRule(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this TargetDetectorRecipeDetectorRule.
-        The date and time the target detector recipe rule was updated. Format defined by RFC3339.
+        The date and time the target detector recipe rule was last updated. Format defined by RFC3339.
 
 
         :param time_updated: The time_updated of this TargetDetectorRecipeDetectorRule.
@@ -515,7 +553,7 @@ class TargetDetectorRecipeDetectorRule(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this TargetDetectorRecipeDetectorRule.
-        The current state of the DetectorRule.
+        The current lifecycle state of the detector rule
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -530,7 +568,7 @@ class TargetDetectorRecipeDetectorRule(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this TargetDetectorRecipeDetectorRule.
-        The current state of the DetectorRule.
+        The current lifecycle state of the detector rule
 
 
         :param lifecycle_state: The lifecycle_state of this TargetDetectorRecipeDetectorRule.
@@ -569,7 +607,7 @@ class TargetDetectorRecipeDetectorRule(object):
     def data_source_id(self):
         """
         Gets the data_source_id of this TargetDetectorRecipeDetectorRule.
-        The id of the attached DataSource.
+        The ID of the attached data source
 
 
         :return: The data_source_id of this TargetDetectorRecipeDetectorRule.
@@ -581,7 +619,7 @@ class TargetDetectorRecipeDetectorRule(object):
     def data_source_id(self, data_source_id):
         """
         Sets the data_source_id of this TargetDetectorRecipeDetectorRule.
-        The id of the attached DataSource.
+        The ID of the attached data source
 
 
         :param data_source_id: The data_source_id of this TargetDetectorRecipeDetectorRule.
@@ -593,7 +631,7 @@ class TargetDetectorRecipeDetectorRule(object):
     def entities_mappings(self):
         """
         Gets the entities_mappings of this TargetDetectorRecipeDetectorRule.
-        Data Source entities mapping for a Detector Rule
+        Data source entities mapping for a detector rule
 
 
         :return: The entities_mappings of this TargetDetectorRecipeDetectorRule.
@@ -605,13 +643,37 @@ class TargetDetectorRecipeDetectorRule(object):
     def entities_mappings(self, entities_mappings):
         """
         Sets the entities_mappings of this TargetDetectorRecipeDetectorRule.
-        Data Source entities mapping for a Detector Rule
+        Data source entities mapping for a detector rule
 
 
         :param entities_mappings: The entities_mappings of this TargetDetectorRecipeDetectorRule.
         :type: list[oci.cloud_guard.models.EntitiesMapping]
         """
         self._entities_mappings = entities_mappings
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this TargetDetectorRecipeDetectorRule.
+        Locks associated with this resource.
+
+
+        :return: The locks of this TargetDetectorRecipeDetectorRule.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this TargetDetectorRecipeDetectorRule.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this TargetDetectorRecipeDetectorRule.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

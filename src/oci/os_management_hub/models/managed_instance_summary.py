@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagedInstanceSummary(object):
     """
-    Summary of the ManagedInstance.
+    Provides summary information for a managed instance.
     """
 
     #: A constant which can be used with the location property of a ManagedInstanceSummary.
@@ -30,6 +30,10 @@ class ManagedInstanceSummary(object):
     #: A constant which can be used with the location property of a ManagedInstanceSummary.
     #: This constant has a value of "EC2"
     LOCATION_EC2 = "EC2"
+
+    #: A constant which can be used with the location property of a ManagedInstanceSummary.
+    #: This constant has a value of "GCP"
+    LOCATION_GCP = "GCP"
 
     #: A constant which can be used with the architecture property of a ManagedInstanceSummary.
     #: This constant has a value of "X86_64"
@@ -63,6 +67,26 @@ class ManagedInstanceSummary(object):
     #: This constant has a value of "ORACLE_LINUX_7"
     OS_FAMILY_ORACLE_LINUX_7 = "ORACLE_LINUX_7"
 
+    #: A constant which can be used with the os_family property of a ManagedInstanceSummary.
+    #: This constant has a value of "ORACLE_LINUX_6"
+    OS_FAMILY_ORACLE_LINUX_6 = "ORACLE_LINUX_6"
+
+    #: A constant which can be used with the os_family property of a ManagedInstanceSummary.
+    #: This constant has a value of "WINDOWS_SERVER_2016"
+    OS_FAMILY_WINDOWS_SERVER_2016 = "WINDOWS_SERVER_2016"
+
+    #: A constant which can be used with the os_family property of a ManagedInstanceSummary.
+    #: This constant has a value of "WINDOWS_SERVER_2019"
+    OS_FAMILY_WINDOWS_SERVER_2019 = "WINDOWS_SERVER_2019"
+
+    #: A constant which can be used with the os_family property of a ManagedInstanceSummary.
+    #: This constant has a value of "WINDOWS_SERVER_2022"
+    OS_FAMILY_WINDOWS_SERVER_2022 = "WINDOWS_SERVER_2022"
+
+    #: A constant which can be used with the os_family property of a ManagedInstanceSummary.
+    #: This constant has a value of "ALL"
+    OS_FAMILY_ALL = "ALL"
+
     #: A constant which can be used with the status property of a ManagedInstanceSummary.
     #: This constant has a value of "NORMAL"
     STATUS_NORMAL = "NORMAL"
@@ -82,6 +106,14 @@ class ManagedInstanceSummary(object):
     #: A constant which can be used with the status property of a ManagedInstanceSummary.
     #: This constant has a value of "REGISTRATION_ERROR"
     STATUS_REGISTRATION_ERROR = "REGISTRATION_ERROR"
+
+    #: A constant which can be used with the status property of a ManagedInstanceSummary.
+    #: This constant has a value of "DELETING"
+    STATUS_DELETING = "DELETING"
+
+    #: A constant which can be used with the status property of a ManagedInstanceSummary.
+    #: This constant has a value of "ONBOARDING"
+    STATUS_ONBOARDING = "ONBOARDING"
 
     def __init__(self, **kwargs):
         """
@@ -110,7 +142,7 @@ class ManagedInstanceSummary(object):
 
         :param location:
             The value to assign to the location property of this ManagedInstanceSummary.
-            Allowed values for this property are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type location: str
 
@@ -122,13 +154,13 @@ class ManagedInstanceSummary(object):
 
         :param os_family:
             The value to assign to the os_family property of this ManagedInstanceSummary.
-            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type os_family: str
 
         :param status:
             The value to assign to the status property of this ManagedInstanceSummary.
-            Allowed values for this property are: "NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -156,6 +188,18 @@ class ManagedInstanceSummary(object):
             The value to assign to the is_management_station property of this ManagedInstanceSummary.
         :type is_management_station: bool
 
+        :param notification_topic_id:
+            The value to assign to the notification_topic_id property of this ManagedInstanceSummary.
+        :type notification_topic_id: str
+
+        :param autonomous_settings:
+            The value to assign to the autonomous_settings property of this ManagedInstanceSummary.
+        :type autonomous_settings: oci.os_management_hub.models.AutonomousSettings
+
+        :param is_managed_by_autonomous_linux:
+            The value to assign to the is_managed_by_autonomous_linux property of this ManagedInstanceSummary.
+        :type is_managed_by_autonomous_linux: bool
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -172,7 +216,10 @@ class ManagedInstanceSummary(object):
             'lifecycle_stage': 'Id',
             'is_reboot_required': 'bool',
             'updates_available': 'int',
-            'is_management_station': 'bool'
+            'is_management_station': 'bool',
+            'notification_topic_id': 'str',
+            'autonomous_settings': 'AutonomousSettings',
+            'is_managed_by_autonomous_linux': 'bool'
         }
 
         self.attribute_map = {
@@ -190,7 +237,10 @@ class ManagedInstanceSummary(object):
             'lifecycle_stage': 'lifecycleStage',
             'is_reboot_required': 'isRebootRequired',
             'updates_available': 'updatesAvailable',
-            'is_management_station': 'isManagementStation'
+            'is_management_station': 'isManagementStation',
+            'notification_topic_id': 'notificationTopicId',
+            'autonomous_settings': 'autonomousSettings',
+            'is_managed_by_autonomous_linux': 'isManagedByAutonomousLinux'
         }
 
         self._id = None
@@ -208,12 +258,17 @@ class ManagedInstanceSummary(object):
         self._is_reboot_required = None
         self._updates_available = None
         self._is_management_station = None
+        self._notification_topic_id = None
+        self._autonomous_settings = None
+        self._is_managed_by_autonomous_linux = None
 
     @property
     def id(self):
         """
         **[Required]** Gets the id of this ManagedInstanceSummary.
-        The OCID for the managed instance.
+        The `OCID`__ of the managed instance.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ManagedInstanceSummary.
@@ -225,7 +280,9 @@ class ManagedInstanceSummary(object):
     def id(self, id):
         """
         Sets the id of this ManagedInstanceSummary.
-        The OCID for the managed instance.
+        The `OCID`__ of the managed instance.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ManagedInstanceSummary.
@@ -237,7 +294,7 @@ class ManagedInstanceSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this ManagedInstanceSummary.
-        Managed instance identifier.
+        User-friendly name for the managed instance.
 
 
         :return: The display_name of this ManagedInstanceSummary.
@@ -249,7 +306,7 @@ class ManagedInstanceSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ManagedInstanceSummary.
-        Managed instance identifier.
+        User-friendly name for the managed instance.
 
 
         :param display_name: The display_name of this ManagedInstanceSummary.
@@ -261,7 +318,7 @@ class ManagedInstanceSummary(object):
     def description(self):
         """
         Gets the description of this ManagedInstanceSummary.
-        Information specified by the user about the managed instance.
+        User-specified description of the managed instance.
 
 
         :return: The description of this ManagedInstanceSummary.
@@ -273,7 +330,7 @@ class ManagedInstanceSummary(object):
     def description(self, description):
         """
         Sets the description of this ManagedInstanceSummary.
-        Information specified by the user about the managed instance.
+        User-specified description of the managed instance.
 
 
         :param description: The description of this ManagedInstanceSummary.
@@ -285,7 +342,9 @@ class ManagedInstanceSummary(object):
     def tenancy_id(self):
         """
         **[Required]** Gets the tenancy_id of this ManagedInstanceSummary.
-        The OCID for the tenancy this managed instance resides in.
+        The `OCID`__ of the tenancy this managed instance resides in.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The tenancy_id of this ManagedInstanceSummary.
@@ -297,7 +356,9 @@ class ManagedInstanceSummary(object):
     def tenancy_id(self, tenancy_id):
         """
         Sets the tenancy_id of this ManagedInstanceSummary.
-        The OCID for the tenancy this managed instance resides in.
+        The `OCID`__ of the tenancy this managed instance resides in.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param tenancy_id: The tenancy_id of this ManagedInstanceSummary.
@@ -309,7 +370,9 @@ class ManagedInstanceSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ManagedInstanceSummary.
-        The OCID for the compartment this managed instance resides in.
+        The `OCID`__ of the compartment that contains the managed instance.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ManagedInstanceSummary.
@@ -321,7 +384,9 @@ class ManagedInstanceSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ManagedInstanceSummary.
-        The OCID for the compartment this managed instance resides in.
+        The `OCID`__ of the compartment that contains the managed instance.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ManagedInstanceSummary.
@@ -333,9 +398,9 @@ class ManagedInstanceSummary(object):
     def location(self):
         """
         Gets the location of this ManagedInstanceSummary.
-        Location of the managed instance.
+        The location of the managed instance.
 
-        Allowed values for this property are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -348,13 +413,13 @@ class ManagedInstanceSummary(object):
     def location(self, location):
         """
         Sets the location of this ManagedInstanceSummary.
-        Location of the managed instance.
+        The location of the managed instance.
 
 
         :param location: The location of this ManagedInstanceSummary.
         :type: str
         """
-        allowed_values = ["ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2"]
+        allowed_values = ["ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2", "GCP"]
         if not value_allowed_none_or_none_sentinel(location, allowed_values):
             location = 'UNKNOWN_ENUM_VALUE'
         self._location = location
@@ -393,9 +458,9 @@ class ManagedInstanceSummary(object):
     def os_family(self):
         """
         Gets the os_family of this ManagedInstanceSummary.
-        The Operating System type of the managed instance.
+        The operating system type of the managed instance.
 
-        Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -408,13 +473,13 @@ class ManagedInstanceSummary(object):
     def os_family(self, os_family):
         """
         Sets the os_family of this ManagedInstanceSummary.
-        The Operating System type of the managed instance.
+        The operating system type of the managed instance.
 
 
         :param os_family: The os_family of this ManagedInstanceSummary.
         :type: str
         """
-        allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7"]
+        allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7", "ORACLE_LINUX_6", "WINDOWS_SERVER_2016", "WINDOWS_SERVER_2019", "WINDOWS_SERVER_2022", "ALL"]
         if not value_allowed_none_or_none_sentinel(os_family, allowed_values):
             os_family = 'UNKNOWN_ENUM_VALUE'
         self._os_family = os_family
@@ -423,9 +488,9 @@ class ManagedInstanceSummary(object):
     def status(self):
         """
         **[Required]** Gets the status of this ManagedInstanceSummary.
-        status of the managed instance.
+        Current status of the managed instance.
 
-        Allowed values for this property are: "NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -438,13 +503,13 @@ class ManagedInstanceSummary(object):
     def status(self, status):
         """
         Sets the status of this ManagedInstanceSummary.
-        status of the managed instance.
+        Current status of the managed instance.
 
 
         :param status: The status of this ManagedInstanceSummary.
         :type: str
         """
-        allowed_values = ["NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR"]
+        allowed_values = ["NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR", "DELETING", "ONBOARDING"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status
@@ -537,7 +602,7 @@ class ManagedInstanceSummary(object):
     def updates_available(self):
         """
         Gets the updates_available of this ManagedInstanceSummary.
-        Number of updates available to be installed.
+        Number of updates available for installation.
 
 
         :return: The updates_available of this ManagedInstanceSummary.
@@ -549,7 +614,7 @@ class ManagedInstanceSummary(object):
     def updates_available(self, updates_available):
         """
         Sets the updates_available of this ManagedInstanceSummary.
-        Number of updates available to be installed.
+        Number of updates available for installation.
 
 
         :param updates_available: The updates_available of this ManagedInstanceSummary.
@@ -561,7 +626,7 @@ class ManagedInstanceSummary(object):
     def is_management_station(self):
         """
         Gets the is_management_station of this ManagedInstanceSummary.
-        Whether this managed instance is acting as an on-premise management station.
+        Whether this managed instance is acting as an on-premises management station.
 
 
         :return: The is_management_station of this ManagedInstanceSummary.
@@ -573,13 +638,85 @@ class ManagedInstanceSummary(object):
     def is_management_station(self, is_management_station):
         """
         Sets the is_management_station of this ManagedInstanceSummary.
-        Whether this managed instance is acting as an on-premise management station.
+        Whether this managed instance is acting as an on-premises management station.
 
 
         :param is_management_station: The is_management_station of this ManagedInstanceSummary.
         :type: bool
         """
         self._is_management_station = is_management_station
+
+    @property
+    def notification_topic_id(self):
+        """
+        Gets the notification_topic_id of this ManagedInstanceSummary.
+        The `OCID`__ for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The notification_topic_id of this ManagedInstanceSummary.
+        :rtype: str
+        """
+        return self._notification_topic_id
+
+    @notification_topic_id.setter
+    def notification_topic_id(self, notification_topic_id):
+        """
+        Sets the notification_topic_id of this ManagedInstanceSummary.
+        The `OCID`__ for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param notification_topic_id: The notification_topic_id of this ManagedInstanceSummary.
+        :type: str
+        """
+        self._notification_topic_id = notification_topic_id
+
+    @property
+    def autonomous_settings(self):
+        """
+        Gets the autonomous_settings of this ManagedInstanceSummary.
+
+        :return: The autonomous_settings of this ManagedInstanceSummary.
+        :rtype: oci.os_management_hub.models.AutonomousSettings
+        """
+        return self._autonomous_settings
+
+    @autonomous_settings.setter
+    def autonomous_settings(self, autonomous_settings):
+        """
+        Sets the autonomous_settings of this ManagedInstanceSummary.
+
+        :param autonomous_settings: The autonomous_settings of this ManagedInstanceSummary.
+        :type: oci.os_management_hub.models.AutonomousSettings
+        """
+        self._autonomous_settings = autonomous_settings
+
+    @property
+    def is_managed_by_autonomous_linux(self):
+        """
+        Gets the is_managed_by_autonomous_linux of this ManagedInstanceSummary.
+        Indicates whether Autonomous Linux manages this instance.
+
+
+        :return: The is_managed_by_autonomous_linux of this ManagedInstanceSummary.
+        :rtype: bool
+        """
+        return self._is_managed_by_autonomous_linux
+
+    @is_managed_by_autonomous_linux.setter
+    def is_managed_by_autonomous_linux(self, is_managed_by_autonomous_linux):
+        """
+        Sets the is_managed_by_autonomous_linux of this ManagedInstanceSummary.
+        Indicates whether Autonomous Linux manages this instance.
+
+
+        :param is_managed_by_autonomous_linux: The is_managed_by_autonomous_linux of this ManagedInstanceSummary.
+        :type: bool
+        """
+        self._is_managed_by_autonomous_linux = is_managed_by_autonomous_linux
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -24,27 +24,27 @@ class NetworkSecurityGroup(object):
 
     After creating an NSG, you can add VNICs and security rules to it. For example, when you create
     an instance, you can specify one or more NSGs to add the instance to (see
-    :func:`create_vnic_details`). Or you can add an existing
-    instance to an NSG with :func:`update_vnic`.
+    `:func:`create_vnic_details`)`. Or you can add an existing
+    instance to an NSG with `:func:`update_vnic``.
 
     To add security rules to an NSG, see
-    :func:`add_network_security_group_security_rules`.
+    `:func:`add_network_security_group_security_rules``.
 
     To list the VNICs in an NSG, see
-    :func:`list_network_security_group_vnics`.
+    `:func:`list_network_security_group_vnics``.
 
     To list the security rules in an NSG, see
-    :func:`list_network_security_group_security_rules`.
+    `:func:`list_network_security_group_security_rules``.
 
     For more information about network security groups, see
-    `Network Security Groups`__.
+    ``Network Security Groups`__`.
 
     **Important:** Oracle Cloud Infrastructure Compute service images automatically include firewall rules (for example,
     Linux iptables, Windows firewall). If there are issues with some type of access to an instance,
     make sure all of the following are set correctly:
 
     * Any security rules in any NSGs the instance's VNIC belongs to
-    * Any :class:`SecurityList` associated with the instance's subnet
+    * Any `:class:`SecurityList`` associated with the instance's subnet
     * The instance's OS firewall rules
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,

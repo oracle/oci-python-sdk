@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DetachSoftwareSourcesFromManagedInstanceDetails(object):
     """
-    The details about the software sources to be detached.
+    Provides the information used to detach the software sources from the managed instance.
     """
 
     def __init__(self, **kwargs):

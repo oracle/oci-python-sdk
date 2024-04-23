@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateTargetDetails(object):
     """
-    The information about new Target.
+    Parameters used to create a new target.
     """
 
     #: A constant which can be used with the target_resource_type property of a CreateTargetDetails.
@@ -148,7 +148,7 @@ class CreateTargetDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateTargetDetails.
-        DetectorTemplate identifier.
+        Display name for the target.
 
         Avoid entering confidential information.
 
@@ -162,7 +162,7 @@ class CreateTargetDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateTargetDetails.
-        DetectorTemplate identifier.
+        Display name for the target.
 
         Avoid entering confidential information.
 
@@ -176,7 +176,7 @@ class CreateTargetDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateTargetDetails.
-        Compartment Identifier where the resource is created
+        Compartment OCID where the resource is created
 
 
         :return: The compartment_id of this CreateTargetDetails.
@@ -188,7 +188,7 @@ class CreateTargetDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateTargetDetails.
-        Compartment Identifier where the resource is created
+        Compartment OCID where the resource is created
 
 
         :param compartment_id: The compartment_id of this CreateTargetDetails.
@@ -228,7 +228,7 @@ class CreateTargetDetails(object):
     def target_resource_type(self):
         """
         **[Required]** Gets the target_resource_type of this CreateTargetDetails.
-        possible type of targets(COMPARTMENT/FACLOUD)
+        Type of resource that target support (COMPARTMENT/FACLOUD)
 
         Allowed values for this property are: "COMPARTMENT", "ERPCLOUD", "HCMCLOUD", "SECURITY_ZONE"
 
@@ -242,7 +242,7 @@ class CreateTargetDetails(object):
     def target_resource_type(self, target_resource_type):
         """
         Sets the target_resource_type of this CreateTargetDetails.
-        possible type of targets(COMPARTMENT/FACLOUD)
+        Type of resource that target support (COMPARTMENT/FACLOUD)
 
 
         :param target_resource_type: The target_resource_type of this CreateTargetDetails.
@@ -283,7 +283,7 @@ class CreateTargetDetails(object):
     def target_detector_recipes(self):
         """
         Gets the target_detector_recipes of this CreateTargetDetails.
-        List of detector recipes to associate with target
+        List of detector recipes to attach to target
 
 
         :return: The target_detector_recipes of this CreateTargetDetails.
@@ -295,7 +295,7 @@ class CreateTargetDetails(object):
     def target_detector_recipes(self, target_detector_recipes):
         """
         Sets the target_detector_recipes of this CreateTargetDetails.
-        List of detector recipes to associate with target
+        List of detector recipes to attach to target
 
 
         :param target_detector_recipes: The target_detector_recipes of this CreateTargetDetails.
@@ -307,7 +307,7 @@ class CreateTargetDetails(object):
     def target_responder_recipes(self):
         """
         Gets the target_responder_recipes of this CreateTargetDetails.
-        List of responder recipes to associate with target
+        List of responder recipes to attach to target
 
 
         :return: The target_responder_recipes of this CreateTargetDetails.
@@ -319,7 +319,7 @@ class CreateTargetDetails(object):
     def target_responder_recipes(self, target_responder_recipes):
         """
         Sets the target_responder_recipes of this CreateTargetDetails.
-        List of responder recipes to associate with target
+        List of responder recipes to attach to target
 
 
         :param target_responder_recipes: The target_responder_recipes of this CreateTargetDetails.
@@ -331,7 +331,7 @@ class CreateTargetDetails(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this CreateTargetDetails.
-        The current state of the DetectorRule.
+        The enablement state of the detector rule
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
@@ -345,7 +345,7 @@ class CreateTargetDetails(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this CreateTargetDetails.
-        The current state of the DetectorRule.
+        The enablement state of the detector rule
 
 
         :param lifecycle_state: The lifecycle_state of this CreateTargetDetails.

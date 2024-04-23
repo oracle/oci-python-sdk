@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ModuleStreamProfileDetails(object):
     """
-    Updatable information for a module stream profile.
+    Provides the information used to update a module stream profile.
     """
 
     def __init__(self, **kwargs):
@@ -32,22 +32,29 @@ class ModuleStreamProfileDetails(object):
             The value to assign to the profile_name property of this ModuleStreamProfileDetails.
         :type profile_name: str
 
+        :param software_source_id:
+            The value to assign to the software_source_id property of this ModuleStreamProfileDetails.
+        :type software_source_id: str
+
         """
         self.swagger_types = {
             'module_name': 'str',
             'stream_name': 'str',
-            'profile_name': 'str'
+            'profile_name': 'str',
+            'software_source_id': 'str'
         }
 
         self.attribute_map = {
             'module_name': 'moduleName',
             'stream_name': 'streamName',
-            'profile_name': 'profileName'
+            'profile_name': 'profileName',
+            'software_source_id': 'softwareSourceId'
         }
 
         self._module_name = None
         self._stream_name = None
         self._profile_name = None
+        self._software_source_id = None
 
     @property
     def module_name(self):
@@ -120,6 +127,34 @@ class ModuleStreamProfileDetails(object):
         :type: str
         """
         self._profile_name = profile_name
+
+    @property
+    def software_source_id(self):
+        """
+        Gets the software_source_id of this ModuleStreamProfileDetails.
+        The `OCID`__ of the software source that contains the module stream.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The software_source_id of this ModuleStreamProfileDetails.
+        :rtype: str
+        """
+        return self._software_source_id
+
+    @software_source_id.setter
+    def software_source_id(self, software_source_id):
+        """
+        Sets the software_source_id of this ModuleStreamProfileDetails.
+        The `OCID`__ of the software source that contains the module stream.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param software_source_id: The software_source_id of this ModuleStreamProfileDetails.
+        :type: str
+        """
+        self._software_source_id = software_source_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

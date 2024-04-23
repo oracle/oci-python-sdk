@@ -120,14 +120,18 @@ class CloudGuardClient(object):
 
     def add_compartment(self, security_zone_id, add_compartment_details, **kwargs):
         """
-        Add an existing compartment to a security zone. If you previously removed a subcompartment from a security zone, you can add it back to the same security zone. The security zone ensures that resources in the subcompartment comply with the security zone's policies.
+        Adds a compartment to an existing security zone (SecurityZone resource), identified by
+        securityZoneId. Specify parameters in an AddCompartmentDetails resource that you pass.
+        If you previously removed a subcompartment from a security zone, you can add it back to the
+        same security zone. The security zone ensures that resources in the subcompartment comply with
+        the security zone's policies.
 
 
         :param str security_zone_id: (required)
-            The unique identifier of the security zone (`SecurityZone`)
+            The unique identifier of the security zone (`SecurityZone` resource).
 
         :param oci.cloud_guard.models.AddCompartmentDetails add_compartment_details: (required)
-            The compartment to add to the security zone.
+            Parameters for an existing compartment to be added to a security zone
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -240,7 +244,7 @@ class CloudGuardClient(object):
 
     def cancel_work_request(self, work_request_id, **kwargs):
         """
-        Cancels the work request with the given ID.
+        Cancels a work request identified by workRequestId.
 
 
         :param str work_request_id: (required)
@@ -343,14 +347,16 @@ class CloudGuardClient(object):
 
     def change_data_source_compartment(self, data_source_id, change_data_source_compartment_details, **kwargs):
         """
-        Moves the DataSource from current compartment to another.
+        Moves a data source (DataSource resource), identified by parameters
+        passed in a ChangeDataSourceCompartmentDetails resource, from the current
+        compartment to another.
 
 
         :param str data_source_id: (required)
-            DataSource OCID
+            Data source OCID.
 
         :param oci.cloud_guard.models.ChangeDataSourceCompartmentDetails change_data_source_compartment_details: (required)
-            The compartment id of the DataSource
+            The compartment OCID of the DataSource resource
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -461,14 +467,17 @@ class CloudGuardClient(object):
 
     def change_detector_recipe_compartment(self, detector_recipe_id, change_detector_recipe_compartment_details, **kwargs):
         """
-        Moves the detector recipe (DetectorRecipe object), identified by detectorRecipeId, from the current compartment to another compartment.
+        Moves the detector recipe (DetectorRecipe resource),
+        identified by detectorRecipeId, from the current compartment to
+        another compartment. When provided, If-Match is checked against
+        etag values of the resource.
 
 
         :param str detector_recipe_id: (required)
-            DetectorRecipe OCID
+            Detector recipe OCID
 
         :param oci.cloud_guard.models.ChangeDetectorRecipeCompartmentDetails change_detector_recipe_compartment_details: (required)
-            The target compartment id.
+            The target compartment OCID
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -579,14 +588,14 @@ class CloudGuardClient(object):
 
     def change_managed_list_compartment(self, managed_list_id, change_managed_list_compartment_details, **kwargs):
         """
-        Moves the managed list (ManagedList object), identified by managedListId, from the current compartment to another compartment.
+        Moves the managed list (ManagedList resource), identified by managedListId, from the current compartment to another compartment.
 
 
         :param str managed_list_id: (required)
-            The cloudguard list OCID to be passed in the request.
+            The managed list OCID to be passed in the request.
 
         :param oci.cloud_guard.models.ChangeManagedListCompartmentDetails change_managed_list_compartment_details: (required)
-            The compartment id of the ManagedList
+            The compartment OCID of the ManagedList
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -697,14 +706,16 @@ class CloudGuardClient(object):
 
     def change_responder_recipe_compartment(self, responder_recipe_id, change_responder_recipe_compartment_details, **kwargs):
         """
-        Moves the ResponderRecipe from current compartment to another.
+        Moves the responder recipe (ResponderRecipe resource), identified by responderRecipeId
+        in a ChangeResponderRecipeCompartmentDetails resource, from the current compartment to another compartment.
+        When provided, if-match is checked against etag values of the resource.
 
 
         :param str responder_recipe_id: (required)
-            OCID of ResponderRecipe
+            OCID of the responder recipe.
 
         :param oci.cloud_guard.models.ChangeResponderRecipeCompartmentDetails change_responder_recipe_compartment_details: (required)
-            The target compartment id.
+            The target compartment OCID
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -813,16 +824,136 @@ class CloudGuardClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def change_saved_query_compartment(self, saved_query_id, change_saved_query_compartment_details, **kwargs):
+        """
+        Moves the SavedQuery resource into a different compartment. When provided, If-Match is checked against etag values of the resource.
+
+
+        :param str saved_query_id: (required)
+            Saved query OCID
+
+        :param oci.cloud_guard.models.ChangeSavedQueryCompartmentDetails change_saved_query_compartment_details: (required)
+            The compartment OCID of the SavedQuery resource
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/change_saved_query_compartment.py.html>`__ to see an example of how to use change_saved_query_compartment API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['savedQueryId']
+        resource_path = "/savedQueries/{savedQueryId}/actions/changeCompartment"
+        method = "POST"
+        operation_name = "change_saved_query_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SavedQuery/ChangeSavedQueryCompartment"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"change_saved_query_compartment got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "savedQueryId": saved_query_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_saved_query_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_saved_query_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def change_security_recipe_compartment(self, security_recipe_id, change_security_recipe_compartment_details, **kwargs):
         """
-        Moves a security zone recipe to a different compartment. When provided, `If-Match` is checked against `ETag` values of the resource.
+        Moves the security recipe (SecurityRecipe resource), identified by securityRecipeId,
+        from the current compartment to another compartment. When provided, `if-match` is checked
+        against `etag` values of the resource.
 
 
         :param str security_recipe_id: (required)
-            The unique identifier of the security zone recipe (`SecurityRecipe`)
+            The unique identifier of the security zone recipe. (`SecurityRecipe`)
 
         :param oci.cloud_guard.models.ChangeSecurityRecipeCompartmentDetails change_security_recipe_compartment_details: (required)
-            The compartment to which you want to move the recipe.
+            The compartment to which you want to move the `SecurityRecipe` resource
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -933,14 +1064,16 @@ class CloudGuardClient(object):
 
     def change_security_zone_compartment(self, security_zone_id, change_security_zone_compartment_details, **kwargs):
         """
-        Moves a security zone to a different compartment. When provided, `If-Match` is checked against `ETag` values of the resource.
+        Moves a security zone, identified by securityZoneId, to a different compartment.
+        Pass parameters through a ChangeSecurityZoneCompartmentDetails resource.
+        When provided, `if-match` is checked against `etag` values of the resource.
 
 
         :param str security_zone_id: (required)
-            The unique identifier of the security zone (`SecurityZone`)
+            The unique identifier of the security zone (`SecurityZone` resource).
 
         :param oci.cloud_guard.models.ChangeSecurityZoneCompartmentDetails change_security_zone_compartment_details: (required)
-            The compartment to which you want to move the security zone.
+            The compartment to which you want to move the security zone
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -1049,13 +1182,109 @@ class CloudGuardClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def create_adhoc_query(self, create_adhoc_query_details, **kwargs):
+        """
+        Creates a AdhocQuery resource.
+
+
+        :param oci.cloud_guard.models.CreateAdhocQueryDetails create_adhoc_query_details: (required)
+            Details for the new AdhocQuery resource
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.AdhocQuery`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_adhoc_query.py.html>`__ to see an example of how to use create_adhoc_query API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/adhocQueries"
+        method = "POST"
+        operation_name = "create_adhoc_query"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/AdhocQuery/CreateAdhocQuery"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"create_adhoc_query got unknown kwargs: {extra_kwargs!r}")
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_adhoc_query_details,
+                response_type="AdhocQuery",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_adhoc_query_details,
+                response_type="AdhocQuery",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def create_data_mask_rule(self, create_data_mask_rule_details, **kwargs):
         """
-        Creates a new DataMaskRule object definition.
+        Creates a new DataMaskRule resource definition.
 
 
         :param oci.cloud_guard.models.CreateDataMaskRuleDetails create_data_mask_rule_details: (required)
-            Definition for the new Data Mask Rule.
+            Definition for the new data mask rule
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1147,11 +1376,12 @@ class CloudGuardClient(object):
 
     def create_data_source(self, create_data_source_details, **kwargs):
         """
-        Creates a DataSource
+        Creates a data source (DataSource resource), using parameters passed
+        through a CreateDataSourceDetails resource.
 
 
         :param oci.cloud_guard.models.CreateDataSourceDetails create_data_source_details: (required)
-            Details for the new DataSource.
+            Details for the new DataSource resource
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1241,11 +1471,11 @@ class CloudGuardClient(object):
 
     def create_detector_recipe(self, create_detector_recipe_details, **kwargs):
         """
-        Creates a new DetectorRecipe object.
+        Creates a new DetectorRecipe resource.
 
 
         :param oci.cloud_guard.models.CreateDetectorRecipeDetails create_detector_recipe_details: (required)
-            Details for the new DetectorRecipe.
+            Details for the new DetectorRecipe
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1337,14 +1567,14 @@ class CloudGuardClient(object):
 
     def create_detector_recipe_detector_rule(self, detector_recipe_id, create_detector_recipe_detector_rule_details, **kwargs):
         """
-        Create the DetectorRule
+        Creates a detector rule.
 
 
         :param str detector_recipe_id: (required)
-            DetectorRecipe OCID
+            Detector recipe OCID
 
         :param oci.cloud_guard.models.CreateDetectorRecipeDetectorRuleDetails create_detector_recipe_detector_rule_details: (required)
-            The details with which detector rule has to be created.
+            The details with which detector rule is to be created.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1448,11 +1678,11 @@ class CloudGuardClient(object):
 
     def create_managed_list(self, create_managed_list_details, **kwargs):
         """
-        Creates a new ManagedList object.
+        Creates a new ManagedList resource.
 
 
         :param oci.cloud_guard.models.CreateManagedListDetails create_managed_list_details: (required)
-            Details for the new ManagedList.
+            Details for the new ManagedList resources
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1544,11 +1774,12 @@ class CloudGuardClient(object):
 
     def create_responder_recipe(self, create_responder_recipe_details, **kwargs):
         """
-        Create a ResponderRecipe.
+        Creates a responder recipe (ResponderRecipe resource), from values passed in a
+        CreateResponderRecipeDetails resource.
 
 
         :param oci.cloud_guard.models.CreateResponderRecipeDetails create_responder_recipe_details: (required)
-            Details for ResponderRecipe.
+            Details for ResponderRecipe
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1638,13 +1869,110 @@ class CloudGuardClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def create_saved_query(self, create_saved_query_details, **kwargs):
+        """
+        Creates a SavedQuery resource.
+
+
+        :param oci.cloud_guard.models.CreateSavedQueryDetails create_saved_query_details: (required)
+            Details for the new SavedQuery resource
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.SavedQuery`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_saved_query.py.html>`__ to see an example of how to use create_saved_query API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/savedQueries"
+        method = "POST"
+        operation_name = "create_saved_query"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SavedQuery/CreateSavedQuery"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"create_saved_query got unknown kwargs: {extra_kwargs!r}")
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_saved_query_details,
+                response_type="SavedQuery",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_saved_query_details,
+                response_type="SavedQuery",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def create_security_recipe(self, create_security_recipe_details, **kwargs):
         """
-        Creates a security zone recipe. A security zone recipe is a collection of security zone policies.
+        Creates a security zone recipe (SecurityRecipe resource), using parameters
+        passed in a CreateSecurityRecipeDetails resource.
 
 
         :param oci.cloud_guard.models.CreateSecurityRecipeDetails create_security_recipe_details: (required)
-            Details for the new `SecurityRecipe`.
+            Details for the new `SecurityRecipe` resource
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1736,11 +2064,12 @@ class CloudGuardClient(object):
 
     def create_security_zone(self, create_security_zone_details, **kwargs):
         """
-        Creates a security zone for a compartment. A security zone enforces all security zone policies in a given security zone recipe. Any actions that violate a policy are denied. By default, any subcompartments are also in the same security zone.
+        Creates a security zone (SecurityZone resource) for a compartment. Pass parameters
+        through a CreateSecurityZoneDetails resource.
 
 
         :param oci.cloud_guard.models.CreateSecurityZoneDetails create_security_zone_details: (required)
-            Details for the new `SecurityZone`.
+            Details for the new `SecurityZone` resource
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1832,11 +2161,11 @@ class CloudGuardClient(object):
 
     def create_target(self, create_target_details, **kwargs):
         """
-        Creates a new Target
+        Creates a target (Target resource), using parameters passed in a CreateTargetDetails resource.
 
 
         :param oci.cloud_guard.models.CreateTargetDetails create_target_details: (required)
-            Details for the new Target.
+            Contains generic target information which is required for all target types
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1928,14 +2257,16 @@ class CloudGuardClient(object):
 
     def create_target_detector_recipe(self, target_id, attach_target_detector_recipe_details, **kwargs):
         """
+        Attaches a DetectorRecipe to a target (Target resource) identified by targetId,
+        using parameters passed in a TargetAttachTargetDetectorRecipeDetails resource.
         Attach a DetectorRecipe with the Target
 
 
         :param str target_id: (required)
-            OCID of target
+            OCID of the target
 
         :param oci.cloud_guard.models.AttachTargetDetectorRecipeDetails attach_target_detector_recipe_details: (required)
-            Details for associating DetectorRecipe to Target
+            Details for associating DetectorRecipe with Target
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2039,14 +2370,14 @@ class CloudGuardClient(object):
 
     def create_target_responder_recipe(self, target_id, attach_target_responder_recipe_details, **kwargs):
         """
-        Attach a ResponderRecipe with the Target
+        Attaches a responder recipe to a target.
 
 
         :param str target_id: (required)
-            OCID of target
+            OCID of the target
 
         :param oci.cloud_guard.models.AttachTargetResponderRecipeDetails attach_target_responder_recipe_details: (required)
-            Details for associating ResponderRecipe to Target
+            Details for attaching a responder recipe to a target
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2148,13 +2479,223 @@ class CloudGuardClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def create_wlp_agent(self, create_wlp_agent_details, **kwargs):
+        """
+        Creates and registers a WLP agent for an
+        on-premise resource.
+
+
+        :param oci.cloud_guard.models.CreateWlpAgentDetails create_wlp_agent_details: (required)
+            Details for the WLP agent to be created
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.WlpAgent`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/create_wlp_agent.py.html>`__ to see an example of how to use create_wlp_agent API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/wlpAgents"
+        method = "POST"
+        operation_name = "create_wlp_agent"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/WlpAgent/CreateWlpAgent"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"create_wlp_agent got unknown kwargs: {extra_kwargs!r}")
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_wlp_agent_details,
+                response_type="WlpAgent",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_wlp_agent_details,
+                response_type="WlpAgent",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def delete_adhoc_query(self, adhoc_query_id, **kwargs):
+        """
+        Deletes a AdhocQuery resource identified by adhocQueryId.
+
+
+        :param str adhoc_query_id: (required)
+            Adhoc query OCID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_adhoc_query.py.html>`__ to see an example of how to use delete_adhoc_query API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['adhocQueryId']
+        resource_path = "/adhocQueries/{adhocQueryId}"
+        method = "DELETE"
+        operation_name = "delete_adhoc_query"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/AdhocQuery/DeleteAdhocQuery"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"delete_adhoc_query got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "adhocQueryId": adhoc_query_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def delete_data_mask_rule(self, data_mask_rule_id, **kwargs):
         """
-        Deletes a DataMaskRule object, identified by dataMaskRuleId.
+        Deletes a DataMaskRule resource, identified by dataMaskRuleId.
 
 
         :param str data_mask_rule_id: (required)
-            OCID of dataMaskRule
+            OCID of the data mask rule
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -2253,11 +2794,11 @@ class CloudGuardClient(object):
 
     def delete_data_source(self, data_source_id, **kwargs):
         """
-        Deletes a DataSource identified by dataSourceId
+        Deletes a data source (DataSource resource) identified by dataSourceId.
 
 
         :param str data_source_id: (required)
-            DataSource OCID
+            Data source OCID.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -2366,11 +2907,11 @@ class CloudGuardClient(object):
 
     def delete_detector_recipe(self, detector_recipe_id, **kwargs):
         """
-        Deletes a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
+        Deletes a detector recipe (DetectorRecipe resource) identified by detectorRecipeId.
 
 
         :param str detector_recipe_id: (required)
-            DetectorRecipe OCID
+            Detector recipe OCID
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -2479,14 +3020,14 @@ class CloudGuardClient(object):
 
     def delete_detector_recipe_detector_rule(self, detector_recipe_id, detector_rule_id, **kwargs):
         """
-        Deletes DetectorRecipeDetectorRule
+        Deletes the DetectorRecipeDetectorRule resource identified by detectorRuleId.
 
 
         :param str detector_recipe_id: (required)
-            DetectorRecipe OCID
+            Detector recipe OCID
 
         :param str detector_rule_id: (required)
-            The key of Detector Rule.
+            The unique identifier of a detector rule.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -2586,17 +3127,17 @@ class CloudGuardClient(object):
 
     def delete_detector_recipe_detector_rule_data_source(self, detector_recipe_id, detector_rule_id, data_source_id, **kwargs):
         """
-        Delete the DetectorRecipeDetectorRuleDataSource resource by identifier
+        Deletes the DetectorRecipeDetectorRuleDataSource resource by identifier.
 
 
         :param str detector_recipe_id: (required)
-            DetectorRecipe OCID
+            Detector recipe OCID
 
         :param str detector_rule_id: (required)
-            The key of Detector Rule.
+            The unique identifier of a detector rule.
 
         :param str data_source_id: (required)
-            DataSource OCID
+            Data source OCID.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -2701,7 +3242,7 @@ class CloudGuardClient(object):
 
 
         :param str managed_list_id: (required)
-            The cloudguard list OCID to be passed in the request.
+            The managed list OCID to be passed in the request.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -2810,11 +3351,11 @@ class CloudGuardClient(object):
 
     def delete_responder_recipe(self, responder_recipe_id, **kwargs):
         """
-        Delete the ResponderRecipe resource by identifier
+        Deletes a responder recipe (ResponderRecipe resource) identified by responderRecipeId.
 
 
         :param str responder_recipe_id: (required)
-            OCID of ResponderRecipe
+            OCID of the responder recipe.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -2911,13 +3452,126 @@ class CloudGuardClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def delete_saved_query(self, saved_query_id, **kwargs):
+        """
+        Deletes a SavedQuery resource identified by savedQueryId.
+
+
+        :param str saved_query_id: (required)
+            Saved query OCID
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_saved_query.py.html>`__ to see an example of how to use delete_saved_query API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['savedQueryId']
+        resource_path = "/savedQueries/{savedQueryId}"
+        method = "DELETE"
+        operation_name = "delete_saved_query"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SavedQuery/DeleteSavedQuery"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"delete_saved_query got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "savedQueryId": saved_query_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def delete_security_recipe(self, security_recipe_id, **kwargs):
         """
-        Deletes a security zone recipe. The recipe can't be associated with an existing security zone.
+        Deletes a security zone recipe, identified by securityRecipeId. The recipe can't be associated with an existing security zone.
 
 
         :param str security_recipe_id: (required)
-            The unique identifier of the security zone recipe (`SecurityRecipe`)
+            The unique identifier of the security zone recipe. (`SecurityRecipe`)
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -3016,11 +3670,11 @@ class CloudGuardClient(object):
 
     def delete_security_zone(self, security_zone_id, **kwargs):
         """
-        Deletes an existing security zone with a given identifier.
+        Deletes a security zone, identified by securityZoneId.
 
 
         :param str security_zone_id: (required)
-            The unique identifier of the security zone (`SecurityZone`)
+            The unique identifier of the security zone (`SecurityZone` resource).
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -3119,11 +3773,11 @@ class CloudGuardClient(object):
 
     def delete_target(self, target_id, **kwargs):
         """
-        Deletes a Target identified by targetId
+        Deletes a target (Target resource) identified by targetId.
 
 
         :param str target_id: (required)
-            OCID of target
+            OCID of the target
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -3222,14 +3876,15 @@ class CloudGuardClient(object):
 
     def delete_target_detector_recipe(self, target_id, target_detector_recipe_id, **kwargs):
         """
-        Delete the TargetDetectorRecipe resource by identifier
+        Deletes the target detector recipe (TargetDetectorRecipe resource) identified by
+        targetDetectorRecipeId, from a target (Target resource) identified by targetId.
 
 
         :param str target_id: (required)
-            OCID of target
+            OCID of the target
 
         :param str target_detector_recipe_id: (required)
-            OCID of TargetDetectorRecipe
+            OCID of the target detector recipe.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -3329,14 +3984,16 @@ class CloudGuardClient(object):
 
     def delete_target_responder_recipe(self, target_id, target_responder_recipe_id, **kwargs):
         """
-        Delete the TargetResponderRecipe resource by identifier
+        Detaches a target responder recipe (TargetResponderRecipe resource)
+        identified by targetResponderRecipeId, from a target (Target resource)
+        identified by targetId.
 
 
         :param str target_id: (required)
-            OCID of target
+            OCID of the target
 
         :param str target_responder_recipe_id: (required)
-            OCID of TargetResponderRecipe
+            OCID of the target responder recipe.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -3434,16 +4091,162 @@ class CloudGuardClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def delete_wlp_agent(self, wlp_agent_id, **kwargs):
+        """
+        Deletes and unregisters the WLP agent for an on-premise resource.
+        x-obmcs-splat:
+        routing:
+          strategy: route-to-any-ad
+        serviceList: [ 'cloudguard-cp-SPLAT_ENV' ]
+        resources:
+          wlpAgent:
+            serviceResourceName: WlpAgent
+            targetCompartmentId: downstream.getOr404('cloudguard-cp-SPLAT_ENV', 'GetWlpAgent', request.resourceId).compartmentId
+            actionKind: delete
+            resourceOcid: request.resourceId
+            reconciliationCanStartAfterSecs: 30
+            permissions: [ \"WLP_AGENT_DELETE\" ]
+        authorization:
+          mode: automated
+          check: resources['wlpAgent'].grantedPermissions.contains('WLP_AGENT_DELETE')
+          allowCrossTenancy: true
+        tagStore:
+          mode: automated
+        maximumAttemptCount: 3
+        throttling:
+          perUserLimit:
+            rpsLimit: 15
+          perTenantLimit:
+            rpsLimit: 30
+        quotas:
+          mode: automated
+        search:
+          mode: backfilling
+          operationResourceName: wlpAgent
+        lock:
+          mode: test
+          operationResourceName: wlpAgent
+
+
+        :param str wlp_agent_id: (required)
+            WLP agent OCID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/delete_wlp_agent.py.html>`__ to see an example of how to use delete_wlp_agent API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['wlpAgentId']
+        resource_path = "/wlpAgents/{wlpAgentId}"
+        method = "DELETE"
+        operation_name = "delete_wlp_agent"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/WlpAgent/DeleteWlpAgent"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"delete_wlp_agent got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "wlpAgentId": wlp_agent_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def execute_responder_execution(self, responder_execution_id, compartment_id, **kwargs):
         """
-        Executes the responder execution. When provided, If-Match is checked against ETag values of the resource.
+        Executes the responder execution. When provided, if-match is checked
+        against etag values of the resource.
 
 
         :param str responder_execution_id: (required)
-            The identifier of the responder execution.
+            The unique identifier of the responder execution.
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -3463,7 +4266,7 @@ class CloudGuardClient(object):
             might be rejected.
 
         :param oci.cloud_guard.models.ExecuteResponderExecutionDetails execute_responder_execution_details: (optional)
-            Details for Responder Configuration
+            Details for responder configuration
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3563,24 +4366,216 @@ class CloudGuardClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_adhoc_query(self, adhoc_query_id, **kwargs):
+        """
+        Returns an adhoc query identified by adhocQueryId.
+
+
+        :param str adhoc_query_id: (required)
+            Adhoc query OCID.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.AdhocQuery`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_adhoc_query.py.html>`__ to see an example of how to use get_adhoc_query API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['adhocQueryId']
+        resource_path = "/adhocQueries/{adhocQueryId}"
+        method = "GET"
+        operation_name = "get_adhoc_query"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/AdhocQuery/GetAdhocQuery"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_adhoc_query got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "adhocQueryId": adhoc_query_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="AdhocQuery",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="AdhocQuery",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def get_adhoc_query_result_content(self, adhoc_query_id, **kwargs):
+        """
+        Downloads the results for a given adhoc ID (from includes results from all monitoring regions).
+
+
+        :param str adhoc_query_id: (required)
+            Adhoc query OCID.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type stream
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_adhoc_query_result_content.py.html>`__ to see an example of how to use get_adhoc_query_result_content API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['adhocQueryId']
+        resource_path = "/adhocQueries/{adhocQueryId}/results/content"
+        method = "GET"
+        operation_name = "get_adhoc_query_result_content"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/AdhocQueryResultCollection/GetAdhocQueryResultContent"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_adhoc_query_result_content got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "adhocQueryId": adhoc_query_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/octet-stream",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def get_condition_metadata_type(self, condition_metadata_type_id, **kwargs):
         """
-        Returns a ConditionMetatDataType object with its details.
+        Returns a ConditionMetatDataType resource with its details.
 
 
         :param str condition_metadata_type_id: (required)
-            The type of the condition meta data.
+            The type of the condition metadata.
 
-            Allowed values are: "ActivityCondition", "SecurityCondition", "CloudGuardCondition", "ThreatCondition"
+            Allowed values are: "ActivityCondition", "SecurityCondition", "CloudGuardCondition", "InstanceSecurityCondition", "ThreatCondition"
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
         :param str service_type: (optional)
-            ServiceType filter for the condition meta data.
+            Service type filter for the condition metadata.
 
         :param str resource_type: (optional)
-            Resource filter for the condition meta data.
+            Resource filter for the condition metadata.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3679,11 +4674,12 @@ class CloudGuardClient(object):
 
     def get_configuration(self, compartment_id, **kwargs):
         """
-        Returns the configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
+        Returns the configuration details for a Cloud Guard tenancy,
+        identified by root compartment OCID.
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -3770,11 +4766,11 @@ class CloudGuardClient(object):
 
     def get_data_mask_rule(self, data_mask_rule_id, **kwargs):
         """
-        Returns a DataMaskRule object, identified by DataMaskRuleId.
+        Returns a DataMaskRule resource, identified by dataMaskRuleId.
 
 
         :param str data_mask_rule_id: (required)
-            OCID of dataMaskRule
+            OCID of the data mask rule
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -3866,11 +4862,11 @@ class CloudGuardClient(object):
 
     def get_data_source(self, data_source_id, **kwargs):
         """
-        Returns a DataSource identified by dataSourceId
+        Returns a data source (DataSource resource) identified by dataSourceId.
 
 
         :param str data_source_id: (required)
-            DataSource OCID
+            Data source OCID.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -3962,11 +4958,11 @@ class CloudGuardClient(object):
 
     def get_detector(self, detector_id, **kwargs):
         """
-        Returns a Detector object, identified by detectorId.
+        Returns a Detector resource, identified by detectorId.
 
 
         :param str detector_id: (required)
-            The Name of Detector.
+            Detector name.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -4058,11 +5054,11 @@ class CloudGuardClient(object):
 
     def get_detector_recipe(self, detector_recipe_id, **kwargs):
         """
-        Returns a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
+        Returns a detector recipe (DetectorRecipe resource) identified by detectorRecipeId.
 
 
         :param str detector_recipe_id: (required)
-            DetectorRecipe OCID
+            Detector recipe OCID
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -4154,14 +5150,14 @@ class CloudGuardClient(object):
 
     def get_detector_recipe_detector_rule(self, detector_recipe_id, detector_rule_id, **kwargs):
         """
-        Returns a detector rule (DetectorRule object) identified by detectorRuleId.
+        Returns a detector rule (DetectorRule resource) identified by detectorRuleId.
 
 
         :param str detector_recipe_id: (required)
-            DetectorRecipe OCID
+            Detector recipe OCID
 
         :param str detector_rule_id: (required)
-            The key of Detector Rule.
+            The unique identifier of a detector rule.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -4254,14 +5250,14 @@ class CloudGuardClient(object):
 
     def get_detector_rule(self, detector_id, detector_rule_id, **kwargs):
         """
-        Returns a detector rule (DetectorRule object) identified by detectorRuleId.
+        Returns a detector rule (DetectorRule resource) identified by detectorRuleId.
 
 
         :param str detector_id: (required)
-            The Name of Detector.
+            Detector name.
 
         :param str detector_rule_id: (required)
-            The key of Detector Rule.
+            The unique identifier of a detector rule.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -4358,7 +5354,7 @@ class CloudGuardClient(object):
 
 
         :param str managed_list_id: (required)
-            The cloudguard list OCID to be passed in the request.
+            The managed list OCID to be passed in the request.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -4450,11 +5446,11 @@ class CloudGuardClient(object):
 
     def get_problem(self, problem_id, **kwargs):
         """
-        Returns the Problem object identified by a problemId.
+        Returns the Problem resource identified by problemId.
 
 
         :param str problem_id: (required)
-            OCId of the problem.
+            OCID of the problem.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -4544,9 +5540,105 @@ class CloudGuardClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_resource(self, resource_id, **kwargs):
+        """
+        Returns a resource identified by resourceId
+
+
+        :param str resource_id: (required)
+            CloudGuard resource OCID
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.Resource`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_resource.py.html>`__ to see an example of how to use get_resource API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['resourceId']
+        resource_path = "/resources/{resourceId}"
+        method = "GET"
+        operation_name = "get_resource"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Resource/GetResource"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_resource got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "resourceId": resource_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Resource",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Resource",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def get_resource_profile(self, resource_profile_id, **kwargs):
         """
-        Returns resource profile details
+        Returns details for a resource profile, identified by resourceProfileId.
 
 
         :param str resource_profile_id: (required)
@@ -4640,13 +5732,113 @@ class CloudGuardClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_resource_vulnerability(self, resource_id, vulnerability_key, **kwargs):
+        """
+        Returns the vulnerability details associated with the cveId where resource is an instance
+
+
+        :param str resource_id: (required)
+            CloudGuard resource OCID
+
+        :param str vulnerability_key: (required)
+            CloudGuard vulnerability id
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.ResourceVulnerability`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_resource_vulnerability.py.html>`__ to see an example of how to use get_resource_vulnerability API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['resourceId', 'vulnerabilityKey']
+        resource_path = "/resources/{resourceId}/vulnerabilities/{vulnerabilityKey}"
+        method = "GET"
+        operation_name = "get_resource_vulnerability"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceVulnerability/GetResourceVulnerability"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_resource_vulnerability got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "resourceId": resource_id,
+            "vulnerabilityKey": vulnerability_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ResourceVulnerability",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ResourceVulnerability",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def get_responder_execution(self, responder_execution_id, **kwargs):
         """
-        Returns a Responder Execution identified by responderExecutionId
+        Returns a responder execution identified by responderExecutionId.
 
 
         :param str responder_execution_id: (required)
-            The identifier of the responder execution.
+            The unique identifier of the responder execution.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -4738,11 +5930,11 @@ class CloudGuardClient(object):
 
     def get_responder_recipe(self, responder_recipe_id, **kwargs):
         """
-        Get a ResponderRecipe by identifier
+        Returns a responder recipe (ResponderRecipe resource) identified by responderRecipeId.
 
 
         :param str responder_recipe_id: (required)
-            OCID of ResponderRecipe
+            OCID of the responder recipe.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -4834,14 +6026,14 @@ class CloudGuardClient(object):
 
     def get_responder_recipe_responder_rule(self, responder_recipe_id, responder_rule_id, **kwargs):
         """
-        Get ResponderRule by identifier
+        Returns a responder rule (ResponderRule resource) identified by responderRuleId.
 
 
         :param str responder_recipe_id: (required)
-            OCID of ResponderRecipe
+            OCID of the responder recipe.
 
         :param str responder_rule_id: (required)
-            The id of ResponderRule
+            Unique identifier of the responder rule.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -4934,11 +6126,11 @@ class CloudGuardClient(object):
 
     def get_responder_rule(self, responder_rule_id, **kwargs):
         """
-        Get a ResponderRule by identifier
+        Returns a responder rule (ResponderRule resource) identified by resonderRuleId.
 
 
         :param str responder_rule_id: (required)
-            The id of ResponderRule
+            Unique identifier of the responder rule.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -5028,13 +6220,111 @@ class CloudGuardClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_saved_query(self, saved_query_id, **kwargs):
+        """
+        Returns a SavedQuery resource identified by savedQueryId.
+
+
+        :param str saved_query_id: (required)
+            Saved query OCID
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.SavedQuery`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_saved_query.py.html>`__ to see an example of how to use get_saved_query API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['savedQueryId']
+        resource_path = "/savedQueries/{savedQueryId}"
+        method = "GET"
+        operation_name = "get_saved_query"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SavedQuery/GetSavedQuery"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_saved_query got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "savedQueryId": saved_query_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="SavedQuery",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="SavedQuery",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def get_security_policy(self, security_policy_id, **kwargs):
         """
-        Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
+        Returns a security zone policy (SecurityPolicy resource), identified by its unique ID
+        (securityPolicyId). When a policy is enabled in a security zone, then any action in
+        the zone that attempts to violate that policy is blocked.
 
 
         :param str security_policy_id: (required)
-            The unique identifier of the security zone policy (`SecurityPolicy`)
+            The unique identifier of the security zone policy. (`SecurityPolicy`)
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -5126,11 +6416,11 @@ class CloudGuardClient(object):
 
     def get_security_recipe(self, security_recipe_id, **kwargs):
         """
-        Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
+        Returns a security zone recipe (SecurityRecipe resource) identified by securityRecipeId.
 
 
         :param str security_recipe_id: (required)
-            The unique identifier of the security zone recipe (`SecurityRecipe`)
+            The unique identifier of the security zone recipe. (`SecurityRecipe`)
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -5222,11 +6512,11 @@ class CloudGuardClient(object):
 
     def get_security_zone(self, security_zone_id, **kwargs):
         """
-        Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone's compartments that violate a policy are denied.
+        Returns a security zone (SecurityZone resource) identified by securityZoneId.
 
 
         :param str security_zone_id: (required)
-            The unique identifier of the security zone (`SecurityZone`)
+            The unique identifier of the security zone (`SecurityZone` resource).
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -5318,7 +6608,7 @@ class CloudGuardClient(object):
 
     def get_sighting(self, sighting_id, **kwargs):
         """
-        Returns Sighting details
+        Returns a single sighting (Sighting resource) identified by sightingId.
 
 
         :param str sighting_id: (required)
@@ -5414,11 +6704,11 @@ class CloudGuardClient(object):
 
     def get_target(self, target_id, **kwargs):
         """
-        Returns a Target identified by targetId
+        Returns a target (Target resource) identified by targetId.
 
 
         :param str target_id: (required)
-            OCID of target
+            OCID of the target
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -5510,14 +6800,14 @@ class CloudGuardClient(object):
 
     def get_target_detector_recipe(self, target_id, target_detector_recipe_id, **kwargs):
         """
-        Get a TargetDetectorRecipe by identifier
+        Returns a target detector recipe (TargetDetectorRecipe resource) identified by targetDetectorRecipeId.
 
 
         :param str target_id: (required)
-            OCID of target
+            OCID of the target
 
         :param str target_detector_recipe_id: (required)
-            OCID of TargetDetectorRecipe
+            OCID of the target detector recipe.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -5610,17 +6900,17 @@ class CloudGuardClient(object):
 
     def get_target_detector_recipe_detector_rule(self, target_id, target_detector_recipe_id, detector_rule_id, **kwargs):
         """
-        Get DetectorRule by identifier
+        Returns DetectorRule resource by identified by targetDetectorRecipeId.
 
 
         :param str target_id: (required)
-            OCID of target
+            OCID of the target
 
         :param str target_detector_recipe_id: (required)
-            OCID of TargetDetectorRecipe
+            OCID of the target detector recipe.
 
         :param str detector_rule_id: (required)
-            The id of DetectorRule
+            The unique identifier of the detector rule.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -5714,14 +7004,15 @@ class CloudGuardClient(object):
 
     def get_target_responder_recipe(self, target_id, target_responder_recipe_id, **kwargs):
         """
-        Get a TargetResponderRecipe by identifier
+        Returns a target responder recipe (TargetResponderRecipe) identified by
+        targetResponderRecipeId for a target (Target resource) identified by targetId.
 
 
         :param str target_id: (required)
-            OCID of target
+            OCID of the target
 
         :param str target_responder_recipe_id: (required)
-            OCID of TargetResponderRecipe
+            OCID of the target responder recipe.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -5814,17 +7105,20 @@ class CloudGuardClient(object):
 
     def get_target_responder_recipe_responder_rule(self, target_id, target_responder_recipe_id, responder_rule_id, **kwargs):
         """
-        Get ResponderRule by identifier
+        Returns a responder rule (ResponderRule resource) identified by
+        responderRuleId, from a target responder recipe (TargetResponderRecipe resource)
+        identified by targetResponderRecipeId, attached to a target (Target resource)
+        identified by targetId.
 
 
         :param str target_id: (required)
-            OCID of target
+            OCID of the target
 
         :param str target_responder_recipe_id: (required)
-            OCID of TargetResponderRecipe
+            OCID of the target responder recipe.
 
         :param str responder_rule_id: (required)
-            The id of ResponderRule
+            Unique identifier of the responder rule.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -5916,9 +7210,105 @@ class CloudGuardClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_wlp_agent(self, wlp_agent_id, **kwargs):
+        """
+        Returns a WlpAgent resource for an on-premise resource identified by wlpAgentId.
+
+
+        :param str wlp_agent_id: (required)
+            WLP agent OCID.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.WlpAgent`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_wlp_agent.py.html>`__ to see an example of how to use get_wlp_agent API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['wlpAgentId']
+        resource_path = "/wlpAgents/{wlpAgentId}"
+        method = "GET"
+        operation_name = "get_wlp_agent"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/WlpAgent/GetWlpAgent"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_wlp_agent got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "wlpAgentId": wlp_agent_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="WlpAgent",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="WlpAgent",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def get_work_request(self, work_request_id, **kwargs):
         """
-        Gets details of the work request with the given ID.
+        Returns details for a work request (WorkRequest resource) identified by workRequestId.
 
 
         :param str work_request_id: (required)
@@ -6012,27 +7402,366 @@ class CloudGuardClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def list_condition_metadata_types(self, compartment_id, **kwargs):
+    def list_adhoc_queries(self, compartment_id, **kwargs):
         """
-        Returns a list of ConditionMetadataType objects.
+        Returns a list of all adhoc queries (AdhocQuery resources) for a compartment
+        identified by compartmentId. List is returned in a AdhocQueryCollection resource
+        with page of AdhocQuerySummary resources.
+
+        The ListAdhocQueries operation returns only the adhoc queries in 'compartmentId' passed.
+        The list does not include any subcompartments of the compartmentId passed.
+
+        The parameter `accessLevel` specifies whether to return only those compartments for which the
+        requestor has INSPECT permissions on at least one resource directly
+        or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+        Principal doesn't have access to even one of the child compartments. This is valid only when
+        `compartmentIdInSubtree` is set to `true`.
+
+        The parameter `compartmentIdInSubtree` applies when you perform ListAdhocQueries on the
+        `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+        To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+        set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
-        :param str lifecycle_state: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+        :param str adhoc_query_status: (optional)
+            The status of the adhoc query created. Default value for state is provisioning. If no value is specified state is provisioning.
 
-            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values are: "CREATING", "CREATED", "IN_PROGRESS", "PARTIALLY_COMPLETED", "EXPIRED", "COMPLETED", "FAILED"
+
+        :param datetime time_started_filter_query_param: (optional)
+            Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
+
+        :param datetime time_ended_filter_query_param: (optional)
+            End time for a filter. If end time is not specified, end time will be set to current time.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param bool compartment_id_in_subtree: (optional)
+            Default is false.
+            When set to true, the hierarchy of compartments is traversed
+            and all compartments and subcompartments in the tenancy are
+            returned depending on the setting of `accessLevel`.
+
+        :param str access_level: (optional)
+            Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
+            Setting this to `ACCESSIBLE` returns only those compartments for which the
+            user has INSPECT permissions directly or indirectly (permissions can be on a
+            resource in a subcompartment).
+            When set to `RESTRICTED` permissions are checked and no partial results are displayed.
+
+            Allowed values are: "RESTRICTED", "ACCESSIBLE"
+
+        :param str sort_order: (optional)
+            The sort order to use
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+
+            Allowed values are: "timeCreated", "displayName"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.AdhocQueryCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_adhoc_queries.py.html>`__ to see an example of how to use list_adhoc_queries API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
+        resource_path = "/adhocQueries"
+        method = "GET"
+        operation_name = "list_adhoc_queries"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/AdhocQuery/ListAdhocQueries"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "adhoc_query_status",
+            "time_started_filter_query_param",
+            "time_ended_filter_query_param",
+            "limit",
+            "page",
+            "compartment_id_in_subtree",
+            "access_level",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_adhoc_queries got unknown kwargs: {extra_kwargs!r}")
+
+        if 'adhoc_query_status' in kwargs:
+            adhoc_query_status_allowed_values = ["CREATING", "CREATED", "IN_PROGRESS", "PARTIALLY_COMPLETED", "EXPIRED", "COMPLETED", "FAILED"]
+            if kwargs['adhoc_query_status'] not in adhoc_query_status_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `adhoc_query_status`, must be one of { adhoc_query_status_allowed_values }"
+                )
+
+        if 'access_level' in kwargs:
+            access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
+            if kwargs['access_level'] not in access_level_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "adhocQueryStatus": kwargs.get("adhoc_query_status", missing),
+            "timeStartedFilterQueryParam": kwargs.get("time_started_filter_query_param", missing),
+            "timeEndedFilterQueryParam": kwargs.get("time_ended_filter_query_param", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "accessLevel": kwargs.get("access_level", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AdhocQueryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AdhocQueryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_adhoc_query_results(self, adhoc_query_id, compartment_id, **kwargs):
+        """
+        Lists the results for a given adhoc ID (from includes results from all monitoring regions).
+
+
+        :param str adhoc_query_id: (required)
+            Adhoc query OCID.
+
+        :param str compartment_id: (required)
+            The OCID of the compartment in which to list resources.
+
+        :param int limit: (optional)
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+
+            Allowed values are: "timeCreated", "displayName"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.AdhocQueryResultCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_adhoc_query_results.py.html>`__ to see an example of how to use list_adhoc_query_results API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['adhocQueryId', 'compartmentId']
+        resource_path = "/adhocQueries/{adhocQueryId}/results"
+        method = "GET"
+        operation_name = "list_adhoc_query_results"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/AdhocQueryResultCollection/ListAdhocQueryResults"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_adhoc_query_results got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "adhocQueryId": adhoc_query_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AdhocQueryResultCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AdhocQueryResultCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_condition_metadata_types(self, compartment_id, **kwargs):
+        """
+        Returns a list of ConditionMetadataType resources.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment in which to list resources.
+
+        :param str lifecycle_state: (optional)
+            The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+
+            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
+
+        :param int limit: (optional)
+            The maximum number of items to return
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str sort_order: (optional)
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -6157,17 +7886,17 @@ class CloudGuardClient(object):
 
     def list_data_mask_rules(self, compartment_id, **kwargs):
         """
-        Returns a list of all DataMaskRule objects in the specified compartmentId (OCID) and its subcompartments.
+        Returns a list of all DataMaskRule resources in the specified compartmentId (OCID) and its subcompartments.
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
 
         :param str lifecycle_state: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+            The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
@@ -6181,13 +7910,13 @@ class CloudGuardClient(object):
             Allowed values are: "RESTRICTED", "ACCESSIBLE"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -6200,15 +7929,15 @@ class CloudGuardClient(object):
             The client request ID for tracing.
 
         :param str data_mask_rule_status: (optional)
-            The status of the dataMaskRule.
+            The status of the data mask rule
 
             Allowed values are: "ENABLED", "DISABLED"
 
         :param str target_id: (optional)
-            OCID of target
+            OCID of the target
 
         :param str iam_group_id: (optional)
-            OCID of iamGroup
+            OCID of the IAM group
 
         :param str target_type: (optional)
             Type of target
@@ -6352,23 +8081,25 @@ class CloudGuardClient(object):
 
     def list_data_source_events(self, data_source_id, **kwargs):
         """
-        Returns a list of events from CloudGuard DataSource
+        Returns a list of data source events
+        (DataSourceEventCollection  resource) from the data source
+        (DataSource resource) identified by dataSourceId.
 
 
         :param str data_source_id: (required)
-            DataSource OCID
+            Data source OCID.
 
         :param str region: (optional)
-            A filter to return only resource their region matches the given region.
+            A filter to return only resource where their region matches the given region.
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -6497,9 +8228,11 @@ class CloudGuardClient(object):
 
     def list_data_sources(self, compartment_id, **kwargs):
         """
-        Returns a list of all Data Sources in a compartment
+        Returns a list of all data sources (DataSource resources) for a compartment
+        identified by compartmentId. List is returned in a DataSourceCollection resource
+        with page of DataSourceSummary resources.
 
-        The ListDataSources operation returns only the data Sources in `compartmentId` passed.
+        The ListAdhocQueries operation returns only the adhoc queries in 'compartmentId' passed.
         The list does not include any subcompartments of the compartmentId passed.
 
         The parameter `accessLevel` specifies whether to return only those compartments for which the
@@ -6508,36 +8241,36 @@ class CloudGuardClient(object):
         Principal doesn't have access to even one of the child compartments. This is valid only when
         `compartmentIdInSubtree` is set to `true`.
 
-        The parameter `compartmentIdInSubtree` applies when you perform ListdataSources on the
+        The parameter `compartmentIdInSubtree` applies when you perform ListAdhocQueries on the
         `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
         To get a full list of all compartments and subcompartments in the tenancy (root compartment),
         set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
 
         :param str data_source_feed_provider: (optional)
-            A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
+            A filter to return only resources when their feed provider matches the given feed provider (`DataSourceFeedProvider` resource).
 
-            Allowed values are: "LOGGINGQUERY"
+            Allowed values are: "LOGGINGQUERY", "SCHEDULEDQUERY"
 
         :param str lifecycle_state: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+            The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str logging_query_type: (optional)
-            A filter to return only resources their query type matches the given LoggingQueryType.
+            A filter to return only resources where their query type matches the given LoggingQueryType.
 
             Allowed values are: "INSIGHT"
 
@@ -6545,7 +8278,7 @@ class CloudGuardClient(object):
             Default is false.
             When set to true, the hierarchy of compartments is traversed
             and all compartments and subcompartments in the tenancy are
-            returned depending on the the setting of `accessLevel`.
+            returned depending on the setting of `accessLevel`.
 
         :param str access_level: (optional)
             Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
@@ -6557,7 +8290,7 @@ class CloudGuardClient(object):
             Allowed values are: "RESTRICTED", "ACCESSIBLE"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -6616,7 +8349,7 @@ class CloudGuardClient(object):
                 f"list_data_sources got unknown kwargs: {extra_kwargs!r}")
 
         if 'data_source_feed_provider' in kwargs:
-            data_source_feed_provider_allowed_values = ["LOGGINGQUERY"]
+            data_source_feed_provider_allowed_values = ["LOGGINGQUERY", "SCHEDULEDQUERY"]
             if kwargs['data_source_feed_provider'] not in data_source_feed_provider_allowed_values:
                 raise ValueError(
                     f"Invalid value for `data_source_feed_provider`, must be one of { data_source_feed_provider_allowed_values }"
@@ -6713,31 +8446,31 @@ class CloudGuardClient(object):
 
     def list_detector_recipe_detector_rules(self, detector_recipe_id, compartment_id, **kwargs):
         """
-        Returns a list of detector rules (DetectorRule objects) for a detector recipe (DetectorRecipe object), identified by detectorRecipeId.
+        Returns a list of detector rules (DetectorRule resources) for a detector recipe (DetectorRecipe resource), identified by detectorRecipeId.
 
 
         :param str detector_recipe_id: (required)
-            DetectorRecipe OCID
+            Detector recipe OCID
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
 
         :param str lifecycle_state: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+            The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -6876,7 +8609,7 @@ class CloudGuardClient(object):
 
     def list_detector_recipes(self, compartment_id, **kwargs):
         """
-        Returns a list of all detector recipes (DetectorRecipe objects) in a compartment, identified by compartmentId.
+        Returns a list of all detector recipes (DetectorRecipe resources) in a compartment, identified by compartmentId.
 
         The ListDetectorRecipes operation returns only the detector recipes in `compartmentId` passed.
         The list does not include any subcompartments of the compartmentId passed.
@@ -6894,23 +8627,23 @@ class CloudGuardClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
 
         :param bool resource_metadata_only: (optional)
             Default is false.
-            When set to true, the list of all Oracle Managed Resources
-            Metadata supported by Cloud Guard are returned.
+            When set to true, the list of all Oracle-managed resources
+            metadata supported by Cloud Guard is returned.
 
         :param str lifecycle_state: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+            The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
@@ -6919,7 +8652,7 @@ class CloudGuardClient(object):
             Default is false.
             When set to true, the hierarchy of compartments is traversed
             and all compartments and subcompartments in the tenancy are
-            returned depending on the the setting of `accessLevel`.
+            returned depending on the setting of `accessLevel`.
 
         :param str access_level: (optional)
             Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
@@ -6931,7 +8664,7 @@ class CloudGuardClient(object):
             Allowed values are: "RESTRICTED", "ACCESSIBLE"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -7071,23 +8804,23 @@ class CloudGuardClient(object):
 
     def list_detector_rules(self, detector_id, compartment_id, **kwargs):
         """
-        Returns a list of detector rules for the DetectorRecipe object identified by detectorId.
+        Returns a list of detector rules for the DetectorRecipe resource identified by detectorId.
 
 
         :param str detector_id: (required)
-            The Name of Detector.
+            Detector name.
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str lifecycle_state: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+            The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
@@ -7095,7 +8828,7 @@ class CloudGuardClient(object):
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -7234,17 +8967,17 @@ class CloudGuardClient(object):
 
     def list_detectors(self, compartment_id, **kwargs):
         """
-        Returns a detector catalog (DetectorCollection object) with a list of DetectorSummary objects.
+        Returns a detector catalog (DetectorCollection resource) with a list of DetectorSummary resources.
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str lifecycle_state: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+            The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
@@ -7252,7 +8985,7 @@ class CloudGuardClient(object):
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -7377,20 +9110,20 @@ class CloudGuardClient(object):
 
     def list_impacted_resources(self, problem_id, **kwargs):
         """
-        Returns a list of impacted resources for a Cloud Guard problem with a specified problem ID.
+        Returns a list of impacted resources for a problem identified by problemId.
 
 
         :param str problem_id: (required)
-            OCId of the problem.
+            OCID of the problem.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -7521,21 +9254,21 @@ class CloudGuardClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str lifecycle_state: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+            The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -7660,7 +9393,7 @@ class CloudGuardClient(object):
 
     def list_managed_lists(self, compartment_id, **kwargs):
         """
-        Returns a list of all ManagedList objects in a compartment, identified by compartmentId.
+        Returns a list of all ManagedList resources in a compartment, identified by compartmentId.
         The ListManagedLists operation returns only the managed lists in `compartmentId` passed.
         The list does not include any subcompartments of the compartmentId passed.
 
@@ -7677,28 +9410,28 @@ class CloudGuardClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
 
         :param bool resource_metadata_only: (optional)
             Default is false.
-            When set to true, the list of all Oracle Managed Resources
-            Metadata supported by Cloud Guard are returned.
+            When set to true, the list of all Oracle-managed resources
+            metadata supported by Cloud Guard is returned.
 
         :param str lifecycle_state: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+            The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param str list_type: (optional)
-            The type of the ManagedList.
+            The type of managed list.
 
             Allowed values are: "CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC", "FUSION_APPS_ROLE", "FUSION_APPS_PERMISSION"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
@@ -7707,7 +9440,7 @@ class CloudGuardClient(object):
             Default is false.
             When set to true, the hierarchy of compartments is traversed
             and all compartments and subcompartments in the tenancy are
-            returned depending on the the setting of `accessLevel`.
+            returned depending on the setting of `accessLevel`.
 
         :param str access_level: (optional)
             Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
@@ -7719,7 +9452,7 @@ class CloudGuardClient(object):
             Allowed values are: "RESTRICTED", "ACCESSIBLE"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -7872,19 +9605,19 @@ class CloudGuardClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -8001,16 +9734,16 @@ class CloudGuardClient(object):
 
 
         :param str problem_id: (required)
-            OCId of the problem.
+            OCID of the problem.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -8137,20 +9870,20 @@ class CloudGuardClient(object):
 
     def list_problem_entities(self, problem_id, **kwargs):
         """
-        Returns a list of entities for a CloudGuard Problem
+        Returns a list of entities for a problem.
 
 
         :param str problem_id: (required)
-            OCId of the problem.
+            OCID of the problem.
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -8277,23 +10010,23 @@ class CloudGuardClient(object):
 
     def list_problem_histories(self, compartment_id, problem_id, **kwargs):
         """
-        Returns a list of actions taken on a Cloud Guard problem.
+        Returns a list of actions taken on a problem.
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str problem_id: (required)
-            OCId of the problem.
+            OCID of the problem.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -8439,7 +10172,7 @@ class CloudGuardClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param datetime time_last_detected_greater_than_or_equal_to: (optional)
             Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
@@ -8454,49 +10187,49 @@ class CloudGuardClient(object):
             End time for a filter. If end time is not specified, end time will be set to current time.
 
         :param str lifecycle_detail: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+            The field life cycle state. Only one state can be provided. Default value for state is active.
 
             Allowed values are: "OPEN", "RESOLVED", "DISMISSED", "DELETED"
 
         :param str lifecycle_state: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+            The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 
             Allowed values are: "ACTIVE", "INACTIVE"
 
         :param str region: (optional)
-            OCI Monitoring region.
+            OCI monitoring region.
 
         :param str risk_level: (optional)
-            Risk level of the Problem.
+            Risk level of the problem.
 
         :param str resource_type: (optional)
-            Resource Type associated with the resource.
+            Resource type associated with the resource.
 
         :param str city: (optional)
             City of the problem.
 
         :param str state: (optional)
-            State of the problem.
+            State or province of the problem.
 
         :param str country: (optional)
             Country of the problem.
 
         :param str label: (optional)
-            Label associated with the Problem.
+            User-defined label associated with the problem.
 
         :param list[str] detector_rule_id_list: (optional)
-            Comma seperated list of detector rule ids to be passed in to match against Problems.
+            Comma seperated list of detector rule IDs to be passed in to match against Problems.
 
         :param str detector_type: (optional)
-            The field to list the Problems by Detector Type. Valid values are IAAS_ACTIVITY_DETECTOR and IAAS_CONFIGURATION_DETECTOR
+            The field to list the problems by detector type.
 
-            Allowed values are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR"
+            Allowed values are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR"
 
         :param str target_id: (optional)
             The ID of the target in which to list resources.
 
         :param str problem_category: (optional)
-            Setting this to `SECURITY_ZONE` returns only security-zone related violations.
+            Setting this to `SECURITY_ZONE` returns only security zone-related violations.
 
             Allowed values are: "SECURITY_ZONE"
 
@@ -8504,7 +10237,7 @@ class CloudGuardClient(object):
             Default is false.
             When set to true, the hierarchy of compartments is traversed
             and all compartments and subcompartments in the tenancy are
-            returned depending on the the setting of `accessLevel`.
+            returned depending on the setting of `accessLevel`.
 
         :param str access_level: (optional)
             Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
@@ -8519,13 +10252,13 @@ class CloudGuardClient(object):
             The ID of the resource associated with the problem.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -8612,7 +10345,7 @@ class CloudGuardClient(object):
                 )
 
         if 'detector_type' in kwargs:
-            detector_type_allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR"]
+            detector_type_allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR"]
             if kwargs['detector_type'] not in detector_type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `detector_type`, must be one of { detector_type_allowed_values }"
@@ -8716,14 +10449,15 @@ class CloudGuardClient(object):
 
     def list_recommendations(self, compartment_id, **kwargs):
         """
-        Returns a list of all Recommendations.
+        Returns a list of recommendations (RecommendationSummaryCollection resource with a page of
+        RecommendationSummary resources) for a specified compartment OCID.
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -8739,7 +10473,7 @@ class CloudGuardClient(object):
             Default is false.
             When set to true, the hierarchy of compartments is traversed
             and all compartments and subcompartments in the tenancy are
-            returned depending on the the setting of `accessLevel`.
+            returned depending on the setting of `accessLevel`.
 
         :param str access_level: (optional)
             Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
@@ -8751,17 +10485,17 @@ class CloudGuardClient(object):
             Allowed values are: "RESTRICTED", "ACCESSIBLE"
 
         :param str lifecycle_state: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+            The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param str lifecycle_detail: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+            The field lifecycle state. Only one state can be provided. Default value for state is active.
 
             Allowed values are: "OPEN", "RESOLVED", "DISMISSED"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
@@ -8902,22 +10636,168 @@ class CloudGuardClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def list_resource_ports(self, resource_id, **kwargs):
+        """
+        Returns the list of open ports associated with the resourceId where resource is an instance
+
+
+        :param str resource_id: (required)
+            CloudGuard resource OCID
+
+        :param str open_port: (optional)
+            open port associated with the resource.
+
+        :param int limit: (optional)
+            The maximum number of items to return
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str sort_order: (optional)
+            The sort order to use
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+
+            Allowed values are: "timeCreated", "displayName"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.ResourcePortCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_resource_ports.py.html>`__ to see an example of how to use list_resource_ports API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['resourceId']
+        resource_path = "/resources/{resourceId}/ports"
+        method = "GET"
+        operation_name = "list_resource_ports"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourcePortCollection/ListResourcePorts"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "open_port",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_resource_ports got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "resourceId": resource_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        query_params = {
+            "openPort": kwargs.get("open_port", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ResourcePortCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ResourcePortCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_resource_profile_endpoints(self, resource_profile_id, **kwargs):
         """
-        Returns a list of endpoints for Cloud Guard resource profile
+        Returns a list of endpoints (ResourceProfileEndpointCollection resource with a page of
+        ResourceProfileEndpointSummary resources) for a resource profile identified by resourceProfileId.
 
 
         :param str resource_profile_id: (required)
             OCID of the resource profile.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -9044,20 +10924,22 @@ class CloudGuardClient(object):
 
     def list_resource_profile_impacted_resources(self, resource_profile_id, **kwargs):
         """
-        Returns a list of impacted resources for Cloud Guard resource profile
+        Returns a list of impacted resources (ResourceProfileImpactedResourceCollection resource
+        with a page of ResourceProfileImpactedResourceSummary resources) for a resource profile
+        identified by resourceProfileId.
 
 
         :param str resource_profile_id: (required)
             OCID of the resource profile.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -9184,8 +11066,8 @@ class CloudGuardClient(object):
 
     def list_resource_profiles(self, compartment_id, **kwargs):
         """
-        Returns a list of all resource profiles identified by the Cloud Guard
-        The ListResourceProfiles operation returns only resource profiles that match the passed filters.
+        Returns a list of all resource profile summaries (ResourceProfileCollection resource with a page of
+        ResourceProfileSummary resources) for a compartment, identified by compartmentId and filtered as specified.
 
         The ListResourceProfiles operation returns only the resource profiles in `compartmentId` passed.
         The parameter `accessLevel` specifies whether to return only those compartments for which the
@@ -9201,7 +11083,7 @@ class CloudGuardClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param datetime time_last_detected_greater_than_or_equal_to: (optional)
             Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
@@ -9219,7 +11101,7 @@ class CloudGuardClient(object):
             Default is false.
             When set to true, the hierarchy of compartments is traversed
             and all compartments and subcompartments in the tenancy are
-            returned depending on the the setting of `accessLevel`.
+            returned depending on the setting of `accessLevel`.
 
         :param str access_level: (optional)
             Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
@@ -9231,28 +11113,28 @@ class CloudGuardClient(object):
             Allowed values are: "RESTRICTED", "ACCESSIBLE"
 
         :param list[str] resource_types: (optional)
-            A filter to return only resources that match the list of resource types given
+            A filter to return only resources that match the list of resource types given.
 
         :param float risk_score_greater_than_or_equal_to: (optional)
-            risk score filter
+            Risk score filter.
 
         :param float risk_score_less_than_or_equal_to: (optional)
-            risk score filter
+            Risk score filter,
 
         :param list[str] techniques: (optional)
-            A filter to return only resources that match the list of techniques given
+            A filter to return only resources that match the list of techniques given.
 
         :param list[str] tactics: (optional)
             A filter to return only resources that match the list of tactics given.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -9397,30 +11279,31 @@ class CloudGuardClient(object):
 
     def list_resource_types(self, compartment_id, **kwargs):
         """
-        Returns a list of resource types.
+        Returns a single ResourceTypeCollection resource, containing a list of resource types,
+        identified by parameters specified.
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str detector_id: (optional)
-            Detector type
+            Detector type.
 
-            Allowed values are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR"
+            Allowed values are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR"
 
         :param str lifecycle_state: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+            The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -9475,7 +11358,7 @@ class CloudGuardClient(object):
                 f"list_resource_types got unknown kwargs: {extra_kwargs!r}")
 
         if 'detector_id' in kwargs:
-            detector_id_allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR"]
+            detector_id_allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR"]
             if kwargs['detector_id'] not in detector_id_allowed_values:
                 raise ValueError(
                     f"Invalid value for `detector_id`, must be one of { detector_id_allowed_values }"
@@ -9552,22 +11435,406 @@ class CloudGuardClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def list_responder_activities(self, problem_id, **kwargs):
+    def list_resource_vulnerabilities(self, resource_id, **kwargs):
         """
-        Returns a list of Responder activities done on CloudGuard Problem
+        Returns the list of vulnerabilities associated with the resourceId where resource is an instance
 
 
-        :param str problem_id: (required)
-            OCId of the problem.
+        :param str resource_id: (required)
+            CloudGuard resource OCID
+
+        :param str cve_id: (optional)
+            CVE ID associated with the resource.
+
+        :param str risk_level: (optional)
+            Risk level of the problem.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+
+            Allowed values are: "timeCreated", "displayName"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.ResourceVulnerabilityCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_resource_vulnerabilities.py.html>`__ to see an example of how to use list_resource_vulnerabilities API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['resourceId']
+        resource_path = "/resources/{resourceId}/vulnerabilities"
+        method = "GET"
+        operation_name = "list_resource_vulnerabilities"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceVulnerabilityCollection/ListResourceVulnerabilities"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "cve_id",
+            "risk_level",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_resource_vulnerabilities got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "resourceId": resource_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        query_params = {
+            "cveId": kwargs.get("cve_id", missing),
+            "riskLevel": kwargs.get("risk_level", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ResourceVulnerabilityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ResourceVulnerabilityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_resources(self, compartment_id, **kwargs):
+        """
+        Returns a list of all resources in a compartment
+
+        The ListResources operation returns only the resources in `compartmentId` passed.
+        The list does not include any subcompartments of the compartmentId passed.
+
+        The parameter `accessLevel` specifies whether to return only those compartments for which the
+        requestor has INSPECT permissions on at least one resource directly
+        or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+        Principal doesn't have access to even one of the child compartments. This is valid only when
+        `compartmentIdInSubtree` is set to `true`.
+
+        The parameter `compartmentIdInSubtree` applies when you perform ListResources on the
+        `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+        To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+        set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment in which to list resources.
+
+        :param str target_id: (optional)
+            The ID of the target in which to list resources.
+
+        :param str region: (optional)
+            OCI monitoring region.
+
+        :param int cvss_score: (optional)
+            Cvss score associated with the resource.
+
+        :param int cvss_score_greater_than: (optional)
+            Cvss score greater than associated with the resource.
+
+        :param int cvss_score_less_than: (optional)
+            Cvss score less than associated with the resource.
+
+        :param str cve_id: (optional)
+            CVE ID associated with the resource.
+
+        :param str risk_level: (optional)
+            Risk level of the problem.
+
+        :param str risk_level_greater_than: (optional)
+            To filter risk level greater than the one mentioned in query param
+
+        :param str risk_level_less_than: (optional)
+            To filter risk level less than the one mentioned in query param
+
+        :param list[str] detector_rule_id_list: (optional)
+            Comma seperated list of detector rule IDs to be passed in to match against Problems.
+
+        :param str detector_type: (optional)
+            The field to list the problems by detector type.
+
+            Allowed values are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR"
+
+        :param int limit: (optional)
+            The maximum number of items to return
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param bool compartment_id_in_subtree: (optional)
+            Default is false.
+            When set to true, the hierarchy of compartments is traversed
+            and all compartments and subcompartments in the tenancy are
+            returned depending on the setting of `accessLevel`.
+
+        :param str access_level: (optional)
+            Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
+            Setting this to `ACCESSIBLE` returns only those compartments for which the
+            user has INSPECT permissions directly or indirectly (permissions can be on a
+            resource in a subcompartment).
+            When set to `RESTRICTED` permissions are checked and no partial results are displayed.
+
+            Allowed values are: "RESTRICTED", "ACCESSIBLE"
+
+        :param str sort_order: (optional)
+            The sort order to use
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+
+            Allowed values are: "timeCreated", "displayName"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.ResourceCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_resources.py.html>`__ to see an example of how to use list_resources API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
+        resource_path = "/resources"
+        method = "GET"
+        operation_name = "list_resources"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Resource/ListResources"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "target_id",
+            "region",
+            "cvss_score",
+            "cvss_score_greater_than",
+            "cvss_score_less_than",
+            "cve_id",
+            "risk_level",
+            "risk_level_greater_than",
+            "risk_level_less_than",
+            "detector_rule_id_list",
+            "detector_type",
+            "limit",
+            "page",
+            "compartment_id_in_subtree",
+            "access_level",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_resources got unknown kwargs: {extra_kwargs!r}")
+
+        if 'detector_type' in kwargs:
+            detector_type_allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR"]
+            if kwargs['detector_type'] not in detector_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `detector_type`, must be one of { detector_type_allowed_values }"
+                )
+
+        if 'access_level' in kwargs:
+            access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
+            if kwargs['access_level'] not in access_level_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "targetId": kwargs.get("target_id", missing),
+            "region": kwargs.get("region", missing),
+            "cvssScore": kwargs.get("cvss_score", missing),
+            "cvssScoreGreaterThan": kwargs.get("cvss_score_greater_than", missing),
+            "cvssScoreLessThan": kwargs.get("cvss_score_less_than", missing),
+            "cveId": kwargs.get("cve_id", missing),
+            "riskLevel": kwargs.get("risk_level", missing),
+            "riskLevelGreaterThan": kwargs.get("risk_level_greater_than", missing),
+            "riskLevelLessThan": kwargs.get("risk_level_less_than", missing),
+            "detectorRuleIdList": self.base_client.generate_collection_format_param(kwargs.get("detector_rule_id_list", missing), 'multi'),
+            "detectorType": kwargs.get("detector_type", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "accessLevel": kwargs.get("access_level", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ResourceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ResourceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_responder_activities(self, problem_id, **kwargs):
+        """
+        Returns a list of responder activities for a problem, identified by problemId, in a
+        ResponderActivityCollection resource, with a page of ResponderActivitySummary resources.
+
+
+        :param str problem_id: (required)
+            OCID of the problem.
+
+        :param int limit: (optional)
+            The maximum number of items to return
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str sort_order: (optional)
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -9694,17 +11961,18 @@ class CloudGuardClient(object):
 
     def list_responder_executions(self, compartment_id, **kwargs):
         """
-        Returns a list of Responder Executions. A Responder Execution is an entity that tracks the collective execution of multiple Responder Rule Executions for a given Problem.
+        Returns a list of responder executions. A responder execution is an entity that tracks
+        the collective execution of multiple responder rule executions for a given problem.
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param bool compartment_id_in_subtree: (optional)
             Default is false.
             When set to true, the hierarchy of compartments is traversed
             and all compartments and subcompartments in the tenancy are
-            returned depending on the the setting of `accessLevel`.
+            returned depending on the setting of `accessLevel`.
 
         :param str access_level: (optional)
             Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
@@ -9716,28 +11984,28 @@ class CloudGuardClient(object):
             Allowed values are: "RESTRICTED", "ACCESSIBLE"
 
         :param list[str] responder_rule_ids: (optional)
-            Responder Rule Ids filter for the Responder Executions.
+            Responder rule unique identifier filter for the responder executions.
 
         :param datetime time_created_greater_than_or_equal_to: (optional)
-            Creation Start time for filtering
+            Creation start time for filtering
 
         :param datetime time_created_less_than_or_equal_to: (optional)
-            Creation End time for filtering
+            Creation end time for filtering.
 
         :param datetime time_completed_greater_than_or_equal_to: (optional)
-            Completion End Time
+            Completion end time.
 
         :param datetime time_completed_less_than_or_equal_to: (optional)
-            Completion Start Time
+            Completion start time.
 
         :param str target_id: (optional)
             The ID of the target in which to list resources.
 
         :param str resource_type: (optional)
-            Resource Type associated with the resource.
+            Resource type associated with the resource.
 
         :param str responder_type: (optional)
-            The field to list the Responder Executions by Responder Type. Valid values are REMEDIATION and NOTIFICATION
+            The field to list the responder executions by responder type. Valid values are REMEDIATION and NOTIFICATION.
 
             Allowed values are: "REMEDIATION", "NOTIFICATION"
 
@@ -9752,13 +12020,13 @@ class CloudGuardClient(object):
             Allowed values are: "MANUAL", "AUTOMATED", "ALL"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -9926,31 +12194,33 @@ class CloudGuardClient(object):
 
     def list_responder_recipe_responder_rules(self, responder_recipe_id, compartment_id, **kwargs):
         """
-        Returns a list of ResponderRule associated with ResponderRecipe.
+        Returns a list of responder rules (ResponderRule resources in a
+        responderRecipeResponderRuleCollection resource, with page of ResponderRuleSummary resources),
+        for a responder recipe (ResponderRecipe resource), identified by responderRecipeId.
 
 
         :param str responder_recipe_id: (required)
-            OCID of ResponderRecipe
+            OCID of the responder recipe.
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
 
         :param str lifecycle_state: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+            The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -10089,7 +12359,8 @@ class CloudGuardClient(object):
 
     def list_responder_recipes(self, compartment_id, **kwargs):
         """
-        Returns a list of all ResponderRecipes in a compartment
+        Returns a list (ResponderRecipeCollection resource, with a page of ResponderRecipeSummary resources)
+        of all responder recipes (RespponderRecipe resources) in a compartment, identified by compartmentId.
         The ListResponderRecipe operation returns only the targets in `compartmentId` passed.
         The list does not include any subcompartments of the compartmentId passed.
 
@@ -10106,23 +12377,23 @@ class CloudGuardClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param bool resource_metadata_only: (optional)
             Default is false.
-            When set to true, the list of all Oracle Managed Resources
-            Metadata supported by Cloud Guard are returned.
+            When set to true, the list of all Oracle-managed resources
+            metadata supported by Cloud Guard is returned.
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
 
         :param str lifecycle_state: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+            The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
@@ -10131,7 +12402,7 @@ class CloudGuardClient(object):
             Default is false.
             When set to true, the hierarchy of compartments is traversed
             and all compartments and subcompartments in the tenancy are
-            returned depending on the the setting of `accessLevel`.
+            returned depending on the setting of `accessLevel`.
 
         :param str access_level: (optional)
             Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
@@ -10143,7 +12414,7 @@ class CloudGuardClient(object):
             Allowed values are: "RESTRICTED", "ACCESSIBLE"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -10283,28 +12554,30 @@ class CloudGuardClient(object):
 
     def list_responder_rules(self, compartment_id, **kwargs):
         """
-        Returns a list of ResponderRule.
+        Returns a list of responder rules for the ResponderRecipe resource
+        identified by responderId. The list is contained in a ResponderRuleCollection
+        resource with a page of ResponderRuleSummary resources.
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
 
         :param str lifecycle_state: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+            The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -10429,16 +12702,177 @@ class CloudGuardClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def list_security_policies(self, compartment_id, **kwargs):
+    def list_saved_queries(self, compartment_id, **kwargs):
         """
-        Returns a list of security zone policies. Specify any compartment.
+        Returns a list of saved queries run in a tenancy.
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
+
+        :param str display_name: (optional)
+            A filter to return only resources that match the entire display name given.
+
+        :param int limit: (optional)
+            The maximum number of items to return
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param bool compartment_id_in_subtree: (optional)
+            Default is false.
+            When set to true, the hierarchy of compartments is traversed
+            and all compartments and subcompartments in the tenancy are
+            returned depending on the setting of `accessLevel`.
+
+        :param str access_level: (optional)
+            Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
+            Setting this to `ACCESSIBLE` returns only those compartments for which the
+            user has INSPECT permissions directly or indirectly (permissions can be on a
+            resource in a subcompartment).
+            When set to `RESTRICTED` permissions are checked and no partial results are displayed.
+
+            Allowed values are: "RESTRICTED", "ACCESSIBLE"
+
+        :param str sort_order: (optional)
+            The sort order to use
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+
+            Allowed values are: "timeCreated", "displayName"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.SavedQueryCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_saved_queries.py.html>`__ to see an example of how to use list_saved_queries API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
+        resource_path = "/savedQueries"
+        method = "GET"
+        operation_name = "list_saved_queries"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SavedQuery/ListSavedQueries"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "display_name",
+            "limit",
+            "page",
+            "compartment_id_in_subtree",
+            "access_level",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_saved_queries got unknown kwargs: {extra_kwargs!r}")
+
+        if 'access_level' in kwargs:
+            access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
+            if kwargs['access_level'] not in access_level_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "displayName": kwargs.get("display_name", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "accessLevel": kwargs.get("access_level", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SavedQueryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SavedQueryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_security_policies(self, compartment_id, **kwargs):
+        """
+        Returns a list of security zone policies (SecurityPolicySummary resources),
+        identified by compartmentId.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment in which to list resources.
 
         :param str lifecycle_state: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+            The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
@@ -10446,16 +12880,16 @@ class CloudGuardClient(object):
             A filter to return only resources that match the entire display name given.
 
         :param str id: (optional)
-            The unique identifier of the security zone policy (`SecurityPolicy`)
+            The unique identifier of the security zone policy. (`SecurityPolicy`)
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -10584,14 +13018,15 @@ class CloudGuardClient(object):
 
     def list_security_recipes(self, compartment_id, **kwargs):
         """
-        Gets a list of all security zone recipes in a compartment.
+        Returns a list of security zone recipes (SecurityRecipeSummary resources) in a
+        compartment, identified by compartmentId.
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str lifecycle_state: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+            The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
@@ -10599,16 +13034,16 @@ class CloudGuardClient(object):
             A filter to return only resources that match the entire display name given.
 
         :param str id: (optional)
-            The unique identifier of the security zone recipe (`SecurityRecipe`)
+            The unique identifier of the security zone recipe. (`SecurityRecipe`)
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -10737,14 +13172,15 @@ class CloudGuardClient(object):
 
     def list_security_zones(self, compartment_id, **kwargs):
         """
-        Gets a list of all security zones in a compartment.
+        Returns a list of security zones (SecurityZone resources) in a compartment identified by
+        compartmentId. List is contained in a page of SecurityZoneSummary resources.
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str lifecycle_state: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+            The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
@@ -10752,22 +13188,22 @@ class CloudGuardClient(object):
             A filter to return only resources that match the entire display name given.
 
         :param str id: (optional)
-            The unique identifier of the security zone (`SecurityZone`)
+            The unique identifier of the security zone (`SecurityZone` resource).
 
         :param str security_recipe_id: (optional)
-            The unique identifier of the security zone recipe (`SecurityRecipe`)
+            The unique identifier of the security zone recipe. (`SecurityRecipe` resource).
 
         :param bool is_required_security_zones_in_subtree: (optional)
-            security zones in the subtree
+            Is security zones in the subtree?
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -10900,20 +13336,22 @@ class CloudGuardClient(object):
 
     def list_sighting_endpoints(self, sighting_id, **kwargs):
         """
-        Returns Sighting endpoints details
+        Returns sighting endpoints details in a
+        SightingEndpointsCollection resource
+        with a page of SightingEndpointSummary resources.
 
 
         :param str sighting_id: (required)
             OCID of the sighting.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -11040,20 +13478,21 @@ class CloudGuardClient(object):
 
     def list_sighting_impacted_resources(self, sighting_id, **kwargs):
         """
-        Return a list of Impacted Resources for a CloudGuard Sighting
+        Returns a list of impacted resources for a sighting, identified by sightingId, in a
+        SightingImpactedResourceCollection resource with a page of SightingImpactedResourceSummary resources.
 
 
         :param str sighting_id: (required)
             OCID of the sighting.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -11180,8 +13619,8 @@ class CloudGuardClient(object):
 
     def list_sightings(self, compartment_id, **kwargs):
         """
-        Returns a list of all Sightings identified by the Cloud Guard
-        The ListSightings operation returns only sightings that match the passed filters.
+        For the parameters passed, returns a list of sightings
+        (SightingCollection resource) with a page of SightingSummary resources.
 
         The parameter `accessLevel` specifies whether to return only those compartments for which the
         requestor has INSPECT permissions on at least one resource directly
@@ -11196,7 +13635,7 @@ class CloudGuardClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str problem_id: (optional)
             OCID of the problem.
@@ -11208,7 +13647,7 @@ class CloudGuardClient(object):
             Default is false.
             When set to true, the hierarchy of compartments is traversed
             and all compartments and subcompartments in the tenancy are
-            returned depending on the the setting of `accessLevel`.
+            returned depending on the setting of `accessLevel`.
 
         :param str access_level: (optional)
             Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
@@ -11220,13 +13659,13 @@ class CloudGuardClient(object):
             Allowed values are: "RESTRICTED", "ACCESSIBLE"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -11367,25 +13806,25 @@ class CloudGuardClient(object):
 
     def list_tactics(self, compartment_id, **kwargs):
         """
-        Returns a list of tactics associated with detector rules.
+        Returns a list of TacticSummary resources for a compartment, identified by compartmentId.
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str lifecycle_state: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+            The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -11514,30 +13953,30 @@ class CloudGuardClient(object):
 
 
         :param str target_id: (required)
-            OCID of target
+            OCID of the target
 
         :param str target_detector_recipe_id: (required)
-            OCID of TargetDetectorRecipe
+            OCID of the target detector recipe.
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
 
         :param str lifecycle_state: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+            The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -11677,31 +14116,33 @@ class CloudGuardClient(object):
 
     def list_target_detector_recipes(self, target_id, compartment_id, **kwargs):
         """
-        Returns a list of all detector recipes associated with the target identified by targetId
+        Returns a list of all target detector recipes (TargetDetectorRecipe resources)
+        associated with a target (Target resource), identified by targetId. The list is contained
+        in a TargetDetectorRecipeCollection resource with page of TargetDetectorRecipeSummary resources.
 
 
         :param str target_id: (required)
-            OCID of target
+            OCID of the target
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
 
         :param str lifecycle_state: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+            The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -11840,34 +14281,37 @@ class CloudGuardClient(object):
 
     def list_target_responder_recipe_responder_rules(self, target_id, target_responder_recipe_id, compartment_id, **kwargs):
         """
-        Returns a list of ResponderRule associated with ResponderRecipe within a Target.
+        Returns a list of responder rules (ResponderRule resources) associated with a
+        responder recipe (ResponderRecipe resource) attached to a Target.
+        List is returned in a TargetResponderRecipeResponderRuleCollection resource
+        with page of TargetResponderRecipeResponderRuleSummary resources.
 
 
         :param str target_id: (required)
-            OCID of target
+            OCID of the target
 
         :param str target_responder_recipe_id: (required)
-            OCID of TargetResponderRecipe
+            OCID of the target responder recipe.
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
 
         :param str lifecycle_state: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+            The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -12007,31 +14451,33 @@ class CloudGuardClient(object):
 
     def list_target_responder_recipes(self, target_id, compartment_id, **kwargs):
         """
-        Returns a list of all responder recipes associated with the target identified by targetId
+        Returns a list of summary information for all responder recipes
+        (TargetResponderRecipeCollection resource, with a page of TargetResponderRecipeSummary resources)
+        attached to a target identified by targetId, located in a compartment identified by compartmentId.
 
 
         :param str target_id: (required)
-            OCID of target
+            OCID of the target
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
 
         :param str lifecycle_state: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+            The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -12170,9 +14616,10 @@ class CloudGuardClient(object):
 
     def list_targets(self, compartment_id, **kwargs):
         """
-        Returns a list of all Targets in a compartment
-        The ListTargets operation returns only the targets in `compartmentId` passed.
-        The list does not include any subcompartments of the compartmentId passed.
+        Returns a list of targets (TargetCollection resource with page of TargetSummary
+        resources) for the target identified by compartmentId. By default, only the target
+        associated with the compartment is returned. Setting compartmentIdInSubtree to true
+        returns the entire hierarchy of targets in subcompartments.
 
         The parameter `accessLevel` specifies whether to return only those compartments for which the
         requestor has INSPECT permissions on at least one resource directly
@@ -12182,12 +14629,12 @@ class CloudGuardClient(object):
 
         The parameter `compartmentIdInSubtree` applies when you perform ListTargets on the
         `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-        To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+        To get a full list of all targets in compartments and subcompartments in the tenancy (root compartment),
         set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
@@ -12198,7 +14645,7 @@ class CloudGuardClient(object):
             security zone creation will be returned.
 
         :param str lifecycle_state: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+            The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
@@ -12206,7 +14653,7 @@ class CloudGuardClient(object):
             Default is false.
             When set to true, the hierarchy of compartments is traversed
             and all compartments and subcompartments in the tenancy are
-            returned depending on the the setting of `accessLevel`.
+            returned depending on the setting of `accessLevel`.
 
         :param str access_level: (optional)
             Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
@@ -12218,13 +14665,13 @@ class CloudGuardClient(object):
             Allowed values are: "RESTRICTED", "ACCESSIBLE"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -12368,24 +14815,24 @@ class CloudGuardClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param list[str] tactics: (optional)
             A filter to return only resources that match the list of tactics given.
 
         :param str lifecycle_state: (optional)
-            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+            The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -12510,9 +14957,139 @@ class CloudGuardClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def list_wlp_agents(self, compartment_id, **kwargs):
+        """
+        Returns a list of WLP agents in a compartment.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment in which to list resources.
+
+        :param int limit: (optional)
+            The maximum number of items to return
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str sort_order: (optional)
+            The sort order to use
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+
+            Allowed values are: "timeCreated", "displayName"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.WlpAgentCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_wlp_agents.py.html>`__ to see an example of how to use list_wlp_agents API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId']
+        resource_path = "/wlpAgents"
+        method = "GET"
+        operation_name = "list_wlp_agents"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/WlpAgent/ListWlpAgents"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_wlp_agents got unknown kwargs: {extra_kwargs!r}")
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="WlpAgentCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="WlpAgentCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
-        Return a (paginated) list of errors for a given work request.
+        Returns a list of errors for a work request
+        identified by workRequestId.
 
 
         :param str work_request_id: (required)
@@ -12525,7 +15102,7 @@ class CloudGuardClient(object):
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
@@ -12533,7 +15110,7 @@ class CloudGuardClient(object):
             Allowed values are: "timeCreated"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -12652,7 +15229,8 @@ class CloudGuardClient(object):
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
-        Return a (paginated) list of logs for a given work request.
+        Returns a paginated list (WorkRequestLogEntryCollection resource)
+        of log entries for a request, identified by workRequestId.
 
 
         :param str work_request_id: (required)
@@ -12665,7 +15243,7 @@ class CloudGuardClient(object):
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
@@ -12673,7 +15251,7 @@ class CloudGuardClient(object):
             Allowed values are: "timeCreated"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -12792,14 +15370,15 @@ class CloudGuardClient(object):
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
-        Lists the work requests in a compartment.
+        Returns a list of work requests (WorkRequestSummaryCollection resource),
+        in a compartment identified by compartmentId.
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str status: (optional)
-            A filter to return only resources their lifecycleState matches the given OperationStatus.
+            A filter to return only resources their lifecycleState matches the given operation status (OperationStatus resource).
 
             Allowed values are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"
 
@@ -12813,10 +15392,10 @@ class CloudGuardClient(object):
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use
 
             Allowed values are: "ASC", "DESC"
 
@@ -12940,14 +15519,17 @@ class CloudGuardClient(object):
 
     def remove_compartment(self, security_zone_id, remove_compartment_details, **kwargs):
         """
-        Removes an existing compartment from a security zone. When you remove a subcompartment from a security zone, it no longer enforces security zone policies on the resources in the subcompartment. You can't remove the primary compartment that was used to create the security zone.
+        Removes a compartment from a security zone (SecurityZone resource), identified by securityZoneId.
+        Pass compartmentId of compartment to remove through a RemoveCompartmentDetails resource. When you remove a
+        subcompartment from a security zone, it no longer enforces security zone policies on the resources in the
+        subcompartment. You can't remove the primary compartment that was used to create the security zone.
 
 
         :param str security_zone_id: (required)
-            The unique identifier of the security zone (`SecurityZone`)
+            The unique identifier of the security zone (`SecurityZone` resource).
 
         :param oci.cloud_guard.models.RemoveCompartmentDetails remove_compartment_details: (required)
-            The compartment to remove from the security zone.
+            The compartment to remove from the security zone
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -13060,14 +15642,15 @@ class CloudGuardClient(object):
 
     def request_risk_scores(self, compartment_id, **kwargs):
         """
-        Examines the number of problems related to the resource and the relative severity of those problems.
+        Returns a page of RiskScoreAggregation resources for a compartment,
+        identified by compartmentId.
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
@@ -13161,12 +15744,12 @@ class CloudGuardClient(object):
 
     def request_security_score_summarized_trend(self, compartment_id, **kwargs):
         """
-        Measures the number of resources examined across all regions and compares it with the
-        number of problems detected, for a given time period.
+        Returns a page of SecurityScoreTrendAggregation resources. These measure the number
+        of resources examined across all regions and compare it with the number of problems detected.
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param datetime time_score_computed_greater_than_or_equal_to: (optional)
             Start time for a filter. If start time is not specified, start time will be set to today's current time - 30 days.
@@ -13175,7 +15758,7 @@ class CloudGuardClient(object):
             End time for a filter. If end time is not specified, end time will be set to today's current time.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
@@ -13273,14 +15856,15 @@ class CloudGuardClient(object):
 
     def request_security_scores(self, compartment_id, **kwargs):
         """
-        Measures the number of resources examined across all regions and compares it with the number of problems detected.
+        Returns a page of SecurityScoreAggregation resources. These measure the number
+        of resources examined across all regions and compare it with the number of problems detected.
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
@@ -13392,13 +15976,13 @@ class CloudGuardClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param bool compartment_id_in_subtree: (optional)
             Default is false.
             When set to true, the hierarchy of compartments is traversed
             and all compartments and subcompartments in the tenancy are
-            returned depending on the the setting of `accessLevel`.
+            returned depending on the setting of `accessLevel`.
 
         :param str access_level: (optional)
             Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
@@ -13410,7 +15994,7 @@ class CloudGuardClient(object):
             Allowed values are: "RESTRICTED", "ACCESSIBLE"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param bool include_unknown_locations: (optional)
             Default is false.
@@ -13542,13 +16126,13 @@ class CloudGuardClient(object):
             Allowed values are: "RESOURCE_TYPE", "REGION", "COMPARTMENT_ID", "RISK_LEVEL"
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param bool compartment_id_in_subtree: (optional)
             Default is false.
             When set to true, the hierarchy of compartments is traversed
             and all compartments and subcompartments in the tenancy are
-            returned depending on the the setting of `accessLevel`.
+            returned depending on the setting of `accessLevel`.
 
         :param str access_level: (optional)
             Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
@@ -13560,7 +16144,7 @@ class CloudGuardClient(object):
             Allowed values are: "RESTRICTED", "ACCESSIBLE"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
@@ -13673,37 +16257,37 @@ class CloudGuardClient(object):
 
     def request_summarized_responder_executions(self, responder_executions_dimensions, compartment_id, **kwargs):
         """
-        Returns the number of Responder Executions, for a given set of dimensions.
+        Returns the number of responder executions, identified by parameters specified, in a page of
+        ResponderExecutionAggregation resources.
 
-        The parameter `accessLevel` specifies whether to return only those compartments for which the
-        requestor has INSPECT permissions on at least one resource directly
-        or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-        Principal doesn't have access to even one of the child compartments. This is valid only when
-        `compartmentIdInSubtree` is set to `true`.
+        Setting accessLevel to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions,
+        directly or indirectly (permissions can be on a resource in a subcompartment). \u201CNot Authorized\u201D is returned
+        if user doesn't have access to at least one of the child compartments. When accessLevel is set to RESTRICTED,
+        permissions are checked and no partial results are displayed. This is valid only when compartmentIdInSubtree is set to true.
 
-        The parameter `compartmentIdInSubtree` applies when you perform summarize API on the
-        `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-        To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-        set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+        Setting accessLevel to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions, directly or
+        indirectly (permissions can be on a resource in a subcompartment). \u201CNot Authorized\u201D is returned if user doesn't have
+        access to at least one of the child compartments. When accessLevel is set to RESTRICTED, permissions are checked
+        and no partial results are displayed. This is valid only when compartmentIdInSubtree is set to true.
 
 
         :param oci.cloud_guard.models.list[str] responder_executions_dimensions: (required)
-            The possible attributes based on which the responder executions can be distinguished
+            The possible attributes based on which the responder executions can be distinguished.
 
             Allowed values are: "RESPONDER_RULE_TYPE", "RESPONDER_EXECUTION_STATUS"
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param list[str] responder_type_filter: (optional)
-            The possible filters for Responder Type Dimension to distinguish Responder Executions.
-            If no values are passed, the metric for responder executions of all reponder types are returned
+            The possible filters for responder type dimension to distinguish responder executions.
+            If no values are passed, the metric for responder executions of all responder types are returned.
 
             Allowed values are: "REMEDIATION", "NOTIFICATION"
 
         :param list[str] responder_execution_status_filter: (optional)
-            The possible filters for Responder Type Dimension to distinguish Responder Executions.
-            If no values are passed, the metric for responder executions of all status are returned
+            The possible filters for responder type dimension to distinguish responder executions.
+            If no values are passed, the metric for responder executions of all status are returned.
 
             Allowed values are: "STARTED", "AWAITING_CONFIRMATION", "SUCCEEDED", "FAILED", "SKIPPED"
 
@@ -13711,7 +16295,7 @@ class CloudGuardClient(object):
             Default is false.
             When set to true, the hierarchy of compartments is traversed
             and all compartments and subcompartments in the tenancy are
-            returned depending on the the setting of `accessLevel`.
+            returned depending on the setting of `accessLevel`.
 
         :param str access_level: (optional)
             Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
@@ -13723,7 +16307,7 @@ class CloudGuardClient(object):
             Allowed values are: "RESTRICTED", "ACCESSIBLE"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
@@ -13860,10 +16444,10 @@ class CloudGuardClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
@@ -13961,10 +16545,10 @@ class CloudGuardClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
@@ -14058,11 +16642,13 @@ class CloudGuardClient(object):
 
     def request_summarized_top_trend_resource_profile_risk_scores(self, compartment_id, **kwargs):
         """
-        Summarizes the resource profile risk score top trends for the given time range based on the search filters.
+        Returns a list of resource profile risk score aggregation summaries
+        (ResourceProfileRiskScoreAggregationSummaryCollection resource with a page of
+        ResourceProfileRiskScoreAggregationSummary resources) for a specified compartment.
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param datetime time_score_computed_greater_than_or_equal_to: (optional)
             Start time for a filter. If start time is not specified, start time will be set to today's current time - 30 days.
@@ -14074,7 +16660,7 @@ class CloudGuardClient(object):
             Default is false.
             When set to true, the hierarchy of compartments is traversed
             and all compartments and subcompartments in the tenancy are
-            returned depending on the the setting of `accessLevel`.
+            returned depending on the setting of `accessLevel`.
 
         :param str sort_by: (optional)
             The field to sort trendlines for resource profiles. Only one sort order may be provided. If no value is specified riskScore is default.
@@ -14094,7 +16680,7 @@ class CloudGuardClient(object):
             Allowed values are: "RESTRICTED", "ACCESSIBLE"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
@@ -14229,7 +16815,7 @@ class CloudGuardClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param datetime time_first_detected_greater_than_or_equal_to: (optional)
             Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
@@ -14241,7 +16827,7 @@ class CloudGuardClient(object):
             Default is false.
             When set to true, the hierarchy of compartments is traversed
             and all compartments and subcompartments in the tenancy are
-            returned depending on the the setting of `accessLevel`.
+            returned depending on the setting of `accessLevel`.
 
         :param str access_level: (optional)
             Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
@@ -14253,7 +16839,7 @@ class CloudGuardClient(object):
             Allowed values are: "RESTRICTED", "ACCESSIBLE"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
@@ -14362,14 +16948,16 @@ class CloudGuardClient(object):
 
     def request_summarized_trend_resource_risk_scores(self, request_summarized_trend_resource_risk_scores_details, compartment_id, **kwargs):
         """
-        Summarizes the resource risk score trend for the given time range based on the search filters.
+        Returns a summary of risk score trends in a  ResourceRiskScoreAggregationCollection resource,
+        with a page of ResourceRiskScoreAggregation resources, filtered by parameters that you specify
+        in a RequestSummarizedTrendResourceRiskScoresDetailsresource.
 
 
         :param oci.cloud_guard.models.RequestSummarizedTrendResourceRiskScoresDetails request_summarized_trend_resource_risk_scores_details: (required)
-            The filter to fetch risk score trend.
+            The filter to fetch risk score trend
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param datetime time_score_computed_greater_than_or_equal_to: (optional)
             Start time for a filter. If start time is not specified, start time will be set to today's current time - 30 days.
@@ -14381,7 +16969,7 @@ class CloudGuardClient(object):
             Default is false.
             When set to true, the hierarchy of compartments is traversed
             and all compartments and subcompartments in the tenancy are
-            returned depending on the the setting of `accessLevel`.
+            returned depending on the setting of `accessLevel`.
 
         :param str access_level: (optional)
             Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
@@ -14393,7 +16981,7 @@ class CloudGuardClient(object):
             Allowed values are: "RESTRICTED", "ACCESSIBLE"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
@@ -14519,19 +17107,19 @@ class CloudGuardClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param datetime time_completed_greater_than_or_equal_to: (optional)
-            Completion End Time
+            Completion end time.
 
         :param datetime time_completed_less_than_or_equal_to: (optional)
-            Completion Start Time
+            Completion start time.
 
         :param bool compartment_id_in_subtree: (optional)
             Default is false.
             When set to true, the hierarchy of compartments is traversed
             and all compartments and subcompartments in the tenancy are
-            returned depending on the the setting of `accessLevel`.
+            returned depending on the setting of `accessLevel`.
 
         :param str access_level: (optional)
             Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
@@ -14543,7 +17131,7 @@ class CloudGuardClient(object):
             Allowed values are: "RESTRICTED", "ACCESSIBLE"
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
@@ -14656,7 +17244,7 @@ class CloudGuardClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param datetime time_score_computed_greater_than_or_equal_to: (optional)
             Start time for a filter. If start time is not specified, start time will be set to today's current time - 30 days.
@@ -14665,7 +17253,7 @@ class CloudGuardClient(object):
             End time for a filter. If end time is not specified, end time will be set to today's current time.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            The maximum number of items to return
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
@@ -14763,12 +17351,11 @@ class CloudGuardClient(object):
 
     def skip_bulk_responder_execution(self, skip_bulk_responder_execution_details, **kwargs):
         """
-        Skips the execution for a bulk of responder executions
-        The operation is atomic in nature
+        Skips the execution for a bulk of responder executions.
 
 
         :param oci.cloud_guard.models.SkipBulkResponderExecutionDetails skip_bulk_responder_execution_details: (required)
-            A list of responder execution ids to skip the execution
+            A list of responder execution IDs to skip the execution
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -14848,14 +17435,14 @@ class CloudGuardClient(object):
 
     def skip_responder_execution(self, responder_execution_id, compartment_id, **kwargs):
         """
-        Skips the execution of the responder execution. When provided, If-Match is checked against ETag values of the resource.
+        Skips the execution of the responder execution. When provided, If-Match is checked against etag values of the resource.
 
 
         :param str responder_execution_id: (required)
-            The identifier of the responder execution.
+            The unique identifier of the responder execution.
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -14971,14 +17558,15 @@ class CloudGuardClient(object):
 
     def trigger_responder(self, problem_id, trigger_responder_details, **kwargs):
         """
-        Sends the problem identified by problemId to the responder engine, to be processed by rule that\u2019s identified by responderRuleId, in the TriggerResponderDetails resource that\u2019s passed.
+        Sends the problem identified by problemId to the responder engine, to be processed by rule
+        that\u2019s identified by responderRuleId, in the TriggerResponderDetails resource that\u2019s passed.
 
 
         :param str problem_id: (required)
-            OCId of the problem.
+            OCID of the problem.
 
         :param oci.cloud_guard.models.TriggerResponderDetails trigger_responder_details: (required)
-            The responder may update the problem.
+            The responder may update the problem
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -15093,7 +17681,7 @@ class CloudGuardClient(object):
 
 
         :param oci.cloud_guard.models.UpdateBulkProblemStatusDetails update_bulk_problem_status_details: (required)
-            A list of problem ids to be passed in to update the Problem status
+            A list of Problem IDs to be passed in to update the Problem status
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -15173,14 +17761,15 @@ class CloudGuardClient(object):
 
     def update_configuration(self, update_configuration_details, compartment_id, **kwargs):
         """
-        Update configuration details for a Cloud Guard tenancy, identified by root compartment OCID. The reporting region cannot be updated once created.
+        Updates configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
+        The reporting region cannot be updated once created.
 
 
         :param oci.cloud_guard.models.UpdateConfigurationDetails update_configuration_details: (required)
-            Update Configuration Details of Cloud Guard for a Tenancy.
+            Updates configuration details of Cloud Guard for a Tenancy.
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment in which to list resources.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -15288,14 +17877,14 @@ class CloudGuardClient(object):
 
     def update_data_mask_rule(self, data_mask_rule_id, update_data_mask_rule_details, **kwargs):
         """
-        Updates a data mask rule (DataMaskRule object) identified by dataMaskRuleId.
+        Updates a data mask rule (DataMaskRule resource) identified by dataMaskRuleId.
 
 
         :param str data_mask_rule_id: (required)
-            OCID of dataMaskRule
+            OCID of the data mask rule
 
         :param oci.cloud_guard.models.UpdateDataMaskRuleDetails update_data_mask_rule_details: (required)
-            The information to be updated.
+            The data mask rule information to be updated
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -15398,14 +17987,15 @@ class CloudGuardClient(object):
 
     def update_data_source(self, data_source_id, update_data_source_details, **kwargs):
         """
-        Updates a data source identified by dataSourceId
+        Updates a data source (DataSource resource) identified by dataSourceId,
+        using values passed in an UpdateDataSourceDetails resource.
 
 
         :param str data_source_id: (required)
-            DataSource OCID
+            Data source OCID.
 
         :param oci.cloud_guard.models.UpdateDataSourceDetails update_data_source_details: (required)
-            Details for the DataSource to be updated
+            Details for the DataSource resource to be updated
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -15516,11 +18106,11 @@ class CloudGuardClient(object):
 
     def update_detector_recipe(self, detector_recipe_id, update_detector_recipe_details, **kwargs):
         """
-        Updates a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
+        Updates a detector recipe (DetectorRecipe resource) identified by detectorRecipeId.
 
 
         :param str detector_recipe_id: (required)
-            DetectorRecipe OCID
+            Detector recipe OCID
 
         :param oci.cloud_guard.models.UpdateDetectorRecipeDetails update_detector_recipe_details: (required)
             Details for the DetectorRecipe to be updated
@@ -15636,17 +18226,17 @@ class CloudGuardClient(object):
 
     def update_detector_recipe_detector_rule(self, detector_recipe_id, detector_rule_id, update_detector_recipe_detector_rule_details, **kwargs):
         """
-        Updates a detector rule (DetectorRule object) identified by detectorRuleId.
+        Updates a detector rule (DetectorRule resource) identified by detectorRuleId.
 
 
         :param str detector_recipe_id: (required)
-            DetectorRecipe OCID
+            Detector recipe OCID
 
         :param str detector_rule_id: (required)
-            The key of Detector Rule.
+            The unique identifier of a detector rule.
 
         :param oci.cloud_guard.models.UpdateDetectorRecipeDetectorRuleDetails update_detector_recipe_detector_rule_details: (required)
-            The details to be updated for DetectorRule.
+            The details to be updated for DetectorRule
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -15750,14 +18340,14 @@ class CloudGuardClient(object):
 
     def update_managed_list(self, managed_list_id, update_managed_list_details, **kwargs):
         """
-        Updates a ManagedList object, identified by managedList.
+        Updates a ManagedList resource, identified by managedList.
 
 
         :param str managed_list_id: (required)
-            The cloudguard list OCID to be passed in the request.
+            The managed list OCID to be passed in the request.
 
         :param oci.cloud_guard.models.UpdateManagedListDetails update_managed_list_details: (required)
-            Details for the ManagedList to be updated
+            Details for the ManagedList resource to be updated
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -15874,10 +18464,10 @@ class CloudGuardClient(object):
 
 
         :param str problem_id: (required)
-            OCId of the problem.
+            OCID of the problem.
 
         :param oci.cloud_guard.models.UpdateProblemStatusDetails update_problem_status_details: (required)
-            The additional details for the problem.
+            The additional details for the problem
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -15990,14 +18580,15 @@ class CloudGuardClient(object):
 
     def update_responder_recipe(self, responder_recipe_id, update_responder_recipe_details, **kwargs):
         """
-        Update the ResponderRecipe resource by identifier
+        Updates a responder recipe (ResponderRecipe resource) identified by
+        responderRecipeId, passed in an UpdateResponderRecipeDetails resource.
 
 
         :param str responder_recipe_id: (required)
-            OCID of ResponderRecipe
+            OCID of the responder recipe.
 
         :param oci.cloud_guard.models.UpdateResponderRecipeDetails update_responder_recipe_details: (required)
-            The details to be updated.
+            The details to be updated
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -16100,17 +18691,18 @@ class CloudGuardClient(object):
 
     def update_responder_recipe_responder_rule(self, responder_recipe_id, responder_rule_id, update_responder_recipe_responder_rule_details, **kwargs):
         """
-        Update the ResponderRule by identifier
+        Updates a responder rule (ResponderRule resource) identified by responderRuleId,
+        passed in a UpdateResponderRecipeResponderRuleDetails resource.
 
 
         :param str responder_recipe_id: (required)
-            OCID of ResponderRecipe
+            OCID of the responder recipe.
 
         :param str responder_rule_id: (required)
-            The id of ResponderRule
+            Unique identifier of the responder rule.
 
         :param oci.cloud_guard.models.UpdateResponderRecipeResponderRuleDetails update_responder_recipe_responder_rule_details: (required)
-            The details to be updated for ResponderRule.
+            The details to be updated for responder rule
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -16212,16 +18804,137 @@ class CloudGuardClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def update_saved_query(self, saved_query_id, update_saved_query_details, **kwargs):
+        """
+        Updates a saved query identified by savedQueryId.
+
+
+        :param str saved_query_id: (required)
+            Saved query OCID
+
+        :param oci.cloud_guard.models.UpdateSavedQueryDetails update_saved_query_details: (required)
+            Details for the SavedQuery resource to be updated
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.SavedQuery`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_saved_query.py.html>`__ to see an example of how to use update_saved_query API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['savedQueryId']
+        resource_path = "/savedQueries/{savedQueryId}"
+        method = "PUT"
+        operation_name = "update_saved_query"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SavedQuery/UpdateSavedQuery"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"update_saved_query got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "savedQueryId": saved_query_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_saved_query_details,
+                response_type="SavedQuery",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_saved_query_details,
+                response_type="SavedQuery",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def update_security_recipe(self, security_recipe_id, update_security_recipe_details, **kwargs):
         """
-        Updates a security zone recipe. A security zone recipe is a collection of security zone policies.
+        Updates a security zone recipe (SecurityRecipe resource), identified by securityRecipeId,
+        using parameters passed in an UpdateSecurityRecipeDetails resource.
 
 
         :param str security_recipe_id: (required)
-            The unique identifier of the security zone recipe (`SecurityRecipe`)
+            The unique identifier of the security zone recipe. (`SecurityRecipe`)
 
         :param oci.cloud_guard.models.UpdateSecurityRecipeDetails update_security_recipe_details: (required)
-            The information to be updated in the security zone recipe.
+            The information to be updated in the security zone recipe
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -16324,14 +19037,15 @@ class CloudGuardClient(object):
 
     def update_security_zone(self, security_zone_id, update_security_zone_details, **kwargs):
         """
-        Updates the security zone identified by its id
+        Updates a security zone (SecurityZone resource) identified by securityZoneId.
+        Pass parameters through an UpdateSecurityZoneDetails resource.
 
 
         :param str security_zone_id: (required)
-            The unique identifier of the security zone (`SecurityZone`)
+            The unique identifier of the security zone (`SecurityZone` resource).
 
         :param oci.cloud_guard.models.UpdateSecurityZoneDetails update_security_zone_details: (required)
-            The security zone information to be updated.
+            The security zone information to be updated
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -16434,14 +19148,15 @@ class CloudGuardClient(object):
 
     def update_target(self, target_id, update_target_details, **kwargs):
         """
-        Updates a Target identified by targetId
+        Updates a target (Target resource) identified by targetId, using parameters
+        passed in an UpdateTargetDetails resource.
 
 
         :param str target_id: (required)
-            OCID of target
+            OCID of the target
 
         :param oci.cloud_guard.models.UpdateTargetDetails update_target_details: (required)
-            The information to be updated.
+            The information to be updated
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -16544,17 +19259,18 @@ class CloudGuardClient(object):
 
     def update_target_detector_recipe(self, target_id, target_detector_recipe_id, update_target_detector_recipe_details, **kwargs):
         """
-        Update the TargetDetectorRecipe resource by identifier
+        Updates a target detector recipe (TargtetDetectorRecipe resource) identified by
+        targetDetectorRecipeId, using parameters passed in an UpdateTargetDetectorRecipeDetails resource.
 
 
         :param str target_id: (required)
-            OCID of target
+            OCID of the target
 
         :param str target_detector_recipe_id: (required)
-            OCID of TargetDetectorRecipe
+            OCID of the target detector recipe.
 
         :param oci.cloud_guard.models.UpdateTargetDetectorRecipeDetails update_target_detector_recipe_details: (required)
-            The details to be updated.
+            The details to be updated
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -16658,20 +19374,20 @@ class CloudGuardClient(object):
 
     def update_target_detector_recipe_detector_rule(self, target_id, target_detector_recipe_id, detector_rule_id, update_target_detector_recipe_detector_rule_details, **kwargs):
         """
-        Update the DetectorRule by identifier
+        Updates the DetectorRule resource identified by targetDetectorRecipeId
 
 
         :param str target_id: (required)
-            OCID of target
+            OCID of the target
 
         :param str target_detector_recipe_id: (required)
-            OCID of TargetDetectorRecipe
+            OCID of the target detector recipe.
 
         :param str detector_rule_id: (required)
-            The id of DetectorRule
+            The unique identifier of the detector rule.
 
         :param oci.cloud_guard.models.UpdateTargetDetectorRecipeDetectorRuleDetails update_target_detector_recipe_detector_rule_details: (required)
-            The details to be updated for DetectorRule.
+            The details to be updated for the detector rule
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -16776,17 +19492,20 @@ class CloudGuardClient(object):
 
     def update_target_responder_recipe(self, target_id, target_responder_recipe_id, update_target_responder_recipe_details, **kwargs):
         """
-        Update the TargetResponderRecipe resource by identifier
+        Updates the target responder recipe (TargetResponderRecipe resource)
+        identified by targetResponderRecipeId, attached to a target identified
+        by targetId. Pass parameters for the update through an
+        UpdateTargetResponderRecipeDetails resource.
 
 
         :param str target_id: (required)
-            OCID of target
+            OCID of the target
 
         :param str target_responder_recipe_id: (required)
-            OCID of TargetResponderRecipe
+            OCID of the target responder recipe.
 
         :param oci.cloud_guard.models.UpdateTargetResponderRecipeDetails update_target_responder_recipe_details: (required)
-            The details to be updated.
+            The details to be updated
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -16890,20 +19609,24 @@ class CloudGuardClient(object):
 
     def update_target_responder_recipe_responder_rule(self, target_id, target_responder_recipe_id, responder_rule_id, update_target_responder_recipe_responder_rule_details, **kwargs):
         """
-        Update the ResponderRule by identifier
+        Updates a responder rule (ResponderRule resource) identified by
+        responderRuleId, for a target responder recipe (TargetResponderRecipe resource)
+        identified by targetResponderRecipeId, for a target (Target resource)
+        identified by targetId. Parameters for the update are passed through an
+        UpdateTargetResponderRecipeResponderRuleDetails resource.
 
 
         :param str target_id: (required)
-            OCID of target
+            OCID of the target
 
         :param str target_responder_recipe_id: (required)
-            OCID of TargetResponderRecipe
+            OCID of the target responder recipe.
 
         :param str responder_rule_id: (required)
-            The id of ResponderRule
+            Unique identifier of the responder rule.
 
         :param oci.cloud_guard.models.UpdateTargetResponderRecipeResponderRuleDetails update_target_responder_recipe_responder_rule_details: (required)
-            The details to be updated for ResponderRule.
+            The details to be updated for the ResponderRule resource.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -17001,6 +19724,126 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 body=update_target_responder_recipe_responder_rule_details,
                 response_type="TargetResponderRecipeResponderRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def update_wlp_agent(self, wlp_agent_id, update_wlp_agent_details, **kwargs):
+        """
+        Updates and renews the certificate for an on-premise WLP agent identified by wlpAgentId.
+
+
+        :param str wlp_agent_id: (required)
+            WLP agent OCID.
+
+        :param oci.cloud_guard.models.UpdateWlpAgentDetails update_wlp_agent_details: (required)
+            Details for the WlpAgent resource to be updated
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.WlpAgent`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/update_wlp_agent.py.html>`__ to see an example of how to use update_wlp_agent API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['wlpAgentId']
+        resource_path = "/wlpAgents/{wlpAgentId}"
+        method = "PUT"
+        operation_name = "update_wlp_agent"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/WlpAgent/UpdateWlpAgent"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"update_wlp_agent got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "wlpAgentId": wlp_agent_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_wlp_agent_details,
+                response_type="WlpAgent",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_wlp_agent_details,
+                response_type="WlpAgent",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,

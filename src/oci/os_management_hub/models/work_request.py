@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequest(object):
     """
-    Describes a work request.
+    An object that defines a work request.
     """
 
     #: A constant which can be used with the operation_type property of a WorkRequest.
@@ -115,6 +115,54 @@ class WorkRequest(object):
     #: This constant has a value of "UPDATE_SOFTWARE_SOURCE"
     OPERATION_TYPE_UPDATE_SOFTWARE_SOURCE = "UPDATE_SOFTWARE_SOURCE"
 
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "IMPORT_CONTENT"
+    OPERATION_TYPE_IMPORT_CONTENT = "IMPORT_CONTENT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "SYNC_AGENT_CONFIG"
+    OPERATION_TYPE_SYNC_AGENT_CONFIG = "SYNC_AGENT_CONFIG"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "INSTALL_WINDOWS_UPDATES"
+    OPERATION_TYPE_INSTALL_WINDOWS_UPDATES = "INSTALL_WINDOWS_UPDATES"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "LIST_WINDOWS_UPDATE"
+    OPERATION_TYPE_LIST_WINDOWS_UPDATE = "LIST_WINDOWS_UPDATE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "GET_WINDOWS_UPDATE_DETAILS"
+    OPERATION_TYPE_GET_WINDOWS_UPDATE_DETAILS = "GET_WINDOWS_UPDATE_DETAILS"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "INSTALL_ALL_WINDOWS_UPDATES"
+    OPERATION_TYPE_INSTALL_ALL_WINDOWS_UPDATES = "INSTALL_ALL_WINDOWS_UPDATES"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "INSTALL_SECURITY_WINDOWS_UPDATES"
+    OPERATION_TYPE_INSTALL_SECURITY_WINDOWS_UPDATES = "INSTALL_SECURITY_WINDOWS_UPDATES"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "INSTALL_BUGFIX_WINDOWS_UPDATES"
+    OPERATION_TYPE_INSTALL_BUGFIX_WINDOWS_UPDATES = "INSTALL_BUGFIX_WINDOWS_UPDATES"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "INSTALL_ENHANCEMENT_WINDOWS_UPDATES"
+    OPERATION_TYPE_INSTALL_ENHANCEMENT_WINDOWS_UPDATES = "INSTALL_ENHANCEMENT_WINDOWS_UPDATES"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "INSTALL_OTHER_WINDOWS_UPDATES"
+    OPERATION_TYPE_INSTALL_OTHER_WINDOWS_UPDATES = "INSTALL_OTHER_WINDOWS_UPDATES"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "REMOVE_CONTENT"
+    OPERATION_TYPE_REMOVE_CONTENT = "REMOVE_CONTENT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UNREGISTER_MANAGED_INSTANCE"
+    OPERATION_TYPE_UNREGISTER_MANAGED_INSTANCE = "UNREGISTER_MANAGED_INSTANCE"
+
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -146,7 +194,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "INSTALL_PACKAGES", "REMOVE_PACKAGES", "UPDATE_PACKAGES", "UPDATE_ALL_PACKAGES", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_KERNEL", "UPDATE_KSPLICE_USERSPACE", "ENABLE_MODULE_STREAMS", "DISABLE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "INSTALL_MODULE_PROFILES", "REMOVE_MODULE_PROFILES", "SET_SOFTWARE_SOURCES", "LIST_PACKAGES", "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "UPDATE", "MODULE_ACTIONS", "LIFECYCLE_PROMOTION", "CREATE_SOFTWARE_SOURCE", "UPDATE_SOFTWARE_SOURCE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INSTALL_PACKAGES", "REMOVE_PACKAGES", "UPDATE_PACKAGES", "UPDATE_ALL_PACKAGES", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_KERNEL", "UPDATE_KSPLICE_USERSPACE", "ENABLE_MODULE_STREAMS", "DISABLE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "INSTALL_MODULE_PROFILES", "REMOVE_MODULE_PROFILES", "SET_SOFTWARE_SOURCES", "LIST_PACKAGES", "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "UPDATE", "MODULE_ACTIONS", "LIFECYCLE_PROMOTION", "CREATE_SOFTWARE_SOURCE", "UPDATE_SOFTWARE_SOURCE", "IMPORT_CONTENT", "SYNC_AGENT_CONFIG", "INSTALL_WINDOWS_UPDATES", "LIST_WINDOWS_UPDATE", "GET_WINDOWS_UPDATE_DETAILS", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REMOVE_CONTENT", "UNREGISTER_MANAGED_INSTANCE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -192,6 +240,10 @@ class WorkRequest(object):
             The value to assign to the package_names property of this WorkRequest.
         :type package_names: list[str]
 
+        :param windows_update_names:
+            The value to assign to the windows_update_names property of this WorkRequest.
+        :type windows_update_names: list[str]
+
         :param module_specs:
             The value to assign to the module_specs property of this WorkRequest.
         :type module_specs: list[oci.os_management_hub.models.ModuleSpecDetails]
@@ -224,6 +276,34 @@ class WorkRequest(object):
             The value to assign to the management_station property of this WorkRequest.
         :type management_station: oci.os_management_hub.models.WorkRequestManagementStationDetails
 
+        :param time_scheduled:
+            The value to assign to the time_scheduled property of this WorkRequest.
+        :type time_scheduled: datetime
+
+        :param content_location:
+            The value to assign to the content_location property of this WorkRequest.
+        :type content_location: str
+
+        :param event_id:
+            The value to assign to the event_id property of this WorkRequest.
+        :type event_id: str
+
+        :param content_checksum:
+            The value to assign to the content_checksum property of this WorkRequest.
+        :type content_checksum: str
+
+        :param retry_of_id:
+            The value to assign to the retry_of_id property of this WorkRequest.
+        :type retry_of_id: str
+
+        :param retry_intervals:
+            The value to assign to the retry_intervals property of this WorkRequest.
+        :type retry_intervals: list[int]
+
+        :param is_managed_by_autonomous_linux:
+            The value to assign to the is_managed_by_autonomous_linux property of this WorkRequest.
+        :type is_managed_by_autonomous_linux: bool
+
         """
         self.swagger_types = {
             'operation_type': 'str',
@@ -237,6 +317,7 @@ class WorkRequest(object):
             'compartment_id': 'str',
             'resources': 'list[WorkRequestResource]',
             'package_names': 'list[str]',
+            'windows_update_names': 'list[str]',
             'module_specs': 'list[ModuleSpecDetails]',
             'percent_complete': 'float',
             'time_created': 'datetime',
@@ -244,7 +325,14 @@ class WorkRequest(object):
             'time_started': 'datetime',
             'time_finished': 'datetime',
             'initiator_id': 'str',
-            'management_station': 'WorkRequestManagementStationDetails'
+            'management_station': 'WorkRequestManagementStationDetails',
+            'time_scheduled': 'datetime',
+            'content_location': 'str',
+            'event_id': 'str',
+            'content_checksum': 'str',
+            'retry_of_id': 'str',
+            'retry_intervals': 'list[int]',
+            'is_managed_by_autonomous_linux': 'bool'
         }
 
         self.attribute_map = {
@@ -259,6 +347,7 @@ class WorkRequest(object):
             'compartment_id': 'compartmentId',
             'resources': 'resources',
             'package_names': 'packageNames',
+            'windows_update_names': 'windowsUpdateNames',
             'module_specs': 'moduleSpecs',
             'percent_complete': 'percentComplete',
             'time_created': 'timeCreated',
@@ -266,7 +355,14 @@ class WorkRequest(object):
             'time_started': 'timeStarted',
             'time_finished': 'timeFinished',
             'initiator_id': 'initiatorId',
-            'management_station': 'managementStation'
+            'management_station': 'managementStation',
+            'time_scheduled': 'timeScheduled',
+            'content_location': 'contentLocation',
+            'event_id': 'eventId',
+            'content_checksum': 'contentChecksum',
+            'retry_of_id': 'retryOfId',
+            'retry_intervals': 'retryIntervals',
+            'is_managed_by_autonomous_linux': 'isManagedByAutonomousLinux'
         }
 
         self._operation_type = None
@@ -280,6 +376,7 @@ class WorkRequest(object):
         self._compartment_id = None
         self._resources = None
         self._package_names = None
+        self._windows_update_names = None
         self._module_specs = None
         self._percent_complete = None
         self._time_created = None
@@ -288,6 +385,13 @@ class WorkRequest(object):
         self._time_finished = None
         self._initiator_id = None
         self._management_station = None
+        self._time_scheduled = None
+        self._content_location = None
+        self._event_id = None
+        self._content_checksum = None
+        self._retry_of_id = None
+        self._retry_intervals = None
+        self._is_managed_by_autonomous_linux = None
 
     @property
     def operation_type(self):
@@ -295,7 +399,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         Type of the work request.
 
-        Allowed values for this property are: "INSTALL_PACKAGES", "REMOVE_PACKAGES", "UPDATE_PACKAGES", "UPDATE_ALL_PACKAGES", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_KERNEL", "UPDATE_KSPLICE_USERSPACE", "ENABLE_MODULE_STREAMS", "DISABLE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "INSTALL_MODULE_PROFILES", "REMOVE_MODULE_PROFILES", "SET_SOFTWARE_SOURCES", "LIST_PACKAGES", "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "UPDATE", "MODULE_ACTIONS", "LIFECYCLE_PROMOTION", "CREATE_SOFTWARE_SOURCE", "UPDATE_SOFTWARE_SOURCE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "INSTALL_PACKAGES", "REMOVE_PACKAGES", "UPDATE_PACKAGES", "UPDATE_ALL_PACKAGES", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_KERNEL", "UPDATE_KSPLICE_USERSPACE", "ENABLE_MODULE_STREAMS", "DISABLE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "INSTALL_MODULE_PROFILES", "REMOVE_MODULE_PROFILES", "SET_SOFTWARE_SOURCES", "LIST_PACKAGES", "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "UPDATE", "MODULE_ACTIONS", "LIFECYCLE_PROMOTION", "CREATE_SOFTWARE_SOURCE", "UPDATE_SOFTWARE_SOURCE", "IMPORT_CONTENT", "SYNC_AGENT_CONFIG", "INSTALL_WINDOWS_UPDATES", "LIST_WINDOWS_UPDATE", "GET_WINDOWS_UPDATE_DETAILS", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REMOVE_CONTENT", "UNREGISTER_MANAGED_INSTANCE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -314,7 +418,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["INSTALL_PACKAGES", "REMOVE_PACKAGES", "UPDATE_PACKAGES", "UPDATE_ALL_PACKAGES", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_KERNEL", "UPDATE_KSPLICE_USERSPACE", "ENABLE_MODULE_STREAMS", "DISABLE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "INSTALL_MODULE_PROFILES", "REMOVE_MODULE_PROFILES", "SET_SOFTWARE_SOURCES", "LIST_PACKAGES", "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "UPDATE", "MODULE_ACTIONS", "LIFECYCLE_PROMOTION", "CREATE_SOFTWARE_SOURCE", "UPDATE_SOFTWARE_SOURCE"]
+        allowed_values = ["INSTALL_PACKAGES", "REMOVE_PACKAGES", "UPDATE_PACKAGES", "UPDATE_ALL_PACKAGES", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_KERNEL", "UPDATE_KSPLICE_USERSPACE", "ENABLE_MODULE_STREAMS", "DISABLE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "INSTALL_MODULE_PROFILES", "REMOVE_MODULE_PROFILES", "SET_SOFTWARE_SOURCES", "LIST_PACKAGES", "SET_MANAGEMENT_STATION_CONFIG", "SYNC_MANAGEMENT_STATION_MIRROR", "UPDATE_MANAGEMENT_STATION_SOFTWARE", "UPDATE", "MODULE_ACTIONS", "LIFECYCLE_PROMOTION", "CREATE_SOFTWARE_SOURCE", "UPDATE_SOFTWARE_SOURCE", "IMPORT_CONTENT", "SYNC_AGENT_CONFIG", "INSTALL_WINDOWS_UPDATES", "LIST_WINDOWS_UPDATE", "GET_WINDOWS_UPDATE_DETAILS", "INSTALL_ALL_WINDOWS_UPDATES", "INSTALL_SECURITY_WINDOWS_UPDATES", "INSTALL_BUGFIX_WINDOWS_UPDATES", "INSTALL_ENHANCEMENT_WINDOWS_UPDATES", "INSTALL_OTHER_WINDOWS_UPDATES", "REMOVE_CONTENT", "UNREGISTER_MANAGED_INSTANCE"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
@@ -353,7 +457,9 @@ class WorkRequest(object):
     def id(self):
         """
         **[Required]** Gets the id of this WorkRequest.
-        The OCID of the work request.
+        The `OCID`__ of the work request.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this WorkRequest.
@@ -365,7 +471,9 @@ class WorkRequest(object):
     def id(self, id):
         """
         Sets the id of this WorkRequest.
-        The OCID of the work request.
+        The `OCID`__ of the work request.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this WorkRequest.
@@ -497,10 +605,11 @@ class WorkRequest(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this WorkRequest.
-        The OCID of the compartment that contains the work request. Work requests should be scoped to
-        the same compartment as the resource it affects. If the work request affects multiple resources,
-        and those resources are not in the same compartment, it is up to the service team to pick the primary
-        resource whose compartment should be used.
+        The `OCID`__ of the compartment that contains the work request.
+        Work requests should be scoped to the same compartment as the resource it affects.
+        If the work request affects multiple resources the different compartments, the services selects the compartment of the primary resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this WorkRequest.
@@ -512,10 +621,11 @@ class WorkRequest(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this WorkRequest.
-        The OCID of the compartment that contains the work request. Work requests should be scoped to
-        the same compartment as the resource it affects. If the work request affects multiple resources,
-        and those resources are not in the same compartment, it is up to the service team to pick the primary
-        resource whose compartment should be used.
+        The `OCID`__ of the compartment that contains the work request.
+        Work requests should be scoped to the same compartment as the resource it affects.
+        If the work request affects multiple resources the different compartments, the services selects the compartment of the primary resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this WorkRequest.
@@ -527,7 +637,9 @@ class WorkRequest(object):
     def resources(self):
         """
         **[Required]** Gets the resources of this WorkRequest.
-        The list of OCIDs for the resources affected by the work request.
+        The list of `OCIDs`__ for the resources affected by the work request.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The resources of this WorkRequest.
@@ -539,7 +651,9 @@ class WorkRequest(object):
     def resources(self, resources):
         """
         Sets the resources of this WorkRequest.
-        The list of OCIDs for the resources affected by the work request.
+        The list of `OCIDs`__ for the resources affected by the work request.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param resources: The resources of this WorkRequest.
@@ -551,7 +665,7 @@ class WorkRequest(object):
     def package_names(self):
         """
         Gets the package_names of this WorkRequest.
-        A list of package names to be installed/updated/removed.
+        A list of package names to be installed, updated, or removed.
 
 
         :return: The package_names of this WorkRequest.
@@ -563,13 +677,37 @@ class WorkRequest(object):
     def package_names(self, package_names):
         """
         Sets the package_names of this WorkRequest.
-        A list of package names to be installed/updated/removed.
+        A list of package names to be installed, updated, or removed.
 
 
         :param package_names: The package_names of this WorkRequest.
         :type: list[str]
         """
         self._package_names = package_names
+
+    @property
+    def windows_update_names(self):
+        """
+        Gets the windows_update_names of this WorkRequest.
+        The UUIDs of the target Windows update (only used when operation type is INSTALL_WINDOWS_UPDATES).
+
+
+        :return: The windows_update_names of this WorkRequest.
+        :rtype: list[str]
+        """
+        return self._windows_update_names
+
+    @windows_update_names.setter
+    def windows_update_names(self, windows_update_names):
+        """
+        Sets the windows_update_names of this WorkRequest.
+        The UUIDs of the target Windows update (only used when operation type is INSTALL_WINDOWS_UPDATES).
+
+
+        :param windows_update_names: The windows_update_names of this WorkRequest.
+        :type: list[str]
+        """
+        self._windows_update_names = windows_update_names
 
     @property
     def module_specs(self):
@@ -623,8 +761,7 @@ class WorkRequest(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this WorkRequest.
-        The date and time the work request was created - as described in
-        `RFC 3339`__, section 14.29.
+        The date and time the work request was created (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -638,8 +775,7 @@ class WorkRequest(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this WorkRequest.
-        The date and time the work request was created - as described in
-        `RFC 3339`__, section 14.29.
+        The date and time the work request was created (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -653,8 +789,7 @@ class WorkRequest(object):
     def time_updated(self):
         """
         Gets the time_updated of this WorkRequest.
-        The date and time the work request was created - as described in
-        `RFC 3339`__, section 14.29.
+        The date and time the work request started (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -668,8 +803,7 @@ class WorkRequest(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this WorkRequest.
-        The date and time the work request was created - as described in
-        `RFC 3339`__, section 14.29.
+        The date and time the work request started (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -683,9 +817,7 @@ class WorkRequest(object):
     def time_started(self):
         """
         Gets the time_started of this WorkRequest.
-        The date and time the work request was started - as described in
-        `RFC 3339`__,
-        section 14.29.
+        The date and time the work request started (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -699,9 +831,7 @@ class WorkRequest(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this WorkRequest.
-        The date and time the work request was started - as described in
-        `RFC 3339`__,
-        section 14.29.
+        The date and time the work request started (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -715,8 +845,7 @@ class WorkRequest(object):
     def time_finished(self):
         """
         Gets the time_finished of this WorkRequest.
-        The date and time the work request was finished - as described in
-        `RFC 3339`__.
+        The date and time the work request completed (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -730,8 +859,7 @@ class WorkRequest(object):
     def time_finished(self, time_finished):
         """
         Sets the time_finished of this WorkRequest.
-        The date and time the work request was finished - as described in
-        `RFC 3339`__.
+        The date and time the work request completed (in `RFC 3339`__ format).
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -745,7 +873,9 @@ class WorkRequest(object):
     def initiator_id(self):
         """
         Gets the initiator_id of this WorkRequest.
-        The OCID of the resource that initiated the work request.
+        The `OCID`__ of the resource that initiated the work request.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The initiator_id of this WorkRequest.
@@ -757,7 +887,9 @@ class WorkRequest(object):
     def initiator_id(self, initiator_id):
         """
         Sets the initiator_id of this WorkRequest.
-        The OCID of the resource that initiated the work request.
+        The `OCID`__ of the resource that initiated the work request.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param initiator_id: The initiator_id of this WorkRequest.
@@ -784,6 +916,182 @@ class WorkRequest(object):
         :type: oci.os_management_hub.models.WorkRequestManagementStationDetails
         """
         self._management_station = management_station
+
+    @property
+    def time_scheduled(self):
+        """
+        Gets the time_scheduled of this WorkRequest.
+        The scheduled date and time to retry the work request (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :return: The time_scheduled of this WorkRequest.
+        :rtype: datetime
+        """
+        return self._time_scheduled
+
+    @time_scheduled.setter
+    def time_scheduled(self, time_scheduled):
+        """
+        Sets the time_scheduled of this WorkRequest.
+        The scheduled date and time to retry the work request (in `RFC 3339`__ format).
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :param time_scheduled: The time_scheduled of this WorkRequest.
+        :type: datetime
+        """
+        self._time_scheduled = time_scheduled
+
+    @property
+    def content_location(self):
+        """
+        Gets the content_location of this WorkRequest.
+        The location of the bundle in the filesystem of the resource associated to this work request.
+
+
+        :return: The content_location of this WorkRequest.
+        :rtype: str
+        """
+        return self._content_location
+
+    @content_location.setter
+    def content_location(self, content_location):
+        """
+        Sets the content_location of this WorkRequest.
+        The location of the bundle in the filesystem of the resource associated to this work request.
+
+
+        :param content_location: The content_location of this WorkRequest.
+        :type: str
+        """
+        self._content_location = content_location
+
+    @property
+    def event_id(self):
+        """
+        Gets the event_id of this WorkRequest.
+        The event id of the content. This property is required when the work request type is IMPORT_CONTENT or REMOVE_CONTENT.
+
+
+        :return: The event_id of this WorkRequest.
+        :rtype: str
+        """
+        return self._event_id
+
+    @event_id.setter
+    def event_id(self, event_id):
+        """
+        Sets the event_id of this WorkRequest.
+        The event id of the content. This property is required when the work request type is IMPORT_CONTENT or REMOVE_CONTENT.
+
+
+        :param event_id: The event_id of this WorkRequest.
+        :type: str
+        """
+        self._event_id = event_id
+
+    @property
+    def content_checksum(self):
+        """
+        Gets the content_checksum of this WorkRequest.
+        The EventFingerprint associated with the content. This property is required when the work request type is IMPORT_CONTENT or REMOVE_CONTENT.
+
+
+        :return: The content_checksum of this WorkRequest.
+        :rtype: str
+        """
+        return self._content_checksum
+
+    @content_checksum.setter
+    def content_checksum(self, content_checksum):
+        """
+        Sets the content_checksum of this WorkRequest.
+        The EventFingerprint associated with the content. This property is required when the work request type is IMPORT_CONTENT or REMOVE_CONTENT.
+
+
+        :param content_checksum: The content_checksum of this WorkRequest.
+        :type: str
+        """
+        self._content_checksum = content_checksum
+
+    @property
+    def retry_of_id(self):
+        """
+        Gets the retry_of_id of this WorkRequest.
+        The `OCID`__ of the original work request that is being retried.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The retry_of_id of this WorkRequest.
+        :rtype: str
+        """
+        return self._retry_of_id
+
+    @retry_of_id.setter
+    def retry_of_id(self, retry_of_id):
+        """
+        Sets the retry_of_id of this WorkRequest.
+        The `OCID`__ of the original work request that is being retried.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param retry_of_id: The retry_of_id of this WorkRequest.
+        :type: str
+        """
+        self._retry_of_id = retry_of_id
+
+    @property
+    def retry_intervals(self):
+        """
+        Gets the retry_intervals of this WorkRequest.
+        Indicates whether this work request is managed by the Autonomous Linux service.
+
+
+        :return: The retry_intervals of this WorkRequest.
+        :rtype: list[int]
+        """
+        return self._retry_intervals
+
+    @retry_intervals.setter
+    def retry_intervals(self, retry_intervals):
+        """
+        Sets the retry_intervals of this WorkRequest.
+        Indicates whether this work request is managed by the Autonomous Linux service.
+
+
+        :param retry_intervals: The retry_intervals of this WorkRequest.
+        :type: list[int]
+        """
+        self._retry_intervals = retry_intervals
+
+    @property
+    def is_managed_by_autonomous_linux(self):
+        """
+        Gets the is_managed_by_autonomous_linux of this WorkRequest.
+        Indicates whether this work request is managed by the Autonomous Linux service.
+
+
+        :return: The is_managed_by_autonomous_linux of this WorkRequest.
+        :rtype: bool
+        """
+        return self._is_managed_by_autonomous_linux
+
+    @is_managed_by_autonomous_linux.setter
+    def is_managed_by_autonomous_linux(self, is_managed_by_autonomous_linux):
+        """
+        Sets the is_managed_by_autonomous_linux of this WorkRequest.
+        Indicates whether this work request is managed by the Autonomous Linux service.
+
+
+        :param is_managed_by_autonomous_linux: The is_managed_by_autonomous_linux of this WorkRequest.
+        :type: bool
+        """
+        self._is_managed_by_autonomous_linux = is_managed_by_autonomous_linux
 
     def __repr__(self):
         return formatted_flat_dict(self)

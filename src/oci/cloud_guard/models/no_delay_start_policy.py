@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class NoDelayStartPolicy(ContinuousQueryStartPolicy):
     """
-    Continuous query start policy that starts the query immediately.
+    Continuous query start policy that starts the query immediately
     """
 
     def __init__(self, **kwargs):

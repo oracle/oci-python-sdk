@@ -36,7 +36,7 @@ class PrivateIp(object):
     :class:`CreateVnicDetails` when calling either
     :func:`launch_instance` or
     :func:`attach_vnic`. To update the hostname
-    for a primary private IP, you use :func:`update_vnic`.
+    for a primary private IP, you use `:func:`update_vnic``.
 
     `PrivateIp` objects that are created for use with the Oracle Cloud VMware Solution are
     assigned to a VLAN and not a VNIC in a subnet. See the

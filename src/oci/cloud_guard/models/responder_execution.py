@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResponderExecution(object):
     """
-    Responder Execution Object.
+    Attributes for a responder execution (ResponderExecution resource).
     """
 
     #: A constant which can be used with the responder_rule_type property of a ResponderExecution.
@@ -138,6 +138,10 @@ class ResponderExecution(object):
             The value to assign to the responder_rule_execution_details property of this ResponderExecution.
         :type responder_rule_execution_details: oci.cloud_guard.models.ResponderRuleExecutionDetails
 
+        :param locks:
+            The value to assign to the locks property of this ResponderExecution.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -155,7 +159,8 @@ class ResponderExecution(object):
             'responder_execution_status': 'str',
             'responder_execution_mode': 'str',
             'message': 'str',
-            'responder_rule_execution_details': 'ResponderRuleExecutionDetails'
+            'responder_rule_execution_details': 'ResponderRuleExecutionDetails',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -174,7 +179,8 @@ class ResponderExecution(object):
             'responder_execution_status': 'responderExecutionStatus',
             'responder_execution_mode': 'responderExecutionMode',
             'message': 'message',
-            'responder_rule_execution_details': 'responderRuleExecutionDetails'
+            'responder_rule_execution_details': 'responderRuleExecutionDetails',
+            'locks': 'locks'
         }
 
         self._id = None
@@ -193,6 +199,7 @@ class ResponderExecution(object):
         self._responder_execution_mode = None
         self._message = None
         self._responder_rule_execution_details = None
+        self._locks = None
 
     @property
     def id(self):
@@ -222,7 +229,7 @@ class ResponderExecution(object):
     def responder_rule_id(self):
         """
         **[Required]** Gets the responder_rule_id of this ResponderExecution.
-        Responder Rule id for the responder execution
+        Responder rule ID for the responder execution
 
 
         :return: The responder_rule_id of this ResponderExecution.
@@ -234,7 +241,7 @@ class ResponderExecution(object):
     def responder_rule_id(self, responder_rule_id):
         """
         Sets the responder_rule_id of this ResponderExecution.
-        Responder Rule id for the responder execution
+        Responder rule ID for the responder execution
 
 
         :param responder_rule_id: The responder_rule_id of this ResponderExecution.
@@ -246,7 +253,7 @@ class ResponderExecution(object):
     def responder_rule_type(self):
         """
         **[Required]** Gets the responder_rule_type of this ResponderExecution.
-        Rule Type for the responder execution
+        Responder rule type for the responder execution
 
         Allowed values for this property are: "REMEDIATION", "NOTIFICATION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -261,7 +268,7 @@ class ResponderExecution(object):
     def responder_rule_type(self, responder_rule_type):
         """
         Sets the responder_rule_type of this ResponderExecution.
-        Rule Type for the responder execution
+        Responder rule type for the responder execution
 
 
         :param responder_rule_type: The responder_rule_type of this ResponderExecution.
@@ -276,7 +283,7 @@ class ResponderExecution(object):
     def responder_rule_name(self):
         """
         **[Required]** Gets the responder_rule_name of this ResponderExecution.
-        Rule name for the responder execution
+        Responder rule name for the responder execution
 
 
         :return: The responder_rule_name of this ResponderExecution.
@@ -288,7 +295,7 @@ class ResponderExecution(object):
     def responder_rule_name(self, responder_rule_name):
         """
         Sets the responder_rule_name of this ResponderExecution.
-        Rule name for the responder execution
+        Responder rule name for the responder execution
 
 
         :param responder_rule_name: The responder_rule_name of this ResponderExecution.
@@ -300,7 +307,7 @@ class ResponderExecution(object):
     def problem_id(self):
         """
         **[Required]** Gets the problem_id of this ResponderExecution.
-        Problem id associated with the responder execution
+        Problem ID associated with the responder execution
 
 
         :return: The problem_id of this ResponderExecution.
@@ -312,7 +319,7 @@ class ResponderExecution(object):
     def problem_id(self, problem_id):
         """
         Sets the problem_id of this ResponderExecution.
-        Problem id associated with the responder execution
+        Problem ID associated with the responder execution
 
 
         :param problem_id: The problem_id of this ResponderExecution.
@@ -324,7 +331,7 @@ class ResponderExecution(object):
     def region(self):
         """
         **[Required]** Gets the region of this ResponderExecution.
-        region where the problem is found
+        Region where the problem is found
 
 
         :return: The region of this ResponderExecution.
@@ -336,7 +343,7 @@ class ResponderExecution(object):
     def region(self, region):
         """
         Sets the region of this ResponderExecution.
-        region where the problem is found
+        Region where the problem is found
 
 
         :param region: The region of this ResponderExecution.
@@ -348,7 +355,7 @@ class ResponderExecution(object):
     def target_id(self):
         """
         **[Required]** Gets the target_id of this ResponderExecution.
-        targetId of the problem for the responder execution
+        Target ID of the problem for the responder execution
 
 
         :return: The target_id of this ResponderExecution.
@@ -360,7 +367,7 @@ class ResponderExecution(object):
     def target_id(self, target_id):
         """
         Sets the target_id of this ResponderExecution.
-        targetId of the problem for the responder execution
+        Target ID of the problem for the responder execution
 
 
         :param target_id: The target_id of this ResponderExecution.
@@ -372,7 +379,7 @@ class ResponderExecution(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ResponderExecution.
-        compartment id of the responder execution for the problem
+        Compartment OCID of the responder execution for the problem
 
 
         :return: The compartment_id of this ResponderExecution.
@@ -384,7 +391,7 @@ class ResponderExecution(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ResponderExecution.
-        compartment id of the responder execution for the problem
+        Compartment OCID of the responder execution for the problem
 
 
         :param compartment_id: The compartment_id of this ResponderExecution.
@@ -396,7 +403,7 @@ class ResponderExecution(object):
     def resource_type(self):
         """
         **[Required]** Gets the resource_type of this ResponderExecution.
-        resource type of the problem for the responder execution
+        Resource type of the problem for the responder execution
 
 
         :return: The resource_type of this ResponderExecution.
@@ -408,7 +415,7 @@ class ResponderExecution(object):
     def resource_type(self, resource_type):
         """
         Sets the resource_type of this ResponderExecution.
-        resource type of the problem for the responder execution
+        Resource type of the problem for the responder execution
 
 
         :param resource_type: The resource_type of this ResponderExecution.
@@ -420,7 +427,7 @@ class ResponderExecution(object):
     def resource_name(self):
         """
         **[Required]** Gets the resource_name of this ResponderExecution.
-        resource name of the problem for the responder execution. TODO-DOC link to resource definition doc
+        Resource name of the problem for the responder execution.
 
 
         :return: The resource_name of this ResponderExecution.
@@ -432,7 +439,7 @@ class ResponderExecution(object):
     def resource_name(self, resource_name):
         """
         Sets the resource_name of this ResponderExecution.
-        resource name of the problem for the responder execution. TODO-DOC link to resource definition doc
+        Resource name of the problem for the responder execution.
 
 
         :param resource_name: The resource_name of this ResponderExecution.
@@ -492,7 +499,7 @@ class ResponderExecution(object):
     def responder_execution_status(self):
         """
         **[Required]** Gets the responder_execution_status of this ResponderExecution.
-        current execution status of the responder
+        Current execution status of the responder
 
         Allowed values for this property are: "STARTED", "AWAITING_CONFIRMATION", "AWAITING_INPUT", "SUCCEEDED", "FAILED", "SKIPPED", "ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -507,7 +514,7 @@ class ResponderExecution(object):
     def responder_execution_status(self, responder_execution_status):
         """
         Sets the responder_execution_status of this ResponderExecution.
-        current execution status of the responder
+        Current execution status of the responder
 
 
         :param responder_execution_status: The responder_execution_status of this ResponderExecution.
@@ -522,7 +529,7 @@ class ResponderExecution(object):
     def responder_execution_mode(self):
         """
         **[Required]** Gets the responder_execution_mode of this ResponderExecution.
-        execution mode of the responder
+        Execution mode of the responder
 
         Allowed values for this property are: "MANUAL", "AUTOMATED", "ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -537,7 +544,7 @@ class ResponderExecution(object):
     def responder_execution_mode(self, responder_execution_mode):
         """
         Sets the responder_execution_mode of this ResponderExecution.
-        execution mode of the responder
+        Execution mode of the responder
 
 
         :param responder_execution_mode: The responder_execution_mode of this ResponderExecution.
@@ -552,7 +559,7 @@ class ResponderExecution(object):
     def message(self):
         """
         Gets the message of this ResponderExecution.
-        Message about the responder execution.
+        Message about the responder execution
 
 
         :return: The message of this ResponderExecution.
@@ -564,7 +571,7 @@ class ResponderExecution(object):
     def message(self, message):
         """
         Sets the message of this ResponderExecution.
-        Message about the responder execution.
+        Message about the responder execution
 
 
         :param message: The message of this ResponderExecution.
@@ -591,6 +598,30 @@ class ResponderExecution(object):
         :type: oci.cloud_guard.models.ResponderRuleExecutionDetails
         """
         self._responder_rule_execution_details = responder_rule_execution_details
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this ResponderExecution.
+        Locks associated with this resource.
+
+
+        :return: The locks of this ResponderExecution.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this ResponderExecution.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this ResponderExecution.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

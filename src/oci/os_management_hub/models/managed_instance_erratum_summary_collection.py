@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagedInstanceErratumSummaryCollection(object):
     """
-    Results of an errata search on a managed instance.
+    The set of errata returned for the :func:`list_managed_instance_errata` operation.
     """
 
     def __init__(self, **kwargs):

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SoftwarePackageCollection(object):
     """
-    Results of a software package search. Contains boh software package summary items and other information, such as metadata.
+    A set of software packages returned for the :func:`list_software_packages` operation or :func:`list_all_software_packages` operation.
     """
 
     def __init__(self, **kwargs):

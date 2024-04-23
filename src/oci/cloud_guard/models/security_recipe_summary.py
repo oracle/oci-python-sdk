@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SecurityRecipeSummary(object):
     """
-    Summary information for a security zone recipe. A security zone recipe is a collection of security zone policies. Oracle Cloud Infrastructure enforces these policies on security zones that use the recipe.
+    Summary information for a Security Zones recipe.
     """
 
     #: A constant which can be used with the owner property of a SecurityRecipeSummary.
@@ -163,7 +163,7 @@ class SecurityRecipeSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this SecurityRecipeSummary.
-        Unique identifier that is immutable on creation
+        Unique identifier that can't be changed after creation
 
 
         :return: The id of this SecurityRecipeSummary.
@@ -175,7 +175,7 @@ class SecurityRecipeSummary(object):
     def id(self, id):
         """
         Sets the id of this SecurityRecipeSummary.
-        Unique identifier that is immutable on creation
+        Unique identifier that can't be changed after creation
 
 
         :param id: The id of this SecurityRecipeSummary.
@@ -235,7 +235,7 @@ class SecurityRecipeSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this SecurityRecipeSummary.
-        The id of the compartment that contains the recipe
+        The OCID of the compartment that contains the recipe
 
 
         :return: The compartment_id of this SecurityRecipeSummary.
@@ -247,7 +247,7 @@ class SecurityRecipeSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this SecurityRecipeSummary.
-        The id of the compartment that contains the recipe
+        The OCID of the compartment that contains the recipe
 
 
         :param compartment_id: The compartment_id of this SecurityRecipeSummary.
@@ -289,7 +289,7 @@ class SecurityRecipeSummary(object):
     def security_policies(self):
         """
         **[Required]** Gets the security_policies of this SecurityRecipeSummary.
-        The list of `SecurityPolicy` ids that are included in the recipe
+        The list of security policy IDs that are included in the recipe
 
 
         :return: The security_policies of this SecurityRecipeSummary.
@@ -301,7 +301,7 @@ class SecurityRecipeSummary(object):
     def security_policies(self, security_policies):
         """
         Sets the security_policies of this SecurityRecipeSummary.
-        The list of `SecurityPolicy` ids that are included in the recipe
+        The list of security policy IDs that are included in the recipe
 
 
         :param security_policies: The security_policies of this SecurityRecipeSummary.
@@ -361,7 +361,7 @@ class SecurityRecipeSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this SecurityRecipeSummary.
-        The current state of the recipe
+        The current lifecycle state of the recipe
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -376,7 +376,7 @@ class SecurityRecipeSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this SecurityRecipeSummary.
-        The current state of the recipe
+        The current lifecycle state of the recipe
 
 
         :param lifecycle_state: The lifecycle_state of this SecurityRecipeSummary.

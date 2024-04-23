@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DetachManagedInstancesFromManagedInstanceGroupDetails(object):
     """
-    The managed instance OCIDs to detach from the managed instance group.
+    Provides the information used to detach managed instances from a group.
     """
 
     def __init__(self, **kwargs):
@@ -38,8 +38,10 @@ class DetachManagedInstancesFromManagedInstanceGroupDetails(object):
     @property
     def managed_instances(self):
         """
-        Gets the managed_instances of this DetachManagedInstancesFromManagedInstanceGroupDetails.
-        The list of managed instance OCIDs to be detached.
+        **[Required]** Gets the managed_instances of this DetachManagedInstancesFromManagedInstanceGroupDetails.
+        List of managed instance `OCIDs`__ to detach from the group.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_instances of this DetachManagedInstancesFromManagedInstanceGroupDetails.
@@ -51,7 +53,9 @@ class DetachManagedInstancesFromManagedInstanceGroupDetails(object):
     def managed_instances(self, managed_instances):
         """
         Sets the managed_instances of this DetachManagedInstancesFromManagedInstanceGroupDetails.
-        The list of managed instance OCIDs to be detached.
+        List of managed instance `OCIDs`__ to detach from the group.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_instances: The managed_instances of this DetachManagedInstancesFromManagedInstanceGroupDetails.

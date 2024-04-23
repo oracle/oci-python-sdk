@@ -6,6 +6,7 @@ Os Management Hub
     :nosignatures:
     :template: autosummary/service_client.rst
 
+    oci.os_management_hub.EventClient
     oci.os_management_hub.LifecycleEnvironmentClient
     oci.os_management_hub.ManagedInstanceClient
     oci.os_management_hub.ManagedInstanceGroupClient
@@ -15,6 +16,7 @@ Os Management Hub
     oci.os_management_hub.ScheduledJobClient
     oci.os_management_hub.SoftwareSourceClient
     oci.os_management_hub.WorkRequestClient
+    oci.os_management_hub.EventClientCompositeOperations
     oci.os_management_hub.LifecycleEnvironmentClientCompositeOperations
     oci.os_management_hub.ManagedInstanceClientCompositeOperations
     oci.os_management_hub.ManagedInstanceGroupClientCompositeOperations
@@ -34,15 +36,29 @@ Os Management Hub
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.os_management_hub.models.AddPackagesToSoftwareSourceDetails
+    oci.os_management_hub.models.AgentEvent
+    oci.os_management_hub.models.AgentEventData
     oci.os_management_hub.models.AttachManagedInstancesToLifecycleStageDetails
     oci.os_management_hub.models.AttachManagedInstancesToManagedInstanceGroupDetails
+    oci.os_management_hub.models.AttachProfileToManagedInstanceDetails
     oci.os_management_hub.models.AttachSoftwareSourcesToManagedInstanceDetails
     oci.os_management_hub.models.AttachSoftwareSourcesToManagedInstanceGroupDetails
+    oci.os_management_hub.models.AutonomousSettings
     oci.os_management_hub.models.AvailablePackageCollection
     oci.os_management_hub.models.AvailablePackageSummary
     oci.os_management_hub.models.AvailableSoftwareSourceCollection
     oci.os_management_hub.models.AvailableSoftwareSourceSummary
+    oci.os_management_hub.models.AvailableWindowsUpdateCollection
+    oci.os_management_hub.models.AvailableWindowsUpdateSummary
     oci.os_management_hub.models.ChangeAvailabilityOfSoftwareSourcesDetails
+    oci.os_management_hub.models.ChangeEventCompartmentDetails
+    oci.os_management_hub.models.ChangeLifecycleEnvironmentCompartmentDetails
+    oci.os_management_hub.models.ChangeManagedInstanceGroupCompartmentDetails
+    oci.os_management_hub.models.ChangeManagementStationCompartmentDetails
+    oci.os_management_hub.models.ChangeProfileCompartmentDetails
+    oci.os_management_hub.models.ChangeScheduledJobCompartmentDetails
+    oci.os_management_hub.models.ChangeSoftwareSourceCompartmentDetails
     oci.os_management_hub.models.CreateCustomSoftwareSourceDetails
     oci.os_management_hub.models.CreateEntitlementDetails
     oci.os_management_hub.models.CreateGroupProfileDetails
@@ -58,6 +74,7 @@ Os Management Hub
     oci.os_management_hub.models.CreateSoftwareSourceDetails
     oci.os_management_hub.models.CreateSoftwareSourceProfileDetails
     oci.os_management_hub.models.CreateStationProfileDetails
+    oci.os_management_hub.models.CreateVendorSoftwareSourceDetails
     oci.os_management_hub.models.CreateVersionedCustomSoftwareSourceDetails
     oci.os_management_hub.models.CustomSoftwareSource
     oci.os_management_hub.models.CustomSoftwareSourceFilter
@@ -75,14 +92,34 @@ Os Management Hub
     oci.os_management_hub.models.Erratum
     oci.os_management_hub.models.ErratumCollection
     oci.os_management_hub.models.ErratumSummary
+    oci.os_management_hub.models.Event
+    oci.os_management_hub.models.EventCollection
+    oci.os_management_hub.models.EventContent
+    oci.os_management_hub.models.EventSummary
+    oci.os_management_hub.models.ExploitAttemptAdditionalDetails
+    oci.os_management_hub.models.ExploitAttemptEvent
+    oci.os_management_hub.models.ExploitAttemptEventContent
+    oci.os_management_hub.models.ExploitAttemptEventData
     oci.os_management_hub.models.GroupProfile
     oci.os_management_hub.models.Id
+    oci.os_management_hub.models.InstallAllWindowsUpdatesOnManagedInstancesInCompartmentDetails
     oci.os_management_hub.models.InstallModuleStreamProfileOnManagedInstanceDetails
     oci.os_management_hub.models.InstallModuleStreamProfileOnManagedInstanceGroupDetails
     oci.os_management_hub.models.InstallPackagesOnManagedInstanceDetails
     oci.os_management_hub.models.InstallPackagesOnManagedInstanceGroupDetails
+    oci.os_management_hub.models.InstallWindowsUpdatesOnManagedInstanceDetails
+    oci.os_management_hub.models.InstallWindowsUpdatesOnManagedInstanceGroupDetails
     oci.os_management_hub.models.InstalledPackageCollection
     oci.os_management_hub.models.InstalledPackageSummary
+    oci.os_management_hub.models.InstalledWindowsUpdateCollection
+    oci.os_management_hub.models.InstalledWindowsUpdateSummary
+    oci.os_management_hub.models.KernelCrashEvent
+    oci.os_management_hub.models.KernelEventAdditionalDetails
+    oci.os_management_hub.models.KernelEventContent
+    oci.os_management_hub.models.KernelEventData
+    oci.os_management_hub.models.KernelOopsEvent
+    oci.os_management_hub.models.KspliceUpdateEvent
+    oci.os_management_hub.models.KspliceUpdateEventData
     oci.os_management_hub.models.LifecycleEnvironment
     oci.os_management_hub.models.LifecycleEnvironmentCollection
     oci.os_management_hub.models.LifecycleEnvironmentDetails
@@ -121,6 +158,8 @@ Os Management Hub
     oci.os_management_hub.models.ManagementStation
     oci.os_management_hub.models.ManagementStationCollection
     oci.os_management_hub.models.ManagementStationDetails
+    oci.os_management_hub.models.ManagementStationEvent
+    oci.os_management_hub.models.ManagementStationEventData
     oci.os_management_hub.models.ManagementStationSummary
     oci.os_management_hub.models.MirrorConfiguration
     oci.os_management_hub.models.MirrorSummary
@@ -173,19 +212,28 @@ Os Management Hub
     oci.os_management_hub.models.SoftwareSourceAvailability
     oci.os_management_hub.models.SoftwareSourceCollection
     oci.os_management_hub.models.SoftwareSourceDetails
+    oci.os_management_hub.models.SoftwareSourceEvent
+    oci.os_management_hub.models.SoftwareSourceEventData
     oci.os_management_hub.models.SoftwareSourceProfile
     oci.os_management_hub.models.SoftwareSourceSummary
     oci.os_management_hub.models.SoftwareSourceVendorCollection
     oci.os_management_hub.models.SoftwareSourceVendorSummary
     oci.os_management_hub.models.SoftwareSourcesDetails
+    oci.os_management_hub.models.SoftwareUpdateEvent
+    oci.os_management_hub.models.SoftwareUpdateEventData
+    oci.os_management_hub.models.StationHealth
     oci.os_management_hub.models.StationProfile
     oci.os_management_hub.models.SwitchModuleStreamOnManagedInstanceDetails
+    oci.os_management_hub.models.SwitchModuleStreamOnManagedInstanceGroupDetails
     oci.os_management_hub.models.SynchronizeMirrorsDetails
+    oci.os_management_hub.models.SystemDetails
+    oci.os_management_hub.models.UpdatableAutonomousSettings
     oci.os_management_hub.models.UpdatablePackageCollection
     oci.os_management_hub.models.UpdatablePackageSummary
     oci.os_management_hub.models.UpdateAllPackagesOnManagedInstanceGroupDetails
     oci.os_management_hub.models.UpdateAllPackagesOnManagedInstancesInCompartmentDetails
     oci.os_management_hub.models.UpdateCustomSoftwareSourceDetails
+    oci.os_management_hub.models.UpdateEventDetails
     oci.os_management_hub.models.UpdateLifecycleEnvironmentDetails
     oci.os_management_hub.models.UpdateLifecycleStageDetails
     oci.os_management_hub.models.UpdateManagedInstanceDetails
@@ -198,15 +246,22 @@ Os Management Hub
     oci.os_management_hub.models.UpdateScheduledJobDetails
     oci.os_management_hub.models.UpdateSoftwareSourceDetails
     oci.os_management_hub.models.UpdateVendorSoftwareSourceDetails
+    oci.os_management_hub.models.UpdateVersionedCustomSoftwareSourceDetails
     oci.os_management_hub.models.UpdateWorkRequestDetails
     oci.os_management_hub.models.VendorSoftwareSource
     oci.os_management_hub.models.VendorSoftwareSourceSummary
     oci.os_management_hub.models.VersionedCustomSoftwareSource
     oci.os_management_hub.models.VersionedCustomSoftwareSourceSummary
+    oci.os_management_hub.models.VmcoreDetails
+    oci.os_management_hub.models.WindowsStandaloneProfile
+    oci.os_management_hub.models.WindowsUpdate
+    oci.os_management_hub.models.WindowsUpdateCollection
+    oci.os_management_hub.models.WindowsUpdateSummary
     oci.os_management_hub.models.WorkRequest
     oci.os_management_hub.models.WorkRequestDetails
     oci.os_management_hub.models.WorkRequestError
     oci.os_management_hub.models.WorkRequestErrorCollection
+    oci.os_management_hub.models.WorkRequestEventDataAdditionalDetails
     oci.os_management_hub.models.WorkRequestLogEntry
     oci.os_management_hub.models.WorkRequestLogEntryCollection
     oci.os_management_hub.models.WorkRequestManagementStationDetails

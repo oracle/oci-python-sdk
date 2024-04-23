@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SightingImpactedResourceSummary(object):
     """
-    Sighting Impacted Resource summary.
+    Summary of resources impacted by a sighting.
     """
 
     def __init__(self, **kwargs):
@@ -95,7 +95,7 @@ class SightingImpactedResourceSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this SightingImpactedResourceSummary.
-        Unique identifier for impacted resource
+        Unique identifier for an impacted resource
 
 
         :return: The id of this SightingImpactedResourceSummary.
@@ -107,7 +107,7 @@ class SightingImpactedResourceSummary(object):
     def id(self, id):
         """
         Sets the id of this SightingImpactedResourceSummary.
-        Unique identifier for impacted resource
+        Unique identifier for an impacted resource
 
 
         :param id: The id of this SightingImpactedResourceSummary.
@@ -119,7 +119,7 @@ class SightingImpactedResourceSummary(object):
     def resource_id(self):
         """
         **[Required]** Gets the resource_id of this SightingImpactedResourceSummary.
-        Impacted resource Id
+        Impacted resource ID
 
 
         :return: The resource_id of this SightingImpactedResourceSummary.
@@ -131,7 +131,7 @@ class SightingImpactedResourceSummary(object):
     def resource_id(self, resource_id):
         """
         Sets the resource_id of this SightingImpactedResourceSummary.
-        Impacted resource Id
+        Impacted resource ID
 
 
         :param resource_id: The resource_id of this SightingImpactedResourceSummary.
@@ -143,7 +143,7 @@ class SightingImpactedResourceSummary(object):
     def sighting_id(self):
         """
         **[Required]** Gets the sighting_id of this SightingImpactedResourceSummary.
-        Sighting Id
+        Sighting ID for impacted resource
 
 
         :return: The sighting_id of this SightingImpactedResourceSummary.
@@ -155,7 +155,7 @@ class SightingImpactedResourceSummary(object):
     def sighting_id(self, sighting_id):
         """
         Sets the sighting_id of this SightingImpactedResourceSummary.
-        Sighting Id
+        Sighting ID for impacted resource
 
 
         :param sighting_id: The sighting_id of this SightingImpactedResourceSummary.
@@ -167,7 +167,7 @@ class SightingImpactedResourceSummary(object):
     def problem_id(self):
         """
         Gets the problem_id of this SightingImpactedResourceSummary.
-        Problem Id for impacted resource
+        Problem ID for impacted resource
 
 
         :return: The problem_id of this SightingImpactedResourceSummary.
@@ -179,7 +179,7 @@ class SightingImpactedResourceSummary(object):
     def problem_id(self, problem_id):
         """
         Sets the problem_id of this SightingImpactedResourceSummary.
-        Problem Id for impacted resource
+        Problem ID for impacted resource
 
 
         :param problem_id: The problem_id of this SightingImpactedResourceSummary.
@@ -191,7 +191,7 @@ class SightingImpactedResourceSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this SightingImpactedResourceSummary.
-        Compartment Id for impacted resource
+        Compartment ID for impacted resource
 
 
         :return: The compartment_id of this SightingImpactedResourceSummary.
@@ -203,7 +203,7 @@ class SightingImpactedResourceSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this SightingImpactedResourceSummary.
-        Compartment Id for impacted resource
+        Compartment ID for impacted resource
 
 
         :param compartment_id: The compartment_id of this SightingImpactedResourceSummary.
@@ -287,7 +287,7 @@ class SightingImpactedResourceSummary(object):
     def time_identified(self):
         """
         **[Required]** Gets the time_identified of this SightingImpactedResourceSummary.
-        Time when the impacted resource is identified for given sighting.
+        Date and time when the impacted resource is identified for given sighting
 
 
         :return: The time_identified of this SightingImpactedResourceSummary.
@@ -299,7 +299,7 @@ class SightingImpactedResourceSummary(object):
     def time_identified(self, time_identified):
         """
         Sets the time_identified of this SightingImpactedResourceSummary.
-        Time when the impacted resource is identified for given sighting.
+        Date and time when the impacted resource is identified for given sighting
 
 
         :param time_identified: The time_identified of this SightingImpactedResourceSummary.

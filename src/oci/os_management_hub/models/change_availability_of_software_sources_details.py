@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeAvailabilityOfSoftwareSourcesDetails(object):
     """
-    Request body that contains a list of software sources whose availability needs to be updated.
+    Provides the information used to update the availability of a list of software sources.
     """
 
     def __init__(self, **kwargs):
@@ -38,8 +38,8 @@ class ChangeAvailabilityOfSoftwareSourcesDetails(object):
     @property
     def software_source_availabilities(self):
         """
-        Gets the software_source_availabilities of this ChangeAvailabilityOfSoftwareSourcesDetails.
-        List of objects containing software source ids and its availability.
+        **[Required]** Gets the software_source_availabilities of this ChangeAvailabilityOfSoftwareSourcesDetails.
+        List of vendor software sources and their availability statuses.
 
 
         :return: The software_source_availabilities of this ChangeAvailabilityOfSoftwareSourcesDetails.
@@ -51,7 +51,7 @@ class ChangeAvailabilityOfSoftwareSourcesDetails(object):
     def software_source_availabilities(self, software_source_availabilities):
         """
         Sets the software_source_availabilities of this ChangeAvailabilityOfSoftwareSourcesDetails.
-        List of objects containing software source ids and its availability.
+        List of vendor software sources and their availability statuses.
 
 
         :param software_source_availabilities: The software_source_availabilities of this ChangeAvailabilityOfSoftwareSourcesDetails.

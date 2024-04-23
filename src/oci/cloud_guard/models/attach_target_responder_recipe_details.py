@@ -12,7 +12,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AttachTargetResponderRecipeDetails(object):
     """
-    The information required to create TargetResponderRecipe
+    Identifier for an existing detector recipe to use to create
+    a new detector recipe (TargetDetectorRecipe  resource) to be
+    attached to a target.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +41,7 @@ class AttachTargetResponderRecipeDetails(object):
     def responder_recipe_id(self):
         """
         **[Required]** Gets the responder_recipe_id of this AttachTargetResponderRecipeDetails.
-        ResponderRecipe Identifier
+        Unique identifier for existing responder recipe
 
 
         :return: The responder_recipe_id of this AttachTargetResponderRecipeDetails.
@@ -51,7 +53,7 @@ class AttachTargetResponderRecipeDetails(object):
     def responder_recipe_id(self, responder_recipe_id):
         """
         Sets the responder_recipe_id of this AttachTargetResponderRecipeDetails.
-        ResponderRecipe Identifier
+        Unique identifier for existing responder recipe
 
 
         :param responder_recipe_id: The responder_recipe_id of this AttachTargetResponderRecipeDetails.

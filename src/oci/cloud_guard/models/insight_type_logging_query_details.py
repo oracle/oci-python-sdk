@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InsightTypeLoggingQueryDetails(LoggingQueryDetails):
     """
-    Additional details specific to insight type DataSource.
+    Additional details for Insight type queries on a data source.
     """
 
     def __init__(self, **kwargs):

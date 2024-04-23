@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateTargetDetectorRuleDetails(object):
     """
-    Overriden settings of a Detector Rule applied on target
+    Parameters to update detector rule configuration details in a detector recipe attached to a target.
     """
 
     def __init__(self, **kwargs):

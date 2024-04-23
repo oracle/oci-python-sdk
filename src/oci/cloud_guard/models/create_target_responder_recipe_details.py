@@ -12,7 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateTargetResponderRecipeDetails(object):
     """
-    The information required to create TargetResponderRecipe
+    Parameters to be used to create a new target responder recipe (TargetDetectorRecipe
+    resource).
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +47,7 @@ class CreateTargetResponderRecipeDetails(object):
     def responder_recipe_id(self):
         """
         **[Required]** Gets the responder_recipe_id of this CreateTargetResponderRecipeDetails.
-        Identifier for ResponderRecipe.
+        Unique identifier for responder recipe
 
 
         :return: The responder_recipe_id of this CreateTargetResponderRecipeDetails.
@@ -58,7 +59,7 @@ class CreateTargetResponderRecipeDetails(object):
     def responder_recipe_id(self, responder_recipe_id):
         """
         Sets the responder_recipe_id of this CreateTargetResponderRecipeDetails.
-        Identifier for ResponderRecipe.
+        Unique identifier for responder recipe
 
 
         :param responder_recipe_id: The responder_recipe_id of this CreateTargetResponderRecipeDetails.
@@ -70,7 +71,7 @@ class CreateTargetResponderRecipeDetails(object):
     def responder_rules(self):
         """
         Gets the responder_rules of this CreateTargetResponderRecipeDetails.
-        Override responder rules associated with reponder recipe in a target.
+        List of overrides to be applied to responder rules associated with the target
 
 
         :return: The responder_rules of this CreateTargetResponderRecipeDetails.
@@ -82,7 +83,7 @@ class CreateTargetResponderRecipeDetails(object):
     def responder_rules(self, responder_rules):
         """
         Sets the responder_rules of this CreateTargetResponderRecipeDetails.
-        Override responder rules associated with reponder recipe in a target.
+        List of overrides to be applied to responder rules associated with the target
 
 
         :param responder_rules: The responder_rules of this CreateTargetResponderRecipeDetails.

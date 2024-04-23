@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDataSourceDetails(object):
     """
-    Update of Data Source
+    Parameters to update a data source.
     """
 
     #: A constant which can be used with the status property of a UpdateDataSourceDetails.
@@ -76,7 +76,7 @@ class UpdateDataSourceDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateDataSourceDetails.
-        Data Source display name.
+        Display name for data source
 
 
         :return: The display_name of this UpdateDataSourceDetails.
@@ -88,7 +88,7 @@ class UpdateDataSourceDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateDataSourceDetails.
-        Data Source display name.
+        Display name for data source
 
 
         :param display_name: The display_name of this UpdateDataSourceDetails.
@@ -100,7 +100,7 @@ class UpdateDataSourceDetails(object):
     def status(self):
         """
         Gets the status of this UpdateDataSourceDetails.
-        Status of DataSource.
+        Enablement status of data source
 
         Allowed values for this property are: "ENABLED", "DISABLED"
 
@@ -114,7 +114,7 @@ class UpdateDataSourceDetails(object):
     def status(self, status):
         """
         Sets the status of this UpdateDataSourceDetails.
-        Status of DataSource.
+        Enablement status of data source
 
 
         :param status: The status of this UpdateDataSourceDetails.

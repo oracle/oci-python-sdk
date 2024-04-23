@@ -12,7 +12,20 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TargetResponderRecipe(object):
     """
-    Details of Target ResponderRecipe
+    A TargetResponderRecipe resource contains a specific instance of one of the
+    supported detector types (for example, activity, configuration, or threat)
+    in which some settings can be modified specifically for a single target.
+
+    A TargetResponderRecipe resource:
+    * Is effectively a copy of a ResponderRecipe resource in which users can make
+    very limited changes if it\u2019s Oracle-managed, and more changes if it\u2019s user-managed.
+    * Is visible on the Cloud Guard Targets, Target Details page.
+    * Is located in a specific OCI compartment.
+    * Can be modified by users, programmatically or through the UI.
+    * Changes that can be made here override any settings in the corresponding
+    ResponderRecipe, of which the TargetResponderRecipe resource is effectively a copy
+    of the ResponderRecipe resource (effectively created when the detector recipe
+    is attached to the target).
     """
 
     #: A constant which can be used with the owner property of a TargetResponderRecipe.
@@ -70,6 +83,10 @@ class TargetResponderRecipe(object):
             The value to assign to the effective_responder_rules property of this TargetResponderRecipe.
         :type effective_responder_rules: list[oci.cloud_guard.models.TargetResponderRecipeResponderRule]
 
+        :param locks:
+            The value to assign to the locks property of this TargetResponderRecipe.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -81,7 +98,8 @@ class TargetResponderRecipe(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'responder_rules': 'list[TargetResponderRecipeResponderRule]',
-            'effective_responder_rules': 'list[TargetResponderRecipeResponderRule]'
+            'effective_responder_rules': 'list[TargetResponderRecipeResponderRule]',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -94,7 +112,8 @@ class TargetResponderRecipe(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'responder_rules': 'responderRules',
-            'effective_responder_rules': 'effectiveResponderRules'
+            'effective_responder_rules': 'effectiveResponderRules',
+            'locks': 'locks'
         }
 
         self._id = None
@@ -107,12 +126,13 @@ class TargetResponderRecipe(object):
         self._time_updated = None
         self._responder_rules = None
         self._effective_responder_rules = None
+        self._locks = None
 
     @property
     def id(self):
         """
         **[Required]** Gets the id of this TargetResponderRecipe.
-        Unique identifier of TargetResponderRecipe that can't be changed after creation.
+        Unique identifier of target responder recipe that can't be changed after creation
 
 
         :return: The id of this TargetResponderRecipe.
@@ -124,7 +144,7 @@ class TargetResponderRecipe(object):
     def id(self, id):
         """
         Sets the id of this TargetResponderRecipe.
-        Unique identifier of TargetResponderRecipe that can't be changed after creation.
+        Unique identifier of target responder recipe that can't be changed after creation
 
 
         :param id: The id of this TargetResponderRecipe.
@@ -136,7 +156,7 @@ class TargetResponderRecipe(object):
     def responder_recipe_id(self):
         """
         **[Required]** Gets the responder_recipe_id of this TargetResponderRecipe.
-        Unique identifier for Responder Recipe of which this is an extension.
+        Unique identifier for the Oracle-managed responder recipe from which this recipe was cloned
 
 
         :return: The responder_recipe_id of this TargetResponderRecipe.
@@ -148,7 +168,7 @@ class TargetResponderRecipe(object):
     def responder_recipe_id(self, responder_recipe_id):
         """
         Sets the responder_recipe_id of this TargetResponderRecipe.
-        Unique identifier for Responder Recipe of which this is an extension.
+        Unique identifier for the Oracle-managed responder recipe from which this recipe was cloned
 
 
         :param responder_recipe_id: The responder_recipe_id of this TargetResponderRecipe.
@@ -160,7 +180,7 @@ class TargetResponderRecipe(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this TargetResponderRecipe.
-        Compartment Identifier
+        Compartment OCID
 
 
         :return: The compartment_id of this TargetResponderRecipe.
@@ -172,7 +192,7 @@ class TargetResponderRecipe(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this TargetResponderRecipe.
-        Compartment Identifier
+        Compartment OCID
 
 
         :param compartment_id: The compartment_id of this TargetResponderRecipe.
@@ -184,7 +204,7 @@ class TargetResponderRecipe(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this TargetResponderRecipe.
-        ResponderRecipe display name.
+        Target responder recipe display name
 
 
         :return: The display_name of this TargetResponderRecipe.
@@ -196,7 +216,7 @@ class TargetResponderRecipe(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this TargetResponderRecipe.
-        ResponderRecipe display name.
+        Target responder recipe display name
 
 
         :param display_name: The display_name of this TargetResponderRecipe.
@@ -208,7 +228,7 @@ class TargetResponderRecipe(object):
     def description(self):
         """
         **[Required]** Gets the description of this TargetResponderRecipe.
-        ResponderRecipe description.
+        Target responder description
 
 
         :return: The description of this TargetResponderRecipe.
@@ -220,7 +240,7 @@ class TargetResponderRecipe(object):
     def description(self, description):
         """
         Sets the description of this TargetResponderRecipe.
-        ResponderRecipe description.
+        Target responder description
 
 
         :param description: The description of this TargetResponderRecipe.
@@ -232,7 +252,7 @@ class TargetResponderRecipe(object):
     def owner(self):
         """
         **[Required]** Gets the owner of this TargetResponderRecipe.
-        Owner of ResponderRecipe
+        Owner of target responder recipe
 
         Allowed values for this property are: "CUSTOMER", "ORACLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -247,7 +267,7 @@ class TargetResponderRecipe(object):
     def owner(self, owner):
         """
         Sets the owner of this TargetResponderRecipe.
-        Owner of ResponderRecipe
+        Owner of target responder recipe
 
 
         :param owner: The owner of this TargetResponderRecipe.
@@ -286,7 +306,7 @@ class TargetResponderRecipe(object):
     def time_updated(self):
         """
         Gets the time_updated of this TargetResponderRecipe.
-        The date and time the target responder recipe rule was updated. Format defined by RFC3339.
+        The date and time the target responder recipe rule was last updated. Format defined by RFC3339.
 
 
         :return: The time_updated of this TargetResponderRecipe.
@@ -298,7 +318,7 @@ class TargetResponderRecipe(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this TargetResponderRecipe.
-        The date and time the target responder recipe rule was updated. Format defined by RFC3339.
+        The date and time the target responder recipe rule was last updated. Format defined by RFC3339.
 
 
         :param time_updated: The time_updated of this TargetResponderRecipe.
@@ -334,7 +354,7 @@ class TargetResponderRecipe(object):
     def effective_responder_rules(self):
         """
         Gets the effective_responder_rules of this TargetResponderRecipe.
-        List of responder rules associated with the recipe after applying all defaults
+        List of currently enabled responder rules for the responder type for recipe after applying defaults
 
 
         :return: The effective_responder_rules of this TargetResponderRecipe.
@@ -346,13 +366,37 @@ class TargetResponderRecipe(object):
     def effective_responder_rules(self, effective_responder_rules):
         """
         Sets the effective_responder_rules of this TargetResponderRecipe.
-        List of responder rules associated with the recipe after applying all defaults
+        List of currently enabled responder rules for the responder type for recipe after applying defaults
 
 
         :param effective_responder_rules: The effective_responder_rules of this TargetResponderRecipe.
         :type: list[oci.cloud_guard.models.TargetResponderRecipeResponderRule]
         """
         self._effective_responder_rules = effective_responder_rules
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this TargetResponderRecipe.
+        Locks associated with this resource.
+
+
+        :return: The locks of this TargetResponderRecipe.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this TargetResponderRecipe.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this TargetResponderRecipe.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

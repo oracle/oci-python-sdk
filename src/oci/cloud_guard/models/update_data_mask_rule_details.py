@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDataMaskRuleDetails(object):
     """
-    The information to be updated.
+    The information to be updated for a data mask rule.
     """
 
     #: A constant which can be used with the data_mask_categories property of a UpdateDataMaskRuleDetails.
@@ -122,7 +122,7 @@ class UpdateDataMaskRuleDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateDataMaskRuleDetails.
-        Data mask rule Name.
+        Data mask rule display name
 
         Avoid entering confidential information.
 
@@ -136,7 +136,7 @@ class UpdateDataMaskRuleDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateDataMaskRuleDetails.
-        Data mask rule Name.
+        Data mask rule display name
 
         Avoid entering confidential information.
 
@@ -150,7 +150,7 @@ class UpdateDataMaskRuleDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this UpdateDataMaskRuleDetails.
-        Compartment Identifier where the resource is created
+        Compartment OCID where the resource is created
 
 
         :return: The compartment_id of this UpdateDataMaskRuleDetails.
@@ -162,7 +162,7 @@ class UpdateDataMaskRuleDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this UpdateDataMaskRuleDetails.
-        Compartment Identifier where the resource is created
+        Compartment OCID where the resource is created
 
 
         :param compartment_id: The compartment_id of this UpdateDataMaskRuleDetails.
@@ -174,7 +174,7 @@ class UpdateDataMaskRuleDetails(object):
     def iam_group_id(self):
         """
         Gets the iam_group_id of this UpdateDataMaskRuleDetails.
-        IAM Group id associated with the data mask rule
+        IAM group ID associated with the data mask rule
 
 
         :return: The iam_group_id of this UpdateDataMaskRuleDetails.
@@ -186,7 +186,7 @@ class UpdateDataMaskRuleDetails(object):
     def iam_group_id(self, iam_group_id):
         """
         Sets the iam_group_id of this UpdateDataMaskRuleDetails.
-        IAM Group id associated with the data mask rule
+        IAM group ID associated with the data mask rule
 
 
         :param iam_group_id: The iam_group_id of this UpdateDataMaskRuleDetails.
@@ -218,7 +218,7 @@ class UpdateDataMaskRuleDetails(object):
     def data_mask_categories(self):
         """
         Gets the data_mask_categories of this UpdateDataMaskRuleDetails.
-        Data Mask Categories
+        Data mask rule categories
 
         Allowed values for items in this list are: "ACTOR", "PII", "PHI", "FINANCIAL", "LOCATION", "CUSTOM"
 
@@ -232,7 +232,7 @@ class UpdateDataMaskRuleDetails(object):
     def data_mask_categories(self, data_mask_categories):
         """
         Sets the data_mask_categories of this UpdateDataMaskRuleDetails.
-        Data Mask Categories
+        Data mask rule categories
 
 
         :param data_mask_categories: The data_mask_categories of this UpdateDataMaskRuleDetails.
@@ -252,7 +252,7 @@ class UpdateDataMaskRuleDetails(object):
     def data_mask_rule_status(self):
         """
         Gets the data_mask_rule_status of this UpdateDataMaskRuleDetails.
-        The status of the dataMaskRule.
+        The status of the data mask rule
 
         Allowed values for this property are: "ENABLED", "DISABLED"
 
@@ -266,7 +266,7 @@ class UpdateDataMaskRuleDetails(object):
     def data_mask_rule_status(self, data_mask_rule_status):
         """
         Sets the data_mask_rule_status of this UpdateDataMaskRuleDetails.
-        The status of the dataMaskRule.
+        The status of the data mask rule
 
 
         :param data_mask_rule_status: The data_mask_rule_status of this UpdateDataMaskRuleDetails.

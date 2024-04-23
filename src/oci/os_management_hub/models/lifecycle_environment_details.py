@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LifecycleEnvironmentDetails(object):
     """
-    Identifying information for the specified lifecycle environment.
+    Provides identifying information for the specified lifecycle environment.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,9 @@ class LifecycleEnvironmentDetails(object):
     def id(self):
         """
         **[Required]** Gets the id of this LifecycleEnvironmentDetails.
-        The OCID of the lifecycle environment.
+        The `OCID`__ of the lifecycle environment.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this LifecycleEnvironmentDetails.
@@ -58,7 +60,9 @@ class LifecycleEnvironmentDetails(object):
     def id(self, id):
         """
         Sets the id of this LifecycleEnvironmentDetails.
-        The OCID of the lifecycle environment.
+        The `OCID`__ of the lifecycle environment.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this LifecycleEnvironmentDetails.

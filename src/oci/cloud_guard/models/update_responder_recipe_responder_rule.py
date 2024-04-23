@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateResponderRecipeResponderRule(object):
     """
-    The details to be updated in ResponderRule
+    Parameters to use to update a responder recipe responder rule.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class UpdateResponderRecipeResponderRule(object):
     def responder_rule_id(self):
         """
         **[Required]** Gets the responder_rule_id of this UpdateResponderRecipeResponderRule.
-        ResponderRecipeRule Identifier
+        Unique identifier for the responder rule
 
 
         :return: The responder_rule_id of this UpdateResponderRecipeResponderRule.
@@ -58,7 +58,7 @@ class UpdateResponderRecipeResponderRule(object):
     def responder_rule_id(self, responder_rule_id):
         """
         Sets the responder_rule_id of this UpdateResponderRecipeResponderRule.
-        ResponderRecipeRule Identifier
+        Unique identifier for the responder rule
 
 
         :param responder_rule_id: The responder_rule_id of this UpdateResponderRecipeResponderRule.

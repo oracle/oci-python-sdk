@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourceProfileRiskScoreAggregationSummary(object):
     """
-    Resource profile risk score trend-line
+    Summary of resource profile risk score aggregations.
     """
 
     def __init__(self, **kwargs):
@@ -108,7 +108,7 @@ class ResourceProfileRiskScoreAggregationSummary(object):
     def risk_threshold(self):
         """
         Gets the risk_threshold of this ResourceProfileRiskScoreAggregationSummary.
-        Risk threshold
+        Risk score value that triggers a problem
 
 
         :return: The risk_threshold of this ResourceProfileRiskScoreAggregationSummary.
@@ -120,7 +120,7 @@ class ResourceProfileRiskScoreAggregationSummary(object):
     def risk_threshold(self, risk_threshold):
         """
         Sets the risk_threshold of this ResourceProfileRiskScoreAggregationSummary.
-        Risk threshold
+        Risk score value that triggers a problem
 
 
         :param risk_threshold: The risk_threshold of this ResourceProfileRiskScoreAggregationSummary.
@@ -132,7 +132,7 @@ class ResourceProfileRiskScoreAggregationSummary(object):
     def items(self):
         """
         **[Required]** Gets the items of this ResourceProfileRiskScoreAggregationSummary.
-        List of ResourceRiskScoreAggregation
+        List of ResourceRiskScoreAggregation resources
 
 
         :return: The items of this ResourceProfileRiskScoreAggregationSummary.
@@ -144,7 +144,7 @@ class ResourceProfileRiskScoreAggregationSummary(object):
     def items(self, items):
         """
         Sets the items of this ResourceProfileRiskScoreAggregationSummary.
-        List of ResourceRiskScoreAggregation
+        List of ResourceRiskScoreAggregation resources
 
 
         :param items: The items of this ResourceProfileRiskScoreAggregationSummary.

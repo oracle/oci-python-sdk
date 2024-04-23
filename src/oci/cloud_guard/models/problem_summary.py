@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ProblemSummary(object):
     """
-    Summary of the Problem.
+    Summary information for a problem.
     """
 
     #: A constant which can be used with the risk_level property of a ProblemSummary.
@@ -74,6 +74,10 @@ class ProblemSummary(object):
     #: A constant which can be used with the detector_id property of a ProblemSummary.
     #: This constant has a value of "IAAS_LOG_INSIGHT_DETECTOR"
     DETECTOR_ID_IAAS_LOG_INSIGHT_DETECTOR = "IAAS_LOG_INSIGHT_DETECTOR"
+
+    #: A constant which can be used with the detector_id property of a ProblemSummary.
+    #: This constant has a value of "IAAS_INSTANCE_SECURITY_DETECTOR"
+    DETECTOR_ID_IAAS_INSTANCE_SECURITY_DETECTOR = "IAAS_INSTANCE_SECURITY_DETECTOR"
 
     def __init__(self, **kwargs):
         """
@@ -140,7 +144,7 @@ class ProblemSummary(object):
 
         :param detector_id:
             The value to assign to the detector_id property of this ProblemSummary.
-            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type detector_id: str
 
@@ -155,6 +159,10 @@ class ProblemSummary(object):
         :param target_id:
             The value to assign to the target_id property of this ProblemSummary.
         :type target_id: str
+
+        :param locks:
+            The value to assign to the locks property of this ProblemSummary.
+        :type locks: list[oci.cloud_guard.models.ResourceLock]
 
         """
         self.swagger_types = {
@@ -174,7 +182,8 @@ class ProblemSummary(object):
             'detector_id': 'str',
             'region': 'str',
             'regions': 'list[str]',
-            'target_id': 'str'
+            'target_id': 'str',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -194,7 +203,8 @@ class ProblemSummary(object):
             'detector_id': 'detectorId',
             'region': 'region',
             'regions': 'regions',
-            'target_id': 'targetId'
+            'target_id': 'targetId',
+            'locks': 'locks'
         }
 
         self._id = None
@@ -214,12 +224,13 @@ class ProblemSummary(object):
         self._region = None
         self._regions = None
         self._target_id = None
+        self._locks = None
 
     @property
     def id(self):
         """
         **[Required]** Gets the id of this ProblemSummary.
-        Unique identifier that is immutable on creation
+        Unique identifier that can't be changed after creation
 
 
         :return: The id of this ProblemSummary.
@@ -231,7 +242,7 @@ class ProblemSummary(object):
     def id(self, id):
         """
         Sets the id of this ProblemSummary.
-        Unique identifier that is immutable on creation
+        Unique identifier that can't be changed after creation
 
 
         :param id: The id of this ProblemSummary.
@@ -243,7 +254,7 @@ class ProblemSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ProblemSummary.
-        Compartment Identifier where the resource is created
+        Compartment OCID where the resource is created
 
 
         :return: The compartment_id of this ProblemSummary.
@@ -255,7 +266,7 @@ class ProblemSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ProblemSummary.
-        Compartment Identifier where the resource is created
+        Compartment OCID where the resource is created
 
 
         :param compartment_id: The compartment_id of this ProblemSummary.
@@ -267,7 +278,7 @@ class ProblemSummary(object):
     def detector_rule_id(self):
         """
         Gets the detector_rule_id of this ProblemSummary.
-        Identifier of the rule
+        Unique identifier of the detector rule
 
 
         :return: The detector_rule_id of this ProblemSummary.
@@ -279,7 +290,7 @@ class ProblemSummary(object):
     def detector_rule_id(self, detector_rule_id):
         """
         Sets the detector_rule_id of this ProblemSummary.
-        Identifier of the rule
+        Unique identifier of the detector rule
 
 
         :param detector_rule_id: The detector_rule_id of this ProblemSummary.
@@ -291,7 +302,7 @@ class ProblemSummary(object):
     def risk_level(self):
         """
         Gets the risk_level of this ProblemSummary.
-        The Risk Level
+        The risk level of the problem
 
         Allowed values for this property are: "CRITICAL", "HIGH", "MEDIUM", "LOW", "MINOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -306,7 +317,7 @@ class ProblemSummary(object):
     def risk_level(self, risk_level):
         """
         Sets the risk_level of this ProblemSummary.
-        The Risk Level
+        The risk level of the problem
 
 
         :param risk_level: The risk_level of this ProblemSummary.
@@ -321,7 +332,7 @@ class ProblemSummary(object):
     def risk_score(self):
         """
         Gets the risk_score of this ProblemSummary.
-        Risk Score for the problem
+        The risk score for the problem
 
 
         :return: The risk_score of this ProblemSummary.
@@ -333,7 +344,7 @@ class ProblemSummary(object):
     def risk_score(self, risk_score):
         """
         Sets the risk_score of this ProblemSummary.
-        Risk Score for the problem
+        The risk score for the problem
 
 
         :param risk_score: The risk_score of this ProblemSummary.
@@ -345,7 +356,7 @@ class ProblemSummary(object):
     def resource_id(self):
         """
         Gets the resource_id of this ProblemSummary.
-        Identifier of the Resource
+        Unique identifier of the resource that's impacted by the problem
 
 
         :return: The resource_id of this ProblemSummary.
@@ -357,7 +368,7 @@ class ProblemSummary(object):
     def resource_id(self, resource_id):
         """
         Sets the resource_id of this ProblemSummary.
-        Identifier of the Resource
+        Unique identifier of the resource that's impacted by the problem
 
 
         :param resource_id: The resource_id of this ProblemSummary.
@@ -369,7 +380,7 @@ class ProblemSummary(object):
     def resource_name(self):
         """
         Gets the resource_name of this ProblemSummary.
-        DisplayName of the Resource
+        Display name of the resource impacted by the problem
 
 
         :return: The resource_name of this ProblemSummary.
@@ -381,7 +392,7 @@ class ProblemSummary(object):
     def resource_name(self, resource_name):
         """
         Sets the resource_name of this ProblemSummary.
-        DisplayName of the Resource
+        Display name of the resource impacted by the problem
 
 
         :param resource_name: The resource_name of this ProblemSummary.
@@ -393,7 +404,7 @@ class ProblemSummary(object):
     def resource_type(self):
         """
         Gets the resource_type of this ProblemSummary.
-        Type of the Resource
+        Type of the resource impacted by the problem
 
 
         :return: The resource_type of this ProblemSummary.
@@ -405,7 +416,7 @@ class ProblemSummary(object):
     def resource_type(self, resource_type):
         """
         Sets the resource_type of this ProblemSummary.
-        Type of the Resource
+        Type of the resource impacted by the problem
 
 
         :param resource_type: The resource_type of this ProblemSummary.
@@ -417,7 +428,7 @@ class ProblemSummary(object):
     def labels(self):
         """
         Gets the labels of this ProblemSummary.
-        user defined labels on the problem
+        User-defined labels on the problem
 
 
         :return: The labels of this ProblemSummary.
@@ -429,7 +440,7 @@ class ProblemSummary(object):
     def labels(self, labels):
         """
         Sets the labels of this ProblemSummary.
-        user defined labels on the problem
+        User-defined labels on the problem
 
 
         :param labels: The labels of this ProblemSummary.
@@ -489,7 +500,7 @@ class ProblemSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this ProblemSummary.
-        The current state of the Problem.
+        The current lifecycle state of the problem
 
         Allowed values for this property are: "ACTIVE", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -504,7 +515,7 @@ class ProblemSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ProblemSummary.
-        The current state of the Problem.
+        The current lifecycle state of the problem
 
 
         :param lifecycle_state: The lifecycle_state of this ProblemSummary.
@@ -519,7 +530,7 @@ class ProblemSummary(object):
     def lifecycle_detail(self):
         """
         Gets the lifecycle_detail of this ProblemSummary.
-        The lifecycleDetail will give more detail on the substate of the lifecycleState.
+        Additional details on the substate of the lifecycle state
 
         Allowed values for this property are: "OPEN", "RESOLVED", "DISMISSED", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -534,7 +545,7 @@ class ProblemSummary(object):
     def lifecycle_detail(self, lifecycle_detail):
         """
         Sets the lifecycle_detail of this ProblemSummary.
-        The lifecycleDetail will give more detail on the substate of the lifecycleState.
+        Additional details on the substate of the lifecycle state
 
 
         :param lifecycle_detail: The lifecycle_detail of this ProblemSummary.
@@ -549,9 +560,9 @@ class ProblemSummary(object):
     def detector_id(self):
         """
         Gets the detector_id of this ProblemSummary.
-        Id of detector associated with the Problem.
+        Unique identifier of the detector associated with the problem
 
-        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -564,13 +575,13 @@ class ProblemSummary(object):
     def detector_id(self, detector_id):
         """
         Sets the detector_id of this ProblemSummary.
-        Id of detector associated with the Problem.
+        Unique identifier of the detector associated with the problem
 
 
         :param detector_id: The detector_id of this ProblemSummary.
         :type: str
         """
-        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR"]
+        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", "IAAS_INSTANCE_SECURITY_DETECTOR"]
         if not value_allowed_none_or_none_sentinel(detector_id, allowed_values):
             detector_id = 'UNKNOWN_ENUM_VALUE'
         self._detector_id = detector_id
@@ -603,7 +614,7 @@ class ProblemSummary(object):
     def regions(self):
         """
         Gets the regions of this ProblemSummary.
-        Regions where the problem is found
+        List of regions where the problem is found
 
 
         :return: The regions of this ProblemSummary.
@@ -615,7 +626,7 @@ class ProblemSummary(object):
     def regions(self, regions):
         """
         Sets the regions of this ProblemSummary.
-        Regions where the problem is found
+        List of regions where the problem is found
 
 
         :param regions: The regions of this ProblemSummary.
@@ -627,7 +638,7 @@ class ProblemSummary(object):
     def target_id(self):
         """
         Gets the target_id of this ProblemSummary.
-        targetId associated with the problem.
+        Unique target identifier associated with the problem
 
 
         :return: The target_id of this ProblemSummary.
@@ -639,13 +650,37 @@ class ProblemSummary(object):
     def target_id(self, target_id):
         """
         Sets the target_id of this ProblemSummary.
-        targetId associated with the problem.
+        Unique target identifier associated with the problem
 
 
         :param target_id: The target_id of this ProblemSummary.
         :type: str
         """
         self._target_id = target_id
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this ProblemSummary.
+        Locks associated with this resource.
+
+
+        :return: The locks of this ProblemSummary.
+        :rtype: list[oci.cloud_guard.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this ProblemSummary.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this ProblemSummary.
+        :type: list[oci.cloud_guard.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -22,7 +22,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "24.04.16"
+    version = "24.04.23"
 
     ##########################################################################
     # spaces for align
@@ -5397,17 +5397,17 @@ class ShowOCICSV(object):
     ##########################################################################
     def __csv_identity_main(self, data):
         try:
-            if 'compartments' in data:
-                self.__csv_identity_compartments(data['compartments'])
-
-            if 'users' in data:
-                self.__csv_identity_users(data['users'])
-            if 'groups' in data:
-                self.__csv_identity_groups(data['groups'])
-            if 'policies' in data:
-                self.__csv_identity_policies(data['policies'])
-            if 'domains' in data:
-                self.__csv_identity_domains(data['domains'])
+            if data:
+                if 'compartments' in data:
+                    self.__csv_identity_compartments(data['compartments'])
+                if 'users' in data:
+                    self.__csv_identity_users(data['users'])
+                if 'groups' in data:
+                    self.__csv_identity_groups(data['groups'])
+                if 'policies' in data:
+                    self.__csv_identity_policies(data['policies'])
+                if 'domains' in data:
+                    self.__csv_identity_domains(data['domains'])
 
         except Exception as e:
             self.__print_error("__csv_identity_main", e)

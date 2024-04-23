@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagedInstanceGroupCollection(object):
     """
-    Results of a managed instance group search. Contains both managed instance group summary items and other data.
+    A set of managed instance groups returned for the :func:`list_managed_instance_groups` operation.
     """
 
     def __init__(self, **kwargs):

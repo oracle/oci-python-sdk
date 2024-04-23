@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateCustomSoftwareSourceDetails(CreateSoftwareSourceDetails):
     """
-    Description of a custom software source to be created.
+    Provides the information used to create a custom software source.
     """
 
     def __init__(self, **kwargs):
@@ -58,6 +58,18 @@ class CreateCustomSoftwareSourceDetails(CreateSoftwareSourceDetails):
             The value to assign to the is_automatically_updated property of this CreateCustomSoftwareSourceDetails.
         :type is_automatically_updated: bool
 
+        :param is_auto_resolve_dependencies:
+            The value to assign to the is_auto_resolve_dependencies property of this CreateCustomSoftwareSourceDetails.
+        :type is_auto_resolve_dependencies: bool
+
+        :param is_created_from_package_list:
+            The value to assign to the is_created_from_package_list property of this CreateCustomSoftwareSourceDetails.
+        :type is_created_from_package_list: bool
+
+        :param packages:
+            The value to assign to the packages property of this CreateCustomSoftwareSourceDetails.
+        :type packages: list[str]
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -68,7 +80,10 @@ class CreateCustomSoftwareSourceDetails(CreateSoftwareSourceDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'vendor_software_sources': 'list[Id]',
             'custom_software_source_filter': 'CustomSoftwareSourceFilter',
-            'is_automatically_updated': 'bool'
+            'is_automatically_updated': 'bool',
+            'is_auto_resolve_dependencies': 'bool',
+            'is_created_from_package_list': 'bool',
+            'packages': 'list[str]'
         }
 
         self.attribute_map = {
@@ -80,7 +95,10 @@ class CreateCustomSoftwareSourceDetails(CreateSoftwareSourceDetails):
             'defined_tags': 'definedTags',
             'vendor_software_sources': 'vendorSoftwareSources',
             'custom_software_source_filter': 'customSoftwareSourceFilter',
-            'is_automatically_updated': 'isAutomaticallyUpdated'
+            'is_automatically_updated': 'isAutomaticallyUpdated',
+            'is_auto_resolve_dependencies': 'isAutoResolveDependencies',
+            'is_created_from_package_list': 'isCreatedFromPackageList',
+            'packages': 'packages'
         }
 
         self._compartment_id = None
@@ -92,6 +110,9 @@ class CreateCustomSoftwareSourceDetails(CreateSoftwareSourceDetails):
         self._vendor_software_sources = None
         self._custom_software_source_filter = None
         self._is_automatically_updated = None
+        self._is_auto_resolve_dependencies = None
+        self._is_created_from_package_list = None
+        self._packages = None
         self._software_source_type = 'CUSTOM'
 
     @property
@@ -142,7 +163,7 @@ class CreateCustomSoftwareSourceDetails(CreateSoftwareSourceDetails):
     def is_automatically_updated(self):
         """
         Gets the is_automatically_updated of this CreateCustomSoftwareSourceDetails.
-        Indicates whether service should automatically update the custom software source for the user.
+        Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
 
 
         :return: The is_automatically_updated of this CreateCustomSoftwareSourceDetails.
@@ -154,13 +175,85 @@ class CreateCustomSoftwareSourceDetails(CreateSoftwareSourceDetails):
     def is_automatically_updated(self, is_automatically_updated):
         """
         Sets the is_automatically_updated of this CreateCustomSoftwareSourceDetails.
-        Indicates whether service should automatically update the custom software source for the user.
+        Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
 
 
         :param is_automatically_updated: The is_automatically_updated of this CreateCustomSoftwareSourceDetails.
         :type: bool
         """
         self._is_automatically_updated = is_automatically_updated
+
+    @property
+    def is_auto_resolve_dependencies(self):
+        """
+        Gets the is_auto_resolve_dependencies of this CreateCustomSoftwareSourceDetails.
+        Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+
+
+        :return: The is_auto_resolve_dependencies of this CreateCustomSoftwareSourceDetails.
+        :rtype: bool
+        """
+        return self._is_auto_resolve_dependencies
+
+    @is_auto_resolve_dependencies.setter
+    def is_auto_resolve_dependencies(self, is_auto_resolve_dependencies):
+        """
+        Sets the is_auto_resolve_dependencies of this CreateCustomSoftwareSourceDetails.
+        Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+
+
+        :param is_auto_resolve_dependencies: The is_auto_resolve_dependencies of this CreateCustomSoftwareSourceDetails.
+        :type: bool
+        """
+        self._is_auto_resolve_dependencies = is_auto_resolve_dependencies
+
+    @property
+    def is_created_from_package_list(self):
+        """
+        Gets the is_created_from_package_list of this CreateCustomSoftwareSourceDetails.
+        Indicates whether the service should create the software source from a list of packages provided by the user.
+
+
+        :return: The is_created_from_package_list of this CreateCustomSoftwareSourceDetails.
+        :rtype: bool
+        """
+        return self._is_created_from_package_list
+
+    @is_created_from_package_list.setter
+    def is_created_from_package_list(self, is_created_from_package_list):
+        """
+        Sets the is_created_from_package_list of this CreateCustomSoftwareSourceDetails.
+        Indicates whether the service should create the software source from a list of packages provided by the user.
+
+
+        :param is_created_from_package_list: The is_created_from_package_list of this CreateCustomSoftwareSourceDetails.
+        :type: bool
+        """
+        self._is_created_from_package_list = is_created_from_package_list
+
+    @property
+    def packages(self):
+        """
+        Gets the packages of this CreateCustomSoftwareSourceDetails.
+        A property used for compatibility only. It doesn't provide a complete list of packages. See :func:`add_packages_to_software_source_details` for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
+
+
+        :return: The packages of this CreateCustomSoftwareSourceDetails.
+        :rtype: list[str]
+        """
+        return self._packages
+
+    @packages.setter
+    def packages(self, packages):
+        """
+        Sets the packages of this CreateCustomSoftwareSourceDetails.
+        A property used for compatibility only. It doesn't provide a complete list of packages. See :func:`add_packages_to_software_source_details` for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
+
+
+        :param packages: The packages of this CreateCustomSoftwareSourceDetails.
+        :type: list[str]
+        """
+        self._packages = packages
 
     def __repr__(self):
         return formatted_flat_dict(self)

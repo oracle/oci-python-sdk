@@ -82,7 +82,7 @@ class ResourceRiskScoreAggregation(object):
     def tactics(self):
         """
         **[Required]** Gets the tactics of this ResourceRiskScoreAggregation.
-        Tactics used for evaluating the risk scrore
+        List of tactics used for evaluating the risk score
 
 
         :return: The tactics of this ResourceRiskScoreAggregation.
@@ -94,7 +94,7 @@ class ResourceRiskScoreAggregation(object):
     def tactics(self, tactics):
         """
         Sets the tactics of this ResourceRiskScoreAggregation.
-        Tactics used for evaluating the risk scrore
+        List of tactics used for evaluating the risk score
 
 
         :param tactics: The tactics of this ResourceRiskScoreAggregation.
@@ -130,7 +130,7 @@ class ResourceRiskScoreAggregation(object):
     def risk_score(self):
         """
         **[Required]** Gets the risk_score of this ResourceRiskScoreAggregation.
-        Risk Score
+        The risk score
 
 
         :return: The risk_score of this ResourceRiskScoreAggregation.
@@ -142,7 +142,7 @@ class ResourceRiskScoreAggregation(object):
     def risk_score(self, risk_score):
         """
         Sets the risk_score of this ResourceRiskScoreAggregation.
-        Risk Score
+        The risk score
 
 
         :param risk_score: The risk_score of this ResourceRiskScoreAggregation.
@@ -154,7 +154,7 @@ class ResourceRiskScoreAggregation(object):
     def risk_level(self):
         """
         **[Required]** Gets the risk_level of this ResourceRiskScoreAggregation.
-        The Risk Level
+        The risk level
 
         Allowed values for this property are: "CRITICAL", "HIGH", "MEDIUM", "LOW", "MINOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -169,7 +169,7 @@ class ResourceRiskScoreAggregation(object):
     def risk_level(self, risk_level):
         """
         Sets the risk_level of this ResourceRiskScoreAggregation.
-        The Risk Level
+        The risk level
 
 
         :param risk_level: The risk_level of this ResourceRiskScoreAggregation.

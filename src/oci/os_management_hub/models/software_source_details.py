@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SoftwareSourceDetails(object):
     """
-    Identifying information for the specified software source.
+    Provides identifying information for the specified software source.
     """
 
     #: A constant which can be used with the software_source_type property of a SoftwareSourceDetails.
@@ -50,31 +50,40 @@ class SoftwareSourceDetails(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type software_source_type: str
 
+        :param is_mandatory_for_autonomous_linux:
+            The value to assign to the is_mandatory_for_autonomous_linux property of this SoftwareSourceDetails.
+        :type is_mandatory_for_autonomous_linux: bool
+
         """
         self.swagger_types = {
             'id': 'str',
             'display_name': 'str',
             'description': 'str',
-            'software_source_type': 'str'
+            'software_source_type': 'str',
+            'is_mandatory_for_autonomous_linux': 'bool'
         }
 
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
             'description': 'description',
-            'software_source_type': 'softwareSourceType'
+            'software_source_type': 'softwareSourceType',
+            'is_mandatory_for_autonomous_linux': 'isMandatoryForAutonomousLinux'
         }
 
         self._id = None
         self._display_name = None
         self._description = None
         self._software_source_type = None
+        self._is_mandatory_for_autonomous_linux = None
 
     @property
     def id(self):
         """
         **[Required]** Gets the id of this SoftwareSourceDetails.
-        The OCID of the software source.
+        The `OCID`__ of the software source.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this SoftwareSourceDetails.
@@ -86,7 +95,9 @@ class SoftwareSourceDetails(object):
     def id(self, id):
         """
         Sets the id of this SoftwareSourceDetails.
-        The OCID of the software source.
+        The `OCID`__ of the software source.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this SoftwareSourceDetails.
@@ -171,6 +182,30 @@ class SoftwareSourceDetails(object):
         if not value_allowed_none_or_none_sentinel(software_source_type, allowed_values):
             software_source_type = 'UNKNOWN_ENUM_VALUE'
         self._software_source_type = software_source_type
+
+    @property
+    def is_mandatory_for_autonomous_linux(self):
+        """
+        Gets the is_mandatory_for_autonomous_linux of this SoftwareSourceDetails.
+        Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+
+
+        :return: The is_mandatory_for_autonomous_linux of this SoftwareSourceDetails.
+        :rtype: bool
+        """
+        return self._is_mandatory_for_autonomous_linux
+
+    @is_mandatory_for_autonomous_linux.setter
+    def is_mandatory_for_autonomous_linux(self, is_mandatory_for_autonomous_linux):
+        """
+        Sets the is_mandatory_for_autonomous_linux of this SoftwareSourceDetails.
+        Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+
+
+        :param is_mandatory_for_autonomous_linux: The is_mandatory_for_autonomous_linux of this SoftwareSourceDetails.
+        :type: bool
+        """
+        self._is_mandatory_for_autonomous_linux = is_mandatory_for_autonomous_linux
 
     def __repr__(self):
         return formatted_flat_dict(self)

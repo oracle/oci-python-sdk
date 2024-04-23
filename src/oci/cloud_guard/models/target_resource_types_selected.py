@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TargetResourceTypesSelected(TargetSelected):
     """
-    Target selection on basis of TargetResourceTypes.
+    Target selection on basis of target resource types.
     """
 
     #: A constant which can be used with the values property of a TargetResourceTypesSelected.
@@ -68,7 +68,7 @@ class TargetResourceTypesSelected(TargetSelected):
     def values(self):
         """
         Gets the values of this TargetResourceTypesSelected.
-        Types of Targets
+        Types of targets
 
         Allowed values for items in this list are: "COMPARTMENT", "ERPCLOUD", "HCMCLOUD", "SECURITY_ZONE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -83,7 +83,7 @@ class TargetResourceTypesSelected(TargetSelected):
     def values(self, values):
         """
         Sets the values of this TargetResourceTypesSelected.
-        Types of Targets
+        Types of targets
 
 
         :param values: The values of this TargetResourceTypesSelected.

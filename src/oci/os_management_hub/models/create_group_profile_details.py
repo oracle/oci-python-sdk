@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateGroupProfileDetails(CreateProfileDetails):
     """
-    Description of a group registration profile to be created.
+    Provides the information used to create a group registration profile.
     """
 
     def __init__(self, **kwargs):
@@ -39,8 +39,16 @@ class CreateGroupProfileDetails(CreateProfileDetails):
 
         :param profile_type:
             The value to assign to the profile_type property of this CreateGroupProfileDetails.
-            Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION"
+            Allowed values for this property are: "SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION", "WINDOWS_STANDALONE"
         :type profile_type: str
+
+        :param registration_type:
+            The value to assign to the registration_type property of this CreateGroupProfileDetails.
+        :type registration_type: str
+
+        :param is_default_profile:
+            The value to assign to the is_default_profile property of this CreateGroupProfileDetails.
+        :type is_default_profile: bool
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateGroupProfileDetails.
@@ -61,6 +69,8 @@ class CreateGroupProfileDetails(CreateProfileDetails):
             'description': 'str',
             'management_station_id': 'str',
             'profile_type': 'str',
+            'registration_type': 'str',
+            'is_default_profile': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'managed_instance_group_id': 'str'
@@ -72,6 +82,8 @@ class CreateGroupProfileDetails(CreateProfileDetails):
             'description': 'description',
             'management_station_id': 'managementStationId',
             'profile_type': 'profileType',
+            'registration_type': 'registrationType',
+            'is_default_profile': 'isDefaultProfile',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'managed_instance_group_id': 'managedInstanceGroupId'
@@ -82,6 +94,8 @@ class CreateGroupProfileDetails(CreateProfileDetails):
         self._description = None
         self._management_station_id = None
         self._profile_type = None
+        self._registration_type = None
+        self._is_default_profile = None
         self._freeform_tags = None
         self._defined_tags = None
         self._managed_instance_group_id = None
@@ -91,7 +105,9 @@ class CreateGroupProfileDetails(CreateProfileDetails):
     def managed_instance_group_id(self):
         """
         **[Required]** Gets the managed_instance_group_id of this CreateGroupProfileDetails.
-        The OCID of the managed instance group from which the registration profile will inherit its software sources.
+        The `OCID`__ of the managed instance group that the instance will join after registration.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The managed_instance_group_id of this CreateGroupProfileDetails.
@@ -103,7 +119,9 @@ class CreateGroupProfileDetails(CreateProfileDetails):
     def managed_instance_group_id(self, managed_instance_group_id):
         """
         Sets the managed_instance_group_id of this CreateGroupProfileDetails.
-        The OCID of the managed instance group from which the registration profile will inherit its software sources.
+        The `OCID`__ of the managed instance group that the instance will join after registration.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param managed_instance_group_id: The managed_instance_group_id of this CreateGroupProfileDetails.

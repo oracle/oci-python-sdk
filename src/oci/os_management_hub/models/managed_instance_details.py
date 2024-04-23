@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagedInstanceDetails(object):
     """
-    Identifying information for the specified managed instance.
+    Provides identifying information for the specified managed instance.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,9 @@ class ManagedInstanceDetails(object):
     def id(self):
         """
         **[Required]** Gets the id of this ManagedInstanceDetails.
-        The OCID of the managed instance.
+        The `OCID`__ of the managed instance.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ManagedInstanceDetails.
@@ -58,7 +60,9 @@ class ManagedInstanceDetails(object):
     def id(self, id):
         """
         Sets the id of this ManagedInstanceDetails.
-        The OCID of the managed instance.
+        The `OCID`__ of the managed instance.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ManagedInstanceDetails.

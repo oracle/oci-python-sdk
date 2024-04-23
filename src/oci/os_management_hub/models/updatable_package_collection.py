@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdatablePackageCollection(object):
     """
-    Results of an updatable package search on a managed instance.
+    The set of packages returned for the :func:`list_managed_instance_updatable_packages` operation.
     """
 
     def __init__(self, **kwargs):
