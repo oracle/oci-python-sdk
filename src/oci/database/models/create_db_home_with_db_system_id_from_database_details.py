@@ -54,6 +54,10 @@ class CreateDbHomeWithDbSystemIdFromDatabaseDetails(CreateDbHomeBase):
             The value to assign to the is_desupported_version property of this CreateDbHomeWithDbSystemIdFromDatabaseDetails.
         :type is_desupported_version: bool
 
+        :param is_unified_auditing_enabled:
+            The value to assign to the is_unified_auditing_enabled property of this CreateDbHomeWithDbSystemIdFromDatabaseDetails.
+        :type is_unified_auditing_enabled: bool
+
         :param db_system_id:
             The value to assign to the db_system_id property of this CreateDbHomeWithDbSystemIdFromDatabaseDetails.
         :type db_system_id: str
@@ -72,6 +76,7 @@ class CreateDbHomeWithDbSystemIdFromDatabaseDetails(CreateDbHomeBase):
             'defined_tags': 'dict(str, dict(str, object))',
             'source': 'str',
             'is_desupported_version': 'bool',
+            'is_unified_auditing_enabled': 'bool',
             'db_system_id': 'str',
             'database': 'CreateDatabaseFromAnotherDatabaseDetails'
         }
@@ -85,6 +90,7 @@ class CreateDbHomeWithDbSystemIdFromDatabaseDetails(CreateDbHomeBase):
             'defined_tags': 'definedTags',
             'source': 'source',
             'is_desupported_version': 'isDesupportedVersion',
+            'is_unified_auditing_enabled': 'isUnifiedAuditingEnabled',
             'db_system_id': 'dbSystemId',
             'database': 'database'
         }
@@ -97,6 +103,7 @@ class CreateDbHomeWithDbSystemIdFromDatabaseDetails(CreateDbHomeBase):
         self._defined_tags = None
         self._source = None
         self._is_desupported_version = None
+        self._is_unified_auditing_enabled = None
         self._db_system_id = None
         self._database = None
         self._source = 'DATABASE'

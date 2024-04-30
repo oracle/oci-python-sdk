@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class HeatWaveFleetSummary(object):
     """
-    A summary of the inventory count and the metrics that describe the aggregated usage of CPU, storage, and so on of all the HeatWave clusters in the fleet.
+    The inventory count of HeatWave clusters in the fleet and a summary of the metrics that provide the aggregated usage of CPU, storage, and so on of all the clusters.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class HeatWaveFleetSummary(object):
     def aggregated_metrics(self):
         """
         **[Required]** Gets the aggregated_metrics of this HeatWaveFleetSummary.
-        The usage metrics for the Managed HeatWave clusters in the fleet.
+        The usage metrics for the HeatWave clusters in the fleet.
 
 
         :return: The aggregated_metrics of this HeatWaveFleetSummary.
@@ -58,7 +58,7 @@ class HeatWaveFleetSummary(object):
     def aggregated_metrics(self, aggregated_metrics):
         """
         Sets the aggregated_metrics of this HeatWaveFleetSummary.
-        The usage metrics for the Managed HeatWave clusters in the fleet.
+        The usage metrics for the HeatWave clusters in the fleet.
 
 
         :param aggregated_metrics: The aggregated_metrics of this HeatWaveFleetSummary.
@@ -70,7 +70,7 @@ class HeatWaveFleetSummary(object):
     def inventory(self):
         """
         **[Required]** Gets the inventory of this HeatWaveFleetSummary.
-        Summary counts of HeatWave clusters in the fleet grouped by cluster type.
+        The number of HeatWave clusters in the fleet, grouped by cluster type or other properties.
 
 
         :return: The inventory of this HeatWaveFleetSummary.
@@ -82,7 +82,7 @@ class HeatWaveFleetSummary(object):
     def inventory(self, inventory):
         """
         Sets the inventory of this HeatWaveFleetSummary.
-        Summary counts of HeatWave clusters in the fleet grouped by cluster type.
+        The number of HeatWave clusters in the fleet, grouped by cluster type or other properties.
 
 
         :param inventory: The inventory of this HeatWaveFleetSummary.

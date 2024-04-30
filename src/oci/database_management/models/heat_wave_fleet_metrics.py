@@ -132,7 +132,7 @@ class HeatWaveFleetMetrics(object):
     def fleet_summary(self):
         """
         **[Required]** Gets the fleet_summary of this HeatWaveFleetMetrics.
-        A summary of the inventory count and the metrics that describe the aggregated usage of CPU, storage, and so on of all the HeatWave clusters in the fleet.
+        The number of HeatWave clusters in the fleet and a summary of the metrics that provide the aggregated usage of CPU, storage, and so on of all the clusters.
 
 
         :return: The fleet_summary of this HeatWaveFleetMetrics.
@@ -144,7 +144,7 @@ class HeatWaveFleetMetrics(object):
     def fleet_summary(self, fleet_summary):
         """
         Sets the fleet_summary of this HeatWaveFleetMetrics.
-        A summary of the inventory count and the metrics that describe the aggregated usage of CPU, storage, and so on of all the HeatWave clusters in the fleet.
+        The number of HeatWave clusters in the fleet and a summary of the metrics that provide the aggregated usage of CPU, storage, and so on of all the clusters.
 
 
         :param fleet_summary: The fleet_summary of this HeatWaveFleetMetrics.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateRecoveryServiceSubnetDetails(object):
     """
-    Describes the parameters required to create a recovery service subnet.
+    Describes the parameters required to create a Recovery Service Subnet.
     """
 
     def __init__(self, **kwargs):
@@ -27,6 +27,14 @@ class CreateRecoveryServiceSubnetDetails(object):
         :param subnet_id:
             The value to assign to the subnet_id property of this CreateRecoveryServiceSubnetDetails.
         :type subnet_id: str
+
+        :param subnets:
+            The value to assign to the subnets property of this CreateRecoveryServiceSubnetDetails.
+        :type subnets: list[str]
+
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this CreateRecoveryServiceSubnetDetails.
+        :type nsg_ids: list[str]
 
         :param vcn_id:
             The value to assign to the vcn_id property of this CreateRecoveryServiceSubnetDetails.
@@ -48,6 +56,8 @@ class CreateRecoveryServiceSubnetDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'subnet_id': 'str',
+            'subnets': 'list[str]',
+            'nsg_ids': 'list[str]',
             'vcn_id': 'str',
             'compartment_id': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -57,6 +67,8 @@ class CreateRecoveryServiceSubnetDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'subnet_id': 'subnetId',
+            'subnets': 'subnets',
+            'nsg_ids': 'nsgIds',
             'vcn_id': 'vcnId',
             'compartment_id': 'compartmentId',
             'freeform_tags': 'freeformTags',
@@ -65,6 +77,8 @@ class CreateRecoveryServiceSubnetDetails(object):
 
         self._display_name = None
         self._subnet_id = None
+        self._subnets = None
+        self._nsg_ids = None
         self._vcn_id = None
         self._compartment_id = None
         self._freeform_tags = None
@@ -97,8 +111,8 @@ class CreateRecoveryServiceSubnetDetails(object):
     @property
     def subnet_id(self):
         """
-        **[Required]** Gets the subnet_id of this CreateRecoveryServiceSubnetDetails.
-        The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
+        Gets the subnet_id of this CreateRecoveryServiceSubnetDetails.
+        Deprecated. One of the subnets associated with the Recovery Service subnet.
 
 
         :return: The subnet_id of this CreateRecoveryServiceSubnetDetails.
@@ -110,13 +124,67 @@ class CreateRecoveryServiceSubnetDetails(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this CreateRecoveryServiceSubnetDetails.
-        The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
+        Deprecated. One of the subnets associated with the Recovery Service subnet.
 
 
         :param subnet_id: The subnet_id of this CreateRecoveryServiceSubnetDetails.
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def subnets(self):
+        """
+        Gets the subnets of this CreateRecoveryServiceSubnetDetails.
+        A list of OCIDs of the subnets associated with the Recovery Service subnet.
+
+
+        :return: The subnets of this CreateRecoveryServiceSubnetDetails.
+        :rtype: list[str]
+        """
+        return self._subnets
+
+    @subnets.setter
+    def subnets(self, subnets):
+        """
+        Sets the subnets of this CreateRecoveryServiceSubnetDetails.
+        A list of OCIDs of the subnets associated with the Recovery Service subnet.
+
+
+        :param subnets: The subnets of this CreateRecoveryServiceSubnetDetails.
+        :type: list[str]
+        """
+        self._subnets = subnets
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this CreateRecoveryServiceSubnetDetails.
+        A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet.
+        You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet.
+        Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet.
+        See :class:`NetworkSecurityGroup` for more information.
+
+
+        :return: The nsg_ids of this CreateRecoveryServiceSubnetDetails.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this CreateRecoveryServiceSubnetDetails.
+        A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet.
+        You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet.
+        Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet.
+        See :class:`NetworkSecurityGroup` for more information.
+
+
+        :param nsg_ids: The nsg_ids of this CreateRecoveryServiceSubnetDetails.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
 
     @property
     def vcn_id(self):

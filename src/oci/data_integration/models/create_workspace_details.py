@@ -84,6 +84,10 @@ class CreateWorkspaceDetails(object):
             The value to assign to the endpoint_compartment_id property of this CreateWorkspaceDetails.
         :type endpoint_compartment_id: str
 
+        :param workspace_properties:
+            The value to assign to the workspace_properties property of this CreateWorkspaceDetails.
+        :type workspace_properties: dict(str, str)
+
         """
         self.swagger_types = {
             'vcn_id': 'str',
@@ -101,7 +105,8 @@ class CreateWorkspaceDetails(object):
             'registry_name': 'str',
             'registry_compartment_id': 'str',
             'endpoint_name': 'str',
-            'endpoint_compartment_id': 'str'
+            'endpoint_compartment_id': 'str',
+            'workspace_properties': 'dict(str, str)'
         }
 
         self.attribute_map = {
@@ -120,7 +125,8 @@ class CreateWorkspaceDetails(object):
             'registry_name': 'registryName',
             'registry_compartment_id': 'registryCompartmentId',
             'endpoint_name': 'endpointName',
-            'endpoint_compartment_id': 'endpointCompartmentId'
+            'endpoint_compartment_id': 'endpointCompartmentId',
+            'workspace_properties': 'workspaceProperties'
         }
 
         self._vcn_id = None
@@ -139,6 +145,7 @@ class CreateWorkspaceDetails(object):
         self._registry_compartment_id = None
         self._endpoint_name = None
         self._endpoint_compartment_id = None
+        self._workspace_properties = None
 
     @property
     def vcn_id(self):
@@ -535,6 +542,30 @@ class CreateWorkspaceDetails(object):
         :type: str
         """
         self._endpoint_compartment_id = endpoint_compartment_id
+
+    @property
+    def workspace_properties(self):
+        """
+        Gets the workspace_properties of this CreateWorkspaceDetails.
+        Key-values pairs of workspace for storing properties on the workspace.
+
+
+        :return: The workspace_properties of this CreateWorkspaceDetails.
+        :rtype: dict(str, str)
+        """
+        return self._workspace_properties
+
+    @workspace_properties.setter
+    def workspace_properties(self, workspace_properties):
+        """
+        Sets the workspace_properties of this CreateWorkspaceDetails.
+        Key-values pairs of workspace for storing properties on the workspace.
+
+
+        :param workspace_properties: The workspace_properties of this CreateWorkspaceDetails.
+        :type: dict(str, str)
+        """
+        self._workspace_properties = workspace_properties
 
     def __repr__(self):
         return formatted_flat_dict(self)

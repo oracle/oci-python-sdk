@@ -77,6 +77,7 @@ Data Safe
     oci.data_safe.models.ChangeDiscoveryJobCompartmentDetails
     oci.data_safe.models.ChangeLibraryMaskingFormatCompartmentDetails
     oci.data_safe.models.ChangeMaskingPolicyCompartmentDetails
+    oci.data_safe.models.ChangeMaskingPolicyHealthReportCompartmentDetails
     oci.data_safe.models.ChangeOnPremConnectorCompartmentDetails
     oci.data_safe.models.ChangeReportCompartmentDetails
     oci.data_safe.models.ChangeReportDefinitionCompartmentDetails
@@ -189,6 +190,7 @@ Data Safe
     oci.data_safe.models.FormatsForDataType
     oci.data_safe.models.FormatsForSensitiveType
     oci.data_safe.models.GenerateDiscoveryReportForDownloadDetails
+    oci.data_safe.models.GenerateHealthReportDetails
     oci.data_safe.models.GenerateMaskingPolicyForDownloadDetails
     oci.data_safe.models.GenerateMaskingReportForDownloadDetails
     oci.data_safe.models.GenerateOnPremConnectorConfigurationDetails
@@ -218,6 +220,11 @@ Data Safe
     oci.data_safe.models.MaskingObjectSummary
     oci.data_safe.models.MaskingPolicy
     oci.data_safe.models.MaskingPolicyCollection
+    oci.data_safe.models.MaskingPolicyHealthReport
+    oci.data_safe.models.MaskingPolicyHealthReportCollection
+    oci.data_safe.models.MaskingPolicyHealthReportLogCollection
+    oci.data_safe.models.MaskingPolicyHealthReportLogSummary
+    oci.data_safe.models.MaskingPolicyHealthReportSummary
     oci.data_safe.models.MaskingPolicySummary
     oci.data_safe.models.MaskingReport
     oci.data_safe.models.MaskingReportCollection

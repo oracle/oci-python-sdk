@@ -26,6 +26,7 @@ from .recovery_service_subnet_collection import RecoveryServiceSubnetCollection
 from .recovery_service_subnet_details import RecoveryServiceSubnetDetails
 from .recovery_service_subnet_input import RecoveryServiceSubnetInput
 from .recovery_service_subnet_summary import RecoveryServiceSubnetSummary
+from .schedule_protected_database_deletion_details import ScheduleProtectedDatabaseDeletionDetails
 from .update_protected_database_details import UpdateProtectedDatabaseDetails
 from .update_protection_policy_details import UpdateProtectionPolicyDetails
 from .update_recovery_service_subnet_details import UpdateRecoveryServiceSubnetDetails
@@ -60,6 +61,7 @@ recovery_type_mapping = {
     "RecoveryServiceSubnetDetails": RecoveryServiceSubnetDetails,
     "RecoveryServiceSubnetInput": RecoveryServiceSubnetInput,
     "RecoveryServiceSubnetSummary": RecoveryServiceSubnetSummary,
+    "ScheduleProtectedDatabaseDeletionDetails": ScheduleProtectedDatabaseDeletionDetails,
     "UpdateProtectedDatabaseDetails": UpdateProtectedDatabaseDetails,
     "UpdateProtectionPolicyDetails": UpdateProtectionPolicyDetails,
     "UpdateRecoveryServiceSubnetDetails": UpdateRecoveryServiceSubnetDetails,

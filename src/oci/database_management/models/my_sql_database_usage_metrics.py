@@ -330,7 +330,7 @@ class MySqlDatabaseUsageMetrics(object):
     def is_heat_wave_enabled(self):
         """
         Gets the is_heat_wave_enabled of this MySqlDatabaseUsageMetrics.
-        If HeatWave is enabled for this db system or not.
+        Indicates whether HeatWave is enabled for the MySQL Database System or not.
 
 
         :return: The is_heat_wave_enabled of this MySqlDatabaseUsageMetrics.
@@ -342,7 +342,7 @@ class MySqlDatabaseUsageMetrics(object):
     def is_heat_wave_enabled(self, is_heat_wave_enabled):
         """
         Sets the is_heat_wave_enabled of this MySqlDatabaseUsageMetrics.
-        If HeatWave is enabled for this db system or not.
+        Indicates whether HeatWave is enabled for the MySQL Database System or not.
 
 
         :param is_heat_wave_enabled: The is_heat_wave_enabled of this MySqlDatabaseUsageMetrics.

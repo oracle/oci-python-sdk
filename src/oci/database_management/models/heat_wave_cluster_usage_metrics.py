@@ -139,7 +139,7 @@ class HeatWaveClusterUsageMetrics(object):
     def db_system_id(self):
         """
         **[Required]** Gets the db_system_id of this HeatWaveClusterUsageMetrics.
-        The OCID for the DB system associated with the HeatWave cluster.
+        The OCID of the MySQL Database System associated with the HeatWave cluster.
 
 
         :return: The db_system_id of this HeatWaveClusterUsageMetrics.
@@ -151,7 +151,7 @@ class HeatWaveClusterUsageMetrics(object):
     def db_system_id(self, db_system_id):
         """
         Sets the db_system_id of this HeatWaveClusterUsageMetrics.
-        The OCID for the DB system associated with the HeatWave cluster.
+        The OCID of the MySQL Database System associated with the HeatWave cluster.
 
 
         :param db_system_id: The db_system_id of this HeatWaveClusterUsageMetrics.
@@ -163,7 +163,7 @@ class HeatWaveClusterUsageMetrics(object):
     def db_system_name(self):
         """
         **[Required]** Gets the db_system_name of this HeatWaveClusterUsageMetrics.
-        The name of the DB system associated with the HeatWave cluster.
+        The name of the MySQL Database System associated with the HeatWave cluster.
 
 
         :return: The db_system_name of this HeatWaveClusterUsageMetrics.
@@ -175,7 +175,7 @@ class HeatWaveClusterUsageMetrics(object):
     def db_system_name(self, db_system_name):
         """
         Sets the db_system_name of this HeatWaveClusterUsageMetrics.
-        The name of the DB system associated with the HeatWave cluster.
+        The name of the MySQL Database System associated with the HeatWave cluster.
 
 
         :param db_system_name: The db_system_name of this HeatWaveClusterUsageMetrics.
@@ -211,7 +211,7 @@ class HeatWaveClusterUsageMetrics(object):
     def node_count(self):
         """
         **[Required]** Gets the node_count of this HeatWaveClusterUsageMetrics.
-        Number of nodes in the HeatWave cluster.
+        The number of nodes in the HeatWave cluster.
 
 
         :return: The node_count of this HeatWaveClusterUsageMetrics.
@@ -223,7 +223,7 @@ class HeatWaveClusterUsageMetrics(object):
     def node_count(self, node_count):
         """
         Sets the node_count of this HeatWaveClusterUsageMetrics.
-        Number of nodes in the HeatWave cluster.
+        The number of nodes in the HeatWave cluster.
 
 
         :param node_count: The node_count of this HeatWaveClusterUsageMetrics.
@@ -235,7 +235,7 @@ class HeatWaveClusterUsageMetrics(object):
     def is_lakehouse_enabled(self):
         """
         **[Required]** Gets the is_lakehouse_enabled of this HeatWaveClusterUsageMetrics.
-        If Lakehouse is enabled for the HeatWave cluster or not.
+        Indicates whether Lakehouse is enabled for the HeatWave cluster or not.
 
 
         :return: The is_lakehouse_enabled of this HeatWaveClusterUsageMetrics.
@@ -247,7 +247,7 @@ class HeatWaveClusterUsageMetrics(object):
     def is_lakehouse_enabled(self, is_lakehouse_enabled):
         """
         Sets the is_lakehouse_enabled of this HeatWaveClusterUsageMetrics.
-        If Lakehouse is enabled for the HeatWave cluster or not.
+        Indicates whether Lakehouse is enabled for the HeatWave cluster or not.
 
 
         :param is_lakehouse_enabled: The is_lakehouse_enabled of this HeatWaveClusterUsageMetrics.
@@ -259,7 +259,7 @@ class HeatWaveClusterUsageMetrics(object):
     def heat_wave_node_shape(self):
         """
         **[Required]** Gets the heat_wave_node_shape of this HeatWaveClusterUsageMetrics.
-        Shape of the nodes in the HeatWave cluster.
+        The shape of the nodes in the HeatWave cluster.
 
 
         :return: The heat_wave_node_shape of this HeatWaveClusterUsageMetrics.
@@ -271,7 +271,7 @@ class HeatWaveClusterUsageMetrics(object):
     def heat_wave_node_shape(self, heat_wave_node_shape):
         """
         Sets the heat_wave_node_shape of this HeatWaveClusterUsageMetrics.
-        Shape of the nodes in the HeatWave cluster.
+        The shape of the nodes in the HeatWave cluster.
 
 
         :param heat_wave_node_shape: The heat_wave_node_shape of this HeatWaveClusterUsageMetrics.
@@ -307,7 +307,7 @@ class HeatWaveClusterUsageMetrics(object):
     def metrics(self):
         """
         **[Required]** Gets the metrics of this HeatWaveClusterUsageMetrics.
-        A list of the database health metrics like CPU and Memory.
+        A list of the HeatWave cluster health metrics like CPU and Memory.
 
 
         :return: The metrics of this HeatWaveClusterUsageMetrics.
@@ -319,7 +319,7 @@ class HeatWaveClusterUsageMetrics(object):
     def metrics(self, metrics):
         """
         Sets the metrics of this HeatWaveClusterUsageMetrics.
-        A list of the database health metrics like CPU and Memory.
+        A list of the HeatWave cluster health metrics like CPU and Memory.
 
 
         :param metrics: The metrics of this HeatWaveClusterUsageMetrics.

@@ -134,6 +134,10 @@ class Workspace(object):
             The value to assign to the registry_id property of this Workspace.
         :type registry_id: str
 
+        :param workspace_properties:
+            The value to assign to the workspace_properties property of this Workspace.
+        :type workspace_properties: dict(str, str)
+
         """
         self.swagger_types = {
             'vcn_id': 'str',
@@ -153,7 +157,8 @@ class Workspace(object):
             'id': 'str',
             'endpoint_id': 'str',
             'endpoint_name': 'str',
-            'registry_id': 'str'
+            'registry_id': 'str',
+            'workspace_properties': 'dict(str, str)'
         }
 
         self.attribute_map = {
@@ -174,7 +179,8 @@ class Workspace(object):
             'id': 'id',
             'endpoint_id': 'endpointId',
             'endpoint_name': 'endpointName',
-            'registry_id': 'registryId'
+            'registry_id': 'registryId',
+            'workspace_properties': 'workspaceProperties'
         }
 
         self._vcn_id = None
@@ -195,6 +201,7 @@ class Workspace(object):
         self._endpoint_id = None
         self._endpoint_name = None
         self._registry_id = None
+        self._workspace_properties = None
 
     @property
     def vcn_id(self):
@@ -671,6 +678,30 @@ class Workspace(object):
         :type: str
         """
         self._registry_id = registry_id
+
+    @property
+    def workspace_properties(self):
+        """
+        Gets the workspace_properties of this Workspace.
+        key-value pairs of workspace properties
+
+
+        :return: The workspace_properties of this Workspace.
+        :rtype: dict(str, str)
+        """
+        return self._workspace_properties
+
+    @workspace_properties.setter
+    def workspace_properties(self, workspace_properties):
+        """
+        Sets the workspace_properties of this Workspace.
+        key-value pairs of workspace properties
+
+
+        :param workspace_properties: The workspace_properties of this Workspace.
+        :type: dict(str, str)
+        """
+        self._workspace_properties = workspace_properties
 
     def __repr__(self):
         return formatted_flat_dict(self)

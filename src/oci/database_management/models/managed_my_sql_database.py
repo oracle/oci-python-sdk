@@ -298,7 +298,7 @@ class ManagedMySqlDatabase(object):
     def is_heat_wave_enabled(self):
         """
         Gets the is_heat_wave_enabled of this ManagedMySqlDatabase.
-        If HeatWave is enabled for this db system or not.
+        Indicates whether HeatWave is enabled for the MySQL Database System or not.
 
 
         :return: The is_heat_wave_enabled of this ManagedMySqlDatabase.
@@ -310,7 +310,7 @@ class ManagedMySqlDatabase(object):
     def is_heat_wave_enabled(self, is_heat_wave_enabled):
         """
         Sets the is_heat_wave_enabled of this ManagedMySqlDatabase.
-        If HeatWave is enabled for this db system or not.
+        Indicates whether HeatWave is enabled for the MySQL Database System or not.
 
 
         :param is_heat_wave_enabled: The is_heat_wave_enabled of this ManagedMySqlDatabase.
@@ -322,7 +322,7 @@ class ManagedMySqlDatabase(object):
     def is_lakehouse_enabled(self):
         """
         Gets the is_lakehouse_enabled of this ManagedMySqlDatabase.
-        If HeatWave Lakehouse is enabled for the db system or not.
+        Indicates whether HeatWave Lakehouse is enabled for the MySQL Database System or not.
 
 
         :return: The is_lakehouse_enabled of this ManagedMySqlDatabase.
@@ -334,7 +334,7 @@ class ManagedMySqlDatabase(object):
     def is_lakehouse_enabled(self, is_lakehouse_enabled):
         """
         Sets the is_lakehouse_enabled of this ManagedMySqlDatabase.
-        If HeatWave Lakehouse is enabled for the db system or not.
+        Indicates whether HeatWave Lakehouse is enabled for the MySQL Database System or not.
 
 
         :param is_lakehouse_enabled: The is_lakehouse_enabled of this ManagedMySqlDatabase.
@@ -346,7 +346,7 @@ class ManagedMySqlDatabase(object):
     def heat_wave_node_shape(self):
         """
         Gets the heat_wave_node_shape of this ManagedMySqlDatabase.
-        Shape of the nodes in the HeatWave cluster.
+        The shape of the nodes in the HeatWave cluster.
 
 
         :return: The heat_wave_node_shape of this ManagedMySqlDatabase.
@@ -358,7 +358,7 @@ class ManagedMySqlDatabase(object):
     def heat_wave_node_shape(self, heat_wave_node_shape):
         """
         Sets the heat_wave_node_shape of this ManagedMySqlDatabase.
-        Shape of the nodes in the HeatWave cluster.
+        The shape of the nodes in the HeatWave cluster.
 
 
         :param heat_wave_node_shape: The heat_wave_node_shape of this ManagedMySqlDatabase.
@@ -394,7 +394,7 @@ class ManagedMySqlDatabase(object):
     def heat_wave_nodes(self):
         """
         Gets the heat_wave_nodes of this ManagedMySqlDatabase.
-        The information about an individual HeatWave nodes in the cluster.
+        The information about individual HeatWave nodes in the cluster.
 
 
         :return: The heat_wave_nodes of this ManagedMySqlDatabase.
@@ -406,7 +406,7 @@ class ManagedMySqlDatabase(object):
     def heat_wave_nodes(self, heat_wave_nodes):
         """
         Sets the heat_wave_nodes of this ManagedMySqlDatabase.
-        The information about an individual HeatWave nodes in the cluster.
+        The information about individual HeatWave nodes in the cluster.
 
 
         :param heat_wave_nodes: The heat_wave_nodes of this ManagedMySqlDatabase.
@@ -418,7 +418,7 @@ class ManagedMySqlDatabase(object):
     def is_heat_wave_active(self):
         """
         Gets the is_heat_wave_active of this ManagedMySqlDatabase.
-        If the HeatWave cluster is active or not.
+        Indicates whether the HeatWave cluster is active or not.
 
 
         :return: The is_heat_wave_active of this ManagedMySqlDatabase.
@@ -430,7 +430,7 @@ class ManagedMySqlDatabase(object):
     def is_heat_wave_active(self, is_heat_wave_active):
         """
         Sets the is_heat_wave_active of this ManagedMySqlDatabase.
-        If the HeatWave cluster is active or not.
+        Indicates whether the HeatWave cluster is active or not.
 
 
         :param is_heat_wave_active: The is_heat_wave_active of this ManagedMySqlDatabase.

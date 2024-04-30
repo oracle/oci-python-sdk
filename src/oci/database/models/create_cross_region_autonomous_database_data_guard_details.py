@@ -31,30 +31,6 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
     - cpuCoreCount
     - dataStorageSizeInTB
     - dbVersion
-    Example I - Creating a cross-region standby with required parameters only, with OCPU:
-    `{
-    \"compartmentId\": \"ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>\",
-    \"cpuCoreCount\": 1,
-    \"dbName\": \"adatabasedb1\",
-    \"sourceId\": \"ocid1.autonomousdatabase.oc1.phx..<var>&lt;unique_ID&gt;</var>\",
-    \"dataStorageSizeInTBs\": 1,
-    \"source\": \"CROSS_REGION_DATAGUARD\",
-    \"adminPassword\" : \"<var>&lt;password&gt;</var>\",
-    }`
-    Example II - Creating a cross-region standby that specifies optional parameters in addition to the required parameters, with ECPU:
-    `{
-    \"compartmentId\": \"ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>\",
-    \"computeModel\": \"ECPU\",
-    \"computeCount\": 2,
-    \"dbName\": \"adatabasedb1\",
-    \"sourceId\": \"ocid1.autonomousdatabase.oc1.phx..<var>&lt;unique_ID&gt;</var>\",
-    \"dataStorageSizeInTBs\": 1,
-    \"source\": \"CROSS_REGION_DATAGUARD\",
-    \"adminPassword\" : \"<var>&lt;password&gt;</var>\",
-    \"dbVersion\": \"19c\",
-    \"licenseModel\": \"LICENSE_INCLUDED\",
-    \"isAutoScalingForStorageEnabled\": \"true\"
-    }`
 
     __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#REST_APIs
     """
@@ -433,7 +409,7 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
     def source_id(self):
         """
         **[Required]** Gets the source_id of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
-        The `OCID`__ of the source Autonomous Database that will be used to create a new standby database for the Data Guard association.
+        The `OCID`__ of the source Autonomous Database that will be used to create a new peer database for the Data Guard association.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -447,7 +423,7 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
     def source_id(self, source_id):
         """
         Sets the source_id of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
-        The `OCID`__ of the source Autonomous Database that will be used to create a new standby database for the Data Guard association.
+        The `OCID`__ of the source Autonomous Database that will be used to create a new peer database for the Data Guard association.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

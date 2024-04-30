@@ -22,9 +22,9 @@ missing = Sentinel("Missing")
 
 class DiagnosabilityClient(object):
     """
-    Use the Database Management API to perform tasks such as obtaining performance and resource usage metrics
-    for a fleet of Managed Databases or a specific Managed Database, creating Managed Database Groups, and
-    running a SQL job on a Managed Database or Managed Database Group.
+    Use the Database Management API to monitor and manage resources such as
+    Oracle Databases, MySQL Databases, and External Database Systems.
+    For more information, see [Database Management](/iaas/database-management/home.htm).
     """
 
     def __init__(self, config, **kwargs):

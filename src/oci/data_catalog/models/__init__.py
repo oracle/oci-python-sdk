@@ -101,6 +101,8 @@ from .import_connection_details import ImportConnectionDetails
 from .import_data_asset_details import ImportDataAssetDetails
 from .import_data_asset_job_result import ImportDataAssetJobResult
 from .import_glossary_details import ImportGlossaryDetails
+from .import_lineage_details import ImportLineageDetails
+from .import_lineage_job_result import ImportLineageJobResult
 from .job import Job
 from .job_collection import JobCollection
 from .job_definition import JobDefinition
@@ -283,6 +285,8 @@ data_catalog_type_mapping = {
     "ImportDataAssetDetails": ImportDataAssetDetails,
     "ImportDataAssetJobResult": ImportDataAssetJobResult,
     "ImportGlossaryDetails": ImportGlossaryDetails,
+    "ImportLineageDetails": ImportLineageDetails,
+    "ImportLineageJobResult": ImportLineageJobResult,
     "Job": Job,
     "JobCollection": JobCollection,
     "JobDefinition": JobDefinition,

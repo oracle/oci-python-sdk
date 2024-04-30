@@ -24222,8 +24222,9 @@ class DatabaseClient(object):
 
         :param str sort_by: (optional)
             The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+            Default order for PATCHSET is descending.
 
-            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+            Allowed values are: "TIMECREATED", "DISPLAYNAME", "PATCHSET"
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -24247,6 +24248,9 @@ class DatabaseClient(object):
             A filter to return only resources that match the given image shape family exactly.
 
             Allowed values are: "VM_BM_SHAPE", "EXADATA_SHAPE", "EXACC_SHAPE"
+
+        :param str patch_set_greater_than_or_equal_to: (optional)
+            A filter to return only resources with `patchSet` greater than or equal to given value.
 
         :param bool is_upgrade_supported: (optional)
             If provided, filters the results to the set of database versions which are supported for Upgrade.
@@ -24288,6 +24292,7 @@ class DatabaseClient(object):
             "display_name",
             "image_type",
             "image_shape_family",
+            "patch_set_greater_than_or_equal_to",
             "is_upgrade_supported"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -24296,7 +24301,7 @@ class DatabaseClient(object):
                 f"list_database_software_images got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME", "PATCHSET"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
@@ -24340,6 +24345,7 @@ class DatabaseClient(object):
             "displayName": kwargs.get("display_name", missing),
             "imageType": kwargs.get("image_type", missing),
             "imageShapeFamily": kwargs.get("image_shape_family", missing),
+            "patchSetGreaterThanOrEqualTo": kwargs.get("patch_set_greater_than_or_equal_to", missing),
             "isUpgradeSupported": kwargs.get("is_upgrade_supported", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
@@ -27321,7 +27327,7 @@ class DatabaseClient(object):
 
     def list_gi_versions(self, compartment_id, **kwargs):
         """
-        Gets a list of supported GI versions for the Exadata Cloud@Customer VM cluster.
+        Gets a list of supported GI versions.
 
 
         :param str compartment_id: (required)
@@ -37032,7 +37038,7 @@ class DatabaseClient(object):
 
     def update_key_store(self, key_store_id, update_key_store_details, **kwargs):
         """
-        If no database is associated with the key store, edit the key store.
+        Edit the key store.
 
 
         :param str key_store_id: (required)

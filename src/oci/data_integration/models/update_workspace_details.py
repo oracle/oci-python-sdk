@@ -36,25 +36,32 @@ class UpdateWorkspaceDetails(object):
             The value to assign to the display_name property of this UpdateWorkspaceDetails.
         :type display_name: str
 
+        :param workspace_properties:
+            The value to assign to the workspace_properties property of this UpdateWorkspaceDetails.
+        :type workspace_properties: dict(str, str)
+
         """
         self.swagger_types = {
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'description': 'str',
-            'display_name': 'str'
+            'display_name': 'str',
+            'workspace_properties': 'dict(str, str)'
         }
 
         self.attribute_map = {
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'description': 'description',
-            'display_name': 'displayName'
+            'display_name': 'displayName',
+            'workspace_properties': 'workspaceProperties'
         }
 
         self._freeform_tags = None
         self._defined_tags = None
         self._description = None
         self._display_name = None
+        self._workspace_properties = None
 
     @property
     def freeform_tags(self):
@@ -163,6 +170,30 @@ class UpdateWorkspaceDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def workspace_properties(self):
+        """
+        Gets the workspace_properties of this UpdateWorkspaceDetails.
+        Key-values pairs of workspace for storing properties on the workspace.
+
+
+        :return: The workspace_properties of this UpdateWorkspaceDetails.
+        :rtype: dict(str, str)
+        """
+        return self._workspace_properties
+
+    @workspace_properties.setter
+    def workspace_properties(self, workspace_properties):
+        """
+        Sets the workspace_properties of this UpdateWorkspaceDetails.
+        Key-values pairs of workspace for storing properties on the workspace.
+
+
+        :param workspace_properties: The workspace_properties of this UpdateWorkspaceDetails.
+        :type: dict(str, str)
+        """
+        self._workspace_properties = workspace_properties
 
     def __repr__(self):
         return formatted_flat_dict(self)

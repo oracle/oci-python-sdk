@@ -59,6 +59,7 @@ from .awr_db_wait_event_bucket_summary import AwrDbWaitEventBucketSummary
 from .awr_db_wait_event_collection import AwrDbWaitEventCollection
 from .awr_db_wait_event_summary import AwrDbWaitEventSummary
 from .awr_query_result import AwrQueryResult
+from .basic_database_connection_string_details import BasicDatabaseConnectionStringDetails
 from .basic_named_credential_content import BasicNamedCredentialContent
 from .basic_preferred_credential import BasicPreferredCredential
 from .change_database_parameter_details import ChangeDatabaseParameterDetails
@@ -77,6 +78,7 @@ from .clone_sql_tuning_task_details import CloneSqlTuningTaskDetails
 from .cluster_cache_metric import ClusterCacheMetric
 from .configure_automatic_capture_filters_details import ConfigureAutomaticCaptureFiltersDetails
 from .configure_automatic_spm_evolve_advisor_task_details import ConfigureAutomaticSpmEvolveAdvisorTaskDetails
+from .connector_details import ConnectorDetails
 from .consumer_group_privilege_collection import ConsumerGroupPrivilegeCollection
 from .consumer_group_privilege_summary import ConsumerGroupPrivilegeSummary
 from .cpu_utilization_aggregate_metrics import CpuUtilizationAggregateMetrics
@@ -100,9 +102,15 @@ from .data_access_container_summary import DataAccessContainerSummary
 from .database_connection_credentails_by_name import DatabaseConnectionCredentailsByName
 from .database_connection_credentials import DatabaseConnectionCredentials
 from .database_connection_credentials_by_details import DatabaseConnectionCredentialsByDetails
+from .database_connection_details import DatabaseConnectionDetails
 from .database_connection_string import DatabaseConnectionString
+from .database_connection_string_details import DatabaseConnectionStringDetails
 from .database_credential_details import DatabaseCredentialDetails
 from .database_credentials import DatabaseCredentials
+from .database_diagnostics_and_management_feature_configuration import DatabaseDiagnosticsAndManagementFeatureConfiguration
+from .database_diagnostics_and_management_feature_details import DatabaseDiagnosticsAndManagementFeatureDetails
+from .database_feature_configuration import DatabaseFeatureConfiguration
+from .database_feature_details import DatabaseFeatureDetails
 from .database_fleet_health_metrics import DatabaseFleetHealthMetrics
 from .database_home_metric_definition import DatabaseHomeMetricDefinition
 from .database_home_metrics import DatabaseHomeMetrics
@@ -129,7 +137,12 @@ from .db_management_private_endpoint_summary import DbManagementPrivateEndpointS
 from .dbm_resource import DbmResource
 from .disable_automatic_initial_plan_capture_details import DisableAutomaticInitialPlanCaptureDetails
 from .disable_automatic_spm_evolve_advisor_task_details import DisableAutomaticSpmEvolveAdvisorTaskDetails
+from .disable_database_management_feature_details import DisableDatabaseManagementFeatureDetails
+from .disable_external_container_database_management_feature_details import DisableExternalContainerDatabaseManagementFeatureDetails
+from .disable_external_non_container_database_management_feature_details import DisableExternalNonContainerDatabaseManagementFeatureDetails
+from .disable_external_pluggable_database_management_feature_details import DisableExternalPluggableDatabaseManagementFeatureDetails
 from .disable_high_frequency_automatic_spm_evolve_advisor_task_details import DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails
+from .disable_pluggable_database_management_feature_details import DisablePluggableDatabaseManagementFeatureDetails
 from .disable_sql_plan_baselines_usage_details import DisableSqlPlanBaselinesUsageDetails
 from .discover_external_exadata_infrastructure_details import DiscoverExternalExadataInfrastructureDetails
 from .discovered_external_asm import DiscoveredExternalAsm
@@ -149,10 +162,15 @@ from .drop_sqls_in_sql_tuning_set_details import DropSqlsInSqlTuningSetDetails
 from .drop_tablespace_details import DropTablespaceDetails
 from .enable_automatic_initial_plan_capture_details import EnableAutomaticInitialPlanCaptureDetails
 from .enable_automatic_spm_evolve_advisor_task_details import EnableAutomaticSpmEvolveAdvisorTaskDetails
+from .enable_database_management_feature_details import EnableDatabaseManagementFeatureDetails
+from .enable_external_container_database_management_feature_details import EnableExternalContainerDatabaseManagementFeatureDetails
 from .enable_external_db_system_database_management_details import EnableExternalDbSystemDatabaseManagementDetails
 from .enable_external_db_system_stack_monitoring_details import EnableExternalDbSystemStackMonitoringDetails
 from .enable_external_exadata_infrastructure_management_details import EnableExternalExadataInfrastructureManagementDetails
+from .enable_external_non_container_database_management_feature_details import EnableExternalNonContainerDatabaseManagementFeatureDetails
+from .enable_external_pluggable_database_management_feature_details import EnableExternalPluggableDatabaseManagementFeatureDetails
 from .enable_high_frequency_automatic_spm_evolve_advisor_task_details import EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails
+from .enable_pluggable_database_management_feature_details import EnablePluggableDatabaseManagementFeatureDetails
 from .enable_sql_plan_baselines_usage_details import EnableSqlPlanBaselinesUsageDetails
 from .entity_discovered import EntityDiscovered
 from .execution_plan_stats_comparision import ExecutionPlanStatsComparision
@@ -179,8 +197,11 @@ from .external_cluster_network_configuration import ExternalClusterNetworkConfig
 from .external_cluster_scan_listener_configuration import ExternalClusterScanListenerConfiguration
 from .external_cluster_summary import ExternalClusterSummary
 from .external_cluster_vip_configuration import ExternalClusterVipConfiguration
+from .external_connector_details import ExternalConnectorDetails
 from .external_database_collection import ExternalDatabaseCollection
 from .external_database_connection_info import ExternalDatabaseConnectionInfo
+from .external_database_diagnostics_and_management_feature_details import ExternalDatabaseDiagnosticsAndManagementFeatureDetails
+from .external_database_feature_details import ExternalDatabaseFeatureDetails
 from .external_database_instance import ExternalDatabaseInstance
 from .external_database_summary import ExternalDatabaseSummary
 from .external_database_system_discovery_summary import ExternalDatabaseSystemDiscoverySummary
@@ -232,6 +253,8 @@ from .external_listener_serviced_database import ExternalListenerServicedDatabas
 from .external_listener_summary import ExternalListenerSummary
 from .external_listener_tcp_endpoint import ExternalListenerTcpEndpoint
 from .external_listener_tcps_endpoint import ExternalListenerTcpsEndpoint
+from .external_pluggable_database_diagnostics_and_management_feature_details import ExternalPluggableDatabaseDiagnosticsAndManagementFeatureDetails
+from .external_pluggable_database_feature_details import ExternalPluggableDatabaseFeatureDetails
 from .external_serviced_asm import ExternalServicedAsm
 from .external_serviced_database import ExternalServicedDatabase
 from .external_storage_grid_discovery_summary import ExternalStorageGridDiscoverySummary
@@ -277,6 +300,7 @@ from .job_summary import JobSummary
 from .load_sql_plan_baselines_from_awr_details import LoadSqlPlanBaselinesFromAwrDetails
 from .load_sql_plan_baselines_from_cursor_cache_details import LoadSqlPlanBaselinesFromCursorCacheDetails
 from .load_sql_tuning_set_details import LoadSqlTuningSetDetails
+from .macs_connector_details import MacsConnectorDetails
 from .managed_database import ManagedDatabase
 from .managed_database_collection import ManagedDatabaseCollection
 from .managed_database_credential import ManagedDatabaseCredential
@@ -295,6 +319,8 @@ from .metric_dimension_definition import MetricDimensionDefinition
 from .metric_statistics_definition import MetricStatisticsDefinition
 from .metrics_aggregation_range import MetricsAggregationRange
 from .metrics_aggregation_range_collection import MetricsAggregationRangeCollection
+from .modify_database_management_feature_details import ModifyDatabaseManagementFeatureDetails
+from .modify_pluggable_database_management_feature_details import ModifyPluggableDatabaseManagementFeatureDetails
 from .modify_snapshot_settings_details import ModifySnapshotSettingsDetails
 from .my_sql_configuration_data_collection import MySqlConfigurationDataCollection
 from .my_sql_configuration_data_summary import MySqlConfigurationDataSummary
@@ -338,6 +364,7 @@ from .pdb_status_details import PdbStatusDetails
 from .preferred_credential import PreferredCredential
 from .preferred_credential_collection import PreferredCredentialCollection
 from .preferred_credential_summary import PreferredCredentialSummary
+from .private_end_point_connector_details import PrivateEndPointConnectorDetails
 from .proxied_for_user_collection import ProxiedForUserCollection
 from .proxied_for_user_summary import ProxiedForUserSummary
 from .proxy_user_collection import ProxyUserCollection
@@ -521,6 +548,7 @@ database_management_type_mapping = {
     "AwrDbWaitEventCollection": AwrDbWaitEventCollection,
     "AwrDbWaitEventSummary": AwrDbWaitEventSummary,
     "AwrQueryResult": AwrQueryResult,
+    "BasicDatabaseConnectionStringDetails": BasicDatabaseConnectionStringDetails,
     "BasicNamedCredentialContent": BasicNamedCredentialContent,
     "BasicPreferredCredential": BasicPreferredCredential,
     "ChangeDatabaseParameterDetails": ChangeDatabaseParameterDetails,
@@ -539,6 +567,7 @@ database_management_type_mapping = {
     "ClusterCacheMetric": ClusterCacheMetric,
     "ConfigureAutomaticCaptureFiltersDetails": ConfigureAutomaticCaptureFiltersDetails,
     "ConfigureAutomaticSpmEvolveAdvisorTaskDetails": ConfigureAutomaticSpmEvolveAdvisorTaskDetails,
+    "ConnectorDetails": ConnectorDetails,
     "ConsumerGroupPrivilegeCollection": ConsumerGroupPrivilegeCollection,
     "ConsumerGroupPrivilegeSummary": ConsumerGroupPrivilegeSummary,
     "CpuUtilizationAggregateMetrics": CpuUtilizationAggregateMetrics,
@@ -562,9 +591,15 @@ database_management_type_mapping = {
     "DatabaseConnectionCredentailsByName": DatabaseConnectionCredentailsByName,
     "DatabaseConnectionCredentials": DatabaseConnectionCredentials,
     "DatabaseConnectionCredentialsByDetails": DatabaseConnectionCredentialsByDetails,
+    "DatabaseConnectionDetails": DatabaseConnectionDetails,
     "DatabaseConnectionString": DatabaseConnectionString,
+    "DatabaseConnectionStringDetails": DatabaseConnectionStringDetails,
     "DatabaseCredentialDetails": DatabaseCredentialDetails,
     "DatabaseCredentials": DatabaseCredentials,
+    "DatabaseDiagnosticsAndManagementFeatureConfiguration": DatabaseDiagnosticsAndManagementFeatureConfiguration,
+    "DatabaseDiagnosticsAndManagementFeatureDetails": DatabaseDiagnosticsAndManagementFeatureDetails,
+    "DatabaseFeatureConfiguration": DatabaseFeatureConfiguration,
+    "DatabaseFeatureDetails": DatabaseFeatureDetails,
     "DatabaseFleetHealthMetrics": DatabaseFleetHealthMetrics,
     "DatabaseHomeMetricDefinition": DatabaseHomeMetricDefinition,
     "DatabaseHomeMetrics": DatabaseHomeMetrics,
@@ -591,7 +626,12 @@ database_management_type_mapping = {
     "DbmResource": DbmResource,
     "DisableAutomaticInitialPlanCaptureDetails": DisableAutomaticInitialPlanCaptureDetails,
     "DisableAutomaticSpmEvolveAdvisorTaskDetails": DisableAutomaticSpmEvolveAdvisorTaskDetails,
+    "DisableDatabaseManagementFeatureDetails": DisableDatabaseManagementFeatureDetails,
+    "DisableExternalContainerDatabaseManagementFeatureDetails": DisableExternalContainerDatabaseManagementFeatureDetails,
+    "DisableExternalNonContainerDatabaseManagementFeatureDetails": DisableExternalNonContainerDatabaseManagementFeatureDetails,
+    "DisableExternalPluggableDatabaseManagementFeatureDetails": DisableExternalPluggableDatabaseManagementFeatureDetails,
     "DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails": DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails,
+    "DisablePluggableDatabaseManagementFeatureDetails": DisablePluggableDatabaseManagementFeatureDetails,
     "DisableSqlPlanBaselinesUsageDetails": DisableSqlPlanBaselinesUsageDetails,
     "DiscoverExternalExadataInfrastructureDetails": DiscoverExternalExadataInfrastructureDetails,
     "DiscoveredExternalAsm": DiscoveredExternalAsm,
@@ -611,10 +651,15 @@ database_management_type_mapping = {
     "DropTablespaceDetails": DropTablespaceDetails,
     "EnableAutomaticInitialPlanCaptureDetails": EnableAutomaticInitialPlanCaptureDetails,
     "EnableAutomaticSpmEvolveAdvisorTaskDetails": EnableAutomaticSpmEvolveAdvisorTaskDetails,
+    "EnableDatabaseManagementFeatureDetails": EnableDatabaseManagementFeatureDetails,
+    "EnableExternalContainerDatabaseManagementFeatureDetails": EnableExternalContainerDatabaseManagementFeatureDetails,
     "EnableExternalDbSystemDatabaseManagementDetails": EnableExternalDbSystemDatabaseManagementDetails,
     "EnableExternalDbSystemStackMonitoringDetails": EnableExternalDbSystemStackMonitoringDetails,
     "EnableExternalExadataInfrastructureManagementDetails": EnableExternalExadataInfrastructureManagementDetails,
+    "EnableExternalNonContainerDatabaseManagementFeatureDetails": EnableExternalNonContainerDatabaseManagementFeatureDetails,
+    "EnableExternalPluggableDatabaseManagementFeatureDetails": EnableExternalPluggableDatabaseManagementFeatureDetails,
     "EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails": EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails,
+    "EnablePluggableDatabaseManagementFeatureDetails": EnablePluggableDatabaseManagementFeatureDetails,
     "EnableSqlPlanBaselinesUsageDetails": EnableSqlPlanBaselinesUsageDetails,
     "EntityDiscovered": EntityDiscovered,
     "ExecutionPlanStatsComparision": ExecutionPlanStatsComparision,
@@ -641,8 +686,11 @@ database_management_type_mapping = {
     "ExternalClusterScanListenerConfiguration": ExternalClusterScanListenerConfiguration,
     "ExternalClusterSummary": ExternalClusterSummary,
     "ExternalClusterVipConfiguration": ExternalClusterVipConfiguration,
+    "ExternalConnectorDetails": ExternalConnectorDetails,
     "ExternalDatabaseCollection": ExternalDatabaseCollection,
     "ExternalDatabaseConnectionInfo": ExternalDatabaseConnectionInfo,
+    "ExternalDatabaseDiagnosticsAndManagementFeatureDetails": ExternalDatabaseDiagnosticsAndManagementFeatureDetails,
+    "ExternalDatabaseFeatureDetails": ExternalDatabaseFeatureDetails,
     "ExternalDatabaseInstance": ExternalDatabaseInstance,
     "ExternalDatabaseSummary": ExternalDatabaseSummary,
     "ExternalDatabaseSystemDiscoverySummary": ExternalDatabaseSystemDiscoverySummary,
@@ -694,6 +742,8 @@ database_management_type_mapping = {
     "ExternalListenerSummary": ExternalListenerSummary,
     "ExternalListenerTcpEndpoint": ExternalListenerTcpEndpoint,
     "ExternalListenerTcpsEndpoint": ExternalListenerTcpsEndpoint,
+    "ExternalPluggableDatabaseDiagnosticsAndManagementFeatureDetails": ExternalPluggableDatabaseDiagnosticsAndManagementFeatureDetails,
+    "ExternalPluggableDatabaseFeatureDetails": ExternalPluggableDatabaseFeatureDetails,
     "ExternalServicedAsm": ExternalServicedAsm,
     "ExternalServicedDatabase": ExternalServicedDatabase,
     "ExternalStorageGridDiscoverySummary": ExternalStorageGridDiscoverySummary,
@@ -739,6 +789,7 @@ database_management_type_mapping = {
     "LoadSqlPlanBaselinesFromAwrDetails": LoadSqlPlanBaselinesFromAwrDetails,
     "LoadSqlPlanBaselinesFromCursorCacheDetails": LoadSqlPlanBaselinesFromCursorCacheDetails,
     "LoadSqlTuningSetDetails": LoadSqlTuningSetDetails,
+    "MacsConnectorDetails": MacsConnectorDetails,
     "ManagedDatabase": ManagedDatabase,
     "ManagedDatabaseCollection": ManagedDatabaseCollection,
     "ManagedDatabaseCredential": ManagedDatabaseCredential,
@@ -757,6 +808,8 @@ database_management_type_mapping = {
     "MetricStatisticsDefinition": MetricStatisticsDefinition,
     "MetricsAggregationRange": MetricsAggregationRange,
     "MetricsAggregationRangeCollection": MetricsAggregationRangeCollection,
+    "ModifyDatabaseManagementFeatureDetails": ModifyDatabaseManagementFeatureDetails,
+    "ModifyPluggableDatabaseManagementFeatureDetails": ModifyPluggableDatabaseManagementFeatureDetails,
     "ModifySnapshotSettingsDetails": ModifySnapshotSettingsDetails,
     "MySqlConfigurationDataCollection": MySqlConfigurationDataCollection,
     "MySqlConfigurationDataSummary": MySqlConfigurationDataSummary,
@@ -800,6 +853,7 @@ database_management_type_mapping = {
     "PreferredCredential": PreferredCredential,
     "PreferredCredentialCollection": PreferredCredentialCollection,
     "PreferredCredentialSummary": PreferredCredentialSummary,
+    "PrivateEndPointConnectorDetails": PrivateEndPointConnectorDetails,
     "ProxiedForUserCollection": ProxiedForUserCollection,
     "ProxiedForUserSummary": ProxiedForUserSummary,
     "ProxyUserCollection": ProxyUserCollection,

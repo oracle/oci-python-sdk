@@ -32,6 +32,10 @@ class CreateProtectionPolicyDetails(object):
             The value to assign to the compartment_id property of this CreateProtectionPolicyDetails.
         :type compartment_id: str
 
+        :param policy_locked_date_time:
+            The value to assign to the policy_locked_date_time property of this CreateProtectionPolicyDetails.
+        :type policy_locked_date_time: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateProtectionPolicyDetails.
         :type freeform_tags: dict(str, str)
@@ -45,6 +49,7 @@ class CreateProtectionPolicyDetails(object):
             'display_name': 'str',
             'backup_retention_period_in_days': 'int',
             'compartment_id': 'str',
+            'policy_locked_date_time': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -53,6 +58,7 @@ class CreateProtectionPolicyDetails(object):
             'display_name': 'displayName',
             'backup_retention_period_in_days': 'backupRetentionPeriodInDays',
             'compartment_id': 'compartmentId',
+            'policy_locked_date_time': 'policyLockedDateTime',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -60,6 +66,7 @@ class CreateProtectionPolicyDetails(object):
         self._display_name = None
         self._backup_retention_period_in_days = None
         self._compartment_id = None
+        self._policy_locked_date_time = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -134,6 +141,44 @@ class CreateProtectionPolicyDetails(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def policy_locked_date_time(self):
+        """
+        Gets the policy_locked_date_time of this CreateProtectionPolicyDetails.
+        An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+
+        * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+        * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
+        * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set policyLockedDateTime  to '2023-08-15T21:00:00.600Z' (Aug 15, 2023, 9:00 pm), or greater.
+        * During the 14-day delay period, you can either increase or decrease the retention period in the policy.
+        * However, you are only allowed to increase the retention period on or after the retention lock date.
+        * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
+
+
+        :return: The policy_locked_date_time of this CreateProtectionPolicyDetails.
+        :rtype: str
+        """
+        return self._policy_locked_date_time
+
+    @policy_locked_date_time.setter
+    def policy_locked_date_time(self, policy_locked_date_time):
+        """
+        Sets the policy_locked_date_time of this CreateProtectionPolicyDetails.
+        An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+
+        * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+        * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect. Therefore, you must set policyLockedDateTime  to a date that occurs 14 days after the current date.
+        * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set policyLockedDateTime  to '2023-08-15T21:00:00.600Z' (Aug 15, 2023, 9:00 pm), or greater.
+        * During the 14-day delay period, you can either increase or decrease the retention period in the policy.
+        * However, you are only allowed to increase the retention period on or after the retention lock date.
+        * You cannot change the value of policyLockedDateTime if the retention lock is already in effect.
+
+
+        :param policy_locked_date_time: The policy_locked_date_time of this CreateProtectionPolicyDetails.
+        :type: str
+        """
+        self._policy_locked_date_time = policy_locked_date_time
 
     @property
     def freeform_tags(self):

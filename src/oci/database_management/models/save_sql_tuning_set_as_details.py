@@ -160,6 +160,10 @@ class SaveSqlTuningSetAsDetails(object):
     #: This constant has a value of "NEW"
     UPDATE_CONDITION_NEW = "NEW"
 
+    #: A constant which can be used with the update_condition property of a SaveSqlTuningSetAsDetails.
+    #: This constant has a value of "NULL"
+    UPDATE_CONDITION_NULL = "NULL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new SaveSqlTuningSetAsDetails object with values from keyword arguments.
@@ -254,7 +258,7 @@ class SaveSqlTuningSetAsDetails(object):
 
         :param update_condition:
             The value to assign to the update_condition property of this SaveSqlTuningSetAsDetails.
-            Allowed values for this property are: "OLD", "NEW"
+            Allowed values for this property are: "OLD", "NEW", "NULL"
         :type update_condition: str
 
         :param update_attributes:
@@ -972,7 +976,7 @@ class SaveSqlTuningSetAsDetails(object):
           NEW  \u2014 Refers to statement attributes from the input statements (source).
           NULL \u2014 No updates are performed.
 
-        Allowed values for this property are: "OLD", "NEW"
+        Allowed values for this property are: "OLD", "NEW", "NULL"
 
 
         :return: The update_condition of this SaveSqlTuningSetAsDetails.
@@ -996,7 +1000,7 @@ class SaveSqlTuningSetAsDetails(object):
         :param update_condition: The update_condition of this SaveSqlTuningSetAsDetails.
         :type: str
         """
-        allowed_values = ["OLD", "NEW"]
+        allowed_values = ["OLD", "NEW", "NULL"]
         if not value_allowed_none_or_none_sentinel(update_condition, allowed_values):
             raise ValueError(
                 f"Invalid value for `update_condition`, must be None or one of {allowed_values}"

@@ -24,6 +24,14 @@ class UpdateRecoveryServiceSubnetDetails(object):
             The value to assign to the display_name property of this UpdateRecoveryServiceSubnetDetails.
         :type display_name: str
 
+        :param subnets:
+            The value to assign to the subnets property of this UpdateRecoveryServiceSubnetDetails.
+        :type subnets: list[str]
+
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this UpdateRecoveryServiceSubnetDetails.
+        :type nsg_ids: list[str]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateRecoveryServiceSubnetDetails.
         :type freeform_tags: dict(str, str)
@@ -35,17 +43,23 @@ class UpdateRecoveryServiceSubnetDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'subnets': 'list[str]',
+            'nsg_ids': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
+            'subnets': 'subnets',
+            'nsg_ids': 'nsgIds',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._display_name = None
+        self._subnets = None
+        self._nsg_ids = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -72,6 +86,60 @@ class UpdateRecoveryServiceSubnetDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def subnets(self):
+        """
+        Gets the subnets of this UpdateRecoveryServiceSubnetDetails.
+        A list of OCIDs of the subnets associated with the recovery service subnet.
+
+
+        :return: The subnets of this UpdateRecoveryServiceSubnetDetails.
+        :rtype: list[str]
+        """
+        return self._subnets
+
+    @subnets.setter
+    def subnets(self, subnets):
+        """
+        Sets the subnets of this UpdateRecoveryServiceSubnetDetails.
+        A list of OCIDs of the subnets associated with the recovery service subnet.
+
+
+        :param subnets: The subnets of this UpdateRecoveryServiceSubnetDetails.
+        :type: list[str]
+        """
+        self._subnets = subnets
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this UpdateRecoveryServiceSubnetDetails.
+        A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet.
+        You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet.
+        Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet.
+        See :class:`NetworkSecurityGroup` for more information.
+
+
+        :return: The nsg_ids of this UpdateRecoveryServiceSubnetDetails.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this UpdateRecoveryServiceSubnetDetails.
+        A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet.
+        You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet.
+        Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet.
+        See :class:`NetworkSecurityGroup` for more information.
+
+
+        :param nsg_ids: The nsg_ids of this UpdateRecoveryServiceSubnetDetails.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
 
     @property
     def freeform_tags(self):

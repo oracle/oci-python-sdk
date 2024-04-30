@@ -140,6 +140,10 @@ class DbSystem(object):
             The value to assign to the backup_network_nsg_ids property of this DbSystem.
         :type backup_network_nsg_ids: list[str]
 
+        :param gi_software_image_id:
+            The value to assign to the gi_software_image_id property of this DbSystem.
+        :type gi_software_image_id: str
+
         :param memory_size_in_gbs:
             The value to assign to the memory_size_in_gbs property of this DbSystem.
         :type memory_size_in_gbs: int
@@ -318,6 +322,7 @@ class DbSystem(object):
             'backup_subnet_id': 'str',
             'nsg_ids': 'list[str]',
             'backup_network_nsg_ids': 'list[str]',
+            'gi_software_image_id': 'str',
             'memory_size_in_gbs': 'int',
             'storage_volume_performance_mode': 'str',
             'shape': 'str',
@@ -370,6 +375,7 @@ class DbSystem(object):
             'backup_subnet_id': 'backupSubnetId',
             'nsg_ids': 'nsgIds',
             'backup_network_nsg_ids': 'backupNetworkNsgIds',
+            'gi_software_image_id': 'giSoftwareImageId',
             'memory_size_in_gbs': 'memorySizeInGBs',
             'storage_volume_performance_mode': 'storageVolumePerformanceMode',
             'shape': 'shape',
@@ -421,6 +427,7 @@ class DbSystem(object):
         self._backup_subnet_id = None
         self._nsg_ids = None
         self._backup_network_nsg_ids = None
+        self._gi_software_image_id = None
         self._memory_size_in_gbs = None
         self._storage_volume_performance_mode = None
         self._shape = None
@@ -748,6 +755,34 @@ class DbSystem(object):
         :type: list[str]
         """
         self._backup_network_nsg_ids = backup_network_nsg_ids
+
+    @property
+    def gi_software_image_id(self):
+        """
+        Gets the gi_software_image_id of this DbSystem.
+        The `OCID`__ of a grid infrastructure software image. This is a database software image of the type `GRID_IMAGE`.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The gi_software_image_id of this DbSystem.
+        :rtype: str
+        """
+        return self._gi_software_image_id
+
+    @gi_software_image_id.setter
+    def gi_software_image_id(self, gi_software_image_id):
+        """
+        Sets the gi_software_image_id of this DbSystem.
+        The `OCID`__ of a grid infrastructure software image. This is a database software image of the type `GRID_IMAGE`.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param gi_software_image_id: The gi_software_image_id of this DbSystem.
+        :type: str
+        """
+        self._gi_software_image_id = gi_software_image_id
 
     @property
     def memory_size_in_gbs(self):

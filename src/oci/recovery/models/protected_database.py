@@ -59,6 +59,10 @@ class ProtectedDatabase(object):
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
 
     #: A constant which can be used with the lifecycle_state property of a ProtectedDatabase.
+    #: This constant has a value of "DELETE_SCHEDULED"
+    LIFECYCLE_STATE_DELETE_SCHEDULED = "DELETE_SCHEDULED"
+
+    #: A constant which can be used with the lifecycle_state property of a ProtectedDatabase.
     #: This constant has a value of "DELETING"
     LIFECYCLE_STATE_DELETING = "DELETING"
 
@@ -117,6 +121,10 @@ class ProtectedDatabase(object):
             The value to assign to the protection_policy_id property of this ProtectedDatabase.
         :type protection_policy_id: str
 
+        :param policy_locked_date_time:
+            The value to assign to the policy_locked_date_time property of this ProtectedDatabase.
+        :type policy_locked_date_time: str
+
         :param recovery_service_subnets:
             The value to assign to the recovery_service_subnets property of this ProtectedDatabase.
         :type recovery_service_subnets: list[oci.recovery.models.RecoveryServiceSubnetDetails]
@@ -151,7 +159,7 @@ class ProtectedDatabase(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ProtectedDatabase.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETE_SCHEDULED", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -198,6 +206,7 @@ class ProtectedDatabase(object):
             'vpc_user_name': 'str',
             'database_size': 'str',
             'protection_policy_id': 'str',
+            'policy_locked_date_time': 'str',
             'recovery_service_subnets': 'list[RecoveryServiceSubnetDetails]',
             'database_id': 'str',
             'database_size_in_gbs': 'int',
@@ -225,6 +234,7 @@ class ProtectedDatabase(object):
             'vpc_user_name': 'vpcUserName',
             'database_size': 'databaseSize',
             'protection_policy_id': 'protectionPolicyId',
+            'policy_locked_date_time': 'policyLockedDateTime',
             'recovery_service_subnets': 'recoveryServiceSubnets',
             'database_id': 'databaseId',
             'database_size_in_gbs': 'databaseSizeInGBs',
@@ -251,6 +261,7 @@ class ProtectedDatabase(object):
         self._vpc_user_name = None
         self._database_size = None
         self._protection_policy_id = None
+        self._policy_locked_date_time = None
         self._recovery_service_subnets = None
         self._database_id = None
         self._database_size_in_gbs = None
@@ -442,6 +453,36 @@ class ProtectedDatabase(object):
         :type: str
         """
         self._protection_policy_id = protection_policy_id
+
+    @property
+    def policy_locked_date_time(self):
+        """
+        Gets the policy_locked_date_time of this ProtectedDatabase.
+        An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+
+        The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+        Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect.
+
+
+        :return: The policy_locked_date_time of this ProtectedDatabase.
+        :rtype: str
+        """
+        return self._policy_locked_date_time
+
+    @policy_locked_date_time.setter
+    def policy_locked_date_time(self, policy_locked_date_time):
+        """
+        Sets the policy_locked_date_time of this ProtectedDatabase.
+        An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+
+        The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+        Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect.
+
+
+        :param policy_locked_date_time: The policy_locked_date_time of this ProtectedDatabase.
+        :type: str
+        """
+        self._policy_locked_date_time = policy_locked_date_time
 
     @property
     def recovery_service_subnets(self):
@@ -645,7 +686,7 @@ class ProtectedDatabase(object):
         Gets the lifecycle_state of this ProtectedDatabase.
         The current state of the Protected Database.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETE_SCHEDULED", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -664,7 +705,7 @@ class ProtectedDatabase(object):
         :param lifecycle_state: The lifecycle_state of this ProtectedDatabase.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETE_SCHEDULED", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -673,12 +714,9 @@ class ProtectedDatabase(object):
     def health(self):
         """
         Gets the health of this ProtectedDatabase.
-        Indicates the protection status of the database. Allowed values are:
-         - HEALTHY
-         - WARNING
-         - ALERT
+        Indicates the protection status of the database.
 
-        A 'HEALTHY' status indicates that Recovery Service can ensure database recovery to any point in time within the entire recovery window. The potential data loss exposure since the last backup is:
+        A 'PROTECTED' status indicates that Recovery Service can ensure database recovery to any point in time within the entire recovery window. The potential data loss exposure since the last backup is:
          - Less than 10 seconds, if Real-time data protection is enabled
          - Less than 70 minutes if Real-time data protection is disabled
 
@@ -701,12 +739,9 @@ class ProtectedDatabase(object):
     def health(self, health):
         """
         Sets the health of this ProtectedDatabase.
-        Indicates the protection status of the database. Allowed values are:
-         - HEALTHY
-         - WARNING
-         - ALERT
+        Indicates the protection status of the database.
 
-        A 'HEALTHY' status indicates that Recovery Service can ensure database recovery to any point in time within the entire recovery window. The potential data loss exposure since the last backup is:
+        A 'PROTECTED' status indicates that Recovery Service can ensure database recovery to any point in time within the entire recovery window. The potential data loss exposure since the last backup is:
          - Less than 10 seconds, if Real-time data protection is enabled
          - Less than 70 minutes if Real-time data protection is disabled
 

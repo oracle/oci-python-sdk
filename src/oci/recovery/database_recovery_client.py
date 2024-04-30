@@ -116,6 +116,111 @@ class DatabaseRecoveryClient(object):
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
 
+    def cancel_protected_database_deletion(self, protected_database_id, **kwargs):
+        """
+        Cancels the scheduled deletion of a protected database, and returns the protected database to an ACTIVE state. You can cancel the deletion only if the protected database is in the DELETE SCHEDULED state.
+
+
+        :param str protected_database_id: (required)
+            The protected database OCID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/cancel_protected_database_deletion.py.html>`__ to see an example of how to use cancel_protected_database_deletion API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['protectedDatabaseId']
+        resource_path = "/protectedDatabases/{protectedDatabaseId}/actions/cancelDeletion"
+        method = "POST"
+        operation_name = "cancel_protected_database_deletion"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/CancelProtectedDatabaseDeletion"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"cancel_protected_database_deletion got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "protectedDatabaseId": protected_database_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def change_protected_database_compartment(self, protected_database_id, change_protected_database_compartment_details, **kwargs):
         """
         Moves a protected database resource from the existing compartment to the specified compartment. When provided, If-Match is checked against ETag values of the resource.
@@ -464,6 +569,29 @@ class DatabaseRecoveryClient(object):
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
+        :param bool opc_dry_run: (optional)
+            Indicates if the request is to test the preparedness for creating a protected database, without actually creating a protected database.
+
+            If you set the `opcDryRun` option as `true`, then Recovery Service only performs a test run to check for any missing prerequisites or configurations required to create a protected database, and then returns error messages to warn you about any missing requirements.
+
+            If an error occurs, you can review, correct, and repeat the dry run until the `createProtectedDatabase` request does not return any errors.
+
+            These are the common issues that you can identify by performing a dry run of the `createProtectedDatabase` request:
+
+            * The Recovery Service subnet has insufficient free IP addresses to support the required number of private endpoints. See, `troubleshooting`__ information
+            * Recovery Service does not have permissions to manage the network resources in a chosen compartment
+            * Recovery Service is out of capacity. See, `Service Limits`__ for more information
+            * Recovery Service resources exceed quota limits
+            * A protected database, having the same database ID, already exists
+            * The specified protection policy does not exist, or it is not in an Active state
+            * The specified Recovery Service subnet does not exist, or it is not in an Active state
+
+            See, `Prerequisites for Using Recovery Service`__ for more information.
+
+            __ https://docs.oracle.com/en/cloud/paas/recovery-service/dbrsu/troubleshoot-backup-failures-recovery-service.html#GUID-05FA08B8-421D-4E52-B84B-7AFB84ADECF9
+            __ https://docs.oracle.com/en-us/iaas/Content/General/Concepts/servicelimits.htm
+            __ https://docs.oracle.com/en/cloud/paas/recovery-service/dbrsu/backup-recover-recovery-service.html#GUID-B2ABF281-DFF8-4A4E-AC85-629801AAF36A
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -494,7 +622,8 @@ class DatabaseRecoveryClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_dry_run"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -505,7 +634,8 @@ class DatabaseRecoveryClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-dry-run": kwargs.get("opc_dry_run", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -748,6 +878,13 @@ class DatabaseRecoveryClient(object):
         :param str protected_database_id: (required)
             The protected database OCID.
 
+        :param str deletion_schedule: (optional)
+            Defines a preferred schedule to delete a protected database after you terminate the source database.
+            * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated .
+            * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
+
+            Allowed values are: "DELETE_AFTER_RETENTION_PERIOD", "DELETE_AFTER_72_HOURS"
+
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
             for a resource, set the `if-match` parameter to the value of the
@@ -787,6 +924,7 @@ class DatabaseRecoveryClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "deletion_schedule",
             "if_match",
             "opc_request_id"
         ]
@@ -804,6 +942,18 @@ class DatabaseRecoveryClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'deletion_schedule' in kwargs:
+            deletion_schedule_allowed_values = ["DELETE_AFTER_RETENTION_PERIOD", "DELETE_AFTER_72_HOURS"]
+            if kwargs['deletion_schedule'] not in deletion_schedule_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `deletion_schedule`, must be one of { deletion_schedule_allowed_values }"
+                )
+
+        query_params = {
+            "deletionSchedule": kwargs.get("deletion_schedule", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -829,6 +979,7 @@ class DatabaseRecoveryClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -839,6 +990,7 @@ class DatabaseRecoveryClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -1572,7 +1724,7 @@ class DatabaseRecoveryClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only the resources that match the specified lifecycle state.
 
-            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETE_SCHEDULED", "DELETING", "DELETED", "FAILED"
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire 'displayname' given.
@@ -1657,7 +1809,7 @@ class DatabaseRecoveryClient(object):
                 f"list_protected_databases got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETE_SCHEDULED", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
@@ -1743,7 +1895,7 @@ class DatabaseRecoveryClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources their lifecycleState matches the given lifecycleState.
 
-            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETE_SCHEDULED", "DELETING", "DELETED", "FAILED"
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire 'displayname' given.
@@ -1826,7 +1978,7 @@ class DatabaseRecoveryClient(object):
                 f"list_protection_policies got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETE_SCHEDULED", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
@@ -1917,15 +2069,8 @@ class DatabaseRecoveryClient(object):
 
         :param str lifecycle_state: (optional)
             A filter to return only the resources that match the specified lifecycle state.
-            Allowed values are:
-              - CREATING
-              - UPDATING
-              - ACTIVE
-              - DELETING
-              - DELETED
-              - FAILED
 
-            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETE_SCHEDULED", "DELETING", "DELETED", "FAILED"
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire 'displayname' given.
@@ -2006,7 +2151,7 @@ class DatabaseRecoveryClient(object):
                 f"list_recovery_service_subnets got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETE_SCHEDULED", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
@@ -2384,7 +2529,7 @@ class DatabaseRecoveryClient(object):
         :param str status: (optional)
             A filter to return only resources their lifecycleState matches the given OperationStatus.
 
-            Allowed values are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"
+            Allowed values are: "ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"
 
         :param str resource_id: (optional)
             The ID of the resource affected by the work request.
@@ -2455,7 +2600,7 @@ class DatabaseRecoveryClient(object):
                 f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         if 'status' in kwargs:
-            status_allowed_values = ["ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
+            status_allowed_values = ["ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
             if kwargs['status'] not in status_allowed_values:
                 raise ValueError(
                     f"Invalid value for `status`, must be one of { status_allowed_values }"
@@ -2523,6 +2668,119 @@ class DatabaseRecoveryClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="WorkRequestSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def schedule_protected_database_deletion(self, protected_database_id, **kwargs):
+        """
+        Defines a preferred schedule to delete a protected database after you terminate the source database.
+        The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
+        The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
+
+
+        :param str protected_database_id: (required)
+            The protected database OCID.
+
+        :param oci.recovery.models.ScheduleProtectedDatabaseDeletionDetails schedule_protected_database_deletion_details: (optional)
+            The details for scheduling deletion of the protected database
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/recovery/schedule_protected_database_deletion.py.html>`__ to see an example of how to use schedule_protected_database_deletion API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['protectedDatabaseId']
+        resource_path = "/protectedDatabases/{protectedDatabaseId}/actions/scheduleDeletion"
+        method = "POST"
+        operation_name = "schedule_protected_database_deletion"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/ScheduleProtectedDatabaseDeletion"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "schedule_protected_database_deletion_details",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"schedule_protected_database_deletion got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "protectedDatabaseId": protected_database_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=kwargs.get('schedule_protected_database_deletion_details'),
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=kwargs.get('schedule_protected_database_deletion_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,

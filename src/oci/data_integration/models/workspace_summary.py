@@ -114,6 +114,10 @@ class WorkspaceSummary(object):
             The value to assign to the registry_id property of this WorkspaceSummary.
         :type registry_id: str
 
+        :param workspace_properties:
+            The value to assign to the workspace_properties property of this WorkspaceSummary.
+        :type workspace_properties: dict(str, str)
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -128,7 +132,8 @@ class WorkspaceSummary(object):
             'state_message': 'str',
             'endpoint_name': 'str',
             'endpoint_id': 'str',
-            'registry_id': 'str'
+            'registry_id': 'str',
+            'workspace_properties': 'dict(str, str)'
         }
 
         self.attribute_map = {
@@ -144,7 +149,8 @@ class WorkspaceSummary(object):
             'state_message': 'stateMessage',
             'endpoint_name': 'endpointName',
             'endpoint_id': 'endpointId',
-            'registry_id': 'registryId'
+            'registry_id': 'registryId',
+            'workspace_properties': 'workspaceProperties'
         }
 
         self._id = None
@@ -160,6 +166,7 @@ class WorkspaceSummary(object):
         self._endpoint_name = None
         self._endpoint_id = None
         self._registry_id = None
+        self._workspace_properties = None
 
     @property
     def id(self):
@@ -482,6 +489,30 @@ class WorkspaceSummary(object):
         :type: str
         """
         self._registry_id = registry_id
+
+    @property
+    def workspace_properties(self):
+        """
+        Gets the workspace_properties of this WorkspaceSummary.
+        key-value pairs of workspace properties
+
+
+        :return: The workspace_properties of this WorkspaceSummary.
+        :rtype: dict(str, str)
+        """
+        return self._workspace_properties
+
+    @workspace_properties.setter
+    def workspace_properties(self, workspace_properties):
+        """
+        Sets the workspace_properties of this WorkspaceSummary.
+        key-value pairs of workspace properties
+
+
+        :param workspace_properties: The workspace_properties of this WorkspaceSummary.
+        :type: dict(str, str)
+        """
+        self._workspace_properties = workspace_properties
 
     def __repr__(self):
         return formatted_flat_dict(self)

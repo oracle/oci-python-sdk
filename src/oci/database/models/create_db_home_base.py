@@ -83,6 +83,10 @@ class CreateDbHomeBase(object):
             The value to assign to the is_desupported_version property of this CreateDbHomeBase.
         :type is_desupported_version: bool
 
+        :param is_unified_auditing_enabled:
+            The value to assign to the is_unified_auditing_enabled property of this CreateDbHomeBase.
+        :type is_unified_auditing_enabled: bool
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -92,7 +96,8 @@ class CreateDbHomeBase(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'source': 'str',
-            'is_desupported_version': 'bool'
+            'is_desupported_version': 'bool',
+            'is_unified_auditing_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -103,7 +108,8 @@ class CreateDbHomeBase(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'source': 'source',
-            'is_desupported_version': 'isDesupportedVersion'
+            'is_desupported_version': 'isDesupportedVersion',
+            'is_unified_auditing_enabled': 'isUnifiedAuditingEnabled'
         }
 
         self._display_name = None
@@ -114,6 +120,7 @@ class CreateDbHomeBase(object):
         self._defined_tags = None
         self._source = None
         self._is_desupported_version = None
+        self._is_unified_auditing_enabled = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -358,6 +365,30 @@ class CreateDbHomeBase(object):
         :type: bool
         """
         self._is_desupported_version = is_desupported_version
+
+    @property
+    def is_unified_auditing_enabled(self):
+        """
+        Gets the is_unified_auditing_enabled of this CreateDbHomeBase.
+        Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
+
+
+        :return: The is_unified_auditing_enabled of this CreateDbHomeBase.
+        :rtype: bool
+        """
+        return self._is_unified_auditing_enabled
+
+    @is_unified_auditing_enabled.setter
+    def is_unified_auditing_enabled(self, is_unified_auditing_enabled):
+        """
+        Sets the is_unified_auditing_enabled of this CreateDbHomeBase.
+        Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
+
+
+        :param is_unified_auditing_enabled: The is_unified_auditing_enabled of this CreateDbHomeBase.
+        :type: bool
+        """
+        self._is_unified_auditing_enabled = is_unified_auditing_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

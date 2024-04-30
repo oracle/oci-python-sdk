@@ -1722,7 +1722,7 @@ class AutonomousContainerDatabase(object):
     def db_split_threshold(self):
         """
         Gets the db_split_threshold of this AutonomousContainerDatabase.
-        The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the \"CPU per VM\" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the \"CPU per VM\" value.
+        The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
 
 
         :return: The db_split_threshold of this AutonomousContainerDatabase.
@@ -1734,7 +1734,7 @@ class AutonomousContainerDatabase(object):
     def db_split_threshold(self, db_split_threshold):
         """
         Sets the db_split_threshold of this AutonomousContainerDatabase.
-        The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the \"CPU per VM\" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the \"CPU per VM\" value.
+        The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
 
 
         :param db_split_threshold: The db_split_threshold of this AutonomousContainerDatabase.
@@ -1746,7 +1746,7 @@ class AutonomousContainerDatabase(object):
     def vm_failover_reservation(self):
         """
         Gets the vm_failover_reservation of this AutonomousContainerDatabase.
-        The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+        The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
 
 
         :return: The vm_failover_reservation of this AutonomousContainerDatabase.
@@ -1758,7 +1758,7 @@ class AutonomousContainerDatabase(object):
     def vm_failover_reservation(self, vm_failover_reservation):
         """
         Sets the vm_failover_reservation of this AutonomousContainerDatabase.
-        The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+        The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
 
 
         :param vm_failover_reservation: The vm_failover_reservation of this AutonomousContainerDatabase.
@@ -1770,7 +1770,7 @@ class AutonomousContainerDatabase(object):
     def distribution_affinity(self):
         """
         Gets the distribution_affinity of this AutonomousContainerDatabase.
-        This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+        Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
 
         Allowed values for this property are: "MINIMUM_DISTRIBUTION", "MAXIMUM_DISTRIBUTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -1785,7 +1785,7 @@ class AutonomousContainerDatabase(object):
     def distribution_affinity(self, distribution_affinity):
         """
         Sets the distribution_affinity of this AutonomousContainerDatabase.
-        This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+        Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
 
 
         :param distribution_affinity: The distribution_affinity of this AutonomousContainerDatabase.

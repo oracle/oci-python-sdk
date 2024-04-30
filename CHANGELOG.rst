@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.126.1 - 2024-04-30
+====================
+
+Added
+-----
+* Support for enabling unified auditing for DBHome in the Database service
+* Support for listing minor Grid Infrastructure (GI) versions available for custom GI software image creation in the Database service
+* Support for network security groups in the Recovery Cloud service
+* Support for lineage metadata import in the Data Catalog service
+* Support for workspace properties in workspace create and update operations in the Data Integration service
+* Support for monitoring ExaCC databases in the Database Management service
+* Support for validations on target and policy before the masking process in the Data Safe service
+ 
+====================
 2.126.0 - 2024-04-23
 ====================
 

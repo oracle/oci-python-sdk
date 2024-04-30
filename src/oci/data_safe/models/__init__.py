@@ -65,6 +65,7 @@ from .change_database_security_config_compartment_details import ChangeDatabaseS
 from .change_discovery_job_compartment_details import ChangeDiscoveryJobCompartmentDetails
 from .change_library_masking_format_compartment_details import ChangeLibraryMaskingFormatCompartmentDetails
 from .change_masking_policy_compartment_details import ChangeMaskingPolicyCompartmentDetails
+from .change_masking_policy_health_report_compartment_details import ChangeMaskingPolicyHealthReportCompartmentDetails
 from .change_on_prem_connector_compartment_details import ChangeOnPremConnectorCompartmentDetails
 from .change_report_compartment_details import ChangeReportCompartmentDetails
 from .change_report_definition_compartment_details import ChangeReportDefinitionCompartmentDetails
@@ -177,6 +178,7 @@ from .format_summary import FormatSummary
 from .formats_for_data_type import FormatsForDataType
 from .formats_for_sensitive_type import FormatsForSensitiveType
 from .generate_discovery_report_for_download_details import GenerateDiscoveryReportForDownloadDetails
+from .generate_health_report_details import GenerateHealthReportDetails
 from .generate_masking_policy_for_download_details import GenerateMaskingPolicyForDownloadDetails
 from .generate_masking_report_for_download_details import GenerateMaskingReportForDownloadDetails
 from .generate_on_prem_connector_configuration_details import GenerateOnPremConnectorConfigurationDetails
@@ -206,6 +208,11 @@ from .masking_object_collection import MaskingObjectCollection
 from .masking_object_summary import MaskingObjectSummary
 from .masking_policy import MaskingPolicy
 from .masking_policy_collection import MaskingPolicyCollection
+from .masking_policy_health_report import MaskingPolicyHealthReport
+from .masking_policy_health_report_collection import MaskingPolicyHealthReportCollection
+from .masking_policy_health_report_log_collection import MaskingPolicyHealthReportLogCollection
+from .masking_policy_health_report_log_summary import MaskingPolicyHealthReportLogSummary
+from .masking_policy_health_report_summary import MaskingPolicyHealthReportSummary
 from .masking_policy_summary import MaskingPolicySummary
 from .masking_report import MaskingReport
 from .masking_report_collection import MaskingReportCollection
@@ -460,6 +467,7 @@ data_safe_type_mapping = {
     "ChangeDiscoveryJobCompartmentDetails": ChangeDiscoveryJobCompartmentDetails,
     "ChangeLibraryMaskingFormatCompartmentDetails": ChangeLibraryMaskingFormatCompartmentDetails,
     "ChangeMaskingPolicyCompartmentDetails": ChangeMaskingPolicyCompartmentDetails,
+    "ChangeMaskingPolicyHealthReportCompartmentDetails": ChangeMaskingPolicyHealthReportCompartmentDetails,
     "ChangeOnPremConnectorCompartmentDetails": ChangeOnPremConnectorCompartmentDetails,
     "ChangeReportCompartmentDetails": ChangeReportCompartmentDetails,
     "ChangeReportDefinitionCompartmentDetails": ChangeReportDefinitionCompartmentDetails,
@@ -572,6 +580,7 @@ data_safe_type_mapping = {
     "FormatsForDataType": FormatsForDataType,
     "FormatsForSensitiveType": FormatsForSensitiveType,
     "GenerateDiscoveryReportForDownloadDetails": GenerateDiscoveryReportForDownloadDetails,
+    "GenerateHealthReportDetails": GenerateHealthReportDetails,
     "GenerateMaskingPolicyForDownloadDetails": GenerateMaskingPolicyForDownloadDetails,
     "GenerateMaskingReportForDownloadDetails": GenerateMaskingReportForDownloadDetails,
     "GenerateOnPremConnectorConfigurationDetails": GenerateOnPremConnectorConfigurationDetails,
@@ -601,6 +610,11 @@ data_safe_type_mapping = {
     "MaskingObjectSummary": MaskingObjectSummary,
     "MaskingPolicy": MaskingPolicy,
     "MaskingPolicyCollection": MaskingPolicyCollection,
+    "MaskingPolicyHealthReport": MaskingPolicyHealthReport,
+    "MaskingPolicyHealthReportCollection": MaskingPolicyHealthReportCollection,
+    "MaskingPolicyHealthReportLogCollection": MaskingPolicyHealthReportLogCollection,
+    "MaskingPolicyHealthReportLogSummary": MaskingPolicyHealthReportLogSummary,
+    "MaskingPolicyHealthReportSummary": MaskingPolicyHealthReportSummary,
     "MaskingPolicySummary": MaskingPolicySummary,
     "MaskingReport": MaskingReport,
     "MaskingReportCollection": MaskingReportCollection,
