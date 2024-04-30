@@ -113,6 +113,10 @@ class ExternalExadataStorageServerSummary(DbmResource):
             The value to assign to the defined_tags property of this ExternalExadataStorageServerSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this ExternalExadataStorageServerSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -136,7 +140,8 @@ class ExternalExadataStorageServerSummary(DbmResource):
             'max_flash_disk_throughput': 'int',
             'connector_id': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -161,7 +166,8 @@ class ExternalExadataStorageServerSummary(DbmResource):
             'max_flash_disk_throughput': 'maxFlashDiskThroughput',
             'connector_id': 'connectorId',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'system_tags': 'systemTags'
         }
 
         self._id = None
@@ -186,6 +192,7 @@ class ExternalExadataStorageServerSummary(DbmResource):
         self._connector_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._resource_type = 'STORAGE_SERVER_SUMMARY'
 
     @property
@@ -471,6 +478,42 @@ class ExternalExadataStorageServerSummary(DbmResource):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this ExternalExadataStorageServerSummary.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        System tags can be viewed by users, but can only be created by the system.
+
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The system_tags of this ExternalExadataStorageServerSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this ExternalExadataStorageServerSummary.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        System tags can be viewed by users, but can only be created by the system.
+
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param system_tags: The system_tags of this ExternalExadataStorageServerSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

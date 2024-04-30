@@ -109,6 +109,10 @@ class DbHomeFromAgentResourceId(object):
             The value to assign to the database_software_image_id property of this DbHomeFromAgentResourceId.
         :type database_software_image_id: str
 
+        :param is_unified_auditing_enabled:
+            The value to assign to the is_unified_auditing_enabled property of this DbHomeFromAgentResourceId.
+        :type is_unified_auditing_enabled: bool
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -126,7 +130,8 @@ class DbHomeFromAgentResourceId(object):
             'one_off_patches': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'database_software_image_id': 'str'
+            'database_software_image_id': 'str',
+            'is_unified_auditing_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -145,7 +150,8 @@ class DbHomeFromAgentResourceId(object):
             'one_off_patches': 'oneOffPatches',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'database_software_image_id': 'databaseSoftwareImageId'
+            'database_software_image_id': 'databaseSoftwareImageId',
+            'is_unified_auditing_enabled': 'isUnifiedAuditingEnabled'
         }
 
         self._id = None
@@ -164,6 +170,7 @@ class DbHomeFromAgentResourceId(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._database_software_image_id = None
+        self._is_unified_auditing_enabled = None
 
     @property
     def id(self):
@@ -595,6 +602,30 @@ class DbHomeFromAgentResourceId(object):
         :type: str
         """
         self._database_software_image_id = database_software_image_id
+
+    @property
+    def is_unified_auditing_enabled(self):
+        """
+        Gets the is_unified_auditing_enabled of this DbHomeFromAgentResourceId.
+        Indicates whether unified autiding is enabled or not.
+
+
+        :return: The is_unified_auditing_enabled of this DbHomeFromAgentResourceId.
+        :rtype: bool
+        """
+        return self._is_unified_auditing_enabled
+
+    @is_unified_auditing_enabled.setter
+    def is_unified_auditing_enabled(self, is_unified_auditing_enabled):
+        """
+        Sets the is_unified_auditing_enabled of this DbHomeFromAgentResourceId.
+        Indicates whether unified autiding is enabled or not.
+
+
+        :param is_unified_auditing_enabled: The is_unified_auditing_enabled of this DbHomeFromAgentResourceId.
+        :type: bool
+        """
+        self._is_unified_auditing_enabled = is_unified_auditing_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

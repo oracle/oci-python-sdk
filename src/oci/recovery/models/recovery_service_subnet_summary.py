@@ -34,6 +34,10 @@ class RecoveryServiceSubnetSummary(object):
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
 
     #: A constant which can be used with the lifecycle_state property of a RecoveryServiceSubnetSummary.
+    #: This constant has a value of "DELETE_SCHEDULED"
+    LIFECYCLE_STATE_DELETE_SCHEDULED = "DELETE_SCHEDULED"
+
+    #: A constant which can be used with the lifecycle_state property of a RecoveryServiceSubnetSummary.
     #: This constant has a value of "DELETING"
     LIFECYCLE_STATE_DELETING = "DELETING"
 
@@ -70,6 +74,14 @@ class RecoveryServiceSubnetSummary(object):
             The value to assign to the subnet_id property of this RecoveryServiceSubnetSummary.
         :type subnet_id: str
 
+        :param subnets:
+            The value to assign to the subnets property of this RecoveryServiceSubnetSummary.
+        :type subnets: list[str]
+
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this RecoveryServiceSubnetSummary.
+        :type nsg_ids: list[str]
+
         :param time_created:
             The value to assign to the time_created property of this RecoveryServiceSubnetSummary.
         :type time_created: datetime
@@ -80,7 +92,7 @@ class RecoveryServiceSubnetSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this RecoveryServiceSubnetSummary.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETE_SCHEDULED", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -107,6 +119,8 @@ class RecoveryServiceSubnetSummary(object):
             'compartment_id': 'str',
             'vcn_id': 'str',
             'subnet_id': 'str',
+            'subnets': 'list[str]',
+            'nsg_ids': 'list[str]',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
@@ -122,6 +136,8 @@ class RecoveryServiceSubnetSummary(object):
             'compartment_id': 'compartmentId',
             'vcn_id': 'vcnId',
             'subnet_id': 'subnetId',
+            'subnets': 'subnets',
+            'nsg_ids': 'nsgIds',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
@@ -136,6 +152,8 @@ class RecoveryServiceSubnetSummary(object):
         self._compartment_id = None
         self._vcn_id = None
         self._subnet_id = None
+        self._subnets = None
+        self._nsg_ids = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
@@ -244,7 +262,7 @@ class RecoveryServiceSubnetSummary(object):
     def subnet_id(self):
         """
         **[Required]** Gets the subnet_id of this RecoveryServiceSubnetSummary.
-        The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
+        Deprecated. One of the subnets associated with the Recovery Service subnet.
 
 
         :return: The subnet_id of this RecoveryServiceSubnetSummary.
@@ -256,13 +274,67 @@ class RecoveryServiceSubnetSummary(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this RecoveryServiceSubnetSummary.
-        The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
+        Deprecated. One of the subnets associated with the Recovery Service subnet.
 
 
         :param subnet_id: The subnet_id of this RecoveryServiceSubnetSummary.
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def subnets(self):
+        """
+        Gets the subnets of this RecoveryServiceSubnetSummary.
+        A list of OCIDs of all the subnets associated with the Recovery Service subnet.
+
+
+        :return: The subnets of this RecoveryServiceSubnetSummary.
+        :rtype: list[str]
+        """
+        return self._subnets
+
+    @subnets.setter
+    def subnets(self, subnets):
+        """
+        Sets the subnets of this RecoveryServiceSubnetSummary.
+        A list of OCIDs of all the subnets associated with the Recovery Service subnet.
+
+
+        :param subnets: The subnets of this RecoveryServiceSubnetSummary.
+        :type: list[str]
+        """
+        self._subnets = subnets
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this RecoveryServiceSubnetSummary.
+        A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet.
+        You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet.
+        Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet.
+        See :class:`NetworkSecurityGroup` for more information.
+
+
+        :return: The nsg_ids of this RecoveryServiceSubnetSummary.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this RecoveryServiceSubnetSummary.
+        A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet.
+        You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet.
+        Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet.
+        See :class:`NetworkSecurityGroup` for more information.
+
+
+        :param nsg_ids: The nsg_ids of this RecoveryServiceSubnetSummary.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
 
     @property
     def time_created(self):
@@ -317,15 +389,8 @@ class RecoveryServiceSubnetSummary(object):
         """
         Gets the lifecycle_state of this RecoveryServiceSubnetSummary.
         The current state of the recovery service subnet.
-        Allowed values are:
-          - CREATING
-          - UPDATING
-          - ACTIVE
-          - DELETING
-          - DELETED
-          - FAILED
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETE_SCHEDULED", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -339,19 +404,12 @@ class RecoveryServiceSubnetSummary(object):
         """
         Sets the lifecycle_state of this RecoveryServiceSubnetSummary.
         The current state of the recovery service subnet.
-        Allowed values are:
-          - CREATING
-          - UPDATING
-          - ACTIVE
-          - DELETING
-          - DELETED
-          - FAILED
 
 
         :param lifecycle_state: The lifecycle_state of this RecoveryServiceSubnetSummary.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETE_SCHEDULED", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

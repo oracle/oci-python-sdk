@@ -41,19 +41,26 @@ class VmClusterUpdateDetails(object):
             Allowed values for this property are: "ROLLING_APPLY", "PRECHECK", "ROLLBACK"
         :type update_action: str
 
+        :param gi_software_image_id:
+            The value to assign to the gi_software_image_id property of this VmClusterUpdateDetails.
+        :type gi_software_image_id: str
+
         """
         self.swagger_types = {
             'update_id': 'str',
-            'update_action': 'str'
+            'update_action': 'str',
+            'gi_software_image_id': 'str'
         }
 
         self.attribute_map = {
             'update_id': 'updateId',
-            'update_action': 'updateAction'
+            'update_action': 'updateAction',
+            'gi_software_image_id': 'giSoftwareImageId'
         }
 
         self._update_id = None
         self._update_action = None
+        self._gi_software_image_id = None
 
     @property
     def update_id(self):
@@ -113,6 +120,34 @@ class VmClusterUpdateDetails(object):
                 f"Invalid value for `update_action`, must be None or one of {allowed_values}"
             )
         self._update_action = update_action
+
+    @property
+    def gi_software_image_id(self):
+        """
+        Gets the gi_software_image_id of this VmClusterUpdateDetails.
+        The `OCID`__ of a grid infrastructure software image. This is a database software image of the type `GRID_IMAGE`.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The gi_software_image_id of this VmClusterUpdateDetails.
+        :rtype: str
+        """
+        return self._gi_software_image_id
+
+    @gi_software_image_id.setter
+    def gi_software_image_id(self, gi_software_image_id):
+        """
+        Sets the gi_software_image_id of this VmClusterUpdateDetails.
+        The `OCID`__ of a grid infrastructure software image. This is a database software image of the type `GRID_IMAGE`.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param gi_software_image_id: The gi_software_image_id of this VmClusterUpdateDetails.
+        :type: str
+        """
+        self._gi_software_image_id = gi_software_image_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

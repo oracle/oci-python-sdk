@@ -121,7 +121,7 @@ class HeatWaveNode(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this HeatWaveNode.
-        The date and time the node was created.
+        The date and time the HeatWave node was created.
 
 
         :return: The time_created of this HeatWaveNode.
@@ -133,7 +133,7 @@ class HeatWaveNode(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this HeatWaveNode.
-        The date and time the node was created.
+        The date and time the HeatWave node was created.
 
 
         :param time_created: The time_created of this HeatWaveNode.

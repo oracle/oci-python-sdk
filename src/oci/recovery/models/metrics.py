@@ -48,6 +48,10 @@ class Metrics(object):
             The value to assign to the current_retention_period_in_seconds property of this Metrics.
         :type current_retention_period_in_seconds: float
 
+        :param minimum_recovery_needed_in_days:
+            The value to assign to the minimum_recovery_needed_in_days property of this Metrics.
+        :type minimum_recovery_needed_in_days: float
+
         """
         self.swagger_types = {
             'backup_space_used_in_gbs': 'float',
@@ -56,7 +60,8 @@ class Metrics(object):
             'db_size_in_gbs': 'float',
             'is_redo_logs_enabled': 'bool',
             'retention_period_in_days': 'float',
-            'current_retention_period_in_seconds': 'float'
+            'current_retention_period_in_seconds': 'float',
+            'minimum_recovery_needed_in_days': 'float'
         }
 
         self.attribute_map = {
@@ -66,7 +71,8 @@ class Metrics(object):
             'db_size_in_gbs': 'dbSizeInGBs',
             'is_redo_logs_enabled': 'isRedoLogsEnabled',
             'retention_period_in_days': 'retentionPeriodInDays',
-            'current_retention_period_in_seconds': 'currentRetentionPeriodInSeconds'
+            'current_retention_period_in_seconds': 'currentRetentionPeriodInSeconds',
+            'minimum_recovery_needed_in_days': 'minimumRecoveryNeededInDays'
         }
 
         self._backup_space_used_in_gbs = None
@@ -76,6 +82,7 @@ class Metrics(object):
         self._is_redo_logs_enabled = None
         self._retention_period_in_days = None
         self._current_retention_period_in_seconds = None
+        self._minimum_recovery_needed_in_days = None
 
     @property
     def backup_space_used_in_gbs(self):
@@ -248,6 +255,30 @@ class Metrics(object):
         :type: float
         """
         self._current_retention_period_in_seconds = current_retention_period_in_seconds
+
+    @property
+    def minimum_recovery_needed_in_days(self):
+        """
+        Gets the minimum_recovery_needed_in_days of this Metrics.
+        Number of days of redo/archive to be applied to recover database.
+
+
+        :return: The minimum_recovery_needed_in_days of this Metrics.
+        :rtype: float
+        """
+        return self._minimum_recovery_needed_in_days
+
+    @minimum_recovery_needed_in_days.setter
+    def minimum_recovery_needed_in_days(self, minimum_recovery_needed_in_days):
+        """
+        Sets the minimum_recovery_needed_in_days of this Metrics.
+        Number of days of redo/archive to be applied to recover database.
+
+
+        :param minimum_recovery_needed_in_days: The minimum_recovery_needed_in_days of this Metrics.
+        :type: float
+        """
+        self._minimum_recovery_needed_in_days = minimum_recovery_needed_in_days
 
     def __repr__(self):
         return formatted_flat_dict(self)

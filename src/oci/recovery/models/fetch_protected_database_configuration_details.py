@@ -28,6 +28,10 @@ class FetchProtectedDatabaseConfigurationDetails(object):
     CONFIGURATION_TYPE_HOSTS = "HOSTS"
 
     #: A constant which can be used with the configuration_type property of a FetchProtectedDatabaseConfigurationDetails.
+    #: This constant has a value of "RCVCONF"
+    CONFIGURATION_TYPE_RCVCONF = "RCVCONF"
+
+    #: A constant which can be used with the configuration_type property of a FetchProtectedDatabaseConfigurationDetails.
     #: This constant has a value of "ALL"
     CONFIGURATION_TYPE_ALL = "ALL"
 
@@ -38,7 +42,7 @@ class FetchProtectedDatabaseConfigurationDetails(object):
 
         :param configuration_type:
             The value to assign to the configuration_type property of this FetchProtectedDatabaseConfigurationDetails.
-            Allowed values for this property are: "CABUNDLE", "TNSNAMES", "HOSTS", "ALL"
+            Allowed values for this property are: "CABUNDLE", "TNSNAMES", "HOSTS", "RCVCONF", "ALL"
         :type configuration_type: str
 
         """
@@ -58,7 +62,7 @@ class FetchProtectedDatabaseConfigurationDetails(object):
         Gets the configuration_type of this FetchProtectedDatabaseConfigurationDetails.
         Currently has four config options ALL, TNSNAMES, HOSTS and CABUNDLE. All will return a zipped folder containing the contents of both tnsnames and the certificateChainPem.
 
-        Allowed values for this property are: "CABUNDLE", "TNSNAMES", "HOSTS", "ALL"
+        Allowed values for this property are: "CABUNDLE", "TNSNAMES", "HOSTS", "RCVCONF", "ALL"
 
 
         :return: The configuration_type of this FetchProtectedDatabaseConfigurationDetails.
@@ -76,7 +80,7 @@ class FetchProtectedDatabaseConfigurationDetails(object):
         :param configuration_type: The configuration_type of this FetchProtectedDatabaseConfigurationDetails.
         :type: str
         """
-        allowed_values = ["CABUNDLE", "TNSNAMES", "HOSTS", "ALL"]
+        allowed_values = ["CABUNDLE", "TNSNAMES", "HOSTS", "RCVCONF", "ALL"]
         if not value_allowed_none_or_none_sentinel(configuration_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `configuration_type`, must be None or one of {allowed_values}"

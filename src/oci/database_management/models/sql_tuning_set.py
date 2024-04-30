@@ -63,6 +63,14 @@ class SqlTuningSet(object):
     #: This constant has a value of "CHAIN_STALLED"
     STATUS_CHAIN_STALLED = "CHAIN_STALLED"
 
+    #: A constant which can be used with the all_sql_statements_fetched property of a SqlTuningSet.
+    #: This constant has a value of "YES"
+    ALL_SQL_STATEMENTS_FETCHED_YES = "YES"
+
+    #: A constant which can be used with the all_sql_statements_fetched property of a SqlTuningSet.
+    #: This constant has a value of "NO"
+    ALL_SQL_STATEMENTS_FETCHED_NO = "NO"
+
     def __init__(self, **kwargs):
         """
         Initializes a new SqlTuningSet object with values from keyword arguments.
@@ -112,6 +120,8 @@ class SqlTuningSet(object):
 
         :param all_sql_statements_fetched:
             The value to assign to the all_sql_statements_fetched property of this SqlTuningSet.
+            Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type all_sql_statements_fetched: str
 
         :param sql_list:
@@ -419,6 +429,9 @@ class SqlTuningSet(object):
           - No  - There are more Sql statements matching the fitler criteria.
                   User should fine tune the filter criteria to narrow down the result set.
 
+        Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
 
         :return: The all_sql_statements_fetched of this SqlTuningSet.
         :rtype: str
@@ -440,6 +453,9 @@ class SqlTuningSet(object):
         :param all_sql_statements_fetched: The all_sql_statements_fetched of this SqlTuningSet.
         :type: str
         """
+        allowed_values = ["YES", "NO"]
+        if not value_allowed_none_or_none_sentinel(all_sql_statements_fetched, allowed_values):
+            all_sql_statements_fetched = 'UNKNOWN_ENUM_VALUE'
         self._all_sql_statements_fetched = all_sql_statements_fetched
 
     @property

@@ -29,6 +29,10 @@ class ProtectionPolicy(object):
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
 
     #: A constant which can be used with the lifecycle_state property of a ProtectionPolicy.
+    #: This constant has a value of "DELETE_SCHEDULED"
+    LIFECYCLE_STATE_DELETE_SCHEDULED = "DELETE_SCHEDULED"
+
+    #: A constant which can be used with the lifecycle_state property of a ProtectionPolicy.
     #: This constant has a value of "DELETING"
     LIFECYCLE_STATE_DELETING = "DELETING"
 
@@ -65,6 +69,10 @@ class ProtectionPolicy(object):
             The value to assign to the is_predefined_policy property of this ProtectionPolicy.
         :type is_predefined_policy: bool
 
+        :param policy_locked_date_time:
+            The value to assign to the policy_locked_date_time property of this ProtectionPolicy.
+        :type policy_locked_date_time: str
+
         :param time_created:
             The value to assign to the time_created property of this ProtectionPolicy.
         :type time_created: datetime
@@ -75,7 +83,7 @@ class ProtectionPolicy(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ProtectionPolicy.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETE_SCHEDULED", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -102,6 +110,7 @@ class ProtectionPolicy(object):
             'compartment_id': 'str',
             'backup_retention_period_in_days': 'int',
             'is_predefined_policy': 'bool',
+            'policy_locked_date_time': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
@@ -117,6 +126,7 @@ class ProtectionPolicy(object):
             'compartment_id': 'compartmentId',
             'backup_retention_period_in_days': 'backupRetentionPeriodInDays',
             'is_predefined_policy': 'isPredefinedPolicy',
+            'policy_locked_date_time': 'policyLockedDateTime',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
@@ -131,6 +141,7 @@ class ProtectionPolicy(object):
         self._compartment_id = None
         self._backup_retention_period_in_days = None
         self._is_predefined_policy = None
+        self._policy_locked_date_time = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
@@ -260,6 +271,30 @@ class ProtectionPolicy(object):
         self._is_predefined_policy = is_predefined_policy
 
     @property
+    def policy_locked_date_time(self):
+        """
+        Gets the policy_locked_date_time of this ProtectionPolicy.
+        An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+
+
+        :return: The policy_locked_date_time of this ProtectionPolicy.
+        :rtype: str
+        """
+        return self._policy_locked_date_time
+
+    @policy_locked_date_time.setter
+    def policy_locked_date_time(self, policy_locked_date_time):
+        """
+        Sets the policy_locked_date_time of this ProtectionPolicy.
+        An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+
+
+        :param policy_locked_date_time: The policy_locked_date_time of this ProtectionPolicy.
+        :type: str
+        """
+        self._policy_locked_date_time = policy_locked_date_time
+
+    @property
     def time_created(self):
         """
         Gets the time_created of this ProtectionPolicy.
@@ -311,15 +346,9 @@ class ProtectionPolicy(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this ProtectionPolicy.
-        The current state of the protection policy. Allowed values are:
-          - CREATING
-          - UPDATING
-          - ACTIVE
-          - DELETING
-          - DELETED
-          - FAILED
+        The current state of the protection policy.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETE_SCHEDULED", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -332,19 +361,13 @@ class ProtectionPolicy(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ProtectionPolicy.
-        The current state of the protection policy. Allowed values are:
-          - CREATING
-          - UPDATING
-          - ACTIVE
-          - DELETING
-          - DELETED
-          - FAILED
+        The current state of the protection policy.
 
 
         :param lifecycle_state: The lifecycle_state of this ProtectionPolicy.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETE_SCHEDULED", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

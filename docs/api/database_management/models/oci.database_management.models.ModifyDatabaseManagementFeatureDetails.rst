@@ -1,0 +1,11 @@
+ModifyDatabaseManagementFeatureDetails
+======================================
+
+.. currentmodule:: oci.database_management.models
+
+.. autoclass:: ModifyDatabaseManagementFeatureDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

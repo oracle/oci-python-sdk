@@ -71,6 +71,42 @@ class WorkRequest(object):
     #: This constant has a value of "CHANGE_EXADATA_COMPARTMENT"
     OPERATION_TYPE_CHANGE_EXADATA_COMPARTMENT = "CHANGE_EXADATA_COMPARTMENT"
 
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "ENABLE_SQL_WATCH"
+    OPERATION_TYPE_ENABLE_SQL_WATCH = "ENABLE_SQL_WATCH"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DISABLE_SQL_WATCH"
+    OPERATION_TYPE_DISABLE_SQL_WATCH = "DISABLE_SQL_WATCH"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "MODIFY_SQL_WATCH"
+    OPERATION_TYPE_MODIFY_SQL_WATCH = "MODIFY_SQL_WATCH"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "ENABLE_DBLM"
+    OPERATION_TYPE_ENABLE_DBLM = "ENABLE_DBLM"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DISABLE_DBLM"
+    OPERATION_TYPE_DISABLE_DBLM = "DISABLE_DBLM"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "MODIFY_DBLM"
+    OPERATION_TYPE_MODIFY_DBLM = "MODIFY_DBLM"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "ENABLE_DBMGMT"
+    OPERATION_TYPE_ENABLE_DBMGMT = "ENABLE_DBMGMT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DISABLE_DBMGMT"
+    OPERATION_TYPE_DISABLE_DBMGMT = "DISABLE_DBMGMT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "MODIFY_DBMGMT"
+    OPERATION_TYPE_MODIFY_DBMGMT = "MODIFY_DBMGMT"
+
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -110,7 +146,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "CREATE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "DELETE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "CREATE_DB_SYSTEM_DISCOVERY", "CREATE_DB_SYSTEM", "UPDATE_DB_SYSTEM", "DB_SYSTEM_ENABLE_DBMGMT", "DB_SYSTEM_DISABLE_DBMGMT", "DELETE_DB_SYSTEM", "UPDATE_EXTERNAL_DB_SYSTEM_CONNECTOR", "CHANGE_EXTERNAL_DB_SYSTEM_COMPARTMENT", "DISABLE_EXADATA_INFRASTURCTURE", "ENABLE_EXADATA_INFRASTRUCTURE", "DELETE_EXADATA_INFRASTRUCTURE", "CHANGE_EXADATA_COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "DELETE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "CREATE_DB_SYSTEM_DISCOVERY", "CREATE_DB_SYSTEM", "UPDATE_DB_SYSTEM", "DB_SYSTEM_ENABLE_DBMGMT", "DB_SYSTEM_DISABLE_DBMGMT", "DELETE_DB_SYSTEM", "UPDATE_EXTERNAL_DB_SYSTEM_CONNECTOR", "CHANGE_EXTERNAL_DB_SYSTEM_COMPARTMENT", "DISABLE_EXADATA_INFRASTURCTURE", "ENABLE_EXADATA_INFRASTRUCTURE", "DELETE_EXADATA_INFRASTRUCTURE", "CHANGE_EXADATA_COMPARTMENT", "ENABLE_SQL_WATCH", "DISABLE_SQL_WATCH", "MODIFY_SQL_WATCH", "ENABLE_DBLM", "DISABLE_DBLM", "MODIFY_DBLM", "ENABLE_DBMGMT", "DISABLE_DBMGMT", "MODIFY_DBMGMT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -233,7 +269,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         The type of work request.
 
-        Allowed values for this property are: "CREATE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "DELETE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "CREATE_DB_SYSTEM_DISCOVERY", "CREATE_DB_SYSTEM", "UPDATE_DB_SYSTEM", "DB_SYSTEM_ENABLE_DBMGMT", "DB_SYSTEM_DISABLE_DBMGMT", "DELETE_DB_SYSTEM", "UPDATE_EXTERNAL_DB_SYSTEM_CONNECTOR", "CHANGE_EXTERNAL_DB_SYSTEM_COMPARTMENT", "DISABLE_EXADATA_INFRASTURCTURE", "ENABLE_EXADATA_INFRASTRUCTURE", "DELETE_EXADATA_INFRASTRUCTURE", "CHANGE_EXADATA_COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "DELETE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "CREATE_DB_SYSTEM_DISCOVERY", "CREATE_DB_SYSTEM", "UPDATE_DB_SYSTEM", "DB_SYSTEM_ENABLE_DBMGMT", "DB_SYSTEM_DISABLE_DBMGMT", "DELETE_DB_SYSTEM", "UPDATE_EXTERNAL_DB_SYSTEM_CONNECTOR", "CHANGE_EXTERNAL_DB_SYSTEM_COMPARTMENT", "DISABLE_EXADATA_INFRASTURCTURE", "ENABLE_EXADATA_INFRASTRUCTURE", "DELETE_EXADATA_INFRASTRUCTURE", "CHANGE_EXADATA_COMPARTMENT", "ENABLE_SQL_WATCH", "DISABLE_SQL_WATCH", "MODIFY_SQL_WATCH", "ENABLE_DBLM", "DISABLE_DBLM", "MODIFY_DBLM", "ENABLE_DBMGMT", "DISABLE_DBMGMT", "MODIFY_DBMGMT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -252,7 +288,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["CREATE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "DELETE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "CREATE_DB_SYSTEM_DISCOVERY", "CREATE_DB_SYSTEM", "UPDATE_DB_SYSTEM", "DB_SYSTEM_ENABLE_DBMGMT", "DB_SYSTEM_DISABLE_DBMGMT", "DELETE_DB_SYSTEM", "UPDATE_EXTERNAL_DB_SYSTEM_CONNECTOR", "CHANGE_EXTERNAL_DB_SYSTEM_COMPARTMENT", "DISABLE_EXADATA_INFRASTURCTURE", "ENABLE_EXADATA_INFRASTRUCTURE", "DELETE_EXADATA_INFRASTRUCTURE", "CHANGE_EXADATA_COMPARTMENT"]
+        allowed_values = ["CREATE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "DELETE_DB_MANAGEMENT_PRIVATE_ENDPOINT", "CREATE_DB_SYSTEM_DISCOVERY", "CREATE_DB_SYSTEM", "UPDATE_DB_SYSTEM", "DB_SYSTEM_ENABLE_DBMGMT", "DB_SYSTEM_DISABLE_DBMGMT", "DELETE_DB_SYSTEM", "UPDATE_EXTERNAL_DB_SYSTEM_CONNECTOR", "CHANGE_EXTERNAL_DB_SYSTEM_COMPARTMENT", "DISABLE_EXADATA_INFRASTURCTURE", "ENABLE_EXADATA_INFRASTRUCTURE", "DELETE_EXADATA_INFRASTRUCTURE", "CHANGE_EXADATA_COMPARTMENT", "ENABLE_SQL_WATCH", "DISABLE_SQL_WATCH", "MODIFY_SQL_WATCH", "ENABLE_DBLM", "DISABLE_DBLM", "MODIFY_DBLM", "ENABLE_DBMGMT", "DISABLE_DBMGMT", "MODIFY_DBMGMT"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

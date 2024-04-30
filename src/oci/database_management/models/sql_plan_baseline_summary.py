@@ -75,6 +75,54 @@ class SqlPlanBaselineSummary(object):
     #: This constant has a value of "UNKNOWN"
     ORIGIN_UNKNOWN = "UNKNOWN"
 
+    #: A constant which can be used with the enabled property of a SqlPlanBaselineSummary.
+    #: This constant has a value of "YES"
+    ENABLED_YES = "YES"
+
+    #: A constant which can be used with the enabled property of a SqlPlanBaselineSummary.
+    #: This constant has a value of "NO"
+    ENABLED_NO = "NO"
+
+    #: A constant which can be used with the accepted property of a SqlPlanBaselineSummary.
+    #: This constant has a value of "YES"
+    ACCEPTED_YES = "YES"
+
+    #: A constant which can be used with the accepted property of a SqlPlanBaselineSummary.
+    #: This constant has a value of "NO"
+    ACCEPTED_NO = "NO"
+
+    #: A constant which can be used with the fixed property of a SqlPlanBaselineSummary.
+    #: This constant has a value of "YES"
+    FIXED_YES = "YES"
+
+    #: A constant which can be used with the fixed property of a SqlPlanBaselineSummary.
+    #: This constant has a value of "NO"
+    FIXED_NO = "NO"
+
+    #: A constant which can be used with the reproduced property of a SqlPlanBaselineSummary.
+    #: This constant has a value of "YES"
+    REPRODUCED_YES = "YES"
+
+    #: A constant which can be used with the reproduced property of a SqlPlanBaselineSummary.
+    #: This constant has a value of "NO"
+    REPRODUCED_NO = "NO"
+
+    #: A constant which can be used with the auto_purge property of a SqlPlanBaselineSummary.
+    #: This constant has a value of "YES"
+    AUTO_PURGE_YES = "YES"
+
+    #: A constant which can be used with the auto_purge property of a SqlPlanBaselineSummary.
+    #: This constant has a value of "NO"
+    AUTO_PURGE_NO = "NO"
+
+    #: A constant which can be used with the adaptive property of a SqlPlanBaselineSummary.
+    #: This constant has a value of "YES"
+    ADAPTIVE_YES = "YES"
+
+    #: A constant which can be used with the adaptive property of a SqlPlanBaselineSummary.
+    #: This constant has a value of "NO"
+    ADAPTIVE_NO = "NO"
+
     def __init__(self, **kwargs):
         """
         Initializes a new SqlPlanBaselineSummary object with values from keyword arguments.
@@ -112,26 +160,38 @@ class SqlPlanBaselineSummary(object):
 
         :param enabled:
             The value to assign to the enabled property of this SqlPlanBaselineSummary.
+            Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type enabled: str
 
         :param accepted:
             The value to assign to the accepted property of this SqlPlanBaselineSummary.
+            Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type accepted: str
 
         :param fixed:
             The value to assign to the fixed property of this SqlPlanBaselineSummary.
+            Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type fixed: str
 
         :param reproduced:
             The value to assign to the reproduced property of this SqlPlanBaselineSummary.
+            Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type reproduced: str
 
         :param auto_purge:
             The value to assign to the auto_purge property of this SqlPlanBaselineSummary.
+            Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type auto_purge: str
 
         :param adaptive:
             The value to assign to the adaptive property of this SqlPlanBaselineSummary.
+            Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type adaptive: str
 
         """
@@ -369,6 +429,9 @@ class SqlPlanBaselineSummary(object):
         Gets the enabled of this SqlPlanBaselineSummary.
         Indicates whether the plan baseline is enabled (`YES`) or disabled (`NO`).
 
+        Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
 
         :return: The enabled of this SqlPlanBaselineSummary.
         :rtype: str
@@ -385,6 +448,9 @@ class SqlPlanBaselineSummary(object):
         :param enabled: The enabled of this SqlPlanBaselineSummary.
         :type: str
         """
+        allowed_values = ["YES", "NO"]
+        if not value_allowed_none_or_none_sentinel(enabled, allowed_values):
+            enabled = 'UNKNOWN_ENUM_VALUE'
         self._enabled = enabled
 
     @property
@@ -392,6 +458,9 @@ class SqlPlanBaselineSummary(object):
         """
         Gets the accepted of this SqlPlanBaselineSummary.
         Indicates whether the plan baseline is accepted (`YES`) or not (`NO`).
+
+        Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The accepted of this SqlPlanBaselineSummary.
@@ -409,6 +478,9 @@ class SqlPlanBaselineSummary(object):
         :param accepted: The accepted of this SqlPlanBaselineSummary.
         :type: str
         """
+        allowed_values = ["YES", "NO"]
+        if not value_allowed_none_or_none_sentinel(accepted, allowed_values):
+            accepted = 'UNKNOWN_ENUM_VALUE'
         self._accepted = accepted
 
     @property
@@ -416,6 +488,9 @@ class SqlPlanBaselineSummary(object):
         """
         Gets the fixed of this SqlPlanBaselineSummary.
         Indicates whether the plan baseline is fixed (`YES`) or not (`NO`).
+
+        Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The fixed of this SqlPlanBaselineSummary.
@@ -433,6 +508,9 @@ class SqlPlanBaselineSummary(object):
         :param fixed: The fixed of this SqlPlanBaselineSummary.
         :type: str
         """
+        allowed_values = ["YES", "NO"]
+        if not value_allowed_none_or_none_sentinel(fixed, allowed_values):
+            fixed = 'UNKNOWN_ENUM_VALUE'
         self._fixed = fixed
 
     @property
@@ -441,6 +519,9 @@ class SqlPlanBaselineSummary(object):
         Gets the reproduced of this SqlPlanBaselineSummary.
         Indicates whether the optimizer was able to reproduce the plan (`YES`) or not (`NO`).
         The value is set to `YES` when a plan is initially added to the plan baseline.
+
+        Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The reproduced of this SqlPlanBaselineSummary.
@@ -459,6 +540,9 @@ class SqlPlanBaselineSummary(object):
         :param reproduced: The reproduced of this SqlPlanBaselineSummary.
         :type: str
         """
+        allowed_values = ["YES", "NO"]
+        if not value_allowed_none_or_none_sentinel(reproduced, allowed_values):
+            reproduced = 'UNKNOWN_ENUM_VALUE'
         self._reproduced = reproduced
 
     @property
@@ -466,6 +550,9 @@ class SqlPlanBaselineSummary(object):
         """
         Gets the auto_purge of this SqlPlanBaselineSummary.
         Indicates whether the plan baseline is auto-purged (`YES`) or not (`NO`).
+
+        Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The auto_purge of this SqlPlanBaselineSummary.
@@ -483,6 +570,9 @@ class SqlPlanBaselineSummary(object):
         :param auto_purge: The auto_purge of this SqlPlanBaselineSummary.
         :type: str
         """
+        allowed_values = ["YES", "NO"]
+        if not value_allowed_none_or_none_sentinel(auto_purge, allowed_values):
+            auto_purge = 'UNKNOWN_ENUM_VALUE'
         self._auto_purge = auto_purge
 
     @property
@@ -497,6 +587,9 @@ class SqlPlanBaselineSummary(object):
         and the final plan determined at execution will become an accepted plan if its performance is better than
         the existing plan baseline. At this point, the value of the `ADAPTIVE` property is set to `NO` since the plan
         is no longer adaptive, but resolved.
+
+        Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The adaptive of this SqlPlanBaselineSummary.
@@ -521,6 +614,9 @@ class SqlPlanBaselineSummary(object):
         :param adaptive: The adaptive of this SqlPlanBaselineSummary.
         :type: str
         """
+        allowed_values = ["YES", "NO"]
+        if not value_allowed_none_or_none_sentinel(adaptive, allowed_values):
+            adaptive = 'UNKNOWN_ENUM_VALUE'
         self._adaptive = adaptive
 
     def __repr__(self):

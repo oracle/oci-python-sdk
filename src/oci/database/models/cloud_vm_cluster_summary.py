@@ -254,6 +254,10 @@ class CloudVmClusterSummary(object):
             The value to assign to the data_collection_options property of this CloudVmClusterSummary.
         :type data_collection_options: oci.database.models.DataCollectionOptions
 
+        :param gi_software_image_id:
+            The value to assign to the gi_software_image_id property of this CloudVmClusterSummary.
+        :type gi_software_image_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -301,7 +305,8 @@ class CloudVmClusterSummary(object):
             'zone_id': 'str',
             'scan_listener_port_tcp': 'int',
             'scan_listener_port_tcp_ssl': 'int',
-            'data_collection_options': 'DataCollectionOptions'
+            'data_collection_options': 'DataCollectionOptions',
+            'gi_software_image_id': 'str'
         }
 
         self.attribute_map = {
@@ -350,7 +355,8 @@ class CloudVmClusterSummary(object):
             'zone_id': 'zoneId',
             'scan_listener_port_tcp': 'scanListenerPortTcp',
             'scan_listener_port_tcp_ssl': 'scanListenerPortTcpSsl',
-            'data_collection_options': 'dataCollectionOptions'
+            'data_collection_options': 'dataCollectionOptions',
+            'gi_software_image_id': 'giSoftwareImageId'
         }
 
         self._id = None
@@ -399,6 +405,7 @@ class CloudVmClusterSummary(object):
         self._scan_listener_port_tcp = None
         self._scan_listener_port_tcp_ssl = None
         self._data_collection_options = None
+        self._gi_software_image_id = None
 
     @property
     def id(self):
@@ -1639,6 +1646,34 @@ class CloudVmClusterSummary(object):
         :type: oci.database.models.DataCollectionOptions
         """
         self._data_collection_options = data_collection_options
+
+    @property
+    def gi_software_image_id(self):
+        """
+        Gets the gi_software_image_id of this CloudVmClusterSummary.
+        The `OCID`__ of a grid infrastructure software image. This is a database software image of the type `GRID_IMAGE`.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The gi_software_image_id of this CloudVmClusterSummary.
+        :rtype: str
+        """
+        return self._gi_software_image_id
+
+    @gi_software_image_id.setter
+    def gi_software_image_id(self, gi_software_image_id):
+        """
+        Sets the gi_software_image_id of this CloudVmClusterSummary.
+        The `OCID`__ of a grid infrastructure software image. This is a database software image of the type `GRID_IMAGE`.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param gi_software_image_id: The gi_software_image_id of this CloudVmClusterSummary.
+        :type: str
+        """
+        self._gi_software_image_id = gi_software_image_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

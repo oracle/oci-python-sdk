@@ -113,6 +113,8 @@ Data Catalog
     oci.data_catalog.models.ImportDataAssetDetails
     oci.data_catalog.models.ImportDataAssetJobResult
     oci.data_catalog.models.ImportGlossaryDetails
+    oci.data_catalog.models.ImportLineageDetails
+    oci.data_catalog.models.ImportLineageJobResult
     oci.data_catalog.models.Job
     oci.data_catalog.models.JobCollection
     oci.data_catalog.models.JobDefinition

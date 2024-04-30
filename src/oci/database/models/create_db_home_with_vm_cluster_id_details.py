@@ -54,6 +54,10 @@ class CreateDbHomeWithVmClusterIdDetails(CreateDbHomeBase):
             The value to assign to the is_desupported_version property of this CreateDbHomeWithVmClusterIdDetails.
         :type is_desupported_version: bool
 
+        :param is_unified_auditing_enabled:
+            The value to assign to the is_unified_auditing_enabled property of this CreateDbHomeWithVmClusterIdDetails.
+        :type is_unified_auditing_enabled: bool
+
         :param vm_cluster_id:
             The value to assign to the vm_cluster_id property of this CreateDbHomeWithVmClusterIdDetails.
         :type vm_cluster_id: str
@@ -76,6 +80,7 @@ class CreateDbHomeWithVmClusterIdDetails(CreateDbHomeBase):
             'defined_tags': 'dict(str, dict(str, object))',
             'source': 'str',
             'is_desupported_version': 'bool',
+            'is_unified_auditing_enabled': 'bool',
             'vm_cluster_id': 'str',
             'db_version': 'str',
             'database': 'CreateDatabaseDetails'
@@ -90,6 +95,7 @@ class CreateDbHomeWithVmClusterIdDetails(CreateDbHomeBase):
             'defined_tags': 'definedTags',
             'source': 'source',
             'is_desupported_version': 'isDesupportedVersion',
+            'is_unified_auditing_enabled': 'isUnifiedAuditingEnabled',
             'vm_cluster_id': 'vmClusterId',
             'db_version': 'dbVersion',
             'database': 'database'
@@ -103,6 +109,7 @@ class CreateDbHomeWithVmClusterIdDetails(CreateDbHomeBase):
         self._defined_tags = None
         self._source = None
         self._is_desupported_version = None
+        self._is_unified_auditing_enabled = None
         self._vm_cluster_id = None
         self._db_version = None
         self._database = None

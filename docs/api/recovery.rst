@@ -38,6 +38,7 @@ Recovery
     oci.recovery.models.RecoveryServiceSubnetDetails
     oci.recovery.models.RecoveryServiceSubnetInput
     oci.recovery.models.RecoveryServiceSubnetSummary
+    oci.recovery.models.ScheduleProtectedDatabaseDeletionDetails
     oci.recovery.models.UpdateProtectedDatabaseDetails
     oci.recovery.models.UpdateProtectionPolicyDetails
     oci.recovery.models.UpdateRecoveryServiceSubnetDetails

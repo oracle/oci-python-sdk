@@ -24,6 +24,10 @@ class MySqlFleetMetricDefinition(object):
             The value to assign to the metric_value property of this MySqlFleetMetricDefinition.
         :type metric_value: int
 
+        :param metric_value_double:
+            The value to assign to the metric_value_double property of this MySqlFleetMetricDefinition.
+        :type metric_value_double: float
+
         :param metric_name:
             The value to assign to the metric_name property of this MySqlFleetMetricDefinition.
         :type metric_name: str
@@ -43,6 +47,7 @@ class MySqlFleetMetricDefinition(object):
         """
         self.swagger_types = {
             'metric_value': 'int',
+            'metric_value_double': 'float',
             'metric_name': 'str',
             'timestamp': 'datetime',
             'dimensions': 'list[MetricDimensionDefinition]',
@@ -51,6 +56,7 @@ class MySqlFleetMetricDefinition(object):
 
         self.attribute_map = {
             'metric_value': 'metricValue',
+            'metric_value_double': 'metricValueDouble',
             'metric_name': 'metricName',
             'timestamp': 'timestamp',
             'dimensions': 'dimensions',
@@ -58,6 +64,7 @@ class MySqlFleetMetricDefinition(object):
         }
 
         self._metric_value = None
+        self._metric_value_double = None
         self._metric_name = None
         self._timestamp = None
         self._dimensions = None
@@ -86,6 +93,30 @@ class MySqlFleetMetricDefinition(object):
         :type: int
         """
         self._metric_value = metric_value
+
+    @property
+    def metric_value_double(self):
+        """
+        Gets the metric_value_double of this MySqlFleetMetricDefinition.
+        The value of the metric.
+
+
+        :return: The metric_value_double of this MySqlFleetMetricDefinition.
+        :rtype: float
+        """
+        return self._metric_value_double
+
+    @metric_value_double.setter
+    def metric_value_double(self, metric_value_double):
+        """
+        Sets the metric_value_double of this MySqlFleetMetricDefinition.
+        The value of the metric.
+
+
+        :param metric_value_double: The metric_value_double of this MySqlFleetMetricDefinition.
+        :type: float
+        """
+        self._metric_value_double = metric_value_double
 
     @property
     def metric_name(self):
