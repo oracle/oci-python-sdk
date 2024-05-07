@@ -30,6 +30,24 @@ Developed by Adi Zohar, 2018-2024, Contributors: Olaf Heimburger
 
 [9. Example of ShowOCI Reports](#9-example-of-showoci-reports)
 
+## My Other Projects
+
+- [ShowUsage](https://github.com/oracle/oci-python-sdk/tree/master/examples/showusage)
+
+- [ShowSubscription](https://github.com/oracle/oci-python-sdk/tree/master/examples/showsubscription)
+
+- [ShowRewards](https://github.com/oracle/oci-python-sdk/tree/master/examples/showrewards)
+
+- [List Resources in Tenancy](https://github.com/oracle/oci-python-sdk/tree/master/examples/list_resources_in_tenancy)
+
+- [Object Storage Tools](https://github.com/oracle/oci-python-sdk/tree/master/examples/object_storage)
+
+- [Tag Resources in Tenancy](https://github.com/oracle/oci-python-sdk/tree/master/examples/tag_resources_in_tenancy)
+
+- [Usage2ADW](https://github.com/oracle-samples/usage-reports-to-adw)
+
+## ShowOCI
+
 ![xls](img/screen_xls.png)
 ![screen1](img/screen_scr1.png)
 ![screen2](img/screen_scr2.png)

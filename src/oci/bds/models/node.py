@@ -176,6 +176,14 @@ class Node(object):
             The value to assign to the time_maintenance_reboot_due property of this Node.
         :type time_maintenance_reboot_due: datetime
 
+        :param os_version:
+            The value to assign to the os_version property of this Node.
+        :type os_version: str
+
+        :param is_reboot_required:
+            The value to assign to the is_reboot_required property of this Node.
+        :type is_reboot_required: bool
+
         """
         self.swagger_types = {
             'instance_id': 'str',
@@ -197,7 +205,9 @@ class Node(object):
             'memory_in_gbs': 'int',
             'nvmes': 'int',
             'local_disks_total_size_in_gbs': 'float',
-            'time_maintenance_reboot_due': 'datetime'
+            'time_maintenance_reboot_due': 'datetime',
+            'os_version': 'str',
+            'is_reboot_required': 'bool'
         }
 
         self.attribute_map = {
@@ -220,7 +230,9 @@ class Node(object):
             'memory_in_gbs': 'memoryInGBs',
             'nvmes': 'nvmes',
             'local_disks_total_size_in_gbs': 'localDisksTotalSizeInGBs',
-            'time_maintenance_reboot_due': 'timeMaintenanceRebootDue'
+            'time_maintenance_reboot_due': 'timeMaintenanceRebootDue',
+            'os_version': 'osVersion',
+            'is_reboot_required': 'isRebootRequired'
         }
 
         self._instance_id = None
@@ -243,6 +255,8 @@ class Node(object):
         self._nvmes = None
         self._local_disks_total_size_in_gbs = None
         self._time_maintenance_reboot_due = None
+        self._os_version = None
+        self._is_reboot_required = None
 
     @property
     def instance_id(self):
@@ -735,6 +749,54 @@ class Node(object):
         :type: datetime
         """
         self._time_maintenance_reboot_due = time_maintenance_reboot_due
+
+    @property
+    def os_version(self):
+        """
+        Gets the os_version of this Node.
+        BDS-assigned Operating System version for the node.
+
+
+        :return: The os_version of this Node.
+        :rtype: str
+        """
+        return self._os_version
+
+    @os_version.setter
+    def os_version(self, os_version):
+        """
+        Sets the os_version of this Node.
+        BDS-assigned Operating System version for the node.
+
+
+        :param os_version: The os_version of this Node.
+        :type: str
+        """
+        self._os_version = os_version
+
+    @property
+    def is_reboot_required(self):
+        """
+        Gets the is_reboot_required of this Node.
+        Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+
+
+        :return: The is_reboot_required of this Node.
+        :rtype: bool
+        """
+        return self._is_reboot_required
+
+    @is_reboot_required.setter
+    def is_reboot_required(self, is_reboot_required):
+        """
+        Sets the is_reboot_required of this Node.
+        Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+
+
+        :param is_reboot_required: The is_reboot_required of this Node.
+        :type: bool
+        """
+        self._is_reboot_required = is_reboot_required
 
     def __repr__(self):
         return formatted_flat_dict(self)

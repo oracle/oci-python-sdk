@@ -4089,13 +4089,13 @@ class BdsClient(object):
 
             Allowed values are: "INSTALLING", "INSTALLED", "FAILED"
 
+        :param str patch_version: (optional)
+            The version of the patch
+
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
 
             Allowed values are: "timeCreated", "displayName"
-
-        :param str patch_version: (optional)
-            The version of the patch
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' or 'desc'.
@@ -4144,8 +4144,8 @@ class BdsClient(object):
             "retry_strategy",
             "opc_request_id",
             "lifecycle_state",
-            "sort_by",
             "patch_version",
+            "sort_by",
             "sort_order",
             "page",
             "limit",
@@ -4196,8 +4196,8 @@ class BdsClient(object):
 
         query_params = {
             "lifecycleState": kwargs.get("lifecycle_state", missing),
-            "sortBy": kwargs.get("sort_by", missing),
             "patchVersion": kwargs.get("patch_version", missing),
+            "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "page": kwargs.get("page", missing),
             "limit": kwargs.get("limit", missing),

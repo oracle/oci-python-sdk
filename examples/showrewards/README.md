@@ -83,6 +83,23 @@ optional arguments:
   -csv               Write to CSV files - rewards.csv, redemption.csv, reward_products.csv if -include_products specificed
 ```
 
+## My Other Projects
+
+- [ShowOCI](https://github.com/oracle/oci-python-sdk/tree/master/examples/showoci)
+
+- [ShowSubscription](https://github.com/oracle/oci-python-sdk/tree/master/examples/showsubscription)
+
+- [ShowRewards](https://github.com/oracle/oci-python-sdk/tree/master/examples/showrewards)
+
+- [List Resources in Tenancy](https://github.com/oracle/oci-python-sdk/tree/master/examples/list_resources_in_tenancy)
+
+- [Object Storage Tools](https://github.com/oracle/oci-python-sdk/tree/master/examples/object_storage)
+
+- [Tag Resources in Tenancy](https://github.com/oracle/oci-python-sdk/tree/master/examples/tag_resources_in_tenancy)
+
+- [Usage2ADW](https://github.com/oracle-samples/usage-reports-to-adw)
+
+
 ## Below example of reports from demo tenancy (random info generated)
 
 ```

@@ -26,6 +26,10 @@ class UpdateLoadBalancerDetails(object):
             The value to assign to the display_name property of this UpdateLoadBalancerDetails.
         :type display_name: str
 
+        :param is_delete_protection_enabled:
+            The value to assign to the is_delete_protection_enabled property of this UpdateLoadBalancerDetails.
+        :type is_delete_protection_enabled: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateLoadBalancerDetails.
         :type freeform_tags: dict(str, str)
@@ -37,17 +41,20 @@ class UpdateLoadBalancerDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'is_delete_protection_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
+            'is_delete_protection_enabled': 'isDeleteProtectionEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._display_name = None
+        self._is_delete_protection_enabled = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -80,6 +87,46 @@ class UpdateLoadBalancerDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def is_delete_protection_enabled(self):
+        """
+        Gets the is_delete_protection_enabled of this UpdateLoadBalancerDetails.
+        Whether or not the load balancer has delete protection enabled.
+
+        If \"true\", the loadbalancer will be protected against deletion if configured to accept traffic.
+
+        If \"false\", the loadbalancer will not be protected against deletion.
+
+        If null or unset, the value for delete protection will not be changed.
+
+        Example: `true`
+
+
+        :return: The is_delete_protection_enabled of this UpdateLoadBalancerDetails.
+        :rtype: bool
+        """
+        return self._is_delete_protection_enabled
+
+    @is_delete_protection_enabled.setter
+    def is_delete_protection_enabled(self, is_delete_protection_enabled):
+        """
+        Sets the is_delete_protection_enabled of this UpdateLoadBalancerDetails.
+        Whether or not the load balancer has delete protection enabled.
+
+        If \"true\", the loadbalancer will be protected against deletion if configured to accept traffic.
+
+        If \"false\", the loadbalancer will not be protected against deletion.
+
+        If null or unset, the value for delete protection will not be changed.
+
+        Example: `true`
+
+
+        :param is_delete_protection_enabled: The is_delete_protection_enabled of this UpdateLoadBalancerDetails.
+        :type: bool
+        """
+        self._is_delete_protection_enabled = is_delete_protection_enabled
 
     @property
     def freeform_tags(self):

@@ -299,6 +299,7 @@ Core Services
     oci.core.models.FlowLogCaptureFilterRuleDetails
     oci.core.models.GenericBmLaunchInstancePlatformConfig
     oci.core.models.GenericBmPlatformConfig
+    oci.core.models.GetIpInventoryVcnOverlapDetails
     oci.core.models.GetPublicIpByIpAddressDetails
     oci.core.models.GetPublicIpByPrivateIpIdDetails
     oci.core.models.IPSecConnection
@@ -394,6 +395,20 @@ Core Services
     oci.core.models.IntelVmPlatformConfig
     oci.core.models.IntelVmUpdateInstancePlatformConfig
     oci.core.models.InternetGateway
+    oci.core.models.InventoryIpAddressSummary
+    oci.core.models.InventoryResourceSummary
+    oci.core.models.InventorySubnetCidrBlockSummary
+    oci.core.models.InventorySubnetSummary
+    oci.core.models.InventoryVcnCidrBlockSummary
+    oci.core.models.InventoryVcnSummary
+    oci.core.models.IpInventoryCidrUtilizationCollection
+    oci.core.models.IpInventoryCidrUtilizationSummary
+    oci.core.models.IpInventoryCollection
+    oci.core.models.IpInventorySubnetResourceCollection
+    oci.core.models.IpInventorySubnetResourceSummary
+    oci.core.models.IpInventoryVcnOverlapCollection
+    oci.core.models.IpInventoryVcnOverlapSummary
+    oci.core.models.Ipam
     oci.core.models.IpsecTunnelDrgAttachmentNetworkDetails
     oci.core.models.Ipv6
     oci.core.models.Ipv6AddressIpv6SubnetCidrPairDetails
@@ -408,6 +423,7 @@ Core Services
     oci.core.models.LaunchInstanceShapeConfigDetails
     oci.core.models.LaunchOptions
     oci.core.models.LetterOfAuthority
+    oci.core.models.ListIpInventoryDetails
     oci.core.models.LocalPeeringGateway
     oci.core.models.LoopBackDrgAttachmentNetworkDetails
     oci.core.models.MacsecKey

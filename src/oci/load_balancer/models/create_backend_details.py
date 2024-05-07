@@ -36,6 +36,10 @@ class CreateBackendDetails(object):
             The value to assign to the weight property of this CreateBackendDetails.
         :type weight: int
 
+        :param max_connections:
+            The value to assign to the max_connections property of this CreateBackendDetails.
+        :type max_connections: int
+
         :param backup:
             The value to assign to the backup property of this CreateBackendDetails.
         :type backup: bool
@@ -53,6 +57,7 @@ class CreateBackendDetails(object):
             'ip_address': 'str',
             'port': 'int',
             'weight': 'int',
+            'max_connections': 'int',
             'backup': 'bool',
             'drain': 'bool',
             'offline': 'bool'
@@ -62,6 +67,7 @@ class CreateBackendDetails(object):
             'ip_address': 'ipAddress',
             'port': 'port',
             'weight': 'weight',
+            'max_connections': 'maxConnections',
             'backup': 'backup',
             'drain': 'drain',
             'offline': 'offline'
@@ -70,6 +76,7 @@ class CreateBackendDetails(object):
         self._ip_address = None
         self._port = None
         self._weight = None
+        self._max_connections = None
         self._backup = None
         self._drain = None
         self._offline = None
@@ -169,6 +176,34 @@ class CreateBackendDetails(object):
         :type: int
         """
         self._weight = weight
+
+    @property
+    def max_connections(self):
+        """
+        Gets the max_connections of this CreateBackendDetails.
+        The maximum number of simultaneous connections the load balancer can make to the backend.
+
+        Example: `300`
+
+
+        :return: The max_connections of this CreateBackendDetails.
+        :rtype: int
+        """
+        return self._max_connections
+
+    @max_connections.setter
+    def max_connections(self, max_connections):
+        """
+        Sets the max_connections of this CreateBackendDetails.
+        The maximum number of simultaneous connections the load balancer can make to the backend.
+
+        Example: `300`
+
+
+        :param max_connections: The max_connections of this CreateBackendDetails.
+        :type: int
+        """
+        self._max_connections = max_connections
 
     @property
     def backup(self):

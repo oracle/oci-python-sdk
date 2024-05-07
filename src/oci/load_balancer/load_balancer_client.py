@@ -4711,6 +4711,7 @@ class LoadBalancerClient(object):
 
         :param str listener_name: (required)
             The name of the listener the rules are associated with.
+            Example: `example_listener`
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a

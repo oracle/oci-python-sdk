@@ -5,8 +5,8 @@
 ##########################################################################
 # showusage.py
 #
-# @author: Adi Zohar, Oct 07 2021, Updated Apr 17 2024
-# Added OSR Eligible for tenant grouping
+# @author: Adi Zohar, Oct 07 2021, Updated May 2nd, 2024
+# Added OSR Eligible for tenant grouping and CSV files
 #
 # Supports Python 3
 ##########################################################################
@@ -20,8 +20,10 @@
 #   -ds date     - Start Date in YYYY-MM-DD format
 #   -de date     - End Date in YYYY-MM-DD format (Not Inclusive)
 #   -ld days     - Add Days Combined with Start Date (de is ignored if specified)
-#   -report type - Report Type = PRODUCT, DAILY, REGION, SERVICE, RESOURCE, TENANT
-#
+#   -report type - Report Type = PRODUCT, DAILY, REGION, SERVICE, RESOURCE, TENANT, SPECIAL
+#                  SPECIAL is group by Service, Region, Product Description
+#   -csv         - Write to CSV files - usage_products.csv, usage_daily.csv, usage_region.csvs,
+#                                       usage_resources.csv, usage_tenants.csv, usage_special.csv
 #
 ##########################################################################
 # Info:
@@ -56,8 +58,16 @@ import datetime
 import oci
 import os
 import platform
+import csv
 
-version = "2024.04.17"
+version = "2024.05.01"
+
+csv_file_products = "usage_products.csv"
+csv_file_daily = "usage_daily.csv"
+csv_file_regions = "usage_regions.csv"
+csv_file_resources = "usage_resources.csv"
+csv_file_tenants = "usage_tenants.csv"
+csv_file_special = "usage_special.csv"
 
 
 ##########################################################################
@@ -168,9 +178,80 @@ def create_signer(config_file, config_profile, is_instance_principals, is_delega
 
 
 ##########################################################################
+# create csv file
+##########################################################################
+def export_to_csv_file(file_name, data):
+
+    try:
+        # if no data
+        if len(data) == 0:
+            return
+
+        # generate fields keys
+        fields = []
+        for dict_ in data:
+            for key in dict_:
+                if key not in fields:
+                    fields.append(key)
+
+        with open(file_name, mode='w', newline='') as csv_file:
+            writer = csv.DictWriter(csv_file, fieldnames=fields)
+
+            # write header
+            writer.writeheader()
+
+            for row in data:
+                writer.writerow(row)
+
+        print("CSV: " + file_name + " created")
+
+    except Exception as e:
+        raise Exception("Error in export_to_csv_file: " + str(e.args))
+
+
+##########################################################################
+# Group Dictionaries by PK
+##########################################################################
+def group_dictionaries(data):
+
+    try:
+        gdata = {}
+        for item in data:
+            pk = item['pk']
+            if pk not in gdata:
+                gdata[pk] = item
+            else:
+                gdata[pk]['cost'] += item['cost']
+                gdata[pk]['quantity'] += item['quantity']
+                if item['currency'] and not gdata[pk]['currency']:
+                    gdata[pk]['currency'] = item['currency']
+                if 'sku_part_number' in item and 'sku_name' in item and 'osr_eligible' in gdata[pk]:
+                    gdata[pk]['osr_eligible'] += osr_eligible_cost(item['sku_part_number'], item['sku_name'], item['cost'])
+
+        return gdata
+    except Exception as e:
+        print("\nException Error at 'group_dictionaries' - " + str(e))
+
+
+##########################################################################
+# Usage Daily by Tenant
+##########################################################################
+def osr_eligible_cost(sku_part_number, sku_name, cost):
+
+    # IF Windows or VMWare
+    if 'windows' in sku_name.lower() or 'vmware' in sku_name.lower():
+        return 0
+
+    # if Market Image with MP
+    if str(sku_part_number).lower()[0:1] == 'mp':
+        return 0
+    return cost
+
+
+##########################################################################
 # Usage Daily by Product
 ##########################################################################
-def usage_daily_product(usageClient, tenant_id, time_usage_started, time_usage_ended):
+def usage_daily_product(usageClient, tenant_id, time_usage_started, time_usage_ended, is_csv):
 
     try:
         # oci.usage_api.models.RequestSummarizedUsagesDetails
@@ -198,113 +279,130 @@ def usage_daily_product(usageClient, tenant_id, time_usage_started, time_usage_e
         currency = ""
         for item in request_summarized_usages.data.items:
             data.append({
+                'pk': item.sku_part_number,
                 'sku': item.sku_part_number,
                 'sku_name': item.sku_name if item.sku_part_number in item.sku_name else item.sku_part_number + " - " + item.sku_name,
                 'sku_part_number': item.sku_part_number,
+                'osr_eligible': osr_eligible_cost(item.sku_part_number, item.sku_name, item.computed_amount if item.computed_amount else 0),
                 'cost': item.computed_amount if item.computed_amount else 0,
                 'quantity': item.computed_quantity if item.computed_quantity else 0,
-                'currency': item.currency,
+                'currency': item.currency.lstrip(),
                 'time_usage_started': item.time_usage_started,
                 'time_usage_ended': item.time_usage_ended
             })
-            if item.currency:
+            if item.currency.lstrip():
                 currency = item.currency
             if not min_date or item.time_usage_started < min_date:
                 min_date = item.time_usage_started
             if not max_date or item.time_usage_started > max_date:
                 max_date = item.time_usage_started
 
-        ################################
-        # Grouped Dict
-        ################################
-        gdata = {}
-        for item in data:
-            sku = item['sku']
-            if sku not in gdata:
-                gdata[sku] = {
-                    'osr_eligible': osr_eligible_cost(item['sku_part_number'], item['sku_name'], item['cost']),
-                    'cost': item['cost'],
-                    'quantity': item['quantity'],
-                    'sku_name': item['sku_name'],
-                    'currency': item['currency']
-                }
-            else:
-                gdata[sku]['osr_eligible'] += osr_eligible_cost(item['sku_part_number'], item['sku_name'], item['cost'])
-                gdata[sku]['cost'] += item['cost']
-                gdata[sku]['quantity'] += item['quantity']
-
-        ################################
-        # Compact based on SKUs
-        ################################
-        col = {
-            'product': 65,
-            'quantity': 14,
-            'days': 10,
-            'osr_eligible': 13,
-            'cost': 13,
-            'month': 13,
-            'year': 13
-        }
-
         days = (max_date - min_date).days + 1
 
-        product_header = "Product Summary for " + min_date.strftime('%m/%d/%Y') + " - " + max_date.strftime('%m/%d/%Y') + " in " + currency
-        print_header(product_header, 3)
-        print("")
-        print(
-            "Product".ljust(col['product']) +
-            " Days".rjust(col['days']) +
-            " Quantity".rjust(col['quantity']) +
-            " OSR Eligible".rjust(col['osr_eligible']) +
-            " Cost".rjust(col['cost']) +
-            " Month-31".rjust(col['month']) +
-            " Year".rjust(col['year'])
-        )
+        ################################
+        # Group Dictionaries by PK
+        ################################
+        gdata = group_dictionaries(data)
 
-        print(
-            "".ljust(col['product'], '=') +
-            " ".ljust(col['days'], '=') +
-            " ".ljust(col['quantity'], '=') +
-            " ".ljust(col['osr_eligible'], '=') +
-            " ".ljust(col['cost'], '=') +
-            " ".ljust(col['month'], '=') +
-            " ".ljust(col['year'], '=')
-        )
+        ################################
+        # if to generate to csv
+        ################################
+        if is_csv:
 
-        total = 0
-        osr_total = 0
-        for item_key in sorted(gdata, key=lambda x: gdata[x]['cost']):
-            item = gdata[item_key]
-            if item['cost'] == 0:
-                continue
-            total += item['cost']
-            osr_total += item['osr_eligible']
-            line = item['sku_name'].ljust(col['product'])[0:col['product']]
-            line += "{:8,.0f}".format(days).rjust(col['days'])
-            line += "{:8,.1f}".format(item['quantity']).rjust(col['quantity'])
-            line += "{:8,.1f}".format(item['osr_eligible']).rjust(col['osr_eligible'])
-            line += "{:8,.1f}".format(item['cost']).rjust(col['cost'])
-            line += "{:9,.0f}".format(item['cost'] / days * 31).rjust(col['month'])
-            line += "{:9,.0f}".format(item['cost'] / days * 365).rjust(col['year'])
-            print(line)
+            csv_output = []
+            for item_key in sorted(gdata, key=lambda x: gdata[x]['cost']):
+                item = gdata[item_key]
+                if item['cost'] == 0:
+                    continue
+                csv_output.append({
+                    'Product SKU': item['sku_part_number'],
+                    'Product Name': item['sku_name'],
+                    'Start Date': min_date.strftime('%m/%d/%Y'),
+                    'End Date': max_date.strftime('%m/%d/%Y'),
+                    'Days': days,
+                    'Currency': item['currency'],
+                    'Quantity': "{:8.1f}".format(item['quantity']),
+                    'Osr Eligible Cost': "{:8.1f}".format(item['osr_eligible']),
+                    'Cost': "{:8.1f}".format(item['cost']),
+                    'Month-31': "{:9.0f}".format(item['cost'] / days * 31),
+                    'Year': "{:9.0f}".format(item['cost'] / days * 365),
+                })
 
-        # Total
-        print(
-            "".ljust(col['product'], '=') +
-            " ".ljust(col['days'], '=') +
-            " ".ljust(col['quantity'], '=') +
-            " ".ljust(col['osr_eligible'], '=') +
-            " ".ljust(col['cost'], '=') +
-            " ".ljust(col['month'], '=') +
-            " ".ljust(col['year'], '=')
-        )
-        print(
-            "Total ".ljust(col['product'] + col['days'] + col['quantity']) +
-            " {:8,.1f}".format(osr_total).rjust(col['osr_eligible']) +
-            " {:8,.1f}".format(total).rjust(col['cost']) +
-            " {:9,.0f}".format(total / days * 31).rjust(col['month']) +
-            " {:9,.0f}".format(total / days * 365).rjust(col['year'])
-        )
+            export_to_csv_file(csv_file_products, csv_output)
+
+        else:
+
+            ################################
+            # Print to screen
+            ################################
+            col = {
+                'product': 65,
+                'quantity': 14,
+                'days': 10,
+                'osr_eligible': 13,
+                'cost': 13,
+                'month': 13,
+                'year': 13
+            }
+
+            currency_print = (" in " + currency) if currency else ""
+            product_header = "Product Summary for " + min_date.strftime('%m/%d/%Y') + " - " + max_date.strftime('%m/%d/%Y') + currency_print
+            print_header(product_header, 3)
+            print("")
+            print(
+                "Product".ljust(col['product']) +
+                " Days".rjust(col['days']) +
+                " Quantity".rjust(col['quantity']) +
+                " OSR Eligible".rjust(col['osr_eligible']) +
+                " Cost".rjust(col['cost']) +
+                " Month-31".rjust(col['month']) +
+                " Year".rjust(col['year'])
+            )
+
+            print(
+                "".ljust(col['product'], '=') +
+                " ".ljust(col['days'], '=') +
+                " ".ljust(col['quantity'], '=') +
+                " ".ljust(col['osr_eligible'], '=') +
+                " ".ljust(col['cost'], '=') +
+                " ".ljust(col['month'], '=') +
+                " ".ljust(col['year'], '=')
+            )
+
+            total = 0
+            osr_total = 0
+            for item_key in sorted(gdata, key=lambda x: gdata[x]['cost']):
+                item = gdata[item_key]
+                if item['cost'] == 0:
+                    continue
+                total += item['cost']
+                osr_total += item['osr_eligible']
+                line = item['sku_name'].ljust(col['product'])[0:col['product']]
+                line += "{:8,.0f}".format(days).rjust(col['days'])
+                line += "{:8,.1f}".format(item['quantity']).rjust(col['quantity'])
+                line += "{:8,.1f}".format(item['osr_eligible']).rjust(col['osr_eligible'])
+                line += "{:8,.1f}".format(item['cost']).rjust(col['cost'])
+                line += "{:9,.0f}".format(item['cost'] / days * 31).rjust(col['month'])
+                line += "{:9,.0f}".format(item['cost'] / days * 365).rjust(col['year'])
+                print(line)
+
+            # Total
+            print(
+                "".ljust(col['product'], '=') +
+                " ".ljust(col['days'], '=') +
+                " ".ljust(col['quantity'], '=') +
+                " ".ljust(col['osr_eligible'], '=') +
+                " ".ljust(col['cost'], '=') +
+                " ".ljust(col['month'], '=') +
+                " ".ljust(col['year'], '=')
+            )
+            print(
+                "Total ".ljust(col['product'] + col['days'] + col['quantity']) +
+                " {:8,.1f}".format(osr_total).rjust(col['osr_eligible']) +
+                " {:8,.1f}".format(total).rjust(col['cost']) +
+                " {:9,.0f}".format(total / days * 31).rjust(col['month']) +
+                " {:9,.0f}".format(total / days * 365).rjust(col['year'])
+            )
 
     except oci.exceptions.ServiceError as e:
         print("\nService Error at 'usage_daily_product' - " + str(e))
@@ -316,7 +414,7 @@ def usage_daily_product(usageClient, tenant_id, time_usage_started, time_usage_e
 ##########################################################################
 # Usage Daily by Region
 ##########################################################################
-def usage_daily_region(usageClient, tenant_id, time_usage_started, time_usage_ended):
+def usage_daily_region(usageClient, tenant_id, time_usage_started, time_usage_ended, is_csv):
 
     try:
         # oci.usage_api.models.RequestSummarizedUsagesDetails
@@ -344,96 +442,110 @@ def usage_daily_region(usageClient, tenant_id, time_usage_started, time_usage_en
         currency = ""
         for item in request_summarized_usages.data.items:
             data.append({
+                'pk': item.region,
                 'region': item.region,
                 'cost': item.computed_amount if item.computed_amount else 0,
                 'quantity': item.computed_quantity if item.computed_quantity else 0,
-                'currency': item.currency,
+                'currency': item.currency.lstrip(),
                 'time_usage_started': item.time_usage_started,
                 'time_usage_ended': item.time_usage_ended
             })
-            if item.currency:
+            if item.currency.lstrip():
                 currency = item.currency
             if not min_date or item.time_usage_started < min_date:
                 min_date = item.time_usage_started
             if not max_date or item.time_usage_started > max_date:
                 max_date = item.time_usage_started
 
-        ################################
-        # Grouped Dict
-        ################################
-        gdata = {}
-        for item in data:
-            region = item['region']
-            if region not in gdata:
-                gdata[region] = {'cost': item['cost'], 'quantity': item['quantity'], 'currency': item['currency']}
-            else:
-                gdata[region]['cost'] += item['cost']
-                gdata[region]['quantity'] += item['quantity']
-
-        ################################
-        # Compact based on SKUs
-        ################################
-        col = {
-            'region': 25,
-            'quantity': 14,
-            'days': 10,
-            'cost': 13,
-            'month': 13,
-            'year': 13
-        }
-
         days = (max_date - min_date).days + 1
 
-        product_header = "Region Summary for " + min_date.strftime('%m/%d/%Y') + " - " + max_date.strftime('%m/%d/%Y') + " in " + currency
-        print_header(product_header, 3)
-        print("")
-        print(
-            "Region".ljust(col['region']) +
-            " Days".rjust(col['days']) +
-            " Quantity".rjust(col['quantity']) +
-            " Cost".rjust(col['cost']) +
-            " Month-31".rjust(col['month']) +
-            " Year".rjust(col['year'])
-        )
+        ################################
+        # Group Dictionaries by PK
+        ################################
+        gdata = group_dictionaries(data)
 
-        print(
-            "".ljust(col['region'], '=') +
-            " ".ljust(col['days'], '=') +
-            " ".ljust(col['quantity'], '=') +
-            " ".ljust(col['cost'], '=') +
-            " ".ljust(col['month'], '=') +
-            " ".ljust(col['year'], '=')
-        )
+        ################################
+        # if to generate to csv
+        ################################
+        if is_csv:
 
-        total = 0
-        for item_key in sorted(gdata, key=lambda x: gdata[x]['cost']):
-            item = gdata[item_key]
-            if item['cost'] == 0:
-                continue
-            total += item['cost']
-            line = item_key.ljust(col['region'])
-            line += "{:8,.0f}".format(days).rjust(col['days'])
-            line += "{:8,.1f}".format(item['quantity']).rjust(col['quantity'])
-            line += "{:8,.1f}".format(item['cost']).rjust(col['cost'])
-            line += "{:9,.0f}".format(item['cost'] / days * 31).rjust(col['month'])
-            line += "{:9,.0f}".format(item['cost'] / days * 365).rjust(col['year'])
-            print(line)
+            csv_output = []
+            for item_key in sorted(gdata, key=lambda x: gdata[x]['pk']):
+                item = gdata[item_key]
+                if item['cost'] == 0:
+                    continue
+                csv_output.append({
+                    'Region': item_key,
+                    'Start Date': min_date.strftime('%m/%d/%Y'),
+                    'End Date': max_date.strftime('%m/%d/%Y'),
+                    'Days': days,
+                    'Currency': item['currency'],
+                    'Cost': "{:8.1f}".format(item['cost']),
+                    'Month-31': "{:9.0f}".format(item['cost'] / days * 31),
+                    'Year': "{:9.0f}".format(item['cost'] / days * 365),
+                })
 
-        # Total
-        print(
-            "".ljust(col['region'], '=') +
-            " ".ljust(col['days'], '=') +
-            " ".ljust(col['quantity'], '=') +
-            " ".ljust(col['cost'], '=') +
-            " ".ljust(col['month'], '=') +
-            " ".ljust(col['year'], '=')
-        )
-        print(
-            "Total ".ljust(col['region'] + col['days'] + col['quantity']) +
-            " {:8,.1f}".format(total).rjust(col['cost']) +
-            " {:9,.0f}".format(total / days * 31).rjust(col['month']) +
-            " {:9,.0f}".format(total / days * 365).rjust(col['year'])
-        )
+            export_to_csv_file(csv_file_regions, csv_output)
+
+        else:
+            ################################
+            # Compact based on SKUs
+            ################################
+            col = {
+                'region': 25,
+                'days': 10,
+                'cost': 13,
+                'month': 13,
+                'year': 13
+            }
+
+            currency_print = (" in " + currency) if currency else ""
+            product_header = "Region Summary for " + min_date.strftime('%m/%d/%Y') + " - " + max_date.strftime('%m/%d/%Y') + currency_print
+            print_header(product_header, 3)
+            print("")
+            print(
+                "Region".ljust(col['region']) +
+                " Days".rjust(col['days']) +
+                " Cost".rjust(col['cost']) +
+                " Month-31".rjust(col['month']) +
+                " Year".rjust(col['year'])
+            )
+
+            print(
+                "".ljust(col['region'], '=') +
+                " ".ljust(col['days'], '=') +
+                " ".ljust(col['cost'], '=') +
+                " ".ljust(col['month'], '=') +
+                " ".ljust(col['year'], '=')
+            )
+
+            total = 0
+            for item_key in sorted(gdata, key=lambda x: gdata[x]['cost']):
+                item = gdata[item_key]
+                if item['cost'] == 0:
+                    continue
+                total += item['cost']
+                line = item_key.ljust(col['region'])
+                line += "{:8,.0f}".format(days).rjust(col['days'])
+                line += "{:8,.1f}".format(item['cost']).rjust(col['cost'])
+                line += "{:9,.0f}".format(item['cost'] / days * 31).rjust(col['month'])
+                line += "{:9,.0f}".format(item['cost'] / days * 365).rjust(col['year'])
+                print(line)
+
+            # Total
+            print(
+                "".ljust(col['region'], '=') +
+                " ".ljust(col['days'], '=') +
+                " ".ljust(col['cost'], '=') +
+                " ".ljust(col['month'], '=') +
+                " ".ljust(col['year'], '=')
+            )
+            print(
+                "Total ".ljust(col['region'] + col['days']) +
+                " {:8,.1f}".format(total).rjust(col['cost']) +
+                " {:9,.0f}".format(total / days * 31).rjust(col['month']) +
+                " {:9,.0f}".format(total / days * 365).rjust(col['year'])
+            )
 
     except oci.exceptions.ServiceError as e:
         print("\nService Error at 'usage_daily_region' - " + str(e))
@@ -445,22 +557,7 @@ def usage_daily_region(usageClient, tenant_id, time_usage_started, time_usage_en
 ##########################################################################
 # Usage Daily by Tenant
 ##########################################################################
-def osr_eligible_cost(sku_part_number, sku_name, cost):
-
-    # IF Windows or VMWare
-    if 'windows' in sku_name.lower() or 'vmware' in sku_name.lower():
-        return 0
-
-    # if Market Image with MP
-    if str(sku_part_number).lower()[0:1] == 'mp':
-        return 0
-    return cost
-
-
-##########################################################################
-# Usage Daily by Tenant
-##########################################################################
-def usage_daily_tenant(usageClient, tenant_id, time_usage_started, time_usage_ended):
+def usage_daily_tenant(usageClient, tenant_id, time_usage_started, time_usage_ended, is_csv):
 
     try:
         # oci.usage_api.models.RequestSummarizedUsagesDetails
@@ -488,112 +585,123 @@ def usage_daily_tenant(usageClient, tenant_id, time_usage_started, time_usage_en
         currency = ""
         for item in request_summarized_usages.data.items:
             data.append({
+                'pk': item.tenant_name,
                 'tenant': item.tenant_name,
                 'sku_part_number': item.sku_part_number,
                 'sku_name': item.sku_name,
+                'osr_eligible': osr_eligible_cost(item.sku_part_number, item.sku_name, item.computed_amount if item.computed_amount else 0),
                 'cost': item.computed_amount if item.computed_amount else 0,
                 'quantity': item.computed_quantity if item.computed_quantity else 0,
-                'currency': item.currency,
+                'currency': item.currency.lstrip(),
                 'time_usage_started': item.time_usage_started,
                 'time_usage_ended': item.time_usage_ended
             })
-            if item.currency:
+            if item.currency.lstrip():
                 currency = item.currency
             if not min_date or item.time_usage_started < min_date:
                 min_date = item.time_usage_started
             if not max_date or item.time_usage_started > max_date:
                 max_date = item.time_usage_started
 
-        ################################
-        # Grouped Dict
-        ################################
-        gdata = {}
-        for item in data:
-            tenant = item['tenant']
-            if tenant not in gdata:
-                gdata[tenant] = {
-                    'cost': item['cost'],
-                    'osr_eligible': osr_eligible_cost(item['sku_part_number'], item['sku_name'], item['cost']),
-                    'quantity': item['quantity'],
-                    'currency': item['currency']
-                }
-            else:
-                gdata[tenant]['osr_eligible'] += osr_eligible_cost(item['sku_part_number'], item['sku_name'], item['cost'])
-                gdata[tenant]['cost'] += item['cost']
-                gdata[tenant]['quantity'] += item['quantity']
-
-        ################################
-        # Compact based on SKUs
-        ################################
-        col = {
-            'tenant': 30,
-            'quantity': 14,
-            'days': 10,
-            'osr_eligible': 15,
-            'cost': 15,
-            'month': 13,
-            'year': 13
-        }
-
         days = (max_date - min_date).days + 1
 
-        product_header = "Tenant Summary for " + min_date.strftime('%m/%d/%Y') + " - " + max_date.strftime('%m/%d/%Y') + " in " + currency
-        print_header(product_header, 3)
-        print("")
-        print(
-            "Tenant".ljust(col['tenant']) +
-            " Days".rjust(col['days']) +
-            " Quantity".rjust(col['quantity']) +
-            " OSR Eligible".rjust(col['osr_eligible']) +
-            " Cost".rjust(col['cost']) +
-            " Month-31".rjust(col['month']) +
-            " Year".rjust(col['year'])
-        )
+        ################################
+        # Group Dictionaries by PK
+        ################################
+        gdata = group_dictionaries(data)
 
-        print(
-            "".ljust(col['tenant'], '=') +
-            " ".ljust(col['days'], '=') +
-            " ".ljust(col['quantity'], '=') +
-            " ".ljust(col['cost'], '=') +
-            " ".ljust(col['osr_eligible'], '=') +
-            " ".ljust(col['month'], '=') +
-            " ".ljust(col['year'], '=')
-        )
+        ################################
+        # if to generate to csv
+        ################################
+        if is_csv:
 
-        total = 0
-        osr_total = 0
-        for item_key in sorted(gdata, key=lambda x: gdata[x]['cost']):
-            item = gdata[item_key]
-            if item['cost'] == 0:
-                continue
-            total += item['cost']
-            osr_total += item['osr_eligible']
-            line = item_key.ljust(col['tenant'])
-            line += "{:8,.0f}".format(days).rjust(col['days'])
-            line += "{:8,.1f}".format(item['quantity']).rjust(col['quantity'])
-            line += "{:8,.1f}".format(item['osr_eligible']).rjust(col['osr_eligible'])
-            line += "{:8,.1f}".format(item['cost']).rjust(col['cost'])
-            line += "{:9,.0f}".format(item['cost'] / days * 31).rjust(col['month'])
-            line += "{:9,.0f}".format(item['cost'] / days * 365).rjust(col['year'])
-            print(line)
+            csv_output = []
+            for item_key in sorted(gdata, key=lambda x: gdata[x]['cost']):
+                item = gdata[item_key]
+                if item['cost'] == 0:
+                    continue
+                csv_output.append({
+                    'Tenant': item_key,
+                    'Start Date': min_date.strftime('%m/%d/%Y'),
+                    'End Date': max_date.strftime('%m/%d/%Y'),
+                    'Days': days,
+                    'Currency': item['currency'],
+                    'Osr Eligible Cost': "{:8.1f}".format(item['osr_eligible']),
+                    'Cost': "{:8.1f}".format(item['cost']),
+                    'Month-31': "{:9.0f}".format(item['cost'] / days * 31),
+                    'Year': "{:9.0f}".format(item['cost'] / days * 365),
+                })
 
-        # Total
-        print(
-            "".ljust(col['tenant'], '=') +
-            " ".ljust(col['days'], '=') +
-            " ".ljust(col['quantity'], '=') +
-            " ".ljust(col['osr_eligible'], '=') +
-            " ".ljust(col['cost'], '=') +
-            " ".ljust(col['month'], '=') +
-            " ".ljust(col['year'], '=')
-        )
-        print(
-            "Total ".ljust(col['tenant'] + col['days'] + col['quantity']) +
-            " {:8,.1f}".format(osr_total).rjust(col['osr_eligible']) +
-            " {:8,.1f}".format(total).rjust(col['cost']) +
-            " {:9,.0f}".format(total / days * 31).rjust(col['month']) +
-            " {:9,.0f}".format(total / days * 365).rjust(col['year'])
-        )
+            export_to_csv_file(csv_file_tenants, csv_output)
+
+        else:
+
+            ################################
+            # Print to screen
+            ################################
+            col = {
+                'tenant': 30,
+                'days': 10,
+                'osr_eligible': 15,
+                'cost': 15,
+                'month': 13,
+                'year': 13
+            }
+
+            currency_print = (" in " + currency) if currency else ""
+            product_header = "Tenant Summary for " + min_date.strftime('%m/%d/%Y') + " - " + max_date.strftime('%m/%d/%Y') + currency_print
+            print_header(product_header, 3)
+            print("")
+            print(
+                "Tenant".ljust(col['tenant']) +
+                " Days".rjust(col['days']) +
+                " OSR Eligible".rjust(col['osr_eligible']) +
+                " Cost".rjust(col['cost']) +
+                " Month-31".rjust(col['month']) +
+                " Year".rjust(col['year'])
+            )
+
+            print(
+                "".ljust(col['tenant'], '=') +
+                " ".ljust(col['days'], '=') +
+                " ".ljust(col['cost'], '=') +
+                " ".ljust(col['osr_eligible'], '=') +
+                " ".ljust(col['month'], '=') +
+                " ".ljust(col['year'], '=')
+            )
+
+            total = 0
+            osr_total = 0
+            for item_key in sorted(gdata, key=lambda x: gdata[x]['cost']):
+                item = gdata[item_key]
+                if item['cost'] == 0:
+                    continue
+                total += item['cost']
+                osr_total += item['osr_eligible']
+                line = item_key.ljust(col['tenant'])
+                line += "{:8,.0f}".format(days).rjust(col['days'])
+                line += "{:8,.1f}".format(item['osr_eligible']).rjust(col['osr_eligible'])
+                line += "{:8,.1f}".format(item['cost']).rjust(col['cost'])
+                line += "{:9,.0f}".format(item['cost'] / days * 31).rjust(col['month'])
+                line += "{:9,.0f}".format(item['cost'] / days * 365).rjust(col['year'])
+                print(line)
+
+            # Total
+            print(
+                "".ljust(col['tenant'], '=') +
+                " ".ljust(col['days'], '=') +
+                " ".ljust(col['osr_eligible'], '=') +
+                " ".ljust(col['cost'], '=') +
+                " ".ljust(col['month'], '=') +
+                " ".ljust(col['year'], '=')
+            )
+            print(
+                "Total ".ljust(col['tenant'] + col['days']) +
+                " {:8,.1f}".format(osr_total).rjust(col['osr_eligible']) +
+                " {:8,.1f}".format(total).rjust(col['cost']) +
+                " {:9,.0f}".format(total / days * 31).rjust(col['month']) +
+                " {:9,.0f}".format(total / days * 365).rjust(col['year'])
+            )
 
     except oci.exceptions.ServiceError as e:
         print("\nService Error at 'usage_daily_tenant' - " + str(e))
@@ -603,9 +711,9 @@ def usage_daily_tenant(usageClient, tenant_id, time_usage_started, time_usage_en
 
 
 ##########################################################################
-# Usage Daily by Servoce
+# Usage Daily by Service
 ##########################################################################
-def usage_daily_service(usageClient, tenant_id, time_usage_started, time_usage_ended):
+def usage_daily_service(usageClient, tenant_id, time_usage_started, time_usage_ended, is_csv):
 
     try:
         # oci.usage_api.models.RequestSummarizedUsagesDetails
@@ -613,7 +721,7 @@ def usage_daily_service(usageClient, tenant_id, time_usage_started, time_usage_e
             tenant_id=tenant_id,
             granularity='DAILY',
             query_type='COST',
-            group_by=['service'],
+            group_by=['service', 'skuPartNumber', 'skuName'],
             time_usage_started=time_usage_started.strftime('%Y-%m-%dT%H:%M:%SZ'),
             time_usage_ended=time_usage_ended.strftime('%Y-%m-%dT%H:%M:%SZ')
         )
@@ -633,96 +741,129 @@ def usage_daily_service(usageClient, tenant_id, time_usage_started, time_usage_e
         currency = ""
         for item in request_summarized_usages.data.items:
             data.append({
+                'pk': item.service,
                 'service': item.service,
                 'cost': item.computed_amount if item.computed_amount else 0,
                 'quantity': item.computed_quantity if item.computed_quantity else 0,
-                'currency': item.currency,
+                'sku_part_number': item.sku_part_number,
+                'sku_name': item.sku_name,
+                'osr_eligible': osr_eligible_cost(item.sku_part_number, item.sku_name, item.computed_amount if item.computed_amount else 0),
+                'currency': item.currency.lstrip(),
                 'time_usage_started': item.time_usage_started,
                 'time_usage_ended': item.time_usage_ended
             })
-            if item.currency:
+            if item.currency.lstrip():
                 currency = item.currency
             if not min_date or item.time_usage_started < min_date:
                 min_date = item.time_usage_started
             if not max_date or item.time_usage_started > max_date:
                 max_date = item.time_usage_started
 
-        ################################
-        # Grouped Dict
-        ################################
-        gdata = {}
-        for item in data:
-            service = item['service']
-            if service not in gdata:
-                gdata[service] = {'cost': item['cost'], 'quantity': item['quantity'], 'currency': item['currency']}
-            else:
-                gdata[service]['cost'] += item['cost']
-                gdata[service]['quantity'] += item['quantity']
-
-        ################################
-        # Compact based on SKUs
-        ################################
-        col = {
-            'service': 40,
-            'quantity': 14,
-            'days': 10,
-            'cost': 13,
-            'month': 13,
-            'year': 13
-        }
-
         days = (max_date - min_date).days + 1
 
-        product_header = "Service Summary for " + min_date.strftime('%m/%d/%Y') + " - " + max_date.strftime('%m/%d/%Y') + " in " + currency
-        print_header(product_header, 3)
-        print("")
-        print(
-            "Service".ljust(col['service']) +
-            " Days".rjust(col['days']) +
-            " Quantity".rjust(col['quantity']) +
-            " Cost".rjust(col['cost']) +
-            " Month-31".rjust(col['month']) +
-            " Year".rjust(col['year'])
-        )
+        ################################
+        # Group Dictionaries by PK
+        ################################
+        gdata = group_dictionaries(data)
 
-        print(
-            "".ljust(col['service'], '=') +
-            " ".ljust(col['days'], '=') +
-            " ".ljust(col['quantity'], '=') +
-            " ".ljust(col['cost'], '=') +
-            " ".ljust(col['month'], '=') +
-            " ".ljust(col['year'], '=')
-        )
+        ################################
+        # if to generate to csv
+        ################################
+        if is_csv:
 
-        total = 0
-        for item_key in sorted(gdata, key=lambda x: gdata[x]['cost']):
-            item = gdata[item_key]
-            if item['cost'] == 0:
-                continue
-            total += item['cost']
-            line = item_key.ljust(col['service'])
-            line += "{:8,.0f}".format(days).rjust(col['days'])
-            line += "{:8,.1f}".format(item['quantity']).rjust(col['quantity'])
-            line += "{:8,.1f}".format(item['cost']).rjust(col['cost'])
-            line += "{:9,.0f}".format(item['cost'] / days * 31).rjust(col['month'])
-            line += "{:9,.0f}".format(item['cost'] / days * 365).rjust(col['year'])
-            print(line)
+            csv_output = []
+            for item_key in sorted(gdata, key=lambda x: gdata[x]['cost']):
+                item = gdata[item_key]
+                if item['cost'] == 0:
+                    continue
+                csv_output.append({
+                    'Service': item_key,
+                    'Start Date': min_date.strftime('%m/%d/%Y'),
+                    'End Date': max_date.strftime('%m/%d/%Y'),
+                    'Days': days,
+                    'Currency': item['currency'],
+                    'Quantity': "{:8.1f}".format(item['quantity']),
+                    'Osr Eligible Cost': "{:8.1f}".format(item['osr_eligible']),
+                    'Cost': "{:8.1f}".format(item['cost']),
+                    'Month-31': "{:9.0f}".format(item['cost'] / days * 31),
+                    'Year': "{:9.0f}".format(item['cost'] / days * 365),
+                })
 
-        # Total
-        print(
-            "".ljust(col['service'], '=') +
-            " ".ljust(col['days'], '=') +
-            " ".ljust(col['quantity'], '=') +
-            " ".ljust(col['cost'], '=') +
-            " ".ljust(col['month'], '=') +
-            " ".ljust(col['year'], '=')
-        )
-        print(
-            "Total ".ljust(col['service'] + col['days'] + col['quantity']) +
-            " {:8,.1f}".format(total).rjust(col['cost']) +
-            " {:9,.0f}".format(total / days * 31).rjust(col['month']) +
-            " {:9,.0f}".format(total / days * 365).rjust(col['year'])
-        )
+            export_to_csv_file(csv_file_tenants, csv_output)
+
+        else:
+
+            ################################
+            # Print to screen
+            ################################
+            col = {
+                'service': 45,
+                'quantity': 14,
+                'days': 10,
+                'osr_eligible': 15,
+                'cost': 13,
+                'month': 13,
+                'year': 13
+            }
+
+            currency_print = (" in " + currency) if currency else ""
+            product_header = "Service Summary for " + min_date.strftime('%m/%d/%Y') + " - " + max_date.strftime('%m/%d/%Y') + currency_print
+            print_header(product_header, 3)
+            print("")
+            print(
+                "Service".ljust(col['service']) +
+                " Days".rjust(col['days']) +
+                " Quantity".rjust(col['quantity']) +
+                " OSR Eligible".rjust(col['osr_eligible']) +
+                " Cost".rjust(col['cost']) +
+                " Month-31".rjust(col['month']) +
+                " Year".rjust(col['year'])
+            )
+
+            print(
+                "".ljust(col['service'], '=') +
+                " ".ljust(col['days'], '=') +
+                " ".ljust(col['quantity'], '=') +
+                " ".ljust(col['osr_eligible'], '=') +
+                " ".ljust(col['cost'], '=') +
+                " ".ljust(col['month'], '=') +
+                " ".ljust(col['year'], '=')
+            )
+
+            total = 0
+            osr_total = 0
+            for item_key in sorted(gdata, key=lambda x: gdata[x]['cost']):
+                item = gdata[item_key]
+                if item['cost'] == 0:
+                    continue
+                total += item['cost']
+                osr_total += item['osr_eligible']
+                line = item_key.ljust(col['service'])
+                line += "{:8,.0f}".format(days).rjust(col['days'])
+                line += "{:8,.1f}".format(item['quantity']).rjust(col['quantity'])
+                line += "{:8,.1f}".format(item['osr_eligible']).rjust(col['osr_eligible'])
+                line += "{:8,.1f}".format(item['cost']).rjust(col['cost'])
+                line += "{:9,.0f}".format(item['cost'] / days * 31).rjust(col['month'])
+                line += "{:9,.0f}".format(item['cost'] / days * 365).rjust(col['year'])
+                print(line)
+
+            # Total
+            print(
+                "".ljust(col['service'], '=') +
+                " ".ljust(col['days'], '=') +
+                " ".ljust(col['quantity'], '=') +
+                " ".ljust(col['osr_eligible'], '=') +
+                " ".ljust(col['cost'], '=') +
+                " ".ljust(col['month'], '=') +
+                " ".ljust(col['year'], '=')
+            )
+            print(
+                "Total ".ljust(col['service'] + col['days'] + col['quantity']) +
+                " {:8,.1f}".format(osr_total).rjust(col['osr_eligible']) +
+                " {:8,.1f}".format(total).rjust(col['cost']) +
+                " {:9,.0f}".format(total / days * 31).rjust(col['month']) +
+                " {:9,.0f}".format(total / days * 365).rjust(col['year'])
+            )
 
     except oci.exceptions.ServiceError as e:
         print("\nService Error at 'usage_daily_service' - " + str(e))
@@ -732,9 +873,9 @@ def usage_daily_service(usageClient, tenant_id, time_usage_started, time_usage_e
 
 
 ##########################################################################
-# Usage Daily by Resource
+# Usage Daily by Speical Grouping = Service, Region, Product Description
 ##########################################################################
-def usage_daily_resource(usageClient, tenant_id, time_usage_started, time_usage_ended):
+def usage_daily_special(usageClient, tenant_id, time_usage_started, time_usage_ended, is_csv):
 
     try:
         # oci.usage_api.models.RequestSummarizedUsagesDetails
@@ -742,7 +883,7 @@ def usage_daily_resource(usageClient, tenant_id, time_usage_started, time_usage_
             tenant_id=tenant_id,
             granularity='DAILY',
             query_type='COST',
-            group_by=['resourceId'],
+            group_by=['service', 'region', 'skuPartNumber', 'skuName'],
             time_usage_started=time_usage_started.strftime('%Y-%m-%dT%H:%M:%SZ'),
             time_usage_ended=time_usage_ended.strftime('%Y-%m-%dT%H:%M:%SZ')
         )
@@ -762,96 +903,285 @@ def usage_daily_resource(usageClient, tenant_id, time_usage_started, time_usage_
         currency = ""
         for item in request_summarized_usages.data.items:
             data.append({
-                'resourceid': item.resource_id,
+                'pk': item.service + ":" + item.region + ":" + item.sku_name,
+                'service': item.service,
+                'region': item.region,
+                'sku_part_number': item.sku_part_number,
+                'sku_name': item.sku_name,
+                'osr_eligible': osr_eligible_cost(item.sku_part_number, item.sku_name, item.computed_amount if item.computed_amount else 0),
                 'cost': item.computed_amount if item.computed_amount else 0,
                 'quantity': item.computed_quantity if item.computed_quantity else 0,
-                'currency': item.currency,
+                'currency': item.currency.lstrip(),
                 'time_usage_started': item.time_usage_started,
                 'time_usage_ended': item.time_usage_ended
             })
-            if item.currency:
+            if item.currency.lstrip():
                 currency = item.currency
             if not min_date or item.time_usage_started < min_date:
                 min_date = item.time_usage_started
             if not max_date or item.time_usage_started > max_date:
                 max_date = item.time_usage_started
 
-        ################################
-        # Grouped Dict
-        ################################
-        gdata = {}
-        for item in data:
-            resourceid = item['resourceid']
-            if resourceid not in gdata:
-                gdata[resourceid] = {'cost': item['cost'], 'quantity': item['quantity'], 'currency': item['currency']}
-            else:
-                gdata[resourceid]['cost'] += item['cost']
-                gdata[resourceid]['quantity'] += item['quantity']
+        days = (max_date - min_date).days + 1
 
         ################################
-        # Compact based on SKUs
+        # Group Dictionaries by PK
         ################################
-        col = {
-            'resourceid': 100,
-            'quantity': 14,
-            'days': 10,
-            'cost': 13,
-            'month': 13,
-            'year': 13
-        }
+        gdata = group_dictionaries(data)
+
+        ################################
+        # if to generate to csv
+        ################################
+        if is_csv:
+
+            csv_output = []
+            for item_key in sorted(gdata, key=lambda x: gdata[x]['pk']):
+                item = gdata[item_key]
+                if item['cost'] == 0:
+                    continue
+                csv_output.append({
+                    'Service': item['service'],
+                    'Region': item['region'],
+                    'Product SKU': item['sku_part_number'],
+                    'Product Name': item['sku_name'],
+                    'Start Date': min_date.strftime('%m/%d/%Y'),
+                    'End Date': max_date.strftime('%m/%d/%Y'),
+                    'Days': days,
+                    'Currency': item['currency'],
+                    'Quantity': "{:8.1f}".format(item['quantity']),
+                    'OSR Eligible Cost': "{:8.1f}".format(item['osr_eligible']),
+                    'Cost': "{:8.1f}".format(item['cost']),
+                    'Month-31': "{:9.0f}".format(item['cost'] / days * 31),
+                    'Year': "{:9.0f}".format(item['cost'] / days * 365),
+                })
+
+            export_to_csv_file(csv_file_special, csv_output)
+
+        else:
+
+            ################################
+            # Print to screen
+            ################################
+            col = {
+                'pk': 120,
+                'days': 10,
+                'osr_eligible': 15,
+                'quantity': 14,
+                'cost': 13
+            }
+
+            currency_print = (" in " + currency) if currency else ""
+            product_header = "Service, Region and Product for " + min_date.strftime('%m/%d/%Y') + " - " + max_date.strftime('%m/%d/%Y') + currency_print
+            print_header(product_header, 3)
+            print("")
+            print(
+                "Service,Region and Product".ljust(col['pk']) +
+                " Days".rjust(col['days']) +
+                " Quantity".rjust(col['quantity']) +
+                " OSR Eligible".rjust(col['osr_eligible']) +
+                " Cost".rjust(col['cost'])
+            )
+
+            print(
+                "".ljust(col['pk'], '=') +
+                " ".ljust(col['days'], '=') +
+                " ".ljust(col['quantity'], '=') +
+                " ".ljust(col['osr_eligible'], '=') +
+                " ".ljust(col['cost'], '=')
+            )
+
+            total = 0
+            osr_total = 0
+            for item_key in sorted(gdata, key=lambda x: gdata[x]['pk']):
+                item = gdata[item_key]
+                if item['cost'] == 0:
+                    continue
+                total += item['cost']
+                osr_total += item['osr_eligible']
+                line = item_key.ljust(col['pk'])
+                line += "{:8,.0f}".format(days).rjust(col['days'])
+                line += "{:8,.1f}".format(item['quantity']).rjust(col['quantity'])
+                line += "{:8,.1f}".format(item['osr_eligible']).rjust(col['osr_eligible'])
+                line += "{:8,.1f}".format(item['cost']).rjust(col['cost'])
+                print(line)
+
+            # Total
+            print(
+                "".ljust(col['pk'], '=') +
+                " ".ljust(col['days'], '=') +
+                " ".ljust(col['quantity'], '=') +
+                " ".ljust(col['osr_eligible'], '=') +
+                " ".ljust(col['cost'], '=')
+            )
+            print(
+                "Total ".ljust(col['pk'] + col['days'] + col['quantity']) +
+                " {:8,.1f}".format(osr_total).rjust(col['osr_eligible']) +
+                " {:8,.1f}".format(total).rjust(col['cost'])
+            )
+
+    except oci.exceptions.ServiceError as e:
+        print("\nService Error at 'usage_daily_special' - " + str(e))
+
+    except Exception as e:
+        print("\nException Error at 'usage_daily_special' - " + str(e))
+
+
+##########################################################################
+# Usage Daily by Resource
+##########################################################################
+def usage_daily_resource(usageClient, tenant_id, time_usage_started, time_usage_ended, is_csv):
+
+    try:
+        # oci.usage_api.models.RequestSummarizedUsagesDetails
+        requestSummarizedUsagesDetails = oci.usage_api.models.RequestSummarizedUsagesDetails(
+            tenant_id=tenant_id,
+            granularity='DAILY',
+            query_type='COST',
+            group_by=['resourceId', 'region', 'skuPartNumber', 'skuName'],
+            time_usage_started=time_usage_started.strftime('%Y-%m-%dT%H:%M:%SZ'),
+            time_usage_ended=time_usage_ended.strftime('%Y-%m-%dT%H:%M:%SZ')
+        )
+
+        # usageClient.request_summarized_usages
+        request_summarized_usages = usageClient.request_summarized_usages(
+            requestSummarizedUsagesDetails,
+            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+        )
+
+        ################################
+        # Add all data to array data
+        ################################
+        data = []
+        min_date = None
+        max_date = None
+        currency = ""
+        for item in request_summarized_usages.data.items:
+            data.append({
+                'pk': item.resource_id,
+                'resourceid': item.resource_id,
+                'region': item.region,
+                'sku_part_number': item.sku_part_number,
+                'sku_name': item.sku_name,
+                'osr_eligible': osr_eligible_cost(item.sku_part_number, item.sku_name, item.computed_amount if item.computed_amount else 0),
+                'cost': item.computed_amount if item.computed_amount else 0,
+                'quantity': item.computed_quantity if item.computed_quantity else 0,
+                'currency': item.currency.lstrip(),
+                'time_usage_started': item.time_usage_started,
+                'time_usage_ended': item.time_usage_ended
+            })
+            if item.currency.lstrip():
+                currency = item.currency
+            if not min_date or item.time_usage_started < min_date:
+                min_date = item.time_usage_started
+            if not max_date or item.time_usage_started > max_date:
+                max_date = item.time_usage_started
 
         days = (max_date - min_date).days + 1
 
-        product_header = "ResourceId Summary for " + min_date.strftime('%m/%d/%Y') + " - " + max_date.strftime('%m/%d/%Y') + " in " + currency
-        print_header(product_header, 3)
-        print("")
-        print(
-            "Resource".ljust(col['resourceid']) +
-            " Days".rjust(col['days']) +
-            " Quantity".rjust(col['quantity']) +
-            " Cost".rjust(col['cost']) +
-            " Month-31".rjust(col['month']) +
-            " Year".rjust(col['year'])
-        )
+        ################################
+        # Group Dictionaries by PK
+        ################################
+        gdata = group_dictionaries(data)
 
-        print(
-            "".ljust(col['resourceid'], '=') +
-            " ".ljust(col['days'], '=') +
-            " ".ljust(col['quantity'], '=') +
-            " ".ljust(col['cost'], '=') +
-            " ".ljust(col['month'], '=') +
-            " ".ljust(col['year'], '=')
-        )
+        ################################
+        # if to generate to csv
+        ################################
+        if is_csv:
 
-        total = 0
-        for item_key in sorted(gdata, key=lambda x: gdata[x]['cost']):
-            item = gdata[item_key]
-            if item['cost'] == 0:
-                continue
-            total += item['cost']
-            line = str(item_key[0:col['resourceid']]).ljust(col['resourceid'])
-            line += "{:8,.0f}".format(days).rjust(col['days'])
-            line += "{:8,.1f}".format(item['quantity']).rjust(col['quantity'])
-            line += "{:8,.1f}".format(item['cost']).rjust(col['cost'])
-            line += "{:9,.0f}".format(item['cost'] / days * 31).rjust(col['month'])
-            line += "{:9,.0f}".format(item['cost'] / days * 365).rjust(col['year'])
-            print(line)
+            csv_output = []
+            for item_key in sorted(gdata, key=lambda x: gdata[x]['cost']):
+                item = gdata[item_key]
+                if item['cost'] == 0:
+                    continue
+                csv_output.append({
+                    'Resource': item_key,
+                    'Region': item['region'],
+                    'Start Date': min_date.strftime('%m/%d/%Y'),
+                    'End Date': max_date.strftime('%m/%d/%Y'),
+                    'Days': days,
+                    'Currency': item['currency'],
+                    'Quantity': "{:8.4f}".format(item['quantity']),
+                    'Osr Eligible Cost': "{:8.4f}".format(item['osr_eligible']),
+                    'Cost': "{:8.4f}".format(item['cost']),
+                    'Month-31': "{:9.0f}".format(item['cost'] / days * 31),
+                    'Year': "{:9.0f}".format(item['cost'] / days * 365),
+                })
 
-        # Total
-        print(
-            "".ljust(col['resourceid'], '=') +
-            " ".ljust(col['days'], '=') +
-            " ".ljust(col['quantity'], '=') +
-            " ".ljust(col['cost'], '=') +
-            " ".ljust(col['month'], '=') +
-            " ".ljust(col['year'], '=')
-        )
-        print(
-            "Total ".ljust(col['resourceid'] + col['days'] + col['quantity']) +
-            " {:8,.1f}".format(total).rjust(col['cost']) +
-            " {:9,.0f}".format(total / days * 31).rjust(col['month']) +
-            " {:9,.0f}".format(total / days * 365).rjust(col['year'])
-        )
+            export_to_csv_file(csv_file_resources, csv_output)
+
+        else:
+
+            ################################
+            # Print to screen
+            ################################
+            col = {
+                'resourceid': 100,
+                'quantity': 14,
+                'days': 10,
+                'osr_eligible': 15,
+                'cost': 13,
+                'month': 13,
+                'year': 13
+            }
+
+            currency_print = (" in " + currency) if currency else ""
+            product_header = "ResourceId Summary for " + min_date.strftime('%m/%d/%Y') + " - " + max_date.strftime('%m/%d/%Y') + currency_print
+            print_header(product_header, 3)
+            print("")
+            print(
+                "Resource".ljust(col['resourceid']) +
+                " Days".rjust(col['days']) +
+                " Quantity".rjust(col['quantity']) +
+                " OSR Eligible".rjust(col['osr_eligible']) +
+                " Cost".rjust(col['cost']) +
+                " Month-31".rjust(col['month']) +
+                " Year".rjust(col['year'])
+            )
+
+            print(
+                "".ljust(col['resourceid'], '=') +
+                " ".ljust(col['days'], '=') +
+                " ".ljust(col['quantity'], '=') +
+                " ".ljust(col['osr_eligible'], '=') +
+                " ".ljust(col['cost'], '=') +
+                " ".ljust(col['month'], '=') +
+                " ".ljust(col['year'], '=')
+            )
+
+            total = 0
+            osr_total = 0
+            for item_key in sorted(gdata, key=lambda x: gdata[x]['cost']):
+                item = gdata[item_key]
+                if item['cost'] == 0:
+                    continue
+                total += item['cost']
+                osr_total += item['osr_eligible']
+                line = str(item_key[0:col['resourceid']]).ljust(col['resourceid'])
+                line += "{:8,.0f}".format(days).rjust(col['days'])
+                line += "{:8,.1f}".format(item['quantity']).rjust(col['quantity'])
+                line += "{:8,.1f}".format(item['osr_eligible']).rjust(col['osr_eligible'])
+                line += "{:8,.1f}".format(item['cost']).rjust(col['cost'])
+                line += "{:9,.0f}".format(item['cost'] / days * 31).rjust(col['month'])
+                line += "{:9,.0f}".format(item['cost'] / days * 365).rjust(col['year'])
+                print(line)
+
+            # Total
+            print(
+                "".ljust(col['resourceid'], '=') +
+                " ".ljust(col['days'], '=') +
+                " ".ljust(col['quantity'], '=') +
+                " ".ljust(col['osr_eligible'], '=') +
+                " ".ljust(col['cost'], '=') +
+                " ".ljust(col['month'], '=') +
+                " ".ljust(col['year'], '=')
+            )
+            print(
+                "Total ".ljust(col['resourceid'] + col['days'] + col['quantity']) +
+                " {:8,.1f}".format(osr_total).rjust(col['osr_eligible']) +
+                " {:8,.1f}".format(total).rjust(col['cost']) +
+                " {:9,.0f}".format(total / days * 31).rjust(col['month']) +
+                " {:9,.0f}".format(total / days * 365).rjust(col['year'])
+            )
 
     except oci.exceptions.ServiceError as e:
         print("\nService Error at 'usage_daily_resource' - " + str(e))
@@ -863,7 +1193,7 @@ def usage_daily_resource(usageClient, tenant_id, time_usage_started, time_usage_
 ##########################################################################
 # Usage Daily Summary
 ##########################################################################
-def usage_daily_summary(usageClient, tenant_id, time_usage_started, time_usage_ended):
+def usage_daily_summary(usageClient, tenant_id, time_usage_started, time_usage_ended, is_csv):
 
     try:
 
@@ -872,6 +1202,7 @@ def usage_daily_summary(usageClient, tenant_id, time_usage_started, time_usage_e
             tenant_id=tenant_id,
             granularity='DAILY',
             query_type='COST',
+            group_by=['skuPartNumber', 'skuName'],
             time_usage_started=time_usage_started.strftime('%Y-%m-%dT%H:%M:%SZ'),
             time_usage_ended=time_usage_ended.strftime('%Y-%m-%dT%H:%M:%SZ')
         )
@@ -888,82 +1219,114 @@ def usage_daily_summary(usageClient, tenant_id, time_usage_started, time_usage_e
         data = []
         min_date = None
         max_date = None
+        currency = ""
         for item in request_summarized_usages.data.items:
             data.append({
+                'pk': item.time_usage_started.strftime('%Y-%m-%d'),
                 'day': item.time_usage_started.strftime('%Y-%m-%d'),
+                'sku_part_number': item.sku_part_number,
+                'sku_name': item.sku_name,
+                'osr_eligible': osr_eligible_cost(item.sku_part_number, item.sku_name, item.computed_amount if item.computed_amount else 0),
                 'cost': item.computed_amount if item.computed_amount else 0,
                 'quantity': item.computed_quantity if item.computed_quantity else 0,
-                'currency': item.currency,
+                'currency': item.currency.lstrip(),
                 'time_usage_started': item.time_usage_started,
                 'time_usage_ended': item.time_usage_ended
             })
+            if item.currency.lstrip():
+                currency = item.currency
             if not min_date or item.time_usage_started < min_date:
                 min_date = item.time_usage_started
             if not max_date or item.time_usage_started > max_date:
                 max_date = item.time_usage_started
 
         ################################
-        # Grouped Dict
+        # Group Dictionaries by PK
         ################################
-        gdata = {}
-        for item in data:
-            day = item['day']
-            if day not in gdata:
-                gdata[day] = {'cost': item['cost'], 'quantity': item['quantity'], 'currency': item['currency']}
-            else:
-                gdata[day]['cost'] += item['cost']
-                gdata[day]['quantity'] += item['quantity']
+        gdata = group_dictionaries(data)
 
         ################################
-        # Compact based on SKUs
+        # if to generate to csv
         ################################
-        col = {
-            'day': 15,
-            'cost': 15,
-            'month': 15,
-            'year': 15
-        }
+        if is_csv:
 
-        product_header = "Daily Summary for " + min_date.strftime('%m/%d/%Y') + " - " + max_date.strftime('%m/%d/%Y')
-        print_header(product_header, 3)
-        print("")
-        print(
-            "Day".ljust(col['day']) +
-            " Cost".rjust(col['cost']) +
-            " Month-31".rjust(col['month']) +
-            " Year".rjust(col['year'])
-        )
+            csv_output = []
+            for item_key in sorted(gdata, key=lambda x: gdata[x]['day']):
+                item = gdata[item_key]
+                if item['cost'] == 0:
+                    continue
+                csv_output.append({
+                    'Day': item['day'],
+                    'Currency': item['currency'],
+                    'Osr Eligible Cost': "{:8.4f}".format(item['osr_eligible']),
+                    'Cost': "{:8.3f}".format(item['cost']),
+                    'Month-31': "{:9.0f}".format(item['cost'] * 31),
+                    'Year': "{:9.0f}".format(item['cost'] * 365),
+                })
 
-        print(
-            "".ljust(col['day'], '=') +
-            " ".ljust(col['cost'], '=') +
-            " ".ljust(col['month'], '=') +
-            " ".ljust(col['year'], '=')
-        )
+            export_to_csv_file(csv_file_daily, csv_output)
 
-        total = 0
-        for item_key in sorted(gdata, key=lambda x: x):
-            item = gdata[item_key]
-            if item['cost'] == 0:
-                continue
-            total += item['cost']
-            line = item_key.ljust(col['day'])[0:col['day']]
-            line += "{:8,.1f}".format(item['cost']).rjust(col['cost'])
-            line += "{:9,.0f}".format(item['cost'] * 31).rjust(col['month'])
-            line += "{:9,.0f}".format(item['cost'] * 365).rjust(col['year'])
-            print(line)
+        else:
 
-        # Total
-        print(
-            "".ljust(col['day'], '=') +
-            " ".ljust(col['cost'], '=') +
-            " ".ljust(col['month'], '=') +
-            " ".ljust(col['year'], '=')
-        )
-        print(
-            "Total ".ljust(col['day']) +
-            " {:8,.1f}".format(total).rjust(col['cost'])
-        )
+            ################################
+            # Print to screen
+            ################################
+            col = {
+                'day': 15,
+                'osr_eligible': 15,
+                'cost': 15,
+                'month': 15,
+                'year': 15
+            }
+
+            currency_print = (" in " + currency) if currency else ""
+            product_header = "Daily Summary for " + min_date.strftime('%m/%d/%Y') + " - " + max_date.strftime('%m/%d/%Y') + currency_print
+            print_header(product_header, 3)
+            print("")
+            print(
+                "Day".ljust(col['day']) +
+                " OSR Eligible".rjust(col['osr_eligible']) +
+                " Cost".rjust(col['cost']) +
+                " Month-31".rjust(col['month']) +
+                " Year".rjust(col['year'])
+            )
+
+            print(
+                "".ljust(col['day'], '=') +
+                " ".ljust(col['osr_eligible'], '=') +
+                " ".ljust(col['cost'], '=') +
+                " ".ljust(col['month'], '=') +
+                " ".ljust(col['year'], '=')
+            )
+
+            total = 0
+            osr_total = 0
+            for item_key in sorted(gdata, key=lambda x: x):
+                item = gdata[item_key]
+                if item['cost'] == 0:
+                    continue
+                total += item['cost']
+                osr_total += item['osr_eligible']
+                line = item_key.ljust(col['day'])[0:col['day']]
+                line += "{:8,.1f}".format(item['osr_eligible']).rjust(col['osr_eligible'])
+                line += "{:8,.1f}".format(item['cost']).rjust(col['cost'])
+                line += "{:9,.0f}".format(item['cost'] * 31).rjust(col['month'])
+                line += "{:9,.0f}".format(item['cost'] * 365).rjust(col['year'])
+                print(line)
+
+            # Total
+            print(
+                "".ljust(col['day'], '=') +
+                " ".ljust(col['osr_eligible'], '=') +
+                " ".ljust(col['cost'], '=') +
+                " ".ljust(col['month'], '=') +
+                " ".ljust(col['year'], '=')
+            )
+            print(
+                "Total ".ljust(col['day']) +
+                " {:8,.1f}".format(osr_total).rjust(col['osr_eligible']) +
+                " {:8,.1f}".format(total).rjust(col['cost'])
+            )
 
     except oci.exceptions.ServiceError as e:
         print("\nService Error at 'usage_daily_summary' - " + str(e))
@@ -988,21 +1351,27 @@ def main():
     parser.add_argument("-ds", default=None, dest='date_start', help="Start Date - format YYYY-MM-DD", type=valid_date_type)
     parser.add_argument("-de", default=None, dest='date_end', help="End Date - format YYYY-MM-DD, (Not Inclusive)", type=valid_date_type)
     parser.add_argument("-days", default=None, dest='days', help="Add Days Combined with Start Date (de is ignored if specified)", type=int)
-    parser.add_argument("-report", default="ALL", dest='report', help="Report Type = PRODUCT / DAILY / REGION / SERVICE / RESOURCE / TENANT / ALL ( Default = ALL )")
+    parser.add_argument("-report", default="ALL", dest='report', help="Report Type = PRODUCT / DAILY / REGION / SERVICE / RESOURCE / TENANT / SPECIAL / ALL ( Default = ALL )")
+    parser.add_argument('-csv', action='store_true', default=False, dest='csv', help='Write to CSV files instead of output to the screen - usage_*.csv')
     cmd = parser.parse_args()
 
     if len(sys.argv) < 2:
         parser.print_help()
         return
 
-    if not cmd.report or not (cmd.report == "DAILY" or cmd.report == "SERVICE" or cmd.report == "PRODUCT" or cmd.report == "REGION" or cmd.report == "RESOURCE" or cmd.report == "TENANT" or cmd.report == "ALL"):
+    if not cmd.report or not (cmd.report == "DAILY" or cmd.report == "SERVICE" or cmd.report == "PRODUCT" or cmd.report == "REGION" or cmd.report == "RESOURCE" or cmd.report == "SPECIAL" or cmd.report == "TENANT" or cmd.report == "ALL"):
 
         parser.print_help()
         print("")
         print("**********************************************************")
         print("***          You must specify report type !            ***")
-        print("***   DAILY   = Daily cost                             ***")
-        print("***   PRODUCT = Product Summary Cost                   ***")
+        print("***   DAILY    = Daily cost                            ***")
+        print("***   PRODUCT  = Product Summary Cost                  ***")
+        print("***   SERVICE  = Service Summary Cost                  ***")
+        print("***   REGION   = Region Summary Cost                   ***")
+        print("***   RESOURCE = Resource Summary Cost                 ***")
+        print("***   SPECIAL  = Service, Region and Product           ***")
+        print("***                                                    ***")
         print("***   ALL     = All Reports                            ***")
         print("**********************************************************")
         return None
@@ -1109,28 +1478,31 @@ def main():
     # Connection to UsageAPI
     ############################################
     try:
-        print("\nConnecting to UsageAPI Service...")
+        print("\nConnecting to UsageAPI Service...\n")
         usage_client = oci.usage_api.UsageapiClient(config, signer=signer)
         if cmd.proxy:
             usage_client.base_client.session.proxies = {'https': cmd.proxy}
 
         if report_type == 'DAILY' or report_type == 'ALL':
-            usage_daily_summary(usage_client, tenant_id, time_usage_started, time_usage_ended)
+            usage_daily_summary(usage_client, tenant_id, time_usage_started, time_usage_ended, cmd.csv)
 
         if report_type == 'PRODUCT' or report_type == 'ALL':
-            usage_daily_product(usage_client, tenant_id, time_usage_started, time_usage_ended)
+            usage_daily_product(usage_client, tenant_id, time_usage_started, time_usage_ended, cmd.csv)
 
         if report_type == 'REGION' or report_type == 'ALL':
-            usage_daily_region(usage_client, tenant_id, time_usage_started, time_usage_ended)
+            usage_daily_region(usage_client, tenant_id, time_usage_started, time_usage_ended, cmd.csv)
 
         if report_type == 'SERVICE' or report_type == 'ALL':
-            usage_daily_service(usage_client, tenant_id, time_usage_started, time_usage_ended)
+            usage_daily_service(usage_client, tenant_id, time_usage_started, time_usage_ended, cmd.csv)
 
         if report_type == 'RESOURCE' or report_type == 'ALL':
-            usage_daily_resource(usage_client, tenant_id, time_usage_started, time_usage_ended)
+            usage_daily_resource(usage_client, tenant_id, time_usage_started, time_usage_ended, cmd.csv)
 
         if report_type == 'TENANT' or report_type == 'ALL':
-            usage_daily_tenant(usage_client, tenant_id, time_usage_started, time_usage_ended)
+            usage_daily_tenant(usage_client, tenant_id, time_usage_started, time_usage_ended, cmd.csv)
+
+        if report_type == 'SPECIAL' or report_type == 'ALL':
+            usage_daily_special(usage_client, tenant_id, time_usage_started, time_usage_ended, cmd.csv)
 
     except Exception as e:
         raise RuntimeError("\nError at main function - " + str(e))

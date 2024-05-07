@@ -140,6 +140,7 @@ class UpdateDrPlanStepDetails(object):
         """
         Gets the error_mode of this UpdateDrPlanStepDetails.
         The error mode for this step.
+        The default error mode for the step is `STOP_ON_ERROR`.
 
         Allowed values for this property are: "STOP_ON_ERROR", "CONTINUE_ON_ERROR"
 
@@ -154,6 +155,7 @@ class UpdateDrPlanStepDetails(object):
         """
         Sets the error_mode of this UpdateDrPlanStepDetails.
         The error mode for this step.
+        The default error mode for the step is `STOP_ON_ERROR`.
 
 
         :param error_mode: The error_mode of this UpdateDrPlanStepDetails.
@@ -171,6 +173,7 @@ class UpdateDrPlanStepDetails(object):
         """
         Gets the timeout of this UpdateDrPlanStepDetails.
         The timeout in seconds for executing this step.
+        When creating a new step, if no timeout is specified, the default timeout is set to `3600` seconds.
 
         Example: `600`
 
@@ -185,6 +188,7 @@ class UpdateDrPlanStepDetails(object):
         """
         Sets the timeout of this UpdateDrPlanStepDetails.
         The timeout in seconds for executing this step.
+        When creating a new step, if no timeout is specified, the default timeout is set to `3600` seconds.
 
         Example: `600`
 
@@ -199,6 +203,7 @@ class UpdateDrPlanStepDetails(object):
         """
         Gets the is_enabled of this UpdateDrPlanStepDetails.
         A flag indicating whether this step should be enabled for execution.
+        The default value for the isEnabled flag is `true`.
 
         Example: `true`
 
@@ -213,6 +218,7 @@ class UpdateDrPlanStepDetails(object):
         """
         Sets the is_enabled of this UpdateDrPlanStepDetails.
         A flag indicating whether this step should be enabled for execution.
+        The default value for the isEnabled flag is `true`.
 
         Example: `true`
 

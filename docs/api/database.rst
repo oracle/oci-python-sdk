@@ -219,6 +219,7 @@ Database
     oci.database.models.DbSystemUpgradeHistoryEntry
     oci.database.models.DbSystemUpgradeHistoryEntrySummary
     oci.database.models.DbVersionSummary
+    oci.database.models.DefinedFileSystemConfiguration
     oci.database.models.DeregisterAutonomousDatabaseDataSafeDetails
     oci.database.models.DisasterRecoveryConfiguration
     oci.database.models.DiskPerformanceDetails
@@ -259,6 +260,7 @@ Database
     oci.database.models.ExternalPluggableDatabase
     oci.database.models.ExternalPluggableDatabaseSummary
     oci.database.models.FailoverDataGuardAssociationDetails
+    oci.database.models.FileSystemConfigurationDetail
     oci.database.models.FlexComponentCollection
     oci.database.models.FlexComponentSummary
     oci.database.models.GenerateAutonomousDatabaseWalletDetails

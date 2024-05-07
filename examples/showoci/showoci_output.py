@@ -6151,6 +6151,7 @@ class ShowOCICSV(object):
                             'memory_gb': dbs['shape_memory_gb'],
                             'local_storage_tb': dbs['shape_storage_tb'],
                             'node_count': len(dbs['db_nodes']),
+                            'db_name': db['db_name'],
                             'database': db['name'],
                             'database_edition': dbs['database_edition_short'],
                             'license_model': dbs['license_model'],

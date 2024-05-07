@@ -27,6 +27,10 @@ class UpdateDrPlanGroupDetails(object):
     #: This constant has a value of "BUILT_IN_PRECHECK"
     TYPE_BUILT_IN_PRECHECK = "BUILT_IN_PRECHECK"
 
+    #: A constant which can be used with the type property of a UpdateDrPlanGroupDetails.
+    #: This constant has a value of "USER_DEFINED_PAUSE"
+    TYPE_USER_DEFINED_PAUSE = "USER_DEFINED_PAUSE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateDrPlanGroupDetails object with values from keyword arguments.
@@ -42,8 +46,12 @@ class UpdateDrPlanGroupDetails(object):
 
         :param type:
             The value to assign to the type property of this UpdateDrPlanGroupDetails.
-            Allowed values for this property are: "USER_DEFINED", "BUILT_IN", "BUILT_IN_PRECHECK"
+            Allowed values for this property are: "USER_DEFINED", "BUILT_IN", "BUILT_IN_PRECHECK", "USER_DEFINED_PAUSE"
         :type type: str
+
+        :param is_pause_enabled:
+            The value to assign to the is_pause_enabled property of this UpdateDrPlanGroupDetails.
+        :type is_pause_enabled: bool
 
         :param steps:
             The value to assign to the steps property of this UpdateDrPlanGroupDetails.
@@ -54,6 +62,7 @@ class UpdateDrPlanGroupDetails(object):
             'id': 'str',
             'display_name': 'str',
             'type': 'str',
+            'is_pause_enabled': 'bool',
             'steps': 'list[UpdateDrPlanStepDetails]'
         }
 
@@ -61,12 +70,14 @@ class UpdateDrPlanGroupDetails(object):
             'id': 'id',
             'display_name': 'displayName',
             'type': 'type',
+            'is_pause_enabled': 'isPauseEnabled',
             'steps': 'steps'
         }
 
         self._id = None
         self._display_name = None
         self._type = None
+        self._is_pause_enabled = None
         self._steps = None
 
     @property
@@ -133,7 +144,7 @@ class UpdateDrPlanGroupDetails(object):
 
         Example: `BUILT_IN`
 
-        Allowed values for this property are: "USER_DEFINED", "BUILT_IN", "BUILT_IN_PRECHECK"
+        Allowed values for this property are: "USER_DEFINED", "BUILT_IN", "BUILT_IN_PRECHECK", "USER_DEFINED_PAUSE"
 
 
         :return: The type of this UpdateDrPlanGroupDetails.
@@ -153,12 +164,42 @@ class UpdateDrPlanGroupDetails(object):
         :param type: The type of this UpdateDrPlanGroupDetails.
         :type: str
         """
-        allowed_values = ["USER_DEFINED", "BUILT_IN", "BUILT_IN_PRECHECK"]
+        allowed_values = ["USER_DEFINED", "BUILT_IN", "BUILT_IN_PRECHECK", "USER_DEFINED_PAUSE"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 f"Invalid value for `type`, must be None or one of {allowed_values}"
             )
         self._type = type
+
+    @property
+    def is_pause_enabled(self):
+        """
+        Gets the is_pause_enabled of this UpdateDrPlanGroupDetails.
+        A flag indicating whether this group should be enabled for execution.
+        This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.
+
+        Example: `true`
+
+
+        :return: The is_pause_enabled of this UpdateDrPlanGroupDetails.
+        :rtype: bool
+        """
+        return self._is_pause_enabled
+
+    @is_pause_enabled.setter
+    def is_pause_enabled(self, is_pause_enabled):
+        """
+        Sets the is_pause_enabled of this UpdateDrPlanGroupDetails.
+        A flag indicating whether this group should be enabled for execution.
+        This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.
+
+        Example: `true`
+
+
+        :param is_pause_enabled: The is_pause_enabled of this UpdateDrPlanGroupDetails.
+        :type: bool
+        """
+        self._is_pause_enabled = is_pause_enabled
 
     @property
     def steps(self):

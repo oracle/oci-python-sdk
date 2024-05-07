@@ -27,6 +27,10 @@ class DrPlanGroupExecution(object):
     #: This constant has a value of "BUILT_IN_PRECHECK"
     TYPE_BUILT_IN_PRECHECK = "BUILT_IN_PRECHECK"
 
+    #: A constant which can be used with the type property of a DrPlanGroupExecution.
+    #: This constant has a value of "USER_DEFINED_PAUSE"
+    TYPE_USER_DEFINED_PAUSE = "USER_DEFINED_PAUSE"
+
     #: A constant which can be used with the status property of a DrPlanGroupExecution.
     #: This constant has a value of "QUEUED"
     STATUS_QUEUED = "QUEUED"
@@ -82,7 +86,7 @@ class DrPlanGroupExecution(object):
 
         :param type:
             The value to assign to the type property of this DrPlanGroupExecution.
-            Allowed values for this property are: "USER_DEFINED", "BUILT_IN", "BUILT_IN_PRECHECK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "USER_DEFINED", "BUILT_IN", "BUILT_IN_PRECHECK", "USER_DEFINED_PAUSE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -187,7 +191,7 @@ class DrPlanGroupExecution(object):
 
         Example: `BUILT_IN`
 
-        Allowed values for this property are: "USER_DEFINED", "BUILT_IN", "BUILT_IN_PRECHECK", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "USER_DEFINED", "BUILT_IN", "BUILT_IN_PRECHECK", "USER_DEFINED_PAUSE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -208,7 +212,7 @@ class DrPlanGroupExecution(object):
         :param type: The type of this DrPlanGroupExecution.
         :type: str
         """
-        allowed_values = ["USER_DEFINED", "BUILT_IN", "BUILT_IN_PRECHECK"]
+        allowed_values = ["USER_DEFINED", "BUILT_IN", "BUILT_IN_PRECHECK", "USER_DEFINED_PAUSE"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

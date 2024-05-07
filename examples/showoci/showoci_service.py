@@ -431,7 +431,7 @@ class ShowOCIService(object):
         {'shape': 'Exadata.Full3.400', 'cpu': 400, 'memory': 5760, 'storage': 598},
         {'shape': 'Exadata.Half3.200', 'cpu': 200, 'memory': 2880, 'storage': 298},
         {'shape': 'Exadata.Quarter3.100', 'cpu': 100, 'memory': 1440, 'storage': 149},
-        {'shape': 'Exadata.X8M', 'cpu': 100, 'memory': 1440, 'storage': 149},
+        {'shape': 'Exadata.X8M', 'cpu': 100, 'memory': 2780, 'storage': 149},
         {'shape': 'Exadata.Base.48', 'cpu': 48, 'memory': 720, 'storage': 74.8},
         {'shape': 'VM.CPU3.1', 'cpu': 6, 'memory': 90, 'storage': 0},
         {'shape': 'VM.CPU3.2', 'cpu': 12, 'memory': 180, 'storage': 0},
@@ -9312,13 +9312,13 @@ class ShowOCIService(object):
                             if dbs.compute_count != "2" or dbs.storage_count != "3":
                                 value['shape_ocpu'] = dbs.compute_count * 50
                                 value['shape_storage_tb'] = dbs.storage_count * 49.5
-                                value['shape_memory_gb'] = dbs.compute_count * 720
+                                value['shape_memory_gb'] = dbs.compute_count * 1390
 
                         if dbs.shape == "Exadata.X9M":
                             if dbs.compute_count != "2" or dbs.storage_count != "3":
                                 value['shape_ocpu'] = dbs.compute_count * 126
                                 value['shape_storage_tb'] = dbs.storage_count * 64
-                                value['shape_memory_gb'] = dbs.compute_count * 1300
+                                value['shape_memory_gb'] = dbs.compute_count * 1390
 
                     # add the data
                     cnt += 1
@@ -17578,10 +17578,14 @@ class ShowOCIService(object):
                 type='Structured',
                 matching_context_type=oci.resource_search.models.SearchDetails.MATCHING_CONTEXT_TYPE_NONE
             )
-            keys = search_client.search_resources(key_search_detail, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+            keys = oci.pagination.list_call_get_all_results(
+                search_client.search_resources,
+                key_search_detail,
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
 
             # item = oci.key_management.models.VaultSummary
-            for item in keys.items:
+            for item in keys:
                 if self.check_lifecycle_state_active(item.lifecycle_state):
 
                     compartment = self.get_compartment_by_id(item.compartment_id)

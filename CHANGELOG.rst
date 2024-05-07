@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.126.2 - 2024-05-07
+====================
+
+Added
+-----
+* Support for resizing of local file systems in the Database service
+* Support for adding user defined pause group in disaster recovery plan in the Disaster Recovery service
+* Support for OS patching configs in the Big Data service
+* Support for IP inventory and notification feature in the Networking service
+* Support for accidental delete protection for load balancers, load balancer listeners, and load balancer backends in the Load Balancer service
+* Support for backend max connections for load balancers in the Load Balancer service
+* Support for listener max connections for load balancers in the Load Balancer service
+ 
+====================
 2.126.1 - 2024-04-30
 ====================
 
