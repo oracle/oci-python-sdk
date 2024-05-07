@@ -27,6 +27,10 @@ class DrPlanGroup(object):
     #: This constant has a value of "BUILT_IN_PRECHECK"
     TYPE_BUILT_IN_PRECHECK = "BUILT_IN_PRECHECK"
 
+    #: A constant which can be used with the type property of a DrPlanGroup.
+    #: This constant has a value of "USER_DEFINED_PAUSE"
+    TYPE_USER_DEFINED_PAUSE = "USER_DEFINED_PAUSE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DrPlanGroup object with values from keyword arguments.
@@ -38,13 +42,17 @@ class DrPlanGroup(object):
 
         :param type:
             The value to assign to the type property of this DrPlanGroup.
-            Allowed values for this property are: "USER_DEFINED", "BUILT_IN", "BUILT_IN_PRECHECK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "USER_DEFINED", "BUILT_IN", "BUILT_IN_PRECHECK", "USER_DEFINED_PAUSE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
         :param display_name:
             The value to assign to the display_name property of this DrPlanGroup.
         :type display_name: str
+
+        :param is_pause_enabled:
+            The value to assign to the is_pause_enabled property of this DrPlanGroup.
+        :type is_pause_enabled: bool
 
         :param steps:
             The value to assign to the steps property of this DrPlanGroup.
@@ -55,6 +63,7 @@ class DrPlanGroup(object):
             'id': 'str',
             'type': 'str',
             'display_name': 'str',
+            'is_pause_enabled': 'bool',
             'steps': 'list[DrPlanStep]'
         }
 
@@ -62,12 +71,14 @@ class DrPlanGroup(object):
             'id': 'id',
             'type': 'type',
             'display_name': 'displayName',
+            'is_pause_enabled': 'isPauseEnabled',
             'steps': 'steps'
         }
 
         self._id = None
         self._type = None
         self._display_name = None
+        self._is_pause_enabled = None
         self._steps = None
 
     @property
@@ -106,7 +117,7 @@ class DrPlanGroup(object):
 
         Example: `BUILT_IN`
 
-        Allowed values for this property are: "USER_DEFINED", "BUILT_IN", "BUILT_IN_PRECHECK", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "USER_DEFINED", "BUILT_IN", "BUILT_IN_PRECHECK", "USER_DEFINED_PAUSE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -127,7 +138,7 @@ class DrPlanGroup(object):
         :param type: The type of this DrPlanGroup.
         :type: str
         """
-        allowed_values = ["USER_DEFINED", "BUILT_IN", "BUILT_IN_PRECHECK"]
+        allowed_values = ["USER_DEFINED", "BUILT_IN", "BUILT_IN_PRECHECK", "USER_DEFINED_PAUSE"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
@@ -159,6 +170,36 @@ class DrPlanGroup(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def is_pause_enabled(self):
+        """
+        Gets the is_pause_enabled of this DrPlanGroup.
+        A flag indicating whether this group should be enabled for execution.
+        This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.
+
+        Example: `true`
+
+
+        :return: The is_pause_enabled of this DrPlanGroup.
+        :rtype: bool
+        """
+        return self._is_pause_enabled
+
+    @is_pause_enabled.setter
+    def is_pause_enabled(self, is_pause_enabled):
+        """
+        Sets the is_pause_enabled of this DrPlanGroup.
+        A flag indicating whether this group should be enabled for execution.
+        This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.
+
+        Example: `true`
+
+
+        :param is_pause_enabled: The is_pause_enabled of this DrPlanGroup.
+        :type: bool
+        """
+        self._is_pause_enabled = is_pause_enabled
 
     @property
     def steps(self):

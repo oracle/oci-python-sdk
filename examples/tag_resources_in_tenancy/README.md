@@ -5,7 +5,7 @@ It covers the below OCI components,
 Authentication by User or Compute using instance principals, 
 Output can be printer friendly, Summary or JSON.
 
-**Developed by Adi Zohar, Nov 2020-Mar 2023**
+**Developed by Adi Zohar, Nov 2020-Mar 2024**
 
 ## Modules Included:  
 - oci.core.VirtualNetworkClient          
@@ -71,6 +71,22 @@ optional arguments:
   -service SERVICE                                          Services = all,compute,block,network,identity,loadbalancer,database,object,file. default=all
   -filter_by_name FILTER_BY_NAME                            Filter service by name, comma seperator for multi names
 ```
+
+## My Other Projects
+
+- [ShowOCI](https://github.com/oracle/oci-python-sdk/tree/master/examples/showoci)
+
+- [ShowUsage](https://github.com/oracle/oci-python-sdk/tree/master/examples/showusage)
+
+- [ShowSubscription](https://github.com/oracle/oci-python-sdk/tree/master/examples/showsubscription)
+
+- [ShowRewards](https://github.com/oracle/oci-python-sdk/tree/master/examples/showrewards)
+
+- [List Resources in Tenancy](https://github.com/oracle/oci-python-sdk/tree/master/examples/list_resources_in_tenancy)
+
+- [Object Storage Tools](https://github.com/oracle/oci-python-sdk/tree/master/examples/object_storage)
+
+- [Usage2ADW](https://github.com/oracle-samples/usage-reports-to-adw)
 
 ## Example Execution for adding defined Tags:
 ```

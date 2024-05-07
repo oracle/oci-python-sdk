@@ -281,6 +281,7 @@ from .fast_connect_provider_service_key import FastConnectProviderServiceKey
 from .flow_log_capture_filter_rule_details import FlowLogCaptureFilterRuleDetails
 from .generic_bm_launch_instance_platform_config import GenericBmLaunchInstancePlatformConfig
 from .generic_bm_platform_config import GenericBmPlatformConfig
+from .get_ip_inventory_vcn_overlap_details import GetIpInventoryVcnOverlapDetails
 from .get_public_ip_by_ip_address_details import GetPublicIpByIpAddressDetails
 from .get_public_ip_by_private_ip_id_details import GetPublicIpByPrivateIpIdDetails
 from .ip_sec_connection import IPSecConnection
@@ -376,6 +377,20 @@ from .intel_vm_launch_instance_platform_config import IntelVmLaunchInstancePlatf
 from .intel_vm_platform_config import IntelVmPlatformConfig
 from .intel_vm_update_instance_platform_config import IntelVmUpdateInstancePlatformConfig
 from .internet_gateway import InternetGateway
+from .inventory_ip_address_summary import InventoryIpAddressSummary
+from .inventory_resource_summary import InventoryResourceSummary
+from .inventory_subnet_cidr_block_summary import InventorySubnetCidrBlockSummary
+from .inventory_subnet_summary import InventorySubnetSummary
+from .inventory_vcn_cidr_block_summary import InventoryVcnCidrBlockSummary
+from .inventory_vcn_summary import InventoryVcnSummary
+from .ip_inventory_cidr_utilization_collection import IpInventoryCidrUtilizationCollection
+from .ip_inventory_cidr_utilization_summary import IpInventoryCidrUtilizationSummary
+from .ip_inventory_collection import IpInventoryCollection
+from .ip_inventory_subnet_resource_collection import IpInventorySubnetResourceCollection
+from .ip_inventory_subnet_resource_summary import IpInventorySubnetResourceSummary
+from .ip_inventory_vcn_overlap_collection import IpInventoryVcnOverlapCollection
+from .ip_inventory_vcn_overlap_summary import IpInventoryVcnOverlapSummary
+from .ipam import Ipam
 from .ipsec_tunnel_drg_attachment_network_details import IpsecTunnelDrgAttachmentNetworkDetails
 from .ipv6 import Ipv6
 from .ipv6_address_ipv6_subnet_cidr_pair_details import Ipv6AddressIpv6SubnetCidrPairDetails
@@ -390,6 +405,7 @@ from .launch_instance_platform_config import LaunchInstancePlatformConfig
 from .launch_instance_shape_config_details import LaunchInstanceShapeConfigDetails
 from .launch_options import LaunchOptions
 from .letter_of_authority import LetterOfAuthority
+from .list_ip_inventory_details import ListIpInventoryDetails
 from .local_peering_gateway import LocalPeeringGateway
 from .loop_back_drg_attachment_network_details import LoopBackDrgAttachmentNetworkDetails
 from .macsec_key import MacsecKey
@@ -867,6 +883,7 @@ core_type_mapping = {
     "FlowLogCaptureFilterRuleDetails": FlowLogCaptureFilterRuleDetails,
     "GenericBmLaunchInstancePlatformConfig": GenericBmLaunchInstancePlatformConfig,
     "GenericBmPlatformConfig": GenericBmPlatformConfig,
+    "GetIpInventoryVcnOverlapDetails": GetIpInventoryVcnOverlapDetails,
     "GetPublicIpByIpAddressDetails": GetPublicIpByIpAddressDetails,
     "GetPublicIpByPrivateIpIdDetails": GetPublicIpByPrivateIpIdDetails,
     "IPSecConnection": IPSecConnection,
@@ -962,6 +979,20 @@ core_type_mapping = {
     "IntelVmPlatformConfig": IntelVmPlatformConfig,
     "IntelVmUpdateInstancePlatformConfig": IntelVmUpdateInstancePlatformConfig,
     "InternetGateway": InternetGateway,
+    "InventoryIpAddressSummary": InventoryIpAddressSummary,
+    "InventoryResourceSummary": InventoryResourceSummary,
+    "InventorySubnetCidrBlockSummary": InventorySubnetCidrBlockSummary,
+    "InventorySubnetSummary": InventorySubnetSummary,
+    "InventoryVcnCidrBlockSummary": InventoryVcnCidrBlockSummary,
+    "InventoryVcnSummary": InventoryVcnSummary,
+    "IpInventoryCidrUtilizationCollection": IpInventoryCidrUtilizationCollection,
+    "IpInventoryCidrUtilizationSummary": IpInventoryCidrUtilizationSummary,
+    "IpInventoryCollection": IpInventoryCollection,
+    "IpInventorySubnetResourceCollection": IpInventorySubnetResourceCollection,
+    "IpInventorySubnetResourceSummary": IpInventorySubnetResourceSummary,
+    "IpInventoryVcnOverlapCollection": IpInventoryVcnOverlapCollection,
+    "IpInventoryVcnOverlapSummary": IpInventoryVcnOverlapSummary,
+    "Ipam": Ipam,
     "IpsecTunnelDrgAttachmentNetworkDetails": IpsecTunnelDrgAttachmentNetworkDetails,
     "Ipv6": Ipv6,
     "Ipv6AddressIpv6SubnetCidrPairDetails": Ipv6AddressIpv6SubnetCidrPairDetails,
@@ -976,6 +1007,7 @@ core_type_mapping = {
     "LaunchInstanceShapeConfigDetails": LaunchInstanceShapeConfigDetails,
     "LaunchOptions": LaunchOptions,
     "LetterOfAuthority": LetterOfAuthority,
+    "ListIpInventoryDetails": ListIpInventoryDetails,
     "LocalPeeringGateway": LocalPeeringGateway,
     "LoopBackDrgAttachmentNetworkDetails": LoopBackDrgAttachmentNetworkDetails,
     "MacsecKey": MacsecKey,

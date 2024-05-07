@@ -39,6 +39,10 @@ class Backend(object):
             The value to assign to the weight property of this Backend.
         :type weight: int
 
+        :param max_connections:
+            The value to assign to the max_connections property of this Backend.
+        :type max_connections: int
+
         :param drain:
             The value to assign to the drain property of this Backend.
         :type drain: bool
@@ -57,6 +61,7 @@ class Backend(object):
             'ip_address': 'str',
             'port': 'int',
             'weight': 'int',
+            'max_connections': 'int',
             'drain': 'bool',
             'backup': 'bool',
             'offline': 'bool'
@@ -67,6 +72,7 @@ class Backend(object):
             'ip_address': 'ipAddress',
             'port': 'port',
             'weight': 'weight',
+            'max_connections': 'maxConnections',
             'drain': 'drain',
             'backup': 'backup',
             'offline': 'offline'
@@ -76,6 +82,7 @@ class Backend(object):
         self._ip_address = None
         self._port = None
         self._weight = None
+        self._max_connections = None
         self._drain = None
         self._backup = None
         self._offline = None
@@ -203,6 +210,34 @@ class Backend(object):
         :type: int
         """
         self._weight = weight
+
+    @property
+    def max_connections(self):
+        """
+        Gets the max_connections of this Backend.
+        The maximum number of simultaneous connections the load balancer can make to the backend.
+
+        Example: `300`
+
+
+        :return: The max_connections of this Backend.
+        :rtype: int
+        """
+        return self._max_connections
+
+    @max_connections.setter
+    def max_connections(self, max_connections):
+        """
+        Sets the max_connections of this Backend.
+        The maximum number of simultaneous connections the load balancer can make to the backend.
+
+        Example: `300`
+
+
+        :param max_connections: The max_connections of this Backend.
+        :type: int
+        """
+        self._max_connections = max_connections
 
     @property
     def drain(self):

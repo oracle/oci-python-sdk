@@ -207,6 +207,7 @@ from .db_system_summary import DbSystemSummary
 from .db_system_upgrade_history_entry import DbSystemUpgradeHistoryEntry
 from .db_system_upgrade_history_entry_summary import DbSystemUpgradeHistoryEntrySummary
 from .db_version_summary import DbVersionSummary
+from .defined_file_system_configuration import DefinedFileSystemConfiguration
 from .deregister_autonomous_database_data_safe_details import DeregisterAutonomousDatabaseDataSafeDetails
 from .disaster_recovery_configuration import DisasterRecoveryConfiguration
 from .disk_performance_details import DiskPerformanceDetails
@@ -247,6 +248,7 @@ from .external_non_container_database_summary import ExternalNonContainerDatabas
 from .external_pluggable_database import ExternalPluggableDatabase
 from .external_pluggable_database_summary import ExternalPluggableDatabaseSummary
 from .failover_data_guard_association_details import FailoverDataGuardAssociationDetails
+from .file_system_configuration_detail import FileSystemConfigurationDetail
 from .flex_component_collection import FlexComponentCollection
 from .flex_component_summary import FlexComponentSummary
 from .generate_autonomous_database_wallet_details import GenerateAutonomousDatabaseWalletDetails
@@ -582,6 +584,7 @@ database_type_mapping = {
     "DbSystemUpgradeHistoryEntry": DbSystemUpgradeHistoryEntry,
     "DbSystemUpgradeHistoryEntrySummary": DbSystemUpgradeHistoryEntrySummary,
     "DbVersionSummary": DbVersionSummary,
+    "DefinedFileSystemConfiguration": DefinedFileSystemConfiguration,
     "DeregisterAutonomousDatabaseDataSafeDetails": DeregisterAutonomousDatabaseDataSafeDetails,
     "DisasterRecoveryConfiguration": DisasterRecoveryConfiguration,
     "DiskPerformanceDetails": DiskPerformanceDetails,
@@ -622,6 +625,7 @@ database_type_mapping = {
     "ExternalPluggableDatabase": ExternalPluggableDatabase,
     "ExternalPluggableDatabaseSummary": ExternalPluggableDatabaseSummary,
     "FailoverDataGuardAssociationDetails": FailoverDataGuardAssociationDetails,
+    "FileSystemConfigurationDetail": FileSystemConfigurationDetail,
     "FlexComponentCollection": FlexComponentCollection,
     "FlexComponentSummary": FlexComponentSummary,
     "GenerateAutonomousDatabaseWalletDetails": GenerateAutonomousDatabaseWalletDetails,

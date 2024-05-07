@@ -25,6 +25,7 @@ from .auto_scale_policy_metric_rule import AutoScalePolicyMetricRule
 from .auto_scale_policy_rule import AutoScalePolicyRule
 from .auto_scaling_configuration import AutoScalingConfiguration
 from .auto_scaling_configuration_summary import AutoScalingConfigurationSummary
+from .batching_based_patching_configs import BatchingBasedPatchingConfigs
 from .bds_api_key import BdsApiKey
 from .bds_api_key_summary import BdsApiKeySummary
 from .bds_instance import BdsInstance
@@ -46,6 +47,7 @@ from .day_based_horizontal_scaling_schedule_details import DayBasedHorizontalSca
 from .day_based_vertical_scaling_schedule_details import DayBasedVerticalScalingScheduleDetails
 from .default_error import DefaultError
 from .disable_certificate_details import DisableCertificateDetails
+from .downtime_based_patching_configs import DowntimeBasedPatchingConfigs
 from .enable_certificate_details import EnableCertificateDetails
 from .execute_bootstrap_script_details import ExecuteBootstrapScriptDetails
 from .horizontal_scaling_schedule_details import HorizontalScalingScheduleDetails
@@ -68,6 +70,7 @@ from .os_patch_package_summary import OsPatchPackageSummary
 from .os_patch_summary import OsPatchSummary
 from .patch_history_summary import PatchHistorySummary
 from .patch_summary import PatchSummary
+from .patching_configs import PatchingConfigs
 from .remove_auto_scaling_configuration_details import RemoveAutoScalingConfigurationDetails
 from .remove_cloud_sql_details import RemoveCloudSqlDetails
 from .remove_kafka_details import RemoveKafkaDetails
@@ -119,6 +122,7 @@ bds_type_mapping = {
     "AutoScalePolicyRule": AutoScalePolicyRule,
     "AutoScalingConfiguration": AutoScalingConfiguration,
     "AutoScalingConfigurationSummary": AutoScalingConfigurationSummary,
+    "BatchingBasedPatchingConfigs": BatchingBasedPatchingConfigs,
     "BdsApiKey": BdsApiKey,
     "BdsApiKeySummary": BdsApiKeySummary,
     "BdsInstance": BdsInstance,
@@ -140,6 +144,7 @@ bds_type_mapping = {
     "DayBasedVerticalScalingScheduleDetails": DayBasedVerticalScalingScheduleDetails,
     "DefaultError": DefaultError,
     "DisableCertificateDetails": DisableCertificateDetails,
+    "DowntimeBasedPatchingConfigs": DowntimeBasedPatchingConfigs,
     "EnableCertificateDetails": EnableCertificateDetails,
     "ExecuteBootstrapScriptDetails": ExecuteBootstrapScriptDetails,
     "HorizontalScalingScheduleDetails": HorizontalScalingScheduleDetails,
@@ -162,6 +167,7 @@ bds_type_mapping = {
     "OsPatchSummary": OsPatchSummary,
     "PatchHistorySummary": PatchHistorySummary,
     "PatchSummary": PatchSummary,
+    "PatchingConfigs": PatchingConfigs,
     "RemoveAutoScalingConfigurationDetails": RemoveAutoScalingConfigurationDetails,
     "RemoveCloudSqlDetails": RemoveCloudSqlDetails,
     "RemoveKafkaDetails": RemoveKafkaDetails,

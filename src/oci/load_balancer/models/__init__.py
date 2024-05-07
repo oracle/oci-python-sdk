@@ -41,6 +41,8 @@ from .hostname import Hostname
 from .hostname_details import HostnameDetails
 from .http_header_rule import HttpHeaderRule
 from .ip_address import IpAddress
+from .ip_based_max_connections_rule import IpBasedMaxConnectionsRule
+from .ip_max_connections import IpMaxConnections
 from .lb_cookie_session_persistence_configuration_details import LBCookieSessionPersistenceConfigurationDetails
 from .listener import Listener
 from .listener_details import ListenerDetails
@@ -129,6 +131,8 @@ load_balancer_type_mapping = {
     "HostnameDetails": HostnameDetails,
     "HttpHeaderRule": HttpHeaderRule,
     "IpAddress": IpAddress,
+    "IpBasedMaxConnectionsRule": IpBasedMaxConnectionsRule,
+    "IpMaxConnections": IpMaxConnections,
     "LBCookieSessionPersistenceConfigurationDetails": LBCookieSessionPersistenceConfigurationDetails,
     "Listener": Listener,
     "ListenerDetails": ListenerDetails,

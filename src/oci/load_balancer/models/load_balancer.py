@@ -92,6 +92,10 @@ class LoadBalancer(object):
             The value to assign to the is_private property of this LoadBalancer.
         :type is_private: bool
 
+        :param is_delete_protection_enabled:
+            The value to assign to the is_delete_protection_enabled property of this LoadBalancer.
+        :type is_delete_protection_enabled: bool
+
         :param subnet_ids:
             The value to assign to the subnet_ids property of this LoadBalancer.
         :type subnet_ids: list[str]
@@ -155,6 +159,7 @@ class LoadBalancer(object):
             'shape_name': 'str',
             'shape_details': 'ShapeDetails',
             'is_private': 'bool',
+            'is_delete_protection_enabled': 'bool',
             'subnet_ids': 'list[str]',
             'network_security_group_ids': 'list[str]',
             'listeners': 'dict(str, Listener)',
@@ -180,6 +185,7 @@ class LoadBalancer(object):
             'shape_name': 'shapeName',
             'shape_details': 'shapeDetails',
             'is_private': 'isPrivate',
+            'is_delete_protection_enabled': 'isDeleteProtectionEnabled',
             'subnet_ids': 'subnetIds',
             'network_security_group_ids': 'networkSecurityGroupIds',
             'listeners': 'listeners',
@@ -204,6 +210,7 @@ class LoadBalancer(object):
         self._shape_name = None
         self._shape_details = None
         self._is_private = None
+        self._is_delete_protection_enabled = None
         self._subnet_ids = None
         self._network_security_group_ids = None
         self._listeners = None
@@ -485,6 +492,44 @@ class LoadBalancer(object):
         :type: bool
         """
         self._is_private = is_private
+
+    @property
+    def is_delete_protection_enabled(self):
+        """
+        Gets the is_delete_protection_enabled of this LoadBalancer.
+        Whether or not the load balancer has delete protection enabled.
+
+        If \"true\", the loadbalancer will be protected against deletion if configured to accept traffic.
+
+        If \"false\", the loadbalancer will not be protected against deletion.
+
+        Delete protection is not be enabled unless this field is set to \"true\".
+        Example: `true`
+
+
+        :return: The is_delete_protection_enabled of this LoadBalancer.
+        :rtype: bool
+        """
+        return self._is_delete_protection_enabled
+
+    @is_delete_protection_enabled.setter
+    def is_delete_protection_enabled(self, is_delete_protection_enabled):
+        """
+        Sets the is_delete_protection_enabled of this LoadBalancer.
+        Whether or not the load balancer has delete protection enabled.
+
+        If \"true\", the loadbalancer will be protected against deletion if configured to accept traffic.
+
+        If \"false\", the loadbalancer will not be protected against deletion.
+
+        Delete protection is not be enabled unless this field is set to \"true\".
+        Example: `true`
+
+
+        :param is_delete_protection_enabled: The is_delete_protection_enabled of this LoadBalancer.
+        :type: bool
+        """
+        self._is_delete_protection_enabled = is_delete_protection_enabled
 
     @property
     def subnet_ids(self):

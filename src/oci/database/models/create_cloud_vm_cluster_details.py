@@ -149,6 +149,10 @@ class CreateCloudVmClusterDetails(object):
             The value to assign to the system_version property of this CreateCloudVmClusterDetails.
         :type system_version: str
 
+        :param file_system_configuration_details:
+            The value to assign to the file_system_configuration_details property of this CreateCloudVmClusterDetails.
+        :type file_system_configuration_details: list[oci.database.models.FileSystemConfigurationDetail]
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -180,7 +184,8 @@ class CreateCloudVmClusterDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'data_collection_options': 'DataCollectionOptions',
-            'system_version': 'str'
+            'system_version': 'str',
+            'file_system_configuration_details': 'list[FileSystemConfigurationDetail]'
         }
 
         self.attribute_map = {
@@ -213,7 +218,8 @@ class CreateCloudVmClusterDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'data_collection_options': 'dataCollectionOptions',
-            'system_version': 'systemVersion'
+            'system_version': 'systemVersion',
+            'file_system_configuration_details': 'fileSystemConfigurationDetails'
         }
 
         self._compartment_id = None
@@ -246,6 +252,7 @@ class CreateCloudVmClusterDetails(object):
         self._defined_tags = None
         self._data_collection_options = None
         self._system_version = None
+        self._file_system_configuration_details = None
 
     @property
     def compartment_id(self):
@@ -1061,6 +1068,30 @@ class CreateCloudVmClusterDetails(object):
         :type: str
         """
         self._system_version = system_version
+
+    @property
+    def file_system_configuration_details(self):
+        """
+        Gets the file_system_configuration_details of this CreateCloudVmClusterDetails.
+        Details of the file system configuration of the VM cluster.
+
+
+        :return: The file_system_configuration_details of this CreateCloudVmClusterDetails.
+        :rtype: list[oci.database.models.FileSystemConfigurationDetail]
+        """
+        return self._file_system_configuration_details
+
+    @file_system_configuration_details.setter
+    def file_system_configuration_details(self, file_system_configuration_details):
+        """
+        Sets the file_system_configuration_details of this CreateCloudVmClusterDetails.
+        Details of the file system configuration of the VM cluster.
+
+
+        :param file_system_configuration_details: The file_system_configuration_details of this CreateCloudVmClusterDetails.
+        :type: list[oci.database.models.FileSystemConfigurationDetail]
+        """
+        self._file_system_configuration_details = file_system_configuration_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

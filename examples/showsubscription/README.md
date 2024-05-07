@@ -3,7 +3,7 @@
 SHOWSUBSCRIPTION is a subscription reporting tool which uses the Python SDK to extract tenant subscription and commit.
 Authentication by User or Compute using instance principals,
 
-**DISCLAIMER – This is not an official Oracle application,  It does not supported by Oracle Support.
+**DISCLAIMER - This is not an official Oracle application,  It does not supported by Oracle Support.
 
 **Developed by Adi Zohar, 2021-2024**
 
@@ -82,6 +82,22 @@ optional arguments:
   -all_statuses      All Subscription Statuses (Default ACTIVE)
   -f FILE            Output to file (as json)
 ```
+
+## My Other Projects
+
+- [ShowOCI](https://github.com/oracle/oci-python-sdk/tree/master/examples/showoci)
+
+- [ShowUsage](https://github.com/oracle/oci-python-sdk/tree/master/examples/showusage)
+
+- [ShowRewards](https://github.com/oracle/oci-python-sdk/tree/master/examples/showrewards)
+
+- [List Resources in Tenancy](https://github.com/oracle/oci-python-sdk/tree/master/examples/list_resources_in_tenancy)
+
+- [Object Storage Tools](https://github.com/oracle/oci-python-sdk/tree/master/examples/object_storage)
+
+- [Tag Resources in Tenancy](https://github.com/oracle/oci-python-sdk/tree/master/examples/tag_resources_in_tenancy)
+
+- [Usage2ADW](https://github.com/oracle-samples/usage-reports-to-adw)
 
 ## Below example of reports from demo tenancy (random info generated)
 

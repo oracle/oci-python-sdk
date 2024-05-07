@@ -6,6 +6,22 @@ Object Storage Manipulation Tool allow customer to handle millions of object sto
 
 **Developed by Adi Zohar, 2021-2022**
 
+## My Other Projects
+
+- [ShowOCI](https://github.com/oracle/oci-python-sdk/tree/master/examples/showoci)
+
+- [ShowUsage](https://github.com/oracle/oci-python-sdk/tree/master/examples/showusage)
+
+- [ShowSubscription](https://github.com/oracle/oci-python-sdk/tree/master/examples/showsubscription)
+
+- [ShowRewards](https://github.com/oracle/oci-python-sdk/tree/master/examples/showrewards)
+
+- [List Resources in Tenancy](https://github.com/oracle/oci-python-sdk/tree/master/examples/list_resources_in_tenancy)
+
+- [Tag Resources in Tenancy](https://github.com/oracle/oci-python-sdk/tree/master/examples/tag_resources_in_tenancy)
+
+- [Usage2ADW](https://github.com/oracle-samples/usage-reports-to-adw)
+
 ## Executing using Cloud Shell:
 ```
     1. install oci sdk package
@@ -157,29 +173,4 @@ optional arguments:
   -sn SOURCE_NAMESPACE       Source Namespace (Default current connection)
   -textrem TEXT_REMOVE       text remove prefix (can be used to remove folder)
   -textadd TEXT_APPEND       text append prefix (can be used to add folder)
-```
-
-## object_storage_list_folders
-Bulk list bucket folders sizes and object count
-
-```
-usage: object_storage_list_folders.py [-h] [-t CONFIG_PROFILE] [-p PROXY]
-                                      [-ip] [-dt] [-c CONFIG_FILE]
-                                      [-sb SOURCE_BUCKET] [-sp SOURCE_PREFIX]
-                                      [-sn SOURCE_NAMESPACE]
-                                      [-sr SOURCE_REGION]
-                                      [-f FILE]
-
-optional arguments:
-  -h, --help                 show this help message and exit
-  -t CONFIG_PROFILE          Config file section to use (tenancy profile)
-  -p PROXY                   Set Proxy (i.e. www-proxy-server.com:80)
-  -ip                        Use Instance Principals for Authentication
-  -dt                        Use Delegation Token for Authentication
-  -c CONFIG_FILE             Config File (default=~/.oci/config)
-  -sb SOURCE_BUCKET          Source Bucket Name
-  -sp SOURCE_PREFIX          Source Prefix Include
-  -sr SOURCE_REGION          Source Region
-  -sn SOURCE_NAMESPACE       Source Namespace (Default current connection)
-  -f FILE                    Output to file (as csv)
 ```

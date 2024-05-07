@@ -55,6 +55,10 @@ class Rule(object):
     #: This constant has a value of "HTTP_HEADER"
     ACTION_HTTP_HEADER = "HTTP_HEADER"
 
+    #: A constant which can be used with the action property of a Rule.
+    #: This constant has a value of "IP_BASED_MAX_CONNECTIONS"
+    ACTION_IP_BASED_MAX_CONNECTIONS = "IP_BASED_MAX_CONNECTIONS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Rule object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -67,6 +71,7 @@ class Rule(object):
         * :class:`~oci.load_balancer.models.RemoveHttpResponseHeaderRule`
         * :class:`~oci.load_balancer.models.ControlAccessUsingHttpMethodsRule`
         * :class:`~oci.load_balancer.models.AllowRule`
+        * :class:`~oci.load_balancer.models.IpBasedMaxConnectionsRule`
         * :class:`~oci.load_balancer.models.HttpHeaderRule`
         * :class:`~oci.load_balancer.models.AddHttpResponseHeaderRule`
         * :class:`~oci.load_balancer.models.ExtendHttpResponseHeaderValueRule`
@@ -75,7 +80,7 @@ class Rule(object):
 
         :param action:
             The value to assign to the action property of this Rule.
-            Allowed values for this property are: "ADD_HTTP_REQUEST_HEADER", "EXTEND_HTTP_REQUEST_HEADER_VALUE", "REMOVE_HTTP_REQUEST_HEADER", "ADD_HTTP_RESPONSE_HEADER", "EXTEND_HTTP_RESPONSE_HEADER_VALUE", "REMOVE_HTTP_RESPONSE_HEADER", "ALLOW", "CONTROL_ACCESS_USING_HTTP_METHODS", "REDIRECT", "HTTP_HEADER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ADD_HTTP_REQUEST_HEADER", "EXTEND_HTTP_REQUEST_HEADER_VALUE", "REMOVE_HTTP_REQUEST_HEADER", "ADD_HTTP_RESPONSE_HEADER", "EXTEND_HTTP_RESPONSE_HEADER_VALUE", "REMOVE_HTTP_RESPONSE_HEADER", "ALLOW", "CONTROL_ACCESS_USING_HTTP_METHODS", "REDIRECT", "HTTP_HEADER", "IP_BASED_MAX_CONNECTIONS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type action: str
 
@@ -119,6 +124,9 @@ class Rule(object):
         if type == 'ALLOW':
             return 'AllowRule'
 
+        if type == 'IP_BASED_MAX_CONNECTIONS':
+            return 'IpBasedMaxConnectionsRule'
+
         if type == 'HTTP_HEADER':
             return 'HttpHeaderRule'
 
@@ -134,7 +142,7 @@ class Rule(object):
     def action(self):
         """
         **[Required]** Gets the action of this Rule.
-        Allowed values for this property are: "ADD_HTTP_REQUEST_HEADER", "EXTEND_HTTP_REQUEST_HEADER_VALUE", "REMOVE_HTTP_REQUEST_HEADER", "ADD_HTTP_RESPONSE_HEADER", "EXTEND_HTTP_RESPONSE_HEADER_VALUE", "REMOVE_HTTP_RESPONSE_HEADER", "ALLOW", "CONTROL_ACCESS_USING_HTTP_METHODS", "REDIRECT", "HTTP_HEADER", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ADD_HTTP_REQUEST_HEADER", "EXTEND_HTTP_REQUEST_HEADER_VALUE", "REMOVE_HTTP_REQUEST_HEADER", "ADD_HTTP_RESPONSE_HEADER", "EXTEND_HTTP_RESPONSE_HEADER_VALUE", "REMOVE_HTTP_RESPONSE_HEADER", "ALLOW", "CONTROL_ACCESS_USING_HTTP_METHODS", "REDIRECT", "HTTP_HEADER", "IP_BASED_MAX_CONNECTIONS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -151,7 +159,7 @@ class Rule(object):
         :param action: The action of this Rule.
         :type: str
         """
-        allowed_values = ["ADD_HTTP_REQUEST_HEADER", "EXTEND_HTTP_REQUEST_HEADER_VALUE", "REMOVE_HTTP_REQUEST_HEADER", "ADD_HTTP_RESPONSE_HEADER", "EXTEND_HTTP_RESPONSE_HEADER_VALUE", "REMOVE_HTTP_RESPONSE_HEADER", "ALLOW", "CONTROL_ACCESS_USING_HTTP_METHODS", "REDIRECT", "HTTP_HEADER"]
+        allowed_values = ["ADD_HTTP_REQUEST_HEADER", "EXTEND_HTTP_REQUEST_HEADER_VALUE", "REMOVE_HTTP_REQUEST_HEADER", "ADD_HTTP_RESPONSE_HEADER", "EXTEND_HTTP_RESPONSE_HEADER_VALUE", "REMOVE_HTTP_RESPONSE_HEADER", "ALLOW", "CONTROL_ACCESS_USING_HTTP_METHODS", "REDIRECT", "HTTP_HEADER", "IP_BASED_MAX_CONNECTIONS"]
         if not value_allowed_none_or_none_sentinel(action, allowed_values):
             action = 'UNKNOWN_ENUM_VALUE'
         self._action = action

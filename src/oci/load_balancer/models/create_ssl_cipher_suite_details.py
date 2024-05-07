@@ -191,9 +191,9 @@ class CreateSSLCipherSuiteDetails(object):
 
     *  __oci-default-http2-tls-13-ssl-cipher-suite-v1__
 
-    \"TLS-AES-128-GCM-SHA256\"
-    \"TLS-AES-256-GCM-SHA384\"
-    \"TLS-CHACHA20-POLY1305-SHA256\"
+    \"TLS_AES_128_GCM_SHA256\"
+    \"TLS_AES_256_GCM_SHA384\"
+    \"TLS_CHACHA20_POLY1305_SHA256\"
 
     *  __oci-default-http2-tls-12-13-ssl-cipher-suite-v1__
 
@@ -203,21 +203,21 @@ class CreateSSLCipherSuiteDetails(object):
     \"ECDHE-ECDSA-AES128-GCM-SHA256\"
     \"DHE-RSA-AES256-GCM-SHA384\"
     \"DHE-RSA-AES128-GCM-SHA256\"
-    \"TLS-AES-128-GCM-SHA256\"
-    \"TLS-AES-256-GCM-SHA384\"
-    \"TLS-CHACHA20-POLY1305-SHA256\"
+    \"TLS_AES_128_GCM_SHA256\"
+    \"TLS_AES_256_GCM_SHA384\"
+    \"TLS_CHACHA20_POLY1305_SHA256\"
 
     *  __oci-tls-13-recommended-ssl-cipher-suite-v1__
 
-    \"TLS-AES-128-GCM-SHA256\"
-    \"TLS-AES-256-GCM-SHA384\"
-    \"TLS-CHACHA20-POLY1305-SHA256\"
+    \"TLS_AES_128_GCM_SHA256\"
+    \"TLS_AES_256_GCM_SHA384\"
+    \"TLS_CHACHA20_POLY1305_SHA256\"
 
     *  __oci-tls-12-13-wider-ssl-cipher-suite-v1__
 
-    \"TLS-AES-128-GCM-SHA256\"
-    \"TLS-AES-256-GCM-SHA384\"
-    \"TLS-CHACHA20-POLY1305-SHA256\"
+    \"TLS_AES_128_GCM_SHA256\"
+    \"TLS_AES_256_GCM_SHA384\"
+    \"TLS_CHACHA20_POLY1305_SHA256\"
     \"ECDHE-ECDSA-AES128-GCM-SHA256\"
     \"ECDHE-RSA-AES128-GCM-SHA256\"
     \"ECDHE-ECDSA-AES128-SHA256\"
@@ -232,9 +232,9 @@ class CreateSSLCipherSuiteDetails(object):
     \"AES256-SHA256\"
 
     *  __oci-tls-11-12-13-wider-ssl-cipher-suite-v1__
-    \"TLS-AES-128-GCM-SHA256\"
-    \"TLS-AES-256-GCM-SHA384\"
-    \"TLS-CHACHA20-POLY1305-SHA256\"
+    \"TLS_AES_128_GCM_SHA256\"
+    \"TLS_AES_256_GCM_SHA384\"
+    \"TLS_CHACHA20_POLY1305_SHA256\"
     \"ECDHE-ECDSA-AES128-GCM-SHA256\"
     \"ECDHE-RSA-AES128-GCM-SHA256\"
     \"ECDHE-ECDSA-AES128-SHA256\"
@@ -353,11 +353,11 @@ class CreateSSLCipherSuiteDetails(object):
 
         *  __TLSv1.3 ciphers__
 
-                \"TLS-AES-128-GCM-SHA256\"
-                \"TLS-AES-256-GCM-SHA384\"
-                \"TLS-CHACHA20-POLY1305-SHA256\"
-                \"TLS-AES-128-CCM-SHA256\"
-                \"TLS-AES-128-CCM-8-SHA256\"
+                \"TLS_AES_128_GCM_SHA256\"
+                \"TLS_AES_256_GCM_SHA384\"
+                \"TLS_CHACHA20_POLY1305_SHA256\"
+                \"TLS_AES_128_CCM_SHA256\"
+                \"TLS_AES_128_CCM_8_SHA256\"
 
         *  __TLSv1.2 ciphers__
 
@@ -478,11 +478,11 @@ class CreateSSLCipherSuiteDetails(object):
 
         *  __TLSv1.3 ciphers__
 
-                \"TLS-AES-128-GCM-SHA256\"
-                \"TLS-AES-256-GCM-SHA384\"
-                \"TLS-CHACHA20-POLY1305-SHA256\"
-                \"TLS-AES-128-CCM-SHA256\"
-                \"TLS-AES-128-CCM-8-SHA256\"
+                \"TLS_AES_128_GCM_SHA256\"
+                \"TLS_AES_256_GCM_SHA384\"
+                \"TLS_CHACHA20_POLY1305_SHA256\"
+                \"TLS_AES_128_CCM_SHA256\"
+                \"TLS_AES_128_CCM_8_SHA256\"
 
         *  __TLSv1.2 ciphers__
 

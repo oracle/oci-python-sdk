@@ -186,6 +186,10 @@ class CloudExadataInfrastructure(object):
             The value to assign to the monthly_db_server_version property of this CloudExadataInfrastructure.
         :type monthly_db_server_version: str
 
+        :param defined_file_system_configurations:
+            The value to assign to the defined_file_system_configurations property of this CloudExadataInfrastructure.
+        :type defined_file_system_configurations: list[oci.database.models.DefinedFileSystemConfiguration]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -221,7 +225,8 @@ class CloudExadataInfrastructure(object):
             'storage_server_version': 'str',
             'db_server_version': 'str',
             'monthly_storage_server_version': 'str',
-            'monthly_db_server_version': 'str'
+            'monthly_db_server_version': 'str',
+            'defined_file_system_configurations': 'list[DefinedFileSystemConfiguration]'
         }
 
         self.attribute_map = {
@@ -258,7 +263,8 @@ class CloudExadataInfrastructure(object):
             'storage_server_version': 'storageServerVersion',
             'db_server_version': 'dbServerVersion',
             'monthly_storage_server_version': 'monthlyStorageServerVersion',
-            'monthly_db_server_version': 'monthlyDbServerVersion'
+            'monthly_db_server_version': 'monthlyDbServerVersion',
+            'defined_file_system_configurations': 'definedFileSystemConfigurations'
         }
 
         self._id = None
@@ -295,6 +301,7 @@ class CloudExadataInfrastructure(object):
         self._db_server_version = None
         self._monthly_storage_server_version = None
         self._monthly_db_server_version = None
+        self._defined_file_system_configurations = None
 
     @property
     def id(self):
@@ -1167,6 +1174,30 @@ class CloudExadataInfrastructure(object):
         :type: str
         """
         self._monthly_db_server_version = monthly_db_server_version
+
+    @property
+    def defined_file_system_configurations(self):
+        """
+        Gets the defined_file_system_configurations of this CloudExadataInfrastructure.
+        Details of the file system configuration of the Exadata infrastructure.
+
+
+        :return: The defined_file_system_configurations of this CloudExadataInfrastructure.
+        :rtype: list[oci.database.models.DefinedFileSystemConfiguration]
+        """
+        return self._defined_file_system_configurations
+
+    @defined_file_system_configurations.setter
+    def defined_file_system_configurations(self, defined_file_system_configurations):
+        """
+        Sets the defined_file_system_configurations of this CloudExadataInfrastructure.
+        Details of the file system configuration of the Exadata infrastructure.
+
+
+        :param defined_file_system_configurations: The defined_file_system_configurations of this CloudExadataInfrastructure.
+        :type: list[oci.database.models.DefinedFileSystemConfiguration]
+        """
+        self._defined_file_system_configurations = defined_file_system_configurations
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -37,6 +37,7 @@ Bds
     oci.bds.models.AutoScalePolicyRule
     oci.bds.models.AutoScalingConfiguration
     oci.bds.models.AutoScalingConfigurationSummary
+    oci.bds.models.BatchingBasedPatchingConfigs
     oci.bds.models.BdsApiKey
     oci.bds.models.BdsApiKeySummary
     oci.bds.models.BdsInstance
@@ -58,6 +59,7 @@ Bds
     oci.bds.models.DayBasedVerticalScalingScheduleDetails
     oci.bds.models.DefaultError
     oci.bds.models.DisableCertificateDetails
+    oci.bds.models.DowntimeBasedPatchingConfigs
     oci.bds.models.EnableCertificateDetails
     oci.bds.models.ExecuteBootstrapScriptDetails
     oci.bds.models.HorizontalScalingScheduleDetails
@@ -80,6 +82,7 @@ Bds
     oci.bds.models.OsPatchSummary
     oci.bds.models.PatchHistorySummary
     oci.bds.models.PatchSummary
+    oci.bds.models.PatchingConfigs
     oci.bds.models.RemoveAutoScalingConfigurationDetails
     oci.bds.models.RemoveCloudSqlDetails
     oci.bds.models.RemoveKafkaDetails

@@ -36,6 +36,10 @@ class BackendSetDetails(object):
             The value to assign to the backends property of this BackendSetDetails.
         :type backends: list[oci.load_balancer.models.BackendDetails]
 
+        :param backend_max_connections:
+            The value to assign to the backend_max_connections property of this BackendSetDetails.
+        :type backend_max_connections: int
+
         :param health_checker:
             The value to assign to the health_checker property of this BackendSetDetails.
         :type health_checker: oci.load_balancer.models.HealthCheckerDetails
@@ -56,6 +60,7 @@ class BackendSetDetails(object):
         self.swagger_types = {
             'policy': 'str',
             'backends': 'list[BackendDetails]',
+            'backend_max_connections': 'int',
             'health_checker': 'HealthCheckerDetails',
             'ssl_configuration': 'SSLConfigurationDetails',
             'session_persistence_configuration': 'SessionPersistenceConfigurationDetails',
@@ -65,6 +70,7 @@ class BackendSetDetails(object):
         self.attribute_map = {
             'policy': 'policy',
             'backends': 'backends',
+            'backend_max_connections': 'backendMaxConnections',
             'health_checker': 'healthChecker',
             'ssl_configuration': 'sslConfiguration',
             'session_persistence_configuration': 'sessionPersistenceConfiguration',
@@ -73,6 +79,7 @@ class BackendSetDetails(object):
 
         self._policy = None
         self._backends = None
+        self._backend_max_connections = None
         self._health_checker = None
         self._ssl_configuration = None
         self._session_persistence_configuration = None
@@ -127,6 +134,36 @@ class BackendSetDetails(object):
         :type: list[oci.load_balancer.models.BackendDetails]
         """
         self._backends = backends
+
+    @property
+    def backend_max_connections(self):
+        """
+        Gets the backend_max_connections of this BackendSetDetails.
+        The maximum number of simultaneous connections the load balancer can make to any backend
+        in the backend set unless the backend has its own maxConnections setting.
+
+        Example: `300`
+
+
+        :return: The backend_max_connections of this BackendSetDetails.
+        :rtype: int
+        """
+        return self._backend_max_connections
+
+    @backend_max_connections.setter
+    def backend_max_connections(self, backend_max_connections):
+        """
+        Sets the backend_max_connections of this BackendSetDetails.
+        The maximum number of simultaneous connections the load balancer can make to any backend
+        in the backend set unless the backend has its own maxConnections setting.
+
+        Example: `300`
+
+
+        :param backend_max_connections: The backend_max_connections of this BackendSetDetails.
+        :type: int
+        """
+        self._backend_max_connections = backend_max_connections
 
     @property
     def health_checker(self):

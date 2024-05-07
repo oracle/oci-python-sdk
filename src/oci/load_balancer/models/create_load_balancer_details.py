@@ -50,6 +50,10 @@ class CreateLoadBalancerDetails(object):
             The value to assign to the is_private property of this CreateLoadBalancerDetails.
         :type is_private: bool
 
+        :param is_delete_protection_enabled:
+            The value to assign to the is_delete_protection_enabled property of this CreateLoadBalancerDetails.
+        :type is_delete_protection_enabled: bool
+
         :param ip_mode:
             The value to assign to the ip_mode property of this CreateLoadBalancerDetails.
             Allowed values for this property are: "IPV4", "IPV6"
@@ -110,6 +114,7 @@ class CreateLoadBalancerDetails(object):
             'shape_name': 'str',
             'shape_details': 'ShapeDetails',
             'is_private': 'bool',
+            'is_delete_protection_enabled': 'bool',
             'ip_mode': 'str',
             'reserved_ips': 'list[ReservedIP]',
             'listeners': 'dict(str, ListenerDetails)',
@@ -131,6 +136,7 @@ class CreateLoadBalancerDetails(object):
             'shape_name': 'shapeName',
             'shape_details': 'shapeDetails',
             'is_private': 'isPrivate',
+            'is_delete_protection_enabled': 'isDeleteProtectionEnabled',
             'ip_mode': 'ipMode',
             'reserved_ips': 'reservedIps',
             'listeners': 'listeners',
@@ -151,6 +157,7 @@ class CreateLoadBalancerDetails(object):
         self._shape_name = None
         self._shape_details = None
         self._is_private = None
+        self._is_delete_protection_enabled = None
         self._ip_mode = None
         self._reserved_ips = None
         self._listeners = None
@@ -232,7 +239,7 @@ class CreateLoadBalancerDetails(object):
         operation.
 
         Example: `flexible`
-        NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape
+        NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape
               allowed would be `Flexible`
 
 
@@ -250,7 +257,7 @@ class CreateLoadBalancerDetails(object):
         operation.
 
         Example: `flexible`
-        NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape
+        NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape
               allowed would be `Flexible`
 
 
@@ -332,6 +339,44 @@ class CreateLoadBalancerDetails(object):
         :type: bool
         """
         self._is_private = is_private
+
+    @property
+    def is_delete_protection_enabled(self):
+        """
+        Gets the is_delete_protection_enabled of this CreateLoadBalancerDetails.
+        Whether or not the load balancer has delete protection enabled.
+
+        If \"true\", the loadbalancer will be protected against deletion if configured to accept traffic.
+
+        If \"false\", the loadbalancer will not be protected against deletion.
+
+        Delete protection will not be enabled unless a value of \"true\" is provided.
+        Example: `true`
+
+
+        :return: The is_delete_protection_enabled of this CreateLoadBalancerDetails.
+        :rtype: bool
+        """
+        return self._is_delete_protection_enabled
+
+    @is_delete_protection_enabled.setter
+    def is_delete_protection_enabled(self, is_delete_protection_enabled):
+        """
+        Sets the is_delete_protection_enabled of this CreateLoadBalancerDetails.
+        Whether or not the load balancer has delete protection enabled.
+
+        If \"true\", the loadbalancer will be protected against deletion if configured to accept traffic.
+
+        If \"false\", the loadbalancer will not be protected against deletion.
+
+        Delete protection will not be enabled unless a value of \"true\" is provided.
+        Example: `true`
+
+
+        :param is_delete_protection_enabled: The is_delete_protection_enabled of this CreateLoadBalancerDetails.
+        :type: bool
+        """
+        self._is_delete_protection_enabled = is_delete_protection_enabled
 
     @property
     def ip_mode(self):

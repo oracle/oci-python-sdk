@@ -24,6 +24,10 @@ class UpdateBackendDetails(object):
             The value to assign to the weight property of this UpdateBackendDetails.
         :type weight: int
 
+        :param max_connections:
+            The value to assign to the max_connections property of this UpdateBackendDetails.
+        :type max_connections: int
+
         :param backup:
             The value to assign to the backup property of this UpdateBackendDetails.
         :type backup: bool
@@ -39,6 +43,7 @@ class UpdateBackendDetails(object):
         """
         self.swagger_types = {
             'weight': 'int',
+            'max_connections': 'int',
             'backup': 'bool',
             'drain': 'bool',
             'offline': 'bool'
@@ -46,12 +51,14 @@ class UpdateBackendDetails(object):
 
         self.attribute_map = {
             'weight': 'weight',
+            'max_connections': 'maxConnections',
             'backup': 'backup',
             'drain': 'drain',
             'offline': 'offline'
         }
 
         self._weight = None
+        self._max_connections = None
         self._backup = None
         self._drain = None
         self._offline = None
@@ -95,6 +102,34 @@ class UpdateBackendDetails(object):
         :type: int
         """
         self._weight = weight
+
+    @property
+    def max_connections(self):
+        """
+        Gets the max_connections of this UpdateBackendDetails.
+        The maximum number of simultaneous connections the load balancer can make to the backend.
+
+        Example: `300`
+
+
+        :return: The max_connections of this UpdateBackendDetails.
+        :rtype: int
+        """
+        return self._max_connections
+
+    @max_connections.setter
+    def max_connections(self, max_connections):
+        """
+        Sets the max_connections of this UpdateBackendDetails.
+        The maximum number of simultaneous connections the load balancer can make to the backend.
+
+        Example: `300`
+
+
+        :param max_connections: The max_connections of this UpdateBackendDetails.
+        :type: int
+        """
+        self._max_connections = max_connections
 
     @property
     def backup(self):
