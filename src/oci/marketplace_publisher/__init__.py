@@ -7,8 +7,12 @@
 from __future__ import absolute_import
 
 
+from .attachment_client import AttachmentClient
+from .attachment_client_composite_operations import AttachmentClientCompositeOperations
 from .marketplace_publisher_client import MarketplacePublisherClient
 from .marketplace_publisher_client_composite_operations import MarketplacePublisherClientCompositeOperations
+from .offer_client import OfferClient
+from .offer_client_composite_operations import OfferClientCompositeOperations
 from . import models
 
-__all__ = ["MarketplacePublisherClient", "MarketplacePublisherClientCompositeOperations", "models"]
+__all__ = ["AttachmentClient", "AttachmentClientCompositeOperations", "MarketplacePublisherClient", "MarketplacePublisherClientCompositeOperations", "OfferClient", "OfferClientCompositeOperations", "models"]

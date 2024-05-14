@@ -5,8 +5,9 @@
 ##########################################################################
 # showusage.py
 #
-# @author: Adi Zohar, Oct 07 2021, Updated May 2nd, 2024
+# @author: Adi Zohar, Oct 07 2021, Updated May 3nd, 2024
 # Added OSR Eligible for tenant grouping and CSV files
+# Added new reports - Special and Compartment
 #
 # Supports Python 3
 ##########################################################################
@@ -20,11 +21,15 @@
 #   -ds date     - Start Date in YYYY-MM-DD format
 #   -de date     - End Date in YYYY-MM-DD format (Not Inclusive)
 #   -ld days     - Add Days Combined with Start Date (de is ignored if specified)
-#   -report type - Report Type = PRODUCT, DAILY, REGION, SERVICE, RESOURCE, TENANT, SPECIAL
+#   -report type - Report Type = PRODUCT, DAILY, REGION, SERVICE, RESOURCE, TENANT, SPECIAL, COMPARTMENT
 #                  SPECIAL is group by Service, Region, Product Description
 #   -csv         - Write to CSV files - usage_products.csv, usage_daily.csv, usage_region.csvs,
-#                                       usage_resources.csv, usage_tenants.csv, usage_special.csv
+#                                       usage_resources.csv, usage_tenants.csv, usage_special.csv, usage_compartments.csv
 #
+##########################################################################
+# Those are the valid options for GroupBy:
+#    "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName",
+#    "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"
 ##########################################################################
 # Info:
 #    List Tenancy Usage
@@ -60,7 +65,7 @@ import os
 import platform
 import csv
 
-version = "2024.05.01"
+version = "2024.05.03"
 
 csv_file_products = "usage_products.csv"
 csv_file_daily = "usage_daily.csv"
@@ -68,6 +73,7 @@ csv_file_regions = "usage_regions.csv"
 csv_file_resources = "usage_resources.csv"
 csv_file_tenants = "usage_tenants.csv"
 csv_file_special = "usage_special.csv"
+csv_file_compartment = "usage_compartments.csv"
 
 
 ##########################################################################
@@ -873,6 +879,177 @@ def usage_daily_service(usageClient, tenant_id, time_usage_started, time_usage_e
 
 
 ##########################################################################
+# Usage Daily by Compartment and Service
+##########################################################################
+def usage_daily_compartment(usageClient, tenant_id, time_usage_started, time_usage_ended, is_csv):
+
+    try:
+        # oci.usage_api.models.RequestSummarizedUsagesDetails
+        requestSummarizedUsagesDetails = oci.usage_api.models.RequestSummarizedUsagesDetails(
+            tenant_id=tenant_id,
+            granularity='DAILY',
+            query_type='COST',
+            compartment_depth=5,
+            group_by=['compartmentPath', 'service', 'skuPartNumber', 'skuName'],
+            time_usage_started=time_usage_started.strftime('%Y-%m-%dT%H:%M:%SZ'),
+            time_usage_ended=time_usage_ended.strftime('%Y-%m-%dT%H:%M:%SZ')
+        )
+
+        # usageClient.request_summarized_usages
+        request_summarized_usages = usageClient.request_summarized_usages(
+            requestSummarizedUsagesDetails,
+            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+        )
+
+        ################################
+        # Add all data to array data
+        ################################
+        data = []
+        min_date = None
+        max_date = None
+        currency = ""
+        for item in request_summarized_usages.data.items:
+            data.append({
+                'pk': item.compartment_path + ":" + item.service,
+                'compartment': item.compartment_path,
+                'service': item.service,
+                'cost': item.computed_amount if item.computed_amount else 0,
+                'quantity': item.computed_quantity if item.computed_quantity else 0,
+                'sku_part_number': item.sku_part_number,
+                'sku_name': item.sku_name,
+                'osr_eligible': osr_eligible_cost(item.sku_part_number, item.sku_name, item.computed_amount if item.computed_amount else 0),
+                'currency': item.currency.lstrip(),
+                'time_usage_started': item.time_usage_started,
+                'time_usage_ended': item.time_usage_ended
+            })
+            if item.currency.lstrip():
+                currency = item.currency
+            if not min_date or item.time_usage_started < min_date:
+                min_date = item.time_usage_started
+            if not max_date or item.time_usage_started > max_date:
+                max_date = item.time_usage_started
+
+        days = (max_date - min_date).days + 1
+
+        ################################
+        # Group Dictionaries by PK
+        ################################
+        gdata = group_dictionaries(data)
+
+        ################################
+        # if to generate to csv
+        ################################
+        if is_csv:
+
+            csv_output = []
+            for item_key in sorted(gdata, key=lambda x: gdata[x]['pk']):
+                item = gdata[item_key]
+                if item['cost'] == 0:
+                    continue
+                csv_output.append({
+                    'Compartment Path': item['compartment'],
+                    'Service': item['service'],
+                    'Start Date': min_date.strftime('%m/%d/%Y'),
+                    'End Date': max_date.strftime('%m/%d/%Y'),
+                    'Days': days,
+                    'Currency': item['currency'],
+                    'Quantity': "{:8.1f}".format(item['quantity']),
+                    'Osr Eligible Cost': "{:8.1f}".format(item['osr_eligible']),
+                    'Cost': "{:8.1f}".format(item['cost']),
+                    'Month-31': "{:9.0f}".format(item['cost'] / days * 31),
+                    'Year': "{:9.0f}".format(item['cost'] / days * 365),
+                })
+
+            export_to_csv_file(csv_file_compartment, csv_output)
+
+        else:
+
+            ################################
+            # Print to screen
+            ################################
+            col = {
+                'compartment': 70,
+                'service': 40,
+                'quantity': 14,
+                'days': 10,
+                'osr_eligible': 15,
+                'cost': 13,
+                'month': 13,
+                'year': 13
+            }
+
+            currency_print = (" in " + currency) if currency else ""
+            product_header = "Compartment Summary for " + min_date.strftime('%m/%d/%Y') + " - " + max_date.strftime('%m/%d/%Y') + currency_print
+            print_header(product_header, 3)
+            print("")
+            print(
+                "Compartment".ljust(col['compartment']) +
+                " Service".ljust(col['service']) +
+                " Days".rjust(col['days']) +
+                " Quantity".rjust(col['quantity']) +
+                " OSR Eligible".rjust(col['osr_eligible']) +
+                " Cost".rjust(col['cost']) +
+                " Month-31".rjust(col['month']) +
+                " Year".rjust(col['year'])
+            )
+
+            print(
+                "".ljust(col['compartment'], '=') +
+                " ".ljust(col['service'], '=') +
+                " ".ljust(col['days'], '=') +
+                " ".ljust(col['quantity'], '=') +
+                " ".ljust(col['osr_eligible'], '=') +
+                " ".ljust(col['cost'], '=') +
+                " ".ljust(col['month'], '=') +
+                " ".ljust(col['year'], '=')
+            )
+
+            total = 0
+            osr_total = 0
+            for item_key in sorted(gdata, key=lambda x: gdata[x]['pk']):
+                item = gdata[item_key]
+                if item['cost'] == 0:
+                    continue
+                total += item['cost']
+                osr_total += item['osr_eligible']
+
+                line = item['compartment'].ljust(col['compartment'])
+                line += " " + item['service'].ljust(col['service'] - 1)
+                line += "{:8,.0f}".format(days).rjust(col['days'])
+                line += "{:8,.1f}".format(item['quantity']).rjust(col['quantity'])
+                line += "{:8,.1f}".format(item['osr_eligible']).rjust(col['osr_eligible'])
+                line += "{:8,.1f}".format(item['cost']).rjust(col['cost'])
+                line += "{:9,.0f}".format(item['cost'] / days * 31).rjust(col['month'])
+                line += "{:9,.0f}".format(item['cost'] / days * 365).rjust(col['year'])
+                print(line)
+
+            # Total
+            print(
+                "".ljust(col['compartment'], '=') +
+                " ".ljust(col['service'], '=') +
+                " ".ljust(col['days'], '=') +
+                " ".ljust(col['quantity'], '=') +
+                " ".ljust(col['osr_eligible'], '=') +
+                " ".ljust(col['cost'], '=') +
+                " ".ljust(col['month'], '=') +
+                " ".ljust(col['year'], '=')
+            )
+            print(
+                "Total ".ljust(col['compartment'] + col['service'] + col['days'] + col['quantity']) +
+                " {:8,.1f}".format(osr_total).rjust(col['osr_eligible']) +
+                " {:8,.1f}".format(total).rjust(col['cost']) +
+                " {:9,.0f}".format(total / days * 31).rjust(col['month']) +
+                " {:9,.0f}".format(total / days * 365).rjust(col['year'])
+            )
+
+    except oci.exceptions.ServiceError as e:
+        print("\nService Error at 'usage_daily_compartment' - " + str(e))
+
+    except Exception as e:
+        print("\nException Error at 'usage_daily_compartment' - " + str(e))
+
+
+##########################################################################
 # Usage Daily by Speical Grouping = Service, Region, Product Description
 ##########################################################################
 def usage_daily_special(usageClient, tenant_id, time_usage_started, time_usage_ended, is_csv):
@@ -1340,9 +1517,11 @@ def usage_daily_summary(usageClient, tenant_id, time_usage_started, time_usage_e
 ##########################################################################
 def main():
 
+    report_type_array = ['ALL', 'DAILY', 'SERVICE', 'PRODUCT', 'REGION', 'RESOURCE', 'SPECIAL', 'TENANT', 'COMPARTMENT']
+
     # Get Command Line Parser
     # parser = argparse.ArgumentParser()
-    parser = argparse.ArgumentParser(usage=argparse.SUPPRESS, formatter_class=lambda prog: argparse.HelpFormatter(prog, max_help_position=80, width=130))
+    parser = argparse.ArgumentParser(usage=argparse.SUPPRESS, formatter_class=lambda prog: argparse.HelpFormatter(prog, max_help_position=80, width=150))
     parser.add_argument('-c', default="", dest='config_file', help='OCI CLI Config file')
     parser.add_argument('-t', default="", dest='config_profile', help='Config Profile inside the config file')
     parser.add_argument('-p', default="", dest='proxy', help='Set Proxy (i.e. www-proxy-server.com:80) ')
@@ -1351,7 +1530,7 @@ def main():
     parser.add_argument("-ds", default=None, dest='date_start', help="Start Date - format YYYY-MM-DD", type=valid_date_type)
     parser.add_argument("-de", default=None, dest='date_end', help="End Date - format YYYY-MM-DD, (Not Inclusive)", type=valid_date_type)
     parser.add_argument("-days", default=None, dest='days', help="Add Days Combined with Start Date (de is ignored if specified)", type=int)
-    parser.add_argument("-report", default="ALL", dest='report', help="Report Type = PRODUCT / DAILY / REGION / SERVICE / RESOURCE / TENANT / SPECIAL / ALL ( Default = ALL )")
+    parser.add_argument("-report", default="ALL", dest='report', help="Report Type = " + ' / '.join(x for x in report_type_array) + " ( Default = ALL )")
     parser.add_argument('-csv', action='store_true', default=False, dest='csv', help='Write to CSV files instead of output to the screen - usage_*.csv')
     cmd = parser.parse_args()
 
@@ -1359,18 +1538,19 @@ def main():
         parser.print_help()
         return
 
-    if not cmd.report or not (cmd.report == "DAILY" or cmd.report == "SERVICE" or cmd.report == "PRODUCT" or cmd.report == "REGION" or cmd.report == "RESOURCE" or cmd.report == "SPECIAL" or cmd.report == "TENANT" or cmd.report == "ALL"):
+    if not cmd.report or cmd.report not in report_type_array:
 
         parser.print_help()
         print("")
         print("**********************************************************")
         print("***          You must specify report type !            ***")
-        print("***   DAILY    = Daily cost                            ***")
-        print("***   PRODUCT  = Product Summary Cost                  ***")
-        print("***   SERVICE  = Service Summary Cost                  ***")
-        print("***   REGION   = Region Summary Cost                   ***")
-        print("***   RESOURCE = Resource Summary Cost                 ***")
-        print("***   SPECIAL  = Service, Region and Product           ***")
+        print("***   DAILY       = Daily cost                         ***")
+        print("***   PRODUCT     = Product Summary Cost               ***")
+        print("***   SERVICE     = Service Summary Cost               ***")
+        print("***   REGION      = Region Summary Cost                ***")
+        print("***   RESOURCE    = Resource Summary Cost              ***")
+        print("***   SPECIAL     = Service, Region and Product        ***")
+        print("***   COMPARTMENT = Compartment Path, Service          ***")
         print("***                                                    ***")
         print("***   ALL     = All Reports                            ***")
         print("**********************************************************")
@@ -1503,6 +1683,9 @@ def main():
 
         if report_type == 'SPECIAL' or report_type == 'ALL':
             usage_daily_special(usage_client, tenant_id, time_usage_started, time_usage_ended, cmd.csv)
+
+        if report_type == 'COMPARTMENT' or report_type == 'ALL':
+            usage_daily_compartment(usage_client, tenant_id, time_usage_started, time_usage_ended, cmd.csv)
 
     except Exception as e:
         raise RuntimeError("\nError at main function - " + str(e))

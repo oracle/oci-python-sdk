@@ -11,6 +11,7 @@ from .change_sender_compartment_details import ChangeSenderCompartmentDetails
 from .configuration import Configuration
 from .create_dkim_details import CreateDkimDetails
 from .create_email_domain_details import CreateEmailDomainDetails
+from .create_email_return_path_details import CreateEmailReturnPathDetails
 from .create_sender_details import CreateSenderDetails
 from .create_suppression_details import CreateSuppressionDetails
 from .dkim import Dkim
@@ -19,12 +20,16 @@ from .dkim_summary import DkimSummary
 from .email_domain import EmailDomain
 from .email_domain_collection import EmailDomainCollection
 from .email_domain_summary import EmailDomainSummary
+from .email_return_path import EmailReturnPath
+from .email_return_path_collection import EmailReturnPathCollection
+from .email_return_path_summary import EmailReturnPathSummary
 from .sender import Sender
 from .sender_summary import SenderSummary
 from .suppression import Suppression
 from .suppression_summary import SuppressionSummary
 from .update_dkim_details import UpdateDkimDetails
 from .update_email_domain_details import UpdateEmailDomainDetails
+from .update_email_return_path_details import UpdateEmailReturnPathDetails
 from .update_sender_details import UpdateSenderDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
@@ -42,6 +47,7 @@ email_type_mapping = {
     "Configuration": Configuration,
     "CreateDkimDetails": CreateDkimDetails,
     "CreateEmailDomainDetails": CreateEmailDomainDetails,
+    "CreateEmailReturnPathDetails": CreateEmailReturnPathDetails,
     "CreateSenderDetails": CreateSenderDetails,
     "CreateSuppressionDetails": CreateSuppressionDetails,
     "Dkim": Dkim,
@@ -50,12 +56,16 @@ email_type_mapping = {
     "EmailDomain": EmailDomain,
     "EmailDomainCollection": EmailDomainCollection,
     "EmailDomainSummary": EmailDomainSummary,
+    "EmailReturnPath": EmailReturnPath,
+    "EmailReturnPathCollection": EmailReturnPathCollection,
+    "EmailReturnPathSummary": EmailReturnPathSummary,
     "Sender": Sender,
     "SenderSummary": SenderSummary,
     "Suppression": Suppression,
     "SuppressionSummary": SuppressionSummary,
     "UpdateDkimDetails": UpdateDkimDetails,
     "UpdateEmailDomainDetails": UpdateEmailDomainDetails,
+    "UpdateEmailReturnPathDetails": UpdateEmailReturnPathDetails,
     "UpdateSenderDetails": UpdateSenderDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,

@@ -22,7 +22,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "24.04.23"
+    version = "24.05.17"
 
     ##########################################################################
     # spaces for align
@@ -2060,17 +2060,19 @@ class ShowOCIOutput(object):
             self.print_header("Function Applications", 2)
 
             for ct in functions:
-                print(self.taba + ct['display_name'] + ", Created: " + ct['time_created'][0:16])
+                print(self.taba + ct['display_name'] + ", Created: " + ct['time_created'] + " - " + ct['shape'])
                 if ct['subnets']:
                     for sub in ct['subnets']:
                         print(self.tabs + self.tabs + "Subnet: " + sub)
+                if ct['network_security_group_names']:
+                    print(self.tabs + self.tabs + "NSG   : " + ct['network_security_group_names'])
                 for fun in ct['functions']:
                     print(self.tabs + self.tabs + "FN    : " + fun['display_name'] + " - " + fun['image'])
 
                 print("")
 
         except Exception as e:
-            self.__print_error("__print_streams_main", e)
+            self.__print_error("__print_functions_main", e)
 
     ##########################################################################
     # API Gateways
@@ -4195,6 +4197,8 @@ class ShowOCICSV(object):
     csv_announcements = []
     csv_errors = []
     csv_resources = []
+    csv_functions_apps = []
+    csv_functions_fns = []
     csv_certificates = []
     csv_certificate_ca_bundle = []
     csv_identity_compartments = []
@@ -4228,6 +4232,7 @@ class ShowOCICSV(object):
     csv_datasafe_user_assessment = []
     csv_datasafe_security_assessment = []
     csv_database = []
+    csv_database_pdbs = []
     csv_database_backups = []
     csv_db_goldengate_deployments = []
     csv_db_nosql = []
@@ -4279,7 +4284,6 @@ class ShowOCICSV(object):
     csv_data_flow = []
     csv_data_catalog = []
     csv_data_integration = []
-    start_time = ""
     csv_add_date_field = True
     csv_columns = []
     csv_streams_queues = []
@@ -4289,6 +4293,7 @@ class ShowOCICSV(object):
     csv_monitor_events = []
     csv_notifications = []
     csv_quotas = []
+    start_time = ""
     tenant_id = ""
     tenant_name = ""
 
@@ -4378,6 +4383,8 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("identity_domains_auth", self.csv_identity_domains_auth_factors)
             self.__export_to_csv_file("identity_domains_pwd_policies", self.csv_identity_domains_password_policies)
 
+            self.__export_to_csv_file("functions_apps", self.csv_functions_apps)
+            self.__export_to_csv_file("functions_fns", self.csv_functions_fns)
             self.__export_to_csv_file("compute", self.csv_compute)
             self.__export_to_csv_file("compute_reservations", self.csv_compute_reservations)
             self.__export_to_csv_file("block_volumes", self.csv_block_volumes)
@@ -4398,6 +4405,7 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("database", self.csv_database)
             self.__export_to_csv_file("database_backups", self.csv_database_backups)
             self.__export_to_csv_file("database_autonomous", self.csv_db_autonomous)
+            self.__export_to_csv_file("database_db_pdbs", self.csv_database_pdbs)
             self.__export_to_csv_file("database_db_all", self.csv_db_all)
             self.__export_to_csv_file("database_db_vm_bm", self.csv_db_vm_bm)
             self.__export_to_csv_file("database_db_exa_infra", self.csv_db_exa_infrastructure)
@@ -6180,6 +6188,33 @@ class ShowOCICSV(object):
                         self.csv_database.append(data)
                         self.__csv_add_service(data, "DB System Database")
 
+                        # Produce PDB csv
+                        for pdb in db['pdbs']:
+                            data = {
+                                'region_name': region_name,
+                                'availability_domain': dbs['availability_domain'],
+                                'compartment_name': dbs['compartment_name'],
+                                'compartment_path': dbs['compartment_path'],
+                                'name': pdb['name'],
+                                'system_name': dbs['display_name'],
+                                'system_shape': dbs['shape'],
+                                'database_name': db['db_name'],
+                                'time_created': pdb['time_created'],
+                                'lifecycle_state': pdb['lifecycle_state'],
+                                'connection_strings': pdb['connection_strings'],
+                                'open_mode': pdb['open_mode'],
+                                'is_restricted': pdb['is_restricted'],
+                                'management_status': pdb['management_status'],
+                                'is_refreshable_clone': pdb['is_refreshable_clone'],
+                                'freeform_tags': self.__get_freeform_tags(pdb['freeform_tags']),
+                                'defined_tags': self.__get_defined_tags(pdb['defined_tags']),
+                                'database_id': db['id'],
+                                'dbsystem_id': dbs['id'],
+                                'id': pdb['id']
+                            }
+                            self.csv_database_pdbs.append(data)
+                            self.__csv_add_service(data, "DB System Database PDB")
+
                         # database Backups
                         if 'backups' in db:
                             self.__csv_database_backup_item(db['backups'], dbs['display_name'], db['db_name'])
@@ -6365,6 +6400,33 @@ class ShowOCICSV(object):
                             self.csv_database.append(data)
                             self.__csv_add_service(dbsd, "DB ExaCS Database")
 
+                            # Produce PDB csv
+                            for pdb in db['pdbs']:
+                                data = {
+                                    'region_name': region_name,
+                                    'availability_domain': dbs['availability_domain'],
+                                    'compartment_name': dbs['compartment_name'],
+                                    'compartment_path': dbs['compartment_path'],
+                                    'name': pdb['name'],
+                                    'system_name': dbs['display_name'],
+                                    'system_shape': dbs['shape'],
+                                    'database_name': db['name'],
+                                    'time_created': pdb['time_created'],
+                                    'lifecycle_state': pdb['lifecycle_state'],
+                                    'connection_strings': pdb['connection_strings'],
+                                    'open_mode': pdb['open_mode'],
+                                    'is_restricted': pdb['is_restricted'],
+                                    'management_status': pdb['management_status'],
+                                    'is_refreshable_clone': pdb['is_refreshable_clone'],
+                                    'freeform_tags': self.__get_freeform_tags(pdb['freeform_tags']),
+                                    'defined_tags': self.__get_defined_tags(pdb['defined_tags']),
+                                    'database_id': db['id'],
+                                    'dbsystem_id': vm['id'],
+                                    'id': pdb['id']
+                                }
+                                self.csv_database_pdbs.append(data)
+                                self.__csv_add_service(data, "DB ExaCS Database PDB")
+
                             # database Backups
                             if 'backups' in db:
                                 self.__csv_database_backup_item(db['backups'], dbs['display_name'], db['db_name'])
@@ -6525,6 +6587,33 @@ class ShowOCICSV(object):
 
                             self.csv_database.append(data)
                             self.__csv_add_service(data, "DB ExaCC Database")
+
+                            # Produce PDB csv
+                            for pdb in db['pdbs']:
+                                data = {
+                                    'region_name': region_name,
+                                    'availability_domain': dbs['availability_domain'],
+                                    'compartment_name': dbs['compartment_name'],
+                                    'compartment_path': dbs['compartment_path'],
+                                    'name': pdb['name'],
+                                    'system_name': dbs['display_name'],
+                                    'system_shape': dbs['shape'],
+                                    'database_name': db['name'],
+                                    'time_created': pdb['time_created'],
+                                    'lifecycle_state': pdb['lifecycle_state'],
+                                    'connection_strings': pdb['connection_strings'],
+                                    'open_mode': pdb['open_mode'],
+                                    'is_restricted': pdb['is_restricted'],
+                                    'management_status': pdb['management_status'],
+                                    'is_refreshable_clone': pdb['is_refreshable_clone'],
+                                    'freeform_tags': self.__get_freeform_tags(pdb['freeform_tags']),
+                                    'defined_tags': self.__get_defined_tags(pdb['defined_tags']),
+                                    'database_id': db['id'],
+                                    'dbsystem_id': vm['id'],
+                                    'id': pdb['id']
+                                }
+                                self.csv_database_pdbs.append(data)
+                                self.__csv_add_service(data, "DB ExaCC Database PDB")
 
                             # database Backups
                             if 'backups' in db:
@@ -9036,6 +9125,69 @@ class ShowOCICSV(object):
             self.__print_error("__csv_streams_queues", e)
 
     ##########################################################################
+    # Functions Apps
+    ##########################################################################
+    def __csv_functions(self, region_name, functions_apps):
+        try:
+
+            for ar in functions_apps:
+                data = {
+                    'region_name': region_name,
+                    'compartment_name': ar['compartment_name'],
+                    'compartment_path': ar['compartment_path'],
+                    'name': ar['display_name'],
+                    'lifecycle_state': ar['lifecycle_state'],
+                    'subnets': str(', '.join(x for x in ar['subnets'])),
+                    'network_security_group_names': ar['network_security_group_names'],
+                    'shape': ar['shape'],
+                    'trace_config_is_enabled': ar['trace_config_is_enabled'],
+                    'trace_config_domain_id': ar['trace_config_domain_id'],
+                    'image_policy_is_enabled': ar['image_policy_is_enabled'],
+                    'time_created': ar['time_created'],
+                    'time_updated': ar['time_updated'],
+                    'functions': str(', '.join(x['display_name'] for x in ar['functions'])),
+                    'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
+                    'defined_tags': self.__get_defined_tags(ar['defined_tags']),
+                    'id': ar['id']
+                }
+
+                self.csv_functions_apps.append(data)
+                self.__csv_add_service(data, "Functions Apps")
+
+                for fn in ar['functions']:
+                    data = {
+                        'region_name': region_name,
+                        'compartment_name': fn['compartment_name'],
+                        'compartment_path': fn['compartment_path'],
+                        'app_name': ar['display_name'],
+                        'name': fn['display_name'],
+                        'lifecycle_state': fn['lifecycle_state'],
+                        'subnets': str(', '.join(x for x in ar['subnets'])),
+                        'network_security_group_names': ar['network_security_group_names'],
+                        'shape': fn['shape'],
+                        'image': fn['image'],
+                        'image_digest': fn['image_digest'],
+                        'memory_in_mbs': fn['memory_in_mbs'],
+                        'timeout_in_seconds': fn['timeout_in_seconds'],
+                        'invoke_endpoint': fn['invoke_endpoint'],
+                        'time_created': fn['time_created'],
+                        'time_updated': fn['time_updated'],
+                        'source_type': fn['source_type'],
+                        'provisioned_strategy': fn['provisioned_strategy'],
+                        'trace_config_is_enabled': fn['trace_config_is_enabled'],
+                        'freeform_tags': self.__get_freeform_tags(fn['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(fn['defined_tags']),
+                        'app_id': ar['id'],
+                        'id': fn['id']
+                    }
+
+                    self.csv_functions_fns.append(data)
+                    self.__csv_add_service(data, "Functions Fns")
+
+        except Exception as e:
+            self.__print_error("__csv_functions", e)
+
+    ##########################################################################
     # Paas OAC
     ##########################################################################
     def __csv_paas_oac(self, region_name, services):
@@ -9886,6 +10038,8 @@ class ShowOCICSV(object):
                     self.__csv_notifications(region_name, cdata['notifications'])
                 if 'quotas' in cdata:
                     self.__csv_quotas_main(region_name, cdata['quotas'])
+                if 'functions' in cdata:
+                    self.__csv_functions(region_name, cdata['functions'])
 
         except Exception as e:
             self.__print_error("__csv_region_data", e)

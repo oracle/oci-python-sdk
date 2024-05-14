@@ -6,8 +6,12 @@ Marketplace Publisher
     :nosignatures:
     :template: autosummary/service_client.rst
 
+    oci.marketplace_publisher.AttachmentClient
     oci.marketplace_publisher.MarketplacePublisherClient
+    oci.marketplace_publisher.OfferClient
+    oci.marketplace_publisher.AttachmentClientCompositeOperations
     oci.marketplace_publisher.MarketplacePublisherClientCompositeOperations
+    oci.marketplace_publisher.OfferClientCompositeOperations
 
 --------
  Models
@@ -21,16 +25,22 @@ Marketplace Publisher
     oci.marketplace_publisher.models.Artifact
     oci.marketplace_publisher.models.ArtifactCollection
     oci.marketplace_publisher.models.ArtifactSummary
+    oci.marketplace_publisher.models.Attachment
+    oci.marketplace_publisher.models.AttachmentCollection
+    oci.marketplace_publisher.models.AttachmentSummary
+    oci.marketplace_publisher.models.BuyerInformation
     oci.marketplace_publisher.models.Category
     oci.marketplace_publisher.models.CategoryCollection
     oci.marketplace_publisher.models.CategorySummary
     oci.marketplace_publisher.models.ChangeArtifactCompartmentDetails
     oci.marketplace_publisher.models.ChangeListingCompartmentDetails
     oci.marketplace_publisher.models.ChangeTermCompartmentDetails
+    oci.marketplace_publisher.models.Contact
     oci.marketplace_publisher.models.ContainerImageArtifact
     oci.marketplace_publisher.models.ContainerImageDetails
     oci.marketplace_publisher.models.ContainerPackage
     oci.marketplace_publisher.models.CreateArtifactDetails
+    oci.marketplace_publisher.models.CreateAttachmentDetails
     oci.marketplace_publisher.models.CreateContainerImageArtifactDetails
     oci.marketplace_publisher.models.CreateContainerImageDetails
     oci.marketplace_publisher.models.CreateHelmChartImageDetails
@@ -40,11 +50,13 @@ Marketplace Publisher
     oci.marketplace_publisher.models.CreateListingRevisionDetails
     oci.marketplace_publisher.models.CreateListingRevisionNoteDetails
     oci.marketplace_publisher.models.CreateListingRevisionPackageDetails
+    oci.marketplace_publisher.models.CreateOfferDetails
     oci.marketplace_publisher.models.CreateRelatedDocumentAttachmentDetails
     oci.marketplace_publisher.models.CreateScreenShotAttachmentDetails
     oci.marketplace_publisher.models.CreateTermDetails
     oci.marketplace_publisher.models.CreateVideoAttachmentDetails
     oci.marketplace_publisher.models.CreateVideoDetails
+    oci.marketplace_publisher.models.CustomField
     oci.marketplace_publisher.models.HelmChartImageDetails
     oci.marketplace_publisher.models.HelmChartPackage
     oci.marketplace_publisher.models.KubernetesImageArtifact
@@ -69,7 +81,12 @@ Marketplace Publisher
     oci.marketplace_publisher.models.MarketCollection
     oci.marketplace_publisher.models.MarketSummary
     oci.marketplace_publisher.models.NamedLink
+    oci.marketplace_publisher.models.Offer
+    oci.marketplace_publisher.models.OfferCollection
+    oci.marketplace_publisher.models.OfferInternalDetail
+    oci.marketplace_publisher.models.OfferSummary
     oci.marketplace_publisher.models.OpnMembership
+    oci.marketplace_publisher.models.Pricing
     oci.marketplace_publisher.models.PrivateOfferAccountDetails
     oci.marketplace_publisher.models.Product
     oci.marketplace_publisher.models.ProductCollection
@@ -79,7 +96,9 @@ Marketplace Publisher
     oci.marketplace_publisher.models.PublisherCollection
     oci.marketplace_publisher.models.PublisherSummary
     oci.marketplace_publisher.models.RelatedDocumentAttachment
+    oci.marketplace_publisher.models.ResourceBundle
     oci.marketplace_publisher.models.ScreenShotAttachment
+    oci.marketplace_publisher.models.SellerInformation
     oci.marketplace_publisher.models.SubmitListingRevisionForReviewDetails
     oci.marketplace_publisher.models.SupportContact
     oci.marketplace_publisher.models.Term
@@ -98,6 +117,7 @@ Marketplace Publisher
     oci.marketplace_publisher.models.UpdateListingRevisionAttachmentDetails
     oci.marketplace_publisher.models.UpdateListingRevisionDetails
     oci.marketplace_publisher.models.UpdateListingRevisionPackageDetails
+    oci.marketplace_publisher.models.UpdateOfferDetails
     oci.marketplace_publisher.models.UpdateRelatedDocumentAttachmentDetails
     oci.marketplace_publisher.models.UpdateScreenShotAttachmentDetails
     oci.marketplace_publisher.models.UpdateTermDetails

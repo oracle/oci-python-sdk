@@ -40,6 +40,10 @@ class SSLConfiguration(object):
             The value to assign to the verify_peer_certificate property of this SSLConfiguration.
         :type verify_peer_certificate: bool
 
+        :param has_session_resumption:
+            The value to assign to the has_session_resumption property of this SSLConfiguration.
+        :type has_session_resumption: bool
+
         :param trusted_certificate_authority_ids:
             The value to assign to the trusted_certificate_authority_ids property of this SSLConfiguration.
         :type trusted_certificate_authority_ids: list[str]
@@ -70,6 +74,7 @@ class SSLConfiguration(object):
         self.swagger_types = {
             'verify_depth': 'int',
             'verify_peer_certificate': 'bool',
+            'has_session_resumption': 'bool',
             'trusted_certificate_authority_ids': 'list[str]',
             'certificate_ids': 'list[str]',
             'certificate_name': 'str',
@@ -81,6 +86,7 @@ class SSLConfiguration(object):
         self.attribute_map = {
             'verify_depth': 'verifyDepth',
             'verify_peer_certificate': 'verifyPeerCertificate',
+            'has_session_resumption': 'hasSessionResumption',
             'trusted_certificate_authority_ids': 'trustedCertificateAuthorityIds',
             'certificate_ids': 'certificateIds',
             'certificate_name': 'certificateName',
@@ -91,6 +97,7 @@ class SSLConfiguration(object):
 
         self._verify_depth = None
         self._verify_peer_certificate = None
+        self._has_session_resumption = None
         self._trusted_certificate_authority_ids = None
         self._certificate_ids = None
         self._certificate_name = None
@@ -153,6 +160,40 @@ class SSLConfiguration(object):
         :type: bool
         """
         self._verify_peer_certificate = verify_peer_certificate
+
+    @property
+    def has_session_resumption(self):
+        """
+        Gets the has_session_resumption of this SSLConfiguration.
+        Whether the load balancer listener should resume an encrypted session by reusing the cryptographic parameters of a previous TLS session, without having to perform a full handshake again.
+        If \"true\", the service resumes the previous TLS encrypted session.
+        If \"false\", the service starts a new TLS encrypted session.
+        Enabling session resumption improves performance but provides a lower level of security. Disabling session resumption improves security but reduces performance.
+
+        Example: `true`
+
+
+        :return: The has_session_resumption of this SSLConfiguration.
+        :rtype: bool
+        """
+        return self._has_session_resumption
+
+    @has_session_resumption.setter
+    def has_session_resumption(self, has_session_resumption):
+        """
+        Sets the has_session_resumption of this SSLConfiguration.
+        Whether the load balancer listener should resume an encrypted session by reusing the cryptographic parameters of a previous TLS session, without having to perform a full handshake again.
+        If \"true\", the service resumes the previous TLS encrypted session.
+        If \"false\", the service starts a new TLS encrypted session.
+        Enabling session resumption improves performance but provides a lower level of security. Disabling session resumption improves security but reduces performance.
+
+        Example: `true`
+
+
+        :param has_session_resumption: The has_session_resumption of this SSLConfiguration.
+        :type: bool
+        """
+        self._has_session_resumption = has_session_resumption
 
     @property
     def trusted_certificate_authority_ids(self):

@@ -23,6 +23,7 @@ Email
     oci.email.models.Configuration
     oci.email.models.CreateDkimDetails
     oci.email.models.CreateEmailDomainDetails
+    oci.email.models.CreateEmailReturnPathDetails
     oci.email.models.CreateSenderDetails
     oci.email.models.CreateSuppressionDetails
     oci.email.models.Dkim
@@ -31,12 +32,16 @@ Email
     oci.email.models.EmailDomain
     oci.email.models.EmailDomainCollection
     oci.email.models.EmailDomainSummary
+    oci.email.models.EmailReturnPath
+    oci.email.models.EmailReturnPathCollection
+    oci.email.models.EmailReturnPathSummary
     oci.email.models.Sender
     oci.email.models.SenderSummary
     oci.email.models.Suppression
     oci.email.models.SuppressionSummary
     oci.email.models.UpdateDkimDetails
     oci.email.models.UpdateEmailDomainDetails
+    oci.email.models.UpdateEmailReturnPathDetails
     oci.email.models.UpdateSenderDetails
     oci.email.models.WorkRequest
     oci.email.models.WorkRequestError
