@@ -40,6 +40,18 @@ class EmailDomain(object):
     #: This constant has a value of "UPDATING"
     LIFECYCLE_STATE_UPDATING = "UPDATING"
 
+    #: A constant which can be used with the domain_verification_status property of a EmailDomain.
+    #: This constant has a value of "NONE"
+    DOMAIN_VERIFICATION_STATUS_NONE = "NONE"
+
+    #: A constant which can be used with the domain_verification_status property of a EmailDomain.
+    #: This constant has a value of "DOMAINID"
+    DOMAIN_VERIFICATION_STATUS_DOMAINID = "DOMAINID"
+
+    #: A constant which can be used with the domain_verification_status property of a EmailDomain.
+    #: This constant has a value of "OTHER"
+    DOMAIN_VERIFICATION_STATUS_OTHER = "OTHER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new EmailDomain object with values from keyword arguments.
@@ -71,6 +83,16 @@ class EmailDomain(object):
             The value to assign to the is_spf property of this EmailDomain.
         :type is_spf: bool
 
+        :param domain_verification_status:
+            The value to assign to the domain_verification_status property of this EmailDomain.
+            Allowed values for this property are: "NONE", "DOMAINID", "OTHER", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type domain_verification_status: str
+
+        :param domain_verification_id:
+            The value to assign to the domain_verification_id property of this EmailDomain.
+        :type domain_verification_id: str
+
         :param description:
             The value to assign to the description property of this EmailDomain.
         :type description: str
@@ -99,6 +121,8 @@ class EmailDomain(object):
             'lifecycle_state': 'str',
             'active_dkim_id': 'str',
             'is_spf': 'bool',
+            'domain_verification_status': 'str',
+            'domain_verification_id': 'str',
             'description': 'str',
             'time_created': 'datetime',
             'freeform_tags': 'dict(str, str)',
@@ -113,6 +137,8 @@ class EmailDomain(object):
             'lifecycle_state': 'lifecycleState',
             'active_dkim_id': 'activeDkimId',
             'is_spf': 'isSpf',
+            'domain_verification_status': 'domainVerificationStatus',
+            'domain_verification_id': 'domainVerificationId',
             'description': 'description',
             'time_created': 'timeCreated',
             'freeform_tags': 'freeformTags',
@@ -126,6 +152,8 @@ class EmailDomain(object):
         self._lifecycle_state = None
         self._active_dkim_id = None
         self._is_spf = None
+        self._domain_verification_status = None
+        self._domain_verification_id = None
         self._description = None
         self._time_created = None
         self._freeform_tags = None
@@ -305,6 +333,60 @@ class EmailDomain(object):
         :type: bool
         """
         self._is_spf = is_spf
+
+    @property
+    def domain_verification_status(self):
+        """
+        Gets the domain_verification_status of this EmailDomain.
+        The current domain verification status.
+
+        Allowed values for this property are: "NONE", "DOMAINID", "OTHER", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The domain_verification_status of this EmailDomain.
+        :rtype: str
+        """
+        return self._domain_verification_status
+
+    @domain_verification_status.setter
+    def domain_verification_status(self, domain_verification_status):
+        """
+        Sets the domain_verification_status of this EmailDomain.
+        The current domain verification status.
+
+
+        :param domain_verification_status: The domain_verification_status of this EmailDomain.
+        :type: str
+        """
+        allowed_values = ["NONE", "DOMAINID", "OTHER"]
+        if not value_allowed_none_or_none_sentinel(domain_verification_status, allowed_values):
+            domain_verification_status = 'UNKNOWN_ENUM_VALUE'
+        self._domain_verification_status = domain_verification_status
+
+    @property
+    def domain_verification_id(self):
+        """
+        Gets the domain_verification_id of this EmailDomain.
+        Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+
+
+        :return: The domain_verification_id of this EmailDomain.
+        :rtype: str
+        """
+        return self._domain_verification_id
+
+    @domain_verification_id.setter
+    def domain_verification_id(self, domain_verification_id):
+        """
+        Sets the domain_verification_id of this EmailDomain.
+        Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+
+
+        :param domain_verification_id: The domain_verification_id of this EmailDomain.
+        :type: str
+        """
+        self._domain_verification_id = domain_verification_id
 
     @property
     def description(self):

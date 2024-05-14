@@ -176,6 +176,10 @@ class VmCluster(object):
             The value to assign to the gi_software_image_id property of this VmCluster.
         :type gi_software_image_id: str
 
+        :param file_system_configuration_details:
+            The value to assign to the file_system_configuration_details property of this VmCluster.
+        :type file_system_configuration_details: list[oci.database.models.FileSystemConfigurationDetail]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -206,7 +210,8 @@ class VmCluster(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'data_collection_options': 'DataCollectionOptions',
-            'gi_software_image_id': 'str'
+            'gi_software_image_id': 'str',
+            'file_system_configuration_details': 'list[FileSystemConfigurationDetail]'
         }
 
         self.attribute_map = {
@@ -238,7 +243,8 @@ class VmCluster(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'data_collection_options': 'dataCollectionOptions',
-            'gi_software_image_id': 'giSoftwareImageId'
+            'gi_software_image_id': 'giSoftwareImageId',
+            'file_system_configuration_details': 'fileSystemConfigurationDetails'
         }
 
         self._id = None
@@ -270,6 +276,7 @@ class VmCluster(object):
         self._defined_tags = None
         self._data_collection_options = None
         self._gi_software_image_id = None
+        self._file_system_configuration_details = None
 
     @property
     def id(self):
@@ -1018,6 +1025,30 @@ class VmCluster(object):
         :type: str
         """
         self._gi_software_image_id = gi_software_image_id
+
+    @property
+    def file_system_configuration_details(self):
+        """
+        Gets the file_system_configuration_details of this VmCluster.
+        Details of the file system configuration of the VM cluster.
+
+
+        :return: The file_system_configuration_details of this VmCluster.
+        :rtype: list[oci.database.models.FileSystemConfigurationDetail]
+        """
+        return self._file_system_configuration_details
+
+    @file_system_configuration_details.setter
+    def file_system_configuration_details(self, file_system_configuration_details):
+        """
+        Sets the file_system_configuration_details of this VmCluster.
+        Details of the file system configuration of the VM cluster.
+
+
+        :param file_system_configuration_details: The file_system_configuration_details of this VmCluster.
+        :type: list[oci.database.models.FileSystemConfigurationDetail]
+        """
+        self._file_system_configuration_details = file_system_configuration_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

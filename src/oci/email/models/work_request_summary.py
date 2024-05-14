@@ -47,6 +47,18 @@ class WorkRequestSummary(object):
     #: This constant has a value of "UPDATE_EMAIL_DOMAIN"
     OPERATION_TYPE_UPDATE_EMAIL_DOMAIN = "UPDATE_EMAIL_DOMAIN"
 
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CREATE_RETURN_PATH"
+    OPERATION_TYPE_CREATE_RETURN_PATH = "CREATE_RETURN_PATH"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DELETE_RETURN_PATH"
+    OPERATION_TYPE_DELETE_RETURN_PATH = "DELETE_RETURN_PATH"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "UPDATE_RETURN_PATH"
+    OPERATION_TYPE_UPDATE_RETURN_PATH = "UPDATE_RETURN_PATH"
+
     #: A constant which can be used with the status property of a WorkRequestSummary.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -86,7 +98,7 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "CREATE_DKIM", "DELETE_DKIM", "MOVE_DKIM", "UPDATE_DKIM", "CREATE_EMAIL_DOMAIN", "DELETE_EMAIL_DOMAIN", "MOVE_EMAIL_DOMAIN", "UPDATE_EMAIL_DOMAIN", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_DKIM", "DELETE_DKIM", "MOVE_DKIM", "UPDATE_DKIM", "CREATE_EMAIL_DOMAIN", "DELETE_EMAIL_DOMAIN", "MOVE_EMAIL_DOMAIN", "UPDATE_EMAIL_DOMAIN", "CREATE_RETURN_PATH", "DELETE_RETURN_PATH", "UPDATE_RETURN_PATH", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -165,7 +177,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the operation_type of this WorkRequestSummary.
         Type of the work request
 
-        Allowed values for this property are: "CREATE_DKIM", "DELETE_DKIM", "MOVE_DKIM", "UPDATE_DKIM", "CREATE_EMAIL_DOMAIN", "DELETE_EMAIL_DOMAIN", "MOVE_EMAIL_DOMAIN", "UPDATE_EMAIL_DOMAIN", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_DKIM", "DELETE_DKIM", "MOVE_DKIM", "UPDATE_DKIM", "CREATE_EMAIL_DOMAIN", "DELETE_EMAIL_DOMAIN", "MOVE_EMAIL_DOMAIN", "UPDATE_EMAIL_DOMAIN", "CREATE_RETURN_PATH", "DELETE_RETURN_PATH", "UPDATE_RETURN_PATH", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -184,7 +196,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["CREATE_DKIM", "DELETE_DKIM", "MOVE_DKIM", "UPDATE_DKIM", "CREATE_EMAIL_DOMAIN", "DELETE_EMAIL_DOMAIN", "MOVE_EMAIL_DOMAIN", "UPDATE_EMAIL_DOMAIN"]
+        allowed_values = ["CREATE_DKIM", "DELETE_DKIM", "MOVE_DKIM", "UPDATE_DKIM", "CREATE_EMAIL_DOMAIN", "DELETE_EMAIL_DOMAIN", "MOVE_EMAIL_DOMAIN", "UPDATE_EMAIL_DOMAIN", "CREATE_RETURN_PATH", "DELETE_RETURN_PATH", "UPDATE_RETURN_PATH"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

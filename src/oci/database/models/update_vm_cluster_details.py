@@ -82,6 +82,10 @@ class UpdateVmClusterDetails(object):
             The value to assign to the data_collection_options property of this UpdateVmClusterDetails.
         :type data_collection_options: oci.database.models.DataCollectionOptions
 
+        :param file_system_configuration_details:
+            The value to assign to the file_system_configuration_details property of this UpdateVmClusterDetails.
+        :type file_system_configuration_details: list[oci.database.models.FileSystemConfigurationDetail]
+
         """
         self.swagger_types = {
             'cpu_core_count': 'int',
@@ -96,7 +100,8 @@ class UpdateVmClusterDetails(object):
             'update_details': 'VmClusterUpdateDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'data_collection_options': 'DataCollectionOptions'
+            'data_collection_options': 'DataCollectionOptions',
+            'file_system_configuration_details': 'list[FileSystemConfigurationDetail]'
         }
 
         self.attribute_map = {
@@ -112,7 +117,8 @@ class UpdateVmClusterDetails(object):
             'update_details': 'updateDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'data_collection_options': 'dataCollectionOptions'
+            'data_collection_options': 'dataCollectionOptions',
+            'file_system_configuration_details': 'fileSystemConfigurationDetails'
         }
 
         self._cpu_core_count = None
@@ -128,6 +134,7 @@ class UpdateVmClusterDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._data_collection_options = None
+        self._file_system_configuration_details = None
 
     @property
     def cpu_core_count(self):
@@ -451,6 +458,30 @@ class UpdateVmClusterDetails(object):
         :type: oci.database.models.DataCollectionOptions
         """
         self._data_collection_options = data_collection_options
+
+    @property
+    def file_system_configuration_details(self):
+        """
+        Gets the file_system_configuration_details of this UpdateVmClusterDetails.
+        Details of the file system configuration of the VM cluster.
+
+
+        :return: The file_system_configuration_details of this UpdateVmClusterDetails.
+        :rtype: list[oci.database.models.FileSystemConfigurationDetail]
+        """
+        return self._file_system_configuration_details
+
+    @file_system_configuration_details.setter
+    def file_system_configuration_details(self, file_system_configuration_details):
+        """
+        Sets the file_system_configuration_details of this UpdateVmClusterDetails.
+        Details of the file system configuration of the VM cluster.
+
+
+        :param file_system_configuration_details: The file_system_configuration_details of this UpdateVmClusterDetails.
+        :type: list[oci.database.models.FileSystemConfigurationDetail]
+        """
+        self._file_system_configuration_details = file_system_configuration_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

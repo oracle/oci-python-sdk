@@ -24,6 +24,8 @@ API Reference
 * :doc:`Application Dependency Management <adm/client/oci.adm.ApplicationDependencyManagementClient>`
 * :doc:`Appmgmt Control <appmgmt_control/client/oci.appmgmt_control.AppmgmtControlClient>`
 * :doc:`Artifacts <artifacts/client/oci.artifacts.ArtifactsClient>`
+* :doc:`Attachment <marketplace_publisher/client/oci.marketplace_publisher.AttachmentClient>`
+* :doc:`Attachment <marketplace_publisher/client/oci.marketplace_publisher.AttachmentClient>`
 * :doc:`Attributes <apm_traces/client/oci.apm_traces.AttributesClient>`
 * :doc:`Audit <audit/client/oci.audit.AuditClient>`
 * :doc:`Auto Scaling <autoscaling/client/oci.autoscaling.AutoScalingClient>`
@@ -149,6 +151,8 @@ API Reference
 * :doc:`Oce Instance <oce/client/oci.oce.OceInstanceClient>`
 * :doc:`Oda <oda/client/oci.oda.OdaClient>`
 * :doc:`Odapackage <oda/client/oci.oda.OdapackageClient>`
+* :doc:`Offer <marketplace_publisher/client/oci.marketplace_publisher.OfferClient>`
+* :doc:`Offer <marketplace_publisher/client/oci.marketplace_publisher.OfferClient>`
 * :doc:`Onboarding <os_management_hub/client/oci.os_management_hub.OnboardingClient>`
 * :doc:`Opa Instance <opa/client/oci.opa.OpaInstanceClient>`
 * :doc:`Opensearch Cluster <opensearch/client/oci.opensearch.OpensearchClusterClient>`
@@ -340,6 +344,7 @@ API Reference
     management_agent
     management_dashboard
     marketplace
+    marketplace_private_offer
     marketplace_publisher
     media_services
     monitoring

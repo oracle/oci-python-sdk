@@ -39,7 +39,7 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "24.04.23"
+    version = "24.05.17"
     oci_compatible_version = "2.125.0"
     thread_lock = threading.Lock()
     collection_ljust = 40
@@ -10156,21 +10156,24 @@ class ShowOCIService(object):
 
                 value = {
                     'id': str(db.id),
-                    'pdb_name': str(db.pdb_name),
-                    'container_database_id': str(db.container_database_id),
-                    'lifecycle_details': str(db.lifecycle_details),
-                    'lifecycle_state': str(db.lifecycle_state),
-                    'compartment_id': str(db.compartment_id),
+                    'pdb_name': self.get_value(db.pdb_name),
+                    'container_database_id': self.get_value(db.container_database_id),
+                    'lifecycle_details': self.get_value(db.lifecycle_details),
+                    'lifecycle_state': self.get_value(db.lifecycle_state),
+                    'compartment_id': self.get_value(db.compartment_id),
                     'connection_strings': "",
-                    'open_mode': str(db.open_mode),
-                    'is_restricted': str(db.is_restricted),
+                    'open_mode': self.get_value(db.open_mode),
+                    'is_restricted': self.get_value(db.is_restricted),
+                    'management_status': self.get_value(db.pluggable_database_management_config.management_status) if db.pluggable_database_management_config else "",
+                    'is_refreshable_clone': self.get_value(db.refreshable_clone_config.is_refreshable_clone) if db.refreshable_clone_config else "",
+                    'time_created': self.get_value(db.time_created, trim_date=True),
                     'defined_tags': [] if db.defined_tags is None else db.defined_tags,
                     'freeform_tags': [] if db.freeform_tags is None else db.freeform_tags
                 }
 
                 if db.connection_strings is not None:
                     if db.connection_strings.pdb_default:
-                        value['connection_strings'] = db.connection_strings.pdb_default
+                        value['connection_strings'] = self.get_value(db.connection_strings.pdb_default)
 
                 data.append(value)
 
@@ -13018,10 +13021,7 @@ class ShowOCIService(object):
                 apic[self.C_API_GATEWAYS] += self.__load_api_gateways(api_gw_client, compartments)
                 apic[self.C_API_DEPLOYMENT] += self.__load_api_deployments(api_deployment_client, compartments)
                 os[self.C_ORM_STACKS] += self.__load_resource_management_stacks(orm, compartments)
-
-                applications = self.__load_functions_applications(function_client, compartments)
-                fn[self.C_FUNCTION_APPLICATIONS] += applications
-                fn[self.C_FUNCTION_FUNCTIONS] += self.__load_functions_functions(function_client, applications)
+                fn[self.C_FUNCTION_APPLICATIONS] += self.__load_functions_applications(function_client, compartments)
 
             ##########################
             # if parallel execution
@@ -13035,17 +13035,12 @@ class ShowOCIService(object):
                     future_ORM_STACKS = executor.submit(self.__load_resource_management_stacks, orm, compartments)
                     future_FUNCTION_APPLICATIONS = executor.submit(self.__load_functions_applications, function_client, compartments)
 
-                    # Wait for application to complete in order to run functions
-                    applications = next(as_completed([future_FUNCTION_APPLICATIONS])).result()
-                    fn[self.C_FUNCTION_APPLICATIONS] += applications
-                    future_FUNCTION_FUNCTIONS = executor.submit(self.__load_functions_functions, function_client, applications)
-
+                    fn[self.C_FUNCTION_APPLICATIONS] += next(as_completed([future_FUNCTION_APPLICATIONS])).result()
                     stream[self.C_STREAMS_STREAMS] += next(as_completed([future_STREAMS_STREAMS])).result()
                     stream[self.C_STREAMS_QUEUES] += next(as_completed([future_STREAMS_QUEUES])).result()
                     apic[self.C_API_GATEWAYS] += next(as_completed([future_API_GATEWAYS])).result()
                     apic[self.C_API_DEPLOYMENT] += next(as_completed([future_API_DEPLOYMENT])).result()
                     os[self.C_ORM_STACKS] += next(as_completed([future_ORM_STACKS])).result()
-                    fn[self.C_FUNCTION_FUNCTIONS] += next(as_completed([future_FUNCTION_FUNCTIONS])).result()
 
             self.__load_print_section_time(section_start_time)
             print('')
@@ -13440,14 +13435,27 @@ class ShowOCIService(object):
 
                 # fns = oci.functions.models.ApplicationSummary
                 for app in apps:
-                    val = {'id': str(app.id), 'display_name': str(app.display_name),
-                           'subnet_ids': app.subnet_ids, 'time_created': str(app.time_created),
-                           'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
-                           'compartment_path': str(compartment['path']),
-                           'functions': [],
-                           'defined_tags': [] if app.defined_tags is None else app.defined_tags,
-                           'freeform_tags': [] if app.freeform_tags is None else app.freeform_tags,
-                           'region_name': str(self.config['region'])}
+                    val = {
+                        'id': self.get_value(app.id),
+                        'display_name': self.get_value(app.display_name),
+                        'lifecycle_state': self.get_value(app.lifecycle_state),
+                        'subnet_ids': app.subnet_ids,
+                        'network_security_group_ids': app.network_security_group_ids,
+                        'network_security_group_names': self.__load_core_network_get_nsg_names(app.network_security_group_ids),
+                        'shape': self.get_value(app.shape),
+                        'trace_config_is_enabled': self.get_value(app.trace_config.is_enabled) if app.trace_config else "",
+                        'trace_config_domain_id': self.get_value(app.trace_config.domain_id) if app.trace_config else "",
+                        'image_policy_is_enabled': self.get_value(app.image_policy_config.is_policy_enabled) if app.image_policy_config else "",
+                        'time_created': self.get_value(app.time_created, trim_date=True),
+                        'time_updated': self.get_value(app.time_updated, trim_date=True),
+                        'compartment_name': str(compartment['name']),
+                        'compartment_id': str(compartment['id']),
+                        'compartment_path': str(compartment['path']),
+                        'functions': self.__load_functions_functions(function_client, app.id),
+                        'defined_tags': [] if app.defined_tags is None else app.defined_tags,
+                        'freeform_tags': [] if app.freeform_tags is None else app.freeform_tags,
+                        'region_name': str(self.config['region'])
+                    }
 
                     # add the data
                     cnt += 1
@@ -13469,77 +13477,51 @@ class ShowOCIService(object):
     ##########################################################################
     # __load_functions_functions
     ##########################################################################
-    def __load_functions_functions(self, function_client, applications):
+    def __load_functions_functions(self, function_client, application_id):
 
         data = []
-        cnt = 0
-        start_time = time.time()
-
         try:
-            errstr = ""
-            header = "Functions"
-            self.__load_print_status_with_threads(header)
+            funs = oci.pagination.list_call_get_all_results(
+                function_client.list_functions,
+                application_id=application_id,
+                sort_by="displayName",
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
 
-            # loop on all applications
-            for app in applications:
-                funs = []
-                try:
-                    funs = oci.pagination.list_call_get_all_results(
-                        function_client.list_functions, application_id=app['id'],
-                        sort_by="displayName",
-                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
-                    ).data
-
-                except oci.exceptions.ServiceError as e:
-                    if self.__check_request_error(e):
-                        return data
-
-                    if self.__check_service_error(e):
-                        self.__load_print_auth_warning(to_print=self.flags.skip_threads)
-                        errstr += "a"
-                        continue
-                    else:
-                        self.__load_print_error(e)
-                        errstr += "e"
-                        continue
-
-                except Exception as e:
-                    self.__load_print_error(e)
-                    errstr += "e"
+            # fns = oci.functions.models.ApplicationSummary
+            for fun in funs:
+                if not self.check_lifecycle_state_active(fun.lifecycle_state):
                     continue
 
-                if self.flags.skip_threads:
-                    print("f", end='')
+                compartment_id = self.get_value(fun.compartment_id)
+                compartment = self.get_compartment_by_id(compartment_id)
 
-                # fns = oci.functions.models.ApplicationSummary
-                for fun in funs:
-                    if not self.check_lifecycle_state_active(fun.lifecycle_state):
-                        continue
+                val = {
+                    'id': self.get_value(fun.id),
+                    'display_name': self.get_value(fun.display_name),
+                    'lifecycle_state': self.get_value(fun.lifecycle_state),
+                    'image': self.get_value(fun.image),
+                    'image_digest': self.get_value(fun.image_digest),
+                    'memory_in_mbs': self.get_value(fun.memory_in_mbs),
+                    'timeout_in_seconds': self.get_value(fun.timeout_in_seconds),
+                    'invoke_endpoint': self.get_value(fun.invoke_endpoint),
+                    'time_created': self.get_value(fun.time_created),
+                    'time_updated': self.get_value(fun.time_updated),
+                    'source_type': self.get_value(fun.source_details.source_type) if fun.source_details else "",
+                    'provisioned_strategy': self.get_value(fun.provisioned_concurrency_config.strategy) if fun.provisioned_concurrency_config else "",
+                    'trace_config_is_enabled': self.get_value(fun.trace_config.is_enabled) if fun.trace_config else "",
+                    'shape': self.get_value(fun.shape),
+                    'compartment_name': str(compartment['name']),
+                    'compartment_id': self.get_value(fun.compartment_id),
+                    'compartment_path': str(compartment['path']),
+                    'defined_tags': [] if fun.defined_tags is None else fun.defined_tags,
+                    'freeform_tags': [] if fun.freeform_tags is None else fun.freeform_tags,
+                    'region_name': str(self.config['region'])
+                }
 
-                    val = {
-                        'id': str(fun.id),
-                        'display_name': str(fun.display_name),
-                        'lifecycle_state': str(fun.lifecycle_state),
-                        'image': str(fun.image),
-                        'image_digest': str(fun.image_digest),
-                        'memory_in_mbs': str(fun.memory_in_mbs),
-                        'timeout_in_seconds': str(fun.timeout_in_seconds),
-                        'invoke_endpoint': str(fun.invoke_endpoint),
-                        'time_created': str(fun.time_created),
-                        'time_updated': str(fun.time_updated),
-                        'compartment_name': str(app['compartment_name']),
-                        'compartment_id': str(fun.compartment_id),
-                        'compartment_path': str(app['compartment_path']),
-                        'defined_tags': [] if fun.defined_tags is None else fun.defined_tags,
-                        'freeform_tags': [] if fun.freeform_tags is None else fun.freeform_tags,
-                        'region_name': str(self.config['region'])}
+                # add the data
+                data.append(val)
 
-                    # add the data
-                    cnt += 1
-                    data.append(val)
-                    app['functions'].append(val)
-
-            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
             return data
 
         except oci.exceptions.RequestException as e:

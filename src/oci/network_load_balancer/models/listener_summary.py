@@ -72,13 +72,18 @@ class ListenerSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type ip_version: str
 
+        :param is_ppv2_enabled:
+            The value to assign to the is_ppv2_enabled property of this ListenerSummary.
+        :type is_ppv2_enabled: bool
+
         """
         self.swagger_types = {
             'name': 'str',
             'default_backend_set_name': 'str',
             'port': 'int',
             'protocol': 'str',
-            'ip_version': 'str'
+            'ip_version': 'str',
+            'is_ppv2_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -86,7 +91,8 @@ class ListenerSummary(object):
             'default_backend_set_name': 'defaultBackendSetName',
             'port': 'port',
             'protocol': 'protocol',
-            'ip_version': 'ipVersion'
+            'ip_version': 'ipVersion',
+            'is_ppv2_enabled': 'isPpv2Enabled'
         }
 
         self._name = None
@@ -94,6 +100,7 @@ class ListenerSummary(object):
         self._port = None
         self._protocol = None
         self._ip_version = None
+        self._is_ppv2_enabled = None
 
     @property
     def name(self):
@@ -248,6 +255,30 @@ class ListenerSummary(object):
         if not value_allowed_none_or_none_sentinel(ip_version, allowed_values):
             ip_version = 'UNKNOWN_ENUM_VALUE'
         self._ip_version = ip_version
+
+    @property
+    def is_ppv2_enabled(self):
+        """
+        Gets the is_ppv2_enabled of this ListenerSummary.
+        Property to enable/disable PPv2 feature for this listener.
+
+
+        :return: The is_ppv2_enabled of this ListenerSummary.
+        :rtype: bool
+        """
+        return self._is_ppv2_enabled
+
+    @is_ppv2_enabled.setter
+    def is_ppv2_enabled(self, is_ppv2_enabled):
+        """
+        Sets the is_ppv2_enabled of this ListenerSummary.
+        Property to enable/disable PPv2 feature for this listener.
+
+
+        :param is_ppv2_enabled: The is_ppv2_enabled of this ListenerSummary.
+        :type: bool
+        """
+        self._is_ppv2_enabled = is_ppv2_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+24.05.17 - 24.05.17
+=====================
+* Added pdb csvs
+* Added function csvs - functions_apps and functions_fns
+
+=====================
 24.04.23 - 24.04.23
 =====================
 * Added flag -iold to extract identity with old APIs

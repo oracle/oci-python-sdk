@@ -66,25 +66,32 @@ class UpdateListenerDetails(object):
             Allowed values for this property are: "IPV4", "IPV6"
         :type ip_version: str
 
+        :param is_ppv2_enabled:
+            The value to assign to the is_ppv2_enabled property of this UpdateListenerDetails.
+        :type is_ppv2_enabled: bool
+
         """
         self.swagger_types = {
             'default_backend_set_name': 'str',
             'port': 'int',
             'protocol': 'str',
-            'ip_version': 'str'
+            'ip_version': 'str',
+            'is_ppv2_enabled': 'bool'
         }
 
         self.attribute_map = {
             'default_backend_set_name': 'defaultBackendSetName',
             'port': 'port',
             'protocol': 'protocol',
-            'ip_version': 'ipVersion'
+            'ip_version': 'ipVersion',
+            'is_ppv2_enabled': 'isPpv2Enabled'
         }
 
         self._default_backend_set_name = None
         self._port = None
         self._protocol = None
         self._ip_version = None
+        self._is_ppv2_enabled = None
 
     @property
     def default_backend_set_name(self):
@@ -213,6 +220,30 @@ class UpdateListenerDetails(object):
                 f"Invalid value for `ip_version`, must be None or one of {allowed_values}"
             )
         self._ip_version = ip_version
+
+    @property
+    def is_ppv2_enabled(self):
+        """
+        Gets the is_ppv2_enabled of this UpdateListenerDetails.
+        Property to enable/disable PPv2 feature for this listener.
+
+
+        :return: The is_ppv2_enabled of this UpdateListenerDetails.
+        :rtype: bool
+        """
+        return self._is_ppv2_enabled
+
+    @is_ppv2_enabled.setter
+    def is_ppv2_enabled(self, is_ppv2_enabled):
+        """
+        Sets the is_ppv2_enabled of this UpdateListenerDetails.
+        Property to enable/disable PPv2 feature for this listener.
+
+
+        :param is_ppv2_enabled: The is_ppv2_enabled of this UpdateListenerDetails.
+        :type: bool
+        """
+        self._is_ppv2_enabled = is_ppv2_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

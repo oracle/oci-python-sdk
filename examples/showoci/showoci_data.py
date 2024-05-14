@@ -20,7 +20,7 @@ import sys
 
 
 class ShowOCIData(object):
-    version = "24.04.23"
+    version = "24.05.17"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -2409,11 +2409,16 @@ class ShowOCIData(object):
             for pdb in pdbs:
                 data.append(
                     {
+                        'id': pdb['id'],
                         'name': pdb['pdb_name'],
                         'desc': pdb['pdb_name'] + " " + pdb['open_mode'],
                         'lifecycle_state': pdb['lifecycle_state'],
                         'open_mode': pdb['open_mode'],
+                        'connection_strings': pdb['connection_strings'],
                         'is_restricted': pdb['is_restricted'],
+                        'management_status': pdb['management_status'],
+                        'is_refreshable_clone': pdb['is_refreshable_clone'],
+                        'time_created': pdb['time_created'],
                         'defined_tags': pdb['defined_tags'],
                         'freeform_tags': pdb['freeform_tags']})
             return data
@@ -4127,24 +4132,33 @@ class ShowOCIData(object):
     ##########################################################################
     def __get_functions_main(self, region_name, compartment):
         try:
-            functions = self.service.search_multi_items(self.service.C_FUNCTION, self.service.C_FUNCTION_APPLICATIONS, 'region_name', region_name, 'compartment_id', compartment['id'])
+            functions_apps = self.service.search_multi_items(self.service.C_FUNCTION, self.service.C_FUNCTION_APPLICATIONS, 'region_name', region_name, 'compartment_id', compartment['id'])
 
             data = []
-            if functions:
-                for fn in functions:
-                    val = {'id': fn['id'],
-                           'display_name': fn['display_name'],
-                           'subnets': [],
-                           'subnet_ids': fn['subnet_ids'],
-                           'time_created': fn['time_created'],
-                           'defined_tags': fn['defined_tags'],
-                           'freeform_tags': fn['freeform_tags'],
-                           'functions': fn['functions'],
-                           'compartment_name': fn['compartment_name'],
-                           'compartment_path': fn['compartment_path'],
-                           'compartment_id': fn['compartment_id'],
-                           'region_name': fn['region_name']
-                           }
+            if functions_apps:
+                for fn in functions_apps:
+                    val = {
+                        'id': fn['id'],
+                        'display_name': fn['display_name'],
+                        'lifecycle_state': fn['lifecycle_state'],
+                        'subnets': [],
+                        'subnet_ids': fn['subnet_ids'],
+                        'network_security_group_ids': fn['network_security_group_ids'],
+                        'network_security_group_names': fn['network_security_group_names'],
+                        'shape': fn['shape'],
+                        'trace_config_is_enabled': fn['trace_config_is_enabled'],
+                        'trace_config_domain_id': fn['trace_config_domain_id'],
+                        'image_policy_is_enabled': fn['image_policy_is_enabled'],
+                        'time_created': fn['time_created'],
+                        'time_updated': fn['time_updated'],
+                        'defined_tags': fn['defined_tags'],
+                        'freeform_tags': fn['freeform_tags'],
+                        'functions': fn['functions'],
+                        'compartment_name': fn['compartment_name'],
+                        'compartment_path': fn['compartment_path'],
+                        'compartment_id': fn['compartment_id'],
+                        'region_name': fn['region_name']
+                    }
 
                     # subnets
                     for sub in fn['subnet_ids']:

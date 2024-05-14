@@ -286,6 +286,10 @@ class ExadataInfrastructure(object):
             The value to assign to the availability_domain property of this ExadataInfrastructure.
         :type availability_domain: str
 
+        :param defined_file_system_configurations:
+            The value to assign to the defined_file_system_configurations property of this ExadataInfrastructure.
+        :type defined_file_system_configurations: list[oci.database.models.DefinedFileSystemConfiguration]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ExadataInfrastructure.
         :type freeform_tags: dict(str, str)
@@ -342,6 +346,7 @@ class ExadataInfrastructure(object):
             'is_cps_offline_report_enabled': 'bool',
             'network_bonding_mode_details': 'NetworkBondingModeDetails',
             'availability_domain': 'str',
+            'defined_file_system_configurations': 'list[DefinedFileSystemConfiguration]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -393,6 +398,7 @@ class ExadataInfrastructure(object):
             'is_cps_offline_report_enabled': 'isCpsOfflineReportEnabled',
             'network_bonding_mode_details': 'networkBondingModeDetails',
             'availability_domain': 'availabilityDomain',
+            'defined_file_system_configurations': 'definedFileSystemConfigurations',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -443,6 +449,7 @@ class ExadataInfrastructure(object):
         self._is_cps_offline_report_enabled = None
         self._network_bonding_mode_details = None
         self._availability_domain = None
+        self._defined_file_system_configurations = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -1587,6 +1594,30 @@ class ExadataInfrastructure(object):
         :type: str
         """
         self._availability_domain = availability_domain
+
+    @property
+    def defined_file_system_configurations(self):
+        """
+        Gets the defined_file_system_configurations of this ExadataInfrastructure.
+        Details of the file system configuration of the Exadata infrastructure.
+
+
+        :return: The defined_file_system_configurations of this ExadataInfrastructure.
+        :rtype: list[oci.database.models.DefinedFileSystemConfiguration]
+        """
+        return self._defined_file_system_configurations
+
+    @defined_file_system_configurations.setter
+    def defined_file_system_configurations(self, defined_file_system_configurations):
+        """
+        Sets the defined_file_system_configurations of this ExadataInfrastructure.
+        Details of the file system configuration of the Exadata infrastructure.
+
+
+        :param defined_file_system_configurations: The defined_file_system_configurations of this ExadataInfrastructure.
+        :type: list[oci.database.models.DefinedFileSystemConfiguration]
+        """
+        self._defined_file_system_configurations = defined_file_system_configurations
 
     @property
     def freeform_tags(self):

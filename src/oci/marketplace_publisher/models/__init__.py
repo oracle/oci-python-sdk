@@ -9,16 +9,22 @@ from __future__ import absolute_import
 from .artifact import Artifact
 from .artifact_collection import ArtifactCollection
 from .artifact_summary import ArtifactSummary
+from .attachment import Attachment
+from .attachment_collection import AttachmentCollection
+from .attachment_summary import AttachmentSummary
+from .buyer_information import BuyerInformation
 from .category import Category
 from .category_collection import CategoryCollection
 from .category_summary import CategorySummary
 from .change_artifact_compartment_details import ChangeArtifactCompartmentDetails
 from .change_listing_compartment_details import ChangeListingCompartmentDetails
 from .change_term_compartment_details import ChangeTermCompartmentDetails
+from .contact import Contact
 from .container_image_artifact import ContainerImageArtifact
 from .container_image_details import ContainerImageDetails
 from .container_package import ContainerPackage
 from .create_artifact_details import CreateArtifactDetails
+from .create_attachment_details import CreateAttachmentDetails
 from .create_container_image_artifact_details import CreateContainerImageArtifactDetails
 from .create_container_image_details import CreateContainerImageDetails
 from .create_helm_chart_image_details import CreateHelmChartImageDetails
@@ -28,11 +34,13 @@ from .create_listing_revision_attachment_details import CreateListingRevisionAtt
 from .create_listing_revision_details import CreateListingRevisionDetails
 from .create_listing_revision_note_details import CreateListingRevisionNoteDetails
 from .create_listing_revision_package_details import CreateListingRevisionPackageDetails
+from .create_offer_details import CreateOfferDetails
 from .create_related_document_attachment_details import CreateRelatedDocumentAttachmentDetails
 from .create_screen_shot_attachment_details import CreateScreenShotAttachmentDetails
 from .create_term_details import CreateTermDetails
 from .create_video_attachment_details import CreateVideoAttachmentDetails
 from .create_video_details import CreateVideoDetails
+from .custom_field import CustomField
 from .helm_chart_image_details import HelmChartImageDetails
 from .helm_chart_package import HelmChartPackage
 from .kubernetes_image_artifact import KubernetesImageArtifact
@@ -57,7 +65,12 @@ from .market import Market
 from .market_collection import MarketCollection
 from .market_summary import MarketSummary
 from .named_link import NamedLink
+from .offer import Offer
+from .offer_collection import OfferCollection
+from .offer_internal_detail import OfferInternalDetail
+from .offer_summary import OfferSummary
 from .opn_membership import OpnMembership
+from .pricing import Pricing
 from .private_offer_account_details import PrivateOfferAccountDetails
 from .product import Product
 from .product_collection import ProductCollection
@@ -67,7 +80,9 @@ from .publisher import Publisher
 from .publisher_collection import PublisherCollection
 from .publisher_summary import PublisherSummary
 from .related_document_attachment import RelatedDocumentAttachment
+from .resource_bundle import ResourceBundle
 from .screen_shot_attachment import ScreenShotAttachment
+from .seller_information import SellerInformation
 from .submit_listing_revision_for_review_details import SubmitListingRevisionForReviewDetails
 from .support_contact import SupportContact
 from .term import Term
@@ -86,6 +101,7 @@ from .update_listing_details import UpdateListingDetails
 from .update_listing_revision_attachment_details import UpdateListingRevisionAttachmentDetails
 from .update_listing_revision_details import UpdateListingRevisionDetails
 from .update_listing_revision_package_details import UpdateListingRevisionPackageDetails
+from .update_offer_details import UpdateOfferDetails
 from .update_related_document_attachment_details import UpdateRelatedDocumentAttachmentDetails
 from .update_screen_shot_attachment_details import UpdateScreenShotAttachmentDetails
 from .update_term_details import UpdateTermDetails
@@ -108,16 +124,22 @@ marketplace_publisher_type_mapping = {
     "Artifact": Artifact,
     "ArtifactCollection": ArtifactCollection,
     "ArtifactSummary": ArtifactSummary,
+    "Attachment": Attachment,
+    "AttachmentCollection": AttachmentCollection,
+    "AttachmentSummary": AttachmentSummary,
+    "BuyerInformation": BuyerInformation,
     "Category": Category,
     "CategoryCollection": CategoryCollection,
     "CategorySummary": CategorySummary,
     "ChangeArtifactCompartmentDetails": ChangeArtifactCompartmentDetails,
     "ChangeListingCompartmentDetails": ChangeListingCompartmentDetails,
     "ChangeTermCompartmentDetails": ChangeTermCompartmentDetails,
+    "Contact": Contact,
     "ContainerImageArtifact": ContainerImageArtifact,
     "ContainerImageDetails": ContainerImageDetails,
     "ContainerPackage": ContainerPackage,
     "CreateArtifactDetails": CreateArtifactDetails,
+    "CreateAttachmentDetails": CreateAttachmentDetails,
     "CreateContainerImageArtifactDetails": CreateContainerImageArtifactDetails,
     "CreateContainerImageDetails": CreateContainerImageDetails,
     "CreateHelmChartImageDetails": CreateHelmChartImageDetails,
@@ -127,11 +149,13 @@ marketplace_publisher_type_mapping = {
     "CreateListingRevisionDetails": CreateListingRevisionDetails,
     "CreateListingRevisionNoteDetails": CreateListingRevisionNoteDetails,
     "CreateListingRevisionPackageDetails": CreateListingRevisionPackageDetails,
+    "CreateOfferDetails": CreateOfferDetails,
     "CreateRelatedDocumentAttachmentDetails": CreateRelatedDocumentAttachmentDetails,
     "CreateScreenShotAttachmentDetails": CreateScreenShotAttachmentDetails,
     "CreateTermDetails": CreateTermDetails,
     "CreateVideoAttachmentDetails": CreateVideoAttachmentDetails,
     "CreateVideoDetails": CreateVideoDetails,
+    "CustomField": CustomField,
     "HelmChartImageDetails": HelmChartImageDetails,
     "HelmChartPackage": HelmChartPackage,
     "KubernetesImageArtifact": KubernetesImageArtifact,
@@ -156,7 +180,12 @@ marketplace_publisher_type_mapping = {
     "MarketCollection": MarketCollection,
     "MarketSummary": MarketSummary,
     "NamedLink": NamedLink,
+    "Offer": Offer,
+    "OfferCollection": OfferCollection,
+    "OfferInternalDetail": OfferInternalDetail,
+    "OfferSummary": OfferSummary,
     "OpnMembership": OpnMembership,
+    "Pricing": Pricing,
     "PrivateOfferAccountDetails": PrivateOfferAccountDetails,
     "Product": Product,
     "ProductCollection": ProductCollection,
@@ -166,7 +195,9 @@ marketplace_publisher_type_mapping = {
     "PublisherCollection": PublisherCollection,
     "PublisherSummary": PublisherSummary,
     "RelatedDocumentAttachment": RelatedDocumentAttachment,
+    "ResourceBundle": ResourceBundle,
     "ScreenShotAttachment": ScreenShotAttachment,
+    "SellerInformation": SellerInformation,
     "SubmitListingRevisionForReviewDetails": SubmitListingRevisionForReviewDetails,
     "SupportContact": SupportContact,
     "Term": Term,
@@ -185,6 +216,7 @@ marketplace_publisher_type_mapping = {
     "UpdateListingRevisionAttachmentDetails": UpdateListingRevisionAttachmentDetails,
     "UpdateListingRevisionDetails": UpdateListingRevisionDetails,
     "UpdateListingRevisionPackageDetails": UpdateListingRevisionPackageDetails,
+    "UpdateOfferDetails": UpdateOfferDetails,
     "UpdateRelatedDocumentAttachmentDetails": UpdateRelatedDocumentAttachmentDetails,
     "UpdateScreenShotAttachmentDetails": UpdateScreenShotAttachmentDetails,
     "UpdateTermDetails": UpdateTermDetails,

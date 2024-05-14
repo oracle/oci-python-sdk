@@ -20,6 +20,10 @@ class UpdateEmailDomainDetails(object):
         Initializes a new UpdateEmailDomainDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param domain_verification_id:
+            The value to assign to the domain_verification_id property of this UpdateEmailDomainDetails.
+        :type domain_verification_id: str
+
         :param description:
             The value to assign to the description property of this UpdateEmailDomainDetails.
         :type description: str
@@ -34,20 +38,47 @@ class UpdateEmailDomainDetails(object):
 
         """
         self.swagger_types = {
+            'domain_verification_id': 'str',
             'description': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
+            'domain_verification_id': 'domainVerificationId',
             'description': 'description',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
+        self._domain_verification_id = None
         self._description = None
         self._freeform_tags = None
         self._defined_tags = None
+
+    @property
+    def domain_verification_id(self):
+        """
+        Gets the domain_verification_id of this UpdateEmailDomainDetails.
+        Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+
+
+        :return: The domain_verification_id of this UpdateEmailDomainDetails.
+        :rtype: str
+        """
+        return self._domain_verification_id
+
+    @domain_verification_id.setter
+    def domain_verification_id(self, domain_verification_id):
+        """
+        Sets the domain_verification_id of this UpdateEmailDomainDetails.
+        Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+
+
+        :param domain_verification_id: The domain_verification_id of this UpdateEmailDomainDetails.
+        :type: str
+        """
+        self._domain_verification_id = domain_verification_id
 
     @property
     def description(self):

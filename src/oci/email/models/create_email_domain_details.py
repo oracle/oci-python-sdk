@@ -28,6 +28,10 @@ class CreateEmailDomainDetails(object):
             The value to assign to the compartment_id property of this CreateEmailDomainDetails.
         :type compartment_id: str
 
+        :param domain_verification_id:
+            The value to assign to the domain_verification_id property of this CreateEmailDomainDetails.
+        :type domain_verification_id: str
+
         :param description:
             The value to assign to the description property of this CreateEmailDomainDetails.
         :type description: str
@@ -44,6 +48,7 @@ class CreateEmailDomainDetails(object):
         self.swagger_types = {
             'name': 'str',
             'compartment_id': 'str',
+            'domain_verification_id': 'str',
             'description': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -52,6 +57,7 @@ class CreateEmailDomainDetails(object):
         self.attribute_map = {
             'name': 'name',
             'compartment_id': 'compartmentId',
+            'domain_verification_id': 'domainVerificationId',
             'description': 'description',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -59,6 +65,7 @@ class CreateEmailDomainDetails(object):
 
         self._name = None
         self._compartment_id = None
+        self._domain_verification_id = None
         self._description = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -128,6 +135,30 @@ class CreateEmailDomainDetails(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def domain_verification_id(self):
+        """
+        Gets the domain_verification_id of this CreateEmailDomainDetails.
+        Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+
+
+        :return: The domain_verification_id of this CreateEmailDomainDetails.
+        :rtype: str
+        """
+        return self._domain_verification_id
+
+    @domain_verification_id.setter
+    def domain_verification_id(self, domain_verification_id):
+        """
+        Sets the domain_verification_id of this CreateEmailDomainDetails.
+        Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+
+
+        :param domain_verification_id: The domain_verification_id of this CreateEmailDomainDetails.
+        :type: str
+        """
+        self._domain_verification_id = domain_verification_id
 
     @property
     def description(self):

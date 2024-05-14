@@ -85,7 +85,7 @@ optional arguments:
   -ds DATE_START     Start Date - format YYYY-MM-DD
   -de DATE_END       End Date - format YYYY-MM-DD, (Not Inclusive)
   -days DAYS         Add Days Combined with Start Date (de is ignored if specified)
-  -report REPORT     Report Type = PRODUCT / DAILY / REGION / SERVICE / RESOURCE / TENANT / SPECIAL / ALL ( Default = ALL )
+  -report REPORT     Report Type = PRODUCT / DAILY / REGION / SERVICE / RESOURCE / TENANT / SPECIAL / COMPARTMENT / ALL ( Default = ALL )
   -csv               Write to CSV files instead of output to the screen - usage_*.csv
 ```
 
@@ -320,5 +320,38 @@ Visual Builder:us-ashburn-1:Visual Builder - OCPU per hour                      
 Visual Builder:us-phoenix-1:Visual Builder - OCPU per hour                       30         120.0            5.6          5.6
 ========================================================================= ========= ============= ============== ============
 Total                                                                                                    1,583.5      1,584.7
+
+#####################################################################################
+#               Compartment Summary for 03/01/2024 - 03/31/2024 in USD              #
+#####################################################################################
+
+Compartment                                                            Service                                      Days      Quantity   OSR Eligible         Cost     Month-31         Year
+====================================================================== ======================================= ========= ============= ============== ============ ============ ============
+tenant_root/Compartment1/compartment1_2                                Block Storage                                  30          49.6            0.2          0.2            2           23
+tenant_root/Compartment1/compartment1_2                                Database                                       30           0.1            0.4          0.4            4           52
+tenant_root/Compartment1/compartment1_2                                Block Storage                                  30         521.4            2.2          2.2           23          272
+tenant_root/Compartment1/compartment1_2                                Compute                                        30       1,226.4            3.6          3.6           37          437
+tenant_root/Compartment1/compartment1_2                                Database                                       30         757.9            2.9          2.9           30          356
+tenant_root/Compartment1/compartment1_2                                File Storage                                   30           0.0            0.0          0.0            0            0
+tenant_root/Compartment1/compartment1_2                                Key Management                                 30           0.2            0.1          0.1            1           16
+tenant_root/Compartment1/compartment1_2                                Key Management - Shard 2                       30           0.4            0.3          0.3            3           31
+tenant_root/Compartment1/compartment1_2                                Object Storage                                 30           0.6            0.0          0.0            0            2
+tenant_root/Compartment1/compartment1_2                                Virtual Cloud Network                          30           0.0            0.0          0.0            0            0
+...
+tenant_root/Compartment2                                               API Gateway                                    30           0.0            0.0          0.0            0            0
+tenant_root/Compartment2                                               Block Storage                                  30       1,023.8            4.2          4.2           43          507
+tenant_root/Compartment2                                               Compute                                        30      14,545.5          312.5        312.5        3,229       38,023
+tenant_root/Compartment2                                               Database                                       30       2,142.9           22.3         22.3          230        2,713
+tenant_root/Compartment2                                               Database Management                            30         144.0            5.8          5.8           60          701
+tenant_root/Compartment2                                               File Storage                                   30           0.0            0.0          0.0            0            0
+tenant_root/Compartment2                                               Full Stack Disaster Recovery Service           30         144.0            1.8          1.8           19          224
+tenant_root/Compartment2                                               Key Management                                 30           0.1            0.1          0.1            1            8
+tenant_root/Compartment2                                               Load Balancer                                  30         792.0            0.9          0.9            9          108
+tenant_root/Compartment2                                               Logging                                        30           3.0            0.1          0.1            2           18
+tenant_root/Compartment2                                               NoSQL Database                                 30           0.3            0.0          0.0            0            0
+tenant_root/Compartment2                                               Object Storage                                 30           3.9            0.1          0.1            1           12
+tenant_root/Compartment2                                               Virtual Cloud Network                          30           1.3            0.0          0.0            0            0
+====================================================================== ======================================= ========= ============= ============== ============ ============ ============
+Total                                                                                                                                         1,379.9      1,381.0       14,271      168,027
 
 ```
