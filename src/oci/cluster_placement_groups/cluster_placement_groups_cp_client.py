@@ -164,7 +164,7 @@ class ClusterPlacementGroupsCPClient(object):
         resource_path = "/clusterPlacementGroups/{clusterPlacementGroupId}/actions/activate"
         method = "POST"
         operation_name = "activate_cluster_placement_group"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/20230801/ClusterPlacementGroup/ActivateClusterPlacementGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -274,7 +274,7 @@ class ClusterPlacementGroupsCPClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/20230801/WorkRequest/CancelWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -394,7 +394,7 @@ class ClusterPlacementGroupsCPClient(object):
         resource_path = "/clusterPlacementGroups/{clusterPlacementGroupId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_cluster_placement_group_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/20230801/ClusterPlacementGroup/ChangeClusterPlacementGroupCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -507,7 +507,7 @@ class ClusterPlacementGroupsCPClient(object):
         resource_path = "/clusterPlacementGroups"
         method = "POST"
         operation_name = "create_cluster_placement_group"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/20230801/ClusterPlacementGroup/CreateClusterPlacementGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -614,7 +614,7 @@ class ClusterPlacementGroupsCPClient(object):
         resource_path = "/clusterPlacementGroups/{clusterPlacementGroupId}/actions/deactivate"
         method = "POST"
         operation_name = "deactivate_cluster_placement_group"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/20230801/ClusterPlacementGroup/DeactivateClusterPlacementGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -724,7 +724,7 @@ class ClusterPlacementGroupsCPClient(object):
         resource_path = "/clusterPlacementGroups/{clusterPlacementGroupId}"
         method = "DELETE"
         operation_name = "delete_cluster_placement_group"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/20230801/ClusterPlacementGroup/DeleteClusterPlacementGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -822,7 +822,7 @@ class ClusterPlacementGroupsCPClient(object):
         resource_path = "/clusterPlacementGroups/{clusterPlacementGroupId}"
         method = "GET"
         operation_name = "get_cluster_placement_group"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/20230801/ClusterPlacementGroup/GetClusterPlacementGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -920,7 +920,7 @@ class ClusterPlacementGroupsCPClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/20230801/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1053,7 +1053,7 @@ class ClusterPlacementGroupsCPClient(object):
         resource_path = "/clusterPlacementGroups"
         method = "GET"
         operation_name = "list_cluster_placement_groups"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/20230801/ClusterPlacementGroupCollection/ListClusterPlacementGroups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1202,7 +1202,7 @@ class ClusterPlacementGroupsCPClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/20230801/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1344,7 +1344,7 @@ class ClusterPlacementGroupsCPClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/20230801/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1499,7 +1499,7 @@ class ClusterPlacementGroupsCPClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/20230801/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1638,7 +1638,7 @@ class ClusterPlacementGroupsCPClient(object):
         resource_path = "/clusterPlacementGroups/{clusterPlacementGroupId}"
         method = "PUT"
         operation_name = "update_cluster_placement_group"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/20230801/ClusterPlacementGroup/UpdateClusterPlacementGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

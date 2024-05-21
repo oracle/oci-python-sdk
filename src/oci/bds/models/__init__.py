@@ -25,6 +25,7 @@ from .auto_scale_policy_metric_rule import AutoScalePolicyMetricRule
 from .auto_scale_policy_rule import AutoScalePolicyRule
 from .auto_scaling_configuration import AutoScalingConfiguration
 from .auto_scaling_configuration_summary import AutoScalingConfigurationSummary
+from .backup_node_details import BackupNodeDetails
 from .batching_based_patching_configs import BatchingBasedPatchingConfigs
 from .bds_api_key import BdsApiKey
 from .bds_api_key_summary import BdsApiKeySummary
@@ -42,7 +43,9 @@ from .cluster_details import ClusterDetails
 from .create_bds_api_key_details import CreateBdsApiKeyDetails
 from .create_bds_instance_details import CreateBdsInstanceDetails
 from .create_bds_metastore_configuration_details import CreateBdsMetastoreConfigurationDetails
+from .create_node_backup_configuration_details import CreateNodeBackupConfigurationDetails
 from .create_node_details import CreateNodeDetails
+from .create_node_replace_configuration_details import CreateNodeReplaceConfigurationDetails
 from .day_based_horizontal_scaling_schedule_details import DayBasedHorizontalScalingScheduleDetails
 from .day_based_vertical_scaling_schedule_details import DayBasedVerticalScalingScheduleDetails
 from .default_error import DefaultError
@@ -56,6 +59,7 @@ from .host_specific_certificate_details import HostSpecificCertificateDetails
 from .install_os_patch_details import InstallOsPatchDetails
 from .install_patch_details import InstallPatchDetails
 from .kerberos_details import KerberosDetails
+from .level_type_details import LevelTypeDetails
 from .metric_based_horizontal_scale_in_config import MetricBasedHorizontalScaleInConfig
 from .metric_based_horizontal_scale_out_config import MetricBasedHorizontalScaleOutConfig
 from .metric_based_horizontal_scaling_policy_details import MetricBasedHorizontalScalingPolicyDetails
@@ -65,6 +69,14 @@ from .metric_based_vertical_scaling_policy_details import MetricBasedVerticalSca
 from .metric_threshold_rule import MetricThresholdRule
 from .network_config import NetworkConfig
 from .node import Node
+from .node_backup import NodeBackup
+from .node_backup_configuration import NodeBackupConfiguration
+from .node_backup_configuration_summary import NodeBackupConfigurationSummary
+from .node_backup_summary import NodeBackupSummary
+from .node_level_details import NodeLevelDetails
+from .node_replace_configuration import NodeReplaceConfiguration
+from .node_replace_configuration_summary import NodeReplaceConfigurationSummary
+from .node_type_level_details import NodeTypeLevelDetails
 from .os_patch_details import OsPatchDetails
 from .os_patch_package_summary import OsPatchPackageSummary
 from .os_patch_summary import OsPatchSummary
@@ -75,7 +87,9 @@ from .remove_auto_scaling_configuration_details import RemoveAutoScalingConfigur
 from .remove_cloud_sql_details import RemoveCloudSqlDetails
 from .remove_kafka_details import RemoveKafkaDetails
 from .remove_node_details import RemoveNodeDetails
+from .remove_node_replace_configuration_details import RemoveNodeReplaceConfigurationDetails
 from .renew_certificate_details import RenewCertificateDetails
+from .replace_node_details import ReplaceNodeDetails
 from .restart_node_details import RestartNodeDetails
 from .schedule_based_horizontal_scaling_policy_details import ScheduleBasedHorizontalScalingPolicyDetails
 from .schedule_based_vertical_scaling_policy_details import ScheduleBasedVerticalScalingPolicyDetails
@@ -92,6 +106,8 @@ from .update_bds_instance_details import UpdateBdsInstanceDetails
 from .update_bds_metastore_configuration_details import UpdateBdsMetastoreConfigurationDetails
 from .update_metric_based_horizontal_scaling_policy_details import UpdateMetricBasedHorizontalScalingPolicyDetails
 from .update_metric_based_vertical_scaling_policy_details import UpdateMetricBasedVerticalScalingPolicyDetails
+from .update_node_backup_configuration_details import UpdateNodeBackupConfigurationDetails
+from .update_node_replace_configuration_details import UpdateNodeReplaceConfigurationDetails
 from .update_schedule_based_horizontal_scaling_policy_details import UpdateScheduleBasedHorizontalScalingPolicyDetails
 from .update_schedule_based_vertical_scaling_policy_details import UpdateScheduleBasedVerticalScalingPolicyDetails
 from .vertical_scaling_schedule_details import VerticalScalingScheduleDetails
@@ -122,6 +138,7 @@ bds_type_mapping = {
     "AutoScalePolicyRule": AutoScalePolicyRule,
     "AutoScalingConfiguration": AutoScalingConfiguration,
     "AutoScalingConfigurationSummary": AutoScalingConfigurationSummary,
+    "BackupNodeDetails": BackupNodeDetails,
     "BatchingBasedPatchingConfigs": BatchingBasedPatchingConfigs,
     "BdsApiKey": BdsApiKey,
     "BdsApiKeySummary": BdsApiKeySummary,
@@ -139,7 +156,9 @@ bds_type_mapping = {
     "CreateBdsApiKeyDetails": CreateBdsApiKeyDetails,
     "CreateBdsInstanceDetails": CreateBdsInstanceDetails,
     "CreateBdsMetastoreConfigurationDetails": CreateBdsMetastoreConfigurationDetails,
+    "CreateNodeBackupConfigurationDetails": CreateNodeBackupConfigurationDetails,
     "CreateNodeDetails": CreateNodeDetails,
+    "CreateNodeReplaceConfigurationDetails": CreateNodeReplaceConfigurationDetails,
     "DayBasedHorizontalScalingScheduleDetails": DayBasedHorizontalScalingScheduleDetails,
     "DayBasedVerticalScalingScheduleDetails": DayBasedVerticalScalingScheduleDetails,
     "DefaultError": DefaultError,
@@ -153,6 +172,7 @@ bds_type_mapping = {
     "InstallOsPatchDetails": InstallOsPatchDetails,
     "InstallPatchDetails": InstallPatchDetails,
     "KerberosDetails": KerberosDetails,
+    "LevelTypeDetails": LevelTypeDetails,
     "MetricBasedHorizontalScaleInConfig": MetricBasedHorizontalScaleInConfig,
     "MetricBasedHorizontalScaleOutConfig": MetricBasedHorizontalScaleOutConfig,
     "MetricBasedHorizontalScalingPolicyDetails": MetricBasedHorizontalScalingPolicyDetails,
@@ -162,6 +182,14 @@ bds_type_mapping = {
     "MetricThresholdRule": MetricThresholdRule,
     "NetworkConfig": NetworkConfig,
     "Node": Node,
+    "NodeBackup": NodeBackup,
+    "NodeBackupConfiguration": NodeBackupConfiguration,
+    "NodeBackupConfigurationSummary": NodeBackupConfigurationSummary,
+    "NodeBackupSummary": NodeBackupSummary,
+    "NodeLevelDetails": NodeLevelDetails,
+    "NodeReplaceConfiguration": NodeReplaceConfiguration,
+    "NodeReplaceConfigurationSummary": NodeReplaceConfigurationSummary,
+    "NodeTypeLevelDetails": NodeTypeLevelDetails,
     "OsPatchDetails": OsPatchDetails,
     "OsPatchPackageSummary": OsPatchPackageSummary,
     "OsPatchSummary": OsPatchSummary,
@@ -172,7 +200,9 @@ bds_type_mapping = {
     "RemoveCloudSqlDetails": RemoveCloudSqlDetails,
     "RemoveKafkaDetails": RemoveKafkaDetails,
     "RemoveNodeDetails": RemoveNodeDetails,
+    "RemoveNodeReplaceConfigurationDetails": RemoveNodeReplaceConfigurationDetails,
     "RenewCertificateDetails": RenewCertificateDetails,
+    "ReplaceNodeDetails": ReplaceNodeDetails,
     "RestartNodeDetails": RestartNodeDetails,
     "ScheduleBasedHorizontalScalingPolicyDetails": ScheduleBasedHorizontalScalingPolicyDetails,
     "ScheduleBasedVerticalScalingPolicyDetails": ScheduleBasedVerticalScalingPolicyDetails,
@@ -189,6 +219,8 @@ bds_type_mapping = {
     "UpdateBdsMetastoreConfigurationDetails": UpdateBdsMetastoreConfigurationDetails,
     "UpdateMetricBasedHorizontalScalingPolicyDetails": UpdateMetricBasedHorizontalScalingPolicyDetails,
     "UpdateMetricBasedVerticalScalingPolicyDetails": UpdateMetricBasedVerticalScalingPolicyDetails,
+    "UpdateNodeBackupConfigurationDetails": UpdateNodeBackupConfigurationDetails,
+    "UpdateNodeReplaceConfigurationDetails": UpdateNodeReplaceConfigurationDetails,
     "UpdateScheduleBasedHorizontalScalingPolicyDetails": UpdateScheduleBasedHorizontalScalingPolicyDetails,
     "UpdateScheduleBasedVerticalScalingPolicyDetails": UpdateScheduleBasedVerticalScalingPolicyDetails,
     "VerticalScalingScheduleDetails": VerticalScalingScheduleDetails,

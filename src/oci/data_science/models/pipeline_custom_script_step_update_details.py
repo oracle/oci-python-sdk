@@ -23,7 +23,7 @@ class PipelineCustomScriptStepUpdateDetails(PipelineStepUpdateDetails):
 
         :param step_type:
             The value to assign to the step_type property of this PipelineCustomScriptStepUpdateDetails.
-            Allowed values for this property are: "ML_JOB", "CUSTOM_SCRIPT"
+            Allowed values for this property are: "ML_JOB", "CUSTOM_SCRIPT", "CONTAINER"
         :type step_type: str
 
         :param step_name:
@@ -38,26 +38,53 @@ class PipelineCustomScriptStepUpdateDetails(PipelineStepUpdateDetails):
             The value to assign to the step_configuration_details property of this PipelineCustomScriptStepUpdateDetails.
         :type step_configuration_details: oci.data_science.models.PipelineStepConfigurationDetails
 
+        :param step_infrastructure_configuration_details:
+            The value to assign to the step_infrastructure_configuration_details property of this PipelineCustomScriptStepUpdateDetails.
+        :type step_infrastructure_configuration_details: oci.data_science.models.PipelineInfrastructureConfigurationDetails
+
         """
         self.swagger_types = {
             'step_type': 'str',
             'step_name': 'str',
             'description': 'str',
-            'step_configuration_details': 'PipelineStepConfigurationDetails'
+            'step_configuration_details': 'PipelineStepConfigurationDetails',
+            'step_infrastructure_configuration_details': 'PipelineInfrastructureConfigurationDetails'
         }
 
         self.attribute_map = {
             'step_type': 'stepType',
             'step_name': 'stepName',
             'description': 'description',
-            'step_configuration_details': 'stepConfigurationDetails'
+            'step_configuration_details': 'stepConfigurationDetails',
+            'step_infrastructure_configuration_details': 'stepInfrastructureConfigurationDetails'
         }
 
         self._step_type = None
         self._step_name = None
         self._description = None
         self._step_configuration_details = None
+        self._step_infrastructure_configuration_details = None
         self._step_type = 'CUSTOM_SCRIPT'
+
+    @property
+    def step_infrastructure_configuration_details(self):
+        """
+        Gets the step_infrastructure_configuration_details of this PipelineCustomScriptStepUpdateDetails.
+
+        :return: The step_infrastructure_configuration_details of this PipelineCustomScriptStepUpdateDetails.
+        :rtype: oci.data_science.models.PipelineInfrastructureConfigurationDetails
+        """
+        return self._step_infrastructure_configuration_details
+
+    @step_infrastructure_configuration_details.setter
+    def step_infrastructure_configuration_details(self, step_infrastructure_configuration_details):
+        """
+        Sets the step_infrastructure_configuration_details of this PipelineCustomScriptStepUpdateDetails.
+
+        :param step_infrastructure_configuration_details: The step_infrastructure_configuration_details of this PipelineCustomScriptStepUpdateDetails.
+        :type: oci.data_science.models.PipelineInfrastructureConfigurationDetails
+        """
+        self._step_infrastructure_configuration_details = step_infrastructure_configuration_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -23,7 +23,7 @@ class PipelineCustomScriptStepRun(PipelineStepRun):
 
         :param step_type:
             The value to assign to the step_type property of this PipelineCustomScriptStepRun.
-            Allowed values for this property are: "ML_JOB", "CUSTOM_SCRIPT"
+            Allowed values for this property are: "ML_JOB", "CUSTOM_SCRIPT", "CONTAINER"
         :type step_type: str
 
         :param time_started:

@@ -32,6 +32,10 @@ class UpdatePipelineDetails(object):
             The value to assign to the configuration_details property of this UpdatePipelineDetails.
         :type configuration_details: oci.data_science.models.PipelineConfigurationDetails
 
+        :param infrastructure_configuration_details:
+            The value to assign to the infrastructure_configuration_details property of this UpdatePipelineDetails.
+        :type infrastructure_configuration_details: oci.data_science.models.PipelineInfrastructureConfigurationDetails
+
         :param log_configuration_details:
             The value to assign to the log_configuration_details property of this UpdatePipelineDetails.
         :type log_configuration_details: oci.data_science.models.PipelineLogConfigurationDetails
@@ -53,6 +57,7 @@ class UpdatePipelineDetails(object):
             'display_name': 'str',
             'description': 'str',
             'configuration_details': 'PipelineConfigurationDetails',
+            'infrastructure_configuration_details': 'PipelineInfrastructureConfigurationDetails',
             'log_configuration_details': 'PipelineLogConfigurationDetails',
             'step_details': 'list[PipelineStepUpdateDetails]',
             'freeform_tags': 'dict(str, str)',
@@ -63,6 +68,7 @@ class UpdatePipelineDetails(object):
             'display_name': 'displayName',
             'description': 'description',
             'configuration_details': 'configurationDetails',
+            'infrastructure_configuration_details': 'infrastructureConfigurationDetails',
             'log_configuration_details': 'logConfigurationDetails',
             'step_details': 'stepDetails',
             'freeform_tags': 'freeformTags',
@@ -72,6 +78,7 @@ class UpdatePipelineDetails(object):
         self._display_name = None
         self._description = None
         self._configuration_details = None
+        self._infrastructure_configuration_details = None
         self._log_configuration_details = None
         self._step_details = None
         self._freeform_tags = None
@@ -146,6 +153,26 @@ class UpdatePipelineDetails(object):
         self._configuration_details = configuration_details
 
     @property
+    def infrastructure_configuration_details(self):
+        """
+        Gets the infrastructure_configuration_details of this UpdatePipelineDetails.
+
+        :return: The infrastructure_configuration_details of this UpdatePipelineDetails.
+        :rtype: oci.data_science.models.PipelineInfrastructureConfigurationDetails
+        """
+        return self._infrastructure_configuration_details
+
+    @infrastructure_configuration_details.setter
+    def infrastructure_configuration_details(self, infrastructure_configuration_details):
+        """
+        Sets the infrastructure_configuration_details of this UpdatePipelineDetails.
+
+        :param infrastructure_configuration_details: The infrastructure_configuration_details of this UpdatePipelineDetails.
+        :type: oci.data_science.models.PipelineInfrastructureConfigurationDetails
+        """
+        self._infrastructure_configuration_details = infrastructure_configuration_details
+
+    @property
     def log_configuration_details(self):
         """
         Gets the log_configuration_details of this UpdatePipelineDetails.
@@ -169,7 +196,7 @@ class UpdatePipelineDetails(object):
     def step_details(self):
         """
         Gets the step_details of this UpdatePipelineDetails.
-        Array of update details for each step. Only step configurations are allowed to be updated.
+        Array of update details for each step. Only step configurations and step infrastructure configurations are allowed to be updated.
 
 
         :return: The step_details of this UpdatePipelineDetails.
@@ -181,7 +208,7 @@ class UpdatePipelineDetails(object):
     def step_details(self, step_details):
         """
         Sets the step_details of this UpdatePipelineDetails.
-        Array of update details for each step. Only step configurations are allowed to be updated.
+        Array of update details for each step. Only step configurations and step infrastructure configurations are allowed to be updated.
 
 
         :param step_details: The step_details of this UpdatePipelineDetails.

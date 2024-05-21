@@ -39,7 +39,7 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "24.05.17"
+    version = "24.05.24"
     oci_compatible_version = "2.125.0"
     thread_lock = threading.Lock()
     collection_ljust = 40
@@ -298,6 +298,10 @@ class ShowOCIService(object):
     EXCLUDE_KMS = "KMS"
     EXCLUDE_GENAI = 'GENAI'
     EXCLUDE_DATASAFE = 'DATASAFE'
+    EXCLUDE_NOSQL = 'NOSQL'
+    EXCLUDE_MYSQL = 'MYSQL'
+    EXCLUDE_POSTGRESQL = 'POSTGRESQL'
+    EXCLUDE_GOLDENGATE = 'GOLDENGATE'
 
     ##########################################################################
     # Service not yet available - need to remove on availability
@@ -8533,11 +8537,11 @@ class ShowOCIService(object):
 
             database_client = self.__create_client(oci.database.DatabaseClient)
             virtual_network = self.__create_client(oci.core.VirtualNetworkClient)
-            nosql_client = self.__create_client(oci.nosql.NosqlClient)
-            mysql_client = self.__create_client(oci.mysql.DbSystemClient)
-            mysql_backup_client = self.__create_client(oci.mysql.DbBackupsClient)
-            postgresql_client = self.__create_client(oci.psql.PostgresqlClient)
-            gg_client = self.__create_client(oci.golden_gate.GoldenGateClient)
+            nosql_client = self.__create_client(oci.nosql.NosqlClient, key=self.EXCLUDE_NOSQL)
+            mysql_client = self.__create_client(oci.mysql.DbSystemClient, key=self.EXCLUDE_MYSQL)
+            mysql_backup_client = self.__create_client(oci.mysql.DbBackupsClient, key=self.EXCLUDE_MYSQL)
+            postgresql_client = self.__create_client(oci.psql.PostgresqlClient, key=self.EXCLUDE_POSTGRESQL)
+            gg_client = self.__create_client(oci.golden_gate.GoldenGateClient, key=self.EXCLUDE_GOLDENGATE)
             datasafe_client = self.__create_client(oci.data_safe.DataSafeClient, key=self.EXCLUDE_DATASAFE)
 
             # reference to compartments
@@ -11163,6 +11167,10 @@ class ShowOCIService(object):
             header = "NOSQL Databases"
             self.__load_print_status_with_threads(header)
 
+            if not nosql_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
             # loop on all compartments
             for compartment in compartments:
 
@@ -11257,6 +11265,10 @@ class ShowOCIService(object):
             errstr = ""
             header = "MYSQL Databases"
             self.__load_print_status_with_threads(header)
+
+            if not mysql_client:
+                self.__load_print_thread_exclude(header)
+                return data
 
             # loop on all compartments
             for compartment in compartments:
@@ -11427,6 +11439,10 @@ class ShowOCIService(object):
 
             self.__load_print_status_with_threads(header)
 
+            if not mysql_backup_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
             # loop on all compartments
             for compartment in compartments:
 
@@ -11523,6 +11539,10 @@ class ShowOCIService(object):
             errstr = ""
             header = "PostgreSQL Databases"
             self.__load_print_status_with_threads(header)
+
+            if not postgresql_client:
+                self.__load_print_thread_exclude(header)
+                return data
 
             # loop on all compartments
             for compartment in compartments:
@@ -11692,6 +11712,10 @@ class ShowOCIService(object):
                 return data
 
             self.__load_print_status_with_threads(header)
+
+            if not postgresql_client:
+                self.__load_print_thread_exclude(header)
+                return data
 
             # loop on all compartments
             for compartment in compartments:
@@ -11875,6 +11899,10 @@ class ShowOCIService(object):
             header = "Golden Gate Deployments"
             self.__load_print_status_with_threads(header)
 
+            if not gg_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
             # loop on all compartments
             for compartment in compartments:
 
@@ -11970,6 +11998,10 @@ class ShowOCIService(object):
             errstr = ""
             header = "Golden Gate DB Reg."
             self.__load_print_status_with_threads(header)
+
+            if not gg_client:
+                self.__load_print_thread_exclude(header)
+                return data
 
             # loop on all compartments
             for compartment in compartments:
@@ -18832,6 +18864,7 @@ class ShowOCIFlags(object):
     skip_dbhomes = False
     excludelist = False
     exclude = []
+    iam_domain_name_filter = []
     connection_timeout = 20
     read_timeout = 150
     read_announcement_days = 30
@@ -18933,6 +18966,7 @@ class ShowOCIDomains(object):
     skip_threads = False
     thread_lock = threading.Lock()
     collection_ljust = 40
+    iam_domain_name_filter = []
 
     ##########################################################################
     # init class
@@ -18944,6 +18978,7 @@ class ShowOCIDomains(object):
         self.config = config
         self.signer = signer
         self.read_timeout = flags.read_timeout
+        self.iam_domain_name_filter = flags.iam_domain_name_filter
         self.connection_timeout = flags.connection_timeout
         self.skip_identity_user_credential = flags.skip_identity_user_credential
         self.proxy = flags.proxy
@@ -19377,6 +19412,31 @@ class ShowOCIDomains(object):
                 list_func_kwargs['start_index'] = next_index
             else:
                 keep_paginating = False
+
+    ##################################################################################
+    # load_identity_users_to_group_members
+    ##################################################################################
+    def __load_identity_users_to_group_members(self, domain_users, domain_groups):
+        try:
+
+            # loop on all groups:
+            for grp in domain_groups:
+                group_ocid = grp['ocid']
+
+                # loop on users to match group by ocid
+                for user in domain_users:
+                    for member_group in user['groups']:
+                        if member_group['ocid'] == group_ocid:
+                            val = {
+                                'date_added': member_group['date_added'],
+                                'ocid': user['ocid'],
+                                'membership_ocid': member_group['membership_ocid'],
+                                'name': user['user_name']
+                            }
+                            grp['members'].append(val)
+
+        except Exception as e:
+            self.__print_error(e)
 
     ##################################################################################
     # load_identity_domain_users
@@ -19828,9 +19888,12 @@ class ShowOCIDomains(object):
         start_time = time.time()
 
         try:
+            # Change to default attribute-set to remove the members
+            # this to avoid error when there are over 10,000 members
+            # compile members based on users info
             groups = self.__list_call_get_all_results(
                 identity_domain_client.list_groups,
-                attribute_sets=["all"],
+                attribute_sets=["default"],
                 sort_by="DisplayName",
                 count=500,
                 retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
@@ -19865,16 +19928,7 @@ class ShowOCIDomains(object):
                     'tags': [{'key': x.key, 'value': x.value} for x in var.tags] if var.tags else [],
                     'freeform_tags': self.__get_tags(var.urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags, False),
                     'defined_tags': self.__get_tags(var.urn_ietf_params_scim_schemas_oracle_idcs_extension_oci_tags, True),
-                    'members': [{
-                        'value': self.get_value(x.value),
-                        'date_added': self.get_date(x.date_added),
-                        'ocid': self.get_value(x.ocid),
-                        'membership_ocid': self.get_value(x.membership_ocid),
-                        'ref': self.get_value(x.ref),
-                        'display': self.get_value(x.display),
-                        'type': self.get_value(x.type),
-                        'name': self.get_value(x.name)
-                    } for x in var.members] if var.members else [],
+                    'members': [],
                     'ext_group': {
                         'description': self.get_value(ext_group.description) if ext_group else "",
                         'creation_mechanism': self.get_value(ext_group.creation_mechanism) if ext_group else "",
@@ -20440,7 +20494,10 @@ class ShowOCIDomains(object):
     def load_identity_domains_main(self, compartments):
         compartment = {}
         try:
-            print("Identity Domains...")
+            if self.iam_domain_name_filter:
+                print("Identity Domains... Filtered...")
+            else:
+                print("Identity Domains...")
 
             # create identity object
             identity_client = oci.identity.IdentityClient(
@@ -20473,6 +20530,10 @@ class ShowOCIDomains(object):
 
                 # oci.identity.models.DomainSummary
                 for domain in list_domains:
+
+                    if self.iam_domain_name_filter:
+                        if self.get_value(domain.display_name) not in self.iam_domain_name_filter:
+                            continue
 
                     domain_data = {
                         'id': self.get_value(domain.id),
@@ -20550,6 +20611,7 @@ class ShowOCIDomains(object):
                                 domain_data['authentication_factor_settings'] = next(as_completed([future_authentication_factor_settings])).result()
                                 domain_data['password_policies'] = next(as_completed([future_password_policies])).result()
 
+                    self.__load_identity_users_to_group_members(domain_data['users'], domain_data['groups'])
                     self.data.append(domain_data)
 
             print('')

@@ -23,7 +23,7 @@ class PipelineCustomScriptStepDetails(PipelineStepDetails):
 
         :param step_type:
             The value to assign to the step_type property of this PipelineCustomScriptStepDetails.
-            Allowed values for this property are: "ML_JOB", "CUSTOM_SCRIPT"
+            Allowed values for this property are: "ML_JOB", "CUSTOM_SCRIPT", "CONTAINER"
         :type step_type: str
 
         :param step_name:

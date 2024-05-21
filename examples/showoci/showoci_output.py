@@ -22,7 +22,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "24.05.17"
+    version = "24.05.24"
 
     ##########################################################################
     # spaces for align
@@ -4922,6 +4922,8 @@ class ShowOCICSV(object):
     def __csv_identity_domains_groups(self, groups, domain_name, domain_id):
         try:
             for var in groups:
+                members = "Over 200 members" if len(var['members']) > 200 else str(','.join(x['name'] for x in var['members']))
+                members_ids = "Over 200 members" if len(var['members']) > 200 else str(','.join(x['ocid'] for x in var['members']))
                 data = {
                     'domain_id': domain_id,
                     'domain_name': domain_name,
@@ -4944,8 +4946,8 @@ class ShowOCICSV(object):
                     'tags': str(','.join(x['key'] + "=" + x['value'] for x in var['tags'])),
                     'freeform_tags': self.__get_freeform_tags(var['freeform_tags']),
                     'defined_tags': self.__get_defined_tags(var['defined_tags']),
-                    'members': str(','.join(x['name'] for x in var['members'])),
-                    'members_ids': str(','.join(x['ocid'] for x in var['members'])),
+                    'members': members,
+                    'members_ids': members_ids,
                     'description': var['ext_group']['description'],
                     'creation_mechanism': var['ext_group']['creation_mechanism'],
                     'password_policy': var['ext_group']['password_policy'],
@@ -6475,8 +6477,6 @@ class ShowOCICSV(object):
                         'cluster_count': len(dbs['vm_clusters']),
                         'cluster_names': str(', '.join(x['display_name'] for x in dbs['vm_clusters'])),
                         'time_created': dbs['time_created'],
-                        'kms_key_id': dbs['kms_key_id'],
-                        'vault_id': dbs['vault_id'],
                         'freeform_tags': self.__get_freeform_tags(dbs['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(dbs['defined_tags']),
                         'maintenance_window': dbs['maintenance_window']['display'] if dbs['maintenance_window'] else "",
@@ -6592,7 +6592,7 @@ class ShowOCICSV(object):
                             for pdb in db['pdbs']:
                                 data = {
                                     'region_name': region_name,
-                                    'availability_domain': dbs['availability_domain'],
+                                    'availability_domain': 'ExaCC',
                                     'compartment_name': dbs['compartment_name'],
                                     'compartment_path': dbs['compartment_path'],
                                     'name': pdb['name'],
