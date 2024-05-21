@@ -566,6 +566,9 @@ class DataScienceClient(object):
             The resource is updated or deleted only if the `etag` you
             provide matches the resource's current `etag` value.
 
+        :param bool terminate_gracefully: (optional)
+            A boolean value to specify whether to terminate pipeline run gracefully.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -597,7 +600,8 @@ class DataScienceClient(object):
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token",
-            "if_match"
+            "if_match",
+            "terminate_gracefully"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -613,6 +617,11 @@ class DataScienceClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "terminateGracefully": kwargs.get("terminate_gracefully", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -640,6 +649,7 @@ class DataScienceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -650,6 +660,7 @@ class DataScienceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -2247,6 +2258,9 @@ class DataScienceClient(object):
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
 
+        :param str opc_parent_rpt_url: (optional)
+            URL to fetch the Resource Principal Token from the parent resource.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2277,7 +2291,8 @@ class DataScienceClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "opc_parent_rpt_url"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2288,7 +2303,8 @@ class DataScienceClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-parent-rpt-url": kwargs.get("opc_parent_rpt_url", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -2599,6 +2615,9 @@ class DataScienceClient(object):
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
 
+        :param str opc_parent_rpt_url: (optional)
+            URL to fetch the Resource Principal Token from the parent resource.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2629,7 +2648,8 @@ class DataScienceClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "opc_parent_rpt_url"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2640,7 +2660,8 @@ class DataScienceClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-parent-rpt-url": kwargs.get("opc_parent_rpt_url", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -3086,6 +3107,9 @@ class DataScienceClient(object):
         :param str opc_request_id: (optional)
             Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
 
+        :param str opc_parent_rpt_url: (optional)
+            URL to fetch the Resource Principal Token from the parent resource.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -3116,7 +3140,8 @@ class DataScienceClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_parent_rpt_url"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -3127,7 +3152,8 @@ class DataScienceClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-retry-token": kwargs.get("opc_retry_token", missing),
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-parent-rpt-url": kwargs.get("opc_parent_rpt_url", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 

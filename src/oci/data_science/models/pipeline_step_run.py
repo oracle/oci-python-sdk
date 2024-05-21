@@ -23,6 +23,10 @@ class PipelineStepRun(object):
     #: This constant has a value of "CUSTOM_SCRIPT"
     STEP_TYPE_CUSTOM_SCRIPT = "CUSTOM_SCRIPT"
 
+    #: A constant which can be used with the step_type property of a PipelineStepRun.
+    #: This constant has a value of "CONTAINER"
+    STEP_TYPE_CONTAINER = "CONTAINER"
+
     #: A constant which can be used with the lifecycle_state property of a PipelineStepRun.
     #: This constant has a value of "WAITING"
     LIFECYCLE_STATE_WAITING = "WAITING"
@@ -64,6 +68,7 @@ class PipelineStepRun(object):
         Initializes a new PipelineStepRun object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.data_science.models.PipelineContainerStepRun`
         * :class:`~oci.data_science.models.PipelineCustomScriptStepRun`
         * :class:`~oci.data_science.models.PipelineMLJobStepRun`
 
@@ -71,7 +76,7 @@ class PipelineStepRun(object):
 
         :param step_type:
             The value to assign to the step_type property of this PipelineStepRun.
-            Allowed values for this property are: "ML_JOB", "CUSTOM_SCRIPT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ML_JOB", "CUSTOM_SCRIPT", "CONTAINER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type step_type: str
 
@@ -131,6 +136,9 @@ class PipelineStepRun(object):
         """
         type = object_dictionary['stepType']
 
+        if type == 'CONTAINER':
+            return 'PipelineContainerStepRun'
+
         if type == 'CUSTOM_SCRIPT':
             return 'PipelineCustomScriptStepRun'
 
@@ -145,7 +153,7 @@ class PipelineStepRun(object):
         **[Required]** Gets the step_type of this PipelineStepRun.
         The type of step.
 
-        Allowed values for this property are: "ML_JOB", "CUSTOM_SCRIPT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ML_JOB", "CUSTOM_SCRIPT", "CONTAINER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -164,7 +172,7 @@ class PipelineStepRun(object):
         :param step_type: The step_type of this PipelineStepRun.
         :type: str
         """
-        allowed_values = ["ML_JOB", "CUSTOM_SCRIPT"]
+        allowed_values = ["ML_JOB", "CUSTOM_SCRIPT", "CONTAINER"]
         if not value_allowed_none_or_none_sentinel(step_type, allowed_values):
             step_type = 'UNKNOWN_ENUM_VALUE'
         self._step_type = step_type

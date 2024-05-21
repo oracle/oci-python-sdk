@@ -190,6 +190,7 @@ API Reference
 * :doc:`Rover Cluster <rover/client/oci.rover.RoverClusterClient>`
 * :doc:`Rover Entitlement <rover/client/oci.rover.RoverEntitlementClient>`
 * :doc:`Rover Node <rover/client/oci.rover.RoverNodeClient>`
+* :doc:`Schedule <resource_scheduler/client/oci.resource_scheduler.ScheduleClient>`
 * :doc:`Scheduled Job <os_management_hub/client/oci.os_management_hub.ScheduledJobClient>`
 * :doc:`Sddc <ocvp/client/oci.ocvp.SddcClient>`
 * :doc:`Secrets <secrets/client/oci.secrets.SecretsClient>`
@@ -376,6 +377,7 @@ API Reference
     recovery
     redis
     resource_manager
+    resource_scheduler
     resource_search
     rover
     sch

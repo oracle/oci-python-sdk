@@ -23,11 +23,16 @@ class PipelineStepDetails(object):
     #: This constant has a value of "CUSTOM_SCRIPT"
     STEP_TYPE_CUSTOM_SCRIPT = "CUSTOM_SCRIPT"
 
+    #: A constant which can be used with the step_type property of a PipelineStepDetails.
+    #: This constant has a value of "CONTAINER"
+    STEP_TYPE_CONTAINER = "CONTAINER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PipelineStepDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.data_science.models.PipelineContainerStepDetails`
         * :class:`~oci.data_science.models.PipelineMLJobStepDetails`
         * :class:`~oci.data_science.models.PipelineCustomScriptStepDetails`
 
@@ -35,7 +40,7 @@ class PipelineStepDetails(object):
 
         :param step_type:
             The value to assign to the step_type property of this PipelineStepDetails.
-            Allowed values for this property are: "ML_JOB", "CUSTOM_SCRIPT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ML_JOB", "CUSTOM_SCRIPT", "CONTAINER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type step_type: str
 
@@ -86,6 +91,9 @@ class PipelineStepDetails(object):
         """
         type = object_dictionary['stepType']
 
+        if type == 'CONTAINER':
+            return 'PipelineContainerStepDetails'
+
         if type == 'ML_JOB':
             return 'PipelineMLJobStepDetails'
 
@@ -100,7 +108,7 @@ class PipelineStepDetails(object):
         **[Required]** Gets the step_type of this PipelineStepDetails.
         The type of step.
 
-        Allowed values for this property are: "ML_JOB", "CUSTOM_SCRIPT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ML_JOB", "CUSTOM_SCRIPT", "CONTAINER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -119,7 +127,7 @@ class PipelineStepDetails(object):
         :param step_type: The step_type of this PipelineStepDetails.
         :type: str
         """
-        allowed_values = ["ML_JOB", "CUSTOM_SCRIPT"]
+        allowed_values = ["ML_JOB", "CUSTOM_SCRIPT", "CONTAINER"]
         if not value_allowed_none_or_none_sentinel(step_type, allowed_values):
             step_type = 'UNKNOWN_ENUM_VALUE'
         self._step_type = step_type

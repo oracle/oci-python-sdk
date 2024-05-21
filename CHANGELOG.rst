@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.126.4 - 2024-05-21
+====================
+
+Added
+-----
+* Support for the Resource Scheduler service
+* Support for Bring Your Own Container (BYOC), custom networking and graceful termination of pipelines in the Data Science service
+* Support for backup and replacement of master, utility, and edge nodes in the Big Data service
+* Support for nested resource principal in the Data Science service
+ 
+====================
 2.126.3 - 2024-05-14
 ====================
 

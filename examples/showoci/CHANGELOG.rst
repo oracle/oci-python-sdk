@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+24.05.24 - 24.05.24
+=====================
+* IAM Domains - Change way members fetched for groups to avoid limit of 10,000 members in one call
+* Added option to filter IAM Domain name using ifilter, allowed comma seperated
+* Fix ExaCC CSV Extract bug
+
+=====================
 24.05.17 - 24.05.17
 =====================
 * Added pdb csvs

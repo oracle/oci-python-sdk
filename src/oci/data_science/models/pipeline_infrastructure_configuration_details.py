@@ -28,6 +28,10 @@ class PipelineInfrastructureConfigurationDetails(object):
             The value to assign to the block_storage_size_in_gbs property of this PipelineInfrastructureConfigurationDetails.
         :type block_storage_size_in_gbs: int
 
+        :param subnet_id:
+            The value to assign to the subnet_id property of this PipelineInfrastructureConfigurationDetails.
+        :type subnet_id: str
+
         :param shape_config_details:
             The value to assign to the shape_config_details property of this PipelineInfrastructureConfigurationDetails.
         :type shape_config_details: oci.data_science.models.PipelineShapeConfigDetails
@@ -36,17 +40,20 @@ class PipelineInfrastructureConfigurationDetails(object):
         self.swagger_types = {
             'shape_name': 'str',
             'block_storage_size_in_gbs': 'int',
+            'subnet_id': 'str',
             'shape_config_details': 'PipelineShapeConfigDetails'
         }
 
         self.attribute_map = {
             'shape_name': 'shapeName',
             'block_storage_size_in_gbs': 'blockStorageSizeInGBs',
+            'subnet_id': 'subnetId',
             'shape_config_details': 'shapeConfigDetails'
         }
 
         self._shape_name = None
         self._block_storage_size_in_gbs = None
+        self._subnet_id = None
         self._shape_config_details = None
 
     @property
@@ -96,6 +103,30 @@ class PipelineInfrastructureConfigurationDetails(object):
         :type: int
         """
         self._block_storage_size_in_gbs = block_storage_size_in_gbs
+
+    @property
+    def subnet_id(self):
+        """
+        Gets the subnet_id of this PipelineInfrastructureConfigurationDetails.
+        The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+
+
+        :return: The subnet_id of this PipelineInfrastructureConfigurationDetails.
+        :rtype: str
+        """
+        return self._subnet_id
+
+    @subnet_id.setter
+    def subnet_id(self, subnet_id):
+        """
+        Sets the subnet_id of this PipelineInfrastructureConfigurationDetails.
+        The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+
+
+        :param subnet_id: The subnet_id of this PipelineInfrastructureConfigurationDetails.
+        :type: str
+        """
+        self._subnet_id = subnet_id
 
     @property
     def shape_config_details(self):

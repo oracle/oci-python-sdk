@@ -184,6 +184,14 @@ class Node(object):
             The value to assign to the is_reboot_required property of this Node.
         :type is_reboot_required: bool
 
+        :param time_replaced:
+            The value to assign to the time_replaced property of this Node.
+        :type time_replaced: datetime
+
+        :param node_backup_id:
+            The value to assign to the node_backup_id property of this Node.
+        :type node_backup_id: str
+
         """
         self.swagger_types = {
             'instance_id': 'str',
@@ -207,7 +215,9 @@ class Node(object):
             'local_disks_total_size_in_gbs': 'float',
             'time_maintenance_reboot_due': 'datetime',
             'os_version': 'str',
-            'is_reboot_required': 'bool'
+            'is_reboot_required': 'bool',
+            'time_replaced': 'datetime',
+            'node_backup_id': 'str'
         }
 
         self.attribute_map = {
@@ -232,7 +242,9 @@ class Node(object):
             'local_disks_total_size_in_gbs': 'localDisksTotalSizeInGBs',
             'time_maintenance_reboot_due': 'timeMaintenanceRebootDue',
             'os_version': 'osVersion',
-            'is_reboot_required': 'isRebootRequired'
+            'is_reboot_required': 'isRebootRequired',
+            'time_replaced': 'timeReplaced',
+            'node_backup_id': 'nodeBackupId'
         }
 
         self._instance_id = None
@@ -257,6 +269,8 @@ class Node(object):
         self._time_maintenance_reboot_due = None
         self._os_version = None
         self._is_reboot_required = None
+        self._time_replaced = None
+        self._node_backup_id = None
 
     @property
     def instance_id(self):
@@ -797,6 +811,54 @@ class Node(object):
         :type: bool
         """
         self._is_reboot_required = is_reboot_required
+
+    @property
+    def time_replaced(self):
+        """
+        Gets the time_replaced of this Node.
+        The date and time the instance was replaced by a new vm with a node backup.
+
+
+        :return: The time_replaced of this Node.
+        :rtype: datetime
+        """
+        return self._time_replaced
+
+    @time_replaced.setter
+    def time_replaced(self, time_replaced):
+        """
+        Sets the time_replaced of this Node.
+        The date and time the instance was replaced by a new vm with a node backup.
+
+
+        :param time_replaced: The time_replaced of this Node.
+        :type: datetime
+        """
+        self._time_replaced = time_replaced
+
+    @property
+    def node_backup_id(self):
+        """
+        Gets the node_backup_id of this Node.
+        The node back id that was used for replacing the node.
+
+
+        :return: The node_backup_id of this Node.
+        :rtype: str
+        """
+        return self._node_backup_id
+
+    @node_backup_id.setter
+    def node_backup_id(self, node_backup_id):
+        """
+        Sets the node_backup_id of this Node.
+        The node back id that was used for replacing the node.
+
+
+        :param node_backup_id: The node_backup_id of this Node.
+        :type: str
+        """
+        self._node_backup_id = node_backup_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

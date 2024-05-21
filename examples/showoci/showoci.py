@@ -128,7 +128,7 @@ import contextlib
 import os
 import time
 
-version = "24.05.17"
+version = "24.05.24"
 
 ##########################################################################
 # check OCI version
@@ -346,6 +346,7 @@ def set_parser_arguments(argsList=[]):
     parser.add_argument('-iold', action='store_true', default=False, dest='identity_old', help='Print Identity from the old APIs when choosing identity extract.')
     parser.add_argument('-ic', action='store_true', default=False, dest='identity_compartments', help='Print Identity Compartments only.')
     parser.add_argument('-isc', action='store_true', default=False, dest='skip_identity_user_credential', help='Skip Identity User Credential extract.')
+    parser.add_argument('-ifilter', default="", dest='ifilter', help='Filter IAM domains by Domain Names using comma seperated')
 
     parser.add_argument('-s', '-api', '-rm', '-fun', action='store_true', default=False, dest='streams_queues', help='Print API, Functions, Resource management, Gateways, Streams and Queues.')
 
@@ -492,6 +493,9 @@ def set_service_extract_flags(cmd):
 
     if cmd.exclude:
         prm.exclude = str(cmd.exclude).split(",")
+
+    if cmd.ifilter:
+        prm.iam_domain_name_filter = str(cmd.ifilter).split(",")
 
     if cmd.excludelist:
         prm.excludelist = True

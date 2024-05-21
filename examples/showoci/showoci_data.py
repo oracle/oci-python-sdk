@@ -20,7 +20,7 @@ import sys
 
 
 class ShowOCIData(object):
-    version = "24.05.17"
+    version = "24.05.24"
 
     ############################################
     # ShowOCIService - Service object to query

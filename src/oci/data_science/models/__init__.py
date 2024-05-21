@@ -89,6 +89,10 @@ from .ocir_container_job_environment_configuration_details import OcirContainerJ
 from .ocir_model_deployment_environment_configuration_details import OcirModelDeploymentEnvironmentConfigurationDetails
 from .pipeline import Pipeline
 from .pipeline_configuration_details import PipelineConfigurationDetails
+from .pipeline_container_configuration_details import PipelineContainerConfigurationDetails
+from .pipeline_container_step_details import PipelineContainerStepDetails
+from .pipeline_container_step_run import PipelineContainerStepRun
+from .pipeline_container_step_update_details import PipelineContainerStepUpdateDetails
 from .pipeline_custom_script_step_details import PipelineCustomScriptStepDetails
 from .pipeline_custom_script_step_run import PipelineCustomScriptStepRun
 from .pipeline_custom_script_step_update_details import PipelineCustomScriptStepUpdateDetails
@@ -98,6 +102,7 @@ from .pipeline_log_configuration_details import PipelineLogConfigurationDetails
 from .pipeline_ml_job_step_details import PipelineMLJobStepDetails
 from .pipeline_ml_job_step_run import PipelineMLJobStepRun
 from .pipeline_ml_job_step_update_details import PipelineMLJobStepUpdateDetails
+from .pipeline_ocir_container_configuration_details import PipelineOcirContainerConfigurationDetails
 from .pipeline_run import PipelineRun
 from .pipeline_run_log_details import PipelineRunLogDetails
 from .pipeline_run_summary import PipelineRunSummary
@@ -227,6 +232,10 @@ data_science_type_mapping = {
     "OcirModelDeploymentEnvironmentConfigurationDetails": OcirModelDeploymentEnvironmentConfigurationDetails,
     "Pipeline": Pipeline,
     "PipelineConfigurationDetails": PipelineConfigurationDetails,
+    "PipelineContainerConfigurationDetails": PipelineContainerConfigurationDetails,
+    "PipelineContainerStepDetails": PipelineContainerStepDetails,
+    "PipelineContainerStepRun": PipelineContainerStepRun,
+    "PipelineContainerStepUpdateDetails": PipelineContainerStepUpdateDetails,
     "PipelineCustomScriptStepDetails": PipelineCustomScriptStepDetails,
     "PipelineCustomScriptStepRun": PipelineCustomScriptStepRun,
     "PipelineCustomScriptStepUpdateDetails": PipelineCustomScriptStepUpdateDetails,
@@ -236,6 +245,7 @@ data_science_type_mapping = {
     "PipelineMLJobStepDetails": PipelineMLJobStepDetails,
     "PipelineMLJobStepRun": PipelineMLJobStepRun,
     "PipelineMLJobStepUpdateDetails": PipelineMLJobStepUpdateDetails,
+    "PipelineOcirContainerConfigurationDetails": PipelineOcirContainerConfigurationDetails,
     "PipelineRun": PipelineRun,
     "PipelineRunLogDetails": PipelineRunLogDetails,
     "PipelineRunSummary": PipelineRunSummary,

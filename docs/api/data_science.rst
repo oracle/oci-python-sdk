@@ -101,6 +101,10 @@ Data Science
     oci.data_science.models.OcirModelDeploymentEnvironmentConfigurationDetails
     oci.data_science.models.Pipeline
     oci.data_science.models.PipelineConfigurationDetails
+    oci.data_science.models.PipelineContainerConfigurationDetails
+    oci.data_science.models.PipelineContainerStepDetails
+    oci.data_science.models.PipelineContainerStepRun
+    oci.data_science.models.PipelineContainerStepUpdateDetails
     oci.data_science.models.PipelineCustomScriptStepDetails
     oci.data_science.models.PipelineCustomScriptStepRun
     oci.data_science.models.PipelineCustomScriptStepUpdateDetails
@@ -110,6 +114,7 @@ Data Science
     oci.data_science.models.PipelineMLJobStepDetails
     oci.data_science.models.PipelineMLJobStepRun
     oci.data_science.models.PipelineMLJobStepUpdateDetails
+    oci.data_science.models.PipelineOcirContainerConfigurationDetails
     oci.data_science.models.PipelineRun
     oci.data_science.models.PipelineRunLogDetails
     oci.data_science.models.PipelineRunSummary
