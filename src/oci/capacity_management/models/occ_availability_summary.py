@@ -19,26 +19,6 @@ class OccAvailabilitySummary(object):
     #: This constant has a value of "COMPUTE"
     NAMESPACE_COMPUTE = "COMPUTE"
 
-    #: A constant which can be used with the resource_type property of a OccAvailabilitySummary.
-    #: This constant has a value of "SERVER_HW"
-    RESOURCE_TYPE_SERVER_HW = "SERVER_HW"
-
-    #: A constant which can be used with the resource_type property of a OccAvailabilitySummary.
-    #: This constant has a value of "CAPACITY_CONSTRAINT"
-    RESOURCE_TYPE_CAPACITY_CONSTRAINT = "CAPACITY_CONSTRAINT"
-
-    #: A constant which can be used with the workload_type property of a OccAvailabilitySummary.
-    #: This constant has a value of "GENERIC"
-    WORKLOAD_TYPE_GENERIC = "GENERIC"
-
-    #: A constant which can be used with the workload_type property of a OccAvailabilitySummary.
-    #: This constant has a value of "ROW"
-    WORKLOAD_TYPE_ROW = "ROW"
-
-    #: A constant which can be used with the workload_type property of a OccAvailabilitySummary.
-    #: This constant has a value of "US_PROD"
-    WORKLOAD_TYPE_US_PROD = "US_PROD"
-
     def __init__(self, **kwargs):
         """
         Initializes a new OccAvailabilitySummary object with values from keyword arguments.
@@ -64,14 +44,10 @@ class OccAvailabilitySummary(object):
 
         :param resource_type:
             The value to assign to the resource_type property of this OccAvailabilitySummary.
-            Allowed values for this property are: "SERVER_HW", "CAPACITY_CONSTRAINT", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_type: str
 
         :param workload_type:
             The value to assign to the workload_type property of this OccAvailabilitySummary.
-            Allowed values for this property are: "GENERIC", "ROW", "US_PROD", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type workload_type: str
 
         :param resource_name:
@@ -82,9 +58,21 @@ class OccAvailabilitySummary(object):
             The value to assign to the available_quantity property of this OccAvailabilitySummary.
         :type available_quantity: int
 
+        :param total_available_quantity:
+            The value to assign to the total_available_quantity property of this OccAvailabilitySummary.
+        :type total_available_quantity: int
+
+        :param demanded_quantity:
+            The value to assign to the demanded_quantity property of this OccAvailabilitySummary.
+        :type demanded_quantity: int
+
         :param unit:
             The value to assign to the unit property of this OccAvailabilitySummary.
         :type unit: str
+
+        :param system_tags:
+            The value to assign to the system_tags property of this OccAvailabilitySummary.
+        :type system_tags: dict(str, dict(str, object))
 
         """
         self.swagger_types = {
@@ -96,7 +84,10 @@ class OccAvailabilitySummary(object):
             'workload_type': 'str',
             'resource_name': 'str',
             'available_quantity': 'int',
-            'unit': 'str'
+            'total_available_quantity': 'int',
+            'demanded_quantity': 'int',
+            'unit': 'str',
+            'system_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -108,7 +99,10 @@ class OccAvailabilitySummary(object):
             'workload_type': 'workloadType',
             'resource_name': 'resourceName',
             'available_quantity': 'availableQuantity',
-            'unit': 'unit'
+            'total_available_quantity': 'totalAvailableQuantity',
+            'demanded_quantity': 'demandedQuantity',
+            'unit': 'unit',
+            'system_tags': 'systemTags'
         }
 
         self._catalog_id = None
@@ -119,7 +113,10 @@ class OccAvailabilitySummary(object):
         self._workload_type = None
         self._resource_name = None
         self._available_quantity = None
+        self._total_available_quantity = None
+        self._demanded_quantity = None
         self._unit = None
+        self._system_tags = None
 
     @property
     def catalog_id(self):
@@ -229,9 +226,6 @@ class OccAvailabilitySummary(object):
         **[Required]** Gets the resource_type of this OccAvailabilitySummary.
         The different types of resources against which customers can place capacity requests.
 
-        Allowed values for this property are: "SERVER_HW", "CAPACITY_CONSTRAINT", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-
 
         :return: The resource_type of this OccAvailabilitySummary.
         :rtype: str
@@ -248,9 +242,6 @@ class OccAvailabilitySummary(object):
         :param resource_type: The resource_type of this OccAvailabilitySummary.
         :type: str
         """
-        allowed_values = ["SERVER_HW", "CAPACITY_CONSTRAINT"]
-        if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
-            resource_type = 'UNKNOWN_ENUM_VALUE'
         self._resource_type = resource_type
 
     @property
@@ -258,9 +249,6 @@ class OccAvailabilitySummary(object):
         """
         **[Required]** Gets the workload_type of this OccAvailabilitySummary.
         The type of workload (Generic/ROW).
-
-        Allowed values for this property are: "GENERIC", "ROW", "US_PROD", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The workload_type of this OccAvailabilitySummary.
@@ -278,9 +266,6 @@ class OccAvailabilitySummary(object):
         :param workload_type: The workload_type of this OccAvailabilitySummary.
         :type: str
         """
-        allowed_values = ["GENERIC", "ROW", "US_PROD"]
-        if not value_allowed_none_or_none_sentinel(workload_type, allowed_values):
-            workload_type = 'UNKNOWN_ENUM_VALUE'
         self._workload_type = workload_type
 
     @property
@@ -311,7 +296,7 @@ class OccAvailabilitySummary(object):
     def available_quantity(self):
         """
         **[Required]** Gets the available_quantity of this OccAvailabilitySummary.
-        The quantity of available resource that the customer can request.
+        The quantity of resource currently available that the customer can request.
 
 
         :return: The available_quantity of this OccAvailabilitySummary.
@@ -323,13 +308,61 @@ class OccAvailabilitySummary(object):
     def available_quantity(self, available_quantity):
         """
         Sets the available_quantity of this OccAvailabilitySummary.
-        The quantity of available resource that the customer can request.
+        The quantity of resource currently available that the customer can request.
 
 
         :param available_quantity: The available_quantity of this OccAvailabilitySummary.
         :type: int
         """
         self._available_quantity = available_quantity
+
+    @property
+    def total_available_quantity(self):
+        """
+        **[Required]** Gets the total_available_quantity of this OccAvailabilitySummary.
+        The total quantity of resource that the customer can request.
+
+
+        :return: The total_available_quantity of this OccAvailabilitySummary.
+        :rtype: int
+        """
+        return self._total_available_quantity
+
+    @total_available_quantity.setter
+    def total_available_quantity(self, total_available_quantity):
+        """
+        Sets the total_available_quantity of this OccAvailabilitySummary.
+        The total quantity of resource that the customer can request.
+
+
+        :param total_available_quantity: The total_available_quantity of this OccAvailabilitySummary.
+        :type: int
+        """
+        self._total_available_quantity = total_available_quantity
+
+    @property
+    def demanded_quantity(self):
+        """
+        **[Required]** Gets the demanded_quantity of this OccAvailabilitySummary.
+        The quantity of resource currently demanded by the customer.
+
+
+        :return: The demanded_quantity of this OccAvailabilitySummary.
+        :rtype: int
+        """
+        return self._demanded_quantity
+
+    @demanded_quantity.setter
+    def demanded_quantity(self, demanded_quantity):
+        """
+        Sets the demanded_quantity of this OccAvailabilitySummary.
+        The quantity of resource currently demanded by the customer.
+
+
+        :param demanded_quantity: The demanded_quantity of this OccAvailabilitySummary.
+        :type: int
+        """
+        self._demanded_quantity = demanded_quantity
 
     @property
     def unit(self):
@@ -354,6 +387,32 @@ class OccAvailabilitySummary(object):
         :type: str
         """
         self._unit = unit
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this OccAvailabilitySummary.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this OccAvailabilitySummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this OccAvailabilitySummary.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this OccAvailabilitySummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

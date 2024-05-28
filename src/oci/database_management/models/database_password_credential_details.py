@@ -23,6 +23,10 @@ class DatabasePasswordCredentialDetails(DatabaseCredentialDetails):
     #: This constant has a value of "SYSDBA"
     ROLE_SYSDBA = "SYSDBA"
 
+    #: A constant which can be used with the role property of a DatabasePasswordCredentialDetails.
+    #: This constant has a value of "SYSDG"
+    ROLE_SYSDG = "SYSDG"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DatabasePasswordCredentialDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.database_management.models.DatabasePasswordCredentialDetails.credential_type` attribute
@@ -45,7 +49,7 @@ class DatabasePasswordCredentialDetails(DatabaseCredentialDetails):
 
         :param role:
             The value to assign to the role property of this DatabasePasswordCredentialDetails.
-            Allowed values for this property are: "NORMAL", "SYSDBA", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NORMAL", "SYSDBA", "SYSDG", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type role: str
 
@@ -124,7 +128,7 @@ class DatabasePasswordCredentialDetails(DatabaseCredentialDetails):
         Gets the role of this DatabasePasswordCredentialDetails.
         The role of the database user.
 
-        Allowed values for this property are: "NORMAL", "SYSDBA", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "NORMAL", "SYSDBA", "SYSDG", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -143,7 +147,7 @@ class DatabasePasswordCredentialDetails(DatabaseCredentialDetails):
         :param role: The role of this DatabasePasswordCredentialDetails.
         :type: str
         """
-        allowed_values = ["NORMAL", "SYSDBA"]
+        allowed_values = ["NORMAL", "SYSDBA", "SYSDG"]
         if not value_allowed_none_or_none_sentinel(role, allowed_values):
             role = 'UNKNOWN_ENUM_VALUE'
         self._role = role

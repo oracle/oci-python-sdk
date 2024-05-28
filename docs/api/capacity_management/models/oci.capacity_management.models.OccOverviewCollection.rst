@@ -1,9 +1,9 @@
-OccCapacityRequestComputeDetails
-================================
+OccOverviewCollection
+=====================
 
 .. currentmodule:: oci.capacity_management.models
 
-.. autoclass:: OccCapacityRequestComputeDetails
+.. autoclass:: OccOverviewCollection
     :show-inheritance:
     :special-members: __init__
     :members:

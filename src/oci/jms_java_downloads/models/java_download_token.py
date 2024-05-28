@@ -377,7 +377,9 @@ class JavaDownloadToken(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this JavaDownloadToken.
-        The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+        The time the JavaDownloadToken was created, displayed as an `RFC3339`__ formatted datetime string.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_created of this JavaDownloadToken.
@@ -389,7 +391,9 @@ class JavaDownloadToken(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this JavaDownloadToken.
-        The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+        The time the JavaDownloadToken was created, displayed as an `RFC3339`__ formatted datetime string.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_created: The time_created of this JavaDownloadToken.
@@ -401,7 +405,9 @@ class JavaDownloadToken(object):
     def time_updated(self):
         """
         Gets the time_updated of this JavaDownloadToken.
-        The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+        The time the JavaDownloadToken was updated, displayed as an `RFC3339`__ formatted datetime string.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_updated of this JavaDownloadToken.
@@ -413,7 +419,9 @@ class JavaDownloadToken(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this JavaDownloadToken.
-        The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+        The time the JavaDownloadToken was updated, displayed as an `RFC3339`__ formatted datetime string.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_updated: The time_updated of this JavaDownloadToken.
@@ -425,7 +433,9 @@ class JavaDownloadToken(object):
     def time_last_used(self):
         """
         Gets the time_last_used of this JavaDownloadToken.
-        The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+        The time the JavaDownloadToken was last used for download, displayed as an `RFC3339`__ formatted datetime string.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_last_used of this JavaDownloadToken.
@@ -437,7 +447,9 @@ class JavaDownloadToken(object):
     def time_last_used(self, time_last_used):
         """
         Sets the time_last_used of this JavaDownloadToken.
-        The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+        The time the JavaDownloadToken was last used for download, displayed as an `RFC3339`__ formatted datetime string.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_last_used: The time_last_used of this JavaDownloadToken.
@@ -449,7 +461,9 @@ class JavaDownloadToken(object):
     def time_expires(self):
         """
         **[Required]** Gets the time_expires of this JavaDownloadToken.
-        The expiry time of the JavaDownloadToken. An RFC3339 formatted datetime string.
+        The expiry time of the JavaDownloadToken, displayed as an `RFC3339`__ formatted datetime string.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_expires of this JavaDownloadToken.
@@ -461,7 +475,9 @@ class JavaDownloadToken(object):
     def time_expires(self, time_expires):
         """
         Sets the time_expires of this JavaDownloadToken.
-        The expiry time of the JavaDownloadToken. An RFC3339 formatted datetime string.
+        The expiry time of the JavaDownloadToken, displayed as an `RFC3339`__ formatted datetime string.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_expires: The time_expires of this JavaDownloadToken.

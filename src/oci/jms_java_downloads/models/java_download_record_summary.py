@@ -222,7 +222,7 @@ class JavaDownloadRecordSummary(object):
     def package_type(self):
         """
         Gets the package_type of this JavaDownloadRecordSummary.
-        The package type(typically the file extension) of the artifact.
+        The package type (typically the file extension) of the artifact.
 
 
         :return: The package_type of this JavaDownloadRecordSummary.
@@ -234,7 +234,7 @@ class JavaDownloadRecordSummary(object):
     def package_type(self, package_type):
         """
         Sets the package_type of this JavaDownloadRecordSummary.
-        The package type(typically the file extension) of the artifact.
+        The package type (typically the file extension) of the artifact.
 
 
         :param package_type: The package_type of this JavaDownloadRecordSummary.

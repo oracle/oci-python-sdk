@@ -17,12 +17,13 @@ from .occ_availability_summary import OccAvailabilitySummary
 from .occ_capacity_request import OccCapacityRequest
 from .occ_capacity_request_base_details import OccCapacityRequestBaseDetails
 from .occ_capacity_request_collection import OccCapacityRequestCollection
-from .occ_capacity_request_compute_details import OccCapacityRequestComputeDetails
 from .occ_capacity_request_summary import OccCapacityRequestSummary
 from .occ_customer import OccCustomer
 from .occ_customer_group import OccCustomerGroup
 from .occ_customer_group_collection import OccCustomerGroupCollection
 from .occ_customer_group_summary import OccCustomerGroupSummary
+from .occ_overview_collection import OccOverviewCollection
+from .occ_overview_summary import OccOverviewSummary
 from .patch_insert_instruction import PatchInsertInstruction
 from .patch_insert_multiple_instruction import PatchInsertMultipleInstruction
 from .patch_instruction import PatchInstruction
@@ -50,12 +51,13 @@ capacity_management_type_mapping = {
     "OccCapacityRequest": OccCapacityRequest,
     "OccCapacityRequestBaseDetails": OccCapacityRequestBaseDetails,
     "OccCapacityRequestCollection": OccCapacityRequestCollection,
-    "OccCapacityRequestComputeDetails": OccCapacityRequestComputeDetails,
     "OccCapacityRequestSummary": OccCapacityRequestSummary,
     "OccCustomer": OccCustomer,
     "OccCustomerGroup": OccCustomerGroup,
     "OccCustomerGroupCollection": OccCustomerGroupCollection,
     "OccCustomerGroupSummary": OccCustomerGroupSummary,
+    "OccOverviewCollection": OccOverviewCollection,
+    "OccOverviewSummary": OccOverviewSummary,
     "PatchInsertInstruction": PatchInsertInstruction,
     "PatchInsertMultipleInstruction": PatchInsertMultipleInstruction,
     "PatchInstruction": PatchInstruction,

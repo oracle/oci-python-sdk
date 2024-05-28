@@ -23,6 +23,10 @@ class UpdateBasicPreferredCredentialDetails(UpdatePreferredCredentialDetails):
     #: This constant has a value of "SYSDBA"
     ROLE_SYSDBA = "SYSDBA"
 
+    #: A constant which can be used with the role property of a UpdateBasicPreferredCredentialDetails.
+    #: This constant has a value of "SYSDG"
+    ROLE_SYSDG = "SYSDG"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateBasicPreferredCredentialDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.database_management.models.UpdateBasicPreferredCredentialDetails.type` attribute
@@ -40,7 +44,7 @@ class UpdateBasicPreferredCredentialDetails(UpdatePreferredCredentialDetails):
 
         :param role:
             The value to assign to the role property of this UpdateBasicPreferredCredentialDetails.
-            Allowed values for this property are: "NORMAL", "SYSDBA"
+            Allowed values for this property are: "NORMAL", "SYSDBA", "SYSDG"
         :type role: str
 
         :param password_secret_id:
@@ -98,7 +102,7 @@ class UpdateBasicPreferredCredentialDetails(UpdatePreferredCredentialDetails):
         Gets the role of this UpdateBasicPreferredCredentialDetails.
         The role of the database user.
 
-        Allowed values for this property are: "NORMAL", "SYSDBA"
+        Allowed values for this property are: "NORMAL", "SYSDBA", "SYSDG"
 
 
         :return: The role of this UpdateBasicPreferredCredentialDetails.
@@ -116,7 +120,7 @@ class UpdateBasicPreferredCredentialDetails(UpdatePreferredCredentialDetails):
         :param role: The role of this UpdateBasicPreferredCredentialDetails.
         :type: str
         """
-        allowed_values = ["NORMAL", "SYSDBA"]
+        allowed_values = ["NORMAL", "SYSDBA", "SYSDG"]
         if not value_allowed_none_or_none_sentinel(role, allowed_values):
             raise ValueError(
                 f"Invalid value for `role`, must be None or one of {allowed_values}"

@@ -232,7 +232,7 @@ class JavaDownloadCountAggregation(object):
     def package_type(self):
         """
         Gets the package_type of this JavaDownloadCountAggregation.
-        The package type(typically the file extension) of the artifact. Applicable only to `PLATFORM` aggregationType.
+        The package type (typically the file extension) of the artifact. Applicable only to `PLATFORM` aggregationType.
 
 
         :return: The package_type of this JavaDownloadCountAggregation.
@@ -244,7 +244,7 @@ class JavaDownloadCountAggregation(object):
     def package_type(self, package_type):
         """
         Sets the package_type of this JavaDownloadCountAggregation.
-        The package type(typically the file extension) of the artifact. Applicable only to `PLATFORM` aggregationType.
+        The package type (typically the file extension) of the artifact. Applicable only to `PLATFORM` aggregationType.
 
 
         :param package_type: The package_type of this JavaDownloadCountAggregation.

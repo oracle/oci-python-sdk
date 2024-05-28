@@ -54,22 +54,36 @@ class CreateJavaLicenseAcceptanceRecordDetails(object):
             Allowed values for this property are: "ACCEPTED", "REVOKED"
         :type license_acceptance_status: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this CreateJavaLicenseAcceptanceRecordDetails.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this CreateJavaLicenseAcceptanceRecordDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
             'license_type': 'str',
-            'license_acceptance_status': 'str'
+            'license_acceptance_status': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'license_type': 'licenseType',
-            'license_acceptance_status': 'licenseAcceptanceStatus'
+            'license_acceptance_status': 'licenseAcceptanceStatus',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
         self._compartment_id = None
         self._license_type = None
         self._license_acceptance_status = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @property
     def compartment_id(self):
@@ -160,6 +174,66 @@ class CreateJavaLicenseAcceptanceRecordDetails(object):
                 f"Invalid value for `license_acceptance_status`, must be None or one of {allowed_values}"
             )
         self._license_acceptance_status = license_acceptance_status
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this CreateJavaLicenseAcceptanceRecordDetails.
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`. (See `Managing Tags and Tag Namespaces`__.)
+
+        __ https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm
+
+
+        :return: The freeform_tags of this CreateJavaLicenseAcceptanceRecordDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this CreateJavaLicenseAcceptanceRecordDetails.
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`. (See `Managing Tags and Tag Namespaces`__.)
+
+        __ https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm
+
+
+        :param freeform_tags: The freeform_tags of this CreateJavaLicenseAcceptanceRecordDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this CreateJavaLicenseAcceptanceRecordDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`. (See `Understanding Free-form Tags`__).
+
+        __ https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm
+
+
+        :return: The defined_tags of this CreateJavaLicenseAcceptanceRecordDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this CreateJavaLicenseAcceptanceRecordDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`. (See `Understanding Free-form Tags`__).
+
+        __ https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm
+
+
+        :param defined_tags: The defined_tags of this CreateJavaLicenseAcceptanceRecordDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

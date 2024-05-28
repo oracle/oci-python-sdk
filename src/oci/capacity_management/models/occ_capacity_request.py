@@ -19,6 +19,14 @@ class OccCapacityRequest(object):
     #: This constant has a value of "COMPUTE"
     NAMESPACE_COMPUTE = "COMPUTE"
 
+    #: A constant which can be used with the request_type property of a OccCapacityRequest.
+    #: This constant has a value of "NEW"
+    REQUEST_TYPE_NEW = "NEW"
+
+    #: A constant which can be used with the request_type property of a OccCapacityRequest.
+    #: This constant has a value of "TRANSFER"
+    REQUEST_TYPE_TRANSFER = "TRANSFER"
+
     #: A constant which can be used with the request_state property of a OccCapacityRequest.
     #: This constant has a value of "CREATED"
     REQUEST_STATE_CREATED = "CREATED"
@@ -110,6 +118,12 @@ class OccCapacityRequest(object):
             The value to assign to the occ_customer_group_id property of this OccCapacityRequest.
         :type occ_customer_group_id: str
 
+        :param request_type:
+            The value to assign to the request_type property of this OccCapacityRequest.
+            Allowed values for this property are: "NEW", "TRANSFER", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type request_type: str
+
         :param region:
             The value to assign to the region property of this OccCapacityRequest.
         :type region: str
@@ -171,6 +185,7 @@ class OccCapacityRequest(object):
             'description': 'str',
             'namespace': 'str',
             'occ_customer_group_id': 'str',
+            'request_type': 'str',
             'region': 'str',
             'availability_domain': 'str',
             'date_expected_capacity_handover': 'datetime',
@@ -193,6 +208,7 @@ class OccCapacityRequest(object):
             'description': 'description',
             'namespace': 'namespace',
             'occ_customer_group_id': 'occCustomerGroupId',
+            'request_type': 'requestType',
             'region': 'region',
             'availability_domain': 'availabilityDomain',
             'date_expected_capacity_handover': 'dateExpectedCapacityHandover',
@@ -214,6 +230,7 @@ class OccCapacityRequest(object):
         self._description = None
         self._namespace = None
         self._occ_customer_group_id = None
+        self._request_type = None
         self._region = None
         self._availability_domain = None
         self._date_expected_capacity_handover = None
@@ -400,6 +417,36 @@ class OccCapacityRequest(object):
         :type: str
         """
         self._occ_customer_group_id = occ_customer_group_id
+
+    @property
+    def request_type(self):
+        """
+        Gets the request_type of this OccCapacityRequest.
+        Type of Capacity Request(New or Transfer)
+
+        Allowed values for this property are: "NEW", "TRANSFER", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The request_type of this OccCapacityRequest.
+        :rtype: str
+        """
+        return self._request_type
+
+    @request_type.setter
+    def request_type(self, request_type):
+        """
+        Sets the request_type of this OccCapacityRequest.
+        Type of Capacity Request(New or Transfer)
+
+
+        :param request_type: The request_type of this OccCapacityRequest.
+        :type: str
+        """
+        allowed_values = ["NEW", "TRANSFER"]
+        if not value_allowed_none_or_none_sentinel(request_type, allowed_values):
+            request_type = 'UNKNOWN_ENUM_VALUE'
+        self._request_type = request_type
 
     @property
     def region(self):

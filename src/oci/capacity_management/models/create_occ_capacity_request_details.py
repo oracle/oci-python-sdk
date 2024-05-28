@@ -53,6 +53,10 @@ class CreateOccCapacityRequestDetails(object):
             The value to assign to the display_name property of this CreateOccCapacityRequestDetails.
         :type display_name: str
 
+        :param request_type:
+            The value to assign to the request_type property of this CreateOccCapacityRequestDetails.
+        :type request_type: str
+
         :param description:
             The value to assign to the description property of this CreateOccCapacityRequestDetails.
         :type description: str
@@ -93,6 +97,7 @@ class CreateOccCapacityRequestDetails(object):
             'namespace': 'str',
             'region': 'str',
             'display_name': 'str',
+            'request_type': 'str',
             'description': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -109,6 +114,7 @@ class CreateOccCapacityRequestDetails(object):
             'namespace': 'namespace',
             'region': 'region',
             'display_name': 'displayName',
+            'request_type': 'requestType',
             'description': 'description',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -124,6 +130,7 @@ class CreateOccCapacityRequestDetails(object):
         self._namespace = None
         self._region = None
         self._display_name = None
+        self._request_type = None
         self._description = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -160,7 +167,7 @@ class CreateOccCapacityRequestDetails(object):
     @property
     def occ_availability_catalog_id(self):
         """
-        **[Required]** Gets the occ_availability_catalog_id of this CreateOccCapacityRequestDetails.
+        Gets the occ_availability_catalog_id of this CreateOccCapacityRequestDetails.
         The OCID of the availability catalog against which capacity request is made.
 
 
@@ -259,6 +266,30 @@ class CreateOccCapacityRequestDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def request_type(self):
+        """
+        Gets the request_type of this CreateOccCapacityRequestDetails.
+        Type of Capacity Request(New or Transfer)
+
+
+        :return: The request_type of this CreateOccCapacityRequestDetails.
+        :rtype: str
+        """
+        return self._request_type
+
+    @request_type.setter
+    def request_type(self, request_type):
+        """
+        Sets the request_type of this CreateOccCapacityRequestDetails.
+        Type of Capacity Request(New or Transfer)
+
+
+        :param request_type: The request_type of this CreateOccCapacityRequestDetails.
+        :type: str
+        """
+        self._request_type = request_type
 
     @property
     def description(self):

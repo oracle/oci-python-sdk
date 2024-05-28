@@ -99,6 +99,26 @@ class DatabaseUsageMetrics(object):
     #: This constant has a value of "APEX"
     WORKLOAD_TYPE_APEX = "APEX"
 
+    #: A constant which can be used with the db_role property of a DatabaseUsageMetrics.
+    #: This constant has a value of "SNAPSHOT_STANDBY"
+    DB_ROLE_SNAPSHOT_STANDBY = "SNAPSHOT_STANDBY"
+
+    #: A constant which can be used with the db_role property of a DatabaseUsageMetrics.
+    #: This constant has a value of "LOGICAL_STANDBY"
+    DB_ROLE_LOGICAL_STANDBY = "LOGICAL_STANDBY"
+
+    #: A constant which can be used with the db_role property of a DatabaseUsageMetrics.
+    #: This constant has a value of "PHYSICAL_STANDBY"
+    DB_ROLE_PHYSICAL_STANDBY = "PHYSICAL_STANDBY"
+
+    #: A constant which can be used with the db_role property of a DatabaseUsageMetrics.
+    #: This constant has a value of "PRIMARY"
+    DB_ROLE_PRIMARY = "PRIMARY"
+
+    #: A constant which can be used with the db_role property of a DatabaseUsageMetrics.
+    #: This constant has a value of "FAR_SYNC"
+    DB_ROLE_FAR_SYNC = "FAR_SYNC"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DatabaseUsageMetrics object with values from keyword arguments.
@@ -148,6 +168,28 @@ class DatabaseUsageMetrics(object):
             The value to assign to the database_container_id property of this DatabaseUsageMetrics.
         :type database_container_id: str
 
+        :param database_id:
+            The value to assign to the database_id property of this DatabaseUsageMetrics.
+        :type database_id: str
+
+        :param primary_db_id:
+            The value to assign to the primary_db_id property of this DatabaseUsageMetrics.
+        :type primary_db_id: str
+
+        :param primary_db_unique_name:
+            The value to assign to the primary_db_unique_name property of this DatabaseUsageMetrics.
+        :type primary_db_unique_name: str
+
+        :param db_unique_name:
+            The value to assign to the db_unique_name property of this DatabaseUsageMetrics.
+        :type db_unique_name: str
+
+        :param db_role:
+            The value to assign to the db_role property of this DatabaseUsageMetrics.
+            Allowed values for this property are: "SNAPSHOT_STANDBY", "LOGICAL_STANDBY", "PHYSICAL_STANDBY", "PRIMARY", "FAR_SYNC", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type db_role: str
+
         :param metrics:
             The value to assign to the metrics property of this DatabaseUsageMetrics.
         :type metrics: list[oci.database_management.models.FleetMetricDefinition]
@@ -163,6 +205,11 @@ class DatabaseUsageMetrics(object):
             'workload_type': 'str',
             'database_name': 'str',
             'database_container_id': 'str',
+            'database_id': 'str',
+            'primary_db_id': 'str',
+            'primary_db_unique_name': 'str',
+            'db_unique_name': 'str',
+            'db_role': 'str',
             'metrics': 'list[FleetMetricDefinition]'
         }
 
@@ -176,6 +223,11 @@ class DatabaseUsageMetrics(object):
             'workload_type': 'workloadType',
             'database_name': 'databaseName',
             'database_container_id': 'databaseContainerId',
+            'database_id': 'databaseId',
+            'primary_db_id': 'primaryDbId',
+            'primary_db_unique_name': 'primaryDbUniqueName',
+            'db_unique_name': 'dbUniqueName',
+            'db_role': 'dbRole',
             'metrics': 'metrics'
         }
 
@@ -188,6 +240,11 @@ class DatabaseUsageMetrics(object):
         self._workload_type = None
         self._database_name = None
         self._database_container_id = None
+        self._database_id = None
+        self._primary_db_id = None
+        self._primary_db_unique_name = None
+        self._db_unique_name = None
+        self._db_role = None
         self._metrics = None
 
     @property
@@ -443,6 +500,132 @@ class DatabaseUsageMetrics(object):
         :type: str
         """
         self._database_container_id = database_container_id
+
+    @property
+    def database_id(self):
+        """
+        Gets the database_id of this DatabaseUsageMetrics.
+        The Database id of the Managed Database. Every database had its own id and that value is captured here.
+
+
+        :return: The database_id of this DatabaseUsageMetrics.
+        :rtype: str
+        """
+        return self._database_id
+
+    @database_id.setter
+    def database_id(self, database_id):
+        """
+        Sets the database_id of this DatabaseUsageMetrics.
+        The Database id of the Managed Database. Every database had its own id and that value is captured here.
+
+
+        :param database_id: The database_id of this DatabaseUsageMetrics.
+        :type: str
+        """
+        self._database_id = database_id
+
+    @property
+    def primary_db_id(self):
+        """
+        Gets the primary_db_id of this DatabaseUsageMetrics.
+        The Primary Database id of the Managed Database.
+
+
+        :return: The primary_db_id of this DatabaseUsageMetrics.
+        :rtype: str
+        """
+        return self._primary_db_id
+
+    @primary_db_id.setter
+    def primary_db_id(self, primary_db_id):
+        """
+        Sets the primary_db_id of this DatabaseUsageMetrics.
+        The Primary Database id of the Managed Database.
+
+
+        :param primary_db_id: The primary_db_id of this DatabaseUsageMetrics.
+        :type: str
+        """
+        self._primary_db_id = primary_db_id
+
+    @property
+    def primary_db_unique_name(self):
+        """
+        Gets the primary_db_unique_name of this DatabaseUsageMetrics.
+        The Primary Database unique name of the Managed Database.
+
+
+        :return: The primary_db_unique_name of this DatabaseUsageMetrics.
+        :rtype: str
+        """
+        return self._primary_db_unique_name
+
+    @primary_db_unique_name.setter
+    def primary_db_unique_name(self, primary_db_unique_name):
+        """
+        Sets the primary_db_unique_name of this DatabaseUsageMetrics.
+        The Primary Database unique name of the Managed Database.
+
+
+        :param primary_db_unique_name: The primary_db_unique_name of this DatabaseUsageMetrics.
+        :type: str
+        """
+        self._primary_db_unique_name = primary_db_unique_name
+
+    @property
+    def db_unique_name(self):
+        """
+        Gets the db_unique_name of this DatabaseUsageMetrics.
+        The Database unique name of the Managed Database.
+
+
+        :return: The db_unique_name of this DatabaseUsageMetrics.
+        :rtype: str
+        """
+        return self._db_unique_name
+
+    @db_unique_name.setter
+    def db_unique_name(self, db_unique_name):
+        """
+        Sets the db_unique_name of this DatabaseUsageMetrics.
+        The Database unique name of the Managed Database.
+
+
+        :param db_unique_name: The db_unique_name of this DatabaseUsageMetrics.
+        :type: str
+        """
+        self._db_unique_name = db_unique_name
+
+    @property
+    def db_role(self):
+        """
+        Gets the db_role of this DatabaseUsageMetrics.
+        The Database role of the Managed Database.
+
+        Allowed values for this property are: "SNAPSHOT_STANDBY", "LOGICAL_STANDBY", "PHYSICAL_STANDBY", "PRIMARY", "FAR_SYNC", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The db_role of this DatabaseUsageMetrics.
+        :rtype: str
+        """
+        return self._db_role
+
+    @db_role.setter
+    def db_role(self, db_role):
+        """
+        Sets the db_role of this DatabaseUsageMetrics.
+        The Database role of the Managed Database.
+
+
+        :param db_role: The db_role of this DatabaseUsageMetrics.
+        :type: str
+        """
+        allowed_values = ["SNAPSHOT_STANDBY", "LOGICAL_STANDBY", "PHYSICAL_STANDBY", "PRIMARY", "FAR_SYNC"]
+        if not value_allowed_none_or_none_sentinel(db_role, allowed_values):
+            db_role = 'UNKNOWN_ENUM_VALUE'
+        self._db_role = db_role
 
     @property
     def metrics(self):

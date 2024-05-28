@@ -23,6 +23,10 @@ class BasicNamedCredentialContent(NamedCredentialContent):
     #: This constant has a value of "SYSDBA"
     ROLE_SYSDBA = "SYSDBA"
 
+    #: A constant which can be used with the role property of a BasicNamedCredentialContent.
+    #: This constant has a value of "SYSDG"
+    ROLE_SYSDG = "SYSDG"
+
     #: A constant which can be used with the password_secret_access_mode property of a BasicNamedCredentialContent.
     #: This constant has a value of "USER_PRINCIPAL"
     PASSWORD_SECRET_ACCESS_MODE_USER_PRINCIPAL = "USER_PRINCIPAL"
@@ -49,7 +53,7 @@ class BasicNamedCredentialContent(NamedCredentialContent):
 
         :param role:
             The value to assign to the role property of this BasicNamedCredentialContent.
-            Allowed values for this property are: "NORMAL", "SYSDBA", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NORMAL", "SYSDBA", "SYSDG", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type role: str
 
@@ -117,7 +121,7 @@ class BasicNamedCredentialContent(NamedCredentialContent):
         **[Required]** Gets the role of this BasicNamedCredentialContent.
         The role of the database user.
 
-        Allowed values for this property are: "NORMAL", "SYSDBA", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "NORMAL", "SYSDBA", "SYSDG", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -136,7 +140,7 @@ class BasicNamedCredentialContent(NamedCredentialContent):
         :param role: The role of this BasicNamedCredentialContent.
         :type: str
         """
-        allowed_values = ["NORMAL", "SYSDBA"]
+        allowed_values = ["NORMAL", "SYSDBA", "SYSDG"]
         if not value_allowed_none_or_none_sentinel(role, allowed_values):
             role = 'UNKNOWN_ENUM_VALUE'
         self._role = role

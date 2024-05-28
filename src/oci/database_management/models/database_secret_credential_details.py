@@ -23,6 +23,10 @@ class DatabaseSecretCredentialDetails(DatabaseCredentialDetails):
     #: This constant has a value of "SYSDBA"
     ROLE_SYSDBA = "SYSDBA"
 
+    #: A constant which can be used with the role property of a DatabaseSecretCredentialDetails.
+    #: This constant has a value of "SYSDG"
+    ROLE_SYSDG = "SYSDG"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DatabaseSecretCredentialDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.database_management.models.DatabaseSecretCredentialDetails.credential_type` attribute
@@ -45,7 +49,7 @@ class DatabaseSecretCredentialDetails(DatabaseCredentialDetails):
 
         :param role:
             The value to assign to the role property of this DatabaseSecretCredentialDetails.
-            Allowed values for this property are: "NORMAL", "SYSDBA", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NORMAL", "SYSDBA", "SYSDG", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type role: str
 
@@ -130,7 +134,7 @@ class DatabaseSecretCredentialDetails(DatabaseCredentialDetails):
         Gets the role of this DatabaseSecretCredentialDetails.
         The role of the database user.
 
-        Allowed values for this property are: "NORMAL", "SYSDBA", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "NORMAL", "SYSDBA", "SYSDG", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -149,7 +153,7 @@ class DatabaseSecretCredentialDetails(DatabaseCredentialDetails):
         :param role: The role of this DatabaseSecretCredentialDetails.
         :type: str
         """
-        allowed_values = ["NORMAL", "SYSDBA"]
+        allowed_values = ["NORMAL", "SYSDBA", "SYSDG"]
         if not value_allowed_none_or_none_sentinel(role, allowed_values):
             role = 'UNKNOWN_ENUM_VALUE'
         self._role = role

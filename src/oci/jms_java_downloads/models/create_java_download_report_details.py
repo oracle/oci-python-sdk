@@ -71,6 +71,14 @@ class CreateJavaDownloadReportDetails(object):
             Allowed values for this property are: "CSV"
         :type format: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this CreateJavaDownloadReportDetails.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this CreateJavaDownloadReportDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -78,7 +86,9 @@ class CreateJavaDownloadReportDetails(object):
             'time_end': 'datetime',
             'sort_by': 'str',
             'sort_order': 'str',
-            'format': 'str'
+            'format': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -87,7 +97,9 @@ class CreateJavaDownloadReportDetails(object):
             'time_end': 'timeEnd',
             'sort_by': 'sortBy',
             'sort_order': 'sortOrder',
-            'format': 'format'
+            'format': 'format',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
         self._compartment_id = None
@@ -96,6 +108,8 @@ class CreateJavaDownloadReportDetails(object):
         self._sort_by = None
         self._sort_order = None
         self._format = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @property
     def compartment_id(self):
@@ -187,7 +201,7 @@ class CreateJavaDownloadReportDetails(object):
     def sort_by(self):
         """
         Gets the sort_by of this CreateJavaDownloadReportDetails.
-        The property to be used for sorting the reports.
+        The property to be used for sorting the records.
 
         Allowed values for this property are: "timeDownloaded", "downloadSourceId", "downloadType"
 
@@ -201,7 +215,7 @@ class CreateJavaDownloadReportDetails(object):
     def sort_by(self, sort_by):
         """
         Sets the sort_by of this CreateJavaDownloadReportDetails.
-        The property to be used for sorting the reports.
+        The property to be used for sorting the records.
 
 
         :param sort_by: The sort_by of this CreateJavaDownloadReportDetails.
@@ -218,7 +232,7 @@ class CreateJavaDownloadReportDetails(object):
     def sort_order(self):
         """
         Gets the sort_order of this CreateJavaDownloadReportDetails.
-        The sort order for the reports.
+        The sort order for the records.
 
         Allowed values for this property are: "ASC", "DESC"
 
@@ -232,7 +246,7 @@ class CreateJavaDownloadReportDetails(object):
     def sort_order(self, sort_order):
         """
         Sets the sort_order of this CreateJavaDownloadReportDetails.
-        The sort order for the reports.
+        The sort order for the records.
 
 
         :param sort_order: The sort_order of this CreateJavaDownloadReportDetails.
@@ -275,6 +289,66 @@ class CreateJavaDownloadReportDetails(object):
                 f"Invalid value for `format`, must be None or one of {allowed_values}"
             )
         self._format = format
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this CreateJavaDownloadReportDetails.
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`. (See `Managing Tags and Tag Namespaces`__.)
+
+        __ https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm
+
+
+        :return: The freeform_tags of this CreateJavaDownloadReportDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this CreateJavaDownloadReportDetails.
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`. (See `Managing Tags and Tag Namespaces`__.)
+
+        __ https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm
+
+
+        :param freeform_tags: The freeform_tags of this CreateJavaDownloadReportDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this CreateJavaDownloadReportDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`. (See `Understanding Free-form Tags`__).
+
+        __ https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm
+
+
+        :return: The defined_tags of this CreateJavaDownloadReportDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this CreateJavaDownloadReportDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`. (See `Understanding Free-form Tags`__).
+
+        __ https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm
+
+
+        :param defined_tags: The defined_tags of this CreateJavaDownloadReportDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

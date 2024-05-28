@@ -23,6 +23,10 @@ class DatabaseSslConnectionCredentials(DatabaseConnectionCredentials):
     #: This constant has a value of "NORMAL"
     ROLE_NORMAL = "NORMAL"
 
+    #: A constant which can be used with the role property of a DatabaseSslConnectionCredentials.
+    #: This constant has a value of "SYSDG"
+    ROLE_SYSDG = "SYSDG"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DatabaseSslConnectionCredentials object with values from keyword arguments. The default value of the :py:attr:`~oci.database.models.DatabaseSslConnectionCredentials.credential_type` attribute
@@ -49,7 +53,7 @@ class DatabaseSslConnectionCredentials(DatabaseConnectionCredentials):
 
         :param role:
             The value to assign to the role property of this DatabaseSslConnectionCredentials.
-            Allowed values for this property are: "SYSDBA", "NORMAL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SYSDBA", "NORMAL", "SYSDG", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type role: str
 
@@ -178,7 +182,7 @@ class DatabaseSslConnectionCredentials(DatabaseConnectionCredentials):
         **[Required]** Gets the role of this DatabaseSslConnectionCredentials.
         The role of the user that will be connecting to the database.
 
-        Allowed values for this property are: "SYSDBA", "NORMAL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SYSDBA", "NORMAL", "SYSDG", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -197,7 +201,7 @@ class DatabaseSslConnectionCredentials(DatabaseConnectionCredentials):
         :param role: The role of this DatabaseSslConnectionCredentials.
         :type: str
         """
-        allowed_values = ["SYSDBA", "NORMAL"]
+        allowed_values = ["SYSDBA", "NORMAL", "SYSDG"]
         if not value_allowed_none_or_none_sentinel(role, allowed_values):
             role = 'UNKNOWN_ENUM_VALUE'
         self._role = role
