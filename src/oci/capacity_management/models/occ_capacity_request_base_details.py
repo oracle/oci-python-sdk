@@ -15,28 +15,22 @@ class OccCapacityRequestBaseDetails(object):
     The details of the create capacity request. This model serves as a base for different namespaces.
     """
 
-    #: A constant which can be used with the resource_type property of a OccCapacityRequestBaseDetails.
-    #: This constant has a value of "SERVER_HW"
-    RESOURCE_TYPE_SERVER_HW = "SERVER_HW"
-
     def __init__(self, **kwargs):
         """
-        Initializes a new OccCapacityRequestBaseDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
-        to a service operations then you should favor using a subclass over the base class:
-
-        * :class:`~oci.capacity_management.models.OccCapacityRequestComputeDetails`
-
+        Initializes a new OccCapacityRequestBaseDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param resource_type:
             The value to assign to the resource_type property of this OccCapacityRequestBaseDetails.
-            Allowed values for this property are: "SERVER_HW", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_type: str
 
         :param workload_type:
             The value to assign to the workload_type property of this OccCapacityRequestBaseDetails.
         :type workload_type: str
+
+        :param source_workload_type:
+            The value to assign to the source_workload_type property of this OccCapacityRequestBaseDetails.
+        :type source_workload_type: str
 
         :param expected_handover_quantity:
             The value to assign to the expected_handover_quantity property of this OccCapacityRequestBaseDetails.
@@ -54,53 +48,54 @@ class OccCapacityRequestBaseDetails(object):
             The value to assign to the date_actual_handover property of this OccCapacityRequestBaseDetails.
         :type date_actual_handover: datetime
 
+        :param resource_name:
+            The value to assign to the resource_name property of this OccCapacityRequestBaseDetails.
+        :type resource_name: str
+
+        :param demand_quantity:
+            The value to assign to the demand_quantity property of this OccCapacityRequestBaseDetails.
+        :type demand_quantity: int
+
         """
         self.swagger_types = {
             'resource_type': 'str',
             'workload_type': 'str',
+            'source_workload_type': 'str',
             'expected_handover_quantity': 'int',
             'date_expected_handover': 'datetime',
             'actual_handover_quantity': 'int',
-            'date_actual_handover': 'datetime'
+            'date_actual_handover': 'datetime',
+            'resource_name': 'str',
+            'demand_quantity': 'int'
         }
 
         self.attribute_map = {
             'resource_type': 'resourceType',
             'workload_type': 'workloadType',
+            'source_workload_type': 'sourceWorkloadType',
             'expected_handover_quantity': 'expectedHandoverQuantity',
             'date_expected_handover': 'dateExpectedHandover',
             'actual_handover_quantity': 'actualHandoverQuantity',
-            'date_actual_handover': 'dateActualHandover'
+            'date_actual_handover': 'dateActualHandover',
+            'resource_name': 'resourceName',
+            'demand_quantity': 'demandQuantity'
         }
 
         self._resource_type = None
         self._workload_type = None
+        self._source_workload_type = None
         self._expected_handover_quantity = None
         self._date_expected_handover = None
         self._actual_handover_quantity = None
         self._date_actual_handover = None
-
-    @staticmethod
-    def get_subtype(object_dictionary):
-        """
-        Given the hash representation of a subtype of this class,
-        use the info in the hash to return the class of the subtype.
-        """
-        type = object_dictionary['resourceType']
-
-        if type == 'SERVER_HW':
-            return 'OccCapacityRequestComputeDetails'
-        else:
-            return 'OccCapacityRequestBaseDetails'
+        self._resource_name = None
+        self._demand_quantity = None
 
     @property
     def resource_type(self):
         """
         **[Required]** Gets the resource_type of this OccCapacityRequestBaseDetails.
         The type of the resource against which the user wants to place a capacity request.
-
-        Allowed values for this property are: "SERVER_HW", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The resource_type of this OccCapacityRequestBaseDetails.
@@ -118,9 +113,6 @@ class OccCapacityRequestBaseDetails(object):
         :param resource_type: The resource_type of this OccCapacityRequestBaseDetails.
         :type: str
         """
-        allowed_values = ["SERVER_HW"]
-        if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
-            resource_type = 'UNKNOWN_ENUM_VALUE'
         self._resource_type = resource_type
 
     @property
@@ -146,6 +138,30 @@ class OccCapacityRequestBaseDetails(object):
         :type: str
         """
         self._workload_type = workload_type
+
+    @property
+    def source_workload_type(self):
+        """
+        Gets the source_workload_type of this OccCapacityRequestBaseDetails.
+        The WorkloadType from where capacity request are to be transferred.
+
+
+        :return: The source_workload_type of this OccCapacityRequestBaseDetails.
+        :rtype: str
+        """
+        return self._source_workload_type
+
+    @source_workload_type.setter
+    def source_workload_type(self, source_workload_type):
+        """
+        Sets the source_workload_type of this OccCapacityRequestBaseDetails.
+        The WorkloadType from where capacity request are to be transferred.
+
+
+        :param source_workload_type: The source_workload_type of this OccCapacityRequestBaseDetails.
+        :type: str
+        """
+        self._source_workload_type = source_workload_type
 
     @property
     def expected_handover_quantity(self):
@@ -242,6 +258,54 @@ class OccCapacityRequestBaseDetails(object):
         :type: datetime
         """
         self._date_actual_handover = date_actual_handover
+
+    @property
+    def resource_name(self):
+        """
+        **[Required]** Gets the resource_name of this OccCapacityRequestBaseDetails.
+        The name of the COMPUTE server shape for which the request is made. Do not use CAPACITY_CONSTRAINT as the resource name.
+
+
+        :return: The resource_name of this OccCapacityRequestBaseDetails.
+        :rtype: str
+        """
+        return self._resource_name
+
+    @resource_name.setter
+    def resource_name(self, resource_name):
+        """
+        Sets the resource_name of this OccCapacityRequestBaseDetails.
+        The name of the COMPUTE server shape for which the request is made. Do not use CAPACITY_CONSTRAINT as the resource name.
+
+
+        :param resource_name: The resource_name of this OccCapacityRequestBaseDetails.
+        :type: str
+        """
+        self._resource_name = resource_name
+
+    @property
+    def demand_quantity(self):
+        """
+        **[Required]** Gets the demand_quantity of this OccCapacityRequestBaseDetails.
+        The number of compute server's with name <resourceName> required by the user.
+
+
+        :return: The demand_quantity of this OccCapacityRequestBaseDetails.
+        :rtype: int
+        """
+        return self._demand_quantity
+
+    @demand_quantity.setter
+    def demand_quantity(self, demand_quantity):
+        """
+        Sets the demand_quantity of this OccCapacityRequestBaseDetails.
+        The number of compute server's with name <resourceName> required by the user.
+
+
+        :param demand_quantity: The demand_quantity of this OccCapacityRequestBaseDetails.
+        :type: int
+        """
+        self._demand_quantity = demand_quantity
 
     def __repr__(self):
         return formatted_flat_dict(self)

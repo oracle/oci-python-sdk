@@ -70,6 +70,10 @@ class OccCapacityRequestSummary(object):
             The value to assign to the request_state property of this OccCapacityRequestSummary.
         :type request_state: str
 
+        :param request_type:
+            The value to assign to the request_type property of this OccCapacityRequestSummary.
+        :type request_type: str
+
         :param time_created:
             The value to assign to the time_created property of this OccCapacityRequestSummary.
         :type time_created: datetime
@@ -111,6 +115,7 @@ class OccCapacityRequestSummary(object):
             'availability_domain': 'str',
             'date_expected_capacity_handover': 'datetime',
             'request_state': 'str',
+            'request_type': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
@@ -132,6 +137,7 @@ class OccCapacityRequestSummary(object):
             'availability_domain': 'availabilityDomain',
             'date_expected_capacity_handover': 'dateExpectedCapacityHandover',
             'request_state': 'requestState',
+            'request_type': 'requestType',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
@@ -152,6 +158,7 @@ class OccCapacityRequestSummary(object):
         self._availability_domain = None
         self._date_expected_capacity_handover = None
         self._request_state = None
+        self._request_type = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
@@ -429,6 +436,30 @@ class OccCapacityRequestSummary(object):
         :type: str
         """
         self._request_state = request_state
+
+    @property
+    def request_type(self):
+        """
+        Gets the request_type of this OccCapacityRequestSummary.
+        Type of Capacity Request(New or Transfer)
+
+
+        :return: The request_type of this OccCapacityRequestSummary.
+        :rtype: str
+        """
+        return self._request_type
+
+    @request_type.setter
+    def request_type(self, request_type):
+        """
+        Sets the request_type of this OccCapacityRequestSummary.
+        Type of Capacity Request(New or Transfer)
+
+
+        :param request_type: The request_type of this OccCapacityRequestSummary.
+        :type: str
+        """
+        self._request_type = request_type
 
     @property
     def time_created(self):

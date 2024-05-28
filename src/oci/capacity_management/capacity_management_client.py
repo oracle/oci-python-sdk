@@ -942,6 +942,175 @@ class CapacityManagementClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def list_internal_namespace_occ_overviews(self, namespace, compartment_id, **kwargs):
+        """
+        Lists an overview of all resources in that namespace in a given time interval.
+
+
+        :param str namespace: (required)
+            The namespace by which we would filter the list.
+
+            Allowed values are: "COMPUTE"
+
+        :param str compartment_id: (required)
+            The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+
+        :param str occ_customer_group_id: (optional)
+            The customer group ocid by which we would filter the list.
+
+        :param str workload_type: (optional)
+            Workload type using the resources in an availability catalog can be filtered.
+
+        :param datetime _from: (optional)
+            The month corresponding to this date would be considered as the starting point of the time period against which we would like to perform an aggregation.
+
+        :param datetime to: (optional)
+            The month corresponding to this date would be considered as the ending point of the time period against which we would like to perform an aggregation.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            A token representing the position at which to start retrieving results. This must come from `opc-next-page` header field of a previous response.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+            underscore, and dash.
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'ASC' or 'DESC'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. The default order for periodValue is chronological order(latest month item at the end).
+
+            Allowed values are: "periodValue"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.capacity_management.models.OccOverviewCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/capacitymanagement/list_internal_namespace_occ_overviews.py.html>`__ to see an example of how to use list_internal_namespace_occ_overviews API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['namespace', 'compartmentId']
+        resource_path = "/internal/namespace/{namespace}/occOverview"
+        method = "GET"
+        operation_name = "list_internal_namespace_occ_overviews"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "occ_customer_group_id",
+            "workload_type",
+            "_from",
+            "to",
+            "limit",
+            "page",
+            "opc_request_id",
+            "sort_order",
+            "sort_by"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_internal_namespace_occ_overviews got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "namespace": namespace
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["periodValue"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "occCustomerGroupId": kwargs.get("occ_customer_group_id", missing),
+            "workloadType": kwargs.get("workload_type", missing),
+            "from": kwargs.get("_from", missing),
+            "to": kwargs.get("to", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="OccOverviewCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="OccOverviewCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_occ_availabilities(self, occ_availability_catalog_id, **kwargs):
         """
         Lists availabilities for a particular availability catalog.
@@ -959,12 +1128,8 @@ class CapacityManagementClient(object):
         :param str resource_type: (optional)
             Resource type using which the capacity constraints of an availability catalog can be filtered.
 
-            Allowed values are: "SERVER_HW", "CAPACITY_CONSTRAINT"
-
         :param str workload_type: (optional)
             Workload type using the resources in an availability catalog can be filtered.
-
-            Allowed values are: "GENERIC", "ROW", "US_PROD"
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1039,20 +1204,6 @@ class CapacityManagementClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
-
-        if 'resource_type' in kwargs:
-            resource_type_allowed_values = ["SERVER_HW", "CAPACITY_CONSTRAINT"]
-            if kwargs['resource_type'] not in resource_type_allowed_values:
-                raise ValueError(
-                    f"Invalid value for `resource_type`, must be one of { resource_type_allowed_values }"
-                )
-
-        if 'workload_type' in kwargs:
-            workload_type_allowed_values = ["GENERIC", "ROW", "US_PROD"]
-            if kwargs['workload_type'] not in workload_type_allowed_values:
-                raise ValueError(
-                    f"Invalid value for `workload_type`, must be one of { workload_type_allowed_values }"
-                )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
@@ -1484,6 +1635,11 @@ class CapacityManagementClient(object):
 
             Allowed values are: "COMPUTE"
 
+        :param str request_type: (optional)
+            A filter to return only the resources that match the request type. The match is not case sensitive.
+
+            Allowed values are: "NEW", "TRANSFER"
+
         :param str display_name: (optional)
             A filter to return only the resources that match the entire display name. The match is not case sensitive.
 
@@ -1541,6 +1697,7 @@ class CapacityManagementClient(object):
             "retry_strategy",
             "occ_availability_catalog_id",
             "namespace",
+            "request_type",
             "display_name",
             "id",
             "limit",
@@ -1561,6 +1718,13 @@ class CapacityManagementClient(object):
                     f"Invalid value for `namespace`, must be one of { namespace_allowed_values }"
                 )
 
+        if 'request_type' in kwargs:
+            request_type_allowed_values = ["NEW", "TRANSFER"]
+            if kwargs['request_type'] not in request_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `request_type`, must be one of { request_type_allowed_values }"
+                )
+
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
@@ -1579,6 +1743,7 @@ class CapacityManagementClient(object):
             "compartmentId": compartment_id,
             "occAvailabilityCatalogId": kwargs.get("occ_availability_catalog_id", missing),
             "namespace": kwargs.get("namespace", missing),
+            "requestType": kwargs.get("request_type", missing),
             "displayName": kwargs.get("display_name", missing),
             "id": kwargs.get("id", missing),
             "limit": kwargs.get("limit", missing),
@@ -1651,6 +1816,11 @@ class CapacityManagementClient(object):
         :param str display_name: (optional)
             A filter to return only the resources that match the entire display name. The match is not case sensitive.
 
+        :param str request_type: (optional)
+            A filter to return only the resources that match the request type. The match is not case sensitive.
+
+            Allowed values are: "NEW", "TRANSFER"
+
         :param str id: (optional)
             A filter to return the list of capacity requests based on the OCID of the capacity request. This is done for the users who have INSPECT permission on the resource but do not have READ permission.
 
@@ -1707,6 +1877,7 @@ class CapacityManagementClient(object):
             "occ_availability_catalog_id",
             "namespace",
             "display_name",
+            "request_type",
             "id",
             "limit",
             "page",
@@ -1724,6 +1895,13 @@ class CapacityManagementClient(object):
             if kwargs['namespace'] not in namespace_allowed_values:
                 raise ValueError(
                     f"Invalid value for `namespace`, must be one of { namespace_allowed_values }"
+                )
+
+        if 'request_type' in kwargs:
+            request_type_allowed_values = ["NEW", "TRANSFER"]
+            if kwargs['request_type'] not in request_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `request_type`, must be one of { request_type_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
@@ -1746,6 +1924,7 @@ class CapacityManagementClient(object):
             "occAvailabilityCatalogId": kwargs.get("occ_availability_catalog_id", missing),
             "namespace": kwargs.get("namespace", missing),
             "displayName": kwargs.get("display_name", missing),
+            "requestType": kwargs.get("request_type", missing),
             "id": kwargs.get("id", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
@@ -1951,13 +2130,290 @@ class CapacityManagementClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def list_occ_overviews(self, namespace, compartment_id, **kwargs):
+        """
+        Lists an overview of all resources in that namespace in a given time interval.
+
+
+        :param str namespace: (required)
+            The namespace by which we would filter the list.
+
+            Allowed values are: "COMPUTE"
+
+        :param str compartment_id: (required)
+            The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+
+        :param datetime _from: (optional)
+            The month corresponding to this date would be considered as the starting point of the time period against which we would like to perform an aggregation.
+
+        :param datetime to: (optional)
+            The month corresponding to this date would be considered as the ending point of the time period against which we would like to perform an aggregation.
+
+        :param str workload_type: (optional)
+            Workload type using the resources in an availability catalog can be filtered.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            A token representing the position at which to start retrieving results. This must come from `opc-next-page` header field of a previous response.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+            underscore, and dash.
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'ASC' or 'DESC'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. The default order for periodValue is chronological order(latest month item at the end).
+
+            Allowed values are: "periodValue"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.capacity_management.models.OccOverviewCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/capacitymanagement/list_occ_overviews.py.html>`__ to see an example of how to use list_occ_overviews API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['namespace', 'compartmentId']
+        resource_path = "/namespace/{namespace}/occOverview"
+        method = "GET"
+        operation_name = "list_occ_overviews"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "_from",
+            "to",
+            "workload_type",
+            "limit",
+            "page",
+            "opc_request_id",
+            "sort_order",
+            "sort_by"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_occ_overviews got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "namespace": namespace
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["periodValue"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "from": kwargs.get("_from", missing),
+            "to": kwargs.get("to", missing),
+            "workloadType": kwargs.get("workload_type", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="OccOverviewCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="OccOverviewCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def patch_internal_occ_capacity_request(self, patch_occ_capacity_request_details, occ_capacity_request_id, **kwargs):
+        """
+        Updates the OccCapacityRequest by evaluating a sequence of instructions.
+
+
+        :param oci.capacity_management.models.PatchOccCapacityRequestDetails patch_occ_capacity_request_details: (required)
+            Request to update the details of the capacity request.
+
+        :param str occ_capacity_request_id: (required)
+            The OCID of the capacity request.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+            underscore, and dash.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.capacity_management.models.OccCapacityRequest`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/capacitymanagement/patch_internal_occ_capacity_request.py.html>`__ to see an example of how to use patch_internal_occ_capacity_request API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['occCapacityRequestId']
+        resource_path = "/internal/occCapacityRequests/{occCapacityRequestId}"
+        method = "PATCH"
+        operation_name = "patch_internal_occ_capacity_request"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"patch_internal_occ_capacity_request got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "occCapacityRequestId": occ_capacity_request_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=patch_occ_capacity_request_details,
+                response_type="OccCapacityRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=patch_occ_capacity_request_details,
+                response_type="OccCapacityRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def patch_occ_capacity_request(self, patch_occ_capacity_request_details, occ_capacity_request_id, **kwargs):
         """
         Updates the OccCapacityRequest by evaluating a sequence of instructions.
 
 
         :param oci.capacity_management.models.PatchOccCapacityRequestDetails patch_occ_capacity_request_details: (required)
-            Request to update the properties of the capacity request.
+            Request to update the details of the capacity request.
 
         :param str occ_capacity_request_id: (required)
             The OCID of the capacity request.

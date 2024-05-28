@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.127.0 - 2024-05-28
+====================
+
+Added
+-----
+* Support for Demand Signal service
+* Support for external database connectors in the Database service
+* Support for monitoring standby databases in the Database Management service
+* Support for resource overviews in the Capacity Management service
+* Support for optional parameters in the download API in the Java Management Service Downloads service
+ 
+Breaking
+--------
+* The operation list_occ_availabilities can return any string for the params resource_type and workload_type in the OCI Control Center service
+* The model OccCapacityRequestComputeDetails has been removed in the OCI Control Center service
+* The params resource_type and workload_type can accept any string in the models OccAvailabilitySummary and OccCapacityRequestBaseDetails in the OCI Control Center service
+ 
+====================
 2.126.4 - 2024-05-21
 ====================
 

@@ -31,6 +31,10 @@ class PreferredCredentialSummary(object):
     #: This constant has a value of "SYSDBA"
     ROLE_SYSDBA = "SYSDBA"
 
+    #: A constant which can be used with the role property of a PreferredCredentialSummary.
+    #: This constant has a value of "SYSDG"
+    ROLE_SYSDG = "SYSDG"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PreferredCredentialSummary object with values from keyword arguments.
@@ -56,7 +60,7 @@ class PreferredCredentialSummary(object):
 
         :param role:
             The value to assign to the role property of this PreferredCredentialSummary.
-            Allowed values for this property are: "NORMAL", "SYSDBA", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NORMAL", "SYSDBA", "SYSDG", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type role: str
 
@@ -205,7 +209,7 @@ class PreferredCredentialSummary(object):
         Gets the role of this PreferredCredentialSummary.
         The role of the database user.
 
-        Allowed values for this property are: "NORMAL", "SYSDBA", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "NORMAL", "SYSDBA", "SYSDG", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -224,7 +228,7 @@ class PreferredCredentialSummary(object):
         :param role: The role of this PreferredCredentialSummary.
         :type: str
         """
-        allowed_values = ["NORMAL", "SYSDBA"]
+        allowed_values = ["NORMAL", "SYSDBA", "SYSDG"]
         if not value_allowed_none_or_none_sentinel(role, allowed_values):
             role = 'UNKNOWN_ENUM_VALUE'
         self._role = role

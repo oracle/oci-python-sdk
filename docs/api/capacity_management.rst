@@ -29,12 +29,13 @@ Capacity Management
     oci.capacity_management.models.OccCapacityRequest
     oci.capacity_management.models.OccCapacityRequestBaseDetails
     oci.capacity_management.models.OccCapacityRequestCollection
-    oci.capacity_management.models.OccCapacityRequestComputeDetails
     oci.capacity_management.models.OccCapacityRequestSummary
     oci.capacity_management.models.OccCustomer
     oci.capacity_management.models.OccCustomerGroup
     oci.capacity_management.models.OccCustomerGroupCollection
     oci.capacity_management.models.OccCustomerGroupSummary
+    oci.capacity_management.models.OccOverviewCollection
+    oci.capacity_management.models.OccOverviewSummary
     oci.capacity_management.models.PatchInsertInstruction
     oci.capacity_management.models.PatchInsertMultipleInstruction
     oci.capacity_management.models.PatchInstruction

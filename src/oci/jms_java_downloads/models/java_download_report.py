@@ -24,6 +24,26 @@ class JavaDownloadReport(object):
     #: This constant has a value of "SHA256"
     CHECKSUM_TYPE_SHA256 = "SHA256"
 
+    #: A constant which can be used with the sort_by property of a JavaDownloadReport.
+    #: This constant has a value of "timeDownloaded"
+    SORT_BY_TIME_DOWNLOADED = "timeDownloaded"
+
+    #: A constant which can be used with the sort_by property of a JavaDownloadReport.
+    #: This constant has a value of "downloadSourceId"
+    SORT_BY_DOWNLOAD_SOURCE_ID = "downloadSourceId"
+
+    #: A constant which can be used with the sort_by property of a JavaDownloadReport.
+    #: This constant has a value of "downloadType"
+    SORT_BY_DOWNLOAD_TYPE = "downloadType"
+
+    #: A constant which can be used with the sort_order property of a JavaDownloadReport.
+    #: This constant has a value of "ASC"
+    SORT_ORDER_ASC = "ASC"
+
+    #: A constant which can be used with the sort_order property of a JavaDownloadReport.
+    #: This constant has a value of "DESC"
+    SORT_ORDER_DESC = "DESC"
+
     #: A constant which can be used with the lifecycle_state property of a JavaDownloadReport.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -97,6 +117,26 @@ class JavaDownloadReport(object):
             The value to assign to the time_created property of this JavaDownloadReport.
         :type time_created: datetime
 
+        :param time_start:
+            The value to assign to the time_start property of this JavaDownloadReport.
+        :type time_start: datetime
+
+        :param time_end:
+            The value to assign to the time_end property of this JavaDownloadReport.
+        :type time_end: datetime
+
+        :param sort_by:
+            The value to assign to the sort_by property of this JavaDownloadReport.
+            Allowed values for this property are: "timeDownloaded", "downloadSourceId", "downloadType", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type sort_by: str
+
+        :param sort_order:
+            The value to assign to the sort_order property of this JavaDownloadReport.
+            Allowed values for this property are: "ASC", "DESC", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type sort_order: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this JavaDownloadReport.
             Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "NEEDS_ATTENTION", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
@@ -126,6 +166,10 @@ class JavaDownloadReport(object):
             'compartment_id': 'str',
             'created_by': 'Principal',
             'time_created': 'datetime',
+            'time_start': 'datetime',
+            'time_end': 'datetime',
+            'sort_by': 'str',
+            'sort_order': 'str',
             'lifecycle_state': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -142,6 +186,10 @@ class JavaDownloadReport(object):
             'compartment_id': 'compartmentId',
             'created_by': 'createdBy',
             'time_created': 'timeCreated',
+            'time_start': 'timeStart',
+            'time_end': 'timeEnd',
+            'sort_by': 'sortBy',
+            'sort_order': 'sortOrder',
             'lifecycle_state': 'lifecycleState',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -157,6 +205,10 @@ class JavaDownloadReport(object):
         self._compartment_id = None
         self._created_by = None
         self._time_created = None
+        self._time_start = None
+        self._time_end = None
+        self._sort_by = None
+        self._sort_order = None
         self._lifecycle_state = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -374,7 +426,9 @@ class JavaDownloadReport(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this JavaDownloadReport.
-        The time the Java download report was created. An RFC3339 formatted datetime string.
+        The time the Java download report was created, displayed as an `RFC3339`__ formatted datetime string.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_created of this JavaDownloadReport.
@@ -386,13 +440,131 @@ class JavaDownloadReport(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this JavaDownloadReport.
-        The time the Java download report was created. An RFC3339 formatted datetime string.
+        The time the Java download report was created, displayed as an `RFC3339`__ formatted datetime string.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_created: The time_created of this JavaDownloadReport.
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def time_start(self):
+        """
+        Gets the time_start of this JavaDownloadReport.
+        The start time from when the download records are included (formatted according to `RFC3339`__).
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
+
+
+        :return: The time_start of this JavaDownloadReport.
+        :rtype: datetime
+        """
+        return self._time_start
+
+    @time_start.setter
+    def time_start(self, time_start):
+        """
+        Sets the time_start of this JavaDownloadReport.
+        The start time from when the download records are included (formatted according to `RFC3339`__).
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
+
+
+        :param time_start: The time_start of this JavaDownloadReport.
+        :type: datetime
+        """
+        self._time_start = time_start
+
+    @property
+    def time_end(self):
+        """
+        Gets the time_end of this JavaDownloadReport.
+        The end time until when the download records are included (formatted according to `RFC3339`__).
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
+
+
+        :return: The time_end of this JavaDownloadReport.
+        :rtype: datetime
+        """
+        return self._time_end
+
+    @time_end.setter
+    def time_end(self, time_end):
+        """
+        Sets the time_end of this JavaDownloadReport.
+        The end time until when the download records are included (formatted according to `RFC3339`__).
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
+
+
+        :param time_end: The time_end of this JavaDownloadReport.
+        :type: datetime
+        """
+        self._time_end = time_end
+
+    @property
+    def sort_by(self):
+        """
+        Gets the sort_by of this JavaDownloadReport.
+        The property used for sorting the records.
+
+        Allowed values for this property are: "timeDownloaded", "downloadSourceId", "downloadType", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The sort_by of this JavaDownloadReport.
+        :rtype: str
+        """
+        return self._sort_by
+
+    @sort_by.setter
+    def sort_by(self, sort_by):
+        """
+        Sets the sort_by of this JavaDownloadReport.
+        The property used for sorting the records.
+
+
+        :param sort_by: The sort_by of this JavaDownloadReport.
+        :type: str
+        """
+        allowed_values = ["timeDownloaded", "downloadSourceId", "downloadType"]
+        if not value_allowed_none_or_none_sentinel(sort_by, allowed_values):
+            sort_by = 'UNKNOWN_ENUM_VALUE'
+        self._sort_by = sort_by
+
+    @property
+    def sort_order(self):
+        """
+        Gets the sort_order of this JavaDownloadReport.
+        The sort order for the records.
+
+        Allowed values for this property are: "ASC", "DESC", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The sort_order of this JavaDownloadReport.
+        :rtype: str
+        """
+        return self._sort_order
+
+    @sort_order.setter
+    def sort_order(self, sort_order):
+        """
+        Sets the sort_order of this JavaDownloadReport.
+        The sort order for the records.
+
+
+        :param sort_order: The sort_order of this JavaDownloadReport.
+        :type: str
+        """
+        allowed_values = ["ASC", "DESC"]
+        if not value_allowed_none_or_none_sentinel(sort_order, allowed_values):
+            sort_order = 'UNKNOWN_ENUM_VALUE'
+        self._sort_order = sort_order
 
     @property
     def lifecycle_state(self):

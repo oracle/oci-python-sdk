@@ -161,7 +161,7 @@ class RequestSummarizedJavaDownloadCountsDetails(object):
     def group_as(self):
         """
         **[Required]** Gets the group_as of this RequestSummarizedJavaDownloadCountsDetails.
-        Group as property specifying the aggregation type for download counts.
+        The property that specifies the aggregation type for the download counts.
 
         Allowed values for this property are: "JAVA_FAMILY", "JAVA_RELEASE", "PLATFORM"
 
@@ -175,7 +175,7 @@ class RequestSummarizedJavaDownloadCountsDetails(object):
     def group_as(self, group_as):
         """
         Sets the group_as of this RequestSummarizedJavaDownloadCountsDetails.
-        Group as property specifying the aggregation type for download counts.
+        The property that specifies the aggregation type for the download counts.
 
 
         :param group_as: The group_as of this RequestSummarizedJavaDownloadCountsDetails.

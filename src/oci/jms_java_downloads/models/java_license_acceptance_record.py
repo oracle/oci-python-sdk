@@ -322,7 +322,7 @@ class JavaLicenseAcceptanceRecord(object):
     def time_accepted(self):
         """
         **[Required]** Gets the time_accepted of this JavaLicenseAcceptanceRecord.
-        The date and time of license acceptance(formatted according to `RFC3339`__).
+        The date and time of license acceptance (formatted according to `RFC3339`__).
 
         __ https://datatracker.ietf.org/doc/html/rfc3339
 
@@ -336,7 +336,7 @@ class JavaLicenseAcceptanceRecord(object):
     def time_accepted(self, time_accepted):
         """
         Sets the time_accepted of this JavaLicenseAcceptanceRecord.
-        The date and time of license acceptance(formatted according to `RFC3339`__).
+        The date and time of license acceptance (formatted according to `RFC3339`__).
 
         __ https://datatracker.ietf.org/doc/html/rfc3339
 
@@ -350,7 +350,7 @@ class JavaLicenseAcceptanceRecord(object):
     def time_last_updated(self):
         """
         Gets the time_last_updated of this JavaLicenseAcceptanceRecord.
-        The date and time of last update(formatted according to `RFC3339`__).
+        The date and time of last update (formatted according to `RFC3339`__).
 
         __ https://datatracker.ietf.org/doc/html/rfc3339
 
@@ -364,7 +364,7 @@ class JavaLicenseAcceptanceRecord(object):
     def time_last_updated(self, time_last_updated):
         """
         Sets the time_last_updated of this JavaLicenseAcceptanceRecord.
-        The date and time of last update(formatted according to `RFC3339`__).
+        The date and time of last update (formatted according to `RFC3339`__).
 
         __ https://datatracker.ietf.org/doc/html/rfc3339
 

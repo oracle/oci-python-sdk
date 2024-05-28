@@ -19,6 +19,10 @@ class MetadataDetails(object):
     #: This constant has a value of "V1"
     FORMAT_VERSION_V1 = "V1"
 
+    #: A constant which can be used with the format_version property of a MetadataDetails.
+    #: This constant has a value of "V2"
+    FORMAT_VERSION_V2 = "V2"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MetadataDetails object with values from keyword arguments.
@@ -26,7 +30,7 @@ class MetadataDetails(object):
 
         :param format_version:
             The value to assign to the format_version property of this MetadataDetails.
-            Allowed values for this property are: "V1", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "V1", "V2", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type format_version: str
 
@@ -47,7 +51,7 @@ class MetadataDetails(object):
         **[Required]** Gets the format_version of this MetadataDetails.
         The version for the format of the catalog file being uploaded.
 
-        Allowed values for this property are: "V1", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "V1", "V2", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -66,7 +70,7 @@ class MetadataDetails(object):
         :param format_version: The format_version of this MetadataDetails.
         :type: str
         """
-        allowed_values = ["V1"]
+        allowed_values = ["V1", "V2"]
         if not value_allowed_none_or_none_sentinel(format_version, allowed_values):
             format_version = 'UNKNOWN_ENUM_VALUE'
         self._format_version = format_version

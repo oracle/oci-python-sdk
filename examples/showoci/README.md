@@ -44,6 +44,8 @@ Developed by Adi Zohar, 2018-2024, Contributors: Olaf Heimburger
 
 - [Tag Resources in Tenancy](https://github.com/oracle/oci-python-sdk/tree/master/examples/tag_resources_in_tenancy)
 
+- [OCI Capacity Reporter](https://github.com/oracle/oci-python-sdk/tree/master/examples/oci_capacity_reporter)
+
 - [Usage2ADW](https://github.com/oracle-samples/usage-reports-to-adw)
 
 ## ShowOCI

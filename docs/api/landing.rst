@@ -147,6 +147,7 @@ API Reference
 * :doc:`Notification Data Plane <ons/client/oci.ons.NotificationDataPlaneClient>`
 * :doc:`Object Storage <object_storage/client/oci.object_storage.ObjectStorageClient>`
 * :doc:`Ocb Agent Svc <cloud_bridge/client/oci.cloud_bridge.OcbAgentSvcClient>`
+* :doc:`Occ Demand Signal <demand_signal/client/oci.demand_signal.OccDemandSignalClient>`
 * :doc:`Occ Metrics <oci_control_center/client/oci.oci_control_center.OccMetricsClient>`
 * :doc:`Oce Instance <oce/client/oci.oce.OceInstanceClient>`
 * :doc:`Oda <oda/client/oci.oda.OdaClient>`
@@ -307,6 +308,7 @@ API Reference
     database_management
     database_migration
     database_tools
+    demand_signal
     desktops
     devops
     disaster_recovery

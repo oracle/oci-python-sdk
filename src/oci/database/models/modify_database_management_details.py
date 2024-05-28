@@ -39,6 +39,10 @@ class ModifyDatabaseManagementDetails(object):
     #: This constant has a value of "NORMAL"
     ROLE_NORMAL = "NORMAL"
 
+    #: A constant which can be used with the role property of a ModifyDatabaseManagementDetails.
+    #: This constant has a value of "SYSDG"
+    ROLE_SYSDG = "SYSDG"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ModifyDatabaseManagementDetails object with values from keyword arguments.
@@ -76,7 +80,7 @@ class ModifyDatabaseManagementDetails(object):
 
         :param role:
             The value to assign to the role property of this ModifyDatabaseManagementDetails.
-            Allowed values for this property are: "SYSDBA", "NORMAL"
+            Allowed values for this property are: "SYSDBA", "NORMAL", "SYSDG"
         :type role: str
 
         """
@@ -305,7 +309,7 @@ class ModifyDatabaseManagementDetails(object):
         Gets the role of this ModifyDatabaseManagementDetails.
         The role of the user that will be connecting to the database.
 
-        Allowed values for this property are: "SYSDBA", "NORMAL"
+        Allowed values for this property are: "SYSDBA", "NORMAL", "SYSDG"
 
 
         :return: The role of this ModifyDatabaseManagementDetails.
@@ -323,7 +327,7 @@ class ModifyDatabaseManagementDetails(object):
         :param role: The role of this ModifyDatabaseManagementDetails.
         :type: str
         """
-        allowed_values = ["SYSDBA", "NORMAL"]
+        allowed_values = ["SYSDBA", "NORMAL", "SYSDG"]
         if not value_allowed_none_or_none_sentinel(role, allowed_values):
             raise ValueError(
                 f"Invalid value for `role`, must be None or one of {allowed_values}"

@@ -99,6 +99,7 @@ from .cursor_cache_statement_collection import CursorCacheStatementCollection
 from .cursor_cache_statement_summary import CursorCacheStatementSummary
 from .data_access_container_collection import DataAccessContainerCollection
 from .data_access_container_summary import DataAccessContainerSummary
+from .data_points import DataPoints
 from .database_connection_credentails_by_name import DatabaseConnectionCredentailsByName
 from .database_connection_credentials import DatabaseConnectionCredentials
 from .database_connection_credentials_by_details import DatabaseConnectionCredentialsByDetails
@@ -130,6 +131,7 @@ from .database_storage_aggregate_metrics import DatabaseStorageAggregateMetrics
 from .database_time_aggregate_metrics import DatabaseTimeAggregateMetrics
 from .database_usage_metrics import DatabaseUsageMetrics
 from .datafile import Datafile
+from .dataguard_performance_metrics import DataguardPerformanceMetrics
 from .db_management_analytics_metric import DbManagementAnalyticsMetric
 from .db_management_private_endpoint import DbManagementPrivateEndpoint
 from .db_management_private_endpoint_collection import DbManagementPrivateEndpointCollection
@@ -361,6 +363,9 @@ from .patch_instruction import PatchInstruction
 from .patch_merge_instruction import PatchMergeInstruction
 from .pdb_metrics import PdbMetrics
 from .pdb_status_details import PdbStatusDetails
+from .peer_database_metrics import PeerDatabaseMetrics
+from .performance_metrics import PerformanceMetrics
+from .performance_metrics_data import PerformanceMetricsData
 from .preferred_credential import PreferredCredential
 from .preferred_credential_collection import PreferredCredentialCollection
 from .preferred_credential_summary import PreferredCredentialSummary
@@ -588,6 +593,7 @@ database_management_type_mapping = {
     "CursorCacheStatementSummary": CursorCacheStatementSummary,
     "DataAccessContainerCollection": DataAccessContainerCollection,
     "DataAccessContainerSummary": DataAccessContainerSummary,
+    "DataPoints": DataPoints,
     "DatabaseConnectionCredentailsByName": DatabaseConnectionCredentailsByName,
     "DatabaseConnectionCredentials": DatabaseConnectionCredentials,
     "DatabaseConnectionCredentialsByDetails": DatabaseConnectionCredentialsByDetails,
@@ -619,6 +625,7 @@ database_management_type_mapping = {
     "DatabaseTimeAggregateMetrics": DatabaseTimeAggregateMetrics,
     "DatabaseUsageMetrics": DatabaseUsageMetrics,
     "Datafile": Datafile,
+    "DataguardPerformanceMetrics": DataguardPerformanceMetrics,
     "DbManagementAnalyticsMetric": DbManagementAnalyticsMetric,
     "DbManagementPrivateEndpoint": DbManagementPrivateEndpoint,
     "DbManagementPrivateEndpointCollection": DbManagementPrivateEndpointCollection,
@@ -850,6 +857,9 @@ database_management_type_mapping = {
     "PatchMergeInstruction": PatchMergeInstruction,
     "PdbMetrics": PdbMetrics,
     "PdbStatusDetails": PdbStatusDetails,
+    "PeerDatabaseMetrics": PeerDatabaseMetrics,
+    "PerformanceMetrics": PerformanceMetrics,
+    "PerformanceMetricsData": PerformanceMetricsData,
     "PreferredCredential": PreferredCredential,
     "PreferredCredentialCollection": PreferredCredentialCollection,
     "PreferredCredentialSummary": PreferredCredentialSummary,

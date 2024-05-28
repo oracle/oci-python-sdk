@@ -31,6 +31,10 @@ class ModifyPluggableDatabaseManagementDetails(object):
     #: This constant has a value of "NORMAL"
     ROLE_NORMAL = "NORMAL"
 
+    #: A constant which can be used with the role property of a ModifyPluggableDatabaseManagementDetails.
+    #: This constant has a value of "SYSDG"
+    ROLE_SYSDG = "SYSDG"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ModifyPluggableDatabaseManagementDetails object with values from keyword arguments.
@@ -63,7 +67,7 @@ class ModifyPluggableDatabaseManagementDetails(object):
 
         :param role:
             The value to assign to the role property of this ModifyPluggableDatabaseManagementDetails.
-            Allowed values for this property are: "SYSDBA", "NORMAL"
+            Allowed values for this property are: "SYSDBA", "NORMAL", "SYSDG"
         :type role: str
 
         """
@@ -258,7 +262,7 @@ class ModifyPluggableDatabaseManagementDetails(object):
         Gets the role of this ModifyPluggableDatabaseManagementDetails.
         The role of the user that will be connecting to the database.
 
-        Allowed values for this property are: "SYSDBA", "NORMAL"
+        Allowed values for this property are: "SYSDBA", "NORMAL", "SYSDG"
 
 
         :return: The role of this ModifyPluggableDatabaseManagementDetails.
@@ -276,7 +280,7 @@ class ModifyPluggableDatabaseManagementDetails(object):
         :param role: The role of this ModifyPluggableDatabaseManagementDetails.
         :type: str
         """
-        allowed_values = ["SYSDBA", "NORMAL"]
+        allowed_values = ["SYSDBA", "NORMAL", "SYSDG"]
         if not value_allowed_none_or_none_sentinel(role, allowed_values):
             raise ValueError(
                 f"Invalid value for `role`, must be None or one of {allowed_values}"

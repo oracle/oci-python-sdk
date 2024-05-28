@@ -119,6 +119,7 @@ Database Management
     oci.database_management.models.CursorCacheStatementSummary
     oci.database_management.models.DataAccessContainerCollection
     oci.database_management.models.DataAccessContainerSummary
+    oci.database_management.models.DataPoints
     oci.database_management.models.DatabaseConnectionCredentailsByName
     oci.database_management.models.DatabaseConnectionCredentials
     oci.database_management.models.DatabaseConnectionCredentialsByDetails
@@ -150,6 +151,7 @@ Database Management
     oci.database_management.models.DatabaseTimeAggregateMetrics
     oci.database_management.models.DatabaseUsageMetrics
     oci.database_management.models.Datafile
+    oci.database_management.models.DataguardPerformanceMetrics
     oci.database_management.models.DbManagementAnalyticsMetric
     oci.database_management.models.DbManagementPrivateEndpoint
     oci.database_management.models.DbManagementPrivateEndpointCollection
@@ -381,6 +383,9 @@ Database Management
     oci.database_management.models.PatchMergeInstruction
     oci.database_management.models.PdbMetrics
     oci.database_management.models.PdbStatusDetails
+    oci.database_management.models.PeerDatabaseMetrics
+    oci.database_management.models.PerformanceMetrics
+    oci.database_management.models.PerformanceMetricsData
     oci.database_management.models.PreferredCredential
     oci.database_management.models.PreferredCredentialCollection
     oci.database_management.models.PreferredCredentialSummary

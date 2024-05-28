@@ -582,7 +582,7 @@ class OccAvailabilityCatalog(object):
     def details(self):
         """
         Gets the details of this OccAvailabilityCatalog.
-        Details about capacity available for  different resources in catalog.
+        Details about capacity available for different resources in catalog.
 
 
         :return: The details of this OccAvailabilityCatalog.
@@ -594,7 +594,7 @@ class OccAvailabilityCatalog(object):
     def details(self, details):
         """
         Sets the details of this OccAvailabilityCatalog.
-        Details about capacity available for  different resources in catalog.
+        Details about capacity available for different resources in catalog.
 
 
         :param details: The details of this OccAvailabilityCatalog.
