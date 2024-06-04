@@ -23,7 +23,7 @@ class TFewTrainingConfig(TrainingConfig):
 
         :param training_config_type:
             The value to assign to the training_config_type property of this TFewTrainingConfig.
-            Allowed values for this property are: "TFEW_TRAINING_CONFIG", "VANILLA_TRAINING_CONFIG"
+            Allowed values for this property are: "TFEW_TRAINING_CONFIG", "VANILLA_TRAINING_CONFIG", "LORA_TRAINING_CONFIG"
         :type training_config_type: str
 
         :param total_training_epochs:

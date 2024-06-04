@@ -104,7 +104,7 @@ class EmbedTextDetails(object):
     def inputs(self):
         """
         **[Required]** Gets the inputs of this EmbedTextDetails.
-        Provide a list of strings with a maximum number of 96 entries. Each string can be words, a phrase, or a paragraph. The maximum length of each string entry in the list is 512 tokens.
+        Provide a list of strings. Each string can be words, a phrase, or a paragraph. The maximum length of each string entry in the list is 512 tokens.
 
 
         :return: The inputs of this EmbedTextDetails.
@@ -116,7 +116,7 @@ class EmbedTextDetails(object):
     def inputs(self, inputs):
         """
         Sets the inputs of this EmbedTextDetails.
-        Provide a list of strings with a maximum number of 96 entries. Each string can be words, a phrase, or a paragraph. The maximum length of each string entry in the list is 512 tokens.
+        Provide a list of strings. Each string can be words, a phrase, or a paragraph. The maximum length of each string entry in the list is 512 tokens.
 
 
         :param inputs: The inputs of this EmbedTextDetails.
@@ -148,7 +148,7 @@ class EmbedTextDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this EmbedTextDetails.
-        The OCID of compartment that the user is authorized to use to call into the Generative AI service.
+        The OCID of compartment in which to call the Generative AI service to create text embeddings.
 
 
         :return: The compartment_id of this EmbedTextDetails.
@@ -160,7 +160,7 @@ class EmbedTextDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this EmbedTextDetails.
-        The OCID of compartment that the user is authorized to use to call into the Generative AI service.
+        The OCID of compartment in which to call the Generative AI service to create text embeddings.
 
 
         :param compartment_id: The compartment_id of this EmbedTextDetails.

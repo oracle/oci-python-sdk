@@ -12,16 +12,36 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Message(object):
     """
-    An message that represents a single dialogue of chat
+    A message that represents a single chat dialog.
     """
+
+    #: A constant which can be used with the role property of a Message.
+    #: This constant has a value of "SYSTEM"
+    ROLE_SYSTEM = "SYSTEM"
+
+    #: A constant which can be used with the role property of a Message.
+    #: This constant has a value of "USER"
+    ROLE_USER = "USER"
+
+    #: A constant which can be used with the role property of a Message.
+    #: This constant has a value of "ASSISTANT"
+    ROLE_ASSISTANT = "ASSISTANT"
 
     def __init__(self, **kwargs):
         """
-        Initializes a new Message object with values from keyword arguments.
+        Initializes a new Message object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
+        to a service operations then you should favor using a subclass over the base class:
+
+        * :class:`~oci.generative_ai_inference.models.SystemMessage`
+        * :class:`~oci.generative_ai_inference.models.AssistantMessage`
+        * :class:`~oci.generative_ai_inference.models.UserMessage`
+
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param role:
             The value to assign to the role property of this Message.
+            Allowed values for this property are: "SYSTEM", "USER", "ASSISTANT", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type role: str
 
         :param content:
@@ -42,11 +62,33 @@ class Message(object):
         self._role = None
         self._content = None
 
+    @staticmethod
+    def get_subtype(object_dictionary):
+        """
+        Given the hash representation of a subtype of this class,
+        use the info in the hash to return the class of the subtype.
+        """
+        type = object_dictionary['role']
+
+        if type == 'SYSTEM':
+            return 'SystemMessage'
+
+        if type == 'ASSISTANT':
+            return 'AssistantMessage'
+
+        if type == 'USER':
+            return 'UserMessage'
+        else:
+            return 'Message'
+
     @property
     def role(self):
         """
         **[Required]** Gets the role of this Message.
-        Indicates who is giving the current message.
+        Indicates who is writing the current chat message.
+
+        Allowed values for this property are: "SYSTEM", "USER", "ASSISTANT", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The role of this Message.
@@ -58,18 +100,21 @@ class Message(object):
     def role(self, role):
         """
         Sets the role of this Message.
-        Indicates who is giving the current message.
+        Indicates who is writing the current chat message.
 
 
         :param role: The role of this Message.
         :type: str
         """
+        allowed_values = ["SYSTEM", "USER", "ASSISTANT"]
+        if not value_allowed_none_or_none_sentinel(role, allowed_values):
+            role = 'UNKNOWN_ENUM_VALUE'
         self._role = role
 
     @property
     def content(self):
         """
-        **[Required]** Gets the content of this Message.
+        Gets the content of this Message.
         Contents of the chat message.
 
 

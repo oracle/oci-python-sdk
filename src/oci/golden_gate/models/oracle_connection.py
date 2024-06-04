@@ -31,6 +31,18 @@ class OracleConnection(Connection):
     #: This constant has a value of "ORACLE_EXADATA"
     TECHNOLOGY_TYPE_ORACLE_EXADATA = "ORACLE_EXADATA"
 
+    #: A constant which can be used with the technology_type property of a OracleConnection.
+    #: This constant has a value of "ORACLE_EXADATA_DATABASE_AT_AZURE"
+    TECHNOLOGY_TYPE_ORACLE_EXADATA_DATABASE_AT_AZURE = "ORACLE_EXADATA_DATABASE_AT_AZURE"
+
+    #: A constant which can be used with the authentication_mode property of a OracleConnection.
+    #: This constant has a value of "TLS"
+    AUTHENTICATION_MODE_TLS = "TLS"
+
+    #: A constant which can be used with the authentication_mode property of a OracleConnection.
+    #: This constant has a value of "MTLS"
+    AUTHENTICATION_MODE_MTLS = "MTLS"
+
     #: A constant which can be used with the session_mode property of a OracleConnection.
     #: This constant has a value of "DIRECT"
     SESSION_MODE_DIRECT = "DIRECT"
@@ -47,7 +59,7 @@ class OracleConnection(Connection):
 
         :param connection_type:
             The value to assign to the connection_type property of this OracleConnection.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -97,6 +109,10 @@ class OracleConnection(Connection):
             The value to assign to the time_updated property of this OracleConnection.
         :type time_updated: datetime
 
+        :param locks:
+            The value to assign to the locks property of this OracleConnection.
+        :type locks: list[oci.golden_gate.models.ResourceLock]
+
         :param vault_id:
             The value to assign to the vault_id property of this OracleConnection.
         :type vault_id: str
@@ -125,7 +141,7 @@ class OracleConnection(Connection):
 
         :param technology_type:
             The value to assign to the technology_type property of this OracleConnection.
-            Allowed values for this property are: "AMAZON_RDS_ORACLE", "OCI_AUTONOMOUS_DATABASE", "ORACLE_DATABASE", "ORACLE_EXADATA", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AMAZON_RDS_ORACLE", "OCI_AUTONOMOUS_DATABASE", "ORACLE_DATABASE", "ORACLE_EXADATA", "ORACLE_EXADATA_DATABASE_AT_AZURE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type technology_type: str
 
@@ -136,6 +152,12 @@ class OracleConnection(Connection):
         :param connection_string:
             The value to assign to the connection_string property of this OracleConnection.
         :type connection_string: str
+
+        :param authentication_mode:
+            The value to assign to the authentication_mode property of this OracleConnection.
+            Allowed values for this property are: "TLS", "MTLS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type authentication_mode: str
 
         :param session_mode:
             The value to assign to the session_mode property of this OracleConnection.
@@ -165,6 +187,7 @@ class OracleConnection(Connection):
             'lifecycle_details': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'locks': 'list[ResourceLock]',
             'vault_id': 'str',
             'key_id': 'str',
             'ingress_ips': 'list[IngressIpDetails]',
@@ -174,6 +197,7 @@ class OracleConnection(Connection):
             'technology_type': 'str',
             'username': 'str',
             'connection_string': 'str',
+            'authentication_mode': 'str',
             'session_mode': 'str',
             'private_ip': 'str',
             'database_id': 'str'
@@ -192,6 +216,7 @@ class OracleConnection(Connection):
             'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'locks': 'locks',
             'vault_id': 'vaultId',
             'key_id': 'keyId',
             'ingress_ips': 'ingressIps',
@@ -201,6 +226,7 @@ class OracleConnection(Connection):
             'technology_type': 'technologyType',
             'username': 'username',
             'connection_string': 'connectionString',
+            'authentication_mode': 'authenticationMode',
             'session_mode': 'sessionMode',
             'private_ip': 'privateIp',
             'database_id': 'databaseId'
@@ -218,6 +244,7 @@ class OracleConnection(Connection):
         self._lifecycle_details = None
         self._time_created = None
         self._time_updated = None
+        self._locks = None
         self._vault_id = None
         self._key_id = None
         self._ingress_ips = None
@@ -227,6 +254,7 @@ class OracleConnection(Connection):
         self._technology_type = None
         self._username = None
         self._connection_string = None
+        self._authentication_mode = None
         self._session_mode = None
         self._private_ip = None
         self._database_id = None
@@ -238,7 +266,7 @@ class OracleConnection(Connection):
         **[Required]** Gets the technology_type of this OracleConnection.
         The Oracle technology type.
 
-        Allowed values for this property are: "AMAZON_RDS_ORACLE", "OCI_AUTONOMOUS_DATABASE", "ORACLE_DATABASE", "ORACLE_EXADATA", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AMAZON_RDS_ORACLE", "OCI_AUTONOMOUS_DATABASE", "ORACLE_DATABASE", "ORACLE_EXADATA", "ORACLE_EXADATA_DATABASE_AT_AZURE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -257,7 +285,7 @@ class OracleConnection(Connection):
         :param technology_type: The technology_type of this OracleConnection.
         :type: str
         """
-        allowed_values = ["AMAZON_RDS_ORACLE", "OCI_AUTONOMOUS_DATABASE", "ORACLE_DATABASE", "ORACLE_EXADATA"]
+        allowed_values = ["AMAZON_RDS_ORACLE", "OCI_AUTONOMOUS_DATABASE", "ORACLE_DATABASE", "ORACLE_EXADATA", "ORACLE_EXADATA_DATABASE_AT_AZURE"]
         if not value_allowed_none_or_none_sentinel(technology_type, allowed_values):
             technology_type = 'UNKNOWN_ENUM_VALUE'
         self._technology_type = technology_type
@@ -313,6 +341,38 @@ class OracleConnection(Connection):
         :type: str
         """
         self._connection_string = connection_string
+
+    @property
+    def authentication_mode(self):
+        """
+        Gets the authentication_mode of this OracleConnection.
+        Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections,
+        when a databaseId is provided. The default value is MTLS.
+
+        Allowed values for this property are: "TLS", "MTLS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The authentication_mode of this OracleConnection.
+        :rtype: str
+        """
+        return self._authentication_mode
+
+    @authentication_mode.setter
+    def authentication_mode(self, authentication_mode):
+        """
+        Sets the authentication_mode of this OracleConnection.
+        Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections,
+        when a databaseId is provided. The default value is MTLS.
+
+
+        :param authentication_mode: The authentication_mode of this OracleConnection.
+        :type: str
+        """
+        allowed_values = ["TLS", "MTLS"]
+        if not value_allowed_none_or_none_sentinel(authentication_mode, allowed_values):
+            authentication_mode = 'UNKNOWN_ENUM_VALUE'
+        self._authentication_mode = authentication_mode
 
     @property
     def session_mode(self):

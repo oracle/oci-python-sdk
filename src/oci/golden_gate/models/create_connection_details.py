@@ -88,6 +88,10 @@ class CreateConnectionDetails(object):
     CONNECTION_TYPE_AMAZON_REDSHIFT = "AMAZON_REDSHIFT"
 
     #: A constant which can be used with the connection_type property of a CreateConnectionDetails.
+    #: This constant has a value of "DB2"
+    CONNECTION_TYPE_DB2 = "DB2"
+
+    #: A constant which can be used with the connection_type property of a CreateConnectionDetails.
     #: This constant has a value of "REDIS"
     CONNECTION_TYPE_REDIS = "REDIS"
 
@@ -136,6 +140,7 @@ class CreateConnectionDetails(object):
         * :class:`~oci.golden_gate.models.CreateAmazonS3ConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateHdfsConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateOciObjectStorageConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateDb2ConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateElasticsearchConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateAzureSynapseConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateRedisConnectionDetails`
@@ -152,7 +157,7 @@ class CreateConnectionDetails(object):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreateConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
         :type connection_type: str
 
         :param display_name:
@@ -174,6 +179,10 @@ class CreateConnectionDetails(object):
         :param defined_tags:
             The value to assign to the defined_tags property of this CreateConnectionDetails.
         :type defined_tags: dict(str, dict(str, object))
+
+        :param locks:
+            The value to assign to the locks property of this CreateConnectionDetails.
+        :type locks: list[oci.golden_gate.models.AddResourceLockDetails]
 
         :param vault_id:
             The value to assign to the vault_id property of this CreateConnectionDetails.
@@ -204,6 +213,7 @@ class CreateConnectionDetails(object):
             'compartment_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[AddResourceLockDetails]',
             'vault_id': 'str',
             'key_id': 'str',
             'nsg_ids': 'list[str]',
@@ -218,6 +228,7 @@ class CreateConnectionDetails(object):
             'compartment_id': 'compartmentId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'locks': 'locks',
             'vault_id': 'vaultId',
             'key_id': 'keyId',
             'nsg_ids': 'nsgIds',
@@ -231,6 +242,7 @@ class CreateConnectionDetails(object):
         self._compartment_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._locks = None
         self._vault_id = None
         self._key_id = None
         self._nsg_ids = None
@@ -281,6 +293,9 @@ class CreateConnectionDetails(object):
         if type == 'OCI_OBJECT_STORAGE':
             return 'CreateOciObjectStorageConnectionDetails'
 
+        if type == 'DB2':
+            return 'CreateDb2ConnectionDetails'
+
         if type == 'ELASTICSEARCH':
             return 'CreateElasticsearchConnectionDetails'
 
@@ -322,7 +337,7 @@ class CreateConnectionDetails(object):
         **[Required]** Gets the connection_type of this CreateConnectionDetails.
         The connection type.
 
-        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
+        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
 
 
         :return: The connection_type of this CreateConnectionDetails.
@@ -340,7 +355,7 @@ class CreateConnectionDetails(object):
         :param connection_type: The connection_type of this CreateConnectionDetails.
         :type: str
         """
-        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"]
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `connection_type`, must be None or one of {allowed_values}"
@@ -480,6 +495,30 @@ class CreateConnectionDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this CreateConnectionDetails.
+        Locks associated with this resource.
+
+
+        :return: The locks of this CreateConnectionDetails.
+        :rtype: list[oci.golden_gate.models.AddResourceLockDetails]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this CreateConnectionDetails.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this CreateConnectionDetails.
+        :type: list[oci.golden_gate.models.AddResourceLockDetails]
+        """
+        self._locks = locks
 
     @property
     def vault_id(self):

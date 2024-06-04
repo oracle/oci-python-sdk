@@ -48,6 +48,8 @@ Database
     oci.database.models.AutonomousDatabaseDataguardAssociation
     oci.database.models.AutonomousDatabaseKeyHistoryEntry
     oci.database.models.AutonomousDatabaseManualRefreshDetails
+    oci.database.models.AutonomousDatabasePeerCollection
+    oci.database.models.AutonomousDatabasePeerSummary
     oci.database.models.AutonomousDatabaseSoftwareImage
     oci.database.models.AutonomousDatabaseSoftwareImageCollection
     oci.database.models.AutonomousDatabaseSoftwareImageSummary
@@ -129,6 +131,7 @@ Database
     oci.database.models.CreateConsoleHistoryDetails
     oci.database.models.CreateCrossRegionAutonomousDatabaseDataGuardDetails
     oci.database.models.CreateCrossRegionDisasterRecoveryDetails
+    oci.database.models.CreateCrossTenancyDisasterRecoveryDetails
     oci.database.models.CreateDataGuardAssociationDetails
     oci.database.models.CreateDataGuardAssociationToExistingDbSystemDetails
     oci.database.models.CreateDataGuardAssociationToExistingVmClusterDetails

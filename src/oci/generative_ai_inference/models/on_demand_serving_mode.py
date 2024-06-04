@@ -49,7 +49,7 @@ class OnDemandServingMode(ServingMode):
     def model_id(self):
         """
         **[Required]** Gets the model_id of this OnDemandServingMode.
-        The unique ID of a model to use. Can use list Models API to list available models.
+        The unique ID of a model to use. You can use the :func:`list_models` API to list the available models.
 
 
         :return: The model_id of this OnDemandServingMode.
@@ -61,7 +61,7 @@ class OnDemandServingMode(ServingMode):
     def model_id(self, model_id):
         """
         Sets the model_id of this OnDemandServingMode.
-        The unique ID of a model to use. Can use list Models API to list available models.
+        The unique ID of a model to use. You can use the :func:`list_models` API to list the available models.
 
 
         :param model_id: The model_id of this OnDemandServingMode.

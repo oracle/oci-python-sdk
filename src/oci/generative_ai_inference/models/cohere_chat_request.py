@@ -15,6 +15,22 @@ class CohereChatRequest(BaseChatRequest):
     Details for the chat request for Cohere models.
     """
 
+    #: A constant which can be used with the prompt_truncation property of a CohereChatRequest.
+    #: This constant has a value of "OFF"
+    PROMPT_TRUNCATION_OFF = "OFF"
+
+    #: A constant which can be used with the prompt_truncation property of a CohereChatRequest.
+    #: This constant has a value of "AUTO_PRESERVE_ORDER"
+    PROMPT_TRUNCATION_AUTO_PRESERVE_ORDER = "AUTO_PRESERVE_ORDER"
+
+    #: A constant which can be used with the citation_quality property of a CohereChatRequest.
+    #: This constant has a value of "ACCURATE"
+    CITATION_QUALITY_ACCURATE = "ACCURATE"
+
+    #: A constant which can be used with the citation_quality property of a CohereChatRequest.
+    #: This constant has a value of "FAST"
+    CITATION_QUALITY_FAST = "FAST"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CohereChatRequest object with values from keyword arguments. The default value of the :py:attr:`~oci.generative_ai_inference.models.CohereChatRequest.api_format` attribute
@@ -66,6 +82,11 @@ class CohereChatRequest(BaseChatRequest):
             The value to assign to the top_p property of this CohereChatRequest.
         :type top_p: float
 
+        :param prompt_truncation:
+            The value to assign to the prompt_truncation property of this CohereChatRequest.
+            Allowed values for this property are: "OFF", "AUTO_PRESERVE_ORDER"
+        :type prompt_truncation: str
+
         :param frequency_penalty:
             The value to assign to the frequency_penalty property of this CohereChatRequest.
         :type frequency_penalty: float
@@ -73,6 +94,39 @@ class CohereChatRequest(BaseChatRequest):
         :param presence_penalty:
             The value to assign to the presence_penalty property of this CohereChatRequest.
         :type presence_penalty: float
+
+        :param seed:
+            The value to assign to the seed property of this CohereChatRequest.
+        :type seed: int
+
+        :param is_echo:
+            The value to assign to the is_echo property of this CohereChatRequest.
+        :type is_echo: bool
+
+        :param tools:
+            The value to assign to the tools property of this CohereChatRequest.
+        :type tools: list[oci.generative_ai_inference.models.CohereTool]
+
+        :param tool_results:
+            The value to assign to the tool_results property of this CohereChatRequest.
+        :type tool_results: list[oci.generative_ai_inference.models.CohereToolResult]
+
+        :param is_force_single_step:
+            The value to assign to the is_force_single_step property of this CohereChatRequest.
+        :type is_force_single_step: bool
+
+        :param stop_sequences:
+            The value to assign to the stop_sequences property of this CohereChatRequest.
+        :type stop_sequences: list[str]
+
+        :param is_raw_prompting:
+            The value to assign to the is_raw_prompting property of this CohereChatRequest.
+        :type is_raw_prompting: bool
+
+        :param citation_quality:
+            The value to assign to the citation_quality property of this CohereChatRequest.
+            Allowed values for this property are: "ACCURATE", "FAST"
+        :type citation_quality: str
 
         """
         self.swagger_types = {
@@ -87,8 +141,17 @@ class CohereChatRequest(BaseChatRequest):
             'temperature': 'float',
             'top_k': 'int',
             'top_p': 'float',
+            'prompt_truncation': 'str',
             'frequency_penalty': 'float',
-            'presence_penalty': 'float'
+            'presence_penalty': 'float',
+            'seed': 'int',
+            'is_echo': 'bool',
+            'tools': 'list[CohereTool]',
+            'tool_results': 'list[CohereToolResult]',
+            'is_force_single_step': 'bool',
+            'stop_sequences': 'list[str]',
+            'is_raw_prompting': 'bool',
+            'citation_quality': 'str'
         }
 
         self.attribute_map = {
@@ -103,8 +166,17 @@ class CohereChatRequest(BaseChatRequest):
             'temperature': 'temperature',
             'top_k': 'topK',
             'top_p': 'topP',
+            'prompt_truncation': 'promptTruncation',
             'frequency_penalty': 'frequencyPenalty',
-            'presence_penalty': 'presencePenalty'
+            'presence_penalty': 'presencePenalty',
+            'seed': 'seed',
+            'is_echo': 'isEcho',
+            'tools': 'tools',
+            'tool_results': 'toolResults',
+            'is_force_single_step': 'isForceSingleStep',
+            'stop_sequences': 'stopSequences',
+            'is_raw_prompting': 'isRawPrompting',
+            'citation_quality': 'citationQuality'
         }
 
         self._api_format = None
@@ -118,15 +190,24 @@ class CohereChatRequest(BaseChatRequest):
         self._temperature = None
         self._top_k = None
         self._top_p = None
+        self._prompt_truncation = None
         self._frequency_penalty = None
         self._presence_penalty = None
+        self._seed = None
+        self._is_echo = None
+        self._tools = None
+        self._tool_results = None
+        self._is_force_single_step = None
+        self._stop_sequences = None
+        self._is_raw_prompting = None
+        self._citation_quality = None
         self._api_format = 'COHERE'
 
     @property
     def message(self):
         """
         **[Required]** Gets the message of this CohereChatRequest.
-        Text input for the model to respond to.
+        The text that the user inputs for the model to respond to.
 
 
         :return: The message of this CohereChatRequest.
@@ -138,7 +219,7 @@ class CohereChatRequest(BaseChatRequest):
     def message(self, message):
         """
         Sets the message of this CohereChatRequest.
-        Text input for the model to respond to.
+        The text that the user inputs for the model to respond to.
 
 
         :param message: The message of this CohereChatRequest.
@@ -150,7 +231,7 @@ class CohereChatRequest(BaseChatRequest):
     def chat_history(self):
         """
         Gets the chat_history of this CohereChatRequest.
-        A list of previous messages between the user and the model, meant to give the model conversational context for responding to the user's message.
+        The list of previous messages between the user and the model. The chat history gives the model context for responding to the user's inputs.
 
 
         :return: The chat_history of this CohereChatRequest.
@@ -162,7 +243,7 @@ class CohereChatRequest(BaseChatRequest):
     def chat_history(self, chat_history):
         """
         Sets the chat_history of this CohereChatRequest.
-        A list of previous messages between the user and the model, meant to give the model conversational context for responding to the user's message.
+        The list of previous messages between the user and the model. The chat history gives the model context for responding to the user's inputs.
 
 
         :param chat_history: The chat_history of this CohereChatRequest.
@@ -174,10 +255,14 @@ class CohereChatRequest(BaseChatRequest):
     def documents(self):
         """
         Gets the documents of this CohereChatRequest.
-        list of relevant documents that the model can cite to generate a more accurate reply.
-        Some suggested keys are \"text\", \"author\", and \"date\". For better generation quality, it is
-        recommended to keep the total word count of the strings in the dictionary to under 300
-        words.
+        A list of relevant documents that the model can refer to for generating grounded responses to the user's requests.
+        Some example keys that you can add to the dictionary are \"text\", \"author\", and \"date\". Keep the total word count of the strings in the dictionary to 300 words or less.
+
+        Example:
+        `[
+          { \"title\": \"Tall penguins\", \"snippet\": \"Emperor penguins are the tallest.\" },
+          { \"title\": \"Penguin habitats\", \"snippet\": \"Emperor penguins only live in Antarctica.\" }
+        ]`
 
 
         :return: The documents of this CohereChatRequest.
@@ -189,10 +274,14 @@ class CohereChatRequest(BaseChatRequest):
     def documents(self, documents):
         """
         Sets the documents of this CohereChatRequest.
-        list of relevant documents that the model can cite to generate a more accurate reply.
-        Some suggested keys are \"text\", \"author\", and \"date\". For better generation quality, it is
-        recommended to keep the total word count of the strings in the dictionary to under 300
-        words.
+        A list of relevant documents that the model can refer to for generating grounded responses to the user's requests.
+        Some example keys that you can add to the dictionary are \"text\", \"author\", and \"date\". Keep the total word count of the strings in the dictionary to 300 words or less.
+
+        Example:
+        `[
+          { \"title\": \"Tall penguins\", \"snippet\": \"Emperor penguins are the tallest.\" },
+          { \"title\": \"Penguin habitats\", \"snippet\": \"Emperor penguins only live in Antarctica.\" }
+        ]`
 
 
         :param documents: The documents of this CohereChatRequest.
@@ -204,7 +293,7 @@ class CohereChatRequest(BaseChatRequest):
     def is_search_queries_only(self):
         """
         Gets the is_search_queries_only of this CohereChatRequest.
-        When true, the response will only contain a list of generated search queries, but no search will take place, and no reply from the model to the user's message will be generated.
+        When set to true, the response contains only a list of generated search queries without the search results and the model will not respond to the user's message.
 
 
         :return: The is_search_queries_only of this CohereChatRequest.
@@ -216,7 +305,7 @@ class CohereChatRequest(BaseChatRequest):
     def is_search_queries_only(self, is_search_queries_only):
         """
         Sets the is_search_queries_only of this CohereChatRequest.
-        When true, the response will only contain a list of generated search queries, but no search will take place, and no reply from the model to the user's message will be generated.
+        When set to true, the response contains only a list of generated search queries without the search results and the model will not respond to the user's message.
 
 
         :param is_search_queries_only: The is_search_queries_only of this CohereChatRequest.
@@ -228,7 +317,9 @@ class CohereChatRequest(BaseChatRequest):
     def preamble_override(self):
         """
         Gets the preamble_override of this CohereChatRequest.
-        When specified, the default Cohere preamble will be replaced with the provided one. Preambles are a part of the prompt used to adjust the model's overall behavior and conversation style. Default preambles vary for different models.
+        If specified, the default Cohere preamble is replaced with the provided preamble. A preamble is an initial guideline message that can change the model's overall chat behavior and conversation style. Default preambles vary for different models.
+
+        Example: `You are a travel advisor. Answer with a pirate tone.`
 
 
         :return: The preamble_override of this CohereChatRequest.
@@ -240,7 +331,9 @@ class CohereChatRequest(BaseChatRequest):
     def preamble_override(self, preamble_override):
         """
         Sets the preamble_override of this CohereChatRequest.
-        When specified, the default Cohere preamble will be replaced with the provided one. Preambles are a part of the prompt used to adjust the model's overall behavior and conversation style. Default preambles vary for different models.
+        If specified, the default Cohere preamble is replaced with the provided preamble. A preamble is an initial guideline message that can change the model's overall chat behavior and conversation style. Default preambles vary for different models.
+
+        Example: `You are a travel advisor. Answer with a pirate tone.`
 
 
         :param preamble_override: The preamble_override of this CohereChatRequest.
@@ -252,7 +345,7 @@ class CohereChatRequest(BaseChatRequest):
     def is_stream(self):
         """
         Gets the is_stream of this CohereChatRequest.
-        Whether to stream back partial progress. If set, tokens are sent as data-only server-sent events as they become available.
+        Whether to stream the partial progress of the model's response. When set to true, as tokens become available, they are sent as data-only server-sent events.
 
 
         :return: The is_stream of this CohereChatRequest.
@@ -264,7 +357,7 @@ class CohereChatRequest(BaseChatRequest):
     def is_stream(self, is_stream):
         """
         Sets the is_stream of this CohereChatRequest.
-        Whether to stream back partial progress. If set, tokens are sent as data-only server-sent events as they become available.
+        Whether to stream the partial progress of the model's response. When set to true, as tokens become available, they are sent as data-only server-sent events.
 
 
         :param is_stream: The is_stream of this CohereChatRequest.
@@ -276,7 +369,7 @@ class CohereChatRequest(BaseChatRequest):
     def max_tokens(self):
         """
         Gets the max_tokens of this CohereChatRequest.
-        The maximum number of tokens to predict for each response. Includes input plus output tokens.
+        The maximum number of output tokens that the model will generate for the response.
 
 
         :return: The max_tokens of this CohereChatRequest.
@@ -288,7 +381,7 @@ class CohereChatRequest(BaseChatRequest):
     def max_tokens(self, max_tokens):
         """
         Sets the max_tokens of this CohereChatRequest.
-        The maximum number of tokens to predict for each response. Includes input plus output tokens.
+        The maximum number of output tokens that the model will generate for the response.
 
 
         :param max_tokens: The max_tokens of this CohereChatRequest.
@@ -300,8 +393,8 @@ class CohereChatRequest(BaseChatRequest):
     def temperature(self):
         """
         Gets the temperature of this CohereChatRequest.
-        A number that sets the randomness of the generated output. A lower temperature means a less random generations.
-        Use lower numbers for tasks with a correct answer such as question answering or summarizing. High temperatures can generate hallucinations or factually incorrect information. Start with temperatures lower than 1.0 and increase the temperature for more creative outputs, as you regenerate the prompts to refine the outputs.
+        A number that sets the randomness of the generated output. A lower temperature means less random generations.
+        Use lower numbers for tasks such as question answering or summarizing. High temperatures can generate hallucinations or factually incorrect information. Start with temperatures lower than 1.0 and increase the temperature for more creative outputs, as you regenerate the prompts to refine the outputs.
 
 
         :return: The temperature of this CohereChatRequest.
@@ -313,8 +406,8 @@ class CohereChatRequest(BaseChatRequest):
     def temperature(self, temperature):
         """
         Sets the temperature of this CohereChatRequest.
-        A number that sets the randomness of the generated output. A lower temperature means a less random generations.
-        Use lower numbers for tasks with a correct answer such as question answering or summarizing. High temperatures can generate hallucinations or factually incorrect information. Start with temperatures lower than 1.0 and increase the temperature for more creative outputs, as you regenerate the prompts to refine the outputs.
+        A number that sets the randomness of the generated output. A lower temperature means less random generations.
+        Use lower numbers for tasks such as question answering or summarizing. High temperatures can generate hallucinations or factually incorrect information. Start with temperatures lower than 1.0 and increase the temperature for more creative outputs, as you regenerate the prompts to refine the outputs.
 
 
         :param temperature: The temperature of this CohereChatRequest.
@@ -326,9 +419,9 @@ class CohereChatRequest(BaseChatRequest):
     def top_k(self):
         """
         Gets the top_k of this CohereChatRequest.
-        An integer that sets up the model to use only the top k most likely tokens in the generated output. A higher k introduces more randomness into the output making the output text sound more natural. Default value is 0 which disables this method and considers all tokens. To set a number for the likely tokens, choose an integer between 1 and 500.
+        A sampling method in which the model chooses the next token randomly from the top k most likely tokens. A higher value for k generates more random output, which makes the output text sound more natural. The default value for k is 0 which disables this method and considers all tokens. To set a number for the likely tokens, choose an integer between 1 and 500.
 
-        If also using top p, then the model considers only the top tokens whose probabilities add up to p percent and ignores the rest of the k tokens. For example, if k is 20, but the probabilities of the top 10 add up to .75, then only the top 10 tokens are chosen.
+        If also using top p, then the model considers only the top tokens whose probabilities add up to p percent and ignores the rest of the k tokens. For example, if k is 20 but only the probabilities of the top 10 add up to the value of p, then only the top 10 tokens are chosen.
 
 
         :return: The top_k of this CohereChatRequest.
@@ -340,9 +433,9 @@ class CohereChatRequest(BaseChatRequest):
     def top_k(self, top_k):
         """
         Sets the top_k of this CohereChatRequest.
-        An integer that sets up the model to use only the top k most likely tokens in the generated output. A higher k introduces more randomness into the output making the output text sound more natural. Default value is 0 which disables this method and considers all tokens. To set a number for the likely tokens, choose an integer between 1 and 500.
+        A sampling method in which the model chooses the next token randomly from the top k most likely tokens. A higher value for k generates more random output, which makes the output text sound more natural. The default value for k is 0 which disables this method and considers all tokens. To set a number for the likely tokens, choose an integer between 1 and 500.
 
-        If also using top p, then the model considers only the top tokens whose probabilities add up to p percent and ignores the rest of the k tokens. For example, if k is 20, but the probabilities of the top 10 add up to .75, then only the top 10 tokens are chosen.
+        If also using top p, then the model considers only the top tokens whose probabilities add up to p percent and ignores the rest of the k tokens. For example, if k is 20 but only the probabilities of the top 10 add up to the value of p, then only the top 10 tokens are chosen.
 
 
         :param top_k: The top_k of this CohereChatRequest.
@@ -377,6 +470,37 @@ class CohereChatRequest(BaseChatRequest):
         :type: float
         """
         self._top_p = top_p
+
+    @property
+    def prompt_truncation(self):
+        """
+        Gets the prompt_truncation of this CohereChatRequest.
+        Defaults to OFF. Dictates how the prompt will be constructed. With `prompt_truncation` set to AUTO_PRESERVE_ORDER, some elements from `chat_history` and `documents` will be dropped to construct a prompt that fits within the model's context length limit. During this process the order of the documents and chat history will be preserved. With `prompt_truncation` set to OFF, no elements will be dropped.
+
+        Allowed values for this property are: "OFF", "AUTO_PRESERVE_ORDER"
+
+
+        :return: The prompt_truncation of this CohereChatRequest.
+        :rtype: str
+        """
+        return self._prompt_truncation
+
+    @prompt_truncation.setter
+    def prompt_truncation(self, prompt_truncation):
+        """
+        Sets the prompt_truncation of this CohereChatRequest.
+        Defaults to OFF. Dictates how the prompt will be constructed. With `prompt_truncation` set to AUTO_PRESERVE_ORDER, some elements from `chat_history` and `documents` will be dropped to construct a prompt that fits within the model's context length limit. During this process the order of the documents and chat history will be preserved. With `prompt_truncation` set to OFF, no elements will be dropped.
+
+
+        :param prompt_truncation: The prompt_truncation of this CohereChatRequest.
+        :type: str
+        """
+        allowed_values = ["OFF", "AUTO_PRESERVE_ORDER"]
+        if not value_allowed_none_or_none_sentinel(prompt_truncation, allowed_values):
+            raise ValueError(
+                f"Invalid value for `prompt_truncation`, must be None or one of {allowed_values}"
+            )
+        self._prompt_truncation = prompt_truncation
 
     @property
     def frequency_penalty(self):
@@ -429,6 +553,205 @@ class CohereChatRequest(BaseChatRequest):
         :type: float
         """
         self._presence_penalty = presence_penalty
+
+    @property
+    def seed(self):
+        """
+        Gets the seed of this CohereChatRequest.
+        If specified, the backend will make a best effort to sample tokens deterministically, such that repeated requests with the same seed and parameters should return the same result. However, determinism cannot be totally guaranteed.
+
+
+        :return: The seed of this CohereChatRequest.
+        :rtype: int
+        """
+        return self._seed
+
+    @seed.setter
+    def seed(self, seed):
+        """
+        Sets the seed of this CohereChatRequest.
+        If specified, the backend will make a best effort to sample tokens deterministically, such that repeated requests with the same seed and parameters should return the same result. However, determinism cannot be totally guaranteed.
+
+
+        :param seed: The seed of this CohereChatRequest.
+        :type: int
+        """
+        self._seed = seed
+
+    @property
+    def is_echo(self):
+        """
+        Gets the is_echo of this CohereChatRequest.
+        Returns the full prompt that was sent to the model when True.
+
+
+        :return: The is_echo of this CohereChatRequest.
+        :rtype: bool
+        """
+        return self._is_echo
+
+    @is_echo.setter
+    def is_echo(self, is_echo):
+        """
+        Sets the is_echo of this CohereChatRequest.
+        Returns the full prompt that was sent to the model when True.
+
+
+        :param is_echo: The is_echo of this CohereChatRequest.
+        :type: bool
+        """
+        self._is_echo = is_echo
+
+    @property
+    def tools(self):
+        """
+        Gets the tools of this CohereChatRequest.
+        A list of available tools (functions) that the model may suggest invoking before producing a text response.
+
+
+        :return: The tools of this CohereChatRequest.
+        :rtype: list[oci.generative_ai_inference.models.CohereTool]
+        """
+        return self._tools
+
+    @tools.setter
+    def tools(self, tools):
+        """
+        Sets the tools of this CohereChatRequest.
+        A list of available tools (functions) that the model may suggest invoking before producing a text response.
+
+
+        :param tools: The tools of this CohereChatRequest.
+        :type: list[oci.generative_ai_inference.models.CohereTool]
+        """
+        self._tools = tools
+
+    @property
+    def tool_results(self):
+        """
+        Gets the tool_results of this CohereChatRequest.
+        A list of results from invoking tools recommended by the model in the previous chat turn.
+
+
+        :return: The tool_results of this CohereChatRequest.
+        :rtype: list[oci.generative_ai_inference.models.CohereToolResult]
+        """
+        return self._tool_results
+
+    @tool_results.setter
+    def tool_results(self, tool_results):
+        """
+        Sets the tool_results of this CohereChatRequest.
+        A list of results from invoking tools recommended by the model in the previous chat turn.
+
+
+        :param tool_results: The tool_results of this CohereChatRequest.
+        :type: list[oci.generative_ai_inference.models.CohereToolResult]
+        """
+        self._tool_results = tool_results
+
+    @property
+    def is_force_single_step(self):
+        """
+        Gets the is_force_single_step of this CohereChatRequest.
+        When enabled, the model will issue (potentially multiple) tool calls in a single step, before it receives the tool responses and directly answers the user's original message.
+
+
+        :return: The is_force_single_step of this CohereChatRequest.
+        :rtype: bool
+        """
+        return self._is_force_single_step
+
+    @is_force_single_step.setter
+    def is_force_single_step(self, is_force_single_step):
+        """
+        Sets the is_force_single_step of this CohereChatRequest.
+        When enabled, the model will issue (potentially multiple) tool calls in a single step, before it receives the tool responses and directly answers the user's original message.
+
+
+        :param is_force_single_step: The is_force_single_step of this CohereChatRequest.
+        :type: bool
+        """
+        self._is_force_single_step = is_force_single_step
+
+    @property
+    def stop_sequences(self):
+        """
+        Gets the stop_sequences of this CohereChatRequest.
+        Stop the model generation when it reaches a stop sequence defined in this parameter.
+
+
+        :return: The stop_sequences of this CohereChatRequest.
+        :rtype: list[str]
+        """
+        return self._stop_sequences
+
+    @stop_sequences.setter
+    def stop_sequences(self, stop_sequences):
+        """
+        Sets the stop_sequences of this CohereChatRequest.
+        Stop the model generation when it reaches a stop sequence defined in this parameter.
+
+
+        :param stop_sequences: The stop_sequences of this CohereChatRequest.
+        :type: list[str]
+        """
+        self._stop_sequences = stop_sequences
+
+    @property
+    def is_raw_prompting(self):
+        """
+        Gets the is_raw_prompting of this CohereChatRequest.
+        When enabled, the user\u2019s `message` will be sent to the model without any preprocessing.
+
+
+        :return: The is_raw_prompting of this CohereChatRequest.
+        :rtype: bool
+        """
+        return self._is_raw_prompting
+
+    @is_raw_prompting.setter
+    def is_raw_prompting(self, is_raw_prompting):
+        """
+        Sets the is_raw_prompting of this CohereChatRequest.
+        When enabled, the user\u2019s `message` will be sent to the model without any preprocessing.
+
+
+        :param is_raw_prompting: The is_raw_prompting of this CohereChatRequest.
+        :type: bool
+        """
+        self._is_raw_prompting = is_raw_prompting
+
+    @property
+    def citation_quality(self):
+        """
+        Gets the citation_quality of this CohereChatRequest.
+        When FAST is selected, citations are generated at the same time as the text output and the request will be completed sooner. May result in less accurate citations.
+
+        Allowed values for this property are: "ACCURATE", "FAST"
+
+
+        :return: The citation_quality of this CohereChatRequest.
+        :rtype: str
+        """
+        return self._citation_quality
+
+    @citation_quality.setter
+    def citation_quality(self, citation_quality):
+        """
+        Sets the citation_quality of this CohereChatRequest.
+        When FAST is selected, citations are generated at the same time as the text output and the request will be completed sooner. May result in less accurate citations.
+
+
+        :param citation_quality: The citation_quality of this CohereChatRequest.
+        :type: str
+        """
+        allowed_values = ["ACCURATE", "FAST"]
+        if not value_allowed_none_or_none_sentinel(citation_quality, allowed_values):
+            raise ValueError(
+                f"Invalid value for `citation_quality`, must be None or one of {allowed_values}"
+            )
+        self._citation_quality = citation_quality
 
     def __repr__(self):
         return formatted_flat_dict(self)

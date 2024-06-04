@@ -23,7 +23,7 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreatePostgresqlConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
         :type connection_type: str
 
         :param display_name:
@@ -45,6 +45,10 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
         :param defined_tags:
             The value to assign to the defined_tags property of this CreatePostgresqlConnectionDetails.
         :type defined_tags: dict(str, dict(str, object))
+
+        :param locks:
+            The value to assign to the locks property of this CreatePostgresqlConnectionDetails.
+        :type locks: list[oci.golden_gate.models.AddResourceLockDetails]
 
         :param vault_id:
             The value to assign to the vault_id property of this CreatePostgresqlConnectionDetails.
@@ -123,6 +127,10 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
             The value to assign to the private_ip property of this CreatePostgresqlConnectionDetails.
         :type private_ip: str
 
+        :param db_system_id:
+            The value to assign to the db_system_id property of this CreatePostgresqlConnectionDetails.
+        :type db_system_id: str
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -131,6 +139,7 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
             'compartment_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[AddResourceLockDetails]',
             'vault_id': 'str',
             'key_id': 'str',
             'nsg_ids': 'list[str]',
@@ -149,7 +158,8 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
             'ssl_crl': 'str',
             'ssl_cert': 'str',
             'ssl_key': 'str',
-            'private_ip': 'str'
+            'private_ip': 'str',
+            'db_system_id': 'str'
         }
 
         self.attribute_map = {
@@ -159,6 +169,7 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
             'compartment_id': 'compartmentId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'locks': 'locks',
             'vault_id': 'vaultId',
             'key_id': 'keyId',
             'nsg_ids': 'nsgIds',
@@ -177,7 +188,8 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
             'ssl_crl': 'sslCrl',
             'ssl_cert': 'sslCert',
             'ssl_key': 'sslKey',
-            'private_ip': 'privateIp'
+            'private_ip': 'privateIp',
+            'db_system_id': 'dbSystemId'
         }
 
         self._connection_type = None
@@ -186,6 +198,7 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
         self._compartment_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._locks = None
         self._vault_id = None
         self._key_id = None
         self._nsg_ids = None
@@ -205,6 +218,7 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
         self._ssl_cert = None
         self._ssl_key = None
         self._private_ip = None
+        self._db_system_id = None
         self._connection_type = 'POSTGRESQL'
 
     @property
@@ -258,7 +272,7 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
     @property
     def host(self):
         """
-        **[Required]** Gets the host of this CreatePostgresqlConnectionDetails.
+        Gets the host of this CreatePostgresqlConnectionDetails.
         The name or address of a host.
 
 
@@ -282,7 +296,7 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
     @property
     def port(self):
         """
-        **[Required]** Gets the port of this CreatePostgresqlConnectionDetails.
+        Gets the port of this CreatePostgresqlConnectionDetails.
         The port of an endpoint usually specified for a connection.
 
 
@@ -566,6 +580,34 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
         :type: str
         """
         self._private_ip = private_ip
+
+    @property
+    def db_system_id(self):
+        """
+        Gets the db_system_id of this CreatePostgresqlConnectionDetails.
+        The `OCID`__ of the database system being referenced.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The db_system_id of this CreatePostgresqlConnectionDetails.
+        :rtype: str
+        """
+        return self._db_system_id
+
+    @db_system_id.setter
+    def db_system_id(self, db_system_id):
+        """
+        Sets the db_system_id of this CreatePostgresqlConnectionDetails.
+        The `OCID`__ of the database system being referenced.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param db_system_id: The db_system_id of this CreatePostgresqlConnectionDetails.
+        :type: str
+        """
+        self._db_system_id = db_system_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

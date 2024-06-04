@@ -16,6 +16,10 @@ class PostgresqlConnection(Connection):
     """
 
     #: A constant which can be used with the technology_type property of a PostgresqlConnection.
+    #: This constant has a value of "OCI_POSTGRESQL"
+    TECHNOLOGY_TYPE_OCI_POSTGRESQL = "OCI_POSTGRESQL"
+
+    #: A constant which can be used with the technology_type property of a PostgresqlConnection.
     #: This constant has a value of "POSTGRESQL_SERVER"
     TECHNOLOGY_TYPE_POSTGRESQL_SERVER = "POSTGRESQL_SERVER"
 
@@ -30,6 +34,10 @@ class PostgresqlConnection(Connection):
     #: A constant which can be used with the technology_type property of a PostgresqlConnection.
     #: This constant has a value of "AZURE_POSTGRESQL"
     TECHNOLOGY_TYPE_AZURE_POSTGRESQL = "AZURE_POSTGRESQL"
+
+    #: A constant which can be used with the technology_type property of a PostgresqlConnection.
+    #: This constant has a value of "AZURE_COSMOS_DB_FOR_POSTGRESQL"
+    TECHNOLOGY_TYPE_AZURE_COSMOS_DB_FOR_POSTGRESQL = "AZURE_COSMOS_DB_FOR_POSTGRESQL"
 
     #: A constant which can be used with the technology_type property of a PostgresqlConnection.
     #: This constant has a value of "GOOGLE_CLOUD_SQL_POSTGRESQL"
@@ -71,7 +79,7 @@ class PostgresqlConnection(Connection):
 
         :param connection_type:
             The value to assign to the connection_type property of this PostgresqlConnection.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -121,6 +129,10 @@ class PostgresqlConnection(Connection):
             The value to assign to the time_updated property of this PostgresqlConnection.
         :type time_updated: datetime
 
+        :param locks:
+            The value to assign to the locks property of this PostgresqlConnection.
+        :type locks: list[oci.golden_gate.models.ResourceLock]
+
         :param vault_id:
             The value to assign to the vault_id property of this PostgresqlConnection.
         :type vault_id: str
@@ -149,7 +161,7 @@ class PostgresqlConnection(Connection):
 
         :param technology_type:
             The value to assign to the technology_type property of this PostgresqlConnection.
-            Allowed values for this property are: "POSTGRESQL_SERVER", "AMAZON_AURORA_POSTGRESQL", "AMAZON_RDS_POSTGRESQL", "AZURE_POSTGRESQL", "GOOGLE_CLOUD_SQL_POSTGRESQL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OCI_POSTGRESQL", "POSTGRESQL_SERVER", "AMAZON_AURORA_POSTGRESQL", "AMAZON_RDS_POSTGRESQL", "AZURE_POSTGRESQL", "AZURE_COSMOS_DB_FOR_POSTGRESQL", "GOOGLE_CLOUD_SQL_POSTGRESQL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type technology_type: str
 
@@ -189,6 +201,10 @@ class PostgresqlConnection(Connection):
             The value to assign to the private_ip property of this PostgresqlConnection.
         :type private_ip: str
 
+        :param db_system_id:
+            The value to assign to the db_system_id property of this PostgresqlConnection.
+        :type db_system_id: str
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -203,6 +219,7 @@ class PostgresqlConnection(Connection):
             'lifecycle_details': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'locks': 'list[ResourceLock]',
             'vault_id': 'str',
             'key_id': 'str',
             'ingress_ips': 'list[IngressIpDetails]',
@@ -217,7 +234,8 @@ class PostgresqlConnection(Connection):
             'additional_attributes': 'list[NameValuePair]',
             'security_protocol': 'str',
             'ssl_mode': 'str',
-            'private_ip': 'str'
+            'private_ip': 'str',
+            'db_system_id': 'str'
         }
 
         self.attribute_map = {
@@ -233,6 +251,7 @@ class PostgresqlConnection(Connection):
             'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'locks': 'locks',
             'vault_id': 'vaultId',
             'key_id': 'keyId',
             'ingress_ips': 'ingressIps',
@@ -247,7 +266,8 @@ class PostgresqlConnection(Connection):
             'additional_attributes': 'additionalAttributes',
             'security_protocol': 'securityProtocol',
             'ssl_mode': 'sslMode',
-            'private_ip': 'privateIp'
+            'private_ip': 'privateIp',
+            'db_system_id': 'dbSystemId'
         }
 
         self._connection_type = None
@@ -262,6 +282,7 @@ class PostgresqlConnection(Connection):
         self._lifecycle_details = None
         self._time_created = None
         self._time_updated = None
+        self._locks = None
         self._vault_id = None
         self._key_id = None
         self._ingress_ips = None
@@ -277,6 +298,7 @@ class PostgresqlConnection(Connection):
         self._security_protocol = None
         self._ssl_mode = None
         self._private_ip = None
+        self._db_system_id = None
         self._connection_type = 'POSTGRESQL'
 
     @property
@@ -285,7 +307,7 @@ class PostgresqlConnection(Connection):
         **[Required]** Gets the technology_type of this PostgresqlConnection.
         The PostgreSQL technology type.
 
-        Allowed values for this property are: "POSTGRESQL_SERVER", "AMAZON_AURORA_POSTGRESQL", "AMAZON_RDS_POSTGRESQL", "AZURE_POSTGRESQL", "GOOGLE_CLOUD_SQL_POSTGRESQL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OCI_POSTGRESQL", "POSTGRESQL_SERVER", "AMAZON_AURORA_POSTGRESQL", "AMAZON_RDS_POSTGRESQL", "AZURE_POSTGRESQL", "AZURE_COSMOS_DB_FOR_POSTGRESQL", "GOOGLE_CLOUD_SQL_POSTGRESQL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -304,7 +326,7 @@ class PostgresqlConnection(Connection):
         :param technology_type: The technology_type of this PostgresqlConnection.
         :type: str
         """
-        allowed_values = ["POSTGRESQL_SERVER", "AMAZON_AURORA_POSTGRESQL", "AMAZON_RDS_POSTGRESQL", "AZURE_POSTGRESQL", "GOOGLE_CLOUD_SQL_POSTGRESQL"]
+        allowed_values = ["OCI_POSTGRESQL", "POSTGRESQL_SERVER", "AMAZON_AURORA_POSTGRESQL", "AMAZON_RDS_POSTGRESQL", "AZURE_POSTGRESQL", "AZURE_COSMOS_DB_FOR_POSTGRESQL", "GOOGLE_CLOUD_SQL_POSTGRESQL"]
         if not value_allowed_none_or_none_sentinel(technology_type, allowed_values):
             technology_type = 'UNKNOWN_ENUM_VALUE'
         self._technology_type = technology_type
@@ -532,6 +554,34 @@ class PostgresqlConnection(Connection):
         :type: str
         """
         self._private_ip = private_ip
+
+    @property
+    def db_system_id(self):
+        """
+        Gets the db_system_id of this PostgresqlConnection.
+        The `OCID`__ of the database system being referenced.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The db_system_id of this PostgresqlConnection.
+        :rtype: str
+        """
+        return self._db_system_id
+
+    @db_system_id.setter
+    def db_system_id(self, db_system_id):
+        """
+        Sets the db_system_id of this PostgresqlConnection.
+        The `OCID`__ of the database system being referenced.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param db_system_id: The db_system_id of this PostgresqlConnection.
+        :type: str
+        """
+        self._db_system_id = db_system_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

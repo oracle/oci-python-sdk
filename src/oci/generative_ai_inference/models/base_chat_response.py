@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BaseChatResponse(object):
     """
-    Base class for chat inference response
+    The base class that creates the chat response.
     """
 
     #: A constant which can be used with the api_format property of a BaseChatResponse.
@@ -70,7 +70,7 @@ class BaseChatResponse(object):
     def api_format(self):
         """
         **[Required]** Gets the api_format of this BaseChatResponse.
-        The api format for the model's response
+        The API format for the model's response.
 
         Allowed values for this property are: "COHERE", "GENERIC", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -85,7 +85,7 @@ class BaseChatResponse(object):
     def api_format(self, api_format):
         """
         Sets the api_format of this BaseChatResponse.
-        The api format for the model's response
+        The API format for the model's response.
 
 
         :param api_format: The api_format of this BaseChatResponse.

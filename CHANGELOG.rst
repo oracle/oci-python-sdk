@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.128.0 - 2024-06-04
+====================
+
+Added
+-----
+* Support for creating cross-region autonomous data guards in the Database service
+* Support for listing autonomous database peers in the Database service
+* Support for dedicated AI clusters in the Generative AI service
+* Support for Llama chat and Lora Fine-Tuning method in the Generative AI service
+* Support for adding and removing locks for connections, deployments, and deployment backups in the GoldenGate service
+* Support for additional connection types for deployments and connections in the GoldenGate service
+ 
+Breaking
+--------
+* The possible allowed values `OPENAI` and `DALLE3` were removed from the property runtime_type in the models LlmInferenceResponse, CohereLlmInferenceResponse, and LlamaLlmInferenceResponse in the Generative AI service
+* The property message was removed from the model CohereMessage in the Generative AI service
+* The property chat_request was made required in the model ChatDetails in the Generative AI service
+ 
+====================
 2.127.0 - 2024-05-28
 ====================
 

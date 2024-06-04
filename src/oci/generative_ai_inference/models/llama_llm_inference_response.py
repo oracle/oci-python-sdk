@@ -23,7 +23,7 @@ class LlamaLlmInferenceResponse(LlmInferenceResponse):
 
         :param runtime_type:
             The value to assign to the runtime_type property of this LlamaLlmInferenceResponse.
-            Allowed values for this property are: "COHERE", "LLAMA", "OPENAI", "DALLE3"
+            Allowed values for this property are: "COHERE", "LLAMA"
         :type runtime_type: str
 
         :param created:

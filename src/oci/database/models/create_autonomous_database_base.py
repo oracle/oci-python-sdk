@@ -99,6 +99,7 @@ class CreateAutonomousDatabaseBase(object):
         * :class:`~oci.database.models.CreateRefreshableAutonomousDatabaseCloneDetails`
         * :class:`~oci.database.models.CreateAutonomousDatabaseFromBackupDetails`
         * :class:`~oci.database.models.CreateCrossRegionDisasterRecoveryDetails`
+        * :class:`~oci.database.models.CreateCrossTenancyDisasterRecoveryDetails`
         * :class:`~oci.database.models.CreateAutonomousDatabaseFromBackupTimestampDetails`
         * :class:`~oci.database.models.CreateCrossRegionAutonomousDatabaseDataGuardDetails`
         * :class:`~oci.database.models.CreateAutonomousDatabaseDetails`
@@ -480,6 +481,9 @@ class CreateAutonomousDatabaseBase(object):
 
         if type == 'CROSS_REGION_DISASTER_RECOVERY':
             return 'CreateCrossRegionDisasterRecoveryDetails'
+
+        if type == 'CROSS_TENANCY_DISASTER_RECOVERY':
+            return 'CreateCrossTenancyDisasterRecoveryDetails'
 
         if type == 'BACKUP_FROM_TIMESTAMP':
             return 'CreateAutonomousDatabaseFromBackupTimestampDetails'

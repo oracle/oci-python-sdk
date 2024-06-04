@@ -53,7 +53,7 @@ class ChatDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ChatDetails.
-        The OCID of compartment that the user is authorized to use to call into the Generative AI service.
+        The OCID of compartment in which to call the Generative AI service to chat.
 
 
         :return: The compartment_id of this ChatDetails.
@@ -65,7 +65,7 @@ class ChatDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ChatDetails.
-        The OCID of compartment that the user is authorized to use to call into the Generative AI service.
+        The OCID of compartment in which to call the Generative AI service to chat.
 
 
         :param compartment_id: The compartment_id of this ChatDetails.
@@ -96,7 +96,7 @@ class ChatDetails(object):
     @property
     def chat_request(self):
         """
-        Gets the chat_request of this ChatDetails.
+        **[Required]** Gets the chat_request of this ChatDetails.
 
         :return: The chat_request of this ChatDetails.
         :rtype: oci.generative_ai_inference.models.BaseChatRequest

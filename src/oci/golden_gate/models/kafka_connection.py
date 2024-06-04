@@ -55,7 +55,7 @@ class KafkaConnection(Connection):
 
         :param connection_type:
             The value to assign to the connection_type property of this KafkaConnection.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -104,6 +104,10 @@ class KafkaConnection(Connection):
         :param time_updated:
             The value to assign to the time_updated property of this KafkaConnection.
         :type time_updated: datetime
+
+        :param locks:
+            The value to assign to the locks property of this KafkaConnection.
+        :type locks: list[oci.golden_gate.models.ResourceLock]
 
         :param vault_id:
             The value to assign to the vault_id property of this KafkaConnection.
@@ -169,6 +173,7 @@ class KafkaConnection(Connection):
             'lifecycle_details': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'locks': 'list[ResourceLock]',
             'vault_id': 'str',
             'key_id': 'str',
             'ingress_ips': 'list[IngressIpDetails]',
@@ -195,6 +200,7 @@ class KafkaConnection(Connection):
             'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'locks': 'locks',
             'vault_id': 'vaultId',
             'key_id': 'keyId',
             'ingress_ips': 'ingressIps',
@@ -220,6 +226,7 @@ class KafkaConnection(Connection):
         self._lifecycle_details = None
         self._time_created = None
         self._time_updated = None
+        self._locks = None
         self._vault_id = None
         self._key_id = None
         self._ingress_ips = None

@@ -268,6 +268,10 @@ class DeploymentSummary(object):
             The value to assign to the is_storage_utilization_limit_exceeded property of this DeploymentSummary.
         :type is_storage_utilization_limit_exceeded: bool
 
+        :param locks:
+            The value to assign to the locks property of this DeploymentSummary.
+        :type locks: list[oci.golden_gate.models.ResourceLock]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -297,7 +301,8 @@ class DeploymentSummary(object):
             'time_upgrade_required': 'datetime',
             'deployment_type': 'str',
             'storage_utilization_in_bytes': 'int',
-            'is_storage_utilization_limit_exceeded': 'bool'
+            'is_storage_utilization_limit_exceeded': 'bool',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -328,7 +333,8 @@ class DeploymentSummary(object):
             'time_upgrade_required': 'timeUpgradeRequired',
             'deployment_type': 'deploymentType',
             'storage_utilization_in_bytes': 'storageUtilizationInBytes',
-            'is_storage_utilization_limit_exceeded': 'isStorageUtilizationLimitExceeded'
+            'is_storage_utilization_limit_exceeded': 'isStorageUtilizationLimitExceeded',
+            'locks': 'locks'
         }
 
         self._id = None
@@ -359,6 +365,7 @@ class DeploymentSummary(object):
         self._deployment_type = None
         self._storage_utilization_in_bytes = None
         self._is_storage_utilization_limit_exceeded = None
+        self._locks = None
 
     @property
     def id(self):
@@ -673,6 +680,8 @@ class DeploymentSummary(object):
         """
         **[Required]** Gets the subnet_id of this DeploymentSummary.
         The `OCID`__ of the subnet of the deployment's private endpoint.
+        The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
+        after which the private subnet will be enforced.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -687,6 +696,8 @@ class DeploymentSummary(object):
         """
         Sets the subnet_id of this DeploymentSummary.
         The `OCID`__ of the subnet of the deployment's private endpoint.
+        The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
+        after which the private subnet will be enforced.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -702,7 +713,7 @@ class DeploymentSummary(object):
         Gets the load_balancer_subnet_id of this DeploymentSummary.
         The `OCID`__ of a public subnet in the customer tenancy.
         Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-        For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+        For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -718,7 +729,7 @@ class DeploymentSummary(object):
         Sets the load_balancer_subnet_id of this DeploymentSummary.
         The `OCID`__ of a public subnet in the customer tenancy.
         Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-        For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+        For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -1139,6 +1150,30 @@ class DeploymentSummary(object):
         :type: bool
         """
         self._is_storage_utilization_limit_exceeded = is_storage_utilization_limit_exceeded
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this DeploymentSummary.
+        Locks associated with this resource.
+
+
+        :return: The locks of this DeploymentSummary.
+        :rtype: list[oci.golden_gate.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this DeploymentSummary.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this DeploymentSummary.
+        :type: list[oci.golden_gate.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

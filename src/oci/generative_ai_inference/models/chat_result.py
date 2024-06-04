@@ -53,7 +53,7 @@ class ChatResult(object):
     def model_id(self):
         """
         **[Required]** Gets the model_id of this ChatResult.
-        The OCID of the model used in this inference request.
+        The OCID of the model that's used in this inference request.
 
 
         :return: The model_id of this ChatResult.
@@ -65,7 +65,7 @@ class ChatResult(object):
     def model_id(self, model_id):
         """
         Sets the model_id of this ChatResult.
-        The OCID of the model used in this inference request.
+        The OCID of the model that's used in this inference request.
 
 
         :param model_id: The model_id of this ChatResult.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ServingMode(object):
     """
-    The model's serving mode, which could be on-demand serving or dedicated serving.
+    The model's serving mode, which is either on-demand serving or dedicated serving.
     """
 
     #: A constant which can be used with the serving_type property of a ServingMode.
@@ -69,7 +69,7 @@ class ServingMode(object):
     def serving_type(self):
         """
         **[Required]** Gets the serving_type of this ServingMode.
-        The serving mode type, which could be on-demand serving or dedicated serving.
+        The serving mode type, which is either on-demand serving or dedicated serving.
 
         Allowed values for this property are: "ON_DEMAND", "DEDICATED"
 
@@ -83,7 +83,7 @@ class ServingMode(object):
     def serving_type(self, serving_type):
         """
         Sets the serving_type of this ServingMode.
-        The serving mode type, which could be on-demand serving or dedicated serving.
+        The serving mode type, which is either on-demand serving or dedicated serving.
 
 
         :param serving_type: The serving_type of this ServingMode.

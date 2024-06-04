@@ -116,6 +116,341 @@ class GoldenGateClient(object):
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
 
+    def add_connection_lock(self, connection_id, add_resource_lock_details, **kwargs):
+        """
+        Adds a lock to a Connection resource.
+
+
+        :param str connection_id: (required)
+            The `OCID`__ of a Connection.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.golden_gate.models.AddResourceLockDetails add_resource_lock_details: (required)
+            AddResourceLockDetails body parameter
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.golden_gate.models.Connection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/add_connection_lock.py.html>`__ to see an example of how to use add_connection_lock API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['connectionId']
+        resource_path = "/connections/{connectionId}/actions/addLock"
+        method = "POST"
+        operation_name = "add_connection_lock"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Connection/AddConnectionLock"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"add_connection_lock got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "connectionId": connection_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_resource_lock_details,
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_resource_lock_details,
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def add_deployment_backup_lock(self, deployment_backup_id, add_resource_lock_details, **kwargs):
+        """
+        Adds a lock to a DeploymentBackup resource.
+
+
+        :param str deployment_backup_id: (required)
+            A unique DeploymentBackup identifier.
+
+        :param oci.golden_gate.models.AddResourceLockDetails add_resource_lock_details: (required)
+            AddResourceLockDetails body parameter
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.golden_gate.models.DeploymentBackup`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/add_deployment_backup_lock.py.html>`__ to see an example of how to use add_deployment_backup_lock API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentBackupId']
+        resource_path = "/deploymentBackups/{deploymentBackupId}/actions/addLock"
+        method = "POST"
+        operation_name = "add_deployment_backup_lock"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/AddDeploymentBackupLock"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"add_deployment_backup_lock got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "deploymentBackupId": deployment_backup_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_resource_lock_details,
+                response_type="DeploymentBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_resource_lock_details,
+                response_type="DeploymentBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def add_deployment_lock(self, deployment_id, add_resource_lock_details, **kwargs):
+        """
+        Adds a lock to a Deployment resource.
+
+
+        :param str deployment_id: (required)
+            A unique Deployment identifier.
+
+        :param oci.golden_gate.models.AddResourceLockDetails add_resource_lock_details: (required)
+            AddResourceLockDetails body parameter
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.golden_gate.models.Deployment`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/add_deployment_lock.py.html>`__ to see an example of how to use add_deployment_lock API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentId']
+        resource_path = "/deployments/{deploymentId}/actions/addLock"
+        method = "POST"
+        operation_name = "add_deployment_lock"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/AddDeploymentLock"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"add_deployment_lock got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "deploymentId": deployment_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_resource_lock_details,
+                response_type="Deployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_resource_lock_details,
+                response_type="Deployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def cancel_deployment_backup(self, deployment_backup_id, cancel_deployment_backup_details, **kwargs):
         """
         Cancels a Deployment Backup creation process.
@@ -141,6 +476,9 @@ class GoldenGateClient(object):
             without the risk of executing that same action again. Retry tokens expire after 24 hours but can be
             invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
             from the system, then a retry of the original creation request is rejected.
+
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -173,7 +511,8 @@ class GoldenGateClient(object):
             "retry_strategy",
             "if_match",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "is_lock_override"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -189,6 +528,11 @@ class GoldenGateClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -216,6 +560,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=cancel_deployment_backup_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -227,6 +572,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=cancel_deployment_backup_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -499,6 +845,9 @@ class GoldenGateClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -529,7 +878,8 @@ class GoldenGateClient(object):
             "allow_control_chars",
             "retry_strategy",
             "if_match",
-            "opc_request_id"
+            "opc_request_id",
+            "is_lock_override"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -545,6 +895,11 @@ class GoldenGateClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -570,6 +925,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=change_connection_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -581,6 +937,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=change_connection_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -743,6 +1100,9 @@ class GoldenGateClient(object):
             invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
             from the system, then a retry of the original creation request is rejected.
 
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -774,7 +1134,8 @@ class GoldenGateClient(object):
             "retry_strategy",
             "if_match",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "is_lock_override"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -790,6 +1151,11 @@ class GoldenGateClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -817,6 +1183,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=change_deployment_backup_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -828,6 +1195,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=change_deployment_backup_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -866,6 +1234,9 @@ class GoldenGateClient(object):
             invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
             from the system, then a retry of the original creation request is rejected.
 
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -897,7 +1268,8 @@ class GoldenGateClient(object):
             "retry_strategy",
             "if_match",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "is_lock_override"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -913,6 +1285,11 @@ class GoldenGateClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -940,6 +1317,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=change_deployment_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -951,6 +1329,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=change_deployment_compartment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -1214,6 +1593,9 @@ class GoldenGateClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1244,7 +1626,8 @@ class GoldenGateClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
-            "opc_request_id"
+            "opc_request_id",
+            "is_lock_override"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1260,6 +1643,11 @@ class GoldenGateClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -1286,6 +1674,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=create_certificate_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -1297,6 +1686,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=create_certificate_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -1418,6 +1808,9 @@ class GoldenGateClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1448,12 +1841,18 @@ class GoldenGateClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
-            "opc_request_id"
+            "opc_request_id",
+            "is_lock_override"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"create_connection_assignment got unknown kwargs: {extra_kwargs!r}")
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -1479,6 +1878,7 @@ class GoldenGateClient(object):
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
+                query_params=query_params,
                 header_params=header_params,
                 body=create_connection_assignment_details,
                 response_type="ConnectionAssignment",
@@ -1490,6 +1890,7 @@ class GoldenGateClient(object):
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
+                query_params=query_params,
                 header_params=header_params,
                 body=create_connection_assignment_details,
                 response_type="ConnectionAssignment",
@@ -1808,6 +2209,9 @@ class GoldenGateClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1838,7 +2242,8 @@ class GoldenGateClient(object):
             "allow_control_chars",
             "retry_strategy",
             "if_match",
-            "opc_request_id"
+            "opc_request_id",
+            "is_lock_override"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1855,6 +2260,11 @@ class GoldenGateClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -1880,6 +2290,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -1890,6 +2301,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -1914,6 +2326,9 @@ class GoldenGateClient(object):
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
+
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1945,7 +2360,8 @@ class GoldenGateClient(object):
             "allow_control_chars",
             "retry_strategy",
             "if_match",
-            "opc_request_id"
+            "opc_request_id",
+            "is_lock_override"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1961,6 +2377,11 @@ class GoldenGateClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -1986,6 +2407,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -1996,6 +2418,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -2020,6 +2443,9 @@ class GoldenGateClient(object):
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
+
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2051,7 +2477,8 @@ class GoldenGateClient(object):
             "allow_control_chars",
             "retry_strategy",
             "if_match",
-            "opc_request_id"
+            "opc_request_id",
+            "is_lock_override"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2067,6 +2494,11 @@ class GoldenGateClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -2092,6 +2524,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -2102,6 +2535,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -2230,6 +2664,9 @@ class GoldenGateClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2260,7 +2697,8 @@ class GoldenGateClient(object):
             "allow_control_chars",
             "retry_strategy",
             "if_match",
-            "opc_request_id"
+            "opc_request_id",
+            "is_lock_override"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2276,6 +2714,11 @@ class GoldenGateClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -2301,6 +2744,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -2311,6 +2755,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -2333,6 +2778,9 @@ class GoldenGateClient(object):
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
+
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2364,7 +2812,8 @@ class GoldenGateClient(object):
             "allow_control_chars",
             "retry_strategy",
             "if_match",
-            "opc_request_id"
+            "opc_request_id",
+            "is_lock_override"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2380,6 +2829,11 @@ class GoldenGateClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -2405,6 +2859,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -2415,6 +2870,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -2654,6 +3110,126 @@ class GoldenGateClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=export_deployment_wallet_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def generate_library_url(self, deployment_id, generate_library_url_details, **kwargs):
+        """
+        Generates a Pre-Authenticated Request Object URL to a DB2 for z/OS library that needs to be uploaded to your DB2 for z/OS server in order to establish GoldenGate connections to it. For licensing reasons, the URL is accessible for 10 minutes only.
+
+
+        :param str deployment_id: (required)
+            A unique Deployment identifier.
+
+        :param oci.golden_gate.models.GenerateLibraryUrlDetails generate_library_url_details: (required)
+            A placeholder for any additional metadata to describe the request details.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+            `if-match` parameter to the value of the etag from a previous GET or POST response for that
+            resource.  The resource is updated or deleted only if the etag you provide matches the
+            resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried, in case of a timeout or server error,
+            without the risk of executing that same action again. Retry tokens expire after 24 hours but can be
+            invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
+            from the system, then a retry of the original creation request is rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.golden_gate.models.LibraryUrl`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/generate_library_url.py.html>`__ to see an example of how to use generate_library_url API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentId']
+        resource_path = "/deployments/{deploymentId}/actions/generateLibraryUrl"
+        method = "POST"
+        operation_name = "generate_library_url"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/GenerateLibraryUrl"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"generate_library_url got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "deploymentId": deployment_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=generate_library_url_details,
+                response_type="LibraryUrl",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=generate_library_url_details,
+                response_type="LibraryUrl",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -3480,6 +4056,9 @@ class GoldenGateClient(object):
             invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
             from the system, then a retry of the original creation request is rejected.
 
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -3511,7 +4090,8 @@ class GoldenGateClient(object):
             "retry_strategy",
             "if_match",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "is_lock_override"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -3527,6 +4107,11 @@ class GoldenGateClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -3554,6 +4139,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=import_deployment_wallet_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -3565,6 +4151,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=import_deployment_wallet_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -3915,12 +4502,12 @@ class GoldenGateClient(object):
         :param list[str] technology_type: (optional)
             The array of technology types.
 
-            Allowed values are: "GOLDENGATE", "GENERIC", "OCI_AUTONOMOUS_DATABASE", "OCI_AUTONOMOUS_JSON_DATABASE", "OCI_MYSQL", "OCI_OBJECT_STORAGE", "OCI_STREAMING", "ORACLE_DATABASE", "ORACLE_EXADATA", "ORACLE_NOSQL", "ORACLE_WEBLOGIC_JMS", "AMAZON_RDS_ORACLE", "AMAZON_RDS_SQLSERVER", "AMAZON_S3", "AMAZON_AURORA_MYSQL", "AMAZON_AURORA_POSTGRESQL", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "AMAZON_RDS_MARIADB", "AMAZON_RDS_MYSQL", "AMAZON_RDS_POSTGRESQL", "APACHE_KAFKA", "AZURE_COSMOS_DB_FOR_MONGODB", "AZURE_DATA_LAKE_STORAGE", "AZURE_EVENT_HUBS", "AZURE_MYSQL", "AZURE_POSTGRESQL", "AZURE_SQLSERVER_MANAGED_INSTANCE", "AZURE_SQLSERVER_NON_MANAGED_INSTANCE", "AZURE_SYNAPSE_ANALYTICS", "CONFLUENT_KAFKA", "CONFLUENT_SCHEMA_REGISTRY", "ELASTICSEARCH", "GOOGLE_BIGQUERY", "GOOGLE_CLOUD_STORAGE", "GOOGLE_CLOUD_SQL_MYSQL", "GOOGLE_CLOUD_SQL_POSTGRESQL", "GOOGLE_CLOUD_SQL_SQLSERVER", "HDFS", "MARIADB", "MICROSOFT_SQLSERVER", "MONGODB", "MYSQL_SERVER", "POSTGRESQL_SERVER", "REDIS", "SINGLESTOREDB", "SINGLESTOREDB_CLOUD", "SNOWFLAKE"
+            Allowed values are: "GOLDENGATE", "GENERIC", "OCI_AUTONOMOUS_DATABASE", "OCI_AUTONOMOUS_JSON_DATABASE", "OCI_CACHE_WITH_REDIS", "OCI_MYSQL", "OCI_OBJECT_STORAGE", "OCI_POSTGRESQL", "OCI_STREAMING", "ORACLE_DATABASE", "ORACLE_EXADATA", "ORACLE_EXADATA_DATABASE_AT_AZURE", "ORACLE_NOSQL", "ORACLE_WEBLOGIC_JMS", "AMAZON_RDS_ORACLE", "AMAZON_RDS_SQLSERVER", "AMAZON_S3", "AMAZON_AURORA_MYSQL", "AMAZON_AURORA_POSTGRESQL", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "AMAZON_RDS_MARIADB", "AMAZON_RDS_MYSQL", "AMAZON_RDS_POSTGRESQL", "APACHE_KAFKA", "AZURE_COSMOS_DB_FOR_MONGODB", "AZURE_COSMOS_DB_FOR_POSTGRESQL", "AZURE_DATA_LAKE_STORAGE", "AZURE_EVENT_HUBS", "AZURE_MYSQL", "AZURE_POSTGRESQL", "AZURE_SQLSERVER_MANAGED_INSTANCE", "AZURE_SQLSERVER_NON_MANAGED_INSTANCE", "AZURE_SYNAPSE_ANALYTICS", "CONFLUENT_KAFKA", "CONFLUENT_SCHEMA_REGISTRY", "DB2_ZOS", "ELASTICSEARCH", "GOOGLE_BIGQUERY", "GOOGLE_CLOUD_STORAGE", "GOOGLE_CLOUD_SQL_MYSQL", "GOOGLE_CLOUD_SQL_POSTGRESQL", "GOOGLE_CLOUD_SQL_SQLSERVER", "HDFS", "MARIADB", "MICROSOFT_SQLSERVER", "MONGODB", "MYSQL_SERVER", "MYSQL_HEATWAVE_ON_AZURE", "MYSQL_HEATWAVE_ON_AWS", "POSTGRESQL_SERVER", "REDIS", "SINGLESTOREDB", "SINGLESTOREDB_CLOUD", "SNOWFLAKE"
 
         :param list[str] connection_type: (optional)
             The array of connection types.
 
-            Allowed values are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
+            Allowed values are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
 
         :param str assigned_deployment_id: (optional)
             The OCID of the deployment which for the connection must be assigned.
@@ -4011,7 +4598,7 @@ class GoldenGateClient(object):
                 f"list_connections got unknown kwargs: {extra_kwargs!r}")
 
         if 'technology_type' in kwargs:
-            technology_type_allowed_values = ["GOLDENGATE", "GENERIC", "OCI_AUTONOMOUS_DATABASE", "OCI_AUTONOMOUS_JSON_DATABASE", "OCI_MYSQL", "OCI_OBJECT_STORAGE", "OCI_STREAMING", "ORACLE_DATABASE", "ORACLE_EXADATA", "ORACLE_NOSQL", "ORACLE_WEBLOGIC_JMS", "AMAZON_RDS_ORACLE", "AMAZON_RDS_SQLSERVER", "AMAZON_S3", "AMAZON_AURORA_MYSQL", "AMAZON_AURORA_POSTGRESQL", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "AMAZON_RDS_MARIADB", "AMAZON_RDS_MYSQL", "AMAZON_RDS_POSTGRESQL", "APACHE_KAFKA", "AZURE_COSMOS_DB_FOR_MONGODB", "AZURE_DATA_LAKE_STORAGE", "AZURE_EVENT_HUBS", "AZURE_MYSQL", "AZURE_POSTGRESQL", "AZURE_SQLSERVER_MANAGED_INSTANCE", "AZURE_SQLSERVER_NON_MANAGED_INSTANCE", "AZURE_SYNAPSE_ANALYTICS", "CONFLUENT_KAFKA", "CONFLUENT_SCHEMA_REGISTRY", "ELASTICSEARCH", "GOOGLE_BIGQUERY", "GOOGLE_CLOUD_STORAGE", "GOOGLE_CLOUD_SQL_MYSQL", "GOOGLE_CLOUD_SQL_POSTGRESQL", "GOOGLE_CLOUD_SQL_SQLSERVER", "HDFS", "MARIADB", "MICROSOFT_SQLSERVER", "MONGODB", "MYSQL_SERVER", "POSTGRESQL_SERVER", "REDIS", "SINGLESTOREDB", "SINGLESTOREDB_CLOUD", "SNOWFLAKE"]
+            technology_type_allowed_values = ["GOLDENGATE", "GENERIC", "OCI_AUTONOMOUS_DATABASE", "OCI_AUTONOMOUS_JSON_DATABASE", "OCI_CACHE_WITH_REDIS", "OCI_MYSQL", "OCI_OBJECT_STORAGE", "OCI_POSTGRESQL", "OCI_STREAMING", "ORACLE_DATABASE", "ORACLE_EXADATA", "ORACLE_EXADATA_DATABASE_AT_AZURE", "ORACLE_NOSQL", "ORACLE_WEBLOGIC_JMS", "AMAZON_RDS_ORACLE", "AMAZON_RDS_SQLSERVER", "AMAZON_S3", "AMAZON_AURORA_MYSQL", "AMAZON_AURORA_POSTGRESQL", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "AMAZON_RDS_MARIADB", "AMAZON_RDS_MYSQL", "AMAZON_RDS_POSTGRESQL", "APACHE_KAFKA", "AZURE_COSMOS_DB_FOR_MONGODB", "AZURE_COSMOS_DB_FOR_POSTGRESQL", "AZURE_DATA_LAKE_STORAGE", "AZURE_EVENT_HUBS", "AZURE_MYSQL", "AZURE_POSTGRESQL", "AZURE_SQLSERVER_MANAGED_INSTANCE", "AZURE_SQLSERVER_NON_MANAGED_INSTANCE", "AZURE_SYNAPSE_ANALYTICS", "CONFLUENT_KAFKA", "CONFLUENT_SCHEMA_REGISTRY", "DB2_ZOS", "ELASTICSEARCH", "GOOGLE_BIGQUERY", "GOOGLE_CLOUD_STORAGE", "GOOGLE_CLOUD_SQL_MYSQL", "GOOGLE_CLOUD_SQL_POSTGRESQL", "GOOGLE_CLOUD_SQL_SQLSERVER", "HDFS", "MARIADB", "MICROSOFT_SQLSERVER", "MONGODB", "MYSQL_SERVER", "MYSQL_HEATWAVE_ON_AZURE", "MYSQL_HEATWAVE_ON_AWS", "POSTGRESQL_SERVER", "REDIS", "SINGLESTOREDB", "SINGLESTOREDB_CLOUD", "SNOWFLAKE"]
             for technology_type_item in kwargs['technology_type']:
                 if technology_type_item not in technology_type_allowed_values:
                     raise ValueError(
@@ -4019,7 +4606,7 @@ class GoldenGateClient(object):
                     )
 
         if 'connection_type' in kwargs:
-            connection_type_allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"]
+            connection_type_allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"]
             for connection_type_item in kwargs['connection_type']:
                 if connection_type_item not in connection_type_allowed_values:
                     raise ValueError(
@@ -5076,7 +5663,7 @@ class GoldenGateClient(object):
         :param str supported_connection_type: (optional)
             The connection type which the deployment must support.
 
-            Allowed values are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
+            Allowed values are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
 
         :param str assigned_connection_id: (optional)
             The OCID of the connection which for the deployment must be assigned.
@@ -5170,7 +5757,7 @@ class GoldenGateClient(object):
                 f"list_deployments got unknown kwargs: {extra_kwargs!r}")
 
         if 'supported_connection_type' in kwargs:
-            supported_connection_type_allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"]
+            supported_connection_type_allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"]
             if kwargs['supported_connection_type'] not in supported_connection_type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `supported_connection_type`, must be one of { supported_connection_type_allowed_values }"
@@ -5367,7 +5954,7 @@ class GoldenGateClient(object):
 
     def list_trail_files(self, deployment_id, **kwargs):
         """
-        Lists the TrailFiles for a deployment.
+        Lists the TrailFiles for a deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
 
 
         :param str deployment_id: (required)
@@ -5511,7 +6098,7 @@ class GoldenGateClient(object):
 
     def list_trail_sequences(self, deployment_id, trail_file_id, **kwargs):
         """
-        Lists the Trail Sequences for a TrailFile in a given deployment.
+        Lists the Trail Sequences for a TrailFile in a given deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
 
 
         :param str deployment_id: (required)
@@ -6005,6 +6592,341 @@ class GoldenGateClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def remove_connection_lock(self, connection_id, remove_resource_lock_details, **kwargs):
+        """
+        Removes a lock from a Connection resource.
+
+
+        :param str connection_id: (required)
+            The `OCID`__ of a Connection.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.golden_gate.models.RemoveResourceLockDetails remove_resource_lock_details: (required)
+            RemoveResourceLockDetails body parameter
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.golden_gate.models.Connection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/remove_connection_lock.py.html>`__ to see an example of how to use remove_connection_lock API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['connectionId']
+        resource_path = "/connections/{connectionId}/actions/removeLock"
+        method = "POST"
+        operation_name = "remove_connection_lock"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Connection/RemoveConnectionLock"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"remove_connection_lock got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "connectionId": connection_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_resource_lock_details,
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_resource_lock_details,
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def remove_deployment_backup_lock(self, deployment_backup_id, remove_resource_lock_details, **kwargs):
+        """
+        Removes a lock from a DeploymentBackup resource.
+
+
+        :param str deployment_backup_id: (required)
+            A unique DeploymentBackup identifier.
+
+        :param oci.golden_gate.models.RemoveResourceLockDetails remove_resource_lock_details: (required)
+            RemoveResourceLockDetails body parameter
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.golden_gate.models.DeploymentBackup`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/remove_deployment_backup_lock.py.html>`__ to see an example of how to use remove_deployment_backup_lock API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentBackupId']
+        resource_path = "/deploymentBackups/{deploymentBackupId}/actions/removeLock"
+        method = "POST"
+        operation_name = "remove_deployment_backup_lock"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/RemoveDeploymentBackupLock"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"remove_deployment_backup_lock got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "deploymentBackupId": deployment_backup_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_resource_lock_details,
+                response_type="DeploymentBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_resource_lock_details,
+                response_type="DeploymentBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def remove_deployment_lock(self, deployment_id, remove_resource_lock_details, **kwargs):
+        """
+        Removes a lock from a Deployment resource.
+
+
+        :param str deployment_id: (required)
+            A unique Deployment identifier.
+
+        :param oci.golden_gate.models.RemoveResourceLockDetails remove_resource_lock_details: (required)
+            RemoveResourceLockDetails body parameter
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.golden_gate.models.Deployment`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/remove_deployment_lock.py.html>`__ to see an example of how to use remove_deployment_lock API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['deploymentId']
+        resource_path = "/deployments/{deploymentId}/actions/removeLock"
+        method = "POST"
+        operation_name = "remove_deployment_lock"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/RemoveDeploymentLock"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"remove_deployment_lock got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "deploymentId": deployment_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_resource_lock_details,
+                response_type="Deployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_resource_lock_details,
+                response_type="Deployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def reschedule_deployment_upgrade(self, deployment_upgrade_id, reschedule_deployment_upgrade_details, **kwargs):
         """
         Reschedules a DeploymentUpgrade, applicable only for DeploymentUpgrade in Waiting state. When provided, If-Match is checked against ETag values of the resource.
@@ -6151,6 +7073,9 @@ class GoldenGateClient(object):
             invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
             from the system, then a retry of the original creation request is rejected.
 
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -6182,7 +7107,8 @@ class GoldenGateClient(object):
             "retry_strategy",
             "if_match",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "is_lock_override"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -6198,6 +7124,11 @@ class GoldenGateClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -6225,6 +7156,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=restore_deployment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -6236,6 +7168,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=restore_deployment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -6269,6 +7202,9 @@ class GoldenGateClient(object):
             invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
             from the system, then a retry of the original creation request is rejected.
 
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -6300,7 +7236,8 @@ class GoldenGateClient(object):
             "retry_strategy",
             "if_match",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "is_lock_override"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -6316,6 +7253,11 @@ class GoldenGateClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -6343,6 +7285,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=rollback_deployment_upgrade_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -6354,6 +7297,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=rollback_deployment_upgrade_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -6505,6 +7449,9 @@ class GoldenGateClient(object):
             invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
             from the system, then a retry of the original creation request is rejected.
 
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -6536,7 +7483,8 @@ class GoldenGateClient(object):
             "retry_strategy",
             "if_match",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "is_lock_override"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -6552,6 +7500,11 @@ class GoldenGateClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -6579,6 +7532,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=start_deployment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -6590,6 +7544,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=start_deployment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -6623,6 +7578,9 @@ class GoldenGateClient(object):
             invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
             from the system, then a retry of the original creation request is rejected.
 
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -6654,7 +7612,8 @@ class GoldenGateClient(object):
             "retry_strategy",
             "if_match",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "is_lock_override"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -6670,6 +7629,11 @@ class GoldenGateClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -6697,6 +7661,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=stop_deployment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -6708,6 +7673,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=stop_deployment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -6860,6 +7826,9 @@ class GoldenGateClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -6890,7 +7859,8 @@ class GoldenGateClient(object):
             "allow_control_chars",
             "retry_strategy",
             "if_match",
-            "opc_request_id"
+            "opc_request_id",
+            "is_lock_override"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -6906,6 +7876,11 @@ class GoldenGateClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -6931,6 +7906,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_connection_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -6942,6 +7918,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_connection_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -7079,6 +8056,9 @@ class GoldenGateClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -7109,7 +8089,8 @@ class GoldenGateClient(object):
             "allow_control_chars",
             "retry_strategy",
             "if_match",
-            "opc_request_id"
+            "opc_request_id",
+            "is_lock_override"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -7125,6 +8106,11 @@ class GoldenGateClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -7150,6 +8136,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_deployment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -7161,6 +8148,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_deployment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -7187,6 +8175,9 @@ class GoldenGateClient(object):
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
+
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7218,7 +8209,8 @@ class GoldenGateClient(object):
             "allow_control_chars",
             "retry_strategy",
             "if_match",
-            "opc_request_id"
+            "opc_request_id",
+            "is_lock_override"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -7234,6 +8226,11 @@ class GoldenGateClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -7259,6 +8256,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_deployment_backup_details,
                 response_type="DeploymentBackup",
@@ -7271,6 +8269,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_deployment_backup_details,
                 response_type="DeploymentBackup",
@@ -7305,6 +8304,9 @@ class GoldenGateClient(object):
             invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
             from the system, then a retry of the original creation request is rejected.
 
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -7336,7 +8338,8 @@ class GoldenGateClient(object):
             "retry_strategy",
             "if_match",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "is_lock_override"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -7352,6 +8355,11 @@ class GoldenGateClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -7379,6 +8387,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=upgrade_deployment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -7390,6 +8399,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=upgrade_deployment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -7423,6 +8433,9 @@ class GoldenGateClient(object):
             invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
             from the system, then a retry of the original creation request is rejected.
 
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -7454,7 +8467,8 @@ class GoldenGateClient(object):
             "retry_strategy",
             "if_match",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "is_lock_override"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -7470,6 +8484,11 @@ class GoldenGateClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -7497,6 +8516,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=upgrade_deployment_upgrade_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -7508,6 +8528,7 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=upgrade_deployment_upgrade_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),

@@ -23,7 +23,7 @@ class CreateAzureDataLakeStorageConnectionDetails(CreateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreateAzureDataLakeStorageConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
         :type connection_type: str
 
         :param display_name:
@@ -45,6 +45,10 @@ class CreateAzureDataLakeStorageConnectionDetails(CreateConnectionDetails):
         :param defined_tags:
             The value to assign to the defined_tags property of this CreateAzureDataLakeStorageConnectionDetails.
         :type defined_tags: dict(str, dict(str, object))
+
+        :param locks:
+            The value to assign to the locks property of this CreateAzureDataLakeStorageConnectionDetails.
+        :type locks: list[oci.golden_gate.models.AddResourceLockDetails]
 
         :param vault_id:
             The value to assign to the vault_id property of this CreateAzureDataLakeStorageConnectionDetails.
@@ -111,6 +115,7 @@ class CreateAzureDataLakeStorageConnectionDetails(CreateConnectionDetails):
             'compartment_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[AddResourceLockDetails]',
             'vault_id': 'str',
             'key_id': 'str',
             'nsg_ids': 'list[str]',
@@ -134,6 +139,7 @@ class CreateAzureDataLakeStorageConnectionDetails(CreateConnectionDetails):
             'compartment_id': 'compartmentId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'locks': 'locks',
             'vault_id': 'vaultId',
             'key_id': 'keyId',
             'nsg_ids': 'nsgIds',
@@ -156,6 +162,7 @@ class CreateAzureDataLakeStorageConnectionDetails(CreateConnectionDetails):
         self._compartment_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._locks = None
         self._vault_id = None
         self._key_id = None
         self._nsg_ids = None

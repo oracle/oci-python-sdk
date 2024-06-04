@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Citation(object):
     """
-    A section of the generated reply which cites external knowledge.
+    A section of the generated response which cites the documents that were used for generating the response.
     """
 
     def __init__(self, **kwargs):
@@ -60,7 +60,7 @@ class Citation(object):
     def start(self):
         """
         **[Required]** Gets the start of this Citation.
-        The index of text that the citation starts at, counting from zero.
+        Counting from zero, the index of the text where the citation starts.
 
 
         :return: The start of this Citation.
@@ -72,7 +72,7 @@ class Citation(object):
     def start(self, start):
         """
         Sets the start of this Citation.
-        The index of text that the citation starts at, counting from zero.
+        Counting from zero, the index of the text where the citation starts.
 
 
         :param start: The start of this Citation.
@@ -84,7 +84,7 @@ class Citation(object):
     def end(self):
         """
         **[Required]** Gets the end of this Citation.
-        The index of text that the citation ends after, counting from zero.
+        Counting from zero, the index of the text that the citation ends after.
 
 
         :return: The end of this Citation.
@@ -96,7 +96,7 @@ class Citation(object):
     def end(self, end):
         """
         Sets the end of this Citation.
-        The index of text that the citation ends after, counting from zero.
+        Counting from zero, the index of the text that the citation ends after.
 
 
         :param end: The end of this Citation.
@@ -108,7 +108,7 @@ class Citation(object):
     def text(self):
         """
         **[Required]** Gets the text of this Citation.
-        The text of the citation
+        The text of the citation.
 
 
         :return: The text of this Citation.
@@ -120,7 +120,7 @@ class Citation(object):
     def text(self, text):
         """
         Sets the text of this Citation.
-        The text of the citation
+        The text of the citation.
 
 
         :param text: The text of this Citation.
@@ -132,7 +132,7 @@ class Citation(object):
     def document_ids(self):
         """
         **[Required]** Gets the document_ids of this Citation.
-        Identifiers of documents cited by this section of the generated reply.
+        Identifiers for the documents cited in the current generated response.
 
 
         :return: The document_ids of this Citation.
@@ -144,7 +144,7 @@ class Citation(object):
     def document_ids(self, document_ids):
         """
         Sets the document_ids of this Citation.
-        Identifiers of documents cited by this section of the generated reply.
+        Identifiers for the documents cited in the current generated response.
 
 
         :param document_ids: The document_ids of this Citation.

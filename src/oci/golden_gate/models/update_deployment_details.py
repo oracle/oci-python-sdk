@@ -57,6 +57,10 @@ class UpdateDeploymentDetails(object):
             The value to assign to the subnet_id property of this UpdateDeploymentDetails.
         :type subnet_id: str
 
+        :param load_balancer_subnet_id:
+            The value to assign to the load_balancer_subnet_id property of this UpdateDeploymentDetails.
+        :type load_balancer_subnet_id: str
+
         :param is_public:
             The value to assign to the is_public property of this UpdateDeploymentDetails.
         :type is_public: bool
@@ -94,6 +98,7 @@ class UpdateDeploymentDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
+            'load_balancer_subnet_id': 'str',
             'is_public': 'bool',
             'fqdn': 'str',
             'cpu_core_count': 'int',
@@ -111,6 +116,7 @@ class UpdateDeploymentDetails(object):
             'defined_tags': 'definedTags',
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
+            'load_balancer_subnet_id': 'loadBalancerSubnetId',
             'is_public': 'isPublic',
             'fqdn': 'fqdn',
             'cpu_core_count': 'cpuCoreCount',
@@ -127,6 +133,7 @@ class UpdateDeploymentDetails(object):
         self._defined_tags = None
         self._nsg_ids = None
         self._subnet_id = None
+        self._load_balancer_subnet_id = None
         self._is_public = None
         self._fqdn = None
         self._cpu_core_count = None
@@ -301,6 +308,8 @@ class UpdateDeploymentDetails(object):
         """
         Gets the subnet_id of this UpdateDeploymentDetails.
         The `OCID`__ of the subnet of the deployment's private endpoint.
+        The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
+        after which the private subnet will be enforced.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -315,6 +324,8 @@ class UpdateDeploymentDetails(object):
         """
         Sets the subnet_id of this UpdateDeploymentDetails.
         The `OCID`__ of the subnet of the deployment's private endpoint.
+        The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
+        after which the private subnet will be enforced.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -323,6 +334,38 @@ class UpdateDeploymentDetails(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def load_balancer_subnet_id(self):
+        """
+        Gets the load_balancer_subnet_id of this UpdateDeploymentDetails.
+        The `OCID`__ of a public subnet in the customer tenancy.
+        Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+        For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The load_balancer_subnet_id of this UpdateDeploymentDetails.
+        :rtype: str
+        """
+        return self._load_balancer_subnet_id
+
+    @load_balancer_subnet_id.setter
+    def load_balancer_subnet_id(self, load_balancer_subnet_id):
+        """
+        Sets the load_balancer_subnet_id of this UpdateDeploymentDetails.
+        The `OCID`__ of a public subnet in the customer tenancy.
+        Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+        For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param load_balancer_subnet_id: The load_balancer_subnet_id of this UpdateDeploymentDetails.
+        :type: str
+        """
+        self._load_balancer_subnet_id = load_balancer_subnet_id
 
     @property
     def is_public(self):

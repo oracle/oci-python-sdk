@@ -23,7 +23,7 @@ class TextGenerationModelMetrics(ModelMetrics):
 
         :param model_metrics_type:
             The value to assign to the model_metrics_type property of this TextGenerationModelMetrics.
-            Allowed values for this property are: "TEXT_GENERATION_MODEL_METRICS"
+            Allowed values for this property are: "TEXT_GENERATION_MODEL_METRICS", "CHAT_MODEL_METRICS"
         :type model_metrics_type: str
 
         :param final_accuracy:

@@ -23,7 +23,7 @@ class PostgresqlConnectionSummary(ConnectionSummary):
 
         :param connection_type:
             The value to assign to the connection_type property of this PostgresqlConnectionSummary.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
         :type connection_type: str
 
         :param id:
@@ -95,6 +95,10 @@ class PostgresqlConnectionSummary(ConnectionSummary):
             Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
         :type routing_method: str
 
+        :param locks:
+            The value to assign to the locks property of this PostgresqlConnectionSummary.
+        :type locks: list[oci.golden_gate.models.ResourceLock]
+
         :param technology_type:
             The value to assign to the technology_type property of this PostgresqlConnectionSummary.
         :type technology_type: str
@@ -131,6 +135,10 @@ class PostgresqlConnectionSummary(ConnectionSummary):
             The value to assign to the private_ip property of this PostgresqlConnectionSummary.
         :type private_ip: str
 
+        :param db_system_id:
+            The value to assign to the db_system_id property of this PostgresqlConnectionSummary.
+        :type db_system_id: str
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -151,6 +159,7 @@ class PostgresqlConnectionSummary(ConnectionSummary):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'locks': 'list[ResourceLock]',
             'technology_type': 'str',
             'database_name': 'str',
             'host': 'str',
@@ -159,7 +168,8 @@ class PostgresqlConnectionSummary(ConnectionSummary):
             'additional_attributes': 'list[NameValuePair]',
             'security_protocol': 'str',
             'ssl_mode': 'str',
-            'private_ip': 'str'
+            'private_ip': 'str',
+            'db_system_id': 'str'
         }
 
         self.attribute_map = {
@@ -181,6 +191,7 @@ class PostgresqlConnectionSummary(ConnectionSummary):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'locks': 'locks',
             'technology_type': 'technologyType',
             'database_name': 'databaseName',
             'host': 'host',
@@ -189,7 +200,8 @@ class PostgresqlConnectionSummary(ConnectionSummary):
             'additional_attributes': 'additionalAttributes',
             'security_protocol': 'securityProtocol',
             'ssl_mode': 'sslMode',
-            'private_ip': 'privateIp'
+            'private_ip': 'privateIp',
+            'db_system_id': 'dbSystemId'
         }
 
         self._connection_type = None
@@ -210,6 +222,7 @@ class PostgresqlConnectionSummary(ConnectionSummary):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._locks = None
         self._technology_type = None
         self._database_name = None
         self._host = None
@@ -219,6 +232,7 @@ class PostgresqlConnectionSummary(ConnectionSummary):
         self._security_protocol = None
         self._ssl_mode = None
         self._private_ip = None
+        self._db_system_id = None
         self._connection_type = 'POSTGRESQL'
 
     @property
@@ -456,6 +470,34 @@ class PostgresqlConnectionSummary(ConnectionSummary):
         :type: str
         """
         self._private_ip = private_ip
+
+    @property
+    def db_system_id(self):
+        """
+        Gets the db_system_id of this PostgresqlConnectionSummary.
+        The `OCID`__ of the database system being referenced.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The db_system_id of this PostgresqlConnectionSummary.
+        :rtype: str
+        """
+        return self._db_system_id
+
+    @db_system_id.setter
+    def db_system_id(self, db_system_id):
+        """
+        Sets the db_system_id of this PostgresqlConnectionSummary.
+        The `OCID`__ of the database system being referenced.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param db_system_id: The db_system_id of this PostgresqlConnectionSummary.
+        :type: str
+        """
+        self._db_system_id = db_system_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -23,11 +23,16 @@ class TrainingConfig(object):
     #: This constant has a value of "VANILLA_TRAINING_CONFIG"
     TRAINING_CONFIG_TYPE_VANILLA_TRAINING_CONFIG = "VANILLA_TRAINING_CONFIG"
 
+    #: A constant which can be used with the training_config_type property of a TrainingConfig.
+    #: This constant has a value of "LORA_TRAINING_CONFIG"
+    TRAINING_CONFIG_TYPE_LORA_TRAINING_CONFIG = "LORA_TRAINING_CONFIG"
+
     def __init__(self, **kwargs):
         """
         Initializes a new TrainingConfig object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.generative_ai.models.LoraTrainingConfig`
         * :class:`~oci.generative_ai.models.VanillaTrainingConfig`
         * :class:`~oci.generative_ai.models.TFewTrainingConfig`
 
@@ -35,7 +40,7 @@ class TrainingConfig(object):
 
         :param training_config_type:
             The value to assign to the training_config_type property of this TrainingConfig.
-            Allowed values for this property are: "TFEW_TRAINING_CONFIG", "VANILLA_TRAINING_CONFIG", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "TFEW_TRAINING_CONFIG", "VANILLA_TRAINING_CONFIG", "LORA_TRAINING_CONFIG", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type training_config_type: str
 
@@ -100,6 +105,9 @@ class TrainingConfig(object):
         """
         type = object_dictionary['trainingConfigType']
 
+        if type == 'LORA_TRAINING_CONFIG':
+            return 'LoraTrainingConfig'
+
         if type == 'VANILLA_TRAINING_CONFIG':
             return 'VanillaTrainingConfig'
 
@@ -114,7 +122,7 @@ class TrainingConfig(object):
         **[Required]** Gets the training_config_type of this TrainingConfig.
         The fine-tuning method for training a custom model.
 
-        Allowed values for this property are: "TFEW_TRAINING_CONFIG", "VANILLA_TRAINING_CONFIG", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "TFEW_TRAINING_CONFIG", "VANILLA_TRAINING_CONFIG", "LORA_TRAINING_CONFIG", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -133,7 +141,7 @@ class TrainingConfig(object):
         :param training_config_type: The training_config_type of this TrainingConfig.
         :type: str
         """
-        allowed_values = ["TFEW_TRAINING_CONFIG", "VANILLA_TRAINING_CONFIG"]
+        allowed_values = ["TFEW_TRAINING_CONFIG", "VANILLA_TRAINING_CONFIG", "LORA_TRAINING_CONFIG"]
         if not value_allowed_none_or_none_sentinel(training_config_type, allowed_values):
             training_config_type = 'UNKNOWN_ENUM_VALUE'
         self._training_config_type = training_config_type

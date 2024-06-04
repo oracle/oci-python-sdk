@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CohereMessage(object):
     """
-    An message that represents a single dialogue of chat
+    A message that represents a single chat dialog.
     """
 
     #: A constant which can be used with the role property of a CohereMessage.
@@ -23,41 +23,73 @@ class CohereMessage(object):
     #: This constant has a value of "USER"
     ROLE_USER = "USER"
 
+    #: A constant which can be used with the role property of a CohereMessage.
+    #: This constant has a value of "SYSTEM"
+    ROLE_SYSTEM = "SYSTEM"
+
+    #: A constant which can be used with the role property of a CohereMessage.
+    #: This constant has a value of "TOOL"
+    ROLE_TOOL = "TOOL"
+
     def __init__(self, **kwargs):
         """
-        Initializes a new CohereMessage object with values from keyword arguments.
+        Initializes a new CohereMessage object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
+        to a service operations then you should favor using a subclass over the base class:
+
+        * :class:`~oci.generative_ai_inference.models.CohereChatBotMessage`
+        * :class:`~oci.generative_ai_inference.models.CohereSystemMessage`
+        * :class:`~oci.generative_ai_inference.models.CohereToolMessage`
+        * :class:`~oci.generative_ai_inference.models.CohereUserMessage`
+
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param role:
             The value to assign to the role property of this CohereMessage.
-            Allowed values for this property are: "CHATBOT", "USER"
+            Allowed values for this property are: "CHATBOT", "USER", "SYSTEM", "TOOL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type role: str
-
-        :param message:
-            The value to assign to the message property of this CohereMessage.
-        :type message: str
 
         """
         self.swagger_types = {
-            'role': 'str',
-            'message': 'str'
+            'role': 'str'
         }
 
         self.attribute_map = {
-            'role': 'role',
-            'message': 'message'
+            'role': 'role'
         }
 
         self._role = None
-        self._message = None
+
+    @staticmethod
+    def get_subtype(object_dictionary):
+        """
+        Given the hash representation of a subtype of this class,
+        use the info in the hash to return the class of the subtype.
+        """
+        type = object_dictionary['role']
+
+        if type == 'CHATBOT':
+            return 'CohereChatBotMessage'
+
+        if type == 'SYSTEM':
+            return 'CohereSystemMessage'
+
+        if type == 'TOOL':
+            return 'CohereToolMessage'
+
+        if type == 'USER':
+            return 'CohereUserMessage'
+        else:
+            return 'CohereMessage'
 
     @property
     def role(self):
         """
         **[Required]** Gets the role of this CohereMessage.
-        One of CHATBOT|USER to identify who the message is coming from.
+        To identify who the message is coming from, a role is associated to each message.
 
-        Allowed values for this property are: "CHATBOT", "USER"
+        Allowed values for this property are: "CHATBOT", "USER", "SYSTEM", "TOOL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The role of this CohereMessage.
@@ -69,42 +101,16 @@ class CohereMessage(object):
     def role(self, role):
         """
         Sets the role of this CohereMessage.
-        One of CHATBOT|USER to identify who the message is coming from.
+        To identify who the message is coming from, a role is associated to each message.
 
 
         :param role: The role of this CohereMessage.
         :type: str
         """
-        allowed_values = ["CHATBOT", "USER"]
+        allowed_values = ["CHATBOT", "USER", "SYSTEM", "TOOL"]
         if not value_allowed_none_or_none_sentinel(role, allowed_values):
-            raise ValueError(
-                f"Invalid value for `role`, must be None or one of {allowed_values}"
-            )
+            role = 'UNKNOWN_ENUM_VALUE'
         self._role = role
-
-    @property
-    def message(self):
-        """
-        **[Required]** Gets the message of this CohereMessage.
-        Contents of the chat message.
-
-
-        :return: The message of this CohereMessage.
-        :rtype: str
-        """
-        return self._message
-
-    @message.setter
-    def message(self, message):
-        """
-        Sets the message of this CohereMessage.
-        Contents of the chat message.
-
-
-        :param message: The message of this CohereMessage.
-        :type: str
-        """
-        self._message = message
 
     def __repr__(self):
         return formatted_flat_dict(self)

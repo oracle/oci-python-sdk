@@ -204,6 +204,10 @@ class Deployment(object):
             The value to assign to the defined_tags property of this Deployment.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param locks:
+            The value to assign to the locks property of this Deployment.
+        :type locks: list[oci.golden_gate.models.ResourceLock]
+
         :param is_healthy:
             The value to assign to the is_healthy property of this Deployment.
         :type is_healthy: bool
@@ -336,6 +340,7 @@ class Deployment(object):
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[ResourceLock]',
             'is_healthy': 'bool',
             'subnet_id': 'str',
             'load_balancer_subnet_id': 'str',
@@ -379,6 +384,7 @@ class Deployment(object):
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'locks': 'locks',
             'is_healthy': 'isHealthy',
             'subnet_id': 'subnetId',
             'load_balancer_subnet_id': 'loadBalancerSubnetId',
@@ -421,6 +427,7 @@ class Deployment(object):
         self._lifecycle_details = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._locks = None
         self._is_healthy = None
         self._subnet_id = None
         self._load_balancer_subnet_id = None
@@ -787,6 +794,30 @@ class Deployment(object):
         self._defined_tags = defined_tags
 
     @property
+    def locks(self):
+        """
+        Gets the locks of this Deployment.
+        Locks associated with this resource.
+
+
+        :return: The locks of this Deployment.
+        :rtype: list[oci.golden_gate.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this Deployment.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this Deployment.
+        :type: list[oci.golden_gate.models.ResourceLock]
+        """
+        self._locks = locks
+
+    @property
     def is_healthy(self):
         """
         Gets the is_healthy of this Deployment.
@@ -815,6 +846,8 @@ class Deployment(object):
         """
         **[Required]** Gets the subnet_id of this Deployment.
         The `OCID`__ of the subnet of the deployment's private endpoint.
+        The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
+        after which the private subnet will be enforced.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -829,6 +862,8 @@ class Deployment(object):
         """
         Sets the subnet_id of this Deployment.
         The `OCID`__ of the subnet of the deployment's private endpoint.
+        The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
+        after which the private subnet will be enforced.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -844,7 +879,7 @@ class Deployment(object):
         Gets the load_balancer_subnet_id of this Deployment.
         The `OCID`__ of a public subnet in the customer tenancy.
         Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-        For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+        For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -860,7 +895,7 @@ class Deployment(object):
         Sets the load_balancer_subnet_id of this Deployment.
         The `OCID`__ of a public subnet in the customer tenancy.
         Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-        For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+        For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

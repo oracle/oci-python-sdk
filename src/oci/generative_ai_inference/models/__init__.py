@@ -6,6 +6,7 @@
 
 from __future__ import absolute_import
 
+from .assistant_message import AssistantMessage
 from .base_chat_request import BaseChatRequest
 from .base_chat_response import BaseChatResponse
 from .chat_choice import ChatChoice
@@ -14,11 +15,19 @@ from .chat_details import ChatDetails
 from .chat_result import ChatResult
 from .choice import Choice
 from .citation import Citation
+from .cohere_chat_bot_message import CohereChatBotMessage
 from .cohere_chat_request import CohereChatRequest
 from .cohere_chat_response import CohereChatResponse
 from .cohere_llm_inference_request import CohereLlmInferenceRequest
 from .cohere_llm_inference_response import CohereLlmInferenceResponse
 from .cohere_message import CohereMessage
+from .cohere_parameter_definition import CohereParameterDefinition
+from .cohere_system_message import CohereSystemMessage
+from .cohere_tool import CohereTool
+from .cohere_tool_call import CohereToolCall
+from .cohere_tool_message import CohereToolMessage
+from .cohere_tool_result import CohereToolResult
+from .cohere_user_message import CohereUserMessage
 from .dedicated_serving_mode import DedicatedServingMode
 from .embed_text_details import EmbedTextDetails
 from .embed_text_result import EmbedTextResult
@@ -38,11 +47,14 @@ from .search_query import SearchQuery
 from .serving_mode import ServingMode
 from .summarize_text_details import SummarizeTextDetails
 from .summarize_text_result import SummarizeTextResult
+from .system_message import SystemMessage
 from .text_content import TextContent
 from .token_likelihood import TokenLikelihood
+from .user_message import UserMessage
 
 # Maps type names to classes for generative_ai_inference services.
 generative_ai_inference_type_mapping = {
+    "AssistantMessage": AssistantMessage,
     "BaseChatRequest": BaseChatRequest,
     "BaseChatResponse": BaseChatResponse,
     "ChatChoice": ChatChoice,
@@ -51,11 +63,19 @@ generative_ai_inference_type_mapping = {
     "ChatResult": ChatResult,
     "Choice": Choice,
     "Citation": Citation,
+    "CohereChatBotMessage": CohereChatBotMessage,
     "CohereChatRequest": CohereChatRequest,
     "CohereChatResponse": CohereChatResponse,
     "CohereLlmInferenceRequest": CohereLlmInferenceRequest,
     "CohereLlmInferenceResponse": CohereLlmInferenceResponse,
     "CohereMessage": CohereMessage,
+    "CohereParameterDefinition": CohereParameterDefinition,
+    "CohereSystemMessage": CohereSystemMessage,
+    "CohereTool": CohereTool,
+    "CohereToolCall": CohereToolCall,
+    "CohereToolMessage": CohereToolMessage,
+    "CohereToolResult": CohereToolResult,
+    "CohereUserMessage": CohereUserMessage,
     "DedicatedServingMode": DedicatedServingMode,
     "EmbedTextDetails": EmbedTextDetails,
     "EmbedTextResult": EmbedTextResult,
@@ -75,6 +95,8 @@ generative_ai_inference_type_mapping = {
     "ServingMode": ServingMode,
     "SummarizeTextDetails": SummarizeTextDetails,
     "SummarizeTextResult": SummarizeTextResult,
+    "SystemMessage": SystemMessage,
     "TextContent": TextContent,
-    "TokenLikelihood": TokenLikelihood
+    "TokenLikelihood": TokenLikelihood,
+    "UserMessage": UserMessage
 }

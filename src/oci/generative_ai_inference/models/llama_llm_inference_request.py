@@ -410,7 +410,7 @@ class LlamaLlmInferenceRequest(LlmInferenceRequest):
     def max_tokens(self):
         """
         Gets the max_tokens of this LlamaLlmInferenceRequest.
-        The maximum number of tokens that can be generated per output sequence. The token count of your prompt plus max_tokens cannot exceed the model's context length.
+        The maximum number of tokens that can be generated per output sequence. The token count of the prompt plus `maxTokens` cannot exceed the model's context length.
 
 
         :return: The max_tokens of this LlamaLlmInferenceRequest.
@@ -422,7 +422,7 @@ class LlamaLlmInferenceRequest(LlmInferenceRequest):
     def max_tokens(self, max_tokens):
         """
         Sets the max_tokens of this LlamaLlmInferenceRequest.
-        The maximum number of tokens that can be generated per output sequence. The token count of your prompt plus max_tokens cannot exceed the model's context length.
+        The maximum number of tokens that can be generated per output sequence. The token count of the prompt plus `maxTokens` cannot exceed the model's context length.
 
 
         :param max_tokens: The max_tokens of this LlamaLlmInferenceRequest.

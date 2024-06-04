@@ -23,7 +23,7 @@ class RedisConnectionSummary(ConnectionSummary):
 
         :param connection_type:
             The value to assign to the connection_type property of this RedisConnectionSummary.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
         :type connection_type: str
 
         :param id:
@@ -95,6 +95,10 @@ class RedisConnectionSummary(ConnectionSummary):
             Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
         :type routing_method: str
 
+        :param locks:
+            The value to assign to the locks property of this RedisConnectionSummary.
+        :type locks: list[oci.golden_gate.models.ResourceLock]
+
         :param technology_type:
             The value to assign to the technology_type property of this RedisConnectionSummary.
         :type technology_type: str
@@ -114,6 +118,10 @@ class RedisConnectionSummary(ConnectionSummary):
         :param username:
             The value to assign to the username property of this RedisConnectionSummary.
         :type username: str
+
+        :param redis_cluster_id:
+            The value to assign to the redis_cluster_id property of this RedisConnectionSummary.
+        :type redis_cluster_id: str
 
         """
         self.swagger_types = {
@@ -135,11 +143,13 @@ class RedisConnectionSummary(ConnectionSummary):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'locks': 'list[ResourceLock]',
             'technology_type': 'str',
             'servers': 'str',
             'security_protocol': 'str',
             'authentication_type': 'str',
-            'username': 'str'
+            'username': 'str',
+            'redis_cluster_id': 'str'
         }
 
         self.attribute_map = {
@@ -161,11 +171,13 @@ class RedisConnectionSummary(ConnectionSummary):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'locks': 'locks',
             'technology_type': 'technologyType',
             'servers': 'servers',
             'security_protocol': 'securityProtocol',
             'authentication_type': 'authenticationType',
-            'username': 'username'
+            'username': 'username',
+            'redis_cluster_id': 'redisClusterId'
         }
 
         self._connection_type = None
@@ -186,11 +198,13 @@ class RedisConnectionSummary(ConnectionSummary):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._locks = None
         self._technology_type = None
         self._servers = None
         self._security_protocol = None
         self._authentication_type = None
         self._username = None
+        self._redis_cluster_id = None
         self._connection_type = 'REDIS'
 
     @property
@@ -322,6 +336,34 @@ class RedisConnectionSummary(ConnectionSummary):
         :type: str
         """
         self._username = username
+
+    @property
+    def redis_cluster_id(self):
+        """
+        Gets the redis_cluster_id of this RedisConnectionSummary.
+        The `OCID`__ of the Redis cluster.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The redis_cluster_id of this RedisConnectionSummary.
+        :rtype: str
+        """
+        return self._redis_cluster_id
+
+    @redis_cluster_id.setter
+    def redis_cluster_id(self, redis_cluster_id):
+        """
+        Sets the redis_cluster_id of this RedisConnectionSummary.
+        The `OCID`__ of the Redis cluster.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param redis_cluster_id: The redis_cluster_id of this RedisConnectionSummary.
+        :type: str
+        """
+        self._redis_cluster_id = redis_cluster_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

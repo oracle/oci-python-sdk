@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BaseChatRequest(object):
     """
-    Base class for chat inference requests
+    The base class to use for the chat inference request.
     """
 
     #: A constant which can be used with the api_format property of a BaseChatRequest.
@@ -69,7 +69,7 @@ class BaseChatRequest(object):
     def api_format(self):
         """
         **[Required]** Gets the api_format of this BaseChatRequest.
-        The api format for the model's request
+        The API format for the model's request.
 
         Allowed values for this property are: "COHERE", "GENERIC"
 
@@ -83,7 +83,7 @@ class BaseChatRequest(object):
     def api_format(self, api_format):
         """
         Sets the api_format of this BaseChatRequest.
-        The api format for the model's request
+        The API format for the model's request.
 
 
         :param api_format: The api_format of this BaseChatRequest.
