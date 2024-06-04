@@ -21,6 +21,7 @@ Generative Ai
     oci.generative_ai.models.ChangeDedicatedAiClusterCompartmentDetails
     oci.generative_ai.models.ChangeEndpointCompartmentDetails
     oci.generative_ai.models.ChangeModelCompartmentDetails
+    oci.generative_ai.models.ChatModelMetrics
     oci.generative_ai.models.ContentModerationConfig
     oci.generative_ai.models.CreateDedicatedAiClusterDetails
     oci.generative_ai.models.CreateEndpointDetails
@@ -35,6 +36,7 @@ Generative Ai
     oci.generative_ai.models.EndpointCollection
     oci.generative_ai.models.EndpointSummary
     oci.generative_ai.models.FineTuneDetails
+    oci.generative_ai.models.LoraTrainingConfig
     oci.generative_ai.models.Model
     oci.generative_ai.models.ModelCollection
     oci.generative_ai.models.ModelMetrics

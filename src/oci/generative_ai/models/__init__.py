@@ -9,6 +9,7 @@ from __future__ import absolute_import
 from .change_dedicated_ai_cluster_compartment_details import ChangeDedicatedAiClusterCompartmentDetails
 from .change_endpoint_compartment_details import ChangeEndpointCompartmentDetails
 from .change_model_compartment_details import ChangeModelCompartmentDetails
+from .chat_model_metrics import ChatModelMetrics
 from .content_moderation_config import ContentModerationConfig
 from .create_dedicated_ai_cluster_details import CreateDedicatedAiClusterDetails
 from .create_endpoint_details import CreateEndpointDetails
@@ -23,6 +24,7 @@ from .endpoint import Endpoint
 from .endpoint_collection import EndpointCollection
 from .endpoint_summary import EndpointSummary
 from .fine_tune_details import FineTuneDetails
+from .lora_training_config import LoraTrainingConfig
 from .model import Model
 from .model_collection import ModelCollection
 from .model_metrics import ModelMetrics
@@ -49,6 +51,7 @@ generative_ai_type_mapping = {
     "ChangeDedicatedAiClusterCompartmentDetails": ChangeDedicatedAiClusterCompartmentDetails,
     "ChangeEndpointCompartmentDetails": ChangeEndpointCompartmentDetails,
     "ChangeModelCompartmentDetails": ChangeModelCompartmentDetails,
+    "ChatModelMetrics": ChatModelMetrics,
     "ContentModerationConfig": ContentModerationConfig,
     "CreateDedicatedAiClusterDetails": CreateDedicatedAiClusterDetails,
     "CreateEndpointDetails": CreateEndpointDetails,
@@ -63,6 +66,7 @@ generative_ai_type_mapping = {
     "EndpointCollection": EndpointCollection,
     "EndpointSummary": EndpointSummary,
     "FineTuneDetails": FineTuneDetails,
+    "LoraTrainingConfig": LoraTrainingConfig,
     "Model": Model,
     "ModelCollection": ModelCollection,
     "ModelMetrics": ModelMetrics,

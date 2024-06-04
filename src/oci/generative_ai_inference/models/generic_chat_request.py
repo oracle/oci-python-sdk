@@ -133,7 +133,7 @@ class GenericChatRequest(BaseChatRequest):
     def messages(self):
         """
         Gets the messages of this GenericChatRequest.
-        The series of messages associated with this chat completion request. It should include previous messages in the conversation. Each message has a role and content.
+        The series of messages in a chat request. Includes the previous messages in a conversation. Each message includes a role (`USER` or the `CHATBOT`) and content.
 
 
         :return: The messages of this GenericChatRequest.
@@ -145,7 +145,7 @@ class GenericChatRequest(BaseChatRequest):
     def messages(self, messages):
         """
         Sets the messages of this GenericChatRequest.
-        The series of messages associated with this chat completion request. It should include previous messages in the conversation. Each message has a role and content.
+        The series of messages in a chat request. Includes the previous messages in a conversation. Each message includes a role (`USER` or the `CHATBOT`) and content.
 
 
         :param messages: The messages of this GenericChatRequest.
@@ -157,7 +157,7 @@ class GenericChatRequest(BaseChatRequest):
     def is_stream(self):
         """
         Gets the is_stream of this GenericChatRequest.
-        Whether to stream back partial progress. If set, tokens are sent as data-only server-sent events as they become available.
+        Whether to stream back partial progress. If set to true, as tokens become available, they are sent as data-only server-sent events.
 
 
         :return: The is_stream of this GenericChatRequest.
@@ -169,7 +169,7 @@ class GenericChatRequest(BaseChatRequest):
     def is_stream(self, is_stream):
         """
         Sets the is_stream of this GenericChatRequest.
-        Whether to stream back partial progress. If set, tokens are sent as data-only server-sent events as they become available.
+        Whether to stream back partial progress. If set to true, as tokens become available, they are sent as data-only server-sent events.
 
 
         :param is_stream: The is_stream of this GenericChatRequest.
@@ -205,7 +205,7 @@ class GenericChatRequest(BaseChatRequest):
     def is_echo(self):
         """
         Gets the is_echo of this GenericChatRequest.
-        Whether or not to return the user prompt in the response. Applies only to non-stream results.
+        Whether to include the user prompt in the response. Applies only to non-stream results.
 
 
         :return: The is_echo of this GenericChatRequest.
@@ -217,7 +217,7 @@ class GenericChatRequest(BaseChatRequest):
     def is_echo(self, is_echo):
         """
         Sets the is_echo of this GenericChatRequest.
-        Whether or not to return the user prompt in the response. Applies only to non-stream results.
+        Whether to include the user prompt in the response. Applies only to non-stream results.
 
 
         :param is_echo: The is_echo of this GenericChatRequest.
@@ -417,7 +417,8 @@ class GenericChatRequest(BaseChatRequest):
     def max_tokens(self):
         """
         Gets the max_tokens of this GenericChatRequest.
-        The maximum number of tokens that can be generated per output sequence. The token count of your prompt plus max_tokens cannot exceed the model's context length.
+        The maximum number of tokens that can be generated per output sequence. The token count of your prompt plus `maxTokens` must not exceed the model's context length.
+        Not setting a value for maxTokens results in the possible use of model's full context length.
 
 
         :return: The max_tokens of this GenericChatRequest.
@@ -429,7 +430,8 @@ class GenericChatRequest(BaseChatRequest):
     def max_tokens(self, max_tokens):
         """
         Sets the max_tokens of this GenericChatRequest.
-        The maximum number of tokens that can be generated per output sequence. The token count of your prompt plus max_tokens cannot exceed the model's context length.
+        The maximum number of tokens that can be generated per output sequence. The token count of your prompt plus `maxTokens` must not exceed the model's context length.
+        Not setting a value for maxTokens results in the possible use of model's full context length.
 
 
         :param max_tokens: The max_tokens of this GenericChatRequest.
@@ -441,7 +443,9 @@ class GenericChatRequest(BaseChatRequest):
     def logit_bias(self):
         """
         Gets the logit_bias of this GenericChatRequest.
-        Modify the likelihood of specified tokens appearing in the completion.
+        Modifies the likelihood of specified tokens that appear in the completion.
+
+        Example: '{\"6395\": 2, \"8134\": 1, \"21943\": 0.5, \"5923\": -100}'
 
 
         :return: The logit_bias of this GenericChatRequest.
@@ -453,7 +457,9 @@ class GenericChatRequest(BaseChatRequest):
     def logit_bias(self, logit_bias):
         """
         Sets the logit_bias of this GenericChatRequest.
-        Modify the likelihood of specified tokens appearing in the completion.
+        Modifies the likelihood of specified tokens that appear in the completion.
+
+        Example: '{\"6395\": 2, \"8134\": 1, \"21943\": 0.5, \"5923\": -100}'
 
 
         :param logit_bias: The logit_bias of this GenericChatRequest.

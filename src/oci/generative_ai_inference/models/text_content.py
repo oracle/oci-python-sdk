@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TextContent(ChatContent):
     """
-    Represents a single instance of text chat content.
+    Represents a single instance of text in the chat content.
     """
 
     def __init__(self, **kwargs):

@@ -88,6 +88,10 @@ class ConnectionSummary(object):
     CONNECTION_TYPE_AMAZON_REDSHIFT = "AMAZON_REDSHIFT"
 
     #: A constant which can be used with the connection_type property of a ConnectionSummary.
+    #: This constant has a value of "DB2"
+    CONNECTION_TYPE_DB2 = "DB2"
+
+    #: A constant which can be used with the connection_type property of a ConnectionSummary.
     #: This constant has a value of "REDIS"
     CONNECTION_TYPE_REDIS = "REDIS"
 
@@ -144,6 +148,7 @@ class ConnectionSummary(object):
         * :class:`~oci.golden_gate.models.GenericConnectionSummary`
         * :class:`~oci.golden_gate.models.KafkaConnectionSummary`
         * :class:`~oci.golden_gate.models.ElasticsearchConnectionSummary`
+        * :class:`~oci.golden_gate.models.Db2ConnectionSummary`
         * :class:`~oci.golden_gate.models.AmazonRedshiftConnectionSummary`
         * :class:`~oci.golden_gate.models.HdfsConnectionSummary`
         * :class:`~oci.golden_gate.models.GoogleCloudStorageConnectionSummary`
@@ -152,7 +157,7 @@ class ConnectionSummary(object):
 
         :param connection_type:
             The value to assign to the connection_type property of this ConnectionSummary.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -226,6 +231,10 @@ class ConnectionSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type routing_method: str
 
+        :param locks:
+            The value to assign to the locks property of this ConnectionSummary.
+        :type locks: list[oci.golden_gate.models.ResourceLock]
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -245,7 +254,8 @@ class ConnectionSummary(object):
             'ingress_ips': 'list[IngressIpDetails]',
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
-            'routing_method': 'str'
+            'routing_method': 'str',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -266,7 +276,8 @@ class ConnectionSummary(object):
             'ingress_ips': 'ingressIps',
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
-            'routing_method': 'routingMethod'
+            'routing_method': 'routingMethod',
+            'locks': 'locks'
         }
 
         self._connection_type = None
@@ -287,6 +298,7 @@ class ConnectionSummary(object):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._locks = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -356,6 +368,9 @@ class ConnectionSummary(object):
         if type == 'ELASTICSEARCH':
             return 'ElasticsearchConnectionSummary'
 
+        if type == 'DB2':
+            return 'Db2ConnectionSummary'
+
         if type == 'AMAZON_REDSHIFT':
             return 'AmazonRedshiftConnectionSummary'
 
@@ -373,7 +388,7 @@ class ConnectionSummary(object):
         **[Required]** Gets the connection_type of this ConnectionSummary.
         The connection type.
 
-        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -392,7 +407,7 @@ class ConnectionSummary(object):
         :param connection_type: The connection_type of this ConnectionSummary.
         :type: str
         """
-        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"]
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             connection_type = 'UNKNOWN_ENUM_VALUE'
         self._connection_type = connection_type
@@ -874,6 +889,30 @@ class ConnectionSummary(object):
         if not value_allowed_none_or_none_sentinel(routing_method, allowed_values):
             routing_method = 'UNKNOWN_ENUM_VALUE'
         self._routing_method = routing_method
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this ConnectionSummary.
+        Locks associated with this resource.
+
+
+        :return: The locks of this ConnectionSummary.
+        :rtype: list[oci.golden_gate.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this ConnectionSummary.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this ConnectionSummary.
+        :type: list[oci.golden_gate.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

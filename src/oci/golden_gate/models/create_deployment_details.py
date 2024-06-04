@@ -89,6 +89,10 @@ class CreateDeploymentDetails(object):
             The value to assign to the defined_tags property of this CreateDeploymentDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param locks:
+            The value to assign to the locks property of this CreateDeploymentDetails.
+        :type locks: list[oci.golden_gate.models.AddResourceLockDetails]
+
         :param deployment_backup_id:
             The value to assign to the deployment_backup_id property of this CreateDeploymentDetails.
         :type deployment_backup_id: str
@@ -146,6 +150,7 @@ class CreateDeploymentDetails(object):
             'compartment_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[AddResourceLockDetails]',
             'deployment_backup_id': 'str',
             'subnet_id': 'str',
             'load_balancer_subnet_id': 'str',
@@ -167,6 +172,7 @@ class CreateDeploymentDetails(object):
             'compartment_id': 'compartmentId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'locks': 'locks',
             'deployment_backup_id': 'deploymentBackupId',
             'subnet_id': 'subnetId',
             'load_balancer_subnet_id': 'loadBalancerSubnetId',
@@ -187,6 +193,7 @@ class CreateDeploymentDetails(object):
         self._compartment_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._locks = None
         self._deployment_backup_id = None
         self._subnet_id = None
         self._load_balancer_subnet_id = None
@@ -366,6 +373,30 @@ class CreateDeploymentDetails(object):
         self._defined_tags = defined_tags
 
     @property
+    def locks(self):
+        """
+        Gets the locks of this CreateDeploymentDetails.
+        Locks associated with this resource.
+
+
+        :return: The locks of this CreateDeploymentDetails.
+        :rtype: list[oci.golden_gate.models.AddResourceLockDetails]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this CreateDeploymentDetails.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this CreateDeploymentDetails.
+        :type: list[oci.golden_gate.models.AddResourceLockDetails]
+        """
+        self._locks = locks
+
+    @property
     def deployment_backup_id(self):
         """
         Gets the deployment_backup_id of this CreateDeploymentDetails.
@@ -398,6 +429,8 @@ class CreateDeploymentDetails(object):
         """
         **[Required]** Gets the subnet_id of this CreateDeploymentDetails.
         The `OCID`__ of the subnet of the deployment's private endpoint.
+        The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
+        after which the private subnet will be enforced.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -412,6 +445,8 @@ class CreateDeploymentDetails(object):
         """
         Sets the subnet_id of this CreateDeploymentDetails.
         The `OCID`__ of the subnet of the deployment's private endpoint.
+        The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
+        after which the private subnet will be enforced.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -427,7 +462,7 @@ class CreateDeploymentDetails(object):
         Gets the load_balancer_subnet_id of this CreateDeploymentDetails.
         The `OCID`__ of a public subnet in the customer tenancy.
         Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-        For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+        For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -443,7 +478,7 @@ class CreateDeploymentDetails(object):
         Sets the load_balancer_subnet_id of this CreateDeploymentDetails.
         The `OCID`__ of a public subnet in the customer tenancy.
         Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-        For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+        For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

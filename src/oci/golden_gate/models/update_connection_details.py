@@ -88,6 +88,10 @@ class UpdateConnectionDetails(object):
     CONNECTION_TYPE_AMAZON_REDSHIFT = "AMAZON_REDSHIFT"
 
     #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "DB2"
+    CONNECTION_TYPE_DB2 = "DB2"
+
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
     #: This constant has a value of "REDIS"
     CONNECTION_TYPE_REDIS = "REDIS"
 
@@ -145,6 +149,7 @@ class UpdateConnectionDetails(object):
         * :class:`~oci.golden_gate.models.UpdateHdfsConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateMysqlConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateKafkaConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateDb2ConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateGenericConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateAzureSynapseConnectionDetails`
 
@@ -152,7 +157,7 @@ class UpdateConnectionDetails(object):
 
         :param connection_type:
             The value to assign to the connection_type property of this UpdateConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
         :type connection_type: str
 
         :param display_name:
@@ -301,6 +306,9 @@ class UpdateConnectionDetails(object):
         if type == 'KAFKA':
             return 'UpdateKafkaConnectionDetails'
 
+        if type == 'DB2':
+            return 'UpdateDb2ConnectionDetails'
+
         if type == 'GENERIC':
             return 'UpdateGenericConnectionDetails'
 
@@ -315,7 +323,7 @@ class UpdateConnectionDetails(object):
         Gets the connection_type of this UpdateConnectionDetails.
         The connection type.
 
-        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
+        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
 
 
         :return: The connection_type of this UpdateConnectionDetails.
@@ -333,7 +341,7 @@ class UpdateConnectionDetails(object):
         :param connection_type: The connection_type of this UpdateConnectionDetails.
         :type: str
         """
-        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"]
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `connection_type`, must be None or one of {allowed_values}"

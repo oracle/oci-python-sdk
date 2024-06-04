@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Choice(object):
     """
-    Represents a single instance of generated text.
+    Represents a single instance of the generated text.
     """
 
     def __init__(self, **kwargs):

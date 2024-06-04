@@ -6,6 +6,7 @@
 
 from __future__ import absolute_import
 
+from .add_resource_lock_details import AddResourceLockDetails
 from .amazon_kinesis_connection import AmazonKinesisConnection
 from .amazon_kinesis_connection_summary import AmazonKinesisConnectionSummary
 from .amazon_redshift_connection import AmazonRedshiftConnection
@@ -43,6 +44,7 @@ from .create_certificate_details import CreateCertificateDetails
 from .create_connection_assignment_details import CreateConnectionAssignmentDetails
 from .create_connection_details import CreateConnectionDetails
 from .create_database_registration_details import CreateDatabaseRegistrationDetails
+from .create_db2_connection_details import CreateDb2ConnectionDetails
 from .create_deployment_backup_details import CreateDeploymentBackupDetails
 from .create_deployment_details import CreateDeploymentDetails
 from .create_elasticsearch_connection_details import CreateElasticsearchConnectionDetails
@@ -69,6 +71,8 @@ from .create_snowflake_connection_details import CreateSnowflakeConnectionDetail
 from .database_registration import DatabaseRegistration
 from .database_registration_collection import DatabaseRegistrationCollection
 from .database_registration_summary import DatabaseRegistrationSummary
+from .db2_connection import Db2Connection
+from .db2_connection_summary import Db2ConnectionSummary
 from .default_cancel_deployment_backup_details import DefaultCancelDeploymentBackupDetails
 from .default_cancel_deployment_upgrade_details import DefaultCancelDeploymentUpgradeDetails
 from .default_cancel_snooze_deployment_upgrade_details import DefaultCancelSnoozeDeploymentUpgradeDetails
@@ -102,6 +106,8 @@ from .deployment_wallets_operation_summary import DeploymentWalletsOperationSumm
 from .elasticsearch_connection import ElasticsearchConnection
 from .elasticsearch_connection_summary import ElasticsearchConnectionSummary
 from .export_deployment_wallet_details import ExportDeploymentWalletDetails
+from .generate_library_url_details import GenerateLibraryUrlDetails
+from .generate_log_reader_component_library_url_details import GenerateLogReaderComponentLibraryUrlDetails
 from .generic_connection import GenericConnection
 from .generic_connection_summary import GenericConnectionSummary
 from .golden_gate_connection import GoldenGateConnection
@@ -121,6 +127,7 @@ from .kafka_connection import KafkaConnection
 from .kafka_connection_summary import KafkaConnectionSummary
 from .kafka_schema_registry_connection import KafkaSchemaRegistryConnection
 from .kafka_schema_registry_connection_summary import KafkaSchemaRegistryConnectionSummary
+from .library_url import LibraryUrl
 from .maintenance_configuration import MaintenanceConfiguration
 from .maintenance_window import MaintenanceWindow
 from .message_summary import MessageSummary
@@ -142,8 +149,10 @@ from .postgresql_connection import PostgresqlConnection
 from .postgresql_connection_summary import PostgresqlConnectionSummary
 from .redis_connection import RedisConnection
 from .redis_connection_summary import RedisConnectionSummary
+from .remove_resource_lock_details import RemoveResourceLockDetails
 from .reschedule_deployment_upgrade_details import RescheduleDeploymentUpgradeDetails
 from .reschedule_deployment_upgrade_to_date_details import RescheduleDeploymentUpgradeToDateDetails
+from .resource_lock import ResourceLock
 from .restore_deployment_details import RestoreDeploymentDetails
 from .rollback_deployment_upgrade_details import RollbackDeploymentUpgradeDetails
 from .snooze_deployment_upgrade_details import SnoozeDeploymentUpgradeDetails
@@ -165,6 +174,7 @@ from .update_azure_data_lake_storage_connection_details import UpdateAzureDataLa
 from .update_azure_synapse_connection_details import UpdateAzureSynapseConnectionDetails
 from .update_connection_details import UpdateConnectionDetails
 from .update_database_registration_details import UpdateDatabaseRegistrationDetails
+from .update_db2_connection_details import UpdateDb2ConnectionDetails
 from .update_deployment_backup_details import UpdateDeploymentBackupDetails
 from .update_deployment_details import UpdateDeploymentDetails
 from .update_elasticsearch_connection_details import UpdateElasticsearchConnectionDetails
@@ -199,6 +209,7 @@ from .work_request_resource import WorkRequestResource
 
 # Maps type names to classes for golden_gate services.
 golden_gate_type_mapping = {
+    "AddResourceLockDetails": AddResourceLockDetails,
     "AmazonKinesisConnection": AmazonKinesisConnection,
     "AmazonKinesisConnectionSummary": AmazonKinesisConnectionSummary,
     "AmazonRedshiftConnection": AmazonRedshiftConnection,
@@ -236,6 +247,7 @@ golden_gate_type_mapping = {
     "CreateConnectionAssignmentDetails": CreateConnectionAssignmentDetails,
     "CreateConnectionDetails": CreateConnectionDetails,
     "CreateDatabaseRegistrationDetails": CreateDatabaseRegistrationDetails,
+    "CreateDb2ConnectionDetails": CreateDb2ConnectionDetails,
     "CreateDeploymentBackupDetails": CreateDeploymentBackupDetails,
     "CreateDeploymentDetails": CreateDeploymentDetails,
     "CreateElasticsearchConnectionDetails": CreateElasticsearchConnectionDetails,
@@ -262,6 +274,8 @@ golden_gate_type_mapping = {
     "DatabaseRegistration": DatabaseRegistration,
     "DatabaseRegistrationCollection": DatabaseRegistrationCollection,
     "DatabaseRegistrationSummary": DatabaseRegistrationSummary,
+    "Db2Connection": Db2Connection,
+    "Db2ConnectionSummary": Db2ConnectionSummary,
     "DefaultCancelDeploymentBackupDetails": DefaultCancelDeploymentBackupDetails,
     "DefaultCancelDeploymentUpgradeDetails": DefaultCancelDeploymentUpgradeDetails,
     "DefaultCancelSnoozeDeploymentUpgradeDetails": DefaultCancelSnoozeDeploymentUpgradeDetails,
@@ -295,6 +309,8 @@ golden_gate_type_mapping = {
     "ElasticsearchConnection": ElasticsearchConnection,
     "ElasticsearchConnectionSummary": ElasticsearchConnectionSummary,
     "ExportDeploymentWalletDetails": ExportDeploymentWalletDetails,
+    "GenerateLibraryUrlDetails": GenerateLibraryUrlDetails,
+    "GenerateLogReaderComponentLibraryUrlDetails": GenerateLogReaderComponentLibraryUrlDetails,
     "GenericConnection": GenericConnection,
     "GenericConnectionSummary": GenericConnectionSummary,
     "GoldenGateConnection": GoldenGateConnection,
@@ -314,6 +330,7 @@ golden_gate_type_mapping = {
     "KafkaConnectionSummary": KafkaConnectionSummary,
     "KafkaSchemaRegistryConnection": KafkaSchemaRegistryConnection,
     "KafkaSchemaRegistryConnectionSummary": KafkaSchemaRegistryConnectionSummary,
+    "LibraryUrl": LibraryUrl,
     "MaintenanceConfiguration": MaintenanceConfiguration,
     "MaintenanceWindow": MaintenanceWindow,
     "MessageSummary": MessageSummary,
@@ -335,8 +352,10 @@ golden_gate_type_mapping = {
     "PostgresqlConnectionSummary": PostgresqlConnectionSummary,
     "RedisConnection": RedisConnection,
     "RedisConnectionSummary": RedisConnectionSummary,
+    "RemoveResourceLockDetails": RemoveResourceLockDetails,
     "RescheduleDeploymentUpgradeDetails": RescheduleDeploymentUpgradeDetails,
     "RescheduleDeploymentUpgradeToDateDetails": RescheduleDeploymentUpgradeToDateDetails,
+    "ResourceLock": ResourceLock,
     "RestoreDeploymentDetails": RestoreDeploymentDetails,
     "RollbackDeploymentUpgradeDetails": RollbackDeploymentUpgradeDetails,
     "SnoozeDeploymentUpgradeDetails": SnoozeDeploymentUpgradeDetails,
@@ -358,6 +377,7 @@ golden_gate_type_mapping = {
     "UpdateAzureSynapseConnectionDetails": UpdateAzureSynapseConnectionDetails,
     "UpdateConnectionDetails": UpdateConnectionDetails,
     "UpdateDatabaseRegistrationDetails": UpdateDatabaseRegistrationDetails,
+    "UpdateDb2ConnectionDetails": UpdateDb2ConnectionDetails,
     "UpdateDeploymentBackupDetails": UpdateDeploymentBackupDetails,
     "UpdateDeploymentDetails": UpdateDeploymentDetails,
     "UpdateElasticsearchConnectionDetails": UpdateElasticsearchConnectionDetails,

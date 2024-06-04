@@ -23,7 +23,7 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreateOracleConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
         :type connection_type: str
 
         :param display_name:
@@ -45,6 +45,10 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
         :param defined_tags:
             The value to assign to the defined_tags property of this CreateOracleConnectionDetails.
         :type defined_tags: dict(str, dict(str, object))
+
+        :param locks:
+            The value to assign to the locks property of this CreateOracleConnectionDetails.
+        :type locks: list[oci.golden_gate.models.AddResourceLockDetails]
 
         :param vault_id:
             The value to assign to the vault_id property of this CreateOracleConnectionDetails.
@@ -83,6 +87,10 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
             The value to assign to the connection_string property of this CreateOracleConnectionDetails.
         :type connection_string: str
 
+        :param authentication_mode:
+            The value to assign to the authentication_mode property of this CreateOracleConnectionDetails.
+        :type authentication_mode: str
+
         :param wallet:
             The value to assign to the wallet property of this CreateOracleConnectionDetails.
         :type wallet: str
@@ -107,6 +115,7 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
             'compartment_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[AddResourceLockDetails]',
             'vault_id': 'str',
             'key_id': 'str',
             'nsg_ids': 'list[str]',
@@ -116,6 +125,7 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
             'username': 'str',
             'password': 'str',
             'connection_string': 'str',
+            'authentication_mode': 'str',
             'wallet': 'str',
             'session_mode': 'str',
             'private_ip': 'str',
@@ -129,6 +139,7 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
             'compartment_id': 'compartmentId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'locks': 'locks',
             'vault_id': 'vaultId',
             'key_id': 'keyId',
             'nsg_ids': 'nsgIds',
@@ -138,6 +149,7 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
             'username': 'username',
             'password': 'password',
             'connection_string': 'connectionString',
+            'authentication_mode': 'authenticationMode',
             'wallet': 'wallet',
             'session_mode': 'sessionMode',
             'private_ip': 'privateIp',
@@ -150,6 +162,7 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
         self._compartment_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._locks = None
         self._vault_id = None
         self._key_id = None
         self._nsg_ids = None
@@ -159,6 +172,7 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
         self._username = None
         self._password = None
         self._connection_string = None
+        self._authentication_mode = None
         self._wallet = None
         self._session_mode = None
         self._private_ip = None
@@ -266,6 +280,32 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
         :type: str
         """
         self._connection_string = connection_string
+
+    @property
+    def authentication_mode(self):
+        """
+        Gets the authentication_mode of this CreateOracleConnectionDetails.
+        Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections,
+        when a databaseId is provided. The default value is MTLS.
+
+
+        :return: The authentication_mode of this CreateOracleConnectionDetails.
+        :rtype: str
+        """
+        return self._authentication_mode
+
+    @authentication_mode.setter
+    def authentication_mode(self, authentication_mode):
+        """
+        Sets the authentication_mode of this CreateOracleConnectionDetails.
+        Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections,
+        when a databaseId is provided. The default value is MTLS.
+
+
+        :param authentication_mode: The authentication_mode of this CreateOracleConnectionDetails.
+        :type: str
+        """
+        self._authentication_mode = authentication_mode
 
     @property
     def wallet(self):

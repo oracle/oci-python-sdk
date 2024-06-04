@@ -15,6 +15,42 @@ class DeploymentBackupSummary(object):
     The summary of the Backup.
     """
 
+    #: A constant which can be used with the deployment_type property of a DeploymentBackupSummary.
+    #: This constant has a value of "OGG"
+    DEPLOYMENT_TYPE_OGG = "OGG"
+
+    #: A constant which can be used with the deployment_type property of a DeploymentBackupSummary.
+    #: This constant has a value of "DATABASE_ORACLE"
+    DEPLOYMENT_TYPE_DATABASE_ORACLE = "DATABASE_ORACLE"
+
+    #: A constant which can be used with the deployment_type property of a DeploymentBackupSummary.
+    #: This constant has a value of "BIGDATA"
+    DEPLOYMENT_TYPE_BIGDATA = "BIGDATA"
+
+    #: A constant which can be used with the deployment_type property of a DeploymentBackupSummary.
+    #: This constant has a value of "DATABASE_MICROSOFT_SQLSERVER"
+    DEPLOYMENT_TYPE_DATABASE_MICROSOFT_SQLSERVER = "DATABASE_MICROSOFT_SQLSERVER"
+
+    #: A constant which can be used with the deployment_type property of a DeploymentBackupSummary.
+    #: This constant has a value of "DATABASE_MYSQL"
+    DEPLOYMENT_TYPE_DATABASE_MYSQL = "DATABASE_MYSQL"
+
+    #: A constant which can be used with the deployment_type property of a DeploymentBackupSummary.
+    #: This constant has a value of "DATABASE_POSTGRESQL"
+    DEPLOYMENT_TYPE_DATABASE_POSTGRESQL = "DATABASE_POSTGRESQL"
+
+    #: A constant which can be used with the deployment_type property of a DeploymentBackupSummary.
+    #: This constant has a value of "DATABASE_DB2ZOS"
+    DEPLOYMENT_TYPE_DATABASE_DB2_ZOS = "DATABASE_DB2ZOS"
+
+    #: A constant which can be used with the deployment_type property of a DeploymentBackupSummary.
+    #: This constant has a value of "GGSA"
+    DEPLOYMENT_TYPE_GGSA = "GGSA"
+
+    #: A constant which can be used with the deployment_type property of a DeploymentBackupSummary.
+    #: This constant has a value of "DATA_TRANSFORMS"
+    DEPLOYMENT_TYPE_DATA_TRANSFORMS = "DATA_TRANSFORMS"
+
     #: A constant which can be used with the lifecycle_state property of a DeploymentBackupSummary.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -87,6 +123,12 @@ class DeploymentBackupSummary(object):
         :param deployment_id:
             The value to assign to the deployment_id property of this DeploymentBackupSummary.
         :type deployment_id: str
+
+        :param deployment_type:
+            The value to assign to the deployment_type property of this DeploymentBackupSummary.
+            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "GGSA", "DATA_TRANSFORMS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type deployment_type: str
 
         :param compartment_id:
             The value to assign to the compartment_id property of this DeploymentBackupSummary.
@@ -164,10 +206,15 @@ class DeploymentBackupSummary(object):
             The value to assign to the system_tags property of this DeploymentBackupSummary.
         :type system_tags: dict(str, dict(str, object))
 
+        :param locks:
+            The value to assign to the locks property of this DeploymentBackupSummary.
+        :type locks: list[oci.golden_gate.models.ResourceLock]
+
         """
         self.swagger_types = {
             'id': 'str',
             'deployment_id': 'str',
+            'deployment_type': 'str',
             'compartment_id': 'str',
             'display_name': 'str',
             'is_automatic': 'bool',
@@ -185,12 +232,14 @@ class DeploymentBackupSummary(object):
             'time_updated': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
             'id': 'id',
             'deployment_id': 'deploymentId',
+            'deployment_type': 'deploymentType',
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'is_automatic': 'isAutomatic',
@@ -208,11 +257,13 @@ class DeploymentBackupSummary(object):
             'time_updated': 'timeUpdated',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'locks': 'locks'
         }
 
         self._id = None
         self._deployment_id = None
+        self._deployment_type = None
         self._compartment_id = None
         self._display_name = None
         self._is_automatic = None
@@ -231,6 +282,7 @@ class DeploymentBackupSummary(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._locks = None
 
     @property
     def id(self):
@@ -287,6 +339,40 @@ class DeploymentBackupSummary(object):
         :type: str
         """
         self._deployment_id = deployment_id
+
+    @property
+    def deployment_type(self):
+        """
+        **[Required]** Gets the deployment_type of this DeploymentBackupSummary.
+        The type of deployment, which can be any one of the Allowed values.
+        NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
+            Its use is discouraged in favor of 'DATABASE_ORACLE'.
+
+        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "GGSA", "DATA_TRANSFORMS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The deployment_type of this DeploymentBackupSummary.
+        :rtype: str
+        """
+        return self._deployment_type
+
+    @deployment_type.setter
+    def deployment_type(self, deployment_type):
+        """
+        Sets the deployment_type of this DeploymentBackupSummary.
+        The type of deployment, which can be any one of the Allowed values.
+        NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
+            Its use is discouraged in favor of 'DATABASE_ORACLE'.
+
+
+        :param deployment_type: The deployment_type of this DeploymentBackupSummary.
+        :type: str
+        """
+        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "GGSA", "DATA_TRANSFORMS"]
+        if not value_allowed_none_or_none_sentinel(deployment_type, allowed_values):
+            deployment_type = 'UNKNOWN_ENUM_VALUE'
+        self._deployment_type = deployment_type
 
     @property
     def compartment_id(self):
@@ -783,6 +869,30 @@ class DeploymentBackupSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this DeploymentBackupSummary.
+        Locks associated with this resource.
+
+
+        :return: The locks of this DeploymentBackupSummary.
+        :rtype: list[oci.golden_gate.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this DeploymentBackupSummary.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this DeploymentBackupSummary.
+        :type: list[oci.golden_gate.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -19,18 +19,23 @@ class ModelMetrics(object):
     #: This constant has a value of "TEXT_GENERATION_MODEL_METRICS"
     MODEL_METRICS_TYPE_TEXT_GENERATION_MODEL_METRICS = "TEXT_GENERATION_MODEL_METRICS"
 
+    #: A constant which can be used with the model_metrics_type property of a ModelMetrics.
+    #: This constant has a value of "CHAT_MODEL_METRICS"
+    MODEL_METRICS_TYPE_CHAT_MODEL_METRICS = "CHAT_MODEL_METRICS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ModelMetrics object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.generative_ai.models.TextGenerationModelMetrics`
+        * :class:`~oci.generative_ai.models.ChatModelMetrics`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_metrics_type:
             The value to assign to the model_metrics_type property of this ModelMetrics.
-            Allowed values for this property are: "TEXT_GENERATION_MODEL_METRICS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "TEXT_GENERATION_MODEL_METRICS", "CHAT_MODEL_METRICS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_metrics_type: str
 
@@ -55,6 +60,9 @@ class ModelMetrics(object):
 
         if type == 'TEXT_GENERATION_MODEL_METRICS':
             return 'TextGenerationModelMetrics'
+
+        if type == 'CHAT_MODEL_METRICS':
+            return 'ChatModelMetrics'
         else:
             return 'ModelMetrics'
 
@@ -64,7 +72,7 @@ class ModelMetrics(object):
         **[Required]** Gets the model_metrics_type of this ModelMetrics.
         The type of the model metrics. Each type of model can expect a different set of model metrics.
 
-        Allowed values for this property are: "TEXT_GENERATION_MODEL_METRICS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "TEXT_GENERATION_MODEL_METRICS", "CHAT_MODEL_METRICS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -83,7 +91,7 @@ class ModelMetrics(object):
         :param model_metrics_type: The model_metrics_type of this ModelMetrics.
         :type: str
         """
-        allowed_values = ["TEXT_GENERATION_MODEL_METRICS"]
+        allowed_values = ["TEXT_GENERATION_MODEL_METRICS", "CHAT_MODEL_METRICS"]
         if not value_allowed_none_or_none_sentinel(model_metrics_type, allowed_values):
             model_metrics_type = 'UNKNOWN_ENUM_VALUE'
         self._model_metrics_type = model_metrics_type

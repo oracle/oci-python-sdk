@@ -1,0 +1,11 @@
+AddResourceLockDetails
+======================
+
+.. currentmodule:: oci.golden_gate.models
+
+.. autoclass:: AddResourceLockDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

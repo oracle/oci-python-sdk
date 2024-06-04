@@ -24,7 +24,7 @@ class GenerativeAiInferenceClient(object):
     """
     OCI Generative AI is a fully managed service that provides a set of state-of-the-art, customizable large language models (LLMs) that cover a wide range of use cases for text generation, summarization, and text embeddings.
 
-    Use the Generative AI service inference API to access your custom model endpoints, or to try the out-of-the-box models to [generate text](#/en/generative-ai-inference/latest/GenerateTextResult/GenerateText), [summarize](#/en/generative-ai-inference/latest/SummarizeTextResult/SummarizeText), and [create text embeddings](#/en/generative-ai-inference/latest/EmbedTextResult/EmbedText).
+    Use the Generative AI service inference API to access your custom model endpoints, or to try the out-of-the-box models to [chat](#/en/generative-ai-inference/latest/ChatResult/Chat), [generate text](#/en/generative-ai-inference/latest/GenerateTextResult/GenerateText), [summarize](#/en/generative-ai-inference/latest/SummarizeTextResult/SummarizeText), and [create text embeddings](#/en/generative-ai-inference/latest/EmbedTextResult/EmbedText).
 
     To use a Generative AI custom model for inference, you must first create an endpoint for that model. Use the [Generative AI service management API](/#/en/generative-ai/latest/) to [create a custom model](#/en/generative-ai/latest/Model/) by fine-tuning an out-of-the-box model, or a previous version of a custom model, using your own data. Fine-tune the custom model on a  [fine-tuning dedicated AI cluster](#/en/generative-ai/latest/DedicatedAiCluster/). Then, create a [hosting dedicated AI cluster](#/en/generative-ai/latest/DedicatedAiCluster/) with an [endpoint](#/en/generative-ai/latest/Endpoint/) to host your custom model. For resource management in the Generative AI service, use the [Generative AI service management API](/#/en/generative-ai/latest/).
 
@@ -133,9 +133,8 @@ class GenerativeAiInferenceClient(object):
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-            has been deleted and purged from the system, then a retry of the original creation request
-            might be rejected.
+            hours, but can be invalidated before that, in case of conflicting operations. For example, if a resource is deleted and purged from the system, then a retry of the original creation request
+            is rejected.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -233,9 +232,8 @@ class GenerativeAiInferenceClient(object):
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-            has been deleted and purged from the system, then a retry of the original creation request
-            might be rejected.
+            hours, but can be invalidated before that, in case of conflicting operations. For example, if a resource is deleted and purged from the system, then a retry of the original creation request
+            is rejected.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -331,9 +329,8 @@ class GenerativeAiInferenceClient(object):
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-            has been deleted and purged from the system, then a retry of the original creation request
-            might be rejected.
+            hours, but can be invalidated before that, in case of conflicting operations. For example, if a resource is deleted and purged from the system, then a retry of the original creation request
+            is rejected.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -429,9 +426,8 @@ class GenerativeAiInferenceClient(object):
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-            has been deleted and purged from the system, then a retry of the original creation request
-            might be rejected.
+            hours, but can be invalidated before that, in case of conflicting operations. For example, if a resource is deleted and purged from the system, then a retry of the original creation request
+            is rejected.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.

@@ -165,7 +165,7 @@ class OggDeployment(object):
     def certificate(self):
         """
         Gets the certificate of this OggDeployment.
-        A PEM-encoded SSL certificate.
+        The base64 encoded content of the PEM file containing the SSL certificate.
 
 
         :return: The certificate of this OggDeployment.
@@ -177,7 +177,7 @@ class OggDeployment(object):
     def certificate(self, certificate):
         """
         Sets the certificate of this OggDeployment.
-        A PEM-encoded SSL certificate.
+        The base64 encoded content of the PEM file containing the SSL certificate.
 
 
         :param certificate: The certificate of this OggDeployment.

@@ -19,6 +19,10 @@ class RedisConnection(Connection):
     #: This constant has a value of "REDIS"
     TECHNOLOGY_TYPE_REDIS = "REDIS"
 
+    #: A constant which can be used with the technology_type property of a RedisConnection.
+    #: This constant has a value of "OCI_CACHE_WITH_REDIS"
+    TECHNOLOGY_TYPE_OCI_CACHE_WITH_REDIS = "OCI_CACHE_WITH_REDIS"
+
     #: A constant which can be used with the security_protocol property of a RedisConnection.
     #: This constant has a value of "PLAIN"
     SECURITY_PROTOCOL_PLAIN = "PLAIN"
@@ -47,7 +51,7 @@ class RedisConnection(Connection):
 
         :param connection_type:
             The value to assign to the connection_type property of this RedisConnection.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -97,6 +101,10 @@ class RedisConnection(Connection):
             The value to assign to the time_updated property of this RedisConnection.
         :type time_updated: datetime
 
+        :param locks:
+            The value to assign to the locks property of this RedisConnection.
+        :type locks: list[oci.golden_gate.models.ResourceLock]
+
         :param vault_id:
             The value to assign to the vault_id property of this RedisConnection.
         :type vault_id: str
@@ -125,7 +133,7 @@ class RedisConnection(Connection):
 
         :param technology_type:
             The value to assign to the technology_type property of this RedisConnection.
-            Allowed values for this property are: "REDIS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "REDIS", "OCI_CACHE_WITH_REDIS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type technology_type: str
 
@@ -149,6 +157,10 @@ class RedisConnection(Connection):
             The value to assign to the username property of this RedisConnection.
         :type username: str
 
+        :param redis_cluster_id:
+            The value to assign to the redis_cluster_id property of this RedisConnection.
+        :type redis_cluster_id: str
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -163,6 +175,7 @@ class RedisConnection(Connection):
             'lifecycle_details': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'locks': 'list[ResourceLock]',
             'vault_id': 'str',
             'key_id': 'str',
             'ingress_ips': 'list[IngressIpDetails]',
@@ -173,7 +186,8 @@ class RedisConnection(Connection):
             'servers': 'str',
             'security_protocol': 'str',
             'authentication_type': 'str',
-            'username': 'str'
+            'username': 'str',
+            'redis_cluster_id': 'str'
         }
 
         self.attribute_map = {
@@ -189,6 +203,7 @@ class RedisConnection(Connection):
             'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'locks': 'locks',
             'vault_id': 'vaultId',
             'key_id': 'keyId',
             'ingress_ips': 'ingressIps',
@@ -199,7 +214,8 @@ class RedisConnection(Connection):
             'servers': 'servers',
             'security_protocol': 'securityProtocol',
             'authentication_type': 'authenticationType',
-            'username': 'username'
+            'username': 'username',
+            'redis_cluster_id': 'redisClusterId'
         }
 
         self._connection_type = None
@@ -214,6 +230,7 @@ class RedisConnection(Connection):
         self._lifecycle_details = None
         self._time_created = None
         self._time_updated = None
+        self._locks = None
         self._vault_id = None
         self._key_id = None
         self._ingress_ips = None
@@ -225,6 +242,7 @@ class RedisConnection(Connection):
         self._security_protocol = None
         self._authentication_type = None
         self._username = None
+        self._redis_cluster_id = None
         self._connection_type = 'REDIS'
 
     @property
@@ -233,7 +251,7 @@ class RedisConnection(Connection):
         **[Required]** Gets the technology_type of this RedisConnection.
         The Redis technology type.
 
-        Allowed values for this property are: "REDIS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "REDIS", "OCI_CACHE_WITH_REDIS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -252,7 +270,7 @@ class RedisConnection(Connection):
         :param technology_type: The technology_type of this RedisConnection.
         :type: str
         """
-        allowed_values = ["REDIS"]
+        allowed_values = ["REDIS", "OCI_CACHE_WITH_REDIS"]
         if not value_allowed_none_or_none_sentinel(technology_type, allowed_values):
             technology_type = 'UNKNOWN_ENUM_VALUE'
         self._technology_type = technology_type
@@ -374,6 +392,34 @@ class RedisConnection(Connection):
         :type: str
         """
         self._username = username
+
+    @property
+    def redis_cluster_id(self):
+        """
+        Gets the redis_cluster_id of this RedisConnection.
+        The `OCID`__ of the Redis cluster.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The redis_cluster_id of this RedisConnection.
+        :rtype: str
+        """
+        return self._redis_cluster_id
+
+    @redis_cluster_id.setter
+    def redis_cluster_id(self, redis_cluster_id):
+        """
+        Sets the redis_cluster_id of this RedisConnection.
+        The `OCID`__ of the Redis cluster.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param redis_cluster_id: The redis_cluster_id of this RedisConnection.
+        :type: str
+        """
+        self._redis_cluster_id = redis_cluster_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

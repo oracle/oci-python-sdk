@@ -186,7 +186,7 @@ class SummarizeTextDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this SummarizeTextDetails.
-        The OCID of compartment that the user is authorized to use to call into the Generative AI service.
+        The OCID of compartment in which to call the Generative AI service to summarize text.
 
 
         :return: The compartment_id of this SummarizeTextDetails.
@@ -198,7 +198,7 @@ class SummarizeTextDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this SummarizeTextDetails.
-        The OCID of compartment that the user is authorized to use to call into the Generative AI service.
+        The OCID of compartment in which to call the Generative AI service to summarize text.
 
 
         :param compartment_id: The compartment_id of this SummarizeTextDetails.

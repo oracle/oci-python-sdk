@@ -12,7 +12,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Logprobs(object):
     """
-    Returns if the logarithmic probabilites is set.
+    Includes the logarithmic probabilities for the most likely output tokens and the chosen tokens.
+
+    For example, if the log probability is 5, the API returns a list of the 5 most likely tokens. The API returns the log probability of the sampled token, so there might be up to logprobs+1 elements in the response.
     """
 
     def __init__(self, **kwargs):

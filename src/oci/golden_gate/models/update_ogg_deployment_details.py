@@ -231,7 +231,7 @@ class UpdateOggDeploymentDetails(object):
     def certificate(self):
         """
         Gets the certificate of this UpdateOggDeploymentDetails.
-        A PEM-encoded SSL certificate.
+        The base64 encoded content of the PEM file containing the SSL certificate.
 
 
         :return: The certificate of this UpdateOggDeploymentDetails.
@@ -243,7 +243,7 @@ class UpdateOggDeploymentDetails(object):
     def certificate(self, certificate):
         """
         Sets the certificate of this UpdateOggDeploymentDetails.
-        A PEM-encoded SSL certificate.
+        The base64 encoded content of the PEM file containing the SSL certificate.
 
 
         :param certificate: The certificate of this UpdateOggDeploymentDetails.
@@ -255,7 +255,7 @@ class UpdateOggDeploymentDetails(object):
     def key(self):
         """
         Gets the key of this UpdateOggDeploymentDetails.
-        A PEM-encoded private key.
+        The base64 encoded content of the PEM file containing the private key.
 
 
         :return: The key of this UpdateOggDeploymentDetails.
@@ -267,7 +267,7 @@ class UpdateOggDeploymentDetails(object):
     def key(self, key):
         """
         Sets the key of this UpdateOggDeploymentDetails.
-        A PEM-encoded private key.
+        The base64 encoded content of the PEM file containing the private key.
 
 
         :param key: The key of this UpdateOggDeploymentDetails.

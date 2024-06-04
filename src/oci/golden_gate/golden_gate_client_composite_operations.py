@@ -25,6 +25,143 @@ class GoldenGateClientCompositeOperations(object):
         """
         self.client = client
 
+    def add_connection_lock_and_wait_for_state(self, connection_id, add_resource_lock_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.golden_gate.GoldenGateClient.add_connection_lock` and waits for the :py:class:`~oci.golden_gate.models.Connection` acted upon
+        to enter the given state(s).
+
+        :param str connection_id: (required)
+            The `OCID`__ of a Connection.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.golden_gate.models.AddResourceLockDetails add_resource_lock_details: (required)
+            AddResourceLockDetails body parameter
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.golden_gate.models.Connection.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.golden_gate.GoldenGateClient.add_connection_lock`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.add_connection_lock(connection_id, add_resource_lock_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        connection_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_connection(connection_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def add_deployment_backup_lock_and_wait_for_state(self, deployment_backup_id, add_resource_lock_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.golden_gate.GoldenGateClient.add_deployment_backup_lock` and waits for the :py:class:`~oci.golden_gate.models.DeploymentBackup` acted upon
+        to enter the given state(s).
+
+        :param str deployment_backup_id: (required)
+            A unique DeploymentBackup identifier.
+
+        :param oci.golden_gate.models.AddResourceLockDetails add_resource_lock_details: (required)
+            AddResourceLockDetails body parameter
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.golden_gate.models.DeploymentBackup.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.golden_gate.GoldenGateClient.add_deployment_backup_lock`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.add_deployment_backup_lock(deployment_backup_id, add_resource_lock_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        deployment_backup_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_deployment_backup(deployment_backup_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def add_deployment_lock_and_wait_for_state(self, deployment_id, add_resource_lock_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.golden_gate.GoldenGateClient.add_deployment_lock` and waits for the :py:class:`~oci.golden_gate.models.Deployment` acted upon
+        to enter the given state(s).
+
+        :param str deployment_id: (required)
+            A unique Deployment identifier.
+
+        :param oci.golden_gate.models.AddResourceLockDetails add_resource_lock_details: (required)
+            AddResourceLockDetails body parameter
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.golden_gate.models.Deployment.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.golden_gate.GoldenGateClient.add_deployment_lock`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.add_deployment_lock(deployment_id, add_resource_lock_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        deployment_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_deployment(deployment_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def cancel_deployment_backup_and_wait_for_state(self, deployment_backup_id, cancel_deployment_backup_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.golden_gate.GoldenGateClient.cancel_deployment_backup` and waits for the :py:class:`~oci.golden_gate.models.WorkRequest`
@@ -931,6 +1068,143 @@ class GoldenGateClientCompositeOperations(object):
             result_to_return = waiter_result
 
             return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def remove_connection_lock_and_wait_for_state(self, connection_id, remove_resource_lock_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.golden_gate.GoldenGateClient.remove_connection_lock` and waits for the :py:class:`~oci.golden_gate.models.Connection` acted upon
+        to enter the given state(s).
+
+        :param str connection_id: (required)
+            The `OCID`__ of a Connection.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.golden_gate.models.RemoveResourceLockDetails remove_resource_lock_details: (required)
+            RemoveResourceLockDetails body parameter
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.golden_gate.models.Connection.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.golden_gate.GoldenGateClient.remove_connection_lock`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.remove_connection_lock(connection_id, remove_resource_lock_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        connection_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_connection(connection_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def remove_deployment_backup_lock_and_wait_for_state(self, deployment_backup_id, remove_resource_lock_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.golden_gate.GoldenGateClient.remove_deployment_backup_lock` and waits for the :py:class:`~oci.golden_gate.models.DeploymentBackup` acted upon
+        to enter the given state(s).
+
+        :param str deployment_backup_id: (required)
+            A unique DeploymentBackup identifier.
+
+        :param oci.golden_gate.models.RemoveResourceLockDetails remove_resource_lock_details: (required)
+            RemoveResourceLockDetails body parameter
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.golden_gate.models.DeploymentBackup.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.golden_gate.GoldenGateClient.remove_deployment_backup_lock`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.remove_deployment_backup_lock(deployment_backup_id, remove_resource_lock_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        deployment_backup_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_deployment_backup(deployment_backup_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def remove_deployment_lock_and_wait_for_state(self, deployment_id, remove_resource_lock_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.golden_gate.GoldenGateClient.remove_deployment_lock` and waits for the :py:class:`~oci.golden_gate.models.Deployment` acted upon
+        to enter the given state(s).
+
+        :param str deployment_id: (required)
+            A unique Deployment identifier.
+
+        :param oci.golden_gate.models.RemoveResourceLockDetails remove_resource_lock_details: (required)
+            RemoveResourceLockDetails body parameter
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.golden_gate.models.Deployment.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.golden_gate.GoldenGateClient.remove_deployment_lock`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.remove_deployment_lock(deployment_id, remove_resource_lock_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        deployment_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_deployment(deployment_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 

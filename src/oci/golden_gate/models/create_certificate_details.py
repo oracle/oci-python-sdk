@@ -72,7 +72,7 @@ class CreateCertificateDetails(object):
     def certificate_content(self):
         """
         **[Required]** Gets the certificate_content of this CreateCertificateDetails.
-        A PEM-encoded SSL certificate.
+        The base64 encoded content of the PEM file containing the SSL certificate.
 
 
         :return: The certificate_content of this CreateCertificateDetails.
@@ -84,7 +84,7 @@ class CreateCertificateDetails(object):
     def certificate_content(self, certificate_content):
         """
         Sets the certificate_content of this CreateCertificateDetails.
-        A PEM-encoded SSL certificate.
+        The base64 encoded content of the PEM file containing the SSL certificate.
 
 
         :param certificate_content: The certificate_content of this CreateCertificateDetails.

@@ -88,6 +88,10 @@ class Connection(object):
     CONNECTION_TYPE_AMAZON_REDSHIFT = "AMAZON_REDSHIFT"
 
     #: A constant which can be used with the connection_type property of a Connection.
+    #: This constant has a value of "DB2"
+    CONNECTION_TYPE_DB2 = "DB2"
+
+    #: A constant which can be used with the connection_type property of a Connection.
     #: This constant has a value of "REDIS"
     CONNECTION_TYPE_REDIS = "REDIS"
 
@@ -151,6 +155,7 @@ class Connection(object):
         * :class:`~oci.golden_gate.models.KafkaConnection`
         * :class:`~oci.golden_gate.models.PostgresqlConnection`
         * :class:`~oci.golden_gate.models.JavaMessageServiceConnection`
+        * :class:`~oci.golden_gate.models.Db2Connection`
         * :class:`~oci.golden_gate.models.ElasticsearchConnection`
         * :class:`~oci.golden_gate.models.AmazonRedshiftConnection`
         * :class:`~oci.golden_gate.models.SnowflakeConnection`
@@ -176,7 +181,7 @@ class Connection(object):
 
         :param connection_type:
             The value to assign to the connection_type property of this Connection.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -226,6 +231,10 @@ class Connection(object):
             The value to assign to the time_updated property of this Connection.
         :type time_updated: datetime
 
+        :param locks:
+            The value to assign to the locks property of this Connection.
+        :type locks: list[oci.golden_gate.models.ResourceLock]
+
         :param vault_id:
             The value to assign to the vault_id property of this Connection.
         :type vault_id: str
@@ -266,6 +275,7 @@ class Connection(object):
             'lifecycle_details': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'locks': 'list[ResourceLock]',
             'vault_id': 'str',
             'key_id': 'str',
             'ingress_ips': 'list[IngressIpDetails]',
@@ -287,6 +297,7 @@ class Connection(object):
             'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'locks': 'locks',
             'vault_id': 'vaultId',
             'key_id': 'keyId',
             'ingress_ips': 'ingressIps',
@@ -307,6 +318,7 @@ class Connection(object):
         self._lifecycle_details = None
         self._time_created = None
         self._time_updated = None
+        self._locks = None
         self._vault_id = None
         self._key_id = None
         self._ingress_ips = None
@@ -330,6 +342,9 @@ class Connection(object):
 
         if type == 'JAVA_MESSAGE_SERVICE':
             return 'JavaMessageServiceConnection'
+
+        if type == 'DB2':
+            return 'Db2Connection'
 
         if type == 'ELASTICSEARCH':
             return 'ElasticsearchConnection'
@@ -399,7 +414,7 @@ class Connection(object):
         **[Required]** Gets the connection_type of this Connection.
         The connection type.
 
-        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -418,7 +433,7 @@ class Connection(object):
         :param connection_type: The connection_type of this Connection.
         :type: str
         """
-        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"]
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             connection_type = 'UNKNOWN_ENUM_VALUE'
         self._connection_type = connection_type
@@ -738,6 +753,30 @@ class Connection(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this Connection.
+        Locks associated with this resource.
+
+
+        :return: The locks of this Connection.
+        :rtype: list[oci.golden_gate.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this Connection.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this Connection.
+        :type: list[oci.golden_gate.models.ResourceLock]
+        """
+        self._locks = locks
 
     @property
     def vault_id(self):

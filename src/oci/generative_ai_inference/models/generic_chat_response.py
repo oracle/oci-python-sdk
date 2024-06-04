@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class GenericChatResponse(BaseChatResponse):
     """
-    The response to the chat conversation.
+    The response for a chat conversation.
     """
 
     def __init__(self, **kwargs):
@@ -56,7 +56,7 @@ class GenericChatResponse(BaseChatResponse):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this GenericChatResponse.
-        The Unix timestamp (in seconds) of when the generation was created.
+        The Unix timestamp (in seconds) of when the response text was generated.
 
 
         :return: The time_created of this GenericChatResponse.
@@ -68,7 +68,7 @@ class GenericChatResponse(BaseChatResponse):
     def time_created(self, time_created):
         """
         Sets the time_created of this GenericChatResponse.
-        The Unix timestamp (in seconds) of when the generation was created.
+        The Unix timestamp (in seconds) of when the response text was generated.
 
 
         :param time_created: The time_created of this GenericChatResponse.

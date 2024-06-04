@@ -168,7 +168,7 @@ class OccDemandSignalClient(object):
         resource_path = "/occDemandSignals/{occDemandSignalId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_occ_demand_signal_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occds/20240430/OccDemandSignal/ChangeOccDemandSignalCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -278,7 +278,7 @@ class OccDemandSignalClient(object):
         resource_path = "/occDemandSignals"
         method = "POST"
         operation_name = "create_occ_demand_signal"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occds/20240430/OccDemandSignal/CreateOccDemandSignal"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -380,7 +380,7 @@ class OccDemandSignalClient(object):
         resource_path = "/occDemandSignals/{occDemandSignalId}"
         method = "DELETE"
         operation_name = "delete_occ_demand_signal"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occds/20240430/OccDemandSignal/DeleteOccDemandSignal"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -483,7 +483,7 @@ class OccDemandSignalClient(object):
         resource_path = "/occDemandSignals/{occDemandSignalId}"
         method = "GET"
         operation_name = "get_occ_demand_signal"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occds/20240430/OccDemandSignal/GetOccDemandSignal"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -625,7 +625,7 @@ class OccDemandSignalClient(object):
         resource_path = "/occDemandSignals"
         method = "GET"
         operation_name = "list_occ_demand_signals"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occds/20240430/OccDemandSignalCollection/ListOccDemandSignals"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -768,7 +768,7 @@ class OccDemandSignalClient(object):
         resource_path = "/occDemandSignals/{occDemandSignalId}"
         method = "PATCH"
         operation_name = "patch_occ_demand_signal"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occds/20240430/OccDemandSignal/PatchOccDemandSignal"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -884,7 +884,7 @@ class OccDemandSignalClient(object):
         resource_path = "/occDemandSignals/{occDemandSignalId}"
         method = "PUT"
         operation_name = "update_occ_demand_signal"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occds/20240430/OccDemandSignal/UpdateOccDemandSignal"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

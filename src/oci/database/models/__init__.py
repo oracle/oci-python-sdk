@@ -36,6 +36,8 @@ from .autonomous_database_console_token_details import AutonomousDatabaseConsole
 from .autonomous_database_dataguard_association import AutonomousDatabaseDataguardAssociation
 from .autonomous_database_key_history_entry import AutonomousDatabaseKeyHistoryEntry
 from .autonomous_database_manual_refresh_details import AutonomousDatabaseManualRefreshDetails
+from .autonomous_database_peer_collection import AutonomousDatabasePeerCollection
+from .autonomous_database_peer_summary import AutonomousDatabasePeerSummary
 from .autonomous_database_software_image import AutonomousDatabaseSoftwareImage
 from .autonomous_database_software_image_collection import AutonomousDatabaseSoftwareImageCollection
 from .autonomous_database_software_image_summary import AutonomousDatabaseSoftwareImageSummary
@@ -117,6 +119,7 @@ from .create_console_connection_details import CreateConsoleConnectionDetails
 from .create_console_history_details import CreateConsoleHistoryDetails
 from .create_cross_region_autonomous_database_data_guard_details import CreateCrossRegionAutonomousDatabaseDataGuardDetails
 from .create_cross_region_disaster_recovery_details import CreateCrossRegionDisasterRecoveryDetails
+from .create_cross_tenancy_disaster_recovery_details import CreateCrossTenancyDisasterRecoveryDetails
 from .create_data_guard_association_details import CreateDataGuardAssociationDetails
 from .create_data_guard_association_to_existing_db_system_details import CreateDataGuardAssociationToExistingDbSystemDetails
 from .create_data_guard_association_to_existing_vm_cluster_details import CreateDataGuardAssociationToExistingVmClusterDetails
@@ -413,6 +416,8 @@ database_type_mapping = {
     "AutonomousDatabaseDataguardAssociation": AutonomousDatabaseDataguardAssociation,
     "AutonomousDatabaseKeyHistoryEntry": AutonomousDatabaseKeyHistoryEntry,
     "AutonomousDatabaseManualRefreshDetails": AutonomousDatabaseManualRefreshDetails,
+    "AutonomousDatabasePeerCollection": AutonomousDatabasePeerCollection,
+    "AutonomousDatabasePeerSummary": AutonomousDatabasePeerSummary,
     "AutonomousDatabaseSoftwareImage": AutonomousDatabaseSoftwareImage,
     "AutonomousDatabaseSoftwareImageCollection": AutonomousDatabaseSoftwareImageCollection,
     "AutonomousDatabaseSoftwareImageSummary": AutonomousDatabaseSoftwareImageSummary,
@@ -494,6 +499,7 @@ database_type_mapping = {
     "CreateConsoleHistoryDetails": CreateConsoleHistoryDetails,
     "CreateCrossRegionAutonomousDatabaseDataGuardDetails": CreateCrossRegionAutonomousDatabaseDataGuardDetails,
     "CreateCrossRegionDisasterRecoveryDetails": CreateCrossRegionDisasterRecoveryDetails,
+    "CreateCrossTenancyDisasterRecoveryDetails": CreateCrossTenancyDisasterRecoveryDetails,
     "CreateDataGuardAssociationDetails": CreateDataGuardAssociationDetails,
     "CreateDataGuardAssociationToExistingDbSystemDetails": CreateDataGuardAssociationToExistingDbSystemDetails,
     "CreateDataGuardAssociationToExistingVmClusterDetails": CreateDataGuardAssociationToExistingVmClusterDetails,

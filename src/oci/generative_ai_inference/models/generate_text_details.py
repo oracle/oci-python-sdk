@@ -53,7 +53,7 @@ class GenerateTextDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this GenerateTextDetails.
-        The OCID of compartment that the user is authorized to use to call into the Generative AI service.
+        The OCID of compartment in which to call the Generative AI service to generate text.
 
 
         :return: The compartment_id of this GenerateTextDetails.
@@ -65,7 +65,7 @@ class GenerateTextDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this GenerateTextDetails.
-        The OCID of compartment that the user is authorized to use to call into the Generative AI service.
+        The OCID of compartment in which to call the Generative AI service to generate text.
 
 
         :param compartment_id: The compartment_id of this GenerateTextDetails.

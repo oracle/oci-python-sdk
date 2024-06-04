@@ -52,6 +52,10 @@ class CreateDeploymentBackupDetails(object):
             The value to assign to the defined_tags property of this CreateDeploymentBackupDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param locks:
+            The value to assign to the locks property of this CreateDeploymentBackupDetails.
+        :type locks: list[oci.golden_gate.models.AddResourceLockDetails]
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -61,7 +65,8 @@ class CreateDeploymentBackupDetails(object):
             'bucket_name': 'str',
             'object_name': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[AddResourceLockDetails]'
         }
 
         self.attribute_map = {
@@ -72,7 +77,8 @@ class CreateDeploymentBackupDetails(object):
             'bucket_name': 'bucketName',
             'object_name': 'objectName',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'locks': 'locks'
         }
 
         self._display_name = None
@@ -83,6 +89,7 @@ class CreateDeploymentBackupDetails(object):
         self._object_name = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._locks = None
 
     @property
     def display_name(self):
@@ -293,6 +300,30 @@ class CreateDeploymentBackupDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this CreateDeploymentBackupDetails.
+        Locks associated with this resource.
+
+
+        :return: The locks of this CreateDeploymentBackupDetails.
+        :rtype: list[oci.golden_gate.models.AddResourceLockDetails]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this CreateDeploymentBackupDetails.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this CreateDeploymentBackupDetails.
+        :type: list[oci.golden_gate.models.AddResourceLockDetails]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

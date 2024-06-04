@@ -23,7 +23,7 @@ class UpdatePostgresqlConnectionDetails(UpdateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this UpdatePostgresqlConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
         :type connection_type: str
 
         :param display_name:
@@ -115,6 +115,10 @@ class UpdatePostgresqlConnectionDetails(UpdateConnectionDetails):
             The value to assign to the private_ip property of this UpdatePostgresqlConnectionDetails.
         :type private_ip: str
 
+        :param db_system_id:
+            The value to assign to the db_system_id property of this UpdatePostgresqlConnectionDetails.
+        :type db_system_id: str
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -139,7 +143,8 @@ class UpdatePostgresqlConnectionDetails(UpdateConnectionDetails):
             'ssl_crl': 'str',
             'ssl_cert': 'str',
             'ssl_key': 'str',
-            'private_ip': 'str'
+            'private_ip': 'str',
+            'db_system_id': 'str'
         }
 
         self.attribute_map = {
@@ -165,7 +170,8 @@ class UpdatePostgresqlConnectionDetails(UpdateConnectionDetails):
             'ssl_crl': 'sslCrl',
             'ssl_cert': 'sslCert',
             'ssl_key': 'sslKey',
-            'private_ip': 'privateIp'
+            'private_ip': 'privateIp',
+            'db_system_id': 'dbSystemId'
         }
 
         self._connection_type = None
@@ -191,6 +197,7 @@ class UpdatePostgresqlConnectionDetails(UpdateConnectionDetails):
         self._ssl_cert = None
         self._ssl_key = None
         self._private_ip = None
+        self._db_system_id = None
         self._connection_type = 'POSTGRESQL'
 
     @property
@@ -528,6 +535,34 @@ class UpdatePostgresqlConnectionDetails(UpdateConnectionDetails):
         :type: str
         """
         self._private_ip = private_ip
+
+    @property
+    def db_system_id(self):
+        """
+        Gets the db_system_id of this UpdatePostgresqlConnectionDetails.
+        The `OCID`__ of the database system being referenced.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The db_system_id of this UpdatePostgresqlConnectionDetails.
+        :rtype: str
+        """
+        return self._db_system_id
+
+    @db_system_id.setter
+    def db_system_id(self, db_system_id):
+        """
+        Sets the db_system_id of this UpdatePostgresqlConnectionDetails.
+        The `OCID`__ of the database system being referenced.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param db_system_id: The db_system_id of this UpdatePostgresqlConnectionDetails.
+        :type: str
+        """
+        self._db_system_id = db_system_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

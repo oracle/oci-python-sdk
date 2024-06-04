@@ -23,7 +23,7 @@ class AmazonRedshiftConnectionSummary(ConnectionSummary):
 
         :param connection_type:
             The value to assign to the connection_type property of this AmazonRedshiftConnectionSummary.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "DB2", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
         :type connection_type: str
 
         :param id:
@@ -95,6 +95,10 @@ class AmazonRedshiftConnectionSummary(ConnectionSummary):
             Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
         :type routing_method: str
 
+        :param locks:
+            The value to assign to the locks property of this AmazonRedshiftConnectionSummary.
+        :type locks: list[oci.golden_gate.models.ResourceLock]
+
         :param technology_type:
             The value to assign to the technology_type property of this AmazonRedshiftConnectionSummary.
         :type technology_type: str
@@ -127,6 +131,7 @@ class AmazonRedshiftConnectionSummary(ConnectionSummary):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'locks': 'list[ResourceLock]',
             'technology_type': 'str',
             'connection_url': 'str',
             'username': 'str'
@@ -151,6 +156,7 @@ class AmazonRedshiftConnectionSummary(ConnectionSummary):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'locks': 'locks',
             'technology_type': 'technologyType',
             'connection_url': 'connectionUrl',
             'username': 'username'
@@ -174,6 +180,7 @@ class AmazonRedshiftConnectionSummary(ConnectionSummary):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._locks = None
         self._technology_type = None
         self._connection_url = None
         self._username = None
