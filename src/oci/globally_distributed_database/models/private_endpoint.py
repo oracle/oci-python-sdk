@@ -102,6 +102,10 @@ class PrivateEndpoint(object):
             The value to assign to the lifecycle_state_details property of this PrivateEndpoint.
         :type lifecycle_state_details: str
 
+        :param proxy_compute_instance_id:
+            The value to assign to the proxy_compute_instance_id property of this PrivateEndpoint.
+        :type proxy_compute_instance_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this PrivateEndpoint.
         :type freeform_tags: dict(str, str)
@@ -129,6 +133,7 @@ class PrivateEndpoint(object):
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'lifecycle_state_details': 'str',
+            'proxy_compute_instance_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -148,6 +153,7 @@ class PrivateEndpoint(object):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_state_details': 'lifecycleStateDetails',
+            'proxy_compute_instance_id': 'proxyComputeInstanceId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -166,6 +172,7 @@ class PrivateEndpoint(object):
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_state_details = None
+        self._proxy_compute_instance_id = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -487,6 +494,30 @@ class PrivateEndpoint(object):
         :type: str
         """
         self._lifecycle_state_details = lifecycle_state_details
+
+    @property
+    def proxy_compute_instance_id(self):
+        """
+        Gets the proxy_compute_instance_id of this PrivateEndpoint.
+        The identifier of the proxy compute instance.
+
+
+        :return: The proxy_compute_instance_id of this PrivateEndpoint.
+        :rtype: str
+        """
+        return self._proxy_compute_instance_id
+
+    @proxy_compute_instance_id.setter
+    def proxy_compute_instance_id(self, proxy_compute_instance_id):
+        """
+        Sets the proxy_compute_instance_id of this PrivateEndpoint.
+        The identifier of the proxy compute instance.
+
+
+        :param proxy_compute_instance_id: The proxy_compute_instance_id of this PrivateEndpoint.
+        :type: str
+        """
+        self._proxy_compute_instance_id = proxy_compute_instance_id
 
     @property
     def freeform_tags(self):

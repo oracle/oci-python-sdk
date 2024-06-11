@@ -121,6 +121,18 @@ class CreateAlarmDetails(object):
             The value to assign to the notification_version property of this CreateAlarmDetails.
         :type notification_version: str
 
+        :param notification_title:
+            The value to assign to the notification_title property of this CreateAlarmDetails.
+        :type notification_title: str
+
+        :param evaluation_slack_duration:
+            The value to assign to the evaluation_slack_duration property of this CreateAlarmDetails.
+        :type evaluation_slack_duration: str
+
+        :param alarm_summary:
+            The value to assign to the alarm_summary property of this CreateAlarmDetails.
+        :type alarm_summary: str
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -144,7 +156,10 @@ class CreateAlarmDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'overrides': 'list[AlarmOverride]',
             'rule_name': 'str',
-            'notification_version': 'str'
+            'notification_version': 'str',
+            'notification_title': 'str',
+            'evaluation_slack_duration': 'str',
+            'alarm_summary': 'str'
         }
 
         self.attribute_map = {
@@ -169,7 +184,10 @@ class CreateAlarmDetails(object):
             'defined_tags': 'definedTags',
             'overrides': 'overrides',
             'rule_name': 'ruleName',
-            'notification_version': 'notificationVersion'
+            'notification_version': 'notificationVersion',
+            'notification_title': 'notificationTitle',
+            'evaluation_slack_duration': 'evaluationSlackDuration',
+            'alarm_summary': 'alarmSummary'
         }
 
         self._display_name = None
@@ -194,6 +212,9 @@ class CreateAlarmDetails(object):
         self._overrides = None
         self._rule_name = None
         self._notification_version = None
+        self._notification_title = None
+        self._evaluation_slack_duration = None
+        self._alarm_summary = None
 
     @property
     def display_name(self):
@@ -393,7 +414,10 @@ class CreateAlarmDetails(object):
         rule condition has been met. The query must specify a metric, statistic, interval, and trigger
         rule (threshold or absence). Supported values for interval depend on the specified time range. More
         interval values are supported for smaller time ranges. You can optionally
-        specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        specify dimensions and grouping functions.
+        Also, you can customize the
+        `absence detection period`__.
+        Supported grouping functions: `grouping()`, `groupBy()`.
         For information about writing MQL expressions, see
         `Editing the MQL Expression for a Query`__.
         For details about MQL, see
@@ -416,7 +440,15 @@ class CreateAlarmDetails(object):
             CpuUtilization[1m]{availabilityDomain=\"cumS:PHX-AD-1\"}.absent()
 
           -----
+        Example of absence alarm with custom absence detection period of 20 hours:
 
+          -----
+
+            CpuUtilization[1m]{availabilityDomain=\"cumS:PHX-AD-1\"}.absent(20h)
+
+          -----
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
@@ -437,7 +469,10 @@ class CreateAlarmDetails(object):
         rule condition has been met. The query must specify a metric, statistic, interval, and trigger
         rule (threshold or absence). Supported values for interval depend on the specified time range. More
         interval values are supported for smaller time ranges. You can optionally
-        specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        specify dimensions and grouping functions.
+        Also, you can customize the
+        `absence detection period`__.
+        Supported grouping functions: `grouping()`, `groupBy()`.
         For information about writing MQL expressions, see
         `Editing the MQL Expression for a Query`__.
         For details about MQL, see
@@ -460,7 +495,15 @@ class CreateAlarmDetails(object):
             CpuUtilization[1m]{availabilityDomain=\"cumS:PHX-AD-1\"}.absent()
 
           -----
+        Example of absence alarm with custom absence detection period of 20 hours:
 
+          -----
+
+            CpuUtilization[1m]{availabilityDomain=\"cumS:PHX-AD-1\"}.absent(20h)
+
+          -----
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
@@ -579,11 +622,15 @@ class CreateAlarmDetails(object):
     def body(self):
         """
         Gets the body of this CreateAlarmDetails.
-        The human-readable content of the delivered alarm notification. Oracle recommends providing guidance
+        The human-readable content of the delivered alarm notification.
+        Optionally include `dynamic variables`__.
+        Oracle recommends providing guidance
         to operators for resolving the alarm condition. Consider adding links to standard runbook
         practices. Avoid entering confidential information.
 
         Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
 
 
         :return: The body of this CreateAlarmDetails.
@@ -595,11 +642,15 @@ class CreateAlarmDetails(object):
     def body(self, body):
         """
         Sets the body of this CreateAlarmDetails.
-        The human-readable content of the delivered alarm notification. Oracle recommends providing guidance
+        The human-readable content of the delivered alarm notification.
+        Optionally include `dynamic variables`__.
+        Oracle recommends providing guidance
         to operators for resolving the alarm condition. Consider adding links to standard runbook
         practices. Avoid entering confidential information.
 
         Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
 
 
         :param body: The body of this CreateAlarmDetails.
@@ -885,8 +936,7 @@ class CreateAlarmDetails(object):
         """
         Gets the rule_name of this CreateAlarmDetails.
         Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
-        A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
-        Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see :func:`alarm_override`.
+        Default value is `BASE`. For information about alarm overrides, see :func:`alarm_override`.
 
 
         :return: The rule_name of this CreateAlarmDetails.
@@ -899,8 +949,7 @@ class CreateAlarmDetails(object):
         """
         Sets the rule_name of this CreateAlarmDetails.
         Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
-        A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
-        Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see :func:`alarm_override`.
+        Default value is `BASE`. For information about alarm overrides, see :func:`alarm_override`.
 
 
         :param rule_name: The rule_name of this CreateAlarmDetails.
@@ -933,6 +982,116 @@ class CreateAlarmDetails(object):
         :type: str
         """
         self._notification_version = notification_version
+
+    @property
+    def notification_title(self):
+        """
+        Gets the notification_title of this CreateAlarmDetails.
+        Customizable notification title (`title` `alarm message parameter`__).
+        Optionally include `dynamic variables`__.
+        The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+
+
+        :return: The notification_title of this CreateAlarmDetails.
+        :rtype: str
+        """
+        return self._notification_title
+
+    @notification_title.setter
+    def notification_title(self, notification_title):
+        """
+        Sets the notification_title of this CreateAlarmDetails.
+        Customizable notification title (`title` `alarm message parameter`__).
+        Optionally include `dynamic variables`__.
+        The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+
+
+        :param notification_title: The notification_title of this CreateAlarmDetails.
+        :type: str
+        """
+        self._notification_title = notification_title
+
+    @property
+    def evaluation_slack_duration(self):
+        """
+        Gets the evaluation_slack_duration of this CreateAlarmDetails.
+        Customizable slack period to wait for metric ingestion before evaluating the alarm.
+        Specify a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H`
+        for one hour). Minimum: PT3M. Maximum: PT2H. Default: PT3M.
+        For more information about the slack period, see
+        `About the Internal Reset Period`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset
+
+
+        :return: The evaluation_slack_duration of this CreateAlarmDetails.
+        :rtype: str
+        """
+        return self._evaluation_slack_duration
+
+    @evaluation_slack_duration.setter
+    def evaluation_slack_duration(self, evaluation_slack_duration):
+        """
+        Sets the evaluation_slack_duration of this CreateAlarmDetails.
+        Customizable slack period to wait for metric ingestion before evaluating the alarm.
+        Specify a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H`
+        for one hour). Minimum: PT3M. Maximum: PT2H. Default: PT3M.
+        For more information about the slack period, see
+        `About the Internal Reset Period`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset
+
+
+        :param evaluation_slack_duration: The evaluation_slack_duration of this CreateAlarmDetails.
+        :type: str
+        """
+        self._evaluation_slack_duration = evaluation_slack_duration
+
+    @property
+    def alarm_summary(self):
+        """
+        Gets the alarm_summary of this CreateAlarmDetails.
+        Customizable alarm summary (`alarmSummary` `alarm message parameter`__).
+        Optionally include `dynamic variables`__.
+        The alarm summary appears within the body of the alarm message and in responses to
+        :func:`list_alarms_status`
+        :func:`get_alarm_history` and
+        :func:`retrieve_dimension_states`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+
+
+        :return: The alarm_summary of this CreateAlarmDetails.
+        :rtype: str
+        """
+        return self._alarm_summary
+
+    @alarm_summary.setter
+    def alarm_summary(self, alarm_summary):
+        """
+        Sets the alarm_summary of this CreateAlarmDetails.
+        Customizable alarm summary (`alarmSummary` `alarm message parameter`__).
+        Optionally include `dynamic variables`__.
+        The alarm summary appears within the body of the alarm message and in responses to
+        :func:`list_alarms_status`
+        :func:`get_alarm_history` and
+        :func:`retrieve_dimension_states`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+
+
+        :param alarm_summary: The alarm_summary of this CreateAlarmDetails.
+        :type: str
+        """
+        self._alarm_summary = alarm_summary
 
     def __repr__(self):
         return formatted_flat_dict(self)

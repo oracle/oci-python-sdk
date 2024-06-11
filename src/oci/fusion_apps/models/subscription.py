@@ -15,6 +15,142 @@ class Subscription(object):
     Subscription information for compartmentId. Only root compartments are allowed.
     """
 
+    #: A constant which can be used with the lifecycle_state property of a Subscription.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a Subscription.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a Subscription.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a Subscription.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the lifecycle_state property of a Subscription.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a Subscription.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
+
+    #: A constant which can be used with the lifecycle_state property of a Subscription.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
+
+    #: A constant which can be used with the lifecycle_state property of a Subscription.
+    #: This constant has a value of "NEEDS_ATTENTION"
+    LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_DETAILS_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "PURGED"
+    LIFECYCLE_DETAILS_PURGED = "PURGED"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "CANCELED"
+    LIFECYCLE_DETAILS_CANCELED = "CANCELED"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "PAID_PURGED"
+    LIFECYCLE_DETAILS_PAID_PURGED = "PAID_PURGED"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "INITIALIZED"
+    LIFECYCLE_DETAILS_INITIALIZED = "INITIALIZED"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "SOFT_TERMINATED"
+    LIFECYCLE_DETAILS_SOFT_TERMINATED = "SOFT_TERMINATED"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "DISABLED"
+    LIFECYCLE_DETAILS_DISABLED = "DISABLED"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "BEGIN_TERMINATION"
+    LIFECYCLE_DETAILS_BEGIN_TERMINATION = "BEGIN_TERMINATION"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "MIGRATED"
+    LIFECYCLE_DETAILS_MIGRATED = "MIGRATED"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "PENDING_CANCELATION"
+    LIFECYCLE_DETAILS_PENDING_CANCELATION = "PENDING_CANCELATION"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "ARCHIVED"
+    LIFECYCLE_DETAILS_ARCHIVED = "ARCHIVED"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "NON_RECOVERABLE"
+    LIFECYCLE_DETAILS_NON_RECOVERABLE = "NON_RECOVERABLE"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "BEGIN_SOFT_TERMINATION"
+    LIFECYCLE_DETAILS_BEGIN_SOFT_TERMINATION = "BEGIN_SOFT_TERMINATION"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "ACTIVATED"
+    LIFECYCLE_DETAILS_ACTIVATED = "ACTIVATED"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "ACCESS_DISABLED"
+    LIFECYCLE_DETAILS_ACCESS_DISABLED = "ACCESS_DISABLED"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "PENDING_REGISTRATION"
+    LIFECYCLE_DETAILS_PENDING_REGISTRATION = "PENDING_REGISTRATION"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "TERMINATED"
+    LIFECYCLE_DETAILS_TERMINATED = "TERMINATED"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "RELOCATING"
+    LIFECYCLE_DETAILS_RELOCATING = "RELOCATING"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "DEPROVISIONED"
+    LIFECYCLE_DETAILS_DEPROVISIONED = "DEPROVISIONED"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "PROVISIONED"
+    LIFECYCLE_DETAILS_PROVISIONED = "PROVISIONED"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "BEGIN_TERMINATION_PASSIVE"
+    LIFECYCLE_DETAILS_BEGIN_TERMINATION_PASSIVE = "BEGIN_TERMINATION_PASSIVE"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "LOCKED"
+    LIFECYCLE_DETAILS_LOCKED = "LOCKED"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "PENDING_DEPROVISIONING"
+    LIFECYCLE_DETAILS_PENDING_DEPROVISIONING = "PENDING_DEPROVISIONING"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "REGISTERED"
+    LIFECYCLE_DETAILS_REGISTERED = "REGISTERED"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "CANCELLED"
+    LIFECYCLE_DETAILS_CANCELLED = "CANCELLED"
+
+    #: A constant which can be used with the lifecycle_details property of a Subscription.
+    #: This constant has a value of "EXPIRED"
+    LIFECYCLE_DETAILS_EXPIRED = "EXPIRED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Subscription object with values from keyword arguments.
@@ -32,6 +168,18 @@ class Subscription(object):
             The value to assign to the service_name property of this Subscription.
         :type service_name: str
 
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this Subscription.
+            Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this Subscription.
+            Allowed values for this property are: "ACTIVE", "PURGED", "CANCELED", "PAID_PURGED", "INITIALIZED", "SOFT_TERMINATED", "DISABLED", "BEGIN_TERMINATION", "MIGRATED", "PENDING_CANCELATION", "ARCHIVED", "NON_RECOVERABLE", "BEGIN_SOFT_TERMINATION", "ACTIVATED", "ACCESS_DISABLED", "PENDING_REGISTRATION", "TERMINATED", "RELOCATING", "DEPROVISIONED", "PROVISIONED", "BEGIN_TERMINATION_PASSIVE", "LOCKED", "PENDING_DEPROVISIONING", "REGISTERED", "CANCELLED", "EXPIRED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_details: str
+
         :param skus:
             The value to assign to the skus property of this Subscription.
         :type skus: list[oci.fusion_apps.models.SubscriptionSku]
@@ -41,6 +189,8 @@ class Subscription(object):
             'id': 'str',
             'classic_subscription_id': 'str',
             'service_name': 'str',
+            'lifecycle_state': 'str',
+            'lifecycle_details': 'str',
             'skus': 'list[SubscriptionSku]'
         }
 
@@ -48,12 +198,16 @@ class Subscription(object):
             'id': 'id',
             'classic_subscription_id': 'classicSubscriptionId',
             'service_name': 'serviceName',
+            'lifecycle_state': 'lifecycleState',
+            'lifecycle_details': 'lifecycleDetails',
             'skus': 'skus'
         }
 
         self._id = None
         self._classic_subscription_id = None
         self._service_name = None
+        self._lifecycle_state = None
+        self._lifecycle_details = None
         self._skus = None
 
     @property
@@ -127,6 +281,66 @@ class Subscription(object):
         :type: str
         """
         self._service_name = service_name
+
+    @property
+    def lifecycle_state(self):
+        """
+        Gets the lifecycle_state of this Subscription.
+        Lifecycle state of the subscription.
+
+        Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The lifecycle_state of this Subscription.
+        :rtype: str
+        """
+        return self._lifecycle_state
+
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
+        """
+        Sets the lifecycle_state of this Subscription.
+        Lifecycle state of the subscription.
+
+
+        :param lifecycle_state: The lifecycle_state of this Subscription.
+        :type: str
+        """
+        allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
+        self._lifecycle_state = lifecycle_state
+
+    @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this Subscription.
+        Subscription resource intermediate states.
+
+        Allowed values for this property are: "ACTIVE", "PURGED", "CANCELED", "PAID_PURGED", "INITIALIZED", "SOFT_TERMINATED", "DISABLED", "BEGIN_TERMINATION", "MIGRATED", "PENDING_CANCELATION", "ARCHIVED", "NON_RECOVERABLE", "BEGIN_SOFT_TERMINATION", "ACTIVATED", "ACCESS_DISABLED", "PENDING_REGISTRATION", "TERMINATED", "RELOCATING", "DEPROVISIONED", "PROVISIONED", "BEGIN_TERMINATION_PASSIVE", "LOCKED", "PENDING_DEPROVISIONING", "REGISTERED", "CANCELLED", "EXPIRED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The lifecycle_details of this Subscription.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this Subscription.
+        Subscription resource intermediate states.
+
+
+        :param lifecycle_details: The lifecycle_details of this Subscription.
+        :type: str
+        """
+        allowed_values = ["ACTIVE", "PURGED", "CANCELED", "PAID_PURGED", "INITIALIZED", "SOFT_TERMINATED", "DISABLED", "BEGIN_TERMINATION", "MIGRATED", "PENDING_CANCELATION", "ARCHIVED", "NON_RECOVERABLE", "BEGIN_SOFT_TERMINATION", "ACTIVATED", "ACCESS_DISABLED", "PENDING_REGISTRATION", "TERMINATED", "RELOCATING", "DEPROVISIONED", "PROVISIONED", "BEGIN_TERMINATION_PASSIVE", "LOCKED", "PENDING_DEPROVISIONING", "REGISTERED", "CANCELLED", "EXPIRED"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_details, allowed_values):
+            lifecycle_details = 'UNKNOWN_ENUM_VALUE'
+        self._lifecycle_details = lifecycle_details
 
     @property
     def skus(self):

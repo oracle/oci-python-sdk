@@ -446,7 +446,7 @@ class OCICapacityReporter(object):
     # Input - config_profile and is_instance_principals
     # Output - config and signer objects
     ##########################################################################
-    def create_signer(self, config_file, config_profile, is_instance_principals):
+    def create_signer(self, config_file, config_profile, is_instance_principals, is_security_token):
 
         # if instance principals authentications
         if is_instance_principals:
@@ -457,6 +457,30 @@ class OCICapacityReporter(object):
 
             except Exception:
                 self.print_header("Error obtaining instance principals certificate, aborting", 0)
+                raise SystemExit
+
+        elif is_security_token:
+            try:
+                # create signer from config and security token
+                config = oci.config.from_file(
+                    (config_file if config_file else oci.config.DEFAULT_LOCATION),
+                    (config_profile if config_profile else oci.config.DEFAULT_PROFILE)
+                )
+                security_token_file = config.get("security_token_file")
+                token = None
+                with open(security_token_file, 'r') as f:
+                    token = f.read()
+                private_key = oci.signer.load_private_key_from_file(config['key_file'])
+                signer = oci.auth.signers.SecurityTokenSigner(token, private_key)
+                return config, signer
+
+            except Exception as e:
+                print("*********************************************************************")
+                print("* Error Authenticating using config file and Security Token         *")
+                print("* " + str(e))
+                print("* Aborting.                                                         *")
+                print("*********************************************************************")
+                print('')
                 raise SystemExit
 
         # -----------------------------
@@ -497,6 +521,7 @@ class OCICapacityReporter(object):
         parser.add_argument('-t', default="", dest='config_profile', help='Config Profile inside the config file')
         parser.add_argument('-p', default="", dest='proxy', help='Set Proxy (i.e. www-proxy-server.com:80) ')
         parser.add_argument('-ip', action='store_true', default=False, dest='is_instance_principals', help='Use Instance Principals for Authentication')
+        parser.add_argument('-is', action='store_true', default=False, dest='is_security_token', help='Use Config and Security Token')
         cmd = parser.parse_args()
 
         # Start print time info
@@ -514,7 +539,7 @@ class OCICapacityReporter(object):
         print("Command Line    : " + ' '.join(x for x in sys.argv[1:]))
 
         self.proxy = cmd.proxy
-        self.config, self.signer = self.create_signer(cmd.config_file, cmd.config_profile, cmd.is_instance_principals)
+        self.config, self.signer = self.create_signer(cmd.config_file, cmd.config_profile, cmd.is_instance_principals, cmd.is_security_token)
         self.tenancy_id = self.config["tenancy"]
 
     ##########################################################################

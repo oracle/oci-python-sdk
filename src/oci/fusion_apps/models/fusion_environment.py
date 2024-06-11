@@ -180,6 +180,10 @@ class FusionEnvironment(object):
             The value to assign to the defined_tags property of this FusionEnvironment.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param is_suspended:
+            The value to assign to the is_suspended property of this FusionEnvironment.
+        :type is_suspended: bool
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -210,7 +214,8 @@ class FusionEnvironment(object):
             'system_name': 'str',
             'environment_role': 'EnvironmentRole',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'is_suspended': 'bool'
         }
 
         self.attribute_map = {
@@ -242,7 +247,8 @@ class FusionEnvironment(object):
             'system_name': 'systemName',
             'environment_role': 'environmentRole',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'is_suspended': 'isSuspended'
         }
 
         self._id = None
@@ -274,6 +280,7 @@ class FusionEnvironment(object):
         self._environment_role = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._is_suspended = None
 
     @property
     def id(self):
@@ -974,6 +981,30 @@ class FusionEnvironment(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def is_suspended(self):
+        """
+        Gets the is_suspended of this FusionEnvironment.
+        Environment suspended status
+
+
+        :return: The is_suspended of this FusionEnvironment.
+        :rtype: bool
+        """
+        return self._is_suspended
+
+    @is_suspended.setter
+    def is_suspended(self, is_suspended):
+        """
+        Sets the is_suspended of this FusionEnvironment.
+        Environment suspended status
+
+
+        :param is_suspended: The is_suspended of this FusionEnvironment.
+        :type: bool
+        """
+        self._is_suspended = is_suspended
 
     def __repr__(self):
         return formatted_flat_dict(self)

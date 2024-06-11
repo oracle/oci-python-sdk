@@ -154,6 +154,14 @@ class SightingSummary(object):
             The value to assign to the time_last_detected property of this SightingSummary.
         :type time_last_detected: datetime
 
+        :param time_first_occurred:
+            The value to assign to the time_first_occurred property of this SightingSummary.
+        :type time_first_occurred: datetime
+
+        :param time_last_occurred:
+            The value to assign to the time_last_occurred property of this SightingSummary.
+        :type time_last_occurred: datetime
+
         :param regions:
             The value to assign to the regions property of this SightingSummary.
         :type regions: list[str]
@@ -177,6 +185,8 @@ class SightingSummary(object):
             'confidence': 'str',
             'time_first_detected': 'datetime',
             'time_last_detected': 'datetime',
+            'time_first_occurred': 'datetime',
+            'time_last_occurred': 'datetime',
             'regions': 'list[str]'
         }
 
@@ -198,6 +208,8 @@ class SightingSummary(object):
             'confidence': 'confidence',
             'time_first_detected': 'timeFirstDetected',
             'time_last_detected': 'timeLastDetected',
+            'time_first_occurred': 'timeFirstOccurred',
+            'time_last_occurred': 'timeLastOccurred',
             'regions': 'regions'
         }
 
@@ -218,6 +230,8 @@ class SightingSummary(object):
         self._confidence = None
         self._time_first_detected = None
         self._time_last_detected = None
+        self._time_first_occurred = None
+        self._time_last_occurred = None
         self._regions = None
 
     @property
@@ -602,7 +616,7 @@ class SightingSummary(object):
     def time_first_detected(self):
         """
         **[Required]** Gets the time_first_detected of this SightingSummary.
-        The date and time the sighting was first detected. Format defined by RFC3339.
+        Time the activities were first detected. Format defined by RFC3339.
 
 
         :return: The time_first_detected of this SightingSummary.
@@ -614,7 +628,7 @@ class SightingSummary(object):
     def time_first_detected(self, time_first_detected):
         """
         Sets the time_first_detected of this SightingSummary.
-        The date and time the sighting was first detected. Format defined by RFC3339.
+        Time the activities were first detected. Format defined by RFC3339.
 
 
         :param time_first_detected: The time_first_detected of this SightingSummary.
@@ -626,7 +640,7 @@ class SightingSummary(object):
     def time_last_detected(self):
         """
         **[Required]** Gets the time_last_detected of this SightingSummary.
-        The date and time the sighting was last detected. Format defined by RFC3339.
+        Time the activities were last detected. Format defined by RFC3339.
 
 
         :return: The time_last_detected of this SightingSummary.
@@ -638,13 +652,61 @@ class SightingSummary(object):
     def time_last_detected(self, time_last_detected):
         """
         Sets the time_last_detected of this SightingSummary.
-        The date and time the sighting was last detected. Format defined by RFC3339.
+        Time the activities were last detected. Format defined by RFC3339.
 
 
         :param time_last_detected: The time_last_detected of this SightingSummary.
         :type: datetime
         """
         self._time_last_detected = time_last_detected
+
+    @property
+    def time_first_occurred(self):
+        """
+        Gets the time_first_occurred of this SightingSummary.
+        Time the activities were first performed. Format defined by RFC3339.
+
+
+        :return: The time_first_occurred of this SightingSummary.
+        :rtype: datetime
+        """
+        return self._time_first_occurred
+
+    @time_first_occurred.setter
+    def time_first_occurred(self, time_first_occurred):
+        """
+        Sets the time_first_occurred of this SightingSummary.
+        Time the activities were first performed. Format defined by RFC3339.
+
+
+        :param time_first_occurred: The time_first_occurred of this SightingSummary.
+        :type: datetime
+        """
+        self._time_first_occurred = time_first_occurred
+
+    @property
+    def time_last_occurred(self):
+        """
+        Gets the time_last_occurred of this SightingSummary.
+        Time the activities were last performed. Format defined by RFC3339.
+
+
+        :return: The time_last_occurred of this SightingSummary.
+        :rtype: datetime
+        """
+        return self._time_last_occurred
+
+    @time_last_occurred.setter
+    def time_last_occurred(self, time_last_occurred):
+        """
+        Sets the time_last_occurred of this SightingSummary.
+        Time the activities were last performed. Format defined by RFC3339.
+
+
+        :param time_last_occurred: The time_last_occurred of this SightingSummary.
+        :type: datetime
+        """
+        self._time_last_occurred = time_last_occurred
 
     @property
     def regions(self):

@@ -15,6 +15,14 @@ class DedicatedShardedDatabase(ShardedDatabase):
     Details of ATP-D based sharded database.
     """
 
+    #: A constant which can be used with the replication_method property of a DedicatedShardedDatabase.
+    #: This constant has a value of "RAFT"
+    REPLICATION_METHOD_RAFT = "RAFT"
+
+    #: A constant which can be used with the replication_method property of a DedicatedShardedDatabase.
+    #: This constant has a value of "DG"
+    REPLICATION_METHOD_DG = "DG"
+
     #: A constant which can be used with the db_workload property of a DedicatedShardedDatabase.
     #: This constant has a value of "OLTP"
     DB_WORKLOAD_OLTP = "OLTP"
@@ -84,6 +92,20 @@ class DedicatedShardedDatabase(ShardedDatabase):
         :param system_tags:
             The value to assign to the system_tags property of this DedicatedShardedDatabase.
         :type system_tags: dict(str, dict(str, object))
+
+        :param replication_method:
+            The value to assign to the replication_method property of this DedicatedShardedDatabase.
+            Allowed values for this property are: "RAFT", "DG", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type replication_method: str
+
+        :param replication_factor:
+            The value to assign to the replication_factor property of this DedicatedShardedDatabase.
+        :type replication_factor: int
+
+        :param replication_unit:
+            The value to assign to the replication_unit property of this DedicatedShardedDatabase.
+        :type replication_unit: int
 
         :param cluster_certificate_common_name:
             The value to assign to the cluster_certificate_common_name property of this DedicatedShardedDatabase.
@@ -174,6 +196,9 @@ class DedicatedShardedDatabase(ShardedDatabase):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
+            'replication_method': 'str',
+            'replication_factor': 'int',
+            'replication_unit': 'int',
             'cluster_certificate_common_name': 'str',
             'character_set': 'str',
             'ncharacter_set': 'str',
@@ -206,6 +231,9 @@ class DedicatedShardedDatabase(ShardedDatabase):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
+            'replication_method': 'replicationMethod',
+            'replication_factor': 'replicationFactor',
+            'replication_unit': 'replicationUnit',
             'cluster_certificate_common_name': 'clusterCertificateCommonName',
             'character_set': 'characterSet',
             'ncharacter_set': 'ncharacterSet',
@@ -237,6 +265,9 @@ class DedicatedShardedDatabase(ShardedDatabase):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._replication_method = None
+        self._replication_factor = None
+        self._replication_unit = None
         self._cluster_certificate_common_name = None
         self._character_set = None
         self._ncharacter_set = None
@@ -256,6 +287,86 @@ class DedicatedShardedDatabase(ShardedDatabase):
         self._shard_details = None
         self._catalog_details = None
         self._db_deployment_type = 'DEDICATED'
+
+    @property
+    def replication_method(self):
+        """
+        Gets the replication_method of this DedicatedShardedDatabase.
+        The Replication method for sharded database. Use RAFT for Raft replication, and DG for
+        DataGuard. If replicationMethod is not provided, it defaults to DG.
+
+        Allowed values for this property are: "RAFT", "DG", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The replication_method of this DedicatedShardedDatabase.
+        :rtype: str
+        """
+        return self._replication_method
+
+    @replication_method.setter
+    def replication_method(self, replication_method):
+        """
+        Sets the replication_method of this DedicatedShardedDatabase.
+        The Replication method for sharded database. Use RAFT for Raft replication, and DG for
+        DataGuard. If replicationMethod is not provided, it defaults to DG.
+
+
+        :param replication_method: The replication_method of this DedicatedShardedDatabase.
+        :type: str
+        """
+        allowed_values = ["RAFT", "DG"]
+        if not value_allowed_none_or_none_sentinel(replication_method, allowed_values):
+            replication_method = 'UNKNOWN_ENUM_VALUE'
+        self._replication_method = replication_method
+
+    @property
+    def replication_factor(self):
+        """
+        Gets the replication_factor of this DedicatedShardedDatabase.
+        The Replication factor for RAFT replication based sharded database. Currently supported values are 3, 5 and 7.
+
+
+        :return: The replication_factor of this DedicatedShardedDatabase.
+        :rtype: int
+        """
+        return self._replication_factor
+
+    @replication_factor.setter
+    def replication_factor(self, replication_factor):
+        """
+        Sets the replication_factor of this DedicatedShardedDatabase.
+        The Replication factor for RAFT replication based sharded database. Currently supported values are 3, 5 and 7.
+
+
+        :param replication_factor: The replication_factor of this DedicatedShardedDatabase.
+        :type: int
+        """
+        self._replication_factor = replication_factor
+
+    @property
+    def replication_unit(self):
+        """
+        Gets the replication_unit of this DedicatedShardedDatabase.
+        For RAFT replication based sharded database, the value should be atleast twice the number of shards.
+
+
+        :return: The replication_unit of this DedicatedShardedDatabase.
+        :rtype: int
+        """
+        return self._replication_unit
+
+    @replication_unit.setter
+    def replication_unit(self, replication_unit):
+        """
+        Sets the replication_unit of this DedicatedShardedDatabase.
+        For RAFT replication based sharded database, the value should be atleast twice the number of shards.
+
+
+        :param replication_unit: The replication_unit of this DedicatedShardedDatabase.
+        :type: int
+        """
+        self._replication_unit = replication_unit
 
     @property
     def cluster_certificate_common_name(self):

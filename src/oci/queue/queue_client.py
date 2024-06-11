@@ -222,7 +222,7 @@ class QueueClient(object):
 
     def delete_messages(self, queue_id, delete_messages_details, **kwargs):
         """
-        Deletes multiple messages from the queue.
+        Deletes multiple messages from the queue or the consumer group. Only messages from the same queue/consumer group can be deleted at once.
         You must use the `messages endpoint`__ to delete messages.
         The messages endpoint may be different for different queues. Use :func:`get_queue` to find the queue's `messagesEndpoint`.
 
@@ -920,7 +920,7 @@ class QueueClient(object):
 
     def update_messages(self, queue_id, update_messages_details, **kwargs):
         """
-        Updates multiple messages in the queue.
+        Updates multiple messages in the queue or the consumer group. Only messages from the same queue/consumer group can be updated at once.
         You must use the `messages endpoint`__ to update messages.
         The messages endpoint may be different for different queues. Use :func:`get_queue` to find the queue's `messagesEndpoint`.
 

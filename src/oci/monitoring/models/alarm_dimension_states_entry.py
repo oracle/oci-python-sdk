@@ -28,6 +28,10 @@ class AlarmDimensionStatesEntry(object):
         Initializes a new AlarmDimensionStatesEntry object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param alarm_summary:
+            The value to assign to the alarm_summary property of this AlarmDimensionStatesEntry.
+        :type alarm_summary: str
+
         :param dimensions:
             The value to assign to the dimensions property of this AlarmDimensionStatesEntry.
         :type dimensions: dict(str, str)
@@ -48,6 +52,7 @@ class AlarmDimensionStatesEntry(object):
 
         """
         self.swagger_types = {
+            'alarm_summary': 'str',
             'dimensions': 'dict(str, str)',
             'status': 'str',
             'rule_name': 'str',
@@ -55,16 +60,58 @@ class AlarmDimensionStatesEntry(object):
         }
 
         self.attribute_map = {
+            'alarm_summary': 'alarmSummary',
             'dimensions': 'dimensions',
             'status': 'status',
             'rule_name': 'ruleName',
             'timestamp': 'timestamp'
         }
 
+        self._alarm_summary = None
         self._dimensions = None
         self._status = None
         self._rule_name = None
         self._timestamp = None
+
+    @property
+    def alarm_summary(self):
+        """
+        **[Required]** Gets the alarm_summary of this AlarmDimensionStatesEntry.
+        Customizable alarm summary (`alarmSummary` `alarm message parameter`__).
+        Optionally include `dynamic variables`__.
+        The alarm summary appears within the body of the alarm message and in responses to
+        :func:`list_alarms_status`
+        :func:`get_alarm_history` and
+        :func:`retrieve_dimension_states`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+
+
+        :return: The alarm_summary of this AlarmDimensionStatesEntry.
+        :rtype: str
+        """
+        return self._alarm_summary
+
+    @alarm_summary.setter
+    def alarm_summary(self, alarm_summary):
+        """
+        Sets the alarm_summary of this AlarmDimensionStatesEntry.
+        Customizable alarm summary (`alarmSummary` `alarm message parameter`__).
+        Optionally include `dynamic variables`__.
+        The alarm summary appears within the body of the alarm message and in responses to
+        :func:`list_alarms_status`
+        :func:`get_alarm_history` and
+        :func:`retrieve_dimension_states`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+
+
+        :param alarm_summary: The alarm_summary of this AlarmDimensionStatesEntry.
+        :type: str
+        """
+        self._alarm_summary = alarm_summary
 
     @property
     def dimensions(self):
@@ -129,8 +176,7 @@ class AlarmDimensionStatesEntry(object):
         """
         **[Required]** Gets the rule_name of this AlarmDimensionStatesEntry.
         Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
-        A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
-        Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see :func:`alarm_override`.
+        Default value is `BASE`. For information about alarm overrides, see :func:`alarm_override`.
 
 
         :return: The rule_name of this AlarmDimensionStatesEntry.
@@ -143,8 +189,7 @@ class AlarmDimensionStatesEntry(object):
         """
         Sets the rule_name of this AlarmDimensionStatesEntry.
         Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
-        A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
-        Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see :func:`alarm_override`.
+        Default value is `BASE`. For information about alarm overrides, see :func:`alarm_override`.
 
 
         :param rule_name: The rule_name of this AlarmDimensionStatesEntry.

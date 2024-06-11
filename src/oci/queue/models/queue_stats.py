@@ -93,7 +93,7 @@ class QueueStats(object):
     def channel_id(self):
         """
         Gets the channel_id of this QueueStats.
-        If channelId is presented in GetStats call, the channel id will be returned in the GetStats response.
+        If channelId is present in GetStats call, the channel id will be returned in the GetStats response.
 
 
         :return: The channel_id of this QueueStats.
@@ -105,7 +105,7 @@ class QueueStats(object):
     def channel_id(self, channel_id):
         """
         Sets the channel_id of this QueueStats.
-        If channelId is presented in GetStats call, the channel id will be returned in the GetStats response.
+        If channelId is present in GetStats call, the channel id will be returned in the GetStats response.
 
 
         :param channel_id: The channel_id of this QueueStats.

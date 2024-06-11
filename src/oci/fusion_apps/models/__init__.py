@@ -23,6 +23,8 @@ from .data_masking_activity import DataMaskingActivity
 from .data_masking_activity_collection import DataMaskingActivityCollection
 from .data_masking_activity_summary import DataMaskingActivitySummary
 from .environment_role import EnvironmentRole
+from .extract_details_collection import ExtractDetailsCollection
+from .extract_details_summary import ExtractDetailsSummary
 from .family_maintenance_policy import FamilyMaintenancePolicy
 from .fusion_environment import FusionEnvironment
 from .fusion_environment_collection import FusionEnvironmentCollection
@@ -96,6 +98,8 @@ fusion_apps_type_mapping = {
     "DataMaskingActivityCollection": DataMaskingActivityCollection,
     "DataMaskingActivitySummary": DataMaskingActivitySummary,
     "EnvironmentRole": EnvironmentRole,
+    "ExtractDetailsCollection": ExtractDetailsCollection,
+    "ExtractDetailsSummary": ExtractDetailsSummary,
     "FamilyMaintenancePolicy": FamilyMaintenancePolicy,
     "FusionEnvironment": FusionEnvironment,
     "FusionEnvironmentCollection": FusionEnvironmentCollection,

@@ -30,6 +30,7 @@ Apm Config
     oci.apm_config.models.CreateOptionsDetails
     oci.apm_config.models.CreateSpanFilterDetails
     oci.apm_config.models.Dimension
+    oci.apm_config.models.FilterTextOrId
     oci.apm_config.models.Metric
     oci.apm_config.models.MetricGroup
     oci.apm_config.models.MetricGroupSummary
@@ -43,6 +44,10 @@ Apm Config
     oci.apm_config.models.SpanFilter
     oci.apm_config.models.SpanFilterReference
     oci.apm_config.models.SpanFilterSummary
+    oci.apm_config.models.TestDetails
+    oci.apm_config.models.TestOutput
+    oci.apm_config.models.TestSpanEnrichmentDetails
+    oci.apm_config.models.TestSpanEnrichmentOutput
     oci.apm_config.models.UpdateApdexRulesDetails
     oci.apm_config.models.UpdateConfigDetails
     oci.apm_config.models.UpdateMetricGroupDetails

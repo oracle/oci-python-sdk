@@ -44,6 +44,10 @@ class GetMessage(object):
             The value to assign to the expire_after property of this GetMessage.
         :type expire_after: datetime
 
+        :param created_at:
+            The value to assign to the created_at property of this GetMessage.
+        :type created_at: datetime
+
         :param metadata:
             The value to assign to the metadata property of this GetMessage.
         :type metadata: oci.queue.models.MessageMetadata
@@ -56,6 +60,7 @@ class GetMessage(object):
             'delivery_count': 'int',
             'visible_after': 'datetime',
             'expire_after': 'datetime',
+            'created_at': 'datetime',
             'metadata': 'MessageMetadata'
         }
 
@@ -66,6 +71,7 @@ class GetMessage(object):
             'delivery_count': 'deliveryCount',
             'visible_after': 'visibleAfter',
             'expire_after': 'expireAfter',
+            'created_at': 'createdAt',
             'metadata': 'metadata'
         }
 
@@ -75,6 +81,7 @@ class GetMessage(object):
         self._delivery_count = None
         self._visible_after = None
         self._expire_after = None
+        self._created_at = None
         self._metadata = None
 
     @property
@@ -238,6 +245,34 @@ class GetMessage(object):
         :type: datetime
         """
         self._expire_after = expire_after
+
+    @property
+    def created_at(self):
+        """
+        **[Required]** Gets the created_at of this GetMessage.
+        The time when message was created in queue.
+
+        Example: `2018-04-20T00:00:07.405Z`
+
+
+        :return: The created_at of this GetMessage.
+        :rtype: datetime
+        """
+        return self._created_at
+
+    @created_at.setter
+    def created_at(self, created_at):
+        """
+        Sets the created_at of this GetMessage.
+        The time when message was created in queue.
+
+        Example: `2018-04-20T00:00:07.405Z`
+
+
+        :param created_at: The created_at of this GetMessage.
+        :type: datetime
+        """
+        self._created_at = created_at
 
     @property
     def metadata(self):

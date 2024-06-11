@@ -58,6 +58,18 @@ class CreateDedicatedShardedDatabase(CreateShardedDatabaseDetails):
             The value to assign to the defined_tags property of this CreateDedicatedShardedDatabase.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param replication_method:
+            The value to assign to the replication_method property of this CreateDedicatedShardedDatabase.
+        :type replication_method: str
+
+        :param replication_factor:
+            The value to assign to the replication_factor property of this CreateDedicatedShardedDatabase.
+        :type replication_factor: int
+
+        :param replication_unit:
+            The value to assign to the replication_unit property of this CreateDedicatedShardedDatabase.
+        :type replication_unit: int
+
         :param cluster_certificate_common_name:
             The value to assign to the cluster_certificate_common_name property of this CreateDedicatedShardedDatabase.
         :type cluster_certificate_common_name: str
@@ -123,6 +135,9 @@ class CreateDedicatedShardedDatabase(CreateShardedDatabaseDetails):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'replication_method': 'str',
+            'replication_factor': 'int',
+            'replication_unit': 'int',
             'cluster_certificate_common_name': 'str',
             'chunks': 'int',
             'db_workload': 'str',
@@ -145,6 +160,9 @@ class CreateDedicatedShardedDatabase(CreateShardedDatabaseDetails):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'replication_method': 'replicationMethod',
+            'replication_factor': 'replicationFactor',
+            'replication_unit': 'replicationUnit',
             'cluster_certificate_common_name': 'clusterCertificateCommonName',
             'chunks': 'chunks',
             'db_workload': 'dbWorkload',
@@ -166,6 +184,9 @@ class CreateDedicatedShardedDatabase(CreateShardedDatabaseDetails):
         self._display_name = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._replication_method = None
+        self._replication_factor = None
+        self._replication_unit = None
         self._cluster_certificate_common_name = None
         self._chunks = None
         self._db_workload = None
@@ -181,6 +202,78 @@ class CreateDedicatedShardedDatabase(CreateShardedDatabaseDetails):
         self._shard_details = None
         self._catalog_details = None
         self._db_deployment_type = 'DEDICATED'
+
+    @property
+    def replication_method(self):
+        """
+        Gets the replication_method of this CreateDedicatedShardedDatabase.
+        The Replication method for sharded database.
+
+
+        :return: The replication_method of this CreateDedicatedShardedDatabase.
+        :rtype: str
+        """
+        return self._replication_method
+
+    @replication_method.setter
+    def replication_method(self, replication_method):
+        """
+        Sets the replication_method of this CreateDedicatedShardedDatabase.
+        The Replication method for sharded database.
+
+
+        :param replication_method: The replication_method of this CreateDedicatedShardedDatabase.
+        :type: str
+        """
+        self._replication_method = replication_method
+
+    @property
+    def replication_factor(self):
+        """
+        Gets the replication_factor of this CreateDedicatedShardedDatabase.
+        The Replication factor for RAFT replication based sharded database. Currently supported values are 3, 5 and 7.
+
+
+        :return: The replication_factor of this CreateDedicatedShardedDatabase.
+        :rtype: int
+        """
+        return self._replication_factor
+
+    @replication_factor.setter
+    def replication_factor(self, replication_factor):
+        """
+        Sets the replication_factor of this CreateDedicatedShardedDatabase.
+        The Replication factor for RAFT replication based sharded database. Currently supported values are 3, 5 and 7.
+
+
+        :param replication_factor: The replication_factor of this CreateDedicatedShardedDatabase.
+        :type: int
+        """
+        self._replication_factor = replication_factor
+
+    @property
+    def replication_unit(self):
+        """
+        Gets the replication_unit of this CreateDedicatedShardedDatabase.
+        For RAFT replication based sharded database, the value should be atleast twice the number of shards.
+
+
+        :return: The replication_unit of this CreateDedicatedShardedDatabase.
+        :rtype: int
+        """
+        return self._replication_unit
+
+    @replication_unit.setter
+    def replication_unit(self, replication_unit):
+        """
+        Sets the replication_unit of this CreateDedicatedShardedDatabase.
+        For RAFT replication based sharded database, the value should be atleast twice the number of shards.
+
+
+        :param replication_unit: The replication_unit of this CreateDedicatedShardedDatabase.
+        :type: int
+        """
+        self._replication_unit = replication_unit
 
     @property
     def cluster_certificate_common_name(self):
