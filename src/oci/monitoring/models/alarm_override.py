@@ -151,11 +151,15 @@ class AlarmOverride(object):
     def body(self):
         """
         Gets the body of this AlarmOverride.
-        The human-readable content of the delivered alarm notification. Oracle recommends providing guidance
+        The human-readable content of the delivered alarm notification.
+        Optionally include `dynamic variables`__.
+        Oracle recommends providing guidance
         to operators for resolving the alarm condition. Consider adding links to standard runbook
         practices. Avoid entering confidential information.
 
         Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
 
 
         :return: The body of this AlarmOverride.
@@ -167,11 +171,15 @@ class AlarmOverride(object):
     def body(self, body):
         """
         Sets the body of this AlarmOverride.
-        The human-readable content of the delivered alarm notification. Oracle recommends providing guidance
+        The human-readable content of the delivered alarm notification.
+        Optionally include `dynamic variables`__.
+        Oracle recommends providing guidance
         to operators for resolving the alarm condition. Consider adding links to standard runbook
         practices. Avoid entering confidential information.
 
         Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
 
 
         :param body: The body of this AlarmOverride.
@@ -213,7 +221,10 @@ class AlarmOverride(object):
         rule condition has been met. The query must specify a metric, statistic, interval, and trigger
         rule (threshold or absence). Supported values for interval depend on the specified time range. More
         interval values are supported for smaller time ranges. You can optionally
-        specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        specify dimensions and grouping functions.
+        Also, you can customize the
+        `absence detection period`__.
+        Supported grouping functions: `grouping()`, `groupBy()`.
         For information about writing MQL expressions, see
         `Editing the MQL Expression for a Query`__.
         For details about MQL, see
@@ -236,7 +247,15 @@ class AlarmOverride(object):
             CpuUtilization[1m]{availabilityDomain=\"cumS:PHX-AD-1\"}.absent()
 
           -----
+        Example of absence alarm with custom absence detection period of 20 hours:
 
+          -----
+
+            CpuUtilization[1m]{availabilityDomain=\"cumS:PHX-AD-1\"}.absent(20h)
+
+          -----
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices
@@ -257,7 +276,10 @@ class AlarmOverride(object):
         rule condition has been met. The query must specify a metric, statistic, interval, and trigger
         rule (threshold or absence). Supported values for interval depend on the specified time range. More
         interval values are supported for smaller time ranges. You can optionally
-        specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        specify dimensions and grouping functions.
+        Also, you can customize the
+        `absence detection period`__.
+        Supported grouping functions: `grouping()`, `groupBy()`.
         For information about writing MQL expressions, see
         `Editing the MQL Expression for a Query`__.
         For details about MQL, see
@@ -280,7 +302,15 @@ class AlarmOverride(object):
             CpuUtilization[1m]{availabilityDomain=\"cumS:PHX-AD-1\"}.absent()
 
           -----
+        Example of absence alarm with custom absence detection period of 20 hours:
 
+          -----
+
+            CpuUtilization[1m]{availabilityDomain=\"cumS:PHX-AD-1\"}.absent(20h)
+
+          -----
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices

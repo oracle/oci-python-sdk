@@ -98,6 +98,14 @@ class ResourceProfile(object):
             The value to assign to the time_last_detected property of this ResourceProfile.
         :type time_last_detected: datetime
 
+        :param time_first_occurred:
+            The value to assign to the time_first_occurred property of this ResourceProfile.
+        :type time_first_occurred: datetime
+
+        :param time_last_occurred:
+            The value to assign to the time_last_occurred property of this ResourceProfile.
+        :type time_last_occurred: datetime
+
         :param tactics:
             The value to assign to the tactics property of this ResourceProfile.
         :type tactics: list[oci.cloud_guard.models.TacticSummary]
@@ -122,6 +130,8 @@ class ResourceProfile(object):
             'time_peak_score': 'datetime',
             'time_first_detected': 'datetime',
             'time_last_detected': 'datetime',
+            'time_first_occurred': 'datetime',
+            'time_last_occurred': 'datetime',
             'tactics': 'list[TacticSummary]',
             'locks': 'list[ResourceLock]'
         }
@@ -141,6 +151,8 @@ class ResourceProfile(object):
             'time_peak_score': 'timePeakScore',
             'time_first_detected': 'timeFirstDetected',
             'time_last_detected': 'timeLastDetected',
+            'time_first_occurred': 'timeFirstOccurred',
+            'time_last_occurred': 'timeLastOccurred',
             'tactics': 'tactics',
             'locks': 'locks'
         }
@@ -159,6 +171,8 @@ class ResourceProfile(object):
         self._time_peak_score = None
         self._time_first_detected = None
         self._time_last_detected = None
+        self._time_first_occurred = None
+        self._time_last_occurred = None
         self._tactics = None
         self._locks = None
 
@@ -460,7 +474,7 @@ class ResourceProfile(object):
     def time_first_detected(self):
         """
         **[Required]** Gets the time_first_detected of this ResourceProfile.
-        The date and time the resource profile was first detected. Format defined by RFC3339.
+        Time the activities were first detected. Format defined by RFC3339.
 
 
         :return: The time_first_detected of this ResourceProfile.
@@ -472,7 +486,7 @@ class ResourceProfile(object):
     def time_first_detected(self, time_first_detected):
         """
         Sets the time_first_detected of this ResourceProfile.
-        The date and time the resource profile was first detected. Format defined by RFC3339.
+        Time the activities were first detected. Format defined by RFC3339.
 
 
         :param time_first_detected: The time_first_detected of this ResourceProfile.
@@ -484,7 +498,7 @@ class ResourceProfile(object):
     def time_last_detected(self):
         """
         **[Required]** Gets the time_last_detected of this ResourceProfile.
-        The date and time the resource profile was last detected. Format defined by RFC3339.
+        Time the activities were last detected. Format defined by RFC3339.
 
 
         :return: The time_last_detected of this ResourceProfile.
@@ -496,13 +510,61 @@ class ResourceProfile(object):
     def time_last_detected(self, time_last_detected):
         """
         Sets the time_last_detected of this ResourceProfile.
-        The date and time the resource profile was last detected. Format defined by RFC3339.
+        Time the activities were last detected. Format defined by RFC3339.
 
 
         :param time_last_detected: The time_last_detected of this ResourceProfile.
         :type: datetime
         """
         self._time_last_detected = time_last_detected
+
+    @property
+    def time_first_occurred(self):
+        """
+        Gets the time_first_occurred of this ResourceProfile.
+        Time the activities were first performed. Format defined by RFC3339.
+
+
+        :return: The time_first_occurred of this ResourceProfile.
+        :rtype: datetime
+        """
+        return self._time_first_occurred
+
+    @time_first_occurred.setter
+    def time_first_occurred(self, time_first_occurred):
+        """
+        Sets the time_first_occurred of this ResourceProfile.
+        Time the activities were first performed. Format defined by RFC3339.
+
+
+        :param time_first_occurred: The time_first_occurred of this ResourceProfile.
+        :type: datetime
+        """
+        self._time_first_occurred = time_first_occurred
+
+    @property
+    def time_last_occurred(self):
+        """
+        Gets the time_last_occurred of this ResourceProfile.
+        Time the activities were last performed. Format defined by RFC3339.
+
+
+        :return: The time_last_occurred of this ResourceProfile.
+        :rtype: datetime
+        """
+        return self._time_last_occurred
+
+    @time_last_occurred.setter
+    def time_last_occurred(self, time_last_occurred):
+        """
+        Sets the time_last_occurred of this ResourceProfile.
+        Time the activities were last performed. Format defined by RFC3339.
+
+
+        :param time_last_occurred: The time_last_occurred of this ResourceProfile.
+        :type: datetime
+        """
+        self._time_last_occurred = time_last_occurred
 
     @property
     def tactics(self):

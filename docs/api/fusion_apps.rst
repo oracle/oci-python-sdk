@@ -35,6 +35,8 @@ Fusion Apps
     oci.fusion_apps.models.DataMaskingActivityCollection
     oci.fusion_apps.models.DataMaskingActivitySummary
     oci.fusion_apps.models.EnvironmentRole
+    oci.fusion_apps.models.ExtractDetailsCollection
+    oci.fusion_apps.models.ExtractDetailsSummary
     oci.fusion_apps.models.FamilyMaintenancePolicy
     oci.fusion_apps.models.FusionEnvironment
     oci.fusion_apps.models.FusionEnvironmentCollection

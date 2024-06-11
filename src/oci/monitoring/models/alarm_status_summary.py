@@ -86,6 +86,10 @@ class AlarmStatusSummary(object):
             The value to assign to the timestamp_triggered property of this AlarmStatusSummary.
         :type timestamp_triggered: datetime
 
+        :param alarm_summary:
+            The value to assign to the alarm_summary property of this AlarmStatusSummary.
+        :type alarm_summary: str
+
         :param status:
             The value to assign to the status property of this AlarmStatusSummary.
             Allowed values for this property are: "FIRING", "OK", "SUSPENDED", 'UNKNOWN_ENUM_VALUE'.
@@ -103,6 +107,7 @@ class AlarmStatusSummary(object):
             'severity': 'str',
             'rule_name': 'str',
             'timestamp_triggered': 'datetime',
+            'alarm_summary': 'str',
             'status': 'str',
             'suppression': 'Suppression'
         }
@@ -113,6 +118,7 @@ class AlarmStatusSummary(object):
             'severity': 'severity',
             'rule_name': 'ruleName',
             'timestamp_triggered': 'timestampTriggered',
+            'alarm_summary': 'alarmSummary',
             'status': 'status',
             'suppression': 'suppression'
         }
@@ -122,6 +128,7 @@ class AlarmStatusSummary(object):
         self._severity = None
         self._rule_name = None
         self._timestamp_triggered = None
+        self._alarm_summary = None
         self._status = None
         self._suppression = None
 
@@ -220,8 +227,7 @@ class AlarmStatusSummary(object):
         """
         **[Required]** Gets the rule_name of this AlarmStatusSummary.
         Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
-        A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
-        Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see :func:`alarm_override`.
+        Default value is `BASE`. For information about alarm overrides, see :func:`alarm_override`.
 
 
         :return: The rule_name of this AlarmStatusSummary.
@@ -234,8 +240,7 @@ class AlarmStatusSummary(object):
         """
         Sets the rule_name of this AlarmStatusSummary.
         Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
-        A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
-        Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see :func:`alarm_override`.
+        Default value is `BASE`. For information about alarm overrides, see :func:`alarm_override`.
 
 
         :param rule_name: The rule_name of this AlarmStatusSummary.
@@ -272,6 +277,46 @@ class AlarmStatusSummary(object):
         :type: datetime
         """
         self._timestamp_triggered = timestamp_triggered
+
+    @property
+    def alarm_summary(self):
+        """
+        **[Required]** Gets the alarm_summary of this AlarmStatusSummary.
+        Customizable alarm summary (`alarmSummary` `alarm message parameter`__).
+        Optionally include `dynamic variables`__.
+        The alarm summary appears within the body of the alarm message and in responses to
+        :func:`list_alarms_status`
+        :func:`get_alarm_history` and
+        :func:`retrieve_dimension_states`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+
+
+        :return: The alarm_summary of this AlarmStatusSummary.
+        :rtype: str
+        """
+        return self._alarm_summary
+
+    @alarm_summary.setter
+    def alarm_summary(self, alarm_summary):
+        """
+        Sets the alarm_summary of this AlarmStatusSummary.
+        Customizable alarm summary (`alarmSummary` `alarm message parameter`__).
+        Optionally include `dynamic variables`__.
+        The alarm summary appears within the body of the alarm message and in responses to
+        :func:`list_alarms_status`
+        :func:`get_alarm_history` and
+        :func:`retrieve_dimension_states`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+
+
+        :param alarm_summary: The alarm_summary of this AlarmStatusSummary.
+        :type: str
+        """
+        self._alarm_summary = alarm_summary
 
     @property
     def status(self):

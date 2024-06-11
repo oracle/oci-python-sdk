@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+24.06.11 - 24.06.11
+=====================
+* Added security list and network security group details to the CSVs
+
+=====================
+24.06.04 - 24.06.04
+=====================
+* Added Subnet Name and VCN Name to the DB Base and ExaCS VM Cluster CSVs
+* Align the description and security alert in the network security rules and security list.
+
+=====================
+24.05.28 - 24.05.28
+=====================
+* Added logs for IPSEC and Virtual Cirtcuits
+
+=====================
 24.05.24 - 24.05.24
 =====================
 * IAM Domains - Change way members fetched for groups to avoid limit of 10,000 members in one call

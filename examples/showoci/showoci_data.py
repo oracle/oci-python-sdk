@@ -20,7 +20,7 @@ import sys
 
 
 class ShowOCIData(object):
-    version = "24.05.24"
+    version = "24.06.11"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -1305,7 +1305,8 @@ class ShowOCIData(object):
                     'compartment_path': ips['compartment_path'],
                     'region_name': ips['region_name'],
                     'drg_route_table_id': ips['drg_route_table_id'],
-                    'drg_route_table': ips['drg_route_table']
+                    'drg_route_table': ips['drg_route_table'],
+                    'logs': self.service.get_logging_log(ips['id'])
                 }
 
                 data.append(main_data)
@@ -1363,7 +1364,8 @@ class ShowOCIData(object):
                     'freeform_tags': vc['freeform_tags'],
                     'region_name': vc['region_name'],
                     'drg_route_table_id': vc['drg_route_table_id'],
-                    'drg_route_table': vc['drg_route_table']
+                    'drg_route_table': vc['drg_route_table'],
+                    'logs': self.service.get_logging_log(vc['id'])
                 }
 
                 # find Attachment for the Virtual Circuit
@@ -2542,8 +2544,12 @@ class ShowOCIData(object):
                             'availability_domain': vm['availability_domain'],
                             'data_subnet_id': vm['data_subnet_id'],
                             'data_subnet': vm['data_subnet'],
+                            'data_subnet_name': vm['data_subnet_name'],
+                            'data_vcn_name': vm['data_vcn_name'],
                             'backup_subnet_id': vm['backup_subnet_id'],
                             'backup_subnet': vm['backup_subnet'],
+                            'backup_subnet_name': vm['backup_subnet_name'],
+                            'backup_vcn_name': vm['backup_vcn_name'],
                             'nsg_ids': vm['nsg_ids'],
                             'backup_network_nsg_ids': vm['backup_network_nsg_ids'],
                             'last_update_history_entry_id': vm['last_update_history_entry_id'],
@@ -2822,10 +2828,14 @@ class ShowOCIData(object):
                     'version_date': dbs['version_date'],
                     'host': dbs['hostname'],
                     'domain': dbs['domain'],
-                    'data_subnet': dbs['data_subnet'],
                     'data_subnet_id': dbs['data_subnet_id'],
-                    'backup_subnet': dbs['backup_subnet'],
+                    'data_subnet': dbs['data_subnet'],
+                    'data_subnet_name': dbs['data_subnet_name'],
+                    'data_vcn_name': dbs['data_vcn_name'],
                     'backup_subnet_id': dbs['backup_subnet_id'],
+                    'backup_subnet': dbs['backup_subnet'],
+                    'backup_subnet_name': dbs['backup_subnet_name'],
+                    'backup_vcn_name': dbs['backup_vcn_name'],
                     'scan_dns': dbs['scan_dns_record_id'],
                     'scan_ips': dbs['scan_ips'],
                     'data_storage_size_in_gbs': dbs['data_storage_size_in_gbs'],
@@ -3135,6 +3145,8 @@ class ShowOCIData(object):
                     'description': vm['description'],
                     'subnet_id': vm['subnet_id'],
                     'subnet_name': vm['subnet_name'],
+                    'subnet_name_full': vm['subnet_name_full'],
+                    'vcn_name': vm['vcn_name'],
                     'nsg_ids': vm['nsg_ids'],
                     'last_update_history_entry_id': vm['last_update_history_entry_id'],
                     'lifecycle_state': vm['lifecycle_state'],

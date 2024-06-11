@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.128.1 - 2024-06-11
+====================
+
+Added
+-----
+* Support for 23ai based databases in Globally Distributed Database service
+* Support for testing span enrichment groups in Application Performance Monitoring service
+* Support for subscription suspension and termination orders in Fusion Apps as a Service
+* Support for time first occurred and time last occurred for resource sightings in Cloud Guard service
+* Support for alarm summary, notification title, and slack duration on create and update operations in Monitoring service
+* Support for message creation timestamp in Queue service
+ 
+====================
 2.128.0 - 2024-06-04
 ====================
 

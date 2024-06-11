@@ -122,6 +122,22 @@ class AlarmSummary(object):
             The value to assign to the notification_version property of this AlarmSummary.
         :type notification_version: str
 
+        :param notification_title:
+            The value to assign to the notification_title property of this AlarmSummary.
+        :type notification_title: str
+
+        :param evaluation_slack_duration:
+            The value to assign to the evaluation_slack_duration property of this AlarmSummary.
+        :type evaluation_slack_duration: str
+
+        :param alarm_summary:
+            The value to assign to the alarm_summary property of this AlarmSummary.
+        :type alarm_summary: str
+
+        :param resource_group:
+            The value to assign to the resource_group property of this AlarmSummary.
+        :type resource_group: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -140,7 +156,11 @@ class AlarmSummary(object):
             'lifecycle_state': 'str',
             'overrides': 'list[AlarmOverride]',
             'rule_name': 'str',
-            'notification_version': 'str'
+            'notification_version': 'str',
+            'notification_title': 'str',
+            'evaluation_slack_duration': 'str',
+            'alarm_summary': 'str',
+            'resource_group': 'str'
         }
 
         self.attribute_map = {
@@ -160,7 +180,11 @@ class AlarmSummary(object):
             'lifecycle_state': 'lifecycleState',
             'overrides': 'overrides',
             'rule_name': 'ruleName',
-            'notification_version': 'notificationVersion'
+            'notification_version': 'notificationVersion',
+            'notification_title': 'notificationTitle',
+            'evaluation_slack_duration': 'evaluationSlackDuration',
+            'alarm_summary': 'alarmSummary',
+            'resource_group': 'resourceGroup'
         }
 
         self._id = None
@@ -180,6 +204,10 @@ class AlarmSummary(object):
         self._overrides = None
         self._rule_name = None
         self._notification_version = None
+        self._notification_title = None
+        self._evaluation_slack_duration = None
+        self._alarm_summary = None
+        self._resource_group = None
 
     @property
     def id(self):
@@ -684,8 +712,7 @@ class AlarmSummary(object):
         """
         Gets the rule_name of this AlarmSummary.
         Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
-        A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
-        Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see :func:`alarm_override`.
+        Default value is `BASE`. For information about alarm overrides, see :func:`alarm_override`.
 
 
         :return: The rule_name of this AlarmSummary.
@@ -698,8 +725,7 @@ class AlarmSummary(object):
         """
         Sets the rule_name of this AlarmSummary.
         Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
-        A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
-        Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see :func:`alarm_override`.
+        Default value is `BASE`. For information about alarm overrides, see :func:`alarm_override`.
 
 
         :param rule_name: The rule_name of this AlarmSummary.
@@ -732,6 +758,146 @@ class AlarmSummary(object):
         :type: str
         """
         self._notification_version = notification_version
+
+    @property
+    def notification_title(self):
+        """
+        Gets the notification_title of this AlarmSummary.
+        Customizable notification title (`title` `alarm message parameter`__).
+        Optionally include `dynamic variables`__.
+        The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+
+
+        :return: The notification_title of this AlarmSummary.
+        :rtype: str
+        """
+        return self._notification_title
+
+    @notification_title.setter
+    def notification_title(self, notification_title):
+        """
+        Sets the notification_title of this AlarmSummary.
+        Customizable notification title (`title` `alarm message parameter`__).
+        Optionally include `dynamic variables`__.
+        The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+
+
+        :param notification_title: The notification_title of this AlarmSummary.
+        :type: str
+        """
+        self._notification_title = notification_title
+
+    @property
+    def evaluation_slack_duration(self):
+        """
+        Gets the evaluation_slack_duration of this AlarmSummary.
+        Customizable slack period to wait for metric ingestion before evaluating the alarm.
+        Specify a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H`
+        for one hour). Minimum: PT3M. Maximum: PT2H. Default: PT3M.
+        For more information about the slack period, see
+        `About the Internal Reset Period`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset
+
+
+        :return: The evaluation_slack_duration of this AlarmSummary.
+        :rtype: str
+        """
+        return self._evaluation_slack_duration
+
+    @evaluation_slack_duration.setter
+    def evaluation_slack_duration(self, evaluation_slack_duration):
+        """
+        Sets the evaluation_slack_duration of this AlarmSummary.
+        Customizable slack period to wait for metric ingestion before evaluating the alarm.
+        Specify a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H`
+        for one hour). Minimum: PT3M. Maximum: PT2H. Default: PT3M.
+        For more information about the slack period, see
+        `About the Internal Reset Period`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset
+
+
+        :param evaluation_slack_duration: The evaluation_slack_duration of this AlarmSummary.
+        :type: str
+        """
+        self._evaluation_slack_duration = evaluation_slack_duration
+
+    @property
+    def alarm_summary(self):
+        """
+        Gets the alarm_summary of this AlarmSummary.
+        Customizable alarm summary (`alarmSummary` `alarm message parameter`__).
+        Optionally include `dynamic variables`__.
+        The alarm summary appears within the body of the alarm message and in responses to
+        :func:`list_alarms_status`
+        :func:`get_alarm_history` and
+        :func:`retrieve_dimension_states`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+
+
+        :return: The alarm_summary of this AlarmSummary.
+        :rtype: str
+        """
+        return self._alarm_summary
+
+    @alarm_summary.setter
+    def alarm_summary(self, alarm_summary):
+        """
+        Sets the alarm_summary of this AlarmSummary.
+        Customizable alarm summary (`alarmSummary` `alarm message parameter`__).
+        Optionally include `dynamic variables`__.
+        The alarm summary appears within the body of the alarm message and in responses to
+        :func:`list_alarms_status`
+        :func:`get_alarm_history` and
+        :func:`retrieve_dimension_states`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+
+
+        :param alarm_summary: The alarm_summary of this AlarmSummary.
+        :type: str
+        """
+        self._alarm_summary = alarm_summary
+
+    @property
+    def resource_group(self):
+        """
+        Gets the resource_group of this AlarmSummary.
+        Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric.
+        A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+
+        Example: `frontend-fleet`
+
+
+        :return: The resource_group of this AlarmSummary.
+        :rtype: str
+        """
+        return self._resource_group
+
+    @resource_group.setter
+    def resource_group(self, resource_group):
+        """
+        Sets the resource_group of this AlarmSummary.
+        Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric.
+        A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+
+        Example: `frontend-fleet`
+
+
+        :param resource_group: The resource_group of this AlarmSummary.
+        :type: str
+        """
+        self._resource_group = resource_group
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -56,6 +56,14 @@ class ResourceProfileSummary(object):
             The value to assign to the time_last_detected property of this ResourceProfileSummary.
         :type time_last_detected: datetime
 
+        :param time_first_occurred:
+            The value to assign to the time_first_occurred property of this ResourceProfileSummary.
+        :type time_first_occurred: datetime
+
+        :param time_last_occurred:
+            The value to assign to the time_last_occurred property of this ResourceProfileSummary.
+        :type time_last_occurred: datetime
+
         :param problems_count:
             The value to assign to the problems_count property of this ResourceProfileSummary.
         :type problems_count: int
@@ -71,6 +79,8 @@ class ResourceProfileSummary(object):
             'tactics': 'list[TacticSummary]',
             'time_first_detected': 'datetime',
             'time_last_detected': 'datetime',
+            'time_first_occurred': 'datetime',
+            'time_last_occurred': 'datetime',
             'problems_count': 'int'
         }
 
@@ -84,6 +94,8 @@ class ResourceProfileSummary(object):
             'tactics': 'tactics',
             'time_first_detected': 'timeFirstDetected',
             'time_last_detected': 'timeLastDetected',
+            'time_first_occurred': 'timeFirstOccurred',
+            'time_last_occurred': 'timeLastOccurred',
             'problems_count': 'problemsCount'
         }
 
@@ -96,6 +108,8 @@ class ResourceProfileSummary(object):
         self._tactics = None
         self._time_first_detected = None
         self._time_last_detected = None
+        self._time_first_occurred = None
+        self._time_last_occurred = None
         self._problems_count = None
 
     @property
@@ -270,7 +284,7 @@ class ResourceProfileSummary(object):
     def time_first_detected(self):
         """
         **[Required]** Gets the time_first_detected of this ResourceProfileSummary.
-        The date and time the resource profile was first detected. Format defined by RFC3339.
+        Time the activities were first detected. Format defined by RFC3339.
 
 
         :return: The time_first_detected of this ResourceProfileSummary.
@@ -282,7 +296,7 @@ class ResourceProfileSummary(object):
     def time_first_detected(self, time_first_detected):
         """
         Sets the time_first_detected of this ResourceProfileSummary.
-        The date and time the resource profile was first detected. Format defined by RFC3339.
+        Time the activities were first detected. Format defined by RFC3339.
 
 
         :param time_first_detected: The time_first_detected of this ResourceProfileSummary.
@@ -294,7 +308,7 @@ class ResourceProfileSummary(object):
     def time_last_detected(self):
         """
         **[Required]** Gets the time_last_detected of this ResourceProfileSummary.
-        The date and time the resource profile was last detected. Format defined by RFC3339.
+        Time the activities were last detected. Format defined by RFC3339.
 
 
         :return: The time_last_detected of this ResourceProfileSummary.
@@ -306,13 +320,61 @@ class ResourceProfileSummary(object):
     def time_last_detected(self, time_last_detected):
         """
         Sets the time_last_detected of this ResourceProfileSummary.
-        The date and time the resource profile was last detected. Format defined by RFC3339.
+        Time the activities were last detected. Format defined by RFC3339.
 
 
         :param time_last_detected: The time_last_detected of this ResourceProfileSummary.
         :type: datetime
         """
         self._time_last_detected = time_last_detected
+
+    @property
+    def time_first_occurred(self):
+        """
+        Gets the time_first_occurred of this ResourceProfileSummary.
+        Time the activities were first performed. Format defined by RFC3339.
+
+
+        :return: The time_first_occurred of this ResourceProfileSummary.
+        :rtype: datetime
+        """
+        return self._time_first_occurred
+
+    @time_first_occurred.setter
+    def time_first_occurred(self, time_first_occurred):
+        """
+        Sets the time_first_occurred of this ResourceProfileSummary.
+        Time the activities were first performed. Format defined by RFC3339.
+
+
+        :param time_first_occurred: The time_first_occurred of this ResourceProfileSummary.
+        :type: datetime
+        """
+        self._time_first_occurred = time_first_occurred
+
+    @property
+    def time_last_occurred(self):
+        """
+        Gets the time_last_occurred of this ResourceProfileSummary.
+        Time the activities were last performed. Format defined by RFC3339.
+
+
+        :return: The time_last_occurred of this ResourceProfileSummary.
+        :rtype: datetime
+        """
+        return self._time_last_occurred
+
+    @time_last_occurred.setter
+    def time_last_occurred(self, time_last_occurred):
+        """
+        Sets the time_last_occurred of this ResourceProfileSummary.
+        Time the activities were last performed. Format defined by RFC3339.
+
+
+        :param time_last_occurred: The time_last_occurred of this ResourceProfileSummary.
+        :type: datetime
+        """
+        self._time_last_occurred = time_last_occurred
 
     @property
     def problems_count(self):

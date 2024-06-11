@@ -21,6 +21,10 @@ class AlarmHistoryEntry(object):
         Initializes a new AlarmHistoryEntry object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param alarm_summary:
+            The value to assign to the alarm_summary property of this AlarmHistoryEntry.
+        :type alarm_summary: str
+
         :param summary:
             The value to assign to the summary property of this AlarmHistoryEntry.
         :type summary: str
@@ -35,20 +39,63 @@ class AlarmHistoryEntry(object):
 
         """
         self.swagger_types = {
+            'alarm_summary': 'str',
             'summary': 'str',
             'timestamp': 'datetime',
             'timestamp_triggered': 'datetime'
         }
 
         self.attribute_map = {
+            'alarm_summary': 'alarmSummary',
             'summary': 'summary',
             'timestamp': 'timestamp',
             'timestamp_triggered': 'timestampTriggered'
         }
 
+        self._alarm_summary = None
         self._summary = None
         self._timestamp = None
         self._timestamp_triggered = None
+
+    @property
+    def alarm_summary(self):
+        """
+        **[Required]** Gets the alarm_summary of this AlarmHistoryEntry.
+        Customizable alarm summary (`alarmSummary` `alarm message parameter`__).
+        Optionally include `dynamic variables`__.
+        The alarm summary appears within the body of the alarm message and in responses to
+        :func:`list_alarms_status`
+        :func:`get_alarm_history` and
+        :func:`retrieve_dimension_states`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+
+
+        :return: The alarm_summary of this AlarmHistoryEntry.
+        :rtype: str
+        """
+        return self._alarm_summary
+
+    @alarm_summary.setter
+    def alarm_summary(self, alarm_summary):
+        """
+        Sets the alarm_summary of this AlarmHistoryEntry.
+        Customizable alarm summary (`alarmSummary` `alarm message parameter`__).
+        Optionally include `dynamic variables`__.
+        The alarm summary appears within the body of the alarm message and in responses to
+        :func:`list_alarms_status`
+        :func:`get_alarm_history` and
+        :func:`retrieve_dimension_states`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm
+
+
+        :param alarm_summary: The alarm_summary of this AlarmHistoryEntry.
+        :type: str
+        """
+        self._alarm_summary = alarm_summary
 
     @property
     def summary(self):

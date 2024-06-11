@@ -18,6 +18,7 @@ from .create_metric_group_details import CreateMetricGroupDetails
 from .create_options_details import CreateOptionsDetails
 from .create_span_filter_details import CreateSpanFilterDetails
 from .dimension import Dimension
+from .filter_text_or_id import FilterTextOrId
 from .metric import Metric
 from .metric_group import MetricGroup
 from .metric_group_summary import MetricGroupSummary
@@ -31,6 +32,10 @@ from .retrieve_namespace_metrics_details import RetrieveNamespaceMetricsDetails
 from .span_filter import SpanFilter
 from .span_filter_reference import SpanFilterReference
 from .span_filter_summary import SpanFilterSummary
+from .test_details import TestDetails
+from .test_output import TestOutput
+from .test_span_enrichment_details import TestSpanEnrichmentDetails
+from .test_span_enrichment_output import TestSpanEnrichmentOutput
 from .update_apdex_rules_details import UpdateApdexRulesDetails
 from .update_config_details import UpdateConfigDetails
 from .update_metric_group_details import UpdateMetricGroupDetails
@@ -52,6 +57,7 @@ apm_config_type_mapping = {
     "CreateOptionsDetails": CreateOptionsDetails,
     "CreateSpanFilterDetails": CreateSpanFilterDetails,
     "Dimension": Dimension,
+    "FilterTextOrId": FilterTextOrId,
     "Metric": Metric,
     "MetricGroup": MetricGroup,
     "MetricGroupSummary": MetricGroupSummary,
@@ -65,6 +71,10 @@ apm_config_type_mapping = {
     "SpanFilter": SpanFilter,
     "SpanFilterReference": SpanFilterReference,
     "SpanFilterSummary": SpanFilterSummary,
+    "TestDetails": TestDetails,
+    "TestOutput": TestOutput,
+    "TestSpanEnrichmentDetails": TestSpanEnrichmentDetails,
+    "TestSpanEnrichmentOutput": TestSpanEnrichmentOutput,
     "UpdateApdexRulesDetails": UpdateApdexRulesDetails,
     "UpdateConfigDetails": UpdateConfigDetails,
     "UpdateMetricGroupDetails": UpdateMetricGroupDetails,

@@ -64,6 +64,7 @@ options:
   -t CONFIG_PROFILE  Config Profile inside the config file
   -p PROXY           Set Proxy (i.e. www-proxy-server.com:80)
   -ip                Use Instance Principals for Authentication
+  -is                Use Config and Security Token
 ```
 
 ## Check Other Projects
