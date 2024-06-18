@@ -65,13 +65,14 @@ import os
 import platform
 import csv
 
-version = "2024.05.03"
+version = "2024.06.11"
 
 csv_file_products = "usage_products.csv"
 csv_file_daily = "usage_daily.csv"
 csv_file_regions = "usage_regions.csv"
 csv_file_resources = "usage_resources.csv"
 csv_file_tenants = "usage_tenants.csv"
+csv_file_service = "usage_service.csv"
 csv_file_special = "usage_special.csv"
 csv_file_compartment = "usage_compartments.csv"
 
@@ -795,7 +796,7 @@ def usage_daily_service(usageClient, tenant_id, time_usage_started, time_usage_e
                     'Year': "{:9.0f}".format(item['cost'] / days * 365),
                 })
 
-            export_to_csv_file(csv_file_tenants, csv_output)
+            export_to_csv_file(csv_file_service, csv_output)
 
         else:
 
