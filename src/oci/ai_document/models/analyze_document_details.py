@@ -55,6 +55,10 @@ class AnalyzeDocumentDetails(object):
     #: This constant has a value of "OTHERS"
     DOCUMENT_TYPE_OTHERS = "OTHERS"
 
+    #: A constant which can be used with the document_type property of a AnalyzeDocumentDetails.
+    #: This constant has a value of "INSURANCE_CLAIM"
+    DOCUMENT_TYPE_INSURANCE_CLAIM = "INSURANCE_CLAIM"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AnalyzeDocumentDetails object with values from keyword arguments.
@@ -82,7 +86,7 @@ class AnalyzeDocumentDetails(object):
 
         :param document_type:
             The value to assign to the document_type property of this AnalyzeDocumentDetails.
-            Allowed values for this property are: "INVOICE", "RECEIPT", "RESUME", "TAX_FORM", "DRIVER_LICENSE", "PASSPORT", "BANK_STATEMENT", "CHECK", "PAYSLIP", "OTHERS"
+            Allowed values for this property are: "INVOICE", "RECEIPT", "RESUME", "TAX_FORM", "DRIVER_LICENSE", "PASSPORT", "BANK_STATEMENT", "CHECK", "PAYSLIP", "OTHERS", "INSURANCE_CLAIM"
         :type document_type: str
 
         :param ocr_data:
@@ -236,7 +240,7 @@ class AnalyzeDocumentDetails(object):
         Gets the document_type of this AnalyzeDocumentDetails.
         The document type.
 
-        Allowed values for this property are: "INVOICE", "RECEIPT", "RESUME", "TAX_FORM", "DRIVER_LICENSE", "PASSPORT", "BANK_STATEMENT", "CHECK", "PAYSLIP", "OTHERS"
+        Allowed values for this property are: "INVOICE", "RECEIPT", "RESUME", "TAX_FORM", "DRIVER_LICENSE", "PASSPORT", "BANK_STATEMENT", "CHECK", "PAYSLIP", "OTHERS", "INSURANCE_CLAIM"
 
 
         :return: The document_type of this AnalyzeDocumentDetails.
@@ -254,7 +258,7 @@ class AnalyzeDocumentDetails(object):
         :param document_type: The document_type of this AnalyzeDocumentDetails.
         :type: str
         """
-        allowed_values = ["INVOICE", "RECEIPT", "RESUME", "TAX_FORM", "DRIVER_LICENSE", "PASSPORT", "BANK_STATEMENT", "CHECK", "PAYSLIP", "OTHERS"]
+        allowed_values = ["INVOICE", "RECEIPT", "RESUME", "TAX_FORM", "DRIVER_LICENSE", "PASSPORT", "BANK_STATEMENT", "CHECK", "PAYSLIP", "OTHERS", "INSURANCE_CLAIM"]
         if not value_allowed_none_or_none_sentinel(document_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `document_type`, must be None or one of {allowed_values}"

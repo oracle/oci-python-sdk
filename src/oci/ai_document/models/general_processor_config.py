@@ -55,6 +55,10 @@ class GeneralProcessorConfig(ProcessorConfig):
     #: This constant has a value of "OTHERS"
     DOCUMENT_TYPE_OTHERS = "OTHERS"
 
+    #: A constant which can be used with the document_type property of a GeneralProcessorConfig.
+    #: This constant has a value of "INSURANCE_CLAIM"
+    DOCUMENT_TYPE_INSURANCE_CLAIM = "INSURANCE_CLAIM"
+
     def __init__(self, **kwargs):
         """
         Initializes a new GeneralProcessorConfig object with values from keyword arguments. The default value of the :py:attr:`~oci.ai_document.models.GeneralProcessorConfig.processor_type` attribute
@@ -69,7 +73,7 @@ class GeneralProcessorConfig(ProcessorConfig):
 
         :param document_type:
             The value to assign to the document_type property of this GeneralProcessorConfig.
-            Allowed values for this property are: "INVOICE", "RECEIPT", "RESUME", "TAX_FORM", "DRIVER_LICENSE", "PASSPORT", "BANK_STATEMENT", "CHECK", "PAYSLIP", "OTHERS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INVOICE", "RECEIPT", "RESUME", "TAX_FORM", "DRIVER_LICENSE", "PASSPORT", "BANK_STATEMENT", "CHECK", "PAYSLIP", "OTHERS", "INSURANCE_CLAIM", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type document_type: str
 
@@ -115,7 +119,7 @@ class GeneralProcessorConfig(ProcessorConfig):
         Gets the document_type of this GeneralProcessorConfig.
         The document type.
 
-        Allowed values for this property are: "INVOICE", "RECEIPT", "RESUME", "TAX_FORM", "DRIVER_LICENSE", "PASSPORT", "BANK_STATEMENT", "CHECK", "PAYSLIP", "OTHERS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "INVOICE", "RECEIPT", "RESUME", "TAX_FORM", "DRIVER_LICENSE", "PASSPORT", "BANK_STATEMENT", "CHECK", "PAYSLIP", "OTHERS", "INSURANCE_CLAIM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -134,7 +138,7 @@ class GeneralProcessorConfig(ProcessorConfig):
         :param document_type: The document_type of this GeneralProcessorConfig.
         :type: str
         """
-        allowed_values = ["INVOICE", "RECEIPT", "RESUME", "TAX_FORM", "DRIVER_LICENSE", "PASSPORT", "BANK_STATEMENT", "CHECK", "PAYSLIP", "OTHERS"]
+        allowed_values = ["INVOICE", "RECEIPT", "RESUME", "TAX_FORM", "DRIVER_LICENSE", "PASSPORT", "BANK_STATEMENT", "CHECK", "PAYSLIP", "OTHERS", "INSURANCE_CLAIM"]
         if not value_allowed_none_or_none_sentinel(document_type, allowed_values):
             document_type = 'UNKNOWN_ENUM_VALUE'
         self._document_type = document_type
