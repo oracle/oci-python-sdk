@@ -4,6 +4,37 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.129.0 - 2024-06-25
+====================
+
+Added
+-----
+* Support for MySQL to MySQL homogeneous migrations in the Database Migration service
+* Support for manual cross-region backups in the MySQL Heatwave service
+  
+Breaking
+--------
+* The models AdvisorSettings, Agent, AgentCollection, AgentImageCollection, AgentImageSummary, AgentSummary, AwsS3DataTransferMediumDetails, AwsS3Details, ChangeAgentCompartmentDetails, ConnectDescriptor, CreateAdvisorSettings, CreateAwsS3Details, CreateConnectDescriptor, CreateDataPumpSettings, CreateDataTransferMediumDetails, CreateDatabaseLinkDetails, CreateDumpTransferDetails, CreateGoldenGateDetails, CreateGoldenGateHub, CreateGoldenGateServiceDetails, CreateGoldenGateServiceDetails, CreatePrivateEndpoint, CreateSshDetails, CreateVaultDetails, DataPumpSettings, DataTransferMediumDetails, DataTransferMediumDetailsV2, DatabaseCredentials, DatabaseLinkDetails, DatabaseObject, DbLinkDataTransferMediumDetails, DumpTransferDetails, GoldenGateDetails, GoldenGateHub, GoldenGateServiceDetails, GoldenGateSettings, MigrationObjectSummary, NfsDataTransferMediumDetails, ObjectStorageDataTransferMediumDetails, PrivateEndpointDetails, SshDetails, UpdateAdvisorSettings, UpdateAgentDetails, UpdateAwsS3Details, UpdateConnectDescriptor, UpdateDataPumpSettings, UpdateDataTransferMediumDetails, UpdateDatabaseLinkDetails, UpdateDumpTransferDetails, UpdateGoldenGateDetails, UpdateGoldenGateHub, UpdateGoldenGateServiceDetails, UpdateGoldenGateSettings, UpdatePrivateEndpoint, UpdateSshDetails, UpdateVaultDetails, VaultDetails were removed in the Database Migration service
+* The operations change_agent_compartment, delete_agent, get_agent, list_agent_images, list_agents, and update_agent were removed in the Database Migration service
+* The composite operations delete_agent_and_wait_for_state and update_agent_and_wait_for_state were removed in the Database Migration service
+* The properties `agent_id`, `source_container_database_connection_id`, `exclude_objects`, `include_objects` and `vault_details` were removed from the model `CloneMigrationDetails` in the Database Migration service
+* The properties `admin_credentials`, `connect_descriptor`, `certificate_tdn`, `credentials_secret_id`, `database_id`, `database_type`, `is_dedicated`, `manual_database_sub_type`, `private_endpoint`, `replication_credentials`, `ssh_details` and `vault_details` were removed in the model `Connection` in the Database Migration service
+* The properties `database_id`, `database_type`, `is_dedicated`, and `manual_database_sub_type` were removed in the model `ConnectionSummary` in the Database Migration service
+* The properties `admin_credentials`, `certificate_tdn`, `connect_descriptor`, `database_id`, `database_type`, `manual_database_sub_type`, `private_endpoint`, `replication_credentials`, `ssh_details`, `tls_keystore`, `tls_wallet` and `vault_details` were removed from the model `CreateConnectionDetails` in the Database Migration service
+* The properties `advisor_settings`, `agent_id`, `csv_text`, `data_transfer_medium_details`, `data_transfer_medium_details_v2`, `datapump_settings`, `dump_transfer_details`, `exclude_objects`, `golden_gate_details`, `golden_gate_service_details`, `include_objects`, `source_container_database_connection_id` and `vault_details` were removed in the model `CreateMigrationDetails` in the Database Migration service
+* The properties `map_parallelism`, `max_apply_parallelism`, and `min_apply_parallelism` were removed in the models `Replicat`, `UpdateReplicat`, and `CreateReplicat` in the Database Migration service
+* The properties `advisor_settings`, `agent_id`, `credentials_secret_id`, `data_transfer_medium_details`, `data_transfer_medium_details_v2`, `datapump_settings`, `dump_transfer_details`, `exclude_objects`, `golden_gate_details`, `golden_gate_service_details`, `include_objects`, `source_container_database_connection_id` and `vault_details` were removed in the model `Migration` in the Database Migration service
+* The properties `csv_text` and `items` were removed in the model `MigrationObjectCollection` in the Database Migration service
+* The properties `agent_id`, `source_container_database_connection_id` and `vault_details` were removed in the model `MigrationSummary` in the Database Migration service
+* The properties `admin_credentials`, `certificate_tdn`, `connect_descriptor`, `database_id`, `private_endpoint`, `replication_credentials`, `ssh_details`, `tls_keystore`, `tls_wallet` and `vault_details` were removed from the model `UpdateConnectionDetails` in the Database Migration service
+* The properties `advisor_settings`, `agent_id`, `data_transfer_medium_details`, `data_transfer_medium_details_v2`, `datapump_settings`, `dump_transfer_details`, `exclude_objects`, `golden_gate_details`, `golden_gate_service_details`, `include_objects`, `source_container_database_connection_id` and `vault_details` were removed in the model `UpdateMigrationDetails` in the Database Migration service
+* Allowed values `ODMS_VALIDATE_GG_SERVICE` and `ODMS_INITIALIZE_GGS` were removed from property `wait_after` in the models `StartMigrationDetails` and `ResumeJobDetails` in the Database Migration service
+* Allowed values `ODMS_VALIDATE_GG_SERVICE` and `ODMS_INITIALIZE_GGS` were removed from property `current_phase` in the model `MigrationJobProgressResource` in the Database Migration service
+* Allowed values `ODMS_VALIDATE_GG_SERVICE` and `ODMS_INITIALIZE_GGS` were removed from property `current_phase` in the model `MigrationJobProgressSummary` in the Database Migration service
+* Allowed values `ODMS_VALIDATE_GG_SERVICE` and `ODMS_INITIALIZE_GGS` were removed from property `name` in the models `MigrationPhaseSummary` and `PhaseStatus` in the Database Migration service
+* Allowed values `ODMS_VALIDATE_GG_SERVICE` and `ODMS_INITIALIZE_GGS` were removed from property `wait_after` in the model `Migration` in the Database Migration service
+ 
+====================
 2.128.2 - 2024-06-18
 ====================
 
