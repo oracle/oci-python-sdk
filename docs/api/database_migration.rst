@@ -25,19 +25,9 @@ Database Migration
     oci.database_migration.models.AdvisorReport
     oci.database_migration.models.AdvisorReportBucketDetails
     oci.database_migration.models.AdvisorReportLocationDetails
-    oci.database_migration.models.AdvisorSettings
-    oci.database_migration.models.Agent
-    oci.database_migration.models.AgentCollection
-    oci.database_migration.models.AgentImageCollection
-    oci.database_migration.models.AgentImageSummary
-    oci.database_migration.models.AgentSummary
-    oci.database_migration.models.AwsS3DataTransferMediumDetails
-    oci.database_migration.models.AwsS3Details
-    oci.database_migration.models.ChangeAgentCompartmentDetails
     oci.database_migration.models.ChangeConnectionCompartmentDetails
     oci.database_migration.models.ChangeMigrationCompartmentDetails
     oci.database_migration.models.CloneMigrationDetails
-    oci.database_migration.models.ConnectDescriptor
     oci.database_migration.models.Connection
     oci.database_migration.models.ConnectionCollection
     oci.database_migration.models.ConnectionSummary
@@ -45,54 +35,48 @@ Database Migration
     oci.database_migration.models.CreateADBDedicatedRemapTargetTablespaceDetails
     oci.database_migration.models.CreateADBServerlesTablespaceDetails
     oci.database_migration.models.CreateAdminCredentials
-    oci.database_migration.models.CreateAdvisorSettings
-    oci.database_migration.models.CreateAwsS3Details
-    oci.database_migration.models.CreateConnectDescriptor
     oci.database_migration.models.CreateConnectionDetails
     oci.database_migration.models.CreateCurlTransferDetails
     oci.database_migration.models.CreateDataPumpParameters
-    oci.database_migration.models.CreateDataPumpSettings
-    oci.database_migration.models.CreateDataTransferMediumDetails
-    oci.database_migration.models.CreateDatabaseLinkDetails
     oci.database_migration.models.CreateDirectoryObject
-    oci.database_migration.models.CreateDumpTransferDetails
     oci.database_migration.models.CreateExtract
-    oci.database_migration.models.CreateGoldenGateDetails
-    oci.database_migration.models.CreateGoldenGateHub
-    oci.database_migration.models.CreateGoldenGateServiceDetails
-    oci.database_migration.models.CreateGoldenGateSettings
+    oci.database_migration.models.CreateGoldenGateHubDetails
     oci.database_migration.models.CreateHostDumpTransferDetails
     oci.database_migration.models.CreateMigrationDetails
+    oci.database_migration.models.CreateMySqlAdvisorSettings
+    oci.database_migration.models.CreateMySqlDataTransferMediumDetails
+    oci.database_migration.models.CreateMySqlGgsDeploymentDetails
+    oci.database_migration.models.CreateMySqlInitialLoadSettings
+    oci.database_migration.models.CreateMySqlMigrationDetails
+    oci.database_migration.models.CreateMySqlObjectStorageDataTransferMediumDetails
+    oci.database_migration.models.CreateMysqlConnectionDetails
     oci.database_migration.models.CreateNonADBAutoCreateTablespaceDetails
     oci.database_migration.models.CreateNonADBRemapTablespaceDetails
     oci.database_migration.models.CreateObjectStoreBucket
     oci.database_migration.models.CreateOciCliDumpTransferDetails
-    oci.database_migration.models.CreatePrivateEndpoint
+    oci.database_migration.models.CreateOracleAdvisorSettings
+    oci.database_migration.models.CreateOracleAwsS3DataTransferMediumDetails
+    oci.database_migration.models.CreateOracleConnectionDetails
+    oci.database_migration.models.CreateOracleDataTransferMediumDetails
+    oci.database_migration.models.CreateOracleDbLinkDataTransferMediumDetails
+    oci.database_migration.models.CreateOracleGgsDeploymentDetails
+    oci.database_migration.models.CreateOracleInitialLoadSettings
+    oci.database_migration.models.CreateOracleMigrationDetails
+    oci.database_migration.models.CreateOracleNfsDataTransferMediumDetails
+    oci.database_migration.models.CreateOracleObjectStorageDataTransferMediumDetails
     oci.database_migration.models.CreateReplicat
-    oci.database_migration.models.CreateSshDetails
     oci.database_migration.models.CreateTargetTypeTablespaceDetails
-    oci.database_migration.models.CreateVaultDetails
     oci.database_migration.models.CurlTransferDetails
     oci.database_migration.models.DataPumpParameters
-    oci.database_migration.models.DataPumpSettings
-    oci.database_migration.models.DataTransferMediumDetails
-    oci.database_migration.models.DataTransferMediumDetailsV2
-    oci.database_migration.models.DatabaseCredentials
-    oci.database_migration.models.DatabaseLinkDetails
-    oci.database_migration.models.DatabaseObject
-    oci.database_migration.models.DbLinkDataTransferMediumDetails
     oci.database_migration.models.DiagnosticsResult
     oci.database_migration.models.DirectoryObject
-    oci.database_migration.models.DumpTransferDetails
     oci.database_migration.models.ExcludedObjectSummary
     oci.database_migration.models.ExcludedObjectSummaryCollection
     oci.database_migration.models.Extract
     oci.database_migration.models.GgsDeployment
-    oci.database_migration.models.GoldenGateDetails
-    oci.database_migration.models.GoldenGateHub
-    oci.database_migration.models.GoldenGateServiceDetails
-    oci.database_migration.models.GoldenGateSettings
+    oci.database_migration.models.GoldenGateHubDetails
     oci.database_migration.models.HostDumpTransferDetails
+    oci.database_migration.models.IngressIpDetails
     oci.database_migration.models.Job
     oci.database_migration.models.JobCollection
     oci.database_migration.models.JobOutputSummary
@@ -105,25 +89,50 @@ Database Migration
     oci.database_migration.models.MigrationJobProgressResource
     oci.database_migration.models.MigrationJobProgressSummary
     oci.database_migration.models.MigrationObjectCollection
-    oci.database_migration.models.MigrationObjectSummary
     oci.database_migration.models.MigrationObjectTypeSummary
     oci.database_migration.models.MigrationObjectTypeSummaryCollection
     oci.database_migration.models.MigrationPhaseCollection
     oci.database_migration.models.MigrationPhaseSummary
     oci.database_migration.models.MigrationSummary
-    oci.database_migration.models.NfsDataTransferMediumDetails
+    oci.database_migration.models.MySqlAdvisorSettings
+    oci.database_migration.models.MySqlCloneMigrationDetails
+    oci.database_migration.models.MySqlDataTransferMediumDetails
+    oci.database_migration.models.MySqlDatabaseObject
+    oci.database_migration.models.MySqlDatabaseObjectSummary
+    oci.database_migration.models.MySqlGgsDeploymentDetails
+    oci.database_migration.models.MySqlInitialLoadSettings
+    oci.database_migration.models.MySqlMigration
+    oci.database_migration.models.MySqlMigrationObjectCollection
+    oci.database_migration.models.MySqlMigrationSummary
+    oci.database_migration.models.MySqlObjectStorageDataTransferMediumDetails
+    oci.database_migration.models.MysqlConnection
+    oci.database_migration.models.MysqlConnectionSummary
+    oci.database_migration.models.NameValuePair
     oci.database_migration.models.NonADBAutoCreateTablespaceDetails
     oci.database_migration.models.NonADBRemapTablespaceDetails
-    oci.database_migration.models.ObjectStorageDataTransferMediumDetails
     oci.database_migration.models.ObjectStoreBucket
     oci.database_migration.models.OciCliDumpTransferDetails
+    oci.database_migration.models.OracleAdvisorSettings
+    oci.database_migration.models.OracleAwsS3DataTransferMediumDetails
+    oci.database_migration.models.OracleCloneMigrationDetails
+    oci.database_migration.models.OracleConnection
+    oci.database_migration.models.OracleConnectionSummary
+    oci.database_migration.models.OracleDataTransferMediumDetails
+    oci.database_migration.models.OracleDatabaseObject
+    oci.database_migration.models.OracleDatabaseObjectSummary
+    oci.database_migration.models.OracleDbLinkDataTransferMediumDetails
+    oci.database_migration.models.OracleGgsDeploymentDetails
+    oci.database_migration.models.OracleInitialLoadSettings
+    oci.database_migration.models.OracleMigration
+    oci.database_migration.models.OracleMigrationObjectCollection
+    oci.database_migration.models.OracleMigrationSummary
+    oci.database_migration.models.OracleNfsDataTransferMediumDetails
+    oci.database_migration.models.OracleObjectStorageDataTransferMediumDetails
     oci.database_migration.models.PhaseExtractEntry
     oci.database_migration.models.PhaseStatus
-    oci.database_migration.models.PrivateEndpointDetails
     oci.database_migration.models.Replicat
     oci.database_migration.models.ResultError
     oci.database_migration.models.ResumeJobDetails
-    oci.database_migration.models.SshDetails
     oci.database_migration.models.StartMigrationDetails
     oci.database_migration.models.TargetTypeTablespaceDetails
     oci.database_migration.models.UnsupportedDatabaseObject
@@ -131,38 +140,40 @@ Database Migration
     oci.database_migration.models.UpdateADBDedicatedRemapTargetTablespaceDetails
     oci.database_migration.models.UpdateADBServerlesTablespaceDetails
     oci.database_migration.models.UpdateAdminCredentials
-    oci.database_migration.models.UpdateAdvisorSettings
-    oci.database_migration.models.UpdateAgentDetails
-    oci.database_migration.models.UpdateAwsS3Details
-    oci.database_migration.models.UpdateConnectDescriptor
     oci.database_migration.models.UpdateConnectionDetails
     oci.database_migration.models.UpdateCurlTransferDetails
     oci.database_migration.models.UpdateDataPumpParameters
-    oci.database_migration.models.UpdateDataPumpSettings
-    oci.database_migration.models.UpdateDataTransferMediumDetails
-    oci.database_migration.models.UpdateDatabaseLinkDetails
     oci.database_migration.models.UpdateDirectoryObject
-    oci.database_migration.models.UpdateDumpTransferDetails
     oci.database_migration.models.UpdateExtract
-    oci.database_migration.models.UpdateGoldenGateDetails
-    oci.database_migration.models.UpdateGoldenGateHub
-    oci.database_migration.models.UpdateGoldenGateServiceDetails
-    oci.database_migration.models.UpdateGoldenGateSettings
+    oci.database_migration.models.UpdateGoldenGateHubDetails
     oci.database_migration.models.UpdateHostDumpTransferDetails
     oci.database_migration.models.UpdateJobDetails
     oci.database_migration.models.UpdateMigrationDetails
+    oci.database_migration.models.UpdateMySqlAdvisorSettings
+    oci.database_migration.models.UpdateMySqlDataTransferMediumDetails
+    oci.database_migration.models.UpdateMySqlGgsDeploymentDetails
+    oci.database_migration.models.UpdateMySqlInitialLoadSettings
+    oci.database_migration.models.UpdateMySqlMigrationDetails
+    oci.database_migration.models.UpdateMySqlObjectStorageDataTransferMediumDetails
+    oci.database_migration.models.UpdateMysqlConnectionDetails
     oci.database_migration.models.UpdateNonADBAutoCreateTablespaceDetails
     oci.database_migration.models.UpdateNonADBRemapTablespaceDetails
     oci.database_migration.models.UpdateObjectStoreBucket
     oci.database_migration.models.UpdateOciCliDumpTransferDetails
-    oci.database_migration.models.UpdatePrivateEndpoint
+    oci.database_migration.models.UpdateOracleAdvisorSettings
+    oci.database_migration.models.UpdateOracleAwsS3DataTransferMediumDetails
+    oci.database_migration.models.UpdateOracleConnectionDetails
+    oci.database_migration.models.UpdateOracleDataTransferMediumDetails
+    oci.database_migration.models.UpdateOracleDbLinkDataTransferMediumDetails
+    oci.database_migration.models.UpdateOracleGgsDeploymentDetails
+    oci.database_migration.models.UpdateOracleInitialLoadSettings
+    oci.database_migration.models.UpdateOracleMigrationDetails
+    oci.database_migration.models.UpdateOracleNfsDataTransferMediumDetails
+    oci.database_migration.models.UpdateOracleObjectStorageDataTransferMediumDetails
     oci.database_migration.models.UpdateReplicat
-    oci.database_migration.models.UpdateSshDetails
     oci.database_migration.models.UpdateTargetDefaultsAutoCreateTablespaceDetails
     oci.database_migration.models.UpdateTargetDefaultsRemapTablespaceDetails
     oci.database_migration.models.UpdateTargetTypeTablespaceDetails
-    oci.database_migration.models.UpdateVaultDetails
-    oci.database_migration.models.VaultDetails
     oci.database_migration.models.WorkRequest
     oci.database_migration.models.WorkRequestCollection
     oci.database_migration.models.WorkRequestError

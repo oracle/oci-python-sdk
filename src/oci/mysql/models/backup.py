@@ -159,6 +159,18 @@ class Backup(object):
             The value to assign to the defined_tags property of this Backup.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param immediate_source_backup_id:
+            The value to assign to the immediate_source_backup_id property of this Backup.
+        :type immediate_source_backup_id: str
+
+        :param original_source_backup_id:
+            The value to assign to the original_source_backup_id property of this Backup.
+        :type original_source_backup_id: str
+
+        :param time_copy_created:
+            The value to assign to the time_copy_created property of this Backup.
+        :type time_copy_created: datetime
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -179,7 +191,10 @@ class Backup(object):
             'mysql_version': 'str',
             'shape_name': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'immediate_source_backup_id': 'str',
+            'original_source_backup_id': 'str',
+            'time_copy_created': 'datetime'
         }
 
         self.attribute_map = {
@@ -201,7 +216,10 @@ class Backup(object):
             'mysql_version': 'mysqlVersion',
             'shape_name': 'shapeName',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'immediate_source_backup_id': 'immediateSourceBackupId',
+            'original_source_backup_id': 'originalSourceBackupId',
+            'time_copy_created': 'timeCopyCreated'
         }
 
         self._id = None
@@ -223,6 +241,9 @@ class Backup(object):
         self._shape_name = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._immediate_source_backup_id = None
+        self._original_source_backup_id = None
+        self._time_copy_created = None
 
     @property
     def id(self):
@@ -697,6 +718,82 @@ class Backup(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def immediate_source_backup_id(self):
+        """
+        Gets the immediate_source_backup_id of this Backup.
+        The OCID of the immediate source DB system backup from which this DB system backup was copied.
+
+
+        :return: The immediate_source_backup_id of this Backup.
+        :rtype: str
+        """
+        return self._immediate_source_backup_id
+
+    @immediate_source_backup_id.setter
+    def immediate_source_backup_id(self, immediate_source_backup_id):
+        """
+        Sets the immediate_source_backup_id of this Backup.
+        The OCID of the immediate source DB system backup from which this DB system backup was copied.
+
+
+        :param immediate_source_backup_id: The immediate_source_backup_id of this Backup.
+        :type: str
+        """
+        self._immediate_source_backup_id = immediate_source_backup_id
+
+    @property
+    def original_source_backup_id(self):
+        """
+        Gets the original_source_backup_id of this Backup.
+        The OCID of the original source DB system backup from which this DB system backup was copied.
+
+
+        :return: The original_source_backup_id of this Backup.
+        :rtype: str
+        """
+        return self._original_source_backup_id
+
+    @original_source_backup_id.setter
+    def original_source_backup_id(self, original_source_backup_id):
+        """
+        Sets the original_source_backup_id of this Backup.
+        The OCID of the original source DB system backup from which this DB system backup was copied.
+
+
+        :param original_source_backup_id: The original_source_backup_id of this Backup.
+        :type: str
+        """
+        self._original_source_backup_id = original_source_backup_id
+
+    @property
+    def time_copy_created(self):
+        """
+        Gets the time_copy_created of this Backup.
+        The date and time the DB system backup copy was created, as described by `RFC 3339`__.
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :return: The time_copy_created of this Backup.
+        :rtype: datetime
+        """
+        return self._time_copy_created
+
+    @time_copy_created.setter
+    def time_copy_created(self, time_copy_created):
+        """
+        Sets the time_copy_created of this Backup.
+        The date and time the DB system backup copy was created, as described by `RFC 3339`__.
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :param time_copy_created: The time_copy_created of this Backup.
+        :type: datetime
+        """
+        self._time_copy_created = time_copy_created
 
     def __repr__(self):
         return formatted_flat_dict(self)

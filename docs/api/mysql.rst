@@ -47,6 +47,7 @@ Mysql
     oci.mysql.models.Configuration
     oci.mysql.models.ConfigurationSummary
     oci.mysql.models.ConfigurationVariables
+    oci.mysql.models.CopyBackupDetails
     oci.mysql.models.CreateBackupDetails
     oci.mysql.models.CreateBackupPolicyDetails
     oci.mysql.models.CreateChannelDetails
@@ -68,6 +69,7 @@ Mysql
     oci.mysql.models.DbSystemEndpoint
     oci.mysql.models.DbSystemPlacement
     oci.mysql.models.DbSystemSnapshot
+    oci.mysql.models.DbSystemSnapshotSummary
     oci.mysql.models.DbSystemSource
     oci.mysql.models.DbSystemSourceFromBackup
     oci.mysql.models.DbSystemSourceFromNone

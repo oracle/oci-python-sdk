@@ -144,6 +144,10 @@ class DbSystemSnapshot(object):
             The value to assign to the secure_connections property of this DbSystemSnapshot.
         :type secure_connections: oci.mysql.models.SecureConnectionDetails
 
+        :param region:
+            The value to assign to the region property of this DbSystemSnapshot.
+        :type region: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -171,7 +175,8 @@ class DbSystemSnapshot(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'crash_recovery': 'str',
             'database_management': 'str',
-            'secure_connections': 'SecureConnectionDetails'
+            'secure_connections': 'SecureConnectionDetails',
+            'region': 'str'
         }
 
         self.attribute_map = {
@@ -200,7 +205,8 @@ class DbSystemSnapshot(object):
             'defined_tags': 'definedTags',
             'crash_recovery': 'crashRecovery',
             'database_management': 'databaseManagement',
-            'secure_connections': 'secureConnections'
+            'secure_connections': 'secureConnections',
+            'region': 'region'
         }
 
         self._id = None
@@ -229,6 +235,7 @@ class DbSystemSnapshot(object):
         self._crash_recovery = None
         self._database_management = None
         self._secure_connections = None
+        self._region = None
 
     @property
     def id(self):
@@ -875,6 +882,36 @@ class DbSystemSnapshot(object):
         :type: oci.mysql.models.SecureConnectionDetails
         """
         self._secure_connections = secure_connections
+
+    @property
+    def region(self):
+        """
+        Gets the region of this DbSystemSnapshot.
+        The region identifier of the region where the DB system exists.
+        For more information, please see `Regions and Availability Domains`__.
+
+        __ https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+
+
+        :return: The region of this DbSystemSnapshot.
+        :rtype: str
+        """
+        return self._region
+
+    @region.setter
+    def region(self, region):
+        """
+        Sets the region of this DbSystemSnapshot.
+        The region identifier of the region where the DB system exists.
+        For more information, please see `Regions and Availability Domains`__.
+
+        __ https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+
+
+        :param region: The region of this DbSystemSnapshot.
+        :type: str
+        """
+        self._region = region
 
     def __repr__(self):
         return formatted_flat_dict(self)

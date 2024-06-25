@@ -25,6 +25,7 @@ from .channel_target_db_system import ChannelTargetDbSystem
 from .configuration import Configuration
 from .configuration_summary import ConfigurationSummary
 from .configuration_variables import ConfigurationVariables
+from .copy_backup_details import CopyBackupDetails
 from .create_backup_details import CreateBackupDetails
 from .create_backup_policy_details import CreateBackupPolicyDetails
 from .create_channel_details import CreateChannelDetails
@@ -46,6 +47,7 @@ from .db_system import DbSystem
 from .db_system_endpoint import DbSystemEndpoint
 from .db_system_placement import DbSystemPlacement
 from .db_system_snapshot import DbSystemSnapshot
+from .db_system_snapshot_summary import DbSystemSnapshotSummary
 from .db_system_source import DbSystemSource
 from .db_system_source_from_backup import DbSystemSourceFromBackup
 from .db_system_source_from_none import DbSystemSourceFromNone
@@ -114,6 +116,7 @@ mysql_type_mapping = {
     "Configuration": Configuration,
     "ConfigurationSummary": ConfigurationSummary,
     "ConfigurationVariables": ConfigurationVariables,
+    "CopyBackupDetails": CopyBackupDetails,
     "CreateBackupDetails": CreateBackupDetails,
     "CreateBackupPolicyDetails": CreateBackupPolicyDetails,
     "CreateChannelDetails": CreateChannelDetails,
@@ -135,6 +138,7 @@ mysql_type_mapping = {
     "DbSystemEndpoint": DbSystemEndpoint,
     "DbSystemPlacement": DbSystemPlacement,
     "DbSystemSnapshot": DbSystemSnapshot,
+    "DbSystemSnapshotSummary": DbSystemSnapshotSummary,
     "DbSystemSource": DbSystemSource,
     "DbSystemSourceFromBackup": DbSystemSourceFromBackup,
     "DbSystemSourceFromNone": DbSystemSourceFromNone,
