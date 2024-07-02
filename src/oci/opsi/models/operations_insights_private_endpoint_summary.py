@@ -280,7 +280,7 @@ class OperationsInsightsPrivateEndpointSummary(object):
     def is_used_for_rac_dbs(self):
         """
         Gets the is_used_for_rac_dbs of this OperationsInsightsPrivateEndpointSummary.
-        The flag to identify if private endpoint is used for rac database or not
+        The flag to identify if private endpoint is used for rac database or not. This flag is deprecated and no longer is used.
 
 
         :return: The is_used_for_rac_dbs of this OperationsInsightsPrivateEndpointSummary.
@@ -292,7 +292,7 @@ class OperationsInsightsPrivateEndpointSummary(object):
     def is_used_for_rac_dbs(self, is_used_for_rac_dbs):
         """
         Sets the is_used_for_rac_dbs of this OperationsInsightsPrivateEndpointSummary.
-        The flag to identify if private endpoint is used for rac database or not
+        The flag to identify if private endpoint is used for rac database or not. This flag is deprecated and no longer is used.
 
 
         :param is_used_for_rac_dbs: The is_used_for_rac_dbs of this OperationsInsightsPrivateEndpointSummary.

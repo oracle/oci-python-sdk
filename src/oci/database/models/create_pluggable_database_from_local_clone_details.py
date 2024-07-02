@@ -30,19 +30,26 @@ class CreatePluggableDatabaseFromLocalCloneDetails(CreatePluggableDatabaseCreati
             The value to assign to the source_pluggable_database_id property of this CreatePluggableDatabaseFromLocalCloneDetails.
         :type source_pluggable_database_id: str
 
+        :param is_thin_clone:
+            The value to assign to the is_thin_clone property of this CreatePluggableDatabaseFromLocalCloneDetails.
+        :type is_thin_clone: bool
+
         """
         self.swagger_types = {
             'creation_type': 'str',
-            'source_pluggable_database_id': 'str'
+            'source_pluggable_database_id': 'str',
+            'is_thin_clone': 'bool'
         }
 
         self.attribute_map = {
             'creation_type': 'creationType',
-            'source_pluggable_database_id': 'sourcePluggableDatabaseId'
+            'source_pluggable_database_id': 'sourcePluggableDatabaseId',
+            'is_thin_clone': 'isThinClone'
         }
 
         self._creation_type = None
         self._source_pluggable_database_id = None
+        self._is_thin_clone = None
         self._creation_type = 'LOCAL_CLONE_PDB'
 
     @property
@@ -68,6 +75,30 @@ class CreatePluggableDatabaseFromLocalCloneDetails(CreatePluggableDatabaseCreati
         :type: str
         """
         self._source_pluggable_database_id = source_pluggable_database_id
+
+    @property
+    def is_thin_clone(self):
+        """
+        Gets the is_thin_clone of this CreatePluggableDatabaseFromLocalCloneDetails.
+        True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to be thick cloned.
+
+
+        :return: The is_thin_clone of this CreatePluggableDatabaseFromLocalCloneDetails.
+        :rtype: bool
+        """
+        return self._is_thin_clone
+
+    @is_thin_clone.setter
+    def is_thin_clone(self, is_thin_clone):
+        """
+        Sets the is_thin_clone of this CreatePluggableDatabaseFromLocalCloneDetails.
+        True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to be thick cloned.
+
+
+        :param is_thin_clone: The is_thin_clone of this CreatePluggableDatabaseFromLocalCloneDetails.
+        :type: bool
+        """
+        self._is_thin_clone = is_thin_clone
 
     def __repr__(self):
         return formatted_flat_dict(self)

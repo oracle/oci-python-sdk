@@ -83,6 +83,10 @@ class ManagedDatabaseSummary(object):
     #: This constant has a value of "AUTONOMOUS"
     DEPLOYMENT_TYPE_AUTONOMOUS = "AUTONOMOUS"
 
+    #: A constant which can be used with the deployment_type property of a ManagedDatabaseSummary.
+    #: This constant has a value of "EXADATA_XS"
+    DEPLOYMENT_TYPE_EXADATA_XS = "EXADATA_XS"
+
     #: A constant which can be used with the management_option property of a ManagedDatabaseSummary.
     #: This constant has a value of "BASIC"
     MANAGEMENT_OPTION_BASIC = "BASIC"
@@ -138,7 +142,7 @@ class ManagedDatabaseSummary(object):
 
         :param deployment_type:
             The value to assign to the deployment_type property of this ManagedDatabaseSummary.
-            Allowed values for this property are: "ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", "AUTONOMOUS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", "AUTONOMOUS", "EXADATA_XS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type deployment_type: str
 
@@ -397,7 +401,7 @@ class ManagedDatabaseSummary(object):
         Gets the deployment_type of this ManagedDatabaseSummary.
         The infrastructure used to deploy the Oracle Database.
 
-        Allowed values for this property are: "ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", "AUTONOMOUS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", "AUTONOMOUS", "EXADATA_XS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -416,7 +420,7 @@ class ManagedDatabaseSummary(object):
         :param deployment_type: The deployment_type of this ManagedDatabaseSummary.
         :type: str
         """
-        allowed_values = ["ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", "AUTONOMOUS"]
+        allowed_values = ["ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", "AUTONOMOUS", "EXADATA_XS"]
         if not value_allowed_none_or_none_sentinel(deployment_type, allowed_values):
             deployment_type = 'UNKNOWN_ENUM_VALUE'
         self._deployment_type = deployment_type

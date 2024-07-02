@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OperationsInsightsWarehouses(object):
     """
-    Logical grouping used for Operations Insights Warehouse operations.
+    Logical grouping used for Ops Insights Warehouse operations.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class OperationsInsightsWarehouses(object):
     def operations_insights_warehouses(self):
         """
         Gets the operations_insights_warehouses of this OperationsInsightsWarehouses.
-        Operations Insights Warehouse Object.
+        Ops Insights Warehouse Object.
 
 
         :return: The operations_insights_warehouses of this OperationsInsightsWarehouses.
@@ -51,7 +51,7 @@ class OperationsInsightsWarehouses(object):
     def operations_insights_warehouses(self, operations_insights_warehouses):
         """
         Sets the operations_insights_warehouses of this OperationsInsightsWarehouses.
-        Operations Insights Warehouse Object.
+        Ops Insights Warehouse Object.
 
 
         :param operations_insights_warehouses: The operations_insights_warehouses of this OperationsInsightsWarehouses.

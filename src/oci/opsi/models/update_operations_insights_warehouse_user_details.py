@@ -74,7 +74,7 @@ class UpdateOperationsInsightsWarehouseUserDetails(object):
     def connection_password(self):
         """
         Gets the connection_password of this UpdateOperationsInsightsWarehouseUserDetails.
-        User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 
 
         :return: The connection_password of this UpdateOperationsInsightsWarehouseUserDetails.
@@ -86,7 +86,7 @@ class UpdateOperationsInsightsWarehouseUserDetails(object):
     def connection_password(self, connection_password):
         """
         Sets the connection_password of this UpdateOperationsInsightsWarehouseUserDetails.
-        User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 
 
         :param connection_password: The connection_password of this UpdateOperationsInsightsWarehouseUserDetails.

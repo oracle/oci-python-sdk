@@ -362,7 +362,7 @@ class HostInsight(object):
     def host_type(self):
         """
         Gets the host_type of this HostInsight.
-        Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+        Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
 
 
         :return: The host_type of this HostInsight.
@@ -374,7 +374,7 @@ class HostInsight(object):
     def host_type(self, host_type):
         """
         Sets the host_type of this HostInsight.
-        Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+        Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
 
 
         :param host_type: The host_type of this HostInsight.

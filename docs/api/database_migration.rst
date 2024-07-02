@@ -91,6 +91,10 @@ Database Migration
     oci.database_migration.models.MigrationObjectCollection
     oci.database_migration.models.MigrationObjectTypeSummary
     oci.database_migration.models.MigrationObjectTypeSummaryCollection
+    oci.database_migration.models.MigrationParameterBase
+    oci.database_migration.models.MigrationParameterDetails
+    oci.database_migration.models.MigrationParameterSummary
+    oci.database_migration.models.MigrationParameterSummaryCollection
     oci.database_migration.models.MigrationPhaseCollection
     oci.database_migration.models.MigrationPhaseSummary
     oci.database_migration.models.MigrationSummary

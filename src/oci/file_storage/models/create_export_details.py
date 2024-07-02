@@ -67,8 +67,9 @@ class CreateExportDetails(object):
     def export_options(self):
         """
         Gets the export_options of this CreateExportDetails.
-        Export options for the new export. If left unspecified,
-        defaults to:
+        Export options for the new export. For exports of mount targets with
+        IPv4 address, if client options are left unspecified, client options
+        would default to:
 
                [
                  {
@@ -82,6 +83,10 @@ class CreateExportDetails(object):
                     \"allowedAuth\": [\"SYS\"]
                   }
                ]
+
+          For exports of mount targets with IPv6 address, if client options are
+          left unspecified, client options would be an empty array, i.e. export
+          would not be visible to any clients.
 
           **Note:** Mount targets do not have Internet-routable IP
           addresses.  Therefore they will not be reachable from the
@@ -104,8 +109,9 @@ class CreateExportDetails(object):
     def export_options(self, export_options):
         """
         Sets the export_options of this CreateExportDetails.
-        Export options for the new export. If left unspecified,
-        defaults to:
+        Export options for the new export. For exports of mount targets with
+        IPv4 address, if client options are left unspecified, client options
+        would default to:
 
                [
                  {
@@ -119,6 +125,10 @@ class CreateExportDetails(object):
                     \"allowedAuth\": [\"SYS\"]
                   }
                ]
+
+          For exports of mount targets with IPv6 address, if client options are
+          left unspecified, client options would be an empty array, i.e. export
+          would not be visible to any clients.
 
           **Note:** Mount targets do not have Internet-routable IP
           addresses.  Therefore they will not be reachable from the

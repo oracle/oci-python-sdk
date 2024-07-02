@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DbServer(object):
     """
-    Details of the Exacc Db server resource. Applies to Exadata Cloud@Customer instances only.
+    Details of the Db server resource.
     """
 
     #: A constant which can be used with the lifecycle_state property of a DbServer.
@@ -205,7 +205,7 @@ class DbServer(object):
     def id(self):
         """
         Gets the id of this DbServer.
-        The `OCID`__ of the Exacc Db server.
+        The `OCID`__ of the Db server.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -219,7 +219,7 @@ class DbServer(object):
     def id(self, id):
         """
         Sets the id of this DbServer.
-        The `OCID`__ of the Exacc Db server.
+        The `OCID`__ of the Db server.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

@@ -355,7 +355,7 @@ class SnapshotSchedule(object):
         """
         Gets the hour_of_day of this SnapshotSchedule.
         The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot.
-        If not set, a value will be chosen at creation time.
+        If not set, the system chooses a value at creation time.
 
 
         :return: The hour_of_day of this SnapshotSchedule.
@@ -368,7 +368,7 @@ class SnapshotSchedule(object):
         """
         Sets the hour_of_day of this SnapshotSchedule.
         The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot.
-        If not set, a value will be chosen at creation time.
+        If not set, the system chooses a value at creation time.
 
 
         :param hour_of_day: The hour_of_day of this SnapshotSchedule.
@@ -382,6 +382,7 @@ class SnapshotSchedule(object):
         Gets the day_of_week of this SnapshotSchedule.
         The day of the week to create a scheduled snapshot.
         Used for WEEKLY snapshot schedules.
+        If not set, the system chooses a value at creation time.
 
         Allowed values for this property are: "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -398,6 +399,7 @@ class SnapshotSchedule(object):
         Sets the day_of_week of this SnapshotSchedule.
         The day of the week to create a scheduled snapshot.
         Used for WEEKLY snapshot schedules.
+        If not set, the system chooses a value at creation time.
 
 
         :param day_of_week: The day_of_week of this SnapshotSchedule.
@@ -415,6 +417,7 @@ class SnapshotSchedule(object):
         The day of the month to create a scheduled snapshot.
         If the day does not exist for the month, snapshot creation will be skipped.
         Used for MONTHLY and YEARLY snapshot schedules.
+        If not set, the system chooses a value at creation time.
 
 
         :return: The day_of_month of this SnapshotSchedule.
@@ -429,6 +432,7 @@ class SnapshotSchedule(object):
         The day of the month to create a scheduled snapshot.
         If the day does not exist for the month, snapshot creation will be skipped.
         Used for MONTHLY and YEARLY snapshot schedules.
+        If not set, the system chooses a value at creation time.
 
 
         :param day_of_month: The day_of_month of this SnapshotSchedule.
@@ -442,6 +446,7 @@ class SnapshotSchedule(object):
         Gets the month of this SnapshotSchedule.
         The month to create a scheduled snapshot.
         Used only for YEARLY snapshot schedules.
+        If not set, the system chooses a value at creation time.
 
         Allowed values for this property are: "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -458,6 +463,7 @@ class SnapshotSchedule(object):
         Sets the month of this SnapshotSchedule.
         The month to create a scheduled snapshot.
         Used only for YEARLY snapshot schedules.
+        If not set, the system chooses a value at creation time.
 
 
         :param month: The month of this SnapshotSchedule.

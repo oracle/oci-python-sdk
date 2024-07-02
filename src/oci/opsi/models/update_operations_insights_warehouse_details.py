@@ -67,7 +67,7 @@ class UpdateOperationsInsightsWarehouseDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateOperationsInsightsWarehouseDetails.
-        User-friedly name of Operations Insights Warehouse that does not have to be unique.
+        User-friedly name of Ops Insights Warehouse that does not have to be unique.
 
 
         :return: The display_name of this UpdateOperationsInsightsWarehouseDetails.
@@ -79,7 +79,7 @@ class UpdateOperationsInsightsWarehouseDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateOperationsInsightsWarehouseDetails.
-        User-friedly name of Operations Insights Warehouse that does not have to be unique.
+        User-friedly name of Ops Insights Warehouse that does not have to be unique.
 
 
         :param display_name: The display_name of this UpdateOperationsInsightsWarehouseDetails.

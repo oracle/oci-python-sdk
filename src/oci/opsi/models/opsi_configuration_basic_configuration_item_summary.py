@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OpsiConfigurationBasicConfigurationItemSummary(OpsiConfigurationConfigurationItemSummary):
     """
-    Basic configuration item summary. Value and defaultValue fields will contain the custom value stored in the resource and default value from Operations Insights respectively.
+    Basic configuration item summary. Value and defaultValue fields will contain the custom value stored in the resource and default value from Ops Insights respectively.
     """
 
     def __init__(self, **kwargs):

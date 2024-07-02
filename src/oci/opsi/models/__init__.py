@@ -216,6 +216,9 @@ from .host_details import HostDetails
 from .host_entities import HostEntities
 from .host_filesystem_configuration import HostFilesystemConfiguration
 from .host_filesystem_usage import HostFilesystemUsage
+from .host_gpu_configuration import HostGpuConfiguration
+from .host_gpu_processes import HostGpuProcesses
+from .host_gpu_usage import HostGpuUsage
 from .host_hardware_configuration import HostHardwareConfiguration
 from .host_importable_agent_entity_summary import HostImportableAgentEntitySummary
 from .host_insight import HostInsight
@@ -228,16 +231,19 @@ from .host_insights_data_object import HostInsightsDataObject
 from .host_insights_data_object_summary import HostInsightsDataObjectSummary
 from .host_instance_map import HostInstanceMap
 from .host_memory_configuration import HostMemoryConfiguration
+from .host_memory_recommendations import HostMemoryRecommendations
 from .host_memory_statistics import HostMemoryStatistics
 from .host_memory_usage import HostMemoryUsage
 from .host_network_activity_summary import HostNetworkActivitySummary
 from .host_network_configuration import HostNetworkConfiguration
+from .host_network_recommendations import HostNetworkRecommendations
 from .host_network_statistics import HostNetworkStatistics
 from .host_performance_metric_group import HostPerformanceMetricGroup
 from .host_product import HostProduct
 from .host_resource_allocation import HostResourceAllocation
 from .host_resource_capacity_trend_aggregation import HostResourceCapacityTrendAggregation
 from .host_resource_statistics import HostResourceStatistics
+from .host_storage_recommendations import HostStorageRecommendations
 from .host_storage_statistics import HostStorageStatistics
 from .host_top_processes import HostTopProcesses
 from .hosted_entity_collection import HostedEntityCollection
@@ -660,6 +666,9 @@ opsi_type_mapping = {
     "HostEntities": HostEntities,
     "HostFilesystemConfiguration": HostFilesystemConfiguration,
     "HostFilesystemUsage": HostFilesystemUsage,
+    "HostGpuConfiguration": HostGpuConfiguration,
+    "HostGpuProcesses": HostGpuProcesses,
+    "HostGpuUsage": HostGpuUsage,
     "HostHardwareConfiguration": HostHardwareConfiguration,
     "HostImportableAgentEntitySummary": HostImportableAgentEntitySummary,
     "HostInsight": HostInsight,
@@ -672,16 +681,19 @@ opsi_type_mapping = {
     "HostInsightsDataObjectSummary": HostInsightsDataObjectSummary,
     "HostInstanceMap": HostInstanceMap,
     "HostMemoryConfiguration": HostMemoryConfiguration,
+    "HostMemoryRecommendations": HostMemoryRecommendations,
     "HostMemoryStatistics": HostMemoryStatistics,
     "HostMemoryUsage": HostMemoryUsage,
     "HostNetworkActivitySummary": HostNetworkActivitySummary,
     "HostNetworkConfiguration": HostNetworkConfiguration,
+    "HostNetworkRecommendations": HostNetworkRecommendations,
     "HostNetworkStatistics": HostNetworkStatistics,
     "HostPerformanceMetricGroup": HostPerformanceMetricGroup,
     "HostProduct": HostProduct,
     "HostResourceAllocation": HostResourceAllocation,
     "HostResourceCapacityTrendAggregation": HostResourceCapacityTrendAggregation,
     "HostResourceStatistics": HostResourceStatistics,
+    "HostStorageRecommendations": HostStorageRecommendations,
     "HostStorageStatistics": HostStorageStatistics,
     "HostTopProcesses": HostTopProcesses,
     "HostedEntityCollection": HostedEntityCollection,

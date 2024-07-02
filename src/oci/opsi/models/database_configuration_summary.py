@@ -290,7 +290,7 @@ class DatabaseConfigurationSummary(object):
     def database_type(self):
         """
         **[Required]** Gets the database_type of this DatabaseConfigurationSummary.
-        Operations Insights internal representation of the database type.
+        Ops Insights internal representation of the database type.
 
 
         :return: The database_type of this DatabaseConfigurationSummary.
@@ -302,7 +302,7 @@ class DatabaseConfigurationSummary(object):
     def database_type(self, database_type):
         """
         Sets the database_type of this DatabaseConfigurationSummary.
-        Operations Insights internal representation of the database type.
+        Ops Insights internal representation of the database type.
 
 
         :param database_type: The database_type of this DatabaseConfigurationSummary.

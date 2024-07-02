@@ -35,6 +35,10 @@ class FileSystem(object):
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
 
     #: A constant which can be used with the lifecycle_state property of a FileSystem.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the lifecycle_state property of a FileSystem.
     #: This constant has a value of "DELETING"
     LIFECYCLE_STATE_DELETING = "DELETING"
 
@@ -45,6 +49,18 @@ class FileSystem(object):
     #: A constant which can be used with the lifecycle_state property of a FileSystem.
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
+
+    #: A constant which can be used with the clone_attach_status property of a FileSystem.
+    #: This constant has a value of "ATTACHED"
+    CLONE_ATTACH_STATUS_ATTACHED = "ATTACHED"
+
+    #: A constant which can be used with the clone_attach_status property of a FileSystem.
+    #: This constant has a value of "DETACHING"
+    CLONE_ATTACH_STATUS_DETACHING = "DETACHING"
+
+    #: A constant which can be used with the clone_attach_status property of a FileSystem.
+    #: This constant has a value of "DETACHED"
+    CLONE_ATTACH_STATUS_DETACHED = "DETACHED"
 
     def __init__(self, **kwargs):
         """
@@ -73,7 +89,7 @@ class FileSystem(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this FileSystem.
-            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -104,6 +120,16 @@ class FileSystem(object):
         :param is_hydrated:
             The value to assign to the is_hydrated property of this FileSystem.
         :type is_hydrated: bool
+
+        :param clone_count:
+            The value to assign to the clone_count property of this FileSystem.
+        :type clone_count: int
+
+        :param clone_attach_status:
+            The value to assign to the clone_attach_status property of this FileSystem.
+            Allowed values for this property are: "ATTACHED", "DETACHING", "DETACHED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type clone_attach_status: str
 
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this FileSystem.
@@ -136,6 +162,8 @@ class FileSystem(object):
             'source_details': 'SourceDetails',
             'is_clone_parent': 'bool',
             'is_hydrated': 'bool',
+            'clone_count': 'int',
+            'clone_attach_status': 'str',
             'lifecycle_details': 'str',
             'is_targetable': 'bool',
             'replication_target_id': 'str',
@@ -156,6 +184,8 @@ class FileSystem(object):
             'source_details': 'sourceDetails',
             'is_clone_parent': 'isCloneParent',
             'is_hydrated': 'isHydrated',
+            'clone_count': 'cloneCount',
+            'clone_attach_status': 'cloneAttachStatus',
             'lifecycle_details': 'lifecycleDetails',
             'is_targetable': 'isTargetable',
             'replication_target_id': 'replicationTargetId',
@@ -175,6 +205,8 @@ class FileSystem(object):
         self._source_details = None
         self._is_clone_parent = None
         self._is_hydrated = None
+        self._clone_count = None
+        self._clone_attach_status = None
         self._lifecycle_details = None
         self._is_targetable = None
         self._replication_target_id = None
@@ -338,7 +370,7 @@ class FileSystem(object):
         **[Required]** Gets the lifecycle_state of this FileSystem.
         The current state of the file system.
 
-        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -357,7 +389,7 @@ class FileSystem(object):
         :param lifecycle_state: The lifecycle_state of this FileSystem.
         :type: str
         """
-        allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -573,6 +605,60 @@ class FileSystem(object):
         :type: bool
         """
         self._is_hydrated = is_hydrated
+
+    @property
+    def clone_count(self):
+        """
+        Gets the clone_count of this FileSystem.
+        Specifies the total number of children of a file system.
+
+
+        :return: The clone_count of this FileSystem.
+        :rtype: int
+        """
+        return self._clone_count
+
+    @clone_count.setter
+    def clone_count(self, clone_count):
+        """
+        Sets the clone_count of this FileSystem.
+        Specifies the total number of children of a file system.
+
+
+        :param clone_count: The clone_count of this FileSystem.
+        :type: int
+        """
+        self._clone_count = clone_count
+
+    @property
+    def clone_attach_status(self):
+        """
+        Gets the clone_attach_status of this FileSystem.
+        Specifies whether the file system is attached to its parent file system.
+
+        Allowed values for this property are: "ATTACHED", "DETACHING", "DETACHED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The clone_attach_status of this FileSystem.
+        :rtype: str
+        """
+        return self._clone_attach_status
+
+    @clone_attach_status.setter
+    def clone_attach_status(self, clone_attach_status):
+        """
+        Sets the clone_attach_status of this FileSystem.
+        Specifies whether the file system is attached to its parent file system.
+
+
+        :param clone_attach_status: The clone_attach_status of this FileSystem.
+        :type: str
+        """
+        allowed_values = ["ATTACHED", "DETACHING", "DETACHED"]
+        if not value_allowed_none_or_none_sentinel(clone_attach_status, allowed_values):
+            clone_attach_status = 'UNKNOWN_ENUM_VALUE'
+        self._clone_attach_status = clone_attach_status
 
     @property
     def lifecycle_details(self):

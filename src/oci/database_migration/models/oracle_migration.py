@@ -122,6 +122,10 @@ class OracleMigration(Migration):
             The value to assign to the source_container_database_connection_id property of this OracleMigration.
         :type source_container_database_connection_id: str
 
+        :param advanced_parameters:
+            The value to assign to the advanced_parameters property of this OracleMigration.
+        :type advanced_parameters: list[oci.database_migration.models.MigrationParameterDetails]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -147,7 +151,8 @@ class OracleMigration(Migration):
             'advisor_settings': 'OracleAdvisorSettings',
             'hub_details': 'GoldenGateHubDetails',
             'ggs_details': 'OracleGgsDeploymentDetails',
-            'source_container_database_connection_id': 'str'
+            'source_container_database_connection_id': 'str',
+            'advanced_parameters': 'list[MigrationParameterDetails]'
         }
 
         self.attribute_map = {
@@ -174,7 +179,8 @@ class OracleMigration(Migration):
             'advisor_settings': 'advisorSettings',
             'hub_details': 'hubDetails',
             'ggs_details': 'ggsDetails',
-            'source_container_database_connection_id': 'sourceContainerDatabaseConnectionId'
+            'source_container_database_connection_id': 'sourceContainerDatabaseConnectionId',
+            'advanced_parameters': 'advancedParameters'
         }
 
         self._id = None
@@ -201,6 +207,7 @@ class OracleMigration(Migration):
         self._hub_details = None
         self._ggs_details = None
         self._source_container_database_connection_id = None
+        self._advanced_parameters = None
         self._database_combination = 'ORACLE'
 
     @property
@@ -326,6 +333,30 @@ class OracleMigration(Migration):
         :type: str
         """
         self._source_container_database_connection_id = source_container_database_connection_id
+
+    @property
+    def advanced_parameters(self):
+        """
+        Gets the advanced_parameters of this OracleMigration.
+        List of Migration Parameter objects.
+
+
+        :return: The advanced_parameters of this OracleMigration.
+        :rtype: list[oci.database_migration.models.MigrationParameterDetails]
+        """
+        return self._advanced_parameters
+
+    @advanced_parameters.setter
+    def advanced_parameters(self, advanced_parameters):
+        """
+        Sets the advanced_parameters of this OracleMigration.
+        List of Migration Parameter objects.
+
+
+        :param advanced_parameters: The advanced_parameters of this OracleMigration.
+        :type: list[oci.database_migration.models.MigrationParameterDetails]
+        """
+        self._advanced_parameters = advanced_parameters
 
     def __repr__(self):
         return formatted_flat_dict(self)

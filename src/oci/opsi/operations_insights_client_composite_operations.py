@@ -411,7 +411,7 @@ class OperationsInsightsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str operations_insights_warehouse_id: (required)
-            Unique Operations Insights Warehouse identifier
+            Unique Ops Insights Warehouse identifier
 
         :param oci.opsi.models.ChangeOperationsInsightsWarehouseCompartmentDetails change_operations_insights_warehouse_compartment_details: (required)
             The information to be updated.
@@ -734,7 +734,7 @@ class OperationsInsightsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.opsi.models.CreateHostInsightDetails create_host_insight_details: (required)
-            Details for the host for which a Host Insight resource will be created in Operations Insights.
+            Details for the host for which a Host Insight resource will be created in Ops Insights.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.opsi.models.WorkRequest.status`
@@ -773,7 +773,7 @@ class OperationsInsightsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.opsi.models.CreateNewsReportDetails create_news_report_details: (required)
-            Details for the news report that will be created in Operations Insights.
+            Details for the news report that will be created in Ops Insights.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.opsi.models.WorkRequest.status`
@@ -851,7 +851,7 @@ class OperationsInsightsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.opsi.models.CreateOperationsInsightsWarehouseDetails create_operations_insights_warehouse_details: (required)
-            Details using which an Operations Insights Warehouse resource will be created in Operations Insights.
+            Details using which an Ops Insights Warehouse resource will be created in Ops Insights.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.opsi.models.WorkRequest.status`
@@ -1346,7 +1346,7 @@ class OperationsInsightsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str operations_insights_warehouse_id: (required)
-            Unique Operations Insights Warehouse identifier
+            Unique Ops Insights Warehouse identifier
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.opsi.models.WorkRequest.status`
@@ -1849,7 +1849,7 @@ class OperationsInsightsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.opsi.models.EnableHostInsightDetails enable_host_insight_details: (required)
-            Details for the host to be enabled in Operations Insights.
+            Details for the host to be enabled in Ops Insights.
 
         :param str host_insight_id: (required)
             Unique host insight identifier
@@ -1891,7 +1891,7 @@ class OperationsInsightsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str operations_insights_warehouse_id: (required)
-            Unique Operations Insights Warehouse identifier
+            Unique Ops Insights Warehouse identifier
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.opsi.models.WorkRequest.status`
@@ -2268,7 +2268,7 @@ class OperationsInsightsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str operations_insights_warehouse_id: (required)
-            Unique Operations Insights Warehouse identifier
+            Unique Ops Insights Warehouse identifier
 
         :param oci.opsi.models.UpdateOperationsInsightsWarehouseDetails update_operations_insights_warehouse_details: (required)
             The configuration to be updated.

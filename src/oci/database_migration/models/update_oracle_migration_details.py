@@ -75,6 +75,10 @@ class UpdateOracleMigrationDetails(UpdateMigrationDetails):
             The value to assign to the ggs_details property of this UpdateOracleMigrationDetails.
         :type ggs_details: oci.database_migration.models.UpdateOracleGgsDeploymentDetails
 
+        :param advanced_parameters:
+            The value to assign to the advanced_parameters property of this UpdateOracleMigrationDetails.
+        :type advanced_parameters: list[oci.database_migration.models.MigrationParameterDetails]
+
         :param source_container_database_connection_id:
             The value to assign to the source_container_database_connection_id property of this UpdateOracleMigrationDetails.
         :type source_container_database_connection_id: str
@@ -94,6 +98,7 @@ class UpdateOracleMigrationDetails(UpdateMigrationDetails):
             'advisor_settings': 'UpdateOracleAdvisorSettings',
             'hub_details': 'UpdateGoldenGateHubDetails',
             'ggs_details': 'UpdateOracleGgsDeploymentDetails',
+            'advanced_parameters': 'list[MigrationParameterDetails]',
             'source_container_database_connection_id': 'str'
         }
 
@@ -111,6 +116,7 @@ class UpdateOracleMigrationDetails(UpdateMigrationDetails):
             'advisor_settings': 'advisorSettings',
             'hub_details': 'hubDetails',
             'ggs_details': 'ggsDetails',
+            'advanced_parameters': 'advancedParameters',
             'source_container_database_connection_id': 'sourceContainerDatabaseConnectionId'
         }
 
@@ -127,6 +133,7 @@ class UpdateOracleMigrationDetails(UpdateMigrationDetails):
         self._advisor_settings = None
         self._hub_details = None
         self._ggs_details = None
+        self._advanced_parameters = None
         self._source_container_database_connection_id = None
         self._database_combination = 'ORACLE'
 
@@ -229,6 +236,30 @@ class UpdateOracleMigrationDetails(UpdateMigrationDetails):
         :type: oci.database_migration.models.UpdateOracleGgsDeploymentDetails
         """
         self._ggs_details = ggs_details
+
+    @property
+    def advanced_parameters(self):
+        """
+        Gets the advanced_parameters of this UpdateOracleMigrationDetails.
+        List of Migration Parameter objects.
+
+
+        :return: The advanced_parameters of this UpdateOracleMigrationDetails.
+        :rtype: list[oci.database_migration.models.MigrationParameterDetails]
+        """
+        return self._advanced_parameters
+
+    @advanced_parameters.setter
+    def advanced_parameters(self, advanced_parameters):
+        """
+        Sets the advanced_parameters of this UpdateOracleMigrationDetails.
+        List of Migration Parameter objects.
+
+
+        :param advanced_parameters: The advanced_parameters of this UpdateOracleMigrationDetails.
+        :type: list[oci.database_migration.models.MigrationParameterDetails]
+        """
+        self._advanced_parameters = advanced_parameters
 
     @property
     def source_container_database_connection_id(self):

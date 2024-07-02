@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DbServerSummary(object):
     """
-    Details of the Exadata Cloud@Customer Db server.
+    Details of the Db server.
     """
 
     #: A constant which can be used with the lifecycle_state property of a DbServerSummary.
@@ -205,7 +205,7 @@ class DbServerSummary(object):
     def id(self):
         """
         Gets the id of this DbServerSummary.
-        The `OCID`__ of the Exacc Db server.
+        The `OCID`__ of the Db server.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -219,7 +219,7 @@ class DbServerSummary(object):
     def id(self, id):
         """
         Sets the id of this DbServerSummary.
-        The `OCID`__ of the Exacc Db server.
+        The `OCID`__ of the Db server.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

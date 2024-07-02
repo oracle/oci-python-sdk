@@ -23,7 +23,7 @@ class HostTopProcesses(HostPerformanceMetricGroup):
 
         :param metric_name:
             The value to assign to the metric_name property of this HostTopProcesses.
-            Allowed values for this property are: "HOST_CPU_USAGE", "HOST_MEMORY_USAGE", "HOST_NETWORK_ACTIVITY_SUMMARY", "HOST_TOP_PROCESSES", "HOST_FILESYSTEM_USAGE"
+            Allowed values for this property are: "HOST_CPU_USAGE", "HOST_MEMORY_USAGE", "HOST_NETWORK_ACTIVITY_SUMMARY", "HOST_TOP_PROCESSES", "HOST_FILESYSTEM_USAGE", "HOST_GPU_USAGE", "HOST_GPU_PROCESSES"
         :type metric_name: str
 
         :param time_collected:
@@ -70,6 +70,10 @@ class HostTopProcesses(HostPerformanceMetricGroup):
             The value to assign to the total_processes property of this HostTopProcesses.
         :type total_processes: float
 
+        :param container_id:
+            The value to assign to the container_id property of this HostTopProcesses.
+        :type container_id: str
+
         """
         self.swagger_types = {
             'metric_name': 'str',
@@ -83,7 +87,8 @@ class HostTopProcesses(HostPerformanceMetricGroup):
             'virtual_memory_in_mbs': 'float',
             'physical_memory_in_mbs': 'float',
             'start_time': 'datetime',
-            'total_processes': 'float'
+            'total_processes': 'float',
+            'container_id': 'str'
         }
 
         self.attribute_map = {
@@ -98,7 +103,8 @@ class HostTopProcesses(HostPerformanceMetricGroup):
             'virtual_memory_in_mbs': 'virtualMemoryInMBs',
             'physical_memory_in_mbs': 'physicalMemoryInMBs',
             'start_time': 'startTime',
-            'total_processes': 'totalProcesses'
+            'total_processes': 'totalProcesses',
+            'container_id': 'containerId'
         }
 
         self._metric_name = None
@@ -113,6 +119,7 @@ class HostTopProcesses(HostPerformanceMetricGroup):
         self._physical_memory_in_mbs = None
         self._start_time = None
         self._total_processes = None
+        self._container_id = None
         self._metric_name = 'HOST_TOP_PROCESSES'
 
     @property
@@ -356,6 +363,30 @@ class HostTopProcesses(HostPerformanceMetricGroup):
         :type: float
         """
         self._total_processes = total_processes
+
+    @property
+    def container_id(self):
+        """
+        Gets the container_id of this HostTopProcesses.
+        Container id if this process corresponds to a running container in the host
+
+
+        :return: The container_id of this HostTopProcesses.
+        :rtype: str
+        """
+        return self._container_id
+
+    @container_id.setter
+    def container_id(self, container_id):
+        """
+        Sets the container_id of this HostTopProcesses.
+        Container id if this process corresponds to a running container in the host
+
+
+        :param container_id: The container_id of this HostTopProcesses.
+        :type: str
+        """
+        self._container_id = container_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

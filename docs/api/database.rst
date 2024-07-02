@@ -85,9 +85,14 @@ Database
     oci.database.models.ChangeDataguardRoleDetails
     oci.database.models.ChangeDisasterRecoveryConfigurationDetails
     oci.database.models.ChangeExadataInfrastructureCompartmentDetails
+    oci.database.models.ChangeExadbVmClusterCompartmentDetails
+    oci.database.models.ChangeExascaleDbStorageVaultCompartmentDetails
     oci.database.models.ChangeKeyStoreCompartmentDetails
     oci.database.models.ChangeKeyStoreTypeDetails
     oci.database.models.ChangeVmClusterCompartmentDetails
+    oci.database.models.CloudAutomationApplyUpdateTimePreference
+    oci.database.models.CloudAutomationFreezePeriod
+    oci.database.models.CloudAutomationUpdateDetails
     oci.database.models.CloudAutonomousVmCluster
     oci.database.models.CloudAutonomousVmClusterResourceDetails
     oci.database.models.CloudAutonomousVmClusterResourceUsage
@@ -154,6 +159,8 @@ Database
     oci.database.models.CreateDbHomeWithVmClusterIdDetails
     oci.database.models.CreateDbHomeWithVmClusterIdFromBackupDetails
     oci.database.models.CreateExadataInfrastructureDetails
+    oci.database.models.CreateExadbVmClusterDetails
+    oci.database.models.CreateExascaleDbStorageVaultDetails
     oci.database.models.CreateExternalBackupJobDetails
     oci.database.models.CreateExternalContainerDatabaseDetails
     oci.database.models.CreateExternalDatabaseConnectorDetails
@@ -207,6 +214,7 @@ Database
     oci.database.models.DbIormConfig
     oci.database.models.DbIormConfigUpdateDetail
     oci.database.models.DbNode
+    oci.database.models.DbNodeDetails
     oci.database.models.DbNodeSummary
     oci.database.models.DbServer
     oci.database.models.DbServerDetails
@@ -250,6 +258,17 @@ Database
     oci.database.models.ExadataInfrastructureUnAllocatedResources
     oci.database.models.ExadataIormConfig
     oci.database.models.ExadataIormConfigUpdateDetails
+    oci.database.models.ExadbVmCluster
+    oci.database.models.ExadbVmClusterStorageDetails
+    oci.database.models.ExadbVmClusterSummary
+    oci.database.models.ExadbVmClusterUpdate
+    oci.database.models.ExadbVmClusterUpdateHistoryEntry
+    oci.database.models.ExadbVmClusterUpdateHistoryEntrySummary
+    oci.database.models.ExadbVmClusterUpdateSummary
+    oci.database.models.ExascaleDbStorageDetails
+    oci.database.models.ExascaleDbStorageInputDetails
+    oci.database.models.ExascaleDbStorageVault
+    oci.database.models.ExascaleDbStorageVaultSummary
     oci.database.models.ExternalBackupJob
     oci.database.models.ExternalContainerDatabase
     oci.database.models.ExternalContainerDatabaseSummary
@@ -268,6 +287,7 @@ Database
     oci.database.models.FlexComponentSummary
     oci.database.models.GenerateAutonomousDatabaseWalletDetails
     oci.database.models.GenerateRecommendedNetworkDetails
+    oci.database.models.GiMinorVersionSummary
     oci.database.models.GiVersionSummary
     oci.database.models.InfoForNetworkGenDetails
     oci.database.models.InfrastructureTargetVersion
@@ -322,6 +342,7 @@ Database
     oci.database.models.ReinstateDataGuardAssociationDetails
     oci.database.models.RemoteClonePluggableDatabaseDetails
     oci.database.models.RemoveVirtualMachineFromCloudVmClusterDetails
+    oci.database.models.RemoveVirtualMachineFromExadbVmClusterDetails
     oci.database.models.RemoveVirtualMachineFromVmClusterDetails
     oci.database.models.ResizeVmClusterNetworkDetails
     oci.database.models.ResourcePoolShapeCollection
@@ -366,6 +387,8 @@ Database
     oci.database.models.UpdateDbSystemDetails
     oci.database.models.UpdateDetails
     oci.database.models.UpdateExadataInfrastructureDetails
+    oci.database.models.UpdateExadbVmClusterDetails
+    oci.database.models.UpdateExascaleDbStorageVaultDetails
     oci.database.models.UpdateExternalContainerDatabaseDetails
     oci.database.models.UpdateExternalDatabaseConnectorDetails
     oci.database.models.UpdateExternalDatabaseDetailsBase

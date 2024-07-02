@@ -83,6 +83,10 @@ class OptimizerDatabase(object):
     #: This constant has a value of "AUTONOMOUS"
     DB_DEPLOYMENT_TYPE_AUTONOMOUS = "AUTONOMOUS"
 
+    #: A constant which can be used with the db_deployment_type property of a OptimizerDatabase.
+    #: This constant has a value of "EXADATA_XS"
+    DB_DEPLOYMENT_TYPE_EXADATA_XS = "EXADATA_XS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new OptimizerDatabase object with values from keyword arguments.
@@ -110,7 +114,7 @@ class OptimizerDatabase(object):
 
         :param db_deployment_type:
             The value to assign to the db_deployment_type property of this OptimizerDatabase.
-            Allowed values for this property are: "ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", "AUTONOMOUS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", "AUTONOMOUS", "EXADATA_XS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type db_deployment_type: str
 
@@ -271,7 +275,7 @@ class OptimizerDatabase(object):
         **[Required]** Gets the db_deployment_type of this OptimizerDatabase.
         The infrastructure used to deploy the Oracle Database.
 
-        Allowed values for this property are: "ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", "AUTONOMOUS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", "AUTONOMOUS", "EXADATA_XS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -290,7 +294,7 @@ class OptimizerDatabase(object):
         :param db_deployment_type: The db_deployment_type of this OptimizerDatabase.
         :type: str
         """
-        allowed_values = ["ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", "AUTONOMOUS"]
+        allowed_values = ["ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", "AUTONOMOUS", "EXADATA_XS"]
         if not value_allowed_none_or_none_sentinel(db_deployment_type, allowed_values):
             db_deployment_type = 'UNKNOWN_ENUM_VALUE'
         self._db_deployment_type = db_deployment_type

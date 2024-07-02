@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequests(object):
     """
-    Logical grouping used for Operations Insights Work Request operations.
+    Logical grouping used for Ops Insights Work Request operations.
     """
 
     def __init__(self, **kwargs):

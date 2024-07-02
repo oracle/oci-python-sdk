@@ -229,7 +229,7 @@ class OperationsInsightsWarehouse(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this OperationsInsightsWarehouse.
-        User-friedly name of Operations Insights Warehouse that does not have to be unique.
+        User-friedly name of Ops Insights Warehouse that does not have to be unique.
 
 
         :return: The display_name of this OperationsInsightsWarehouse.
@@ -241,7 +241,7 @@ class OperationsInsightsWarehouse(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this OperationsInsightsWarehouse.
-        User-friedly name of Operations Insights Warehouse that does not have to be unique.
+        User-friedly name of Ops Insights Warehouse that does not have to be unique.
 
 
         :param display_name: The display_name of this OperationsInsightsWarehouse.
@@ -373,7 +373,7 @@ class OperationsInsightsWarehouse(object):
     def operations_insights_tenancy_id(self):
         """
         Gets the operations_insights_tenancy_id of this OperationsInsightsWarehouse.
-        Tenancy Identifier of Operations Insights service
+        Tenancy Identifier of Ops Insights service
 
 
         :return: The operations_insights_tenancy_id of this OperationsInsightsWarehouse.
@@ -385,7 +385,7 @@ class OperationsInsightsWarehouse(object):
     def operations_insights_tenancy_id(self, operations_insights_tenancy_id):
         """
         Sets the operations_insights_tenancy_id of this OperationsInsightsWarehouse.
-        Tenancy Identifier of Operations Insights service
+        Tenancy Identifier of Ops Insights service
 
 
         :param operations_insights_tenancy_id: The operations_insights_tenancy_id of this OperationsInsightsWarehouse.
@@ -397,7 +397,7 @@ class OperationsInsightsWarehouse(object):
     def time_last_wallet_rotated(self):
         """
         Gets the time_last_wallet_rotated of this OperationsInsightsWarehouse.
-        The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+        The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
 
 
         :return: The time_last_wallet_rotated of this OperationsInsightsWarehouse.
@@ -409,7 +409,7 @@ class OperationsInsightsWarehouse(object):
     def time_last_wallet_rotated(self, time_last_wallet_rotated):
         """
         Sets the time_last_wallet_rotated of this OperationsInsightsWarehouse.
-        The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+        The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
 
 
         :param time_last_wallet_rotated: The time_last_wallet_rotated of this OperationsInsightsWarehouse.

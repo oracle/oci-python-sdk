@@ -15,6 +15,14 @@ class CreateFileSystemDetails(object):
     Details for creating the file system.
     """
 
+    #: A constant which can be used with the clone_attach_status property of a CreateFileSystemDetails.
+    #: This constant has a value of "DETACH"
+    CLONE_ATTACH_STATUS_DETACH = "DETACH"
+
+    #: A constant which can be used with the clone_attach_status property of a CreateFileSystemDetails.
+    #: This constant has a value of "ATTACH"
+    CLONE_ATTACH_STATUS_ATTACH = "ATTACH"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateFileSystemDetails object with values from keyword arguments.
@@ -48,6 +56,11 @@ class CreateFileSystemDetails(object):
             The value to assign to the source_snapshot_id property of this CreateFileSystemDetails.
         :type source_snapshot_id: str
 
+        :param clone_attach_status:
+            The value to assign to the clone_attach_status property of this CreateFileSystemDetails.
+            Allowed values for this property are: "DETACH", "ATTACH"
+        :type clone_attach_status: str
+
         :param filesystem_snapshot_policy_id:
             The value to assign to the filesystem_snapshot_policy_id property of this CreateFileSystemDetails.
         :type filesystem_snapshot_policy_id: str
@@ -61,6 +74,7 @@ class CreateFileSystemDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'kms_key_id': 'str',
             'source_snapshot_id': 'str',
+            'clone_attach_status': 'str',
             'filesystem_snapshot_policy_id': 'str'
         }
 
@@ -72,6 +86,7 @@ class CreateFileSystemDetails(object):
             'defined_tags': 'definedTags',
             'kms_key_id': 'kmsKeyId',
             'source_snapshot_id': 'sourceSnapshotId',
+            'clone_attach_status': 'cloneAttachStatus',
             'filesystem_snapshot_policy_id': 'filesystemSnapshotPolicyId'
         }
 
@@ -82,6 +97,7 @@ class CreateFileSystemDetails(object):
         self._defined_tags = None
         self._kms_key_id = None
         self._source_snapshot_id = None
+        self._clone_attach_status = None
         self._filesystem_snapshot_policy_id = None
 
     @property
@@ -295,6 +311,41 @@ class CreateFileSystemDetails(object):
         :type: str
         """
         self._source_snapshot_id = source_snapshot_id
+
+    @property
+    def clone_attach_status(self):
+        """
+        Gets the clone_attach_status of this CreateFileSystemDetails.
+        Specifies whether the clone file system is attached to its parent file system.
+        If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot
+        specified by sourceSnapshotId, else will remain attached to its parent.
+
+        Allowed values for this property are: "DETACH", "ATTACH"
+
+
+        :return: The clone_attach_status of this CreateFileSystemDetails.
+        :rtype: str
+        """
+        return self._clone_attach_status
+
+    @clone_attach_status.setter
+    def clone_attach_status(self, clone_attach_status):
+        """
+        Sets the clone_attach_status of this CreateFileSystemDetails.
+        Specifies whether the clone file system is attached to its parent file system.
+        If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot
+        specified by sourceSnapshotId, else will remain attached to its parent.
+
+
+        :param clone_attach_status: The clone_attach_status of this CreateFileSystemDetails.
+        :type: str
+        """
+        allowed_values = ["DETACH", "ATTACH"]
+        if not value_allowed_none_or_none_sentinel(clone_attach_status, allowed_values):
+            raise ValueError(
+                f"Invalid value for `clone_attach_status`, must be None or one of {allowed_values}"
+            )
+        self._clone_attach_status = clone_attach_status
 
     @property
     def filesystem_snapshot_policy_id(self):

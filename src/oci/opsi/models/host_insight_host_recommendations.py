@@ -19,18 +19,33 @@ class HostInsightHostRecommendations(object):
     #: This constant has a value of "HOST_CPU_RECOMMENDATIONS"
     METRIC_RECOMMENDATION_NAME_HOST_CPU_RECOMMENDATIONS = "HOST_CPU_RECOMMENDATIONS"
 
+    #: A constant which can be used with the metric_recommendation_name property of a HostInsightHostRecommendations.
+    #: This constant has a value of "HOST_MEMORY_RECOMMENDATIONS"
+    METRIC_RECOMMENDATION_NAME_HOST_MEMORY_RECOMMENDATIONS = "HOST_MEMORY_RECOMMENDATIONS"
+
+    #: A constant which can be used with the metric_recommendation_name property of a HostInsightHostRecommendations.
+    #: This constant has a value of "HOST_NETWORK_RECOMMENDATIONS"
+    METRIC_RECOMMENDATION_NAME_HOST_NETWORK_RECOMMENDATIONS = "HOST_NETWORK_RECOMMENDATIONS"
+
+    #: A constant which can be used with the metric_recommendation_name property of a HostInsightHostRecommendations.
+    #: This constant has a value of "HOST_STORAGE_RECOMMENDATIONS"
+    METRIC_RECOMMENDATION_NAME_HOST_STORAGE_RECOMMENDATIONS = "HOST_STORAGE_RECOMMENDATIONS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new HostInsightHostRecommendations object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.opsi.models.HostCpuRecommendations`
+        * :class:`~oci.opsi.models.HostNetworkRecommendations`
+        * :class:`~oci.opsi.models.HostMemoryRecommendations`
+        * :class:`~oci.opsi.models.HostStorageRecommendations`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param metric_recommendation_name:
             The value to assign to the metric_recommendation_name property of this HostInsightHostRecommendations.
-            Allowed values for this property are: "HOST_CPU_RECOMMENDATIONS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "HOST_CPU_RECOMMENDATIONS", "HOST_MEMORY_RECOMMENDATIONS", "HOST_NETWORK_RECOMMENDATIONS", "HOST_STORAGE_RECOMMENDATIONS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type metric_recommendation_name: str
 
@@ -55,6 +70,15 @@ class HostInsightHostRecommendations(object):
 
         if type == 'HOST_CPU_RECOMMENDATIONS':
             return 'HostCpuRecommendations'
+
+        if type == 'HOST_NETWORK_RECOMMENDATIONS':
+            return 'HostNetworkRecommendations'
+
+        if type == 'HOST_MEMORY_RECOMMENDATIONS':
+            return 'HostMemoryRecommendations'
+
+        if type == 'HOST_STORAGE_RECOMMENDATIONS':
+            return 'HostStorageRecommendations'
         else:
             return 'HostInsightHostRecommendations'
 
@@ -64,7 +88,7 @@ class HostInsightHostRecommendations(object):
         **[Required]** Gets the metric_recommendation_name of this HostInsightHostRecommendations.
         Name of recommendations depending of resource metric received.
 
-        Allowed values for this property are: "HOST_CPU_RECOMMENDATIONS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "HOST_CPU_RECOMMENDATIONS", "HOST_MEMORY_RECOMMENDATIONS", "HOST_NETWORK_RECOMMENDATIONS", "HOST_STORAGE_RECOMMENDATIONS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -83,7 +107,7 @@ class HostInsightHostRecommendations(object):
         :param metric_recommendation_name: The metric_recommendation_name of this HostInsightHostRecommendations.
         :type: str
         """
-        allowed_values = ["HOST_CPU_RECOMMENDATIONS"]
+        allowed_values = ["HOST_CPU_RECOMMENDATIONS", "HOST_MEMORY_RECOMMENDATIONS", "HOST_NETWORK_RECOMMENDATIONS", "HOST_STORAGE_RECOMMENDATIONS"]
         if not value_allowed_none_or_none_sentinel(metric_recommendation_name, allowed_values):
             metric_recommendation_name = 'UNKNOWN_ENUM_VALUE'
         self._metric_recommendation_name = metric_recommendation_name

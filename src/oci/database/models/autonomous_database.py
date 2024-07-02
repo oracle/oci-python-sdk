@@ -1921,6 +1921,10 @@ class AutonomousDatabase(object):
         **[Required]** Gets the data_storage_size_in_tbs of this AutonomousDatabase.
         The quantity of data in the database, in terabytes.
 
+        The following points apply to Autonomous Databases on Serverless Infrastructure:
+        - This is an integer field whose value remains null when the data size is in GBs and cannot be converted to TBs (by dividing the GB value by 1024) without rounding error.
+        - To get the exact value of data storage size without rounding error, please see `dataStorageSizeInGBs` of Autonomous Database.
+
 
         :return: The data_storage_size_in_tbs of this AutonomousDatabase.
         :rtype: int
@@ -1932,6 +1936,10 @@ class AutonomousDatabase(object):
         """
         Sets the data_storage_size_in_tbs of this AutonomousDatabase.
         The quantity of data in the database, in terabytes.
+
+        The following points apply to Autonomous Databases on Serverless Infrastructure:
+        - This is an integer field whose value remains null when the data size is in GBs and cannot be converted to TBs (by dividing the GB value by 1024) without rounding error.
+        - To get the exact value of data storage size without rounding error, please see `dataStorageSizeInGBs` of Autonomous Database.
 
 
         :param data_storage_size_in_tbs: The data_storage_size_in_tbs of this AutonomousDatabase.
@@ -1969,6 +1977,8 @@ class AutonomousDatabase(object):
         Gets the data_storage_size_in_gbs of this AutonomousDatabase.
         The quantity of data in the database, in gigabytes.
 
+        For Autonomous Transaction Processing databases using ECPUs on Serverless Infrastructure, this value is always populated. In all the other cases, this value will be null and `dataStorageSizeInTBs` will be populated instead.
+
 
         :return: The data_storage_size_in_gbs of this AutonomousDatabase.
         :rtype: int
@@ -1980,6 +1990,8 @@ class AutonomousDatabase(object):
         """
         Sets the data_storage_size_in_gbs of this AutonomousDatabase.
         The quantity of data in the database, in gigabytes.
+
+        For Autonomous Transaction Processing databases using ECPUs on Serverless Infrastructure, this value is always populated. In all the other cases, this value will be null and `dataStorageSizeInTBs` will be populated instead.
 
 
         :param data_storage_size_in_gbs: The data_storage_size_in_gbs of this AutonomousDatabase.
@@ -2287,7 +2299,7 @@ class AutonomousDatabase(object):
     def used_data_storage_size_in_tbs(self):
         """
         Gets the used_data_storage_size_in_tbs of this AutonomousDatabase.
-        The amount of storage that has been used, in terabytes.
+        The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
 
 
         :return: The used_data_storage_size_in_tbs of this AutonomousDatabase.
@@ -2299,7 +2311,7 @@ class AutonomousDatabase(object):
     def used_data_storage_size_in_tbs(self, used_data_storage_size_in_tbs):
         """
         Sets the used_data_storage_size_in_tbs of this AutonomousDatabase.
-        The amount of storage that has been used, in terabytes.
+        The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
 
 
         :param used_data_storage_size_in_tbs: The used_data_storage_size_in_tbs of this AutonomousDatabase.

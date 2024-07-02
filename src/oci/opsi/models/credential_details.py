@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CredentialDetails(object):
     """
-    User credential details to connect to the database. This is supplied via the External Database Service.
+    User credential details to connect to the database.
     """
 
     #: A constant which can be used with the credential_type property of a CredentialDetails.
