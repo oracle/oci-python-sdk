@@ -73,9 +73,14 @@ from .change_compartment_details import ChangeCompartmentDetails
 from .change_dataguard_role_details import ChangeDataguardRoleDetails
 from .change_disaster_recovery_configuration_details import ChangeDisasterRecoveryConfigurationDetails
 from .change_exadata_infrastructure_compartment_details import ChangeExadataInfrastructureCompartmentDetails
+from .change_exadb_vm_cluster_compartment_details import ChangeExadbVmClusterCompartmentDetails
+from .change_exascale_db_storage_vault_compartment_details import ChangeExascaleDbStorageVaultCompartmentDetails
 from .change_key_store_compartment_details import ChangeKeyStoreCompartmentDetails
 from .change_key_store_type_details import ChangeKeyStoreTypeDetails
 from .change_vm_cluster_compartment_details import ChangeVmClusterCompartmentDetails
+from .cloud_automation_apply_update_time_preference import CloudAutomationApplyUpdateTimePreference
+from .cloud_automation_freeze_period import CloudAutomationFreezePeriod
+from .cloud_automation_update_details import CloudAutomationUpdateDetails
 from .cloud_autonomous_vm_cluster import CloudAutonomousVmCluster
 from .cloud_autonomous_vm_cluster_resource_details import CloudAutonomousVmClusterResourceDetails
 from .cloud_autonomous_vm_cluster_resource_usage import CloudAutonomousVmClusterResourceUsage
@@ -142,6 +147,8 @@ from .create_db_home_with_db_system_id_from_database_details import CreateDbHome
 from .create_db_home_with_vm_cluster_id_details import CreateDbHomeWithVmClusterIdDetails
 from .create_db_home_with_vm_cluster_id_from_backup_details import CreateDbHomeWithVmClusterIdFromBackupDetails
 from .create_exadata_infrastructure_details import CreateExadataInfrastructureDetails
+from .create_exadb_vm_cluster_details import CreateExadbVmClusterDetails
+from .create_exascale_db_storage_vault_details import CreateExascaleDbStorageVaultDetails
 from .create_external_backup_job_details import CreateExternalBackupJobDetails
 from .create_external_container_database_details import CreateExternalContainerDatabaseDetails
 from .create_external_database_connector_details import CreateExternalDatabaseConnectorDetails
@@ -195,6 +202,7 @@ from .db_home_summary import DbHomeSummary
 from .db_iorm_config import DbIormConfig
 from .db_iorm_config_update_detail import DbIormConfigUpdateDetail
 from .db_node import DbNode
+from .db_node_details import DbNodeDetails
 from .db_node_summary import DbNodeSummary
 from .db_server import DbServer
 from .db_server_details import DbServerDetails
@@ -238,6 +246,17 @@ from .exadata_infrastructure_summary import ExadataInfrastructureSummary
 from .exadata_infrastructure_un_allocated_resources import ExadataInfrastructureUnAllocatedResources
 from .exadata_iorm_config import ExadataIormConfig
 from .exadata_iorm_config_update_details import ExadataIormConfigUpdateDetails
+from .exadb_vm_cluster import ExadbVmCluster
+from .exadb_vm_cluster_storage_details import ExadbVmClusterStorageDetails
+from .exadb_vm_cluster_summary import ExadbVmClusterSummary
+from .exadb_vm_cluster_update import ExadbVmClusterUpdate
+from .exadb_vm_cluster_update_history_entry import ExadbVmClusterUpdateHistoryEntry
+from .exadb_vm_cluster_update_history_entry_summary import ExadbVmClusterUpdateHistoryEntrySummary
+from .exadb_vm_cluster_update_summary import ExadbVmClusterUpdateSummary
+from .exascale_db_storage_details import ExascaleDbStorageDetails
+from .exascale_db_storage_input_details import ExascaleDbStorageInputDetails
+from .exascale_db_storage_vault import ExascaleDbStorageVault
+from .exascale_db_storage_vault_summary import ExascaleDbStorageVaultSummary
 from .external_backup_job import ExternalBackupJob
 from .external_container_database import ExternalContainerDatabase
 from .external_container_database_summary import ExternalContainerDatabaseSummary
@@ -256,6 +275,7 @@ from .flex_component_collection import FlexComponentCollection
 from .flex_component_summary import FlexComponentSummary
 from .generate_autonomous_database_wallet_details import GenerateAutonomousDatabaseWalletDetails
 from .generate_recommended_network_details import GenerateRecommendedNetworkDetails
+from .gi_minor_version_summary import GiMinorVersionSummary
 from .gi_version_summary import GiVersionSummary
 from .info_for_network_gen_details import InfoForNetworkGenDetails
 from .infrastructure_target_version import InfrastructureTargetVersion
@@ -310,6 +330,7 @@ from .register_autonomous_database_data_safe_details import RegisterAutonomousDa
 from .reinstate_data_guard_association_details import ReinstateDataGuardAssociationDetails
 from .remote_clone_pluggable_database_details import RemoteClonePluggableDatabaseDetails
 from .remove_virtual_machine_from_cloud_vm_cluster_details import RemoveVirtualMachineFromCloudVmClusterDetails
+from .remove_virtual_machine_from_exadb_vm_cluster_details import RemoveVirtualMachineFromExadbVmClusterDetails
 from .remove_virtual_machine_from_vm_cluster_details import RemoveVirtualMachineFromVmClusterDetails
 from .resize_vm_cluster_network_details import ResizeVmClusterNetworkDetails
 from .resource_pool_shape_collection import ResourcePoolShapeCollection
@@ -354,6 +375,8 @@ from .update_db_node_details import UpdateDbNodeDetails
 from .update_db_system_details import UpdateDbSystemDetails
 from .update_details import UpdateDetails
 from .update_exadata_infrastructure_details import UpdateExadataInfrastructureDetails
+from .update_exadb_vm_cluster_details import UpdateExadbVmClusterDetails
+from .update_exascale_db_storage_vault_details import UpdateExascaleDbStorageVaultDetails
 from .update_external_container_database_details import UpdateExternalContainerDatabaseDetails
 from .update_external_database_connector_details import UpdateExternalDatabaseConnectorDetails
 from .update_external_database_details_base import UpdateExternalDatabaseDetailsBase
@@ -453,9 +476,14 @@ database_type_mapping = {
     "ChangeDataguardRoleDetails": ChangeDataguardRoleDetails,
     "ChangeDisasterRecoveryConfigurationDetails": ChangeDisasterRecoveryConfigurationDetails,
     "ChangeExadataInfrastructureCompartmentDetails": ChangeExadataInfrastructureCompartmentDetails,
+    "ChangeExadbVmClusterCompartmentDetails": ChangeExadbVmClusterCompartmentDetails,
+    "ChangeExascaleDbStorageVaultCompartmentDetails": ChangeExascaleDbStorageVaultCompartmentDetails,
     "ChangeKeyStoreCompartmentDetails": ChangeKeyStoreCompartmentDetails,
     "ChangeKeyStoreTypeDetails": ChangeKeyStoreTypeDetails,
     "ChangeVmClusterCompartmentDetails": ChangeVmClusterCompartmentDetails,
+    "CloudAutomationApplyUpdateTimePreference": CloudAutomationApplyUpdateTimePreference,
+    "CloudAutomationFreezePeriod": CloudAutomationFreezePeriod,
+    "CloudAutomationUpdateDetails": CloudAutomationUpdateDetails,
     "CloudAutonomousVmCluster": CloudAutonomousVmCluster,
     "CloudAutonomousVmClusterResourceDetails": CloudAutonomousVmClusterResourceDetails,
     "CloudAutonomousVmClusterResourceUsage": CloudAutonomousVmClusterResourceUsage,
@@ -522,6 +550,8 @@ database_type_mapping = {
     "CreateDbHomeWithVmClusterIdDetails": CreateDbHomeWithVmClusterIdDetails,
     "CreateDbHomeWithVmClusterIdFromBackupDetails": CreateDbHomeWithVmClusterIdFromBackupDetails,
     "CreateExadataInfrastructureDetails": CreateExadataInfrastructureDetails,
+    "CreateExadbVmClusterDetails": CreateExadbVmClusterDetails,
+    "CreateExascaleDbStorageVaultDetails": CreateExascaleDbStorageVaultDetails,
     "CreateExternalBackupJobDetails": CreateExternalBackupJobDetails,
     "CreateExternalContainerDatabaseDetails": CreateExternalContainerDatabaseDetails,
     "CreateExternalDatabaseConnectorDetails": CreateExternalDatabaseConnectorDetails,
@@ -575,6 +605,7 @@ database_type_mapping = {
     "DbIormConfig": DbIormConfig,
     "DbIormConfigUpdateDetail": DbIormConfigUpdateDetail,
     "DbNode": DbNode,
+    "DbNodeDetails": DbNodeDetails,
     "DbNodeSummary": DbNodeSummary,
     "DbServer": DbServer,
     "DbServerDetails": DbServerDetails,
@@ -618,6 +649,17 @@ database_type_mapping = {
     "ExadataInfrastructureUnAllocatedResources": ExadataInfrastructureUnAllocatedResources,
     "ExadataIormConfig": ExadataIormConfig,
     "ExadataIormConfigUpdateDetails": ExadataIormConfigUpdateDetails,
+    "ExadbVmCluster": ExadbVmCluster,
+    "ExadbVmClusterStorageDetails": ExadbVmClusterStorageDetails,
+    "ExadbVmClusterSummary": ExadbVmClusterSummary,
+    "ExadbVmClusterUpdate": ExadbVmClusterUpdate,
+    "ExadbVmClusterUpdateHistoryEntry": ExadbVmClusterUpdateHistoryEntry,
+    "ExadbVmClusterUpdateHistoryEntrySummary": ExadbVmClusterUpdateHistoryEntrySummary,
+    "ExadbVmClusterUpdateSummary": ExadbVmClusterUpdateSummary,
+    "ExascaleDbStorageDetails": ExascaleDbStorageDetails,
+    "ExascaleDbStorageInputDetails": ExascaleDbStorageInputDetails,
+    "ExascaleDbStorageVault": ExascaleDbStorageVault,
+    "ExascaleDbStorageVaultSummary": ExascaleDbStorageVaultSummary,
     "ExternalBackupJob": ExternalBackupJob,
     "ExternalContainerDatabase": ExternalContainerDatabase,
     "ExternalContainerDatabaseSummary": ExternalContainerDatabaseSummary,
@@ -636,6 +678,7 @@ database_type_mapping = {
     "FlexComponentSummary": FlexComponentSummary,
     "GenerateAutonomousDatabaseWalletDetails": GenerateAutonomousDatabaseWalletDetails,
     "GenerateRecommendedNetworkDetails": GenerateRecommendedNetworkDetails,
+    "GiMinorVersionSummary": GiMinorVersionSummary,
     "GiVersionSummary": GiVersionSummary,
     "InfoForNetworkGenDetails": InfoForNetworkGenDetails,
     "InfrastructureTargetVersion": InfrastructureTargetVersion,
@@ -690,6 +733,7 @@ database_type_mapping = {
     "ReinstateDataGuardAssociationDetails": ReinstateDataGuardAssociationDetails,
     "RemoteClonePluggableDatabaseDetails": RemoteClonePluggableDatabaseDetails,
     "RemoveVirtualMachineFromCloudVmClusterDetails": RemoveVirtualMachineFromCloudVmClusterDetails,
+    "RemoveVirtualMachineFromExadbVmClusterDetails": RemoveVirtualMachineFromExadbVmClusterDetails,
     "RemoveVirtualMachineFromVmClusterDetails": RemoveVirtualMachineFromVmClusterDetails,
     "ResizeVmClusterNetworkDetails": ResizeVmClusterNetworkDetails,
     "ResourcePoolShapeCollection": ResourcePoolShapeCollection,
@@ -734,6 +778,8 @@ database_type_mapping = {
     "UpdateDbSystemDetails": UpdateDbSystemDetails,
     "UpdateDetails": UpdateDetails,
     "UpdateExadataInfrastructureDetails": UpdateExadataInfrastructureDetails,
+    "UpdateExadbVmClusterDetails": UpdateExadbVmClusterDetails,
+    "UpdateExascaleDbStorageVaultDetails": UpdateExascaleDbStorageVaultDetails,
     "UpdateExternalContainerDatabaseDetails": UpdateExternalContainerDatabaseDetails,
     "UpdateExternalDatabaseConnectorDetails": UpdateExternalDatabaseConnectorDetails,
     "UpdateExternalDatabaseDetailsBase": UpdateExternalDatabaseDetailsBase,

@@ -61,6 +61,10 @@ class DbNodeSummary(object):
     #: This constant has a value of "VMDB_REBOOT_MIGRATION"
     MAINTENANCE_TYPE_VMDB_REBOOT_MIGRATION = "VMDB_REBOOT_MIGRATION"
 
+    #: A constant which can be used with the maintenance_type property of a DbNodeSummary.
+    #: This constant has a value of "EXADBXS_REBOOT_MIGRATION"
+    MAINTENANCE_TYPE_EXADBXS_REBOOT_MIGRATION = "EXADBXS_REBOOT_MIGRATION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DbNodeSummary object with values from keyword arguments.
@@ -122,7 +126,7 @@ class DbNodeSummary(object):
 
         :param maintenance_type:
             The value to assign to the maintenance_type property of this DbNodeSummary.
-            Allowed values for this property are: "VMDB_REBOOT_MIGRATION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VMDB_REBOOT_MIGRATION", "EXADBXS_REBOOT_MIGRATION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type maintenance_type: str
 
@@ -162,6 +166,10 @@ class DbNodeSummary(object):
             The value to assign to the db_node_storage_size_in_gbs property of this DbNodeSummary.
         :type db_node_storage_size_in_gbs: int
 
+        :param total_cpu_core_count:
+            The value to assign to the total_cpu_core_count property of this DbNodeSummary.
+        :type total_cpu_core_count: int
+
         :param db_server_id:
             The value to assign to the db_server_id property of this DbNodeSummary.
         :type db_server_id: str
@@ -191,6 +199,7 @@ class DbNodeSummary(object):
             'cpu_core_count': 'int',
             'memory_size_in_gbs': 'int',
             'db_node_storage_size_in_gbs': 'int',
+            'total_cpu_core_count': 'int',
             'db_server_id': 'str'
         }
 
@@ -218,6 +227,7 @@ class DbNodeSummary(object):
             'cpu_core_count': 'cpuCoreCount',
             'memory_size_in_gbs': 'memorySizeInGBs',
             'db_node_storage_size_in_gbs': 'dbNodeStorageSizeInGBs',
+            'total_cpu_core_count': 'totalCpuCoreCount',
             'db_server_id': 'dbServerId'
         }
 
@@ -244,6 +254,7 @@ class DbNodeSummary(object):
         self._cpu_core_count = None
         self._memory_size_in_gbs = None
         self._db_node_storage_size_in_gbs = None
+        self._total_cpu_core_count = None
         self._db_server_id = None
 
     @property
@@ -626,7 +637,7 @@ class DbNodeSummary(object):
         Gets the maintenance_type of this DbNodeSummary.
         The type of database node maintenance.
 
-        Allowed values for this property are: "VMDB_REBOOT_MIGRATION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VMDB_REBOOT_MIGRATION", "EXADBXS_REBOOT_MIGRATION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -645,7 +656,7 @@ class DbNodeSummary(object):
         :param maintenance_type: The maintenance_type of this DbNodeSummary.
         :type: str
         """
-        allowed_values = ["VMDB_REBOOT_MIGRATION"]
+        allowed_values = ["VMDB_REBOOT_MIGRATION", "EXADBXS_REBOOT_MIGRATION"]
         if not value_allowed_none_or_none_sentinel(maintenance_type, allowed_values):
             maintenance_type = 'UNKNOWN_ENUM_VALUE'
         self._maintenance_type = maintenance_type
@@ -881,6 +892,30 @@ class DbNodeSummary(object):
         :type: int
         """
         self._db_node_storage_size_in_gbs = db_node_storage_size_in_gbs
+
+    @property
+    def total_cpu_core_count(self):
+        """
+        Gets the total_cpu_core_count of this DbNodeSummary.
+        The total number of CPU cores reserved on the Db node.
+
+
+        :return: The total_cpu_core_count of this DbNodeSummary.
+        :rtype: int
+        """
+        return self._total_cpu_core_count
+
+    @total_cpu_core_count.setter
+    def total_cpu_core_count(self, total_cpu_core_count):
+        """
+        Sets the total_cpu_core_count of this DbNodeSummary.
+        The total number of CPU cores reserved on the Db node.
+
+
+        :param total_cpu_core_count: The total_cpu_core_count of this DbNodeSummary.
+        :type: int
+        """
+        self._total_cpu_core_count = total_cpu_core_count
 
     @property
     def db_server_id(self):

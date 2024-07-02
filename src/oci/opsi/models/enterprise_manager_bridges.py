@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class EnterpriseManagerBridges(object):
     """
-    Logical grouping used for Operations Insights Enterprise Manager Bridge operations.
+    Logical grouping used for Ops Insights Enterprise Manager Bridge operations.
     """
 
     def __init__(self, **kwargs):

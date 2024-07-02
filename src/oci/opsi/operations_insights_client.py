@@ -23,9 +23,9 @@ missing = Sentinel("Missing")
 
 class OperationsInsightsClient(object):
     """
-    Use the Operations Insights API to perform data extraction operations to obtain database
+    Use the Ops Insights API to perform data extraction operations to obtain database
     resource utilization, performance statistics, and reference information. For more information,
-    see [About Oracle Cloud Infrastructure Operations Insights](https://docs.cloud.oracle.com/en-us/iaas/operations-insights/doc/operations-insights.html).
+    see [About Oracle Cloud Infrastructure Ops Insights](https://docs.cloud.oracle.com/en-us/iaas/operations-insights/doc/operations-insights.html).
     """
 
     def __init__(self, config, **kwargs):
@@ -170,7 +170,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/{exadataInsightId}/actions/addMembers"
         method = "POST"
         operation_name = "add_exadata_insight_members"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/AddExadataInsightMembers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -290,7 +290,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/{databaseInsightId}/actions/changeAutonomousDatabaseInsightAdvancedFeatures"
         method = "POST"
         operation_name = "change_autonomous_database_insight_advanced_features"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ChangeAutonomousDatabaseInsightAdvancedFeatures"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -410,7 +410,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubSources/{awrHubSourceId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_awr_hub_source_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/ChangeAwrHubSourceCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -530,7 +530,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/{databaseInsightId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_database_insight_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ChangeDatabaseInsightCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -642,7 +642,7 @@ class OperationsInsightsClient(object):
         resource_path = "/enterpriseManagerBridges/{enterpriseManagerBridgeId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_enterprise_manager_bridge_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/ChangeEnterpriseManagerBridgeCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -759,7 +759,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/{exadataInsightId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_exadata_insight_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/ChangeExadataInsightCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -879,7 +879,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/{hostInsightId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_host_insight_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ChangeHostInsightCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -999,7 +999,7 @@ class OperationsInsightsClient(object):
         resource_path = "/newsReports/{newsReportId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_news_report_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReports/ChangeNewsReportCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1121,7 +1121,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsPrivateEndpoints/{operationsInsightsPrivateEndpointId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_operations_insights_private_endpoint_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/ChangeOperationsInsightsPrivateEndpointCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1196,7 +1196,7 @@ class OperationsInsightsClient(object):
 
 
         :param str operations_insights_warehouse_id: (required)
-            Unique Operations Insights Warehouse identifier
+            Unique Ops Insights Warehouse identifier
 
         :param oci.opsi.models.ChangeOperationsInsightsWarehouseCompartmentDetails change_operations_insights_warehouse_compartment_details: (required)
             The information to be updated.
@@ -1241,7 +1241,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouses/{operationsInsightsWarehouseId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_operations_insights_warehouse_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/ChangeOperationsInsightsWarehouseCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1363,7 +1363,7 @@ class OperationsInsightsClient(object):
         resource_path = "/opsiConfigurations/{opsiConfigurationId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_opsi_configuration_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/ChangeOpsiConfigurationCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1483,7 +1483,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/{databaseInsightId}/actions/changePeComanagedDatabaseInsightDetails"
         method = "POST"
         operation_name = "change_pe_comanaged_database_insight"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ChangePeComanagedDatabaseInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1596,7 +1596,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs"
         method = "POST"
         operation_name = "create_awr_hub"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/CreateAwrHub"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1696,7 +1696,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubSources"
         method = "POST"
         operation_name = "create_awr_hub_source"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/CreateAwrHubSource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1796,7 +1796,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights"
         method = "POST"
         operation_name = "create_database_insight"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/CreateDatabaseInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1896,7 +1896,7 @@ class OperationsInsightsClient(object):
         resource_path = "/enterpriseManagerBridges"
         method = "POST"
         operation_name = "create_enterprise_manager_bridge"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/CreateEnterpriseManagerBridge"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1996,7 +1996,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights"
         method = "POST"
         operation_name = "create_exadata_insight"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/CreateExadataInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2055,11 +2055,11 @@ class OperationsInsightsClient(object):
 
     def create_host_insight(self, create_host_insight_details, **kwargs):
         """
-        Create a Host Insight resource for a host in Operations Insights. The host will be enabled in Operations Insights. Host metric collection and analysis will be started.
+        Create a Host Insight resource for a host in Ops Insights. The host will be enabled in Ops Insights. Host metric collection and analysis will be started.
 
 
         :param oci.opsi.models.CreateHostInsightDetails create_host_insight_details: (required)
-            Details for the host for which a Host Insight resource will be created in Operations Insights.
+            Details for the host for which a Host Insight resource will be created in Ops Insights.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request that can be retried in case of a timeout or
@@ -2096,7 +2096,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights"
         method = "POST"
         operation_name = "create_host_insight"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/CreateHostInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2155,11 +2155,11 @@ class OperationsInsightsClient(object):
 
     def create_news_report(self, create_news_report_details, **kwargs):
         """
-        Create a news report in Operations Insights. The report will be enabled in Operations Insights. Insights will be emailed as per selected frequency.
+        Create a news report in Ops Insights. The report will be enabled in Ops Insights. Insights will be emailed as per selected frequency.
 
 
         :param oci.opsi.models.CreateNewsReportDetails create_news_report_details: (required)
-            Details for the news report that will be created in Operations Insights.
+            Details for the news report that will be created in Ops Insights.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request that can be retried in case of a timeout or
@@ -2196,7 +2196,7 @@ class OperationsInsightsClient(object):
         resource_path = "/newsReports"
         method = "POST"
         operation_name = "create_news_report"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReports/CreateNewsReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2255,7 +2255,7 @@ class OperationsInsightsClient(object):
 
     def create_operations_insights_private_endpoint(self, create_operations_insights_private_endpoint_details, **kwargs):
         """
-        Create a private endpoint resource for the tenant in Operations Insights.
+        Create a private endpoint resource for the tenant in Ops Insights.
         This resource will be created in customer compartment.
 
 
@@ -2297,7 +2297,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsPrivateEndpoints"
         method = "POST"
         operation_name = "create_operations_insights_private_endpoint"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/CreateOperationsInsightsPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2356,13 +2356,13 @@ class OperationsInsightsClient(object):
 
     def create_operations_insights_warehouse(self, create_operations_insights_warehouse_details, **kwargs):
         """
-        Create a Operations Insights Warehouse resource for the tenant in Operations Insights. New ADW will be provisioned for this tenant.
+        Create a Ops Insights Warehouse resource for the tenant in Ops Insights. New ADW will be provisioned for this tenant.
         There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment. If the 'opsi-warehouse-type'
         header is passed to the API, a warehouse resource without ADW or Schema provisioning is created.
 
 
         :param oci.opsi.models.CreateOperationsInsightsWarehouseDetails create_operations_insights_warehouse_details: (required)
-            Details using which an Operations Insights Warehouse resource will be created in Operations Insights.
+            Details using which an Ops Insights Warehouse resource will be created in Ops Insights.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request that can be retried in case of a timeout or
@@ -2399,7 +2399,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouses"
         method = "POST"
         operation_name = "create_operations_insights_warehouse"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/CreateOperationsInsightsWarehouse"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2500,7 +2500,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouseUsers"
         method = "POST"
         operation_name = "create_operations_insights_warehouse_user"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouseUsers/CreateOperationsInsightsWarehouseUser"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2619,7 +2619,7 @@ class OperationsInsightsClient(object):
         resource_path = "/opsiConfigurations"
         method = "POST"
         operation_name = "create_opsi_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/CreateOpsiConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2754,7 +2754,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}"
         method = "DELETE"
         operation_name = "delete_awr_hub"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/DeleteAwrHub"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2861,7 +2861,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubObjects/awrHubSources/{awrHubSourceId}/o/{objectName}"
         method = "DELETE"
         operation_name = "delete_awr_hub_object"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubObjects/DeleteAwrHubObject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2966,7 +2966,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubSources/{awrHubSourceId}"
         method = "DELETE"
         operation_name = "delete_awr_hub_source"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/DeleteAwrHubSource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3070,7 +3070,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/{databaseInsightId}"
         method = "DELETE"
         operation_name = "delete_database_insight"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/DeleteDatabaseInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3174,7 +3174,7 @@ class OperationsInsightsClient(object):
         resource_path = "/enterpriseManagerBridges/{enterpriseManagerBridgeId}"
         method = "DELETE"
         operation_name = "delete_enterprise_manager_bridge"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/DeleteEnterpriseManagerBridge"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3278,7 +3278,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/{exadataInsightId}"
         method = "DELETE"
         operation_name = "delete_exadata_insight"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/DeleteExadataInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3382,7 +3382,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/{hostInsightId}"
         method = "DELETE"
         operation_name = "delete_host_insight"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/DeleteHostInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3486,7 +3486,7 @@ class OperationsInsightsClient(object):
         resource_path = "/newsReports/{newsReportId}"
         method = "DELETE"
         operation_name = "delete_news_report"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReports/DeleteNewsReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3592,7 +3592,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsPrivateEndpoints/{operationsInsightsPrivateEndpointId}"
         method = "DELETE"
         operation_name = "delete_operations_insights_private_endpoint"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/DeleteOperationsInsightsPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3665,7 +3665,7 @@ class OperationsInsightsClient(object):
 
 
         :param str operations_insights_warehouse_id: (required)
-            Unique Operations Insights Warehouse identifier
+            Unique Ops Insights Warehouse identifier
 
         :param str if_match: (optional)
             Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match`
@@ -3699,7 +3699,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouses/{operationsInsightsWarehouseId}"
         method = "DELETE"
         operation_name = "delete_operations_insights_warehouse"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/DeleteOperationsInsightsWarehouse"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3803,7 +3803,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouseUsers/{operationsInsightsWarehouseUserId}"
         method = "DELETE"
         operation_name = "delete_operations_insights_warehouse_user"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouseUsers/DeleteOperationsInsightsWarehouseUser"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3909,7 +3909,7 @@ class OperationsInsightsClient(object):
         resource_path = "/opsiConfigurations/{opsiConfigurationId}"
         method = "DELETE"
         operation_name = "delete_opsi_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/DeleteOpsiConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4021,7 +4021,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/{databaseInsightId}/actions/disableAutonomousDatabaseInsightAdvancedFeatures"
         method = "POST"
         operation_name = "disable_autonomous_database_insight_advanced_features"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/DisableAutonomousDatabaseInsightAdvancedFeatures"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4136,7 +4136,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubSources/{awrHubSourceId}/actions/disable"
         method = "POST"
         operation_name = "disable_awr_hub_source"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/DisableAwrHubSource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4251,7 +4251,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/{databaseInsightId}/actions/disable"
         method = "POST"
         operation_name = "disable_database_insight"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/DisableDatabaseInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4366,7 +4366,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/{exadataInsightId}/actions/disable"
         method = "POST"
         operation_name = "disable_exadata_insight"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/DisableExadataInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4435,7 +4435,7 @@ class OperationsInsightsClient(object):
 
     def disable_host_insight(self, host_insight_id, **kwargs):
         """
-        Disables a host in Operations Insights. Host metric collection and analysis will be stopped.
+        Disables a host in Ops Insights. Host metric collection and analysis will be stopped.
 
 
         :param str host_insight_id: (required)
@@ -4481,7 +4481,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/{hostInsightId}/actions/disable"
         method = "POST"
         operation_name = "disable_host_insight"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/DisableHostInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4554,7 +4554,7 @@ class OperationsInsightsClient(object):
 
 
         :param str operations_insights_warehouse_id: (required)
-            Unique Operations Insights Warehouse identifier
+            Unique Ops Insights Warehouse identifier
 
         :param oci.opsi.models.DownloadOperationsInsightsWarehouseWalletDetails download_operations_insights_warehouse_wallet_details: (required)
             The information to be updated.
@@ -4594,7 +4594,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouses/{operationsInsightsWarehouseId}/actions/downloadWarehouseWallet"
         method = "POST"
         operation_name = "download_operations_insights_warehouse_wallet"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/DownloadOperationsInsightsWarehouseWallet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4714,7 +4714,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/{databaseInsightId}/actions/enableAutonomousDatabaseInsightAdvancedFeatures"
         method = "POST"
         operation_name = "enable_autonomous_database_insight_advanced_features"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/EnableAutonomousDatabaseInsightAdvancedFeatures"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4831,7 +4831,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubSources/{awrHubSourceId}/actions/enable"
         method = "POST"
         operation_name = "enable_awr_hub_source"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/EnableAwrHubSource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4949,7 +4949,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/{databaseInsightId}/actions/enable"
         method = "POST"
         operation_name = "enable_database_insight"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/EnableDatabaseInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5069,7 +5069,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/{exadataInsightId}/actions/enable"
         method = "POST"
         operation_name = "enable_exadata_insight"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/EnableExadataInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5140,11 +5140,11 @@ class OperationsInsightsClient(object):
 
     def enable_host_insight(self, enable_host_insight_details, host_insight_id, **kwargs):
         """
-        Enables a host in Operations Insights. Host metric collection and analysis will be started.
+        Enables a host in Ops Insights. Host metric collection and analysis will be started.
 
 
         :param oci.opsi.models.EnableHostInsightDetails enable_host_insight_details: (required)
-            Details for the host to be enabled in Operations Insights.
+            Details for the host to be enabled in Ops Insights.
 
         :param str host_insight_id: (required)
             Unique host insight identifier
@@ -5189,7 +5189,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/{hostInsightId}/actions/enable"
         method = "POST"
         operation_name = "enable_host_insight"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/EnableHostInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5325,7 +5325,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrDatabaseReport"
         method = "GET"
         operation_name = "get_awr_database_report"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/GetAwrDatabaseReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5489,7 +5489,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrDatabaseSqlReport"
         method = "GET"
         operation_name = "get_awr_database_sql_report"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/GetAwrDatabaseSqlReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5615,7 +5615,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}"
         method = "GET"
         operation_name = "get_awr_hub"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/GetAwrHub"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5717,7 +5717,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubObjects/awrHubSources/{awrHubSourceId}/o/{objectName}"
         method = "GET"
         operation_name = "get_awr_hub_object"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubObjects/GetAwrHubObject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5817,7 +5817,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubSources/{awrHubSourceId}"
         method = "GET"
         operation_name = "get_awr_hub_source"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/GetAwrHubSource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5940,7 +5940,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrReport"
         method = "GET"
         operation_name = "get_awr_report"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/GetAwrReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6065,7 +6065,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/{databaseInsightId}"
         method = "GET"
         operation_name = "get_database_insight"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/GetDatabaseInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6164,7 +6164,7 @@ class OperationsInsightsClient(object):
         resource_path = "/enterpriseManagerBridges/{enterpriseManagerBridgeId}"
         method = "GET"
         operation_name = "get_enterprise_manager_bridge"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/GetEnterpriseManagerBridge"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6263,7 +6263,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/{exadataInsightId}"
         method = "GET"
         operation_name = "get_exadata_insight"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/GetExadataInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6362,7 +6362,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/{hostInsightId}"
         method = "GET"
         operation_name = "get_host_insight"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/GetHostInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6461,7 +6461,7 @@ class OperationsInsightsClient(object):
         resource_path = "/newsReports/{newsReportId}"
         method = "GET"
         operation_name = "get_news_report"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReports/GetNewsReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6562,7 +6562,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsPrivateEndpoints/{operationsInsightsPrivateEndpointId}"
         method = "GET"
         operation_name = "get_operations_insights_private_endpoint"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/GetOperationsInsightsPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6628,12 +6628,12 @@ class OperationsInsightsClient(object):
 
     def get_operations_insights_warehouse(self, operations_insights_warehouse_id, **kwargs):
         """
-        Gets details of an Operations Insights Warehouse.
+        Gets details of an Ops Insights Warehouse.
         There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
 
 
         :param str operations_insights_warehouse_id: (required)
-            Unique Operations Insights Warehouse identifier
+            Unique Ops Insights Warehouse identifier
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -6662,7 +6662,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouses/{operationsInsightsWarehouseId}"
         method = "GET"
         operation_name = "get_operations_insights_warehouse"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/GetOperationsInsightsWarehouse"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6761,7 +6761,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouseUsers/{operationsInsightsWarehouseUserId}"
         method = "GET"
         operation_name = "get_operations_insights_warehouse_user"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouseUsers/GetOperationsInsightsWarehouseUser"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6883,7 +6883,7 @@ class OperationsInsightsClient(object):
         resource_path = "/opsiConfigurations/{opsiConfigurationId}"
         method = "GET"
         operation_name = "get_opsi_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/GetOpsiConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7025,7 +7025,7 @@ class OperationsInsightsClient(object):
         resource_path = "/opsiDataObjects/{opsiDataObjectIdentifier}"
         method = "GET"
         operation_name = "get_opsi_data_object"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiDataObjects/GetOpsiDataObject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7131,7 +7131,7 @@ class OperationsInsightsClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/WorkRequests/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7233,7 +7233,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubObjects/awrHubSources/{awrHubSourceId}/o/{objectName}"
         method = "HEAD"
         operation_name = "head_awr_hub_object"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubObjects/HeadAwrHubObject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7355,7 +7355,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/actions/ingestAddmReports"
         method = "POST"
         operation_name = "ingest_addm_reports"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestAddmReports"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7482,7 +7482,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/actions/ingestDatabaseConfiguration"
         method = "POST"
         operation_name = "ingest_database_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestDatabaseConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7604,7 +7604,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/actions/ingestHostConfiguration"
         method = "POST"
         operation_name = "ingest_host_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/IngestHostConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7723,7 +7723,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/actions/ingestHostMetrics"
         method = "POST"
         operation_name = "ingest_host_metrics"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/IngestHostMetrics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7791,7 +7791,7 @@ class OperationsInsightsClient(object):
 
     def ingest_sql_bucket(self, ingest_sql_bucket_details, **kwargs):
         """
-        The sqlbucket endpoint takes in a JSON payload, persists it in Operations Insights ingest pipeline.
+        The sqlbucket endpoint takes in a JSON payload, persists it in Ops Insights ingest pipeline.
         Either databaseId or id must be specified.
 
 
@@ -7853,7 +7853,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/actions/ingestSqlBucket"
         method = "POST"
         operation_name = "ingest_sql_bucket"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestSqlBucket"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7988,7 +7988,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/actions/ingestSqlPlanLines"
         method = "POST"
         operation_name = "ingest_sql_plan_lines"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestSqlPlanLines"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8061,7 +8061,7 @@ class OperationsInsightsClient(object):
 
     def ingest_sql_stats(self, ingest_sql_stats_details, **kwargs):
         """
-        The SQL Stats endpoint takes in a JSON payload, persists it in Operations Insights ingest pipeline.
+        The SQL Stats endpoint takes in a JSON payload, persists it in Ops Insights ingest pipeline.
         Either databaseId or id must be specified.
 
 
@@ -8118,7 +8118,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/actions/ingestSqlStatsMetric"
         method = "POST"
         operation_name = "ingest_sql_stats"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestSqlStats"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8252,7 +8252,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/actions/ingestSqlText"
         method = "POST"
         operation_name = "ingest_sql_text"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestSqlText"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8424,7 +8424,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/addmDbFindingCategories"
         method = "GET"
         operation_name = "list_addm_db_finding_categories"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbFindingCategories"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8639,7 +8639,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/addmDbFindingsTimeSeries"
         method = "GET"
         operation_name = "list_addm_db_findings_time_series"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbFindingsTimeSeries"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8843,7 +8843,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/addmDbParameterCategories"
         method = "GET"
         operation_name = "list_addm_db_parameter_categories"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbParameterCategories"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9039,7 +9039,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/addmDbRecommendationCategories"
         method = "GET"
         operation_name = "list_addm_db_recommendation_categories"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbRecommendationCategories"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9270,7 +9270,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/addmDbRecommendationsTimeSeries"
         method = "GET"
         operation_name = "list_addm_db_recommendations_time_series"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbRecommendationsTimeSeries"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9495,7 +9495,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/addmDbs"
         method = "GET"
         operation_name = "list_addm_dbs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9677,7 +9677,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrDatabaseSnapshots"
         method = "GET"
         operation_name = "list_awr_database_snapshots"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/ListAwrDatabaseSnapshots"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9850,7 +9850,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrDatabases"
         method = "GET"
         operation_name = "list_awr_databases"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/ListAwrDatabases"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10026,7 +10026,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubObjects/awrHubSources/{awrHubSourceId}/o"
         method = "GET"
         operation_name = "list_awr_hub_objects"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubObjects/ListAwrHubObjects"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10207,7 +10207,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubSources"
         method = "GET"
         operation_name = "list_awr_hub_sources"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/ListAwrHubSources"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10401,7 +10401,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs"
         method = "GET"
         operation_name = "list_awr_hubs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/ListAwrHubs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10569,7 +10569,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrSnapshots"
         method = "GET"
         operation_name = "list_awr_snapshots"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/ListAwrSnapshots"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10791,7 +10791,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/databaseConfigurations"
         method = "GET"
         operation_name = "list_database_configurations"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListDatabaseConfigurations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11016,7 +11016,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights"
         method = "GET"
         operation_name = "list_database_insights"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListDatabaseInsights"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11152,7 +11152,7 @@ class OperationsInsightsClient(object):
 
     def list_enterprise_manager_bridges(self, **kwargs):
         """
-        Gets a list of Operations Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
+        Gets a list of Ops Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
         When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
 
 
@@ -11228,7 +11228,7 @@ class OperationsInsightsClient(object):
         resource_path = "/enterpriseManagerBridges"
         method = "GET"
         operation_name = "list_enterprise_manager_bridges"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/ListEnterpriseManagerBridges"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11423,7 +11423,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/exadataConfigurations"
         method = "GET"
         operation_name = "list_exadata_configurations"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/ListExadataConfigurations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11606,7 +11606,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights"
         method = "GET"
         operation_name = "list_exadata_insights"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/ListExadataInsights"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11818,6 +11818,11 @@ class OperationsInsightsClient(object):
         :param list[str] vmcluster_name: (optional)
             Optional list of Exadata Insight VM cluster name.
 
+        :param list[str] status: (optional)
+            Resource Status
+
+            Allowed values are: "DISABLED", "ENABLED", "TERMINATED"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -11841,7 +11846,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/hostConfigurations"
         method = "GET"
         operation_name = "list_host_configurations"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ListHostConfigurations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11864,7 +11869,8 @@ class OperationsInsightsClient(object):
             "compartment_id_in_subtree",
             "host_type",
             "host_id",
-            "vmcluster_name"
+            "vmcluster_name",
+            "status"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -11893,6 +11899,14 @@ class OperationsInsightsClient(object):
                     f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
+        if 'status' in kwargs:
+            status_allowed_values = ["DISABLED", "ENABLED", "TERMINATED"]
+            for status_item in kwargs['status']:
+                if status_item not in status_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `status`, must be one of { status_allowed_values }"
+                    )
+
         query_params = {
             "compartmentId": kwargs.get("compartment_id", missing),
             "enterpriseManagerBridgeId": kwargs.get("enterprise_manager_bridge_id", missing),
@@ -11910,7 +11924,8 @@ class OperationsInsightsClient(object):
             "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
             "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
             "hostId": kwargs.get("host_id", missing),
-            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi')
+            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi'),
+            "status": self.base_client.generate_collection_format_param(kwargs.get("status", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -12057,7 +12072,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights"
         method = "GET"
         operation_name = "list_host_insights"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ListHostInsights"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12265,6 +12280,11 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param list[str] status: (optional)
+            Resource Status
+
+            Allowed values are: "DISABLED", "ENABLED", "TERMINATED"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -12288,7 +12308,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/hostedEntities"
         method = "GET"
         operation_name = "list_hosted_entities"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ListHostedEntities"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12305,7 +12325,8 @@ class OperationsInsightsClient(object):
             "sort_by",
             "opc_request_id",
             "host_type",
-            "host_id"
+            "host_id",
+            "status"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -12334,6 +12355,14 @@ class OperationsInsightsClient(object):
                     f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
+        if 'status' in kwargs:
+            status_allowed_values = ["DISABLED", "ENABLED", "TERMINATED"]
+            for status_item in kwargs['status']:
+                if status_item not in status_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `status`, must be one of { status_allowed_values }"
+                    )
+
         query_params = {
             "compartmentId": compartment_id,
             "analysisTimeInterval": kwargs.get("analysis_time_interval", missing),
@@ -12347,7 +12376,8 @@ class OperationsInsightsClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
-            "hostId": kwargs.get("host_id", missing)
+            "hostId": kwargs.get("host_id", missing),
+            "status": self.base_client.generate_collection_format_param(kwargs.get("status", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -12459,7 +12489,7 @@ class OperationsInsightsClient(object):
         resource_path = "/importableAgentEntities"
         method = "GET"
         operation_name = "list_importable_agent_entities"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ListImportableAgentEntities"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12609,7 +12639,7 @@ class OperationsInsightsClient(object):
         resource_path = "/importableComputeEntities"
         method = "GET"
         operation_name = "list_importable_compute_entities"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ListImportableComputeEntities"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12750,7 +12780,7 @@ class OperationsInsightsClient(object):
         resource_path = "/enterpriseManagerBridges/{enterpriseManagerBridgeId}/importableEnterpriseManagerEntities"
         method = "GET"
         operation_name = "list_importable_enterprise_manager_entities"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/ListImportableEnterpriseManagerEntities"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12841,7 +12871,7 @@ class OperationsInsightsClient(object):
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str news_report_id: (optional)
-            Unique Operations Insights news report identifier
+            Unique Ops Insights news report identifier
 
         :param list[str] status: (optional)
             Resource Status
@@ -12909,7 +12939,7 @@ class OperationsInsightsClient(object):
         resource_path = "/newsReports"
         method = "GET"
         operation_name = "list_news_reports"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReport/ListNewsReports"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13100,7 +13130,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsPrivateEndpoints"
         method = "GET"
         operation_name = "list_operations_insights_private_endpoints"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/ListOperationsInsightsPrivateEndpoints"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13279,7 +13309,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouseUsers"
         method = "GET"
         operation_name = "list_operations_insights_warehouse_users"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouseUsers/ListOperationsInsightsWarehouseUsers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13378,7 +13408,7 @@ class OperationsInsightsClient(object):
 
     def list_operations_insights_warehouses(self, **kwargs):
         """
-        Gets a list of Operations Insights warehouses. Either compartmentId or id must be specified.
+        Gets a list of Ops Insights warehouses. Either compartmentId or id must be specified.
         There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
 
 
@@ -13391,7 +13421,7 @@ class OperationsInsightsClient(object):
             A filter to return only resources that match the entire display name.
 
         :param str id: (optional)
-            Unique Operations Insights Warehouse identifier
+            Unique Ops Insights Warehouse identifier
 
         :param list[str] lifecycle_state: (optional)
             Lifecycle states
@@ -13451,7 +13481,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouses"
         method = "GET"
         operation_name = "list_operations_insights_warehouses"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/ListOperationsInsightsWarehouses"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13623,7 +13653,7 @@ class OperationsInsightsClient(object):
         resource_path = "/opsiConfigurations"
         method = "GET"
         operation_name = "list_opsi_configurations"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/ListOpsiConfigurations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13803,7 +13833,7 @@ class OperationsInsightsClient(object):
         resource_path = "/opsiDataObjects"
         method = "GET"
         operation_name = "list_opsi_data_objects"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiDataObjects/ListOpsiDataObjects"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13963,7 +13993,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/sqlPlans"
         method = "GET"
         operation_name = "list_sql_plans"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListSqlPlans"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14126,7 +14156,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/sqlSearches"
         method = "GET"
         operation_name = "list_sql_searches"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListSqlSearches"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14290,7 +14320,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/sqlTexts"
         method = "GET"
         operation_name = "list_sql_texts"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListSqlTexts"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14450,7 +14480,7 @@ class OperationsInsightsClient(object):
         resource_path = "/{warehouseType}/{warehouseId}/dataObjects"
         method = "GET"
         operation_name = "list_warehouse_data_objects"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiWarehouseDataObjects/ListWarehouseDataObjects"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14628,7 +14658,7 @@ class OperationsInsightsClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/WorkRequests/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14781,7 +14811,7 @@ class OperationsInsightsClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/WorkRequests/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14950,7 +14980,7 @@ class OperationsInsightsClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/WorkRequests/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15100,7 +15130,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubObjects/awrHubSources/{awrHubSourceId}/o/{objectName}"
         method = "PUT"
         operation_name = "put_awr_hub_object"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubObjects/PutAwrHubObject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15247,7 +15277,7 @@ class OperationsInsightsClient(object):
         resource_path = "/opsiDataObjects/actions/queryData"
         method = "POST"
         operation_name = "query_opsi_data_object_data"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiDataObjects/QueryOpsiDataObjectData"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15374,7 +15404,7 @@ class OperationsInsightsClient(object):
         resource_path = "/{warehouseType}/{warehouseId}/actions/queryData"
         method = "POST"
         operation_name = "query_warehouse_data_object_data"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiWarehouseDataObjects/QueryWarehouseDataObjectData"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15457,7 +15487,7 @@ class OperationsInsightsClient(object):
 
 
         :param str operations_insights_warehouse_id: (required)
-            Unique Operations Insights Warehouse identifier
+            Unique Ops Insights Warehouse identifier
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -15491,7 +15521,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouses/{operationsInsightsWarehouseId}/actions/rotateWarehouseWallet"
         method = "POST"
         operation_name = "rotate_operations_insights_warehouse_wallet"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/RotateOperationsInsightsWarehouseWallet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15675,7 +15705,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/addmDbFindings"
         method = "GET"
         operation_name = "summarize_addm_db_findings"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbFindings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15905,7 +15935,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/addmDbParameterChanges"
         method = "GET"
         operation_name = "summarize_addm_db_parameter_changes"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbParameterChanges"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16061,19 +16091,19 @@ class OperationsInsightsClient(object):
             Optional filter to return only parameters whose value changed in the specified time period.
             Valid values include: TRUE, FALSE
 
-            Allowed values are: "true", "false"
+            Allowed values are: "TRUE", "FALSE"
 
         :param str is_default: (optional)
             Optional filter to return only parameters whose end value was set to the default value (TRUE)
             or was specified in the parameter file (FALSE). Valid values include: TRUE, FALSE
 
-            Allowed values are: "true", "false"
+            Allowed values are: "TRUE", "FALSE"
 
         :param str has_recommendations: (optional)
             Optional filter to return only parameters which have recommendations in the specified time period.
             Valid values include: TRUE, FALSE
 
-            Allowed values are: "true", "false"
+            Allowed values are: "TRUE", "FALSE"
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -16156,7 +16186,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/addmDbParameters"
         method = "GET"
         operation_name = "summarize_addm_db_parameters"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbParameters"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16189,21 +16219,21 @@ class OperationsInsightsClient(object):
                 f"summarize_addm_db_parameters got unknown kwargs: {extra_kwargs!r}")
 
         if 'is_changed' in kwargs:
-            is_changed_allowed_values = ["true", "false"]
+            is_changed_allowed_values = ["TRUE", "FALSE"]
             if kwargs['is_changed'] not in is_changed_allowed_values:
                 raise ValueError(
                     f"Invalid value for `is_changed`, must be one of { is_changed_allowed_values }"
                 )
 
         if 'is_default' in kwargs:
-            is_default_allowed_values = ["true", "false"]
+            is_default_allowed_values = ["TRUE", "FALSE"]
             if kwargs['is_default'] not in is_default_allowed_values:
                 raise ValueError(
                     f"Invalid value for `is_default`, must be one of { is_default_allowed_values }"
                 )
 
         if 'has_recommendations' in kwargs:
-            has_recommendations_allowed_values = ["true", "false"]
+            has_recommendations_allowed_values = ["TRUE", "FALSE"]
             if kwargs['has_recommendations'] not in has_recommendations_allowed_values:
                 raise ValueError(
                     f"Invalid value for `has_recommendations`, must be one of { has_recommendations_allowed_values }"
@@ -16427,7 +16457,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/addmDbRecommendations"
         method = "GET"
         operation_name = "summarize_addm_db_recommendations"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbRecommendations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16647,7 +16677,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/addmDbSchemaObjects"
         method = "GET"
         operation_name = "summarize_addm_db_schema_objects"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbSchemaObjects"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16837,7 +16867,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/addmDbSqlStatements"
         method = "GET"
         operation_name = "summarize_addm_db_sql_statements"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbSqlStatements"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17011,7 +17041,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrDatabaseCpuUsages"
         method = "GET"
         operation_name = "summarize_awr_database_cpu_usages"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseCpuUsages"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17209,7 +17239,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrDatabaseMetrics"
         method = "GET"
         operation_name = "summarize_awr_database_metrics"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseMetrics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17403,7 +17433,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrDatabaseParameterChanges"
         method = "GET"
         operation_name = "summarize_awr_database_parameter_changes"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseParameterChanges"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17621,7 +17651,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrDatabaseParameters"
         method = "GET"
         operation_name = "summarize_awr_database_parameters"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseParameters"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17825,7 +17855,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrDatabaseSnapshotRanges"
         method = "GET"
         operation_name = "summarize_awr_database_snapshot_ranges"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseSnapshotRanges"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18009,7 +18039,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrDatabaseSysstats"
         method = "GET"
         operation_name = "summarize_awr_database_sysstats"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseSysstats"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18188,7 +18218,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrDatabaseTopWaitEvents"
         method = "GET"
         operation_name = "summarize_awr_database_top_wait_events"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseTopWaitEvents"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18393,7 +18423,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrDatabaseWaitEventBuckets"
         method = "GET"
         operation_name = "summarize_awr_database_wait_event_buckets"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseWaitEventBuckets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18594,7 +18624,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrDatabaseWaitEvents"
         method = "GET"
         operation_name = "summarize_awr_database_wait_events"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseWaitEvents"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18777,7 +18807,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}/awrSourcesSummary"
         method = "GET"
         operation_name = "summarize_awr_sources_summaries"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrSourcesSummaries"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18943,7 +18973,7 @@ class OperationsInsightsClient(object):
         resource_path = "/opsiConfigurations/configurationItems"
         method = "GET"
         operation_name = "summarize_configuration_items"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/SummarizeConfigurationItems"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19190,7 +19220,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/resourceCapacityTrend"
         method = "GET"
         operation_name = "summarize_database_insight_resource_capacity_trend"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceCapacityTrend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19498,7 +19528,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/resourceForecastTrend"
         method = "GET"
         operation_name = "summarize_database_insight_resource_forecast_trend"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceForecastTrend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19804,7 +19834,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/resourceStatistics"
         method = "GET"
         operation_name = "summarize_database_insight_resource_statistics"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceStatistics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20072,7 +20102,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/resourceUsageSummary"
         method = "GET"
         operation_name = "summarize_database_insight_resource_usage"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20318,7 +20348,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/resourceUsageTrend"
         method = "GET"
         operation_name = "summarize_database_insight_resource_usage_trend"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceUsageTrend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20578,7 +20608,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/resourceUtilizationInsight"
         method = "GET"
         operation_name = "summarize_database_insight_resource_utilization_insight"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceUtilizationInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20770,7 +20800,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/tablespaceUsageTrend"
         method = "GET"
         operation_name = "summarize_database_insight_tablespace_usage_trend"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightTablespaceUsageTrend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20968,7 +20998,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/resourceCapacityTrend"
         method = "GET"
         operation_name = "summarize_exadata_insight_resource_capacity_trend"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceCapacityTrend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21196,7 +21226,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/resourceCapacityTrendAggregated"
         method = "GET"
         operation_name = "summarize_exadata_insight_resource_capacity_trend_aggregated"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceCapacityTrendAggregated"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21447,7 +21477,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/resourceForecastTrend"
         method = "GET"
         operation_name = "summarize_exadata_insight_resource_forecast_trend"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceForecastTrend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21713,7 +21743,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/resourceForecastTrendAggregated"
         method = "GET"
         operation_name = "summarize_exadata_insight_resource_forecast_trend_aggregated"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceForecastTrendAggregated"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21930,7 +21960,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/resourceStatistics"
         method = "GET"
         operation_name = "summarize_exadata_insight_resource_statistics"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceStatistics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22165,7 +22195,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/resourceUsageSummary"
         method = "GET"
         operation_name = "summarize_exadata_insight_resource_usage"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22391,7 +22421,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/resourceUsageSummaryAggregated"
         method = "GET"
         operation_name = "summarize_exadata_insight_resource_usage_aggregated"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceUsageAggregated"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22604,7 +22634,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/resourceUtilizationInsight"
         method = "GET"
         operation_name = "summarize_exadata_insight_resource_utilization_insight"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceUtilizationInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22762,7 +22792,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/exadataMembers"
         method = "GET"
         operation_name = "summarize_exadata_members"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataMembers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22893,6 +22923,11 @@ class OperationsInsightsClient(object):
             Unique Oracle-assigned identifier for the request. If you need to contact
             Oracle about a particular request, please provide the request ID.
 
+        :param list[str] status: (optional)
+            Resource Status
+
+            Allowed values are: "DISABLED", "ENABLED", "TERMINATED"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -22916,7 +22951,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/diskStatistics"
         method = "GET"
         operation_name = "summarize_host_insight_disk_statistics"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightDiskStatistics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22927,7 +22962,8 @@ class OperationsInsightsClient(object):
             "time_interval_end",
             "host_id",
             "statistic",
-            "opc_request_id"
+            "opc_request_id",
+            "status"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -22941,6 +22977,14 @@ class OperationsInsightsClient(object):
                     f"Invalid value for `statistic`, must be one of { statistic_allowed_values }"
                 )
 
+        if 'status' in kwargs:
+            status_allowed_values = ["DISABLED", "ENABLED", "TERMINATED"]
+            for status_item in kwargs['status']:
+                if status_item not in status_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `status`, must be one of { status_allowed_values }"
+                    )
+
         query_params = {
             "compartmentId": compartment_id,
             "id": id,
@@ -22948,7 +22992,8 @@ class OperationsInsightsClient(object):
             "timeIntervalStart": kwargs.get("time_interval_start", missing),
             "timeIntervalEnd": kwargs.get("time_interval_end", missing),
             "hostId": kwargs.get("host_id", missing),
-            "statistic": kwargs.get("statistic", missing)
+            "statistic": kwargs.get("statistic", missing),
+            "status": self.base_client.generate_collection_format_param(kwargs.get("status", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -23077,7 +23122,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/hostRecommendation"
         method = "GET"
         operation_name = "summarize_host_insight_host_recommendation"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightHostRecommendation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23221,6 +23266,11 @@ class OperationsInsightsClient(object):
             Unique Oracle-assigned identifier for the request. If you need to contact
             Oracle about a particular request, please provide the request ID.
 
+        :param list[str] status: (optional)
+            Resource Status
+
+            Allowed values are: "DISABLED", "ENABLED", "TERMINATED"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -23244,7 +23294,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/networkUsageTrend"
         method = "GET"
         operation_name = "summarize_host_insight_network_usage_trend"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightNetworkUsageTrend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23257,7 +23307,8 @@ class OperationsInsightsClient(object):
             "page",
             "limit",
             "statistic",
-            "opc_request_id"
+            "opc_request_id",
+            "status"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -23271,6 +23322,14 @@ class OperationsInsightsClient(object):
                     f"Invalid value for `statistic`, must be one of { statistic_allowed_values }"
                 )
 
+        if 'status' in kwargs:
+            status_allowed_values = ["DISABLED", "ENABLED", "TERMINATED"]
+            for status_item in kwargs['status']:
+                if status_item not in status_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `status`, must be one of { status_allowed_values }"
+                    )
+
         query_params = {
             "compartmentId": compartment_id,
             "id": id,
@@ -23280,7 +23339,8 @@ class OperationsInsightsClient(object):
             "hostId": kwargs.get("host_id", missing),
             "page": kwargs.get("page", missing),
             "limit": kwargs.get("limit", missing),
-            "statistic": kwargs.get("statistic", missing)
+            "statistic": kwargs.get("statistic", missing),
+            "status": self.base_client.generate_collection_format_param(kwargs.get("status", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -23454,6 +23514,11 @@ class OperationsInsightsClient(object):
         :param int low_utilization_threshold: (optional)
             Percent value in which a resource metric is considered low utilized.
 
+        :param list[str] status: (optional)
+            Resource Status
+
+            Allowed values are: "DISABLED", "ENABLED", "TERMINATED"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -23477,7 +23542,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/resourceCapacityTrend"
         method = "GET"
         operation_name = "summarize_host_insight_resource_capacity_trend"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceCapacityTrend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23503,7 +23568,8 @@ class OperationsInsightsClient(object):
             "host_id",
             "vmcluster_name",
             "high_utilization_threshold",
-            "low_utilization_threshold"
+            "low_utilization_threshold",
+            "status"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -23539,6 +23605,14 @@ class OperationsInsightsClient(object):
                     f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
+        if 'status' in kwargs:
+            status_allowed_values = ["DISABLED", "ENABLED", "TERMINATED"]
+            for status_item in kwargs['status']:
+                if status_item not in status_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `status`, must be one of { status_allowed_values }"
+                    )
+
         query_params = {
             "compartmentId": compartment_id,
             "resourceMetric": resource_metric,
@@ -23561,7 +23635,8 @@ class OperationsInsightsClient(object):
             "hostId": kwargs.get("host_id", missing),
             "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi'),
             "highUtilizationThreshold": kwargs.get("high_utilization_threshold", missing),
-            "lowUtilizationThreshold": kwargs.get("low_utilization_threshold", missing)
+            "lowUtilizationThreshold": kwargs.get("low_utilization_threshold", missing),
+            "status": self.base_client.generate_collection_format_param(kwargs.get("status", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -23754,6 +23829,11 @@ class OperationsInsightsClient(object):
         :param str interface_name: (optional)
             Name of the network interface.
 
+        :param list[str] status: (optional)
+            Resource Status
+
+            Allowed values are: "DISABLED", "ENABLED", "TERMINATED"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -23777,7 +23857,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/resourceForecastTrend"
         method = "GET"
         operation_name = "summarize_host_insight_resource_forecast_trend"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceForecastTrend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23807,7 +23887,8 @@ class OperationsInsightsClient(object):
             "high_utilization_threshold",
             "low_utilization_threshold",
             "mount_point",
-            "interface_name"
+            "interface_name",
+            "status"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -23843,6 +23924,14 @@ class OperationsInsightsClient(object):
                     f"Invalid value for `utilization_level`, must be one of { utilization_level_allowed_values }"
                 )
 
+        if 'status' in kwargs:
+            status_allowed_values = ["DISABLED", "ENABLED", "TERMINATED"]
+            for status_item in kwargs['status']:
+                if status_item not in status_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `status`, must be one of { status_allowed_values }"
+                    )
+
         query_params = {
             "compartmentId": compartment_id,
             "resourceMetric": resource_metric,
@@ -23869,7 +23958,8 @@ class OperationsInsightsClient(object):
             "highUtilizationThreshold": kwargs.get("high_utilization_threshold", missing),
             "lowUtilizationThreshold": kwargs.get("low_utilization_threshold", missing),
             "mountPoint": kwargs.get("mount_point", missing),
-            "interfaceName": kwargs.get("interface_name", missing)
+            "interfaceName": kwargs.get("interface_name", missing),
+            "status": self.base_client.generate_collection_format_param(kwargs.get("status", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -24053,6 +24143,11 @@ class OperationsInsightsClient(object):
         :param int low_utilization_threshold: (optional)
             Percent value in which a resource metric is considered low utilized.
 
+        :param list[str] status: (optional)
+            Resource Status
+
+            Allowed values are: "DISABLED", "ENABLED", "TERMINATED"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -24076,7 +24171,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/resourceStatistics"
         method = "GET"
         operation_name = "summarize_host_insight_resource_statistics"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceStatistics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24105,7 +24200,8 @@ class OperationsInsightsClient(object):
             "host_id",
             "vmcluster_name",
             "high_utilization_threshold",
-            "low_utilization_threshold"
+            "low_utilization_threshold",
+            "status"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -24134,6 +24230,14 @@ class OperationsInsightsClient(object):
                     f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
+        if 'status' in kwargs:
+            status_allowed_values = ["DISABLED", "ENABLED", "TERMINATED"]
+            for status_item in kwargs['status']:
+                if status_item not in status_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `status`, must be one of { status_allowed_values }"
+                    )
+
         query_params = {
             "compartmentId": compartment_id,
             "resourceMetric": resource_metric,
@@ -24159,7 +24263,8 @@ class OperationsInsightsClient(object):
             "hostId": kwargs.get("host_id", missing),
             "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi'),
             "highUtilizationThreshold": kwargs.get("high_utilization_threshold", missing),
-            "lowUtilizationThreshold": kwargs.get("low_utilization_threshold", missing)
+            "lowUtilizationThreshold": kwargs.get("low_utilization_threshold", missing),
+            "status": self.base_client.generate_collection_format_param(kwargs.get("status", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -24312,6 +24417,11 @@ class OperationsInsightsClient(object):
         :param list[str] vmcluster_name: (optional)
             Optional list of Exadata Insight VM cluster name.
 
+        :param list[str] status: (optional)
+            Resource Status
+
+            Allowed values are: "DISABLED", "ENABLED", "TERMINATED"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -24335,7 +24445,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/resourceUsageSummary"
         method = "GET"
         operation_name = "summarize_host_insight_resource_usage"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24357,7 +24467,8 @@ class OperationsInsightsClient(object):
             "compartment_id_in_subtree",
             "host_type",
             "host_id",
-            "vmcluster_name"
+            "vmcluster_name",
+            "status"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -24370,6 +24481,14 @@ class OperationsInsightsClient(object):
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
                         f"Invalid value for `platform_type`, must be one of { platform_type_allowed_values }"
+                    )
+
+        if 'status' in kwargs:
+            status_allowed_values = ["DISABLED", "ENABLED", "TERMINATED"]
+            for status_item in kwargs['status']:
+                if status_item not in status_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `status`, must be one of { status_allowed_values }"
                     )
 
         query_params = {
@@ -24390,7 +24509,8 @@ class OperationsInsightsClient(object):
             "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
             "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
             "hostId": kwargs.get("host_id", missing),
-            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi')
+            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi'),
+            "status": self.base_client.generate_collection_format_param(kwargs.get("status", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -24549,6 +24669,11 @@ class OperationsInsightsClient(object):
         :param list[str] vmcluster_name: (optional)
             Optional list of Exadata Insight VM cluster name.
 
+        :param list[str] status: (optional)
+            Resource Status
+
+            Allowed values are: "DISABLED", "ENABLED", "TERMINATED"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -24572,7 +24697,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/resourceUsageTrend"
         method = "GET"
         operation_name = "summarize_host_insight_resource_usage_trend"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceUsageTrend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24595,7 +24720,8 @@ class OperationsInsightsClient(object):
             "compartment_id_in_subtree",
             "host_type",
             "host_id",
-            "vmcluster_name"
+            "vmcluster_name",
+            "status"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -24624,6 +24750,14 @@ class OperationsInsightsClient(object):
                     f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
+        if 'status' in kwargs:
+            status_allowed_values = ["DISABLED", "ENABLED", "TERMINATED"]
+            for status_item in kwargs['status']:
+                if status_item not in status_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `status`, must be one of { status_allowed_values }"
+                    )
+
         query_params = {
             "compartmentId": compartment_id,
             "resourceMetric": resource_metric,
@@ -24643,7 +24777,8 @@ class OperationsInsightsClient(object):
             "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
             "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
             "hostId": kwargs.get("host_id", missing),
-            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi')
+            "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi'),
+            "status": self.base_client.generate_collection_format_param(kwargs.get("status", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -24800,6 +24935,11 @@ class OperationsInsightsClient(object):
         :param int low_utilization_threshold: (optional)
             Percent value in which a resource metric is considered low utilized.
 
+        :param list[str] status: (optional)
+            Resource Status
+
+            Allowed values are: "DISABLED", "ENABLED", "TERMINATED"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -24823,7 +24963,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/resourceUtilizationInsight"
         method = "GET"
         operation_name = "summarize_host_insight_resource_utilization_insight"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceUtilizationInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24847,7 +24987,8 @@ class OperationsInsightsClient(object):
             "host_id",
             "vmcluster_name",
             "high_utilization_threshold",
-            "low_utilization_threshold"
+            "low_utilization_threshold",
+            "status"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -24860,6 +25001,14 @@ class OperationsInsightsClient(object):
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
                         f"Invalid value for `platform_type`, must be one of { platform_type_allowed_values }"
+                    )
+
+        if 'status' in kwargs:
+            status_allowed_values = ["DISABLED", "ENABLED", "TERMINATED"]
+            for status_item in kwargs['status']:
+                if status_item not in status_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `status`, must be one of { status_allowed_values }"
                     )
 
         query_params = {
@@ -24882,7 +25031,8 @@ class OperationsInsightsClient(object):
             "hostId": kwargs.get("host_id", missing),
             "vmclusterName": self.base_client.generate_collection_format_param(kwargs.get("vmcluster_name", missing), 'multi'),
             "highUtilizationThreshold": kwargs.get("high_utilization_threshold", missing),
-            "lowUtilizationThreshold": kwargs.get("low_utilization_threshold", missing)
+            "lowUtilizationThreshold": kwargs.get("low_utilization_threshold", missing),
+            "status": self.base_client.generate_collection_format_param(kwargs.get("status", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -24991,6 +25141,11 @@ class OperationsInsightsClient(object):
             Unique Oracle-assigned identifier for the request. If you need to contact
             Oracle about a particular request, please provide the request ID.
 
+        :param list[str] status: (optional)
+            Resource Status
+
+            Allowed values are: "DISABLED", "ENABLED", "TERMINATED"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -25014,7 +25169,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/storageUsageTrend"
         method = "GET"
         operation_name = "summarize_host_insight_storage_usage_trend"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightStorageUsageTrend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25027,7 +25182,8 @@ class OperationsInsightsClient(object):
             "page",
             "limit",
             "statistic",
-            "opc_request_id"
+            "opc_request_id",
+            "status"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -25041,6 +25197,14 @@ class OperationsInsightsClient(object):
                     f"Invalid value for `statistic`, must be one of { statistic_allowed_values }"
                 )
 
+        if 'status' in kwargs:
+            status_allowed_values = ["DISABLED", "ENABLED", "TERMINATED"]
+            for status_item in kwargs['status']:
+                if status_item not in status_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `status`, must be one of { status_allowed_values }"
+                    )
+
         query_params = {
             "compartmentId": compartment_id,
             "id": id,
@@ -25050,7 +25214,8 @@ class OperationsInsightsClient(object):
             "hostId": kwargs.get("host_id", missing),
             "page": kwargs.get("page", missing),
             "limit": kwargs.get("limit", missing),
-            "statistic": kwargs.get("statistic", missing)
+            "statistic": kwargs.get("statistic", missing),
+            "status": self.base_client.generate_collection_format_param(kwargs.get("status", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -25173,6 +25338,11 @@ class OperationsInsightsClient(object):
 
             Allowed values are: "AVG", "MAX"
 
+        :param list[str] status: (optional)
+            Resource Status
+
+            Allowed values are: "DISABLED", "ENABLED", "TERMINATED"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -25196,7 +25366,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/topProcessesUsage"
         method = "GET"
         operation_name = "summarize_host_insight_top_processes_usage"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightTopProcessesUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25210,7 +25380,8 @@ class OperationsInsightsClient(object):
             "analysis_time_interval",
             "host_type",
             "host_id",
-            "statistic"
+            "statistic",
+            "status"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -25224,6 +25395,14 @@ class OperationsInsightsClient(object):
                     f"Invalid value for `statistic`, must be one of { statistic_allowed_values }"
                 )
 
+        if 'status' in kwargs:
+            status_allowed_values = ["DISABLED", "ENABLED", "TERMINATED"]
+            for status_item in kwargs['status']:
+                if status_item not in status_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `status`, must be one of { status_allowed_values }"
+                    )
+
         query_params = {
             "compartmentId": compartment_id,
             "id": id,
@@ -25236,7 +25415,8 @@ class OperationsInsightsClient(object):
             "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
             "hostId": kwargs.get("host_id", missing),
             "timestamp": timestamp,
-            "statistic": kwargs.get("statistic", missing)
+            "statistic": kwargs.get("statistic", missing),
+            "status": self.base_client.generate_collection_format_param(kwargs.get("status", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -25358,6 +25538,11 @@ class OperationsInsightsClient(object):
 
             Allowed values are: "AVG", "MAX"
 
+        :param list[str] status: (optional)
+            Resource Status
+
+            Allowed values are: "DISABLED", "ENABLED", "TERMINATED"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -25381,7 +25566,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/topProcessesUsageTrend"
         method = "GET"
         operation_name = "summarize_host_insight_top_processes_usage_trend"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightTopProcessesUsageTrend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25396,7 +25581,8 @@ class OperationsInsightsClient(object):
             "host_type",
             "host_id",
             "process_hash",
-            "statistic"
+            "statistic",
+            "status"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -25410,6 +25596,14 @@ class OperationsInsightsClient(object):
                     f"Invalid value for `statistic`, must be one of { statistic_allowed_values }"
                 )
 
+        if 'status' in kwargs:
+            status_allowed_values = ["DISABLED", "ENABLED", "TERMINATED"]
+            for status_item in kwargs['status']:
+                if status_item not in status_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `status`, must be one of { status_allowed_values }"
+                    )
+
         query_params = {
             "compartmentId": compartment_id,
             "id": id,
@@ -25422,7 +25616,8 @@ class OperationsInsightsClient(object):
             "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
             "hostId": kwargs.get("host_id", missing),
             "processHash": kwargs.get("process_hash", missing),
-            "statistic": kwargs.get("statistic", missing)
+            "statistic": kwargs.get("statistic", missing),
+            "status": self.base_client.generate_collection_format_param(kwargs.get("status", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -25474,7 +25669,7 @@ class OperationsInsightsClient(object):
 
 
         :param str operations_insights_warehouse_id: (required)
-            Unique Operations Insights Warehouse identifier
+            Unique Ops Insights Warehouse identifier
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -25503,7 +25698,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouses/{operationsInsightsWarehouseId}/resourceUsageSummary"
         method = "GET"
         operation_name = "summarize_operations_insights_warehouse_resource_usage"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/SummarizeOperationsInsightsWarehouseResourceUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25692,7 +25887,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/sqlInsights"
         method = "GET"
         operation_name = "summarize_sql_insights"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlInsights"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25871,7 +26066,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/sqlPlanInsights"
         method = "GET"
         operation_name = "summarize_sql_plan_insights"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlPlanInsights"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26021,7 +26216,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/sqlResponseTimeDistributions"
         method = "GET"
         operation_name = "summarize_sql_response_time_distributions"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlResponseTimeDistributions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26247,7 +26442,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/sqlStatistics"
         method = "GET"
         operation_name = "summarize_sql_statistics"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlStatistics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26500,7 +26695,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/sqlStatisticsTimeSeries"
         method = "GET"
         operation_name = "summarize_sql_statistics_time_series"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlStatisticsTimeSeries"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26668,7 +26863,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/sqlStatisticsTimeSeriesByPlan"
         method = "GET"
         operation_name = "summarize_sql_statistics_time_series_by_plan"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlStatisticsTimeSeriesByPlan"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26783,7 +26978,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubs/{awrHubId}"
         method = "PUT"
         operation_name = "update_awr_hub"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/UpdateAwrHub"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26892,7 +27087,7 @@ class OperationsInsightsClient(object):
         resource_path = "/awrHubSources/{awrHubSourceId}"
         method = "PUT"
         operation_name = "update_awr_hub_source"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/UpdateAwrHubSource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27001,7 +27196,7 @@ class OperationsInsightsClient(object):
         resource_path = "/databaseInsights/{databaseInsightId}"
         method = "PUT"
         operation_name = "update_database_insight"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/UpdateDatabaseInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27110,7 +27305,7 @@ class OperationsInsightsClient(object):
         resource_path = "/enterpriseManagerBridges/{enterpriseManagerBridgeId}"
         method = "PUT"
         operation_name = "update_enterprise_manager_bridge"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/UpdateEnterpriseManagerBridge"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27219,7 +27414,7 @@ class OperationsInsightsClient(object):
         resource_path = "/exadataInsights/{exadataInsightId}"
         method = "PUT"
         operation_name = "update_exadata_insight"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/UpdateExadataInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27328,7 +27523,7 @@ class OperationsInsightsClient(object):
         resource_path = "/hostInsights/{hostInsightId}"
         method = "PUT"
         operation_name = "update_host_insight"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/UpdateHostInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27437,7 +27632,7 @@ class OperationsInsightsClient(object):
         resource_path = "/newsReports/{newsReportId}"
         method = "PUT"
         operation_name = "update_news_report"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReports/UpdateNewsReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27548,7 +27743,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsPrivateEndpoints/{operationsInsightsPrivateEndpointId}"
         method = "PUT"
         operation_name = "update_operations_insights_private_endpoint"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/UpdateOperationsInsightsPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27616,12 +27811,12 @@ class OperationsInsightsClient(object):
 
     def update_operations_insights_warehouse(self, operations_insights_warehouse_id, update_operations_insights_warehouse_details, **kwargs):
         """
-        Updates the configuration of an Operations Insights Warehouse.
+        Updates the configuration of an Ops Insights Warehouse.
         There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
 
 
         :param str operations_insights_warehouse_id: (required)
-            Unique Operations Insights Warehouse identifier
+            Unique Ops Insights Warehouse identifier
 
         :param oci.opsi.models.UpdateOperationsInsightsWarehouseDetails update_operations_insights_warehouse_details: (required)
             The configuration to be updated.
@@ -27658,7 +27853,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouses/{operationsInsightsWarehouseId}"
         method = "PUT"
         operation_name = "update_operations_insights_warehouse"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/UpdateOperationsInsightsWarehouse"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27767,7 +27962,7 @@ class OperationsInsightsClient(object):
         resource_path = "/operationsInsightsWarehouseUsers/{operationsInsightsWarehouseUserId}"
         method = "PUT"
         operation_name = "update_operations_insights_warehouse_user"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouseUsers/UpdateOperationsInsightsWarehouseUser"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27878,7 +28073,7 @@ class OperationsInsightsClient(object):
         resource_path = "/opsiConfigurations/{opsiConfigurationId}"
         method = "PUT"
         operation_name = "update_opsi_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/UpdateOpsiConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

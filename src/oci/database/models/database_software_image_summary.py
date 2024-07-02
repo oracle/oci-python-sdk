@@ -76,6 +76,10 @@ class DatabaseSoftwareImageSummary(object):
     #: This constant has a value of "EXACC_SHAPE"
     IMAGE_SHAPE_FAMILY_EXACC_SHAPE = "EXACC_SHAPE"
 
+    #: A constant which can be used with the image_shape_family property of a DatabaseSoftwareImageSummary.
+    #: This constant has a value of "EXADBXS_SHAPE"
+    IMAGE_SHAPE_FAMILY_EXADBXS_SHAPE = "EXADBXS_SHAPE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DatabaseSoftwareImageSummary object with values from keyword arguments.
@@ -119,7 +123,7 @@ class DatabaseSoftwareImageSummary(object):
 
         :param image_shape_family:
             The value to assign to the image_shape_family property of this DatabaseSoftwareImageSummary.
-            Allowed values for this property are: "VM_BM_SHAPE", "EXADATA_SHAPE", "EXACC_SHAPE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VM_BM_SHAPE", "EXADATA_SHAPE", "EXACC_SHAPE", "EXADBXS_SHAPE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type image_shape_family: str
 
@@ -432,7 +436,7 @@ class DatabaseSoftwareImageSummary(object):
         **[Required]** Gets the image_shape_family of this DatabaseSoftwareImageSummary.
         To what shape the image is meant for.
 
-        Allowed values for this property are: "VM_BM_SHAPE", "EXADATA_SHAPE", "EXACC_SHAPE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VM_BM_SHAPE", "EXADATA_SHAPE", "EXACC_SHAPE", "EXADBXS_SHAPE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -451,7 +455,7 @@ class DatabaseSoftwareImageSummary(object):
         :param image_shape_family: The image_shape_family of this DatabaseSoftwareImageSummary.
         :type: str
         """
-        allowed_values = ["VM_BM_SHAPE", "EXADATA_SHAPE", "EXACC_SHAPE"]
+        allowed_values = ["VM_BM_SHAPE", "EXADATA_SHAPE", "EXACC_SHAPE", "EXADBXS_SHAPE"]
         if not value_allowed_none_or_none_sentinel(image_shape_family, allowed_values):
             image_shape_family = 'UNKNOWN_ENUM_VALUE'
         self._image_shape_family = image_shape_family

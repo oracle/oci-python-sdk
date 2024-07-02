@@ -534,7 +534,7 @@ class NewsReport(object):
     def status(self):
         """
         Gets the status of this NewsReport.
-        Indicates the status of a news report in Operations Insights.
+        Indicates the status of a news report in Ops Insights.
 
         Allowed values for this property are: "DISABLED", "ENABLED", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -549,7 +549,7 @@ class NewsReport(object):
     def status(self, status):
         """
         Sets the status of this NewsReport.
-        Indicates the status of a news report in Operations Insights.
+        Indicates the status of a news report in Ops Insights.
 
 
         :param status: The status of this NewsReport.

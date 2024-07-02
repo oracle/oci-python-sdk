@@ -24,6 +24,10 @@ class FileSystemSummary(object):
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
 
     #: A constant which can be used with the lifecycle_state property of a FileSystemSummary.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the lifecycle_state property of a FileSystemSummary.
     #: This constant has a value of "DELETING"
     LIFECYCLE_STATE_DELETING = "DELETING"
 
@@ -34,6 +38,18 @@ class FileSystemSummary(object):
     #: A constant which can be used with the lifecycle_state property of a FileSystemSummary.
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
+
+    #: A constant which can be used with the clone_attach_status property of a FileSystemSummary.
+    #: This constant has a value of "ATTACHED"
+    CLONE_ATTACH_STATUS_ATTACHED = "ATTACHED"
+
+    #: A constant which can be used with the clone_attach_status property of a FileSystemSummary.
+    #: This constant has a value of "DETACHING"
+    CLONE_ATTACH_STATUS_DETACHING = "DETACHING"
+
+    #: A constant which can be used with the clone_attach_status property of a FileSystemSummary.
+    #: This constant has a value of "DETACHED"
+    CLONE_ATTACH_STATUS_DETACHED = "DETACHED"
 
     def __init__(self, **kwargs):
         """
@@ -62,7 +78,7 @@ class FileSystemSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this FileSystemSummary.
-            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -98,6 +114,12 @@ class FileSystemSummary(object):
             The value to assign to the lifecycle_details property of this FileSystemSummary.
         :type lifecycle_details: str
 
+        :param clone_attach_status:
+            The value to assign to the clone_attach_status property of this FileSystemSummary.
+            Allowed values for this property are: "ATTACHED", "DETACHING", "DETACHED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type clone_attach_status: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -113,7 +135,8 @@ class FileSystemSummary(object):
             'source_details': 'SourceDetails',
             'is_clone_parent': 'bool',
             'is_hydrated': 'bool',
-            'lifecycle_details': 'str'
+            'lifecycle_details': 'str',
+            'clone_attach_status': 'str'
         }
 
         self.attribute_map = {
@@ -130,7 +153,8 @@ class FileSystemSummary(object):
             'source_details': 'sourceDetails',
             'is_clone_parent': 'isCloneParent',
             'is_hydrated': 'isHydrated',
-            'lifecycle_details': 'lifecycleDetails'
+            'lifecycle_details': 'lifecycleDetails',
+            'clone_attach_status': 'cloneAttachStatus'
         }
 
         self._availability_domain = None
@@ -147,6 +171,7 @@ class FileSystemSummary(object):
         self._is_clone_parent = None
         self._is_hydrated = None
         self._lifecycle_details = None
+        self._clone_attach_status = None
 
     @property
     def availability_domain(self):
@@ -300,7 +325,7 @@ class FileSystemSummary(object):
         **[Required]** Gets the lifecycle_state of this FileSystemSummary.
         The current state of the file system.
 
-        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -319,7 +344,7 @@ class FileSystemSummary(object):
         :param lifecycle_state: The lifecycle_state of this FileSystemSummary.
         :type: str
         """
-        allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -559,6 +584,36 @@ class FileSystemSummary(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def clone_attach_status(self):
+        """
+        Gets the clone_attach_status of this FileSystemSummary.
+        Specifies whether the file system is attached to its parent file system.
+
+        Allowed values for this property are: "ATTACHED", "DETACHING", "DETACHED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The clone_attach_status of this FileSystemSummary.
+        :rtype: str
+        """
+        return self._clone_attach_status
+
+    @clone_attach_status.setter
+    def clone_attach_status(self, clone_attach_status):
+        """
+        Sets the clone_attach_status of this FileSystemSummary.
+        Specifies whether the file system is attached to its parent file system.
+
+
+        :param clone_attach_status: The clone_attach_status of this FileSystemSummary.
+        :type: str
+        """
+        allowed_values = ["ATTACHED", "DETACHING", "DETACHED"]
+        if not value_allowed_none_or_none_sentinel(clone_attach_status, allowed_values):
+            clone_attach_status = 'UNKNOWN_ENUM_VALUE'
+        self._clone_attach_status = clone_attach_status
 
     def __repr__(self):
         return formatted_flat_dict(self)

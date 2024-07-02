@@ -18,6 +18,18 @@ class ResourceFilters(object):
     resources for which the specified freeform tags exist will be considered for the actual query scope.
     """
 
+    #: A constant which can be used with the resource_status property of a ResourceFilters.
+    #: This constant has a value of "DISABLED"
+    RESOURCE_STATUS_DISABLED = "DISABLED"
+
+    #: A constant which can be used with the resource_status property of a ResourceFilters.
+    #: This constant has a value of "ENABLED"
+    RESOURCE_STATUS_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the resource_status property of a ResourceFilters.
+    #: This constant has a value of "TERMINATED"
+    RESOURCE_STATUS_TERMINATED = "TERMINATED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ResourceFilters object with values from keyword arguments.
@@ -43,13 +55,19 @@ class ResourceFilters(object):
             The value to assign to the compartment_id_in_subtree property of this ResourceFilters.
         :type compartment_id_in_subtree: bool
 
+        :param resource_status:
+            The value to assign to the resource_status property of this ResourceFilters.
+            Allowed values for items in this list are: "DISABLED", "ENABLED", "TERMINATED"
+        :type resource_status: list[str]
+
         """
         self.swagger_types = {
             'defined_tag_equals': 'list[str]',
             'freeform_tag_equals': 'list[str]',
             'defined_tag_exists': 'list[str]',
             'freeform_tag_exists': 'list[str]',
-            'compartment_id_in_subtree': 'bool'
+            'compartment_id_in_subtree': 'bool',
+            'resource_status': 'list[str]'
         }
 
         self.attribute_map = {
@@ -57,7 +75,8 @@ class ResourceFilters(object):
             'freeform_tag_equals': 'freeformTagEquals',
             'defined_tag_exists': 'definedTagExists',
             'freeform_tag_exists': 'freeformTagExists',
-            'compartment_id_in_subtree': 'compartmentIdInSubtree'
+            'compartment_id_in_subtree': 'compartmentIdInSubtree',
+            'resource_status': 'resourceStatus'
         }
 
         self._defined_tag_equals = None
@@ -65,6 +84,7 @@ class ResourceFilters(object):
         self._defined_tag_exists = None
         self._freeform_tag_exists = None
         self._compartment_id_in_subtree = None
+        self._resource_status = None
 
     @property
     def defined_tag_equals(self):
@@ -211,6 +231,40 @@ class ResourceFilters(object):
         :type: bool
         """
         self._compartment_id_in_subtree = compartment_id_in_subtree
+
+    @property
+    def resource_status(self):
+        """
+        Gets the resource_status of this ResourceFilters.
+        Filter resources by status, multiple options could be chosen to show authorized resources even if those are disabled or deleted.
+
+        Allowed values for items in this list are: "DISABLED", "ENABLED", "TERMINATED"
+
+
+        :return: The resource_status of this ResourceFilters.
+        :rtype: list[str]
+        """
+        return self._resource_status
+
+    @resource_status.setter
+    def resource_status(self, resource_status):
+        """
+        Sets the resource_status of this ResourceFilters.
+        Filter resources by status, multiple options could be chosen to show authorized resources even if those are disabled or deleted.
+
+
+        :param resource_status: The resource_status of this ResourceFilters.
+        :type: list[str]
+        """
+        allowed_values = ["DISABLED", "ENABLED", "TERMINATED"]
+
+        if resource_status and resource_status is not NONE_SENTINEL:
+            for value in resource_status:
+                if not value_allowed_none_or_none_sentinel(value, allowed_values):
+                    raise ValueError(
+                        f"Invalid value for `resource_status`, must be None or one of {allowed_values}"
+                    )
+        self._resource_status = resource_status
 
     def __repr__(self):
         return formatted_flat_dict(self)

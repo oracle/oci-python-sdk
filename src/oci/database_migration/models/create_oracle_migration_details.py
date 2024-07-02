@@ -79,6 +79,10 @@ class CreateOracleMigrationDetails(CreateMigrationDetails):
             The value to assign to the ggs_details property of this CreateOracleMigrationDetails.
         :type ggs_details: oci.database_migration.models.CreateOracleGgsDeploymentDetails
 
+        :param advanced_parameters:
+            The value to assign to the advanced_parameters property of this CreateOracleMigrationDetails.
+        :type advanced_parameters: list[oci.database_migration.models.MigrationParameterDetails]
+
         :param source_container_database_connection_id:
             The value to assign to the source_container_database_connection_id property of this CreateOracleMigrationDetails.
         :type source_container_database_connection_id: str
@@ -111,6 +115,7 @@ class CreateOracleMigrationDetails(CreateMigrationDetails):
             'advisor_settings': 'CreateOracleAdvisorSettings',
             'hub_details': 'CreateGoldenGateHubDetails',
             'ggs_details': 'CreateOracleGgsDeploymentDetails',
+            'advanced_parameters': 'list[MigrationParameterDetails]',
             'source_container_database_connection_id': 'str',
             'exclude_objects': 'list[OracleDatabaseObject]',
             'include_objects': 'list[OracleDatabaseObject]',
@@ -132,6 +137,7 @@ class CreateOracleMigrationDetails(CreateMigrationDetails):
             'advisor_settings': 'advisorSettings',
             'hub_details': 'hubDetails',
             'ggs_details': 'ggsDetails',
+            'advanced_parameters': 'advancedParameters',
             'source_container_database_connection_id': 'sourceContainerDatabaseConnectionId',
             'exclude_objects': 'excludeObjects',
             'include_objects': 'includeObjects',
@@ -152,6 +158,7 @@ class CreateOracleMigrationDetails(CreateMigrationDetails):
         self._advisor_settings = None
         self._hub_details = None
         self._ggs_details = None
+        self._advanced_parameters = None
         self._source_container_database_connection_id = None
         self._exclude_objects = None
         self._include_objects = None
@@ -257,6 +264,30 @@ class CreateOracleMigrationDetails(CreateMigrationDetails):
         :type: oci.database_migration.models.CreateOracleGgsDeploymentDetails
         """
         self._ggs_details = ggs_details
+
+    @property
+    def advanced_parameters(self):
+        """
+        Gets the advanced_parameters of this CreateOracleMigrationDetails.
+        List of Migration Parameter objects.
+
+
+        :return: The advanced_parameters of this CreateOracleMigrationDetails.
+        :rtype: list[oci.database_migration.models.MigrationParameterDetails]
+        """
+        return self._advanced_parameters
+
+    @advanced_parameters.setter
+    def advanced_parameters(self, advanced_parameters):
+        """
+        Sets the advanced_parameters of this CreateOracleMigrationDetails.
+        List of Migration Parameter objects.
+
+
+        :param advanced_parameters: The advanced_parameters of this CreateOracleMigrationDetails.
+        :type: list[oci.database_migration.models.MigrationParameterDetails]
+        """
+        self._advanced_parameters = advanced_parameters
 
     @property
     def source_container_database_connection_id(self):

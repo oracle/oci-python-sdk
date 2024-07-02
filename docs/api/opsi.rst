@@ -228,6 +228,9 @@ Opsi
     oci.opsi.models.HostEntities
     oci.opsi.models.HostFilesystemConfiguration
     oci.opsi.models.HostFilesystemUsage
+    oci.opsi.models.HostGpuConfiguration
+    oci.opsi.models.HostGpuProcesses
+    oci.opsi.models.HostGpuUsage
     oci.opsi.models.HostHardwareConfiguration
     oci.opsi.models.HostImportableAgentEntitySummary
     oci.opsi.models.HostInsight
@@ -240,16 +243,19 @@ Opsi
     oci.opsi.models.HostInsightsDataObjectSummary
     oci.opsi.models.HostInstanceMap
     oci.opsi.models.HostMemoryConfiguration
+    oci.opsi.models.HostMemoryRecommendations
     oci.opsi.models.HostMemoryStatistics
     oci.opsi.models.HostMemoryUsage
     oci.opsi.models.HostNetworkActivitySummary
     oci.opsi.models.HostNetworkConfiguration
+    oci.opsi.models.HostNetworkRecommendations
     oci.opsi.models.HostNetworkStatistics
     oci.opsi.models.HostPerformanceMetricGroup
     oci.opsi.models.HostProduct
     oci.opsi.models.HostResourceAllocation
     oci.opsi.models.HostResourceCapacityTrendAggregation
     oci.opsi.models.HostResourceStatistics
+    oci.opsi.models.HostStorageRecommendations
     oci.opsi.models.HostStorageStatistics
     oci.opsi.models.HostTopProcesses
     oci.opsi.models.HostedEntityCollection

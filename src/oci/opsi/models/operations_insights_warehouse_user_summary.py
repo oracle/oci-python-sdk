@@ -239,7 +239,7 @@ class OperationsInsightsWarehouseUserSummary(object):
     def name(self):
         """
         **[Required]** Gets the name of this OperationsInsightsWarehouseUserSummary.
-        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 
 
         :return: The name of this OperationsInsightsWarehouseUserSummary.
@@ -251,7 +251,7 @@ class OperationsInsightsWarehouseUserSummary(object):
     def name(self, name):
         """
         Sets the name of this OperationsInsightsWarehouseUserSummary.
-        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 
 
         :param name: The name of this OperationsInsightsWarehouseUserSummary.
@@ -263,7 +263,7 @@ class OperationsInsightsWarehouseUserSummary(object):
     def connection_password(self):
         """
         Gets the connection_password of this OperationsInsightsWarehouseUserSummary.
-        User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 
 
         :return: The connection_password of this OperationsInsightsWarehouseUserSummary.
@@ -275,7 +275,7 @@ class OperationsInsightsWarehouseUserSummary(object):
     def connection_password(self, connection_password):
         """
         Sets the connection_password of this OperationsInsightsWarehouseUserSummary.
-        User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 
 
         :param connection_password: The connection_password of this OperationsInsightsWarehouseUserSummary.

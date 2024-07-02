@@ -48,6 +48,10 @@ class CreatePluggableDatabaseFromRemoteCloneDetails(CreatePluggableDatabaseCreat
             The value to assign to the refreshable_clone_details property of this CreatePluggableDatabaseFromRemoteCloneDetails.
         :type refreshable_clone_details: oci.database.models.CreatePluggableDatabaseRefreshableCloneDetails
 
+        :param is_thin_clone:
+            The value to assign to the is_thin_clone property of this CreatePluggableDatabaseFromRemoteCloneDetails.
+        :type is_thin_clone: bool
+
         """
         self.swagger_types = {
             'creation_type': 'str',
@@ -55,7 +59,8 @@ class CreatePluggableDatabaseFromRemoteCloneDetails(CreatePluggableDatabaseCreat
             'dblink_user_password': 'str',
             'source_pluggable_database_id': 'str',
             'source_container_database_admin_password': 'str',
-            'refreshable_clone_details': 'CreatePluggableDatabaseRefreshableCloneDetails'
+            'refreshable_clone_details': 'CreatePluggableDatabaseRefreshableCloneDetails',
+            'is_thin_clone': 'bool'
         }
 
         self.attribute_map = {
@@ -64,7 +69,8 @@ class CreatePluggableDatabaseFromRemoteCloneDetails(CreatePluggableDatabaseCreat
             'dblink_user_password': 'dblinkUserPassword',
             'source_pluggable_database_id': 'sourcePluggableDatabaseId',
             'source_container_database_admin_password': 'sourceContainerDatabaseAdminPassword',
-            'refreshable_clone_details': 'refreshableCloneDetails'
+            'refreshable_clone_details': 'refreshableCloneDetails',
+            'is_thin_clone': 'isThinClone'
         }
 
         self._creation_type = None
@@ -73,6 +79,7 @@ class CreatePluggableDatabaseFromRemoteCloneDetails(CreatePluggableDatabaseCreat
         self._source_pluggable_database_id = None
         self._source_container_database_admin_password = None
         self._refreshable_clone_details = None
+        self._is_thin_clone = None
         self._creation_type = 'REMOTE_CLONE_PDB'
 
     @property
@@ -190,6 +197,30 @@ class CreatePluggableDatabaseFromRemoteCloneDetails(CreatePluggableDatabaseCreat
         :type: oci.database.models.CreatePluggableDatabaseRefreshableCloneDetails
         """
         self._refreshable_clone_details = refreshable_clone_details
+
+    @property
+    def is_thin_clone(self):
+        """
+        Gets the is_thin_clone of this CreatePluggableDatabaseFromRemoteCloneDetails.
+        True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to be thick cloned.
+
+
+        :return: The is_thin_clone of this CreatePluggableDatabaseFromRemoteCloneDetails.
+        :rtype: bool
+        """
+        return self._is_thin_clone
+
+    @is_thin_clone.setter
+    def is_thin_clone(self, is_thin_clone):
+        """
+        Sets the is_thin_clone of this CreatePluggableDatabaseFromRemoteCloneDetails.
+        True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to be thick cloned.
+
+
+        :param is_thin_clone: The is_thin_clone of this CreatePluggableDatabaseFromRemoteCloneDetails.
+        :type: bool
+        """
+        self._is_thin_clone = is_thin_clone
 
     def __repr__(self):
         return formatted_flat_dict(self)

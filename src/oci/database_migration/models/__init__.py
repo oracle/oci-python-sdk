@@ -79,6 +79,10 @@ from .migration_job_progress_summary import MigrationJobProgressSummary
 from .migration_object_collection import MigrationObjectCollection
 from .migration_object_type_summary import MigrationObjectTypeSummary
 from .migration_object_type_summary_collection import MigrationObjectTypeSummaryCollection
+from .migration_parameter_base import MigrationParameterBase
+from .migration_parameter_details import MigrationParameterDetails
+from .migration_parameter_summary import MigrationParameterSummary
+from .migration_parameter_summary_collection import MigrationParameterSummaryCollection
 from .migration_phase_collection import MigrationPhaseCollection
 from .migration_phase_summary import MigrationPhaseSummary
 from .migration_summary import MigrationSummary
@@ -246,6 +250,10 @@ database_migration_type_mapping = {
     "MigrationObjectCollection": MigrationObjectCollection,
     "MigrationObjectTypeSummary": MigrationObjectTypeSummary,
     "MigrationObjectTypeSummaryCollection": MigrationObjectTypeSummaryCollection,
+    "MigrationParameterBase": MigrationParameterBase,
+    "MigrationParameterDetails": MigrationParameterDetails,
+    "MigrationParameterSummary": MigrationParameterSummary,
+    "MigrationParameterSummaryCollection": MigrationParameterSummaryCollection,
     "MigrationPhaseCollection": MigrationPhaseCollection,
     "MigrationPhaseSummary": MigrationPhaseSummary,
     "MigrationSummary": MigrationSummary,

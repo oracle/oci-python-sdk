@@ -22,7 +22,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "24.06.11"
+    version = "24.07.02"
 
     ##########################################################################
     # spaces for align
@@ -257,6 +257,8 @@ class ShowOCIOutput(object):
                     self.__print_identity_domains_dynamic_groups(domain['display_name'], domain['dynamic_groups'])
                 if 'identity_providers' in domain and domain['identity_providers']:
                     self.__print_identity_domains_idps(domain['display_name'], domain['identity_providers'])
+                if 'policies' in domain and domain['policies']:
+                    self.__print_identity_domains_policies(domain['display_name'], domain['policies'])
 
         except Exception as e:
             self.__print_error("__print_identity_domains", e)
@@ -347,6 +349,38 @@ class ShowOCIOutput(object):
 
         except Exception as e:
             self.__print_error("__print_identity_domains_idps", e)
+
+    ##########################################################################
+    # Print Identity Domains Policies
+    ##########################################################################
+    def __print_identity_domains_policies(self, domain_name, policies):
+        try:
+            header = domain_name + ":Policies"
+            self.print_header(header, 2)
+
+            for val in policies:
+                print(self.taba + val['id'])
+                print(self.tabs + "Name: " + val['name'])
+                if val['policy_type']['value']:
+                    print(self.tabs + "Type: " + val['policy_type']['value'])
+                if val['description']:
+                    print(self.tabs + "Desc: " + val['description'])
+                for rl in val['rules']:
+                    print(self.tabs + "Rule: " + rl['name'] + " - " + rl['value'])
+                    print(self.tabs + "      Position  : " + rl['position'])
+                    for rt in rl['rule_return']:
+                        print(self.tabs + "      Rule Ret  : " + rt['name'] + " - " + rt['value'])
+                    if rl['condition_group']:
+                        cn = rl['condition_group']
+                        if 'name' in cn and 'description' in cn:
+                            print(self.tabs + "      Condition : " + cn['name'] + " - " + cn['description'])
+                        if 'attribute_name' in cn and 'operator' in cn and 'attribute_value' in cn:
+                            if cn['attribute_name'] or cn['operator'] or cn['attribute_value']:
+                                print(self.tabs + "      Attribute : " + cn['attribute_name'] + " - " + cn['operator'] + " - " + cn['attribute_value'])
+                print("")
+
+        except Exception as e:
+            self.__print_error("__print_identity_domains_policies", e)
 
     ##########################################################################
     # Print Identity Groups
@@ -4217,6 +4251,8 @@ class ShowOCICSV(object):
     csv_identity_domains_dyngroups = []
     csv_identity_domains_kmsi_setting = []
     csv_identity_domains_password_policies = []
+    csv_identity_domains_policies = []
+    csv_identity_domains_rules = []
     csv_identity_domains_idps = []
     csv_identity_domains_auth_factors = []
     csv_compute = []
@@ -4388,6 +4424,8 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("identity_domains_idps", self.csv_identity_domains_idps)
             self.__export_to_csv_file("identity_domains_auth", self.csv_identity_domains_auth_factors)
             self.__export_to_csv_file("identity_domains_pwd_policies", self.csv_identity_domains_password_policies)
+            self.__export_to_csv_file("identity_domains_policies", self.csv_identity_domains_policies)
+            self.__export_to_csv_file("identity_domains_rules", self.csv_identity_domains_rules)
 
             self.__export_to_csv_file("functions_apps", self.csv_functions_apps)
             self.__export_to_csv_file("functions_fns", self.csv_functions_fns)
@@ -4797,6 +4835,12 @@ class ShowOCICSV(object):
 
                 if var['password_policies']:
                     self.__csv_identity_domains_password_policies(var['password_policies'], var['display_name'], var['id'])
+
+                if var['policies']:
+                    self.__csv_identity_domains_policies(var['policies'], var['display_name'], var['id'])
+
+                if var['rules']:
+                    self.__csv_identity_domains_rules(var['rules'], var['display_name'], var['id'])
 
         except Exception as e:
             self.__print_error("__csv_identity_domains", e)
@@ -5317,6 +5361,121 @@ class ShowOCICSV(object):
                 self.csv_identity_domains_password_policies.append(data)
         except Exception as e:
             self.__print_error("__csv_identity_domains_password_policies", e)
+
+    ##########################################################################
+    # CSV Identity Domain Policies
+    ##########################################################################
+    def __csv_identity_domains_policies(self, policies, domain_name, domain_id):
+        try:
+            for var in policies:
+
+                # Generate Rule String
+                rule_string = ""
+                for rl in var['rules']:
+                    rule_string += "Rule: " + rl['name'] + " - " + rl['value'] + "\n"
+                    for rt in rl['rule_return']:
+                        rule_string += "      Rule Ret  : " + rt['name'] + " - " + rt['value'] + "\n"
+                    if rl['condition_group']:
+                        cn = rl['condition_group']
+                        if 'name' in cn and 'description' in cn:
+                            rule_string += "      Condition : " + cn['name'] + " - " + cn['description'] + "\n"
+                        if 'attribute_name' in cn and 'operator' in cn and 'attribute_value' in cn:
+                            if cn['attribute_name'] or cn['operator'] or cn['attribute_value']:
+                                rule_string += "      Attribute : " + cn['attribute_name'] + " - " + cn['operator'] + " - " + cn['attribute_value'] + "\n"
+
+                data = {
+                    'domain_id': domain_id,
+                    'domain_name': domain_name,
+                    'id': var['id'],
+                    'ocid': var['ocid'],
+                    'schemas': var['schemas'],
+                    'meta_resource_type': var['meta']['resource_type'],
+                    'meta_created': var['meta']['created'],
+                    'meta_last_modified': var['meta']['last_modified'],
+                    'meta_location': var['meta']['location'],
+                    'meta_version': var['meta']['version'],
+                    'idcs_created_by': str(var['idcs_created_by']),
+                    'idcs_last_modified_by': str(var['idcs_last_modified_by']),
+                    'idcs_last_upgraded_in_release': str(var['idcs_last_upgraded_in_release']),
+                    'idcs_prevented_operations': str(var['idcs_prevented_operations']),
+                    'tags': str(','.join(x['key'] + "=" + x['value'] for x in var['tags'])),
+                    'compartment_ocid': var['compartment_ocid'],
+                    'domain_ocid': var['domain_ocid'],
+                    'external_id': var['external_id'],
+                    'name': var['name'],
+                    'description': var['description'],
+                    'active': var['active'],
+                    'policy_groovy': var['policy_groovy'],
+                    'rules': str(','.join(x['ref'] + ':' + x['name'] + ':' + x['value'] for x in var['rules'])),
+                    'rule_string': rule_string,
+                    'policy_type_value': var['policy_type']['value'] if var['policy_type'] else "",
+                    'policy_type_ref': var['policy_type']['ref'] if var['policy_type'] else ""
+                }
+                self.csv_identity_domains_policies.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_identity_domains_policies", e)
+
+    ##########################################################################
+    # CSV Identity Domain Rules
+    ##########################################################################
+    def __csv_identity_domains_rules(self, rules, domain_name, domain_id):
+        try:
+            for var in rules:
+                data = {
+                    'domain_id': domain_id,
+                    'domain_name': domain_name,
+                    'id': var['id'],
+                    'ocid': var['ocid'],
+                    'schemas': var['schemas'],
+                    'meta_resource_type': var['meta']['resource_type'],
+                    'meta_created': var['meta']['created'],
+                    'meta_last_modified': var['meta']['last_modified'],
+                    'meta_location': var['meta']['location'],
+                    'meta_version': var['meta']['version'],
+                    'idcs_created_by': str(var['idcs_created_by']),
+                    'idcs_last_modified_by': str(var['idcs_last_modified_by']),
+                    'idcs_last_upgraded_in_release': str(var['idcs_last_upgraded_in_release']),
+                    'idcs_prevented_operations': str(var['idcs_prevented_operations']),
+                    'tags': str(','.join(x['key'] + "=" + x['value'] for x in var['tags'])),
+                    'compartment_ocid': var['compartment_ocid'],
+                    'domain_ocid': var['domain_ocid'],
+                    'external_id': var['external_id'],
+                    'name': var['name'],
+                    'description': var['description'],
+                    'active': var['active'],
+                    'locked': var['locked'],
+                    'rule_groovy': var['rule_groovy'],
+                    'rule_return': str(','.join(x['name'] + ':' + x['value'] for x in var['rule_return'])),
+                    'policy_ids': str(','.join(x for x in var['policy_ids'])),
+                    'policy_ids_position': str(','.join(x for x in var['policy_ids_position'])),
+                    'policy_names': str(','.join(x for x in var['policy_names'])),
+                    'policy_type_ref': var['policy_type']['ref'] if var['policy_type'] else "",
+                    'policy_type_value': var['policy_type']['value'] if var['policy_type'] else "",
+                    'condition_value': "",
+                    'condition_type': "",
+                    'condition_name': "",
+                    'condition_desc': "",
+                    'condition_attribute_name': "",
+                    'condition_operator': "",
+                    'condition_attribute_value': "",
+                    'condition_evaluate_condition_if': ""
+                }
+                if var['condition_group']:
+                    vr = var['condition_group']
+                    data['condition_value'] = vr['value']
+                    data['condition_name'] = vr['name']
+                    data['condition_type'] = vr['type']
+                    data['condition_desc'] = vr['description']
+                    data['condition_attribute_name'] = vr['attribute_name']
+                    data['condition_operator'] = vr['operator']
+                    data['condition_attribute_value'] = vr['attribute_value']
+                    data['condition_evaluate_condition_if'] = vr['evaluate_condition_if']
+
+                self.csv_identity_domains_rules.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_identity_domains_rules", e)
 
     ##########################################################################
     # CSV Identity Compartments

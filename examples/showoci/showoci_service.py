@@ -39,7 +39,7 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "24.06.11"
+    version = "24.07.02"
     oci_compatible_version = "2.125.0"
     thread_lock = threading.Lock()
     collection_ljust = 40
@@ -19450,6 +19450,58 @@ class ShowOCIDomains(object):
             self.__print_error(e)
 
     ##################################################################################
+    # load_identity_conditions_to_rules
+    ##################################################################################
+    def __load_identity_conditions_to_rules(self, domain_rules, domain_conditions):
+        try:
+
+            # loop on all groups:
+            for rule in domain_rules:
+                if not rule['condition_group']:
+                    continue
+                rule_cngrp = rule['condition_group']
+
+                # loop on conditions to match id
+                for condition in domain_conditions:
+                    if condition['id'] == rule_cngrp['value']:
+                        rule_cngrp['name'] = condition['name']
+                        rule_cngrp['description'] = condition['description']
+                        rule_cngrp['attribute_name'] = condition['attribute_name']
+                        rule_cngrp['operator'] = condition['operator']
+                        rule_cngrp['attribute_value'] = condition['attribute_value']
+                        rule_cngrp['evaluate_condition_if'] = condition['evaluate_condition_if']
+
+        except Exception as e:
+            self.__print_error(e)
+
+    ##################################################################################
+    # load_identity_conditions_to_rules
+    ##################################################################################
+    def __load_identity_rules_to_policies(self, domain_rules, domain_policies):
+        try:
+
+            # loop on all groups:
+            for policy in domain_policies:
+                for policy_rule in policy['rules']:
+                    policy_rule_id = policy_rule['value']
+
+                    # loop on rules to match id
+                    for rule in domain_rules:
+                        if rule['id'] == policy_rule_id:
+                            if policy['id'] not in rule['policy_ids']:
+                                rule['policy_ids'].append(policy['id'])
+                            if policy['name'] not in rule['policy_names']:
+                                rule['policy_names'].append(policy['name'])
+                            rule['policy_ids_position'].append(policy['id'] + ":" + policy_rule['position'])
+                            policy_rule['active'] = rule['active']
+                            policy_rule['locked'] = rule['locked']
+                            policy_rule['rule_return'] = rule['rule_return']
+                            policy_rule['condition_group'] = rule['condition_group']
+
+        except Exception as e:
+            self.__print_error(e)
+
+    ##################################################################################
     # load_identity_domain_users
     ##################################################################################
     def __load_identity_domain_users(self, identity_domain_client, domain_name):
@@ -20499,6 +20551,236 @@ class ShowOCIDomains(object):
         except Exception as e:
             self.__print_error(e)
 
+    ##################################################################################
+    # __load_identity_domain_policies
+    ##################################################################################
+    def __load_identity_domain_policies(self, identity_domain_client, domain_name):
+
+        data = []
+
+        errstr = ""
+        header = domain_name[0:21] + ".DomainPolicies"
+        self.__load_print_status_with_threads(header)
+
+        start_time = time.time()
+        try:
+            policies = self.__list_call_get_all_results(
+                identity_domain_client.list_policies,
+                attribute_sets=["all"],
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+            # oci.identity_domains.models.Policy
+            for var in policies:
+                if var.delete_in_progress:
+                    continue
+
+                if self.skip_threads:
+                    print(".", end="")
+
+                data.append({
+                    'id': self.get_value(var.id),
+                    'ocid': self.get_value(var.ocid),
+                    'schemas': str(','.join(x for x in var.schemas)) if var.schemas else "",
+                    'meta': self.__load_identity_meta_info(var.meta),
+                    'idcs_created_by': var.idcs_created_by.value if var.idcs_created_by else "",
+                    'idcs_last_modified_by': var.idcs_last_modified_by.value if var.idcs_last_modified_by else "",
+                    'idcs_prevented_operations': str(','.join(x for x in var.idcs_prevented_operations)) if var.idcs_prevented_operations else "",
+                    'tags': [{'key': x.key, 'value': x.value} for x in var.tags] if var.tags else [],
+                    'idcs_last_upgraded_in_release': self.get_value(var.idcs_last_upgraded_in_release),
+                    'compartment_ocid': self.get_value(var.compartment_ocid),
+                    'domain_ocid': self.get_value(var.domain_ocid),
+                    'external_id': self.get_value(var.external_id),
+                    'name': self.get_value(var.name),
+                    'description': self.get_value(var.description),
+                    'active': self.get_value(var.active),
+                    'policy_groovy': self.get_value(var.policy_groovy),
+                    'rules': [{
+                        'position': str(index),
+                        'ref': self.get_value(x.ref),
+                        'name': self.get_value(x.name),
+                        'sequence': self.get_value(x.sequence),
+                        'value': self.get_value(x.value),
+                        'active': "",
+                        'locked': "",
+                        'rule_return': [],
+                        'condition_group': {}
+                    } for index, x in enumerate(var.rules, start=1)] if var.rules else [],
+                    'policy_type': {
+                        'value': self.get_value(var.policy_type.value) if var.policy_type else "",
+                        'ref': self.get_value(var.policy_type.ref) if var.policy_type else ""
+                    }
+                })
+
+            self.__load_print_thread_cnt(header, len(data), start_time, errstr)
+            return data
+
+        except oci.exceptions.ServiceError as e:
+            if self.__check_service_error(e):
+                self.__load_print_auth_warning(to_print=self.skip_threads)
+            else:
+                self.__load_print_error(e)
+                return data
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            else:
+                self.__load_print_error(e)
+                return data
+        except Exception as e:
+            self.__print_error(e)
+
+    ##################################################################################
+    # __load_identity_domain_rules
+    ##################################################################################
+    def __load_identity_domain_rules(self, identity_domain_client, domain_name):
+
+        data = []
+
+        errstr = ""
+        header = domain_name[0:21] + ".DomainRules"
+        self.__load_print_status_with_threads(header)
+
+        start_time = time.time()
+        try:
+            rules = self.__list_call_get_all_results(
+                identity_domain_client.list_rules,
+                attribute_sets=["all"],
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+            # oci.identity_domains.models.Policy
+            for var in rules:
+                if var.delete_in_progress:
+                    continue
+
+                if self.skip_threads:
+                    print(".", end="")
+
+                data.append({
+                    'id': self.get_value(var.id),
+                    'ocid': self.get_value(var.ocid),
+                    'schemas': str(','.join(x for x in var.schemas)) if var.schemas else "",
+                    'meta': self.__load_identity_meta_info(var.meta),
+                    'idcs_created_by': var.idcs_created_by.value if var.idcs_created_by else "",
+                    'idcs_last_modified_by': var.idcs_last_modified_by.value if var.idcs_last_modified_by else "",
+                    'idcs_prevented_operations': str(','.join(x for x in var.idcs_prevented_operations)) if var.idcs_prevented_operations else "",
+                    'tags': [{'key': x.key, 'value': x.value} for x in var.tags] if var.tags else [],
+                    'idcs_last_upgraded_in_release': self.get_value(var.idcs_last_upgraded_in_release),
+                    'compartment_ocid': self.get_value(var.compartment_ocid),
+                    'domain_ocid': self.get_value(var.domain_ocid),
+                    'external_id': self.get_value(var.external_id),
+                    'name': self.get_value(var.name),
+                    'description': self.get_value(var.description),
+                    'active': self.get_value(var.active),
+                    'locked': self.get_value(var.locked),
+                    'rule_groovy': self.get_value(var.rule_groovy),
+                    'condition_group': {
+                        'value': self.get_value(var.condition_group.value) if var.condition_group else "",
+                        'ref': self.get_value(var.condition_group.ref) if var.condition_group else "",
+                        'type': self.get_value(var.condition_group.type) if var.condition_group else "",
+                        'name': self.get_value(var.condition_group.name) if var.condition_group else "",
+                        'description': "",
+                        'attribute_name': "",
+                        'operator': "",
+                        'attribute_value': "",
+                        'evaluate_condition_if': ""
+                    },
+                    'policy_type': {
+                        'value': self.get_value(var.policy_type.value) if var.policy_type else "",
+                        'ref': self.get_value(var.policy_type.ref) if var.policy_type else ""
+                    },
+                    'policy_ids': [],
+                    'policy_ids_position': [],
+                    'policy_names': [],
+                    'rule_return': [{
+                        'name': self.get_value(x.name),
+                        'value': self.get_value(x.value),
+                        'return_groovy': self.get_value(x.return_groovy)
+                    } for x in var._return] if var._return else []
+                })
+
+            self.__load_print_thread_cnt(header, len(data), start_time, errstr)
+            return data
+
+        except oci.exceptions.ServiceError as e:
+            if self.__check_service_error(e):
+                self.__load_print_auth_warning(to_print=self.skip_threads)
+            else:
+                self.__load_print_error(e)
+                return data
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            else:
+                self.__load_print_error(e)
+                return data
+        except Exception as e:
+            self.__print_error(e)
+
+    ##################################################################################
+    # __load_identity_domain_conditions
+    ##################################################################################
+    def __load_identity_domain_conditions(self, identity_domain_client, domain_name):
+
+        data = []
+
+        errstr = ""
+        header = domain_name[0:21] + ".DomainConditions"
+        self.__load_print_status_with_threads(header)
+
+        start_time = time.time()
+        try:
+            policies = self.__list_call_get_all_results(
+                identity_domain_client.list_conditions,
+                attribute_sets=["all"],
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+            # oci.identity_domains.models.Policy
+            for var in policies:
+                if var.delete_in_progress:
+                    continue
+
+                if self.skip_threads:
+                    print(".", end="")
+
+                data.append({
+                    'id': self.get_value(var.id),
+                    'ocid': self.get_value(var.ocid),
+                    'schemas': str(','.join(x for x in var.schemas)) if var.schemas else "",
+                    'meta': self.__load_identity_meta_info(var.meta),
+                    'idcs_created_by': var.idcs_created_by.value if var.idcs_created_by else "",
+                    'idcs_last_modified_by': var.idcs_last_modified_by.value if var.idcs_last_modified_by else "",
+                    'idcs_prevented_operations': str(','.join(x for x in var.idcs_prevented_operations)) if var.idcs_prevented_operations else "",
+                    'tags': [{'key': x.key, 'value': x.value} for x in var.tags] if var.tags else [],
+                    'idcs_last_upgraded_in_release': self.get_value(var.idcs_last_upgraded_in_release),
+                    'compartment_ocid': self.get_value(var.compartment_ocid),
+                    'domain_ocid': self.get_value(var.domain_ocid),
+                    'external_id': self.get_value(var.external_id),
+                    'name': self.get_value(var.name),
+                    'description': self.get_value(var.description),
+                    'attribute_name': self.get_value(var.attribute_name),
+                    'operator': self.get_value(var.operator),
+                    'attribute_value': self.get_value(var.attribute_value),
+                    'evaluate_condition_if': self.get_value(var.evaluate_condition_if)
+                })
+
+            self.__load_print_thread_cnt(header, len(data), start_time, errstr)
+            return data
+
+        except oci.exceptions.ServiceError as e:
+            if self.__check_service_error(e):
+                self.__load_print_auth_warning(to_print=self.skip_threads)
+            else:
+                self.__load_print_error(e)
+                return data
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            else:
+                self.__load_print_error(e)
+                return data
+        except Exception as e:
+            self.__print_error(e)
+
     ##########################################################################
     # Identity Module
     ##########################################################################
@@ -20568,6 +20850,7 @@ class ShowOCIDomains(object):
                         'identity_providers': [],
                         'authentication_factor_settings': [],
                         'password_policies': [],
+                        'policies': [],
                         'compartment_name': str(compartment['name']),
                         'compartment_id': str(compartment['id']),
                         'compartment_path': str(compartment['path'])
@@ -20600,6 +20883,9 @@ class ShowOCIDomains(object):
                             domain_data['identity_providers'] = self.__load_identity_domain_identity_providers(identity_domain_client, domain.display_name)
                             domain_data['authentication_factor_settings'] = self.__load_identity_domain_authentication_factor_settings(identity_domain_client, domain.display_name)
                             domain_data['password_policies'] = self.__load_identity_domain_password_policies(identity_domain_client, domain.display_name)
+                            domain_data['policies'] = self.__load_identity_domain_policies(identity_domain_client, domain.display_name)
+                            domain_data['rules'] = self.__load_identity_domain_rules(identity_domain_client, domain.display_name)
+                            domain_data['conditions'] = self.__load_identity_domain_conditions(identity_domain_client, domain.display_name)
 
                         ##########################
                         # if parallel execution
@@ -20613,6 +20899,9 @@ class ShowOCIDomains(object):
                                 future_identity_providers = executor.submit(self.__load_identity_domain_identity_providers, identity_domain_client, domain.display_name)
                                 future_authentication_factor_settings = executor.submit(self.__load_identity_domain_authentication_factor_settings, identity_domain_client, domain.display_name)
                                 future_password_policies = executor.submit(self.__load_identity_domain_password_policies, identity_domain_client, domain.display_name)
+                                future_policies = executor.submit(self.__load_identity_domain_policies, identity_domain_client, domain.display_name)
+                                future_rules = executor.submit(self.__load_identity_domain_rules, identity_domain_client, domain.display_name)
+                                future_conditions = executor.submit(self.__load_identity_domain_conditions, identity_domain_client, domain.display_name)
 
                                 domain_data['users'] = next(as_completed([future_users])).result()
                                 domain_data['groups'] = next(as_completed([future_groups])).result()
@@ -20621,8 +20910,13 @@ class ShowOCIDomains(object):
                                 domain_data['identity_providers'] = next(as_completed([future_identity_providers])).result()
                                 domain_data['authentication_factor_settings'] = next(as_completed([future_authentication_factor_settings])).result()
                                 domain_data['password_policies'] = next(as_completed([future_password_policies])).result()
+                                domain_data['policies'] = next(as_completed([future_policies])).result()
+                                domain_data['rules'] = next(as_completed([future_rules])).result()
+                                domain_data['conditions'] = next(as_completed([future_conditions])).result()
 
                     self.__load_identity_users_to_group_members(domain_data['users'], domain_data['groups'])
+                    self.__load_identity_conditions_to_rules(domain_data['rules'], domain_data['conditions'])
+                    self.__load_identity_rules_to_policies(domain_data['rules'], domain_data['policies'])
                     self.data.append(domain_data)
 
             print('')

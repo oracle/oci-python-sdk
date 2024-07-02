@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+24.07.02 - 24.07.02
+=====================
+* Added IAM Domains Policies, Rules and Conditions
+
+=====================
 24.06.11 - 24.06.11
 =====================
 * Added security list and network security group details to the CSVs

@@ -24,6 +24,10 @@ class TopProcessesUsageTrend(object):
             The value to assign to the end_timestamp property of this TopProcessesUsageTrend.
         :type end_timestamp: datetime
 
+        :param container_id:
+            The value to assign to the container_id property of this TopProcessesUsageTrend.
+        :type container_id: str
+
         :param cpu_usage:
             The value to assign to the cpu_usage property of this TopProcessesUsageTrend.
         :type cpu_usage: float
@@ -51,6 +55,7 @@ class TopProcessesUsageTrend(object):
         """
         self.swagger_types = {
             'end_timestamp': 'datetime',
+            'container_id': 'str',
             'cpu_usage': 'float',
             'cpu_utilization': 'float',
             'memory_utilization': 'float',
@@ -61,6 +66,7 @@ class TopProcessesUsageTrend(object):
 
         self.attribute_map = {
             'end_timestamp': 'endTimestamp',
+            'container_id': 'containerId',
             'cpu_usage': 'cpuUsage',
             'cpu_utilization': 'cpuUtilization',
             'memory_utilization': 'memoryUtilization',
@@ -70,6 +76,7 @@ class TopProcessesUsageTrend(object):
         }
 
         self._end_timestamp = None
+        self._container_id = None
         self._cpu_usage = None
         self._cpu_utilization = None
         self._memory_utilization = None
@@ -100,6 +107,30 @@ class TopProcessesUsageTrend(object):
         :type: datetime
         """
         self._end_timestamp = end_timestamp
+
+    @property
+    def container_id(self):
+        """
+        Gets the container_id of this TopProcessesUsageTrend.
+        Container id if this process corresponds to a running container in the host.
+
+
+        :return: The container_id of this TopProcessesUsageTrend.
+        :rtype: str
+        """
+        return self._container_id
+
+    @container_id.setter
+    def container_id(self, container_id):
+        """
+        Sets the container_id of this TopProcessesUsageTrend.
+        Container id if this process corresponds to a running container in the host.
+
+
+        :param container_id: The container_id of this TopProcessesUsageTrend.
+        :type: str
+        """
+        self._container_id = container_id
 
     @property
     def cpu_usage(self):

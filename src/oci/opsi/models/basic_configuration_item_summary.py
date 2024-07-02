@@ -14,7 +14,7 @@ class BasicConfigurationItemSummary(ConfigurationItemSummary):
     """
     Basic configuration item summary.
     Value field contain the most preferred value for the specified scope (compartmentId), which could be from any of the ConfigurationItemValueSourceConfigurationType.
-    Default value field contains the default value from Operations Insights.
+    Default value field contains the default value from Ops Insights.
     """
 
     #: A constant which can be used with the value_source_config property of a BasicConfigurationItemSummary.
@@ -203,7 +203,7 @@ class BasicConfigurationItemSummary(ConfigurationItemSummary):
     def applicable_contexts(self):
         """
         Gets the applicable_contexts of this BasicConfigurationItemSummary.
-        List of contexts in Operations Insights where this configuration item is applicable.
+        List of contexts in Ops Insights where this configuration item is applicable.
 
 
         :return: The applicable_contexts of this BasicConfigurationItemSummary.
@@ -215,7 +215,7 @@ class BasicConfigurationItemSummary(ConfigurationItemSummary):
     def applicable_contexts(self, applicable_contexts):
         """
         Sets the applicable_contexts of this BasicConfigurationItemSummary.
-        List of contexts in Operations Insights where this configuration item is applicable.
+        List of contexts in Ops Insights where this configuration item is applicable.
 
 
         :param applicable_contexts: The applicable_contexts of this BasicConfigurationItemSummary.

@@ -163,7 +163,7 @@ class ImportableEnterpriseManagerEntity(object):
     def opsi_entity_type(self):
         """
         Gets the opsi_entity_type of this ImportableEnterpriseManagerEntity.
-        Operations Insights internal representation of the resource type.
+        Ops Insights internal representation of the resource type.
 
 
         :return: The opsi_entity_type of this ImportableEnterpriseManagerEntity.
@@ -175,7 +175,7 @@ class ImportableEnterpriseManagerEntity(object):
     def opsi_entity_type(self, opsi_entity_type):
         """
         Sets the opsi_entity_type of this ImportableEnterpriseManagerEntity.
-        Operations Insights internal representation of the resource type.
+        Ops Insights internal representation of the resource type.
 
 
         :param opsi_entity_type: The opsi_entity_type of this ImportableEnterpriseManagerEntity.

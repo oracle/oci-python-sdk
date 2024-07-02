@@ -39,7 +39,7 @@ class DownloadOperationsInsightsWarehouseWalletDetails(object):
     def operations_insights_warehouse_wallet_password(self):
         """
         **[Required]** Gets the operations_insights_warehouse_wallet_password of this DownloadOperationsInsightsWarehouseWalletDetails.
-        User provided ADW wallet password for the Operations Insights Warehouse.
+        User provided ADW wallet password for the Ops Insights Warehouse.
 
 
         :return: The operations_insights_warehouse_wallet_password of this DownloadOperationsInsightsWarehouseWalletDetails.
@@ -51,7 +51,7 @@ class DownloadOperationsInsightsWarehouseWalletDetails(object):
     def operations_insights_warehouse_wallet_password(self, operations_insights_warehouse_wallet_password):
         """
         Sets the operations_insights_warehouse_wallet_password of this DownloadOperationsInsightsWarehouseWalletDetails.
-        User provided ADW wallet password for the Operations Insights Warehouse.
+        User provided ADW wallet password for the Ops Insights Warehouse.
 
 
         :param operations_insights_warehouse_wallet_password: The operations_insights_warehouse_wallet_password of this DownloadOperationsInsightsWarehouseWalletDetails.

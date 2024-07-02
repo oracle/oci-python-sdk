@@ -369,7 +369,7 @@ class HostInsightSummary(object):
     def host_type(self):
         """
         Gets the host_type of this HostInsightSummary.
-        Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+        Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
 
 
         :return: The host_type of this HostInsightSummary.
@@ -381,7 +381,7 @@ class HostInsightSummary(object):
     def host_type(self, host_type):
         """
         Sets the host_type of this HostInsightSummary.
-        Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+        Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
 
 
         :param host_type: The host_type of this HostInsightSummary.
@@ -523,7 +523,7 @@ class HostInsightSummary(object):
     def status(self):
         """
         Gets the status of this HostInsightSummary.
-        Indicates the status of a host insight in Operations Insights
+        Indicates the status of a host insight in Ops Insights
 
         Allowed values for this property are: "DISABLED", "ENABLED", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -538,7 +538,7 @@ class HostInsightSummary(object):
     def status(self, status):
         """
         Sets the status of this HostInsightSummary.
-        Indicates the status of a host insight in Operations Insights
+        Indicates the status of a host insight in Ops Insights
 
 
         :param status: The status of this HostInsightSummary.

@@ -24,6 +24,10 @@ class TopProcessesUsage(object):
             The value to assign to the command property of this TopProcessesUsage.
         :type command: str
 
+        :param container_id:
+            The value to assign to the container_id property of this TopProcessesUsage.
+        :type container_id: str
+
         :param process_hash:
             The value to assign to the process_hash property of this TopProcessesUsage.
         :type process_hash: str
@@ -55,6 +59,7 @@ class TopProcessesUsage(object):
         """
         self.swagger_types = {
             'command': 'str',
+            'container_id': 'str',
             'process_hash': 'str',
             'cpu_usage': 'float',
             'cpu_utilization': 'float',
@@ -66,6 +71,7 @@ class TopProcessesUsage(object):
 
         self.attribute_map = {
             'command': 'command',
+            'container_id': 'containerId',
             'process_hash': 'processHash',
             'cpu_usage': 'cpuUsage',
             'cpu_utilization': 'cpuUtilization',
@@ -76,6 +82,7 @@ class TopProcessesUsage(object):
         }
 
         self._command = None
+        self._container_id = None
         self._process_hash = None
         self._cpu_usage = None
         self._cpu_utilization = None
@@ -107,6 +114,30 @@ class TopProcessesUsage(object):
         :type: str
         """
         self._command = command
+
+    @property
+    def container_id(self):
+        """
+        Gets the container_id of this TopProcessesUsage.
+        Container id if this process corresponds to a running container in the host.
+
+
+        :return: The container_id of this TopProcessesUsage.
+        :rtype: str
+        """
+        return self._container_id
+
+    @container_id.setter
+    def container_id(self, container_id):
+        """
+        Sets the container_id of this TopProcessesUsage.
+        Container id if this process corresponds to a running container in the host.
+
+
+        :param container_id: The container_id of this TopProcessesUsage.
+        :type: str
+        """
+        self._container_id = container_id
 
     @property
     def process_hash(self):

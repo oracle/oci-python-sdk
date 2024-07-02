@@ -16903,7 +16903,7 @@ class DbManagementClient(object):
         :param str deployment_type: (optional)
             A filter to return Managed Databases of the specified deployment type.
 
-            Allowed values are: "ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", "AUTONOMOUS"
+            Allowed values are: "ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", "AUTONOMOUS", "EXADATA_XS"
 
         :param str external_exadata_infrastructure_id: (optional)
             The `OCID`__ of the Exadata infrastructure.
@@ -16982,7 +16982,7 @@ class DbManagementClient(object):
                 )
 
         if 'deployment_type' in kwargs:
-            deployment_type_allowed_values = ["ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", "AUTONOMOUS"]
+            deployment_type_allowed_values = ["ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", "AUTONOMOUS", "EXADATA_XS"]
             if kwargs['deployment_type'] not in deployment_type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `deployment_type`, must be one of { deployment_type_allowed_values }"

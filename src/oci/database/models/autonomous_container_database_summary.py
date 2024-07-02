@@ -1210,7 +1210,7 @@ class AutonomousContainerDatabaseSummary(object):
     def dst_file_version(self):
         """
         Gets the dst_file_version of this AutonomousContainerDatabaseSummary.
-        DST Time-zone File version of the Autonomous Container Database.
+        DST Time-Zone File version of the Autonomous Container Database.
 
 
         :return: The dst_file_version of this AutonomousContainerDatabaseSummary.
@@ -1222,7 +1222,7 @@ class AutonomousContainerDatabaseSummary(object):
     def dst_file_version(self, dst_file_version):
         """
         Sets the dst_file_version of this AutonomousContainerDatabaseSummary.
-        DST Time-zone File version of the Autonomous Container Database.
+        DST Time-Zone File version of the Autonomous Container Database.
 
 
         :param dst_file_version: The dst_file_version of this AutonomousContainerDatabaseSummary.
