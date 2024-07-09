@@ -9,6 +9,7 @@ from . import models
 from .object_storage_client import ObjectStorageClient
 from .object_storage_client_composite_operations import ObjectStorageClientCompositeOperations
 from .transfer.upload_manager import UploadManager
+from .transfer.internal.download import DownloadManager
 
 __all__ = ["ObjectStorageClient", "ObjectStorageClientCompositeOperations", "models", "MultipartObjectAssembler",
-           "UploadManager"]
+           "UploadManager", "DownloadManager"]

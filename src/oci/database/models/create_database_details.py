@@ -95,6 +95,10 @@ class CreateDatabaseDetails(object):
             The value to assign to the sid_prefix property of this CreateDatabaseDetails.
         :type sid_prefix: str
 
+        :param key_store_id:
+            The value to assign to the key_store_id property of this CreateDatabaseDetails.
+        :type key_store_id: str
+
         """
         self.swagger_types = {
             'db_name': 'str',
@@ -112,7 +116,8 @@ class CreateDatabaseDetails(object):
             'kms_key_id': 'str',
             'kms_key_version_id': 'str',
             'vault_id': 'str',
-            'sid_prefix': 'str'
+            'sid_prefix': 'str',
+            'key_store_id': 'str'
         }
 
         self.attribute_map = {
@@ -131,7 +136,8 @@ class CreateDatabaseDetails(object):
             'kms_key_id': 'kmsKeyId',
             'kms_key_version_id': 'kmsKeyVersionId',
             'vault_id': 'vaultId',
-            'sid_prefix': 'sidPrefix'
+            'sid_prefix': 'sidPrefix',
+            'key_store_id': 'keyStoreId'
         }
 
         self._db_name = None
@@ -150,6 +156,7 @@ class CreateDatabaseDetails(object):
         self._kms_key_version_id = None
         self._vault_id = None
         self._sid_prefix = None
+        self._key_store_id = None
 
     @property
     def db_name(self):
@@ -575,6 +582,34 @@ class CreateDatabaseDetails(object):
         :type: str
         """
         self._sid_prefix = sid_prefix
+
+    @property
+    def key_store_id(self):
+        """
+        Gets the key_store_id of this CreateDatabaseDetails.
+        The `OCID`__ of the key store of Oracle Vault.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The key_store_id of this CreateDatabaseDetails.
+        :rtype: str
+        """
+        return self._key_store_id
+
+    @key_store_id.setter
+    def key_store_id(self, key_store_id):
+        """
+        Sets the key_store_id of this CreateDatabaseDetails.
+        The `OCID`__ of the key store of Oracle Vault.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param key_store_id: The key_store_id of this CreateDatabaseDetails.
+        :type: str
+        """
+        self._key_store_id = key_store_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

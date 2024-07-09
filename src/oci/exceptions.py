@@ -7,9 +7,9 @@ import oci.util
 from .version import __version__
 from oci._vendor.requests.exceptions import RequestException as BaseRequestException
 from oci._vendor.requests.exceptions import ConnectTimeout as BaseConnectTimeout
-CLIENT_VERSION = "Oracle-PythonSDK/{}".format(__version__)
+CLIENT_VERSION = f"Oracle-PythonSDK/{__version__}"
 OS_VERSION = platform.platform()
-UPLOAD_MANAGER_DEBUG_INFORMATION_LOG = "Client Version: {}, OS Version: {}, See https://docs.oracle.com/iaas/Content/API/Concepts/sdk_troubleshooting.htm for common issues and steps to resolve them. If you need to contact support, or file a GitHub issue, please include this full error message.".format(CLIENT_VERSION, OS_VERSION)
+UPLOAD_MANAGER_DEBUG_INFORMATION_LOG = f"Client Version: {CLIENT_VERSION}, OS Version: {OS_VERSION}, See https://docs.oracle.com/iaas/Content/API/Concepts/sdk_troubleshooting.htm for common issues and steps to resolve them. If you need to contact support, or file a GitHub issue, please include this full error message."
 
 
 class ServiceError(Exception):
@@ -29,8 +29,8 @@ class ServiceError(Exception):
         self.client_version = kwargs.get('client_version')
         self.timestamp = kwargs.get('timestamp')
 
-        api_errors_info = "See https://docs.oracle.com/iaas/Content/API/References/apierrors.htm#apierrors_{}__{}_{} for more information about resolving this error.".format(str(self.status), str(self.status), str(code).lower())
-        contact_info = "If you are unable to resolve this {} issue, please contact Oracle support and provide them this full error message.".format(self.target_service)
+        api_errors_info = f"See https://docs.oracle.com/iaas/Content/API/References/apierrors.htm#apierrors_{str(self.status)}__{str(self.status)}_{str(code).lower()} for more information about resolving this error."
+        contact_info = f"If you are unable to resolve this {self.target_service} issue, please contact Oracle support and provide them this full error message."
 
         if not message:
             message = "The service returned error code %s" % self.status
@@ -49,9 +49,9 @@ class ServiceError(Exception):
         }
 
         if self.api_reference_link:
-            error_details['troubleshooting_tips'] = "{} Also see {} for details on this operation's requirements. {}".format(api_errors_info, self.api_reference_link, contact_info)
+            error_details['troubleshooting_tips'] = f"{api_errors_info} Also see {self.api_reference_link} for details on this operation's requirements. {contact_info}"
         else:
-            error_details['troubleshooting_tips'] = "{} {}".format(api_errors_info, contact_info)
+            error_details['troubleshooting_tips'] = f"{api_errors_info} {contact_info}"
 
         if isinstance(kwargs.get('deserialized_data'), dict):
             # convert the Keys of the dictionary to snake case
@@ -152,7 +152,7 @@ class MultipartUploadError(Exception):
             while not kwargs['error_causes_queue'].empty():
                 self.error_causes.append(kwargs['error_causes_queue'].get())
 
-        self.message = "MultipartUploadError exception has occured. " + UPLOAD_MANAGER_DEBUG_INFORMATION_LOG
+        self.message = f"MultipartUploadError exception has occurred. {UPLOAD_MANAGER_DEBUG_INFORMATION_LOG}"
         super(Exception, self).__init__(self.message)
 
 
@@ -184,3 +184,42 @@ class ConnectTimeout(BaseConnectTimeout):
 class MissingEndpointForNonRegionalServiceClientError(ValueError):
     """No endpoint value was provided when trying to create a non-regional service client.
     """
+
+
+class DownloadTerminated(Exception):
+    """
+    This exception is raised by DownloadManager.get_object_to_path and DownloadManager.get_object_to_stream when a
+    download is terminated in between. This is generally raised when the download manager's state is changed to -1,
+    indicating that the download is to be terminated.
+    """
+    pass
+
+
+class ResumableDownloadException(Exception):
+    """
+    This exception is raised when in a multipart download some parts failed.
+    """
+    def __init__(self,
+                 namespace_name,
+                 bucket_name,
+                 object_name,
+                 failed_parts):
+        self.namespace_name = namespace_name
+        self.bucket_name = bucket_name
+        self.object_name = object_name
+        self.failed_parts = failed_parts
+
+
+class DownloadFailedIncorrectDownloadSize(Exception):
+    """
+    This exception is raised when the final integrity check (comparing the actual bytes downloaded with the object size
+    in bytes) fails.
+    """
+
+    def __init__(self,
+                 actual_bytes_downloaded,
+                 object_size):
+        self.actual_bytes_downloaded = actual_bytes_downloaded
+        self.object_size = object_size
+        self.message = (f"The downloaded file didn't match the object size in bytes: expected {object_size}, "
+                        f"got {actual_bytes_downloaded}")

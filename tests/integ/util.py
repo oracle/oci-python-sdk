@@ -302,6 +302,12 @@ def create_large_file(filename, size_in_mebibytes):
         f.write(sample_content * MEBIBYTE * size_in_mebibytes)
 
 
+def create_large_file_with_random_bytes(filename, size_in_mebibytes):
+    content = os.urandom(size_in_mebibytes * MEBIBYTE)
+    with open(filename, 'wb') as f:
+        f.write(content)
+
+
 def get_all_pages(list_service_function, ** kwargs):
     result_records = []
     cloned_kwargs = kwargs.copy()
