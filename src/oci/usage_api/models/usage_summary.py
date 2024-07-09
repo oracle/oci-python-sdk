@@ -108,6 +108,14 @@ class UsageSummary(object):
             The value to assign to the computed_quantity property of this UsageSummary.
         :type computed_quantity: float
 
+        :param attributed_cost:
+            The value to assign to the attributed_cost property of this UsageSummary.
+        :type attributed_cost: str
+
+        :param attributed_usage:
+            The value to assign to the attributed_usage property of this UsageSummary.
+        :type attributed_usage: str
+
         :param overages_flag:
             The value to assign to the overages_flag property of this UsageSummary.
         :type overages_flag: str
@@ -160,6 +168,8 @@ class UsageSummary(object):
             'time_usage_ended': 'datetime',
             'computed_amount': 'float',
             'computed_quantity': 'float',
+            'attributed_cost': 'str',
+            'attributed_usage': 'str',
             'overages_flag': 'str',
             'unit_price': 'float',
             'currency': 'str',
@@ -192,6 +202,8 @@ class UsageSummary(object):
             'time_usage_ended': 'timeUsageEnded',
             'computed_amount': 'computedAmount',
             'computed_quantity': 'computedQuantity',
+            'attributed_cost': 'attributedCost',
+            'attributed_usage': 'attributedUsage',
             'overages_flag': 'overagesFlag',
             'unit_price': 'unitPrice',
             'currency': 'currency',
@@ -223,6 +235,8 @@ class UsageSummary(object):
         self._time_usage_ended = None
         self._computed_amount = None
         self._computed_quantity = None
+        self._attributed_cost = None
+        self._attributed_usage = None
         self._overages_flag = None
         self._unit_price = None
         self._currency = None
@@ -758,6 +772,54 @@ class UsageSummary(object):
         :type: float
         """
         self._computed_quantity = computed_quantity
+
+    @property
+    def attributed_cost(self):
+        """
+        Gets the attributed_cost of this UsageSummary.
+        The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0.
+
+
+        :return: The attributed_cost of this UsageSummary.
+        :rtype: str
+        """
+        return self._attributed_cost
+
+    @attributed_cost.setter
+    def attributed_cost(self, attributed_cost):
+        """
+        Sets the attributed_cost of this UsageSummary.
+        The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0.
+
+
+        :param attributed_cost: The attributed_cost of this UsageSummary.
+        :type: str
+        """
+        self._attributed_cost = attributed_cost
+
+    @property
+    def attributed_usage(self):
+        """
+        Gets the attributed_usage of this UsageSummary.
+        The attributed usage with a max value of 9999999999.999999999999 and a minimum value of 0.
+
+
+        :return: The attributed_usage of this UsageSummary.
+        :rtype: str
+        """
+        return self._attributed_usage
+
+    @attributed_usage.setter
+    def attributed_usage(self, attributed_usage):
+        """
+        Sets the attributed_usage of this UsageSummary.
+        The attributed usage with a max value of 9999999999.999999999999 and a minimum value of 0.
+
+
+        :param attributed_usage: The attributed_usage of this UsageSummary.
+        :type: str
+        """
+        self._attributed_usage = attributed_usage
 
     @property
     def overages_flag(self):
