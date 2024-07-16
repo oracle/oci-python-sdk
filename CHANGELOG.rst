@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.129.3 - 2024-07-16
+====================
+
+
+Added
+-----
+* Support for calling Oracle Cloud Infrastructure services in the me-abudhabi-2 region
+ 
+====================
 2.129.2 - 2024-07-09
 ====================
 
@@ -12,6 +21,7 @@ Added
 * Support for cost management of shared resources in the Usage service
 * Support for creating new databases with oracle key vault on Exadata Cloud at Customer in the Database service
 * Support for confirming key store details on Exadata Cloud at Customer in the Database service
+* Support for Download Manager in the Object Storage service
 
 ====================
 2.129.1 - 2024-07-02
