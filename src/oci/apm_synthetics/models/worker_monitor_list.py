@@ -39,6 +39,14 @@ class WorkerMonitorList(object):
     #: This constant has a value of "DNS"
     MONITOR_TYPE_DNS = "DNS"
 
+    #: A constant which can be used with the monitor_type property of a WorkerMonitorList.
+    #: This constant has a value of "FTP"
+    MONITOR_TYPE_FTP = "FTP"
+
+    #: A constant which can be used with the monitor_type property of a WorkerMonitorList.
+    #: This constant has a value of "SQL"
+    MONITOR_TYPE_SQL = "SQL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new WorkerMonitorList object with values from keyword arguments.
@@ -54,7 +62,7 @@ class WorkerMonitorList(object):
 
         :param monitor_type:
             The value to assign to the monitor_type property of this WorkerMonitorList.
-            Allowed values for this property are: "SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", "NETWORK", "DNS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", "NETWORK", "DNS", "FTP", "SQL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type monitor_type: str
 
@@ -147,7 +155,7 @@ class WorkerMonitorList(object):
         **[Required]** Gets the monitor_type of this WorkerMonitorList.
         Type of monitor.
 
-        Allowed values for this property are: "SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", "NETWORK", "DNS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", "NETWORK", "DNS", "FTP", "SQL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -166,7 +174,7 @@ class WorkerMonitorList(object):
         :param monitor_type: The monitor_type of this WorkerMonitorList.
         :type: str
         """
-        allowed_values = ["SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", "NETWORK", "DNS"]
+        allowed_values = ["SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", "NETWORK", "DNS", "FTP", "SQL"]
         if not value_allowed_none_or_none_sentinel(monitor_type, allowed_values):
             monitor_type = 'UNKNOWN_ENUM_VALUE'
         self._monitor_type = monitor_type

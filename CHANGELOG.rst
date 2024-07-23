@@ -4,9 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.129.3 - 2024-07-16
+2.129.4 - 2024-07-23
 ====================
 
+Added
+-----
+* Support for subscription id attribute in Cloud Exadata Infrastructure and Cloud VM Clusters in the Database service 
+* Support for SQL and FTP monitors on create and update operations in the Application Performance Monitoring service 
+* Support for MySQL Heatwave database systems in the Operations Insights service 
+* Support for creating and updating schedules for user assessments and security assessments in the Data Safe service 
+* Support for creating and updating sensitive data models of the tables for discovery in the Data Safe service 
+* Support for additional optional parameters on autonomous database create and update operations in the Database service
+
+Changed
+-------
+* The `INSTANCE_METADATA_URL_CERTIFICATE_RETRIEVER_RETRY_STRATEGY` was changed to retry a max of 3 times for max of 3 minutes and a fixed retry inerval of 30 seconds, and retry on 404, 429 and 5xx errors
+
+====================
+2.129.3 - 2024-07-16
+====================
 
 Added
 -----

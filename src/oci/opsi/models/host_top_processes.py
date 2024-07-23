@@ -23,7 +23,7 @@ class HostTopProcesses(HostPerformanceMetricGroup):
 
         :param metric_name:
             The value to assign to the metric_name property of this HostTopProcesses.
-            Allowed values for this property are: "HOST_CPU_USAGE", "HOST_MEMORY_USAGE", "HOST_NETWORK_ACTIVITY_SUMMARY", "HOST_TOP_PROCESSES", "HOST_FILESYSTEM_USAGE", "HOST_GPU_USAGE", "HOST_GPU_PROCESSES"
+            Allowed values for this property are: "HOST_CPU_USAGE", "HOST_MEMORY_USAGE", "HOST_NETWORK_ACTIVITY_SUMMARY", "HOST_TOP_PROCESSES", "HOST_FILESYSTEM_USAGE", "HOST_GPU_USAGE", "HOST_GPU_PROCESSES", "HOST_IO_USAGE", "HOST_CONTAINERS"
         :type metric_name: str
 
         :param time_collected:
@@ -74,6 +74,26 @@ class HostTopProcesses(HostPerformanceMetricGroup):
             The value to assign to the container_id property of this HostTopProcesses.
         :type container_id: str
 
+        :param disk_bytes_read:
+            The value to assign to the disk_bytes_read property of this HostTopProcesses.
+        :type disk_bytes_read: float
+
+        :param disk_bytes_written:
+            The value to assign to the disk_bytes_written property of this HostTopProcesses.
+        :type disk_bytes_written: float
+
+        :param disk_iops_read:
+            The value to assign to the disk_iops_read property of this HostTopProcesses.
+        :type disk_iops_read: float
+
+        :param disk_iops_written:
+            The value to assign to the disk_iops_written property of this HostTopProcesses.
+        :type disk_iops_written: float
+
+        :param disk_iops:
+            The value to assign to the disk_iops property of this HostTopProcesses.
+        :type disk_iops: float
+
         """
         self.swagger_types = {
             'metric_name': 'str',
@@ -88,7 +108,12 @@ class HostTopProcesses(HostPerformanceMetricGroup):
             'physical_memory_in_mbs': 'float',
             'start_time': 'datetime',
             'total_processes': 'float',
-            'container_id': 'str'
+            'container_id': 'str',
+            'disk_bytes_read': 'float',
+            'disk_bytes_written': 'float',
+            'disk_iops_read': 'float',
+            'disk_iops_written': 'float',
+            'disk_iops': 'float'
         }
 
         self.attribute_map = {
@@ -104,7 +129,12 @@ class HostTopProcesses(HostPerformanceMetricGroup):
             'physical_memory_in_mbs': 'physicalMemoryInMBs',
             'start_time': 'startTime',
             'total_processes': 'totalProcesses',
-            'container_id': 'containerId'
+            'container_id': 'containerId',
+            'disk_bytes_read': 'diskBytesRead',
+            'disk_bytes_written': 'diskBytesWritten',
+            'disk_iops_read': 'diskIopsRead',
+            'disk_iops_written': 'diskIopsWritten',
+            'disk_iops': 'diskIops'
         }
 
         self._metric_name = None
@@ -120,6 +150,11 @@ class HostTopProcesses(HostPerformanceMetricGroup):
         self._start_time = None
         self._total_processes = None
         self._container_id = None
+        self._disk_bytes_read = None
+        self._disk_bytes_written = None
+        self._disk_iops_read = None
+        self._disk_iops_written = None
+        self._disk_iops = None
         self._metric_name = 'HOST_TOP_PROCESSES'
 
     @property
@@ -387,6 +422,126 @@ class HostTopProcesses(HostPerformanceMetricGroup):
         :type: str
         """
         self._container_id = container_id
+
+    @property
+    def disk_bytes_read(self):
+        """
+        Gets the disk_bytes_read of this HostTopProcesses.
+        Bytes Read
+
+
+        :return: The disk_bytes_read of this HostTopProcesses.
+        :rtype: float
+        """
+        return self._disk_bytes_read
+
+    @disk_bytes_read.setter
+    def disk_bytes_read(self, disk_bytes_read):
+        """
+        Sets the disk_bytes_read of this HostTopProcesses.
+        Bytes Read
+
+
+        :param disk_bytes_read: The disk_bytes_read of this HostTopProcesses.
+        :type: float
+        """
+        self._disk_bytes_read = disk_bytes_read
+
+    @property
+    def disk_bytes_written(self):
+        """
+        Gets the disk_bytes_written of this HostTopProcesses.
+        Bytes Written
+
+
+        :return: The disk_bytes_written of this HostTopProcesses.
+        :rtype: float
+        """
+        return self._disk_bytes_written
+
+    @disk_bytes_written.setter
+    def disk_bytes_written(self, disk_bytes_written):
+        """
+        Sets the disk_bytes_written of this HostTopProcesses.
+        Bytes Written
+
+
+        :param disk_bytes_written: The disk_bytes_written of this HostTopProcesses.
+        :type: float
+        """
+        self._disk_bytes_written = disk_bytes_written
+
+    @property
+    def disk_iops_read(self):
+        """
+        Gets the disk_iops_read of this HostTopProcesses.
+        Read transactions per second
+
+
+        :return: The disk_iops_read of this HostTopProcesses.
+        :rtype: float
+        """
+        return self._disk_iops_read
+
+    @disk_iops_read.setter
+    def disk_iops_read(self, disk_iops_read):
+        """
+        Sets the disk_iops_read of this HostTopProcesses.
+        Read transactions per second
+
+
+        :param disk_iops_read: The disk_iops_read of this HostTopProcesses.
+        :type: float
+        """
+        self._disk_iops_read = disk_iops_read
+
+    @property
+    def disk_iops_written(self):
+        """
+        Gets the disk_iops_written of this HostTopProcesses.
+        Write transactions per second
+
+
+        :return: The disk_iops_written of this HostTopProcesses.
+        :rtype: float
+        """
+        return self._disk_iops_written
+
+    @disk_iops_written.setter
+    def disk_iops_written(self, disk_iops_written):
+        """
+        Sets the disk_iops_written of this HostTopProcesses.
+        Write transactions per second
+
+
+        :param disk_iops_written: The disk_iops_written of this HostTopProcesses.
+        :type: float
+        """
+        self._disk_iops_written = disk_iops_written
+
+    @property
+    def disk_iops(self):
+        """
+        Gets the disk_iops of this HostTopProcesses.
+        IO Transactions per second
+
+
+        :return: The disk_iops of this HostTopProcesses.
+        :rtype: float
+        """
+        return self._disk_iops
+
+    @disk_iops.setter
+    def disk_iops(self, disk_iops):
+        """
+        Sets the disk_iops of this HostTopProcesses.
+        IO Transactions per second
+
+
+        :param disk_iops: The disk_iops of this HostTopProcesses.
+        :type: float
+        """
+        self._disk_iops = disk_iops
 
     def __repr__(self):
         return formatted_flat_dict(self)

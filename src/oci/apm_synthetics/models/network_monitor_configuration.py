@@ -23,7 +23,7 @@ class NetworkMonitorConfiguration(MonitorConfiguration):
 
         :param config_type:
             The value to assign to the config_type property of this NetworkMonitorConfiguration.
-            Allowed values for this property are: "BROWSER_CONFIG", "SCRIPTED_BROWSER_CONFIG", "REST_CONFIG", "SCRIPTED_REST_CONFIG", "NETWORK_CONFIG", "DNS_SERVER_CONFIG", "DNS_TRACE_CONFIG", "DNSSEC_CONFIG"
+            Allowed values for this property are: "BROWSER_CONFIG", "SCRIPTED_BROWSER_CONFIG", "REST_CONFIG", "SCRIPTED_REST_CONFIG", "NETWORK_CONFIG", "DNS_SERVER_CONFIG", "DNS_TRACE_CONFIG", "DNSSEC_CONFIG", "FTP_CONFIG", "SQL_CONFIG"
         :type config_type: str
 
         :param is_failure_retried:

@@ -28,19 +28,26 @@ class VantagePointInfo(object):
             The value to assign to the display_name property of this VantagePointInfo.
         :type display_name: str
 
+        :param worker_list:
+            The value to assign to the worker_list property of this VantagePointInfo.
+        :type worker_list: list[str]
+
         """
         self.swagger_types = {
             'name': 'str',
-            'display_name': 'str'
+            'display_name': 'str',
+            'worker_list': 'list[str]'
         }
 
         self.attribute_map = {
             'name': 'name',
-            'display_name': 'displayName'
+            'display_name': 'displayName',
+            'worker_list': 'workerList'
         }
 
         self._name = None
         self._display_name = None
+        self._worker_list = None
 
     @property
     def name(self):
@@ -89,6 +96,30 @@ class VantagePointInfo(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def worker_list(self):
+        """
+        Gets the worker_list of this VantagePointInfo.
+        List of workers running the assigned monitor.
+
+
+        :return: The worker_list of this VantagePointInfo.
+        :rtype: list[str]
+        """
+        return self._worker_list
+
+    @worker_list.setter
+    def worker_list(self, worker_list):
+        """
+        Sets the worker_list of this VantagePointInfo.
+        List of workers running the assigned monitor.
+
+
+        :param worker_list: The worker_list of this VantagePointInfo.
+        :type: list[str]
+        """
+        self._worker_list = worker_list
 
     def __repr__(self):
         return formatted_flat_dict(self)

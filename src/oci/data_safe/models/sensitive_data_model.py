@@ -91,6 +91,10 @@ class SensitiveDataModel(object):
             The value to assign to the schemas_for_discovery property of this SensitiveDataModel.
         :type schemas_for_discovery: list[str]
 
+        :param tables_for_discovery:
+            The value to assign to the tables_for_discovery property of this SensitiveDataModel.
+        :type tables_for_discovery: list[oci.data_safe.models.TablesForDiscovery]
+
         :param sensitive_type_ids_for_discovery:
             The value to assign to the sensitive_type_ids_for_discovery property of this SensitiveDataModel.
         :type sensitive_type_ids_for_discovery: list[str]
@@ -135,6 +139,7 @@ class SensitiveDataModel(object):
             'app_suite_name': 'str',
             'description': 'str',
             'schemas_for_discovery': 'list[str]',
+            'tables_for_discovery': 'list[TablesForDiscovery]',
             'sensitive_type_ids_for_discovery': 'list[str]',
             'is_sample_data_collection_enabled': 'bool',
             'is_app_defined_relation_discovery_enabled': 'bool',
@@ -156,6 +161,7 @@ class SensitiveDataModel(object):
             'app_suite_name': 'appSuiteName',
             'description': 'description',
             'schemas_for_discovery': 'schemasForDiscovery',
+            'tables_for_discovery': 'tablesForDiscovery',
             'sensitive_type_ids_for_discovery': 'sensitiveTypeIdsForDiscovery',
             'is_sample_data_collection_enabled': 'isSampleDataCollectionEnabled',
             'is_app_defined_relation_discovery_enabled': 'isAppDefinedRelationDiscoveryEnabled',
@@ -176,6 +182,7 @@ class SensitiveDataModel(object):
         self._app_suite_name = None
         self._description = None
         self._schemas_for_discovery = None
+        self._tables_for_discovery = None
         self._sensitive_type_ids_for_discovery = None
         self._is_sample_data_collection_enabled = None
         self._is_app_defined_relation_discovery_enabled = None
@@ -442,6 +449,34 @@ class SensitiveDataModel(object):
         :type: list[str]
         """
         self._schemas_for_discovery = schemas_for_discovery
+
+    @property
+    def tables_for_discovery(self):
+        """
+        Gets the tables_for_discovery of this SensitiveDataModel.
+        The data discovery jobs will scan the tables specified here, including both schemas and tables.
+        For instance, the input could be in the format: [{schemaName: \"HR\", tableName: [\"T1\", \"T2\"]}, {schemaName:
+        \"OE\", tableName : [\"T3\", \"T4\"]}].
+
+
+        :return: The tables_for_discovery of this SensitiveDataModel.
+        :rtype: list[oci.data_safe.models.TablesForDiscovery]
+        """
+        return self._tables_for_discovery
+
+    @tables_for_discovery.setter
+    def tables_for_discovery(self, tables_for_discovery):
+        """
+        Sets the tables_for_discovery of this SensitiveDataModel.
+        The data discovery jobs will scan the tables specified here, including both schemas and tables.
+        For instance, the input could be in the format: [{schemaName: \"HR\", tableName: [\"T1\", \"T2\"]}, {schemaName:
+        \"OE\", tableName : [\"T3\", \"T4\"]}].
+
+
+        :param tables_for_discovery: The tables_for_discovery of this SensitiveDataModel.
+        :type: list[oci.data_safe.models.TablesForDiscovery]
+        """
+        self._tables_for_discovery = tables_for_discovery
 
     @property
     def sensitive_type_ids_for_discovery(self):

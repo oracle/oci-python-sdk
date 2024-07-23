@@ -23,6 +23,7 @@ Apm Synthetics
     oci.apm_synthetics.models.AggregatedNetworkDataResult
     oci.apm_synthetics.models.AvailabilityConfiguration
     oci.apm_synthetics.models.AvailableCapability
+    oci.apm_synthetics.models.BasicAuthenticationDetails
     oci.apm_synthetics.models.BrowserMonitorConfiguration
     oci.apm_synthetics.models.ClientCertificate
     oci.apm_synthetics.models.ClientCertificateDetails
@@ -31,6 +32,7 @@ Apm Synthetics
     oci.apm_synthetics.models.CreateOnPremiseVantagePointDetails
     oci.apm_synthetics.models.CreateScriptDetails
     oci.apm_synthetics.models.CreateWorkerDetails
+    oci.apm_synthetics.models.DatabaseWalletDetails
     oci.apm_synthetics.models.DedicatedVantagePoint
     oci.apm_synthetics.models.DedicatedVantagePointCollection
     oci.apm_synthetics.models.DedicatedVantagePointSummary
@@ -39,6 +41,7 @@ Apm Synthetics
     oci.apm_synthetics.models.DnsServerMonitorConfiguration
     oci.apm_synthetics.models.DnsTraceMonitorConfiguration
     oci.apm_synthetics.models.DvpStackDetails
+    oci.apm_synthetics.models.FtpMonitorConfiguration
     oci.apm_synthetics.models.GeoSummary
     oci.apm_synthetics.models.Header
     oci.apm_synthetics.models.IdentityInfoDetails
@@ -61,6 +64,9 @@ Apm Synthetics
     oci.apm_synthetics.models.OnPremiseVantagePointSummary
     oci.apm_synthetics.models.OnPremiseVpWorkerVersionDetails
     oci.apm_synthetics.models.OracleRMStack
+    oci.apm_synthetics.models.Password
+    oci.apm_synthetics.models.PasswordInText
+    oci.apm_synthetics.models.PasswordInVault
     oci.apm_synthetics.models.PrivateKey
     oci.apm_synthetics.models.PublicVantagePointCollection
     oci.apm_synthetics.models.PublicVantagePointSummary
@@ -74,6 +80,7 @@ Apm Synthetics
     oci.apm_synthetics.models.ScriptSummary
     oci.apm_synthetics.models.ScriptedBrowserMonitorConfiguration
     oci.apm_synthetics.models.ScriptedRestMonitorConfiguration
+    oci.apm_synthetics.models.SqlMonitorConfiguration
     oci.apm_synthetics.models.UpdateDedicatedVantagePointDetails
     oci.apm_synthetics.models.UpdateMonitorDetails
     oci.apm_synthetics.models.UpdateOnPremiseVantagePointDetails

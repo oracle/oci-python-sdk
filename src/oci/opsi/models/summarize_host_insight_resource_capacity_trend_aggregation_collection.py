@@ -35,6 +35,14 @@ class SummarizeHostInsightResourceCapacityTrendAggregationCollection(object):
     #: This constant has a value of "NETWORK"
     RESOURCE_METRIC_NETWORK = "NETWORK"
 
+    #: A constant which can be used with the resource_metric property of a SummarizeHostInsightResourceCapacityTrendAggregationCollection.
+    #: This constant has a value of "GPU_UTILIZATION"
+    RESOURCE_METRIC_GPU_UTILIZATION = "GPU_UTILIZATION"
+
+    #: A constant which can be used with the resource_metric property of a SummarizeHostInsightResourceCapacityTrendAggregationCollection.
+    #: This constant has a value of "GPU_MEMORY_USAGE"
+    RESOURCE_METRIC_GPU_MEMORY_USAGE = "GPU_MEMORY_USAGE"
+
     #: A constant which can be used with the usage_unit property of a SummarizeHostInsightResourceCapacityTrendAggregationCollection.
     #: This constant has a value of "CORES"
     USAGE_UNIT_CORES = "CORES"
@@ -78,7 +86,7 @@ class SummarizeHostInsightResourceCapacityTrendAggregationCollection(object):
 
         :param resource_metric:
             The value to assign to the resource_metric property of this SummarizeHostInsightResourceCapacityTrendAggregationCollection.
-            Allowed values for this property are: "CPU", "MEMORY", "LOGICAL_MEMORY", "STORAGE", "NETWORK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CPU", "MEMORY", "LOGICAL_MEMORY", "STORAGE", "NETWORK", "GPU_UTILIZATION", "GPU_MEMORY_USAGE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_metric: str
 
@@ -230,7 +238,7 @@ class SummarizeHostInsightResourceCapacityTrendAggregationCollection(object):
         **[Required]** Gets the resource_metric of this SummarizeHostInsightResourceCapacityTrendAggregationCollection.
         Defines the type of resource metric (CPU, Physical Memory, Logical Memory)
 
-        Allowed values for this property are: "CPU", "MEMORY", "LOGICAL_MEMORY", "STORAGE", "NETWORK", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CPU", "MEMORY", "LOGICAL_MEMORY", "STORAGE", "NETWORK", "GPU_UTILIZATION", "GPU_MEMORY_USAGE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -249,7 +257,7 @@ class SummarizeHostInsightResourceCapacityTrendAggregationCollection(object):
         :param resource_metric: The resource_metric of this SummarizeHostInsightResourceCapacityTrendAggregationCollection.
         :type: str
         """
-        allowed_values = ["CPU", "MEMORY", "LOGICAL_MEMORY", "STORAGE", "NETWORK"]
+        allowed_values = ["CPU", "MEMORY", "LOGICAL_MEMORY", "STORAGE", "NETWORK", "GPU_UTILIZATION", "GPU_MEMORY_USAGE"]
         if not value_allowed_none_or_none_sentinel(resource_metric, allowed_values):
             resource_metric = 'UNKNOWN_ENUM_VALUE'
         self._resource_metric = resource_metric

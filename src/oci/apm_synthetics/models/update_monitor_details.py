@@ -114,6 +114,10 @@ class UpdateMonitorDetails(object):
             The value to assign to the batch_interval_in_seconds property of this UpdateMonitorDetails.
         :type batch_interval_in_seconds: int
 
+        :param is_i_pv6:
+            The value to assign to the is_i_pv6 property of this UpdateMonitorDetails.
+        :type is_i_pv6: bool
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -132,7 +136,8 @@ class UpdateMonitorDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'is_run_now': 'bool',
             'scheduling_policy': 'str',
-            'batch_interval_in_seconds': 'int'
+            'batch_interval_in_seconds': 'int',
+            'is_i_pv6': 'bool'
         }
 
         self.attribute_map = {
@@ -152,7 +157,8 @@ class UpdateMonitorDetails(object):
             'defined_tags': 'definedTags',
             'is_run_now': 'isRunNow',
             'scheduling_policy': 'schedulingPolicy',
-            'batch_interval_in_seconds': 'batchIntervalInSeconds'
+            'batch_interval_in_seconds': 'batchIntervalInSeconds',
+            'is_i_pv6': 'isIPv6'
         }
 
         self._display_name = None
@@ -172,6 +178,7 @@ class UpdateMonitorDetails(object):
         self._is_run_now = None
         self._scheduling_policy = None
         self._batch_interval_in_seconds = None
+        self._is_i_pv6 = None
 
     @property
     def display_name(self):
@@ -369,10 +376,10 @@ class UpdateMonitorDetails(object):
         """
         Gets the target of this UpdateMonitorDetails.
         Specify the endpoint on which to run the monitor.
-        For BROWSER, REST and NETWORK monitor types, target is mandatory.
+        For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory.
         If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint.
         If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
-        For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
 
 
         :return: The target of this UpdateMonitorDetails.
@@ -385,10 +392,10 @@ class UpdateMonitorDetails(object):
         """
         Sets the target of this UpdateMonitorDetails.
         Specify the endpoint on which to run the monitor.
-        For BROWSER, REST and NETWORK monitor types, target is mandatory.
+        For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory.
         If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint.
         If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
-        For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
 
 
         :param target: The target of this UpdateMonitorDetails.
@@ -614,6 +621,30 @@ class UpdateMonitorDetails(object):
         :type: int
         """
         self._batch_interval_in_seconds = batch_interval_in_seconds
+
+    @property
+    def is_i_pv6(self):
+        """
+        Gets the is_i_pv6 of this UpdateMonitorDetails.
+        If enabled, domain name will resolve to an IPv6 address.
+
+
+        :return: The is_i_pv6 of this UpdateMonitorDetails.
+        :rtype: bool
+        """
+        return self._is_i_pv6
+
+    @is_i_pv6.setter
+    def is_i_pv6(self, is_i_pv6):
+        """
+        Sets the is_i_pv6 of this UpdateMonitorDetails.
+        If enabled, domain name will resolve to an IPv6 address.
+
+
+        :param is_i_pv6: The is_i_pv6 of this UpdateMonitorDetails.
+        :type: bool
+        """
+        self._is_i_pv6 = is_i_pv6
 
     def __repr__(self):
         return formatted_flat_dict(self)

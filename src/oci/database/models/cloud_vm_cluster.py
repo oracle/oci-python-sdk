@@ -76,6 +76,10 @@ class CloudVmCluster(object):
             The value to assign to the compartment_id property of this CloudVmCluster.
         :type compartment_id: str
 
+        :param subscription_id:
+            The value to assign to the subscription_id property of this CloudVmCluster.
+        :type subscription_id: str
+
         :param availability_domain:
             The value to assign to the availability_domain property of this CloudVmCluster.
         :type availability_domain: str
@@ -271,6 +275,7 @@ class CloudVmCluster(object):
             'iorm_config_cache': 'ExadataIormConfig',
             'id': 'str',
             'compartment_id': 'str',
+            'subscription_id': 'str',
             'availability_domain': 'str',
             'subnet_id': 'str',
             'backup_subnet_id': 'str',
@@ -323,6 +328,7 @@ class CloudVmCluster(object):
             'iorm_config_cache': 'iormConfigCache',
             'id': 'id',
             'compartment_id': 'compartmentId',
+            'subscription_id': 'subscriptionId',
             'availability_domain': 'availabilityDomain',
             'subnet_id': 'subnetId',
             'backup_subnet_id': 'backupSubnetId',
@@ -374,6 +380,7 @@ class CloudVmCluster(object):
         self._iorm_config_cache = None
         self._id = None
         self._compartment_id = None
+        self._subscription_id = None
         self._availability_domain = None
         self._subnet_id = None
         self._backup_subnet_id = None
@@ -496,6 +503,34 @@ class CloudVmCluster(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def subscription_id(self):
+        """
+        Gets the subscription_id of this CloudVmCluster.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subscription_id of this CloudVmCluster.
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """
+        Sets the subscription_id of this CloudVmCluster.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subscription_id: The subscription_id of this CloudVmCluster.
+        :type: str
+        """
+        self._subscription_id = subscription_id
 
     @property
     def availability_domain(self):

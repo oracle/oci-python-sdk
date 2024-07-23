@@ -16288,7 +16288,7 @@ class DataSafeClient(object):
             text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
             (Numeric and boolean values should not be quoted.)
 
-            **Example:** query=(operationTime ge '2021-06-04T01-00-26') and (eventName eq 'LOGON')
+            **Example:** (operationTime ge \"2021-06-04T12:00:00.000Z\") and (eventName eq \"LOGON\")
 
             __ https://tools.ietf.org/html/draft-ietf-scim-api-12
 
@@ -16535,7 +16535,7 @@ class DataSafeClient(object):
             text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
             (Numeric and boolean values should not be quoted.)
 
-            **Example:** query=(operationTime ge '2021-06-04T01-00-26') and (eventName eq 'LOGON')
+            **Example:** (operationTime ge \"2021-06-04T12:00:00.000Z\") and (eventName eq \"LOGON\")
 
             __ https://tools.ietf.org/html/draft-ietf-scim-api-12
 
@@ -20077,6 +20077,9 @@ class DataSafeClient(object):
 
             Allowed values are: "RESTRICTED", "ACCESSIBLE"
 
+        :param str target_id: (optional)
+            A filter to return only items related to a specific target OCID.
+
         :param str finding_key: (optional)
             Each finding in security assessment has an associated key (think of key as a finding's name).
             For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
@@ -20119,6 +20122,7 @@ class DataSafeClient(object):
             "page",
             "compartment_id_in_subtree",
             "access_level",
+            "target_id",
             "finding_key"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -20173,6 +20177,7 @@ class DataSafeClient(object):
             "page": kwargs.get("page", missing),
             "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
             "accessLevel": kwargs.get("access_level", missing),
+            "targetId": kwargs.get("target_id", missing),
             "findingKey": kwargs.get("finding_key", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
@@ -23544,6 +23549,23 @@ class DataSafeClient(object):
         :param str report_definition_id: (optional)
             The ID of the report definition to filter the list of reports
 
+        :param datetime time_generated_greater_than_or_equal_to: (optional)
+            A filter to return only the resources that were generated after the specified date and time, as defined by `RFC3339`__.
+            Using TimeGeneratedGreaterThanOrEqualToQueryParam parameter retrieves all resources generated after that date.
+
+            **Example:** 2016-12-19T16:39:57.600Z
+
+            __ https://tools.ietf.org/html/rfc3339
+
+        :param datetime time_generated_less_than: (optional)
+            Search for resources that were generated before a specific date.
+            Specifying this parameter corresponding `timeGeneratedLessThan`
+            parameter will retrieve all resources generated before the
+            specified generated date, in \"YYYY-MM-ddThh:mmZ\" format with a Z offset, as
+            defined by RFC 3339.
+
+            **Example:** 2016-12-19T16:39:57.600Z
+
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
@@ -23594,6 +23616,8 @@ class DataSafeClient(object):
             "sort_order",
             "sort_by",
             "report_definition_id",
+            "time_generated_greater_than_or_equal_to",
+            "time_generated_less_than",
             "opc_request_id",
             "lifecycle_state",
             "type"
@@ -23648,6 +23672,8 @@ class DataSafeClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "reportDefinitionId": kwargs.get("report_definition_id", missing),
+            "timeGeneratedGreaterThanOrEqualTo": kwargs.get("time_generated_greater_than_or_equal_to", missing),
+            "timeGeneratedLessThan": kwargs.get("time_generated_less_than", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "type": kwargs.get("type", missing)
         }
@@ -26044,6 +26070,158 @@ class DataSafeClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="SensitiveColumnCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_sensitive_data_model_sensitive_types(self, sensitive_data_model_id, **kwargs):
+        """
+        Gets a list of sensitive type Ids present in the specified sensitive data model.
+
+
+        :param str sensitive_data_model_id: (required)
+            The OCID of the sensitive data model.
+
+        :param str sensitive_type_id: (optional)
+            A filter to return only items related to a specific sensitive type OCID.
+
+        :param str sort_by: (optional)
+            - The field to sort by. You can specify only one sorting parameter (sortorder).
+            The default order is descending.
+
+            Allowed values are: "count"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (ASC) or descending (DESC).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_safe.models.SensitiveDataModelSensitiveTypeCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datasafe/list_sensitive_data_model_sensitive_types.py.html>`__ to see an example of how to use list_sensitive_data_model_sensitive_types API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['sensitiveDataModelId']
+        resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/sensitiveTypes"
+        method = "GET"
+        operation_name = "list_sensitive_data_model_sensitive_types"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModelSensitiveTypeCollection/ListSensitiveDataModelSensitiveTypes"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "sensitive_type_id",
+            "sort_by",
+            "sort_order",
+            "limit",
+            "page",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_sensitive_data_model_sensitive_types got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "sensitiveDataModelId": sensitive_data_model_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["count"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        query_params = {
+            "sensitiveTypeId": kwargs.get("sensitive_type_id", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SensitiveDataModelSensitiveTypeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SensitiveDataModelSensitiveTypeCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -33617,7 +33795,8 @@ class DataSafeClient(object):
 
     def unset_security_assessment_baseline(self, security_assessment_id, **kwargs):
         """
-        Removes the baseline setting for the saved security assessment. The saved security assessment is no longer considered a baseline.
+        Removes the baseline setting for the saved security assessment associated with the targetId passed via body.
+        If no body or empty body is passed then the baseline settings of all the saved security assessments pertaining to the baseline assessment OCID provided in the path will be removed.
         Sets the if-match parameter to the value of the etag from a previous GET or POST response for that resource.
 
 
@@ -33639,6 +33818,9 @@ class DataSafeClient(object):
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
+
+        :param oci.data_safe.models.UnsetSecurityAssessmentBaselineDetails unset_security_assessment_baseline_details: (optional)
+            Details of the target associated with the security assessment for which the user intents to unset the baseline.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -33671,7 +33853,8 @@ class DataSafeClient(object):
             "retry_strategy",
             "if_match",
             "opc_retry_token",
-            "opc_request_id"
+            "opc_request_id",
+            "unset_security_assessment_baseline_details"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -33715,6 +33898,7 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
+                body=kwargs.get('unset_security_assessment_baseline_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -33725,6 +33909,7 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
+                body=kwargs.get('unset_security_assessment_baseline_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -33732,7 +33917,8 @@ class DataSafeClient(object):
 
     def unset_user_assessment_baseline(self, user_assessment_id, **kwargs):
         """
-        Removes the baseline setting for the saved user assessment. The saved user assessment is no longer considered a baseline.
+        Removes the baseline setting for the saved user assessment associated with the targetId passed via body.
+        If no body or empty body is passed then the baseline settings of all the saved user assessments pertaining to the baseline assessment OCID provided in the path will be removed.
         Sets the if-match parameter to the value of the etag from a previous GET or POST response for that resource.
 
 
@@ -33754,6 +33940,9 @@ class DataSafeClient(object):
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
+
+        :param oci.data_safe.models.UnsetUserAssessmentBaselineDetails unset_user_assessment_baseline_details: (optional)
+            Details of the target associated with the user assessment for which the user intents to unset the baseline.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -33786,7 +33975,8 @@ class DataSafeClient(object):
             "retry_strategy",
             "if_match",
             "opc_retry_token",
-            "opc_request_id"
+            "opc_request_id",
+            "unset_user_assessment_baseline_details"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -33830,6 +34020,7 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
+                body=kwargs.get('unset_user_assessment_baseline_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -33840,6 +34031,7 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
+                body=kwargs.get('unset_user_assessment_baseline_details'),
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,

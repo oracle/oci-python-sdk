@@ -102,6 +102,10 @@ class FindingSummary(object):
             The value to assign to the summary property of this FindingSummary.
         :type summary: str
 
+        :param oneline:
+            The value to assign to the oneline property of this FindingSummary.
+        :type oneline: str
+
         :param references:
             The value to assign to the references property of this FindingSummary.
         :type references: oci.data_safe.models.References
@@ -151,6 +155,7 @@ class FindingSummary(object):
             'remarks': 'str',
             'details': 'object',
             'summary': 'str',
+            'oneline': 'str',
             'references': 'References',
             'oracle_defined_severity': 'str',
             'is_risk_modified': 'bool',
@@ -172,6 +177,7 @@ class FindingSummary(object):
             'remarks': 'remarks',
             'details': 'details',
             'summary': 'summary',
+            'oneline': 'oneline',
             'references': 'references',
             'oracle_defined_severity': 'oracleDefinedSeverity',
             'is_risk_modified': 'isRiskModified',
@@ -192,6 +198,7 @@ class FindingSummary(object):
         self._remarks = None
         self._details = None
         self._summary = None
+        self._oneline = None
         self._references = None
         self._oracle_defined_severity = None
         self._is_risk_modified = None
@@ -423,6 +430,30 @@ class FindingSummary(object):
         :type: str
         """
         self._summary = summary
+
+    @property
+    def oneline(self):
+        """
+        Gets the oneline of this FindingSummary.
+        Provides a recommended approach to take to remediate the finding reported.
+
+
+        :return: The oneline of this FindingSummary.
+        :rtype: str
+        """
+        return self._oneline
+
+    @oneline.setter
+    def oneline(self, oneline):
+        """
+        Sets the oneline of this FindingSummary.
+        Provides a recommended approach to take to remediate the finding reported.
+
+
+        :param oneline: The oneline of this FindingSummary.
+        :type: str
+        """
+        self._oneline = oneline
 
     @property
     def references(self):

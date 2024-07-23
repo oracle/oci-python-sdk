@@ -32,6 +32,10 @@ class CreateCloudVmClusterDetails(object):
             The value to assign to the compartment_id property of this CreateCloudVmClusterDetails.
         :type compartment_id: str
 
+        :param subscription_id:
+            The value to assign to the subscription_id property of this CreateCloudVmClusterDetails.
+        :type subscription_id: str
+
         :param subnet_id:
             The value to assign to the subnet_id property of this CreateCloudVmClusterDetails.
         :type subnet_id: str
@@ -156,6 +160,7 @@ class CreateCloudVmClusterDetails(object):
         """
         self.swagger_types = {
             'compartment_id': 'str',
+            'subscription_id': 'str',
             'subnet_id': 'str',
             'backup_subnet_id': 'str',
             'cpu_core_count': 'int',
@@ -190,6 +195,7 @@ class CreateCloudVmClusterDetails(object):
 
         self.attribute_map = {
             'compartment_id': 'compartmentId',
+            'subscription_id': 'subscriptionId',
             'subnet_id': 'subnetId',
             'backup_subnet_id': 'backupSubnetId',
             'cpu_core_count': 'cpuCoreCount',
@@ -223,6 +229,7 @@ class CreateCloudVmClusterDetails(object):
         }
 
         self._compartment_id = None
+        self._subscription_id = None
         self._subnet_id = None
         self._backup_subnet_id = None
         self._cpu_core_count = None
@@ -281,6 +288,34 @@ class CreateCloudVmClusterDetails(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def subscription_id(self):
+        """
+        Gets the subscription_id of this CreateCloudVmClusterDetails.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subscription_id of this CreateCloudVmClusterDetails.
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """
+        Sets the subscription_id of this CreateCloudVmClusterDetails.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subscription_id: The subscription_id of this CreateCloudVmClusterDetails.
+        :type: str
+        """
+        self._subscription_id = subscription_id
 
     @property
     def subnet_id(self):

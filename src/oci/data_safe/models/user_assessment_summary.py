@@ -118,6 +118,10 @@ class UserAssessmentSummary(object):
             The value to assign to the schedule_assessment_id property of this UserAssessmentSummary.
         :type schedule_assessment_id: str
 
+        :param is_assessment_scheduled:
+            The value to assign to the is_assessment_scheduled property of this UserAssessmentSummary.
+        :type is_assessment_scheduled: bool
+
         :param schedule:
             The value to assign to the schedule property of this UserAssessmentSummary.
         :type schedule: str
@@ -176,6 +180,7 @@ class UserAssessmentSummary(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'schedule_assessment_id': 'str',
+            'is_assessment_scheduled': 'bool',
             'schedule': 'str',
             'statistics': 'dict(str, dict(str, object))',
             'target_ids': 'list[str]',
@@ -201,6 +206,7 @@ class UserAssessmentSummary(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'schedule_assessment_id': 'scheduleAssessmentId',
+            'is_assessment_scheduled': 'isAssessmentScheduled',
             'schedule': 'schedule',
             'statistics': 'statistics',
             'target_ids': 'targetIds',
@@ -225,6 +231,7 @@ class UserAssessmentSummary(object):
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._schedule_assessment_id = None
+        self._is_assessment_scheduled = None
         self._schedule = None
         self._statistics = None
         self._target_ids = None
@@ -533,6 +540,30 @@ class UserAssessmentSummary(object):
         :type: str
         """
         self._schedule_assessment_id = schedule_assessment_id
+
+    @property
+    def is_assessment_scheduled(self):
+        """
+        Gets the is_assessment_scheduled of this UserAssessmentSummary.
+        Indicates whether the assessment is scheduled to run.
+
+
+        :return: The is_assessment_scheduled of this UserAssessmentSummary.
+        :rtype: bool
+        """
+        return self._is_assessment_scheduled
+
+    @is_assessment_scheduled.setter
+    def is_assessment_scheduled(self, is_assessment_scheduled):
+        """
+        Sets the is_assessment_scheduled of this UserAssessmentSummary.
+        Indicates whether the assessment is scheduled to run.
+
+
+        :param is_assessment_scheduled: The is_assessment_scheduled of this UserAssessmentSummary.
+        :type: bool
+        """
+        self._is_assessment_scheduled = is_assessment_scheduled
 
     @property
     def schedule(self):

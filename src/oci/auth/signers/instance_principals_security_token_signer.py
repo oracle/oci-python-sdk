@@ -89,7 +89,7 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
                 retry_strategy=self.retry_strategy,
                 headers=self.METADATA_AUTH_HEADERS,
                 log_requests=kwargs.get('log_requests'))
-        except (HTTPError, ConnectTimeout) as e:
+        except (HTTPError, ConnectTimeout, oci.exceptions.ServiceError) as e:
             if e.response and e.response.status_code == 404:
                 InstancePrincipalsSecurityTokenSigner.METADATA_URL_BASE = 'http://169.254.169.254/opc/v1'
                 InstancePrincipalsSecurityTokenSigner.GET_REGION_URL = '{}/instance/region'.format(InstancePrincipalsSecurityTokenSigner.METADATA_URL_BASE)

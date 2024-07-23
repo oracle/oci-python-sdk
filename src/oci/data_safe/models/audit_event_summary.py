@@ -240,6 +240,14 @@ class AuditEventSummary(object):
             The value to assign to the database_unique_name property of this AuditEventSummary.
         :type database_unique_name: str
 
+        :param application_contexts:
+            The value to assign to the application_contexts property of this AuditEventSummary.
+        :type application_contexts: str
+
+        :param fga_policy_name:
+            The value to assign to the fga_policy_name property of this AuditEventSummary.
+        :type fga_policy_name: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this AuditEventSummary.
         :type freeform_tags: dict(str, str)
@@ -285,6 +293,8 @@ class AuditEventSummary(object):
             'peer_target_database_key': 'int',
             'trail_source': 'str',
             'database_unique_name': 'str',
+            'application_contexts': 'str',
+            'fga_policy_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -325,6 +335,8 @@ class AuditEventSummary(object):
             'peer_target_database_key': 'peerTargetDatabaseKey',
             'trail_source': 'trailSource',
             'database_unique_name': 'databaseUniqueName',
+            'application_contexts': 'applicationContexts',
+            'fga_policy_name': 'fgaPolicyName',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -364,6 +376,8 @@ class AuditEventSummary(object):
         self._peer_target_database_key = None
         self._trail_source = None
         self._database_unique_name = None
+        self._application_contexts = None
+        self._fga_policy_name = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -1248,6 +1262,54 @@ class AuditEventSummary(object):
         :type: str
         """
         self._database_unique_name = database_unique_name
+
+    @property
+    def application_contexts(self):
+        """
+        Gets the application_contexts of this AuditEventSummary.
+        Semicolon-seperated list of application context namespace, attribute, value information in (APPCTX_NSPACE,APPCTX_ATTRIBUTE=<value>) format.
+
+
+        :return: The application_contexts of this AuditEventSummary.
+        :rtype: str
+        """
+        return self._application_contexts
+
+    @application_contexts.setter
+    def application_contexts(self, application_contexts):
+        """
+        Sets the application_contexts of this AuditEventSummary.
+        Semicolon-seperated list of application context namespace, attribute, value information in (APPCTX_NSPACE,APPCTX_ATTRIBUTE=<value>) format.
+
+
+        :param application_contexts: The application_contexts of this AuditEventSummary.
+        :type: str
+        """
+        self._application_contexts = application_contexts
+
+    @property
+    def fga_policy_name(self):
+        """
+        Gets the fga_policy_name of this AuditEventSummary.
+        Fine-grained auditing (FGA) policy name that generated this audit record.
+
+
+        :return: The fga_policy_name of this AuditEventSummary.
+        :rtype: str
+        """
+        return self._fga_policy_name
+
+    @fga_policy_name.setter
+    def fga_policy_name(self, fga_policy_name):
+        """
+        Sets the fga_policy_name of this AuditEventSummary.
+        Fine-grained auditing (FGA) policy name that generated this audit record.
+
+
+        :param fga_policy_name: The fga_policy_name of this AuditEventSummary.
+        :type: str
+        """
+        self._fga_policy_name = fga_policy_name
 
     @property
     def freeform_tags(self):

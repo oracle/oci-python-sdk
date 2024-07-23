@@ -39,6 +39,14 @@ class Monitor(object):
     #: This constant has a value of "DNS"
     MONITOR_TYPE_DNS = "DNS"
 
+    #: A constant which can be used with the monitor_type property of a Monitor.
+    #: This constant has a value of "FTP"
+    MONITOR_TYPE_FTP = "FTP"
+
+    #: A constant which can be used with the monitor_type property of a Monitor.
+    #: This constant has a value of "SQL"
+    MONITOR_TYPE_SQL = "SQL"
+
     #: A constant which can be used with the status property of a Monitor.
     #: This constant has a value of "ENABLED"
     STATUS_ENABLED = "ENABLED"
@@ -78,7 +86,7 @@ class Monitor(object):
 
         :param monitor_type:
             The value to assign to the monitor_type property of this Monitor.
-            Allowed values for this property are: "SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", "NETWORK", "DNS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", "NETWORK", "DNS", "FTP", "SQL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type monitor_type: str
 
@@ -166,6 +174,18 @@ class Monitor(object):
             The value to assign to the batch_interval_in_seconds property of this Monitor.
         :type batch_interval_in_seconds: int
 
+        :param is_i_pv6:
+            The value to assign to the is_i_pv6 property of this Monitor.
+        :type is_i_pv6: bool
+
+        :param created_by:
+            The value to assign to the created_by property of this Monitor.
+        :type created_by: str
+
+        :param last_updated_by:
+            The value to assign to the last_updated_by property of this Monitor.
+        :type last_updated_by: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -190,7 +210,10 @@ class Monitor(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'is_run_now': 'bool',
             'scheduling_policy': 'str',
-            'batch_interval_in_seconds': 'int'
+            'batch_interval_in_seconds': 'int',
+            'is_i_pv6': 'bool',
+            'created_by': 'str',
+            'last_updated_by': 'str'
         }
 
         self.attribute_map = {
@@ -216,7 +239,10 @@ class Monitor(object):
             'defined_tags': 'definedTags',
             'is_run_now': 'isRunNow',
             'scheduling_policy': 'schedulingPolicy',
-            'batch_interval_in_seconds': 'batchIntervalInSeconds'
+            'batch_interval_in_seconds': 'batchIntervalInSeconds',
+            'is_i_pv6': 'isIPv6',
+            'created_by': 'createdBy',
+            'last_updated_by': 'lastUpdatedBy'
         }
 
         self._id = None
@@ -242,6 +268,9 @@ class Monitor(object):
         self._is_run_now = None
         self._scheduling_policy = None
         self._batch_interval_in_seconds = None
+        self._is_i_pv6 = None
+        self._created_by = None
+        self._last_updated_by = None
 
     @property
     def id(self):
@@ -301,7 +330,7 @@ class Monitor(object):
         **[Required]** Gets the monitor_type of this Monitor.
         Type of monitor.
 
-        Allowed values for this property are: "SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", "NETWORK", "DNS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", "NETWORK", "DNS", "FTP", "SQL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -320,7 +349,7 @@ class Monitor(object):
         :param monitor_type: The monitor_type of this Monitor.
         :type: str
         """
-        allowed_values = ["SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", "NETWORK", "DNS"]
+        allowed_values = ["SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", "NETWORK", "DNS", "FTP", "SQL"]
         if not value_allowed_none_or_none_sentinel(monitor_type, allowed_values):
             monitor_type = 'UNKNOWN_ENUM_VALUE'
         self._monitor_type = monitor_type
@@ -329,7 +358,7 @@ class Monitor(object):
     def vantage_points(self):
         """
         **[Required]** Gets the vantage_points of this Monitor.
-        List of public and dedicated vantage points where the monitor is running.
+        List of public, dedicated and onPremise vantage points where the monitor is running.
 
 
         :return: The vantage_points of this Monitor.
@@ -341,7 +370,7 @@ class Monitor(object):
     def vantage_points(self, vantage_points):
         """
         Sets the vantage_points of this Monitor.
-        List of public and dedicated vantage points where the monitor is running.
+        List of public, dedicated and onPremise vantage points where the monitor is running.
 
 
         :param vantage_points: The vantage_points of this Monitor.
@@ -542,10 +571,10 @@ class Monitor(object):
         """
         Gets the target of this Monitor.
         Specify the endpoint on which to run the monitor.
-        For BROWSER, REST and NETWORK monitor types, target is mandatory.
+        For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory.
         If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint.
         If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
-        For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
 
 
         :return: The target of this Monitor.
@@ -558,10 +587,10 @@ class Monitor(object):
         """
         Sets the target of this Monitor.
         Specify the endpoint on which to run the monitor.
-        For BROWSER, REST and NETWORK monitor types, target is mandatory.
+        For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory.
         If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint.
         If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
-        For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
 
 
         :param target: The target of this Monitor.
@@ -846,6 +875,78 @@ class Monitor(object):
         :type: int
         """
         self._batch_interval_in_seconds = batch_interval_in_seconds
+
+    @property
+    def is_i_pv6(self):
+        """
+        Gets the is_i_pv6 of this Monitor.
+        If enabled, domain name will resolve to an IPv6 address.
+
+
+        :return: The is_i_pv6 of this Monitor.
+        :rtype: bool
+        """
+        return self._is_i_pv6
+
+    @is_i_pv6.setter
+    def is_i_pv6(self, is_i_pv6):
+        """
+        Sets the is_i_pv6 of this Monitor.
+        If enabled, domain name will resolve to an IPv6 address.
+
+
+        :param is_i_pv6: The is_i_pv6 of this Monitor.
+        :type: bool
+        """
+        self._is_i_pv6 = is_i_pv6
+
+    @property
+    def created_by(self):
+        """
+        Gets the created_by of this Monitor.
+        Name of the user that created the monitor.
+
+
+        :return: The created_by of this Monitor.
+        :rtype: str
+        """
+        return self._created_by
+
+    @created_by.setter
+    def created_by(self, created_by):
+        """
+        Sets the created_by of this Monitor.
+        Name of the user that created the monitor.
+
+
+        :param created_by: The created_by of this Monitor.
+        :type: str
+        """
+        self._created_by = created_by
+
+    @property
+    def last_updated_by(self):
+        """
+        Gets the last_updated_by of this Monitor.
+        Name of the user that recently updated the monitor.
+
+
+        :return: The last_updated_by of this Monitor.
+        :rtype: str
+        """
+        return self._last_updated_by
+
+    @last_updated_by.setter
+    def last_updated_by(self, last_updated_by):
+        """
+        Sets the last_updated_by of this Monitor.
+        Name of the user that recently updated the monitor.
+
+
+        :param last_updated_by: The last_updated_by of this Monitor.
+        :type: str
+        """
+        self._last_updated_by = last_updated_by
 
     def __repr__(self):
         return formatted_flat_dict(self)

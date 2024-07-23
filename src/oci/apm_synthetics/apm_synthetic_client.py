@@ -2242,7 +2242,7 @@ class ApmSyntheticClient(object):
 
         :param str monitor_type: (optional)
             A filter to return only monitors that match the given monitor type.
-            Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
+            Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
 
         :param str status: (optional)
             A filter to return only monitors that match the status given.

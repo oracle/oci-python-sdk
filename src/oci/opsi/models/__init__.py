@@ -112,6 +112,7 @@ from .create_exadata_insight_details import CreateExadataInsightDetails
 from .create_host_insight_details import CreateHostInsightDetails
 from .create_macs_managed_cloud_host_insight_details import CreateMacsManagedCloudHostInsightDetails
 from .create_macs_managed_external_host_insight_details import CreateMacsManagedExternalHostInsightDetails
+from .create_mds_my_sql_database_insight_details import CreateMdsMySqlDatabaseInsightDetails
 from .create_news_report_details import CreateNewsReportDetails
 from .create_operations_insights_private_endpoint_details import CreateOperationsInsightsPrivateEndpointDetails
 from .create_operations_insights_warehouse_details import CreateOperationsInsightsWarehouseDetails
@@ -175,6 +176,7 @@ from .enable_exadata_insight_details import EnableExadataInsightDetails
 from .enable_host_insight_details import EnableHostInsightDetails
 from .enable_macs_managed_cloud_host_insight_details import EnableMacsManagedCloudHostInsightDetails
 from .enable_macs_managed_external_host_insight_details import EnableMacsManagedExternalHostInsightDetails
+from .enable_mds_my_sql_database_insight_details import EnableMdsMySqlDatabaseInsightDetails
 from .enable_pe_comanaged_database_insight_details import EnablePeComanagedDatabaseInsightDetails
 from .enable_pe_comanaged_exadata_insight_details import EnablePeComanagedExadataInsightDetails
 from .enterprise_manager_bridge import EnterpriseManagerBridge
@@ -208,6 +210,7 @@ from .historical_data_item import HistoricalDataItem
 from .host_configuration_collection import HostConfigurationCollection
 from .host_configuration_metric_group import HostConfigurationMetricGroup
 from .host_configuration_summary import HostConfigurationSummary
+from .host_containers import HostContainers
 from .host_cpu_hardware_configuration import HostCpuHardwareConfiguration
 from .host_cpu_recommendations import HostCpuRecommendations
 from .host_cpu_statistics import HostCpuStatistics
@@ -230,6 +233,7 @@ from .host_insights import HostInsights
 from .host_insights_data_object import HostInsightsDataObject
 from .host_insights_data_object_summary import HostInsightsDataObjectSummary
 from .host_instance_map import HostInstanceMap
+from .host_io_usage import HostIoUsage
 from .host_memory_configuration import HostMemoryConfiguration
 from .host_memory_recommendations import HostMemoryRecommendations
 from .host_memory_statistics import HostMemoryStatistics
@@ -263,6 +267,8 @@ from .ingest_host_configuration_details import IngestHostConfigurationDetails
 from .ingest_host_configuration_response_details import IngestHostConfigurationResponseDetails
 from .ingest_host_metrics_details import IngestHostMetricsDetails
 from .ingest_host_metrics_response_details import IngestHostMetricsResponseDetails
+from .ingest_my_sql_sql_stats_details import IngestMySqlSqlStatsDetails
+from .ingest_my_sql_sql_stats_response_details import IngestMySqlSqlStatsResponseDetails
 from .ingest_my_sql_sql_text_details import IngestMySqlSqlTextDetails
 from .ingest_my_sql_sql_text_response_details import IngestMySqlSqlTextResponseDetails
 from .ingest_sql_bucket_details import IngestSqlBucketDetails
@@ -284,6 +290,10 @@ from .macs_managed_external_database_insight_summary import MacsManagedExternalD
 from .macs_managed_external_host_configuration_summary import MacsManagedExternalHostConfigurationSummary
 from .macs_managed_external_host_insight import MacsManagedExternalHostInsight
 from .macs_managed_external_host_insight_summary import MacsManagedExternalHostInsightSummary
+from .mds_my_sql_database_insight import MdsMySqlDatabaseInsight
+from .mds_my_sql_database_insight_summary import MdsMySqlDatabaseInsightSummary
+from .mds_mysql_database_configuration_summary import MdsMysqlDatabaseConfigurationSummary
+from .my_sql_sql_stats import MySqlSqlStats
 from .my_sql_sql_text import MySqlSqlText
 from .network_usage_trend import NetworkUsageTrend
 from .network_usage_trend_aggregation import NetworkUsageTrendAggregation
@@ -429,6 +439,7 @@ from .update_host_insight_details import UpdateHostInsightDetails
 from .update_macs_managed_cloud_host_insight_details import UpdateMacsManagedCloudHostInsightDetails
 from .update_macs_managed_external_database_insight_details import UpdateMacsManagedExternalDatabaseInsightDetails
 from .update_macs_managed_external_host_insight_details import UpdateMacsManagedExternalHostInsightDetails
+from .update_mds_my_sql_database_insight import UpdateMdsMySqlDatabaseInsight
 from .update_news_report_details import UpdateNewsReportDetails
 from .update_operations_insights_private_endpoint_details import UpdateOperationsInsightsPrivateEndpointDetails
 from .update_operations_insights_warehouse_details import UpdateOperationsInsightsWarehouseDetails
@@ -562,6 +573,7 @@ opsi_type_mapping = {
     "CreateHostInsightDetails": CreateHostInsightDetails,
     "CreateMacsManagedCloudHostInsightDetails": CreateMacsManagedCloudHostInsightDetails,
     "CreateMacsManagedExternalHostInsightDetails": CreateMacsManagedExternalHostInsightDetails,
+    "CreateMdsMySqlDatabaseInsightDetails": CreateMdsMySqlDatabaseInsightDetails,
     "CreateNewsReportDetails": CreateNewsReportDetails,
     "CreateOperationsInsightsPrivateEndpointDetails": CreateOperationsInsightsPrivateEndpointDetails,
     "CreateOperationsInsightsWarehouseDetails": CreateOperationsInsightsWarehouseDetails,
@@ -625,6 +637,7 @@ opsi_type_mapping = {
     "EnableHostInsightDetails": EnableHostInsightDetails,
     "EnableMacsManagedCloudHostInsightDetails": EnableMacsManagedCloudHostInsightDetails,
     "EnableMacsManagedExternalHostInsightDetails": EnableMacsManagedExternalHostInsightDetails,
+    "EnableMdsMySqlDatabaseInsightDetails": EnableMdsMySqlDatabaseInsightDetails,
     "EnablePeComanagedDatabaseInsightDetails": EnablePeComanagedDatabaseInsightDetails,
     "EnablePeComanagedExadataInsightDetails": EnablePeComanagedExadataInsightDetails,
     "EnterpriseManagerBridge": EnterpriseManagerBridge,
@@ -658,6 +671,7 @@ opsi_type_mapping = {
     "HostConfigurationCollection": HostConfigurationCollection,
     "HostConfigurationMetricGroup": HostConfigurationMetricGroup,
     "HostConfigurationSummary": HostConfigurationSummary,
+    "HostContainers": HostContainers,
     "HostCpuHardwareConfiguration": HostCpuHardwareConfiguration,
     "HostCpuRecommendations": HostCpuRecommendations,
     "HostCpuStatistics": HostCpuStatistics,
@@ -680,6 +694,7 @@ opsi_type_mapping = {
     "HostInsightsDataObject": HostInsightsDataObject,
     "HostInsightsDataObjectSummary": HostInsightsDataObjectSummary,
     "HostInstanceMap": HostInstanceMap,
+    "HostIoUsage": HostIoUsage,
     "HostMemoryConfiguration": HostMemoryConfiguration,
     "HostMemoryRecommendations": HostMemoryRecommendations,
     "HostMemoryStatistics": HostMemoryStatistics,
@@ -713,6 +728,8 @@ opsi_type_mapping = {
     "IngestHostConfigurationResponseDetails": IngestHostConfigurationResponseDetails,
     "IngestHostMetricsDetails": IngestHostMetricsDetails,
     "IngestHostMetricsResponseDetails": IngestHostMetricsResponseDetails,
+    "IngestMySqlSqlStatsDetails": IngestMySqlSqlStatsDetails,
+    "IngestMySqlSqlStatsResponseDetails": IngestMySqlSqlStatsResponseDetails,
     "IngestMySqlSqlTextDetails": IngestMySqlSqlTextDetails,
     "IngestMySqlSqlTextResponseDetails": IngestMySqlSqlTextResponseDetails,
     "IngestSqlBucketDetails": IngestSqlBucketDetails,
@@ -734,6 +751,10 @@ opsi_type_mapping = {
     "MacsManagedExternalHostConfigurationSummary": MacsManagedExternalHostConfigurationSummary,
     "MacsManagedExternalHostInsight": MacsManagedExternalHostInsight,
     "MacsManagedExternalHostInsightSummary": MacsManagedExternalHostInsightSummary,
+    "MdsMySqlDatabaseInsight": MdsMySqlDatabaseInsight,
+    "MdsMySqlDatabaseInsightSummary": MdsMySqlDatabaseInsightSummary,
+    "MdsMysqlDatabaseConfigurationSummary": MdsMysqlDatabaseConfigurationSummary,
+    "MySqlSqlStats": MySqlSqlStats,
     "MySqlSqlText": MySqlSqlText,
     "NetworkUsageTrend": NetworkUsageTrend,
     "NetworkUsageTrendAggregation": NetworkUsageTrendAggregation,
@@ -879,6 +900,7 @@ opsi_type_mapping = {
     "UpdateMacsManagedCloudHostInsightDetails": UpdateMacsManagedCloudHostInsightDetails,
     "UpdateMacsManagedExternalDatabaseInsightDetails": UpdateMacsManagedExternalDatabaseInsightDetails,
     "UpdateMacsManagedExternalHostInsightDetails": UpdateMacsManagedExternalHostInsightDetails,
+    "UpdateMdsMySqlDatabaseInsight": UpdateMdsMySqlDatabaseInsight,
     "UpdateNewsReportDetails": UpdateNewsReportDetails,
     "UpdateOperationsInsightsPrivateEndpointDetails": UpdateOperationsInsightsPrivateEndpointDetails,
     "UpdateOperationsInsightsWarehouseDetails": UpdateOperationsInsightsWarehouseDetails,

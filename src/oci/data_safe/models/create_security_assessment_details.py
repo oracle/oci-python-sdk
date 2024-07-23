@@ -36,6 +36,10 @@ class CreateSecurityAssessmentDetails(object):
             The value to assign to the target_id property of this CreateSecurityAssessmentDetails.
         :type target_id: str
 
+        :param is_assessment_scheduled:
+            The value to assign to the is_assessment_scheduled property of this CreateSecurityAssessmentDetails.
+        :type is_assessment_scheduled: bool
+
         :param schedule:
             The value to assign to the schedule property of this CreateSecurityAssessmentDetails.
         :type schedule: str
@@ -54,6 +58,7 @@ class CreateSecurityAssessmentDetails(object):
             'display_name': 'str',
             'description': 'str',
             'target_id': 'str',
+            'is_assessment_scheduled': 'bool',
             'schedule': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -64,6 +69,7 @@ class CreateSecurityAssessmentDetails(object):
             'display_name': 'displayName',
             'description': 'description',
             'target_id': 'targetId',
+            'is_assessment_scheduled': 'isAssessmentScheduled',
             'schedule': 'schedule',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -73,6 +79,7 @@ class CreateSecurityAssessmentDetails(object):
         self._display_name = None
         self._description = None
         self._target_id = None
+        self._is_assessment_scheduled = None
         self._schedule = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -172,6 +179,30 @@ class CreateSecurityAssessmentDetails(object):
         :type: str
         """
         self._target_id = target_id
+
+    @property
+    def is_assessment_scheduled(self):
+        """
+        Gets the is_assessment_scheduled of this CreateSecurityAssessmentDetails.
+        Indicates whether the assessment is scheduled to run.
+
+
+        :return: The is_assessment_scheduled of this CreateSecurityAssessmentDetails.
+        :rtype: bool
+        """
+        return self._is_assessment_scheduled
+
+    @is_assessment_scheduled.setter
+    def is_assessment_scheduled(self, is_assessment_scheduled):
+        """
+        Sets the is_assessment_scheduled of this CreateSecurityAssessmentDetails.
+        Indicates whether the assessment is scheduled to run.
+
+
+        :param is_assessment_scheduled: The is_assessment_scheduled of this CreateSecurityAssessmentDetails.
+        :type: bool
+        """
+        self._is_assessment_scheduled = is_assessment_scheduled
 
     @property
     def schedule(self):

@@ -106,6 +106,10 @@ class CreateAutonomousDatabaseBase(object):
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param subscription_id:
+            The value to assign to the subscription_id property of this CreateAutonomousDatabaseBase.
+        :type subscription_id: str
+
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateAutonomousDatabaseBase.
         :type compartment_id: str
@@ -180,6 +184,10 @@ class CreateAutonomousDatabaseBase(object):
             The value to assign to the license_model property of this CreateAutonomousDatabaseBase.
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
         :type license_model: str
+
+        :param byol_compute_count_limit:
+            The value to assign to the byol_compute_count_limit property of this CreateAutonomousDatabaseBase.
+        :type byol_compute_count_limit: float
 
         :param is_preview_version_with_service_terms_accepted:
             The value to assign to the is_preview_version_with_service_terms_accepted property of this CreateAutonomousDatabaseBase.
@@ -309,6 +317,7 @@ class CreateAutonomousDatabaseBase(object):
 
         """
         self.swagger_types = {
+            'subscription_id': 'str',
             'compartment_id': 'str',
             'character_set': 'str',
             'ncharacter_set': 'str',
@@ -327,6 +336,7 @@ class CreateAutonomousDatabaseBase(object):
             'admin_password': 'str',
             'display_name': 'str',
             'license_model': 'str',
+            'byol_compute_count_limit': 'float',
             'is_preview_version_with_service_terms_accepted': 'bool',
             'is_auto_scaling_enabled': 'bool',
             'is_dev_tier': 'bool',
@@ -361,6 +371,7 @@ class CreateAutonomousDatabaseBase(object):
         }
 
         self.attribute_map = {
+            'subscription_id': 'subscriptionId',
             'compartment_id': 'compartmentId',
             'character_set': 'characterSet',
             'ncharacter_set': 'ncharacterSet',
@@ -379,6 +390,7 @@ class CreateAutonomousDatabaseBase(object):
             'admin_password': 'adminPassword',
             'display_name': 'displayName',
             'license_model': 'licenseModel',
+            'byol_compute_count_limit': 'byolComputeCountLimit',
             'is_preview_version_with_service_terms_accepted': 'isPreviewVersionWithServiceTermsAccepted',
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
             'is_dev_tier': 'isDevTier',
@@ -412,6 +424,7 @@ class CreateAutonomousDatabaseBase(object):
             'secret_version_number': 'secretVersionNumber'
         }
 
+        self._subscription_id = None
         self._compartment_id = None
         self._character_set = None
         self._ncharacter_set = None
@@ -430,6 +443,7 @@ class CreateAutonomousDatabaseBase(object):
         self._admin_password = None
         self._display_name = None
         self._license_model = None
+        self._byol_compute_count_limit = None
         self._is_preview_version_with_service_terms_accepted = None
         self._is_auto_scaling_enabled = None
         self._is_dev_tier = None
@@ -495,6 +509,34 @@ class CreateAutonomousDatabaseBase(object):
             return 'CreateAutonomousDatabaseDetails'
         else:
             return 'CreateAutonomousDatabaseBase'
+
+    @property
+    def subscription_id(self):
+        """
+        Gets the subscription_id of this CreateAutonomousDatabaseBase.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subscription_id of this CreateAutonomousDatabaseBase.
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """
+        Sets the subscription_id of this CreateAutonomousDatabaseBase.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subscription_id: The subscription_id of this CreateAutonomousDatabaseBase.
+        :type: str
+        """
+        self._subscription_id = subscription_id
 
     @property
     def compartment_id(self):
@@ -1070,6 +1112,30 @@ class CreateAutonomousDatabaseBase(object):
                 f"Invalid value for `license_model`, must be None or one of {allowed_values}"
             )
         self._license_model = license_model
+
+    @property
+    def byol_compute_count_limit(self):
+        """
+        Gets the byol_compute_count_limit of this CreateAutonomousDatabaseBase.
+        The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
+
+
+        :return: The byol_compute_count_limit of this CreateAutonomousDatabaseBase.
+        :rtype: float
+        """
+        return self._byol_compute_count_limit
+
+    @byol_compute_count_limit.setter
+    def byol_compute_count_limit(self, byol_compute_count_limit):
+        """
+        Sets the byol_compute_count_limit of this CreateAutonomousDatabaseBase.
+        The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
+
+
+        :param byol_compute_count_limit: The byol_compute_count_limit of this CreateAutonomousDatabaseBase.
+        :type: float
+        """
+        self._byol_compute_count_limit = byol_compute_count_limit
 
     @property
     def is_preview_version_with_service_terms_accepted(self):

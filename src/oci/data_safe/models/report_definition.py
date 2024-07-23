@@ -769,7 +769,7 @@ class ReportDefinition(object):
     def scheduled_report_mime_type(self):
         """
         Gets the scheduled_report_mime_type of this ReportDefinition.
-        Specifies the format of the report ( either .xls or .pdf )
+        Specifies the format of the report ( either .xls or .pdf or .json)
 
         Allowed values for this property are: "PDF", "XLS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -784,7 +784,7 @@ class ReportDefinition(object):
     def scheduled_report_mime_type(self, scheduled_report_mime_type):
         """
         Sets the scheduled_report_mime_type of this ReportDefinition.
-        Specifies the format of the report ( either .xls or .pdf )
+        Specifies the format of the report ( either .xls or .pdf or .json)
 
 
         :param scheduled_report_mime_type: The scheduled_report_mime_type of this ReportDefinition.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdatePeComanagedDatabaseInsightDetails(UpdateDatabaseInsightDetails):
     """
-    The information to be updated.
+    The freeformTags and definedTags to be updated.
     """
 
     def __init__(self, **kwargs):
@@ -23,7 +23,7 @@ class UpdatePeComanagedDatabaseInsightDetails(UpdateDatabaseInsightDetails):
 
         :param entity_source:
             The value to assign to the entity_source property of this UpdatePeComanagedDatabaseInsightDetails.
-            Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE"
+            Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM"
         :type entity_source: str
 
         :param freeform_tags:

@@ -47,13 +47,23 @@ class MonitorConfiguration(object):
     #: This constant has a value of "DNSSEC_CONFIG"
     CONFIG_TYPE_DNSSEC_CONFIG = "DNSSEC_CONFIG"
 
+    #: A constant which can be used with the config_type property of a MonitorConfiguration.
+    #: This constant has a value of "FTP_CONFIG"
+    CONFIG_TYPE_FTP_CONFIG = "FTP_CONFIG"
+
+    #: A constant which can be used with the config_type property of a MonitorConfiguration.
+    #: This constant has a value of "SQL_CONFIG"
+    CONFIG_TYPE_SQL_CONFIG = "SQL_CONFIG"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MonitorConfiguration object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.apm_synthetics.models.FtpMonitorConfiguration`
         * :class:`~oci.apm_synthetics.models.DnsSecMonitorConfiguration`
         * :class:`~oci.apm_synthetics.models.DnsTraceMonitorConfiguration`
+        * :class:`~oci.apm_synthetics.models.SqlMonitorConfiguration`
         * :class:`~oci.apm_synthetics.models.ScriptedRestMonitorConfiguration`
         * :class:`~oci.apm_synthetics.models.DnsServerMonitorConfiguration`
         * :class:`~oci.apm_synthetics.models.ScriptedBrowserMonitorConfiguration`
@@ -65,7 +75,7 @@ class MonitorConfiguration(object):
 
         :param config_type:
             The value to assign to the config_type property of this MonitorConfiguration.
-            Allowed values for this property are: "BROWSER_CONFIG", "SCRIPTED_BROWSER_CONFIG", "REST_CONFIG", "SCRIPTED_REST_CONFIG", "NETWORK_CONFIG", "DNS_SERVER_CONFIG", "DNS_TRACE_CONFIG", "DNSSEC_CONFIG", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "BROWSER_CONFIG", "SCRIPTED_BROWSER_CONFIG", "REST_CONFIG", "SCRIPTED_REST_CONFIG", "NETWORK_CONFIG", "DNS_SERVER_CONFIG", "DNS_TRACE_CONFIG", "DNSSEC_CONFIG", "FTP_CONFIG", "SQL_CONFIG", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type config_type: str
 
@@ -102,11 +112,17 @@ class MonitorConfiguration(object):
         """
         type = object_dictionary['configType']
 
+        if type == 'FTP_CONFIG':
+            return 'FtpMonitorConfiguration'
+
         if type == 'DNSSEC_CONFIG':
             return 'DnsSecMonitorConfiguration'
 
         if type == 'DNS_TRACE_CONFIG':
             return 'DnsTraceMonitorConfiguration'
+
+        if type == 'SQL_CONFIG':
+            return 'SqlMonitorConfiguration'
 
         if type == 'SCRIPTED_REST_CONFIG':
             return 'ScriptedRestMonitorConfiguration'
@@ -134,7 +150,7 @@ class MonitorConfiguration(object):
         Gets the config_type of this MonitorConfiguration.
         Type of configuration.
 
-        Allowed values for this property are: "BROWSER_CONFIG", "SCRIPTED_BROWSER_CONFIG", "REST_CONFIG", "SCRIPTED_REST_CONFIG", "NETWORK_CONFIG", "DNS_SERVER_CONFIG", "DNS_TRACE_CONFIG", "DNSSEC_CONFIG", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "BROWSER_CONFIG", "SCRIPTED_BROWSER_CONFIG", "REST_CONFIG", "SCRIPTED_REST_CONFIG", "NETWORK_CONFIG", "DNS_SERVER_CONFIG", "DNS_TRACE_CONFIG", "DNSSEC_CONFIG", "FTP_CONFIG", "SQL_CONFIG", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -153,7 +169,7 @@ class MonitorConfiguration(object):
         :param config_type: The config_type of this MonitorConfiguration.
         :type: str
         """
-        allowed_values = ["BROWSER_CONFIG", "SCRIPTED_BROWSER_CONFIG", "REST_CONFIG", "SCRIPTED_REST_CONFIG", "NETWORK_CONFIG", "DNS_SERVER_CONFIG", "DNS_TRACE_CONFIG", "DNSSEC_CONFIG"]
+        allowed_values = ["BROWSER_CONFIG", "SCRIPTED_BROWSER_CONFIG", "REST_CONFIG", "SCRIPTED_REST_CONFIG", "NETWORK_CONFIG", "DNS_SERVER_CONFIG", "DNS_TRACE_CONFIG", "DNSSEC_CONFIG", "FTP_CONFIG", "SQL_CONFIG"]
         if not value_allowed_none_or_none_sentinel(config_type, allowed_values):
             config_type = 'UNKNOWN_ENUM_VALUE'
         self._config_type = config_type
