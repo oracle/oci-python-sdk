@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+24.07.09 - 24.07.09
+=====================
+* Added IAM network sources to the CSV
+* Added Tag Namespaces to the CSV
+* Added IAM Domains group mapping to csv using old API, flag -iold required
+* Added IAM Domains network perimeters
+
+=====================
 24.07.02 - 24.07.02
 =====================
 * Added IAM Domains Policies, Rules and Conditions

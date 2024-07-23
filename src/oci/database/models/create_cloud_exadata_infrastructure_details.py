@@ -60,6 +60,10 @@ class CreateCloudExadataInfrastructureDetails(object):
             The value to assign to the cluster_placement_group_id property of this CreateCloudExadataInfrastructureDetails.
         :type cluster_placement_group_id: str
 
+        :param subscription_id:
+            The value to assign to the subscription_id property of this CreateCloudExadataInfrastructureDetails.
+        :type subscription_id: str
+
         :param customer_contacts:
             The value to assign to the customer_contacts property of this CreateCloudExadataInfrastructureDetails.
         :type customer_contacts: list[oci.database.models.CustomerContact]
@@ -76,6 +80,7 @@ class CreateCloudExadataInfrastructureDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'cluster_placement_group_id': 'str',
+            'subscription_id': 'str',
             'customer_contacts': 'list[CustomerContact]'
         }
 
@@ -90,6 +95,7 @@ class CreateCloudExadataInfrastructureDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'cluster_placement_group_id': 'clusterPlacementGroupId',
+            'subscription_id': 'subscriptionId',
             'customer_contacts': 'customerContacts'
         }
 
@@ -103,6 +109,7 @@ class CreateCloudExadataInfrastructureDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._cluster_placement_group_id = None
+        self._subscription_id = None
         self._customer_contacts = None
 
     @property
@@ -364,6 +371,34 @@ class CreateCloudExadataInfrastructureDetails(object):
         :type: str
         """
         self._cluster_placement_group_id = cluster_placement_group_id
+
+    @property
+    def subscription_id(self):
+        """
+        Gets the subscription_id of this CreateCloudExadataInfrastructureDetails.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subscription_id of this CreateCloudExadataInfrastructureDetails.
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """
+        Sets the subscription_id of this CreateCloudExadataInfrastructureDetails.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subscription_id: The subscription_id of this CreateCloudExadataInfrastructureDetails.
+        :type: str
+        """
+        self._subscription_id = subscription_id
 
     @property
     def customer_contacts(self):

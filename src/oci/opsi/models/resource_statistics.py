@@ -52,6 +52,14 @@ class ResourceStatistics(object):
             The value to assign to the total_host_capacity property of this ResourceStatistics.
         :type total_host_capacity: float
 
+        :param is_heat_wave_cluster_attached:
+            The value to assign to the is_heat_wave_cluster_attached property of this ResourceStatistics.
+        :type is_heat_wave_cluster_attached: bool
+
+        :param is_highly_available:
+            The value to assign to the is_highly_available property of this ResourceStatistics.
+        :type is_highly_available: bool
+
         """
         self.swagger_types = {
             'usage': 'float',
@@ -61,7 +69,9 @@ class ResourceStatistics(object):
             'utilization_percent': 'float',
             'usage_change_percent': 'float',
             'instance_metrics': 'list[InstanceMetrics]',
-            'total_host_capacity': 'float'
+            'total_host_capacity': 'float',
+            'is_heat_wave_cluster_attached': 'bool',
+            'is_highly_available': 'bool'
         }
 
         self.attribute_map = {
@@ -72,7 +82,9 @@ class ResourceStatistics(object):
             'utilization_percent': 'utilizationPercent',
             'usage_change_percent': 'usageChangePercent',
             'instance_metrics': 'instanceMetrics',
-            'total_host_capacity': 'totalHostCapacity'
+            'total_host_capacity': 'totalHostCapacity',
+            'is_heat_wave_cluster_attached': 'isHeatWaveClusterAttached',
+            'is_highly_available': 'isHighlyAvailable'
         }
 
         self._usage = None
@@ -83,6 +95,8 @@ class ResourceStatistics(object):
         self._usage_change_percent = None
         self._instance_metrics = None
         self._total_host_capacity = None
+        self._is_heat_wave_cluster_attached = None
+        self._is_highly_available = None
 
     @property
     def usage(self):
@@ -275,6 +289,54 @@ class ResourceStatistics(object):
         :type: float
         """
         self._total_host_capacity = total_host_capacity
+
+    @property
+    def is_heat_wave_cluster_attached(self):
+        """
+        Gets the is_heat_wave_cluster_attached of this ResourceStatistics.
+        Specifies if MYSQL DB System has heatwave cluster attached.
+
+
+        :return: The is_heat_wave_cluster_attached of this ResourceStatistics.
+        :rtype: bool
+        """
+        return self._is_heat_wave_cluster_attached
+
+    @is_heat_wave_cluster_attached.setter
+    def is_heat_wave_cluster_attached(self, is_heat_wave_cluster_attached):
+        """
+        Sets the is_heat_wave_cluster_attached of this ResourceStatistics.
+        Specifies if MYSQL DB System has heatwave cluster attached.
+
+
+        :param is_heat_wave_cluster_attached: The is_heat_wave_cluster_attached of this ResourceStatistics.
+        :type: bool
+        """
+        self._is_heat_wave_cluster_attached = is_heat_wave_cluster_attached
+
+    @property
+    def is_highly_available(self):
+        """
+        Gets the is_highly_available of this ResourceStatistics.
+        Specifies if MYSQL DB System is highly available.
+
+
+        :return: The is_highly_available of this ResourceStatistics.
+        :rtype: bool
+        """
+        return self._is_highly_available
+
+    @is_highly_available.setter
+    def is_highly_available(self, is_highly_available):
+        """
+        Sets the is_highly_available of this ResourceStatistics.
+        Specifies if MYSQL DB System is highly available.
+
+
+        :param is_highly_available: The is_highly_available of this ResourceStatistics.
+        :type: bool
+        """
+        self._is_highly_available = is_highly_available
 
     def __repr__(self):
         return formatted_flat_dict(self)

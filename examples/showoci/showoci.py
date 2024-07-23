@@ -128,7 +128,7 @@ import contextlib
 import os
 import time
 
-version = "24.07.02"
+version = "24.07.09"
 
 ##########################################################################
 # check OCI version
@@ -407,7 +407,7 @@ def set_parser_arguments(argsList=[]):
 
     if not (result.all or result.allnoiam or result.network or result.identity or result.identity_compartments or
             result.compute or result.database or result.file or result.streams_queues or result.monitoring or
-            result.edge or result.announcement or result.paas_native or result.excludelist):
+            result.edge or result.announcement or result.paas_native or result.excludelist or result.identity_old):
 
         parser.print_help()
 
@@ -434,7 +434,7 @@ def set_service_extract_flags(cmd):
     if cmd.mgdcompart:
         prm.read_ManagedCompartmentForPaaS = False
 
-    if cmd.all or cmd.identity:
+    if cmd.all or cmd.identity or cmd.identity_old:
         prm.read_identity = True
 
     if cmd.all or cmd.allnoiam or cmd.network:

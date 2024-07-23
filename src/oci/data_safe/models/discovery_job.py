@@ -104,6 +104,10 @@ class DiscoveryJob(object):
             The value to assign to the schemas_for_discovery property of this DiscoveryJob.
         :type schemas_for_discovery: list[str]
 
+        :param tables_for_discovery:
+            The value to assign to the tables_for_discovery property of this DiscoveryJob.
+        :type tables_for_discovery: list[oci.data_safe.models.TablesForDiscovery]
+
         :param sensitive_type_ids_for_discovery:
             The value to assign to the sensitive_type_ids_for_discovery property of this DiscoveryJob.
         :type sensitive_type_ids_for_discovery: list[str]
@@ -172,6 +176,7 @@ class DiscoveryJob(object):
             'sensitive_data_model_id': 'str',
             'target_id': 'str',
             'schemas_for_discovery': 'list[str]',
+            'tables_for_discovery': 'list[TablesForDiscovery]',
             'sensitive_type_ids_for_discovery': 'list[str]',
             'is_sample_data_collection_enabled': 'bool',
             'is_app_defined_relation_discovery_enabled': 'bool',
@@ -199,6 +204,7 @@ class DiscoveryJob(object):
             'sensitive_data_model_id': 'sensitiveDataModelId',
             'target_id': 'targetId',
             'schemas_for_discovery': 'schemasForDiscovery',
+            'tables_for_discovery': 'tablesForDiscovery',
             'sensitive_type_ids_for_discovery': 'sensitiveTypeIdsForDiscovery',
             'is_sample_data_collection_enabled': 'isSampleDataCollectionEnabled',
             'is_app_defined_relation_discovery_enabled': 'isAppDefinedRelationDiscoveryEnabled',
@@ -225,6 +231,7 @@ class DiscoveryJob(object):
         self._sensitive_data_model_id = None
         self._target_id = None
         self._schemas_for_discovery = None
+        self._tables_for_discovery = None
         self._sensitive_type_ids_for_discovery = None
         self._is_sample_data_collection_enabled = None
         self._is_app_defined_relation_discovery_enabled = None
@@ -507,6 +514,30 @@ class DiscoveryJob(object):
         :type: list[str]
         """
         self._schemas_for_discovery = schemas_for_discovery
+
+    @property
+    def tables_for_discovery(self):
+        """
+        Gets the tables_for_discovery of this DiscoveryJob.
+        The data discovery jobs will scan the tables specified here, including both schemas and tables.
+
+
+        :return: The tables_for_discovery of this DiscoveryJob.
+        :rtype: list[oci.data_safe.models.TablesForDiscovery]
+        """
+        return self._tables_for_discovery
+
+    @tables_for_discovery.setter
+    def tables_for_discovery(self, tables_for_discovery):
+        """
+        Sets the tables_for_discovery of this DiscoveryJob.
+        The data discovery jobs will scan the tables specified here, including both schemas and tables.
+
+
+        :param tables_for_discovery: The tables_for_discovery of this DiscoveryJob.
+        :type: list[oci.data_safe.models.TablesForDiscovery]
+        """
+        self._tables_for_discovery = tables_for_discovery
 
     @property
     def sensitive_type_ids_for_discovery(self):

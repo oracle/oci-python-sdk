@@ -308,6 +308,8 @@ from .sensitive_column_collection import SensitiveColumnCollection
 from .sensitive_column_summary import SensitiveColumnSummary
 from .sensitive_data_model import SensitiveDataModel
 from .sensitive_data_model_collection import SensitiveDataModelCollection
+from .sensitive_data_model_sensitive_type_collection import SensitiveDataModelSensitiveTypeCollection
+from .sensitive_data_model_sensitive_type_summary import SensitiveDataModelSensitiveTypeSummary
 from .sensitive_data_model_summary import SensitiveDataModelSummary
 from .sensitive_object_collection import SensitiveObjectCollection
 from .sensitive_object_summary import SensitiveObjectSummary
@@ -327,6 +329,7 @@ from .sql_collection_log_aggregation import SqlCollectionLogAggregation
 from .sql_collection_log_dimensions import SqlCollectionLogDimensions
 from .sql_collection_log_insights_collection import SqlCollectionLogInsightsCollection
 from .sql_collection_summary import SqlCollectionSummary
+from .sql_firewall_allowed_sql import SqlFirewallAllowedSql
 from .sql_firewall_allowed_sql_aggregation import SqlFirewallAllowedSqlAggregation
 from .sql_firewall_allowed_sql_analytics_collection import SqlFirewallAllowedSqlAnalyticsCollection
 from .sql_firewall_allowed_sql_collection import SqlFirewallAllowedSqlCollection
@@ -348,6 +351,7 @@ from .start_audit_trail_details import StartAuditTrailDetails
 from .substring_format_entry import SubstringFormatEntry
 from .summary import Summary
 from .table_summary import TableSummary
+from .tables_for_discovery import TablesForDiscovery
 from .target_alert_policy_association import TargetAlertPolicyAssociation
 from .target_alert_policy_association_collection import TargetAlertPolicyAssociationCollection
 from .target_alert_policy_association_summary import TargetAlertPolicyAssociationSummary
@@ -356,6 +360,8 @@ from .target_database_summary import TargetDatabaseSummary
 from .tls_config import TlsConfig
 from .truncate_table_format_entry import TruncateTableFormatEntry
 from .udf_format_entry import UDFFormatEntry
+from .unset_security_assessment_baseline_details import UnsetSecurityAssessmentBaselineDetails
+from .unset_user_assessment_baseline_details import UnsetUserAssessmentBaselineDetails
 from .update_alert_details import UpdateAlertDetails
 from .update_alert_policy_rule_details import UpdateAlertPolicyRuleDetails
 from .update_audit_archive_retrieval_details import UpdateAuditArchiveRetrievalDetails
@@ -710,6 +716,8 @@ data_safe_type_mapping = {
     "SensitiveColumnSummary": SensitiveColumnSummary,
     "SensitiveDataModel": SensitiveDataModel,
     "SensitiveDataModelCollection": SensitiveDataModelCollection,
+    "SensitiveDataModelSensitiveTypeCollection": SensitiveDataModelSensitiveTypeCollection,
+    "SensitiveDataModelSensitiveTypeSummary": SensitiveDataModelSensitiveTypeSummary,
     "SensitiveDataModelSummary": SensitiveDataModelSummary,
     "SensitiveObjectCollection": SensitiveObjectCollection,
     "SensitiveObjectSummary": SensitiveObjectSummary,
@@ -729,6 +737,7 @@ data_safe_type_mapping = {
     "SqlCollectionLogDimensions": SqlCollectionLogDimensions,
     "SqlCollectionLogInsightsCollection": SqlCollectionLogInsightsCollection,
     "SqlCollectionSummary": SqlCollectionSummary,
+    "SqlFirewallAllowedSql": SqlFirewallAllowedSql,
     "SqlFirewallAllowedSqlAggregation": SqlFirewallAllowedSqlAggregation,
     "SqlFirewallAllowedSqlAnalyticsCollection": SqlFirewallAllowedSqlAnalyticsCollection,
     "SqlFirewallAllowedSqlCollection": SqlFirewallAllowedSqlCollection,
@@ -750,6 +759,7 @@ data_safe_type_mapping = {
     "SubstringFormatEntry": SubstringFormatEntry,
     "Summary": Summary,
     "TableSummary": TableSummary,
+    "TablesForDiscovery": TablesForDiscovery,
     "TargetAlertPolicyAssociation": TargetAlertPolicyAssociation,
     "TargetAlertPolicyAssociationCollection": TargetAlertPolicyAssociationCollection,
     "TargetAlertPolicyAssociationSummary": TargetAlertPolicyAssociationSummary,
@@ -758,6 +768,8 @@ data_safe_type_mapping = {
     "TlsConfig": TlsConfig,
     "TruncateTableFormatEntry": TruncateTableFormatEntry,
     "UDFFormatEntry": UDFFormatEntry,
+    "UnsetSecurityAssessmentBaselineDetails": UnsetSecurityAssessmentBaselineDetails,
+    "UnsetUserAssessmentBaselineDetails": UnsetUserAssessmentBaselineDetails,
     "UpdateAlertDetails": UpdateAlertDetails,
     "UpdateAlertPolicyRuleDetails": UpdateAlertPolicyRuleDetails,
     "UpdateAuditArchiveRetrievalDetails": UpdateAuditArchiveRetrievalDetails,

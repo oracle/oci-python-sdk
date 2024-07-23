@@ -22,7 +22,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "24.07.02"
+    version = "24.07.09"
 
     ##########################################################################
     # spaces for align
@@ -255,6 +255,8 @@ class ShowOCIOutput(object):
                     self.__print_identity_domains_groups(domain['display_name'], domain['groups'])
                 if 'dynamic_groups' in domain and domain['dynamic_groups']:
                     self.__print_identity_domains_dynamic_groups(domain['display_name'], domain['dynamic_groups'])
+                if 'network_perimeters' in domain and domain['network_perimeters']:
+                    self.__print_identity_domains_network_perimeters(domain['display_name'], domain['network_perimeters'])
                 if 'identity_providers' in domain and domain['identity_providers']:
                     self.__print_identity_domains_idps(domain['display_name'], domain['identity_providers'])
                 if 'policies' in domain and domain['policies']:
@@ -332,6 +334,23 @@ class ShowOCIOutput(object):
 
         except Exception as e:
             self.__print_error("__print_identity_domains_dynamic_groups", e)
+
+    ##########################################################################
+    # Print Identity Domains network perimeters
+    ##########################################################################
+    def __print_identity_domains_network_perimeters(self, domain_name, nets):
+        try:
+            header = domain_name + ":Network Perimeters"
+            self.print_header(header, 2)
+
+            for val in nets:
+                print(self.taba + val['name'] + " (" + val['description'] + ")")
+                for ip in val['ip_addresses']:
+                    print(self.tabs + "Address: " + ip['value'] + ", " + ip['type'] + ", " + ip['version'])
+                print("")
+
+        except Exception as e:
+            self.__print_error("__print_identity_domains_network_perimeters", e)
 
     ##########################################################################
     # Print Identity Domains IDPs
@@ -446,7 +465,7 @@ class ShowOCIOutput(object):
     ##########################################################################
     # Print Identity Providers
     ##########################################################################
-    def __print_identity_providers(self, identity_providers):
+    def __print_identity_providers(self, identity_providers, providers_mapping):
 
         try:
 
@@ -462,8 +481,10 @@ class ShowOCIOutput(object):
                 print(self.tabs + "Protocol  : " + ip['protocol'])
                 print(self.tabs + "Redirect  : " + ip['redirect_url'])
                 print(self.tabs + "Metadata  : " + ip['metadata_url'])
-                for ig in ip['group_map']:
-                    print(self.tabs + "Group Map : " + ig)
+
+                for map in providers_mapping:
+                    if map['provider_id'] == ip['id'] and map['oci_group_name']:
+                        print(self.tabs + "Group Map : " + map['provider_group_name'] + " <-> " + map['oci_group_name'])
                 print("")
             print("")
 
@@ -535,6 +556,7 @@ class ShowOCIOutput(object):
 
     def __print_identity_main(self, data):
         try:
+
             if 'tenancy' in data:
                 self.__print_identity_tenancy(data['tenancy'])
             if 'users' in data:
@@ -547,14 +569,16 @@ class ShowOCIOutput(object):
                 self.__print_network_sources(data['network_sources'])
             if 'policies' in data:
                 self.__print_identity_policies(data['policies'])
-            if 'providers' in data:
-                self.__print_identity_providers(data['providers'])
             if 'cost_tracking_tags' in data:
                 self.__print_identity_cost_tracking_tags(data['cost_tracking_tags'])
             if 'tag_namespace' in data:
                 self.__print_identity_tag_namespace(data['tag_namespace'])
             if 'domains' in data:
                 self.__print_identity_domains(data['domains'])
+
+            provider_mapping = data['providers_mapping'] if 'providers_mapping' in data else ""
+            if 'providers' in data:
+                self.__print_identity_providers(data['providers'], provider_mapping)
 
         except Exception as e:
             self.__print_error("__print_identity_data", e)
@@ -3535,6 +3559,9 @@ class ShowOCISummary(object):
                     if 'dynamic_groups' in domain:
                         self.__summary_core_count(domain['dynamic_groups'], "Identity Domains - DynGroups")
 
+                    if 'network_perimeters' in domain:
+                        self.__summary_core_count(domain['network_perimeters'], "Identity Domains - Network Perimeters")
+
                     if 'identity_providers' in domain:
                         self.__summary_core_count(domain['identity_providers'], "Identity Domains - IDPs")
 
@@ -4243,8 +4270,11 @@ class ShowOCICSV(object):
     csv_certificate_ca_bundle = []
     csv_identity_compartments = []
     csv_identity_groups = []
+    csv_identity_groups_mapping = []
     csv_identity_users = []
     csv_identity_policies = []
+    csv_identity_network_sources = []
+    csv_identity_tag_namespaces = []
     csv_identity_domains = []
     csv_identity_domains_users = []
     csv_identity_domains_groups = []
@@ -4255,6 +4285,7 @@ class ShowOCICSV(object):
     csv_identity_domains_rules = []
     csv_identity_domains_idps = []
     csv_identity_domains_auth_factors = []
+    csv_identity_domains_network_perimeters = []
     csv_compute = []
     csv_block_volumes_not_attached = []
     csv_block_volumes = []
@@ -4413,8 +4444,11 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("errors", self.csv_errors)
             self.__export_to_csv_file("identity_compartments", self.csv_identity_compartments)
             self.__export_to_csv_file("identity_users", self.csv_identity_users)
+            self.__export_to_csv_file("identity_network_sources", self.csv_identity_network_sources)
             self.__export_to_csv_file("identity_policy", self.csv_identity_policies)
             self.__export_to_csv_file("identity_groups", self.csv_identity_groups)
+            self.__export_to_csv_file("identity_groups_mapping", self.csv_identity_groups_mapping)
+            self.__export_to_csv_file("identity_tag_namespaces", self.csv_identity_tag_namespaces)
 
             self.__export_to_csv_file("identity_domains", self.csv_identity_domains)
             self.__export_to_csv_file("identity_domains_users", self.csv_identity_domains_users)
@@ -4426,6 +4460,7 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("identity_domains_pwd_policies", self.csv_identity_domains_password_policies)
             self.__export_to_csv_file("identity_domains_policies", self.csv_identity_domains_policies)
             self.__export_to_csv_file("identity_domains_rules", self.csv_identity_domains_rules)
+            self.__export_to_csv_file("identity_domains_net_perimeter", self.csv_identity_domains_network_perimeters)
 
             self.__export_to_csv_file("functions_apps", self.csv_functions_apps)
             self.__export_to_csv_file("functions_fns", self.csv_functions_fns)
@@ -4601,7 +4636,7 @@ class ShowOCICSV(object):
                 for row in result:
                     writer.writerow(row)
 
-            print("CSV: " + file_subject.ljust(34) + " --> " + file_name)
+            print("CSV: " + file_subject.ljust(35) + " --> " + file_name)
 
         except Exception as e:
             raise Exception("Error in __export_to_csv_file: " + str(e.args))
@@ -4731,6 +4766,30 @@ class ShowOCICSV(object):
             self.__print_error("__csv_identity_groups", e)
 
     ##########################################################################
+    # CSV Identity Groups Mapping
+    ##########################################################################
+    def __csv_identity_groups_mapping(self, groups_mapping):
+        try:
+            for grp in groups_mapping:
+
+                data = {
+                    'provider_id': grp['provider_id'],
+                    'provider_name': grp['provider_name'],
+                    'lifecycle_state': grp['lifecycle_state'],
+                    'provider_group_name': grp['provider_group_name'],
+                    'domain_name': grp['domain_name'],
+                    'oci_group_id': grp['oci_group_id'],
+                    'oci_group_name': grp['oci_group_name'],
+                    'time_created': grp['time_created'],
+                    'id': grp['id']
+                }
+
+                self.csv_identity_groups_mapping.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_identity_groups_mapping", e)
+
+    ##########################################################################
     # CSV Identity Users
     ##########################################################################
 
@@ -4826,6 +4885,9 @@ class ShowOCICSV(object):
 
                 if var['identity_providers']:
                     self.__csv_identity_domains_idps(var['identity_providers'], var['display_name'], var['id'])
+
+                if var['network_perimeters']:
+                    self.__csv_identity_domains_network_perimeters(var['network_perimeters'], var['display_name'], var['id'])
 
                 if var['kmsi_setting']:
                     self.__csv_identity_domains_kmsi_setting(var['kmsi_setting'], var['display_name'], var['id'])
@@ -5057,6 +5119,40 @@ class ShowOCICSV(object):
 
         except Exception as e:
             self.__print_error("__csv_identity_domains_dynamic_groups", e)
+
+    ##########################################################################
+    # CSV Identity Domain Dynamic Groups
+    ##########################################################################
+
+    def __csv_identity_domains_network_perimeters(self, network_perimeters, domain_name, domain_id):
+        try:
+            for var in network_perimeters:
+                data = {
+                    'domain_id': domain_id,
+                    'domain_name': domain_name,
+                    'name': var['name'],
+                    'description': var['description'],
+                    'id': var['id'],
+                    'ocid': var['ocid'],
+                    'schemas': var['schemas'],
+                    'meta_resource_type': var['meta']['resource_type'],
+                    'meta_created': var['meta']['created'],
+                    'meta_last_modified': var['meta']['last_modified'],
+                    'meta_location': var['meta']['location'],
+                    'meta_version': var['meta']['version'],
+                    'idcs_prevented_operations': str(var['idcs_prevented_operations']),
+                    'idcs_created_by': str(var['idcs_created_by']),
+                    'idcs_last_modified_by': str(var['idcs_last_modified_by']),
+                    'idcs_last_upgraded_in_release': str(var['idcs_last_upgraded_in_release']),
+                    'tags': str(','.join(x['key'] + "=" + x['value'] for x in var['tags'])),
+                    'compartment_ocid': var['compartment_ocid'],
+                    'ip_addresses': str(','.join(x['value'] for x in var['ip_addresses']))
+                }
+
+                self.csv_identity_domains_network_perimeters.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_identity_domains_network_perimeters", e)
 
     ##########################################################################
     # CSV Identity Domain Identity Providers
@@ -5559,13 +5655,73 @@ class ShowOCICSV(object):
                         self.csv_identity_policies.append({
                             'compartment': c['compartment_path'],
                             'policy_name': policy['name'],
+                            'idpk': policy['id'] + ":" + str(seq),
                             'id': policy['id'],
                             'seq': seq,
-                            'statement': statement
+                            'statement': statement,
+                            'compartment_id': c['compartment_id']
                         })
 
         except Exception as e:
             self.__print_error("__csv_identity_policies", e)
+
+    ##########################################################################
+    # csv Identity Network Sources
+    ##########################################################################
+    def __csv_identity_network_sources(self, data):
+        try:
+            if not data:
+                return
+
+            for ns in data:
+
+                value = {
+                    'description': ns['description'],
+                    'services': ",".join(ns['services']),
+                    'public_source_list': ",".join(ns['public_source_list']),
+                    'virtual_source_list': ",".join(x['ip_ranges'] for x in ns['virtual_source_list']),
+                    'vcn_ids': ",".join(x['vcn_id'] for x in ns['virtual_source_list']),
+                    'freeform_tags': self.__get_freeform_tags(ns['freeform_tags']),
+                    'defined_tags': self.__get_defined_tags(ns['defined_tags']),
+                    'id': ns['id']
+                }
+
+                self.csv_identity_network_sources.append(value)
+
+        except Exception as e:
+            self.__print_error("__csv_identity_policies", e)
+
+    ##########################################################################
+    # csv Identity Tag Namespace
+    ##########################################################################
+    def __csv_identity_tag_namespace(self, data):
+        try:
+            if not data:
+                return
+
+            for c in data:
+                tags = c['tags']
+                if not tags:
+                    continue
+
+                for tag in tags:
+
+                    value = {
+                        'compartment': c['compartment_path'],
+                        'name': tag['name'],
+                        'description': tag['description'],
+                        'is_retired': tag['is_retired'],
+                        'time_created': tag['time_created'],
+                        'id': tag['id'],
+                        'compartment_id': c['compartment_id'],
+                        'freeform_tags': self.__get_freeform_tags(tag['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(tag['defined_tags'])
+                    }
+
+                    self.csv_identity_tag_namespaces.append(value)
+
+        except Exception as e:
+            self.__print_error("__csv_identity_tag_namespace", e)
 
     ##########################################################################
     # CSV Identity Module
@@ -5581,8 +5737,14 @@ class ShowOCICSV(object):
                     self.__csv_identity_groups(data['groups'])
                 if 'policies' in data:
                     self.__csv_identity_policies(data['policies'])
+                if 'network_sources' in data:
+                    self.__csv_identity_network_sources(data['network_sources'])
+                if 'tag_namespace' in data:
+                    self.__csv_identity_tag_namespace(data['tag_namespace'])
                 if 'domains' in data:
                     self.__csv_identity_domains(data['domains'])
+                if 'providers_mapping' in data:
+                    self.__csv_identity_groups_mapping(data['providers_mapping'])
 
         except Exception as e:
             self.__print_error("__csv_identity_main", e)

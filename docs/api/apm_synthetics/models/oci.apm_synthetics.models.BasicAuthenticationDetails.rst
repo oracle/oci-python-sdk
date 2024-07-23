@@ -1,0 +1,11 @@
+BasicAuthenticationDetails
+==========================
+
+.. currentmodule:: oci.apm_synthetics.models
+
+.. autoclass:: BasicAuthenticationDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

@@ -124,6 +124,7 @@ Opsi
     oci.opsi.models.CreateHostInsightDetails
     oci.opsi.models.CreateMacsManagedCloudHostInsightDetails
     oci.opsi.models.CreateMacsManagedExternalHostInsightDetails
+    oci.opsi.models.CreateMdsMySqlDatabaseInsightDetails
     oci.opsi.models.CreateNewsReportDetails
     oci.opsi.models.CreateOperationsInsightsPrivateEndpointDetails
     oci.opsi.models.CreateOperationsInsightsWarehouseDetails
@@ -187,6 +188,7 @@ Opsi
     oci.opsi.models.EnableHostInsightDetails
     oci.opsi.models.EnableMacsManagedCloudHostInsightDetails
     oci.opsi.models.EnableMacsManagedExternalHostInsightDetails
+    oci.opsi.models.EnableMdsMySqlDatabaseInsightDetails
     oci.opsi.models.EnablePeComanagedDatabaseInsightDetails
     oci.opsi.models.EnablePeComanagedExadataInsightDetails
     oci.opsi.models.EnterpriseManagerBridge
@@ -220,6 +222,7 @@ Opsi
     oci.opsi.models.HostConfigurationCollection
     oci.opsi.models.HostConfigurationMetricGroup
     oci.opsi.models.HostConfigurationSummary
+    oci.opsi.models.HostContainers
     oci.opsi.models.HostCpuHardwareConfiguration
     oci.opsi.models.HostCpuRecommendations
     oci.opsi.models.HostCpuStatistics
@@ -242,6 +245,7 @@ Opsi
     oci.opsi.models.HostInsightsDataObject
     oci.opsi.models.HostInsightsDataObjectSummary
     oci.opsi.models.HostInstanceMap
+    oci.opsi.models.HostIoUsage
     oci.opsi.models.HostMemoryConfiguration
     oci.opsi.models.HostMemoryRecommendations
     oci.opsi.models.HostMemoryStatistics
@@ -275,6 +279,8 @@ Opsi
     oci.opsi.models.IngestHostConfigurationResponseDetails
     oci.opsi.models.IngestHostMetricsDetails
     oci.opsi.models.IngestHostMetricsResponseDetails
+    oci.opsi.models.IngestMySqlSqlStatsDetails
+    oci.opsi.models.IngestMySqlSqlStatsResponseDetails
     oci.opsi.models.IngestMySqlSqlTextDetails
     oci.opsi.models.IngestMySqlSqlTextResponseDetails
     oci.opsi.models.IngestSqlBucketDetails
@@ -296,6 +302,10 @@ Opsi
     oci.opsi.models.MacsManagedExternalHostConfigurationSummary
     oci.opsi.models.MacsManagedExternalHostInsight
     oci.opsi.models.MacsManagedExternalHostInsightSummary
+    oci.opsi.models.MdsMySqlDatabaseInsight
+    oci.opsi.models.MdsMySqlDatabaseInsightSummary
+    oci.opsi.models.MdsMysqlDatabaseConfigurationSummary
+    oci.opsi.models.MySqlSqlStats
     oci.opsi.models.MySqlSqlText
     oci.opsi.models.NetworkUsageTrend
     oci.opsi.models.NetworkUsageTrendAggregation
@@ -441,6 +451,7 @@ Opsi
     oci.opsi.models.UpdateMacsManagedCloudHostInsightDetails
     oci.opsi.models.UpdateMacsManagedExternalDatabaseInsightDetails
     oci.opsi.models.UpdateMacsManagedExternalHostInsightDetails
+    oci.opsi.models.UpdateMdsMySqlDatabaseInsight
     oci.opsi.models.UpdateNewsReportDetails
     oci.opsi.models.UpdateOperationsInsightsPrivateEndpointDetails
     oci.opsi.models.UpdateOperationsInsightsWarehouseDetails

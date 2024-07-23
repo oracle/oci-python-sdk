@@ -23,7 +23,7 @@ class HostFilesystemUsage(HostPerformanceMetricGroup):
 
         :param metric_name:
             The value to assign to the metric_name property of this HostFilesystemUsage.
-            Allowed values for this property are: "HOST_CPU_USAGE", "HOST_MEMORY_USAGE", "HOST_NETWORK_ACTIVITY_SUMMARY", "HOST_TOP_PROCESSES", "HOST_FILESYSTEM_USAGE", "HOST_GPU_USAGE", "HOST_GPU_PROCESSES"
+            Allowed values for this property are: "HOST_CPU_USAGE", "HOST_MEMORY_USAGE", "HOST_NETWORK_ACTIVITY_SUMMARY", "HOST_TOP_PROCESSES", "HOST_FILESYSTEM_USAGE", "HOST_GPU_USAGE", "HOST_GPU_PROCESSES", "HOST_IO_USAGE", "HOST_CONTAINERS"
         :type metric_name: str
 
         :param time_collected:
@@ -42,13 +42,18 @@ class HostFilesystemUsage(HostPerformanceMetricGroup):
             The value to assign to the file_system_avail_in_percent property of this HostFilesystemUsage.
         :type file_system_avail_in_percent: float
 
+        :param file_system_avail_in_gbs:
+            The value to assign to the file_system_avail_in_gbs property of this HostFilesystemUsage.
+        :type file_system_avail_in_gbs: float
+
         """
         self.swagger_types = {
             'metric_name': 'str',
             'time_collected': 'datetime',
             'mount_point': 'str',
             'file_system_usage_in_gb': 'float',
-            'file_system_avail_in_percent': 'float'
+            'file_system_avail_in_percent': 'float',
+            'file_system_avail_in_gbs': 'float'
         }
 
         self.attribute_map = {
@@ -56,7 +61,8 @@ class HostFilesystemUsage(HostPerformanceMetricGroup):
             'time_collected': 'timeCollected',
             'mount_point': 'mountPoint',
             'file_system_usage_in_gb': 'fileSystemUsageInGB',
-            'file_system_avail_in_percent': 'fileSystemAvailInPercent'
+            'file_system_avail_in_percent': 'fileSystemAvailInPercent',
+            'file_system_avail_in_gbs': 'fileSystemAvailInGBs'
         }
 
         self._metric_name = None
@@ -64,6 +70,7 @@ class HostFilesystemUsage(HostPerformanceMetricGroup):
         self._mount_point = None
         self._file_system_usage_in_gb = None
         self._file_system_avail_in_percent = None
+        self._file_system_avail_in_gbs = None
         self._metric_name = 'HOST_FILESYSTEM_USAGE'
 
     @property
@@ -129,6 +136,26 @@ class HostFilesystemUsage(HostPerformanceMetricGroup):
         :type: float
         """
         self._file_system_avail_in_percent = file_system_avail_in_percent
+
+    @property
+    def file_system_avail_in_gbs(self):
+        """
+        Gets the file_system_avail_in_gbs of this HostFilesystemUsage.
+
+        :return: The file_system_avail_in_gbs of this HostFilesystemUsage.
+        :rtype: float
+        """
+        return self._file_system_avail_in_gbs
+
+    @file_system_avail_in_gbs.setter
+    def file_system_avail_in_gbs(self, file_system_avail_in_gbs):
+        """
+        Sets the file_system_avail_in_gbs of this HostFilesystemUsage.
+
+        :param file_system_avail_in_gbs: The file_system_avail_in_gbs of this HostFilesystemUsage.
+        :type: float
+        """
+        self._file_system_avail_in_gbs = file_system_avail_in_gbs
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -11,6 +11,7 @@ from .aggregated_network_data import AggregatedNetworkData
 from .aggregated_network_data_result import AggregatedNetworkDataResult
 from .availability_configuration import AvailabilityConfiguration
 from .available_capability import AvailableCapability
+from .basic_authentication_details import BasicAuthenticationDetails
 from .browser_monitor_configuration import BrowserMonitorConfiguration
 from .client_certificate import ClientCertificate
 from .client_certificate_details import ClientCertificateDetails
@@ -19,6 +20,7 @@ from .create_monitor_details import CreateMonitorDetails
 from .create_on_premise_vantage_point_details import CreateOnPremiseVantagePointDetails
 from .create_script_details import CreateScriptDetails
 from .create_worker_details import CreateWorkerDetails
+from .database_wallet_details import DatabaseWalletDetails
 from .dedicated_vantage_point import DedicatedVantagePoint
 from .dedicated_vantage_point_collection import DedicatedVantagePointCollection
 from .dedicated_vantage_point_summary import DedicatedVantagePointSummary
@@ -27,6 +29,7 @@ from .dns_sec_monitor_configuration import DnsSecMonitorConfiguration
 from .dns_server_monitor_configuration import DnsServerMonitorConfiguration
 from .dns_trace_monitor_configuration import DnsTraceMonitorConfiguration
 from .dvp_stack_details import DvpStackDetails
+from .ftp_monitor_configuration import FtpMonitorConfiguration
 from .geo_summary import GeoSummary
 from .header import Header
 from .identity_info_details import IdentityInfoDetails
@@ -49,6 +52,9 @@ from .on_premise_vantage_point_collection import OnPremiseVantagePointCollection
 from .on_premise_vantage_point_summary import OnPremiseVantagePointSummary
 from .on_premise_vp_worker_version_details import OnPremiseVpWorkerVersionDetails
 from .oracle_rm_stack import OracleRMStack
+from .password import Password
+from .password_in_text import PasswordInText
+from .password_in_vault import PasswordInVault
 from .private_key import PrivateKey
 from .public_vantage_point_collection import PublicVantagePointCollection
 from .public_vantage_point_summary import PublicVantagePointSummary
@@ -62,6 +68,7 @@ from .script_parameter_info import ScriptParameterInfo
 from .script_summary import ScriptSummary
 from .scripted_browser_monitor_configuration import ScriptedBrowserMonitorConfiguration
 from .scripted_rest_monitor_configuration import ScriptedRestMonitorConfiguration
+from .sql_monitor_configuration import SqlMonitorConfiguration
 from .update_dedicated_vantage_point_details import UpdateDedicatedVantagePointDetails
 from .update_monitor_details import UpdateMonitorDetails
 from .update_on_premise_vantage_point_details import UpdateOnPremiseVantagePointDetails
@@ -84,6 +91,7 @@ apm_synthetics_type_mapping = {
     "AggregatedNetworkDataResult": AggregatedNetworkDataResult,
     "AvailabilityConfiguration": AvailabilityConfiguration,
     "AvailableCapability": AvailableCapability,
+    "BasicAuthenticationDetails": BasicAuthenticationDetails,
     "BrowserMonitorConfiguration": BrowserMonitorConfiguration,
     "ClientCertificate": ClientCertificate,
     "ClientCertificateDetails": ClientCertificateDetails,
@@ -92,6 +100,7 @@ apm_synthetics_type_mapping = {
     "CreateOnPremiseVantagePointDetails": CreateOnPremiseVantagePointDetails,
     "CreateScriptDetails": CreateScriptDetails,
     "CreateWorkerDetails": CreateWorkerDetails,
+    "DatabaseWalletDetails": DatabaseWalletDetails,
     "DedicatedVantagePoint": DedicatedVantagePoint,
     "DedicatedVantagePointCollection": DedicatedVantagePointCollection,
     "DedicatedVantagePointSummary": DedicatedVantagePointSummary,
@@ -100,6 +109,7 @@ apm_synthetics_type_mapping = {
     "DnsServerMonitorConfiguration": DnsServerMonitorConfiguration,
     "DnsTraceMonitorConfiguration": DnsTraceMonitorConfiguration,
     "DvpStackDetails": DvpStackDetails,
+    "FtpMonitorConfiguration": FtpMonitorConfiguration,
     "GeoSummary": GeoSummary,
     "Header": Header,
     "IdentityInfoDetails": IdentityInfoDetails,
@@ -122,6 +132,9 @@ apm_synthetics_type_mapping = {
     "OnPremiseVantagePointSummary": OnPremiseVantagePointSummary,
     "OnPremiseVpWorkerVersionDetails": OnPremiseVpWorkerVersionDetails,
     "OracleRMStack": OracleRMStack,
+    "Password": Password,
+    "PasswordInText": PasswordInText,
+    "PasswordInVault": PasswordInVault,
     "PrivateKey": PrivateKey,
     "PublicVantagePointCollection": PublicVantagePointCollection,
     "PublicVantagePointSummary": PublicVantagePointSummary,
@@ -135,6 +148,7 @@ apm_synthetics_type_mapping = {
     "ScriptSummary": ScriptSummary,
     "ScriptedBrowserMonitorConfiguration": ScriptedBrowserMonitorConfiguration,
     "ScriptedRestMonitorConfiguration": ScriptedRestMonitorConfiguration,
+    "SqlMonitorConfiguration": SqlMonitorConfiguration,
     "UpdateDedicatedVantagePointDetails": UpdateDedicatedVantagePointDetails,
     "UpdateMonitorDetails": UpdateMonitorDetails,
     "UpdateOnPremiseVantagePointDetails": UpdateOnPremiseVantagePointDetails,

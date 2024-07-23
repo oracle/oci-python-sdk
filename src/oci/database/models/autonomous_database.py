@@ -312,6 +312,10 @@ class AutonomousDatabase(object):
             The value to assign to the compartment_id property of this AutonomousDatabase.
         :type compartment_id: str
 
+        :param subscription_id:
+            The value to assign to the subscription_id property of this AutonomousDatabase.
+        :type subscription_id: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AutonomousDatabase.
             Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING", "INACCESSIBLE", "STANDBY", 'UNKNOWN_ENUM_VALUE'.
@@ -483,6 +487,10 @@ class AutonomousDatabase(object):
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type license_model: str
+
+        :param byol_compute_count_limit:
+            The value to assign to the byol_compute_count_limit property of this AutonomousDatabase.
+        :type byol_compute_count_limit: float
 
         :param used_data_storage_size_in_tbs:
             The value to assign to the used_data_storage_size_in_tbs property of this AutonomousDatabase.
@@ -804,6 +812,7 @@ class AutonomousDatabase(object):
         self.swagger_types = {
             'id': 'str',
             'compartment_id': 'str',
+            'subscription_id': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'kms_key_id': 'str',
@@ -845,6 +854,7 @@ class AutonomousDatabase(object):
             'connection_urls': 'AutonomousDatabaseConnectionUrls',
             'public_connection_urls': 'AutonomousDatabaseConnectionUrls',
             'license_model': 'str',
+            'byol_compute_count_limit': 'float',
             'used_data_storage_size_in_tbs': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -922,6 +932,7 @@ class AutonomousDatabase(object):
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
+            'subscription_id': 'subscriptionId',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'kms_key_id': 'kmsKeyId',
@@ -963,6 +974,7 @@ class AutonomousDatabase(object):
             'connection_urls': 'connectionUrls',
             'public_connection_urls': 'publicConnectionUrls',
             'license_model': 'licenseModel',
+            'byol_compute_count_limit': 'byolComputeCountLimit',
             'used_data_storage_size_in_tbs': 'usedDataStorageSizeInTBs',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -1039,6 +1051,7 @@ class AutonomousDatabase(object):
 
         self._id = None
         self._compartment_id = None
+        self._subscription_id = None
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._kms_key_id = None
@@ -1080,6 +1093,7 @@ class AutonomousDatabase(object):
         self._connection_urls = None
         self._public_connection_urls = None
         self._license_model = None
+        self._byol_compute_count_limit = None
         self._used_data_storage_size_in_tbs = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -1208,6 +1222,34 @@ class AutonomousDatabase(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def subscription_id(self):
+        """
+        Gets the subscription_id of this AutonomousDatabase.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subscription_id of this AutonomousDatabase.
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """
+        Sets the subscription_id of this AutonomousDatabase.
+        The `OCID`__ of the subscription with which resource needs to be associated with.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subscription_id: The subscription_id of this AutonomousDatabase.
+        :type: str
+        """
+        self._subscription_id = subscription_id
 
     @property
     def lifecycle_state(self):
@@ -2294,6 +2336,30 @@ class AutonomousDatabase(object):
         if not value_allowed_none_or_none_sentinel(license_model, allowed_values):
             license_model = 'UNKNOWN_ENUM_VALUE'
         self._license_model = license_model
+
+    @property
+    def byol_compute_count_limit(self):
+        """
+        Gets the byol_compute_count_limit of this AutonomousDatabase.
+        The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
+
+
+        :return: The byol_compute_count_limit of this AutonomousDatabase.
+        :rtype: float
+        """
+        return self._byol_compute_count_limit
+
+    @byol_compute_count_limit.setter
+    def byol_compute_count_limit(self, byol_compute_count_limit):
+        """
+        Sets the byol_compute_count_limit of this AutonomousDatabase.
+        The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
+
+
+        :param byol_compute_count_limit: The byol_compute_count_limit of this AutonomousDatabase.
+        :type: float
+        """
+        self._byol_compute_count_limit = byol_compute_count_limit
 
     @property
     def used_data_storage_size_in_tbs(self):

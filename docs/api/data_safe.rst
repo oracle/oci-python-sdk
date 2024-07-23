@@ -320,6 +320,8 @@ Data Safe
     oci.data_safe.models.SensitiveColumnSummary
     oci.data_safe.models.SensitiveDataModel
     oci.data_safe.models.SensitiveDataModelCollection
+    oci.data_safe.models.SensitiveDataModelSensitiveTypeCollection
+    oci.data_safe.models.SensitiveDataModelSensitiveTypeSummary
     oci.data_safe.models.SensitiveDataModelSummary
     oci.data_safe.models.SensitiveObjectCollection
     oci.data_safe.models.SensitiveObjectSummary
@@ -339,6 +341,7 @@ Data Safe
     oci.data_safe.models.SqlCollectionLogDimensions
     oci.data_safe.models.SqlCollectionLogInsightsCollection
     oci.data_safe.models.SqlCollectionSummary
+    oci.data_safe.models.SqlFirewallAllowedSql
     oci.data_safe.models.SqlFirewallAllowedSqlAggregation
     oci.data_safe.models.SqlFirewallAllowedSqlAnalyticsCollection
     oci.data_safe.models.SqlFirewallAllowedSqlCollection
@@ -360,6 +363,7 @@ Data Safe
     oci.data_safe.models.SubstringFormatEntry
     oci.data_safe.models.Summary
     oci.data_safe.models.TableSummary
+    oci.data_safe.models.TablesForDiscovery
     oci.data_safe.models.TargetAlertPolicyAssociation
     oci.data_safe.models.TargetAlertPolicyAssociationCollection
     oci.data_safe.models.TargetAlertPolicyAssociationSummary
@@ -368,6 +372,8 @@ Data Safe
     oci.data_safe.models.TlsConfig
     oci.data_safe.models.TruncateTableFormatEntry
     oci.data_safe.models.UDFFormatEntry
+    oci.data_safe.models.UnsetSecurityAssessmentBaselineDetails
+    oci.data_safe.models.UnsetUserAssessmentBaselineDetails
     oci.data_safe.models.UpdateAlertDetails
     oci.data_safe.models.UpdateAlertPolicyRuleDetails
     oci.data_safe.models.UpdateAuditArchiveRetrievalDetails

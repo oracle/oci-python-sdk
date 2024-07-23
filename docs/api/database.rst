@@ -77,10 +77,13 @@ Database
     oci.database.models.BackupDestinationSummary
     oci.database.models.BackupSummary
     oci.database.models.ChangeAutonomousDatabaseSoftwareImageCompartmentDetails
+    oci.database.models.ChangeAutonomousDatabaseSubscriptionDetails
     oci.database.models.ChangeAutonomousVmClusterCompartmentDetails
     oci.database.models.ChangeCloudAutonomousVmClusterCompartmentDetails
     oci.database.models.ChangeCloudExadataInfrastructureCompartmentDetails
+    oci.database.models.ChangeCloudExadataInfrastructureSubscriptionDetails
     oci.database.models.ChangeCloudVmClusterCompartmentDetails
+    oci.database.models.ChangeCloudVmClusterSubscriptionDetails
     oci.database.models.ChangeCompartmentDetails
     oci.database.models.ChangeDataguardRoleDetails
     oci.database.models.ChangeDisasterRecoveryConfigurationDetails
@@ -89,6 +92,7 @@ Database
     oci.database.models.ChangeExascaleDbStorageVaultCompartmentDetails
     oci.database.models.ChangeKeyStoreCompartmentDetails
     oci.database.models.ChangeKeyStoreTypeDetails
+    oci.database.models.ChangeSubscriptionDetails
     oci.database.models.ChangeVmClusterCompartmentDetails
     oci.database.models.CloudAutomationApplyUpdateTimePreference
     oci.database.models.CloudAutomationFreezePeriod

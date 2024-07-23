@@ -39,6 +39,14 @@ class CreateMonitorDetails(object):
     #: This constant has a value of "DNS"
     MONITOR_TYPE_DNS = "DNS"
 
+    #: A constant which can be used with the monitor_type property of a CreateMonitorDetails.
+    #: This constant has a value of "FTP"
+    MONITOR_TYPE_FTP = "FTP"
+
+    #: A constant which can be used with the monitor_type property of a CreateMonitorDetails.
+    #: This constant has a value of "SQL"
+    MONITOR_TYPE_SQL = "SQL"
+
     #: A constant which can be used with the status property of a CreateMonitorDetails.
     #: This constant has a value of "ENABLED"
     STATUS_ENABLED = "ENABLED"
@@ -74,7 +82,7 @@ class CreateMonitorDetails(object):
 
         :param monitor_type:
             The value to assign to the monitor_type property of this CreateMonitorDetails.
-            Allowed values for this property are: "SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", "NETWORK", "DNS"
+            Allowed values for this property are: "SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", "NETWORK", "DNS", "FTP", "SQL"
         :type monitor_type: str
 
         :param vantage_points:
@@ -143,6 +151,10 @@ class CreateMonitorDetails(object):
             The value to assign to the batch_interval_in_seconds property of this CreateMonitorDetails.
         :type batch_interval_in_seconds: int
 
+        :param is_i_pv6:
+            The value to assign to the is_i_pv6 property of this CreateMonitorDetails.
+        :type is_i_pv6: bool
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -162,7 +174,8 @@ class CreateMonitorDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'is_run_now': 'bool',
             'scheduling_policy': 'str',
-            'batch_interval_in_seconds': 'int'
+            'batch_interval_in_seconds': 'int',
+            'is_i_pv6': 'bool'
         }
 
         self.attribute_map = {
@@ -183,7 +196,8 @@ class CreateMonitorDetails(object):
             'defined_tags': 'definedTags',
             'is_run_now': 'isRunNow',
             'scheduling_policy': 'schedulingPolicy',
-            'batch_interval_in_seconds': 'batchIntervalInSeconds'
+            'batch_interval_in_seconds': 'batchIntervalInSeconds',
+            'is_i_pv6': 'isIPv6'
         }
 
         self._display_name = None
@@ -204,6 +218,7 @@ class CreateMonitorDetails(object):
         self._is_run_now = None
         self._scheduling_policy = None
         self._batch_interval_in_seconds = None
+        self._is_i_pv6 = None
 
     @property
     def display_name(self):
@@ -235,7 +250,7 @@ class CreateMonitorDetails(object):
         **[Required]** Gets the monitor_type of this CreateMonitorDetails.
         Type of monitor.
 
-        Allowed values for this property are: "SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", "NETWORK", "DNS"
+        Allowed values for this property are: "SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", "NETWORK", "DNS", "FTP", "SQL"
 
 
         :return: The monitor_type of this CreateMonitorDetails.
@@ -253,7 +268,7 @@ class CreateMonitorDetails(object):
         :param monitor_type: The monitor_type of this CreateMonitorDetails.
         :type: str
         """
-        allowed_values = ["SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", "NETWORK", "DNS"]
+        allowed_values = ["SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", "NETWORK", "DNS", "FTP", "SQL"]
         if not value_allowed_none_or_none_sentinel(monitor_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `monitor_type`, must be None or one of {allowed_values}"
@@ -432,10 +447,10 @@ class CreateMonitorDetails(object):
         """
         Gets the target of this CreateMonitorDetails.
         Specify the endpoint on which to run the monitor.
-        For BROWSER, REST and NETWORK monitor types, target is mandatory.
+        For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory.
         If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint.
         If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
-        For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
 
 
         :return: The target of this CreateMonitorDetails.
@@ -448,10 +463,10 @@ class CreateMonitorDetails(object):
         """
         Sets the target of this CreateMonitorDetails.
         Specify the endpoint on which to run the monitor.
-        For BROWSER, REST and NETWORK monitor types, target is mandatory.
+        For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory.
         If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint.
         If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
-        For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
 
 
         :param target: The target of this CreateMonitorDetails.
@@ -677,6 +692,30 @@ class CreateMonitorDetails(object):
         :type: int
         """
         self._batch_interval_in_seconds = batch_interval_in_seconds
+
+    @property
+    def is_i_pv6(self):
+        """
+        Gets the is_i_pv6 of this CreateMonitorDetails.
+        If enabled, domain name will resolve to an IPv6 address.
+
+
+        :return: The is_i_pv6 of this CreateMonitorDetails.
+        :rtype: bool
+        """
+        return self._is_i_pv6
+
+    @is_i_pv6.setter
+    def is_i_pv6(self, is_i_pv6):
+        """
+        Sets the is_i_pv6 of this CreateMonitorDetails.
+        If enabled, domain name will resolve to an IPv6 address.
+
+
+        :param is_i_pv6: The is_i_pv6 of this CreateMonitorDetails.
+        :type: bool
+        """
+        self._is_i_pv6 = is_i_pv6
 
     def __repr__(self):
         return formatted_flat_dict(self)

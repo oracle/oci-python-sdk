@@ -31,6 +31,10 @@ class SqlFirewallAllowedSqlDimensions(object):
     #: This constant has a value of "DELETED"
     LIFECYCLE_STATE_DELETED = "DELETED"
 
+    #: A constant which can be used with the lifecycle_state property of a SqlFirewallAllowedSqlDimensions.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new SqlFirewallAllowedSqlDimensions object with values from keyword arguments.
@@ -52,7 +56,7 @@ class SqlFirewallAllowedSqlDimensions(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this SqlFirewallAllowedSqlDimensions.
-            Allowed values for this property are: "ACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACTIVE", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -164,7 +168,7 @@ class SqlFirewallAllowedSqlDimensions(object):
         Gets the lifecycle_state of this SqlFirewallAllowedSqlDimensions.
         The current state of the SQL Firewall allowed SQL.
 
-        Allowed values for this property are: "ACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACTIVE", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -183,7 +187,7 @@ class SqlFirewallAllowedSqlDimensions(object):
         :param lifecycle_state: The lifecycle_state of this SqlFirewallAllowedSqlDimensions.
         :type: str
         """
-        allowed_values = ["ACTIVE", "DELETED"]
+        allowed_values = ["ACTIVE", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

@@ -29,6 +29,10 @@ class CreateAutonomousDatabaseFromBackupDetails(CreateAutonomousDatabaseBase):
         of this class is ``BACKUP_FROM_ID`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param subscription_id:
+            The value to assign to the subscription_id property of this CreateAutonomousDatabaseFromBackupDetails.
+        :type subscription_id: str
+
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateAutonomousDatabaseFromBackupDetails.
         :type compartment_id: str
@@ -103,6 +107,10 @@ class CreateAutonomousDatabaseFromBackupDetails(CreateAutonomousDatabaseBase):
             The value to assign to the license_model property of this CreateAutonomousDatabaseFromBackupDetails.
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
         :type license_model: str
+
+        :param byol_compute_count_limit:
+            The value to assign to the byol_compute_count_limit property of this CreateAutonomousDatabaseFromBackupDetails.
+        :type byol_compute_count_limit: float
 
         :param is_preview_version_with_service_terms_accepted:
             The value to assign to the is_preview_version_with_service_terms_accepted property of this CreateAutonomousDatabaseFromBackupDetails.
@@ -241,6 +249,7 @@ class CreateAutonomousDatabaseFromBackupDetails(CreateAutonomousDatabaseBase):
 
         """
         self.swagger_types = {
+            'subscription_id': 'str',
             'compartment_id': 'str',
             'character_set': 'str',
             'ncharacter_set': 'str',
@@ -259,6 +268,7 @@ class CreateAutonomousDatabaseFromBackupDetails(CreateAutonomousDatabaseBase):
             'admin_password': 'str',
             'display_name': 'str',
             'license_model': 'str',
+            'byol_compute_count_limit': 'float',
             'is_preview_version_with_service_terms_accepted': 'bool',
             'is_auto_scaling_enabled': 'bool',
             'is_dev_tier': 'bool',
@@ -295,6 +305,7 @@ class CreateAutonomousDatabaseFromBackupDetails(CreateAutonomousDatabaseBase):
         }
 
         self.attribute_map = {
+            'subscription_id': 'subscriptionId',
             'compartment_id': 'compartmentId',
             'character_set': 'characterSet',
             'ncharacter_set': 'ncharacterSet',
@@ -313,6 +324,7 @@ class CreateAutonomousDatabaseFromBackupDetails(CreateAutonomousDatabaseBase):
             'admin_password': 'adminPassword',
             'display_name': 'displayName',
             'license_model': 'licenseModel',
+            'byol_compute_count_limit': 'byolComputeCountLimit',
             'is_preview_version_with_service_terms_accepted': 'isPreviewVersionWithServiceTermsAccepted',
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
             'is_dev_tier': 'isDevTier',
@@ -348,6 +360,7 @@ class CreateAutonomousDatabaseFromBackupDetails(CreateAutonomousDatabaseBase):
             'clone_type': 'cloneType'
         }
 
+        self._subscription_id = None
         self._compartment_id = None
         self._character_set = None
         self._ncharacter_set = None
@@ -366,6 +379,7 @@ class CreateAutonomousDatabaseFromBackupDetails(CreateAutonomousDatabaseBase):
         self._admin_password = None
         self._display_name = None
         self._license_model = None
+        self._byol_compute_count_limit = None
         self._is_preview_version_with_service_terms_accepted = None
         self._is_auto_scaling_enabled = None
         self._is_dev_tier = None

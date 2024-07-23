@@ -28,6 +28,10 @@ class UpdateUserAssessmentDetails(object):
             The value to assign to the display_name property of this UpdateUserAssessmentDetails.
         :type display_name: str
 
+        :param is_assessment_scheduled:
+            The value to assign to the is_assessment_scheduled property of this UpdateUserAssessmentDetails.
+        :type is_assessment_scheduled: bool
+
         :param schedule:
             The value to assign to the schedule property of this UpdateUserAssessmentDetails.
         :type schedule: str
@@ -44,6 +48,7 @@ class UpdateUserAssessmentDetails(object):
         self.swagger_types = {
             'description': 'str',
             'display_name': 'str',
+            'is_assessment_scheduled': 'bool',
             'schedule': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -52,6 +57,7 @@ class UpdateUserAssessmentDetails(object):
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
+            'is_assessment_scheduled': 'isAssessmentScheduled',
             'schedule': 'schedule',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -59,6 +65,7 @@ class UpdateUserAssessmentDetails(object):
 
         self._description = None
         self._display_name = None
+        self._is_assessment_scheduled = None
         self._schedule = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -110,6 +117,30 @@ class UpdateUserAssessmentDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def is_assessment_scheduled(self):
+        """
+        Gets the is_assessment_scheduled of this UpdateUserAssessmentDetails.
+        Indicates whether the assessment is scheduled to run.
+
+
+        :return: The is_assessment_scheduled of this UpdateUserAssessmentDetails.
+        :rtype: bool
+        """
+        return self._is_assessment_scheduled
+
+    @is_assessment_scheduled.setter
+    def is_assessment_scheduled(self, is_assessment_scheduled):
+        """
+        Sets the is_assessment_scheduled of this UpdateUserAssessmentDetails.
+        Indicates whether the assessment is scheduled to run.
+
+
+        :param is_assessment_scheduled: The is_assessment_scheduled of this UpdateUserAssessmentDetails.
+        :type: bool
+        """
+        self._is_assessment_scheduled = is_assessment_scheduled
 
     @property
     def schedule(self):

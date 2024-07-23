@@ -15,12 +15,19 @@ import threading
 import logging
 import pprint
 
-# A retry strategy for use when calling the metadata endpoint on an instance to retrieve certificates. This retry strategy
-# will retry on any exception (the metadata endpoint does not throw errors like an OCI service) up to 5 times or a max
-# of 5 minutes
-INSTANCE_METADATA_URL_CERTIFICATE_RETRIEVER_RETRY_STRATEGY = oci.retry.RetryStrategyBuilder().add_max_attempts() \
-                                                                                             .add_total_elapsed_time() \
-                                                                                             .get_retry_strategy()
+# A retry strategy for use when calling the metadata endpoint on an instance to retrieve certificates.
+# This retry strategy will retry on 404, 429 and 5xx exceptions (the metadata endpoint does not throw errors like an
+# OCI service) up to 3 times with ~30-31 seconds wait, for a max of 3 minutes
+INSTANCE_METADATA_URL_CERTIFICATE_RETRIEVER_RETRY_STRATEGY = (
+    oci.retry.RetryStrategyBuilder(service_error_check=True,
+                                   service_error_retry_config={-1: [], 429: [], 404: []},
+                                   service_error_retry_on_any_5xx=True,
+                                   retry_max_wait_between_calls_seconds=31,
+                                   retry_base_sleep_time_seconds=30,
+                                   retry_exponential_growth_factor=1,
+                                   total_elapsed_time_seconds=180
+                                   )
+    .add_max_attempts(3).add_total_elapsed_time().get_retry_strategy())
 
 
 # An abstract class which defines the interface via which certificates (and their corresponding private key) can be retrieved.

@@ -39,7 +39,7 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "24.07.02"
+    version = "24.07.09"
     oci_compatible_version = "2.125.0"
     thread_lock = threading.Lock()
     collection_ljust = 40
@@ -90,6 +90,7 @@ class ShowOCIService(object):
     C_IDENTITY_COMPARTMENTS = 'compartments'
     C_IDENTITY_REGIONS = 'regions'
     C_IDENTITY_PROVIDERS = 'providers'
+    C_IDENTITY_PROVIDERS_MAPPING = 'providers_mapping'
     C_IDENTITY_DYNAMIC_GROUPS = 'dynamic_groups'
     C_IDENTITY_NETWORK_SOURCES = 'network_sources'
     C_IDENTITY_USERS_GROUPS_MEMBERSHIP = 'users_groups_membership'
@@ -1627,6 +1628,7 @@ class ShowOCIService(object):
                         print("\nIdentity Old API (Users and Groups) as requesed...")
                         self.__load_identity_users_groups(identity, tenancy_id)
                         self.__load_identity_dynamic_groups(identity, tenancy_id)
+                        self.__load_identity_providers(identity, tenancy_id)
 
                 # if no identity domains
                 else:
@@ -1639,6 +1641,7 @@ class ShowOCIService(object):
                         self.__load_identity_dynamic_groups(identity, tenancy_id)
                         self.__load_identity_network_sources(identity, tenancy_id)
                         self.__load_identity_policies(identity)
+                        self.__load_identity_providers(identity, tenancy_id)
                         self.__load_identity_cost_tracking_tags(identity, tenancy_id)
                         self.__load_identity_tag_namespace(identity)
 
@@ -1651,6 +1654,7 @@ class ShowOCIService(object):
                             future_dyn = executor.submit(self.__load_identity_dynamic_groups, identity, tenancy_id)
                             future_net = executor.submit(self.__load_identity_network_sources, identity, tenancy_id)
                             future_pol = executor.submit(self.__load_identity_policies, identity)
+                            future_prv = executor.submit(self.__load_identity_providers, identity, tenancy_id)
                             future_cos = executor.submit(self.__load_identity_cost_tracking_tags, identity, tenancy_id)
                             future_tag = executor.submit(self.__load_identity_tag_namespace, identity)
 
@@ -1658,8 +1662,14 @@ class ShowOCIService(object):
                             as_completed([future_dyn])
                             as_completed([future_net])
                             as_completed([future_pol])
+                            as_completed([future_prv])
                             as_completed([future_cos])
                             as_completed([future_tag])
+
+                ####################
+                # Merge IDP Mapping
+                ####################
+                self.__load_identity_merge_idp_mapping()
 
             print("")
             self.__load_print_section_time(section_start_time)
@@ -2290,6 +2300,124 @@ class ShowOCIService(object):
             self.__print_error(e)
 
     ##########################################################################
+    # Print Identity Providers
+    ##########################################################################
+    def __load_identity_providers(self, identity, tenancy_id):
+        provider_data = []
+        mapping_data = []
+        errstr = ""
+        header = "Identity Providers (Old)"
+        self.__load_print_status_with_threads(header)
+        start_time = time.time()
+
+        try:
+            identity_providers = identity.list_identity_providers(
+                "SAML2",
+                tenancy_id,
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
+            for provider in identity_providers:
+
+                provider_data.append({
+                    'id': self.get_value(provider.id),
+                    'name': self.get_value(provider.name),
+                    'description': self.get_value(provider.description),
+                    'product_type': self.get_value(provider.product_type),
+                    'protocol': self.get_value(provider.protocol),
+                    'redirect_url': self.get_value(provider.redirect_url),
+                    'metadata_url': self.get_value(provider.metadata_url)
+                })
+
+                # get identity providers mapping groups
+                try:
+                    igm = oci.pagination.list_call_get_all_results(
+                        identity.list_idp_group_mappings,
+                        provider.id,
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                    for ig in igm:
+                        mapping_data.append({
+                            'id': self.get_value(ig.id),
+                            'provider_id': self.get_value(provider.id),
+                            'provider_name': self.get_value(provider.name),
+                            'provider_group_name': self.get_value(ig.idp_group_name),
+                            'domain_name': "",
+                            'oci_group_id': self.get_value(ig.group_id),
+                            'oci_group_name': "",
+                            'time_created': self.get_value(ig.time_created, trim_date=True),
+                            'lifecycle_state': self.get_value(ig.lifecycle_state)
+                        })
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e):
+                        self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                        errstr += "a"
+                    else:
+                        self.__load_print_error(e)
+                        errstr += "e"
+
+            # add to data
+            self.data[self.C_IDENTITY][self.C_IDENTITY_PROVIDERS] = provider_data
+            self.data[self.C_IDENTITY][self.C_IDENTITY_PROVIDERS_MAPPING] = mapping_data
+
+            cnt = len(provider_data)
+            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return
+            else:
+                self.__load_print_error(e)
+        except Exception as e:
+            self.__print_error(e)
+
+    ##########################################################################
+    # Merge IDP Mapping
+    ##########################################################################
+    def __load_identity_merge_idp_mapping(self):
+        try:
+            header = "Identity Providers Mapping Merge (Old)"
+            start_time = time.time()
+            mapping_data = []
+            oci_native_groups = []
+            domains = []
+
+            if self.C_IDENTITY_PROVIDERS_MAPPING in self.data[self.C_IDENTITY]:
+                mapping_data = self.data[self.C_IDENTITY][self.C_IDENTITY_PROVIDERS_MAPPING]
+            if self.C_IDENTITY_GROUPS in self.data[self.C_IDENTITY]:
+                oci_native_groups = self.data[self.C_IDENTITY][self.C_IDENTITY_GROUPS]
+            if self.C_IDENTITY_DOMAINS in self.data[self.C_IDENTITY]:
+                domains = self.data[self.C_IDENTITY][self.C_IDENTITY_DOMAINS]
+
+            cnt = len(mapping_data)
+
+            for map in mapping_data:
+                oci_group_id = map['oci_group_id']
+
+                # find in domains
+                found = False
+                if not found:
+                    for domain in domains:
+                        for grp in domain['groups']:
+                            if grp['ocid'] == oci_group_id:
+                                map['oci_group_name'] = grp['display_name']
+                                map['domain_name'] = domain['display_name']
+                                found = True
+
+                # find in oci native groups
+                for grp in oci_native_groups:
+                    if grp['id'] == oci_group_id:
+                        map['oci_group_name'] = grp['name']
+
+            if cnt > 0:
+                self.__load_print_thread_cnt(header, cnt, start_time, "")
+
+        except Exception as e:
+            self.__print_error(e)
+
+    ##########################################################################
     # Print Dynamic Groups
     ##########################################################################
     def __load_identity_dynamic_groups(self, identity, tenancy_id):
@@ -2348,7 +2476,12 @@ class ShowOCIService(object):
         try:
             network_sources = []
             try:
-                network_sources = oci.pagination.list_call_get_all_results(identity.list_network_sources, tenancy_id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+                network_sources = oci.pagination.list_call_get_all_results(
+                    identity.list_network_sources,
+                    tenancy_id,
+                    retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                ).data
+
             except oci.exceptions.ServiceError as e:
                 if self.__check_service_error(e):
                     self.__load_print_auth_warning(to_print=self.flags.skip_threads)
@@ -2369,13 +2502,15 @@ class ShowOCIService(object):
                     })
 
                 data.append({
-                    'id': str(ns.id),
-                    'name': str(ns.name),
-                    'description': str(ns.description),
+                    'id': self.get_value(ns.id),
+                    'name': self.get_value(ns.name),
+                    'description': self.get_value(ns.description),
                     'virtual_source_list': vcn_list,
                     'public_source_list': ns.public_source_list,
                     'services': ns.services,
-                    'time_created': str(ns.time_created)
+                    'time_created': self.get_value(ns.time_created, trim_date=True),
+                    'defined_tags': [] if ns.defined_tags is None else ns.defined_tags,
+                    'freeform_tags': [] if ns.freeform_tags is None else ns.freeform_tags
                 })
 
             # add to data
@@ -2416,15 +2551,16 @@ class ShowOCIService(object):
 
             # tag = oci.identity.models.Tag
             for tag in tags:
-                dataval = {'tag_namespace_id': str(tag.tag_namespace_id),
-                           'tag_namespace_name': str(tag.tag_namespace_name),
-                           'id': str(tag.id),
-                           'name': str(tag.name),
-                           'description': self.get_value(tag.description),
-                           'is_retired': self.get_value(tag.is_retired),
-                           'time_created': self.get_value(tag.time_created),
-                           'is_cost_tracking': self.get_value(tag.is_cost_tracking)
-                           }
+                dataval = {
+                    'tag_namespace_id': str(tag.tag_namespace_id),
+                    'tag_namespace_name': str(tag.tag_namespace_name),
+                    'id': str(tag.id),
+                    'name': str(tag.name),
+                    'description': self.get_value(tag.description),
+                    'is_retired': self.get_value(tag.is_retired),
+                    'time_created': self.get_value(tag.time_created),
+                    'is_cost_tracking': self.get_value(tag.is_cost_tracking)
+                }
                 data.append(dataval)
 
             # add to data
@@ -8525,6 +8661,7 @@ class ShowOCIService(object):
 
     ##########################################################################
     # __load_section_database_main
+    # Todo ExaScale: list_exascale_db_storage_vaults
     ##########################################################################
     def __load_section_database_main(self):
 
@@ -20028,6 +20165,65 @@ class ShowOCIDomains(object):
             self.__print_error(e)
 
     ##################################################################################
+    # load_identity_domain_network_perimeters
+    ##################################################################################
+    def __load_identity_domain_network_perimeters(self, identity_domain_client, domain_name):
+        data = []
+
+        errstr = ""
+        header = domain_name[0:21] + ".NetworkPerimeters"
+        self.__load_print_status_with_threads(header)
+
+        start_time = time.time()
+
+        try:
+            nets = self.__list_call_get_all_results(
+                identity_domain_client.list_network_perimeters,
+                count=500,
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
+            # oci.identity_domains.models.Group
+            for var in nets:
+                if var.delete_in_progress:
+                    continue
+                if self.skip_threads:
+                    print(".", end="")
+
+                data.append({
+                    'id': self.get_value(var.id),
+                    'ocid': self.get_value(var.ocid),
+                    'name': self.get_value(var.name),
+                    'description': self.get_value(var.description),
+                    'schemas': str(','.join(x for x in var.schemas)) if var.schemas else "",
+                    'meta': self.__load_identity_meta_info(var.meta),
+                    'idcs_created_by': var.idcs_created_by.value if var.idcs_created_by else "",
+                    'idcs_last_modified_by': var.idcs_last_modified_by.value if var.idcs_last_modified_by else "",
+                    'idcs_prevented_operations': str(','.join(x for x in var.idcs_prevented_operations)) if var.idcs_prevented_operations else "",
+                    'idcs_last_upgraded_in_release': self.get_value(var.idcs_last_upgraded_in_release),
+                    'external_id': self.get_value(var.external_id),
+                    'compartment_ocid': self.get_value(var.compartment_ocid),
+                    'tags': [{'key': x.key, 'value': x.value} for x in var.tags] if var.tags else [],
+                    'ip_addresses': [{
+                        'type': self.get_value(x.type),
+                        'value': self.get_value(x.value),
+                        'version': self.get_value(x.version)
+                    } for x in var.ip_addresses]
+                })
+
+            self.__load_print_thread_cnt(header, len(data), start_time, errstr)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            else:
+                self.__load_print_error(e)
+                return data
+        except Exception as e:
+            self.__print_error(e)
+
+    ##################################################################################
     # __load_identity_domain_dynamic_resource_groups
     ##################################################################################
     def __load_identity_domain_dynamic_resource_groups(self, identity_domain_client, domain_name):
@@ -20879,6 +21075,7 @@ class ShowOCIDomains(object):
                             domain_data['users'] = self.__load_identity_domain_users(identity_domain_client, domain.display_name)
                             domain_data['groups'] = self.__load_identity_domain_groups(identity_domain_client, domain.display_name)
                             domain_data['dynamic_groups'] = self.__load_identity_domain_dynamic_resource_groups(identity_domain_client, domain.display_name)
+                            domain_data['network_perimeters'] = self.__load_identity_domain_network_perimeters(identity_domain_client, domain.display_name)
                             domain_data['kmsi_setting'] = self.__load_identity_domain_kmsi_setting(identity_domain_client, domain.display_name)
                             domain_data['identity_providers'] = self.__load_identity_domain_identity_providers(identity_domain_client, domain.display_name)
                             domain_data['authentication_factor_settings'] = self.__load_identity_domain_authentication_factor_settings(identity_domain_client, domain.display_name)
@@ -20902,6 +21099,7 @@ class ShowOCIDomains(object):
                                 future_policies = executor.submit(self.__load_identity_domain_policies, identity_domain_client, domain.display_name)
                                 future_rules = executor.submit(self.__load_identity_domain_rules, identity_domain_client, domain.display_name)
                                 future_conditions = executor.submit(self.__load_identity_domain_conditions, identity_domain_client, domain.display_name)
+                                future_network_perimeter = executor.submit(self.__load_identity_domain_network_perimeters, identity_domain_client, domain.display_name)
 
                                 domain_data['users'] = next(as_completed([future_users])).result()
                                 domain_data['groups'] = next(as_completed([future_groups])).result()
@@ -20913,6 +21111,7 @@ class ShowOCIDomains(object):
                                 domain_data['policies'] = next(as_completed([future_policies])).result()
                                 domain_data['rules'] = next(as_completed([future_rules])).result()
                                 domain_data['conditions'] = next(as_completed([future_conditions])).result()
+                                domain_data['network_perimeters'] = next(as_completed([future_network_perimeter])).result()
 
                     self.__load_identity_users_to_group_members(domain_data['users'], domain_data['groups'])
                     self.__load_identity_conditions_to_rules(domain_data['rules'], domain_data['conditions'])

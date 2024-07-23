@@ -65,10 +65,13 @@ from .backup_destination_details import BackupDestinationDetails
 from .backup_destination_summary import BackupDestinationSummary
 from .backup_summary import BackupSummary
 from .change_autonomous_database_software_image_compartment_details import ChangeAutonomousDatabaseSoftwareImageCompartmentDetails
+from .change_autonomous_database_subscription_details import ChangeAutonomousDatabaseSubscriptionDetails
 from .change_autonomous_vm_cluster_compartment_details import ChangeAutonomousVmClusterCompartmentDetails
 from .change_cloud_autonomous_vm_cluster_compartment_details import ChangeCloudAutonomousVmClusterCompartmentDetails
 from .change_cloud_exadata_infrastructure_compartment_details import ChangeCloudExadataInfrastructureCompartmentDetails
+from .change_cloud_exadata_infrastructure_subscription_details import ChangeCloudExadataInfrastructureSubscriptionDetails
 from .change_cloud_vm_cluster_compartment_details import ChangeCloudVmClusterCompartmentDetails
+from .change_cloud_vm_cluster_subscription_details import ChangeCloudVmClusterSubscriptionDetails
 from .change_compartment_details import ChangeCompartmentDetails
 from .change_dataguard_role_details import ChangeDataguardRoleDetails
 from .change_disaster_recovery_configuration_details import ChangeDisasterRecoveryConfigurationDetails
@@ -77,6 +80,7 @@ from .change_exadb_vm_cluster_compartment_details import ChangeExadbVmClusterCom
 from .change_exascale_db_storage_vault_compartment_details import ChangeExascaleDbStorageVaultCompartmentDetails
 from .change_key_store_compartment_details import ChangeKeyStoreCompartmentDetails
 from .change_key_store_type_details import ChangeKeyStoreTypeDetails
+from .change_subscription_details import ChangeSubscriptionDetails
 from .change_vm_cluster_compartment_details import ChangeVmClusterCompartmentDetails
 from .cloud_automation_apply_update_time_preference import CloudAutomationApplyUpdateTimePreference
 from .cloud_automation_freeze_period import CloudAutomationFreezePeriod
@@ -468,10 +472,13 @@ database_type_mapping = {
     "BackupDestinationSummary": BackupDestinationSummary,
     "BackupSummary": BackupSummary,
     "ChangeAutonomousDatabaseSoftwareImageCompartmentDetails": ChangeAutonomousDatabaseSoftwareImageCompartmentDetails,
+    "ChangeAutonomousDatabaseSubscriptionDetails": ChangeAutonomousDatabaseSubscriptionDetails,
     "ChangeAutonomousVmClusterCompartmentDetails": ChangeAutonomousVmClusterCompartmentDetails,
     "ChangeCloudAutonomousVmClusterCompartmentDetails": ChangeCloudAutonomousVmClusterCompartmentDetails,
     "ChangeCloudExadataInfrastructureCompartmentDetails": ChangeCloudExadataInfrastructureCompartmentDetails,
+    "ChangeCloudExadataInfrastructureSubscriptionDetails": ChangeCloudExadataInfrastructureSubscriptionDetails,
     "ChangeCloudVmClusterCompartmentDetails": ChangeCloudVmClusterCompartmentDetails,
+    "ChangeCloudVmClusterSubscriptionDetails": ChangeCloudVmClusterSubscriptionDetails,
     "ChangeCompartmentDetails": ChangeCompartmentDetails,
     "ChangeDataguardRoleDetails": ChangeDataguardRoleDetails,
     "ChangeDisasterRecoveryConfigurationDetails": ChangeDisasterRecoveryConfigurationDetails,
@@ -480,6 +487,7 @@ database_type_mapping = {
     "ChangeExascaleDbStorageVaultCompartmentDetails": ChangeExascaleDbStorageVaultCompartmentDetails,
     "ChangeKeyStoreCompartmentDetails": ChangeKeyStoreCompartmentDetails,
     "ChangeKeyStoreTypeDetails": ChangeKeyStoreTypeDetails,
+    "ChangeSubscriptionDetails": ChangeSubscriptionDetails,
     "ChangeVmClusterCompartmentDetails": ChangeVmClusterCompartmentDetails,
     "CloudAutomationApplyUpdateTimePreference": CloudAutomationApplyUpdateTimePreference,
     "CloudAutomationFreezePeriod": CloudAutomationFreezePeriod,

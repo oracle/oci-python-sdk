@@ -235,7 +235,7 @@ class ReportSummary(object):
     def mime_type(self):
         """
         Gets the mime_type of this ReportSummary.
-        Specifies the format of report to be .xls or .pdf.
+        Specifies the format of report to be .xls or .pdf or .json.
 
         Allowed values for this property are: "PDF", "XLS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -250,7 +250,7 @@ class ReportSummary(object):
     def mime_type(self, mime_type):
         """
         Sets the mime_type of this ReportSummary.
-        Specifies the format of report to be .xls or .pdf.
+        Specifies the format of report to be .xls or .pdf or .json.
 
 
         :param mime_type: The mime_type of this ReportSummary.
