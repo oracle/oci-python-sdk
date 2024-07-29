@@ -111,7 +111,7 @@ oci-python-sdk is an open source project. See `CONTRIBUTING`__ for details.
 
 Oracle gratefully acknowledges the contributions to oci-python-sdk that have been made by the community.
 
-__ https://github.com/oracle/oci-python-sdk/blob/master/CONTRIBUTING.rst
+__ https://github.com/oracle/oci-python-sdk/blob/master/CONTRIBUTING.md
 
 ============
 Known Issues
@@ -133,10 +133,18 @@ Click `here`__ for the survey page.
 __ https://oracle.questionpro.com/t/APeMlZka26?custom3=pypi
 
 =======
+Security
+=======
+
+Please consult the `security guide`__ for our responsible security vulnerability disclosure process
+
+__ https://github.com/oracle/oci-python-sdk/blob/master/SECURITY.md
+
+=======
 License
 =======
 
-Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
 This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 See `LICENSE`__ for more details.
