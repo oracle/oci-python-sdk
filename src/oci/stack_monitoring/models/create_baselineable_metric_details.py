@@ -40,13 +40,18 @@ class CreateBaselineableMetricDetails(object):
             The value to assign to the resource_group property of this CreateBaselineableMetricDetails.
         :type resource_group: str
 
+        :param resource_type:
+            The value to assign to the resource_type property of this CreateBaselineableMetricDetails.
+        :type resource_type: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
             'name': 'str',
             'column': 'str',
             'namespace': 'str',
-            'resource_group': 'str'
+            'resource_group': 'str',
+            'resource_type': 'str'
         }
 
         self.attribute_map = {
@@ -54,7 +59,8 @@ class CreateBaselineableMetricDetails(object):
             'name': 'name',
             'column': 'column',
             'namespace': 'namespace',
-            'resource_group': 'resourceGroup'
+            'resource_group': 'resourceGroup',
+            'resource_type': 'resourceType'
         }
 
         self._compartment_id = None
@@ -62,6 +68,7 @@ class CreateBaselineableMetricDetails(object):
         self._column = None
         self._namespace = None
         self._resource_group = None
+        self._resource_type = None
 
     @property
     def compartment_id(self):
@@ -90,7 +97,7 @@ class CreateBaselineableMetricDetails(object):
     @property
     def name(self):
         """
-        **[Required]** Gets the name of this CreateBaselineableMetricDetails.
+        Gets the name of this CreateBaselineableMetricDetails.
         name of the metric
 
 
@@ -162,7 +169,7 @@ class CreateBaselineableMetricDetails(object):
     @property
     def resource_group(self):
         """
-        **[Required]** Gets the resource_group of this CreateBaselineableMetricDetails.
+        Gets the resource_group of this CreateBaselineableMetricDetails.
         Resource group of the metric
 
 
@@ -182,6 +189,30 @@ class CreateBaselineableMetricDetails(object):
         :type: str
         """
         self._resource_group = resource_group
+
+    @property
+    def resource_type(self):
+        """
+        Gets the resource_type of this CreateBaselineableMetricDetails.
+        Resource type of the metric
+
+
+        :return: The resource_type of this CreateBaselineableMetricDetails.
+        :rtype: str
+        """
+        return self._resource_type
+
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """
+        Sets the resource_type of this CreateBaselineableMetricDetails.
+        Resource type of the metric
+
+
+        :param resource_type: The resource_type of this CreateBaselineableMetricDetails.
+        :type: str
+        """
+        self._resource_type = resource_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

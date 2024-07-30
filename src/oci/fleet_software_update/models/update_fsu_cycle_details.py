@@ -45,6 +45,10 @@ class UpdateFsuCycleDetails(object):
             The value to assign to the batching_strategy property of this UpdateFsuCycleDetails.
         :type batching_strategy: oci.fleet_software_update.models.UpdateBatchingStrategyDetails
 
+        :param diagnostics_collection:
+            The value to assign to the diagnostics_collection property of this UpdateFsuCycleDetails.
+        :type diagnostics_collection: oci.fleet_software_update.models.DiagnosticsCollectionDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateFsuCycleDetails.
         :type freeform_tags: dict(str, str)
@@ -59,6 +63,7 @@ class UpdateFsuCycleDetails(object):
             'type': 'str',
             'goal_version_details': 'FsuGoalVersionDetails',
             'batching_strategy': 'UpdateBatchingStrategyDetails',
+            'diagnostics_collection': 'DiagnosticsCollectionDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -68,6 +73,7 @@ class UpdateFsuCycleDetails(object):
             'type': 'type',
             'goal_version_details': 'goalVersionDetails',
             'batching_strategy': 'batchingStrategy',
+            'diagnostics_collection': 'diagnosticsCollection',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -76,6 +82,7 @@ class UpdateFsuCycleDetails(object):
         self._type = None
         self._goal_version_details = None
         self._batching_strategy = None
+        self._diagnostics_collection = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -190,6 +197,26 @@ class UpdateFsuCycleDetails(object):
         :type: oci.fleet_software_update.models.UpdateBatchingStrategyDetails
         """
         self._batching_strategy = batching_strategy
+
+    @property
+    def diagnostics_collection(self):
+        """
+        Gets the diagnostics_collection of this UpdateFsuCycleDetails.
+
+        :return: The diagnostics_collection of this UpdateFsuCycleDetails.
+        :rtype: oci.fleet_software_update.models.DiagnosticsCollectionDetails
+        """
+        return self._diagnostics_collection
+
+    @diagnostics_collection.setter
+    def diagnostics_collection(self, diagnostics_collection):
+        """
+        Sets the diagnostics_collection of this UpdateFsuCycleDetails.
+
+        :param diagnostics_collection: The diagnostics_collection of this UpdateFsuCycleDetails.
+        :type: oci.fleet_software_update.models.DiagnosticsCollectionDetails
+        """
+        self._diagnostics_collection = diagnostics_collection
 
     @property
     def freeform_tags(self):

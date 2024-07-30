@@ -4032,6 +4032,12 @@ class StackMonitoringClient(object):
         :param str resource_group: (optional)
             Resource Group
 
+        :param str resource_type: (optional)
+            Resource Type
+
+        :param bool is_out_of_box: (optional)
+            Is the baseline enabled metric defined out of box by Oracle or by end-user
+
         :param str name: (optional)
             Metric Name
 
@@ -4099,6 +4105,8 @@ class StackMonitoringClient(object):
             "retry_strategy",
             "opc_request_id",
             "resource_group",
+            "resource_type",
+            "is_out_of_box",
             "name",
             "metric_namespace",
             "limit",
@@ -4129,6 +4137,8 @@ class StackMonitoringClient(object):
 
         query_params = {
             "resourceGroup": kwargs.get("resource_group", missing),
+            "resourceType": kwargs.get("resource_type", missing),
+            "isOutOfBox": kwargs.get("is_out_of_box", missing),
             "name": kwargs.get("name", missing),
             "metricNamespace": kwargs.get("metric_namespace", missing),
             "limit": kwargs.get("limit", missing),

@@ -15,6 +15,26 @@ class AlertPolicyRuleSummary(object):
     A rule associated with an alert policy.
     """
 
+    #: A constant which can be used with the lifecycle_state property of a AlertPolicyRuleSummary.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a AlertPolicyRuleSummary.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the lifecycle_state property of a AlertPolicyRuleSummary.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a AlertPolicyRuleSummary.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a AlertPolicyRuleSummary.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AlertPolicyRuleSummary object with values from keyword arguments.
@@ -32,22 +52,45 @@ class AlertPolicyRuleSummary(object):
             The value to assign to the expression property of this AlertPolicyRuleSummary.
         :type expression: str
 
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this AlertPolicyRuleSummary.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param display_name:
+            The value to assign to the display_name property of this AlertPolicyRuleSummary.
+        :type display_name: str
+
+        :param time_created:
+            The value to assign to the time_created property of this AlertPolicyRuleSummary.
+        :type time_created: datetime
+
         """
         self.swagger_types = {
             'key': 'str',
             'description': 'str',
-            'expression': 'str'
+            'expression': 'str',
+            'lifecycle_state': 'str',
+            'display_name': 'str',
+            'time_created': 'datetime'
         }
 
         self.attribute_map = {
             'key': 'key',
             'description': 'description',
-            'expression': 'expression'
+            'expression': 'expression',
+            'lifecycle_state': 'lifecycleState',
+            'display_name': 'displayName',
+            'time_created': 'timeCreated'
         }
 
         self._key = None
         self._description = None
         self._expression = None
+        self._lifecycle_state = None
+        self._display_name = None
+        self._time_created = None
 
     @property
     def key(self):
@@ -120,6 +163,88 @@ class AlertPolicyRuleSummary(object):
         :type: str
         """
         self._expression = expression
+
+    @property
+    def lifecycle_state(self):
+        """
+        Gets the lifecycle_state of this AlertPolicyRuleSummary.
+        The current state of the alert policy rule.
+
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The lifecycle_state of this AlertPolicyRuleSummary.
+        :rtype: str
+        """
+        return self._lifecycle_state
+
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
+        """
+        Sets the lifecycle_state of this AlertPolicyRuleSummary.
+        The current state of the alert policy rule.
+
+
+        :param lifecycle_state: The lifecycle_state of this AlertPolicyRuleSummary.
+        :type: str
+        """
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "FAILED"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
+        self._lifecycle_state = lifecycle_state
+
+    @property
+    def display_name(self):
+        """
+        Gets the display_name of this AlertPolicyRuleSummary.
+        The display name of the alert policy rule.
+
+
+        :return: The display_name of this AlertPolicyRuleSummary.
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        """
+        Sets the display_name of this AlertPolicyRuleSummary.
+        The display name of the alert policy rule.
+
+
+        :param display_name: The display_name of this AlertPolicyRuleSummary.
+        :type: str
+        """
+        self._display_name = display_name
+
+    @property
+    def time_created(self):
+        """
+        Gets the time_created of this AlertPolicyRuleSummary.
+        Creation date and time of the alert policy rule, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_created of this AlertPolicyRuleSummary.
+        :rtype: datetime
+        """
+        return self._time_created
+
+    @time_created.setter
+    def time_created(self, time_created):
+        """
+        Sets the time_created of this AlertPolicyRuleSummary.
+        Creation date and time of the alert policy rule, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_created: The time_created of this AlertPolicyRuleSummary.
+        :type: datetime
+        """
+        self._time_created = time_created
 
     def __repr__(self):
         return formatted_flat_dict(self)

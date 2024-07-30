@@ -215,6 +215,7 @@ from .identity_propagation_trust_keytab import IdentityPropagationTrustKeytab
 from .identity_propagation_trusts import IdentityPropagationTrusts
 from .identity_provider import IdentityProvider
 from .identity_provider_correlation_policy import IdentityProviderCorrelationPolicy
+from .identity_provider_jit_prov_assigned_groups import IdentityProviderJitProvAssignedGroups
 from .identity_provider_jit_user_prov_assigned_groups import IdentityProviderJitUserProvAssignedGroups
 from .identity_provider_jit_user_prov_attributes import IdentityProviderJitUserProvAttributes
 from .identity_provider_jit_user_prov_group_mappings import IdentityProviderJitUserProvGroupMappings
@@ -397,6 +398,11 @@ from .smtp_credential import SmtpCredential
 from .smtp_credential_search_request import SmtpCredentialSearchRequest
 from .smtp_credential_user import SmtpCredentialUser
 from .smtp_credentials import SmtpCredentials
+from .social_identity_provider import SocialIdentityProvider
+from .social_identity_provider_jit_prov_assigned_groups import SocialIdentityProviderJitProvAssignedGroups
+from .social_identity_provider_relay_idp_param_mappings import SocialIdentityProviderRelayIdpParamMappings
+from .social_identity_provider_search_request import SocialIdentityProviderSearchRequest
+from .social_identity_providers import SocialIdentityProviders
 from .tags import Tags
 from .user import User
 from .user_attributes_setting import UserAttributesSetting
@@ -666,6 +672,7 @@ identity_domains_type_mapping = {
     "IdentityPropagationTrusts": IdentityPropagationTrusts,
     "IdentityProvider": IdentityProvider,
     "IdentityProviderCorrelationPolicy": IdentityProviderCorrelationPolicy,
+    "IdentityProviderJitProvAssignedGroups": IdentityProviderJitProvAssignedGroups,
     "IdentityProviderJitUserProvAssignedGroups": IdentityProviderJitUserProvAssignedGroups,
     "IdentityProviderJitUserProvAttributes": IdentityProviderJitUserProvAttributes,
     "IdentityProviderJitUserProvGroupMappings": IdentityProviderJitUserProvGroupMappings,
@@ -848,6 +855,11 @@ identity_domains_type_mapping = {
     "SmtpCredentialSearchRequest": SmtpCredentialSearchRequest,
     "SmtpCredentialUser": SmtpCredentialUser,
     "SmtpCredentials": SmtpCredentials,
+    "SocialIdentityProvider": SocialIdentityProvider,
+    "SocialIdentityProviderJitProvAssignedGroups": SocialIdentityProviderJitProvAssignedGroups,
+    "SocialIdentityProviderRelayIdpParamMappings": SocialIdentityProviderRelayIdpParamMappings,
+    "SocialIdentityProviderSearchRequest": SocialIdentityProviderSearchRequest,
+    "SocialIdentityProviders": SocialIdentityProviders,
     "Tags": Tags,
     "User": User,
     "UserAttributesSetting": UserAttributesSetting,

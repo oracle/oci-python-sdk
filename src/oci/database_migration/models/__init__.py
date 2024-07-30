@@ -52,6 +52,7 @@ from .create_oracle_initial_load_settings import CreateOracleInitialLoadSettings
 from .create_oracle_migration_details import CreateOracleMigrationDetails
 from .create_oracle_nfs_data_transfer_medium_details import CreateOracleNfsDataTransferMediumDetails
 from .create_oracle_object_storage_data_transfer_medium_details import CreateOracleObjectStorageDataTransferMediumDetails
+from .create_parameter_file_version_details import CreateParameterFileVersionDetails
 from .create_replicat import CreateReplicat
 from .create_target_type_tablespace_details import CreateTargetTypeTablespaceDetails
 from .curl_transfer_details import CurlTransferDetails
@@ -120,6 +121,9 @@ from .oracle_migration_object_collection import OracleMigrationObjectCollection
 from .oracle_migration_summary import OracleMigrationSummary
 from .oracle_nfs_data_transfer_medium_details import OracleNfsDataTransferMediumDetails
 from .oracle_object_storage_data_transfer_medium_details import OracleObjectStorageDataTransferMediumDetails
+from .parameter_file_version import ParameterFileVersion
+from .parameter_file_version_collection import ParameterFileVersionCollection
+from .parameter_file_version_summary import ParameterFileVersionSummary
 from .phase_extract_entry import PhaseExtractEntry
 from .phase_status import PhaseStatus
 from .replicat import Replicat
@@ -223,6 +227,7 @@ database_migration_type_mapping = {
     "CreateOracleMigrationDetails": CreateOracleMigrationDetails,
     "CreateOracleNfsDataTransferMediumDetails": CreateOracleNfsDataTransferMediumDetails,
     "CreateOracleObjectStorageDataTransferMediumDetails": CreateOracleObjectStorageDataTransferMediumDetails,
+    "CreateParameterFileVersionDetails": CreateParameterFileVersionDetails,
     "CreateReplicat": CreateReplicat,
     "CreateTargetTypeTablespaceDetails": CreateTargetTypeTablespaceDetails,
     "CurlTransferDetails": CurlTransferDetails,
@@ -291,6 +296,9 @@ database_migration_type_mapping = {
     "OracleMigrationSummary": OracleMigrationSummary,
     "OracleNfsDataTransferMediumDetails": OracleNfsDataTransferMediumDetails,
     "OracleObjectStorageDataTransferMediumDetails": OracleObjectStorageDataTransferMediumDetails,
+    "ParameterFileVersion": ParameterFileVersion,
+    "ParameterFileVersionCollection": ParameterFileVersionCollection,
+    "ParameterFileVersionSummary": ParameterFileVersionSummary,
     "PhaseExtractEntry": PhaseExtractEntry,
     "PhaseStatus": PhaseStatus,
     "Replicat": Replicat,

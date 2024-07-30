@@ -32,6 +32,22 @@ class ExtensionSocialIdentityProvider(object):
             The value to assign to the account_linking_enabled property of this ExtensionSocialIdentityProvider.
         :type account_linking_enabled: bool
 
+        :param auto_redirect_enabled:
+            The value to assign to the auto_redirect_enabled property of this ExtensionSocialIdentityProvider.
+        :type auto_redirect_enabled: bool
+
+        :param social_jit_provisioning_enabled:
+            The value to assign to the social_jit_provisioning_enabled property of this ExtensionSocialIdentityProvider.
+        :type social_jit_provisioning_enabled: bool
+
+        :param jit_prov_group_static_list_enabled:
+            The value to assign to the jit_prov_group_static_list_enabled property of this ExtensionSocialIdentityProvider.
+        :type jit_prov_group_static_list_enabled: bool
+
+        :param jit_prov_assigned_groups:
+            The value to assign to the jit_prov_assigned_groups property of this ExtensionSocialIdentityProvider.
+        :type jit_prov_assigned_groups: list[oci.identity_domains.models.IdentityProviderJitProvAssignedGroups]
+
         :param registration_enabled:
             The value to assign to the registration_enabled property of this ExtensionSocialIdentityProvider.
         :type registration_enabled: bool
@@ -101,6 +117,10 @@ class ExtensionSocialIdentityProvider(object):
         """
         self.swagger_types = {
             'account_linking_enabled': 'bool',
+            'auto_redirect_enabled': 'bool',
+            'social_jit_provisioning_enabled': 'bool',
+            'jit_prov_group_static_list_enabled': 'bool',
+            'jit_prov_assigned_groups': 'list[IdentityProviderJitProvAssignedGroups]',
             'registration_enabled': 'bool',
             'status': 'str',
             'authz_url': 'str',
@@ -121,6 +141,10 @@ class ExtensionSocialIdentityProvider(object):
 
         self.attribute_map = {
             'account_linking_enabled': 'accountLinkingEnabled',
+            'auto_redirect_enabled': 'autoRedirectEnabled',
+            'social_jit_provisioning_enabled': 'socialJitProvisioningEnabled',
+            'jit_prov_group_static_list_enabled': 'jitProvGroupStaticListEnabled',
+            'jit_prov_assigned_groups': 'jitProvAssignedGroups',
             'registration_enabled': 'registrationEnabled',
             'status': 'status',
             'authz_url': 'authzUrl',
@@ -140,6 +164,10 @@ class ExtensionSocialIdentityProvider(object):
         }
 
         self._account_linking_enabled = None
+        self._auto_redirect_enabled = None
+        self._social_jit_provisioning_enabled = None
+        self._jit_prov_group_static_list_enabled = None
+        self._jit_prov_assigned_groups = None
         self._registration_enabled = None
         self._status = None
         self._authz_url = None
@@ -204,6 +232,198 @@ class ExtensionSocialIdentityProvider(object):
         :type: bool
         """
         self._account_linking_enabled = account_linking_enabled
+
+    @property
+    def auto_redirect_enabled(self):
+        """
+        Gets the auto_redirect_enabled of this ExtensionSocialIdentityProvider.
+        Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
+
+        **Added In:** 2310202314
+
+        **SCIM++ Properties:**
+         - caseExact: true
+         - idcsSearchable: true
+         - multiValued: false
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: boolean
+         - uniqueness: none
+
+
+        :return: The auto_redirect_enabled of this ExtensionSocialIdentityProvider.
+        :rtype: bool
+        """
+        return self._auto_redirect_enabled
+
+    @auto_redirect_enabled.setter
+    def auto_redirect_enabled(self, auto_redirect_enabled):
+        """
+        Sets the auto_redirect_enabled of this ExtensionSocialIdentityProvider.
+        Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
+
+        **Added In:** 2310202314
+
+        **SCIM++ Properties:**
+         - caseExact: true
+         - idcsSearchable: true
+         - multiValued: false
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: boolean
+         - uniqueness: none
+
+
+        :param auto_redirect_enabled: The auto_redirect_enabled of this ExtensionSocialIdentityProvider.
+        :type: bool
+        """
+        self._auto_redirect_enabled = auto_redirect_enabled
+
+    @property
+    def social_jit_provisioning_enabled(self):
+        """
+        Gets the social_jit_provisioning_enabled of this ExtensionSocialIdentityProvider.
+        Whether Social JIT Provisioning is enabled
+
+        **Added In:** 2307282043
+
+        **SCIM++ Properties:**
+         - caseExact: true
+         - idcsSearchable: true
+         - multiValued: false
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: boolean
+         - uniqueness: none
+
+
+        :return: The social_jit_provisioning_enabled of this ExtensionSocialIdentityProvider.
+        :rtype: bool
+        """
+        return self._social_jit_provisioning_enabled
+
+    @social_jit_provisioning_enabled.setter
+    def social_jit_provisioning_enabled(self, social_jit_provisioning_enabled):
+        """
+        Sets the social_jit_provisioning_enabled of this ExtensionSocialIdentityProvider.
+        Whether Social JIT Provisioning is enabled
+
+        **Added In:** 2307282043
+
+        **SCIM++ Properties:**
+         - caseExact: true
+         - idcsSearchable: true
+         - multiValued: false
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: boolean
+         - uniqueness: none
+
+
+        :param social_jit_provisioning_enabled: The social_jit_provisioning_enabled of this ExtensionSocialIdentityProvider.
+        :type: bool
+        """
+        self._social_jit_provisioning_enabled = social_jit_provisioning_enabled
+
+    @property
+    def jit_prov_group_static_list_enabled(self):
+        """
+        Gets the jit_prov_group_static_list_enabled of this ExtensionSocialIdentityProvider.
+        Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static list
+
+        **Added In:** 2310202314
+
+        **SCIM++ Properties:**
+         - caseExact: false
+         - idcsSearchable: false
+         - multiValued: false
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: boolean
+         - uniqueness: none
+
+
+        :return: The jit_prov_group_static_list_enabled of this ExtensionSocialIdentityProvider.
+        :rtype: bool
+        """
+        return self._jit_prov_group_static_list_enabled
+
+    @jit_prov_group_static_list_enabled.setter
+    def jit_prov_group_static_list_enabled(self, jit_prov_group_static_list_enabled):
+        """
+        Sets the jit_prov_group_static_list_enabled of this ExtensionSocialIdentityProvider.
+        Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static list
+
+        **Added In:** 2310202314
+
+        **SCIM++ Properties:**
+         - caseExact: false
+         - idcsSearchable: false
+         - multiValued: false
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: boolean
+         - uniqueness: none
+
+
+        :param jit_prov_group_static_list_enabled: The jit_prov_group_static_list_enabled of this ExtensionSocialIdentityProvider.
+        :type: bool
+        """
+        self._jit_prov_group_static_list_enabled = jit_prov_group_static_list_enabled
+
+    @property
+    def jit_prov_assigned_groups(self):
+        """
+        Gets the jit_prov_assigned_groups of this ExtensionSocialIdentityProvider.
+        Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
+
+        **Added In:** 2310202314
+
+        **SCIM++ Properties:**
+         - idcsCompositeKey: [value]
+         - idcsSearchable: false
+         - multiValued: true
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: complex
+         - uniqueness: none
+
+
+        :return: The jit_prov_assigned_groups of this ExtensionSocialIdentityProvider.
+        :rtype: list[oci.identity_domains.models.IdentityProviderJitProvAssignedGroups]
+        """
+        return self._jit_prov_assigned_groups
+
+    @jit_prov_assigned_groups.setter
+    def jit_prov_assigned_groups(self, jit_prov_assigned_groups):
+        """
+        Sets the jit_prov_assigned_groups of this ExtensionSocialIdentityProvider.
+        Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
+
+        **Added In:** 2310202314
+
+        **SCIM++ Properties:**
+         - idcsCompositeKey: [value]
+         - idcsSearchable: false
+         - multiValued: true
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: complex
+         - uniqueness: none
+
+
+        :param jit_prov_assigned_groups: The jit_prov_assigned_groups of this ExtensionSocialIdentityProvider.
+        :type: list[oci.identity_domains.models.IdentityProviderJitProvAssignedGroups]
+        """
+        self._jit_prov_assigned_groups = jit_prov_assigned_groups
 
     @property
     def registration_enabled(self):

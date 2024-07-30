@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.130.0 - 2024-07-30
+====================
+
+Added 
+----- 
+* Support for cluster placement groups on get operations in the Database service 
+* Support for baseline metric for imported resources and metric extensions in the Stack Monitoring service 
+* Support for implicit JIT and group membership provisioning during OpenID connect flow in the Identity Domains service 
+* Support for realtime speech and customizations in the AI Speech service 
+* Support for self-service instance maintenance API in the Compute service
+* Support for GoldenGate suspend phase in the Database Migration service 
+* Support for creating custom alert policies in the Data Safe service 
+* Support for tunnel inspection in the Network firewall service 
+* Support for diagnostics collection preferences and custom GI images in the Exadata Fleet Update service 
+* Support for Resource Principals v2.1.2   
+
+Breaking 
+-------- 
+* Property `service_principals` was removed from model `IdentityPropagationTrust` in the Identity Domains service   
+
+====================
 2.129.4 - 2024-07-23
 ====================
 

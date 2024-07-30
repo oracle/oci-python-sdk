@@ -154,6 +154,10 @@ class FsuCycle(object):
             The value to assign to the apply_action_schedule property of this FsuCycle.
         :type apply_action_schedule: oci.fleet_software_update.models.ScheduleDetails
 
+        :param diagnostics_collection:
+            The value to assign to the diagnostics_collection property of this FsuCycle.
+        :type diagnostics_collection: oci.fleet_software_update.models.DiagnosticsCollectionDetails
+
         :param time_created:
             The value to assign to the time_created property of this FsuCycle.
         :type time_created: datetime
@@ -203,6 +207,7 @@ class FsuCycle(object):
             'batching_strategy': 'BatchingStrategyDetails',
             'stage_action_schedule': 'ScheduleDetails',
             'apply_action_schedule': 'ScheduleDetails',
+            'diagnostics_collection': 'DiagnosticsCollectionDetails',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'time_finished': 'datetime',
@@ -227,6 +232,7 @@ class FsuCycle(object):
             'batching_strategy': 'batchingStrategy',
             'stage_action_schedule': 'stageActionSchedule',
             'apply_action_schedule': 'applyActionSchedule',
+            'diagnostics_collection': 'diagnosticsCollection',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'time_finished': 'timeFinished',
@@ -250,6 +256,7 @@ class FsuCycle(object):
         self._batching_strategy = None
         self._stage_action_schedule = None
         self._apply_action_schedule = None
+        self._diagnostics_collection = None
         self._time_created = None
         self._time_updated = None
         self._time_finished = None
@@ -587,6 +594,26 @@ class FsuCycle(object):
         :type: oci.fleet_software_update.models.ScheduleDetails
         """
         self._apply_action_schedule = apply_action_schedule
+
+    @property
+    def diagnostics_collection(self):
+        """
+        Gets the diagnostics_collection of this FsuCycle.
+
+        :return: The diagnostics_collection of this FsuCycle.
+        :rtype: oci.fleet_software_update.models.DiagnosticsCollectionDetails
+        """
+        return self._diagnostics_collection
+
+    @diagnostics_collection.setter
+    def diagnostics_collection(self, diagnostics_collection):
+        """
+        Sets the diagnostics_collection of this FsuCycle.
+
+        :param diagnostics_collection: The diagnostics_collection of this FsuCycle.
+        :type: oci.fleet_software_update.models.DiagnosticsCollectionDetails
+        """
+        self._diagnostics_collection = diagnostics_collection
 
     @property
     def time_created(self):

@@ -45,6 +45,10 @@ class RedisCluster(object):
     #: This constant has a value of "V7_0_5"
     SOFTWARE_VERSION_V7_0_5 = "V7_0_5"
 
+    #: A constant which can be used with the software_version property of a RedisCluster.
+    #: This constant has a value of "REDIS_7_0"
+    SOFTWARE_VERSION_REDIS_7_0 = "REDIS_7_0"
+
     def __init__(self, **kwargs):
         """
         Initializes a new RedisCluster object with values from keyword arguments.
@@ -98,7 +102,7 @@ class RedisCluster(object):
 
         :param software_version:
             The value to assign to the software_version property of this RedisCluster.
-            Allowed values for this property are: "V7_0_5", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "V7_0_5", "REDIS_7_0", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type software_version: str
 
@@ -486,7 +490,7 @@ class RedisCluster(object):
         **[Required]** Gets the software_version of this RedisCluster.
         The Redis version that the cluster is running.
 
-        Allowed values for this property are: "V7_0_5", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "V7_0_5", "REDIS_7_0", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -505,7 +509,7 @@ class RedisCluster(object):
         :param software_version: The software_version of this RedisCluster.
         :type: str
         """
-        allowed_values = ["V7_0_5"]
+        allowed_values = ["V7_0_5", "REDIS_7_0"]
         if not value_allowed_none_or_none_sentinel(software_version, allowed_values):
             software_version = 'UNKNOWN_ENUM_VALUE'
         self._software_version = software_version
@@ -618,7 +622,12 @@ class RedisCluster(object):
     def nsg_ids(self):
         """
         Gets the nsg_ids of this RedisCluster.
-        OCIDs of the NSGs to control access in the customer network
+        A list of Network Security Group (NSG) `OCIDs`__
+        associated with this cluster. For more information,
+        see `Using an NSG for Redis Clusters`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup
 
 
         :return: The nsg_ids of this RedisCluster.
@@ -630,7 +639,12 @@ class RedisCluster(object):
     def nsg_ids(self, nsg_ids):
         """
         Sets the nsg_ids of this RedisCluster.
-        OCIDs of the NSGs to control access in the customer network
+        A list of Network Security Group (NSG) `OCIDs`__
+        associated with this cluster. For more information,
+        see `Using an NSG for Redis Clusters`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup
 
 
         :param nsg_ids: The nsg_ids of this RedisCluster.

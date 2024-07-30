@@ -47,9 +47,11 @@ Network Firewall
     oci.network_firewall.models.CreateSslForwardProxyProfileDetails
     oci.network_firewall.models.CreateSslInboundInspectionProfileDetails
     oci.network_firewall.models.CreateTcpServiceDetails
+    oci.network_firewall.models.CreateTunnelInspectionRuleDetails
     oci.network_firewall.models.CreateUdpServiceDetails
     oci.network_firewall.models.CreateUrlListDetails
     oci.network_firewall.models.CreateVaultMappedSecretDetails
+    oci.network_firewall.models.CreateVxlanInspectionRuleDetails
     oci.network_firewall.models.DecryptionProfile
     oci.network_firewall.models.DecryptionProfileSummary
     oci.network_firewall.models.DecryptionProfileSummaryCollection
@@ -86,6 +88,9 @@ Network Firewall
     oci.network_firewall.models.SslForwardProxyProfile
     oci.network_firewall.models.SslInboundInspectionProfile
     oci.network_firewall.models.TcpService
+    oci.network_firewall.models.TunnelInspectionRule
+    oci.network_firewall.models.TunnelInspectionRuleSummary
+    oci.network_firewall.models.TunnelInspectionRuleSummaryCollection
     oci.network_firewall.models.UdpService
     oci.network_firewall.models.UpdateAddressListDetails
     oci.network_firewall.models.UpdateApplicationDetails
@@ -105,14 +110,20 @@ Network Firewall
     oci.network_firewall.models.UpdateSslForwardProxyProfileDetails
     oci.network_firewall.models.UpdateSslInboundInspectionProfileDetails
     oci.network_firewall.models.UpdateTcpServiceDetails
+    oci.network_firewall.models.UpdateTunnelInspectionRuleDetails
     oci.network_firewall.models.UpdateUdpServiceDetails
     oci.network_firewall.models.UpdateUrlListDetails
     oci.network_firewall.models.UpdateVaultMappedSecretDetails
+    oci.network_firewall.models.UpdateVxlanInspectionRuleDetails
     oci.network_firewall.models.UrlList
     oci.network_firewall.models.UrlListSummary
     oci.network_firewall.models.UrlListSummaryCollection
     oci.network_firewall.models.UrlPattern
     oci.network_firewall.models.VaultMappedSecret
+    oci.network_firewall.models.VxlanInspectionRule
+    oci.network_firewall.models.VxlanInspectionRuleMatchCriteria
+    oci.network_firewall.models.VxlanInspectionRuleProfile
+    oci.network_firewall.models.VxlanInspectionRuleSummary
     oci.network_firewall.models.WorkRequest
     oci.network_firewall.models.WorkRequestError
     oci.network_firewall.models.WorkRequestErrorCollection

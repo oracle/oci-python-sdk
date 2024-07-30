@@ -122,6 +122,10 @@ class AlertPolicySummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this AlertPolicySummary.
+        :type lifecycle_details: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this AlertPolicySummary.
         :type freeform_tags: dict(str, str)
@@ -142,6 +146,7 @@ class AlertPolicySummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
+            'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -157,6 +162,7 @@ class AlertPolicySummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
+            'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -171,6 +177,7 @@ class AlertPolicySummary(object):
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
+        self._lifecycle_details = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -439,6 +446,30 @@ class AlertPolicySummary(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this AlertPolicySummary.
+        Details about the current state of the alert policy.
+
+
+        :return: The lifecycle_details of this AlertPolicySummary.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this AlertPolicySummary.
+        Details about the current state of the alert policy.
+
+
+        :param lifecycle_details: The lifecycle_details of this AlertPolicySummary.
+        :type: str
+        """
+        self._lifecycle_details = lifecycle_details
 
     @property
     def freeform_tags(self):

@@ -810,6 +810,10 @@ class AutonomousDatabaseSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type net_services_architecture: str
 
+        :param cluster_placement_group_id:
+            The value to assign to the cluster_placement_group_id property of this AutonomousDatabaseSummary.
+        :type cluster_placement_group_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -928,7 +932,8 @@ class AutonomousDatabaseSummary(object):
             'disaster_recovery_region_type': 'str',
             'time_disaster_recovery_role_changed': 'datetime',
             'remote_disaster_recovery_configuration': 'DisasterRecoveryConfiguration',
-            'net_services_architecture': 'str'
+            'net_services_architecture': 'str',
+            'cluster_placement_group_id': 'str'
         }
 
         self.attribute_map = {
@@ -1048,7 +1053,8 @@ class AutonomousDatabaseSummary(object):
             'disaster_recovery_region_type': 'disasterRecoveryRegionType',
             'time_disaster_recovery_role_changed': 'timeDisasterRecoveryRoleChanged',
             'remote_disaster_recovery_configuration': 'remoteDisasterRecoveryConfiguration',
-            'net_services_architecture': 'netServicesArchitecture'
+            'net_services_architecture': 'netServicesArchitecture',
+            'cluster_placement_group_id': 'clusterPlacementGroupId'
         }
 
         self._id = None
@@ -1168,6 +1174,7 @@ class AutonomousDatabaseSummary(object):
         self._time_disaster_recovery_role_changed = None
         self._remote_disaster_recovery_configuration = None
         self._net_services_architecture = None
+        self._cluster_placement_group_id = None
 
     @property
     def id(self):
@@ -4376,6 +4383,34 @@ class AutonomousDatabaseSummary(object):
         if not value_allowed_none_or_none_sentinel(net_services_architecture, allowed_values):
             net_services_architecture = 'UNKNOWN_ENUM_VALUE'
         self._net_services_architecture = net_services_architecture
+
+    @property
+    def cluster_placement_group_id(self):
+        """
+        Gets the cluster_placement_group_id of this AutonomousDatabaseSummary.
+        The `OCID`__ of the cluster placement group of the Autonomous Serverless Database.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The cluster_placement_group_id of this AutonomousDatabaseSummary.
+        :rtype: str
+        """
+        return self._cluster_placement_group_id
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, cluster_placement_group_id):
+        """
+        Sets the cluster_placement_group_id of this AutonomousDatabaseSummary.
+        The `OCID`__ of the cluster placement group of the Autonomous Serverless Database.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param cluster_placement_group_id: The cluster_placement_group_id of this AutonomousDatabaseSummary.
+        :type: str
+        """
+        self._cluster_placement_group_id = cluster_placement_group_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

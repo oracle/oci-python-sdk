@@ -7,15 +7,49 @@
 from __future__ import absolute_import
 
 from .audio_format_details import AudioFormatDetails
+from .change_customization_compartment_details import ChangeCustomizationCompartmentDetails
 from .change_transcription_job_compartment_details import ChangeTranscriptionJobCompartmentDetails
+from .create_customization_details import CreateCustomizationDetails
+from .create_realtime_session_token_details import CreateRealtimeSessionTokenDetails
 from .create_transcription_job_details import CreateTranscriptionJobDetails
+from .customization import Customization
+from .customization_collection import CustomizationCollection
+from .customization_dataset_details import CustomizationDatasetDetails
+from .customization_inference import CustomizationInference
+from .customization_inference_entity import CustomizationInferenceEntity
+from .customization_model_details import CustomizationModelDetails
+from .customization_referenced_entities import CustomizationReferencedEntities
+from .customization_summary import CustomizationSummary
 from .diarization import Diarization
+from .entity import Entity
+from .entity_list import EntityList
+from .entity_list_dataset import EntityListDataset
 from .input_location import InputLocation
+from .location_details import LocationDetails
+from .object_list_dataset import ObjectListDataset
 from .object_list_file_input_location import ObjectListFileInputLocation
 from .object_list_inline_input_location import ObjectListInlineInputLocation
 from .object_location import ObjectLocation
+from .object_storage_dataset import ObjectStorageDataset
 from .output_location import OutputLocation
 from .profanity_transcription_filter import ProfanityTranscriptionFilter
+from .pronunciation import Pronunciation
+from .realtime_message import RealtimeMessage
+from .realtime_message_ack_audio import RealtimeMessageAckAudio
+from .realtime_message_ack_audio_details import RealtimeMessageAckAudioDetails
+from .realtime_message_authentication import RealtimeMessageAuthentication
+from .realtime_message_authentication_credentials import RealtimeMessageAuthenticationCredentials
+from .realtime_message_authentication_token import RealtimeMessageAuthenticationToken
+from .realtime_message_connect import RealtimeMessageConnect
+from .realtime_message_error import RealtimeMessageError
+from .realtime_message_out import RealtimeMessageOut
+from .realtime_message_result import RealtimeMessageResult
+from .realtime_message_result_transcription import RealtimeMessageResultTranscription
+from .realtime_message_result_transcription_token import RealtimeMessageResultTranscriptionToken
+from .realtime_message_send_final_result import RealtimeMessageSendFinalResult
+from .realtime_model_details import RealtimeModelDetails
+from .realtime_parameters import RealtimeParameters
+from .realtime_session_token import RealtimeSessionToken
 from .transcription_filter import TranscriptionFilter
 from .transcription_job import TranscriptionJob
 from .transcription_job_collection import TranscriptionJobCollection
@@ -26,20 +60,55 @@ from .transcription_settings import TranscriptionSettings
 from .transcription_task import TranscriptionTask
 from .transcription_task_collection import TranscriptionTaskCollection
 from .transcription_task_summary import TranscriptionTaskSummary
+from .update_customization_details import UpdateCustomizationDetails
 from .update_transcription_job_details import UpdateTranscriptionJobDetails
 
 # Maps type names to classes for ai_speech services.
 ai_speech_type_mapping = {
     "AudioFormatDetails": AudioFormatDetails,
+    "ChangeCustomizationCompartmentDetails": ChangeCustomizationCompartmentDetails,
     "ChangeTranscriptionJobCompartmentDetails": ChangeTranscriptionJobCompartmentDetails,
+    "CreateCustomizationDetails": CreateCustomizationDetails,
+    "CreateRealtimeSessionTokenDetails": CreateRealtimeSessionTokenDetails,
     "CreateTranscriptionJobDetails": CreateTranscriptionJobDetails,
+    "Customization": Customization,
+    "CustomizationCollection": CustomizationCollection,
+    "CustomizationDatasetDetails": CustomizationDatasetDetails,
+    "CustomizationInference": CustomizationInference,
+    "CustomizationInferenceEntity": CustomizationInferenceEntity,
+    "CustomizationModelDetails": CustomizationModelDetails,
+    "CustomizationReferencedEntities": CustomizationReferencedEntities,
+    "CustomizationSummary": CustomizationSummary,
     "Diarization": Diarization,
+    "Entity": Entity,
+    "EntityList": EntityList,
+    "EntityListDataset": EntityListDataset,
     "InputLocation": InputLocation,
+    "LocationDetails": LocationDetails,
+    "ObjectListDataset": ObjectListDataset,
     "ObjectListFileInputLocation": ObjectListFileInputLocation,
     "ObjectListInlineInputLocation": ObjectListInlineInputLocation,
     "ObjectLocation": ObjectLocation,
+    "ObjectStorageDataset": ObjectStorageDataset,
     "OutputLocation": OutputLocation,
     "ProfanityTranscriptionFilter": ProfanityTranscriptionFilter,
+    "Pronunciation": Pronunciation,
+    "RealtimeMessage": RealtimeMessage,
+    "RealtimeMessageAckAudio": RealtimeMessageAckAudio,
+    "RealtimeMessageAckAudioDetails": RealtimeMessageAckAudioDetails,
+    "RealtimeMessageAuthentication": RealtimeMessageAuthentication,
+    "RealtimeMessageAuthenticationCredentials": RealtimeMessageAuthenticationCredentials,
+    "RealtimeMessageAuthenticationToken": RealtimeMessageAuthenticationToken,
+    "RealtimeMessageConnect": RealtimeMessageConnect,
+    "RealtimeMessageError": RealtimeMessageError,
+    "RealtimeMessageOut": RealtimeMessageOut,
+    "RealtimeMessageResult": RealtimeMessageResult,
+    "RealtimeMessageResultTranscription": RealtimeMessageResultTranscription,
+    "RealtimeMessageResultTranscriptionToken": RealtimeMessageResultTranscriptionToken,
+    "RealtimeMessageSendFinalResult": RealtimeMessageSendFinalResult,
+    "RealtimeModelDetails": RealtimeModelDetails,
+    "RealtimeParameters": RealtimeParameters,
+    "RealtimeSessionToken": RealtimeSessionToken,
     "TranscriptionFilter": TranscriptionFilter,
     "TranscriptionJob": TranscriptionJob,
     "TranscriptionJobCollection": TranscriptionJobCollection,
@@ -50,5 +119,6 @@ ai_speech_type_mapping = {
     "TranscriptionTask": TranscriptionTask,
     "TranscriptionTaskCollection": TranscriptionTaskCollection,
     "TranscriptionTaskSummary": TranscriptionTaskSummary,
+    "UpdateCustomizationDetails": UpdateCustomizationDetails,
     "UpdateTranscriptionJobDetails": UpdateTranscriptionJobDetails
 }

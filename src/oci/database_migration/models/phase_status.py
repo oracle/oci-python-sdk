@@ -123,6 +123,14 @@ class PhaseStatus(object):
     #: This constant has a value of "FAILED"
     STATUS_FAILED = "FAILED"
 
+    #: A constant which can be used with the editable_parameter_files property of a PhaseStatus.
+    #: This constant has a value of "EXTRACT"
+    EDITABLE_PARAMETER_FILES_EXTRACT = "EXTRACT"
+
+    #: A constant which can be used with the editable_parameter_files property of a PhaseStatus.
+    #: This constant has a value of "REPLICAT"
+    EDITABLE_PARAMETER_FILES_REPLICAT = "REPLICAT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PhaseStatus object with values from keyword arguments.
@@ -168,6 +176,16 @@ class PhaseStatus(object):
             The value to assign to the progress property of this PhaseStatus.
         :type progress: int
 
+        :param is_suspend_available:
+            The value to assign to the is_suspend_available property of this PhaseStatus.
+        :type is_suspend_available: bool
+
+        :param editable_parameter_files:
+            The value to assign to the editable_parameter_files property of this PhaseStatus.
+            Allowed values for items in this list are: "EXTRACT", "REPLICAT", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type editable_parameter_files: list[str]
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -178,7 +196,9 @@ class PhaseStatus(object):
             'action': 'str',
             'extract': 'list[PhaseExtractEntry]',
             'log_location': 'LogLocationBucketDetails',
-            'progress': 'int'
+            'progress': 'int',
+            'is_suspend_available': 'bool',
+            'editable_parameter_files': 'list[str]'
         }
 
         self.attribute_map = {
@@ -190,7 +210,9 @@ class PhaseStatus(object):
             'action': 'action',
             'extract': 'extract',
             'log_location': 'logLocation',
-            'progress': 'progress'
+            'progress': 'progress',
+            'is_suspend_available': 'isSuspendAvailable',
+            'editable_parameter_files': 'editableParameterFiles'
         }
 
         self._name = None
@@ -202,6 +224,8 @@ class PhaseStatus(object):
         self._extract = None
         self._log_location = None
         self._progress = None
+        self._is_suspend_available = None
+        self._editable_parameter_files = None
 
     @property
     def name(self):
@@ -426,6 +450,60 @@ class PhaseStatus(object):
         :type: int
         """
         self._progress = progress
+
+    @property
+    def is_suspend_available(self):
+        """
+        Gets the is_suspend_available of this PhaseStatus.
+        This is returned as true if the current phase can be suspended.
+
+
+        :return: The is_suspend_available of this PhaseStatus.
+        :rtype: bool
+        """
+        return self._is_suspend_available
+
+    @is_suspend_available.setter
+    def is_suspend_available(self, is_suspend_available):
+        """
+        Sets the is_suspend_available of this PhaseStatus.
+        This is returned as true if the current phase can be suspended.
+
+
+        :param is_suspend_available: The is_suspend_available of this PhaseStatus.
+        :type: bool
+        """
+        self._is_suspend_available = is_suspend_available
+
+    @property
+    def editable_parameter_files(self):
+        """
+        Gets the editable_parameter_files of this PhaseStatus.
+        Attribute that returns an array of names and types of GoldenGate configuration files that are available for read or update.
+
+        Allowed values for items in this list are: "EXTRACT", "REPLICAT", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The editable_parameter_files of this PhaseStatus.
+        :rtype: list[str]
+        """
+        return self._editable_parameter_files
+
+    @editable_parameter_files.setter
+    def editable_parameter_files(self, editable_parameter_files):
+        """
+        Sets the editable_parameter_files of this PhaseStatus.
+        Attribute that returns an array of names and types of GoldenGate configuration files that are available for read or update.
+
+
+        :param editable_parameter_files: The editable_parameter_files of this PhaseStatus.
+        :type: list[str]
+        """
+        allowed_values = ["EXTRACT", "REPLICAT"]
+        if editable_parameter_files:
+            editable_parameter_files[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in editable_parameter_files]
+        self._editable_parameter_files = editable_parameter_files
 
     def __repr__(self):
         return formatted_flat_dict(self)

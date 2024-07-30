@@ -74,6 +74,10 @@ class CreateAlertPolicyDetails(object):
             The value to assign to the compartment_id property of this CreateAlertPolicyDetails.
         :type compartment_id: str
 
+        :param alert_policy_rule_details:
+            The value to assign to the alert_policy_rule_details property of this CreateAlertPolicyDetails.
+        :type alert_policy_rule_details: list[oci.data_safe.models.CreateAlertPolicyRuleDetails]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateAlertPolicyDetails.
         :type freeform_tags: dict(str, str)
@@ -89,6 +93,7 @@ class CreateAlertPolicyDetails(object):
             'description': 'str',
             'severity': 'str',
             'compartment_id': 'str',
+            'alert_policy_rule_details': 'list[CreateAlertPolicyRuleDetails]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -99,6 +104,7 @@ class CreateAlertPolicyDetails(object):
             'description': 'description',
             'severity': 'severity',
             'compartment_id': 'compartmentId',
+            'alert_policy_rule_details': 'alertPolicyRuleDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -108,6 +114,7 @@ class CreateAlertPolicyDetails(object):
         self._description = None
         self._severity = None
         self._compartment_id = None
+        self._alert_policy_rule_details = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -244,6 +251,30 @@ class CreateAlertPolicyDetails(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def alert_policy_rule_details(self):
+        """
+        Gets the alert_policy_rule_details of this CreateAlertPolicyDetails.
+        The details of the alert policy rule.
+
+
+        :return: The alert_policy_rule_details of this CreateAlertPolicyDetails.
+        :rtype: list[oci.data_safe.models.CreateAlertPolicyRuleDetails]
+        """
+        return self._alert_policy_rule_details
+
+    @alert_policy_rule_details.setter
+    def alert_policy_rule_details(self, alert_policy_rule_details):
+        """
+        Sets the alert_policy_rule_details of this CreateAlertPolicyDetails.
+        The details of the alert policy rule.
+
+
+        :param alert_policy_rule_details: The alert_policy_rule_details of this CreateAlertPolicyDetails.
+        :type: list[oci.data_safe.models.CreateAlertPolicyRuleDetails]
+        """
+        self._alert_policy_rule_details = alert_policy_rule_details
 
     @property
     def freeform_tags(self):

@@ -227,6 +227,7 @@ Identity Domains
     oci.identity_domains.models.IdentityPropagationTrusts
     oci.identity_domains.models.IdentityProvider
     oci.identity_domains.models.IdentityProviderCorrelationPolicy
+    oci.identity_domains.models.IdentityProviderJitProvAssignedGroups
     oci.identity_domains.models.IdentityProviderJitUserProvAssignedGroups
     oci.identity_domains.models.IdentityProviderJitUserProvAttributes
     oci.identity_domains.models.IdentityProviderJitUserProvGroupMappings
@@ -409,6 +410,11 @@ Identity Domains
     oci.identity_domains.models.SmtpCredentialSearchRequest
     oci.identity_domains.models.SmtpCredentialUser
     oci.identity_domains.models.SmtpCredentials
+    oci.identity_domains.models.SocialIdentityProvider
+    oci.identity_domains.models.SocialIdentityProviderJitProvAssignedGroups
+    oci.identity_domains.models.SocialIdentityProviderRelayIdpParamMappings
+    oci.identity_domains.models.SocialIdentityProviderSearchRequest
+    oci.identity_domains.models.SocialIdentityProviders
     oci.identity_domains.models.Tags
     oci.identity_domains.models.User
     oci.identity_domains.models.UserAttributesSetting

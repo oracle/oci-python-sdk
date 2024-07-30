@@ -54,6 +54,10 @@ class CreatePatchFsuCycle(CreateFsuCycleDetails):
             The value to assign to the apply_action_schedule property of this CreatePatchFsuCycle.
         :type apply_action_schedule: oci.fleet_software_update.models.CreateScheduleDetails
 
+        :param diagnostics_collection:
+            The value to assign to the diagnostics_collection property of this CreatePatchFsuCycle.
+        :type diagnostics_collection: oci.fleet_software_update.models.DiagnosticsCollectionDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreatePatchFsuCycle.
         :type freeform_tags: dict(str, str)
@@ -88,6 +92,7 @@ class CreatePatchFsuCycle(CreateFsuCycleDetails):
             'batching_strategy': 'CreateBatchingStrategyDetails',
             'stage_action_schedule': 'CreateScheduleDetails',
             'apply_action_schedule': 'CreateScheduleDetails',
+            'diagnostics_collection': 'DiagnosticsCollectionDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'is_ignore_patches': 'bool',
@@ -105,6 +110,7 @@ class CreatePatchFsuCycle(CreateFsuCycleDetails):
             'batching_strategy': 'batchingStrategy',
             'stage_action_schedule': 'stageActionSchedule',
             'apply_action_schedule': 'applyActionSchedule',
+            'diagnostics_collection': 'diagnosticsCollection',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'is_ignore_patches': 'isIgnorePatches',
@@ -121,6 +127,7 @@ class CreatePatchFsuCycle(CreateFsuCycleDetails):
         self._batching_strategy = None
         self._stage_action_schedule = None
         self._apply_action_schedule = None
+        self._diagnostics_collection = None
         self._freeform_tags = None
         self._defined_tags = None
         self._is_ignore_patches = None

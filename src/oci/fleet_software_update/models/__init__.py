@@ -61,6 +61,7 @@ from .db_target_list_discovery import DbTargetListDiscovery
 from .db_unique_name_filter import DbUniqueNameFilter
 from .db_version_filter import DbVersionFilter
 from .defined_tag_filter_entry import DefinedTagFilterEntry
+from .diagnostics_collection_details import DiagnosticsCollectionDetails
 from .discovery_details import DiscoveryDetails
 from .discovery_details_summary import DiscoveryDetailsSummary
 from .failed_jobs_rollback_details import FailedJobsRollbackDetails
@@ -73,6 +74,7 @@ from .fsu_action_summary_collection import FsuActionSummaryCollection
 from .fsu_collection import FsuCollection
 from .fsu_collection_summary import FsuCollectionSummary
 from .fsu_collection_summary_collection import FsuCollectionSummaryCollection
+from .fsu_collection_target import FsuCollectionTarget
 from .fsu_cycle import FsuCycle
 from .fsu_cycle_summary import FsuCycleSummary
 from .fsu_cycle_summary_collection import FsuCycleSummaryCollection
@@ -218,6 +220,7 @@ fleet_software_update_type_mapping = {
     "DbUniqueNameFilter": DbUniqueNameFilter,
     "DbVersionFilter": DbVersionFilter,
     "DefinedTagFilterEntry": DefinedTagFilterEntry,
+    "DiagnosticsCollectionDetails": DiagnosticsCollectionDetails,
     "DiscoveryDetails": DiscoveryDetails,
     "DiscoveryDetailsSummary": DiscoveryDetailsSummary,
     "FailedJobsRollbackDetails": FailedJobsRollbackDetails,
@@ -230,6 +233,7 @@ fleet_software_update_type_mapping = {
     "FsuCollection": FsuCollection,
     "FsuCollectionSummary": FsuCollectionSummary,
     "FsuCollectionSummaryCollection": FsuCollectionSummaryCollection,
+    "FsuCollectionTarget": FsuCollectionTarget,
     "FsuCycle": FsuCycle,
     "FsuCycleSummary": FsuCycleSummary,
     "FsuCycleSummaryCollection": FsuCycleSummaryCollection,

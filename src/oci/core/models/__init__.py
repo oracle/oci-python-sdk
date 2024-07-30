@@ -347,6 +347,8 @@ from .instance_configuration_volume_source_from_volume_backup_details import Ins
 from .instance_configuration_volume_source_from_volume_details import InstanceConfigurationVolumeSourceFromVolumeDetails
 from .instance_console_connection import InstanceConsoleConnection
 from .instance_credentials import InstanceCredentials
+from .instance_maintenance_event import InstanceMaintenanceEvent
+from .instance_maintenance_event_summary import InstanceMaintenanceEventSummary
 from .instance_maintenance_reboot import InstanceMaintenanceReboot
 from .instance_options import InstanceOptions
 from .instance_pool import InstancePool
@@ -528,6 +530,7 @@ from .update_instance_availability_config_details import UpdateInstanceAvailabil
 from .update_instance_configuration_details import UpdateInstanceConfigurationDetails
 from .update_instance_console_connection_details import UpdateInstanceConsoleConnectionDetails
 from .update_instance_details import UpdateInstanceDetails
+from .update_instance_maintenance_event_details import UpdateInstanceMaintenanceEventDetails
 from .update_instance_platform_config import UpdateInstancePlatformConfig
 from .update_instance_pool_details import UpdateInstancePoolDetails
 from .update_instance_pool_placement_configuration_details import UpdateInstancePoolPlacementConfigurationDetails
@@ -949,6 +952,8 @@ core_type_mapping = {
     "InstanceConfigurationVolumeSourceFromVolumeDetails": InstanceConfigurationVolumeSourceFromVolumeDetails,
     "InstanceConsoleConnection": InstanceConsoleConnection,
     "InstanceCredentials": InstanceCredentials,
+    "InstanceMaintenanceEvent": InstanceMaintenanceEvent,
+    "InstanceMaintenanceEventSummary": InstanceMaintenanceEventSummary,
     "InstanceMaintenanceReboot": InstanceMaintenanceReboot,
     "InstanceOptions": InstanceOptions,
     "InstancePool": InstancePool,
@@ -1130,6 +1135,7 @@ core_type_mapping = {
     "UpdateInstanceConfigurationDetails": UpdateInstanceConfigurationDetails,
     "UpdateInstanceConsoleConnectionDetails": UpdateInstanceConsoleConnectionDetails,
     "UpdateInstanceDetails": UpdateInstanceDetails,
+    "UpdateInstanceMaintenanceEventDetails": UpdateInstanceMaintenanceEventDetails,
     "UpdateInstancePlatformConfig": UpdateInstancePlatformConfig,
     "UpdateInstancePoolDetails": UpdateInstancePoolDetails,
     "UpdateInstancePoolPlacementConfigurationDetails": UpdateInstancePoolPlacementConfigurationDetails,
