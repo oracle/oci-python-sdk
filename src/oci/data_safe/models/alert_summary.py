@@ -154,6 +154,14 @@ class AlertSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param alert_policy_rule_key:
+            The value to assign to the alert_policy_rule_key property of this AlertSummary.
+        :type alert_policy_rule_key: str
+
+        :param alert_policy_rule_name:
+            The value to assign to the alert_policy_rule_name property of this AlertSummary.
+        :type alert_policy_rule_name: str
+
         :param feature_details:
             The value to assign to the feature_details property of this AlertSummary.
         :type feature_details: dict(str, dict(str, object))
@@ -184,6 +192,8 @@ class AlertSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
+            'alert_policy_rule_key': 'str',
+            'alert_policy_rule_name': 'str',
             'feature_details': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -206,6 +216,8 @@ class AlertSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
+            'alert_policy_rule_key': 'alertPolicyRuleKey',
+            'alert_policy_rule_name': 'alertPolicyRuleName',
             'feature_details': 'featureDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -227,6 +239,8 @@ class AlertSummary(object):
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
+        self._alert_policy_rule_key = None
+        self._alert_policy_rule_name = None
         self._feature_details = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -656,6 +670,54 @@ class AlertSummary(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def alert_policy_rule_key(self):
+        """
+        Gets the alert_policy_rule_key of this AlertSummary.
+        The key of the rule of alert policy that triggered alert.
+
+
+        :return: The alert_policy_rule_key of this AlertSummary.
+        :rtype: str
+        """
+        return self._alert_policy_rule_key
+
+    @alert_policy_rule_key.setter
+    def alert_policy_rule_key(self, alert_policy_rule_key):
+        """
+        Sets the alert_policy_rule_key of this AlertSummary.
+        The key of the rule of alert policy that triggered alert.
+
+
+        :param alert_policy_rule_key: The alert_policy_rule_key of this AlertSummary.
+        :type: str
+        """
+        self._alert_policy_rule_key = alert_policy_rule_key
+
+    @property
+    def alert_policy_rule_name(self):
+        """
+        Gets the alert_policy_rule_name of this AlertSummary.
+        The display name of the rule of alert policy that triggered alert.
+
+
+        :return: The alert_policy_rule_name of this AlertSummary.
+        :rtype: str
+        """
+        return self._alert_policy_rule_name
+
+    @alert_policy_rule_name.setter
+    def alert_policy_rule_name(self, alert_policy_rule_name):
+        """
+        Sets the alert_policy_rule_name of this AlertSummary.
+        The display name of the rule of alert policy that triggered alert.
+
+
+        :param alert_policy_rule_name: The alert_policy_rule_name of this AlertSummary.
+        :type: str
+        """
+        self._alert_policy_rule_name = alert_policy_rule_name
 
     @property
     def feature_details(self):

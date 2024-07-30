@@ -40,25 +40,32 @@ class CloudVmClusterTargetSummary(TargetDetails):
             The value to assign to the infrastructure_id property of this CloudVmClusterTargetSummary.
         :type infrastructure_id: str
 
+        :param software_image_id:
+            The value to assign to the software_image_id property of this CloudVmClusterTargetSummary.
+        :type software_image_id: str
+
         """
         self.swagger_types = {
             'entity_type': 'str',
             'id': 'str',
             'compartment_id': 'str',
-            'infrastructure_id': 'str'
+            'infrastructure_id': 'str',
+            'software_image_id': 'str'
         }
 
         self.attribute_map = {
             'entity_type': 'entityType',
             'id': 'id',
             'compartment_id': 'compartmentId',
-            'infrastructure_id': 'infrastructureId'
+            'infrastructure_id': 'infrastructureId',
+            'software_image_id': 'softwareImageId'
         }
 
         self._entity_type = None
         self._id = None
         self._compartment_id = None
         self._infrastructure_id = None
+        self._software_image_id = None
         self._entity_type = 'CLOUDVMCLUSTER'
 
     @property
@@ -84,6 +91,30 @@ class CloudVmClusterTargetSummary(TargetDetails):
         :type: str
         """
         self._infrastructure_id = infrastructure_id
+
+    @property
+    def software_image_id(self):
+        """
+        Gets the software_image_id of this CloudVmClusterTargetSummary.
+        OCID of the Grid Infrastructure software image.
+
+
+        :return: The software_image_id of this CloudVmClusterTargetSummary.
+        :rtype: str
+        """
+        return self._software_image_id
+
+    @software_image_id.setter
+    def software_image_id(self, software_image_id):
+        """
+        Sets the software_image_id of this CloudVmClusterTargetSummary.
+        OCID of the Grid Infrastructure software image.
+
+
+        :param software_image_id: The software_image_id of this CloudVmClusterTargetSummary.
+        :type: str
+        """
+        self._software_image_id = software_image_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

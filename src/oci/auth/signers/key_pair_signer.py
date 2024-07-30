@@ -17,8 +17,8 @@ class KeyPairSigner(oci.signer.AbstractBaseSigner):
     def __init__(self, rp_version, resource_id, tenancy_id, private_key_content, pass_phrase=None,
                  generic_headers=["date", "(request-target)", "host"],
                  body_headers=["content-length", "content-type", "x-content-sha256"]):
-        if rp_version == "2.1.1" and tenancy_id and resource_id:
-            self.api_key = "resource/v2.1.1/" + tenancy_id + "/" + resource_id
+        if (rp_version == "2.1.1" or rp_version == "2.1.2") and tenancy_id and resource_id:
+            self.api_key = f"resource/v{rp_version}/{tenancy_id}/{resource_id}"
         elif rp_version == "2.1" and resource_id:
             self.api_key = "resource/v2.1/" + resource_id
         else:

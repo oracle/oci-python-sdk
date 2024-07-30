@@ -85,7 +85,8 @@ optional arguments:
   -ds DATE_START     Start Date - format YYYY-MM-DD
   -de DATE_END       End Date - format YYYY-MM-DD, (Not Inclusive)
   -days DAYS         Add Days Combined with Start Date (de is ignored if specified)
-  -report REPORT     Report Type = PRODUCT / DAILY / REGION / SERVICE / RESOURCE / TENANT / SPECIAL / COMPARTMENT / ALL ( Default = ALL )
+  -g GRANULARITY     Granularity DAILY or MONTHLY (Default DAILY)
+  -report REPORT     Report Type = ALL / DATE / SERVICE / PRODUCT / REGION / RESOURCE / SPECIAL / TENANT / COMPARTMENT ( Default = ALL )
   -csv               Write to CSV files instead of output to the screen - usage_*.csv
 ```
 

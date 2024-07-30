@@ -363,6 +363,7 @@ from .udf_format_entry import UDFFormatEntry
 from .unset_security_assessment_baseline_details import UnsetSecurityAssessmentBaselineDetails
 from .unset_user_assessment_baseline_details import UnsetUserAssessmentBaselineDetails
 from .update_alert_details import UpdateAlertDetails
+from .update_alert_policy_details import UpdateAlertPolicyDetails
 from .update_alert_policy_rule_details import UpdateAlertPolicyRuleDetails
 from .update_audit_archive_retrieval_details import UpdateAuditArchiveRetrievalDetails
 from .update_audit_policy_details import UpdateAuditPolicyDetails
@@ -771,6 +772,7 @@ data_safe_type_mapping = {
     "UnsetSecurityAssessmentBaselineDetails": UnsetSecurityAssessmentBaselineDetails,
     "UnsetUserAssessmentBaselineDetails": UnsetUserAssessmentBaselineDetails,
     "UpdateAlertDetails": UpdateAlertDetails,
+    "UpdateAlertPolicyDetails": UpdateAlertPolicyDetails,
     "UpdateAlertPolicyRuleDetails": UpdateAlertPolicyRuleDetails,
     "UpdateAuditArchiveRetrievalDetails": UpdateAuditArchiveRetrievalDetails,
     "UpdateAuditPolicyDetails": UpdateAuditPolicyDetails,

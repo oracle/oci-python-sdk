@@ -28,22 +28,6 @@ class BaselineableMetric(object):
         Initializes a new BaselineableMetric object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param created_by:
-            The value to assign to the created_by property of this BaselineableMetric.
-        :type created_by: str
-
-        :param last_updated_by:
-            The value to assign to the last_updated_by property of this BaselineableMetric.
-        :type last_updated_by: str
-
-        :param time_created:
-            The value to assign to the time_created property of this BaselineableMetric.
-        :type time_created: datetime
-
-        :param time_last_updated:
-            The value to assign to the time_last_updated property of this BaselineableMetric.
-        :type time_last_updated: datetime
-
         :param id:
             The value to assign to the id property of this BaselineableMetric.
         :type id: str
@@ -78,9 +62,29 @@ class BaselineableMetric(object):
             The value to assign to the resource_group property of this BaselineableMetric.
         :type resource_group: str
 
+        :param resource_type:
+            The value to assign to the resource_type property of this BaselineableMetric.
+        :type resource_type: str
+
         :param is_out_of_box:
             The value to assign to the is_out_of_box property of this BaselineableMetric.
         :type is_out_of_box: bool
+
+        :param created_by:
+            The value to assign to the created_by property of this BaselineableMetric.
+        :type created_by: str
+
+        :param last_updated_by:
+            The value to assign to the last_updated_by property of this BaselineableMetric.
+        :type last_updated_by: str
+
+        :param time_created:
+            The value to assign to the time_created property of this BaselineableMetric.
+        :type time_created: datetime
+
+        :param time_last_updated:
+            The value to assign to the time_last_updated property of this BaselineableMetric.
+        :type time_last_updated: datetime
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this BaselineableMetric.
@@ -96,10 +100,6 @@ class BaselineableMetric(object):
 
         """
         self.swagger_types = {
-            'created_by': 'str',
-            'last_updated_by': 'str',
-            'time_created': 'datetime',
-            'time_last_updated': 'datetime',
             'id': 'str',
             'lifecycle_state': 'str',
             'tenancy_id': 'str',
@@ -108,17 +108,18 @@ class BaselineableMetric(object):
             'column': 'str',
             'namespace': 'str',
             'resource_group': 'str',
+            'resource_type': 'str',
             'is_out_of_box': 'bool',
+            'created_by': 'str',
+            'last_updated_by': 'str',
+            'time_created': 'datetime',
+            'time_last_updated': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
-            'created_by': 'createdBy',
-            'last_updated_by': 'lastUpdatedBy',
-            'time_created': 'timeCreated',
-            'time_last_updated': 'timeLastUpdated',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'tenancy_id': 'tenancyId',
@@ -127,16 +128,17 @@ class BaselineableMetric(object):
             'column': 'column',
             'namespace': 'namespace',
             'resource_group': 'resourceGroup',
+            'resource_type': 'resourceType',
             'is_out_of_box': 'isOutOfBox',
+            'created_by': 'createdBy',
+            'last_updated_by': 'lastUpdatedBy',
+            'time_created': 'timeCreated',
+            'time_last_updated': 'timeLastUpdated',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
 
-        self._created_by = None
-        self._last_updated_by = None
-        self._time_created = None
-        self._time_last_updated = None
         self._id = None
         self._lifecycle_state = None
         self._tenancy_id = None
@@ -145,106 +147,15 @@ class BaselineableMetric(object):
         self._column = None
         self._namespace = None
         self._resource_group = None
+        self._resource_type = None
         self._is_out_of_box = None
+        self._created_by = None
+        self._last_updated_by = None
+        self._time_created = None
+        self._time_last_updated = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
-
-    @property
-    def created_by(self):
-        """
-        Gets the created_by of this BaselineableMetric.
-        Created user id
-
-
-        :return: The created_by of this BaselineableMetric.
-        :rtype: str
-        """
-        return self._created_by
-
-    @created_by.setter
-    def created_by(self, created_by):
-        """
-        Sets the created_by of this BaselineableMetric.
-        Created user id
-
-
-        :param created_by: The created_by of this BaselineableMetric.
-        :type: str
-        """
-        self._created_by = created_by
-
-    @property
-    def last_updated_by(self):
-        """
-        Gets the last_updated_by of this BaselineableMetric.
-        last Updated user id
-
-
-        :return: The last_updated_by of this BaselineableMetric.
-        :rtype: str
-        """
-        return self._last_updated_by
-
-    @last_updated_by.setter
-    def last_updated_by(self, last_updated_by):
-        """
-        Sets the last_updated_by of this BaselineableMetric.
-        last Updated user id
-
-
-        :param last_updated_by: The last_updated_by of this BaselineableMetric.
-        :type: str
-        """
-        self._last_updated_by = last_updated_by
-
-    @property
-    def time_created(self):
-        """
-        Gets the time_created of this BaselineableMetric.
-        creation date
-
-
-        :return: The time_created of this BaselineableMetric.
-        :rtype: datetime
-        """
-        return self._time_created
-
-    @time_created.setter
-    def time_created(self, time_created):
-        """
-        Sets the time_created of this BaselineableMetric.
-        creation date
-
-
-        :param time_created: The time_created of this BaselineableMetric.
-        :type: datetime
-        """
-        self._time_created = time_created
-
-    @property
-    def time_last_updated(self):
-        """
-        Gets the time_last_updated of this BaselineableMetric.
-        last updated time
-
-
-        :return: The time_last_updated of this BaselineableMetric.
-        :rtype: datetime
-        """
-        return self._time_last_updated
-
-    @time_last_updated.setter
-    def time_last_updated(self, time_last_updated):
-        """
-        Sets the time_last_updated of this BaselineableMetric.
-        last updated time
-
-
-        :param time_last_updated: The time_last_updated of this BaselineableMetric.
-        :type: datetime
-        """
-        self._time_last_updated = time_last_updated
 
     @property
     def id(self):
@@ -445,6 +356,30 @@ class BaselineableMetric(object):
         self._resource_group = resource_group
 
     @property
+    def resource_type(self):
+        """
+        Gets the resource_type of this BaselineableMetric.
+        Resource type of the metric
+
+
+        :return: The resource_type of this BaselineableMetric.
+        :rtype: str
+        """
+        return self._resource_type
+
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """
+        Sets the resource_type of this BaselineableMetric.
+        Resource type of the metric
+
+
+        :param resource_type: The resource_type of this BaselineableMetric.
+        :type: str
+        """
+        self._resource_type = resource_type
+
+    @property
     def is_out_of_box(self):
         """
         **[Required]** Gets the is_out_of_box of this BaselineableMetric.
@@ -467,6 +402,102 @@ class BaselineableMetric(object):
         :type: bool
         """
         self._is_out_of_box = is_out_of_box
+
+    @property
+    def created_by(self):
+        """
+        Gets the created_by of this BaselineableMetric.
+        Created user id
+
+
+        :return: The created_by of this BaselineableMetric.
+        :rtype: str
+        """
+        return self._created_by
+
+    @created_by.setter
+    def created_by(self, created_by):
+        """
+        Sets the created_by of this BaselineableMetric.
+        Created user id
+
+
+        :param created_by: The created_by of this BaselineableMetric.
+        :type: str
+        """
+        self._created_by = created_by
+
+    @property
+    def last_updated_by(self):
+        """
+        Gets the last_updated_by of this BaselineableMetric.
+        last Updated user id
+
+
+        :return: The last_updated_by of this BaselineableMetric.
+        :rtype: str
+        """
+        return self._last_updated_by
+
+    @last_updated_by.setter
+    def last_updated_by(self, last_updated_by):
+        """
+        Sets the last_updated_by of this BaselineableMetric.
+        last Updated user id
+
+
+        :param last_updated_by: The last_updated_by of this BaselineableMetric.
+        :type: str
+        """
+        self._last_updated_by = last_updated_by
+
+    @property
+    def time_created(self):
+        """
+        Gets the time_created of this BaselineableMetric.
+        creation date
+
+
+        :return: The time_created of this BaselineableMetric.
+        :rtype: datetime
+        """
+        return self._time_created
+
+    @time_created.setter
+    def time_created(self, time_created):
+        """
+        Sets the time_created of this BaselineableMetric.
+        creation date
+
+
+        :param time_created: The time_created of this BaselineableMetric.
+        :type: datetime
+        """
+        self._time_created = time_created
+
+    @property
+    def time_last_updated(self):
+        """
+        Gets the time_last_updated of this BaselineableMetric.
+        last updated time
+
+
+        :return: The time_last_updated of this BaselineableMetric.
+        :rtype: datetime
+        """
+        return self._time_last_updated
+
+    @time_last_updated.setter
+    def time_last_updated(self, time_last_updated):
+        """
+        Sets the time_last_updated of this BaselineableMetric.
+        last updated time
+
+
+        :param time_last_updated: The time_last_updated of this BaselineableMetric.
+        :type: datetime
+        """
+        self._time_last_updated = time_last_updated
 
     @property
     def freeform_tags(self):

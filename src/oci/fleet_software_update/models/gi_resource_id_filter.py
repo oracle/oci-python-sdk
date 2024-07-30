@@ -16,6 +16,10 @@ class GiResourceIdFilter(GiFleetDiscoveryFilter):
     """
 
     #: A constant which can be used with the entity_type property of a GiResourceIdFilter.
+    #: This constant has a value of "DATABASESOFTWAREIMAGE"
+    ENTITY_TYPE_DATABASESOFTWAREIMAGE = "DATABASESOFTWAREIMAGE"
+
+    #: A constant which can be used with the entity_type property of a GiResourceIdFilter.
     #: This constant has a value of "EXADATAINFRASTRUCTURE"
     ENTITY_TYPE_EXADATAINFRASTRUCTURE = "EXADATAINFRASTRUCTURE"
 
@@ -63,7 +67,7 @@ class GiResourceIdFilter(GiFleetDiscoveryFilter):
 
         :param entity_type:
             The value to assign to the entity_type property of this GiResourceIdFilter.
-            Allowed values for this property are: "EXADATAINFRASTRUCTURE", "CLOUDEXADATAINFRASTRUCTURE", "VMCLUSTER", "CLOUDVMCLUSTER", "FSUCOLLECTION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DATABASESOFTWAREIMAGE", "EXADATAINFRASTRUCTURE", "CLOUDEXADATAINFRASTRUCTURE", "VMCLUSTER", "CLOUDVMCLUSTER", "FSUCOLLECTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type entity_type: str
 
@@ -107,7 +111,7 @@ class GiResourceIdFilter(GiFleetDiscoveryFilter):
         **[Required]** Gets the entity_type of this GiResourceIdFilter.
         Type of resource to match in the discovery.
 
-        Allowed values for this property are: "EXADATAINFRASTRUCTURE", "CLOUDEXADATAINFRASTRUCTURE", "VMCLUSTER", "CLOUDVMCLUSTER", "FSUCOLLECTION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DATABASESOFTWAREIMAGE", "EXADATAINFRASTRUCTURE", "CLOUDEXADATAINFRASTRUCTURE", "VMCLUSTER", "CLOUDVMCLUSTER", "FSUCOLLECTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -126,7 +130,7 @@ class GiResourceIdFilter(GiFleetDiscoveryFilter):
         :param entity_type: The entity_type of this GiResourceIdFilter.
         :type: str
         """
-        allowed_values = ["EXADATAINFRASTRUCTURE", "CLOUDEXADATAINFRASTRUCTURE", "VMCLUSTER", "CLOUDVMCLUSTER", "FSUCOLLECTION"]
+        allowed_values = ["DATABASESOFTWAREIMAGE", "EXADATAINFRASTRUCTURE", "CLOUDEXADATAINFRASTRUCTURE", "VMCLUSTER", "CLOUDVMCLUSTER", "FSUCOLLECTION"]
         if not value_allowed_none_or_none_sentinel(entity_type, allowed_values):
             entity_type = 'UNKNOWN_ENUM_VALUE'
         self._entity_type = entity_type

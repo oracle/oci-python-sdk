@@ -28,19 +28,26 @@ class UpdateAlertPolicyRuleDetails(object):
             The value to assign to the expression property of this UpdateAlertPolicyRuleDetails.
         :type expression: str
 
+        :param display_name:
+            The value to assign to the display_name property of this UpdateAlertPolicyRuleDetails.
+        :type display_name: str
+
         """
         self.swagger_types = {
             'description': 'str',
-            'expression': 'str'
+            'expression': 'str',
+            'display_name': 'str'
         }
 
         self.attribute_map = {
             'description': 'description',
-            'expression': 'expression'
+            'expression': 'expression',
+            'display_name': 'displayName'
         }
 
         self._description = None
         self._expression = None
+        self._display_name = None
 
     @property
     def description(self):
@@ -89,6 +96,30 @@ class UpdateAlertPolicyRuleDetails(object):
         :type: str
         """
         self._expression = expression
+
+    @property
+    def display_name(self):
+        """
+        Gets the display_name of this UpdateAlertPolicyRuleDetails.
+        The display name of the alert policy rule.
+
+
+        :return: The display_name of this UpdateAlertPolicyRuleDetails.
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        """
+        Sets the display_name of this UpdateAlertPolicyRuleDetails.
+        The display name of the alert policy rule.
+
+
+        :param display_name: The display_name of this UpdateAlertPolicyRuleDetails.
+        :type: str
+        """
+        self._display_name = display_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -38,6 +38,10 @@ class UpdatePatchFsuCycle(UpdateFsuCycleDetails):
             The value to assign to the batching_strategy property of this UpdatePatchFsuCycle.
         :type batching_strategy: oci.fleet_software_update.models.UpdateBatchingStrategyDetails
 
+        :param diagnostics_collection:
+            The value to assign to the diagnostics_collection property of this UpdatePatchFsuCycle.
+        :type diagnostics_collection: oci.fleet_software_update.models.DiagnosticsCollectionDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdatePatchFsuCycle.
         :type freeform_tags: dict(str, str)
@@ -68,6 +72,7 @@ class UpdatePatchFsuCycle(UpdateFsuCycleDetails):
             'type': 'str',
             'goal_version_details': 'FsuGoalVersionDetails',
             'batching_strategy': 'UpdateBatchingStrategyDetails',
+            'diagnostics_collection': 'DiagnosticsCollectionDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'is_ignore_patches': 'bool',
@@ -81,6 +86,7 @@ class UpdatePatchFsuCycle(UpdateFsuCycleDetails):
             'type': 'type',
             'goal_version_details': 'goalVersionDetails',
             'batching_strategy': 'batchingStrategy',
+            'diagnostics_collection': 'diagnosticsCollection',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'is_ignore_patches': 'isIgnorePatches',
@@ -93,6 +99,7 @@ class UpdatePatchFsuCycle(UpdateFsuCycleDetails):
         self._type = None
         self._goal_version_details = None
         self._batching_strategy = None
+        self._diagnostics_collection = None
         self._freeform_tags = None
         self._defined_tags = None
         self._is_ignore_patches = None

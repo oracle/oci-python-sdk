@@ -375,6 +375,7 @@ Data Safe
     oci.data_safe.models.UnsetSecurityAssessmentBaselineDetails
     oci.data_safe.models.UnsetUserAssessmentBaselineDetails
     oci.data_safe.models.UpdateAlertDetails
+    oci.data_safe.models.UpdateAlertPolicyDetails
     oci.data_safe.models.UpdateAlertPolicyRuleDetails
     oci.data_safe.models.UpdateAuditArchiveRetrievalDetails
     oci.data_safe.models.UpdateAuditPolicyDetails

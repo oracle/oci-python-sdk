@@ -170,10 +170,6 @@ class IdentityPropagationTrust(object):
             The value to assign to the oauth_clients property of this IdentityPropagationTrust.
         :type oauth_clients: list[str]
 
-        :param service_principals:
-            The value to assign to the service_principals property of this IdentityPropagationTrust.
-        :type service_principals: list[str]
-
         :param allow_impersonation:
             The value to assign to the allow_impersonation property of this IdentityPropagationTrust.
         :type allow_impersonation: bool
@@ -219,7 +215,6 @@ class IdentityPropagationTrust(object):
             'public_key_endpoint': 'str',
             'public_certificate': 'str',
             'oauth_clients': 'list[str]',
-            'service_principals': 'list[str]',
             'allow_impersonation': 'bool',
             'clock_skew_seconds': 'int',
             'impersonation_service_users': 'list[IdentityPropagationTrustImpersonationServiceUsers]',
@@ -254,7 +249,6 @@ class IdentityPropagationTrust(object):
             'public_key_endpoint': 'publicKeyEndpoint',
             'public_certificate': 'publicCertificate',
             'oauth_clients': 'oauthClients',
-            'service_principals': 'servicePrincipals',
             'allow_impersonation': 'allowImpersonation',
             'clock_skew_seconds': 'clockSkewSeconds',
             'impersonation_service_users': 'impersonationServiceUsers',
@@ -288,7 +282,6 @@ class IdentityPropagationTrust(object):
         self._public_key_endpoint = None
         self._public_certificate = None
         self._oauth_clients = None
-        self._service_principals = None
         self._allow_impersonation = None
         self._clock_skew_seconds = None
         self._impersonation_service_users = None
@@ -1413,48 +1406,6 @@ class IdentityPropagationTrust(object):
         :type: list[str]
         """
         self._oauth_clients = oauth_clients
-
-    @property
-    def service_principals(self):
-        """
-        Gets the service_principals of this IdentityPropagationTrust.
-        The value of all the authorized OCI Service Principals.
-
-        **SCIM++ Properties:**
-         - idcsSearchable: false
-         - multiValued: true
-         - mutability: readWrite
-         - required: false
-         - returned: default
-         - type: string
-         - uniqueness: none
-
-
-        :return: The service_principals of this IdentityPropagationTrust.
-        :rtype: list[str]
-        """
-        return self._service_principals
-
-    @service_principals.setter
-    def service_principals(self, service_principals):
-        """
-        Sets the service_principals of this IdentityPropagationTrust.
-        The value of all the authorized OCI Service Principals.
-
-        **SCIM++ Properties:**
-         - idcsSearchable: false
-         - multiValued: true
-         - mutability: readWrite
-         - required: false
-         - returned: default
-         - type: string
-         - uniqueness: none
-
-
-        :param service_principals: The service_principals of this IdentityPropagationTrust.
-        :type: list[str]
-        """
-        self._service_principals = service_principals
 
     @property
     def allow_impersonation(self):

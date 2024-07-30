@@ -35,9 +35,11 @@ from .create_service_list_details import CreateServiceListDetails
 from .create_ssl_forward_proxy_profile_details import CreateSslForwardProxyProfileDetails
 from .create_ssl_inbound_inspection_profile_details import CreateSslInboundInspectionProfileDetails
 from .create_tcp_service_details import CreateTcpServiceDetails
+from .create_tunnel_inspection_rule_details import CreateTunnelInspectionRuleDetails
 from .create_udp_service_details import CreateUdpServiceDetails
 from .create_url_list_details import CreateUrlListDetails
 from .create_vault_mapped_secret_details import CreateVaultMappedSecretDetails
+from .create_vxlan_inspection_rule_details import CreateVxlanInspectionRuleDetails
 from .decryption_profile import DecryptionProfile
 from .decryption_profile_summary import DecryptionProfileSummary
 from .decryption_profile_summary_collection import DecryptionProfileSummaryCollection
@@ -74,6 +76,9 @@ from .simple_url_pattern import SimpleUrlPattern
 from .ssl_forward_proxy_profile import SslForwardProxyProfile
 from .ssl_inbound_inspection_profile import SslInboundInspectionProfile
 from .tcp_service import TcpService
+from .tunnel_inspection_rule import TunnelInspectionRule
+from .tunnel_inspection_rule_summary import TunnelInspectionRuleSummary
+from .tunnel_inspection_rule_summary_collection import TunnelInspectionRuleSummaryCollection
 from .udp_service import UdpService
 from .update_address_list_details import UpdateAddressListDetails
 from .update_application_details import UpdateApplicationDetails
@@ -93,14 +98,20 @@ from .update_service_list_details import UpdateServiceListDetails
 from .update_ssl_forward_proxy_profile_details import UpdateSslForwardProxyProfileDetails
 from .update_ssl_inbound_inspection_profile_details import UpdateSslInboundInspectionProfileDetails
 from .update_tcp_service_details import UpdateTcpServiceDetails
+from .update_tunnel_inspection_rule_details import UpdateTunnelInspectionRuleDetails
 from .update_udp_service_details import UpdateUdpServiceDetails
 from .update_url_list_details import UpdateUrlListDetails
 from .update_vault_mapped_secret_details import UpdateVaultMappedSecretDetails
+from .update_vxlan_inspection_rule_details import UpdateVxlanInspectionRuleDetails
 from .url_list import UrlList
 from .url_list_summary import UrlListSummary
 from .url_list_summary_collection import UrlListSummaryCollection
 from .url_pattern import UrlPattern
 from .vault_mapped_secret import VaultMappedSecret
+from .vxlan_inspection_rule import VxlanInspectionRule
+from .vxlan_inspection_rule_match_criteria import VxlanInspectionRuleMatchCriteria
+from .vxlan_inspection_rule_profile import VxlanInspectionRuleProfile
+from .vxlan_inspection_rule_summary import VxlanInspectionRuleSummary
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_error_collection import WorkRequestErrorCollection
@@ -141,9 +152,11 @@ network_firewall_type_mapping = {
     "CreateSslForwardProxyProfileDetails": CreateSslForwardProxyProfileDetails,
     "CreateSslInboundInspectionProfileDetails": CreateSslInboundInspectionProfileDetails,
     "CreateTcpServiceDetails": CreateTcpServiceDetails,
+    "CreateTunnelInspectionRuleDetails": CreateTunnelInspectionRuleDetails,
     "CreateUdpServiceDetails": CreateUdpServiceDetails,
     "CreateUrlListDetails": CreateUrlListDetails,
     "CreateVaultMappedSecretDetails": CreateVaultMappedSecretDetails,
+    "CreateVxlanInspectionRuleDetails": CreateVxlanInspectionRuleDetails,
     "DecryptionProfile": DecryptionProfile,
     "DecryptionProfileSummary": DecryptionProfileSummary,
     "DecryptionProfileSummaryCollection": DecryptionProfileSummaryCollection,
@@ -180,6 +193,9 @@ network_firewall_type_mapping = {
     "SslForwardProxyProfile": SslForwardProxyProfile,
     "SslInboundInspectionProfile": SslInboundInspectionProfile,
     "TcpService": TcpService,
+    "TunnelInspectionRule": TunnelInspectionRule,
+    "TunnelInspectionRuleSummary": TunnelInspectionRuleSummary,
+    "TunnelInspectionRuleSummaryCollection": TunnelInspectionRuleSummaryCollection,
     "UdpService": UdpService,
     "UpdateAddressListDetails": UpdateAddressListDetails,
     "UpdateApplicationDetails": UpdateApplicationDetails,
@@ -199,14 +215,20 @@ network_firewall_type_mapping = {
     "UpdateSslForwardProxyProfileDetails": UpdateSslForwardProxyProfileDetails,
     "UpdateSslInboundInspectionProfileDetails": UpdateSslInboundInspectionProfileDetails,
     "UpdateTcpServiceDetails": UpdateTcpServiceDetails,
+    "UpdateTunnelInspectionRuleDetails": UpdateTunnelInspectionRuleDetails,
     "UpdateUdpServiceDetails": UpdateUdpServiceDetails,
     "UpdateUrlListDetails": UpdateUrlListDetails,
     "UpdateVaultMappedSecretDetails": UpdateVaultMappedSecretDetails,
+    "UpdateVxlanInspectionRuleDetails": UpdateVxlanInspectionRuleDetails,
     "UrlList": UrlList,
     "UrlListSummary": UrlListSummary,
     "UrlListSummaryCollection": UrlListSummaryCollection,
     "UrlPattern": UrlPattern,
     "VaultMappedSecret": VaultMappedSecret,
+    "VxlanInspectionRule": VxlanInspectionRule,
+    "VxlanInspectionRuleMatchCriteria": VxlanInspectionRuleMatchCriteria,
+    "VxlanInspectionRuleProfile": VxlanInspectionRuleProfile,
+    "VxlanInspectionRuleSummary": VxlanInspectionRuleSummary,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestErrorCollection": WorkRequestErrorCollection,

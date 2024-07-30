@@ -365,6 +365,8 @@ Core Services
     oci.core.models.InstanceConfigurationVolumeSourceFromVolumeDetails
     oci.core.models.InstanceConsoleConnection
     oci.core.models.InstanceCredentials
+    oci.core.models.InstanceMaintenanceEvent
+    oci.core.models.InstanceMaintenanceEventSummary
     oci.core.models.InstanceMaintenanceReboot
     oci.core.models.InstanceOptions
     oci.core.models.InstancePool
@@ -546,6 +548,7 @@ Core Services
     oci.core.models.UpdateInstanceConfigurationDetails
     oci.core.models.UpdateInstanceConsoleConnectionDetails
     oci.core.models.UpdateInstanceDetails
+    oci.core.models.UpdateInstanceMaintenanceEventDetails
     oci.core.models.UpdateInstancePlatformConfig
     oci.core.models.UpdateInstancePoolDetails
     oci.core.models.UpdateInstancePoolPlacementConfigurationDetails

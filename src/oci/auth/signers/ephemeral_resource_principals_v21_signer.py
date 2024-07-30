@@ -41,7 +41,9 @@ class EphemeralResourcePrincipalV21Signer(SecurityTokenSigner):
         if private_key is None:
             raise ValueError("private_key should be provided")
 
-        if kwargs.get("rp_version") == "2.1.1" and tenancy_id is None:
+        self.rp_version = rp_version
+
+        if self.rp_version in ["2.1.1", "2.1.2"] and tenancy_id is None:
             raise ValueError("tenancy_id should be provided")
 
         self._reset_signers_lock = threading.Lock()
@@ -52,8 +54,13 @@ class EphemeralResourcePrincipalV21Signer(SecurityTokenSigner):
         else:
             self.retry_strategy = oci.retry.DEFAULT_RETRY_STRATEGY
 
-        # Hard coded Path for RPT
-        self.resource_principal_token_path = f"/20180711/resourcePrincipalTokenV2/{resource_id}"
+        if kwargs.get("security_context"):
+            self.security_context = kwargs.get("security_context")
+
+        if self.rp_version == "2.1.2":
+            self.resource_principal_token_path = self.build_rpt_path_for_rpv212(resource_principal_token_path=kwargs.get("resource_principal_token_path"), resource_id=resource_id)
+        else:
+            self.resource_principal_token_path = f"/20180711/resourcePrincipalTokenV2/{resource_id}"
 
         # Holders for the tokens needed.
         self.rpt = None
@@ -84,7 +91,8 @@ class EphemeralResourcePrincipalV21Signer(SecurityTokenSigner):
             super(EphemeralResourcePrincipalV21Signer, self).__init__(self.security_token.security_token,
                                                                       self.session_key_supplier.get_key_pair()['private'])
 
-    def construct_session_key_supplier(self, private_key=None, private_key_passphrase=None):
+    @staticmethod
+    def construct_session_key_supplier(private_key=None, private_key_passphrase=None):
         if private_key is None:
             raise ValueError("private_key must be provided")
         passphrase = private_key_passphrase
@@ -92,6 +100,23 @@ class EphemeralResourcePrincipalV21Signer(SecurityTokenSigner):
             return FileBasedSessionKeySupplier(private_key, passphrase)
         else:
             return FixedSessionKeySupplier(oci.signer.load_private_key(private_key, passphrase))
+
+    @staticmethod
+    def build_rpt_path_for_rpv212(resource_principal_token_path, resource_id):
+        # For RPv2.1.2 if the resource_principal_token_path is set then use that path else use default hard coded path
+        if resource_principal_token_path:
+            if resource_principal_token_path.endswith("{}"):
+                # if build RPT has a {} in it replace it with resource_id
+                resource_principal_token_path = resource_principal_token_path.replace("{}", resource_id)
+            else:
+                # Append resource id at the end
+                if resource_principal_token_path[-1] != '/':
+                    resource_principal_token_path = f"{resource_principal_token_path}/"
+                resource_principal_token_path = f"{resource_principal_token_path}{resource_id}"
+        else:
+            # Hard coded path for RPv2.1.2
+            resource_principal_token_path = f"/20180711/resourcePrincipalTokenV212/{resource_id}"
+        return resource_principal_token_path
 
     def get_security_token(self):
         """
@@ -145,7 +170,15 @@ class EphemeralResourcePrincipalV21Signer(SecurityTokenSigner):
         method = "get"
         self.base_client.endpoint = self.resource_principal_token_endpoint
 
-        response = self.make_call(method, self.resource_principal_token_path)
+        if self.rp_version == "2.1.2" and self.security_context:
+            # For RPv2.1.2 with security context, pass security context in request header
+            # else just do a Get similar to 2.1/2.1.1
+            header_params = {'security-context': self.security_context}
+            response = self.make_call(method, self.resource_principal_token_path, header_params=header_params)
+
+        else:
+            response = self.make_call(method, self.resource_principal_token_path)
+
         parsed_response = json.loads(response.data.decode('UTF-8'))
         return parsed_response['resourcePrincipalToken'], parsed_response['servicePrincipalSessionToken']
 

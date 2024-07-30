@@ -138,6 +138,10 @@ class FsuCycleSummary(object):
             The value to assign to the goal_version_details property of this FsuCycleSummary.
         :type goal_version_details: oci.fleet_software_update.models.FsuGoalVersionDetails
 
+        :param diagnostics_collection:
+            The value to assign to the diagnostics_collection property of this FsuCycleSummary.
+        :type diagnostics_collection: oci.fleet_software_update.models.DiagnosticsCollectionDetails
+
         :param time_created:
             The value to assign to the time_created property of this FsuCycleSummary.
         :type time_created: datetime
@@ -184,6 +188,7 @@ class FsuCycleSummary(object):
             'next_action_to_execute': 'list[NextActionToExecuteDetails]',
             'last_completed_action': 'str',
             'goal_version_details': 'FsuGoalVersionDetails',
+            'diagnostics_collection': 'DiagnosticsCollectionDetails',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'time_finished': 'datetime',
@@ -205,6 +210,7 @@ class FsuCycleSummary(object):
             'next_action_to_execute': 'nextActionToExecute',
             'last_completed_action': 'lastCompletedAction',
             'goal_version_details': 'goalVersionDetails',
+            'diagnostics_collection': 'diagnosticsCollection',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'time_finished': 'timeFinished',
@@ -225,6 +231,7 @@ class FsuCycleSummary(object):
         self._next_action_to_execute = None
         self._last_completed_action = None
         self._goal_version_details = None
+        self._diagnostics_collection = None
         self._time_created = None
         self._time_updated = None
         self._time_finished = None
@@ -489,6 +496,26 @@ class FsuCycleSummary(object):
         :type: oci.fleet_software_update.models.FsuGoalVersionDetails
         """
         self._goal_version_details = goal_version_details
+
+    @property
+    def diagnostics_collection(self):
+        """
+        Gets the diagnostics_collection of this FsuCycleSummary.
+
+        :return: The diagnostics_collection of this FsuCycleSummary.
+        :rtype: oci.fleet_software_update.models.DiagnosticsCollectionDetails
+        """
+        return self._diagnostics_collection
+
+    @diagnostics_collection.setter
+    def diagnostics_collection(self, diagnostics_collection):
+        """
+        Sets the diagnostics_collection of this FsuCycleSummary.
+
+        :param diagnostics_collection: The diagnostics_collection of this FsuCycleSummary.
+        :type: oci.fleet_software_update.models.DiagnosticsCollectionDetails
+        """
+        self._diagnostics_collection = diagnostics_collection
 
     @property
     def time_created(self):

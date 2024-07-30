@@ -73,6 +73,7 @@ Fleet Software Update
     oci.fleet_software_update.models.DbUniqueNameFilter
     oci.fleet_software_update.models.DbVersionFilter
     oci.fleet_software_update.models.DefinedTagFilterEntry
+    oci.fleet_software_update.models.DiagnosticsCollectionDetails
     oci.fleet_software_update.models.DiscoveryDetails
     oci.fleet_software_update.models.DiscoveryDetailsSummary
     oci.fleet_software_update.models.FailedJobsRollbackDetails
@@ -85,6 +86,7 @@ Fleet Software Update
     oci.fleet_software_update.models.FsuCollection
     oci.fleet_software_update.models.FsuCollectionSummary
     oci.fleet_software_update.models.FsuCollectionSummaryCollection
+    oci.fleet_software_update.models.FsuCollectionTarget
     oci.fleet_software_update.models.FsuCycle
     oci.fleet_software_update.models.FsuCycleSummary
     oci.fleet_software_update.models.FsuCycleSummaryCollection

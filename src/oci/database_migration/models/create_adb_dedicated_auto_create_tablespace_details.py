@@ -16,12 +16,20 @@ class CreateADBDedicatedAutoCreateTablespaceDetails(CreateTargetTypeTablespaceDe
     """
 
     #: A constant which can be used with the block_size_in_kbs property of a CreateADBDedicatedAutoCreateTablespaceDetails.
+    #: This constant has a value of "SIZE_2K"
+    BLOCK_SIZE_IN_KBS_SIZE_2_K = "SIZE_2K"
+
+    #: A constant which can be used with the block_size_in_kbs property of a CreateADBDedicatedAutoCreateTablespaceDetails.
     #: This constant has a value of "SIZE_8K"
     BLOCK_SIZE_IN_KBS_SIZE_8_K = "SIZE_8K"
 
     #: A constant which can be used with the block_size_in_kbs property of a CreateADBDedicatedAutoCreateTablespaceDetails.
     #: This constant has a value of "SIZE_16K"
     BLOCK_SIZE_IN_KBS_SIZE_16_K = "SIZE_16K"
+
+    #: A constant which can be used with the block_size_in_kbs property of a CreateADBDedicatedAutoCreateTablespaceDetails.
+    #: This constant has a value of "SIZE_32K"
+    BLOCK_SIZE_IN_KBS_SIZE_32_K = "SIZE_32K"
 
     def __init__(self, **kwargs):
         """
@@ -48,7 +56,7 @@ class CreateADBDedicatedAutoCreateTablespaceDetails(CreateTargetTypeTablespaceDe
 
         :param block_size_in_kbs:
             The value to assign to the block_size_in_kbs property of this CreateADBDedicatedAutoCreateTablespaceDetails.
-            Allowed values for this property are: "SIZE_8K", "SIZE_16K"
+            Allowed values for this property are: "SIZE_2K", "SIZE_8K", "SIZE_16K", "SIZE_32K"
         :type block_size_in_kbs: str
 
         """
@@ -157,7 +165,7 @@ class CreateADBDedicatedAutoCreateTablespaceDetails(CreateTargetTypeTablespaceDe
         Gets the block_size_in_kbs of this CreateADBDedicatedAutoCreateTablespaceDetails.
         Size of Oracle database blocks in KB.
 
-        Allowed values for this property are: "SIZE_8K", "SIZE_16K"
+        Allowed values for this property are: "SIZE_2K", "SIZE_8K", "SIZE_16K", "SIZE_32K"
 
 
         :return: The block_size_in_kbs of this CreateADBDedicatedAutoCreateTablespaceDetails.
@@ -175,7 +183,7 @@ class CreateADBDedicatedAutoCreateTablespaceDetails(CreateTargetTypeTablespaceDe
         :param block_size_in_kbs: The block_size_in_kbs of this CreateADBDedicatedAutoCreateTablespaceDetails.
         :type: str
         """
-        allowed_values = ["SIZE_8K", "SIZE_16K"]
+        allowed_values = ["SIZE_2K", "SIZE_8K", "SIZE_16K", "SIZE_32K"]
         if not value_allowed_none_or_none_sentinel(block_size_in_kbs, allowed_values):
             raise ValueError(
                 f"Invalid value for `block_size_in_kbs`, must be None or one of {allowed_values}"

@@ -166,6 +166,14 @@ class Alert(object):
             The value to assign to the time_updated property of this Alert.
         :type time_updated: datetime
 
+        :param alert_policy_rule_key:
+            The value to assign to the alert_policy_rule_key property of this Alert.
+        :type alert_policy_rule_key: str
+
+        :param alert_policy_rule_name:
+            The value to assign to the alert_policy_rule_name property of this Alert.
+        :type alert_policy_rule_name: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Alert.
         :type freeform_tags: dict(str, str)
@@ -199,6 +207,8 @@ class Alert(object):
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'alert_policy_rule_key': 'str',
+            'alert_policy_rule_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -224,6 +234,8 @@ class Alert(object):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'alert_policy_rule_key': 'alertPolicyRuleKey',
+            'alert_policy_rule_name': 'alertPolicyRuleName',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -248,6 +260,8 @@ class Alert(object):
         self._lifecycle_state = None
         self._time_created = None
         self._time_updated = None
+        self._alert_policy_rule_key = None
+        self._alert_policy_rule_name = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -751,6 +765,54 @@ class Alert(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def alert_policy_rule_key(self):
+        """
+        Gets the alert_policy_rule_key of this Alert.
+        The key of the rule of alert policy that triggered alert.
+
+
+        :return: The alert_policy_rule_key of this Alert.
+        :rtype: str
+        """
+        return self._alert_policy_rule_key
+
+    @alert_policy_rule_key.setter
+    def alert_policy_rule_key(self, alert_policy_rule_key):
+        """
+        Sets the alert_policy_rule_key of this Alert.
+        The key of the rule of alert policy that triggered alert.
+
+
+        :param alert_policy_rule_key: The alert_policy_rule_key of this Alert.
+        :type: str
+        """
+        self._alert_policy_rule_key = alert_policy_rule_key
+
+    @property
+    def alert_policy_rule_name(self):
+        """
+        Gets the alert_policy_rule_name of this Alert.
+        The display name of the rule of alert policy that triggered alert.
+
+
+        :return: The alert_policy_rule_name of this Alert.
+        :rtype: str
+        """
+        return self._alert_policy_rule_name
+
+    @alert_policy_rule_name.setter
+    def alert_policy_rule_name(self, alert_policy_rule_name):
+        """
+        Sets the alert_policy_rule_name of this Alert.
+        The display name of the rule of alert policy that triggered alert.
+
+
+        :param alert_policy_rule_name: The alert_policy_rule_name of this Alert.
+        :type: str
+        """
+        self._alert_policy_rule_name = alert_policy_rule_name
 
     @property
     def freeform_tags(self):

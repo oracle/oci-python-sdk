@@ -61,6 +61,10 @@ class UpdateBaselineableMetricDetails(object):
             The value to assign to the resource_group property of this UpdateBaselineableMetricDetails.
         :type resource_group: str
 
+        :param resource_type:
+            The value to assign to the resource_type property of this UpdateBaselineableMetricDetails.
+        :type resource_type: str
+
         :param is_out_of_box:
             The value to assign to the is_out_of_box property of this UpdateBaselineableMetricDetails.
         :type is_out_of_box: bool
@@ -87,6 +91,7 @@ class UpdateBaselineableMetricDetails(object):
             'column': 'str',
             'namespace': 'str',
             'resource_group': 'str',
+            'resource_type': 'str',
             'is_out_of_box': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -102,6 +107,7 @@ class UpdateBaselineableMetricDetails(object):
             'column': 'column',
             'namespace': 'namespace',
             'resource_group': 'resourceGroup',
+            'resource_type': 'resourceType',
             'is_out_of_box': 'isOutOfBox',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -116,6 +122,7 @@ class UpdateBaselineableMetricDetails(object):
         self._column = None
         self._namespace = None
         self._resource_group = None
+        self._resource_type = None
         self._is_out_of_box = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -319,6 +326,30 @@ class UpdateBaselineableMetricDetails(object):
         :type: str
         """
         self._resource_group = resource_group
+
+    @property
+    def resource_type(self):
+        """
+        Gets the resource_type of this UpdateBaselineableMetricDetails.
+        Resource type of the metric
+
+
+        :return: The resource_type of this UpdateBaselineableMetricDetails.
+        :rtype: str
+        """
+        return self._resource_type
+
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """
+        Sets the resource_type of this UpdateBaselineableMetricDetails.
+        Resource type of the metric
+
+
+        :param resource_type: The resource_type of this UpdateBaselineableMetricDetails.
+        :type: str
+        """
+        self._resource_type = resource_type
 
     @property
     def is_out_of_box(self):

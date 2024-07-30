@@ -64,6 +64,7 @@ Database Migration
     oci.database_migration.models.CreateOracleMigrationDetails
     oci.database_migration.models.CreateOracleNfsDataTransferMediumDetails
     oci.database_migration.models.CreateOracleObjectStorageDataTransferMediumDetails
+    oci.database_migration.models.CreateParameterFileVersionDetails
     oci.database_migration.models.CreateReplicat
     oci.database_migration.models.CreateTargetTypeTablespaceDetails
     oci.database_migration.models.CurlTransferDetails
@@ -132,6 +133,9 @@ Database Migration
     oci.database_migration.models.OracleMigrationSummary
     oci.database_migration.models.OracleNfsDataTransferMediumDetails
     oci.database_migration.models.OracleObjectStorageDataTransferMediumDetails
+    oci.database_migration.models.ParameterFileVersion
+    oci.database_migration.models.ParameterFileVersionCollection
+    oci.database_migration.models.ParameterFileVersionSummary
     oci.database_migration.models.PhaseExtractEntry
     oci.database_migration.models.PhaseStatus
     oci.database_migration.models.Replicat

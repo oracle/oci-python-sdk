@@ -108,6 +108,10 @@ class Job(object):
             The value to assign to the lifecycle_details property of this Job.
         :type lifecycle_details: str
 
+        :param parameter_file_versions:
+            The value to assign to the parameter_file_versions property of this Job.
+        :type parameter_file_versions: list[oci.database_migration.models.ParameterFileVersionSummary]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Job.
         :type freeform_tags: dict(str, str)
@@ -132,6 +136,7 @@ class Job(object):
             'unsupported_objects': 'list[UnsupportedDatabaseObject]',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'parameter_file_versions': 'list[ParameterFileVersionSummary]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -148,6 +153,7 @@ class Job(object):
             'unsupported_objects': 'unsupportedObjects',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'parameter_file_versions': 'parameterFileVersions',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -163,6 +169,7 @@ class Job(object):
         self._unsupported_objects = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._parameter_file_versions = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -416,6 +423,30 @@ class Job(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def parameter_file_versions(self):
+        """
+        Gets the parameter_file_versions of this Job.
+        A list of parameter file versions that can be viewed or edited for the current job.
+
+
+        :return: The parameter_file_versions of this Job.
+        :rtype: list[oci.database_migration.models.ParameterFileVersionSummary]
+        """
+        return self._parameter_file_versions
+
+    @parameter_file_versions.setter
+    def parameter_file_versions(self, parameter_file_versions):
+        """
+        Sets the parameter_file_versions of this Job.
+        A list of parameter file versions that can be viewed or edited for the current job.
+
+
+        :param parameter_file_versions: The parameter_file_versions of this Job.
+        :type: list[oci.database_migration.models.ParameterFileVersionSummary]
+        """
+        self._parameter_file_versions = parameter_file_versions
 
     @property
     def freeform_tags(self):

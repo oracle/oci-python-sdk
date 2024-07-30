@@ -71,6 +71,10 @@ class ReportDefinition(object):
     #: This constant has a value of "DELETED"
     LIFECYCLE_STATE_DELETED = "DELETED"
 
+    #: A constant which can be used with the lifecycle_state property of a ReportDefinition.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
+
     #: A constant which can be used with the scheduled_report_mime_type property of a ReportDefinition.
     #: This constant has a value of "PDF"
     SCHEDULED_REPORT_MIME_TYPE_PDF = "PDF"
@@ -154,7 +158,7 @@ class ReportDefinition(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ReportDefinition.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -187,6 +191,10 @@ class ReportDefinition(object):
         :param compliance_standards:
             The value to assign to the compliance_standards property of this ReportDefinition.
         :type compliance_standards: list[str]
+
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this ReportDefinition.
+        :type lifecycle_details: str
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ReportDefinition.
@@ -226,6 +234,7 @@ class ReportDefinition(object):
             'scheduled_report_compartment_id': 'str',
             'record_time_span': 'str',
             'compliance_standards': 'list[str]',
+            'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -256,6 +265,7 @@ class ReportDefinition(object):
             'scheduled_report_compartment_id': 'scheduledReportCompartmentId',
             'record_time_span': 'recordTimeSpan',
             'compliance_standards': 'complianceStandards',
+            'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -285,6 +295,7 @@ class ReportDefinition(object):
         self._scheduled_report_compartment_id = None
         self._record_time_span = None
         self._compliance_standards = None
+        self._lifecycle_details = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -691,7 +702,7 @@ class ReportDefinition(object):
         **[Required]** Gets the lifecycle_state of this ReportDefinition.
         The current state of the report.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -710,7 +721,7 @@ class ReportDefinition(object):
         :param lifecycle_state: The lifecycle_state of this ReportDefinition.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -930,6 +941,30 @@ class ReportDefinition(object):
         :type: list[str]
         """
         self._compliance_standards = compliance_standards
+
+    @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this ReportDefinition.
+        Details about the current state of the report definition in Data Safe.
+
+
+        :return: The lifecycle_details of this ReportDefinition.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this ReportDefinition.
+        Details about the current state of the report definition in Data Safe.
+
+
+        :param lifecycle_details: The lifecycle_details of this ReportDefinition.
+        :type: str
+        """
+        self._lifecycle_details = lifecycle_details
 
     @property
     def freeform_tags(self):

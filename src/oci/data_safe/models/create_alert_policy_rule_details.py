@@ -28,19 +28,26 @@ class CreateAlertPolicyRuleDetails(object):
             The value to assign to the description property of this CreateAlertPolicyRuleDetails.
         :type description: str
 
+        :param display_name:
+            The value to assign to the display_name property of this CreateAlertPolicyRuleDetails.
+        :type display_name: str
+
         """
         self.swagger_types = {
             'expression': 'str',
-            'description': 'str'
+            'description': 'str',
+            'display_name': 'str'
         }
 
         self.attribute_map = {
             'expression': 'expression',
-            'description': 'description'
+            'description': 'description',
+            'display_name': 'displayName'
         }
 
         self._expression = None
         self._description = None
+        self._display_name = None
 
     @property
     def expression(self):
@@ -89,6 +96,30 @@ class CreateAlertPolicyRuleDetails(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def display_name(self):
+        """
+        Gets the display_name of this CreateAlertPolicyRuleDetails.
+        The display name of the alert policy rule.
+
+
+        :return: The display_name of this CreateAlertPolicyRuleDetails.
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        """
+        Sets the display_name of this CreateAlertPolicyRuleDetails.
+        The display name of the alert policy rule.
+
+
+        :param display_name: The display_name of this CreateAlertPolicyRuleDetails.
+        :type: str
+        """
+        self._display_name = display_name
 
     def __repr__(self):
         return formatted_flat_dict(self)
