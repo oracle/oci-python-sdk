@@ -20,20 +20,55 @@ class GenerateArtifactDownloadUrlDetails(object):
         Initializes a new GenerateArtifactDownloadUrlDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this GenerateArtifactDownloadUrlDetails.
+        :type compartment_id: str
+
         :param artifact_id:
             The value to assign to the artifact_id property of this GenerateArtifactDownloadUrlDetails.
         :type artifact_id: int
 
         """
         self.swagger_types = {
+            'compartment_id': 'str',
             'artifact_id': 'int'
         }
 
         self.attribute_map = {
+            'compartment_id': 'compartmentId',
             'artifact_id': 'artifactId'
         }
 
+        self._compartment_id = None
         self._artifact_id = None
+
+    @property
+    def compartment_id(self):
+        """
+        Gets the compartment_id of this GenerateArtifactDownloadUrlDetails.
+        The tenancy `OCID`__ of the user initiating the download.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The compartment_id of this GenerateArtifactDownloadUrlDetails.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this GenerateArtifactDownloadUrlDetails.
+        The tenancy `OCID`__ of the user initiating the download.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param compartment_id: The compartment_id of this GenerateArtifactDownloadUrlDetails.
+        :type: str
+        """
+        self._compartment_id = compartment_id
 
     @property
     def artifact_id(self):

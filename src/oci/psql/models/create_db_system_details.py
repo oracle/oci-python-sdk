@@ -453,7 +453,7 @@ class CreateDbSystemDetails(object):
     @property
     def credentials(self):
         """
-        Gets the credentials of this CreateDbSystemDetails.
+        **[Required]** Gets the credentials of this CreateDbSystemDetails.
 
         :return: The credentials of this CreateDbSystemDetails.
         :rtype: oci.psql.models.Credentials

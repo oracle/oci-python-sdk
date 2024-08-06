@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateExportSettingDetails(object):
     """
-    Attributes to update a Export setting.
+    Attributes to update an export setting.
     """
 
     #: A constant which can be used with the export_duration property of a UpdateExportSettingDetails.
@@ -261,7 +261,7 @@ class UpdateExportSettingDetails(object):
     def target_bucket_region(self):
         """
         Gets the target_bucket_region of this UpdateExportSettingDetails.
-        The namespace of the bucket where data will be exported.
+        The id of the region of the target bucket.
 
 
         :return: The target_bucket_region of this UpdateExportSettingDetails.
@@ -273,7 +273,7 @@ class UpdateExportSettingDetails(object):
     def target_bucket_region(self, target_bucket_region):
         """
         Sets the target_bucket_region of this UpdateExportSettingDetails.
-        The namespace of the bucket where data will be exported.
+        The id of the region of the target bucket.
 
 
         :param target_bucket_region: The target_bucket_region of this UpdateExportSettingDetails.

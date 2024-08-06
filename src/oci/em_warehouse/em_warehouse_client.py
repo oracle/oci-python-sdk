@@ -157,7 +157,7 @@ class EmWarehouseClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/WorkRequest/CancelWorkRequest"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -270,7 +270,7 @@ class EmWarehouseClient(object):
         resource_path = "/emWarehouses/{emWarehouseId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_em_warehouse_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouse/ChangeEmWarehouseCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -378,7 +378,7 @@ class EmWarehouseClient(object):
         resource_path = "/emWarehouses"
         method = "POST"
         operation_name = "create_em_warehouse"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouse/CreateEmWarehouse"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -472,7 +472,7 @@ class EmWarehouseClient(object):
         resource_path = "/emWarehouses/{emWarehouseId}"
         method = "DELETE"
         operation_name = "delete_em_warehouse"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouse/DeleteEmWarehouse"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -568,7 +568,7 @@ class EmWarehouseClient(object):
         resource_path = "/emWarehouses/{emWarehouseId}"
         method = "GET"
         operation_name = "get_em_warehouse"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouse/GetEmWarehouse"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -664,7 +664,7 @@ class EmWarehouseClient(object):
         resource_path = "/emWarehouses/{emWarehouseId}/resourceUsage"
         method = "GET"
         operation_name = "get_em_warehouse_resource_usage"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/ResourceUsage/GetEmWarehouseResourceUsage"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -760,7 +760,7 @@ class EmWarehouseClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/WorkRequest/GetWorkRequest"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -886,7 +886,7 @@ class EmWarehouseClient(object):
         resource_path = "/emWarehouses"
         method = "GET"
         operation_name = "list_em_warehouses"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouseCollection/ListEmWarehouses"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1037,7 +1037,7 @@ class EmWarehouseClient(object):
         resource_path = "/emWarehouses/{emWarehouseId}/etlRuns"
         method = "GET"
         operation_name = "list_etl_runs"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EtlRunCollection/ListEtlRuns"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1181,7 +1181,7 @@ class EmWarehouseClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/WorkRequestError/ListWorkRequestErrors"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1321,7 +1321,7 @@ class EmWarehouseClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/WorkRequestLogEntry/ListWorkRequestLogs"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1472,7 +1472,7 @@ class EmWarehouseClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/WorkRequest/ListWorkRequests"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1609,7 +1609,7 @@ class EmWarehouseClient(object):
         resource_path = "/emWarehouses/{emWarehouseId}"
         method = "PUT"
         operation_name = "update_em_warehouse"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/em-warehouse/20180828/EmWarehouse/UpdateEmWarehouse"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [

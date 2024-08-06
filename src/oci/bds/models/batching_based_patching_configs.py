@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BatchingBasedPatchingConfigs(PatchingConfigs):
     """
-    Patching configurations which allows patch the nodes batch by batch.
+    Configuration that applies the patch in batches, the batch size is a user defined parameter.
     """
 
     def __init__(self, **kwargs):
@@ -23,7 +23,7 @@ class BatchingBasedPatchingConfigs(PatchingConfigs):
 
         :param patching_config_strategy:
             The value to assign to the patching_config_strategy property of this BatchingBasedPatchingConfigs.
-            Allowed values for this property are: "DOWNTIME_BASED", "BATCHING_BASED"
+            Allowed values for this property are: "DOWNTIME_BASED", "BATCHING_BASED", "DOMAIN_BASED"
         :type patching_config_strategy: str
 
         :param batch_size:

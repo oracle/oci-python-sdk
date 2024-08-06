@@ -19,6 +19,14 @@ class DevopsCodeRepositoryFilter(Filter):
     #: This constant has a value of "PUSH"
     EVENTS_PUSH = "PUSH"
 
+    #: A constant which can be used with the events property of a DevopsCodeRepositoryFilter.
+    #: This constant has a value of "PULL_REQUEST_CREATED"
+    EVENTS_PULL_REQUEST_CREATED = "PULL_REQUEST_CREATED"
+
+    #: A constant which can be used with the events property of a DevopsCodeRepositoryFilter.
+    #: This constant has a value of "PULL_REQUEST_UPDATED"
+    EVENTS_PULL_REQUEST_UPDATED = "PULL_REQUEST_UPDATED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DevopsCodeRepositoryFilter object with values from keyword arguments. The default value of the :py:attr:`~oci.devops.models.DevopsCodeRepositoryFilter.trigger_source` attribute
@@ -31,7 +39,7 @@ class DevopsCodeRepositoryFilter(Filter):
 
         :param events:
             The value to assign to the events property of this DevopsCodeRepositoryFilter.
-            Allowed values for items in this list are: "PUSH", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "PUSH", "PULL_REQUEST_CREATED", "PULL_REQUEST_UPDATED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type events: list[str]
 
@@ -70,7 +78,7 @@ class DevopsCodeRepositoryFilter(Filter):
         Gets the events of this DevopsCodeRepositoryFilter.
         The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
 
-        Allowed values for items in this list are: "PUSH", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "PUSH", "PULL_REQUEST_CREATED", "PULL_REQUEST_UPDATED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -89,7 +97,7 @@ class DevopsCodeRepositoryFilter(Filter):
         :param events: The events of this DevopsCodeRepositoryFilter.
         :type: list[str]
         """
-        allowed_values = ["PUSH"]
+        allowed_values = ["PUSH", "PULL_REQUEST_CREATED", "PULL_REQUEST_UPDATED"]
         if events:
             events[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in events]
         self._events = events

@@ -10,7 +10,11 @@ from .absolute_wait_criteria import AbsoluteWaitCriteria
 from .absolute_wait_criteria_summary import AbsoluteWaitCriteriaSummary
 from .actual_build_runner_shape_config import ActualBuildRunnerShapeConfig
 from .approval_action import ApprovalAction
+from .approval_activity_summary import ApprovalActivitySummary
 from .approval_policy import ApprovalPolicy
+from .approval_rule import ApprovalRule
+from .approval_rule_collection import ApprovalRuleCollection
+from .approval_rule_merge_check import ApprovalRuleMergeCheck
 from .approve_deployment_details import ApproveDeploymentDetails
 from .automated_deploy_stage_rollback_policy import AutomatedDeployStageRollbackPolicy
 from .backend_set_ip_collection import BackendSetIpCollection
@@ -33,6 +37,7 @@ from .bitbucket_server_token_connection_summary import BitbucketServerTokenConne
 from .bitbucket_server_trigger import BitbucketServerTrigger
 from .bitbucket_server_trigger_create_result import BitbucketServerTriggerCreateResult
 from .bitbucket_server_trigger_summary import BitbucketServerTriggerSummary
+from .build_merge_check import BuildMergeCheck
 from .build_outputs import BuildOutputs
 from .build_pipeline import BuildPipeline
 from .build_pipeline_collection import BuildPipelineCollection
@@ -50,6 +55,9 @@ from .build_run_argument import BuildRunArgument
 from .build_run_argument_collection import BuildRunArgumentCollection
 from .build_run_progress import BuildRunProgress
 from .build_run_progress_summary import BuildRunProgressSummary
+from .build_run_snapshot import BuildRunSnapshot
+from .build_run_snapshot_collection import BuildRunSnapshotCollection
+from .build_run_snapshot_summary import BuildRunSnapshotSummary
 from .build_run_source import BuildRunSource
 from .build_run_summary import BuildRunSummary
 from .build_run_summary_collection import BuildRunSummaryCollection
@@ -64,6 +72,10 @@ from .ca_cert_verify import CaCertVerify
 from .cancel_build_run_details import CancelBuildRunDetails
 from .cancel_deployment_details import CancelDeploymentDetails
 from .change_project_compartment_details import ChangeProjectCompartmentDetails
+from .comment_activity_summary import CommentActivitySummary
+from .commit_activity_summary import CommitActivitySummary
+from .commit_analytics_author_collection import CommitAnalyticsAuthorCollection
+from .commit_analytics_author_summary import CommitAnalyticsAuthorSummary
 from .commit_info import CommitInfo
 from .compute_instance_group_blue_green_deploy_stage import ComputeInstanceGroupBlueGreenDeployStage
 from .compute_instance_group_blue_green_deploy_stage_execution_progress import ComputeInstanceGroupBlueGreenDeployStageExecutionProgress
@@ -95,6 +107,7 @@ from .compute_instance_group_linear_rollout_policy_by_percentage import ComputeI
 from .compute_instance_group_rollout_policy import ComputeInstanceGroupRolloutPolicy
 from .compute_instance_group_selector import ComputeInstanceGroupSelector
 from .compute_instance_group_selector_collection import ComputeInstanceGroupSelectorCollection
+from .conflict_merge_check import ConflictMergeCheck
 from .connection import Connection
 from .connection_collection import ConnectionCollection
 from .connection_summary import ConnectionSummary
@@ -148,8 +161,15 @@ from .create_oke_canary_traffic_shift_deploy_stage_details import CreateOkeCanar
 from .create_oke_cluster_deploy_environment_details import CreateOkeClusterDeployEnvironmentDetails
 from .create_oke_deploy_stage_details import CreateOkeDeployStageDetails
 from .create_oke_helm_chart_deploy_stage_details import CreateOkeHelmChartDeployStageDetails
+from .create_or_update_git_branch_details import CreateOrUpdateGitBranchDetails
+from .create_or_update_git_ref_details import CreateOrUpdateGitRefDetails
+from .create_or_update_git_tag_details import CreateOrUpdateGitTagDetails
+from .create_or_update_protected_branch_details import CreateOrUpdateProtectedBranchDetails
 from .create_project_details import CreateProjectDetails
+from .create_pull_request_comment_details import CreatePullRequestCommentDetails
+from .create_pull_request_details import CreatePullRequestDetails
 from .create_repository_details import CreateRepositoryDetails
+from .create_reviewer_details import CreateReviewerDetails
 from .create_shell_deploy_stage_details import CreateShellDeployStageDetails
 from .create_single_deploy_stage_deployment_details import CreateSingleDeployStageDeploymentDetails
 from .create_single_deploy_stage_redeployment_details import CreateSingleDeployStageRedeploymentDetails
@@ -162,6 +182,8 @@ from .create_wait_deploy_stage_details import CreateWaitDeployStageDetails
 from .create_wait_stage_details import CreateWaitStageDetails
 from .custom_build_runner_shape_config import CustomBuildRunnerShapeConfig
 from .default_build_runner_shape_config import DefaultBuildRunnerShapeConfig
+from .delete_git_ref_details import DeleteGitRefDetails
+from .delete_protected_branch_details import DeleteProtectedBranchDetails
 from .deliver_artifact import DeliverArtifact
 from .deliver_artifact_collection import DeliverArtifactCollection
 from .deliver_artifact_stage import DeliverArtifactStage
@@ -225,17 +247,22 @@ from .diff_response import DiffResponse
 from .diff_response_entry import DiffResponseEntry
 from .diff_section import DiffSection
 from .diff_summary import DiffSummary
+from .execute_merge_pull_request_details import ExecuteMergePullRequestDetails
 from .exported_variable import ExportedVariable
 from .exported_variable_collection import ExportedVariableCollection
 from .file_diff_response import FileDiffResponse
 from .file_filter import FileFilter
 from .file_line_details import FileLineDetails
 from .filter import Filter
+from .fork_sync_status_collection import ForkSyncStatusCollection
+from .fork_sync_status_summary import ForkSyncStatusSummary
 from .function_deploy_environment import FunctionDeployEnvironment
 from .function_deploy_environment_summary import FunctionDeployEnvironmentSummary
 from .function_deploy_stage import FunctionDeployStage
 from .function_deploy_stage_execution_progress import FunctionDeployStageExecutionProgress
 from .function_deploy_stage_summary import FunctionDeployStageSummary
+from .generic_artifact_location_details import GenericArtifactLocationDetails
+from .generic_artifacts import GenericArtifacts
 from .generic_delivered_artifact import GenericDeliveredArtifact
 from .generic_deploy_artifact_source import GenericDeployArtifactSource
 from .github_access_token_connection import GithubAccessTokenConnection
@@ -286,6 +313,11 @@ from .manual_approval_deploy_stage import ManualApprovalDeployStage
 from .manual_approval_deploy_stage_execution_progress import ManualApprovalDeployStageExecutionProgress
 from .manual_approval_deploy_stage_summary import ManualApprovalDeployStageSummary
 from .manual_build_run_source import ManualBuildRunSource
+from .merge_check import MergeCheck
+from .merge_check_collection import MergeCheckCollection
+from .merge_checks import MergeChecks
+from .merge_pull_request_details import MergePullRequestDetails
+from .merge_settings import MergeSettings
 from .mirror_repository_config import MirrorRepositoryConfig
 from .network_channel import NetworkChannel
 from .nginx_blue_green_strategy import NginxBlueGreenStrategy
@@ -293,6 +325,7 @@ from .nginx_canary_strategy import NginxCanaryStrategy
 from .no_deploy_stage_rollback_policy import NoDeployStageRollbackPolicy
 from .none_verification_key_source import NoneVerificationKeySource
 from .notification_config import NotificationConfig
+from .object_storage_generic_artifact_location_details import ObjectStorageGenericArtifactLocationDetails
 from .ocir_deploy_artifact_source import OcirDeployArtifactSource
 from .oke_blue_green_deploy_stage import OkeBlueGreenDeployStage
 from .oke_blue_green_deploy_stage_execution_progress import OkeBlueGreenDeployStageExecutionProgress
@@ -319,14 +352,49 @@ from .oke_deploy_stage_summary import OkeDeployStageSummary
 from .oke_helm_chart_deploy_stage import OkeHelmChartDeployStage
 from .oke_helm_chart_deploy_stage_summary import OkeHelmChartDeployStageSummary
 from .oke_helm_chart_deployment_stage_execution_progress import OkeHelmChartDeploymentStageExecutionProgress
+from .patch_insert_instruction import PatchInsertInstruction
+from .patch_instruction import PatchInstruction
+from .patch_merge_instruction import PatchMergeInstruction
+from .patch_move_instruction import PatchMoveInstruction
+from .patch_prohibit_instruction import PatchProhibitInstruction
+from .patch_pull_request_details import PatchPullRequestDetails
+from .patch_remove_instruction import PatchRemoveInstruction
+from .patch_replace_instruction import PatchReplaceInstruction
+from .patch_require_instruction import PatchRequireInstruction
+from .principal_details import PrincipalDetails
 from .private_endpoint_channel import PrivateEndpointChannel
 from .project import Project
 from .project_collection import ProjectCollection
+from .project_notification_preference import ProjectNotificationPreference
+from .project_repository_settings import ProjectRepositorySettings
 from .project_summary import ProjectSummary
+from .protected_branch import ProtectedBranch
+from .protected_branch_collection import ProtectedBranchCollection
+from .protected_branch_summary import ProtectedBranchSummary
+from .pull_request import PullRequest
+from .pull_request_activity_collection import PullRequestActivityCollection
+from .pull_request_activity_summary import PullRequestActivitySummary
+from .pull_request_attachment import PullRequestAttachment
+from .pull_request_attachment_collection import PullRequestAttachmentCollection
+from .pull_request_attachment_summary import PullRequestAttachmentSummary
+from .pull_request_author_collection import PullRequestAuthorCollection
+from .pull_request_author_summary import PullRequestAuthorSummary
+from .pull_request_change_summary_metrics import PullRequestChangeSummaryMetrics
+from .pull_request_collection import PullRequestCollection
+from .pull_request_comment import PullRequestComment
+from .pull_request_comment_collection import PullRequestCommentCollection
+from .pull_request_comment_like_collection import PullRequestCommentLikeCollection
+from .pull_request_comment_summary import PullRequestCommentSummary
+from .pull_request_file_change_collection import PullRequestFileChangeCollection
+from .pull_request_file_change_summary import PullRequestFileChangeSummary
+from .pull_request_lifecycle_activity_summary import PullRequestLifecycleActivitySummary
+from .pull_request_notification_preference import PullRequestNotificationPreference
+from .pull_request_summary import PullRequestSummary
 from .put_repository_branch_details import PutRepositoryBranchDetails
 from .put_repository_ref_details import PutRepositoryRefDetails
 from .put_repository_tag_details import PutRepositoryTagDetails
 from .repository import Repository
+from .repository_analytics_details import RepositoryAnalyticsDetails
 from .repository_author_collection import RepositoryAuthorCollection
 from .repository_author_summary import RepositoryAuthorSummary
 from .repository_branch import RepositoryBranch
@@ -336,18 +404,25 @@ from .repository_commit import RepositoryCommit
 from .repository_commit_collection import RepositoryCommitCollection
 from .repository_commit_summary import RepositoryCommitSummary
 from .repository_file_lines import RepositoryFileLines
+from .repository_metric_aggregation import RepositoryMetricAggregation
+from .repository_metric_summary import RepositoryMetricSummary
 from .repository_mirror_record import RepositoryMirrorRecord
 from .repository_mirror_record_collection import RepositoryMirrorRecordCollection
 from .repository_mirror_record_summary import RepositoryMirrorRecordSummary
+from .repository_notification_preference import RepositoryNotificationPreference
 from .repository_object import RepositoryObject
 from .repository_path_collection import RepositoryPathCollection
 from .repository_path_summary import RepositoryPathSummary
 from .repository_ref import RepositoryRef
 from .repository_ref_collection import RepositoryRefCollection
 from .repository_ref_summary import RepositoryRefSummary
+from .repository_settings import RepositorySettings
 from .repository_summary import RepositorySummary
 from .repository_tag import RepositoryTag
 from .repository_tag_summary import RepositoryTagSummary
+from .review_pull_request_details import ReviewPullRequestDetails
+from .reviewer import Reviewer
+from .reviewer_activity_summary import ReviewerActivitySummary
 from .service_vnic_channel import ServiceVnicChannel
 from .shape_config import ShapeConfig
 from .shell_deploy_stage import ShellDeployStage
@@ -357,6 +432,11 @@ from .single_deploy_stage_deployment import SingleDeployStageDeployment
 from .single_deploy_stage_deployment_summary import SingleDeployStageDeploymentSummary
 from .single_deploy_stage_redeployment import SingleDeployStageRedeployment
 from .single_deploy_stage_redeployment_summary import SingleDeployStageRedeploymentSummary
+from .stage_output import StageOutput
+from .summarize_project_repository_analytics_details import SummarizeProjectRepositoryAnalyticsDetails
+from .summarize_repository_analytics_details import SummarizeRepositoryAnalyticsDetails
+from .sync_repository_details import SyncRepositoryDetails
+from .test_report_output import TestReportOutput
 from .tls_verify_config import TlsVerifyConfig
 from .trigger import Trigger
 from .trigger_action import TriggerAction
@@ -370,6 +450,8 @@ from .trigger_info import TriggerInfo
 from .trigger_schedule import TriggerSchedule
 from .trigger_summary import TriggerSummary
 from .update_absolute_wait_criteria_details import UpdateAbsoluteWaitCriteriaDetails
+from .update_approval_rule_details import UpdateApprovalRuleDetails
+from .update_approval_rule_details_collection import UpdateApprovalRuleDetailsCollection
 from .update_bitbucket_cloud_app_password_connection_details import UpdateBitbucketCloudAppPasswordConnectionDetails
 from .update_bitbucket_cloud_trigger_details import UpdateBitbucketCloudTriggerDetails
 from .update_bitbucket_server_access_token_connection_details import UpdateBitbucketServerAccessTokenConnectionDetails
@@ -415,7 +497,15 @@ from .update_oke_cluster_deploy_environment_details import UpdateOkeClusterDeplo
 from .update_oke_deploy_stage_details import UpdateOkeDeployStageDetails
 from .update_oke_helm_chart_deploy_stage_details import UpdateOkeHelmChartDeployStageDetails
 from .update_project_details import UpdateProjectDetails
+from .update_project_notification_preference_details import UpdateProjectNotificationPreferenceDetails
+from .update_project_repository_settings_details import UpdateProjectRepositorySettingsDetails
+from .update_pull_request_comment_details import UpdatePullRequestCommentDetails
+from .update_pull_request_details import UpdatePullRequestDetails
+from .update_pull_request_notification_preference_details import UpdatePullRequestNotificationPreferenceDetails
 from .update_repository_details import UpdateRepositoryDetails
+from .update_repository_notification_preference_details import UpdateRepositoryNotificationPreferenceDetails
+from .update_repository_settings_details import UpdateRepositorySettingsDetails
+from .update_reviewer_details import UpdateReviewerDetails
 from .update_shell_deploy_stage_details import UpdateShellDeployStageDetails
 from .update_single_deploy_stage_deployment_details import UpdateSingleDeployStageDeploymentDetails
 from .update_single_deploy_stage_redeployment_details import UpdateSingleDeployStageRedeploymentDetails
@@ -426,6 +516,7 @@ from .update_vbs_trigger_details import UpdateVbsTriggerDetails
 from .update_wait_criteria_details import UpdateWaitCriteriaDetails
 from .update_wait_deploy_stage_details import UpdateWaitDeployStageDetails
 from .update_wait_stage_details import UpdateWaitStageDetails
+from .validate_merge_pull_request_details import ValidateMergePullRequestDetails
 from .vault_secret_verification_key_source import VaultSecretVerificationKeySource
 from .vbs_access_token_connection import VbsAccessTokenConnection
 from .vbs_access_token_connection_summary import VbsAccessTokenConnectionSummary
@@ -463,7 +554,11 @@ devops_type_mapping = {
     "AbsoluteWaitCriteriaSummary": AbsoluteWaitCriteriaSummary,
     "ActualBuildRunnerShapeConfig": ActualBuildRunnerShapeConfig,
     "ApprovalAction": ApprovalAction,
+    "ApprovalActivitySummary": ApprovalActivitySummary,
     "ApprovalPolicy": ApprovalPolicy,
+    "ApprovalRule": ApprovalRule,
+    "ApprovalRuleCollection": ApprovalRuleCollection,
+    "ApprovalRuleMergeCheck": ApprovalRuleMergeCheck,
     "ApproveDeploymentDetails": ApproveDeploymentDetails,
     "AutomatedDeployStageRollbackPolicy": AutomatedDeployStageRollbackPolicy,
     "BackendSetIpCollection": BackendSetIpCollection,
@@ -486,6 +581,7 @@ devops_type_mapping = {
     "BitbucketServerTrigger": BitbucketServerTrigger,
     "BitbucketServerTriggerCreateResult": BitbucketServerTriggerCreateResult,
     "BitbucketServerTriggerSummary": BitbucketServerTriggerSummary,
+    "BuildMergeCheck": BuildMergeCheck,
     "BuildOutputs": BuildOutputs,
     "BuildPipeline": BuildPipeline,
     "BuildPipelineCollection": BuildPipelineCollection,
@@ -503,6 +599,9 @@ devops_type_mapping = {
     "BuildRunArgumentCollection": BuildRunArgumentCollection,
     "BuildRunProgress": BuildRunProgress,
     "BuildRunProgressSummary": BuildRunProgressSummary,
+    "BuildRunSnapshot": BuildRunSnapshot,
+    "BuildRunSnapshotCollection": BuildRunSnapshotCollection,
+    "BuildRunSnapshotSummary": BuildRunSnapshotSummary,
     "BuildRunSource": BuildRunSource,
     "BuildRunSummary": BuildRunSummary,
     "BuildRunSummaryCollection": BuildRunSummaryCollection,
@@ -517,6 +616,10 @@ devops_type_mapping = {
     "CancelBuildRunDetails": CancelBuildRunDetails,
     "CancelDeploymentDetails": CancelDeploymentDetails,
     "ChangeProjectCompartmentDetails": ChangeProjectCompartmentDetails,
+    "CommentActivitySummary": CommentActivitySummary,
+    "CommitActivitySummary": CommitActivitySummary,
+    "CommitAnalyticsAuthorCollection": CommitAnalyticsAuthorCollection,
+    "CommitAnalyticsAuthorSummary": CommitAnalyticsAuthorSummary,
     "CommitInfo": CommitInfo,
     "ComputeInstanceGroupBlueGreenDeployStage": ComputeInstanceGroupBlueGreenDeployStage,
     "ComputeInstanceGroupBlueGreenDeployStageExecutionProgress": ComputeInstanceGroupBlueGreenDeployStageExecutionProgress,
@@ -548,6 +651,7 @@ devops_type_mapping = {
     "ComputeInstanceGroupRolloutPolicy": ComputeInstanceGroupRolloutPolicy,
     "ComputeInstanceGroupSelector": ComputeInstanceGroupSelector,
     "ComputeInstanceGroupSelectorCollection": ComputeInstanceGroupSelectorCollection,
+    "ConflictMergeCheck": ConflictMergeCheck,
     "Connection": Connection,
     "ConnectionCollection": ConnectionCollection,
     "ConnectionSummary": ConnectionSummary,
@@ -601,8 +705,15 @@ devops_type_mapping = {
     "CreateOkeClusterDeployEnvironmentDetails": CreateOkeClusterDeployEnvironmentDetails,
     "CreateOkeDeployStageDetails": CreateOkeDeployStageDetails,
     "CreateOkeHelmChartDeployStageDetails": CreateOkeHelmChartDeployStageDetails,
+    "CreateOrUpdateGitBranchDetails": CreateOrUpdateGitBranchDetails,
+    "CreateOrUpdateGitRefDetails": CreateOrUpdateGitRefDetails,
+    "CreateOrUpdateGitTagDetails": CreateOrUpdateGitTagDetails,
+    "CreateOrUpdateProtectedBranchDetails": CreateOrUpdateProtectedBranchDetails,
     "CreateProjectDetails": CreateProjectDetails,
+    "CreatePullRequestCommentDetails": CreatePullRequestCommentDetails,
+    "CreatePullRequestDetails": CreatePullRequestDetails,
     "CreateRepositoryDetails": CreateRepositoryDetails,
+    "CreateReviewerDetails": CreateReviewerDetails,
     "CreateShellDeployStageDetails": CreateShellDeployStageDetails,
     "CreateSingleDeployStageDeploymentDetails": CreateSingleDeployStageDeploymentDetails,
     "CreateSingleDeployStageRedeploymentDetails": CreateSingleDeployStageRedeploymentDetails,
@@ -615,6 +726,8 @@ devops_type_mapping = {
     "CreateWaitStageDetails": CreateWaitStageDetails,
     "CustomBuildRunnerShapeConfig": CustomBuildRunnerShapeConfig,
     "DefaultBuildRunnerShapeConfig": DefaultBuildRunnerShapeConfig,
+    "DeleteGitRefDetails": DeleteGitRefDetails,
+    "DeleteProtectedBranchDetails": DeleteProtectedBranchDetails,
     "DeliverArtifact": DeliverArtifact,
     "DeliverArtifactCollection": DeliverArtifactCollection,
     "DeliverArtifactStage": DeliverArtifactStage,
@@ -678,17 +791,22 @@ devops_type_mapping = {
     "DiffResponseEntry": DiffResponseEntry,
     "DiffSection": DiffSection,
     "DiffSummary": DiffSummary,
+    "ExecuteMergePullRequestDetails": ExecuteMergePullRequestDetails,
     "ExportedVariable": ExportedVariable,
     "ExportedVariableCollection": ExportedVariableCollection,
     "FileDiffResponse": FileDiffResponse,
     "FileFilter": FileFilter,
     "FileLineDetails": FileLineDetails,
     "Filter": Filter,
+    "ForkSyncStatusCollection": ForkSyncStatusCollection,
+    "ForkSyncStatusSummary": ForkSyncStatusSummary,
     "FunctionDeployEnvironment": FunctionDeployEnvironment,
     "FunctionDeployEnvironmentSummary": FunctionDeployEnvironmentSummary,
     "FunctionDeployStage": FunctionDeployStage,
     "FunctionDeployStageExecutionProgress": FunctionDeployStageExecutionProgress,
     "FunctionDeployStageSummary": FunctionDeployStageSummary,
+    "GenericArtifactLocationDetails": GenericArtifactLocationDetails,
+    "GenericArtifacts": GenericArtifacts,
     "GenericDeliveredArtifact": GenericDeliveredArtifact,
     "GenericDeployArtifactSource": GenericDeployArtifactSource,
     "GithubAccessTokenConnection": GithubAccessTokenConnection,
@@ -739,6 +857,11 @@ devops_type_mapping = {
     "ManualApprovalDeployStageExecutionProgress": ManualApprovalDeployStageExecutionProgress,
     "ManualApprovalDeployStageSummary": ManualApprovalDeployStageSummary,
     "ManualBuildRunSource": ManualBuildRunSource,
+    "MergeCheck": MergeCheck,
+    "MergeCheckCollection": MergeCheckCollection,
+    "MergeChecks": MergeChecks,
+    "MergePullRequestDetails": MergePullRequestDetails,
+    "MergeSettings": MergeSettings,
     "MirrorRepositoryConfig": MirrorRepositoryConfig,
     "NetworkChannel": NetworkChannel,
     "NginxBlueGreenStrategy": NginxBlueGreenStrategy,
@@ -746,6 +869,7 @@ devops_type_mapping = {
     "NoDeployStageRollbackPolicy": NoDeployStageRollbackPolicy,
     "NoneVerificationKeySource": NoneVerificationKeySource,
     "NotificationConfig": NotificationConfig,
+    "ObjectStorageGenericArtifactLocationDetails": ObjectStorageGenericArtifactLocationDetails,
     "OcirDeployArtifactSource": OcirDeployArtifactSource,
     "OkeBlueGreenDeployStage": OkeBlueGreenDeployStage,
     "OkeBlueGreenDeployStageExecutionProgress": OkeBlueGreenDeployStageExecutionProgress,
@@ -772,14 +896,49 @@ devops_type_mapping = {
     "OkeHelmChartDeployStage": OkeHelmChartDeployStage,
     "OkeHelmChartDeployStageSummary": OkeHelmChartDeployStageSummary,
     "OkeHelmChartDeploymentStageExecutionProgress": OkeHelmChartDeploymentStageExecutionProgress,
+    "PatchInsertInstruction": PatchInsertInstruction,
+    "PatchInstruction": PatchInstruction,
+    "PatchMergeInstruction": PatchMergeInstruction,
+    "PatchMoveInstruction": PatchMoveInstruction,
+    "PatchProhibitInstruction": PatchProhibitInstruction,
+    "PatchPullRequestDetails": PatchPullRequestDetails,
+    "PatchRemoveInstruction": PatchRemoveInstruction,
+    "PatchReplaceInstruction": PatchReplaceInstruction,
+    "PatchRequireInstruction": PatchRequireInstruction,
+    "PrincipalDetails": PrincipalDetails,
     "PrivateEndpointChannel": PrivateEndpointChannel,
     "Project": Project,
     "ProjectCollection": ProjectCollection,
+    "ProjectNotificationPreference": ProjectNotificationPreference,
+    "ProjectRepositorySettings": ProjectRepositorySettings,
     "ProjectSummary": ProjectSummary,
+    "ProtectedBranch": ProtectedBranch,
+    "ProtectedBranchCollection": ProtectedBranchCollection,
+    "ProtectedBranchSummary": ProtectedBranchSummary,
+    "PullRequest": PullRequest,
+    "PullRequestActivityCollection": PullRequestActivityCollection,
+    "PullRequestActivitySummary": PullRequestActivitySummary,
+    "PullRequestAttachment": PullRequestAttachment,
+    "PullRequestAttachmentCollection": PullRequestAttachmentCollection,
+    "PullRequestAttachmentSummary": PullRequestAttachmentSummary,
+    "PullRequestAuthorCollection": PullRequestAuthorCollection,
+    "PullRequestAuthorSummary": PullRequestAuthorSummary,
+    "PullRequestChangeSummaryMetrics": PullRequestChangeSummaryMetrics,
+    "PullRequestCollection": PullRequestCollection,
+    "PullRequestComment": PullRequestComment,
+    "PullRequestCommentCollection": PullRequestCommentCollection,
+    "PullRequestCommentLikeCollection": PullRequestCommentLikeCollection,
+    "PullRequestCommentSummary": PullRequestCommentSummary,
+    "PullRequestFileChangeCollection": PullRequestFileChangeCollection,
+    "PullRequestFileChangeSummary": PullRequestFileChangeSummary,
+    "PullRequestLifecycleActivitySummary": PullRequestLifecycleActivitySummary,
+    "PullRequestNotificationPreference": PullRequestNotificationPreference,
+    "PullRequestSummary": PullRequestSummary,
     "PutRepositoryBranchDetails": PutRepositoryBranchDetails,
     "PutRepositoryRefDetails": PutRepositoryRefDetails,
     "PutRepositoryTagDetails": PutRepositoryTagDetails,
     "Repository": Repository,
+    "RepositoryAnalyticsDetails": RepositoryAnalyticsDetails,
     "RepositoryAuthorCollection": RepositoryAuthorCollection,
     "RepositoryAuthorSummary": RepositoryAuthorSummary,
     "RepositoryBranch": RepositoryBranch,
@@ -789,18 +948,25 @@ devops_type_mapping = {
     "RepositoryCommitCollection": RepositoryCommitCollection,
     "RepositoryCommitSummary": RepositoryCommitSummary,
     "RepositoryFileLines": RepositoryFileLines,
+    "RepositoryMetricAggregation": RepositoryMetricAggregation,
+    "RepositoryMetricSummary": RepositoryMetricSummary,
     "RepositoryMirrorRecord": RepositoryMirrorRecord,
     "RepositoryMirrorRecordCollection": RepositoryMirrorRecordCollection,
     "RepositoryMirrorRecordSummary": RepositoryMirrorRecordSummary,
+    "RepositoryNotificationPreference": RepositoryNotificationPreference,
     "RepositoryObject": RepositoryObject,
     "RepositoryPathCollection": RepositoryPathCollection,
     "RepositoryPathSummary": RepositoryPathSummary,
     "RepositoryRef": RepositoryRef,
     "RepositoryRefCollection": RepositoryRefCollection,
     "RepositoryRefSummary": RepositoryRefSummary,
+    "RepositorySettings": RepositorySettings,
     "RepositorySummary": RepositorySummary,
     "RepositoryTag": RepositoryTag,
     "RepositoryTagSummary": RepositoryTagSummary,
+    "ReviewPullRequestDetails": ReviewPullRequestDetails,
+    "Reviewer": Reviewer,
+    "ReviewerActivitySummary": ReviewerActivitySummary,
     "ServiceVnicChannel": ServiceVnicChannel,
     "ShapeConfig": ShapeConfig,
     "ShellDeployStage": ShellDeployStage,
@@ -810,6 +976,11 @@ devops_type_mapping = {
     "SingleDeployStageDeploymentSummary": SingleDeployStageDeploymentSummary,
     "SingleDeployStageRedeployment": SingleDeployStageRedeployment,
     "SingleDeployStageRedeploymentSummary": SingleDeployStageRedeploymentSummary,
+    "StageOutput": StageOutput,
+    "SummarizeProjectRepositoryAnalyticsDetails": SummarizeProjectRepositoryAnalyticsDetails,
+    "SummarizeRepositoryAnalyticsDetails": SummarizeRepositoryAnalyticsDetails,
+    "SyncRepositoryDetails": SyncRepositoryDetails,
+    "TestReportOutput": TestReportOutput,
     "TlsVerifyConfig": TlsVerifyConfig,
     "Trigger": Trigger,
     "TriggerAction": TriggerAction,
@@ -823,6 +994,8 @@ devops_type_mapping = {
     "TriggerSchedule": TriggerSchedule,
     "TriggerSummary": TriggerSummary,
     "UpdateAbsoluteWaitCriteriaDetails": UpdateAbsoluteWaitCriteriaDetails,
+    "UpdateApprovalRuleDetails": UpdateApprovalRuleDetails,
+    "UpdateApprovalRuleDetailsCollection": UpdateApprovalRuleDetailsCollection,
     "UpdateBitbucketCloudAppPasswordConnectionDetails": UpdateBitbucketCloudAppPasswordConnectionDetails,
     "UpdateBitbucketCloudTriggerDetails": UpdateBitbucketCloudTriggerDetails,
     "UpdateBitbucketServerAccessTokenConnectionDetails": UpdateBitbucketServerAccessTokenConnectionDetails,
@@ -868,7 +1041,15 @@ devops_type_mapping = {
     "UpdateOkeDeployStageDetails": UpdateOkeDeployStageDetails,
     "UpdateOkeHelmChartDeployStageDetails": UpdateOkeHelmChartDeployStageDetails,
     "UpdateProjectDetails": UpdateProjectDetails,
+    "UpdateProjectNotificationPreferenceDetails": UpdateProjectNotificationPreferenceDetails,
+    "UpdateProjectRepositorySettingsDetails": UpdateProjectRepositorySettingsDetails,
+    "UpdatePullRequestCommentDetails": UpdatePullRequestCommentDetails,
+    "UpdatePullRequestDetails": UpdatePullRequestDetails,
+    "UpdatePullRequestNotificationPreferenceDetails": UpdatePullRequestNotificationPreferenceDetails,
     "UpdateRepositoryDetails": UpdateRepositoryDetails,
+    "UpdateRepositoryNotificationPreferenceDetails": UpdateRepositoryNotificationPreferenceDetails,
+    "UpdateRepositorySettingsDetails": UpdateRepositorySettingsDetails,
+    "UpdateReviewerDetails": UpdateReviewerDetails,
     "UpdateShellDeployStageDetails": UpdateShellDeployStageDetails,
     "UpdateSingleDeployStageDeploymentDetails": UpdateSingleDeployStageDeploymentDetails,
     "UpdateSingleDeployStageRedeploymentDetails": UpdateSingleDeployStageRedeploymentDetails,
@@ -879,6 +1060,7 @@ devops_type_mapping = {
     "UpdateWaitCriteriaDetails": UpdateWaitCriteriaDetails,
     "UpdateWaitDeployStageDetails": UpdateWaitDeployStageDetails,
     "UpdateWaitStageDetails": UpdateWaitStageDetails,
+    "ValidateMergePullRequestDetails": ValidateMergePullRequestDetails,
     "VaultSecretVerificationKeySource": VaultSecretVerificationKeySource,
     "VbsAccessTokenConnection": VbsAccessTokenConnection,
     "VbsAccessTokenConnectionSummary": VbsAccessTokenConnectionSummary,

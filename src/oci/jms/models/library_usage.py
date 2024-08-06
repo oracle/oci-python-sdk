@@ -36,6 +36,10 @@ class LibraryUsage(object):
             The value to assign to the library_version property of this LibraryUsage.
         :type library_version: str
 
+        :param cve_id:
+            The value to assign to the cve_id property of this LibraryUsage.
+        :type cve_id: str
+
         :param cvss_score:
             The value to assign to the cvss_score property of this LibraryUsage.
         :type cvss_score: float
@@ -72,12 +76,17 @@ class LibraryUsage(object):
             The value to assign to the time_last_seen property of this LibraryUsage.
         :type time_last_seen: datetime
 
+        :param time_last_cve_refreshed:
+            The value to assign to the time_last_cve_refreshed property of this LibraryUsage.
+        :type time_last_cve_refreshed: datetime
+
         """
         self.swagger_types = {
             'library_key': 'str',
             'fleet_id': 'str',
             'library_name': 'str',
             'library_version': 'str',
+            'cve_id': 'str',
             'cvss_score': 'float',
             'approximate_application_count': 'int',
             'approximate_java_server_instance_count': 'int',
@@ -86,7 +95,8 @@ class LibraryUsage(object):
             'time_start': 'datetime',
             'time_end': 'datetime',
             'time_first_seen': 'datetime',
-            'time_last_seen': 'datetime'
+            'time_last_seen': 'datetime',
+            'time_last_cve_refreshed': 'datetime'
         }
 
         self.attribute_map = {
@@ -94,6 +104,7 @@ class LibraryUsage(object):
             'fleet_id': 'fleetId',
             'library_name': 'libraryName',
             'library_version': 'libraryVersion',
+            'cve_id': 'cveId',
             'cvss_score': 'cvssScore',
             'approximate_application_count': 'approximateApplicationCount',
             'approximate_java_server_instance_count': 'approximateJavaServerInstanceCount',
@@ -102,13 +113,15 @@ class LibraryUsage(object):
             'time_start': 'timeStart',
             'time_end': 'timeEnd',
             'time_first_seen': 'timeFirstSeen',
-            'time_last_seen': 'timeLastSeen'
+            'time_last_seen': 'timeLastSeen',
+            'time_last_cve_refreshed': 'timeLastCveRefreshed'
         }
 
         self._library_key = None
         self._fleet_id = None
         self._library_name = None
         self._library_version = None
+        self._cve_id = None
         self._cvss_score = None
         self._approximate_application_count = None
         self._approximate_java_server_instance_count = None
@@ -118,6 +131,7 @@ class LibraryUsage(object):
         self._time_end = None
         self._time_first_seen = None
         self._time_last_seen = None
+        self._time_last_cve_refreshed = None
 
     @property
     def library_key(self):
@@ -218,6 +232,30 @@ class LibraryUsage(object):
         :type: str
         """
         self._library_version = library_version
+
+    @property
+    def cve_id(self):
+        """
+        Gets the cve_id of this LibraryUsage.
+        The Common Vulnerabilities and Exposures (CVE) ID.
+
+
+        :return: The cve_id of this LibraryUsage.
+        :rtype: str
+        """
+        return self._cve_id
+
+    @cve_id.setter
+    def cve_id(self, cve_id):
+        """
+        Sets the cve_id of this LibraryUsage.
+        The Common Vulnerabilities and Exposures (CVE) ID.
+
+
+        :param cve_id: The cve_id of this LibraryUsage.
+        :type: str
+        """
+        self._cve_id = cve_id
 
     @property
     def cvss_score(self):
@@ -446,6 +484,30 @@ class LibraryUsage(object):
         :type: datetime
         """
         self._time_last_seen = time_last_seen
+
+    @property
+    def time_last_cve_refreshed(self):
+        """
+        Gets the time_last_cve_refreshed of this LibraryUsage.
+        The date and time of the last CVEs refresh was completed.
+
+
+        :return: The time_last_cve_refreshed of this LibraryUsage.
+        :rtype: datetime
+        """
+        return self._time_last_cve_refreshed
+
+    @time_last_cve_refreshed.setter
+    def time_last_cve_refreshed(self, time_last_cve_refreshed):
+        """
+        Sets the time_last_cve_refreshed of this LibraryUsage.
+        The date and time of the last CVEs refresh was completed.
+
+
+        :param time_last_cve_refreshed: The time_last_cve_refreshed of this LibraryUsage.
+        :type: datetime
+        """
+        self._time_last_cve_refreshed = time_last_cve_refreshed
 
     def __repr__(self):
         return formatted_flat_dict(self)

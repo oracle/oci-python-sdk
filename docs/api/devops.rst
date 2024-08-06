@@ -22,7 +22,11 @@ Devops
     oci.devops.models.AbsoluteWaitCriteriaSummary
     oci.devops.models.ActualBuildRunnerShapeConfig
     oci.devops.models.ApprovalAction
+    oci.devops.models.ApprovalActivitySummary
     oci.devops.models.ApprovalPolicy
+    oci.devops.models.ApprovalRule
+    oci.devops.models.ApprovalRuleCollection
+    oci.devops.models.ApprovalRuleMergeCheck
     oci.devops.models.ApproveDeploymentDetails
     oci.devops.models.AutomatedDeployStageRollbackPolicy
     oci.devops.models.BackendSetIpCollection
@@ -45,6 +49,7 @@ Devops
     oci.devops.models.BitbucketServerTrigger
     oci.devops.models.BitbucketServerTriggerCreateResult
     oci.devops.models.BitbucketServerTriggerSummary
+    oci.devops.models.BuildMergeCheck
     oci.devops.models.BuildOutputs
     oci.devops.models.BuildPipeline
     oci.devops.models.BuildPipelineCollection
@@ -62,6 +67,9 @@ Devops
     oci.devops.models.BuildRunArgumentCollection
     oci.devops.models.BuildRunProgress
     oci.devops.models.BuildRunProgressSummary
+    oci.devops.models.BuildRunSnapshot
+    oci.devops.models.BuildRunSnapshotCollection
+    oci.devops.models.BuildRunSnapshotSummary
     oci.devops.models.BuildRunSource
     oci.devops.models.BuildRunSummary
     oci.devops.models.BuildRunSummaryCollection
@@ -76,6 +84,10 @@ Devops
     oci.devops.models.CancelBuildRunDetails
     oci.devops.models.CancelDeploymentDetails
     oci.devops.models.ChangeProjectCompartmentDetails
+    oci.devops.models.CommentActivitySummary
+    oci.devops.models.CommitActivitySummary
+    oci.devops.models.CommitAnalyticsAuthorCollection
+    oci.devops.models.CommitAnalyticsAuthorSummary
     oci.devops.models.CommitInfo
     oci.devops.models.ComputeInstanceGroupBlueGreenDeployStage
     oci.devops.models.ComputeInstanceGroupBlueGreenDeployStageExecutionProgress
@@ -107,6 +119,7 @@ Devops
     oci.devops.models.ComputeInstanceGroupRolloutPolicy
     oci.devops.models.ComputeInstanceGroupSelector
     oci.devops.models.ComputeInstanceGroupSelectorCollection
+    oci.devops.models.ConflictMergeCheck
     oci.devops.models.Connection
     oci.devops.models.ConnectionCollection
     oci.devops.models.ConnectionSummary
@@ -160,8 +173,15 @@ Devops
     oci.devops.models.CreateOkeClusterDeployEnvironmentDetails
     oci.devops.models.CreateOkeDeployStageDetails
     oci.devops.models.CreateOkeHelmChartDeployStageDetails
+    oci.devops.models.CreateOrUpdateGitBranchDetails
+    oci.devops.models.CreateOrUpdateGitRefDetails
+    oci.devops.models.CreateOrUpdateGitTagDetails
+    oci.devops.models.CreateOrUpdateProtectedBranchDetails
     oci.devops.models.CreateProjectDetails
+    oci.devops.models.CreatePullRequestCommentDetails
+    oci.devops.models.CreatePullRequestDetails
     oci.devops.models.CreateRepositoryDetails
+    oci.devops.models.CreateReviewerDetails
     oci.devops.models.CreateShellDeployStageDetails
     oci.devops.models.CreateSingleDeployStageDeploymentDetails
     oci.devops.models.CreateSingleDeployStageRedeploymentDetails
@@ -174,6 +194,8 @@ Devops
     oci.devops.models.CreateWaitStageDetails
     oci.devops.models.CustomBuildRunnerShapeConfig
     oci.devops.models.DefaultBuildRunnerShapeConfig
+    oci.devops.models.DeleteGitRefDetails
+    oci.devops.models.DeleteProtectedBranchDetails
     oci.devops.models.DeliverArtifact
     oci.devops.models.DeliverArtifactCollection
     oci.devops.models.DeliverArtifactStage
@@ -237,17 +259,22 @@ Devops
     oci.devops.models.DiffResponseEntry
     oci.devops.models.DiffSection
     oci.devops.models.DiffSummary
+    oci.devops.models.ExecuteMergePullRequestDetails
     oci.devops.models.ExportedVariable
     oci.devops.models.ExportedVariableCollection
     oci.devops.models.FileDiffResponse
     oci.devops.models.FileFilter
     oci.devops.models.FileLineDetails
     oci.devops.models.Filter
+    oci.devops.models.ForkSyncStatusCollection
+    oci.devops.models.ForkSyncStatusSummary
     oci.devops.models.FunctionDeployEnvironment
     oci.devops.models.FunctionDeployEnvironmentSummary
     oci.devops.models.FunctionDeployStage
     oci.devops.models.FunctionDeployStageExecutionProgress
     oci.devops.models.FunctionDeployStageSummary
+    oci.devops.models.GenericArtifactLocationDetails
+    oci.devops.models.GenericArtifacts
     oci.devops.models.GenericDeliveredArtifact
     oci.devops.models.GenericDeployArtifactSource
     oci.devops.models.GithubAccessTokenConnection
@@ -298,6 +325,11 @@ Devops
     oci.devops.models.ManualApprovalDeployStageExecutionProgress
     oci.devops.models.ManualApprovalDeployStageSummary
     oci.devops.models.ManualBuildRunSource
+    oci.devops.models.MergeCheck
+    oci.devops.models.MergeCheckCollection
+    oci.devops.models.MergeChecks
+    oci.devops.models.MergePullRequestDetails
+    oci.devops.models.MergeSettings
     oci.devops.models.MirrorRepositoryConfig
     oci.devops.models.NetworkChannel
     oci.devops.models.NginxBlueGreenStrategy
@@ -305,6 +337,7 @@ Devops
     oci.devops.models.NoDeployStageRollbackPolicy
     oci.devops.models.NoneVerificationKeySource
     oci.devops.models.NotificationConfig
+    oci.devops.models.ObjectStorageGenericArtifactLocationDetails
     oci.devops.models.OcirDeployArtifactSource
     oci.devops.models.OkeBlueGreenDeployStage
     oci.devops.models.OkeBlueGreenDeployStageExecutionProgress
@@ -331,14 +364,49 @@ Devops
     oci.devops.models.OkeHelmChartDeployStage
     oci.devops.models.OkeHelmChartDeployStageSummary
     oci.devops.models.OkeHelmChartDeploymentStageExecutionProgress
+    oci.devops.models.PatchInsertInstruction
+    oci.devops.models.PatchInstruction
+    oci.devops.models.PatchMergeInstruction
+    oci.devops.models.PatchMoveInstruction
+    oci.devops.models.PatchProhibitInstruction
+    oci.devops.models.PatchPullRequestDetails
+    oci.devops.models.PatchRemoveInstruction
+    oci.devops.models.PatchReplaceInstruction
+    oci.devops.models.PatchRequireInstruction
+    oci.devops.models.PrincipalDetails
     oci.devops.models.PrivateEndpointChannel
     oci.devops.models.Project
     oci.devops.models.ProjectCollection
+    oci.devops.models.ProjectNotificationPreference
+    oci.devops.models.ProjectRepositorySettings
     oci.devops.models.ProjectSummary
+    oci.devops.models.ProtectedBranch
+    oci.devops.models.ProtectedBranchCollection
+    oci.devops.models.ProtectedBranchSummary
+    oci.devops.models.PullRequest
+    oci.devops.models.PullRequestActivityCollection
+    oci.devops.models.PullRequestActivitySummary
+    oci.devops.models.PullRequestAttachment
+    oci.devops.models.PullRequestAttachmentCollection
+    oci.devops.models.PullRequestAttachmentSummary
+    oci.devops.models.PullRequestAuthorCollection
+    oci.devops.models.PullRequestAuthorSummary
+    oci.devops.models.PullRequestChangeSummaryMetrics
+    oci.devops.models.PullRequestCollection
+    oci.devops.models.PullRequestComment
+    oci.devops.models.PullRequestCommentCollection
+    oci.devops.models.PullRequestCommentLikeCollection
+    oci.devops.models.PullRequestCommentSummary
+    oci.devops.models.PullRequestFileChangeCollection
+    oci.devops.models.PullRequestFileChangeSummary
+    oci.devops.models.PullRequestLifecycleActivitySummary
+    oci.devops.models.PullRequestNotificationPreference
+    oci.devops.models.PullRequestSummary
     oci.devops.models.PutRepositoryBranchDetails
     oci.devops.models.PutRepositoryRefDetails
     oci.devops.models.PutRepositoryTagDetails
     oci.devops.models.Repository
+    oci.devops.models.RepositoryAnalyticsDetails
     oci.devops.models.RepositoryAuthorCollection
     oci.devops.models.RepositoryAuthorSummary
     oci.devops.models.RepositoryBranch
@@ -348,18 +416,25 @@ Devops
     oci.devops.models.RepositoryCommitCollection
     oci.devops.models.RepositoryCommitSummary
     oci.devops.models.RepositoryFileLines
+    oci.devops.models.RepositoryMetricAggregation
+    oci.devops.models.RepositoryMetricSummary
     oci.devops.models.RepositoryMirrorRecord
     oci.devops.models.RepositoryMirrorRecordCollection
     oci.devops.models.RepositoryMirrorRecordSummary
+    oci.devops.models.RepositoryNotificationPreference
     oci.devops.models.RepositoryObject
     oci.devops.models.RepositoryPathCollection
     oci.devops.models.RepositoryPathSummary
     oci.devops.models.RepositoryRef
     oci.devops.models.RepositoryRefCollection
     oci.devops.models.RepositoryRefSummary
+    oci.devops.models.RepositorySettings
     oci.devops.models.RepositorySummary
     oci.devops.models.RepositoryTag
     oci.devops.models.RepositoryTagSummary
+    oci.devops.models.ReviewPullRequestDetails
+    oci.devops.models.Reviewer
+    oci.devops.models.ReviewerActivitySummary
     oci.devops.models.ServiceVnicChannel
     oci.devops.models.ShapeConfig
     oci.devops.models.ShellDeployStage
@@ -369,6 +444,11 @@ Devops
     oci.devops.models.SingleDeployStageDeploymentSummary
     oci.devops.models.SingleDeployStageRedeployment
     oci.devops.models.SingleDeployStageRedeploymentSummary
+    oci.devops.models.StageOutput
+    oci.devops.models.SummarizeProjectRepositoryAnalyticsDetails
+    oci.devops.models.SummarizeRepositoryAnalyticsDetails
+    oci.devops.models.SyncRepositoryDetails
+    oci.devops.models.TestReportOutput
     oci.devops.models.TlsVerifyConfig
     oci.devops.models.Trigger
     oci.devops.models.TriggerAction
@@ -382,6 +462,8 @@ Devops
     oci.devops.models.TriggerSchedule
     oci.devops.models.TriggerSummary
     oci.devops.models.UpdateAbsoluteWaitCriteriaDetails
+    oci.devops.models.UpdateApprovalRuleDetails
+    oci.devops.models.UpdateApprovalRuleDetailsCollection
     oci.devops.models.UpdateBitbucketCloudAppPasswordConnectionDetails
     oci.devops.models.UpdateBitbucketCloudTriggerDetails
     oci.devops.models.UpdateBitbucketServerAccessTokenConnectionDetails
@@ -427,7 +509,15 @@ Devops
     oci.devops.models.UpdateOkeDeployStageDetails
     oci.devops.models.UpdateOkeHelmChartDeployStageDetails
     oci.devops.models.UpdateProjectDetails
+    oci.devops.models.UpdateProjectNotificationPreferenceDetails
+    oci.devops.models.UpdateProjectRepositorySettingsDetails
+    oci.devops.models.UpdatePullRequestCommentDetails
+    oci.devops.models.UpdatePullRequestDetails
+    oci.devops.models.UpdatePullRequestNotificationPreferenceDetails
     oci.devops.models.UpdateRepositoryDetails
+    oci.devops.models.UpdateRepositoryNotificationPreferenceDetails
+    oci.devops.models.UpdateRepositorySettingsDetails
+    oci.devops.models.UpdateReviewerDetails
     oci.devops.models.UpdateShellDeployStageDetails
     oci.devops.models.UpdateSingleDeployStageDeploymentDetails
     oci.devops.models.UpdateSingleDeployStageRedeploymentDetails
@@ -438,6 +528,7 @@ Devops
     oci.devops.models.UpdateWaitCriteriaDetails
     oci.devops.models.UpdateWaitDeployStageDetails
     oci.devops.models.UpdateWaitStageDetails
+    oci.devops.models.ValidateMergePullRequestDetails
     oci.devops.models.VaultSecretVerificationKeySource
     oci.devops.models.VbsAccessTokenConnection
     oci.devops.models.VbsAccessTokenConnectionSummary

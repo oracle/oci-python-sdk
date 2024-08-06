@@ -28,6 +28,10 @@ class ShapeSummary(object):
             The value to assign to the shape property of this ShapeSummary.
         :type shape: str
 
+        :param is_flexible:
+            The value to assign to the is_flexible property of this ShapeSummary.
+        :type is_flexible: bool
+
         :param ocpu_count:
             The value to assign to the ocpu_count property of this ShapeSummary.
         :type ocpu_count: int
@@ -36,25 +40,42 @@ class ShapeSummary(object):
             The value to assign to the memory_size_in_gbs property of this ShapeSummary.
         :type memory_size_in_gbs: int
 
+        :param shape_ocpu_options:
+            The value to assign to the shape_ocpu_options property of this ShapeSummary.
+        :type shape_ocpu_options: oci.psql.models.ShapeOcpuOptions
+
+        :param shape_memory_options:
+            The value to assign to the shape_memory_options property of this ShapeSummary.
+        :type shape_memory_options: oci.psql.models.ShapeMemoryOptions
+
         """
         self.swagger_types = {
             'id': 'str',
             'shape': 'str',
+            'is_flexible': 'bool',
             'ocpu_count': 'int',
-            'memory_size_in_gbs': 'int'
+            'memory_size_in_gbs': 'int',
+            'shape_ocpu_options': 'ShapeOcpuOptions',
+            'shape_memory_options': 'ShapeMemoryOptions'
         }
 
         self.attribute_map = {
             'id': 'id',
             'shape': 'shape',
+            'is_flexible': 'isFlexible',
             'ocpu_count': 'ocpuCount',
-            'memory_size_in_gbs': 'memorySizeInGBs'
+            'memory_size_in_gbs': 'memorySizeInGBs',
+            'shape_ocpu_options': 'shapeOcpuOptions',
+            'shape_memory_options': 'shapeMemoryOptions'
         }
 
         self._id = None
         self._shape = None
+        self._is_flexible = None
         self._ocpu_count = None
         self._memory_size_in_gbs = None
+        self._shape_ocpu_options = None
+        self._shape_memory_options = None
 
     @property
     def id(self):
@@ -107,6 +128,30 @@ class ShapeSummary(object):
         self._shape = shape
 
     @property
+    def is_flexible(self):
+        """
+        Gets the is_flexible of this ShapeSummary.
+        Indicates if the shape is a flex shape.
+
+
+        :return: The is_flexible of this ShapeSummary.
+        :rtype: bool
+        """
+        return self._is_flexible
+
+    @is_flexible.setter
+    def is_flexible(self, is_flexible):
+        """
+        Sets the is_flexible of this ShapeSummary.
+        Indicates if the shape is a flex shape.
+
+
+        :param is_flexible: The is_flexible of this ShapeSummary.
+        :type: bool
+        """
+        self._is_flexible = is_flexible
+
+    @property
     def ocpu_count(self):
         """
         **[Required]** Gets the ocpu_count of this ShapeSummary.
@@ -153,6 +198,46 @@ class ShapeSummary(object):
         :type: int
         """
         self._memory_size_in_gbs = memory_size_in_gbs
+
+    @property
+    def shape_ocpu_options(self):
+        """
+        Gets the shape_ocpu_options of this ShapeSummary.
+
+        :return: The shape_ocpu_options of this ShapeSummary.
+        :rtype: oci.psql.models.ShapeOcpuOptions
+        """
+        return self._shape_ocpu_options
+
+    @shape_ocpu_options.setter
+    def shape_ocpu_options(self, shape_ocpu_options):
+        """
+        Sets the shape_ocpu_options of this ShapeSummary.
+
+        :param shape_ocpu_options: The shape_ocpu_options of this ShapeSummary.
+        :type: oci.psql.models.ShapeOcpuOptions
+        """
+        self._shape_ocpu_options = shape_ocpu_options
+
+    @property
+    def shape_memory_options(self):
+        """
+        Gets the shape_memory_options of this ShapeSummary.
+
+        :return: The shape_memory_options of this ShapeSummary.
+        :rtype: oci.psql.models.ShapeMemoryOptions
+        """
+        return self._shape_memory_options
+
+    @shape_memory_options.setter
+    def shape_memory_options(self, shape_memory_options):
+        """
+        Sets the shape_memory_options of this ShapeSummary.
+
+        :param shape_memory_options: The shape_memory_options of this ShapeSummary.
+        :type: oci.psql.models.ShapeMemoryOptions
+        """
+        self._shape_memory_options = shape_memory_options
 
     def __repr__(self):
         return formatted_flat_dict(self)

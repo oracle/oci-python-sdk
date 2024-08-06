@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DeployedApplicationInstallationUsageSummary(object):
     """
-    Summarize usage information about an application deployed on Java servers including installation information during a specified time period. The main difference between DeployedApplicationInstallationUsageSummary and DeployedApplicationUsage is the presence of the applicationSourcePath. DeployedApplicationUsage provides only an aggregated view to the deployed applications without installation information. It therefore doesn\u2019t distinguish between applications with the identical deployment information deployed to different paths. DeployedApplicationInstallationUsageSummary contains installation information, and it\u2019s therefore possible to target actions.
+    Summarize usage information about an application deployed on Java servers including installation information during a specified time period. The main difference between DeployedApplicationInstallationUsageSummary and DeployedApplicationUsage is the presence of the applicationSourcePath. DeployedApplicationUsage provides only an aggregated view to the deployed applications without installation information. DeployedApplicationUsage does not distinguish between applications with the identical deployment information deployed to different paths. DeployedApplicationInstallationUsageSummary contains installation information used to select target actions.
     """
 
     def __init__(self, **kwargs):
@@ -52,6 +52,10 @@ class DeployedApplicationInstallationUsageSummary(object):
             The value to assign to the approximate_java_server_instance_count property of this DeployedApplicationInstallationUsageSummary.
         :type approximate_java_server_instance_count: int
 
+        :param approximate_library_count:
+            The value to assign to the approximate_library_count property of this DeployedApplicationInstallationUsageSummary.
+        :type approximate_library_count: int
+
         :param time_start:
             The value to assign to the time_start property of this DeployedApplicationInstallationUsageSummary.
         :type time_start: datetime
@@ -78,6 +82,7 @@ class DeployedApplicationInstallationUsageSummary(object):
             'application_source_path': 'str',
             'is_clustered': 'bool',
             'approximate_java_server_instance_count': 'int',
+            'approximate_library_count': 'int',
             'time_start': 'datetime',
             'time_end': 'datetime',
             'time_first_seen': 'datetime',
@@ -93,6 +98,7 @@ class DeployedApplicationInstallationUsageSummary(object):
             'application_source_path': 'applicationSourcePath',
             'is_clustered': 'isClustered',
             'approximate_java_server_instance_count': 'approximateJavaServerInstanceCount',
+            'approximate_library_count': 'approximateLibraryCount',
             'time_start': 'timeStart',
             'time_end': 'timeEnd',
             'time_first_seen': 'timeFirstSeen',
@@ -107,6 +113,7 @@ class DeployedApplicationInstallationUsageSummary(object):
         self._application_source_path = None
         self._is_clustered = None
         self._approximate_java_server_instance_count = None
+        self._approximate_library_count = None
         self._time_start = None
         self._time_end = None
         self._time_first_seen = None
@@ -309,6 +316,30 @@ class DeployedApplicationInstallationUsageSummary(object):
         :type: int
         """
         self._approximate_java_server_instance_count = approximate_java_server_instance_count
+
+    @property
+    def approximate_library_count(self):
+        """
+        Gets the approximate_library_count of this DeployedApplicationInstallationUsageSummary.
+        The approximate count of libraries in the deployed application.
+
+
+        :return: The approximate_library_count of this DeployedApplicationInstallationUsageSummary.
+        :rtype: int
+        """
+        return self._approximate_library_count
+
+    @approximate_library_count.setter
+    def approximate_library_count(self, approximate_library_count):
+        """
+        Sets the approximate_library_count of this DeployedApplicationInstallationUsageSummary.
+        The approximate count of libraries in the deployed application.
+
+
+        :param approximate_library_count: The approximate_library_count of this DeployedApplicationInstallationUsageSummary.
+        :type: int
+        """
+        self._approximate_library_count = approximate_library_count
 
     @property
     def time_start(self):

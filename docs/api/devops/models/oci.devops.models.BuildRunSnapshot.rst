@@ -1,0 +1,11 @@
+BuildRunSnapshot
+================
+
+.. currentmodule:: oci.devops.models
+
+.. autoclass:: BuildRunSnapshot
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

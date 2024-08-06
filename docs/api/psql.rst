@@ -76,6 +76,8 @@ Psql
     oci.psql.models.RestartDbInstanceInDbSystemDetails
     oci.psql.models.RestoreDbSystemDetails
     oci.psql.models.ShapeCollection
+    oci.psql.models.ShapeMemoryOptions
+    oci.psql.models.ShapeOcpuOptions
     oci.psql.models.ShapeSummary
     oci.psql.models.SourceDetails
     oci.psql.models.StorageDetails
@@ -84,6 +86,7 @@ Psql
     oci.psql.models.UpdateDbConfigParams
     oci.psql.models.UpdateDbSystemDbInstanceDetails
     oci.psql.models.UpdateDbSystemDetails
+    oci.psql.models.UpdateNetworkDetails
     oci.psql.models.UpdateStorageDetailsParams
     oci.psql.models.VaultSecretPasswordDetails
     oci.psql.models.WeeklyBackupPolicy

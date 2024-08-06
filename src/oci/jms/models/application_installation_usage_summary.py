@@ -61,6 +61,14 @@ class ApplicationInstallationUsageSummary(object):
             The value to assign to the approximate_managed_instance_count property of this ApplicationInstallationUsageSummary.
         :type approximate_managed_instance_count: int
 
+        :param approximate_library_count:
+            The value to assign to the approximate_library_count property of this ApplicationInstallationUsageSummary.
+        :type approximate_library_count: int
+
+        :param application_invoked_by:
+            The value to assign to the application_invoked_by property of this ApplicationInstallationUsageSummary.
+        :type application_invoked_by: str
+
         :param time_start:
             The value to assign to the time_start property of this ApplicationInstallationUsageSummary.
         :type time_start: datetime
@@ -89,6 +97,8 @@ class ApplicationInstallationUsageSummary(object):
             'approximate_installation_count': 'int',
             'approximate_jre_count': 'int',
             'approximate_managed_instance_count': 'int',
+            'approximate_library_count': 'int',
+            'application_invoked_by': 'str',
             'time_start': 'datetime',
             'time_end': 'datetime',
             'time_first_seen': 'datetime',
@@ -106,6 +116,8 @@ class ApplicationInstallationUsageSummary(object):
             'approximate_installation_count': 'approximateInstallationCount',
             'approximate_jre_count': 'approximateJreCount',
             'approximate_managed_instance_count': 'approximateManagedInstanceCount',
+            'approximate_library_count': 'approximateLibraryCount',
+            'application_invoked_by': 'applicationInvokedBy',
             'time_start': 'timeStart',
             'time_end': 'timeEnd',
             'time_first_seen': 'timeFirstSeen',
@@ -122,6 +134,8 @@ class ApplicationInstallationUsageSummary(object):
         self._approximate_installation_count = None
         self._approximate_jre_count = None
         self._approximate_managed_instance_count = None
+        self._approximate_library_count = None
+        self._application_invoked_by = None
         self._time_start = None
         self._time_end = None
         self._time_first_seen = None
@@ -370,6 +384,54 @@ class ApplicationInstallationUsageSummary(object):
         :type: int
         """
         self._approximate_managed_instance_count = approximate_managed_instance_count
+
+    @property
+    def approximate_library_count(self):
+        """
+        Gets the approximate_library_count of this ApplicationInstallationUsageSummary.
+        The approximate count of libraries in this application.
+
+
+        :return: The approximate_library_count of this ApplicationInstallationUsageSummary.
+        :rtype: int
+        """
+        return self._approximate_library_count
+
+    @approximate_library_count.setter
+    def approximate_library_count(self, approximate_library_count):
+        """
+        Sets the approximate_library_count of this ApplicationInstallationUsageSummary.
+        The approximate count of libraries in this application.
+
+
+        :param approximate_library_count: The approximate_library_count of this ApplicationInstallationUsageSummary.
+        :type: int
+        """
+        self._approximate_library_count = approximate_library_count
+
+    @property
+    def application_invoked_by(self):
+        """
+        Gets the application_invoked_by of this ApplicationInstallationUsageSummary.
+        Comma separated list of user names that invoked application installations.
+
+
+        :return: The application_invoked_by of this ApplicationInstallationUsageSummary.
+        :rtype: str
+        """
+        return self._application_invoked_by
+
+    @application_invoked_by.setter
+    def application_invoked_by(self, application_invoked_by):
+        """
+        Sets the application_invoked_by of this ApplicationInstallationUsageSummary.
+        Comma separated list of user names that invoked application installations.
+
+
+        :param application_invoked_by: The application_invoked_by of this ApplicationInstallationUsageSummary.
+        :type: str
+        """
+        self._application_invoked_by = application_invoked_by
 
     @property
     def time_start(self):

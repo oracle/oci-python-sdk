@@ -387,7 +387,7 @@ class JavaArtifact(object):
         This download url can then be used for downloading the artifact.
         See this `API`__ for more details.
 
-        __ https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl
 
 
         :return: The download_url of this JavaArtifact.
@@ -403,7 +403,7 @@ class JavaArtifact(object):
         This download url can then be used for downloading the artifact.
         See this `API`__ for more details.
 
-        __ https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl
 
 
         :param download_url: The download_url of this JavaArtifact.

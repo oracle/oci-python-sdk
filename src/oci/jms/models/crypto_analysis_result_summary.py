@@ -82,6 +82,14 @@ class CryptoAnalysisResultSummary(object):
             The value to assign to the time_created property of this CryptoAnalysisResultSummary.
         :type time_created: datetime
 
+        :param time_started:
+            The value to assign to the time_started property of this CryptoAnalysisResultSummary.
+        :type time_started: datetime
+
+        :param time_finished:
+            The value to assign to the time_finished property of this CryptoAnalysisResultSummary.
+        :type time_finished: datetime
+
         :param crypto_roadmap_version:
             The value to assign to the crypto_roadmap_version property of this CryptoAnalysisResultSummary.
         :type crypto_roadmap_version: str
@@ -113,6 +121,8 @@ class CryptoAnalysisResultSummary(object):
             'finding_count': 'int',
             'non_compliant_finding_count': 'int',
             'time_created': 'datetime',
+            'time_started': 'datetime',
+            'time_finished': 'datetime',
             'crypto_roadmap_version': 'str',
             'namespace': 'str',
             'bucket_name': 'str',
@@ -133,6 +143,8 @@ class CryptoAnalysisResultSummary(object):
             'finding_count': 'findingCount',
             'non_compliant_finding_count': 'nonCompliantFindingCount',
             'time_created': 'timeCreated',
+            'time_started': 'timeStarted',
+            'time_finished': 'timeFinished',
             'crypto_roadmap_version': 'cryptoRoadmapVersion',
             'namespace': 'namespace',
             'bucket_name': 'bucketName',
@@ -152,6 +164,8 @@ class CryptoAnalysisResultSummary(object):
         self._finding_count = None
         self._non_compliant_finding_count = None
         self._time_created = None
+        self._time_started = None
+        self._time_finished = None
         self._crypto_roadmap_version = None
         self._namespace = None
         self._bucket_name = None
@@ -478,6 +492,54 @@ class CryptoAnalysisResultSummary(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def time_started(self):
+        """
+        Gets the time_started of this CryptoAnalysisResultSummary.
+        The time the JFR recording has started.
+
+
+        :return: The time_started of this CryptoAnalysisResultSummary.
+        :rtype: datetime
+        """
+        return self._time_started
+
+    @time_started.setter
+    def time_started(self, time_started):
+        """
+        Sets the time_started of this CryptoAnalysisResultSummary.
+        The time the JFR recording has started.
+
+
+        :param time_started: The time_started of this CryptoAnalysisResultSummary.
+        :type: datetime
+        """
+        self._time_started = time_started
+
+    @property
+    def time_finished(self):
+        """
+        Gets the time_finished of this CryptoAnalysisResultSummary.
+        The time the JFR recording has finished.
+
+
+        :return: The time_finished of this CryptoAnalysisResultSummary.
+        :rtype: datetime
+        """
+        return self._time_finished
+
+    @time_finished.setter
+    def time_finished(self, time_finished):
+        """
+        Sets the time_finished of this CryptoAnalysisResultSummary.
+        The time the JFR recording has finished.
+
+
+        :param time_finished: The time_finished of this CryptoAnalysisResultSummary.
+        :type: datetime
+        """
+        self._time_finished = time_finished
 
     @property
     def crypto_roadmap_version(self):

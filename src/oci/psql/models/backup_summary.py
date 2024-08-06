@@ -322,7 +322,7 @@ class BackupSummary(object):
     def source_type(self):
         """
         Gets the source_type of this BackupSummary.
-        Specifies whether the backup was created manually, or by a management policy.
+        Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
 
 
         :return: The source_type of this BackupSummary.
@@ -334,7 +334,7 @@ class BackupSummary(object):
     def source_type(self, source_type):
         """
         Sets the source_type of this BackupSummary.
-        Specifies whether the backup was created manually, or by a management policy.
+        Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
 
 
         :param source_type: The source_type of this BackupSummary.

@@ -36,6 +36,10 @@ class RepositorySummary(object):
             The value to assign to the project_id property of this RepositorySummary.
         :type project_id: str
 
+        :param parent_repository_id:
+            The value to assign to the parent_repository_id property of this RepositorySummary.
+        :type parent_repository_id: str
+
         :param namespace:
             The value to assign to the namespace property of this RepositorySummary.
         :type namespace: str
@@ -102,6 +106,7 @@ class RepositorySummary(object):
             'name': 'str',
             'compartment_id': 'str',
             'project_id': 'str',
+            'parent_repository_id': 'str',
             'namespace': 'str',
             'project_name': 'str',
             'description': 'str',
@@ -124,6 +129,7 @@ class RepositorySummary(object):
             'name': 'name',
             'compartment_id': 'compartmentId',
             'project_id': 'projectId',
+            'parent_repository_id': 'parentRepositoryId',
             'namespace': 'namespace',
             'project_name': 'projectName',
             'description': 'description',
@@ -145,6 +151,7 @@ class RepositorySummary(object):
         self._name = None
         self._compartment_id = None
         self._project_id = None
+        self._parent_repository_id = None
         self._namespace = None
         self._project_name = None
         self._description = None
@@ -258,6 +265,30 @@ class RepositorySummary(object):
         self._project_id = project_id
 
     @property
+    def parent_repository_id(self):
+        """
+        Gets the parent_repository_id of this RepositorySummary.
+        The OCID of the parent repository.
+
+
+        :return: The parent_repository_id of this RepositorySummary.
+        :rtype: str
+        """
+        return self._parent_repository_id
+
+    @parent_repository_id.setter
+    def parent_repository_id(self, parent_repository_id):
+        """
+        Sets the parent_repository_id of this RepositorySummary.
+        The OCID of the parent repository.
+
+
+        :param parent_repository_id: The parent_repository_id of this RepositorySummary.
+        :type: str
+        """
+        self._parent_repository_id = parent_repository_id
+
+    @property
     def namespace(self):
         """
         Gets the namespace of this RepositorySummary.
@@ -360,6 +391,7 @@ class RepositorySummary(object):
         Type of repository. Allowed values:
         `MIRRORED`
         `HOSTED`
+        `FORKED`
 
 
         :return: The repository_type of this RepositorySummary.
@@ -374,6 +406,7 @@ class RepositorySummary(object):
         Type of repository. Allowed values:
         `MIRRORED`
         `HOSTED`
+        `FORKED`
 
 
         :param repository_type: The repository_type of this RepositorySummary.

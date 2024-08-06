@@ -21,6 +21,8 @@ Jms
     oci.jms.models.AddFleetInstallationSitesDetails
     oci.jms.models.AdvancedUsageTracking
     oci.jms.models.Agent
+    oci.jms.models.AgentInstallerCollection
+    oci.jms.models.AgentInstallerSummary
     oci.jms.models.AnnouncementCollection
     oci.jms.models.AnnouncementSummary
     oci.jms.models.ApplicationInstallationUsageSummary
@@ -37,6 +39,7 @@ Jms
     oci.jms.models.CreateBlocklistDetails
     oci.jms.models.CreateDrsFileDetails
     oci.jms.models.CreateFleetDetails
+    oci.jms.models.CreateJmsPluginDetails
     oci.jms.models.CryptoAnalysisResult
     oci.jms.models.CryptoAnalysisResultCollection
     oci.jms.models.CryptoAnalysisResultSummary
@@ -44,8 +47,10 @@ Jms
     oci.jms.models.CustomLog
     oci.jms.models.DeployedApplicationInstallationUsageSummary
     oci.jms.models.DeployedApplicationInstallationUsageSummaryCollection
+    oci.jms.models.DeployedApplicationMigrationAnalysesTarget
     oci.jms.models.DeployedApplicationUsage
     oci.jms.models.DeployedApplicationUsageCollection
+    oci.jms.models.DeployedApplicationWorkItemDetails
     oci.jms.models.DisableDrsDetails
     oci.jms.models.DrsFile
     oci.jms.models.DrsFileCollection
@@ -64,6 +69,8 @@ Jms
     oci.jms.models.FleetDiagnosisSummary
     oci.jms.models.FleetSummary
     oci.jms.models.GenerateAgentDeployScriptDetails
+    oci.jms.models.GenerateAgentInstallerConfigurationDetails
+    oci.jms.models.GenerateLoadPipelineScriptDetails
     oci.jms.models.InstallationSite
     oci.jms.models.InstallationSiteCollection
     oci.jms.models.InstallationSiteSummary
@@ -89,6 +96,9 @@ Jms
     oci.jms.models.JavaServerUsageCollection
     oci.jms.models.JfrAttachmentTarget
     oci.jms.models.JfrRecording
+    oci.jms.models.JmsPlugin
+    oci.jms.models.JmsPluginCollection
+    oci.jms.models.JmsPluginSummary
     oci.jms.models.JreUsage
     oci.jms.models.JreUsageCollection
     oci.jms.models.KeySizeAlgorithm
@@ -113,6 +123,7 @@ Jms
     oci.jms.models.Proxies
     oci.jms.models.RemoveFleetInstallationSitesDetails
     oci.jms.models.RequestCryptoAnalysesDetails
+    oci.jms.models.RequestDeployedApplicationMigrationAnalysesDetails
     oci.jms.models.RequestJavaMigrationAnalysesDetails
     oci.jms.models.RequestJfrRecordingsDetails
     oci.jms.models.RequestPerformanceTuningAnalysesDetails
@@ -125,6 +136,7 @@ Jms
     oci.jms.models.UpdateFleetAdvancedFeatureConfigurationDetails
     oci.jms.models.UpdateFleetAgentConfigurationDetails
     oci.jms.models.UpdateFleetDetails
+    oci.jms.models.UpdateJmsPluginDetails
     oci.jms.models.WorkItemCollection
     oci.jms.models.WorkItemDetails
     oci.jms.models.WorkItemSummary

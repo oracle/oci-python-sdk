@@ -2075,7 +2075,7 @@ class PostgresqlClient(object):
             A filter to return only resources that match the entire display name given.
 
         :param str db_version: (optional)
-            Verison of the PostgreSQL database, such as 14.9.
+            Version of the PostgreSQL database, such as 14.9.
 
         :param str shape: (optional)
             The name of the shape for the configuration.
@@ -2395,7 +2395,7 @@ class PostgresqlClient(object):
             A filter to return only resources that match the entire display name given.
 
         :param str db_version: (optional)
-            Verison of the PostgreSQL database, such as 14.9.
+            Version of the PostgreSQL database, such as 14.9.
 
         :param str shape: (optional)
             The name of the shape for the configuration.

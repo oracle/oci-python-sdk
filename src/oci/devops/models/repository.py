@@ -23,6 +23,10 @@ class Repository(object):
     #: This constant has a value of "HOSTED"
     REPOSITORY_TYPE_HOSTED = "HOSTED"
 
+    #: A constant which can be used with the repository_type property of a Repository.
+    #: This constant has a value of "FORKED"
+    REPOSITORY_TYPE_FORKED = "FORKED"
+
     #: A constant which can be used with the lifecycle_state property of a Repository.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -34,6 +38,10 @@ class Repository(object):
     #: A constant which can be used with the lifecycle_state property of a Repository.
     #: This constant has a value of "DELETED"
     LIFECYCLE_STATE_DELETED = "DELETED"
+
+    #: A constant which can be used with the lifecycle_state property of a Repository.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
 
     #: A constant which can be used with the lifecycle_state property of a Repository.
     #: This constant has a value of "DELETING"
@@ -80,6 +88,10 @@ class Repository(object):
             The value to assign to the project_id property of this Repository.
         :type project_id: str
 
+        :param parent_repository_id:
+            The value to assign to the parent_repository_id property of this Repository.
+        :type parent_repository_id: str
+
         :param project_name:
             The value to assign to the project_name property of this Repository.
         :type project_name: str
@@ -102,7 +114,7 @@ class Repository(object):
 
         :param repository_type:
             The value to assign to the repository_type property of this Repository.
-            Allowed values for this property are: "MIRRORED", "HOSTED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "MIRRORED", "HOSTED", "FORKED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type repository_type: str
 
@@ -120,7 +132,7 @@ class Repository(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Repository.
-            Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "FAILED", "DELETING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -165,6 +177,7 @@ class Repository(object):
             'compartment_id': 'str',
             'namespace': 'str',
             'project_id': 'str',
+            'parent_repository_id': 'str',
             'project_name': 'str',
             'ssh_url': 'str',
             'http_url': 'str',
@@ -191,6 +204,7 @@ class Repository(object):
             'compartment_id': 'compartmentId',
             'namespace': 'namespace',
             'project_id': 'projectId',
+            'parent_repository_id': 'parentRepositoryId',
             'project_name': 'projectName',
             'ssh_url': 'sshUrl',
             'http_url': 'httpUrl',
@@ -216,6 +230,7 @@ class Repository(object):
         self._compartment_id = None
         self._namespace = None
         self._project_id = None
+        self._parent_repository_id = None
         self._project_name = None
         self._ssh_url = None
         self._http_url = None
@@ -356,6 +371,30 @@ class Repository(object):
         self._project_id = project_id
 
     @property
+    def parent_repository_id(self):
+        """
+        Gets the parent_repository_id of this Repository.
+        The OCID of the parent repository.
+
+
+        :return: The parent_repository_id of this Repository.
+        :rtype: str
+        """
+        return self._parent_repository_id
+
+    @parent_repository_id.setter
+    def parent_repository_id(self, parent_repository_id):
+        """
+        Sets the parent_repository_id of this Repository.
+        The OCID of the parent repository.
+
+
+        :param parent_repository_id: The parent_repository_id of this Repository.
+        :type: str
+        """
+        self._parent_repository_id = parent_repository_id
+
+    @property
     def project_name(self):
         """
         Gets the project_name of this Repository.
@@ -482,8 +521,9 @@ class Repository(object):
         Type of repository:
         MIRRORED - Repository created by mirroring an existing repository.
         HOSTED - Repository created and hosted using OCI DevOps code repository.
+        FORKED - Repository created by forking an existing repository.
 
-        Allowed values for this property are: "MIRRORED", "HOSTED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "MIRRORED", "HOSTED", "FORKED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -499,12 +539,13 @@ class Repository(object):
         Type of repository:
         MIRRORED - Repository created by mirroring an existing repository.
         HOSTED - Repository created and hosted using OCI DevOps code repository.
+        FORKED - Repository created by forking an existing repository.
 
 
         :param repository_type: The repository_type of this Repository.
         :type: str
         """
-        allowed_values = ["MIRRORED", "HOSTED"]
+        allowed_values = ["MIRRORED", "HOSTED", "FORKED"]
         if not value_allowed_none_or_none_sentinel(repository_type, allowed_values):
             repository_type = 'UNKNOWN_ENUM_VALUE'
         self._repository_type = repository_type
@@ -591,7 +632,7 @@ class Repository(object):
         Gets the lifecycle_state of this Repository.
         The current state of the repository.
 
-        Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "FAILED", "DELETING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -610,7 +651,7 @@ class Repository(object):
         :param lifecycle_state: The lifecycle_state of this Repository.
         :type: str
         """
-        allowed_values = ["ACTIVE", "CREATING", "DELETED", "DELETING"]
+        allowed_values = ["ACTIVE", "CREATING", "DELETED", "FAILED", "DELETING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

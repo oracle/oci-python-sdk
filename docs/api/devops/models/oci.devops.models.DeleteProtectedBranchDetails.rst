@@ -1,0 +1,11 @@
+DeleteProtectedBranchDetails
+============================
+
+.. currentmodule:: oci.devops.models
+
+.. autoclass:: DeleteProtectedBranchDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

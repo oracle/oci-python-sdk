@@ -66,9 +66,17 @@ class DefaultConfiguration(object):
             The value to assign to the lifecycle_details property of this DefaultConfiguration.
         :type lifecycle_details: str
 
+        :param db_version:
+            The value to assign to the db_version property of this DefaultConfiguration.
+        :type db_version: str
+
         :param shape:
             The value to assign to the shape property of this DefaultConfiguration.
         :type shape: str
+
+        :param is_flexible:
+            The value to assign to the is_flexible property of this DefaultConfiguration.
+        :type is_flexible: bool
 
         :param instance_ocpu_count:
             The value to assign to the instance_ocpu_count property of this DefaultConfiguration.
@@ -77,10 +85,6 @@ class DefaultConfiguration(object):
         :param instance_memory_size_in_gbs:
             The value to assign to the instance_memory_size_in_gbs property of this DefaultConfiguration.
         :type instance_memory_size_in_gbs: int
-
-        :param db_version:
-            The value to assign to the db_version property of this DefaultConfiguration.
-        :type db_version: str
 
         :param configuration_details:
             The value to assign to the configuration_details property of this DefaultConfiguration.
@@ -94,10 +98,11 @@ class DefaultConfiguration(object):
             'time_created': 'datetime',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'db_version': 'str',
             'shape': 'str',
+            'is_flexible': 'bool',
             'instance_ocpu_count': 'int',
             'instance_memory_size_in_gbs': 'int',
-            'db_version': 'str',
             'configuration_details': 'DefaultConfigurationDetails'
         }
 
@@ -108,10 +113,11 @@ class DefaultConfiguration(object):
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'db_version': 'dbVersion',
             'shape': 'shape',
+            'is_flexible': 'isFlexible',
             'instance_ocpu_count': 'instanceOcpuCount',
             'instance_memory_size_in_gbs': 'instanceMemorySizeInGBs',
-            'db_version': 'dbVersion',
             'configuration_details': 'configurationDetails'
         }
 
@@ -121,10 +127,11 @@ class DefaultConfiguration(object):
         self._time_created = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._db_version = None
         self._shape = None
+        self._is_flexible = None
         self._instance_ocpu_count = None
         self._instance_memory_size_in_gbs = None
-        self._db_version = None
         self._configuration_details = None
 
     @property
@@ -288,6 +295,30 @@ class DefaultConfiguration(object):
         self._lifecycle_details = lifecycle_details
 
     @property
+    def db_version(self):
+        """
+        **[Required]** Gets the db_version of this DefaultConfiguration.
+        Version of the PostgreSQL database.
+
+
+        :return: The db_version of this DefaultConfiguration.
+        :rtype: str
+        """
+        return self._db_version
+
+    @db_version.setter
+    def db_version(self, db_version):
+        """
+        Sets the db_version of this DefaultConfiguration.
+        Version of the PostgreSQL database.
+
+
+        :param db_version: The db_version of this DefaultConfiguration.
+        :type: str
+        """
+        self._db_version = db_version
+
+    @property
     def shape(self):
         """
         **[Required]** Gets the shape of this DefaultConfiguration.
@@ -314,10 +345,36 @@ class DefaultConfiguration(object):
         self._shape = shape
 
     @property
+    def is_flexible(self):
+        """
+        Gets the is_flexible of this DefaultConfiguration.
+        True if the configuration supports flexible shapes, false otherwise.
+
+
+        :return: The is_flexible of this DefaultConfiguration.
+        :rtype: bool
+        """
+        return self._is_flexible
+
+    @is_flexible.setter
+    def is_flexible(self, is_flexible):
+        """
+        Sets the is_flexible of this DefaultConfiguration.
+        True if the configuration supports flexible shapes, false otherwise.
+
+
+        :param is_flexible: The is_flexible of this DefaultConfiguration.
+        :type: bool
+        """
+        self._is_flexible = is_flexible
+
+    @property
     def instance_ocpu_count(self):
         """
         **[Required]** Gets the instance_ocpu_count of this DefaultConfiguration.
-        CPU core count. Minimum value is 1.
+        CPU core count.
+
+        Its value is set to 0 if configuration is for a flexible shape.
 
 
         :return: The instance_ocpu_count of this DefaultConfiguration.
@@ -329,7 +386,9 @@ class DefaultConfiguration(object):
     def instance_ocpu_count(self, instance_ocpu_count):
         """
         Sets the instance_ocpu_count of this DefaultConfiguration.
-        CPU core count. Minimum value is 1.
+        CPU core count.
+
+        Its value is set to 0 if configuration is for a flexible shape.
 
 
         :param instance_ocpu_count: The instance_ocpu_count of this DefaultConfiguration.
@@ -343,6 +402,8 @@ class DefaultConfiguration(object):
         **[Required]** Gets the instance_memory_size_in_gbs of this DefaultConfiguration.
         Memory size in gigabytes with 1GB increment.
 
+        Its value is set to 0 if configuration is for a flexible shape.
+
 
         :return: The instance_memory_size_in_gbs of this DefaultConfiguration.
         :rtype: int
@@ -355,35 +416,13 @@ class DefaultConfiguration(object):
         Sets the instance_memory_size_in_gbs of this DefaultConfiguration.
         Memory size in gigabytes with 1GB increment.
 
+        Its value is set to 0 if configuration is for a flexible shape.
+
 
         :param instance_memory_size_in_gbs: The instance_memory_size_in_gbs of this DefaultConfiguration.
         :type: int
         """
         self._instance_memory_size_in_gbs = instance_memory_size_in_gbs
-
-    @property
-    def db_version(self):
-        """
-        **[Required]** Gets the db_version of this DefaultConfiguration.
-        Version of the PostgreSQL database.
-
-
-        :return: The db_version of this DefaultConfiguration.
-        :rtype: str
-        """
-        return self._db_version
-
-    @db_version.setter
-    def db_version(self, db_version):
-        """
-        Sets the db_version of this DefaultConfiguration.
-        Version of the PostgreSQL database.
-
-
-        :param db_version: The db_version of this DefaultConfiguration.
-        :type: str
-        """
-        self._db_version = db_version
 
     @property
     def configuration_details(self):

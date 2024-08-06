@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PatchingConfigs(object):
     """
-    Detailed configurations for defining the behavior when installing os patches. If not provided, nodes will be patched and rebooted AD/FD by AD/FD.
+    Detailed configurations for defining the behavior when installing os patches. If not provided, nodes will be patched and rebooted AD/FD by AD/FD for regular patches or will be patched with down time if the patch is an emergent patch.
     """
 
     #: A constant which can be used with the patching_config_strategy property of a PatchingConfigs.
@@ -23,6 +23,10 @@ class PatchingConfigs(object):
     #: This constant has a value of "BATCHING_BASED"
     PATCHING_CONFIG_STRATEGY_BATCHING_BASED = "BATCHING_BASED"
 
+    #: A constant which can be used with the patching_config_strategy property of a PatchingConfigs.
+    #: This constant has a value of "DOMAIN_BASED"
+    PATCHING_CONFIG_STRATEGY_DOMAIN_BASED = "DOMAIN_BASED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PatchingConfigs object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -30,12 +34,13 @@ class PatchingConfigs(object):
 
         * :class:`~oci.bds.models.BatchingBasedPatchingConfigs`
         * :class:`~oci.bds.models.DowntimeBasedPatchingConfigs`
+        * :class:`~oci.bds.models.DomainBasedPatchingConfigs`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param patching_config_strategy:
             The value to assign to the patching_config_strategy property of this PatchingConfigs.
-            Allowed values for this property are: "DOWNTIME_BASED", "BATCHING_BASED"
+            Allowed values for this property are: "DOWNTIME_BASED", "BATCHING_BASED", "DOMAIN_BASED"
         :type patching_config_strategy: str
 
         """
@@ -62,6 +67,9 @@ class PatchingConfigs(object):
 
         if type == 'DOWNTIME_BASED':
             return 'DowntimeBasedPatchingConfigs'
+
+        if type == 'DOMAIN_BASED':
+            return 'DomainBasedPatchingConfigs'
         else:
             return 'PatchingConfigs'
 
@@ -71,7 +79,7 @@ class PatchingConfigs(object):
         **[Required]** Gets the patching_config_strategy of this PatchingConfigs.
         Type of strategy used for detailed patching configuration
 
-        Allowed values for this property are: "DOWNTIME_BASED", "BATCHING_BASED"
+        Allowed values for this property are: "DOWNTIME_BASED", "BATCHING_BASED", "DOMAIN_BASED"
 
 
         :return: The patching_config_strategy of this PatchingConfigs.
@@ -89,7 +97,7 @@ class PatchingConfigs(object):
         :param patching_config_strategy: The patching_config_strategy of this PatchingConfigs.
         :type: str
         """
-        allowed_values = ["DOWNTIME_BASED", "BATCHING_BASED"]
+        allowed_values = ["DOWNTIME_BASED", "BATCHING_BASED", "DOMAIN_BASED"]
         if not value_allowed_none_or_none_sentinel(patching_config_strategy, allowed_values):
             raise ValueError(
                 f"Invalid value for `patching_config_strategy`, must be None or one of {allowed_values}"

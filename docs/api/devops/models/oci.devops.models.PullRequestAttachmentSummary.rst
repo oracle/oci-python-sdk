@@ -1,0 +1,11 @@
+PullRequestAttachmentSummary
+============================
+
+.. currentmodule:: oci.devops.models
+
+.. autoclass:: PullRequestAttachmentSummary
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

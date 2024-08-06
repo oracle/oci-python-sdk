@@ -44,6 +44,10 @@ class DeployedApplicationUsage(object):
             The value to assign to the approximate_java_server_instance_count property of this DeployedApplicationUsage.
         :type approximate_java_server_instance_count: int
 
+        :param approximate_library_count:
+            The value to assign to the approximate_library_count property of this DeployedApplicationUsage.
+        :type approximate_library_count: int
+
         :param time_start:
             The value to assign to the time_start property of this DeployedApplicationUsage.
         :type time_start: datetime
@@ -68,6 +72,7 @@ class DeployedApplicationUsage(object):
             'application_type': 'str',
             'is_clustered': 'bool',
             'approximate_java_server_instance_count': 'int',
+            'approximate_library_count': 'int',
             'time_start': 'datetime',
             'time_end': 'datetime',
             'time_first_seen': 'datetime',
@@ -81,6 +86,7 @@ class DeployedApplicationUsage(object):
             'application_type': 'applicationType',
             'is_clustered': 'isClustered',
             'approximate_java_server_instance_count': 'approximateJavaServerInstanceCount',
+            'approximate_library_count': 'approximateLibraryCount',
             'time_start': 'timeStart',
             'time_end': 'timeEnd',
             'time_first_seen': 'timeFirstSeen',
@@ -93,6 +99,7 @@ class DeployedApplicationUsage(object):
         self._application_type = None
         self._is_clustered = None
         self._approximate_java_server_instance_count = None
+        self._approximate_library_count = None
         self._time_start = None
         self._time_end = None
         self._time_first_seen = None
@@ -245,6 +252,30 @@ class DeployedApplicationUsage(object):
         :type: int
         """
         self._approximate_java_server_instance_count = approximate_java_server_instance_count
+
+    @property
+    def approximate_library_count(self):
+        """
+        Gets the approximate_library_count of this DeployedApplicationUsage.
+        The approximate count of libraries in the deployed application.
+
+
+        :return: The approximate_library_count of this DeployedApplicationUsage.
+        :rtype: int
+        """
+        return self._approximate_library_count
+
+    @approximate_library_count.setter
+    def approximate_library_count(self, approximate_library_count):
+        """
+        Sets the approximate_library_count of this DeployedApplicationUsage.
+        The approximate count of libraries in the deployed application.
+
+
+        :param approximate_library_count: The approximate_library_count of this DeployedApplicationUsage.
+        :type: int
+        """
+        self._approximate_library_count = approximate_library_count
 
     @property
     def time_start(self):

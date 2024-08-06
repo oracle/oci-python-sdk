@@ -23,7 +23,7 @@ class GenericDeployArtifactSource(DeployArtifactSource):
 
         :param deploy_artifact_source_type:
             The value to assign to the deploy_artifact_source_type property of this GenericDeployArtifactSource.
-            Allowed values for this property are: "INLINE", "OCIR", "GENERIC_ARTIFACT", "HELM_CHART"
+            Allowed values for this property are: "INLINE", "OCIR", "GENERIC_ARTIFACT", "HELM_CHART", "HELM_COMMAND_SPEC"
         :type deploy_artifact_source_type: str
 
         :param repository_id:

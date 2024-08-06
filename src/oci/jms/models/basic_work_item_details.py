@@ -23,7 +23,7 @@ class BasicWorkItemDetails(WorkItemDetails):
 
         :param kind:
             The value to assign to the kind property of this BasicWorkItemDetails.
-            Allowed values for this property are: "BASIC", "APPLICATION", "LCM"
+            Allowed values for this property are: "BASIC", "APPLICATION", "LCM", "DEPLOYED_APPLICATION"
         :type kind: str
 
         :param work_item_type:
