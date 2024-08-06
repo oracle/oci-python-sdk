@@ -184,6 +184,10 @@ class Node(object):
             The value to assign to the is_reboot_required property of this Node.
         :type is_reboot_required: bool
 
+        :param odh_version:
+            The value to assign to the odh_version property of this Node.
+        :type odh_version: str
+
         :param time_replaced:
             The value to assign to the time_replaced property of this Node.
         :type time_replaced: datetime
@@ -216,6 +220,7 @@ class Node(object):
             'time_maintenance_reboot_due': 'datetime',
             'os_version': 'str',
             'is_reboot_required': 'bool',
+            'odh_version': 'str',
             'time_replaced': 'datetime',
             'node_backup_id': 'str'
         }
@@ -243,6 +248,7 @@ class Node(object):
             'time_maintenance_reboot_due': 'timeMaintenanceRebootDue',
             'os_version': 'osVersion',
             'is_reboot_required': 'isRebootRequired',
+            'odh_version': 'odhVersion',
             'time_replaced': 'timeReplaced',
             'node_backup_id': 'nodeBackupId'
         }
@@ -269,6 +275,7 @@ class Node(object):
         self._time_maintenance_reboot_due = None
         self._os_version = None
         self._is_reboot_required = None
+        self._odh_version = None
         self._time_replaced = None
         self._node_backup_id = None
 
@@ -811,6 +818,30 @@ class Node(object):
         :type: bool
         """
         self._is_reboot_required = is_reboot_required
+
+    @property
+    def odh_version(self):
+        """
+        Gets the odh_version of this Node.
+        Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+
+
+        :return: The odh_version of this Node.
+        :rtype: str
+        """
+        return self._odh_version
+
+    @odh_version.setter
+    def odh_version(self, odh_version):
+        """
+        Sets the odh_version of this Node.
+        Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+
+
+        :param odh_version: The odh_version of this Node.
+        :type: str
+        """
+        self._odh_version = odh_version
 
     @property
     def time_replaced(self):

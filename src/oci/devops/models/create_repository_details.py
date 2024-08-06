@@ -28,6 +28,10 @@ class CreateRepositoryDetails(object):
             The value to assign to the project_id property of this CreateRepositoryDetails.
         :type project_id: str
 
+        :param parent_repository_id:
+            The value to assign to the parent_repository_id property of this CreateRepositoryDetails.
+        :type parent_repository_id: str
+
         :param default_branch:
             The value to assign to the default_branch property of this CreateRepositoryDetails.
         :type default_branch: str
@@ -56,6 +60,7 @@ class CreateRepositoryDetails(object):
         self.swagger_types = {
             'name': 'str',
             'project_id': 'str',
+            'parent_repository_id': 'str',
             'default_branch': 'str',
             'repository_type': 'str',
             'mirror_repository_config': 'MirrorRepositoryConfig',
@@ -67,6 +72,7 @@ class CreateRepositoryDetails(object):
         self.attribute_map = {
             'name': 'name',
             'project_id': 'projectId',
+            'parent_repository_id': 'parentRepositoryId',
             'default_branch': 'defaultBranch',
             'repository_type': 'repositoryType',
             'mirror_repository_config': 'mirrorRepositoryConfig',
@@ -77,6 +83,7 @@ class CreateRepositoryDetails(object):
 
         self._name = None
         self._project_id = None
+        self._parent_repository_id = None
         self._default_branch = None
         self._repository_type = None
         self._mirror_repository_config = None
@@ -133,6 +140,30 @@ class CreateRepositoryDetails(object):
         self._project_id = project_id
 
     @property
+    def parent_repository_id(self):
+        """
+        Gets the parent_repository_id of this CreateRepositoryDetails.
+        The OCID of the parent repository.
+
+
+        :return: The parent_repository_id of this CreateRepositoryDetails.
+        :rtype: str
+        """
+        return self._parent_repository_id
+
+    @parent_repository_id.setter
+    def parent_repository_id(self, parent_repository_id):
+        """
+        Sets the parent_repository_id of this CreateRepositoryDetails.
+        The OCID of the parent repository.
+
+
+        :param parent_repository_id: The parent_repository_id of this CreateRepositoryDetails.
+        :type: str
+        """
+        self._parent_repository_id = parent_repository_id
+
+    @property
     def default_branch(self):
         """
         Gets the default_branch of this CreateRepositoryDetails.
@@ -163,6 +194,7 @@ class CreateRepositoryDetails(object):
         Type of repository. Allowed values:
         `MIRRORED`
         `HOSTED`
+        `FORKED`
 
 
         :return: The repository_type of this CreateRepositoryDetails.
@@ -177,6 +209,7 @@ class CreateRepositoryDetails(object):
         Type of repository. Allowed values:
         `MIRRORED`
         `HOSTED`
+        `FORKED`
 
 
         :param repository_type: The repository_type of this CreateRepositoryDetails.

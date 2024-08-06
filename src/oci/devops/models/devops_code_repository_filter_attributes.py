@@ -24,6 +24,10 @@ class DevopsCodeRepositoryFilterAttributes(object):
             The value to assign to the head_ref property of this DevopsCodeRepositoryFilterAttributes.
         :type head_ref: str
 
+        :param base_ref:
+            The value to assign to the base_ref property of this DevopsCodeRepositoryFilterAttributes.
+        :type base_ref: str
+
         :param file_filter:
             The value to assign to the file_filter property of this DevopsCodeRepositoryFilterAttributes.
         :type file_filter: oci.devops.models.FileFilter
@@ -31,15 +35,18 @@ class DevopsCodeRepositoryFilterAttributes(object):
         """
         self.swagger_types = {
             'head_ref': 'str',
+            'base_ref': 'str',
             'file_filter': 'FileFilter'
         }
 
         self.attribute_map = {
             'head_ref': 'headRef',
+            'base_ref': 'baseRef',
             'file_filter': 'fileFilter'
         }
 
         self._head_ref = None
+        self._base_ref = None
         self._file_filter = None
 
     @property
@@ -65,6 +72,30 @@ class DevopsCodeRepositoryFilterAttributes(object):
         :type: str
         """
         self._head_ref = head_ref
+
+    @property
+    def base_ref(self):
+        """
+        Gets the base_ref of this DevopsCodeRepositoryFilterAttributes.
+        The target branch for pull requests; not applicable for push requests.
+
+
+        :return: The base_ref of this DevopsCodeRepositoryFilterAttributes.
+        :rtype: str
+        """
+        return self._base_ref
+
+    @base_ref.setter
+    def base_ref(self, base_ref):
+        """
+        Sets the base_ref of this DevopsCodeRepositoryFilterAttributes.
+        The target branch for pull requests; not applicable for push requests.
+
+
+        :param base_ref: The base_ref of this DevopsCodeRepositoryFilterAttributes.
+        :type: str
+        """
+        self._base_ref = base_ref
 
     @property
     def file_filter(self):

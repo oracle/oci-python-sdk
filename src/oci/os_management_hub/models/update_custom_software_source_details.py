@@ -62,6 +62,10 @@ class UpdateCustomSoftwareSourceDetails(UpdateSoftwareSourceDetails):
             The value to assign to the is_auto_resolve_dependencies property of this UpdateCustomSoftwareSourceDetails.
         :type is_auto_resolve_dependencies: bool
 
+        :param is_latest_content_only:
+            The value to assign to the is_latest_content_only property of this UpdateCustomSoftwareSourceDetails.
+        :type is_latest_content_only: bool
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -73,7 +77,8 @@ class UpdateCustomSoftwareSourceDetails(UpdateSoftwareSourceDetails):
             'vendor_software_sources': 'list[Id]',
             'custom_software_source_filter': 'CustomSoftwareSourceFilter',
             'is_automatically_updated': 'bool',
-            'is_auto_resolve_dependencies': 'bool'
+            'is_auto_resolve_dependencies': 'bool',
+            'is_latest_content_only': 'bool'
         }
 
         self.attribute_map = {
@@ -86,7 +91,8 @@ class UpdateCustomSoftwareSourceDetails(UpdateSoftwareSourceDetails):
             'vendor_software_sources': 'vendorSoftwareSources',
             'custom_software_source_filter': 'customSoftwareSourceFilter',
             'is_automatically_updated': 'isAutomaticallyUpdated',
-            'is_auto_resolve_dependencies': 'isAutoResolveDependencies'
+            'is_auto_resolve_dependencies': 'isAutoResolveDependencies',
+            'is_latest_content_only': 'isLatestContentOnly'
         }
 
         self._compartment_id = None
@@ -99,6 +105,7 @@ class UpdateCustomSoftwareSourceDetails(UpdateSoftwareSourceDetails):
         self._custom_software_source_filter = None
         self._is_automatically_updated = None
         self._is_auto_resolve_dependencies = None
+        self._is_latest_content_only = None
         self._software_source_type = 'CUSTOM'
 
     @property
@@ -192,6 +199,40 @@ class UpdateCustomSoftwareSourceDetails(UpdateSoftwareSourceDetails):
         :type: bool
         """
         self._is_auto_resolve_dependencies = is_auto_resolve_dependencies
+
+    @property
+    def is_latest_content_only(self):
+        """
+        Gets the is_latest_content_only of this UpdateCustomSoftwareSourceDetails.
+        Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+        * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+        * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+        * For a package filter that does not specify a version, this will include only the latest available version of the package.
+        * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+        * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+
+
+        :return: The is_latest_content_only of this UpdateCustomSoftwareSourceDetails.
+        :rtype: bool
+        """
+        return self._is_latest_content_only
+
+    @is_latest_content_only.setter
+    def is_latest_content_only(self, is_latest_content_only):
+        """
+        Sets the is_latest_content_only of this UpdateCustomSoftwareSourceDetails.
+        Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+        * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+        * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+        * For a package filter that does not specify a version, this will include only the latest available version of the package.
+        * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+        * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+
+
+        :param is_latest_content_only: The is_latest_content_only of this UpdateCustomSoftwareSourceDetails.
+        :type: bool
+        """
+        self._is_latest_content_only = is_latest_content_only
 
     def __repr__(self):
         return formatted_flat_dict(self)

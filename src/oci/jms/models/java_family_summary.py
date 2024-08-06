@@ -59,6 +59,10 @@ class JavaFamilySummary(object):
             The value to assign to the is_supported_version property of this JavaFamilySummary.
         :type is_supported_version: bool
 
+        :param release_date:
+            The value to assign to the release_date property of this JavaFamilySummary.
+        :type release_date: datetime
+
         """
         self.swagger_types = {
             'family_version': 'str',
@@ -67,7 +71,8 @@ class JavaFamilySummary(object):
             'end_of_support_life_date': 'datetime',
             'doc_url': 'str',
             'latest_release_version': 'str',
-            'is_supported_version': 'bool'
+            'is_supported_version': 'bool',
+            'release_date': 'datetime'
         }
 
         self.attribute_map = {
@@ -77,7 +82,8 @@ class JavaFamilySummary(object):
             'end_of_support_life_date': 'endOfSupportLifeDate',
             'doc_url': 'docUrl',
             'latest_release_version': 'latestReleaseVersion',
-            'is_supported_version': 'isSupportedVersion'
+            'is_supported_version': 'isSupportedVersion',
+            'release_date': 'releaseDate'
         }
 
         self._family_version = None
@@ -87,6 +93,7 @@ class JavaFamilySummary(object):
         self._doc_url = None
         self._latest_release_version = None
         self._is_supported_version = None
+        self._release_date = None
 
     @property
     def family_version(self):
@@ -271,6 +278,34 @@ class JavaFamilySummary(object):
         :type: bool
         """
         self._is_supported_version = is_supported_version
+
+    @property
+    def release_date(self):
+        """
+        Gets the release_date of this JavaFamilySummary.
+        The date on which the Java release family was first made available (formatted according to `RFC3339`__).
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
+
+
+        :return: The release_date of this JavaFamilySummary.
+        :rtype: datetime
+        """
+        return self._release_date
+
+    @release_date.setter
+    def release_date(self, release_date):
+        """
+        Sets the release_date of this JavaFamilySummary.
+        The date on which the Java release family was first made available (formatted according to `RFC3339`__).
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
+
+
+        :param release_date: The release_date of this JavaFamilySummary.
+        :type: datetime
+        """
+        self._release_date = release_date
 
     def __repr__(self):
         return formatted_flat_dict(self)

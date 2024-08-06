@@ -31,6 +31,14 @@ class Configuration(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the config_type property of a Configuration.
+    #: This constant has a value of "DEFAULT"
+    CONFIG_TYPE_DEFAULT = "DEFAULT"
+
+    #: A constant which can be used with the config_type property of a Configuration.
+    #: This constant has a value of "CUSTOM"
+    CONFIG_TYPE_CUSTOM = "CUSTOM"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Configuration object with values from keyword arguments.
@@ -66,9 +74,23 @@ class Configuration(object):
             The value to assign to the lifecycle_details property of this Configuration.
         :type lifecycle_details: str
 
+        :param db_version:
+            The value to assign to the db_version property of this Configuration.
+        :type db_version: str
+
+        :param config_type:
+            The value to assign to the config_type property of this Configuration.
+            Allowed values for this property are: "DEFAULT", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type config_type: str
+
         :param shape:
             The value to assign to the shape property of this Configuration.
         :type shape: str
+
+        :param is_flexible:
+            The value to assign to the is_flexible property of this Configuration.
+        :type is_flexible: bool
 
         :param instance_ocpu_count:
             The value to assign to the instance_ocpu_count property of this Configuration.
@@ -77,10 +99,6 @@ class Configuration(object):
         :param instance_memory_size_in_gbs:
             The value to assign to the instance_memory_size_in_gbs property of this Configuration.
         :type instance_memory_size_in_gbs: int
-
-        :param db_version:
-            The value to assign to the db_version property of this Configuration.
-        :type db_version: str
 
         :param configuration_details:
             The value to assign to the configuration_details property of this Configuration.
@@ -107,10 +125,12 @@ class Configuration(object):
             'time_created': 'datetime',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'db_version': 'str',
+            'config_type': 'str',
             'shape': 'str',
+            'is_flexible': 'bool',
             'instance_ocpu_count': 'int',
             'instance_memory_size_in_gbs': 'int',
-            'db_version': 'str',
             'configuration_details': 'ConfigurationDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -125,10 +145,12 @@ class Configuration(object):
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'db_version': 'dbVersion',
+            'config_type': 'configType',
             'shape': 'shape',
+            'is_flexible': 'isFlexible',
             'instance_ocpu_count': 'instanceOcpuCount',
             'instance_memory_size_in_gbs': 'instanceMemorySizeInGBs',
-            'db_version': 'dbVersion',
             'configuration_details': 'configurationDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -142,10 +164,12 @@ class Configuration(object):
         self._time_created = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._db_version = None
+        self._config_type = None
         self._shape = None
+        self._is_flexible = None
         self._instance_ocpu_count = None
         self._instance_memory_size_in_gbs = None
-        self._db_version = None
         self._configuration_details = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -340,6 +364,60 @@ class Configuration(object):
         self._lifecycle_details = lifecycle_details
 
     @property
+    def db_version(self):
+        """
+        **[Required]** Gets the db_version of this Configuration.
+        Version of the PostgreSQL database.
+
+
+        :return: The db_version of this Configuration.
+        :rtype: str
+        """
+        return self._db_version
+
+    @db_version.setter
+    def db_version(self, db_version):
+        """
+        Sets the db_version of this Configuration.
+        Version of the PostgreSQL database.
+
+
+        :param db_version: The db_version of this Configuration.
+        :type: str
+        """
+        self._db_version = db_version
+
+    @property
+    def config_type(self):
+        """
+        Gets the config_type of this Configuration.
+        The type of configuration. Either user-created or a default configuration.
+
+        Allowed values for this property are: "DEFAULT", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The config_type of this Configuration.
+        :rtype: str
+        """
+        return self._config_type
+
+    @config_type.setter
+    def config_type(self, config_type):
+        """
+        Sets the config_type of this Configuration.
+        The type of configuration. Either user-created or a default configuration.
+
+
+        :param config_type: The config_type of this Configuration.
+        :type: str
+        """
+        allowed_values = ["DEFAULT", "CUSTOM"]
+        if not value_allowed_none_or_none_sentinel(config_type, allowed_values):
+            config_type = 'UNKNOWN_ENUM_VALUE'
+        self._config_type = config_type
+
+    @property
     def shape(self):
         """
         **[Required]** Gets the shape of this Configuration.
@@ -366,10 +444,36 @@ class Configuration(object):
         self._shape = shape
 
     @property
+    def is_flexible(self):
+        """
+        Gets the is_flexible of this Configuration.
+        Whether the configuration supports flexible shapes.
+
+
+        :return: The is_flexible of this Configuration.
+        :rtype: bool
+        """
+        return self._is_flexible
+
+    @is_flexible.setter
+    def is_flexible(self, is_flexible):
+        """
+        Sets the is_flexible of this Configuration.
+        Whether the configuration supports flexible shapes.
+
+
+        :param is_flexible: The is_flexible of this Configuration.
+        :type: bool
+        """
+        self._is_flexible = is_flexible
+
+    @property
     def instance_ocpu_count(self):
         """
         **[Required]** Gets the instance_ocpu_count of this Configuration.
         CPU core count.
+
+        It's value is set to 0 if configuration is for a flexible shape.
 
 
         :return: The instance_ocpu_count of this Configuration.
@@ -383,6 +487,8 @@ class Configuration(object):
         Sets the instance_ocpu_count of this Configuration.
         CPU core count.
 
+        It's value is set to 0 if configuration is for a flexible shape.
+
 
         :param instance_ocpu_count: The instance_ocpu_count of this Configuration.
         :type: int
@@ -394,6 +500,8 @@ class Configuration(object):
         """
         **[Required]** Gets the instance_memory_size_in_gbs of this Configuration.
         Memory size in gigabytes with 1GB increment.
+
+        It's value is set to 0 if configuration is for a flexible shape.
 
 
         :return: The instance_memory_size_in_gbs of this Configuration.
@@ -407,35 +515,13 @@ class Configuration(object):
         Sets the instance_memory_size_in_gbs of this Configuration.
         Memory size in gigabytes with 1GB increment.
 
+        It's value is set to 0 if configuration is for a flexible shape.
+
 
         :param instance_memory_size_in_gbs: The instance_memory_size_in_gbs of this Configuration.
         :type: int
         """
         self._instance_memory_size_in_gbs = instance_memory_size_in_gbs
-
-    @property
-    def db_version(self):
-        """
-        **[Required]** Gets the db_version of this Configuration.
-        Version of the PostgreSQL database.
-
-
-        :return: The db_version of this Configuration.
-        :rtype: str
-        """
-        return self._db_version
-
-    @db_version.setter
-    def db_version(self, db_version):
-        """
-        Sets the db_version of this Configuration.
-        Version of the PostgreSQL database.
-
-
-        :param db_version: The db_version of this Configuration.
-        :type: str
-        """
-        self._db_version = db_version
 
     @property
     def configuration_details(self):

@@ -85,7 +85,7 @@ class OperatingSystem(object):
     def family(self):
         """
         **[Required]** Gets the family of this OperatingSystem.
-        The operating system type, such as Windows or Linux
+        The operating system type, such as Windows, Linux or macOS
 
         Allowed values for this property are: "LINUX", "WINDOWS", "MACOS", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -100,7 +100,7 @@ class OperatingSystem(object):
     def family(self, family):
         """
         Sets the family of this OperatingSystem.
-        The operating system type, such as Windows or Linux
+        The operating system type, such as Windows, Linux or macOS
 
 
         :param family: The family of this OperatingSystem.

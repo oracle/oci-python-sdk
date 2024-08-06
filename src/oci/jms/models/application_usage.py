@@ -50,6 +50,10 @@ class ApplicationUsage(object):
             The value to assign to the approximate_managed_instance_count property of this ApplicationUsage.
         :type approximate_managed_instance_count: int
 
+        :param approximate_library_count:
+            The value to assign to the approximate_library_count property of this ApplicationUsage.
+        :type approximate_library_count: int
+
         :param time_start:
             The value to assign to the time_start property of this ApplicationUsage.
         :type time_start: datetime
@@ -75,6 +79,7 @@ class ApplicationUsage(object):
             'approximate_installation_count': 'int',
             'approximate_jre_count': 'int',
             'approximate_managed_instance_count': 'int',
+            'approximate_library_count': 'int',
             'time_start': 'datetime',
             'time_end': 'datetime',
             'time_first_seen': 'datetime',
@@ -89,6 +94,7 @@ class ApplicationUsage(object):
             'approximate_installation_count': 'approximateInstallationCount',
             'approximate_jre_count': 'approximateJreCount',
             'approximate_managed_instance_count': 'approximateManagedInstanceCount',
+            'approximate_library_count': 'approximateLibraryCount',
             'time_start': 'timeStart',
             'time_end': 'timeEnd',
             'time_first_seen': 'timeFirstSeen',
@@ -102,6 +108,7 @@ class ApplicationUsage(object):
         self._approximate_installation_count = None
         self._approximate_jre_count = None
         self._approximate_managed_instance_count = None
+        self._approximate_library_count = None
         self._time_start = None
         self._time_end = None
         self._time_first_seen = None
@@ -111,7 +118,7 @@ class ApplicationUsage(object):
     def application_id(self):
         """
         **[Required]** Gets the application_id of this ApplicationUsage.
-        An internal identifier for the application that is unique to a Fleet.
+        An internal identifier for the application that is unique to a fleet.
 
 
         :return: The application_id of this ApplicationUsage.
@@ -123,7 +130,7 @@ class ApplicationUsage(object):
     def application_id(self, application_id):
         """
         Sets the application_id of this ApplicationUsage.
-        An internal identifier for the application that is unique to a Fleet.
+        An internal identifier for the application that is unique to a fleet.
 
 
         :param application_id: The application_id of this ApplicationUsage.
@@ -159,7 +166,7 @@ class ApplicationUsage(object):
     def application_type(self):
         """
         **[Required]** Gets the application_type of this ApplicationUsage.
-        The type of the application, denoted by how the application was started.
+        The type of the application denoted by how the application was started.
 
 
         :return: The application_type of this ApplicationUsage.
@@ -171,7 +178,7 @@ class ApplicationUsage(object):
     def application_type(self, application_type):
         """
         Sets the application_type of this ApplicationUsage.
-        The type of the application, denoted by how the application was started.
+        The type of the application denoted by how the application was started.
 
 
         :param application_type: The application_type of this ApplicationUsage.
@@ -274,6 +281,30 @@ class ApplicationUsage(object):
         :type: int
         """
         self._approximate_managed_instance_count = approximate_managed_instance_count
+
+    @property
+    def approximate_library_count(self):
+        """
+        Gets the approximate_library_count of this ApplicationUsage.
+        The approximate count of libraries in this application.
+
+
+        :return: The approximate_library_count of this ApplicationUsage.
+        :rtype: int
+        """
+        return self._approximate_library_count
+
+    @approximate_library_count.setter
+    def approximate_library_count(self, approximate_library_count):
+        """
+        Sets the approximate_library_count of this ApplicationUsage.
+        The approximate count of libraries in this application.
+
+
+        :param approximate_library_count: The approximate_library_count of this ApplicationUsage.
+        :type: int
+        """
+        self._approximate_library_count = approximate_library_count
 
     @property
     def time_start(self):

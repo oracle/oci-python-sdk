@@ -53,7 +53,7 @@ class MirrorRepositoryConfig(object):
     def connector_id(self):
         """
         Gets the connector_id of this MirrorRepositoryConfig.
-        Upstream git repository connection identifer.
+        Upstream git repository connection identifier.
 
 
         :return: The connector_id of this MirrorRepositoryConfig.
@@ -65,7 +65,7 @@ class MirrorRepositoryConfig(object):
     def connector_id(self, connector_id):
         """
         Sets the connector_id of this MirrorRepositoryConfig.
-        Upstream git repository connection identifer.
+        Upstream git repository connection identifier.
 
 
         :param connector_id: The connector_id of this MirrorRepositoryConfig.

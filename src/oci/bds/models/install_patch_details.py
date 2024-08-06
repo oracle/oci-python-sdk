@@ -28,19 +28,26 @@ class InstallPatchDetails(object):
             The value to assign to the cluster_admin_password property of this InstallPatchDetails.
         :type cluster_admin_password: str
 
+        :param patching_config:
+            The value to assign to the patching_config property of this InstallPatchDetails.
+        :type patching_config: oci.bds.models.OdhPatchingConfig
+
         """
         self.swagger_types = {
             'version': 'str',
-            'cluster_admin_password': 'str'
+            'cluster_admin_password': 'str',
+            'patching_config': 'OdhPatchingConfig'
         }
 
         self.attribute_map = {
             'version': 'version',
-            'cluster_admin_password': 'clusterAdminPassword'
+            'cluster_admin_password': 'clusterAdminPassword',
+            'patching_config': 'patchingConfig'
         }
 
         self._version = None
         self._cluster_admin_password = None
+        self._patching_config = None
 
     @property
     def version(self):
@@ -89,6 +96,26 @@ class InstallPatchDetails(object):
         :type: str
         """
         self._cluster_admin_password = cluster_admin_password
+
+    @property
+    def patching_config(self):
+        """
+        Gets the patching_config of this InstallPatchDetails.
+
+        :return: The patching_config of this InstallPatchDetails.
+        :rtype: oci.bds.models.OdhPatchingConfig
+        """
+        return self._patching_config
+
+    @patching_config.setter
+    def patching_config(self, patching_config):
+        """
+        Sets the patching_config of this InstallPatchDetails.
+
+        :param patching_config: The patching_config of this InstallPatchDetails.
+        :type: oci.bds.models.OdhPatchingConfig
+        """
+        self._patching_config = patching_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

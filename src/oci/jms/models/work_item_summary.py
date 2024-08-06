@@ -43,6 +43,10 @@ class WorkItemSummary(object):
     #: This constant has a value of "RETRYING"
     STATUS_RETRYING = "RETRYING"
 
+    #: A constant which can be used with the status property of a WorkItemSummary.
+    #: This constant has a value of "SKIPPED"
+    STATUS_SKIPPED = "SKIPPED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new WorkItemSummary object with values from keyword arguments.
@@ -66,7 +70,7 @@ class WorkItemSummary(object):
 
         :param status:
             The value to assign to the status property of this WorkItemSummary.
-            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "NEEDS_ATTENTION", "RETRYING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "NEEDS_ATTENTION", "RETRYING", "SKIPPED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -201,7 +205,7 @@ class WorkItemSummary(object):
         **[Required]** Gets the status of this WorkItemSummary.
         The status of the work item.
 
-        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "NEEDS_ATTENTION", "RETRYING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "NEEDS_ATTENTION", "RETRYING", "SKIPPED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -220,7 +224,7 @@ class WorkItemSummary(object):
         :param status: The status of this WorkItemSummary.
         :type: str
         """
-        allowed_values = ["ACCEPTED", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "NEEDS_ATTENTION", "RETRYING"]
+        allowed_values = ["ACCEPTED", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "NEEDS_ATTENTION", "RETRYING", "SKIPPED"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status

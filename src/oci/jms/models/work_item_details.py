@@ -27,6 +27,10 @@ class WorkItemDetails(object):
     #: This constant has a value of "LCM"
     KIND_LCM = "LCM"
 
+    #: A constant which can be used with the kind property of a WorkItemDetails.
+    #: This constant has a value of "DEPLOYED_APPLICATION"
+    KIND_DEPLOYED_APPLICATION = "DEPLOYED_APPLICATION"
+
     #: A constant which can be used with the work_item_type property of a WorkItemDetails.
     #: This constant has a value of "LCM"
     WORK_ITEM_TYPE_LCM = "LCM"
@@ -84,6 +88,7 @@ class WorkItemDetails(object):
         Initializes a new WorkItemDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.jms.models.DeployedApplicationWorkItemDetails`
         * :class:`~oci.jms.models.LcmWorkItemDetails`
         * :class:`~oci.jms.models.BasicWorkItemDetails`
         * :class:`~oci.jms.models.ApplicationWorkItemDetails`
@@ -92,7 +97,7 @@ class WorkItemDetails(object):
 
         :param kind:
             The value to assign to the kind property of this WorkItemDetails.
-            Allowed values for this property are: "BASIC", "APPLICATION", "LCM", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "BASIC", "APPLICATION", "LCM", "DEPLOYED_APPLICATION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type kind: str
 
@@ -124,6 +129,9 @@ class WorkItemDetails(object):
         """
         type = object_dictionary['kind']
 
+        if type == 'DEPLOYED_APPLICATION':
+            return 'DeployedApplicationWorkItemDetails'
+
         if type == 'LCM':
             return 'LcmWorkItemDetails'
 
@@ -141,7 +149,7 @@ class WorkItemDetails(object):
         **[Required]** Gets the kind of this WorkItemDetails.
         The kind of work item details.
 
-        Allowed values for this property are: "BASIC", "APPLICATION", "LCM", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "BASIC", "APPLICATION", "LCM", "DEPLOYED_APPLICATION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -160,7 +168,7 @@ class WorkItemDetails(object):
         :param kind: The kind of this WorkItemDetails.
         :type: str
         """
-        allowed_values = ["BASIC", "APPLICATION", "LCM"]
+        allowed_values = ["BASIC", "APPLICATION", "LCM", "DEPLOYED_APPLICATION"]
         if not value_allowed_none_or_none_sentinel(kind, allowed_values):
             kind = 'UNKNOWN_ENUM_VALUE'
         self._kind = kind

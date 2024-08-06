@@ -36,6 +36,14 @@ class FleetAgentConfiguration(object):
             The value to assign to the agent_polling_interval_in_minutes property of this FleetAgentConfiguration.
         :type agent_polling_interval_in_minutes: int
 
+        :param is_collecting_managed_instance_metrics_enabled:
+            The value to assign to the is_collecting_managed_instance_metrics_enabled property of this FleetAgentConfiguration.
+        :type is_collecting_managed_instance_metrics_enabled: bool
+
+        :param is_collecting_usernames_enabled:
+            The value to assign to the is_collecting_usernames_enabled property of this FleetAgentConfiguration.
+        :type is_collecting_usernames_enabled: bool
+
         :param linux_configuration:
             The value to assign to the linux_configuration property of this FleetAgentConfiguration.
         :type linux_configuration: oci.jms.models.FleetAgentOsConfiguration
@@ -58,6 +66,8 @@ class FleetAgentConfiguration(object):
             'java_usage_tracker_processing_frequency_in_minutes': 'int',
             'work_request_validity_period_in_days': 'int',
             'agent_polling_interval_in_minutes': 'int',
+            'is_collecting_managed_instance_metrics_enabled': 'bool',
+            'is_collecting_usernames_enabled': 'bool',
             'linux_configuration': 'FleetAgentOsConfiguration',
             'windows_configuration': 'FleetAgentOsConfiguration',
             'mac_os_configuration': 'FleetAgentOsConfiguration',
@@ -69,6 +79,8 @@ class FleetAgentConfiguration(object):
             'java_usage_tracker_processing_frequency_in_minutes': 'javaUsageTrackerProcessingFrequencyInMinutes',
             'work_request_validity_period_in_days': 'workRequestValidityPeriodInDays',
             'agent_polling_interval_in_minutes': 'agentPollingIntervalInMinutes',
+            'is_collecting_managed_instance_metrics_enabled': 'isCollectingManagedInstanceMetricsEnabled',
+            'is_collecting_usernames_enabled': 'isCollectingUsernamesEnabled',
             'linux_configuration': 'linuxConfiguration',
             'windows_configuration': 'windowsConfiguration',
             'mac_os_configuration': 'macOsConfiguration',
@@ -79,6 +91,8 @@ class FleetAgentConfiguration(object):
         self._java_usage_tracker_processing_frequency_in_minutes = None
         self._work_request_validity_period_in_days = None
         self._agent_polling_interval_in_minutes = None
+        self._is_collecting_managed_instance_metrics_enabled = None
+        self._is_collecting_usernames_enabled = None
         self._linux_configuration = None
         self._windows_configuration = None
         self._mac_os_configuration = None
@@ -179,6 +193,54 @@ class FleetAgentConfiguration(object):
         :type: int
         """
         self._agent_polling_interval_in_minutes = agent_polling_interval_in_minutes
+
+    @property
+    def is_collecting_managed_instance_metrics_enabled(self):
+        """
+        Gets the is_collecting_managed_instance_metrics_enabled of this FleetAgentConfiguration.
+        Collect JMS agent metrics on all managed instances in the fleet.
+
+
+        :return: The is_collecting_managed_instance_metrics_enabled of this FleetAgentConfiguration.
+        :rtype: bool
+        """
+        return self._is_collecting_managed_instance_metrics_enabled
+
+    @is_collecting_managed_instance_metrics_enabled.setter
+    def is_collecting_managed_instance_metrics_enabled(self, is_collecting_managed_instance_metrics_enabled):
+        """
+        Sets the is_collecting_managed_instance_metrics_enabled of this FleetAgentConfiguration.
+        Collect JMS agent metrics on all managed instances in the fleet.
+
+
+        :param is_collecting_managed_instance_metrics_enabled: The is_collecting_managed_instance_metrics_enabled of this FleetAgentConfiguration.
+        :type: bool
+        """
+        self._is_collecting_managed_instance_metrics_enabled = is_collecting_managed_instance_metrics_enabled
+
+    @property
+    def is_collecting_usernames_enabled(self):
+        """
+        Gets the is_collecting_usernames_enabled of this FleetAgentConfiguration.
+        Collect username for application invocations for all managed instances in the fleet.
+
+
+        :return: The is_collecting_usernames_enabled of this FleetAgentConfiguration.
+        :rtype: bool
+        """
+        return self._is_collecting_usernames_enabled
+
+    @is_collecting_usernames_enabled.setter
+    def is_collecting_usernames_enabled(self, is_collecting_usernames_enabled):
+        """
+        Sets the is_collecting_usernames_enabled of this FleetAgentConfiguration.
+        Collect username for application invocations for all managed instances in the fleet.
+
+
+        :param is_collecting_usernames_enabled: The is_collecting_usernames_enabled of this FleetAgentConfiguration.
+        :type: bool
+        """
+        self._is_collecting_usernames_enabled = is_collecting_usernames_enabled
 
     @property
     def linux_configuration(self):

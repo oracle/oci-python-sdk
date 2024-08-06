@@ -22,6 +22,10 @@ class ManagedInstanceUsage(object):
     #: This constant has a value of "ORACLE_MANAGEMENT_AGENT"
     MANAGED_INSTANCE_TYPE_ORACLE_MANAGEMENT_AGENT = "ORACLE_MANAGEMENT_AGENT"
 
+    #: A constant which can be used with the managed_instance_type property of a ManagedInstanceUsage.
+    #: This constant has a value of "ORACLE_CLOUD_AGENT"
+    MANAGED_INSTANCE_TYPE_ORACLE_CLOUD_AGENT = "ORACLE_CLOUD_AGENT"
+
     #: A constant which can be used with the drs_file_status property of a ManagedInstanceUsage.
     #: This constant has a value of "PRESENT"
     DRS_FILE_STATUS_PRESENT = "PRESENT"
@@ -49,7 +53,7 @@ class ManagedInstanceUsage(object):
 
         :param managed_instance_type:
             The value to assign to the managed_instance_type property of this ManagedInstanceUsage.
-            Allowed values for this property are: "ORACLE_MANAGEMENT_AGENT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_MANAGEMENT_AGENT", "ORACLE_CLOUD_AGENT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type managed_instance_type: str
 
@@ -87,6 +91,10 @@ class ManagedInstanceUsage(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type drs_file_status: str
 
+        :param application_invoked_by:
+            The value to assign to the application_invoked_by property of this ManagedInstanceUsage.
+        :type application_invoked_by: str
+
         :param time_start:
             The value to assign to the time_start property of this ManagedInstanceUsage.
         :type time_start: datetime
@@ -115,6 +123,7 @@ class ManagedInstanceUsage(object):
             'approximate_installation_count': 'int',
             'approximate_jre_count': 'int',
             'drs_file_status': 'str',
+            'application_invoked_by': 'str',
             'time_start': 'datetime',
             'time_end': 'datetime',
             'time_first_seen': 'datetime',
@@ -132,6 +141,7 @@ class ManagedInstanceUsage(object):
             'approximate_installation_count': 'approximateInstallationCount',
             'approximate_jre_count': 'approximateJreCount',
             'drs_file_status': 'drsFileStatus',
+            'application_invoked_by': 'applicationInvokedBy',
             'time_start': 'timeStart',
             'time_end': 'timeEnd',
             'time_first_seen': 'timeFirstSeen',
@@ -148,6 +158,7 @@ class ManagedInstanceUsage(object):
         self._approximate_installation_count = None
         self._approximate_jre_count = None
         self._drs_file_status = None
+        self._application_invoked_by = None
         self._time_start = None
         self._time_end = None
         self._time_first_seen = None
@@ -187,7 +198,7 @@ class ManagedInstanceUsage(object):
         **[Required]** Gets the managed_instance_type of this ManagedInstanceUsage.
         The type of the source of events.
 
-        Allowed values for this property are: "ORACLE_MANAGEMENT_AGENT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE_MANAGEMENT_AGENT", "ORACLE_CLOUD_AGENT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -206,7 +217,7 @@ class ManagedInstanceUsage(object):
         :param managed_instance_type: The managed_instance_type of this ManagedInstanceUsage.
         :type: str
         """
-        allowed_values = ["ORACLE_MANAGEMENT_AGENT"]
+        allowed_values = ["ORACLE_MANAGEMENT_AGENT", "ORACLE_CLOUD_AGENT"]
         if not value_allowed_none_or_none_sentinel(managed_instance_type, allowed_values):
             managed_instance_type = 'UNKNOWN_ENUM_VALUE'
         self._managed_instance_type = managed_instance_type
@@ -404,6 +415,30 @@ class ManagedInstanceUsage(object):
         if not value_allowed_none_or_none_sentinel(drs_file_status, allowed_values):
             drs_file_status = 'UNKNOWN_ENUM_VALUE'
         self._drs_file_status = drs_file_status
+
+    @property
+    def application_invoked_by(self):
+        """
+        Gets the application_invoked_by of this ManagedInstanceUsage.
+        Comma separated list of user names that invoked applications within this managed instance.
+
+
+        :return: The application_invoked_by of this ManagedInstanceUsage.
+        :rtype: str
+        """
+        return self._application_invoked_by
+
+    @application_invoked_by.setter
+    def application_invoked_by(self, application_invoked_by):
+        """
+        Sets the application_invoked_by of this ManagedInstanceUsage.
+        Comma separated list of user names that invoked applications within this managed instance.
+
+
+        :param application_invoked_by: The application_invoked_by of this ManagedInstanceUsage.
+        :type: str
+        """
+        self._application_invoked_by = application_invoked_by
 
     @property
     def time_start(self):

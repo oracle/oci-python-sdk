@@ -26,6 +26,7 @@ from .auto_scale_policy_rule import AutoScalePolicyRule
 from .auto_scaling_configuration import AutoScalingConfiguration
 from .auto_scaling_configuration_summary import AutoScalingConfigurationSummary
 from .backup_node_details import BackupNodeDetails
+from .batching_based_odh_patching_config import BatchingBasedOdhPatchingConfig
 from .batching_based_patching_configs import BatchingBasedPatchingConfigs
 from .bds_api_key import BdsApiKey
 from .bds_api_key_summary import BdsApiKeySummary
@@ -46,13 +47,18 @@ from .create_bds_metastore_configuration_details import CreateBdsMetastoreConfig
 from .create_node_backup_configuration_details import CreateNodeBackupConfigurationDetails
 from .create_node_details import CreateNodeDetails
 from .create_node_replace_configuration_details import CreateNodeReplaceConfigurationDetails
+from .create_resource_principal_configuration_details import CreateResourcePrincipalConfigurationDetails
 from .day_based_horizontal_scaling_schedule_details import DayBasedHorizontalScalingScheduleDetails
 from .day_based_vertical_scaling_schedule_details import DayBasedVerticalScalingScheduleDetails
 from .default_error import DefaultError
 from .disable_certificate_details import DisableCertificateDetails
+from .domain_based_odh_patching_config import DomainBasedOdhPatchingConfig
+from .domain_based_patching_configs import DomainBasedPatchingConfigs
+from .downtime_based_odh_patching_config import DowntimeBasedOdhPatchingConfig
 from .downtime_based_patching_configs import DowntimeBasedPatchingConfigs
 from .enable_certificate_details import EnableCertificateDetails
 from .execute_bootstrap_script_details import ExecuteBootstrapScriptDetails
+from .force_refresh_resource_principal_details import ForceRefreshResourcePrincipalDetails
 from .horizontal_scaling_schedule_details import HorizontalScalingScheduleDetails
 from .host_cert_details import HostCertDetails
 from .host_specific_certificate_details import HostSpecificCertificateDetails
@@ -77,6 +83,7 @@ from .node_level_details import NodeLevelDetails
 from .node_replace_configuration import NodeReplaceConfiguration
 from .node_replace_configuration_summary import NodeReplaceConfigurationSummary
 from .node_type_level_details import NodeTypeLevelDetails
+from .odh_patching_config import OdhPatchingConfig
 from .os_patch_details import OsPatchDetails
 from .os_patch_package_summary import OsPatchPackageSummary
 from .os_patch_summary import OsPatchSummary
@@ -88,8 +95,11 @@ from .remove_cloud_sql_details import RemoveCloudSqlDetails
 from .remove_kafka_details import RemoveKafkaDetails
 from .remove_node_details import RemoveNodeDetails
 from .remove_node_replace_configuration_details import RemoveNodeReplaceConfigurationDetails
+from .remove_resource_principal_configuration_details import RemoveResourcePrincipalConfigurationDetails
 from .renew_certificate_details import RenewCertificateDetails
 from .replace_node_details import ReplaceNodeDetails
+from .resource_principal_configuration import ResourcePrincipalConfiguration
+from .resource_principal_configuration_summary import ResourcePrincipalConfigurationSummary
 from .restart_node_details import RestartNodeDetails
 from .schedule_based_horizontal_scaling_policy_details import ScheduleBasedHorizontalScalingPolicyDetails
 from .schedule_based_vertical_scaling_policy_details import ScheduleBasedVerticalScalingPolicyDetails
@@ -108,6 +118,7 @@ from .update_metric_based_horizontal_scaling_policy_details import UpdateMetricB
 from .update_metric_based_vertical_scaling_policy_details import UpdateMetricBasedVerticalScalingPolicyDetails
 from .update_node_backup_configuration_details import UpdateNodeBackupConfigurationDetails
 from .update_node_replace_configuration_details import UpdateNodeReplaceConfigurationDetails
+from .update_resource_principal_configuration_details import UpdateResourcePrincipalConfigurationDetails
 from .update_schedule_based_horizontal_scaling_policy_details import UpdateScheduleBasedHorizontalScalingPolicyDetails
 from .update_schedule_based_vertical_scaling_policy_details import UpdateScheduleBasedVerticalScalingPolicyDetails
 from .vertical_scaling_schedule_details import VerticalScalingScheduleDetails
@@ -139,6 +150,7 @@ bds_type_mapping = {
     "AutoScalingConfiguration": AutoScalingConfiguration,
     "AutoScalingConfigurationSummary": AutoScalingConfigurationSummary,
     "BackupNodeDetails": BackupNodeDetails,
+    "BatchingBasedOdhPatchingConfig": BatchingBasedOdhPatchingConfig,
     "BatchingBasedPatchingConfigs": BatchingBasedPatchingConfigs,
     "BdsApiKey": BdsApiKey,
     "BdsApiKeySummary": BdsApiKeySummary,
@@ -159,13 +171,18 @@ bds_type_mapping = {
     "CreateNodeBackupConfigurationDetails": CreateNodeBackupConfigurationDetails,
     "CreateNodeDetails": CreateNodeDetails,
     "CreateNodeReplaceConfigurationDetails": CreateNodeReplaceConfigurationDetails,
+    "CreateResourcePrincipalConfigurationDetails": CreateResourcePrincipalConfigurationDetails,
     "DayBasedHorizontalScalingScheduleDetails": DayBasedHorizontalScalingScheduleDetails,
     "DayBasedVerticalScalingScheduleDetails": DayBasedVerticalScalingScheduleDetails,
     "DefaultError": DefaultError,
     "DisableCertificateDetails": DisableCertificateDetails,
+    "DomainBasedOdhPatchingConfig": DomainBasedOdhPatchingConfig,
+    "DomainBasedPatchingConfigs": DomainBasedPatchingConfigs,
+    "DowntimeBasedOdhPatchingConfig": DowntimeBasedOdhPatchingConfig,
     "DowntimeBasedPatchingConfigs": DowntimeBasedPatchingConfigs,
     "EnableCertificateDetails": EnableCertificateDetails,
     "ExecuteBootstrapScriptDetails": ExecuteBootstrapScriptDetails,
+    "ForceRefreshResourcePrincipalDetails": ForceRefreshResourcePrincipalDetails,
     "HorizontalScalingScheduleDetails": HorizontalScalingScheduleDetails,
     "HostCertDetails": HostCertDetails,
     "HostSpecificCertificateDetails": HostSpecificCertificateDetails,
@@ -190,6 +207,7 @@ bds_type_mapping = {
     "NodeReplaceConfiguration": NodeReplaceConfiguration,
     "NodeReplaceConfigurationSummary": NodeReplaceConfigurationSummary,
     "NodeTypeLevelDetails": NodeTypeLevelDetails,
+    "OdhPatchingConfig": OdhPatchingConfig,
     "OsPatchDetails": OsPatchDetails,
     "OsPatchPackageSummary": OsPatchPackageSummary,
     "OsPatchSummary": OsPatchSummary,
@@ -201,8 +219,11 @@ bds_type_mapping = {
     "RemoveKafkaDetails": RemoveKafkaDetails,
     "RemoveNodeDetails": RemoveNodeDetails,
     "RemoveNodeReplaceConfigurationDetails": RemoveNodeReplaceConfigurationDetails,
+    "RemoveResourcePrincipalConfigurationDetails": RemoveResourcePrincipalConfigurationDetails,
     "RenewCertificateDetails": RenewCertificateDetails,
     "ReplaceNodeDetails": ReplaceNodeDetails,
+    "ResourcePrincipalConfiguration": ResourcePrincipalConfiguration,
+    "ResourcePrincipalConfigurationSummary": ResourcePrincipalConfigurationSummary,
     "RestartNodeDetails": RestartNodeDetails,
     "ScheduleBasedHorizontalScalingPolicyDetails": ScheduleBasedHorizontalScalingPolicyDetails,
     "ScheduleBasedVerticalScalingPolicyDetails": ScheduleBasedVerticalScalingPolicyDetails,
@@ -221,6 +242,7 @@ bds_type_mapping = {
     "UpdateMetricBasedVerticalScalingPolicyDetails": UpdateMetricBasedVerticalScalingPolicyDetails,
     "UpdateNodeBackupConfigurationDetails": UpdateNodeBackupConfigurationDetails,
     "UpdateNodeReplaceConfigurationDetails": UpdateNodeReplaceConfigurationDetails,
+    "UpdateResourcePrincipalConfigurationDetails": UpdateResourcePrincipalConfigurationDetails,
     "UpdateScheduleBasedHorizontalScalingPolicyDetails": UpdateScheduleBasedHorizontalScalingPolicyDetails,
     "UpdateScheduleBasedVerticalScalingPolicyDetails": UpdateScheduleBasedVerticalScalingPolicyDetails,
     "VerticalScalingScheduleDetails": VerticalScalingScheduleDetails,

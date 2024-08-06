@@ -465,7 +465,7 @@ class SoftwareSourceClient(object):
 
     def create_entitlement(self, create_entitlement_details, **kwargs):
         """
-        Registers the necessary entitlement credentials for OS vendor software sources.
+        Registers the necessary entitlement credentials for OS vendor software sources for a tenancy.
 
 
         :param oci.os_management_hub.models.CreateEntitlementDetails create_entitlement_details: (required)

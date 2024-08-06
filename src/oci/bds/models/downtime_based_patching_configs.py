@@ -23,7 +23,7 @@ class DowntimeBasedPatchingConfigs(PatchingConfigs):
 
         :param patching_config_strategy:
             The value to assign to the patching_config_strategy property of this DowntimeBasedPatchingConfigs.
-            Allowed values for this property are: "DOWNTIME_BASED", "BATCHING_BASED"
+            Allowed values for this property are: "DOWNTIME_BASED", "BATCHING_BASED", "DOMAIN_BASED"
         :type patching_config_strategy: str
 
         """

@@ -4,6 +4,37 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.131.0 - 09/16/2023
+====================
+
+Added 
+----- 
+* Support for calling Oracle Cloud Infrastructure services in the me-riyadh-1 region 
+* Support for vertically scaling a Database system in the PostgreSQL service 
+* Support for flex shapes in the PostgreSQL service 
+* Support for new fork repository feature in the Source Code Management service 
+* Support for Developer Charts in the Source Code Management service 
+* Support for pull requests and merge in Source Code Management service 
+* Support for limiting custom and versioned custom software source content to the latest package versions in the OS Management service 
+* Support for Open Data Hub (ODH) patching in a staged manner in the Big Data service 
+* Support for Autoscale Memory Utilization in the Big Data service 
+* Support for Resource Principal configuration feature in the Big Data service 
+* Support for a new optional parameter compartment ID in the Java Management service 
+* Support for Agent Installer in the Java Management service 
+* Support for Java migration analysis request of deployed applications in the Java Management service 
+* Support for JmsPlugin in the Java Management service 
+* Support for improved cryptographic analysis result listing in the Java Management service 
+* Support for improved fleet agent configuration setting in the Java Management service 
+* Support for improved Java migration analysis result listing in the Java Management service 
+* Support for improved library usage summary in the Java Management service 
+* Support for improved performance tuning analysis result listing in the Java Management service 
+* Support for improved work request listing in the Java Management service   
+
+Breaking 
+-------- 
+* Parameter `credentials` is now required for model `CreateDbSystemDetails` in the PostgreSQL service   
+
+====================
 2.130.0 - 2024-07-30
 ====================
 

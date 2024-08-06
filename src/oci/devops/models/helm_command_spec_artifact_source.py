@@ -27,7 +27,7 @@ class HelmCommandSpecArtifactSource(DeployArtifactSource):
 
         :param deploy_artifact_source_type:
             The value to assign to the deploy_artifact_source_type property of this HelmCommandSpecArtifactSource.
-            Allowed values for this property are: "INLINE", "OCIR", "GENERIC_ARTIFACT", "HELM_CHART", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INLINE", "OCIR", "GENERIC_ARTIFACT", "HELM_CHART", "HELM_COMMAND_SPEC", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type deploy_artifact_source_type: str
 

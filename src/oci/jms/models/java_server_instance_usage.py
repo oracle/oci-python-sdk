@@ -52,6 +52,10 @@ class JavaServerInstanceUsage(object):
             The value to assign to the server_instance_name property of this JavaServerInstanceUsage.
         :type server_instance_name: str
 
+        :param server_instance_port:
+            The value to assign to the server_instance_port property of this JavaServerInstanceUsage.
+        :type server_instance_port: int
+
         :param server_key:
             The value to assign to the server_key property of this JavaServerInstanceUsage.
         :type server_key: str
@@ -119,6 +123,7 @@ class JavaServerInstanceUsage(object):
             'server_instance_key': 'str',
             'fleet_id': 'str',
             'server_instance_name': 'str',
+            'server_instance_port': 'int',
             'server_key': 'str',
             'server_name': 'str',
             'server_version': 'str',
@@ -140,6 +145,7 @@ class JavaServerInstanceUsage(object):
             'server_instance_key': 'serverInstanceKey',
             'fleet_id': 'fleetId',
             'server_instance_name': 'serverInstanceName',
+            'server_instance_port': 'serverInstancePort',
             'server_key': 'serverKey',
             'server_name': 'serverName',
             'server_version': 'serverVersion',
@@ -160,6 +166,7 @@ class JavaServerInstanceUsage(object):
         self._server_instance_key = None
         self._fleet_id = None
         self._server_instance_name = None
+        self._server_instance_port = None
         self._server_key = None
         self._server_name = None
         self._server_version = None
@@ -251,6 +258,30 @@ class JavaServerInstanceUsage(object):
         :type: str
         """
         self._server_instance_name = server_instance_name
+
+    @property
+    def server_instance_port(self):
+        """
+        Gets the server_instance_port of this JavaServerInstanceUsage.
+        The port of the Java Server instance.
+
+
+        :return: The server_instance_port of this JavaServerInstanceUsage.
+        :rtype: int
+        """
+        return self._server_instance_port
+
+    @server_instance_port.setter
+    def server_instance_port(self, server_instance_port):
+        """
+        Sets the server_instance_port of this JavaServerInstanceUsage.
+        The port of the Java Server instance.
+
+
+        :param server_instance_port: The server_instance_port of this JavaServerInstanceUsage.
+        :type: int
+        """
+        self._server_instance_port = server_instance_port
 
     @property
     def server_key(self):

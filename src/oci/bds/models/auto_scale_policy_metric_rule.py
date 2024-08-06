@@ -19,6 +19,10 @@ class AutoScalePolicyMetricRule(object):
     #: This constant has a value of "CPU_UTILIZATION"
     METRIC_TYPE_CPU_UTILIZATION = "CPU_UTILIZATION"
 
+    #: A constant which can be used with the metric_type property of a AutoScalePolicyMetricRule.
+    #: This constant has a value of "MEMORY_UTILIZATION"
+    METRIC_TYPE_MEMORY_UTILIZATION = "MEMORY_UTILIZATION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AutoScalePolicyMetricRule object with values from keyword arguments.
@@ -26,7 +30,7 @@ class AutoScalePolicyMetricRule(object):
 
         :param metric_type:
             The value to assign to the metric_type property of this AutoScalePolicyMetricRule.
-            Allowed values for this property are: "CPU_UTILIZATION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CPU_UTILIZATION", "MEMORY_UTILIZATION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type metric_type: str
 
@@ -52,9 +56,9 @@ class AutoScalePolicyMetricRule(object):
     def metric_type(self):
         """
         **[Required]** Gets the metric_type of this AutoScalePolicyMetricRule.
-        Allowed value is CPU_UTILIZATION.
+        Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 
-        Allowed values for this property are: "CPU_UTILIZATION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CPU_UTILIZATION", "MEMORY_UTILIZATION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -67,13 +71,13 @@ class AutoScalePolicyMetricRule(object):
     def metric_type(self, metric_type):
         """
         Sets the metric_type of this AutoScalePolicyMetricRule.
-        Allowed value is CPU_UTILIZATION.
+        Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
 
 
         :param metric_type: The metric_type of this AutoScalePolicyMetricRule.
         :type: str
         """
-        allowed_values = ["CPU_UTILIZATION"]
+        allowed_values = ["CPU_UTILIZATION", "MEMORY_UTILIZATION"]
         if not value_allowed_none_or_none_sentinel(metric_type, allowed_values):
             metric_type = 'UNKNOWN_ENUM_VALUE'
         self._metric_type = metric_type

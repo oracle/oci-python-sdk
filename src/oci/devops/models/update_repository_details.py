@@ -156,6 +156,7 @@ class UpdateRepositoryDetails(object):
         Type of repository. Allowed values:
         `MIRRORED`
         `HOSTED`
+        `FORKED`
 
 
         :return: The repository_type of this UpdateRepositoryDetails.
@@ -170,6 +171,7 @@ class UpdateRepositoryDetails(object):
         Type of repository. Allowed values:
         `MIRRORED`
         `HOSTED`
+        `FORKED`
 
 
         :param repository_type: The repository_type of this UpdateRepositoryDetails.

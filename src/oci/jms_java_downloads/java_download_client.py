@@ -832,11 +832,11 @@ class JavaDownloadClient(object):
 
     def generate_artifact_download_url(self, generate_artifact_download_url_details, **kwargs):
         """
-        Generates a short-lived download URL and returns it in the response payload.
-        The returned URL can then be used for downloading the specific Java runtime artifact.
+        Generates a download URL and returns it in the response payload.
+        The URL in the response can then be used for downloading the specific Java runtime artifact.
 
         Use the :func:`get_java_release` API
-        to get information about available artifacts for a specific release. Each such artifact is uniquely identified by an `artifactId`.
+        to get information about available artifacts for a specific release. Each artifact is uniquely identified by an `artifactId`.
         Refer :func:`java_artifact` for more details.
 
 
@@ -1874,7 +1874,7 @@ class JavaDownloadClient(object):
         :param str search_by_user: (optional)
             A filter to return only resources that match the user principal detail.
             The search string can be any of the property values from the :func:`principal` object.
-            This object is used as response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
+            This object is used as a response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -2031,7 +2031,7 @@ class JavaDownloadClient(object):
         :param str search_by_user: (optional)
             A filter to return only resources that match the user principal detail.
             The search string can be any of the property values from the :func:`principal` object.
-            This object is used as response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
+            This object is used as a response datatype for the `createdBy` and `lastUpdatedBy` fields in applicable resource.
 
         :param str id: (optional)
             Unique Java license acceptance record identifier.

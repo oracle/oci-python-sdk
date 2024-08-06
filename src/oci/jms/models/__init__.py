@@ -9,6 +9,8 @@ from __future__ import absolute_import
 from .add_fleet_installation_sites_details import AddFleetInstallationSitesDetails
 from .advanced_usage_tracking import AdvancedUsageTracking
 from .agent import Agent
+from .agent_installer_collection import AgentInstallerCollection
+from .agent_installer_summary import AgentInstallerSummary
 from .announcement_collection import AnnouncementCollection
 from .announcement_summary import AnnouncementSummary
 from .application_installation_usage_summary import ApplicationInstallationUsageSummary
@@ -25,6 +27,7 @@ from .change_fleet_compartment_details import ChangeFleetCompartmentDetails
 from .create_blocklist_details import CreateBlocklistDetails
 from .create_drs_file_details import CreateDrsFileDetails
 from .create_fleet_details import CreateFleetDetails
+from .create_jms_plugin_details import CreateJmsPluginDetails
 from .crypto_analysis_result import CryptoAnalysisResult
 from .crypto_analysis_result_collection import CryptoAnalysisResultCollection
 from .crypto_analysis_result_summary import CryptoAnalysisResultSummary
@@ -32,8 +35,10 @@ from .crypto_event_analysis import CryptoEventAnalysis
 from .custom_log import CustomLog
 from .deployed_application_installation_usage_summary import DeployedApplicationInstallationUsageSummary
 from .deployed_application_installation_usage_summary_collection import DeployedApplicationInstallationUsageSummaryCollection
+from .deployed_application_migration_analyses_target import DeployedApplicationMigrationAnalysesTarget
 from .deployed_application_usage import DeployedApplicationUsage
 from .deployed_application_usage_collection import DeployedApplicationUsageCollection
+from .deployed_application_work_item_details import DeployedApplicationWorkItemDetails
 from .disable_drs_details import DisableDrsDetails
 from .drs_file import DrsFile
 from .drs_file_collection import DrsFileCollection
@@ -52,6 +57,8 @@ from .fleet_diagnosis_collection import FleetDiagnosisCollection
 from .fleet_diagnosis_summary import FleetDiagnosisSummary
 from .fleet_summary import FleetSummary
 from .generate_agent_deploy_script_details import GenerateAgentDeployScriptDetails
+from .generate_agent_installer_configuration_details import GenerateAgentInstallerConfigurationDetails
+from .generate_load_pipeline_script_details import GenerateLoadPipelineScriptDetails
 from .installation_site import InstallationSite
 from .installation_site_collection import InstallationSiteCollection
 from .installation_site_summary import InstallationSiteSummary
@@ -77,6 +84,9 @@ from .java_server_usage import JavaServerUsage
 from .java_server_usage_collection import JavaServerUsageCollection
 from .jfr_attachment_target import JfrAttachmentTarget
 from .jfr_recording import JfrRecording
+from .jms_plugin import JmsPlugin
+from .jms_plugin_collection import JmsPluginCollection
+from .jms_plugin_summary import JmsPluginSummary
 from .jre_usage import JreUsage
 from .jre_usage_collection import JreUsageCollection
 from .key_size_algorithm import KeySizeAlgorithm
@@ -101,6 +111,7 @@ from .principal import Principal
 from .proxies import Proxies
 from .remove_fleet_installation_sites_details import RemoveFleetInstallationSitesDetails
 from .request_crypto_analyses_details import RequestCryptoAnalysesDetails
+from .request_deployed_application_migration_analyses_details import RequestDeployedApplicationMigrationAnalysesDetails
 from .request_java_migration_analyses_details import RequestJavaMigrationAnalysesDetails
 from .request_jfr_recordings_details import RequestJfrRecordingsDetails
 from .request_performance_tuning_analyses_details import RequestPerformanceTuningAnalysesDetails
@@ -113,6 +124,7 @@ from .update_export_setting_details import UpdateExportSettingDetails
 from .update_fleet_advanced_feature_configuration_details import UpdateFleetAdvancedFeatureConfigurationDetails
 from .update_fleet_agent_configuration_details import UpdateFleetAgentConfigurationDetails
 from .update_fleet_details import UpdateFleetDetails
+from .update_jms_plugin_details import UpdateJmsPluginDetails
 from .work_item_collection import WorkItemCollection
 from .work_item_details import WorkItemDetails
 from .work_item_summary import WorkItemSummary
@@ -129,6 +141,8 @@ jms_type_mapping = {
     "AddFleetInstallationSitesDetails": AddFleetInstallationSitesDetails,
     "AdvancedUsageTracking": AdvancedUsageTracking,
     "Agent": Agent,
+    "AgentInstallerCollection": AgentInstallerCollection,
+    "AgentInstallerSummary": AgentInstallerSummary,
     "AnnouncementCollection": AnnouncementCollection,
     "AnnouncementSummary": AnnouncementSummary,
     "ApplicationInstallationUsageSummary": ApplicationInstallationUsageSummary,
@@ -145,6 +159,7 @@ jms_type_mapping = {
     "CreateBlocklistDetails": CreateBlocklistDetails,
     "CreateDrsFileDetails": CreateDrsFileDetails,
     "CreateFleetDetails": CreateFleetDetails,
+    "CreateJmsPluginDetails": CreateJmsPluginDetails,
     "CryptoAnalysisResult": CryptoAnalysisResult,
     "CryptoAnalysisResultCollection": CryptoAnalysisResultCollection,
     "CryptoAnalysisResultSummary": CryptoAnalysisResultSummary,
@@ -152,8 +167,10 @@ jms_type_mapping = {
     "CustomLog": CustomLog,
     "DeployedApplicationInstallationUsageSummary": DeployedApplicationInstallationUsageSummary,
     "DeployedApplicationInstallationUsageSummaryCollection": DeployedApplicationInstallationUsageSummaryCollection,
+    "DeployedApplicationMigrationAnalysesTarget": DeployedApplicationMigrationAnalysesTarget,
     "DeployedApplicationUsage": DeployedApplicationUsage,
     "DeployedApplicationUsageCollection": DeployedApplicationUsageCollection,
+    "DeployedApplicationWorkItemDetails": DeployedApplicationWorkItemDetails,
     "DisableDrsDetails": DisableDrsDetails,
     "DrsFile": DrsFile,
     "DrsFileCollection": DrsFileCollection,
@@ -172,6 +189,8 @@ jms_type_mapping = {
     "FleetDiagnosisSummary": FleetDiagnosisSummary,
     "FleetSummary": FleetSummary,
     "GenerateAgentDeployScriptDetails": GenerateAgentDeployScriptDetails,
+    "GenerateAgentInstallerConfigurationDetails": GenerateAgentInstallerConfigurationDetails,
+    "GenerateLoadPipelineScriptDetails": GenerateLoadPipelineScriptDetails,
     "InstallationSite": InstallationSite,
     "InstallationSiteCollection": InstallationSiteCollection,
     "InstallationSiteSummary": InstallationSiteSummary,
@@ -197,6 +216,9 @@ jms_type_mapping = {
     "JavaServerUsageCollection": JavaServerUsageCollection,
     "JfrAttachmentTarget": JfrAttachmentTarget,
     "JfrRecording": JfrRecording,
+    "JmsPlugin": JmsPlugin,
+    "JmsPluginCollection": JmsPluginCollection,
+    "JmsPluginSummary": JmsPluginSummary,
     "JreUsage": JreUsage,
     "JreUsageCollection": JreUsageCollection,
     "KeySizeAlgorithm": KeySizeAlgorithm,
@@ -221,6 +243,7 @@ jms_type_mapping = {
     "Proxies": Proxies,
     "RemoveFleetInstallationSitesDetails": RemoveFleetInstallationSitesDetails,
     "RequestCryptoAnalysesDetails": RequestCryptoAnalysesDetails,
+    "RequestDeployedApplicationMigrationAnalysesDetails": RequestDeployedApplicationMigrationAnalysesDetails,
     "RequestJavaMigrationAnalysesDetails": RequestJavaMigrationAnalysesDetails,
     "RequestJfrRecordingsDetails": RequestJfrRecordingsDetails,
     "RequestPerformanceTuningAnalysesDetails": RequestPerformanceTuningAnalysesDetails,
@@ -233,6 +256,7 @@ jms_type_mapping = {
     "UpdateFleetAdvancedFeatureConfigurationDetails": UpdateFleetAdvancedFeatureConfigurationDetails,
     "UpdateFleetAgentConfigurationDetails": UpdateFleetAgentConfigurationDetails,
     "UpdateFleetDetails": UpdateFleetDetails,
+    "UpdateJmsPluginDetails": UpdateJmsPluginDetails,
     "WorkItemCollection": WorkItemCollection,
     "WorkItemDetails": WorkItemDetails,
     "WorkItemSummary": WorkItemSummary,

@@ -40,13 +40,17 @@ class DefaultConfigurationSummary(object):
             The value to assign to the lifecycle_details property of this DefaultConfigurationSummary.
         :type lifecycle_details: str
 
+        :param db_version:
+            The value to assign to the db_version property of this DefaultConfigurationSummary.
+        :type db_version: str
+
         :param shape:
             The value to assign to the shape property of this DefaultConfigurationSummary.
         :type shape: str
 
-        :param db_version:
-            The value to assign to the db_version property of this DefaultConfigurationSummary.
-        :type db_version: str
+        :param is_flexible:
+            The value to assign to the is_flexible property of this DefaultConfigurationSummary.
+        :type is_flexible: bool
 
         :param instance_ocpu_count:
             The value to assign to the instance_ocpu_count property of this DefaultConfigurationSummary.
@@ -63,8 +67,9 @@ class DefaultConfigurationSummary(object):
             'time_created': 'datetime',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
-            'shape': 'str',
             'db_version': 'str',
+            'shape': 'str',
+            'is_flexible': 'bool',
             'instance_ocpu_count': 'int',
             'instance_memory_size_in_gbs': 'int'
         }
@@ -75,8 +80,9 @@ class DefaultConfigurationSummary(object):
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
-            'shape': 'shape',
             'db_version': 'dbVersion',
+            'shape': 'shape',
+            'is_flexible': 'isFlexible',
             'instance_ocpu_count': 'instanceOcpuCount',
             'instance_memory_size_in_gbs': 'instanceMemorySizeInGBs'
         }
@@ -86,8 +92,9 @@ class DefaultConfigurationSummary(object):
         self._time_created = None
         self._lifecycle_state = None
         self._lifecycle_details = None
-        self._shape = None
         self._db_version = None
+        self._shape = None
+        self._is_flexible = None
         self._instance_ocpu_count = None
         self._instance_memory_size_in_gbs = None
 
@@ -222,6 +229,30 @@ class DefaultConfigurationSummary(object):
         self._lifecycle_details = lifecycle_details
 
     @property
+    def db_version(self):
+        """
+        **[Required]** Gets the db_version of this DefaultConfigurationSummary.
+        Version of the PostgreSQL database.
+
+
+        :return: The db_version of this DefaultConfigurationSummary.
+        :rtype: str
+        """
+        return self._db_version
+
+    @db_version.setter
+    def db_version(self, db_version):
+        """
+        Sets the db_version of this DefaultConfigurationSummary.
+        Version of the PostgreSQL database.
+
+
+        :param db_version: The db_version of this DefaultConfigurationSummary.
+        :type: str
+        """
+        self._db_version = db_version
+
+    @property
     def shape(self):
         """
         **[Required]** Gets the shape of this DefaultConfigurationSummary.
@@ -248,34 +279,36 @@ class DefaultConfigurationSummary(object):
         self._shape = shape
 
     @property
-    def db_version(self):
+    def is_flexible(self):
         """
-        **[Required]** Gets the db_version of this DefaultConfigurationSummary.
-        Version of the PostgreSQL database.
+        Gets the is_flexible of this DefaultConfigurationSummary.
+        True if the configuration supports flexible shapes, false otherwise.
 
 
-        :return: The db_version of this DefaultConfigurationSummary.
-        :rtype: str
+        :return: The is_flexible of this DefaultConfigurationSummary.
+        :rtype: bool
         """
-        return self._db_version
+        return self._is_flexible
 
-    @db_version.setter
-    def db_version(self, db_version):
+    @is_flexible.setter
+    def is_flexible(self, is_flexible):
         """
-        Sets the db_version of this DefaultConfigurationSummary.
-        Version of the PostgreSQL database.
+        Sets the is_flexible of this DefaultConfigurationSummary.
+        True if the configuration supports flexible shapes, false otherwise.
 
 
-        :param db_version: The db_version of this DefaultConfigurationSummary.
-        :type: str
+        :param is_flexible: The is_flexible of this DefaultConfigurationSummary.
+        :type: bool
         """
-        self._db_version = db_version
+        self._is_flexible = is_flexible
 
     @property
     def instance_ocpu_count(self):
         """
         **[Required]** Gets the instance_ocpu_count of this DefaultConfigurationSummary.
-        CPU core count. Minimum value is 1.
+        CPU core count.
+
+        It's value is set to 0 if configuration is for a flexible shape.
 
 
         :return: The instance_ocpu_count of this DefaultConfigurationSummary.
@@ -287,7 +320,9 @@ class DefaultConfigurationSummary(object):
     def instance_ocpu_count(self, instance_ocpu_count):
         """
         Sets the instance_ocpu_count of this DefaultConfigurationSummary.
-        CPU core count. Minimum value is 1.
+        CPU core count.
+
+        It's value is set to 0 if configuration is for a flexible shape.
 
 
         :param instance_ocpu_count: The instance_ocpu_count of this DefaultConfigurationSummary.
@@ -301,6 +336,8 @@ class DefaultConfigurationSummary(object):
         **[Required]** Gets the instance_memory_size_in_gbs of this DefaultConfigurationSummary.
         Memory size in gigabytes with 1GB increment.
 
+        It's value is set to 0 if configuration is for a flexible shape.
+
 
         :return: The instance_memory_size_in_gbs of this DefaultConfigurationSummary.
         :rtype: int
@@ -312,6 +349,8 @@ class DefaultConfigurationSummary(object):
         """
         Sets the instance_memory_size_in_gbs of this DefaultConfigurationSummary.
         Memory size in gigabytes with 1GB increment.
+
+        It's value is set to 0 if configuration is for a flexible shape.
 
 
         :param instance_memory_size_in_gbs: The instance_memory_size_in_gbs of this DefaultConfigurationSummary.

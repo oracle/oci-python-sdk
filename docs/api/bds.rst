@@ -38,6 +38,7 @@ Bds
     oci.bds.models.AutoScalingConfiguration
     oci.bds.models.AutoScalingConfigurationSummary
     oci.bds.models.BackupNodeDetails
+    oci.bds.models.BatchingBasedOdhPatchingConfig
     oci.bds.models.BatchingBasedPatchingConfigs
     oci.bds.models.BdsApiKey
     oci.bds.models.BdsApiKeySummary
@@ -58,13 +59,18 @@ Bds
     oci.bds.models.CreateNodeBackupConfigurationDetails
     oci.bds.models.CreateNodeDetails
     oci.bds.models.CreateNodeReplaceConfigurationDetails
+    oci.bds.models.CreateResourcePrincipalConfigurationDetails
     oci.bds.models.DayBasedHorizontalScalingScheduleDetails
     oci.bds.models.DayBasedVerticalScalingScheduleDetails
     oci.bds.models.DefaultError
     oci.bds.models.DisableCertificateDetails
+    oci.bds.models.DomainBasedOdhPatchingConfig
+    oci.bds.models.DomainBasedPatchingConfigs
+    oci.bds.models.DowntimeBasedOdhPatchingConfig
     oci.bds.models.DowntimeBasedPatchingConfigs
     oci.bds.models.EnableCertificateDetails
     oci.bds.models.ExecuteBootstrapScriptDetails
+    oci.bds.models.ForceRefreshResourcePrincipalDetails
     oci.bds.models.HorizontalScalingScheduleDetails
     oci.bds.models.HostCertDetails
     oci.bds.models.HostSpecificCertificateDetails
@@ -89,6 +95,7 @@ Bds
     oci.bds.models.NodeReplaceConfiguration
     oci.bds.models.NodeReplaceConfigurationSummary
     oci.bds.models.NodeTypeLevelDetails
+    oci.bds.models.OdhPatchingConfig
     oci.bds.models.OsPatchDetails
     oci.bds.models.OsPatchPackageSummary
     oci.bds.models.OsPatchSummary
@@ -100,8 +107,11 @@ Bds
     oci.bds.models.RemoveKafkaDetails
     oci.bds.models.RemoveNodeDetails
     oci.bds.models.RemoveNodeReplaceConfigurationDetails
+    oci.bds.models.RemoveResourcePrincipalConfigurationDetails
     oci.bds.models.RenewCertificateDetails
     oci.bds.models.ReplaceNodeDetails
+    oci.bds.models.ResourcePrincipalConfiguration
+    oci.bds.models.ResourcePrincipalConfigurationSummary
     oci.bds.models.RestartNodeDetails
     oci.bds.models.ScheduleBasedHorizontalScalingPolicyDetails
     oci.bds.models.ScheduleBasedVerticalScalingPolicyDetails
@@ -120,6 +130,7 @@ Bds
     oci.bds.models.UpdateMetricBasedVerticalScalingPolicyDetails
     oci.bds.models.UpdateNodeBackupConfigurationDetails
     oci.bds.models.UpdateNodeReplaceConfigurationDetails
+    oci.bds.models.UpdateResourcePrincipalConfigurationDetails
     oci.bds.models.UpdateScheduleBasedHorizontalScalingPolicyDetails
     oci.bds.models.UpdateScheduleBasedVerticalScalingPolicyDetails
     oci.bds.models.VerticalScalingScheduleDetails

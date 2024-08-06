@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExportSetting(object):
     """
-    An export settings for JMS fleets.
+    Export settings of a fleet.
     """
 
     #: A constant which can be used with the export_duration property of a ExportSetting.
@@ -342,7 +342,7 @@ class ExportSetting(object):
     def target_bucket_region(self):
         """
         Gets the target_bucket_region of this ExportSetting.
-        The namespace of the bucket where data will be exported.
+        The id of the region of the target bucket.
 
 
         :return: The target_bucket_region of this ExportSetting.
@@ -354,7 +354,7 @@ class ExportSetting(object):
     def target_bucket_region(self, target_bucket_region):
         """
         Sets the target_bucket_region of this ExportSetting.
-        The namespace of the bucket where data will be exported.
+        The id of the region of the target bucket.
 
 
         :param target_bucket_region: The target_bucket_region of this ExportSetting.

@@ -64,6 +64,8 @@ from .reset_master_user_password_details import ResetMasterUserPasswordDetails
 from .restart_db_instance_in_db_system_details import RestartDbInstanceInDbSystemDetails
 from .restore_db_system_details import RestoreDbSystemDetails
 from .shape_collection import ShapeCollection
+from .shape_memory_options import ShapeMemoryOptions
+from .shape_ocpu_options import ShapeOcpuOptions
 from .shape_summary import ShapeSummary
 from .source_details import SourceDetails
 from .storage_details import StorageDetails
@@ -72,6 +74,7 @@ from .update_configuration_details import UpdateConfigurationDetails
 from .update_db_config_params import UpdateDbConfigParams
 from .update_db_system_db_instance_details import UpdateDbSystemDbInstanceDetails
 from .update_db_system_details import UpdateDbSystemDetails
+from .update_network_details import UpdateNetworkDetails
 from .update_storage_details_params import UpdateStorageDetailsParams
 from .vault_secret_password_details import VaultSecretPasswordDetails
 from .weekly_backup_policy import WeeklyBackupPolicy
@@ -144,6 +147,8 @@ psql_type_mapping = {
     "RestartDbInstanceInDbSystemDetails": RestartDbInstanceInDbSystemDetails,
     "RestoreDbSystemDetails": RestoreDbSystemDetails,
     "ShapeCollection": ShapeCollection,
+    "ShapeMemoryOptions": ShapeMemoryOptions,
+    "ShapeOcpuOptions": ShapeOcpuOptions,
     "ShapeSummary": ShapeSummary,
     "SourceDetails": SourceDetails,
     "StorageDetails": StorageDetails,
@@ -152,6 +157,7 @@ psql_type_mapping = {
     "UpdateDbConfigParams": UpdateDbConfigParams,
     "UpdateDbSystemDbInstanceDetails": UpdateDbSystemDbInstanceDetails,
     "UpdateDbSystemDetails": UpdateDbSystemDetails,
+    "UpdateNetworkDetails": UpdateNetworkDetails,
     "UpdateStorageDetailsParams": UpdateStorageDetailsParams,
     "VaultSecretPasswordDetails": VaultSecretPasswordDetails,
     "WeeklyBackupPolicy": WeeklyBackupPolicy,

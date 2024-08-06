@@ -527,7 +527,7 @@ class PerformanceTuningAnalysisResultSummary(object):
     def time_started(self):
         """
         **[Required]** Gets the time_started of this PerformanceTuningAnalysisResultSummary.
-        The time the JFR capture started.
+        The time the JFR recording has started.
 
 
         :return: The time_started of this PerformanceTuningAnalysisResultSummary.
@@ -539,7 +539,7 @@ class PerformanceTuningAnalysisResultSummary(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this PerformanceTuningAnalysisResultSummary.
-        The time the JFR capture started.
+        The time the JFR recording has started.
 
 
         :param time_started: The time_started of this PerformanceTuningAnalysisResultSummary.
@@ -551,7 +551,7 @@ class PerformanceTuningAnalysisResultSummary(object):
     def time_finished(self):
         """
         **[Required]** Gets the time_finished of this PerformanceTuningAnalysisResultSummary.
-        The time the JFR capture finished.
+        The time the JFR recording has finished.
 
 
         :return: The time_finished of this PerformanceTuningAnalysisResultSummary.
@@ -563,7 +563,7 @@ class PerformanceTuningAnalysisResultSummary(object):
     def time_finished(self, time_finished):
         """
         Sets the time_finished of this PerformanceTuningAnalysisResultSummary.
-        The time the JFR capture finished.
+        The time the JFR recording has finished.
 
 
         :param time_finished: The time_finished of this PerformanceTuningAnalysisResultSummary.

@@ -136,6 +136,10 @@ class VersionedCustomSoftwareSource(SoftwareSource):
             The value to assign to the is_created_from_package_list property of this VersionedCustomSoftwareSource.
         :type is_created_from_package_list: bool
 
+        :param is_latest_content_only:
+            The value to assign to the is_latest_content_only property of this VersionedCustomSoftwareSource.
+        :type is_latest_content_only: bool
+
         :param packages:
             The value to assign to the packages property of this VersionedCustomSoftwareSource.
         :type packages: list[str]
@@ -169,6 +173,7 @@ class VersionedCustomSoftwareSource(SoftwareSource):
             'software_source_version': 'str',
             'is_auto_resolve_dependencies': 'bool',
             'is_created_from_package_list': 'bool',
+            'is_latest_content_only': 'bool',
             'packages': 'list[str]'
         }
 
@@ -200,6 +205,7 @@ class VersionedCustomSoftwareSource(SoftwareSource):
             'software_source_version': 'softwareSourceVersion',
             'is_auto_resolve_dependencies': 'isAutoResolveDependencies',
             'is_created_from_package_list': 'isCreatedFromPackageList',
+            'is_latest_content_only': 'isLatestContentOnly',
             'packages': 'packages'
         }
 
@@ -230,6 +236,7 @@ class VersionedCustomSoftwareSource(SoftwareSource):
         self._software_source_version = None
         self._is_auto_resolve_dependencies = None
         self._is_created_from_package_list = None
+        self._is_latest_content_only = None
         self._packages = None
         self._software_source_type = 'VERSIONED'
 
@@ -348,6 +355,40 @@ class VersionedCustomSoftwareSource(SoftwareSource):
         :type: bool
         """
         self._is_created_from_package_list = is_created_from_package_list
+
+    @property
+    def is_latest_content_only(self):
+        """
+        Gets the is_latest_content_only of this VersionedCustomSoftwareSource.
+        Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+        * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+        * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+        * For a package filter that does not specify a version, this will include only the latest available version of the package.
+        * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+        * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+
+
+        :return: The is_latest_content_only of this VersionedCustomSoftwareSource.
+        :rtype: bool
+        """
+        return self._is_latest_content_only
+
+    @is_latest_content_only.setter
+    def is_latest_content_only(self, is_latest_content_only):
+        """
+        Sets the is_latest_content_only of this VersionedCustomSoftwareSource.
+        Indicates whether the software source will include only the latest versions of content from vendor software sources, while accounting for other constraints set in the custom or versioned custom software source (such as a package list or filters).
+        * For a module filter that does not specify a stream, this will include all available streams, and within each stream only the latest version of packages.
+        * For a module filter that does specify a stream, this will include only the latest version of packages for the specified stream.
+        * For a package filter that does not specify a version, this will include only the latest available version of the package.
+        * For a package filter that does specify a version, this will include only the specified version of the package (the isLatestContentOnly attribute is ignored).
+        * For a package list, this will include only the specified version of packages and modules in the list (the isLatestContentOnly attribute is ignored).
+
+
+        :param is_latest_content_only: The is_latest_content_only of this VersionedCustomSoftwareSource.
+        :type: bool
+        """
+        self._is_latest_content_only = is_latest_content_only
 
     @property
     def packages(self):

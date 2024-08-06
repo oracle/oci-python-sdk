@@ -46,7 +46,11 @@ class ManagementPolicyDetails(object):
     def maintenance_window_start(self):
         """
         Gets the maintenance_window_start of this ManagementPolicyDetails.
-        The start of the maintenance window.
+        The start of the maintenance window in UTC.
+
+        This string is of the format: \"{day-of-week} {time-of-day}\".
+        \"{day-of-week}\" is a case-insensitive string like \"mon\", \"tue\", &c.
+        \"{time-of-day}\" is the \"Time\" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
 
 
         :return: The maintenance_window_start of this ManagementPolicyDetails.
@@ -58,7 +62,11 @@ class ManagementPolicyDetails(object):
     def maintenance_window_start(self, maintenance_window_start):
         """
         Sets the maintenance_window_start of this ManagementPolicyDetails.
-        The start of the maintenance window.
+        The start of the maintenance window in UTC.
+
+        This string is of the format: \"{day-of-week} {time-of-day}\".
+        \"{day-of-week}\" is a case-insensitive string like \"mon\", \"tue\", &c.
+        \"{time-of-day}\" is the \"Time\" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
 
 
         :param maintenance_window_start: The maintenance_window_start of this ManagementPolicyDetails.

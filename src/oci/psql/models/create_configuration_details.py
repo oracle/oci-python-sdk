@@ -32,13 +32,17 @@ class CreateConfigurationDetails(object):
             The value to assign to the description property of this CreateConfigurationDetails.
         :type description: str
 
+        :param db_version:
+            The value to assign to the db_version property of this CreateConfigurationDetails.
+        :type db_version: str
+
         :param shape:
             The value to assign to the shape property of this CreateConfigurationDetails.
         :type shape: str
 
-        :param db_version:
-            The value to assign to the db_version property of this CreateConfigurationDetails.
-        :type db_version: str
+        :param is_flexible:
+            The value to assign to the is_flexible property of this CreateConfigurationDetails.
+        :type is_flexible: bool
 
         :param instance_ocpu_count:
             The value to assign to the instance_ocpu_count property of this CreateConfigurationDetails.
@@ -69,8 +73,9 @@ class CreateConfigurationDetails(object):
             'display_name': 'str',
             'compartment_id': 'str',
             'description': 'str',
-            'shape': 'str',
             'db_version': 'str',
+            'shape': 'str',
+            'is_flexible': 'bool',
             'instance_ocpu_count': 'int',
             'instance_memory_size_in_gbs': 'int',
             'db_configuration_overrides': 'DbConfigurationOverrideCollection',
@@ -83,8 +88,9 @@ class CreateConfigurationDetails(object):
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
             'description': 'description',
-            'shape': 'shape',
             'db_version': 'dbVersion',
+            'shape': 'shape',
+            'is_flexible': 'isFlexible',
             'instance_ocpu_count': 'instanceOcpuCount',
             'instance_memory_size_in_gbs': 'instanceMemorySizeInGBs',
             'db_configuration_overrides': 'dbConfigurationOverrides',
@@ -96,8 +102,9 @@ class CreateConfigurationDetails(object):
         self._display_name = None
         self._compartment_id = None
         self._description = None
-        self._shape = None
         self._db_version = None
+        self._shape = None
+        self._is_flexible = None
         self._instance_ocpu_count = None
         self._instance_memory_size_in_gbs = None
         self._db_configuration_overrides = None
@@ -182,6 +189,30 @@ class CreateConfigurationDetails(object):
         self._description = description
 
     @property
+    def db_version(self):
+        """
+        **[Required]** Gets the db_version of this CreateConfigurationDetails.
+        Version of the PostgreSQL database.
+
+
+        :return: The db_version of this CreateConfigurationDetails.
+        :rtype: str
+        """
+        return self._db_version
+
+    @db_version.setter
+    def db_version(self, db_version):
+        """
+        Sets the db_version of this CreateConfigurationDetails.
+        Version of the PostgreSQL database.
+
+
+        :param db_version: The db_version of this CreateConfigurationDetails.
+        :type: str
+        """
+        self._db_version = db_version
+
+    @property
     def shape(self):
         """
         **[Required]** Gets the shape of this CreateConfigurationDetails.
@@ -208,34 +239,36 @@ class CreateConfigurationDetails(object):
         self._shape = shape
 
     @property
-    def db_version(self):
+    def is_flexible(self):
         """
-        **[Required]** Gets the db_version of this CreateConfigurationDetails.
-        Version of the PostgreSQL database.
+        Gets the is_flexible of this CreateConfigurationDetails.
+        Whether the configuration supports flexible shapes.
 
 
-        :return: The db_version of this CreateConfigurationDetails.
-        :rtype: str
+        :return: The is_flexible of this CreateConfigurationDetails.
+        :rtype: bool
         """
-        return self._db_version
+        return self._is_flexible
 
-    @db_version.setter
-    def db_version(self, db_version):
+    @is_flexible.setter
+    def is_flexible(self, is_flexible):
         """
-        Sets the db_version of this CreateConfigurationDetails.
-        Version of the PostgreSQL database.
+        Sets the is_flexible of this CreateConfigurationDetails.
+        Whether the configuration supports flexible shapes.
 
 
-        :param db_version: The db_version of this CreateConfigurationDetails.
-        :type: str
+        :param is_flexible: The is_flexible of this CreateConfigurationDetails.
+        :type: bool
         """
-        self._db_version = db_version
+        self._is_flexible = is_flexible
 
     @property
     def instance_ocpu_count(self):
         """
-        **[Required]** Gets the instance_ocpu_count of this CreateConfigurationDetails.
+        Gets the instance_ocpu_count of this CreateConfigurationDetails.
         CPU core count.
+
+        Skip or set it's value to 0 if configuration is for a flexible shape.
 
 
         :return: The instance_ocpu_count of this CreateConfigurationDetails.
@@ -249,6 +282,8 @@ class CreateConfigurationDetails(object):
         Sets the instance_ocpu_count of this CreateConfigurationDetails.
         CPU core count.
 
+        Skip or set it's value to 0 if configuration is for a flexible shape.
+
 
         :param instance_ocpu_count: The instance_ocpu_count of this CreateConfigurationDetails.
         :type: int
@@ -258,8 +293,10 @@ class CreateConfigurationDetails(object):
     @property
     def instance_memory_size_in_gbs(self):
         """
-        **[Required]** Gets the instance_memory_size_in_gbs of this CreateConfigurationDetails.
+        Gets the instance_memory_size_in_gbs of this CreateConfigurationDetails.
         Memory size in gigabytes with 1GB increment.
+
+        Skip or set it's value to 0 if configuration is for a flexible shape.
 
 
         :return: The instance_memory_size_in_gbs of this CreateConfigurationDetails.
@@ -272,6 +309,8 @@ class CreateConfigurationDetails(object):
         """
         Sets the instance_memory_size_in_gbs of this CreateConfigurationDetails.
         Memory size in gigabytes with 1GB increment.
+
+        Skip or set it's value to 0 if configuration is for a flexible shape.
 
 
         :param instance_memory_size_in_gbs: The instance_memory_size_in_gbs of this CreateConfigurationDetails.
