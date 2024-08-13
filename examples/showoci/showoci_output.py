@@ -22,7 +22,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "24.07.09"
+    version = "24.08.06"
 
     ##########################################################################
     # spaces for align
@@ -6672,23 +6672,36 @@ class ShowOCICSV(object):
                         'shape': dbs['shape'],
                         'time_zone': "",
                         'cpus_enabled': "",
-                        'max_cpu_count': dbs['shape_ocpu'],
-                        'memory_size_in_gbs': "",
                         'max_memory_in_gbs': dbs['shape_memory_gb'],
-                        'db_node_storage_size_in_gbs': "",
                         'max_db_node_storage_in_g_bs': "",
-                        'data_storage_size_in_tbs': "",
                         'max_data_storage_in_t_bs': dbs['shape_storage_tb'],
                         'total_storage_size_in_gbs': dbs['total_storage_size_in_gbs'],
                         'available_storage_size_in_gbs': dbs['available_storage_size_in_gbs'],
                         'storage_count': dbs['storage_count'],
-                        'additional_storage_count': "",
-                        'activated_storage_count': "",
                         'compute_count': dbs['compute_count'],
                         'dns_server': "",
                         'ntp_server': "",
                         'csi_number': "",
                         'node_count': "",
+                        # Added 7/29/2024
+                        'cluster_placement_group_id': dbs['cluster_placement_group_id'],
+                        'subscription_id': dbs['subscription_id'],
+                        'cpu_count': dbs['cpu_count'],
+                        'max_cpu_count': dbs['max_cpu_count'],
+                        'memory_size_in_gbs': dbs['memory_size_in_gbs'],
+                        'db_node_storage_size_in_gbs': dbs['db_node_storage_size_in_gbs'],
+                        'max_db_node_storage_in_gbs': dbs['max_db_node_storage_in_gbs'],
+                        'data_storage_size_in_tbs': dbs['data_storage_size_in_tbs'],
+                        'max_data_storage_in_tbs': dbs['max_data_storage_in_tbs'],
+                        'additional_storage_count': dbs['additional_storage_count'],
+                        'activated_storage_count': dbs['activated_storage_count'],
+                        'storage_server_version': dbs['storage_server_version'],
+                        'db_server_version': dbs['db_server_version'],
+                        'monthly_storage_server_version': dbs['monthly_storage_server_version'],
+                        'monthly_db_server_version': dbs['monthly_db_server_version'],
+                        'customer_contacts': str(dbs['customer_contacts']),
+                        'defined_file_system_configurations': str(dbs['defined_file_system_configurations']),
+                        # End Added 7/29/2024
                         'db_servers': str(', '.join(x['desc'] for x in dbs['db_servers'])),
                         'db_servers_ids': str(', '.join(x['id'] for x in dbs['db_servers'])),
                         'cluster_count': len(dbs['vm_clusters']),
@@ -6740,6 +6753,16 @@ class ShowOCICSV(object):
                             'cluster_name': vm['cluster_name'],
                             'time_created': vm['time_created'][0:16],
                             'domain': vm['domain'],
+                            # Added 7/29/2024
+                            'subscription_id': vm['subscription_id'],
+                            'is_diagnostics_events_enabled': vm['is_diagnostics_events_enabled'],
+                            'is_health_monitoring_enabled': vm['is_health_monitoring_enabled'],
+                            'is_incident_logs_enabled': vm['is_incident_logs_enabled'],
+                            'gi_software_image_id': vm['gi_software_image_id'],
+                            'scan_listener_port_tcp_ssl': vm['scan_listener_port_tcp_ssl'],
+                            'scan_listener_port_tcp': vm['scan_listener_port_tcp'],
+                            'file_system_configuration_details': str(vm['file_system_configuration_details']),
+                            # End Added 7/29/2024
                             'db_nodes': str(', '.join(x['desc'] for x in vm['db_nodes'])),
                             'db_homes': str(', '.join(x['home'] for x in vm['db_homes'])),
                             'freeform_tags': self.__get_freeform_tags(vm['freeform_tags']),

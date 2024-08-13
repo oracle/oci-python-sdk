@@ -23,7 +23,7 @@ class NetworkLoadBalancer(object):
     `About the API`__. For information about available SDKs and tools, see
     `SDKS and Other Tools`__.
 
-    __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/NetworkLoadBalancers/network-load-balancer-management.htm
+    __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingloadbalancer.htm
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm
     __ https://docs.cloud.oracle.com/Content/API/Concepts/sdks.htm
@@ -484,7 +484,7 @@ class NetworkLoadBalancer(object):
         Example: `true`
 
         __ https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm
-        __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm
+        __ https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works
 
 
         :return: The is_private of this NetworkLoadBalancer.
@@ -511,7 +511,7 @@ class NetworkLoadBalancer(object):
         Example: `true`
 
         __ https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm
-        __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm
+        __ https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works
 
 
         :param is_private: The is_private of this NetworkLoadBalancer.
@@ -575,7 +575,7 @@ class NetworkLoadBalancer(object):
     def subnet_id(self):
         """
         **[Required]** Gets the subnet_id of this NetworkLoadBalancer.
-        The subnet in which the network load balancer is spawned `OCIDs`__.\"
+        The subnet in which the network load balancer is spawned `OCIDs`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -589,7 +589,7 @@ class NetworkLoadBalancer(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this NetworkLoadBalancer.
-        The subnet in which the network load balancer is spawned `OCIDs`__.\"
+        The subnet in which the network load balancer is spawned `OCIDs`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

@@ -18,7 +18,7 @@ class BackendSet(object):
 
     **Caution:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
-    __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/BackendSets/backend-set-management.htm
+    __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendsets.htm
     """
 
     #: A constant which can be used with the policy property of a BackendSet.
@@ -294,7 +294,7 @@ class BackendSet(object):
     def backends(self):
         """
         Gets the backends of this BackendSet.
-        Array of backends.
+        An array of backends.
 
 
         :return: The backends of this BackendSet.
@@ -306,7 +306,7 @@ class BackendSet(object):
     def backends(self, backends):
         """
         Sets the backends of this BackendSet.
-        Array of backends.
+        An array of backends.
 
 
         :param backends: The backends of this BackendSet.
@@ -318,6 +318,8 @@ class BackendSet(object):
     def health_checker(self):
         """
         **[Required]** Gets the health_checker of this BackendSet.
+        The health check policy configuration.
+
 
         :return: The health_checker of this BackendSet.
         :rtype: oci.network_load_balancer.models.HealthChecker
@@ -328,6 +330,8 @@ class BackendSet(object):
     def health_checker(self, health_checker):
         """
         Sets the health_checker of this BackendSet.
+        The health check policy configuration.
+
 
         :param health_checker: The health_checker of this BackendSet.
         :type: oci.network_load_balancer.models.HealthChecker

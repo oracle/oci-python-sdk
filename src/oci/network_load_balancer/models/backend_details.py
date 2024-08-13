@@ -206,7 +206,7 @@ class BackendDetails(object):
 
         Example: `3`
 
-        __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introducton.htm#Policies
+        __ https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm
 
 
         :return: The weight of this BackendDetails.
@@ -226,7 +226,7 @@ class BackendDetails(object):
 
         Example: `3`
 
-        __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introducton.htm#Policies
+        __ https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm
 
 
         :param weight: The weight of this BackendDetails.

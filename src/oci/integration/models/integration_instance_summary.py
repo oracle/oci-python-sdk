@@ -31,6 +31,10 @@ class IntegrationInstanceSummary(object):
     #: This constant has a value of "ENTERPRISEX"
     INTEGRATION_INSTANCE_TYPE_ENTERPRISEX = "ENTERPRISEX"
 
+    #: A constant which can be used with the integration_instance_type property of a IntegrationInstanceSummary.
+    #: This constant has a value of "HEALTHCARE"
+    INTEGRATION_INSTANCE_TYPE_HEALTHCARE = "HEALTHCARE"
+
     #: A constant which can be used with the lifecycle_state property of a IntegrationInstanceSummary.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -98,7 +102,7 @@ class IntegrationInstanceSummary(object):
 
         :param integration_instance_type:
             The value to assign to the integration_instance_type property of this IntegrationInstanceSummary.
-            Allowed values for this property are: "STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX", "HEALTHCARE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type integration_instance_type: str
 
@@ -166,6 +170,10 @@ class IntegrationInstanceSummary(object):
             The value to assign to the defined_tags property of this IntegrationInstanceSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this IntegrationInstanceSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param shape:
             The value to assign to the shape property of this IntegrationInstanceSummary.
             Allowed values for this property are: "DEVELOPMENT", "PRODUCTION", 'UNKNOWN_ENUM_VALUE'.
@@ -197,6 +205,7 @@ class IntegrationInstanceSummary(object):
             'network_endpoint_details': 'NetworkEndpointDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'shape': 'str',
             'private_endpoint_outbound_connection': 'OutboundConnection'
         }
@@ -221,6 +230,7 @@ class IntegrationInstanceSummary(object):
             'network_endpoint_details': 'networkEndpointDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'shape': 'shape',
             'private_endpoint_outbound_connection': 'privateEndpointOutboundConnection'
         }
@@ -244,6 +254,7 @@ class IntegrationInstanceSummary(object):
         self._network_endpoint_details = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._shape = None
         self._private_endpoint_outbound_connection = None
 
@@ -327,7 +338,7 @@ class IntegrationInstanceSummary(object):
         Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
         Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 
-        Allowed values for this property are: "STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX", "HEALTHCARE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -348,7 +359,7 @@ class IntegrationInstanceSummary(object):
         :param integration_instance_type: The integration_instance_type of this IntegrationInstanceSummary.
         :type: str
         """
-        allowed_values = ["STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX"]
+        allowed_values = ["STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX", "HEALTHCARE"]
         if not value_allowed_none_or_none_sentinel(integration_instance_type, allowed_values):
             integration_instance_type = 'UNKNOWN_ENUM_VALUE'
         self._integration_instance_type = integration_instance_type
@@ -724,6 +735,32 @@ class IntegrationInstanceSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this IntegrationInstanceSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this IntegrationInstanceSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this IntegrationInstanceSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this IntegrationInstanceSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def shape(self):

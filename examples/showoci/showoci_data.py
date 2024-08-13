@@ -20,7 +20,7 @@ import sys
 
 
 class ShowOCIData(object):
-    version = "24.07.09"
+    version = "24.08.06"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -2508,6 +2508,25 @@ class ShowOCIData(object):
                     'lifecycle_state': dbs['lifecycle_state'],
                     'lifecycle_details': dbs['lifecycle_details'],
                     'availability_domain': dbs['availability_domain'],
+                    # Added 7/29/2024
+                    'cluster_placement_group_id': dbs['cluster_placement_group_id'],
+                    'subscription_id': dbs['subscription_id'],
+                    'cpu_count': dbs['cpu_count'],
+                    'max_cpu_count': dbs['max_cpu_count'],
+                    'memory_size_in_gbs': dbs['memory_size_in_gbs'],
+                    'db_node_storage_size_in_gbs': dbs['db_node_storage_size_in_gbs'],
+                    'max_db_node_storage_in_gbs': dbs['max_db_node_storage_in_gbs'],
+                    'data_storage_size_in_tbs': dbs['data_storage_size_in_tbs'],
+                    'max_data_storage_in_tbs': dbs['max_data_storage_in_tbs'],
+                    'additional_storage_count': dbs['additional_storage_count'],
+                    'activated_storage_count': dbs['activated_storage_count'],
+                    'storage_server_version': dbs['storage_server_version'],
+                    'db_server_version': dbs['db_server_version'],
+                    'monthly_storage_server_version': dbs['monthly_storage_server_version'],
+                    'monthly_db_server_version': dbs['monthly_db_server_version'],
+                    'customer_contacts': dbs['customer_contacts'],
+                    'defined_file_system_configurations': dbs['defined_file_system_configurations'],
+                    # End Added 7/29/2024
                     'compute_count': dbs['compute_count'],
                     'storage_count': dbs['storage_count'],
                     'total_storage_size_in_gbs': dbs['total_storage_size_in_gbs'],
@@ -2579,6 +2598,16 @@ class ShowOCIData(object):
                             'vip_ids': vm['vip_ids'],
                             'vip_ips': vm['vip_ips'],
                             'scan_dns_record_id': vm['scan_dns_record_id'],
+                            # Added 7/29/2024
+                            'subscription_id': vm['subscription_id'],
+                            'is_diagnostics_events_enabled': vm['is_diagnostics_events_enabled'],
+                            'is_health_monitoring_enabled': vm['is_health_monitoring_enabled'],
+                            'is_incident_logs_enabled': vm['is_incident_logs_enabled'],
+                            'gi_software_image_id': vm['gi_software_image_id'],
+                            'scan_listener_port_tcp_ssl': vm['scan_listener_port_tcp_ssl'],
+                            'scan_listener_port_tcp': vm['scan_listener_port_tcp'],
+                            'file_system_configuration_details': vm['file_system_configuration_details'],
+                            # End Added 7/29/2024
                             'defined_tags': vm['defined_tags'],
                             'freeform_tags': vm['freeform_tags'],
                             'sum_info': 'Database ExaCS VMCluster - ' + dbs['shape'] + " - " + vm['license_model'],
@@ -2587,8 +2616,8 @@ class ShowOCIData(object):
                             'patches': self.__get_database_db_patches(vm['patches']),
                             'db_homes': self.__get_database_db_homes(vm['db_homes']),
                             'db_nodes': [] if not db_nodes else sorted(db_nodes, key=lambda i: i['desc']),
-                            'zone_id': vm['zone_id'],
                             'scan_dns_name': vm['scan_dns_name'],
+                            'zone_id': vm['zone_id'],
                             'compartment_name': vm['compartment_name'],
                             'compartment_path': vm['compartment_path'],
                             'region_name': vm['region_name']

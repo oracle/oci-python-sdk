@@ -70,6 +70,14 @@ class LimitDefinitionSummary(object):
             The value to assign to the is_dynamic property of this LimitDefinitionSummary.
         :type is_dynamic: bool
 
+        :param supported_subscriptions:
+            The value to assign to the supported_subscriptions property of this LimitDefinitionSummary.
+        :type supported_subscriptions: list[str]
+
+        :param supported_quota_families:
+            The value to assign to the supported_quota_families property of this LimitDefinitionSummary.
+        :type supported_quota_families: list[str]
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -80,7 +88,9 @@ class LimitDefinitionSummary(object):
             'is_resource_availability_supported': 'bool',
             'is_deprecated': 'bool',
             'is_eligible_for_limit_increase': 'bool',
-            'is_dynamic': 'bool'
+            'is_dynamic': 'bool',
+            'supported_subscriptions': 'list[str]',
+            'supported_quota_families': 'list[str]'
         }
 
         self.attribute_map = {
@@ -92,7 +102,9 @@ class LimitDefinitionSummary(object):
             'is_resource_availability_supported': 'isResourceAvailabilitySupported',
             'is_deprecated': 'isDeprecated',
             'is_eligible_for_limit_increase': 'isEligibleForLimitIncrease',
-            'is_dynamic': 'isDynamic'
+            'is_dynamic': 'isDynamic',
+            'supported_subscriptions': 'supportedSubscriptions',
+            'supported_quota_families': 'supportedQuotaFamilies'
         }
 
         self._name = None
@@ -104,6 +116,8 @@ class LimitDefinitionSummary(object):
         self._is_deprecated = None
         self._is_eligible_for_limit_increase = None
         self._is_dynamic = None
+        self._supported_subscriptions = None
+        self._supported_quota_families = None
 
     @property
     def name(self):
@@ -328,6 +342,54 @@ class LimitDefinitionSummary(object):
         :type: bool
         """
         self._is_dynamic = is_dynamic
+
+    @property
+    def supported_subscriptions(self):
+        """
+        Gets the supported_subscriptions of this LimitDefinitionSummary.
+        An array of subscription types supported by the limit. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+
+
+        :return: The supported_subscriptions of this LimitDefinitionSummary.
+        :rtype: list[str]
+        """
+        return self._supported_subscriptions
+
+    @supported_subscriptions.setter
+    def supported_subscriptions(self, supported_subscriptions):
+        """
+        Sets the supported_subscriptions of this LimitDefinitionSummary.
+        An array of subscription types supported by the limit. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+
+
+        :param supported_subscriptions: The supported_subscriptions of this LimitDefinitionSummary.
+        :type: list[str]
+        """
+        self._supported_subscriptions = supported_subscriptions
+
+    @property
+    def supported_quota_families(self):
+        """
+        Gets the supported_quota_families of this LimitDefinitionSummary.
+        Supported quota family names for creation of quota policy.
+
+
+        :return: The supported_quota_families of this LimitDefinitionSummary.
+        :rtype: list[str]
+        """
+        return self._supported_quota_families
+
+    @supported_quota_families.setter
+    def supported_quota_families(self, supported_quota_families):
+        """
+        Sets the supported_quota_families of this LimitDefinitionSummary.
+        Supported quota family names for creation of quota policy.
+
+
+        :param supported_quota_families: The supported_quota_families of this LimitDefinitionSummary.
+        :type: list[str]
+        """
+        self._supported_quota_families = supported_quota_families
 
     def __repr__(self):
         return formatted_flat_dict(self)

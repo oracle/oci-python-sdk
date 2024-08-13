@@ -470,7 +470,7 @@ class NetworkLoadBalancerSummary(object):
         Example: `true`
 
         __ https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm
-        __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm
+        __ https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works
 
 
         :return: The is_private of this NetworkLoadBalancerSummary.
@@ -497,7 +497,7 @@ class NetworkLoadBalancerSummary(object):
         Example: `true`
 
         __ https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm
-        __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm
+        __ https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works
 
 
         :param is_private: The is_private of this NetworkLoadBalancerSummary.
@@ -561,7 +561,7 @@ class NetworkLoadBalancerSummary(object):
     def subnet_id(self):
         """
         **[Required]** Gets the subnet_id of this NetworkLoadBalancerSummary.
-        The subnet in which the network load balancer is spawned `OCIDs`__.\"
+        The subnet in which the network load balancer is spawned `OCIDs`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -575,7 +575,7 @@ class NetworkLoadBalancerSummary(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this NetworkLoadBalancerSummary.
-        The subnet in which the network load balancer is spawned `OCIDs`__.\"
+        The subnet in which the network load balancer is spawned `OCIDs`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

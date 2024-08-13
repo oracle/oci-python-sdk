@@ -15,7 +15,7 @@ class HealthCheckerDetails(object):
     The health check policy configuration.
     For more information, see `Editing Health Check Policies`__.
 
-    __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm
+    __ https://docs.cloud.oracle.com/Content/Balance/Tasks/editinghealthcheck.htm
     """
 
     #: A constant which can be used with the protocol property of a HealthCheckerDetails.
