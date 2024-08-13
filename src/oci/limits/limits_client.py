@@ -121,7 +121,8 @@ class LimitsClient(object):
         For a given compartmentId, resource limit name, and scope, returns the following:
           * The number of available resources associated with the given limit.
           * The usage in the selected compartment for the given limit.
-          Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
+        If Subscription Id is provided, then usage for resource created in that subscription will be returned
+        Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
 
 
         :param str service_name: (required)
@@ -141,6 +142,9 @@ class LimitsClient(object):
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
+
+        :param str subscription_id: (optional)
+            The OCID of the subscription assigned to tenant
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -172,7 +176,8 @@ class LimitsClient(object):
             "allow_control_chars",
             "retry_strategy",
             "availability_domain",
-            "opc_request_id"
+            "opc_request_id",
+            "subscription_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -192,7 +197,8 @@ class LimitsClient(object):
 
         query_params = {
             "compartmentId": compartment_id,
-            "availabilityDomain": kwargs.get("availability_domain", missing)
+            "availabilityDomain": kwargs.get("availability_domain", missing),
+            "subscriptionId": kwargs.get("subscription_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -241,13 +247,16 @@ class LimitsClient(object):
 
     def list_limit_definitions(self, compartment_id, **kwargs):
         """
-        Includes a list of resource limits that are currently supported.
+        Includes a list of resource limits that are currently supported. If subscription Id is provided, then only resource limits supported by subscription will be returned
         If the 'areQuotasSupported' property is true, you can create quota policies on top of this limit at the
         compartment level.
 
 
         :param str compartment_id: (required)
             The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+
+        :param str subscription_id: (optional)
+            The OCID of the subscription assigned to tenant
 
         :param str service_name: (optional)
             The target service name.
@@ -304,6 +313,7 @@ class LimitsClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "subscription_id",
             "service_name",
             "name",
             "sort_by",
@@ -333,6 +343,7 @@ class LimitsClient(object):
 
         query_params = {
             "compartmentId": compartment_id,
+            "subscriptionId": kwargs.get("subscription_id", missing),
             "serviceName": kwargs.get("service_name", missing),
             "name": kwargs.get("name", missing),
             "sortBy": kwargs.get("sort_by", missing),
@@ -385,7 +396,7 @@ class LimitsClient(object):
 
     def list_limit_values(self, compartment_id, service_name, **kwargs):
         """
-        Includes a full list of resource limits belonging to a given service.
+        Includes a full list of resource limits belonging to a given service. If subscription Id is provided, limit value for subscription will be returned.
 
 
         :param str compartment_id: (required)
@@ -393,6 +404,9 @@ class LimitsClient(object):
 
         :param str service_name: (required)
             The target service name.
+
+        :param str subscription_id: (optional)
+            The OCID of the subscription assigned to tenant
 
         :param str scope_type: (optional)
             Filter entries by scope type.
@@ -454,6 +468,7 @@ class LimitsClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "subscription_id",
             "scope_type",
             "availability_domain",
             "name",
@@ -491,6 +506,7 @@ class LimitsClient(object):
 
         query_params = {
             "compartmentId": compartment_id,
+            "subscriptionId": kwargs.get("subscription_id", missing),
             "serviceName": service_name,
             "scopeType": kwargs.get("scope_type", missing),
             "availabilityDomain": kwargs.get("availability_domain", missing),
@@ -545,7 +561,7 @@ class LimitsClient(object):
 
     def list_services(self, compartment_id, **kwargs):
         """
-        Returns the list of supported services.
+        Returns the list of supported services. If subscription ID is provided then only services supported by subscription will be returned.
         This includes the programmatic service name, along with the friendly service name.
 
 
@@ -571,6 +587,9 @@ class LimitsClient(object):
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
+
+        :param str subscription_id: (optional)
+            The OCID of the subscription assigned to tenant
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -605,7 +624,8 @@ class LimitsClient(object):
             "sort_order",
             "limit",
             "page",
-            "opc_request_id"
+            "opc_request_id",
+            "subscription_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -631,7 +651,8 @@ class LimitsClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "limit": kwargs.get("limit", missing),
-            "page": kwargs.get("page", missing)
+            "page": kwargs.get("page", missing),
+            "subscriptionId": kwargs.get("subscription_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

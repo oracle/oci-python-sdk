@@ -18,7 +18,7 @@ class BackendSetDetails(object):
 
     **Caution:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
-    __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/BackendSets/backend-set-management.htm
+    __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendsets.htm
     """
 
     #: A constant which can be used with the policy property of a BackendSetDetails.
@@ -277,6 +277,8 @@ class BackendSetDetails(object):
     def health_checker(self):
         """
         **[Required]** Gets the health_checker of this BackendSetDetails.
+        The health check policy configuration.
+
 
         :return: The health_checker of this BackendSetDetails.
         :rtype: oci.network_load_balancer.models.HealthChecker
@@ -287,6 +289,8 @@ class BackendSetDetails(object):
     def health_checker(self, health_checker):
         """
         Sets the health_checker of this BackendSetDetails.
+        The health check policy configuration.
+
 
         :param health_checker: The health_checker of this BackendSetDetails.
         :type: oci.network_load_balancer.models.HealthChecker

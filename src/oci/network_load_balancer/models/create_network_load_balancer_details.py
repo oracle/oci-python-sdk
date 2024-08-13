@@ -23,7 +23,7 @@ class CreateNetworkLoadBalancerDetails(object):
     `About the API`__. For information about available SDKs and tools, see
     `SDKS and Other Tools`__.
 
-    __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/NetworkLoadBalancers/network-load-balancer-management.htm
+    __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingloadbalancer.htm
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm
     __ https://docs.cloud.oracle.com/Content/API/Concepts/sdks.htm
@@ -314,7 +314,7 @@ class CreateNetworkLoadBalancerDetails(object):
         Example: `true`
 
         __ https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm
-        __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm
+        __ https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works
 
 
         :return: The is_private of this CreateNetworkLoadBalancerDetails.
@@ -341,7 +341,7 @@ class CreateNetworkLoadBalancerDetails(object):
         Example: `true`
 
         __ https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm
-        __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm
+        __ https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works
 
 
         :param is_private: The is_private of this CreateNetworkLoadBalancerDetails.

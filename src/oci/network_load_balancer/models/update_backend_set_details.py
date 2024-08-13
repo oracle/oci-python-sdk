@@ -18,7 +18,7 @@ class UpdateBackendSetDetails(object):
 
     **Caution:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
-    __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/BackendSets/backend-set-management.htm
+    __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendsets.htm
     """
 
     #: A constant which can be used with the ip_version property of a UpdateBackendSetDetails.

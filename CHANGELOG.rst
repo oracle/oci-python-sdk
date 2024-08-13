@@ -4,7 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.131.0 - 09/16/2023
+2.131.1 - 2024-08-13
+====================
+
+Added
+-----
+* Support for calling Oracle Cloud Infrastructure services in the me-abudhabi-4 region
+* Support for viewing subscription limits in the Limits service
+* Support for TCP idle timeout on network load balancer create and update operations in the Network Load Balancing service
+* Support for creating integration instances of type Healthcare in the Integration Cloud service
+
+Changed
+-------
+* The upper-bound for the circuitbreaker library was updated from `2.0.0` to `3.0.0` for Python versions 3.7 and above
+
+====================
+2.131.0 - 2024-08-06
 ====================
 
 Added 

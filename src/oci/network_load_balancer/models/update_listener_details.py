@@ -16,7 +16,7 @@ class UpdateListenerDetails(object):
     For more information about backend set configuration, see
     `Managing Network Load Balancer Listeners`__.
 
-    __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/Listeners/listener-management.htm
+    __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managinglisteners.htm
     """
 
     #: A constant which can be used with the protocol property of a UpdateListenerDetails.
@@ -70,13 +70,23 @@ class UpdateListenerDetails(object):
             The value to assign to the is_ppv2_enabled property of this UpdateListenerDetails.
         :type is_ppv2_enabled: bool
 
+        :param tcp_idle_timeout:
+            The value to assign to the tcp_idle_timeout property of this UpdateListenerDetails.
+        :type tcp_idle_timeout: int
+
+        :param udp_idle_timeout:
+            The value to assign to the udp_idle_timeout property of this UpdateListenerDetails.
+        :type udp_idle_timeout: int
+
         """
         self.swagger_types = {
             'default_backend_set_name': 'str',
             'port': 'int',
             'protocol': 'str',
             'ip_version': 'str',
-            'is_ppv2_enabled': 'bool'
+            'is_ppv2_enabled': 'bool',
+            'tcp_idle_timeout': 'int',
+            'udp_idle_timeout': 'int'
         }
 
         self.attribute_map = {
@@ -84,7 +94,9 @@ class UpdateListenerDetails(object):
             'port': 'port',
             'protocol': 'protocol',
             'ip_version': 'ipVersion',
-            'is_ppv2_enabled': 'isPpv2Enabled'
+            'is_ppv2_enabled': 'isPpv2Enabled',
+            'tcp_idle_timeout': 'tcpIdleTimeout',
+            'udp_idle_timeout': 'udpIdleTimeout'
         }
 
         self._default_backend_set_name = None
@@ -92,6 +104,8 @@ class UpdateListenerDetails(object):
         self._protocol = None
         self._ip_version = None
         self._is_ppv2_enabled = None
+        self._tcp_idle_timeout = None
+        self._udp_idle_timeout = None
 
     @property
     def default_backend_set_name(self):
@@ -244,6 +258,58 @@ class UpdateListenerDetails(object):
         :type: bool
         """
         self._is_ppv2_enabled = is_ppv2_enabled
+
+    @property
+    def tcp_idle_timeout(self):
+        """
+        Gets the tcp_idle_timeout of this UpdateListenerDetails.
+        The duration for TCP idle timeout in seconds.
+        Example: `300`
+
+
+        :return: The tcp_idle_timeout of this UpdateListenerDetails.
+        :rtype: int
+        """
+        return self._tcp_idle_timeout
+
+    @tcp_idle_timeout.setter
+    def tcp_idle_timeout(self, tcp_idle_timeout):
+        """
+        Sets the tcp_idle_timeout of this UpdateListenerDetails.
+        The duration for TCP idle timeout in seconds.
+        Example: `300`
+
+
+        :param tcp_idle_timeout: The tcp_idle_timeout of this UpdateListenerDetails.
+        :type: int
+        """
+        self._tcp_idle_timeout = tcp_idle_timeout
+
+    @property
+    def udp_idle_timeout(self):
+        """
+        Gets the udp_idle_timeout of this UpdateListenerDetails.
+        The duration for UDP idle timeout in seconds.
+        Example: `120`
+
+
+        :return: The udp_idle_timeout of this UpdateListenerDetails.
+        :rtype: int
+        """
+        return self._udp_idle_timeout
+
+    @udp_idle_timeout.setter
+    def udp_idle_timeout(self, udp_idle_timeout):
+        """
+        Sets the udp_idle_timeout of this UpdateListenerDetails.
+        The duration for UDP idle timeout in seconds.
+        Example: `120`
+
+
+        :param udp_idle_timeout: The udp_idle_timeout of this UpdateListenerDetails.
+        :type: int
+        """
+        self._udp_idle_timeout = udp_idle_timeout
 
     def __repr__(self):
         return formatted_flat_dict(self)

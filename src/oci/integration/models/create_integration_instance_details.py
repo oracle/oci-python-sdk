@@ -36,6 +36,10 @@ class CreateIntegrationInstanceDetails(object):
     #: This constant has a value of "ENTERPRISEX"
     INTEGRATION_INSTANCE_TYPE_ENTERPRISEX = "ENTERPRISEX"
 
+    #: A constant which can be used with the integration_instance_type property of a CreateIntegrationInstanceDetails.
+    #: This constant has a value of "HEALTHCARE"
+    INTEGRATION_INSTANCE_TYPE_HEALTHCARE = "HEALTHCARE"
+
     #: A constant which can be used with the consumption_model property of a CreateIntegrationInstanceDetails.
     #: This constant has a value of "UCM"
     CONSUMPTION_MODEL_UCM = "UCM"
@@ -71,7 +75,7 @@ class CreateIntegrationInstanceDetails(object):
 
         :param integration_instance_type:
             The value to assign to the integration_instance_type property of this CreateIntegrationInstanceDetails.
-            Allowed values for this property are: "STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX"
+            Allowed values for this property are: "STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX", "HEALTHCARE"
         :type integration_instance_type: str
 
         :param freeform_tags:
@@ -240,7 +244,7 @@ class CreateIntegrationInstanceDetails(object):
         Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
         Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 
-        Allowed values for this property are: "STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX"
+        Allowed values for this property are: "STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX", "HEALTHCARE"
 
 
         :return: The integration_instance_type of this CreateIntegrationInstanceDetails.
@@ -260,7 +264,7 @@ class CreateIntegrationInstanceDetails(object):
         :param integration_instance_type: The integration_instance_type of this CreateIntegrationInstanceDetails.
         :type: str
         """
-        allowed_values = ["STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX"]
+        allowed_values = ["STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX", "HEALTHCARE"]
         if not value_allowed_none_or_none_sentinel(integration_instance_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `integration_instance_type`, must be None or one of {allowed_values}"

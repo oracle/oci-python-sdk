@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+24.08.06 - 24.08.06
+=====================
+* subscription id attribute in Cloud Exadata Infrastructure and Cloud VM Clusters in the Database service and additional parameters
+
+=====================
 24.07.09 - 24.07.09
 =====================
 * Added IAM network sources to the CSV

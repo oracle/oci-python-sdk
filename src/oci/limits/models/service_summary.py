@@ -28,19 +28,26 @@ class ServiceSummary(object):
             The value to assign to the description property of this ServiceSummary.
         :type description: str
 
+        :param supported_subscriptions:
+            The value to assign to the supported_subscriptions property of this ServiceSummary.
+        :type supported_subscriptions: list[str]
+
         """
         self.swagger_types = {
             'name': 'str',
-            'description': 'str'
+            'description': 'str',
+            'supported_subscriptions': 'list[str]'
         }
 
         self.attribute_map = {
             'name': 'name',
-            'description': 'description'
+            'description': 'description',
+            'supported_subscriptions': 'supportedSubscriptions'
         }
 
         self._name = None
         self._description = None
+        self._supported_subscriptions = None
 
     @property
     def name(self):
@@ -89,6 +96,30 @@ class ServiceSummary(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def supported_subscriptions(self):
+        """
+        Gets the supported_subscriptions of this ServiceSummary.
+        An array of subscription types supported by the service. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+
+
+        :return: The supported_subscriptions of this ServiceSummary.
+        :rtype: list[str]
+        """
+        return self._supported_subscriptions
+
+    @supported_subscriptions.setter
+    def supported_subscriptions(self, supported_subscriptions):
+        """
+        Sets the supported_subscriptions of this ServiceSummary.
+        An array of subscription types supported by the service. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+
+
+        :param supported_subscriptions: The supported_subscriptions of this ServiceSummary.
+        :type: list[str]
+        """
+        self._supported_subscriptions = supported_subscriptions
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -39,8 +39,8 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "24.07.09"
-    oci_compatible_version = "2.125.0"
+    version = "24.08.06"
+    oci_compatible_version = "2.129.4"
     thread_lock = threading.Lock()
     collection_ljust = 40
 
@@ -9409,33 +9409,58 @@ class ShowOCIService(object):
                     if not self.check_lifecycle_state_active(dbs.lifecycle_state):
                         continue
 
-                    value = {'id': str(dbs.id),
-                             'display_name': str(dbs.display_name),
-                             'shape': str(dbs.shape),
-                             'shape_ocpu': 0,
-                             'shape_memory_gb': 0,
-                             'shape_storage_tb': 0,
-                             'version': 'XP',
-                             'lifecycle_state': str(dbs.lifecycle_state),
-                             'lifecycle_details': str(dbs.lifecycle_details),
-                             'availability_domain': str(dbs.availability_domain),
-                             'storage_count': str(dbs.storage_count) if dbs.storage_count else "",
-                             'compute_count': str(dbs.compute_count) if dbs.compute_count else "",
-                             'total_storage_size_in_gbs': str(dbs.total_storage_size_in_gbs),
-                             'available_storage_size_in_gbs': str(dbs.available_storage_size_in_gbs),
-                             'compartment_name': str(compartment['name']),
-                             'compartment_path': str(compartment['path']),
-                             'compartment_id': str(compartment['id']),
-                             'time_created': str(dbs.time_created),
-                             'last_maintenance_run': self.__load_database_maintenance(database_client, dbs.last_maintenance_run_id, str(dbs.display_name) + " - " + str(dbs.shape)),
-                             'next_maintenance_run': self.__load_database_maintenance(database_client, dbs.next_maintenance_run_id, str(dbs.display_name) + " - " + str(dbs.shape)),
-                             'maintenance_window': self.__load_database_maintenance_windows(dbs.maintenance_window),
-                             'defined_tags': [] if dbs.defined_tags is None else dbs.defined_tags,
-                             'freeform_tags': [] if dbs.freeform_tags is None else dbs.freeform_tags,
-                             'region_name': str(self.config['region']),
-                             'vm_clusters': [],
-                             'db_servers': self.__load_database_exacc_dbservers(database_client, compartment, dbs.id)
-                             }
+                    value = {
+                        'id': self.get_value(dbs.id),
+                        'display_name': self.get_value(dbs.display_name),
+                        'shape': self.get_value(dbs.shape),
+                        'shape_ocpu': 0,
+                        'shape_memory_gb': 0,
+                        'shape_storage_tb': 0,
+                        'version': 'XP',
+                        'lifecycle_state': self.get_value(dbs.lifecycle_state),
+                        'lifecycle_details': self.get_value(dbs.lifecycle_details),
+                        'availability_domain': self.get_value(dbs.availability_domain),
+                        'storage_count': self.get_value(dbs.storage_count),
+                        'compute_count': self.get_value(dbs.compute_count),
+                        'total_storage_size_in_gbs': self.get_value(dbs.total_storage_size_in_gbs),
+                        'available_storage_size_in_gbs': self.get_value(dbs.available_storage_size_in_gbs),
+                        'time_created': self.get_value(dbs.time_created),
+                        # Added 7/29/2024
+                        'cluster_placement_group_id': self.get_value(dbs.cluster_placement_group_id),
+                        'subscription_id': self.get_value(dbs.subscription_id),
+                        'cpu_count': self.get_value(dbs.cpu_count),
+                        'max_cpu_count': self.get_value(dbs.max_cpu_count),
+                        'memory_size_in_gbs': self.get_value(dbs.memory_size_in_gbs),
+                        'db_node_storage_size_in_gbs': self.get_value(dbs.db_node_storage_size_in_gbs),
+                        'max_db_node_storage_in_gbs': self.get_value(dbs.max_db_node_storage_in_gbs),
+                        'data_storage_size_in_tbs': self.get_value(dbs.data_storage_size_in_tbs),
+                        'max_data_storage_in_tbs': self.get_value(dbs.max_data_storage_in_tbs),
+                        'additional_storage_count': self.get_value(dbs.additional_storage_count),
+                        'activated_storage_count': self.get_value(dbs.activated_storage_count),
+                        'storage_server_version': self.get_value(dbs.storage_server_version),
+                        'db_server_version': self.get_value(dbs.db_server_version),
+                        'monthly_storage_server_version': self.get_value(dbs.monthly_storage_server_version),
+                        'monthly_db_server_version': self.get_value(dbs.monthly_db_server_version),
+                        'customer_contacts': [x.email for x in dbs.customer_contacts] if dbs.customer_contacts else [],
+                        'defined_file_system_configurations': [{
+                            'mount_point': self.get_value(x.mount_point),
+                            'min_size_gb': self.get_value(x.min_size_gb),
+                            'is_resizable': self.get_value(x.is_resizable),
+                            'is_backup_partition': self.get_value(x.is_backup_partition)
+                        } for x in dbs.defined_file_system_configurations] if dbs.defined_file_system_configurations else [],
+                        # End Added 7/29/2024
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'last_maintenance_run': self.__load_database_maintenance(database_client, dbs.last_maintenance_run_id, str(dbs.display_name) + " - " + str(dbs.shape)),
+                        'next_maintenance_run': self.__load_database_maintenance(database_client, dbs.next_maintenance_run_id, str(dbs.display_name) + " - " + str(dbs.shape)),
+                        'maintenance_window': self.__load_database_maintenance_windows(dbs.maintenance_window),
+                        'defined_tags': [] if dbs.defined_tags is None else dbs.defined_tags,
+                        'freeform_tags': [] if dbs.freeform_tags is None else dbs.freeform_tags,
+                        'region_name': str(self.config['region']),
+                        'vm_clusters': [],
+                        'db_servers': self.__load_database_exacc_dbservers(database_client, compartment, dbs.id)
+                    }
 
                     # get shape
                     if dbs.shape:
@@ -9568,6 +9593,19 @@ class ShowOCIService(object):
                         'scan_ip_ids': self.get_value(arr.scan_ip_ids),
                         'vip_ids': self.get_value(arr.vip_ids),
                         'scan_dns_record_id': self.get_value(arr.scan_dns_record_id),
+                        # Added 7/29/2024
+                        'subscription_id': self.get_value(arr.subscription_id),
+                        'is_diagnostics_events_enabled': self.get_value(arr.data_collection_options.is_diagnostics_events_enabled) if arr.data_collection_options else "",
+                        'is_health_monitoring_enabled': self.get_value(arr.data_collection_options.is_health_monitoring_enabled) if arr.data_collection_options else "",
+                        'is_incident_logs_enabled': self.get_value(arr.data_collection_options.is_incident_logs_enabled) if arr.data_collection_options else "",
+                        'gi_software_image_id': self.get_value(arr.gi_software_image_id),
+                        'scan_listener_port_tcp_ssl': self.get_value(arr.scan_listener_port_tcp_ssl),
+                        'scan_listener_port_tcp': self.get_value(arr.scan_listener_port_tcp),
+                        'file_system_configuration_details': [{
+                            'mount_point': self.get_value(x.mount_point),
+                            'file_system_size_gb': self.get_value(x.file_system_size_gb)
+                        } for x in arr.file_system_configuration_details] if arr.file_system_configuration_details else [],
+                        # End Added 7/29/2024
                         'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                         'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
                         'patches': [],
