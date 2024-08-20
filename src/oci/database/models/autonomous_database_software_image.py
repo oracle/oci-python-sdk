@@ -108,6 +108,10 @@ class AutonomousDatabaseSoftwareImage(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type image_shape_family: str
 
+        :param dst_file_version:
+            The value to assign to the dst_file_version property of this AutonomousDatabaseSoftwareImage.
+        :type dst_file_version: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -121,7 +125,8 @@ class AutonomousDatabaseSoftwareImage(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'autonomous_dsi_one_off_patches': 'list[str]',
-            'image_shape_family': 'str'
+            'image_shape_family': 'str',
+            'dst_file_version': 'str'
         }
 
         self.attribute_map = {
@@ -136,7 +141,8 @@ class AutonomousDatabaseSoftwareImage(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'autonomous_dsi_one_off_patches': 'autonomousDsiOneOffPatches',
-            'image_shape_family': 'imageShapeFamily'
+            'image_shape_family': 'imageShapeFamily',
+            'dst_file_version': 'dstFileVersion'
         }
 
         self._id = None
@@ -151,6 +157,7 @@ class AutonomousDatabaseSoftwareImage(object):
         self._defined_tags = None
         self._autonomous_dsi_one_off_patches = None
         self._image_shape_family = None
+        self._dst_file_version = None
 
     @property
     def id(self):
@@ -475,6 +482,30 @@ class AutonomousDatabaseSoftwareImage(object):
         if not value_allowed_none_or_none_sentinel(image_shape_family, allowed_values):
             image_shape_family = 'UNKNOWN_ENUM_VALUE'
         self._image_shape_family = image_shape_family
+
+    @property
+    def dst_file_version(self):
+        """
+        Gets the dst_file_version of this AutonomousDatabaseSoftwareImage.
+        DST Time-Zone File version of the Autonomous Container Database.
+
+
+        :return: The dst_file_version of this AutonomousDatabaseSoftwareImage.
+        :rtype: str
+        """
+        return self._dst_file_version
+
+    @dst_file_version.setter
+    def dst_file_version(self, dst_file_version):
+        """
+        Sets the dst_file_version of this AutonomousDatabaseSoftwareImage.
+        DST Time-Zone File version of the Autonomous Container Database.
+
+
+        :param dst_file_version: The dst_file_version of this AutonomousDatabaseSoftwareImage.
+        :type: str
+        """
+        self._dst_file_version = dst_file_version
 
     def __repr__(self):
         return formatted_flat_dict(self)

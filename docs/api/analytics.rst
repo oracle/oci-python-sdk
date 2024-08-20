@@ -33,6 +33,7 @@ Analytics
     oci.analytics.models.PrivateSourceScanHost
     oci.analytics.models.PublicEndpointDetails
     oci.analytics.models.ScaleAnalyticsInstanceDetails
+    oci.analytics.models.SetFeatureBundleDetails
     oci.analytics.models.SetKmsKeyDetails
     oci.analytics.models.UpdateAnalyticsInstanceDetails
     oci.analytics.models.UpdatePrivateAccessChannelDetails

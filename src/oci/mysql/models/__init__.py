@@ -43,6 +43,8 @@ from .create_db_system_source_import_from_url_details import CreateDbSystemSourc
 from .create_deletion_policy_details import CreateDeletionPolicyDetails
 from .create_maintenance_details import CreateMaintenanceDetails
 from .create_replica_details import CreateReplicaDetails
+from .data_storage import DataStorage
+from .data_storage_details import DataStorageDetails
 from .db_system import DbSystem
 from .db_system_endpoint import DbSystemEndpoint
 from .db_system_placement import DbSystemPlacement
@@ -134,6 +136,8 @@ mysql_type_mapping = {
     "CreateDeletionPolicyDetails": CreateDeletionPolicyDetails,
     "CreateMaintenanceDetails": CreateMaintenanceDetails,
     "CreateReplicaDetails": CreateReplicaDetails,
+    "DataStorage": DataStorage,
+    "DataStorageDetails": DataStorageDetails,
     "DbSystem": DbSystem,
     "DbSystemEndpoint": DbSystemEndpoint,
     "DbSystemPlacement": DbSystemPlacement,

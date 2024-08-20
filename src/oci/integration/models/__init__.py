@@ -13,6 +13,7 @@ from .change_private_endpoint_outbound_connection_details import ChangePrivateEn
 from .create_custom_endpoint_details import CreateCustomEndpointDetails
 from .create_integration_instance_details import CreateIntegrationInstanceDetails
 from .custom_endpoint_details import CustomEndpointDetails
+from .extend_data_retention_details import ExtendDataRetentionDetails
 from .idcs_info_details import IdcsInfoDetails
 from .integration_instance import IntegrationInstance
 from .integration_instance_summary import IntegrationInstanceSummary
@@ -39,6 +40,7 @@ integration_type_mapping = {
     "CreateCustomEndpointDetails": CreateCustomEndpointDetails,
     "CreateIntegrationInstanceDetails": CreateIntegrationInstanceDetails,
     "CustomEndpointDetails": CustomEndpointDetails,
+    "ExtendDataRetentionDetails": ExtendDataRetentionDetails,
     "IdcsInfoDetails": IdcsInfoDetails,
     "IntegrationInstance": IntegrationInstance,
     "IntegrationInstanceSummary": IntegrationInstanceSummary,

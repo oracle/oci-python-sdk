@@ -40,6 +40,10 @@ class CreateDrProtectionGroupMemberDetails(object):
     MEMBER_TYPE_AUTONOMOUS_DATABASE = "AUTONOMOUS_DATABASE"
 
     #: A constant which can be used with the member_type property of a CreateDrProtectionGroupMemberDetails.
+    #: This constant has a value of "AUTONOMOUS_CONTAINER_DATABASE"
+    MEMBER_TYPE_AUTONOMOUS_CONTAINER_DATABASE = "AUTONOMOUS_CONTAINER_DATABASE"
+
+    #: A constant which can be used with the member_type property of a CreateDrProtectionGroupMemberDetails.
     #: This constant has a value of "LOAD_BALANCER"
     MEMBER_TYPE_LOAD_BALANCER = "LOAD_BALANCER"
 
@@ -51,12 +55,17 @@ class CreateDrProtectionGroupMemberDetails(object):
     #: This constant has a value of "FILE_SYSTEM"
     MEMBER_TYPE_FILE_SYSTEM = "FILE_SYSTEM"
 
+    #: A constant which can be used with the member_type property of a CreateDrProtectionGroupMemberDetails.
+    #: This constant has a value of "OBJECT_STORAGE_BUCKET"
+    MEMBER_TYPE_OBJECT_STORAGE_BUCKET = "OBJECT_STORAGE_BUCKET"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDrProtectionGroupMemberDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.disaster_recovery.models.CreateDrProtectionGroupMemberComputeInstanceMovableDetails`
+        * :class:`~oci.disaster_recovery.models.CreateDrProtectionGroupMemberAutonomousContainerDatabaseDetails`
         * :class:`~oci.disaster_recovery.models.CreateDrProtectionGroupMemberComputeInstanceNonMovableDetails`
         * :class:`~oci.disaster_recovery.models.CreateDrProtectionGroupMemberComputeInstanceDetails`
         * :class:`~oci.disaster_recovery.models.CreateDrProtectionGroupMemberDatabaseDetails`
@@ -64,6 +73,7 @@ class CreateDrProtectionGroupMemberDetails(object):
         * :class:`~oci.disaster_recovery.models.CreateDrProtectionGroupMemberNetworkLoadBalancerDetails`
         * :class:`~oci.disaster_recovery.models.CreateDrProtectionGroupMemberVolumeGroupDetails`
         * :class:`~oci.disaster_recovery.models.CreateDrProtectionGroupMemberFileSystemDetails`
+        * :class:`~oci.disaster_recovery.models.CreateDrProtectionGroupMemberObjectStorageBucketDetails`
         * :class:`~oci.disaster_recovery.models.CreateDrProtectionGroupMemberLoadBalancerDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -74,7 +84,7 @@ class CreateDrProtectionGroupMemberDetails(object):
 
         :param member_type:
             The value to assign to the member_type property of this CreateDrProtectionGroupMemberDetails.
-            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM"
+            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OBJECT_STORAGE_BUCKET"
         :type member_type: str
 
         """
@@ -102,6 +112,9 @@ class CreateDrProtectionGroupMemberDetails(object):
         if type == 'COMPUTE_INSTANCE_MOVABLE':
             return 'CreateDrProtectionGroupMemberComputeInstanceMovableDetails'
 
+        if type == 'AUTONOMOUS_CONTAINER_DATABASE':
+            return 'CreateDrProtectionGroupMemberAutonomousContainerDatabaseDetails'
+
         if type == 'COMPUTE_INSTANCE_NON_MOVABLE':
             return 'CreateDrProtectionGroupMemberComputeInstanceNonMovableDetails'
 
@@ -122,6 +135,9 @@ class CreateDrProtectionGroupMemberDetails(object):
 
         if type == 'FILE_SYSTEM':
             return 'CreateDrProtectionGroupMemberFileSystemDetails'
+
+        if type == 'OBJECT_STORAGE_BUCKET':
+            return 'CreateDrProtectionGroupMemberObjectStorageBucketDetails'
 
         if type == 'LOAD_BALANCER':
             return 'CreateDrProtectionGroupMemberLoadBalancerDetails'
@@ -162,7 +178,7 @@ class CreateDrProtectionGroupMemberDetails(object):
         **[Required]** Gets the member_type of this CreateDrProtectionGroupMemberDetails.
         The type of the member.
 
-        Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM"
+        Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OBJECT_STORAGE_BUCKET"
 
 
         :return: The member_type of this CreateDrProtectionGroupMemberDetails.
@@ -180,7 +196,7 @@ class CreateDrProtectionGroupMemberDetails(object):
         :param member_type: The member_type of this CreateDrProtectionGroupMemberDetails.
         :type: str
         """
-        allowed_values = ["COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM"]
+        allowed_values = ["COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "AUTONOMOUS_CONTAINER_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", "OBJECT_STORAGE_BUCKET"]
         if not value_allowed_none_or_none_sentinel(member_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `member_type`, must be None or one of {allowed_values}"

@@ -40,7 +40,7 @@ class ChangeRedisClusterCompartmentDetails(object):
         """
         **[Required]** Gets the compartment_id of this ChangeRedisClusterCompartmentDetails.
         The `OCID`__ of the compartment
-        into which the Redis cluster should be moved.
+        into which the cluster should be moved.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
@@ -55,7 +55,7 @@ class ChangeRedisClusterCompartmentDetails(object):
         """
         Sets the compartment_id of this ChangeRedisClusterCompartmentDetails.
         The `OCID`__ of the compartment
-        into which the Redis cluster should be moved.
+        into which the cluster should be moved.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 

@@ -31,6 +31,10 @@ class CreateMaintenanceRunDetails(object):
     #: This constant has a value of "TIMEZONE"
     PATCH_TYPE_TIMEZONE = "TIMEZONE"
 
+    #: A constant which can be used with the patch_type property of a CreateMaintenanceRunDetails.
+    #: This constant has a value of "CUSTOM_DATABASE_SOFTWARE_IMAGE"
+    PATCH_TYPE_CUSTOM_DATABASE_SOFTWARE_IMAGE = "CUSTOM_DATABASE_SOFTWARE_IMAGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateMaintenanceRunDetails object with values from keyword arguments.
@@ -55,12 +59,16 @@ class CreateMaintenanceRunDetails(object):
 
         :param patch_type:
             The value to assign to the patch_type property of this CreateMaintenanceRunDetails.
-            Allowed values for this property are: "QUARTERLY", "TIMEZONE"
+            Allowed values for this property are: "QUARTERLY", "TIMEZONE", "CUSTOM_DATABASE_SOFTWARE_IMAGE"
         :type patch_type: str
 
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateMaintenanceRunDetails.
         :type compartment_id: str
+
+        :param database_software_image_id:
+            The value to assign to the database_software_image_id property of this CreateMaintenanceRunDetails.
+        :type database_software_image_id: str
 
         """
         self.swagger_types = {
@@ -69,7 +77,8 @@ class CreateMaintenanceRunDetails(object):
             'time_scheduled': 'datetime',
             'patching_mode': 'str',
             'patch_type': 'str',
-            'compartment_id': 'str'
+            'compartment_id': 'str',
+            'database_software_image_id': 'str'
         }
 
         self.attribute_map = {
@@ -78,7 +87,8 @@ class CreateMaintenanceRunDetails(object):
             'time_scheduled': 'timeScheduled',
             'patching_mode': 'patchingMode',
             'patch_type': 'patchType',
-            'compartment_id': 'compartmentId'
+            'compartment_id': 'compartmentId',
+            'database_software_image_id': 'databaseSoftwareImageId'
         }
 
         self._target_resource_id = None
@@ -87,6 +97,7 @@ class CreateMaintenanceRunDetails(object):
         self._patching_mode = None
         self._patch_type = None
         self._compartment_id = None
+        self._database_software_image_id = None
 
     @property
     def target_resource_id(self):
@@ -203,9 +214,9 @@ class CreateMaintenanceRunDetails(object):
     def patch_type(self):
         """
         **[Required]** Gets the patch_type of this CreateMaintenanceRunDetails.
-        Patch type, either \"QUARTERLY\" or \"TIMEZONE\".
+        Patch type, either \"QUARTERLY\", \"TIMEZONE\" or \"CUSTOM_DATABASE_SOFTWARE_IMAGE\".
 
-        Allowed values for this property are: "QUARTERLY", "TIMEZONE"
+        Allowed values for this property are: "QUARTERLY", "TIMEZONE", "CUSTOM_DATABASE_SOFTWARE_IMAGE"
 
 
         :return: The patch_type of this CreateMaintenanceRunDetails.
@@ -217,13 +228,13 @@ class CreateMaintenanceRunDetails(object):
     def patch_type(self, patch_type):
         """
         Sets the patch_type of this CreateMaintenanceRunDetails.
-        Patch type, either \"QUARTERLY\" or \"TIMEZONE\".
+        Patch type, either \"QUARTERLY\", \"TIMEZONE\" or \"CUSTOM_DATABASE_SOFTWARE_IMAGE\".
 
 
         :param patch_type: The patch_type of this CreateMaintenanceRunDetails.
         :type: str
         """
-        allowed_values = ["QUARTERLY", "TIMEZONE"]
+        allowed_values = ["QUARTERLY", "TIMEZONE", "CUSTOM_DATABASE_SOFTWARE_IMAGE"]
         if not value_allowed_none_or_none_sentinel(patch_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `patch_type`, must be None or one of {allowed_values}"
@@ -257,6 +268,34 @@ class CreateMaintenanceRunDetails(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def database_software_image_id(self):
+        """
+        Gets the database_software_image_id of this CreateMaintenanceRunDetails.
+        The Autonomous Database Software Image `OCID`__
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The database_software_image_id of this CreateMaintenanceRunDetails.
+        :rtype: str
+        """
+        return self._database_software_image_id
+
+    @database_software_image_id.setter
+    def database_software_image_id(self, database_software_image_id):
+        """
+        Sets the database_software_image_id of this CreateMaintenanceRunDetails.
+        The Autonomous Database Software Image `OCID`__
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param database_software_image_id: The database_software_image_id of this CreateMaintenanceRunDetails.
+        :type: str
+        """
+        self._database_software_image_id = database_software_image_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

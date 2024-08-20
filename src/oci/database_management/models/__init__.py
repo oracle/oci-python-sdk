@@ -117,7 +117,10 @@ from .database_home_metric_definition import DatabaseHomeMetricDefinition
 from .database_home_metrics import DatabaseHomeMetrics
 from .database_io_aggregate_metrics import DatabaseIOAggregateMetrics
 from .database_instance_home_metrics_definition import DatabaseInstanceHomeMetricsDefinition
+from .database_lifecycle_feature_configuration import DatabaseLifecycleFeatureConfiguration
+from .database_lifecycle_management_feature_details import DatabaseLifecycleManagementFeatureDetails
 from .database_management_config import DatabaseManagementConfig
+from .database_named_credential_connection_details import DatabaseNamedCredentialConnectionDetails
 from .database_named_credential_details import DatabaseNamedCredentialDetails
 from .database_parameter_summary import DatabaseParameterSummary
 from .database_parameter_update_status import DatabaseParameterUpdateStatus
@@ -126,6 +129,8 @@ from .database_password_credential_details import DatabasePasswordCredentialDeta
 from .database_plan import DatabasePlan
 from .database_plan_directive import DatabasePlanDirective
 from .database_secret_credential_details import DatabaseSecretCredentialDetails
+from .database_sql_watch_feature_configuration import DatabaseSqlWatchFeatureConfiguration
+from .database_sql_watch_feature_details import DatabaseSqlWatchFeatureDetails
 from .database_ssl_connection_credentials import DatabaseSslConnectionCredentials
 from .database_storage_aggregate_metrics import DatabaseStorageAggregateMetrics
 from .database_time_aggregate_metrics import DatabaseTimeAggregateMetrics
@@ -205,6 +210,8 @@ from .external_database_connection_info import ExternalDatabaseConnectionInfo
 from .external_database_diagnostics_and_management_feature_details import ExternalDatabaseDiagnosticsAndManagementFeatureDetails
 from .external_database_feature_details import ExternalDatabaseFeatureDetails
 from .external_database_instance import ExternalDatabaseInstance
+from .external_database_lifecycle_management_feature_details import ExternalDatabaseLifecycleManagementFeatureDetails
+from .external_database_sql_watch_feature_details import ExternalDatabaseSqlWatchFeatureDetails
 from .external_database_summary import ExternalDatabaseSummary
 from .external_database_system_discovery_summary import ExternalDatabaseSystemDiscoverySummary
 from .external_db_home import ExternalDbHome
@@ -257,6 +264,8 @@ from .external_listener_tcp_endpoint import ExternalListenerTcpEndpoint
 from .external_listener_tcps_endpoint import ExternalListenerTcpsEndpoint
 from .external_pluggable_database_diagnostics_and_management_feature_details import ExternalPluggableDatabaseDiagnosticsAndManagementFeatureDetails
 from .external_pluggable_database_feature_details import ExternalPluggableDatabaseFeatureDetails
+from .external_pluggable_database_lifecycle_management_feature_details import ExternalPluggableDatabaseLifecycleManagementFeatureDetails
+from .external_pluggable_database_sql_watch_feature_details import ExternalPluggableDatabaseSqlWatchFeatureDetails
 from .external_serviced_asm import ExternalServicedAsm
 from .external_serviced_database import ExternalServicedDatabase
 from .external_storage_grid_discovery_summary import ExternalStorageGridDiscoverySummary
@@ -611,7 +620,10 @@ database_management_type_mapping = {
     "DatabaseHomeMetrics": DatabaseHomeMetrics,
     "DatabaseIOAggregateMetrics": DatabaseIOAggregateMetrics,
     "DatabaseInstanceHomeMetricsDefinition": DatabaseInstanceHomeMetricsDefinition,
+    "DatabaseLifecycleFeatureConfiguration": DatabaseLifecycleFeatureConfiguration,
+    "DatabaseLifecycleManagementFeatureDetails": DatabaseLifecycleManagementFeatureDetails,
     "DatabaseManagementConfig": DatabaseManagementConfig,
+    "DatabaseNamedCredentialConnectionDetails": DatabaseNamedCredentialConnectionDetails,
     "DatabaseNamedCredentialDetails": DatabaseNamedCredentialDetails,
     "DatabaseParameterSummary": DatabaseParameterSummary,
     "DatabaseParameterUpdateStatus": DatabaseParameterUpdateStatus,
@@ -620,6 +632,8 @@ database_management_type_mapping = {
     "DatabasePlan": DatabasePlan,
     "DatabasePlanDirective": DatabasePlanDirective,
     "DatabaseSecretCredentialDetails": DatabaseSecretCredentialDetails,
+    "DatabaseSqlWatchFeatureConfiguration": DatabaseSqlWatchFeatureConfiguration,
+    "DatabaseSqlWatchFeatureDetails": DatabaseSqlWatchFeatureDetails,
     "DatabaseSslConnectionCredentials": DatabaseSslConnectionCredentials,
     "DatabaseStorageAggregateMetrics": DatabaseStorageAggregateMetrics,
     "DatabaseTimeAggregateMetrics": DatabaseTimeAggregateMetrics,
@@ -699,6 +713,8 @@ database_management_type_mapping = {
     "ExternalDatabaseDiagnosticsAndManagementFeatureDetails": ExternalDatabaseDiagnosticsAndManagementFeatureDetails,
     "ExternalDatabaseFeatureDetails": ExternalDatabaseFeatureDetails,
     "ExternalDatabaseInstance": ExternalDatabaseInstance,
+    "ExternalDatabaseLifecycleManagementFeatureDetails": ExternalDatabaseLifecycleManagementFeatureDetails,
+    "ExternalDatabaseSqlWatchFeatureDetails": ExternalDatabaseSqlWatchFeatureDetails,
     "ExternalDatabaseSummary": ExternalDatabaseSummary,
     "ExternalDatabaseSystemDiscoverySummary": ExternalDatabaseSystemDiscoverySummary,
     "ExternalDbHome": ExternalDbHome,
@@ -751,6 +767,8 @@ database_management_type_mapping = {
     "ExternalListenerTcpsEndpoint": ExternalListenerTcpsEndpoint,
     "ExternalPluggableDatabaseDiagnosticsAndManagementFeatureDetails": ExternalPluggableDatabaseDiagnosticsAndManagementFeatureDetails,
     "ExternalPluggableDatabaseFeatureDetails": ExternalPluggableDatabaseFeatureDetails,
+    "ExternalPluggableDatabaseLifecycleManagementFeatureDetails": ExternalPluggableDatabaseLifecycleManagementFeatureDetails,
+    "ExternalPluggableDatabaseSqlWatchFeatureDetails": ExternalPluggableDatabaseSqlWatchFeatureDetails,
     "ExternalServicedAsm": ExternalServicedAsm,
     "ExternalServicedDatabase": ExternalServicedDatabase,
     "ExternalStorageGridDiscoverySummary": ExternalStorageGridDiscoverySummary,

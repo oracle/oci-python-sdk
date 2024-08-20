@@ -23,7 +23,7 @@ class ExternalPluggableDatabaseDiagnosticsAndManagementFeatureDetails(ExternalPl
 
         :param feature:
             The value to assign to the feature property of this ExternalPluggableDatabaseDiagnosticsAndManagementFeatureDetails.
-            Allowed values for this property are: "DIAGNOSTICS_AND_MANAGEMENT"
+            Allowed values for this property are: "DIAGNOSTICS_AND_MANAGEMENT", "DB_LIFECYCLE_MANAGEMENT", "SQLWATCH"
         :type feature: str
 
         :param connector_details:

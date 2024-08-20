@@ -31,12 +31,14 @@ class DatabaseDiagnosticsAndManagementFeatureConfiguration(DatabaseFeatureConfig
 
         :param feature:
             The value to assign to the feature property of this DatabaseDiagnosticsAndManagementFeatureConfiguration.
-            Allowed values for this property are: "DIAGNOSTICS_AND_MANAGEMENT"
+            Allowed values for this property are: "DIAGNOSTICS_AND_MANAGEMENT", "DB_LIFECYCLE_MANAGEMENT", "SQLWATCH", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type feature: str
 
         :param feature_status:
             The value to assign to the feature_status property of this DatabaseDiagnosticsAndManagementFeatureConfiguration.
-            Allowed values for this property are: "ENABLED", "NOT_ENABLED", "UNSUPPORTED", "FAILED_ENABLING", "FAILED_DISABLING", "FAILED", "ENABLED_WITH_WARNINGS", "PENDING_DISABLE", "ENABLING", "DISABLING"
+            Allowed values for this property are: "ENABLED", "NOT_ENABLED", "UNSUPPORTED", "FAILED_ENABLING", "FAILED_DISABLING", "FAILED", "ENABLED_WITH_WARNINGS", "PENDING_DISABLE", "ENABLING", "DISABLING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type feature_status: str
 
         :param connector_details:
@@ -49,7 +51,8 @@ class DatabaseDiagnosticsAndManagementFeatureConfiguration(DatabaseFeatureConfig
 
         :param license_model:
             The value to assign to the license_model property of this DatabaseDiagnosticsAndManagementFeatureConfiguration.
-            Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
+            Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type license_model: str
 
         """
@@ -82,7 +85,8 @@ class DatabaseDiagnosticsAndManagementFeatureConfiguration(DatabaseFeatureConfig
         Gets the license_model of this DatabaseDiagnosticsAndManagementFeatureConfiguration.
         The Oracle license model that applies to the external database.
 
-        Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
+        Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The license_model of this DatabaseDiagnosticsAndManagementFeatureConfiguration.
@@ -102,9 +106,7 @@ class DatabaseDiagnosticsAndManagementFeatureConfiguration(DatabaseFeatureConfig
         """
         allowed_values = ["LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"]
         if not value_allowed_none_or_none_sentinel(license_model, allowed_values):
-            raise ValueError(
-                f"Invalid value for `license_model`, must be None or one of {allowed_values}"
-            )
+            license_model = 'UNKNOWN_ENUM_VALUE'
         self._license_model = license_model
 
     def __repr__(self):

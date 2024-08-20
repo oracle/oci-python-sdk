@@ -88,6 +88,10 @@ class DbSystemSnapshot(object):
             The value to assign to the data_storage_size_in_gbs property of this DbSystemSnapshot.
         :type data_storage_size_in_gbs: int
 
+        :param data_storage:
+            The value to assign to the data_storage property of this DbSystemSnapshot.
+        :type data_storage: oci.mysql.models.DataStorage
+
         :param hostname_label:
             The value to assign to the hostname_label property of this DbSystemSnapshot.
         :type hostname_label: str
@@ -163,6 +167,7 @@ class DbSystemSnapshot(object):
             'backup_policy': 'BackupPolicy',
             'configuration_id': 'str',
             'data_storage_size_in_gbs': 'int',
+            'data_storage': 'DataStorage',
             'hostname_label': 'str',
             'ip_address': 'str',
             'port': 'int',
@@ -193,6 +198,7 @@ class DbSystemSnapshot(object):
             'backup_policy': 'backupPolicy',
             'configuration_id': 'configurationId',
             'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
+            'data_storage': 'dataStorage',
             'hostname_label': 'hostnameLabel',
             'ip_address': 'ipAddress',
             'port': 'port',
@@ -222,6 +228,7 @@ class DbSystemSnapshot(object):
         self._backup_policy = None
         self._configuration_id = None
         self._data_storage_size_in_gbs = None
+        self._data_storage = None
         self._hostname_label = None
         self._ip_address = None
         self._port = None
@@ -533,7 +540,8 @@ class DbSystemSnapshot(object):
     def data_storage_size_in_gbs(self):
         """
         **[Required]** Gets the data_storage_size_in_gbs of this DbSystemSnapshot.
-        Initial size of the data volume in GiBs that will be created and attached.
+        DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs.
+        Replaced by dataStorage.dataStorageSizeInGBs.
 
 
         :return: The data_storage_size_in_gbs of this DbSystemSnapshot.
@@ -545,13 +553,34 @@ class DbSystemSnapshot(object):
     def data_storage_size_in_gbs(self, data_storage_size_in_gbs):
         """
         Sets the data_storage_size_in_gbs of this DbSystemSnapshot.
-        Initial size of the data volume in GiBs that will be created and attached.
+        DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs.
+        Replaced by dataStorage.dataStorageSizeInGBs.
 
 
         :param data_storage_size_in_gbs: The data_storage_size_in_gbs of this DbSystemSnapshot.
         :type: int
         """
         self._data_storage_size_in_gbs = data_storage_size_in_gbs
+
+    @property
+    def data_storage(self):
+        """
+        Gets the data_storage of this DbSystemSnapshot.
+
+        :return: The data_storage of this DbSystemSnapshot.
+        :rtype: oci.mysql.models.DataStorage
+        """
+        return self._data_storage
+
+    @data_storage.setter
+    def data_storage(self, data_storage):
+        """
+        Sets the data_storage of this DbSystemSnapshot.
+
+        :param data_storage: The data_storage of this DbSystemSnapshot.
+        :type: oci.mysql.models.DataStorage
+        """
+        self._data_storage = data_storage
 
     @property
     def hostname_label(self):

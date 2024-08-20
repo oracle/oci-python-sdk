@@ -162,6 +162,18 @@ class ExternalDatabaseSummary(object):
             The value to assign to the system_tags property of this ExternalDatabaseSummary.
         :type system_tags: dict(str, dict(str, object))
 
+        :param dbmgmt_feature_configs:
+            The value to assign to the dbmgmt_feature_configs property of this ExternalDatabaseSummary.
+        :type dbmgmt_feature_configs: list[oci.database_management.models.DatabaseFeatureConfiguration]
+
+        :param database_version:
+            The value to assign to the database_version property of this ExternalDatabaseSummary.
+        :type database_version: str
+
+        :param database_platform_name:
+            The value to assign to the database_platform_name property of this ExternalDatabaseSummary.
+        :type database_platform_name: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -179,7 +191,10 @@ class ExternalDatabaseSummary(object):
             'time_created': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'dbmgmt_feature_configs': 'list[DatabaseFeatureConfiguration]',
+            'database_version': 'str',
+            'database_platform_name': 'str'
         }
 
         self.attribute_map = {
@@ -198,7 +213,10 @@ class ExternalDatabaseSummary(object):
             'time_created': 'timeCreated',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'dbmgmt_feature_configs': 'dbmgmtFeatureConfigs',
+            'database_version': 'databaseVersion',
+            'database_platform_name': 'databasePlatformName'
         }
 
         self._id = None
@@ -217,6 +235,9 @@ class ExternalDatabaseSummary(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._dbmgmt_feature_configs = None
+        self._database_version = None
+        self._database_platform_name = None
 
     @property
     def id(self):
@@ -659,6 +680,78 @@ class ExternalDatabaseSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def dbmgmt_feature_configs(self):
+        """
+        Gets the dbmgmt_feature_configs of this ExternalDatabaseSummary.
+        The list of feature configurations
+
+
+        :return: The dbmgmt_feature_configs of this ExternalDatabaseSummary.
+        :rtype: list[oci.database_management.models.DatabaseFeatureConfiguration]
+        """
+        return self._dbmgmt_feature_configs
+
+    @dbmgmt_feature_configs.setter
+    def dbmgmt_feature_configs(self, dbmgmt_feature_configs):
+        """
+        Sets the dbmgmt_feature_configs of this ExternalDatabaseSummary.
+        The list of feature configurations
+
+
+        :param dbmgmt_feature_configs: The dbmgmt_feature_configs of this ExternalDatabaseSummary.
+        :type: list[oci.database_management.models.DatabaseFeatureConfiguration]
+        """
+        self._dbmgmt_feature_configs = dbmgmt_feature_configs
+
+    @property
+    def database_version(self):
+        """
+        Gets the database_version of this ExternalDatabaseSummary.
+        The Oracle database version.
+
+
+        :return: The database_version of this ExternalDatabaseSummary.
+        :rtype: str
+        """
+        return self._database_version
+
+    @database_version.setter
+    def database_version(self, database_version):
+        """
+        Sets the database_version of this ExternalDatabaseSummary.
+        The Oracle database version.
+
+
+        :param database_version: The database_version of this ExternalDatabaseSummary.
+        :type: str
+        """
+        self._database_version = database_version
+
+    @property
+    def database_platform_name(self):
+        """
+        Gets the database_platform_name of this ExternalDatabaseSummary.
+        The operating system of database.
+
+
+        :return: The database_platform_name of this ExternalDatabaseSummary.
+        :rtype: str
+        """
+        return self._database_platform_name
+
+    @database_platform_name.setter
+    def database_platform_name(self, database_platform_name):
+        """
+        Sets the database_platform_name of this ExternalDatabaseSummary.
+        The operating system of database.
+
+
+        :param database_platform_name: The database_platform_name of this ExternalDatabaseSummary.
+        :type: str
+        """
+        self._database_platform_name = database_platform_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

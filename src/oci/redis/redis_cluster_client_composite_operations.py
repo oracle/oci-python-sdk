@@ -31,7 +31,7 @@ class RedisClusterClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str redis_cluster_id: (required)
-            The `OCID`__ of the Redis cluster.
+            The `OCID`__ of the cluster.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
@@ -75,7 +75,7 @@ class RedisClusterClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.redis.models.CreateRedisClusterDetails create_redis_cluster_details: (required)
-            Details for the new RedisCluster.
+            Details for the new cluster.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.redis.models.WorkRequest.status`
@@ -114,7 +114,7 @@ class RedisClusterClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str redis_cluster_id: (required)
-            The `OCID`__ of the Redis cluster.
+            The `OCID`__ of the cluster.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
@@ -163,7 +163,7 @@ class RedisClusterClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str redis_cluster_id: (required)
-            The `OCID`__ of the Redis cluster.
+            The `OCID`__ of the cluster.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 

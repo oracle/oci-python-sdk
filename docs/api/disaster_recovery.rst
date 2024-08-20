@@ -38,6 +38,7 @@ Disaster Recovery
     oci.disaster_recovery.models.CreateDrPlanDetails
     oci.disaster_recovery.models.CreateDrPlanExecutionDetails
     oci.disaster_recovery.models.CreateDrProtectionGroupDetails
+    oci.disaster_recovery.models.CreateDrProtectionGroupMemberAutonomousContainerDatabaseDetails
     oci.disaster_recovery.models.CreateDrProtectionGroupMemberAutonomousDatabaseDetails
     oci.disaster_recovery.models.CreateDrProtectionGroupMemberComputeInstanceDetails
     oci.disaster_recovery.models.CreateDrProtectionGroupMemberComputeInstanceMovableDetails
@@ -47,6 +48,7 @@ Disaster Recovery
     oci.disaster_recovery.models.CreateDrProtectionGroupMemberFileSystemDetails
     oci.disaster_recovery.models.CreateDrProtectionGroupMemberLoadBalancerDetails
     oci.disaster_recovery.models.CreateDrProtectionGroupMemberNetworkLoadBalancerDetails
+    oci.disaster_recovery.models.CreateDrProtectionGroupMemberObjectStorageBucketDetails
     oci.disaster_recovery.models.CreateDrProtectionGroupMemberVolumeGroupDetails
     oci.disaster_recovery.models.CreateFileSystemMountDetails
     oci.disaster_recovery.models.CreateFileSystemUnmountDetails
@@ -70,6 +72,7 @@ Disaster Recovery
     oci.disaster_recovery.models.DrProtectionGroup
     oci.disaster_recovery.models.DrProtectionGroupCollection
     oci.disaster_recovery.models.DrProtectionGroupMember
+    oci.disaster_recovery.models.DrProtectionGroupMemberAutonomousContainerDatabase
     oci.disaster_recovery.models.DrProtectionGroupMemberAutonomousDatabase
     oci.disaster_recovery.models.DrProtectionGroupMemberComputeInstance
     oci.disaster_recovery.models.DrProtectionGroupMemberComputeInstanceMovable
@@ -78,6 +81,7 @@ Disaster Recovery
     oci.disaster_recovery.models.DrProtectionGroupMemberFileSystem
     oci.disaster_recovery.models.DrProtectionGroupMemberLoadBalancer
     oci.disaster_recovery.models.DrProtectionGroupMemberNetworkLoadBalancer
+    oci.disaster_recovery.models.DrProtectionGroupMemberObjectStorageBucket
     oci.disaster_recovery.models.DrProtectionGroupMemberVolumeGroup
     oci.disaster_recovery.models.DrProtectionGroupSummary
     oci.disaster_recovery.models.FailoverExecutionOptionDetails
@@ -127,6 +131,7 @@ Disaster Recovery
     oci.disaster_recovery.models.UpdateDrPlanStepDetails
     oci.disaster_recovery.models.UpdateDrPlanUserDefinedStepDetails
     oci.disaster_recovery.models.UpdateDrProtectionGroupDetails
+    oci.disaster_recovery.models.UpdateDrProtectionGroupMemberAutonomousContainerDatabaseDetails
     oci.disaster_recovery.models.UpdateDrProtectionGroupMemberAutonomousDatabaseDetails
     oci.disaster_recovery.models.UpdateDrProtectionGroupMemberComputeInstanceDetails
     oci.disaster_recovery.models.UpdateDrProtectionGroupMemberComputeInstanceMovableDetails
@@ -136,6 +141,7 @@ Disaster Recovery
     oci.disaster_recovery.models.UpdateDrProtectionGroupMemberFileSystemDetails
     oci.disaster_recovery.models.UpdateDrProtectionGroupMemberLoadBalancerDetails
     oci.disaster_recovery.models.UpdateDrProtectionGroupMemberNetworkLoadBalancerDetails
+    oci.disaster_recovery.models.UpdateDrProtectionGroupMemberObjectStorageBucketDetails
     oci.disaster_recovery.models.UpdateDrProtectionGroupMemberVolumeGroupDetails
     oci.disaster_recovery.models.UpdateDrProtectionGroupRoleDetails
     oci.disaster_recovery.models.UpdateFileSystemMountDetails

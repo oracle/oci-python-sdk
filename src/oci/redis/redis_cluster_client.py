@@ -22,7 +22,7 @@ missing = Sentinel("Missing")
 
 class RedisClusterClient(object):
     """
-    Use the Redis Service API to create and manage Redis clusters. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](/iaas/Content/redis/home.htm).
+    Use the OCI Cache API to create and manage clusters. A cluster is a memory-based storage solution. For more information, see [OCI Cache](/iaas/Content/ocicache/home.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -157,7 +157,7 @@ class RedisClusterClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/WorkRequest/CancelWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -223,13 +223,13 @@ class RedisClusterClient(object):
 
     def change_redis_cluster_compartment(self, redis_cluster_id, change_redis_cluster_compartment_details, **kwargs):
         """
-        Moves a Redis cluster into a different compartment within the same tenancy. A Redis cluster is a memory-based storage solution. For more information, see `OCI Caching Service with Redis`__.
+        Moves an OCI Cache cluster into a different compartment within the same tenancy. A cluster is a memory-based storage solution. For more information, see `OCI Cache`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/redis/home.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm
 
 
         :param str redis_cluster_id: (required)
-            The `OCID`__ of the Redis cluster.
+            The `OCID`__ of the cluster.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
@@ -276,7 +276,7 @@ class RedisClusterClient(object):
         resource_path = "/redisClusters/{redisClusterId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_redis_cluster_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisCluster/ChangeRedisClusterCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -347,13 +347,13 @@ class RedisClusterClient(object):
 
     def create_redis_cluster(self, create_redis_cluster_details, **kwargs):
         """
-        Creates a new Redis cluster. A Redis cluster is a memory-based storage solution. For more information, see `OCI Caching Service with Redis`__.
+        Creates a new OCI Cache cluster. A cluster is a memory-based storage solution. For more information, see `OCI Cache`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/redis/home.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm
 
 
         :param oci.redis.models.CreateRedisClusterDetails create_redis_cluster_details: (required)
-            Details for the new RedisCluster.
+            Details for the new cluster.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -388,7 +388,7 @@ class RedisClusterClient(object):
         resource_path = "/redisClusters"
         method = "POST"
         operation_name = "create_redis_cluster"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisCluster/CreateRedisCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -447,13 +447,13 @@ class RedisClusterClient(object):
 
     def delete_redis_cluster(self, redis_cluster_id, **kwargs):
         """
-        Deletes the specified Redis cluster. A Redis cluster is a memory-based storage solution. For more information, see `OCI Caching Service with Redis`__.
+        Deletes the specified OCI Cache cluster. A cluster is a memory-based storage solution. For more information, see `OCI Cache`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/redis/home.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm
 
 
         :param str redis_cluster_id: (required)
-            The `OCID`__ of the Redis cluster.
+            The `OCID`__ of the cluster.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
@@ -490,7 +490,7 @@ class RedisClusterClient(object):
         resource_path = "/redisClusters/{redisClusterId}"
         method = "DELETE"
         operation_name = "delete_redis_cluster"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisCluster/DeleteRedisCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -556,13 +556,13 @@ class RedisClusterClient(object):
 
     def get_redis_cluster(self, redis_cluster_id, **kwargs):
         """
-        Retrieves the specified Redis cluster. A Redis cluster is a memory-based storage solution. For more information, see `OCI Caching Service with Redis`__.
+        Retrieves the specified OCI Cache cluster. A cluster is a memory-based storage solution. For more information, see `OCI Cache`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/redis/home.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm
 
 
         :param str redis_cluster_id: (required)
-            The `OCID`__ of the Redis cluster.
+            The `OCID`__ of the cluster.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
@@ -592,7 +592,7 @@ class RedisClusterClient(object):
         resource_path = "/redisClusters/{redisClusterId}"
         method = "GET"
         operation_name = "get_redis_cluster"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisCluster/GetRedisCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -690,7 +690,7 @@ class RedisClusterClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -754,11 +754,160 @@ class RedisClusterClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def list_redis_cluster_nodes(self, redis_cluster_id, **kwargs):
+        """
+        Gets the list of all nodes in a cluster.
+
+
+        :param str redis_cluster_id: (required)
+            The `OCID`__ of the cluster.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
+
+        :param str display_name: (optional)
+            A filter to return only resources that match the entire display name given.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            A token representing the position at which to start retrieving results. This must come from the `opc-next-page` header field of a previous response.
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'ASC' or 'DESC'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+
+            Allowed values are: "timeCreated", "displayName"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.redis.models.RedisNodeCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/redis/list_redis_cluster_nodes.py.html>`__ to see an example of how to use list_redis_cluster_nodes API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['redisClusterId']
+        resource_path = "/redisClusters/{redisClusterId}/nodes"
+        method = "GET"
+        operation_name = "list_redis_cluster_nodes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/NodeSummary/ListRedisClusterNodes"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "display_name",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_redis_cluster_nodes got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "redisClusterId": redis_cluster_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        query_params = {
+            "displayName": kwargs.get("display_name", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="RedisNodeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="RedisNodeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_redis_clusters(self, **kwargs):
         """
-        Lists the Redis clusters in the specified compartment. A Redis cluster is a memory-based storage solution. For more information, see `OCI Caching Service with Redis`__.
+        Lists the OCI Cache clusters in the specified compartment. A cluster is a memory-based storage solution. For more information, see `OCI Cache`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/redis/home.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm
 
 
         :param str compartment_id: (optional)
@@ -773,7 +922,7 @@ class RedisClusterClient(object):
             A filter to return only resources that match the entire display name given.
 
         :param str id: (optional)
-            The `OCID`__ of the Redis cluster.
+            The `OCID`__ of the cluster.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
@@ -819,7 +968,7 @@ class RedisClusterClient(object):
         resource_path = "/redisClusters"
         method = "GET"
         operation_name = "list_redis_clusters"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisClusterSummary/ListRedisClusters"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -964,7 +1113,7 @@ class RedisClusterClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1106,7 +1255,7 @@ class RedisClusterClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1261,7 +1410,7 @@ class RedisClusterClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1358,13 +1507,13 @@ class RedisClusterClient(object):
 
     def update_redis_cluster(self, redis_cluster_id, update_redis_cluster_details, **kwargs):
         """
-        Updates the specified Redis cluster. A Redis cluster is a memory-based storage solution. For more information, see `OCI Caching Service with Redis`__.
+        Updates the specified OCI Cache cluster. A cluster is a memory-based storage solution. For more information, see `OCI Cache`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/redis/home.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm
 
 
         :param str redis_cluster_id: (required)
-            The `OCID`__ of the Redis cluster.
+            The `OCID`__ of the cluster.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
@@ -1404,7 +1553,7 @@ class RedisClusterClient(object):
         resource_path = "/redisClusters/{redisClusterId}"
         method = "PUT"
         operation_name = "update_redis_cluster"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocicache/20220315/RedisCluster/UpdateRedisCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

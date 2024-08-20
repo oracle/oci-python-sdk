@@ -59,6 +59,22 @@ class AnalyticsInstance(object):
     #: This constant has a value of "BRING_YOUR_OWN_LICENSE"
     LICENSE_TYPE_BRING_YOUR_OWN_LICENSE = "BRING_YOUR_OWN_LICENSE"
 
+    #: A constant which can be used with the feature_bundle property of a AnalyticsInstance.
+    #: This constant has a value of "FAW_PAID"
+    FEATURE_BUNDLE_FAW_PAID = "FAW_PAID"
+
+    #: A constant which can be used with the feature_bundle property of a AnalyticsInstance.
+    #: This constant has a value of "FAW_FREE"
+    FEATURE_BUNDLE_FAW_FREE = "FAW_FREE"
+
+    #: A constant which can be used with the feature_bundle property of a AnalyticsInstance.
+    #: This constant has a value of "EE_EMBEDDED"
+    FEATURE_BUNDLE_EE_EMBEDDED = "EE_EMBEDDED"
+
+    #: A constant which can be used with the feature_bundle property of a AnalyticsInstance.
+    #: This constant has a value of "SE_EMBEDDED"
+    FEATURE_BUNDLE_SE_EMBEDDED = "SE_EMBEDDED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AnalyticsInstance object with values from keyword arguments.
@@ -130,6 +146,10 @@ class AnalyticsInstance(object):
             The value to assign to the freeform_tags property of this AnalyticsInstance.
         :type freeform_tags: dict(str, str)
 
+        :param system_tags:
+            The value to assign to the system_tags property of this AnalyticsInstance.
+        :type system_tags: dict(str, dict(str, object))
+
         :param kms_key_id:
             The value to assign to the kms_key_id property of this AnalyticsInstance.
         :type kms_key_id: str
@@ -141,6 +161,16 @@ class AnalyticsInstance(object):
         :param time_updated:
             The value to assign to the time_updated property of this AnalyticsInstance.
         :type time_updated: datetime
+
+        :param feature_bundle:
+            The value to assign to the feature_bundle property of this AnalyticsInstance.
+            Allowed values for this property are: "FAW_PAID", "FAW_FREE", "EE_EMBEDDED", "SE_EMBEDDED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type feature_bundle: str
+
+        :param domain_id:
+            The value to assign to the domain_id property of this AnalyticsInstance.
+        :type domain_id: str
 
         """
         self.swagger_types = {
@@ -159,9 +189,12 @@ class AnalyticsInstance(object):
             'service_url': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
+            'system_tags': 'dict(str, dict(str, object))',
             'kms_key_id': 'str',
             'time_created': 'datetime',
-            'time_updated': 'datetime'
+            'time_updated': 'datetime',
+            'feature_bundle': 'str',
+            'domain_id': 'str'
         }
 
         self.attribute_map = {
@@ -180,9 +213,12 @@ class AnalyticsInstance(object):
             'service_url': 'serviceUrl',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
+            'system_tags': 'systemTags',
             'kms_key_id': 'kmsKeyId',
             'time_created': 'timeCreated',
-            'time_updated': 'timeUpdated'
+            'time_updated': 'timeUpdated',
+            'feature_bundle': 'featureBundle',
+            'domain_id': 'domainId'
         }
 
         self._id = None
@@ -200,9 +236,12 @@ class AnalyticsInstance(object):
         self._service_url = None
         self._defined_tags = None
         self._freeform_tags = None
+        self._system_tags = None
         self._kms_key_id = None
         self._time_created = None
         self._time_updated = None
+        self._feature_bundle = None
+        self._domain_id = None
 
     @property
     def id(self):
@@ -595,12 +634,36 @@ class AnalyticsInstance(object):
         self._freeform_tags = freeform_tags
 
     @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this AnalyticsInstance.
+        System tags for this resource. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"key\": \"value\"}}`
+
+
+        :return: The system_tags of this AnalyticsInstance.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this AnalyticsInstance.
+        System tags for this resource. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"key\": \"value\"}}`
+
+
+        :param system_tags: The system_tags of this AnalyticsInstance.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
+
+    @property
     def kms_key_id(self):
         """
         Gets the kms_key_id of this AnalyticsInstance.
-        The `OCID`__ of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
 
 
         :return: The kms_key_id of this AnalyticsInstance.
@@ -612,9 +675,7 @@ class AnalyticsInstance(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this AnalyticsInstance.
-        The `OCID`__ of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
 
 
         :param kms_key_id: The kms_key_id of this AnalyticsInstance.
@@ -677,6 +738,60 @@ class AnalyticsInstance(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def feature_bundle(self):
+        """
+        Gets the feature_bundle of this AnalyticsInstance.
+        The feature set of an Analytics instance.
+
+        Allowed values for this property are: "FAW_PAID", "FAW_FREE", "EE_EMBEDDED", "SE_EMBEDDED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The feature_bundle of this AnalyticsInstance.
+        :rtype: str
+        """
+        return self._feature_bundle
+
+    @feature_bundle.setter
+    def feature_bundle(self, feature_bundle):
+        """
+        Sets the feature_bundle of this AnalyticsInstance.
+        The feature set of an Analytics instance.
+
+
+        :param feature_bundle: The feature_bundle of this AnalyticsInstance.
+        :type: str
+        """
+        allowed_values = ["FAW_PAID", "FAW_FREE", "EE_EMBEDDED", "SE_EMBEDDED"]
+        if not value_allowed_none_or_none_sentinel(feature_bundle, allowed_values):
+            feature_bundle = 'UNKNOWN_ENUM_VALUE'
+        self._feature_bundle = feature_bundle
+
+    @property
+    def domain_id(self):
+        """
+        Gets the domain_id of this AnalyticsInstance.
+        Identity domain OCID.
+
+
+        :return: The domain_id of this AnalyticsInstance.
+        :rtype: str
+        """
+        return self._domain_id
+
+    @domain_id.setter
+    def domain_id(self, domain_id):
+        """
+        Sets the domain_id of this AnalyticsInstance.
+        Identity domain OCID.
+
+
+        :param domain_id: The domain_id of this AnalyticsInstance.
+        :type: str
+        """
+        self._domain_id = domain_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

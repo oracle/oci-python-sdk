@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class NodeCollection(object):
     """
-    The collection of Redis cluster nodes.
+    The collection of  cluster nodes.
     """
 
     def __init__(self, **kwargs):

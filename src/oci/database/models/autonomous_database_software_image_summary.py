@@ -68,6 +68,10 @@ class AutonomousDatabaseSoftwareImageSummary(object):
             The value to assign to the image_shape_family property of this AutonomousDatabaseSoftwareImageSummary.
         :type image_shape_family: str
 
+        :param dst_file_version:
+            The value to assign to the dst_file_version property of this AutonomousDatabaseSoftwareImageSummary.
+        :type dst_file_version: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -81,7 +85,8 @@ class AutonomousDatabaseSoftwareImageSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'autonomous_dsi_one_off_patches': 'list[str]',
-            'image_shape_family': 'str'
+            'image_shape_family': 'str',
+            'dst_file_version': 'str'
         }
 
         self.attribute_map = {
@@ -96,7 +101,8 @@ class AutonomousDatabaseSoftwareImageSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'autonomous_dsi_one_off_patches': 'autonomousDsiOneOffPatches',
-            'image_shape_family': 'imageShapeFamily'
+            'image_shape_family': 'imageShapeFamily',
+            'dst_file_version': 'dstFileVersion'
         }
 
         self._id = None
@@ -111,6 +117,7 @@ class AutonomousDatabaseSoftwareImageSummary(object):
         self._defined_tags = None
         self._autonomous_dsi_one_off_patches = None
         self._image_shape_family = None
+        self._dst_file_version = None
 
     @property
     def id(self):
@@ -423,6 +430,30 @@ class AutonomousDatabaseSoftwareImageSummary(object):
         :type: str
         """
         self._image_shape_family = image_shape_family
+
+    @property
+    def dst_file_version(self):
+        """
+        Gets the dst_file_version of this AutonomousDatabaseSoftwareImageSummary.
+        DST Time-Zone File version of the Autonomous Container Database.
+
+
+        :return: The dst_file_version of this AutonomousDatabaseSoftwareImageSummary.
+        :rtype: str
+        """
+        return self._dst_file_version
+
+    @dst_file_version.setter
+    def dst_file_version(self, dst_file_version):
+        """
+        Sets the dst_file_version of this AutonomousDatabaseSoftwareImageSummary.
+        DST Time-Zone File version of the Autonomous Container Database.
+
+
+        :param dst_file_version: The dst_file_version of this AutonomousDatabaseSoftwareImageSummary.
+        :type: str
+        """
+        self._dst_file_version = dst_file_version
 
     def __repr__(self):
         return formatted_flat_dict(self)

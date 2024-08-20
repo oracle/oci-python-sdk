@@ -31,6 +31,22 @@ class CreateAnalyticsInstanceDetails(object):
     #: This constant has a value of "BRING_YOUR_OWN_LICENSE"
     LICENSE_TYPE_BRING_YOUR_OWN_LICENSE = "BRING_YOUR_OWN_LICENSE"
 
+    #: A constant which can be used with the feature_bundle property of a CreateAnalyticsInstanceDetails.
+    #: This constant has a value of "FAW_PAID"
+    FEATURE_BUNDLE_FAW_PAID = "FAW_PAID"
+
+    #: A constant which can be used with the feature_bundle property of a CreateAnalyticsInstanceDetails.
+    #: This constant has a value of "FAW_FREE"
+    FEATURE_BUNDLE_FAW_FREE = "FAW_FREE"
+
+    #: A constant which can be used with the feature_bundle property of a CreateAnalyticsInstanceDetails.
+    #: This constant has a value of "EE_EMBEDDED"
+    FEATURE_BUNDLE_EE_EMBEDDED = "EE_EMBEDDED"
+
+    #: A constant which can be used with the feature_bundle property of a CreateAnalyticsInstanceDetails.
+    #: This constant has a value of "SE_EMBEDDED"
+    FEATURE_BUNDLE_SE_EMBEDDED = "SE_EMBEDDED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateAnalyticsInstanceDetails object with values from keyword arguments.
@@ -86,6 +102,19 @@ class CreateAnalyticsInstanceDetails(object):
             The value to assign to the kms_key_id property of this CreateAnalyticsInstanceDetails.
         :type kms_key_id: str
 
+        :param domain_id:
+            The value to assign to the domain_id property of this CreateAnalyticsInstanceDetails.
+        :type domain_id: str
+
+        :param admin_user:
+            The value to assign to the admin_user property of this CreateAnalyticsInstanceDetails.
+        :type admin_user: str
+
+        :param feature_bundle:
+            The value to assign to the feature_bundle property of this CreateAnalyticsInstanceDetails.
+            Allowed values for this property are: "FAW_PAID", "FAW_FREE", "EE_EMBEDDED", "SE_EMBEDDED"
+        :type feature_bundle: str
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -99,7 +128,10 @@ class CreateAnalyticsInstanceDetails(object):
             'idcs_access_token': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
-            'kms_key_id': 'str'
+            'kms_key_id': 'str',
+            'domain_id': 'str',
+            'admin_user': 'str',
+            'feature_bundle': 'str'
         }
 
         self.attribute_map = {
@@ -114,7 +146,10 @@ class CreateAnalyticsInstanceDetails(object):
             'idcs_access_token': 'idcsAccessToken',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
-            'kms_key_id': 'kmsKeyId'
+            'kms_key_id': 'kmsKeyId',
+            'domain_id': 'domainId',
+            'admin_user': 'adminUser',
+            'feature_bundle': 'featureBundle'
         }
 
         self._name = None
@@ -129,6 +164,9 @@ class CreateAnalyticsInstanceDetails(object):
         self._defined_tags = None
         self._freeform_tags = None
         self._kms_key_id = None
+        self._domain_id = None
+        self._admin_user = None
+        self._feature_bundle = None
 
     @property
     def name(self):
@@ -424,9 +462,7 @@ class CreateAnalyticsInstanceDetails(object):
     def kms_key_id(self):
         """
         Gets the kms_key_id of this CreateAnalyticsInstanceDetails.
-        The `OCID`__ of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
 
 
         :return: The kms_key_id of this CreateAnalyticsInstanceDetails.
@@ -438,15 +474,92 @@ class CreateAnalyticsInstanceDetails(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this CreateAnalyticsInstanceDetails.
-        The `OCID`__ of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
 
 
         :param kms_key_id: The kms_key_id of this CreateAnalyticsInstanceDetails.
         :type: str
         """
         self._kms_key_id = kms_key_id
+
+    @property
+    def domain_id(self):
+        """
+        Gets the domain_id of this CreateAnalyticsInstanceDetails.
+        domain id for which the user is authorized.
+
+
+        :return: The domain_id of this CreateAnalyticsInstanceDetails.
+        :rtype: str
+        """
+        return self._domain_id
+
+    @domain_id.setter
+    def domain_id(self, domain_id):
+        """
+        Sets the domain_id of this CreateAnalyticsInstanceDetails.
+        domain id for which the user is authorized.
+
+
+        :param domain_id: The domain_id of this CreateAnalyticsInstanceDetails.
+        :type: str
+        """
+        self._domain_id = domain_id
+
+    @property
+    def admin_user(self):
+        """
+        Gets the admin_user of this CreateAnalyticsInstanceDetails.
+        user name of the authorized user.
+
+
+        :return: The admin_user of this CreateAnalyticsInstanceDetails.
+        :rtype: str
+        """
+        return self._admin_user
+
+    @admin_user.setter
+    def admin_user(self, admin_user):
+        """
+        Sets the admin_user of this CreateAnalyticsInstanceDetails.
+        user name of the authorized user.
+
+
+        :param admin_user: The admin_user of this CreateAnalyticsInstanceDetails.
+        :type: str
+        """
+        self._admin_user = admin_user
+
+    @property
+    def feature_bundle(self):
+        """
+        Gets the feature_bundle of this CreateAnalyticsInstanceDetails.
+        The feature set of an Analytics instance.
+
+        Allowed values for this property are: "FAW_PAID", "FAW_FREE", "EE_EMBEDDED", "SE_EMBEDDED"
+
+
+        :return: The feature_bundle of this CreateAnalyticsInstanceDetails.
+        :rtype: str
+        """
+        return self._feature_bundle
+
+    @feature_bundle.setter
+    def feature_bundle(self, feature_bundle):
+        """
+        Sets the feature_bundle of this CreateAnalyticsInstanceDetails.
+        The feature set of an Analytics instance.
+
+
+        :param feature_bundle: The feature_bundle of this CreateAnalyticsInstanceDetails.
+        :type: str
+        """
+        allowed_values = ["FAW_PAID", "FAW_FREE", "EE_EMBEDDED", "SE_EMBEDDED"]
+        if not value_allowed_none_or_none_sentinel(feature_bundle, allowed_values):
+            raise ValueError(
+                f"Invalid value for `feature_bundle`, must be None or one of {allowed_values}"
+            )
+        self._feature_bundle = feature_bundle
 
     def __repr__(self):
         return formatted_flat_dict(self)

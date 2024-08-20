@@ -12,15 +12,23 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateRedisClusterDetails(object):
     """
-    The configuration details for a new Redis cluster. A Redis cluster is a memory-based storage solution. For more information, see `OCI Caching Service with Redis`__.
+    The configuration details for a new OCI Cache cluster. An OCI Cache cluster is a memory-based storage solution. For more information, see `OCI Cache`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/redis/home.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm
     """
 
     def __init__(self, **kwargs):
         """
         Initializes a new CreateRedisClusterDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param cluster_mode:
+            The value to assign to the cluster_mode property of this CreateRedisClusterDetails.
+        :type cluster_mode: str
+
+        :param shard_count:
+            The value to assign to the shard_count property of this CreateRedisClusterDetails.
+        :type shard_count: int
 
         :param display_name:
             The value to assign to the display_name property of this CreateRedisClusterDetails.
@@ -60,6 +68,8 @@ class CreateRedisClusterDetails(object):
 
         """
         self.swagger_types = {
+            'cluster_mode': 'str',
+            'shard_count': 'int',
             'display_name': 'str',
             'compartment_id': 'str',
             'node_count': 'int',
@@ -72,6 +82,8 @@ class CreateRedisClusterDetails(object):
         }
 
         self.attribute_map = {
+            'cluster_mode': 'clusterMode',
+            'shard_count': 'shardCount',
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
             'node_count': 'nodeCount',
@@ -83,6 +95,8 @@ class CreateRedisClusterDetails(object):
             'defined_tags': 'definedTags'
         }
 
+        self._cluster_mode = None
+        self._shard_count = None
         self._display_name = None
         self._compartment_id = None
         self._node_count = None
@@ -92,6 +106,54 @@ class CreateRedisClusterDetails(object):
         self._nsg_ids = None
         self._freeform_tags = None
         self._defined_tags = None
+
+    @property
+    def cluster_mode(self):
+        """
+        Gets the cluster_mode of this CreateRedisClusterDetails.
+        Specifies whether the cluster is sharded or non-sharded.
+
+
+        :return: The cluster_mode of this CreateRedisClusterDetails.
+        :rtype: str
+        """
+        return self._cluster_mode
+
+    @cluster_mode.setter
+    def cluster_mode(self, cluster_mode):
+        """
+        Sets the cluster_mode of this CreateRedisClusterDetails.
+        Specifies whether the cluster is sharded or non-sharded.
+
+
+        :param cluster_mode: The cluster_mode of this CreateRedisClusterDetails.
+        :type: str
+        """
+        self._cluster_mode = cluster_mode
+
+    @property
+    def shard_count(self):
+        """
+        Gets the shard_count of this CreateRedisClusterDetails.
+        The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+
+
+        :return: The shard_count of this CreateRedisClusterDetails.
+        :rtype: int
+        """
+        return self._shard_count
+
+    @shard_count.setter
+    def shard_count(self, shard_count):
+        """
+        Sets the shard_count of this CreateRedisClusterDetails.
+        The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+
+
+        :param shard_count: The shard_count of this CreateRedisClusterDetails.
+        :type: int
+        """
+        self._shard_count = shard_count
 
     @property
     def display_name(self):
@@ -121,7 +183,7 @@ class CreateRedisClusterDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateRedisClusterDetails.
-        The `OCID`__ of the compartment that contains the Redis cluster.
+        The `OCID`__ of the compartment that contains the cluster.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
@@ -135,7 +197,7 @@ class CreateRedisClusterDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateRedisClusterDetails.
-        The `OCID`__ of the compartment that contains the Redis cluster.
+        The `OCID`__ of the compartment that contains the cluster.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
@@ -149,7 +211,7 @@ class CreateRedisClusterDetails(object):
     def node_count(self):
         """
         **[Required]** Gets the node_count of this CreateRedisClusterDetails.
-        The number of nodes in the Redis cluster.
+        The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
 
 
         :return: The node_count of this CreateRedisClusterDetails.
@@ -161,7 +223,7 @@ class CreateRedisClusterDetails(object):
     def node_count(self, node_count):
         """
         Sets the node_count of this CreateRedisClusterDetails.
-        The number of nodes in the Redis cluster.
+        The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
 
 
         :param node_count: The node_count of this CreateRedisClusterDetails.
@@ -173,7 +235,7 @@ class CreateRedisClusterDetails(object):
     def software_version(self):
         """
         **[Required]** Gets the software_version of this CreateRedisClusterDetails.
-        The Redis version that the cluster is running.
+        The OCI Cache engine version that the cluster is running.
 
 
         :return: The software_version of this CreateRedisClusterDetails.
@@ -185,7 +247,7 @@ class CreateRedisClusterDetails(object):
     def software_version(self, software_version):
         """
         Sets the software_version of this CreateRedisClusterDetails.
-        The Redis version that the cluster is running.
+        The OCI Cache engine version that the cluster is running.
 
 
         :param software_version: The software_version of this CreateRedisClusterDetails.
@@ -197,7 +259,7 @@ class CreateRedisClusterDetails(object):
     def node_memory_in_gbs(self):
         """
         **[Required]** Gets the node_memory_in_gbs of this CreateRedisClusterDetails.
-        The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
+        The amount of memory allocated to the cluster's nodes, in gigabytes.
 
 
         :return: The node_memory_in_gbs of this CreateRedisClusterDetails.
@@ -209,7 +271,7 @@ class CreateRedisClusterDetails(object):
     def node_memory_in_gbs(self, node_memory_in_gbs):
         """
         Sets the node_memory_in_gbs of this CreateRedisClusterDetails.
-        The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
+        The amount of memory allocated to the cluster's nodes, in gigabytes.
 
 
         :param node_memory_in_gbs: The node_memory_in_gbs of this CreateRedisClusterDetails.
@@ -221,7 +283,7 @@ class CreateRedisClusterDetails(object):
     def subnet_id(self):
         """
         **[Required]** Gets the subnet_id of this CreateRedisClusterDetails.
-        The `OCID`__ of the Redis cluster's subnet.
+        The `OCID`__ of the cluster's subnet.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
@@ -235,7 +297,7 @@ class CreateRedisClusterDetails(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this CreateRedisClusterDetails.
-        The `OCID`__ of the Redis cluster's subnet.
+        The `OCID`__ of the cluster's subnet.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
@@ -251,10 +313,10 @@ class CreateRedisClusterDetails(object):
         Gets the nsg_ids of this CreateRedisClusterDetails.
         A list of Network Security Group (NSG) `OCIDs`__
         associated with this cluster. For more information,
-        see `Using an NSG for Redis Clusters`__.
+        see `Using an NSG for Clusters`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup
+        __ https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup
 
 
         :return: The nsg_ids of this CreateRedisClusterDetails.
@@ -268,10 +330,10 @@ class CreateRedisClusterDetails(object):
         Sets the nsg_ids of this CreateRedisClusterDetails.
         A list of Network Security Group (NSG) `OCIDs`__
         associated with this cluster. For more information,
-        see `Using an NSG for Redis Clusters`__.
+        see `Using an NSG for Clusters`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup
+        __ https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup
 
 
         :param nsg_ids: The nsg_ids of this CreateRedisClusterDetails.

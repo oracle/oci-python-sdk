@@ -123,6 +123,10 @@ class MaintenanceRunSummary(object):
     #: This constant has a value of "TIMEZONE"
     MAINTENANCE_SUBTYPE_TIMEZONE = "TIMEZONE"
 
+    #: A constant which can be used with the maintenance_subtype property of a MaintenanceRunSummary.
+    #: This constant has a value of "CUSTOM_DATABASE_SOFTWARE_IMAGE"
+    MAINTENANCE_SUBTYPE_CUSTOM_DATABASE_SOFTWARE_IMAGE = "CUSTOM_DATABASE_SOFTWARE_IMAGE"
+
     #: A constant which can be used with the patching_mode property of a MaintenanceRunSummary.
     #: This constant has a value of "ROLLING"
     PATCHING_MODE_ROLLING = "ROLLING"
@@ -208,7 +212,7 @@ class MaintenanceRunSummary(object):
 
         :param maintenance_subtype:
             The value to assign to the maintenance_subtype property of this MaintenanceRunSummary.
-            Allowed values for this property are: "QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", "TIMEZONE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", "TIMEZONE", "CUSTOM_DATABASE_SOFTWARE_IMAGE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type maintenance_subtype: str
 
@@ -276,6 +280,10 @@ class MaintenanceRunSummary(object):
             The value to assign to the estimated_component_patching_start_time property of this MaintenanceRunSummary.
         :type estimated_component_patching_start_time: datetime
 
+        :param database_software_image_id:
+            The value to assign to the database_software_image_id property of this MaintenanceRunSummary.
+        :type database_software_image_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -306,7 +314,8 @@ class MaintenanceRunSummary(object):
             'patching_end_time': 'datetime',
             'estimated_patching_time': 'EstimatedPatchingTime',
             'current_patching_component': 'str',
-            'estimated_component_patching_start_time': 'datetime'
+            'estimated_component_patching_start_time': 'datetime',
+            'database_software_image_id': 'str'
         }
 
         self.attribute_map = {
@@ -338,7 +347,8 @@ class MaintenanceRunSummary(object):
             'patching_end_time': 'patchingEndTime',
             'estimated_patching_time': 'estimatedPatchingTime',
             'current_patching_component': 'currentPatchingComponent',
-            'estimated_component_patching_start_time': 'estimatedComponentPatchingStartTime'
+            'estimated_component_patching_start_time': 'estimatedComponentPatchingStartTime',
+            'database_software_image_id': 'databaseSoftwareImageId'
         }
 
         self._id = None
@@ -370,6 +380,7 @@ class MaintenanceRunSummary(object):
         self._estimated_patching_time = None
         self._current_patching_component = None
         self._estimated_component_patching_start_time = None
+        self._database_software_image_id = None
 
     @property
     def id(self):
@@ -707,7 +718,7 @@ class MaintenanceRunSummary(object):
         Gets the maintenance_subtype of this MaintenanceRunSummary.
         Maintenance sub-type.
 
-        Allowed values for this property are: "QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", "TIMEZONE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", "TIMEZONE", "CUSTOM_DATABASE_SOFTWARE_IMAGE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -726,7 +737,7 @@ class MaintenanceRunSummary(object):
         :param maintenance_subtype: The maintenance_subtype of this MaintenanceRunSummary.
         :type: str
         """
-        allowed_values = ["QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", "TIMEZONE"]
+        allowed_values = ["QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", "TIMEZONE", "CUSTOM_DATABASE_SOFTWARE_IMAGE"]
         if not value_allowed_none_or_none_sentinel(maintenance_subtype, allowed_values):
             maintenance_subtype = 'UNKNOWN_ENUM_VALUE'
         self._maintenance_subtype = maintenance_subtype
@@ -1112,6 +1123,34 @@ class MaintenanceRunSummary(object):
         :type: datetime
         """
         self._estimated_component_patching_start_time = estimated_component_patching_start_time
+
+    @property
+    def database_software_image_id(self):
+        """
+        Gets the database_software_image_id of this MaintenanceRunSummary.
+        The Autonomous Database Software Image `OCID`__
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The database_software_image_id of this MaintenanceRunSummary.
+        :rtype: str
+        """
+        return self._database_software_image_id
+
+    @database_software_image_id.setter
+    def database_software_image_id(self, database_software_image_id):
+        """
+        Sets the database_software_image_id of this MaintenanceRunSummary.
+        The Autonomous Database Software Image `OCID`__
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param database_software_image_id: The database_software_image_id of this MaintenanceRunSummary.
+        :type: str
+        """
+        self._database_software_image_id = database_software_image_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

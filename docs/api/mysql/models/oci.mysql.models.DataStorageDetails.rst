@@ -1,0 +1,11 @@
+DataStorageDetails
+==================
+
+.. currentmodule:: oci.mysql.models
+
+.. autoclass:: DataStorageDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

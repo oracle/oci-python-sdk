@@ -19,18 +19,28 @@ class DatabaseFeatureDetails(object):
     #: This constant has a value of "DIAGNOSTICS_AND_MANAGEMENT"
     FEATURE_DIAGNOSTICS_AND_MANAGEMENT = "DIAGNOSTICS_AND_MANAGEMENT"
 
+    #: A constant which can be used with the feature property of a DatabaseFeatureDetails.
+    #: This constant has a value of "DB_LIFECYCLE_MANAGEMENT"
+    FEATURE_DB_LIFECYCLE_MANAGEMENT = "DB_LIFECYCLE_MANAGEMENT"
+
+    #: A constant which can be used with the feature property of a DatabaseFeatureDetails.
+    #: This constant has a value of "SQLWATCH"
+    FEATURE_SQLWATCH = "SQLWATCH"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DatabaseFeatureDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.database_management.models.DatabaseDiagnosticsAndManagementFeatureDetails`
+        * :class:`~oci.database_management.models.DatabaseLifecycleManagementFeatureDetails`
+        * :class:`~oci.database_management.models.DatabaseSqlWatchFeatureDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param feature:
             The value to assign to the feature property of this DatabaseFeatureDetails.
-            Allowed values for this property are: "DIAGNOSTICS_AND_MANAGEMENT"
+            Allowed values for this property are: "DIAGNOSTICS_AND_MANAGEMENT", "DB_LIFECYCLE_MANAGEMENT", "SQLWATCH"
         :type feature: str
 
         :param database_connection_details:
@@ -68,6 +78,12 @@ class DatabaseFeatureDetails(object):
 
         if type == 'DIAGNOSTICS_AND_MANAGEMENT':
             return 'DatabaseDiagnosticsAndManagementFeatureDetails'
+
+        if type == 'DB_LIFECYCLE_MANAGEMENT':
+            return 'DatabaseLifecycleManagementFeatureDetails'
+
+        if type == 'SQLWATCH':
+            return 'DatabaseSqlWatchFeatureDetails'
         else:
             return 'DatabaseFeatureDetails'
 
@@ -77,7 +93,7 @@ class DatabaseFeatureDetails(object):
         **[Required]** Gets the feature of this DatabaseFeatureDetails.
         The name of the Database Management feature.
 
-        Allowed values for this property are: "DIAGNOSTICS_AND_MANAGEMENT"
+        Allowed values for this property are: "DIAGNOSTICS_AND_MANAGEMENT", "DB_LIFECYCLE_MANAGEMENT", "SQLWATCH"
 
 
         :return: The feature of this DatabaseFeatureDetails.
@@ -95,7 +111,7 @@ class DatabaseFeatureDetails(object):
         :param feature: The feature of this DatabaseFeatureDetails.
         :type: str
         """
-        allowed_values = ["DIAGNOSTICS_AND_MANAGEMENT"]
+        allowed_values = ["DIAGNOSTICS_AND_MANAGEMENT", "DB_LIFECYCLE_MANAGEMENT", "SQLWATCH"]
         if not value_allowed_none_or_none_sentinel(feature, allowed_values):
             raise ValueError(
                 f"Invalid value for `feature`, must be None or one of {allowed_values}"

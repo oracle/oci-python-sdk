@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Node(object):
     """
-    The details of each node in the Redis cluster.
+    The details of each node in the cluster.
     """
 
     def __init__(self, **kwargs):
@@ -101,7 +101,7 @@ class Node(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this Node.
-        A user-friendly name of a Redis cluster node.
+        A user-friendly name of a cluster node.
 
 
         :return: The display_name of this Node.
@@ -113,7 +113,7 @@ class Node(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Node.
-        A user-friendly name of a Redis cluster node.
+        A user-friendly name of a cluster node.
 
 
         :param display_name: The display_name of this Node.

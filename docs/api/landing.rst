@@ -92,6 +92,11 @@ API Reference
 * :doc:`Event <os_management_hub/client/oci.os_management_hub.EventClient>`
 * :doc:`Events <events/client/oci.events.EventsClient>`
 * :doc:`File Storage <file_storage/client/oci.file_storage.FileStorageClient>`
+* :doc:`Fleet Apps Management <fleet_apps_management/client/oci.fleet_apps_management.FleetAppsManagementClient>`
+* :doc:`Fleet Apps Management Admin <fleet_apps_management/client/oci.fleet_apps_management.FleetAppsManagementAdminClient>`
+* :doc:`Fleet Apps Management Maintenance Window <fleet_apps_management/client/oci.fleet_apps_management.FleetAppsManagementMaintenanceWindowClient>`
+* :doc:`Fleet Apps Management Operations <fleet_apps_management/client/oci.fleet_apps_management.FleetAppsManagementOperationsClient>`
+* :doc:`Fleet Apps Management Runbooks <fleet_apps_management/client/oci.fleet_apps_management.FleetAppsManagementRunbooksClient>`
 * :doc:`Fleet Software Update <fleet_software_update/client/oci.fleet_software_update.FleetSoftwareUpdateClient>`
 * :doc:`Functions Invoke <functions/client/oci.functions.FunctionsInvokeClient>`
 * :doc:`Functions Management <functions/client/oci.functions.FunctionsManagementClient>`
@@ -319,6 +324,7 @@ API Reference
     email_data_plane
     events
     file_storage
+    fleet_apps_management
     fleet_software_update
     functions
     fusion_apps

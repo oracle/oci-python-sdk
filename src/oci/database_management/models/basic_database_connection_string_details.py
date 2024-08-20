@@ -31,7 +31,8 @@ class BasicDatabaseConnectionStringDetails(DatabaseConnectionStringDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this BasicDatabaseConnectionStringDetails.
-            Allowed values for this property are: "BASIC"
+            Allowed values for this property are: "BASIC", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
         :param service:
@@ -44,7 +45,8 @@ class BasicDatabaseConnectionStringDetails(DatabaseConnectionStringDetails):
 
         :param protocol:
             The value to assign to the protocol property of this BasicDatabaseConnectionStringDetails.
-            Allowed values for this property are: "TCP", "TCPS"
+            Allowed values for this property are: "TCP", "TCPS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type protocol: str
 
         """
@@ -122,7 +124,8 @@ class BasicDatabaseConnectionStringDetails(DatabaseConnectionStringDetails):
         **[Required]** Gets the protocol of this BasicDatabaseConnectionStringDetails.
         The protocol used to connect to the database.
 
-        Allowed values for this property are: "TCP", "TCPS"
+        Allowed values for this property are: "TCP", "TCPS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The protocol of this BasicDatabaseConnectionStringDetails.
@@ -142,9 +145,7 @@ class BasicDatabaseConnectionStringDetails(DatabaseConnectionStringDetails):
         """
         allowed_values = ["TCP", "TCPS"]
         if not value_allowed_none_or_none_sentinel(protocol, allowed_values):
-            raise ValueError(
-                f"Invalid value for `protocol`, must be None or one of {allowed_values}"
-            )
+            protocol = 'UNKNOWN_ENUM_VALUE'
         self._protocol = protocol
 
     def __repr__(self):
