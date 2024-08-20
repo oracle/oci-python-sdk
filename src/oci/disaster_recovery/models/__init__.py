@@ -26,6 +26,7 @@ from .create_compute_instance_non_movable_file_system_operation_details import C
 from .create_dr_plan_details import CreateDrPlanDetails
 from .create_dr_plan_execution_details import CreateDrPlanExecutionDetails
 from .create_dr_protection_group_details import CreateDrProtectionGroupDetails
+from .create_dr_protection_group_member_autonomous_container_database_details import CreateDrProtectionGroupMemberAutonomousContainerDatabaseDetails
 from .create_dr_protection_group_member_autonomous_database_details import CreateDrProtectionGroupMemberAutonomousDatabaseDetails
 from .create_dr_protection_group_member_compute_instance_details import CreateDrProtectionGroupMemberComputeInstanceDetails
 from .create_dr_protection_group_member_compute_instance_movable_details import CreateDrProtectionGroupMemberComputeInstanceMovableDetails
@@ -35,6 +36,7 @@ from .create_dr_protection_group_member_details import CreateDrProtectionGroupMe
 from .create_dr_protection_group_member_file_system_details import CreateDrProtectionGroupMemberFileSystemDetails
 from .create_dr_protection_group_member_load_balancer_details import CreateDrProtectionGroupMemberLoadBalancerDetails
 from .create_dr_protection_group_member_network_load_balancer_details import CreateDrProtectionGroupMemberNetworkLoadBalancerDetails
+from .create_dr_protection_group_member_object_storage_bucket_details import CreateDrProtectionGroupMemberObjectStorageBucketDetails
 from .create_dr_protection_group_member_volume_group_details import CreateDrProtectionGroupMemberVolumeGroupDetails
 from .create_file_system_mount_details import CreateFileSystemMountDetails
 from .create_file_system_unmount_details import CreateFileSystemUnmountDetails
@@ -58,6 +60,7 @@ from .dr_plan_user_defined_step import DrPlanUserDefinedStep
 from .dr_protection_group import DrProtectionGroup
 from .dr_protection_group_collection import DrProtectionGroupCollection
 from .dr_protection_group_member import DrProtectionGroupMember
+from .dr_protection_group_member_autonomous_container_database import DrProtectionGroupMemberAutonomousContainerDatabase
 from .dr_protection_group_member_autonomous_database import DrProtectionGroupMemberAutonomousDatabase
 from .dr_protection_group_member_compute_instance import DrProtectionGroupMemberComputeInstance
 from .dr_protection_group_member_compute_instance_movable import DrProtectionGroupMemberComputeInstanceMovable
@@ -66,6 +69,7 @@ from .dr_protection_group_member_database import DrProtectionGroupMemberDatabase
 from .dr_protection_group_member_file_system import DrProtectionGroupMemberFileSystem
 from .dr_protection_group_member_load_balancer import DrProtectionGroupMemberLoadBalancer
 from .dr_protection_group_member_network_load_balancer import DrProtectionGroupMemberNetworkLoadBalancer
+from .dr_protection_group_member_object_storage_bucket import DrProtectionGroupMemberObjectStorageBucket
 from .dr_protection_group_member_volume_group import DrProtectionGroupMemberVolumeGroup
 from .dr_protection_group_summary import DrProtectionGroupSummary
 from .failover_execution_option_details import FailoverExecutionOptionDetails
@@ -115,6 +119,7 @@ from .update_dr_plan_group_details import UpdateDrPlanGroupDetails
 from .update_dr_plan_step_details import UpdateDrPlanStepDetails
 from .update_dr_plan_user_defined_step_details import UpdateDrPlanUserDefinedStepDetails
 from .update_dr_protection_group_details import UpdateDrProtectionGroupDetails
+from .update_dr_protection_group_member_autonomous_container_database_details import UpdateDrProtectionGroupMemberAutonomousContainerDatabaseDetails
 from .update_dr_protection_group_member_autonomous_database_details import UpdateDrProtectionGroupMemberAutonomousDatabaseDetails
 from .update_dr_protection_group_member_compute_instance_details import UpdateDrProtectionGroupMemberComputeInstanceDetails
 from .update_dr_protection_group_member_compute_instance_movable_details import UpdateDrProtectionGroupMemberComputeInstanceMovableDetails
@@ -124,6 +129,7 @@ from .update_dr_protection_group_member_details import UpdateDrProtectionGroupMe
 from .update_dr_protection_group_member_file_system_details import UpdateDrProtectionGroupMemberFileSystemDetails
 from .update_dr_protection_group_member_load_balancer_details import UpdateDrProtectionGroupMemberLoadBalancerDetails
 from .update_dr_protection_group_member_network_load_balancer_details import UpdateDrProtectionGroupMemberNetworkLoadBalancerDetails
+from .update_dr_protection_group_member_object_storage_bucket_details import UpdateDrProtectionGroupMemberObjectStorageBucketDetails
 from .update_dr_protection_group_member_volume_group_details import UpdateDrProtectionGroupMemberVolumeGroupDetails
 from .update_dr_protection_group_role_details import UpdateDrProtectionGroupRoleDetails
 from .update_file_system_mount_details import UpdateFileSystemMountDetails
@@ -167,6 +173,7 @@ disaster_recovery_type_mapping = {
     "CreateDrPlanDetails": CreateDrPlanDetails,
     "CreateDrPlanExecutionDetails": CreateDrPlanExecutionDetails,
     "CreateDrProtectionGroupDetails": CreateDrProtectionGroupDetails,
+    "CreateDrProtectionGroupMemberAutonomousContainerDatabaseDetails": CreateDrProtectionGroupMemberAutonomousContainerDatabaseDetails,
     "CreateDrProtectionGroupMemberAutonomousDatabaseDetails": CreateDrProtectionGroupMemberAutonomousDatabaseDetails,
     "CreateDrProtectionGroupMemberComputeInstanceDetails": CreateDrProtectionGroupMemberComputeInstanceDetails,
     "CreateDrProtectionGroupMemberComputeInstanceMovableDetails": CreateDrProtectionGroupMemberComputeInstanceMovableDetails,
@@ -176,6 +183,7 @@ disaster_recovery_type_mapping = {
     "CreateDrProtectionGroupMemberFileSystemDetails": CreateDrProtectionGroupMemberFileSystemDetails,
     "CreateDrProtectionGroupMemberLoadBalancerDetails": CreateDrProtectionGroupMemberLoadBalancerDetails,
     "CreateDrProtectionGroupMemberNetworkLoadBalancerDetails": CreateDrProtectionGroupMemberNetworkLoadBalancerDetails,
+    "CreateDrProtectionGroupMemberObjectStorageBucketDetails": CreateDrProtectionGroupMemberObjectStorageBucketDetails,
     "CreateDrProtectionGroupMemberVolumeGroupDetails": CreateDrProtectionGroupMemberVolumeGroupDetails,
     "CreateFileSystemMountDetails": CreateFileSystemMountDetails,
     "CreateFileSystemUnmountDetails": CreateFileSystemUnmountDetails,
@@ -199,6 +207,7 @@ disaster_recovery_type_mapping = {
     "DrProtectionGroup": DrProtectionGroup,
     "DrProtectionGroupCollection": DrProtectionGroupCollection,
     "DrProtectionGroupMember": DrProtectionGroupMember,
+    "DrProtectionGroupMemberAutonomousContainerDatabase": DrProtectionGroupMemberAutonomousContainerDatabase,
     "DrProtectionGroupMemberAutonomousDatabase": DrProtectionGroupMemberAutonomousDatabase,
     "DrProtectionGroupMemberComputeInstance": DrProtectionGroupMemberComputeInstance,
     "DrProtectionGroupMemberComputeInstanceMovable": DrProtectionGroupMemberComputeInstanceMovable,
@@ -207,6 +216,7 @@ disaster_recovery_type_mapping = {
     "DrProtectionGroupMemberFileSystem": DrProtectionGroupMemberFileSystem,
     "DrProtectionGroupMemberLoadBalancer": DrProtectionGroupMemberLoadBalancer,
     "DrProtectionGroupMemberNetworkLoadBalancer": DrProtectionGroupMemberNetworkLoadBalancer,
+    "DrProtectionGroupMemberObjectStorageBucket": DrProtectionGroupMemberObjectStorageBucket,
     "DrProtectionGroupMemberVolumeGroup": DrProtectionGroupMemberVolumeGroup,
     "DrProtectionGroupSummary": DrProtectionGroupSummary,
     "FailoverExecutionOptionDetails": FailoverExecutionOptionDetails,
@@ -256,6 +266,7 @@ disaster_recovery_type_mapping = {
     "UpdateDrPlanStepDetails": UpdateDrPlanStepDetails,
     "UpdateDrPlanUserDefinedStepDetails": UpdateDrPlanUserDefinedStepDetails,
     "UpdateDrProtectionGroupDetails": UpdateDrProtectionGroupDetails,
+    "UpdateDrProtectionGroupMemberAutonomousContainerDatabaseDetails": UpdateDrProtectionGroupMemberAutonomousContainerDatabaseDetails,
     "UpdateDrProtectionGroupMemberAutonomousDatabaseDetails": UpdateDrProtectionGroupMemberAutonomousDatabaseDetails,
     "UpdateDrProtectionGroupMemberComputeInstanceDetails": UpdateDrProtectionGroupMemberComputeInstanceDetails,
     "UpdateDrProtectionGroupMemberComputeInstanceMovableDetails": UpdateDrProtectionGroupMemberComputeInstanceMovableDetails,
@@ -265,6 +276,7 @@ disaster_recovery_type_mapping = {
     "UpdateDrProtectionGroupMemberFileSystemDetails": UpdateDrProtectionGroupMemberFileSystemDetails,
     "UpdateDrProtectionGroupMemberLoadBalancerDetails": UpdateDrProtectionGroupMemberLoadBalancerDetails,
     "UpdateDrProtectionGroupMemberNetworkLoadBalancerDetails": UpdateDrProtectionGroupMemberNetworkLoadBalancerDetails,
+    "UpdateDrProtectionGroupMemberObjectStorageBucketDetails": UpdateDrProtectionGroupMemberObjectStorageBucketDetails,
     "UpdateDrProtectionGroupMemberVolumeGroupDetails": UpdateDrProtectionGroupMemberVolumeGroupDetails,
     "UpdateDrProtectionGroupRoleDetails": UpdateDrProtectionGroupRoleDetails,
     "UpdateFileSystemMountDetails": UpdateFileSystemMountDetails,

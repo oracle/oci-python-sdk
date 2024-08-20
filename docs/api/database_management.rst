@@ -137,7 +137,10 @@ Database Management
     oci.database_management.models.DatabaseHomeMetrics
     oci.database_management.models.DatabaseIOAggregateMetrics
     oci.database_management.models.DatabaseInstanceHomeMetricsDefinition
+    oci.database_management.models.DatabaseLifecycleFeatureConfiguration
+    oci.database_management.models.DatabaseLifecycleManagementFeatureDetails
     oci.database_management.models.DatabaseManagementConfig
+    oci.database_management.models.DatabaseNamedCredentialConnectionDetails
     oci.database_management.models.DatabaseNamedCredentialDetails
     oci.database_management.models.DatabaseParameterSummary
     oci.database_management.models.DatabaseParameterUpdateStatus
@@ -146,6 +149,8 @@ Database Management
     oci.database_management.models.DatabasePlan
     oci.database_management.models.DatabasePlanDirective
     oci.database_management.models.DatabaseSecretCredentialDetails
+    oci.database_management.models.DatabaseSqlWatchFeatureConfiguration
+    oci.database_management.models.DatabaseSqlWatchFeatureDetails
     oci.database_management.models.DatabaseSslConnectionCredentials
     oci.database_management.models.DatabaseStorageAggregateMetrics
     oci.database_management.models.DatabaseTimeAggregateMetrics
@@ -225,6 +230,8 @@ Database Management
     oci.database_management.models.ExternalDatabaseDiagnosticsAndManagementFeatureDetails
     oci.database_management.models.ExternalDatabaseFeatureDetails
     oci.database_management.models.ExternalDatabaseInstance
+    oci.database_management.models.ExternalDatabaseLifecycleManagementFeatureDetails
+    oci.database_management.models.ExternalDatabaseSqlWatchFeatureDetails
     oci.database_management.models.ExternalDatabaseSummary
     oci.database_management.models.ExternalDatabaseSystemDiscoverySummary
     oci.database_management.models.ExternalDbHome
@@ -277,6 +284,8 @@ Database Management
     oci.database_management.models.ExternalListenerTcpsEndpoint
     oci.database_management.models.ExternalPluggableDatabaseDiagnosticsAndManagementFeatureDetails
     oci.database_management.models.ExternalPluggableDatabaseFeatureDetails
+    oci.database_management.models.ExternalPluggableDatabaseLifecycleManagementFeatureDetails
+    oci.database_management.models.ExternalPluggableDatabaseSqlWatchFeatureDetails
     oci.database_management.models.ExternalServicedAsm
     oci.database_management.models.ExternalServicedDatabase
     oci.database_management.models.ExternalStorageGridDiscoverySummary

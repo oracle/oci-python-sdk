@@ -244,6 +244,14 @@ class ManagedDatabase(object):
             The value to assign to the system_tags property of this ManagedDatabase.
         :type system_tags: dict(str, dict(str, object))
 
+        :param dbmgmt_feature_configs:
+            The value to assign to the dbmgmt_feature_configs property of this ManagedDatabase.
+        :type dbmgmt_feature_configs: list[oci.database_management.models.DatabaseFeatureConfiguration]
+
+        :param database_platform_name:
+            The value to assign to the database_platform_name property of this ManagedDatabase.
+        :type database_platform_name: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -271,7 +279,9 @@ class ManagedDatabase(object):
             'additional_details': 'dict(str, str)',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'dbmgmt_feature_configs': 'list[DatabaseFeatureConfiguration]',
+            'database_platform_name': 'str'
         }
 
         self.attribute_map = {
@@ -300,7 +310,9 @@ class ManagedDatabase(object):
             'additional_details': 'additionalDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'dbmgmt_feature_configs': 'dbmgmtFeatureConfigs',
+            'database_platform_name': 'databasePlatformName'
         }
 
         self._id = None
@@ -329,6 +341,8 @@ class ManagedDatabase(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._dbmgmt_feature_configs = None
+        self._database_platform_name = None
 
     @property
     def id(self):
@@ -1055,6 +1069,54 @@ class ManagedDatabase(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def dbmgmt_feature_configs(self):
+        """
+        Gets the dbmgmt_feature_configs of this ManagedDatabase.
+        The list of feature configurations
+
+
+        :return: The dbmgmt_feature_configs of this ManagedDatabase.
+        :rtype: list[oci.database_management.models.DatabaseFeatureConfiguration]
+        """
+        return self._dbmgmt_feature_configs
+
+    @dbmgmt_feature_configs.setter
+    def dbmgmt_feature_configs(self, dbmgmt_feature_configs):
+        """
+        Sets the dbmgmt_feature_configs of this ManagedDatabase.
+        The list of feature configurations
+
+
+        :param dbmgmt_feature_configs: The dbmgmt_feature_configs of this ManagedDatabase.
+        :type: list[oci.database_management.models.DatabaseFeatureConfiguration]
+        """
+        self._dbmgmt_feature_configs = dbmgmt_feature_configs
+
+    @property
+    def database_platform_name(self):
+        """
+        Gets the database_platform_name of this ManagedDatabase.
+        The operating system of database.
+
+
+        :return: The database_platform_name of this ManagedDatabase.
+        :rtype: str
+        """
+        return self._database_platform_name
+
+    @database_platform_name.setter
+    def database_platform_name(self, database_platform_name):
+        """
+        Sets the database_platform_name of this ManagedDatabase.
+        The operating system of database.
+
+
+        :param database_platform_name: The database_platform_name of this ManagedDatabase.
+        :type: str
+        """
+        self._database_platform_name = database_platform_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

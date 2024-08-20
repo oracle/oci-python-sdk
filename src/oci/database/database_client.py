@@ -29979,7 +29979,7 @@ class DatabaseClient(object):
         :param str maintenance_subtype: (optional)
             The sub-type of the maintenance run.
 
-            Allowed values are: "QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", "TIMEZONE"
+            Allowed values are: "QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", "TIMEZONE", "CUSTOM_DATABASE_SOFTWARE_IMAGE"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -30062,7 +30062,7 @@ class DatabaseClient(object):
                 )
 
         if 'maintenance_subtype' in kwargs:
-            maintenance_subtype_allowed_values = ["QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", "TIMEZONE"]
+            maintenance_subtype_allowed_values = ["QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", "TIMEZONE", "CUSTOM_DATABASE_SOFTWARE_IMAGE"]
             if kwargs['maintenance_subtype'] not in maintenance_subtype_allowed_values:
                 raise ValueError(
                     f"Invalid value for `maintenance_subtype`, must be one of { maintenance_subtype_allowed_values }"
@@ -30172,7 +30172,7 @@ class DatabaseClient(object):
         :param str maintenance_subtype: (optional)
             The sub-type of the maintenance run.
 
-            Allowed values are: "QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", "TIMEZONE"
+            Allowed values are: "QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", "TIMEZONE", "CUSTOM_DATABASE_SOFTWARE_IMAGE"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -30255,7 +30255,7 @@ class DatabaseClient(object):
                 )
 
         if 'maintenance_subtype' in kwargs:
-            maintenance_subtype_allowed_values = ["QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", "TIMEZONE"]
+            maintenance_subtype_allowed_values = ["QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", "TIMEZONE", "CUSTOM_DATABASE_SOFTWARE_IMAGE"]
             if kwargs['maintenance_subtype'] not in maintenance_subtype_allowed_values:
                 raise ValueError(
                     f"Invalid value for `maintenance_subtype`, must be one of { maintenance_subtype_allowed_values }"

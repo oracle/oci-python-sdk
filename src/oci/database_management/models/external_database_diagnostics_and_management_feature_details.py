@@ -31,7 +31,7 @@ class ExternalDatabaseDiagnosticsAndManagementFeatureDetails(ExternalDatabaseFea
 
         :param feature:
             The value to assign to the feature property of this ExternalDatabaseDiagnosticsAndManagementFeatureDetails.
-            Allowed values for this property are: "DIAGNOSTICS_AND_MANAGEMENT"
+            Allowed values for this property are: "DIAGNOSTICS_AND_MANAGEMENT", "DB_LIFECYCLE_MANAGEMENT", "SQLWATCH"
         :type feature: str
 
         :param connector_details:

@@ -43,6 +43,10 @@ class WorkRequestSummary(object):
     #: This constant has a value of "ENABLE_PROCESS_AUTOMATION"
     OPERATION_TYPE_ENABLE_PROCESS_AUTOMATION = "ENABLE_PROCESS_AUTOMATION"
 
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "EXTEND_DATA_RETENTION"
+    OPERATION_TYPE_EXTEND_DATA_RETENTION = "EXTEND_DATA_RETENTION"
+
     #: A constant which can be used with the status property of a WorkRequestSummary.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -74,7 +78,7 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "CREATE_INTEGRATION_INSTANCE", "UPDATE_INTEGRATION_INSTANCE", "STOP_INTEGRATION_INSTANCE", "START_INTEGRATION_INSTANCE", "DELETE_INTEGRATION_INSTANCE", "CHANGE_PRIVATE_ENDPOINT_OUTBOUND_CONNECTION", "ENABLE_PROCESS_AUTOMATION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_INTEGRATION_INSTANCE", "UPDATE_INTEGRATION_INSTANCE", "STOP_INTEGRATION_INSTANCE", "START_INTEGRATION_INSTANCE", "DELETE_INTEGRATION_INSTANCE", "CHANGE_PRIVATE_ENDPOINT_OUTBOUND_CONNECTION", "ENABLE_PROCESS_AUTOMATION", "EXTEND_DATA_RETENTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -153,7 +157,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the operation_type of this WorkRequestSummary.
         Type of the work request.
 
-        Allowed values for this property are: "CREATE_INTEGRATION_INSTANCE", "UPDATE_INTEGRATION_INSTANCE", "STOP_INTEGRATION_INSTANCE", "START_INTEGRATION_INSTANCE", "DELETE_INTEGRATION_INSTANCE", "CHANGE_PRIVATE_ENDPOINT_OUTBOUND_CONNECTION", "ENABLE_PROCESS_AUTOMATION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_INTEGRATION_INSTANCE", "UPDATE_INTEGRATION_INSTANCE", "STOP_INTEGRATION_INSTANCE", "START_INTEGRATION_INSTANCE", "DELETE_INTEGRATION_INSTANCE", "CHANGE_PRIVATE_ENDPOINT_OUTBOUND_CONNECTION", "ENABLE_PROCESS_AUTOMATION", "EXTEND_DATA_RETENTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -172,7 +176,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["CREATE_INTEGRATION_INSTANCE", "UPDATE_INTEGRATION_INSTANCE", "STOP_INTEGRATION_INSTANCE", "START_INTEGRATION_INSTANCE", "DELETE_INTEGRATION_INSTANCE", "CHANGE_PRIVATE_ENDPOINT_OUTBOUND_CONNECTION", "ENABLE_PROCESS_AUTOMATION"]
+        allowed_values = ["CREATE_INTEGRATION_INSTANCE", "UPDATE_INTEGRATION_INSTANCE", "STOP_INTEGRATION_INSTANCE", "START_INTEGRATION_INSTANCE", "DELETE_INTEGRATION_INSTANCE", "CHANGE_PRIVATE_ENDPOINT_OUTBOUND_CONNECTION", "ENABLE_PROCESS_AUTOMATION", "EXTEND_DATA_RETENTION"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

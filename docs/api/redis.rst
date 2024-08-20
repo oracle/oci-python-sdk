@@ -22,9 +22,11 @@ Redis
     oci.redis.models.CreateRedisClusterDetails
     oci.redis.models.Node
     oci.redis.models.NodeCollection
+    oci.redis.models.NodeSummary
     oci.redis.models.RedisCluster
     oci.redis.models.RedisClusterCollection
     oci.redis.models.RedisClusterSummary
+    oci.redis.models.RedisNodeCollection
     oci.redis.models.UpdateRedisClusterDetails
     oci.redis.models.WorkRequest
     oci.redis.models.WorkRequestError

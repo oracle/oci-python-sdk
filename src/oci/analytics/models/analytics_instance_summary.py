@@ -114,6 +114,18 @@ class AnalyticsInstanceSummary(object):
             The value to assign to the service_url property of this AnalyticsInstanceSummary.
         :type service_url: str
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this AnalyticsInstanceSummary.
+        :type defined_tags: dict(str, dict(str, object))
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this AnalyticsInstanceSummary.
+        :type freeform_tags: dict(str, str)
+
+        :param system_tags:
+            The value to assign to the system_tags property of this AnalyticsInstanceSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param time_created:
             The value to assign to the time_created property of this AnalyticsInstanceSummary.
         :type time_created: datetime
@@ -135,6 +147,9 @@ class AnalyticsInstanceSummary(object):
             'email_notification': 'str',
             'network_endpoint_details': 'NetworkEndpointDetails',
             'service_url': 'str',
+            'defined_tags': 'dict(str, dict(str, object))',
+            'freeform_tags': 'dict(str, str)',
+            'system_tags': 'dict(str, dict(str, object))',
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
@@ -151,6 +166,9 @@ class AnalyticsInstanceSummary(object):
             'email_notification': 'emailNotification',
             'network_endpoint_details': 'networkEndpointDetails',
             'service_url': 'serviceUrl',
+            'defined_tags': 'definedTags',
+            'freeform_tags': 'freeformTags',
+            'system_tags': 'systemTags',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
@@ -166,6 +184,9 @@ class AnalyticsInstanceSummary(object):
         self._email_notification = None
         self._network_endpoint_details = None
         self._service_url = None
+        self._defined_tags = None
+        self._freeform_tags = None
+        self._system_tags = None
         self._time_created = None
         self._time_updated = None
 
@@ -442,6 +463,100 @@ class AnalyticsInstanceSummary(object):
         :type: str
         """
         self._service_url = service_url
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this AnalyticsInstanceSummary.
+        Defined tags for this resource. Each key is predefined and scoped to a
+        namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this AnalyticsInstanceSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this AnalyticsInstanceSummary.
+        Defined tags for this resource. Each key is predefined and scoped to a
+        namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this AnalyticsInstanceSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this AnalyticsInstanceSummary.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this AnalyticsInstanceSummary.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this AnalyticsInstanceSummary.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this AnalyticsInstanceSummary.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this AnalyticsInstanceSummary.
+        System tags for this resource. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"key\": \"value\"}}`
+
+
+        :return: The system_tags of this AnalyticsInstanceSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this AnalyticsInstanceSummary.
+        System tags for this resource. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"key\": \"value\"}}`
+
+
+        :param system_tags: The system_tags of this AnalyticsInstanceSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def time_created(self):

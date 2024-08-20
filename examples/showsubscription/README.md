@@ -8,8 +8,8 @@ Authentication by User or Compute using instance principals,
 **Developed by Adi Zohar, 2021-2024**
 
 ## Modules Included:
-- oci.osub_organization_subscription.OrganizationSubscriptionClient
-- oci.osub_subscription.CommitmentClient
+- oci.onesubscription.OrganizationSubscriptionClient
+- oci.onesubscription.CommitmentClient
 - oci.onesubscription.SubscribedServiceClient
 
 ## Executing using Cloud Shell:

@@ -25,6 +25,7 @@ Integration
     oci.integration.models.CreateCustomEndpointDetails
     oci.integration.models.CreateIntegrationInstanceDetails
     oci.integration.models.CustomEndpointDetails
+    oci.integration.models.ExtendDataRetentionDetails
     oci.integration.models.IdcsInfoDetails
     oci.integration.models.IntegrationInstance
     oci.integration.models.IntegrationInstanceSummary

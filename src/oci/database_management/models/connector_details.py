@@ -40,7 +40,8 @@ class ConnectorDetails(object):
 
         :param connector_type:
             The value to assign to the connector_type property of this ConnectorDetails.
-            Allowed values for this property are: "PE", "MACS", "EXTERNAL"
+            Allowed values for this property are: "PE", "MACS", "EXTERNAL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connector_type: str
 
         """
@@ -82,7 +83,8 @@ class ConnectorDetails(object):
           - MACS: Management agent
           - EXTERNAL: External database connector
 
-        Allowed values for this property are: "PE", "MACS", "EXTERNAL"
+        Allowed values for this property are: "PE", "MACS", "EXTERNAL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The connector_type of this ConnectorDetails.
@@ -105,9 +107,7 @@ class ConnectorDetails(object):
         """
         allowed_values = ["PE", "MACS", "EXTERNAL"]
         if not value_allowed_none_or_none_sentinel(connector_type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `connector_type`, must be None or one of {allowed_values}"
-            )
+            connector_type = 'UNKNOWN_ENUM_VALUE'
         self._connector_type = connector_type
 
     def __repr__(self):

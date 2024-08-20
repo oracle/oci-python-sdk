@@ -1873,11 +1873,6 @@ class DisasterRecoveryClient(object):
 
             Example: `ocid1.drplanexecution.oc1..uniqueID`
 
-        :param str dr_plan_execution_type: (optional)
-            The DR plan execution type.
-
-            Allowed values are: "SWITCHOVER", "SWITCHOVER_PRECHECK", "FAILOVER", "FAILOVER_PRECHECK", "START_DRILL", "START_DRILL_PRECHECK", "STOP_DRILL", "STOP_DRILL_PRECHECK"
-
         :param str display_name: (optional)
             A filter to return only resources that match the given display name.
 
@@ -1951,7 +1946,6 @@ class DisasterRecoveryClient(object):
             "retry_strategy",
             "lifecycle_state",
             "dr_plan_execution_id",
-            "dr_plan_execution_type",
             "display_name",
             "limit",
             "page",
@@ -1969,13 +1963,6 @@ class DisasterRecoveryClient(object):
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
-                )
-
-        if 'dr_plan_execution_type' in kwargs:
-            dr_plan_execution_type_allowed_values = ["SWITCHOVER", "SWITCHOVER_PRECHECK", "FAILOVER", "FAILOVER_PRECHECK", "START_DRILL", "START_DRILL_PRECHECK", "STOP_DRILL", "STOP_DRILL_PRECHECK"]
-            if kwargs['dr_plan_execution_type'] not in dr_plan_execution_type_allowed_values:
-                raise ValueError(
-                    f"Invalid value for `dr_plan_execution_type`, must be one of { dr_plan_execution_type_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
@@ -1996,7 +1983,6 @@ class DisasterRecoveryClient(object):
             "drProtectionGroupId": dr_protection_group_id,
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "drPlanExecutionId": kwargs.get("dr_plan_execution_id", missing),
-            "drPlanExecutionType": kwargs.get("dr_plan_execution_type", missing),
             "displayName": kwargs.get("display_name", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),

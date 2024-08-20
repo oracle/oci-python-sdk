@@ -65,6 +65,8 @@ Mysql
     oci.mysql.models.CreateDeletionPolicyDetails
     oci.mysql.models.CreateMaintenanceDetails
     oci.mysql.models.CreateReplicaDetails
+    oci.mysql.models.DataStorage
+    oci.mysql.models.DataStorageDetails
     oci.mysql.models.DbSystem
     oci.mysql.models.DbSystemEndpoint
     oci.mysql.models.DbSystemPlacement

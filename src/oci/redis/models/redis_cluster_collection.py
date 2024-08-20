@@ -12,9 +12,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RedisClusterCollection(object):
     """
-    A list of Redis clusters that match filter criteria, if any. A Redis cluster is a memory-based storage solution. For more information, see `OCI Caching Service with Redis`__.
+    A list of clusters that match filter criteria, if any. A cluster is a memory-based storage solution. For more information, see `OCI Cache`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/redis/home.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm
     """
 
     def __init__(self, **kwargs):
@@ -41,7 +41,7 @@ class RedisClusterCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this RedisClusterCollection.
-        The list of Redis clusters.
+        The list of clusters.
 
 
         :return: The items of this RedisClusterCollection.
@@ -53,7 +53,7 @@ class RedisClusterCollection(object):
     def items(self, items):
         """
         Sets the items of this RedisClusterCollection.
-        The list of Redis clusters.
+        The list of clusters.
 
 
         :param items: The items of this RedisClusterCollection.

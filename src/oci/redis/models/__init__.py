@@ -10,9 +10,11 @@ from .change_redis_cluster_compartment_details import ChangeRedisClusterCompartm
 from .create_redis_cluster_details import CreateRedisClusterDetails
 from .node import Node
 from .node_collection import NodeCollection
+from .node_summary import NodeSummary
 from .redis_cluster import RedisCluster
 from .redis_cluster_collection import RedisClusterCollection
 from .redis_cluster_summary import RedisClusterSummary
+from .redis_node_collection import RedisNodeCollection
 from .update_redis_cluster_details import UpdateRedisClusterDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
@@ -29,9 +31,11 @@ redis_type_mapping = {
     "CreateRedisClusterDetails": CreateRedisClusterDetails,
     "Node": Node,
     "NodeCollection": NodeCollection,
+    "NodeSummary": NodeSummary,
     "RedisCluster": RedisCluster,
     "RedisClusterCollection": RedisClusterCollection,
     "RedisClusterSummary": RedisClusterSummary,
+    "RedisNodeCollection": RedisNodeCollection,
     "UpdateRedisClusterDetails": UpdateRedisClusterDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,

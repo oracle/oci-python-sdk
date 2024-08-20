@@ -84,6 +84,10 @@ class UpdateDbSystemDetails(object):
             The value to assign to the data_storage_size_in_gbs property of this UpdateDbSystemDetails.
         :type data_storage_size_in_gbs: int
 
+        :param data_storage:
+            The value to assign to the data_storage property of this UpdateDbSystemDetails.
+        :type data_storage: oci.mysql.models.DataStorageDetails
+
         :param hostname_label:
             The value to assign to the hostname_label property of this UpdateDbSystemDetails.
         :type hostname_label: str
@@ -148,6 +152,7 @@ class UpdateDbSystemDetails(object):
             'admin_username': 'str',
             'admin_password': 'str',
             'data_storage_size_in_gbs': 'int',
+            'data_storage': 'DataStorageDetails',
             'hostname_label': 'str',
             'ip_address': 'str',
             'port': 'int',
@@ -175,6 +180,7 @@ class UpdateDbSystemDetails(object):
             'admin_username': 'adminUsername',
             'admin_password': 'adminPassword',
             'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
+            'data_storage': 'dataStorage',
             'hostname_label': 'hostnameLabel',
             'ip_address': 'ipAddress',
             'port': 'port',
@@ -201,6 +207,7 @@ class UpdateDbSystemDetails(object):
         self._admin_username = None
         self._admin_password = None
         self._data_storage_size_in_gbs = None
+        self._data_storage = None
         self._hostname_label = None
         self._ip_address = None
         self._port = None
@@ -573,6 +580,26 @@ class UpdateDbSystemDetails(object):
         :type: int
         """
         self._data_storage_size_in_gbs = data_storage_size_in_gbs
+
+    @property
+    def data_storage(self):
+        """
+        Gets the data_storage of this UpdateDbSystemDetails.
+
+        :return: The data_storage of this UpdateDbSystemDetails.
+        :rtype: oci.mysql.models.DataStorageDetails
+        """
+        return self._data_storage
+
+    @data_storage.setter
+    def data_storage(self, data_storage):
+        """
+        Sets the data_storage of this UpdateDbSystemDetails.
+
+        :param data_storage: The data_storage of this UpdateDbSystemDetails.
+        :type: oci.mysql.models.DataStorageDetails
+        """
+        self._data_storage = data_storage
 
     @property
     def hostname_label(self):

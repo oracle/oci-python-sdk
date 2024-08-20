@@ -63,6 +63,10 @@ class IntegrationInstance(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the lifecycle_state property of a IntegrationInstance.
+    #: This constant has a value of "STANDBY"
+    LIFECYCLE_STATE_STANDBY = "STANDBY"
+
     #: A constant which can be used with the consumption_model property of a IntegrationInstance.
     #: This constant has a value of "UCM"
     CONSUMPTION_MODEL_UCM = "UCM"
@@ -82,6 +86,18 @@ class IntegrationInstance(object):
     #: A constant which can be used with the shape property of a IntegrationInstance.
     #: This constant has a value of "PRODUCTION"
     SHAPE_PRODUCTION = "PRODUCTION"
+
+    #: A constant which can be used with the data_retention_period property of a IntegrationInstance.
+    #: This constant has a value of "MONTHS_1"
+    DATA_RETENTION_PERIOD_MONTHS_1 = "MONTHS_1"
+
+    #: A constant which can be used with the data_retention_period property of a IntegrationInstance.
+    #: This constant has a value of "MONTHS_3"
+    DATA_RETENTION_PERIOD_MONTHS_3 = "MONTHS_3"
+
+    #: A constant which can be used with the data_retention_period property of a IntegrationInstance.
+    #: This constant has a value of "MONTHS_6"
+    DATA_RETENTION_PERIOD_MONTHS_6 = "MONTHS_6"
 
     def __init__(self, **kwargs):
         """
@@ -116,7 +132,7 @@ class IntegrationInstance(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this IntegrationInstance.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "STANDBY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -192,6 +208,12 @@ class IntegrationInstance(object):
             The value to assign to the private_endpoint_outbound_connection property of this IntegrationInstance.
         :type private_endpoint_outbound_connection: oci.integration.models.OutboundConnection
 
+        :param data_retention_period:
+            The value to assign to the data_retention_period property of this IntegrationInstance.
+            Allowed values for this property are: "MONTHS_1", "MONTHS_3", "MONTHS_6", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type data_retention_period: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -217,7 +239,8 @@ class IntegrationInstance(object):
             'idcs_info': 'IdcsInfoDetails',
             'attachments': 'list[AttachmentDetails]',
             'shape': 'str',
-            'private_endpoint_outbound_connection': 'OutboundConnection'
+            'private_endpoint_outbound_connection': 'OutboundConnection',
+            'data_retention_period': 'str'
         }
 
         self.attribute_map = {
@@ -244,7 +267,8 @@ class IntegrationInstance(object):
             'idcs_info': 'idcsInfo',
             'attachments': 'attachments',
             'shape': 'shape',
-            'private_endpoint_outbound_connection': 'privateEndpointOutboundConnection'
+            'private_endpoint_outbound_connection': 'privateEndpointOutboundConnection',
+            'data_retention_period': 'dataRetentionPeriod'
         }
 
         self._id = None
@@ -271,6 +295,7 @@ class IntegrationInstance(object):
         self._attachments = None
         self._shape = None
         self._private_endpoint_outbound_connection = None
+        self._data_retention_period = None
 
     @property
     def id(self):
@@ -432,7 +457,7 @@ class IntegrationInstance(object):
         Gets the lifecycle_state of this IntegrationInstance.
         The current state of the integration instance.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -451,7 +476,7 @@ class IntegrationInstance(object):
         :param lifecycle_state: The lifecycle_state of this IntegrationInstance.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "STANDBY"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -869,6 +894,36 @@ class IntegrationInstance(object):
         :type: oci.integration.models.OutboundConnection
         """
         self._private_endpoint_outbound_connection = private_endpoint_outbound_connection
+
+    @property
+    def data_retention_period(self):
+        """
+        Gets the data_retention_period of this IntegrationInstance.
+        Data retention period set for given integration instance
+
+        Allowed values for this property are: "MONTHS_1", "MONTHS_3", "MONTHS_6", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The data_retention_period of this IntegrationInstance.
+        :rtype: str
+        """
+        return self._data_retention_period
+
+    @data_retention_period.setter
+    def data_retention_period(self, data_retention_period):
+        """
+        Sets the data_retention_period of this IntegrationInstance.
+        Data retention period set for given integration instance
+
+
+        :param data_retention_period: The data_retention_period of this IntegrationInstance.
+        :type: str
+        """
+        allowed_values = ["MONTHS_1", "MONTHS_3", "MONTHS_6"]
+        if not value_allowed_none_or_none_sentinel(data_retention_period, allowed_values):
+            data_retention_period = 'UNKNOWN_ENUM_VALUE'
+        self._data_retention_period = data_retention_period
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -57,6 +57,8 @@ class Capacity(object):
         """
         **[Required]** Gets the capacity_type of this Capacity.
         The capacity model to use.
+        Accepted values are:
+        OLPU_COUNT, USER_COUNT
 
         Allowed values for this property are: "OLPU_COUNT", "USER_COUNT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -72,6 +74,8 @@ class Capacity(object):
         """
         Sets the capacity_type of this Capacity.
         The capacity model to use.
+        Accepted values are:
+        OLPU_COUNT, USER_COUNT
 
 
         :param capacity_type: The capacity_type of this Capacity.
@@ -86,8 +90,8 @@ class Capacity(object):
     def capacity_value(self):
         """
         **[Required]** Gets the capacity_value of this Capacity.
-        The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the
-        number of CPUs, amount of memory or other resources allocated to the instance.
+        The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT).
+        This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
 
 
         :return: The capacity_value of this Capacity.
@@ -99,8 +103,8 @@ class Capacity(object):
     def capacity_value(self, capacity_value):
         """
         Sets the capacity_value of this Capacity.
-        The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the
-        number of CPUs, amount of memory or other resources allocated to the instance.
+        The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT).
+        This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
 
 
         :param capacity_value: The capacity_value of this Capacity.

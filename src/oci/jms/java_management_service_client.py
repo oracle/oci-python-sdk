@@ -169,7 +169,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/actions/addInstallationSites"
         method = "POST"
         operation_name = "add_fleet_installation_sites"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationSiteSummary/AddFleetInstallationSites"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -281,7 +281,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequest/CancelWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -398,7 +398,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_fleet_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/ChangeFleetCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -513,7 +513,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/blocklists"
         method = "POST"
         operation_name = "create_blocklist"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Blocklist/CreateBlocklist"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -635,7 +635,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/drsFiles"
         method = "POST"
         operation_name = "create_drs_file"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/CreateDrsFile"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -753,7 +753,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets"
         method = "POST"
         operation_name = "create_fleet"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/CreateFleet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -851,7 +851,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/jmsPlugins"
         method = "POST"
         operation_name = "create_jms_plugin"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JmsPlugin/CreateJmsPlugin"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -954,7 +954,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/blocklists/{blocklistKey}"
         method = "DELETE"
         operation_name = "delete_blocklist"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Blocklist/DeleteBlocklist"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1065,7 +1065,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/cryptoAnalysisResults/{cryptoAnalysisResultId}"
         method = "DELETE"
         operation_name = "delete_crypto_analysis_result"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/CryptoAnalysisResult/DeleteCryptoAnalysisResult"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1176,7 +1176,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/drsFiles/{drsFileKey}"
         method = "DELETE"
         operation_name = "delete_drs_file"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DrsFile/DeleteDrsFile"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1284,7 +1284,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}"
         method = "DELETE"
         operation_name = "delete_fleet"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/DeleteFleet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1394,7 +1394,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/javaMigrationAnalysisResults/{javaMigrationAnalysisResultId}"
         method = "DELETE"
         operation_name = "delete_java_migration_analysis_result"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaMigrationAnalysisResult/DeleteJavaMigrationAnalysisResult"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1503,7 +1503,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/jmsPlugins/{jmsPluginId}"
         method = "DELETE"
         operation_name = "delete_jms_plugin"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JmsPlugin/DeleteJmsPlugin"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1613,7 +1613,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/performanceTuningAnalysisResults/{performanceTuningAnalysisResultId}"
         method = "DELETE"
         operation_name = "delete_performance_tuning_analysis_result"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/PerformanceTuningAnalysisResult/DeletePerformanceTuningAnalysisResult"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1731,7 +1731,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/actions/disableDrs"
         method = "POST"
         operation_name = "disable_drs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/DisableDrs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1853,7 +1853,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/actions/enableDrs"
         method = "POST"
         operation_name = "enable_drs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/EnableDrs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1961,7 +1961,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/actions/generateAgentDeployScript"
         method = "POST"
         operation_name = "generate_agent_deploy_script"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/GenerateAgentDeployScript"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2061,7 +2061,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/agentInstallers/actions/generateAgentInstallerConfiguration"
         method = "POST"
         operation_name = "generate_agent_installer_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/AgentInstallerSummary/GenerateAgentInstallerConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2154,7 +2154,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/actions/generateLoadPipelineScript"
         method = "POST"
         operation_name = "generate_load_pipeline_script"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/GenerateLoadPipelineScript"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2259,7 +2259,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/cryptoAnalysisResults/{cryptoAnalysisResultId}"
         method = "GET"
         operation_name = "get_crypto_analysis_result"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/CryptoAnalysisResult/GetCryptoAnalysisResult"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2366,7 +2366,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/drsFiles/{drsFileKey}"
         method = "GET"
         operation_name = "get_drs_file"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DrsFile/GetDrsFile"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2475,7 +2475,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/exportSetting"
         method = "GET"
         operation_name = "get_export_setting"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ExportSetting/GetExportSetting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2575,7 +2575,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/exportStatus"
         method = "GET"
         operation_name = "get_export_status"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ExportStatus/GetExportStatus"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2675,7 +2675,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}"
         method = "GET"
         operation_name = "get_fleet"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/GetFleet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2782,7 +2782,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/advancedFeatureConfiguration"
         method = "GET"
         operation_name = "get_fleet_advanced_feature_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetAdvancedFeatureConfiguration/GetFleetAdvancedFeatureConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2884,7 +2884,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/agentConfiguration"
         method = "GET"
         operation_name = "get_fleet_agent_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetAgentConfiguration/GetFleetAgentConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2982,7 +2982,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/javaFamilies/{familyVersion}"
         method = "GET"
         operation_name = "get_java_family"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaFamily/GetJavaFamily"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3085,7 +3085,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/javaMigrationAnalysisResults/{javaMigrationAnalysisResultId}"
         method = "GET"
         operation_name = "get_java_migration_analysis_result"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaMigrationAnalysisResult/GetJavaMigrationAnalysisResult"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3184,7 +3184,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/javaReleases/{releaseVersion}"
         method = "GET"
         operation_name = "get_java_release"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaRelease/GetJavaRelease"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3284,7 +3284,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/jmsPlugins/{jmsPluginId}"
         method = "GET"
         operation_name = "get_jms_plugin"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JmsPlugin/GetJmsPlugin"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3387,7 +3387,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/performanceTuningAnalysisResults/{performanceTuningAnalysisResultId}"
         method = "GET"
         operation_name = "get_performance_tuning_analysis_result"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/PerformanceTuningAnalysisResult/GetPerformanceTuningAnalysisResult"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3488,7 +3488,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3619,7 +3619,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/agentInstallers"
         method = "GET"
         operation_name = "list_agent_installers"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/AgentInstallerSummary/ListAgentInstallers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3782,7 +3782,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/announcements"
         method = "GET"
         operation_name = "list_announcements"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/AnnouncementCollection/ListAnnouncements"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3930,7 +3930,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/blocklists"
         method = "GET"
         operation_name = "list_blocklists"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Blocklist/ListBlocklists"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4123,7 +4123,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/cryptoAnalysisResults"
         method = "GET"
         operation_name = "list_crypto_analysis_results"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/CryptoAnalysisResult/ListCryptoAnalysisResults"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4294,7 +4294,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/drsFiles"
         method = "GET"
         operation_name = "list_drs_files"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DrsFileCollection/ListDrsFiles"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4428,7 +4428,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/diagnoses"
         method = "GET"
         operation_name = "list_fleet_diagnoses"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetDiagnosisSummary/ListFleetDiagnoses"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4573,7 +4573,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets"
         method = "GET"
         operation_name = "list_fleets"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/ListFleets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4766,7 +4766,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/installationSites"
         method = "GET"
         operation_name = "list_installation_sites"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationSiteSummary/ListInstallationSites"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4952,7 +4952,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/javaFamilies"
         method = "GET"
         operation_name = "list_java_families"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaFamily/ListJavaFamilies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5113,7 +5113,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/javaMigrationAnalysisResults"
         method = "GET"
         operation_name = "list_java_migration_analysis_results"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaMigrationAnalysisResult/ListJavaMigrationAnalysisResults"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5283,7 +5283,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/javaReleases"
         method = "GET"
         operation_name = "list_java_releases"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaRelease/ListJavaReleases"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5487,7 +5487,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/jmsPlugins"
         method = "GET"
         operation_name = "list_jms_plugins"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JmsPlugin/ListJmsPlugins"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5679,7 +5679,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/listJreUsage"
         method = "GET"
         operation_name = "list_jre_usage"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JreUsage/ListJreUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5847,7 +5847,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/performanceTuningAnalysisResults"
         method = "GET"
         operation_name = "list_performance_tuning_analysis_results"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/PerformanceTuningAnalysisResult/ListPerformanceTuningAnalysisResults"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5991,7 +5991,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/workRequests/{workRequestId}/workItems"
         method = "GET"
         operation_name = "list_work_items"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkItemSummary/ListWorkItems"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6107,7 +6107,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6223,7 +6223,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6360,7 +6360,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6502,7 +6502,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/actions/removeInstallationSites"
         method = "POST"
         operation_name = "remove_fleet_installation_sites"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationSiteSummary/RemoveFleetInstallationSites"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6610,7 +6610,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/actions/requestCryptoAnalyses"
         method = "POST"
         operation_name = "request_crypto_analyses"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/RequestCryptoAnalyses"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6714,7 +6714,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/actions/requestDeployedApplicationMigrationAnalyses"
         method = "POST"
         operation_name = "request_deployed_application_migration_analyses"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/RequestDeployedApplicationMigrationAnalyses"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6818,7 +6818,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/actions/requestJavaMigrationAnalyses"
         method = "POST"
         operation_name = "request_java_migration_analyses"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/RequestJavaMigrationAnalyses"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6921,7 +6921,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/actions/requestJfrRecordings"
         method = "POST"
         operation_name = "request_jfr_recordings"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/RequestJfrRecordings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7025,7 +7025,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/actions/requestPerformanceTuningAnalyses"
         method = "POST"
         operation_name = "request_performance_tuning_analyses"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/RequestPerformanceTuningAnalyses"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7142,7 +7142,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/actions/scanJavaServerUsage"
         method = "POST"
         operation_name = "scan_java_server_usage"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaServerUsage/ScanJavaServerUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7264,7 +7264,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/actions/scanLibraryUsage"
         method = "POST"
         operation_name = "scan_library_usage"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/LibraryUsage/ScanLibraryUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7440,7 +7440,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/actions/summarizeApplicationInstallationUsage"
         method = "GET"
         operation_name = "summarize_application_installation_usage"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ApplicationInstallationUsageSummary/SummarizeApplicationInstallationUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7678,7 +7678,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/actions/summarizeApplicationUsage"
         method = "GET"
         operation_name = "summarize_application_usage"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ApplicationUsage/SummarizeApplicationUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7904,7 +7904,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/actions/summarizeDeployedApplicationInstallationUsage"
         method = "GET"
         operation_name = "summarize_deployed_application_installation_usage"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DeployedApplicationInstallationUsageSummary/SummarizeDeployedApplicationInstallationUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8102,7 +8102,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/actions/summarizeDeployedApplicationUsage"
         method = "GET"
         operation_name = "summarize_deployed_application_usage"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DeployedApplicationUsage/SummarizeDeployedApplicationUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8310,7 +8310,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/actions/summarizeInstallationUsage"
         method = "GET"
         operation_name = "summarize_installation_usage"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationUsage/SummarizeInstallationUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8524,7 +8524,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/actions/summarizeJavaServerInstanceUsage"
         method = "GET"
         operation_name = "summarize_java_server_instance_usage"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaServerInstanceUsage/SummarizeJavaServerInstanceUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8709,7 +8709,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/actions/summarizeJavaServerUsage"
         method = "GET"
         operation_name = "summarize_java_server_usage"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaServerUsage/SummarizeJavaServerUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8915,7 +8915,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/actions/summarizeJreUsage"
         method = "GET"
         operation_name = "summarize_jre_usage"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JreUsage/SummarizeJreUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9139,7 +9139,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/actions/summarizeLibraryUsage"
         method = "GET"
         operation_name = "summarize_library_usage"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/LibraryUsage/SummarizeLibraryUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9358,7 +9358,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/actions/summarizeManagedInstanceUsage"
         method = "GET"
         operation_name = "summarize_managed_instance_usage"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ManagedInstanceUsage/SummarizeManagedInstanceUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9545,7 +9545,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/summarizeResourceInventory"
         method = "GET"
         operation_name = "summarize_resource_inventory"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/SummarizeResourceInventory"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9665,7 +9665,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/drsFiles/{drsFileKey}"
         method = "PUT"
         operation_name = "update_drs_file"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/UpdateDrsFile"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9781,7 +9781,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/exportSetting"
         method = "PUT"
         operation_name = "update_export_setting"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ExportSetting/UpdateExportSetting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9895,7 +9895,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}"
         method = "PUT"
         operation_name = "update_fleet"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/UpdateFleet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10015,7 +10015,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/advancedFeatureConfiguration"
         method = "PUT"
         operation_name = "update_fleet_advanced_feature_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetAdvancedFeatureConfiguration/UpdateFleetAdvancedFeatureConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10132,7 +10132,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/fleets/{fleetId}/agentConfiguration"
         method = "PUT"
         operation_name = "update_fleet_agent_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetAgentConfiguration/UpdateFleetAgentConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10244,7 +10244,7 @@ class JavaManagementServiceClient(object):
         resource_path = "/jmsPlugins/{jmsPluginId}"
         method = "PUT"
         operation_name = "update_jms_plugin"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JmsPlugin/UpdateJmsPlugin"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

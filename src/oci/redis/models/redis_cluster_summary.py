@@ -12,9 +12,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RedisClusterSummary(object):
     """
-    Summary of information about a Redis cluster. A Redis cluster is a memory-based storage solution. For more information, see `OCI Caching Service with Redis`__.
+    Summary of information about a cluster. A cluster is a memory-based storage solution. For more information, see `OCI Cache`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/redis/home.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm
     """
 
     def __init__(self, **kwargs):
@@ -82,6 +82,14 @@ class RedisClusterSummary(object):
             The value to assign to the time_updated property of this RedisClusterSummary.
         :type time_updated: datetime
 
+        :param cluster_mode:
+            The value to assign to the cluster_mode property of this RedisClusterSummary.
+        :type cluster_mode: str
+
+        :param shard_count:
+            The value to assign to the shard_count property of this RedisClusterSummary.
+        :type shard_count: int
+
         :param nsg_ids:
             The value to assign to the nsg_ids property of this RedisClusterSummary.
         :type nsg_ids: list[str]
@@ -115,6 +123,8 @@ class RedisClusterSummary(object):
             'subnet_id': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'cluster_mode': 'str',
+            'shard_count': 'int',
             'nsg_ids': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -137,6 +147,8 @@ class RedisClusterSummary(object):
             'subnet_id': 'subnetId',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'cluster_mode': 'clusterMode',
+            'shard_count': 'shardCount',
             'nsg_ids': 'nsgIds',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -158,6 +170,8 @@ class RedisClusterSummary(object):
         self._subnet_id = None
         self._time_created = None
         self._time_updated = None
+        self._cluster_mode = None
+        self._shard_count = None
         self._nsg_ids = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -167,7 +181,7 @@ class RedisClusterSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this RedisClusterSummary.
-        The `OCID`__ of the Redis cluster.
+        The `OCID`__ of the cluster.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
@@ -181,7 +195,7 @@ class RedisClusterSummary(object):
     def id(self, id):
         """
         Sets the id of this RedisClusterSummary.
-        The `OCID`__ of the Redis cluster.
+        The `OCID`__ of the cluster.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
@@ -219,7 +233,7 @@ class RedisClusterSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this RedisClusterSummary.
-        The `OCID`__ of the compartment that contains the Redis cluster.
+        The `OCID`__ of the compartment that contains the cluster.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
@@ -233,7 +247,7 @@ class RedisClusterSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this RedisClusterSummary.
-        The `OCID`__ of the compartment that contains the Redis cluster.
+        The `OCID`__ of the compartment that contains the cluster.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
@@ -247,7 +261,7 @@ class RedisClusterSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this RedisClusterSummary.
-        The current state of the Redis cluster.
+        The current state of the cluster.
 
 
         :return: The lifecycle_state of this RedisClusterSummary.
@@ -259,7 +273,7 @@ class RedisClusterSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this RedisClusterSummary.
-        The current state of the Redis cluster.
+        The current state of the cluster.
 
 
         :param lifecycle_state: The lifecycle_state of this RedisClusterSummary.
@@ -295,7 +309,7 @@ class RedisClusterSummary(object):
     def node_count(self):
         """
         **[Required]** Gets the node_count of this RedisClusterSummary.
-        The number of nodes in the Redis cluster.
+        The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
 
 
         :return: The node_count of this RedisClusterSummary.
@@ -307,7 +321,7 @@ class RedisClusterSummary(object):
     def node_count(self, node_count):
         """
         Sets the node_count of this RedisClusterSummary.
-        The number of nodes in the Redis cluster.
+        The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
 
 
         :param node_count: The node_count of this RedisClusterSummary.
@@ -319,7 +333,7 @@ class RedisClusterSummary(object):
     def node_memory_in_gbs(self):
         """
         **[Required]** Gets the node_memory_in_gbs of this RedisClusterSummary.
-        The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
+        The amount of memory allocated to the cluster's nodes, in gigabytes.
 
 
         :return: The node_memory_in_gbs of this RedisClusterSummary.
@@ -331,7 +345,7 @@ class RedisClusterSummary(object):
     def node_memory_in_gbs(self, node_memory_in_gbs):
         """
         Sets the node_memory_in_gbs of this RedisClusterSummary.
-        The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
+        The amount of memory allocated to the cluster's nodes, in gigabytes.
 
 
         :param node_memory_in_gbs: The node_memory_in_gbs of this RedisClusterSummary.
@@ -343,7 +357,7 @@ class RedisClusterSummary(object):
     def primary_fqdn(self):
         """
         **[Required]** Gets the primary_fqdn of this RedisClusterSummary.
-        The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
+        The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
 
 
         :return: The primary_fqdn of this RedisClusterSummary.
@@ -355,7 +369,7 @@ class RedisClusterSummary(object):
     def primary_fqdn(self, primary_fqdn):
         """
         Sets the primary_fqdn of this RedisClusterSummary.
-        The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
+        The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
 
 
         :param primary_fqdn: The primary_fqdn of this RedisClusterSummary.
@@ -367,7 +381,7 @@ class RedisClusterSummary(object):
     def primary_endpoint_ip_address(self):
         """
         **[Required]** Gets the primary_endpoint_ip_address of this RedisClusterSummary.
-        The private IP address of the API endpoint for the Redis cluster's primary node.
+        The private IP address of the API endpoint for the cluster's primary node.
 
 
         :return: The primary_endpoint_ip_address of this RedisClusterSummary.
@@ -379,7 +393,7 @@ class RedisClusterSummary(object):
     def primary_endpoint_ip_address(self, primary_endpoint_ip_address):
         """
         Sets the primary_endpoint_ip_address of this RedisClusterSummary.
-        The private IP address of the API endpoint for the Redis cluster's primary node.
+        The private IP address of the API endpoint for the cluster's primary node.
 
 
         :param primary_endpoint_ip_address: The primary_endpoint_ip_address of this RedisClusterSummary.
@@ -391,7 +405,7 @@ class RedisClusterSummary(object):
     def replicas_fqdn(self):
         """
         **[Required]** Gets the replicas_fqdn of this RedisClusterSummary.
-        The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's replica nodes.
+        The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
 
 
         :return: The replicas_fqdn of this RedisClusterSummary.
@@ -403,7 +417,7 @@ class RedisClusterSummary(object):
     def replicas_fqdn(self, replicas_fqdn):
         """
         Sets the replicas_fqdn of this RedisClusterSummary.
-        The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's replica nodes.
+        The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
 
 
         :param replicas_fqdn: The replicas_fqdn of this RedisClusterSummary.
@@ -415,7 +429,7 @@ class RedisClusterSummary(object):
     def replicas_endpoint_ip_address(self):
         """
         **[Required]** Gets the replicas_endpoint_ip_address of this RedisClusterSummary.
-        The private IP address of the API endpoint for the Redis cluster's replica nodes.
+        The private IP address of the API endpoint for the cluster's replica nodes.
 
 
         :return: The replicas_endpoint_ip_address of this RedisClusterSummary.
@@ -427,7 +441,7 @@ class RedisClusterSummary(object):
     def replicas_endpoint_ip_address(self, replicas_endpoint_ip_address):
         """
         Sets the replicas_endpoint_ip_address of this RedisClusterSummary.
-        The private IP address of the API endpoint for the Redis cluster's replica nodes.
+        The private IP address of the API endpoint for the cluster's replica nodes.
 
 
         :param replicas_endpoint_ip_address: The replicas_endpoint_ip_address of this RedisClusterSummary.
@@ -439,7 +453,7 @@ class RedisClusterSummary(object):
     def software_version(self):
         """
         **[Required]** Gets the software_version of this RedisClusterSummary.
-        The Redis version that the cluster is running.
+        The OCI Cache engine version that the cluster is running.
 
 
         :return: The software_version of this RedisClusterSummary.
@@ -451,7 +465,7 @@ class RedisClusterSummary(object):
     def software_version(self, software_version):
         """
         Sets the software_version of this RedisClusterSummary.
-        The Redis version that the cluster is running.
+        The OCI Cache engine version that the cluster is running.
 
 
         :param software_version: The software_version of this RedisClusterSummary.
@@ -463,7 +477,7 @@ class RedisClusterSummary(object):
     def subnet_id(self):
         """
         **[Required]** Gets the subnet_id of this RedisClusterSummary.
-        The `OCID`__ of the Redis cluster's subnet.
+        The `OCID`__ of the cluster's subnet.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
@@ -477,7 +491,7 @@ class RedisClusterSummary(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this RedisClusterSummary.
-        The `OCID`__ of the Redis cluster's subnet.
+        The `OCID`__ of the cluster's subnet.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle
 
@@ -491,7 +505,7 @@ class RedisClusterSummary(object):
     def time_created(self):
         """
         Gets the time_created of this RedisClusterSummary.
-        The date and time the Redis cluster was created. An `RFC3339`__ formatted datetime string.
+        The date and time the cluster was created. An `RFC3339`__ formatted datetime string.
 
         __ https://datatracker.ietf.org/doc/html/rfc3339
 
@@ -505,7 +519,7 @@ class RedisClusterSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this RedisClusterSummary.
-        The date and time the Redis cluster was created. An `RFC3339`__ formatted datetime string.
+        The date and time the cluster was created. An `RFC3339`__ formatted datetime string.
 
         __ https://datatracker.ietf.org/doc/html/rfc3339
 
@@ -519,7 +533,7 @@ class RedisClusterSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this RedisClusterSummary.
-        The date and time the Redis cluster was updated. An `RFC3339`__ formatted datetime string.
+        The date and time the cluster was updated. An `RFC3339`__ formatted datetime string.
 
         __ https://datatracker.ietf.org/doc/html/rfc3339
 
@@ -533,7 +547,7 @@ class RedisClusterSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this RedisClusterSummary.
-        The date and time the Redis cluster was updated. An `RFC3339`__ formatted datetime string.
+        The date and time the cluster was updated. An `RFC3339`__ formatted datetime string.
 
         __ https://datatracker.ietf.org/doc/html/rfc3339
 
@@ -544,15 +558,63 @@ class RedisClusterSummary(object):
         self._time_updated = time_updated
 
     @property
+    def cluster_mode(self):
+        """
+        Gets the cluster_mode of this RedisClusterSummary.
+        Specifies whether the cluster is sharded or non-sharded.
+
+
+        :return: The cluster_mode of this RedisClusterSummary.
+        :rtype: str
+        """
+        return self._cluster_mode
+
+    @cluster_mode.setter
+    def cluster_mode(self, cluster_mode):
+        """
+        Sets the cluster_mode of this RedisClusterSummary.
+        Specifies whether the cluster is sharded or non-sharded.
+
+
+        :param cluster_mode: The cluster_mode of this RedisClusterSummary.
+        :type: str
+        """
+        self._cluster_mode = cluster_mode
+
+    @property
+    def shard_count(self):
+        """
+        Gets the shard_count of this RedisClusterSummary.
+        The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.
+
+
+        :return: The shard_count of this RedisClusterSummary.
+        :rtype: int
+        """
+        return self._shard_count
+
+    @shard_count.setter
+    def shard_count(self, shard_count):
+        """
+        Sets the shard_count of this RedisClusterSummary.
+        The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.
+
+
+        :param shard_count: The shard_count of this RedisClusterSummary.
+        :type: int
+        """
+        self._shard_count = shard_count
+
+    @property
     def nsg_ids(self):
         """
         Gets the nsg_ids of this RedisClusterSummary.
         A list of Network Security Group (NSG) `OCIDs`__
         associated with this cluster. For more information,
-        see `Using an NSG for Redis Clusters`__.
+        see `Using an NSG for Clusters`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup
+        __ https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup
 
 
         :return: The nsg_ids of this RedisClusterSummary.
@@ -566,10 +628,10 @@ class RedisClusterSummary(object):
         Sets the nsg_ids of this RedisClusterSummary.
         A list of Network Security Group (NSG) `OCIDs`__
         associated with this cluster. For more information,
-        see `Using an NSG for Redis Clusters`__.
+        see `Using an NSG for Clusters`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup
+        __ https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup
 
 
         :param nsg_ids: The nsg_ids of this RedisClusterSummary.

@@ -30,7 +30,8 @@ class DatabaseConnectionStringDetails(object):
 
         :param connection_type:
             The value to assign to the connection_type property of this DatabaseConnectionStringDetails.
-            Allowed values for this property are: "BASIC"
+            Allowed values for this property are: "BASIC", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
         """
@@ -64,7 +65,8 @@ class DatabaseConnectionStringDetails(object):
         The list of supported connection types:
           - BASIC: Basic connection details
 
-        Allowed values for this property are: "BASIC"
+        Allowed values for this property are: "BASIC", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The connection_type of this DatabaseConnectionStringDetails.
@@ -85,9 +87,7 @@ class DatabaseConnectionStringDetails(object):
         """
         allowed_values = ["BASIC"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `connection_type`, must be None or one of {allowed_values}"
-            )
+            connection_type = 'UNKNOWN_ENUM_VALUE'
         self._connection_type = connection_type
 
     def __repr__(self):

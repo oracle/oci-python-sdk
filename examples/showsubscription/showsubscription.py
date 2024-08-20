@@ -5,7 +5,7 @@
 ####################################################################################################################
 # showsubscription.py
 #
-# @author: Adi Zohar, Mar 01 2024
+# @author: Adi Zohar, Mar 01 2024, Updated Aug 12 2024.
 #
 # Supports Python 3
 ####################################################################################################################
@@ -22,8 +22,8 @@
 #
 ####################################################################################################################
 # Modules Included:
-# - oci.osub_organization_subscription.OrganizationSubscriptionClient
-# - oci.osub_subscription.CommitmentClient
+# - oci.onesubscription.OrganizationSubscriptionClient
+# - oci.onesubscription.CommitmentClient
 # - oci.onesubscription.SubscribedServiceClient
 #
 # APIs Used:
@@ -46,7 +46,7 @@ import os
 import platform
 import json
 
-version = "2024.03.01"
+version = "2024.08.12"
 
 
 ##########################################################################
@@ -152,9 +152,9 @@ def subscription_report(cmd, config, signer, tenancy):
     }
 
     try:
-        osub_org_client = oci.osub_organization_subscription.OrganizationSubscriptionClient(config, signer=signer)
+        osub_org_client = oci.onesubscription.OrganizationSubscriptionClient(config, signer=signer)
         one_sub_client = oci.onesubscription.SubscribedServiceClient(config, signer=signer)
-        osub_commit_client = oci.osub_subscription.CommitmentClient(config, signer=signer)
+        osub_commit_client = oci.onesubscription.CommitmentClient(config, signer=signer)
 
         if cmd.proxy:
             osub_org_client.base_client.session.proxies = {'https': cmd.proxy}
@@ -164,7 +164,7 @@ def subscription_report(cmd, config, signer, tenancy):
         ############################
         # Get Subscription list
         ############################
-        subscription_list = osub_org_client.list_organization_subscriptions(tenancy.id, "0")
+        subscription_list = osub_org_client.list_organization_subscriptions(tenancy.id)
         ucc_sub = [x for x in subscription_list.data if cmd.all_services or 'Universal' in x.service_name]
 
         for sub in ucc_sub:
