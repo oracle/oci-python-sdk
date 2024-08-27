@@ -961,7 +961,12 @@ class ExadbVmCluster(object):
     def grid_image_id(self):
         """
         Gets the grid_image_id of this ExadbVmCluster.
-        Grid Setup will be done using this grid image id
+        Grid Setup will be done using this grid image id.
+
+        The grid image id can be extracted from
+        1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name>
+        2. Replace {version} with one of the supported major versions and obtain the supported minor versions using
+        API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
 
 
         :return: The grid_image_id of this ExadbVmCluster.
@@ -973,7 +978,12 @@ class ExadbVmCluster(object):
     def grid_image_id(self, grid_image_id):
         """
         Sets the grid_image_id of this ExadbVmCluster.
-        Grid Setup will be done using this grid image id
+        Grid Setup will be done using this grid image id.
+
+        The grid image id can be extracted from
+        1. Obtain the supported major versions using API /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD name>
+        2. Replace {version} with one of the supported major versions and obtain the supported minor versions using
+        API /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD name>
 
 
         :param grid_image_id: The grid_image_id of this ExadbVmCluster.

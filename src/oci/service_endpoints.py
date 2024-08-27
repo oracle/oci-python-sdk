@@ -32,6 +32,7 @@ SERVICE_ENDPOINTS = {
     "redirect": "https://waas.{domain}",
     "resource_manager": "https://resourcemanager.{domain}",
     "resource_search": "https://query.{domain}",
+    "service": "https://announcements.{domain}",
     "stream": "https://streams.{domain}",
     "stream_admin": "https://streams.{domain}",
     "virtual_network": "https://iaas.{domain}",

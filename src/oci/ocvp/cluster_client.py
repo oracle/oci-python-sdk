@@ -232,7 +232,7 @@ class ClusterClient(object):
 
 
         :param str cluster_id: (required)
-            The `OCID`__ of the Cluster.
+            The `OCID`__ of the SDDC Cluster.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -340,7 +340,7 @@ class ClusterClient(object):
 
 
         :param str cluster_id: (required)
-            The `OCID`__ of the Cluster.
+            The `OCID`__ of the SDDC Cluster.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -622,7 +622,7 @@ class ClusterClient(object):
 
 
         :param str cluster_id: (required)
-            The `OCID`__ of the Cluster.
+            The `OCID`__ of the SDDC Cluster.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

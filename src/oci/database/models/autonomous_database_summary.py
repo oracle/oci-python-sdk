@@ -810,6 +810,10 @@ class AutonomousDatabaseSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type net_services_architecture: str
 
+        :param availability_domain:
+            The value to assign to the availability_domain property of this AutonomousDatabaseSummary.
+        :type availability_domain: str
+
         :param cluster_placement_group_id:
             The value to assign to the cluster_placement_group_id property of this AutonomousDatabaseSummary.
         :type cluster_placement_group_id: str
@@ -933,6 +937,7 @@ class AutonomousDatabaseSummary(object):
             'time_disaster_recovery_role_changed': 'datetime',
             'remote_disaster_recovery_configuration': 'DisasterRecoveryConfiguration',
             'net_services_architecture': 'str',
+            'availability_domain': 'str',
             'cluster_placement_group_id': 'str'
         }
 
@@ -1054,6 +1059,7 @@ class AutonomousDatabaseSummary(object):
             'time_disaster_recovery_role_changed': 'timeDisasterRecoveryRoleChanged',
             'remote_disaster_recovery_configuration': 'remoteDisasterRecoveryConfiguration',
             'net_services_architecture': 'netServicesArchitecture',
+            'availability_domain': 'availabilityDomain',
             'cluster_placement_group_id': 'clusterPlacementGroupId'
         }
 
@@ -1174,6 +1180,7 @@ class AutonomousDatabaseSummary(object):
         self._time_disaster_recovery_role_changed = None
         self._remote_disaster_recovery_configuration = None
         self._net_services_architecture = None
+        self._availability_domain = None
         self._cluster_placement_group_id = None
 
     @property
@@ -2740,9 +2747,7 @@ class AutonomousDatabaseSummary(object):
     def is_dev_tier(self):
         """
         Gets the is_dev_tier of this AutonomousDatabaseSummary.
-        Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See `Autonomous Database documentation`__ for more details.
-
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html
+        Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
 
 
         :return: The is_dev_tier of this AutonomousDatabaseSummary.
@@ -2754,9 +2759,7 @@ class AutonomousDatabaseSummary(object):
     def is_dev_tier(self, is_dev_tier):
         """
         Sets the is_dev_tier of this AutonomousDatabaseSummary.
-        Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See `Autonomous Database documentation`__ for more details.
-
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html
+        Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
 
 
         :param is_dev_tier: The is_dev_tier of this AutonomousDatabaseSummary.
@@ -4383,6 +4386,30 @@ class AutonomousDatabaseSummary(object):
         if not value_allowed_none_or_none_sentinel(net_services_architecture, allowed_values):
             net_services_architecture = 'UNKNOWN_ENUM_VALUE'
         self._net_services_architecture = net_services_architecture
+
+    @property
+    def availability_domain(self):
+        """
+        Gets the availability_domain of this AutonomousDatabaseSummary.
+        The availability domain where the Autonomous Database Serverless instance is located.
+
+
+        :return: The availability_domain of this AutonomousDatabaseSummary.
+        :rtype: str
+        """
+        return self._availability_domain
+
+    @availability_domain.setter
+    def availability_domain(self, availability_domain):
+        """
+        Sets the availability_domain of this AutonomousDatabaseSummary.
+        The availability domain where the Autonomous Database Serverless instance is located.
+
+
+        :param availability_domain: The availability_domain of this AutonomousDatabaseSummary.
+        :type: str
+        """
+        self._availability_domain = availability_domain
 
     @property
     def cluster_placement_group_id(self):

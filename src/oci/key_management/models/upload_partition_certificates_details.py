@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UploadPartitionCertificatesDetails(object):
     """
-    The details of the partition certificates.
+    An object that encapsulates the necessary partition certificates.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class UploadPartitionCertificatesDetails(object):
     def partition_certificate(self):
         """
         **[Required]** Gets the partition_certificate of this UploadPartitionCertificatesDetails.
-        Base64 encoded (StandardCharsets.UTF_8) Partition Certificate.
+        Base64 encoded (StandardCharsets.UTF_8) Partition Certificate, which gets created when the CSR is signed.
 
 
         :return: The partition_certificate of this UploadPartitionCertificatesDetails.
@@ -58,7 +58,7 @@ class UploadPartitionCertificatesDetails(object):
     def partition_certificate(self, partition_certificate):
         """
         Sets the partition_certificate of this UploadPartitionCertificatesDetails.
-        Base64 encoded (StandardCharsets.UTF_8) Partition Certificate.
+        Base64 encoded (StandardCharsets.UTF_8) Partition Certificate, which gets created when the CSR is signed.
 
 
         :param partition_certificate: The partition_certificate of this UploadPartitionCertificatesDetails.
@@ -70,7 +70,7 @@ class UploadPartitionCertificatesDetails(object):
     def partition_owner_certificate(self):
         """
         **[Required]** Gets the partition_owner_certificate of this UploadPartitionCertificatesDetails.
-        Base64 encoded (StandardCharsets.UTF_8) Partition Owner Certificate.
+        Base64 encoded (StandardCharsets.UTF_8) Partition Owner Certificate, which is used to help sign the CSR.
 
 
         :return: The partition_owner_certificate of this UploadPartitionCertificatesDetails.
@@ -82,7 +82,7 @@ class UploadPartitionCertificatesDetails(object):
     def partition_owner_certificate(self, partition_owner_certificate):
         """
         Sets the partition_owner_certificate of this UploadPartitionCertificatesDetails.
-        Base64 encoded (StandardCharsets.UTF_8) Partition Owner Certificate.
+        Base64 encoded (StandardCharsets.UTF_8) Partition Owner Certificate, which is used to help sign the CSR.
 
 
         :param partition_owner_certificate: The partition_owner_certificate of this UploadPartitionCertificatesDetails.

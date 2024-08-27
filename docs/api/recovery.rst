@@ -19,6 +19,7 @@ Recovery
     :template: autosummary/model_class.rst
 
     oci.recovery.models.ChangeProtectedDatabaseCompartmentDetails
+    oci.recovery.models.ChangeProtectedDatabaseSubscriptionDetails
     oci.recovery.models.ChangeProtectionPolicyCompartmentDetails
     oci.recovery.models.ChangeRecoveryServiceSubnetCompartmentDetails
     oci.recovery.models.CreateProtectedDatabaseDetails

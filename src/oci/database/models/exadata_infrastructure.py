@@ -298,6 +298,10 @@ class ExadataInfrastructure(object):
             The value to assign to the defined_tags property of this ExadataInfrastructure.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param is_scheduling_policy_associated:
+            The value to assign to the is_scheduling_policy_associated property of this ExadataInfrastructure.
+        :type is_scheduling_policy_associated: bool
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -348,7 +352,8 @@ class ExadataInfrastructure(object):
             'availability_domain': 'str',
             'defined_file_system_configurations': 'list[DefinedFileSystemConfiguration]',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'is_scheduling_policy_associated': 'bool'
         }
 
         self.attribute_map = {
@@ -400,7 +405,8 @@ class ExadataInfrastructure(object):
             'availability_domain': 'availabilityDomain',
             'defined_file_system_configurations': 'definedFileSystemConfigurations',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'is_scheduling_policy_associated': 'isSchedulingPolicyAssociated'
         }
 
         self._id = None
@@ -452,6 +458,7 @@ class ExadataInfrastructure(object):
         self._defined_file_system_configurations = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._is_scheduling_policy_associated = None
 
     @property
     def id(self):
@@ -1682,6 +1689,30 @@ class ExadataInfrastructure(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def is_scheduling_policy_associated(self):
+        """
+        Gets the is_scheduling_policy_associated of this ExadataInfrastructure.
+        If true, the infrastructure is using granular maintenance scheduling preference.
+
+
+        :return: The is_scheduling_policy_associated of this ExadataInfrastructure.
+        :rtype: bool
+        """
+        return self._is_scheduling_policy_associated
+
+    @is_scheduling_policy_associated.setter
+    def is_scheduling_policy_associated(self, is_scheduling_policy_associated):
+        """
+        Sets the is_scheduling_policy_associated of this ExadataInfrastructure.
+        If true, the infrastructure is using granular maintenance scheduling preference.
+
+
+        :param is_scheduling_policy_associated: The is_scheduling_policy_associated of this ExadataInfrastructure.
+        :type: bool
+        """
+        self._is_scheduling_policy_associated = is_scheduling_policy_associated
 
     def __repr__(self):
         return formatted_flat_dict(self)

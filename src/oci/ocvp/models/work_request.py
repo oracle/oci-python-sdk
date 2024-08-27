@@ -67,6 +67,58 @@ class WorkRequest(object):
     #: This constant has a value of "IN_PLACE_UPGRADE"
     OPERATION_TYPE_IN_PLACE_UPGRADE = "IN_PLACE_UPGRADE"
 
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_DATASTORE"
+    OPERATION_TYPE_CREATE_DATASTORE = "CREATE_DATASTORE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_DATASTORE"
+    OPERATION_TYPE_UPDATE_DATASTORE = "UPDATE_DATASTORE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "ADD_BLOCK_VOLUME_TO_DATASTORE"
+    OPERATION_TYPE_ADD_BLOCK_VOLUME_TO_DATASTORE = "ADD_BLOCK_VOLUME_TO_DATASTORE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_DATASTORE"
+    OPERATION_TYPE_DELETE_DATASTORE = "DELETE_DATASTORE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_DATASTORE_CLUSTER"
+    OPERATION_TYPE_CREATE_DATASTORE_CLUSTER = "CREATE_DATASTORE_CLUSTER"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_DATASTORE_CLUSTER"
+    OPERATION_TYPE_UPDATE_DATASTORE_CLUSTER = "UPDATE_DATASTORE_CLUSTER"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "ATTACH_DATASTORE_CLUSTER_TO_ESXI_HOST"
+    OPERATION_TYPE_ATTACH_DATASTORE_CLUSTER_TO_ESXI_HOST = "ATTACH_DATASTORE_CLUSTER_TO_ESXI_HOST"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "ATTACH_DATASTORE_CLUSTER_TO_CLUSTER"
+    OPERATION_TYPE_ATTACH_DATASTORE_CLUSTER_TO_CLUSTER = "ATTACH_DATASTORE_CLUSTER_TO_CLUSTER"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DETACH_DATASTORE_CLUSTER_FROM_ESXI_HOST"
+    OPERATION_TYPE_DETACH_DATASTORE_CLUSTER_FROM_ESXI_HOST = "DETACH_DATASTORE_CLUSTER_FROM_ESXI_HOST"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DETACH_DATASTORE_CLUSTER_FROM_CLUSTER"
+    OPERATION_TYPE_DETACH_DATASTORE_CLUSTER_FROM_CLUSTER = "DETACH_DATASTORE_CLUSTER_FROM_CLUSTER"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_DATASTORE_CLUSTER"
+    OPERATION_TYPE_DELETE_DATASTORE_CLUSTER = "DELETE_DATASTORE_CLUSTER"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "ADD_DATASTORE_TO_DATASTORE_CLUSTER"
+    OPERATION_TYPE_ADD_DATASTORE_TO_DATASTORE_CLUSTER = "ADD_DATASTORE_TO_DATASTORE_CLUSTER"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "REMOVE_DATASTORE_FROM_DATASTORE_CLUSTER"
+    OPERATION_TYPE_REMOVE_DATASTORE_FROM_DATASTORE_CLUSTER = "REMOVE_DATASTORE_FROM_DATASTORE_CLUSTER"
+
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -98,7 +150,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "CREATE_SDDC", "DELETE_SDDC", "CREATE_CLUSTER", "DELETE_CLUSTER", "CREATE_ESXI_HOST", "DELETE_ESXI_HOST", "UPGRADE_HCX", "DOWNGRADE_HCX", "CANCEL_DOWNGRADE_HCX", "REFRESH_HCX_LICENSE_STATUS", "SWAP_BILLING", "REPLACE_HOST", "IN_PLACE_UPGRADE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_SDDC", "DELETE_SDDC", "CREATE_CLUSTER", "DELETE_CLUSTER", "CREATE_ESXI_HOST", "DELETE_ESXI_HOST", "UPGRADE_HCX", "DOWNGRADE_HCX", "CANCEL_DOWNGRADE_HCX", "REFRESH_HCX_LICENSE_STATUS", "SWAP_BILLING", "REPLACE_HOST", "IN_PLACE_UPGRADE", "CREATE_DATASTORE", "UPDATE_DATASTORE", "ADD_BLOCK_VOLUME_TO_DATASTORE", "DELETE_DATASTORE", "CREATE_DATASTORE_CLUSTER", "UPDATE_DATASTORE_CLUSTER", "ATTACH_DATASTORE_CLUSTER_TO_ESXI_HOST", "ATTACH_DATASTORE_CLUSTER_TO_CLUSTER", "DETACH_DATASTORE_CLUSTER_FROM_ESXI_HOST", "DETACH_DATASTORE_CLUSTER_FROM_CLUSTER", "DELETE_DATASTORE_CLUSTER", "ADD_DATASTORE_TO_DATASTORE_CLUSTER", "REMOVE_DATASTORE_FROM_DATASTORE_CLUSTER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -177,7 +229,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         The asynchronous operation tracked by this work request.
 
-        Allowed values for this property are: "CREATE_SDDC", "DELETE_SDDC", "CREATE_CLUSTER", "DELETE_CLUSTER", "CREATE_ESXI_HOST", "DELETE_ESXI_HOST", "UPGRADE_HCX", "DOWNGRADE_HCX", "CANCEL_DOWNGRADE_HCX", "REFRESH_HCX_LICENSE_STATUS", "SWAP_BILLING", "REPLACE_HOST", "IN_PLACE_UPGRADE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_SDDC", "DELETE_SDDC", "CREATE_CLUSTER", "DELETE_CLUSTER", "CREATE_ESXI_HOST", "DELETE_ESXI_HOST", "UPGRADE_HCX", "DOWNGRADE_HCX", "CANCEL_DOWNGRADE_HCX", "REFRESH_HCX_LICENSE_STATUS", "SWAP_BILLING", "REPLACE_HOST", "IN_PLACE_UPGRADE", "CREATE_DATASTORE", "UPDATE_DATASTORE", "ADD_BLOCK_VOLUME_TO_DATASTORE", "DELETE_DATASTORE", "CREATE_DATASTORE_CLUSTER", "UPDATE_DATASTORE_CLUSTER", "ATTACH_DATASTORE_CLUSTER_TO_ESXI_HOST", "ATTACH_DATASTORE_CLUSTER_TO_CLUSTER", "DETACH_DATASTORE_CLUSTER_FROM_ESXI_HOST", "DETACH_DATASTORE_CLUSTER_FROM_CLUSTER", "DELETE_DATASTORE_CLUSTER", "ADD_DATASTORE_TO_DATASTORE_CLUSTER", "REMOVE_DATASTORE_FROM_DATASTORE_CLUSTER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -196,7 +248,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["CREATE_SDDC", "DELETE_SDDC", "CREATE_CLUSTER", "DELETE_CLUSTER", "CREATE_ESXI_HOST", "DELETE_ESXI_HOST", "UPGRADE_HCX", "DOWNGRADE_HCX", "CANCEL_DOWNGRADE_HCX", "REFRESH_HCX_LICENSE_STATUS", "SWAP_BILLING", "REPLACE_HOST", "IN_PLACE_UPGRADE"]
+        allowed_values = ["CREATE_SDDC", "DELETE_SDDC", "CREATE_CLUSTER", "DELETE_CLUSTER", "CREATE_ESXI_HOST", "DELETE_ESXI_HOST", "UPGRADE_HCX", "DOWNGRADE_HCX", "CANCEL_DOWNGRADE_HCX", "REFRESH_HCX_LICENSE_STATUS", "SWAP_BILLING", "REPLACE_HOST", "IN_PLACE_UPGRADE", "CREATE_DATASTORE", "UPDATE_DATASTORE", "ADD_BLOCK_VOLUME_TO_DATASTORE", "DELETE_DATASTORE", "CREATE_DATASTORE_CLUSTER", "UPDATE_DATASTORE_CLUSTER", "ATTACH_DATASTORE_CLUSTER_TO_ESXI_HOST", "ATTACH_DATASTORE_CLUSTER_TO_CLUSTER", "DETACH_DATASTORE_CLUSTER_FROM_ESXI_HOST", "DETACH_DATASTORE_CLUSTER_FROM_CLUSTER", "DELETE_DATASTORE_CLUSTER", "ADD_DATASTORE_TO_DATASTORE_CLUSTER", "REMOVE_DATASTORE_FROM_DATASTORE_CLUSTER"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

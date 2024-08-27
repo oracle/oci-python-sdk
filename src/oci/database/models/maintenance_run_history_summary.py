@@ -32,22 +32,36 @@ class MaintenanceRunHistorySummary(object):
             The value to assign to the db_servers_history_details property of this MaintenanceRunHistorySummary.
         :type db_servers_history_details: list[oci.database.models.DbServerHistorySummary]
 
+        :param current_execution_window:
+            The value to assign to the current_execution_window property of this MaintenanceRunHistorySummary.
+        :type current_execution_window: str
+
+        :param granular_maintenance_history:
+            The value to assign to the granular_maintenance_history property of this MaintenanceRunHistorySummary.
+        :type granular_maintenance_history: list[oci.database.models.GranularMaintenanceHistoryDetails]
+
         """
         self.swagger_types = {
             'id': 'str',
             'maintenance_run_details': 'MaintenanceRunSummary',
-            'db_servers_history_details': 'list[DbServerHistorySummary]'
+            'db_servers_history_details': 'list[DbServerHistorySummary]',
+            'current_execution_window': 'str',
+            'granular_maintenance_history': 'list[GranularMaintenanceHistoryDetails]'
         }
 
         self.attribute_map = {
             'id': 'id',
             'maintenance_run_details': 'maintenanceRunDetails',
-            'db_servers_history_details': 'dbServersHistoryDetails'
+            'db_servers_history_details': 'dbServersHistoryDetails',
+            'current_execution_window': 'currentExecutionWindow',
+            'granular_maintenance_history': 'granularMaintenanceHistory'
         }
 
         self._id = None
         self._maintenance_run_details = None
         self._db_servers_history_details = None
+        self._current_execution_window = None
+        self._granular_maintenance_history = None
 
     @property
     def id(self):
@@ -116,6 +130,54 @@ class MaintenanceRunHistorySummary(object):
         :type: list[oci.database.models.DbServerHistorySummary]
         """
         self._db_servers_history_details = db_servers_history_details
+
+    @property
+    def current_execution_window(self):
+        """
+        Gets the current_execution_window of this MaintenanceRunHistorySummary.
+        The OCID of the current execution window.
+
+
+        :return: The current_execution_window of this MaintenanceRunHistorySummary.
+        :rtype: str
+        """
+        return self._current_execution_window
+
+    @current_execution_window.setter
+    def current_execution_window(self, current_execution_window):
+        """
+        Sets the current_execution_window of this MaintenanceRunHistorySummary.
+        The OCID of the current execution window.
+
+
+        :param current_execution_window: The current_execution_window of this MaintenanceRunHistorySummary.
+        :type: str
+        """
+        self._current_execution_window = current_execution_window
+
+    @property
+    def granular_maintenance_history(self):
+        """
+        Gets the granular_maintenance_history of this MaintenanceRunHistorySummary.
+        The list of granular maintenance history details.
+
+
+        :return: The granular_maintenance_history of this MaintenanceRunHistorySummary.
+        :rtype: list[oci.database.models.GranularMaintenanceHistoryDetails]
+        """
+        return self._granular_maintenance_history
+
+    @granular_maintenance_history.setter
+    def granular_maintenance_history(self, granular_maintenance_history):
+        """
+        Sets the granular_maintenance_history of this MaintenanceRunHistorySummary.
+        The list of granular maintenance history details.
+
+
+        :param granular_maintenance_history: The granular_maintenance_history of this MaintenanceRunHistorySummary.
+        :type: list[oci.database.models.GranularMaintenanceHistoryDetails]
+        """
+        self._granular_maintenance_history = granular_maintenance_history
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -97,6 +97,10 @@ class CreateProtectedDatabaseDetails(object):
             The value to assign to the is_redo_logs_shipped property of this CreateProtectedDatabaseDetails.
         :type is_redo_logs_shipped: bool
 
+        :param subscription_id:
+            The value to assign to the subscription_id property of this CreateProtectedDatabaseDetails.
+        :type subscription_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateProtectedDatabaseDetails.
         :type freeform_tags: dict(str, str)
@@ -119,6 +123,7 @@ class CreateProtectedDatabaseDetails(object):
             'change_rate': 'float',
             'compression_ratio': 'float',
             'is_redo_logs_shipped': 'bool',
+            'subscription_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -136,6 +141,7 @@ class CreateProtectedDatabaseDetails(object):
             'change_rate': 'changeRate',
             'compression_ratio': 'compressionRatio',
             'is_redo_logs_shipped': 'isRedoLogsShipped',
+            'subscription_id': 'subscriptionId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -152,6 +158,7 @@ class CreateProtectedDatabaseDetails(object):
         self._change_rate = None
         self._compression_ratio = None
         self._is_redo_logs_shipped = None
+        self._subscription_id = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -455,6 +462,32 @@ class CreateProtectedDatabaseDetails(object):
         :type: bool
         """
         self._is_redo_logs_shipped = is_redo_logs_shipped
+
+    @property
+    def subscription_id(self):
+        """
+        Gets the subscription_id of this CreateProtectedDatabaseDetails.
+        The OCID of the cloud service subscription to which you want to link the protected database.
+        For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure.
+
+
+        :return: The subscription_id of this CreateProtectedDatabaseDetails.
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """
+        Sets the subscription_id of this CreateProtectedDatabaseDetails.
+        The OCID of the cloud service subscription to which you want to link the protected database.
+        For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure.
+
+
+        :param subscription_id: The subscription_id of this CreateProtectedDatabaseDetails.
+        :type: str
+        """
+        self._subscription_id = subscription_id
 
     @property
     def freeform_tags(self):

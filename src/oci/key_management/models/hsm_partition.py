@@ -31,6 +31,22 @@ class HsmPartition(object):
     #: This constant has a value of "ACTIVATION_REQUIRED"
     LIFECYCLE_STATE_ACTIVATION_REQUIRED = "ACTIVATION_REQUIRED"
 
+    #: A constant which can be used with the lifecycle_state property of a HsmPartition.
+    #: This constant has a value of "SCHEDULING_DELETION"
+    LIFECYCLE_STATE_SCHEDULING_DELETION = "SCHEDULING_DELETION"
+
+    #: A constant which can be used with the lifecycle_state property of a HsmPartition.
+    #: This constant has a value of "PENDING_DELETION"
+    LIFECYCLE_STATE_PENDING_DELETION = "PENDING_DELETION"
+
+    #: A constant which can be used with the lifecycle_state property of a HsmPartition.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a HsmPartition.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new HsmPartition object with values from keyword arguments.
@@ -58,7 +74,7 @@ class HsmPartition(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this HsmPartition.
-            Allowed values for this property are: "ACTIVE", "INACTIVE", "ACTIVATING", "ACTIVATION_REQUIRED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACTIVE", "INACTIVE", "ACTIVATING", "ACTIVATION_REQUIRED", "SCHEDULING_DELETION", "PENDING_DELETION", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -92,7 +108,7 @@ class HsmPartition(object):
     def id(self):
         """
         **[Required]** Gets the id of this HsmPartition.
-        The OCID of the HSM resource.
+        The OCID of the HSM resource. Each HSM resource has a unique OCID as an identifier.
 
 
         :return: The id of this HsmPartition.
@@ -104,7 +120,7 @@ class HsmPartition(object):
     def id(self, id):
         """
         Sets the id of this HsmPartition.
-        The OCID of the HSM resource.
+        The OCID of the HSM resource. Each HSM resource has a unique OCID as an identifier.
 
 
         :param id: The id of this HsmPartition.
@@ -140,7 +156,7 @@ class HsmPartition(object):
     def port_information(self):
         """
         **[Required]** Gets the port_information of this HsmPartition.
-        Details of PortNumber and PortType.
+        Details of a single portInformation item include the PortNumber (an integer used as an identifier) and the PortType (refers to either an enum value of Managementutility,Clientutility, or null)
 
 
         :return: The port_information of this HsmPartition.
@@ -152,7 +168,7 @@ class HsmPartition(object):
     def port_information(self, port_information):
         """
         Sets the port_information of this HsmPartition.
-        Details of PortNumber and PortType.
+        Details of a single portInformation item include the PortNumber (an integer used as an identifier) and the PortType (refers to either an enum value of Managementutility,Clientutility, or null)
 
 
         :param port_information: The port_information of this HsmPartition.
@@ -228,9 +244,11 @@ class HsmPartition(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this HsmPartition.
-        The HSMPartition's current lifecycle state.
+        A HSMCluster resource's current lifecycle state.
 
-        Allowed values for this property are: "ACTIVE", "INACTIVE", "ACTIVATING", "ACTIVATION_REQUIRED", 'UNKNOWN_ENUM_VALUE'.
+        Example: `ACTIVE`
+
+        Allowed values for this property are: "ACTIVE", "INACTIVE", "ACTIVATING", "ACTIVATION_REQUIRED", "SCHEDULING_DELETION", "PENDING_DELETION", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -243,13 +261,15 @@ class HsmPartition(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this HsmPartition.
-        The HSMPartition's current lifecycle state.
+        A HSMCluster resource's current lifecycle state.
+
+        Example: `ACTIVE`
 
 
         :param lifecycle_state: The lifecycle_state of this HsmPartition.
         :type: str
         """
-        allowed_values = ["ACTIVE", "INACTIVE", "ACTIVATING", "ACTIVATION_REQUIRED"]
+        allowed_values = ["ACTIVE", "INACTIVE", "ACTIVATING", "ACTIVATION_REQUIRED", "SCHEDULING_DELETION", "PENDING_DELETION", "DELETING", "DELETED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

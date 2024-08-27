@@ -46,6 +46,7 @@ from .replication_estimate import ReplicationEstimate
 from .replication_summary import ReplicationSummary
 from .replication_target import ReplicationTarget
 from .replication_target_summary import ReplicationTargetSummary
+from .schedule_downgrade_shape_mount_target_details import ScheduleDowngradeShapeMountTargetDetails
 from .snapshot import Snapshot
 from .snapshot_schedule import SnapshotSchedule
 from .snapshot_summary import SnapshotSummary
@@ -60,6 +61,7 @@ from .update_mount_target_details import UpdateMountTargetDetails
 from .update_outbound_connector_details import UpdateOutboundConnectorDetails
 from .update_replication_details import UpdateReplicationDetails
 from .update_snapshot_details import UpdateSnapshotDetails
+from .upgrade_shape_mount_target_details import UpgradeShapeMountTargetDetails
 from .validate_key_tabs_details import ValidateKeyTabsDetails
 from .validate_key_tabs_response_details import ValidateKeyTabsResponseDetails
 
@@ -105,6 +107,7 @@ file_storage_type_mapping = {
     "ReplicationSummary": ReplicationSummary,
     "ReplicationTarget": ReplicationTarget,
     "ReplicationTargetSummary": ReplicationTargetSummary,
+    "ScheduleDowngradeShapeMountTargetDetails": ScheduleDowngradeShapeMountTargetDetails,
     "Snapshot": Snapshot,
     "SnapshotSchedule": SnapshotSchedule,
     "SnapshotSummary": SnapshotSummary,
@@ -119,6 +122,7 @@ file_storage_type_mapping = {
     "UpdateOutboundConnectorDetails": UpdateOutboundConnectorDetails,
     "UpdateReplicationDetails": UpdateReplicationDetails,
     "UpdateSnapshotDetails": UpdateSnapshotDetails,
+    "UpgradeShapeMountTargetDetails": UpgradeShapeMountTargetDetails,
     "ValidateKeyTabsDetails": ValidateKeyTabsDetails,
     "ValidateKeyTabsResponseDetails": ValidateKeyTabsResponseDetails
 }

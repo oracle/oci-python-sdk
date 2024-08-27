@@ -23,7 +23,7 @@ class ExternalConnectorDetails(ConnectorDetails):
 
         :param connector_type:
             The value to assign to the connector_type property of this ExternalConnectorDetails.
-            Allowed values for this property are: "PE", "MACS", "EXTERNAL"
+            Allowed values for this property are: "PE", "MACS", "EXTERNAL", "DIRECT"
         :type connector_type: str
 
         :param database_connector_id:

@@ -185,6 +185,10 @@ class ProtectedDatabase(object):
             The value to assign to the metrics property of this ProtectedDatabase.
         :type metrics: oci.recovery.models.Metrics
 
+        :param subscription_id:
+            The value to assign to the subscription_id property of this ProtectedDatabase.
+        :type subscription_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ProtectedDatabase.
         :type freeform_tags: dict(str, str)
@@ -221,6 +225,7 @@ class ProtectedDatabase(object):
             'lifecycle_details': 'str',
             'health_details': 'str',
             'metrics': 'Metrics',
+            'subscription_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -249,6 +254,7 @@ class ProtectedDatabase(object):
             'lifecycle_details': 'lifecycleDetails',
             'health_details': 'healthDetails',
             'metrics': 'metrics',
+            'subscription_id': 'subscriptionId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -276,6 +282,7 @@ class ProtectedDatabase(object):
         self._lifecycle_details = None
         self._health_details = None
         self._metrics = None
+        self._subscription_id = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -855,6 +862,30 @@ class ProtectedDatabase(object):
         :type: oci.recovery.models.Metrics
         """
         self._metrics = metrics
+
+    @property
+    def subscription_id(self):
+        """
+        Gets the subscription_id of this ProtectedDatabase.
+        The OCID of the cloud service subscription to which the protected database is linked.
+
+
+        :return: The subscription_id of this ProtectedDatabase.
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """
+        Sets the subscription_id of this ProtectedDatabase.
+        The OCID of the cloud service subscription to which the protected database is linked.
+
+
+        :param subscription_id: The subscription_id of this ProtectedDatabase.
+        :type: str
+        """
+        self._subscription_id = subscription_id
 
     @property
     def freeform_tags(self):

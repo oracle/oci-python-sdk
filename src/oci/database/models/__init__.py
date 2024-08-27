@@ -7,6 +7,10 @@
 from __future__ import absolute_import
 
 from .acd_avm_resource_stats import AcdAvmResourceStats
+from .action_member import ActionMember
+from .action_order_details import ActionOrderDetails
+from .action_param_values_collection import ActionParamValuesCollection
+from .action_param_values_summary import ActionParamValuesSummary
 from .activate_exadata_infrastructure_details import ActivateExadataInfrastructureDetails
 from .add_virtual_machine_to_cloud_vm_cluster_details import AddVirtualMachineToCloudVmClusterDetails
 from .add_virtual_machine_to_vm_cluster_details import AddVirtualMachineToVmClusterDetails
@@ -64,6 +68,7 @@ from .backup_destination import BackupDestination
 from .backup_destination_details import BackupDestinationDetails
 from .backup_destination_summary import BackupDestinationSummary
 from .backup_summary import BackupSummary
+from .cancel_execution_window_details import CancelExecutionWindowDetails
 from .change_autonomous_database_software_image_compartment_details import ChangeAutonomousDatabaseSoftwareImageCompartmentDetails
 from .change_autonomous_database_subscription_details import ChangeAutonomousDatabaseSubscriptionDetails
 from .change_autonomous_vm_cluster_compartment_details import ChangeAutonomousVmClusterCompartmentDetails
@@ -80,6 +85,8 @@ from .change_exadb_vm_cluster_compartment_details import ChangeExadbVmClusterCom
 from .change_exascale_db_storage_vault_compartment_details import ChangeExascaleDbStorageVaultCompartmentDetails
 from .change_key_store_compartment_details import ChangeKeyStoreCompartmentDetails
 from .change_key_store_type_details import ChangeKeyStoreTypeDetails
+from .change_scheduling_plan_compartment_details import ChangeSchedulingPlanCompartmentDetails
+from .change_scheduling_policy_compartment_details import ChangeSchedulingPolicyCompartmentDetails
 from .change_subscription_details import ChangeSubscriptionDetails
 from .change_vm_cluster_compartment_details import ChangeVmClusterCompartmentDetails
 from .cloud_automation_apply_update_time_preference import CloudAutomationApplyUpdateTimePreference
@@ -153,6 +160,8 @@ from .create_db_home_with_vm_cluster_id_from_backup_details import CreateDbHomeW
 from .create_exadata_infrastructure_details import CreateExadataInfrastructureDetails
 from .create_exadb_vm_cluster_details import CreateExadbVmClusterDetails
 from .create_exascale_db_storage_vault_details import CreateExascaleDbStorageVaultDetails
+from .create_execution_action_details import CreateExecutionActionDetails
+from .create_execution_window_details import CreateExecutionWindowDetails
 from .create_external_backup_job_details import CreateExternalBackupJobDetails
 from .create_external_container_database_details import CreateExternalContainerDatabaseDetails
 from .create_external_database_connector_details import CreateExternalDatabaseConnectorDetails
@@ -173,6 +182,10 @@ from .create_pluggable_database_from_remote_clone_details import CreatePluggable
 from .create_pluggable_database_refreshable_clone_details import CreatePluggableDatabaseRefreshableCloneDetails
 from .create_recovery_appliance_backup_destination_details import CreateRecoveryApplianceBackupDestinationDetails
 from .create_refreshable_autonomous_database_clone_details import CreateRefreshableAutonomousDatabaseCloneDetails
+from .create_scheduled_action_details import CreateScheduledActionDetails
+from .create_scheduling_plan_details import CreateSchedulingPlanDetails
+from .create_scheduling_policy_details import CreateSchedulingPolicyDetails
+from .create_scheduling_window_details import CreateSchedulingWindowDetails
 from .create_vm_cluster_details import CreateVmClusterDetails
 from .customer_contact import CustomerContact
 from .data_collection_options import DataCollectionOptions
@@ -261,6 +274,11 @@ from .exascale_db_storage_details import ExascaleDbStorageDetails
 from .exascale_db_storage_input_details import ExascaleDbStorageInputDetails
 from .exascale_db_storage_vault import ExascaleDbStorageVault
 from .exascale_db_storage_vault_summary import ExascaleDbStorageVaultSummary
+from .execution_action import ExecutionAction
+from .execution_action_member import ExecutionActionMember
+from .execution_action_summary import ExecutionActionSummary
+from .execution_window import ExecutionWindow
+from .execution_window_summary import ExecutionWindowSummary
 from .external_backup_job import ExternalBackupJob
 from .external_container_database import ExternalContainerDatabase
 from .external_container_database_summary import ExternalContainerDatabaseSummary
@@ -281,6 +299,7 @@ from .generate_autonomous_database_wallet_details import GenerateAutonomousDatab
 from .generate_recommended_network_details import GenerateRecommendedNetworkDetails
 from .gi_minor_version_summary import GiMinorVersionSummary
 from .gi_version_summary import GiVersionSummary
+from .granular_maintenance_history_details import GranularMaintenanceHistoryDetails
 from .info_for_network_gen_details import InfoForNetworkGenDetails
 from .infrastructure_target_version import InfrastructureTargetVersion
 from .infrastructure_target_version_summary import InfrastructureTargetVersionSummary
@@ -307,6 +326,7 @@ from .modify_database_management_details import ModifyDatabaseManagementDetails
 from .modify_pluggable_database_management_details import ModifyPluggableDatabaseManagementDetails
 from .month import Month
 from .mount_type_details import MountTypeDetails
+from .move_execution_action_member_details import MoveExecutionActionMemberDetails
 from .network_bonding_mode_details import NetworkBondingModeDetails
 from .node_details import NodeDetails
 from .ocp_us import OCPUs
@@ -328,6 +348,8 @@ from .pluggable_database_management_config import PluggableDatabaseManagementCon
 from .pluggable_database_node_level_details import PluggableDatabaseNodeLevelDetails
 from .pluggable_database_refreshable_clone_config import PluggableDatabaseRefreshableCloneConfig
 from .pluggable_database_summary import PluggableDatabaseSummary
+from .recommended_scheduled_action_summary import RecommendedScheduledActionSummary
+from .recommended_scheduled_actions_collection import RecommendedScheduledActionsCollection
 from .refreshable_clone_collection import RefreshableCloneCollection
 from .refreshable_clone_summary import RefreshableCloneSummary
 from .register_autonomous_database_data_safe_details import RegisterAutonomousDatabaseDataSafeDetails
@@ -336,6 +358,8 @@ from .remote_clone_pluggable_database_details import RemoteClonePluggableDatabas
 from .remove_virtual_machine_from_cloud_vm_cluster_details import RemoveVirtualMachineFromCloudVmClusterDetails
 from .remove_virtual_machine_from_exadb_vm_cluster_details import RemoveVirtualMachineFromExadbVmClusterDetails
 from .remove_virtual_machine_from_vm_cluster_details import RemoveVirtualMachineFromVmClusterDetails
+from .reorder_execution_action_details import ReorderExecutionActionDetails
+from .reorder_scheduled_actions_details import ReorderScheduledActionsDetails
 from .resize_vm_cluster_network_details import ResizeVmClusterNetworkDetails
 from .resource_pool_shape_collection import ResourcePoolShapeCollection
 from .resource_pool_shape_summary import ResourcePoolShapeSummary
@@ -349,7 +373,17 @@ from .rotate_cloud_autonomous_vm_cluster_ssl_certs_details import RotateCloudAut
 from .saas_admin_user_configuration import SaasAdminUserConfiguration
 from .saas_admin_user_status import SaasAdminUserStatus
 from .scan_details import ScanDetails
+from .scheduled_action import ScheduledAction
+from .scheduled_action_collection import ScheduledActionCollection
+from .scheduled_action_summary import ScheduledActionSummary
 from .scheduled_operation_details import ScheduledOperationDetails
+from .scheduling_plan import SchedulingPlan
+from .scheduling_plan_collection import SchedulingPlanCollection
+from .scheduling_plan_summary import SchedulingPlanSummary
+from .scheduling_policy import SchedulingPolicy
+from .scheduling_policy_summary import SchedulingPolicySummary
+from .scheduling_window import SchedulingWindow
+from .scheduling_window_summary import SchedulingWindowSummary
 from .self_mount_details import SelfMountDetails
 from .stack_monitoring_config import StackMonitoringConfig
 from .storage_performance_details import StoragePerformanceDetails
@@ -381,6 +415,8 @@ from .update_details import UpdateDetails
 from .update_exadata_infrastructure_details import UpdateExadataInfrastructureDetails
 from .update_exadb_vm_cluster_details import UpdateExadbVmClusterDetails
 from .update_exascale_db_storage_vault_details import UpdateExascaleDbStorageVaultDetails
+from .update_execution_action_details import UpdateExecutionActionDetails
+from .update_execution_window_details import UpdateExecutionWindowDetails
 from .update_external_container_database_details import UpdateExternalContainerDatabaseDetails
 from .update_external_database_connector_details import UpdateExternalDatabaseConnectorDetails
 from .update_external_database_details_base import UpdateExternalDatabaseDetailsBase
@@ -393,6 +429,9 @@ from .update_key_store_details import UpdateKeyStoreDetails
 from .update_maintenance_run_details import UpdateMaintenanceRunDetails
 from .update_oneoff_patch_details import UpdateOneoffPatchDetails
 from .update_pluggable_database_details import UpdatePluggableDatabaseDetails
+from .update_scheduled_action_details import UpdateScheduledActionDetails
+from .update_scheduling_policy_details import UpdateSchedulingPolicyDetails
+from .update_scheduling_window_details import UpdateSchedulingWindowDetails
 from .update_summary import UpdateSummary
 from .update_vm_cluster_details import UpdateVmClusterDetails
 from .update_vm_cluster_network_details import UpdateVmClusterNetworkDetails
@@ -409,11 +448,16 @@ from .vm_cluster_update_history_entry import VmClusterUpdateHistoryEntry
 from .vm_cluster_update_history_entry_summary import VmClusterUpdateHistoryEntrySummary
 from .vm_cluster_update_summary import VmClusterUpdateSummary
 from .vm_network_details import VmNetworkDetails
+from .window_preference_detail import WindowPreferenceDetail
 from .workload_type import WorkloadType
 
 # Maps type names to classes for database services.
 database_type_mapping = {
     "AcdAvmResourceStats": AcdAvmResourceStats,
+    "ActionMember": ActionMember,
+    "ActionOrderDetails": ActionOrderDetails,
+    "ActionParamValuesCollection": ActionParamValuesCollection,
+    "ActionParamValuesSummary": ActionParamValuesSummary,
     "ActivateExadataInfrastructureDetails": ActivateExadataInfrastructureDetails,
     "AddVirtualMachineToCloudVmClusterDetails": AddVirtualMachineToCloudVmClusterDetails,
     "AddVirtualMachineToVmClusterDetails": AddVirtualMachineToVmClusterDetails,
@@ -471,6 +515,7 @@ database_type_mapping = {
     "BackupDestinationDetails": BackupDestinationDetails,
     "BackupDestinationSummary": BackupDestinationSummary,
     "BackupSummary": BackupSummary,
+    "CancelExecutionWindowDetails": CancelExecutionWindowDetails,
     "ChangeAutonomousDatabaseSoftwareImageCompartmentDetails": ChangeAutonomousDatabaseSoftwareImageCompartmentDetails,
     "ChangeAutonomousDatabaseSubscriptionDetails": ChangeAutonomousDatabaseSubscriptionDetails,
     "ChangeAutonomousVmClusterCompartmentDetails": ChangeAutonomousVmClusterCompartmentDetails,
@@ -487,6 +532,8 @@ database_type_mapping = {
     "ChangeExascaleDbStorageVaultCompartmentDetails": ChangeExascaleDbStorageVaultCompartmentDetails,
     "ChangeKeyStoreCompartmentDetails": ChangeKeyStoreCompartmentDetails,
     "ChangeKeyStoreTypeDetails": ChangeKeyStoreTypeDetails,
+    "ChangeSchedulingPlanCompartmentDetails": ChangeSchedulingPlanCompartmentDetails,
+    "ChangeSchedulingPolicyCompartmentDetails": ChangeSchedulingPolicyCompartmentDetails,
     "ChangeSubscriptionDetails": ChangeSubscriptionDetails,
     "ChangeVmClusterCompartmentDetails": ChangeVmClusterCompartmentDetails,
     "CloudAutomationApplyUpdateTimePreference": CloudAutomationApplyUpdateTimePreference,
@@ -560,6 +607,8 @@ database_type_mapping = {
     "CreateExadataInfrastructureDetails": CreateExadataInfrastructureDetails,
     "CreateExadbVmClusterDetails": CreateExadbVmClusterDetails,
     "CreateExascaleDbStorageVaultDetails": CreateExascaleDbStorageVaultDetails,
+    "CreateExecutionActionDetails": CreateExecutionActionDetails,
+    "CreateExecutionWindowDetails": CreateExecutionWindowDetails,
     "CreateExternalBackupJobDetails": CreateExternalBackupJobDetails,
     "CreateExternalContainerDatabaseDetails": CreateExternalContainerDatabaseDetails,
     "CreateExternalDatabaseConnectorDetails": CreateExternalDatabaseConnectorDetails,
@@ -580,6 +629,10 @@ database_type_mapping = {
     "CreatePluggableDatabaseRefreshableCloneDetails": CreatePluggableDatabaseRefreshableCloneDetails,
     "CreateRecoveryApplianceBackupDestinationDetails": CreateRecoveryApplianceBackupDestinationDetails,
     "CreateRefreshableAutonomousDatabaseCloneDetails": CreateRefreshableAutonomousDatabaseCloneDetails,
+    "CreateScheduledActionDetails": CreateScheduledActionDetails,
+    "CreateSchedulingPlanDetails": CreateSchedulingPlanDetails,
+    "CreateSchedulingPolicyDetails": CreateSchedulingPolicyDetails,
+    "CreateSchedulingWindowDetails": CreateSchedulingWindowDetails,
     "CreateVmClusterDetails": CreateVmClusterDetails,
     "CustomerContact": CustomerContact,
     "DataCollectionOptions": DataCollectionOptions,
@@ -668,6 +721,11 @@ database_type_mapping = {
     "ExascaleDbStorageInputDetails": ExascaleDbStorageInputDetails,
     "ExascaleDbStorageVault": ExascaleDbStorageVault,
     "ExascaleDbStorageVaultSummary": ExascaleDbStorageVaultSummary,
+    "ExecutionAction": ExecutionAction,
+    "ExecutionActionMember": ExecutionActionMember,
+    "ExecutionActionSummary": ExecutionActionSummary,
+    "ExecutionWindow": ExecutionWindow,
+    "ExecutionWindowSummary": ExecutionWindowSummary,
     "ExternalBackupJob": ExternalBackupJob,
     "ExternalContainerDatabase": ExternalContainerDatabase,
     "ExternalContainerDatabaseSummary": ExternalContainerDatabaseSummary,
@@ -688,6 +746,7 @@ database_type_mapping = {
     "GenerateRecommendedNetworkDetails": GenerateRecommendedNetworkDetails,
     "GiMinorVersionSummary": GiMinorVersionSummary,
     "GiVersionSummary": GiVersionSummary,
+    "GranularMaintenanceHistoryDetails": GranularMaintenanceHistoryDetails,
     "InfoForNetworkGenDetails": InfoForNetworkGenDetails,
     "InfrastructureTargetVersion": InfrastructureTargetVersion,
     "InfrastructureTargetVersionSummary": InfrastructureTargetVersionSummary,
@@ -714,6 +773,7 @@ database_type_mapping = {
     "ModifyPluggableDatabaseManagementDetails": ModifyPluggableDatabaseManagementDetails,
     "Month": Month,
     "MountTypeDetails": MountTypeDetails,
+    "MoveExecutionActionMemberDetails": MoveExecutionActionMemberDetails,
     "NetworkBondingModeDetails": NetworkBondingModeDetails,
     "NodeDetails": NodeDetails,
     "OCPUs": OCPUs,
@@ -735,6 +795,8 @@ database_type_mapping = {
     "PluggableDatabaseNodeLevelDetails": PluggableDatabaseNodeLevelDetails,
     "PluggableDatabaseRefreshableCloneConfig": PluggableDatabaseRefreshableCloneConfig,
     "PluggableDatabaseSummary": PluggableDatabaseSummary,
+    "RecommendedScheduledActionSummary": RecommendedScheduledActionSummary,
+    "RecommendedScheduledActionsCollection": RecommendedScheduledActionsCollection,
     "RefreshableCloneCollection": RefreshableCloneCollection,
     "RefreshableCloneSummary": RefreshableCloneSummary,
     "RegisterAutonomousDatabaseDataSafeDetails": RegisterAutonomousDatabaseDataSafeDetails,
@@ -743,6 +805,8 @@ database_type_mapping = {
     "RemoveVirtualMachineFromCloudVmClusterDetails": RemoveVirtualMachineFromCloudVmClusterDetails,
     "RemoveVirtualMachineFromExadbVmClusterDetails": RemoveVirtualMachineFromExadbVmClusterDetails,
     "RemoveVirtualMachineFromVmClusterDetails": RemoveVirtualMachineFromVmClusterDetails,
+    "ReorderExecutionActionDetails": ReorderExecutionActionDetails,
+    "ReorderScheduledActionsDetails": ReorderScheduledActionsDetails,
     "ResizeVmClusterNetworkDetails": ResizeVmClusterNetworkDetails,
     "ResourcePoolShapeCollection": ResourcePoolShapeCollection,
     "ResourcePoolShapeSummary": ResourcePoolShapeSummary,
@@ -756,7 +820,17 @@ database_type_mapping = {
     "SaasAdminUserConfiguration": SaasAdminUserConfiguration,
     "SaasAdminUserStatus": SaasAdminUserStatus,
     "ScanDetails": ScanDetails,
+    "ScheduledAction": ScheduledAction,
+    "ScheduledActionCollection": ScheduledActionCollection,
+    "ScheduledActionSummary": ScheduledActionSummary,
     "ScheduledOperationDetails": ScheduledOperationDetails,
+    "SchedulingPlan": SchedulingPlan,
+    "SchedulingPlanCollection": SchedulingPlanCollection,
+    "SchedulingPlanSummary": SchedulingPlanSummary,
+    "SchedulingPolicy": SchedulingPolicy,
+    "SchedulingPolicySummary": SchedulingPolicySummary,
+    "SchedulingWindow": SchedulingWindow,
+    "SchedulingWindowSummary": SchedulingWindowSummary,
     "SelfMountDetails": SelfMountDetails,
     "StackMonitoringConfig": StackMonitoringConfig,
     "StoragePerformanceDetails": StoragePerformanceDetails,
@@ -788,6 +862,8 @@ database_type_mapping = {
     "UpdateExadataInfrastructureDetails": UpdateExadataInfrastructureDetails,
     "UpdateExadbVmClusterDetails": UpdateExadbVmClusterDetails,
     "UpdateExascaleDbStorageVaultDetails": UpdateExascaleDbStorageVaultDetails,
+    "UpdateExecutionActionDetails": UpdateExecutionActionDetails,
+    "UpdateExecutionWindowDetails": UpdateExecutionWindowDetails,
     "UpdateExternalContainerDatabaseDetails": UpdateExternalContainerDatabaseDetails,
     "UpdateExternalDatabaseConnectorDetails": UpdateExternalDatabaseConnectorDetails,
     "UpdateExternalDatabaseDetailsBase": UpdateExternalDatabaseDetailsBase,
@@ -800,6 +876,9 @@ database_type_mapping = {
     "UpdateMaintenanceRunDetails": UpdateMaintenanceRunDetails,
     "UpdateOneoffPatchDetails": UpdateOneoffPatchDetails,
     "UpdatePluggableDatabaseDetails": UpdatePluggableDatabaseDetails,
+    "UpdateScheduledActionDetails": UpdateScheduledActionDetails,
+    "UpdateSchedulingPolicyDetails": UpdateSchedulingPolicyDetails,
+    "UpdateSchedulingWindowDetails": UpdateSchedulingWindowDetails,
     "UpdateSummary": UpdateSummary,
     "UpdateVmClusterDetails": UpdateVmClusterDetails,
     "UpdateVmClusterNetworkDetails": UpdateVmClusterNetworkDetails,
@@ -816,5 +895,6 @@ database_type_mapping = {
     "VmClusterUpdateHistoryEntrySummary": VmClusterUpdateHistoryEntrySummary,
     "VmClusterUpdateSummary": VmClusterUpdateSummary,
     "VmNetworkDetails": VmNetworkDetails,
+    "WindowPreferenceDetail": WindowPreferenceDetail,
     "WorkloadType": WorkloadType
 }

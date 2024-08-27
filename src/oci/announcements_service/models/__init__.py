@@ -8,6 +8,7 @@ from __future__ import absolute_import
 
 from .affected_resource import AffectedResource
 from .announcement import Announcement
+from .announcement_compartment import AnnouncementCompartment
 from .announcement_subscription import AnnouncementSubscription
 from .announcement_subscription_collection import AnnouncementSubscriptionCollection
 from .announcement_subscription_summary import AnnouncementSubscriptionSummary
@@ -19,6 +20,7 @@ from .announcements_preferences_summary import AnnouncementsPreferencesSummary
 from .base_announcement import BaseAnnouncement
 from .base_announcements_preferences import BaseAnnouncementsPreferences
 from .base_create_announcements_preferences_details import BaseCreateAnnouncementsPreferencesDetails
+from .base_service import BaseService
 from .change_announcement_subscription_compartment_details import ChangeAnnouncementSubscriptionCompartmentDetails
 from .create_announcement_subscription_details import CreateAnnouncementSubscriptionDetails
 from .create_announcements_preferences_details import CreateAnnouncementsPreferencesDetails
@@ -27,6 +29,10 @@ from .filter import Filter
 from .filter_group import FilterGroup
 from .filter_group_details import FilterGroupDetails
 from .model_property import ModelProperty
+from .notifications_summary import NotificationsSummary
+from .service import Service
+from .service_summary import ServiceSummary
+from .services_collection import ServicesCollection
 from .update_announcement_subscription_details import UpdateAnnouncementSubscriptionDetails
 from .update_announcements_preferences_details import UpdateAnnouncementsPreferencesDetails
 from .update_filter_group_details import UpdateFilterGroupDetails
@@ -35,6 +41,7 @@ from .update_filter_group_details import UpdateFilterGroupDetails
 announcements_service_type_mapping = {
     "AffectedResource": AffectedResource,
     "Announcement": Announcement,
+    "AnnouncementCompartment": AnnouncementCompartment,
     "AnnouncementSubscription": AnnouncementSubscription,
     "AnnouncementSubscriptionCollection": AnnouncementSubscriptionCollection,
     "AnnouncementSubscriptionSummary": AnnouncementSubscriptionSummary,
@@ -46,6 +53,7 @@ announcements_service_type_mapping = {
     "BaseAnnouncement": BaseAnnouncement,
     "BaseAnnouncementsPreferences": BaseAnnouncementsPreferences,
     "BaseCreateAnnouncementsPreferencesDetails": BaseCreateAnnouncementsPreferencesDetails,
+    "BaseService": BaseService,
     "ChangeAnnouncementSubscriptionCompartmentDetails": ChangeAnnouncementSubscriptionCompartmentDetails,
     "CreateAnnouncementSubscriptionDetails": CreateAnnouncementSubscriptionDetails,
     "CreateAnnouncementsPreferencesDetails": CreateAnnouncementsPreferencesDetails,
@@ -54,6 +62,10 @@ announcements_service_type_mapping = {
     "FilterGroup": FilterGroup,
     "FilterGroupDetails": FilterGroupDetails,
     "ModelProperty": ModelProperty,
+    "NotificationsSummary": NotificationsSummary,
+    "Service": Service,
+    "ServiceSummary": ServiceSummary,
+    "ServicesCollection": ServicesCollection,
     "UpdateAnnouncementSubscriptionDetails": UpdateAnnouncementSubscriptionDetails,
     "UpdateAnnouncementsPreferencesDetails": UpdateAnnouncementsPreferencesDetails,
     "UpdateFilterGroupDetails": UpdateFilterGroupDetails

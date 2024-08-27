@@ -280,6 +280,14 @@ class MaintenanceRun(object):
             The value to assign to the estimated_component_patching_start_time property of this MaintenanceRun.
         :type estimated_component_patching_start_time: datetime
 
+        :param is_maintenance_run_granular:
+            The value to assign to the is_maintenance_run_granular property of this MaintenanceRun.
+        :type is_maintenance_run_granular: bool
+
+        :param total_time_taken_in_mins:
+            The value to assign to the total_time_taken_in_mins property of this MaintenanceRun.
+        :type total_time_taken_in_mins: int
+
         :param database_software_image_id:
             The value to assign to the database_software_image_id property of this MaintenanceRun.
         :type database_software_image_id: str
@@ -315,6 +323,8 @@ class MaintenanceRun(object):
             'estimated_patching_time': 'EstimatedPatchingTime',
             'current_patching_component': 'str',
             'estimated_component_patching_start_time': 'datetime',
+            'is_maintenance_run_granular': 'bool',
+            'total_time_taken_in_mins': 'int',
             'database_software_image_id': 'str'
         }
 
@@ -348,6 +358,8 @@ class MaintenanceRun(object):
             'estimated_patching_time': 'estimatedPatchingTime',
             'current_patching_component': 'currentPatchingComponent',
             'estimated_component_patching_start_time': 'estimatedComponentPatchingStartTime',
+            'is_maintenance_run_granular': 'isMaintenanceRunGranular',
+            'total_time_taken_in_mins': 'totalTimeTakenInMins',
             'database_software_image_id': 'databaseSoftwareImageId'
         }
 
@@ -380,6 +392,8 @@ class MaintenanceRun(object):
         self._estimated_patching_time = None
         self._current_patching_component = None
         self._estimated_component_patching_start_time = None
+        self._is_maintenance_run_granular = None
+        self._total_time_taken_in_mins = None
         self._database_software_image_id = None
 
     @property
@@ -1123,6 +1137,54 @@ class MaintenanceRun(object):
         :type: datetime
         """
         self._estimated_component_patching_start_time = estimated_component_patching_start_time
+
+    @property
+    def is_maintenance_run_granular(self):
+        """
+        Gets the is_maintenance_run_granular of this MaintenanceRun.
+        If `FALSE`, the maintenance run doesn't support granular maintenance.
+
+
+        :return: The is_maintenance_run_granular of this MaintenanceRun.
+        :rtype: bool
+        """
+        return self._is_maintenance_run_granular
+
+    @is_maintenance_run_granular.setter
+    def is_maintenance_run_granular(self, is_maintenance_run_granular):
+        """
+        Sets the is_maintenance_run_granular of this MaintenanceRun.
+        If `FALSE`, the maintenance run doesn't support granular maintenance.
+
+
+        :param is_maintenance_run_granular: The is_maintenance_run_granular of this MaintenanceRun.
+        :type: bool
+        """
+        self._is_maintenance_run_granular = is_maintenance_run_granular
+
+    @property
+    def total_time_taken_in_mins(self):
+        """
+        Gets the total_time_taken_in_mins of this MaintenanceRun.
+        The total time taken by corresponding resource activity in minutes.
+
+
+        :return: The total_time_taken_in_mins of this MaintenanceRun.
+        :rtype: int
+        """
+        return self._total_time_taken_in_mins
+
+    @total_time_taken_in_mins.setter
+    def total_time_taken_in_mins(self, total_time_taken_in_mins):
+        """
+        Sets the total_time_taken_in_mins of this MaintenanceRun.
+        The total time taken by corresponding resource activity in minutes.
+
+
+        :param total_time_taken_in_mins: The total_time_taken_in_mins of this MaintenanceRun.
+        :type: int
+        """
+        self._total_time_taken_in_mins = total_time_taken_in_mins
 
     @property
     def database_software_image_id(self):

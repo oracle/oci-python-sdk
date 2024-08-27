@@ -120,6 +120,10 @@ class ClusterSummary(object):
             The value to assign to the defined_tags property of this ClusterSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this ClusterSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -137,7 +141,8 @@ class ClusterSummary(object):
             'initial_host_ocpu_count': 'float',
             'vsphere_type': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -156,7 +161,8 @@ class ClusterSummary(object):
             'initial_host_ocpu_count': 'initialHostOcpuCount',
             'vsphere_type': 'vsphereType',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'system_tags': 'systemTags'
         }
 
         self._id = None
@@ -175,6 +181,7 @@ class ClusterSummary(object):
         self._vsphere_type = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
 
     @property
     def id(self):
@@ -657,6 +664,32 @@ class ClusterSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this ClusterSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{orcl-cloud: {free-tier-retain: true}}`
+
+
+        :return: The system_tags of this ClusterSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this ClusterSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{orcl-cloud: {free-tier-retain: true}}`
+
+
+        :param system_tags: The system_tags of this ClusterSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

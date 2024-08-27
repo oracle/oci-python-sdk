@@ -1267,6 +1267,9 @@ class SddcClient(object):
         :param str host_shape_name: (optional)
             A filter to return only resources that match or support the given ESXi host shape.
 
+        :param str version_to_upgrade: (optional)
+            A filter to return only VMware software versions that the given VMware software version can be upgraded to.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1300,7 +1303,8 @@ class SddcClient(object):
             "page",
             "opc_request_id",
             "version",
-            "host_shape_name"
+            "host_shape_name",
+            "version_to_upgrade"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1312,7 +1316,8 @@ class SddcClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "version": kwargs.get("version", missing),
-            "hostShapeName": kwargs.get("host_shape_name", missing)
+            "hostShapeName": kwargs.get("host_shape_name", missing),
+            "versionToUpgrade": kwargs.get("version_to_upgrade", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

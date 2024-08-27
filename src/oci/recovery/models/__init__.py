@@ -7,6 +7,7 @@
 from __future__ import absolute_import
 
 from .change_protected_database_compartment_details import ChangeProtectedDatabaseCompartmentDetails
+from .change_protected_database_subscription_details import ChangeProtectedDatabaseSubscriptionDetails
 from .change_protection_policy_compartment_details import ChangeProtectionPolicyCompartmentDetails
 from .change_recovery_service_subnet_compartment_details import ChangeRecoveryServiceSubnetCompartmentDetails
 from .create_protected_database_details import CreateProtectedDatabaseDetails
@@ -42,6 +43,7 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 # Maps type names to classes for recovery services.
 recovery_type_mapping = {
     "ChangeProtectedDatabaseCompartmentDetails": ChangeProtectedDatabaseCompartmentDetails,
+    "ChangeProtectedDatabaseSubscriptionDetails": ChangeProtectedDatabaseSubscriptionDetails,
     "ChangeProtectionPolicyCompartmentDetails": ChangeProtectionPolicyCompartmentDetails,
     "ChangeRecoveryServiceSubnetCompartmentDetails": ChangeRecoveryServiceSubnetCompartmentDetails,
     "CreateProtectedDatabaseDetails": CreateProtectedDatabaseDetails,

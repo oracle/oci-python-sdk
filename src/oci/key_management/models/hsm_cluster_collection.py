@@ -39,7 +39,7 @@ class HsmClusterCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this HsmClusterCollection.
-        List of Hsm Clusters.
+        List of HSM Cluster Summary Objects.
 
 
         :return: The items of this HsmClusterCollection.
@@ -51,7 +51,7 @@ class HsmClusterCollection(object):
     def items(self, items):
         """
         Sets the items of this HsmClusterCollection.
-        List of Hsm Clusters.
+        List of HSM Cluster Summary Objects.
 
 
         :param items: The items of this HsmClusterCollection.

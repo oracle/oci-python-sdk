@@ -19,18 +19,23 @@ class HttpResponseBody(object):
     #: This constant has a value of "STATIC_TEXT"
     TYPE_STATIC_TEXT = "STATIC_TEXT"
 
+    #: A constant which can be used with the type property of a HttpResponseBody.
+    #: This constant has a value of "DYNAMIC"
+    TYPE_DYNAMIC = "DYNAMIC"
+
     def __init__(self, **kwargs):
         """
         Initializes a new HttpResponseBody object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.waf.models.DynamicHttpResponseBody`
         * :class:`~oci.waf.models.StaticTextHttpResponseBody`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param type:
             The value to assign to the type property of this HttpResponseBody.
-            Allowed values for this property are: "STATIC_TEXT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "STATIC_TEXT", "DYNAMIC", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -53,6 +58,9 @@ class HttpResponseBody(object):
         """
         type = object_dictionary['type']
 
+        if type == 'DYNAMIC':
+            return 'DynamicHttpResponseBody'
+
         if type == 'STATIC_TEXT':
             return 'StaticTextHttpResponseBody'
         else:
@@ -64,7 +72,7 @@ class HttpResponseBody(object):
         **[Required]** Gets the type of this HttpResponseBody.
         Type of HttpResponseBody.
 
-        Allowed values for this property are: "STATIC_TEXT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STATIC_TEXT", "DYNAMIC", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -83,7 +91,7 @@ class HttpResponseBody(object):
         :param type: The type of this HttpResponseBody.
         :type: str
         """
-        allowed_values = ["STATIC_TEXT"]
+        allowed_values = ["STATIC_TEXT", "DYNAMIC"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

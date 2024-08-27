@@ -79,6 +79,10 @@ class ProtectionPolicySummary(object):
             The value to assign to the policy_locked_date_time property of this ProtectionPolicySummary.
         :type policy_locked_date_time: str
 
+        :param must_enforce_cloud_locality:
+            The value to assign to the must_enforce_cloud_locality property of this ProtectionPolicySummary.
+        :type must_enforce_cloud_locality: bool
+
         :param time_created:
             The value to assign to the time_created property of this ProtectionPolicySummary.
         :type time_created: datetime
@@ -117,6 +121,7 @@ class ProtectionPolicySummary(object):
             'backup_retention_period_in_days': 'int',
             'is_predefined_policy': 'bool',
             'policy_locked_date_time': 'str',
+            'must_enforce_cloud_locality': 'bool',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
@@ -133,6 +138,7 @@ class ProtectionPolicySummary(object):
             'backup_retention_period_in_days': 'backupRetentionPeriodInDays',
             'is_predefined_policy': 'isPredefinedPolicy',
             'policy_locked_date_time': 'policyLockedDateTime',
+            'must_enforce_cloud_locality': 'mustEnforceCloudLocality',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
@@ -148,6 +154,7 @@ class ProtectionPolicySummary(object):
         self._backup_retention_period_in_days = None
         self._is_predefined_policy = None
         self._policy_locked_date_time = None
+        self._must_enforce_cloud_locality = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
@@ -299,6 +306,30 @@ class ProtectionPolicySummary(object):
         :type: str
         """
         self._policy_locked_date_time = policy_locked_date_time
+
+    @property
+    def must_enforce_cloud_locality(self):
+        """
+        Gets the must_enforce_cloud_locality of this ProtectionPolicySummary.
+        Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+
+
+        :return: The must_enforce_cloud_locality of this ProtectionPolicySummary.
+        :rtype: bool
+        """
+        return self._must_enforce_cloud_locality
+
+    @must_enforce_cloud_locality.setter
+    def must_enforce_cloud_locality(self, must_enforce_cloud_locality):
+        """
+        Sets the must_enforce_cloud_locality of this ProtectionPolicySummary.
+        Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+
+
+        :param must_enforce_cloud_locality: The must_enforce_cloud_locality of this ProtectionPolicySummary.
+        :type: bool
+        """
+        self._must_enforce_cloud_locality = must_enforce_cloud_locality
 
     @property
     def time_created(self):

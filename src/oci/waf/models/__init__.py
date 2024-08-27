@@ -22,6 +22,7 @@ from .create_network_address_list_vcn_addresses_details import CreateNetworkAddr
 from .create_web_app_firewall_details import CreateWebAppFirewallDetails
 from .create_web_app_firewall_load_balancer_details import CreateWebAppFirewallLoadBalancerDetails
 from .create_web_app_firewall_policy_details import CreateWebAppFirewallPolicyDetails
+from .dynamic_http_response_body import DynamicHttpResponseBody
 from .http_response_body import HttpResponseBody
 from .network_address_list import NetworkAddressList
 from .network_address_list_addresses import NetworkAddressListAddresses
@@ -89,6 +90,7 @@ waf_type_mapping = {
     "CreateWebAppFirewallDetails": CreateWebAppFirewallDetails,
     "CreateWebAppFirewallLoadBalancerDetails": CreateWebAppFirewallLoadBalancerDetails,
     "CreateWebAppFirewallPolicyDetails": CreateWebAppFirewallPolicyDetails,
+    "DynamicHttpResponseBody": DynamicHttpResponseBody,
     "HttpResponseBody": HttpResponseBody,
     "NetworkAddressList": NetworkAddressList,
     "NetworkAddressListAddresses": NetworkAddressListAddresses,

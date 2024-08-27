@@ -126,13 +126,18 @@ class AutonomousDatabaseStandbySummary(object):
             The value to assign to the time_disaster_recovery_role_changed property of this AutonomousDatabaseStandbySummary.
         :type time_disaster_recovery_role_changed: datetime
 
+        :param availability_domain:
+            The value to assign to the availability_domain property of this AutonomousDatabaseStandbySummary.
+        :type availability_domain: str
+
         """
         self.swagger_types = {
             'lag_time_in_seconds': 'int',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'time_data_guard_role_changed': 'datetime',
-            'time_disaster_recovery_role_changed': 'datetime'
+            'time_disaster_recovery_role_changed': 'datetime',
+            'availability_domain': 'str'
         }
 
         self.attribute_map = {
@@ -140,7 +145,8 @@ class AutonomousDatabaseStandbySummary(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'time_data_guard_role_changed': 'timeDataGuardRoleChanged',
-            'time_disaster_recovery_role_changed': 'timeDisasterRecoveryRoleChanged'
+            'time_disaster_recovery_role_changed': 'timeDisasterRecoveryRoleChanged',
+            'availability_domain': 'availabilityDomain'
         }
 
         self._lag_time_in_seconds = None
@@ -148,6 +154,7 @@ class AutonomousDatabaseStandbySummary(object):
         self._lifecycle_details = None
         self._time_data_guard_role_changed = None
         self._time_disaster_recovery_role_changed = None
+        self._availability_domain = None
 
     @property
     def lag_time_in_seconds(self):
@@ -274,6 +281,30 @@ class AutonomousDatabaseStandbySummary(object):
         :type: datetime
         """
         self._time_disaster_recovery_role_changed = time_disaster_recovery_role_changed
+
+    @property
+    def availability_domain(self):
+        """
+        Gets the availability_domain of this AutonomousDatabaseStandbySummary.
+        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+
+
+        :return: The availability_domain of this AutonomousDatabaseStandbySummary.
+        :rtype: str
+        """
+        return self._availability_domain
+
+    @availability_domain.setter
+    def availability_domain(self, availability_domain):
+        """
+        Sets the availability_domain of this AutonomousDatabaseStandbySummary.
+        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+
+
+        :param availability_domain: The availability_domain of this AutonomousDatabaseStandbySummary.
+        :type: str
+        """
+        self._availability_domain = availability_domain
 
     def __repr__(self):
         return formatted_flat_dict(self)

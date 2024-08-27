@@ -6,6 +6,8 @@
 
 from __future__ import absolute_import
 
+from .add_model_lock_details import AddModelLockDetails
+from .add_project_lock_details import AddProjectLockDetails
 from .analyze_document_details import AnalyzeDocumentDetails
 from .analyze_document_result import AnalyzeDocumentResult
 from .bounding_polygon import BoundingPolygon
@@ -67,6 +69,9 @@ from .processor_job import ProcessorJob
 from .project import Project
 from .project_collection import ProjectCollection
 from .project_summary import ProjectSummary
+from .remove_model_lock_details import RemoveModelLockDetails
+from .remove_project_lock_details import RemoveProjectLockDetails
+from .resource_lock import ResourceLock
 from .table import Table
 from .table_row import TableRow
 from .update_model_details import UpdateModelDetails
@@ -90,6 +95,8 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 
 # Maps type names to classes for ai_document services.
 ai_document_type_mapping = {
+    "AddModelLockDetails": AddModelLockDetails,
+    "AddProjectLockDetails": AddProjectLockDetails,
     "AnalyzeDocumentDetails": AnalyzeDocumentDetails,
     "AnalyzeDocumentResult": AnalyzeDocumentResult,
     "BoundingPolygon": BoundingPolygon,
@@ -151,6 +158,9 @@ ai_document_type_mapping = {
     "Project": Project,
     "ProjectCollection": ProjectCollection,
     "ProjectSummary": ProjectSummary,
+    "RemoveModelLockDetails": RemoveModelLockDetails,
+    "RemoveProjectLockDetails": RemoveProjectLockDetails,
+    "ResourceLock": ResourceLock,
     "Table": Table,
     "TableRow": TableRow,
     "UpdateModelDetails": UpdateModelDetails,

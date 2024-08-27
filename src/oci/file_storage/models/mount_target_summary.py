@@ -35,6 +35,10 @@ class MountTargetSummary(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the lifecycle_state property of a MountTargetSummary.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MountTargetSummary object with values from keyword arguments.
@@ -62,7 +66,7 @@ class MountTargetSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this MountTargetSummary.
-            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -77,6 +81,22 @@ class MountTargetSummary(object):
         :param nsg_ids:
             The value to assign to the nsg_ids property of this MountTargetSummary.
         :type nsg_ids: list[str]
+
+        :param time_billing_cycle_end:
+            The value to assign to the time_billing_cycle_end property of this MountTargetSummary.
+        :type time_billing_cycle_end: datetime
+
+        :param observed_throughput:
+            The value to assign to the observed_throughput property of this MountTargetSummary.
+        :type observed_throughput: int
+
+        :param requested_throughput:
+            The value to assign to the requested_throughput property of this MountTargetSummary.
+        :type requested_throughput: int
+
+        :param reserved_storage_capacity:
+            The value to assign to the reserved_storage_capacity property of this MountTargetSummary.
+        :type reserved_storage_capacity: int
 
         :param time_created:
             The value to assign to the time_created property of this MountTargetSummary.
@@ -101,6 +121,10 @@ class MountTargetSummary(object):
             'private_ip_ids': 'list[str]',
             'subnet_id': 'str',
             'nsg_ids': 'list[str]',
+            'time_billing_cycle_end': 'datetime',
+            'observed_throughput': 'int',
+            'requested_throughput': 'int',
+            'reserved_storage_capacity': 'int',
             'time_created': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -116,6 +140,10 @@ class MountTargetSummary(object):
             'private_ip_ids': 'privateIpIds',
             'subnet_id': 'subnetId',
             'nsg_ids': 'nsgIds',
+            'time_billing_cycle_end': 'timeBillingCycleEnd',
+            'observed_throughput': 'observedThroughput',
+            'requested_throughput': 'requestedThroughput',
+            'reserved_storage_capacity': 'reservedStorageCapacity',
             'time_created': 'timeCreated',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -130,6 +158,10 @@ class MountTargetSummary(object):
         self._private_ip_ids = None
         self._subnet_id = None
         self._nsg_ids = None
+        self._time_billing_cycle_end = None
+        self._observed_throughput = None
+        self._requested_throughput = None
+        self._reserved_storage_capacity = None
         self._time_created = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -288,7 +320,7 @@ class MountTargetSummary(object):
         **[Required]** Gets the lifecycle_state of this MountTargetSummary.
         The current state of the mount target.
 
-        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -307,7 +339,7 @@ class MountTargetSummary(object):
         :param lifecycle_state: The lifecycle_state of this MountTargetSummary.
         :type: str
         """
-        allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "UPDATING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -399,6 +431,126 @@ class MountTargetSummary(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def time_billing_cycle_end(self):
+        """
+        Gets the time_billing_cycle_end of this MountTargetSummary.
+        The date and time the mount target current billing cycle will end, expressed in
+        `RFC 3339`__ timestamp format. Once a cycle ends, it is updated
+        automatically to next timestamp which is after 30 days.
+
+          Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :return: The time_billing_cycle_end of this MountTargetSummary.
+        :rtype: datetime
+        """
+        return self._time_billing_cycle_end
+
+    @time_billing_cycle_end.setter
+    def time_billing_cycle_end(self, time_billing_cycle_end):
+        """
+        Sets the time_billing_cycle_end of this MountTargetSummary.
+        The date and time the mount target current billing cycle will end, expressed in
+        `RFC 3339`__ timestamp format. Once a cycle ends, it is updated
+        automatically to next timestamp which is after 30 days.
+
+          Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :param time_billing_cycle_end: The time_billing_cycle_end of this MountTargetSummary.
+        :type: datetime
+        """
+        self._time_billing_cycle_end = time_billing_cycle_end
+
+    @property
+    def observed_throughput(self):
+        """
+        Gets the observed_throughput of this MountTargetSummary.
+        Current billed throughput for mount target in Gbps. This corresponds to shape of mount target.
+        Available shapes and corresponding throughput are listed at `Mount Target Performance`__.
+
+        __ https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance
+
+
+        :return: The observed_throughput of this MountTargetSummary.
+        :rtype: int
+        """
+        return self._observed_throughput
+
+    @observed_throughput.setter
+    def observed_throughput(self, observed_throughput):
+        """
+        Sets the observed_throughput of this MountTargetSummary.
+        Current billed throughput for mount target in Gbps. This corresponds to shape of mount target.
+        Available shapes and corresponding throughput are listed at `Mount Target Performance`__.
+
+        __ https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance
+
+
+        :param observed_throughput: The observed_throughput of this MountTargetSummary.
+        :type: int
+        """
+        self._observed_throughput = observed_throughput
+
+    @property
+    def requested_throughput(self):
+        """
+        Gets the requested_throughput of this MountTargetSummary.
+        - New throughput for mount target at the end of billing cycle in Gbps.
+
+
+        :return: The requested_throughput of this MountTargetSummary.
+        :rtype: int
+        """
+        return self._requested_throughput
+
+    @requested_throughput.setter
+    def requested_throughput(self, requested_throughput):
+        """
+        Sets the requested_throughput of this MountTargetSummary.
+        - New throughput for mount target at the end of billing cycle in Gbps.
+
+
+        :param requested_throughput: The requested_throughput of this MountTargetSummary.
+        :type: int
+        """
+        self._requested_throughput = requested_throughput
+
+    @property
+    def reserved_storage_capacity(self):
+        """
+        Gets the reserved_storage_capacity of this MountTargetSummary.
+        - Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value
+        of mount target. Value is listed at `Mount Target Performance`__.
+
+        __ https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance
+
+
+        :return: The reserved_storage_capacity of this MountTargetSummary.
+        :rtype: int
+        """
+        return self._reserved_storage_capacity
+
+    @reserved_storage_capacity.setter
+    def reserved_storage_capacity(self, reserved_storage_capacity):
+        """
+        Sets the reserved_storage_capacity of this MountTargetSummary.
+        - Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value
+        of mount target. Value is listed at `Mount Target Performance`__.
+
+        __ https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance
+
+
+        :param reserved_storage_capacity: The reserved_storage_capacity of this MountTargetSummary.
+        :type: int
+        """
+        self._reserved_storage_capacity = reserved_storage_capacity
 
     @property
     def time_created(self):

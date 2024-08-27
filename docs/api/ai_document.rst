@@ -18,6 +18,8 @@ Ai Document
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.ai_document.models.AddModelLockDetails
+    oci.ai_document.models.AddProjectLockDetails
     oci.ai_document.models.AnalyzeDocumentDetails
     oci.ai_document.models.AnalyzeDocumentResult
     oci.ai_document.models.BoundingPolygon
@@ -79,6 +81,9 @@ Ai Document
     oci.ai_document.models.Project
     oci.ai_document.models.ProjectCollection
     oci.ai_document.models.ProjectSummary
+    oci.ai_document.models.RemoveModelLockDetails
+    oci.ai_document.models.RemoveProjectLockDetails
+    oci.ai_document.models.ResourceLock
     oci.ai_document.models.Table
     oci.ai_document.models.TableRow
     oci.ai_document.models.UpdateModelDetails

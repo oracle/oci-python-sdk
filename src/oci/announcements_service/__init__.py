@@ -13,6 +13,8 @@ from .announcement_subscription_client import AnnouncementSubscriptionClient
 from .announcement_subscription_client_composite_operations import AnnouncementSubscriptionClientCompositeOperations
 from .announcements_preferences_client import AnnouncementsPreferencesClient
 from .announcements_preferences_client_composite_operations import AnnouncementsPreferencesClientCompositeOperations
+from .service_client import ServiceClient
+from .service_client_composite_operations import ServiceClientCompositeOperations
 from . import models
 
-__all__ = ["AnnouncementClient", "AnnouncementClientCompositeOperations", "AnnouncementSubscriptionClient", "AnnouncementSubscriptionClientCompositeOperations", "AnnouncementsPreferencesClient", "AnnouncementsPreferencesClientCompositeOperations", "models"]
+__all__ = ["AnnouncementClient", "AnnouncementClientCompositeOperations", "AnnouncementSubscriptionClient", "AnnouncementSubscriptionClientCompositeOperations", "AnnouncementsPreferencesClient", "AnnouncementsPreferencesClientCompositeOperations", "ServiceClient", "ServiceClientCompositeOperations", "models"]

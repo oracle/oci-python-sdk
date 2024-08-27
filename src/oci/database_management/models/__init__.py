@@ -34,6 +34,9 @@ from .attention_log_counts_collection import AttentionLogCountsCollection
 from .attention_log_summary import AttentionLogSummary
 from .automatic_capture_filter import AutomaticCaptureFilter
 from .automatic_capture_filter_details import AutomaticCaptureFilterDetails
+from .autonomous_database_diagnostics_and_management_feature_details import AutonomousDatabaseDiagnosticsAndManagementFeatureDetails
+from .autonomous_database_feature_details import AutonomousDatabaseFeatureDetails
+from .autonomous_database_sql_watch_feature_details import AutonomousDatabaseSqlWatchFeatureDetails
 from .awr_db_collection import AwrDbCollection
 from .awr_db_cpu_usage_collection import AwrDbCpuUsageCollection
 from .awr_db_cpu_usage_summary import AwrDbCpuUsageSummary
@@ -142,8 +145,10 @@ from .db_management_private_endpoint import DbManagementPrivateEndpoint
 from .db_management_private_endpoint_collection import DbManagementPrivateEndpointCollection
 from .db_management_private_endpoint_summary import DbManagementPrivateEndpointSummary
 from .dbm_resource import DbmResource
+from .direct_connector_details import DirectConnectorDetails
 from .disable_automatic_initial_plan_capture_details import DisableAutomaticInitialPlanCaptureDetails
 from .disable_automatic_spm_evolve_advisor_task_details import DisableAutomaticSpmEvolveAdvisorTaskDetails
+from .disable_autonomous_database_management_feature_details import DisableAutonomousDatabaseManagementFeatureDetails
 from .disable_database_management_feature_details import DisableDatabaseManagementFeatureDetails
 from .disable_external_container_database_management_feature_details import DisableExternalContainerDatabaseManagementFeatureDetails
 from .disable_external_non_container_database_management_feature_details import DisableExternalNonContainerDatabaseManagementFeatureDetails
@@ -169,6 +174,7 @@ from .drop_sqls_in_sql_tuning_set_details import DropSqlsInSqlTuningSetDetails
 from .drop_tablespace_details import DropTablespaceDetails
 from .enable_automatic_initial_plan_capture_details import EnableAutomaticInitialPlanCaptureDetails
 from .enable_automatic_spm_evolve_advisor_task_details import EnableAutomaticSpmEvolveAdvisorTaskDetails
+from .enable_autonomous_database_management_feature_details import EnableAutonomousDatabaseManagementFeatureDetails
 from .enable_database_management_feature_details import EnableDatabaseManagementFeatureDetails
 from .enable_external_container_database_management_feature_details import EnableExternalContainerDatabaseManagementFeatureDetails
 from .enable_external_db_system_database_management_details import EnableExternalDbSystemDatabaseManagementDetails
@@ -330,6 +336,7 @@ from .metric_dimension_definition import MetricDimensionDefinition
 from .metric_statistics_definition import MetricStatisticsDefinition
 from .metrics_aggregation_range import MetricsAggregationRange
 from .metrics_aggregation_range_collection import MetricsAggregationRangeCollection
+from .modify_autonomous_database_management_feature_details import ModifyAutonomousDatabaseManagementFeatureDetails
 from .modify_database_management_feature_details import ModifyDatabaseManagementFeatureDetails
 from .modify_pluggable_database_management_feature_details import ModifyPluggableDatabaseManagementFeatureDetails
 from .modify_snapshot_settings_details import ModifySnapshotSettingsDetails
@@ -537,6 +544,9 @@ database_management_type_mapping = {
     "AttentionLogSummary": AttentionLogSummary,
     "AutomaticCaptureFilter": AutomaticCaptureFilter,
     "AutomaticCaptureFilterDetails": AutomaticCaptureFilterDetails,
+    "AutonomousDatabaseDiagnosticsAndManagementFeatureDetails": AutonomousDatabaseDiagnosticsAndManagementFeatureDetails,
+    "AutonomousDatabaseFeatureDetails": AutonomousDatabaseFeatureDetails,
+    "AutonomousDatabaseSqlWatchFeatureDetails": AutonomousDatabaseSqlWatchFeatureDetails,
     "AwrDbCollection": AwrDbCollection,
     "AwrDbCpuUsageCollection": AwrDbCpuUsageCollection,
     "AwrDbCpuUsageSummary": AwrDbCpuUsageSummary,
@@ -645,8 +655,10 @@ database_management_type_mapping = {
     "DbManagementPrivateEndpointCollection": DbManagementPrivateEndpointCollection,
     "DbManagementPrivateEndpointSummary": DbManagementPrivateEndpointSummary,
     "DbmResource": DbmResource,
+    "DirectConnectorDetails": DirectConnectorDetails,
     "DisableAutomaticInitialPlanCaptureDetails": DisableAutomaticInitialPlanCaptureDetails,
     "DisableAutomaticSpmEvolveAdvisorTaskDetails": DisableAutomaticSpmEvolveAdvisorTaskDetails,
+    "DisableAutonomousDatabaseManagementFeatureDetails": DisableAutonomousDatabaseManagementFeatureDetails,
     "DisableDatabaseManagementFeatureDetails": DisableDatabaseManagementFeatureDetails,
     "DisableExternalContainerDatabaseManagementFeatureDetails": DisableExternalContainerDatabaseManagementFeatureDetails,
     "DisableExternalNonContainerDatabaseManagementFeatureDetails": DisableExternalNonContainerDatabaseManagementFeatureDetails,
@@ -672,6 +684,7 @@ database_management_type_mapping = {
     "DropTablespaceDetails": DropTablespaceDetails,
     "EnableAutomaticInitialPlanCaptureDetails": EnableAutomaticInitialPlanCaptureDetails,
     "EnableAutomaticSpmEvolveAdvisorTaskDetails": EnableAutomaticSpmEvolveAdvisorTaskDetails,
+    "EnableAutonomousDatabaseManagementFeatureDetails": EnableAutonomousDatabaseManagementFeatureDetails,
     "EnableDatabaseManagementFeatureDetails": EnableDatabaseManagementFeatureDetails,
     "EnableExternalContainerDatabaseManagementFeatureDetails": EnableExternalContainerDatabaseManagementFeatureDetails,
     "EnableExternalDbSystemDatabaseManagementDetails": EnableExternalDbSystemDatabaseManagementDetails,
@@ -833,6 +846,7 @@ database_management_type_mapping = {
     "MetricStatisticsDefinition": MetricStatisticsDefinition,
     "MetricsAggregationRange": MetricsAggregationRange,
     "MetricsAggregationRangeCollection": MetricsAggregationRangeCollection,
+    "ModifyAutonomousDatabaseManagementFeatureDetails": ModifyAutonomousDatabaseManagementFeatureDetails,
     "ModifyDatabaseManagementFeatureDetails": ModifyDatabaseManagementFeatureDetails,
     "ModifyPluggableDatabaseManagementFeatureDetails": ModifyPluggableDatabaseManagementFeatureDetails,
     "ModifySnapshotSettingsDetails": ModifySnapshotSettingsDetails,

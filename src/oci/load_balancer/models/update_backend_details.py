@@ -108,6 +108,8 @@ class UpdateBackendDetails(object):
         """
         Gets the max_connections of this UpdateBackendDetails.
         The maximum number of simultaneous connections the load balancer can make to the backend.
+        If this is not set then the maximum number of simultaneous connections the load balancer
+        can make to the backend is unlimited.
 
         Example: `300`
 
@@ -122,6 +124,8 @@ class UpdateBackendDetails(object):
         """
         Sets the max_connections of this UpdateBackendDetails.
         The maximum number of simultaneous connections the load balancer can make to the backend.
+        If this is not set then the maximum number of simultaneous connections the load balancer
+        can make to the backend is unlimited.
 
         Example: `300`
 

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class HsmPartitionSummary(object):
     """
-    The details of the Hsm.
+    An object which encapsulates the details of a given HSM.
     """
 
     def __init__(self, **kwargs):
@@ -81,7 +81,7 @@ class HsmPartitionSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this HsmPartitionSummary.
-        The OCID of the HSM resource.
+        The OCID of the HSM resource. Each HSM resource will have a unique OCID identifier.
 
 
         :return: The id of this HsmPartitionSummary.
@@ -93,7 +93,7 @@ class HsmPartitionSummary(object):
     def id(self, id):
         """
         Sets the id of this HsmPartitionSummary.
-        The OCID of the HSM resource.
+        The OCID of the HSM resource. Each HSM resource will have a unique OCID identifier.
 
 
         :param id: The id of this HsmPartitionSummary.
@@ -129,7 +129,9 @@ class HsmPartitionSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this HsmPartitionSummary.
-        The Hsm's current lifecycle state.
+        A HSMCluster resource's current lifecycle state.
+
+        Example: `ACTIVE`
 
 
         :return: The lifecycle_state of this HsmPartitionSummary.
@@ -141,7 +143,9 @@ class HsmPartitionSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this HsmPartitionSummary.
-        The Hsm's current lifecycle state.
+        A HSMCluster resource's current lifecycle state.
+
+        Example: `ACTIVE`
 
 
         :param lifecycle_state: The lifecycle_state of this HsmPartitionSummary.
@@ -177,7 +181,7 @@ class HsmPartitionSummary(object):
     def port_information(self):
         """
         **[Required]** Gets the port_information of this HsmPartitionSummary.
-        Port summary.
+        Details of a single portInformation item include the PortNumber (an integer used as an identifier) and the PortType (refers to either an enum value of Managementutility,Clientutility, or null)
 
 
         :return: The port_information of this HsmPartitionSummary.
@@ -189,7 +193,7 @@ class HsmPartitionSummary(object):
     def port_information(self, port_information):
         """
         Sets the port_information of this HsmPartitionSummary.
-        Port summary.
+        Details of a single portInformation item include the PortNumber (an integer used as an identifier) and the PortType (refers to either an enum value of Managementutility,Clientutility, or null)
 
 
         :param port_information: The port_information of this HsmPartitionSummary.

@@ -59,6 +59,14 @@ class CreateLoadBalancerDetails(object):
             Allowed values for this property are: "IPV4", "IPV6"
         :type ip_mode: str
 
+        :param is_request_id_enabled:
+            The value to assign to the is_request_id_enabled property of this CreateLoadBalancerDetails.
+        :type is_request_id_enabled: bool
+
+        :param request_id_header:
+            The value to assign to the request_id_header property of this CreateLoadBalancerDetails.
+        :type request_id_header: str
+
         :param reserved_ips:
             The value to assign to the reserved_ips property of this CreateLoadBalancerDetails.
         :type reserved_ips: list[oci.load_balancer.models.ReservedIP]
@@ -116,6 +124,8 @@ class CreateLoadBalancerDetails(object):
             'is_private': 'bool',
             'is_delete_protection_enabled': 'bool',
             'ip_mode': 'str',
+            'is_request_id_enabled': 'bool',
+            'request_id_header': 'str',
             'reserved_ips': 'list[ReservedIP]',
             'listeners': 'dict(str, ListenerDetails)',
             'hostnames': 'dict(str, HostnameDetails)',
@@ -138,6 +148,8 @@ class CreateLoadBalancerDetails(object):
             'is_private': 'isPrivate',
             'is_delete_protection_enabled': 'isDeleteProtectionEnabled',
             'ip_mode': 'ipMode',
+            'is_request_id_enabled': 'isRequestIdEnabled',
+            'request_id_header': 'requestIdHeader',
             'reserved_ips': 'reservedIps',
             'listeners': 'listeners',
             'hostnames': 'hostnames',
@@ -159,6 +171,8 @@ class CreateLoadBalancerDetails(object):
         self._is_private = None
         self._is_delete_protection_enabled = None
         self._ip_mode = None
+        self._is_request_id_enabled = None
+        self._request_id_header = None
         self._reserved_ips = None
         self._listeners = None
         self._hostnames = None
@@ -420,6 +434,108 @@ class CreateLoadBalancerDetails(object):
                 f"Invalid value for `ip_mode`, must be None or one of {allowed_values}"
             )
         self._ip_mode = ip_mode
+
+    @property
+    def is_request_id_enabled(self):
+        """
+        Gets the is_request_id_enabled of this CreateLoadBalancerDetails.
+        Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+
+        If \"true\", the load balancer will attach a unique request id header to every request
+        passed through from the load balancer to load balancer backends. This same request id
+        header also will be added to the response the lb received from the backend handling
+        the request before the load balancer returns the response to the requestor. The name
+        of the unique request id header is set the by value of requestIdHeader.
+
+        If \"false\", the loadbalancer not add this unique request id header to either the request
+        passed through to the load balancer backends nor to the reponse returned to the user.
+
+        New load balancers have the Request Id feature disabled unless isRequestIdEnabled is set to true.
+
+        Example: `true`
+
+
+        :return: The is_request_id_enabled of this CreateLoadBalancerDetails.
+        :rtype: bool
+        """
+        return self._is_request_id_enabled
+
+    @is_request_id_enabled.setter
+    def is_request_id_enabled(self, is_request_id_enabled):
+        """
+        Sets the is_request_id_enabled of this CreateLoadBalancerDetails.
+        Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+
+        If \"true\", the load balancer will attach a unique request id header to every request
+        passed through from the load balancer to load balancer backends. This same request id
+        header also will be added to the response the lb received from the backend handling
+        the request before the load balancer returns the response to the requestor. The name
+        of the unique request id header is set the by value of requestIdHeader.
+
+        If \"false\", the loadbalancer not add this unique request id header to either the request
+        passed through to the load balancer backends nor to the reponse returned to the user.
+
+        New load balancers have the Request Id feature disabled unless isRequestIdEnabled is set to true.
+
+        Example: `true`
+
+
+        :param is_request_id_enabled: The is_request_id_enabled of this CreateLoadBalancerDetails.
+        :type: bool
+        """
+        self._is_request_id_enabled = is_request_id_enabled
+
+    @property
+    def request_id_header(self):
+        """
+        Gets the request_id_header of this CreateLoadBalancerDetails.
+        If isRequestIdEnabled is true then this field contains the name of the header field
+        that contains the unique request id that is attached to every request from
+        the load balancer to the load balancer backends and to every response from the load
+        balancer.
+
+        If a request to the load balancer already contains a header with same name as specified
+        in requestIdHeader then the load balancer will not change the value of that field.
+
+        If isRequestIdEnabled is false then this field is ignored.
+
+        If this field is not set or is set to \"\" then this field defaults to X-Request-Id
+
+        **Notes:**
+        * Unless the header name is \"\" it must start with \"X-\" prefix.
+        * Setting the header name to \"\" will set it to the default: X-Request-Id.
+
+
+        :return: The request_id_header of this CreateLoadBalancerDetails.
+        :rtype: str
+        """
+        return self._request_id_header
+
+    @request_id_header.setter
+    def request_id_header(self, request_id_header):
+        """
+        Sets the request_id_header of this CreateLoadBalancerDetails.
+        If isRequestIdEnabled is true then this field contains the name of the header field
+        that contains the unique request id that is attached to every request from
+        the load balancer to the load balancer backends and to every response from the load
+        balancer.
+
+        If a request to the load balancer already contains a header with same name as specified
+        in requestIdHeader then the load balancer will not change the value of that field.
+
+        If isRequestIdEnabled is false then this field is ignored.
+
+        If this field is not set or is set to \"\" then this field defaults to X-Request-Id
+
+        **Notes:**
+        * Unless the header name is \"\" it must start with \"X-\" prefix.
+        * Setting the header name to \"\" will set it to the default: X-Request-Id.
+
+
+        :param request_id_header: The request_id_header of this CreateLoadBalancerDetails.
+        :type: str
+        """
+        self._request_id_header = request_id_header
 
     @property
     def reserved_ips(self):

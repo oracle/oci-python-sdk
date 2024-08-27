@@ -160,6 +160,10 @@ class Model(object):
             The value to assign to the system_tags property of this Model.
         :type system_tags: dict(str, dict(str, object))
 
+        :param locks:
+            The value to assign to the locks property of this Model.
+        :type locks: list[oci.ai_document.models.ResourceLock]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -187,7 +191,8 @@ class Model(object):
             'metrics': 'ModelMetrics',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -216,7 +221,8 @@ class Model(object):
             'metrics': 'metrics',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'locks': 'locks'
         }
 
         self._id = None
@@ -245,6 +251,7 @@ class Model(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._locks = None
 
     @property
     def id(self):
@@ -879,6 +886,30 @@ class Model(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this Model.
+        Locks associated with this resource.
+
+
+        :return: The locks of this Model.
+        :rtype: list[oci.ai_document.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this Model.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this Model.
+        :type: list[oci.ai_document.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -67,6 +67,58 @@ class SupportedHostShapeSummary(object):
     #: This constant has a value of "IN_PLACE_UPGRADE"
     SUPPORTED_OPERATIONS_IN_PLACE_UPGRADE = "IN_PLACE_UPGRADE"
 
+    #: A constant which can be used with the supported_operations property of a SupportedHostShapeSummary.
+    #: This constant has a value of "CREATE_DATASTORE"
+    SUPPORTED_OPERATIONS_CREATE_DATASTORE = "CREATE_DATASTORE"
+
+    #: A constant which can be used with the supported_operations property of a SupportedHostShapeSummary.
+    #: This constant has a value of "UPDATE_DATASTORE"
+    SUPPORTED_OPERATIONS_UPDATE_DATASTORE = "UPDATE_DATASTORE"
+
+    #: A constant which can be used with the supported_operations property of a SupportedHostShapeSummary.
+    #: This constant has a value of "ADD_BLOCK_VOLUME_TO_DATASTORE"
+    SUPPORTED_OPERATIONS_ADD_BLOCK_VOLUME_TO_DATASTORE = "ADD_BLOCK_VOLUME_TO_DATASTORE"
+
+    #: A constant which can be used with the supported_operations property of a SupportedHostShapeSummary.
+    #: This constant has a value of "DELETE_DATASTORE"
+    SUPPORTED_OPERATIONS_DELETE_DATASTORE = "DELETE_DATASTORE"
+
+    #: A constant which can be used with the supported_operations property of a SupportedHostShapeSummary.
+    #: This constant has a value of "CREATE_DATASTORE_CLUSTER"
+    SUPPORTED_OPERATIONS_CREATE_DATASTORE_CLUSTER = "CREATE_DATASTORE_CLUSTER"
+
+    #: A constant which can be used with the supported_operations property of a SupportedHostShapeSummary.
+    #: This constant has a value of "UPDATE_DATASTORE_CLUSTER"
+    SUPPORTED_OPERATIONS_UPDATE_DATASTORE_CLUSTER = "UPDATE_DATASTORE_CLUSTER"
+
+    #: A constant which can be used with the supported_operations property of a SupportedHostShapeSummary.
+    #: This constant has a value of "ATTACH_DATASTORE_CLUSTER_TO_ESXI_HOST"
+    SUPPORTED_OPERATIONS_ATTACH_DATASTORE_CLUSTER_TO_ESXI_HOST = "ATTACH_DATASTORE_CLUSTER_TO_ESXI_HOST"
+
+    #: A constant which can be used with the supported_operations property of a SupportedHostShapeSummary.
+    #: This constant has a value of "ATTACH_DATASTORE_CLUSTER_TO_CLUSTER"
+    SUPPORTED_OPERATIONS_ATTACH_DATASTORE_CLUSTER_TO_CLUSTER = "ATTACH_DATASTORE_CLUSTER_TO_CLUSTER"
+
+    #: A constant which can be used with the supported_operations property of a SupportedHostShapeSummary.
+    #: This constant has a value of "DETACH_DATASTORE_CLUSTER_FROM_ESXI_HOST"
+    SUPPORTED_OPERATIONS_DETACH_DATASTORE_CLUSTER_FROM_ESXI_HOST = "DETACH_DATASTORE_CLUSTER_FROM_ESXI_HOST"
+
+    #: A constant which can be used with the supported_operations property of a SupportedHostShapeSummary.
+    #: This constant has a value of "DETACH_DATASTORE_CLUSTER_FROM_CLUSTER"
+    SUPPORTED_OPERATIONS_DETACH_DATASTORE_CLUSTER_FROM_CLUSTER = "DETACH_DATASTORE_CLUSTER_FROM_CLUSTER"
+
+    #: A constant which can be used with the supported_operations property of a SupportedHostShapeSummary.
+    #: This constant has a value of "DELETE_DATASTORE_CLUSTER"
+    SUPPORTED_OPERATIONS_DELETE_DATASTORE_CLUSTER = "DELETE_DATASTORE_CLUSTER"
+
+    #: A constant which can be used with the supported_operations property of a SupportedHostShapeSummary.
+    #: This constant has a value of "ADD_DATASTORE_TO_DATASTORE_CLUSTER"
+    SUPPORTED_OPERATIONS_ADD_DATASTORE_TO_DATASTORE_CLUSTER = "ADD_DATASTORE_TO_DATASTORE_CLUSTER"
+
+    #: A constant which can be used with the supported_operations property of a SupportedHostShapeSummary.
+    #: This constant has a value of "REMOVE_DATASTORE_FROM_DATASTORE_CLUSTER"
+    SUPPORTED_OPERATIONS_REMOVE_DATASTORE_FROM_DATASTORE_CLUSTER = "REMOVE_DATASTORE_FROM_DATASTORE_CLUSTER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new SupportedHostShapeSummary object with values from keyword arguments.
@@ -78,7 +130,7 @@ class SupportedHostShapeSummary(object):
 
         :param supported_operations:
             The value to assign to the supported_operations property of this SupportedHostShapeSummary.
-            Allowed values for items in this list are: "CREATE_SDDC", "DELETE_SDDC", "CREATE_CLUSTER", "DELETE_CLUSTER", "CREATE_ESXI_HOST", "DELETE_ESXI_HOST", "UPGRADE_HCX", "DOWNGRADE_HCX", "CANCEL_DOWNGRADE_HCX", "REFRESH_HCX_LICENSE_STATUS", "SWAP_BILLING", "REPLACE_HOST", "IN_PLACE_UPGRADE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "CREATE_SDDC", "DELETE_SDDC", "CREATE_CLUSTER", "DELETE_CLUSTER", "CREATE_ESXI_HOST", "DELETE_ESXI_HOST", "UPGRADE_HCX", "DOWNGRADE_HCX", "CANCEL_DOWNGRADE_HCX", "REFRESH_HCX_LICENSE_STATUS", "SWAP_BILLING", "REPLACE_HOST", "IN_PLACE_UPGRADE", "CREATE_DATASTORE", "UPDATE_DATASTORE", "ADD_BLOCK_VOLUME_TO_DATASTORE", "DELETE_DATASTORE", "CREATE_DATASTORE_CLUSTER", "UPDATE_DATASTORE_CLUSTER", "ATTACH_DATASTORE_CLUSTER_TO_ESXI_HOST", "ATTACH_DATASTORE_CLUSTER_TO_CLUSTER", "DETACH_DATASTORE_CLUSTER_FROM_ESXI_HOST", "DETACH_DATASTORE_CLUSTER_FROM_CLUSTER", "DELETE_DATASTORE_CLUSTER", "ADD_DATASTORE_TO_DATASTORE_CLUSTER", "REMOVE_DATASTORE_FROM_DATASTORE_CLUSTER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type supported_operations: list[str]
 
@@ -182,7 +234,7 @@ class SupportedHostShapeSummary(object):
         **[Required]** Gets the supported_operations of this SupportedHostShapeSummary.
         The operations where you can use the shape. The operations can be CREATE_SDDC or CREATE_ESXI_HOST.
 
-        Allowed values for items in this list are: "CREATE_SDDC", "DELETE_SDDC", "CREATE_CLUSTER", "DELETE_CLUSTER", "CREATE_ESXI_HOST", "DELETE_ESXI_HOST", "UPGRADE_HCX", "DOWNGRADE_HCX", "CANCEL_DOWNGRADE_HCX", "REFRESH_HCX_LICENSE_STATUS", "SWAP_BILLING", "REPLACE_HOST", "IN_PLACE_UPGRADE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "CREATE_SDDC", "DELETE_SDDC", "CREATE_CLUSTER", "DELETE_CLUSTER", "CREATE_ESXI_HOST", "DELETE_ESXI_HOST", "UPGRADE_HCX", "DOWNGRADE_HCX", "CANCEL_DOWNGRADE_HCX", "REFRESH_HCX_LICENSE_STATUS", "SWAP_BILLING", "REPLACE_HOST", "IN_PLACE_UPGRADE", "CREATE_DATASTORE", "UPDATE_DATASTORE", "ADD_BLOCK_VOLUME_TO_DATASTORE", "DELETE_DATASTORE", "CREATE_DATASTORE_CLUSTER", "UPDATE_DATASTORE_CLUSTER", "ATTACH_DATASTORE_CLUSTER_TO_ESXI_HOST", "ATTACH_DATASTORE_CLUSTER_TO_CLUSTER", "DETACH_DATASTORE_CLUSTER_FROM_ESXI_HOST", "DETACH_DATASTORE_CLUSTER_FROM_CLUSTER", "DELETE_DATASTORE_CLUSTER", "ADD_DATASTORE_TO_DATASTORE_CLUSTER", "REMOVE_DATASTORE_FROM_DATASTORE_CLUSTER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -201,7 +253,7 @@ class SupportedHostShapeSummary(object):
         :param supported_operations: The supported_operations of this SupportedHostShapeSummary.
         :type: list[str]
         """
-        allowed_values = ["CREATE_SDDC", "DELETE_SDDC", "CREATE_CLUSTER", "DELETE_CLUSTER", "CREATE_ESXI_HOST", "DELETE_ESXI_HOST", "UPGRADE_HCX", "DOWNGRADE_HCX", "CANCEL_DOWNGRADE_HCX", "REFRESH_HCX_LICENSE_STATUS", "SWAP_BILLING", "REPLACE_HOST", "IN_PLACE_UPGRADE"]
+        allowed_values = ["CREATE_SDDC", "DELETE_SDDC", "CREATE_CLUSTER", "DELETE_CLUSTER", "CREATE_ESXI_HOST", "DELETE_ESXI_HOST", "UPGRADE_HCX", "DOWNGRADE_HCX", "CANCEL_DOWNGRADE_HCX", "REFRESH_HCX_LICENSE_STATUS", "SWAP_BILLING", "REPLACE_HOST", "IN_PLACE_UPGRADE", "CREATE_DATASTORE", "UPDATE_DATASTORE", "ADD_BLOCK_VOLUME_TO_DATASTORE", "DELETE_DATASTORE", "CREATE_DATASTORE_CLUSTER", "UPDATE_DATASTORE_CLUSTER", "ATTACH_DATASTORE_CLUSTER_TO_ESXI_HOST", "ATTACH_DATASTORE_CLUSTER_TO_CLUSTER", "DETACH_DATASTORE_CLUSTER_FROM_ESXI_HOST", "DETACH_DATASTORE_CLUSTER_FROM_CLUSTER", "DELETE_DATASTORE_CLUSTER", "ADD_DATASTORE_TO_DATASTORE_CLUSTER", "REMOVE_DATASTORE_FROM_DATASTORE_CLUSTER"]
         if supported_operations:
             supported_operations[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in supported_operations]
         self._supported_operations = supported_operations

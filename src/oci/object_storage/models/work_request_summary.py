@@ -23,6 +23,18 @@ class WorkRequestSummary(object):
     #: This constant has a value of "REENCRYPT"
     OPERATION_TYPE_REENCRYPT = "REENCRYPT"
 
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "PRIVATE_ENDPOINT_CREATE"
+    OPERATION_TYPE_PRIVATE_ENDPOINT_CREATE = "PRIVATE_ENDPOINT_CREATE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "PRIVATE_ENDPOINT_UPDATE"
+    OPERATION_TYPE_PRIVATE_ENDPOINT_UPDATE = "PRIVATE_ENDPOINT_UPDATE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "PRIVATE_ENDPOINT_DELETE"
+    OPERATION_TYPE_PRIVATE_ENDPOINT_DELETE = "PRIVATE_ENDPOINT_DELETE"
+
     #: A constant which can be used with the status property of a WorkRequestSummary.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -54,7 +66,7 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "COPY_OBJECT", "REENCRYPT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "COPY_OBJECT", "REENCRYPT", "PRIVATE_ENDPOINT_CREATE", "PRIVATE_ENDPOINT_UPDATE", "PRIVATE_ENDPOINT_DELETE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -133,7 +145,7 @@ class WorkRequestSummary(object):
         Gets the operation_type of this WorkRequestSummary.
         The type of work request.
 
-        Allowed values for this property are: "COPY_OBJECT", "REENCRYPT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "COPY_OBJECT", "REENCRYPT", "PRIVATE_ENDPOINT_CREATE", "PRIVATE_ENDPOINT_UPDATE", "PRIVATE_ENDPOINT_DELETE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -152,7 +164,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["COPY_OBJECT", "REENCRYPT"]
+        allowed_values = ["COPY_OBJECT", "REENCRYPT", "PRIVATE_ENDPOINT_CREATE", "PRIVATE_ENDPOINT_UPDATE", "PRIVATE_ENDPOINT_DELETE"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

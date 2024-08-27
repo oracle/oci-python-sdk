@@ -196,7 +196,7 @@ class HsmCluster(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this HsmCluster.
-        A user-friendly name for the HSMCluster resource. It does not have to be unique, and it is changeable.
+        A user-friendly display name for the HSMCluster resource. It does not have to be unique, and it is changeable.
         Avoid entering confidential information.
 
 
@@ -209,7 +209,7 @@ class HsmCluster(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this HsmCluster.
-        A user-friendly name for the HSMCluster resource. It does not have to be unique, and it is changeable.
+        A user-friendly display name for the HSMCluster resource. It does not have to be unique, and it is changeable.
         Avoid entering confidential information.
 
 
@@ -320,7 +320,7 @@ class HsmCluster(object):
     def dns_name(self):
         """
         **[Required]** Gets the dns_name of this HsmCluster.
-        DNS name for the Hsm Cluster.
+        DNS name for the HSM Cluster -- this will contain information about the region as well.
 
 
         :return: The dns_name of this HsmCluster.
@@ -332,7 +332,7 @@ class HsmCluster(object):
     def dns_name(self, dns_name):
         """
         Sets the dns_name of this HsmCluster.
-        DNS name for the Hsm Cluster.
+        DNS name for the HSM Cluster -- this will contain information about the region as well.
 
 
         :param dns_name: The dns_name of this HsmCluster.

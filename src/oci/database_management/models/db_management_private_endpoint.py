@@ -60,6 +60,10 @@ class DbManagementPrivateEndpoint(object):
             The value to assign to the is_cluster property of this DbManagementPrivateEndpoint.
         :type is_cluster: bool
 
+        :param is_dns_resolution_enabled:
+            The value to assign to the is_dns_resolution_enabled property of this DbManagementPrivateEndpoint.
+        :type is_dns_resolution_enabled: bool
+
         :param vcn_id:
             The value to assign to the vcn_id property of this DbManagementPrivateEndpoint.
         :type vcn_id: str
@@ -108,6 +112,7 @@ class DbManagementPrivateEndpoint(object):
             'name': 'str',
             'compartment_id': 'str',
             'is_cluster': 'bool',
+            'is_dns_resolution_enabled': 'bool',
             'vcn_id': 'str',
             'subnet_id': 'str',
             'private_ip': 'str',
@@ -125,6 +130,7 @@ class DbManagementPrivateEndpoint(object):
             'name': 'name',
             'compartment_id': 'compartmentId',
             'is_cluster': 'isCluster',
+            'is_dns_resolution_enabled': 'isDnsResolutionEnabled',
             'vcn_id': 'vcnId',
             'subnet_id': 'subnetId',
             'private_ip': 'privateIp',
@@ -141,6 +147,7 @@ class DbManagementPrivateEndpoint(object):
         self._name = None
         self._compartment_id = None
         self._is_cluster = None
+        self._is_dns_resolution_enabled = None
         self._vcn_id = None
         self._subnet_id = None
         self._private_ip = None
@@ -255,6 +262,30 @@ class DbManagementPrivateEndpoint(object):
         :type: bool
         """
         self._is_cluster = is_cluster
+
+    @property
+    def is_dns_resolution_enabled(self):
+        """
+        Gets the is_dns_resolution_enabled of this DbManagementPrivateEndpoint.
+        Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+
+
+        :return: The is_dns_resolution_enabled of this DbManagementPrivateEndpoint.
+        :rtype: bool
+        """
+        return self._is_dns_resolution_enabled
+
+    @is_dns_resolution_enabled.setter
+    def is_dns_resolution_enabled(self, is_dns_resolution_enabled):
+        """
+        Sets the is_dns_resolution_enabled of this DbManagementPrivateEndpoint.
+        Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+
+
+        :param is_dns_resolution_enabled: The is_dns_resolution_enabled of this DbManagementPrivateEndpoint.
+        :type: bool
+        """
+        self._is_dns_resolution_enabled = is_dns_resolution_enabled
 
     @property
     def vcn_id(self):

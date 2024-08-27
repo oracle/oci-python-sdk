@@ -90,6 +90,10 @@ class Project(object):
             The value to assign to the system_tags property of this Project.
         :type system_tags: dict(str, dict(str, object))
 
+        :param locks:
+            The value to assign to the locks property of this Project.
+        :type locks: list[oci.ai_document.models.ResourceLock]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -102,7 +106,8 @@ class Project(object):
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -116,7 +121,8 @@ class Project(object):
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'locks': 'locks'
         }
 
         self._id = None
@@ -130,6 +136,7 @@ class Project(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._locks = None
 
     @property
     def id(self):
@@ -406,6 +413,30 @@ class Project(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this Project.
+        Locks associated with this resource.
+
+
+        :return: The locks of this Project.
+        :rtype: list[oci.ai_document.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this Project.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this Project.
+        :type: list[oci.ai_document.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

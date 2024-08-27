@@ -1011,6 +1011,107 @@ class ObjectStorageClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def create_private_endpoint(self, namespace_name, create_private_endpoint_details, **kwargs):
+        """
+        Create a PrivateEndpoint.
+
+
+        :param str namespace_name: (required)
+            The Object Storage namespace used for the request.
+
+        :param oci.object_storage.models.CreatePrivateEndpointDetails create_private_endpoint_details: (required)
+            Details to create a private endpoint.
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/objectstorage/create_private_endpoint.py.html>`__ to see an example of how to use create_private_endpoint API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['namespaceName']
+        resource_path = "/n/{namespaceName}/pe"
+        method = "POST"
+        operation_name = "create_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PrivateEndpoint/CreatePrivateEndpoint"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"create_private_endpoint got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "namespaceName": namespace_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_private_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_private_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def create_replication_policy(self, namespace_name, bucket_name, create_replication_policy_details, **kwargs):
         """
         Creates a replication policy for the specified bucket.
@@ -1641,6 +1742,114 @@ class ObjectStorageClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def delete_private_endpoint(self, namespace_name, pe_name, **kwargs):
+        """
+        Deletes a Private Endpoint if it exists in the given namespace.
+
+
+        :param str namespace_name: (required)
+            The Object Storage namespace used for the request.
+
+        :param str pe_name: (required)
+            The name of the private endpoint. Avoid entering confidential information.
+            Example: `my-new-pe-1`
+
+        :param str if_match: (optional)
+            The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+            the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+            the resource.
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/objectstorage/delete_private_endpoint.py.html>`__ to see an example of how to use delete_private_endpoint API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['namespaceName', 'peName']
+        resource_path = "/n/{namespaceName}/pe/{peName}"
+        method = "DELETE"
+        operation_name = "delete_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PrivateEndpoint/DeletePrivateEndpoint"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"delete_private_endpoint got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "peName": pe_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
@@ -2648,6 +2857,123 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="PreauthenticatedRequestSummary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def get_private_endpoint(self, namespace_name, pe_name, **kwargs):
+        """
+        Gets the current representation of the given Private Endpoint in the given Object Storage namespace.
+
+
+        :param str namespace_name: (required)
+            The Object Storage namespace used for the request.
+
+        :param str pe_name: (required)
+            The name of the private endpoint. Avoid entering confidential information.
+            Example: `my-new-pe-1`
+
+        :param str if_match: (optional)
+            The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+            the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+            the resource.
+
+        :param str if_none_match: (optional)
+            The entity tag (ETag) to avoid matching. Wildcards ('*') are not allowed. If the specified ETag does not
+            match the ETag of the existing resource, the request returns the expected response. If the ETag matches
+            the ETag of the existing resource, the request returns an HTTP 304 status without a response body.
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.object_storage.models.PrivateEndpoint`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/objectstorage/get_private_endpoint.py.html>`__ to see an example of how to use get_private_endpoint API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['namespaceName', 'peName']
+        resource_path = "/n/{namespaceName}/pe/{peName}"
+        method = "GET"
+        operation_name = "get_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PrivateEndpoint/GetPrivateEndpoint"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "if_none_match",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_private_endpoint got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "peName": pe_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "if-none-match": kwargs.get("if_none_match", missing),
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="PrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="PrivateEndpoint",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -3674,10 +4000,10 @@ class ObjectStorageClient(object):
             The string to use for matching against the start of object names in a list query.
 
         :param str start: (optional)
-            Object names returned by a list query must be greater or equal to this parameter.
+            Returns object names which are lexicographically greater than or equal to this parameter.
 
         :param str end: (optional)
-            Object names returned by a list query must be strictly less than this parameter.
+            Returns object names which are lexicographically strictly less than this parameter.
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -3706,7 +4032,7 @@ class ObjectStorageClient(object):
             The client request ID for tracing.
 
         :param str start_after: (optional)
-            Object names returned by a list query must be greater than this parameter.
+            Returns object names which are lexicographically strictly greater than this parameter.
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
@@ -3851,10 +4177,10 @@ class ObjectStorageClient(object):
             The string to use for matching against the start of object names in a list query.
 
         :param str start: (optional)
-            Object names returned by a list query must be greater or equal to this parameter.
+            Returns object names which are lexicographically greater than or equal to this parameter.
 
         :param str end: (optional)
-            Object names returned by a list query must be strictly less than this parameter.
+            Returns object names which are lexicographically strictly less than this parameter.
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -3883,7 +4209,7 @@ class ObjectStorageClient(object):
             The client request ID for tracing.
 
         :param str start_after: (optional)
-            Object names returned by a list query must be greater than this parameter.
+            Returns object names which are lexicographically strictly greater than this parameter.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -4119,6 +4445,168 @@ class ObjectStorageClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="list[PreauthenticatedRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_private_endpoints(self, namespace_name, compartment_id, **kwargs):
+        """
+        Gets a list of all PrivateEndpointSummary in a compartment associated with a namespace.
+        To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+        talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+        `Getting Started with Policies`__.
+
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+
+
+        :param str namespace_name: (required)
+            The Object Storage namespace used for the request.
+
+        :param str compartment_id: (required)
+            The ID of the compartment in which to list buckets.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
+            details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param list[str] fields: (optional)
+            PrivateEndpoint summary in list of PrivateEndpoints includes the 'namespace', 'name', 'compartmentId',
+            'createdBy', 'timeCreated', 'timeModified' and 'etag' fields.
+            This parameter can also include 'tags' (freeformTags and definedTags).
+            The only supported value of this parameter is 'tags' for now. Example 'tags'.
+
+            Allowed values are: "tags"
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str lifecycle_state: (optional)
+            The lifecycle state of the Private Endpoint
+
+            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.object_storage.models.PrivateEndpointSummary`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/objectstorage/list_private_endpoints.py.html>`__ to see an example of how to use list_private_endpoints API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['namespaceName', 'compartmentId']
+        resource_path = "/n/{namespaceName}/pe"
+        method = "GET"
+        operation_name = "list_private_endpoints"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PrivateEndpointSummary/ListPrivateEndpoints"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "limit",
+            "page",
+            "fields",
+            "opc_client_request_id",
+            "lifecycle_state"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_private_endpoints got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "namespaceName": namespace_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'fields' in kwargs:
+            fields_allowed_values = ["tags"]
+            for fields_item in kwargs['fields']:
+                if fields_item not in fields_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
+                    )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'csv'),
+            "lifecycleState": kwargs.get("lifecycle_state", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[PrivateEndpointSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[PrivateEndpointSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -4738,6 +5226,9 @@ class ObjectStorageClient(object):
         :param str compartment_id: (required)
             The ID of the compartment in which to list buckets.
 
+        :param str private_endpoint_name: (optional)
+            The name of the privateEndpoint for which to list work requests.
+
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
@@ -4783,6 +5274,7 @@ class ObjectStorageClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "private_endpoint_name",
             "opc_client_request_id",
             "page",
             "limit"
@@ -4794,6 +5286,7 @@ class ObjectStorageClient(object):
 
         query_params = {
             "compartmentId": compartment_id,
+            "privateEndpointName": kwargs.get("private_endpoint_name", missing),
             "page": kwargs.get("page", missing),
             "limit": kwargs.get("limit", missing)
         }
@@ -4994,7 +5487,7 @@ class ObjectStorageClient(object):
             The only allowed value for this parameter is \"100-Continue\" (case-insensitive).
 
         :param str content_md5: (optional)
-            The optional base-64 header that defines the encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object
+            The optional header that defines the base64-encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object
             Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the
             MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error
             is returned with the message:
@@ -5705,8 +6198,8 @@ class ObjectStorageClient(object):
 
     def restore_objects(self, namespace_name, bucket_name, restore_objects_details, **kwargs):
         """
-        Restores one or more objects specified by the objectName parameter.
-        By default objects will be restored for 24 hours. Duration can be configured using the hours parameter.
+        Restores the object specified by the objectName parameter.
+        By default object will be restored for 24 hours. Duration can be configured using the hours parameter.
 
 
         :param str namespace_name: (required)
@@ -5717,7 +6210,7 @@ class ObjectStorageClient(object):
             Example: `my-new-bucket1`
 
         :param oci.object_storage.models.RestoreObjectsDetails restore_objects_details: (required)
-            Request to restore objects.
+            Request to restore object.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -6146,6 +6639,128 @@ class ObjectStorageClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def update_private_endpoint(self, namespace_name, pe_name, update_private_endpoint_details, **kwargs):
+        """
+        Performs a partial or full update of a user-defined data associated with the Private Endpoint.
+
+        Use UpdatePrivateEndpoint to move a Private Endpoint from one compartment to another within the same tenancy. Supply the compartmentID
+        of the compartment that you want to move the Private Endpoint to. Or use it to update the name, subnetId, endpointFqdn or privateEndpointIp or accessTargets of the Private Endpoint.
+        For more information about moving resources between compartments, see `Moving Resources to a Different Compartment`__.
+
+        This API follows replace semantics (rather than merge semantics). That means if the body provides values for
+        parameters and the resource has exisiting ones, this operation will replace those existing values.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+
+
+        :param str namespace_name: (required)
+            The Object Storage namespace used for the request.
+
+        :param str pe_name: (required)
+            The name of the private endpoint. Avoid entering confidential information.
+            Example: `my-new-pe-1`
+
+        :param oci.object_storage.models.UpdatePrivateEndpointDetails update_private_endpoint_details: (required)
+            Request object for updating the Private Endpoint.
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+            the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+            the resource.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/objectstorage/update_private_endpoint.py.html>`__ to see an example of how to use update_private_endpoint API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['namespaceName', 'peName']
+        resource_path = "/n/{namespaceName}/pe/{peName}"
+        method = "POST"
+        operation_name = "update_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PrivateEndpoint/UpdatePrivateEndpoint"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_client_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"update_private_endpoint got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "peName": pe_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_private_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_private_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def update_retention_rule(self, namespace_name, bucket_name, retention_rule_id, update_retention_rule_details, **kwargs):
         """
         Updates the specified retention rule. Rule changes take effect typically within 30 seconds.
@@ -6311,7 +6926,7 @@ class ObjectStorageClient(object):
             The only allowed value for this parameter is \"100-Continue\" (case-insensitive).
 
         :param str content_md5: (optional)
-            The optional base-64 header that defines the encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object
+            The optional header that defines the base64-encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object
             Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the
             MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error
             is returned with the message:
