@@ -123,6 +123,10 @@ class BaseAnnouncement(object):
     #: This constant has a value of "SAAS"
     PLATFORM_TYPE_SAAS = "SAAS"
 
+    #: A constant which can be used with the platform_type property of a BaseAnnouncement.
+    #: This constant has a value of "PAAS"
+    PLATFORM_TYPE_PAAS = "PAAS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new BaseAnnouncement object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -211,7 +215,7 @@ class BaseAnnouncement(object):
 
         :param platform_type:
             The value to assign to the platform_type property of this BaseAnnouncement.
-            Allowed values for this property are: "IAAS", "SAAS"
+            Allowed values for this property are: "IAAS", "SAAS", "PAAS"
         :type platform_type: str
 
         :param chain_id:
@@ -794,7 +798,7 @@ class BaseAnnouncement(object):
         Gets the platform_type of this BaseAnnouncement.
         The platform type that this announcement pertains to.
 
-        Allowed values for this property are: "IAAS", "SAAS"
+        Allowed values for this property are: "IAAS", "SAAS", "PAAS"
 
 
         :return: The platform_type of this BaseAnnouncement.
@@ -812,7 +816,7 @@ class BaseAnnouncement(object):
         :param platform_type: The platform_type of this BaseAnnouncement.
         :type: str
         """
-        allowed_values = ["IAAS", "SAAS"]
+        allowed_values = ["IAAS", "SAAS", "PAAS"]
         if not value_allowed_none_or_none_sentinel(platform_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `platform_type`, must be None or one of {allowed_values}"

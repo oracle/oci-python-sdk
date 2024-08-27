@@ -96,6 +96,10 @@ class FusionEnvironmentFamily(object):
             The value to assign to the defined_tags property of this FusionEnvironmentFamily.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param time_last_subscription_update:
+            The value to assign to the time_last_subscription_update property of this FusionEnvironmentFamily.
+        :type time_last_subscription_update: datetime
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -109,7 +113,8 @@ class FusionEnvironmentFamily(object):
             'lifecycle_details': 'str',
             'system_name': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'time_last_subscription_update': 'datetime'
         }
 
         self.attribute_map = {
@@ -124,7 +129,8 @@ class FusionEnvironmentFamily(object):
             'lifecycle_details': 'lifecycleDetails',
             'system_name': 'systemName',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'time_last_subscription_update': 'timeLastSubscriptionUpdate'
         }
 
         self._id = None
@@ -139,6 +145,7 @@ class FusionEnvironmentFamily(object):
         self._system_name = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._time_last_subscription_update = None
 
     @property
     def id(self):
@@ -433,6 +440,30 @@ class FusionEnvironmentFamily(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def time_last_subscription_update(self):
+        """
+        Gets the time_last_subscription_update of this FusionEnvironmentFamily.
+        Indicates when the family received the last subscription update
+
+
+        :return: The time_last_subscription_update of this FusionEnvironmentFamily.
+        :rtype: datetime
+        """
+        return self._time_last_subscription_update
+
+    @time_last_subscription_update.setter
+    def time_last_subscription_update(self, time_last_subscription_update):
+        """
+        Sets the time_last_subscription_update of this FusionEnvironmentFamily.
+        Indicates when the family received the last subscription update
+
+
+        :param time_last_subscription_update: The time_last_subscription_update of this FusionEnvironmentFamily.
+        :type: datetime
+        """
+        self._time_last_subscription_update = time_last_subscription_update
 
     def __repr__(self):
         return formatted_flat_dict(self)

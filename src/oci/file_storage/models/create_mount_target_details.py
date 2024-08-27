@@ -68,6 +68,10 @@ class CreateMountTargetDetails(object):
             The value to assign to the defined_tags property of this CreateMountTargetDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param requested_throughput:
+            The value to assign to the requested_throughput property of this CreateMountTargetDetails.
+        :type requested_throughput: int
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -81,7 +85,8 @@ class CreateMountTargetDetails(object):
             'nsg_ids': 'list[str]',
             'kerberos': 'CreateKerberosDetails',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'requested_throughput': 'int'
         }
 
         self.attribute_map = {
@@ -96,7 +101,8 @@ class CreateMountTargetDetails(object):
             'nsg_ids': 'nsgIds',
             'kerberos': 'kerberos',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'requested_throughput': 'requestedThroughput'
         }
 
         self._availability_domain = None
@@ -111,6 +117,7 @@ class CreateMountTargetDetails(object):
         self._kerberos = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._requested_throughput = None
 
     @property
     def availability_domain(self):
@@ -282,19 +289,7 @@ class CreateMountTargetDetails(object):
         the subnet's CIDR. If you don't specify a value, Oracle automatically
         assigns a private IP address from the subnet.
 
-        Note: This attribute value is stored in the `PrivateIp`__ resource,
-        not in the `mountTarget` resource.
-        To update the `ipAddress`, use `GetMountTarget` to obtain the
-        `OCIDs`__ of the mount target's
-        private IPs (`privateIpIds`). Then, you can use
-        `UpdatePrivateIp`__
-        to update the `ipAddress` value.
-
         Example: `10.0.3.3`
-
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp
 
 
         :return: The ip_address of this CreateMountTargetDetails.
@@ -310,19 +305,7 @@ class CreateMountTargetDetails(object):
         the subnet's CIDR. If you don't specify a value, Oracle automatically
         assigns a private IP address from the subnet.
 
-        Note: This attribute value is stored in the `PrivateIp`__ resource,
-        not in the `mountTarget` resource.
-        To update the `ipAddress`, use `GetMountTarget` to obtain the
-        `OCIDs`__ of the mount target's
-        private IPs (`privateIpIds`). Then, you can use
-        `UpdatePrivateIp`__
-        to update the `ipAddress` value.
-
         Example: `10.0.3.3`
-
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp
 
 
         :param ip_address: The ip_address of this CreateMountTargetDetails.
@@ -523,6 +506,36 @@ class CreateMountTargetDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def requested_throughput(self):
+        """
+        Gets the requested_throughput of this CreateMountTargetDetails.
+        Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget.
+        Available shapes and corresponding throughput are listed at `Mount Target Performance`__.
+
+        __ https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance
+
+
+        :return: The requested_throughput of this CreateMountTargetDetails.
+        :rtype: int
+        """
+        return self._requested_throughput
+
+    @requested_throughput.setter
+    def requested_throughput(self, requested_throughput):
+        """
+        Sets the requested_throughput of this CreateMountTargetDetails.
+        Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget.
+        Available shapes and corresponding throughput are listed at `Mount Target Performance`__.
+
+        __ https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance
+
+
+        :param requested_throughput: The requested_throughput of this CreateMountTargetDetails.
+        :type: int
+        """
+        self._requested_throughput = requested_throughput
 
     def __repr__(self):
         return formatted_flat_dict(self)

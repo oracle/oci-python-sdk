@@ -205,6 +205,10 @@ class EsxiHost(object):
             The value to assign to the defined_tags property of this EsxiHost.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this EsxiHost.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -235,7 +239,8 @@ class EsxiHost(object):
             'host_ocpu_count': 'float',
             'capacity_reservation_id': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -267,7 +272,8 @@ class EsxiHost(object):
             'host_ocpu_count': 'hostOcpuCount',
             'capacity_reservation_id': 'capacityReservationId',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'system_tags': 'systemTags'
         }
 
         self._id = None
@@ -299,6 +305,7 @@ class EsxiHost(object):
         self._capacity_reservation_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
 
     @property
     def id(self):
@@ -1135,6 +1142,32 @@ class EsxiHost(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this EsxiHost.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{orcl-cloud: {free-tier-retain: true}}`
+
+
+        :return: The system_tags of this EsxiHost.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this EsxiHost.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{orcl-cloud: {free-tier-retain: true}}`
+
+
+        :param system_tags: The system_tags of this EsxiHost.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

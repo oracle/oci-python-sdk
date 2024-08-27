@@ -103,7 +103,7 @@ class Announcement(BaseAnnouncement):
 
         :param platform_type:
             The value to assign to the platform_type property of this Announcement.
-            Allowed values for this property are: "IAAS", "SAAS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IAAS", "SAAS", "PAAS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type platform_type: str
 

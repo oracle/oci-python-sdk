@@ -96,6 +96,14 @@ class LoadBalancer(object):
             The value to assign to the is_delete_protection_enabled property of this LoadBalancer.
         :type is_delete_protection_enabled: bool
 
+        :param is_request_id_enabled:
+            The value to assign to the is_request_id_enabled property of this LoadBalancer.
+        :type is_request_id_enabled: bool
+
+        :param request_id_header:
+            The value to assign to the request_id_header property of this LoadBalancer.
+        :type request_id_header: str
+
         :param subnet_ids:
             The value to assign to the subnet_ids property of this LoadBalancer.
         :type subnet_ids: list[str]
@@ -160,6 +168,8 @@ class LoadBalancer(object):
             'shape_details': 'ShapeDetails',
             'is_private': 'bool',
             'is_delete_protection_enabled': 'bool',
+            'is_request_id_enabled': 'bool',
+            'request_id_header': 'str',
             'subnet_ids': 'list[str]',
             'network_security_group_ids': 'list[str]',
             'listeners': 'dict(str, Listener)',
@@ -186,6 +196,8 @@ class LoadBalancer(object):
             'shape_details': 'shapeDetails',
             'is_private': 'isPrivate',
             'is_delete_protection_enabled': 'isDeleteProtectionEnabled',
+            'is_request_id_enabled': 'isRequestIdEnabled',
+            'request_id_header': 'requestIdHeader',
             'subnet_ids': 'subnetIds',
             'network_security_group_ids': 'networkSecurityGroupIds',
             'listeners': 'listeners',
@@ -211,6 +223,8 @@ class LoadBalancer(object):
         self._shape_details = None
         self._is_private = None
         self._is_delete_protection_enabled = None
+        self._is_request_id_enabled = None
+        self._request_id_header = None
         self._subnet_ids = None
         self._network_security_group_ids = None
         self._listeners = None
@@ -530,6 +544,92 @@ class LoadBalancer(object):
         :type: bool
         """
         self._is_delete_protection_enabled = is_delete_protection_enabled
+
+    @property
+    def is_request_id_enabled(self):
+        """
+        Gets the is_request_id_enabled of this LoadBalancer.
+        Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+
+        If \"true\", the load balancer will attach a unique request id header to every request
+        passed through from the load balancer to load balancer backends. This same request id
+        header also will be added to the response the lb received from the backend handling
+        the request before the load balancer returns the response to the requestor. The name
+        of the unique request id header is set the by value of requestIdHeader.
+
+        If \"false\", the loadbalancer not add this unique request id header to either the request
+        passed through to the load balancer backends nor to the reponse returned to the user.
+
+        Example: `true`
+
+
+        :return: The is_request_id_enabled of this LoadBalancer.
+        :rtype: bool
+        """
+        return self._is_request_id_enabled
+
+    @is_request_id_enabled.setter
+    def is_request_id_enabled(self, is_request_id_enabled):
+        """
+        Sets the is_request_id_enabled of this LoadBalancer.
+        Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+
+        If \"true\", the load balancer will attach a unique request id header to every request
+        passed through from the load balancer to load balancer backends. This same request id
+        header also will be added to the response the lb received from the backend handling
+        the request before the load balancer returns the response to the requestor. The name
+        of the unique request id header is set the by value of requestIdHeader.
+
+        If \"false\", the loadbalancer not add this unique request id header to either the request
+        passed through to the load balancer backends nor to the reponse returned to the user.
+
+        Example: `true`
+
+
+        :param is_request_id_enabled: The is_request_id_enabled of this LoadBalancer.
+        :type: bool
+        """
+        self._is_request_id_enabled = is_request_id_enabled
+
+    @property
+    def request_id_header(self):
+        """
+        Gets the request_id_header of this LoadBalancer.
+        If isRequestIdEnabled is true then this field contains the name of the header field
+        that contains the unique request id that is attached to every request from
+        the load balancer to the load balancer backends and to every response from the load
+        balancer.
+
+        If a request to the load balancer already contains a header with same name as specified
+        in requestIdHeader then the load balancer will not change the value of that field.
+
+        If this field is set to \"\" this field defaults to X-Request-Id.
+
+
+        :return: The request_id_header of this LoadBalancer.
+        :rtype: str
+        """
+        return self._request_id_header
+
+    @request_id_header.setter
+    def request_id_header(self, request_id_header):
+        """
+        Sets the request_id_header of this LoadBalancer.
+        If isRequestIdEnabled is true then this field contains the name of the header field
+        that contains the unique request id that is attached to every request from
+        the load balancer to the load balancer backends and to every response from the load
+        balancer.
+
+        If a request to the load balancer already contains a header with same name as specified
+        in requestIdHeader then the load balancer will not change the value of that field.
+
+        If this field is set to \"\" this field defaults to X-Request-Id.
+
+
+        :param request_id_header: The request_id_header of this LoadBalancer.
+        :type: str
+        """
+        self._request_id_header = request_id_header
 
     @property
     def subnet_ids(self):

@@ -31,7 +31,7 @@ class KmsHsmClusterClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str hsm_cluster_id: (required)
-            The OCID of the HSM Cluster.
+            The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.key_management.models.HsmCluster.lifecycle_state`
@@ -115,7 +115,7 @@ class KmsHsmClusterClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str hsm_cluster_id: (required)
-            The OCID of the HSM Cluster.
+            The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster.
 
         :param oci.key_management.models.ScheduleHsmClusterDeletionDetails schedule_hsm_cluster_deletion_details: (required)
             Details of ScheduleHsmClusterDeletionDetails
@@ -160,7 +160,7 @@ class KmsHsmClusterClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str hsm_cluster_id: (required)
-            The OCID of the HSM Cluster.
+            The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster.
 
         :param oci.key_management.models.UpdateHsmClusterDetails update_hsm_cluster_details: (required)
             Details of the HsmCluster Resource

@@ -46,7 +46,7 @@ class PreCoUserCredentials(object):
     def username(self):
         """
         **[Required]** Gets the username of this PreCoUserCredentials.
-        The pre crypto officer username..
+        The pre crypto officer username, which should be chosen as a non confidential string.
 
 
         :return: The username of this PreCoUserCredentials.
@@ -58,7 +58,7 @@ class PreCoUserCredentials(object):
     def username(self, username):
         """
         Sets the username of this PreCoUserCredentials.
-        The pre crypto officer username..
+        The pre crypto officer username, which should be chosen as a non confidential string.
 
 
         :param username: The username of this PreCoUserCredentials.

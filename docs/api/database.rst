@@ -19,6 +19,10 @@ Database
     :template: autosummary/model_class.rst
 
     oci.database.models.AcdAvmResourceStats
+    oci.database.models.ActionMember
+    oci.database.models.ActionOrderDetails
+    oci.database.models.ActionParamValuesCollection
+    oci.database.models.ActionParamValuesSummary
     oci.database.models.ActivateExadataInfrastructureDetails
     oci.database.models.AddVirtualMachineToCloudVmClusterDetails
     oci.database.models.AddVirtualMachineToVmClusterDetails
@@ -76,6 +80,7 @@ Database
     oci.database.models.BackupDestinationDetails
     oci.database.models.BackupDestinationSummary
     oci.database.models.BackupSummary
+    oci.database.models.CancelExecutionWindowDetails
     oci.database.models.ChangeAutonomousDatabaseSoftwareImageCompartmentDetails
     oci.database.models.ChangeAutonomousDatabaseSubscriptionDetails
     oci.database.models.ChangeAutonomousVmClusterCompartmentDetails
@@ -92,6 +97,8 @@ Database
     oci.database.models.ChangeExascaleDbStorageVaultCompartmentDetails
     oci.database.models.ChangeKeyStoreCompartmentDetails
     oci.database.models.ChangeKeyStoreTypeDetails
+    oci.database.models.ChangeSchedulingPlanCompartmentDetails
+    oci.database.models.ChangeSchedulingPolicyCompartmentDetails
     oci.database.models.ChangeSubscriptionDetails
     oci.database.models.ChangeVmClusterCompartmentDetails
     oci.database.models.CloudAutomationApplyUpdateTimePreference
@@ -165,6 +172,8 @@ Database
     oci.database.models.CreateExadataInfrastructureDetails
     oci.database.models.CreateExadbVmClusterDetails
     oci.database.models.CreateExascaleDbStorageVaultDetails
+    oci.database.models.CreateExecutionActionDetails
+    oci.database.models.CreateExecutionWindowDetails
     oci.database.models.CreateExternalBackupJobDetails
     oci.database.models.CreateExternalContainerDatabaseDetails
     oci.database.models.CreateExternalDatabaseConnectorDetails
@@ -185,6 +194,10 @@ Database
     oci.database.models.CreatePluggableDatabaseRefreshableCloneDetails
     oci.database.models.CreateRecoveryApplianceBackupDestinationDetails
     oci.database.models.CreateRefreshableAutonomousDatabaseCloneDetails
+    oci.database.models.CreateScheduledActionDetails
+    oci.database.models.CreateSchedulingPlanDetails
+    oci.database.models.CreateSchedulingPolicyDetails
+    oci.database.models.CreateSchedulingWindowDetails
     oci.database.models.CreateVmClusterDetails
     oci.database.models.CustomerContact
     oci.database.models.DataCollectionOptions
@@ -273,6 +286,11 @@ Database
     oci.database.models.ExascaleDbStorageInputDetails
     oci.database.models.ExascaleDbStorageVault
     oci.database.models.ExascaleDbStorageVaultSummary
+    oci.database.models.ExecutionAction
+    oci.database.models.ExecutionActionMember
+    oci.database.models.ExecutionActionSummary
+    oci.database.models.ExecutionWindow
+    oci.database.models.ExecutionWindowSummary
     oci.database.models.ExternalBackupJob
     oci.database.models.ExternalContainerDatabase
     oci.database.models.ExternalContainerDatabaseSummary
@@ -293,6 +311,7 @@ Database
     oci.database.models.GenerateRecommendedNetworkDetails
     oci.database.models.GiMinorVersionSummary
     oci.database.models.GiVersionSummary
+    oci.database.models.GranularMaintenanceHistoryDetails
     oci.database.models.InfoForNetworkGenDetails
     oci.database.models.InfrastructureTargetVersion
     oci.database.models.InfrastructureTargetVersionSummary
@@ -319,6 +338,7 @@ Database
     oci.database.models.ModifyPluggableDatabaseManagementDetails
     oci.database.models.Month
     oci.database.models.MountTypeDetails
+    oci.database.models.MoveExecutionActionMemberDetails
     oci.database.models.NetworkBondingModeDetails
     oci.database.models.NodeDetails
     oci.database.models.OCPUs
@@ -340,6 +360,8 @@ Database
     oci.database.models.PluggableDatabaseNodeLevelDetails
     oci.database.models.PluggableDatabaseRefreshableCloneConfig
     oci.database.models.PluggableDatabaseSummary
+    oci.database.models.RecommendedScheduledActionSummary
+    oci.database.models.RecommendedScheduledActionsCollection
     oci.database.models.RefreshableCloneCollection
     oci.database.models.RefreshableCloneSummary
     oci.database.models.RegisterAutonomousDatabaseDataSafeDetails
@@ -348,6 +370,8 @@ Database
     oci.database.models.RemoveVirtualMachineFromCloudVmClusterDetails
     oci.database.models.RemoveVirtualMachineFromExadbVmClusterDetails
     oci.database.models.RemoveVirtualMachineFromVmClusterDetails
+    oci.database.models.ReorderExecutionActionDetails
+    oci.database.models.ReorderScheduledActionsDetails
     oci.database.models.ResizeVmClusterNetworkDetails
     oci.database.models.ResourcePoolShapeCollection
     oci.database.models.ResourcePoolShapeSummary
@@ -361,7 +385,17 @@ Database
     oci.database.models.SaasAdminUserConfiguration
     oci.database.models.SaasAdminUserStatus
     oci.database.models.ScanDetails
+    oci.database.models.ScheduledAction
+    oci.database.models.ScheduledActionCollection
+    oci.database.models.ScheduledActionSummary
     oci.database.models.ScheduledOperationDetails
+    oci.database.models.SchedulingPlan
+    oci.database.models.SchedulingPlanCollection
+    oci.database.models.SchedulingPlanSummary
+    oci.database.models.SchedulingPolicy
+    oci.database.models.SchedulingPolicySummary
+    oci.database.models.SchedulingWindow
+    oci.database.models.SchedulingWindowSummary
     oci.database.models.SelfMountDetails
     oci.database.models.StackMonitoringConfig
     oci.database.models.StoragePerformanceDetails
@@ -393,6 +427,8 @@ Database
     oci.database.models.UpdateExadataInfrastructureDetails
     oci.database.models.UpdateExadbVmClusterDetails
     oci.database.models.UpdateExascaleDbStorageVaultDetails
+    oci.database.models.UpdateExecutionActionDetails
+    oci.database.models.UpdateExecutionWindowDetails
     oci.database.models.UpdateExternalContainerDatabaseDetails
     oci.database.models.UpdateExternalDatabaseConnectorDetails
     oci.database.models.UpdateExternalDatabaseDetailsBase
@@ -405,6 +441,9 @@ Database
     oci.database.models.UpdateMaintenanceRunDetails
     oci.database.models.UpdateOneoffPatchDetails
     oci.database.models.UpdatePluggableDatabaseDetails
+    oci.database.models.UpdateScheduledActionDetails
+    oci.database.models.UpdateSchedulingPolicyDetails
+    oci.database.models.UpdateSchedulingWindowDetails
     oci.database.models.UpdateSummary
     oci.database.models.UpdateVmClusterDetails
     oci.database.models.UpdateVmClusterNetworkDetails
@@ -421,4 +460,5 @@ Database
     oci.database.models.VmClusterUpdateHistoryEntrySummary
     oci.database.models.VmClusterUpdateSummary
     oci.database.models.VmNetworkDetails
+    oci.database.models.WindowPreferenceDetail
     oci.database.models.WorkloadType

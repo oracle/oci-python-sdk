@@ -32,6 +32,10 @@ class CreateProtectionPolicyDetails(object):
             The value to assign to the compartment_id property of this CreateProtectionPolicyDetails.
         :type compartment_id: str
 
+        :param must_enforce_cloud_locality:
+            The value to assign to the must_enforce_cloud_locality property of this CreateProtectionPolicyDetails.
+        :type must_enforce_cloud_locality: bool
+
         :param policy_locked_date_time:
             The value to assign to the policy_locked_date_time property of this CreateProtectionPolicyDetails.
         :type policy_locked_date_time: str
@@ -49,6 +53,7 @@ class CreateProtectionPolicyDetails(object):
             'display_name': 'str',
             'backup_retention_period_in_days': 'int',
             'compartment_id': 'str',
+            'must_enforce_cloud_locality': 'bool',
             'policy_locked_date_time': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -58,6 +63,7 @@ class CreateProtectionPolicyDetails(object):
             'display_name': 'displayName',
             'backup_retention_period_in_days': 'backupRetentionPeriodInDays',
             'compartment_id': 'compartmentId',
+            'must_enforce_cloud_locality': 'mustEnforceCloudLocality',
             'policy_locked_date_time': 'policyLockedDateTime',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -66,6 +72,7 @@ class CreateProtectionPolicyDetails(object):
         self._display_name = None
         self._backup_retention_period_in_days = None
         self._compartment_id = None
+        self._must_enforce_cloud_locality = None
         self._policy_locked_date_time = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -141,6 +148,38 @@ class CreateProtectionPolicyDetails(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def must_enforce_cloud_locality(self):
+        """
+        Gets the must_enforce_cloud_locality of this CreateProtectionPolicyDetails.
+        Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+        This parameter is applicable if your Oracle Database runs in a different cloud service environment, such as Microsoft Azure.
+        If you set the mustEnforceCloudLocality parameter to TRUE, then Recovery Service stores the database backups locally in the same cloud service environment where the database resides. For example, if your Oracle Database is provisioned on Microsoft Azure, then Recovery Service stores the database backups in Azure.
+        Note:
+        You cannot change the mustEnforceCloudLocality setting for a protection policy after you create it.
+
+
+        :return: The must_enforce_cloud_locality of this CreateProtectionPolicyDetails.
+        :rtype: bool
+        """
+        return self._must_enforce_cloud_locality
+
+    @must_enforce_cloud_locality.setter
+    def must_enforce_cloud_locality(self, must_enforce_cloud_locality):
+        """
+        Sets the must_enforce_cloud_locality of this CreateProtectionPolicyDetails.
+        Indicates whether the protection policy enforces Recovery Service to retain backups in the same cloud service environment where your Oracle Database is provisioned.
+        This parameter is applicable if your Oracle Database runs in a different cloud service environment, such as Microsoft Azure.
+        If you set the mustEnforceCloudLocality parameter to TRUE, then Recovery Service stores the database backups locally in the same cloud service environment where the database resides. For example, if your Oracle Database is provisioned on Microsoft Azure, then Recovery Service stores the database backups in Azure.
+        Note:
+        You cannot change the mustEnforceCloudLocality setting for a protection policy after you create it.
+
+
+        :param must_enforce_cloud_locality: The must_enforce_cloud_locality of this CreateProtectionPolicyDetails.
+        :type: bool
+        """
+        self._must_enforce_cloud_locality = must_enforce_cloud_locality
 
     @property
     def policy_locked_date_time(self):

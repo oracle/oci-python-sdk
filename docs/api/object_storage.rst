@@ -18,6 +18,7 @@ Object Storage
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.object_storage.models.AccessTargetDetails
     oci.object_storage.models.Bucket
     oci.object_storage.models.BucketSummary
     oci.object_storage.models.CommitMultipartUploadDetails
@@ -26,9 +27,11 @@ Object Storage
     oci.object_storage.models.CreateBucketDetails
     oci.object_storage.models.CreateMultipartUploadDetails
     oci.object_storage.models.CreatePreauthenticatedRequestDetails
+    oci.object_storage.models.CreatePrivateEndpointDetails
     oci.object_storage.models.CreateReplicationPolicyDetails
     oci.object_storage.models.CreateRetentionRuleDetails
     oci.object_storage.models.Duration
+    oci.object_storage.models.Fqdns
     oci.object_storage.models.ListObjects
     oci.object_storage.models.MultipartUpload
     oci.object_storage.models.MultipartUploadPartSummary
@@ -42,6 +45,9 @@ Object Storage
     oci.object_storage.models.PatternDetails
     oci.object_storage.models.PreauthenticatedRequest
     oci.object_storage.models.PreauthenticatedRequestSummary
+    oci.object_storage.models.PrefixFqdns
+    oci.object_storage.models.PrivateEndpoint
+    oci.object_storage.models.PrivateEndpointSummary
     oci.object_storage.models.PutObjectLifecyclePolicyDetails
     oci.object_storage.models.ReencryptObjectDetails
     oci.object_storage.models.RenameObjectDetails
@@ -57,6 +63,7 @@ Object Storage
     oci.object_storage.models.UpdateBucketDetails
     oci.object_storage.models.UpdateNamespaceMetadataDetails
     oci.object_storage.models.UpdateObjectStorageTierDetails
+    oci.object_storage.models.UpdatePrivateEndpointDetails
     oci.object_storage.models.UpdateRetentionRuleDetails
     oci.object_storage.models.WorkRequest
     oci.object_storage.models.WorkRequestError

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class HsmClusterSummary(object):
     """
-    The details of the HSM resource.
+    An object which encapsulates the details of a given HSM Cluster.
     """
 
     def __init__(self, **kwargs):
@@ -204,7 +204,7 @@ class HsmClusterSummary(object):
     def dns_name(self):
         """
         **[Required]** Gets the dns_name of this HsmClusterSummary.
-        DNS name for the HSMCluster.
+        DNS name for the HSMCluster -- this will contain information about the region as well.
 
 
         :return: The dns_name of this HsmClusterSummary.
@@ -216,7 +216,7 @@ class HsmClusterSummary(object):
     def dns_name(self, dns_name):
         """
         Sets the dns_name of this HsmClusterSummary.
-        DNS name for the HSMCluster.
+        DNS name for the HSMCluster -- this will contain information about the region as well.
 
 
         :param dns_name: The dns_name of this HsmClusterSummary.

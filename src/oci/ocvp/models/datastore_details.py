@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DatastoreDetails(object):
     """
-    Datastore summary for a getting an Sddc.
+    Datastore details for a getting an Sddc.
     """
 
     #: A constant which can be used with the datastore_type property of a DatastoreDetails.

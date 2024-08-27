@@ -27,12 +27,17 @@ class ConnectorDetails(object):
     #: This constant has a value of "EXTERNAL"
     CONNECTOR_TYPE_EXTERNAL = "EXTERNAL"
 
+    #: A constant which can be used with the connector_type property of a ConnectorDetails.
+    #: This constant has a value of "DIRECT"
+    CONNECTOR_TYPE_DIRECT = "DIRECT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ConnectorDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.database_management.models.ExternalConnectorDetails`
+        * :class:`~oci.database_management.models.DirectConnectorDetails`
         * :class:`~oci.database_management.models.MacsConnectorDetails`
         * :class:`~oci.database_management.models.PrivateEndPointConnectorDetails`
 
@@ -40,7 +45,7 @@ class ConnectorDetails(object):
 
         :param connector_type:
             The value to assign to the connector_type property of this ConnectorDetails.
-            Allowed values for this property are: "PE", "MACS", "EXTERNAL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PE", "MACS", "EXTERNAL", "DIRECT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connector_type: str
 
@@ -66,6 +71,9 @@ class ConnectorDetails(object):
         if type == 'EXTERNAL':
             return 'ExternalConnectorDetails'
 
+        if type == 'DIRECT':
+            return 'DirectConnectorDetails'
+
         if type == 'MACS':
             return 'MacsConnectorDetails'
 
@@ -83,7 +91,9 @@ class ConnectorDetails(object):
           - MACS: Management agent
           - EXTERNAL: External database connector
 
-        Allowed values for this property are: "PE", "MACS", "EXTERNAL", 'UNKNOWN_ENUM_VALUE'.
+          - DIRECT: Direct connection
+
+        Allowed values for this property are: "PE", "MACS", "EXTERNAL", "DIRECT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -101,11 +111,13 @@ class ConnectorDetails(object):
           - MACS: Management agent
           - EXTERNAL: External database connector
 
+          - DIRECT: Direct connection
+
 
         :param connector_type: The connector_type of this ConnectorDetails.
         :type: str
         """
-        allowed_values = ["PE", "MACS", "EXTERNAL"]
+        allowed_values = ["PE", "MACS", "EXTERNAL", "DIRECT"]
         if not value_allowed_none_or_none_sentinel(connector_type, allowed_values):
             connector_type = 'UNKNOWN_ENUM_VALUE'
         self._connector_type = connector_type

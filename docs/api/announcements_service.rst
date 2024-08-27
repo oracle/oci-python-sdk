@@ -9,9 +9,11 @@ Announcements Service
     oci.announcements_service.AnnouncementClient
     oci.announcements_service.AnnouncementSubscriptionClient
     oci.announcements_service.AnnouncementsPreferencesClient
+    oci.announcements_service.ServiceClient
     oci.announcements_service.AnnouncementClientCompositeOperations
     oci.announcements_service.AnnouncementSubscriptionClientCompositeOperations
     oci.announcements_service.AnnouncementsPreferencesClientCompositeOperations
+    oci.announcements_service.ServiceClientCompositeOperations
 
 --------
  Models
@@ -24,6 +26,7 @@ Announcements Service
 
     oci.announcements_service.models.AffectedResource
     oci.announcements_service.models.Announcement
+    oci.announcements_service.models.AnnouncementCompartment
     oci.announcements_service.models.AnnouncementSubscription
     oci.announcements_service.models.AnnouncementSubscriptionCollection
     oci.announcements_service.models.AnnouncementSubscriptionSummary
@@ -35,6 +38,7 @@ Announcements Service
     oci.announcements_service.models.BaseAnnouncement
     oci.announcements_service.models.BaseAnnouncementsPreferences
     oci.announcements_service.models.BaseCreateAnnouncementsPreferencesDetails
+    oci.announcements_service.models.BaseService
     oci.announcements_service.models.ChangeAnnouncementSubscriptionCompartmentDetails
     oci.announcements_service.models.CreateAnnouncementSubscriptionDetails
     oci.announcements_service.models.CreateAnnouncementsPreferencesDetails
@@ -43,6 +47,10 @@ Announcements Service
     oci.announcements_service.models.FilterGroup
     oci.announcements_service.models.FilterGroupDetails
     oci.announcements_service.models.ModelProperty
+    oci.announcements_service.models.NotificationsSummary
+    oci.announcements_service.models.Service
+    oci.announcements_service.models.ServiceSummary
+    oci.announcements_service.models.ServicesCollection
     oci.announcements_service.models.UpdateAnnouncementSubscriptionDetails
     oci.announcements_service.models.UpdateAnnouncementsPreferencesDetails
     oci.announcements_service.models.UpdateFilterGroupDetails

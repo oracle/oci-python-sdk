@@ -54,6 +54,9 @@ Database Management
     oci.database_management.models.AttentionLogSummary
     oci.database_management.models.AutomaticCaptureFilter
     oci.database_management.models.AutomaticCaptureFilterDetails
+    oci.database_management.models.AutonomousDatabaseDiagnosticsAndManagementFeatureDetails
+    oci.database_management.models.AutonomousDatabaseFeatureDetails
+    oci.database_management.models.AutonomousDatabaseSqlWatchFeatureDetails
     oci.database_management.models.AwrDbCollection
     oci.database_management.models.AwrDbCpuUsageCollection
     oci.database_management.models.AwrDbCpuUsageSummary
@@ -162,8 +165,10 @@ Database Management
     oci.database_management.models.DbManagementPrivateEndpointCollection
     oci.database_management.models.DbManagementPrivateEndpointSummary
     oci.database_management.models.DbmResource
+    oci.database_management.models.DirectConnectorDetails
     oci.database_management.models.DisableAutomaticInitialPlanCaptureDetails
     oci.database_management.models.DisableAutomaticSpmEvolveAdvisorTaskDetails
+    oci.database_management.models.DisableAutonomousDatabaseManagementFeatureDetails
     oci.database_management.models.DisableDatabaseManagementFeatureDetails
     oci.database_management.models.DisableExternalContainerDatabaseManagementFeatureDetails
     oci.database_management.models.DisableExternalNonContainerDatabaseManagementFeatureDetails
@@ -189,6 +194,7 @@ Database Management
     oci.database_management.models.DropTablespaceDetails
     oci.database_management.models.EnableAutomaticInitialPlanCaptureDetails
     oci.database_management.models.EnableAutomaticSpmEvolveAdvisorTaskDetails
+    oci.database_management.models.EnableAutonomousDatabaseManagementFeatureDetails
     oci.database_management.models.EnableDatabaseManagementFeatureDetails
     oci.database_management.models.EnableExternalContainerDatabaseManagementFeatureDetails
     oci.database_management.models.EnableExternalDbSystemDatabaseManagementDetails
@@ -350,6 +356,7 @@ Database Management
     oci.database_management.models.MetricStatisticsDefinition
     oci.database_management.models.MetricsAggregationRange
     oci.database_management.models.MetricsAggregationRangeCollection
+    oci.database_management.models.ModifyAutonomousDatabaseManagementFeatureDetails
     oci.database_management.models.ModifyDatabaseManagementFeatureDetails
     oci.database_management.models.ModifyPluggableDatabaseManagementFeatureDetails
     oci.database_management.models.ModifySnapshotSettingsDetails

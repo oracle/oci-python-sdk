@@ -88,7 +88,7 @@ class AutoKeyRotationDetails(object):
     def rotation_interval_in_days(self):
         """
         Gets the rotation_interval_in_days of this AutoKeyRotationDetails.
-        The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+        The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
 
 
         :return: The rotation_interval_in_days of this AutoKeyRotationDetails.
@@ -100,7 +100,7 @@ class AutoKeyRotationDetails(object):
     def rotation_interval_in_days(self, rotation_interval_in_days):
         """
         Sets the rotation_interval_in_days of this AutoKeyRotationDetails.
-        The interval of auto key rotation. For auto key rotation the interval should between 30 day and 365 days (1 year)
+        The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
 
 
         :param rotation_interval_in_days: The rotation_interval_in_days of this AutoKeyRotationDetails.
@@ -112,7 +112,7 @@ class AutoKeyRotationDetails(object):
     def time_of_schedule_start(self):
         """
         Gets the time_of_schedule_start of this AutoKeyRotationDetails.
-        A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+        A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today\u2019s date will be used if not specified by customer.
 
 
         :return: The time_of_schedule_start of this AutoKeyRotationDetails.
@@ -124,7 +124,7 @@ class AutoKeyRotationDetails(object):
     def time_of_schedule_start(self, time_of_schedule_start):
         """
         Sets the time_of_schedule_start of this AutoKeyRotationDetails.
-        A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+        A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today\u2019s date will be used if not specified by customer.
 
 
         :param time_of_schedule_start: The time_of_schedule_start of this AutoKeyRotationDetails.
@@ -136,7 +136,7 @@ class AutoKeyRotationDetails(object):
     def time_of_next_rotation(self):
         """
         Gets the time_of_next_rotation of this AutoKeyRotationDetails.
-        A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+        A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z`. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
 
 
         :return: The time_of_next_rotation of this AutoKeyRotationDetails.
@@ -148,7 +148,7 @@ class AutoKeyRotationDetails(object):
     def time_of_next_rotation(self, time_of_next_rotation):
         """
         Sets the time_of_next_rotation of this AutoKeyRotationDetails.
-        A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z` .
+        A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: `2023-04-04T00:00:00Z`. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
 
 
         :param time_of_next_rotation: The time_of_next_rotation of this AutoKeyRotationDetails.
@@ -160,7 +160,7 @@ class AutoKeyRotationDetails(object):
     def time_of_last_rotation(self):
         """
         Gets the time_of_last_rotation of this AutoKeyRotationDetails.
-        A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+        A property indicating Last rotation Date. Example: `2023-04-04T00:00:00Z`.
 
 
         :return: The time_of_last_rotation of this AutoKeyRotationDetails.
@@ -172,7 +172,7 @@ class AutoKeyRotationDetails(object):
     def time_of_last_rotation(self, time_of_last_rotation):
         """
         Sets the time_of_last_rotation of this AutoKeyRotationDetails.
-        A  property indicating Last rotation Date Example: `2023-04-04T00:00:00Z`.
+        A property indicating Last rotation Date. Example: `2023-04-04T00:00:00Z`.
 
 
         :param time_of_last_rotation: The time_of_last_rotation of this AutoKeyRotationDetails.
@@ -214,7 +214,7 @@ class AutoKeyRotationDetails(object):
     def last_rotation_message(self):
         """
         Gets the last_rotation_message of this AutoKeyRotationDetails.
-        The last execution status message.
+        The last execution status message of auto key rotation.
 
 
         :return: The last_rotation_message of this AutoKeyRotationDetails.
@@ -226,7 +226,7 @@ class AutoKeyRotationDetails(object):
     def last_rotation_message(self, last_rotation_message):
         """
         Sets the last_rotation_message of this AutoKeyRotationDetails.
-        The last execution status message.
+        The last execution status message of auto key rotation.
 
 
         :param last_rotation_message: The last_rotation_message of this AutoKeyRotationDetails.

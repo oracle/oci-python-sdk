@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeHsmClusterCompartmentDetails(object):
     """
-    The details of the compartment you wish to move the Hsm.
+    The details of the compartment you wish to move the hsm cluster to.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class ChangeHsmClusterCompartmentDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ChangeHsmClusterCompartmentDetails.
-        The [OCID] of the compartment to move the hsm to.
+        The [OCID] of the compartment to move the hsm cluster to.
 
 
         :return: The compartment_id of this ChangeHsmClusterCompartmentDetails.
@@ -51,7 +51,7 @@ class ChangeHsmClusterCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ChangeHsmClusterCompartmentDetails.
-        The [OCID] of the compartment to move the hsm to.
+        The [OCID] of the compartment to move the hsm cluster to.
 
 
         :param compartment_id: The compartment_id of this ChangeHsmClusterCompartmentDetails.

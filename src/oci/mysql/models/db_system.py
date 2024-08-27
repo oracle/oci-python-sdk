@@ -214,6 +214,10 @@ class DbSystem(object):
             The value to assign to the secure_connections property of this DbSystem.
         :type secure_connections: oci.mysql.models.SecureConnectionDetails
 
+        :param customer_contacts:
+            The value to assign to the customer_contacts property of this DbSystem.
+        :type customer_contacts: list[oci.mysql.models.CustomerContact]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -251,7 +255,8 @@ class DbSystem(object):
             'crash_recovery': 'str',
             'point_in_time_recovery_details': 'PointInTimeRecoveryDetails',
             'database_management': 'str',
-            'secure_connections': 'SecureConnectionDetails'
+            'secure_connections': 'SecureConnectionDetails',
+            'customer_contacts': 'list[CustomerContact]'
         }
 
         self.attribute_map = {
@@ -290,7 +295,8 @@ class DbSystem(object):
             'crash_recovery': 'crashRecovery',
             'point_in_time_recovery_details': 'pointInTimeRecoveryDetails',
             'database_management': 'databaseManagement',
-            'secure_connections': 'secureConnections'
+            'secure_connections': 'secureConnections',
+            'customer_contacts': 'customerContacts'
         }
 
         self._id = None
@@ -329,6 +335,7 @@ class DbSystem(object):
         self._point_in_time_recovery_details = None
         self._database_management = None
         self._secure_connections = None
+        self._customer_contacts = None
 
     @property
     def id(self):
@@ -1227,6 +1234,34 @@ class DbSystem(object):
         :type: oci.mysql.models.SecureConnectionDetails
         """
         self._secure_connections = secure_connections
+
+    @property
+    def customer_contacts(self):
+        """
+        Gets the customer_contacts of this DbSystem.
+        The list of customer email addresses that receive information from Oracle about the specified OCI DB System resource.
+        Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.
+        Up to 10 email addresses can be added to the customer contacts for a DB System.
+
+
+        :return: The customer_contacts of this DbSystem.
+        :rtype: list[oci.mysql.models.CustomerContact]
+        """
+        return self._customer_contacts
+
+    @customer_contacts.setter
+    def customer_contacts(self, customer_contacts):
+        """
+        Sets the customer_contacts of this DbSystem.
+        The list of customer email addresses that receive information from Oracle about the specified OCI DB System resource.
+        Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.
+        Up to 10 email addresses can be added to the customer contacts for a DB System.
+
+
+        :param customer_contacts: The customer_contacts of this DbSystem.
+        :type: list[oci.mysql.models.CustomerContact]
+        """
+        self._customer_contacts = customer_contacts
 
     def __repr__(self):
         return formatted_flat_dict(self)

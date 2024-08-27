@@ -31,6 +31,10 @@ class OptimizerStatisticsCollectionOperation(object):
     #: This constant has a value of "TIMED_OUT"
     STATUS_TIMED_OUT = "TIMED_OUT"
 
+    #: A constant which can be used with the status property of a OptimizerStatisticsCollectionOperation.
+    #: This constant has a value of "UNKNOWN"
+    STATUS_UNKNOWN = "UNKNOWN"
+
     def __init__(self, **kwargs):
         """
         Initializes a new OptimizerStatisticsCollectionOperation object with values from keyword arguments.
@@ -62,7 +66,7 @@ class OptimizerStatisticsCollectionOperation(object):
 
         :param status:
             The value to assign to the status property of this OptimizerStatisticsCollectionOperation.
-            Allowed values for this property are: "IN_PROGRESS", "COMPLETED", "FAILED", "TIMED_OUT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IN_PROGRESS", "COMPLETED", "FAILED", "TIMED_OUT", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -297,7 +301,7 @@ class OptimizerStatisticsCollectionOperation(object):
         **[Required]** Gets the status of this OptimizerStatisticsCollectionOperation.
         The status of the operation such as Completed, and Failed.
 
-        Allowed values for this property are: "IN_PROGRESS", "COMPLETED", "FAILED", "TIMED_OUT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IN_PROGRESS", "COMPLETED", "FAILED", "TIMED_OUT", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -316,7 +320,7 @@ class OptimizerStatisticsCollectionOperation(object):
         :param status: The status of this OptimizerStatisticsCollectionOperation.
         :type: str
         """
-        allowed_values = ["IN_PROGRESS", "COMPLETED", "FAILED", "TIMED_OUT"]
+        allowed_values = ["IN_PROGRESS", "COMPLETED", "FAILED", "TIMED_OUT", "UNKNOWN"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status

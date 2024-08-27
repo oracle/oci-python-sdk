@@ -194,6 +194,10 @@ class CloudExadataInfrastructure(object):
             The value to assign to the defined_file_system_configurations property of this CloudExadataInfrastructure.
         :type defined_file_system_configurations: list[oci.database.models.DefinedFileSystemConfiguration]
 
+        :param is_scheduling_policy_associated:
+            The value to assign to the is_scheduling_policy_associated property of this CloudExadataInfrastructure.
+        :type is_scheduling_policy_associated: bool
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -231,7 +235,8 @@ class CloudExadataInfrastructure(object):
             'db_server_version': 'str',
             'monthly_storage_server_version': 'str',
             'monthly_db_server_version': 'str',
-            'defined_file_system_configurations': 'list[DefinedFileSystemConfiguration]'
+            'defined_file_system_configurations': 'list[DefinedFileSystemConfiguration]',
+            'is_scheduling_policy_associated': 'bool'
         }
 
         self.attribute_map = {
@@ -270,7 +275,8 @@ class CloudExadataInfrastructure(object):
             'db_server_version': 'dbServerVersion',
             'monthly_storage_server_version': 'monthlyStorageServerVersion',
             'monthly_db_server_version': 'monthlyDbServerVersion',
-            'defined_file_system_configurations': 'definedFileSystemConfigurations'
+            'defined_file_system_configurations': 'definedFileSystemConfigurations',
+            'is_scheduling_policy_associated': 'isSchedulingPolicyAssociated'
         }
 
         self._id = None
@@ -309,6 +315,7 @@ class CloudExadataInfrastructure(object):
         self._monthly_storage_server_version = None
         self._monthly_db_server_version = None
         self._defined_file_system_configurations = None
+        self._is_scheduling_policy_associated = None
 
     @property
     def id(self):
@@ -1233,6 +1240,30 @@ class CloudExadataInfrastructure(object):
         :type: list[oci.database.models.DefinedFileSystemConfiguration]
         """
         self._defined_file_system_configurations = defined_file_system_configurations
+
+    @property
+    def is_scheduling_policy_associated(self):
+        """
+        Gets the is_scheduling_policy_associated of this CloudExadataInfrastructure.
+        If true, the infrastructure is using granular maintenance scheduling preference.
+
+
+        :return: The is_scheduling_policy_associated of this CloudExadataInfrastructure.
+        :rtype: bool
+        """
+        return self._is_scheduling_policy_associated
+
+    @is_scheduling_policy_associated.setter
+    def is_scheduling_policy_associated(self, is_scheduling_policy_associated):
+        """
+        Sets the is_scheduling_policy_associated of this CloudExadataInfrastructure.
+        If true, the infrastructure is using granular maintenance scheduling preference.
+
+
+        :param is_scheduling_policy_associated: The is_scheduling_policy_associated of this CloudExadataInfrastructure.
+        :type: bool
+        """
+        self._is_scheduling_policy_associated = is_scheduling_policy_associated
 
     def __repr__(self):
         return formatted_flat_dict(self)

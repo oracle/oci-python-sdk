@@ -215,6 +215,103 @@ class AnnouncementClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_announcement_compartment(self, announcement_id, **kwargs):
+        """
+        Gets the compartment details of an announcement.
+
+
+        :param str announcement_id: (required)
+            The OCID of the announcement.
+
+        :param str opc_request_id: (optional)
+            The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+            a particular request, please provide the complete request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.announcements_service.models.AnnouncementCompartment`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/announcementsservice/get_announcement_compartment.py.html>`__ to see an example of how to use get_announcement_compartment API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['announcementId']
+        resource_path = "/announcements/{announcementId}/compartment"
+        method = "GET"
+        operation_name = "get_announcement_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementCompartment/GetAnnouncementCompartment"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_announcement_compartment got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "announcementId": announcement_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="AnnouncementCompartment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="AnnouncementCompartment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def get_announcement_user_status(self, announcement_id, **kwargs):
         """
         Gets information about whether a specific announcement was acknowledged by a user.
@@ -366,7 +463,7 @@ class AnnouncementClient(object):
         :param str platform_type: (optional)
             A filter to return only announcements affecting a specific platform.
 
-            Allowed values are: "IAAS", "SAAS"
+            Allowed values are: "IAAS", "SAAS", "PAAS"
 
         :param list[str] exclude_announcement_types: (optional)
             Exclude The type of announcement.
@@ -454,7 +551,7 @@ class AnnouncementClient(object):
                 )
 
         if 'platform_type' in kwargs:
-            platform_type_allowed_values = ["IAAS", "SAAS"]
+            platform_type_allowed_values = ["IAAS", "SAAS", "PAAS"]
             if kwargs['platform_type'] not in platform_type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `platform_type`, must be one of { platform_type_allowed_values }"

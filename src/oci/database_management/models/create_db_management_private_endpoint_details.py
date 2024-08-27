@@ -32,6 +32,10 @@ class CreateDbManagementPrivateEndpointDetails(object):
             The value to assign to the is_cluster property of this CreateDbManagementPrivateEndpointDetails.
         :type is_cluster: bool
 
+        :param is_dns_resolution_enabled:
+            The value to assign to the is_dns_resolution_enabled property of this CreateDbManagementPrivateEndpointDetails.
+        :type is_dns_resolution_enabled: bool
+
         :param subnet_id:
             The value to assign to the subnet_id property of this CreateDbManagementPrivateEndpointDetails.
         :type subnet_id: str
@@ -57,6 +61,7 @@ class CreateDbManagementPrivateEndpointDetails(object):
             'name': 'str',
             'compartment_id': 'str',
             'is_cluster': 'bool',
+            'is_dns_resolution_enabled': 'bool',
             'subnet_id': 'str',
             'description': 'str',
             'nsg_ids': 'list[str]',
@@ -68,6 +73,7 @@ class CreateDbManagementPrivateEndpointDetails(object):
             'name': 'name',
             'compartment_id': 'compartmentId',
             'is_cluster': 'isCluster',
+            'is_dns_resolution_enabled': 'isDnsResolutionEnabled',
             'subnet_id': 'subnetId',
             'description': 'description',
             'nsg_ids': 'nsgIds',
@@ -78,6 +84,7 @@ class CreateDbManagementPrivateEndpointDetails(object):
         self._name = None
         self._compartment_id = None
         self._is_cluster = None
+        self._is_dns_resolution_enabled = None
         self._subnet_id = None
         self._description = None
         self._nsg_ids = None
@@ -159,6 +166,30 @@ class CreateDbManagementPrivateEndpointDetails(object):
         :type: bool
         """
         self._is_cluster = is_cluster
+
+    @property
+    def is_dns_resolution_enabled(self):
+        """
+        Gets the is_dns_resolution_enabled of this CreateDbManagementPrivateEndpointDetails.
+        Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+
+
+        :return: The is_dns_resolution_enabled of this CreateDbManagementPrivateEndpointDetails.
+        :rtype: bool
+        """
+        return self._is_dns_resolution_enabled
+
+    @is_dns_resolution_enabled.setter
+    def is_dns_resolution_enabled(self, is_dns_resolution_enabled):
+        """
+        Sets the is_dns_resolution_enabled of this CreateDbManagementPrivateEndpointDetails.
+        Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+
+
+        :param is_dns_resolution_enabled: The is_dns_resolution_enabled of this CreateDbManagementPrivateEndpointDetails.
+        :type: bool
+        """
+        self._is_dns_resolution_enabled = is_dns_resolution_enabled
 
     @property
     def subnet_id(self):

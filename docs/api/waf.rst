@@ -34,6 +34,7 @@ Waf
     oci.waf.models.CreateWebAppFirewallDetails
     oci.waf.models.CreateWebAppFirewallLoadBalancerDetails
     oci.waf.models.CreateWebAppFirewallPolicyDetails
+    oci.waf.models.DynamicHttpResponseBody
     oci.waf.models.HttpResponseBody
     oci.waf.models.NetworkAddressList
     oci.waf.models.NetworkAddressListAddresses

@@ -136,6 +136,10 @@ class Vault(object):
             The value to assign to the is_primary property of this Vault.
         :type is_primary: bool
 
+        :param is_vault_replicable:
+            The value to assign to the is_vault_replicable property of this Vault.
+        :type is_vault_replicable: bool
+
         :param external_key_manager_metadata_summary:
             The value to assign to the external_key_manager_metadata_summary property of this Vault.
         :type external_key_manager_metadata_summary: oci.key_management.models.ExternalKeyManagerMetadataSummary
@@ -157,6 +161,7 @@ class Vault(object):
             'wrappingkey_id': 'str',
             'replica_details': 'VaultReplicaDetails',
             'is_primary': 'bool',
+            'is_vault_replicable': 'bool',
             'external_key_manager_metadata_summary': 'ExternalKeyManagerMetadataSummary'
         }
 
@@ -176,6 +181,7 @@ class Vault(object):
             'wrappingkey_id': 'wrappingkeyId',
             'replica_details': 'replicaDetails',
             'is_primary': 'isPrimary',
+            'is_vault_replicable': 'isVaultReplicable',
             'external_key_manager_metadata_summary': 'externalKeyManagerMetadataSummary'
         }
 
@@ -194,6 +200,7 @@ class Vault(object):
         self._wrappingkey_id = None
         self._replica_details = None
         self._is_primary = None
+        self._is_vault_replicable = None
         self._external_key_manager_metadata_summary = None
 
     @property
@@ -617,6 +624,30 @@ class Vault(object):
         :type: bool
         """
         self._is_primary = is_primary
+
+    @property
+    def is_vault_replicable(self):
+        """
+        Gets the is_vault_replicable of this Vault.
+        A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+
+
+        :return: The is_vault_replicable of this Vault.
+        :rtype: bool
+        """
+        return self._is_vault_replicable
+
+    @is_vault_replicable.setter
+    def is_vault_replicable(self, is_vault_replicable):
+        """
+        Sets the is_vault_replicable of this Vault.
+        A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+
+
+        :param is_vault_replicable: The is_vault_replicable of this Vault.
+        :type: bool
+        """
+        self._is_vault_replicable = is_vault_replicable
 
     @property
     def external_key_manager_metadata_summary(self):

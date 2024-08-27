@@ -72,7 +72,10 @@ class IpMaxConnections(object):
     def max_connections(self):
         """
         **[Required]** Gets the max_connections of this IpMaxConnections.
-        The max number of connections that the specified IPs can make to the Listener.
+        The maximum number of simultaneous connections that the specified IPs can make to the
+        Listener. IPs without a maxConnections setting can make either defaultMaxConnections
+        simultaneous connections to a listener or, if no defaultMaxConnections is specified, an
+        unlimited number of simultaneous connections to a listener.
 
 
         :return: The max_connections of this IpMaxConnections.
@@ -84,7 +87,10 @@ class IpMaxConnections(object):
     def max_connections(self, max_connections):
         """
         Sets the max_connections of this IpMaxConnections.
-        The max number of connections that the specified IPs can make to the Listener.
+        The maximum number of simultaneous connections that the specified IPs can make to the
+        Listener. IPs without a maxConnections setting can make either defaultMaxConnections
+        simultaneous connections to a listener or, if no defaultMaxConnections is specified, an
+        unlimited number of simultaneous connections to a listener.
 
 
         :param max_connections: The max_connections of this IpMaxConnections.

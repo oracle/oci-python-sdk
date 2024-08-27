@@ -578,7 +578,7 @@ class EsxiHostClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str cluster_id: (optional)
-            The `OCID`__ of the Cluster.
+            The `OCID`__ of the SDDC Cluster.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

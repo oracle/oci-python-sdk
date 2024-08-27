@@ -6,6 +6,7 @@
 
 from __future__ import absolute_import
 
+from .access_target_details import AccessTargetDetails
 from .bucket import Bucket
 from .bucket_summary import BucketSummary
 from .commit_multipart_upload_details import CommitMultipartUploadDetails
@@ -14,9 +15,11 @@ from .copy_object_details import CopyObjectDetails
 from .create_bucket_details import CreateBucketDetails
 from .create_multipart_upload_details import CreateMultipartUploadDetails
 from .create_preauthenticated_request_details import CreatePreauthenticatedRequestDetails
+from .create_private_endpoint_details import CreatePrivateEndpointDetails
 from .create_replication_policy_details import CreateReplicationPolicyDetails
 from .create_retention_rule_details import CreateRetentionRuleDetails
 from .duration import Duration
+from .fqdns import Fqdns
 from .list_objects import ListObjects
 from .multipart_upload import MultipartUpload
 from .multipart_upload_part_summary import MultipartUploadPartSummary
@@ -30,6 +33,9 @@ from .object_version_summary import ObjectVersionSummary
 from .pattern_details import PatternDetails
 from .preauthenticated_request import PreauthenticatedRequest
 from .preauthenticated_request_summary import PreauthenticatedRequestSummary
+from .prefix_fqdns import PrefixFqdns
+from .private_endpoint import PrivateEndpoint
+from .private_endpoint_summary import PrivateEndpointSummary
 from .put_object_lifecycle_policy_details import PutObjectLifecyclePolicyDetails
 from .reencrypt_object_details import ReencryptObjectDetails
 from .rename_object_details import RenameObjectDetails
@@ -45,6 +51,7 @@ from .sse_customer_key_details import SSECustomerKeyDetails
 from .update_bucket_details import UpdateBucketDetails
 from .update_namespace_metadata_details import UpdateNamespaceMetadataDetails
 from .update_object_storage_tier_details import UpdateObjectStorageTierDetails
+from .update_private_endpoint_details import UpdatePrivateEndpointDetails
 from .update_retention_rule_details import UpdateRetentionRuleDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
@@ -54,6 +61,7 @@ from .work_request_summary import WorkRequestSummary
 
 # Maps type names to classes for object_storage services.
 object_storage_type_mapping = {
+    "AccessTargetDetails": AccessTargetDetails,
     "Bucket": Bucket,
     "BucketSummary": BucketSummary,
     "CommitMultipartUploadDetails": CommitMultipartUploadDetails,
@@ -62,9 +70,11 @@ object_storage_type_mapping = {
     "CreateBucketDetails": CreateBucketDetails,
     "CreateMultipartUploadDetails": CreateMultipartUploadDetails,
     "CreatePreauthenticatedRequestDetails": CreatePreauthenticatedRequestDetails,
+    "CreatePrivateEndpointDetails": CreatePrivateEndpointDetails,
     "CreateReplicationPolicyDetails": CreateReplicationPolicyDetails,
     "CreateRetentionRuleDetails": CreateRetentionRuleDetails,
     "Duration": Duration,
+    "Fqdns": Fqdns,
     "ListObjects": ListObjects,
     "MultipartUpload": MultipartUpload,
     "MultipartUploadPartSummary": MultipartUploadPartSummary,
@@ -78,6 +88,9 @@ object_storage_type_mapping = {
     "PatternDetails": PatternDetails,
     "PreauthenticatedRequest": PreauthenticatedRequest,
     "PreauthenticatedRequestSummary": PreauthenticatedRequestSummary,
+    "PrefixFqdns": PrefixFqdns,
+    "PrivateEndpoint": PrivateEndpoint,
+    "PrivateEndpointSummary": PrivateEndpointSummary,
     "PutObjectLifecyclePolicyDetails": PutObjectLifecyclePolicyDetails,
     "ReencryptObjectDetails": ReencryptObjectDetails,
     "RenameObjectDetails": RenameObjectDetails,
@@ -93,6 +106,7 @@ object_storage_type_mapping = {
     "UpdateBucketDetails": UpdateBucketDetails,
     "UpdateNamespaceMetadataDetails": UpdateNamespaceMetadataDetails,
     "UpdateObjectStorageTierDetails": UpdateObjectStorageTierDetails,
+    "UpdatePrivateEndpointDetails": UpdatePrivateEndpointDetails,
     "UpdateRetentionRuleDetails": UpdateRetentionRuleDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,

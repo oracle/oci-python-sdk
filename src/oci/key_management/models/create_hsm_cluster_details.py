@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateHsmClusterDetails(object):
     """
-    The details of the HSM resource that you want to create.
+    The details of the HSM cluster resource that you want to create.
     """
 
     def __init__(self, **kwargs):
@@ -60,7 +60,7 @@ class CreateHsmClusterDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateHsmClusterDetails.
-        The OCID of the compartment where you want to create this HSM resource.
+        The OCID of the compartment where you want to create this HSM cluster resource.
 
 
         :return: The compartment_id of this CreateHsmClusterDetails.
@@ -72,7 +72,7 @@ class CreateHsmClusterDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateHsmClusterDetails.
-        The OCID of the compartment where you want to create this HSM resource.
+        The OCID of the compartment where you want to create this HSM cluster resource.
 
 
         :param compartment_id: The compartment_id of this CreateHsmClusterDetails.
@@ -84,7 +84,7 @@ class CreateHsmClusterDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateHsmClusterDetails.
-        A user-friendly name for the HSM resource. It does not have to be unique, and it is changeable.
+        A user-friendly display name for the HSM cluster resource. It does not have to be unique, and it is changeable.
         Avoid entering confidential information.
 
 
@@ -97,7 +97,7 @@ class CreateHsmClusterDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateHsmClusterDetails.
-        A user-friendly name for the HSM resource. It does not have to be unique, and it is changeable.
+        A user-friendly display name for the HSM cluster resource. It does not have to be unique, and it is changeable.
         Avoid entering confidential information.
 
 

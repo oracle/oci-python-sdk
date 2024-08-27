@@ -122,7 +122,7 @@ class KmsHsmClusterClient(object):
 
 
         :param str hsm_cluster_id: (required)
-            The OCID of the HSM Cluster.
+            The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a
@@ -240,7 +240,7 @@ class KmsHsmClusterClient(object):
 
 
         :param str hsm_cluster_id: (required)
-            The OCID of the HSM Cluster.
+            The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster.
 
         :param oci.key_management.models.ChangeHsmClusterCompartmentDetails change_hsm_cluster_compartment_details: (required)
             Details of change HSM Cluster compartment.
@@ -460,7 +460,7 @@ class KmsHsmClusterClient(object):
 
 
         :param str hsm_cluster_id: (required)
-            The OCID of the HSM Cluster.
+            The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster.
 
         :param str opc_request_id: (optional)
             Unique identifier for the request. If provided, the returned request ID
@@ -583,7 +583,7 @@ class KmsHsmClusterClient(object):
 
 
         :param str hsm_cluster_id: (required)
-            The OCID of the HSM Cluster.
+            The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster.
 
         :param str opc_request_id: (optional)
             Unique identifier for the request. If provided, the returned request ID
@@ -681,10 +681,10 @@ class KmsHsmClusterClient(object):
 
 
         :param str hsm_cluster_id: (required)
-            The OCID of the HSM Cluster.
+            The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster.
 
         :param str hsm_partition_id: (required)
-            The OCID of the HSM Partition.
+            The OCID of the HSM Partition. This is a unique identifier which each hsmPartition will have.
 
         :param str opc_request_id: (optional)
             Unique identifier for the request. If provided, the returned request ID
@@ -794,7 +794,7 @@ class KmsHsmClusterClient(object):
 
 
         :param str hsm_cluster_id: (required)
-            The OCID of the HSM Cluster.
+            The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster.
 
         :param str opc_request_id: (optional)
             Unique identifier for the request. If provided, the returned request ID
@@ -1042,7 +1042,7 @@ class KmsHsmClusterClient(object):
 
 
         :param str hsm_cluster_id: (required)
-            The OCID of the HSM Cluster.
+            The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster.
 
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
@@ -1071,7 +1071,7 @@ class KmsHsmClusterClient(object):
         :param str lifecycle_state: (optional)
             A filter that returns only resources that match the specified lifecycle state. The state value is case-insensitive.
 
-            Allowed values are: "ACTIVE", "INACTIVE", "ACTIVATING", "ACTIVATION_REQUIRED"
+            Allowed values are: "ACTIVE", "INACTIVE", "ACTIVATING", "ACTIVATION_REQUIRED", "SCHEDULING_DELETION", "PENDING_DELETION", "DELETING", "DELETED"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1139,7 +1139,7 @@ class KmsHsmClusterClient(object):
                 )
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["ACTIVE", "INACTIVE", "ACTIVATING", "ACTIVATION_REQUIRED"]
+            lifecycle_state_allowed_values = ["ACTIVE", "INACTIVE", "ACTIVATING", "ACTIVATION_REQUIRED", "SCHEDULING_DELETION", "PENDING_DELETION", "DELETING", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
@@ -1202,7 +1202,7 @@ class KmsHsmClusterClient(object):
 
 
         :param str hsm_cluster_id: (required)
-            The OCID of the HSM Cluster.
+            The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster.
 
         :param oci.key_management.models.ScheduleHsmClusterDeletionDetails schedule_hsm_cluster_deletion_details: (required)
             Details of ScheduleHsmClusterDeletionDetails
@@ -1330,7 +1330,7 @@ class KmsHsmClusterClient(object):
 
 
         :param str hsm_cluster_id: (required)
-            The OCID of the HSM Cluster.
+            The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster.
 
         :param oci.key_management.models.UpdateHsmClusterDetails update_hsm_cluster_details: (required)
             Details of the HsmCluster Resource
@@ -1442,7 +1442,7 @@ class KmsHsmClusterClient(object):
 
 
         :param str hsm_cluster_id: (required)
-            The OCID of the HSM Cluster.
+            The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster.
 
         :param oci.key_management.models.UploadPartitionCertificatesDetails upload_partition_certificates_details: (required)
             To upload partition certificates.

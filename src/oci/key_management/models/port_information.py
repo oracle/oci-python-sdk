@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PortInformation(object):
     """
-    The details of the port.
+    Details of a single portInformation item include the PortNumber (an integer used as an identifier) and the PortType (this refers to either an enum value of Management Utility, Client Utility, or null)
     """
 
     #: A constant which can be used with the port_type property of a PortInformation.
@@ -56,7 +56,7 @@ class PortInformation(object):
     def port_number(self):
         """
         **[Required]** Gets the port_number of this PortInformation.
-        The port number of the cavium server.
+        The port number is a unique identifier which is typically used as the loadbalancer listener.
 
 
         :return: The port_number of this PortInformation.
@@ -68,7 +68,7 @@ class PortInformation(object):
     def port_number(self, port_number):
         """
         Sets the port_number of this PortInformation.
-        The port number of the cavium server.
+        The port number is a unique identifier which is typically used as the loadbalancer listener.
 
 
         :param port_number: The port_number of this PortInformation.
@@ -80,7 +80,7 @@ class PortInformation(object):
     def port_type(self):
         """
         **[Required]** Gets the port_type of this PortInformation.
-        Port type associated for the port number.
+        Port type associated for the port number. The two port type enums are `CLIENTUTILITY` and `MANAGEMENTUTILITY`. The CLIENTUTILITY enum corresponds to a port which is used by the client daemon. The MANAGEMENTUTILITY enum corresponds to a port used by user management utility.
 
         Allowed values for this property are: "CLIENTUTILITY", "MANAGEMENTUTILITY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -95,7 +95,7 @@ class PortInformation(object):
     def port_type(self, port_type):
         """
         Sets the port_type of this PortInformation.
-        Port type associated for the port number.
+        Port type associated for the port number. The two port type enums are `CLIENTUTILITY` and `MANAGEMENTUTILITY`. The CLIENTUTILITY enum corresponds to a port which is used by the client daemon. The MANAGEMENTUTILITY enum corresponds to a port used by user management utility.
 
 
         :param port_type: The port_type of this PortInformation.

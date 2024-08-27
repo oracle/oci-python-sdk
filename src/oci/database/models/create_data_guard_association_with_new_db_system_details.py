@@ -114,6 +114,10 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             The value to assign to the hostname property of this CreateDataGuardAssociationWithNewDbSystemDetails.
         :type hostname: str
 
+        :param domain:
+            The value to assign to the domain property of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :type domain: str
+
         :param time_zone:
             The value to assign to the time_zone property of this CreateDataGuardAssociationWithNewDbSystemDetails.
         :type time_zone: str
@@ -171,6 +175,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             'nsg_ids': 'list[str]',
             'backup_network_nsg_ids': 'list[str]',
             'hostname': 'str',
+            'domain': 'str',
             'time_zone': 'str',
             'fault_domains': 'list[str]',
             'private_ip': 'str',
@@ -201,6 +206,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             'nsg_ids': 'nsgIds',
             'backup_network_nsg_ids': 'backupNetworkNsgIds',
             'hostname': 'hostname',
+            'domain': 'domain',
             'time_zone': 'timeZone',
             'fault_domains': 'faultDomains',
             'private_ip': 'privateIp',
@@ -230,6 +236,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         self._nsg_ids = None
         self._backup_network_nsg_ids = None
         self._hostname = None
+        self._domain = None
         self._time_zone = None
         self._fault_domains = None
         self._private_ip = None
@@ -525,6 +532,34 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         :type: str
         """
         self._hostname = hostname
+
+    @property
+    def domain(self):
+        """
+        Gets the domain of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        A domain name used for the DB system. If the Oracle-provided Internet and VCN
+        Resolver is enabled for the specified subnet, the domain name for the subnet is used
+        (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+
+
+        :return: The domain of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :rtype: str
+        """
+        return self._domain
+
+    @domain.setter
+    def domain(self, domain):
+        """
+        Sets the domain of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        A domain name used for the DB system. If the Oracle-provided Internet and VCN
+        Resolver is enabled for the specified subnet, the domain name for the subnet is used
+        (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+
+
+        :param domain: The domain of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :type: str
+        """
+        self._domain = domain
 
     @property
     def time_zone(self):

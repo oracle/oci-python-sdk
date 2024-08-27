@@ -58,6 +58,7 @@ File Storage
     oci.file_storage.models.ReplicationSummary
     oci.file_storage.models.ReplicationTarget
     oci.file_storage.models.ReplicationTargetSummary
+    oci.file_storage.models.ScheduleDowngradeShapeMountTargetDetails
     oci.file_storage.models.Snapshot
     oci.file_storage.models.SnapshotSchedule
     oci.file_storage.models.SnapshotSummary
@@ -72,5 +73,6 @@ File Storage
     oci.file_storage.models.UpdateOutboundConnectorDetails
     oci.file_storage.models.UpdateReplicationDetails
     oci.file_storage.models.UpdateSnapshotDetails
+    oci.file_storage.models.UpgradeShapeMountTargetDetails
     oci.file_storage.models.ValidateKeyTabsDetails
     oci.file_storage.models.ValidateKeyTabsResponseDetails

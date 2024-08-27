@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class HsmPartitionCollection(object):
     """
-    HsmPartitionCollection object with page of HsmPartitionSummary objects.
+    HsmPartitionCollection object with page of HsmPartitionSummary objects. A HsmPartitionSummary object contains details about the corresponding HSM.
     """
 
     def __init__(self, **kwargs):

@@ -31,7 +31,7 @@ class StaticTextHttpResponseBody(HttpResponseBody):
 
         :param type:
             The value to assign to the type property of this StaticTextHttpResponseBody.
-            Allowed values for this property are: "STATIC_TEXT"
+            Allowed values for this property are: "STATIC_TEXT", "DYNAMIC"
         :type type: str
 
         :param text:
