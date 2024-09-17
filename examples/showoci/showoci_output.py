@@ -22,7 +22,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "24.08.06"
+    version = "24.08.27"
 
     ##########################################################################
     # spaces for align
@@ -1255,6 +1255,125 @@ class ShowOCIOutput(object):
             self.__print_error("__print_file_storage_main", e)
 
     ##########################################################################
+    # database exadata vmcluster
+    ##########################################################################
+    def __print_database_db_exadata_vmcluster(self, vmclusters):
+        try:
+            for vm in vmclusters:
+                print("")
+
+                if 'display_name' in vm:
+                    print(self.tabs + "VMCLSTR   : " + str(vm['display_name']) + " (" + vm['lifecycle_state'] + ")")
+
+                if 'cluster_name' in vm:
+                    if vm['cluster_name']:
+                        print(self.tabs + "Cluster   : " + vm['cluster_name'])
+
+                if 'cpu_core_count' in vm:
+                    print(self.tabs + "Cores     : " + str(vm['cpu_core_count']))
+
+                if 'total_e_cpu_count' in vm:
+                    print(self.tabs + "Tot ECPUs : " + str(vm['total_e_cpu_count']))
+
+                if 'enabled_e_cpu_count' in vm:
+                    print(self.tabs + "Enab ECPUs: " + str(vm['enabled_e_cpu_count']))
+
+                if 'memory_size_in_gbs' in vm:
+                    print(self.tabs + "Memory GB : " + str(vm['memory_size_in_gbs']))
+
+                if 'vm_file_system_storage_in_gbs' in vm:
+                    print(self.tabs + "FS GB     : " + str(vm['vm_file_system_storage_in_gbs']))
+
+                if 'node_count' in vm:
+                    if vm['node_count']:
+                        print(self.tabs + "Nodes     : " + str(vm['node_count']))
+
+                if 'domain' in vm:
+                    if vm['domain']:
+                        print(self.tabs + "Domain    : " + vm['domain'])
+
+                if 'data_subnet' in vm:
+                    if vm['data_subnet']:
+                        print(self.tabs + "DataSub   : " + vm['data_subnet'])
+
+                if 'backup_subnet' in vm:
+                    if vm['backup_subnet']:
+                        print(self.tabs + "BackSub   : " + vm['backup_subnet'])
+
+                if 'scan_dns' in vm:
+                    if vm['scan_dns']:
+                        print(self.tabs + "Scan      : " + vm['scan_dns_name'])
+
+                if 'scan_ips' in vm:
+                    for ip in vm['scan_ips']:
+                        print(self.tabs + "Scan Ips  : " + ip)
+
+                if 'vip_ips' in vm:
+                    for ip in vm['vip_ips']:
+                        print(self.tabs + "VIP Ips   : " + ip)
+
+                if 'listener_port' in vm:
+                    print(self.tabs + "Port      : " + vm['listener_port'])
+
+                if 'gi_version' in vm:
+                    if vm['gi_version']:
+                        if 'gi_version_date' in vm:
+                            print(self.tabs + "Grid Ver  : " + vm['gi_version'] + "  " + vm['gi_version_date'])
+                        else:
+                            print(self.tabs + "Grid Ver  : " + vm['gi_version'])
+
+                if 'system_version' in vm:
+                    if vm['system_version']:
+                        if 'system_version_date' in vm:
+                            print(self.tabs + "Sys Ver   : " + vm['system_version'] + "  " + vm['system_version_date'])
+                        else:
+                            print(self.tabs + "Sys Ver   : " + vm['system_version'])
+
+                if 'data_storage_percentage' in vm:
+                    print(self.tabs + "Data      : " + vm['data_storage_percentage'] + "%, Sparse: " + vm['is_sparse_diskgroup_enabled'] + ", Local Backup: " + vm['is_local_backup_enabled'])
+
+                if 'patches' in vm:
+                    for p in vm['patches']:
+                        print(self.tabs + "Patches   : " + p)
+
+                # db nodes
+                for index, db_node in enumerate(vm['db_nodes'], start=1):
+                    print(self.tabs + "DB Node " + str(index) + " : " + db_node['desc'])
+                    if 'nsg_names' in db_node:
+                        if db_node['nsg_names']:
+                            print(self.tabs + "          : SecGrp : " + db_node['nsg_names'])
+
+                    if 'time_maintenance_window_start' in db_node:
+                        if db_node['maintenance_type'] != "None":
+                            print(self.tabs + self.tabs + "        Maintenance: " + db_node['maintenance_type'] + "  " + db_node['time_maintenance_window_start'][0:16] + " - " + db_node['time_maintenance_window_end'][0:16])
+
+                # db homes
+                for db_home in vm['db_homes']:
+                    print(self.tabs + "Home      : " + db_home['home'])
+
+                    # patches
+                    for p in db_home['patches']:
+                        print(self.tabs + self.tabs + "   PT : " + p)
+
+                    # databases
+                    for db in db_home['databases']:
+                        pdbs = ", PDBS: " + str(', '.join(x['name'] for x in db['pdbs'])) if db['pdbs'] else ""
+                        print(self.tabs + self.tabs + "   DB : " + db['name'] + pdbs)
+
+                        # print data guard
+                        for dg in db['dataguard']:
+                            print(self.tabs + self.tabs + "        " + dg['name'])
+
+                        # print backups
+                        for backup in db['backups']:
+                            print(self.tabs + self.tabs + "        " + backup['name'] + " - " + backup['time'] + " - " + backup['size'])
+
+                    print(self.tabs + "          : " + '-' * 90)
+
+        except Exception as e:
+            self.__print_error("__print_database_db_exadata_vmcluster", e)
+
+    ##########################################################################
     # database exadata
     ##########################################################################
     def __print_database_db_exadata_infra(self, list_exadata):
@@ -1295,99 +1414,8 @@ class ShowOCIOutput(object):
                 for index, srv in enumerate(dbs['db_servers'], start=1):
                     print(self.tabs + "DB Srv " + str(index) + "  : " + srv['desc'])
 
-                # clusters
-                for vm in dbs['vm_clusters']:
-                    print("")
-
-                    if 'display_name' in vm:
-                        print(self.tabs + "VMCLSTR   : " + str(vm['display_name']) + " (" + vm['lifecycle_state'] + ")")
-
-                    if 'cluster_name' in vm:
-                        if vm['cluster_name']:
-                            print(self.tabs + "Cluster   : " + vm['cluster_name'])
-
-                    if 'cpu_core_count' in vm:
-                        print(self.tabs + "Cores     : " + str(vm['cpu_core_count']))
-
-                    if 'node_count' in vm:
-                        if vm['node_count']:
-                            print(self.tabs + "Nodes     : " + str(vm['node_count']))
-
-                    if 'domain' in vm:
-                        if vm['domain']:
-                            print(self.tabs + "Domain    : " + vm['domain'])
-
-                    if 'data_subnet' in vm:
-                        if vm['data_subnet']:
-                            print(self.tabs + "DataSub   : " + vm['data_subnet'])
-
-                    if 'backup_subnet' in vm:
-                        if vm['backup_subnet']:
-                            print(self.tabs + "BackSub   : " + vm['backup_subnet'])
-
-                    if 'scan_dns' in vm:
-                        if vm['scan_dns']:
-                            print(self.tabs + "Scan      : " + vm['scan_dns_name'])
-
-                    if 'scan_ips' in vm:
-                        for ip in vm['scan_ips']:
-                            print(self.tabs + "Scan Ips  : " + ip)
-
-                    if 'vip_ips' in vm:
-                        for ip in vm['vip_ips']:
-                            print(self.tabs + "VIP Ips   : " + ip)
-
-                    if 'listener_port' in vm:
-                        print(self.tabs + "Port      : " + vm['listener_port'])
-
-                    if 'gi_version' in vm:
-                        if vm['gi_version']:
-                            print(self.tabs + "Grid Ver  : " + vm['gi_version'] + "  " + vm['gi_version_date'])
-
-                    if 'system_version' in vm:
-                        if vm['system_version']:
-                            print(self.tabs + "Sys Ver   : " + vm['system_version'] + "  " + vm['system_version_date'])
-
-                    if 'data_storage_percentage' in vm:
-                        print(self.tabs + "Data      : " + vm['data_storage_percentage'] + "%, Sparse: " + vm['is_sparse_diskgroup_enabled'] + ", Local Backup: " + vm['is_local_backup_enabled'])
-
-                    if 'patches' in vm:
-                        for p in vm['patches']:
-                            print(self.tabs + "Patches   : " + p)
-
-                    # db nodes
-                    for index, db_node in enumerate(vm['db_nodes'], start=1):
-                        print(self.tabs + "DB Node " + str(index) + " : " + db_node['desc'])
-                        if 'nsg_names' in db_node:
-                            if db_node['nsg_names']:
-                                print(self.tabs + "          : SecGrp : " + db_node['nsg_names'])
-
-                        if 'time_maintenance_window_start' in db_node:
-                            if db_node['maintenance_type'] != "None":
-                                print(self.tabs + self.tabs + "        Maintenance: " + db_node['maintenance_type'] + "  " + db_node['time_maintenance_window_start'][0:16] + " - " + db_node['time_maintenance_window_end'][0:16])
-
-                    # db homes
-                    for db_home in vm['db_homes']:
-                        print(self.tabs + "Home      : " + db_home['home'])
-
-                        # patches
-                        for p in db_home['patches']:
-                            print(self.tabs + self.tabs + "   PT : " + p)
-
-                        # databases
-                        for db in db_home['databases']:
-                            pdbs = ", PDBS: " + str(', '.join(x['name'] for x in db['pdbs'])) if db['pdbs'] else ""
-                            print(self.tabs + self.tabs + "   DB : " + db['name'] + pdbs)
-
-                            # print data guard
-                            for dg in db['dataguard']:
-                                print(self.tabs + self.tabs + "        " + dg['name'])
-
-                            # print backups
-                            for backup in db['backups']:
-                                print(self.tabs + self.tabs + "        " + backup['name'] + " - " + backup['time'] + " - " + backup['size'])
-
-                        print(self.tabs + "          : " + '-' * 90)
+                # vmclusters
+                self.__print_database_db_exadata_vmcluster(dbs['vm_clusters'])
 
                 # ADB-D Clusters
                 for vm in dbs['adb_clusters']:
@@ -1422,6 +1450,29 @@ class ShowOCIOutput(object):
 
         except Exception as e:
             self.__print_error("__print_database_db_exadata_infra", e)
+
+    ##########################################################################
+    # database exadata
+    ##########################################################################
+    def __print_database_db_exascale(self, list_exascale):
+
+        try:
+            for dbs in list_exascale:
+                print("")
+
+                print(self.taba + "Exascale  : Vault : " + dbs['display_name'] + " - " + dbs['lifecycle_state'])
+                print(self.tabs + "Created   : " + dbs['time_created'][0:16])
+                print(self.tabs + "AD        : " + dbs['availability_domain'])
+                print(self.tabs + "Total GB  : " + dbs['total_size_in_gbs'])
+                print(self.tabs + "Available : " + dbs['available_size_in_gbs'])
+                print(self.tabs + "Flash %   : " + dbs['additional_flash_cache_in_percent'])
+                print(self.tabs + "Clusters  : " + dbs['vm_cluster_count'])
+
+                # vmclusters
+                self.__print_database_db_exadata_vmcluster(dbs['vm_clusters'])
+
+        except Exception as e:
+            self.__print_error("__print_database_db_exascale", e)
 
     ##########################################################################
     # database exacc
@@ -1965,6 +2016,11 @@ class ShowOCIOutput(object):
             if 'exacc_infrastructure' in list_databases:
                 self.print_header("ExaCC Infrastructure", 2)
                 self.__print_database_db_exacc_infra(list_databases['exacc_infrastructure'])
+                print("")
+
+            if 'exascale' in list_databases:
+                self.print_header("Exascale", 2)
+                self.__print_database_db_exascale(list_databases['exascale'])
                 print("")
 
             if 'db_system' in list_databases:
@@ -3618,7 +3674,7 @@ class ShowOCISummary(object):
                 if 'sum_info' in db and 'sum_count' in db:
 
                     if db['sum_count'].replace(".", "").isnumeric():
-                        self.summary_global_list.append({'type': "Total OCPUs - Autonomous Database", 'size': float(db['sum_count'])})
+                        self.summary_global_list.append({'type': "Total " + db['compute_model'] + "s - Autonomous Database", 'size': float(db['sum_count'])})
 
                         if float(db['sum_count']) == 0:
                             self.summary_global_list.append({'type': db['sum_info_stopped'], 'size': 1})
@@ -3677,6 +3733,9 @@ class ShowOCISummary(object):
 
             if 'exacc_infrastructure' in list_databases:
                 self.__summary_database_db_exacc(list_databases['exacc_infrastructure'])
+
+            if 'exascale' in list_databases:
+                self.__summary_database_db_exascale(list_databases['exascale'])
 
             if 'db_system' in list_databases:
                 self.__summary_database_db_system(list_databases['db_system'])
@@ -3815,6 +3874,35 @@ class ShowOCISummary(object):
 
         except Exception as e:
             self.__print_error("__summary_database_db_exadata", e)
+
+    ##########################################################################
+    # Database Exascale
+    ##########################################################################
+    def __summary_database_db_exascale(self, list_exa):
+
+        try:
+            for dbs in list_exa:
+                if not (dbs['lifecycle_state'] == 'TERMINATED' or dbs['lifecycle_state'] == 'DELETED'):
+                    self.summary_global_list.append({'type': dbs['sum_info'] + " - Count", 'size': 1})
+
+                for vm in dbs['vm_clusters']:
+                    if 'enabled_e_cpu_count' in vm:
+                        self.summary_global_list.append({'type': 'Total ECPUs - ExaScale Database', 'size': float(vm['enabled_e_cpu_count'])})
+                        self.summary_global_list.append({'type': vm['sum_info'] + " ECPUs", 'size': float(vm['enabled_e_cpu_count'])})
+
+                    # add db to summary
+                    if dbs['lifecycle_state'] == 'STOPPED':
+                        self.summary_global_list.append({'type': 'Stopped ' + vm['sum_info'], 'size': 1})
+                    else:
+                        self.summary_global_list.append({'type': vm['sum_info'], 'size': 1})
+
+                    # db homes
+                    for db_home in vm['db_homes']:
+                        for db in db_home['databases']:
+                            self.__summary_core_size(db['backups'])
+
+        except Exception as e:
+            self.__print_error("__summary_database_db_exascale", e)
 
     ##########################################################################
     # Database ExaCC
@@ -4291,6 +4379,8 @@ class ShowOCICSV(object):
     csv_block_volumes = []
     csv_block_volumes_backups = []
     csv_compute_reservations = []
+    csv_db_exascale_vaults = []
+    csv_db_exascale_vmclusters = []
     csv_db_exacc_vmclusters = []
     csv_db_exa_infrastructure = []
     csv_db_exacs_vmclusters = []
@@ -4488,6 +4578,8 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("database_db_all", self.csv_db_all)
             self.__export_to_csv_file("database_db_vm_bm", self.csv_db_vm_bm)
             self.__export_to_csv_file("database_db_exa_infra", self.csv_db_exa_infrastructure)
+            self.__export_to_csv_file("database_db_exascale_vaults", self.csv_db_exascale_vaults)
+            self.__export_to_csv_file("database_db_exascale", self.csv_db_exascale_vmclusters)
             self.__export_to_csv_file("database_db_exacs", self.csv_db_exacs_vmclusters)
             self.__export_to_csv_file("database_db_exacc", self.csv_db_exacc_vmclusters)
             self.__export_to_csv_file("database_goldengate_deployments", self.csv_db_goldengate_deployments)
@@ -6655,6 +6747,168 @@ class ShowOCICSV(object):
             self.__print_error("__csv_database_backup_item", e)
 
     ##########################################################################
+    # csv exascale
+    ##########################################################################
+    def __csv_database_db_exascale(self, region_name, list_vaults):
+
+        try:
+            for dbs in list_vaults:
+
+                vault = {
+                    'region_name': region_name,
+                    'availability_domain': dbs['availability_domain'],
+                    'compartment_name': dbs['compartment_name'],
+                    'compartment_path': dbs['compartment_path'],
+                    'status': dbs['lifecycle_state'],
+                    'time_created': dbs['time_created'],
+                    'type': "Exascale",
+                    'name': dbs['display_name'],
+                    'time_zone': dbs['time_zone'],
+                    'total_size_in_gbs': dbs['total_size_in_gbs'],
+                    'available_size_in_gbs': dbs['available_size_in_gbs'],
+                    'additional_flash_cache_in_percent': dbs['additional_flash_cache_in_percent'],
+                    'vm_cluster_count': dbs['vm_cluster_count'],
+                    'freeform_tags': self.__get_freeform_tags(dbs['freeform_tags']),
+                    'defined_tags': self.__get_defined_tags(dbs['defined_tags']),
+                    'id': dbs['id']
+                }
+                self.csv_db_exascale_vaults.append(vault)
+                self.__csv_add_service(vault, "DB Exascale Vault")
+
+                for vm in dbs['vm_clusters']:
+                    dbsd = {
+                        'region_name': region_name,
+                        'availability_domain': dbs['availability_domain'],
+                        'compartment_name': vm['compartment_name'],
+                        'compartment_path': vm['compartment_path'],
+                        'status': dbs['lifecycle_state'],
+                        'type': "Exascale",
+                        'name': dbs['display_name'],
+                        'vm_name': vm['display_name'],
+                        'shape': vm['shape'],
+                        'total_e_cpu_count': vm['total_e_cpu_count'],
+                        'enabled_e_cpu_count': vm['enabled_e_cpu_count'],
+                        'vm_file_system_storage_in_gbs': vm['vm_file_system_storage_in_gbs'],
+                        'snapshot_file_system_storage_in_gbs': vm['snapshot_file_system_storage_in_gbs'],
+                        'total_file_system_storage_in_gbs': vm['total_file_system_storage_in_gbs'],
+                        'memory_gb': vm['memory_size_in_gbs'],
+                        'node_count': len(vm['db_nodes']),
+                        'gi_version': vm['gi_version'],
+                        'system_version': vm['system_version'],
+                        'database_edition': 'XP',
+                        'license_model': vm['license_model'],
+                        'data_subnet': vm['data_subnet'],
+                        'data_subnet_name': vm['data_subnet_name'],
+                        'data_vcn_name': vm['data_vcn_name'],
+                        'backup_subnet': vm['backup_subnet'],
+                        'backup_subnet_name': vm['backup_subnet_name'],
+                        'backup_vcn_name': vm['backup_vcn_name'],
+                        'scan_ips': str(', '.join(x for x in vm['scan_ips'])),
+                        'vip_ips': str(', '.join(x for x in vm['vip_ips'])),
+                        'cluster_name': vm['cluster_name'],
+                        'time_created': vm['time_created'][0:16],
+                        'domain': vm['domain'],
+                        'db_homes': str(', '.join(x['home'] for x in vm['db_homes'])),
+                        'freeform_tags': self.__get_freeform_tags(vm['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(vm['defined_tags']),
+                        'id': vm['id'],
+                        'info': "ecpus:" + str(vm['enabled_e_cpu_count']),
+                        'vault_id': dbs['id']
+                    }
+
+                    self.csv_db_all.append(dbsd)
+                    self.csv_db_exascale_vmclusters.append(dbsd)
+                    self.__csv_add_service(dbsd, "DB Exascale VMCluster")
+
+                    # Build the database CSV
+                    for db_home in vm['db_homes']:
+
+                        for db in db_home['databases']:
+
+                            # Database CSV
+                            data = {'region_name': region_name,
+                                    'availability_domain': dbs['availability_domain'],
+                                    'compartment_name': dbs['compartment_name'],
+                                    'compartment_path': dbs['compartment_path'],
+                                    'status': dbs['lifecycle_state'],
+                                    'type': "Exascale",
+                                    'name': dbs['display_name'],
+                                    'shape': dbs['shape'],
+                                    'info': dbs['shape'],
+                                    'compute_model': 'ECPU',
+                                    'compute_count': vm['cpu_core_count'],
+                                    'cpu_core_count': vm['cpu_core_count'],
+                                    'db_storage_gb': dbs['sum_size_gb'],
+                                    'shape_ocpus': dbs['shape_ocpu'],
+                                    'shape_ecpus': vm['enabled_e_cpu_count'],
+                                    'memory_gb': vm['memory_size_in_gbs'],
+                                    'local_storage_tb': "",
+                                    'node_count': len(vm['db_nodes']),
+                                    'database': db['name'],
+                                    'database_edition': 'XP',
+                                    'license_model': vm['license_model'],
+                                    'data_subnet': vm['data_subnet'],
+                                    'data_subnet_name': vm['data_subnet_name'],
+                                    'data_vcn_name': vm['data_vcn_name'],
+                                    'backup_subnet': vm['backup_subnet'],
+                                    'backup_subnet_name': vm['backup_subnet_name'],
+                                    'backup_vcn_name': vm['backup_vcn_name'],
+                                    'scan_ips': str(', '.join(x for x in vm['scan_ips'])),
+                                    'vip_ips': str(', '.join(x for x in vm['vip_ips'])),
+                                    'pdbs': str(', '.join(x['name'] for x in db['pdbs'])),
+                                    'cluster_name': vm['cluster_name'],
+                                    'vm_name': vm['display_name'],
+                                    'time_created': vm['time_created'][0:16],
+                                    'domain': vm['domain'],
+                                    'auto_backup_enabled': db['auto_backup_enabled'],
+                                    'db_nodes': str(', '.join(x['desc'] for x in vm['db_nodes'])),
+                                    'freeform_tags': self.__get_freeform_tags(db['freeform_tags']),
+                                    'defined_tags': self.__get_defined_tags(db['defined_tags']),
+                                    'database_id': db['id'],
+                                    'id': db['id'],
+                                    'dbsystem_id': vm['id'],
+                                    'db_home': db_home['home_name'],
+                                    'db_home_version': db_home['home_version']
+                                    }
+
+                            self.csv_database.append(data)
+                            self.__csv_add_service(dbsd, "DB ExaCS Database")
+
+                            # Produce PDB csv
+                            for pdb in db['pdbs']:
+                                data = {
+                                    'region_name': region_name,
+                                    'availability_domain': dbs['availability_domain'],
+                                    'compartment_name': dbs['compartment_name'],
+                                    'compartment_path': dbs['compartment_path'],
+                                    'name': pdb['name'],
+                                    'system_name': dbs['display_name'],
+                                    'system_shape': "Exascale",
+                                    'database_name': db['name'],
+                                    'time_created': pdb['time_created'],
+                                    'lifecycle_state': pdb['lifecycle_state'],
+                                    'connection_strings': pdb['connection_strings'],
+                                    'open_mode': pdb['open_mode'],
+                                    'is_restricted': pdb['is_restricted'],
+                                    'management_status': pdb['management_status'],
+                                    'is_refreshable_clone': pdb['is_refreshable_clone'],
+                                    'freeform_tags': self.__get_freeform_tags(pdb['freeform_tags']),
+                                    'defined_tags': self.__get_defined_tags(pdb['defined_tags']),
+                                    'database_id': db['id'],
+                                    'dbsystem_id': vm['id'],
+                                    'id': pdb['id']
+                                }
+                                self.csv_database_pdbs.append(data)
+                                self.__csv_add_service(data, "DB Exascale Database PDB")
+
+                            # database Backups
+                            if 'backups' in db:
+                                self.__csv_database_backup_item(db['backups'], dbs['display_name'], db['db_name'])
+
+        except Exception as e:
+            self.__print_error("__csv_database_db_exadata", e)
+
+    ##########################################################################
     # csv database exadata
     ##########################################################################
     def __csv_database_db_exadata(self, region_name, list_exa):
@@ -7950,6 +8204,9 @@ class ShowOCICSV(object):
 
             if 'db_system' in list_databases:
                 self.__csv_database_db_system(region_name, list_databases['db_system'])
+
+            if 'exascale' in list_databases:
+                self.__csv_database_db_exascale(region_name, list_databases['exascale'])
 
             if 'db_all_backups' in list_databases:
                 self.__csv_database_db_backups(region_name, list_databases['db_all_backups'])

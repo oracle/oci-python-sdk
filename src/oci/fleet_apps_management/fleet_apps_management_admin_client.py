@@ -158,7 +158,7 @@ class FleetAppsManagementAdminClient(object):
         resource_path = "/Onboardings"
         method = "POST"
         operation_name = "create_onboarding"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Onboarding/CreateOnboarding"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -256,7 +256,7 @@ class FleetAppsManagementAdminClient(object):
         resource_path = "/properties"
         method = "POST"
         operation_name = "create_property"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Property/CreateProperty"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -354,7 +354,7 @@ class FleetAppsManagementAdminClient(object):
         resource_path = "/properties/{propertyId}"
         method = "DELETE"
         operation_name = "delete_property"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Property/DeleteProperty"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -452,7 +452,7 @@ class FleetAppsManagementAdminClient(object):
         resource_path = "/properties/{propertyId}"
         method = "GET"
         operation_name = "get_property"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Property/GetProperty"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -563,7 +563,7 @@ class FleetAppsManagementAdminClient(object):
         resource_path = "/OnboardingPolicies"
         method = "GET"
         operation_name = "list_onboarding_policies"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/OnboardingPolicyCollection/ListOnboardingPolicies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -701,7 +701,7 @@ class FleetAppsManagementAdminClient(object):
         resource_path = "/Onboardings"
         method = "GET"
         operation_name = "list_onboardings"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/OnboardingCollection/ListOnboardings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -860,7 +860,7 @@ class FleetAppsManagementAdminClient(object):
         resource_path = "/properties"
         method = "GET"
         operation_name = "list_properties"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/PropertyCollection/ListProperties"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1008,7 +1008,7 @@ class FleetAppsManagementAdminClient(object):
         resource_path = "/properties/{propertyId}"
         method = "PUT"
         operation_name = "update_property"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Property/UpdateProperty"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

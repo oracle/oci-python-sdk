@@ -35,6 +35,10 @@ class DbCollection(FsuCollection):
     #: This constant has a value of "DB_19"
     SOURCE_MAJOR_VERSION_DB_19 = "DB_19"
 
+    #: A constant which can be used with the source_major_version property of a DbCollection.
+    #: This constant has a value of "DB_23"
+    SOURCE_MAJOR_VERSION_DB_23 = "DB_23"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DbCollection object with values from keyword arguments. The default value of the :py:attr:`~oci.fleet_software_update.models.DbCollection.type` attribute
@@ -105,7 +109,7 @@ class DbCollection(FsuCollection):
 
         :param source_major_version:
             The value to assign to the source_major_version property of this DbCollection.
-            Allowed values for this property are: "DB_11204", "DB_121", "DB_122", "DB_18", "DB_19", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DB_11204", "DB_121", "DB_122", "DB_18", "DB_19", "DB_23", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type source_major_version: str
 
@@ -178,7 +182,7 @@ class DbCollection(FsuCollection):
         https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions
         Only Database targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
 
-        Allowed values for this property are: "DB_11204", "DB_121", "DB_122", "DB_18", "DB_19", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DB_11204", "DB_121", "DB_122", "DB_18", "DB_19", "DB_23", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -199,7 +203,7 @@ class DbCollection(FsuCollection):
         :param source_major_version: The source_major_version of this DbCollection.
         :type: str
         """
-        allowed_values = ["DB_11204", "DB_121", "DB_122", "DB_18", "DB_19"]
+        allowed_values = ["DB_11204", "DB_121", "DB_122", "DB_18", "DB_19", "DB_23"]
         if not value_allowed_none_or_none_sentinel(source_major_version, allowed_values):
             source_major_version = 'UNKNOWN_ENUM_VALUE'
         self._source_major_version = source_major_version

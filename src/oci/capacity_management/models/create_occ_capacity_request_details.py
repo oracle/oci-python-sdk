@@ -394,8 +394,8 @@ class CreateOccCapacityRequestDetails(object):
     @property
     def availability_domain(self):
         """
-        **[Required]** Gets the availability_domain of this CreateOccCapacityRequestDetails.
-        The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
+        Gets the availability_domain of this CreateOccCapacityRequestDetails.
+        The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
 
 
         :return: The availability_domain of this CreateOccCapacityRequestDetails.
@@ -407,7 +407,7 @@ class CreateOccCapacityRequestDetails(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this CreateOccCapacityRequestDetails.
-        The availability domain (AD) for which the capacity request is made. If this is specified then the capacity will be validated and fulfilled within the scope of this AD.
+        The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
 
 
         :param availability_domain: The availability_domain of this CreateOccCapacityRequestDetails.

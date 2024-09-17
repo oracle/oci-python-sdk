@@ -160,7 +160,7 @@ class CreateEndpointDetails(object):
     def model_id(self):
         """
         **[Required]** Gets the model_id of this CreateEndpointDetails.
-        The ID of the model that's used to create this endpoint.
+        The OCID of the model that's used to create this endpoint.
 
 
         :return: The model_id of this CreateEndpointDetails.
@@ -172,7 +172,7 @@ class CreateEndpointDetails(object):
     def model_id(self, model_id):
         """
         Sets the model_id of this CreateEndpointDetails.
-        The ID of the model that's used to create this endpoint.
+        The OCID of the model that's used to create this endpoint.
 
 
         :param model_id: The model_id of this CreateEndpointDetails.

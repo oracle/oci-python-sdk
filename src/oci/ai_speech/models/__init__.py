@@ -50,6 +50,7 @@ from .realtime_message_send_final_result import RealtimeMessageSendFinalResult
 from .realtime_model_details import RealtimeModelDetails
 from .realtime_parameters import RealtimeParameters
 from .realtime_session_token import RealtimeSessionToken
+from .synthesize_speech_details import SynthesizeSpeechDetails
 from .transcription_filter import TranscriptionFilter
 from .transcription_job import TranscriptionJob
 from .transcription_job_collection import TranscriptionJobCollection
@@ -60,8 +61,18 @@ from .transcription_settings import TranscriptionSettings
 from .transcription_task import TranscriptionTask
 from .transcription_task_collection import TranscriptionTaskCollection
 from .transcription_task_summary import TranscriptionTaskSummary
+from .tts_audio_config import TtsAudioConfig
+from .tts_base_audio_config import TtsBaseAudioConfig
+from .tts_configuration import TtsConfiguration
+from .tts_oracle_configuration import TtsOracleConfiguration
+from .tts_oracle_model_details import TtsOracleModelDetails
+from .tts_oracle_speech_settings import TtsOracleSpeechSettings
+from .tts_oracle_tts1_standard_model_details import TtsOracleTts1StandardModelDetails
+from .tts_oracle_tts2_natural_model_details import TtsOracleTts2NaturalModelDetails
 from .update_customization_details import UpdateCustomizationDetails
 from .update_transcription_job_details import UpdateTranscriptionJobDetails
+from .voice_collection import VoiceCollection
+from .voice_summary import VoiceSummary
 
 # Maps type names to classes for ai_speech services.
 ai_speech_type_mapping = {
@@ -109,6 +120,7 @@ ai_speech_type_mapping = {
     "RealtimeModelDetails": RealtimeModelDetails,
     "RealtimeParameters": RealtimeParameters,
     "RealtimeSessionToken": RealtimeSessionToken,
+    "SynthesizeSpeechDetails": SynthesizeSpeechDetails,
     "TranscriptionFilter": TranscriptionFilter,
     "TranscriptionJob": TranscriptionJob,
     "TranscriptionJobCollection": TranscriptionJobCollection,
@@ -119,6 +131,16 @@ ai_speech_type_mapping = {
     "TranscriptionTask": TranscriptionTask,
     "TranscriptionTaskCollection": TranscriptionTaskCollection,
     "TranscriptionTaskSummary": TranscriptionTaskSummary,
+    "TtsAudioConfig": TtsAudioConfig,
+    "TtsBaseAudioConfig": TtsBaseAudioConfig,
+    "TtsConfiguration": TtsConfiguration,
+    "TtsOracleConfiguration": TtsOracleConfiguration,
+    "TtsOracleModelDetails": TtsOracleModelDetails,
+    "TtsOracleSpeechSettings": TtsOracleSpeechSettings,
+    "TtsOracleTts1StandardModelDetails": TtsOracleTts1StandardModelDetails,
+    "TtsOracleTts2NaturalModelDetails": TtsOracleTts2NaturalModelDetails,
     "UpdateCustomizationDetails": UpdateCustomizationDetails,
-    "UpdateTranscriptionJobDetails": UpdateTranscriptionJobDetails
+    "UpdateTranscriptionJobDetails": UpdateTranscriptionJobDetails,
+    "VoiceCollection": VoiceCollection,
+    "VoiceSummary": VoiceSummary
 }

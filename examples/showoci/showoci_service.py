@@ -39,7 +39,7 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "24.08.06"
+    version = "24.08.27"
     oci_compatible_version = "2.129.4"
     thread_lock = threading.Lock()
     collection_ljust = 40
@@ -148,6 +148,8 @@ class ShowOCIService(object):
     C_DATABASE_HOMES = "dhomes"
     C_DATABASE_BACKUPS = "backups"
     C_DATABASE_DBSYSTEMS = "dbsystems"
+    C_DATABASE_EXASCALE_VAULT = "exascale_vault"
+    C_DATABASE_EXASCALE_VMS = "exascale_vmclusters"
     C_DATABASE_EXADATA = "exadata"
     C_DATABASE_EXADATA_VMS = "exadata_vmclusters"
     C_DATABASE_EXACC_ADB_VMS = "exadata_adb_vmclusters"
@@ -8706,6 +8708,8 @@ class ShowOCIService(object):
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_EXTERNAL_PDB)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_EXTERNAL_NONPDB)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_DATASAFE)
+            self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_EXASCALE_VAULT)
+            self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_EXASCALE_VMS)
 
             # reference to orm
             db = self.data[self.C_DATABASE]
@@ -8737,6 +8741,8 @@ class ShowOCIService(object):
                 db[self.C_DATABASE_EXTERNAL_PDB] += self.__load_database_external_pdb(database_client, compartments)
                 db[self.C_DATABASE_EXTERNAL_NONPDB] += self.__load_database_external_nonpdb(database_client, compartments)
                 db[self.C_DATABASE_DATASAFE] += self.__load_datasafe_main(datasafe_client, compartments)
+                db[self.C_DATABASE_EXASCALE_VAULT] += self.__load_database_exascale_vault(database_client, compartments)
+                db[self.C_DATABASE_EXASCALE_VMS] += self.__load_database_exascale_vms(database_client, virtual_network, compartments)
 
             ##########################
             # if parallel execution
@@ -8762,6 +8768,8 @@ class ShowOCIService(object):
                     future_EXTERNAL_PDB = executor.submit(self.__load_database_external_pdb, database_client, compartments)
                     future_EXTERNAL_NONPDB = executor.submit(self.__load_database_external_nonpdb, database_client, compartments)
                     future_DATASAFE = executor.submit(self.__load_datasafe_main, datasafe_client, compartments)
+                    future_EXASCALE_VAULT = executor.submit(self.__load_database_exascale_vault, database_client, compartments)
+                    future_EXASCALE_VMS = executor.submit(self.__load_database_exascale_vms, database_client, virtual_network, compartments)
 
                     # db homes fetch backups which depends on standalone backups
                     db[self.C_DATABASE_BACKUPS] += next(as_completed([future_BACKUPS])).result()
@@ -8794,6 +8802,8 @@ class ShowOCIService(object):
                     db[self.C_DATABASE_EXTERNAL_PDB] += next(as_completed([future_EXTERNAL_PDB])).result()
                     db[self.C_DATABASE_EXTERNAL_NONPDB] += next(as_completed([future_EXTERNAL_NONPDB])).result()
                     db[self.C_DATABASE_DATASAFE] += next(as_completed([future_DATASAFE])).result()
+                    db[self.C_DATABASE_EXASCALE_VAULT] += next(as_completed([future_EXASCALE_VAULT])).result()
+                    db[self.C_DATABASE_EXASCALE_VMS] += next(as_completed([future_EXASCALE_VMS])).result()
 
             # Complete Database
             self.__load_print_section_time(section_start_time)
@@ -9351,6 +9361,254 @@ class ShowOCIService(object):
                 return data
         except Exception as e:
             self.__print_error(e, compartment)
+            return data
+
+    ##########################################################################
+    # __load_database_exascale_vault
+    ##########################################################################
+
+    def __load_database_exascale_vault(self, database_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+
+            errstr = ""
+            header = "Exascale Vaults"
+            self.__load_print_status_with_threads(header)
+
+            # loop on all compartments
+            for compartment in compartments:
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    continue
+
+                if self.flags.skip_threads:
+                    print(".", end="")
+
+                # list db system
+                list_exa = []
+                try:
+                    list_exa = oci.pagination.list_call_get_all_results(
+                        database_client.list_exascale_db_storage_vaults,
+                        compartment['id'],
+                        sort_by="DISPLAYNAME",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e, compartment):
+                        self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                        errstr += "a"
+                        continue
+                    else:
+                        self.__load_print_error(e, compartment)
+                        errstr += "e"
+                        continue
+
+                except Exception as e:
+                    self.__load_print_error(e, compartment)
+                    errstr += "e"
+                    continue
+
+                # dbs = oci.database.models.ExascaleDbStorageVaultSummary
+                for dbs in list_exa:
+                    if not self.check_lifecycle_state_active(dbs.lifecycle_state):
+                        continue
+
+                    value = {
+                        'id': self.get_value(dbs.id),
+                        'display_name': self.get_value(dbs.display_name),
+                        'description': self.get_value(dbs.description),
+                        'availability_domain': self.get_value(dbs.availability_domain),
+                        'time_zone': self.get_value(dbs.time_zone),
+                        'lifecycle_state': self.get_value(dbs.lifecycle_state),
+                        'time_created': self.get_value(dbs.time_created, trim_date=True),
+                        'lifecycle_details': self.get_value(dbs.lifecycle_details),
+                        'total_size_in_gbs': self.get_value(dbs.high_capacity_database_storage.total_size_in_gbs) if dbs.high_capacity_database_storage else "",
+                        'available_size_in_gbs': self.get_value(dbs.high_capacity_database_storage.available_size_in_gbs) if dbs.high_capacity_database_storage else "",
+                        'additional_flash_cache_in_percent': self.get_value(dbs.additional_flash_cache_in_percent),
+                        'vm_cluster_count': self.get_value(dbs.vm_cluster_count),
+                        'sum_info': 'Database Exascale Vault',
+                        'sum_size_gb': self.get_value(dbs.high_capacity_database_storage.total_size_in_gbs) if dbs.high_capacity_database_storage else "",
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'vm_clusters': [],
+                        'defined_tags': [] if dbs.defined_tags is None else dbs.defined_tags,
+                        'freeform_tags': [] if dbs.freeform_tags is None else dbs.freeform_tags,
+                        'region_name': str(self.config['region'])
+                    }
+
+                    # add the data
+                    cnt += 1
+                    data.append(value)
+
+            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            else:
+                self.__load_print_error(e)
+                return data
+        except Exception as e:
+            self.__print_error(e)
+            return data
+
+    ##########################################################################
+    # __load_database_exascale_vms
+    ##########################################################################
+
+    def __load_database_exascale_vms(self, database_client, virtual_network, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+
+            errstr = ""
+            header = "Exascale VMClusters"
+            self.__load_print_status_with_threads(header)
+
+            # loop on all compartments
+            for compartment in compartments:
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    continue
+
+                if self.flags.skip_threads:
+                    print(".", end="")
+
+                # list db system
+                list_vms = []
+                try:
+                    list_vms = oci.pagination.list_call_get_all_results(
+                        database_client.list_exadb_vm_clusters,
+                        compartment['id'],
+                        sort_by="DISPLAYNAME",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e, compartment):
+                        self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                        errstr += "a"
+                        continue
+                    else:
+                        self.__load_print_error(e, compartment)
+                        errstr += "e"
+                        continue
+
+                except Exception as e:
+                    self.__load_print_error(e, compartment)
+                    errstr += "e"
+                    continue
+
+                # dbs = oci.database.models.ExadbVmClusterSummary
+                for arr in list_vms:
+                    if not self.check_lifecycle_state_active(arr.lifecycle_state):
+                        continue
+
+                    value = {
+                        'id': self.get_value(arr.id),
+                        'availability_domain': self.get_value(arr.availability_domain),
+                        'data_subnet_id': self.get_value(arr.subnet_id),
+                        'data_subnet': self.get_network_subnet(str(arr.subnet_id), True),
+                        'data_subnet_name': self.get_network_subnet(str(arr.subnet_id)),
+                        'data_vcn_name': self.get_network_subnet(str(arr.subnet_id), vcn_name_only=True),
+                        'backup_subnet_id': self.get_value(arr.backup_subnet_id),
+                        'backup_subnet': "" if arr.backup_subnet_id is None else self.get_network_subnet(str(arr.backup_subnet_id), True),
+                        'backup_subnet_name': "" if arr.backup_subnet_id is None else self.get_network_subnet(str(arr.backup_subnet_id)),
+                        'backup_vcn_name': "" if arr.backup_subnet_id is None else self.get_network_subnet(str(arr.backup_subnet_id), vcn_name_only=True),
+                        'nsg_ids': arr.nsg_ids,
+                        'backup_network_nsg_ids': self.get_value(arr.backup_network_nsg_ids),
+                        'last_update_history_entry_id': self.get_value(arr.last_update_history_entry_id),
+                        'listener_port': self.get_value(arr.listener_port),
+                        'lifecycle_state': self.get_value(arr.lifecycle_state),
+                        'node_count': self.get_value(arr.node_count),
+                        'shape': self.get_value(arr.shape),
+                        'display_name': self.get_value(arr.display_name),
+                        'time_created': self.get_value(arr.time_created),
+                        'lifecycle_details': self.get_value(arr.lifecycle_details),
+                        'time_zone': self.get_value(arr.time_zone),
+                        'hostname': self.get_value(arr.hostname),
+                        'domain': self.get_value(arr.domain),
+                        'cluster_name': self.get_value(arr.cluster_name),
+                        'gi_version': self.get_value(arr.gi_version),
+                        'grid_image_id': self.get_value(arr.grid_image_id),
+                        'grid_image_type': self.get_value(arr.grid_image_type),
+                        'system_version': self.get_value(arr.system_version),
+                        'ssh_public_keys': self.get_value(arr.ssh_public_keys),
+                        'license_model': self.get_value(arr.license_model),
+                        'scan_ip_ids': self.get_value(arr.scan_ip_ids),
+                        'vip_ids': self.get_value(arr.vip_ids),
+                        'scan_dns_record_id': self.get_value(arr.scan_dns_record_id),
+                        'scan_dns_name': self.get_value(arr.scan_dns_name),
+                        'zone_id': self.get_value(arr.zone_id),
+                        'scan_listener_port_tcp_ssl': self.get_value(arr.scan_listener_port_tcp_ssl),
+                        'scan_listener_port_tcp': self.get_value(arr.scan_listener_port_tcp),
+                        'private_zone_id': self.get_value(arr.private_zone_id),
+                        'total_e_cpu_count': self.get_value(arr.total_e_cpu_count),
+                        'enabled_e_cpu_count': self.get_value(arr.enabled_e_cpu_count),
+                        'vm_file_system_storage_in_gbs': self.get_value(arr.vm_file_system_storage.total_size_in_gbs) if arr.vm_file_system_storage else "",
+                        'snapshot_file_system_storage_in_gbs': self.get_value(arr.snapshot_file_system_storage.total_size_in_gbs) if arr.snapshot_file_system_storage else "",
+                        'total_file_system_storage_in_gbs': self.get_value(arr.total_file_system_storage.total_size_in_gbs) if arr.total_file_system_storage else "",
+                        'exascale_db_storage_vault_id': self.get_value(arr.exascale_db_storage_vault_id),
+                        'memory_size_in_gbs': self.get_value(arr.memory_size_in_gbs),
+                        'db_homes': self.__load_database_dbsystems_dbhomes(arr.id, exa=True),
+                        'db_nodes': self.__load_database_dbsystems_dbnodes(database_client, virtual_network, compartment, arr.id, exa=True),
+                        'region_name': str(self.config['region']),
+                        'scan_ips': [],
+                        'vip_ips': [],
+                        'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                        'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id'])
+                    }
+
+                    # license model
+                    if arr.license_model == oci.database.models.CloudVmClusterSummary.LICENSE_MODEL_LICENSE_INCLUDED:
+                        value['license_model'] = "INCL"
+                    elif arr.license_model == oci.database.models.CloudVmClusterSummary.LICENSE_MODEL_BRING_YOUR_OWN_LICENSE:
+                        value['license_model'] = "BYOL"
+                    else:
+                        value['license_model'] = str(arr.license_model)
+
+                    # scan IPs
+                    if arr.scan_ip_ids is not None:
+                        scan_ips = []
+                        for scan_ip in arr.scan_ip_ids:
+                            scan_ips.append(self.__load_core_network_single_privateip(virtual_network, scan_ip))
+                        value['scan_ips'] = scan_ips
+
+                    # VIPs
+                    if arr.vip_ids is not None:
+                        vip_ips = []
+                        for vipip in arr.vip_ids:
+                            vip_ips.append(self.__load_core_network_single_privateip(virtual_network, vipip))
+                        value['vip_ips'] = vip_ips
+
+                    # add the data
+                    cnt += 1
+                    data.append(value)
+
+            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            else:
+                self.__load_print_error(e)
+                return data
+        except Exception as e:
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -9970,10 +10228,18 @@ class ShowOCIService(object):
                     continue
 
                 # loop on the db systems
-                # dbs = oci.database.models.DbSystemSummary
-                for dbs in list_db_systems:
-                    if not self.check_lifecycle_state_active(dbs.lifecycle_state):
+                # dbssummary = oci.database.models.DbSystemSummary
+                for dbssummary in list_db_systems:
+                    if not self.check_lifecycle_state_active(dbssummary.lifecycle_state):
                         continue
+
+                    dbs = None
+                    # get the db system for other attributes (like memory is not filled with suymmary)
+                    # dbs = oci.database.models.DbSystemSummary
+                    try:
+                        dbs = database_client.get_db_system(dbssummary.id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+                    except Exception:
+                        dbs = dbssummary
 
                     value = {
                         'id': str(dbs.id),
@@ -10391,6 +10657,9 @@ class ShowOCIService(object):
             else:
                 # Added in order to avoid internal error which happen often here
                 if 'InternalError' in str(e.code):
+                    print('p', end='')
+                    return data
+                if 'NotAuthorizedOrNotFound' in str(e.code):
                     print('p', end='')
                     return data
                 if 'Aborted' in str(e.code):

@@ -153,6 +153,10 @@ class AccessRequestExt(object):
             The value to assign to the requestor_location property of this AccessRequestExt.
         :type requestor_location: str
 
+        :param ticket_number:
+            The value to assign to the ticket_number property of this AccessRequestExt.
+        :type ticket_number: str
+
         """
         self.swagger_types = {
             'requestor_user_name': 'str',
@@ -171,7 +175,8 @@ class AccessRequestExt(object):
             'time_expired': 'datetime',
             'time_reminded': 'datetime',
             'reminder_count': 'int',
-            'requestor_location': 'str'
+            'requestor_location': 'str',
+            'ticket_number': 'str'
         }
 
         self.attribute_map = {
@@ -191,7 +196,8 @@ class AccessRequestExt(object):
             'time_expired': 'timeExpired',
             'time_reminded': 'timeReminded',
             'reminder_count': 'reminderCount',
-            'requestor_location': 'requestorLocation'
+            'requestor_location': 'requestorLocation',
+            'ticket_number': 'ticketNumber'
         }
 
         self._requestor_user_name = None
@@ -211,6 +217,7 @@ class AccessRequestExt(object):
         self._time_reminded = None
         self._reminder_count = None
         self._requestor_location = None
+        self._ticket_number = None
 
     @property
     def requestor_user_name(self):
@@ -657,6 +664,32 @@ class AccessRequestExt(object):
         :type: str
         """
         self._requestor_location = requestor_location
+
+    @property
+    def ticket_number(self):
+        """
+        Gets the ticket_number of this AccessRequestExt.
+        The ticket number raised by external customers
+        Example: `3-37509643121`
+
+
+        :return: The ticket_number of this AccessRequestExt.
+        :rtype: str
+        """
+        return self._ticket_number
+
+    @ticket_number.setter
+    def ticket_number(self, ticket_number):
+        """
+        Sets the ticket_number of this AccessRequestExt.
+        The ticket number raised by external customers
+        Example: `3-37509643121`
+
+
+        :param ticket_number: The ticket_number of this AccessRequestExt.
+        :type: str
+        """
+        self._ticket_number = ticket_number
 
     def __repr__(self):
         return formatted_flat_dict(self)

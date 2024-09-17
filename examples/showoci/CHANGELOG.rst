@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+24.08.27 - 24.08.27
+=====================
+* Added support for Exascale databases
+
+=====================
+24.08.20 - 24.08.20
+=====================
+* Added memory for db_system for flex shapes
+
+=====================
 24.08.06 - 24.08.06
 =====================
 * subscription id attribute in Cloud Exadata Infrastructure and Cloud VM Clusters in the Database service and additional parameters

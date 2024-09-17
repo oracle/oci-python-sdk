@@ -20,7 +20,7 @@ import sys
 
 
 class ShowOCIData(object):
-    version = "24.08.06"
+    version = "24.08.27"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -3157,6 +3157,36 @@ class ShowOCIData(object):
             return data
 
     ##########################################################################
+    # Exascale Vaults
+    ##########################################################################
+    def __get_database_exascale_vaults(self, region_name, compartment):
+
+        data = []
+        try:
+            list_exascale_vaults = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_EXASCALE_VAULT, 'region_name', region_name, 'compartment_id', compartment['id'])
+            for vault in list_exascale_vaults:
+
+                list_vms = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_EXASCALE_VMS, 'region_name', region_name, 'exascale_db_storage_vault_id', vault['id'])
+                if list_vms:
+                    for vm in list_vms:
+                        db_nodes = self.__get_database_db_nodes(vm['db_nodes'])
+                        valvm = vm
+                        valvm['sum_info'] = 'Database Exascale VMCluster - ' + vm['license_model']
+                        valvm['sum_size_gb'] = vm['enabled_e_cpu_count']
+                        valvm['db_homes'] = self.__get_database_db_homes(vm['db_homes'])
+                        valvm['db_nodes'] = [] if not db_nodes else sorted(db_nodes, key=lambda i: i['desc'])
+
+                        vault['vm_clusters'].append(valvm)
+
+                # search for vm_clusters
+                data.append(vault)
+            return data
+
+        except Exception as e:
+            self.__print_error(e)
+            return data
+
+    ##########################################################################
     # Autonomous Dedicated Infra
     ##########################################################################
     def __get_database_adb_dedicated(self, region_name, compartment, infra_id):
@@ -3457,6 +3487,11 @@ class ShowOCIData(object):
             if data:
                 if len(data) > 0:
                     return_data['exadata_infrastructure'] = data
+
+            data = self.__get_database_exascale_vaults(region_name, compartment)
+            if data:
+                if len(data) > 0:
+                    return_data['exascale'] = data
 
             data = self.__get_database_db_exacc(region_name, compartment)
             if data:

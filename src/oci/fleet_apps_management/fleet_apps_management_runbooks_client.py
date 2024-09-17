@@ -151,7 +151,7 @@ class FleetAppsManagementRunbooksClient(object):
         resource_path = "/runbooks/{runbookId}"
         method = "GET"
         operation_name = "get_runbook"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/GetRunbook"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -249,7 +249,7 @@ class FleetAppsManagementRunbooksClient(object):
         resource_path = "/taskRecords/{taskRecordId}"
         method = "GET"
         operation_name = "get_task_record"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecord/GetTaskRecord"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -390,7 +390,7 @@ class FleetAppsManagementRunbooksClient(object):
         resource_path = "/runbooks"
         method = "GET"
         operation_name = "list_runbooks"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/RunbookCollection/ListRunbooks"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -576,7 +576,7 @@ class FleetAppsManagementRunbooksClient(object):
         resource_path = "/taskRecords"
         method = "GET"
         operation_name = "list_task_records"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecordCollection/ListTaskRecords"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

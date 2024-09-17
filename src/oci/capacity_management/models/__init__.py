@@ -6,8 +6,12 @@
 
 from __future__ import absolute_import
 
+from .associated_capacity_request_details import AssociatedCapacityRequestDetails
+from .associated_occ_handover_resource_block import AssociatedOccHandoverResourceBlock
 from .create_occ_availability_catalog_details import CreateOccAvailabilityCatalogDetails
 from .create_occ_capacity_request_details import CreateOccCapacityRequestDetails
+from .create_occ_customer_details import CreateOccCustomerDetails
+from .create_occ_customer_group_details import CreateOccCustomerGroupDetails
 from .metadata_details import MetadataDetails
 from .occ_availability_catalog import OccAvailabilityCatalog
 from .occ_availability_catalog_collection import OccAvailabilityCatalogCollection
@@ -22,6 +26,10 @@ from .occ_customer import OccCustomer
 from .occ_customer_group import OccCustomerGroup
 from .occ_customer_group_collection import OccCustomerGroupCollection
 from .occ_customer_group_summary import OccCustomerGroupSummary
+from .occ_handover_resource_block_collection import OccHandoverResourceBlockCollection
+from .occ_handover_resource_block_detail_collection import OccHandoverResourceBlockDetailCollection
+from .occ_handover_resource_block_detail_summary import OccHandoverResourceBlockDetailSummary
+from .occ_handover_resource_block_summary import OccHandoverResourceBlockSummary
 from .occ_overview_collection import OccOverviewCollection
 from .occ_overview_summary import OccOverviewSummary
 from .patch_insert_instruction import PatchInsertInstruction
@@ -34,14 +42,21 @@ from .patch_prohibit_instruction import PatchProhibitInstruction
 from .patch_remove_instruction import PatchRemoveInstruction
 from .patch_replace_instruction import PatchReplaceInstruction
 from .patch_require_instruction import PatchRequireInstruction
+from .placement_details import PlacementDetails
 from .update_internal_occ_capacity_request_details import UpdateInternalOccCapacityRequestDetails
 from .update_occ_availability_catalog_details import UpdateOccAvailabilityCatalogDetails
 from .update_occ_capacity_request_details import UpdateOccCapacityRequestDetails
+from .update_occ_customer_details import UpdateOccCustomerDetails
+from .update_occ_customer_group_details import UpdateOccCustomerGroupDetails
 
 # Maps type names to classes for capacity_management services.
 capacity_management_type_mapping = {
+    "AssociatedCapacityRequestDetails": AssociatedCapacityRequestDetails,
+    "AssociatedOccHandoverResourceBlock": AssociatedOccHandoverResourceBlock,
     "CreateOccAvailabilityCatalogDetails": CreateOccAvailabilityCatalogDetails,
     "CreateOccCapacityRequestDetails": CreateOccCapacityRequestDetails,
+    "CreateOccCustomerDetails": CreateOccCustomerDetails,
+    "CreateOccCustomerGroupDetails": CreateOccCustomerGroupDetails,
     "MetadataDetails": MetadataDetails,
     "OccAvailabilityCatalog": OccAvailabilityCatalog,
     "OccAvailabilityCatalogCollection": OccAvailabilityCatalogCollection,
@@ -56,6 +71,10 @@ capacity_management_type_mapping = {
     "OccCustomerGroup": OccCustomerGroup,
     "OccCustomerGroupCollection": OccCustomerGroupCollection,
     "OccCustomerGroupSummary": OccCustomerGroupSummary,
+    "OccHandoverResourceBlockCollection": OccHandoverResourceBlockCollection,
+    "OccHandoverResourceBlockDetailCollection": OccHandoverResourceBlockDetailCollection,
+    "OccHandoverResourceBlockDetailSummary": OccHandoverResourceBlockDetailSummary,
+    "OccHandoverResourceBlockSummary": OccHandoverResourceBlockSummary,
     "OccOverviewCollection": OccOverviewCollection,
     "OccOverviewSummary": OccOverviewSummary,
     "PatchInsertInstruction": PatchInsertInstruction,
@@ -68,7 +87,10 @@ capacity_management_type_mapping = {
     "PatchRemoveInstruction": PatchRemoveInstruction,
     "PatchReplaceInstruction": PatchReplaceInstruction,
     "PatchRequireInstruction": PatchRequireInstruction,
+    "PlacementDetails": PlacementDetails,
     "UpdateInternalOccCapacityRequestDetails": UpdateInternalOccCapacityRequestDetails,
     "UpdateOccAvailabilityCatalogDetails": UpdateOccAvailabilityCatalogDetails,
-    "UpdateOccCapacityRequestDetails": UpdateOccCapacityRequestDetails
+    "UpdateOccCapacityRequestDetails": UpdateOccCapacityRequestDetails,
+    "UpdateOccCustomerDetails": UpdateOccCustomerDetails,
+    "UpdateOccCustomerGroupDetails": UpdateOccCustomerGroupDetails
 }

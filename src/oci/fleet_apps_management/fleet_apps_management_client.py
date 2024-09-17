@@ -158,7 +158,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/actions/checkResourceTagging"
         method = "POST"
         operation_name = "check_resource_tagging"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/CheckResourceTagging"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -259,7 +259,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/{fleetId}/actions/confirmTargets"
         method = "POST"
         operation_name = "confirm_targets"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/ConfirmTargets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -368,7 +368,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets"
         method = "POST"
         operation_name = "create_fleet"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/CreateFleet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -469,7 +469,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/{fleetId}/fleetCredentials"
         method = "POST"
         operation_name = "create_fleet_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/CreateFleetCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -582,7 +582,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/{fleetId}/fleetProperties"
         method = "POST"
         operation_name = "create_fleet_property"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/CreateFleetProperty"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -695,7 +695,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/{fleetId}/fleetResources"
         method = "POST"
         operation_name = "create_fleet_resource"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/CreateFleetResource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -805,7 +805,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/{fleetId}"
         method = "DELETE"
         operation_name = "delete_fleet"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/DeleteFleet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -913,7 +913,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/{fleetId}/fleetCredentials/{fleetCredentialId}"
         method = "DELETE"
         operation_name = "delete_fleet_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/DeleteFleetCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1022,7 +1022,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/{fleetId}/fleetProperties/{fleetPropertyId}"
         method = "DELETE"
         operation_name = "delete_fleet_property"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/DeleteFleetProperty"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1131,7 +1131,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/{fleetId}/fleetResources/{fleetResourceId}"
         method = "DELETE"
         operation_name = "delete_fleet_resource"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/DeleteFleetResource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1240,7 +1240,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/{fleetId}/actions/generateComplianceReport"
         method = "POST"
         operation_name = "generate_compliance_report"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/GenerateComplianceReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1344,7 +1344,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/{fleetId}/complianceReports/{complianceReportId}"
         method = "GET"
         operation_name = "get_compliance_report"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ComplianceReport/GetComplianceReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1443,7 +1443,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/{fleetId}"
         method = "GET"
         operation_name = "get_fleet"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/GetFleet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1544,7 +1544,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/{fleetId}/fleetCredentials/{fleetCredentialId}"
         method = "GET"
         operation_name = "get_fleet_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/GetFleetCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1646,7 +1646,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/{fleetId}/fleetProperties/{fleetPropertyId}"
         method = "GET"
         operation_name = "get_fleet_property"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/GetFleetProperty"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1748,7 +1748,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/{fleetId}/fleetResources/{fleetResourceId}"
         method = "GET"
         operation_name = "get_fleet_resource"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/GetFleetResource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1847,7 +1847,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1965,7 +1965,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/announcements"
         method = "GET"
         operation_name = "list_announcements"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/AnnouncementCollection/ListAnnouncements"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2118,7 +2118,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/{fleetId}/fleetCredentials"
         method = "GET"
         operation_name = "list_fleet_credentials"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredentialCollection/ListFleetCredentials"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2296,7 +2296,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/{fleetId}/fleetProducts"
         method = "GET"
         operation_name = "list_fleet_products"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProductCollection/ListFleetProducts"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2460,7 +2460,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/{fleetId}/fleetProperties"
         method = "GET"
         operation_name = "list_fleet_properties"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetPropertyCollection/ListFleetProperties"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2634,7 +2634,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/{fleetId}/fleetResources"
         method = "GET"
         operation_name = "list_fleet_resources"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResourceCollection/ListFleetResources"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2805,7 +2805,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/{fleetId}/fleetTargets"
         method = "GET"
         operation_name = "list_fleet_targets"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetTargetCollection/ListFleetTargets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2980,7 +2980,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets"
         method = "GET"
         operation_name = "list_fleets"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCollection/ListFleets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3170,7 +3170,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/inventoryResources"
         method = "GET"
         operation_name = "list_inventory_resources"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/InventoryResourceCollection/ListInventoryResources"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3319,7 +3319,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/{fleetId}/targets"
         method = "GET"
         operation_name = "list_targets"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetTargetCollection/ListTargets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3463,7 +3463,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3605,7 +3605,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3758,7 +3758,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3897,7 +3897,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/{fleetId}/actions/requestResourceValidation"
         method = "POST"
         operation_name = "request_resource_validation"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/RequestResourceValidation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4008,7 +4008,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/{fleetId}/actions/requestTargetDiscovery"
         method = "POST"
         operation_name = "request_target_discovery"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/RequestTargetDiscovery"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4119,7 +4119,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/{fleetId}"
         method = "PUT"
         operation_name = "update_fleet"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/UpdateFleet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4234,7 +4234,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/{fleetId}/fleetCredentials/{fleetCredentialId}"
         method = "PUT"
         operation_name = "update_fleet_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/UpdateFleetCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4348,7 +4348,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/{fleetId}/fleetProperties/{fleetPropertyId}"
         method = "PUT"
         operation_name = "update_fleet_property"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/UpdateFleetProperty"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4464,7 +4464,7 @@ class FleetAppsManagementClient(object):
         resource_path = "/fleets/{fleetId}/fleetResources/{fleetResourceId}"
         method = "PUT"
         operation_name = "update_fleet_resource"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/UpdateFleetResource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

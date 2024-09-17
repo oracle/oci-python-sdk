@@ -158,7 +158,7 @@ class FleetAppsManagementOperationsClient(object):
         resource_path = "/schedulerDefinitions"
         method = "POST"
         operation_name = "create_scheduler_definition"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerDefinition/CreateSchedulerDefinition"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -256,7 +256,7 @@ class FleetAppsManagementOperationsClient(object):
         resource_path = "/schedulerDefinitions/{schedulerDefinitionId}"
         method = "DELETE"
         operation_name = "delete_scheduler_definition"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerDefinition/DeleteSchedulerDefinition"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -361,7 +361,7 @@ class FleetAppsManagementOperationsClient(object):
         resource_path = "/schedulerJobs/{schedulerJobId}"
         method = "DELETE"
         operation_name = "delete_scheduler_job"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerJob/DeleteSchedulerJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -468,7 +468,7 @@ class FleetAppsManagementOperationsClient(object):
         resource_path = "/schedulerJobs/{schedulerJobId}/jobActivities/{jobActivityId}/resources/{resourceId}/executions/{executionId}"
         method = "GET"
         operation_name = "get_execution"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Execution/GetExecution"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -572,7 +572,7 @@ class FleetAppsManagementOperationsClient(object):
         resource_path = "/schedulerJobs/{schedulerJobId}/jobActivities/{jobActivityId}"
         method = "GET"
         operation_name = "get_job_activity"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/JobActivity/GetJobActivity"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -671,7 +671,7 @@ class FleetAppsManagementOperationsClient(object):
         resource_path = "/schedulerDefinitions/{schedulerDefinitionId}"
         method = "GET"
         operation_name = "get_scheduler_definition"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerDefinition/GetSchedulerDefinition"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -769,7 +769,7 @@ class FleetAppsManagementOperationsClient(object):
         resource_path = "/schedulerJobs/{schedulerJobId}"
         method = "GET"
         operation_name = "get_scheduler_job"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerJob/GetSchedulerJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -901,7 +901,7 @@ class FleetAppsManagementOperationsClient(object):
         resource_path = "/schedulerJobs/{schedulerJobId}/jobActivities/{jobActivityId}/resources/{resourceId}/executions"
         method = "GET"
         operation_name = "list_executions"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ExecutionCollection/ListExecutions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1059,7 +1059,7 @@ class FleetAppsManagementOperationsClient(object):
         resource_path = "/schedulerDefinitions/{schedulerDefinitionId}/scheduledFleets"
         method = "GET"
         operation_name = "list_scheduled_fleets"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ScheduledFleetCollection/ListScheduledFleets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1225,7 +1225,7 @@ class FleetAppsManagementOperationsClient(object):
         resource_path = "/schedulerDefinitions"
         method = "GET"
         operation_name = "list_scheduler_definitions"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerDefinitionCollection/ListSchedulerDefinitions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1402,7 +1402,7 @@ class FleetAppsManagementOperationsClient(object):
         resource_path = "/schedulerJobs"
         method = "GET"
         operation_name = "list_scheduler_jobs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerJobCollection/ListSchedulerJobs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1551,7 +1551,7 @@ class FleetAppsManagementOperationsClient(object):
         resource_path = "/schedulerDefinitions/{schedulerDefinitionId}"
         method = "PUT"
         operation_name = "update_scheduler_definition"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerDefinition/UpdateSchedulerDefinition"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1661,7 +1661,7 @@ class FleetAppsManagementOperationsClient(object):
         resource_path = "/schedulerJobs/{schedulerJobId}"
         method = "PUT"
         operation_name = "update_scheduler_job"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerJob/UpdateSchedulerJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
