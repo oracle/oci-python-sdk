@@ -158,7 +158,7 @@ class FleetAppsManagementMaintenanceWindowClient(object):
         resource_path = "/maintenanceWindows"
         method = "POST"
         operation_name = "create_maintenance_window"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/MaintenanceWindow/CreateMaintenanceWindow"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -256,7 +256,7 @@ class FleetAppsManagementMaintenanceWindowClient(object):
         resource_path = "/maintenanceWindows/{maintenanceWindowId}"
         method = "DELETE"
         operation_name = "delete_maintenance_window"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/MaintenanceWindow/DeleteMaintenanceWindow"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -354,7 +354,7 @@ class FleetAppsManagementMaintenanceWindowClient(object):
         resource_path = "/maintenanceWindows/{maintenanceWindowId}"
         method = "GET"
         operation_name = "get_maintenance_window"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/MaintenanceWindow/GetMaintenanceWindow"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -479,7 +479,7 @@ class FleetAppsManagementMaintenanceWindowClient(object):
         resource_path = "/maintenanceWindows"
         method = "GET"
         operation_name = "list_maintenance_windows"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/MaintenanceWindowCollection/ListMaintenanceWindows"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -618,7 +618,7 @@ class FleetAppsManagementMaintenanceWindowClient(object):
         resource_path = "/maintenanceWindows/{maintenanceWindowId}"
         method = "PUT"
         operation_name = "update_maintenance_window"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/MaintenanceWindow/UpdateMaintenanceWindow"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

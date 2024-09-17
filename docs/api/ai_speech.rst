@@ -62,6 +62,7 @@ Ai Speech
     oci.ai_speech.models.RealtimeModelDetails
     oci.ai_speech.models.RealtimeParameters
     oci.ai_speech.models.RealtimeSessionToken
+    oci.ai_speech.models.SynthesizeSpeechDetails
     oci.ai_speech.models.TranscriptionFilter
     oci.ai_speech.models.TranscriptionJob
     oci.ai_speech.models.TranscriptionJobCollection
@@ -72,5 +73,15 @@ Ai Speech
     oci.ai_speech.models.TranscriptionTask
     oci.ai_speech.models.TranscriptionTaskCollection
     oci.ai_speech.models.TranscriptionTaskSummary
+    oci.ai_speech.models.TtsAudioConfig
+    oci.ai_speech.models.TtsBaseAudioConfig
+    oci.ai_speech.models.TtsConfiguration
+    oci.ai_speech.models.TtsOracleConfiguration
+    oci.ai_speech.models.TtsOracleModelDetails
+    oci.ai_speech.models.TtsOracleSpeechSettings
+    oci.ai_speech.models.TtsOracleTts1StandardModelDetails
+    oci.ai_speech.models.TtsOracleTts2NaturalModelDetails
     oci.ai_speech.models.UpdateCustomizationDetails
     oci.ai_speech.models.UpdateTranscriptionJobDetails
+    oci.ai_speech.models.VoiceCollection
+    oci.ai_speech.models.VoiceSummary

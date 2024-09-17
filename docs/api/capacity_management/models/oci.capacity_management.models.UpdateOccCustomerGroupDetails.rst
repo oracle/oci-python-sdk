@@ -1,0 +1,11 @@
+UpdateOccCustomerGroupDetails
+=============================
+
+.. currentmodule:: oci.capacity_management.models
+
+.. autoclass:: UpdateOccCustomerGroupDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

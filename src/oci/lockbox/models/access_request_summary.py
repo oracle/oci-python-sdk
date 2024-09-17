@@ -64,6 +64,10 @@ class AccessRequestSummary(object):
             The value to assign to the time_expired property of this AccessRequestSummary.
         :type time_expired: datetime
 
+        :param ticket_number:
+            The value to assign to the ticket_number property of this AccessRequestSummary.
+        :type ticket_number: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this AccessRequestSummary.
         :type freeform_tags: dict(str, str)
@@ -89,6 +93,7 @@ class AccessRequestSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'time_expired': 'datetime',
+            'ticket_number': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -106,6 +111,7 @@ class AccessRequestSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'time_expired': 'timeExpired',
+            'ticket_number': 'ticketNumber',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -122,6 +128,7 @@ class AccessRequestSummary(object):
         self._time_created = None
         self._time_updated = None
         self._time_expired = None
+        self._ticket_number = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -409,6 +416,32 @@ class AccessRequestSummary(object):
         :type: datetime
         """
         self._time_expired = time_expired
+
+    @property
+    def ticket_number(self):
+        """
+        Gets the ticket_number of this AccessRequestSummary.
+        The ticket number raised by external customers
+        Example: `3-37509643121`
+
+
+        :return: The ticket_number of this AccessRequestSummary.
+        :rtype: str
+        """
+        return self._ticket_number
+
+    @ticket_number.setter
+    def ticket_number(self, ticket_number):
+        """
+        Sets the ticket_number of this AccessRequestSummary.
+        The ticket number raised by external customers
+        Example: `3-37509643121`
+
+
+        :param ticket_number: The ticket_number of this AccessRequestSummary.
+        :type: str
+        """
+        self._ticket_number = ticket_number
 
     @property
     def freeform_tags(self):

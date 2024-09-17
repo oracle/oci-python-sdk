@@ -42,13 +42,18 @@ class CreateAccessRequestDetails(object):
             The value to assign to the access_duration property of this CreateAccessRequestDetails.
         :type access_duration: str
 
+        :param ticket_number:
+            The value to assign to the ticket_number property of this CreateAccessRequestDetails.
+        :type ticket_number: str
+
         """
         self.swagger_types = {
             'lockbox_id': 'str',
             'display_name': 'str',
             'description': 'str',
             'context': 'dict(str, str)',
-            'access_duration': 'str'
+            'access_duration': 'str',
+            'ticket_number': 'str'
         }
 
         self.attribute_map = {
@@ -56,7 +61,8 @@ class CreateAccessRequestDetails(object):
             'display_name': 'displayName',
             'description': 'description',
             'context': 'context',
-            'access_duration': 'accessDuration'
+            'access_duration': 'accessDuration',
+            'ticket_number': 'ticketNumber'
         }
 
         self._lockbox_id = None
@@ -64,6 +70,7 @@ class CreateAccessRequestDetails(object):
         self._description = None
         self._context = None
         self._access_duration = None
+        self._ticket_number = None
 
     @property
     def lockbox_id(self):
@@ -184,6 +191,32 @@ class CreateAccessRequestDetails(object):
         :type: str
         """
         self._access_duration = access_duration
+
+    @property
+    def ticket_number(self):
+        """
+        Gets the ticket_number of this CreateAccessRequestDetails.
+        The ticket number raised by external customers
+        Example: `3-37509643121`
+
+
+        :return: The ticket_number of this CreateAccessRequestDetails.
+        :rtype: str
+        """
+        return self._ticket_number
+
+    @ticket_number.setter
+    def ticket_number(self, ticket_number):
+        """
+        Sets the ticket_number of this CreateAccessRequestDetails.
+        The ticket number raised by external customers
+        Example: `3-37509643121`
+
+
+        :param ticket_number: The ticket_number of this CreateAccessRequestDetails.
+        :type: str
+        """
+        self._ticket_number = ticket_number
 
     def __repr__(self):
         return formatted_flat_dict(self)

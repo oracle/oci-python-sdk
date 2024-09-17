@@ -23,6 +23,10 @@ class GiFsuCollectionSummary(FsuCollectionSummary):
     #: This constant has a value of "GI_19"
     SOURCE_MAJOR_VERSION_GI_19 = "GI_19"
 
+    #: A constant which can be used with the source_major_version property of a GiFsuCollectionSummary.
+    #: This constant has a value of "GI_23"
+    SOURCE_MAJOR_VERSION_GI_23 = "GI_23"
+
     def __init__(self, **kwargs):
         """
         Initializes a new GiFsuCollectionSummary object with values from keyword arguments. The default value of the :py:attr:`~oci.fleet_software_update.models.GiFsuCollectionSummary.type` attribute
@@ -93,7 +97,7 @@ class GiFsuCollectionSummary(FsuCollectionSummary):
 
         :param source_major_version:
             The value to assign to the source_major_version property of this GiFsuCollectionSummary.
-            Allowed values for this property are: "GI_18", "GI_19", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GI_18", "GI_19", "GI_23", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type source_major_version: str
 
@@ -158,7 +162,7 @@ class GiFsuCollectionSummary(FsuCollectionSummary):
         Grid Infrastructure Major Version of targets to be included in the Exadata Fleet Update Collection.
         Only GI targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
 
-        Allowed values for this property are: "GI_18", "GI_19", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "GI_18", "GI_19", "GI_23", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -178,7 +182,7 @@ class GiFsuCollectionSummary(FsuCollectionSummary):
         :param source_major_version: The source_major_version of this GiFsuCollectionSummary.
         :type: str
         """
-        allowed_values = ["GI_18", "GI_19"]
+        allowed_values = ["GI_18", "GI_19", "GI_23"]
         if not value_allowed_none_or_none_sentinel(source_major_version, allowed_values):
             source_major_version = 'UNKNOWN_ENUM_VALUE'
         self._source_major_version = source_major_version

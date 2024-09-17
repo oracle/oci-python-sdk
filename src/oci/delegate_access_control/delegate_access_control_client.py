@@ -171,7 +171,7 @@ class DelegateAccessControlClient(object):
         resource_path = "/delegatedResourceAccessRequests/{delegatedResourceAccessRequestId}/actions/approve"
         method = "POST"
         operation_name = "approve_delegated_resource_access_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/ApproveDelegatedResourceAccessRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -291,7 +291,7 @@ class DelegateAccessControlClient(object):
         resource_path = "/delegationControls/{delegationControlId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_delegation_control_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/ChangeDelegationControlCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -411,7 +411,7 @@ class DelegateAccessControlClient(object):
         resource_path = "/delegationSubscriptions/{delegationSubscriptionId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_delegation_subscription_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/ChangeDelegationSubscriptionCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -521,7 +521,7 @@ class DelegateAccessControlClient(object):
         resource_path = "/delegationControls"
         method = "POST"
         operation_name = "create_delegation_control"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/CreateDelegationControl"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -619,7 +619,7 @@ class DelegateAccessControlClient(object):
         resource_path = "/delegationSubscriptions"
         method = "POST"
         operation_name = "create_delegation_subscription"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/CreateDelegationSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -724,7 +724,7 @@ class DelegateAccessControlClient(object):
         resource_path = "/delegationControls/{delegationControlId}"
         method = "DELETE"
         operation_name = "delete_delegation_control"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/DeleteDelegationControl"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -837,7 +837,7 @@ class DelegateAccessControlClient(object):
         resource_path = "/delegationSubscriptions/{delegationSubscriptionId}"
         method = "DELETE"
         operation_name = "delete_delegation_subscription"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/DeleteDelegationSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -935,7 +935,7 @@ class DelegateAccessControlClient(object):
         resource_path = "/delegatedResourceAccessRequests/{delegatedResourceAccessRequestId}"
         method = "GET"
         operation_name = "get_delegated_resource_access_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/GetDelegatedResourceAccessRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1036,7 +1036,7 @@ class DelegateAccessControlClient(object):
         resource_path = "/delegatedResourceAccessRequests/{delegatedResourceAccessRequestId}/delegatedResourceAccessRequestAuditLogReport"
         method = "GET"
         operation_name = "get_delegated_resource_access_request_audit_log_report"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequestAuditLogReport/GetDelegatedResourceAccessRequestAuditLogReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1142,7 +1142,7 @@ class DelegateAccessControlClient(object):
         resource_path = "/delegationControls/{delegationControlId}"
         method = "GET"
         operation_name = "get_delegation_control"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/GetDelegationControl"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1240,7 +1240,7 @@ class DelegateAccessControlClient(object):
         resource_path = "/delegationSubscriptions/{delegationSubscriptionId}"
         method = "GET"
         operation_name = "get_delegation_subscription"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/GetDelegationSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1338,7 +1338,7 @@ class DelegateAccessControlClient(object):
         resource_path = "/serviceProviders/{serviceProviderId}"
         method = "GET"
         operation_name = "get_service_provider"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/ServiceProvider/GetServiceProvider"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1436,7 +1436,7 @@ class DelegateAccessControlClient(object):
         resource_path = "/serviceProviderActions/{serviceProviderActionId}"
         method = "GET"
         operation_name = "get_service_provider_action"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/ServiceProviderAction/GetServiceProviderAction"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1550,7 +1550,7 @@ class DelegateAccessControlClient(object):
         resource_path = "/delegatedResourceAccessRequests/{delegatedResourceAccessRequestId}/history"
         method = "GET"
         operation_name = "list_delegated_resource_access_request_histories"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/ListDelegatedResourceAccessRequestHistories"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1720,7 +1720,7 @@ class DelegateAccessControlClient(object):
         resource_path = "/delegatedResourceAccessRequests"
         method = "GET"
         operation_name = "list_delegated_resource_access_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/ListDelegatedResourceAccessRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1867,7 +1867,7 @@ class DelegateAccessControlClient(object):
         resource_path = "/delegationControls/{delegationControlId}/resources"
         method = "GET"
         operation_name = "list_delegation_control_resources"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/ListDelegationControlResources"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2009,7 +2009,7 @@ class DelegateAccessControlClient(object):
         resource_path = "/delegationControls"
         method = "GET"
         operation_name = "list_delegation_controls"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/ListDelegationControls"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2172,7 +2172,7 @@ class DelegateAccessControlClient(object):
         resource_path = "/delegationSubscriptions"
         method = "GET"
         operation_name = "list_delegation_subscriptions"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/ListDelegationSubscriptions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2334,7 +2334,7 @@ class DelegateAccessControlClient(object):
         resource_path = "/serviceProviderActions"
         method = "GET"
         operation_name = "list_service_provider_actions"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/ServiceProviderAction/ListServiceProviderActions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2485,7 +2485,7 @@ class DelegateAccessControlClient(object):
         resource_path = "/delegatedResourceAccessRequests/{delegatedResourceAccessRequestId}/serviceProviderInteractions"
         method = "GET"
         operation_name = "list_service_provider_interactions"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/ListServiceProviderInteractions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2629,7 +2629,7 @@ class DelegateAccessControlClient(object):
         resource_path = "/serviceProviders"
         method = "GET"
         operation_name = "list_service_providers"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/ServiceProvider/ListServiceProviders"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2790,7 +2790,7 @@ class DelegateAccessControlClient(object):
         resource_path = "/delegatedResourceAccessRequests/{delegatedResourceAccessRequestId}/actions/reject"
         method = "POST"
         operation_name = "reject_delegated_resource_access_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/RejectDelegatedResourceAccessRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2910,7 +2910,7 @@ class DelegateAccessControlClient(object):
         resource_path = "/delegatedResourceAccessRequests/{delegatedResourceAccessRequestId}/actions/revoke"
         method = "POST"
         operation_name = "revoke_delegated_resource_access_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/RevokeDelegatedResourceAccessRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3030,7 +3030,7 @@ class DelegateAccessControlClient(object):
         resource_path = "/delegatedResourceAccessRequests/{delegatedResourceAccessRequestId}/actions/serviceProviderInteractionRequest"
         method = "POST"
         operation_name = "service_provider_interaction_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/ServiceProviderInteractionRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3143,7 +3143,7 @@ class DelegateAccessControlClient(object):
         resource_path = "/delegationControls/{delegationControlId}"
         method = "PUT"
         operation_name = "update_delegation_control"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/UpdateDelegationControl"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3255,7 +3255,7 @@ class DelegateAccessControlClient(object):
         resource_path = "/delegationSubscriptions/{delegationSubscriptionId}"
         method = "PUT"
         operation_name = "update_delegation_subscription"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/UpdateDelegationSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

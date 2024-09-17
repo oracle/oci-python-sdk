@@ -48,6 +48,14 @@ class OccCapacityRequestBaseDetails(object):
             The value to assign to the date_actual_handover property of this OccCapacityRequestBaseDetails.
         :type date_actual_handover: datetime
 
+        :param availability_domain:
+            The value to assign to the availability_domain property of this OccCapacityRequestBaseDetails.
+        :type availability_domain: str
+
+        :param associated_occ_handover_resource_block_list:
+            The value to assign to the associated_occ_handover_resource_block_list property of this OccCapacityRequestBaseDetails.
+        :type associated_occ_handover_resource_block_list: list[oci.capacity_management.models.AssociatedOccHandoverResourceBlock]
+
         :param resource_name:
             The value to assign to the resource_name property of this OccCapacityRequestBaseDetails.
         :type resource_name: str
@@ -65,6 +73,8 @@ class OccCapacityRequestBaseDetails(object):
             'date_expected_handover': 'datetime',
             'actual_handover_quantity': 'int',
             'date_actual_handover': 'datetime',
+            'availability_domain': 'str',
+            'associated_occ_handover_resource_block_list': 'list[AssociatedOccHandoverResourceBlock]',
             'resource_name': 'str',
             'demand_quantity': 'int'
         }
@@ -77,6 +87,8 @@ class OccCapacityRequestBaseDetails(object):
             'date_expected_handover': 'dateExpectedHandover',
             'actual_handover_quantity': 'actualHandoverQuantity',
             'date_actual_handover': 'dateActualHandover',
+            'availability_domain': 'availabilityDomain',
+            'associated_occ_handover_resource_block_list': 'associatedOccHandoverResourceBlockList',
             'resource_name': 'resourceName',
             'demand_quantity': 'demandQuantity'
         }
@@ -88,6 +100,8 @@ class OccCapacityRequestBaseDetails(object):
         self._date_expected_handover = None
         self._actual_handover_quantity = None
         self._date_actual_handover = None
+        self._availability_domain = None
+        self._associated_occ_handover_resource_block_list = None
         self._resource_name = None
         self._demand_quantity = None
 
@@ -258,6 +272,54 @@ class OccCapacityRequestBaseDetails(object):
         :type: datetime
         """
         self._date_actual_handover = date_actual_handover
+
+    @property
+    def availability_domain(self):
+        """
+        Gets the availability_domain of this OccCapacityRequestBaseDetails.
+        The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+
+
+        :return: The availability_domain of this OccCapacityRequestBaseDetails.
+        :rtype: str
+        """
+        return self._availability_domain
+
+    @availability_domain.setter
+    def availability_domain(self, availability_domain):
+        """
+        Sets the availability_domain of this OccCapacityRequestBaseDetails.
+        The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+
+
+        :param availability_domain: The availability_domain of this OccCapacityRequestBaseDetails.
+        :type: str
+        """
+        self._availability_domain = availability_domain
+
+    @property
+    def associated_occ_handover_resource_block_list(self):
+        """
+        Gets the associated_occ_handover_resource_block_list of this OccCapacityRequestBaseDetails.
+        A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+
+
+        :return: The associated_occ_handover_resource_block_list of this OccCapacityRequestBaseDetails.
+        :rtype: list[oci.capacity_management.models.AssociatedOccHandoverResourceBlock]
+        """
+        return self._associated_occ_handover_resource_block_list
+
+    @associated_occ_handover_resource_block_list.setter
+    def associated_occ_handover_resource_block_list(self, associated_occ_handover_resource_block_list):
+        """
+        Sets the associated_occ_handover_resource_block_list of this OccCapacityRequestBaseDetails.
+        A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+
+
+        :param associated_occ_handover_resource_block_list: The associated_occ_handover_resource_block_list of this OccCapacityRequestBaseDetails.
+        :type: list[oci.capacity_management.models.AssociatedOccHandoverResourceBlock]
+        """
+        self._associated_occ_handover_resource_block_list = associated_occ_handover_resource_block_list
 
     @property
     def resource_name(self):
