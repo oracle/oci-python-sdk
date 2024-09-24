@@ -62,6 +62,10 @@ class AlarmSuppressionHistoryItem(object):
             The value to assign to the time_effective_until property of this AlarmSuppressionHistoryItem.
         :type time_effective_until: datetime
 
+        :param suppression_conditions:
+            The value to assign to the suppression_conditions property of this AlarmSuppressionHistoryItem.
+        :type suppression_conditions: list[oci.monitoring.models.SuppressionCondition]
+
         """
         self.swagger_types = {
             'suppression_id': 'str',
@@ -71,7 +75,8 @@ class AlarmSuppressionHistoryItem(object):
             'description': 'str',
             'dimensions': 'dict(str, str)',
             'time_effective_from': 'datetime',
-            'time_effective_until': 'datetime'
+            'time_effective_until': 'datetime',
+            'suppression_conditions': 'list[SuppressionCondition]'
         }
 
         self.attribute_map = {
@@ -82,7 +87,8 @@ class AlarmSuppressionHistoryItem(object):
             'description': 'description',
             'dimensions': 'dimensions',
             'time_effective_from': 'timeEffectiveFrom',
-            'time_effective_until': 'timeEffectiveUntil'
+            'time_effective_until': 'timeEffectiveUntil',
+            'suppression_conditions': 'suppressionConditions'
         }
 
         self._suppression_id = None
@@ -93,6 +99,7 @@ class AlarmSuppressionHistoryItem(object):
         self._dimensions = None
         self._time_effective_from = None
         self._time_effective_until = None
+        self._suppression_conditions = None
 
     @property
     def suppression_id(self):
@@ -321,6 +328,40 @@ class AlarmSuppressionHistoryItem(object):
         :type: datetime
         """
         self._time_effective_until = time_effective_until
+
+    @property
+    def suppression_conditions(self):
+        """
+        Gets the suppression_conditions of this AlarmSuppressionHistoryItem.
+        Array of all preconditions for alarm suppression.
+        Example: `[{
+          conditionType: \"RECURRENCE\",
+          suppressionRecurrence: \"FRQ=DAILY;BYHOUR=10\",
+          suppressionDuration: \"PT1H\"
+        }]`
+
+
+        :return: The suppression_conditions of this AlarmSuppressionHistoryItem.
+        :rtype: list[oci.monitoring.models.SuppressionCondition]
+        """
+        return self._suppression_conditions
+
+    @suppression_conditions.setter
+    def suppression_conditions(self, suppression_conditions):
+        """
+        Sets the suppression_conditions of this AlarmSuppressionHistoryItem.
+        Array of all preconditions for alarm suppression.
+        Example: `[{
+          conditionType: \"RECURRENCE\",
+          suppressionRecurrence: \"FRQ=DAILY;BYHOUR=10\",
+          suppressionDuration: \"PT1H\"
+        }]`
+
+
+        :param suppression_conditions: The suppression_conditions of this AlarmSuppressionHistoryItem.
+        :type: list[oci.monitoring.models.SuppressionCondition]
+        """
+        self._suppression_conditions = suppression_conditions
 
     def __repr__(self):
         return formatted_flat_dict(self)

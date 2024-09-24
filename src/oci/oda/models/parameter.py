@@ -82,7 +82,8 @@ class Parameter(object):
 
         :param type:
             The value to assign to the type property of this Parameter.
-            Allowed values for this property are: "STRING", "INTEGER", "FLOAT", "BOOLEAN", "SECURE"
+            Allowed values for this property are: "STRING", "INTEGER", "FLOAT", "BOOLEAN", "SECURE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
         :param value:
@@ -91,7 +92,8 @@ class Parameter(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Parameter.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         """
@@ -198,7 +200,8 @@ class Parameter(object):
         **[Required]** Gets the type of this Parameter.
         The value type.
 
-        Allowed values for this property are: "STRING", "INTEGER", "FLOAT", "BOOLEAN", "SECURE"
+        Allowed values for this property are: "STRING", "INTEGER", "FLOAT", "BOOLEAN", "SECURE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The type of this Parameter.
@@ -218,9 +221,7 @@ class Parameter(object):
         """
         allowed_values = ["STRING", "INTEGER", "FLOAT", "BOOLEAN", "SECURE"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `type`, must be None or one of {allowed_values}"
-            )
+            type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
 
     @property
@@ -253,7 +254,8 @@ class Parameter(object):
         **[Required]** Gets the lifecycle_state of this Parameter.
         The Parameter's current state.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The lifecycle_state of this Parameter.
@@ -273,9 +275,7 @@ class Parameter(object):
         """
         allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
-            raise ValueError(
-                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
-            )
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
     def __repr__(self):

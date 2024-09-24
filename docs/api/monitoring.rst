@@ -30,6 +30,7 @@ Monitoring
     oci.monitoring.models.AlarmSuppression
     oci.monitoring.models.AlarmSuppressionAlarmTarget
     oci.monitoring.models.AlarmSuppressionCollection
+    oci.monitoring.models.AlarmSuppressionCompartmentTarget
     oci.monitoring.models.AlarmSuppressionHistoryItem
     oci.monitoring.models.AlarmSuppressionHistoryItemCollection
     oci.monitoring.models.AlarmSuppressionSummary
@@ -45,8 +46,10 @@ Monitoring
     oci.monitoring.models.MetricDataDetails
     oci.monitoring.models.PostMetricDataDetails
     oci.monitoring.models.PostMetricDataResponseDetails
+    oci.monitoring.models.Recurrence
     oci.monitoring.models.RetrieveDimensionStatesDetails
     oci.monitoring.models.SummarizeAlarmSuppressionHistoryDetails
     oci.monitoring.models.SummarizeMetricsDataDetails
     oci.monitoring.models.Suppression
+    oci.monitoring.models.SuppressionCondition
     oci.monitoring.models.UpdateAlarmDetails

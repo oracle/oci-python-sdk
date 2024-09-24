@@ -35,6 +35,10 @@ class DatabaseConfigurationSummary(object):
     #: This constant has a value of "MDS_MYSQL_DATABASE_SYSTEM"
     ENTITY_SOURCE_MDS_MYSQL_DATABASE_SYSTEM = "MDS_MYSQL_DATABASE_SYSTEM"
 
+    #: A constant which can be used with the entity_source property of a DatabaseConfigurationSummary.
+    #: This constant has a value of "MACS_MANAGED_CLOUD_DATABASE"
+    ENTITY_SOURCE_MACS_MANAGED_CLOUD_DATABASE = "MACS_MANAGED_CLOUD_DATABASE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DatabaseConfigurationSummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -44,6 +48,7 @@ class DatabaseConfigurationSummary(object):
         * :class:`~oci.opsi.models.AutonomousDatabaseConfigurationSummary`
         * :class:`~oci.opsi.models.MacsManagedExternalDatabaseConfigurationSummary`
         * :class:`~oci.opsi.models.PeComanagedManagedExternalDatabaseConfigurationSummary`
+        * :class:`~oci.opsi.models.MacsManagedCloudDatabaseConfigurationSummary`
         * :class:`~oci.opsi.models.MdsMysqlDatabaseConfigurationSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -54,7 +59,7 @@ class DatabaseConfigurationSummary(object):
 
         :param entity_source:
             The value to assign to the entity_source property of this DatabaseConfigurationSummary.
-            Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM", "MACS_MANAGED_CLOUD_DATABASE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type entity_source: str
 
@@ -155,6 +160,9 @@ class DatabaseConfigurationSummary(object):
         if type == 'PE_COMANAGED_DATABASE':
             return 'PeComanagedManagedExternalDatabaseConfigurationSummary'
 
+        if type == 'MACS_MANAGED_CLOUD_DATABASE':
+            return 'MacsManagedCloudDatabaseConfigurationSummary'
+
         if type == 'MDS_MYSQL_DATABASE_SYSTEM':
             return 'MdsMysqlDatabaseConfigurationSummary'
         else:
@@ -194,7 +202,7 @@ class DatabaseConfigurationSummary(object):
         **[Required]** Gets the entity_source of this DatabaseConfigurationSummary.
         Source of the database entity.
 
-        Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM", "MACS_MANAGED_CLOUD_DATABASE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -213,7 +221,7 @@ class DatabaseConfigurationSummary(object):
         :param entity_source: The entity_source of this DatabaseConfigurationSummary.
         :type: str
         """
-        allowed_values = ["AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM"]
+        allowed_values = ["AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM", "MACS_MANAGED_CLOUD_DATABASE"]
         if not value_allowed_none_or_none_sentinel(entity_source, allowed_values):
             entity_source = 'UNKNOWN_ENUM_VALUE'
         self._entity_source = entity_source

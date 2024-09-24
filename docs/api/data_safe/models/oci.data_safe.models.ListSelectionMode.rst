@@ -1,0 +1,11 @@
+ListSelectionMode
+=================
+
+.. currentmodule:: oci.data_safe.models
+
+.. autoclass:: ListSelectionMode
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

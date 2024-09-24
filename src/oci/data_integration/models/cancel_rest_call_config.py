@@ -42,7 +42,8 @@ class CancelRestCallConfig(object):
 
         :param method_type:
             The value to assign to the method_type property of this CancelRestCallConfig.
-            Allowed values for this property are: "GET", "POST", "PATCH", "DELETE", "PUT"
+            Allowed values for this property are: "GET", "POST", "PATCH", "DELETE", "PUT", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type method_type: str
 
         :param request_headers:
@@ -76,7 +77,8 @@ class CancelRestCallConfig(object):
         Gets the method_type of this CancelRestCallConfig.
         The REST method to use.
 
-        Allowed values for this property are: "GET", "POST", "PATCH", "DELETE", "PUT"
+        Allowed values for this property are: "GET", "POST", "PATCH", "DELETE", "PUT", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The method_type of this CancelRestCallConfig.
@@ -96,9 +98,7 @@ class CancelRestCallConfig(object):
         """
         allowed_values = ["GET", "POST", "PATCH", "DELETE", "PUT"]
         if not value_allowed_none_or_none_sentinel(method_type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `method_type`, must be None or one of {allowed_values}"
-            )
+            method_type = 'UNKNOWN_ENUM_VALUE'
         self._method_type = method_type
 
     @property

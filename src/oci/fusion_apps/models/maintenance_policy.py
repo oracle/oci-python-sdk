@@ -48,12 +48,14 @@ class MaintenancePolicy(object):
 
         :param monthly_patching_override:
             The value to assign to the monthly_patching_override property of this MaintenancePolicy.
-            Allowed values for this property are: "ENABLED", "DISABLED", "NONE"
+            Allowed values for this property are: "ENABLED", "DISABLED", "NONE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type monthly_patching_override: str
 
         :param environment_maintenance_override:
             The value to assign to the environment_maintenance_override property of this MaintenancePolicy.
-            Allowed values for this property are: "PROD", "NON_PROD", "NONE"
+            Allowed values for this property are: "PROD", "NON_PROD", "NONE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type environment_maintenance_override: str
 
         """
@@ -76,7 +78,8 @@ class MaintenancePolicy(object):
         Gets the monthly_patching_override of this MaintenancePolicy.
         When \"ENABLED\", the Fusion environment is patched monthly. When \"DISABLED\", the Fusion environment is not patched monthly. This setting overrides the environment family setting. When not set, the environment follows the environment family policy.
 
-        Allowed values for this property are: "ENABLED", "DISABLED", "NONE"
+        Allowed values for this property are: "ENABLED", "DISABLED", "NONE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The monthly_patching_override of this MaintenancePolicy.
@@ -96,9 +99,7 @@ class MaintenancePolicy(object):
         """
         allowed_values = ["ENABLED", "DISABLED", "NONE"]
         if not value_allowed_none_or_none_sentinel(monthly_patching_override, allowed_values):
-            raise ValueError(
-                f"Invalid value for `monthly_patching_override`, must be None or one of {allowed_values}"
-            )
+            monthly_patching_override = 'UNKNOWN_ENUM_VALUE'
         self._monthly_patching_override = monthly_patching_override
 
     @property
@@ -107,7 +108,8 @@ class MaintenancePolicy(object):
         Gets the environment_maintenance_override of this MaintenancePolicy.
         User choice to upgrade both test and prod pods at the same time. Overrides fusion environment families'.
 
-        Allowed values for this property are: "PROD", "NON_PROD", "NONE"
+        Allowed values for this property are: "PROD", "NON_PROD", "NONE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The environment_maintenance_override of this MaintenancePolicy.
@@ -127,9 +129,7 @@ class MaintenancePolicy(object):
         """
         allowed_values = ["PROD", "NON_PROD", "NONE"]
         if not value_allowed_none_or_none_sentinel(environment_maintenance_override, allowed_values):
-            raise ValueError(
-                f"Invalid value for `environment_maintenance_override`, must be None or one of {allowed_values}"
-            )
+            environment_maintenance_override = 'UNKNOWN_ENUM_VALUE'
         self._environment_maintenance_override = environment_maintenance_override
 
     def __repr__(self):

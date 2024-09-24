@@ -23,6 +23,10 @@ class AddExadataInsightMembersDetails(object):
     #: This constant has a value of "PE_COMANAGED_EXADATA"
     ENTITY_SOURCE_PE_COMANAGED_EXADATA = "PE_COMANAGED_EXADATA"
 
+    #: A constant which can be used with the entity_source property of a AddExadataInsightMembersDetails.
+    #: This constant has a value of "MACS_MANAGED_CLOUD_EXADATA"
+    ENTITY_SOURCE_MACS_MANAGED_CLOUD_EXADATA = "MACS_MANAGED_CLOUD_EXADATA"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AddExadataInsightMembersDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -30,12 +34,13 @@ class AddExadataInsightMembersDetails(object):
 
         * :class:`~oci.opsi.models.AddPeComanagedExadataInsightMembersDetails`
         * :class:`~oci.opsi.models.AddEmManagedExternalExadataInsightMembersDetails`
+        * :class:`~oci.opsi.models.AddMacsManagedCloudExadataInsightMembersDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param entity_source:
             The value to assign to the entity_source property of this AddExadataInsightMembersDetails.
-            Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA"
+            Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA", "MACS_MANAGED_CLOUD_EXADATA"
         :type entity_source: str
 
         """
@@ -62,6 +67,9 @@ class AddExadataInsightMembersDetails(object):
 
         if type == 'EM_MANAGED_EXTERNAL_EXADATA':
             return 'AddEmManagedExternalExadataInsightMembersDetails'
+
+        if type == 'MACS_MANAGED_CLOUD_EXADATA':
+            return 'AddMacsManagedCloudExadataInsightMembersDetails'
         else:
             return 'AddExadataInsightMembersDetails'
 
@@ -71,7 +79,7 @@ class AddExadataInsightMembersDetails(object):
         **[Required]** Gets the entity_source of this AddExadataInsightMembersDetails.
         Source of the Exadata system.
 
-        Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA"
+        Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA", "MACS_MANAGED_CLOUD_EXADATA"
 
 
         :return: The entity_source of this AddExadataInsightMembersDetails.
@@ -89,7 +97,7 @@ class AddExadataInsightMembersDetails(object):
         :param entity_source: The entity_source of this AddExadataInsightMembersDetails.
         :type: str
         """
-        allowed_values = ["EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA"]
+        allowed_values = ["EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA", "MACS_MANAGED_CLOUD_EXADATA"]
         if not value_allowed_none_or_none_sentinel(entity_source, allowed_values):
             raise ValueError(
                 f"Invalid value for `entity_source`, must be None or one of {allowed_values}"

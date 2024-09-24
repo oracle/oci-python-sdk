@@ -23,6 +23,10 @@ class ExadataConfigurationSummary(object):
     #: This constant has a value of "PE_COMANAGED_EXADATA"
     ENTITY_SOURCE_PE_COMANAGED_EXADATA = "PE_COMANAGED_EXADATA"
 
+    #: A constant which can be used with the entity_source property of a ExadataConfigurationSummary.
+    #: This constant has a value of "MACS_MANAGED_CLOUD_EXADATA"
+    ENTITY_SOURCE_MACS_MANAGED_CLOUD_EXADATA = "MACS_MANAGED_CLOUD_EXADATA"
+
     #: A constant which can be used with the exadata_type property of a ExadataConfigurationSummary.
     #: This constant has a value of "DBMACHINE"
     EXADATA_TYPE_DBMACHINE = "DBMACHINE"
@@ -55,6 +59,22 @@ class ExadataConfigurationSummary(object):
     #: This constant has a value of "FLEX"
     EXADATA_RACK_TYPE_FLEX = "FLEX"
 
+    #: A constant which can be used with the exadata_rack_type property of a ExadataConfigurationSummary.
+    #: This constant has a value of "BASE"
+    EXADATA_RACK_TYPE_BASE = "BASE"
+
+    #: A constant which can be used with the exadata_rack_type property of a ExadataConfigurationSummary.
+    #: This constant has a value of "ELASTIC"
+    EXADATA_RACK_TYPE_ELASTIC = "ELASTIC"
+
+    #: A constant which can be used with the exadata_rack_type property of a ExadataConfigurationSummary.
+    #: This constant has a value of "ELASTIC_BASE"
+    EXADATA_RACK_TYPE_ELASTIC_BASE = "ELASTIC_BASE"
+
+    #: A constant which can be used with the exadata_rack_type property of a ExadataConfigurationSummary.
+    #: This constant has a value of "ELASTIC_LARGE"
+    EXADATA_RACK_TYPE_ELASTIC_LARGE = "ELASTIC_LARGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ExadataConfigurationSummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -62,6 +82,7 @@ class ExadataConfigurationSummary(object):
 
         * :class:`~oci.opsi.models.ExadataDatabaseMachineConfigurationSummary`
         * :class:`~oci.opsi.models.ExadataExacsConfigurationSummary`
+        * :class:`~oci.opsi.models.ExadataExaccConfigurationSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -71,7 +92,7 @@ class ExadataConfigurationSummary(object):
 
         :param entity_source:
             The value to assign to the entity_source property of this ExadataConfigurationSummary.
-            Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA", "MACS_MANAGED_CLOUD_EXADATA", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type entity_source: str
 
@@ -95,7 +116,7 @@ class ExadataConfigurationSummary(object):
 
         :param exadata_rack_type:
             The value to assign to the exadata_rack_type property of this ExadataConfigurationSummary.
-            Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", "FLEX", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", "FLEX", "BASE", "ELASTIC", "ELASTIC_BASE", "ELASTIC_LARGE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type exadata_rack_type: str
 
@@ -162,6 +183,9 @@ class ExadataConfigurationSummary(object):
 
         if type == 'PE_COMANAGED_EXADATA':
             return 'ExadataExacsConfigurationSummary'
+
+        if type == 'MACS_MANAGED_CLOUD_EXADATA':
+            return 'ExadataExaccConfigurationSummary'
         else:
             return 'ExadataConfigurationSummary'
 
@@ -199,7 +223,7 @@ class ExadataConfigurationSummary(object):
         **[Required]** Gets the entity_source of this ExadataConfigurationSummary.
         Source of the exadata entity.
 
-        Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA", "MACS_MANAGED_CLOUD_EXADATA", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -218,7 +242,7 @@ class ExadataConfigurationSummary(object):
         :param entity_source: The entity_source of this ExadataConfigurationSummary.
         :type: str
         """
-        allowed_values = ["EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA"]
+        allowed_values = ["EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA", "MACS_MANAGED_CLOUD_EXADATA"]
         if not value_allowed_none_or_none_sentinel(entity_source, allowed_values):
             entity_source = 'UNKNOWN_ENUM_VALUE'
         self._entity_source = entity_source
@@ -335,7 +359,7 @@ class ExadataConfigurationSummary(object):
         **[Required]** Gets the exadata_rack_type of this ExadataConfigurationSummary.
         Exadata rack type.
 
-        Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", "FLEX", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", "FLEX", "BASE", "ELASTIC", "ELASTIC_BASE", "ELASTIC_LARGE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -354,7 +378,7 @@ class ExadataConfigurationSummary(object):
         :param exadata_rack_type: The exadata_rack_type of this ExadataConfigurationSummary.
         :type: str
         """
-        allowed_values = ["FULL", "HALF", "QUARTER", "EIGHTH", "FLEX"]
+        allowed_values = ["FULL", "HALF", "QUARTER", "EIGHTH", "FLEX", "BASE", "ELASTIC", "ELASTIC_BASE", "ELASTIC_LARGE"]
         if not value_allowed_none_or_none_sentinel(exadata_rack_type, allowed_values):
             exadata_rack_type = 'UNKNOWN_ENUM_VALUE'
         self._exadata_rack_type = exadata_rack_type

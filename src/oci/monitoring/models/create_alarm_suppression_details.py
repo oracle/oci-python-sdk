@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateAlarmSuppressionDetails(object):
     """
-    The configuration details for creating a dimension-specific alarm suppression.
+    The configuration details for creating an alarm suppression.
     """
 
     def __init__(self, **kwargs):
@@ -23,6 +23,10 @@ class CreateAlarmSuppressionDetails(object):
         :param alarm_suppression_target:
             The value to assign to the alarm_suppression_target property of this CreateAlarmSuppressionDetails.
         :type alarm_suppression_target: oci.monitoring.models.AlarmSuppressionTarget
+
+        :param level:
+            The value to assign to the level property of this CreateAlarmSuppressionDetails.
+        :type level: str
 
         :param display_name:
             The value to assign to the display_name property of this CreateAlarmSuppressionDetails.
@@ -52,30 +56,39 @@ class CreateAlarmSuppressionDetails(object):
             The value to assign to the defined_tags property of this CreateAlarmSuppressionDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param suppression_conditions:
+            The value to assign to the suppression_conditions property of this CreateAlarmSuppressionDetails.
+        :type suppression_conditions: list[oci.monitoring.models.SuppressionCondition]
+
         """
         self.swagger_types = {
             'alarm_suppression_target': 'AlarmSuppressionTarget',
+            'level': 'str',
             'display_name': 'str',
             'description': 'str',
             'dimensions': 'dict(str, str)',
             'time_suppress_from': 'datetime',
             'time_suppress_until': 'datetime',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'suppression_conditions': 'list[SuppressionCondition]'
         }
 
         self.attribute_map = {
             'alarm_suppression_target': 'alarmSuppressionTarget',
+            'level': 'level',
             'display_name': 'displayName',
             'description': 'description',
             'dimensions': 'dimensions',
             'time_suppress_from': 'timeSuppressFrom',
             'time_suppress_until': 'timeSuppressUntil',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'suppression_conditions': 'suppressionConditions'
         }
 
         self._alarm_suppression_target = None
+        self._level = None
         self._display_name = None
         self._description = None
         self._dimensions = None
@@ -83,6 +96,7 @@ class CreateAlarmSuppressionDetails(object):
         self._time_suppress_until = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._suppression_conditions = None
 
     @property
     def alarm_suppression_target(self):
@@ -103,6 +117,38 @@ class CreateAlarmSuppressionDetails(object):
         :type: oci.monitoring.models.AlarmSuppressionTarget
         """
         self._alarm_suppression_target = alarm_suppression_target
+
+    @property
+    def level(self):
+        """
+        Gets the level of this CreateAlarmSuppressionDetails.
+        The level of this alarm suppression.
+        `ALARM` indicates a suppression of the entire alarm, regardless of dimension.
+        `DIMENSION` indicates a suppression configured for specified dimensions.
+
+        Defaut: `DIMENSION`
+
+
+        :return: The level of this CreateAlarmSuppressionDetails.
+        :rtype: str
+        """
+        return self._level
+
+    @level.setter
+    def level(self, level):
+        """
+        Sets the level of this CreateAlarmSuppressionDetails.
+        The level of this alarm suppression.
+        `ALARM` indicates a suppression of the entire alarm, regardless of dimension.
+        `DIMENSION` indicates a suppression configured for specified dimensions.
+
+        Defaut: `DIMENSION`
+
+
+        :param level: The level of this CreateAlarmSuppressionDetails.
+        :type: str
+        """
+        self._level = level
 
     @property
     def display_name(self):
@@ -169,13 +215,13 @@ class CreateAlarmSuppressionDetails(object):
     @property
     def dimensions(self):
         """
-        **[Required]** Gets the dimensions of this CreateAlarmSuppressionDetails.
+        Gets the dimensions of this CreateAlarmSuppressionDetails.
         A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs.
         If you specify {\"availabilityDomain\": \"phx-ad-1\"}
         and the alarm state entry corresponds to the set {\"availabilityDomain\": \"phx-ad-1\" and \"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"},
         then this alarm will be included for suppression.
 
-        The value cannot be an empty object.
+        This is required only when the value of level is `DIMENSION`. If required, the value cannot be an empty object.
         Only a single value is allowed per key. No grouping of multiple values is allowed under the same key.
         Maximum characters (after serialization): 4000. This maximum satisfies typical use cases.
         The response for an exceeded maximum is `HTTP 400` with an \"dimensions values are too long\" message.
@@ -195,7 +241,7 @@ class CreateAlarmSuppressionDetails(object):
         and the alarm state entry corresponds to the set {\"availabilityDomain\": \"phx-ad-1\" and \"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"},
         then this alarm will be included for suppression.
 
-        The value cannot be an empty object.
+        This is required only when the value of level is `DIMENSION`. If required, the value cannot be an empty object.
         Only a single value is allowed per key. No grouping of multiple values is allowed under the same key.
         Maximum characters (after serialization): 4000. This maximum satisfies typical use cases.
         The response for an exceeded maximum is `HTTP 400` with an \"dimensions values are too long\" message.
@@ -313,6 +359,40 @@ class CreateAlarmSuppressionDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def suppression_conditions(self):
+        """
+        Gets the suppression_conditions of this CreateAlarmSuppressionDetails.
+        Array of all preconditions for alarm suppression.
+        Example: `[{
+          conditionType: \"RECURRENCE\",
+          suppressionRecurrence: \"FRQ=DAILY;BYHOUR=10\",
+          suppressionDuration: \"PT1H\"
+        }]`
+
+
+        :return: The suppression_conditions of this CreateAlarmSuppressionDetails.
+        :rtype: list[oci.monitoring.models.SuppressionCondition]
+        """
+        return self._suppression_conditions
+
+    @suppression_conditions.setter
+    def suppression_conditions(self, suppression_conditions):
+        """
+        Sets the suppression_conditions of this CreateAlarmSuppressionDetails.
+        Array of all preconditions for alarm suppression.
+        Example: `[{
+          conditionType: \"RECURRENCE\",
+          suppressionRecurrence: \"FRQ=DAILY;BYHOUR=10\",
+          suppressionDuration: \"PT1H\"
+        }]`
+
+
+        :param suppression_conditions: The suppression_conditions of this CreateAlarmSuppressionDetails.
+        :type: list[oci.monitoring.models.SuppressionCondition]
+        """
+        self._suppression_conditions = suppression_conditions
 
     def __repr__(self):
         return formatted_flat_dict(self)

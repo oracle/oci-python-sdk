@@ -35,7 +35,8 @@ class DiscoveredExternalPluggableDatabase(DiscoveredExternalDbSystemComponent):
 
         :param component_type:
             The value to assign to the component_type property of this DiscoveredExternalPluggableDatabase.
-            Allowed values for this property are: "ASM", "ASM_INSTANCE", "CLUSTER", "CLUSTER_INSTANCE", "DATABASE", "DATABASE_INSTANCE", "DATABASE_HOME", "DATABASE_NODE", "DBSYSTEM", "LISTENER", "PLUGGABLE_DATABASE"
+            Allowed values for this property are: "ASM", "ASM_INSTANCE", "CLUSTER", "CLUSTER_INSTANCE", "DATABASE", "DATABASE_INSTANCE", "DATABASE_HOME", "DATABASE_NODE", "DBSYSTEM", "LISTENER", "PLUGGABLE_DATABASE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type component_type: str
 
         :param resource_id:
@@ -48,7 +49,8 @@ class DiscoveredExternalPluggableDatabase(DiscoveredExternalDbSystemComponent):
 
         :param status:
             The value to assign to the status property of this DiscoveredExternalPluggableDatabase.
-            Allowed values for this property are: "NEW", "EXISTING", "MARKED_FOR_DELETION", "UNKNOWN"
+            Allowed values for this property are: "NEW", "EXISTING", "MARKED_FOR_DELETION", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
         :param associated_components:

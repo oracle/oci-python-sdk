@@ -325,6 +325,7 @@ class AlarmStatusSummary(object):
         The status of this alarm.
         Status is collective, across all metric streams in the alarm.
         To list alarm status for each metric stream, use :func:`retrieve_dimension_states`.
+
         Example: `FIRING`
 
         Allowed values for this property are: "FIRING", "OK", "SUSPENDED", 'UNKNOWN_ENUM_VALUE'.
@@ -343,6 +344,7 @@ class AlarmStatusSummary(object):
         The status of this alarm.
         Status is collective, across all metric streams in the alarm.
         To list alarm status for each metric stream, use :func:`retrieve_dimension_states`.
+
         Example: `FIRING`
 
 

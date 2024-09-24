@@ -23,7 +23,8 @@ class TimeStatsDataColumn(AbstractColumn):
 
         :param type:
             The value to assign to the type property of this TimeStatsDataColumn.
-            Allowed values for this property are: "COLUMN", "CHART_COLUMN", "CHART_DATA_COLUMN", "TIME_STATS_COLUMN", "TIME_STATS_DATA_COLUMN", "TIME_CLUSTER_COLUMN", "TIME_CLUSTER_DATA_COLUMN", "TABLE_COLUMN", "TIME_COLUMN", "TREND_COLUMN", "CLASSIFY_COLUMN"
+            Allowed values for this property are: "COLUMN", "CHART_COLUMN", "CHART_DATA_COLUMN", "TIME_STATS_COLUMN", "TIME_STATS_DATA_COLUMN", "TIME_CLUSTER_COLUMN", "TIME_CLUSTER_DATA_COLUMN", "TABLE_COLUMN", "TIME_COLUMN", "TREND_COLUMN", "CLASSIFY_COLUMN", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
         :param display_name:
@@ -32,7 +33,8 @@ class TimeStatsDataColumn(AbstractColumn):
 
         :param sub_system:
             The value to assign to the sub_system property of this TimeStatsDataColumn.
-            Allowed values for this property are: "LOG"
+            Allowed values for this property are: "LOG", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type sub_system: str
 
         :param values:
@@ -65,7 +67,8 @@ class TimeStatsDataColumn(AbstractColumn):
 
         :param value_type:
             The value to assign to the value_type property of this TimeStatsDataColumn.
-            Allowed values for this property are: "BOOLEAN", "STRING", "DOUBLE", "FLOAT", "LONG", "INTEGER", "TIMESTAMP", "FACET", "TABLE"
+            Allowed values for this property are: "BOOLEAN", "STRING", "DOUBLE", "FLOAT", "LONG", "INTEGER", "TIMESTAMP", "FACET", "TABLE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type value_type: str
 
         :param original_display_name:

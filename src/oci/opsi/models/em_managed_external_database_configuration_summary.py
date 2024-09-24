@@ -27,7 +27,7 @@ class EmManagedExternalDatabaseConfigurationSummary(DatabaseConfigurationSummary
 
         :param entity_source:
             The value to assign to the entity_source property of this EmManagedExternalDatabaseConfigurationSummary.
-            Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM"
+            Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", "MDS_MYSQL_DATABASE_SYSTEM", "MACS_MANAGED_CLOUD_DATABASE"
         :type entity_source: str
 
         :param compartment_id:
@@ -82,6 +82,22 @@ class EmManagedExternalDatabaseConfigurationSummary(DatabaseConfigurationSummary
             The value to assign to the exadata_details property of this EmManagedExternalDatabaseConfigurationSummary.
         :type exadata_details: oci.opsi.models.ExadataDetails
 
+        :param enterprise_manager_entity_identifier:
+            The value to assign to the enterprise_manager_entity_identifier property of this EmManagedExternalDatabaseConfigurationSummary.
+        :type enterprise_manager_entity_identifier: str
+
+        :param enterprise_manager_console_url:
+            The value to assign to the enterprise_manager_console_url property of this EmManagedExternalDatabaseConfigurationSummary.
+        :type enterprise_manager_console_url: str
+
+        :param enterprise_manager_oms_ver:
+            The value to assign to the enterprise_manager_oms_ver property of this EmManagedExternalDatabaseConfigurationSummary.
+        :type enterprise_manager_oms_ver: str
+
+        :param enterprise_manager_entity_type:
+            The value to assign to the enterprise_manager_entity_type property of this EmManagedExternalDatabaseConfigurationSummary.
+        :type enterprise_manager_entity_type: str
+
         """
         self.swagger_types = {
             'database_insight_id': 'str',
@@ -98,7 +114,11 @@ class EmManagedExternalDatabaseConfigurationSummary(DatabaseConfigurationSummary
             'enterprise_manager_identifier': 'str',
             'enterprise_manager_bridge_id': 'str',
             'instances': 'list[HostInstanceMap]',
-            'exadata_details': 'ExadataDetails'
+            'exadata_details': 'ExadataDetails',
+            'enterprise_manager_entity_identifier': 'str',
+            'enterprise_manager_console_url': 'str',
+            'enterprise_manager_oms_ver': 'str',
+            'enterprise_manager_entity_type': 'str'
         }
 
         self.attribute_map = {
@@ -116,7 +136,11 @@ class EmManagedExternalDatabaseConfigurationSummary(DatabaseConfigurationSummary
             'enterprise_manager_identifier': 'enterpriseManagerIdentifier',
             'enterprise_manager_bridge_id': 'enterpriseManagerBridgeId',
             'instances': 'instances',
-            'exadata_details': 'exadataDetails'
+            'exadata_details': 'exadataDetails',
+            'enterprise_manager_entity_identifier': 'enterpriseManagerEntityIdentifier',
+            'enterprise_manager_console_url': 'enterpriseManagerConsoleUrl',
+            'enterprise_manager_oms_ver': 'enterpriseManagerOmsVer',
+            'enterprise_manager_entity_type': 'enterpriseManagerEntityType'
         }
 
         self._database_insight_id = None
@@ -134,6 +158,10 @@ class EmManagedExternalDatabaseConfigurationSummary(DatabaseConfigurationSummary
         self._enterprise_manager_bridge_id = None
         self._instances = None
         self._exadata_details = None
+        self._enterprise_manager_entity_identifier = None
+        self._enterprise_manager_console_url = None
+        self._enterprise_manager_oms_ver = None
+        self._enterprise_manager_entity_type = None
         self._entity_source = 'EM_MANAGED_EXTERNAL_DATABASE'
 
     @property
@@ -227,6 +255,102 @@ class EmManagedExternalDatabaseConfigurationSummary(DatabaseConfigurationSummary
         :type: oci.opsi.models.ExadataDetails
         """
         self._exadata_details = exadata_details
+
+    @property
+    def enterprise_manager_entity_identifier(self):
+        """
+        **[Required]** Gets the enterprise_manager_entity_identifier of this EmManagedExternalDatabaseConfigurationSummary.
+        Enterprise Manager Entity Unique Identifier
+
+
+        :return: The enterprise_manager_entity_identifier of this EmManagedExternalDatabaseConfigurationSummary.
+        :rtype: str
+        """
+        return self._enterprise_manager_entity_identifier
+
+    @enterprise_manager_entity_identifier.setter
+    def enterprise_manager_entity_identifier(self, enterprise_manager_entity_identifier):
+        """
+        Sets the enterprise_manager_entity_identifier of this EmManagedExternalDatabaseConfigurationSummary.
+        Enterprise Manager Entity Unique Identifier
+
+
+        :param enterprise_manager_entity_identifier: The enterprise_manager_entity_identifier of this EmManagedExternalDatabaseConfigurationSummary.
+        :type: str
+        """
+        self._enterprise_manager_entity_identifier = enterprise_manager_entity_identifier
+
+    @property
+    def enterprise_manager_console_url(self):
+        """
+        **[Required]** Gets the enterprise_manager_console_url of this EmManagedExternalDatabaseConfigurationSummary.
+        Enterprise Manager Console Url
+
+
+        :return: The enterprise_manager_console_url of this EmManagedExternalDatabaseConfigurationSummary.
+        :rtype: str
+        """
+        return self._enterprise_manager_console_url
+
+    @enterprise_manager_console_url.setter
+    def enterprise_manager_console_url(self, enterprise_manager_console_url):
+        """
+        Sets the enterprise_manager_console_url of this EmManagedExternalDatabaseConfigurationSummary.
+        Enterprise Manager Console Url
+
+
+        :param enterprise_manager_console_url: The enterprise_manager_console_url of this EmManagedExternalDatabaseConfigurationSummary.
+        :type: str
+        """
+        self._enterprise_manager_console_url = enterprise_manager_console_url
+
+    @property
+    def enterprise_manager_oms_ver(self):
+        """
+        **[Required]** Gets the enterprise_manager_oms_ver of this EmManagedExternalDatabaseConfigurationSummary.
+        Enterprise Manager OMS Version
+
+
+        :return: The enterprise_manager_oms_ver of this EmManagedExternalDatabaseConfigurationSummary.
+        :rtype: str
+        """
+        return self._enterprise_manager_oms_ver
+
+    @enterprise_manager_oms_ver.setter
+    def enterprise_manager_oms_ver(self, enterprise_manager_oms_ver):
+        """
+        Sets the enterprise_manager_oms_ver of this EmManagedExternalDatabaseConfigurationSummary.
+        Enterprise Manager OMS Version
+
+
+        :param enterprise_manager_oms_ver: The enterprise_manager_oms_ver of this EmManagedExternalDatabaseConfigurationSummary.
+        :type: str
+        """
+        self._enterprise_manager_oms_ver = enterprise_manager_oms_ver
+
+    @property
+    def enterprise_manager_entity_type(self):
+        """
+        **[Required]** Gets the enterprise_manager_entity_type of this EmManagedExternalDatabaseConfigurationSummary.
+        Enterprise Manager Entity Type
+
+
+        :return: The enterprise_manager_entity_type of this EmManagedExternalDatabaseConfigurationSummary.
+        :rtype: str
+        """
+        return self._enterprise_manager_entity_type
+
+    @enterprise_manager_entity_type.setter
+    def enterprise_manager_entity_type(self, enterprise_manager_entity_type):
+        """
+        Sets the enterprise_manager_entity_type of this EmManagedExternalDatabaseConfigurationSummary.
+        Enterprise Manager Entity Type
+
+
+        :param enterprise_manager_entity_type: The enterprise_manager_entity_type of this EmManagedExternalDatabaseConfigurationSummary.
+        :type: str
+        """
+        self._enterprise_manager_entity_type = enterprise_manager_entity_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

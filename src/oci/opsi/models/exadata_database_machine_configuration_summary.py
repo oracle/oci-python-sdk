@@ -27,7 +27,7 @@ class ExadataDatabaseMachineConfigurationSummary(ExadataConfigurationSummary):
 
         :param entity_source:
             The value to assign to the entity_source property of this ExadataDatabaseMachineConfigurationSummary.
-            Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA"
+            Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA", "MACS_MANAGED_CLOUD_EXADATA"
         :type entity_source: str
 
         :param compartment_id:
@@ -49,7 +49,7 @@ class ExadataDatabaseMachineConfigurationSummary(ExadataConfigurationSummary):
 
         :param exadata_rack_type:
             The value to assign to the exadata_rack_type property of this ExadataDatabaseMachineConfigurationSummary.
-            Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", "FLEX"
+            Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", "FLEX", "BASE", "ELASTIC", "ELASTIC_BASE", "ELASTIC_LARGE"
         :type exadata_rack_type: str
 
         :param defined_tags:
@@ -72,6 +72,22 @@ class ExadataDatabaseMachineConfigurationSummary(ExadataConfigurationSummary):
             The value to assign to the enterprise_manager_bridge_id property of this ExadataDatabaseMachineConfigurationSummary.
         :type enterprise_manager_bridge_id: str
 
+        :param enterprise_manager_entity_identifier:
+            The value to assign to the enterprise_manager_entity_identifier property of this ExadataDatabaseMachineConfigurationSummary.
+        :type enterprise_manager_entity_identifier: str
+
+        :param enterprise_manager_console_url:
+            The value to assign to the enterprise_manager_console_url property of this ExadataDatabaseMachineConfigurationSummary.
+        :type enterprise_manager_console_url: str
+
+        :param enterprise_manager_oms_ver:
+            The value to assign to the enterprise_manager_oms_ver property of this ExadataDatabaseMachineConfigurationSummary.
+        :type enterprise_manager_oms_ver: str
+
+        :param enterprise_manager_entity_type:
+            The value to assign to the enterprise_manager_entity_type property of this ExadataDatabaseMachineConfigurationSummary.
+        :type enterprise_manager_entity_type: str
+
         """
         self.swagger_types = {
             'exadata_insight_id': 'str',
@@ -85,7 +101,11 @@ class ExadataDatabaseMachineConfigurationSummary(ExadataConfigurationSummary):
             'freeform_tags': 'dict(str, str)',
             'vmcluster_details': 'list[VmClusterSummary]',
             'enterprise_manager_identifier': 'str',
-            'enterprise_manager_bridge_id': 'str'
+            'enterprise_manager_bridge_id': 'str',
+            'enterprise_manager_entity_identifier': 'str',
+            'enterprise_manager_console_url': 'str',
+            'enterprise_manager_oms_ver': 'str',
+            'enterprise_manager_entity_type': 'str'
         }
 
         self.attribute_map = {
@@ -100,7 +120,11 @@ class ExadataDatabaseMachineConfigurationSummary(ExadataConfigurationSummary):
             'freeform_tags': 'freeformTags',
             'vmcluster_details': 'vmclusterDetails',
             'enterprise_manager_identifier': 'enterpriseManagerIdentifier',
-            'enterprise_manager_bridge_id': 'enterpriseManagerBridgeId'
+            'enterprise_manager_bridge_id': 'enterpriseManagerBridgeId',
+            'enterprise_manager_entity_identifier': 'enterpriseManagerEntityIdentifier',
+            'enterprise_manager_console_url': 'enterpriseManagerConsoleUrl',
+            'enterprise_manager_oms_ver': 'enterpriseManagerOmsVer',
+            'enterprise_manager_entity_type': 'enterpriseManagerEntityType'
         }
 
         self._exadata_insight_id = None
@@ -115,6 +139,10 @@ class ExadataDatabaseMachineConfigurationSummary(ExadataConfigurationSummary):
         self._vmcluster_details = None
         self._enterprise_manager_identifier = None
         self._enterprise_manager_bridge_id = None
+        self._enterprise_manager_entity_identifier = None
+        self._enterprise_manager_console_url = None
+        self._enterprise_manager_oms_ver = None
+        self._enterprise_manager_entity_type = None
         self._entity_source = 'EM_MANAGED_EXTERNAL_EXADATA'
 
     @property
@@ -164,6 +192,102 @@ class ExadataDatabaseMachineConfigurationSummary(ExadataConfigurationSummary):
         :type: str
         """
         self._enterprise_manager_bridge_id = enterprise_manager_bridge_id
+
+    @property
+    def enterprise_manager_entity_identifier(self):
+        """
+        **[Required]** Gets the enterprise_manager_entity_identifier of this ExadataDatabaseMachineConfigurationSummary.
+        Enterprise Manager Entity Unique Identifier
+
+
+        :return: The enterprise_manager_entity_identifier of this ExadataDatabaseMachineConfigurationSummary.
+        :rtype: str
+        """
+        return self._enterprise_manager_entity_identifier
+
+    @enterprise_manager_entity_identifier.setter
+    def enterprise_manager_entity_identifier(self, enterprise_manager_entity_identifier):
+        """
+        Sets the enterprise_manager_entity_identifier of this ExadataDatabaseMachineConfigurationSummary.
+        Enterprise Manager Entity Unique Identifier
+
+
+        :param enterprise_manager_entity_identifier: The enterprise_manager_entity_identifier of this ExadataDatabaseMachineConfigurationSummary.
+        :type: str
+        """
+        self._enterprise_manager_entity_identifier = enterprise_manager_entity_identifier
+
+    @property
+    def enterprise_manager_console_url(self):
+        """
+        **[Required]** Gets the enterprise_manager_console_url of this ExadataDatabaseMachineConfigurationSummary.
+        Enterprise Manager Console Url
+
+
+        :return: The enterprise_manager_console_url of this ExadataDatabaseMachineConfigurationSummary.
+        :rtype: str
+        """
+        return self._enterprise_manager_console_url
+
+    @enterprise_manager_console_url.setter
+    def enterprise_manager_console_url(self, enterprise_manager_console_url):
+        """
+        Sets the enterprise_manager_console_url of this ExadataDatabaseMachineConfigurationSummary.
+        Enterprise Manager Console Url
+
+
+        :param enterprise_manager_console_url: The enterprise_manager_console_url of this ExadataDatabaseMachineConfigurationSummary.
+        :type: str
+        """
+        self._enterprise_manager_console_url = enterprise_manager_console_url
+
+    @property
+    def enterprise_manager_oms_ver(self):
+        """
+        **[Required]** Gets the enterprise_manager_oms_ver of this ExadataDatabaseMachineConfigurationSummary.
+        Enterprise Manager OMS Version
+
+
+        :return: The enterprise_manager_oms_ver of this ExadataDatabaseMachineConfigurationSummary.
+        :rtype: str
+        """
+        return self._enterprise_manager_oms_ver
+
+    @enterprise_manager_oms_ver.setter
+    def enterprise_manager_oms_ver(self, enterprise_manager_oms_ver):
+        """
+        Sets the enterprise_manager_oms_ver of this ExadataDatabaseMachineConfigurationSummary.
+        Enterprise Manager OMS Version
+
+
+        :param enterprise_manager_oms_ver: The enterprise_manager_oms_ver of this ExadataDatabaseMachineConfigurationSummary.
+        :type: str
+        """
+        self._enterprise_manager_oms_ver = enterprise_manager_oms_ver
+
+    @property
+    def enterprise_manager_entity_type(self):
+        """
+        **[Required]** Gets the enterprise_manager_entity_type of this ExadataDatabaseMachineConfigurationSummary.
+        Enterprise Manager Entity Type
+
+
+        :return: The enterprise_manager_entity_type of this ExadataDatabaseMachineConfigurationSummary.
+        :rtype: str
+        """
+        return self._enterprise_manager_entity_type
+
+    @enterprise_manager_entity_type.setter
+    def enterprise_manager_entity_type(self, enterprise_manager_entity_type):
+        """
+        Sets the enterprise_manager_entity_type of this ExadataDatabaseMachineConfigurationSummary.
+        Enterprise Manager Entity Type
+
+
+        :param enterprise_manager_entity_type: The enterprise_manager_entity_type of this ExadataDatabaseMachineConfigurationSummary.
+        :type: str
+        """
+        self._enterprise_manager_entity_type = enterprise_manager_entity_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

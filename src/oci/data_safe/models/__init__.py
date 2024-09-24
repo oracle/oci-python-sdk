@@ -53,6 +53,8 @@ from .audit_trail_summary import AuditTrailSummary
 from .autonomous_database_details import AutonomousDatabaseDetails
 from .available_audit_volume_collection import AvailableAuditVolumeCollection
 from .available_audit_volume_summary import AvailableAuditVolumeSummary
+from .bulk_create_sql_firewall_allowed_sqls_details import BulkCreateSqlFirewallAllowedSqlsDetails
+from .bulk_delete_sql_firewall_allowed_sqls_details import BulkDeleteSqlFirewallAllowedSqlsDetails
 from .calculate_audit_volume_available_details import CalculateAuditVolumeAvailableDetails
 from .calculate_audit_volume_collected_details import CalculateAuditVolumeCollectedDetails
 from .change_alert_compartment_details import ChangeAlertCompartmentDetails
@@ -194,6 +196,7 @@ from .library_masking_format import LibraryMaskingFormat
 from .library_masking_format_collection import LibraryMaskingFormatCollection
 from .library_masking_format_entry import LibraryMaskingFormatEntry
 from .library_masking_format_summary import LibraryMaskingFormatSummary
+from .list_selection_mode import ListSelectionMode
 from .mask_data_details import MaskDataDetails
 from .masked_column_collection import MaskedColumnCollection
 from .masked_column_summary import MaskedColumnSummary
@@ -236,6 +239,7 @@ from .patch_merge_instruction import PatchMergeInstruction
 from .patch_remove_instruction import PatchRemoveInstruction
 from .patch_sdm_masking_policy_difference_columns_details import PatchSdmMaskingPolicyDifferenceColumnsDetails
 from .patch_sensitive_column_details import PatchSensitiveColumnDetails
+from .patch_sql_firewall_allowed_sql_details import PatchSqlFirewallAllowedSqlDetails
 from .patch_target_alert_policy_association_details import PatchTargetAlertPolicyAssociationDetails
 from .pattern_format_entry import PatternFormatEntry
 from .peer_target_database import PeerTargetDatabase
@@ -274,6 +278,7 @@ from .sql_expression_format_entry import SQLExpressionFormatEntry
 from .schedule_audit_report_details import ScheduleAuditReportDetails
 from .schedule_report_details import ScheduleReportDetails
 from .schema_summary import SchemaSummary
+from .scim_query_selection_mode import ScimQuerySelectionMode
 from .sdm_masking_policy_difference import SdmMaskingPolicyDifference
 from .sdm_masking_policy_difference_collection import SdmMaskingPolicyDifferenceCollection
 from .sdm_masking_policy_difference_column_collection import SdmMaskingPolicyDifferenceColumnCollection
@@ -302,6 +307,7 @@ from .security_policy_report import SecurityPolicyReport
 from .security_policy_report_collection import SecurityPolicyReportCollection
 from .security_policy_report_summary import SecurityPolicyReportSummary
 from .security_policy_summary import SecurityPolicySummary
+from .selection_details import SelectionDetails
 from .sensitive_category import SensitiveCategory
 from .sensitive_column import SensitiveColumn
 from .sensitive_column_collection import SensitiveColumnCollection
@@ -462,6 +468,8 @@ data_safe_type_mapping = {
     "AutonomousDatabaseDetails": AutonomousDatabaseDetails,
     "AvailableAuditVolumeCollection": AvailableAuditVolumeCollection,
     "AvailableAuditVolumeSummary": AvailableAuditVolumeSummary,
+    "BulkCreateSqlFirewallAllowedSqlsDetails": BulkCreateSqlFirewallAllowedSqlsDetails,
+    "BulkDeleteSqlFirewallAllowedSqlsDetails": BulkDeleteSqlFirewallAllowedSqlsDetails,
     "CalculateAuditVolumeAvailableDetails": CalculateAuditVolumeAvailableDetails,
     "CalculateAuditVolumeCollectedDetails": CalculateAuditVolumeCollectedDetails,
     "ChangeAlertCompartmentDetails": ChangeAlertCompartmentDetails,
@@ -603,6 +611,7 @@ data_safe_type_mapping = {
     "LibraryMaskingFormatCollection": LibraryMaskingFormatCollection,
     "LibraryMaskingFormatEntry": LibraryMaskingFormatEntry,
     "LibraryMaskingFormatSummary": LibraryMaskingFormatSummary,
+    "ListSelectionMode": ListSelectionMode,
     "MaskDataDetails": MaskDataDetails,
     "MaskedColumnCollection": MaskedColumnCollection,
     "MaskedColumnSummary": MaskedColumnSummary,
@@ -645,6 +654,7 @@ data_safe_type_mapping = {
     "PatchRemoveInstruction": PatchRemoveInstruction,
     "PatchSdmMaskingPolicyDifferenceColumnsDetails": PatchSdmMaskingPolicyDifferenceColumnsDetails,
     "PatchSensitiveColumnDetails": PatchSensitiveColumnDetails,
+    "PatchSqlFirewallAllowedSqlDetails": PatchSqlFirewallAllowedSqlDetails,
     "PatchTargetAlertPolicyAssociationDetails": PatchTargetAlertPolicyAssociationDetails,
     "PatternFormatEntry": PatternFormatEntry,
     "PeerTargetDatabase": PeerTargetDatabase,
@@ -683,6 +693,7 @@ data_safe_type_mapping = {
     "ScheduleAuditReportDetails": ScheduleAuditReportDetails,
     "ScheduleReportDetails": ScheduleReportDetails,
     "SchemaSummary": SchemaSummary,
+    "ScimQuerySelectionMode": ScimQuerySelectionMode,
     "SdmMaskingPolicyDifference": SdmMaskingPolicyDifference,
     "SdmMaskingPolicyDifferenceCollection": SdmMaskingPolicyDifferenceCollection,
     "SdmMaskingPolicyDifferenceColumnCollection": SdmMaskingPolicyDifferenceColumnCollection,
@@ -711,6 +722,7 @@ data_safe_type_mapping = {
     "SecurityPolicyReportCollection": SecurityPolicyReportCollection,
     "SecurityPolicyReportSummary": SecurityPolicyReportSummary,
     "SecurityPolicySummary": SecurityPolicySummary,
+    "SelectionDetails": SelectionDetails,
     "SensitiveCategory": SensitiveCategory,
     "SensitiveColumn": SensitiveColumn,
     "SensitiveColumnCollection": SensitiveColumnCollection,

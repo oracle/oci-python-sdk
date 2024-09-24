@@ -23,7 +23,7 @@ class DBExternalProperties(DatabaseConfigurationMetricGroup):
 
         :param metric_name:
             The value to assign to the metric_name property of this DBExternalProperties.
-            Allowed values for this property are: "DB_EXTERNAL_PROPERTIES", "DB_EXTERNAL_INSTANCE", "DB_OS_CONFIG_INSTANCE", "DB_PARAMETERS"
+            Allowed values for this property are: "DB_EXTERNAL_PROPERTIES", "DB_EXTERNAL_INSTANCE", "DB_OS_CONFIG_INSTANCE", "DB_PARAMETERS", "DB_CONNECTION_STATUS", "HOST_RESOURCE_ALLOCATION", "ASM_ENTITY", "EXADATA_CELL_CONFIG"
         :type metric_name: str
 
         :param time_collected:

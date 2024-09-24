@@ -98,7 +98,8 @@ class ExternalDatabaseBase(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ExternalDatabaseBase.
-            Allowed values for this property are: "PROVISIONING", "NOT_CONNECTED", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED"
+            Allowed values for this property are: "PROVISIONING", "NOT_CONNECTED", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param time_created:
@@ -119,7 +120,8 @@ class ExternalDatabaseBase(object):
 
         :param database_edition:
             The value to assign to the database_edition property of this ExternalDatabaseBase.
-            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
+            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_edition: str
 
         :param time_zone:
@@ -140,7 +142,8 @@ class ExternalDatabaseBase(object):
 
         :param database_configuration:
             The value to assign to the database_configuration property of this ExternalDatabaseBase.
-            Allowed values for this property are: "RAC", "SINGLE_INSTANCE"
+            Allowed values for this property are: "RAC", "SINGLE_INSTANCE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_configuration: str
 
         :param database_management_config:
@@ -390,7 +393,8 @@ class ExternalDatabaseBase(object):
         **[Required]** Gets the lifecycle_state of this ExternalDatabaseBase.
         The current state of the Oracle Cloud Infrastructure external database resource.
 
-        Allowed values for this property are: "PROVISIONING", "NOT_CONNECTED", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED"
+        Allowed values for this property are: "PROVISIONING", "NOT_CONNECTED", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The lifecycle_state of this ExternalDatabaseBase.
@@ -410,9 +414,7 @@ class ExternalDatabaseBase(object):
         """
         allowed_values = ["PROVISIONING", "NOT_CONNECTED", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
-            raise ValueError(
-                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
-            )
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
     @property
@@ -517,7 +519,8 @@ class ExternalDatabaseBase(object):
         Gets the database_edition of this ExternalDatabaseBase.
         The Oracle Database edition.
 
-        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
+        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The database_edition of this ExternalDatabaseBase.
@@ -537,9 +540,7 @@ class ExternalDatabaseBase(object):
         """
         allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"]
         if not value_allowed_none_or_none_sentinel(database_edition, allowed_values):
-            raise ValueError(
-                f"Invalid value for `database_edition`, must be None or one of {allowed_values}"
-            )
+            database_edition = 'UNKNOWN_ENUM_VALUE'
         self._database_edition = database_edition
 
     @property
@@ -648,7 +649,8 @@ class ExternalDatabaseBase(object):
         Gets the database_configuration of this ExternalDatabaseBase.
         The Oracle Database configuration
 
-        Allowed values for this property are: "RAC", "SINGLE_INSTANCE"
+        Allowed values for this property are: "RAC", "SINGLE_INSTANCE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The database_configuration of this ExternalDatabaseBase.
@@ -668,9 +670,7 @@ class ExternalDatabaseBase(object):
         """
         allowed_values = ["RAC", "SINGLE_INSTANCE"]
         if not value_allowed_none_or_none_sentinel(database_configuration, allowed_values):
-            raise ValueError(
-                f"Invalid value for `database_configuration`, must be None or one of {allowed_values}"
-            )
+            database_configuration = 'UNKNOWN_ENUM_VALUE'
         self._database_configuration = database_configuration
 
     @property

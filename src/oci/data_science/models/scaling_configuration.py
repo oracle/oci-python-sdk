@@ -35,7 +35,8 @@ class ScalingConfiguration(object):
 
         :param scaling_configuration_type:
             The value to assign to the scaling_configuration_type property of this ScalingConfiguration.
-            Allowed values for this property are: "THRESHOLD", "QUERY"
+            Allowed values for this property are: "THRESHOLD", "QUERY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type scaling_configuration_type: str
 
         :param pending_duration:
@@ -85,7 +86,8 @@ class ScalingConfiguration(object):
         **[Required]** Gets the scaling_configuration_type of this ScalingConfiguration.
         The type of scaling configuration.
 
-        Allowed values for this property are: "THRESHOLD", "QUERY"
+        Allowed values for this property are: "THRESHOLD", "QUERY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The scaling_configuration_type of this ScalingConfiguration.
@@ -105,9 +107,7 @@ class ScalingConfiguration(object):
         """
         allowed_values = ["THRESHOLD", "QUERY"]
         if not value_allowed_none_or_none_sentinel(scaling_configuration_type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `scaling_configuration_type`, must be None or one of {allowed_values}"
-            )
+            scaling_configuration_type = 'UNKNOWN_ENUM_VALUE'
         self._scaling_configuration_type = scaling_configuration_type
 
     @property

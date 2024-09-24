@@ -27,7 +27,7 @@ class MacsManagedExternalHostConfigurationSummary(HostConfigurationSummary):
 
         :param entity_source:
             The value to assign to the entity_source property of this MacsManagedExternalHostConfigurationSummary.
-            Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", "MACS_MANAGED_CLOUD_HOST", "PE_COMANAGED_HOST"
+            Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", "MACS_MANAGED_CLOUD_HOST", "PE_COMANAGED_HOST", "MACS_MANAGED_CLOUD_DB_HOST"
         :type entity_source: str
 
         :param compartment_id:

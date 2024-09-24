@@ -67,7 +67,8 @@ class ExternalExadataInfrastructureDiscoverySummary(EntityDiscovered):
 
         :param discover_status:
             The value to assign to the discover_status property of this ExternalExadataInfrastructureDiscoverySummary.
-            Allowed values for this property are: "PREV_DISCOVERED", "NEW_DISCOVERED", "NOT_FOUND", "DISCOVERING"
+            Allowed values for this property are: "PREV_DISCOVERED", "NEW_DISCOVERED", "NOT_FOUND", "DISCOVERING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type discover_status: str
 
         :param discover_error_code:
@@ -80,12 +81,14 @@ class ExternalExadataInfrastructureDiscoverySummary(EntityDiscovered):
 
         :param entity_type:
             The value to assign to the entity_type property of this ExternalExadataInfrastructureDiscoverySummary.
-            Allowed values for this property are: "STORAGE_SERVER_DISCOVER_SUMMARY", "STORAGE_GRID_DISCOVER_SUMMARY", "DATABASE_SYSTEM_DISCOVER_SUMMARY", "INFRASTRUCTURE_DISCOVER_SUMMARY", "INFRASTRUCTURE_DISCOVER"
+            Allowed values for this property are: "STORAGE_SERVER_DISCOVER_SUMMARY", "STORAGE_GRID_DISCOVER_SUMMARY", "DATABASE_SYSTEM_DISCOVER_SUMMARY", "INFRASTRUCTURE_DISCOVER_SUMMARY", "INFRASTRUCTURE_DISCOVER", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type entity_type: str
 
         :param rack_size:
             The value to assign to the rack_size property of this ExternalExadataInfrastructureDiscoverySummary.
-            Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH"
+            Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type rack_size: str
 
         """
@@ -139,7 +142,8 @@ class ExternalExadataInfrastructureDiscoverySummary(EntityDiscovered):
         Gets the rack_size of this ExternalExadataInfrastructureDiscoverySummary.
         The size of the Exadata infrastructure.
 
-        Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH"
+        Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The rack_size of this ExternalExadataInfrastructureDiscoverySummary.
@@ -159,9 +163,7 @@ class ExternalExadataInfrastructureDiscoverySummary(EntityDiscovered):
         """
         allowed_values = ["FULL", "HALF", "QUARTER", "EIGHTH"]
         if not value_allowed_none_or_none_sentinel(rack_size, allowed_values):
-            raise ValueError(
-                f"Invalid value for `rack_size`, must be None or one of {allowed_values}"
-            )
+            rack_size = 'UNKNOWN_ENUM_VALUE'
         self._rack_size = rack_size
 
     def __repr__(self):

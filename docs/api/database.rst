@@ -342,6 +342,7 @@ Database
     oci.database.models.NetworkBondingModeDetails
     oci.database.models.NodeDetails
     oci.database.models.OCPUs
+    oci.database.models.OciProviderSetKeyVersionDetails
     oci.database.models.OneoffPatch
     oci.database.models.OneoffPatchSummary
     oci.database.models.OperationsInsightsConfig
@@ -397,11 +398,13 @@ Database
     oci.database.models.SchedulingWindow
     oci.database.models.SchedulingWindowSummary
     oci.database.models.SelfMountDetails
+    oci.database.models.SetKeyVersionDetails
     oci.database.models.StackMonitoringConfig
     oci.database.models.StoragePerformanceDetails
     oci.database.models.SwitchoverDataGuardAssociationDetails
     oci.database.models.SystemVersionCollection
     oci.database.models.SystemVersionSummary
+    oci.database.models.UndeleteAutonomousDatabaseDetails
     oci.database.models.Update
     oci.database.models.UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
     oci.database.models.UpdateAutonomousContainerDatabaseDetails

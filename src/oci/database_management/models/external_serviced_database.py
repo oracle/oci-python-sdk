@@ -82,12 +82,14 @@ class ExternalServicedDatabase(object):
 
         :param database_type:
             The value to assign to the database_type property of this ExternalServicedDatabase.
-            Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", "SHARED", "DEDICATED"
+            Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", "SHARED", "DEDICATED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_type: str
 
         :param database_sub_type:
             The value to assign to the database_sub_type property of this ExternalServicedDatabase.
-            Allowed values for this property are: "CDB", "PDB", "NON_CDB", "ACD", "ADB"
+            Allowed values for this property are: "CDB", "PDB", "NON_CDB", "ACD", "ADB", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_sub_type: str
 
         :param is_managed:
@@ -233,7 +235,8 @@ class ExternalServicedDatabase(object):
         Gets the database_type of this ExternalServicedDatabase.
         The type of Oracle Database installation.
 
-        Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", "SHARED", "DEDICATED"
+        Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", "SHARED", "DEDICATED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The database_type of this ExternalServicedDatabase.
@@ -253,9 +256,7 @@ class ExternalServicedDatabase(object):
         """
         allowed_values = ["EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", "SHARED", "DEDICATED"]
         if not value_allowed_none_or_none_sentinel(database_type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `database_type`, must be None or one of {allowed_values}"
-            )
+            database_type = 'UNKNOWN_ENUM_VALUE'
         self._database_type = database_type
 
     @property
@@ -265,7 +266,8 @@ class ExternalServicedDatabase(object):
         The subtype of Oracle Database. Indicates whether the database is a Container Database,
         Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
 
-        Allowed values for this property are: "CDB", "PDB", "NON_CDB", "ACD", "ADB"
+        Allowed values for this property are: "CDB", "PDB", "NON_CDB", "ACD", "ADB", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The database_sub_type of this ExternalServicedDatabase.
@@ -286,9 +288,7 @@ class ExternalServicedDatabase(object):
         """
         allowed_values = ["CDB", "PDB", "NON_CDB", "ACD", "ADB"]
         if not value_allowed_none_or_none_sentinel(database_sub_type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `database_sub_type`, must be None or one of {allowed_values}"
-            )
+            database_sub_type = 'UNKNOWN_ENUM_VALUE'
         self._database_sub_type = database_sub_type
 
     @property

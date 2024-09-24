@@ -23,7 +23,8 @@ class OutputLink(FlowPortLink):
 
         :param model_type:
             The value to assign to the model_type property of this OutputLink.
-            Allowed values for this property are: "CONDITIONAL_INPUT_LINK", "OUTPUT_LINK", "INPUT_LINK"
+            Allowed values for this property are: "CONDITIONAL_INPUT_LINK", "OUTPUT_LINK", "INPUT_LINK", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
         :param key:

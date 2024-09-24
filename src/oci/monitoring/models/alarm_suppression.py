@@ -12,8 +12,16 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AlarmSuppression(object):
     """
-    The configuration details for a dimension-specific alarm suppression.
+    The configuration details for an alarm suppression.
     """
+
+    #: A constant which can be used with the level property of a AlarmSuppression.
+    #: This constant has a value of "ALARM"
+    LEVEL_ALARM = "ALARM"
+
+    #: A constant which can be used with the level property of a AlarmSuppression.
+    #: This constant has a value of "DIMENSION"
+    LEVEL_DIMENSION = "DIMENSION"
 
     #: A constant which can be used with the lifecycle_state property of a AlarmSuppression.
     #: This constant has a value of "ACTIVE"
@@ -39,6 +47,16 @@ class AlarmSuppression(object):
         :param alarm_suppression_target:
             The value to assign to the alarm_suppression_target property of this AlarmSuppression.
         :type alarm_suppression_target: oci.monitoring.models.AlarmSuppressionTarget
+
+        :param level:
+            The value to assign to the level property of this AlarmSuppression.
+            Allowed values for this property are: "ALARM", "DIMENSION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type level: str
+
+        :param suppression_conditions:
+            The value to assign to the suppression_conditions property of this AlarmSuppression.
+        :type suppression_conditions: list[oci.monitoring.models.SuppressionCondition]
 
         :param display_name:
             The value to assign to the display_name property of this AlarmSuppression.
@@ -87,6 +105,8 @@ class AlarmSuppression(object):
             'id': 'str',
             'compartment_id': 'str',
             'alarm_suppression_target': 'AlarmSuppressionTarget',
+            'level': 'str',
+            'suppression_conditions': 'list[SuppressionCondition]',
             'display_name': 'str',
             'description': 'str',
             'dimensions': 'dict(str, str)',
@@ -103,6 +123,8 @@ class AlarmSuppression(object):
             'id': 'id',
             'compartment_id': 'compartmentId',
             'alarm_suppression_target': 'alarmSuppressionTarget',
+            'level': 'level',
+            'suppression_conditions': 'suppressionConditions',
             'display_name': 'displayName',
             'description': 'description',
             'dimensions': 'dimensions',
@@ -118,6 +140,8 @@ class AlarmSuppression(object):
         self._id = None
         self._compartment_id = None
         self._alarm_suppression_target = None
+        self._level = None
+        self._suppression_conditions = None
         self._display_name = None
         self._description = None
         self._dimensions = None
@@ -206,6 +230,74 @@ class AlarmSuppression(object):
         self._alarm_suppression_target = alarm_suppression_target
 
     @property
+    def level(self):
+        """
+        **[Required]** Gets the level of this AlarmSuppression.
+        The level of this alarm suppression.
+        `ALARM` indicates a suppression of the entire alarm, regardless of dimension.
+        `DIMENSION` indicates a suppression configured for specified dimensions.
+
+        Allowed values for this property are: "ALARM", "DIMENSION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The level of this AlarmSuppression.
+        :rtype: str
+        """
+        return self._level
+
+    @level.setter
+    def level(self, level):
+        """
+        Sets the level of this AlarmSuppression.
+        The level of this alarm suppression.
+        `ALARM` indicates a suppression of the entire alarm, regardless of dimension.
+        `DIMENSION` indicates a suppression configured for specified dimensions.
+
+
+        :param level: The level of this AlarmSuppression.
+        :type: str
+        """
+        allowed_values = ["ALARM", "DIMENSION"]
+        if not value_allowed_none_or_none_sentinel(level, allowed_values):
+            level = 'UNKNOWN_ENUM_VALUE'
+        self._level = level
+
+    @property
+    def suppression_conditions(self):
+        """
+        Gets the suppression_conditions of this AlarmSuppression.
+        Array of all preconditions for alarm suppression.
+        Example: `[{
+          conditionType: \"RECURRENCE\",
+          suppressionRecurrence: \"FRQ=DAILY;BYHOUR=10\",
+          suppressionDuration: \"PT1H\"
+        }]`
+
+
+        :return: The suppression_conditions of this AlarmSuppression.
+        :rtype: list[oci.monitoring.models.SuppressionCondition]
+        """
+        return self._suppression_conditions
+
+    @suppression_conditions.setter
+    def suppression_conditions(self, suppression_conditions):
+        """
+        Sets the suppression_conditions of this AlarmSuppression.
+        Array of all preconditions for alarm suppression.
+        Example: `[{
+          conditionType: \"RECURRENCE\",
+          suppressionRecurrence: \"FRQ=DAILY;BYHOUR=10\",
+          suppressionDuration: \"PT1H\"
+        }]`
+
+
+        :param suppression_conditions: The suppression_conditions of this AlarmSuppression.
+        :type: list[oci.monitoring.models.SuppressionCondition]
+        """
+        self._suppression_conditions = suppression_conditions
+
+    @property
     def display_name(self):
         """
         **[Required]** Gets the display_name of this AlarmSuppression.
@@ -270,7 +362,7 @@ class AlarmSuppression(object):
     @property
     def dimensions(self):
         """
-        **[Required]** Gets the dimensions of this AlarmSuppression.
+        Gets the dimensions of this AlarmSuppression.
         Configured dimension filter for suppressing alarm state entries that include the set of specified dimension key-value pairs.
 
         Example: `{\"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"}`

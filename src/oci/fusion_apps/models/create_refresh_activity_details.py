@@ -24,6 +24,10 @@ class CreateRefreshActivityDetails(object):
             The value to assign to the source_fusion_environment_id property of this CreateRefreshActivityDetails.
         :type source_fusion_environment_id: str
 
+        :param is_data_masking_opted:
+            The value to assign to the is_data_masking_opted property of this CreateRefreshActivityDetails.
+        :type is_data_masking_opted: bool
+
         :param time_scheduled_start:
             The value to assign to the time_scheduled_start property of this CreateRefreshActivityDetails.
         :type time_scheduled_start: datetime
@@ -31,15 +35,18 @@ class CreateRefreshActivityDetails(object):
         """
         self.swagger_types = {
             'source_fusion_environment_id': 'str',
+            'is_data_masking_opted': 'bool',
             'time_scheduled_start': 'datetime'
         }
 
         self.attribute_map = {
             'source_fusion_environment_id': 'sourceFusionEnvironmentId',
+            'is_data_masking_opted': 'isDataMaskingOpted',
             'time_scheduled_start': 'timeScheduledStart'
         }
 
         self._source_fusion_environment_id = None
+        self._is_data_masking_opted = None
         self._time_scheduled_start = None
 
     @property
@@ -69,6 +76,30 @@ class CreateRefreshActivityDetails(object):
         :type: str
         """
         self._source_fusion_environment_id = source_fusion_environment_id
+
+    @property
+    def is_data_masking_opted(self):
+        """
+        Gets the is_data_masking_opted of this CreateRefreshActivityDetails.
+        Represents if the customer opted for Data Masking or not during refreshActivity.
+
+
+        :return: The is_data_masking_opted of this CreateRefreshActivityDetails.
+        :rtype: bool
+        """
+        return self._is_data_masking_opted
+
+    @is_data_masking_opted.setter
+    def is_data_masking_opted(self, is_data_masking_opted):
+        """
+        Sets the is_data_masking_opted of this CreateRefreshActivityDetails.
+        Represents if the customer opted for Data Masking or not during refreshActivity.
+
+
+        :param is_data_masking_opted: The is_data_masking_opted of this CreateRefreshActivityDetails.
+        :type: bool
+        """
+        self._is_data_masking_opted = is_data_masking_opted
 
     @property
     def time_scheduled_start(self):

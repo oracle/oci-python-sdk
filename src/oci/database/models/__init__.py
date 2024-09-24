@@ -330,6 +330,7 @@ from .move_execution_action_member_details import MoveExecutionActionMemberDetai
 from .network_bonding_mode_details import NetworkBondingModeDetails
 from .node_details import NodeDetails
 from .ocp_us import OCPUs
+from .oci_provider_set_key_version_details import OciProviderSetKeyVersionDetails
 from .oneoff_patch import OneoffPatch
 from .oneoff_patch_summary import OneoffPatchSummary
 from .operations_insights_config import OperationsInsightsConfig
@@ -385,11 +386,13 @@ from .scheduling_policy_summary import SchedulingPolicySummary
 from .scheduling_window import SchedulingWindow
 from .scheduling_window_summary import SchedulingWindowSummary
 from .self_mount_details import SelfMountDetails
+from .set_key_version_details import SetKeyVersionDetails
 from .stack_monitoring_config import StackMonitoringConfig
 from .storage_performance_details import StoragePerformanceDetails
 from .switchover_data_guard_association_details import SwitchoverDataGuardAssociationDetails
 from .system_version_collection import SystemVersionCollection
 from .system_version_summary import SystemVersionSummary
+from .undelete_autonomous_database_details import UndeleteAutonomousDatabaseDetails
 from .update import Update
 from .update_autonomous_container_database_data_guard_association_details import UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
 from .update_autonomous_container_database_details import UpdateAutonomousContainerDatabaseDetails
@@ -777,6 +780,7 @@ database_type_mapping = {
     "NetworkBondingModeDetails": NetworkBondingModeDetails,
     "NodeDetails": NodeDetails,
     "OCPUs": OCPUs,
+    "OciProviderSetKeyVersionDetails": OciProviderSetKeyVersionDetails,
     "OneoffPatch": OneoffPatch,
     "OneoffPatchSummary": OneoffPatchSummary,
     "OperationsInsightsConfig": OperationsInsightsConfig,
@@ -832,11 +836,13 @@ database_type_mapping = {
     "SchedulingWindow": SchedulingWindow,
     "SchedulingWindowSummary": SchedulingWindowSummary,
     "SelfMountDetails": SelfMountDetails,
+    "SetKeyVersionDetails": SetKeyVersionDetails,
     "StackMonitoringConfig": StackMonitoringConfig,
     "StoragePerformanceDetails": StoragePerformanceDetails,
     "SwitchoverDataGuardAssociationDetails": SwitchoverDataGuardAssociationDetails,
     "SystemVersionCollection": SystemVersionCollection,
     "SystemVersionSummary": SystemVersionSummary,
+    "UndeleteAutonomousDatabaseDetails": UndeleteAutonomousDatabaseDetails,
     "Update": Update,
     "UpdateAutonomousContainerDatabaseDataGuardAssociationDetails": UpdateAutonomousContainerDatabaseDataGuardAssociationDetails,
     "UpdateAutonomousContainerDatabaseDetails": UpdateAutonomousContainerDatabaseDetails,

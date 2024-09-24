@@ -125,7 +125,7 @@ class HostContainers(HostPerformanceMetricGroup):
     def container_image(self):
         """
         Gets the container_image of this HostContainers.
-        Container Image (may include tag version)
+        Container Image
 
 
         :return: The container_image of this HostContainers.
@@ -137,7 +137,7 @@ class HostContainers(HostPerformanceMetricGroup):
     def container_image(self, container_image):
         """
         Sets the container_image of this HostContainers.
-        Container Image (may include tag version)
+        Container Image
 
 
         :param container_image: The container_image of this HostContainers.

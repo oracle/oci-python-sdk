@@ -30,7 +30,8 @@ class ConnectorAttribute(object):
 
         :param model_type:
             The value to assign to the model_type property of this ConnectorAttribute.
-            Allowed values for this property are: "EXTERNAL_STORAGE"
+            Allowed values for this property are: "EXTERNAL_STORAGE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
         """
@@ -63,7 +64,8 @@ class ConnectorAttribute(object):
         **[Required]** Gets the model_type of this ConnectorAttribute.
         The type of the abstract read attribute.
 
-        Allowed values for this property are: "EXTERNAL_STORAGE"
+        Allowed values for this property are: "EXTERNAL_STORAGE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The model_type of this ConnectorAttribute.
@@ -83,9 +85,7 @@ class ConnectorAttribute(object):
         """
         allowed_values = ["EXTERNAL_STORAGE"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `model_type`, must be None or one of {allowed_values}"
-            )
+            model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type
 
     def __repr__(self):

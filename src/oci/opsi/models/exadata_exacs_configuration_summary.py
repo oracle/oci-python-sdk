@@ -27,7 +27,7 @@ class ExadataExacsConfigurationSummary(ExadataConfigurationSummary):
 
         :param entity_source:
             The value to assign to the entity_source property of this ExadataExacsConfigurationSummary.
-            Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA"
+            Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA", "MACS_MANAGED_CLOUD_EXADATA"
         :type entity_source: str
 
         :param compartment_id:
@@ -49,7 +49,7 @@ class ExadataExacsConfigurationSummary(ExadataConfigurationSummary):
 
         :param exadata_rack_type:
             The value to assign to the exadata_rack_type property of this ExadataExacsConfigurationSummary.
-            Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", "FLEX"
+            Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", "FLEX", "BASE", "ELASTIC", "ELASTIC_BASE", "ELASTIC_LARGE"
         :type exadata_rack_type: str
 
         :param defined_tags:

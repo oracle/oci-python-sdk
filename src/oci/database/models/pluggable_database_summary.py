@@ -149,6 +149,14 @@ class PluggableDatabaseSummary(object):
             The value to assign to the pluggable_database_management_config property of this PluggableDatabaseSummary.
         :type pluggable_database_management_config: oci.database.models.PluggableDatabaseManagementConfig
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this PluggableDatabaseSummary.
+        :type kms_key_id: str
+
+        :param kms_key_version_id:
+            The value to assign to the kms_key_version_id property of this PluggableDatabaseSummary.
+        :type kms_key_version_id: str
+
         :param refreshable_clone_config:
             The value to assign to the refreshable_clone_config property of this PluggableDatabaseSummary.
         :type refreshable_clone_config: oci.database.models.PluggableDatabaseRefreshableCloneConfig
@@ -172,6 +180,8 @@ class PluggableDatabaseSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'pluggable_database_management_config': 'PluggableDatabaseManagementConfig',
+            'kms_key_id': 'str',
+            'kms_key_version_id': 'str',
             'refreshable_clone_config': 'PluggableDatabaseRefreshableCloneConfig',
             'pdb_node_level_details': 'list[PluggableDatabaseNodeLevelDetails]'
         }
@@ -190,6 +200,8 @@ class PluggableDatabaseSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'pluggable_database_management_config': 'pluggableDatabaseManagementConfig',
+            'kms_key_id': 'kmsKeyId',
+            'kms_key_version_id': 'kmsKeyVersionId',
             'refreshable_clone_config': 'refreshableCloneConfig',
             'pdb_node_level_details': 'pdbNodeLevelDetails'
         }
@@ -207,6 +219,8 @@ class PluggableDatabaseSummary(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._pluggable_database_management_config = None
+        self._kms_key_id = None
+        self._kms_key_version_id = None
         self._refreshable_clone_config = None
         self._pdb_node_level_details = None
 
@@ -557,6 +571,54 @@ class PluggableDatabaseSummary(object):
         :type: oci.database.models.PluggableDatabaseManagementConfig
         """
         self._pluggable_database_management_config = pluggable_database_management_config
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this PluggableDatabaseSummary.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :return: The kms_key_id of this PluggableDatabaseSummary.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this PluggableDatabaseSummary.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :param kms_key_id: The kms_key_id of this PluggableDatabaseSummary.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
+
+    @property
+    def kms_key_version_id(self):
+        """
+        Gets the kms_key_version_id of this PluggableDatabaseSummary.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+
+
+        :return: The kms_key_version_id of this PluggableDatabaseSummary.
+        :rtype: str
+        """
+        return self._kms_key_version_id
+
+    @kms_key_version_id.setter
+    def kms_key_version_id(self, kms_key_version_id):
+        """
+        Sets the kms_key_version_id of this PluggableDatabaseSummary.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+
+
+        :param kms_key_version_id: The kms_key_version_id of this PluggableDatabaseSummary.
+        :type: str
+        """
+        self._kms_key_version_id = kms_key_version_id
 
     @property
     def refreshable_clone_config(self):

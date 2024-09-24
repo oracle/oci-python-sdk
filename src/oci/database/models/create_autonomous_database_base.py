@@ -71,6 +71,10 @@ class CreateAutonomousDatabaseBase(object):
     SOURCE_BACKUP_FROM_TIMESTAMP = "BACKUP_FROM_TIMESTAMP"
 
     #: A constant which can be used with the source property of a CreateAutonomousDatabaseBase.
+    #: This constant has a value of "UNDELETE_ADB"
+    SOURCE_UNDELETE_ADB = "UNDELETE_ADB"
+
+    #: A constant which can be used with the source property of a CreateAutonomousDatabaseBase.
     #: This constant has a value of "CLONE_TO_REFRESHABLE"
     SOURCE_CLONE_TO_REFRESHABLE = "CLONE_TO_REFRESHABLE"
 
@@ -95,6 +99,7 @@ class CreateAutonomousDatabaseBase(object):
         Initializes a new CreateAutonomousDatabaseBase object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.database.models.UndeleteAutonomousDatabaseDetails`
         * :class:`~oci.database.models.CreateAutonomousDatabaseCloneDetails`
         * :class:`~oci.database.models.CreateRefreshableAutonomousDatabaseCloneDetails`
         * :class:`~oci.database.models.CreateAutonomousDatabaseFromBackupDetails`
@@ -267,7 +272,7 @@ class CreateAutonomousDatabaseBase(object):
 
         :param source:
             The value to assign to the source property of this CreateAutonomousDatabaseBase.
-            Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "CLONE_TO_REFRESHABLE", "CROSS_REGION_DATAGUARD", "CROSS_REGION_DISASTER_RECOVERY"
+            Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "UNDELETE_ADB", "CLONE_TO_REFRESHABLE", "CROSS_REGION_DATAGUARD", "CROSS_REGION_DISASTER_RECOVERY"
         :type source: str
 
         :param customer_contacts:
@@ -483,6 +488,9 @@ class CreateAutonomousDatabaseBase(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['source']
+
+        if type == 'UNDELETE_ADB':
+            return 'UndeleteAutonomousDatabaseDetails'
 
         if type == 'DATABASE':
             return 'CreateAutonomousDatabaseCloneDetails'
@@ -1742,7 +1750,7 @@ class CreateAutonomousDatabaseBase(object):
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/
         __ https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/clone-autonomous-database.html#GUID-D771796F-5081-4CFB-A7FF-0F893EABD7BC
 
-        Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "CLONE_TO_REFRESHABLE", "CROSS_REGION_DATAGUARD", "CROSS_REGION_DISASTER_RECOVERY"
+        Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "UNDELETE_ADB", "CLONE_TO_REFRESHABLE", "CROSS_REGION_DATAGUARD", "CROSS_REGION_DISASTER_RECOVERY"
 
 
         :return: The source of this CreateAutonomousDatabaseBase.
@@ -1765,7 +1773,7 @@ class CreateAutonomousDatabaseBase(object):
         :param source: The source of this CreateAutonomousDatabaseBase.
         :type: str
         """
-        allowed_values = ["NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "CLONE_TO_REFRESHABLE", "CROSS_REGION_DATAGUARD", "CROSS_REGION_DISASTER_RECOVERY"]
+        allowed_values = ["NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "UNDELETE_ADB", "CLONE_TO_REFRESHABLE", "CROSS_REGION_DATAGUARD", "CROSS_REGION_DISASTER_RECOVERY"]
         if not value_allowed_none_or_none_sentinel(source, allowed_values):
             raise ValueError(
                 f"Invalid value for `source`, must be None or one of {allowed_values}"

@@ -35,7 +35,8 @@ class AbstractDataOperationConfig(object):
 
         :param model_type:
             The value to assign to the model_type property of this AbstractDataOperationConfig.
-            Allowed values for this property are: "READ_OPERATION_CONFIG", "WRITE_OPERATION_CONFIG"
+            Allowed values for this property are: "READ_OPERATION_CONFIG", "WRITE_OPERATION_CONFIG", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
         :param metadata_config_properties:
@@ -92,7 +93,8 @@ class AbstractDataOperationConfig(object):
         **[Required]** Gets the model_type of this AbstractDataOperationConfig.
         The type of data operation.
 
-        Allowed values for this property are: "READ_OPERATION_CONFIG", "WRITE_OPERATION_CONFIG"
+        Allowed values for this property are: "READ_OPERATION_CONFIG", "WRITE_OPERATION_CONFIG", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The model_type of this AbstractDataOperationConfig.
@@ -112,9 +114,7 @@ class AbstractDataOperationConfig(object):
         """
         allowed_values = ["READ_OPERATION_CONFIG", "WRITE_OPERATION_CONFIG"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `model_type`, must be None or one of {allowed_values}"
-            )
+            model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type
 
     @property

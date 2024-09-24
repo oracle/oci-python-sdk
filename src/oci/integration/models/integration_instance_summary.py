@@ -63,10 +63,6 @@ class IntegrationInstanceSummary(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
-    #: A constant which can be used with the lifecycle_state property of a IntegrationInstanceSummary.
-    #: This constant has a value of "STANDBY"
-    LIFECYCLE_STATE_STANDBY = "STANDBY"
-
     #: A constant which can be used with the consumption_model property of a IntegrationInstanceSummary.
     #: This constant has a value of "UCM"
     CONSUMPTION_MODEL_UCM = "UCM"
@@ -132,7 +128,7 @@ class IntegrationInstanceSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this IntegrationInstanceSummary.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "STANDBY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -147,6 +143,10 @@ class IntegrationInstanceSummary(object):
         :param instance_url:
             The value to assign to the instance_url property of this IntegrationInstanceSummary.
         :type instance_url: str
+
+        :param instance_design_time_url:
+            The value to assign to the instance_design_time_url property of this IntegrationInstanceSummary.
+        :type instance_design_time_url: str
 
         :param message_packs:
             The value to assign to the message_packs property of this IntegrationInstanceSummary.
@@ -218,6 +218,7 @@ class IntegrationInstanceSummary(object):
             'state_message': 'str',
             'is_byol': 'bool',
             'instance_url': 'str',
+            'instance_design_time_url': 'str',
             'message_packs': 'int',
             'is_file_server_enabled': 'bool',
             'is_visual_builder_enabled': 'bool',
@@ -244,6 +245,7 @@ class IntegrationInstanceSummary(object):
             'state_message': 'stateMessage',
             'is_byol': 'isByol',
             'instance_url': 'instanceUrl',
+            'instance_design_time_url': 'instanceDesignTimeUrl',
             'message_packs': 'messagePacks',
             'is_file_server_enabled': 'isFileServerEnabled',
             'is_visual_builder_enabled': 'isVisualBuilderEnabled',
@@ -269,6 +271,7 @@ class IntegrationInstanceSummary(object):
         self._state_message = None
         self._is_byol = None
         self._instance_url = None
+        self._instance_design_time_url = None
         self._message_packs = None
         self._is_file_server_enabled = None
         self._is_visual_builder_enabled = None
@@ -443,7 +446,7 @@ class IntegrationInstanceSummary(object):
         Gets the lifecycle_state of this IntegrationInstanceSummary.
         The current state of the Integration Instance.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "STANDBY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -462,7 +465,7 @@ class IntegrationInstanceSummary(object):
         :param lifecycle_state: The lifecycle_state of this IntegrationInstanceSummary.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "STANDBY"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -538,6 +541,30 @@ class IntegrationInstanceSummary(object):
         :type: str
         """
         self._instance_url = instance_url
+
+    @property
+    def instance_design_time_url(self):
+        """
+        Gets the instance_design_time_url of this IntegrationInstanceSummary.
+        The Integration Instance Design Time URL
+
+
+        :return: The instance_design_time_url of this IntegrationInstanceSummary.
+        :rtype: str
+        """
+        return self._instance_design_time_url
+
+    @instance_design_time_url.setter
+    def instance_design_time_url(self, instance_design_time_url):
+        """
+        Sets the instance_design_time_url of this IntegrationInstanceSummary.
+        The Integration Instance Design Time URL
+
+
+        :param instance_design_time_url: The instance_design_time_url of this IntegrationInstanceSummary.
+        :type: str
+        """
+        self._instance_design_time_url = instance_design_time_url
 
     @property
     def message_packs(self):

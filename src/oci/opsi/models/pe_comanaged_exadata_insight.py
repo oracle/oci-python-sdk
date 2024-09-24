@@ -19,6 +19,10 @@ class PeComanagedExadataInsight(ExadataInsight):
     #: This constant has a value of "cloudExadataInfrastructure"
     EXADATA_INFRA_RESOURCE_TYPE_CLOUD_EXADATA_INFRASTRUCTURE = "cloudExadataInfrastructure"
 
+    #: A constant which can be used with the exadata_infra_resource_type property of a PeComanagedExadataInsight.
+    #: This constant has a value of "exadataInfrastructure"
+    EXADATA_INFRA_RESOURCE_TYPE_EXADATA_INFRASTRUCTURE = "exadataInfrastructure"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PeComanagedExadataInsight object with values from keyword arguments. The default value of the :py:attr:`~oci.opsi.models.PeComanagedExadataInsight.entity_source` attribute
@@ -27,7 +31,7 @@ class PeComanagedExadataInsight(ExadataInsight):
 
         :param entity_source:
             The value to assign to the entity_source property of this PeComanagedExadataInsight.
-            Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA", "MACS_MANAGED_CLOUD_EXADATA", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type entity_source: str
 
@@ -55,7 +59,7 @@ class PeComanagedExadataInsight(ExadataInsight):
 
         :param exadata_rack_type:
             The value to assign to the exadata_rack_type property of this PeComanagedExadataInsight.
-            Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", "FLEX", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "FULL", "HALF", "QUARTER", "EIGHTH", "FLEX", "BASE", "ELASTIC", "ELASTIC_BASE", "ELASTIC_LARGE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type exadata_rack_type: str
 
@@ -105,7 +109,7 @@ class PeComanagedExadataInsight(ExadataInsight):
 
         :param exadata_infra_resource_type:
             The value to assign to the exadata_infra_resource_type property of this PeComanagedExadataInsight.
-            Allowed values for this property are: "cloudExadataInfrastructure", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "cloudExadataInfrastructure", "exadataInfrastructure", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type exadata_infra_resource_type: str
 
@@ -213,7 +217,7 @@ class PeComanagedExadataInsight(ExadataInsight):
         **[Required]** Gets the exadata_infra_resource_type of this PeComanagedExadataInsight.
         OCI exadata infrastructure resource type
 
-        Allowed values for this property are: "cloudExadataInfrastructure", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "cloudExadataInfrastructure", "exadataInfrastructure", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -232,7 +236,7 @@ class PeComanagedExadataInsight(ExadataInsight):
         :param exadata_infra_resource_type: The exadata_infra_resource_type of this PeComanagedExadataInsight.
         :type: str
         """
-        allowed_values = ["cloudExadataInfrastructure"]
+        allowed_values = ["cloudExadataInfrastructure", "exadataInfrastructure"]
         if not value_allowed_none_or_none_sentinel(exadata_infra_resource_type, allowed_values):
             exadata_infra_resource_type = 'UNKNOWN_ENUM_VALUE'
         self._exadata_infra_resource_type = exadata_infra_resource_type

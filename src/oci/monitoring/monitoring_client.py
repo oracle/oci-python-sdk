@@ -352,7 +352,10 @@ class MonitoringClient(object):
 
     def create_alarm_suppression(self, create_alarm_suppression_details, **kwargs):
         """
-        Creates a dimension-specific suppression for an alarm.
+        Creates a new alarm suppression at the specified level (alarm-wide or dimension-specific).
+        For more information, see
+        `Adding an Alarm-wide Suppression`__ and
+        `Adding a Dimension-Specific Alarm Suppression`__.
 
         For important limits information, see
         `Limits on Monitoring`__.
@@ -361,6 +364,8 @@ class MonitoringClient(object):
         Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
         or transactions, per second (TPS) for a given tenancy.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/add-alarm-suppression.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-suppression.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits
 
 
@@ -573,7 +578,9 @@ class MonitoringClient(object):
 
     def delete_alarm_suppression(self, alarm_suppression_id, **kwargs):
         """
-        Deletes the specified alarm suppression.
+        Deletes the specified alarm suppression. For more information, see
+        `Removing an Alarm-wide Suppression`__ and
+        `Removing a Dimension-Specific Alarm Suppression`__.
 
         For important limits information, see
         `Limits on Monitoring`__.
@@ -582,6 +589,8 @@ class MonitoringClient(object):
         Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
         or transactions, per second (TPS) for a given tenancy.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/remove-alarm-suppression.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/delete-alarm-suppression.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits
 
 
@@ -966,7 +975,8 @@ class MonitoringClient(object):
 
     def get_alarm_suppression(self, alarm_suppression_id, **kwargs):
         """
-        Gets the specified alarm suppression.
+        Gets the specified alarm suppression. For more information, see
+        `Getting an Alarm-wide Suppression`__.
 
         For important limits information, see
         `Limits on Monitoring`__.
@@ -975,6 +985,7 @@ class MonitoringClient(object):
         Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
         or transactions, per second (TPS) for a given tenancy.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-suppression.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits
 
 
@@ -1072,10 +1083,10 @@ class MonitoringClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def list_alarm_suppressions(self, alarm_id, **kwargs):
+    def list_alarm_suppressions(self, **kwargs):
         """
-        Lists alarm suppressions for the specified alarm.
-        Only dimension-level suppressions are listed. Alarm-level suppressions are not listed.
+        Lists alarm suppressions for the specified alarm. For more information, see
+        `Listing Alarm Suppressions`__.
 
         For important limits information, see
         `Limits on Monitoring`__.
@@ -1084,27 +1095,69 @@ class MonitoringClient(object):
         Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
         or transactions, per second (TPS) for a given tenancy.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-suppression.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits
 
-
-        :param str alarm_id: (required)
-            The `OCID`__ of the alarm that is the target of the alarm suppression.
-
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Customer part of the request identifier token. If you need to contact Oracle about a particular
             request, please provide the complete request ID.
 
+        :param str alarm_id: (optional)
+            The `OCID`__ of the alarm that is the target of the alarm suppression.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
-            Use this filter to list a alarm suppression by name.
+            Use this filter to list an alarm suppression by name.
             Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state exactly. When not specified, only resources in the ACTIVE lifecycle state are listed.
 
             Allowed values are: "ACTIVE", "DELETED"
+
+        :param str level: (optional)
+            The level of this alarm suppression.
+            `ALARM` indicates a suppression of the entire alarm, regardless of dimension.
+            `DIMENSION` indicates a suppression configured for specified dimensions.
+
+            Allowed values are: "ALARM", "DIMENSION"
+
+        :param str compartment_id: (optional)
+            The `OCID`__ of the compartment for searching.
+            Use the tenancy OCID to search in the root compartment.
+
+            If targetType is not specified, searches all suppressions defined under the compartment.
+            If targetType is `COMPARTMENT`, searches suppressions in the specified compartment only.
+
+            Example: `ocid1.compartment.oc1..exampleuniqueID`
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param bool compartment_id_in_subtree: (optional)
+            When true, returns resources from all compartments and subcompartments. The parameter can
+            only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment).
+            A true value requires the user to have tenancy-level permissions. If this requirement is not met,
+            then the call is rejected. When false, returns resources from only the compartment specified in
+            compartmentId. Default is false.
+
+        :param str target_type: (optional)
+            The target type to use when listing alarm suppressions.
+            `ALARM` lists all suppression records for the specified alarm.
+            `COMPARTMENT` lists all suppression records for the specified compartment or tenancy.
+
+            Allowed values are: "ALARM", "COMPARTMENT"
+
+        :param bool is_all_suppressions: (optional)
+            Setting this parameter to true requires the query to specify the alarm (`alarmId`).
+
+            When true, lists all alarm suppressions that affect the specified alarm,
+            including suppressions that target the corresponding compartment or tenancy.
+            When false, lists only the alarm suppressions that target the specified alarm.
+
+            Default is false.
 
         :param str sort_by: (optional)
             The field to use when sorting returned alarm suppressions. Only one sorting level is provided.
@@ -1157,7 +1210,7 @@ class MonitoringClient(object):
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/monitoring/list_alarm_suppressions.py.html>`__ to see an example of how to use list_alarm_suppressions API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
-        required_arguments = ['alarmId']
+        required_arguments = []
         resource_path = "/alarmSuppressions"
         method = "GET"
         operation_name = "list_alarm_suppressions"
@@ -1168,8 +1221,14 @@ class MonitoringClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
+            "alarm_id",
             "display_name",
             "lifecycle_state",
+            "level",
+            "compartment_id",
+            "compartment_id_in_subtree",
+            "target_type",
+            "is_all_suppressions",
             "sort_by",
             "sort_order",
             "page",
@@ -1187,6 +1246,20 @@ class MonitoringClient(object):
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
+        if 'level' in kwargs:
+            level_allowed_values = ["ALARM", "DIMENSION"]
+            if kwargs['level'] not in level_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `level`, must be one of { level_allowed_values }"
+                )
+
+        if 'target_type' in kwargs:
+            target_type_allowed_values = ["ALARM", "COMPARTMENT"]
+            if kwargs['target_type'] not in target_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `target_type`, must be one of { target_type_allowed_values }"
+                )
+
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "timeCreated", "timeSuppressFrom"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
@@ -1202,9 +1275,14 @@ class MonitoringClient(object):
                 )
 
         query_params = {
-            "alarmId": alarm_id,
+            "alarmId": kwargs.get("alarm_id", missing),
             "displayName": kwargs.get("display_name", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "level": kwargs.get("level", missing),
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "targetType": kwargs.get("target_type", missing),
+            "isAllSuppressions": kwargs.get("is_all_suppressions", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "page": kwargs.get("page", missing),
@@ -1449,6 +1527,7 @@ class MonitoringClient(object):
         Status is collective, across all metric streams in the alarm.
         To list alarm status for each metric stream, use :func:`retrieve_dimension_states`.
         Optionally filter by resource or status value.
+
         For more information, see
         `Listing Alarm Statuses`__.
         For important limits information, see
@@ -2063,6 +2142,7 @@ class MonitoringClient(object):
         """
         Lists the current alarm status of each metric stream, where status is derived from the metric stream's last associated transition.
         Optionally filter by status value and one or more dimension key-value pairs.
+
         For more information, see
         `Listing Metric Stream Status in an Alarm`__.
 
@@ -2207,7 +2287,8 @@ class MonitoringClient(object):
 
     def summarize_alarm_suppression_history(self, alarm_id, **kwargs):
         """
-        Returns history of suppressions for the specified alarm, including both dimension-specific and and alarm-wide suppressions.
+        Returns history of suppressions for the specified alarm, including both dimension-specific and and alarm-wide suppressions. For more information, see
+        `Getting Suppression History for an Alarm`__.
 
         For important limits information, see
         `Limits on Monitoring`__.
@@ -2216,6 +2297,7 @@ class MonitoringClient(object):
         Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
         or transactions, per second (TPS) for a given tenancy.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/summarize-alarm-suppression-history.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits
 
 

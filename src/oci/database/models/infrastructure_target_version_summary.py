@@ -48,7 +48,8 @@ class InfrastructureTargetVersionSummary(object):
 
         :param target_resource_type:
             The value to assign to the target_resource_type property of this InfrastructureTargetVersionSummary.
-            Allowed values for this property are: "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE"
+            Allowed values for this property are: "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type target_resource_type: str
 
         :param target_resource_id:
@@ -129,7 +130,8 @@ class InfrastructureTargetVersionSummary(object):
         Gets the target_resource_type of this InfrastructureTargetVersionSummary.
         The resource type of the target Exadata infrastructure resource that will receive the system software update.
 
-        Allowed values for this property are: "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE"
+        Allowed values for this property are: "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The target_resource_type of this InfrastructureTargetVersionSummary.
@@ -149,9 +151,7 @@ class InfrastructureTargetVersionSummary(object):
         """
         allowed_values = ["EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE"]
         if not value_allowed_none_or_none_sentinel(target_resource_type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `target_resource_type`, must be None or one of {allowed_values}"
-            )
+            target_resource_type = 'UNKNOWN_ENUM_VALUE'
         self._target_resource_type = target_resource_type
 
     @property

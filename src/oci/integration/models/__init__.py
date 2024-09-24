@@ -6,6 +6,7 @@
 
 from __future__ import absolute_import
 
+from .add_oracle_managed_custom_endpoint_details import AddOracleManagedCustomEndpointDetails
 from .attachment_details import AttachmentDetails
 from .change_integration_instance_compartment_details import ChangeIntegrationInstanceCompartmentDetails
 from .change_integration_instance_network_endpoint_details import ChangeIntegrationInstanceNetworkEndpointDetails
@@ -33,6 +34,7 @@ from .work_request_summary import WorkRequestSummary
 
 # Maps type names to classes for integration services.
 integration_type_mapping = {
+    "AddOracleManagedCustomEndpointDetails": AddOracleManagedCustomEndpointDetails,
     "AttachmentDetails": AttachmentDetails,
     "ChangeIntegrationInstanceCompartmentDetails": ChangeIntegrationInstanceCompartmentDetails,
     "ChangeIntegrationInstanceNetworkEndpointDetails": ChangeIntegrationInstanceNetworkEndpointDetails,

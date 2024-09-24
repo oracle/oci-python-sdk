@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AlarmSuppressionCollection(object):
     """
-    Collection of property summaries for dimension-specific alarm suppressions.
+    Collection of property summaries for alarm suppressions.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class AlarmSuppressionCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this AlarmSuppressionCollection.
-        List of property summaries for dimension-specific alarm suppressions.
+        List of property summaries for alarm suppressions.
 
 
         :return: The items of this AlarmSuppressionCollection.
@@ -51,7 +51,7 @@ class AlarmSuppressionCollection(object):
     def items(self, items):
         """
         Sets the items of this AlarmSuppressionCollection.
-        List of property summaries for dimension-specific alarm suppressions.
+        List of property summaries for alarm suppressions.
 
 
         :param items: The items of this AlarmSuppressionCollection.
