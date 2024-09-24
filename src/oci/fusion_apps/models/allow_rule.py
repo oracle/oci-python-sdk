@@ -21,7 +21,7 @@ class AllowRule(Rule):
     *  You can specify this rule only with the following `RuleCondition` combinations:
     *  `SOURCE_IP_ADDRESS`
     *  `SOURCE_VCN_ID`
-    *  `SOURCE_VCN_ID\", \"SOURCE_VCN_IP_ADDRESS`
+    *  `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
     """
 
     def __init__(self, **kwargs):

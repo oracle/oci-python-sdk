@@ -23,7 +23,7 @@ class AlarmSuppressionAlarmTarget(AlarmSuppressionTarget):
 
         :param target_type:
             The value to assign to the target_type property of this AlarmSuppressionAlarmTarget.
-            Allowed values for this property are: "ALARM"
+            Allowed values for this property are: "ALARM", "COMPARTMENT"
         :type target_type: str
 
         :param alarm_id:

@@ -20,6 +20,7 @@ Opsi
 
     oci.opsi.models.AddEmManagedExternalExadataInsightMembersDetails
     oci.opsi.models.AddExadataInsightMembersDetails
+    oci.opsi.models.AddMacsManagedCloudExadataInsightMembersDetails
     oci.opsi.models.AddPeComanagedExadataInsightMembersDetails
     oci.opsi.models.AddmDbCollection
     oci.opsi.models.AddmDbFindingAggregation
@@ -95,6 +96,7 @@ Opsi
     oci.opsi.models.ChangeEnterpriseManagerBridgeCompartmentDetails
     oci.opsi.models.ChangeExadataInsightCompartmentDetails
     oci.opsi.models.ChangeHostInsightCompartmentDetails
+    oci.opsi.models.ChangeMacsManagedCloudDatabaseInsightConnectionDetails
     oci.opsi.models.ChangeNewsReportCompartmentDetails
     oci.opsi.models.ChangeOperationsInsightsPrivateEndpointCompartmentDetails
     oci.opsi.models.ChangeOperationsInsightsWarehouseCompartmentDetails
@@ -122,6 +124,10 @@ Opsi
     oci.opsi.models.CreateEnterpriseManagerBridgeDetails
     oci.opsi.models.CreateExadataInsightDetails
     oci.opsi.models.CreateHostInsightDetails
+    oci.opsi.models.CreateMacsManagedCloudDatabaseInsightDetails
+    oci.opsi.models.CreateMacsManagedCloudExadataClusterDetails
+    oci.opsi.models.CreateMacsManagedCloudExadataInsightDetails
+    oci.opsi.models.CreateMacsManagedCloudExadataVmclusterDetails
     oci.opsi.models.CreateMacsManagedCloudHostInsightDetails
     oci.opsi.models.CreateMacsManagedExternalHostInsightDetails
     oci.opsi.models.CreateMdsMySqlDatabaseInsightDetails
@@ -137,6 +143,7 @@ Opsi
     oci.opsi.models.CredentialByVault
     oci.opsi.models.CredentialDetails
     oci.opsi.models.CredentialsBySource
+    oci.opsi.models.DBConnectionStatus
     oci.opsi.models.DBExternalInstance
     oci.opsi.models.DBExternalProperties
     oci.opsi.models.DBOSConfigInstance
@@ -186,6 +193,8 @@ Opsi
     oci.opsi.models.EnableEmManagedExternalHostInsightDetails
     oci.opsi.models.EnableExadataInsightDetails
     oci.opsi.models.EnableHostInsightDetails
+    oci.opsi.models.EnableMacsManagedCloudDatabaseInsightDetails
+    oci.opsi.models.EnableMacsManagedCloudExadataInsightDetails
     oci.opsi.models.EnableMacsManagedCloudHostInsightDetails
     oci.opsi.models.EnableMacsManagedExternalHostInsightDetails
     oci.opsi.models.EnableMdsMySqlDatabaseInsightDetails
@@ -195,12 +204,15 @@ Opsi
     oci.opsi.models.EnterpriseManagerBridgeCollection
     oci.opsi.models.EnterpriseManagerBridgeSummary
     oci.opsi.models.EnterpriseManagerBridges
+    oci.opsi.models.ExadataAsmEntity
+    oci.opsi.models.ExadataCellConfig
     oci.opsi.models.ExadataConfigurationCollection
     oci.opsi.models.ExadataConfigurationSummary
     oci.opsi.models.ExadataDatabaseMachineConfigurationSummary
     oci.opsi.models.ExadataDatabaseStatisticsSummary
     oci.opsi.models.ExadataDetails
     oci.opsi.models.ExadataDiskgroupStatisticsSummary
+    oci.opsi.models.ExadataExaccConfigurationSummary
     oci.opsi.models.ExadataExacsConfigurationSummary
     oci.opsi.models.ExadataHostStatisticsSummary
     oci.opsi.models.ExadataInsight
@@ -219,6 +231,7 @@ Opsi
     oci.opsi.models.ExadataMemberSummary
     oci.opsi.models.ExadataStorageServerStatisticsSummary
     oci.opsi.models.HistoricalDataItem
+    oci.opsi.models.HostAllocation
     oci.opsi.models.HostConfigurationCollection
     oci.opsi.models.HostConfigurationMetricGroup
     oci.opsi.models.HostConfigurationSummary
@@ -293,6 +306,14 @@ Opsi
     oci.opsi.models.IngestSqlTextResponseDetails
     oci.opsi.models.InstanceMetrics
     oci.opsi.models.ListObjects
+    oci.opsi.models.MacsManagedCloudDatabaseConfigurationSummary
+    oci.opsi.models.MacsManagedCloudDatabaseHostInsight
+    oci.opsi.models.MacsManagedCloudDatabaseHostInsightSummary
+    oci.opsi.models.MacsManagedCloudDatabaseInsight
+    oci.opsi.models.MacsManagedCloudDatabaseInsightSummary
+    oci.opsi.models.MacsManagedCloudDbHostConfigurationSummary
+    oci.opsi.models.MacsManagedCloudExadataInsight
+    oci.opsi.models.MacsManagedCloudExadataInsightSummary
     oci.opsi.models.MacsManagedCloudHostConfigurationSummary
     oci.opsi.models.MacsManagedCloudHostInsight
     oci.opsi.models.MacsManagedCloudHostInsightSummary
@@ -433,6 +454,7 @@ Opsi
     oci.opsi.models.SummaryStatistics
     oci.opsi.models.TablespaceUsageTrend
     oci.opsi.models.TablespaceUsageTrendAggregation
+    oci.opsi.models.TestMacsManagedCloudDatabaseInsightConnectionDetails
     oci.opsi.models.TopProcessesUsage
     oci.opsi.models.TopProcessesUsageTrend
     oci.opsi.models.TopProcessesUsageTrendAggregation
@@ -448,6 +470,9 @@ Opsi
     oci.opsi.models.UpdateEnterpriseManagerBridgeDetails
     oci.opsi.models.UpdateExadataInsightDetails
     oci.opsi.models.UpdateHostInsightDetails
+    oci.opsi.models.UpdateMacsManagedCloudDatabaseHostInsightDetails
+    oci.opsi.models.UpdateMacsManagedCloudDatabaseInsightDetails
+    oci.opsi.models.UpdateMacsManagedCloudExadataInsightDetails
     oci.opsi.models.UpdateMacsManagedCloudHostInsightDetails
     oci.opsi.models.UpdateMacsManagedExternalDatabaseInsightDetails
     oci.opsi.models.UpdateMacsManagedExternalHostInsightDetails

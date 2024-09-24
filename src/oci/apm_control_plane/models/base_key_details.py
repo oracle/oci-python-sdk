@@ -34,7 +34,8 @@ class BaseKeyDetails(object):
 
         :param type:
             The value to assign to the type property of this BaseKeyDetails.
-            Allowed values for this property are: "PRIVATE", "PUBLIC"
+            Allowed values for this property are: "PRIVATE", "PUBLIC", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
         """
@@ -81,7 +82,8 @@ class BaseKeyDetails(object):
         **[Required]** Gets the type of this BaseKeyDetails.
         Type of the Data Key.
 
-        Allowed values for this property are: "PRIVATE", "PUBLIC"
+        Allowed values for this property are: "PRIVATE", "PUBLIC", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The type of this BaseKeyDetails.
@@ -101,9 +103,7 @@ class BaseKeyDetails(object):
         """
         allowed_values = ["PRIVATE", "PUBLIC"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `type`, must be None or one of {allowed_values}"
-            )
+            type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
 
     def __repr__(self):

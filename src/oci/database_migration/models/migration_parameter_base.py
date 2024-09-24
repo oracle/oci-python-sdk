@@ -42,7 +42,8 @@ class MigrationParameterBase(object):
 
         :param data_type:
             The value to assign to the data_type property of this MigrationParameterBase.
-            Allowed values for this property are: "STRING", "INTEGER", "FLOAT", "BOOLEAN"
+            Allowed values for this property are: "STRING", "INTEGER", "FLOAT", "BOOLEAN", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type data_type: str
 
         """
@@ -89,7 +90,8 @@ class MigrationParameterBase(object):
         **[Required]** Gets the data_type of this MigrationParameterBase.
         Parameter data type.
 
-        Allowed values for this property are: "STRING", "INTEGER", "FLOAT", "BOOLEAN"
+        Allowed values for this property are: "STRING", "INTEGER", "FLOAT", "BOOLEAN", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The data_type of this MigrationParameterBase.
@@ -109,9 +111,7 @@ class MigrationParameterBase(object):
         """
         allowed_values = ["STRING", "INTEGER", "FLOAT", "BOOLEAN"]
         if not value_allowed_none_or_none_sentinel(data_type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `data_type`, must be None or one of {allowed_values}"
-            )
+            data_type = 'UNKNOWN_ENUM_VALUE'
         self._data_type = data_type
 
     def __repr__(self):

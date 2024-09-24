@@ -23,11 +23,16 @@ class EnableExadataInsightDetails(object):
     #: This constant has a value of "PE_COMANAGED_EXADATA"
     ENTITY_SOURCE_PE_COMANAGED_EXADATA = "PE_COMANAGED_EXADATA"
 
+    #: A constant which can be used with the entity_source property of a EnableExadataInsightDetails.
+    #: This constant has a value of "MACS_MANAGED_CLOUD_EXADATA"
+    ENTITY_SOURCE_MACS_MANAGED_CLOUD_EXADATA = "MACS_MANAGED_CLOUD_EXADATA"
+
     def __init__(self, **kwargs):
         """
         Initializes a new EnableExadataInsightDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.opsi.models.EnableMacsManagedCloudExadataInsightDetails`
         * :class:`~oci.opsi.models.EnablePeComanagedExadataInsightDetails`
         * :class:`~oci.opsi.models.EnableEmManagedExternalExadataInsightDetails`
 
@@ -35,7 +40,7 @@ class EnableExadataInsightDetails(object):
 
         :param entity_source:
             The value to assign to the entity_source property of this EnableExadataInsightDetails.
-            Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA"
+            Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA", "MACS_MANAGED_CLOUD_EXADATA"
         :type entity_source: str
 
         """
@@ -57,6 +62,9 @@ class EnableExadataInsightDetails(object):
         """
         type = object_dictionary['entitySource']
 
+        if type == 'MACS_MANAGED_CLOUD_EXADATA':
+            return 'EnableMacsManagedCloudExadataInsightDetails'
+
         if type == 'PE_COMANAGED_EXADATA':
             return 'EnablePeComanagedExadataInsightDetails'
 
@@ -71,7 +79,7 @@ class EnableExadataInsightDetails(object):
         **[Required]** Gets the entity_source of this EnableExadataInsightDetails.
         Source of the Exadata system.
 
-        Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA"
+        Allowed values for this property are: "EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA", "MACS_MANAGED_CLOUD_EXADATA"
 
 
         :return: The entity_source of this EnableExadataInsightDetails.
@@ -89,7 +97,7 @@ class EnableExadataInsightDetails(object):
         :param entity_source: The entity_source of this EnableExadataInsightDetails.
         :type: str
         """
-        allowed_values = ["EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA"]
+        allowed_values = ["EM_MANAGED_EXTERNAL_EXADATA", "PE_COMANAGED_EXADATA", "MACS_MANAGED_CLOUD_EXADATA"]
         if not value_allowed_none_or_none_sentinel(entity_source, allowed_values):
             raise ValueError(
                 f"Invalid value for `entity_source`, must be None or one of {allowed_values}"

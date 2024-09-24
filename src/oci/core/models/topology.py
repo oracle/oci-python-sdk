@@ -44,7 +44,8 @@ class Topology(object):
 
         :param type:
             The value to assign to the type property of this Topology.
-            Allowed values for this property are: "NETWORKING", "VCN", "SUBNET", "PATH"
+            Allowed values for this property are: "NETWORKING", "VCN", "SUBNET", "PATH", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
         :param entities:
@@ -111,7 +112,8 @@ class Topology(object):
         **[Required]** Gets the type of this Topology.
         Type of the topology object.
 
-        Allowed values for this property are: "NETWORKING", "VCN", "SUBNET", "PATH"
+        Allowed values for this property are: "NETWORKING", "VCN", "SUBNET", "PATH", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The type of this Topology.
@@ -131,9 +133,7 @@ class Topology(object):
         """
         allowed_values = ["NETWORKING", "VCN", "SUBNET", "PATH"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `type`, must be None or one of {allowed_values}"
-            )
+            type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
 
     @property

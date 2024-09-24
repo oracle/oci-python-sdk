@@ -30,7 +30,8 @@ class Key(object):
 
         :param model_type:
             The value to assign to the model_type property of this Key.
-            Allowed values for this property are: "FOREIGN_KEY"
+            Allowed values for this property are: "FOREIGN_KEY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
         """
@@ -63,7 +64,8 @@ class Key(object):
         **[Required]** Gets the model_type of this Key.
         The key type.
 
-        Allowed values for this property are: "FOREIGN_KEY"
+        Allowed values for this property are: "FOREIGN_KEY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The model_type of this Key.
@@ -83,9 +85,7 @@ class Key(object):
         """
         allowed_values = ["FOREIGN_KEY"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `model_type`, must be None or one of {allowed_values}"
-            )
+            model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type
 
     def __repr__(self):

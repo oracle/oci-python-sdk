@@ -19,18 +19,23 @@ class AlarmSuppressionTarget(object):
     #: This constant has a value of "ALARM"
     TARGET_TYPE_ALARM = "ALARM"
 
+    #: A constant which can be used with the target_type property of a AlarmSuppressionTarget.
+    #: This constant has a value of "COMPARTMENT"
+    TARGET_TYPE_COMPARTMENT = "COMPARTMENT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AlarmSuppressionTarget object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.monitoring.models.AlarmSuppressionAlarmTarget`
+        * :class:`~oci.monitoring.models.AlarmSuppressionCompartmentTarget`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param target_type:
             The value to assign to the target_type property of this AlarmSuppressionTarget.
-            Allowed values for this property are: "ALARM", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ALARM", "COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type target_type: str
 
@@ -55,6 +60,9 @@ class AlarmSuppressionTarget(object):
 
         if type == 'ALARM':
             return 'AlarmSuppressionAlarmTarget'
+
+        if type == 'COMPARTMENT':
+            return 'AlarmSuppressionCompartmentTarget'
         else:
             return 'AlarmSuppressionTarget'
 
@@ -64,7 +72,7 @@ class AlarmSuppressionTarget(object):
         **[Required]** Gets the target_type of this AlarmSuppressionTarget.
         The type of the alarm suppression target.
 
-        Allowed values for this property are: "ALARM", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ALARM", "COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -83,7 +91,7 @@ class AlarmSuppressionTarget(object):
         :param target_type: The target_type of this AlarmSuppressionTarget.
         :type: str
         """
-        allowed_values = ["ALARM"]
+        allowed_values = ["ALARM", "COMPARTMENT"]
         if not value_allowed_none_or_none_sentinel(target_type, allowed_values):
             target_type = 'UNKNOWN_ENUM_VALUE'
         self._target_type = target_type

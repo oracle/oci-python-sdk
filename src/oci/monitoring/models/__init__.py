@@ -18,6 +18,7 @@ from .alarm_summary import AlarmSummary
 from .alarm_suppression import AlarmSuppression
 from .alarm_suppression_alarm_target import AlarmSuppressionAlarmTarget
 from .alarm_suppression_collection import AlarmSuppressionCollection
+from .alarm_suppression_compartment_target import AlarmSuppressionCompartmentTarget
 from .alarm_suppression_history_item import AlarmSuppressionHistoryItem
 from .alarm_suppression_history_item_collection import AlarmSuppressionHistoryItemCollection
 from .alarm_suppression_summary import AlarmSuppressionSummary
@@ -33,10 +34,12 @@ from .metric_data import MetricData
 from .metric_data_details import MetricDataDetails
 from .post_metric_data_details import PostMetricDataDetails
 from .post_metric_data_response_details import PostMetricDataResponseDetails
+from .recurrence import Recurrence
 from .retrieve_dimension_states_details import RetrieveDimensionStatesDetails
 from .summarize_alarm_suppression_history_details import SummarizeAlarmSuppressionHistoryDetails
 from .summarize_metrics_data_details import SummarizeMetricsDataDetails
 from .suppression import Suppression
+from .suppression_condition import SuppressionCondition
 from .update_alarm_details import UpdateAlarmDetails
 
 # Maps type names to classes for monitoring services.
@@ -53,6 +56,7 @@ monitoring_type_mapping = {
     "AlarmSuppression": AlarmSuppression,
     "AlarmSuppressionAlarmTarget": AlarmSuppressionAlarmTarget,
     "AlarmSuppressionCollection": AlarmSuppressionCollection,
+    "AlarmSuppressionCompartmentTarget": AlarmSuppressionCompartmentTarget,
     "AlarmSuppressionHistoryItem": AlarmSuppressionHistoryItem,
     "AlarmSuppressionHistoryItemCollection": AlarmSuppressionHistoryItemCollection,
     "AlarmSuppressionSummary": AlarmSuppressionSummary,
@@ -68,9 +72,11 @@ monitoring_type_mapping = {
     "MetricDataDetails": MetricDataDetails,
     "PostMetricDataDetails": PostMetricDataDetails,
     "PostMetricDataResponseDetails": PostMetricDataResponseDetails,
+    "Recurrence": Recurrence,
     "RetrieveDimensionStatesDetails": RetrieveDimensionStatesDetails,
     "SummarizeAlarmSuppressionHistoryDetails": SummarizeAlarmSuppressionHistoryDetails,
     "SummarizeMetricsDataDetails": SummarizeMetricsDataDetails,
     "Suppression": Suppression,
+    "SuppressionCondition": SuppressionCondition,
     "UpdateAlarmDetails": UpdateAlarmDetails
 }

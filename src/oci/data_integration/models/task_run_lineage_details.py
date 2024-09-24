@@ -78,7 +78,8 @@ class TaskRunLineageDetails(object):
 
         :param task_execution_status:
             The value to assign to the task_execution_status property of this TaskRunLineageDetails.
-            Allowed values for this property are: "SUCCESS", "ERROR", "TERMINATED"
+            Allowed values for this property are: "SUCCESS", "ERROR", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type task_execution_status: str
 
         :param flow:
@@ -405,7 +406,8 @@ class TaskRunLineageDetails(object):
         Gets the task_execution_status of this TaskRunLineageDetails.
         The status of the task run.
 
-        Allowed values for this property are: "SUCCESS", "ERROR", "TERMINATED"
+        Allowed values for this property are: "SUCCESS", "ERROR", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The task_execution_status of this TaskRunLineageDetails.
@@ -425,9 +427,7 @@ class TaskRunLineageDetails(object):
         """
         allowed_values = ["SUCCESS", "ERROR", "TERMINATED"]
         if not value_allowed_none_or_none_sentinel(task_execution_status, allowed_values):
-            raise ValueError(
-                f"Invalid value for `task_execution_status`, must be None or one of {allowed_values}"
-            )
+            task_execution_status = 'UNKNOWN_ENUM_VALUE'
         self._task_execution_status = task_execution_status
 
     @property

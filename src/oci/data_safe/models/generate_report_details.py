@@ -23,6 +23,10 @@ class GenerateReportDetails(object):
     #: This constant has a value of "XLS"
     MIME_TYPE_XLS = "XLS"
 
+    #: A constant which can be used with the mime_type property of a GenerateReportDetails.
+    #: This constant has a value of "JSON"
+    MIME_TYPE_JSON = "JSON"
+
     def __init__(self, **kwargs):
         """
         Initializes a new GenerateReportDetails object with values from keyword arguments.
@@ -46,7 +50,7 @@ class GenerateReportDetails(object):
 
         :param mime_type:
             The value to assign to the mime_type property of this GenerateReportDetails.
-            Allowed values for this property are: "PDF", "XLS"
+            Allowed values for this property are: "PDF", "XLS", "JSON"
         :type mime_type: str
 
         :param time_less_than:
@@ -201,7 +205,7 @@ class GenerateReportDetails(object):
         **[Required]** Gets the mime_type of this GenerateReportDetails.
         Specifies the format of report to be .xls or .pdf or .json
 
-        Allowed values for this property are: "PDF", "XLS"
+        Allowed values for this property are: "PDF", "XLS", "JSON"
 
 
         :return: The mime_type of this GenerateReportDetails.
@@ -219,7 +223,7 @@ class GenerateReportDetails(object):
         :param mime_type: The mime_type of this GenerateReportDetails.
         :type: str
         """
-        allowed_values = ["PDF", "XLS"]
+        allowed_values = ["PDF", "XLS", "JSON"]
         if not value_allowed_none_or_none_sentinel(mime_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `mime_type`, must be None or one of {allowed_values}"

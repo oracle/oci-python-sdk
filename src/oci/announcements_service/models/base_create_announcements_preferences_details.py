@@ -51,7 +51,8 @@ class BaseCreateAnnouncementsPreferencesDetails(object):
 
         :param preference_type:
             The value to assign to the preference_type property of this BaseCreateAnnouncementsPreferencesDetails.
-            Allowed values for this property are: "OPT_IN_TENANT_ANNOUNCEMENTS", "OPT_IN_TENANT_AND_INFORMATIONAL_ANNOUNCEMENTS", "OPT_OUT_ALL_ANNOUNCEMENTS"
+            Allowed values for this property are: "OPT_IN_TENANT_ANNOUNCEMENTS", "OPT_IN_TENANT_AND_INFORMATIONAL_ANNOUNCEMENTS", "OPT_OUT_ALL_ANNOUNCEMENTS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type preference_type: str
 
         :param preferred_time_zone:
@@ -179,7 +180,8 @@ class BaseCreateAnnouncementsPreferencesDetails(object):
         **[Required]** Gets the preference_type of this BaseCreateAnnouncementsPreferencesDetails.
         The string representing the user's preference, whether to opt in to only required announcements, to opt in to all announcements, including informational announcements, or to opt out of all announcements.
 
-        Allowed values for this property are: "OPT_IN_TENANT_ANNOUNCEMENTS", "OPT_IN_TENANT_AND_INFORMATIONAL_ANNOUNCEMENTS", "OPT_OUT_ALL_ANNOUNCEMENTS"
+        Allowed values for this property are: "OPT_IN_TENANT_ANNOUNCEMENTS", "OPT_IN_TENANT_AND_INFORMATIONAL_ANNOUNCEMENTS", "OPT_OUT_ALL_ANNOUNCEMENTS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The preference_type of this BaseCreateAnnouncementsPreferencesDetails.
@@ -199,9 +201,7 @@ class BaseCreateAnnouncementsPreferencesDetails(object):
         """
         allowed_values = ["OPT_IN_TENANT_ANNOUNCEMENTS", "OPT_IN_TENANT_AND_INFORMATIONAL_ANNOUNCEMENTS", "OPT_OUT_ALL_ANNOUNCEMENTS"]
         if not value_allowed_none_or_none_sentinel(preference_type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `preference_type`, must be None or one of {allowed_values}"
-            )
+            preference_type = 'UNKNOWN_ENUM_VALUE'
         self._preference_type = preference_type
 
     @property

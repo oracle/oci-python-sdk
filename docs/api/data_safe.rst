@@ -65,6 +65,8 @@ Data Safe
     oci.data_safe.models.AutonomousDatabaseDetails
     oci.data_safe.models.AvailableAuditVolumeCollection
     oci.data_safe.models.AvailableAuditVolumeSummary
+    oci.data_safe.models.BulkCreateSqlFirewallAllowedSqlsDetails
+    oci.data_safe.models.BulkDeleteSqlFirewallAllowedSqlsDetails
     oci.data_safe.models.CalculateAuditVolumeAvailableDetails
     oci.data_safe.models.CalculateAuditVolumeCollectedDetails
     oci.data_safe.models.ChangeAlertCompartmentDetails
@@ -206,6 +208,7 @@ Data Safe
     oci.data_safe.models.LibraryMaskingFormatCollection
     oci.data_safe.models.LibraryMaskingFormatEntry
     oci.data_safe.models.LibraryMaskingFormatSummary
+    oci.data_safe.models.ListSelectionMode
     oci.data_safe.models.MaskDataDetails
     oci.data_safe.models.MaskedColumnCollection
     oci.data_safe.models.MaskedColumnSummary
@@ -248,6 +251,7 @@ Data Safe
     oci.data_safe.models.PatchRemoveInstruction
     oci.data_safe.models.PatchSdmMaskingPolicyDifferenceColumnsDetails
     oci.data_safe.models.PatchSensitiveColumnDetails
+    oci.data_safe.models.PatchSqlFirewallAllowedSqlDetails
     oci.data_safe.models.PatchTargetAlertPolicyAssociationDetails
     oci.data_safe.models.PatternFormatEntry
     oci.data_safe.models.PeerTargetDatabase
@@ -286,6 +290,7 @@ Data Safe
     oci.data_safe.models.ScheduleAuditReportDetails
     oci.data_safe.models.ScheduleReportDetails
     oci.data_safe.models.SchemaSummary
+    oci.data_safe.models.ScimQuerySelectionMode
     oci.data_safe.models.SdmMaskingPolicyDifference
     oci.data_safe.models.SdmMaskingPolicyDifferenceCollection
     oci.data_safe.models.SdmMaskingPolicyDifferenceColumnCollection
@@ -314,6 +319,7 @@ Data Safe
     oci.data_safe.models.SecurityPolicyReportCollection
     oci.data_safe.models.SecurityPolicyReportSummary
     oci.data_safe.models.SecurityPolicySummary
+    oci.data_safe.models.SelectionDetails
     oci.data_safe.models.SensitiveCategory
     oci.data_safe.models.SensitiveColumn
     oci.data_safe.models.SensitiveColumnCollection

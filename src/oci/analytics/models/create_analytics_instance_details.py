@@ -31,6 +31,22 @@ class CreateAnalyticsInstanceDetails(object):
     #: This constant has a value of "BRING_YOUR_OWN_LICENSE"
     LICENSE_TYPE_BRING_YOUR_OWN_LICENSE = "BRING_YOUR_OWN_LICENSE"
 
+    #: A constant which can be used with the update_channel property of a CreateAnalyticsInstanceDetails.
+    #: This constant has a value of "REGULAR"
+    UPDATE_CHANNEL_REGULAR = "REGULAR"
+
+    #: A constant which can be used with the update_channel property of a CreateAnalyticsInstanceDetails.
+    #: This constant has a value of "EARLY"
+    UPDATE_CHANNEL_EARLY = "EARLY"
+
+    #: A constant which can be used with the update_channel property of a CreateAnalyticsInstanceDetails.
+    #: This constant has a value of "PHASE_2"
+    UPDATE_CHANNEL_PHASE_2 = "PHASE_2"
+
+    #: A constant which can be used with the update_channel property of a CreateAnalyticsInstanceDetails.
+    #: This constant has a value of "PHASE_1"
+    UPDATE_CHANNEL_PHASE_1 = "PHASE_1"
+
     #: A constant which can be used with the feature_bundle property of a CreateAnalyticsInstanceDetails.
     #: This constant has a value of "FAW_PAID"
     FEATURE_BUNDLE_FAW_PAID = "FAW_PAID"
@@ -98,6 +114,11 @@ class CreateAnalyticsInstanceDetails(object):
             The value to assign to the freeform_tags property of this CreateAnalyticsInstanceDetails.
         :type freeform_tags: dict(str, str)
 
+        :param update_channel:
+            The value to assign to the update_channel property of this CreateAnalyticsInstanceDetails.
+            Allowed values for this property are: "REGULAR", "EARLY", "PHASE_2", "PHASE_1"
+        :type update_channel: str
+
         :param kms_key_id:
             The value to assign to the kms_key_id property of this CreateAnalyticsInstanceDetails.
         :type kms_key_id: str
@@ -128,6 +149,7 @@ class CreateAnalyticsInstanceDetails(object):
             'idcs_access_token': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
+            'update_channel': 'str',
             'kms_key_id': 'str',
             'domain_id': 'str',
             'admin_user': 'str',
@@ -146,6 +168,7 @@ class CreateAnalyticsInstanceDetails(object):
             'idcs_access_token': 'idcsAccessToken',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
+            'update_channel': 'updateChannel',
             'kms_key_id': 'kmsKeyId',
             'domain_id': 'domainId',
             'admin_user': 'adminUser',
@@ -163,6 +186,7 @@ class CreateAnalyticsInstanceDetails(object):
         self._idcs_access_token = None
         self._defined_tags = None
         self._freeform_tags = None
+        self._update_channel = None
         self._kms_key_id = None
         self._domain_id = None
         self._admin_user = None
@@ -457,6 +481,37 @@ class CreateAnalyticsInstanceDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def update_channel(self):
+        """
+        Gets the update_channel of this CreateAnalyticsInstanceDetails.
+        Analytics instance update channel.
+
+        Allowed values for this property are: "REGULAR", "EARLY", "PHASE_2", "PHASE_1"
+
+
+        :return: The update_channel of this CreateAnalyticsInstanceDetails.
+        :rtype: str
+        """
+        return self._update_channel
+
+    @update_channel.setter
+    def update_channel(self, update_channel):
+        """
+        Sets the update_channel of this CreateAnalyticsInstanceDetails.
+        Analytics instance update channel.
+
+
+        :param update_channel: The update_channel of this CreateAnalyticsInstanceDetails.
+        :type: str
+        """
+        allowed_values = ["REGULAR", "EARLY", "PHASE_2", "PHASE_1"]
+        if not value_allowed_none_or_none_sentinel(update_channel, allowed_values):
+            raise ValueError(
+                f"Invalid value for `update_channel`, must be None or one of {allowed_values}"
+            )
+        self._update_channel = update_channel
 
     @property
     def kms_key_id(self):

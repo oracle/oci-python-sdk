@@ -94,7 +94,8 @@ class EntityDiscovered(object):
 
         :param discover_status:
             The value to assign to the discover_status property of this EntityDiscovered.
-            Allowed values for this property are: "PREV_DISCOVERED", "NEW_DISCOVERED", "NOT_FOUND", "DISCOVERING"
+            Allowed values for this property are: "PREV_DISCOVERED", "NEW_DISCOVERED", "NOT_FOUND", "DISCOVERING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type discover_status: str
 
         :param discover_error_code:
@@ -107,7 +108,8 @@ class EntityDiscovered(object):
 
         :param entity_type:
             The value to assign to the entity_type property of this EntityDiscovered.
-            Allowed values for this property are: "STORAGE_SERVER_DISCOVER_SUMMARY", "STORAGE_GRID_DISCOVER_SUMMARY", "DATABASE_SYSTEM_DISCOVER_SUMMARY", "INFRASTRUCTURE_DISCOVER_SUMMARY", "INFRASTRUCTURE_DISCOVER"
+            Allowed values for this property are: "STORAGE_SERVER_DISCOVER_SUMMARY", "STORAGE_GRID_DISCOVER_SUMMARY", "DATABASE_SYSTEM_DISCOVER_SUMMARY", "INFRASTRUCTURE_DISCOVER_SUMMARY", "INFRASTRUCTURE_DISCOVER", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type entity_type: str
 
         """
@@ -362,7 +364,8 @@ class EntityDiscovered(object):
         Gets the discover_status of this EntityDiscovered.
         The status of the entity discovery.
 
-        Allowed values for this property are: "PREV_DISCOVERED", "NEW_DISCOVERED", "NOT_FOUND", "DISCOVERING"
+        Allowed values for this property are: "PREV_DISCOVERED", "NEW_DISCOVERED", "NOT_FOUND", "DISCOVERING", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The discover_status of this EntityDiscovered.
@@ -382,9 +385,7 @@ class EntityDiscovered(object):
         """
         allowed_values = ["PREV_DISCOVERED", "NEW_DISCOVERED", "NOT_FOUND", "DISCOVERING"]
         if not value_allowed_none_or_none_sentinel(discover_status, allowed_values):
-            raise ValueError(
-                f"Invalid value for `discover_status`, must be None or one of {allowed_values}"
-            )
+            discover_status = 'UNKNOWN_ENUM_VALUE'
         self._discover_status = discover_status
 
     @property
@@ -441,7 +442,8 @@ class EntityDiscovered(object):
         **[Required]** Gets the entity_type of this EntityDiscovered.
         The type of discovered entities.
 
-        Allowed values for this property are: "STORAGE_SERVER_DISCOVER_SUMMARY", "STORAGE_GRID_DISCOVER_SUMMARY", "DATABASE_SYSTEM_DISCOVER_SUMMARY", "INFRASTRUCTURE_DISCOVER_SUMMARY", "INFRASTRUCTURE_DISCOVER"
+        Allowed values for this property are: "STORAGE_SERVER_DISCOVER_SUMMARY", "STORAGE_GRID_DISCOVER_SUMMARY", "DATABASE_SYSTEM_DISCOVER_SUMMARY", "INFRASTRUCTURE_DISCOVER_SUMMARY", "INFRASTRUCTURE_DISCOVER", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The entity_type of this EntityDiscovered.
@@ -461,9 +463,7 @@ class EntityDiscovered(object):
         """
         allowed_values = ["STORAGE_SERVER_DISCOVER_SUMMARY", "STORAGE_GRID_DISCOVER_SUMMARY", "DATABASE_SYSTEM_DISCOVER_SUMMARY", "INFRASTRUCTURE_DISCOVER_SUMMARY", "INFRASTRUCTURE_DISCOVER"]
         if not value_allowed_none_or_none_sentinel(entity_type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `entity_type`, must be None or one of {allowed_values}"
-            )
+            entity_type = 'UNKNOWN_ENUM_VALUE'
         self._entity_type = entity_type
 
     def __repr__(self):

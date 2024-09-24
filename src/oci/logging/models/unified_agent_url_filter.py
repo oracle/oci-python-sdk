@@ -27,7 +27,8 @@ class UnifiedAgentUrlFilter(UnifiedAgentMonitoringFilter):
 
         :param filter_type:
             The value to assign to the filter_type property of this UnifiedAgentUrlFilter.
-            Allowed values for this property are: "KUBERNETES_FILTER", "URL_FILTER"
+            Allowed values for this property are: "KUBERNETES_FILTER", "URL_FILTER", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type filter_type: str
 
         :param allow_list:

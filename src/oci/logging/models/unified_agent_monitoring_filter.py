@@ -39,7 +39,8 @@ class UnifiedAgentMonitoringFilter(object):
 
         :param filter_type:
             The value to assign to the filter_type property of this UnifiedAgentMonitoringFilter.
-            Allowed values for this property are: "KUBERNETES_FILTER", "URL_FILTER"
+            Allowed values for this property are: "KUBERNETES_FILTER", "URL_FILTER", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type filter_type: str
 
         """
@@ -102,7 +103,8 @@ class UnifiedAgentMonitoringFilter(object):
         **[Required]** Gets the filter_type of this UnifiedAgentMonitoringFilter.
         Unified schema logging filter type.
 
-        Allowed values for this property are: "KUBERNETES_FILTER", "URL_FILTER"
+        Allowed values for this property are: "KUBERNETES_FILTER", "URL_FILTER", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The filter_type of this UnifiedAgentMonitoringFilter.
@@ -122,9 +124,7 @@ class UnifiedAgentMonitoringFilter(object):
         """
         allowed_values = ["KUBERNETES_FILTER", "URL_FILTER"]
         if not value_allowed_none_or_none_sentinel(filter_type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `filter_type`, must be None or one of {allowed_values}"
-            )
+            filter_type = 'UNKNOWN_ENUM_VALUE'
         self._filter_type = filter_type
 
     def __repr__(self):

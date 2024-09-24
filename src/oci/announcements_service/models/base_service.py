@@ -84,12 +84,14 @@ class BaseService(object):
 
         :param platform_type:
             The value to assign to the platform_type property of this BaseService.
-            Allowed values for this property are: "IAAS", "SAAS", "PAAS"
+            Allowed values for this property are: "IAAS", "SAAS", "PAAS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type platform_type: str
 
         :param comms_manager_name:
             The value to assign to the comms_manager_name property of this BaseService.
-            Allowed values for this property are: "CN", "FUSION", "AS", "ERF"
+            Allowed values for this property are: "CN", "FUSION", "AS", "ERF", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type comms_manager_name: str
 
         :param excluded_realms:
@@ -110,7 +112,8 @@ class BaseService(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this BaseService.
-            Allowed values for this property are: "ACTIVE", "DELETED"
+            Allowed values for this property are: "ACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         """
@@ -302,7 +305,8 @@ class BaseService(object):
         **[Required]** Gets the platform_type of this BaseService.
         The platform type this service object is related to.
 
-        Allowed values for this property are: "IAAS", "SAAS", "PAAS"
+        Allowed values for this property are: "IAAS", "SAAS", "PAAS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The platform_type of this BaseService.
@@ -322,9 +326,7 @@ class BaseService(object):
         """
         allowed_values = ["IAAS", "SAAS", "PAAS"]
         if not value_allowed_none_or_none_sentinel(platform_type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `platform_type`, must be None or one of {allowed_values}"
-            )
+            platform_type = 'UNKNOWN_ENUM_VALUE'
         self._platform_type = platform_type
 
     @property
@@ -333,7 +335,8 @@ class BaseService(object):
         **[Required]** Gets the comms_manager_name of this BaseService.
         Name of the comms manager team that manages Notifications to this service.
 
-        Allowed values for this property are: "CN", "FUSION", "AS", "ERF"
+        Allowed values for this property are: "CN", "FUSION", "AS", "ERF", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The comms_manager_name of this BaseService.
@@ -353,9 +356,7 @@ class BaseService(object):
         """
         allowed_values = ["CN", "FUSION", "AS", "ERF"]
         if not value_allowed_none_or_none_sentinel(comms_manager_name, allowed_values):
-            raise ValueError(
-                f"Invalid value for `comms_manager_name`, must be None or one of {allowed_values}"
-            )
+            comms_manager_name = 'UNKNOWN_ENUM_VALUE'
         self._comms_manager_name = comms_manager_name
 
     @property
@@ -460,7 +461,8 @@ class BaseService(object):
         Gets the lifecycle_state of this BaseService.
         Current state of the service object.
 
-        Allowed values for this property are: "ACTIVE", "DELETED"
+        Allowed values for this property are: "ACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The lifecycle_state of this BaseService.
@@ -480,9 +482,7 @@ class BaseService(object):
         """
         allowed_values = ["ACTIVE", "DELETED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
-            raise ValueError(
-                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
-            )
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
     def __repr__(self):

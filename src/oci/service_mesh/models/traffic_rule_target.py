@@ -35,7 +35,8 @@ class TrafficRuleTarget(object):
 
         :param type:
             The value to assign to the type property of this TrafficRuleTarget.
-            Allowed values for this property are: "VIRTUAL_DEPLOYMENT", "VIRTUAL_SERVICE"
+            Allowed values for this property are: "VIRTUAL_DEPLOYMENT", "VIRTUAL_SERVICE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
         """
@@ -71,7 +72,8 @@ class TrafficRuleTarget(object):
         **[Required]** Gets the type of this TrafficRuleTarget.
         Type of the traffic target.
 
-        Allowed values for this property are: "VIRTUAL_DEPLOYMENT", "VIRTUAL_SERVICE"
+        Allowed values for this property are: "VIRTUAL_DEPLOYMENT", "VIRTUAL_SERVICE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The type of this TrafficRuleTarget.
@@ -91,9 +93,7 @@ class TrafficRuleTarget(object):
         """
         allowed_values = ["VIRTUAL_DEPLOYMENT", "VIRTUAL_SERVICE"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `type`, must be None or one of {allowed_values}"
-            )
+            type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
 
     def __repr__(self):

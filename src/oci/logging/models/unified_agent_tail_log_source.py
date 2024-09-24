@@ -27,7 +27,8 @@ class UnifiedAgentTailLogSource(UnifiedAgentLoggingSource):
 
         :param source_type:
             The value to assign to the source_type property of this UnifiedAgentTailLogSource.
-            Allowed values for this property are: "LOG_TAIL", "WINDOWS_EVENT_LOG", "CUSTOM_PLUGIN"
+            Allowed values for this property are: "LOG_TAIL", "WINDOWS_EVENT_LOG", "CUSTOM_PLUGIN", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type source_type: str
 
         :param paths:

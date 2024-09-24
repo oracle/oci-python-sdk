@@ -70,12 +70,14 @@ class ComputeBareMetalHost(object):
 
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this ComputeBareMetalHost.
-            Allowed values for this property are: "AVAILABLE", "DEGRADED", "UNAVAILABLE"
+            Allowed values for this property are: "AVAILABLE", "DEGRADED", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_details: str
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ComputeBareMetalHost.
-            Allowed values for this property are: "ACTIVE", "INACTIVE"
+            Allowed values for this property are: "ACTIVE", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param time_created:
@@ -325,7 +327,8 @@ class ComputeBareMetalHost(object):
         Gets the lifecycle_details of this ComputeBareMetalHost.
         The lifecycle state details of the compute bare metal host.
 
-        Allowed values for this property are: "AVAILABLE", "DEGRADED", "UNAVAILABLE"
+        Allowed values for this property are: "AVAILABLE", "DEGRADED", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The lifecycle_details of this ComputeBareMetalHost.
@@ -345,9 +348,7 @@ class ComputeBareMetalHost(object):
         """
         allowed_values = ["AVAILABLE", "DEGRADED", "UNAVAILABLE"]
         if not value_allowed_none_or_none_sentinel(lifecycle_details, allowed_values):
-            raise ValueError(
-                f"Invalid value for `lifecycle_details`, must be None or one of {allowed_values}"
-            )
+            lifecycle_details = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_details = lifecycle_details
 
     @property
@@ -356,7 +357,8 @@ class ComputeBareMetalHost(object):
         **[Required]** Gets the lifecycle_state of this ComputeBareMetalHost.
         The current state of the compute bare metal host.
 
-        Allowed values for this property are: "ACTIVE", "INACTIVE"
+        Allowed values for this property are: "ACTIVE", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The lifecycle_state of this ComputeBareMetalHost.
@@ -376,9 +378,7 @@ class ComputeBareMetalHost(object):
         """
         allowed_values = ["ACTIVE", "INACTIVE"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
-            raise ValueError(
-                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
-            )
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
     @property

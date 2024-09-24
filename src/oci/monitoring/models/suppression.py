@@ -14,6 +14,7 @@ class Suppression(object):
     """
     The configuration details for an alarm-wide suppression.
     For dimension-specific suppressions, see :class:`AlarmSuppression`.
+
     For information about alarms, see
     `Alarms Overview`__.
 

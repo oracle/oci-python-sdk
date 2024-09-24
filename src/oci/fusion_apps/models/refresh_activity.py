@@ -122,6 +122,10 @@ class RefreshActivity(object):
             The value to assign to the time_updated property of this RefreshActivity.
         :type time_updated: datetime
 
+        :param is_data_masking_opted:
+            The value to assign to the is_data_masking_opted property of this RefreshActivity.
+        :type is_data_masking_opted: bool
+
         :param refresh_issue_details_list:
             The value to assign to the refresh_issue_details_list property of this RefreshActivity.
         :type refresh_issue_details_list: list[oci.fusion_apps.models.RefreshIssueDetails]
@@ -145,6 +149,7 @@ class RefreshActivity(object):
             'time_finished': 'datetime',
             'time_accepted': 'datetime',
             'time_updated': 'datetime',
+            'is_data_masking_opted': 'bool',
             'refresh_issue_details_list': 'list[RefreshIssueDetails]',
             'lifecycle_details': 'str'
         }
@@ -161,6 +166,7 @@ class RefreshActivity(object):
             'time_finished': 'timeFinished',
             'time_accepted': 'timeAccepted',
             'time_updated': 'timeUpdated',
+            'is_data_masking_opted': 'isDataMaskingOpted',
             'refresh_issue_details_list': 'refreshIssueDetailsList',
             'lifecycle_details': 'lifecycleDetails'
         }
@@ -176,6 +182,7 @@ class RefreshActivity(object):
         self._time_finished = None
         self._time_accepted = None
         self._time_updated = None
+        self._is_data_masking_opted = None
         self._refresh_issue_details_list = None
         self._lifecycle_details = None
 
@@ -454,6 +461,30 @@ class RefreshActivity(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def is_data_masking_opted(self):
+        """
+        Gets the is_data_masking_opted of this RefreshActivity.
+        Represents if the customer opted for Data Masking or not during refreshActivity.
+
+
+        :return: The is_data_masking_opted of this RefreshActivity.
+        :rtype: bool
+        """
+        return self._is_data_masking_opted
+
+    @is_data_masking_opted.setter
+    def is_data_masking_opted(self, is_data_masking_opted):
+        """
+        Sets the is_data_masking_opted of this RefreshActivity.
+        Represents if the customer opted for Data Masking or not during refreshActivity.
+
+
+        :param is_data_masking_opted: The is_data_masking_opted of this RefreshActivity.
+        :type: bool
+        """
+        self._is_data_masking_opted = is_data_masking_opted
 
     @property
     def refresh_issue_details_list(self):

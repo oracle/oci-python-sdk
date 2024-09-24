@@ -18,6 +18,7 @@ Integration
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.integration.models.AddOracleManagedCustomEndpointDetails
     oci.integration.models.AttachmentDetails
     oci.integration.models.ChangeIntegrationInstanceCompartmentDetails
     oci.integration.models.ChangeIntegrationInstanceNetworkEndpointDetails

@@ -23,7 +23,8 @@ class CustomExpressionQueryScalingConfiguration(ScalingConfiguration):
 
         :param scaling_configuration_type:
             The value to assign to the scaling_configuration_type property of this CustomExpressionQueryScalingConfiguration.
-            Allowed values for this property are: "THRESHOLD", "QUERY"
+            Allowed values for this property are: "THRESHOLD", "QUERY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type scaling_configuration_type: str
 
         :param pending_duration:

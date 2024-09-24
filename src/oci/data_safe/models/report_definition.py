@@ -83,6 +83,10 @@ class ReportDefinition(object):
     #: This constant has a value of "XLS"
     SCHEDULED_REPORT_MIME_TYPE_XLS = "XLS"
 
+    #: A constant which can be used with the scheduled_report_mime_type property of a ReportDefinition.
+    #: This constant has a value of "JSON"
+    SCHEDULED_REPORT_MIME_TYPE_JSON = "JSON"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ReportDefinition object with values from keyword arguments.
@@ -168,7 +172,7 @@ class ReportDefinition(object):
 
         :param scheduled_report_mime_type:
             The value to assign to the scheduled_report_mime_type property of this ReportDefinition.
-            Allowed values for this property are: "PDF", "XLS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PDF", "XLS", "JSON", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type scheduled_report_mime_type: str
 
@@ -782,7 +786,7 @@ class ReportDefinition(object):
         Gets the scheduled_report_mime_type of this ReportDefinition.
         Specifies the format of the report ( either .xls or .pdf or .json)
 
-        Allowed values for this property are: "PDF", "XLS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PDF", "XLS", "JSON", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -801,7 +805,7 @@ class ReportDefinition(object):
         :param scheduled_report_mime_type: The scheduled_report_mime_type of this ReportDefinition.
         :type: str
         """
-        allowed_values = ["PDF", "XLS"]
+        allowed_values = ["PDF", "XLS", "JSON"]
         if not value_allowed_none_or_none_sentinel(scheduled_report_mime_type, allowed_values):
             scheduled_report_mime_type = 'UNKNOWN_ENUM_VALUE'
         self._scheduled_report_mime_type = scheduled_report_mime_type

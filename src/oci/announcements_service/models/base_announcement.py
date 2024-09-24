@@ -159,7 +159,8 @@ class BaseAnnouncement(object):
 
         :param time_one_type:
             The value to assign to the time_one_type property of this BaseAnnouncement.
-            Allowed values for this property are: "ACTION_REQUIRED_BY", "NEW_START_TIME", "ORIGINAL_END_TIME", "REPORT_DATE", "START_TIME", "TIME_DETECTED"
+            Allowed values for this property are: "ACTION_REQUIRED_BY", "NEW_START_TIME", "ORIGINAL_END_TIME", "REPORT_DATE", "START_TIME", "TIME_DETECTED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type time_one_type: str
 
         :param time_one_value:
@@ -172,7 +173,8 @@ class BaseAnnouncement(object):
 
         :param time_two_type:
             The value to assign to the time_two_type property of this BaseAnnouncement.
-            Allowed values for this property are: "END_TIME", "NEW_END_TIME", "ESTIMATED_END_TIME"
+            Allowed values for this property are: "END_TIME", "NEW_END_TIME", "ESTIMATED_END_TIME", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type time_two_type: str
 
         :param time_two_value:
@@ -189,12 +191,14 @@ class BaseAnnouncement(object):
 
         :param announcement_type:
             The value to assign to the announcement_type property of this BaseAnnouncement.
-            Allowed values for this property are: "ACTION_RECOMMENDED", "ACTION_REQUIRED", "EMERGENCY_CHANGE", "EMERGENCY_MAINTENANCE", "EMERGENCY_MAINTENANCE_COMPLETE", "EMERGENCY_MAINTENANCE_EXTENDED", "EMERGENCY_MAINTENANCE_RESCHEDULED", "INFORMATION", "PLANNED_CHANGE", "PLANNED_CHANGE_COMPLETE", "PLANNED_CHANGE_EXTENDED", "PLANNED_CHANGE_RESCHEDULED", "PRODUCTION_EVENT_NOTIFICATION", "SCHEDULED_MAINTENANCE"
+            Allowed values for this property are: "ACTION_RECOMMENDED", "ACTION_REQUIRED", "EMERGENCY_CHANGE", "EMERGENCY_MAINTENANCE", "EMERGENCY_MAINTENANCE_COMPLETE", "EMERGENCY_MAINTENANCE_EXTENDED", "EMERGENCY_MAINTENANCE_RESCHEDULED", "INFORMATION", "PLANNED_CHANGE", "PLANNED_CHANGE_COMPLETE", "PLANNED_CHANGE_EXTENDED", "PLANNED_CHANGE_RESCHEDULED", "PRODUCTION_EVENT_NOTIFICATION", "SCHEDULED_MAINTENANCE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type announcement_type: str
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this BaseAnnouncement.
-            Allowed values for this property are: "ACTIVE", "INACTIVE"
+            Allowed values for this property are: "ACTIVE", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param is_banner:
@@ -215,7 +219,8 @@ class BaseAnnouncement(object):
 
         :param platform_type:
             The value to assign to the platform_type property of this BaseAnnouncement.
-            Allowed values for this property are: "IAAS", "SAAS", "PAAS"
+            Allowed values for this property are: "IAAS", "SAAS", "PAAS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type platform_type: str
 
         :param chain_id:
@@ -437,7 +442,8 @@ class BaseAnnouncement(object):
         The type of a time associated with an initial time value. If the `timeOneTitle` attribute is present, then the `timeOneTitle` attribute contains a label of `timeOneType` in English.
         Example: `START_TIME`
 
-        Allowed values for this property are: "ACTION_REQUIRED_BY", "NEW_START_TIME", "ORIGINAL_END_TIME", "REPORT_DATE", "START_TIME", "TIME_DETECTED"
+        Allowed values for this property are: "ACTION_REQUIRED_BY", "NEW_START_TIME", "ORIGINAL_END_TIME", "REPORT_DATE", "START_TIME", "TIME_DETECTED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The time_one_type of this BaseAnnouncement.
@@ -458,9 +464,7 @@ class BaseAnnouncement(object):
         """
         allowed_values = ["ACTION_REQUIRED_BY", "NEW_START_TIME", "ORIGINAL_END_TIME", "REPORT_DATE", "START_TIME", "TIME_DETECTED"]
         if not value_allowed_none_or_none_sentinel(time_one_type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `time_one_type`, must be None or one of {allowed_values}"
-            )
+            time_one_type = 'UNKNOWN_ENUM_VALUE'
         self._time_one_type = time_one_type
 
     @property
@@ -522,7 +526,8 @@ class BaseAnnouncement(object):
         The type of a time associated with second time value. If the `timeTwoTitle` attribute is present, then the `timeTwoTitle` attribute contains a label of `timeTwoType` in English.
         Example: `END_TIME`
 
-        Allowed values for this property are: "END_TIME", "NEW_END_TIME", "ESTIMATED_END_TIME"
+        Allowed values for this property are: "END_TIME", "NEW_END_TIME", "ESTIMATED_END_TIME", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The time_two_type of this BaseAnnouncement.
@@ -543,9 +548,7 @@ class BaseAnnouncement(object):
         """
         allowed_values = ["END_TIME", "NEW_END_TIME", "ESTIMATED_END_TIME"]
         if not value_allowed_none_or_none_sentinel(time_two_type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `time_two_type`, must be None or one of {allowed_values}"
-            )
+            time_two_type = 'UNKNOWN_ENUM_VALUE'
         self._time_two_type = time_two_type
 
     @property
@@ -628,7 +631,8 @@ class BaseAnnouncement(object):
         **[Required]** Gets the announcement_type of this BaseAnnouncement.
         The type of announcement. An announcement's type signals its severity.
 
-        Allowed values for this property are: "ACTION_RECOMMENDED", "ACTION_REQUIRED", "EMERGENCY_CHANGE", "EMERGENCY_MAINTENANCE", "EMERGENCY_MAINTENANCE_COMPLETE", "EMERGENCY_MAINTENANCE_EXTENDED", "EMERGENCY_MAINTENANCE_RESCHEDULED", "INFORMATION", "PLANNED_CHANGE", "PLANNED_CHANGE_COMPLETE", "PLANNED_CHANGE_EXTENDED", "PLANNED_CHANGE_RESCHEDULED", "PRODUCTION_EVENT_NOTIFICATION", "SCHEDULED_MAINTENANCE"
+        Allowed values for this property are: "ACTION_RECOMMENDED", "ACTION_REQUIRED", "EMERGENCY_CHANGE", "EMERGENCY_MAINTENANCE", "EMERGENCY_MAINTENANCE_COMPLETE", "EMERGENCY_MAINTENANCE_EXTENDED", "EMERGENCY_MAINTENANCE_RESCHEDULED", "INFORMATION", "PLANNED_CHANGE", "PLANNED_CHANGE_COMPLETE", "PLANNED_CHANGE_EXTENDED", "PLANNED_CHANGE_RESCHEDULED", "PRODUCTION_EVENT_NOTIFICATION", "SCHEDULED_MAINTENANCE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The announcement_type of this BaseAnnouncement.
@@ -648,9 +652,7 @@ class BaseAnnouncement(object):
         """
         allowed_values = ["ACTION_RECOMMENDED", "ACTION_REQUIRED", "EMERGENCY_CHANGE", "EMERGENCY_MAINTENANCE", "EMERGENCY_MAINTENANCE_COMPLETE", "EMERGENCY_MAINTENANCE_EXTENDED", "EMERGENCY_MAINTENANCE_RESCHEDULED", "INFORMATION", "PLANNED_CHANGE", "PLANNED_CHANGE_COMPLETE", "PLANNED_CHANGE_EXTENDED", "PLANNED_CHANGE_RESCHEDULED", "PRODUCTION_EVENT_NOTIFICATION", "SCHEDULED_MAINTENANCE"]
         if not value_allowed_none_or_none_sentinel(announcement_type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `announcement_type`, must be None or one of {allowed_values}"
-            )
+            announcement_type = 'UNKNOWN_ENUM_VALUE'
         self._announcement_type = announcement_type
 
     @property
@@ -659,7 +661,8 @@ class BaseAnnouncement(object):
         **[Required]** Gets the lifecycle_state of this BaseAnnouncement.
         The current lifecycle state of the announcement.
 
-        Allowed values for this property are: "ACTIVE", "INACTIVE"
+        Allowed values for this property are: "ACTIVE", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The lifecycle_state of this BaseAnnouncement.
@@ -679,9 +682,7 @@ class BaseAnnouncement(object):
         """
         allowed_values = ["ACTIVE", "INACTIVE"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
-            raise ValueError(
-                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
-            )
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
     @property
@@ -798,7 +799,8 @@ class BaseAnnouncement(object):
         Gets the platform_type of this BaseAnnouncement.
         The platform type that this announcement pertains to.
 
-        Allowed values for this property are: "IAAS", "SAAS", "PAAS"
+        Allowed values for this property are: "IAAS", "SAAS", "PAAS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The platform_type of this BaseAnnouncement.
@@ -818,9 +820,7 @@ class BaseAnnouncement(object):
         """
         allowed_values = ["IAAS", "SAAS", "PAAS"]
         if not value_allowed_none_or_none_sentinel(platform_type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `platform_type`, must be None or one of {allowed_values}"
-            )
+            platform_type = 'UNKNOWN_ENUM_VALUE'
         self._platform_type = platform_type
 
     @property

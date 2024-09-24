@@ -74,7 +74,8 @@ class SqlFirewallAllowedSql(object):
 
         :param sql_level:
             The value to assign to the sql_level property of this SqlFirewallAllowedSql.
-            Allowed values for this property are: "USER_ISSUED_SQL", "ALL_SQL"
+            Allowed values for this property are: "USER_ISSUED_SQL", "ALL_SQL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type sql_level: str
 
         :param sql_accessed_objects:
@@ -95,7 +96,8 @@ class SqlFirewallAllowedSql(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this SqlFirewallAllowedSql.
-            Allowed values for this property are: "ACTIVE", "DELETED", "FAILED"
+            Allowed values for this property are: "ACTIVE", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param freeform_tags:
@@ -369,7 +371,8 @@ class SqlFirewallAllowedSql(object):
         USER_ISSUED_SQL - User issued SQL statements only.
         ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
 
-        Allowed values for this property are: "USER_ISSUED_SQL", "ALL_SQL"
+        Allowed values for this property are: "USER_ISSUED_SQL", "ALL_SQL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The sql_level of this SqlFirewallAllowedSql.
@@ -391,9 +394,7 @@ class SqlFirewallAllowedSql(object):
         """
         allowed_values = ["USER_ISSUED_SQL", "ALL_SQL"]
         if not value_allowed_none_or_none_sentinel(sql_level, allowed_values):
-            raise ValueError(
-                f"Invalid value for `sql_level`, must be None or one of {allowed_values}"
-            )
+            sql_level = 'UNKNOWN_ENUM_VALUE'
         self._sql_level = sql_level
 
     @property
@@ -498,7 +499,8 @@ class SqlFirewallAllowedSql(object):
         **[Required]** Gets the lifecycle_state of this SqlFirewallAllowedSql.
         The current state of the SQL Firewall allowed SQL.
 
-        Allowed values for this property are: "ACTIVE", "DELETED", "FAILED"
+        Allowed values for this property are: "ACTIVE", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The lifecycle_state of this SqlFirewallAllowedSql.
@@ -518,9 +520,7 @@ class SqlFirewallAllowedSql(object):
         """
         allowed_values = ["ACTIVE", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
-            raise ValueError(
-                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
-            )
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
     @property

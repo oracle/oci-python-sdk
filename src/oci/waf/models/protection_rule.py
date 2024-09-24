@@ -26,7 +26,8 @@ class ProtectionRule(WebAppFirewallPolicyRule):
 
         :param type:
             The value to assign to the type property of this ProtectionRule.
-            Allowed values for this property are: "ACCESS_CONTROL", "PROTECTION", "REQUEST_RATE_LIMITING"
+            Allowed values for this property are: "ACCESS_CONTROL", "PROTECTION", "REQUEST_RATE_LIMITING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
         :param name:
@@ -35,7 +36,8 @@ class ProtectionRule(WebAppFirewallPolicyRule):
 
         :param condition_language:
             The value to assign to the condition_language property of this ProtectionRule.
-            Allowed values for this property are: "JMESPATH"
+            Allowed values for this property are: "JMESPATH", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type condition_language: str
 
         :param condition:

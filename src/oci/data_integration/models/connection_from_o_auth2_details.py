@@ -27,7 +27,8 @@ class ConnectionFromOAuth2Details(ConnectionDetails):
 
         :param model_type:
             The value to assign to the model_type property of this ConnectionFromOAuth2Details.
-            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_CONNECTION", "ORACLE_PEOPLESOFT_CONNECTION", "ORACLE_EBS_CONNECTION", "ORACLE_SIEBEL_CONNECTION", "HDFS_CONNECTION", "MYSQL_HEATWAVE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION", "OAUTH2_CONNECTION"
+            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_CONNECTION", "ORACLE_PEOPLESOFT_CONNECTION", "ORACLE_EBS_CONNECTION", "ORACLE_SIEBEL_CONNECTION", "HDFS_CONNECTION", "MYSQL_HEATWAVE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION", "OAUTH2_CONNECTION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
         :param key:
@@ -96,7 +97,8 @@ class ConnectionFromOAuth2Details(ConnectionDetails):
 
         :param grant_type:
             The value to assign to the grant_type property of this ConnectionFromOAuth2Details.
-            Allowed values for this property are: "CLIENT_CREDENTIALS"
+            Allowed values for this property are: "CLIENT_CREDENTIALS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type grant_type: str
 
         """
@@ -260,7 +262,8 @@ class ConnectionFromOAuth2Details(ConnectionDetails):
         Gets the grant_type of this ConnectionFromOAuth2Details.
         Specifies the OAuth2 grant mechanism. Example CLIENT_CREDENTIALS, Implicit Flow etc.
 
-        Allowed values for this property are: "CLIENT_CREDENTIALS"
+        Allowed values for this property are: "CLIENT_CREDENTIALS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The grant_type of this ConnectionFromOAuth2Details.
@@ -280,9 +283,7 @@ class ConnectionFromOAuth2Details(ConnectionDetails):
         """
         allowed_values = ["CLIENT_CREDENTIALS"]
         if not value_allowed_none_or_none_sentinel(grant_type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `grant_type`, must be None or one of {allowed_values}"
-            )
+            grant_type = 'UNKNOWN_ENUM_VALUE'
         self._grant_type = grant_type
 
     def __repr__(self):

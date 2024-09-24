@@ -8,6 +8,7 @@ from __future__ import absolute_import
 
 from .add_em_managed_external_exadata_insight_members_details import AddEmManagedExternalExadataInsightMembersDetails
 from .add_exadata_insight_members_details import AddExadataInsightMembersDetails
+from .add_macs_managed_cloud_exadata_insight_members_details import AddMacsManagedCloudExadataInsightMembersDetails
 from .add_pe_comanaged_exadata_insight_members_details import AddPeComanagedExadataInsightMembersDetails
 from .addm_db_collection import AddmDbCollection
 from .addm_db_finding_aggregation import AddmDbFindingAggregation
@@ -83,6 +84,7 @@ from .change_database_insight_compartment_details import ChangeDatabaseInsightCo
 from .change_enterprise_manager_bridge_compartment_details import ChangeEnterpriseManagerBridgeCompartmentDetails
 from .change_exadata_insight_compartment_details import ChangeExadataInsightCompartmentDetails
 from .change_host_insight_compartment_details import ChangeHostInsightCompartmentDetails
+from .change_macs_managed_cloud_database_insight_connection_details import ChangeMacsManagedCloudDatabaseInsightConnectionDetails
 from .change_news_report_compartment_details import ChangeNewsReportCompartmentDetails
 from .change_operations_insights_private_endpoint_compartment_details import ChangeOperationsInsightsPrivateEndpointCompartmentDetails
 from .change_operations_insights_warehouse_compartment_details import ChangeOperationsInsightsWarehouseCompartmentDetails
@@ -110,6 +112,10 @@ from .create_em_managed_external_host_insight_details import CreateEmManagedExte
 from .create_enterprise_manager_bridge_details import CreateEnterpriseManagerBridgeDetails
 from .create_exadata_insight_details import CreateExadataInsightDetails
 from .create_host_insight_details import CreateHostInsightDetails
+from .create_macs_managed_cloud_database_insight_details import CreateMacsManagedCloudDatabaseInsightDetails
+from .create_macs_managed_cloud_exadata_cluster_details import CreateMacsManagedCloudExadataClusterDetails
+from .create_macs_managed_cloud_exadata_insight_details import CreateMacsManagedCloudExadataInsightDetails
+from .create_macs_managed_cloud_exadata_vmcluster_details import CreateMacsManagedCloudExadataVmclusterDetails
 from .create_macs_managed_cloud_host_insight_details import CreateMacsManagedCloudHostInsightDetails
 from .create_macs_managed_external_host_insight_details import CreateMacsManagedExternalHostInsightDetails
 from .create_mds_my_sql_database_insight_details import CreateMdsMySqlDatabaseInsightDetails
@@ -125,6 +131,7 @@ from .create_pe_comanaged_exadata_vmcluster_details import CreatePeComanagedExad
 from .credential_by_vault import CredentialByVault
 from .credential_details import CredentialDetails
 from .credentials_by_source import CredentialsBySource
+from .db_connection_status import DBConnectionStatus
 from .db_external_instance import DBExternalInstance
 from .db_external_properties import DBExternalProperties
 from .dbos_config_instance import DBOSConfigInstance
@@ -174,6 +181,8 @@ from .enable_em_managed_external_exadata_insight_details import EnableEmManagedE
 from .enable_em_managed_external_host_insight_details import EnableEmManagedExternalHostInsightDetails
 from .enable_exadata_insight_details import EnableExadataInsightDetails
 from .enable_host_insight_details import EnableHostInsightDetails
+from .enable_macs_managed_cloud_database_insight_details import EnableMacsManagedCloudDatabaseInsightDetails
+from .enable_macs_managed_cloud_exadata_insight_details import EnableMacsManagedCloudExadataInsightDetails
 from .enable_macs_managed_cloud_host_insight_details import EnableMacsManagedCloudHostInsightDetails
 from .enable_macs_managed_external_host_insight_details import EnableMacsManagedExternalHostInsightDetails
 from .enable_mds_my_sql_database_insight_details import EnableMdsMySqlDatabaseInsightDetails
@@ -183,12 +192,15 @@ from .enterprise_manager_bridge import EnterpriseManagerBridge
 from .enterprise_manager_bridge_collection import EnterpriseManagerBridgeCollection
 from .enterprise_manager_bridge_summary import EnterpriseManagerBridgeSummary
 from .enterprise_manager_bridges import EnterpriseManagerBridges
+from .exadata_asm_entity import ExadataAsmEntity
+from .exadata_cell_config import ExadataCellConfig
 from .exadata_configuration_collection import ExadataConfigurationCollection
 from .exadata_configuration_summary import ExadataConfigurationSummary
 from .exadata_database_machine_configuration_summary import ExadataDatabaseMachineConfigurationSummary
 from .exadata_database_statistics_summary import ExadataDatabaseStatisticsSummary
 from .exadata_details import ExadataDetails
 from .exadata_diskgroup_statistics_summary import ExadataDiskgroupStatisticsSummary
+from .exadata_exacc_configuration_summary import ExadataExaccConfigurationSummary
 from .exadata_exacs_configuration_summary import ExadataExacsConfigurationSummary
 from .exadata_host_statistics_summary import ExadataHostStatisticsSummary
 from .exadata_insight import ExadataInsight
@@ -207,6 +219,7 @@ from .exadata_member_collection import ExadataMemberCollection
 from .exadata_member_summary import ExadataMemberSummary
 from .exadata_storage_server_statistics_summary import ExadataStorageServerStatisticsSummary
 from .historical_data_item import HistoricalDataItem
+from .host_allocation import HostAllocation
 from .host_configuration_collection import HostConfigurationCollection
 from .host_configuration_metric_group import HostConfigurationMetricGroup
 from .host_configuration_summary import HostConfigurationSummary
@@ -281,6 +294,14 @@ from .ingest_sql_text_details import IngestSqlTextDetails
 from .ingest_sql_text_response_details import IngestSqlTextResponseDetails
 from .instance_metrics import InstanceMetrics
 from .list_objects import ListObjects
+from .macs_managed_cloud_database_configuration_summary import MacsManagedCloudDatabaseConfigurationSummary
+from .macs_managed_cloud_database_host_insight import MacsManagedCloudDatabaseHostInsight
+from .macs_managed_cloud_database_host_insight_summary import MacsManagedCloudDatabaseHostInsightSummary
+from .macs_managed_cloud_database_insight import MacsManagedCloudDatabaseInsight
+from .macs_managed_cloud_database_insight_summary import MacsManagedCloudDatabaseInsightSummary
+from .macs_managed_cloud_db_host_configuration_summary import MacsManagedCloudDbHostConfigurationSummary
+from .macs_managed_cloud_exadata_insight import MacsManagedCloudExadataInsight
+from .macs_managed_cloud_exadata_insight_summary import MacsManagedCloudExadataInsightSummary
 from .macs_managed_cloud_host_configuration_summary import MacsManagedCloudHostConfigurationSummary
 from .macs_managed_cloud_host_insight import MacsManagedCloudHostInsight
 from .macs_managed_cloud_host_insight_summary import MacsManagedCloudHostInsightSummary
@@ -421,6 +442,7 @@ from .summarize_operations_insights_warehouse_resource_usage_aggregation import 
 from .summary_statistics import SummaryStatistics
 from .tablespace_usage_trend import TablespaceUsageTrend
 from .tablespace_usage_trend_aggregation import TablespaceUsageTrendAggregation
+from .test_macs_managed_cloud_database_insight_connection_details import TestMacsManagedCloudDatabaseInsightConnectionDetails
 from .top_processes_usage import TopProcessesUsage
 from .top_processes_usage_trend import TopProcessesUsageTrend
 from .top_processes_usage_trend_aggregation import TopProcessesUsageTrendAggregation
@@ -436,6 +458,9 @@ from .update_em_managed_external_host_insight_details import UpdateEmManagedExte
 from .update_enterprise_manager_bridge_details import UpdateEnterpriseManagerBridgeDetails
 from .update_exadata_insight_details import UpdateExadataInsightDetails
 from .update_host_insight_details import UpdateHostInsightDetails
+from .update_macs_managed_cloud_database_host_insight_details import UpdateMacsManagedCloudDatabaseHostInsightDetails
+from .update_macs_managed_cloud_database_insight_details import UpdateMacsManagedCloudDatabaseInsightDetails
+from .update_macs_managed_cloud_exadata_insight_details import UpdateMacsManagedCloudExadataInsightDetails
 from .update_macs_managed_cloud_host_insight_details import UpdateMacsManagedCloudHostInsightDetails
 from .update_macs_managed_external_database_insight_details import UpdateMacsManagedExternalDatabaseInsightDetails
 from .update_macs_managed_external_host_insight_details import UpdateMacsManagedExternalHostInsightDetails
@@ -469,6 +494,7 @@ from .work_requests import WorkRequests
 opsi_type_mapping = {
     "AddEmManagedExternalExadataInsightMembersDetails": AddEmManagedExternalExadataInsightMembersDetails,
     "AddExadataInsightMembersDetails": AddExadataInsightMembersDetails,
+    "AddMacsManagedCloudExadataInsightMembersDetails": AddMacsManagedCloudExadataInsightMembersDetails,
     "AddPeComanagedExadataInsightMembersDetails": AddPeComanagedExadataInsightMembersDetails,
     "AddmDbCollection": AddmDbCollection,
     "AddmDbFindingAggregation": AddmDbFindingAggregation,
@@ -544,6 +570,7 @@ opsi_type_mapping = {
     "ChangeEnterpriseManagerBridgeCompartmentDetails": ChangeEnterpriseManagerBridgeCompartmentDetails,
     "ChangeExadataInsightCompartmentDetails": ChangeExadataInsightCompartmentDetails,
     "ChangeHostInsightCompartmentDetails": ChangeHostInsightCompartmentDetails,
+    "ChangeMacsManagedCloudDatabaseInsightConnectionDetails": ChangeMacsManagedCloudDatabaseInsightConnectionDetails,
     "ChangeNewsReportCompartmentDetails": ChangeNewsReportCompartmentDetails,
     "ChangeOperationsInsightsPrivateEndpointCompartmentDetails": ChangeOperationsInsightsPrivateEndpointCompartmentDetails,
     "ChangeOperationsInsightsWarehouseCompartmentDetails": ChangeOperationsInsightsWarehouseCompartmentDetails,
@@ -571,6 +598,10 @@ opsi_type_mapping = {
     "CreateEnterpriseManagerBridgeDetails": CreateEnterpriseManagerBridgeDetails,
     "CreateExadataInsightDetails": CreateExadataInsightDetails,
     "CreateHostInsightDetails": CreateHostInsightDetails,
+    "CreateMacsManagedCloudDatabaseInsightDetails": CreateMacsManagedCloudDatabaseInsightDetails,
+    "CreateMacsManagedCloudExadataClusterDetails": CreateMacsManagedCloudExadataClusterDetails,
+    "CreateMacsManagedCloudExadataInsightDetails": CreateMacsManagedCloudExadataInsightDetails,
+    "CreateMacsManagedCloudExadataVmclusterDetails": CreateMacsManagedCloudExadataVmclusterDetails,
     "CreateMacsManagedCloudHostInsightDetails": CreateMacsManagedCloudHostInsightDetails,
     "CreateMacsManagedExternalHostInsightDetails": CreateMacsManagedExternalHostInsightDetails,
     "CreateMdsMySqlDatabaseInsightDetails": CreateMdsMySqlDatabaseInsightDetails,
@@ -586,6 +617,7 @@ opsi_type_mapping = {
     "CredentialByVault": CredentialByVault,
     "CredentialDetails": CredentialDetails,
     "CredentialsBySource": CredentialsBySource,
+    "DBConnectionStatus": DBConnectionStatus,
     "DBExternalInstance": DBExternalInstance,
     "DBExternalProperties": DBExternalProperties,
     "DBOSConfigInstance": DBOSConfigInstance,
@@ -635,6 +667,8 @@ opsi_type_mapping = {
     "EnableEmManagedExternalHostInsightDetails": EnableEmManagedExternalHostInsightDetails,
     "EnableExadataInsightDetails": EnableExadataInsightDetails,
     "EnableHostInsightDetails": EnableHostInsightDetails,
+    "EnableMacsManagedCloudDatabaseInsightDetails": EnableMacsManagedCloudDatabaseInsightDetails,
+    "EnableMacsManagedCloudExadataInsightDetails": EnableMacsManagedCloudExadataInsightDetails,
     "EnableMacsManagedCloudHostInsightDetails": EnableMacsManagedCloudHostInsightDetails,
     "EnableMacsManagedExternalHostInsightDetails": EnableMacsManagedExternalHostInsightDetails,
     "EnableMdsMySqlDatabaseInsightDetails": EnableMdsMySqlDatabaseInsightDetails,
@@ -644,12 +678,15 @@ opsi_type_mapping = {
     "EnterpriseManagerBridgeCollection": EnterpriseManagerBridgeCollection,
     "EnterpriseManagerBridgeSummary": EnterpriseManagerBridgeSummary,
     "EnterpriseManagerBridges": EnterpriseManagerBridges,
+    "ExadataAsmEntity": ExadataAsmEntity,
+    "ExadataCellConfig": ExadataCellConfig,
     "ExadataConfigurationCollection": ExadataConfigurationCollection,
     "ExadataConfigurationSummary": ExadataConfigurationSummary,
     "ExadataDatabaseMachineConfigurationSummary": ExadataDatabaseMachineConfigurationSummary,
     "ExadataDatabaseStatisticsSummary": ExadataDatabaseStatisticsSummary,
     "ExadataDetails": ExadataDetails,
     "ExadataDiskgroupStatisticsSummary": ExadataDiskgroupStatisticsSummary,
+    "ExadataExaccConfigurationSummary": ExadataExaccConfigurationSummary,
     "ExadataExacsConfigurationSummary": ExadataExacsConfigurationSummary,
     "ExadataHostStatisticsSummary": ExadataHostStatisticsSummary,
     "ExadataInsight": ExadataInsight,
@@ -668,6 +705,7 @@ opsi_type_mapping = {
     "ExadataMemberSummary": ExadataMemberSummary,
     "ExadataStorageServerStatisticsSummary": ExadataStorageServerStatisticsSummary,
     "HistoricalDataItem": HistoricalDataItem,
+    "HostAllocation": HostAllocation,
     "HostConfigurationCollection": HostConfigurationCollection,
     "HostConfigurationMetricGroup": HostConfigurationMetricGroup,
     "HostConfigurationSummary": HostConfigurationSummary,
@@ -742,6 +780,14 @@ opsi_type_mapping = {
     "IngestSqlTextResponseDetails": IngestSqlTextResponseDetails,
     "InstanceMetrics": InstanceMetrics,
     "ListObjects": ListObjects,
+    "MacsManagedCloudDatabaseConfigurationSummary": MacsManagedCloudDatabaseConfigurationSummary,
+    "MacsManagedCloudDatabaseHostInsight": MacsManagedCloudDatabaseHostInsight,
+    "MacsManagedCloudDatabaseHostInsightSummary": MacsManagedCloudDatabaseHostInsightSummary,
+    "MacsManagedCloudDatabaseInsight": MacsManagedCloudDatabaseInsight,
+    "MacsManagedCloudDatabaseInsightSummary": MacsManagedCloudDatabaseInsightSummary,
+    "MacsManagedCloudDbHostConfigurationSummary": MacsManagedCloudDbHostConfigurationSummary,
+    "MacsManagedCloudExadataInsight": MacsManagedCloudExadataInsight,
+    "MacsManagedCloudExadataInsightSummary": MacsManagedCloudExadataInsightSummary,
     "MacsManagedCloudHostConfigurationSummary": MacsManagedCloudHostConfigurationSummary,
     "MacsManagedCloudHostInsight": MacsManagedCloudHostInsight,
     "MacsManagedCloudHostInsightSummary": MacsManagedCloudHostInsightSummary,
@@ -882,6 +928,7 @@ opsi_type_mapping = {
     "SummaryStatistics": SummaryStatistics,
     "TablespaceUsageTrend": TablespaceUsageTrend,
     "TablespaceUsageTrendAggregation": TablespaceUsageTrendAggregation,
+    "TestMacsManagedCloudDatabaseInsightConnectionDetails": TestMacsManagedCloudDatabaseInsightConnectionDetails,
     "TopProcessesUsage": TopProcessesUsage,
     "TopProcessesUsageTrend": TopProcessesUsageTrend,
     "TopProcessesUsageTrendAggregation": TopProcessesUsageTrendAggregation,
@@ -897,6 +944,9 @@ opsi_type_mapping = {
     "UpdateEnterpriseManagerBridgeDetails": UpdateEnterpriseManagerBridgeDetails,
     "UpdateExadataInsightDetails": UpdateExadataInsightDetails,
     "UpdateHostInsightDetails": UpdateHostInsightDetails,
+    "UpdateMacsManagedCloudDatabaseHostInsightDetails": UpdateMacsManagedCloudDatabaseHostInsightDetails,
+    "UpdateMacsManagedCloudDatabaseInsightDetails": UpdateMacsManagedCloudDatabaseInsightDetails,
+    "UpdateMacsManagedCloudExadataInsightDetails": UpdateMacsManagedCloudExadataInsightDetails,
     "UpdateMacsManagedCloudHostInsightDetails": UpdateMacsManagedCloudHostInsightDetails,
     "UpdateMacsManagedExternalDatabaseInsightDetails": UpdateMacsManagedExternalDatabaseInsightDetails,
     "UpdateMacsManagedExternalHostInsightDetails": UpdateMacsManagedExternalHostInsightDetails,

@@ -23,7 +23,8 @@ class FunctionField(AbstractField):
 
         :param name:
             The value to assign to the name property of this FunctionField.
-            Allowed values for this property are: "FIELD", "FIELDS", "FUNCTION", "SORT"
+            Allowed values for this property are: "FIELD", "FIELDS", "FUNCTION", "SORT", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type name: str
 
         :param display_name:
@@ -44,7 +45,8 @@ class FunctionField(AbstractField):
 
         :param value_type:
             The value to assign to the value_type property of this FunctionField.
-            Allowed values for this property are: "BOOLEAN", "STRING", "DOUBLE", "FLOAT", "LONG", "INTEGER", "TIMESTAMP", "FACET", "TABLE"
+            Allowed values for this property are: "BOOLEAN", "STRING", "DOUBLE", "FLOAT", "LONG", "INTEGER", "TIMESTAMP", "FACET", "TABLE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type value_type: str
 
         :param is_groupable:

@@ -10794,7 +10794,7 @@ class VirtualNetworkClient(object):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
-            "accept": "text/plain; charset&#x3D;utf-8",
+            "accept": "text/plain; charset=utf-8",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
@@ -12772,7 +12772,7 @@ class VirtualNetworkClient(object):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
-            "accept": "text/plain; charset&#x3D;utf-8",
+            "accept": "text/plain; charset=utf-8",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
@@ -14960,7 +14960,7 @@ class VirtualNetworkClient(object):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
-            "accept": "text/plain; charset&#x3D;utf-8",
+            "accept": "text/plain; charset=utf-8",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }

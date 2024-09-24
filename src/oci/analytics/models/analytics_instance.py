@@ -59,6 +59,22 @@ class AnalyticsInstance(object):
     #: This constant has a value of "BRING_YOUR_OWN_LICENSE"
     LICENSE_TYPE_BRING_YOUR_OWN_LICENSE = "BRING_YOUR_OWN_LICENSE"
 
+    #: A constant which can be used with the update_channel property of a AnalyticsInstance.
+    #: This constant has a value of "REGULAR"
+    UPDATE_CHANNEL_REGULAR = "REGULAR"
+
+    #: A constant which can be used with the update_channel property of a AnalyticsInstance.
+    #: This constant has a value of "EARLY"
+    UPDATE_CHANNEL_EARLY = "EARLY"
+
+    #: A constant which can be used with the update_channel property of a AnalyticsInstance.
+    #: This constant has a value of "PHASE_2"
+    UPDATE_CHANNEL_PHASE_2 = "PHASE_2"
+
+    #: A constant which can be used with the update_channel property of a AnalyticsInstance.
+    #: This constant has a value of "PHASE_1"
+    UPDATE_CHANNEL_PHASE_1 = "PHASE_1"
+
     #: A constant which can be used with the feature_bundle property of a AnalyticsInstance.
     #: This constant has a value of "FAW_PAID"
     FEATURE_BUNDLE_FAW_PAID = "FAW_PAID"
@@ -122,6 +138,12 @@ class AnalyticsInstance(object):
             The value to assign to the email_notification property of this AnalyticsInstance.
         :type email_notification: str
 
+        :param update_channel:
+            The value to assign to the update_channel property of this AnalyticsInstance.
+            Allowed values for this property are: "REGULAR", "EARLY", "PHASE_2", "PHASE_1", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type update_channel: str
+
         :param network_endpoint_details:
             The value to assign to the network_endpoint_details property of this AnalyticsInstance.
         :type network_endpoint_details: oci.analytics.models.NetworkEndpointDetails
@@ -183,6 +205,7 @@ class AnalyticsInstance(object):
             'capacity': 'Capacity',
             'license_type': 'str',
             'email_notification': 'str',
+            'update_channel': 'str',
             'network_endpoint_details': 'NetworkEndpointDetails',
             'private_access_channels': 'dict(str, PrivateAccessChannel)',
             'vanity_url_details': 'dict(str, VanityUrlDetails)',
@@ -207,6 +230,7 @@ class AnalyticsInstance(object):
             'capacity': 'capacity',
             'license_type': 'licenseType',
             'email_notification': 'emailNotification',
+            'update_channel': 'updateChannel',
             'network_endpoint_details': 'networkEndpointDetails',
             'private_access_channels': 'privateAccessChannels',
             'vanity_url_details': 'vanityUrlDetails',
@@ -230,6 +254,7 @@ class AnalyticsInstance(object):
         self._capacity = None
         self._license_type = None
         self._email_notification = None
+        self._update_channel = None
         self._network_endpoint_details = None
         self._private_access_channels = None
         self._vanity_url_details = None
@@ -472,6 +497,36 @@ class AnalyticsInstance(object):
         :type: str
         """
         self._email_notification = email_notification
+
+    @property
+    def update_channel(self):
+        """
+        Gets the update_channel of this AnalyticsInstance.
+        Analytics instance update channel.
+
+        Allowed values for this property are: "REGULAR", "EARLY", "PHASE_2", "PHASE_1", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The update_channel of this AnalyticsInstance.
+        :rtype: str
+        """
+        return self._update_channel
+
+    @update_channel.setter
+    def update_channel(self, update_channel):
+        """
+        Sets the update_channel of this AnalyticsInstance.
+        Analytics instance update channel.
+
+
+        :param update_channel: The update_channel of this AnalyticsInstance.
+        :type: str
+        """
+        allowed_values = ["REGULAR", "EARLY", "PHASE_2", "PHASE_1"]
+        if not value_allowed_none_or_none_sentinel(update_channel, allowed_values):
+            update_channel = 'UNKNOWN_ENUM_VALUE'
+        self._update_channel = update_channel
 
     @property
     def network_endpoint_details(self):

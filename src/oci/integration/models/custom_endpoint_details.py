@@ -15,6 +15,18 @@ class CustomEndpointDetails(object):
     Details for a custom endpoint for the integration instance.
     """
 
+    #: A constant which can be used with the managed_type property of a CustomEndpointDetails.
+    #: This constant has a value of "ORACLE_MANAGED"
+    MANAGED_TYPE_ORACLE_MANAGED = "ORACLE_MANAGED"
+
+    #: A constant which can be used with the managed_type property of a CustomEndpointDetails.
+    #: This constant has a value of "CUSTOMER_MANAGED"
+    MANAGED_TYPE_CUSTOMER_MANAGED = "CUSTOMER_MANAGED"
+
+    #: A constant which can be used with the dns_type property of a CustomEndpointDetails.
+    #: This constant has a value of "OCI"
+    DNS_TYPE_OCI = "OCI"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CustomEndpointDetails object with values from keyword arguments.
@@ -23,6 +35,22 @@ class CustomEndpointDetails(object):
         :param hostname:
             The value to assign to the hostname property of this CustomEndpointDetails.
         :type hostname: str
+
+        :param managed_type:
+            The value to assign to the managed_type property of this CustomEndpointDetails.
+            Allowed values for this property are: "ORACLE_MANAGED", "CUSTOMER_MANAGED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type managed_type: str
+
+        :param dns_zone_name:
+            The value to assign to the dns_zone_name property of this CustomEndpointDetails.
+        :type dns_zone_name: str
+
+        :param dns_type:
+            The value to assign to the dns_type property of this CustomEndpointDetails.
+            Allowed values for this property are: "OCI", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type dns_type: str
 
         :param certificate_secret_id:
             The value to assign to the certificate_secret_id property of this CustomEndpointDetails.
@@ -39,6 +67,9 @@ class CustomEndpointDetails(object):
         """
         self.swagger_types = {
             'hostname': 'str',
+            'managed_type': 'str',
+            'dns_zone_name': 'str',
+            'dns_type': 'str',
             'certificate_secret_id': 'str',
             'certificate_secret_version': 'int',
             'alias': 'str'
@@ -46,12 +77,18 @@ class CustomEndpointDetails(object):
 
         self.attribute_map = {
             'hostname': 'hostname',
+            'managed_type': 'managedType',
+            'dns_zone_name': 'dnsZoneName',
+            'dns_type': 'dnsType',
             'certificate_secret_id': 'certificateSecretId',
             'certificate_secret_version': 'certificateSecretVersion',
             'alias': 'alias'
         }
 
         self._hostname = None
+        self._managed_type = None
+        self._dns_zone_name = None
+        self._dns_type = None
         self._certificate_secret_id = None
         self._certificate_secret_version = None
         self._alias = None
@@ -79,6 +116,90 @@ class CustomEndpointDetails(object):
         :type: str
         """
         self._hostname = hostname
+
+    @property
+    def managed_type(self):
+        """
+        Gets the managed_type of this CustomEndpointDetails.
+        Indicates if custom endpoint is managed by oracle or customer.
+
+        Allowed values for this property are: "ORACLE_MANAGED", "CUSTOMER_MANAGED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The managed_type of this CustomEndpointDetails.
+        :rtype: str
+        """
+        return self._managed_type
+
+    @managed_type.setter
+    def managed_type(self, managed_type):
+        """
+        Sets the managed_type of this CustomEndpointDetails.
+        Indicates if custom endpoint is managed by oracle or customer.
+
+
+        :param managed_type: The managed_type of this CustomEndpointDetails.
+        :type: str
+        """
+        allowed_values = ["ORACLE_MANAGED", "CUSTOMER_MANAGED"]
+        if not value_allowed_none_or_none_sentinel(managed_type, allowed_values):
+            managed_type = 'UNKNOWN_ENUM_VALUE'
+        self._managed_type = managed_type
+
+    @property
+    def dns_zone_name(self):
+        """
+        Gets the dns_zone_name of this CustomEndpointDetails.
+        DNS Zone name
+
+
+        :return: The dns_zone_name of this CustomEndpointDetails.
+        :rtype: str
+        """
+        return self._dns_zone_name
+
+    @dns_zone_name.setter
+    def dns_zone_name(self, dns_zone_name):
+        """
+        Sets the dns_zone_name of this CustomEndpointDetails.
+        DNS Zone name
+
+
+        :param dns_zone_name: The dns_zone_name of this CustomEndpointDetails.
+        :type: str
+        """
+        self._dns_zone_name = dns_zone_name
+
+    @property
+    def dns_type(self):
+        """
+        Gets the dns_type of this CustomEndpointDetails.
+        Type of DNS.
+
+        Allowed values for this property are: "OCI", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The dns_type of this CustomEndpointDetails.
+        :rtype: str
+        """
+        return self._dns_type
+
+    @dns_type.setter
+    def dns_type(self, dns_type):
+        """
+        Sets the dns_type of this CustomEndpointDetails.
+        Type of DNS.
+
+
+        :param dns_type: The dns_type of this CustomEndpointDetails.
+        :type: str
+        """
+        allowed_values = ["OCI"]
+        if not value_allowed_none_or_none_sentinel(dns_type, allowed_values):
+            dns_type = 'UNKNOWN_ENUM_VALUE'
+        self._dns_type = dns_type
 
     @property
     def certificate_secret_id(self):

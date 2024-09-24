@@ -78,12 +78,14 @@ class FleetTarget(object):
 
         :param compliance_state:
             The value to assign to the compliance_state property of this FleetTarget.
-            Allowed values for this property are: "UNKNOWN", "COMPLIANT", "NON_COMPLIANT", "WARNING"
+            Allowed values for this property are: "UNKNOWN", "COMPLIANT", "NON_COMPLIANT", "WARNING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type compliance_state: str
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this FleetTarget.
-            Allowed values for this property are: "ACTIVE", "DELETED", "FAILED"
+            Allowed values for this property are: "ACTIVE", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param system_tags:
@@ -304,7 +306,8 @@ class FleetTarget(object):
         Gets the compliance_state of this FleetTarget.
         Last known compliance state of Target.
 
-        Allowed values for this property are: "UNKNOWN", "COMPLIANT", "NON_COMPLIANT", "WARNING"
+        Allowed values for this property are: "UNKNOWN", "COMPLIANT", "NON_COMPLIANT", "WARNING", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The compliance_state of this FleetTarget.
@@ -324,9 +327,7 @@ class FleetTarget(object):
         """
         allowed_values = ["UNKNOWN", "COMPLIANT", "NON_COMPLIANT", "WARNING"]
         if not value_allowed_none_or_none_sentinel(compliance_state, allowed_values):
-            raise ValueError(
-                f"Invalid value for `compliance_state`, must be None or one of {allowed_values}"
-            )
+            compliance_state = 'UNKNOWN_ENUM_VALUE'
         self._compliance_state = compliance_state
 
     @property
@@ -335,7 +336,8 @@ class FleetTarget(object):
         Gets the lifecycle_state of this FleetTarget.
         The current state of the FleetTarget.
 
-        Allowed values for this property are: "ACTIVE", "DELETED", "FAILED"
+        Allowed values for this property are: "ACTIVE", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The lifecycle_state of this FleetTarget.
@@ -355,9 +357,7 @@ class FleetTarget(object):
         """
         allowed_values = ["ACTIVE", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
-            raise ValueError(
-                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
-            )
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
     @property

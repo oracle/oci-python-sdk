@@ -34,7 +34,8 @@ class ValidationRequestPolicy(object):
 
         :param validation_mode:
             The value to assign to the validation_mode property of this ValidationRequestPolicy.
-            Allowed values for this property are: "ENFORCING", "PERMISSIVE", "DISABLED"
+            Allowed values for this property are: "ENFORCING", "PERMISSIVE", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type validation_mode: str
 
         """
@@ -62,7 +63,8 @@ class ValidationRequestPolicy(object):
 
         `DISABLED` type turns the validation off.
 
-        Allowed values for this property are: "ENFORCING", "PERMISSIVE", "DISABLED"
+        Allowed values for this property are: "ENFORCING", "PERMISSIVE", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The validation_mode of this ValidationRequestPolicy.
@@ -90,9 +92,7 @@ class ValidationRequestPolicy(object):
         """
         allowed_values = ["ENFORCING", "PERMISSIVE", "DISABLED"]
         if not value_allowed_none_or_none_sentinel(validation_mode, allowed_values):
-            raise ValueError(
-                f"Invalid value for `validation_mode`, must be None or one of {allowed_values}"
-            )
+            validation_mode = 'UNKNOWN_ENUM_VALUE'
         self._validation_mode = validation_mode
 
     def __repr__(self):

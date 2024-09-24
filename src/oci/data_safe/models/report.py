@@ -23,6 +23,10 @@ class Report(object):
     #: This constant has a value of "XLS"
     MIME_TYPE_XLS = "XLS"
 
+    #: A constant which can be used with the mime_type property of a Report.
+    #: This constant has a value of "JSON"
+    MIME_TYPE_JSON = "JSON"
+
     #: A constant which can be used with the lifecycle_state property of a Report.
     #: This constant has a value of "UPDATING"
     LIFECYCLE_STATE_UPDATING = "UPDATING"
@@ -74,7 +78,7 @@ class Report(object):
 
         :param mime_type:
             The value to assign to the mime_type property of this Report.
-            Allowed values for this property are: "PDF", "XLS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PDF", "XLS", "JSON", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type mime_type: str
 
@@ -283,7 +287,7 @@ class Report(object):
         Gets the mime_type of this Report.
         Specifies the format of report to be .xls or .pdf or .json
 
-        Allowed values for this property are: "PDF", "XLS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PDF", "XLS", "JSON", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -302,7 +306,7 @@ class Report(object):
         :param mime_type: The mime_type of this Report.
         :type: str
         """
-        allowed_values = ["PDF", "XLS"]
+        allowed_values = ["PDF", "XLS", "JSON"]
         if not value_allowed_none_or_none_sentinel(mime_type, allowed_values):
             mime_type = 'UNKNOWN_ENUM_VALUE'
         self._mime_type = mime_type

@@ -94,12 +94,14 @@ class Bot(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Bot.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this Bot.
-            Allowed values for this property are: "PUBLISHED", "DRAFT"
+            Allowed values for this property are: "PUBLISHED", "DRAFT", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_details: str
 
         :param platform_version:
@@ -116,7 +118,8 @@ class Bot(object):
 
         :param multilingual_mode:
             The value to assign to the multilingual_mode property of this Bot.
-            Allowed values for this property are: "NATIVE", "TRANSLATION"
+            Allowed values for this property are: "NATIVE", "TRANSLATION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type multilingual_mode: str
 
         :param primary_language_tag:
@@ -382,7 +385,8 @@ class Bot(object):
         **[Required]** Gets the lifecycle_state of this Bot.
         The resource's current state.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The lifecycle_state of this Bot.
@@ -402,9 +406,7 @@ class Bot(object):
         """
         allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
-            raise ValueError(
-                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
-            )
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
     @property
@@ -413,7 +415,8 @@ class Bot(object):
         **[Required]** Gets the lifecycle_details of this Bot.
         The resource's publish state.
 
-        Allowed values for this property are: "PUBLISHED", "DRAFT"
+        Allowed values for this property are: "PUBLISHED", "DRAFT", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The lifecycle_details of this Bot.
@@ -433,9 +436,7 @@ class Bot(object):
         """
         allowed_values = ["PUBLISHED", "DRAFT"]
         if not value_allowed_none_or_none_sentinel(lifecycle_details, allowed_values):
-            raise ValueError(
-                f"Invalid value for `lifecycle_details`, must be None or one of {allowed_values}"
-            )
+            lifecycle_details = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_details = lifecycle_details
 
     @property
@@ -516,7 +517,8 @@ class Bot(object):
         Gets the multilingual_mode of this Bot.
         The multilingual mode for the resource.
 
-        Allowed values for this property are: "NATIVE", "TRANSLATION"
+        Allowed values for this property are: "NATIVE", "TRANSLATION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The multilingual_mode of this Bot.
@@ -536,9 +538,7 @@ class Bot(object):
         """
         allowed_values = ["NATIVE", "TRANSLATION"]
         if not value_allowed_none_or_none_sentinel(multilingual_mode, allowed_values):
-            raise ValueError(
-                f"Invalid value for `multilingual_mode`, must be None or one of {allowed_values}"
-            )
+            multilingual_mode = 'UNKNOWN_ENUM_VALUE'
         self._multilingual_mode = multilingual_mode
 
     @property

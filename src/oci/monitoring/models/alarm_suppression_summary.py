@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AlarmSuppressionSummary(object):
     """
-    A summary of properties for the specified dimension-specific alarm suppression.
+    A summary of properties for the specified alarm suppression.
     """
 
     def __init__(self, **kwargs):
@@ -31,6 +31,14 @@ class AlarmSuppressionSummary(object):
         :param alarm_suppression_target:
             The value to assign to the alarm_suppression_target property of this AlarmSuppressionSummary.
         :type alarm_suppression_target: oci.monitoring.models.AlarmSuppressionTarget
+
+        :param level:
+            The value to assign to the level property of this AlarmSuppressionSummary.
+        :type level: str
+
+        :param suppression_conditions:
+            The value to assign to the suppression_conditions property of this AlarmSuppressionSummary.
+        :type suppression_conditions: list[oci.monitoring.models.SuppressionCondition]
 
         :param display_name:
             The value to assign to the display_name property of this AlarmSuppressionSummary.
@@ -77,6 +85,8 @@ class AlarmSuppressionSummary(object):
             'id': 'str',
             'compartment_id': 'str',
             'alarm_suppression_target': 'AlarmSuppressionTarget',
+            'level': 'str',
+            'suppression_conditions': 'list[SuppressionCondition]',
             'display_name': 'str',
             'description': 'str',
             'dimensions': 'dict(str, str)',
@@ -93,6 +103,8 @@ class AlarmSuppressionSummary(object):
             'id': 'id',
             'compartment_id': 'compartmentId',
             'alarm_suppression_target': 'alarmSuppressionTarget',
+            'level': 'level',
+            'suppression_conditions': 'suppressionConditions',
             'display_name': 'displayName',
             'description': 'description',
             'dimensions': 'dimensions',
@@ -108,6 +120,8 @@ class AlarmSuppressionSummary(object):
         self._id = None
         self._compartment_id = None
         self._alarm_suppression_target = None
+        self._level = None
+        self._suppression_conditions = None
         self._display_name = None
         self._description = None
         self._dimensions = None
@@ -196,6 +210,68 @@ class AlarmSuppressionSummary(object):
         self._alarm_suppression_target = alarm_suppression_target
 
     @property
+    def level(self):
+        """
+        **[Required]** Gets the level of this AlarmSuppressionSummary.
+        The level of this alarm suppression.
+        `ALARM` indicates a suppression of the entire alarm, regardless of dimension.
+        `DIMENSION` indicates a suppression configured for specified dimensions.
+
+
+        :return: The level of this AlarmSuppressionSummary.
+        :rtype: str
+        """
+        return self._level
+
+    @level.setter
+    def level(self, level):
+        """
+        Sets the level of this AlarmSuppressionSummary.
+        The level of this alarm suppression.
+        `ALARM` indicates a suppression of the entire alarm, regardless of dimension.
+        `DIMENSION` indicates a suppression configured for specified dimensions.
+
+
+        :param level: The level of this AlarmSuppressionSummary.
+        :type: str
+        """
+        self._level = level
+
+    @property
+    def suppression_conditions(self):
+        """
+        Gets the suppression_conditions of this AlarmSuppressionSummary.
+        Array of all preconditions for alarm suppression.
+        Example: `[{
+          conditionType: \"RECURRENCE\",
+          suppressionRecurrence: \"FRQ=DAILY;BYHOUR=10\",
+          suppressionDuration: \"PT1H\"
+        }]`
+
+
+        :return: The suppression_conditions of this AlarmSuppressionSummary.
+        :rtype: list[oci.monitoring.models.SuppressionCondition]
+        """
+        return self._suppression_conditions
+
+    @suppression_conditions.setter
+    def suppression_conditions(self, suppression_conditions):
+        """
+        Sets the suppression_conditions of this AlarmSuppressionSummary.
+        Array of all preconditions for alarm suppression.
+        Example: `[{
+          conditionType: \"RECURRENCE\",
+          suppressionRecurrence: \"FRQ=DAILY;BYHOUR=10\",
+          suppressionDuration: \"PT1H\"
+        }]`
+
+
+        :param suppression_conditions: The suppression_conditions of this AlarmSuppressionSummary.
+        :type: list[oci.monitoring.models.SuppressionCondition]
+        """
+        self._suppression_conditions = suppression_conditions
+
+    @property
     def display_name(self):
         """
         **[Required]** Gets the display_name of this AlarmSuppressionSummary.
@@ -260,7 +336,7 @@ class AlarmSuppressionSummary(object):
     @property
     def dimensions(self):
         """
-        **[Required]** Gets the dimensions of this AlarmSuppressionSummary.
+        Gets the dimensions of this AlarmSuppressionSummary.
         Configured dimension filter for suppressing alarm state entries that include the set of specified dimension key-value pairs.
 
         Example: `{\"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"}`

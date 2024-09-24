@@ -35,7 +35,8 @@ class AbstractCallAttribute(object):
 
         :param model_type:
             The value to assign to the model_type property of this AbstractCallAttribute.
-            Allowed values for this property are: "BIP_CALL_ATTRIBUTE", "GENERIC_REST_CALL_ATTRIBUTE"
+            Allowed values for this property are: "BIP_CALL_ATTRIBUTE", "GENERIC_REST_CALL_ATTRIBUTE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
         :param fetch_size:
@@ -78,7 +79,8 @@ class AbstractCallAttribute(object):
         **[Required]** Gets the model_type of this AbstractCallAttribute.
         The type of the abstract call attribute.
 
-        Allowed values for this property are: "BIP_CALL_ATTRIBUTE", "GENERIC_REST_CALL_ATTRIBUTE"
+        Allowed values for this property are: "BIP_CALL_ATTRIBUTE", "GENERIC_REST_CALL_ATTRIBUTE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The model_type of this AbstractCallAttribute.
@@ -98,9 +100,7 @@ class AbstractCallAttribute(object):
         """
         allowed_values = ["BIP_CALL_ATTRIBUTE", "GENERIC_REST_CALL_ATTRIBUTE"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `model_type`, must be None or one of {allowed_values}"
-            )
+            model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type
 
     @property

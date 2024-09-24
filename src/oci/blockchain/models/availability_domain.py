@@ -34,7 +34,8 @@ class AvailabilityDomain(object):
 
         :param ads:
             The value to assign to the ads property of this AvailabilityDomain.
-            Allowed values for this property are: "AD1", "AD2", "AD3"
+            Allowed values for this property are: "AD1", "AD2", "AD3", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type ads: str
 
         """
@@ -54,7 +55,8 @@ class AvailabilityDomain(object):
         Gets the ads of this AvailabilityDomain.
         Availability Domain Identifiers
 
-        Allowed values for this property are: "AD1", "AD2", "AD3"
+        Allowed values for this property are: "AD1", "AD2", "AD3", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The ads of this AvailabilityDomain.
@@ -74,9 +76,7 @@ class AvailabilityDomain(object):
         """
         allowed_values = ["AD1", "AD2", "AD3"]
         if not value_allowed_none_or_none_sentinel(ads, allowed_values):
-            raise ValueError(
-                f"Invalid value for `ads`, must be None or one of {allowed_values}"
-            )
+            ads = 'UNKNOWN_ENUM_VALUE'
         self._ads = ads
 
     def __repr__(self):

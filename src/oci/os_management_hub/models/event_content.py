@@ -35,7 +35,8 @@ class EventContent(object):
 
         :param type:
             The value to assign to the type property of this EventContent.
-            Allowed values for this property are: "KERNEL", "EXPLOIT_ATTEMPT"
+            Allowed values for this property are: "KERNEL", "EXPLOIT_ATTEMPT", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
         """
@@ -73,7 +74,8 @@ class EventContent(object):
           * `KERNEL` - Used to identify a kernel oops/crash content
           * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection content
 
-        Allowed values for this property are: "KERNEL", "EXPLOIT_ATTEMPT"
+        Allowed values for this property are: "KERNEL", "EXPLOIT_ATTEMPT", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The type of this EventContent.
@@ -95,9 +97,7 @@ class EventContent(object):
         """
         allowed_values = ["KERNEL", "EXPLOIT_ATTEMPT"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `type`, must be None or one of {allowed_values}"
-            )
+            type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
 
     def __repr__(self):

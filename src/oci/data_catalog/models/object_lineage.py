@@ -38,7 +38,8 @@ class ObjectLineage(object):
 
         :param direction:
             The value to assign to the direction property of this ObjectLineage.
-            Allowed values for this property are: "UPSTREAM", "BOTH", "DOWNSTREAM"
+            Allowed values for this property are: "UPSTREAM", "BOTH", "DOWNSTREAM", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type direction: str
 
         :param objects:
@@ -106,7 +107,8 @@ class ObjectLineage(object):
         **[Required]** Gets the direction of this ObjectLineage.
         Direction of the lineage returned.
 
-        Allowed values for this property are: "UPSTREAM", "BOTH", "DOWNSTREAM"
+        Allowed values for this property are: "UPSTREAM", "BOTH", "DOWNSTREAM", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The direction of this ObjectLineage.
@@ -126,9 +128,7 @@ class ObjectLineage(object):
         """
         allowed_values = ["UPSTREAM", "BOTH", "DOWNSTREAM"]
         if not value_allowed_none_or_none_sentinel(direction, allowed_values):
-            raise ValueError(
-                f"Invalid value for `direction`, must be None or one of {allowed_values}"
-            )
+            direction = 'UNKNOWN_ENUM_VALUE'
         self._direction = direction
 
     @property

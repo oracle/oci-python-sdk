@@ -38,7 +38,8 @@ class ComputeHpcIsland(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ComputeHpcIsland.
-            Allowed values for this property are: "ACTIVE", "INACTIVE"
+            Allowed values for this property are: "ACTIVE", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param time_created:
@@ -141,7 +142,8 @@ class ComputeHpcIsland(object):
         **[Required]** Gets the lifecycle_state of this ComputeHpcIsland.
         The current state of the compute HPC island.
 
-        Allowed values for this property are: "ACTIVE", "INACTIVE"
+        Allowed values for this property are: "ACTIVE", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The lifecycle_state of this ComputeHpcIsland.
@@ -161,9 +163,7 @@ class ComputeHpcIsland(object):
         """
         allowed_values = ["ACTIVE", "INACTIVE"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
-            raise ValueError(
-                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
-            )
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
     @property

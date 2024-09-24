@@ -44,7 +44,8 @@ class WebAppFirewallPolicyRule(object):
 
         :param type:
             The value to assign to the type property of this WebAppFirewallPolicyRule.
-            Allowed values for this property are: "ACCESS_CONTROL", "PROTECTION", "REQUEST_RATE_LIMITING"
+            Allowed values for this property are: "ACCESS_CONTROL", "PROTECTION", "REQUEST_RATE_LIMITING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
         :param name:
@@ -53,7 +54,8 @@ class WebAppFirewallPolicyRule(object):
 
         :param condition_language:
             The value to assign to the condition_language property of this WebAppFirewallPolicyRule.
-            Allowed values for this property are: "JMESPATH"
+            Allowed values for this property are: "JMESPATH", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type condition_language: str
 
         :param condition:
@@ -112,7 +114,8 @@ class WebAppFirewallPolicyRule(object):
         **[Required]** Gets the type of this WebAppFirewallPolicyRule.
         Type of WebAppFirewallPolicyRule.
 
-        Allowed values for this property are: "ACCESS_CONTROL", "PROTECTION", "REQUEST_RATE_LIMITING"
+        Allowed values for this property are: "ACCESS_CONTROL", "PROTECTION", "REQUEST_RATE_LIMITING", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The type of this WebAppFirewallPolicyRule.
@@ -132,9 +135,7 @@ class WebAppFirewallPolicyRule(object):
         """
         allowed_values = ["ACCESS_CONTROL", "PROTECTION", "REQUEST_RATE_LIMITING"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
-            raise ValueError(
-                f"Invalid value for `type`, must be None or one of {allowed_values}"
-            )
+            type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
 
     @property
@@ -169,7 +170,8 @@ class WebAppFirewallPolicyRule(object):
 
         * **JMESPATH** an extended JMESPath language syntax.
 
-        Allowed values for this property are: "JMESPATH"
+        Allowed values for this property are: "JMESPATH", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The condition_language of this WebAppFirewallPolicyRule.
@@ -191,9 +193,7 @@ class WebAppFirewallPolicyRule(object):
         """
         allowed_values = ["JMESPATH"]
         if not value_allowed_none_or_none_sentinel(condition_language, allowed_values):
-            raise ValueError(
-                f"Invalid value for `condition_language`, must be None or one of {allowed_values}"
-            )
+            condition_language = 'UNKNOWN_ENUM_VALUE'
         self._condition_language = condition_language
 
     @property

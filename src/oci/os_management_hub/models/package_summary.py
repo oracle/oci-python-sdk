@@ -76,7 +76,8 @@ class PackageSummary(object):
 
         :param architecture:
             The value to assign to the architecture property of this PackageSummary.
-            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC"
+            Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type architecture: str
 
         :param software_sources:
@@ -85,7 +86,8 @@ class PackageSummary(object):
 
         :param package_classification:
             The value to assign to the package_classification property of this PackageSummary.
-            Allowed values for this property are: "INSTALLED", "AVAILABLE", "UPDATABLE"
+            Allowed values for this property are: "INSTALLED", "AVAILABLE", "UPDATABLE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type package_classification: str
 
         """
@@ -238,7 +240,8 @@ class PackageSummary(object):
         Gets the architecture of this PackageSummary.
         The architecture for which this package was built.
 
-        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC"
+        Allowed values for this property are: "X86_64", "AARCH64", "I686", "NOARCH", "SRC", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The architecture of this PackageSummary.
@@ -258,9 +261,7 @@ class PackageSummary(object):
         """
         allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC"]
         if not value_allowed_none_or_none_sentinel(architecture, allowed_values):
-            raise ValueError(
-                f"Invalid value for `architecture`, must be None or one of {allowed_values}"
-            )
+            architecture = 'UNKNOWN_ENUM_VALUE'
         self._architecture = architecture
 
     @property
@@ -293,7 +294,8 @@ class PackageSummary(object):
         **[Required]** Gets the package_classification of this PackageSummary.
         Status of the software package.
 
-        Allowed values for this property are: "INSTALLED", "AVAILABLE", "UPDATABLE"
+        Allowed values for this property are: "INSTALLED", "AVAILABLE", "UPDATABLE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The package_classification of this PackageSummary.
@@ -313,9 +315,7 @@ class PackageSummary(object):
         """
         allowed_values = ["INSTALLED", "AVAILABLE", "UPDATABLE"]
         if not value_allowed_none_or_none_sentinel(package_classification, allowed_values):
-            raise ValueError(
-                f"Invalid value for `package_classification`, must be None or one of {allowed_values}"
-            )
+            package_classification = 'UNKNOWN_ENUM_VALUE'
         self._package_classification = package_classification
 
     def __repr__(self):

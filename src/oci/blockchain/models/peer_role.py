@@ -30,7 +30,8 @@ class PeerRole(object):
 
         :param role:
             The value to assign to the role property of this PeerRole.
-            Allowed values for this property are: "MEMBER", "ADMIN"
+            Allowed values for this property are: "MEMBER", "ADMIN", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type role: str
 
         """
@@ -50,7 +51,8 @@ class PeerRole(object):
         Gets the role of this PeerRole.
         Peer role names
 
-        Allowed values for this property are: "MEMBER", "ADMIN"
+        Allowed values for this property are: "MEMBER", "ADMIN", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The role of this PeerRole.
@@ -70,9 +72,7 @@ class PeerRole(object):
         """
         allowed_values = ["MEMBER", "ADMIN"]
         if not value_allowed_none_or_none_sentinel(role, allowed_values):
-            raise ValueError(
-                f"Invalid value for `role`, must be None or one of {allowed_values}"
-            )
+            role = 'UNKNOWN_ENUM_VALUE'
         self._role = role
 
     def __repr__(self):

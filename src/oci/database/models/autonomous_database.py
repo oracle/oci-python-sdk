@@ -458,6 +458,10 @@ class AutonomousDatabase(object):
             The value to assign to the autonomous_container_database_id property of this AutonomousDatabase.
         :type autonomous_container_database_id: str
 
+        :param time_undeleted:
+            The value to assign to the time_undeleted property of this AutonomousDatabase.
+        :type time_undeleted: datetime
+
         :param time_created:
             The value to assign to the time_created property of this AutonomousDatabase.
         :type time_created: datetime
@@ -855,6 +859,7 @@ class AutonomousDatabase(object):
             'infrastructure_type': 'str',
             'is_dedicated': 'bool',
             'autonomous_container_database_id': 'str',
+            'time_undeleted': 'datetime',
             'time_created': 'datetime',
             'display_name': 'str',
             'service_console_url': 'str',
@@ -977,6 +982,7 @@ class AutonomousDatabase(object):
             'infrastructure_type': 'infrastructureType',
             'is_dedicated': 'isDedicated',
             'autonomous_container_database_id': 'autonomousContainerDatabaseId',
+            'time_undeleted': 'timeUndeleted',
             'time_created': 'timeCreated',
             'display_name': 'displayName',
             'service_console_url': 'serviceConsoleUrl',
@@ -1098,6 +1104,7 @@ class AutonomousDatabase(object):
         self._infrastructure_type = None
         self._is_dedicated = None
         self._autonomous_container_database_id = None
+        self._time_undeleted = None
         self._time_created = None
         self._display_name = None
         self._service_console_url = None
@@ -2164,6 +2171,30 @@ class AutonomousDatabase(object):
         :type: str
         """
         self._autonomous_container_database_id = autonomous_container_database_id
+
+    @property
+    def time_undeleted(self):
+        """
+        Gets the time_undeleted of this AutonomousDatabase.
+        The date and time the Autonomous Database was most recently undeleted.
+
+
+        :return: The time_undeleted of this AutonomousDatabase.
+        :rtype: datetime
+        """
+        return self._time_undeleted
+
+    @time_undeleted.setter
+    def time_undeleted(self, time_undeleted):
+        """
+        Sets the time_undeleted of this AutonomousDatabase.
+        The date and time the Autonomous Database was most recently undeleted.
+
+
+        :param time_undeleted: The time_undeleted of this AutonomousDatabase.
+        :type: datetime
+        """
+        self._time_undeleted = time_undeleted
 
     @property
     def time_created(self):
