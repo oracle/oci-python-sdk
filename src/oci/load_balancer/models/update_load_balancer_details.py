@@ -46,6 +46,10 @@ class UpdateLoadBalancerDetails(object):
             The value to assign to the defined_tags property of this UpdateLoadBalancerDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param zpr_tags:
+            The value to assign to the zpr_tags property of this UpdateLoadBalancerDetails.
+        :type zpr_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -53,7 +57,8 @@ class UpdateLoadBalancerDetails(object):
             'is_request_id_enabled': 'bool',
             'request_id_header': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'zpr_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -62,7 +67,8 @@ class UpdateLoadBalancerDetails(object):
             'is_request_id_enabled': 'isRequestIdEnabled',
             'request_id_header': 'requestIdHeader',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'zpr_tags': 'zprTags'
         }
 
         self._display_name = None
@@ -71,6 +77,7 @@ class UpdateLoadBalancerDetails(object):
         self._request_id_header = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._zpr_tags = None
 
     @property
     def display_name(self):
@@ -307,6 +314,34 @@ class UpdateLoadBalancerDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def zpr_tags(self):
+        """
+        Gets the zpr_tags of this UpdateLoadBalancerDetails.
+        Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\", \"usagetype\" : \"zpr\"}}}`
+
+
+        :return: The zpr_tags of this UpdateLoadBalancerDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._zpr_tags
+
+    @zpr_tags.setter
+    def zpr_tags(self, zpr_tags):
+        """
+        Sets the zpr_tags of this UpdateLoadBalancerDetails.
+        Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.
+
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\", \"usagetype\" : \"zpr\"}}}`
+
+
+        :param zpr_tags: The zpr_tags of this UpdateLoadBalancerDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._zpr_tags = zpr_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

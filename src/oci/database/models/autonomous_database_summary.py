@@ -510,6 +510,10 @@ class AutonomousDatabaseSummary(object):
             The value to assign to the defined_tags property of this AutonomousDatabaseSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this AutonomousDatabaseSummary.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param subnet_id:
             The value to assign to the subnet_id property of this AutonomousDatabaseSummary.
         :type subnet_id: str
@@ -873,6 +877,7 @@ class AutonomousDatabaseSummary(object):
             'used_data_storage_size_in_tbs': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
             'subnet_id': 'str',
             'nsg_ids': 'list[str]',
             'private_endpoint': 'str',
@@ -996,6 +1001,7 @@ class AutonomousDatabaseSummary(object):
             'used_data_storage_size_in_tbs': 'usedDataStorageSizeInTBs',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'security_attributes': 'securityAttributes',
             'subnet_id': 'subnetId',
             'nsg_ids': 'nsgIds',
             'private_endpoint': 'privateEndpoint',
@@ -1118,6 +1124,7 @@ class AutonomousDatabaseSummary(object):
         self._used_data_storage_size_in_tbs = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._security_attributes = None
         self._subnet_id = None
         self._nsg_ids = None
         self._private_endpoint = None
@@ -2495,6 +2502,38 @@ class AutonomousDatabaseSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this AutonomousDatabaseSummary.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this AutonomousDatabaseSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this AutonomousDatabaseSummary.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this AutonomousDatabaseSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def subnet_id(self):

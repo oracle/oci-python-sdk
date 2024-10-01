@@ -234,6 +234,10 @@ class CloudVmClusterSummary(object):
             The value to assign to the defined_tags property of this CloudVmClusterSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this CloudVmClusterSummary.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param system_tags:
             The value to assign to the system_tags property of this CloudVmClusterSummary.
         :type system_tags: dict(str, dict(str, object))
@@ -309,6 +313,7 @@ class CloudVmClusterSummary(object):
             'scan_dns_record_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
             'scan_dns_name': 'str',
             'zone_id': 'str',
@@ -361,6 +366,7 @@ class CloudVmClusterSummary(object):
             'scan_dns_record_id': 'scanDnsRecordId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'security_attributes': 'securityAttributes',
             'system_tags': 'systemTags',
             'scan_dns_name': 'scanDnsName',
             'zone_id': 'zoneId',
@@ -412,6 +418,7 @@ class CloudVmClusterSummary(object):
         self._scan_dns_record_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._security_attributes = None
         self._system_tags = None
         self._scan_dns_name = None
         self._zone_id = None
@@ -1542,6 +1549,38 @@ class CloudVmClusterSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this CloudVmClusterSummary.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this CloudVmClusterSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this CloudVmClusterSummary.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this CloudVmClusterSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def system_tags(self):

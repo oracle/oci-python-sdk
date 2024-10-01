@@ -67,6 +67,10 @@ class UpdateNetworkLoadBalancerDetails(object):
             The value to assign to the defined_tags property of this UpdateNetworkLoadBalancerDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this UpdateNetworkLoadBalancerDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -76,7 +80,8 @@ class UpdateNetworkLoadBalancerDetails(object):
             'subnet_ipv6_cidr': 'str',
             'assigned_ipv6': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -87,7 +92,8 @@ class UpdateNetworkLoadBalancerDetails(object):
             'subnet_ipv6_cidr': 'subnetIpv6Cidr',
             'assigned_ipv6': 'assignedIpv6',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'security_attributes': 'securityAttributes'
         }
 
         self._display_name = None
@@ -98,6 +104,7 @@ class UpdateNetworkLoadBalancerDetails(object):
         self._assigned_ipv6 = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._security_attributes = None
 
     @property
     def display_name(self):
@@ -331,6 +338,40 @@ class UpdateNetworkLoadBalancerDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this UpdateNetworkLoadBalancerDetails.
+        ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"oracle-zpr\": {\"td\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this UpdateNetworkLoadBalancerDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this UpdateNetworkLoadBalancerDetails.
+        ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"oracle-zpr\": {\"td\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this UpdateNetworkLoadBalancerDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

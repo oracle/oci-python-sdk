@@ -132,6 +132,10 @@ class IntegrationInstance(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this IntegrationInstance.
+        :type lifecycle_details: str
+
         :param state_message:
             The value to assign to the state_message property of this IntegrationInstance.
         :type state_message: str
@@ -208,6 +212,14 @@ class IntegrationInstance(object):
             The value to assign to the private_endpoint_outbound_connection property of this IntegrationInstance.
         :type private_endpoint_outbound_connection: oci.integration.models.OutboundConnection
 
+        :param is_disaster_recovery_enabled:
+            The value to assign to the is_disaster_recovery_enabled property of this IntegrationInstance.
+        :type is_disaster_recovery_enabled: bool
+
+        :param disaster_recovery_details:
+            The value to assign to the disaster_recovery_details property of this IntegrationInstance.
+        :type disaster_recovery_details: oci.integration.models.DisasterRecoveryDetails
+
         :param data_retention_period:
             The value to assign to the data_retention_period property of this IntegrationInstance.
             Allowed values for this property are: "MONTHS_1", "MONTHS_3", "MONTHS_6", 'UNKNOWN_ENUM_VALUE'.
@@ -223,6 +235,7 @@ class IntegrationInstance(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
+            'lifecycle_details': 'str',
             'state_message': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -241,6 +254,8 @@ class IntegrationInstance(object):
             'attachments': 'list[AttachmentDetails]',
             'shape': 'str',
             'private_endpoint_outbound_connection': 'OutboundConnection',
+            'is_disaster_recovery_enabled': 'bool',
+            'disaster_recovery_details': 'DisasterRecoveryDetails',
             'data_retention_period': 'str'
         }
 
@@ -252,6 +267,7 @@ class IntegrationInstance(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
+            'lifecycle_details': 'lifecycleDetails',
             'state_message': 'stateMessage',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -270,6 +286,8 @@ class IntegrationInstance(object):
             'attachments': 'attachments',
             'shape': 'shape',
             'private_endpoint_outbound_connection': 'privateEndpointOutboundConnection',
+            'is_disaster_recovery_enabled': 'isDisasterRecoveryEnabled',
+            'disaster_recovery_details': 'disasterRecoveryDetails',
             'data_retention_period': 'dataRetentionPeriod'
         }
 
@@ -280,6 +298,7 @@ class IntegrationInstance(object):
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
+        self._lifecycle_details = None
         self._state_message = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -298,6 +317,8 @@ class IntegrationInstance(object):
         self._attachments = None
         self._shape = None
         self._private_endpoint_outbound_connection = None
+        self._is_disaster_recovery_enabled = None
+        self._disaster_recovery_details = None
         self._data_retention_period = None
 
     @property
@@ -483,6 +504,30 @@ class IntegrationInstance(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this IntegrationInstance.
+        Additional details of lifecycleState or substates
+
+
+        :return: The lifecycle_details of this IntegrationInstance.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this IntegrationInstance.
+        Additional details of lifecycleState or substates
+
+
+        :param lifecycle_details: The lifecycle_details of this IntegrationInstance.
+        :type: str
+        """
+        self._lifecycle_details = lifecycle_details
 
     @property
     def state_message(self):
@@ -921,6 +966,50 @@ class IntegrationInstance(object):
         :type: oci.integration.models.OutboundConnection
         """
         self._private_endpoint_outbound_connection = private_endpoint_outbound_connection
+
+    @property
+    def is_disaster_recovery_enabled(self):
+        """
+        Gets the is_disaster_recovery_enabled of this IntegrationInstance.
+        Is Disaster Recovery enabled for the integrationInstance
+
+
+        :return: The is_disaster_recovery_enabled of this IntegrationInstance.
+        :rtype: bool
+        """
+        return self._is_disaster_recovery_enabled
+
+    @is_disaster_recovery_enabled.setter
+    def is_disaster_recovery_enabled(self, is_disaster_recovery_enabled):
+        """
+        Sets the is_disaster_recovery_enabled of this IntegrationInstance.
+        Is Disaster Recovery enabled for the integrationInstance
+
+
+        :param is_disaster_recovery_enabled: The is_disaster_recovery_enabled of this IntegrationInstance.
+        :type: bool
+        """
+        self._is_disaster_recovery_enabled = is_disaster_recovery_enabled
+
+    @property
+    def disaster_recovery_details(self):
+        """
+        Gets the disaster_recovery_details of this IntegrationInstance.
+
+        :return: The disaster_recovery_details of this IntegrationInstance.
+        :rtype: oci.integration.models.DisasterRecoveryDetails
+        """
+        return self._disaster_recovery_details
+
+    @disaster_recovery_details.setter
+    def disaster_recovery_details(self, disaster_recovery_details):
+        """
+        Sets the disaster_recovery_details of this IntegrationInstance.
+
+        :param disaster_recovery_details: The disaster_recovery_details of this IntegrationInstance.
+        :type: oci.integration.models.DisasterRecoveryDetails
+        """
+        self._disaster_recovery_details = disaster_recovery_details
 
     @property
     def data_retention_period(self):

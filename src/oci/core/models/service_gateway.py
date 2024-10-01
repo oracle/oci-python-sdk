@@ -14,10 +14,10 @@ class ServiceGateway(object):
     """
     Represents a router that lets your VCN privately access specific Oracle services such as Object
     Storage without exposing the VCN to the public internet. Traffic leaving the VCN and destined
-    for a supported Oracle service (see :func:`list_services`) is
-    routed through the service gateway and does not traverse the internet. The instances in the VCN
-    do not need to have public IP addresses nor be in a public subnet. The VCN does not need an internet gateway
-    for this traffic. For more information, see
+    for a supported Oracle service (use the :func:`list_services` operation to
+    find available service CIDR labels) is routed through the service gateway and does not traverse the internet.
+    The instances in the VCN do not need to have public IP addresses nor be in a public subnet. The VCN does not
+    need an internet gateway for this traffic. For more information, see
     `Access to Oracle Services: Service Gateway`__.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,

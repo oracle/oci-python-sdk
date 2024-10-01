@@ -36,6 +36,10 @@ class UpdateInstanceDetails(object):
             The value to assign to the defined_tags property of this UpdateInstanceDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this UpdateInstanceDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param display_name:
             The value to assign to the display_name property of this UpdateInstanceDetails.
         :type display_name: str
@@ -105,6 +109,7 @@ class UpdateInstanceDetails(object):
         self.swagger_types = {
             'capacity_reservation_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'agent_config': 'UpdateInstanceAgentConfigDetails',
@@ -126,6 +131,7 @@ class UpdateInstanceDetails(object):
         self.attribute_map = {
             'capacity_reservation_id': 'capacityReservationId',
             'defined_tags': 'definedTags',
+            'security_attributes': 'securityAttributes',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'agent_config': 'agentConfig',
@@ -146,6 +152,7 @@ class UpdateInstanceDetails(object):
 
         self._capacity_reservation_id = None
         self._defined_tags = None
+        self._security_attributes = None
         self._display_name = None
         self._freeform_tags = None
         self._agent_config = None
@@ -228,6 +235,34 @@ class UpdateInstanceDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this UpdateInstanceDetails.
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+
+        Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
+
+
+        :return: The security_attributes of this UpdateInstanceDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this UpdateInstanceDetails.
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+
+        Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
+
+
+        :param security_attributes: The security_attributes of this UpdateInstanceDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def display_name(self):

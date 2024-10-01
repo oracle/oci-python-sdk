@@ -6245,6 +6245,12 @@ class ComputeClient(object):
         with the signature. To get the image ID for the LaunchInstance operation, call
         :func:`get_app_catalog_listing_resource_version`.
 
+        When launching an instance, you may provide the `securityAttributes` parameter in
+        :class:`LaunchInstanceDetails` to manage security attributes via the instance,
+        or in the embedded :class:`CreateVnicDetails` to manage security attributes
+        via the VNIC directly, but not both.  Providing `securityAttributes` in both locations will return a
+        400 Bad Request response.
+
         To determine whether capacity is available for a specific shape before you create an instance,
         use the :func:`create_compute_capacity_report`
         operation.

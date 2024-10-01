@@ -81,7 +81,7 @@ class CreateServiceGatewayDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateServiceGatewayDetails.
-        The `OCID]`__ of the compartment to contain the service gateway.
+        The `OCID`__ of the compartment to contain the service gateway.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -95,7 +95,7 @@ class CreateServiceGatewayDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateServiceGatewayDetails.
-        The `OCID]`__ of the compartment to contain the service gateway.
+        The `OCID`__ of the compartment to contain the service gateway.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

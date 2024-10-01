@@ -39,7 +39,9 @@ class AddNetworkSecurityGroupSecurityRulesDetails(object):
     def security_rules(self):
         """
         Gets the security_rules of this AddNetworkSecurityGroupSecurityRulesDetails.
-        The NSG security rules to add.
+        An array of security rules to add to the NSG. You can add up to 25 rules in a single
+        `AddNetworkSecurityGroupSecurityRules` operation.
+        Adding more than 25 rules requires multiple operations.
 
 
         :return: The security_rules of this AddNetworkSecurityGroupSecurityRulesDetails.
@@ -51,7 +53,9 @@ class AddNetworkSecurityGroupSecurityRulesDetails(object):
     def security_rules(self, security_rules):
         """
         Sets the security_rules of this AddNetworkSecurityGroupSecurityRulesDetails.
-        The NSG security rules to add.
+        An array of security rules to add to the NSG. You can add up to 25 rules in a single
+        `AddNetworkSecurityGroupSecurityRules` operation.
+        Adding more than 25 rules requires multiple operations.
 
 
         :param security_rules: The security_rules of this AddNetworkSecurityGroupSecurityRulesDetails.

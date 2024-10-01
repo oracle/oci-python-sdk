@@ -32,6 +32,10 @@ class UpdateVnicDetails(object):
             The value to assign to the freeform_tags property of this UpdateVnicDetails.
         :type freeform_tags: dict(str, str)
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this UpdateVnicDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param hostname_label:
             The value to assign to the hostname_label property of this UpdateVnicDetails.
         :type hostname_label: str
@@ -49,6 +53,7 @@ class UpdateVnicDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
+            'security_attributes': 'dict(str, dict(str, object))',
             'hostname_label': 'str',
             'nsg_ids': 'list[str]',
             'skip_source_dest_check': 'bool'
@@ -58,6 +63,7 @@ class UpdateVnicDetails(object):
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
+            'security_attributes': 'securityAttributes',
             'hostname_label': 'hostnameLabel',
             'nsg_ids': 'nsgIds',
             'skip_source_dest_check': 'skipSourceDestCheck'
@@ -66,6 +72,7 @@ class UpdateVnicDetails(object):
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
+        self._security_attributes = None
         self._hostname_label = None
         self._nsg_ids = None
         self._skip_source_dest_check = None
@@ -163,6 +170,34 @@ class UpdateVnicDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this UpdateVnicDetails.
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+
+        Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
+
+
+        :return: The security_attributes of this UpdateVnicDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this UpdateVnicDetails.
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+
+        Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
+
+
+        :param security_attributes: The security_attributes of this UpdateVnicDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def hostname_label(self):

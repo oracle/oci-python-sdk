@@ -71,6 +71,10 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             The value to assign to the defined_tags property of this InstanceConfigurationLaunchInstanceDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this InstanceConfigurationLaunchInstanceDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param display_name:
             The value to assign to the display_name property of this InstanceConfigurationLaunchInstanceDetails.
         :type display_name: str
@@ -159,6 +163,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             'cluster_placement_group_id': 'str',
             'create_vnic_details': 'InstanceConfigurationCreateVnicDetails',
             'defined_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'extended_metadata': 'dict(str, object)',
             'freeform_tags': 'dict(str, str)',
@@ -187,6 +192,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             'cluster_placement_group_id': 'clusterPlacementGroupId',
             'create_vnic_details': 'createVnicDetails',
             'defined_tags': 'definedTags',
+            'security_attributes': 'securityAttributes',
             'display_name': 'displayName',
             'extended_metadata': 'extendedMetadata',
             'freeform_tags': 'freeformTags',
@@ -214,6 +220,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         self._cluster_placement_group_id = None
         self._create_vnic_details = None
         self._defined_tags = None
+        self._security_attributes = None
         self._display_name = None
         self._extended_metadata = None
         self._freeform_tags = None
@@ -391,6 +398,34 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this InstanceConfigurationLaunchInstanceDetails.
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+
+        Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
+
+
+        :return: The security_attributes of this InstanceConfigurationLaunchInstanceDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this InstanceConfigurationLaunchInstanceDetails.
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+
+        Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
+
+
+        :param security_attributes: The security_attributes of this InstanceConfigurationLaunchInstanceDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def display_name(self):

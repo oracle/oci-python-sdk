@@ -203,6 +203,7 @@ API Reference
 * :doc:`Scheduled Job <os_management_hub/client/oci.os_management_hub.ScheduledJobClient>`
 * :doc:`Sddc <ocvp/client/oci.ocvp.SddcClient>`
 * :doc:`Secrets <secrets/client/oci.secrets.SecretsClient>`
+* :doc:`Security Attribute <security_attribute/client/oci.security_attribute.SecurityAttributeClient>`
 * :doc:`Sender Invitation <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.SenderInvitationClient>`
 * :doc:`Service <announcements_service/client/oci.announcements_service.ServiceClient>`
 * :doc:`Service Catalog <service_catalog/client/oci.service_catalog.ServiceCatalogClient>`
@@ -252,6 +253,7 @@ API Reference
 * :doc:`Work Requests <rover/client/oci.rover.WorkRequestsClient>`
 * :doc:`Work Requests <rover/client/oci.rover.WorkRequestsClient>`
 * :doc:`Work Requests <rover/client/oci.rover.WorkRequestsClient>`
+* :doc:`Zpr <zpr/client/oci.zpr.ZprClient>`
 
 .. rubric:: Other Modules
 
@@ -398,6 +400,7 @@ API Reference
     rover
     sch
     secrets
+    security_attribute
     service_catalog
     service_manager_proxy
     service_mesh
@@ -416,6 +419,7 @@ API Reference
     waas
     waf
     work_requests
+    zpr
     config
     circuit_breaker
     exceptions

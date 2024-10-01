@@ -567,7 +567,7 @@ class VirtualNetworkClient(object):
 
     def add_network_security_group_security_rules(self, network_security_group_id, add_network_security_group_security_rules_details, **kwargs):
         """
-        Adds one or more security rules to the specified network security group.
+        Adds up to 25 security rules to the specified network security group. Adding more than 25 rules requires multiple operations.
 
 
         :param str network_security_group_id: (required)
@@ -6500,6 +6500,9 @@ class VirtualNetworkClient(object):
 
         You may optionally specify a *display name* for the service gateway, otherwise a default is provided.
         It does not have to be unique, and you can change it. Avoid entering confidential information.
+
+        Use the :func:`list_services` operation to find service CIDR labels
+        available in the region.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
@@ -18926,7 +18929,7 @@ class VirtualNetworkClient(object):
         resource_path = "/ipInventory"
         method = "POST"
         operation_name = "list_ip_inventory"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ListIpInventory"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IpInventoryCollection/ListIpInventory"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22068,7 +22071,7 @@ class VirtualNetworkClient(object):
 
     def list_virtual_circuit_bandwidth_shapes(self, compartment_id, **kwargs):
         """
-        The deprecated operation lists available bandwidth levels for virtual circuits. For the compartment ID, provide the `OCID`__ of your tenancy (the root compartment).
+        The operation lists available bandwidth levels for virtual circuits. For the compartment ID, provide the `OCID`__ of your tenancy (the root compartment).
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 

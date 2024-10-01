@@ -154,6 +154,10 @@ class LaunchDbSystemBase(object):
             The value to assign to the defined_tags property of this LaunchDbSystemBase.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this LaunchDbSystemBase.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param source:
             The value to assign to the source property of this LaunchDbSystemBase.
             Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE", "DB_SYSTEM"
@@ -194,6 +198,7 @@ class LaunchDbSystemBase(object):
             'node_count': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
             'source': 'str',
             'private_ip': 'str',
             'data_collection_options': 'DataCollectionOptions'
@@ -225,6 +230,7 @@ class LaunchDbSystemBase(object):
             'node_count': 'nodeCount',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'security_attributes': 'securityAttributes',
             'source': 'source',
             'private_ip': 'privateIp',
             'data_collection_options': 'dataCollectionOptions'
@@ -255,6 +261,7 @@ class LaunchDbSystemBase(object):
         self._node_count = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._security_attributes = None
         self._source = None
         self._private_ip = None
         self._data_collection_options = None
@@ -1047,6 +1054,38 @@ class LaunchDbSystemBase(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this LaunchDbSystemBase.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this LaunchDbSystemBase.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this LaunchDbSystemBase.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this LaunchDbSystemBase.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def source(self):

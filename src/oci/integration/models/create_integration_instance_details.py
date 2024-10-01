@@ -119,6 +119,10 @@ class CreateIntegrationInstanceDetails(object):
             The value to assign to the is_file_server_enabled property of this CreateIntegrationInstanceDetails.
         :type is_file_server_enabled: bool
 
+        :param is_disaster_recovery_enabled:
+            The value to assign to the is_disaster_recovery_enabled property of this CreateIntegrationInstanceDetails.
+        :type is_disaster_recovery_enabled: bool
+
         :param network_endpoint_details:
             The value to assign to the network_endpoint_details property of this CreateIntegrationInstanceDetails.
         :type network_endpoint_details: oci.integration.models.NetworkEndpointDetails
@@ -147,6 +151,7 @@ class CreateIntegrationInstanceDetails(object):
             'alternate_custom_endpoints': 'list[CreateCustomEndpointDetails]',
             'consumption_model': 'str',
             'is_file_server_enabled': 'bool',
+            'is_disaster_recovery_enabled': 'bool',
             'network_endpoint_details': 'NetworkEndpointDetails',
             'shape': 'str',
             'domain_id': 'str'
@@ -166,6 +171,7 @@ class CreateIntegrationInstanceDetails(object):
             'alternate_custom_endpoints': 'alternateCustomEndpoints',
             'consumption_model': 'consumptionModel',
             'is_file_server_enabled': 'isFileServerEnabled',
+            'is_disaster_recovery_enabled': 'isDisasterRecoveryEnabled',
             'network_endpoint_details': 'networkEndpointDetails',
             'shape': 'shape',
             'domain_id': 'domainId'
@@ -184,6 +190,7 @@ class CreateIntegrationInstanceDetails(object):
         self._alternate_custom_endpoints = None
         self._consumption_model = None
         self._is_file_server_enabled = None
+        self._is_disaster_recovery_enabled = None
         self._network_endpoint_details = None
         self._shape = None
         self._domain_id = None
@@ -523,6 +530,30 @@ class CreateIntegrationInstanceDetails(object):
         :type: bool
         """
         self._is_file_server_enabled = is_file_server_enabled
+
+    @property
+    def is_disaster_recovery_enabled(self):
+        """
+        Gets the is_disaster_recovery_enabled of this CreateIntegrationInstanceDetails.
+        Is Disaster Recovery enabled or not.
+
+
+        :return: The is_disaster_recovery_enabled of this CreateIntegrationInstanceDetails.
+        :rtype: bool
+        """
+        return self._is_disaster_recovery_enabled
+
+    @is_disaster_recovery_enabled.setter
+    def is_disaster_recovery_enabled(self, is_disaster_recovery_enabled):
+        """
+        Sets the is_disaster_recovery_enabled of this CreateIntegrationInstanceDetails.
+        Is Disaster Recovery enabled or not.
+
+
+        :param is_disaster_recovery_enabled: The is_disaster_recovery_enabled of this CreateIntegrationInstanceDetails.
+        :type: bool
+        """
+        self._is_disaster_recovery_enabled = is_disaster_recovery_enabled
 
     @property
     def network_endpoint_details(self):
