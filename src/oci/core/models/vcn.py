@@ -96,6 +96,10 @@ class Vcn(object):
             The value to assign to the freeform_tags property of this Vcn.
         :type freeform_tags: dict(str, str)
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this Vcn.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param id:
             The value to assign to the id property of this Vcn.
         :type id: str
@@ -132,6 +136,7 @@ class Vcn(object):
             'display_name': 'str',
             'dns_label': 'str',
             'freeform_tags': 'dict(str, str)',
+            'security_attributes': 'dict(str, dict(str, object))',
             'id': 'str',
             'ipv6_cidr_blocks': 'list[str]',
             'lifecycle_state': 'str',
@@ -152,6 +157,7 @@ class Vcn(object):
             'display_name': 'displayName',
             'dns_label': 'dnsLabel',
             'freeform_tags': 'freeformTags',
+            'security_attributes': 'securityAttributes',
             'id': 'id',
             'ipv6_cidr_blocks': 'ipv6CidrBlocks',
             'lifecycle_state': 'lifecycleState',
@@ -171,6 +177,7 @@ class Vcn(object):
         self._display_name = None
         self._dns_label = None
         self._freeform_tags = None
+        self._security_attributes = None
         self._id = None
         self._ipv6_cidr_blocks = None
         self._lifecycle_state = None
@@ -534,6 +541,34 @@ class Vcn(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this Vcn.
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+
+        Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
+
+
+        :return: The security_attributes of this Vcn.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this Vcn.
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+
+        Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
+
+
+        :param security_attributes: The security_attributes of this Vcn.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def id(self):

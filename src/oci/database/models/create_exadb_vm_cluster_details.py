@@ -133,6 +133,10 @@ class CreateExadbVmClusterDetails(object):
             The value to assign to the defined_tags property of this CreateExadbVmClusterDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this CreateExadbVmClusterDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param data_collection_options:
             The value to assign to the data_collection_options property of this CreateExadbVmClusterDetails.
         :type data_collection_options: oci.database.models.DataCollectionOptions
@@ -165,6 +169,7 @@ class CreateExadbVmClusterDetails(object):
             'system_version': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
             'data_collection_options': 'DataCollectionOptions'
         }
 
@@ -195,6 +200,7 @@ class CreateExadbVmClusterDetails(object):
             'system_version': 'systemVersion',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'security_attributes': 'securityAttributes',
             'data_collection_options': 'dataCollectionOptions'
         }
 
@@ -224,6 +230,7 @@ class CreateExadbVmClusterDetails(object):
         self._system_version = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._security_attributes = None
         self._data_collection_options = None
 
     @property
@@ -932,6 +939,38 @@ class CreateExadbVmClusterDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this CreateExadbVmClusterDetails.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this CreateExadbVmClusterDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this CreateExadbVmClusterDetails.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this CreateExadbVmClusterDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def data_collection_options(self):

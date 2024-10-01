@@ -262,6 +262,10 @@ class CreateAutonomousDatabaseBase(object):
             The value to assign to the defined_tags property of this CreateAutonomousDatabaseBase.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this CreateAutonomousDatabaseBase.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param private_endpoint_ip:
             The value to assign to the private_endpoint_ip property of this CreateAutonomousDatabaseBase.
         :type private_endpoint_ip: str
@@ -359,6 +363,7 @@ class CreateAutonomousDatabaseBase(object):
             'private_endpoint_label': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
             'private_endpoint_ip': 'str',
             'db_version': 'str',
             'source': 'str',
@@ -413,6 +418,7 @@ class CreateAutonomousDatabaseBase(object):
             'private_endpoint_label': 'privateEndpointLabel',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'security_attributes': 'securityAttributes',
             'private_endpoint_ip': 'privateEndpointIp',
             'db_version': 'dbVersion',
             'source': 'source',
@@ -466,6 +472,7 @@ class CreateAutonomousDatabaseBase(object):
         self._private_endpoint_label = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._security_attributes = None
         self._private_endpoint_ip = None
         self._db_version = None
         self._source = None
@@ -1690,6 +1697,38 @@ class CreateAutonomousDatabaseBase(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this CreateAutonomousDatabaseBase.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this CreateAutonomousDatabaseBase.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this CreateAutonomousDatabaseBase.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this CreateAutonomousDatabaseBase.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def private_endpoint_ip(self):

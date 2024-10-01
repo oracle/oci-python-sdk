@@ -323,6 +323,10 @@ class DbSystemSummary(object):
             The value to assign to the defined_tags property of this DbSystemSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this DbSystemSummary.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param source_db_system_id:
             The value to assign to the source_db_system_id property of this DbSystemSummary.
         :type source_db_system_id: str
@@ -383,6 +387,7 @@ class DbSystemSummary(object):
             'next_maintenance_run_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
             'source_db_system_id': 'str',
             'point_in_time_data_disk_clone_timestamp': 'datetime',
             'data_collection_options': 'DataCollectionOptions'
@@ -435,6 +440,7 @@ class DbSystemSummary(object):
             'next_maintenance_run_id': 'nextMaintenanceRunId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'security_attributes': 'securityAttributes',
             'source_db_system_id': 'sourceDbSystemId',
             'point_in_time_data_disk_clone_timestamp': 'pointInTimeDataDiskCloneTimestamp',
             'data_collection_options': 'dataCollectionOptions'
@@ -486,6 +492,7 @@ class DbSystemSummary(object):
         self._next_maintenance_run_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._security_attributes = None
         self._source_db_system_id = None
         self._point_in_time_data_disk_clone_timestamp = None
         self._data_collection_options = None
@@ -1745,6 +1752,38 @@ class DbSystemSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this DbSystemSummary.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this DbSystemSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this DbSystemSummary.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this DbSystemSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def source_db_system_id(self):

@@ -39,6 +39,14 @@ class Instance(object):
     __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
+    #: A constant which can be used with the security_attributes_state property of a Instance.
+    #: This constant has a value of "STABLE"
+    SECURITY_ATTRIBUTES_STATE_STABLE = "STABLE"
+
+    #: A constant which can be used with the security_attributes_state property of a Instance.
+    #: This constant has a value of "UPDATING"
+    SECURITY_ATTRIBUTES_STATE_UPDATING = "UPDATING"
+
     #: A constant which can be used with the launch_mode property of a Instance.
     #: This constant has a value of "NATIVE"
     LAUNCH_MODE_NATIVE = "NATIVE"
@@ -119,6 +127,16 @@ class Instance(object):
         :param defined_tags:
             The value to assign to the defined_tags property of this Instance.
         :type defined_tags: dict(str, dict(str, object))
+
+        :param security_attributes:
+            The value to assign to the security_attributes property of this Instance.
+        :type security_attributes: dict(str, dict(str, object))
+
+        :param security_attributes_state:
+            The value to assign to the security_attributes_state property of this Instance.
+            Allowed values for this property are: "STABLE", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type security_attributes_state: str
 
         :param display_name:
             The value to assign to the display_name property of this Instance.
@@ -232,6 +250,8 @@ class Instance(object):
             'cluster_placement_group_id': 'str',
             'dedicated_vm_host_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
+            'security_attributes_state': 'str',
             'display_name': 'str',
             'extended_metadata': 'dict(str, object)',
             'fault_domain': 'str',
@@ -266,6 +286,8 @@ class Instance(object):
             'cluster_placement_group_id': 'clusterPlacementGroupId',
             'dedicated_vm_host_id': 'dedicatedVmHostId',
             'defined_tags': 'definedTags',
+            'security_attributes': 'securityAttributes',
+            'security_attributes_state': 'securityAttributesState',
             'display_name': 'displayName',
             'extended_metadata': 'extendedMetadata',
             'fault_domain': 'faultDomain',
@@ -299,6 +321,8 @@ class Instance(object):
         self._cluster_placement_group_id = None
         self._dedicated_vm_host_id = None
         self._defined_tags = None
+        self._security_attributes = None
+        self._security_attributes_state = None
         self._display_name = None
         self._extended_metadata = None
         self._fault_domain = None
@@ -490,6 +514,64 @@ class Instance(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this Instance.
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+
+        Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
+
+
+        :return: The security_attributes of this Instance.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this Instance.
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+
+        Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
+
+
+        :param security_attributes: The security_attributes of this Instance.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
+
+    @property
+    def security_attributes_state(self):
+        """
+        Gets the security_attributes_state of this Instance.
+        The lifecycle state of the `securityAttributes`
+
+        Allowed values for this property are: "STABLE", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The security_attributes_state of this Instance.
+        :rtype: str
+        """
+        return self._security_attributes_state
+
+    @security_attributes_state.setter
+    def security_attributes_state(self, security_attributes_state):
+        """
+        Sets the security_attributes_state of this Instance.
+        The lifecycle state of the `securityAttributes`
+
+
+        :param security_attributes_state: The security_attributes_state of this Instance.
+        :type: str
+        """
+        allowed_values = ["STABLE", "UPDATING"]
+        if not value_allowed_none_or_none_sentinel(security_attributes_state, allowed_values):
+            security_attributes_state = 'UNKNOWN_ENUM_VALUE'
+        self._security_attributes_state = security_attributes_state
 
     @property
     def display_name(self):

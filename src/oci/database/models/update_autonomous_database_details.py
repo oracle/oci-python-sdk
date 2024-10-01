@@ -151,6 +151,10 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the defined_tags property of this UpdateAutonomousDatabaseDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this UpdateAutonomousDatabaseDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param db_workload:
             The value to assign to the db_workload property of this UpdateAutonomousDatabaseDetails.
             Allowed values for this property are: "OLTP", "DW", "AJD", "APEX"
@@ -307,6 +311,7 @@ class UpdateAutonomousDatabaseDetails(object):
             'db_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
             'db_workload': 'str',
             'license_model': 'str',
             'byol_compute_count_limit': 'float',
@@ -360,6 +365,7 @@ class UpdateAutonomousDatabaseDetails(object):
             'db_name': 'dbName',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'security_attributes': 'securityAttributes',
             'db_workload': 'dbWorkload',
             'license_model': 'licenseModel',
             'byol_compute_count_limit': 'byolComputeCountLimit',
@@ -412,6 +418,7 @@ class UpdateAutonomousDatabaseDetails(object):
         self._db_name = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._security_attributes = None
         self._db_workload = None
         self._license_model = None
         self._byol_compute_count_limit = None
@@ -956,6 +963,38 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this UpdateAutonomousDatabaseDetails.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this UpdateAutonomousDatabaseDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this UpdateAutonomousDatabaseDetails.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this UpdateAutonomousDatabaseDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def db_workload(self):

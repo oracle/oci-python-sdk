@@ -143,6 +143,10 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             The value to assign to the db_system_defined_tags property of this CreateDataGuardAssociationWithNewDbSystemDetails.
         :type db_system_defined_tags: dict(str, dict(str, object))
 
+        :param db_system_security_attributes:
+            The value to assign to the db_system_security_attributes property of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :type db_system_security_attributes: dict(str, dict(str, object))
+
         :param database_freeform_tags:
             The value to assign to the database_freeform_tags property of this CreateDataGuardAssociationWithNewDbSystemDetails.
         :type database_freeform_tags: dict(str, str)
@@ -182,6 +186,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             'license_model': 'str',
             'db_system_freeform_tags': 'dict(str, str)',
             'db_system_defined_tags': 'dict(str, dict(str, object))',
+            'db_system_security_attributes': 'dict(str, dict(str, object))',
             'database_freeform_tags': 'dict(str, str)',
             'database_defined_tags': 'dict(str, dict(str, object))',
             'data_collection_options': 'DataCollectionOptions'
@@ -213,6 +218,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             'license_model': 'licenseModel',
             'db_system_freeform_tags': 'dbSystemFreeformTags',
             'db_system_defined_tags': 'dbSystemDefinedTags',
+            'db_system_security_attributes': 'dbSystemSecurityAttributes',
             'database_freeform_tags': 'databaseFreeformTags',
             'database_defined_tags': 'databaseDefinedTags',
             'data_collection_options': 'dataCollectionOptions'
@@ -243,6 +249,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         self._license_model = None
         self._db_system_freeform_tags = None
         self._db_system_defined_tags = None
+        self._db_system_security_attributes = None
         self._database_freeform_tags = None
         self._database_defined_tags = None
         self._data_collection_options = None
@@ -765,6 +772,38 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         :type: dict(str, dict(str, object))
         """
         self._db_system_defined_tags = db_system_defined_tags
+
+    @property
+    def db_system_security_attributes(self):
+        """
+        Gets the db_system_security_attributes of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The db_system_security_attributes of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._db_system_security_attributes
+
+    @db_system_security_attributes.setter
+    def db_system_security_attributes(self, db_system_security_attributes):
+        """
+        Sets the db_system_security_attributes of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param db_system_security_attributes: The db_system_security_attributes of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._db_system_security_attributes = db_system_security_attributes
 
     @property
     def database_freeform_tags(self):

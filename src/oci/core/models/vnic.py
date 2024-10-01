@@ -76,6 +76,10 @@ class Vnic(object):
             The value to assign to the display_name property of this Vnic.
         :type display_name: str
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this Vnic.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Vnic.
         :type freeform_tags: dict(str, str)
@@ -140,6 +144,7 @@ class Vnic(object):
             'compartment_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
+            'security_attributes': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
             'hostname_label': 'str',
             'id': 'str',
@@ -161,6 +166,7 @@ class Vnic(object):
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
+            'security_attributes': 'securityAttributes',
             'freeform_tags': 'freeformTags',
             'hostname_label': 'hostnameLabel',
             'id': 'id',
@@ -181,6 +187,7 @@ class Vnic(object):
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None
+        self._security_attributes = None
         self._freeform_tags = None
         self._hostname_label = None
         self._id = None
@@ -311,6 +318,34 @@ class Vnic(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this Vnic.
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+
+        Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
+
+
+        :return: The security_attributes of this Vnic.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this Vnic.
+        Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+
+        Example: `{\"Oracle-DataSecurity-ZPR\": {\"MaxEgressCount\": {\"value\":\"42\",\"mode\":\"audit\"}}}`
+
+
+        :param security_attributes: The security_attributes of this Vnic.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def freeform_tags(self):

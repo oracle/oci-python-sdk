@@ -145,6 +145,10 @@ class CreateCloudVmClusterDetails(object):
             The value to assign to the defined_tags property of this CreateCloudVmClusterDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this CreateCloudVmClusterDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param data_collection_options:
             The value to assign to the data_collection_options property of this CreateCloudVmClusterDetails.
         :type data_collection_options: oci.database.models.DataCollectionOptions
@@ -188,6 +192,7 @@ class CreateCloudVmClusterDetails(object):
             'gi_version': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
             'data_collection_options': 'DataCollectionOptions',
             'system_version': 'str',
             'file_system_configuration_details': 'list[FileSystemConfigurationDetail]'
@@ -223,6 +228,7 @@ class CreateCloudVmClusterDetails(object):
             'gi_version': 'giVersion',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'security_attributes': 'securityAttributes',
             'data_collection_options': 'dataCollectionOptions',
             'system_version': 'systemVersion',
             'file_system_configuration_details': 'fileSystemConfigurationDetails'
@@ -257,6 +263,7 @@ class CreateCloudVmClusterDetails(object):
         self._gi_version = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._security_attributes = None
         self._data_collection_options = None
         self._system_version = None
         self._file_system_configuration_details = None
@@ -1059,6 +1066,38 @@ class CreateCloudVmClusterDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this CreateCloudVmClusterDetails.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this CreateCloudVmClusterDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this CreateCloudVmClusterDetails.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this CreateCloudVmClusterDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def data_collection_options(self):

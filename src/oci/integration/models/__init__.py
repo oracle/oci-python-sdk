@@ -13,7 +13,9 @@ from .change_integration_instance_network_endpoint_details import ChangeIntegrat
 from .change_private_endpoint_outbound_connection_details import ChangePrivateEndpointOutboundConnectionDetails
 from .create_custom_endpoint_details import CreateCustomEndpointDetails
 from .create_integration_instance_details import CreateIntegrationInstanceDetails
+from .cross_region_integration_instance_details import CrossRegionIntegrationInstanceDetails
 from .custom_endpoint_details import CustomEndpointDetails
+from .disaster_recovery_details import DisasterRecoveryDetails
 from .extend_data_retention_details import ExtendDataRetentionDetails
 from .idcs_info_details import IdcsInfoDetails
 from .integration_instance import IntegrationInstance
@@ -41,7 +43,9 @@ integration_type_mapping = {
     "ChangePrivateEndpointOutboundConnectionDetails": ChangePrivateEndpointOutboundConnectionDetails,
     "CreateCustomEndpointDetails": CreateCustomEndpointDetails,
     "CreateIntegrationInstanceDetails": CreateIntegrationInstanceDetails,
+    "CrossRegionIntegrationInstanceDetails": CrossRegionIntegrationInstanceDetails,
     "CustomEndpointDetails": CustomEndpointDetails,
+    "DisasterRecoveryDetails": DisasterRecoveryDetails,
     "ExtendDataRetentionDetails": ExtendDataRetentionDetails,
     "IdcsInfoDetails": IdcsInfoDetails,
     "IntegrationInstance": IntegrationInstance,

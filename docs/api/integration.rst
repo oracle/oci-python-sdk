@@ -25,7 +25,9 @@ Integration
     oci.integration.models.ChangePrivateEndpointOutboundConnectionDetails
     oci.integration.models.CreateCustomEndpointDetails
     oci.integration.models.CreateIntegrationInstanceDetails
+    oci.integration.models.CrossRegionIntegrationInstanceDetails
     oci.integration.models.CustomEndpointDetails
+    oci.integration.models.DisasterRecoveryDetails
     oci.integration.models.ExtendDataRetentionDetails
     oci.integration.models.IdcsInfoDetails
     oci.integration.models.IntegrationInstance

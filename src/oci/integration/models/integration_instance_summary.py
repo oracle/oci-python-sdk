@@ -132,6 +132,10 @@ class IntegrationInstanceSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this IntegrationInstanceSummary.
+        :type lifecycle_details: str
+
         :param state_message:
             The value to assign to the state_message property of this IntegrationInstanceSummary.
         :type state_message: str
@@ -200,6 +204,10 @@ class IntegrationInstanceSummary(object):
             The value to assign to the private_endpoint_outbound_connection property of this IntegrationInstanceSummary.
         :type private_endpoint_outbound_connection: oci.integration.models.OutboundConnection
 
+        :param is_disaster_recovery_enabled:
+            The value to assign to the is_disaster_recovery_enabled property of this IntegrationInstanceSummary.
+        :type is_disaster_recovery_enabled: bool
+
         :param data_retention_period:
             The value to assign to the data_retention_period property of this IntegrationInstanceSummary.
             Allowed values for this property are: "MONTHS_1", "MONTHS_3", "MONTHS_6", 'UNKNOWN_ENUM_VALUE'.
@@ -215,6 +223,7 @@ class IntegrationInstanceSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
+            'lifecycle_details': 'str',
             'state_message': 'str',
             'is_byol': 'bool',
             'instance_url': 'str',
@@ -231,6 +240,7 @@ class IntegrationInstanceSummary(object):
             'system_tags': 'dict(str, dict(str, object))',
             'shape': 'str',
             'private_endpoint_outbound_connection': 'OutboundConnection',
+            'is_disaster_recovery_enabled': 'bool',
             'data_retention_period': 'str'
         }
 
@@ -242,6 +252,7 @@ class IntegrationInstanceSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
+            'lifecycle_details': 'lifecycleDetails',
             'state_message': 'stateMessage',
             'is_byol': 'isByol',
             'instance_url': 'instanceUrl',
@@ -258,6 +269,7 @@ class IntegrationInstanceSummary(object):
             'system_tags': 'systemTags',
             'shape': 'shape',
             'private_endpoint_outbound_connection': 'privateEndpointOutboundConnection',
+            'is_disaster_recovery_enabled': 'isDisasterRecoveryEnabled',
             'data_retention_period': 'dataRetentionPeriod'
         }
 
@@ -268,6 +280,7 @@ class IntegrationInstanceSummary(object):
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
+        self._lifecycle_details = None
         self._state_message = None
         self._is_byol = None
         self._instance_url = None
@@ -284,6 +297,7 @@ class IntegrationInstanceSummary(object):
         self._system_tags = None
         self._shape = None
         self._private_endpoint_outbound_connection = None
+        self._is_disaster_recovery_enabled = None
         self._data_retention_period = None
 
     @property
@@ -469,6 +483,30 @@ class IntegrationInstanceSummary(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this IntegrationInstanceSummary.
+        Additional details of lifecycleState or substates
+
+
+        :return: The lifecycle_details of this IntegrationInstanceSummary.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this IntegrationInstanceSummary.
+        Additional details of lifecycleState or substates
+
+
+        :param lifecycle_details: The lifecycle_details of this IntegrationInstanceSummary.
+        :type: str
+        """
+        self._lifecycle_details = lifecycle_details
 
     @property
     def state_message(self):
@@ -863,6 +901,30 @@ class IntegrationInstanceSummary(object):
         :type: oci.integration.models.OutboundConnection
         """
         self._private_endpoint_outbound_connection = private_endpoint_outbound_connection
+
+    @property
+    def is_disaster_recovery_enabled(self):
+        """
+        Gets the is_disaster_recovery_enabled of this IntegrationInstanceSummary.
+        Is Disaster Recovery enabled for the integrationInstance
+
+
+        :return: The is_disaster_recovery_enabled of this IntegrationInstanceSummary.
+        :rtype: bool
+        """
+        return self._is_disaster_recovery_enabled
+
+    @is_disaster_recovery_enabled.setter
+    def is_disaster_recovery_enabled(self, is_disaster_recovery_enabled):
+        """
+        Sets the is_disaster_recovery_enabled of this IntegrationInstanceSummary.
+        Is Disaster Recovery enabled for the integrationInstance
+
+
+        :param is_disaster_recovery_enabled: The is_disaster_recovery_enabled of this IntegrationInstanceSummary.
+        :type: bool
+        """
+        self._is_disaster_recovery_enabled = is_disaster_recovery_enabled
 
     @property
     def data_retention_period(self):

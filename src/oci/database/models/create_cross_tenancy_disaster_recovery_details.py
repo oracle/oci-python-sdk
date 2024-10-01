@@ -192,6 +192,10 @@ class CreateCrossTenancyDisasterRecoveryDetails(CreateAutonomousDatabaseBase):
             The value to assign to the defined_tags property of this CreateCrossTenancyDisasterRecoveryDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this CreateCrossTenancyDisasterRecoveryDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param private_endpoint_ip:
             The value to assign to the private_endpoint_ip property of this CreateCrossTenancyDisasterRecoveryDetails.
         :type private_endpoint_ip: str
@@ -301,6 +305,7 @@ class CreateCrossTenancyDisasterRecoveryDetails(CreateAutonomousDatabaseBase):
             'private_endpoint_label': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
             'private_endpoint_ip': 'str',
             'db_version': 'str',
             'source': 'str',
@@ -358,6 +363,7 @@ class CreateCrossTenancyDisasterRecoveryDetails(CreateAutonomousDatabaseBase):
             'private_endpoint_label': 'privateEndpointLabel',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'security_attributes': 'securityAttributes',
             'private_endpoint_ip': 'privateEndpointIp',
             'db_version': 'dbVersion',
             'source': 'source',
@@ -414,6 +420,7 @@ class CreateCrossTenancyDisasterRecoveryDetails(CreateAutonomousDatabaseBase):
         self._private_endpoint_label = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._security_attributes = None
         self._private_endpoint_ip = None
         self._db_version = None
         self._source = None

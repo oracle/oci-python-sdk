@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.135.1 - 2024-10-01
+====================
+
+Added 
+----- 
+* Support for calling Oracle Cloud Infrastructure services in the us-somerset-1 region 
+* Support for calling Oracle Cloud Infrastructure services in the us-thames-1 region 
+* Support for Security Attribute service
+* Support for Zero Trust Packet Routing service 
+* Support for zero trust packet routing security attributes in the Database service 
+* Support for zero trust packet routing security attributes in the Networking service 
+* Support for zero trust packet routing security attributes in the Network Load Balancer service 
+* Support for disaster recovery failover in the Integration Cloud service   
+
+====================
 2.135.0 - 2024-09-24
 ====================
 

@@ -206,6 +206,10 @@ class CloudAutonomousVmClusterSummary(object):
             The value to assign to the defined_tags property of this CloudAutonomousVmClusterSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this CloudAutonomousVmClusterSummary.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param time_database_ssl_certificate_expires:
             The value to assign to the time_database_ssl_certificate_expires property of this CloudAutonomousVmClusterSummary.
         :type time_database_ssl_certificate_expires: datetime
@@ -334,6 +338,7 @@ class CloudAutonomousVmClusterSummary(object):
             'scan_listener_port_non_tls': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
             'time_database_ssl_certificate_expires': 'datetime',
             'time_ords_certificate_expires': 'datetime',
             'available_cpus': 'float',
@@ -394,6 +399,7 @@ class CloudAutonomousVmClusterSummary(object):
             'scan_listener_port_non_tls': 'scanListenerPortNonTls',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'security_attributes': 'securityAttributes',
             'time_database_ssl_certificate_expires': 'timeDatabaseSslCertificateExpires',
             'time_ords_certificate_expires': 'timeOrdsCertificateExpires',
             'available_cpus': 'availableCpus',
@@ -453,6 +459,7 @@ class CloudAutonomousVmClusterSummary(object):
         self._scan_listener_port_non_tls = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._security_attributes = None
         self._time_database_ssl_certificate_expires = None
         self._time_ords_certificate_expires = None
         self._available_cpus = None
@@ -1394,6 +1401,38 @@ class CloudAutonomousVmClusterSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this CloudAutonomousVmClusterSummary.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this CloudAutonomousVmClusterSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this CloudAutonomousVmClusterSummary.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this CloudAutonomousVmClusterSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def time_database_ssl_certificate_expires(self):

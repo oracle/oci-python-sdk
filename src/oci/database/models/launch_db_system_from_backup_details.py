@@ -154,6 +154,10 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
             The value to assign to the defined_tags property of this LaunchDbSystemFromBackupDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this LaunchDbSystemFromBackupDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param source:
             The value to assign to the source property of this LaunchDbSystemFromBackupDetails.
             Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE", "DB_SYSTEM"
@@ -213,6 +217,7 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
             'node_count': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
             'source': 'str',
             'private_ip': 'str',
             'data_collection_options': 'DataCollectionOptions',
@@ -248,6 +253,7 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
             'node_count': 'nodeCount',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'security_attributes': 'securityAttributes',
             'source': 'source',
             'private_ip': 'privateIp',
             'data_collection_options': 'dataCollectionOptions',
@@ -282,6 +288,7 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
         self._node_count = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._security_attributes = None
         self._source = None
         self._private_ip = None
         self._data_collection_options = None

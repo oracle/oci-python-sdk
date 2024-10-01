@@ -58,6 +58,10 @@ class UpdateDbSystemDetails(object):
             The value to assign to the defined_tags property of this UpdateDbSystemDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this UpdateDbSystemDetails.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param shape:
             The value to assign to the shape property of this UpdateDbSystemDetails.
         :type shape: str
@@ -92,6 +96,7 @@ class UpdateDbSystemDetails(object):
             'reco_storage_size_in_gbs': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'security_attributes': 'dict(str, dict(str, object))',
             'shape': 'str',
             'nsg_ids': 'list[str]',
             'backup_network_nsg_ids': 'list[str]',
@@ -108,6 +113,7 @@ class UpdateDbSystemDetails(object):
             'reco_storage_size_in_gbs': 'recoStorageSizeInGBs',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'security_attributes': 'securityAttributes',
             'shape': 'shape',
             'nsg_ids': 'nsgIds',
             'backup_network_nsg_ids': 'backupNetworkNsgIds',
@@ -123,6 +129,7 @@ class UpdateDbSystemDetails(object):
         self._reco_storage_size_in_gbs = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._security_attributes = None
         self._shape = None
         self._nsg_ids = None
         self._backup_network_nsg_ids = None
@@ -309,6 +316,38 @@ class UpdateDbSystemDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this UpdateDbSystemDetails.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this UpdateDbSystemDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this UpdateDbSystemDetails.
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Oracle-ZPR\": {\"MaxEgressCount\": {\"value\": \"42\", \"mode\": \"audit\"}}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this UpdateDbSystemDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def shape(self):

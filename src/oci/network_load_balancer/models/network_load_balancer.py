@@ -142,6 +142,10 @@ class NetworkLoadBalancer(object):
             The value to assign to the freeform_tags property of this NetworkLoadBalancer.
         :type freeform_tags: dict(str, str)
 
+        :param security_attributes:
+            The value to assign to the security_attributes property of this NetworkLoadBalancer.
+        :type security_attributes: dict(str, dict(str, object))
+
         :param defined_tags:
             The value to assign to the defined_tags property of this NetworkLoadBalancer.
         :type defined_tags: dict(str, dict(str, object))
@@ -169,6 +173,7 @@ class NetworkLoadBalancer(object):
             'listeners': 'dict(str, Listener)',
             'backend_sets': 'dict(str, BackendSet)',
             'freeform_tags': 'dict(str, str)',
+            'security_attributes': 'dict(str, dict(str, object))',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
         }
@@ -191,6 +196,7 @@ class NetworkLoadBalancer(object):
             'listeners': 'listeners',
             'backend_sets': 'backendSets',
             'freeform_tags': 'freeformTags',
+            'security_attributes': 'securityAttributes',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
         }
@@ -212,6 +218,7 @@ class NetworkLoadBalancer(object):
         self._listeners = None
         self._backend_sets = None
         self._freeform_tags = None
+        self._security_attributes = None
         self._defined_tags = None
         self._system_tags = None
 
@@ -732,6 +739,40 @@ class NetworkLoadBalancer(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def security_attributes(self):
+        """
+        Gets the security_attributes of this NetworkLoadBalancer.
+        ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{ \"oracle-zpr\": { \"td\": { \"value\": \"42\", \"mode\": \"audit\" } } }`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The security_attributes of this NetworkLoadBalancer.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._security_attributes
+
+    @security_attributes.setter
+    def security_attributes(self, security_attributes):
+        """
+        Sets the security_attributes of this NetworkLoadBalancer.
+        ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{ \"oracle-zpr\": { \"td\": { \"value\": \"42\", \"mode\": \"audit\" } } }`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param security_attributes: The security_attributes of this NetworkLoadBalancer.
+        :type: dict(str, dict(str, object))
+        """
+        self._security_attributes = security_attributes
 
     @property
     def defined_tags(self):
