@@ -15,6 +15,10 @@ class ConnectionConfiguration(object):
     Configuration details for the connection between the client and backend servers.
     """
 
+    #: A constant which can be used with the backend_tcp_proxy_protocol_options property of a ConnectionConfiguration.
+    #: This constant has a value of "PP2_TYPE_AUTHORITY"
+    BACKEND_TCP_PROXY_PROTOCOL_OPTIONS_PP2_TYPE_AUTHORITY = "PP2_TYPE_AUTHORITY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ConnectionConfiguration object with values from keyword arguments.
@@ -28,19 +32,28 @@ class ConnectionConfiguration(object):
             The value to assign to the backend_tcp_proxy_protocol_version property of this ConnectionConfiguration.
         :type backend_tcp_proxy_protocol_version: int
 
+        :param backend_tcp_proxy_protocol_options:
+            The value to assign to the backend_tcp_proxy_protocol_options property of this ConnectionConfiguration.
+            Allowed values for items in this list are: "PP2_TYPE_AUTHORITY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type backend_tcp_proxy_protocol_options: list[str]
+
         """
         self.swagger_types = {
             'idle_timeout': 'int',
-            'backend_tcp_proxy_protocol_version': 'int'
+            'backend_tcp_proxy_protocol_version': 'int',
+            'backend_tcp_proxy_protocol_options': 'list[str]'
         }
 
         self.attribute_map = {
             'idle_timeout': 'idleTimeout',
-            'backend_tcp_proxy_protocol_version': 'backendTcpProxyProtocolVersion'
+            'backend_tcp_proxy_protocol_version': 'backendTcpProxyProtocolVersion',
+            'backend_tcp_proxy_protocol_options': 'backendTcpProxyProtocolOptions'
         }
 
         self._idle_timeout = None
         self._backend_tcp_proxy_protocol_version = None
+        self._backend_tcp_proxy_protocol_options = None
 
     @property
     def idle_timeout(self):
@@ -109,6 +122,38 @@ class ConnectionConfiguration(object):
         :type: int
         """
         self._backend_tcp_proxy_protocol_version = backend_tcp_proxy_protocol_version
+
+    @property
+    def backend_tcp_proxy_protocol_options(self):
+        """
+        Gets the backend_tcp_proxy_protocol_options of this ConnectionConfiguration.
+        An array that represents the PPV2 Options that can be enabled on TCP Listeners.
+        Example: [\"PP2_TYPE_AUTHORITY\"]
+
+        Allowed values for items in this list are: "PP2_TYPE_AUTHORITY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The backend_tcp_proxy_protocol_options of this ConnectionConfiguration.
+        :rtype: list[str]
+        """
+        return self._backend_tcp_proxy_protocol_options
+
+    @backend_tcp_proxy_protocol_options.setter
+    def backend_tcp_proxy_protocol_options(self, backend_tcp_proxy_protocol_options):
+        """
+        Sets the backend_tcp_proxy_protocol_options of this ConnectionConfiguration.
+        An array that represents the PPV2 Options that can be enabled on TCP Listeners.
+        Example: [\"PP2_TYPE_AUTHORITY\"]
+
+
+        :param backend_tcp_proxy_protocol_options: The backend_tcp_proxy_protocol_options of this ConnectionConfiguration.
+        :type: list[str]
+        """
+        allowed_values = ["PP2_TYPE_AUTHORITY"]
+        if backend_tcp_proxy_protocol_options:
+            backend_tcp_proxy_protocol_options[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in backend_tcp_proxy_protocol_options]
+        self._backend_tcp_proxy_protocol_options = backend_tcp_proxy_protocol_options
 
     def __repr__(self):
         return formatted_flat_dict(self)

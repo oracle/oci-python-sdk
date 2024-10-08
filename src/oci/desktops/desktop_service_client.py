@@ -2239,6 +2239,9 @@ class DesktopServiceClient(object):
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request.
 
+        :param bool is_soft_stop: (optional)
+            Force a STOP(power off) of the desktop if set to false
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2270,7 +2273,8 @@ class DesktopServiceClient(object):
             "retry_strategy",
             "opc_request_id",
             "if_match",
-            "opc_retry_token"
+            "opc_retry_token",
+            "is_soft_stop"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2286,6 +2290,11 @@ class DesktopServiceClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "isSoftStop": kwargs.get("is_soft_stop", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -2313,6 +2322,7 @@ class DesktopServiceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -2323,6 +2333,7 @@ class DesktopServiceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,

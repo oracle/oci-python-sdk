@@ -397,6 +397,7 @@ from .ipsec_tunnel_drg_attachment_network_details import IpsecTunnelDrgAttachmen
 from .ipv6 import Ipv6
 from .ipv6_address_ipv6_subnet_cidr_pair_details import Ipv6AddressIpv6SubnetCidrPairDetails
 from .launch_attach_i_scsi_volume_details import LaunchAttachIScsiVolumeDetails
+from .launch_attach_paravirtualized_volume_details import LaunchAttachParavirtualizedVolumeDetails
 from .launch_attach_volume_details import LaunchAttachVolumeDetails
 from .launch_create_volume_details import LaunchCreateVolumeDetails
 from .launch_create_volume_from_attributes import LaunchCreateVolumeFromAttributes
@@ -1002,6 +1003,7 @@ core_type_mapping = {
     "Ipv6": Ipv6,
     "Ipv6AddressIpv6SubnetCidrPairDetails": Ipv6AddressIpv6SubnetCidrPairDetails,
     "LaunchAttachIScsiVolumeDetails": LaunchAttachIScsiVolumeDetails,
+    "LaunchAttachParavirtualizedVolumeDetails": LaunchAttachParavirtualizedVolumeDetails,
     "LaunchAttachVolumeDetails": LaunchAttachVolumeDetails,
     "LaunchCreateVolumeDetails": LaunchCreateVolumeDetails,
     "LaunchCreateVolumeFromAttributes": LaunchCreateVolumeFromAttributes,

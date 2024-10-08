@@ -100,6 +100,7 @@ from .configuration_item_summary import ConfigurationItemSummary
 from .configuration_item_unit_details import ConfigurationItemUnitDetails
 from .configuration_items_collection import ConfigurationItemsCollection
 from .connection_details import ConnectionDetails
+from .create_autonomous_database_insight_details import CreateAutonomousDatabaseInsightDetails
 from .create_awr_hub_details import CreateAwrHubDetails
 from .create_awr_hub_source_details import CreateAwrHubSourceDetails
 from .create_basic_configuration_item_details import CreateBasicConfigurationItemDetails
@@ -128,6 +129,7 @@ from .create_opsi_ux_configuration_details import CreateOpsiUxConfigurationDetai
 from .create_pe_comanaged_database_insight_details import CreatePeComanagedDatabaseInsightDetails
 from .create_pe_comanaged_exadata_insight_details import CreatePeComanagedExadataInsightDetails
 from .create_pe_comanaged_exadata_vmcluster_details import CreatePeComanagedExadataVmclusterDetails
+from .credential_by_iam import CredentialByIam
 from .credential_by_vault import CredentialByVault
 from .credential_details import CredentialDetails
 from .credentials_by_source import CredentialsBySource
@@ -175,6 +177,7 @@ from .em_managed_external_host_configuration_summary import EmManagedExternalHos
 from .em_managed_external_host_insight import EmManagedExternalHostInsight
 from .em_managed_external_host_insight_summary import EmManagedExternalHostInsightSummary
 from .enable_autonomous_database_insight_advanced_features_details import EnableAutonomousDatabaseInsightAdvancedFeaturesDetails
+from .enable_autonomous_database_insight_details import EnableAutonomousDatabaseInsightDetails
 from .enable_database_insight_details import EnableDatabaseInsightDetails
 from .enable_em_managed_external_database_insight_details import EnableEmManagedExternalDatabaseInsightDetails
 from .enable_em_managed_external_exadata_insight_details import EnableEmManagedExternalExadataInsightDetails
@@ -586,6 +589,7 @@ opsi_type_mapping = {
     "ConfigurationItemUnitDetails": ConfigurationItemUnitDetails,
     "ConfigurationItemsCollection": ConfigurationItemsCollection,
     "ConnectionDetails": ConnectionDetails,
+    "CreateAutonomousDatabaseInsightDetails": CreateAutonomousDatabaseInsightDetails,
     "CreateAwrHubDetails": CreateAwrHubDetails,
     "CreateAwrHubSourceDetails": CreateAwrHubSourceDetails,
     "CreateBasicConfigurationItemDetails": CreateBasicConfigurationItemDetails,
@@ -614,6 +618,7 @@ opsi_type_mapping = {
     "CreatePeComanagedDatabaseInsightDetails": CreatePeComanagedDatabaseInsightDetails,
     "CreatePeComanagedExadataInsightDetails": CreatePeComanagedExadataInsightDetails,
     "CreatePeComanagedExadataVmclusterDetails": CreatePeComanagedExadataVmclusterDetails,
+    "CredentialByIam": CredentialByIam,
     "CredentialByVault": CredentialByVault,
     "CredentialDetails": CredentialDetails,
     "CredentialsBySource": CredentialsBySource,
@@ -661,6 +666,7 @@ opsi_type_mapping = {
     "EmManagedExternalHostInsight": EmManagedExternalHostInsight,
     "EmManagedExternalHostInsightSummary": EmManagedExternalHostInsightSummary,
     "EnableAutonomousDatabaseInsightAdvancedFeaturesDetails": EnableAutonomousDatabaseInsightAdvancedFeaturesDetails,
+    "EnableAutonomousDatabaseInsightDetails": EnableAutonomousDatabaseInsightDetails,
     "EnableDatabaseInsightDetails": EnableDatabaseInsightDetails,
     "EnableEmManagedExternalDatabaseInsightDetails": EnableEmManagedExternalDatabaseInsightDetails,
     "EnableEmManagedExternalExadataInsightDetails": EnableEmManagedExternalExadataInsightDetails,

@@ -39,7 +39,7 @@ class StartCredentialRotationDetails(object):
     def auto_completion_delay_duration(self):
         """
         **[Required]** Gets the auto_completion_delay_duration of this StartCredentialRotationDetails.
-        The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 14 days.
+        The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 90 days.
 
 
         :return: The auto_completion_delay_duration of this StartCredentialRotationDetails.
@@ -51,7 +51,7 @@ class StartCredentialRotationDetails(object):
     def auto_completion_delay_duration(self, auto_completion_delay_duration):
         """
         Sets the auto_completion_delay_duration of this StartCredentialRotationDetails.
-        The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 14 days.
+        The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 90 days.
 
 
         :param auto_completion_delay_duration: The auto_completion_delay_duration of this StartCredentialRotationDetails.

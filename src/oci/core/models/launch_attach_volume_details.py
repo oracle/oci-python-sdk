@@ -20,6 +20,7 @@ class LaunchAttachVolumeDetails(object):
         Initializes a new LaunchAttachVolumeDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.core.models.LaunchAttachParavirtualizedVolumeDetails`
         * :class:`~oci.core.models.LaunchAttachIScsiVolumeDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -88,6 +89,9 @@ class LaunchAttachVolumeDetails(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['type']
+
+        if type == 'paravirtualized':
+            return 'LaunchAttachParavirtualizedVolumeDetails'
 
         if type == 'iscsi':
             return 'LaunchAttachIScsiVolumeDetails'

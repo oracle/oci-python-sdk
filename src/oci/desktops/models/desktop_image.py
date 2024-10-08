@@ -28,19 +28,26 @@ class DesktopImage(object):
             The value to assign to the image_name property of this DesktopImage.
         :type image_name: str
 
+        :param operating_system:
+            The value to assign to the operating_system property of this DesktopImage.
+        :type operating_system: str
+
         """
         self.swagger_types = {
             'image_id': 'str',
-            'image_name': 'str'
+            'image_name': 'str',
+            'operating_system': 'str'
         }
 
         self.attribute_map = {
             'image_id': 'imageId',
-            'image_name': 'imageName'
+            'image_name': 'imageName',
+            'operating_system': 'operatingSystem'
         }
 
         self._image_id = None
         self._image_name = None
+        self._operating_system = None
 
     @property
     def image_id(self):
@@ -89,6 +96,30 @@ class DesktopImage(object):
         :type: str
         """
         self._image_name = image_name
+
+    @property
+    def operating_system(self):
+        """
+        Gets the operating_system of this DesktopImage.
+        The operating system of the desktop image, e.g. \"Oracle Linux\", \"Windows\".
+
+
+        :return: The operating_system of this DesktopImage.
+        :rtype: str
+        """
+        return self._operating_system
+
+    @operating_system.setter
+    def operating_system(self, operating_system):
+        """
+        Sets the operating_system of this DesktopImage.
+        The operating system of the desktop image, e.g. \"Oracle Linux\", \"Windows\".
+
+
+        :param operating_system: The operating_system of this DesktopImage.
+        :type: str
+        """
+        self._operating_system = operating_system
 
     def __repr__(self):
         return formatted_flat_dict(self)

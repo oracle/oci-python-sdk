@@ -497,7 +497,9 @@ class Node(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this Node.
-        The state of the node.
+        The state of the node. For more information, see `Monitoring Clusters`__
+
+        __ https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm
 
         Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILING", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -512,7 +514,9 @@ class Node(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Node.
-        The state of the node.
+        The state of the node. For more information, see `Monitoring Clusters`__
+
+        __ https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm
 
 
         :param lifecycle_state: The lifecycle_state of this Node.

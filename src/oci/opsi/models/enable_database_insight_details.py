@@ -38,6 +38,7 @@ class EnableDatabaseInsightDetails(object):
 
         * :class:`~oci.opsi.models.EnableEmManagedExternalDatabaseInsightDetails`
         * :class:`~oci.opsi.models.EnableMdsMySqlDatabaseInsightDetails`
+        * :class:`~oci.opsi.models.EnableAutonomousDatabaseInsightDetails`
         * :class:`~oci.opsi.models.EnableMacsManagedCloudDatabaseInsightDetails`
         * :class:`~oci.opsi.models.EnablePeComanagedDatabaseInsightDetails`
 
@@ -72,6 +73,9 @@ class EnableDatabaseInsightDetails(object):
 
         if type == 'MDS_MYSQL_DATABASE_SYSTEM':
             return 'EnableMdsMySqlDatabaseInsightDetails'
+
+        if type == 'AUTONOMOUS_DATABASE':
+            return 'EnableAutonomousDatabaseInsightDetails'
 
         if type == 'MACS_MANAGED_CLOUD_DATABASE':
             return 'EnableMacsManagedCloudDatabaseInsightDetails'

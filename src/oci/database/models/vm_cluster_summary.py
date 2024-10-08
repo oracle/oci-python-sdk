@@ -180,6 +180,10 @@ class VmClusterSummary(object):
             The value to assign to the file_system_configuration_details property of this VmClusterSummary.
         :type file_system_configuration_details: list[oci.database.models.FileSystemConfigurationDetail]
 
+        :param cloud_automation_update_details:
+            The value to assign to the cloud_automation_update_details property of this VmClusterSummary.
+        :type cloud_automation_update_details: oci.database.models.CloudAutomationUpdateDetails
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -211,7 +215,8 @@ class VmClusterSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'data_collection_options': 'DataCollectionOptions',
             'gi_software_image_id': 'str',
-            'file_system_configuration_details': 'list[FileSystemConfigurationDetail]'
+            'file_system_configuration_details': 'list[FileSystemConfigurationDetail]',
+            'cloud_automation_update_details': 'CloudAutomationUpdateDetails'
         }
 
         self.attribute_map = {
@@ -244,7 +249,8 @@ class VmClusterSummary(object):
             'defined_tags': 'definedTags',
             'data_collection_options': 'dataCollectionOptions',
             'gi_software_image_id': 'giSoftwareImageId',
-            'file_system_configuration_details': 'fileSystemConfigurationDetails'
+            'file_system_configuration_details': 'fileSystemConfigurationDetails',
+            'cloud_automation_update_details': 'cloudAutomationUpdateDetails'
         }
 
         self._id = None
@@ -277,6 +283,7 @@ class VmClusterSummary(object):
         self._data_collection_options = None
         self._gi_software_image_id = None
         self._file_system_configuration_details = None
+        self._cloud_automation_update_details = None
 
     @property
     def id(self):
@@ -1049,6 +1056,26 @@ class VmClusterSummary(object):
         :type: list[oci.database.models.FileSystemConfigurationDetail]
         """
         self._file_system_configuration_details = file_system_configuration_details
+
+    @property
+    def cloud_automation_update_details(self):
+        """
+        Gets the cloud_automation_update_details of this VmClusterSummary.
+
+        :return: The cloud_automation_update_details of this VmClusterSummary.
+        :rtype: oci.database.models.CloudAutomationUpdateDetails
+        """
+        return self._cloud_automation_update_details
+
+    @cloud_automation_update_details.setter
+    def cloud_automation_update_details(self, cloud_automation_update_details):
+        """
+        Sets the cloud_automation_update_details of this VmClusterSummary.
+
+        :param cloud_automation_update_details: The cloud_automation_update_details of this VmClusterSummary.
+        :type: oci.database.models.CloudAutomationUpdateDetails
+        """
+        self._cloud_automation_update_details = cloud_automation_update_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

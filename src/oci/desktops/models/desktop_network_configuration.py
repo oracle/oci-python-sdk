@@ -46,7 +46,9 @@ class DesktopNetworkConfiguration(object):
     def vcn_id(self):
         """
         **[Required]** Gets the vcn_id of this DesktopNetworkConfiguration.
-        The OCID of the VCN used by the desktop pool.
+        The `OCID`__ of the customer VCN.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this DesktopNetworkConfiguration.
@@ -58,7 +60,9 @@ class DesktopNetworkConfiguration(object):
     def vcn_id(self, vcn_id):
         """
         Sets the vcn_id of this DesktopNetworkConfiguration.
-        The OCID of the VCN used by the desktop pool.
+        The `OCID`__ of the customer VCN.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this DesktopNetworkConfiguration.
@@ -70,7 +74,10 @@ class DesktopNetworkConfiguration(object):
     def subnet_id(self):
         """
         **[Required]** Gets the subnet_id of this DesktopNetworkConfiguration.
-        The OCID of the subnet to use for the desktop pool.
+        The `OCID`__ of the subnet in the customer VCN where the
+        connectivity will be established.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this DesktopNetworkConfiguration.
@@ -82,7 +89,10 @@ class DesktopNetworkConfiguration(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this DesktopNetworkConfiguration.
-        The OCID of the subnet to use for the desktop pool.
+        The `OCID`__ of the subnet in the customer VCN where the
+        connectivity will be established.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this DesktopNetworkConfiguration.

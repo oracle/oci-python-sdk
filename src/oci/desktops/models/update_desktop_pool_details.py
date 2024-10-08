@@ -64,6 +64,10 @@ class UpdateDesktopPoolDetails(object):
             The value to assign to the defined_tags property of this UpdateDesktopPoolDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param session_lifecycle_actions:
+            The value to assign to the session_lifecycle_actions property of this UpdateDesktopPoolDetails.
+        :type session_lifecycle_actions: oci.desktops.models.UpdateDesktopPoolDesktopSessionLifecycleActions
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -76,7 +80,8 @@ class UpdateDesktopPoolDetails(object):
             'time_start_scheduled': 'datetime',
             'time_stop_scheduled': 'datetime',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'session_lifecycle_actions': 'UpdateDesktopPoolDesktopSessionLifecycleActions'
         }
 
         self.attribute_map = {
@@ -90,7 +95,8 @@ class UpdateDesktopPoolDetails(object):
             'time_start_scheduled': 'timeStartScheduled',
             'time_stop_scheduled': 'timeStopScheduled',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'session_lifecycle_actions': 'sessionLifecycleActions'
         }
 
         self._display_name = None
@@ -104,6 +110,7 @@ class UpdateDesktopPoolDetails(object):
         self._time_stop_scheduled = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._session_lifecycle_actions = None
 
     @property
     def display_name(self):
@@ -378,6 +385,26 @@ class UpdateDesktopPoolDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def session_lifecycle_actions(self):
+        """
+        Gets the session_lifecycle_actions of this UpdateDesktopPoolDetails.
+
+        :return: The session_lifecycle_actions of this UpdateDesktopPoolDetails.
+        :rtype: oci.desktops.models.UpdateDesktopPoolDesktopSessionLifecycleActions
+        """
+        return self._session_lifecycle_actions
+
+    @session_lifecycle_actions.setter
+    def session_lifecycle_actions(self, session_lifecycle_actions):
+        """
+        Sets the session_lifecycle_actions of this UpdateDesktopPoolDetails.
+
+        :param session_lifecycle_actions: The session_lifecycle_actions of this UpdateDesktopPoolDetails.
+        :type: oci.desktops.models.UpdateDesktopPoolDesktopSessionLifecycleActions
+        """
+        self._session_lifecycle_actions = session_lifecycle_actions
 
     def __repr__(self):
         return formatted_flat_dict(self)

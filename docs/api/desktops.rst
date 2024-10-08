@@ -19,7 +19,10 @@ Desktops
     :template: autosummary/model_class.rst
 
     oci.desktops.models.ChangeDesktopPoolCompartmentDetails
+    oci.desktops.models.CreateDesktopPoolDesktopSessionLifecycleActions
     oci.desktops.models.CreateDesktopPoolDetails
+    oci.desktops.models.CreateDesktopPoolPrivateAccessDetails
+    oci.desktops.models.CreateDesktopPoolShapeConfigDetails
     oci.desktops.models.Desktop
     oci.desktops.models.DesktopAvailabilityPolicy
     oci.desktops.models.DesktopCollection
@@ -30,13 +33,19 @@ Desktops
     oci.desktops.models.DesktopPoolCollection
     oci.desktops.models.DesktopPoolDesktopCollection
     oci.desktops.models.DesktopPoolDesktopSummary
+    oci.desktops.models.DesktopPoolPrivateAccessDetails
+    oci.desktops.models.DesktopPoolShapeConfig
     oci.desktops.models.DesktopPoolSummary
     oci.desktops.models.DesktopPoolVolumeCollection
     oci.desktops.models.DesktopPoolVolumeSummary
     oci.desktops.models.DesktopSchedule
+    oci.desktops.models.DesktopSessionLifecycleActions
     oci.desktops.models.DesktopSummary
+    oci.desktops.models.DisconnectConfig
     oci.desktops.models.HostingOptions
+    oci.desktops.models.InactivityConfig
     oci.desktops.models.UpdateDesktopDetails
+    oci.desktops.models.UpdateDesktopPoolDesktopSessionLifecycleActions
     oci.desktops.models.UpdateDesktopPoolDetails
     oci.desktops.models.WorkRequest
     oci.desktops.models.WorkRequestError
