@@ -15,6 +15,18 @@ class CreateDesktopPoolDetails(object):
     Provides the configuration information used to create the desktop pool.
     """
 
+    #: A constant which can be used with the use_dedicated_vm_host property of a CreateDesktopPoolDetails.
+    #: This constant has a value of "TRUE"
+    USE_DEDICATED_VM_HOST_TRUE = "TRUE"
+
+    #: A constant which can be used with the use_dedicated_vm_host property of a CreateDesktopPoolDetails.
+    #: This constant has a value of "FALSE"
+    USE_DEDICATED_VM_HOST_FALSE = "FALSE"
+
+    #: A constant which can be used with the use_dedicated_vm_host property of a CreateDesktopPoolDetails.
+    #: This constant has a value of "AUTO"
+    USE_DEDICATED_VM_HOST_AUTO = "AUTO"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDesktopPoolDetails object with values from keyword arguments.
@@ -44,6 +56,15 @@ class CreateDesktopPoolDetails(object):
             The value to assign to the shape_name property of this CreateDesktopPoolDetails.
         :type shape_name: str
 
+        :param shape_config:
+            The value to assign to the shape_config property of this CreateDesktopPoolDetails.
+        :type shape_config: oci.desktops.models.CreateDesktopPoolShapeConfigDetails
+
+        :param use_dedicated_vm_host:
+            The value to assign to the use_dedicated_vm_host property of this CreateDesktopPoolDetails.
+            Allowed values for this property are: "TRUE", "FALSE", "AUTO"
+        :type use_dedicated_vm_host: str
+
         :param is_storage_enabled:
             The value to assign to the is_storage_enabled property of this CreateDesktopPoolDetails.
         :type is_storage_enabled: bool
@@ -71,6 +92,10 @@ class CreateDesktopPoolDetails(object):
         :param network_configuration:
             The value to assign to the network_configuration property of this CreateDesktopPoolDetails.
         :type network_configuration: oci.desktops.models.DesktopNetworkConfiguration
+
+        :param session_lifecycle_actions:
+            The value to assign to the session_lifecycle_actions property of this CreateDesktopPoolDetails.
+        :type session_lifecycle_actions: oci.desktops.models.CreateDesktopPoolDesktopSessionLifecycleActions
 
         :param time_start_scheduled:
             The value to assign to the time_start_scheduled property of this CreateDesktopPoolDetails.
@@ -104,6 +129,10 @@ class CreateDesktopPoolDetails(object):
             The value to assign to the nsg_ids property of this CreateDesktopPoolDetails.
         :type nsg_ids: list[str]
 
+        :param private_access_details:
+            The value to assign to the private_access_details property of this CreateDesktopPoolDetails.
+        :type private_access_details: oci.desktops.models.CreateDesktopPoolPrivateAccessDetails
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -112,6 +141,8 @@ class CreateDesktopPoolDetails(object):
             'maximum_size': 'int',
             'standby_size': 'int',
             'shape_name': 'str',
+            'shape_config': 'CreateDesktopPoolShapeConfigDetails',
+            'use_dedicated_vm_host': 'str',
             'is_storage_enabled': 'bool',
             'storage_size_in_gbs': 'int',
             'storage_backup_policy_id': 'str',
@@ -119,6 +150,7 @@ class CreateDesktopPoolDetails(object):
             'availability_policy': 'DesktopAvailabilityPolicy',
             'image': 'DesktopImage',
             'network_configuration': 'DesktopNetworkConfiguration',
+            'session_lifecycle_actions': 'CreateDesktopPoolDesktopSessionLifecycleActions',
             'time_start_scheduled': 'datetime',
             'time_stop_scheduled': 'datetime',
             'contact_details': 'str',
@@ -126,7 +158,8 @@ class CreateDesktopPoolDetails(object):
             'availability_domain': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'nsg_ids': 'list[str]'
+            'nsg_ids': 'list[str]',
+            'private_access_details': 'CreateDesktopPoolPrivateAccessDetails'
         }
 
         self.attribute_map = {
@@ -136,6 +169,8 @@ class CreateDesktopPoolDetails(object):
             'maximum_size': 'maximumSize',
             'standby_size': 'standbySize',
             'shape_name': 'shapeName',
+            'shape_config': 'shapeConfig',
+            'use_dedicated_vm_host': 'useDedicatedVmHost',
             'is_storage_enabled': 'isStorageEnabled',
             'storage_size_in_gbs': 'storageSizeInGBs',
             'storage_backup_policy_id': 'storageBackupPolicyId',
@@ -143,6 +178,7 @@ class CreateDesktopPoolDetails(object):
             'availability_policy': 'availabilityPolicy',
             'image': 'image',
             'network_configuration': 'networkConfiguration',
+            'session_lifecycle_actions': 'sessionLifecycleActions',
             'time_start_scheduled': 'timeStartScheduled',
             'time_stop_scheduled': 'timeStopScheduled',
             'contact_details': 'contactDetails',
@@ -150,7 +186,8 @@ class CreateDesktopPoolDetails(object):
             'availability_domain': 'availabilityDomain',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'nsg_ids': 'nsgIds'
+            'nsg_ids': 'nsgIds',
+            'private_access_details': 'privateAccessDetails'
         }
 
         self._compartment_id = None
@@ -159,6 +196,8 @@ class CreateDesktopPoolDetails(object):
         self._maximum_size = None
         self._standby_size = None
         self._shape_name = None
+        self._shape_config = None
+        self._use_dedicated_vm_host = None
         self._is_storage_enabled = None
         self._storage_size_in_gbs = None
         self._storage_backup_policy_id = None
@@ -166,6 +205,7 @@ class CreateDesktopPoolDetails(object):
         self._availability_policy = None
         self._image = None
         self._network_configuration = None
+        self._session_lifecycle_actions = None
         self._time_start_scheduled = None
         self._time_stop_scheduled = None
         self._contact_details = None
@@ -174,6 +214,7 @@ class CreateDesktopPoolDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._nsg_ids = None
+        self._private_access_details = None
 
     @property
     def compartment_id(self):
@@ -320,6 +361,57 @@ class CreateDesktopPoolDetails(object):
         :type: str
         """
         self._shape_name = shape_name
+
+    @property
+    def shape_config(self):
+        """
+        Gets the shape_config of this CreateDesktopPoolDetails.
+
+        :return: The shape_config of this CreateDesktopPoolDetails.
+        :rtype: oci.desktops.models.CreateDesktopPoolShapeConfigDetails
+        """
+        return self._shape_config
+
+    @shape_config.setter
+    def shape_config(self, shape_config):
+        """
+        Sets the shape_config of this CreateDesktopPoolDetails.
+
+        :param shape_config: The shape_config of this CreateDesktopPoolDetails.
+        :type: oci.desktops.models.CreateDesktopPoolShapeConfigDetails
+        """
+        self._shape_config = shape_config
+
+    @property
+    def use_dedicated_vm_host(self):
+        """
+        Gets the use_dedicated_vm_host of this CreateDesktopPoolDetails.
+        Indicates whether the desktop pool uses dedicated virtual machine hosts.
+
+        Allowed values for this property are: "TRUE", "FALSE", "AUTO"
+
+
+        :return: The use_dedicated_vm_host of this CreateDesktopPoolDetails.
+        :rtype: str
+        """
+        return self._use_dedicated_vm_host
+
+    @use_dedicated_vm_host.setter
+    def use_dedicated_vm_host(self, use_dedicated_vm_host):
+        """
+        Sets the use_dedicated_vm_host of this CreateDesktopPoolDetails.
+        Indicates whether the desktop pool uses dedicated virtual machine hosts.
+
+
+        :param use_dedicated_vm_host: The use_dedicated_vm_host of this CreateDesktopPoolDetails.
+        :type: str
+        """
+        allowed_values = ["TRUE", "FALSE", "AUTO"]
+        if not value_allowed_none_or_none_sentinel(use_dedicated_vm_host, allowed_values):
+            raise ValueError(
+                f"Invalid value for `use_dedicated_vm_host`, must be None or one of {allowed_values}"
+            )
+        self._use_dedicated_vm_host = use_dedicated_vm_host
 
     @property
     def is_storage_enabled(self):
@@ -472,6 +564,26 @@ class CreateDesktopPoolDetails(object):
         :type: oci.desktops.models.DesktopNetworkConfiguration
         """
         self._network_configuration = network_configuration
+
+    @property
+    def session_lifecycle_actions(self):
+        """
+        Gets the session_lifecycle_actions of this CreateDesktopPoolDetails.
+
+        :return: The session_lifecycle_actions of this CreateDesktopPoolDetails.
+        :rtype: oci.desktops.models.CreateDesktopPoolDesktopSessionLifecycleActions
+        """
+        return self._session_lifecycle_actions
+
+    @session_lifecycle_actions.setter
+    def session_lifecycle_actions(self, session_lifecycle_actions):
+        """
+        Sets the session_lifecycle_actions of this CreateDesktopPoolDetails.
+
+        :param session_lifecycle_actions: The session_lifecycle_actions of this CreateDesktopPoolDetails.
+        :type: oci.desktops.models.CreateDesktopPoolDesktopSessionLifecycleActions
+        """
+        self._session_lifecycle_actions = session_lifecycle_actions
 
     @property
     def time_start_scheduled(self):
@@ -661,7 +773,7 @@ class CreateDesktopPoolDetails(object):
     def nsg_ids(self):
         """
         Gets the nsg_ids of this CreateDesktopPoolDetails.
-        A list of network security groups for the desktop pool.
+        A list of network security groups for the private access.
 
 
         :return: The nsg_ids of this CreateDesktopPoolDetails.
@@ -673,13 +785,33 @@ class CreateDesktopPoolDetails(object):
     def nsg_ids(self, nsg_ids):
         """
         Sets the nsg_ids of this CreateDesktopPoolDetails.
-        A list of network security groups for the desktop pool.
+        A list of network security groups for the private access.
 
 
         :param nsg_ids: The nsg_ids of this CreateDesktopPoolDetails.
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def private_access_details(self):
+        """
+        Gets the private_access_details of this CreateDesktopPoolDetails.
+
+        :return: The private_access_details of this CreateDesktopPoolDetails.
+        :rtype: oci.desktops.models.CreateDesktopPoolPrivateAccessDetails
+        """
+        return self._private_access_details
+
+    @private_access_details.setter
+    def private_access_details(self, private_access_details):
+        """
+        Sets the private_access_details of this CreateDesktopPoolDetails.
+
+        :param private_access_details: The private_access_details of this CreateDesktopPoolDetails.
+        :type: oci.desktops.models.CreateDesktopPoolPrivateAccessDetails
+        """
+        self._private_access_details = private_access_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

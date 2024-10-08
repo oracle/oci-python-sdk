@@ -90,7 +90,7 @@ class CreateFusionEnvironmentAdminUserDetails(object):
     @property
     def password(self):
         """
-        **[Required]** Gets the password of this CreateFusionEnvironmentAdminUserDetails.
+        Gets the password of this CreateFusionEnvironmentAdminUserDetails.
         The password for the administrator.
 
 

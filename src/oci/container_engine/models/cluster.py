@@ -507,7 +507,9 @@ class Cluster(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this Cluster.
-        The state of the cluster masters.
+        The state of the cluster masters. For more information, see `Monitoring Clusters`__
+
+        __ https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm
 
         Allowed values for this property are: "CREATING", "ACTIVE", "FAILED", "DELETING", "DELETED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -522,7 +524,9 @@ class Cluster(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Cluster.
-        The state of the cluster masters.
+        The state of the cluster masters. For more information, see `Monitoring Clusters`__
+
+        __ https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm
 
 
         :param lifecycle_state: The lifecycle_state of this Cluster.

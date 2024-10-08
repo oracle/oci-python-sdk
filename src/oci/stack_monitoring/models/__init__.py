@@ -34,6 +34,8 @@ from .create_config_details import CreateConfigDetails
 from .create_discovery_job_details import CreateDiscoveryJobDetails
 from .create_license_auto_assign_config_details import CreateLicenseAutoAssignConfigDetails
 from .create_license_enterprise_extensibility_config_details import CreateLicenseEnterpriseExtensibilityConfigDetails
+from .create_maintenance_window_details import CreateMaintenanceWindowDetails
+from .create_maintenance_window_resource_details import CreateMaintenanceWindowResourceDetails
 from .create_metric_extension_details import CreateMetricExtensionDetails
 from .create_monitored_resource_details import CreateMonitoredResourceDetails
 from .create_monitored_resource_task_details import CreateMonitoredResourceTaskDetails
@@ -63,6 +65,10 @@ from .license_auto_assign_config_details import LicenseAutoAssignConfigDetails
 from .license_auto_assign_config_summary import LicenseAutoAssignConfigSummary
 from .license_enterprise_extensibility_config_details import LicenseEnterpriseExtensibilityConfigDetails
 from .license_enterprise_extensibility_config_summary import LicenseEnterpriseExtensibilityConfigSummary
+from .maintenance_window import MaintenanceWindow
+from .maintenance_window_collection import MaintenanceWindowCollection
+from .maintenance_window_schedule import MaintenanceWindowSchedule
+from .maintenance_window_summary import MaintenanceWindowSummary
 from .manage_license_details import ManageLicenseDetails
 from .metric import Metric
 from .metric_data import MetricData
@@ -79,6 +85,7 @@ from .monitored_resource_association_summary import MonitoredResourceAssociation
 from .monitored_resource_associations_collection import MonitoredResourceAssociationsCollection
 from .monitored_resource_collection import MonitoredResourceCollection
 from .monitored_resource_credential import MonitoredResourceCredential
+from .monitored_resource_details import MonitoredResourceDetails
 from .monitored_resource_member_summary import MonitoredResourceMemberSummary
 from .monitored_resource_members_collection import MonitoredResourceMembersCollection
 from .monitored_resource_property import MonitoredResourceProperty
@@ -92,6 +99,7 @@ from .monitored_resource_type_summary import MonitoredResourceTypeSummary
 from .monitored_resource_types_collection import MonitoredResourceTypesCollection
 from .monitored_resources_count_aggregation import MonitoredResourcesCountAggregation
 from .monitored_resources_count_aggregation_collection import MonitoredResourcesCountAggregationCollection
+from .one_time_maintenance_window_schedule import OneTimeMaintenanceWindowSchedule
 from .os_command_query_properties import OsCommandQueryProperties
 from .os_command_update_query_properties import OsCommandUpdateQueryProperties
 from .plain_text_credentials import PlainTextCredentials
@@ -102,6 +110,7 @@ from .process_set_specification import ProcessSetSpecification
 from .process_set_specification_details import ProcessSetSpecificationDetails
 from .process_set_summary import ProcessSetSummary
 from .property_details import PropertyDetails
+from .recurrent_maintenance_window_schedule import RecurrentMaintenanceWindowSchedule
 from .resource_type_metadata_details import ResourceTypeMetadataDetails
 from .script_file_details import ScriptFileDetails
 from .search_associated_resources_details import SearchAssociatedResourcesDetails
@@ -123,6 +132,7 @@ from .update_baselineable_metric_details import UpdateBaselineableMetricDetails
 from .update_config_details import UpdateConfigDetails
 from .update_license_auto_assign_config_details import UpdateLicenseAutoAssignConfigDetails
 from .update_license_enterprise_extensibility_config_details import UpdateLicenseEnterpriseExtensibilityConfigDetails
+from .update_maintenance_window_details import UpdateMaintenanceWindowDetails
 from .update_metric_extension_details import UpdateMetricExtensionDetails
 from .update_monitored_resource_details import UpdateMonitoredResourceDetails
 from .update_monitored_resource_task_details import UpdateMonitoredResourceTaskDetails
@@ -167,6 +177,8 @@ stack_monitoring_type_mapping = {
     "CreateDiscoveryJobDetails": CreateDiscoveryJobDetails,
     "CreateLicenseAutoAssignConfigDetails": CreateLicenseAutoAssignConfigDetails,
     "CreateLicenseEnterpriseExtensibilityConfigDetails": CreateLicenseEnterpriseExtensibilityConfigDetails,
+    "CreateMaintenanceWindowDetails": CreateMaintenanceWindowDetails,
+    "CreateMaintenanceWindowResourceDetails": CreateMaintenanceWindowResourceDetails,
     "CreateMetricExtensionDetails": CreateMetricExtensionDetails,
     "CreateMonitoredResourceDetails": CreateMonitoredResourceDetails,
     "CreateMonitoredResourceTaskDetails": CreateMonitoredResourceTaskDetails,
@@ -196,6 +208,10 @@ stack_monitoring_type_mapping = {
     "LicenseAutoAssignConfigSummary": LicenseAutoAssignConfigSummary,
     "LicenseEnterpriseExtensibilityConfigDetails": LicenseEnterpriseExtensibilityConfigDetails,
     "LicenseEnterpriseExtensibilityConfigSummary": LicenseEnterpriseExtensibilityConfigSummary,
+    "MaintenanceWindow": MaintenanceWindow,
+    "MaintenanceWindowCollection": MaintenanceWindowCollection,
+    "MaintenanceWindowSchedule": MaintenanceWindowSchedule,
+    "MaintenanceWindowSummary": MaintenanceWindowSummary,
     "ManageLicenseDetails": ManageLicenseDetails,
     "Metric": Metric,
     "MetricData": MetricData,
@@ -212,6 +228,7 @@ stack_monitoring_type_mapping = {
     "MonitoredResourceAssociationsCollection": MonitoredResourceAssociationsCollection,
     "MonitoredResourceCollection": MonitoredResourceCollection,
     "MonitoredResourceCredential": MonitoredResourceCredential,
+    "MonitoredResourceDetails": MonitoredResourceDetails,
     "MonitoredResourceMemberSummary": MonitoredResourceMemberSummary,
     "MonitoredResourceMembersCollection": MonitoredResourceMembersCollection,
     "MonitoredResourceProperty": MonitoredResourceProperty,
@@ -225,6 +242,7 @@ stack_monitoring_type_mapping = {
     "MonitoredResourceTypesCollection": MonitoredResourceTypesCollection,
     "MonitoredResourcesCountAggregation": MonitoredResourcesCountAggregation,
     "MonitoredResourcesCountAggregationCollection": MonitoredResourcesCountAggregationCollection,
+    "OneTimeMaintenanceWindowSchedule": OneTimeMaintenanceWindowSchedule,
     "OsCommandQueryProperties": OsCommandQueryProperties,
     "OsCommandUpdateQueryProperties": OsCommandUpdateQueryProperties,
     "PlainTextCredentials": PlainTextCredentials,
@@ -235,6 +253,7 @@ stack_monitoring_type_mapping = {
     "ProcessSetSpecificationDetails": ProcessSetSpecificationDetails,
     "ProcessSetSummary": ProcessSetSummary,
     "PropertyDetails": PropertyDetails,
+    "RecurrentMaintenanceWindowSchedule": RecurrentMaintenanceWindowSchedule,
     "ResourceTypeMetadataDetails": ResourceTypeMetadataDetails,
     "ScriptFileDetails": ScriptFileDetails,
     "SearchAssociatedResourcesDetails": SearchAssociatedResourcesDetails,
@@ -256,6 +275,7 @@ stack_monitoring_type_mapping = {
     "UpdateConfigDetails": UpdateConfigDetails,
     "UpdateLicenseAutoAssignConfigDetails": UpdateLicenseAutoAssignConfigDetails,
     "UpdateLicenseEnterpriseExtensibilityConfigDetails": UpdateLicenseEnterpriseExtensibilityConfigDetails,
+    "UpdateMaintenanceWindowDetails": UpdateMaintenanceWindowDetails,
     "UpdateMetricExtensionDetails": UpdateMetricExtensionDetails,
     "UpdateMonitoredResourceDetails": UpdateMonitoredResourceDetails,
     "UpdateMonitoredResourceTaskDetails": UpdateMonitoredResourceTaskDetails,

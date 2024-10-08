@@ -4413,7 +4413,7 @@ class FusionApplicationsClient(object):
 
     def reset_fusion_environment_password(self, reset_fusion_environment_password_details, fusion_environment_id, admin_username, **kwargs):
         """
-        Resets the password of the Fusion Environment Administrator.
+        Reset FusionEnvironment admin password. This API will be deprecated on Mon, 15 Jan 2024 01:00:00 GMT. Users can reset password themselves, FAaaS will no longer provide an API for this.
 
 
         :param oci.fusion_apps.models.ResetFusionEnvironmentPasswordDetails reset_fusion_environment_password_details: (required)

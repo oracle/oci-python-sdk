@@ -100,8 +100,7 @@ class ZprClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20240301',
-            'service_endpoint_template': 'https://{service}.{region}.oci.{secondLevelDomain}',
-            'endpoint_service_name': '${endpoint-template-prefix}',
+            'service_endpoint_template': 'https://zpr.{region}.oci.{secondLevelDomain}',
             'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
             'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY),

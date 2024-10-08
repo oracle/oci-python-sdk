@@ -265,7 +265,9 @@ class NodePool(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this NodePool.
-        The state of the nodepool.
+        The state of the nodepool. For more information, see `Monitoring Clusters`__
+
+        __ https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm
 
         Allowed values for this property are: "DELETED", "CREATING", "ACTIVE", "UPDATING", "DELETING", "FAILED", "INACTIVE", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -280,7 +282,9 @@ class NodePool(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this NodePool.
-        The state of the nodepool.
+        The state of the nodepool. For more information, see `Monitoring Clusters`__
+
+        __ https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm
 
 
         :param lifecycle_state: The lifecycle_state of this NodePool.

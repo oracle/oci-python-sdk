@@ -112,6 +112,7 @@ Opsi
     oci.opsi.models.ConfigurationItemUnitDetails
     oci.opsi.models.ConfigurationItemsCollection
     oci.opsi.models.ConnectionDetails
+    oci.opsi.models.CreateAutonomousDatabaseInsightDetails
     oci.opsi.models.CreateAwrHubDetails
     oci.opsi.models.CreateAwrHubSourceDetails
     oci.opsi.models.CreateBasicConfigurationItemDetails
@@ -140,6 +141,7 @@ Opsi
     oci.opsi.models.CreatePeComanagedDatabaseInsightDetails
     oci.opsi.models.CreatePeComanagedExadataInsightDetails
     oci.opsi.models.CreatePeComanagedExadataVmclusterDetails
+    oci.opsi.models.CredentialByIam
     oci.opsi.models.CredentialByVault
     oci.opsi.models.CredentialDetails
     oci.opsi.models.CredentialsBySource
@@ -187,6 +189,7 @@ Opsi
     oci.opsi.models.EmManagedExternalHostInsight
     oci.opsi.models.EmManagedExternalHostInsightSummary
     oci.opsi.models.EnableAutonomousDatabaseInsightAdvancedFeaturesDetails
+    oci.opsi.models.EnableAutonomousDatabaseInsightDetails
     oci.opsi.models.EnableDatabaseInsightDetails
     oci.opsi.models.EnableEmManagedExternalDatabaseInsightDetails
     oci.opsi.models.EnableEmManagedExternalExadataInsightDetails

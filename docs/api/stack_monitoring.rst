@@ -46,6 +46,8 @@ Stack Monitoring
     oci.stack_monitoring.models.CreateDiscoveryJobDetails
     oci.stack_monitoring.models.CreateLicenseAutoAssignConfigDetails
     oci.stack_monitoring.models.CreateLicenseEnterpriseExtensibilityConfigDetails
+    oci.stack_monitoring.models.CreateMaintenanceWindowDetails
+    oci.stack_monitoring.models.CreateMaintenanceWindowResourceDetails
     oci.stack_monitoring.models.CreateMetricExtensionDetails
     oci.stack_monitoring.models.CreateMonitoredResourceDetails
     oci.stack_monitoring.models.CreateMonitoredResourceTaskDetails
@@ -75,6 +77,10 @@ Stack Monitoring
     oci.stack_monitoring.models.LicenseAutoAssignConfigSummary
     oci.stack_monitoring.models.LicenseEnterpriseExtensibilityConfigDetails
     oci.stack_monitoring.models.LicenseEnterpriseExtensibilityConfigSummary
+    oci.stack_monitoring.models.MaintenanceWindow
+    oci.stack_monitoring.models.MaintenanceWindowCollection
+    oci.stack_monitoring.models.MaintenanceWindowSchedule
+    oci.stack_monitoring.models.MaintenanceWindowSummary
     oci.stack_monitoring.models.ManageLicenseDetails
     oci.stack_monitoring.models.Metric
     oci.stack_monitoring.models.MetricData
@@ -91,6 +97,7 @@ Stack Monitoring
     oci.stack_monitoring.models.MonitoredResourceAssociationsCollection
     oci.stack_monitoring.models.MonitoredResourceCollection
     oci.stack_monitoring.models.MonitoredResourceCredential
+    oci.stack_monitoring.models.MonitoredResourceDetails
     oci.stack_monitoring.models.MonitoredResourceMemberSummary
     oci.stack_monitoring.models.MonitoredResourceMembersCollection
     oci.stack_monitoring.models.MonitoredResourceProperty
@@ -104,6 +111,7 @@ Stack Monitoring
     oci.stack_monitoring.models.MonitoredResourceTypesCollection
     oci.stack_monitoring.models.MonitoredResourcesCountAggregation
     oci.stack_monitoring.models.MonitoredResourcesCountAggregationCollection
+    oci.stack_monitoring.models.OneTimeMaintenanceWindowSchedule
     oci.stack_monitoring.models.OsCommandQueryProperties
     oci.stack_monitoring.models.OsCommandUpdateQueryProperties
     oci.stack_monitoring.models.PlainTextCredentials
@@ -114,6 +122,7 @@ Stack Monitoring
     oci.stack_monitoring.models.ProcessSetSpecificationDetails
     oci.stack_monitoring.models.ProcessSetSummary
     oci.stack_monitoring.models.PropertyDetails
+    oci.stack_monitoring.models.RecurrentMaintenanceWindowSchedule
     oci.stack_monitoring.models.ResourceTypeMetadataDetails
     oci.stack_monitoring.models.ScriptFileDetails
     oci.stack_monitoring.models.SearchAssociatedResourcesDetails
@@ -135,6 +144,7 @@ Stack Monitoring
     oci.stack_monitoring.models.UpdateConfigDetails
     oci.stack_monitoring.models.UpdateLicenseAutoAssignConfigDetails
     oci.stack_monitoring.models.UpdateLicenseEnterpriseExtensibilityConfigDetails
+    oci.stack_monitoring.models.UpdateMaintenanceWindowDetails
     oci.stack_monitoring.models.UpdateMetricExtensionDetails
     oci.stack_monitoring.models.UpdateMonitoredResourceDetails
     oci.stack_monitoring.models.UpdateMonitoredResourceTaskDetails

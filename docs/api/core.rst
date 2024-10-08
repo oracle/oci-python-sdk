@@ -415,6 +415,7 @@ Core Services
     oci.core.models.Ipv6
     oci.core.models.Ipv6AddressIpv6SubnetCidrPairDetails
     oci.core.models.LaunchAttachIScsiVolumeDetails
+    oci.core.models.LaunchAttachParavirtualizedVolumeDetails
     oci.core.models.LaunchAttachVolumeDetails
     oci.core.models.LaunchCreateVolumeDetails
     oci.core.models.LaunchCreateVolumeFromAttributes

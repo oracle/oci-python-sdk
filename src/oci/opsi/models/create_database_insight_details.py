@@ -37,6 +37,7 @@ class CreateDatabaseInsightDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.opsi.models.CreateMacsManagedCloudDatabaseInsightDetails`
+        * :class:`~oci.opsi.models.CreateAutonomousDatabaseInsightDetails`
         * :class:`~oci.opsi.models.CreateMdsMySqlDatabaseInsightDetails`
         * :class:`~oci.opsi.models.CreateEmManagedExternalDatabaseInsightDetails`
         * :class:`~oci.opsi.models.CreatePeComanagedDatabaseInsightDetails`
@@ -90,6 +91,9 @@ class CreateDatabaseInsightDetails(object):
 
         if type == 'MACS_MANAGED_CLOUD_DATABASE':
             return 'CreateMacsManagedCloudDatabaseInsightDetails'
+
+        if type == 'AUTONOMOUS_DATABASE':
+            return 'CreateAutonomousDatabaseInsightDetails'
 
         if type == 'MDS_MYSQL_DATABASE_SYSTEM':
             return 'CreateMdsMySqlDatabaseInsightDetails'
