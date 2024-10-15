@@ -90,6 +90,8 @@ from .deployment_backup_collection import DeploymentBackupCollection
 from .deployment_backup_summary import DeploymentBackupSummary
 from .deployment_collection import DeploymentCollection
 from .deployment_diagnostic_data import DeploymentDiagnosticData
+from .deployment_environment_collection import DeploymentEnvironmentCollection
+from .deployment_environment_summary import DeploymentEnvironmentSummary
 from .deployment_message_collection import DeploymentMessageCollection
 from .deployment_summary import DeploymentSummary
 from .deployment_type_collection import DeploymentTypeCollection
@@ -116,6 +118,7 @@ from .google_big_query_connection import GoogleBigQueryConnection
 from .google_big_query_connection_summary import GoogleBigQueryConnectionSummary
 from .google_cloud_storage_connection import GoogleCloudStorageConnection
 from .google_cloud_storage_connection_summary import GoogleCloudStorageConnectionSummary
+from .group_to_roles_mapping_details import GroupToRolesMappingDetails
 from .hdfs_connection import HdfsConnection
 from .hdfs_connection_summary import HdfsConnectionSummary
 from .import_deployment_wallet_details import ImportDeploymentWalletDetails
@@ -182,6 +185,7 @@ from .update_generic_connection_details import UpdateGenericConnectionDetails
 from .update_golden_gate_connection_details import UpdateGoldenGateConnectionDetails
 from .update_google_big_query_connection_details import UpdateGoogleBigQueryConnectionDetails
 from .update_google_cloud_storage_connection_details import UpdateGoogleCloudStorageConnectionDetails
+from .update_group_to_roles_mapping_details import UpdateGroupToRolesMappingDetails
 from .update_hdfs_connection_details import UpdateHdfsConnectionDetails
 from .update_java_message_service_connection_details import UpdateJavaMessageServiceConnectionDetails
 from .update_kafka_connection_details import UpdateKafkaConnectionDetails
@@ -293,6 +297,8 @@ golden_gate_type_mapping = {
     "DeploymentBackupSummary": DeploymentBackupSummary,
     "DeploymentCollection": DeploymentCollection,
     "DeploymentDiagnosticData": DeploymentDiagnosticData,
+    "DeploymentEnvironmentCollection": DeploymentEnvironmentCollection,
+    "DeploymentEnvironmentSummary": DeploymentEnvironmentSummary,
     "DeploymentMessageCollection": DeploymentMessageCollection,
     "DeploymentSummary": DeploymentSummary,
     "DeploymentTypeCollection": DeploymentTypeCollection,
@@ -319,6 +325,7 @@ golden_gate_type_mapping = {
     "GoogleBigQueryConnectionSummary": GoogleBigQueryConnectionSummary,
     "GoogleCloudStorageConnection": GoogleCloudStorageConnection,
     "GoogleCloudStorageConnectionSummary": GoogleCloudStorageConnectionSummary,
+    "GroupToRolesMappingDetails": GroupToRolesMappingDetails,
     "HdfsConnection": HdfsConnection,
     "HdfsConnectionSummary": HdfsConnectionSummary,
     "ImportDeploymentWalletDetails": ImportDeploymentWalletDetails,
@@ -385,6 +392,7 @@ golden_gate_type_mapping = {
     "UpdateGoldenGateConnectionDetails": UpdateGoldenGateConnectionDetails,
     "UpdateGoogleBigQueryConnectionDetails": UpdateGoogleBigQueryConnectionDetails,
     "UpdateGoogleCloudStorageConnectionDetails": UpdateGoogleCloudStorageConnectionDetails,
+    "UpdateGroupToRolesMappingDetails": UpdateGroupToRolesMappingDetails,
     "UpdateHdfsConnectionDetails": UpdateHdfsConnectionDetails,
     "UpdateJavaMessageServiceConnectionDetails": UpdateJavaMessageServiceConnectionDetails,
     "UpdateKafkaConnectionDetails": UpdateKafkaConnectionDetails,

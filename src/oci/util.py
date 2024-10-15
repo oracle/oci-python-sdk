@@ -92,7 +92,8 @@ def formatted_flat_dict(model):
     return json.dumps(
         as_dict,
         indent=2,
-        sort_keys=True
+        sort_keys=True,
+        ensure_ascii=False
     )
 
 

@@ -266,8 +266,8 @@ class UpdateOracleConnectionDetails(UpdateConnectionDetails):
     def wallet(self):
         """
         Gets the wallet of this UpdateOracleConnectionDetails.
-        The wallet contents Oracle GoldenGate uses to make connections to a database.  This
-        attribute is expected to be base64 encoded.
+        The wallet contents Oracle GoldenGate uses to make connections to a database.
+        This attribute is expected to be base64 encoded.
 
 
         :return: The wallet of this UpdateOracleConnectionDetails.
@@ -279,8 +279,8 @@ class UpdateOracleConnectionDetails(UpdateConnectionDetails):
     def wallet(self, wallet):
         """
         Sets the wallet of this UpdateOracleConnectionDetails.
-        The wallet contents Oracle GoldenGate uses to make connections to a database.  This
-        attribute is expected to be base64 encoded.
+        The wallet contents Oracle GoldenGate uses to make connections to a database.
+        This attribute is expected to be base64 encoded.
 
 
         :param wallet: The wallet of this UpdateOracleConnectionDetails.

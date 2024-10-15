@@ -165,7 +165,7 @@ class ZprClient(object):
         resource_path = "/configuration"
         method = "POST"
         operation_name = "create_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/Configuration/CreateConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -270,7 +270,7 @@ class ZprClient(object):
         resource_path = "/zprPolicies"
         method = "POST"
         operation_name = "create_zpr_policy"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/ZprPolicy/CreateZprPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -378,7 +378,7 @@ class ZprClient(object):
         resource_path = "/zprPolicies/{zprPolicyId}"
         method = "DELETE"
         operation_name = "delete_zpr_policy"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/ZprPolicy/DeleteZprPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -484,7 +484,7 @@ class ZprClient(object):
         resource_path = "/configuration"
         method = "GET"
         operation_name = "get_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/Configuration/GetConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -583,7 +583,7 @@ class ZprClient(object):
         resource_path = "/zprConfigurationWorkRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_zpr_configuration_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/WorkRequest/GetZprConfigurationWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -686,7 +686,7 @@ class ZprClient(object):
         resource_path = "/zprPolicies/{zprPolicyId}"
         method = "GET"
         operation_name = "get_zpr_policy"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/ZprPolicy/GetZprPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -789,7 +789,7 @@ class ZprClient(object):
         resource_path = "/zprPolicyWorkRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_zpr_policy_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/WorkRequest/GetZprPolicyWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -916,7 +916,7 @@ class ZprClient(object):
         resource_path = "/zprConfigurationWorkRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_zpr_configuration_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/WorkRequestError/ListZprConfigurationWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1071,7 +1071,7 @@ class ZprClient(object):
         resource_path = "/zprConfigurationWorkRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_zpr_configuration_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/WorkRequestLogEntry/ListZprConfigurationWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1241,7 +1241,7 @@ class ZprClient(object):
         resource_path = "/zprConfigurationWorkRequests"
         method = "GET"
         operation_name = "list_zpr_configuration_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/WorkRequest/ListZprConfigurationWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1414,7 +1414,7 @@ class ZprClient(object):
         resource_path = "/zprPolicies"
         method = "GET"
         operation_name = "list_zpr_policies"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/ZprPolicyCollection/ListZprPolicies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1572,7 +1572,7 @@ class ZprClient(object):
         resource_path = "/zprPolicyWorkRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_zpr_policy_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/WorkRequestError/ListZprPolicyWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1727,7 +1727,7 @@ class ZprClient(object):
         resource_path = "/zprPolicyWorkRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_zpr_policy_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/WorkRequestLogEntry/ListZprPolicyWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1897,7 +1897,7 @@ class ZprClient(object):
         resource_path = "/zprPolicyWorkRequests"
         method = "GET"
         operation_name = "list_zpr_policy_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/WorkRequest/ListZprPolicyWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2051,7 +2051,7 @@ class ZprClient(object):
         resource_path = "/zprPolicies/{zprPolicyId}"
         method = "PUT"
         operation_name = "update_zpr_policy"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/ZprPolicy/UpdateZprPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

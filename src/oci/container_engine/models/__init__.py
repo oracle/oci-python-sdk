@@ -61,6 +61,8 @@ from .node_source_via_image_details import NodeSourceViaImageDetails
 from .node_source_via_image_option import NodeSourceViaImageOption
 from .oci_vcn_ip_native_cluster_pod_network_option_details import OciVcnIpNativeClusterPodNetworkOptionDetails
 from .oci_vcn_ip_native_node_pool_pod_network_option_details import OciVcnIpNativeNodePoolPodNetworkOptionDetails
+from .open_id_connect_discovery import OpenIdConnectDiscovery
+from .open_id_connect_token_authentication_config import OpenIdConnectTokenAuthenticationConfig
 from .persistent_volume_config_details import PersistentVolumeConfigDetails
 from .placement_configuration import PlacementConfiguration
 from .pod_configuration import PodConfiguration
@@ -155,6 +157,8 @@ container_engine_type_mapping = {
     "NodeSourceViaImageOption": NodeSourceViaImageOption,
     "OciVcnIpNativeClusterPodNetworkOptionDetails": OciVcnIpNativeClusterPodNetworkOptionDetails,
     "OciVcnIpNativeNodePoolPodNetworkOptionDetails": OciVcnIpNativeNodePoolPodNetworkOptionDetails,
+    "OpenIdConnectDiscovery": OpenIdConnectDiscovery,
+    "OpenIdConnectTokenAuthenticationConfig": OpenIdConnectTokenAuthenticationConfig,
     "PersistentVolumeConfigDetails": PersistentVolumeConfigDetails,
     "PlacementConfiguration": PlacementConfiguration,
     "PodConfiguration": PodConfiguration,

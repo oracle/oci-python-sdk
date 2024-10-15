@@ -23,6 +23,14 @@ class UpdateDeploymentDetails(object):
     #: This constant has a value of "BRING_YOUR_OWN_LICENSE"
     LICENSE_MODEL_BRING_YOUR_OWN_LICENSE = "BRING_YOUR_OWN_LICENSE"
 
+    #: A constant which can be used with the environment_type property of a UpdateDeploymentDetails.
+    #: This constant has a value of "PRODUCTION"
+    ENVIRONMENT_TYPE_PRODUCTION = "PRODUCTION"
+
+    #: A constant which can be used with the environment_type property of a UpdateDeploymentDetails.
+    #: This constant has a value of "DEVELOPMENT_OR_TESTING"
+    ENVIRONMENT_TYPE_DEVELOPMENT_OR_TESTING = "DEVELOPMENT_OR_TESTING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateDeploymentDetails object with values from keyword arguments.
@@ -36,6 +44,11 @@ class UpdateDeploymentDetails(object):
             The value to assign to the license_model property of this UpdateDeploymentDetails.
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
         :type license_model: str
+
+        :param environment_type:
+            The value to assign to the environment_type property of this UpdateDeploymentDetails.
+            Allowed values for this property are: "PRODUCTION", "DEVELOPMENT_OR_TESTING"
+        :type environment_type: str
 
         :param description:
             The value to assign to the description property of this UpdateDeploymentDetails.
@@ -93,6 +106,7 @@ class UpdateDeploymentDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'license_model': 'str',
+            'environment_type': 'str',
             'description': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -111,6 +125,7 @@ class UpdateDeploymentDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'license_model': 'licenseModel',
+            'environment_type': 'environmentType',
             'description': 'description',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -128,6 +143,7 @@ class UpdateDeploymentDetails(object):
 
         self._display_name = None
         self._license_model = None
+        self._environment_type = None
         self._description = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -196,6 +212,37 @@ class UpdateDeploymentDetails(object):
                 f"Invalid value for `license_model`, must be None or one of {allowed_values}"
             )
         self._license_model = license_model
+
+    @property
+    def environment_type(self):
+        """
+        Gets the environment_type of this UpdateDeploymentDetails.
+        Specifies whether the deployment is used in a production or development/testing environment.
+
+        Allowed values for this property are: "PRODUCTION", "DEVELOPMENT_OR_TESTING"
+
+
+        :return: The environment_type of this UpdateDeploymentDetails.
+        :rtype: str
+        """
+        return self._environment_type
+
+    @environment_type.setter
+    def environment_type(self, environment_type):
+        """
+        Sets the environment_type of this UpdateDeploymentDetails.
+        Specifies whether the deployment is used in a production or development/testing environment.
+
+
+        :param environment_type: The environment_type of this UpdateDeploymentDetails.
+        :type: str
+        """
+        allowed_values = ["PRODUCTION", "DEVELOPMENT_OR_TESTING"]
+        if not value_allowed_none_or_none_sentinel(environment_type, allowed_values):
+            raise ValueError(
+                f"Invalid value for `environment_type`, must be None or one of {allowed_values}"
+            )
+        self._environment_type = environment_type
 
     @property
     def description(self):

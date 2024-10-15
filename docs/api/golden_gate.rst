@@ -102,6 +102,8 @@ Golden Gate
     oci.golden_gate.models.DeploymentBackupSummary
     oci.golden_gate.models.DeploymentCollection
     oci.golden_gate.models.DeploymentDiagnosticData
+    oci.golden_gate.models.DeploymentEnvironmentCollection
+    oci.golden_gate.models.DeploymentEnvironmentSummary
     oci.golden_gate.models.DeploymentMessageCollection
     oci.golden_gate.models.DeploymentSummary
     oci.golden_gate.models.DeploymentTypeCollection
@@ -128,6 +130,7 @@ Golden Gate
     oci.golden_gate.models.GoogleBigQueryConnectionSummary
     oci.golden_gate.models.GoogleCloudStorageConnection
     oci.golden_gate.models.GoogleCloudStorageConnectionSummary
+    oci.golden_gate.models.GroupToRolesMappingDetails
     oci.golden_gate.models.HdfsConnection
     oci.golden_gate.models.HdfsConnectionSummary
     oci.golden_gate.models.ImportDeploymentWalletDetails
@@ -194,6 +197,7 @@ Golden Gate
     oci.golden_gate.models.UpdateGoldenGateConnectionDetails
     oci.golden_gate.models.UpdateGoogleBigQueryConnectionDetails
     oci.golden_gate.models.UpdateGoogleCloudStorageConnectionDetails
+    oci.golden_gate.models.UpdateGroupToRolesMappingDetails
     oci.golden_gate.models.UpdateHdfsConnectionDetails
     oci.golden_gate.models.UpdateJavaMessageServiceConnectionDetails
     oci.golden_gate.models.UpdateKafkaConnectionDetails

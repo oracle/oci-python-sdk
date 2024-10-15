@@ -4,6 +4,30 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.136.0 - 2024-10-15
+====================
+
+Added 
+----- 
+* Support for open id connect discovery in the Oracle Kubernetes Engine service 
+* Support for DNS security extensions (DNSSEC) in the DNS service 
+* Support for restoring delta between backups to a new volume in the Block Volume service 
+* Support for cross region backup copy and replication for volumes encrypted with customer keys in the Block Volume service 
+* Support for list operation on deployment environments in the GoldenGate service 
+* Support for defining environment types for deployments in the GoldenGate service   
+
+Fixed 
+----- 
+* 
+
+Fixed an issue with decoding UTF-8 characters in response models 
+* Removed model files which were not accessible programmatically   
+
+Breaking 
+-------- 
+* Response type changed to `oci.golden_gate.models.DeploymentBackup` for operations `copy_deployment_backup` and `create_deployment_backup` in the GoldenGate service   
+
+====================
 2.135.2 - 2024-10-08
 ====================
 

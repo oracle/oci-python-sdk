@@ -28,19 +28,26 @@ class BlockVolumeReplicaDetails(object):
             The value to assign to the availability_domain property of this BlockVolumeReplicaDetails.
         :type availability_domain: str
 
+        :param xrr_kms_key_id:
+            The value to assign to the xrr_kms_key_id property of this BlockVolumeReplicaDetails.
+        :type xrr_kms_key_id: str
+
         """
         self.swagger_types = {
             'display_name': 'str',
-            'availability_domain': 'str'
+            'availability_domain': 'str',
+            'xrr_kms_key_id': 'str'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
-            'availability_domain': 'availabilityDomain'
+            'availability_domain': 'availabilityDomain',
+            'xrr_kms_key_id': 'xrrKmsKeyId'
         }
 
         self._display_name = None
         self._availability_domain = None
+        self._xrr_kms_key_id = None
 
     @property
     def display_name(self):
@@ -95,6 +102,42 @@ class BlockVolumeReplicaDetails(object):
         :type: str
         """
         self._availability_domain = availability_domain
+
+    @property
+    def xrr_kms_key_id(self):
+        """
+        Gets the xrr_kms_key_id of this BlockVolumeReplicaDetails.
+        The OCID of the Vault service key which is the master encryption key for the cross region block volume replicas, which will be used in the destination region to encrypt the block volume replica's encryption keys.
+        For more information about the Vault service and encryption keys, see
+        `Overview of Vault service`__ and
+        `Using Keys`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm
+
+
+        :return: The xrr_kms_key_id of this BlockVolumeReplicaDetails.
+        :rtype: str
+        """
+        return self._xrr_kms_key_id
+
+    @xrr_kms_key_id.setter
+    def xrr_kms_key_id(self, xrr_kms_key_id):
+        """
+        Sets the xrr_kms_key_id of this BlockVolumeReplicaDetails.
+        The OCID of the Vault service key which is the master encryption key for the cross region block volume replicas, which will be used in the destination region to encrypt the block volume replica's encryption keys.
+        For more information about the Vault service and encryption keys, see
+        `Overview of Vault service`__ and
+        `Using Keys`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm
+
+
+        :param xrr_kms_key_id: The xrr_kms_key_id of this BlockVolumeReplicaDetails.
+        :type: str
+        """
+        self._xrr_kms_key_id = xrr_kms_key_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class TestConnectionAssignmentResult(object):
     """
     The result of the connectivity test performed between the GoldenGate deployment and the associated database / service.
+    The 'error' property is deprecated and will not contain values in the future. So, the error(s) will be returned in just the 'errors' property.
     """
 
     #: A constant which can be used with the result_type property of a TestConnectionAssignmentResult.
@@ -42,19 +43,26 @@ class TestConnectionAssignmentResult(object):
             The value to assign to the error property of this TestConnectionAssignmentResult.
         :type error: oci.golden_gate.models.TestConnectionAssignmentError
 
+        :param errors:
+            The value to assign to the errors property of this TestConnectionAssignmentResult.
+        :type errors: list[oci.golden_gate.models.TestConnectionAssignmentError]
+
         """
         self.swagger_types = {
             'result_type': 'str',
-            'error': 'TestConnectionAssignmentError'
+            'error': 'TestConnectionAssignmentError',
+            'errors': 'list[TestConnectionAssignmentError]'
         }
 
         self.attribute_map = {
             'result_type': 'resultType',
-            'error': 'error'
+            'error': 'error',
+            'errors': 'errors'
         }
 
         self._result_type = None
         self._error = None
+        self._errors = None
 
     @property
     def result_type(self):
@@ -105,6 +113,30 @@ class TestConnectionAssignmentResult(object):
         :type: oci.golden_gate.models.TestConnectionAssignmentError
         """
         self._error = error
+
+    @property
+    def errors(self):
+        """
+        Gets the errors of this TestConnectionAssignmentResult.
+        List of test connection assignment error objects.
+
+
+        :return: The errors of this TestConnectionAssignmentResult.
+        :rtype: list[oci.golden_gate.models.TestConnectionAssignmentError]
+        """
+        return self._errors
+
+    @errors.setter
+    def errors(self, errors):
+        """
+        Sets the errors of this TestConnectionAssignmentResult.
+        List of test connection assignment error objects.
+
+
+        :param errors: The errors of this TestConnectionAssignmentResult.
+        :type: list[oci.golden_gate.models.TestConnectionAssignmentError]
+        """
+        self._errors = errors
 
     def __repr__(self):
         return formatted_flat_dict(self)

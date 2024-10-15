@@ -80,6 +80,7 @@ Core Services
     oci.core.models.BootVolumeReplicaDetails
     oci.core.models.BootVolumeReplicaInfo
     oci.core.models.BootVolumeSourceDetails
+    oci.core.models.BootVolumeSourceFromBootVolumeBackupDeltaDetails
     oci.core.models.BootVolumeSourceFromBootVolumeBackupDetails
     oci.core.models.BootVolumeSourceFromBootVolumeDetails
     oci.core.models.BootVolumeSourceFromBootVolumeReplicaDetails
@@ -623,6 +624,7 @@ Core Services
     oci.core.models.VolumeKmsKey
     oci.core.models.VolumeSourceDetails
     oci.core.models.VolumeSourceFromBlockVolumeReplicaDetails
+    oci.core.models.VolumeSourceFromVolumeBackupDeltaDetails
     oci.core.models.VolumeSourceFromVolumeBackupDetails
     oci.core.models.VolumeSourceFromVolumeDetails
     oci.core.models.Vtap

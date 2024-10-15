@@ -13,6 +13,9 @@ from oci.decorators import init_model_state_from_kwargs
 class DeploymentTypeSummary(object):
     """
     The meta-data specific on particular deployment type represented by deploymentType field.
+
+    Deprecated properties: `sourceTechnologies` and `targetTechnologies` are not populated. They will be removed after September 15 2025.
+    The list of supported source and target technologies can be accessed using the url provided in `supportedTechnologiesUrl` property.
     """
 
     #: A constant which can be used with the category property of a DeploymentTypeSummary.

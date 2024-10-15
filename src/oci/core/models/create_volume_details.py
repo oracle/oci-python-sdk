@@ -85,6 +85,10 @@ class CreateVolumeDetails(object):
             The value to assign to the autotune_policies property of this CreateVolumeDetails.
         :type autotune_policies: list[oci.core.models.AutotunePolicy]
 
+        :param xrc_kms_key_id:
+            The value to assign to the xrc_kms_key_id property of this CreateVolumeDetails.
+        :type xrc_kms_key_id: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -102,7 +106,8 @@ class CreateVolumeDetails(object):
             'volume_backup_id': 'str',
             'is_auto_tune_enabled': 'bool',
             'block_volume_replicas': 'list[BlockVolumeReplicaDetails]',
-            'autotune_policies': 'list[AutotunePolicy]'
+            'autotune_policies': 'list[AutotunePolicy]',
+            'xrc_kms_key_id': 'str'
         }
 
         self.attribute_map = {
@@ -121,7 +126,8 @@ class CreateVolumeDetails(object):
             'volume_backup_id': 'volumeBackupId',
             'is_auto_tune_enabled': 'isAutoTuneEnabled',
             'block_volume_replicas': 'blockVolumeReplicas',
-            'autotune_policies': 'autotunePolicies'
+            'autotune_policies': 'autotunePolicies',
+            'xrc_kms_key_id': 'xrcKmsKeyId'
         }
 
         self._availability_domain = None
@@ -140,6 +146,7 @@ class CreateVolumeDetails(object):
         self._is_auto_tune_enabled = None
         self._block_volume_replicas = None
         self._autotune_policies = None
+        self._xrc_kms_key_id = None
 
     @property
     def availability_domain(self):
@@ -592,6 +599,42 @@ class CreateVolumeDetails(object):
         :type: list[oci.core.models.AutotunePolicy]
         """
         self._autotune_policies = autotune_policies
+
+    @property
+    def xrc_kms_key_id(self):
+        """
+        Gets the xrc_kms_key_id of this CreateVolumeDetails.
+        The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys.
+        For more information about the Vault service and encryption keys, see
+        `Overview of Vault service`__ and
+        `Using Keys`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm
+
+
+        :return: The xrc_kms_key_id of this CreateVolumeDetails.
+        :rtype: str
+        """
+        return self._xrc_kms_key_id
+
+    @xrc_kms_key_id.setter
+    def xrc_kms_key_id(self, xrc_kms_key_id):
+        """
+        Sets the xrc_kms_key_id of this CreateVolumeDetails.
+        The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys.
+        For more information about the Vault service and encryption keys, see
+        `Overview of Vault service`__ and
+        `Using Keys`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm
+
+
+        :param xrc_kms_key_id: The xrc_kms_key_id of this CreateVolumeDetails.
+        :type: str
+        """
+        self._xrc_kms_key_id = xrc_kms_key_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

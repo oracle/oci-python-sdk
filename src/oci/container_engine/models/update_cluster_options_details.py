@@ -32,22 +32,36 @@ class UpdateClusterOptionsDetails(object):
             The value to assign to the service_lb_config property of this UpdateClusterOptionsDetails.
         :type service_lb_config: oci.container_engine.models.ServiceLbConfigDetails
 
+        :param open_id_connect_token_authentication_config:
+            The value to assign to the open_id_connect_token_authentication_config property of this UpdateClusterOptionsDetails.
+        :type open_id_connect_token_authentication_config: oci.container_engine.models.OpenIdConnectTokenAuthenticationConfig
+
+        :param open_id_connect_discovery:
+            The value to assign to the open_id_connect_discovery property of this UpdateClusterOptionsDetails.
+        :type open_id_connect_discovery: oci.container_engine.models.OpenIdConnectDiscovery
+
         """
         self.swagger_types = {
             'admission_controller_options': 'AdmissionControllerOptions',
             'persistent_volume_config': 'PersistentVolumeConfigDetails',
-            'service_lb_config': 'ServiceLbConfigDetails'
+            'service_lb_config': 'ServiceLbConfigDetails',
+            'open_id_connect_token_authentication_config': 'OpenIdConnectTokenAuthenticationConfig',
+            'open_id_connect_discovery': 'OpenIdConnectDiscovery'
         }
 
         self.attribute_map = {
             'admission_controller_options': 'admissionControllerOptions',
             'persistent_volume_config': 'persistentVolumeConfig',
-            'service_lb_config': 'serviceLbConfig'
+            'service_lb_config': 'serviceLbConfig',
+            'open_id_connect_token_authentication_config': 'openIdConnectTokenAuthenticationConfig',
+            'open_id_connect_discovery': 'openIdConnectDiscovery'
         }
 
         self._admission_controller_options = None
         self._persistent_volume_config = None
         self._service_lb_config = None
+        self._open_id_connect_token_authentication_config = None
+        self._open_id_connect_discovery = None
 
     @property
     def admission_controller_options(self):
@@ -112,6 +126,46 @@ class UpdateClusterOptionsDetails(object):
         :type: oci.container_engine.models.ServiceLbConfigDetails
         """
         self._service_lb_config = service_lb_config
+
+    @property
+    def open_id_connect_token_authentication_config(self):
+        """
+        Gets the open_id_connect_token_authentication_config of this UpdateClusterOptionsDetails.
+
+        :return: The open_id_connect_token_authentication_config of this UpdateClusterOptionsDetails.
+        :rtype: oci.container_engine.models.OpenIdConnectTokenAuthenticationConfig
+        """
+        return self._open_id_connect_token_authentication_config
+
+    @open_id_connect_token_authentication_config.setter
+    def open_id_connect_token_authentication_config(self, open_id_connect_token_authentication_config):
+        """
+        Sets the open_id_connect_token_authentication_config of this UpdateClusterOptionsDetails.
+
+        :param open_id_connect_token_authentication_config: The open_id_connect_token_authentication_config of this UpdateClusterOptionsDetails.
+        :type: oci.container_engine.models.OpenIdConnectTokenAuthenticationConfig
+        """
+        self._open_id_connect_token_authentication_config = open_id_connect_token_authentication_config
+
+    @property
+    def open_id_connect_discovery(self):
+        """
+        Gets the open_id_connect_discovery of this UpdateClusterOptionsDetails.
+
+        :return: The open_id_connect_discovery of this UpdateClusterOptionsDetails.
+        :rtype: oci.container_engine.models.OpenIdConnectDiscovery
+        """
+        return self._open_id_connect_discovery
+
+    @open_id_connect_discovery.setter
+    def open_id_connect_discovery(self, open_id_connect_discovery):
+        """
+        Sets the open_id_connect_discovery of this UpdateClusterOptionsDetails.
+
+        :param open_id_connect_discovery: The open_id_connect_discovery of this UpdateClusterOptionsDetails.
+        :type: oci.container_engine.models.OpenIdConnectDiscovery
+        """
+        self._open_id_connect_discovery = open_id_connect_discovery
 
     def __repr__(self):
         return formatted_flat_dict(self)

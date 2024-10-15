@@ -107,6 +107,26 @@ class Deployment(object):
     #: This constant has a value of "BRING_YOUR_OWN_LICENSE"
     LICENSE_MODEL_BRING_YOUR_OWN_LICENSE = "BRING_YOUR_OWN_LICENSE"
 
+    #: A constant which can be used with the environment_type property of a Deployment.
+    #: This constant has a value of "PRODUCTION"
+    ENVIRONMENT_TYPE_PRODUCTION = "PRODUCTION"
+
+    #: A constant which can be used with the environment_type property of a Deployment.
+    #: This constant has a value of "DEVELOPMENT_OR_TESTING"
+    ENVIRONMENT_TYPE_DEVELOPMENT_OR_TESTING = "DEVELOPMENT_OR_TESTING"
+
+    #: A constant which can be used with the category property of a Deployment.
+    #: This constant has a value of "DATA_REPLICATION"
+    CATEGORY_DATA_REPLICATION = "DATA_REPLICATION"
+
+    #: A constant which can be used with the category property of a Deployment.
+    #: This constant has a value of "STREAM_ANALYTICS"
+    CATEGORY_STREAM_ANALYTICS = "STREAM_ANALYTICS"
+
+    #: A constant which can be used with the category property of a Deployment.
+    #: This constant has a value of "DATA_TRANSFORMS"
+    CATEGORY_DATA_TRANSFORMS = "DATA_TRANSFORMS"
+
     #: A constant which can be used with the deployment_type property of a Deployment.
     #: This constant has a value of "OGG"
     DEPLOYMENT_TYPE_OGG = "OGG"
@@ -234,6 +254,18 @@ class Deployment(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type license_model: str
 
+        :param environment_type:
+            The value to assign to the environment_type property of this Deployment.
+            Allowed values for this property are: "PRODUCTION", "DEVELOPMENT_OR_TESTING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type environment_type: str
+
+        :param category:
+            The value to assign to the category property of this Deployment.
+            Allowed values for this property are: "DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type category: str
+
         :param cpu_core_count:
             The value to assign to the cpu_core_count property of this Deployment.
         :type cpu_core_count: int
@@ -347,6 +379,8 @@ class Deployment(object):
             'load_balancer_id': 'str',
             'fqdn': 'str',
             'license_model': 'str',
+            'environment_type': 'str',
+            'category': 'str',
             'cpu_core_count': 'int',
             'is_auto_scaling_enabled': 'bool',
             'nsg_ids': 'list[str]',
@@ -391,6 +425,8 @@ class Deployment(object):
             'load_balancer_id': 'loadBalancerId',
             'fqdn': 'fqdn',
             'license_model': 'licenseModel',
+            'environment_type': 'environmentType',
+            'category': 'category',
             'cpu_core_count': 'cpuCoreCount',
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
             'nsg_ids': 'nsgIds',
@@ -434,6 +470,8 @@ class Deployment(object):
         self._load_balancer_id = None
         self._fqdn = None
         self._license_model = None
+        self._environment_type = None
+        self._category = None
         self._cpu_core_count = None
         self._is_auto_scaling_enabled = None
         self._nsg_ids = None
@@ -990,6 +1028,68 @@ class Deployment(object):
         self._license_model = license_model
 
     @property
+    def environment_type(self):
+        """
+        Gets the environment_type of this Deployment.
+        Specifies whether the deployment is used in a production or development/testing environment.
+
+        Allowed values for this property are: "PRODUCTION", "DEVELOPMENT_OR_TESTING", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The environment_type of this Deployment.
+        :rtype: str
+        """
+        return self._environment_type
+
+    @environment_type.setter
+    def environment_type(self, environment_type):
+        """
+        Sets the environment_type of this Deployment.
+        Specifies whether the deployment is used in a production or development/testing environment.
+
+
+        :param environment_type: The environment_type of this Deployment.
+        :type: str
+        """
+        allowed_values = ["PRODUCTION", "DEVELOPMENT_OR_TESTING"]
+        if not value_allowed_none_or_none_sentinel(environment_type, allowed_values):
+            environment_type = 'UNKNOWN_ENUM_VALUE'
+        self._environment_type = environment_type
+
+    @property
+    def category(self):
+        """
+        **[Required]** Gets the category of this Deployment.
+        The deployment category defines the broad separation of the deployment type into three categories.
+        Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+
+        Allowed values for this property are: "DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The category of this Deployment.
+        :rtype: str
+        """
+        return self._category
+
+    @category.setter
+    def category(self, category):
+        """
+        Sets the category of this Deployment.
+        The deployment category defines the broad separation of the deployment type into three categories.
+        Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+
+
+        :param category: The category of this Deployment.
+        :type: str
+        """
+        allowed_values = ["DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS"]
+        if not value_allowed_none_or_none_sentinel(category, allowed_values):
+            category = 'UNKNOWN_ENUM_VALUE'
+        self._category = category
+
+    @property
     def cpu_core_count(self):
         """
         **[Required]** Gets the cpu_core_count of this Deployment.
@@ -1287,6 +1387,7 @@ class Deployment(object):
     def is_storage_utilization_limit_exceeded(self):
         """
         Gets the is_storage_utilization_limit_exceeded of this Deployment.
+        Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=.
         Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
 
 
@@ -1299,6 +1400,7 @@ class Deployment(object):
     def is_storage_utilization_limit_exceeded(self, is_storage_utilization_limit_exceeded):
         """
         Sets the is_storage_utilization_limit_exceeded of this Deployment.
+        Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=.
         Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
 
 

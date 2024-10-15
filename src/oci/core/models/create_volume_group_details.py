@@ -56,6 +56,10 @@ class CreateVolumeGroupDetails(object):
             The value to assign to the cluster_placement_group_id property of this CreateVolumeGroupDetails.
         :type cluster_placement_group_id: str
 
+        :param xrc_kms_key_id:
+            The value to assign to the xrc_kms_key_id property of this CreateVolumeGroupDetails.
+        :type xrc_kms_key_id: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -66,7 +70,8 @@ class CreateVolumeGroupDetails(object):
             'freeform_tags': 'dict(str, str)',
             'source_details': 'VolumeGroupSourceDetails',
             'volume_group_replicas': 'list[VolumeGroupReplicaDetails]',
-            'cluster_placement_group_id': 'str'
+            'cluster_placement_group_id': 'str',
+            'xrc_kms_key_id': 'str'
         }
 
         self.attribute_map = {
@@ -78,7 +83,8 @@ class CreateVolumeGroupDetails(object):
             'freeform_tags': 'freeformTags',
             'source_details': 'sourceDetails',
             'volume_group_replicas': 'volumeGroupReplicas',
-            'cluster_placement_group_id': 'clusterPlacementGroupId'
+            'cluster_placement_group_id': 'clusterPlacementGroupId',
+            'xrc_kms_key_id': 'xrcKmsKeyId'
         }
 
         self._availability_domain = None
@@ -90,6 +96,7 @@ class CreateVolumeGroupDetails(object):
         self._source_details = None
         self._volume_group_replicas = None
         self._cluster_placement_group_id = None
+        self._xrc_kms_key_id = None
 
     @property
     def availability_domain(self):
@@ -328,6 +335,42 @@ class CreateVolumeGroupDetails(object):
         :type: str
         """
         self._cluster_placement_group_id = cluster_placement_group_id
+
+    @property
+    def xrc_kms_key_id(self):
+        """
+        Gets the xrc_kms_key_id of this CreateVolumeGroupDetails.
+        The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys.
+        For more information about the Vault service and encryption keys, see
+        `Overview of Vault service`__ and
+        `Using Keys`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm
+
+
+        :return: The xrc_kms_key_id of this CreateVolumeGroupDetails.
+        :rtype: str
+        """
+        return self._xrc_kms_key_id
+
+    @xrc_kms_key_id.setter
+    def xrc_kms_key_id(self, xrc_kms_key_id):
+        """
+        Sets the xrc_kms_key_id of this CreateVolumeGroupDetails.
+        The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys.
+        For more information about the Vault service and encryption keys, see
+        `Overview of Vault service`__ and
+        `Using Keys`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm
+
+
+        :param xrc_kms_key_id: The xrc_kms_key_id of this CreateVolumeGroupDetails.
+        :type: str
+        """
+        self._xrc_kms_key_id = xrc_kms_key_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

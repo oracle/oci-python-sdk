@@ -34,14 +34,18 @@ DNS
     oci.dns.models.CreateViewDetails
     oci.dns.models.CreateZoneBaseDetails
     oci.dns.models.CreateZoneDetails
+    oci.dns.models.DnssecConfig
+    oci.dns.models.DnssecKeyVersionDsData
     oci.dns.models.DynectMigrationDetails
     oci.dns.models.ExternalDownstream
     oci.dns.models.ExternalMaster
+    oci.dns.models.KskDnssecKeyVersion
     oci.dns.models.MigrationReplacement
     oci.dns.models.Nameserver
     oci.dns.models.PatchDomainRecordsDetails
     oci.dns.models.PatchRRSetDetails
     oci.dns.models.PatchZoneRecordsDetails
+    oci.dns.models.PromoteZoneDnssecKeyVersionDetails
     oci.dns.models.RRSet
     oci.dns.models.Record
     oci.dns.models.RecordCollection
@@ -57,6 +61,7 @@ DNS
     oci.dns.models.ResolverSummary
     oci.dns.models.ResolverVnicEndpoint
     oci.dns.models.ResolverVnicEndpointSummary
+    oci.dns.models.StageZoneDnssecKeyVersionDetails
     oci.dns.models.SteeringPolicy
     oci.dns.models.SteeringPolicyAnswer
     oci.dns.models.SteeringPolicyAttachment
@@ -94,3 +99,4 @@ DNS
     oci.dns.models.Zone
     oci.dns.models.ZoneSummary
     oci.dns.models.ZoneTransferServer
+    oci.dns.models.ZskDnssecKeyVersion

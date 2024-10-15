@@ -57,6 +57,10 @@ class UpdateOggDeploymentDetails(object):
             The value to assign to the key property of this UpdateOggDeploymentDetails.
         :type key: str
 
+        :param group_to_roles_mapping:
+            The value to assign to the group_to_roles_mapping property of this UpdateOggDeploymentDetails.
+        :type group_to_roles_mapping: oci.golden_gate.models.UpdateGroupToRolesMappingDetails
+
         """
         self.swagger_types = {
             'credential_store': 'str',
@@ -65,7 +69,8 @@ class UpdateOggDeploymentDetails(object):
             'admin_username': 'str',
             'admin_password': 'str',
             'certificate': 'str',
-            'key': 'str'
+            'key': 'str',
+            'group_to_roles_mapping': 'UpdateGroupToRolesMappingDetails'
         }
 
         self.attribute_map = {
@@ -75,7 +80,8 @@ class UpdateOggDeploymentDetails(object):
             'admin_username': 'adminUsername',
             'admin_password': 'adminPassword',
             'certificate': 'certificate',
-            'key': 'key'
+            'key': 'key',
+            'group_to_roles_mapping': 'groupToRolesMapping'
         }
 
         self._credential_store = None
@@ -85,6 +91,7 @@ class UpdateOggDeploymentDetails(object):
         self._admin_password = None
         self._certificate = None
         self._key = None
+        self._group_to_roles_mapping = None
 
     @property
     def credential_store(self):
@@ -274,6 +281,26 @@ class UpdateOggDeploymentDetails(object):
         :type: str
         """
         self._key = key
+
+    @property
+    def group_to_roles_mapping(self):
+        """
+        Gets the group_to_roles_mapping of this UpdateOggDeploymentDetails.
+
+        :return: The group_to_roles_mapping of this UpdateOggDeploymentDetails.
+        :rtype: oci.golden_gate.models.UpdateGroupToRolesMappingDetails
+        """
+        return self._group_to_roles_mapping
+
+    @group_to_roles_mapping.setter
+    def group_to_roles_mapping(self, group_to_roles_mapping):
+        """
+        Sets the group_to_roles_mapping of this UpdateOggDeploymentDetails.
+
+        :param group_to_roles_mapping: The group_to_roles_mapping of this UpdateOggDeploymentDetails.
+        :type: oci.golden_gate.models.UpdateGroupToRolesMappingDetails
+        """
+        self._group_to_roles_mapping = group_to_roles_mapping
 
     def __repr__(self):
         return formatted_flat_dict(self)

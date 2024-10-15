@@ -28,19 +28,26 @@ class CreateVolumeBackupPolicyAssignmentDetails(object):
             The value to assign to the policy_id property of this CreateVolumeBackupPolicyAssignmentDetails.
         :type policy_id: str
 
+        :param xrc_kms_key_id:
+            The value to assign to the xrc_kms_key_id property of this CreateVolumeBackupPolicyAssignmentDetails.
+        :type xrc_kms_key_id: str
+
         """
         self.swagger_types = {
             'asset_id': 'str',
-            'policy_id': 'str'
+            'policy_id': 'str',
+            'xrc_kms_key_id': 'str'
         }
 
         self.attribute_map = {
             'asset_id': 'assetId',
-            'policy_id': 'policyId'
+            'policy_id': 'policyId',
+            'xrc_kms_key_id': 'xrcKmsKeyId'
         }
 
         self._asset_id = None
         self._policy_id = None
+        self._xrc_kms_key_id = None
 
     @property
     def asset_id(self):
@@ -89,6 +96,42 @@ class CreateVolumeBackupPolicyAssignmentDetails(object):
         :type: str
         """
         self._policy_id = policy_id
+
+    @property
+    def xrc_kms_key_id(self):
+        """
+        Gets the xrc_kms_key_id of this CreateVolumeBackupPolicyAssignmentDetails.
+        The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys.
+        For more information about the Vault service and encryption keys, see
+        `Overview of Vault service`__ and
+        `Using Keys`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm
+
+
+        :return: The xrc_kms_key_id of this CreateVolumeBackupPolicyAssignmentDetails.
+        :rtype: str
+        """
+        return self._xrc_kms_key_id
+
+    @xrc_kms_key_id.setter
+    def xrc_kms_key_id(self, xrc_kms_key_id):
+        """
+        Sets the xrc_kms_key_id of this CreateVolumeBackupPolicyAssignmentDetails.
+        The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys.
+        For more information about the Vault service and encryption keys, see
+        `Overview of Vault service`__ and
+        `Using Keys`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm
+
+
+        :param xrc_kms_key_id: The xrc_kms_key_id of this CreateVolumeBackupPolicyAssignmentDetails.
+        :type: str
+        """
+        self._xrc_kms_key_id = xrc_kms_key_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

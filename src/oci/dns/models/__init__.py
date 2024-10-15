@@ -22,14 +22,18 @@ from .create_tsig_key_details import CreateTsigKeyDetails
 from .create_view_details import CreateViewDetails
 from .create_zone_base_details import CreateZoneBaseDetails
 from .create_zone_details import CreateZoneDetails
+from .dnssec_config import DnssecConfig
+from .dnssec_key_version_ds_data import DnssecKeyVersionDsData
 from .dynect_migration_details import DynectMigrationDetails
 from .external_downstream import ExternalDownstream
 from .external_master import ExternalMaster
+from .ksk_dnssec_key_version import KskDnssecKeyVersion
 from .migration_replacement import MigrationReplacement
 from .nameserver import Nameserver
 from .patch_domain_records_details import PatchDomainRecordsDetails
 from .patch_rr_set_details import PatchRRSetDetails
 from .patch_zone_records_details import PatchZoneRecordsDetails
+from .promote_zone_dnssec_key_version_details import PromoteZoneDnssecKeyVersionDetails
 from .rr_set import RRSet
 from .record import Record
 from .record_collection import RecordCollection
@@ -45,6 +49,7 @@ from .resolver_rule_details import ResolverRuleDetails
 from .resolver_summary import ResolverSummary
 from .resolver_vnic_endpoint import ResolverVnicEndpoint
 from .resolver_vnic_endpoint_summary import ResolverVnicEndpointSummary
+from .stage_zone_dnssec_key_version_details import StageZoneDnssecKeyVersionDetails
 from .steering_policy import SteeringPolicy
 from .steering_policy_answer import SteeringPolicyAnswer
 from .steering_policy_attachment import SteeringPolicyAttachment
@@ -82,6 +87,7 @@ from .view_summary import ViewSummary
 from .zone import Zone
 from .zone_summary import ZoneSummary
 from .zone_transfer_server import ZoneTransferServer
+from .zsk_dnssec_key_version import ZskDnssecKeyVersion
 
 # Maps type names to classes for dns services.
 dns_type_mapping = {
@@ -101,14 +107,18 @@ dns_type_mapping = {
     "CreateViewDetails": CreateViewDetails,
     "CreateZoneBaseDetails": CreateZoneBaseDetails,
     "CreateZoneDetails": CreateZoneDetails,
+    "DnssecConfig": DnssecConfig,
+    "DnssecKeyVersionDsData": DnssecKeyVersionDsData,
     "DynectMigrationDetails": DynectMigrationDetails,
     "ExternalDownstream": ExternalDownstream,
     "ExternalMaster": ExternalMaster,
+    "KskDnssecKeyVersion": KskDnssecKeyVersion,
     "MigrationReplacement": MigrationReplacement,
     "Nameserver": Nameserver,
     "PatchDomainRecordsDetails": PatchDomainRecordsDetails,
     "PatchRRSetDetails": PatchRRSetDetails,
     "PatchZoneRecordsDetails": PatchZoneRecordsDetails,
+    "PromoteZoneDnssecKeyVersionDetails": PromoteZoneDnssecKeyVersionDetails,
     "RRSet": RRSet,
     "Record": Record,
     "RecordCollection": RecordCollection,
@@ -124,6 +134,7 @@ dns_type_mapping = {
     "ResolverSummary": ResolverSummary,
     "ResolverVnicEndpoint": ResolverVnicEndpoint,
     "ResolverVnicEndpointSummary": ResolverVnicEndpointSummary,
+    "StageZoneDnssecKeyVersionDetails": StageZoneDnssecKeyVersionDetails,
     "SteeringPolicy": SteeringPolicy,
     "SteeringPolicyAnswer": SteeringPolicyAnswer,
     "SteeringPolicyAttachment": SteeringPolicyAttachment,
@@ -160,5 +171,6 @@ dns_type_mapping = {
     "ViewSummary": ViewSummary,
     "Zone": Zone,
     "ZoneSummary": ZoneSummary,
-    "ZoneTransferServer": ZoneTransferServer
+    "ZoneTransferServer": ZoneTransferServer,
+    "ZskDnssecKeyVersion": ZskDnssecKeyVersion
 }
