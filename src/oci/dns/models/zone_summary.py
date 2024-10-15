@@ -33,6 +33,14 @@ class ZoneSummary(object):
     #: This constant has a value of "PRIVATE"
     SCOPE_PRIVATE = "PRIVATE"
 
+    #: A constant which can be used with the dnssec_state property of a ZoneSummary.
+    #: This constant has a value of "ENABLED"
+    DNSSEC_STATE_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the dnssec_state property of a ZoneSummary.
+    #: This constant has a value of "DISABLED"
+    DNSSEC_STATE_DISABLED = "DISABLED"
+
     #: A constant which can be used with the lifecycle_state property of a ZoneSummary.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -94,6 +102,12 @@ class ZoneSummary(object):
             The value to assign to the defined_tags property of this ZoneSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param dnssec_state:
+            The value to assign to the dnssec_state property of this ZoneSummary.
+            Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type dnssec_state: str
+
         :param self_uri:
             The value to assign to the self_uri property of this ZoneSummary.
         :type self_uri: str
@@ -124,6 +138,10 @@ class ZoneSummary(object):
             The value to assign to the is_protected property of this ZoneSummary.
         :type is_protected: bool
 
+        :param dnssec_config:
+            The value to assign to the dnssec_config property of this ZoneSummary.
+        :type dnssec_config: oci.dns.models.DnssecConfig
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -133,13 +151,15 @@ class ZoneSummary(object):
             'scope': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'dnssec_state': 'str',
             'self_uri': 'str',
             'id': 'str',
             'time_created': 'datetime',
             'version': 'str',
             'serial': 'int',
             'lifecycle_state': 'str',
-            'is_protected': 'bool'
+            'is_protected': 'bool',
+            'dnssec_config': 'DnssecConfig'
         }
 
         self.attribute_map = {
@@ -150,13 +170,15 @@ class ZoneSummary(object):
             'scope': 'scope',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'dnssec_state': 'dnssecState',
             'self_uri': 'self',
             'id': 'id',
             'time_created': 'timeCreated',
             'version': 'version',
             'serial': 'serial',
             'lifecycle_state': 'lifecycleState',
-            'is_protected': 'isProtected'
+            'is_protected': 'isProtected',
+            'dnssec_config': 'dnssecConfig'
         }
 
         self._name = None
@@ -166,6 +188,7 @@ class ZoneSummary(object):
         self._scope = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._dnssec_state = None
         self._self_uri = None
         self._id = None
         self._time_created = None
@@ -173,6 +196,7 @@ class ZoneSummary(object):
         self._serial = None
         self._lifecycle_state = None
         self._is_protected = None
+        self._dnssec_config = None
 
     @property
     def name(self):
@@ -383,6 +407,88 @@ class ZoneSummary(object):
         self._defined_tags = defined_tags
 
     @property
+    def dnssec_state(self):
+        """
+        **[Required]** Gets the dnssec_state of this ZoneSummary.
+        The state of DNSSEC on the zone.
+
+        For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent
+        trust anchor) must also have DNSSEC correctly set up.
+        After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the
+        `KskDnssecKeyVersion` data. You can find the DS data in the `dsData` attribute of the `KskDnssecKeyVersion`.
+        Then, use the `PromoteZoneDnssecKeyVersion` operation to promote the `KskDnssecKeyVersion`.
+
+        New `KskDnssecKeyVersion`s are generated annually, a week before the existing `KskDnssecKeyVersion`'s expiration.
+        To rollover a `KskDnssecKeyVersion`, you must replace the parent zone's DS record containing the old
+        `KskDnssecKeyVersion` data with the data from the new `KskDnssecKeyVersion`.
+
+        To remove the old DS record without causing service disruption, wait until the old DS record's TTL has
+        expired, and the new DS record has propagated. After the DS replacement has been completed, then the
+        `PromoteZoneDnssecKeyVersion` operation must be called.
+
+        Metrics are emitted in the `oci_dns` namespace daily for each `KskDnssecKeyVersion` indicating how many
+        days are left until expiration.
+        We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the
+        necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+
+        Enabling DNSSEC results in additional records in DNS responses which increases their size and can
+        cause higher response latency.
+
+        For more information, see `DNSSEC`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm
+
+        Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The dnssec_state of this ZoneSummary.
+        :rtype: str
+        """
+        return self._dnssec_state
+
+    @dnssec_state.setter
+    def dnssec_state(self, dnssec_state):
+        """
+        Sets the dnssec_state of this ZoneSummary.
+        The state of DNSSEC on the zone.
+
+        For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent
+        trust anchor) must also have DNSSEC correctly set up.
+        After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the
+        `KskDnssecKeyVersion` data. You can find the DS data in the `dsData` attribute of the `KskDnssecKeyVersion`.
+        Then, use the `PromoteZoneDnssecKeyVersion` operation to promote the `KskDnssecKeyVersion`.
+
+        New `KskDnssecKeyVersion`s are generated annually, a week before the existing `KskDnssecKeyVersion`'s expiration.
+        To rollover a `KskDnssecKeyVersion`, you must replace the parent zone's DS record containing the old
+        `KskDnssecKeyVersion` data with the data from the new `KskDnssecKeyVersion`.
+
+        To remove the old DS record without causing service disruption, wait until the old DS record's TTL has
+        expired, and the new DS record has propagated. After the DS replacement has been completed, then the
+        `PromoteZoneDnssecKeyVersion` operation must be called.
+
+        Metrics are emitted in the `oci_dns` namespace daily for each `KskDnssecKeyVersion` indicating how many
+        days are left until expiration.
+        We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the
+        necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+
+        Enabling DNSSEC results in additional records in DNS responses which increases their size and can
+        cause higher response latency.
+
+        For more information, see `DNSSEC`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm
+
+
+        :param dnssec_state: The dnssec_state of this ZoneSummary.
+        :type: str
+        """
+        allowed_values = ["ENABLED", "DISABLED"]
+        if not value_allowed_none_or_none_sentinel(dnssec_state, allowed_values):
+            dnssec_state = 'UNKNOWN_ENUM_VALUE'
+        self._dnssec_state = dnssec_state
+
+    @property
     def self_uri(self):
         """
         **[Required]** Gets the self_uri of this ZoneSummary.
@@ -565,6 +671,26 @@ class ZoneSummary(object):
         :type: bool
         """
         self._is_protected = is_protected
+
+    @property
+    def dnssec_config(self):
+        """
+        Gets the dnssec_config of this ZoneSummary.
+
+        :return: The dnssec_config of this ZoneSummary.
+        :rtype: oci.dns.models.DnssecConfig
+        """
+        return self._dnssec_config
+
+    @dnssec_config.setter
+    def dnssec_config(self, dnssec_config):
+        """
+        Sets the dnssec_config of this ZoneSummary.
+
+        :param dnssec_config: The dnssec_config of this ZoneSummary.
+        :type: oci.dns.models.DnssecConfig
+        """
+        self._dnssec_config = dnssec_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

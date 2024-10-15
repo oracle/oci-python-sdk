@@ -76,6 +76,10 @@ class InstanceConfigurationCreateVolumeDetails(object):
             The value to assign to the autotune_policies property of this InstanceConfigurationCreateVolumeDetails.
         :type autotune_policies: list[oci.core.models.InstanceConfigurationAutotunePolicy]
 
+        :param xrc_kms_key_id:
+            The value to assign to the xrc_kms_key_id property of this InstanceConfigurationCreateVolumeDetails.
+        :type xrc_kms_key_id: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -91,7 +95,8 @@ class InstanceConfigurationCreateVolumeDetails(object):
             'cluster_placement_group_id': 'str',
             'size_in_gbs': 'int',
             'source_details': 'InstanceConfigurationVolumeSourceDetails',
-            'autotune_policies': 'list[InstanceConfigurationAutotunePolicy]'
+            'autotune_policies': 'list[InstanceConfigurationAutotunePolicy]',
+            'xrc_kms_key_id': 'str'
         }
 
         self.attribute_map = {
@@ -108,7 +113,8 @@ class InstanceConfigurationCreateVolumeDetails(object):
             'cluster_placement_group_id': 'clusterPlacementGroupId',
             'size_in_gbs': 'sizeInGBs',
             'source_details': 'sourceDetails',
-            'autotune_policies': 'autotunePolicies'
+            'autotune_policies': 'autotunePolicies',
+            'xrc_kms_key_id': 'xrcKmsKeyId'
         }
 
         self._availability_domain = None
@@ -125,6 +131,7 @@ class InstanceConfigurationCreateVolumeDetails(object):
         self._size_in_gbs = None
         self._source_details = None
         self._autotune_policies = None
+        self._xrc_kms_key_id = None
 
     @property
     def availability_domain(self):
@@ -523,6 +530,42 @@ class InstanceConfigurationCreateVolumeDetails(object):
         :type: list[oci.core.models.InstanceConfigurationAutotunePolicy]
         """
         self._autotune_policies = autotune_policies
+
+    @property
+    def xrc_kms_key_id(self):
+        """
+        Gets the xrc_kms_key_id of this InstanceConfigurationCreateVolumeDetails.
+        The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys.
+        For more information about the Vault service and encryption keys, see
+        `Overview of Vault service`__ and
+        `Using Keys`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm
+
+
+        :return: The xrc_kms_key_id of this InstanceConfigurationCreateVolumeDetails.
+        :rtype: str
+        """
+        return self._xrc_kms_key_id
+
+    @xrc_kms_key_id.setter
+    def xrc_kms_key_id(self, xrc_kms_key_id):
+        """
+        Sets the xrc_kms_key_id of this InstanceConfigurationCreateVolumeDetails.
+        The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys.
+        For more information about the Vault service and encryption keys, see
+        `Overview of Vault service`__ and
+        `Using Keys`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm
+
+
+        :param xrc_kms_key_id: The xrc_kms_key_id of this InstanceConfigurationCreateVolumeDetails.
+        :type: str
+        """
+        self._xrc_kms_key_id = xrc_kms_key_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

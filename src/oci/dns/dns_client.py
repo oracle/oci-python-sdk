@@ -5914,6 +5914,11 @@ class DnsClient(object):
         :param str tsig_key_id: (optional)
             Search for zones that are associated with a TSIG key.
 
+        :param str dnssec_state: (optional)
+            Search for zones that have the given `DnssecState`.
+
+            Allowed values are: "ENABLED", "DISABLED"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -5956,7 +5961,8 @@ class DnsClient(object):
             "sort_order",
             "scope",
             "view_id",
-            "tsig_key_id"
+            "tsig_key_id",
+            "dnssec_state"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -5998,6 +6004,13 @@ class DnsClient(object):
                     f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
+        if 'dnssec_state' in kwargs:
+            dnssec_state_allowed_values = ["ENABLED", "DISABLED"]
+            if kwargs['dnssec_state'] not in dnssec_state_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `dnssec_state`, must be one of { dnssec_state_allowed_values }"
+                )
+
         query_params = {
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
@@ -6012,7 +6025,8 @@ class DnsClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "scope": kwargs.get("scope", missing),
             "viewId": kwargs.get("view_id", missing),
-            "tsigKeyId": kwargs.get("tsig_key_id", missing)
+            "tsigKeyId": kwargs.get("tsig_key_id", missing),
+            "dnssecState": kwargs.get("dnssec_state", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -6542,6 +6556,327 @@ class DnsClient(object):
                 header_params=header_params,
                 body=patch_zone_records_details,
                 response_type="RecordCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def promote_zone_dnssec_key_version(self, zone_id, promote_zone_dnssec_key_version_details, **kwargs):
+        """
+        Promotes a specified `DnssecKeyVersion` on the zone.
+
+        If the `DnssecKeyVersion` identified in the request body is a key signing key (KSK) that is replacing
+        another `DnssecKeyVersion`, then the old `DnssecKeyVersion` is scheduled for removal from the zone.
+
+        For key signing keys (KSKs), you must create the DS record with the new key information **before** promoting
+        the new key to establish a chain of trust. To avoid a service disruption, remove the old DS record as soon
+        as its TTL (time to live) expires.
+
+        For more information, see `DNSSEC`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm
+
+
+        :param str zone_id: (required)
+            The OCID of the target zone.
+
+        :param oci.dns.models.PromoteZoneDnssecKeyVersionDetails promote_zone_dnssec_key_version_details: (required)
+            Details for promoting a `DnssecKeyVersion`.
+
+        :param str if_match: (optional)
+            The `If-Match` header field makes the request method conditional on the
+            existence of at least one current representation of the target resource,
+            when the field-value is `*`, or having a current representation of the
+            target resource that has an entity-tag matching a member of the list of
+            entity-tags provided in the field-value.
+
+        :param str if_unmodified_since: (optional)
+            The `If-Unmodified-Since` header field makes the request method
+            conditional on the selected representation's last modification date being
+            earlier than or equal to the date provided in the field-value.  This
+            field accomplishes the same purpose as If-Match for cases where the user
+            agent does not have an entity-tag for the representation.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case
+            of a timeout or server error without risk of executing that same action
+            again. Retry tokens expire after 24 hours, but can be invalidated before
+            then due to conflicting operations (for example, if a resource has been
+            deleted and purged from the system, then a retry of the original creation
+            request may be rejected).
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/promote_zone_dnssec_key_version.py.html>`__ to see an example of how to use promote_zone_dnssec_key_version API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['zoneId']
+        resource_path = "/zones/{zoneId}/actions/promoteDnssecKeyVersion"
+        method = "POST"
+        operation_name = "promote_zone_dnssec_key_version"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/PromoteZoneDnssecKeyVersion"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "if_unmodified_since",
+            "opc_retry_token",
+            "opc_request_id",
+            "scope"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"promote_zone_dnssec_key_version got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "zoneId": zone_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "If-Match": kwargs.get("if_match", missing),
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=promote_zone_dnssec_key_version_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=promote_zone_dnssec_key_version_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def stage_zone_dnssec_key_version(self, zone_id, stage_zone_dnssec_key_version_details, **kwargs):
+        """
+        Stages a new `DnssecKeyVersion` on the zone. Staging is a process that generates a new \"successor\" key version
+        that replaces an existing \"predecessor\" key version.
+        **Note:** A new key-signing key (KSK) version is inert until you update the parent zone DS records.
+
+        For more information, see the `DNSSEC`__ documentation.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm
+
+
+        :param str zone_id: (required)
+            The OCID of the target zone.
+
+        :param oci.dns.models.StageZoneDnssecKeyVersionDetails stage_zone_dnssec_key_version_details: (required)
+            Details for staging a DnssecKeyVersion.
+
+        :param str if_match: (optional)
+            The `If-Match` header field makes the request method conditional on the
+            existence of at least one current representation of the target resource,
+            when the field-value is `*`, or having a current representation of the
+            target resource that has an entity-tag matching a member of the list of
+            entity-tags provided in the field-value.
+
+        :param str if_unmodified_since: (optional)
+            The `If-Unmodified-Since` header field makes the request method
+            conditional on the selected representation's last modification date being
+            earlier than or equal to the date provided in the field-value.  This
+            field accomplishes the same purpose as If-Match for cases where the user
+            agent does not have an entity-tag for the representation.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case
+            of a timeout or server error without risk of executing that same action
+            again. Retry tokens expire after 24 hours, but can be invalidated before
+            then due to conflicting operations (for example, if a resource has been
+            deleted and purged from the system, then a retry of the original creation
+            request may be rejected).
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
+        :param str scope: (optional)
+            Specifies to operate only on resources that have a matching DNS scope.
+
+            Allowed values are: "GLOBAL", "PRIVATE"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dns/stage_zone_dnssec_key_version.py.html>`__ to see an example of how to use stage_zone_dnssec_key_version API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['zoneId']
+        resource_path = "/zones/{zoneId}/actions/stageDnssecKeyVersion"
+        method = "POST"
+        operation_name = "stage_zone_dnssec_key_version"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/StageZoneDnssecKeyVersion"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "if_unmodified_since",
+            "opc_retry_token",
+            "opc_request_id",
+            "scope"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"stage_zone_dnssec_key_version got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "zoneId": zone_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'scope' in kwargs:
+            scope_allowed_values = ["GLOBAL", "PRIVATE"]
+            if kwargs['scope'] not in scope_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
+                )
+
+        query_params = {
+            "scope": kwargs.get("scope", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "If-Match": kwargs.get("if_match", missing),
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=stage_zone_dnssec_key_version_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=stage_zone_dnssec_key_version_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,

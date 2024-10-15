@@ -175,7 +175,7 @@ class SecurityAttributeClient(object):
         resource_path = "/securityAttributes/actions/bulkDelete"
         method = "POST"
         operation_name = "bulk_delete_security_attributes"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/BulkDeleteSecurityAttributes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -283,7 +283,7 @@ class SecurityAttributeClient(object):
         resource_path = "/securityAttributes/actions/bulkEdit"
         method = "POST"
         operation_name = "bulk_edit_security_attributes"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/BulkEditSecurityAttributes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -407,7 +407,7 @@ class SecurityAttributeClient(object):
         resource_path = "/securityAttributeNamespaces/{securityAttributeNamespaceId}/actions/cascadeDelete"
         method = "POST"
         operation_name = "cascading_delete_security_attribute_namespace"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/CascadingDeleteSecurityAttributeNamespace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -534,7 +534,7 @@ class SecurityAttributeClient(object):
         resource_path = "/securityAttributeNamespaces/{securityAttributeNamespaceId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_security_attribute_namespace_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/ChangeSecurityAttributeNamespaceCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -666,7 +666,7 @@ class SecurityAttributeClient(object):
         resource_path = "/securityAttributeNamespaces/{securityAttributeNamespaceId}/securityAttributes"
         method = "POST"
         operation_name = "create_security_attribute"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/CreateSecurityAttribute"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -792,7 +792,7 @@ class SecurityAttributeClient(object):
         resource_path = "/securityAttributeNamespaces"
         method = "POST"
         operation_name = "create_security_attribute_namespace"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/CreateSecurityAttributeNamespace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -915,7 +915,7 @@ class SecurityAttributeClient(object):
         resource_path = "/securityAttributeNamespaces/{securityAttributeNamespaceId}/securityAttributes/{securityAttributeName}"
         method = "DELETE"
         operation_name = "delete_security_attribute"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/DeleteSecurityAttribute"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1035,7 +1035,7 @@ class SecurityAttributeClient(object):
         resource_path = "/securityAttributeNamespaces/{securityAttributeNamespaceId}"
         method = "DELETE"
         operation_name = "delete_security_attribute_namespace"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/DeleteSecurityAttributeNamespace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1142,7 +1142,7 @@ class SecurityAttributeClient(object):
         resource_path = "/securityAttributeNamespaces/{securityAttributeNamespaceId}/securityAttributes/{securityAttributeName}"
         method = "GET"
         operation_name = "get_security_attribute"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/GetSecurityAttribute"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1244,7 +1244,7 @@ class SecurityAttributeClient(object):
         resource_path = "/securityAttributeNamespaces/{securityAttributeNamespaceId}"
         method = "GET"
         operation_name = "get_security_attribute_namespace"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/GetSecurityAttributeNamespace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1346,7 +1346,7 @@ class SecurityAttributeClient(object):
         resource_path = "/securityAttributeWorkRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_security_attribute_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeWorkRequest/GetSecurityAttributeWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1484,7 +1484,7 @@ class SecurityAttributeClient(object):
         resource_path = "/securityAttributeNamespaces"
         method = "GET"
         operation_name = "list_security_attribute_namespaces"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespaceSummary/ListSecurityAttributeNamespaces"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1622,7 +1622,7 @@ class SecurityAttributeClient(object):
         resource_path = "/securityAttributeWorkRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_security_attribute_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeWorkRequestErrorSummary/ListSecurityAttributeWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1739,7 +1739,7 @@ class SecurityAttributeClient(object):
         resource_path = "/securityAttributeWorkRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_security_attribute_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeWorkRequestLogSummary/ListSecurityAttributeWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1861,7 +1861,7 @@ class SecurityAttributeClient(object):
         resource_path = "/securityAttributeWorkRequests"
         method = "GET"
         operation_name = "list_security_attribute_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeWorkRequestSummary/ListSecurityAttributeWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1975,7 +1975,7 @@ class SecurityAttributeClient(object):
         resource_path = "/securityAttributeNamespaces/{securityAttributeNamespaceId}/securityAttributes"
         method = "GET"
         operation_name = "list_security_attributes"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeSummary/ListSecurityAttributes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2114,7 +2114,7 @@ class SecurityAttributeClient(object):
         resource_path = "/securityAttributeNamespaces/{securityAttributeNamespaceId}/securityAttributes/{securityAttributeName}"
         method = "PUT"
         operation_name = "update_security_attribute"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/UpdateSecurityAttribute"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2249,7 +2249,7 @@ class SecurityAttributeClient(object):
         resource_path = "/securityAttributeNamespaces/{securityAttributeNamespaceId}"
         method = "PUT"
         operation_name = "update_security_attribute_namespace"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/UpdateSecurityAttributeNamespace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

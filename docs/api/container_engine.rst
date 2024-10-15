@@ -73,6 +73,8 @@ Container Engine
     oci.container_engine.models.NodeSourceViaImageOption
     oci.container_engine.models.OciVcnIpNativeClusterPodNetworkOptionDetails
     oci.container_engine.models.OciVcnIpNativeNodePoolPodNetworkOptionDetails
+    oci.container_engine.models.OpenIdConnectDiscovery
+    oci.container_engine.models.OpenIdConnectTokenAuthenticationConfig
     oci.container_engine.models.PersistentVolumeConfigDetails
     oci.container_engine.models.PlacementConfiguration
     oci.container_engine.models.PodConfiguration

@@ -110,6 +110,10 @@ class BlockVolumeReplica(object):
             The value to assign to the volume_group_replica_id property of this BlockVolumeReplica.
         :type volume_group_replica_id: str
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this BlockVolumeReplica.
+        :type kms_key_id: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -124,7 +128,8 @@ class BlockVolumeReplica(object):
             'time_last_synced': 'datetime',
             'block_volume_id': 'str',
             'total_data_transferred_in_gbs': 'int',
-            'volume_group_replica_id': 'str'
+            'volume_group_replica_id': 'str',
+            'kms_key_id': 'str'
         }
 
         self.attribute_map = {
@@ -140,7 +145,8 @@ class BlockVolumeReplica(object):
             'time_last_synced': 'timeLastSynced',
             'block_volume_id': 'blockVolumeId',
             'total_data_transferred_in_gbs': 'totalDataTransferredInGBs',
-            'volume_group_replica_id': 'volumeGroupReplicaId'
+            'volume_group_replica_id': 'volumeGroupReplicaId',
+            'kms_key_id': 'kmsKeyId'
         }
 
         self._availability_domain = None
@@ -156,6 +162,7 @@ class BlockVolumeReplica(object):
         self._block_volume_id = None
         self._total_data_transferred_in_gbs = None
         self._volume_group_replica_id = None
+        self._kms_key_id = None
 
     @property
     def availability_domain(self):
@@ -512,6 +519,40 @@ class BlockVolumeReplica(object):
         :type: str
         """
         self._volume_group_replica_id = volume_group_replica_id
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this BlockVolumeReplica.
+        The OCID of the Vault service key to assign as the master encryption key for the block volume replica, see
+        `Overview of Vault service`__ and
+        `Using Keys`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm
+
+
+        :return: The kms_key_id of this BlockVolumeReplica.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this BlockVolumeReplica.
+        The OCID of the Vault service key to assign as the master encryption key for the block volume replica, see
+        `Overview of Vault service`__ and
+        `Using Keys`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm
+
+
+        :param kms_key_id: The kms_key_id of this BlockVolumeReplica.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

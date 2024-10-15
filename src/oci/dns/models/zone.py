@@ -33,6 +33,14 @@ class Zone(object):
     #: This constant has a value of "PRIVATE"
     SCOPE_PRIVATE = "PRIVATE"
 
+    #: A constant which can be used with the dnssec_state property of a Zone.
+    #: This constant has a value of "ENABLED"
+    DNSSEC_STATE_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the dnssec_state property of a Zone.
+    #: This constant has a value of "DISABLED"
+    DNSSEC_STATE_DISABLED = "DISABLED"
+
     #: A constant which can be used with the lifecycle_state property of a Zone.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -94,6 +102,12 @@ class Zone(object):
             The value to assign to the defined_tags property of this Zone.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param dnssec_state:
+            The value to assign to the dnssec_state property of this Zone.
+            Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type dnssec_state: str
+
         :param external_masters:
             The value to assign to the external_masters property of this Zone.
         :type external_masters: list[oci.dns.models.ExternalMaster]
@@ -132,6 +146,10 @@ class Zone(object):
             The value to assign to the is_protected property of this Zone.
         :type is_protected: bool
 
+        :param dnssec_config:
+            The value to assign to the dnssec_config property of this Zone.
+        :type dnssec_config: oci.dns.models.DnssecConfig
+
         :param nameservers:
             The value to assign to the nameservers property of this Zone.
         :type nameservers: list[oci.dns.models.Nameserver]
@@ -149,6 +167,7 @@ class Zone(object):
             'scope': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'dnssec_state': 'str',
             'external_masters': 'list[ExternalMaster]',
             'external_downstreams': 'list[ExternalDownstream]',
             'self_uri': 'str',
@@ -158,6 +177,7 @@ class Zone(object):
             'serial': 'int',
             'lifecycle_state': 'str',
             'is_protected': 'bool',
+            'dnssec_config': 'DnssecConfig',
             'nameservers': 'list[Nameserver]',
             'zone_transfer_servers': 'list[ZoneTransferServer]'
         }
@@ -170,6 +190,7 @@ class Zone(object):
             'scope': 'scope',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'dnssec_state': 'dnssecState',
             'external_masters': 'externalMasters',
             'external_downstreams': 'externalDownstreams',
             'self_uri': 'self',
@@ -179,6 +200,7 @@ class Zone(object):
             'serial': 'serial',
             'lifecycle_state': 'lifecycleState',
             'is_protected': 'isProtected',
+            'dnssec_config': 'dnssecConfig',
             'nameservers': 'nameservers',
             'zone_transfer_servers': 'zoneTransferServers'
         }
@@ -190,6 +212,7 @@ class Zone(object):
         self._scope = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._dnssec_state = None
         self._external_masters = None
         self._external_downstreams = None
         self._self_uri = None
@@ -199,6 +222,7 @@ class Zone(object):
         self._serial = None
         self._lifecycle_state = None
         self._is_protected = None
+        self._dnssec_config = None
         self._nameservers = None
         self._zone_transfer_servers = None
 
@@ -409,6 +433,88 @@ class Zone(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def dnssec_state(self):
+        """
+        **[Required]** Gets the dnssec_state of this Zone.
+        The state of DNSSEC on the zone.
+
+        For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent
+        trust anchor) must also have DNSSEC correctly set up.
+        After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the
+        `KskDnssecKeyVersion` data. You can find the DS data in the `dsData` attribute of the `KskDnssecKeyVersion`.
+        Then, use the `PromoteZoneDnssecKeyVersion` operation to promote the `KskDnssecKeyVersion`.
+
+        New `KskDnssecKeyVersion`s are generated annually, a week before the existing `KskDnssecKeyVersion`'s expiration.
+        To rollover a `KskDnssecKeyVersion`, you must replace the parent zone's DS record containing the old
+        `KskDnssecKeyVersion` data with the data from the new `KskDnssecKeyVersion`.
+
+        To remove the old DS record without causing service disruption, wait until the old DS record's TTL has
+        expired, and the new DS record has propagated. After the DS replacement has been completed, then the
+        `PromoteZoneDnssecKeyVersion` operation must be called.
+
+        Metrics are emitted in the `oci_dns` namespace daily for each `KskDnssecKeyVersion` indicating how many
+        days are left until expiration.
+        We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the
+        necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+
+        Enabling DNSSEC results in additional records in DNS responses which increases their size and can
+        cause higher response latency.
+
+        For more information, see `DNSSEC`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm
+
+        Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The dnssec_state of this Zone.
+        :rtype: str
+        """
+        return self._dnssec_state
+
+    @dnssec_state.setter
+    def dnssec_state(self, dnssec_state):
+        """
+        Sets the dnssec_state of this Zone.
+        The state of DNSSEC on the zone.
+
+        For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent
+        trust anchor) must also have DNSSEC correctly set up.
+        After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the
+        `KskDnssecKeyVersion` data. You can find the DS data in the `dsData` attribute of the `KskDnssecKeyVersion`.
+        Then, use the `PromoteZoneDnssecKeyVersion` operation to promote the `KskDnssecKeyVersion`.
+
+        New `KskDnssecKeyVersion`s are generated annually, a week before the existing `KskDnssecKeyVersion`'s expiration.
+        To rollover a `KskDnssecKeyVersion`, you must replace the parent zone's DS record containing the old
+        `KskDnssecKeyVersion` data with the data from the new `KskDnssecKeyVersion`.
+
+        To remove the old DS record without causing service disruption, wait until the old DS record's TTL has
+        expired, and the new DS record has propagated. After the DS replacement has been completed, then the
+        `PromoteZoneDnssecKeyVersion` operation must be called.
+
+        Metrics are emitted in the `oci_dns` namespace daily for each `KskDnssecKeyVersion` indicating how many
+        days are left until expiration.
+        We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the
+        necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+
+        Enabling DNSSEC results in additional records in DNS responses which increases their size and can
+        cause higher response latency.
+
+        For more information, see `DNSSEC`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm
+
+
+        :param dnssec_state: The dnssec_state of this Zone.
+        :type: str
+        """
+        allowed_values = ["ENABLED", "DISABLED"]
+        if not value_allowed_none_or_none_sentinel(dnssec_state, allowed_values):
+            dnssec_state = 'UNKNOWN_ENUM_VALUE'
+        self._dnssec_state = dnssec_state
 
     @property
     def external_masters(self):
@@ -645,6 +751,26 @@ class Zone(object):
         :type: bool
         """
         self._is_protected = is_protected
+
+    @property
+    def dnssec_config(self):
+        """
+        Gets the dnssec_config of this Zone.
+
+        :return: The dnssec_config of this Zone.
+        :rtype: oci.dns.models.DnssecConfig
+        """
+        return self._dnssec_config
+
+    @dnssec_config.setter
+    def dnssec_config(self, dnssec_config):
+        """
+        Sets the dnssec_config of this Zone.
+
+        :param dnssec_config: The dnssec_config of this Zone.
+        :type: oci.dns.models.DnssecConfig
+        """
+        self._dnssec_config = dnssec_config
 
     @property
     def nameservers(self):

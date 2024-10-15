@@ -62,6 +62,7 @@ from .boot_volume_replica import BootVolumeReplica
 from .boot_volume_replica_details import BootVolumeReplicaDetails
 from .boot_volume_replica_info import BootVolumeReplicaInfo
 from .boot_volume_source_details import BootVolumeSourceDetails
+from .boot_volume_source_from_boot_volume_backup_delta_details import BootVolumeSourceFromBootVolumeBackupDeltaDetails
 from .boot_volume_source_from_boot_volume_backup_details import BootVolumeSourceFromBootVolumeBackupDetails
 from .boot_volume_source_from_boot_volume_details import BootVolumeSourceFromBootVolumeDetails
 from .boot_volume_source_from_boot_volume_replica_details import BootVolumeSourceFromBootVolumeReplicaDetails
@@ -605,6 +606,7 @@ from .volume_group_source_from_volumes_details import VolumeGroupSourceFromVolum
 from .volume_kms_key import VolumeKmsKey
 from .volume_source_details import VolumeSourceDetails
 from .volume_source_from_block_volume_replica_details import VolumeSourceFromBlockVolumeReplicaDetails
+from .volume_source_from_volume_backup_delta_details import VolumeSourceFromVolumeBackupDeltaDetails
 from .volume_source_from_volume_backup_details import VolumeSourceFromVolumeBackupDetails
 from .volume_source_from_volume_details import VolumeSourceFromVolumeDetails
 from .vtap import Vtap
@@ -668,6 +670,7 @@ core_type_mapping = {
     "BootVolumeReplicaDetails": BootVolumeReplicaDetails,
     "BootVolumeReplicaInfo": BootVolumeReplicaInfo,
     "BootVolumeSourceDetails": BootVolumeSourceDetails,
+    "BootVolumeSourceFromBootVolumeBackupDeltaDetails": BootVolumeSourceFromBootVolumeBackupDeltaDetails,
     "BootVolumeSourceFromBootVolumeBackupDetails": BootVolumeSourceFromBootVolumeBackupDetails,
     "BootVolumeSourceFromBootVolumeDetails": BootVolumeSourceFromBootVolumeDetails,
     "BootVolumeSourceFromBootVolumeReplicaDetails": BootVolumeSourceFromBootVolumeReplicaDetails,
@@ -1211,6 +1214,7 @@ core_type_mapping = {
     "VolumeKmsKey": VolumeKmsKey,
     "VolumeSourceDetails": VolumeSourceDetails,
     "VolumeSourceFromBlockVolumeReplicaDetails": VolumeSourceFromBlockVolumeReplicaDetails,
+    "VolumeSourceFromVolumeBackupDeltaDetails": VolumeSourceFromVolumeBackupDeltaDetails,
     "VolumeSourceFromVolumeBackupDetails": VolumeSourceFromVolumeBackupDetails,
     "VolumeSourceFromVolumeDetails": VolumeSourceFromVolumeDetails,
     "Vtap": Vtap,

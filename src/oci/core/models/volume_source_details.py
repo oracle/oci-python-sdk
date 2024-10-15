@@ -25,6 +25,7 @@ class VolumeSourceDetails(object):
         * :class:`~oci.core.models.VolumeSourceFromBlockVolumeReplicaDetails`
         * :class:`~oci.core.models.VolumeSourceFromVolumeDetails`
         * :class:`~oci.core.models.VolumeSourceFromVolumeBackupDetails`
+        * :class:`~oci.core.models.VolumeSourceFromVolumeBackupDeltaDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -59,6 +60,9 @@ class VolumeSourceDetails(object):
 
         if type == 'volumeBackup':
             return 'VolumeSourceFromVolumeBackupDetails'
+
+        if type == 'volumeBackupDelta':
+            return 'VolumeSourceFromVolumeBackupDeltaDetails'
         else:
             return 'VolumeSourceDetails'
 

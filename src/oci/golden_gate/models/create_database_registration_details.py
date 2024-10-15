@@ -522,8 +522,8 @@ class CreateDatabaseRegistrationDetails(object):
     def wallet(self):
         """
         Gets the wallet of this CreateDatabaseRegistrationDetails.
-        The wallet contents Oracle GoldenGate uses to make connections to a database.  This
-        attribute is expected to be base64 encoded.
+        The wallet contents Oracle GoldenGate uses to make connections to a database.
+        This attribute is expected to be base64 encoded.
 
 
         :return: The wallet of this CreateDatabaseRegistrationDetails.
@@ -535,8 +535,8 @@ class CreateDatabaseRegistrationDetails(object):
     def wallet(self, wallet):
         """
         Sets the wallet of this CreateDatabaseRegistrationDetails.
-        The wallet contents Oracle GoldenGate uses to make connections to a database.  This
-        attribute is expected to be base64 encoded.
+        The wallet contents Oracle GoldenGate uses to make connections to a database.
+        This attribute is expected to be base64 encoded.
 
 
         :param wallet: The wallet of this CreateDatabaseRegistrationDetails.

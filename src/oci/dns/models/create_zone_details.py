@@ -33,6 +33,14 @@ class CreateZoneDetails(CreateZoneBaseDetails):
     #: This constant has a value of "PRIVATE"
     SCOPE_PRIVATE = "PRIVATE"
 
+    #: A constant which can be used with the dnssec_state property of a CreateZoneDetails.
+    #: This constant has a value of "ENABLED"
+    DNSSEC_STATE_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the dnssec_state property of a CreateZoneDetails.
+    #: This constant has a value of "DISABLED"
+    DNSSEC_STATE_DISABLED = "DISABLED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateZoneDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.dns.models.CreateZoneDetails.migration_source` attribute
@@ -82,6 +90,11 @@ class CreateZoneDetails(CreateZoneBaseDetails):
             The value to assign to the external_downstreams property of this CreateZoneDetails.
         :type external_downstreams: list[oci.dns.models.ExternalDownstream]
 
+        :param dnssec_state:
+            The value to assign to the dnssec_state property of this CreateZoneDetails.
+            Allowed values for this property are: "ENABLED", "DISABLED"
+        :type dnssec_state: str
+
         """
         self.swagger_types = {
             'migration_source': 'str',
@@ -93,7 +106,8 @@ class CreateZoneDetails(CreateZoneBaseDetails):
             'view_id': 'str',
             'scope': 'str',
             'external_masters': 'list[ExternalMaster]',
-            'external_downstreams': 'list[ExternalDownstream]'
+            'external_downstreams': 'list[ExternalDownstream]',
+            'dnssec_state': 'str'
         }
 
         self.attribute_map = {
@@ -106,7 +120,8 @@ class CreateZoneDetails(CreateZoneBaseDetails):
             'view_id': 'viewId',
             'scope': 'scope',
             'external_masters': 'externalMasters',
-            'external_downstreams': 'externalDownstreams'
+            'external_downstreams': 'externalDownstreams',
+            'dnssec_state': 'dnssecState'
         }
 
         self._migration_source = None
@@ -119,6 +134,7 @@ class CreateZoneDetails(CreateZoneBaseDetails):
         self._scope = None
         self._external_masters = None
         self._external_downstreams = None
+        self._dnssec_state = None
         self._migration_source = 'NONE'
 
     @property
@@ -260,6 +276,89 @@ class CreateZoneDetails(CreateZoneBaseDetails):
         :type: list[oci.dns.models.ExternalDownstream]
         """
         self._external_downstreams = external_downstreams
+
+    @property
+    def dnssec_state(self):
+        """
+        Gets the dnssec_state of this CreateZoneDetails.
+        The state of DNSSEC on the zone.
+
+        For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent
+        trust anchor) must also have DNSSEC correctly set up.
+        After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the
+        `KskDnssecKeyVersion` data. You can find the DS data in the `dsData` attribute of the `KskDnssecKeyVersion`.
+        Then, use the `PromoteZoneDnssecKeyVersion` operation to promote the `KskDnssecKeyVersion`.
+
+        New `KskDnssecKeyVersion`s are generated annually, a week before the existing `KskDnssecKeyVersion`'s expiration.
+        To rollover a `KskDnssecKeyVersion`, you must replace the parent zone's DS record containing the old
+        `KskDnssecKeyVersion` data with the data from the new `KskDnssecKeyVersion`.
+
+        To remove the old DS record without causing service disruption, wait until the old DS record's TTL has
+        expired, and the new DS record has propagated. After the DS replacement has been completed, then the
+        `PromoteZoneDnssecKeyVersion` operation must be called.
+
+        Metrics are emitted in the `oci_dns` namespace daily for each `KskDnssecKeyVersion` indicating how many
+        days are left until expiration.
+        We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the
+        necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+
+        Enabling DNSSEC results in additional records in DNS responses which increases their size and can
+        cause higher response latency.
+
+        For more information, see `DNSSEC`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm
+
+        Allowed values for this property are: "ENABLED", "DISABLED"
+
+
+        :return: The dnssec_state of this CreateZoneDetails.
+        :rtype: str
+        """
+        return self._dnssec_state
+
+    @dnssec_state.setter
+    def dnssec_state(self, dnssec_state):
+        """
+        Sets the dnssec_state of this CreateZoneDetails.
+        The state of DNSSEC on the zone.
+
+        For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent
+        trust anchor) must also have DNSSEC correctly set up.
+        After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the
+        `KskDnssecKeyVersion` data. You can find the DS data in the `dsData` attribute of the `KskDnssecKeyVersion`.
+        Then, use the `PromoteZoneDnssecKeyVersion` operation to promote the `KskDnssecKeyVersion`.
+
+        New `KskDnssecKeyVersion`s are generated annually, a week before the existing `KskDnssecKeyVersion`'s expiration.
+        To rollover a `KskDnssecKeyVersion`, you must replace the parent zone's DS record containing the old
+        `KskDnssecKeyVersion` data with the data from the new `KskDnssecKeyVersion`.
+
+        To remove the old DS record without causing service disruption, wait until the old DS record's TTL has
+        expired, and the new DS record has propagated. After the DS replacement has been completed, then the
+        `PromoteZoneDnssecKeyVersion` operation must be called.
+
+        Metrics are emitted in the `oci_dns` namespace daily for each `KskDnssecKeyVersion` indicating how many
+        days are left until expiration.
+        We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the
+        necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+
+        Enabling DNSSEC results in additional records in DNS responses which increases their size and can
+        cause higher response latency.
+
+        For more information, see `DNSSEC`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm
+
+
+        :param dnssec_state: The dnssec_state of this CreateZoneDetails.
+        :type: str
+        """
+        allowed_values = ["ENABLED", "DISABLED"]
+        if not value_allowed_none_or_none_sentinel(dnssec_state, allowed_values):
+            raise ValueError(
+                f"Invalid value for `dnssec_state`, must be None or one of {allowed_values}"
+            )
+        self._dnssec_state = dnssec_state
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -107,6 +107,26 @@ class DeploymentSummary(object):
     #: This constant has a value of "BRING_YOUR_OWN_LICENSE"
     LICENSE_MODEL_BRING_YOUR_OWN_LICENSE = "BRING_YOUR_OWN_LICENSE"
 
+    #: A constant which can be used with the environment_type property of a DeploymentSummary.
+    #: This constant has a value of "PRODUCTION"
+    ENVIRONMENT_TYPE_PRODUCTION = "PRODUCTION"
+
+    #: A constant which can be used with the environment_type property of a DeploymentSummary.
+    #: This constant has a value of "DEVELOPMENT_OR_TESTING"
+    ENVIRONMENT_TYPE_DEVELOPMENT_OR_TESTING = "DEVELOPMENT_OR_TESTING"
+
+    #: A constant which can be used with the category property of a DeploymentSummary.
+    #: This constant has a value of "DATA_REPLICATION"
+    CATEGORY_DATA_REPLICATION = "DATA_REPLICATION"
+
+    #: A constant which can be used with the category property of a DeploymentSummary.
+    #: This constant has a value of "STREAM_ANALYTICS"
+    CATEGORY_STREAM_ANALYTICS = "STREAM_ANALYTICS"
+
+    #: A constant which can be used with the category property of a DeploymentSummary.
+    #: This constant has a value of "DATA_TRANSFORMS"
+    CATEGORY_DATA_TRANSFORMS = "DATA_TRANSFORMS"
+
     #: A constant which can be used with the deployment_type property of a DeploymentSummary.
     #: This constant has a value of "OGG"
     DEPLOYMENT_TYPE_OGG = "OGG"
@@ -214,6 +234,18 @@ class DeploymentSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type license_model: str
 
+        :param environment_type:
+            The value to assign to the environment_type property of this DeploymentSummary.
+            Allowed values for this property are: "PRODUCTION", "DEVELOPMENT_OR_TESTING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type environment_type: str
+
+        :param category:
+            The value to assign to the category property of this DeploymentSummary.
+            Allowed values for this property are: "DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type category: str
+
         :param fqdn:
             The value to assign to the fqdn property of this DeploymentSummary.
         :type fqdn: str
@@ -289,6 +321,8 @@ class DeploymentSummary(object):
             'load_balancer_subnet_id': 'str',
             'load_balancer_id': 'str',
             'license_model': 'str',
+            'environment_type': 'str',
+            'category': 'str',
             'fqdn': 'str',
             'cpu_core_count': 'int',
             'is_auto_scaling_enabled': 'bool',
@@ -321,6 +355,8 @@ class DeploymentSummary(object):
             'load_balancer_subnet_id': 'loadBalancerSubnetId',
             'load_balancer_id': 'loadBalancerId',
             'license_model': 'licenseModel',
+            'environment_type': 'environmentType',
+            'category': 'category',
             'fqdn': 'fqdn',
             'cpu_core_count': 'cpuCoreCount',
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
@@ -352,6 +388,8 @@ class DeploymentSummary(object):
         self._load_balancer_subnet_id = None
         self._load_balancer_id = None
         self._license_model = None
+        self._environment_type = None
+        self._category = None
         self._fqdn = None
         self._cpu_core_count = None
         self._is_auto_scaling_enabled = None
@@ -800,6 +838,68 @@ class DeploymentSummary(object):
         self._license_model = license_model
 
     @property
+    def environment_type(self):
+        """
+        Gets the environment_type of this DeploymentSummary.
+        Specifies whether the deployment is used in a production or development/testing environment.
+
+        Allowed values for this property are: "PRODUCTION", "DEVELOPMENT_OR_TESTING", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The environment_type of this DeploymentSummary.
+        :rtype: str
+        """
+        return self._environment_type
+
+    @environment_type.setter
+    def environment_type(self, environment_type):
+        """
+        Sets the environment_type of this DeploymentSummary.
+        Specifies whether the deployment is used in a production or development/testing environment.
+
+
+        :param environment_type: The environment_type of this DeploymentSummary.
+        :type: str
+        """
+        allowed_values = ["PRODUCTION", "DEVELOPMENT_OR_TESTING"]
+        if not value_allowed_none_or_none_sentinel(environment_type, allowed_values):
+            environment_type = 'UNKNOWN_ENUM_VALUE'
+        self._environment_type = environment_type
+
+    @property
+    def category(self):
+        """
+        **[Required]** Gets the category of this DeploymentSummary.
+        The deployment category defines the broad separation of the deployment type into three categories.
+        Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+
+        Allowed values for this property are: "DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The category of this DeploymentSummary.
+        :rtype: str
+        """
+        return self._category
+
+    @category.setter
+    def category(self, category):
+        """
+        Sets the category of this DeploymentSummary.
+        The deployment category defines the broad separation of the deployment type into three categories.
+        Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+
+
+        :param category: The category of this DeploymentSummary.
+        :type: str
+        """
+        allowed_values = ["DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS"]
+        if not value_allowed_none_or_none_sentinel(category, allowed_values):
+            category = 'UNKNOWN_ENUM_VALUE'
+        self._category = category
+
+    @property
     def fqdn(self):
         """
         Gets the fqdn of this DeploymentSummary.
@@ -1072,7 +1172,7 @@ class DeploymentSummary(object):
     @property
     def deployment_type(self):
         """
-        Gets the deployment_type of this DeploymentSummary.
+        **[Required]** Gets the deployment_type of this DeploymentSummary.
         The type of deployment, which can be any one of the Allowed values.
         NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
             Its use is discouraged in favor of 'DATABASE_ORACLE'.
@@ -1131,6 +1231,7 @@ class DeploymentSummary(object):
     def is_storage_utilization_limit_exceeded(self):
         """
         Gets the is_storage_utilization_limit_exceeded of this DeploymentSummary.
+        Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=.
         Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
 
 
@@ -1143,6 +1244,7 @@ class DeploymentSummary(object):
     def is_storage_utilization_limit_exceeded(self, is_storage_utilization_limit_exceeded):
         """
         Sets the is_storage_utilization_limit_exceeded of this DeploymentSummary.
+        Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=.
         Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
 
 
