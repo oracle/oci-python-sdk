@@ -77,6 +77,10 @@ class OutboundConnector(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connector_type: str
 
+        :param locks:
+            The value to assign to the locks property of this OutboundConnector.
+        :type locks: list[oci.file_storage.models.ResourceLock]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this OutboundConnector.
         :type freeform_tags: dict(str, str)
@@ -94,6 +98,7 @@ class OutboundConnector(object):
             'display_name': 'str',
             'time_created': 'datetime',
             'connector_type': 'str',
+            'locks': 'list[ResourceLock]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -106,6 +111,7 @@ class OutboundConnector(object):
             'display_name': 'displayName',
             'time_created': 'timeCreated',
             'connector_type': 'connectorType',
+            'locks': 'locks',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -117,6 +123,7 @@ class OutboundConnector(object):
         self._display_name = None
         self._time_created = None
         self._connector_type = None
+        self._locks = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -342,6 +349,30 @@ class OutboundConnector(object):
         if not value_allowed_none_or_none_sentinel(connector_type, allowed_values):
             connector_type = 'UNKNOWN_ENUM_VALUE'
         self._connector_type = connector_type
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this OutboundConnector.
+        Locks associated with this resource.
+
+
+        :return: The locks of this OutboundConnector.
+        :rtype: list[oci.file_storage.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this OutboundConnector.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this OutboundConnector.
+        :type: list[oci.file_storage.models.ResourceLock]
+        """
+        self._locks = locks
 
     @property
     def freeform_tags(self):

@@ -48,6 +48,10 @@ class CreateOutboundConnectorDetails(object):
             The value to assign to the defined_tags property of this CreateOutboundConnectorDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param locks:
+            The value to assign to the locks property of this CreateOutboundConnectorDetails.
+        :type locks: list[oci.file_storage.models.ResourceLock]
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -55,7 +59,8 @@ class CreateOutboundConnectorDetails(object):
             'display_name': 'str',
             'connector_type': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -64,7 +69,8 @@ class CreateOutboundConnectorDetails(object):
             'display_name': 'displayName',
             'connector_type': 'connectorType',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'locks': 'locks'
         }
 
         self._availability_domain = None
@@ -73,6 +79,7 @@ class CreateOutboundConnectorDetails(object):
         self._connector_type = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._locks = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -264,6 +271,30 @@ class CreateOutboundConnectorDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this CreateOutboundConnectorDetails.
+        Locks associated with this resource.
+
+
+        :return: The locks of this CreateOutboundConnectorDetails.
+        :rtype: list[oci.file_storage.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this CreateOutboundConnectorDetails.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this CreateOutboundConnectorDetails.
+        :type: list[oci.file_storage.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

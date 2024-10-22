@@ -12,7 +12,7 @@ class SecurityTokenContainer(object):
     def __init__(self, session_key_supplier, security_token):
         self.security_token = security_token
         self.session_key_supplier = session_key_supplier
-        self.jwt = jwt.decode(jwt=security_token, verify=False)
+        self.jwt = jwt.decode(jwt=security_token, options={"verify_signature": False})
 
     def get_jwt(self):
         return self.jwt

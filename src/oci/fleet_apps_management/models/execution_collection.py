@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExecutionCollection(object):
     """
-    Results of a
+    A collection of ExecutionSummary.
     """
 
     def __init__(self, **kwargs):

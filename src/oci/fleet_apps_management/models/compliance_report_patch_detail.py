@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ComplianceReportPatchDetail(object):
     """
-    Details of the Patch
+    Details of the Patch.
     """
 
     def __init__(self, **kwargs):
@@ -67,7 +67,7 @@ class ComplianceReportPatchDetail(object):
     def patch_name(self):
         """
         **[Required]** Gets the patch_name of this ComplianceReportPatchDetail.
-        The OCID to identify this analysis results.
+        Patch name.
 
 
         :return: The patch_name of this ComplianceReportPatchDetail.
@@ -79,7 +79,7 @@ class ComplianceReportPatchDetail(object):
     def patch_name(self, patch_name):
         """
         Sets the patch_name of this ComplianceReportPatchDetail.
-        The OCID to identify this analysis results.
+        Patch name.
 
 
         :param patch_name: The patch_name of this ComplianceReportPatchDetail.
@@ -91,7 +91,7 @@ class ComplianceReportPatchDetail(object):
     def patch_description(self):
         """
         Gets the patch_description of this ComplianceReportPatchDetail.
-        The OCID of the work request to start the analysis.
+        Patch description.
 
 
         :return: The patch_description of this ComplianceReportPatchDetail.
@@ -103,7 +103,7 @@ class ComplianceReportPatchDetail(object):
     def patch_description(self, patch_description):
         """
         Sets the patch_description of this ComplianceReportPatchDetail.
-        The OCID of the work request to start the analysis.
+        Patch description.
 
 
         :param patch_description: The patch_description of this ComplianceReportPatchDetail.
@@ -115,7 +115,7 @@ class ComplianceReportPatchDetail(object):
     def time_applied(self):
         """
         Gets the time_applied of this ComplianceReportPatchDetail.
-        Time the patch was applied
+        Time the patch was applied.
 
 
         :return: The time_applied of this ComplianceReportPatchDetail.
@@ -127,7 +127,7 @@ class ComplianceReportPatchDetail(object):
     def time_applied(self, time_applied):
         """
         Sets the time_applied of this ComplianceReportPatchDetail.
-        Time the patch was applied
+        Time the patch was applied.
 
 
         :param time_applied: The time_applied of this ComplianceReportPatchDetail.
@@ -139,7 +139,7 @@ class ComplianceReportPatchDetail(object):
     def time_released(self):
         """
         Gets the time_released of this ComplianceReportPatchDetail.
-        Date on which patch was released.
+        The date on which patch was released.
 
 
         :return: The time_released of this ComplianceReportPatchDetail.
@@ -151,7 +151,7 @@ class ComplianceReportPatchDetail(object):
     def time_released(self, time_released):
         """
         Sets the time_released of this ComplianceReportPatchDetail.
-        Date on which patch was released.
+        The date on which patch was released.
 
 
         :param time_released: The time_released of this ComplianceReportPatchDetail.

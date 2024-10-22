@@ -1,0 +1,68 @@
+# Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oci"
+dynamic = ["version"]
+description = "Oracle Cloud Infrastructure Python SDK"
+readme = "README.rst"
+authors = [
+    {name = "Oracle", email = "joe.levy@oracle.com"},
+]
+license = {file = "LICENSE.txt"}
+requires-python = ">=3.6"
+classifiers=[
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "License :: OSI Approved :: Universal Permissive License (UPL)",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+]
+dependencies = [
+    "certifi",
+    "configparser==4.0.2 ; python_version < '3'",
+    "cryptography>=3.2.1,<46.0.0",
+    "pyOpenSSL>=17.5.0,<25.0.0",
+    "python-dateutil>=2.5.3,<3.0.0",
+    "pytz>=2016.10",
+    "circuitbreaker>=1.3.1,<2.0.0; python_version <= '3.6'",
+    "circuitbreaker>=1.3.1,<3.0.0; python_version >= '3.7'"
+]
+
+[project.urls]
+"Homepage" = "https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/index.html"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.dynamic]
+version = {attr = "oci.version.__version__"}
+
+[tool.coverage.run]
+source = ["src"]
+
+[tool.flake8]
+ignore = ["D203","E501","W504"]
+exclude = [
+    ".sdk-venv",
+    ".git",
+    ".tox",
+    "__pycache__",
+    "docs/conf.py",
+    "build",
+    "dist",
+    "src/oci/_vendor",
+    "src/oci/healthchecks/health_checks_client.py",
+    "src/oci/cloud_events/cloud_events_client.py",
+    "src/oci/telemetry/telemetry_client.py",
+    "src/oci/waas/models/waf_log.py",
+    "src/oci/functions/functions_invoke_client.py"
+]
+max_line_length = 99

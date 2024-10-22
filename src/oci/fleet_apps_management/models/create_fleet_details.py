@@ -68,6 +68,10 @@ class CreateFleetDetails(object):
             The value to assign to the resources property of this CreateFleetDetails.
         :type resources: list[oci.fleet_apps_management.models.AssociatedFleetResourceDetails]
 
+        :param credentials:
+            The value to assign to the credentials property of this CreateFleetDetails.
+        :type credentials: list[oci.fleet_apps_management.models.AssociatedFleetCredentialDetails]
+
         :param is_target_auto_confirm:
             The value to assign to the is_target_auto_confirm property of this CreateFleetDetails.
         :type is_target_auto_confirm: bool
@@ -94,6 +98,7 @@ class CreateFleetDetails(object):
             'rule_selection_criteria': 'SelectionCriteria',
             'notification_preferences': 'NotificationPreferences',
             'resources': 'list[AssociatedFleetResourceDetails]',
+            'credentials': 'list[AssociatedFleetCredentialDetails]',
             'is_target_auto_confirm': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -112,6 +117,7 @@ class CreateFleetDetails(object):
             'rule_selection_criteria': 'ruleSelectionCriteria',
             'notification_preferences': 'notificationPreferences',
             'resources': 'resources',
+            'credentials': 'credentials',
             'is_target_auto_confirm': 'isTargetAutoConfirm',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -129,6 +135,7 @@ class CreateFleetDetails(object):
         self._rule_selection_criteria = None
         self._notification_preferences = None
         self._resources = None
+        self._credentials = None
         self._is_target_auto_confirm = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -217,7 +224,11 @@ class CreateFleetDetails(object):
     def fleet_type(self):
         """
         **[Required]** Gets the fleet_type of this CreateFleetDetails.
-        Type of the Fleet
+        Type of the Fleet.
+        PRODUCT - A fleet of product-specific resources for a product type.
+        ENVIRONMENT - A fleet of environment-specific resources for a product stack.
+        GROUP - A fleet of a fleet of either environment or product fleets.
+        GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
 
 
         :return: The fleet_type of this CreateFleetDetails.
@@ -229,7 +240,11 @@ class CreateFleetDetails(object):
     def fleet_type(self, fleet_type):
         """
         Sets the fleet_type of this CreateFleetDetails.
-        Type of the Fleet
+        Type of the Fleet.
+        PRODUCT - A fleet of product-specific resources for a product type.
+        ENVIRONMENT - A fleet of environment-specific resources for a product stack.
+        GROUP - A fleet of a fleet of either environment or product fleets.
+        GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
 
 
         :param fleet_type: The fleet_type of this CreateFleetDetails.
@@ -241,7 +256,7 @@ class CreateFleetDetails(object):
     def products(self):
         """
         Gets the products of this CreateFleetDetails.
-        Products associated with the Fleet
+        Products associated with the Fleet.
 
 
         :return: The products of this CreateFleetDetails.
@@ -253,7 +268,7 @@ class CreateFleetDetails(object):
     def products(self, products):
         """
         Sets the products of this CreateFleetDetails.
-        Products associated with the Fleet
+        Products associated with the Fleet.
 
 
         :param products: The products of this CreateFleetDetails.
@@ -265,7 +280,8 @@ class CreateFleetDetails(object):
     def application_type(self):
         """
         Gets the application_type of this CreateFleetDetails.
-        Application Type associated with the Fleet.Applicable for Environment fleet types.
+        Product stack associated with the Fleet.
+        Applicable for ENVIRONMENT fleet types.
 
 
         :return: The application_type of this CreateFleetDetails.
@@ -277,7 +293,8 @@ class CreateFleetDetails(object):
     def application_type(self, application_type):
         """
         Sets the application_type of this CreateFleetDetails.
-        Application Type associated with the Fleet.Applicable for Environment fleet types.
+        Product stack associated with the Fleet.
+        Applicable for ENVIRONMENT fleet types.
 
 
         :param application_type: The application_type of this CreateFleetDetails.
@@ -289,7 +306,8 @@ class CreateFleetDetails(object):
     def environment_type(self):
         """
         Gets the environment_type of this CreateFleetDetails.
-        Environment Type associated with the Fleet.Applicable for Environment fleet types.
+        Environment Type associated with the Fleet.
+        Applicable for ENVIRONMENT fleet types.
 
 
         :return: The environment_type of this CreateFleetDetails.
@@ -301,7 +319,8 @@ class CreateFleetDetails(object):
     def environment_type(self, environment_type):
         """
         Sets the environment_type of this CreateFleetDetails.
-        Environment Type associated with the Fleet.Applicable for Environment fleet types.
+        Environment Type associated with the Fleet.
+        Applicable for ENVIRONMENT fleet types.
 
 
         :param environment_type: The environment_type of this CreateFleetDetails.
@@ -313,7 +332,7 @@ class CreateFleetDetails(object):
     def group_type(self):
         """
         Gets the group_type of this CreateFleetDetails.
-        Group Type associated with Group Fleet.Applicable for Group fleet types.
+        Group Type associated with Group Fleet.
 
 
         :return: The group_type of this CreateFleetDetails.
@@ -325,7 +344,7 @@ class CreateFleetDetails(object):
     def group_type(self, group_type):
         """
         Sets the group_type of this CreateFleetDetails.
-        Group Type associated with Group Fleet.Applicable for Group fleet types.
+        Group Type associated with Group Fleet.
 
 
         :param group_type: The group_type of this CreateFleetDetails.
@@ -337,7 +356,8 @@ class CreateFleetDetails(object):
     def resource_selection_type(self):
         """
         Gets the resource_selection_type of this CreateFleetDetails.
-        Type of resource selection in a fleet
+        Type of resource selection in a Fleet.
+        Select resources manually or select resources based on rules.
 
 
         :return: The resource_selection_type of this CreateFleetDetails.
@@ -349,7 +369,8 @@ class CreateFleetDetails(object):
     def resource_selection_type(self, resource_selection_type):
         """
         Sets the resource_selection_type of this CreateFleetDetails.
-        Type of resource selection in a fleet
+        Type of resource selection in a Fleet.
+        Select resources manually or select resources based on rules.
 
 
         :param resource_selection_type: The resource_selection_type of this CreateFleetDetails.
@@ -401,7 +422,7 @@ class CreateFleetDetails(object):
     def resources(self):
         """
         Gets the resources of this CreateFleetDetails.
-        Resources to be added during fleet creation when Resource selection type is Manual.
+        Resources associated with the Fleet if resourceSelectionType is MANUAL.
 
 
         :return: The resources of this CreateFleetDetails.
@@ -413,7 +434,7 @@ class CreateFleetDetails(object):
     def resources(self, resources):
         """
         Sets the resources of this CreateFleetDetails.
-        Resources to be added during fleet creation when Resource selection type is Manual.
+        Resources associated with the Fleet if resourceSelectionType is MANUAL.
 
 
         :param resources: The resources of this CreateFleetDetails.
@@ -422,10 +443,35 @@ class CreateFleetDetails(object):
         self._resources = resources
 
     @property
+    def credentials(self):
+        """
+        Gets the credentials of this CreateFleetDetails.
+        Credentials associated with the Fleet.
+
+
+        :return: The credentials of this CreateFleetDetails.
+        :rtype: list[oci.fleet_apps_management.models.AssociatedFleetCredentialDetails]
+        """
+        return self._credentials
+
+    @credentials.setter
+    def credentials(self, credentials):
+        """
+        Sets the credentials of this CreateFleetDetails.
+        Credentials associated with the Fleet.
+
+
+        :param credentials: The credentials of this CreateFleetDetails.
+        :type: list[oci.fleet_apps_management.models.AssociatedFleetCredentialDetails]
+        """
+        self._credentials = credentials
+
+    @property
     def is_target_auto_confirm(self):
         """
         Gets the is_target_auto_confirm of this CreateFleetDetails.
-        A value which represents if auto confirming of the targets can be enabled
+        A value that represents if auto-confirming of the targets can be enabled.
+        This will allow targets to be auto-confirmed in the fleet without manual intervention.
 
 
         :return: The is_target_auto_confirm of this CreateFleetDetails.
@@ -437,7 +483,8 @@ class CreateFleetDetails(object):
     def is_target_auto_confirm(self, is_target_auto_confirm):
         """
         Sets the is_target_auto_confirm of this CreateFleetDetails.
-        A value which represents if auto confirming of the targets can be enabled
+        A value that represents if auto-confirming of the targets can be enabled.
+        This will allow targets to be auto-confirmed in the fleet without manual intervention.
 
 
         :param is_target_auto_confirm: The is_target_auto_confirm of this CreateFleetDetails.

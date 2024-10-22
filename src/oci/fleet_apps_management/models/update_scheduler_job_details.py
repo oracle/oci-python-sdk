@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateSchedulerJobDetails(object):
     """
-    The information to be updated.
+    The information to be updated for the job.
     """
 
     def __init__(self, **kwargs):
@@ -53,7 +53,7 @@ class UpdateSchedulerJobDetails(object):
     def time_scheduled(self):
         """
         Gets the time_scheduled of this UpdateSchedulerJobDetails.
-        Scheduled date for the Job.Provide only the date
+        The scheduled date and time for the Job.
 
 
         :return: The time_scheduled of this UpdateSchedulerJobDetails.
@@ -65,7 +65,7 @@ class UpdateSchedulerJobDetails(object):
     def time_scheduled(self, time_scheduled):
         """
         Sets the time_scheduled of this UpdateSchedulerJobDetails.
-        Scheduled date for the Job.Provide only the date
+        The scheduled date and time for the Job.
 
 
         :param time_scheduled: The time_scheduled of this UpdateSchedulerJobDetails.

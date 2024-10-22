@@ -338,6 +338,10 @@ class AutonomousDatabase(object):
             The value to assign to the kms_key_lifecycle_details property of this AutonomousDatabase.
         :type kms_key_lifecycle_details: str
 
+        :param encryption_key:
+            The value to assign to the encryption_key property of this AutonomousDatabase.
+        :type encryption_key: oci.database.models.AutonomousDatabaseEncryptionKeyDetails
+
         :param kms_key_version_id:
             The value to assign to the kms_key_version_id property of this AutonomousDatabase.
         :type kms_key_version_id: str
@@ -393,6 +397,10 @@ class AutonomousDatabase(object):
         :param key_history_entry:
             The value to assign to the key_history_entry property of this AutonomousDatabase.
         :type key_history_entry: list[oci.database.models.AutonomousDatabaseKeyHistoryEntry]
+
+        :param encryption_key_history_entry:
+            The value to assign to the encryption_key_history_entry property of this AutonomousDatabase.
+        :type encryption_key_history_entry: list[oci.database.models.AutonomousDatabaseEncryptionKeyHistoryEntry]
 
         :param cpu_core_count:
             The value to assign to the cpu_core_count property of this AutonomousDatabase.
@@ -834,6 +842,7 @@ class AutonomousDatabase(object):
             'kms_key_id': 'str',
             'vault_id': 'str',
             'kms_key_lifecycle_details': 'str',
+            'encryption_key': 'AutonomousDatabaseEncryptionKeyDetails',
             'kms_key_version_id': 'str',
             'db_name': 'str',
             'character_set': 'str',
@@ -848,6 +857,7 @@ class AutonomousDatabase(object):
             'time_deletion_of_free_autonomous_database': 'datetime',
             'backup_config': 'AutonomousDatabaseBackupConfig',
             'key_history_entry': 'list[AutonomousDatabaseKeyHistoryEntry]',
+            'encryption_key_history_entry': 'list[AutonomousDatabaseEncryptionKeyHistoryEntry]',
             'cpu_core_count': 'int',
             'local_adg_auto_failover_max_data_loss_limit': 'int',
             'compute_model': 'str',
@@ -958,6 +968,7 @@ class AutonomousDatabase(object):
             'kms_key_id': 'kmsKeyId',
             'vault_id': 'vaultId',
             'kms_key_lifecycle_details': 'kmsKeyLifecycleDetails',
+            'encryption_key': 'encryptionKey',
             'kms_key_version_id': 'kmsKeyVersionId',
             'db_name': 'dbName',
             'character_set': 'characterSet',
@@ -972,6 +983,7 @@ class AutonomousDatabase(object):
             'time_deletion_of_free_autonomous_database': 'timeDeletionOfFreeAutonomousDatabase',
             'backup_config': 'backupConfig',
             'key_history_entry': 'keyHistoryEntry',
+            'encryption_key_history_entry': 'encryptionKeyHistoryEntry',
             'cpu_core_count': 'cpuCoreCount',
             'local_adg_auto_failover_max_data_loss_limit': 'localAdgAutoFailoverMaxDataLossLimit',
             'compute_model': 'computeModel',
@@ -1081,6 +1093,7 @@ class AutonomousDatabase(object):
         self._kms_key_id = None
         self._vault_id = None
         self._kms_key_lifecycle_details = None
+        self._encryption_key = None
         self._kms_key_version_id = None
         self._db_name = None
         self._character_set = None
@@ -1095,6 +1108,7 @@ class AutonomousDatabase(object):
         self._time_deletion_of_free_autonomous_database = None
         self._backup_config = None
         self._key_history_entry = None
+        self._encryption_key_history_entry = None
         self._cpu_core_count = None
         self._local_adg_auto_failover_max_data_loss_limit = None
         self._compute_model = None
@@ -1410,6 +1424,26 @@ class AutonomousDatabase(object):
         :type: str
         """
         self._kms_key_lifecycle_details = kms_key_lifecycle_details
+
+    @property
+    def encryption_key(self):
+        """
+        Gets the encryption_key of this AutonomousDatabase.
+
+        :return: The encryption_key of this AutonomousDatabase.
+        :rtype: oci.database.models.AutonomousDatabaseEncryptionKeyDetails
+        """
+        return self._encryption_key
+
+    @encryption_key.setter
+    def encryption_key(self, encryption_key):
+        """
+        Sets the encryption_key of this AutonomousDatabase.
+
+        :param encryption_key: The encryption_key of this AutonomousDatabase.
+        :type: oci.database.models.AutonomousDatabaseEncryptionKeyDetails
+        """
+        self._encryption_key = encryption_key
 
     @property
     def kms_key_version_id(self):
@@ -1754,6 +1788,30 @@ class AutonomousDatabase(object):
         :type: list[oci.database.models.AutonomousDatabaseKeyHistoryEntry]
         """
         self._key_history_entry = key_history_entry
+
+    @property
+    def encryption_key_history_entry(self):
+        """
+        Gets the encryption_key_history_entry of this AutonomousDatabase.
+        Key History Entry.
+
+
+        :return: The encryption_key_history_entry of this AutonomousDatabase.
+        :rtype: list[oci.database.models.AutonomousDatabaseEncryptionKeyHistoryEntry]
+        """
+        return self._encryption_key_history_entry
+
+    @encryption_key_history_entry.setter
+    def encryption_key_history_entry(self, encryption_key_history_entry):
+        """
+        Sets the encryption_key_history_entry of this AutonomousDatabase.
+        Key History Entry.
+
+
+        :param encryption_key_history_entry: The encryption_key_history_entry of this AutonomousDatabase.
+        :type: list[oci.database.models.AutonomousDatabaseEncryptionKeyHistoryEntry]
+        """
+        self._encryption_key_history_entry = encryption_key_history_entry
 
     @property
     def cpu_core_count(self):

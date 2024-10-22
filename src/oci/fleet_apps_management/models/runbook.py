@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class Runbook(object):
     """
     Runbook definition.
+    Runbooks allow you to capture procedural tasks for handling a workflow.
     """
 
     #: A constant which can be used with the type property of a Runbook.
@@ -58,6 +59,22 @@ class Runbook(object):
     #: A constant which can be used with the lifecycle_state property of a Runbook.
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
+
+    #: A constant which can be used with the lifecycle_state property of a Runbook.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a Runbook.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a Runbook.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a Runbook.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
 
     def __init__(self, **kwargs):
         """
@@ -112,7 +129,7 @@ class Runbook(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Runbook.
-            Allowed values for this property are: "ACTIVE", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACTIVE", "DELETED", "FAILED", "INACTIVE", "CREATING", "DELETING", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -334,7 +351,7 @@ class Runbook(object):
     def runbook_relevance(self):
         """
         **[Required]** Gets the runbook_relevance of this Runbook.
-        Type of runbook structure.
+        Relevance of the runbook.
 
         Allowed values for this property are: "PRODUCT_GROUP", "PRODUCT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -349,7 +366,7 @@ class Runbook(object):
     def runbook_relevance(self, runbook_relevance):
         """
         Sets the runbook_relevance of this Runbook.
-        Type of runbook structure.
+        Relevance of the runbook.
 
 
         :param runbook_relevance: The runbook_relevance of this Runbook.
@@ -364,7 +381,7 @@ class Runbook(object):
     def operation(self):
         """
         **[Required]** Gets the operation of this Runbook.
-        The lifecycle operation performed by the task.
+        The lifecycle operation performed by the runbook.
 
 
         :return: The operation of this Runbook.
@@ -376,7 +393,7 @@ class Runbook(object):
     def operation(self, operation):
         """
         Sets the operation of this Runbook.
-        The lifecycle operation performed by the task.
+        The lifecycle operation performed by the runbook.
 
 
         :param operation: The operation of this Runbook.
@@ -443,6 +460,7 @@ class Runbook(object):
         """
         **[Required]** Gets the is_default of this Runbook.
         Is the runbook default?
+        Sets this runbook as the default for the chosen product/product stack for the specified lifecycle operation.
 
 
         :return: The is_default of this Runbook.
@@ -455,6 +473,7 @@ class Runbook(object):
         """
         Sets the is_default of this Runbook.
         Is the runbook default?
+        Sets this runbook as the default for the chosen product/product stack for the specified lifecycle operation.
 
 
         :param is_default: The is_default of this Runbook.
@@ -466,7 +485,7 @@ class Runbook(object):
     def estimated_time(self):
         """
         Gets the estimated_time of this Runbook.
-        Estimated time to successfully complete the runbook execution
+        Estimated time to successfully complete the runbook execution.
 
 
         :return: The estimated_time of this Runbook.
@@ -478,7 +497,7 @@ class Runbook(object):
     def estimated_time(self, estimated_time):
         """
         Sets the estimated_time of this Runbook.
-        Estimated time to successfully complete the runbook execution
+        Estimated time to successfully complete the runbook execution.
 
 
         :param estimated_time: The estimated_time of this Runbook.
@@ -492,7 +511,7 @@ class Runbook(object):
         **[Required]** Gets the lifecycle_state of this Runbook.
         The current state of the Runbook.
 
-        Allowed values for this property are: "ACTIVE", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACTIVE", "DELETED", "FAILED", "INACTIVE", "CREATING", "DELETING", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -511,7 +530,7 @@ class Runbook(object):
         :param lifecycle_state: The lifecycle_state of this Runbook.
         :type: str
         """
-        allowed_values = ["ACTIVE", "DELETED", "FAILED"]
+        allowed_values = ["ACTIVE", "DELETED", "FAILED", "INACTIVE", "CREATING", "DELETING", "UPDATING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

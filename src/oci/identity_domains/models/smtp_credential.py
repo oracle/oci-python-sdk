@@ -112,6 +112,10 @@ class SmtpCredential(object):
             The value to assign to the user_name property of this SmtpCredential.
         :type user_name: str
 
+        :param password:
+            The value to assign to the password property of this SmtpCredential.
+        :type password: str
+
         :param user:
             The value to assign to the user property of this SmtpCredential.
         :type user: oci.identity_domains.models.SmtpCredentialUser
@@ -139,6 +143,7 @@ class SmtpCredential(object):
             'status': 'str',
             'expires_on': 'str',
             'user_name': 'str',
+            'password': 'str',
             'user': 'SmtpCredentialUser',
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user': 'ExtensionSelfChangeUser'
         }
@@ -161,6 +166,7 @@ class SmtpCredential(object):
             'status': 'status',
             'expires_on': 'expiresOn',
             'user_name': 'userName',
+            'password': 'password',
             'user': 'user',
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:selfChange:User'
         }
@@ -182,6 +188,7 @@ class SmtpCredential(object):
         self._status = None
         self._expires_on = None
         self._user_name = None
+        self._password = None
         self._user = None
         self._urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user = None
 
@@ -866,6 +873,46 @@ class SmtpCredential(object):
         :type: str
         """
         self._user_name = user_name
+
+    @property
+    def password(self):
+        """
+        Gets the password of this SmtpCredential.
+        Password
+
+        **SCIM++ Properties:**
+         - caseExact: true
+         - type: string
+         - mutability: readOnly
+         - required: false
+         - returned: default
+         - idcsSensitive: hash_sc
+
+
+        :return: The password of this SmtpCredential.
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """
+        Sets the password of this SmtpCredential.
+        Password
+
+        **SCIM++ Properties:**
+         - caseExact: true
+         - type: string
+         - mutability: readOnly
+         - required: false
+         - returned: default
+         - idcsSensitive: hash_sc
+
+
+        :param password: The password of this SmtpCredential.
+        :type: str
+        """
+        self._password = password
 
     @property
     def user(self):

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class JobActivity(object):
     """
-    Description of JobActivity.
+    Activity details including status corresponding to an Action Group.
     """
 
     #: A constant which can be used with the status property of a JobActivity.
@@ -59,6 +59,10 @@ class JobActivity(object):
     #: This constant has a value of "TIMED_OUT"
     STATUS_TIMED_OUT = "TIMED_OUT"
 
+    #: A constant which can be used with the status property of a JobActivity.
+    #: This constant has a value of "PAUSED"
+    STATUS_PAUSED = "PAUSED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new JobActivity object with values from keyword arguments.
@@ -70,7 +74,7 @@ class JobActivity(object):
 
         :param status:
             The value to assign to the status property of this JobActivity.
-            Allowed values for this property are: "ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT", "PAUSED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -90,6 +94,10 @@ class JobActivity(object):
             The value to assign to the runbook_name property of this JobActivity.
         :type runbook_name: str
 
+        :param description:
+            The value to assign to the description property of this JobActivity.
+        :type description: str
+
         :param resource_level_executions:
             The value to assign to the resource_level_executions property of this JobActivity.
         :type resource_level_executions: list[oci.fleet_apps_management.models.EntityExecutionDetails]
@@ -102,6 +110,7 @@ class JobActivity(object):
             'time_ended': 'datetime',
             'runbook_id': 'str',
             'runbook_name': 'str',
+            'description': 'str',
             'resource_level_executions': 'list[EntityExecutionDetails]'
         }
 
@@ -112,6 +121,7 @@ class JobActivity(object):
             'time_ended': 'timeEnded',
             'runbook_id': 'runbookId',
             'runbook_name': 'runbookName',
+            'description': 'description',
             'resource_level_executions': 'resourceLevelExecutions'
         }
 
@@ -121,13 +131,15 @@ class JobActivity(object):
         self._time_ended = None
         self._runbook_id = None
         self._runbook_name = None
+        self._description = None
         self._resource_level_executions = None
 
     @property
     def id(self):
         """
         **[Required]** Gets the id of this JobActivity.
-        Unique activity id at action group level
+        Unique activity id at the action group level.
+        In most cases, this would be a generated ActionGroupId.
 
 
         :return: The id of this JobActivity.
@@ -139,7 +151,8 @@ class JobActivity(object):
     def id(self, id):
         """
         Sets the id of this JobActivity.
-        Unique activity id at action group level
+        Unique activity id at the action group level.
+        In most cases, this would be a generated ActionGroupId.
 
 
         :param id: The id of this JobActivity.
@@ -151,9 +164,9 @@ class JobActivity(object):
     def status(self):
         """
         **[Required]** Gets the status of this JobActivity.
-        Status of the Job at Action Group Level
+        Status of the Job at Action Group Level.
 
-        Allowed values for this property are: "ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT", "PAUSED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -166,13 +179,13 @@ class JobActivity(object):
     def status(self, status):
         """
         Sets the status of this JobActivity.
-        Status of the Job at Action Group Level
+        Status of the Job at Action Group Level.
 
 
         :param status: The status of this JobActivity.
         :type: str
         """
-        allowed_values = ["ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT"]
+        allowed_values = ["ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT", "PAUSED"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status
@@ -181,7 +194,7 @@ class JobActivity(object):
     def time_started(self):
         """
         Gets the time_started of this JobActivity.
-        The time the the Scheduler Job started. An RFC3339 formatted datetime string
+        The time the execution for the Action Group started. An RFC3339 formatted datetime string.
 
 
         :return: The time_started of this JobActivity.
@@ -193,7 +206,7 @@ class JobActivity(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this JobActivity.
-        The time the the Scheduler Job started. An RFC3339 formatted datetime string
+        The time the execution for the Action Group started. An RFC3339 formatted datetime string.
 
 
         :param time_started: The time_started of this JobActivity.
@@ -205,7 +218,7 @@ class JobActivity(object):
     def time_ended(self):
         """
         Gets the time_ended of this JobActivity.
-        The time the Scheduler Job ended. An RFC3339 formatted datetime string
+        The time the execution for the Action Group ended. An RFC3339 formatted datetime string
 
 
         :return: The time_ended of this JobActivity.
@@ -217,7 +230,7 @@ class JobActivity(object):
     def time_ended(self, time_ended):
         """
         Sets the time_ended of this JobActivity.
-        The time the Scheduler Job ended. An RFC3339 formatted datetime string
+        The time the execution for the Action Group ended. An RFC3339 formatted datetime string
 
 
         :param time_ended: The time_ended of this JobActivity.
@@ -229,7 +242,7 @@ class JobActivity(object):
     def runbook_id(self):
         """
         Gets the runbook_id of this JobActivity.
-        ID of the runbook
+        OCID of the runbook associated with the Action Group.
 
 
         :return: The runbook_id of this JobActivity.
@@ -241,7 +254,7 @@ class JobActivity(object):
     def runbook_id(self, runbook_id):
         """
         Sets the runbook_id of this JobActivity.
-        ID of the runbook
+        OCID of the runbook associated with the Action Group.
 
 
         :param runbook_id: The runbook_id of this JobActivity.
@@ -253,7 +266,7 @@ class JobActivity(object):
     def runbook_name(self):
         """
         Gets the runbook_name of this JobActivity.
-        Name of the runbook
+        Name of the runbook associated with the Action Group.
 
 
         :return: The runbook_name of this JobActivity.
@@ -265,7 +278,7 @@ class JobActivity(object):
     def runbook_name(self, runbook_name):
         """
         Sets the runbook_name of this JobActivity.
-        Name of the runbook
+        Name of the runbook associated with the Action Group.
 
 
         :param runbook_name: The runbook_name of this JobActivity.
@@ -274,10 +287,36 @@ class JobActivity(object):
         self._runbook_name = runbook_name
 
     @property
+    def description(self):
+        """
+        Gets the description of this JobActivity.
+        A description of the Job Activity status.
+        If there are any errors, this can also include a short error message.
+
+
+        :return: The description of this JobActivity.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """
+        Sets the description of this JobActivity.
+        A description of the Job Activity status.
+        If there are any errors, this can also include a short error message.
+
+
+        :param description: The description of this JobActivity.
+        :type: str
+        """
+        self._description = description
+
+    @property
     def resource_level_executions(self):
         """
         Gets the resource_level_executions of this JobActivity.
-        Resources execution details and outcomes associated with the Task.
+        List of Resource executions associated with the Action Group.
 
 
         :return: The resource_level_executions of this JobActivity.
@@ -289,7 +328,7 @@ class JobActivity(object):
     def resource_level_executions(self, resource_level_executions):
         """
         Sets the resource_level_executions of this JobActivity.
-        Resources execution details and outcomes associated with the Task.
+        List of Resource executions associated with the Action Group.
 
 
         :param resource_level_executions: The resource_level_executions of this JobActivity.

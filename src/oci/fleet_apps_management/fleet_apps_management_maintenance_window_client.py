@@ -22,8 +22,7 @@ missing = Sentinel("Missing")
 
 class FleetAppsManagementMaintenanceWindowClient(object):
     """
-    Fleet Application Management Service API. Use this API to for all FAMS related activities.
-    To manage fleets,view complaince report for the Fleet,scedule patches and other lifecycle activities
+    Fleet Application Management provides a centralized platform to help you automate resource management tasks, validate patch compliance, and enhance operational efficiency across an enterprise.
     """
 
     def __init__(self, config, **kwargs):
@@ -119,7 +118,7 @@ class FleetAppsManagementMaintenanceWindowClient(object):
 
     def create_maintenance_window(self, create_maintenance_window_details, **kwargs):
         """
-        Creates a new MaintenanceWindow.
+        Create a maintenance window in Fleet Application Management.
 
 
         :param oci.fleet_apps_management.models.CreateMaintenanceWindowDetails create_maintenance_window_details: (required)
@@ -217,7 +216,7 @@ class FleetAppsManagementMaintenanceWindowClient(object):
 
     def delete_maintenance_window(self, maintenance_window_id, **kwargs):
         """
-        Deletes a MaintenanceWindow resource by identifier
+        Delete a maintenance window in Fleet Application Management.
 
 
         :param str maintenance_window_id: (required)
@@ -322,7 +321,7 @@ class FleetAppsManagementMaintenanceWindowClient(object):
 
     def get_maintenance_window(self, maintenance_window_id, **kwargs):
         """
-        Gets a MaintenanceWindow by identifier
+        Get the details for a maintenance window in Fleet Application Management.
 
 
         :param str maintenance_window_id: (required)
@@ -420,22 +419,25 @@ class FleetAppsManagementMaintenanceWindowClient(object):
 
     def list_maintenance_windows(self, **kwargs):
         """
-        Returns a list of MaintenanceWindows in the specified Tenancy.
+        List maintenance windows for a specified tenancy in\u00A0Fleet Application Management.
 
 
         :param str compartment_id: (optional)
             The ID of the compartment in which to list resources.
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources their lifecycleState matches the given lifecycleState.
+            A filter to return only resources whose lifecycleState matches the given lifecycleState.
 
             Allowed values are: "ACTIVE", "DELETED", "FAILED", "DELETING", "UPDATING", "NEEDS_ATTENTION"
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
 
+        :param datetime time_schedule_start_greater_than_or_equal_to: (optional)
+            A filter to return only resources whose timeScheduleStart is greater than or equal to the provided date and time.
+
         :param str id: (optional)
-            unique MaintenanceWindow identifier
+            A filter to return only the Maintenance Windows whose identifier matches the given identifier.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -488,6 +490,7 @@ class FleetAppsManagementMaintenanceWindowClient(object):
             "compartment_id",
             "lifecycle_state",
             "display_name",
+            "time_schedule_start_greater_than_or_equal_to",
             "id",
             "limit",
             "page",
@@ -525,6 +528,7 @@ class FleetAppsManagementMaintenanceWindowClient(object):
             "compartmentId": kwargs.get("compartment_id", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "displayName": kwargs.get("display_name", missing),
+            "timeScheduleStartGreaterThanOrEqualTo": kwargs.get("time_schedule_start_greater_than_or_equal_to", missing),
             "id": kwargs.get("id", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
@@ -576,14 +580,14 @@ class FleetAppsManagementMaintenanceWindowClient(object):
 
     def update_maintenance_window(self, maintenance_window_id, update_maintenance_window_details, **kwargs):
         """
-        Updates the MaintenanceWindow
+        Update a maintenance window in Fleet Application Management.
 
 
         :param str maintenance_window_id: (required)
             unique MaintenanceWindow identifier
 
         :param oci.fleet_apps_management.models.UpdateMaintenanceWindowDetails update_maintenance_window_details: (required)
-            The information to be updated.
+            The information to be updated for the maintenance window.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call

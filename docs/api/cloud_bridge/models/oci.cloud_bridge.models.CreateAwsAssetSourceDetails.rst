@@ -1,0 +1,11 @@
+CreateAwsAssetSourceDetails
+===========================
+
+.. currentmodule:: oci.cloud_bridge.models
+
+.. autoclass:: CreateAwsAssetSourceDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

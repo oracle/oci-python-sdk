@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ComponentProperties(object):
     """
-    The properties of the task.
+    The properties of the component.
     """
 
     #: A constant which can be used with the action_on_failure property of a ComponentProperties.
@@ -46,28 +46,45 @@ class ComponentProperties(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type action_on_failure: str
 
+        :param pause_details:
+            The value to assign to the pause_details property of this ComponentProperties.
+        :type pause_details: oci.fleet_apps_management.models.PauseDetails
+
+        :param notification_preferences:
+            The value to assign to the notification_preferences property of this ComponentProperties.
+        :type notification_preferences: oci.fleet_apps_management.models.TaskNotificationPreferences
+
         """
         self.swagger_types = {
             'run_on': 'str',
             'condition': 'str',
-            'action_on_failure': 'str'
+            'action_on_failure': 'str',
+            'pause_details': 'PauseDetails',
+            'notification_preferences': 'TaskNotificationPreferences'
         }
 
         self.attribute_map = {
             'run_on': 'runOn',
             'condition': 'condition',
-            'action_on_failure': 'actionOnFailure'
+            'action_on_failure': 'actionOnFailure',
+            'pause_details': 'pauseDetails',
+            'notification_preferences': 'notificationPreferences'
         }
 
         self._run_on = None
         self._condition = None
         self._action_on_failure = None
+        self._pause_details = None
+        self._notification_preferences = None
 
     @property
     def run_on(self):
         """
         Gets the run_on of this ComponentProperties.
-        The hosts to execute on.
+        The runOn condition for the task/group/container.
+        Build task execution conditions if applicable to product and product-specific components.
+        This condition is relevant when handling product stack workflows.
+        Example: target.product.name = Oracle WebLogic Server OR target.product.name = Oracle HTTP Server
 
 
         :return: The run_on of this ComponentProperties.
@@ -79,7 +96,10 @@ class ComponentProperties(object):
     def run_on(self, run_on):
         """
         Sets the run_on of this ComponentProperties.
-        The hosts to execute on.
+        The runOn condition for the task/group/container.
+        Build task execution conditions if applicable to product and product-specific components.
+        This condition is relevant when handling product stack workflows.
+        Example: target.product.name = Oracle WebLogic Server OR target.product.name = Oracle HTTP Server
 
 
         :param run_on: The run_on of this ComponentProperties.
@@ -91,7 +111,7 @@ class ComponentProperties(object):
     def condition(self):
         """
         Gets the condition of this ComponentProperties.
-        The condition in which the task is to be executed.
+        Build control flow conditions that determine the relevance of the task execution.
 
 
         :return: The condition of this ComponentProperties.
@@ -103,7 +123,7 @@ class ComponentProperties(object):
     def condition(self, condition):
         """
         Sets the condition of this ComponentProperties.
-        The condition in which the task is to be executed.
+        Build control flow conditions that determine the relevance of the task execution.
 
 
         :param condition: The condition of this ComponentProperties.
@@ -115,7 +135,7 @@ class ComponentProperties(object):
     def action_on_failure(self):
         """
         **[Required]** Gets the action_on_failure of this ComponentProperties.
-        The action to be taken in case of task failure.
+        The action to be taken in case of a failure.
 
         Allowed values for this property are: "ABORT", "CONTINUE", "ROLLBACK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -130,7 +150,7 @@ class ComponentProperties(object):
     def action_on_failure(self, action_on_failure):
         """
         Sets the action_on_failure of this ComponentProperties.
-        The action to be taken in case of task failure.
+        The action to be taken in case of a failure.
 
 
         :param action_on_failure: The action_on_failure of this ComponentProperties.
@@ -140,6 +160,46 @@ class ComponentProperties(object):
         if not value_allowed_none_or_none_sentinel(action_on_failure, allowed_values):
             action_on_failure = 'UNKNOWN_ENUM_VALUE'
         self._action_on_failure = action_on_failure
+
+    @property
+    def pause_details(self):
+        """
+        Gets the pause_details of this ComponentProperties.
+
+        :return: The pause_details of this ComponentProperties.
+        :rtype: oci.fleet_apps_management.models.PauseDetails
+        """
+        return self._pause_details
+
+    @pause_details.setter
+    def pause_details(self, pause_details):
+        """
+        Sets the pause_details of this ComponentProperties.
+
+        :param pause_details: The pause_details of this ComponentProperties.
+        :type: oci.fleet_apps_management.models.PauseDetails
+        """
+        self._pause_details = pause_details
+
+    @property
+    def notification_preferences(self):
+        """
+        Gets the notification_preferences of this ComponentProperties.
+
+        :return: The notification_preferences of this ComponentProperties.
+        :rtype: oci.fleet_apps_management.models.TaskNotificationPreferences
+        """
+        return self._notification_preferences
+
+    @notification_preferences.setter
+    def notification_preferences(self, notification_preferences):
+        """
+        Sets the notification_preferences of this ComponentProperties.
+
+        :param notification_preferences: The notification_preferences of this ComponentProperties.
+        :type: oci.fleet_apps_management.models.TaskNotificationPreferences
+        """
+        self._notification_preferences = notification_preferences
 
     def __repr__(self):
         return formatted_flat_dict(self)

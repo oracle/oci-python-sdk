@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class FleetPropertyCollection(object):
     """
-    Results of a fleetProperty search. Contains boh FleetPropertySummary items and other information, such as metadata.
+    Results of a fleetProperty search. Contains both FleetPropertySummary items and other information, such as metadata.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class FleetPropertyCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this FleetPropertyCollection.
-        List of fleetPropertys.
+        List of fleet properties in Fleet Application Management.
 
 
         :return: The items of this FleetPropertyCollection.
@@ -51,7 +51,7 @@ class FleetPropertyCollection(object):
     def items(self, items):
         """
         Sets the items of this FleetPropertyCollection.
-        List of fleetPropertys.
+        List of fleet properties in Fleet Application Management.
 
 
         :param items: The items of this FleetPropertyCollection.

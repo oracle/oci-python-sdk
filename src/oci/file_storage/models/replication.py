@@ -139,6 +139,10 @@ class Replication(object):
             The value to assign to the delta_progress property of this Replication.
         :type delta_progress: int
 
+        :param locks:
+            The value to assign to the locks property of this Replication.
+        :type locks: list[oci.file_storage.models.ResourceLock]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Replication.
         :type freeform_tags: dict(str, str)
@@ -164,6 +168,7 @@ class Replication(object):
             'delta_status': 'str',
             'lifecycle_details': 'str',
             'delta_progress': 'int',
+            'locks': 'list[ResourceLock]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -184,6 +189,7 @@ class Replication(object):
             'delta_status': 'deltaStatus',
             'lifecycle_details': 'lifecycleDetails',
             'delta_progress': 'deltaProgress',
+            'locks': 'locks',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -203,6 +209,7 @@ class Replication(object):
         self._delta_status = None
         self._lifecycle_details = None
         self._delta_progress = None
+        self._locks = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -629,6 +636,30 @@ class Replication(object):
         :type: int
         """
         self._delta_progress = delta_progress
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this Replication.
+        Locks associated with this resource.
+
+
+        :return: The locks of this Replication.
+        :rtype: list[oci.file_storage.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this Replication.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this Replication.
+        :type: list[oci.file_storage.models.ResourceLock]
+        """
+        self._locks = locks
 
     @property
     def freeform_tags(self):

@@ -87,6 +87,10 @@ class FilesystemSnapshotPolicy(object):
             The value to assign to the schedules property of this FilesystemSnapshotPolicy.
         :type schedules: list[oci.file_storage.models.SnapshotSchedule]
 
+        :param locks:
+            The value to assign to the locks property of this FilesystemSnapshotPolicy.
+        :type locks: list[oci.file_storage.models.ResourceLock]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this FilesystemSnapshotPolicy.
         :type freeform_tags: dict(str, str)
@@ -105,6 +109,7 @@ class FilesystemSnapshotPolicy(object):
             'display_name': 'str',
             'policy_prefix': 'str',
             'schedules': 'list[SnapshotSchedule]',
+            'locks': 'list[ResourceLock]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -118,6 +123,7 @@ class FilesystemSnapshotPolicy(object):
             'display_name': 'displayName',
             'policy_prefix': 'policyPrefix',
             'schedules': 'schedules',
+            'locks': 'locks',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -130,6 +136,7 @@ class FilesystemSnapshotPolicy(object):
         self._display_name = None
         self._policy_prefix = None
         self._schedules = None
+        self._locks = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -362,6 +369,30 @@ class FilesystemSnapshotPolicy(object):
         :type: list[oci.file_storage.models.SnapshotSchedule]
         """
         self._schedules = schedules
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this FilesystemSnapshotPolicy.
+        Locks associated with this resource.
+
+
+        :return: The locks of this FilesystemSnapshotPolicy.
+        :rtype: list[oci.file_storage.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this FilesystemSnapshotPolicy.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this FilesystemSnapshotPolicy.
+        :type: list[oci.file_storage.models.ResourceLock]
+        """
+        self._locks = locks
 
     @property
     def freeform_tags(self):

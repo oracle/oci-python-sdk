@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ComplianceReport(object):
     """
-    Summary of a compliance report.
+    Compliance details for a fleet in Fleet Application Management.
     """
 
     #: A constant which can be used with the compliance_state property of a ComplianceReport.
@@ -126,7 +126,7 @@ class ComplianceReport(object):
     def compliance_state(self):
         """
         **[Required]** Gets the compliance_state of this ComplianceReport.
-        Last known compliance state of fleet.
+        The last known compliance state of the fleet.
 
         Allowed values for this property are: "UNKNOWN", "COMPLIANT", "NON_COMPLIANT", "WARNING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -141,7 +141,7 @@ class ComplianceReport(object):
     def compliance_state(self, compliance_state):
         """
         Sets the compliance_state of this ComplianceReport.
-        Last known compliance state of fleet.
+        The last known compliance state of the fleet.
 
 
         :param compliance_state: The compliance_state of this ComplianceReport.
@@ -156,7 +156,7 @@ class ComplianceReport(object):
     def resources(self):
         """
         Gets the resources of this ComplianceReport.
-        Resources assocaited with the Fleet.
+        Resources associated with the Fleet.
 
 
         :return: The resources of this ComplianceReport.
@@ -168,7 +168,7 @@ class ComplianceReport(object):
     def resources(self, resources):
         """
         Sets the resources of this ComplianceReport.
-        Resources assocaited with the Fleet.
+        Resources associated with the Fleet.
 
 
         :param resources: The resources of this ComplianceReport.

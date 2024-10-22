@@ -68,6 +68,10 @@ class CreateMountTargetDetails(object):
             The value to assign to the defined_tags property of this CreateMountTargetDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param locks:
+            The value to assign to the locks property of this CreateMountTargetDetails.
+        :type locks: list[oci.file_storage.models.ResourceLock]
+
         :param requested_throughput:
             The value to assign to the requested_throughput property of this CreateMountTargetDetails.
         :type requested_throughput: int
@@ -86,6 +90,7 @@ class CreateMountTargetDetails(object):
             'kerberos': 'CreateKerberosDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[ResourceLock]',
             'requested_throughput': 'int'
         }
 
@@ -102,6 +107,7 @@ class CreateMountTargetDetails(object):
             'kerberos': 'kerberos',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'locks': 'locks',
             'requested_throughput': 'requestedThroughput'
         }
 
@@ -117,6 +123,7 @@ class CreateMountTargetDetails(object):
         self._kerberos = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._locks = None
         self._requested_throughput = None
 
     @property
@@ -506,6 +513,30 @@ class CreateMountTargetDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this CreateMountTargetDetails.
+        Locks associated with this resource.
+
+
+        :return: The locks of this CreateMountTargetDetails.
+        :rtype: list[oci.file_storage.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this CreateMountTargetDetails.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this CreateMountTargetDetails.
+        :type: list[oci.file_storage.models.ResourceLock]
+        """
+        self._locks = locks
 
     @property
     def requested_throughput(self):

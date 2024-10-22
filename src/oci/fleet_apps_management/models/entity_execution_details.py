@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class EntityExecutionDetails(object):
     """
-    Activity Resource and execution details including outcome.
+    Resource level execution status and target associations.
     """
 
     #: A constant which can be used with the status property of a EntityExecutionDetails.
@@ -59,6 +59,10 @@ class EntityExecutionDetails(object):
     #: This constant has a value of "TIMED_OUT"
     STATUS_TIMED_OUT = "TIMED_OUT"
 
+    #: A constant which can be used with the status property of a EntityExecutionDetails.
+    #: This constant has a value of "PAUSED"
+    STATUS_PAUSED = "PAUSED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new EntityExecutionDetails object with values from keyword arguments.
@@ -86,7 +90,7 @@ class EntityExecutionDetails(object):
 
         :param status:
             The value to assign to the status property of this EntityExecutionDetails.
-            Allowed values for this property are: "ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT", "PAUSED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -134,7 +138,7 @@ class EntityExecutionDetails(object):
     def resource_id(self):
         """
         **[Required]** Gets the resource_id of this EntityExecutionDetails.
-        Resource Identifier associated with the Work Request
+        Resource Identifier associated with the Work Request.
 
 
         :return: The resource_id of this EntityExecutionDetails.
@@ -146,7 +150,7 @@ class EntityExecutionDetails(object):
     def resource_id(self, resource_id):
         """
         Sets the resource_id of this EntityExecutionDetails.
-        Resource Identifier associated with the Work Request
+        Resource Identifier associated with the Work Request.
 
 
         :param resource_id: The resource_id of this EntityExecutionDetails.
@@ -158,7 +162,7 @@ class EntityExecutionDetails(object):
     def resource_display_name(self):
         """
         Gets the resource_display_name of this EntityExecutionDetails.
-        Resource Display Name
+        Resource Display Name.
 
 
         :return: The resource_display_name of this EntityExecutionDetails.
@@ -170,7 +174,7 @@ class EntityExecutionDetails(object):
     def resource_display_name(self, resource_display_name):
         """
         Sets the resource_display_name of this EntityExecutionDetails.
-        Resource Display Name
+        Resource Display Name.
 
 
         :param resource_display_name: The resource_display_name of this EntityExecutionDetails.
@@ -182,7 +186,8 @@ class EntityExecutionDetails(object):
     def description(self):
         """
         Gets the description of this EntityExecutionDetails.
-        Description of the Work Request
+        Description of the Resource Execution status.
+        If there are any errors, this can also include a short error message.
 
 
         :return: The description of this EntityExecutionDetails.
@@ -194,7 +199,8 @@ class EntityExecutionDetails(object):
     def description(self, description):
         """
         Sets the description of this EntityExecutionDetails.
-        Description of the Work Request
+        Description of the Resource Execution status.
+        If there are any errors, this can also include a short error message.
 
 
         :param description: The description of this EntityExecutionDetails.
@@ -206,7 +212,7 @@ class EntityExecutionDetails(object):
     def sequence(self):
         """
         Gets the sequence of this EntityExecutionDetails.
-        The sequence of the Resource
+        The sequence of the Resource.
 
 
         :return: The sequence of this EntityExecutionDetails.
@@ -218,7 +224,7 @@ class EntityExecutionDetails(object):
     def sequence(self, sequence):
         """
         Sets the sequence of this EntityExecutionDetails.
-        The sequence of the Resource
+        The sequence of the Resource.
 
 
         :param sequence: The sequence of this EntityExecutionDetails.
@@ -230,7 +236,7 @@ class EntityExecutionDetails(object):
     def targets(self):
         """
         Gets the targets of this EntityExecutionDetails.
-        Targets associated.
+        Targets associated with the resource.
 
 
         :return: The targets of this EntityExecutionDetails.
@@ -242,7 +248,7 @@ class EntityExecutionDetails(object):
     def targets(self, targets):
         """
         Sets the targets of this EntityExecutionDetails.
-        Targets associated.
+        Targets associated with the resource.
 
 
         :param targets: The targets of this EntityExecutionDetails.
@@ -254,9 +260,9 @@ class EntityExecutionDetails(object):
     def status(self):
         """
         **[Required]** Gets the status of this EntityExecutionDetails.
-        Status of the Job at Resource Level
+        Status of the Job at Resource Level.
 
-        Allowed values for this property are: "ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT", "PAUSED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -269,13 +275,13 @@ class EntityExecutionDetails(object):
     def status(self, status):
         """
         Sets the status of this EntityExecutionDetails.
-        Status of the Job at Resource Level
+        Status of the Job at Resource Level.
 
 
         :param status: The status of this EntityExecutionDetails.
         :type: str
         """
-        allowed_values = ["ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT"]
+        allowed_values = ["ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT", "PAUSED"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status

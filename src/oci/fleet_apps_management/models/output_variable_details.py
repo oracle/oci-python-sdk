@@ -70,7 +70,7 @@ class OutputVariableDetails(object):
     def output_variable_name(self):
         """
         **[Required]** Gets the output_variable_name of this OutputVariableDetails.
-        The name of the output variable whose value that has to be mapped.
+        The name of the output variable whose value has to be mapped.
 
 
         :return: The output_variable_name of this OutputVariableDetails.
@@ -82,7 +82,7 @@ class OutputVariableDetails(object):
     def output_variable_name(self, output_variable_name):
         """
         Sets the output_variable_name of this OutputVariableDetails.
-        The name of the output variable whose value that has to be mapped.
+        The name of the output variable whose value has to be mapped.
 
 
         :param output_variable_name: The output_variable_name of this OutputVariableDetails.

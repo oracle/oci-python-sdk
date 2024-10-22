@@ -56,7 +56,7 @@ class WorkflowGroupComponent(WorkflowComponent):
     def group_name(self):
         """
         **[Required]** Gets the group_name of this WorkflowGroupComponent.
-        Provide the name of the group.
+        Name of the group.
 
 
         :return: The group_name of this WorkflowGroupComponent.
@@ -68,7 +68,7 @@ class WorkflowGroupComponent(WorkflowComponent):
     def group_name(self, group_name):
         """
         Sets the group_name of this WorkflowGroupComponent.
-        Provide the name of the group.
+        Name of the group.
 
 
         :param group_name: The group_name of this WorkflowGroupComponent.
@@ -81,7 +81,7 @@ class WorkflowGroupComponent(WorkflowComponent):
         """
         Gets the steps of this WorkflowGroupComponent.
         Tasks within the Group.
-        Provide the stepName for all tasks that are applicable
+        Provide the stepName for all applicable tasks.
 
 
         :return: The steps of this WorkflowGroupComponent.
@@ -94,7 +94,7 @@ class WorkflowGroupComponent(WorkflowComponent):
         """
         Sets the steps of this WorkflowGroupComponent.
         Tasks within the Group.
-        Provide the stepName for all tasks that are applicable
+        Provide the stepName for all applicable tasks.
 
 
         :param steps: The steps of this WorkflowGroupComponent.

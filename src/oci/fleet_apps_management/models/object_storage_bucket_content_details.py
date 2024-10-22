@@ -13,7 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class ObjectStorageBucketContentDetails(ContentDetails):
     """
     Details about Object Storage Bucket source.
-    Restricted to the region this is called
+    Restricted to the region this is called.
     """
 
     def __init__(self, **kwargs):
@@ -143,7 +143,7 @@ class ObjectStorageBucketContentDetails(ContentDetails):
     def checksum(self):
         """
         **[Required]** Gets the checksum of this ObjectStorageBucketContentDetails.
-        SHA256 checksum of the artifact.
+        md5 checksum of the artifact.
 
 
         :return: The checksum of this ObjectStorageBucketContentDetails.
@@ -155,7 +155,7 @@ class ObjectStorageBucketContentDetails(ContentDetails):
     def checksum(self, checksum):
         """
         Sets the checksum of this ObjectStorageBucketContentDetails.
-        SHA256 checksum of the artifact.
+        md5 checksum of the artifact.
 
 
         :param checksum: The checksum of this ObjectStorageBucketContentDetails.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class FleetSummary(object):
     """
-    Summary of the Fleet.
+    Summary of a Fleet.A fleet is a collection or grouping of resources based on criteria.
     """
 
     def __init__(self, **kwargs):
@@ -274,6 +274,10 @@ class FleetSummary(object):
         """
         **[Required]** Gets the fleet_type of this FleetSummary.
         Type of the Fleet.
+        PRODUCT - A fleet of product-specific resources for a product type.
+        ENVIRONMENT - A fleet of environment-specific resources for a product stack.
+        GROUP - A fleet of a fleet of either environment or product fleets.
+        GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
 
 
         :return: The fleet_type of this FleetSummary.
@@ -286,6 +290,10 @@ class FleetSummary(object):
         """
         Sets the fleet_type of this FleetSummary.
         Type of the Fleet.
+        PRODUCT - A fleet of product-specific resources for a product type.
+        ENVIRONMENT - A fleet of environment-specific resources for a product stack.
+        GROUP - A fleet of a fleet of either environment or product fleets.
+        GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
 
 
         :param fleet_type: The fleet_type of this FleetSummary.
@@ -297,7 +305,8 @@ class FleetSummary(object):
     def environment_type(self):
         """
         Gets the environment_type of this FleetSummary.
-        Environment Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+        Environment Type associated with the Fleet.
+        Applicable for ENVIRONMENT fleet types.
 
 
         :return: The environment_type of this FleetSummary.
@@ -309,7 +318,8 @@ class FleetSummary(object):
     def environment_type(self, environment_type):
         """
         Sets the environment_type of this FleetSummary.
-        Environment Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+        Environment Type associated with the Fleet.
+        Applicable for ENVIRONMENT fleet types.
 
 
         :param environment_type: The environment_type of this FleetSummary.
@@ -321,7 +331,7 @@ class FleetSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this FleetSummary.
-        The current state of the Fleet.
+        The lifecycle state of the Fleet.
 
 
         :return: The lifecycle_state of this FleetSummary.
@@ -333,7 +343,7 @@ class FleetSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this FleetSummary.
-        The current state of the Fleet.
+        The lifecycle state of the Fleet.
 
 
         :param lifecycle_state: The lifecycle_state of this FleetSummary.

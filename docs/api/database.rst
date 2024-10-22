@@ -50,6 +50,8 @@ Database
     oci.database.models.AutonomousDatabaseConnectionUrls
     oci.database.models.AutonomousDatabaseConsoleTokenDetails
     oci.database.models.AutonomousDatabaseDataguardAssociation
+    oci.database.models.AutonomousDatabaseEncryptionKeyDetails
+    oci.database.models.AutonomousDatabaseEncryptionKeyHistoryEntry
     oci.database.models.AutonomousDatabaseKeyHistoryEntry
     oci.database.models.AutonomousDatabaseManualRefreshDetails
     oci.database.models.AutonomousDatabasePeerCollection
@@ -75,6 +77,8 @@ Database
     oci.database.models.AutonomousVmClusterSummary
     oci.database.models.AutonomousVmResourceUsage
     oci.database.models.AvmAcdResourceStats
+    oci.database.models.AwsKeyDetails
+    oci.database.models.AzureKeyDetails
     oci.database.models.Backup
     oci.database.models.BackupDestination
     oci.database.models.BackupDestinationDetails
@@ -342,10 +346,13 @@ Database
     oci.database.models.NetworkBondingModeDetails
     oci.database.models.NodeDetails
     oci.database.models.OCPUs
+    oci.database.models.OciKeyDetails
     oci.database.models.OciProviderSetKeyVersionDetails
+    oci.database.models.OkvKeyDetails
     oci.database.models.OneoffPatch
     oci.database.models.OneoffPatchSummary
     oci.database.models.OperationsInsightsConfig
+    oci.database.models.OracleManagedKeyDetails
     oci.database.models.Patch
     oci.database.models.PatchDetails
     oci.database.models.PatchHistoryEntry

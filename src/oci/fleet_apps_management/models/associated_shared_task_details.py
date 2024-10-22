@@ -12,7 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AssociatedSharedTaskDetails(AssociatedTaskDetails):
     """
-    The details of the task.
+    The details of the shared task.
+    Tasks that are part of the task library and can be reused across runbooks.
     """
 
     def __init__(self, **kwargs):

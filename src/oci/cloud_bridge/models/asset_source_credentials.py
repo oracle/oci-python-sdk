@@ -19,6 +19,10 @@ class AssetSourceCredentials(object):
     #: This constant has a value of "BASIC"
     TYPE_BASIC = "BASIC"
 
+    #: A constant which can be used with the type property of a AssetSourceCredentials.
+    #: This constant has a value of "API_KEY"
+    TYPE_API_KEY = "API_KEY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AssetSourceCredentials object with values from keyword arguments.
@@ -26,7 +30,7 @@ class AssetSourceCredentials(object):
 
         :param type:
             The value to assign to the type property of this AssetSourceCredentials.
-            Allowed values for this property are: "BASIC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "BASIC", "API_KEY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -54,7 +58,7 @@ class AssetSourceCredentials(object):
         **[Required]** Gets the type of this AssetSourceCredentials.
         Authentication type
 
-        Allowed values for this property are: "BASIC", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "BASIC", "API_KEY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -73,7 +77,7 @@ class AssetSourceCredentials(object):
         :param type: The type of this AssetSourceCredentials.
         :type: str
         """
-        allowed_values = ["BASIC"]
+        allowed_values = ["BASIC", "API_KEY"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
@@ -83,8 +87,11 @@ class AssetSourceCredentials(object):
         """
         **[Required]** Gets the secret_id of this AssetSourceCredentials.
         The `OCID`__ of the secret in a vault.
-        If the the type of the credentials is BASIC`, the secret must contain the username and
-        password in JSON format, which is in the form of `{ \"username\": \"<VMwareUser>\", \"password\": \"<VMwarePassword>\" }`.
+        If the type of the credentials is `BASIC`, the secret must contain the username and
+        password in JSON format, which is in the form of `{ \"username\": \"<User>\", \"password\": \"<Password>\" }`.
+        If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and
+        secretAccessKey in JSON format,
+        which is in the form of `{ \"accessKeyId\": \"<AccessKey>\", \"secretAccessKey\": \"<AccessKeyValue>\" }`.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -99,8 +106,11 @@ class AssetSourceCredentials(object):
         """
         Sets the secret_id of this AssetSourceCredentials.
         The `OCID`__ of the secret in a vault.
-        If the the type of the credentials is BASIC`, the secret must contain the username and
-        password in JSON format, which is in the form of `{ \"username\": \"<VMwareUser>\", \"password\": \"<VMwarePassword>\" }`.
+        If the type of the credentials is `BASIC`, the secret must contain the username and
+        password in JSON format, which is in the form of `{ \"username\": \"<User>\", \"password\": \"<Password>\" }`.
+        If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and
+        secretAccessKey in JSON format,
+        which is in the form of `{ \"accessKeyId\": \"<AccessKey>\", \"secretAccessKey\": \"<AccessKeyValue>\" }`.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

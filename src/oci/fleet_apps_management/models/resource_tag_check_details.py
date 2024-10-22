@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourceTagCheckDetails(object):
     """
-    Request to check resource tagging
+    Request to check resource tagging.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class ResourceTagCheckDetails(object):
     def tag_enablement_info(self):
         """
         **[Required]** Gets the tag_enablement_info of this ResourceTagCheckDetails.
-        Tag enablement Information for resources.
+        Tag enablement Information for the resources.
 
 
         :return: The tag_enablement_info of this ResourceTagCheckDetails.
@@ -51,7 +51,7 @@ class ResourceTagCheckDetails(object):
     def tag_enablement_info(self, tag_enablement_info):
         """
         Sets the tag_enablement_info of this ResourceTagCheckDetails.
-        Tag enablement Information for resources.
+        Tag enablement Information for the resources.
 
 
         :param tag_enablement_info: The tag_enablement_info of this ResourceTagCheckDetails.

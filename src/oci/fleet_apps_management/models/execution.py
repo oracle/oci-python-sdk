@@ -59,6 +59,10 @@ class Execution(object):
     #: This constant has a value of "TIMED_OUT"
     STATUS_TIMED_OUT = "TIMED_OUT"
 
+    #: A constant which can be used with the status property of a Execution.
+    #: This constant has a value of "PAUSED"
+    STATUS_PAUSED = "PAUSED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Execution object with values from keyword arguments.
@@ -90,7 +94,7 @@ class Execution(object):
 
         :param status:
             The value to assign to the status property of this Execution.
-            Allowed values for this property are: "ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT", "PAUSED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -110,6 +114,18 @@ class Execution(object):
             The value to assign to the time_ended property of this Execution.
         :type time_ended: datetime
 
+        :param is_rollback_task:
+            The value to assign to the is_rollback_task property of this Execution.
+        :type is_rollback_task: bool
+
+        :param description:
+            The value to assign to the description property of this Execution.
+        :type description: str
+
+        :param resource_id:
+            The value to assign to the resource_id property of this Execution.
+        :type resource_id: str
+
         :param system_tags:
             The value to assign to the system_tags property of this Execution.
         :type system_tags: dict(str, dict(str, object))
@@ -127,6 +143,9 @@ class Execution(object):
             'target_id': 'str',
             'time_started': 'datetime',
             'time_ended': 'datetime',
+            'is_rollback_task': 'bool',
+            'description': 'str',
+            'resource_id': 'str',
             'system_tags': 'dict(str, dict(str, object))'
         }
 
@@ -142,6 +161,9 @@ class Execution(object):
             'target_id': 'targetId',
             'time_started': 'timeStarted',
             'time_ended': 'timeEnded',
+            'is_rollback_task': 'isRollbackTask',
+            'description': 'description',
+            'resource_id': 'resourceId',
             'system_tags': 'systemTags'
         }
 
@@ -156,13 +178,16 @@ class Execution(object):
         self._target_id = None
         self._time_started = None
         self._time_ended = None
+        self._is_rollback_task = None
+        self._description = None
+        self._resource_id = None
         self._system_tags = None
 
     @property
     def id(self):
         """
         **[Required]** Gets the id of this Execution.
-        Unique Id assocaited with the Task Execution
+        Unique Id associated with the task execution.
 
 
         :return: The id of this Execution.
@@ -174,7 +199,7 @@ class Execution(object):
     def id(self, id):
         """
         Sets the id of this Execution.
-        Unique Id assocaited with the Task Execution
+        Unique Id associated with the task execution.
 
 
         :param id: The id of this Execution.
@@ -186,7 +211,7 @@ class Execution(object):
     def task_record_id(self):
         """
         Gets the task_record_id of this Execution.
-        The OCID of taskRecord
+        The OCID of taskRecord.
 
 
         :return: The task_record_id of this Execution.
@@ -198,7 +223,7 @@ class Execution(object):
     def task_record_id(self, task_record_id):
         """
         Sets the task_record_id of this Execution.
-        The OCID of taskRecord
+        The OCID of taskRecord.
 
 
         :param task_record_id: The task_record_id of this Execution.
@@ -210,7 +235,7 @@ class Execution(object):
     def step_name(self):
         """
         Gets the step_name of this Execution.
-        Name of the step
+        Name of the step.
 
 
         :return: The step_name of this Execution.
@@ -222,7 +247,7 @@ class Execution(object):
     def step_name(self, step_name):
         """
         Sets the step_name of this Execution.
-        Name of the step
+        Name of the step.
 
 
         :param step_name: The step_name of this Execution.
@@ -234,7 +259,8 @@ class Execution(object):
     def process_reference_id(self):
         """
         Gets the process_reference_id of this Execution.
-        Unique process reference identifier returned by the execution client
+        Unique process-reference identifier returned by the execution client.
+        In some cases, this can be a runcommand OCID.
 
 
         :return: The process_reference_id of this Execution.
@@ -246,7 +272,8 @@ class Execution(object):
     def process_reference_id(self, process_reference_id):
         """
         Sets the process_reference_id of this Execution.
-        Unique process reference identifier returned by the execution client
+        Unique process-reference identifier returned by the execution client.
+        In some cases, this can be a runcommand OCID.
 
 
         :param process_reference_id: The process_reference_id of this Execution.
@@ -258,7 +285,7 @@ class Execution(object):
     def sequence(self):
         """
         Gets the sequence of this Execution.
-        The sequence of the task
+        The sequence of the task.
 
 
         :return: The sequence of this Execution.
@@ -270,7 +297,7 @@ class Execution(object):
     def sequence(self, sequence):
         """
         Sets the sequence of this Execution.
-        The sequence of the task
+        The sequence of the task.
 
 
         :param sequence: The sequence of this Execution.
@@ -282,7 +309,7 @@ class Execution(object):
     def subjects(self):
         """
         Gets the subjects of this Execution.
-        Subjects which are tied to the task
+        Subjects that are tied to the task.
 
 
         :return: The subjects of this Execution.
@@ -294,7 +321,7 @@ class Execution(object):
     def subjects(self, subjects):
         """
         Sets the subjects of this Execution.
-        Subjects which are tied to the task
+        Subjects that are tied to the task.
 
 
         :param subjects: The subjects of this Execution.
@@ -308,7 +335,7 @@ class Execution(object):
         **[Required]** Gets the status of this Execution.
         Status of the Task
 
-        Allowed values for this property are: "ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT", "PAUSED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -327,7 +354,7 @@ class Execution(object):
         :param status: The status of this Execution.
         :type: str
         """
-        allowed_values = ["ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT"]
+        allowed_values = ["ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT", "PAUSED"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status
@@ -356,7 +383,7 @@ class Execution(object):
     def target_id(self):
         """
         Gets the target_id of this Execution.
-        Target associated with the execution
+        Target associated with the execution.
 
 
         :return: The target_id of this Execution.
@@ -368,7 +395,7 @@ class Execution(object):
     def target_id(self, target_id):
         """
         Sets the target_id of this Execution.
-        Target associated with the execution
+        Target associated with the execution.
 
 
         :param target_id: The target_id of this Execution.
@@ -380,7 +407,7 @@ class Execution(object):
     def time_started(self):
         """
         Gets the time_started of this Execution.
-        The time the task started. An RFC3339 formatted datetime string
+        The time the task started. An RFC3339 formatted datetime string.
 
 
         :return: The time_started of this Execution.
@@ -392,7 +419,7 @@ class Execution(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this Execution.
-        The time the task started. An RFC3339 formatted datetime string
+        The time the task started. An RFC3339 formatted datetime string.
 
 
         :param time_started: The time_started of this Execution.
@@ -404,7 +431,7 @@ class Execution(object):
     def time_ended(self):
         """
         Gets the time_ended of this Execution.
-        The time the task ended. An RFC3339 formatted datetime string
+        The time the task ended. An RFC3339 formatted datetime string.
 
 
         :return: The time_ended of this Execution.
@@ -416,13 +443,87 @@ class Execution(object):
     def time_ended(self, time_ended):
         """
         Sets the time_ended of this Execution.
-        The time the task ended. An RFC3339 formatted datetime string
+        The time the task ended. An RFC3339 formatted datetime string.
 
 
         :param time_ended: The time_ended of this Execution.
         :type: datetime
         """
         self._time_ended = time_ended
+
+    @property
+    def is_rollback_task(self):
+        """
+        Gets the is_rollback_task of this Execution.
+        Is this a rollback task?
+
+
+        :return: The is_rollback_task of this Execution.
+        :rtype: bool
+        """
+        return self._is_rollback_task
+
+    @is_rollback_task.setter
+    def is_rollback_task(self, is_rollback_task):
+        """
+        Sets the is_rollback_task of this Execution.
+        Is this a rollback task?
+
+
+        :param is_rollback_task: The is_rollback_task of this Execution.
+        :type: bool
+        """
+        self._is_rollback_task = is_rollback_task
+
+    @property
+    def description(self):
+        """
+        Gets the description of this Execution.
+        Description of the Execution status.
+        If there are any errors, this can also include a short error message.
+
+
+        :return: The description of this Execution.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """
+        Sets the description of this Execution.
+        Description of the Execution status.
+        If there are any errors, this can also include a short error message.
+
+
+        :param description: The description of this Execution.
+        :type: str
+        """
+        self._description = description
+
+    @property
+    def resource_id(self):
+        """
+        Gets the resource_id of this Execution.
+        Resource Identifier associated with the Work Request.
+
+
+        :return: The resource_id of this Execution.
+        :rtype: str
+        """
+        return self._resource_id
+
+    @resource_id.setter
+    def resource_id(self, resource_id):
+        """
+        Sets the resource_id of this Execution.
+        Resource Identifier associated with the Work Request.
+
+
+        :param resource_id: The resource_id of this Execution.
+        :type: str
+        """
+        self._resource_id = resource_id
 
     @property
     def system_tags(self):

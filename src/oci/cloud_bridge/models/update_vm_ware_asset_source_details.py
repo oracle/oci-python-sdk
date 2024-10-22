@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateVmWareAssetSourceDetails(UpdateAssetSourceDetails):
     """
-    Asset source update details.
+    VMware asset source update request.
     """
 
     def __init__(self, **kwargs):
@@ -23,7 +23,7 @@ class UpdateVmWareAssetSourceDetails(UpdateAssetSourceDetails):
 
         :param type:
             The value to assign to the type property of this UpdateVmWareAssetSourceDetails.
-            Allowed values for this property are: "VMWARE"
+            Allowed values for this property are: "VMWARE", "AWS"
         :type type: str
 
         :param display_name:
@@ -33,6 +33,10 @@ class UpdateVmWareAssetSourceDetails(UpdateAssetSourceDetails):
         :param assets_compartment_id:
             The value to assign to the assets_compartment_id property of this UpdateVmWareAssetSourceDetails.
         :type assets_compartment_id: str
+
+        :param discovery_schedule_id:
+            The value to assign to the discovery_schedule_id property of this UpdateVmWareAssetSourceDetails.
+        :type discovery_schedule_id: str
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateVmWareAssetSourceDetails.
@@ -66,15 +70,12 @@ class UpdateVmWareAssetSourceDetails(UpdateAssetSourceDetails):
             The value to assign to the are_realtime_metrics_collected property of this UpdateVmWareAssetSourceDetails.
         :type are_realtime_metrics_collected: bool
 
-        :param discovery_schedule_id:
-            The value to assign to the discovery_schedule_id property of this UpdateVmWareAssetSourceDetails.
-        :type discovery_schedule_id: str
-
         """
         self.swagger_types = {
             'type': 'str',
             'display_name': 'str',
             'assets_compartment_id': 'str',
+            'discovery_schedule_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
@@ -82,14 +83,14 @@ class UpdateVmWareAssetSourceDetails(UpdateAssetSourceDetails):
             'discovery_credentials': 'AssetSourceCredentials',
             'replication_credentials': 'AssetSourceCredentials',
             'are_historical_metrics_collected': 'bool',
-            'are_realtime_metrics_collected': 'bool',
-            'discovery_schedule_id': 'str'
+            'are_realtime_metrics_collected': 'bool'
         }
 
         self.attribute_map = {
             'type': 'type',
             'display_name': 'displayName',
             'assets_compartment_id': 'assetsCompartmentId',
+            'discovery_schedule_id': 'discoveryScheduleId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
@@ -97,13 +98,13 @@ class UpdateVmWareAssetSourceDetails(UpdateAssetSourceDetails):
             'discovery_credentials': 'discoveryCredentials',
             'replication_credentials': 'replicationCredentials',
             'are_historical_metrics_collected': 'areHistoricalMetricsCollected',
-            'are_realtime_metrics_collected': 'areRealtimeMetricsCollected',
-            'discovery_schedule_id': 'discoveryScheduleId'
+            'are_realtime_metrics_collected': 'areRealtimeMetricsCollected'
         }
 
         self._type = None
         self._display_name = None
         self._assets_compartment_id = None
+        self._discovery_schedule_id = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -112,7 +113,6 @@ class UpdateVmWareAssetSourceDetails(UpdateAssetSourceDetails):
         self._replication_credentials = None
         self._are_historical_metrics_collected = None
         self._are_realtime_metrics_collected = None
-        self._discovery_schedule_id = None
         self._type = 'VMWARE'
 
     @property
@@ -226,34 +226,6 @@ class UpdateVmWareAssetSourceDetails(UpdateAssetSourceDetails):
         :type: bool
         """
         self._are_realtime_metrics_collected = are_realtime_metrics_collected
-
-    @property
-    def discovery_schedule_id(self):
-        """
-        Gets the discovery_schedule_id of this UpdateVmWareAssetSourceDetails.
-        The `OCID`__ of the discovery schedule that is going to be assigned to an asset source.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-
-        :return: The discovery_schedule_id of this UpdateVmWareAssetSourceDetails.
-        :rtype: str
-        """
-        return self._discovery_schedule_id
-
-    @discovery_schedule_id.setter
-    def discovery_schedule_id(self, discovery_schedule_id):
-        """
-        Sets the discovery_schedule_id of this UpdateVmWareAssetSourceDetails.
-        The `OCID`__ of the discovery schedule that is going to be assigned to an asset source.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-
-        :param discovery_schedule_id: The discovery_schedule_id of this UpdateVmWareAssetSourceDetails.
-        :type: str
-        """
-        self._discovery_schedule_id = discovery_schedule_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

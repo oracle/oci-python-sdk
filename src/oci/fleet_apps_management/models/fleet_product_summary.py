@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class FleetProductSummary(object):
     """
-    Summary of the FleetProduct.
+    Summary of a product associated with a Fleet.
     """
 
     def __init__(self, **kwargs):
@@ -121,7 +121,7 @@ class FleetProductSummary(object):
     def target_count(self):
         """
         Gets the target_count of this FleetProductSummary.
-        Count of targets associated with the Product
+        Count of the targets associated with the Product.
 
 
         :return: The target_count of this FleetProductSummary.
@@ -133,7 +133,7 @@ class FleetProductSummary(object):
     def target_count(self, target_count):
         """
         Sets the target_count of this FleetProductSummary.
-        Count of targets associated with the Product
+        Count of the targets associated with the Product.
 
 
         :param target_count: The target_count of this FleetProductSummary.

@@ -116,6 +116,10 @@ class OAuth2ClientCredential(object):
             The value to assign to the is_reset_secret property of this OAuth2ClientCredential.
         :type is_reset_secret: bool
 
+        :param secret:
+            The value to assign to the secret property of this OAuth2ClientCredential.
+        :type secret: str
+
         :param scopes:
             The value to assign to the scopes property of this OAuth2ClientCredential.
         :type scopes: list[oci.identity_domains.models.OAuth2ClientCredentialScopes]
@@ -148,6 +152,7 @@ class OAuth2ClientCredential(object):
             'status': 'str',
             'expires_on': 'str',
             'is_reset_secret': 'bool',
+            'secret': 'str',
             'scopes': 'list[OAuth2ClientCredentialScopes]',
             'user': 'OAuth2ClientCredentialUser',
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user': 'ExtensionSelfChangeUser'
@@ -172,6 +177,7 @@ class OAuth2ClientCredential(object):
             'status': 'status',
             'expires_on': 'expiresOn',
             'is_reset_secret': 'isResetSecret',
+            'secret': 'secret',
             'scopes': 'scopes',
             'user': 'user',
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:selfChange:User'
@@ -195,6 +201,7 @@ class OAuth2ClientCredential(object):
         self._status = None
         self._expires_on = None
         self._is_reset_secret = None
+        self._secret = None
         self._scopes = None
         self._user = None
         self._urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user = None
@@ -932,6 +939,48 @@ class OAuth2ClientCredential(object):
         :type: bool
         """
         self._is_reset_secret = is_reset_secret
+
+    @property
+    def secret(self):
+        """
+        Gets the secret of this OAuth2ClientCredential.
+        Secret
+
+        **SCIM++ Properties:**
+         - caseExact: false
+         - type: string
+         - mutability: readOnly
+         - required: false
+         - returned: default
+         - idcsScimCompliant: false
+         - idcsSensitive: hash_sc
+
+
+        :return: The secret of this OAuth2ClientCredential.
+        :rtype: str
+        """
+        return self._secret
+
+    @secret.setter
+    def secret(self, secret):
+        """
+        Sets the secret of this OAuth2ClientCredential.
+        Secret
+
+        **SCIM++ Properties:**
+         - caseExact: false
+         - type: string
+         - mutability: readOnly
+         - required: false
+         - returned: default
+         - idcsScimCompliant: false
+         - idcsSensitive: hash_sc
+
+
+        :param secret: The secret of this OAuth2ClientCredential.
+        :type: str
+        """
+        self._secret = secret
 
     @property
     def scopes(self):

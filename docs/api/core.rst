@@ -602,6 +602,7 @@ Core Services
     oci.core.models.VirtualCircuitBandwidthShape
     oci.core.models.VirtualCircuitDrgAttachmentNetworkDetails
     oci.core.models.VirtualCircuitPublicPrefix
+    oci.core.models.VirtualCircuitRedundancyMetadata
     oci.core.models.Vlan
     oci.core.models.Vnic
     oci.core.models.VnicAttachment

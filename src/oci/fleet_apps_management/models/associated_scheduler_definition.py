@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AssociatedSchedulerDefinition(object):
     """
-    Associated SchedulerDefinition with the job.
+    SchedulerDefinition  associated with the job.
     """
 
     def __init__(self, **kwargs):
@@ -138,7 +138,7 @@ class AssociatedSchedulerDefinition(object):
     def is_recurring(self):
         """
         **[Required]** Gets the is_recurring of this AssociatedSchedulerDefinition.
-        Is this recurring schedule?
+        Is this a recurring schedule?
 
 
         :return: The is_recurring of this AssociatedSchedulerDefinition.
@@ -150,7 +150,7 @@ class AssociatedSchedulerDefinition(object):
     def is_recurring(self, is_recurring):
         """
         Sets the is_recurring of this AssociatedSchedulerDefinition.
-        Is this recurring schedule?
+        Is this a recurring schedule?
 
 
         :param is_recurring: The is_recurring of this AssociatedSchedulerDefinition.

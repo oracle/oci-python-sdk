@@ -292,6 +292,10 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the secret_version_number property of this UpdateAutonomousDatabaseDetails.
         :type secret_version_number: int
 
+        :param encryption_key:
+            The value to assign to the encryption_key property of this UpdateAutonomousDatabaseDetails.
+        :type encryption_key: oci.database.models.AutonomousDatabaseEncryptionKeyDetails
+
         """
         self.swagger_types = {
             'backup_retention_period_in_days': 'int',
@@ -344,7 +348,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'database_edition': 'str',
             'db_tools_details': 'list[DatabaseTool]',
             'secret_id': 'str',
-            'secret_version_number': 'int'
+            'secret_version_number': 'int',
+            'encryption_key': 'AutonomousDatabaseEncryptionKeyDetails'
         }
 
         self.attribute_map = {
@@ -398,7 +403,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'database_edition': 'databaseEdition',
             'db_tools_details': 'dbToolsDetails',
             'secret_id': 'secretId',
-            'secret_version_number': 'secretVersionNumber'
+            'secret_version_number': 'secretVersionNumber',
+            'encryption_key': 'encryptionKey'
         }
 
         self._backup_retention_period_in_days = None
@@ -452,6 +458,7 @@ class UpdateAutonomousDatabaseDetails(object):
         self._db_tools_details = None
         self._secret_id = None
         self._secret_version_number = None
+        self._encryption_key = None
 
     @property
     def backup_retention_period_in_days(self):
@@ -2062,6 +2069,26 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: int
         """
         self._secret_version_number = secret_version_number
+
+    @property
+    def encryption_key(self):
+        """
+        Gets the encryption_key of this UpdateAutonomousDatabaseDetails.
+
+        :return: The encryption_key of this UpdateAutonomousDatabaseDetails.
+        :rtype: oci.database.models.AutonomousDatabaseEncryptionKeyDetails
+        """
+        return self._encryption_key
+
+    @encryption_key.setter
+    def encryption_key(self, encryption_key):
+        """
+        Sets the encryption_key of this UpdateAutonomousDatabaseDetails.
+
+        :param encryption_key: The encryption_key of this UpdateAutonomousDatabaseDetails.
+        :type: oci.database.models.AutonomousDatabaseEncryptionKeyDetails
+        """
+        self._encryption_key = encryption_key
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -45,6 +45,10 @@ class CreateLdapBindAccountDetails(CreateOutboundConnectorDetails):
             The value to assign to the defined_tags property of this CreateLdapBindAccountDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param locks:
+            The value to assign to the locks property of this CreateLdapBindAccountDetails.
+        :type locks: list[oci.file_storage.models.ResourceLock]
+
         :param endpoints:
             The value to assign to the endpoints property of this CreateLdapBindAccountDetails.
         :type endpoints: list[oci.file_storage.models.Endpoint]
@@ -69,6 +73,7 @@ class CreateLdapBindAccountDetails(CreateOutboundConnectorDetails):
             'connector_type': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[ResourceLock]',
             'endpoints': 'list[Endpoint]',
             'bind_distinguished_name': 'str',
             'password_secret_id': 'str',
@@ -82,6 +87,7 @@ class CreateLdapBindAccountDetails(CreateOutboundConnectorDetails):
             'connector_type': 'connectorType',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'locks': 'locks',
             'endpoints': 'endpoints',
             'bind_distinguished_name': 'bindDistinguishedName',
             'password_secret_id': 'passwordSecretId',
@@ -94,6 +100,7 @@ class CreateLdapBindAccountDetails(CreateOutboundConnectorDetails):
         self._connector_type = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._locks = None
         self._endpoints = None
         self._bind_distinguished_name = None
         self._password_secret_id = None

@@ -123,7 +123,7 @@ class FleetAppsManagementMaintenanceWindowClientCompositeOperations(object):
             unique MaintenanceWindow identifier
 
         :param oci.fleet_apps_management.models.UpdateMaintenanceWindowDetails update_maintenance_window_details: (required)
-            The information to be updated.
+            The information to be updated for the maintenance window.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.fleet_apps_management.models.WorkRequest.status`

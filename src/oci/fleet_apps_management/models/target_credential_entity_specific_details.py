@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TargetCredentialEntitySpecificDetails(CredentialEntitySpecificDetails):
     """
-    Fleet Credential Specific Details.
+    Target credential details.
     """
 
     def __init__(self, **kwargs):
@@ -23,7 +23,7 @@ class TargetCredentialEntitySpecificDetails(CredentialEntitySpecificDetails):
 
         :param credential_level:
             The value to assign to the credential_level property of this TargetCredentialEntitySpecificDetails.
-            Allowed values for this property are: "TARGET"
+            Allowed values for this property are: "FLEET", "RESOURCE", "TARGET"
         :type credential_level: str
 
         :param resource_id:
@@ -56,7 +56,7 @@ class TargetCredentialEntitySpecificDetails(CredentialEntitySpecificDetails):
     def resource_id(self):
         """
         **[Required]** Gets the resource_id of this TargetCredentialEntitySpecificDetails.
-        OCID of the resource associated with the target for which credential is created
+        OCID of the resource associated with the target for which the credential is created.
 
 
         :return: The resource_id of this TargetCredentialEntitySpecificDetails.
@@ -68,7 +68,7 @@ class TargetCredentialEntitySpecificDetails(CredentialEntitySpecificDetails):
     def resource_id(self, resource_id):
         """
         Sets the resource_id of this TargetCredentialEntitySpecificDetails.
-        OCID of the resource associated with the target for which credential is created
+        OCID of the resource associated with the target for which the credential is created.
 
 
         :param resource_id: The resource_id of this TargetCredentialEntitySpecificDetails.
@@ -80,7 +80,7 @@ class TargetCredentialEntitySpecificDetails(CredentialEntitySpecificDetails):
     def target(self):
         """
         **[Required]** Gets the target of this TargetCredentialEntitySpecificDetails.
-        Target associated with the Credential
+        Target name for which the credential is provided.
 
 
         :return: The target of this TargetCredentialEntitySpecificDetails.
@@ -92,7 +92,7 @@ class TargetCredentialEntitySpecificDetails(CredentialEntitySpecificDetails):
     def target(self, target):
         """
         Sets the target of this TargetCredentialEntitySpecificDetails.
-        Target associated with the Credential
+        Target name for which the credential is provided.
 
 
         :param target: The target of this TargetCredentialEntitySpecificDetails.

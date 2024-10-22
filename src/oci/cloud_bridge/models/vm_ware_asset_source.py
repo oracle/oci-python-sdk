@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VmWareAssetSource(AssetSource):
     """
-    Description of an asset source.
+    VMware asset source. Used for discovery of virtual machines (VMs) registered in the VMware vCenter installation.
     """
 
     def __init__(self, **kwargs):
@@ -23,7 +23,7 @@ class VmWareAssetSource(AssetSource):
 
         :param type:
             The value to assign to the type property of this VmWareAssetSource.
-            Allowed values for this property are: "VMWARE"
+            Allowed values for this property are: "VMWARE", "AWS"
         :type type: str
 
         :param id:

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TaskRecord(object):
     """
-    Description of TaskRecord.
+    Details of a task.
     """
 
     #: A constant which can be used with the type property of a TaskRecord.

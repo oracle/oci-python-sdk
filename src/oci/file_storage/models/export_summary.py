@@ -66,6 +66,10 @@ class ExportSummary(object):
             The value to assign to the time_created property of this ExportSummary.
         :type time_created: datetime
 
+        :param locks:
+            The value to assign to the locks property of this ExportSummary.
+        :type locks: list[oci.file_storage.models.ResourceLock]
+
         """
         self.swagger_types = {
             'export_set_id': 'str',
@@ -74,7 +78,8 @@ class ExportSummary(object):
             'lifecycle_state': 'str',
             'path': 'str',
             'is_idmap_groups_for_sys_auth': 'bool',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -84,7 +89,8 @@ class ExportSummary(object):
             'lifecycle_state': 'lifecycleState',
             'path': 'path',
             'is_idmap_groups_for_sys_auth': 'isIdmapGroupsForSysAuth',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'locks': 'locks'
         }
 
         self._export_set_id = None
@@ -94,6 +100,7 @@ class ExportSummary(object):
         self._path = None
         self._is_idmap_groups_for_sys_auth = None
         self._time_created = None
+        self._locks = None
 
     @property
     def export_set_id(self):
@@ -298,6 +305,30 @@ class ExportSummary(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this ExportSummary.
+        Locks associated with this resource.
+
+
+        :return: The locks of this ExportSummary.
+        :rtype: list[oci.file_storage.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this ExportSummary.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this ExportSummary.
+        :type: list[oci.file_storage.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

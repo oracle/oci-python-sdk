@@ -98,6 +98,10 @@ class AuthToken(object):
             The value to assign to the description property of this AuthToken.
         :type description: str
 
+        :param token:
+            The value to assign to the token property of this AuthToken.
+        :type token: str
+
         :param status:
             The value to assign to the status property of this AuthToken.
             Allowed values for this property are: "ACTIVE", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
@@ -132,6 +136,7 @@ class AuthToken(object):
             'compartment_ocid': 'str',
             'tenancy_ocid': 'str',
             'description': 'str',
+            'token': 'str',
             'status': 'str',
             'expires_on': 'str',
             'user': 'AuthTokenUser',
@@ -153,6 +158,7 @@ class AuthToken(object):
             'compartment_ocid': 'compartmentOcid',
             'tenancy_ocid': 'tenancyOcid',
             'description': 'description',
+            'token': 'token',
             'status': 'status',
             'expires_on': 'expiresOn',
             'user': 'user',
@@ -173,6 +179,7 @@ class AuthToken(object):
         self._compartment_ocid = None
         self._tenancy_ocid = None
         self._description = None
+        self._token = None
         self._status = None
         self._expires_on = None
         self._user = None
@@ -723,6 +730,50 @@ class AuthToken(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def token(self):
+        """
+        Gets the token of this AuthToken.
+        token
+
+        **Added In:** 2010242156
+
+        **SCIM++ Properties:**
+         - caseExact: true
+         - type: string
+         - mutability: readOnly
+         - required: false
+         - returned: default
+         - idcsSensitive: hash_sc
+
+
+        :return: The token of this AuthToken.
+        :rtype: str
+        """
+        return self._token
+
+    @token.setter
+    def token(self, token):
+        """
+        Sets the token of this AuthToken.
+        token
+
+        **Added In:** 2010242156
+
+        **SCIM++ Properties:**
+         - caseExact: true
+         - type: string
+         - mutability: readOnly
+         - required: false
+         - returned: default
+         - idcsSensitive: hash_sc
+
+
+        :param token: The token of this AuthToken.
+        :type: str
+        """
+        self._token = token
 
     @property
     def status(self):

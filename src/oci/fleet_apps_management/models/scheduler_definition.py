@@ -416,7 +416,7 @@ class SchedulerDefinition(object):
     def time_of_next_run(self):
         """
         Gets the time_of_next_run of this SchedulerDefinition.
-        Scheduled date for the next run of the Job.
+        The scheduled date for the next run of the Job.
 
 
         :return: The time_of_next_run of this SchedulerDefinition.
@@ -428,7 +428,7 @@ class SchedulerDefinition(object):
     def time_of_next_run(self, time_of_next_run):
         """
         Sets the time_of_next_run of this SchedulerDefinition.
-        Scheduled date for the next run of the Job.
+        The scheduled date for the next run of the Job.
 
 
         :param time_of_next_run: The time_of_next_run of this SchedulerDefinition.
@@ -440,7 +440,7 @@ class SchedulerDefinition(object):
     def activity_initiation_cut_off(self):
         """
         Gets the activity_initiation_cut_off of this SchedulerDefinition.
-        Activity Initiation Cut Off
+        Activity Initiation Cut Off.
 
 
         :return: The activity_initiation_cut_off of this SchedulerDefinition.
@@ -452,7 +452,7 @@ class SchedulerDefinition(object):
     def activity_initiation_cut_off(self, activity_initiation_cut_off):
         """
         Sets the activity_initiation_cut_off of this SchedulerDefinition.
-        Activity Initiation Cut Off
+        Activity Initiation Cut Off.
 
 
         :param activity_initiation_cut_off: The activity_initiation_cut_off of this SchedulerDefinition.
@@ -508,7 +508,7 @@ class SchedulerDefinition(object):
     def count_of_affected_resources(self):
         """
         Gets the count_of_affected_resources of this SchedulerDefinition.
-        Count of Resources affected by the Schedule
+        Count of Resources affected by the Schedule.
 
 
         :return: The count_of_affected_resources of this SchedulerDefinition.
@@ -520,7 +520,7 @@ class SchedulerDefinition(object):
     def count_of_affected_resources(self, count_of_affected_resources):
         """
         Sets the count_of_affected_resources of this SchedulerDefinition.
-        Count of Resources affected by the Schedule
+        Count of Resources affected by the Schedule.
 
 
         :param count_of_affected_resources: The count_of_affected_resources of this SchedulerDefinition.
@@ -532,7 +532,7 @@ class SchedulerDefinition(object):
     def count_of_affected_targets(self):
         """
         Gets the count_of_affected_targets of this SchedulerDefinition.
-        Count of Targets affected by the Schedule
+        Count of Targets affected by the Schedule.
 
 
         :return: The count_of_affected_targets of this SchedulerDefinition.
@@ -544,7 +544,7 @@ class SchedulerDefinition(object):
     def count_of_affected_targets(self, count_of_affected_targets):
         """
         Sets the count_of_affected_targets of this SchedulerDefinition.
-        Count of Targets affected by the Schedule
+        Count of Targets affected by the Schedule.
 
 
         :param count_of_affected_targets: The count_of_affected_targets of this SchedulerDefinition.
@@ -556,7 +556,7 @@ class SchedulerDefinition(object):
     def action_group_types(self):
         """
         Gets the action_group_types of this SchedulerDefinition.
-        All ActionGroup Types part of the schedule.
+        All ActionGroup Types that are part of the schedule.
 
         Allowed values for items in this list are: "PRODUCT", "ENVIRONMENT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -571,7 +571,7 @@ class SchedulerDefinition(object):
     def action_group_types(self, action_group_types):
         """
         Sets the action_group_types of this SchedulerDefinition.
-        All ActionGroup Types part of the schedule.
+        All ActionGroup Types that are part of the schedule.
 
 
         :param action_group_types: The action_group_types of this SchedulerDefinition.
@@ -586,7 +586,7 @@ class SchedulerDefinition(object):
     def application_types(self):
         """
         Gets the application_types of this SchedulerDefinition.
-        All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+        All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
 
 
         :return: The application_types of this SchedulerDefinition.
@@ -598,7 +598,7 @@ class SchedulerDefinition(object):
     def application_types(self, application_types):
         """
         Sets the application_types of this SchedulerDefinition.
-        All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+        All application types that are part of the schedule for ENVIRONMENT ActionGroup Type.
 
 
         :param application_types: The application_types of this SchedulerDefinition.
@@ -610,7 +610,7 @@ class SchedulerDefinition(object):
     def products(self):
         """
         Gets the products of this SchedulerDefinition.
-        All products part of the schedule for PRODUCT ActionGroup Type.
+        All products that are part of the schedule for PRODUCT ActionGroup Type.
 
 
         :return: The products of this SchedulerDefinition.
@@ -622,7 +622,7 @@ class SchedulerDefinition(object):
     def products(self, products):
         """
         Sets the products of this SchedulerDefinition.
-        All products part of the schedule for PRODUCT ActionGroup Type.
+        All products that are part of the schedule for PRODUCT ActionGroup Type.
 
 
         :param products: The products of this SchedulerDefinition.
@@ -634,7 +634,7 @@ class SchedulerDefinition(object):
     def lifecycle_operations(self):
         """
         Gets the lifecycle_operations of this SchedulerDefinition.
-        All LifeCycle Operations part of the schedule
+        All LifeCycle Operations that are part of the schedule.
 
 
         :return: The lifecycle_operations of this SchedulerDefinition.
@@ -646,7 +646,7 @@ class SchedulerDefinition(object):
     def lifecycle_operations(self, lifecycle_operations):
         """
         Sets the lifecycle_operations of this SchedulerDefinition.
-        All LifeCycle Operations part of the schedule
+        All LifeCycle Operations that are part of the schedule.
 
 
         :param lifecycle_operations: The lifecycle_operations of this SchedulerDefinition.

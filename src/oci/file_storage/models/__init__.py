@@ -46,6 +46,7 @@ from .replication_estimate import ReplicationEstimate
 from .replication_summary import ReplicationSummary
 from .replication_target import ReplicationTarget
 from .replication_target_summary import ReplicationTargetSummary
+from .resource_lock import ResourceLock
 from .schedule_downgrade_shape_mount_target_details import ScheduleDowngradeShapeMountTargetDetails
 from .snapshot import Snapshot
 from .snapshot_schedule import SnapshotSchedule
@@ -107,6 +108,7 @@ file_storage_type_mapping = {
     "ReplicationSummary": ReplicationSummary,
     "ReplicationTarget": ReplicationTarget,
     "ReplicationTargetSummary": ReplicationTargetSummary,
+    "ResourceLock": ResourceLock,
     "ScheduleDowngradeShapeMountTargetDetails": ScheduleDowngradeShapeMountTargetDetails,
     "Snapshot": Snapshot,
     "SnapshotSchedule": SnapshotSchedule,

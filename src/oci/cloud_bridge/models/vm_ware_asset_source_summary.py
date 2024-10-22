@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VmWareAssetSourceSummary(AssetSourceSummary):
     """
-    Description of an asset source.
+    Summary of an VMware asset source provided in the list.
     """
 
     def __init__(self, **kwargs):
@@ -23,7 +23,7 @@ class VmWareAssetSourceSummary(AssetSourceSummary):
 
         :param type:
             The value to assign to the type property of this VmWareAssetSourceSummary.
-            Allowed values for this property are: "VMWARE"
+            Allowed values for this property are: "VMWARE", "AWS"
         :type type: str
 
         :param id:

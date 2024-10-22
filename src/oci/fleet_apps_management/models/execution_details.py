@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExecutionDetails(object):
     """
-    Content Source Details
+    Execution details.
     """
 
     #: A constant which can be used with the execution_type property of a ExecutionDetails.

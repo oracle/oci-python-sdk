@@ -261,6 +261,7 @@ Opsi
     oci.opsi.models.HostInsightsDataObject
     oci.opsi.models.HostInsightsDataObjectSummary
     oci.opsi.models.HostInstanceMap
+    oci.opsi.models.HostIoStatistics
     oci.opsi.models.HostIoUsage
     oci.opsi.models.HostMemoryConfiguration
     oci.opsi.models.HostMemoryRecommendations
@@ -308,6 +309,8 @@ Opsi
     oci.opsi.models.IngestSqlTextDetails
     oci.opsi.models.IngestSqlTextResponseDetails
     oci.opsi.models.InstanceMetrics
+    oci.opsi.models.IoUsageTrend
+    oci.opsi.models.IoUsageTrendAggregation
     oci.opsi.models.ListObjects
     oci.opsi.models.MacsManagedCloudDatabaseConfigurationSummary
     oci.opsi.models.MacsManagedCloudDatabaseHostInsight
@@ -442,6 +445,7 @@ Opsi
     oci.opsi.models.SummarizeExadataInsightResourceUsageCollection
     oci.opsi.models.SummarizeExadataInsightResourceUtilizationInsightAggregation
     oci.opsi.models.SummarizeHostInsightHostRecommendationAggregation
+    oci.opsi.models.SummarizeHostInsightIoUsageTrendAggregationCollection
     oci.opsi.models.SummarizeHostInsightNetworkUsageTrendAggregationCollection
     oci.opsi.models.SummarizeHostInsightResourceCapacityTrendAggregationCollection
     oci.opsi.models.SummarizeHostInsightResourceForecastTrendAggregation

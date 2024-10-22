@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Group(object):
     """
-    The group of the runbook
+    The group of the runbook.
     """
 
     #: A constant which can be used with the type property of a Group.
@@ -67,7 +67,10 @@ class Group(object):
     def type(self):
         """
         **[Required]** Gets the type of this Group.
-        The type of the group
+        The type of the group.
+        PARALLEL_TASK_GROUP : Helps to execute tasks parallelly inside a resource.
+        PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly.
+        ROLLING_RESOURCE_GROUP : Executes tasks across resources in a rolling order.
 
         Allowed values for this property are: "PARALLEL_TASK_GROUP", "PARALLEL_RESOURCE_GROUP", "ROLLING_RESOURCE_GROUP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -82,7 +85,10 @@ class Group(object):
     def type(self, type):
         """
         Sets the type of this Group.
-        The type of the group
+        The type of the group.
+        PARALLEL_TASK_GROUP : Helps to execute tasks parallelly inside a resource.
+        PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly.
+        ROLLING_RESOURCE_GROUP : Executes tasks across resources in a rolling order.
 
 
         :param type: The type of this Group.
@@ -97,7 +103,7 @@ class Group(object):
     def name(self):
         """
         **[Required]** Gets the name of this Group.
-        The name of the group
+        The name of the group.
 
 
         :return: The name of this Group.
@@ -109,7 +115,7 @@ class Group(object):
     def name(self, name):
         """
         Sets the name of this Group.
-        The name of the group
+        The name of the group.
 
 
         :param name: The name of this Group.

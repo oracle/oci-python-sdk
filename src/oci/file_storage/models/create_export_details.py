@@ -36,6 +36,10 @@ class CreateExportDetails(object):
             The value to assign to the path property of this CreateExportDetails.
         :type path: str
 
+        :param locks:
+            The value to assign to the locks property of this CreateExportDetails.
+        :type locks: list[oci.file_storage.models.ResourceLock]
+
         :param is_idmap_groups_for_sys_auth:
             The value to assign to the is_idmap_groups_for_sys_auth property of this CreateExportDetails.
         :type is_idmap_groups_for_sys_auth: bool
@@ -46,6 +50,7 @@ class CreateExportDetails(object):
             'export_set_id': 'str',
             'file_system_id': 'str',
             'path': 'str',
+            'locks': 'list[ResourceLock]',
             'is_idmap_groups_for_sys_auth': 'bool'
         }
 
@@ -54,6 +59,7 @@ class CreateExportDetails(object):
             'export_set_id': 'exportSetId',
             'file_system_id': 'fileSystemId',
             'path': 'path',
+            'locks': 'locks',
             'is_idmap_groups_for_sys_auth': 'isIdmapGroupsForSysAuth'
         }
 
@@ -61,6 +67,7 @@ class CreateExportDetails(object):
         self._export_set_id = None
         self._file_system_id = None
         self._path = None
+        self._locks = None
         self._is_idmap_groups_for_sys_auth = None
 
     @property
@@ -234,6 +241,30 @@ class CreateExportDetails(object):
         :type: str
         """
         self._path = path
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this CreateExportDetails.
+        Locks associated with this resource.
+
+
+        :return: The locks of this CreateExportDetails.
+        :rtype: list[oci.file_storage.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this CreateExportDetails.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this CreateExportDetails.
+        :type: list[oci.file_storage.models.ResourceLock]
+        """
+        self._locks = locks
 
     @property
     def is_idmap_groups_for_sys_auth(self):

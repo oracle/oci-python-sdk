@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ContentDetails(object):
     """
-    Content Source Details.
+    Content Source details.
     """
 
     #: A constant which can be used with the source_type property of a ContentDetails.
@@ -62,7 +62,7 @@ class ContentDetails(object):
     def source_type(self):
         """
         **[Required]** Gets the source_type of this ContentDetails.
-        Content Source Details.
+        Content Source type details.
 
         Allowed values for this property are: "OBJECT_STORAGE_BUCKET", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -77,7 +77,7 @@ class ContentDetails(object):
     def source_type(self, source_type):
         """
         Sets the source_type of this ContentDetails.
-        Content Source Details.
+        Content Source type details.
 
 
         :param source_type: The source_type of this ContentDetails.

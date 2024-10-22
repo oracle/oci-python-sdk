@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Associations(object):
     """
-    JSON content with required associations
+    Associations for the runbook.
     """
 
     def __init__(self, **kwargs):
@@ -32,6 +32,10 @@ class Associations(object):
             The value to assign to the execution_workflow_details property of this Associations.
         :type execution_workflow_details: oci.fleet_apps_management.models.ExecutionWorkflowDetails
 
+        :param rollback_workflow_details:
+            The value to assign to the rollback_workflow_details property of this Associations.
+        :type rollback_workflow_details: oci.fleet_apps_management.models.RollbackWorkflowDetails
+
         :param version:
             The value to assign to the version property of this Associations.
         :type version: str
@@ -41,6 +45,7 @@ class Associations(object):
             'tasks': 'list[Task]',
             'groups': 'list[Group]',
             'execution_workflow_details': 'ExecutionWorkflowDetails',
+            'rollback_workflow_details': 'RollbackWorkflowDetails',
             'version': 'str'
         }
 
@@ -48,19 +53,21 @@ class Associations(object):
             'tasks': 'tasks',
             'groups': 'groups',
             'execution_workflow_details': 'executionWorkflowDetails',
+            'rollback_workflow_details': 'rollbackWorkflowDetails',
             'version': 'version'
         }
 
         self._tasks = None
         self._groups = None
         self._execution_workflow_details = None
+        self._rollback_workflow_details = None
         self._version = None
 
     @property
     def tasks(self):
         """
         **[Required]** Gets the tasks of this Associations.
-        A set of tasks to execute in the runbook
+        A set of tasks to execute in the runbook.
 
 
         :return: The tasks of this Associations.
@@ -72,7 +79,7 @@ class Associations(object):
     def tasks(self, tasks):
         """
         Sets the tasks of this Associations.
-        A set of tasks to execute in the runbook
+        A set of tasks to execute in the runbook.
 
 
         :param tasks: The tasks of this Associations.
@@ -84,7 +91,7 @@ class Associations(object):
     def groups(self):
         """
         **[Required]** Gets the groups of this Associations.
-        The groups of the runbook
+        The groups of the runbook.
 
 
         :return: The groups of this Associations.
@@ -96,7 +103,7 @@ class Associations(object):
     def groups(self, groups):
         """
         Sets the groups of this Associations.
-        The groups of the runbook
+        The groups of the runbook.
 
 
         :param groups: The groups of this Associations.
@@ -123,6 +130,26 @@ class Associations(object):
         :type: oci.fleet_apps_management.models.ExecutionWorkflowDetails
         """
         self._execution_workflow_details = execution_workflow_details
+
+    @property
+    def rollback_workflow_details(self):
+        """
+        Gets the rollback_workflow_details of this Associations.
+
+        :return: The rollback_workflow_details of this Associations.
+        :rtype: oci.fleet_apps_management.models.RollbackWorkflowDetails
+        """
+        return self._rollback_workflow_details
+
+    @rollback_workflow_details.setter
+    def rollback_workflow_details(self, rollback_workflow_details):
+        """
+        Sets the rollback_workflow_details of this Associations.
+
+        :param rollback_workflow_details: The rollback_workflow_details of this Associations.
+        :type: oci.fleet_apps_management.models.RollbackWorkflowDetails
+        """
+        self._rollback_workflow_details = rollback_workflow_details
 
     @property
     def version(self):

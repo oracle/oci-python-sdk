@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CredentialDetails(object):
     """
-    Credential Details
+    Credential Details.
     """
 
     #: A constant which can be used with the credential_type property of a CredentialDetails.
@@ -78,7 +78,7 @@ class CredentialDetails(object):
     def credential_type(self):
         """
         **[Required]** Gets the credential_type of this CredentialDetails.
-        Credential Type
+        Credential Type.
 
         Allowed values for this property are: "PLAIN_TEXT", "VAULT_SECRET", "KEY_ENCRYPTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -93,7 +93,7 @@ class CredentialDetails(object):
     def credential_type(self, credential_type):
         """
         Sets the credential_type of this CredentialDetails.
-        Credential Type
+        Credential Type.
 
 
         :param credential_type: The credential_type of this CredentialDetails.

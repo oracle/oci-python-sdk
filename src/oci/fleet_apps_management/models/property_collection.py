@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PropertyCollection(object):
     """
-    Results of a property search. Contains boh PropertySummary items and other information, such as metadata.
+    Results of a property search. Contains both PropertySummary items and other information, such as metadata.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class PropertyCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this PropertyCollection.
-        List of propertys.
+        List of properties.
 
 
         :return: The items of this PropertyCollection.
@@ -51,7 +51,7 @@ class PropertyCollection(object):
     def items(self, items):
         """
         Sets the items of this PropertyCollection.
-        List of propertys.
+        List of properties.
 
 
         :param items: The items of this PropertyCollection.

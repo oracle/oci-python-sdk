@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class GenerateComplianceReportDetails(object):
     """
-    Request to generate compliance report fort the fleet
+    Request to generate compliance report for the fleet.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,8 @@ class GenerateComplianceReportDetails(object):
     def are_details_required(self):
         """
         Gets the are_details_required of this GenerateComplianceReportDetails.
-        Are compliance details required at target level also
+        A value that specifies if compliance details are required at the target level also?
+        Allowed values are N and Y.
 
 
         :return: The are_details_required of this GenerateComplianceReportDetails.
@@ -51,7 +52,8 @@ class GenerateComplianceReportDetails(object):
     def are_details_required(self, are_details_required):
         """
         Sets the are_details_required of this GenerateComplianceReportDetails.
-        Are compliance details required at target level also
+        A value that specifies if compliance details are required at the target level also?
+        Allowed values are N and Y.
 
 
         :param are_details_required: The are_details_required of this GenerateComplianceReportDetails.

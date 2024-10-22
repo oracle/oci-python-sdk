@@ -77,7 +77,8 @@ class CreateOnboardingDetails(object):
     def is_fams_tag_enabled(self):
         """
         Gets the is_fams_tag_enabled of this CreateOnboardingDetails.
-        A value determining FAMS tag is enabled or not
+        A value determining if the Fleet Application Management tagging is enabled or not.
+        Allow Fleet Application Management to tag resources with fleet name using \"Oracle$FAMS-Tags.FleetName\" tag.
 
 
         :return: The is_fams_tag_enabled of this CreateOnboardingDetails.
@@ -89,7 +90,8 @@ class CreateOnboardingDetails(object):
     def is_fams_tag_enabled(self, is_fams_tag_enabled):
         """
         Sets the is_fams_tag_enabled of this CreateOnboardingDetails.
-        A value determining FAMS tag is enabled or not
+        A value determining if the Fleet Application Management tagging is enabled or not.
+        Allow Fleet Application Management to tag resources with fleet name using \"Oracle$FAMS-Tags.FleetName\" tag.
 
 
         :param is_fams_tag_enabled: The is_fams_tag_enabled of this CreateOnboardingDetails.
@@ -101,7 +103,8 @@ class CreateOnboardingDetails(object):
     def is_cost_tracking_tag_enabled(self):
         """
         Gets the is_cost_tracking_tag_enabled of this CreateOnboardingDetails.
-        A value determining if cost tracking tag is enabled or not
+        A value determining if the cost tracking tag is enabled or not.
+        Allow Fleet Application Management to tag resources with cost tracking tag using \"Oracle$FAMS-Tags.FAMSManaged\" tag.
 
 
         :return: The is_cost_tracking_tag_enabled of this CreateOnboardingDetails.
@@ -113,7 +116,8 @@ class CreateOnboardingDetails(object):
     def is_cost_tracking_tag_enabled(self, is_cost_tracking_tag_enabled):
         """
         Sets the is_cost_tracking_tag_enabled of this CreateOnboardingDetails.
-        A value determining if cost tracking tag is enabled or not
+        A value determining if the cost tracking tag is enabled or not.
+        Allow Fleet Application Management to tag resources with cost tracking tag using \"Oracle$FAMS-Tags.FAMSManaged\" tag.
 
 
         :param is_cost_tracking_tag_enabled: The is_cost_tracking_tag_enabled of this CreateOnboardingDetails.

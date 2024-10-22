@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class NotificationPreferences(object):
     """
-    Conditions when met to send notifications on the fleet activities
+    Notification information to get notified when the fleet status changes.
     """
 
     def __init__(self, **kwargs):
@@ -53,7 +53,8 @@ class NotificationPreferences(object):
     def topic_id(self):
         """
         **[Required]** Gets the topic_id of this NotificationPreferences.
-        Topic Id where the notifications will be directed
+        Topic Id where the notifications will be directed.
+        A topic is a communication channel for sending messages on chosen events to subscriptions.
 
 
         :return: The topic_id of this NotificationPreferences.
@@ -65,7 +66,8 @@ class NotificationPreferences(object):
     def topic_id(self, topic_id):
         """
         Sets the topic_id of this NotificationPreferences.
-        Topic Id where the notifications will be directed
+        Topic Id where the notifications will be directed.
+        A topic is a communication channel for sending messages on chosen events to subscriptions.
 
 
         :param topic_id: The topic_id of this NotificationPreferences.
@@ -77,7 +79,7 @@ class NotificationPreferences(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this NotificationPreferences.
-        Copartment Id of the topic where the notifications will be directed
+        Compartment ID the topic belongs to.
 
 
         :return: The compartment_id of this NotificationPreferences.
@@ -89,7 +91,7 @@ class NotificationPreferences(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this NotificationPreferences.
-        Copartment Id of the topic where the notifications will be directed
+        Compartment ID the topic belongs to.
 
 
         :param compartment_id: The compartment_id of this NotificationPreferences.

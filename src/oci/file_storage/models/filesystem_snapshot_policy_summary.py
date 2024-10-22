@@ -70,6 +70,10 @@ class FilesystemSnapshotPolicySummary(object):
             The value to assign to the time_created property of this FilesystemSnapshotPolicySummary.
         :type time_created: datetime
 
+        :param locks:
+            The value to assign to the locks property of this FilesystemSnapshotPolicySummary.
+        :type locks: list[oci.file_storage.models.ResourceLock]
+
         :param policy_prefix:
             The value to assign to the policy_prefix property of this FilesystemSnapshotPolicySummary.
         :type policy_prefix: str
@@ -90,6 +94,7 @@ class FilesystemSnapshotPolicySummary(object):
             'lifecycle_state': 'str',
             'display_name': 'str',
             'time_created': 'datetime',
+            'locks': 'list[ResourceLock]',
             'policy_prefix': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -102,6 +107,7 @@ class FilesystemSnapshotPolicySummary(object):
             'lifecycle_state': 'lifecycleState',
             'display_name': 'displayName',
             'time_created': 'timeCreated',
+            'locks': 'locks',
             'policy_prefix': 'policyPrefix',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -113,6 +119,7 @@ class FilesystemSnapshotPolicySummary(object):
         self._lifecycle_state = None
         self._display_name = None
         self._time_created = None
+        self._locks = None
         self._policy_prefix = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -290,6 +297,30 @@ class FilesystemSnapshotPolicySummary(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this FilesystemSnapshotPolicySummary.
+        Locks associated with this resource.
+
+
+        :return: The locks of this FilesystemSnapshotPolicySummary.
+        :rtype: list[oci.file_storage.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this FilesystemSnapshotPolicySummary.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this FilesystemSnapshotPolicySummary.
+        :type: list[oci.file_storage.models.ResourceLock]
+        """
+        self._locks = locks
 
     @property
     def policy_prefix(self):

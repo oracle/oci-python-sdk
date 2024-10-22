@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ActionGroupDetails(object):
     """
-    Action Group.
+    Action Group details.
     """
 
     #: A constant which can be used with the type property of a ActionGroupDetails.
@@ -67,6 +67,10 @@ class ActionGroupDetails(object):
     #: This constant has a value of "TIMED_OUT"
     STATUS_TIMED_OUT = "TIMED_OUT"
 
+    #: A constant which can be used with the status property of a ActionGroupDetails.
+    #: This constant has a value of "PAUSED"
+    STATUS_PAUSED = "PAUSED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ActionGroupDetails object with values from keyword arguments.
@@ -104,7 +108,7 @@ class ActionGroupDetails(object):
 
         :param status:
             The value to assign to the status property of this ActionGroupDetails.
-            Allowed values for this property are: "ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT", "PAUSED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -165,7 +169,7 @@ class ActionGroupDetails(object):
     def resource_id(self):
         """
         **[Required]** Gets the resource_id of this ActionGroupDetails.
-        The ID of the ActionGroup resource .
+        The ID of the ActionGroup resource.
         Ex:fleetId.
 
 
@@ -178,7 +182,7 @@ class ActionGroupDetails(object):
     def resource_id(self, resource_id):
         """
         Sets the resource_id of this ActionGroupDetails.
-        The ID of the ActionGroup resource .
+        The ID of the ActionGroup resource.
         Ex:fleetId.
 
 
@@ -297,7 +301,7 @@ class ActionGroupDetails(object):
     def lifecycle_operation(self):
         """
         Gets the lifecycle_operation of this ActionGroupDetails.
-        LifeCycle Operation
+        LifeCycle Operation.
 
 
         :return: The lifecycle_operation of this ActionGroupDetails.
@@ -309,7 +313,7 @@ class ActionGroupDetails(object):
     def lifecycle_operation(self, lifecycle_operation):
         """
         Sets the lifecycle_operation of this ActionGroupDetails.
-        LifeCycle Operation
+        LifeCycle Operation.
 
 
         :param lifecycle_operation: The lifecycle_operation of this ActionGroupDetails.
@@ -345,9 +349,9 @@ class ActionGroupDetails(object):
     def status(self):
         """
         Gets the status of this ActionGroupDetails.
-        Status of the Job at Action Group Level
+        Status of the Job at Action Group Level.
 
-        Allowed values for this property are: "ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT", "PAUSED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -360,13 +364,13 @@ class ActionGroupDetails(object):
     def status(self, status):
         """
         Sets the status of this ActionGroupDetails.
-        Status of the Job at Action Group Level
+        Status of the Job at Action Group Level.
 
 
         :param status: The status of this ActionGroupDetails.
         :type: str
         """
-        allowed_values = ["ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT"]
+        allowed_values = ["ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT", "PAUSED"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status
@@ -375,7 +379,7 @@ class ActionGroupDetails(object):
     def time_started(self):
         """
         Gets the time_started of this ActionGroupDetails.
-        The time the the Scheduler Job started. An RFC3339 formatted datetime string
+        The time the Scheduler Job started. An RFC3339 formatted datetime string.
 
 
         :return: The time_started of this ActionGroupDetails.
@@ -387,7 +391,7 @@ class ActionGroupDetails(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this ActionGroupDetails.
-        The time the the Scheduler Job started. An RFC3339 formatted datetime string
+        The time the Scheduler Job started. An RFC3339 formatted datetime string.
 
 
         :param time_started: The time_started of this ActionGroupDetails.
@@ -399,7 +403,7 @@ class ActionGroupDetails(object):
     def time_ended(self):
         """
         Gets the time_ended of this ActionGroupDetails.
-        The time the Scheduler Job ended. An RFC3339 formatted datetime string
+        The time the Scheduler Job ended. An RFC3339 formatted datetime string.
 
 
         :return: The time_ended of this ActionGroupDetails.
@@ -411,7 +415,7 @@ class ActionGroupDetails(object):
     def time_ended(self, time_ended):
         """
         Sets the time_ended of this ActionGroupDetails.
-        The time the Scheduler Job ended. An RFC3339 formatted datetime string
+        The time the Scheduler Job ended. An RFC3339 formatted datetime string.
 
 
         :param time_ended: The time_ended of this ActionGroupDetails.
@@ -423,7 +427,7 @@ class ActionGroupDetails(object):
     def runbook_id(self):
         """
         **[Required]** Gets the runbook_id of this ActionGroupDetails.
-        ID of the runbook
+        OCID of the runbook.
 
 
         :return: The runbook_id of this ActionGroupDetails.
@@ -435,7 +439,7 @@ class ActionGroupDetails(object):
     def runbook_id(self, runbook_id):
         """
         Sets the runbook_id of this ActionGroupDetails.
-        ID of the runbook
+        OCID of the runbook.
 
 
         :param runbook_id: The runbook_id of this ActionGroupDetails.

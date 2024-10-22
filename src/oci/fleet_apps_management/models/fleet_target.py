@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class FleetTarget(object):
     """
-    Description of FleetTarget.
+    A confirmed target within a fleet.
     """
 
     #: A constant which can be used with the compliance_state property of a FleetTarget.
@@ -82,6 +82,18 @@ class FleetTarget(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type compliance_state: str
 
+        :param time_of_last_successful_discovery:
+            The value to assign to the time_of_last_successful_discovery property of this FleetTarget.
+        :type time_of_last_successful_discovery: datetime
+
+        :param time_of_last_discovery_attempt:
+            The value to assign to the time_of_last_discovery_attempt property of this FleetTarget.
+        :type time_of_last_discovery_attempt: datetime
+
+        :param is_last_discovery_attempt_successful:
+            The value to assign to the is_last_discovery_attempt_successful property of this FleetTarget.
+        :type is_last_discovery_attempt_successful: bool
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this FleetTarget.
             Allowed values for this property are: "ACTIVE", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -102,6 +114,9 @@ class FleetTarget(object):
             'product': 'str',
             'resource': 'TargetResource',
             'compliance_state': 'str',
+            'time_of_last_successful_discovery': 'datetime',
+            'time_of_last_discovery_attempt': 'datetime',
+            'is_last_discovery_attempt_successful': 'bool',
             'lifecycle_state': 'str',
             'system_tags': 'dict(str, dict(str, object))'
         }
@@ -115,6 +130,9 @@ class FleetTarget(object):
             'product': 'product',
             'resource': 'resource',
             'compliance_state': 'complianceState',
+            'time_of_last_successful_discovery': 'timeOfLastSuccessfulDiscovery',
+            'time_of_last_discovery_attempt': 'timeOfLastDiscoveryAttempt',
+            'is_last_discovery_attempt_successful': 'isLastDiscoveryAttemptSuccessful',
             'lifecycle_state': 'lifecycleState',
             'system_tags': 'systemTags'
         }
@@ -127,6 +145,9 @@ class FleetTarget(object):
         self._product = None
         self._resource = None
         self._compliance_state = None
+        self._time_of_last_successful_discovery = None
+        self._time_of_last_discovery_attempt = None
+        self._is_last_discovery_attempt_successful = None
         self._lifecycle_state = None
         self._system_tags = None
 
@@ -236,7 +257,7 @@ class FleetTarget(object):
     def version(self):
         """
         Gets the version of this FleetTarget.
-        Current version of Target
+        Current version of target.
 
 
         :return: The version of this FleetTarget.
@@ -248,7 +269,7 @@ class FleetTarget(object):
     def version(self, version):
         """
         Sets the version of this FleetTarget.
-        Current version of Target
+        Current version of target.
 
 
         :param version: The version of this FleetTarget.
@@ -304,7 +325,7 @@ class FleetTarget(object):
     def compliance_state(self):
         """
         Gets the compliance_state of this FleetTarget.
-        Last known compliance state of Target.
+        The last known compliance state of the target.
 
         Allowed values for this property are: "UNKNOWN", "COMPLIANT", "NON_COMPLIANT", "WARNING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -319,7 +340,7 @@ class FleetTarget(object):
     def compliance_state(self, compliance_state):
         """
         Sets the compliance_state of this FleetTarget.
-        Last known compliance state of Target.
+        The last known compliance state of the target.
 
 
         :param compliance_state: The compliance_state of this FleetTarget.
@@ -329,6 +350,78 @@ class FleetTarget(object):
         if not value_allowed_none_or_none_sentinel(compliance_state, allowed_values):
             compliance_state = 'UNKNOWN_ENUM_VALUE'
         self._compliance_state = compliance_state
+
+    @property
+    def time_of_last_successful_discovery(self):
+        """
+        Gets the time_of_last_successful_discovery of this FleetTarget.
+        The time when the last successful discovery was made.
+
+
+        :return: The time_of_last_successful_discovery of this FleetTarget.
+        :rtype: datetime
+        """
+        return self._time_of_last_successful_discovery
+
+    @time_of_last_successful_discovery.setter
+    def time_of_last_successful_discovery(self, time_of_last_successful_discovery):
+        """
+        Sets the time_of_last_successful_discovery of this FleetTarget.
+        The time when the last successful discovery was made.
+
+
+        :param time_of_last_successful_discovery: The time_of_last_successful_discovery of this FleetTarget.
+        :type: datetime
+        """
+        self._time_of_last_successful_discovery = time_of_last_successful_discovery
+
+    @property
+    def time_of_last_discovery_attempt(self):
+        """
+        Gets the time_of_last_discovery_attempt of this FleetTarget.
+        The time when last discovery was attempted.
+
+
+        :return: The time_of_last_discovery_attempt of this FleetTarget.
+        :rtype: datetime
+        """
+        return self._time_of_last_discovery_attempt
+
+    @time_of_last_discovery_attempt.setter
+    def time_of_last_discovery_attempt(self, time_of_last_discovery_attempt):
+        """
+        Sets the time_of_last_discovery_attempt of this FleetTarget.
+        The time when last discovery was attempted.
+
+
+        :param time_of_last_discovery_attempt: The time_of_last_discovery_attempt of this FleetTarget.
+        :type: datetime
+        """
+        self._time_of_last_discovery_attempt = time_of_last_discovery_attempt
+
+    @property
+    def is_last_discovery_attempt_successful(self):
+        """
+        Gets the is_last_discovery_attempt_successful of this FleetTarget.
+        A boolean flag that represents whether the last discovery attempt was successful.
+
+
+        :return: The is_last_discovery_attempt_successful of this FleetTarget.
+        :rtype: bool
+        """
+        return self._is_last_discovery_attempt_successful
+
+    @is_last_discovery_attempt_successful.setter
+    def is_last_discovery_attempt_successful(self, is_last_discovery_attempt_successful):
+        """
+        Sets the is_last_discovery_attempt_successful of this FleetTarget.
+        A boolean flag that represents whether the last discovery attempt was successful.
+
+
+        :param is_last_discovery_attempt_successful: The is_last_discovery_attempt_successful of this FleetTarget.
+        :type: bool
+        """
+        self._is_last_discovery_attempt_successful = is_last_discovery_attempt_successful
 
     @property
     def lifecycle_state(self):

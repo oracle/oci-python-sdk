@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RequestResourceValidationDetails(object):
     """
-    Request to initiate resource validation
+    Request to initiate resource validation.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class RequestResourceValidationDetails(object):
     def is_applicable_to_all_resources(self):
         """
         Gets the is_applicable_to_all_resources of this RequestResourceValidationDetails.
-        A boolean flag which decides if all resources within the fleet should be part of vaidation.
+        A boolean flag that decides if all resources within the fleet should be part of the validation.
 
 
         :return: The is_applicable_to_all_resources of this RequestResourceValidationDetails.
@@ -58,7 +58,7 @@ class RequestResourceValidationDetails(object):
     def is_applicable_to_all_resources(self, is_applicable_to_all_resources):
         """
         Sets the is_applicable_to_all_resources of this RequestResourceValidationDetails.
-        A boolean flag which decides if all resources within the fleet should be part of vaidation.
+        A boolean flag that decides if all resources within the fleet should be part of the validation.
 
 
         :param is_applicable_to_all_resources: The is_applicable_to_all_resources of this RequestResourceValidationDetails.
@@ -70,7 +70,7 @@ class RequestResourceValidationDetails(object):
     def resource_ids(self):
         """
         Gets the resource_ids of this RequestResourceValidationDetails.
-        Resource OCIDS that need to be included for validation.
+        Resource OCIDS to be included for validation.
 
 
         :return: The resource_ids of this RequestResourceValidationDetails.
@@ -82,7 +82,7 @@ class RequestResourceValidationDetails(object):
     def resource_ids(self, resource_ids):
         """
         Sets the resource_ids of this RequestResourceValidationDetails.
-        Resource OCIDS that need to be included for validation.
+        Resource OCIDS to be included for validation.
 
 
         :param resource_ids: The resource_ids of this RequestResourceValidationDetails.

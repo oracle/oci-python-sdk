@@ -63,7 +63,7 @@ class WorkflowGroup(object):
     def group_name(self):
         """
         **[Required]** Gets the group_name of this WorkflowGroup.
-        Provide the name of the group.
+        Name of the group.
 
 
         :return: The group_name of this WorkflowGroup.
@@ -75,7 +75,7 @@ class WorkflowGroup(object):
     def group_name(self, group_name):
         """
         Sets the group_name of this WorkflowGroup.
-        Provide the name of the group.
+        Name of the group.
 
 
         :param group_name: The group_name of this WorkflowGroup.

@@ -23,13 +23,23 @@ class UpdateAssetDetails(object):
     #: This constant has a value of "VM"
     ASSET_TYPE_VM = "VM"
 
+    #: A constant which can be used with the asset_type property of a UpdateAssetDetails.
+    #: This constant has a value of "AWS_EC2"
+    ASSET_TYPE_AWS_EC2 = "AWS_EC2"
+
+    #: A constant which can be used with the asset_type property of a UpdateAssetDetails.
+    #: This constant has a value of "AWS_EBS"
+    ASSET_TYPE_AWS_EBS = "AWS_EBS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateAssetDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.cloud_bridge.models.UpdateVmAssetDetails`
+        * :class:`~oci.cloud_bridge.models.UpdateAwsEbsAssetDetails`
         * :class:`~oci.cloud_bridge.models.UpdateVmwareVmAssetDetails`
+        * :class:`~oci.cloud_bridge.models.UpdateAwsEc2AssetDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -39,7 +49,7 @@ class UpdateAssetDetails(object):
 
         :param asset_type:
             The value to assign to the asset_type property of this UpdateAssetDetails.
-            Allowed values for this property are: "VMWARE_VM", "VM"
+            Allowed values for this property are: "VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"
         :type asset_type: str
 
         :param asset_source_ids:
@@ -88,8 +98,14 @@ class UpdateAssetDetails(object):
         if type == 'VM':
             return 'UpdateVmAssetDetails'
 
+        if type == 'AWS_EBS':
+            return 'UpdateAwsEbsAssetDetails'
+
         if type == 'VMWARE_VM':
             return 'UpdateVmwareVmAssetDetails'
+
+        if type == 'AWS_EC2':
+            return 'UpdateAwsEc2AssetDetails'
         else:
             return 'UpdateAssetDetails'
 
@@ -123,7 +139,7 @@ class UpdateAssetDetails(object):
         **[Required]** Gets the asset_type of this UpdateAssetDetails.
         Asset type
 
-        Allowed values for this property are: "VMWARE_VM", "VM"
+        Allowed values for this property are: "VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"
 
 
         :return: The asset_type of this UpdateAssetDetails.
@@ -141,7 +157,7 @@ class UpdateAssetDetails(object):
         :param asset_type: The asset_type of this UpdateAssetDetails.
         :type: str
         """
-        allowed_values = ["VMWARE_VM", "VM"]
+        allowed_values = ["VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"]
         if not value_allowed_none_or_none_sentinel(asset_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `asset_type`, must be None or one of {allowed_values}"

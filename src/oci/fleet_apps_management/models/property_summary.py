@@ -376,7 +376,7 @@ class PropertySummary(object):
     def selection(self):
         """
         Gets the selection of this PropertySummary.
-        Text selection of the category
+        Text selection of the property.
 
         Allowed values for this property are: "SINGLE_CHOICE", "MULTI_CHOICE", "DEFAULT_TEXT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -391,7 +391,7 @@ class PropertySummary(object):
     def selection(self, selection):
         """
         Sets the selection of this PropertySummary.
-        Text selection of the category
+        Text selection of the property.
 
 
         :param selection: The selection of this PropertySummary.
@@ -406,7 +406,7 @@ class PropertySummary(object):
     def value_type(self):
         """
         Gets the value_type of this PropertySummary.
-        Format of the value
+        Format of the value.
 
         Allowed values for this property are: "STRING", "NUMERIC", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -421,7 +421,7 @@ class PropertySummary(object):
     def value_type(self, value_type):
         """
         Sets the value_type of this PropertySummary.
-        Format of the value
+        Format of the value.
 
 
         :param value_type: The value_type of this PropertySummary.
@@ -436,7 +436,7 @@ class PropertySummary(object):
     def values(self):
         """
         Gets the values of this PropertySummary.
-        Values of the property (must be a single value if selection = 'single choice')
+        Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
 
 
         :return: The values of this PropertySummary.
@@ -448,7 +448,7 @@ class PropertySummary(object):
     def values(self, values):
         """
         Sets the values of this PropertySummary.
-        Values of the property (must be a single value if selection = 'single choice')
+        Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
 
 
         :param values: The values of this PropertySummary.
@@ -460,7 +460,7 @@ class PropertySummary(object):
     def scope(self):
         """
         Gets the scope of this PropertySummary.
-        The scope of the property
+        The scope of the property.
 
         Allowed values for this property are: "TAXONOMY", "PLATFORM_CONFIG", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -475,7 +475,7 @@ class PropertySummary(object):
     def scope(self, scope):
         """
         Sets the scope of this PropertySummary.
-        The scope of the property
+        The scope of the property.
 
 
         :param scope: The scope of this PropertySummary.

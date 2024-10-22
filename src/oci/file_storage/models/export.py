@@ -104,6 +104,10 @@ class Export(object):
             The value to assign to the time_created property of this Export.
         :type time_created: datetime
 
+        :param locks:
+            The value to assign to the locks property of this Export.
+        :type locks: list[oci.file_storage.models.ResourceLock]
+
         """
         self.swagger_types = {
             'export_options': 'list[ClientOptions]',
@@ -113,7 +117,8 @@ class Export(object):
             'lifecycle_state': 'str',
             'path': 'str',
             'is_idmap_groups_for_sys_auth': 'bool',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -124,7 +129,8 @@ class Export(object):
             'lifecycle_state': 'lifecycleState',
             'path': 'path',
             'is_idmap_groups_for_sys_auth': 'isIdmapGroupsForSysAuth',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'locks': 'locks'
         }
 
         self._export_options = None
@@ -135,6 +141,7 @@ class Export(object):
         self._path = None
         self._is_idmap_groups_for_sys_auth = None
         self._time_created = None
+        self._locks = None
 
     @property
     def export_options(self):
@@ -411,6 +418,30 @@ class Export(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this Export.
+        Locks associated with this resource.
+
+
+        :return: The locks of this Export.
+        :rtype: list[oci.file_storage.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this Export.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this Export.
+        :type: list[oci.file_storage.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

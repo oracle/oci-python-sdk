@@ -47,7 +47,7 @@ class VmwareVmAsset(Asset):
 
         :param asset_type:
             The value to assign to the asset_type property of this VmwareVmAsset.
-            Allowed values for this property are: "VMWARE_VM", "VM"
+            Allowed values for this property are: "VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"
         :type asset_type: str
 
         :param time_created:
@@ -161,7 +161,7 @@ class VmwareVmAsset(Asset):
     @property
     def compute(self):
         """
-        Gets the compute of this VmwareVmAsset.
+        **[Required]** Gets the compute of this VmwareVmAsset.
 
         :return: The compute of this VmwareVmAsset.
         :rtype: oci.cloud_bridge.models.ComputeProperties
@@ -181,7 +181,7 @@ class VmwareVmAsset(Asset):
     @property
     def vm(self):
         """
-        Gets the vm of this VmwareVmAsset.
+        **[Required]** Gets the vm of this VmwareVmAsset.
 
         :return: The vm of this VmwareVmAsset.
         :rtype: oci.cloud_bridge.models.VmProperties
@@ -201,7 +201,7 @@ class VmwareVmAsset(Asset):
     @property
     def vmware_vm(self):
         """
-        Gets the vmware_vm of this VmwareVmAsset.
+        **[Required]** Gets the vmware_vm of this VmwareVmAsset.
 
         :return: The vmware_vm of this VmwareVmAsset.
         :rtype: oci.cloud_bridge.models.VmwareVmProperties
@@ -221,7 +221,7 @@ class VmwareVmAsset(Asset):
     @property
     def vmware_v_center(self):
         """
-        Gets the vmware_v_center of this VmwareVmAsset.
+        **[Required]** Gets the vmware_v_center of this VmwareVmAsset.
 
         :return: The vmware_v_center of this VmwareVmAsset.
         :rtype: oci.cloud_bridge.models.VmwareVCenterProperties

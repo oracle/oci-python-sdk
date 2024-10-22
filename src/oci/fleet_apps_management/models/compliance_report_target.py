@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ComplianceReportTarget(object):
     """
-    Details of the Patch.
+    Details of the target and patches.
     """
 
     #: A constant which can be used with the compliance_state property of a ComplianceReportTarget.
@@ -92,7 +92,7 @@ class ComplianceReportTarget(object):
     def target_id(self):
         """
         **[Required]** Gets the target_id of this ComplianceReportTarget.
-        Target Identifier.
+        Target Identifier.Can be the target name if a separate ID is not available.
 
 
         :return: The target_id of this ComplianceReportTarget.
@@ -104,7 +104,7 @@ class ComplianceReportTarget(object):
     def target_id(self, target_id):
         """
         Sets the target_id of this ComplianceReportTarget.
-        Target Identifier.
+        Target Identifier.Can be the target name if a separate ID is not available.
 
 
         :param target_id: The target_id of this ComplianceReportTarget.
@@ -140,7 +140,7 @@ class ComplianceReportTarget(object):
     def version(self):
         """
         Gets the version of this ComplianceReportTarget.
-        Current version.
+        Current version of the target.
 
 
         :return: The version of this ComplianceReportTarget.
@@ -152,7 +152,7 @@ class ComplianceReportTarget(object):
     def version(self, version):
         """
         Sets the version of this ComplianceReportTarget.
-        Current version.
+        Current version of the target.
 
 
         :param version: The version of this ComplianceReportTarget.
@@ -164,7 +164,7 @@ class ComplianceReportTarget(object):
     def compliance_state(self):
         """
         **[Required]** Gets the compliance_state of this ComplianceReportTarget.
-        Last known compliance state of target.
+        The last known compliance state of the target.
 
         Allowed values for this property are: "UNKNOWN", "COMPLIANT", "NON_COMPLIANT", "WARNING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -179,7 +179,7 @@ class ComplianceReportTarget(object):
     def compliance_state(self, compliance_state):
         """
         Sets the compliance_state of this ComplianceReportTarget.
-        Last known compliance state of target.
+        The last known compliance state of the target.
 
 
         :param compliance_state: The compliance_state of this ComplianceReportTarget.

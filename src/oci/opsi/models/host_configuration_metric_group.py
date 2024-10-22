@@ -51,6 +51,10 @@ class HostConfigurationMetricGroup(object):
     #: This constant has a value of "HOST_GPU_CONFIGURATION"
     METRIC_NAME_HOST_GPU_CONFIGURATION = "HOST_GPU_CONFIGURATION"
 
+    #: A constant which can be used with the metric_name property of a HostConfigurationMetricGroup.
+    #: This constant has a value of "HOST_CONTAINERS"
+    METRIC_NAME_HOST_CONTAINERS = "HOST_CONTAINERS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new HostConfigurationMetricGroup object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -59,6 +63,7 @@ class HostConfigurationMetricGroup(object):
         * :class:`~oci.opsi.models.HostResourceAllocation`
         * :class:`~oci.opsi.models.HostProduct`
         * :class:`~oci.opsi.models.HostFilesystemConfiguration`
+        * :class:`~oci.opsi.models.HostContainers`
         * :class:`~oci.opsi.models.HostNetworkConfiguration`
         * :class:`~oci.opsi.models.HostEntities`
         * :class:`~oci.opsi.models.HostMemoryConfiguration`
@@ -70,7 +75,7 @@ class HostConfigurationMetricGroup(object):
 
         :param metric_name:
             The value to assign to the metric_name property of this HostConfigurationMetricGroup.
-            Allowed values for this property are: "HOST_PRODUCT", "HOST_RESOURCE_ALLOCATION", "HOST_MEMORY_CONFIGURATION", "HOST_HARDWARE_CONFIGURATION", "HOST_CPU_HARDWARE_CONFIGURATION", "HOST_NETWORK_CONFIGURATION", "HOST_ENTITES", "HOST_FILESYSTEM_CONFIGURATION", "HOST_GPU_CONFIGURATION"
+            Allowed values for this property are: "HOST_PRODUCT", "HOST_RESOURCE_ALLOCATION", "HOST_MEMORY_CONFIGURATION", "HOST_HARDWARE_CONFIGURATION", "HOST_CPU_HARDWARE_CONFIGURATION", "HOST_NETWORK_CONFIGURATION", "HOST_ENTITES", "HOST_FILESYSTEM_CONFIGURATION", "HOST_GPU_CONFIGURATION", "HOST_CONTAINERS"
         :type metric_name: str
 
         :param time_collected:
@@ -108,6 +113,9 @@ class HostConfigurationMetricGroup(object):
         if type == 'HOST_FILESYSTEM_CONFIGURATION':
             return 'HostFilesystemConfiguration'
 
+        if type == 'HOST_CONTAINERS':
+            return 'HostContainers'
+
         if type == 'HOST_NETWORK_CONFIGURATION':
             return 'HostNetworkConfiguration'
 
@@ -134,7 +142,7 @@ class HostConfigurationMetricGroup(object):
         **[Required]** Gets the metric_name of this HostConfigurationMetricGroup.
         Name of the metric group
 
-        Allowed values for this property are: "HOST_PRODUCT", "HOST_RESOURCE_ALLOCATION", "HOST_MEMORY_CONFIGURATION", "HOST_HARDWARE_CONFIGURATION", "HOST_CPU_HARDWARE_CONFIGURATION", "HOST_NETWORK_CONFIGURATION", "HOST_ENTITES", "HOST_FILESYSTEM_CONFIGURATION", "HOST_GPU_CONFIGURATION"
+        Allowed values for this property are: "HOST_PRODUCT", "HOST_RESOURCE_ALLOCATION", "HOST_MEMORY_CONFIGURATION", "HOST_HARDWARE_CONFIGURATION", "HOST_CPU_HARDWARE_CONFIGURATION", "HOST_NETWORK_CONFIGURATION", "HOST_ENTITES", "HOST_FILESYSTEM_CONFIGURATION", "HOST_GPU_CONFIGURATION", "HOST_CONTAINERS"
 
 
         :return: The metric_name of this HostConfigurationMetricGroup.
@@ -152,7 +160,7 @@ class HostConfigurationMetricGroup(object):
         :param metric_name: The metric_name of this HostConfigurationMetricGroup.
         :type: str
         """
-        allowed_values = ["HOST_PRODUCT", "HOST_RESOURCE_ALLOCATION", "HOST_MEMORY_CONFIGURATION", "HOST_HARDWARE_CONFIGURATION", "HOST_CPU_HARDWARE_CONFIGURATION", "HOST_NETWORK_CONFIGURATION", "HOST_ENTITES", "HOST_FILESYSTEM_CONFIGURATION", "HOST_GPU_CONFIGURATION"]
+        allowed_values = ["HOST_PRODUCT", "HOST_RESOURCE_ALLOCATION", "HOST_MEMORY_CONFIGURATION", "HOST_HARDWARE_CONFIGURATION", "HOST_CPU_HARDWARE_CONFIGURATION", "HOST_NETWORK_CONFIGURATION", "HOST_ENTITES", "HOST_FILESYSTEM_CONFIGURATION", "HOST_GPU_CONFIGURATION", "HOST_CONTAINERS"]
         if not value_allowed_none_or_none_sentinel(metric_name, allowed_values):
             raise ValueError(
                 f"Invalid value for `metric_name`, must be None or one of {allowed_values}"

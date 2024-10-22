@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MaintenanceWindow(object):
     """
-    Details of Maintenance Window.
+    Details of Maintenance Window in Fleet Application Management.
     """
 
     #: A constant which can be used with the maintenance_window_type property of a MaintenanceWindow.
@@ -404,6 +404,8 @@ class MaintenanceWindow(object):
         """
         **[Required]** Gets the is_outage of this MaintenanceWindow.
         Does the maintenenace window cause outage?
+        An outage indicates whether a maintenance window can consider operations that require downtime.
+        It means a period when the application is not accessible.
 
 
         :return: The is_outage of this MaintenanceWindow.
@@ -416,6 +418,8 @@ class MaintenanceWindow(object):
         """
         Sets the is_outage of this MaintenanceWindow.
         Does the maintenenace window cause outage?
+        An outage indicates whether a maintenance window can consider operations that require downtime.
+        It means a period when the application is not accessible.
 
 
         :param is_outage: The is_outage of this MaintenanceWindow.
@@ -427,7 +431,7 @@ class MaintenanceWindow(object):
     def time_schedule_start(self):
         """
         Gets the time_schedule_start of this MaintenanceWindow.
-        Start time of schedule
+        Specify the date and time of the day that the maintenance window starts.
 
 
         :return: The time_schedule_start of this MaintenanceWindow.
@@ -439,7 +443,7 @@ class MaintenanceWindow(object):
     def time_schedule_start(self, time_schedule_start):
         """
         Sets the time_schedule_start of this MaintenanceWindow.
-        Start time of schedule
+        Specify the date and time of the day that the maintenance window starts.
 
 
         :param time_schedule_start: The time_schedule_start of this MaintenanceWindow.
@@ -451,7 +455,8 @@ class MaintenanceWindow(object):
     def duration(self):
         """
         **[Required]** Gets the duration of this MaintenanceWindow.
-        Duration if schedule type is Custom
+        Duration of the maintenance window.
+        Specify how long the maintenance window remains open.
 
 
         :return: The duration of this MaintenanceWindow.
@@ -463,7 +468,8 @@ class MaintenanceWindow(object):
     def duration(self, duration):
         """
         Sets the duration of this MaintenanceWindow.
-        Duration if schedule type is Custom
+        Duration of the maintenance window.
+        Specify how long the maintenance window remains open.
 
 
         :param duration: The duration of this MaintenanceWindow.
@@ -475,7 +481,7 @@ class MaintenanceWindow(object):
     def is_recurring(self):
         """
         **[Required]** Gets the is_recurring of this MaintenanceWindow.
-        Is this is a recurring maintenance window
+        Is this a recurring maintenance window?
 
 
         :return: The is_recurring of this MaintenanceWindow.
@@ -487,7 +493,7 @@ class MaintenanceWindow(object):
     def is_recurring(self, is_recurring):
         """
         Sets the is_recurring of this MaintenanceWindow.
-        Is this is a recurring maintenance window
+        Is this a recurring maintenance window?
 
 
         :param is_recurring: The is_recurring of this MaintenanceWindow.
@@ -499,7 +505,8 @@ class MaintenanceWindow(object):
     def recurrences(self):
         """
         Gets the recurrences of this MaintenanceWindow.
-        Recurrence rule specification if recurring
+        Recurrence rule specification if maintenance window recurring.
+        Specify the frequency of running the maintenance window.
 
 
         :return: The recurrences of this MaintenanceWindow.
@@ -511,7 +518,8 @@ class MaintenanceWindow(object):
     def recurrences(self, recurrences):
         """
         Sets the recurrences of this MaintenanceWindow.
-        Recurrence rule specification if recurring
+        Recurrence rule specification if maintenance window recurring.
+        Specify the frequency of running the maintenance window.
 
 
         :param recurrences: The recurrences of this MaintenanceWindow.
@@ -523,7 +531,7 @@ class MaintenanceWindow(object):
     def task_initiation_cutoff(self):
         """
         **[Required]** Gets the task_initiation_cutoff of this MaintenanceWindow.
-        Task initiation cutoff
+        Task initiation cutoff time for the maintenance window.
 
 
         :return: The task_initiation_cutoff of this MaintenanceWindow.
@@ -535,7 +543,7 @@ class MaintenanceWindow(object):
     def task_initiation_cutoff(self, task_initiation_cutoff):
         """
         Sets the task_initiation_cutoff of this MaintenanceWindow.
-        Task initiation cutoff
+        Task initiation cutoff time for the maintenance window.
 
 
         :param task_initiation_cutoff: The task_initiation_cutoff of this MaintenanceWindow.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RunbookCollection(object):
     """
-    Results of a runbook search. Contains boh RunbookSummary items and other information, such as metadata.
+    Results of a runbook search. Contains RunbookSummary items and other information, such as metadata.
     """
 
     def __init__(self, **kwargs):

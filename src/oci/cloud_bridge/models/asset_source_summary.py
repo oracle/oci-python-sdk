@@ -19,6 +19,10 @@ class AssetSourceSummary(object):
     #: This constant has a value of "VMWARE"
     TYPE_VMWARE = "VMWARE"
 
+    #: A constant which can be used with the type property of a AssetSourceSummary.
+    #: This constant has a value of "AWS"
+    TYPE_AWS = "AWS"
+
     #: A constant which can be used with the lifecycle_state property of a AssetSourceSummary.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -53,12 +57,13 @@ class AssetSourceSummary(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.cloud_bridge.models.VmWareAssetSourceSummary`
+        * :class:`~oci.cloud_bridge.models.AwsAssetSourceSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param type:
             The value to assign to the type property of this AssetSourceSummary.
-            Allowed values for this property are: "VMWARE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VMWARE", "AWS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -176,6 +181,9 @@ class AssetSourceSummary(object):
 
         if type == 'VMWARE':
             return 'VmWareAssetSourceSummary'
+
+        if type == 'AWS':
+            return 'AwsAssetSourceSummary'
         else:
             return 'AssetSourceSummary'
 
@@ -185,7 +193,7 @@ class AssetSourceSummary(object):
         **[Required]** Gets the type of this AssetSourceSummary.
         The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
 
-        Allowed values for this property are: "VMWARE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VMWARE", "AWS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -204,7 +212,7 @@ class AssetSourceSummary(object):
         :param type: The type of this AssetSourceSummary.
         :type: str
         """
-        allowed_values = ["VMWARE"]
+        allowed_values = ["VMWARE", "AWS"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

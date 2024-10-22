@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateFleetPropertyDetails(object):
     """
-    The information about new FleetProperty.
+    The information about new Property to manage fleet metadata details.
     """
 
     def __init__(self, **kwargs):
@@ -77,7 +77,7 @@ class CreateFleetPropertyDetails(object):
     def value(self):
         """
         **[Required]** Gets the value of this CreateFleetPropertyDetails.
-        Value of the Property
+        Value of the Property.
 
 
         :return: The value of this CreateFleetPropertyDetails.
@@ -89,7 +89,7 @@ class CreateFleetPropertyDetails(object):
     def value(self, value):
         """
         Sets the value of this CreateFleetPropertyDetails.
-        Value of the Property
+        Value of the Property.
 
 
         :param value: The value of this CreateFleetPropertyDetails.
@@ -101,7 +101,7 @@ class CreateFleetPropertyDetails(object):
     def property_id(self):
         """
         **[Required]** Gets the property_id of this CreateFleetPropertyDetails.
-        Property Id.
+        OCID referring to global level metadata property.
 
 
         :return: The property_id of this CreateFleetPropertyDetails.
@@ -113,7 +113,7 @@ class CreateFleetPropertyDetails(object):
     def property_id(self, property_id):
         """
         Sets the property_id of this CreateFleetPropertyDetails.
-        Property Id.
+        OCID referring to global level metadata property.
 
 
         :param property_id: The property_id of this CreateFleetPropertyDetails.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MaintenanceWindowCollection(object):
     """
-    Results of a maintenanceWindow search. Contains boh MaintenanceWindowSummary items and other information, such as metadata.
+    Results of a maintenanceWindow search. Contains both MaintenanceWindowSummary items and other information, such as metadata.
     """
 
     def __init__(self, **kwargs):
