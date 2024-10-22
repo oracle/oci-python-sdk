@@ -130,6 +130,10 @@ class MountTarget(object):
             The value to assign to the time_created property of this MountTarget.
         :type time_created: datetime
 
+        :param locks:
+            The value to assign to the locks property of this MountTarget.
+        :type locks: list[oci.file_storage.models.ResourceLock]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this MountTarget.
         :type freeform_tags: dict(str, str)
@@ -158,6 +162,7 @@ class MountTarget(object):
             'requested_throughput': 'int',
             'reserved_storage_capacity': 'int',
             'time_created': 'datetime',
+            'locks': 'list[ResourceLock]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -181,6 +186,7 @@ class MountTarget(object):
             'requested_throughput': 'requestedThroughput',
             'reserved_storage_capacity': 'reservedStorageCapacity',
             'time_created': 'timeCreated',
+            'locks': 'locks',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -203,6 +209,7 @@ class MountTarget(object):
         self._requested_throughput = None
         self._reserved_storage_capacity = None
         self._time_created = None
+        self._locks = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -717,6 +724,30 @@ class MountTarget(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this MountTarget.
+        Locks associated with this resource.
+
+
+        :return: The locks of this MountTarget.
+        :rtype: list[oci.file_storage.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this MountTarget.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this MountTarget.
+        :type: list[oci.file_storage.models.ResourceLock]
+        """
+        self._locks = locks
 
     @property
     def freeform_tags(self):

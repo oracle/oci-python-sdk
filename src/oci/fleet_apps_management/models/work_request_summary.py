@@ -87,6 +87,70 @@ class WorkRequestSummary(object):
     #: This constant has a value of "CREATE_FAMS_ONBOARDING"
     OPERATION_TYPE_CREATE_FAMS_ONBOARDING = "CREATE_FAMS_ONBOARDING"
 
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CREATE_RUNBOOK"
+    OPERATION_TYPE_CREATE_RUNBOOK = "CREATE_RUNBOOK"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "UPDATE_RUNBOOK"
+    OPERATION_TYPE_UPDATE_RUNBOOK = "UPDATE_RUNBOOK"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DELETE_RUNBOOK"
+    OPERATION_TYPE_DELETE_RUNBOOK = "DELETE_RUNBOOK"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "PUBLISH_RUNBOOK"
+    OPERATION_TYPE_PUBLISH_RUNBOOK = "PUBLISH_RUNBOOK"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "UPDATE_TASK"
+    OPERATION_TYPE_UPDATE_TASK = "UPDATE_TASK"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DELETE_TASK"
+    OPERATION_TYPE_DELETE_TASK = "DELETE_TASK"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "UPDATE_FAMS_ONBOARDING"
+    OPERATION_TYPE_UPDATE_FAMS_ONBOARDING = "UPDATE_FAMS_ONBOARDING"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DELETE_FAMS_ONBOARDING"
+    OPERATION_TYPE_DELETE_FAMS_ONBOARDING = "DELETE_FAMS_ONBOARDING"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CREATE_COMPLIANCE_POLICY_RULE"
+    OPERATION_TYPE_CREATE_COMPLIANCE_POLICY_RULE = "CREATE_COMPLIANCE_POLICY_RULE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "UPDATE_COMPLIANCE_POLICY_RULE"
+    OPERATION_TYPE_UPDATE_COMPLIANCE_POLICY_RULE = "UPDATE_COMPLIANCE_POLICY_RULE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DELETE_COMPLIANCE_POLICY_RULE"
+    OPERATION_TYPE_DELETE_COMPLIANCE_POLICY_RULE = "DELETE_COMPLIANCE_POLICY_RULE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "UPDATE_PATCH"
+    OPERATION_TYPE_UPDATE_PATCH = "UPDATE_PATCH"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DELETE_PATCH"
+    OPERATION_TYPE_DELETE_PATCH = "DELETE_PATCH"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "MANAGE_JOB_EXECUTION"
+    OPERATION_TYPE_MANAGE_JOB_EXECUTION = "MANAGE_JOB_EXECUTION"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DELETE_PLATFORM_CONFIGURATION"
+    OPERATION_TYPE_DELETE_PLATFORM_CONFIGURATION = "DELETE_PLATFORM_CONFIGURATION"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "UPDATE_PLATFORM_CONFIGURATION"
+    OPERATION_TYPE_UPDATE_PLATFORM_CONFIGURATION = "UPDATE_PLATFORM_CONFIGURATION"
+
     #: A constant which can be used with the status property of a WorkRequestSummary.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -126,7 +190,7 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "CREATE_FLEET", "UPDATE_FLEET", "DELETE_FLEET", "CONFIRM_TARGET", "GENERATE_COMPLIANCE", "REQUEST_TARGET_DISCOVERY", "VALIDATE_RESOURCE", "CREATE_CREDENTIAL", "UPDATE_CREDENTIAL", "DELETE_CREDENTIAL", "CREATE_SCHEDULE", "UPDATE_SCHEDULE", "UPDATE_MAINTENANCE_WINDOW", "DELETE_MAINTENANCE_WINDOW", "CREATE_FLEET_RESOURCE", "UPDATE_FLEET_RESOURCE", "DELETE_FLEET_RESOURCE", "CREATE_FAMS_ONBOARDING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_FLEET", "UPDATE_FLEET", "DELETE_FLEET", "CONFIRM_TARGET", "GENERATE_COMPLIANCE", "REQUEST_TARGET_DISCOVERY", "VALIDATE_RESOURCE", "CREATE_CREDENTIAL", "UPDATE_CREDENTIAL", "DELETE_CREDENTIAL", "CREATE_SCHEDULE", "UPDATE_SCHEDULE", "UPDATE_MAINTENANCE_WINDOW", "DELETE_MAINTENANCE_WINDOW", "CREATE_FLEET_RESOURCE", "UPDATE_FLEET_RESOURCE", "DELETE_FLEET_RESOURCE", "CREATE_FAMS_ONBOARDING", "CREATE_RUNBOOK", "UPDATE_RUNBOOK", "DELETE_RUNBOOK", "PUBLISH_RUNBOOK", "UPDATE_TASK", "DELETE_TASK", "UPDATE_FAMS_ONBOARDING", "DELETE_FAMS_ONBOARDING", "CREATE_COMPLIANCE_POLICY_RULE", "UPDATE_COMPLIANCE_POLICY_RULE", "DELETE_COMPLIANCE_POLICY_RULE", "UPDATE_PATCH", "DELETE_PATCH", "MANAGE_JOB_EXECUTION", "DELETE_PLATFORM_CONFIGURATION", "UPDATE_PLATFORM_CONFIGURATION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -212,7 +276,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the operation_type of this WorkRequestSummary.
         Type of the work request
 
-        Allowed values for this property are: "CREATE_FLEET", "UPDATE_FLEET", "DELETE_FLEET", "CONFIRM_TARGET", "GENERATE_COMPLIANCE", "REQUEST_TARGET_DISCOVERY", "VALIDATE_RESOURCE", "CREATE_CREDENTIAL", "UPDATE_CREDENTIAL", "DELETE_CREDENTIAL", "CREATE_SCHEDULE", "UPDATE_SCHEDULE", "UPDATE_MAINTENANCE_WINDOW", "DELETE_MAINTENANCE_WINDOW", "CREATE_FLEET_RESOURCE", "UPDATE_FLEET_RESOURCE", "DELETE_FLEET_RESOURCE", "CREATE_FAMS_ONBOARDING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_FLEET", "UPDATE_FLEET", "DELETE_FLEET", "CONFIRM_TARGET", "GENERATE_COMPLIANCE", "REQUEST_TARGET_DISCOVERY", "VALIDATE_RESOURCE", "CREATE_CREDENTIAL", "UPDATE_CREDENTIAL", "DELETE_CREDENTIAL", "CREATE_SCHEDULE", "UPDATE_SCHEDULE", "UPDATE_MAINTENANCE_WINDOW", "DELETE_MAINTENANCE_WINDOW", "CREATE_FLEET_RESOURCE", "UPDATE_FLEET_RESOURCE", "DELETE_FLEET_RESOURCE", "CREATE_FAMS_ONBOARDING", "CREATE_RUNBOOK", "UPDATE_RUNBOOK", "DELETE_RUNBOOK", "PUBLISH_RUNBOOK", "UPDATE_TASK", "DELETE_TASK", "UPDATE_FAMS_ONBOARDING", "DELETE_FAMS_ONBOARDING", "CREATE_COMPLIANCE_POLICY_RULE", "UPDATE_COMPLIANCE_POLICY_RULE", "DELETE_COMPLIANCE_POLICY_RULE", "UPDATE_PATCH", "DELETE_PATCH", "MANAGE_JOB_EXECUTION", "DELETE_PLATFORM_CONFIGURATION", "UPDATE_PLATFORM_CONFIGURATION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -231,7 +295,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["CREATE_FLEET", "UPDATE_FLEET", "DELETE_FLEET", "CONFIRM_TARGET", "GENERATE_COMPLIANCE", "REQUEST_TARGET_DISCOVERY", "VALIDATE_RESOURCE", "CREATE_CREDENTIAL", "UPDATE_CREDENTIAL", "DELETE_CREDENTIAL", "CREATE_SCHEDULE", "UPDATE_SCHEDULE", "UPDATE_MAINTENANCE_WINDOW", "DELETE_MAINTENANCE_WINDOW", "CREATE_FLEET_RESOURCE", "UPDATE_FLEET_RESOURCE", "DELETE_FLEET_RESOURCE", "CREATE_FAMS_ONBOARDING"]
+        allowed_values = ["CREATE_FLEET", "UPDATE_FLEET", "DELETE_FLEET", "CONFIRM_TARGET", "GENERATE_COMPLIANCE", "REQUEST_TARGET_DISCOVERY", "VALIDATE_RESOURCE", "CREATE_CREDENTIAL", "UPDATE_CREDENTIAL", "DELETE_CREDENTIAL", "CREATE_SCHEDULE", "UPDATE_SCHEDULE", "UPDATE_MAINTENANCE_WINDOW", "DELETE_MAINTENANCE_WINDOW", "CREATE_FLEET_RESOURCE", "UPDATE_FLEET_RESOURCE", "DELETE_FLEET_RESOURCE", "CREATE_FAMS_ONBOARDING", "CREATE_RUNBOOK", "UPDATE_RUNBOOK", "DELETE_RUNBOOK", "PUBLISH_RUNBOOK", "UPDATE_TASK", "DELETE_TASK", "UPDATE_FAMS_ONBOARDING", "DELETE_FAMS_ONBOARDING", "CREATE_COMPLIANCE_POLICY_RULE", "UPDATE_COMPLIANCE_POLICY_RULE", "DELETE_COMPLIANCE_POLICY_RULE", "UPDATE_PATCH", "DELETE_PATCH", "MANAGE_JOB_EXECUTION", "DELETE_PLATFORM_CONFIGURATION", "UPDATE_PLATFORM_CONFIGURATION"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

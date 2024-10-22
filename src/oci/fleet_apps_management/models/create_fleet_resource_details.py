@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateFleetResourceDetails(object):
     """
-    The information about new FleetResource.
+    The information about the resource to be added to the fleet.
     """
 
     def __init__(self, **kwargs):

@@ -584,6 +584,7 @@ from .virtual_circuit_associated_tunnel_details import VirtualCircuitAssociatedT
 from .virtual_circuit_bandwidth_shape import VirtualCircuitBandwidthShape
 from .virtual_circuit_drg_attachment_network_details import VirtualCircuitDrgAttachmentNetworkDetails
 from .virtual_circuit_public_prefix import VirtualCircuitPublicPrefix
+from .virtual_circuit_redundancy_metadata import VirtualCircuitRedundancyMetadata
 from .vlan import Vlan
 from .vnic import Vnic
 from .vnic_attachment import VnicAttachment
@@ -1192,6 +1193,7 @@ core_type_mapping = {
     "VirtualCircuitBandwidthShape": VirtualCircuitBandwidthShape,
     "VirtualCircuitDrgAttachmentNetworkDetails": VirtualCircuitDrgAttachmentNetworkDetails,
     "VirtualCircuitPublicPrefix": VirtualCircuitPublicPrefix,
+    "VirtualCircuitRedundancyMetadata": VirtualCircuitRedundancyMetadata,
     "Vlan": Vlan,
     "Vnic": Vnic,
     "VnicAttachment": VnicAttachment,

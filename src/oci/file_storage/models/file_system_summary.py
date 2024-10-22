@@ -86,6 +86,10 @@ class FileSystemSummary(object):
             The value to assign to the time_created property of this FileSystemSummary.
         :type time_created: datetime
 
+        :param locks:
+            The value to assign to the locks property of this FileSystemSummary.
+        :type locks: list[oci.file_storage.models.ResourceLock]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this FileSystemSummary.
         :type freeform_tags: dict(str, str)
@@ -129,6 +133,7 @@ class FileSystemSummary(object):
             'id': 'str',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
+            'locks': 'list[ResourceLock]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'kms_key_id': 'str',
@@ -147,6 +152,7 @@ class FileSystemSummary(object):
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
+            'locks': 'locks',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'kms_key_id': 'kmsKeyId',
@@ -164,6 +170,7 @@ class FileSystemSummary(object):
         self._id = None
         self._lifecycle_state = None
         self._time_created = None
+        self._locks = None
         self._freeform_tags = None
         self._defined_tags = None
         self._kms_key_id = None
@@ -382,6 +389,30 @@ class FileSystemSummary(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this FileSystemSummary.
+        Locks associated with this resource.
+
+
+        :return: The locks of this FileSystemSummary.
+        :rtype: list[oci.file_storage.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this FileSystemSummary.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this FileSystemSummary.
+        :type: list[oci.file_storage.models.ResourceLock]
+        """
+        self._locks = locks
 
     @property
     def freeform_tags(self):

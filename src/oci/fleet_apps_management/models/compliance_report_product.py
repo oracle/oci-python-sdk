@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ComplianceReportProduct(object):
     """
-    Details of the Product
+    Details of the Product.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class ComplianceReportProduct(object):
     def product_name(self):
         """
         **[Required]** Gets the product_name of this ComplianceReportProduct.
-        Product Name
+        Product Name.
 
 
         :return: The product_name of this ComplianceReportProduct.
@@ -58,7 +58,7 @@ class ComplianceReportProduct(object):
     def product_name(self, product_name):
         """
         Sets the product_name of this ComplianceReportProduct.
-        Product Name
+        Product Name.
 
 
         :param product_name: The product_name of this ComplianceReportProduct.

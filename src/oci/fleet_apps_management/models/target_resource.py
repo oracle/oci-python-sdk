@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TargetResource(object):
     """
-    Resource Information for the Target
+    Resource Information for the Target.
     """
 
     def __init__(self, **kwargs):

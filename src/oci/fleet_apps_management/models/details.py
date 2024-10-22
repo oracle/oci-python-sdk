@@ -64,13 +64,23 @@ class Details(object):
             The value to assign to the properties property of this Details.
         :type properties: oci.fleet_apps_management.models.Properties
 
+        :param is_discovery_output_task:
+            The value to assign to the is_discovery_output_task property of this Details.
+        :type is_discovery_output_task: bool
+
+        :param is_apply_subject_task:
+            The value to assign to the is_apply_subject_task property of this Details.
+        :type is_apply_subject_task: bool
+
         """
         self.swagger_types = {
             'execution_details': 'ExecutionDetails',
             'platform': 'str',
             'os_type': 'str',
             'scope': 'str',
-            'properties': 'Properties'
+            'properties': 'Properties',
+            'is_discovery_output_task': 'bool',
+            'is_apply_subject_task': 'bool'
         }
 
         self.attribute_map = {
@@ -78,7 +88,9 @@ class Details(object):
             'platform': 'platform',
             'os_type': 'osType',
             'scope': 'scope',
-            'properties': 'properties'
+            'properties': 'properties',
+            'is_discovery_output_task': 'isDiscoveryOutputTask',
+            'is_apply_subject_task': 'isApplySubjectTask'
         }
 
         self._execution_details = None
@@ -86,11 +98,13 @@ class Details(object):
         self._os_type = None
         self._scope = None
         self._properties = None
+        self._is_discovery_output_task = None
+        self._is_apply_subject_task = None
 
     @property
     def execution_details(self):
         """
-        Gets the execution_details of this Details.
+        **[Required]** Gets the execution_details of this Details.
 
         :return: The execution_details of this Details.
         :rtype: oci.fleet_apps_management.models.ExecutionDetails
@@ -210,6 +224,56 @@ class Details(object):
         :type: oci.fleet_apps_management.models.Properties
         """
         self._properties = properties
+
+    @property
+    def is_discovery_output_task(self):
+        """
+        Gets the is_discovery_output_task of this Details.
+        Is this a discovery output task?
+
+
+        :return: The is_discovery_output_task of this Details.
+        :rtype: bool
+        """
+        return self._is_discovery_output_task
+
+    @is_discovery_output_task.setter
+    def is_discovery_output_task(self, is_discovery_output_task):
+        """
+        Sets the is_discovery_output_task of this Details.
+        Is this a discovery output task?
+
+
+        :param is_discovery_output_task: The is_discovery_output_task of this Details.
+        :type: bool
+        """
+        self._is_discovery_output_task = is_discovery_output_task
+
+    @property
+    def is_apply_subject_task(self):
+        """
+        Gets the is_apply_subject_task of this Details.
+        Is this an Apply Subject Task?
+        Set this to true for a Patch Execution Task which applies patches(subjects) on a target.
+
+
+        :return: The is_apply_subject_task of this Details.
+        :rtype: bool
+        """
+        return self._is_apply_subject_task
+
+    @is_apply_subject_task.setter
+    def is_apply_subject_task(self, is_apply_subject_task):
+        """
+        Sets the is_apply_subject_task of this Details.
+        Is this an Apply Subject Task?
+        Set this to true for a Patch Execution Task which applies patches(subjects) on a target.
+
+
+        :param is_apply_subject_task: The is_apply_subject_task of this Details.
+        :type: bool
+        """
+        self._is_apply_subject_task = is_apply_subject_task
 
     def __repr__(self):
         return formatted_flat_dict(self)

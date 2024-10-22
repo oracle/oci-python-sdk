@@ -22,8 +22,7 @@ missing = Sentinel("Missing")
 
 class FleetAppsManagementClient(object):
     """
-    Fleet Application Management Service API. Use this API to for all FAMS related activities.
-    To manage fleets,view complaince report for the Fleet,scedule patches and other lifecycle activities
+    Fleet Application Management provides a centralized platform to help you automate resource management tasks, validate patch compliance, and enhance operational efficiency across an enterprise.
     """
 
     def __init__(self, config, **kwargs):
@@ -119,11 +118,11 @@ class FleetAppsManagementClient(object):
 
     def check_resource_tagging(self, check_resource_tagging_details, **kwargs):
         """
-        Check if FAMS tags can be added for the resources
+        Check if Fleet Application Management tags can be added to the resources.
 
 
         :param oci.fleet_apps_management.models.CheckResourceTaggingDetails check_resource_tagging_details: (required)
-            Details for Checking if FAMS tags can be added for the resources
+            Details for checking if Fleet Application Management tags can be added to the resources.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -217,14 +216,15 @@ class FleetAppsManagementClient(object):
 
     def confirm_targets(self, confirm_targets_details, fleet_id, **kwargs):
         """
-        Confirm targets to be managed for a Fleet.Only targets that are confirmed will be managed by FAMS
+        Confirm targets to be managed for a Fleet.
+        Only targets that are confirmed will be managed by Fleet Application Management
 
 
         :param oci.fleet_apps_management.models.ConfirmTargetsDetails confirm_targets_details: (required)
             Details for confirming Targets.
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -328,8 +328,7 @@ class FleetAppsManagementClient(object):
 
     def create_fleet(self, create_fleet_details, **kwargs):
         """
-        Creates a new fleet instance that includes fleet resources and properties.
-        For more information, please see the documentation.
+        Create a product, environment, group, or generic type of fleet in Fleet Application Management.
 
 
         :param oci.fleet_apps_management.models.CreateFleetDetails create_fleet_details: (required)
@@ -427,14 +426,14 @@ class FleetAppsManagementClient(object):
 
     def create_fleet_credential(self, create_fleet_credential_details, fleet_id, **kwargs):
         """
-        Creates a new FleetCredential.
+        Add credentials to a fleet in Fleet Application Management.
 
 
         :param oci.fleet_apps_management.models.CreateFleetCredentialDetails create_fleet_credential_details: (required)
             Details for the new FleetCredential.
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -540,14 +539,14 @@ class FleetAppsManagementClient(object):
 
     def create_fleet_property(self, create_fleet_property_details, fleet_id, **kwargs):
         """
-        Creates a new FleetProperty.
+        Add an existing global property to a fleet in Fleet Application Management.
 
 
         :param oci.fleet_apps_management.models.CreateFleetPropertyDetails create_fleet_property_details: (required)
             Details for the new FleetProperty.
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -653,14 +652,14 @@ class FleetAppsManagementClient(object):
 
     def create_fleet_resource(self, create_fleet_resource_details, fleet_id, **kwargs):
         """
-        Creates a new FleetResource.
+        Add resource to a fleet in\u00A0Fleet Application Management.
 
 
         :param oci.fleet_apps_management.models.CreateFleetResourceDetails create_fleet_resource_details: (required)
             Details for the new FleetResource.
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -766,11 +765,11 @@ class FleetAppsManagementClient(object):
 
     def delete_fleet(self, fleet_id, **kwargs):
         """
-        Deletes a Fleet resource by identifier
+        Delete a fleet in Fleet Application Management.
 
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -871,14 +870,14 @@ class FleetAppsManagementClient(object):
 
     def delete_fleet_credential(self, fleet_credential_id, fleet_id, **kwargs):
         """
-        Deletes a FleetCredential resource by identifier
+        Delete a credential associated with a fleet product or application in\u00A0Fleet Application Management.
 
 
         :param str fleet_credential_id: (required)
             unique FleetCredential identifier
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -980,14 +979,14 @@ class FleetAppsManagementClient(object):
 
     def delete_fleet_property(self, fleet_property_id, fleet_id, **kwargs):
         """
-        Deletes a FleetProperty resource by identifier
+        Delete a property associated with a fleet in Fleet Application Management.
 
 
         :param str fleet_property_id: (required)
-            unique FleetProperty identifier
+            unique FleetProperty identifier.
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -1089,14 +1088,14 @@ class FleetAppsManagementClient(object):
 
     def delete_fleet_resource(self, fleet_resource_id, fleet_id, **kwargs):
         """
-        Deletes a FleetResource resource by identifier
+        Removes a resource from the fleet in Fleet Application Management.
 
 
         :param str fleet_resource_id: (required)
             unique FleetResource identifier
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -1198,14 +1197,14 @@ class FleetAppsManagementClient(object):
 
     def generate_compliance_report(self, generate_compliance_report_details, fleet_id, **kwargs):
         """
-        Request to generate compliance report for a Fleet
+        Generate compliance reports for a Fleet.
 
 
         :param oci.fleet_apps_management.models.GenerateComplianceReportDetails generate_compliance_report_details: (required)
-            Details for generating Compliance Report fort the Fleet.
+            Details for generating Compliance Report for the Fleet.
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1309,14 +1308,14 @@ class FleetAppsManagementClient(object):
 
     def get_compliance_report(self, fleet_id, compliance_report_id, **kwargs):
         """
-        Retrieve compiane report for a Fleet
+        Retrieve compliance report for a fleet.
 
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param str compliance_report_id: (required)
-            compliance report identifier
+            compliance report identifier.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1411,11 +1410,11 @@ class FleetAppsManagementClient(object):
 
     def get_fleet(self, fleet_id, **kwargs):
         """
-        Gets a Fleet by identifier
+        Get the details of a fleet in Fleet Application Management.
 
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1509,14 +1508,14 @@ class FleetAppsManagementClient(object):
 
     def get_fleet_credential(self, fleet_credential_id, fleet_id, **kwargs):
         """
-        Gets a FleetCredential by identifier
+        Gets a FleetCredential by identifier.
 
 
         :param str fleet_credential_id: (required)
             unique FleetCredential identifier
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1611,14 +1610,14 @@ class FleetAppsManagementClient(object):
 
     def get_fleet_property(self, fleet_property_id, fleet_id, **kwargs):
         """
-        Gets a FleetProperty by identifier
+        Gets a Fleet Property by identifier.
 
 
         :param str fleet_property_id: (required)
-            unique FleetProperty identifier
+            unique FleetProperty identifier.
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1713,14 +1712,14 @@ class FleetAppsManagementClient(object):
 
     def get_fleet_resource(self, fleet_resource_id, fleet_id, **kwargs):
         """
-        Gets a FleetResource by identifier
+        Gets a Fleet Resource by identifier.
 
 
         :param str fleet_resource_id: (required)
             unique FleetResource identifier
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1913,11 +1912,11 @@ class FleetAppsManagementClient(object):
 
     def list_announcements(self, **kwargs):
         """
-        Return a list of AnnouncementSummary items
+        Return a list of AnnouncementSummary items.
 
 
         :param str summary_contains: (optional)
-            Filter the list with summary contains the given value.
+            Filter the list of announcements that contains the given summary value.
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
@@ -1934,8 +1933,8 @@ class FleetAppsManagementClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            The field to sort AnnouncementSummary by.  Only one sort order may be provided.
-            If no value is specified _timeReleased_ is default.
+            The field to sort AnnouncementSummary by. Only one sort order may be provided.
+            If no value is specified timeReleased is default.
 
             Allowed values are: "timeReleased", "summary"
 
@@ -2051,30 +2050,36 @@ class FleetAppsManagementClient(object):
 
     def list_fleet_credentials(self, fleet_id, **kwargs):
         """
-        Returns a list of FleetCredentials.
+        List credentials in Fleet Application Management.
 
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param str compartment_id: (optional)
             The ID of the compartment in which to list resources.
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources their lifecycleState matches the given lifecycleState.
+            A filter to return only resources whose lifecycleState matches the given lifecycleState.
 
             Allowed values are: "ACTIVE", "DELETED", "FAILED"
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
 
-        :param str credential_level: (optional)
-            Credential Level.
+        :param str resource_id: (optional)
+            Resource Identifier
 
-            Allowed values are: "TARGET"
+        :param str target: (optional)
+            A filter to return only resources whose target matches the given target name.
+
+        :param str credential_level: (optional)
+            A filter to return only resources whose credentialLevel matches the given credentialLevel.
+
+            Allowed values are: "FLEET", "RESOURCE", "TARGET"
 
         :param str id: (optional)
-            unique FleetCredential identifier
+            A filter to return only resources whose credential identifier matches the given identifier.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -2127,6 +2132,8 @@ class FleetAppsManagementClient(object):
             "compartment_id",
             "lifecycle_state",
             "display_name",
+            "resource_id",
+            "target",
             "credential_level",
             "id",
             "limit",
@@ -2158,7 +2165,7 @@ class FleetAppsManagementClient(object):
                 )
 
         if 'credential_level' in kwargs:
-            credential_level_allowed_values = ["TARGET"]
+            credential_level_allowed_values = ["FLEET", "RESOURCE", "TARGET"]
             if kwargs['credential_level'] not in credential_level_allowed_values:
                 raise ValueError(
                     f"Invalid value for `credential_level`, must be one of { credential_level_allowed_values }"
@@ -2182,6 +2189,8 @@ class FleetAppsManagementClient(object):
             "compartmentId": kwargs.get("compartment_id", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "displayName": kwargs.get("display_name", missing),
+            "resourceId": kwargs.get("resource_id", missing),
+            "target": kwargs.get("target", missing),
             "credentialLevel": kwargs.get("credential_level", missing),
             "id": kwargs.get("id", missing),
             "limit": kwargs.get("limit", missing),
@@ -2236,11 +2245,11 @@ class FleetAppsManagementClient(object):
 
     def list_fleet_products(self, fleet_id, **kwargs):
         """
-        Returns a list of FleetProducts.
+        Returns a list of products associated with the confirmed targets.
 
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param str compartment_id: (optional)
             The ID of the compartment in which to list resources.
@@ -2249,7 +2258,7 @@ class FleetAppsManagementClient(object):
             Resource Identifier
 
         :param str resource_display_name: (optional)
-            Resource Display Name
+            Resource Display Name.
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
@@ -2398,17 +2407,17 @@ class FleetAppsManagementClient(object):
 
     def list_fleet_properties(self, fleet_id, **kwargs):
         """
-        Returns a list of FleetProperties.
+        List fleet properties in Fleet Application Management.
 
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param str compartment_id: (optional)
             The ID of the compartment in which to list resources.
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources their lifecycleState matches the given lifecycleState.
+            A filter to return only resources whose lifecycleState matches the given lifecycleState.
 
             Allowed values are: "ACTIVE", "DELETED", "FAILED"
 
@@ -2416,7 +2425,7 @@ class FleetAppsManagementClient(object):
             A filter to return only resources that match the entire display name given.
 
         :param str id: (optional)
-            unique FleetProperty identifier
+            A filter to return only resources whose fleetProperty identifier matches the given identifier.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -2569,17 +2578,17 @@ class FleetAppsManagementClient(object):
 
     def list_fleet_resources(self, fleet_id, **kwargs):
         """
-        Returns a list of FleetResources.
+        List resources for a fleet in Fleet Application Management.
 
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param str tenancy_id: (optional)
             Resource Tenancy Id
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources their lifecycleState matches the given lifecycleState.
+            A filter to return only resources whose lifecycleState matches the given lifecycleState.
 
             Allowed values are: "ACTIVE", "DELETED", "FAILED", "NEEDS_ATTENTION"
 
@@ -2587,10 +2596,10 @@ class FleetAppsManagementClient(object):
             A filter to return only resources that match the entire display name given.
 
         :param str id: (optional)
-            unique FleetResource identifier
+            A filter to return only resources whose identifier matches the given identifier.
 
         :param str fleet_resource_type: (optional)
-            A filter to return resources that match the Type
+            A filter to return only resources whose resourceType matches the given resourceType.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -2745,23 +2754,23 @@ class FleetAppsManagementClient(object):
 
     def list_fleet_targets(self, fleet_id, **kwargs):
         """
-        Returns a list of FleetTargets.
+        Returns the list of all confirmed targets within a fleet.
 
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
 
         :param str product: (optional)
-            Product Name
+            Product Name.
 
         :param str resource_id: (optional)
             Resource Identifier
 
         :param str resource_display_name: (optional)
-            Resource Display Name
+            Resource Display Name.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -2911,7 +2920,7 @@ class FleetAppsManagementClient(object):
 
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources their lifecycleState matches the given lifecycleState.
+            A filter to return fleets whose lifecycleState matches the given lifecycleState.
 
             Allowed values are: "ACTIVE", "INACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "UPDATING", "NEEDS_ATTENTION"
 
@@ -2919,24 +2928,24 @@ class FleetAppsManagementClient(object):
             The ID of the compartment in which to list resources.
 
         :param str fleet_type: (optional)
-            A filter to return only resources their fleetType matches the given fleetType.
+            A filter to return fleets whose fleetType matches the given fleetType.
 
             Allowed values are: "PRODUCT", "ENVIRONMENT", "GENERIC", "GROUP"
 
         :param str application_type: (optional)
-            A filter to return only resources that match the Application Type given.
+            A filter to return resources that match the Application Type/Product Stack given..
 
         :param str product: (optional)
-            A filter to return only resources that match the Product Type given.
+            A filter to return resources that match the Product given.
 
         :param str environment_type: (optional)
-            A filter to return only resources that match the Environment Type given.
+            A filter to return resources that match the Environment Type given.
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
 
         :param str id: (optional)
-            unique Fleet identifier
+            A filter to return fleets whose id matches the given Fleet identifier
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -3096,10 +3105,10 @@ class FleetAppsManagementClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            A filter to return only resources whose base Compartment ID(TenancyId) matches the given base Compartment ID.
 
         :param str resource_compartment_id: (required)
-            Resource Compartment ID
+            A filter to return only resources whose resource Compartment ID matches the given resource Compartment ID.
 
         :param str lifecycle_state: (optional)
             A filter to return only resources their lifecycleState matches the given lifecycleState.
@@ -3115,6 +3124,7 @@ class FleetAppsManagementClient(object):
             Each item in the list has the format \"{namespace}.{tagName}={value}\".  All inputs are case-insensitive.
             Multiple values for the same key (i.e. same namespace and tag name) are interpreted as \"OR\".
             Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as \"AND\".
+            Example: Identification.Development=Yes
 
         :param list[str] freeform_tag_equals: (optional)
             A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
@@ -3124,9 +3134,11 @@ class FleetAppsManagementClient(object):
         :param list[str] inventory_properties: (optional)
             A list of inventory properties filters to apply.
             The key for each inventory property and value for each resource type is \"{resourceType}.{inventoryProperty}={value}\".
+            Example: Instance.displayName=TEST_INSTANCE
 
         :param str matching_criteria: (optional)
-            Fetch resources matching matching ANY or ALL criteria passed as params in \"tags\" and \"inventoryProperties\"
+            Fetch resources matching ANY or ALL criteria passed as params in \"tags\" and \"inventoryProperties\".
+            Example: matchingCriteria=ANY
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -3268,11 +3280,12 @@ class FleetAppsManagementClient(object):
 
     def list_targets(self, fleet_id, **kwargs):
         """
-        Returns a list of FleetTargets.
+        Return all targets belonging to the resources within a fleet.
+        It will include both confirmed and unconfirmed targets.
 
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
@@ -3855,14 +3868,14 @@ class FleetAppsManagementClient(object):
 
     def request_resource_validation(self, request_resource_validation_details, fleet_id, **kwargs):
         """
-        Request validation for resources with in a fleet
+        Request validation for resources within a fleet.
 
 
         :param oci.fleet_apps_management.models.RequestResourceValidationDetails request_resource_validation_details: (required)
-            Details for requesting resource validation
+            Details for requesting resource validation.
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -3966,14 +3979,15 @@ class FleetAppsManagementClient(object):
 
     def request_target_discovery(self, request_target_discovery_details, fleet_id, **kwargs):
         """
-        Confirm targets to be managed for a Fleet.Only targets that are confirmed will be managed by FAMS
+        Confirm targets to be managed for a Fleet.
+        Only targets that are confirmed will be managed by Fleet Application Management
 
 
         :param oci.fleet_apps_management.models.RequestTargetDiscoveryDetails request_target_discovery_details: (required)
-            Details for requesting target discovery
+            Details for requesting target discovery.
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -4077,11 +4091,11 @@ class FleetAppsManagementClient(object):
 
     def update_fleet(self, fleet_id, update_fleet_details, **kwargs):
         """
-        Updates the Fleet
+        Update fleet information in Fleet Application Management.
 
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param oci.fleet_apps_management.models.UpdateFleetDetails update_fleet_details: (required)
             The information to be updated.
@@ -4189,17 +4203,17 @@ class FleetAppsManagementClient(object):
 
     def update_fleet_credential(self, fleet_credential_id, fleet_id, update_fleet_credential_details, **kwargs):
         """
-        Updates the FleetCredential
+        Edit credentials associated with a product or application in\u00A0Fleet Application Management.
 
 
         :param str fleet_credential_id: (required)
             unique FleetCredential identifier
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param oci.fleet_apps_management.models.UpdateFleetCredentialDetails update_fleet_credential_details: (required)
-            The information to be updated.
+            The credential information to be updated.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -4303,14 +4317,14 @@ class FleetAppsManagementClient(object):
 
     def update_fleet_property(self, fleet_property_id, fleet_id, update_fleet_property_details, **kwargs):
         """
-        Updates the FleetProperty
+        Edit a property associated with a fleet in Fleet Application Management.
 
 
         :param str fleet_property_id: (required)
-            unique FleetProperty identifier
+            unique FleetProperty identifier.
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param oci.fleet_apps_management.models.UpdateFleetPropertyDetails update_fleet_property_details: (required)
             The information to be updated.
@@ -4419,14 +4433,14 @@ class FleetAppsManagementClient(object):
 
     def update_fleet_resource(self, fleet_resource_id, fleet_id, update_fleet_resource_details, **kwargs):
         """
-        Updates the FleetResource
+        Updates the FleetResource.
 
 
         :param str fleet_resource_id: (required)
             unique FleetResource identifier
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param oci.fleet_apps_management.models.UpdateFleetResourceDetails update_fleet_resource_details: (required)
             The information to be updated.

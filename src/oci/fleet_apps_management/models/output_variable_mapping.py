@@ -12,7 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OutputVariableMapping(object):
     """
-    The details of the output variable that will be used as Input argument.
+    Output variable to Input variable mapping details.
+    Output variable of a task can be used as an input variable for a subsequent task.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +47,7 @@ class OutputVariableMapping(object):
     def name(self):
         """
         **[Required]** Gets the name of this OutputVariableMapping.
-        The name of the input variable
+        The name of the input variable.
 
 
         :return: The name of this OutputVariableMapping.
@@ -58,7 +59,7 @@ class OutputVariableMapping(object):
     def name(self, name):
         """
         Sets the name of this OutputVariableMapping.
-        The name of the input variable
+        The name of the input variable.
 
 
         :param name: The name of this OutputVariableMapping.

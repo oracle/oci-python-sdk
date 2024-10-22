@@ -388,7 +388,7 @@ class FleetResourceSummary(object):
     def compliance_state(self):
         """
         Gets the compliance_state of this FleetResourceSummary.
-        Compliance State of the Resource
+        Compliance State of the Resource.
 
         Allowed values for this property are: "UNKNOWN", "COMPLIANT", "NON_COMPLIANT", "WARNING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -403,7 +403,7 @@ class FleetResourceSummary(object):
     def compliance_state(self, compliance_state):
         """
         Sets the compliance_state of this FleetResourceSummary.
-        Compliance State of the Resource
+        Compliance State of the Resource.
 
 
         :param compliance_state: The compliance_state of this FleetResourceSummary.
@@ -418,7 +418,7 @@ class FleetResourceSummary(object):
     def tenancy_name(self):
         """
         Gets the tenancy_name of this FleetResourceSummary.
-        Resource Tenancy Name
+        Resource Tenancy Name.
 
 
         :return: The tenancy_name of this FleetResourceSummary.
@@ -430,7 +430,7 @@ class FleetResourceSummary(object):
     def tenancy_name(self, tenancy_name):
         """
         Sets the tenancy_name of this FleetResourceSummary.
-        Resource Tenancy Name
+        Resource Tenancy Name.
 
 
         :param tenancy_name: The tenancy_name of this FleetResourceSummary.
@@ -442,7 +442,7 @@ class FleetResourceSummary(object):
     def compartment(self):
         """
         Gets the compartment of this FleetResourceSummary.
-        Resource Compartment
+        Resource Compartment name.
 
 
         :return: The compartment of this FleetResourceSummary.
@@ -454,7 +454,7 @@ class FleetResourceSummary(object):
     def compartment(self, compartment):
         """
         Sets the compartment of this FleetResourceSummary.
-        Resource Compartment
+        Resource Compartment name.
 
 
         :param compartment: The compartment of this FleetResourceSummary.
@@ -514,7 +514,7 @@ class FleetResourceSummary(object):
     def target_count(self):
         """
         Gets the target_count of this FleetResourceSummary.
-        Count of targets  within the resource.
+        Count of targets within the resource.
 
 
         :return: The target_count of this FleetResourceSummary.
@@ -526,7 +526,7 @@ class FleetResourceSummary(object):
     def target_count(self, target_count):
         """
         Sets the target_count of this FleetResourceSummary.
-        Count of targets  within the resource.
+        Count of targets within the resource.
 
 
         :param target_count: The target_count of this FleetResourceSummary.
@@ -538,7 +538,8 @@ class FleetResourceSummary(object):
     def product(self):
         """
         Gets the product of this FleetResourceSummary.
-        Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+        Product associated with the resource when the resource type is fleet.
+        Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
 
 
         :return: The product of this FleetResourceSummary.
@@ -550,7 +551,8 @@ class FleetResourceSummary(object):
     def product(self, product):
         """
         Sets the product of this FleetResourceSummary.
-        Product associated with the resource when resource type is fleet.Will only be returned for PRODUCT fleets that are part of a GROUP Fleet
+        Product associated with the resource when the resource type is fleet.
+        Will only be returned for PRODUCT fleets that are part of a GROUP Fleet.
 
 
         :param product: The product of this FleetResourceSummary.
@@ -562,7 +564,8 @@ class FleetResourceSummary(object):
     def application_type(self):
         """
         Gets the application_type of this FleetResourceSummary.
-        Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+        Application Type associated with the resource when the resource type is fleet.
+        Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
 
 
         :return: The application_type of this FleetResourceSummary.
@@ -574,7 +577,8 @@ class FleetResourceSummary(object):
     def application_type(self, application_type):
         """
         Sets the application_type of this FleetResourceSummary.
-        Application Type associated with the resource when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+        Application Type associated with the resource when the resource type is fleet.
+        Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
 
 
         :param application_type: The application_type of this FleetResourceSummary.
@@ -586,7 +590,8 @@ class FleetResourceSummary(object):
     def environment_type(self):
         """
         Gets the environment_type of this FleetResourceSummary.
-        Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+        Environment Type associated with the Fleet when the resource type is fleet.
+        Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
 
 
         :return: The environment_type of this FleetResourceSummary.
@@ -598,7 +603,8 @@ class FleetResourceSummary(object):
     def environment_type(self, environment_type):
         """
         Sets the environment_type of this FleetResourceSummary.
-        Environment Type associated with the Fleet when resource type is fleet.Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+        Environment Type associated with the Fleet when the resource type is fleet.
+        Will only be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
 
 
         :param environment_type: The environment_type of this FleetResourceSummary.

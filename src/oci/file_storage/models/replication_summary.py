@@ -66,6 +66,10 @@ class ReplicationSummary(object):
             The value to assign to the time_created property of this ReplicationSummary.
         :type time_created: datetime
 
+        :param locks:
+            The value to assign to the locks property of this ReplicationSummary.
+        :type locks: list[oci.file_storage.models.ResourceLock]
+
         :param replication_interval:
             The value to assign to the replication_interval property of this ReplicationSummary.
         :type replication_interval: int
@@ -94,6 +98,7 @@ class ReplicationSummary(object):
             'lifecycle_state': 'str',
             'display_name': 'str',
             'time_created': 'datetime',
+            'locks': 'list[ResourceLock]',
             'replication_interval': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -108,6 +113,7 @@ class ReplicationSummary(object):
             'lifecycle_state': 'lifecycleState',
             'display_name': 'displayName',
             'time_created': 'timeCreated',
+            'locks': 'locks',
             'replication_interval': 'replicationInterval',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -121,6 +127,7 @@ class ReplicationSummary(object):
         self._lifecycle_state = None
         self._display_name = None
         self._time_created = None
+        self._locks = None
         self._replication_interval = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -300,6 +307,30 @@ class ReplicationSummary(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this ReplicationSummary.
+        Locks associated with this resource.
+
+
+        :return: The locks of this ReplicationSummary.
+        :rtype: list[oci.file_storage.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this ReplicationSummary.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this ReplicationSummary.
+        :type: list[oci.file_storage.models.ResourceLock]
+        """
+        self._locks = locks
 
     @property
     def replication_interval(self):

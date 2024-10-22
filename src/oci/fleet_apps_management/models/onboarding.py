@@ -12,7 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Onboarding(object):
     """
-    FleetAppManagementService onboarding resource.
+    Fleet Application Management onboarding resource.
+    The onboarding process lets\u00A0Fleet Application Management\u00A0create a few required policies that you need to start using it and its features.
     """
 
     #: A constant which can be used with the lifecycle_state property of a Onboarding.
@@ -84,6 +85,14 @@ class Onboarding(object):
             The value to assign to the is_cost_tracking_tag_enabled property of this Onboarding.
         :type is_cost_tracking_tag_enabled: bool
 
+        :param applied_policies:
+            The value to assign to the applied_policies property of this Onboarding.
+        :type applied_policies: oci.fleet_apps_management.models.OnboardingPolicySummary
+
+        :param discovery_frequency:
+            The value to assign to the discovery_frequency property of this Onboarding.
+        :type discovery_frequency: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Onboarding.
             Allowed values for this property are: "ACTIVE", "INACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "UPDATING", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
@@ -104,6 +113,8 @@ class Onboarding(object):
             'is_fams_tag_enabled': 'bool',
             'version': 'str',
             'is_cost_tracking_tag_enabled': 'bool',
+            'applied_policies': 'OnboardingPolicySummary',
+            'discovery_frequency': 'str',
             'lifecycle_state': 'str',
             'system_tags': 'dict(str, dict(str, object))'
         }
@@ -117,6 +128,8 @@ class Onboarding(object):
             'is_fams_tag_enabled': 'isFamsTagEnabled',
             'version': 'version',
             'is_cost_tracking_tag_enabled': 'isCostTrackingTagEnabled',
+            'applied_policies': 'appliedPolicies',
+            'discovery_frequency': 'discoveryFrequency',
             'lifecycle_state': 'lifecycleState',
             'system_tags': 'systemTags'
         }
@@ -129,6 +142,8 @@ class Onboarding(object):
         self._is_fams_tag_enabled = None
         self._version = None
         self._is_cost_tracking_tag_enabled = None
+        self._applied_policies = None
+        self._discovery_frequency = None
         self._lifecycle_state = None
         self._system_tags = None
 
@@ -256,7 +271,8 @@ class Onboarding(object):
     def is_fams_tag_enabled(self):
         """
         Gets the is_fams_tag_enabled of this Onboarding.
-        A value determining FAMS tag is enabled or not
+        A value determining if the Fleet Application Management tagging is enabled or not.
+        Allow Fleet Application Management to tag resources with fleet name using \"Oracle$FAMS-Tags.FleetName\" tag.
 
 
         :return: The is_fams_tag_enabled of this Onboarding.
@@ -268,7 +284,8 @@ class Onboarding(object):
     def is_fams_tag_enabled(self, is_fams_tag_enabled):
         """
         Sets the is_fams_tag_enabled of this Onboarding.
-        A value determining FAMS tag is enabled or not
+        A value determining if the Fleet Application Management tagging is enabled or not.
+        Allow Fleet Application Management to tag resources with fleet name using \"Oracle$FAMS-Tags.FleetName\" tag.
 
 
         :param is_fams_tag_enabled: The is_fams_tag_enabled of this Onboarding.
@@ -280,7 +297,7 @@ class Onboarding(object):
     def version(self):
         """
         Gets the version of this Onboarding.
-        Version of FAMS the tenant is onboarded to.
+        The version of Fleet Application Management that the tenant is onboarded to.
 
 
         :return: The version of this Onboarding.
@@ -292,7 +309,7 @@ class Onboarding(object):
     def version(self, version):
         """
         Sets the version of this Onboarding.
-        Version of FAMS the tenant is onboarded to.
+        The version of Fleet Application Management that the tenant is onboarded to.
 
 
         :param version: The version of this Onboarding.
@@ -304,7 +321,8 @@ class Onboarding(object):
     def is_cost_tracking_tag_enabled(self):
         """
         Gets the is_cost_tracking_tag_enabled of this Onboarding.
-        A value determining if cost tracking tag is enabled or not
+        A value determining if the cost tracking tag is enabled or not.
+        Allow Fleet Application Management to tag resources with cost tracking tag using \"Oracle$FAMS-Tags.FAMSManaged\" tag.
 
 
         :return: The is_cost_tracking_tag_enabled of this Onboarding.
@@ -316,13 +334,58 @@ class Onboarding(object):
     def is_cost_tracking_tag_enabled(self, is_cost_tracking_tag_enabled):
         """
         Sets the is_cost_tracking_tag_enabled of this Onboarding.
-        A value determining if cost tracking tag is enabled or not
+        A value determining if the cost tracking tag is enabled or not.
+        Allow Fleet Application Management to tag resources with cost tracking tag using \"Oracle$FAMS-Tags.FAMSManaged\" tag.
 
 
         :param is_cost_tracking_tag_enabled: The is_cost_tracking_tag_enabled of this Onboarding.
         :type: bool
         """
         self._is_cost_tracking_tag_enabled = is_cost_tracking_tag_enabled
+
+    @property
+    def applied_policies(self):
+        """
+        Gets the applied_policies of this Onboarding.
+
+        :return: The applied_policies of this Onboarding.
+        :rtype: oci.fleet_apps_management.models.OnboardingPolicySummary
+        """
+        return self._applied_policies
+
+    @applied_policies.setter
+    def applied_policies(self, applied_policies):
+        """
+        Sets the applied_policies of this Onboarding.
+
+        :param applied_policies: The applied_policies of this Onboarding.
+        :type: oci.fleet_apps_management.models.OnboardingPolicySummary
+        """
+        self._applied_policies = applied_policies
+
+    @property
+    def discovery_frequency(self):
+        """
+        Gets the discovery_frequency of this Onboarding.
+        Provide discovery frequency.
+
+
+        :return: The discovery_frequency of this Onboarding.
+        :rtype: str
+        """
+        return self._discovery_frequency
+
+    @discovery_frequency.setter
+    def discovery_frequency(self, discovery_frequency):
+        """
+        Sets the discovery_frequency of this Onboarding.
+        Provide discovery frequency.
+
+
+        :param discovery_frequency: The discovery_frequency of this Onboarding.
+        :type: str
+        """
+        self._discovery_frequency = discovery_frequency
 
     @property
     def lifecycle_state(self):

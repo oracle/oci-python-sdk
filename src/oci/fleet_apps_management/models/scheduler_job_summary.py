@@ -308,7 +308,7 @@ class SchedulerJobSummary(object):
     def time_scheduled(self):
         """
         Gets the time_scheduled of this SchedulerJobSummary.
-        Scheduled date for the Job.Provide only the date
+        The scheduled date and time for the Job.
 
 
         :return: The time_scheduled of this SchedulerJobSummary.
@@ -320,7 +320,7 @@ class SchedulerJobSummary(object):
     def time_scheduled(self, time_scheduled):
         """
         Sets the time_scheduled of this SchedulerJobSummary.
-        Scheduled date for the Job.Provide only the date
+        The scheduled date and time for the Job.
 
 
         :param time_scheduled: The time_scheduled of this SchedulerJobSummary.
@@ -332,7 +332,9 @@ class SchedulerJobSummary(object):
     def count_of_affected_action_groups(self):
         """
         Gets the count_of_affected_action_groups of this SchedulerJobSummary.
-        Count of ActionGroups affected by the Schedule.
+        Count of Action Groups affected by the Schedule.
+        An action group is a group of entities grouped for a lifecycle activity.
+        Example - A Fleet will be considered an Action Group for any lifecycle activity.
 
 
         :return: The count_of_affected_action_groups of this SchedulerJobSummary.
@@ -344,7 +346,9 @@ class SchedulerJobSummary(object):
     def count_of_affected_action_groups(self, count_of_affected_action_groups):
         """
         Sets the count_of_affected_action_groups of this SchedulerJobSummary.
-        Count of ActionGroups affected by the Schedule.
+        Count of Action Groups affected by the Schedule.
+        An action group is a group of entities grouped for a lifecycle activity.
+        Example - A Fleet will be considered an Action Group for any lifecycle activity.
 
 
         :param count_of_affected_action_groups: The count_of_affected_action_groups of this SchedulerJobSummary.
@@ -356,7 +360,7 @@ class SchedulerJobSummary(object):
     def count_of_affected_resources(self):
         """
         Gets the count_of_affected_resources of this SchedulerJobSummary.
-        Count of Resources affected by the Schedule
+        Count of resources affected by the schedule.
 
 
         :return: The count_of_affected_resources of this SchedulerJobSummary.
@@ -368,7 +372,7 @@ class SchedulerJobSummary(object):
     def count_of_affected_resources(self, count_of_affected_resources):
         """
         Sets the count_of_affected_resources of this SchedulerJobSummary.
-        Count of Resources affected by the Schedule
+        Count of resources affected by the schedule.
 
 
         :param count_of_affected_resources: The count_of_affected_resources of this SchedulerJobSummary.
@@ -380,7 +384,7 @@ class SchedulerJobSummary(object):
     def count_of_affected_targets(self):
         """
         Gets the count_of_affected_targets of this SchedulerJobSummary.
-        Count of Targets affected by the Schedule
+        Count of targets affected by the schedule.
 
 
         :return: The count_of_affected_targets of this SchedulerJobSummary.
@@ -392,7 +396,7 @@ class SchedulerJobSummary(object):
     def count_of_affected_targets(self, count_of_affected_targets):
         """
         Sets the count_of_affected_targets of this SchedulerJobSummary.
-        Count of Targets affected by the Schedule
+        Count of targets affected by the schedule.
 
 
         :param count_of_affected_targets: The count_of_affected_targets of this SchedulerJobSummary.
@@ -404,7 +408,7 @@ class SchedulerJobSummary(object):
     def action_group_types(self):
         """
         Gets the action_group_types of this SchedulerJobSummary.
-        All ActionGroup Types part of the schedule.
+        All Action Group types are part of the schedule.
 
         Allowed values for items in this list are: "PRODUCT", "ENVIRONMENT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -419,7 +423,7 @@ class SchedulerJobSummary(object):
     def action_group_types(self, action_group_types):
         """
         Sets the action_group_types of this SchedulerJobSummary.
-        All ActionGroup Types part of the schedule.
+        All Action Group types are part of the schedule.
 
 
         :param action_group_types: The action_group_types of this SchedulerJobSummary.
@@ -434,7 +438,7 @@ class SchedulerJobSummary(object):
     def application_types(self):
         """
         Gets the application_types of this SchedulerJobSummary.
-        All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+        All application types that are part of the schedule for an ENVIRONMENT action group Type.
 
 
         :return: The application_types of this SchedulerJobSummary.
@@ -446,7 +450,7 @@ class SchedulerJobSummary(object):
     def application_types(self, application_types):
         """
         Sets the application_types of this SchedulerJobSummary.
-        All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+        All application types that are part of the schedule for an ENVIRONMENT action group Type.
 
 
         :param application_types: The application_types of this SchedulerJobSummary.
@@ -458,7 +462,7 @@ class SchedulerJobSummary(object):
     def products(self):
         """
         Gets the products of this SchedulerJobSummary.
-        All products part of the schedule for PRODUCT ActionGroup Type.
+        All products that are part of the schedule for a PRODUCT action group type.
 
 
         :return: The products of this SchedulerJobSummary.
@@ -470,7 +474,7 @@ class SchedulerJobSummary(object):
     def products(self, products):
         """
         Sets the products of this SchedulerJobSummary.
-        All products part of the schedule for PRODUCT ActionGroup Type.
+        All products that are part of the schedule for a PRODUCT action group type.
 
 
         :param products: The products of this SchedulerJobSummary.
@@ -482,7 +486,7 @@ class SchedulerJobSummary(object):
     def lifecycle_operations(self):
         """
         Gets the lifecycle_operations of this SchedulerJobSummary.
-        All LifeCycle Operations part of the schedule
+        All LifeCycle Operations that are part of the schedule.
 
 
         :return: The lifecycle_operations of this SchedulerJobSummary.
@@ -494,7 +498,7 @@ class SchedulerJobSummary(object):
     def lifecycle_operations(self, lifecycle_operations):
         """
         Sets the lifecycle_operations of this SchedulerJobSummary.
-        All LifeCycle Operations part of the schedule
+        All LifeCycle Operations that are part of the schedule.
 
 
         :param lifecycle_operations: The lifecycle_operations of this SchedulerJobSummary.

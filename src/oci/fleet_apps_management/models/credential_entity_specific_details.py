@@ -12,8 +12,16 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CredentialEntitySpecificDetails(object):
     """
-    Credential Details
+    Credential specific Details.
     """
+
+    #: A constant which can be used with the credential_level property of a CredentialEntitySpecificDetails.
+    #: This constant has a value of "FLEET"
+    CREDENTIAL_LEVEL_FLEET = "FLEET"
+
+    #: A constant which can be used with the credential_level property of a CredentialEntitySpecificDetails.
+    #: This constant has a value of "RESOURCE"
+    CREDENTIAL_LEVEL_RESOURCE = "RESOURCE"
 
     #: A constant which can be used with the credential_level property of a CredentialEntitySpecificDetails.
     #: This constant has a value of "TARGET"
@@ -25,12 +33,14 @@ class CredentialEntitySpecificDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.fleet_apps_management.models.TargetCredentialEntitySpecificDetails`
+        * :class:`~oci.fleet_apps_management.models.FleetCredentialEntitySpecificDetails`
+        * :class:`~oci.fleet_apps_management.models.ResourceCredentialEntitySpecificDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param credential_level:
             The value to assign to the credential_level property of this CredentialEntitySpecificDetails.
-            Allowed values for this property are: "TARGET", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "FLEET", "RESOURCE", "TARGET", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type credential_level: str
 
@@ -55,6 +65,12 @@ class CredentialEntitySpecificDetails(object):
 
         if type == 'TARGET':
             return 'TargetCredentialEntitySpecificDetails'
+
+        if type == 'FLEET':
+            return 'FleetCredentialEntitySpecificDetails'
+
+        if type == 'RESOURCE':
+            return 'ResourceCredentialEntitySpecificDetails'
         else:
             return 'CredentialEntitySpecificDetails'
 
@@ -62,9 +78,9 @@ class CredentialEntitySpecificDetails(object):
     def credential_level(self):
         """
         **[Required]** Gets the credential_level of this CredentialEntitySpecificDetails.
-        Credential Level.
+        At what level the credential is provided?
 
-        Allowed values for this property are: "TARGET", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "FLEET", "RESOURCE", "TARGET", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -77,13 +93,13 @@ class CredentialEntitySpecificDetails(object):
     def credential_level(self, credential_level):
         """
         Sets the credential_level of this CredentialEntitySpecificDetails.
-        Credential Level.
+        At what level the credential is provided?
 
 
         :param credential_level: The credential_level of this CredentialEntitySpecificDetails.
         :type: str
         """
-        allowed_values = ["TARGET"]
+        allowed_values = ["FLEET", "RESOURCE", "TARGET"]
         if not value_allowed_none_or_none_sentinel(credential_level, allowed_values):
             credential_level = 'UNKNOWN_ENUM_VALUE'
         self._credential_level = credential_level

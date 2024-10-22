@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateVmWareAssetSourceDetails(CreateAssetSourceDetails):
     """
-    Description of an asset source.
+    VMware asset source creation request.
     """
 
     def __init__(self, **kwargs):
@@ -23,7 +23,7 @@ class CreateVmWareAssetSourceDetails(CreateAssetSourceDetails):
 
         :param type:
             The value to assign to the type property of this CreateVmWareAssetSourceDetails.
-            Allowed values for this property are: "VMWARE"
+            Allowed values for this property are: "VMWARE", "AWS"
         :type type: str
 
         :param display_name:

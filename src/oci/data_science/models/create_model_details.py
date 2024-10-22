@@ -68,6 +68,14 @@ class CreateModelDetails(object):
             The value to assign to the version_label property of this CreateModelDetails.
         :type version_label: str
 
+        :param retention_setting:
+            The value to assign to the retention_setting property of this CreateModelDetails.
+        :type retention_setting: oci.data_science.models.RetentionSetting
+
+        :param backup_setting:
+            The value to assign to the backup_setting property of this CreateModelDetails.
+        :type backup_setting: oci.data_science.models.BackupSetting
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -81,7 +89,9 @@ class CreateModelDetails(object):
             'input_schema': 'str',
             'output_schema': 'str',
             'model_version_set_id': 'str',
-            'version_label': 'str'
+            'version_label': 'str',
+            'retention_setting': 'RetentionSetting',
+            'backup_setting': 'BackupSetting'
         }
 
         self.attribute_map = {
@@ -96,7 +106,9 @@ class CreateModelDetails(object):
             'input_schema': 'inputSchema',
             'output_schema': 'outputSchema',
             'model_version_set_id': 'modelVersionSetId',
-            'version_label': 'versionLabel'
+            'version_label': 'versionLabel',
+            'retention_setting': 'retentionSetting',
+            'backup_setting': 'backupSetting'
         }
 
         self._compartment_id = None
@@ -111,6 +123,8 @@ class CreateModelDetails(object):
         self._output_schema = None
         self._model_version_set_id = None
         self._version_label = None
+        self._retention_setting = None
+        self._backup_setting = None
 
     @property
     def compartment_id(self):
@@ -421,6 +435,46 @@ class CreateModelDetails(object):
         :type: str
         """
         self._version_label = version_label
+
+    @property
+    def retention_setting(self):
+        """
+        Gets the retention_setting of this CreateModelDetails.
+
+        :return: The retention_setting of this CreateModelDetails.
+        :rtype: oci.data_science.models.RetentionSetting
+        """
+        return self._retention_setting
+
+    @retention_setting.setter
+    def retention_setting(self, retention_setting):
+        """
+        Sets the retention_setting of this CreateModelDetails.
+
+        :param retention_setting: The retention_setting of this CreateModelDetails.
+        :type: oci.data_science.models.RetentionSetting
+        """
+        self._retention_setting = retention_setting
+
+    @property
+    def backup_setting(self):
+        """
+        Gets the backup_setting of this CreateModelDetails.
+
+        :return: The backup_setting of this CreateModelDetails.
+        :rtype: oci.data_science.models.BackupSetting
+        """
+        return self._backup_setting
+
+    @backup_setting.setter
+    def backup_setting(self, backup_setting):
+        """
+        Sets the backup_setting of this CreateModelDetails.
+
+        :param backup_setting: The backup_setting of this CreateModelDetails.
+        :type: oci.data_science.models.BackupSetting
+        """
+        self._backup_setting = backup_setting
 
     def __repr__(self):
         return formatted_flat_dict(self)

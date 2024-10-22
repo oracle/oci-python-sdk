@@ -148,7 +148,7 @@ class InventoryClient(object):
         :param str asset_type: (optional)
             The type of asset.
 
-            Allowed values are: "VMWARE_VM", "VM"
+            Allowed values are: "VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"
 
         :param str sort_order: (optional)
             The sort order to use, either 'ASC' or 'DESC'.
@@ -217,7 +217,7 @@ class InventoryClient(object):
                 )
 
         if 'asset_type' in kwargs:
-            asset_type_allowed_values = ["VMWARE_VM", "VM"]
+            asset_type_allowed_values = ["VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"]
             if kwargs['asset_type'] not in asset_type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `asset_type`, must be one of { asset_type_allowed_values }"
@@ -1267,7 +1267,7 @@ class InventoryClient(object):
         :param str asset_type: (optional)
             The type of asset.
 
-            Allowed values are: "VMWARE_VM", "VM"
+            Allowed values are: "VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"
 
         :param str asset_id: (optional)
             Unique asset identifier.
@@ -1346,7 +1346,7 @@ class InventoryClient(object):
                 )
 
         if 'asset_type' in kwargs:
-            asset_type_allowed_values = ["VMWARE_VM", "VM"]
+            asset_type_allowed_values = ["VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"]
             if kwargs['asset_type'] not in asset_type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `asset_type`, must be one of { asset_type_allowed_values }"

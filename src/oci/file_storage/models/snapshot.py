@@ -92,6 +92,10 @@ class Snapshot(object):
             The value to assign to the lifecycle_details property of this Snapshot.
         :type lifecycle_details: str
 
+        :param locks:
+            The value to assign to the locks property of this Snapshot.
+        :type locks: list[oci.file_storage.models.ResourceLock]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Snapshot.
         :type freeform_tags: dict(str, str)
@@ -120,6 +124,7 @@ class Snapshot(object):
             'provenance_id': 'str',
             'is_clone_source': 'bool',
             'lifecycle_details': 'str',
+            'locks': 'list[ResourceLock]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'expiration_time': 'datetime',
@@ -137,6 +142,7 @@ class Snapshot(object):
             'provenance_id': 'provenanceId',
             'is_clone_source': 'isCloneSource',
             'lifecycle_details': 'lifecycleDetails',
+            'locks': 'locks',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'expiration_time': 'expirationTime',
@@ -153,6 +159,7 @@ class Snapshot(object):
         self._provenance_id = None
         self._is_clone_source = None
         self._lifecycle_details = None
+        self._locks = None
         self._freeform_tags = None
         self._defined_tags = None
         self._expiration_time = None
@@ -475,6 +482,30 @@ class Snapshot(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this Snapshot.
+        Locks associated with this resource.
+
+
+        :return: The locks of this Snapshot.
+        :rtype: list[oci.file_storage.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this Snapshot.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this Snapshot.
+        :type: list[oci.file_storage.models.ResourceLock]
+        """
+        self._locks = locks
 
     @property
     def freeform_tags(self):

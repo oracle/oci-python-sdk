@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ApiBasedExecutionDetails(ExecutionDetails):
     """
-    Details for API based execution
+    Details for API-based execution.
     """
 
     def __init__(self, **kwargs):

@@ -51,6 +51,10 @@ class LdapBindAccount(OutboundConnector):
             Allowed values for this property are: "LDAPBIND"
         :type connector_type: str
 
+        :param locks:
+            The value to assign to the locks property of this LdapBindAccount.
+        :type locks: list[oci.file_storage.models.ResourceLock]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this LdapBindAccount.
         :type freeform_tags: dict(str, str)
@@ -84,6 +88,7 @@ class LdapBindAccount(OutboundConnector):
             'display_name': 'str',
             'time_created': 'datetime',
             'connector_type': 'str',
+            'locks': 'list[ResourceLock]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'endpoints': 'list[Endpoint]',
@@ -100,6 +105,7 @@ class LdapBindAccount(OutboundConnector):
             'display_name': 'displayName',
             'time_created': 'timeCreated',
             'connector_type': 'connectorType',
+            'locks': 'locks',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'endpoints': 'endpoints',
@@ -115,6 +121,7 @@ class LdapBindAccount(OutboundConnector):
         self._display_name = None
         self._time_created = None
         self._connector_type = None
+        self._locks = None
         self._freeform_tags = None
         self._defined_tags = None
         self._endpoints = None

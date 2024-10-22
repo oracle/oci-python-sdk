@@ -114,7 +114,7 @@ class InputArgument(object):
     def name(self):
         """
         **[Required]** Gets the name of this InputArgument.
-        The name of the argument
+        The name of the argument.
 
 
         :return: The name of this InputArgument.
@@ -126,7 +126,7 @@ class InputArgument(object):
     def name(self, name):
         """
         Sets the name of this InputArgument.
-        The name of the argument
+        The name of the argument.
 
 
         :param name: The name of this InputArgument.

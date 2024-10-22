@@ -40,13 +40,18 @@ class CreateSnapshotDetails(object):
             The value to assign to the defined_tags property of this CreateSnapshotDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param locks:
+            The value to assign to the locks property of this CreateSnapshotDetails.
+        :type locks: list[oci.file_storage.models.ResourceLock]
+
         """
         self.swagger_types = {
             'file_system_id': 'str',
             'name': 'str',
             'expiration_time': 'datetime',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -54,7 +59,8 @@ class CreateSnapshotDetails(object):
             'name': 'name',
             'expiration_time': 'expirationTime',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'locks': 'locks'
         }
 
         self._file_system_id = None
@@ -62,6 +68,7 @@ class CreateSnapshotDetails(object):
         self._expiration_time = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._locks = None
 
     @property
     def file_system_id(self):
@@ -216,6 +223,30 @@ class CreateSnapshotDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this CreateSnapshotDetails.
+        Locks associated with this resource.
+
+
+        :return: The locks of this CreateSnapshotDetails.
+        :rtype: list[oci.file_storage.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this CreateSnapshotDetails.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this CreateSnapshotDetails.
+        :type: list[oci.file_storage.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

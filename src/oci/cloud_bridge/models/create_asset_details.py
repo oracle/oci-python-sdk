@@ -23,12 +23,22 @@ class CreateAssetDetails(object):
     #: This constant has a value of "VM"
     ASSET_TYPE_VM = "VM"
 
+    #: A constant which can be used with the asset_type property of a CreateAssetDetails.
+    #: This constant has a value of "AWS_EC2"
+    ASSET_TYPE_AWS_EC2 = "AWS_EC2"
+
+    #: A constant which can be used with the asset_type property of a CreateAssetDetails.
+    #: This constant has a value of "AWS_EBS"
+    ASSET_TYPE_AWS_EBS = "AWS_EBS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateAssetDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.cloud_bridge.models.CreateAwsEbsAssetDetails`
         * :class:`~oci.cloud_bridge.models.CreateVmwareVmAssetDetails`
+        * :class:`~oci.cloud_bridge.models.CreateAwsEc2AssetDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -54,7 +64,7 @@ class CreateAssetDetails(object):
 
         :param asset_type:
             The value to assign to the asset_type property of this CreateAssetDetails.
-            Allowed values for this property are: "VMWARE_VM", "VM"
+            Allowed values for this property are: "VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"
         :type asset_type: str
 
         :param asset_source_ids:
@@ -112,8 +122,14 @@ class CreateAssetDetails(object):
         """
         type = object_dictionary['assetType']
 
+        if type == 'AWS_EBS':
+            return 'CreateAwsEbsAssetDetails'
+
         if type == 'VMWARE_VM':
             return 'CreateVmwareVmAssetDetails'
+
+        if type == 'AWS_EC2':
+            return 'CreateAwsEc2AssetDetails'
         else:
             return 'CreateAssetDetails'
 
@@ -243,7 +259,7 @@ class CreateAssetDetails(object):
         **[Required]** Gets the asset_type of this CreateAssetDetails.
         The type of asset.
 
-        Allowed values for this property are: "VMWARE_VM", "VM"
+        Allowed values for this property are: "VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"
 
 
         :return: The asset_type of this CreateAssetDetails.
@@ -261,7 +277,7 @@ class CreateAssetDetails(object):
         :param asset_type: The asset_type of this CreateAssetDetails.
         :type: str
         """
-        allowed_values = ["VMWARE_VM", "VM"]
+        allowed_values = ["VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"]
         if not value_allowed_none_or_none_sentinel(asset_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `asset_type`, must be None or one of {allowed_values}"

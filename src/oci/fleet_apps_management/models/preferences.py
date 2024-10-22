@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Preferences(object):
     """
-    Preferences to send notifications on the fleet activities
+    Preferences to send notifications on the fleet activities.
     """
 
     def __init__(self, **kwargs):
@@ -77,7 +77,7 @@ class Preferences(object):
     def on_job_failure(self):
         """
         Gets the on_job_failure of this Preferences.
-        Enables or disables notification on Job Failures.'
+        Enables or disables notification on Job Failures.
 
 
         :return: The on_job_failure of this Preferences.
@@ -89,7 +89,7 @@ class Preferences(object):
     def on_job_failure(self, on_job_failure):
         """
         Sets the on_job_failure of this Preferences.
-        Enables or disables notification on Job Failures.'
+        Enables or disables notification on Job Failures.
 
 
         :param on_job_failure: The on_job_failure of this Preferences.

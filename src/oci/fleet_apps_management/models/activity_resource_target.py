@@ -59,6 +59,10 @@ class ActivityResourceTarget(object):
     #: This constant has a value of "TIMED_OUT"
     STATUS_TIMED_OUT = "TIMED_OUT"
 
+    #: A constant which can be used with the status property of a ActivityResourceTarget.
+    #: This constant has a value of "PAUSED"
+    STATUS_PAUSED = "PAUSED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ActivityResourceTarget object with values from keyword arguments.
@@ -70,23 +74,30 @@ class ActivityResourceTarget(object):
 
         :param status:
             The value to assign to the status property of this ActivityResourceTarget.
-            Allowed values for this property are: "ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT", "PAUSED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
+
+        :param description:
+            The value to assign to the description property of this ActivityResourceTarget.
+        :type description: str
 
         """
         self.swagger_types = {
             'target_name': 'str',
-            'status': 'str'
+            'status': 'str',
+            'description': 'str'
         }
 
         self.attribute_map = {
             'target_name': 'targetName',
-            'status': 'status'
+            'status': 'status',
+            'description': 'description'
         }
 
         self._target_name = None
         self._status = None
+        self._description = None
 
     @property
     def target_name(self):
@@ -116,9 +127,9 @@ class ActivityResourceTarget(object):
     def status(self):
         """
         Gets the status of this ActivityResourceTarget.
-        Status of the Job at Resource Target Level.
+        Status of the Job at target Level.
 
-        Allowed values for this property are: "ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT", "PAUSED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -131,16 +142,42 @@ class ActivityResourceTarget(object):
     def status(self, status):
         """
         Sets the status of this ActivityResourceTarget.
-        Status of the Job at Resource Target Level.
+        Status of the Job at target Level.
 
 
         :param status: The status of this ActivityResourceTarget.
         :type: str
         """
-        allowed_values = ["ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT"]
+        allowed_values = ["ACCEPTED", "WAITING", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED", "SKIPPED", "IGNORED", "NOT_APPLICABLE", "ABORTED", "TIMED_OUT", "PAUSED"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status
+
+    @property
+    def description(self):
+        """
+        Gets the description of this ActivityResourceTarget.
+        Description of the Execution status.
+        If there are any errors, this can also include a short error message.
+
+
+        :return: The description of this ActivityResourceTarget.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """
+        Sets the description of this ActivityResourceTarget.
+        Description of the Execution status.
+        If there are any errors, this can also include a short error message.
+
+
+        :param description: The description of this ActivityResourceTarget.
+        :type: str
+        """
+        self._description = description
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -307,7 +307,7 @@ class RunbookSummary(object):
     def operation(self):
         """
         **[Required]** Gets the operation of this RunbookSummary.
-        The lifecycle operation performed by the task.
+        The lifecycle operation performed by the runbook.
 
 
         :return: The operation of this RunbookSummary.
@@ -319,7 +319,7 @@ class RunbookSummary(object):
     def operation(self, operation):
         """
         Sets the operation of this RunbookSummary.
-        The lifecycle operation performed by the task.
+        The lifecycle operation performed by the runbook.
 
 
         :param operation: The operation of this RunbookSummary.
@@ -386,6 +386,7 @@ class RunbookSummary(object):
         """
         **[Required]** Gets the is_default of this RunbookSummary.
         Is the runbook default?
+        Sets this runbook as the default for the chosen product/product stack for the specified lifecycle operation.
 
 
         :return: The is_default of this RunbookSummary.
@@ -398,6 +399,7 @@ class RunbookSummary(object):
         """
         Sets the is_default of this RunbookSummary.
         Is the runbook default?
+        Sets this runbook as the default for the chosen product/product stack for the specified lifecycle operation.
 
 
         :param is_default: The is_default of this RunbookSummary.
@@ -409,7 +411,7 @@ class RunbookSummary(object):
     def estimated_time(self):
         """
         Gets the estimated_time of this RunbookSummary.
-        Estimated time to successfully complete the runbook execution
+        Estimated time to successfully complete the runbook execution.
 
 
         :return: The estimated_time of this RunbookSummary.
@@ -421,7 +423,7 @@ class RunbookSummary(object):
     def estimated_time(self, estimated_time):
         """
         Sets the estimated_time of this RunbookSummary.
-        Estimated time to successfully complete the runbook execution
+        Estimated time to successfully complete the runbook execution.
 
 
         :param estimated_time: The estimated_time of this RunbookSummary.

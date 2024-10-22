@@ -46,6 +46,10 @@ class LdapBindAccountSummary(OutboundConnectorSummary):
             The value to assign to the time_created property of this LdapBindAccountSummary.
         :type time_created: datetime
 
+        :param locks:
+            The value to assign to the locks property of this LdapBindAccountSummary.
+        :type locks: list[oci.file_storage.models.ResourceLock]
+
         :param connector_type:
             The value to assign to the connector_type property of this LdapBindAccountSummary.
         :type connector_type: str
@@ -74,6 +78,7 @@ class LdapBindAccountSummary(OutboundConnectorSummary):
             'lifecycle_state': 'str',
             'display_name': 'str',
             'time_created': 'datetime',
+            'locks': 'list[ResourceLock]',
             'connector_type': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -88,6 +93,7 @@ class LdapBindAccountSummary(OutboundConnectorSummary):
             'lifecycle_state': 'lifecycleState',
             'display_name': 'displayName',
             'time_created': 'timeCreated',
+            'locks': 'locks',
             'connector_type': 'connectorType',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -101,6 +107,7 @@ class LdapBindAccountSummary(OutboundConnectorSummary):
         self._lifecycle_state = None
         self._display_name = None
         self._time_created = None
+        self._locks = None
         self._connector_type = None
         self._freeform_tags = None
         self._defined_tags = None

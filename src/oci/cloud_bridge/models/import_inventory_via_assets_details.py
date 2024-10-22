@@ -23,6 +23,14 @@ class ImportInventoryViaAssetsDetails(ImportInventoryDetails):
     #: This constant has a value of "VM"
     ASSET_TYPE_VM = "VM"
 
+    #: A constant which can be used with the asset_type property of a ImportInventoryViaAssetsDetails.
+    #: This constant has a value of "AWS_EC2"
+    ASSET_TYPE_AWS_EC2 = "AWS_EC2"
+
+    #: A constant which can be used with the asset_type property of a ImportInventoryViaAssetsDetails.
+    #: This constant has a value of "AWS_EBS"
+    ASSET_TYPE_AWS_EBS = "AWS_EBS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ImportInventoryViaAssetsDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.cloud_bridge.models.ImportInventoryViaAssetsDetails.resource_type` attribute
@@ -52,7 +60,7 @@ class ImportInventoryViaAssetsDetails(ImportInventoryDetails):
 
         :param asset_type:
             The value to assign to the asset_type property of this ImportInventoryViaAssetsDetails.
-            Allowed values for this property are: "VMWARE_VM", "VM"
+            Allowed values for this property are: "VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"
         :type asset_type: str
 
         """
@@ -85,7 +93,7 @@ class ImportInventoryViaAssetsDetails(ImportInventoryDetails):
     @property
     def data(self):
         """
-        Gets the data of this ImportInventoryViaAssetsDetails.
+        **[Required]** Gets the data of this ImportInventoryViaAssetsDetails.
         The file body to be sent in the request.
 
 
@@ -109,10 +117,10 @@ class ImportInventoryViaAssetsDetails(ImportInventoryDetails):
     @property
     def asset_type(self):
         """
-        Gets the asset_type of this ImportInventoryViaAssetsDetails.
+        **[Required]** Gets the asset_type of this ImportInventoryViaAssetsDetails.
         The type of asset.
 
-        Allowed values for this property are: "VMWARE_VM", "VM"
+        Allowed values for this property are: "VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"
 
 
         :return: The asset_type of this ImportInventoryViaAssetsDetails.
@@ -130,7 +138,7 @@ class ImportInventoryViaAssetsDetails(ImportInventoryDetails):
         :param asset_type: The asset_type of this ImportInventoryViaAssetsDetails.
         :type: str
         """
-        allowed_values = ["VMWARE_VM", "VM"]
+        allowed_values = ["VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"]
         if not value_allowed_none_or_none_sentinel(asset_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `asset_type`, must be None or one of {allowed_values}"

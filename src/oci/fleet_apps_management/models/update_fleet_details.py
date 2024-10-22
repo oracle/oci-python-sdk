@@ -177,7 +177,8 @@ class UpdateFleetDetails(object):
     def is_target_auto_confirm(self):
         """
         Gets the is_target_auto_confirm of this UpdateFleetDetails.
-        A value which represents if auto confirming of the targets can be enabled
+        A value that represents if auto-confirming of the targets can be enabled.
+        This will allow targets to be auto-confirmed in the fleet without manual intervention.
 
 
         :return: The is_target_auto_confirm of this UpdateFleetDetails.
@@ -189,7 +190,8 @@ class UpdateFleetDetails(object):
     def is_target_auto_confirm(self, is_target_auto_confirm):
         """
         Sets the is_target_auto_confirm of this UpdateFleetDetails.
-        A value which represents if auto confirming of the targets can be enabled
+        A value that represents if auto-confirming of the targets can be enabled.
+        This will allow targets to be auto-confirmed in the fleet without manual intervention.
 
 
         :param is_target_auto_confirm: The is_target_auto_confirm of this UpdateFleetDetails.

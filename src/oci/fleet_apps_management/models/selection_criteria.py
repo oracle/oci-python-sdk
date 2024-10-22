@@ -12,7 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SelectionCriteria(object):
     """
-    Rule Selection Criteria
+    Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet.
+    Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
     """
 
     #: A constant which can be used with the match_condition property of a SelectionCriteria.
@@ -56,7 +57,8 @@ class SelectionCriteria(object):
     def match_condition(self):
         """
         **[Required]** Gets the match_condition of this SelectionCriteria.
-        Rule selection match condition.
+        Match condition for the rule selection.
+        Include resources that match all rules or any of the rules.
 
         Allowed values for this property are: "MATCH_ALL", "ANY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -71,7 +73,8 @@ class SelectionCriteria(object):
     def match_condition(self, match_condition):
         """
         Sets the match_condition of this SelectionCriteria.
-        Rule selection match condition.
+        Match condition for the rule selection.
+        Include resources that match all rules or any of the rules.
 
 
         :param match_condition: The match_condition of this SelectionCriteria.

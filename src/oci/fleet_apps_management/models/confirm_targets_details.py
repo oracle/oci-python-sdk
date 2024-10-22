@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConfirmTargetsDetails(object):
     """
-    Details of the targets that needs to be confirmed for FAMS management
+    Details of the targets to be confirmed for Fleet Application Management.
     """
 
     def __init__(self, **kwargs):

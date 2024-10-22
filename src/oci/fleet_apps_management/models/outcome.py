@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Outcome(object):
     """
-    Execution Outcome
+    Execution Outcome.
     """
 
     def __init__(self, **kwargs):
@@ -53,7 +53,7 @@ class Outcome(object):
     def output(self):
         """
         **[Required]** Gets the output of this Outcome.
-        A shortened version of Execution Output
+        A shortened version of Execution output.
 
 
         :return: The output of this Outcome.
@@ -65,7 +65,7 @@ class Outcome(object):
     def output(self, output):
         """
         Sets the output of this Outcome.
-        A shortened version of Execution Output
+        A shortened version of Execution output.
 
 
         :param output: The output of this Outcome.
@@ -77,7 +77,7 @@ class Outcome(object):
     def error(self):
         """
         Gets the error of this Outcome.
-        Errors if any associated with the execution
+        Errors if any, associated with the execution.
 
 
         :return: The error of this Outcome.
@@ -89,7 +89,7 @@ class Outcome(object):
     def error(self, error):
         """
         Sets the error of this Outcome.
-        Errors if any associated with the execution
+        Errors if any, associated with the execution.
 
 
         :param error: The error of this Outcome.
@@ -101,7 +101,7 @@ class Outcome(object):
     def exit_code(self):
         """
         Gets the exit_code of this Outcome.
-        Exit Code
+        Exit Code.
 
 
         :return: The exit_code of this Outcome.
@@ -113,7 +113,7 @@ class Outcome(object):
     def exit_code(self, exit_code):
         """
         Sets the exit_code of this Outcome.
-        Exit Code
+        Exit Code.
 
 
         :param exit_code: The exit_code of this Outcome.

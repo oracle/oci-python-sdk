@@ -49,7 +49,7 @@ class PlainTextCredentialDetails(CredentialDetails):
     def value(self):
         """
         **[Required]** Gets the value of this PlainTextCredentialDetails.
-        The value corresponding to the credential
+        The value corresponding to the credential.
 
 
         :return: The value of this PlainTextCredentialDetails.
@@ -61,7 +61,7 @@ class PlainTextCredentialDetails(CredentialDetails):
     def value(self, value):
         """
         Sets the value of this PlainTextCredentialDetails.
-        The value corresponding to the credential
+        The value corresponding to the credential.
 
 
         :param value: The value of this PlainTextCredentialDetails.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class FleetResourceCollection(object):
     """
-    Results of a fleetResource search. Contains boh FleetResourceSummary items and other information, such as metadata.
+    Results of a fleetResource search. Contains both FleetResourceSummary items and other information, such as metadata.
     """
 
     def __init__(self, **kwargs):

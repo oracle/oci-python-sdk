@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OnboardingPolicyCollection(object):
     """
-    List of FleetAppManagementService Onboard policies.
+    List of Fleet Application Management Onboard policies.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class OnboardingPolicyCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this OnboardingPolicyCollection.
-        List of FleetAppManagementService Onboard policies.
+        List of Fleet Application Management Onboard policies.
 
 
         :return: The items of this OnboardingPolicyCollection.
@@ -51,7 +51,7 @@ class OnboardingPolicyCollection(object):
     def items(self, items):
         """
         Sets the items of this OnboardingPolicyCollection.
-        List of FleetAppManagementService Onboard policies.
+        List of Fleet Application Management Onboard policies.
 
 
         :param items: The items of this OnboardingPolicyCollection.

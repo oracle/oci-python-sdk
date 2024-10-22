@@ -98,7 +98,7 @@ class ActionGroup(object):
     def resource_id(self):
         """
         **[Required]** Gets the resource_id of this ActionGroup.
-        Provide the ID of the resource; Ex- fleetId.
+        Provide the ID of the resource. Example fleet ID.
 
 
         :return: The resource_id of this ActionGroup.
@@ -110,7 +110,7 @@ class ActionGroup(object):
     def resource_id(self, resource_id):
         """
         Sets the resource_id of this ActionGroup.
-        Provide the ID of the resource; Ex- fleetId.
+        Provide the ID of the resource. Example fleet ID.
 
 
         :param resource_id: The resource_id of this ActionGroup.

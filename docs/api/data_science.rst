@@ -24,6 +24,8 @@ Data Science
     oci.data_science.models.ArtifactImportDetailsObjectStorage
     oci.data_science.models.AutoScalingPolicy
     oci.data_science.models.AutoScalingPolicyDetails
+    oci.data_science.models.BackupOperationDetails
+    oci.data_science.models.BackupSetting
     oci.data_science.models.CategoryLogDetails
     oci.data_science.models.ChangeDataSciencePrivateEndpointCompartmentDetails
     oci.data_science.models.ChangeJobCompartmentDetails
@@ -129,6 +131,8 @@ Data Science
     oci.data_science.models.PredefinedMetricExpressionRule
     oci.data_science.models.Project
     oci.data_science.models.ProjectSummary
+    oci.data_science.models.RetentionOperationDetails
+    oci.data_science.models.RetentionSetting
     oci.data_science.models.ScalingConfiguration
     oci.data_science.models.ScalingPolicy
     oci.data_science.models.SingleModelDeploymentConfigurationDetails

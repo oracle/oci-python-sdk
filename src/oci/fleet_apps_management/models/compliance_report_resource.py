@@ -257,7 +257,7 @@ class ComplianceReportResource(object):
     def resource_region(self):
         """
         Gets the resource_region of this ComplianceReportResource.
-        Region the resource belongs to.
+        The region the resource belongs to.
 
 
         :return: The resource_region of this ComplianceReportResource.
@@ -269,7 +269,7 @@ class ComplianceReportResource(object):
     def resource_region(self, resource_region):
         """
         Sets the resource_region of this ComplianceReportResource.
-        Region the resource belongs to.
+        The region the resource belongs to.
 
 
         :param resource_region: The resource_region of this ComplianceReportResource.
@@ -281,7 +281,7 @@ class ComplianceReportResource(object):
     def compliance_state(self):
         """
         **[Required]** Gets the compliance_state of this ComplianceReportResource.
-        Last known compliance state of fleet.
+        The last known compliance state of the fleet.
 
         Allowed values for this property are: "UNKNOWN", "COMPLIANT", "NON_COMPLIANT", "WARNING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -296,7 +296,7 @@ class ComplianceReportResource(object):
     def compliance_state(self, compliance_state):
         """
         Sets the compliance_state of this ComplianceReportResource.
-        Last known compliance state of fleet.
+        The last known compliance state of the fleet.
 
 
         :param compliance_state: The compliance_state of this ComplianceReportResource.
@@ -311,7 +311,8 @@ class ComplianceReportResource(object):
     def products(self):
         """
         Gets the products of this ComplianceReportResource.
-        Products assocaited with the Fleet.Only products belonging to managed targets will be shown.
+        Products associated with the Fleet.
+        Only the products belonging to managed targets will be shown.
 
 
         :return: The products of this ComplianceReportResource.
@@ -323,7 +324,8 @@ class ComplianceReportResource(object):
     def products(self, products):
         """
         Sets the products of this ComplianceReportResource.
-        Products assocaited with the Fleet.Only products belonging to managed targets will be shown.
+        Products associated with the Fleet.
+        Only the products belonging to managed targets will be shown.
 
 
         :param products: The products of this ComplianceReportResource.

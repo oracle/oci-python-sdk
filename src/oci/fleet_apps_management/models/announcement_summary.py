@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AnnouncementSummary(object):
     """
-    An summary of announcements for Fleet Application Management Service
+    A summary of announcements for Fleet Application Management.
     """
 
     #: A constant which can be used with the lifecycle_state property of a AnnouncementSummary.
@@ -345,7 +345,7 @@ class AnnouncementSummary(object):
     def type(self):
         """
         **[Required]** Gets the type of this AnnouncementSummary.
-        Type of announcement
+        Type of announcement.
 
 
         :return: The type of this AnnouncementSummary.
@@ -357,7 +357,7 @@ class AnnouncementSummary(object):
     def type(self, type):
         """
         Sets the type of this AnnouncementSummary.
-        Type of announcement
+        Type of announcement.
 
 
         :param type: The type of this AnnouncementSummary.
@@ -369,7 +369,7 @@ class AnnouncementSummary(object):
     def summary(self):
         """
         **[Required]** Gets the summary of this AnnouncementSummary.
-        Summary of the announcement
+        Summary of the announcement.
 
 
         :return: The summary of this AnnouncementSummary.
@@ -381,7 +381,7 @@ class AnnouncementSummary(object):
     def summary(self, summary):
         """
         Sets the summary of this AnnouncementSummary.
-        Summary of the announcement
+        Summary of the announcement.
 
 
         :param summary: The summary of this AnnouncementSummary.
@@ -393,7 +393,7 @@ class AnnouncementSummary(object):
     def details(self):
         """
         Gets the details of this AnnouncementSummary.
-        Details of the announcement
+        Announcement Details.
 
 
         :return: The details of this AnnouncementSummary.
@@ -405,7 +405,7 @@ class AnnouncementSummary(object):
     def details(self, details):
         """
         Sets the details of this AnnouncementSummary.
-        Details of the announcement
+        Announcement Details.
 
 
         :param details: The details of this AnnouncementSummary.
@@ -417,7 +417,7 @@ class AnnouncementSummary(object):
     def url(self):
         """
         Gets the url of this AnnouncementSummary.
-        URL to the announcement
+        URL to the announcement.
 
 
         :return: The url of this AnnouncementSummary.
@@ -429,7 +429,7 @@ class AnnouncementSummary(object):
     def url(self, url):
         """
         Sets the url of this AnnouncementSummary.
-        URL to the announcement
+        URL to the announcement.
 
 
         :param url: The url of this AnnouncementSummary.
@@ -441,7 +441,7 @@ class AnnouncementSummary(object):
     def announcement_start(self):
         """
         **[Required]** Gets the announcement_start of this AnnouncementSummary.
-        Date to start displaying announcement to user
+        Announcement start date.
 
 
         :return: The announcement_start of this AnnouncementSummary.
@@ -453,7 +453,7 @@ class AnnouncementSummary(object):
     def announcement_start(self, announcement_start):
         """
         Sets the announcement_start of this AnnouncementSummary.
-        Date to start displaying announcement to user
+        Announcement start date.
 
 
         :param announcement_start: The announcement_start of this AnnouncementSummary.
@@ -465,7 +465,7 @@ class AnnouncementSummary(object):
     def announcement_end(self):
         """
         **[Required]** Gets the announcement_end of this AnnouncementSummary.
-        Date to end displaying annonucement to user
+        Announcement end date
 
 
         :return: The announcement_end of this AnnouncementSummary.
@@ -477,7 +477,7 @@ class AnnouncementSummary(object):
     def announcement_end(self, announcement_end):
         """
         Sets the announcement_end of this AnnouncementSummary.
-        Date to end displaying annonucement to user
+        Announcement end date
 
 
         :param announcement_end: The announcement_end of this AnnouncementSummary.

@@ -218,7 +218,7 @@ class InventoryResourceSummary(object):
     def resource_compartment_id(self):
         """
         Gets the resource_compartment_id of this InventoryResourceSummary.
-        Compartment Id of the resource
+        Compartment Id of the resource.
 
 
         :return: The resource_compartment_id of this InventoryResourceSummary.
@@ -230,7 +230,7 @@ class InventoryResourceSummary(object):
     def resource_compartment_id(self, resource_compartment_id):
         """
         Sets the resource_compartment_id of this InventoryResourceSummary.
-        Compartment Id of the resource
+        Compartment Id of the resource.
 
 
         :param resource_compartment_id: The resource_compartment_id of this InventoryResourceSummary.
@@ -242,7 +242,7 @@ class InventoryResourceSummary(object):
     def availability_domain(self):
         """
         Gets the availability_domain of this InventoryResourceSummary.
-        Availability Domain of the resource
+        Availability Domain of the resource.
 
 
         :return: The availability_domain of this InventoryResourceSummary.
@@ -254,7 +254,7 @@ class InventoryResourceSummary(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this InventoryResourceSummary.
-        Availability Domain of the resource
+        Availability Domain of the resource.
 
 
         :param availability_domain: The availability_domain of this InventoryResourceSummary.
@@ -266,7 +266,7 @@ class InventoryResourceSummary(object):
     def resource_region(self):
         """
         Gets the resource_region of this InventoryResourceSummary.
-        Region the resource belongs to
+        The region the resource belongs to.
 
 
         :return: The resource_region of this InventoryResourceSummary.
@@ -278,7 +278,7 @@ class InventoryResourceSummary(object):
     def resource_region(self, resource_region):
         """
         Sets the resource_region of this InventoryResourceSummary.
-        Region the resource belongs to
+        The region the resource belongs to.
 
 
         :param resource_region: The resource_region of this InventoryResourceSummary.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AnnouncementCollection(object):
     """
-    Results of list announcements . Contains AnnouncementSummary items
+    Results of list announcements. Contains AnnouncementSummary items.
     """
 
     def __init__(self, **kwargs):

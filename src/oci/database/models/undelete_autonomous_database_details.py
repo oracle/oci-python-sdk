@@ -87,6 +87,10 @@ class UndeleteAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
             The value to assign to the vault_id property of this UndeleteAutonomousDatabaseDetails.
         :type vault_id: str
 
+        :param encryption_key:
+            The value to assign to the encryption_key property of this UndeleteAutonomousDatabaseDetails.
+        :type encryption_key: oci.database.models.AutonomousDatabaseEncryptionKeyDetails
+
         :param admin_password:
             The value to assign to the admin_password property of this UndeleteAutonomousDatabaseDetails.
         :type admin_password: str
@@ -256,6 +260,7 @@ class UndeleteAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
             'is_free_tier': 'bool',
             'kms_key_id': 'str',
             'vault_id': 'str',
+            'encryption_key': 'AutonomousDatabaseEncryptionKeyDetails',
             'admin_password': 'str',
             'display_name': 'str',
             'license_model': 'str',
@@ -312,6 +317,7 @@ class UndeleteAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
             'is_free_tier': 'isFreeTier',
             'kms_key_id': 'kmsKeyId',
             'vault_id': 'vaultId',
+            'encryption_key': 'encryptionKey',
             'admin_password': 'adminPassword',
             'display_name': 'displayName',
             'license_model': 'licenseModel',
@@ -367,6 +373,7 @@ class UndeleteAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
         self._is_free_tier = None
         self._kms_key_id = None
         self._vault_id = None
+        self._encryption_key = None
         self._admin_password = None
         self._display_name = None
         self._license_model = None

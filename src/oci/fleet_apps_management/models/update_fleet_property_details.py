@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateFleetPropertyDetails(object):
     """
-    The information to be updated.
+    The information to be updated for the fleet property.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class UpdateFleetPropertyDetails(object):
     def value(self):
         """
         Gets the value of this UpdateFleetPropertyDetails.
-        Value of the Property
+        Value of the Property.
 
 
         :return: The value of this UpdateFleetPropertyDetails.
@@ -51,7 +51,7 @@ class UpdateFleetPropertyDetails(object):
     def value(self, value):
         """
         Sets the value of this UpdateFleetPropertyDetails.
-        Value of the Property
+        Value of the Property.
 
 
         :param value: The value of this UpdateFleetPropertyDetails.

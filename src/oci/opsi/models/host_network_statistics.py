@@ -39,7 +39,7 @@ class HostNetworkStatistics(HostResourceStatistics):
 
         :param resource_name:
             The value to assign to the resource_name property of this HostNetworkStatistics.
-            Allowed values for this property are: "HOST_CPU_STATISTICS", "HOST_MEMORY_STATISTICS", "HOST_STORAGE_STATISTICS", "HOST_NETWORK_STATISTICS"
+            Allowed values for this property are: "HOST_CPU_STATISTICS", "HOST_MEMORY_STATISTICS", "HOST_STORAGE_STATISTICS", "HOST_NETWORK_STATISTICS", "HOST_IO_STATISTICS"
         :type resource_name: str
 
         :param network_read_in_mbs:

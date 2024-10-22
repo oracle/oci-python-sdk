@@ -38,6 +38,8 @@ from .autonomous_database_connection_strings import AutonomousDatabaseConnection
 from .autonomous_database_connection_urls import AutonomousDatabaseConnectionUrls
 from .autonomous_database_console_token_details import AutonomousDatabaseConsoleTokenDetails
 from .autonomous_database_dataguard_association import AutonomousDatabaseDataguardAssociation
+from .autonomous_database_encryption_key_details import AutonomousDatabaseEncryptionKeyDetails
+from .autonomous_database_encryption_key_history_entry import AutonomousDatabaseEncryptionKeyHistoryEntry
 from .autonomous_database_key_history_entry import AutonomousDatabaseKeyHistoryEntry
 from .autonomous_database_manual_refresh_details import AutonomousDatabaseManualRefreshDetails
 from .autonomous_database_peer_collection import AutonomousDatabasePeerCollection
@@ -63,6 +65,8 @@ from .autonomous_vm_cluster_resource_usage import AutonomousVmClusterResourceUsa
 from .autonomous_vm_cluster_summary import AutonomousVmClusterSummary
 from .autonomous_vm_resource_usage import AutonomousVmResourceUsage
 from .avm_acd_resource_stats import AvmAcdResourceStats
+from .aws_key_details import AwsKeyDetails
+from .azure_key_details import AzureKeyDetails
 from .backup import Backup
 from .backup_destination import BackupDestination
 from .backup_destination_details import BackupDestinationDetails
@@ -330,10 +334,13 @@ from .move_execution_action_member_details import MoveExecutionActionMemberDetai
 from .network_bonding_mode_details import NetworkBondingModeDetails
 from .node_details import NodeDetails
 from .ocp_us import OCPUs
+from .oci_key_details import OciKeyDetails
 from .oci_provider_set_key_version_details import OciProviderSetKeyVersionDetails
+from .okv_key_details import OkvKeyDetails
 from .oneoff_patch import OneoffPatch
 from .oneoff_patch_summary import OneoffPatchSummary
 from .operations_insights_config import OperationsInsightsConfig
+from .oracle_managed_key_details import OracleManagedKeyDetails
 from .patch import Patch
 from .patch_details import PatchDetails
 from .patch_history_entry import PatchHistoryEntry
@@ -488,6 +495,8 @@ database_type_mapping = {
     "AutonomousDatabaseConnectionUrls": AutonomousDatabaseConnectionUrls,
     "AutonomousDatabaseConsoleTokenDetails": AutonomousDatabaseConsoleTokenDetails,
     "AutonomousDatabaseDataguardAssociation": AutonomousDatabaseDataguardAssociation,
+    "AutonomousDatabaseEncryptionKeyDetails": AutonomousDatabaseEncryptionKeyDetails,
+    "AutonomousDatabaseEncryptionKeyHistoryEntry": AutonomousDatabaseEncryptionKeyHistoryEntry,
     "AutonomousDatabaseKeyHistoryEntry": AutonomousDatabaseKeyHistoryEntry,
     "AutonomousDatabaseManualRefreshDetails": AutonomousDatabaseManualRefreshDetails,
     "AutonomousDatabasePeerCollection": AutonomousDatabasePeerCollection,
@@ -513,6 +522,8 @@ database_type_mapping = {
     "AutonomousVmClusterSummary": AutonomousVmClusterSummary,
     "AutonomousVmResourceUsage": AutonomousVmResourceUsage,
     "AvmAcdResourceStats": AvmAcdResourceStats,
+    "AwsKeyDetails": AwsKeyDetails,
+    "AzureKeyDetails": AzureKeyDetails,
     "Backup": Backup,
     "BackupDestination": BackupDestination,
     "BackupDestinationDetails": BackupDestinationDetails,
@@ -780,10 +791,13 @@ database_type_mapping = {
     "NetworkBondingModeDetails": NetworkBondingModeDetails,
     "NodeDetails": NodeDetails,
     "OCPUs": OCPUs,
+    "OciKeyDetails": OciKeyDetails,
     "OciProviderSetKeyVersionDetails": OciProviderSetKeyVersionDetails,
+    "OkvKeyDetails": OkvKeyDetails,
     "OneoffPatch": OneoffPatch,
     "OneoffPatchSummary": OneoffPatchSummary,
     "OperationsInsightsConfig": OperationsInsightsConfig,
+    "OracleManagedKeyDetails": OracleManagedKeyDetails,
     "Patch": Patch,
     "PatchDetails": PatchDetails,
     "PatchHistoryEntry": PatchHistoryEntry,

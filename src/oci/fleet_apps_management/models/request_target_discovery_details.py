@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RequestTargetDiscoveryDetails(object):
     """
-    Request to initiate target discovery
+    Request to initiate target discovery.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class RequestTargetDiscoveryDetails(object):
     def is_applicable_to_all_resources(self):
         """
         Gets the is_applicable_to_all_resources of this RequestTargetDiscoveryDetails.
-        A boolean flag which decides if all resources within the fleet should be part of discovery.
+        A boolean flag that decides if all resources within the fleet should be part of discovery.
 
 
         :return: The is_applicable_to_all_resources of this RequestTargetDiscoveryDetails.
@@ -58,7 +58,7 @@ class RequestTargetDiscoveryDetails(object):
     def is_applicable_to_all_resources(self, is_applicable_to_all_resources):
         """
         Sets the is_applicable_to_all_resources of this RequestTargetDiscoveryDetails.
-        A boolean flag which decides if all resources within the fleet should be part of discovery.
+        A boolean flag that decides if all resources within the fleet should be part of discovery.
 
 
         :param is_applicable_to_all_resources: The is_applicable_to_all_resources of this RequestTargetDiscoveryDetails.
@@ -70,7 +70,7 @@ class RequestTargetDiscoveryDetails(object):
     def resource_ids(self):
         """
         Gets the resource_ids of this RequestTargetDiscoveryDetails.
-        Resource OCIDS that need to be included for discovery.
+        Resource OCIDS to be included for discovery.
 
 
         :return: The resource_ids of this RequestTargetDiscoveryDetails.
@@ -82,7 +82,7 @@ class RequestTargetDiscoveryDetails(object):
     def resource_ids(self, resource_ids):
         """
         Sets the resource_ids of this RequestTargetDiscoveryDetails.
-        Resource OCIDS that need to be included for discovery.
+        Resource OCIDS to be included for discovery.
 
 
         :param resource_ids: The resource_ids of this RequestTargetDiscoveryDetails.

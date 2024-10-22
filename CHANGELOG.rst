@@ -4,6 +4,37 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.137.0 - 2024-10-22
+====================
+
+Added 
+----- 
+* Support for resource locking in the File storage service 
+* Support for customer managed keys via Azure key vault and Amazon Web Services key vault in the Database service 
+* Support for generated tokens on create secret operations in the Identity Domains service 
+* Support for creating and updating Amazon Web Services asset-sources, EC2 and EBS assets in the Cloud Bridge service 
+* Support for listing Amazon Web Services regions which are available for discovery and migration in the Cloud Bridge service 
+* Support for model backup retention and restore in the Datascience service 
+* Support for host capacity planning for host IO metrics in the Operations Insight service 
+* Support for FastConnect redundancy in the Compute service 
+* Support for create, publish, clone and delete operations on runbooks in the Fleet Application Management service 
+* Support for platform configurations and metadata management in the Fleet Application Management service 
+* Support for management of compliance policy rules in the Fleet Application Management service 
+* Support for compliance report details based on compliance policy in the Fleet Application Management service 
+* Support for administrative settings like auto discovery frequency in the Fleet Application Management service   
+
+Changed 
+------- 
+* The vendored library PyJWT was upgraded from version `1.7.1` to version `2.4.0`   
+
+Breaking 
+-------- 
+* The operation `update_plugin` was removed from the `OcbAgentSvcClient` client in the Cloud Bridge service 
+* The property `discovery_schedule_id` was removed from the model `UpdateVmWareAssetSourceDetails` in the Cloud Bridge service 
+* The constant `METRIC_NAME_HOST_CONTAINERS` and its value `HOST_CONTAINERS` was removed from the list of allowed values for the parameter `metric_name` in the model `HostPerformanceMetricGroup` in the Operations Insight service 
+* The parent class of model `HostContainers` was changed from `HostPerformanceMetricGroup` to `HostConfigurationMetricGroup` and list of allowed values for the parameter `metric_name` was changed to `HOST_PRODUCT`, `HOST_RESOURCE_ALLOCATION`, `HOST_MEMORY_CONFIGURATION`, `HOST_HARDWARE_CONFIGURATION`, `HOST_CPU_HARDWARE_CONFIGURATION`, `HOST_NETWORK_CONFIGURATION`, `HOST_ENTITES`, `HOST_FILESYSTEM_CONFIGURATION`, `HOST_GPU_CONFIGURATION`, `HOST_CONTAINERS` in the Operations Insight service   
+
+====================
 2.136.0 - 2024-10-15
 ====================
 

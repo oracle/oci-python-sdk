@@ -67,7 +67,7 @@ class DiscoveredTarget(object):
     def target_id(self):
         """
         **[Required]** Gets the target_id of this DiscoveredTarget.
-        OCID of the Target.
+        ID of the Target. Can be the target name if a separate ID is not available.
 
 
         :return: The target_id of this DiscoveredTarget.
@@ -79,7 +79,7 @@ class DiscoveredTarget(object):
     def target_id(self, target_id):
         """
         Sets the target_id of this DiscoveredTarget.
-        OCID of the Target.
+        ID of the Target. Can be the target name if a separate ID is not available.
 
 
         :param target_id: The target_id of this DiscoveredTarget.
@@ -139,7 +139,7 @@ class DiscoveredTarget(object):
     def resource_id(self):
         """
         **[Required]** Gets the resource_id of this DiscoveredTarget.
-        Unique key that identify the resource that target belongs to.
+        Unique key that identifies the resource that the target belongs to.
 
 
         :return: The resource_id of this DiscoveredTarget.
@@ -151,7 +151,7 @@ class DiscoveredTarget(object):
     def resource_id(self, resource_id):
         """
         Sets the resource_id of this DiscoveredTarget.
-        Unique key that identify the resource that target belongs to.
+        Unique key that identifies the resource that the target belongs to.
 
 
         :param resource_id: The resource_id of this DiscoveredTarget.
@@ -163,7 +163,7 @@ class DiscoveredTarget(object):
     def version(self):
         """
         Gets the version of this DiscoveredTarget.
-        Current version of Target
+        Current version of the target.
 
 
         :return: The version of this DiscoveredTarget.
@@ -175,7 +175,7 @@ class DiscoveredTarget(object):
     def version(self, version):
         """
         Sets the version of this DiscoveredTarget.
-        Current version of Target
+        Current version of the target.
 
 
         :param version: The version of this DiscoveredTarget.

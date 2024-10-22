@@ -160,7 +160,7 @@ class FleetPropertySummary(object):
     def property_id(self):
         """
         **[Required]** Gets the property_id of this FleetPropertySummary.
-        Property Id.
+        OCID referring to global level metadata property.
 
 
         :return: The property_id of this FleetPropertySummary.
@@ -172,7 +172,7 @@ class FleetPropertySummary(object):
     def property_id(self, property_id):
         """
         Sets the property_id of this FleetPropertySummary.
-        Property Id.
+        OCID referring to global level metadata property.
 
 
         :param property_id: The property_id of this FleetPropertySummary.
@@ -262,7 +262,7 @@ class FleetPropertySummary(object):
     def value(self):
         """
         Gets the value of this FleetPropertySummary.
-        Value of the Property
+        Value of the Property.
 
 
         :return: The value of this FleetPropertySummary.
@@ -274,7 +274,7 @@ class FleetPropertySummary(object):
     def value(self, value):
         """
         Sets the value of this FleetPropertySummary.
-        Value of the Property
+        Value of the Property.
 
 
         :param value: The value of this FleetPropertySummary.
@@ -286,7 +286,7 @@ class FleetPropertySummary(object):
     def value_type(self):
         """
         **[Required]** Gets the value_type of this FleetPropertySummary.
-        Type of the FleetProperty.
+        Format of the value.
 
         Allowed values for this property are: "STRING", "NUMERIC", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -301,7 +301,7 @@ class FleetPropertySummary(object):
     def value_type(self, value_type):
         """
         Sets the value_type of this FleetPropertySummary.
-        Type of the FleetProperty.
+        Format of the value.
 
 
         :param value_type: The value_type of this FleetPropertySummary.

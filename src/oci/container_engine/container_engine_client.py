@@ -161,7 +161,7 @@ class ContainerEngineClient(object):
         resource_path = "/clusters/{clusterId}/actions/migrateToNativeVcn"
         method = "POST"
         operation_name = "cluster_migrate_to_native_vcn"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/ClusterMigrateToNativeVcn"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -271,7 +271,7 @@ class ContainerEngineClient(object):
         resource_path = "/clusters/{clusterId}/actions/completeCredentialRotation"
         method = "POST"
         operation_name = "complete_credential_rotation"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/CompleteCredentialRotation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -377,7 +377,7 @@ class ContainerEngineClient(object):
         resource_path = "/clusters"
         method = "POST"
         operation_name = "create_cluster"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/CreateCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -470,7 +470,7 @@ class ContainerEngineClient(object):
         resource_path = "/clusters/{clusterId}/kubeconfig/content"
         method = "POST"
         operation_name = "create_kubeconfig"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/CreateKubeconfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -576,7 +576,7 @@ class ContainerEngineClient(object):
         resource_path = "/nodePools"
         method = "POST"
         operation_name = "create_node_pool"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/CreateNodePool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -670,7 +670,7 @@ class ContainerEngineClient(object):
         resource_path = "/virtualNodePools"
         method = "POST"
         operation_name = "create_virtual_node_pool"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/CreateVirtualNodePool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -767,7 +767,7 @@ class ContainerEngineClient(object):
         resource_path = "/clusters/{clusterId}/workloadMappings"
         method = "POST"
         operation_name = "create_workload_mapping"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkloadMapping/CreateWorkloadMapping"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -876,7 +876,7 @@ class ContainerEngineClient(object):
         resource_path = "/clusters/{clusterId}"
         method = "DELETE"
         operation_name = "delete_cluster"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/DeleteCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -993,7 +993,7 @@ class ContainerEngineClient(object):
         resource_path = "/nodePools/{nodePoolId}/node/{nodeId}"
         method = "DELETE"
         operation_name = "delete_node"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/DeleteNode"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1117,7 +1117,7 @@ class ContainerEngineClient(object):
         resource_path = "/nodePools/{nodePoolId}"
         method = "DELETE"
         operation_name = "delete_node_pool"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/DeleteNodePool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1238,7 +1238,7 @@ class ContainerEngineClient(object):
         resource_path = "/virtualNodePools/{virtualNodePoolId}"
         method = "DELETE"
         operation_name = "delete_virtual_node_pool"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/DeleteVirtualNodePool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1352,7 +1352,7 @@ class ContainerEngineClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "delete_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequest/DeleteWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1459,7 +1459,7 @@ class ContainerEngineClient(object):
         resource_path = "/clusters/{clusterId}/workloadMappings/{workloadMappingId}"
         method = "DELETE"
         operation_name = "delete_workload_mapping"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkloadMapping/DeleteWorkloadMapping"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1570,7 +1570,7 @@ class ContainerEngineClient(object):
         resource_path = "/clusters/{clusterId}/addons/{addonName}"
         method = "DELETE"
         operation_name = "disable_addon"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/DisableAddon"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1680,7 +1680,7 @@ class ContainerEngineClient(object):
         resource_path = "/clusters/{clusterId}/addons/{addonName}"
         method = "GET"
         operation_name = "get_addon"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/GetAddon"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1780,7 +1780,7 @@ class ContainerEngineClient(object):
         resource_path = "/clusters/{clusterId}"
         method = "GET"
         operation_name = "get_cluster"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/GetCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1879,7 +1879,7 @@ class ContainerEngineClient(object):
         resource_path = "/clusters/{clusterId}/migrateToNativeVcnStatus"
         method = "GET"
         operation_name = "get_cluster_migrate_to_native_vcn_status"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/ClusterMigrateToNativeVcnStatus/GetClusterMigrateToNativeVcnStatus"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1981,7 +1981,7 @@ class ContainerEngineClient(object):
         resource_path = "/clusterOptions/{clusterOptionId}"
         method = "GET"
         operation_name = "get_cluster_options"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/ClusterOptions/GetClusterOptions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2088,7 +2088,7 @@ class ContainerEngineClient(object):
         resource_path = "/clusters/{clusterId}/credentialRotationStatus"
         method = "GET"
         operation_name = "get_credential_rotation_status"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/CredentialRotationStatus/GetCredentialRotationStatus"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2187,7 +2187,7 @@ class ContainerEngineClient(object):
         resource_path = "/nodePools/{nodePoolId}"
         method = "GET"
         operation_name = "get_node_pool"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/GetNodePool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2289,7 +2289,7 @@ class ContainerEngineClient(object):
         resource_path = "/nodePoolOptions/{nodePoolOptionId}"
         method = "GET"
         operation_name = "get_node_pool_options"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePoolOptions/GetNodePoolOptions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2399,7 +2399,7 @@ class ContainerEngineClient(object):
         resource_path = "/virtualNodePools/{virtualNodePoolId}/virtualNodes/{virtualNodeId}"
         method = "GET"
         operation_name = "get_virtual_node"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/GetVirtualNode"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2499,7 +2499,7 @@ class ContainerEngineClient(object):
         resource_path = "/virtualNodePools/{virtualNodePoolId}"
         method = "GET"
         operation_name = "get_virtual_node_pool"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/GetVirtualNodePool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2598,7 +2598,7 @@ class ContainerEngineClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2700,7 +2700,7 @@ class ContainerEngineClient(object):
         resource_path = "/clusters/{clusterId}/workloadMappings/{workloadMappingId}"
         method = "GET"
         operation_name = "get_workload_mapping"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkloadMapping/GetWorkloadMapping"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2812,7 +2812,7 @@ class ContainerEngineClient(object):
         resource_path = "/clusters/{clusterId}/addons"
         method = "POST"
         operation_name = "install_addon"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/InstallAddon"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2942,7 +2942,7 @@ class ContainerEngineClient(object):
         resource_path = "/addonOptions"
         method = "GET"
         operation_name = "list_addon_options"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/AddonOptionSummary/ListAddonOptions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3083,7 +3083,7 @@ class ContainerEngineClient(object):
         resource_path = "/clusters/{clusterId}/addons"
         method = "GET"
         operation_name = "list_addons"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/ListAddons"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3243,7 +3243,7 @@ class ContainerEngineClient(object):
         resource_path = "/clusters"
         method = "GET"
         operation_name = "list_clusters"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/ClusterSummary/ListClusters"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3407,7 +3407,7 @@ class ContainerEngineClient(object):
         resource_path = "/nodePools"
         method = "GET"
         operation_name = "list_node_pools"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePoolSummary/ListNodePools"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3566,7 +3566,7 @@ class ContainerEngineClient(object):
         resource_path = "/podShapes"
         method = "GET"
         operation_name = "list_pod_shapes"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/PodShapeSummary/ListPodShapes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3720,7 +3720,7 @@ class ContainerEngineClient(object):
         resource_path = "/virtualNodePools"
         method = "GET"
         operation_name = "list_virtual_node_pools"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePoolSummary/ListVirtualNodePools"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3876,7 +3876,7 @@ class ContainerEngineClient(object):
         resource_path = "/virtualNodePools/{virtualNodePoolId}/virtualNodes"
         method = "GET"
         operation_name = "list_virtual_nodes"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/ListVirtualNodes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4008,7 +4008,7 @@ class ContainerEngineClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4117,7 +4117,7 @@ class ContainerEngineClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4260,7 +4260,7 @@ class ContainerEngineClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequestSummary/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4414,7 +4414,7 @@ class ContainerEngineClient(object):
         resource_path = "/clusters/{clusterId}/workloadMappings"
         method = "GET"
         operation_name = "list_workload_mappings"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkloadMapping/ListWorkloadMappings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4553,7 +4553,7 @@ class ContainerEngineClient(object):
         resource_path = "/clusters/{clusterId}/actions/startCredentialRotation"
         method = "POST"
         operation_name = "start_credential_rotation"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/StartCredentialRotation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4668,7 +4668,7 @@ class ContainerEngineClient(object):
         resource_path = "/clusters/{clusterId}/addons/{addonName}"
         method = "PUT"
         operation_name = "update_addon"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/UpdateAddon"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4778,7 +4778,7 @@ class ContainerEngineClient(object):
         resource_path = "/clusters/{clusterId}"
         method = "PUT"
         operation_name = "update_cluster"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/UpdateCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4887,7 +4887,7 @@ class ContainerEngineClient(object):
         resource_path = "/clusters/{clusterId}/actions/updateEndpointConfig"
         method = "POST"
         operation_name = "update_cluster_endpoint_config"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/UpdateClusterEndpointConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5003,7 +5003,7 @@ class ContainerEngineClient(object):
         resource_path = "/nodePools/{nodePoolId}"
         method = "PUT"
         operation_name = "update_node_pool"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/UpdateNodePool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5122,7 +5122,7 @@ class ContainerEngineClient(object):
         resource_path = "/virtualNodePools/{virtualNodePoolId}"
         method = "PUT"
         operation_name = "update_virtual_node_pool"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/UpdateVirtualNodePool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5234,7 +5234,7 @@ class ContainerEngineClient(object):
         resource_path = "/clusters/{clusterId}/workloadMappings/{workloadMappingId}"
         method = "PUT"
         operation_name = "update_workload_mapping"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkloadMapping/UpdateWorkloadMapping"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

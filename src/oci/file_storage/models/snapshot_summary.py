@@ -70,6 +70,10 @@ class SnapshotSummary(object):
             The value to assign to the time_created property of this SnapshotSummary.
         :type time_created: datetime
 
+        :param locks:
+            The value to assign to the locks property of this SnapshotSummary.
+        :type locks: list[oci.file_storage.models.ResourceLock]
+
         :param snapshot_type:
             The value to assign to the snapshot_type property of this SnapshotSummary.
             Allowed values for this property are: "USER", "POLICY_BASED", "REPLICATION", 'UNKNOWN_ENUM_VALUE'.
@@ -111,6 +115,7 @@ class SnapshotSummary(object):
             'lifecycle_state': 'str',
             'name': 'str',
             'time_created': 'datetime',
+            'locks': 'list[ResourceLock]',
             'snapshot_type': 'str',
             'snapshot_time': 'datetime',
             'expiration_time': 'datetime',
@@ -127,6 +132,7 @@ class SnapshotSummary(object):
             'lifecycle_state': 'lifecycleState',
             'name': 'name',
             'time_created': 'timeCreated',
+            'locks': 'locks',
             'snapshot_type': 'snapshotType',
             'snapshot_time': 'snapshotTime',
             'expiration_time': 'expirationTime',
@@ -142,6 +148,7 @@ class SnapshotSummary(object):
         self._lifecycle_state = None
         self._name = None
         self._time_created = None
+        self._locks = None
         self._snapshot_type = None
         self._snapshot_time = None
         self._expiration_time = None
@@ -302,6 +309,30 @@ class SnapshotSummary(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this SnapshotSummary.
+        Locks associated with this resource.
+
+
+        :return: The locks of this SnapshotSummary.
+        :rtype: list[oci.file_storage.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this SnapshotSummary.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this SnapshotSummary.
+        :type: list[oci.file_storage.models.ResourceLock]
+        """
+        self._locks = locks
 
     @property
     def snapshot_type(self):

@@ -48,6 +48,10 @@ class CreateFileSystemDetails(object):
             The value to assign to the defined_tags property of this CreateFileSystemDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param locks:
+            The value to assign to the locks property of this CreateFileSystemDetails.
+        :type locks: list[oci.file_storage.models.ResourceLock]
+
         :param kms_key_id:
             The value to assign to the kms_key_id property of this CreateFileSystemDetails.
         :type kms_key_id: str
@@ -72,6 +76,7 @@ class CreateFileSystemDetails(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[ResourceLock]',
             'kms_key_id': 'str',
             'source_snapshot_id': 'str',
             'clone_attach_status': 'str',
@@ -84,6 +89,7 @@ class CreateFileSystemDetails(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'locks': 'locks',
             'kms_key_id': 'kmsKeyId',
             'source_snapshot_id': 'sourceSnapshotId',
             'clone_attach_status': 'cloneAttachStatus',
@@ -95,6 +101,7 @@ class CreateFileSystemDetails(object):
         self._display_name = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._locks = None
         self._kms_key_id = None
         self._source_snapshot_id = None
         self._clone_attach_status = None
@@ -251,6 +258,30 @@ class CreateFileSystemDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this CreateFileSystemDetails.
+        Locks associated with this resource.
+
+
+        :return: The locks of this CreateFileSystemDetails.
+        :rtype: list[oci.file_storage.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this CreateFileSystemDetails.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this CreateFileSystemDetails.
+        :type: list[oci.file_storage.models.ResourceLock]
+        """
+        self._locks = locks
 
     @property
     def kms_key_id(self):

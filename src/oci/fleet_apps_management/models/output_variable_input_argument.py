@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OutputVariableInputArgument(InputArgument):
     """
-    The details of the output variable that will be used as Input argument.
+    The details of the output variable that will be used as the Input argument.
     """
 
     def __init__(self, **kwargs):

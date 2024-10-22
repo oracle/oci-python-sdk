@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AssociatedFleetPropertyDetails(object):
     """
-    The information about new FleetProperty.
+    The information about associated FleetProperty.
     """
 
     #: A constant which can be used with the fleet_property_type property of a AssociatedFleetPropertyDetails.
@@ -161,7 +161,7 @@ class AssociatedFleetPropertyDetails(object):
     def value(self):
         """
         Gets the value of this AssociatedFleetPropertyDetails.
-        Value of the Property
+        Value of the Property.
 
 
         :return: The value of this AssociatedFleetPropertyDetails.
@@ -173,7 +173,7 @@ class AssociatedFleetPropertyDetails(object):
     def value(self, value):
         """
         Sets the value of this AssociatedFleetPropertyDetails.
-        Value of the Property
+        Value of the Property.
 
 
         :param value: The value of this AssociatedFleetPropertyDetails.
@@ -185,7 +185,7 @@ class AssociatedFleetPropertyDetails(object):
     def is_required(self):
         """
         Gets the is_required of this AssociatedFleetPropertyDetails.
-        Property is required or not
+        Property is required or not.
 
 
         :return: The is_required of this AssociatedFleetPropertyDetails.
@@ -197,7 +197,7 @@ class AssociatedFleetPropertyDetails(object):
     def is_required(self, is_required):
         """
         Sets the is_required of this AssociatedFleetPropertyDetails.
-        Property is required or not
+        Property is required or not.
 
 
         :param is_required: The is_required of this AssociatedFleetPropertyDetails.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class KeyEncryptionCredentialDetails(CredentialDetails):
     """
-    Details for Credentials using key encryption.
+    Details for the Credentials that use key encryption.
     """
 
     def __init__(self, **kwargs):
@@ -70,7 +70,7 @@ class KeyEncryptionCredentialDetails(CredentialDetails):
     def value(self):
         """
         **[Required]** Gets the value of this KeyEncryptionCredentialDetails.
-        The value corresponding to the credential
+        The value corresponding to the credential.
 
 
         :return: The value of this KeyEncryptionCredentialDetails.
@@ -82,7 +82,7 @@ class KeyEncryptionCredentialDetails(CredentialDetails):
     def value(self, value):
         """
         Sets the value of this KeyEncryptionCredentialDetails.
-        The value corresponding to the credential
+        The value corresponding to the credential.
 
 
         :param value: The value of this KeyEncryptionCredentialDetails.
@@ -142,7 +142,7 @@ class KeyEncryptionCredentialDetails(CredentialDetails):
     def vault_id(self):
         """
         **[Required]** Gets the vault_id of this KeyEncryptionCredentialDetails.
-        OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+        OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
 
 
         :return: The vault_id of this KeyEncryptionCredentialDetails.
@@ -154,7 +154,7 @@ class KeyEncryptionCredentialDetails(CredentialDetails):
     def vault_id(self, vault_id):
         """
         Sets the vault_id of this KeyEncryptionCredentialDetails.
-        OCID for the Vault that will be used to fetch key to encrypt/decrypt the value given.
+        OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
 
 
         :param vault_id: The vault_id of this KeyEncryptionCredentialDetails.

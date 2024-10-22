@@ -305,6 +305,10 @@ class VirtualCircuit(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type ip_mtu: str
 
+        :param virtual_circuit_redundancy_metadata:
+            The value to assign to the virtual_circuit_redundancy_metadata property of this VirtualCircuit.
+        :type virtual_circuit_redundancy_metadata: oci.core.models.VirtualCircuitRedundancyMetadata
+
         """
         self.swagger_types = {
             'bandwidth_shape_name': 'str',
@@ -337,7 +341,8 @@ class VirtualCircuit(object):
             'service_type': 'str',
             'time_created': 'datetime',
             'type': 'str',
-            'ip_mtu': 'str'
+            'ip_mtu': 'str',
+            'virtual_circuit_redundancy_metadata': 'VirtualCircuitRedundancyMetadata'
         }
 
         self.attribute_map = {
@@ -371,7 +376,8 @@ class VirtualCircuit(object):
             'service_type': 'serviceType',
             'time_created': 'timeCreated',
             'type': 'type',
-            'ip_mtu': 'ipMtu'
+            'ip_mtu': 'ipMtu',
+            'virtual_circuit_redundancy_metadata': 'virtualCircuitRedundancyMetadata'
         }
 
         self._bandwidth_shape_name = None
@@ -405,6 +411,7 @@ class VirtualCircuit(object):
         self._time_created = None
         self._type = None
         self._ip_mtu = None
+        self._virtual_circuit_redundancy_metadata = None
 
     @property
     def bandwidth_shape_name(self):
@@ -1323,6 +1330,26 @@ class VirtualCircuit(object):
         if not value_allowed_none_or_none_sentinel(ip_mtu, allowed_values):
             ip_mtu = 'UNKNOWN_ENUM_VALUE'
         self._ip_mtu = ip_mtu
+
+    @property
+    def virtual_circuit_redundancy_metadata(self):
+        """
+        Gets the virtual_circuit_redundancy_metadata of this VirtualCircuit.
+
+        :return: The virtual_circuit_redundancy_metadata of this VirtualCircuit.
+        :rtype: oci.core.models.VirtualCircuitRedundancyMetadata
+        """
+        return self._virtual_circuit_redundancy_metadata
+
+    @virtual_circuit_redundancy_metadata.setter
+    def virtual_circuit_redundancy_metadata(self, virtual_circuit_redundancy_metadata):
+        """
+        Sets the virtual_circuit_redundancy_metadata of this VirtualCircuit.
+
+        :param virtual_circuit_redundancy_metadata: The virtual_circuit_redundancy_metadata of this VirtualCircuit.
+        :type: oci.core.models.VirtualCircuitRedundancyMetadata
+        """
+        self._virtual_circuit_redundancy_metadata = virtual_circuit_redundancy_metadata
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -23,6 +23,14 @@ class Asset(object):
     #: This constant has a value of "VM"
     ASSET_TYPE_VM = "VM"
 
+    #: A constant which can be used with the asset_type property of a Asset.
+    #: This constant has a value of "AWS_EC2"
+    ASSET_TYPE_AWS_EC2 = "AWS_EC2"
+
+    #: A constant which can be used with the asset_type property of a Asset.
+    #: This constant has a value of "AWS_EBS"
+    ASSET_TYPE_AWS_EBS = "AWS_EBS"
+
     #: A constant which can be used with the lifecycle_state property of a Asset.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -36,7 +44,9 @@ class Asset(object):
         Initializes a new Asset object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.cloud_bridge.models.AwsEc2Asset`
         * :class:`~oci.cloud_bridge.models.VmwareVmAsset`
+        * :class:`~oci.cloud_bridge.models.AwsEbsAsset`
         * :class:`~oci.cloud_bridge.models.VmAsset`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -67,7 +77,7 @@ class Asset(object):
 
         :param asset_type:
             The value to assign to the asset_type property of this Asset.
-            Allowed values for this property are: "VMWARE_VM", "VM", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type asset_type: str
 
@@ -159,8 +169,14 @@ class Asset(object):
         """
         type = object_dictionary['assetType']
 
+        if type == 'AWS_EC2':
+            return 'AwsEc2Asset'
+
         if type == 'VMWARE_VM':
             return 'VmwareVmAsset'
+
+        if type == 'AWS_EBS':
+            return 'AwsEbsAsset'
 
         if type == 'VM':
             return 'VmAsset'
@@ -317,7 +333,7 @@ class Asset(object):
         **[Required]** Gets the asset_type of this Asset.
         The type of asset.
 
-        Allowed values for this property are: "VMWARE_VM", "VM", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -336,7 +352,7 @@ class Asset(object):
         :param asset_type: The asset_type of this Asset.
         :type: str
         """
-        allowed_values = ["VMWARE_VM", "VM"]
+        allowed_values = ["VMWARE_VM", "VM", "AWS_EC2", "AWS_EBS"]
         if not value_allowed_none_or_none_sentinel(asset_type, allowed_values):
             asset_type = 'UNKNOWN_ENUM_VALUE'
         self._asset_type = asset_type

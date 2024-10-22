@@ -60,7 +60,7 @@ class AssociatedFleetResourceDetails(object):
     def resource_id(self):
         """
         **[Required]** Gets the resource_id of this AssociatedFleetResourceDetails.
-        OCID of the reosurce.
+        OCID of the resource.
 
 
         :return: The resource_id of this AssociatedFleetResourceDetails.
@@ -72,7 +72,7 @@ class AssociatedFleetResourceDetails(object):
     def resource_id(self, resource_id):
         """
         Sets the resource_id of this AssociatedFleetResourceDetails.
-        OCID of the reosurce.
+        OCID of the resource.
 
 
         :param resource_id: The resource_id of this AssociatedFleetResourceDetails.
@@ -108,7 +108,7 @@ class AssociatedFleetResourceDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this AssociatedFleetResourceDetails.
-        Compartment Identifier.
+        Compartment Identifier[OCID].
 
 
         :return: The compartment_id of this AssociatedFleetResourceDetails.
@@ -120,7 +120,7 @@ class AssociatedFleetResourceDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this AssociatedFleetResourceDetails.
-        Compartment Identifier.
+        Compartment Identifier[OCID].
 
 
         :param compartment_id: The compartment_id of this AssociatedFleetResourceDetails.
@@ -132,7 +132,7 @@ class AssociatedFleetResourceDetails(object):
     def tenancy_id(self):
         """
         **[Required]** Gets the tenancy_id of this AssociatedFleetResourceDetails.
-        Tenancy Identifier.
+        Tenancy Identifier[OCID].
 
 
         :return: The tenancy_id of this AssociatedFleetResourceDetails.
@@ -144,7 +144,7 @@ class AssociatedFleetResourceDetails(object):
     def tenancy_id(self, tenancy_id):
         """
         Sets the tenancy_id of this AssociatedFleetResourceDetails.
-        Tenancy Identifier.
+        Tenancy Identifier[OCID].
 
 
         :param tenancy_id: The tenancy_id of this AssociatedFleetResourceDetails.

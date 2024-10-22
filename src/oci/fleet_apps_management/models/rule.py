@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Rule(object):
     """
-    Rule Selection Criteria
+    Rule for DYNAMIC selection.
     """
 
     def __init__(self, **kwargs):
@@ -60,7 +60,10 @@ class Rule(object):
     def basis(self):
         """
         Gets the basis of this Rule.
-        Rule to be be applied on.
+        Based on what the rule is created.
+        It can be based on a resourceProperty or a tag.
+        If based on a tag, basis will be 'definedTagEquals'
+        If based on a resource property, basis will be 'inventoryProperties'
 
 
         :return: The basis of this Rule.
@@ -72,7 +75,10 @@ class Rule(object):
     def basis(self, basis):
         """
         Sets the basis of this Rule.
-        Rule to be be applied on.
+        Based on what the rule is created.
+        It can be based on a resourceProperty or a tag.
+        If based on a tag, basis will be 'definedTagEquals'
+        If based on a resource property, basis will be 'inventoryProperties'
 
 
         :param basis: The basis of this Rule.
@@ -84,7 +90,7 @@ class Rule(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this Rule.
-        Please provide the root compartmentId (TenancyId).
+        Tenancy Id (Root Compartment Id)for which the rule is created.
 
 
         :return: The compartment_id of this Rule.
@@ -96,7 +102,7 @@ class Rule(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Rule.
-        Please provide the root compartmentId (TenancyId).
+        Tenancy Id (Root Compartment Id)for which the rule is created.
 
 
         :param compartment_id: The compartment_id of this Rule.
@@ -108,7 +114,8 @@ class Rule(object):
     def resource_compartment_id(self):
         """
         **[Required]** Gets the resource_compartment_id of this Rule.
-        Resource Compartment Id.Provide the compartmentId the resource belongs to.
+        The Compartment ID to dynamically search resources.
+        Provide the compartment ID to which the rule is applicable.
 
 
         :return: The resource_compartment_id of this Rule.
@@ -120,7 +127,8 @@ class Rule(object):
     def resource_compartment_id(self, resource_compartment_id):
         """
         Sets the resource_compartment_id of this Rule.
-        Resource Compartment Id.Provide the compartmentId the resource belongs to.
+        The Compartment ID to dynamically search resources.
+        Provide the compartment ID to which the rule is applicable.
 
 
         :param resource_compartment_id: The resource_compartment_id of this Rule.

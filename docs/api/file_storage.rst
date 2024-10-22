@@ -58,6 +58,7 @@ File Storage
     oci.file_storage.models.ReplicationSummary
     oci.file_storage.models.ReplicationTarget
     oci.file_storage.models.ReplicationTargetSummary
+    oci.file_storage.models.ResourceLock
     oci.file_storage.models.ScheduleDowngradeShapeMountTargetDetails
     oci.file_storage.models.Snapshot
     oci.file_storage.models.SnapshotSchedule

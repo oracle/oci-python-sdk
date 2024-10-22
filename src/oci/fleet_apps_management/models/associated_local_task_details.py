@@ -12,7 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AssociatedLocalTaskDetails(AssociatedTaskDetails):
     """
-    The details of the task.
+    The details of the local task.
+    The local tasks are specific to a single runbook.
     """
 
     #: A constant which can be used with the os_type property of a AssociatedLocalTaskDetails.
@@ -65,6 +66,14 @@ class AssociatedLocalTaskDetails(AssociatedTaskDetails):
             The value to assign to the properties property of this AssociatedLocalTaskDetails.
         :type properties: oci.fleet_apps_management.models.Properties
 
+        :param is_discovery_output_task:
+            The value to assign to the is_discovery_output_task property of this AssociatedLocalTaskDetails.
+        :type is_discovery_output_task: bool
+
+        :param is_apply_subject_task:
+            The value to assign to the is_apply_subject_task property of this AssociatedLocalTaskDetails.
+        :type is_apply_subject_task: bool
+
         :param name:
             The value to assign to the name property of this AssociatedLocalTaskDetails.
         :type name: str
@@ -78,6 +87,8 @@ class AssociatedLocalTaskDetails(AssociatedTaskDetails):
             'is_copy_to_library_enabled': 'bool',
             'os_type': 'str',
             'properties': 'Properties',
+            'is_discovery_output_task': 'bool',
+            'is_apply_subject_task': 'bool',
             'name': 'str'
         }
 
@@ -89,6 +100,8 @@ class AssociatedLocalTaskDetails(AssociatedTaskDetails):
             'is_copy_to_library_enabled': 'isCopyToLibraryEnabled',
             'os_type': 'osType',
             'properties': 'properties',
+            'is_discovery_output_task': 'isDiscoveryOutputTask',
+            'is_apply_subject_task': 'isApplySubjectTask',
             'name': 'name'
         }
 
@@ -99,6 +112,8 @@ class AssociatedLocalTaskDetails(AssociatedTaskDetails):
         self._is_copy_to_library_enabled = None
         self._os_type = None
         self._properties = None
+        self._is_discovery_output_task = None
+        self._is_apply_subject_task = None
         self._name = None
         self._scope = 'LOCAL'
 
@@ -243,6 +258,54 @@ class AssociatedLocalTaskDetails(AssociatedTaskDetails):
         :type: oci.fleet_apps_management.models.Properties
         """
         self._properties = properties
+
+    @property
+    def is_discovery_output_task(self):
+        """
+        Gets the is_discovery_output_task of this AssociatedLocalTaskDetails.
+        Is this a discovery output task?
+
+
+        :return: The is_discovery_output_task of this AssociatedLocalTaskDetails.
+        :rtype: bool
+        """
+        return self._is_discovery_output_task
+
+    @is_discovery_output_task.setter
+    def is_discovery_output_task(self, is_discovery_output_task):
+        """
+        Sets the is_discovery_output_task of this AssociatedLocalTaskDetails.
+        Is this a discovery output task?
+
+
+        :param is_discovery_output_task: The is_discovery_output_task of this AssociatedLocalTaskDetails.
+        :type: bool
+        """
+        self._is_discovery_output_task = is_discovery_output_task
+
+    @property
+    def is_apply_subject_task(self):
+        """
+        Gets the is_apply_subject_task of this AssociatedLocalTaskDetails.
+        Is this an Apply Subject Task? Ex. Patch Execution Task
+
+
+        :return: The is_apply_subject_task of this AssociatedLocalTaskDetails.
+        :rtype: bool
+        """
+        return self._is_apply_subject_task
+
+    @is_apply_subject_task.setter
+    def is_apply_subject_task(self, is_apply_subject_task):
+        """
+        Sets the is_apply_subject_task of this AssociatedLocalTaskDetails.
+        Is this an Apply Subject Task? Ex. Patch Execution Task
+
+
+        :param is_apply_subject_task: The is_apply_subject_task of this AssociatedLocalTaskDetails.
+        :type: bool
+        """
+        self._is_apply_subject_task = is_apply_subject_task
 
     @property
     def name(self):

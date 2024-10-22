@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class FleetProperty(object):
     """
-    Property associated with a Fleet.
+    Property to manage fleet metadata details in\u00A0Fleet Application Management.
     """
 
     #: A constant which can be used with the selection_type property of a FleetProperty.
@@ -280,7 +280,7 @@ class FleetProperty(object):
     def value(self):
         """
         Gets the value of this FleetProperty.
-        Value of the Property
+        Value of the Property.
 
 
         :return: The value of this FleetProperty.
@@ -292,7 +292,7 @@ class FleetProperty(object):
     def value(self, value):
         """
         Sets the value of this FleetProperty.
-        Value of the Property
+        Value of the Property.
 
 
         :param value: The value of this FleetProperty.
@@ -304,7 +304,7 @@ class FleetProperty(object):
     def property_id(self):
         """
         Gets the property_id of this FleetProperty.
-        Property Id Ocid.
+        OCID referring to global level metadata property.
 
 
         :return: The property_id of this FleetProperty.
@@ -316,7 +316,7 @@ class FleetProperty(object):
     def property_id(self, property_id):
         """
         Sets the property_id of this FleetProperty.
-        Property Id Ocid.
+        OCID referring to global level metadata property.
 
 
         :param property_id: The property_id of this FleetProperty.
@@ -328,7 +328,7 @@ class FleetProperty(object):
     def selection_type(self):
         """
         **[Required]** Gets the selection_type of this FleetProperty.
-        Text selection of the category
+        Text selection of the property.
 
         Allowed values for this property are: "SINGLE_CHOICE", "MULTI_CHOICE", "DEFAULT_TEXT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -343,7 +343,7 @@ class FleetProperty(object):
     def selection_type(self, selection_type):
         """
         Sets the selection_type of this FleetProperty.
-        Text selection of the category
+        Text selection of the property.
 
 
         :param selection_type: The selection_type of this FleetProperty.
@@ -358,7 +358,7 @@ class FleetProperty(object):
     def value_type(self):
         """
         **[Required]** Gets the value_type of this FleetProperty.
-        Format of the value
+        Format of the value.
 
         Allowed values for this property are: "STRING", "NUMERIC", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -373,7 +373,7 @@ class FleetProperty(object):
     def value_type(self, value_type):
         """
         Sets the value_type of this FleetProperty.
-        Format of the value
+        Format of the value.
 
 
         :param value_type: The value_type of this FleetProperty.
@@ -388,7 +388,7 @@ class FleetProperty(object):
     def allowed_values(self):
         """
         Gets the allowed_values of this FleetProperty.
-        Values of the category (must be a single value if selection = 'single choice')
+        Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
 
 
         :return: The allowed_values of this FleetProperty.
@@ -400,7 +400,7 @@ class FleetProperty(object):
     def allowed_values(self, allowed_values):
         """
         Sets the allowed_values of this FleetProperty.
-        Values of the category (must be a single value if selection = 'single choice')
+        Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
 
 
         :param allowed_values: The allowed_values of this FleetProperty.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Fleet(object):
     """
-    Description of Fleet.
+    A fleet is a collection or grouping of resources based on criteria.
     """
 
     #: A constant which can be used with the fleet_type property of a Fleet.
@@ -449,6 +449,10 @@ class Fleet(object):
         """
         **[Required]** Gets the fleet_type of this Fleet.
         Type of the Fleet.
+        PRODUCT - A fleet of product-specific resources for a product type.
+        ENVIRONMENT - A fleet of environment-specific resources for a product stack.
+        GROUP - A fleet of a fleet of either environment or product fleets.
+        GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
 
         Allowed values for this property are: "PRODUCT", "ENVIRONMENT", "GENERIC", "GROUP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -464,6 +468,10 @@ class Fleet(object):
         """
         Sets the fleet_type of this Fleet.
         Type of the Fleet.
+        PRODUCT - A fleet of product-specific resources for a product type.
+        ENVIRONMENT - A fleet of environment-specific resources for a product stack.
+        GROUP - A fleet of a fleet of either environment or product fleets.
+        GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
 
 
         :param fleet_type: The fleet_type of this Fleet.
@@ -478,7 +486,7 @@ class Fleet(object):
     def products(self):
         """
         Gets the products of this Fleet.
-        Products associated with the Fleet
+        Products associated with the Fleet.
 
 
         :return: The products of this Fleet.
@@ -490,7 +498,7 @@ class Fleet(object):
     def products(self, products):
         """
         Sets the products of this Fleet.
-        Products associated with the Fleet
+        Products associated with the Fleet.
 
 
         :param products: The products of this Fleet.
@@ -502,7 +510,8 @@ class Fleet(object):
     def application_type(self):
         """
         Gets the application_type of this Fleet.
-        Application Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+        Product stack associated with the Fleet.
+        Applicable for ENVIRONMENT fleet types.
 
 
         :return: The application_type of this Fleet.
@@ -514,7 +523,8 @@ class Fleet(object):
     def application_type(self, application_type):
         """
         Sets the application_type of this Fleet.
-        Application Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+        Product stack associated with the Fleet.
+        Applicable for ENVIRONMENT fleet types.
 
 
         :param application_type: The application_type of this Fleet.
@@ -526,7 +536,8 @@ class Fleet(object):
     def environment_type(self):
         """
         Gets the environment_type of this Fleet.
-        Environment Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+        Environment Type associated with the Fleet.
+        Applicable for ENVIRONMENT fleet types.
 
 
         :return: The environment_type of this Fleet.
@@ -538,7 +549,8 @@ class Fleet(object):
     def environment_type(self, environment_type):
         """
         Sets the environment_type of this Fleet.
-        Environment Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+        Environment Type associated with the Fleet.
+        Applicable for ENVIRONMENT fleet types.
 
 
         :param environment_type: The environment_type of this Fleet.
@@ -550,7 +562,8 @@ class Fleet(object):
     def group_type(self):
         """
         Gets the group_type of this Fleet.
-        Group Type associated with Group Fleet.Applicable for GROUP fleet types.
+        Group Type associated with Group Fleet.
+        Applicable for GROUP fleet types.
 
         Allowed values for this property are: "ENVIRONMENT", "PRODUCT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -565,7 +578,8 @@ class Fleet(object):
     def group_type(self, group_type):
         """
         Sets the group_type of this Fleet.
-        Group Type associated with Group Fleet.Applicable for GROUP fleet types.
+        Group Type associated with Group Fleet.
+        Applicable for GROUP fleet types.
 
 
         :param group_type: The group_type of this Fleet.
@@ -580,7 +594,8 @@ class Fleet(object):
     def resource_selection_type(self):
         """
         Gets the resource_selection_type of this Fleet.
-        Type of resource selection in a fleet.
+        Type of resource selection in a Fleet.
+        Select resources manually or select resources based on rules.
 
         Allowed values for this property are: "DYNAMIC", "MANUAL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -595,7 +610,8 @@ class Fleet(object):
     def resource_selection_type(self, resource_selection_type):
         """
         Sets the resource_selection_type of this Fleet.
-        Type of resource selection in a fleet.
+        Type of resource selection in a Fleet.
+        Select resources manually or select resources based on rules.
 
 
         :param resource_selection_type: The resource_selection_type of this Fleet.
@@ -650,7 +666,7 @@ class Fleet(object):
     def resources(self):
         """
         Gets the resources of this Fleet.
-        Resources to be added during fleet creation when Resource selection type is Manual.
+        Resources associated with the Fleet if resourceSelectionType is MANUAL.
 
 
         :return: The resources of this Fleet.
@@ -662,7 +678,7 @@ class Fleet(object):
     def resources(self, resources):
         """
         Sets the resources of this Fleet.
-        Resources to be added during fleet creation when Resource selection type is Manual.
+        Resources associated with the Fleet if resourceSelectionType is MANUAL.
 
 
         :param resources: The resources of this Fleet.
@@ -674,7 +690,7 @@ class Fleet(object):
     def properties(self):
         """
         Gets the properties of this Fleet.
-        Properties to be added during fleet creation.
+        Properties associated with the Fleet.
 
 
         :return: The properties of this Fleet.
@@ -686,7 +702,7 @@ class Fleet(object):
     def properties(self, properties):
         """
         Sets the properties of this Fleet.
-        Properties to be added during fleet creation.
+        Properties associated with the Fleet.
 
 
         :param properties: The properties of this Fleet.
@@ -698,7 +714,7 @@ class Fleet(object):
     def credentials(self):
         """
         Gets the credentials of this Fleet.
-        Credentials to be added during fleet creation.
+        Credentials associated with the Fleet.
 
 
         :return: The credentials of this Fleet.
@@ -710,7 +726,7 @@ class Fleet(object):
     def credentials(self, credentials):
         """
         Sets the credentials of this Fleet.
-        Credentials to be added during fleet creation.
+        Credentials associated with the Fleet.
 
 
         :param credentials: The credentials of this Fleet.
@@ -722,7 +738,8 @@ class Fleet(object):
     def is_target_auto_confirm(self):
         """
         Gets the is_target_auto_confirm of this Fleet.
-        A value which represents if auto confirming of the targets can be enabled
+        A value that represents if auto-confirming of the targets can be enabled.
+        This will allow targets to be auto-confirmed in the fleet without manual intervention.
 
 
         :return: The is_target_auto_confirm of this Fleet.
@@ -734,7 +751,8 @@ class Fleet(object):
     def is_target_auto_confirm(self, is_target_auto_confirm):
         """
         Sets the is_target_auto_confirm of this Fleet.
-        A value which represents if auto confirming of the targets can be enabled
+        A value that represents if auto-confirming of the targets can be enabled.
+        This will allow targets to be auto-confirmed in the fleet without manual intervention.
 
 
         :param is_target_auto_confirm: The is_target_auto_confirm of this Fleet.

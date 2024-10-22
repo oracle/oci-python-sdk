@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ScriptBasedExecutionDetails(ExecutionDetails):
     """
-    Details for script based execution
+    Details for script-based execution.
     """
 
     def __init__(self, **kwargs):
@@ -38,25 +38,32 @@ class ScriptBasedExecutionDetails(ExecutionDetails):
             The value to assign to the command property of this ScriptBasedExecutionDetails.
         :type command: str
 
+        :param credentials:
+            The value to assign to the credentials property of this ScriptBasedExecutionDetails.
+        :type credentials: list[oci.fleet_apps_management.models.ConfigAssociationDetails]
+
         """
         self.swagger_types = {
             'execution_type': 'str',
             'variables': 'TaskVariable',
             'content': 'ContentDetails',
-            'command': 'str'
+            'command': 'str',
+            'credentials': 'list[ConfigAssociationDetails]'
         }
 
         self.attribute_map = {
             'execution_type': 'executionType',
             'variables': 'variables',
             'content': 'content',
-            'command': 'command'
+            'command': 'command',
+            'credentials': 'credentials'
         }
 
         self._execution_type = None
         self._variables = None
         self._content = None
         self._command = None
+        self._credentials = None
         self._execution_type = 'SCRIPT'
 
     @property
@@ -103,7 +110,8 @@ class ScriptBasedExecutionDetails(ExecutionDetails):
     def command(self):
         """
         Gets the command of this ScriptBasedExecutionDetails.
-        Optional Command to execute the content.
+        Optional command to execute the content.
+        You can provide any commands/arguments that can't be part of the script.
 
 
         :return: The command of this ScriptBasedExecutionDetails.
@@ -115,13 +123,38 @@ class ScriptBasedExecutionDetails(ExecutionDetails):
     def command(self, command):
         """
         Sets the command of this ScriptBasedExecutionDetails.
-        Optional Command to execute the content.
+        Optional command to execute the content.
+        You can provide any commands/arguments that can't be part of the script.
 
 
         :param command: The command of this ScriptBasedExecutionDetails.
         :type: str
         """
         self._command = command
+
+    @property
+    def credentials(self):
+        """
+        Gets the credentials of this ScriptBasedExecutionDetails.
+        Credentials required for executing the task.
+
+
+        :return: The credentials of this ScriptBasedExecutionDetails.
+        :rtype: list[oci.fleet_apps_management.models.ConfigAssociationDetails]
+        """
+        return self._credentials
+
+    @credentials.setter
+    def credentials(self, credentials):
+        """
+        Sets the credentials of this ScriptBasedExecutionDetails.
+        Credentials required for executing the task.
+
+
+        :param credentials: The credentials of this ScriptBasedExecutionDetails.
+        :type: list[oci.fleet_apps_management.models.ConfigAssociationDetails]
+        """
+        self._credentials = credentials
 
     def __repr__(self):
         return formatted_flat_dict(self)

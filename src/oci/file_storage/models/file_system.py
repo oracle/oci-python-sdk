@@ -131,6 +131,10 @@ class FileSystem(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type clone_attach_status: str
 
+        :param locks:
+            The value to assign to the locks property of this FileSystem.
+        :type locks: list[oci.file_storage.models.ResourceLock]
+
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this FileSystem.
         :type lifecycle_details: str
@@ -164,6 +168,7 @@ class FileSystem(object):
             'is_hydrated': 'bool',
             'clone_count': 'int',
             'clone_attach_status': 'str',
+            'locks': 'list[ResourceLock]',
             'lifecycle_details': 'str',
             'is_targetable': 'bool',
             'replication_target_id': 'str',
@@ -186,6 +191,7 @@ class FileSystem(object):
             'is_hydrated': 'isHydrated',
             'clone_count': 'cloneCount',
             'clone_attach_status': 'cloneAttachStatus',
+            'locks': 'locks',
             'lifecycle_details': 'lifecycleDetails',
             'is_targetable': 'isTargetable',
             'replication_target_id': 'replicationTargetId',
@@ -207,6 +213,7 @@ class FileSystem(object):
         self._is_hydrated = None
         self._clone_count = None
         self._clone_attach_status = None
+        self._locks = None
         self._lifecycle_details = None
         self._is_targetable = None
         self._replication_target_id = None
@@ -659,6 +666,30 @@ class FileSystem(object):
         if not value_allowed_none_or_none_sentinel(clone_attach_status, allowed_values):
             clone_attach_status = 'UNKNOWN_ENUM_VALUE'
         self._clone_attach_status = clone_attach_status
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this FileSystem.
+        Locks associated with this resource.
+
+
+        :return: The locks of this FileSystem.
+        :rtype: list[oci.file_storage.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this FileSystem.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this FileSystem.
+        :type: list[oci.file_storage.models.ResourceLock]
+        """
+        self._locks = locks
 
     @property
     def lifecycle_details(self):

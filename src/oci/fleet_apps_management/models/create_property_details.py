@@ -143,7 +143,7 @@ class CreatePropertyDetails(object):
     def selection(self):
         """
         **[Required]** Gets the selection of this CreatePropertyDetails.
-        Text selection of the category
+        Text selection of the property.
 
         Allowed values for this property are: "SINGLE_CHOICE", "MULTI_CHOICE", "DEFAULT_TEXT"
 
@@ -157,7 +157,7 @@ class CreatePropertyDetails(object):
     def selection(self, selection):
         """
         Sets the selection of this CreatePropertyDetails.
-        Text selection of the category
+        Text selection of the property.
 
 
         :param selection: The selection of this CreatePropertyDetails.
@@ -174,7 +174,7 @@ class CreatePropertyDetails(object):
     def value_type(self):
         """
         **[Required]** Gets the value_type of this CreatePropertyDetails.
-        Format of the value
+        Format of the value.
 
         Allowed values for this property are: "STRING", "NUMERIC"
 
@@ -188,7 +188,7 @@ class CreatePropertyDetails(object):
     def value_type(self, value_type):
         """
         Sets the value_type of this CreatePropertyDetails.
-        Format of the value
+        Format of the value.
 
 
         :param value_type: The value_type of this CreatePropertyDetails.
@@ -205,7 +205,7 @@ class CreatePropertyDetails(object):
     def values(self):
         """
         Gets the values of this CreatePropertyDetails.
-        Values of the property (must be a single value if selection = 'single choice')
+        Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
 
 
         :return: The values of this CreatePropertyDetails.
@@ -217,7 +217,7 @@ class CreatePropertyDetails(object):
     def values(self, values):
         """
         Sets the values of this CreatePropertyDetails.
-        Values of the property (must be a single value if selection = 'single choice')
+        Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
 
 
         :param values: The values of this CreatePropertyDetails.

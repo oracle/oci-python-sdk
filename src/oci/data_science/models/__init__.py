@@ -12,6 +12,8 @@ from .artifact_import_details import ArtifactImportDetails
 from .artifact_import_details_object_storage import ArtifactImportDetailsObjectStorage
 from .auto_scaling_policy import AutoScalingPolicy
 from .auto_scaling_policy_details import AutoScalingPolicyDetails
+from .backup_operation_details import BackupOperationDetails
+from .backup_setting import BackupSetting
 from .category_log_details import CategoryLogDetails
 from .change_data_science_private_endpoint_compartment_details import ChangeDataSciencePrivateEndpointCompartmentDetails
 from .change_job_compartment_details import ChangeJobCompartmentDetails
@@ -117,6 +119,8 @@ from .predefined_expression_threshold_scaling_configuration import PredefinedExp
 from .predefined_metric_expression_rule import PredefinedMetricExpressionRule
 from .project import Project
 from .project_summary import ProjectSummary
+from .retention_operation_details import RetentionOperationDetails
+from .retention_setting import RetentionSetting
 from .scaling_configuration import ScalingConfiguration
 from .scaling_policy import ScalingPolicy
 from .single_model_deployment_configuration_details import SingleModelDeploymentConfigurationDetails
@@ -155,6 +159,8 @@ data_science_type_mapping = {
     "ArtifactImportDetailsObjectStorage": ArtifactImportDetailsObjectStorage,
     "AutoScalingPolicy": AutoScalingPolicy,
     "AutoScalingPolicyDetails": AutoScalingPolicyDetails,
+    "BackupOperationDetails": BackupOperationDetails,
+    "BackupSetting": BackupSetting,
     "CategoryLogDetails": CategoryLogDetails,
     "ChangeDataSciencePrivateEndpointCompartmentDetails": ChangeDataSciencePrivateEndpointCompartmentDetails,
     "ChangeJobCompartmentDetails": ChangeJobCompartmentDetails,
@@ -260,6 +266,8 @@ data_science_type_mapping = {
     "PredefinedMetricExpressionRule": PredefinedMetricExpressionRule,
     "Project": Project,
     "ProjectSummary": ProjectSummary,
+    "RetentionOperationDetails": RetentionOperationDetails,
+    "RetentionSetting": RetentionSetting,
     "ScalingConfiguration": ScalingConfiguration,
     "ScalingPolicy": ScalingPolicy,
     "SingleModelDeploymentConfigurationDetails": SingleModelDeploymentConfigurationDetails,

@@ -62,6 +62,10 @@ class Model(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this Model.
+        :type lifecycle_details: str
+
         :param time_created:
             The value to assign to the time_created property of this Model.
         :type time_created: datetime
@@ -110,6 +114,22 @@ class Model(object):
             The value to assign to the version_label property of this Model.
         :type version_label: str
 
+        :param retention_setting:
+            The value to assign to the retention_setting property of this Model.
+        :type retention_setting: oci.data_science.models.RetentionSetting
+
+        :param backup_setting:
+            The value to assign to the backup_setting property of this Model.
+        :type backup_setting: oci.data_science.models.BackupSetting
+
+        :param retention_operation_details:
+            The value to assign to the retention_operation_details property of this Model.
+        :type retention_operation_details: oci.data_science.models.RetentionOperationDetails
+
+        :param backup_operation_details:
+            The value to assign to the backup_operation_details property of this Model.
+        :type backup_operation_details: oci.data_science.models.BackupOperationDetails
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -118,6 +138,7 @@ class Model(object):
             'display_name': 'str',
             'description': 'str',
             'lifecycle_state': 'str',
+            'lifecycle_details': 'str',
             'time_created': 'datetime',
             'created_by': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -129,7 +150,11 @@ class Model(object):
             'model_version_set_id': 'str',
             'model_version_set_name': 'str',
             'version_id': 'int',
-            'version_label': 'str'
+            'version_label': 'str',
+            'retention_setting': 'RetentionSetting',
+            'backup_setting': 'BackupSetting',
+            'retention_operation_details': 'RetentionOperationDetails',
+            'backup_operation_details': 'BackupOperationDetails'
         }
 
         self.attribute_map = {
@@ -139,6 +164,7 @@ class Model(object):
             'display_name': 'displayName',
             'description': 'description',
             'lifecycle_state': 'lifecycleState',
+            'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
             'created_by': 'createdBy',
             'freeform_tags': 'freeformTags',
@@ -150,7 +176,11 @@ class Model(object):
             'model_version_set_id': 'modelVersionSetId',
             'model_version_set_name': 'modelVersionSetName',
             'version_id': 'versionId',
-            'version_label': 'versionLabel'
+            'version_label': 'versionLabel',
+            'retention_setting': 'retentionSetting',
+            'backup_setting': 'backupSetting',
+            'retention_operation_details': 'retentionOperationDetails',
+            'backup_operation_details': 'backupOperationDetails'
         }
 
         self._id = None
@@ -159,6 +189,7 @@ class Model(object):
         self._display_name = None
         self._description = None
         self._lifecycle_state = None
+        self._lifecycle_details = None
         self._time_created = None
         self._created_by = None
         self._freeform_tags = None
@@ -171,6 +202,10 @@ class Model(object):
         self._model_version_set_name = None
         self._version_id = None
         self._version_label = None
+        self._retention_setting = None
+        self._backup_setting = None
+        self._retention_operation_details = None
+        self._backup_operation_details = None
 
     @property
     def id(self):
@@ -333,6 +368,30 @@ class Model(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def lifecycle_details(self):
+        """
+        **[Required]** Gets the lifecycle_details of this Model.
+        Details about the lifecycle state of the model.
+
+
+        :return: The lifecycle_details of this Model.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this Model.
+        Details about the lifecycle state of the model.
+
+
+        :param lifecycle_details: The lifecycle_details of this Model.
+        :type: str
+        """
+        self._lifecycle_details = lifecycle_details
 
     @property
     def time_created(self):
@@ -643,6 +702,86 @@ class Model(object):
         :type: str
         """
         self._version_label = version_label
+
+    @property
+    def retention_setting(self):
+        """
+        **[Required]** Gets the retention_setting of this Model.
+
+        :return: The retention_setting of this Model.
+        :rtype: oci.data_science.models.RetentionSetting
+        """
+        return self._retention_setting
+
+    @retention_setting.setter
+    def retention_setting(self, retention_setting):
+        """
+        Sets the retention_setting of this Model.
+
+        :param retention_setting: The retention_setting of this Model.
+        :type: oci.data_science.models.RetentionSetting
+        """
+        self._retention_setting = retention_setting
+
+    @property
+    def backup_setting(self):
+        """
+        **[Required]** Gets the backup_setting of this Model.
+
+        :return: The backup_setting of this Model.
+        :rtype: oci.data_science.models.BackupSetting
+        """
+        return self._backup_setting
+
+    @backup_setting.setter
+    def backup_setting(self, backup_setting):
+        """
+        Sets the backup_setting of this Model.
+
+        :param backup_setting: The backup_setting of this Model.
+        :type: oci.data_science.models.BackupSetting
+        """
+        self._backup_setting = backup_setting
+
+    @property
+    def retention_operation_details(self):
+        """
+        **[Required]** Gets the retention_operation_details of this Model.
+
+        :return: The retention_operation_details of this Model.
+        :rtype: oci.data_science.models.RetentionOperationDetails
+        """
+        return self._retention_operation_details
+
+    @retention_operation_details.setter
+    def retention_operation_details(self, retention_operation_details):
+        """
+        Sets the retention_operation_details of this Model.
+
+        :param retention_operation_details: The retention_operation_details of this Model.
+        :type: oci.data_science.models.RetentionOperationDetails
+        """
+        self._retention_operation_details = retention_operation_details
+
+    @property
+    def backup_operation_details(self):
+        """
+        **[Required]** Gets the backup_operation_details of this Model.
+
+        :return: The backup_operation_details of this Model.
+        :rtype: oci.data_science.models.BackupOperationDetails
+        """
+        return self._backup_operation_details
+
+    @backup_operation_details.setter
+    def backup_operation_details(self, backup_operation_details):
+        """
+        Sets the backup_operation_details of this Model.
+
+        :param backup_operation_details: The backup_operation_details of this Model.
+        :type: oci.data_science.models.BackupOperationDetails
+        """
+        self._backup_operation_details = backup_operation_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

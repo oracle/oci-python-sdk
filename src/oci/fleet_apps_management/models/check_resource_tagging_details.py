@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CheckResourceTaggingDetails(object):
     """
-    Request to check resource tagging
+    Request to check resource tagging.
     """
 
     def __init__(self, **kwargs):
@@ -77,7 +77,7 @@ class CheckResourceTaggingDetails(object):
     def fleet_display_name(self):
         """
         Gets the fleet_display_name of this CheckResourceTaggingDetails.
-        Fleet Name
+        Fleet Display Name.
 
 
         :return: The fleet_display_name of this CheckResourceTaggingDetails.
@@ -89,7 +89,7 @@ class CheckResourceTaggingDetails(object):
     def fleet_display_name(self, fleet_display_name):
         """
         Sets the fleet_display_name of this CheckResourceTaggingDetails.
-        Fleet Name
+        Fleet Display Name.
 
 
         :param fleet_display_name: The fleet_display_name of this CheckResourceTaggingDetails.
@@ -101,7 +101,7 @@ class CheckResourceTaggingDetails(object):
     def resource_ids(self):
         """
         **[Required]** Gets the resource_ids of this CheckResourceTaggingDetails.
-        Resource OCIDS that need to be verified if tag can be enabled
+        Resource OCIDS that need to be verified if a tag can be enabled for them.
 
 
         :return: The resource_ids of this CheckResourceTaggingDetails.
@@ -113,7 +113,7 @@ class CheckResourceTaggingDetails(object):
     def resource_ids(self, resource_ids):
         """
         Sets the resource_ids of this CheckResourceTaggingDetails.
-        Resource OCIDS that need to be verified if tag can be enabled
+        Resource OCIDS that need to be verified if a tag can be enabled for them.
 
 
         :param resource_ids: The resource_ids of this CheckResourceTaggingDetails.

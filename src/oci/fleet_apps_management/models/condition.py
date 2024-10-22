@@ -53,7 +53,8 @@ class Condition(object):
     def attr_group(self):
         """
         **[Required]** Gets the attr_group of this Condition.
-        Attribute Group.
+        Attribute Group. Provide a Tag namespace if the rule is based on a tag.
+        Provide resource type if the rule is based on a resource property.
 
 
         :return: The attr_group of this Condition.
@@ -65,7 +66,8 @@ class Condition(object):
     def attr_group(self, attr_group):
         """
         Sets the attr_group of this Condition.
-        Attribute Group.
+        Attribute Group. Provide a Tag namespace if the rule is based on a tag.
+        Provide resource type if the rule is based on a resource property.
 
 
         :param attr_group: The attr_group of this Condition.
@@ -77,7 +79,8 @@ class Condition(object):
     def attr_key(self):
         """
         **[Required]** Gets the attr_key of this Condition.
-        Attribute Key.
+        Attribute Key.Provide Tag key if the rule is based on a tag.
+        Provide resource property name if the rule is based on a resource property.
 
 
         :return: The attr_key of this Condition.
@@ -89,7 +92,8 @@ class Condition(object):
     def attr_key(self, attr_key):
         """
         Sets the attr_key of this Condition.
-        Attribute Key.
+        Attribute Key.Provide Tag key if the rule is based on a tag.
+        Provide resource property name if the rule is based on a resource property.
 
 
         :param attr_key: The attr_key of this Condition.
@@ -101,7 +105,8 @@ class Condition(object):
     def attr_value(self):
         """
         **[Required]** Gets the attr_value of this Condition.
-        Attribute Value.
+        Attribute Value.Provide Tag value if the rule is based on a tag.
+        Provide resource property value if the rule is based on a resource property.
 
 
         :return: The attr_value of this Condition.
@@ -113,7 +118,8 @@ class Condition(object):
     def attr_value(self, attr_value):
         """
         Sets the attr_value of this Condition.
-        Attribute Value.
+        Attribute Value.Provide Tag value if the rule is based on a tag.
+        Provide resource property value if the rule is based on a resource property.
 
 
         :param attr_value: The attr_value of this Condition.

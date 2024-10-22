@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class FleetCredential(object):
     """
-    Description of FleetCredential.
+    Credential in Fleet Application Management.
     """
 
     #: A constant which can be used with the lifecycle_state property of a FleetCredential.

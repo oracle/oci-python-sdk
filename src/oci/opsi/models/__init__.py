@@ -249,6 +249,7 @@ from .host_insights import HostInsights
 from .host_insights_data_object import HostInsightsDataObject
 from .host_insights_data_object_summary import HostInsightsDataObjectSummary
 from .host_instance_map import HostInstanceMap
+from .host_io_statistics import HostIoStatistics
 from .host_io_usage import HostIoUsage
 from .host_memory_configuration import HostMemoryConfiguration
 from .host_memory_recommendations import HostMemoryRecommendations
@@ -296,6 +297,8 @@ from .ingest_sql_stats_response_details import IngestSqlStatsResponseDetails
 from .ingest_sql_text_details import IngestSqlTextDetails
 from .ingest_sql_text_response_details import IngestSqlTextResponseDetails
 from .instance_metrics import InstanceMetrics
+from .io_usage_trend import IoUsageTrend
+from .io_usage_trend_aggregation import IoUsageTrendAggregation
 from .list_objects import ListObjects
 from .macs_managed_cloud_database_configuration_summary import MacsManagedCloudDatabaseConfigurationSummary
 from .macs_managed_cloud_database_host_insight import MacsManagedCloudDatabaseHostInsight
@@ -430,6 +433,7 @@ from .summarize_exadata_insight_resource_usage_aggregation import SummarizeExada
 from .summarize_exadata_insight_resource_usage_collection import SummarizeExadataInsightResourceUsageCollection
 from .summarize_exadata_insight_resource_utilization_insight_aggregation import SummarizeExadataInsightResourceUtilizationInsightAggregation
 from .summarize_host_insight_host_recommendation_aggregation import SummarizeHostInsightHostRecommendationAggregation
+from .summarize_host_insight_io_usage_trend_aggregation_collection import SummarizeHostInsightIoUsageTrendAggregationCollection
 from .summarize_host_insight_network_usage_trend_aggregation_collection import SummarizeHostInsightNetworkUsageTrendAggregationCollection
 from .summarize_host_insight_resource_capacity_trend_aggregation_collection import SummarizeHostInsightResourceCapacityTrendAggregationCollection
 from .summarize_host_insight_resource_forecast_trend_aggregation import SummarizeHostInsightResourceForecastTrendAggregation
@@ -738,6 +742,7 @@ opsi_type_mapping = {
     "HostInsightsDataObject": HostInsightsDataObject,
     "HostInsightsDataObjectSummary": HostInsightsDataObjectSummary,
     "HostInstanceMap": HostInstanceMap,
+    "HostIoStatistics": HostIoStatistics,
     "HostIoUsage": HostIoUsage,
     "HostMemoryConfiguration": HostMemoryConfiguration,
     "HostMemoryRecommendations": HostMemoryRecommendations,
@@ -785,6 +790,8 @@ opsi_type_mapping = {
     "IngestSqlTextDetails": IngestSqlTextDetails,
     "IngestSqlTextResponseDetails": IngestSqlTextResponseDetails,
     "InstanceMetrics": InstanceMetrics,
+    "IoUsageTrend": IoUsageTrend,
+    "IoUsageTrendAggregation": IoUsageTrendAggregation,
     "ListObjects": ListObjects,
     "MacsManagedCloudDatabaseConfigurationSummary": MacsManagedCloudDatabaseConfigurationSummary,
     "MacsManagedCloudDatabaseHostInsight": MacsManagedCloudDatabaseHostInsight,
@@ -919,6 +926,7 @@ opsi_type_mapping = {
     "SummarizeExadataInsightResourceUsageCollection": SummarizeExadataInsightResourceUsageCollection,
     "SummarizeExadataInsightResourceUtilizationInsightAggregation": SummarizeExadataInsightResourceUtilizationInsightAggregation,
     "SummarizeHostInsightHostRecommendationAggregation": SummarizeHostInsightHostRecommendationAggregation,
+    "SummarizeHostInsightIoUsageTrendAggregationCollection": SummarizeHostInsightIoUsageTrendAggregationCollection,
     "SummarizeHostInsightNetworkUsageTrendAggregationCollection": SummarizeHostInsightNetworkUsageTrendAggregationCollection,
     "SummarizeHostInsightResourceCapacityTrendAggregationCollection": SummarizeHostInsightResourceCapacityTrendAggregationCollection,
     "SummarizeHostInsightResourceForecastTrendAggregation": SummarizeHostInsightResourceForecastTrendAggregation,

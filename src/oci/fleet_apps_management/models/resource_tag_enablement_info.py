@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourceTagEnablementInfo(object):
     """
-    Resource tag enablement Information
+    Resource tag enablement Information.
     """
 
     def __init__(self, **kwargs):
@@ -70,7 +70,7 @@ class ResourceTagEnablementInfo(object):
     def is_tagging_possible(self):
         """
         **[Required]** Gets the is_tagging_possible of this ResourceTagEnablementInfo.
-        A value which represents if resource can be tagged with Fleet name
+        A value that represents if the resource can be tagged with a Fleet name.
 
 
         :return: The is_tagging_possible of this ResourceTagEnablementInfo.
@@ -82,7 +82,7 @@ class ResourceTagEnablementInfo(object):
     def is_tagging_possible(self, is_tagging_possible):
         """
         Sets the is_tagging_possible of this ResourceTagEnablementInfo.
-        A value which represents if resource can be tagged with Fleet name
+        A value that represents if the resource can be tagged with a Fleet name.
 
 
         :param is_tagging_possible: The is_tagging_possible of this ResourceTagEnablementInfo.

@@ -34,7 +34,7 @@ class FleetAppsManagementClientCompositeOperations(object):
             Details for confirming Targets.
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.fleet_apps_management.models.WorkRequest.status`
@@ -115,7 +115,7 @@ class FleetAppsManagementClientCompositeOperations(object):
             Details for the new FleetCredential.
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.fleet_apps_management.models.WorkRequest.status`
@@ -157,7 +157,7 @@ class FleetAppsManagementClientCompositeOperations(object):
             Details for the new FleetProperty.
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.fleet_apps_management.models.FleetProperty.lifecycle_state`
@@ -202,7 +202,7 @@ class FleetAppsManagementClientCompositeOperations(object):
             Details for the new FleetResource.
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.fleet_apps_management.models.WorkRequest.status`
@@ -241,7 +241,7 @@ class FleetAppsManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.fleet_apps_management.models.WorkRequest.status`
@@ -291,7 +291,7 @@ class FleetAppsManagementClientCompositeOperations(object):
             unique FleetCredential identifier
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.fleet_apps_management.models.WorkRequest.status`
@@ -341,7 +341,7 @@ class FleetAppsManagementClientCompositeOperations(object):
             unique FleetResource identifier
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.fleet_apps_management.models.WorkRequest.status`
@@ -388,10 +388,10 @@ class FleetAppsManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.fleet_apps_management.models.GenerateComplianceReportDetails generate_compliance_report_details: (required)
-            Details for generating Compliance Report fort the Fleet.
+            Details for generating Compliance Report for the Fleet.
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.fleet_apps_management.models.WorkRequest.status`
@@ -430,10 +430,10 @@ class FleetAppsManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.fleet_apps_management.models.RequestResourceValidationDetails request_resource_validation_details: (required)
-            Details for requesting resource validation
+            Details for requesting resource validation.
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.fleet_apps_management.models.WorkRequest.status`
@@ -472,10 +472,10 @@ class FleetAppsManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.fleet_apps_management.models.RequestTargetDiscoveryDetails request_target_discovery_details: (required)
-            Details for requesting target discovery
+            Details for requesting target discovery.
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.fleet_apps_management.models.WorkRequest.status`
@@ -514,7 +514,7 @@ class FleetAppsManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param oci.fleet_apps_management.models.UpdateFleetDetails update_fleet_details: (required)
             The information to be updated.
@@ -562,10 +562,10 @@ class FleetAppsManagementClientCompositeOperations(object):
             unique FleetCredential identifier
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param oci.fleet_apps_management.models.UpdateFleetCredentialDetails update_fleet_credential_details: (required)
-            The information to be updated.
+            The credential information to be updated.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.fleet_apps_management.models.WorkRequest.status`
@@ -604,10 +604,10 @@ class FleetAppsManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str fleet_property_id: (required)
-            unique FleetProperty identifier
+            unique FleetProperty identifier.
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param oci.fleet_apps_management.models.UpdateFleetPropertyDetails update_fleet_property_details: (required)
             The information to be updated.
@@ -655,7 +655,7 @@ class FleetAppsManagementClientCompositeOperations(object):
             unique FleetResource identifier
 
         :param str fleet_id: (required)
-            unique Fleet identifier
+            Unique Fleet identifier.
 
         :param oci.fleet_apps_management.models.UpdateFleetResourceDetails update_fleet_resource_details: (required)
             The information to be updated.
