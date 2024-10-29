@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.137.1 - 2024-10-29
+====================
+
+Added 
+----- 
+* Support for L3IP (Layer 3 IP) listeners in the Network Load Balancing service 
+* Support for overriding an existing add-on installation in the Kubernetes Engine service   
+
+====================
 2.137.0 - 2024-10-22
 ====================
 

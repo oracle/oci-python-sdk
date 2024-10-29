@@ -32,22 +32,29 @@ class InstallAddonDetails(object):
             The value to assign to the configurations property of this InstallAddonDetails.
         :type configurations: list[oci.container_engine.models.AddonConfiguration]
 
+        :param is_override_existing:
+            The value to assign to the is_override_existing property of this InstallAddonDetails.
+        :type is_override_existing: bool
+
         """
         self.swagger_types = {
             'addon_name': 'str',
             'version': 'str',
-            'configurations': 'list[AddonConfiguration]'
+            'configurations': 'list[AddonConfiguration]',
+            'is_override_existing': 'bool'
         }
 
         self.attribute_map = {
             'addon_name': 'addonName',
             'version': 'version',
-            'configurations': 'configurations'
+            'configurations': 'configurations',
+            'is_override_existing': 'isOverrideExisting'
         }
 
         self._addon_name = None
         self._version = None
         self._configurations = None
+        self._is_override_existing = None
 
     @property
     def addon_name(self):
@@ -120,6 +127,30 @@ class InstallAddonDetails(object):
         :type: list[oci.container_engine.models.AddonConfiguration]
         """
         self._configurations = configurations
+
+    @property
+    def is_override_existing(self):
+        """
+        Gets the is_override_existing of this InstallAddonDetails.
+        Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
+
+
+        :return: The is_override_existing of this InstallAddonDetails.
+        :rtype: bool
+        """
+        return self._is_override_existing
+
+    @is_override_existing.setter
+    def is_override_existing(self, is_override_existing):
+        """
+        Sets the is_override_existing of this InstallAddonDetails.
+        Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
+
+
+        :param is_override_existing: The is_override_existing of this InstallAddonDetails.
+        :type: bool
+        """
+        self._is_override_existing = is_override_existing
 
     def __repr__(self):
         return formatted_flat_dict(self)

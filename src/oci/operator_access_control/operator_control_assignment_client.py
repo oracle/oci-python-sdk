@@ -170,7 +170,7 @@ class OperatorControlAssignmentClient(object):
         resource_path = "/operatorControlAssignments/{operatorControlAssignmentId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_operator_control_assignment_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/ChangeOperatorControlAssignmentCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -280,7 +280,7 @@ class OperatorControlAssignmentClient(object):
         resource_path = "/operatorControlAssignments"
         method = "POST"
         operation_name = "create_operator_control_assignment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/CreateOperatorControlAssignment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -381,7 +381,7 @@ class OperatorControlAssignmentClient(object):
         resource_path = "/operatorControlAssignments/{operatorControlAssignmentId}"
         method = "DELETE"
         operation_name = "delete_operator_control_assignment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/DeleteOperatorControlAssignment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -487,7 +487,7 @@ class OperatorControlAssignmentClient(object):
         resource_path = "/operatorControlAssignments/{operatorControlAssignmentId}/actions/getAssignmentValidationStatus"
         method = "GET"
         operation_name = "get_assignment_validation_status"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/GetAssignmentValidationStatus"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -585,7 +585,7 @@ class OperatorControlAssignmentClient(object):
         resource_path = "/operatorControlAssignments/{operatorControlAssignmentId}"
         method = "GET"
         operation_name = "get_operator_control_assignment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/GetOperatorControlAssignment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -713,7 +713,7 @@ class OperatorControlAssignmentClient(object):
         resource_path = "/operatorControlAssignments"
         method = "GET"
         operation_name = "list_operator_control_assignments"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/ListOperatorControlAssignments"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -853,7 +853,7 @@ class OperatorControlAssignmentClient(object):
         resource_path = "/operatorControlAssignments/{operatorControlAssignmentId}"
         method = "PUT"
         operation_name = "update_operator_control_assignment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/UpdateOperatorControlAssignment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -972,7 +972,7 @@ class OperatorControlAssignmentClient(object):
         resource_path = "/operatorControlAssignments/{operatorControlAssignmentId}/actions/validateAssignment"
         method = "POST"
         operation_name = "validate_operator_assignment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/ValidateOperatorAssignment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [

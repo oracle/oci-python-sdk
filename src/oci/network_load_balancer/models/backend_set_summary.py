@@ -12,7 +12,13 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BackendSetSummary(object):
     """
-    BackendSetSummary model.
+    The configuration of a network load balancer backend set.
+    For more information about backend set configuration, see
+    `Managing Backend Sets`__.
+
+    **Caution:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+
+    __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendsets.htm
     """
 
     #: A constant which can be used with the policy property of a BackendSetSummary.
@@ -312,8 +318,6 @@ class BackendSetSummary(object):
     def health_checker(self):
         """
         **[Required]** Gets the health_checker of this BackendSetSummary.
-        The health check policy configuration.
-
 
         :return: The health_checker of this BackendSetSummary.
         :rtype: oci.network_load_balancer.models.HealthChecker
@@ -324,8 +328,6 @@ class BackendSetSummary(object):
     def health_checker(self, health_checker):
         """
         Sets the health_checker of this BackendSetSummary.
-        The health check policy configuration.
-
 
         :param health_checker: The health_checker of this BackendSetSummary.
         :type: oci.network_load_balancer.models.HealthChecker
