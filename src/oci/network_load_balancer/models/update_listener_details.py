@@ -35,6 +35,10 @@ class UpdateListenerDetails(object):
     #: This constant has a value of "TCP_AND_UDP"
     PROTOCOL_TCP_AND_UDP = "TCP_AND_UDP"
 
+    #: A constant which can be used with the protocol property of a UpdateListenerDetails.
+    #: This constant has a value of "L3IP"
+    PROTOCOL_L3_IP = "L3IP"
+
     #: A constant which can be used with the ip_version property of a UpdateListenerDetails.
     #: This constant has a value of "IPV4"
     IP_VERSION_IPV4 = "IPV4"
@@ -58,7 +62,7 @@ class UpdateListenerDetails(object):
 
         :param protocol:
             The value to assign to the protocol property of this UpdateListenerDetails.
-            Allowed values for this property are: "ANY", "TCP", "UDP", "TCP_AND_UDP"
+            Allowed values for this property are: "ANY", "TCP", "UDP", "TCP_AND_UDP", "L3IP"
         :type protocol: str
 
         :param ip_version:
@@ -78,6 +82,10 @@ class UpdateListenerDetails(object):
             The value to assign to the udp_idle_timeout property of this UpdateListenerDetails.
         :type udp_idle_timeout: int
 
+        :param l3_ip_idle_timeout:
+            The value to assign to the l3_ip_idle_timeout property of this UpdateListenerDetails.
+        :type l3_ip_idle_timeout: int
+
         """
         self.swagger_types = {
             'default_backend_set_name': 'str',
@@ -86,7 +94,8 @@ class UpdateListenerDetails(object):
             'ip_version': 'str',
             'is_ppv2_enabled': 'bool',
             'tcp_idle_timeout': 'int',
-            'udp_idle_timeout': 'int'
+            'udp_idle_timeout': 'int',
+            'l3_ip_idle_timeout': 'int'
         }
 
         self.attribute_map = {
@@ -96,7 +105,8 @@ class UpdateListenerDetails(object):
             'ip_version': 'ipVersion',
             'is_ppv2_enabled': 'isPpv2Enabled',
             'tcp_idle_timeout': 'tcpIdleTimeout',
-            'udp_idle_timeout': 'udpIdleTimeout'
+            'udp_idle_timeout': 'udpIdleTimeout',
+            'l3_ip_idle_timeout': 'l3IpIdleTimeout'
         }
 
         self._default_backend_set_name = None
@@ -106,6 +116,7 @@ class UpdateListenerDetails(object):
         self._is_ppv2_enabled = None
         self._tcp_idle_timeout = None
         self._udp_idle_timeout = None
+        self._l3_ip_idle_timeout = None
 
     @property
     def default_backend_set_name(self):
@@ -174,7 +185,7 @@ class UpdateListenerDetails(object):
 
         Example: `TCP`
 
-        Allowed values for this property are: "ANY", "TCP", "UDP", "TCP_AND_UDP"
+        Allowed values for this property are: "ANY", "TCP", "UDP", "TCP_AND_UDP", "L3IP"
 
 
         :return: The protocol of this UpdateListenerDetails.
@@ -197,7 +208,7 @@ class UpdateListenerDetails(object):
         :param protocol: The protocol of this UpdateListenerDetails.
         :type: str
         """
-        allowed_values = ["ANY", "TCP", "UDP", "TCP_AND_UDP"]
+        allowed_values = ["ANY", "TCP", "UDP", "TCP_AND_UDP", "L3IP"]
         if not value_allowed_none_or_none_sentinel(protocol, allowed_values):
             raise ValueError(
                 f"Invalid value for `protocol`, must be None or one of {allowed_values}"
@@ -310,6 +321,32 @@ class UpdateListenerDetails(object):
         :type: int
         """
         self._udp_idle_timeout = udp_idle_timeout
+
+    @property
+    def l3_ip_idle_timeout(self):
+        """
+        Gets the l3_ip_idle_timeout of this UpdateListenerDetails.
+        The duration for L3IP idle timeout in seconds.
+        Example: `200`
+
+
+        :return: The l3_ip_idle_timeout of this UpdateListenerDetails.
+        :rtype: int
+        """
+        return self._l3_ip_idle_timeout
+
+    @l3_ip_idle_timeout.setter
+    def l3_ip_idle_timeout(self, l3_ip_idle_timeout):
+        """
+        Sets the l3_ip_idle_timeout of this UpdateListenerDetails.
+        The duration for L3IP idle timeout in seconds.
+        Example: `200`
+
+
+        :param l3_ip_idle_timeout: The l3_ip_idle_timeout of this UpdateListenerDetails.
+        :type: int
+        """
+        self._l3_ip_idle_timeout = l3_ip_idle_timeout
 
     def __repr__(self):
         return formatted_flat_dict(self)

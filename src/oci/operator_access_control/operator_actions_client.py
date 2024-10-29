@@ -153,7 +153,7 @@ class OperatorActionsClient(object):
         resource_path = "/operatorActions/{operatorActionId}"
         method = "GET"
         operation_name = "get_operator_action"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorAction/GetOperatorAction"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -278,7 +278,7 @@ class OperatorActionsClient(object):
         resource_path = "/operatorActions"
         method = "GET"
         operation_name = "list_operator_actions"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorAction/ListOperatorActions"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [

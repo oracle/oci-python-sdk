@@ -170,7 +170,7 @@ class OperatorControlClient(object):
         resource_path = "/operatorControls/{operatorControlId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_operator_control_compartment"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/ChangeOperatorControlCompartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -280,7 +280,7 @@ class OperatorControlClient(object):
         resource_path = "/operatorControls"
         method = "POST"
         operation_name = "create_operator_control"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/CreateOperatorControl"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -385,7 +385,7 @@ class OperatorControlClient(object):
         resource_path = "/operatorControls/{operatorControlId}"
         method = "DELETE"
         operation_name = "delete_operator_control"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/DeleteOperatorControl"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -491,7 +491,7 @@ class OperatorControlClient(object):
         resource_path = "/operatorControls/{operatorControlId}"
         method = "GET"
         operation_name = "get_operator_control"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/GetOperatorControl"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -616,7 +616,7 @@ class OperatorControlClient(object):
         resource_path = "/operatorControls"
         method = "GET"
         operation_name = "list_operator_controls"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/ListOperatorControls"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -754,7 +754,7 @@ class OperatorControlClient(object):
         resource_path = "/operatorControls/{operatorControlId}"
         method = "PUT"
         operation_name = "update_operator_control"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/UpdateOperatorControl"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [

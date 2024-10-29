@@ -318,8 +318,6 @@ class BackendSet(object):
     def health_checker(self):
         """
         **[Required]** Gets the health_checker of this BackendSet.
-        The health check policy configuration.
-
 
         :return: The health_checker of this BackendSet.
         :rtype: oci.network_load_balancer.models.HealthChecker
@@ -330,8 +328,6 @@ class BackendSet(object):
     def health_checker(self, health_checker):
         """
         Sets the health_checker of this BackendSet.
-        The health check policy configuration.
-
 
         :param health_checker: The health_checker of this BackendSet.
         :type: oci.network_load_balancer.models.HealthChecker
