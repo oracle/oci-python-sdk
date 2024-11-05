@@ -3,7 +3,9 @@
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 # Contains classes for defining and building circuit breaker strategies.
+from circuitbreaker import CircuitBreaker
 import logging
+import uuid
 from oci.exceptions import TransientServiceError
 
 logger = logging.getLogger(__name__)
@@ -67,7 +69,7 @@ class CircuitBreakerStrategy(object):
         self.expected_exception = TransientServiceError
         self.failure_statuses_and_codes = kwargs.get('failure_statuses_and_codes',
                                                      DEFAULT_CIRCUIT_BREAKER_FAILURE_STATUSES_AND_CODES)
-        self.name = kwargs.get('name', None)
+        self.name = kwargs.get('name', str(uuid.uuid4()))
 
     def is_transient_error(self, status_code, service_code):
         logger.debug('Is transient error status code:{} error code:{}'.format(status_code, service_code))
@@ -79,6 +81,14 @@ class CircuitBreakerStrategy(object):
         logger.debug(
             'status code:{} not in failure_statuses_and_codes:{}'.format(status_code, self.failure_statuses_and_codes))
         return False
+
+    def get_circuit_breaker(self):
+        return CircuitBreaker(
+            failure_threshold=self.failure_threshold,
+            recovery_timeout=self.recovery_timeout,
+            expected_exception=self.expected_exception,
+            name=self.name
+        )
 
 
 class NoCircuitBreakerStrategy(object):

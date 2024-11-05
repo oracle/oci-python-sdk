@@ -3,6 +3,7 @@
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 import random
+import warnings
 from oci._vendor import six
 
 
@@ -10,12 +11,14 @@ def get_tenancy_id_from_certificate(cert):
     if not cert:
         raise RuntimeError('A certificate must be provided')
 
-    for name_attribute in cert.subject:
-        val = name_attribute.value
-        if val.startswith('opc-tenant:'):
-            return val[len('opc-tenant:'):]
-        if val.startswith('opc-identity:'):
-            return val[len('opc-identity:'):]
+    with warnings.catch_warnings():
+        warnings.simplefilter('ignore', UserWarning)
+        for name_attribute in cert.subject:
+            val = name_attribute.value
+            if val.startswith('opc-tenant:'):
+                return val[len('opc-tenant:'):]
+            if val.startswith('opc-identity:'):
+                return val[len('opc-identity:'):]
 
     raise RuntimeError('The certificate does not contain a tenancy OCID')
 

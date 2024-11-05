@@ -144,6 +144,7 @@ from .cloud_gate_server_search_request import CloudGateServerSearchRequest
 from .cloud_gate_servers import CloudGateServers
 from .cloud_gates import CloudGates
 from .condition import Condition
+from .condition_extension_ociconsolesignonpolicyconsent_policy import ConditionExtensionOciconsolesignonpolicyconsentPolicy
 from .condition_search_request import ConditionSearchRequest
 from .conditions import Conditions
 from .customer_secret_key import CustomerSecretKey
@@ -331,6 +332,12 @@ from .o_auth_client_certificates import OAuthClientCertificates
 from .o_auth_partner_certificate import OAuthPartnerCertificate
 from .o_auth_partner_certificate_search_request import OAuthPartnerCertificateSearchRequest
 from .o_auth_partner_certificates import OAuthPartnerCertificates
+from .oci_console_sign_on_policy_consent import OciConsoleSignOnPolicyConsent
+from .oci_console_sign_on_policy_consent_consent_signed_by import OciConsoleSignOnPolicyConsentConsentSignedBy
+from .oci_console_sign_on_policy_consent_modified_resource import OciConsoleSignOnPolicyConsentModifiedResource
+from .oci_console_sign_on_policy_consent_policy_resource import OciConsoleSignOnPolicyConsentPolicyResource
+from .oci_console_sign_on_policy_consent_search_request import OciConsoleSignOnPolicyConsentSearchRequest
+from .oci_console_sign_on_policy_consents import OciConsoleSignOnPolicyConsents
 from .operations import Operations
 from .password_policies import PasswordPolicies
 from .password_policy import PasswordPolicy
@@ -340,14 +347,17 @@ from .password_policy_search_request import PasswordPolicySearchRequest
 from .patch_op import PatchOp
 from .policies import Policies
 from .policy import Policy
+from .policy_extension_ociconsolesignonpolicyconsent_policy import PolicyExtensionOciconsolesignonpolicyconsentPolicy
 from .policy_policy_type import PolicyPolicyType
 from .policy_rules import PolicyRules
 from .policy_search_request import PolicySearchRequest
 from .resource_type_schema_attribute import ResourceTypeSchemaAttribute
 from .resource_type_schema_attribute_search_request import ResourceTypeSchemaAttributeSearchRequest
 from .resource_type_schema_attributes import ResourceTypeSchemaAttributes
+from .restore_oci_console_policy import RestoreOciConsolePolicy
 from .rule import Rule
 from .rule_condition_group import RuleConditionGroup
+from .rule_extension_ociconsolesignonpolicyconsent_policy import RuleExtensionOciconsolesignonpolicyconsentPolicy
 from .rule_policy_type import RulePolicyType
 from .rule_return import RuleReturn
 from .rule_search_request import RuleSearchRequest
@@ -601,6 +611,7 @@ identity_domains_type_mapping = {
     "CloudGateServers": CloudGateServers,
     "CloudGates": CloudGates,
     "Condition": Condition,
+    "ConditionExtensionOciconsolesignonpolicyconsentPolicy": ConditionExtensionOciconsolesignonpolicyconsentPolicy,
     "ConditionSearchRequest": ConditionSearchRequest,
     "Conditions": Conditions,
     "CustomerSecretKey": CustomerSecretKey,
@@ -788,6 +799,12 @@ identity_domains_type_mapping = {
     "OAuthPartnerCertificate": OAuthPartnerCertificate,
     "OAuthPartnerCertificateSearchRequest": OAuthPartnerCertificateSearchRequest,
     "OAuthPartnerCertificates": OAuthPartnerCertificates,
+    "OciConsoleSignOnPolicyConsent": OciConsoleSignOnPolicyConsent,
+    "OciConsoleSignOnPolicyConsentConsentSignedBy": OciConsoleSignOnPolicyConsentConsentSignedBy,
+    "OciConsoleSignOnPolicyConsentModifiedResource": OciConsoleSignOnPolicyConsentModifiedResource,
+    "OciConsoleSignOnPolicyConsentPolicyResource": OciConsoleSignOnPolicyConsentPolicyResource,
+    "OciConsoleSignOnPolicyConsentSearchRequest": OciConsoleSignOnPolicyConsentSearchRequest,
+    "OciConsoleSignOnPolicyConsents": OciConsoleSignOnPolicyConsents,
     "Operations": Operations,
     "PasswordPolicies": PasswordPolicies,
     "PasswordPolicy": PasswordPolicy,
@@ -797,14 +814,17 @@ identity_domains_type_mapping = {
     "PatchOp": PatchOp,
     "Policies": Policies,
     "Policy": Policy,
+    "PolicyExtensionOciconsolesignonpolicyconsentPolicy": PolicyExtensionOciconsolesignonpolicyconsentPolicy,
     "PolicyPolicyType": PolicyPolicyType,
     "PolicyRules": PolicyRules,
     "PolicySearchRequest": PolicySearchRequest,
     "ResourceTypeSchemaAttribute": ResourceTypeSchemaAttribute,
     "ResourceTypeSchemaAttributeSearchRequest": ResourceTypeSchemaAttributeSearchRequest,
     "ResourceTypeSchemaAttributes": ResourceTypeSchemaAttributes,
+    "RestoreOciConsolePolicy": RestoreOciConsolePolicy,
     "Rule": Rule,
     "RuleConditionGroup": RuleConditionGroup,
+    "RuleExtensionOciconsolesignonpolicyconsentPolicy": RuleExtensionOciconsolesignonpolicyconsentPolicy,
     "RulePolicyType": RulePolicyType,
     "RuleReturn": RuleReturn,
     "RuleSearchRequest": RuleSearchRequest,

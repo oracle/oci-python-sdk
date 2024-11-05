@@ -23,7 +23,6 @@ from timeit import default_timer as timer
 from ._vendor import requests, six, urllib3, sseclient
 from dateutil.parser import parse
 from dateutil import tz
-
 import functools
 from six.moves.http_client import HTTPResponse
 
@@ -33,7 +32,7 @@ from .config import get_config_value_or_default, validate_config
 from .request import Request
 from .response import Response
 from .circuit_breaker import CircuitBreakerStrategy, NoCircuitBreakerStrategy
-from circuitbreaker import CircuitBreaker, CircuitBreakerMonitor
+from circuitbreaker import CircuitBreakerMonitor
 from .version import __version__
 from .util import NONE_SENTINEL, Sentinel, extract_service_endpoint
 missing = Sentinel("Missing")
@@ -342,16 +341,10 @@ class BaseClient(object):
             # Enable Circuit breaker if a valid circuit breaker strategy is available
             if not isinstance(self.circuit_breaker_strategy, CircuitBreakerStrategy):
                 raise TypeError('Invalid Circuit Breaker Strategy!')
-            self.circuit_breaker_name = str(uuid.uuid4()) if self.circuit_breaker_strategy.name is None else self.circuit_breaker_strategy.name
             # Re-use Circuit breaker if sharing a Circuit Breaker Strategy.
-            circuit_breaker = CircuitBreakerMonitor.get(self.circuit_breaker_name)
+            circuit_breaker = CircuitBreakerMonitor.get(self.circuit_breaker_strategy.name)
             if circuit_breaker is None:
-                circuit_breaker = CircuitBreaker(
-                    failure_threshold=self.circuit_breaker_strategy.failure_threshold,
-                    recovery_timeout=self.circuit_breaker_strategy.recovery_timeout,
-                    expected_exception=self.circuit_breaker_strategy.expected_exception,
-                    name=self.circuit_breaker_name
-                )
+                circuit_breaker = self.circuit_breaker_strategy.get_circuit_breaker()
             # Equivalent to decorating the request function with Circuit Breaker
             self.request = circuit_breaker(self.request)
         self.logger.debug('Endpoint: {}'.format(self._endpoint))
@@ -656,7 +649,7 @@ class BaseClient(object):
 
         initial_circuit_breaker_state = None
         if self.circuit_breaker_name:
-            initial_circuit_breaker_state = CircuitBreakerMonitor.get(self.circuit_breaker_name).state
+            initial_circuit_breaker_state = CircuitBreakerMonitor.get(self.circuit_breaker_strategy.name).state
             if initial_circuit_breaker_state != circuitbreaker.STATE_CLOSED:
                 self.logger.debug("Circuit Breaker State is {}!".format(initial_circuit_breaker_state))
 
@@ -718,7 +711,7 @@ class BaseClient(object):
                 self.session.close()
                 self.session = new_session
             if isinstance(self.circuit_breaker_strategy, CircuitBreakerStrategy) and self.circuit_breaker_strategy.is_transient_error(response.status_code, service_code):
-                new_circuit_breaker_state = CircuitBreakerMonitor.get(self.circuit_breaker_name).state
+                new_circuit_breaker_state = CircuitBreakerMonitor.get(self.circuit_breaker_strategy.name).state
                 if initial_circuit_breaker_state != new_circuit_breaker_state:
                     self.logger.warning("Circuit Breaker state changed from {} to {}".format(initial_circuit_breaker_state, new_circuit_breaker_state))
                 self.raise_transient_service_error(request, response, service_code, message, operation_name, api_reference_link, target_service, request_endpoint, client_version, timestamp, deserialized_data)

@@ -164,6 +164,10 @@ class Condition(object):
             The value to assign to the evaluate_condition_if property of this Condition.
         :type evaluate_condition_if: str
 
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy property of this Condition.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy: oci.identity_domains.models.ConditionExtensionOciconsolesignonpolicyconsentPolicy
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -185,7 +189,8 @@ class Condition(object):
             'attribute_name': 'str',
             'operator': 'str',
             'attribute_value': 'str',
-            'evaluate_condition_if': 'str'
+            'evaluate_condition_if': 'str',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy': 'ConditionExtensionOciconsolesignonpolicyconsentPolicy'
         }
 
         self.attribute_map = {
@@ -208,7 +213,8 @@ class Condition(object):
             'attribute_name': 'attributeName',
             'operator': 'operator',
             'attribute_value': 'attributeValue',
-            'evaluate_condition_if': 'evaluateConditionIf'
+            'evaluate_condition_if': 'evaluateConditionIf',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:ociconsolesignonpolicyconsent:Policy'
         }
 
         self._id = None
@@ -231,6 +237,7 @@ class Condition(object):
         self._operator = None
         self._attribute_value = None
         self._evaluate_condition_if = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy = None
 
     @property
     def id(self):
@@ -480,6 +487,7 @@ class Condition(object):
 
         **SCIM++ Properties:**
          - idcsCompositeKey: [key, value]
+         - idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
          - idcsSearchable: true
          - multiValued: true
          - mutability: readWrite
@@ -502,6 +510,7 @@ class Condition(object):
 
         **SCIM++ Properties:**
          - idcsCompositeKey: [key, value]
+         - idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
          - idcsSearchable: true
          - multiValued: true
          - mutability: readWrite
@@ -1049,6 +1058,26 @@ class Condition(object):
         :type: str
         """
         self._evaluate_condition_if = evaluate_condition_if
+
+    @property
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy(self):
+        """
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy of this Condition.
+
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy of this Condition.
+        :rtype: oci.identity_domains.models.ConditionExtensionOciconsolesignonpolicyconsentPolicy
+        """
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy
+
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy):
+        """
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy of this Condition.
+
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy: The urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy of this Condition.
+        :type: oci.identity_domains.models.ConditionExtensionOciconsolesignonpolicyconsentPolicy
+        """
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy = urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy
 
     def __repr__(self):
         return formatted_flat_dict(self)

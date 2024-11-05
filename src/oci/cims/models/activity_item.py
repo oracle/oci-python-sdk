@@ -133,6 +133,10 @@ class ActivityItem(Item):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type item_status: str
 
+        :param attachment_id:
+            The value to assign to the attachment_id property of this ActivityItem.
+        :type attachment_id: str
+
         """
         self.swagger_types = {
             'item_key': 'str',
@@ -147,7 +151,8 @@ class ActivityItem(Item):
             'activity_type': 'str',
             'activity_author': 'str',
             'item_type': 'str',
-            'item_status': 'str'
+            'item_status': 'str',
+            'attachment_id': 'str'
         }
 
         self.attribute_map = {
@@ -163,7 +168,8 @@ class ActivityItem(Item):
             'activity_type': 'activityType',
             'activity_author': 'activityAuthor',
             'item_type': 'itemType',
-            'item_status': 'itemStatus'
+            'item_status': 'itemStatus',
+            'attachment_id': 'attachmentID'
         }
 
         self._item_key = None
@@ -179,6 +185,7 @@ class ActivityItem(Item):
         self._activity_author = None
         self._item_type = None
         self._item_status = None
+        self._attachment_id = None
         self._type = 'activity'
 
     @property
@@ -209,7 +216,7 @@ class ActivityItem(Item):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this ActivityItem.
-        The time when the activity was created, in milliseconds since epoch time.
+        The time when the activity was created, in seconds since epoch time.
 
 
         :return: The time_created of this ActivityItem.
@@ -221,7 +228,7 @@ class ActivityItem(Item):
     def time_created(self, time_created):
         """
         Sets the time_created of this ActivityItem.
-        The time when the activity was created, in milliseconds since epoch time.
+        The time when the activity was created, in seconds since epoch time.
 
 
         :param time_created: The time_created of this ActivityItem.
@@ -233,7 +240,7 @@ class ActivityItem(Item):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this ActivityItem.
-        The time when the activity was updated, in milliseconds since epoch time.
+        The time when the activity was updated, in seconds since epoch time.
 
 
         :return: The time_updated of this ActivityItem.
@@ -245,7 +252,7 @@ class ActivityItem(Item):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this ActivityItem.
-        The time when the activity was updated, in milliseconds since epoch time.
+        The time when the activity was updated, in seconds since epoch time.
 
 
         :param time_updated: The time_updated of this ActivityItem.
@@ -364,6 +371,30 @@ class ActivityItem(Item):
         if not value_allowed_none_or_none_sentinel(item_status, allowed_values):
             item_status = 'UNKNOWN_ENUM_VALUE'
         self._item_status = item_status
+
+    @property
+    def attachment_id(self):
+        """
+        Gets the attachment_id of this ActivityItem.
+        attachmentID for the ItemType Attachments only for Alloy realm.
+
+
+        :return: The attachment_id of this ActivityItem.
+        :rtype: str
+        """
+        return self._attachment_id
+
+    @attachment_id.setter
+    def attachment_id(self, attachment_id):
+        """
+        Sets the attachment_id of this ActivityItem.
+        attachmentID for the ItemType Attachments only for Alloy realm.
+
+
+        :param attachment_id: The attachment_id of this ActivityItem.
+        :type: str
+        """
+        self._attachment_id = attachment_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

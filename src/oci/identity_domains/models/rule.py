@@ -126,6 +126,10 @@ class Rule(object):
             The value to assign to the _return property of this Rule.
         :type _return: list[oci.identity_domains.models.RuleReturn]
 
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy property of this Rule.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy: oci.identity_domains.models.RuleExtensionOciconsolesignonpolicyconsentPolicy
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -150,7 +154,8 @@ class Rule(object):
             'condition': 'str',
             'condition_group': 'RuleConditionGroup',
             'policy_type': 'RulePolicyType',
-            '_return': 'list[RuleReturn]'
+            '_return': 'list[RuleReturn]',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy': 'RuleExtensionOciconsolesignonpolicyconsentPolicy'
         }
 
         self.attribute_map = {
@@ -176,7 +181,8 @@ class Rule(object):
             'condition': 'condition',
             'condition_group': 'conditionGroup',
             'policy_type': 'policyType',
-            '_return': 'return'
+            '_return': 'return',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:ociconsolesignonpolicyconsent:Policy'
         }
 
         self._id = None
@@ -202,6 +208,7 @@ class Rule(object):
         self._condition_group = None
         self._policy_type = None
         self.__return = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy = None
 
     @property
     def id(self):
@@ -451,6 +458,7 @@ class Rule(object):
 
         **SCIM++ Properties:**
          - idcsCompositeKey: [key, value]
+         - idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
          - idcsSearchable: true
          - multiValued: true
          - mutability: readWrite
@@ -473,6 +481,7 @@ class Rule(object):
 
         **SCIM++ Properties:**
          - idcsCompositeKey: [key, value]
+         - idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
          - idcsSearchable: true
          - multiValued: true
          - mutability: readWrite
@@ -1096,6 +1105,26 @@ class Rule(object):
         :type: list[oci.identity_domains.models.RuleReturn]
         """
         self.__return = _return
+
+    @property
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy(self):
+        """
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy of this Rule.
+
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy of this Rule.
+        :rtype: oci.identity_domains.models.RuleExtensionOciconsolesignonpolicyconsentPolicy
+        """
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy
+
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy):
+        """
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy of this Rule.
+
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy: The urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy of this Rule.
+        :type: oci.identity_domains.models.RuleExtensionOciconsolesignonpolicyconsentPolicy
+        """
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy = urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy
 
     def __repr__(self):
         return formatted_flat_dict(self)

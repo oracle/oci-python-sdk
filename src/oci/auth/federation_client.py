@@ -15,6 +15,10 @@ import threading
 import logging
 import pprint
 
+from oci.circuit_breaker import CircuitBreakerStrategy, NoCircuitBreakerStrategy
+from circuitbreaker import CircuitBreakerMonitor
+import random
+
 
 class X509FederationClient(object):
     REQUIRED_INIT_KWARGS = [
@@ -62,12 +66,19 @@ class X509FederationClient(object):
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to calls made by this client. This should be one of the strategies available in
-            the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` is also available and
-            will be used if no explicit retry strategy is specified.
+            the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_FEDERATION_CLIENT_RETRY_STRATEGY`
+            is also available and will be used if no explicit retry strategy is specified.
 
-            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+            The specifics of the retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
-            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+            To have this client explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param obj circuit_breaker_strategy: (optional)
+            The circuit_breaker_strategy to apply to calls made by this client. This should be one of the strategies
+            available in the :py:mod:`~oci.circuit_breaker` module. A convenience :py:data:`~oci.circuit_breaker.DEFAULT_FEDERATION_CLIENT_CIRCUIT_BREAKER_STRATEGY`
+            is also available and will be used if no explicit retry strategy is specified.
+
+            To have this client explicitly not have any circuit breaker, pass an instance of :py:class:`~oci.circuit_breaker.NoCircuitBreakerStrategy`.
 
         :param bool log_requests: (optional)
         log_request if set to True, will log the request url and response data when retrieving
@@ -116,9 +127,38 @@ class X509FederationClient(object):
         if retry_strategy:
             self.retry_strategy = retry_strategy
         else:
-            self.retry_strategy = oci.retry.DEFAULT_RETRY_STRATEGY
+            self.logger.debug('Setting DEFAULT_FEDERATION_CLIENT_RETRY_STRATEGY for federation client')
+            self.retry_strategy = oci.retry.DEFAULT_FEDERATION_CLIENT_RETRY_STRATEGY
+
+        # Setup Circuit breaker strategy
+        self._set_circuit_breaker_strategy(circuit_breaker_strategy=kwargs.get('circuit_breaker_strategy'))
 
         self.requests_session = requests.Session()
+
+    def _set_circuit_breaker_strategy(self, circuit_breaker_strategy):
+        self.circuit_breaker_strategy = circuit_breaker_strategy
+        # If not set by client use the GLOBAL_FEDERATION_CLIENT_CIRCUIT_BREAKER_STRATEGY
+        if circuit_breaker_strategy is None:
+            self.circuit_breaker_strategy = oci.circuit_breaker.GLOBAL_FEDERATION_CLIENT_CIRCUIT_BREAKER_STRATEGY
+
+        # Skip enabling circuit breaker if NoCircuitBreakerStrategy is set
+        if isinstance(circuit_breaker_strategy, NoCircuitBreakerStrategy):
+            self.logger.debug('No circuit breaker strategy enabled!')
+        else:
+            # Enable Circuit breaker if a valid circuit breaker strategy is available
+            if not isinstance(self.circuit_breaker_strategy, CircuitBreakerStrategy):
+                raise TypeError('Invalid Circuit Breaker Strategy!')
+            self.logger.debug('Enabling circuit breaker strategy for federation client')
+            # Set the recovery timeout a random value between 30 seconds to 49 seconds
+            if self.circuit_breaker_strategy == oci.circuit_breaker.DEFAULT_FEDERATION_CLIENT_CIRCUIT_BREAKER_STRATEGY:
+                self.logger.debug('Using DEFAULT_FEDERATION_CLIENT_CIRCUIT_BREAKER_STRATEGY for federation client')
+                self.circuit_breaker_strategy.recovery_timeout = random.randint(30, 49)
+            # Re-use Circuit breaker if sharing a Circuit Breaker Strategy.
+            circuit_breaker = CircuitBreakerMonitor.get(self.circuit_breaker_strategy.name)
+            if circuit_breaker is None:
+                circuit_breaker = self.circuit_breaker_strategy.get_circuit_breaker()
+            # Equivalent to decorating the request function with Circuit Breaker
+            self._get_security_token_from_auth_service = circuit_breaker(self._get_security_token_from_auth_service)
 
     def refresh_security_token(self):
         return self._refresh_security_token_inner()
@@ -188,6 +228,13 @@ class X509FederationClient(object):
             if response.ok:
                 raise RuntimeError(error_text)
             else:
+                if isinstance(self.circuit_breaker_strategy, CircuitBreakerStrategy) and self.circuit_breaker_strategy.is_transient_error(response.status_code, response.reason):
+                    raise oci.exceptions.TransientServiceError(
+                        response.status_code,
+                        response.reason,
+                        response.headers,
+                        error_text
+                    )
                 raise oci.exceptions.ServiceError(
                     response.status_code,
                     response.reason,
@@ -196,6 +243,13 @@ class X509FederationClient(object):
                 )
 
         if not response.ok:
+            if isinstance(self.circuit_breaker_strategy, CircuitBreakerStrategy) and self.circuit_breaker_strategy.is_transient_error(response.status_code, response.reason):
+                raise oci.exceptions.TransientServiceError(
+                    response.status_code,
+                    parsed_response.get('code'),
+                    response.headers,
+                    parsed_response.get('message')
+                )
             raise oci.exceptions.ServiceError(
                 response.status_code,
                 parsed_response.get('code'),

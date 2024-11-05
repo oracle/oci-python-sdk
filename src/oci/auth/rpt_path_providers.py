@@ -9,9 +9,8 @@ import logging
 import time
 
 from oci._vendor import requests
-import oci._vendor.jwt as jwt
-
 from .signers.instance_principals_security_token_signer import InstancePrincipalsSecurityTokenSigner
+from .security_token_container import SecurityTokenContainer
 
 OCI_RESOURCE_PRINCIPAL_RPT_PATH = "OCI_RESOURCE_PRINCIPAL_RPT_PATH"
 OCI_RESOURCE_PRINCIPAL_RPT_ID = "OCI_RESOURCE_PRINCIPAL_RPT_ID"
@@ -182,7 +181,8 @@ def get_instance_id_from_imds():
 
 
 def is_valid_sa_token(token):
-    decoded_jwt = jwt.decode(jwt=token, verify=False)
+    security_token_container = SecurityTokenContainer(session_key_supplier=None, security_token=token)
+    decoded_jwt = security_token_container.get_jwt()
     time_now = int(time.time())
     if decoded_jwt.get('exp') is None:
         raise RuntimeError("Service account token does not have an 'exp' field.")

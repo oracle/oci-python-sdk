@@ -123,7 +123,10 @@ class IncidentClient(object):
 
     def create_incident(self, create_incident_details, **kwargs):
         """
-        Operation to create a support ticket.
+        Creates a support ticket in the specified tenancy.
+        For more information, see `Creating Support Requests`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident.htm
 
 
         :param oci.cims.models.CreateIncident create_incident_details: (required)
@@ -134,6 +137,7 @@ class IncidentClient(object):
 
         :param str ocid: (optional)
             User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+            User OCID is mandatory for OCI Users and optional for Multicloud users.
 
         :param str homeregion: (optional)
             The region of the tenancy.
@@ -149,6 +153,7 @@ class IncidentClient(object):
 
         :param str domainid: (optional)
             The OCID of identity domain.
+            DomainID is mandatory if the user is part of Non Default Identity domain.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -237,153 +242,33 @@ class IncidentClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def get_csi_number(self, tenant_id, region, **kwargs):
+    def get_incident(self, incident_key, compartment_id, **kwargs):
         """
-        Fetches csi number of the user.
+        Gets the specified support ticket.
+        For more information, see `Getting Details for a Support Request`__.
 
-
-        :param str tenant_id: (required)
-            Tenancy Ocid in oracle cloud Infrastructure
-
-        :param str region: (required)
-            Home region of the customer which is part of oracle cloud infrastructure regions
-
-        :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-
-        :param str ocid: (optional)
-            User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
-
-        :param str homeregion: (optional)
-            The region of the tenancy.
-
-        :param str bearertokentype: (optional)
-            Token type that determine which cloud provider the request come from.
-
-        :param str bearertoken: (optional)
-            Token that provided by multi cloud provider, which help to validate the email.
-
-        :param str idtoken: (optional)
-            IdToken that provided by multi cloud provider, which help to validate the email.
-
-        :param str domainid: (optional)
-            The OCID of identity domain.
-
-        :param obj retry_strategy: (optional)
-            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
-
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
-            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
-
-            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
-
-        :param bool allow_control_chars: (optional)
-            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
-            By default, the response will not allow control characters in strings
-
-        :return: A :class:`~oci.response.Response` object with data of type str
-        :rtype: :class:`~oci.response.Response`
-
-        :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cims/get_csi_number.py.html>`__ to see an example of how to use get_csi_number API.
-        """
-        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
-        required_arguments = ['tenantId', 'region']
-        resource_path = "/v2/incidents/getCsiNumber"
-        method = "GET"
-        operation_name = "get_csi_number"
-        api_reference_link = ""
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "allow_control_chars",
-            "retry_strategy",
-            "opc_request_id",
-            "ocid",
-            "homeregion",
-            "bearertokentype",
-            "bearertoken",
-            "idtoken",
-            "domainid"
-        ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                f"get_csi_number got unknown kwargs: {extra_kwargs!r}")
-
-        query_params = {
-            "tenantId": tenant_id,
-            "region": region
-        }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing),
-            "ocid": kwargs.get("ocid", missing),
-            "homeregion": kwargs.get("homeregion", missing),
-            "bearertokentype": kwargs.get("bearertokentype", missing),
-            "bearertoken": kwargs.get("bearertoken", missing),
-            "idtoken": kwargs.get("idtoken", missing),
-            "domainid": kwargs.get("domainid", missing)
-        }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
-
-        retry_strategy = self.base_client.get_preferred_retry_strategy(
-            operation_retry_strategy=kwargs.get('retry_strategy'),
-            client_retry_strategy=self.retry_strategy
-        )
-
-        if retry_strategy:
-            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
-                self.base_client.add_opc_client_retries_header(header_params)
-                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
-            return retry_strategy.make_retrying_call(
-                self.base_client.call_api,
-                resource_path=resource_path,
-                method=method,
-                query_params=query_params,
-                header_params=header_params,
-                response_type="str",
-                allow_control_chars=kwargs.get('allow_control_chars'),
-                operation_name=operation_name,
-                api_reference_link=api_reference_link,
-                required_arguments=required_arguments)
-        else:
-            return self.base_client.call_api(
-                resource_path=resource_path,
-                method=method,
-                query_params=query_params,
-                header_params=header_params,
-                response_type="str",
-                allow_control_chars=kwargs.get('allow_control_chars'),
-                operation_name=operation_name,
-                api_reference_link=api_reference_link,
-                required_arguments=required_arguments)
-
-    def get_incident(self, incident_key, **kwargs):
-        """
-        Gets details about the specified support ticket.
+        __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/get-incident.htm
 
 
         :param str incident_key: (required)
             Unique identifier for the support ticket.
 
+        :param str compartment_id: (required)
+            The OCID of the tenancy.
+
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param str csi: (optional)
-            The Customer Support Identifier (CSI) associated with the support account.
+            The Customer Support Identifier (CSI) number associated with the support account.
+            The CSI is required for technical support tickets and optional for limits and billing tickets.
 
         :param str ocid: (optional)
             User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+            User OCID is mandatory for OCI Users and optional for Multicloud users.
 
         :param str homeregion: (optional)
             The region of the tenancy.
-
-        :param str compartment_id: (optional)
-            The OCID of the tenancy.
 
         :param str problemtype: (optional)
             The kind of support request.
@@ -399,6 +284,7 @@ class IncidentClient(object):
 
         :param str domainid: (optional)
             The OCID of identity domain.
+            DomainID is mandatory if the user is part of Non Default Identity domain.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -419,7 +305,7 @@ class IncidentClient(object):
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cims/get_incident.py.html>`__ to see an example of how to use get_incident API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
-        required_arguments = ['incidentKey']
+        required_arguments = ['incidentKey', 'compartmentId']
         resource_path = "/v2/incidents/{incidentKey}"
         method = "GET"
         operation_name = "get_incident"
@@ -433,7 +319,6 @@ class IncidentClient(object):
             "csi",
             "ocid",
             "homeregion",
-            "compartment_id",
             "problemtype",
             "bearertokentype",
             "bearertoken",
@@ -456,7 +341,7 @@ class IncidentClient(object):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
-            "compartmentId": kwargs.get("compartment_id", missing)
+            "compartmentId": compartment_id
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -509,100 +394,19 @@ class IncidentClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def get_status(self, **kwargs):
-        """
-        Gets the status of the service.
-
-
-        :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-
-        :param str ocid: (optional)
-            User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
-
-        :param str homeregion: (optional)
-            The region of the tenancy.
-
-        :param obj retry_strategy: (optional)
-            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
-
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
-            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
-
-            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
-
-        :param bool allow_control_chars: (optional)
-            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
-            By default, the response will not allow control characters in strings
-
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cims.models.Status`
-        :rtype: :class:`~oci.response.Response`
-
-        :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cims/get_status.py.html>`__ to see an example of how to use get_status API.
-        """
-        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
-        required_arguments = []
-        resource_path = "/v2/incidents/status"
-        method = "GET"
-        operation_name = "get_status"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/Status/GetStatus"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "allow_control_chars",
-            "retry_strategy",
-            "opc_request_id",
-            "ocid",
-            "homeregion"
-        ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                f"get_status got unknown kwargs: {extra_kwargs!r}")
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing),
-            "ocid": kwargs.get("ocid", missing),
-            "homeregion": kwargs.get("homeregion", missing)
-        }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
-
-        retry_strategy = self.base_client.get_preferred_retry_strategy(
-            operation_retry_strategy=kwargs.get('retry_strategy'),
-            client_retry_strategy=self.retry_strategy
-        )
-
-        if retry_strategy:
-            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
-                self.base_client.add_opc_client_retries_header(header_params)
-                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
-            return retry_strategy.make_retrying_call(
-                self.base_client.call_api,
-                resource_path=resource_path,
-                method=method,
-                header_params=header_params,
-                response_type="Status",
-                allow_control_chars=kwargs.get('allow_control_chars'),
-                operation_name=operation_name,
-                api_reference_link=api_reference_link,
-                required_arguments=required_arguments)
-        else:
-            return self.base_client.call_api(
-                resource_path=resource_path,
-                method=method,
-                header_params=header_params,
-                response_type="Status",
-                allow_control_chars=kwargs.get('allow_control_chars'),
-                operation_name=operation_name,
-                api_reference_link=api_reference_link,
-                required_arguments=required_arguments)
-
     def list_incident_resource_types(self, problem_type, compartment_id, **kwargs):
         """
-        During support ticket creation, returns the list of all possible products that Oracle Cloud Infrastructure supports.
+        Depending on the selected `productType`, either
+        lists available products (service groups, services, service categories, and subcategories) for technical support tickets or
+        lists limits and current usage for limit increase tickets.
+        This operation is called during creation of technical support and limit increase tickets.
+        For more information about listing products, see
+        `Listing Products for Support Requests`__.
+        For more information about listing limits, see
+        `Listing Limits for Service Limit Increase Requests`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/list-incident-resource-types-taxonomy.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/list-incident-resource-types-limit.htm
 
 
         :param str problem_type: (required)
@@ -638,16 +442,19 @@ class IncidentClient(object):
             The user-friendly name of the support ticket type.
 
         :param str csi: (optional)
-            The Customer Support Identifier (CSI) associated with the support account.
+            The Customer Support Identifier (CSI) number associated with the support account.
+            The CSI is required for technical support tickets and optional for limits and billing tickets.
 
         :param str ocid: (optional)
             User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+            User OCID is mandatory for OCI Users and optional for Multicloud users.
 
         :param str homeregion: (optional)
             The region of the tenancy.
 
         :param str domainid: (optional)
             The OCID of identity domain.
+            DomainID is mandatory if the user is part of Non Default Identity domain.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -764,14 +571,18 @@ class IncidentClient(object):
 
     def list_incidents(self, compartment_id, **kwargs):
         """
-        Returns the list of support tickets raised by the tenancy.
+        Lists support tickets for the specified tenancy.
+        For more information, see `Listing Support Requests`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/list-incidents.htm
 
 
         :param str compartment_id: (required)
             The OCID of the tenancy.
 
         :param str csi: (optional)
-            The Customer Support Identifier (CSI) associated with the support account.
+            The Customer Support Identifier (CSI) number associated with the support account.
+            The CSI is required for technical support tickets and optional for limits and billing tickets.
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call. For important details about how pagination works, see `List Pagination`__.
@@ -803,6 +614,7 @@ class IncidentClient(object):
 
         :param str ocid: (optional)
             User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+            User OCID is mandatory for OCI Users and optional for Multicloud users.
 
         :param str homeregion: (optional)
             The region of the tenancy.
@@ -821,6 +633,7 @@ class IncidentClient(object):
 
         :param str domainid: (optional)
             The OCID of identity domain.
+            DomainID is mandatory if the user is part of Non Default Identity domain.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -949,9 +762,12 @@ class IncidentClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def update_incident(self, incident_key, update_incident_details, **kwargs):
+    def update_incident(self, incident_key, update_incident_details, compartment_id, **kwargs):
         """
-        Updates the specified support ticket's information.
+        Updates the specified support ticket.
+        For more information, see `Updating Support Requests`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/update-incident.htm
 
 
         :param str incident_key: (required)
@@ -960,20 +776,22 @@ class IncidentClient(object):
         :param oci.cims.models.UpdateIncident update_incident_details: (required)
             Details about the support ticket being updated.
 
+        :param str compartment_id: (required)
+            The OCID of the tenancy.
+
         :param str csi: (optional)
-            The Customer Support Identifier (CSI) associated with the support account.
+            The Customer Support Identifier (CSI) number associated with the support account.
+            The CSI is required for technical support tickets and optional for limits and billing tickets.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-
-        :param str compartment_id: (optional)
-            The OCID of the tenancy.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str ocid: (optional)
             User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+            User OCID is mandatory for OCI Users and optional for Multicloud users.
 
         :param str homeregion: (optional)
             The region of the tenancy.
@@ -989,6 +807,7 @@ class IncidentClient(object):
 
         :param str domainid: (optional)
             The OCID of identity domain.
+            DomainID is mandatory if the user is part of Non Default Identity domain.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1009,7 +828,7 @@ class IncidentClient(object):
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cims/update_incident.py.html>`__ to see an example of how to use update_incident API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
-        required_arguments = ['incidentKey']
+        required_arguments = ['incidentKey', 'compartmentId']
         resource_path = "/v2/incidents/{incidentKey}"
         method = "PUT"
         operation_name = "update_incident"
@@ -1021,7 +840,6 @@ class IncidentClient(object):
             "retry_strategy",
             "csi",
             "opc_request_id",
-            "compartment_id",
             "if_match",
             "ocid",
             "homeregion",
@@ -1046,7 +864,7 @@ class IncidentClient(object):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
-            "compartmentId": kwargs.get("compartment_id", missing)
+            "compartmentId": compartment_id
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -1104,10 +922,14 @@ class IncidentClient(object):
     def validate_user(self, **kwargs):
         """
         Checks whether the requested user is valid.
+        For more information, see `Validating a User`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/validate-user.htm
 
 
         :param str csi: (optional)
-            The Customer Support Identifier (CSI) associated with the support account.
+            The Customer Support Identifier (CSI) number associated with the support account.
+            The CSI is required for technical support tickets and optional for limits and billing tickets.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -1119,6 +941,7 @@ class IncidentClient(object):
 
         :param str ocid: (optional)
             User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+            User OCID is mandatory for OCI Users and optional for Multicloud users.
 
         :param str homeregion: (optional)
             The region of the tenancy.
@@ -1134,6 +957,7 @@ class IncidentClient(object):
 
         :param str domainid: (optional)
             The OCID of identity domain.
+            DomainID is mandatory if the user is part of Non Default Identity domain.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.

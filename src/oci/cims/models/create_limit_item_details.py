@@ -13,6 +13,9 @@ from oci.decorators import init_model_state_from_kwargs
 class CreateLimitItemDetails(CreateItemDetails):
     """
     Details about the service limit increase request. Avoid entering confidential information.
+    For information about `LIMIT` support tickets, see `Creating a Service Limit Increase Request`__.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm
     """
 
     #: A constant which can be used with the limit_status property of a CreateLimitItemDetails.
@@ -26,6 +29,10 @@ class CreateLimitItemDetails(CreateItemDetails):
     #: A constant which can be used with the limit_status property of a CreateLimitItemDetails.
     #: This constant has a value of "NOT_APPROVED"
     LIMIT_STATUS_NOT_APPROVED = "NOT_APPROVED"
+
+    #: A constant which can be used with the limit_status property of a CreateLimitItemDetails.
+    #: This constant has a value of "REJECTED"
+    LIMIT_STATUS_REJECTED = "REJECTED"
 
     def __init__(self, **kwargs):
         """
@@ -67,7 +74,7 @@ class CreateLimitItemDetails(CreateItemDetails):
 
         :param limit_status:
             The value to assign to the limit_status property of this CreateLimitItemDetails.
-            Allowed values for this property are: "APPROVED", "PARTIALLY_APPROVED", "NOT_APPROVED"
+            Allowed values for this property are: "APPROVED", "PARTIALLY_APPROVED", "NOT_APPROVED", "REJECTED"
         :type limit_status: str
 
         """
@@ -184,7 +191,7 @@ class CreateLimitItemDetails(CreateItemDetails):
         Gets the limit_status of this CreateLimitItemDetails.
         The current status of the request.
 
-        Allowed values for this property are: "APPROVED", "PARTIALLY_APPROVED", "NOT_APPROVED"
+        Allowed values for this property are: "APPROVED", "PARTIALLY_APPROVED", "NOT_APPROVED", "REJECTED"
 
 
         :return: The limit_status of this CreateLimitItemDetails.
@@ -202,7 +209,7 @@ class CreateLimitItemDetails(CreateItemDetails):
         :param limit_status: The limit_status of this CreateLimitItemDetails.
         :type: str
         """
-        allowed_values = ["APPROVED", "PARTIALLY_APPROVED", "NOT_APPROVED"]
+        allowed_values = ["APPROVED", "PARTIALLY_APPROVED", "NOT_APPROVED", "REJECTED"]
         if not value_allowed_none_or_none_sentinel(limit_status, allowed_values):
             raise ValueError(
                 f"Invalid value for `limit_status`, must be None or one of {allowed_values}"
