@@ -36,6 +36,10 @@ class IncidentResourceType(object):
             The value to assign to the description property of this IncidentResourceType.
         :type description: str
 
+        :param is_subscriptions_supported:
+            The value to assign to the is_subscriptions_supported property of this IncidentResourceType.
+        :type is_subscriptions_supported: bool
+
         :param service_category_list:
             The value to assign to the service_category_list property of this IncidentResourceType.
         :type service_category_list: list[oci.cims.models.ServiceCategory]
@@ -44,9 +48,9 @@ class IncidentResourceType(object):
             The value to assign to the service property of this IncidentResourceType.
         :type service: dict(str, str)
 
-        :param service_categories:
-            The value to assign to the service_categories property of this IncidentResourceType.
-        :type service_categories: list[oci.cims.models.ServiceCategories]
+        :param services:
+            The value to assign to the services property of this IncidentResourceType.
+        :type services: list[oci.cims.models.ServiceCategories]
 
         """
         self.swagger_types = {
@@ -54,9 +58,10 @@ class IncidentResourceType(object):
             'name': 'str',
             'label': 'str',
             'description': 'str',
+            'is_subscriptions_supported': 'bool',
             'service_category_list': 'list[ServiceCategory]',
             'service': 'dict(str, str)',
-            'service_categories': 'list[ServiceCategories]'
+            'services': 'list[ServiceCategories]'
         }
 
         self.attribute_map = {
@@ -64,18 +69,20 @@ class IncidentResourceType(object):
             'name': 'name',
             'label': 'label',
             'description': 'description',
+            'is_subscriptions_supported': 'isSubscriptionsSupported',
             'service_category_list': 'serviceCategoryList',
             'service': 'service',
-            'service_categories': 'serviceCategories'
+            'services': 'services'
         }
 
         self._resource_type_key = None
         self._name = None
         self._label = None
         self._description = None
+        self._is_subscriptions_supported = None
         self._service_category_list = None
         self._service = None
-        self._service_categories = None
+        self._services = None
 
     @property
     def resource_type_key(self):
@@ -174,6 +181,30 @@ class IncidentResourceType(object):
         self._description = description
 
     @property
+    def is_subscriptions_supported(self):
+        """
+        Gets the is_subscriptions_supported of this IncidentResourceType.
+        Indicates whether multi-subscription is supported
+
+
+        :return: The is_subscriptions_supported of this IncidentResourceType.
+        :rtype: bool
+        """
+        return self._is_subscriptions_supported
+
+    @is_subscriptions_supported.setter
+    def is_subscriptions_supported(self, is_subscriptions_supported):
+        """
+        Sets the is_subscriptions_supported of this IncidentResourceType.
+        Indicates whether multi-subscription is supported
+
+
+        :param is_subscriptions_supported: The is_subscriptions_supported of this IncidentResourceType.
+        :type: bool
+        """
+        self._is_subscriptions_supported = is_subscriptions_supported
+
+    @property
     def service_category_list(self):
         """
         Gets the service_category_list of this IncidentResourceType.
@@ -222,28 +253,28 @@ class IncidentResourceType(object):
         self._service = service
 
     @property
-    def service_categories(self):
+    def services(self):
         """
-        Gets the service_categories of this IncidentResourceType.
+        Gets the services of this IncidentResourceType.
         The service categories list for MOS Taxonomy.
 
 
-        :return: The service_categories of this IncidentResourceType.
+        :return: The services of this IncidentResourceType.
         :rtype: list[oci.cims.models.ServiceCategories]
         """
-        return self._service_categories
+        return self._services
 
-    @service_categories.setter
-    def service_categories(self, service_categories):
+    @services.setter
+    def services(self, services):
         """
-        Sets the service_categories of this IncidentResourceType.
+        Sets the services of this IncidentResourceType.
         The service categories list for MOS Taxonomy.
 
 
-        :param service_categories: The service_categories of this IncidentResourceType.
+        :param services: The services of this IncidentResourceType.
         :type: list[oci.cims.models.ServiceCategories]
         """
-        self._service_categories = service_categories
+        self._services = services
 
     def __repr__(self):
         return formatted_flat_dict(self)

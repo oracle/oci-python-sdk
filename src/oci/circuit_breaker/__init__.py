@@ -6,6 +6,30 @@ from .circuit_breaker import CircuitBreakerStrategy, NoCircuitBreakerStrategy, D
 import os
 import logging
 
+logger = logging.getLogger(name=__name__)
+
+# Default Circuit Breaker for the X509 calls which has the following values configured by default.
+# Detailed information on Circuit Breakers and their configuration can be found at the
+# link (https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/circuit_breakers.html)
+#
+# * failure_threshold - 3
+# * failure_statuses_and_codes
+#    - HTTP 409/IncorrectState
+#    - HTTP 429
+#    - HTTP 500
+#    - HTTP 502
+#    - HTTP 503
+#    - HTTP 504
+#
+DEFAULT_FEDERATION_CLIENT_CIRCUIT_BREAKER_STRATEGY = CircuitBreakerStrategy(failure_threshold=3)
+GLOBAL_FEDERATION_CLIENT_CIRCUIT_BREAKER_STRATEGY = None
+if os.environ.get('OCI_SDK_AUTH_CLIENT_CIRCUIT_BREAKER_ENABLED', 'true').lower() == 'true':
+    logger.info('Default Auth client Circuit breaker strategy enabled')
+    GLOBAL_FEDERATION_CLIENT_CIRCUIT_BREAKER_STRATEGY = DEFAULT_FEDERATION_CLIENT_CIRCUIT_BREAKER_STRATEGY
+else:
+    logger.info('Default Auth client Circuit breaker strategy disabled')
+    GLOBAL_FEDERATION_CLIENT_CIRCUIT_BREAKER_STRATEGY = NoCircuitBreakerStrategy()
+
 #: Default Circuit Breaker Strategy provided for convenience which has the following values configured by default.
 #: Detailed information on Circuit Breakers and their configuration can be found at the
 #: link (https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/circuit_breakers.html)
@@ -22,8 +46,6 @@ import logging
 #:    - HTTP 504
 #:
 DEFAULT_CIRCUIT_BREAKER_STRATEGY = CircuitBreakerStrategy()
-
-logger = logging.getLogger(name=__name__)
 
 #: A Circuit Breaker strategy which can be set by the user to modify the SDK retry behavior globally. Initially set to ``None``, users
 #: can pass to it a Circuit Breaker Strategy which can be:-

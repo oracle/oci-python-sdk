@@ -47,7 +47,10 @@ Cims
     oci.cims.models.ServiceCategories
     oci.cims.models.ServiceCategory
     oci.cims.models.Status
+    oci.cims.models.SubCategories
     oci.cims.models.SubCategory
+    oci.cims.models.SubComponents
+    oci.cims.models.SubscriptionInfo
     oci.cims.models.TechSupportItem
     oci.cims.models.TenancyInformation
     oci.cims.models.Ticket

@@ -35,7 +35,10 @@ from .resource import Resource
 from .service_categories import ServiceCategories
 from .service_category import ServiceCategory
 from .status import Status
+from .sub_categories import SubCategories
 from .sub_category import SubCategory
+from .sub_components import SubComponents
+from .subscription_info import SubscriptionInfo
 from .tech_support_item import TechSupportItem
 from .tenancy_information import TenancyInformation
 from .ticket import Ticket
@@ -78,7 +81,10 @@ cims_type_mapping = {
     "ServiceCategories": ServiceCategories,
     "ServiceCategory": ServiceCategory,
     "Status": Status,
+    "SubCategories": SubCategories,
     "SubCategory": SubCategory,
+    "SubComponents": SubComponents,
+    "SubscriptionInfo": SubscriptionInfo,
     "TechSupportItem": TechSupportItem,
     "TenancyInformation": TenancyInformation,
     "Ticket": Ticket,

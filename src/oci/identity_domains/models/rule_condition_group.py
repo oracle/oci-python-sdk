@@ -79,7 +79,7 @@ class RuleConditionGroup(object):
     def value(self):
         """
         Gets the value of this RuleConditionGroup.
-        Condition or ConditionGroup identifier
+        Condition or ConditionGroup identifier.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -101,7 +101,7 @@ class RuleConditionGroup(object):
     def value(self, value):
         """
         Sets the value of this RuleConditionGroup.
-        Condition or ConditionGroup identifier
+        Condition or ConditionGroup identifier.
 
         **SCIM++ Properties:**
          - caseExact: true

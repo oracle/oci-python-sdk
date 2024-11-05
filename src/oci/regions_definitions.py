@@ -71,7 +71,10 @@ REGIONS_SHORT_NAMES = {
     'avf': 'eu-crissier-1',
     'ahu': 'me-abudhabi-3',
     'rkt': 'me-abudhabi-2',
-    'shj': 'me-abudhabi-4'
+    'shj': 'me-abudhabi-4',
+    'dtz': 'ap-seoul-2',
+    'dln': 'ap-suwon-1',
+    'bno': 'ap-chuncheon-2'
 }
 REGION_REALMS = {
     'ap-chuncheon-1': 'oc1',
@@ -157,7 +160,11 @@ REGION_REALMS = {
     'me-abudhabi-3': 'oc26',
 
     'me-abudhabi-2': 'oc29',
-    'me-abudhabi-4': 'oc29'
+    'me-abudhabi-4': 'oc29',
+
+    'ap-seoul-2': 'oc35',
+    'ap-suwon-1': 'oc35',
+    'ap-chuncheon-2': 'oc35'
 }
 REALMS = {
     'oc1': 'oraclecloud.com',
@@ -175,7 +182,8 @@ REALMS = {
     'oc23': 'oraclecloud23.com',
     'oc24': 'oraclecloud24.com',
     'oc26': 'oraclecloud26.com',
-    'oc29': 'oraclecloud29.com'
+    'oc29': 'oraclecloud29.com',
+    'oc35': 'oraclecloud35.com'
 }
 REGIONS = [
     'ap-chuncheon-1',
@@ -246,5 +254,8 @@ REGIONS = [
     'eu-crissier-1',
     'me-abudhabi-3',
     'me-abudhabi-2',
-    'me-abudhabi-4'
+    'me-abudhabi-4',
+    'ap-seoul-2',
+    'ap-suwon-1',
+    'ap-chuncheon-2'
 ]

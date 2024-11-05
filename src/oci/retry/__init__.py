@@ -11,6 +11,26 @@ from .retry import RetryStrategyBuilder, NoneRetryStrategy, ExponentialBackoffRe
 from . import retry_checkers
 import os
 
+# A Default Retry Strategy for X509 calls
+# defaults are:
+#
+# * 3 total attempts - 1 original and 2 retries
+# * Total allowed elapsed time for all requests of 100 seconds
+# * Exponential backoff with jitter using a base time of 1 second and an exponent of 2
+# * The maximum wait time between calls is 30 seconds
+# * Exponential backoff with de-correlated jitter of 1000 milliseconds is used
+# * Retries on the following exception types:-
+#
+#      - timeouts and connection errors
+#      - HTTP 409/IncorrectState, 429s (throttles)
+#      - Any HTTP 5xx except 501
+DEFAULT_FEDERATION_CLIENT_RETRY_STRATEGY = RetryStrategyBuilder() \
+    .add_max_attempts(max_attempts=3) \
+    .add_total_elapsed_time(total_elapsed_time_seconds=100) \
+    .add_service_error_check(service_error_retry_config={-1: []},
+                             service_error_retry_on_any_5xx=True) \
+    .get_retry_strategy()
+
 #: A retry strategy which has all options enabled and which will use the default settings for those options. These
 #: defaults are:
 #:

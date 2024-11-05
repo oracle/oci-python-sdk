@@ -231,7 +231,17 @@ class IncidentSummary(object):
     def problem_type(self):
         """
         **[Required]** Gets the problem_type of this IncidentSummary.
-        The kind of support ticket, such as a technical support request or a limit increase request.
+        The kind of support ticket (type of support request).
+        For information about `ACCOUNT` support tickets, see
+        `Creating a Billing Support Request`__.
+        For information about `LIMIT` support tickets, see
+        `Creating a Service Limit Increase Request`__.
+        For information about `TECH` support tickets, see
+        `Creating a Technical Support Request`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm
 
         Allowed values for this property are: "LIMIT", "LEGACY_LIMIT", "TECH", "ACCOUNT", "TAXONOMY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -246,7 +256,17 @@ class IncidentSummary(object):
     def problem_type(self, problem_type):
         """
         Sets the problem_type of this IncidentSummary.
-        The kind of support ticket, such as a technical support request or a limit increase request.
+        The kind of support ticket (type of support request).
+        For information about `ACCOUNT` support tickets, see
+        `Creating a Billing Support Request`__.
+        For information about `LIMIT` support tickets, see
+        `Creating a Service Limit Increase Request`__.
+        For information about `TECH` support tickets, see
+        `Creating a Technical Support Request`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm
 
 
         :param problem_type: The problem_type of this IncidentSummary.

@@ -267,7 +267,7 @@ class Ticket(object):
     def time_created(self):
         """
         Gets the time_created of this Ticket.
-        The time when the ticket was created, in milliseconds since epoch time.
+        The time when the ticket was created, in seconds since epoch time.
 
 
         :return: The time_created of this Ticket.
@@ -279,7 +279,7 @@ class Ticket(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Ticket.
-        The time when the ticket was created, in milliseconds since epoch time.
+        The time when the ticket was created, in seconds since epoch time.
 
 
         :param time_created: The time_created of this Ticket.
@@ -291,7 +291,7 @@ class Ticket(object):
     def time_updated(self):
         """
         Gets the time_updated of this Ticket.
-        The time when the ticket was updated, in milliseconds since epoch time.
+        The time when the ticket was updated, in seconds since epoch time.
 
 
         :return: The time_updated of this Ticket.
@@ -303,7 +303,7 @@ class Ticket(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this Ticket.
-        The time when the ticket was updated, in milliseconds since epoch time.
+        The time when the ticket was updated, in seconds since epoch time.
 
 
         :param time_updated: The time_updated of this Ticket.

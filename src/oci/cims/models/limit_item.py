@@ -27,6 +27,10 @@ class LimitItem(Item):
     #: This constant has a value of "NOT_APPROVED"
     LIMIT_STATUS_NOT_APPROVED = "NOT_APPROVED"
 
+    #: A constant which can be used with the limit_status property of a LimitItem.
+    #: This constant has a value of "REJECTED"
+    LIMIT_STATUS_REJECTED = "REJECTED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new LimitItem object with values from keyword arguments. The default value of the :py:attr:`~oci.cims.models.LimitItem.type` attribute
@@ -71,9 +75,13 @@ class LimitItem(Item):
 
         :param limit_status:
             The value to assign to the limit_status property of this LimitItem.
-            Allowed values for this property are: "APPROVED", "PARTIALLY_APPROVED", "NOT_APPROVED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "APPROVED", "PARTIALLY_APPROVED", "NOT_APPROVED", "REJECTED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type limit_status: str
+
+        :param customer_message:
+            The value to assign to the customer_message property of this LimitItem.
+        :type customer_message: str
 
         """
         self.swagger_types = {
@@ -86,7 +94,8 @@ class LimitItem(Item):
             'current_limit': 'int',
             'current_usage': 'int',
             'requested_limit': 'int',
-            'limit_status': 'str'
+            'limit_status': 'str',
+            'customer_message': 'str'
         }
 
         self.attribute_map = {
@@ -99,7 +108,8 @@ class LimitItem(Item):
             'current_limit': 'currentLimit',
             'current_usage': 'currentUsage',
             'requested_limit': 'requestedLimit',
-            'limit_status': 'limitStatus'
+            'limit_status': 'limitStatus',
+            'customer_message': 'customerMessage'
         }
 
         self._item_key = None
@@ -112,6 +122,7 @@ class LimitItem(Item):
         self._current_usage = None
         self._requested_limit = None
         self._limit_status = None
+        self._customer_message = None
         self._type = 'limit'
 
     @property
@@ -192,7 +203,7 @@ class LimitItem(Item):
         Gets the limit_status of this LimitItem.
         The status of the request.
 
-        Allowed values for this property are: "APPROVED", "PARTIALLY_APPROVED", "NOT_APPROVED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "APPROVED", "PARTIALLY_APPROVED", "NOT_APPROVED", "REJECTED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -211,10 +222,34 @@ class LimitItem(Item):
         :param limit_status: The limit_status of this LimitItem.
         :type: str
         """
-        allowed_values = ["APPROVED", "PARTIALLY_APPROVED", "NOT_APPROVED"]
+        allowed_values = ["APPROVED", "PARTIALLY_APPROVED", "NOT_APPROVED", "REJECTED"]
         if not value_allowed_none_or_none_sentinel(limit_status, allowed_values):
             limit_status = 'UNKNOWN_ENUM_VALUE'
         self._limit_status = limit_status
+
+    @property
+    def customer_message(self):
+        """
+        Gets the customer_message of this LimitItem.
+        Message to customer for partial approval and rejected limit requests
+
+
+        :return: The customer_message of this LimitItem.
+        :rtype: str
+        """
+        return self._customer_message
+
+    @customer_message.setter
+    def customer_message(self, customer_message):
+        """
+        Sets the customer_message of this LimitItem.
+        Message to customer for partial approval and rejected limit requests
+
+
+        :param customer_message: The customer_message of this LimitItem.
+        :type: str
+        """
+        self._customer_message = customer_message
 
     def __repr__(self):
         return formatted_flat_dict(self)

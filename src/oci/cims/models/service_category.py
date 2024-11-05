@@ -68,6 +68,10 @@ class ServiceCategory(object):
             The value to assign to the issue_type_list property of this ServiceCategory.
         :type issue_type_list: list[oci.cims.models.IssueType]
 
+        :param supported_subscriptions:
+            The value to assign to the supported_subscriptions property of this ServiceCategory.
+        :type supported_subscriptions: list[str]
+
         :param scope:
             The value to assign to the scope property of this ServiceCategory.
             Allowed values for this property are: "AD", "REGION", "TENANCY", "NONE", 'UNKNOWN_ENUM_VALUE'.
@@ -91,6 +95,7 @@ class ServiceCategory(object):
             'label': 'str',
             'description': 'str',
             'issue_type_list': 'list[IssueType]',
+            'supported_subscriptions': 'list[str]',
             'scope': 'str',
             'unit': 'str',
             'limit_id': 'str'
@@ -102,6 +107,7 @@ class ServiceCategory(object):
             'label': 'label',
             'description': 'description',
             'issue_type_list': 'issueTypeList',
+            'supported_subscriptions': 'supportedSubscriptions',
             'scope': 'scope',
             'unit': 'unit',
             'limit_id': 'limitId'
@@ -112,6 +118,7 @@ class ServiceCategory(object):
         self._label = None
         self._description = None
         self._issue_type_list = None
+        self._supported_subscriptions = None
         self._scope = None
         self._unit = None
         self._limit_id = None
@@ -235,6 +242,30 @@ class ServiceCategory(object):
         :type: list[oci.cims.models.IssueType]
         """
         self._issue_type_list = issue_type_list
+
+    @property
+    def supported_subscriptions(self):
+        """
+        Gets the supported_subscriptions of this ServiceCategory.
+        List of supported subscriptions
+
+
+        :return: The supported_subscriptions of this ServiceCategory.
+        :rtype: list[str]
+        """
+        return self._supported_subscriptions
+
+    @supported_subscriptions.setter
+    def supported_subscriptions(self, supported_subscriptions):
+        """
+        Sets the supported_subscriptions of this ServiceCategory.
+        List of supported subscriptions
+
+
+        :param supported_subscriptions: The supported_subscriptions of this ServiceCategory.
+        :type: list[str]
+        """
+        self._supported_subscriptions = supported_subscriptions
 
     @property
     def scope(self):

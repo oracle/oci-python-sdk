@@ -114,6 +114,10 @@ class Policy(object):
             The value to assign to the policy_type property of this Policy.
         :type policy_type: oci.identity_domains.models.PolicyPolicyType
 
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy property of this Policy.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy: oci.identity_domains.models.PolicyExtensionOciconsolesignonpolicyconsentPolicy
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -135,7 +139,8 @@ class Policy(object):
             'active': 'bool',
             'policy_groovy': 'str',
             'rules': 'list[PolicyRules]',
-            'policy_type': 'PolicyPolicyType'
+            'policy_type': 'PolicyPolicyType',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy': 'PolicyExtensionOciconsolesignonpolicyconsentPolicy'
         }
 
         self.attribute_map = {
@@ -158,7 +163,8 @@ class Policy(object):
             'active': 'active',
             'policy_groovy': 'policyGroovy',
             'rules': 'rules',
-            'policy_type': 'policyType'
+            'policy_type': 'policyType',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:ociconsolesignonpolicyconsent:Policy'
         }
 
         self._id = None
@@ -181,6 +187,7 @@ class Policy(object):
         self._policy_groovy = None
         self._rules = None
         self._policy_type = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy = None
 
     @property
     def id(self):
@@ -430,6 +437,7 @@ class Policy(object):
 
         **SCIM++ Properties:**
          - idcsCompositeKey: [key, value]
+         - idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
          - idcsSearchable: true
          - multiValued: true
          - mutability: readWrite
@@ -452,6 +460,7 @@ class Policy(object):
 
         **SCIM++ Properties:**
          - idcsCompositeKey: [key, value]
+         - idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
          - idcsSearchable: true
          - multiValued: true
          - mutability: readWrite
@@ -965,6 +974,26 @@ class Policy(object):
         :type: oci.identity_domains.models.PolicyPolicyType
         """
         self._policy_type = policy_type
+
+    @property
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy(self):
+        """
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy of this Policy.
+
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy of this Policy.
+        :rtype: oci.identity_domains.models.PolicyExtensionOciconsolesignonpolicyconsentPolicy
+        """
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy
+
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy):
+        """
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy of this Policy.
+
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy: The urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy of this Policy.
+        :type: oci.identity_domains.models.PolicyExtensionOciconsolesignonpolicyconsentPolicy
+        """
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy = urn_ietf_params_scim_schemas_oracle_idcs_extension_ociconsolesignonpolicyconsent_policy
 
     def __repr__(self):
         return formatted_flat_dict(self)

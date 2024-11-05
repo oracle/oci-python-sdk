@@ -156,6 +156,7 @@ Identity Domains
     oci.identity_domains.models.CloudGateServers
     oci.identity_domains.models.CloudGates
     oci.identity_domains.models.Condition
+    oci.identity_domains.models.ConditionExtensionOciconsolesignonpolicyconsentPolicy
     oci.identity_domains.models.ConditionSearchRequest
     oci.identity_domains.models.Conditions
     oci.identity_domains.models.CustomerSecretKey
@@ -343,6 +344,12 @@ Identity Domains
     oci.identity_domains.models.OAuthPartnerCertificate
     oci.identity_domains.models.OAuthPartnerCertificateSearchRequest
     oci.identity_domains.models.OAuthPartnerCertificates
+    oci.identity_domains.models.OciConsoleSignOnPolicyConsent
+    oci.identity_domains.models.OciConsoleSignOnPolicyConsentConsentSignedBy
+    oci.identity_domains.models.OciConsoleSignOnPolicyConsentModifiedResource
+    oci.identity_domains.models.OciConsoleSignOnPolicyConsentPolicyResource
+    oci.identity_domains.models.OciConsoleSignOnPolicyConsentSearchRequest
+    oci.identity_domains.models.OciConsoleSignOnPolicyConsents
     oci.identity_domains.models.Operations
     oci.identity_domains.models.PasswordPolicies
     oci.identity_domains.models.PasswordPolicy
@@ -352,14 +359,17 @@ Identity Domains
     oci.identity_domains.models.PatchOp
     oci.identity_domains.models.Policies
     oci.identity_domains.models.Policy
+    oci.identity_domains.models.PolicyExtensionOciconsolesignonpolicyconsentPolicy
     oci.identity_domains.models.PolicyPolicyType
     oci.identity_domains.models.PolicyRules
     oci.identity_domains.models.PolicySearchRequest
     oci.identity_domains.models.ResourceTypeSchemaAttribute
     oci.identity_domains.models.ResourceTypeSchemaAttributeSearchRequest
     oci.identity_domains.models.ResourceTypeSchemaAttributes
+    oci.identity_domains.models.RestoreOciConsolePolicy
     oci.identity_domains.models.Rule
     oci.identity_domains.models.RuleConditionGroup
+    oci.identity_domains.models.RuleExtensionOciconsolesignonpolicyconsentPolicy
     oci.identity_domains.models.RulePolicyType
     oci.identity_domains.models.RuleReturn
     oci.identity_domains.models.RuleSearchRequest

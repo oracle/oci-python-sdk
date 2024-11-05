@@ -55,7 +55,7 @@ class PolicyPolicyType(object):
     def value(self):
         """
         **[Required]** Gets the value of this PolicyPolicyType.
-        PolicyType identifier
+        PolicyType identifier.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -77,7 +77,7 @@ class PolicyPolicyType(object):
     def value(self, value):
         """
         Sets the value of this PolicyPolicyType.
-        PolicyType identifier
+        PolicyType identifier.
 
         **SCIM++ Properties:**
          - caseExact: true

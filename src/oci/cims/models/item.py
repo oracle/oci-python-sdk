@@ -102,7 +102,7 @@ class Item(object):
     @property
     def item_key(self):
         """
-        **[Required]** Gets the item_key of this Item.
+        Gets the item_key of this Item.
         Unique identifier for the item.
 
 

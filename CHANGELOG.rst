@@ -4,6 +4,32 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.138.0 - 2024-11-05
+====================
+
+Added 
+----- 
+* Support for calling Oracle Cloud Infrastructure services in the ap-seoul-2 region 
+* Support for calling Oracle Cloud Infrastructure services in the ap-suwon-1 region 
+* Support for calling Oracle Cloud Infrastructure services in the ap-chuncheon-2 region 
+* Support for MFA Enablement v2 in the Identity Domains service 
+* Support for starting, stopping and updating min/max executor count for SQL Endpoints in the Data Flow service 
+* Support for customer message in the Customer Incident Management Service 
+* Support for REJECTED limitStatus in the Customer Incident Management Service   
+
+Fixed 
+----- 
+* Issue with using `OkeWorkloaIdentityResourcePrincipalSigner` after the PyJWT upgrade to 2.4.0 introduced int OCI Python SDK `2.137.1` 
+* UserWarning being emitted from Cryptography 43.x   
+
+Breaking 
+-------- 
+* The operations `get_status` and `get_csi_number` were removed from the IncidentClient in the Customer Incident Management Service 
+* The property `service_categories` was removed from the model `IncidentResourceType` in the Customer Incident Management Service 
+* The properties `service_category` and `issue_type` were removed from the model `ServiceCategories` in the Customer Incident Management Service 
+* The retry strategy for getting the X509 token from Identity service was modified and is now protected via circuit breaker   
+
+====================
 2.137.1 - 2024-10-29
 ====================
 

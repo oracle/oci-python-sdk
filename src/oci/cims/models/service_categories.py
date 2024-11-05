@@ -20,58 +20,58 @@ class ServiceCategories(object):
         Initializes a new ServiceCategories object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param service_category:
-            The value to assign to the service_category property of this ServiceCategories.
-        :type service_category: dict(str, str)
+        :param service:
+            The value to assign to the service property of this ServiceCategories.
+        :type service: dict(str, str)
 
         :param schema:
             The value to assign to the schema property of this ServiceCategories.
         :type schema: str
 
-        :param issue_type:
-            The value to assign to the issue_type property of this ServiceCategories.
-        :type issue_type: dict(str, str)
+        :param sub_categories:
+            The value to assign to the sub_categories property of this ServiceCategories.
+        :type sub_categories: list[oci.cims.models.SubCategories]
 
         """
         self.swagger_types = {
-            'service_category': 'dict(str, str)',
+            'service': 'dict(str, str)',
             'schema': 'str',
-            'issue_type': 'dict(str, str)'
+            'sub_categories': 'list[SubCategories]'
         }
 
         self.attribute_map = {
-            'service_category': 'serviceCategory',
+            'service': 'service',
             'schema': 'schema',
-            'issue_type': 'issueType'
+            'sub_categories': 'subCategories'
         }
 
-        self._service_category = None
+        self._service = None
         self._schema = None
-        self._issue_type = None
+        self._sub_categories = None
 
     @property
-    def service_category(self):
+    def service(self):
         """
-        Gets the service_category of this ServiceCategories.
+        Gets the service of this ServiceCategories.
         Service Category list.
 
 
-        :return: The service_category of this ServiceCategories.
+        :return: The service of this ServiceCategories.
         :rtype: dict(str, str)
         """
-        return self._service_category
+        return self._service
 
-    @service_category.setter
-    def service_category(self, service_category):
+    @service.setter
+    def service(self, service):
         """
-        Sets the service_category of this ServiceCategories.
+        Sets the service of this ServiceCategories.
         Service Category list.
 
 
-        :param service_category: The service_category of this ServiceCategories.
+        :param service: The service of this ServiceCategories.
         :type: dict(str, str)
         """
-        self._service_category = service_category
+        self._service = service
 
     @property
     def schema(self):
@@ -98,28 +98,28 @@ class ServiceCategories(object):
         self._schema = schema
 
     @property
-    def issue_type(self):
+    def sub_categories(self):
         """
-        Gets the issue_type of this ServiceCategories.
-        Issue type list.
+        Gets the sub_categories of this ServiceCategories.
+        The service categories list for MOS Taxonomy.
 
 
-        :return: The issue_type of this ServiceCategories.
-        :rtype: dict(str, str)
+        :return: The sub_categories of this ServiceCategories.
+        :rtype: list[oci.cims.models.SubCategories]
         """
-        return self._issue_type
+        return self._sub_categories
 
-    @issue_type.setter
-    def issue_type(self, issue_type):
+    @sub_categories.setter
+    def sub_categories(self, sub_categories):
         """
-        Sets the issue_type of this ServiceCategories.
-        Issue type list.
+        Sets the sub_categories of this ServiceCategories.
+        The service categories list for MOS Taxonomy.
 
 
-        :param issue_type: The issue_type of this ServiceCategories.
-        :type: dict(str, str)
+        :param sub_categories: The sub_categories of this ServiceCategories.
+        :type: list[oci.cims.models.SubCategories]
         """
-        self._issue_type = issue_type
+        self._sub_categories = sub_categories
 
     def __repr__(self):
         return formatted_flat_dict(self)
