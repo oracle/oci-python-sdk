@@ -71,6 +71,10 @@ class CreateGenericConnectionDetails(CreateConnectionDetails):
             Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this CreateGenericConnectionDetails.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this CreateGenericConnectionDetails.
         :type technology_type: str
@@ -93,6 +97,7 @@ class CreateGenericConnectionDetails(CreateConnectionDetails):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
             'host': 'str'
         }
@@ -110,6 +115,7 @@ class CreateGenericConnectionDetails(CreateConnectionDetails):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
             'host': 'host'
         }
@@ -126,6 +132,7 @@ class CreateGenericConnectionDetails(CreateConnectionDetails):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._host = None
         self._connection_type = 'GENERIC'

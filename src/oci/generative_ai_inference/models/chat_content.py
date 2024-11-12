@@ -19,18 +19,23 @@ class ChatContent(object):
     #: This constant has a value of "TEXT"
     TYPE_TEXT = "TEXT"
 
+    #: A constant which can be used with the type property of a ChatContent.
+    #: This constant has a value of "IMAGE"
+    TYPE_IMAGE = "IMAGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ChatContent object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.generative_ai_inference.models.ImageContent`
         * :class:`~oci.generative_ai_inference.models.TextContent`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param type:
             The value to assign to the type property of this ChatContent.
-            Allowed values for this property are: "TEXT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "TEXT", "IMAGE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -53,6 +58,9 @@ class ChatContent(object):
         """
         type = object_dictionary['type']
 
+        if type == 'IMAGE':
+            return 'ImageContent'
+
         if type == 'TEXT':
             return 'TextContent'
         else:
@@ -64,7 +72,7 @@ class ChatContent(object):
         **[Required]** Gets the type of this ChatContent.
         The type of the content.
 
-        Allowed values for this property are: "TEXT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "TEXT", "IMAGE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -83,7 +91,7 @@ class ChatContent(object):
         :param type: The type of this ChatContent.
         :type: str
         """
-        allowed_values = ["TEXT"]
+        allowed_values = ["TEXT", "IMAGE"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

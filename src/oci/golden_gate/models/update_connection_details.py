@@ -197,6 +197,10 @@ class UpdateConnectionDetails(object):
             Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this UpdateConnectionDetails.
+        :type does_use_secret_ids: bool
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -208,7 +212,8 @@ class UpdateConnectionDetails(object):
             'key_id': 'str',
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
-            'routing_method': 'str'
+            'routing_method': 'str',
+            'does_use_secret_ids': 'bool'
         }
 
         self.attribute_map = {
@@ -221,7 +226,8 @@ class UpdateConnectionDetails(object):
             'key_id': 'keyId',
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
-            'routing_method': 'routingMethod'
+            'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds'
         }
 
         self._connection_type = None
@@ -234,6 +240,7 @@ class UpdateConnectionDetails(object):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -596,6 +603,30 @@ class UpdateConnectionDetails(object):
                 f"Invalid value for `routing_method`, must be None or one of {allowed_values}"
             )
         self._routing_method = routing_method
+
+    @property
+    def does_use_secret_ids(self):
+        """
+        Gets the does_use_secret_ids of this UpdateConnectionDetails.
+        Indicates that sensitive attributes are provided via Secrets.
+
+
+        :return: The does_use_secret_ids of this UpdateConnectionDetails.
+        :rtype: bool
+        """
+        return self._does_use_secret_ids
+
+    @does_use_secret_ids.setter
+    def does_use_secret_ids(self, does_use_secret_ids):
+        """
+        Sets the does_use_secret_ids of this UpdateConnectionDetails.
+        Indicates that sensitive attributes are provided via Secrets.
+
+
+        :param does_use_secret_ids: The does_use_secret_ids of this UpdateConnectionDetails.
+        :type: bool
+        """
+        self._does_use_secret_ids = does_use_secret_ids
 
     def __repr__(self):
         return formatted_flat_dict(self)

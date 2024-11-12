@@ -70,6 +70,7 @@ REGIONS_SHORT_NAMES = {
     'avz': 'eu-dcc-zurich-1',
     'avf': 'eu-crissier-1',
     'ahu': 'me-abudhabi-3',
+    'rba': 'me-alain-1',
     'rkt': 'me-abudhabi-2',
     'shj': 'me-abudhabi-4',
     'dtz': 'ap-seoul-2',
@@ -158,6 +159,7 @@ REGION_REALMS = {
     'eu-crissier-1': 'oc24',
 
     'me-abudhabi-3': 'oc26',
+    'me-alain-1': 'oc26',
 
     'me-abudhabi-2': 'oc29',
     'me-abudhabi-4': 'oc29',
@@ -253,6 +255,7 @@ REGIONS = [
     'eu-dcc-zurich-1',
     'eu-crissier-1',
     'me-abudhabi-3',
+    'me-alain-1',
     'me-abudhabi-2',
     'me-abudhabi-4',
     'ap-seoul-2',

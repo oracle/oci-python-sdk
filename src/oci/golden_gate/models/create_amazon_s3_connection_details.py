@@ -71,6 +71,10 @@ class CreateAmazonS3ConnectionDetails(CreateConnectionDetails):
             Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this CreateAmazonS3ConnectionDetails.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this CreateAmazonS3ConnectionDetails.
         :type technology_type: str
@@ -82,6 +86,10 @@ class CreateAmazonS3ConnectionDetails(CreateConnectionDetails):
         :param secret_access_key:
             The value to assign to the secret_access_key property of this CreateAmazonS3ConnectionDetails.
         :type secret_access_key: str
+
+        :param secret_access_key_secret_id:
+            The value to assign to the secret_access_key_secret_id property of this CreateAmazonS3ConnectionDetails.
+        :type secret_access_key_secret_id: str
 
         """
         self.swagger_types = {
@@ -97,9 +105,11 @@ class CreateAmazonS3ConnectionDetails(CreateConnectionDetails):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
             'access_key_id': 'str',
-            'secret_access_key': 'str'
+            'secret_access_key': 'str',
+            'secret_access_key_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -115,9 +125,11 @@ class CreateAmazonS3ConnectionDetails(CreateConnectionDetails):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
             'access_key_id': 'accessKeyId',
-            'secret_access_key': 'secretAccessKey'
+            'secret_access_key': 'secretAccessKey',
+            'secret_access_key_secret_id': 'secretAccessKeySecretId'
         }
 
         self._connection_type = None
@@ -132,9 +144,11 @@ class CreateAmazonS3ConnectionDetails(CreateConnectionDetails):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._access_key_id = None
         self._secret_access_key = None
+        self._secret_access_key_secret_id = None
         self._connection_type = 'AMAZON_S3'
 
     @property
@@ -190,7 +204,7 @@ class CreateAmazonS3ConnectionDetails(CreateConnectionDetails):
     @property
     def secret_access_key(self):
         """
-        **[Required]** Gets the secret_access_key of this CreateAmazonS3ConnectionDetails.
+        Gets the secret_access_key of this CreateAmazonS3ConnectionDetails.
         Secret access key to access the Amazon S3 bucket.
         e.g.: \"this-is-not-the-secret\"
 
@@ -212,6 +226,36 @@ class CreateAmazonS3ConnectionDetails(CreateConnectionDetails):
         :type: str
         """
         self._secret_access_key = secret_access_key
+
+    @property
+    def secret_access_key_secret_id(self):
+        """
+        Gets the secret_access_key_secret_id of this CreateAmazonS3ConnectionDetails.
+        The `OCID`__ of the Secret where the Secret Access Key is stored.
+        Note: When provided, 'secretAccessKey' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The secret_access_key_secret_id of this CreateAmazonS3ConnectionDetails.
+        :rtype: str
+        """
+        return self._secret_access_key_secret_id
+
+    @secret_access_key_secret_id.setter
+    def secret_access_key_secret_id(self, secret_access_key_secret_id):
+        """
+        Sets the secret_access_key_secret_id of this CreateAmazonS3ConnectionDetails.
+        The `OCID`__ of the Secret where the Secret Access Key is stored.
+        Note: When provided, 'secretAccessKey' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param secret_access_key_secret_id: The secret_access_key_secret_id of this CreateAmazonS3ConnectionDetails.
+        :type: str
+        """
+        self._secret_access_key_secret_id = secret_access_key_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

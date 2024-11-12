@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.138.1 - 2024-11-12
+====================
+
+Added 
+----- 
+* Support for calling Oracle Cloud Infrastructure services in the me-alain-1 region 
+* Support for connection refresh in the GoldenGate service 
+* Support for secret compartment id in import and export operations of deployment wallet in the GoldenGate service 
+* Support for creating metadata only backups in the GoldenGate service 
+* Support for Llama 3.2 unit shape in Generative AI service 
+* Support for Llama 3.2 vision in Generative AI Inference service 
+* Support for Cohere CommandR response format in Generative AI Inference service   
+
+====================
 2.138.0 - 2024-11-05
 ====================
 

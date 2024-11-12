@@ -119,6 +119,10 @@ class KafkaSchemaRegistryConnection(Connection):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this KafkaSchemaRegistryConnection.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this KafkaSchemaRegistryConnection.
             Allowed values for this property are: "CONFLUENT_SCHEMA_REGISTRY", 'UNKNOWN_ENUM_VALUE'.
@@ -143,6 +147,30 @@ class KafkaSchemaRegistryConnection(Connection):
             The value to assign to the private_ip property of this KafkaSchemaRegistryConnection.
         :type private_ip: str
 
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this KafkaSchemaRegistryConnection.
+        :type password_secret_id: str
+
+        :param trust_store_secret_id:
+            The value to assign to the trust_store_secret_id property of this KafkaSchemaRegistryConnection.
+        :type trust_store_secret_id: str
+
+        :param trust_store_password_secret_id:
+            The value to assign to the trust_store_password_secret_id property of this KafkaSchemaRegistryConnection.
+        :type trust_store_password_secret_id: str
+
+        :param key_store_secret_id:
+            The value to assign to the key_store_secret_id property of this KafkaSchemaRegistryConnection.
+        :type key_store_secret_id: str
+
+        :param key_store_password_secret_id:
+            The value to assign to the key_store_password_secret_id property of this KafkaSchemaRegistryConnection.
+        :type key_store_password_secret_id: str
+
+        :param ssl_key_password_secret_id:
+            The value to assign to the ssl_key_password_secret_id property of this KafkaSchemaRegistryConnection.
+        :type ssl_key_password_secret_id: str
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -164,11 +192,18 @@ class KafkaSchemaRegistryConnection(Connection):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
             'url': 'str',
             'authentication_type': 'str',
             'username': 'str',
-            'private_ip': 'str'
+            'private_ip': 'str',
+            'password_secret_id': 'str',
+            'trust_store_secret_id': 'str',
+            'trust_store_password_secret_id': 'str',
+            'key_store_secret_id': 'str',
+            'key_store_password_secret_id': 'str',
+            'ssl_key_password_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -191,11 +226,18 @@ class KafkaSchemaRegistryConnection(Connection):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
             'url': 'url',
             'authentication_type': 'authenticationType',
             'username': 'username',
-            'private_ip': 'privateIp'
+            'private_ip': 'privateIp',
+            'password_secret_id': 'passwordSecretId',
+            'trust_store_secret_id': 'trustStoreSecretId',
+            'trust_store_password_secret_id': 'trustStorePasswordSecretId',
+            'key_store_secret_id': 'keyStoreSecretId',
+            'key_store_password_secret_id': 'keyStorePasswordSecretId',
+            'ssl_key_password_secret_id': 'sslKeyPasswordSecretId'
         }
 
         self._connection_type = None
@@ -217,11 +259,18 @@ class KafkaSchemaRegistryConnection(Connection):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._url = None
         self._authentication_type = None
         self._username = None
         self._private_ip = None
+        self._password_secret_id = None
+        self._trust_store_secret_id = None
+        self._trust_store_password_secret_id = None
+        self._key_store_secret_id = None
+        self._key_store_password_secret_id = None
+        self._ssl_key_password_secret_id = None
         self._connection_type = 'KAFKA_SCHEMA_REGISTRY'
 
     @property
@@ -314,7 +363,7 @@ class KafkaSchemaRegistryConnection(Connection):
     def username(self):
         """
         Gets the username of this KafkaSchemaRegistryConnection.
-        The username to access Schema Registry using basic authentation.
+        The username to access Schema Registry using basic authentication.
         This value is injected into 'schema.registry.basic.auth.user.info=user:password' configuration property.
 
 
@@ -327,7 +376,7 @@ class KafkaSchemaRegistryConnection(Connection):
     def username(self, username):
         """
         Sets the username of this KafkaSchemaRegistryConnection.
-        The username to access Schema Registry using basic authentation.
+        The username to access Schema Registry using basic authentication.
         This value is injected into 'schema.registry.basic.auth.user.info=user:password' configuration property.
 
 
@@ -373,6 +422,192 @@ class KafkaSchemaRegistryConnection(Connection):
         :type: str
         """
         self._private_ip = private_ip
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this KafkaSchemaRegistryConnection.
+        The `OCID`__ of the Secret where the Kafka Schema Registry password is stored,
+        The password to access Schema Registry using basic authentication.
+        This value is injected into 'schema.registry.basic.auth.user.info=user:password' configuration property.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this KafkaSchemaRegistryConnection.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this KafkaSchemaRegistryConnection.
+        The `OCID`__ of the Secret where the Kafka Schema Registry password is stored,
+        The password to access Schema Registry using basic authentication.
+        This value is injected into 'schema.registry.basic.auth.user.info=user:password' configuration property.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this KafkaSchemaRegistryConnection.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
+
+    @property
+    def trust_store_secret_id(self):
+        """
+        Gets the trust_store_secret_id of this KafkaSchemaRegistryConnection.
+        The `OCID`__ of the Secret that stores the content of the TrustStore file.
+        Note: When provided, 'trustStore' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The trust_store_secret_id of this KafkaSchemaRegistryConnection.
+        :rtype: str
+        """
+        return self._trust_store_secret_id
+
+    @trust_store_secret_id.setter
+    def trust_store_secret_id(self, trust_store_secret_id):
+        """
+        Sets the trust_store_secret_id of this KafkaSchemaRegistryConnection.
+        The `OCID`__ of the Secret that stores the content of the TrustStore file.
+        Note: When provided, 'trustStore' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param trust_store_secret_id: The trust_store_secret_id of this KafkaSchemaRegistryConnection.
+        :type: str
+        """
+        self._trust_store_secret_id = trust_store_secret_id
+
+    @property
+    def trust_store_password_secret_id(self):
+        """
+        Gets the trust_store_password_secret_id of this KafkaSchemaRegistryConnection.
+        The `OCID`__ of the Secret where the kafka Ssl TrustStore password is stored.
+        Note: When provided, 'trustStorePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The trust_store_password_secret_id of this KafkaSchemaRegistryConnection.
+        :rtype: str
+        """
+        return self._trust_store_password_secret_id
+
+    @trust_store_password_secret_id.setter
+    def trust_store_password_secret_id(self, trust_store_password_secret_id):
+        """
+        Sets the trust_store_password_secret_id of this KafkaSchemaRegistryConnection.
+        The `OCID`__ of the Secret where the kafka Ssl TrustStore password is stored.
+        Note: When provided, 'trustStorePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param trust_store_password_secret_id: The trust_store_password_secret_id of this KafkaSchemaRegistryConnection.
+        :type: str
+        """
+        self._trust_store_password_secret_id = trust_store_password_secret_id
+
+    @property
+    def key_store_secret_id(self):
+        """
+        Gets the key_store_secret_id of this KafkaSchemaRegistryConnection.
+        The `OCID`__ of the Secret that stores the content of the KeyStore file.
+        Note: When provided, 'keyStore' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The key_store_secret_id of this KafkaSchemaRegistryConnection.
+        :rtype: str
+        """
+        return self._key_store_secret_id
+
+    @key_store_secret_id.setter
+    def key_store_secret_id(self, key_store_secret_id):
+        """
+        Sets the key_store_secret_id of this KafkaSchemaRegistryConnection.
+        The `OCID`__ of the Secret that stores the content of the KeyStore file.
+        Note: When provided, 'keyStore' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param key_store_secret_id: The key_store_secret_id of this KafkaSchemaRegistryConnection.
+        :type: str
+        """
+        self._key_store_secret_id = key_store_secret_id
+
+    @property
+    def key_store_password_secret_id(self):
+        """
+        Gets the key_store_password_secret_id of this KafkaSchemaRegistryConnection.
+        The `OCID`__ of the Secret where the kafka Ssl KeyStore password is stored.
+        Note: When provided, 'keyStorePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The key_store_password_secret_id of this KafkaSchemaRegistryConnection.
+        :rtype: str
+        """
+        return self._key_store_password_secret_id
+
+    @key_store_password_secret_id.setter
+    def key_store_password_secret_id(self, key_store_password_secret_id):
+        """
+        Sets the key_store_password_secret_id of this KafkaSchemaRegistryConnection.
+        The `OCID`__ of the Secret where the kafka Ssl KeyStore password is stored.
+        Note: When provided, 'keyStorePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param key_store_password_secret_id: The key_store_password_secret_id of this KafkaSchemaRegistryConnection.
+        :type: str
+        """
+        self._key_store_password_secret_id = key_store_password_secret_id
+
+    @property
+    def ssl_key_password_secret_id(self):
+        """
+        Gets the ssl_key_password_secret_id of this KafkaSchemaRegistryConnection.
+        The `OCID`__ of the Secret that stores the password for the cert inside the KeyStore.
+        In case it differs from the KeyStore password, it should be provided.
+        Note: When provided, 'sslKeyPassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The ssl_key_password_secret_id of this KafkaSchemaRegistryConnection.
+        :rtype: str
+        """
+        return self._ssl_key_password_secret_id
+
+    @ssl_key_password_secret_id.setter
+    def ssl_key_password_secret_id(self, ssl_key_password_secret_id):
+        """
+        Sets the ssl_key_password_secret_id of this KafkaSchemaRegistryConnection.
+        The `OCID`__ of the Secret that stores the password for the cert inside the KeyStore.
+        In case it differs from the KeyStore password, it should be provided.
+        Note: When provided, 'sslKeyPassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param ssl_key_password_secret_id: The ssl_key_password_secret_id of this KafkaSchemaRegistryConnection.
+        :type: str
+        """
+        self._ssl_key_password_secret_id = ssl_key_password_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -63,6 +63,10 @@ class UpdateAmazonRedshiftConnectionDetails(UpdateConnectionDetails):
             Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this UpdateAmazonRedshiftConnectionDetails.
+        :type does_use_secret_ids: bool
+
         :param connection_url:
             The value to assign to the connection_url property of this UpdateAmazonRedshiftConnectionDetails.
         :type connection_url: str
@@ -74,6 +78,10 @@ class UpdateAmazonRedshiftConnectionDetails(UpdateConnectionDetails):
         :param password:
             The value to assign to the password property of this UpdateAmazonRedshiftConnectionDetails.
         :type password: str
+
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this UpdateAmazonRedshiftConnectionDetails.
+        :type password_secret_id: str
 
         """
         self.swagger_types = {
@@ -87,9 +95,11 @@ class UpdateAmazonRedshiftConnectionDetails(UpdateConnectionDetails):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'connection_url': 'str',
             'username': 'str',
-            'password': 'str'
+            'password': 'str',
+            'password_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -103,9 +113,11 @@ class UpdateAmazonRedshiftConnectionDetails(UpdateConnectionDetails):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'connection_url': 'connectionUrl',
             'username': 'username',
-            'password': 'password'
+            'password': 'password',
+            'password_secret_id': 'passwordSecretId'
         }
 
         self._connection_type = None
@@ -118,9 +130,11 @@ class UpdateAmazonRedshiftConnectionDetails(UpdateConnectionDetails):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._connection_url = None
         self._username = None
         self._password = None
+        self._password_secret_id = None
         self._connection_type = 'AMAZON_REDSHIFT'
 
     @property
@@ -202,6 +216,42 @@ class UpdateAmazonRedshiftConnectionDetails(UpdateConnectionDetails):
         :type: str
         """
         self._password = password
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this UpdateAmazonRedshiftConnectionDetails.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this UpdateAmazonRedshiftConnectionDetails.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this UpdateAmazonRedshiftConnectionDetails.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this UpdateAmazonRedshiftConnectionDetails.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

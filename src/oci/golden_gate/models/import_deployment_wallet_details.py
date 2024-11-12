@@ -32,6 +32,10 @@ class ImportDeploymentWalletDetails(object):
             The value to assign to the wallet_backup_secret_name property of this ImportDeploymentWalletDetails.
         :type wallet_backup_secret_name: str
 
+        :param wallet_backup_secret_compartment_id:
+            The value to assign to the wallet_backup_secret_compartment_id property of this ImportDeploymentWalletDetails.
+        :type wallet_backup_secret_compartment_id: str
+
         :param master_encryption_key_id:
             The value to assign to the master_encryption_key_id property of this ImportDeploymentWalletDetails.
         :type master_encryption_key_id: str
@@ -45,6 +49,7 @@ class ImportDeploymentWalletDetails(object):
             'vault_id': 'str',
             'new_wallet_secret_id': 'str',
             'wallet_backup_secret_name': 'str',
+            'wallet_backup_secret_compartment_id': 'str',
             'master_encryption_key_id': 'str',
             'description': 'str'
         }
@@ -53,6 +58,7 @@ class ImportDeploymentWalletDetails(object):
             'vault_id': 'vaultId',
             'new_wallet_secret_id': 'newWalletSecretId',
             'wallet_backup_secret_name': 'walletBackupSecretName',
+            'wallet_backup_secret_compartment_id': 'walletBackupSecretCompartmentId',
             'master_encryption_key_id': 'masterEncryptionKeyId',
             'description': 'description'
         }
@@ -60,6 +66,7 @@ class ImportDeploymentWalletDetails(object):
         self._vault_id = None
         self._new_wallet_secret_id = None
         self._wallet_backup_secret_name = None
+        self._wallet_backup_secret_compartment_id = None
         self._master_encryption_key_id = None
         self._description = None
 
@@ -142,6 +149,34 @@ class ImportDeploymentWalletDetails(object):
         :type: str
         """
         self._wallet_backup_secret_name = wallet_backup_secret_name
+
+    @property
+    def wallet_backup_secret_compartment_id(self):
+        """
+        Gets the wallet_backup_secret_compartment_id of this ImportDeploymentWalletDetails.
+        The `OCID`__ of the compartment, where the secret will be created in.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The wallet_backup_secret_compartment_id of this ImportDeploymentWalletDetails.
+        :rtype: str
+        """
+        return self._wallet_backup_secret_compartment_id
+
+    @wallet_backup_secret_compartment_id.setter
+    def wallet_backup_secret_compartment_id(self, wallet_backup_secret_compartment_id):
+        """
+        Sets the wallet_backup_secret_compartment_id of this ImportDeploymentWalletDetails.
+        The `OCID`__ of the compartment, where the secret will be created in.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param wallet_backup_secret_compartment_id: The wallet_backup_secret_compartment_id of this ImportDeploymentWalletDetails.
+        :type: str
+        """
+        self._wallet_backup_secret_compartment_id = wallet_backup_secret_compartment_id
 
     @property
     def master_encryption_key_id(self):

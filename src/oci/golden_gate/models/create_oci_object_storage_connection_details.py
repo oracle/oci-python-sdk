@@ -71,6 +71,10 @@ class CreateOciObjectStorageConnectionDetails(CreateConnectionDetails):
             Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this CreateOciObjectStorageConnectionDetails.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this CreateOciObjectStorageConnectionDetails.
         :type technology_type: str
@@ -91,9 +95,17 @@ class CreateOciObjectStorageConnectionDetails(CreateConnectionDetails):
             The value to assign to the private_key_file property of this CreateOciObjectStorageConnectionDetails.
         :type private_key_file: str
 
+        :param private_key_file_secret_id:
+            The value to assign to the private_key_file_secret_id property of this CreateOciObjectStorageConnectionDetails.
+        :type private_key_file_secret_id: str
+
         :param private_key_passphrase:
             The value to assign to the private_key_passphrase property of this CreateOciObjectStorageConnectionDetails.
         :type private_key_passphrase: str
+
+        :param private_key_passphrase_secret_id:
+            The value to assign to the private_key_passphrase_secret_id property of this CreateOciObjectStorageConnectionDetails.
+        :type private_key_passphrase_secret_id: str
 
         :param public_key_fingerprint:
             The value to assign to the public_key_fingerprint property of this CreateOciObjectStorageConnectionDetails.
@@ -113,12 +125,15 @@ class CreateOciObjectStorageConnectionDetails(CreateConnectionDetails):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
             'tenancy_id': 'str',
             'region': 'str',
             'user_id': 'str',
             'private_key_file': 'str',
+            'private_key_file_secret_id': 'str',
             'private_key_passphrase': 'str',
+            'private_key_passphrase_secret_id': 'str',
             'public_key_fingerprint': 'str'
         }
 
@@ -135,12 +150,15 @@ class CreateOciObjectStorageConnectionDetails(CreateConnectionDetails):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
             'tenancy_id': 'tenancyId',
             'region': 'region',
             'user_id': 'userId',
             'private_key_file': 'privateKeyFile',
+            'private_key_file_secret_id': 'privateKeyFileSecretId',
             'private_key_passphrase': 'privateKeyPassphrase',
+            'private_key_passphrase_secret_id': 'privateKeyPassphraseSecretId',
             'public_key_fingerprint': 'publicKeyFingerprint'
         }
 
@@ -156,12 +174,15 @@ class CreateOciObjectStorageConnectionDetails(CreateConnectionDetails):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._tenancy_id = None
         self._region = None
         self._user_id = None
         self._private_key_file = None
+        self._private_key_file_secret_id = None
         self._private_key_passphrase = None
+        self._private_key_passphrase_secret_id = None
         self._public_key_fingerprint = None
         self._connection_type = 'OCI_OBJECT_STORAGE'
 
@@ -274,7 +295,7 @@ class CreateOciObjectStorageConnectionDetails(CreateConnectionDetails):
     @property
     def private_key_file(self):
         """
-        **[Required]** Gets the private_key_file of this CreateOciObjectStorageConnectionDetails.
+        Gets the private_key_file of this CreateOciObjectStorageConnectionDetails.
         The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint.
         See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
 
@@ -296,6 +317,38 @@ class CreateOciObjectStorageConnectionDetails(CreateConnectionDetails):
         :type: str
         """
         self._private_key_file = private_key_file
+
+    @property
+    def private_key_file_secret_id(self):
+        """
+        Gets the private_key_file_secret_id of this CreateOciObjectStorageConnectionDetails.
+        The `OCID`__ of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+        See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        Note: When provided, 'privateKeyFile' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The private_key_file_secret_id of this CreateOciObjectStorageConnectionDetails.
+        :rtype: str
+        """
+        return self._private_key_file_secret_id
+
+    @private_key_file_secret_id.setter
+    def private_key_file_secret_id(self, private_key_file_secret_id):
+        """
+        Sets the private_key_file_secret_id of this CreateOciObjectStorageConnectionDetails.
+        The `OCID`__ of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+        See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        Note: When provided, 'privateKeyFile' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param private_key_file_secret_id: The private_key_file_secret_id of this CreateOciObjectStorageConnectionDetails.
+        :type: str
+        """
+        self._private_key_file_secret_id = private_key_file_secret_id
 
     @property
     def private_key_passphrase(self):
@@ -320,6 +373,36 @@ class CreateOciObjectStorageConnectionDetails(CreateConnectionDetails):
         :type: str
         """
         self._private_key_passphrase = private_key_passphrase
+
+    @property
+    def private_key_passphrase_secret_id(self):
+        """
+        Gets the private_key_passphrase_secret_id of this CreateOciObjectStorageConnectionDetails.
+        The `OCID`__ of the Secret that stores the passphrase of the private key.
+        Note: When provided, 'privateKeyPassphrase' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The private_key_passphrase_secret_id of this CreateOciObjectStorageConnectionDetails.
+        :rtype: str
+        """
+        return self._private_key_passphrase_secret_id
+
+    @private_key_passphrase_secret_id.setter
+    def private_key_passphrase_secret_id(self, private_key_passphrase_secret_id):
+        """
+        Sets the private_key_passphrase_secret_id of this CreateOciObjectStorageConnectionDetails.
+        The `OCID`__ of the Secret that stores the passphrase of the private key.
+        Note: When provided, 'privateKeyPassphrase' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param private_key_passphrase_secret_id: The private_key_passphrase_secret_id of this CreateOciObjectStorageConnectionDetails.
+        :type: str
+        """
+        self._private_key_passphrase_secret_id = private_key_passphrase_secret_id
 
     @property
     def public_key_fingerprint(self):

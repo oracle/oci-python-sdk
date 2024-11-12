@@ -115,6 +115,10 @@ class MongoDbConnection(Connection):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this MongoDbConnection.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this MongoDbConnection.
             Allowed values for this property are: "MONGODB", "OCI_AUTONOMOUS_JSON_DATABASE", "AZURE_COSMOS_DB_FOR_MONGODB", 'UNKNOWN_ENUM_VALUE'.
@@ -132,6 +136,10 @@ class MongoDbConnection(Connection):
         :param database_id:
             The value to assign to the database_id property of this MongoDbConnection.
         :type database_id: str
+
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this MongoDbConnection.
+        :type password_secret_id: str
 
         """
         self.swagger_types = {
@@ -154,10 +162,12 @@ class MongoDbConnection(Connection):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
             'connection_string': 'str',
             'username': 'str',
-            'database_id': 'str'
+            'database_id': 'str',
+            'password_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -180,10 +190,12 @@ class MongoDbConnection(Connection):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
             'connection_string': 'connectionString',
             'username': 'username',
-            'database_id': 'databaseId'
+            'database_id': 'databaseId',
+            'password_secret_id': 'passwordSecretId'
         }
 
         self._connection_type = None
@@ -205,10 +217,12 @@ class MongoDbConnection(Connection):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._connection_string = None
         self._username = None
         self._database_id = None
+        self._password_secret_id = None
         self._connection_type = 'MONGODB'
 
     @property
@@ -320,6 +334,36 @@ class MongoDbConnection(Connection):
         :type: str
         """
         self._database_id = database_id
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this MongoDbConnection.
+        The `OCID`__ of the Secret that stores the password Oracle GoldenGate uses to connect the associated database.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this MongoDbConnection.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this MongoDbConnection.
+        The `OCID`__ of the Secret that stores the password Oracle GoldenGate uses to connect the associated database.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this MongoDbConnection.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

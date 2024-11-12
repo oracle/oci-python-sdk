@@ -135,6 +135,10 @@ class KafkaConnection(Connection):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this KafkaConnection.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this KafkaConnection.
             Allowed values for this property are: "APACHE_KAFKA", "AZURE_EVENT_HUBS", "CONFLUENT_KAFKA", "OCI_STREAMING", 'UNKNOWN_ENUM_VALUE'.
@@ -159,6 +163,38 @@ class KafkaConnection(Connection):
             The value to assign to the username property of this KafkaConnection.
         :type username: str
 
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this KafkaConnection.
+        :type password_secret_id: str
+
+        :param trust_store_secret_id:
+            The value to assign to the trust_store_secret_id property of this KafkaConnection.
+        :type trust_store_secret_id: str
+
+        :param trust_store_password_secret_id:
+            The value to assign to the trust_store_password_secret_id property of this KafkaConnection.
+        :type trust_store_password_secret_id: str
+
+        :param key_store_secret_id:
+            The value to assign to the key_store_secret_id property of this KafkaConnection.
+        :type key_store_secret_id: str
+
+        :param key_store_password_secret_id:
+            The value to assign to the key_store_password_secret_id property of this KafkaConnection.
+        :type key_store_password_secret_id: str
+
+        :param ssl_key_password_secret_id:
+            The value to assign to the ssl_key_password_secret_id property of this KafkaConnection.
+        :type ssl_key_password_secret_id: str
+
+        :param consumer_properties:
+            The value to assign to the consumer_properties property of this KafkaConnection.
+        :type consumer_properties: str
+
+        :param producer_properties:
+            The value to assign to the producer_properties property of this KafkaConnection.
+        :type producer_properties: str
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -180,11 +216,20 @@ class KafkaConnection(Connection):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
             'stream_pool_id': 'str',
             'bootstrap_servers': 'list[KafkaBootstrapServer]',
             'security_protocol': 'str',
-            'username': 'str'
+            'username': 'str',
+            'password_secret_id': 'str',
+            'trust_store_secret_id': 'str',
+            'trust_store_password_secret_id': 'str',
+            'key_store_secret_id': 'str',
+            'key_store_password_secret_id': 'str',
+            'ssl_key_password_secret_id': 'str',
+            'consumer_properties': 'str',
+            'producer_properties': 'str'
         }
 
         self.attribute_map = {
@@ -207,11 +252,20 @@ class KafkaConnection(Connection):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
             'stream_pool_id': 'streamPoolId',
             'bootstrap_servers': 'bootstrapServers',
             'security_protocol': 'securityProtocol',
-            'username': 'username'
+            'username': 'username',
+            'password_secret_id': 'passwordSecretId',
+            'trust_store_secret_id': 'trustStoreSecretId',
+            'trust_store_password_secret_id': 'trustStorePasswordSecretId',
+            'key_store_secret_id': 'keyStoreSecretId',
+            'key_store_password_secret_id': 'keyStorePasswordSecretId',
+            'ssl_key_password_secret_id': 'sslKeyPasswordSecretId',
+            'consumer_properties': 'consumerProperties',
+            'producer_properties': 'producerProperties'
         }
 
         self._connection_type = None
@@ -233,11 +287,20 @@ class KafkaConnection(Connection):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._stream_pool_id = None
         self._bootstrap_servers = None
         self._security_protocol = None
         self._username = None
+        self._password_secret_id = None
+        self._trust_store_secret_id = None
+        self._trust_store_password_secret_id = None
+        self._key_store_secret_id = None
+        self._key_store_password_secret_id = None
+        self._ssl_key_password_secret_id = None
+        self._consumer_properties = None
+        self._producer_properties = None
         self._connection_type = 'KAFKA'
 
     @property
@@ -385,6 +448,240 @@ class KafkaConnection(Connection):
         :type: str
         """
         self._username = username
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this KafkaConnection.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this KafkaConnection.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this KafkaConnection.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this KafkaConnection.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
+
+    @property
+    def trust_store_secret_id(self):
+        """
+        Gets the trust_store_secret_id of this KafkaConnection.
+        The `OCID`__ of the Secret where the content of the TrustStore file is stored.
+        Note: When provided, 'trustStore' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The trust_store_secret_id of this KafkaConnection.
+        :rtype: str
+        """
+        return self._trust_store_secret_id
+
+    @trust_store_secret_id.setter
+    def trust_store_secret_id(self, trust_store_secret_id):
+        """
+        Sets the trust_store_secret_id of this KafkaConnection.
+        The `OCID`__ of the Secret where the content of the TrustStore file is stored.
+        Note: When provided, 'trustStore' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param trust_store_secret_id: The trust_store_secret_id of this KafkaConnection.
+        :type: str
+        """
+        self._trust_store_secret_id = trust_store_secret_id
+
+    @property
+    def trust_store_password_secret_id(self):
+        """
+        Gets the trust_store_password_secret_id of this KafkaConnection.
+        The `OCID`__ of the Secret where the kafka TrustStore password is stored.
+        Note: When provided, 'trustStorePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The trust_store_password_secret_id of this KafkaConnection.
+        :rtype: str
+        """
+        return self._trust_store_password_secret_id
+
+    @trust_store_password_secret_id.setter
+    def trust_store_password_secret_id(self, trust_store_password_secret_id):
+        """
+        Sets the trust_store_password_secret_id of this KafkaConnection.
+        The `OCID`__ of the Secret where the kafka TrustStore password is stored.
+        Note: When provided, 'trustStorePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param trust_store_password_secret_id: The trust_store_password_secret_id of this KafkaConnection.
+        :type: str
+        """
+        self._trust_store_password_secret_id = trust_store_password_secret_id
+
+    @property
+    def key_store_secret_id(self):
+        """
+        Gets the key_store_secret_id of this KafkaConnection.
+        The `OCID`__ of the Secret where the content of the KeyStore file is stored.
+        Note: When provided, 'keyStore' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The key_store_secret_id of this KafkaConnection.
+        :rtype: str
+        """
+        return self._key_store_secret_id
+
+    @key_store_secret_id.setter
+    def key_store_secret_id(self, key_store_secret_id):
+        """
+        Sets the key_store_secret_id of this KafkaConnection.
+        The `OCID`__ of the Secret where the content of the KeyStore file is stored.
+        Note: When provided, 'keyStore' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param key_store_secret_id: The key_store_secret_id of this KafkaConnection.
+        :type: str
+        """
+        self._key_store_secret_id = key_store_secret_id
+
+    @property
+    def key_store_password_secret_id(self):
+        """
+        Gets the key_store_password_secret_id of this KafkaConnection.
+        The `OCID`__ of the Secret where the kafka KeyStore password is stored.
+        Note: When provided, 'keyStorePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The key_store_password_secret_id of this KafkaConnection.
+        :rtype: str
+        """
+        return self._key_store_password_secret_id
+
+    @key_store_password_secret_id.setter
+    def key_store_password_secret_id(self, key_store_password_secret_id):
+        """
+        Sets the key_store_password_secret_id of this KafkaConnection.
+        The `OCID`__ of the Secret where the kafka KeyStore password is stored.
+        Note: When provided, 'keyStorePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param key_store_password_secret_id: The key_store_password_secret_id of this KafkaConnection.
+        :type: str
+        """
+        self._key_store_password_secret_id = key_store_password_secret_id
+
+    @property
+    def ssl_key_password_secret_id(self):
+        """
+        Gets the ssl_key_password_secret_id of this KafkaConnection.
+        The `OCID`__ of the Secret where the kafka Ssl Key password is stored.
+        Note: When provided, 'sslKeyPassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The ssl_key_password_secret_id of this KafkaConnection.
+        :rtype: str
+        """
+        return self._ssl_key_password_secret_id
+
+    @ssl_key_password_secret_id.setter
+    def ssl_key_password_secret_id(self, ssl_key_password_secret_id):
+        """
+        Sets the ssl_key_password_secret_id of this KafkaConnection.
+        The `OCID`__ of the Secret where the kafka Ssl Key password is stored.
+        Note: When provided, 'sslKeyPassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param ssl_key_password_secret_id: The ssl_key_password_secret_id of this KafkaConnection.
+        :type: str
+        """
+        self._ssl_key_password_secret_id = ssl_key_password_secret_id
+
+    @property
+    def consumer_properties(self):
+        """
+        Gets the consumer_properties of this KafkaConnection.
+        The base64 encoded content of the consumer.properties file.
+
+
+        :return: The consumer_properties of this KafkaConnection.
+        :rtype: str
+        """
+        return self._consumer_properties
+
+    @consumer_properties.setter
+    def consumer_properties(self, consumer_properties):
+        """
+        Sets the consumer_properties of this KafkaConnection.
+        The base64 encoded content of the consumer.properties file.
+
+
+        :param consumer_properties: The consumer_properties of this KafkaConnection.
+        :type: str
+        """
+        self._consumer_properties = consumer_properties
+
+    @property
+    def producer_properties(self):
+        """
+        Gets the producer_properties of this KafkaConnection.
+        The base64 encoded content of the producer.properties file.
+
+
+        :return: The producer_properties of this KafkaConnection.
+        :rtype: str
+        """
+        return self._producer_properties
+
+    @producer_properties.setter
+    def producer_properties(self, producer_properties):
+        """
+        Sets the producer_properties of this KafkaConnection.
+        The base64 encoded content of the producer.properties file.
+
+
+        :param producer_properties: The producer_properties of this KafkaConnection.
+        :type: str
+        """
+        self._producer_properties = producer_properties
 
     def __repr__(self):
         return formatted_flat_dict(self)

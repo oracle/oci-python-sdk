@@ -63,6 +63,10 @@ class UpdateMysqlConnectionDetails(UpdateConnectionDetails):
             Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this UpdateMysqlConnectionDetails.
+        :type does_use_secret_ids: bool
+
         :param username:
             The value to assign to the username property of this UpdateMysqlConnectionDetails.
         :type username: str
@@ -70,6 +74,10 @@ class UpdateMysqlConnectionDetails(UpdateConnectionDetails):
         :param password:
             The value to assign to the password property of this UpdateMysqlConnectionDetails.
         :type password: str
+
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this UpdateMysqlConnectionDetails.
+        :type password_secret_id: str
 
         :param host:
             The value to assign to the host property of this UpdateMysqlConnectionDetails.
@@ -107,6 +115,10 @@ class UpdateMysqlConnectionDetails(UpdateConnectionDetails):
             The value to assign to the ssl_key property of this UpdateMysqlConnectionDetails.
         :type ssl_key: str
 
+        :param ssl_key_secret_id:
+            The value to assign to the ssl_key_secret_id property of this UpdateMysqlConnectionDetails.
+        :type ssl_key_secret_id: str
+
         :param private_ip:
             The value to assign to the private_ip property of this UpdateMysqlConnectionDetails.
         :type private_ip: str
@@ -131,8 +143,10 @@ class UpdateMysqlConnectionDetails(UpdateConnectionDetails):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'username': 'str',
             'password': 'str',
+            'password_secret_id': 'str',
             'host': 'str',
             'port': 'int',
             'database_name': 'str',
@@ -142,6 +156,7 @@ class UpdateMysqlConnectionDetails(UpdateConnectionDetails):
             'ssl_crl': 'str',
             'ssl_cert': 'str',
             'ssl_key': 'str',
+            'ssl_key_secret_id': 'str',
             'private_ip': 'str',
             'additional_attributes': 'list[NameValuePair]',
             'db_system_id': 'str'
@@ -158,8 +173,10 @@ class UpdateMysqlConnectionDetails(UpdateConnectionDetails):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'username': 'username',
             'password': 'password',
+            'password_secret_id': 'passwordSecretId',
             'host': 'host',
             'port': 'port',
             'database_name': 'databaseName',
@@ -169,6 +186,7 @@ class UpdateMysqlConnectionDetails(UpdateConnectionDetails):
             'ssl_crl': 'sslCrl',
             'ssl_cert': 'sslCert',
             'ssl_key': 'sslKey',
+            'ssl_key_secret_id': 'sslKeySecretId',
             'private_ip': 'privateIp',
             'additional_attributes': 'additionalAttributes',
             'db_system_id': 'dbSystemId'
@@ -184,8 +202,10 @@ class UpdateMysqlConnectionDetails(UpdateConnectionDetails):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._username = None
         self._password = None
+        self._password_secret_id = None
         self._host = None
         self._port = None
         self._database_name = None
@@ -195,6 +215,7 @@ class UpdateMysqlConnectionDetails(UpdateConnectionDetails):
         self._ssl_crl = None
         self._ssl_cert = None
         self._ssl_key = None
+        self._ssl_key_secret_id = None
         self._private_ip = None
         self._additional_attributes = None
         self._db_system_id = None
@@ -253,6 +274,42 @@ class UpdateMysqlConnectionDetails(UpdateConnectionDetails):
         :type: str
         """
         self._password = password
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this UpdateMysqlConnectionDetails.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this UpdateMysqlConnectionDetails.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this UpdateMysqlConnectionDetails.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this UpdateMysqlConnectionDetails.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
 
     @property
     def host(self):
@@ -475,6 +532,38 @@ class UpdateMysqlConnectionDetails(UpdateConnectionDetails):
         :type: str
         """
         self._ssl_key = ssl_key
+
+    @property
+    def ssl_key_secret_id(self):
+        """
+        Gets the ssl_key_secret_id of this UpdateMysqlConnectionDetails.
+        The `OCID`__ of the Secret that stores the Client Key
+        - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
+        Note: When provided, 'sslKey' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The ssl_key_secret_id of this UpdateMysqlConnectionDetails.
+        :rtype: str
+        """
+        return self._ssl_key_secret_id
+
+    @ssl_key_secret_id.setter
+    def ssl_key_secret_id(self, ssl_key_secret_id):
+        """
+        Sets the ssl_key_secret_id of this UpdateMysqlConnectionDetails.
+        The `OCID`__ of the Secret that stores the Client Key
+        - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
+        Note: When provided, 'sslKey' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param ssl_key_secret_id: The ssl_key_secret_id of this UpdateMysqlConnectionDetails.
+        :type: str
+        """
+        self._ssl_key_secret_id = ssl_key_secret_id
 
     @property
     def private_ip(self):

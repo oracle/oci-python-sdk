@@ -71,6 +71,10 @@ class CreateGoogleBigQueryConnectionDetails(CreateConnectionDetails):
             Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this CreateGoogleBigQueryConnectionDetails.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this CreateGoogleBigQueryConnectionDetails.
         :type technology_type: str
@@ -78,6 +82,10 @@ class CreateGoogleBigQueryConnectionDetails(CreateConnectionDetails):
         :param service_account_key_file:
             The value to assign to the service_account_key_file property of this CreateGoogleBigQueryConnectionDetails.
         :type service_account_key_file: str
+
+        :param service_account_key_file_secret_id:
+            The value to assign to the service_account_key_file_secret_id property of this CreateGoogleBigQueryConnectionDetails.
+        :type service_account_key_file_secret_id: str
 
         """
         self.swagger_types = {
@@ -93,8 +101,10 @@ class CreateGoogleBigQueryConnectionDetails(CreateConnectionDetails):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
-            'service_account_key_file': 'str'
+            'service_account_key_file': 'str',
+            'service_account_key_file_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -110,8 +120,10 @@ class CreateGoogleBigQueryConnectionDetails(CreateConnectionDetails):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
-            'service_account_key_file': 'serviceAccountKeyFile'
+            'service_account_key_file': 'serviceAccountKeyFile',
+            'service_account_key_file_secret_id': 'serviceAccountKeyFileSecretId'
         }
 
         self._connection_type = None
@@ -126,8 +138,10 @@ class CreateGoogleBigQueryConnectionDetails(CreateConnectionDetails):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._service_account_key_file = None
+        self._service_account_key_file_secret_id = None
         self._connection_type = 'GOOGLE_BIGQUERY'
 
     @property
@@ -157,7 +171,7 @@ class CreateGoogleBigQueryConnectionDetails(CreateConnectionDetails):
     @property
     def service_account_key_file(self):
         """
-        **[Required]** Gets the service_account_key_file of this CreateGoogleBigQueryConnectionDetails.
+        Gets the service_account_key_file of this CreateGoogleBigQueryConnectionDetails.
         The base64 encoded content of the service account key file containing
         the credentials required to use Google BigQuery.
 
@@ -179,6 +193,38 @@ class CreateGoogleBigQueryConnectionDetails(CreateConnectionDetails):
         :type: str
         """
         self._service_account_key_file = service_account_key_file
+
+    @property
+    def service_account_key_file_secret_id(self):
+        """
+        Gets the service_account_key_file_secret_id of this CreateGoogleBigQueryConnectionDetails.
+        The `OCID`__ of the Secret where the content of the service account key file is stored,
+        which containing the credentials required to use Google BigQuery.
+        Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The service_account_key_file_secret_id of this CreateGoogleBigQueryConnectionDetails.
+        :rtype: str
+        """
+        return self._service_account_key_file_secret_id
+
+    @service_account_key_file_secret_id.setter
+    def service_account_key_file_secret_id(self, service_account_key_file_secret_id):
+        """
+        Sets the service_account_key_file_secret_id of this CreateGoogleBigQueryConnectionDetails.
+        The `OCID`__ of the Secret where the content of the service account key file is stored,
+        which containing the credentials required to use Google BigQuery.
+        Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param service_account_key_file_secret_id: The service_account_key_file_secret_id of this CreateGoogleBigQueryConnectionDetails.
+        :type: str
+        """
+        self._service_account_key_file_secret_id = service_account_key_file_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -63,6 +63,10 @@ class UpdateElasticsearchConnectionDetails(UpdateConnectionDetails):
             Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this UpdateElasticsearchConnectionDetails.
+        :type does_use_secret_ids: bool
+
         :param servers:
             The value to assign to the servers property of this UpdateElasticsearchConnectionDetails.
         :type servers: str
@@ -83,6 +87,10 @@ class UpdateElasticsearchConnectionDetails(UpdateConnectionDetails):
             The value to assign to the password property of this UpdateElasticsearchConnectionDetails.
         :type password: str
 
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this UpdateElasticsearchConnectionDetails.
+        :type password_secret_id: str
+
         :param fingerprint:
             The value to assign to the fingerprint property of this UpdateElasticsearchConnectionDetails.
         :type fingerprint: str
@@ -99,11 +107,13 @@ class UpdateElasticsearchConnectionDetails(UpdateConnectionDetails):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'servers': 'str',
             'security_protocol': 'str',
             'authentication_type': 'str',
             'username': 'str',
             'password': 'str',
+            'password_secret_id': 'str',
             'fingerprint': 'str'
         }
 
@@ -118,11 +128,13 @@ class UpdateElasticsearchConnectionDetails(UpdateConnectionDetails):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'servers': 'servers',
             'security_protocol': 'securityProtocol',
             'authentication_type': 'authenticationType',
             'username': 'username',
             'password': 'password',
+            'password_secret_id': 'passwordSecretId',
             'fingerprint': 'fingerprint'
         }
 
@@ -136,11 +148,13 @@ class UpdateElasticsearchConnectionDetails(UpdateConnectionDetails):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._servers = None
         self._security_protocol = None
         self._authentication_type = None
         self._username = None
         self._password = None
+        self._password_secret_id = None
         self._fingerprint = None
         self._connection_type = 'ELASTICSEARCH'
 
@@ -275,6 +289,42 @@ class UpdateElasticsearchConnectionDetails(UpdateConnectionDetails):
         :type: str
         """
         self._password = password
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this UpdateElasticsearchConnectionDetails.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this UpdateElasticsearchConnectionDetails.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this UpdateElasticsearchConnectionDetails.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this UpdateElasticsearchConnectionDetails.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
 
     @property
     def fingerprint(self):

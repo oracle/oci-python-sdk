@@ -54,6 +54,10 @@ class CohereChatRequest(BaseChatRequest):
             The value to assign to the documents property of this CohereChatRequest.
         :type documents: list[object]
 
+        :param response_format:
+            The value to assign to the response_format property of this CohereChatRequest.
+        :type response_format: oci.generative_ai_inference.models.CohereResponseFormat
+
         :param is_search_queries_only:
             The value to assign to the is_search_queries_only property of this CohereChatRequest.
         :type is_search_queries_only: bool
@@ -69,6 +73,10 @@ class CohereChatRequest(BaseChatRequest):
         :param max_tokens:
             The value to assign to the max_tokens property of this CohereChatRequest.
         :type max_tokens: int
+
+        :param max_input_tokens:
+            The value to assign to the max_input_tokens property of this CohereChatRequest.
+        :type max_input_tokens: int
 
         :param temperature:
             The value to assign to the temperature property of this CohereChatRequest.
@@ -134,10 +142,12 @@ class CohereChatRequest(BaseChatRequest):
             'message': 'str',
             'chat_history': 'list[CohereMessage]',
             'documents': 'list[object]',
+            'response_format': 'CohereResponseFormat',
             'is_search_queries_only': 'bool',
             'preamble_override': 'str',
             'is_stream': 'bool',
             'max_tokens': 'int',
+            'max_input_tokens': 'int',
             'temperature': 'float',
             'top_k': 'int',
             'top_p': 'float',
@@ -159,10 +169,12 @@ class CohereChatRequest(BaseChatRequest):
             'message': 'message',
             'chat_history': 'chatHistory',
             'documents': 'documents',
+            'response_format': 'responseFormat',
             'is_search_queries_only': 'isSearchQueriesOnly',
             'preamble_override': 'preambleOverride',
             'is_stream': 'isStream',
             'max_tokens': 'maxTokens',
+            'max_input_tokens': 'maxInputTokens',
             'temperature': 'temperature',
             'top_k': 'topK',
             'top_p': 'topP',
@@ -183,10 +195,12 @@ class CohereChatRequest(BaseChatRequest):
         self._message = None
         self._chat_history = None
         self._documents = None
+        self._response_format = None
         self._is_search_queries_only = None
         self._preamble_override = None
         self._is_stream = None
         self._max_tokens = None
+        self._max_input_tokens = None
         self._temperature = None
         self._top_k = None
         self._top_p = None
@@ -290,6 +304,26 @@ class CohereChatRequest(BaseChatRequest):
         self._documents = documents
 
     @property
+    def response_format(self):
+        """
+        Gets the response_format of this CohereChatRequest.
+
+        :return: The response_format of this CohereChatRequest.
+        :rtype: oci.generative_ai_inference.models.CohereResponseFormat
+        """
+        return self._response_format
+
+    @response_format.setter
+    def response_format(self, response_format):
+        """
+        Sets the response_format of this CohereChatRequest.
+
+        :param response_format: The response_format of this CohereChatRequest.
+        :type: oci.generative_ai_inference.models.CohereResponseFormat
+        """
+        self._response_format = response_format
+
+    @property
     def is_search_queries_only(self):
         """
         Gets the is_search_queries_only of this CohereChatRequest.
@@ -390,6 +424,30 @@ class CohereChatRequest(BaseChatRequest):
         self._max_tokens = max_tokens
 
     @property
+    def max_input_tokens(self):
+        """
+        Gets the max_input_tokens of this CohereChatRequest.
+        The maximum number of input tokens to send to the model. If not specified, max_input_tokens is the model's context length limit minus a small buffer.
+
+
+        :return: The max_input_tokens of this CohereChatRequest.
+        :rtype: int
+        """
+        return self._max_input_tokens
+
+    @max_input_tokens.setter
+    def max_input_tokens(self, max_input_tokens):
+        """
+        Sets the max_input_tokens of this CohereChatRequest.
+        The maximum number of input tokens to send to the model. If not specified, max_input_tokens is the model's context length limit minus a small buffer.
+
+
+        :param max_input_tokens: The max_input_tokens of this CohereChatRequest.
+        :type: int
+        """
+        self._max_input_tokens = max_input_tokens
+
+    @property
     def temperature(self):
         """
         Gets the temperature of this CohereChatRequest.
@@ -475,7 +533,7 @@ class CohereChatRequest(BaseChatRequest):
     def prompt_truncation(self):
         """
         Gets the prompt_truncation of this CohereChatRequest.
-        Defaults to OFF. Dictates how the prompt will be constructed. With `prompt_truncation` set to AUTO_PRESERVE_ORDER, some elements from `chat_history` and `documents` will be dropped to construct a prompt that fits within the model's context length limit. During this process the order of the documents and chat history will be preserved. With `prompt_truncation` set to OFF, no elements will be dropped.
+        Defaults to OFF. Dictates how the prompt will be constructed. With `promptTruncation` set to AUTO_PRESERVE_ORDER, some elements from `chatHistory` and `documents` will be dropped to construct a prompt that fits within the model's context length limit. During this process the order of the documents and chat history will be preserved. With `prompt_truncation` set to OFF, no elements will be dropped.
 
         Allowed values for this property are: "OFF", "AUTO_PRESERVE_ORDER"
 
@@ -489,7 +547,7 @@ class CohereChatRequest(BaseChatRequest):
     def prompt_truncation(self, prompt_truncation):
         """
         Sets the prompt_truncation of this CohereChatRequest.
-        Defaults to OFF. Dictates how the prompt will be constructed. With `prompt_truncation` set to AUTO_PRESERVE_ORDER, some elements from `chat_history` and `documents` will be dropped to construct a prompt that fits within the model's context length limit. During this process the order of the documents and chat history will be preserved. With `prompt_truncation` set to OFF, no elements will be dropped.
+        Defaults to OFF. Dictates how the prompt will be constructed. With `promptTruncation` set to AUTO_PRESERVE_ORDER, some elements from `chatHistory` and `documents` will be dropped to construct a prompt that fits within the model's context length limit. During this process the order of the documents and chat history will be preserved. With `prompt_truncation` set to OFF, no elements will be dropped.
 
 
         :param prompt_truncation: The prompt_truncation of this CohereChatRequest.

@@ -107,6 +107,10 @@ class HdfsConnection(Connection):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this HdfsConnection.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this HdfsConnection.
             Allowed values for this property are: "HDFS", 'UNKNOWN_ENUM_VALUE'.
@@ -134,6 +138,7 @@ class HdfsConnection(Connection):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str'
         }
 
@@ -157,6 +162,7 @@ class HdfsConnection(Connection):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType'
         }
 
@@ -179,6 +185,7 @@ class HdfsConnection(Connection):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._connection_type = 'HDFS'
 

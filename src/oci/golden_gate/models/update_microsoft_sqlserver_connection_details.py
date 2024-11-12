@@ -63,6 +63,10 @@ class UpdateMicrosoftSqlserverConnectionDetails(UpdateConnectionDetails):
             Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this UpdateMicrosoftSqlserverConnectionDetails.
+        :type does_use_secret_ids: bool
+
         :param database_name:
             The value to assign to the database_name property of this UpdateMicrosoftSqlserverConnectionDetails.
         :type database_name: str
@@ -82,6 +86,10 @@ class UpdateMicrosoftSqlserverConnectionDetails(UpdateConnectionDetails):
         :param password:
             The value to assign to the password property of this UpdateMicrosoftSqlserverConnectionDetails.
         :type password: str
+
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this UpdateMicrosoftSqlserverConnectionDetails.
+        :type password_secret_id: str
 
         :param additional_attributes:
             The value to assign to the additional_attributes property of this UpdateMicrosoftSqlserverConnectionDetails.
@@ -115,11 +123,13 @@ class UpdateMicrosoftSqlserverConnectionDetails(UpdateConnectionDetails):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'database_name': 'str',
             'host': 'str',
             'port': 'int',
             'username': 'str',
             'password': 'str',
+            'password_secret_id': 'str',
             'additional_attributes': 'list[NameValuePair]',
             'security_protocol': 'str',
             'ssl_ca': 'str',
@@ -138,11 +148,13 @@ class UpdateMicrosoftSqlserverConnectionDetails(UpdateConnectionDetails):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'database_name': 'databaseName',
             'host': 'host',
             'port': 'port',
             'username': 'username',
             'password': 'password',
+            'password_secret_id': 'passwordSecretId',
             'additional_attributes': 'additionalAttributes',
             'security_protocol': 'securityProtocol',
             'ssl_ca': 'sslCa',
@@ -160,11 +172,13 @@ class UpdateMicrosoftSqlserverConnectionDetails(UpdateConnectionDetails):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._database_name = None
         self._host = None
         self._port = None
         self._username = None
         self._password = None
+        self._password_secret_id = None
         self._additional_attributes = None
         self._security_protocol = None
         self._ssl_ca = None
@@ -293,6 +307,36 @@ class UpdateMicrosoftSqlserverConnectionDetails(UpdateConnectionDetails):
         :type: str
         """
         self._password = password
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this UpdateMicrosoftSqlserverConnectionDetails.
+        The `OCID`__ of the Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this UpdateMicrosoftSqlserverConnectionDetails.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this UpdateMicrosoftSqlserverConnectionDetails.
+        The `OCID`__ of the Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this UpdateMicrosoftSqlserverConnectionDetails.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
 
     @property
     def additional_attributes(self):

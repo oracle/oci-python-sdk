@@ -63,6 +63,10 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
             Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this UpdateKafkaSchemaRegistryConnectionDetails.
+        :type does_use_secret_ids: bool
+
         :param url:
             The value to assign to the url property of this UpdateKafkaSchemaRegistryConnectionDetails.
         :type url: str
@@ -79,25 +83,49 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
             The value to assign to the password property of this UpdateKafkaSchemaRegistryConnectionDetails.
         :type password: str
 
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this UpdateKafkaSchemaRegistryConnectionDetails.
+        :type password_secret_id: str
+
         :param trust_store:
             The value to assign to the trust_store property of this UpdateKafkaSchemaRegistryConnectionDetails.
         :type trust_store: str
+
+        :param trust_store_secret_id:
+            The value to assign to the trust_store_secret_id property of this UpdateKafkaSchemaRegistryConnectionDetails.
+        :type trust_store_secret_id: str
 
         :param trust_store_password:
             The value to assign to the trust_store_password property of this UpdateKafkaSchemaRegistryConnectionDetails.
         :type trust_store_password: str
 
+        :param trust_store_password_secret_id:
+            The value to assign to the trust_store_password_secret_id property of this UpdateKafkaSchemaRegistryConnectionDetails.
+        :type trust_store_password_secret_id: str
+
         :param key_store:
             The value to assign to the key_store property of this UpdateKafkaSchemaRegistryConnectionDetails.
         :type key_store: str
+
+        :param key_store_secret_id:
+            The value to assign to the key_store_secret_id property of this UpdateKafkaSchemaRegistryConnectionDetails.
+        :type key_store_secret_id: str
 
         :param key_store_password:
             The value to assign to the key_store_password property of this UpdateKafkaSchemaRegistryConnectionDetails.
         :type key_store_password: str
 
+        :param key_store_password_secret_id:
+            The value to assign to the key_store_password_secret_id property of this UpdateKafkaSchemaRegistryConnectionDetails.
+        :type key_store_password_secret_id: str
+
         :param ssl_key_password:
             The value to assign to the ssl_key_password property of this UpdateKafkaSchemaRegistryConnectionDetails.
         :type ssl_key_password: str
+
+        :param ssl_key_password_secret_id:
+            The value to assign to the ssl_key_password_secret_id property of this UpdateKafkaSchemaRegistryConnectionDetails.
+        :type ssl_key_password_secret_id: str
 
         :param private_ip:
             The value to assign to the private_ip property of this UpdateKafkaSchemaRegistryConnectionDetails.
@@ -115,15 +143,22 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'url': 'str',
             'authentication_type': 'str',
             'username': 'str',
             'password': 'str',
+            'password_secret_id': 'str',
             'trust_store': 'str',
+            'trust_store_secret_id': 'str',
             'trust_store_password': 'str',
+            'trust_store_password_secret_id': 'str',
             'key_store': 'str',
+            'key_store_secret_id': 'str',
             'key_store_password': 'str',
+            'key_store_password_secret_id': 'str',
             'ssl_key_password': 'str',
+            'ssl_key_password_secret_id': 'str',
             'private_ip': 'str'
         }
 
@@ -138,15 +173,22 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'url': 'url',
             'authentication_type': 'authenticationType',
             'username': 'username',
             'password': 'password',
+            'password_secret_id': 'passwordSecretId',
             'trust_store': 'trustStore',
+            'trust_store_secret_id': 'trustStoreSecretId',
             'trust_store_password': 'trustStorePassword',
+            'trust_store_password_secret_id': 'trustStorePasswordSecretId',
             'key_store': 'keyStore',
+            'key_store_secret_id': 'keyStoreSecretId',
             'key_store_password': 'keyStorePassword',
+            'key_store_password_secret_id': 'keyStorePasswordSecretId',
             'ssl_key_password': 'sslKeyPassword',
+            'ssl_key_password_secret_id': 'sslKeyPasswordSecretId',
             'private_ip': 'privateIp'
         }
 
@@ -160,15 +202,22 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._url = None
         self._authentication_type = None
         self._username = None
         self._password = None
+        self._password_secret_id = None
         self._trust_store = None
+        self._trust_store_secret_id = None
         self._trust_store_password = None
+        self._trust_store_password_secret_id = None
         self._key_store = None
+        self._key_store_secret_id = None
         self._key_store_password = None
+        self._key_store_password_secret_id = None
         self._ssl_key_password = None
+        self._ssl_key_password_secret_id = None
         self._private_ip = None
         self._connection_type = 'KAFKA_SCHEMA_REGISTRY'
 
@@ -226,7 +275,7 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
     def username(self):
         """
         Gets the username of this UpdateKafkaSchemaRegistryConnectionDetails.
-        The username to access Schema Registry using basic authentation.
+        The username to access Schema Registry using basic authentication.
         This value is injected into 'schema.registry.basic.auth.user.info=user:password' configuration property.
 
 
@@ -239,7 +288,7 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
     def username(self, username):
         """
         Sets the username of this UpdateKafkaSchemaRegistryConnectionDetails.
-        The username to access Schema Registry using basic authentation.
+        The username to access Schema Registry using basic authentication.
         This value is injected into 'schema.registry.basic.auth.user.info=user:password' configuration property.
 
 
@@ -252,7 +301,7 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
     def password(self):
         """
         Gets the password of this UpdateKafkaSchemaRegistryConnectionDetails.
-        The password to access Schema Registry using basic authentation.
+        The password to access Schema Registry using basic authentication.
         This value is injected into 'schema.registry.basic.auth.user.info=user:password' configuration property.
 
 
@@ -265,7 +314,7 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
     def password(self, password):
         """
         Sets the password of this UpdateKafkaSchemaRegistryConnectionDetails.
-        The password to access Schema Registry using basic authentation.
+        The password to access Schema Registry using basic authentication.
         This value is injected into 'schema.registry.basic.auth.user.info=user:password' configuration property.
 
 
@@ -273,6 +322,42 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
         :type: str
         """
         self._password = password
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this UpdateKafkaSchemaRegistryConnectionDetails.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this UpdateKafkaSchemaRegistryConnectionDetails.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this UpdateKafkaSchemaRegistryConnectionDetails.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this UpdateKafkaSchemaRegistryConnectionDetails.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
 
     @property
     def trust_store(self):
@@ -299,6 +384,36 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
         self._trust_store = trust_store
 
     @property
+    def trust_store_secret_id(self):
+        """
+        Gets the trust_store_secret_id of this UpdateKafkaSchemaRegistryConnectionDetails.
+        The `OCID`__ of the Secret that stores the content of the TrustStore file.
+        Note: When provided, 'trustStore' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The trust_store_secret_id of this UpdateKafkaSchemaRegistryConnectionDetails.
+        :rtype: str
+        """
+        return self._trust_store_secret_id
+
+    @trust_store_secret_id.setter
+    def trust_store_secret_id(self, trust_store_secret_id):
+        """
+        Sets the trust_store_secret_id of this UpdateKafkaSchemaRegistryConnectionDetails.
+        The `OCID`__ of the Secret that stores the content of the TrustStore file.
+        Note: When provided, 'trustStore' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param trust_store_secret_id: The trust_store_secret_id of this UpdateKafkaSchemaRegistryConnectionDetails.
+        :type: str
+        """
+        self._trust_store_secret_id = trust_store_secret_id
+
+    @property
     def trust_store_password(self):
         """
         Gets the trust_store_password of this UpdateKafkaSchemaRegistryConnectionDetails.
@@ -321,6 +436,36 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
         :type: str
         """
         self._trust_store_password = trust_store_password
+
+    @property
+    def trust_store_password_secret_id(self):
+        """
+        Gets the trust_store_password_secret_id of this UpdateKafkaSchemaRegistryConnectionDetails.
+        The `OCID`__ of the Secret where the kafka Ssl TrustStore password is stored.
+        Note: When provided, 'trustStorePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The trust_store_password_secret_id of this UpdateKafkaSchemaRegistryConnectionDetails.
+        :rtype: str
+        """
+        return self._trust_store_password_secret_id
+
+    @trust_store_password_secret_id.setter
+    def trust_store_password_secret_id(self, trust_store_password_secret_id):
+        """
+        Sets the trust_store_password_secret_id of this UpdateKafkaSchemaRegistryConnectionDetails.
+        The `OCID`__ of the Secret where the kafka Ssl TrustStore password is stored.
+        Note: When provided, 'trustStorePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param trust_store_password_secret_id: The trust_store_password_secret_id of this UpdateKafkaSchemaRegistryConnectionDetails.
+        :type: str
+        """
+        self._trust_store_password_secret_id = trust_store_password_secret_id
 
     @property
     def key_store(self):
@@ -347,6 +492,36 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
         self._key_store = key_store
 
     @property
+    def key_store_secret_id(self):
+        """
+        Gets the key_store_secret_id of this UpdateKafkaSchemaRegistryConnectionDetails.
+        The `OCID`__ of the Secret that stores the content of the KeyStore file.
+        Note: When provided, 'keyStore' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The key_store_secret_id of this UpdateKafkaSchemaRegistryConnectionDetails.
+        :rtype: str
+        """
+        return self._key_store_secret_id
+
+    @key_store_secret_id.setter
+    def key_store_secret_id(self, key_store_secret_id):
+        """
+        Sets the key_store_secret_id of this UpdateKafkaSchemaRegistryConnectionDetails.
+        The `OCID`__ of the Secret that stores the content of the KeyStore file.
+        Note: When provided, 'keyStore' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param key_store_secret_id: The key_store_secret_id of this UpdateKafkaSchemaRegistryConnectionDetails.
+        :type: str
+        """
+        self._key_store_secret_id = key_store_secret_id
+
+    @property
     def key_store_password(self):
         """
         Gets the key_store_password of this UpdateKafkaSchemaRegistryConnectionDetails.
@@ -369,6 +544,36 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
         :type: str
         """
         self._key_store_password = key_store_password
+
+    @property
+    def key_store_password_secret_id(self):
+        """
+        Gets the key_store_password_secret_id of this UpdateKafkaSchemaRegistryConnectionDetails.
+        The `OCID`__ of the Secret where the kafka Ssl KeyStore password is stored.
+        Note: When provided, 'keyStorePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The key_store_password_secret_id of this UpdateKafkaSchemaRegistryConnectionDetails.
+        :rtype: str
+        """
+        return self._key_store_password_secret_id
+
+    @key_store_password_secret_id.setter
+    def key_store_password_secret_id(self, key_store_password_secret_id):
+        """
+        Sets the key_store_password_secret_id of this UpdateKafkaSchemaRegistryConnectionDetails.
+        The `OCID`__ of the Secret where the kafka Ssl KeyStore password is stored.
+        Note: When provided, 'keyStorePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param key_store_password_secret_id: The key_store_password_secret_id of this UpdateKafkaSchemaRegistryConnectionDetails.
+        :type: str
+        """
+        self._key_store_password_secret_id = key_store_password_secret_id
 
     @property
     def ssl_key_password(self):
@@ -395,6 +600,38 @@ class UpdateKafkaSchemaRegistryConnectionDetails(UpdateConnectionDetails):
         :type: str
         """
         self._ssl_key_password = ssl_key_password
+
+    @property
+    def ssl_key_password_secret_id(self):
+        """
+        Gets the ssl_key_password_secret_id of this UpdateKafkaSchemaRegistryConnectionDetails.
+        The `OCID`__ of the Secret that stores the password for the cert inside the KeyStore.
+        In case it differs from the KeyStore password, it should be provided.
+        Note: When provided, 'sslKeyPassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The ssl_key_password_secret_id of this UpdateKafkaSchemaRegistryConnectionDetails.
+        :rtype: str
+        """
+        return self._ssl_key_password_secret_id
+
+    @ssl_key_password_secret_id.setter
+    def ssl_key_password_secret_id(self, ssl_key_password_secret_id):
+        """
+        Sets the ssl_key_password_secret_id of this UpdateKafkaSchemaRegistryConnectionDetails.
+        The `OCID`__ of the Secret that stores the password for the cert inside the KeyStore.
+        In case it differs from the KeyStore password, it should be provided.
+        Note: When provided, 'sslKeyPassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param ssl_key_password_secret_id: The ssl_key_password_secret_id of this UpdateKafkaSchemaRegistryConnectionDetails.
+        :type: str
+        """
+        self._ssl_key_password_secret_id = ssl_key_password_secret_id
 
     @property
     def private_ip(self):

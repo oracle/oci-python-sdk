@@ -71,6 +71,10 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
             Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this CreateOracleConnectionDetails.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this CreateOracleConnectionDetails.
         :type technology_type: str
@@ -83,6 +87,10 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
             The value to assign to the password property of this CreateOracleConnectionDetails.
         :type password: str
 
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this CreateOracleConnectionDetails.
+        :type password_secret_id: str
+
         :param connection_string:
             The value to assign to the connection_string property of this CreateOracleConnectionDetails.
         :type connection_string: str
@@ -94,6 +102,10 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
         :param wallet:
             The value to assign to the wallet property of this CreateOracleConnectionDetails.
         :type wallet: str
+
+        :param wallet_secret_id:
+            The value to assign to the wallet_secret_id property of this CreateOracleConnectionDetails.
+        :type wallet_secret_id: str
 
         :param session_mode:
             The value to assign to the session_mode property of this CreateOracleConnectionDetails.
@@ -121,12 +133,15 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
             'username': 'str',
             'password': 'str',
+            'password_secret_id': 'str',
             'connection_string': 'str',
             'authentication_mode': 'str',
             'wallet': 'str',
+            'wallet_secret_id': 'str',
             'session_mode': 'str',
             'private_ip': 'str',
             'database_id': 'str'
@@ -145,12 +160,15 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
             'username': 'username',
             'password': 'password',
+            'password_secret_id': 'passwordSecretId',
             'connection_string': 'connectionString',
             'authentication_mode': 'authenticationMode',
             'wallet': 'wallet',
+            'wallet_secret_id': 'walletSecretId',
             'session_mode': 'sessionMode',
             'private_ip': 'privateIp',
             'database_id': 'databaseId'
@@ -168,12 +186,15 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._username = None
         self._password = None
+        self._password_secret_id = None
         self._connection_string = None
         self._authentication_mode = None
         self._wallet = None
+        self._wallet_secret_id = None
         self._session_mode = None
         self._private_ip = None
         self._database_id = None
@@ -234,7 +255,7 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
     @property
     def password(self):
         """
-        **[Required]** Gets the password of this CreateOracleConnectionDetails.
+        Gets the password of this CreateOracleConnectionDetails.
         The password Oracle GoldenGate uses to connect the associated system of the given technology.
         It must conform to the specific security requirements including length, case sensitivity, and so on.
 
@@ -256,6 +277,42 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
         :type: str
         """
         self._password = password
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this CreateOracleConnectionDetails.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this CreateOracleConnectionDetails.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this CreateOracleConnectionDetails.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this CreateOracleConnectionDetails.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
 
     @property
     def connection_string(self):
@@ -332,6 +389,38 @@ class CreateOracleConnectionDetails(CreateConnectionDetails):
         :type: str
         """
         self._wallet = wallet
+
+    @property
+    def wallet_secret_id(self):
+        """
+        Gets the wallet_secret_id of this CreateOracleConnectionDetails.
+        The `OCID`__ of the Secret where the wallet file is stored.
+        The wallet contents Oracle GoldenGate uses to make connections to a database.
+        Note: When provided, 'wallet' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The wallet_secret_id of this CreateOracleConnectionDetails.
+        :rtype: str
+        """
+        return self._wallet_secret_id
+
+    @wallet_secret_id.setter
+    def wallet_secret_id(self, wallet_secret_id):
+        """
+        Sets the wallet_secret_id of this CreateOracleConnectionDetails.
+        The `OCID`__ of the Secret where the wallet file is stored.
+        The wallet contents Oracle GoldenGate uses to make connections to a database.
+        Note: When provided, 'wallet' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param wallet_secret_id: The wallet_secret_id of this CreateOracleConnectionDetails.
+        :type: str
+        """
+        self._wallet_secret_id = wallet_secret_id
 
     @property
     def session_mode(self):

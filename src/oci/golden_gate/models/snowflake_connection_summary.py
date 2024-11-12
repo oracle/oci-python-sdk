@@ -99,6 +99,10 @@ class SnowflakeConnectionSummary(ConnectionSummary):
             The value to assign to the locks property of this SnowflakeConnectionSummary.
         :type locks: list[oci.golden_gate.models.ResourceLock]
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this SnowflakeConnectionSummary.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this SnowflakeConnectionSummary.
         :type technology_type: str
@@ -114,6 +118,18 @@ class SnowflakeConnectionSummary(ConnectionSummary):
         :param username:
             The value to assign to the username property of this SnowflakeConnectionSummary.
         :type username: str
+
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this SnowflakeConnectionSummary.
+        :type password_secret_id: str
+
+        :param private_key_file_secret_id:
+            The value to assign to the private_key_file_secret_id property of this SnowflakeConnectionSummary.
+        :type private_key_file_secret_id: str
+
+        :param private_key_passphrase_secret_id:
+            The value to assign to the private_key_passphrase_secret_id property of this SnowflakeConnectionSummary.
+        :type private_key_passphrase_secret_id: str
 
         """
         self.swagger_types = {
@@ -136,10 +152,14 @@ class SnowflakeConnectionSummary(ConnectionSummary):
             'subnet_id': 'str',
             'routing_method': 'str',
             'locks': 'list[ResourceLock]',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
             'connection_url': 'str',
             'authentication_type': 'str',
-            'username': 'str'
+            'username': 'str',
+            'password_secret_id': 'str',
+            'private_key_file_secret_id': 'str',
+            'private_key_passphrase_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -162,10 +182,14 @@ class SnowflakeConnectionSummary(ConnectionSummary):
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
             'locks': 'locks',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
             'connection_url': 'connectionUrl',
             'authentication_type': 'authenticationType',
-            'username': 'username'
+            'username': 'username',
+            'password_secret_id': 'passwordSecretId',
+            'private_key_file_secret_id': 'privateKeyFileSecretId',
+            'private_key_passphrase_secret_id': 'privateKeyPassphraseSecretId'
         }
 
         self._connection_type = None
@@ -187,10 +211,14 @@ class SnowflakeConnectionSummary(ConnectionSummary):
         self._subnet_id = None
         self._routing_method = None
         self._locks = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._connection_url = None
         self._authentication_type = None
         self._username = None
+        self._password_secret_id = None
+        self._private_key_file_secret_id = None
+        self._private_key_passphrase_secret_id = None
         self._connection_type = 'SNOWFLAKE'
 
     @property
@@ -292,6 +320,104 @@ class SnowflakeConnectionSummary(ConnectionSummary):
         :type: str
         """
         self._username = username
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this SnowflakeConnectionSummary.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this SnowflakeConnectionSummary.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this SnowflakeConnectionSummary.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this SnowflakeConnectionSummary.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
+
+    @property
+    def private_key_file_secret_id(self):
+        """
+        Gets the private_key_file_secret_id of this SnowflakeConnectionSummary.
+        The `OCID`__ of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+        See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        Note: When provided, 'privateKeyFile' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The private_key_file_secret_id of this SnowflakeConnectionSummary.
+        :rtype: str
+        """
+        return self._private_key_file_secret_id
+
+    @private_key_file_secret_id.setter
+    def private_key_file_secret_id(self, private_key_file_secret_id):
+        """
+        Sets the private_key_file_secret_id of this SnowflakeConnectionSummary.
+        The `OCID`__ of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+        See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        Note: When provided, 'privateKeyFile' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param private_key_file_secret_id: The private_key_file_secret_id of this SnowflakeConnectionSummary.
+        :type: str
+        """
+        self._private_key_file_secret_id = private_key_file_secret_id
+
+    @property
+    def private_key_passphrase_secret_id(self):
+        """
+        Gets the private_key_passphrase_secret_id of this SnowflakeConnectionSummary.
+        The `OCID`__ of the Secret that stores the password for the private key file.
+        Note: When provided, 'privateKeyPassphrase' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The private_key_passphrase_secret_id of this SnowflakeConnectionSummary.
+        :rtype: str
+        """
+        return self._private_key_passphrase_secret_id
+
+    @private_key_passphrase_secret_id.setter
+    def private_key_passphrase_secret_id(self, private_key_passphrase_secret_id):
+        """
+        Sets the private_key_passphrase_secret_id of this SnowflakeConnectionSummary.
+        The `OCID`__ of the Secret that stores the password for the private key file.
+        Note: When provided, 'privateKeyPassphrase' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param private_key_passphrase_secret_id: The private_key_passphrase_secret_id of this SnowflakeConnectionSummary.
+        :type: str
+        """
+        self._private_key_passphrase_secret_id = private_key_passphrase_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

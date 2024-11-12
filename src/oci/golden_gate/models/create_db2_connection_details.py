@@ -71,6 +71,10 @@ class CreateDb2ConnectionDetails(CreateConnectionDetails):
             Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this CreateDb2ConnectionDetails.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this CreateDb2ConnectionDetails.
         :type technology_type: str
@@ -95,6 +99,10 @@ class CreateDb2ConnectionDetails(CreateConnectionDetails):
             The value to assign to the password property of this CreateDb2ConnectionDetails.
         :type password: str
 
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this CreateDb2ConnectionDetails.
+        :type password_secret_id: str
+
         :param additional_attributes:
             The value to assign to the additional_attributes property of this CreateDb2ConnectionDetails.
         :type additional_attributes: list[oci.golden_gate.models.NameValuePair]
@@ -107,9 +115,17 @@ class CreateDb2ConnectionDetails(CreateConnectionDetails):
             The value to assign to the ssl_client_keystoredb property of this CreateDb2ConnectionDetails.
         :type ssl_client_keystoredb: str
 
+        :param ssl_client_keystoredb_secret_id:
+            The value to assign to the ssl_client_keystoredb_secret_id property of this CreateDb2ConnectionDetails.
+        :type ssl_client_keystoredb_secret_id: str
+
         :param ssl_client_keystash:
             The value to assign to the ssl_client_keystash property of this CreateDb2ConnectionDetails.
         :type ssl_client_keystash: str
+
+        :param ssl_client_keystash_secret_id:
+            The value to assign to the ssl_client_keystash_secret_id property of this CreateDb2ConnectionDetails.
+        :type ssl_client_keystash_secret_id: str
 
         :param ssl_server_certificate:
             The value to assign to the ssl_server_certificate property of this CreateDb2ConnectionDetails.
@@ -129,16 +145,20 @@ class CreateDb2ConnectionDetails(CreateConnectionDetails):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
             'database_name': 'str',
             'host': 'str',
             'port': 'int',
             'username': 'str',
             'password': 'str',
+            'password_secret_id': 'str',
             'additional_attributes': 'list[NameValuePair]',
             'security_protocol': 'str',
             'ssl_client_keystoredb': 'str',
+            'ssl_client_keystoredb_secret_id': 'str',
             'ssl_client_keystash': 'str',
+            'ssl_client_keystash_secret_id': 'str',
             'ssl_server_certificate': 'str'
         }
 
@@ -155,16 +175,20 @@ class CreateDb2ConnectionDetails(CreateConnectionDetails):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
             'database_name': 'databaseName',
             'host': 'host',
             'port': 'port',
             'username': 'username',
             'password': 'password',
+            'password_secret_id': 'passwordSecretId',
             'additional_attributes': 'additionalAttributes',
             'security_protocol': 'securityProtocol',
             'ssl_client_keystoredb': 'sslClientKeystoredb',
+            'ssl_client_keystoredb_secret_id': 'sslClientKeystoredbSecretId',
             'ssl_client_keystash': 'sslClientKeystash',
+            'ssl_client_keystash_secret_id': 'sslClientKeystashSecretId',
             'ssl_server_certificate': 'sslServerCertificate'
         }
 
@@ -180,16 +204,20 @@ class CreateDb2ConnectionDetails(CreateConnectionDetails):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._database_name = None
         self._host = None
         self._port = None
         self._username = None
         self._password = None
+        self._password_secret_id = None
         self._additional_attributes = None
         self._security_protocol = None
         self._ssl_client_keystoredb = None
+        self._ssl_client_keystoredb_secret_id = None
         self._ssl_client_keystash = None
+        self._ssl_client_keystash_secret_id = None
         self._ssl_server_certificate = None
         self._connection_type = 'DB2'
 
@@ -318,7 +346,7 @@ class CreateDb2ConnectionDetails(CreateConnectionDetails):
     @property
     def password(self):
         """
-        **[Required]** Gets the password of this CreateDb2ConnectionDetails.
+        Gets the password of this CreateDb2ConnectionDetails.
         The password Oracle GoldenGate uses to connect the associated DB2 database.
 
 
@@ -338,6 +366,38 @@ class CreateDb2ConnectionDetails(CreateConnectionDetails):
         :type: str
         """
         self._password = password
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this CreateDb2ConnectionDetails.
+        The `OCID`__ of the Secret where the password is stored,
+        that Oracle GoldenGate uses to connect the associated DB2 database.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this CreateDb2ConnectionDetails.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this CreateDb2ConnectionDetails.
+        The `OCID`__ of the Secret where the password is stored,
+        that Oracle GoldenGate uses to connect the associated DB2 database.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this CreateDb2ConnectionDetails.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
 
     @property
     def additional_attributes(self):
@@ -414,6 +474,38 @@ class CreateDb2ConnectionDetails(CreateConnectionDetails):
         self._ssl_client_keystoredb = ssl_client_keystoredb
 
     @property
+    def ssl_client_keystoredb_secret_id(self):
+        """
+        Gets the ssl_client_keystoredb_secret_id of this CreateDb2ConnectionDetails.
+        The `OCID`__ of the Secret where the keystore file stored,
+        which created at the client containing the server certificate / CA root certificate.
+        Note: When provided, 'sslClientKeystoredb' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The ssl_client_keystoredb_secret_id of this CreateDb2ConnectionDetails.
+        :rtype: str
+        """
+        return self._ssl_client_keystoredb_secret_id
+
+    @ssl_client_keystoredb_secret_id.setter
+    def ssl_client_keystoredb_secret_id(self, ssl_client_keystoredb_secret_id):
+        """
+        Sets the ssl_client_keystoredb_secret_id of this CreateDb2ConnectionDetails.
+        The `OCID`__ of the Secret where the keystore file stored,
+        which created at the client containing the server certificate / CA root certificate.
+        Note: When provided, 'sslClientKeystoredb' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param ssl_client_keystoredb_secret_id: The ssl_client_keystoredb_secret_id of this CreateDb2ConnectionDetails.
+        :type: str
+        """
+        self._ssl_client_keystoredb_secret_id = ssl_client_keystoredb_secret_id
+
+    @property
     def ssl_client_keystash(self):
         """
         Gets the ssl_client_keystash of this CreateDb2ConnectionDetails.
@@ -436,6 +528,38 @@ class CreateDb2ConnectionDetails(CreateConnectionDetails):
         :type: str
         """
         self._ssl_client_keystash = ssl_client_keystash
+
+    @property
+    def ssl_client_keystash_secret_id(self):
+        """
+        Gets the ssl_client_keystash_secret_id of this CreateDb2ConnectionDetails.
+        The `OCID`__ of the Secret where the keystash file is stored,
+        which contains the encrypted password to the key database file.
+        Note: When provided, 'sslClientKeystash' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The ssl_client_keystash_secret_id of this CreateDb2ConnectionDetails.
+        :rtype: str
+        """
+        return self._ssl_client_keystash_secret_id
+
+    @ssl_client_keystash_secret_id.setter
+    def ssl_client_keystash_secret_id(self, ssl_client_keystash_secret_id):
+        """
+        Sets the ssl_client_keystash_secret_id of this CreateDb2ConnectionDetails.
+        The `OCID`__ of the Secret where the keystash file is stored,
+        which contains the encrypted password to the key database file.
+        Note: When provided, 'sslClientKeystash' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param ssl_client_keystash_secret_id: The ssl_client_keystash_secret_id of this CreateDb2ConnectionDetails.
+        :type: str
+        """
+        self._ssl_client_keystash_secret_id = ssl_client_keystash_secret_id
 
     @property
     def ssl_server_certificate(self):

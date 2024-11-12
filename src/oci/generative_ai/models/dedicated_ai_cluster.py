@@ -15,7 +15,7 @@ class DedicatedAiCluster(object):
     Dedicated AI clusters are compute resources that you can use for fine-tuning custom models or for hosting endpoints for custom models. The clusters are dedicated to your models and not shared with users in other tenancies.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator who gives OCI resource access to users. See
-    `Getting Started with Policies`__ and `Getting Access to Generative AI Resouces`__.
+    `Getting Started with Policies`__ and `Getting Access to Generative AI Resources`__.
 
     __ https://docs.cloud.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
     __ https://docs.cloud.oracle.com/iaas/Content/generative-ai/iam-policies.htm
@@ -74,6 +74,10 @@ class DedicatedAiCluster(object):
     UNIT_SHAPE_SMALL_COHERE_V2 = "SMALL_COHERE_V2"
 
     #: A constant which can be used with the unit_shape property of a DedicatedAiCluster.
+    #: This constant has a value of "SMALL_COHERE_4"
+    UNIT_SHAPE_SMALL_COHERE_4 = "SMALL_COHERE_4"
+
+    #: A constant which can be used with the unit_shape property of a DedicatedAiCluster.
     #: This constant has a value of "EMBED_COHERE"
     UNIT_SHAPE_EMBED_COHERE = "EMBED_COHERE"
 
@@ -92,6 +96,18 @@ class DedicatedAiCluster(object):
     #: A constant which can be used with the unit_shape property of a DedicatedAiCluster.
     #: This constant has a value of "LARGE_GENERIC_4"
     UNIT_SHAPE_LARGE_GENERIC_4 = "LARGE_GENERIC_4"
+
+    #: A constant which can be used with the unit_shape property of a DedicatedAiCluster.
+    #: This constant has a value of "SMALL_GENERIC_V2"
+    UNIT_SHAPE_SMALL_GENERIC_V2 = "SMALL_GENERIC_V2"
+
+    #: A constant which can be used with the unit_shape property of a DedicatedAiCluster.
+    #: This constant has a value of "LARGE_GENERIC_2"
+    UNIT_SHAPE_LARGE_GENERIC_2 = "LARGE_GENERIC_2"
+
+    #: A constant which can be used with the unit_shape property of a DedicatedAiCluster.
+    #: This constant has a value of "LARGE_GENERIC_V2"
+    UNIT_SHAPE_LARGE_GENERIC_V2 = "LARGE_GENERIC_V2"
 
     def __init__(self, **kwargs):
         """
@@ -144,7 +160,7 @@ class DedicatedAiCluster(object):
 
         :param unit_shape:
             The value to assign to the unit_shape property of this DedicatedAiCluster.
-            Allowed values for this property are: "LARGE_COHERE", "LARGE_COHERE_V2", "SMALL_COHERE", "SMALL_COHERE_V2", "EMBED_COHERE", "LLAMA2_70", "LARGE_GENERIC", "LARGE_COHERE_V2_2", "LARGE_GENERIC_4", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LARGE_COHERE", "LARGE_COHERE_V2", "SMALL_COHERE", "SMALL_COHERE_V2", "SMALL_COHERE_4", "EMBED_COHERE", "LLAMA2_70", "LARGE_GENERIC", "LARGE_COHERE_V2_2", "LARGE_GENERIC_4", "SMALL_GENERIC_V2", "LARGE_GENERIC_2", "LARGE_GENERIC_V2", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type unit_shape: str
 
@@ -486,7 +502,7 @@ class DedicatedAiCluster(object):
         **[Required]** Gets the unit_shape of this DedicatedAiCluster.
         The shape of dedicated unit in this AI cluster. The underlying hardware configuration is hidden from customers.
 
-        Allowed values for this property are: "LARGE_COHERE", "LARGE_COHERE_V2", "SMALL_COHERE", "SMALL_COHERE_V2", "EMBED_COHERE", "LLAMA2_70", "LARGE_GENERIC", "LARGE_COHERE_V2_2", "LARGE_GENERIC_4", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LARGE_COHERE", "LARGE_COHERE_V2", "SMALL_COHERE", "SMALL_COHERE_V2", "SMALL_COHERE_4", "EMBED_COHERE", "LLAMA2_70", "LARGE_GENERIC", "LARGE_COHERE_V2_2", "LARGE_GENERIC_4", "SMALL_GENERIC_V2", "LARGE_GENERIC_2", "LARGE_GENERIC_V2", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -505,7 +521,7 @@ class DedicatedAiCluster(object):
         :param unit_shape: The unit_shape of this DedicatedAiCluster.
         :type: str
         """
-        allowed_values = ["LARGE_COHERE", "LARGE_COHERE_V2", "SMALL_COHERE", "SMALL_COHERE_V2", "EMBED_COHERE", "LLAMA2_70", "LARGE_GENERIC", "LARGE_COHERE_V2_2", "LARGE_GENERIC_4"]
+        allowed_values = ["LARGE_COHERE", "LARGE_COHERE_V2", "SMALL_COHERE", "SMALL_COHERE_V2", "SMALL_COHERE_4", "EMBED_COHERE", "LLAMA2_70", "LARGE_GENERIC", "LARGE_COHERE_V2_2", "LARGE_GENERIC_4", "SMALL_GENERIC_V2", "LARGE_GENERIC_2", "LARGE_GENERIC_V2"]
         if not value_allowed_none_or_none_sentinel(unit_shape, allowed_values):
             unit_shape = 'UNKNOWN_ENUM_VALUE'
         self._unit_shape = unit_shape

@@ -23,7 +23,7 @@ class TextContent(ChatContent):
 
         :param type:
             The value to assign to the type property of this TextContent.
-            Allowed values for this property are: "TEXT"
+            Allowed values for this property are: "TEXT", "IMAGE"
         :type type: str
 
         :param text:

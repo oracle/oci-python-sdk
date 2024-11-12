@@ -71,6 +71,10 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
             Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this CreatePostgresqlConnectionDetails.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this CreatePostgresqlConnectionDetails.
         :type technology_type: str
@@ -94,6 +98,10 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
         :param password:
             The value to assign to the password property of this CreatePostgresqlConnectionDetails.
         :type password: str
+
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this CreatePostgresqlConnectionDetails.
+        :type password_secret_id: str
 
         :param additional_attributes:
             The value to assign to the additional_attributes property of this CreatePostgresqlConnectionDetails.
@@ -123,6 +131,10 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
             The value to assign to the ssl_key property of this CreatePostgresqlConnectionDetails.
         :type ssl_key: str
 
+        :param ssl_key_secret_id:
+            The value to assign to the ssl_key_secret_id property of this CreatePostgresqlConnectionDetails.
+        :type ssl_key_secret_id: str
+
         :param private_ip:
             The value to assign to the private_ip property of this CreatePostgresqlConnectionDetails.
         :type private_ip: str
@@ -145,12 +157,14 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
             'database_name': 'str',
             'host': 'str',
             'port': 'int',
             'username': 'str',
             'password': 'str',
+            'password_secret_id': 'str',
             'additional_attributes': 'list[NameValuePair]',
             'security_protocol': 'str',
             'ssl_mode': 'str',
@@ -158,6 +172,7 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
             'ssl_crl': 'str',
             'ssl_cert': 'str',
             'ssl_key': 'str',
+            'ssl_key_secret_id': 'str',
             'private_ip': 'str',
             'db_system_id': 'str'
         }
@@ -175,12 +190,14 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
             'database_name': 'databaseName',
             'host': 'host',
             'port': 'port',
             'username': 'username',
             'password': 'password',
+            'password_secret_id': 'passwordSecretId',
             'additional_attributes': 'additionalAttributes',
             'security_protocol': 'securityProtocol',
             'ssl_mode': 'sslMode',
@@ -188,6 +205,7 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
             'ssl_crl': 'sslCrl',
             'ssl_cert': 'sslCert',
             'ssl_key': 'sslKey',
+            'ssl_key_secret_id': 'sslKeySecretId',
             'private_ip': 'privateIp',
             'db_system_id': 'dbSystemId'
         }
@@ -204,12 +222,14 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._database_name = None
         self._host = None
         self._port = None
         self._username = None
         self._password = None
+        self._password_secret_id = None
         self._additional_attributes = None
         self._security_protocol = None
         self._ssl_mode = None
@@ -217,6 +237,7 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
         self._ssl_crl = None
         self._ssl_cert = None
         self._ssl_key = None
+        self._ssl_key_secret_id = None
         self._private_ip = None
         self._db_system_id = None
         self._connection_type = 'POSTGRESQL'
@@ -348,7 +369,7 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
     @property
     def password(self):
         """
-        **[Required]** Gets the password of this CreatePostgresqlConnectionDetails.
+        Gets the password of this CreatePostgresqlConnectionDetails.
         The password Oracle GoldenGate uses to connect the associated system of the given technology.
         It must conform to the specific security requirements including length, case sensitivity, and so on.
 
@@ -370,6 +391,42 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
         :type: str
         """
         self._password = password
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this CreatePostgresqlConnectionDetails.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this CreatePostgresqlConnectionDetails.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this CreatePostgresqlConnectionDetails.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this CreatePostgresqlConnectionDetails.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
 
     @property
     def additional_attributes(self):
@@ -542,6 +599,36 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
         :type: str
         """
         self._ssl_key = ssl_key
+
+    @property
+    def ssl_key_secret_id(self):
+        """
+        Gets the ssl_key_secret_id of this CreatePostgresqlConnectionDetails.
+        The `OCID`__ of the Secret that stores the private key of the PostgreSQL server. The supported file formats are .pem and .crt.
+        Note: When provided, 'sslKey' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The ssl_key_secret_id of this CreatePostgresqlConnectionDetails.
+        :rtype: str
+        """
+        return self._ssl_key_secret_id
+
+    @ssl_key_secret_id.setter
+    def ssl_key_secret_id(self, ssl_key_secret_id):
+        """
+        Sets the ssl_key_secret_id of this CreatePostgresqlConnectionDetails.
+        The `OCID`__ of the Secret that stores the private key of the PostgreSQL server. The supported file formats are .pem and .crt.
+        Note: When provided, 'sslKey' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param ssl_key_secret_id: The ssl_key_secret_id of this CreatePostgresqlConnectionDetails.
+        :type: str
+        """
+        self._ssl_key_secret_id = ssl_key_secret_id
 
     @property
     def private_ip(self):

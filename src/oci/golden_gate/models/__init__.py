@@ -77,6 +77,7 @@ from .default_cancel_deployment_backup_details import DefaultCancelDeploymentBac
 from .default_cancel_deployment_upgrade_details import DefaultCancelDeploymentUpgradeDetails
 from .default_cancel_snooze_deployment_upgrade_details import DefaultCancelSnoozeDeploymentUpgradeDetails
 from .default_deployment_wallet_exists_details import DefaultDeploymentWalletExistsDetails
+from .default_refresh_connection_details import DefaultRefreshConnectionDetails
 from .default_restore_deployment_details import DefaultRestoreDeploymentDetails
 from .default_rollback_deployment_upgrade_details import DefaultRollbackDeploymentUpgradeDetails
 from .default_snooze_deployment_upgrade_details import DefaultSnoozeDeploymentUpgradeDetails
@@ -152,6 +153,7 @@ from .postgresql_connection import PostgresqlConnection
 from .postgresql_connection_summary import PostgresqlConnectionSummary
 from .redis_connection import RedisConnection
 from .redis_connection_summary import RedisConnectionSummary
+from .refresh_connection_details import RefreshConnectionDetails
 from .remove_resource_lock_details import RemoveResourceLockDetails
 from .reschedule_deployment_upgrade_details import RescheduleDeploymentUpgradeDetails
 from .reschedule_deployment_upgrade_to_date_details import RescheduleDeploymentUpgradeToDateDetails
@@ -284,6 +286,7 @@ golden_gate_type_mapping = {
     "DefaultCancelDeploymentUpgradeDetails": DefaultCancelDeploymentUpgradeDetails,
     "DefaultCancelSnoozeDeploymentUpgradeDetails": DefaultCancelSnoozeDeploymentUpgradeDetails,
     "DefaultDeploymentWalletExistsDetails": DefaultDeploymentWalletExistsDetails,
+    "DefaultRefreshConnectionDetails": DefaultRefreshConnectionDetails,
     "DefaultRestoreDeploymentDetails": DefaultRestoreDeploymentDetails,
     "DefaultRollbackDeploymentUpgradeDetails": DefaultRollbackDeploymentUpgradeDetails,
     "DefaultSnoozeDeploymentUpgradeDetails": DefaultSnoozeDeploymentUpgradeDetails,
@@ -359,6 +362,7 @@ golden_gate_type_mapping = {
     "PostgresqlConnectionSummary": PostgresqlConnectionSummary,
     "RedisConnection": RedisConnection,
     "RedisConnectionSummary": RedisConnectionSummary,
+    "RefreshConnectionDetails": RefreshConnectionDetails,
     "RemoveResourceLockDetails": RemoveResourceLockDetails,
     "RescheduleDeploymentUpgradeDetails": RescheduleDeploymentUpgradeDetails,
     "RescheduleDeploymentUpgradeToDateDetails": RescheduleDeploymentUpgradeToDateDetails,

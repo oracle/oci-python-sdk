@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+24.11.12 - 24.11.12
+=====================
+* Added unique id to Vault CSVs
+
+=====================
 24.08.27 - 24.08.27
 =====================
 * Added support for Exascale databases

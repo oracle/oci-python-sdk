@@ -99,6 +99,10 @@ class PostgresqlConnectionSummary(ConnectionSummary):
             The value to assign to the locks property of this PostgresqlConnectionSummary.
         :type locks: list[oci.golden_gate.models.ResourceLock]
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this PostgresqlConnectionSummary.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this PostgresqlConnectionSummary.
         :type technology_type: str
@@ -139,6 +143,14 @@ class PostgresqlConnectionSummary(ConnectionSummary):
             The value to assign to the db_system_id property of this PostgresqlConnectionSummary.
         :type db_system_id: str
 
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this PostgresqlConnectionSummary.
+        :type password_secret_id: str
+
+        :param ssl_key_secret_id:
+            The value to assign to the ssl_key_secret_id property of this PostgresqlConnectionSummary.
+        :type ssl_key_secret_id: str
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -160,6 +172,7 @@ class PostgresqlConnectionSummary(ConnectionSummary):
             'subnet_id': 'str',
             'routing_method': 'str',
             'locks': 'list[ResourceLock]',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
             'database_name': 'str',
             'host': 'str',
@@ -169,7 +182,9 @@ class PostgresqlConnectionSummary(ConnectionSummary):
             'security_protocol': 'str',
             'ssl_mode': 'str',
             'private_ip': 'str',
-            'db_system_id': 'str'
+            'db_system_id': 'str',
+            'password_secret_id': 'str',
+            'ssl_key_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -192,6 +207,7 @@ class PostgresqlConnectionSummary(ConnectionSummary):
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
             'locks': 'locks',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
             'database_name': 'databaseName',
             'host': 'host',
@@ -201,7 +217,9 @@ class PostgresqlConnectionSummary(ConnectionSummary):
             'security_protocol': 'securityProtocol',
             'ssl_mode': 'sslMode',
             'private_ip': 'privateIp',
-            'db_system_id': 'dbSystemId'
+            'db_system_id': 'dbSystemId',
+            'password_secret_id': 'passwordSecretId',
+            'ssl_key_secret_id': 'sslKeySecretId'
         }
 
         self._connection_type = None
@@ -223,6 +241,7 @@ class PostgresqlConnectionSummary(ConnectionSummary):
         self._subnet_id = None
         self._routing_method = None
         self._locks = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._database_name = None
         self._host = None
@@ -233,6 +252,8 @@ class PostgresqlConnectionSummary(ConnectionSummary):
         self._ssl_mode = None
         self._private_ip = None
         self._db_system_id = None
+        self._password_secret_id = None
+        self._ssl_key_secret_id = None
         self._connection_type = 'POSTGRESQL'
 
     @property
@@ -498,6 +519,72 @@ class PostgresqlConnectionSummary(ConnectionSummary):
         :type: str
         """
         self._db_system_id = db_system_id
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this PostgresqlConnectionSummary.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this PostgresqlConnectionSummary.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this PostgresqlConnectionSummary.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this PostgresqlConnectionSummary.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
+
+    @property
+    def ssl_key_secret_id(self):
+        """
+        Gets the ssl_key_secret_id of this PostgresqlConnectionSummary.
+        The `OCID`__ of the Secret that stores the private key of the PostgreSQL server. The supported file formats are .pem and .crt.
+        Note: When provided, 'sslKey' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The ssl_key_secret_id of this PostgresqlConnectionSummary.
+        :rtype: str
+        """
+        return self._ssl_key_secret_id
+
+    @ssl_key_secret_id.setter
+    def ssl_key_secret_id(self, ssl_key_secret_id):
+        """
+        Sets the ssl_key_secret_id of this PostgresqlConnectionSummary.
+        The `OCID`__ of the Secret that stores the private key of the PostgreSQL server. The supported file formats are .pem and .crt.
+        Note: When provided, 'sslKey' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param ssl_key_secret_id: The ssl_key_secret_id of this PostgresqlConnectionSummary.
+        :type: str
+        """
+        self._ssl_key_secret_id = ssl_key_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

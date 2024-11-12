@@ -99,6 +99,10 @@ class MicrosoftSqlserverConnectionSummary(ConnectionSummary):
             The value to assign to the locks property of this MicrosoftSqlserverConnectionSummary.
         :type locks: list[oci.golden_gate.models.ResourceLock]
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this MicrosoftSqlserverConnectionSummary.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this MicrosoftSqlserverConnectionSummary.
         :type technology_type: str
@@ -139,6 +143,10 @@ class MicrosoftSqlserverConnectionSummary(ConnectionSummary):
             The value to assign to the private_ip property of this MicrosoftSqlserverConnectionSummary.
         :type private_ip: str
 
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this MicrosoftSqlserverConnectionSummary.
+        :type password_secret_id: str
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -160,6 +168,7 @@ class MicrosoftSqlserverConnectionSummary(ConnectionSummary):
             'subnet_id': 'str',
             'routing_method': 'str',
             'locks': 'list[ResourceLock]',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
             'database_name': 'str',
             'host': 'str',
@@ -169,7 +178,8 @@ class MicrosoftSqlserverConnectionSummary(ConnectionSummary):
             'security_protocol': 'str',
             'ssl_ca': 'str',
             'should_validate_server_certificate': 'bool',
-            'private_ip': 'str'
+            'private_ip': 'str',
+            'password_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -192,6 +202,7 @@ class MicrosoftSqlserverConnectionSummary(ConnectionSummary):
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
             'locks': 'locks',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
             'database_name': 'databaseName',
             'host': 'host',
@@ -201,7 +212,8 @@ class MicrosoftSqlserverConnectionSummary(ConnectionSummary):
             'security_protocol': 'securityProtocol',
             'ssl_ca': 'sslCa',
             'should_validate_server_certificate': 'shouldValidateServerCertificate',
-            'private_ip': 'privateIp'
+            'private_ip': 'privateIp',
+            'password_secret_id': 'passwordSecretId'
         }
 
         self._connection_type = None
@@ -223,6 +235,7 @@ class MicrosoftSqlserverConnectionSummary(ConnectionSummary):
         self._subnet_id = None
         self._routing_method = None
         self._locks = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._database_name = None
         self._host = None
@@ -233,6 +246,7 @@ class MicrosoftSqlserverConnectionSummary(ConnectionSummary):
         self._ssl_ca = None
         self._should_validate_server_certificate = None
         self._private_ip = None
+        self._password_secret_id = None
         self._connection_type = 'MICROSOFT_SQLSERVER'
 
     @property
@@ -494,6 +508,36 @@ class MicrosoftSqlserverConnectionSummary(ConnectionSummary):
         :type: str
         """
         self._private_ip = private_ip
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this MicrosoftSqlserverConnectionSummary.
+        The `OCID`__ of the Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this MicrosoftSqlserverConnectionSummary.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this MicrosoftSqlserverConnectionSummary.
+        The `OCID`__ of the Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this MicrosoftSqlserverConnectionSummary.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

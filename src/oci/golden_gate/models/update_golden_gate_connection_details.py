@@ -63,6 +63,10 @@ class UpdateGoldenGateConnectionDetails(UpdateConnectionDetails):
             Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this UpdateGoldenGateConnectionDetails.
+        :type does_use_secret_ids: bool
+
         :param deployment_id:
             The value to assign to the deployment_id property of this UpdateGoldenGateConnectionDetails.
         :type deployment_id: str
@@ -83,6 +87,10 @@ class UpdateGoldenGateConnectionDetails(UpdateConnectionDetails):
             The value to assign to the password property of this UpdateGoldenGateConnectionDetails.
         :type password: str
 
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this UpdateGoldenGateConnectionDetails.
+        :type password_secret_id: str
+
         :param private_ip:
             The value to assign to the private_ip property of this UpdateGoldenGateConnectionDetails.
         :type private_ip: str
@@ -99,11 +107,13 @@ class UpdateGoldenGateConnectionDetails(UpdateConnectionDetails):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'deployment_id': 'str',
             'host': 'str',
             'port': 'int',
             'username': 'str',
             'password': 'str',
+            'password_secret_id': 'str',
             'private_ip': 'str'
         }
 
@@ -118,11 +128,13 @@ class UpdateGoldenGateConnectionDetails(UpdateConnectionDetails):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'deployment_id': 'deploymentId',
             'host': 'host',
             'port': 'port',
             'username': 'username',
             'password': 'password',
+            'password_secret_id': 'passwordSecretId',
             'private_ip': 'privateIp'
         }
 
@@ -136,11 +148,13 @@ class UpdateGoldenGateConnectionDetails(UpdateConnectionDetails):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._deployment_id = None
         self._host = None
         self._port = None
         self._username = None
         self._password = None
+        self._password_secret_id = None
         self._private_ip = None
         self._connection_type = 'GOLDENGATE'
 
@@ -267,6 +281,38 @@ class UpdateGoldenGateConnectionDetails(UpdateConnectionDetails):
         :type: str
         """
         self._password = password
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this UpdateGoldenGateConnectionDetails.
+        The `OCID`__ of the Secret where the password is stored,
+        which is used to connect to the Oracle GoldenGate accessed trough this connection.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this UpdateGoldenGateConnectionDetails.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this UpdateGoldenGateConnectionDetails.
+        The `OCID`__ of the Secret where the password is stored,
+        which is used to connect to the Oracle GoldenGate accessed trough this connection.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this UpdateGoldenGateConnectionDetails.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
 
     @property
     def private_ip(self):

@@ -99,6 +99,10 @@ class OracleConnectionSummary(ConnectionSummary):
             The value to assign to the locks property of this OracleConnectionSummary.
         :type locks: list[oci.golden_gate.models.ResourceLock]
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this OracleConnectionSummary.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this OracleConnectionSummary.
         :type technology_type: str
@@ -127,6 +131,14 @@ class OracleConnectionSummary(ConnectionSummary):
             The value to assign to the database_id property of this OracleConnectionSummary.
         :type database_id: str
 
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this OracleConnectionSummary.
+        :type password_secret_id: str
+
+        :param wallet_secret_id:
+            The value to assign to the wallet_secret_id property of this OracleConnectionSummary.
+        :type wallet_secret_id: str
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -148,13 +160,16 @@ class OracleConnectionSummary(ConnectionSummary):
             'subnet_id': 'str',
             'routing_method': 'str',
             'locks': 'list[ResourceLock]',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
             'username': 'str',
             'connection_string': 'str',
             'authentication_mode': 'str',
             'session_mode': 'str',
             'private_ip': 'str',
-            'database_id': 'str'
+            'database_id': 'str',
+            'password_secret_id': 'str',
+            'wallet_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -177,13 +192,16 @@ class OracleConnectionSummary(ConnectionSummary):
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
             'locks': 'locks',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
             'username': 'username',
             'connection_string': 'connectionString',
             'authentication_mode': 'authenticationMode',
             'session_mode': 'sessionMode',
             'private_ip': 'privateIp',
-            'database_id': 'databaseId'
+            'database_id': 'databaseId',
+            'password_secret_id': 'passwordSecretId',
+            'wallet_secret_id': 'walletSecretId'
         }
 
         self._connection_type = None
@@ -205,6 +223,7 @@ class OracleConnectionSummary(ConnectionSummary):
         self._subnet_id = None
         self._routing_method = None
         self._locks = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._username = None
         self._connection_string = None
@@ -212,6 +231,8 @@ class OracleConnectionSummary(ConnectionSummary):
         self._session_mode = None
         self._private_ip = None
         self._database_id = None
+        self._password_secret_id = None
+        self._wallet_secret_id = None
         self._connection_type = 'ORACLE'
 
     @property
@@ -411,6 +432,74 @@ class OracleConnectionSummary(ConnectionSummary):
         :type: str
         """
         self._database_id = database_id
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this OracleConnectionSummary.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this OracleConnectionSummary.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this OracleConnectionSummary.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this OracleConnectionSummary.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
+
+    @property
+    def wallet_secret_id(self):
+        """
+        Gets the wallet_secret_id of this OracleConnectionSummary.
+        The `OCID`__ of the Secret where the wallet file is stored.
+        The wallet contents Oracle GoldenGate uses to make connections to a database.
+        Note: When provided, 'wallet' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The wallet_secret_id of this OracleConnectionSummary.
+        :rtype: str
+        """
+        return self._wallet_secret_id
+
+    @wallet_secret_id.setter
+    def wallet_secret_id(self, wallet_secret_id):
+        """
+        Sets the wallet_secret_id of this OracleConnectionSummary.
+        The `OCID`__ of the Secret where the wallet file is stored.
+        The wallet contents Oracle GoldenGate uses to make connections to a database.
+        Note: When provided, 'wallet' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param wallet_secret_id: The wallet_secret_id of this OracleConnectionSummary.
+        :type: str
+        """
+        self._wallet_secret_id = wallet_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

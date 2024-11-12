@@ -99,6 +99,10 @@ class Db2ConnectionSummary(ConnectionSummary):
             The value to assign to the locks property of this Db2ConnectionSummary.
         :type locks: list[oci.golden_gate.models.ResourceLock]
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this Db2ConnectionSummary.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this Db2ConnectionSummary.
         :type technology_type: str
@@ -127,6 +131,18 @@ class Db2ConnectionSummary(ConnectionSummary):
             The value to assign to the security_protocol property of this Db2ConnectionSummary.
         :type security_protocol: str
 
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this Db2ConnectionSummary.
+        :type password_secret_id: str
+
+        :param ssl_client_keystoredb_secret_id:
+            The value to assign to the ssl_client_keystoredb_secret_id property of this Db2ConnectionSummary.
+        :type ssl_client_keystoredb_secret_id: str
+
+        :param ssl_client_keystash_secret_id:
+            The value to assign to the ssl_client_keystash_secret_id property of this Db2ConnectionSummary.
+        :type ssl_client_keystash_secret_id: str
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -148,13 +164,17 @@ class Db2ConnectionSummary(ConnectionSummary):
             'subnet_id': 'str',
             'routing_method': 'str',
             'locks': 'list[ResourceLock]',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
             'database_name': 'str',
             'host': 'str',
             'port': 'int',
             'username': 'str',
             'additional_attributes': 'list[NameValuePair]',
-            'security_protocol': 'str'
+            'security_protocol': 'str',
+            'password_secret_id': 'str',
+            'ssl_client_keystoredb_secret_id': 'str',
+            'ssl_client_keystash_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -177,13 +197,17 @@ class Db2ConnectionSummary(ConnectionSummary):
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
             'locks': 'locks',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
             'database_name': 'databaseName',
             'host': 'host',
             'port': 'port',
             'username': 'username',
             'additional_attributes': 'additionalAttributes',
-            'security_protocol': 'securityProtocol'
+            'security_protocol': 'securityProtocol',
+            'password_secret_id': 'passwordSecretId',
+            'ssl_client_keystoredb_secret_id': 'sslClientKeystoredbSecretId',
+            'ssl_client_keystash_secret_id': 'sslClientKeystashSecretId'
         }
 
         self._connection_type = None
@@ -205,6 +229,7 @@ class Db2ConnectionSummary(ConnectionSummary):
         self._subnet_id = None
         self._routing_method = None
         self._locks = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._database_name = None
         self._host = None
@@ -212,6 +237,9 @@ class Db2ConnectionSummary(ConnectionSummary):
         self._username = None
         self._additional_attributes = None
         self._security_protocol = None
+        self._password_secret_id = None
+        self._ssl_client_keystoredb_secret_id = None
+        self._ssl_client_keystash_secret_id = None
         self._connection_type = 'DB2'
 
     @property
@@ -385,6 +413,102 @@ class Db2ConnectionSummary(ConnectionSummary):
         :type: str
         """
         self._security_protocol = security_protocol
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this Db2ConnectionSummary.
+        The `OCID`__ of the Secret where the password is stored,
+        that Oracle GoldenGate uses to connect the associated DB2 database.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this Db2ConnectionSummary.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this Db2ConnectionSummary.
+        The `OCID`__ of the Secret where the password is stored,
+        that Oracle GoldenGate uses to connect the associated DB2 database.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this Db2ConnectionSummary.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
+
+    @property
+    def ssl_client_keystoredb_secret_id(self):
+        """
+        Gets the ssl_client_keystoredb_secret_id of this Db2ConnectionSummary.
+        The `OCID`__ of the Secret where the keystore file stored,
+        which created at the client containing the server certificate / CA root certificate.
+        Note: When provided, 'sslClientKeystoredb' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The ssl_client_keystoredb_secret_id of this Db2ConnectionSummary.
+        :rtype: str
+        """
+        return self._ssl_client_keystoredb_secret_id
+
+    @ssl_client_keystoredb_secret_id.setter
+    def ssl_client_keystoredb_secret_id(self, ssl_client_keystoredb_secret_id):
+        """
+        Sets the ssl_client_keystoredb_secret_id of this Db2ConnectionSummary.
+        The `OCID`__ of the Secret where the keystore file stored,
+        which created at the client containing the server certificate / CA root certificate.
+        Note: When provided, 'sslClientKeystoredb' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param ssl_client_keystoredb_secret_id: The ssl_client_keystoredb_secret_id of this Db2ConnectionSummary.
+        :type: str
+        """
+        self._ssl_client_keystoredb_secret_id = ssl_client_keystoredb_secret_id
+
+    @property
+    def ssl_client_keystash_secret_id(self):
+        """
+        Gets the ssl_client_keystash_secret_id of this Db2ConnectionSummary.
+        The `OCID`__ of the Secret where the keystash file is stored,
+        which contains the encrypted password to the key database file.
+        Note: When provided, 'sslClientKeystash' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The ssl_client_keystash_secret_id of this Db2ConnectionSummary.
+        :rtype: str
+        """
+        return self._ssl_client_keystash_secret_id
+
+    @ssl_client_keystash_secret_id.setter
+    def ssl_client_keystash_secret_id(self, ssl_client_keystash_secret_id):
+        """
+        Sets the ssl_client_keystash_secret_id of this Db2ConnectionSummary.
+        The `OCID`__ of the Secret where the keystash file is stored,
+        which contains the encrypted password to the key database file.
+        Note: When provided, 'sslClientKeystash' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param ssl_client_keystash_secret_id: The ssl_client_keystash_secret_id of this Db2ConnectionSummary.
+        :type: str
+        """
+        self._ssl_client_keystash_secret_id = ssl_client_keystash_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -15,7 +15,7 @@ class Endpoint(object):
     To host a custom model for inference, create an endpoint for that model on a dedicated AI cluster of type HOSTING.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator who gives OCI resource access to users. See
-    `Getting Started with Policies`__ and `Getting Access to Generative AI Resouces`__.
+    `Getting Started with Policies`__ and `Getting Access to Generative AI Resources`__.
 
     __ https://docs.cloud.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm
     __ https://docs.cloud.oracle.com/iaas/Content/generative-ai/iam-policies.htm
