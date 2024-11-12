@@ -261,6 +261,10 @@ class Connection(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this Connection.
+        :type does_use_secret_ids: bool
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -281,7 +285,8 @@ class Connection(object):
             'ingress_ips': 'list[IngressIpDetails]',
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
-            'routing_method': 'str'
+            'routing_method': 'str',
+            'does_use_secret_ids': 'bool'
         }
 
         self.attribute_map = {
@@ -303,7 +308,8 @@ class Connection(object):
             'ingress_ips': 'ingressIps',
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
-            'routing_method': 'routingMethod'
+            'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds'
         }
 
         self._connection_type = None
@@ -325,6 +331,7 @@ class Connection(object):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -945,6 +952,30 @@ class Connection(object):
         if not value_allowed_none_or_none_sentinel(routing_method, allowed_values):
             routing_method = 'UNKNOWN_ENUM_VALUE'
         self._routing_method = routing_method
+
+    @property
+    def does_use_secret_ids(self):
+        """
+        Gets the does_use_secret_ids of this Connection.
+        Indicates that sensitive attributes are provided via Secrets.
+
+
+        :return: The does_use_secret_ids of this Connection.
+        :rtype: bool
+        """
+        return self._does_use_secret_ids
+
+    @does_use_secret_ids.setter
+    def does_use_secret_ids(self, does_use_secret_ids):
+        """
+        Sets the does_use_secret_ids of this Connection.
+        Indicates that sensitive attributes are provided via Secrets.
+
+
+        :param does_use_secret_ids: The does_use_secret_ids of this Connection.
+        :type: bool
+        """
+        self._does_use_secret_ids = does_use_secret_ids
 
     def __repr__(self):
         return formatted_flat_dict(self)

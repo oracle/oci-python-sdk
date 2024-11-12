@@ -63,6 +63,10 @@ class UpdateRedisConnectionDetails(UpdateConnectionDetails):
             Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this UpdateRedisConnectionDetails.
+        :type does_use_secret_ids: bool
+
         :param servers:
             The value to assign to the servers property of this UpdateRedisConnectionDetails.
         :type servers: str
@@ -83,21 +87,41 @@ class UpdateRedisConnectionDetails(UpdateConnectionDetails):
             The value to assign to the password property of this UpdateRedisConnectionDetails.
         :type password: str
 
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this UpdateRedisConnectionDetails.
+        :type password_secret_id: str
+
         :param trust_store:
             The value to assign to the trust_store property of this UpdateRedisConnectionDetails.
         :type trust_store: str
+
+        :param trust_store_secret_id:
+            The value to assign to the trust_store_secret_id property of this UpdateRedisConnectionDetails.
+        :type trust_store_secret_id: str
 
         :param trust_store_password:
             The value to assign to the trust_store_password property of this UpdateRedisConnectionDetails.
         :type trust_store_password: str
 
+        :param trust_store_password_secret_id:
+            The value to assign to the trust_store_password_secret_id property of this UpdateRedisConnectionDetails.
+        :type trust_store_password_secret_id: str
+
         :param key_store:
             The value to assign to the key_store property of this UpdateRedisConnectionDetails.
         :type key_store: str
 
+        :param key_store_secret_id:
+            The value to assign to the key_store_secret_id property of this UpdateRedisConnectionDetails.
+        :type key_store_secret_id: str
+
         :param key_store_password:
             The value to assign to the key_store_password property of this UpdateRedisConnectionDetails.
         :type key_store_password: str
+
+        :param key_store_password_secret_id:
+            The value to assign to the key_store_password_secret_id property of this UpdateRedisConnectionDetails.
+        :type key_store_password_secret_id: str
 
         :param redis_cluster_id:
             The value to assign to the redis_cluster_id property of this UpdateRedisConnectionDetails.
@@ -115,15 +139,21 @@ class UpdateRedisConnectionDetails(UpdateConnectionDetails):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'servers': 'str',
             'security_protocol': 'str',
             'authentication_type': 'str',
             'username': 'str',
             'password': 'str',
+            'password_secret_id': 'str',
             'trust_store': 'str',
+            'trust_store_secret_id': 'str',
             'trust_store_password': 'str',
+            'trust_store_password_secret_id': 'str',
             'key_store': 'str',
+            'key_store_secret_id': 'str',
             'key_store_password': 'str',
+            'key_store_password_secret_id': 'str',
             'redis_cluster_id': 'str'
         }
 
@@ -138,15 +168,21 @@ class UpdateRedisConnectionDetails(UpdateConnectionDetails):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'servers': 'servers',
             'security_protocol': 'securityProtocol',
             'authentication_type': 'authenticationType',
             'username': 'username',
             'password': 'password',
+            'password_secret_id': 'passwordSecretId',
             'trust_store': 'trustStore',
+            'trust_store_secret_id': 'trustStoreSecretId',
             'trust_store_password': 'trustStorePassword',
+            'trust_store_password_secret_id': 'trustStorePasswordSecretId',
             'key_store': 'keyStore',
+            'key_store_secret_id': 'keyStoreSecretId',
             'key_store_password': 'keyStorePassword',
+            'key_store_password_secret_id': 'keyStorePasswordSecretId',
             'redis_cluster_id': 'redisClusterId'
         }
 
@@ -160,15 +196,21 @@ class UpdateRedisConnectionDetails(UpdateConnectionDetails):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._servers = None
         self._security_protocol = None
         self._authentication_type = None
         self._username = None
         self._password = None
+        self._password_secret_id = None
         self._trust_store = None
+        self._trust_store_secret_id = None
         self._trust_store_password = None
+        self._trust_store_password_secret_id = None
         self._key_store = None
+        self._key_store_secret_id = None
         self._key_store_password = None
+        self._key_store_password_secret_id = None
         self._redis_cluster_id = None
         self._connection_type = 'REDIS'
 
@@ -305,6 +347,42 @@ class UpdateRedisConnectionDetails(UpdateConnectionDetails):
         self._password = password
 
     @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this UpdateRedisConnectionDetails.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this UpdateRedisConnectionDetails.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this UpdateRedisConnectionDetails.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this UpdateRedisConnectionDetails.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
+
+    @property
     def trust_store(self):
         """
         Gets the trust_store of this UpdateRedisConnectionDetails.
@@ -327,6 +405,36 @@ class UpdateRedisConnectionDetails(UpdateConnectionDetails):
         :type: str
         """
         self._trust_store = trust_store
+
+    @property
+    def trust_store_secret_id(self):
+        """
+        Gets the trust_store_secret_id of this UpdateRedisConnectionDetails.
+        The `OCID`__ of the Secret that stores the content of the TrustStore file.
+        Note: When provided, 'trustStore' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The trust_store_secret_id of this UpdateRedisConnectionDetails.
+        :rtype: str
+        """
+        return self._trust_store_secret_id
+
+    @trust_store_secret_id.setter
+    def trust_store_secret_id(self, trust_store_secret_id):
+        """
+        Sets the trust_store_secret_id of this UpdateRedisConnectionDetails.
+        The `OCID`__ of the Secret that stores the content of the TrustStore file.
+        Note: When provided, 'trustStore' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param trust_store_secret_id: The trust_store_secret_id of this UpdateRedisConnectionDetails.
+        :type: str
+        """
+        self._trust_store_secret_id = trust_store_secret_id
 
     @property
     def trust_store_password(self):
@@ -353,6 +461,36 @@ class UpdateRedisConnectionDetails(UpdateConnectionDetails):
         self._trust_store_password = trust_store_password
 
     @property
+    def trust_store_password_secret_id(self):
+        """
+        Gets the trust_store_password_secret_id of this UpdateRedisConnectionDetails.
+        The `OCID`__ of the Secret where the Redis TrustStore password is stored.
+        Note: When provided, 'trustStorePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The trust_store_password_secret_id of this UpdateRedisConnectionDetails.
+        :rtype: str
+        """
+        return self._trust_store_password_secret_id
+
+    @trust_store_password_secret_id.setter
+    def trust_store_password_secret_id(self, trust_store_password_secret_id):
+        """
+        Sets the trust_store_password_secret_id of this UpdateRedisConnectionDetails.
+        The `OCID`__ of the Secret where the Redis TrustStore password is stored.
+        Note: When provided, 'trustStorePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param trust_store_password_secret_id: The trust_store_password_secret_id of this UpdateRedisConnectionDetails.
+        :type: str
+        """
+        self._trust_store_password_secret_id = trust_store_password_secret_id
+
+    @property
     def key_store(self):
         """
         Gets the key_store of this UpdateRedisConnectionDetails.
@@ -377,6 +515,36 @@ class UpdateRedisConnectionDetails(UpdateConnectionDetails):
         self._key_store = key_store
 
     @property
+    def key_store_secret_id(self):
+        """
+        Gets the key_store_secret_id of this UpdateRedisConnectionDetails.
+        The `OCID`__ of the Secret that stores the content of the KeyStore file.
+        Note: When provided, 'keyStore' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The key_store_secret_id of this UpdateRedisConnectionDetails.
+        :rtype: str
+        """
+        return self._key_store_secret_id
+
+    @key_store_secret_id.setter
+    def key_store_secret_id(self, key_store_secret_id):
+        """
+        Sets the key_store_secret_id of this UpdateRedisConnectionDetails.
+        The `OCID`__ of the Secret that stores the content of the KeyStore file.
+        Note: When provided, 'keyStore' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param key_store_secret_id: The key_store_secret_id of this UpdateRedisConnectionDetails.
+        :type: str
+        """
+        self._key_store_secret_id = key_store_secret_id
+
+    @property
     def key_store_password(self):
         """
         Gets the key_store_password of this UpdateRedisConnectionDetails.
@@ -399,6 +567,36 @@ class UpdateRedisConnectionDetails(UpdateConnectionDetails):
         :type: str
         """
         self._key_store_password = key_store_password
+
+    @property
+    def key_store_password_secret_id(self):
+        """
+        Gets the key_store_password_secret_id of this UpdateRedisConnectionDetails.
+        The `OCID`__ of the Secret where the Redis KeyStore password is stored.
+        Note: When provided, 'keyStorePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The key_store_password_secret_id of this UpdateRedisConnectionDetails.
+        :rtype: str
+        """
+        return self._key_store_password_secret_id
+
+    @key_store_password_secret_id.setter
+    def key_store_password_secret_id(self, key_store_password_secret_id):
+        """
+        Sets the key_store_password_secret_id of this UpdateRedisConnectionDetails.
+        The `OCID`__ of the Secret where the Redis KeyStore password is stored.
+        Note: When provided, 'keyStorePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param key_store_password_secret_id: The key_store_password_secret_id of this UpdateRedisConnectionDetails.
+        :type: str
+        """
+        self._key_store_password_secret_id = key_store_password_secret_id
 
     @property
     def redis_cluster_id(self):

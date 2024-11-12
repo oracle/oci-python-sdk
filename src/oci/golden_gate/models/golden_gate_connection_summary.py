@@ -99,6 +99,10 @@ class GoldenGateConnectionSummary(ConnectionSummary):
             The value to assign to the locks property of this GoldenGateConnectionSummary.
         :type locks: list[oci.golden_gate.models.ResourceLock]
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this GoldenGateConnectionSummary.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this GoldenGateConnectionSummary.
         :type technology_type: str
@@ -123,6 +127,10 @@ class GoldenGateConnectionSummary(ConnectionSummary):
             The value to assign to the private_ip property of this GoldenGateConnectionSummary.
         :type private_ip: str
 
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this GoldenGateConnectionSummary.
+        :type password_secret_id: str
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -144,12 +152,14 @@ class GoldenGateConnectionSummary(ConnectionSummary):
             'subnet_id': 'str',
             'routing_method': 'str',
             'locks': 'list[ResourceLock]',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
             'deployment_id': 'str',
             'host': 'str',
             'port': 'int',
             'username': 'str',
-            'private_ip': 'str'
+            'private_ip': 'str',
+            'password_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -172,12 +182,14 @@ class GoldenGateConnectionSummary(ConnectionSummary):
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
             'locks': 'locks',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
             'deployment_id': 'deploymentId',
             'host': 'host',
             'port': 'port',
             'username': 'username',
-            'private_ip': 'privateIp'
+            'private_ip': 'privateIp',
+            'password_secret_id': 'passwordSecretId'
         }
 
         self._connection_type = None
@@ -199,12 +211,14 @@ class GoldenGateConnectionSummary(ConnectionSummary):
         self._subnet_id = None
         self._routing_method = None
         self._locks = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._deployment_id = None
         self._host = None
         self._port = None
         self._username = None
         self._private_ip = None
+        self._password_secret_id = None
         self._connection_type = 'GOLDENGATE'
 
     @property
@@ -368,6 +382,38 @@ class GoldenGateConnectionSummary(ConnectionSummary):
         :type: str
         """
         self._private_ip = private_ip
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this GoldenGateConnectionSummary.
+        The `OCID`__ of the Secret where the password is stored,
+        which is used to connect to the Oracle GoldenGate accessed trough this connection.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this GoldenGateConnectionSummary.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this GoldenGateConnectionSummary.
+        The `OCID`__ of the Secret where the password is stored,
+        which is used to connect to the Oracle GoldenGate accessed trough this connection.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this GoldenGateConnectionSummary.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

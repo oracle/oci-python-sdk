@@ -34,6 +34,9 @@ Generative Ai Inference
     oci.generative_ai_inference.models.CohereLlmInferenceResponse
     oci.generative_ai_inference.models.CohereMessage
     oci.generative_ai_inference.models.CohereParameterDefinition
+    oci.generative_ai_inference.models.CohereResponseFormat
+    oci.generative_ai_inference.models.CohereResponseJsonFormat
+    oci.generative_ai_inference.models.CohereResponseTextFormat
     oci.generative_ai_inference.models.CohereSystemMessage
     oci.generative_ai_inference.models.CohereTool
     oci.generative_ai_inference.models.CohereToolCall
@@ -48,6 +51,8 @@ Generative Ai Inference
     oci.generative_ai_inference.models.GeneratedText
     oci.generative_ai_inference.models.GenericChatRequest
     oci.generative_ai_inference.models.GenericChatResponse
+    oci.generative_ai_inference.models.ImageContent
+    oci.generative_ai_inference.models.ImageUrl
     oci.generative_ai_inference.models.LlamaLlmInferenceRequest
     oci.generative_ai_inference.models.LlamaLlmInferenceResponse
     oci.generative_ai_inference.models.LlmInferenceRequest

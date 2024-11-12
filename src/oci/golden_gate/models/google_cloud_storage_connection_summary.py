@@ -99,9 +99,17 @@ class GoogleCloudStorageConnectionSummary(ConnectionSummary):
             The value to assign to the locks property of this GoogleCloudStorageConnectionSummary.
         :type locks: list[oci.golden_gate.models.ResourceLock]
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this GoogleCloudStorageConnectionSummary.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this GoogleCloudStorageConnectionSummary.
         :type technology_type: str
+
+        :param service_account_key_file_secret_id:
+            The value to assign to the service_account_key_file_secret_id property of this GoogleCloudStorageConnectionSummary.
+        :type service_account_key_file_secret_id: str
 
         """
         self.swagger_types = {
@@ -124,7 +132,9 @@ class GoogleCloudStorageConnectionSummary(ConnectionSummary):
             'subnet_id': 'str',
             'routing_method': 'str',
             'locks': 'list[ResourceLock]',
-            'technology_type': 'str'
+            'does_use_secret_ids': 'bool',
+            'technology_type': 'str',
+            'service_account_key_file_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -147,7 +157,9 @@ class GoogleCloudStorageConnectionSummary(ConnectionSummary):
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
             'locks': 'locks',
-            'technology_type': 'technologyType'
+            'does_use_secret_ids': 'doesUseSecretIds',
+            'technology_type': 'technologyType',
+            'service_account_key_file_secret_id': 'serviceAccountKeyFileSecretId'
         }
 
         self._connection_type = None
@@ -169,7 +181,9 @@ class GoogleCloudStorageConnectionSummary(ConnectionSummary):
         self._subnet_id = None
         self._routing_method = None
         self._locks = None
+        self._does_use_secret_ids = None
         self._technology_type = None
+        self._service_account_key_file_secret_id = None
         self._connection_type = 'GOOGLE_CLOUD_STORAGE'
 
     @property
@@ -195,6 +209,38 @@ class GoogleCloudStorageConnectionSummary(ConnectionSummary):
         :type: str
         """
         self._technology_type = technology_type
+
+    @property
+    def service_account_key_file_secret_id(self):
+        """
+        Gets the service_account_key_file_secret_id of this GoogleCloudStorageConnectionSummary.
+        The `OCID`__ of the Secret where the content of the service account key file is stored,
+        which containing the credentials required to use Google Cloud Storage.
+        Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The service_account_key_file_secret_id of this GoogleCloudStorageConnectionSummary.
+        :rtype: str
+        """
+        return self._service_account_key_file_secret_id
+
+    @service_account_key_file_secret_id.setter
+    def service_account_key_file_secret_id(self, service_account_key_file_secret_id):
+        """
+        Sets the service_account_key_file_secret_id of this GoogleCloudStorageConnectionSummary.
+        The `OCID`__ of the Secret where the content of the service account key file is stored,
+        which containing the credentials required to use Google Cloud Storage.
+        Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param service_account_key_file_secret_id: The service_account_key_file_secret_id of this GoogleCloudStorageConnectionSummary.
+        :type: str
+        """
+        self._service_account_key_file_secret_id = service_account_key_file_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

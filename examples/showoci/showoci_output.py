@@ -22,7 +22,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "24.08.27"
+    version = "24.11.12"
 
     ##########################################################################
     # spaces for align
@@ -9356,7 +9356,8 @@ class ShowOCICSV(object):
                         'software_key_version_count': ar['software_key_version_count'],
                         'time_created': ar['time_created'][0:16],
                         'lifecycle_state': ar['lifecycle_state'],
-                        'id': ar['id'],
+                        'vault_id': ar['id'],
+                        'id': ar['id'] + ":" + region_name,
                         'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(ar['defined_tags'])
                     }

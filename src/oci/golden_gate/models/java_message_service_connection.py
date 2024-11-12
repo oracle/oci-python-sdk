@@ -127,6 +127,10 @@ class JavaMessageServiceConnection(Connection):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this JavaMessageServiceConnection.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this JavaMessageServiceConnection.
             Allowed values for this property are: "ORACLE_WEBLOGIC_JMS", 'UNKNOWN_ENUM_VALUE'.
@@ -181,6 +185,34 @@ class JavaMessageServiceConnection(Connection):
             The value to assign to the private_ip property of this JavaMessageServiceConnection.
         :type private_ip: str
 
+        :param jndi_security_credentials_secret_id:
+            The value to assign to the jndi_security_credentials_secret_id property of this JavaMessageServiceConnection.
+        :type jndi_security_credentials_secret_id: str
+
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this JavaMessageServiceConnection.
+        :type password_secret_id: str
+
+        :param trust_store_secret_id:
+            The value to assign to the trust_store_secret_id property of this JavaMessageServiceConnection.
+        :type trust_store_secret_id: str
+
+        :param trust_store_password_secret_id:
+            The value to assign to the trust_store_password_secret_id property of this JavaMessageServiceConnection.
+        :type trust_store_password_secret_id: str
+
+        :param key_store_secret_id:
+            The value to assign to the key_store_secret_id property of this JavaMessageServiceConnection.
+        :type key_store_secret_id: str
+
+        :param key_store_password_secret_id:
+            The value to assign to the key_store_password_secret_id property of this JavaMessageServiceConnection.
+        :type key_store_password_secret_id: str
+
+        :param ssl_key_password_secret_id:
+            The value to assign to the ssl_key_password_secret_id property of this JavaMessageServiceConnection.
+        :type ssl_key_password_secret_id: str
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -202,6 +234,7 @@ class JavaMessageServiceConnection(Connection):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
             'should_use_jndi': 'bool',
             'jndi_connection_factory': 'str',
@@ -213,7 +246,14 @@ class JavaMessageServiceConnection(Connection):
             'security_protocol': 'str',
             'authentication_type': 'str',
             'username': 'str',
-            'private_ip': 'str'
+            'private_ip': 'str',
+            'jndi_security_credentials_secret_id': 'str',
+            'password_secret_id': 'str',
+            'trust_store_secret_id': 'str',
+            'trust_store_password_secret_id': 'str',
+            'key_store_secret_id': 'str',
+            'key_store_password_secret_id': 'str',
+            'ssl_key_password_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -236,6 +276,7 @@ class JavaMessageServiceConnection(Connection):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
             'should_use_jndi': 'shouldUseJndi',
             'jndi_connection_factory': 'jndiConnectionFactory',
@@ -247,7 +288,14 @@ class JavaMessageServiceConnection(Connection):
             'security_protocol': 'securityProtocol',
             'authentication_type': 'authenticationType',
             'username': 'username',
-            'private_ip': 'privateIp'
+            'private_ip': 'privateIp',
+            'jndi_security_credentials_secret_id': 'jndiSecurityCredentialsSecretId',
+            'password_secret_id': 'passwordSecretId',
+            'trust_store_secret_id': 'trustStoreSecretId',
+            'trust_store_password_secret_id': 'trustStorePasswordSecretId',
+            'key_store_secret_id': 'keyStoreSecretId',
+            'key_store_password_secret_id': 'keyStorePasswordSecretId',
+            'ssl_key_password_secret_id': 'sslKeyPasswordSecretId'
         }
 
         self._connection_type = None
@@ -269,6 +317,7 @@ class JavaMessageServiceConnection(Connection):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._should_use_jndi = None
         self._jndi_connection_factory = None
@@ -281,6 +330,13 @@ class JavaMessageServiceConnection(Connection):
         self._authentication_type = None
         self._username = None
         self._private_ip = None
+        self._jndi_security_credentials_secret_id = None
+        self._password_secret_id = None
+        self._trust_store_secret_id = None
+        self._trust_store_password_secret_id = None
+        self._key_store_secret_id = None
+        self._key_store_password_secret_id = None
+        self._ssl_key_password_secret_id = None
         self._connection_type = 'JAVA_MESSAGE_SERVICE'
 
     @property
@@ -624,6 +680,220 @@ class JavaMessageServiceConnection(Connection):
         :type: str
         """
         self._private_ip = private_ip
+
+    @property
+    def jndi_security_credentials_secret_id(self):
+        """
+        Gets the jndi_security_credentials_secret_id of this JavaMessageServiceConnection.
+        The `OCID`__ of the Secret where the security credentials are stored associated to the principal.
+        Note: When provided, 'jndiSecurityCredentials' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The jndi_security_credentials_secret_id of this JavaMessageServiceConnection.
+        :rtype: str
+        """
+        return self._jndi_security_credentials_secret_id
+
+    @jndi_security_credentials_secret_id.setter
+    def jndi_security_credentials_secret_id(self, jndi_security_credentials_secret_id):
+        """
+        Sets the jndi_security_credentials_secret_id of this JavaMessageServiceConnection.
+        The `OCID`__ of the Secret where the security credentials are stored associated to the principal.
+        Note: When provided, 'jndiSecurityCredentials' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param jndi_security_credentials_secret_id: The jndi_security_credentials_secret_id of this JavaMessageServiceConnection.
+        :type: str
+        """
+        self._jndi_security_credentials_secret_id = jndi_security_credentials_secret_id
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this JavaMessageServiceConnection.
+        The `OCID`__ of the Secret where the password is stored,
+        that Oracle GoldenGate uses to connect the associated Java Message Service.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this JavaMessageServiceConnection.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this JavaMessageServiceConnection.
+        The `OCID`__ of the Secret where the password is stored,
+        that Oracle GoldenGate uses to connect the associated Java Message Service.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this JavaMessageServiceConnection.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
+
+    @property
+    def trust_store_secret_id(self):
+        """
+        Gets the trust_store_secret_id of this JavaMessageServiceConnection.
+        The `OCID`__ of the Secret where the content of the TrustStore file is stored.
+        Note: When provided, 'trustStore' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The trust_store_secret_id of this JavaMessageServiceConnection.
+        :rtype: str
+        """
+        return self._trust_store_secret_id
+
+    @trust_store_secret_id.setter
+    def trust_store_secret_id(self, trust_store_secret_id):
+        """
+        Sets the trust_store_secret_id of this JavaMessageServiceConnection.
+        The `OCID`__ of the Secret where the content of the TrustStore file is stored.
+        Note: When provided, 'trustStore' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param trust_store_secret_id: The trust_store_secret_id of this JavaMessageServiceConnection.
+        :type: str
+        """
+        self._trust_store_secret_id = trust_store_secret_id
+
+    @property
+    def trust_store_password_secret_id(self):
+        """
+        Gets the trust_store_password_secret_id of this JavaMessageServiceConnection.
+        The `OCID`__ of the Secret where the TrustStore password is stored.
+        Note: When provided, 'trustStorePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The trust_store_password_secret_id of this JavaMessageServiceConnection.
+        :rtype: str
+        """
+        return self._trust_store_password_secret_id
+
+    @trust_store_password_secret_id.setter
+    def trust_store_password_secret_id(self, trust_store_password_secret_id):
+        """
+        Sets the trust_store_password_secret_id of this JavaMessageServiceConnection.
+        The `OCID`__ of the Secret where the TrustStore password is stored.
+        Note: When provided, 'trustStorePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param trust_store_password_secret_id: The trust_store_password_secret_id of this JavaMessageServiceConnection.
+        :type: str
+        """
+        self._trust_store_password_secret_id = trust_store_password_secret_id
+
+    @property
+    def key_store_secret_id(self):
+        """
+        Gets the key_store_secret_id of this JavaMessageServiceConnection.
+        The `OCID`__ of the Secret where the content of the KeyStore file is stored.
+        Note: When provided, 'keyStore' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The key_store_secret_id of this JavaMessageServiceConnection.
+        :rtype: str
+        """
+        return self._key_store_secret_id
+
+    @key_store_secret_id.setter
+    def key_store_secret_id(self, key_store_secret_id):
+        """
+        Sets the key_store_secret_id of this JavaMessageServiceConnection.
+        The `OCID`__ of the Secret where the content of the KeyStore file is stored.
+        Note: When provided, 'keyStore' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param key_store_secret_id: The key_store_secret_id of this JavaMessageServiceConnection.
+        :type: str
+        """
+        self._key_store_secret_id = key_store_secret_id
+
+    @property
+    def key_store_password_secret_id(self):
+        """
+        Gets the key_store_password_secret_id of this JavaMessageServiceConnection.
+        The `OCID`__ of the Secret where the KeyStore password is stored.
+        Note: When provided, 'keyStorePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The key_store_password_secret_id of this JavaMessageServiceConnection.
+        :rtype: str
+        """
+        return self._key_store_password_secret_id
+
+    @key_store_password_secret_id.setter
+    def key_store_password_secret_id(self, key_store_password_secret_id):
+        """
+        Sets the key_store_password_secret_id of this JavaMessageServiceConnection.
+        The `OCID`__ of the Secret where the KeyStore password is stored.
+        Note: When provided, 'keyStorePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param key_store_password_secret_id: The key_store_password_secret_id of this JavaMessageServiceConnection.
+        :type: str
+        """
+        self._key_store_password_secret_id = key_store_password_secret_id
+
+    @property
+    def ssl_key_password_secret_id(self):
+        """
+        Gets the ssl_key_password_secret_id of this JavaMessageServiceConnection.
+        The `OCID`__ of the Secret where the password is stored for the cert inside of the Keystore.
+        In case it differs from the KeyStore password, it should be provided.
+        Note: When provided, 'sslKeyPassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The ssl_key_password_secret_id of this JavaMessageServiceConnection.
+        :rtype: str
+        """
+        return self._ssl_key_password_secret_id
+
+    @ssl_key_password_secret_id.setter
+    def ssl_key_password_secret_id(self, ssl_key_password_secret_id):
+        """
+        Sets the ssl_key_password_secret_id of this JavaMessageServiceConnection.
+        The `OCID`__ of the Secret where the password is stored for the cert inside of the Keystore.
+        In case it differs from the KeyStore password, it should be provided.
+        Note: When provided, 'sslKeyPassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param ssl_key_password_secret_id: The ssl_key_password_secret_id of this JavaMessageServiceConnection.
+        :type: str
+        """
+        self._ssl_key_password_secret_id = ssl_key_password_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -69,7 +69,9 @@ class BaseChatRequest(object):
     def api_format(self):
         """
         **[Required]** Gets the api_format of this BaseChatRequest.
-        The API format for the model's request.
+        The API format for the model's family group.
+        COHERE is for the Cohere family models such as the cohere.command-r-16k and cohere.command-r-plus models.
+        GENERIC is for other model families such as the meta.llama-3-70b-instruct model.
 
         Allowed values for this property are: "COHERE", "GENERIC"
 
@@ -83,7 +85,9 @@ class BaseChatRequest(object):
     def api_format(self, api_format):
         """
         Sets the api_format of this BaseChatRequest.
-        The API format for the model's request.
+        The API format for the model's family group.
+        COHERE is for the Cohere family models such as the cohere.command-r-16k and cohere.command-r-plus models.
+        GENERIC is for other model families such as the meta.llama-3-70b-instruct model.
 
 
         :param api_format: The api_format of this BaseChatRequest.

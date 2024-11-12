@@ -99,6 +99,10 @@ class RedisConnectionSummary(ConnectionSummary):
             The value to assign to the locks property of this RedisConnectionSummary.
         :type locks: list[oci.golden_gate.models.ResourceLock]
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this RedisConnectionSummary.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this RedisConnectionSummary.
         :type technology_type: str
@@ -123,6 +127,26 @@ class RedisConnectionSummary(ConnectionSummary):
             The value to assign to the redis_cluster_id property of this RedisConnectionSummary.
         :type redis_cluster_id: str
 
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this RedisConnectionSummary.
+        :type password_secret_id: str
+
+        :param trust_store_secret_id:
+            The value to assign to the trust_store_secret_id property of this RedisConnectionSummary.
+        :type trust_store_secret_id: str
+
+        :param trust_store_password_secret_id:
+            The value to assign to the trust_store_password_secret_id property of this RedisConnectionSummary.
+        :type trust_store_password_secret_id: str
+
+        :param key_store_secret_id:
+            The value to assign to the key_store_secret_id property of this RedisConnectionSummary.
+        :type key_store_secret_id: str
+
+        :param key_store_password_secret_id:
+            The value to assign to the key_store_password_secret_id property of this RedisConnectionSummary.
+        :type key_store_password_secret_id: str
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -144,12 +168,18 @@ class RedisConnectionSummary(ConnectionSummary):
             'subnet_id': 'str',
             'routing_method': 'str',
             'locks': 'list[ResourceLock]',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
             'servers': 'str',
             'security_protocol': 'str',
             'authentication_type': 'str',
             'username': 'str',
-            'redis_cluster_id': 'str'
+            'redis_cluster_id': 'str',
+            'password_secret_id': 'str',
+            'trust_store_secret_id': 'str',
+            'trust_store_password_secret_id': 'str',
+            'key_store_secret_id': 'str',
+            'key_store_password_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -172,12 +202,18 @@ class RedisConnectionSummary(ConnectionSummary):
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
             'locks': 'locks',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
             'servers': 'servers',
             'security_protocol': 'securityProtocol',
             'authentication_type': 'authenticationType',
             'username': 'username',
-            'redis_cluster_id': 'redisClusterId'
+            'redis_cluster_id': 'redisClusterId',
+            'password_secret_id': 'passwordSecretId',
+            'trust_store_secret_id': 'trustStoreSecretId',
+            'trust_store_password_secret_id': 'trustStorePasswordSecretId',
+            'key_store_secret_id': 'keyStoreSecretId',
+            'key_store_password_secret_id': 'keyStorePasswordSecretId'
         }
 
         self._connection_type = None
@@ -199,12 +235,18 @@ class RedisConnectionSummary(ConnectionSummary):
         self._subnet_id = None
         self._routing_method = None
         self._locks = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._servers = None
         self._security_protocol = None
         self._authentication_type = None
         self._username = None
         self._redis_cluster_id = None
+        self._password_secret_id = None
+        self._trust_store_secret_id = None
+        self._trust_store_password_secret_id = None
+        self._key_store_secret_id = None
+        self._key_store_password_secret_id = None
         self._connection_type = 'REDIS'
 
     @property
@@ -364,6 +406,162 @@ class RedisConnectionSummary(ConnectionSummary):
         :type: str
         """
         self._redis_cluster_id = redis_cluster_id
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this RedisConnectionSummary.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this RedisConnectionSummary.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this RedisConnectionSummary.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this RedisConnectionSummary.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
+
+    @property
+    def trust_store_secret_id(self):
+        """
+        Gets the trust_store_secret_id of this RedisConnectionSummary.
+        The `OCID`__ of the Secret that stores the content of the TrustStore file.
+        Note: When provided, 'trustStore' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The trust_store_secret_id of this RedisConnectionSummary.
+        :rtype: str
+        """
+        return self._trust_store_secret_id
+
+    @trust_store_secret_id.setter
+    def trust_store_secret_id(self, trust_store_secret_id):
+        """
+        Sets the trust_store_secret_id of this RedisConnectionSummary.
+        The `OCID`__ of the Secret that stores the content of the TrustStore file.
+        Note: When provided, 'trustStore' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param trust_store_secret_id: The trust_store_secret_id of this RedisConnectionSummary.
+        :type: str
+        """
+        self._trust_store_secret_id = trust_store_secret_id
+
+    @property
+    def trust_store_password_secret_id(self):
+        """
+        Gets the trust_store_password_secret_id of this RedisConnectionSummary.
+        The `OCID`__ of the Secret where the Redis TrustStore password is stored.
+        Note: When provided, 'trustStorePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The trust_store_password_secret_id of this RedisConnectionSummary.
+        :rtype: str
+        """
+        return self._trust_store_password_secret_id
+
+    @trust_store_password_secret_id.setter
+    def trust_store_password_secret_id(self, trust_store_password_secret_id):
+        """
+        Sets the trust_store_password_secret_id of this RedisConnectionSummary.
+        The `OCID`__ of the Secret where the Redis TrustStore password is stored.
+        Note: When provided, 'trustStorePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param trust_store_password_secret_id: The trust_store_password_secret_id of this RedisConnectionSummary.
+        :type: str
+        """
+        self._trust_store_password_secret_id = trust_store_password_secret_id
+
+    @property
+    def key_store_secret_id(self):
+        """
+        Gets the key_store_secret_id of this RedisConnectionSummary.
+        The `OCID`__ of the Secret that stores the content of the KeyStore file.
+        Note: When provided, 'keyStore' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The key_store_secret_id of this RedisConnectionSummary.
+        :rtype: str
+        """
+        return self._key_store_secret_id
+
+    @key_store_secret_id.setter
+    def key_store_secret_id(self, key_store_secret_id):
+        """
+        Sets the key_store_secret_id of this RedisConnectionSummary.
+        The `OCID`__ of the Secret that stores the content of the KeyStore file.
+        Note: When provided, 'keyStore' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param key_store_secret_id: The key_store_secret_id of this RedisConnectionSummary.
+        :type: str
+        """
+        self._key_store_secret_id = key_store_secret_id
+
+    @property
+    def key_store_password_secret_id(self):
+        """
+        Gets the key_store_password_secret_id of this RedisConnectionSummary.
+        The `OCID`__ of the Secret where the Redis KeyStore password is stored.
+        Note: When provided, 'keyStorePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The key_store_password_secret_id of this RedisConnectionSummary.
+        :rtype: str
+        """
+        return self._key_store_password_secret_id
+
+    @key_store_password_secret_id.setter
+    def key_store_password_secret_id(self, key_store_password_secret_id):
+        """
+        Sets the key_store_password_secret_id of this RedisConnectionSummary.
+        The `OCID`__ of the Secret where the Redis KeyStore password is stored.
+        Note: When provided, 'keyStorePassword' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param key_store_password_secret_id: The key_store_password_secret_id of this RedisConnectionSummary.
+        :type: str
+        """
+        self._key_store_password_secret_id = key_store_password_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

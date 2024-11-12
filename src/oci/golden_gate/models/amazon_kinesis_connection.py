@@ -107,6 +107,10 @@ class AmazonKinesisConnection(Connection):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this AmazonKinesisConnection.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this AmazonKinesisConnection.
             Allowed values for this property are: "AMAZON_KINESIS", 'UNKNOWN_ENUM_VALUE'.
@@ -116,6 +120,10 @@ class AmazonKinesisConnection(Connection):
         :param access_key_id:
             The value to assign to the access_key_id property of this AmazonKinesisConnection.
         :type access_key_id: str
+
+        :param secret_access_key_secret_id:
+            The value to assign to the secret_access_key_secret_id property of this AmazonKinesisConnection.
+        :type secret_access_key_secret_id: str
 
         """
         self.swagger_types = {
@@ -138,8 +146,10 @@ class AmazonKinesisConnection(Connection):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
-            'access_key_id': 'str'
+            'access_key_id': 'str',
+            'secret_access_key_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -162,8 +172,10 @@ class AmazonKinesisConnection(Connection):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
-            'access_key_id': 'accessKeyId'
+            'access_key_id': 'accessKeyId',
+            'secret_access_key_secret_id': 'secretAccessKeySecretId'
         }
 
         self._connection_type = None
@@ -185,8 +197,10 @@ class AmazonKinesisConnection(Connection):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._access_key_id = None
+        self._secret_access_key_secret_id = None
         self._connection_type = 'AMAZON_KINESIS'
 
     @property
@@ -242,6 +256,36 @@ class AmazonKinesisConnection(Connection):
         :type: str
         """
         self._access_key_id = access_key_id
+
+    @property
+    def secret_access_key_secret_id(self):
+        """
+        Gets the secret_access_key_secret_id of this AmazonKinesisConnection.
+        The `OCID`__ of the Secret where the secret access key is stored.
+        Note: When provided, 'secretAccessKey' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The secret_access_key_secret_id of this AmazonKinesisConnection.
+        :rtype: str
+        """
+        return self._secret_access_key_secret_id
+
+    @secret_access_key_secret_id.setter
+    def secret_access_key_secret_id(self, secret_access_key_secret_id):
+        """
+        Sets the secret_access_key_secret_id of this AmazonKinesisConnection.
+        The `OCID`__ of the Secret where the secret access key is stored.
+        Note: When provided, 'secretAccessKey' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param secret_access_key_secret_id: The secret_access_key_secret_id of this AmazonKinesisConnection.
+        :type: str
+        """
+        self._secret_access_key_secret_id = secret_access_key_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

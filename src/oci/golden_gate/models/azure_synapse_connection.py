@@ -107,6 +107,10 @@ class AzureSynapseConnection(Connection):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this AzureSynapseConnection.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this AzureSynapseConnection.
             Allowed values for this property are: "AZURE_SYNAPSE_ANALYTICS", 'UNKNOWN_ENUM_VALUE'.
@@ -120,6 +124,10 @@ class AzureSynapseConnection(Connection):
         :param username:
             The value to assign to the username property of this AzureSynapseConnection.
         :type username: str
+
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this AzureSynapseConnection.
+        :type password_secret_id: str
 
         """
         self.swagger_types = {
@@ -142,9 +150,11 @@ class AzureSynapseConnection(Connection):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
             'connection_string': 'str',
-            'username': 'str'
+            'username': 'str',
+            'password_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -167,9 +177,11 @@ class AzureSynapseConnection(Connection):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
             'connection_string': 'connectionString',
-            'username': 'username'
+            'username': 'username',
+            'password_secret_id': 'passwordSecretId'
         }
 
         self._connection_type = None
@@ -191,9 +203,11 @@ class AzureSynapseConnection(Connection):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._connection_string = None
         self._username = None
+        self._password_secret_id = None
         self._connection_type = 'AZURE_SYNAPSE_ANALYTICS'
 
     @property
@@ -279,6 +293,42 @@ class AzureSynapseConnection(Connection):
         :type: str
         """
         self._username = username
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this AzureSynapseConnection.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this AzureSynapseConnection.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this AzureSynapseConnection.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this AzureSynapseConnection.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

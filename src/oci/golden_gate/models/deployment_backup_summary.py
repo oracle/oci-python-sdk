@@ -206,6 +206,10 @@ class DeploymentBackupSummary(object):
             The value to assign to the system_tags property of this DeploymentBackupSummary.
         :type system_tags: dict(str, dict(str, object))
 
+        :param is_metadata_only:
+            The value to assign to the is_metadata_only property of this DeploymentBackupSummary.
+        :type is_metadata_only: bool
+
         :param locks:
             The value to assign to the locks property of this DeploymentBackupSummary.
         :type locks: list[oci.golden_gate.models.ResourceLock]
@@ -233,6 +237,7 @@ class DeploymentBackupSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
+            'is_metadata_only': 'bool',
             'locks': 'list[ResourceLock]'
         }
 
@@ -258,6 +263,7 @@ class DeploymentBackupSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
+            'is_metadata_only': 'isMetadataOnly',
             'locks': 'locks'
         }
 
@@ -282,6 +288,7 @@ class DeploymentBackupSummary(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._is_metadata_only = None
         self._locks = None
 
     @property
@@ -869,6 +876,30 @@ class DeploymentBackupSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def is_metadata_only(self):
+        """
+        Gets the is_metadata_only of this DeploymentBackupSummary.
+        Parameter to allow users to create backup without trails
+
+
+        :return: The is_metadata_only of this DeploymentBackupSummary.
+        :rtype: bool
+        """
+        return self._is_metadata_only
+
+    @is_metadata_only.setter
+    def is_metadata_only(self, is_metadata_only):
+        """
+        Sets the is_metadata_only of this DeploymentBackupSummary.
+        Parameter to allow users to create backup without trails
+
+
+        :param is_metadata_only: The is_metadata_only of this DeploymentBackupSummary.
+        :type: bool
+        """
+        self._is_metadata_only = is_metadata_only
 
     @property
     def locks(self):

@@ -235,6 +235,10 @@ class ConnectionSummary(object):
             The value to assign to the locks property of this ConnectionSummary.
         :type locks: list[oci.golden_gate.models.ResourceLock]
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this ConnectionSummary.
+        :type does_use_secret_ids: bool
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -255,7 +259,8 @@ class ConnectionSummary(object):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
-            'locks': 'list[ResourceLock]'
+            'locks': 'list[ResourceLock]',
+            'does_use_secret_ids': 'bool'
         }
 
         self.attribute_map = {
@@ -277,7 +282,8 @@ class ConnectionSummary(object):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
-            'locks': 'locks'
+            'locks': 'locks',
+            'does_use_secret_ids': 'doesUseSecretIds'
         }
 
         self._connection_type = None
@@ -299,6 +305,7 @@ class ConnectionSummary(object):
         self._subnet_id = None
         self._routing_method = None
         self._locks = None
+        self._does_use_secret_ids = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -913,6 +920,30 @@ class ConnectionSummary(object):
         :type: list[oci.golden_gate.models.ResourceLock]
         """
         self._locks = locks
+
+    @property
+    def does_use_secret_ids(self):
+        """
+        Gets the does_use_secret_ids of this ConnectionSummary.
+        Indicates that sensitive attributes are provided via Secrets.
+
+
+        :return: The does_use_secret_ids of this ConnectionSummary.
+        :rtype: bool
+        """
+        return self._does_use_secret_ids
+
+    @does_use_secret_ids.setter
+    def does_use_secret_ids(self, does_use_secret_ids):
+        """
+        Sets the does_use_secret_ids of this ConnectionSummary.
+        Indicates that sensitive attributes are provided via Secrets.
+
+
+        :param does_use_secret_ids: The does_use_secret_ids of this ConnectionSummary.
+        :type: bool
+        """
+        self._does_use_secret_ids = does_use_secret_ids
 
     def __repr__(self):
         return formatted_flat_dict(self)

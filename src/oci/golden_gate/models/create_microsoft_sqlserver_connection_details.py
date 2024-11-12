@@ -71,6 +71,10 @@ class CreateMicrosoftSqlserverConnectionDetails(CreateConnectionDetails):
             Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this CreateMicrosoftSqlserverConnectionDetails.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this CreateMicrosoftSqlserverConnectionDetails.
         :type technology_type: str
@@ -94,6 +98,10 @@ class CreateMicrosoftSqlserverConnectionDetails(CreateConnectionDetails):
         :param password:
             The value to assign to the password property of this CreateMicrosoftSqlserverConnectionDetails.
         :type password: str
+
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this CreateMicrosoftSqlserverConnectionDetails.
+        :type password_secret_id: str
 
         :param additional_attributes:
             The value to assign to the additional_attributes property of this CreateMicrosoftSqlserverConnectionDetails.
@@ -129,12 +137,14 @@ class CreateMicrosoftSqlserverConnectionDetails(CreateConnectionDetails):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
             'database_name': 'str',
             'host': 'str',
             'port': 'int',
             'username': 'str',
             'password': 'str',
+            'password_secret_id': 'str',
             'additional_attributes': 'list[NameValuePair]',
             'security_protocol': 'str',
             'ssl_ca': 'str',
@@ -155,12 +165,14 @@ class CreateMicrosoftSqlserverConnectionDetails(CreateConnectionDetails):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
             'database_name': 'databaseName',
             'host': 'host',
             'port': 'port',
             'username': 'username',
             'password': 'password',
+            'password_secret_id': 'passwordSecretId',
             'additional_attributes': 'additionalAttributes',
             'security_protocol': 'securityProtocol',
             'ssl_ca': 'sslCa',
@@ -180,12 +192,14 @@ class CreateMicrosoftSqlserverConnectionDetails(CreateConnectionDetails):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._database_name = None
         self._host = None
         self._port = None
         self._username = None
         self._password = None
+        self._password_secret_id = None
         self._additional_attributes = None
         self._security_protocol = None
         self._ssl_ca = None
@@ -318,7 +332,7 @@ class CreateMicrosoftSqlserverConnectionDetails(CreateConnectionDetails):
     @property
     def password(self):
         """
-        **[Required]** Gets the password of this CreateMicrosoftSqlserverConnectionDetails.
+        Gets the password of this CreateMicrosoftSqlserverConnectionDetails.
         The password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
 
 
@@ -338,6 +352,36 @@ class CreateMicrosoftSqlserverConnectionDetails(CreateConnectionDetails):
         :type: str
         """
         self._password = password
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this CreateMicrosoftSqlserverConnectionDetails.
+        The `OCID`__ of the Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this CreateMicrosoftSqlserverConnectionDetails.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this CreateMicrosoftSqlserverConnectionDetails.
+        The `OCID`__ of the Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this CreateMicrosoftSqlserverConnectionDetails.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
 
     @property
     def additional_attributes(self):

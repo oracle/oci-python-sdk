@@ -99,6 +99,10 @@ class ElasticsearchConnectionSummary(ConnectionSummary):
             The value to assign to the locks property of this ElasticsearchConnectionSummary.
         :type locks: list[oci.golden_gate.models.ResourceLock]
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this ElasticsearchConnectionSummary.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this ElasticsearchConnectionSummary.
         :type technology_type: str
@@ -118,6 +122,10 @@ class ElasticsearchConnectionSummary(ConnectionSummary):
         :param username:
             The value to assign to the username property of this ElasticsearchConnectionSummary.
         :type username: str
+
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this ElasticsearchConnectionSummary.
+        :type password_secret_id: str
 
         """
         self.swagger_types = {
@@ -140,11 +148,13 @@ class ElasticsearchConnectionSummary(ConnectionSummary):
             'subnet_id': 'str',
             'routing_method': 'str',
             'locks': 'list[ResourceLock]',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
             'servers': 'str',
             'security_protocol': 'str',
             'authentication_type': 'str',
-            'username': 'str'
+            'username': 'str',
+            'password_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -167,11 +177,13 @@ class ElasticsearchConnectionSummary(ConnectionSummary):
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
             'locks': 'locks',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
             'servers': 'servers',
             'security_protocol': 'securityProtocol',
             'authentication_type': 'authenticationType',
-            'username': 'username'
+            'username': 'username',
+            'password_secret_id': 'passwordSecretId'
         }
 
         self._connection_type = None
@@ -193,11 +205,13 @@ class ElasticsearchConnectionSummary(ConnectionSummary):
         self._subnet_id = None
         self._routing_method = None
         self._locks = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._servers = None
         self._security_protocol = None
         self._authentication_type = None
         self._username = None
+        self._password_secret_id = None
         self._connection_type = 'ELASTICSEARCH'
 
     @property
@@ -329,6 +343,42 @@ class ElasticsearchConnectionSummary(ConnectionSummary):
         :type: str
         """
         self._username = username
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this ElasticsearchConnectionSummary.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this ElasticsearchConnectionSummary.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this ElasticsearchConnectionSummary.
+        The `OCID`__ of the Secret where the password is stored.
+        The password Oracle GoldenGate uses to connect the associated system of the given technology.
+        It must conform to the specific security requirements including length, case sensitivity, and so on.
+        If secretId is used plaintext field must not be provided.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this ElasticsearchConnectionSummary.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

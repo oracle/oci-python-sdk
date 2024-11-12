@@ -22,6 +22,9 @@ from .cohere_llm_inference_request import CohereLlmInferenceRequest
 from .cohere_llm_inference_response import CohereLlmInferenceResponse
 from .cohere_message import CohereMessage
 from .cohere_parameter_definition import CohereParameterDefinition
+from .cohere_response_format import CohereResponseFormat
+from .cohere_response_json_format import CohereResponseJsonFormat
+from .cohere_response_text_format import CohereResponseTextFormat
 from .cohere_system_message import CohereSystemMessage
 from .cohere_tool import CohereTool
 from .cohere_tool_call import CohereToolCall
@@ -36,6 +39,8 @@ from .generate_text_result import GenerateTextResult
 from .generated_text import GeneratedText
 from .generic_chat_request import GenericChatRequest
 from .generic_chat_response import GenericChatResponse
+from .image_content import ImageContent
+from .image_url import ImageUrl
 from .llama_llm_inference_request import LlamaLlmInferenceRequest
 from .llama_llm_inference_response import LlamaLlmInferenceResponse
 from .llm_inference_request import LlmInferenceRequest
@@ -70,6 +75,9 @@ generative_ai_inference_type_mapping = {
     "CohereLlmInferenceResponse": CohereLlmInferenceResponse,
     "CohereMessage": CohereMessage,
     "CohereParameterDefinition": CohereParameterDefinition,
+    "CohereResponseFormat": CohereResponseFormat,
+    "CohereResponseJsonFormat": CohereResponseJsonFormat,
+    "CohereResponseTextFormat": CohereResponseTextFormat,
     "CohereSystemMessage": CohereSystemMessage,
     "CohereTool": CohereTool,
     "CohereToolCall": CohereToolCall,
@@ -84,6 +92,8 @@ generative_ai_inference_type_mapping = {
     "GeneratedText": GeneratedText,
     "GenericChatRequest": GenericChatRequest,
     "GenericChatResponse": GenericChatResponse,
+    "ImageContent": ImageContent,
+    "ImageUrl": ImageUrl,
     "LlamaLlmInferenceRequest": LlamaLlmInferenceRequest,
     "LlamaLlmInferenceResponse": LlamaLlmInferenceResponse,
     "LlmInferenceRequest": LlmInferenceRequest,

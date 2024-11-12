@@ -99,6 +99,10 @@ class AmazonS3ConnectionSummary(ConnectionSummary):
             The value to assign to the locks property of this AmazonS3ConnectionSummary.
         :type locks: list[oci.golden_gate.models.ResourceLock]
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this AmazonS3ConnectionSummary.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this AmazonS3ConnectionSummary.
         :type technology_type: str
@@ -106,6 +110,10 @@ class AmazonS3ConnectionSummary(ConnectionSummary):
         :param access_key_id:
             The value to assign to the access_key_id property of this AmazonS3ConnectionSummary.
         :type access_key_id: str
+
+        :param secret_access_key_secret_id:
+            The value to assign to the secret_access_key_secret_id property of this AmazonS3ConnectionSummary.
+        :type secret_access_key_secret_id: str
 
         """
         self.swagger_types = {
@@ -128,8 +136,10 @@ class AmazonS3ConnectionSummary(ConnectionSummary):
             'subnet_id': 'str',
             'routing_method': 'str',
             'locks': 'list[ResourceLock]',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
-            'access_key_id': 'str'
+            'access_key_id': 'str',
+            'secret_access_key_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -152,8 +162,10 @@ class AmazonS3ConnectionSummary(ConnectionSummary):
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
             'locks': 'locks',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
-            'access_key_id': 'accessKeyId'
+            'access_key_id': 'accessKeyId',
+            'secret_access_key_secret_id': 'secretAccessKeySecretId'
         }
 
         self._connection_type = None
@@ -175,8 +187,10 @@ class AmazonS3ConnectionSummary(ConnectionSummary):
         self._subnet_id = None
         self._routing_method = None
         self._locks = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._access_key_id = None
+        self._secret_access_key_secret_id = None
         self._connection_type = 'AMAZON_S3'
 
     @property
@@ -228,6 +242,36 @@ class AmazonS3ConnectionSummary(ConnectionSummary):
         :type: str
         """
         self._access_key_id = access_key_id
+
+    @property
+    def secret_access_key_secret_id(self):
+        """
+        Gets the secret_access_key_secret_id of this AmazonS3ConnectionSummary.
+        The `OCID`__ of the Secret where the Secret Access Key is stored.
+        Note: When provided, 'secretAccessKey' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The secret_access_key_secret_id of this AmazonS3ConnectionSummary.
+        :rtype: str
+        """
+        return self._secret_access_key_secret_id
+
+    @secret_access_key_secret_id.setter
+    def secret_access_key_secret_id(self, secret_access_key_secret_id):
+        """
+        Sets the secret_access_key_secret_id of this AmazonS3ConnectionSummary.
+        The `OCID`__ of the Secret where the Secret Access Key is stored.
+        Note: When provided, 'secretAccessKey' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param secret_access_key_secret_id: The secret_access_key_secret_id of this AmazonS3ConnectionSummary.
+        :type: str
+        """
+        self._secret_access_key_secret_id = secret_access_key_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

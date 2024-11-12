@@ -99,6 +99,10 @@ class AzureDataLakeStorageConnectionSummary(ConnectionSummary):
             The value to assign to the locks property of this AzureDataLakeStorageConnectionSummary.
         :type locks: list[oci.golden_gate.models.ResourceLock]
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this AzureDataLakeStorageConnectionSummary.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this AzureDataLakeStorageConnectionSummary.
         :type technology_type: str
@@ -123,6 +127,18 @@ class AzureDataLakeStorageConnectionSummary(ConnectionSummary):
             The value to assign to the endpoint property of this AzureDataLakeStorageConnectionSummary.
         :type endpoint: str
 
+        :param account_key_secret_id:
+            The value to assign to the account_key_secret_id property of this AzureDataLakeStorageConnectionSummary.
+        :type account_key_secret_id: str
+
+        :param sas_token_secret_id:
+            The value to assign to the sas_token_secret_id property of this AzureDataLakeStorageConnectionSummary.
+        :type sas_token_secret_id: str
+
+        :param client_secret_secret_id:
+            The value to assign to the client_secret_secret_id property of this AzureDataLakeStorageConnectionSummary.
+        :type client_secret_secret_id: str
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -144,12 +160,16 @@ class AzureDataLakeStorageConnectionSummary(ConnectionSummary):
             'subnet_id': 'str',
             'routing_method': 'str',
             'locks': 'list[ResourceLock]',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
             'authentication_type': 'str',
             'account_name': 'str',
             'azure_tenant_id': 'str',
             'client_id': 'str',
-            'endpoint': 'str'
+            'endpoint': 'str',
+            'account_key_secret_id': 'str',
+            'sas_token_secret_id': 'str',
+            'client_secret_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -172,12 +192,16 @@ class AzureDataLakeStorageConnectionSummary(ConnectionSummary):
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
             'locks': 'locks',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
             'authentication_type': 'authenticationType',
             'account_name': 'accountName',
             'azure_tenant_id': 'azureTenantId',
             'client_id': 'clientId',
-            'endpoint': 'endpoint'
+            'endpoint': 'endpoint',
+            'account_key_secret_id': 'accountKeySecretId',
+            'sas_token_secret_id': 'sasTokenSecretId',
+            'client_secret_secret_id': 'clientSecretSecretId'
         }
 
         self._connection_type = None
@@ -199,12 +223,16 @@ class AzureDataLakeStorageConnectionSummary(ConnectionSummary):
         self._subnet_id = None
         self._routing_method = None
         self._locks = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._authentication_type = None
         self._account_name = None
         self._azure_tenant_id = None
         self._client_id = None
         self._endpoint = None
+        self._account_key_secret_id = None
+        self._sas_token_secret_id = None
+        self._client_secret_secret_id = None
         self._connection_type = 'AZURE_DATA_LAKE_STORAGE'
 
     @property
@@ -356,6 +384,96 @@ class AzureDataLakeStorageConnectionSummary(ConnectionSummary):
         :type: str
         """
         self._endpoint = endpoint
+
+    @property
+    def account_key_secret_id(self):
+        """
+        Gets the account_key_secret_id of this AzureDataLakeStorageConnectionSummary.
+        The `OCID`__ of the Secret where the account key is stored.
+        Note: When provided, 'accountKey' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The account_key_secret_id of this AzureDataLakeStorageConnectionSummary.
+        :rtype: str
+        """
+        return self._account_key_secret_id
+
+    @account_key_secret_id.setter
+    def account_key_secret_id(self, account_key_secret_id):
+        """
+        Sets the account_key_secret_id of this AzureDataLakeStorageConnectionSummary.
+        The `OCID`__ of the Secret where the account key is stored.
+        Note: When provided, 'accountKey' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param account_key_secret_id: The account_key_secret_id of this AzureDataLakeStorageConnectionSummary.
+        :type: str
+        """
+        self._account_key_secret_id = account_key_secret_id
+
+    @property
+    def sas_token_secret_id(self):
+        """
+        Gets the sas_token_secret_id of this AzureDataLakeStorageConnectionSummary.
+        The `OCID`__ of the Secret where the sas token is stored.
+        Note: When provided, 'sasToken' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The sas_token_secret_id of this AzureDataLakeStorageConnectionSummary.
+        :rtype: str
+        """
+        return self._sas_token_secret_id
+
+    @sas_token_secret_id.setter
+    def sas_token_secret_id(self, sas_token_secret_id):
+        """
+        Sets the sas_token_secret_id of this AzureDataLakeStorageConnectionSummary.
+        The `OCID`__ of the Secret where the sas token is stored.
+        Note: When provided, 'sasToken' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param sas_token_secret_id: The sas_token_secret_id of this AzureDataLakeStorageConnectionSummary.
+        :type: str
+        """
+        self._sas_token_secret_id = sas_token_secret_id
+
+    @property
+    def client_secret_secret_id(self):
+        """
+        Gets the client_secret_secret_id of this AzureDataLakeStorageConnectionSummary.
+        The `OCID`__ of the Secret where the client secret is stored.
+        Note: When provided, 'clientSecret' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The client_secret_secret_id of this AzureDataLakeStorageConnectionSummary.
+        :rtype: str
+        """
+        return self._client_secret_secret_id
+
+    @client_secret_secret_id.setter
+    def client_secret_secret_id(self, client_secret_secret_id):
+        """
+        Sets the client_secret_secret_id of this AzureDataLakeStorageConnectionSummary.
+        The `OCID`__ of the Secret where the client secret is stored.
+        Note: When provided, 'clientSecret' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param client_secret_secret_id: The client_secret_secret_id of this AzureDataLakeStorageConnectionSummary.
+        :type: str
+        """
+        self._client_secret_secret_id = client_secret_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

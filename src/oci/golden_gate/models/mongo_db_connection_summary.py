@@ -99,6 +99,10 @@ class MongoDbConnectionSummary(ConnectionSummary):
             The value to assign to the locks property of this MongoDbConnectionSummary.
         :type locks: list[oci.golden_gate.models.ResourceLock]
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this MongoDbConnectionSummary.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this MongoDbConnectionSummary.
         :type technology_type: str
@@ -114,6 +118,10 @@ class MongoDbConnectionSummary(ConnectionSummary):
         :param database_id:
             The value to assign to the database_id property of this MongoDbConnectionSummary.
         :type database_id: str
+
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this MongoDbConnectionSummary.
+        :type password_secret_id: str
 
         """
         self.swagger_types = {
@@ -136,10 +144,12 @@ class MongoDbConnectionSummary(ConnectionSummary):
             'subnet_id': 'str',
             'routing_method': 'str',
             'locks': 'list[ResourceLock]',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
             'connection_string': 'str',
             'username': 'str',
-            'database_id': 'str'
+            'database_id': 'str',
+            'password_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -162,10 +172,12 @@ class MongoDbConnectionSummary(ConnectionSummary):
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
             'locks': 'locks',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
             'connection_string': 'connectionString',
             'username': 'username',
-            'database_id': 'databaseId'
+            'database_id': 'databaseId',
+            'password_secret_id': 'passwordSecretId'
         }
 
         self._connection_type = None
@@ -187,10 +199,12 @@ class MongoDbConnectionSummary(ConnectionSummary):
         self._subnet_id = None
         self._routing_method = None
         self._locks = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._connection_string = None
         self._username = None
         self._database_id = None
+        self._password_secret_id = None
         self._connection_type = 'MONGODB'
 
     @property
@@ -296,6 +310,36 @@ class MongoDbConnectionSummary(ConnectionSummary):
         :type: str
         """
         self._database_id = database_id
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this MongoDbConnectionSummary.
+        The `OCID`__ of the Secret that stores the password Oracle GoldenGate uses to connect the associated database.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this MongoDbConnectionSummary.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this MongoDbConnectionSummary.
+        The `OCID`__ of the Secret that stores the password Oracle GoldenGate uses to connect the associated database.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this MongoDbConnectionSummary.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

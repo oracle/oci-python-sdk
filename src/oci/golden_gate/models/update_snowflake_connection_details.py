@@ -63,6 +63,10 @@ class UpdateSnowflakeConnectionDetails(UpdateConnectionDetails):
             Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this UpdateSnowflakeConnectionDetails.
+        :type does_use_secret_ids: bool
+
         :param connection_url:
             The value to assign to the connection_url property of this UpdateSnowflakeConnectionDetails.
         :type connection_url: str
@@ -79,13 +83,25 @@ class UpdateSnowflakeConnectionDetails(UpdateConnectionDetails):
             The value to assign to the password property of this UpdateSnowflakeConnectionDetails.
         :type password: str
 
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this UpdateSnowflakeConnectionDetails.
+        :type password_secret_id: str
+
         :param private_key_file:
             The value to assign to the private_key_file property of this UpdateSnowflakeConnectionDetails.
         :type private_key_file: str
 
+        :param private_key_file_secret_id:
+            The value to assign to the private_key_file_secret_id property of this UpdateSnowflakeConnectionDetails.
+        :type private_key_file_secret_id: str
+
         :param private_key_passphrase:
             The value to assign to the private_key_passphrase property of this UpdateSnowflakeConnectionDetails.
         :type private_key_passphrase: str
+
+        :param private_key_passphrase_secret_id:
+            The value to assign to the private_key_passphrase_secret_id property of this UpdateSnowflakeConnectionDetails.
+        :type private_key_passphrase_secret_id: str
 
         """
         self.swagger_types = {
@@ -99,12 +115,16 @@ class UpdateSnowflakeConnectionDetails(UpdateConnectionDetails):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'connection_url': 'str',
             'authentication_type': 'str',
             'username': 'str',
             'password': 'str',
+            'password_secret_id': 'str',
             'private_key_file': 'str',
-            'private_key_passphrase': 'str'
+            'private_key_file_secret_id': 'str',
+            'private_key_passphrase': 'str',
+            'private_key_passphrase_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -118,12 +138,16 @@ class UpdateSnowflakeConnectionDetails(UpdateConnectionDetails):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'connection_url': 'connectionUrl',
             'authentication_type': 'authenticationType',
             'username': 'username',
             'password': 'password',
+            'password_secret_id': 'passwordSecretId',
             'private_key_file': 'privateKeyFile',
-            'private_key_passphrase': 'privateKeyPassphrase'
+            'private_key_file_secret_id': 'privateKeyFileSecretId',
+            'private_key_passphrase': 'privateKeyPassphrase',
+            'private_key_passphrase_secret_id': 'privateKeyPassphraseSecretId'
         }
 
         self._connection_type = None
@@ -136,12 +160,16 @@ class UpdateSnowflakeConnectionDetails(UpdateConnectionDetails):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._connection_url = None
         self._authentication_type = None
         self._username = None
         self._password = None
+        self._password_secret_id = None
         self._private_key_file = None
+        self._private_key_file_secret_id = None
         self._private_key_passphrase = None
+        self._private_key_passphrase_secret_id = None
         self._connection_type = 'SNOWFLAKE'
 
     @property
@@ -245,6 +273,36 @@ class UpdateSnowflakeConnectionDetails(UpdateConnectionDetails):
         self._password = password
 
     @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this UpdateSnowflakeConnectionDetails.
+        The `OCID`__ of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this UpdateSnowflakeConnectionDetails.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this UpdateSnowflakeConnectionDetails.
+        The `OCID`__ of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this UpdateSnowflakeConnectionDetails.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
+
+    @property
     def private_key_file(self):
         """
         Gets the private_key_file of this UpdateSnowflakeConnectionDetails.
@@ -269,6 +327,38 @@ class UpdateSnowflakeConnectionDetails(UpdateConnectionDetails):
         self._private_key_file = private_key_file
 
     @property
+    def private_key_file_secret_id(self):
+        """
+        Gets the private_key_file_secret_id of this UpdateSnowflakeConnectionDetails.
+        The `OCID`__ of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+        See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        Note: When provided, 'privateKeyFile' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The private_key_file_secret_id of this UpdateSnowflakeConnectionDetails.
+        :rtype: str
+        """
+        return self._private_key_file_secret_id
+
+    @private_key_file_secret_id.setter
+    def private_key_file_secret_id(self, private_key_file_secret_id):
+        """
+        Sets the private_key_file_secret_id of this UpdateSnowflakeConnectionDetails.
+        The `OCID`__ of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+        See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        Note: When provided, 'privateKeyFile' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param private_key_file_secret_id: The private_key_file_secret_id of this UpdateSnowflakeConnectionDetails.
+        :type: str
+        """
+        self._private_key_file_secret_id = private_key_file_secret_id
+
+    @property
     def private_key_passphrase(self):
         """
         Gets the private_key_passphrase of this UpdateSnowflakeConnectionDetails.
@@ -291,6 +381,36 @@ class UpdateSnowflakeConnectionDetails(UpdateConnectionDetails):
         :type: str
         """
         self._private_key_passphrase = private_key_passphrase
+
+    @property
+    def private_key_passphrase_secret_id(self):
+        """
+        Gets the private_key_passphrase_secret_id of this UpdateSnowflakeConnectionDetails.
+        The `OCID`__ of the Secret that stores the password for the private key file.
+        Note: When provided, 'privateKeyPassphrase' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The private_key_passphrase_secret_id of this UpdateSnowflakeConnectionDetails.
+        :rtype: str
+        """
+        return self._private_key_passphrase_secret_id
+
+    @private_key_passphrase_secret_id.setter
+    def private_key_passphrase_secret_id(self, private_key_passphrase_secret_id):
+        """
+        Sets the private_key_passphrase_secret_id of this UpdateSnowflakeConnectionDetails.
+        The `OCID`__ of the Secret that stores the password for the private key file.
+        Note: When provided, 'privateKeyPassphrase' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param private_key_passphrase_secret_id: The private_key_passphrase_secret_id of this UpdateSnowflakeConnectionDetails.
+        :type: str
+        """
+        self._private_key_passphrase_secret_id = private_key_passphrase_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

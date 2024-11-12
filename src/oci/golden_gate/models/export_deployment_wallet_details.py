@@ -32,6 +32,10 @@ class ExportDeploymentWalletDetails(object):
             The value to assign to the secret_name property of this ExportDeploymentWalletDetails.
         :type secret_name: str
 
+        :param secret_compartment_id:
+            The value to assign to the secret_compartment_id property of this ExportDeploymentWalletDetails.
+        :type secret_compartment_id: str
+
         :param description:
             The value to assign to the description property of this ExportDeploymentWalletDetails.
         :type description: str
@@ -41,6 +45,7 @@ class ExportDeploymentWalletDetails(object):
             'vault_id': 'str',
             'master_encryption_key_id': 'str',
             'secret_name': 'str',
+            'secret_compartment_id': 'str',
             'description': 'str'
         }
 
@@ -48,12 +53,14 @@ class ExportDeploymentWalletDetails(object):
             'vault_id': 'vaultId',
             'master_encryption_key_id': 'masterEncryptionKeyId',
             'secret_name': 'secretName',
+            'secret_compartment_id': 'secretCompartmentId',
             'description': 'description'
         }
 
         self._vault_id = None
         self._master_encryption_key_id = None
         self._secret_name = None
+        self._secret_compartment_id = None
         self._description = None
 
     @property
@@ -133,6 +140,34 @@ class ExportDeploymentWalletDetails(object):
         :type: str
         """
         self._secret_name = secret_name
+
+    @property
+    def secret_compartment_id(self):
+        """
+        Gets the secret_compartment_id of this ExportDeploymentWalletDetails.
+        The `OCID`__ of the compartment, where the secret will be created in.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The secret_compartment_id of this ExportDeploymentWalletDetails.
+        :rtype: str
+        """
+        return self._secret_compartment_id
+
+    @secret_compartment_id.setter
+    def secret_compartment_id(self, secret_compartment_id):
+        """
+        Sets the secret_compartment_id of this ExportDeploymentWalletDetails.
+        The `OCID`__ of the compartment, where the secret will be created in.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param secret_compartment_id: The secret_compartment_id of this ExportDeploymentWalletDetails.
+        :type: str
+        """
+        self._secret_compartment_id = secret_compartment_id
 
     @property
     def description(self):

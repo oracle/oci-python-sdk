@@ -107,6 +107,10 @@ class GoldenGateConnection(Connection):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this GoldenGateConnection.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this GoldenGateConnection.
             Allowed values for this property are: "GOLDENGATE", 'UNKNOWN_ENUM_VALUE'.
@@ -133,6 +137,10 @@ class GoldenGateConnection(Connection):
             The value to assign to the private_ip property of this GoldenGateConnection.
         :type private_ip: str
 
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this GoldenGateConnection.
+        :type password_secret_id: str
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -154,12 +162,14 @@ class GoldenGateConnection(Connection):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
             'deployment_id': 'str',
             'host': 'str',
             'port': 'int',
             'username': 'str',
-            'private_ip': 'str'
+            'private_ip': 'str',
+            'password_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -182,12 +192,14 @@ class GoldenGateConnection(Connection):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
             'deployment_id': 'deploymentId',
             'host': 'host',
             'port': 'port',
             'username': 'username',
-            'private_ip': 'privateIp'
+            'private_ip': 'privateIp',
+            'password_secret_id': 'passwordSecretId'
         }
 
         self._connection_type = None
@@ -209,12 +221,14 @@ class GoldenGateConnection(Connection):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._deployment_id = None
         self._host = None
         self._port = None
         self._username = None
         self._private_ip = None
+        self._password_secret_id = None
         self._connection_type = 'GOLDENGATE'
 
     @property
@@ -384,6 +398,38 @@ class GoldenGateConnection(Connection):
         :type: str
         """
         self._private_ip = private_ip
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this GoldenGateConnection.
+        The `OCID`__ of the Secret where the password is stored,
+        which is used to connect to the Oracle GoldenGate accessed trough this connection.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this GoldenGateConnection.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this GoldenGateConnection.
+        The `OCID`__ of the Secret where the password is stored,
+        which is used to connect to the Oracle GoldenGate accessed trough this connection.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this GoldenGateConnection.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

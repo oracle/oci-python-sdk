@@ -63,6 +63,10 @@ class UpdateGenericConnectionDetails(UpdateConnectionDetails):
             Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this UpdateGenericConnectionDetails.
+        :type does_use_secret_ids: bool
+
         :param host:
             The value to assign to the host property of this UpdateGenericConnectionDetails.
         :type host: str
@@ -79,6 +83,7 @@ class UpdateGenericConnectionDetails(UpdateConnectionDetails):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'host': 'str'
         }
 
@@ -93,6 +98,7 @@ class UpdateGenericConnectionDetails(UpdateConnectionDetails):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'host': 'host'
         }
 
@@ -106,6 +112,7 @@ class UpdateGenericConnectionDetails(UpdateConnectionDetails):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._host = None
         self._connection_type = 'GENERIC'
 

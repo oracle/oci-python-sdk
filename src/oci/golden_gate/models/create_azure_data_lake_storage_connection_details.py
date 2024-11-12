@@ -71,6 +71,10 @@ class CreateAzureDataLakeStorageConnectionDetails(CreateConnectionDetails):
             Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this CreateAzureDataLakeStorageConnectionDetails.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this CreateAzureDataLakeStorageConnectionDetails.
         :type technology_type: str
@@ -87,9 +91,17 @@ class CreateAzureDataLakeStorageConnectionDetails(CreateConnectionDetails):
             The value to assign to the account_key property of this CreateAzureDataLakeStorageConnectionDetails.
         :type account_key: str
 
+        :param account_key_secret_id:
+            The value to assign to the account_key_secret_id property of this CreateAzureDataLakeStorageConnectionDetails.
+        :type account_key_secret_id: str
+
         :param sas_token:
             The value to assign to the sas_token property of this CreateAzureDataLakeStorageConnectionDetails.
         :type sas_token: str
+
+        :param sas_token_secret_id:
+            The value to assign to the sas_token_secret_id property of this CreateAzureDataLakeStorageConnectionDetails.
+        :type sas_token_secret_id: str
 
         :param azure_tenant_id:
             The value to assign to the azure_tenant_id property of this CreateAzureDataLakeStorageConnectionDetails.
@@ -102,6 +114,10 @@ class CreateAzureDataLakeStorageConnectionDetails(CreateConnectionDetails):
         :param client_secret:
             The value to assign to the client_secret property of this CreateAzureDataLakeStorageConnectionDetails.
         :type client_secret: str
+
+        :param client_secret_secret_id:
+            The value to assign to the client_secret_secret_id property of this CreateAzureDataLakeStorageConnectionDetails.
+        :type client_secret_secret_id: str
 
         :param endpoint:
             The value to assign to the endpoint property of this CreateAzureDataLakeStorageConnectionDetails.
@@ -121,14 +137,18 @@ class CreateAzureDataLakeStorageConnectionDetails(CreateConnectionDetails):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
             'authentication_type': 'str',
             'account_name': 'str',
             'account_key': 'str',
+            'account_key_secret_id': 'str',
             'sas_token': 'str',
+            'sas_token_secret_id': 'str',
             'azure_tenant_id': 'str',
             'client_id': 'str',
             'client_secret': 'str',
+            'client_secret_secret_id': 'str',
             'endpoint': 'str'
         }
 
@@ -145,14 +165,18 @@ class CreateAzureDataLakeStorageConnectionDetails(CreateConnectionDetails):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
             'authentication_type': 'authenticationType',
             'account_name': 'accountName',
             'account_key': 'accountKey',
+            'account_key_secret_id': 'accountKeySecretId',
             'sas_token': 'sasToken',
+            'sas_token_secret_id': 'sasTokenSecretId',
             'azure_tenant_id': 'azureTenantId',
             'client_id': 'clientId',
             'client_secret': 'clientSecret',
+            'client_secret_secret_id': 'clientSecretSecretId',
             'endpoint': 'endpoint'
         }
 
@@ -168,14 +192,18 @@ class CreateAzureDataLakeStorageConnectionDetails(CreateConnectionDetails):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._authentication_type = None
         self._account_name = None
         self._account_key = None
+        self._account_key_secret_id = None
         self._sas_token = None
+        self._sas_token_secret_id = None
         self._azure_tenant_id = None
         self._client_id = None
         self._client_secret = None
+        self._client_secret_secret_id = None
         self._endpoint = None
         self._connection_type = 'AZURE_DATA_LAKE_STORAGE'
 
@@ -278,6 +306,36 @@ class CreateAzureDataLakeStorageConnectionDetails(CreateConnectionDetails):
         self._account_key = account_key
 
     @property
+    def account_key_secret_id(self):
+        """
+        Gets the account_key_secret_id of this CreateAzureDataLakeStorageConnectionDetails.
+        The `OCID`__ of the Secret where the account key is stored.
+        Note: When provided, 'accountKey' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The account_key_secret_id of this CreateAzureDataLakeStorageConnectionDetails.
+        :rtype: str
+        """
+        return self._account_key_secret_id
+
+    @account_key_secret_id.setter
+    def account_key_secret_id(self, account_key_secret_id):
+        """
+        Sets the account_key_secret_id of this CreateAzureDataLakeStorageConnectionDetails.
+        The `OCID`__ of the Secret where the account key is stored.
+        Note: When provided, 'accountKey' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param account_key_secret_id: The account_key_secret_id of this CreateAzureDataLakeStorageConnectionDetails.
+        :type: str
+        """
+        self._account_key_secret_id = account_key_secret_id
+
+    @property
     def sas_token(self):
         """
         Gets the sas_token of this CreateAzureDataLakeStorageConnectionDetails.
@@ -304,6 +362,36 @@ class CreateAzureDataLakeStorageConnectionDetails(CreateConnectionDetails):
         :type: str
         """
         self._sas_token = sas_token
+
+    @property
+    def sas_token_secret_id(self):
+        """
+        Gets the sas_token_secret_id of this CreateAzureDataLakeStorageConnectionDetails.
+        The `OCID`__ of the Secret where the sas token is stored.
+        Note: When provided, 'sasToken' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The sas_token_secret_id of this CreateAzureDataLakeStorageConnectionDetails.
+        :rtype: str
+        """
+        return self._sas_token_secret_id
+
+    @sas_token_secret_id.setter
+    def sas_token_secret_id(self, sas_token_secret_id):
+        """
+        Sets the sas_token_secret_id of this CreateAzureDataLakeStorageConnectionDetails.
+        The `OCID`__ of the Secret where the sas token is stored.
+        Note: When provided, 'sasToken' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param sas_token_secret_id: The sas_token_secret_id of this CreateAzureDataLakeStorageConnectionDetails.
+        :type: str
+        """
+        self._sas_token_secret_id = sas_token_secret_id
 
     @property
     def azure_tenant_id(self):
@@ -382,6 +470,36 @@ class CreateAzureDataLakeStorageConnectionDetails(CreateConnectionDetails):
         :type: str
         """
         self._client_secret = client_secret
+
+    @property
+    def client_secret_secret_id(self):
+        """
+        Gets the client_secret_secret_id of this CreateAzureDataLakeStorageConnectionDetails.
+        The `OCID`__ of the Secret where the client secret is stored.
+        Note: When provided, 'clientSecret' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The client_secret_secret_id of this CreateAzureDataLakeStorageConnectionDetails.
+        :rtype: str
+        """
+        return self._client_secret_secret_id
+
+    @client_secret_secret_id.setter
+    def client_secret_secret_id(self, client_secret_secret_id):
+        """
+        Sets the client_secret_secret_id of this CreateAzureDataLakeStorageConnectionDetails.
+        The `OCID`__ of the Secret where the client secret is stored.
+        Note: When provided, 'clientSecret' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param client_secret_secret_id: The client_secret_secret_id of this CreateAzureDataLakeStorageConnectionDetails.
+        :type: str
+        """
+        self._client_secret_secret_id = client_secret_secret_id
 
     @property
     def endpoint(self):

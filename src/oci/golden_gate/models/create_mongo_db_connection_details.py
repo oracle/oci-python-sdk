@@ -71,6 +71,10 @@ class CreateMongoDbConnectionDetails(CreateConnectionDetails):
             Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this CreateMongoDbConnectionDetails.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this CreateMongoDbConnectionDetails.
         :type technology_type: str
@@ -86,6 +90,10 @@ class CreateMongoDbConnectionDetails(CreateConnectionDetails):
         :param password:
             The value to assign to the password property of this CreateMongoDbConnectionDetails.
         :type password: str
+
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this CreateMongoDbConnectionDetails.
+        :type password_secret_id: str
 
         :param database_id:
             The value to assign to the database_id property of this CreateMongoDbConnectionDetails.
@@ -105,10 +113,12 @@ class CreateMongoDbConnectionDetails(CreateConnectionDetails):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str',
             'connection_string': 'str',
             'username': 'str',
             'password': 'str',
+            'password_secret_id': 'str',
             'database_id': 'str'
         }
 
@@ -125,10 +135,12 @@ class CreateMongoDbConnectionDetails(CreateConnectionDetails):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType',
             'connection_string': 'connectionString',
             'username': 'username',
             'password': 'password',
+            'password_secret_id': 'passwordSecretId',
             'database_id': 'databaseId'
         }
 
@@ -144,10 +156,12 @@ class CreateMongoDbConnectionDetails(CreateConnectionDetails):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._connection_string = None
         self._username = None
         self._password = None
+        self._password_secret_id = None
         self._database_id = None
         self._connection_type = 'MONGODB'
 
@@ -250,6 +264,36 @@ class CreateMongoDbConnectionDetails(CreateConnectionDetails):
         :type: str
         """
         self._password = password
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this CreateMongoDbConnectionDetails.
+        The `OCID`__ of the Secret that stores the password Oracle GoldenGate uses to connect the associated database.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this CreateMongoDbConnectionDetails.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this CreateMongoDbConnectionDetails.
+        The `OCID`__ of the Secret that stores the password Oracle GoldenGate uses to connect the associated database.
+        Note: When provided, 'password' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this CreateMongoDbConnectionDetails.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
 
     @property
     def database_id(self):

@@ -237,7 +237,7 @@ ssh opc@UsageVM
 
 ```text
 sudo yum -y update
-sudo yum -y git
+sudo yum -y install git
 sudo dnf -y module install python39
 sudo dnf -y install python39-pip
 sudo dnf -y install python39-setuptools

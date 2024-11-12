@@ -99,6 +99,10 @@ class HdfsConnectionSummary(ConnectionSummary):
             The value to assign to the locks property of this HdfsConnectionSummary.
         :type locks: list[oci.golden_gate.models.ResourceLock]
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this HdfsConnectionSummary.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this HdfsConnectionSummary.
         :type technology_type: str
@@ -124,6 +128,7 @@ class HdfsConnectionSummary(ConnectionSummary):
             'subnet_id': 'str',
             'routing_method': 'str',
             'locks': 'list[ResourceLock]',
+            'does_use_secret_ids': 'bool',
             'technology_type': 'str'
         }
 
@@ -147,6 +152,7 @@ class HdfsConnectionSummary(ConnectionSummary):
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
             'locks': 'locks',
+            'does_use_secret_ids': 'doesUseSecretIds',
             'technology_type': 'technologyType'
         }
 
@@ -169,6 +175,7 @@ class HdfsConnectionSummary(ConnectionSummary):
         self._subnet_id = None
         self._routing_method = None
         self._locks = None
+        self._does_use_secret_ids = None
         self._technology_type = None
         self._connection_type = 'HDFS'
 

@@ -89,6 +89,7 @@ Golden Gate
     oci.golden_gate.models.DefaultCancelDeploymentUpgradeDetails
     oci.golden_gate.models.DefaultCancelSnoozeDeploymentUpgradeDetails
     oci.golden_gate.models.DefaultDeploymentWalletExistsDetails
+    oci.golden_gate.models.DefaultRefreshConnectionDetails
     oci.golden_gate.models.DefaultRestoreDeploymentDetails
     oci.golden_gate.models.DefaultRollbackDeploymentUpgradeDetails
     oci.golden_gate.models.DefaultSnoozeDeploymentUpgradeDetails
@@ -164,6 +165,7 @@ Golden Gate
     oci.golden_gate.models.PostgresqlConnectionSummary
     oci.golden_gate.models.RedisConnection
     oci.golden_gate.models.RedisConnectionSummary
+    oci.golden_gate.models.RefreshConnectionDetails
     oci.golden_gate.models.RemoveResourceLockDetails
     oci.golden_gate.models.RescheduleDeploymentUpgradeDetails
     oci.golden_gate.models.RescheduleDeploymentUpgradeToDateDetails

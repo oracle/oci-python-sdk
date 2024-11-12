@@ -107,11 +107,19 @@ class GoogleCloudStorageConnection(Connection):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type routing_method: str
 
+        :param does_use_secret_ids:
+            The value to assign to the does_use_secret_ids property of this GoogleCloudStorageConnection.
+        :type does_use_secret_ids: bool
+
         :param technology_type:
             The value to assign to the technology_type property of this GoogleCloudStorageConnection.
             Allowed values for this property are: "GOOGLE_CLOUD_STORAGE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type technology_type: str
+
+        :param service_account_key_file_secret_id:
+            The value to assign to the service_account_key_file_secret_id property of this GoogleCloudStorageConnection.
+        :type service_account_key_file_secret_id: str
 
         """
         self.swagger_types = {
@@ -134,7 +142,9 @@ class GoogleCloudStorageConnection(Connection):
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
             'routing_method': 'str',
-            'technology_type': 'str'
+            'does_use_secret_ids': 'bool',
+            'technology_type': 'str',
+            'service_account_key_file_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -157,7 +167,9 @@ class GoogleCloudStorageConnection(Connection):
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
             'routing_method': 'routingMethod',
-            'technology_type': 'technologyType'
+            'does_use_secret_ids': 'doesUseSecretIds',
+            'technology_type': 'technologyType',
+            'service_account_key_file_secret_id': 'serviceAccountKeyFileSecretId'
         }
 
         self._connection_type = None
@@ -179,7 +191,9 @@ class GoogleCloudStorageConnection(Connection):
         self._nsg_ids = None
         self._subnet_id = None
         self._routing_method = None
+        self._does_use_secret_ids = None
         self._technology_type = None
+        self._service_account_key_file_secret_id = None
         self._connection_type = 'GOOGLE_CLOUD_STORAGE'
 
     @property
@@ -211,6 +225,38 @@ class GoogleCloudStorageConnection(Connection):
         if not value_allowed_none_or_none_sentinel(technology_type, allowed_values):
             technology_type = 'UNKNOWN_ENUM_VALUE'
         self._technology_type = technology_type
+
+    @property
+    def service_account_key_file_secret_id(self):
+        """
+        Gets the service_account_key_file_secret_id of this GoogleCloudStorageConnection.
+        The `OCID`__ of the Secret where the content of the service account key file is stored,
+        which containing the credentials required to use Google Cloud Storage.
+        Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The service_account_key_file_secret_id of this GoogleCloudStorageConnection.
+        :rtype: str
+        """
+        return self._service_account_key_file_secret_id
+
+    @service_account_key_file_secret_id.setter
+    def service_account_key_file_secret_id(self, service_account_key_file_secret_id):
+        """
+        Sets the service_account_key_file_secret_id of this GoogleCloudStorageConnection.
+        The `OCID`__ of the Secret where the content of the service account key file is stored,
+        which containing the credentials required to use Google Cloud Storage.
+        Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param service_account_key_file_secret_id: The service_account_key_file_secret_id of this GoogleCloudStorageConnection.
+        :type: str
+        """
+        self._service_account_key_file_secret_id = service_account_key_file_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)
