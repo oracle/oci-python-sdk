@@ -1,11 +1,14 @@
 # coding: utf-8
 # Modified Work: Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
-# Copyright 2008-2016 Andrey Petrov and contributors
+# Copyright (c) 2008-2020 Andrey Petrov and contributors
 
 from __future__ import absolute_import
 
+import sys
+
 from .filepost import encode_multipart_formdata
+from .packages import six
 from .packages.six.moves.urllib.parse import urlencode
 
 __all__ = ["RequestMethods"]
@@ -173,3 +176,21 @@ class RequestMethods(object):
         extra_kw.update(urlopen_kw)
 
         return self.urlopen(method, url, **extra_kw)
+
+
+if not six.PY2:
+
+    class RequestModule(sys.modules[__name__].__class__):
+        def __call__(self, *args, **kwargs):
+            """
+            If user tries to call this module directly urllib3 v2.x style raise an error to the user
+            suggesting they may need urllib3 v2
+            """
+            raise TypeError(
+                "'module' object is not callable\n"
+                "urllib3.request() method is not supported in this release, "
+                "upgrade to urllib3 v2 to use it\n"
+                "see https://urllib3.readthedocs.io/en/stable/v2-migration-guide.html"
+            )
+
+    sys.modules[__name__].__class__ = RequestModule

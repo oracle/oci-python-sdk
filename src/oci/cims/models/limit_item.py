@@ -231,7 +231,7 @@ class LimitItem(Item):
     def customer_message(self):
         """
         Gets the customer_message of this LimitItem.
-        Message to customer for partial approval and rejected limit requests
+        The message to customer for partially approved and rejected limit requests
 
 
         :return: The customer_message of this LimitItem.
@@ -243,7 +243,7 @@ class LimitItem(Item):
     def customer_message(self, customer_message):
         """
         Sets the customer_message of this LimitItem.
-        Message to customer for partial approval and rejected limit requests
+        The message to customer for partially approved and rejected limit requests
 
 
         :param customer_message: The customer_message of this LimitItem.

@@ -64,6 +64,30 @@ class Incident(object):
             The value to assign to the incident_type property of this Incident.
         :type incident_type: oci.cims.models.IncidentType
 
+        :param user_group_id:
+            The value to assign to the user_group_id property of this Incident.
+        :type user_group_id: str
+
+        :param user_group_name:
+            The value to assign to the user_group_name property of this Incident.
+        :type user_group_name: str
+
+        :param primary_contact_party_id:
+            The value to assign to the primary_contact_party_id property of this Incident.
+        :type primary_contact_party_id: str
+
+        :param primary_contact_party_name:
+            The value to assign to the primary_contact_party_name property of this Incident.
+        :type primary_contact_party_name: str
+
+        :param is_write_permitted:
+            The value to assign to the is_write_permitted property of this Incident.
+        :type is_write_permitted: bool
+
+        :param warn_message:
+            The value to assign to the warn_message property of this Incident.
+        :type warn_message: str
+
         :param problem_type:
             The value to assign to the problem_type property of this Incident.
             Allowed values for this property are: "LIMIT", "LEGACY_LIMIT", "TECH", "ACCOUNT", "TAXONOMY", 'UNKNOWN_ENUM_VALUE'.
@@ -82,6 +106,12 @@ class Incident(object):
             'tenancy_information': 'TenancyInformation',
             'ticket': 'Ticket',
             'incident_type': 'IncidentType',
+            'user_group_id': 'str',
+            'user_group_name': 'str',
+            'primary_contact_party_id': 'str',
+            'primary_contact_party_name': 'str',
+            'is_write_permitted': 'bool',
+            'warn_message': 'str',
             'problem_type': 'str',
             'referrer': 'str'
         }
@@ -93,6 +123,12 @@ class Incident(object):
             'tenancy_information': 'tenancyInformation',
             'ticket': 'ticket',
             'incident_type': 'incidentType',
+            'user_group_id': 'userGroupId',
+            'user_group_name': 'userGroupName',
+            'primary_contact_party_id': 'primaryContactPartyId',
+            'primary_contact_party_name': 'primaryContactPartyName',
+            'is_write_permitted': 'isWritePermitted',
+            'warn_message': 'warnMessage',
             'problem_type': 'problemType',
             'referrer': 'referrer'
         }
@@ -103,6 +139,12 @@ class Incident(object):
         self._tenancy_information = None
         self._ticket = None
         self._incident_type = None
+        self._user_group_id = None
+        self._user_group_name = None
+        self._primary_contact_party_id = None
+        self._primary_contact_party_name = None
+        self._is_write_permitted = None
+        self._warn_message = None
         self._problem_type = None
         self._referrer = None
 
@@ -233,6 +275,152 @@ class Incident(object):
         :type: oci.cims.models.IncidentType
         """
         self._incident_type = incident_type
+
+    @property
+    def user_group_id(self):
+        """
+        Gets the user_group_id of this Incident.
+        Technical support type (`TECH`) only: The identifier of the support request's user group in My Oracle Cloud Support portal.
+
+
+        :return: The user_group_id of this Incident.
+        :rtype: str
+        """
+        return self._user_group_id
+
+    @user_group_id.setter
+    def user_group_id(self, user_group_id):
+        """
+        Sets the user_group_id of this Incident.
+        Technical support type (`TECH`) only: The identifier of the support request's user group in My Oracle Cloud Support portal.
+
+
+        :param user_group_id: The user_group_id of this Incident.
+        :type: str
+        """
+        self._user_group_id = user_group_id
+
+    @property
+    def user_group_name(self):
+        """
+        Gets the user_group_name of this Incident.
+        Technical support type (`TECH`) only: Name of the support request's user group in My Oracle Cloud Support portal.
+
+
+        :return: The user_group_name of this Incident.
+        :rtype: str
+        """
+        return self._user_group_name
+
+    @user_group_name.setter
+    def user_group_name(self, user_group_name):
+        """
+        Sets the user_group_name of this Incident.
+        Technical support type (`TECH`) only: Name of the support request's user group in My Oracle Cloud Support portal.
+
+
+        :param user_group_name: The user_group_name of this Incident.
+        :type: str
+        """
+        self._user_group_name = user_group_name
+
+    @property
+    def primary_contact_party_id(self):
+        """
+        Gets the primary_contact_party_id of this Incident.
+        Technical support type (`TECH`) only: The identifier of the support request's primary contact (`primaryContactPartyName`) in My Oracle Cloud Support portal.
+
+
+        :return: The primary_contact_party_id of this Incident.
+        :rtype: str
+        """
+        return self._primary_contact_party_id
+
+    @primary_contact_party_id.setter
+    def primary_contact_party_id(self, primary_contact_party_id):
+        """
+        Sets the primary_contact_party_id of this Incident.
+        Technical support type (`TECH`) only: The identifier of the support request's primary contact (`primaryContactPartyName`) in My Oracle Cloud Support portal.
+
+
+        :param primary_contact_party_id: The primary_contact_party_id of this Incident.
+        :type: str
+        """
+        self._primary_contact_party_id = primary_contact_party_id
+
+    @property
+    def primary_contact_party_name(self):
+        """
+        Gets the primary_contact_party_name of this Incident.
+        Technical support type (`TECH`) only: The name of the support request's primary contact in My Oracle Cloud Support portal.
+
+
+        :return: The primary_contact_party_name of this Incident.
+        :rtype: str
+        """
+        return self._primary_contact_party_name
+
+    @primary_contact_party_name.setter
+    def primary_contact_party_name(self, primary_contact_party_name):
+        """
+        Sets the primary_contact_party_name of this Incident.
+        Technical support type (`TECH`) only: The name of the support request's primary contact in My Oracle Cloud Support portal.
+
+
+        :param primary_contact_party_name: The primary_contact_party_name of this Incident.
+        :type: str
+        """
+        self._primary_contact_party_name = primary_contact_party_name
+
+    @property
+    def is_write_permitted(self):
+        """
+        Gets the is_write_permitted of this Incident.
+        Technical support type (`TECH`) only: Allows update of the support request in My Oracle Cloud Support portal,
+        when the user has write permission to the support request's user group.
+
+
+        :return: The is_write_permitted of this Incident.
+        :rtype: bool
+        """
+        return self._is_write_permitted
+
+    @is_write_permitted.setter
+    def is_write_permitted(self, is_write_permitted):
+        """
+        Sets the is_write_permitted of this Incident.
+        Technical support type (`TECH`) only: Allows update of the support request in My Oracle Cloud Support portal,
+        when the user has write permission to the support request's user group.
+
+
+        :param is_write_permitted: The is_write_permitted of this Incident.
+        :type: bool
+        """
+        self._is_write_permitted = is_write_permitted
+
+    @property
+    def warn_message(self):
+        """
+        Gets the warn_message of this Incident.
+        Technical support type (`TECH`) only: Message indicating the user group (`userGroupId`) that was auto-selected for a new support request. This message appears when no user group was specified in the create request for a new technical support request.
+
+
+        :return: The warn_message of this Incident.
+        :rtype: str
+        """
+        return self._warn_message
+
+    @warn_message.setter
+    def warn_message(self, warn_message):
+        """
+        Sets the warn_message of this Incident.
+        Technical support type (`TECH`) only: Message indicating the user group (`userGroupId`) that was auto-selected for a new support request. This message appears when no user group was specified in the create request for a new technical support request.
+
+
+        :param warn_message: The warn_message of this Incident.
+        :type: str
+        """
+        self._warn_message = warn_message
 
     @property
     def problem_type(self):

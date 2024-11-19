@@ -73,7 +73,7 @@ httpsig_cffi
 * Project home: https://github.com/hawkowl/httpsig_cffi
 
 idna
-* Copyright (c) 2013-2021, Kim Davies All rights reserved
+# Copyright (c) 2013-2024, Kim Davies and contributors. All rights reserved.
 * License: BSD 3-Clause "New" or "Revised" License
 * Source code: https://github.com/kjd/idna
 * Project home: https://github.com/kjd/idna

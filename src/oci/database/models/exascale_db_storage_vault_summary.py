@@ -80,6 +80,10 @@ class ExascaleDbStorageVaultSummary(object):
             The value to assign to the vm_cluster_count property of this ExascaleDbStorageVaultSummary.
         :type vm_cluster_count: int
 
+        :param exadata_infrastructure_id:
+            The value to assign to the exadata_infrastructure_id property of this ExascaleDbStorageVaultSummary.
+        :type exadata_infrastructure_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -96,7 +100,8 @@ class ExascaleDbStorageVaultSummary(object):
             'system_tags': 'dict(str, dict(str, object))',
             'high_capacity_database_storage': 'ExascaleDbStorageDetails',
             'additional_flash_cache_in_percent': 'int',
-            'vm_cluster_count': 'int'
+            'vm_cluster_count': 'int',
+            'exadata_infrastructure_id': 'str'
         }
 
         self.attribute_map = {
@@ -114,7 +119,8 @@ class ExascaleDbStorageVaultSummary(object):
             'system_tags': 'systemTags',
             'high_capacity_database_storage': 'highCapacityDatabaseStorage',
             'additional_flash_cache_in_percent': 'additionalFlashCacheInPercent',
-            'vm_cluster_count': 'vmClusterCount'
+            'vm_cluster_count': 'vmClusterCount',
+            'exadata_infrastructure_id': 'exadataInfrastructureId'
         }
 
         self._id = None
@@ -132,6 +138,7 @@ class ExascaleDbStorageVaultSummary(object):
         self._high_capacity_database_storage = None
         self._additional_flash_cache_in_percent = None
         self._vm_cluster_count = None
+        self._exadata_infrastructure_id = None
 
     @property
     def id(self):
@@ -522,6 +529,34 @@ class ExascaleDbStorageVaultSummary(object):
         :type: int
         """
         self._vm_cluster_count = vm_cluster_count
+
+    @property
+    def exadata_infrastructure_id(self):
+        """
+        Gets the exadata_infrastructure_id of this ExascaleDbStorageVaultSummary.
+        The `OCID`__ of the Exadata infrastructure.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The exadata_infrastructure_id of this ExascaleDbStorageVaultSummary.
+        :rtype: str
+        """
+        return self._exadata_infrastructure_id
+
+    @exadata_infrastructure_id.setter
+    def exadata_infrastructure_id(self, exadata_infrastructure_id):
+        """
+        Sets the exadata_infrastructure_id of this ExascaleDbStorageVaultSummary.
+        The `OCID`__ of the Exadata infrastructure.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param exadata_infrastructure_id: The exadata_infrastructure_id of this ExascaleDbStorageVaultSummary.
+        :type: str
+        """
+        self._exadata_infrastructure_id = exadata_infrastructure_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

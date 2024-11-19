@@ -24,10 +24,9 @@ class IncidentClient(object):
     """
     Use the Support Management API to manage support requests.
     For more information, see [Getting Help and Contacting Support](/iaas/Content/GSG/Tasks/contactingsupport.htm).
-
     **Note**: Before you can create service requests with this API,
-    you need to have an Oracle Single Sign On (SSO) account,
-    and you need to register your Customer Support Identifier (CSI) with My Oracle Support.
+    complete user registration at My Oracle Cloud Support
+    and then ask your tenancy administrator to provide you authorization for the related user groups.
     """
 
     def __init__(self, config, **kwargs):
@@ -261,7 +260,7 @@ class IncidentClient(object):
 
         :param str csi: (optional)
             The Customer Support Identifier (CSI) number associated with the support account.
-            The CSI is required for technical support tickets and optional for limits and billing tickets.
+            The CSI is optional for all support request types.
 
         :param str ocid: (optional)
             User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
@@ -443,7 +442,7 @@ class IncidentClient(object):
 
         :param str csi: (optional)
             The Customer Support Identifier (CSI) number associated with the support account.
-            The CSI is required for technical support tickets and optional for limits and billing tickets.
+            The CSI is optional for all support request types.
 
         :param str ocid: (optional)
             User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
@@ -582,7 +581,7 @@ class IncidentClient(object):
 
         :param str csi: (optional)
             The Customer Support Identifier (CSI) number associated with the support account.
-            The CSI is required for technical support tickets and optional for limits and billing tickets.
+            The CSI is optional for all support request types.
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call. For important details about how pagination works, see `List Pagination`__.
@@ -781,7 +780,7 @@ class IncidentClient(object):
 
         :param str csi: (optional)
             The Customer Support Identifier (CSI) number associated with the support account.
-            The CSI is required for technical support tickets and optional for limits and billing tickets.
+            The CSI is optional for all support request types.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -929,7 +928,7 @@ class IncidentClient(object):
 
         :param str csi: (optional)
             The Customer Support Identifier (CSI) number associated with the support account.
-            The CSI is required for technical support tickets and optional for limits and billing tickets.
+            The CSI is optional for all support request types.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.

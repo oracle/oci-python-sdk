@@ -24,16 +24,23 @@ class ValidationResponse(object):
             The value to assign to the is_valid_user property of this ValidationResponse.
         :type is_valid_user: bool
 
+        :param write_permitted_user_group_infos:
+            The value to assign to the write_permitted_user_group_infos property of this ValidationResponse.
+        :type write_permitted_user_group_infos: list[oci.cims.models.CmosUserGroupInfo]
+
         """
         self.swagger_types = {
-            'is_valid_user': 'bool'
+            'is_valid_user': 'bool',
+            'write_permitted_user_group_infos': 'list[CmosUserGroupInfo]'
         }
 
         self.attribute_map = {
-            'is_valid_user': 'isValidUser'
+            'is_valid_user': 'isValidUser',
+            'write_permitted_user_group_infos': 'writePermittedUserGroupInfos'
         }
 
         self._is_valid_user = None
+        self._write_permitted_user_group_infos = None
 
     @property
     def is_valid_user(self):
@@ -58,6 +65,30 @@ class ValidationResponse(object):
         :type: bool
         """
         self._is_valid_user = is_valid_user
+
+    @property
+    def write_permitted_user_group_infos(self):
+        """
+        Gets the write_permitted_user_group_infos of this ValidationResponse.
+        Technical support type (`TECH`) only: Identifier and name of the support request's user group (`userGroupId` and `userGroupName`).
+
+
+        :return: The write_permitted_user_group_infos of this ValidationResponse.
+        :rtype: list[oci.cims.models.CmosUserGroupInfo]
+        """
+        return self._write_permitted_user_group_infos
+
+    @write_permitted_user_group_infos.setter
+    def write_permitted_user_group_infos(self, write_permitted_user_group_infos):
+        """
+        Sets the write_permitted_user_group_infos of this ValidationResponse.
+        Technical support type (`TECH`) only: Identifier and name of the support request's user group (`userGroupId` and `userGroupName`).
+
+
+        :param write_permitted_user_group_infos: The write_permitted_user_group_infos of this ValidationResponse.
+        :type: list[oci.cims.models.CmosUserGroupInfo]
+        """
+        self._write_permitted_user_group_infos = write_permitted_user_group_infos
 
     def __repr__(self):
         return formatted_flat_dict(self)

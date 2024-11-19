@@ -10,6 +10,7 @@ from .account_item import AccountItem
 from .activity_item import ActivityItem
 from .category import Category
 from .classifier import Classifier
+from .cmos_user_group_info import CmosUserGroupInfo
 from .contact import Contact
 from .contact_list import ContactList
 from .contextual_data import ContextualData
@@ -32,8 +33,8 @@ from .issue_type import IssueType
 from .item import Item
 from .limit_item import LimitItem
 from .resource import Resource
-from .service_categories import ServiceCategories
 from .service_category import ServiceCategory
+from .services import Services
 from .status import Status
 from .sub_categories import SubCategories
 from .sub_category import SubCategory
@@ -56,6 +57,7 @@ cims_type_mapping = {
     "ActivityItem": ActivityItem,
     "Category": Category,
     "Classifier": Classifier,
+    "CmosUserGroupInfo": CmosUserGroupInfo,
     "Contact": Contact,
     "ContactList": ContactList,
     "ContextualData": ContextualData,
@@ -78,8 +80,8 @@ cims_type_mapping = {
     "Item": Item,
     "LimitItem": LimitItem,
     "Resource": Resource,
-    "ServiceCategories": ServiceCategories,
     "ServiceCategory": ServiceCategory,
+    "Services": Services,
     "Status": Status,
     "SubCategories": SubCategories,
     "SubCategory": SubCategory,

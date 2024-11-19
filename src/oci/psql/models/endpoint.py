@@ -76,7 +76,7 @@ class Endpoint(object):
     @property
     def ip_address(self):
         """
-        **[Required]** Gets the ip_address of this Endpoint.
+        Gets the ip_address of this Endpoint.
         The IP address of the endpoint.
 
 

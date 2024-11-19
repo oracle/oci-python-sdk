@@ -56,6 +56,10 @@ class CreateExascaleDbStorageVaultDetails(object):
             The value to assign to the defined_tags property of this CreateExascaleDbStorageVaultDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param exadata_infrastructure_id:
+            The value to assign to the exadata_infrastructure_id property of this CreateExascaleDbStorageVaultDetails.
+        :type exadata_infrastructure_id: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -66,7 +70,8 @@ class CreateExascaleDbStorageVaultDetails(object):
             'high_capacity_database_storage': 'ExascaleDbStorageInputDetails',
             'additional_flash_cache_in_percent': 'int',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'exadata_infrastructure_id': 'str'
         }
 
         self.attribute_map = {
@@ -78,7 +83,8 @@ class CreateExascaleDbStorageVaultDetails(object):
             'high_capacity_database_storage': 'highCapacityDatabaseStorage',
             'additional_flash_cache_in_percent': 'additionalFlashCacheInPercent',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'exadata_infrastructure_id': 'exadataInfrastructureId'
         }
 
         self._compartment_id = None
@@ -90,6 +96,7 @@ class CreateExascaleDbStorageVaultDetails(object):
         self._additional_flash_cache_in_percent = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._exadata_infrastructure_id = None
 
     @property
     def compartment_id(self):
@@ -326,6 +333,34 @@ class CreateExascaleDbStorageVaultDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def exadata_infrastructure_id(self):
+        """
+        Gets the exadata_infrastructure_id of this CreateExascaleDbStorageVaultDetails.
+        The `OCID`__ of the Exadata infrastructure.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The exadata_infrastructure_id of this CreateExascaleDbStorageVaultDetails.
+        :rtype: str
+        """
+        return self._exadata_infrastructure_id
+
+    @exadata_infrastructure_id.setter
+    def exadata_infrastructure_id(self, exadata_infrastructure_id):
+        """
+        Sets the exadata_infrastructure_id of this CreateExascaleDbStorageVaultDetails.
+        The `OCID`__ of the Exadata infrastructure.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param exadata_infrastructure_id: The exadata_infrastructure_id of this CreateExascaleDbStorageVaultDetails.
+        :type: str
+        """
+        self._exadata_infrastructure_id = exadata_infrastructure_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

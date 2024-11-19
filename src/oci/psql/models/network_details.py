@@ -32,22 +32,29 @@ class NetworkDetails(object):
             The value to assign to the nsg_ids property of this NetworkDetails.
         :type nsg_ids: list[str]
 
+        :param is_reader_endpoint_enabled:
+            The value to assign to the is_reader_endpoint_enabled property of this NetworkDetails.
+        :type is_reader_endpoint_enabled: bool
+
         """
         self.swagger_types = {
             'subnet_id': 'str',
             'primary_db_endpoint_private_ip': 'str',
-            'nsg_ids': 'list[str]'
+            'nsg_ids': 'list[str]',
+            'is_reader_endpoint_enabled': 'bool'
         }
 
         self.attribute_map = {
             'subnet_id': 'subnetId',
             'primary_db_endpoint_private_ip': 'primaryDbEndpointPrivateIp',
-            'nsg_ids': 'nsgIds'
+            'nsg_ids': 'nsgIds',
+            'is_reader_endpoint_enabled': 'isReaderEndpointEnabled'
         }
 
         self._subnet_id = None
         self._primary_db_endpoint_private_ip = None
         self._nsg_ids = None
+        self._is_reader_endpoint_enabled = None
 
     @property
     def subnet_id(self):
@@ -130,6 +137,30 @@ class NetworkDetails(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def is_reader_endpoint_enabled(self):
+        """
+        Gets the is_reader_endpoint_enabled of this NetworkDetails.
+        Specifies if the reader endpoint is enabled on the dbSystem.
+
+
+        :return: The is_reader_endpoint_enabled of this NetworkDetails.
+        :rtype: bool
+        """
+        return self._is_reader_endpoint_enabled
+
+    @is_reader_endpoint_enabled.setter
+    def is_reader_endpoint_enabled(self, is_reader_endpoint_enabled):
+        """
+        Sets the is_reader_endpoint_enabled of this NetworkDetails.
+        Specifies if the reader endpoint is enabled on the dbSystem.
+
+
+        :param is_reader_endpoint_enabled: The is_reader_endpoint_enabled of this NetworkDetails.
+        :type: bool
+        """
+        self._is_reader_endpoint_enabled = is_reader_endpoint_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

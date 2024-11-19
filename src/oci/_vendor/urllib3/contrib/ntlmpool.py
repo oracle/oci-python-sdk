@@ -1,7 +1,7 @@
 # coding: utf-8
 # Modified Work: Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
-# Copyright 2008-2016 Andrey Petrov and contributors
+# Copyright (c) 2008-2020 Andrey Petrov and contributors
 
 """
 NTLM authenticating pool, contributed by erikcederstran
@@ -74,7 +74,7 @@ class NTLMConnectionPool(HTTPSConnectionPool):
         log.debug("Request headers: %s", headers)
         conn.request("GET", self.authurl, None, headers)
         res = conn.getresponse()
-        reshdr = dict(res.getheaders())
+        reshdr = dict(res.headers)
         log.debug("Response status: %s %s", res.status, res.reason)
         log.debug("Response headers: %s", reshdr)
         log.debug("Response data: %s [...]", res.read(100))
@@ -106,7 +106,7 @@ class NTLMConnectionPool(HTTPSConnectionPool):
         conn.request("GET", self.authurl, None, headers)
         res = conn.getresponse()
         log.debug("Response status: %s %s", res.status, res.reason)
-        log.debug("Response headers: %s", dict(res.getheaders()))
+        log.debug("Response headers: %s", dict(res.headers))
         log.debug("Response data: %s [...]", res.read()[:100])
         if res.status != 200:
             if res.status == 401:

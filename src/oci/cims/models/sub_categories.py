@@ -32,29 +32,29 @@ class SubCategories(object):
             The value to assign to the has_sub_category property of this SubCategories.
         :type has_sub_category: str
 
-        :param sub_components:
-            The value to assign to the sub_components property of this SubCategories.
-        :type sub_components: list[oci.cims.models.SubComponents]
+        :param sub_categories:
+            The value to assign to the sub_categories property of this SubCategories.
+        :type sub_categories: list[oci.cims.models.SubComponents]
 
         """
         self.swagger_types = {
             'service_category': 'dict(str, str)',
             'schema': 'str',
             'has_sub_category': 'str',
-            'sub_components': 'list[SubComponents]'
+            'sub_categories': 'list[SubComponents]'
         }
 
         self.attribute_map = {
             'service_category': 'serviceCategory',
             'schema': 'schema',
             'has_sub_category': 'hasSubCategory',
-            'sub_components': 'subComponents'
+            'sub_categories': 'subCategories'
         }
 
         self._service_category = None
         self._schema = None
         self._has_sub_category = None
-        self._sub_components = None
+        self._sub_categories = None
 
     @property
     def service_category(self):
@@ -129,28 +129,28 @@ class SubCategories(object):
         self._has_sub_category = has_sub_category
 
     @property
-    def sub_components(self):
+    def sub_categories(self):
         """
-        Gets the sub_components of this SubCategories.
+        Gets the sub_categories of this SubCategories.
         The sub component list for MOS Taxonomy.
 
 
-        :return: The sub_components of this SubCategories.
+        :return: The sub_categories of this SubCategories.
         :rtype: list[oci.cims.models.SubComponents]
         """
-        return self._sub_components
+        return self._sub_categories
 
-    @sub_components.setter
-    def sub_components(self, sub_components):
+    @sub_categories.setter
+    def sub_categories(self, sub_categories):
         """
-        Sets the sub_components of this SubCategories.
+        Sets the sub_categories of this SubCategories.
         The sub component list for MOS Taxonomy.
 
 
-        :param sub_components: The sub_components of this SubCategories.
+        :param sub_categories: The sub_categories of this SubCategories.
         :type: list[oci.cims.models.SubComponents]
         """
-        self._sub_components = sub_components
+        self._sub_categories = sub_categories
 
     def __repr__(self):
         return formatted_flat_dict(self)

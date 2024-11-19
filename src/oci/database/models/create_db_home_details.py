@@ -46,6 +46,10 @@ class CreateDbHomeDetails(object):
             The value to assign to the defined_tags property of this CreateDbHomeDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param is_unified_auditing_enabled:
+            The value to assign to the is_unified_auditing_enabled property of this CreateDbHomeDetails.
+        :type is_unified_auditing_enabled: bool
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -53,7 +57,8 @@ class CreateDbHomeDetails(object):
             'database_software_image_id': 'str',
             'database': 'CreateDatabaseDetails',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'is_unified_auditing_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -62,7 +67,8 @@ class CreateDbHomeDetails(object):
             'database_software_image_id': 'databaseSoftwareImageId',
             'database': 'database',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'is_unified_auditing_enabled': 'isUnifiedAuditingEnabled'
         }
 
         self._display_name = None
@@ -71,6 +77,7 @@ class CreateDbHomeDetails(object):
         self._database = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._is_unified_auditing_enabled = None
 
     @property
     def display_name(self):
@@ -235,6 +242,30 @@ class CreateDbHomeDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def is_unified_auditing_enabled(self):
+        """
+        Gets the is_unified_auditing_enabled of this CreateDbHomeDetails.
+        Indicates whether unified auditing is enabled or not
+
+
+        :return: The is_unified_auditing_enabled of this CreateDbHomeDetails.
+        :rtype: bool
+        """
+        return self._is_unified_auditing_enabled
+
+    @is_unified_auditing_enabled.setter
+    def is_unified_auditing_enabled(self, is_unified_auditing_enabled):
+        """
+        Sets the is_unified_auditing_enabled of this CreateDbHomeDetails.
+        Indicates whether unified auditing is enabled or not
+
+
+        :param is_unified_auditing_enabled: The is_unified_auditing_enabled of this CreateDbHomeDetails.
+        :type: bool
+        """
+        self._is_unified_auditing_enabled = is_unified_auditing_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

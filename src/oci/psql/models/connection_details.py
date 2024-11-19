@@ -32,22 +32,29 @@ class ConnectionDetails(object):
             The value to assign to the instance_endpoints property of this ConnectionDetails.
         :type instance_endpoints: list[oci.psql.models.DbInstanceEndpoint]
 
+        :param reader_endpoint:
+            The value to assign to the reader_endpoint property of this ConnectionDetails.
+        :type reader_endpoint: oci.psql.models.Endpoint
+
         """
         self.swagger_types = {
             'ca_certificate': 'str',
             'primary_db_endpoint': 'Endpoint',
-            'instance_endpoints': 'list[DbInstanceEndpoint]'
+            'instance_endpoints': 'list[DbInstanceEndpoint]',
+            'reader_endpoint': 'Endpoint'
         }
 
         self.attribute_map = {
             'ca_certificate': 'caCertificate',
             'primary_db_endpoint': 'primaryDbEndpoint',
-            'instance_endpoints': 'instanceEndpoints'
+            'instance_endpoints': 'instanceEndpoints',
+            'reader_endpoint': 'readerEndpoint'
         }
 
         self._ca_certificate = None
         self._primary_db_endpoint = None
         self._instance_endpoints = None
+        self._reader_endpoint = None
 
     @property
     def ca_certificate(self):
@@ -120,6 +127,26 @@ class ConnectionDetails(object):
         :type: list[oci.psql.models.DbInstanceEndpoint]
         """
         self._instance_endpoints = instance_endpoints
+
+    @property
+    def reader_endpoint(self):
+        """
+        Gets the reader_endpoint of this ConnectionDetails.
+
+        :return: The reader_endpoint of this ConnectionDetails.
+        :rtype: oci.psql.models.Endpoint
+        """
+        return self._reader_endpoint
+
+    @reader_endpoint.setter
+    def reader_endpoint(self, reader_endpoint):
+        """
+        Sets the reader_endpoint of this ConnectionDetails.
+
+        :param reader_endpoint: The reader_endpoint of this ConnectionDetails.
+        :type: oci.psql.models.Endpoint
+        """
+        self._reader_endpoint = reader_endpoint
 
     def __repr__(self):
         return formatted_flat_dict(self)
