@@ -24,16 +24,23 @@ class UpdateNetworkDetails(object):
             The value to assign to the nsg_ids property of this UpdateNetworkDetails.
         :type nsg_ids: list[str]
 
+        :param is_reader_endpoint_enabled:
+            The value to assign to the is_reader_endpoint_enabled property of this UpdateNetworkDetails.
+        :type is_reader_endpoint_enabled: bool
+
         """
         self.swagger_types = {
-            'nsg_ids': 'list[str]'
+            'nsg_ids': 'list[str]',
+            'is_reader_endpoint_enabled': 'bool'
         }
 
         self.attribute_map = {
-            'nsg_ids': 'nsgIds'
+            'nsg_ids': 'nsgIds',
+            'is_reader_endpoint_enabled': 'isReaderEndpointEnabled'
         }
 
         self._nsg_ids = None
+        self._is_reader_endpoint_enabled = None
 
     @property
     def nsg_ids(self):
@@ -62,6 +69,30 @@ class UpdateNetworkDetails(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def is_reader_endpoint_enabled(self):
+        """
+        Gets the is_reader_endpoint_enabled of this UpdateNetworkDetails.
+        Specifies if the reader endpoint is enabled on the dbSystem.
+
+
+        :return: The is_reader_endpoint_enabled of this UpdateNetworkDetails.
+        :rtype: bool
+        """
+        return self._is_reader_endpoint_enabled
+
+    @is_reader_endpoint_enabled.setter
+    def is_reader_endpoint_enabled(self, is_reader_endpoint_enabled):
+        """
+        Sets the is_reader_endpoint_enabled of this UpdateNetworkDetails.
+        Specifies if the reader endpoint is enabled on the dbSystem.
+
+
+        :param is_reader_endpoint_enabled: The is_reader_endpoint_enabled of this UpdateNetworkDetails.
+        :type: bool
+        """
+        self._is_reader_endpoint_enabled = is_reader_endpoint_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

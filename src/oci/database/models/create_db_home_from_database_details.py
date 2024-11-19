@@ -30,6 +30,10 @@ class CreateDbHomeFromDatabaseDetails(object):
             The value to assign to the database property of this CreateDbHomeFromDatabaseDetails.
         :type database: oci.database.models.CreateDatabaseFromAnotherDatabaseDetails
 
+        :param is_unified_auditing_enabled:
+            The value to assign to the is_unified_auditing_enabled property of this CreateDbHomeFromDatabaseDetails.
+        :type is_unified_auditing_enabled: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateDbHomeFromDatabaseDetails.
         :type freeform_tags: dict(str, str)
@@ -42,6 +46,7 @@ class CreateDbHomeFromDatabaseDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'database': 'CreateDatabaseFromAnotherDatabaseDetails',
+            'is_unified_auditing_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -49,12 +54,14 @@ class CreateDbHomeFromDatabaseDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'database': 'database',
+            'is_unified_auditing_enabled': 'isUnifiedAuditingEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._display_name = None
         self._database = None
+        self._is_unified_auditing_enabled = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -101,6 +108,30 @@ class CreateDbHomeFromDatabaseDetails(object):
         :type: oci.database.models.CreateDatabaseFromAnotherDatabaseDetails
         """
         self._database = database
+
+    @property
+    def is_unified_auditing_enabled(self):
+        """
+        Gets the is_unified_auditing_enabled of this CreateDbHomeFromDatabaseDetails.
+        Indicates whether unified auditing is enabled or not
+
+
+        :return: The is_unified_auditing_enabled of this CreateDbHomeFromDatabaseDetails.
+        :rtype: bool
+        """
+        return self._is_unified_auditing_enabled
+
+    @is_unified_auditing_enabled.setter
+    def is_unified_auditing_enabled(self, is_unified_auditing_enabled):
+        """
+        Sets the is_unified_auditing_enabled of this CreateDbHomeFromDatabaseDetails.
+        Indicates whether unified auditing is enabled or not
+
+
+        :param is_unified_auditing_enabled: The is_unified_auditing_enabled of this CreateDbHomeFromDatabaseDetails.
+        :type: bool
+        """
+        self._is_unified_auditing_enabled = is_unified_auditing_enabled
 
     @property
     def freeform_tags(self):

@@ -1,7 +1,7 @@
 # coding: utf-8
 # Modified Work: Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
-# Copyright 2008-2016 Andrey Petrov and contributors
+# Copyright (c) 2008-2020 Andrey Petrov and contributors
 
 """
 SecureTranport support for urllib3 via ctypes.
@@ -69,9 +69,8 @@ import struct
 import threading
 import weakref
 
-import six
-
 from .. import util
+from ..packages import six
 from ..util.ssl_ import PROTOCOL_TLS_CLIENT
 from ._securetransport.bindings import CoreFoundation, Security, SecurityConst
 from ._securetransport.low_level import (
@@ -774,7 +773,6 @@ if _fileobject:  # Platform-specific: Python 2
     def makefile(self, mode, bufsize=-1):
         self._makefile_refs += 1
         return _fileobject(self, mode, bufsize, close=True)
-
 
 else:  # Platform-specific: Python 3
 

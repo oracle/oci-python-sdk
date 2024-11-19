@@ -10,53 +10,53 @@ from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class ServiceCategories(object):
+class Services(object):
     """
     List of Service Categories of a Service for MOS Taxonomy.
     """
 
     def __init__(self, **kwargs):
         """
-        Initializes a new ServiceCategories object with values from keyword arguments.
+        Initializes a new Services object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param service:
-            The value to assign to the service property of this ServiceCategories.
+            The value to assign to the service property of this Services.
         :type service: dict(str, str)
 
         :param schema:
-            The value to assign to the schema property of this ServiceCategories.
+            The value to assign to the schema property of this Services.
         :type schema: str
 
-        :param sub_categories:
-            The value to assign to the sub_categories property of this ServiceCategories.
-        :type sub_categories: list[oci.cims.models.SubCategories]
+        :param service_categories:
+            The value to assign to the service_categories property of this Services.
+        :type service_categories: list[oci.cims.models.SubCategories]
 
         """
         self.swagger_types = {
             'service': 'dict(str, str)',
             'schema': 'str',
-            'sub_categories': 'list[SubCategories]'
+            'service_categories': 'list[SubCategories]'
         }
 
         self.attribute_map = {
             'service': 'service',
             'schema': 'schema',
-            'sub_categories': 'subCategories'
+            'service_categories': 'serviceCategories'
         }
 
         self._service = None
         self._schema = None
-        self._sub_categories = None
+        self._service_categories = None
 
     @property
     def service(self):
         """
-        Gets the service of this ServiceCategories.
+        Gets the service of this Services.
         Service Category list.
 
 
-        :return: The service of this ServiceCategories.
+        :return: The service of this Services.
         :rtype: dict(str, str)
         """
         return self._service
@@ -64,11 +64,11 @@ class ServiceCategories(object):
     @service.setter
     def service(self, service):
         """
-        Sets the service of this ServiceCategories.
+        Sets the service of this Services.
         Service Category list.
 
 
-        :param service: The service of this ServiceCategories.
+        :param service: The service of this Services.
         :type: dict(str, str)
         """
         self._service = service
@@ -76,11 +76,11 @@ class ServiceCategories(object):
     @property
     def schema(self):
         """
-        Gets the schema of this ServiceCategories.
+        Gets the schema of this Services.
         Schema of a Service Category.
 
 
-        :return: The schema of this ServiceCategories.
+        :return: The schema of this Services.
         :rtype: str
         """
         return self._schema
@@ -88,38 +88,38 @@ class ServiceCategories(object):
     @schema.setter
     def schema(self, schema):
         """
-        Sets the schema of this ServiceCategories.
+        Sets the schema of this Services.
         Schema of a Service Category.
 
 
-        :param schema: The schema of this ServiceCategories.
+        :param schema: The schema of this Services.
         :type: str
         """
         self._schema = schema
 
     @property
-    def sub_categories(self):
+    def service_categories(self):
         """
-        Gets the sub_categories of this ServiceCategories.
+        Gets the service_categories of this Services.
         The service categories list for MOS Taxonomy.
 
 
-        :return: The sub_categories of this ServiceCategories.
+        :return: The service_categories of this Services.
         :rtype: list[oci.cims.models.SubCategories]
         """
-        return self._sub_categories
+        return self._service_categories
 
-    @sub_categories.setter
-    def sub_categories(self, sub_categories):
+    @service_categories.setter
+    def service_categories(self, service_categories):
         """
-        Sets the sub_categories of this ServiceCategories.
+        Sets the service_categories of this Services.
         The service categories list for MOS Taxonomy.
 
 
-        :param sub_categories: The sub_categories of this ServiceCategories.
+        :param service_categories: The service_categories of this Services.
         :type: list[oci.cims.models.SubCategories]
         """
-        self._sub_categories = sub_categories
+        self._service_categories = service_categories
 
     def __repr__(self):
         return formatted_flat_dict(self)

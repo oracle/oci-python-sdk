@@ -22,6 +22,7 @@ Cims
     oci.cims.models.ActivityItem
     oci.cims.models.Category
     oci.cims.models.Classifier
+    oci.cims.models.CmosUserGroupInfo
     oci.cims.models.Contact
     oci.cims.models.ContactList
     oci.cims.models.ContextualData
@@ -44,8 +45,8 @@ Cims
     oci.cims.models.Item
     oci.cims.models.LimitItem
     oci.cims.models.Resource
-    oci.cims.models.ServiceCategories
     oci.cims.models.ServiceCategory
+    oci.cims.models.Services
     oci.cims.models.Status
     oci.cims.models.SubCategories
     oci.cims.models.SubCategory

@@ -1,7 +1,7 @@
 # coding: utf-8
 # Modified Work: Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
-# Copyright 2008-2016 Andrey Petrov and contributors
+# Copyright (c) 2008-2020 Andrey Petrov and contributors
 
 from __future__ import absolute_import
 
@@ -73,7 +73,7 @@ port_by_scheme = {"http": 80, "https": 443}
 
 # When it comes time to update this value as a part of regular maintenance
 # (ie test_recent_date is failing) update it to ~6 months before the current date.
-RECENT_DATE = datetime.date(2020, 7, 1)
+RECENT_DATE = datetime.date(2024, 1, 1)
 
 _CONTAINS_CONTROL_CHAR_RE = re.compile(r"[^-!#$%&'*+.^_`|~0-9a-zA-Z]")
 
@@ -234,6 +234,11 @@ class HTTPConnection(_HTTPConnection, object):
             )
 
     def request(self, method, url, body=None, headers=None):
+        # Update the inner socket's timeout value to send the request.
+        # This only triggers if the connection is re-used.
+        if getattr(self, "sock", None) is not None:
+            self.sock.settimeout(self.timeout)
+
         if headers is None:
             headers = {}
         else:
@@ -437,7 +442,7 @@ class HTTPSConnection(HTTPConnection):
             and self.ssl_version is None
             and hasattr(self.sock, "version")
             and self.sock.version() in {"TLSv1", "TLSv1.1"}
-        ):
+        ):  # Defensive:
             warnings.warn(
                 "Negotiating TLSv1/TLSv1.1 by default is deprecated "
                 "and will be disabled in urllib3 v2.0.0. Connecting to "

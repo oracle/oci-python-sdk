@@ -1,7 +1,7 @@
 # coding: utf-8
 # Modified Work: Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
-# Copyright 2008-2016 Andrey Petrov and contributors
+# Copyright (c) 2008-2020 Andrey Petrov and contributors
 
 """
 This module provides a pool manager that uses Google App Engine's
@@ -229,7 +229,7 @@ class AppEngineManager(RequestMethods):
                 )
 
         # Check if we should retry the HTTP response.
-        has_retry_after = bool(http_response.getheader("Retry-After"))
+        has_retry_after = bool(http_response.headers.get("Retry-After"))
         if retries.is_retry(method, http_response.status, has_retry_after):
             retries = retries.increment(method, url, response=http_response, _pool=self)
             log.debug("Retry: %s", url)

@@ -50,7 +50,7 @@ class IncidentResourceType(object):
 
         :param services:
             The value to assign to the services property of this IncidentResourceType.
-        :type services: list[oci.cims.models.ServiceCategories]
+        :type services: list[oci.cims.models.Services]
 
         """
         self.swagger_types = {
@@ -61,7 +61,7 @@ class IncidentResourceType(object):
             'is_subscriptions_supported': 'bool',
             'service_category_list': 'list[ServiceCategory]',
             'service': 'dict(str, str)',
-            'services': 'list[ServiceCategories]'
+            'services': 'list[Services]'
         }
 
         self.attribute_map = {
@@ -260,7 +260,7 @@ class IncidentResourceType(object):
 
 
         :return: The services of this IncidentResourceType.
-        :rtype: list[oci.cims.models.ServiceCategories]
+        :rtype: list[oci.cims.models.Services]
         """
         return self._services
 
@@ -272,7 +272,7 @@ class IncidentResourceType(object):
 
 
         :param services: The services of this IncidentResourceType.
-        :type: list[oci.cims.models.ServiceCategories]
+        :type: list[oci.cims.models.Services]
         """
         self._services = services
 

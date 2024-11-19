@@ -303,6 +303,10 @@ class ExadataInfrastructureSummary(object):
             The value to assign to the is_scheduling_policy_associated property of this ExadataInfrastructureSummary.
         :type is_scheduling_policy_associated: bool
 
+        :param exascale_config:
+            The value to assign to the exascale_config property of this ExadataInfrastructureSummary.
+        :type exascale_config: oci.database.models.ExascaleConfigDetails
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -354,7 +358,8 @@ class ExadataInfrastructureSummary(object):
             'defined_file_system_configurations': 'list[DefinedFileSystemConfiguration]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'is_scheduling_policy_associated': 'bool'
+            'is_scheduling_policy_associated': 'bool',
+            'exascale_config': 'ExascaleConfigDetails'
         }
 
         self.attribute_map = {
@@ -407,7 +412,8 @@ class ExadataInfrastructureSummary(object):
             'defined_file_system_configurations': 'definedFileSystemConfigurations',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'is_scheduling_policy_associated': 'isSchedulingPolicyAssociated'
+            'is_scheduling_policy_associated': 'isSchedulingPolicyAssociated',
+            'exascale_config': 'exascaleConfig'
         }
 
         self._id = None
@@ -460,6 +466,7 @@ class ExadataInfrastructureSummary(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._is_scheduling_policy_associated = None
+        self._exascale_config = None
 
     @property
     def id(self):
@@ -1714,6 +1721,26 @@ class ExadataInfrastructureSummary(object):
         :type: bool
         """
         self._is_scheduling_policy_associated = is_scheduling_policy_associated
+
+    @property
+    def exascale_config(self):
+        """
+        Gets the exascale_config of this ExadataInfrastructureSummary.
+
+        :return: The exascale_config of this ExadataInfrastructureSummary.
+        :rtype: oci.database.models.ExascaleConfigDetails
+        """
+        return self._exascale_config
+
+    @exascale_config.setter
+    def exascale_config(self, exascale_config):
+        """
+        Sets the exascale_config of this ExadataInfrastructureSummary.
+
+        :param exascale_config: The exascale_config of this ExadataInfrastructureSummary.
+        :type: oci.database.models.ExascaleConfigDetails
+        """
+        self._exascale_config = exascale_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

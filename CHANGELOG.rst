@@ -4,6 +4,32 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.139.0 - 2024-11-19
+====================
+
+Added 
+----- 
+* Support for optional parameters for unified auditing in the Database service 
+* Support for user groups for creating technical requests in the Support Management service 
+* Support for additional checksum algorithms (SHA-256, SHA-384, CRC32C) in the Object Storage service 
+* Support for single Read Only (RO) endpoint for the read replicas in the PostgreSQL service 
+* Support for exascale database vaults in the Database service 
+* Support for virtual machine clusters with database vaults in the Database service 
+* Support for N3-Gi version in the Database service   
+
+Changed 
+------- 
+* The vendored library idna was upgraded from version `2.10` to `3.10` 
+* The vendored library urllib3 was upgraded from version `1.26.9` to `1.26.20`   
+
+Breaking 
+-------- 
+* The property `sub_components` was removed from the model `SubCategories` in the Customer Incident Management Service 
+* The constants `LIMIT_STATUS_APPROVED`, `LIMIT_STATUS_PARTIALLY_APPROVED`, `LIMIT_STATUS_NOT_APPROVED`, `LIMIT_STATUS_REJECTED` were removed from the model `CreateLimitItemDetails` in the Customer Incident Management Service 
+* The property `limit_status` was removed from the model `CreateLimitItemDetails` in the Customer Incident Management Service 
+* The model `ServiceCategories` was removed from the Customer Incident Management Service   
+
+====================
 2.138.1 - 2024-11-12
 ====================
 

@@ -122,6 +122,7 @@ Database
     oci.database.models.CompleteExternalBackupJobDetails
     oci.database.models.ComputePerformanceSummary
     oci.database.models.ConfigureAutonomousDatabaseVaultKeyDetails
+    oci.database.models.ConfigureExascaleExadataInfrastructureDetails
     oci.database.models.ConfigureSaasAdminUserDetails
     oci.database.models.ConsoleConnection
     oci.database.models.ConsoleConnectionSummary
@@ -286,6 +287,7 @@ Database
     oci.database.models.ExadbVmClusterUpdateHistoryEntry
     oci.database.models.ExadbVmClusterUpdateHistoryEntrySummary
     oci.database.models.ExadbVmClusterUpdateSummary
+    oci.database.models.ExascaleConfigDetails
     oci.database.models.ExascaleDbStorageDetails
     oci.database.models.ExascaleDbStorageInputDetails
     oci.database.models.ExascaleDbStorageVault

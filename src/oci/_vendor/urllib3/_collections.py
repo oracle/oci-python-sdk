@@ -1,7 +1,7 @@
 # coding: utf-8
 # Modified Work: Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
-# Copyright 2008-2016 Andrey Petrov and contributors
+# Copyright (c) 2008-2020 Andrey Petrov and contributors
 
 from __future__ import absolute_import
 
@@ -272,6 +272,24 @@ class HTTPHeaderDict(MutableMapping):
             return default
         else:
             return vals[1:]
+
+    def _prepare_for_method_change(self):
+        """
+        Remove content-specific header fields before changing the request
+        method to GET or HEAD according to RFC 9110, Section 15.4.
+        """
+        content_specific_headers = [
+            "Content-Encoding",
+            "Content-Language",
+            "Content-Location",
+            "Content-Type",
+            "Content-Length",
+            "Digest",
+            "Last-Modified",
+        ]
+        for header in content_specific_headers:
+            self.discard(header)
+        return self
 
     # Backwards compatibility for httplib
     getheaders = getlist

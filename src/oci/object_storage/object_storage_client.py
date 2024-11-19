@@ -801,6 +801,12 @@ class ObjectStorageClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
+        :param str opc_checksum_algorithm: (optional)
+            The optional checksum algorithm to use to compute and store the checksum of the body of the HTTP request (or the parts in case of multipart uploads),
+            in addition to the default MD5 checksum.
+
+            Allowed values are: "CRC32C", "SHA256", "SHA384"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -836,7 +842,8 @@ class ObjectStorageClient(object):
             "opc_sse_customer_algorithm",
             "opc_sse_customer_key",
             "opc_sse_customer_key_sha256",
-            "opc_sse_kms_key_id"
+            "opc_sse_kms_key_id",
+            "opc_checksum_algorithm"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -863,7 +870,8 @@ class ObjectStorageClient(object):
             "opc-sse-customer-algorithm": kwargs.get("opc_sse_customer_algorithm", missing),
             "opc-sse-customer-key": kwargs.get("opc_sse_customer_key", missing),
             "opc-sse-customer-key-sha256": kwargs.get("opc_sse_customer_key_sha256", missing),
-            "opc-sse-kms-key-id": kwargs.get("opc_sse_kms_key_id", missing)
+            "opc-sse-kms-key-id": kwargs.get("opc_sse_kms_key_id", missing),
+            "opc-checksum-algorithm": kwargs.get("opc_checksum_algorithm", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -5494,6 +5502,42 @@ class ObjectStorageClient(object):
 
             \"The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)\"
 
+        :param str opc_checksum_algorithm: (optional)
+            The optional checksum algorithm to use to compute and store the checksum of the body of the HTTP request (or the parts in case of multipart uploads),
+            in addition to the default MD5 checksum.
+
+            Allowed values are: "CRC32C", "SHA256", "SHA384"
+
+        :param str opc_content_crc32c: (optional)
+            Applicable only if CRC32C is specified in the opc-checksum-algorithm request header.
+
+            The optional header that defines the base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the body. If the optional opc-content-crc32c header
+            is present, Object Storage performs an integrity check on the body of the HTTP request by computing the CRC32C checksum for the body and comparing
+            it to the CRC32C checksum supplied in the header. If the two checksums do not match, the object is rejected and an HTTP-400 Unmatched Content CRC32C error
+            is returned with the message:
+
+            \"The computed CRC32C of the request body (ACTUAL_CRC32C) does not match the opc-content-crc32c header (HEADER_CRC32C)\"
+
+        :param str opc_content_sha256: (optional)
+            Applicable only if SHA256 is specified in the opc-checksum-algorithm request header.
+
+            The optional header that defines the base64-encoded SHA256 hash of the body. If the optional opc-content-sha256 header is present, Object
+            Storage performs an integrity check on the body of the HTTP request by computing the SHA256 hash for the body and comparing it to the
+            SHA256 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content SHA256 error
+            is returned with the message:
+
+            \"The computed SHA256 of the request body (ACTUAL_SHA256) does not match the opc-content-sha256 header (HEADER_SHA256)\"
+
+        :param str opc_content_sha384: (optional)
+            Applicable only if SHA384 is specified in the opc-checksum-algorithm request header.
+
+            The optional header that defines the base64-encoded SHA384 hash of the body. If the optional opc-content-sha384 header is present, Object
+            Storage performs an integrity check on the body of the HTTP request by computing the SHA384 hash for the body and comparing it to the
+            SHA384 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content SHA384 error
+            is returned with the message:
+
+            \"The computed SHA384 of the request body (ACTUAL_SHA384) does not match the opc-content-sha384 header (HEADER_SHA384)\"
+
         :param str content_type: (optional)
             The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to
             'application/octet-stream' if not specified in the PutObject call. Specifying values for this header has no effect
@@ -5605,6 +5649,10 @@ class ObjectStorageClient(object):
             "opc_client_request_id",
             "expect",
             "content_md5",
+            "opc_checksum_algorithm",
+            "opc_content_crc32c",
+            "opc_content_sha256",
+            "opc_content_sha384",
             "content_type",
             "content_language",
             "content_encoding",
@@ -5642,6 +5690,10 @@ class ObjectStorageClient(object):
             "Expect": kwargs.get("expect", missing),
             "Content-Length": kwargs.get("content_length", missing),
             "Content-MD5": kwargs.get("content_md5", missing),
+            "opc-checksum-algorithm": kwargs.get("opc_checksum_algorithm", missing),
+            "opc-content-crc32c": kwargs.get("opc_content_crc32c", missing),
+            "opc-content-sha256": kwargs.get("opc_content_sha256", missing),
+            "opc-content-sha384": kwargs.get("opc_content_sha384", missing),
             "Content-Type": kwargs.get("content_type", missing),
             "Content-Language": kwargs.get("content_language", missing),
             "Content-Encoding": kwargs.get("content_encoding", missing),
@@ -6933,6 +6985,42 @@ class ObjectStorageClient(object):
 
             \"The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)\"
 
+        :param str opc_checksum_algorithm: (optional)
+            The optional checksum algorithm to use to compute and store the checksum of the body of the HTTP request (or the parts in case of multipart uploads),
+            in addition to the default MD5 checksum.
+
+            Allowed values are: "CRC32C", "SHA256", "SHA384"
+
+        :param str opc_content_crc32c: (optional)
+            Applicable only if CRC32C is specified in the opc-checksum-algorithm request header.
+
+            The optional header that defines the base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the body. If the optional opc-content-crc32c header
+            is present, Object Storage performs an integrity check on the body of the HTTP request by computing the CRC32C checksum for the body and comparing
+            it to the CRC32C checksum supplied in the header. If the two checksums do not match, the object is rejected and an HTTP-400 Unmatched Content CRC32C error
+            is returned with the message:
+
+            \"The computed CRC32C of the request body (ACTUAL_CRC32C) does not match the opc-content-crc32c header (HEADER_CRC32C)\"
+
+        :param str opc_content_sha256: (optional)
+            Applicable only if SHA256 is specified in the opc-checksum-algorithm request header.
+
+            The optional header that defines the base64-encoded SHA256 hash of the body. If the optional opc-content-sha256 header is present, Object
+            Storage performs an integrity check on the body of the HTTP request by computing the SHA256 hash for the body and comparing it to the
+            SHA256 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content SHA256 error
+            is returned with the message:
+
+            \"The computed SHA256 of the request body (ACTUAL_SHA256) does not match the opc-content-sha256 header (HEADER_SHA256)\"
+
+        :param str opc_content_sha384: (optional)
+            Applicable only if SHA384 is specified in the opc-checksum-algorithm request header.
+
+            The optional header that defines the base64-encoded SHA384 hash of the body. If the optional opc-content-sha384 header is present, Object
+            Storage performs an integrity check on the body of the HTTP request by computing the SHA384 hash for the body and comparing it to the
+            SHA384 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content SHA384 error
+            is returned with the message:
+
+            \"The computed SHA384 of the request body (ACTUAL_SHA384) does not match the opc-content-sha384 header (HEADER_SHA384)\"
+
         :param str opc_sse_customer_algorithm: (optional)
             The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
@@ -7002,6 +7090,10 @@ class ObjectStorageClient(object):
             "if_none_match",
             "expect",
             "content_md5",
+            "opc_checksum_algorithm",
+            "opc_content_crc32c",
+            "opc_content_sha256",
+            "opc_content_sha384",
             "opc_sse_customer_algorithm",
             "opc_sse_customer_key",
             "opc_sse_customer_key_sha256",
@@ -7038,6 +7130,10 @@ class ObjectStorageClient(object):
             "Expect": kwargs.get("expect", missing),
             "Content-Length": kwargs.get("content_length", missing),
             "Content-MD5": kwargs.get("content_md5", missing),
+            "opc-checksum-algorithm": kwargs.get("opc_checksum_algorithm", missing),
+            "opc-content-crc32c": kwargs.get("opc_content_crc32c", missing),
+            "opc-content-sha256": kwargs.get("opc_content_sha256", missing),
+            "opc-content-sha384": kwargs.get("opc_content_sha384", missing),
             "opc-sse-customer-algorithm": kwargs.get("opc_sse_customer_algorithm", missing),
             "opc-sse-customer-key": kwargs.get("opc_sse_customer_key", missing),
             "opc-sse-customer-key-sha256": kwargs.get("opc_sse_customer_key_sha256", missing),

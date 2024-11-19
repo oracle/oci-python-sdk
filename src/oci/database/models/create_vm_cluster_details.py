@@ -122,6 +122,10 @@ class CreateVmClusterDetails(object):
             The value to assign to the cloud_automation_update_details property of this CreateVmClusterDetails.
         :type cloud_automation_update_details: oci.database.models.CloudAutomationUpdateDetails
 
+        :param exascale_db_storage_vault_id:
+            The value to assign to the exascale_db_storage_vault_id property of this CreateVmClusterDetails.
+        :type exascale_db_storage_vault_id: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -146,7 +150,8 @@ class CreateVmClusterDetails(object):
             'data_collection_options': 'DataCollectionOptions',
             'system_version': 'str',
             'file_system_configuration_details': 'list[FileSystemConfigurationDetail]',
-            'cloud_automation_update_details': 'CloudAutomationUpdateDetails'
+            'cloud_automation_update_details': 'CloudAutomationUpdateDetails',
+            'exascale_db_storage_vault_id': 'str'
         }
 
         self.attribute_map = {
@@ -172,7 +177,8 @@ class CreateVmClusterDetails(object):
             'data_collection_options': 'dataCollectionOptions',
             'system_version': 'systemVersion',
             'file_system_configuration_details': 'fileSystemConfigurationDetails',
-            'cloud_automation_update_details': 'cloudAutomationUpdateDetails'
+            'cloud_automation_update_details': 'cloudAutomationUpdateDetails',
+            'exascale_db_storage_vault_id': 'exascaleDbStorageVaultId'
         }
 
         self._compartment_id = None
@@ -198,6 +204,7 @@ class CreateVmClusterDetails(object):
         self._system_version = None
         self._file_system_configuration_details = None
         self._cloud_automation_update_details = None
+        self._exascale_db_storage_vault_id = None
 
     @property
     def compartment_id(self):
@@ -781,6 +788,34 @@ class CreateVmClusterDetails(object):
         :type: oci.database.models.CloudAutomationUpdateDetails
         """
         self._cloud_automation_update_details = cloud_automation_update_details
+
+    @property
+    def exascale_db_storage_vault_id(self):
+        """
+        Gets the exascale_db_storage_vault_id of this CreateVmClusterDetails.
+        The `OCID`__ of the Exadata Database Storage Vault.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The exascale_db_storage_vault_id of this CreateVmClusterDetails.
+        :rtype: str
+        """
+        return self._exascale_db_storage_vault_id
+
+    @exascale_db_storage_vault_id.setter
+    def exascale_db_storage_vault_id(self, exascale_db_storage_vault_id):
+        """
+        Sets the exascale_db_storage_vault_id of this CreateVmClusterDetails.
+        The `OCID`__ of the Exadata Database Storage Vault.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param exascale_db_storage_vault_id: The exascale_db_storage_vault_id of this CreateVmClusterDetails.
+        :type: str
+        """
+        self._exascale_db_storage_vault_id = exascale_db_storage_vault_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

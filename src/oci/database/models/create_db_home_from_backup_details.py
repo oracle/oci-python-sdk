@@ -26,6 +26,10 @@ class CreateDbHomeFromBackupDetails(object):
             The value to assign to the display_name property of this CreateDbHomeFromBackupDetails.
         :type display_name: str
 
+        :param is_unified_auditing_enabled:
+            The value to assign to the is_unified_auditing_enabled property of this CreateDbHomeFromBackupDetails.
+        :type is_unified_auditing_enabled: bool
+
         :param database_software_image_id:
             The value to assign to the database_software_image_id property of this CreateDbHomeFromBackupDetails.
         :type database_software_image_id: str
@@ -45,6 +49,7 @@ class CreateDbHomeFromBackupDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'is_unified_auditing_enabled': 'bool',
             'database_software_image_id': 'str',
             'database': 'CreateDatabaseFromBackupDetails',
             'freeform_tags': 'dict(str, str)',
@@ -53,6 +58,7 @@ class CreateDbHomeFromBackupDetails(object):
 
         self.attribute_map = {
             'display_name': 'displayName',
+            'is_unified_auditing_enabled': 'isUnifiedAuditingEnabled',
             'database_software_image_id': 'databaseSoftwareImageId',
             'database': 'database',
             'freeform_tags': 'freeformTags',
@@ -60,6 +66,7 @@ class CreateDbHomeFromBackupDetails(object):
         }
 
         self._display_name = None
+        self._is_unified_auditing_enabled = None
         self._database_software_image_id = None
         self._database = None
         self._freeform_tags = None
@@ -88,6 +95,30 @@ class CreateDbHomeFromBackupDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def is_unified_auditing_enabled(self):
+        """
+        Gets the is_unified_auditing_enabled of this CreateDbHomeFromBackupDetails.
+        Indicates whether unified auditing is enabled or not
+
+
+        :return: The is_unified_auditing_enabled of this CreateDbHomeFromBackupDetails.
+        :rtype: bool
+        """
+        return self._is_unified_auditing_enabled
+
+    @is_unified_auditing_enabled.setter
+    def is_unified_auditing_enabled(self, is_unified_auditing_enabled):
+        """
+        Sets the is_unified_auditing_enabled of this CreateDbHomeFromBackupDetails.
+        Indicates whether unified auditing is enabled or not
+
+
+        :param is_unified_auditing_enabled: The is_unified_auditing_enabled of this CreateDbHomeFromBackupDetails.
+        :type: bool
+        """
+        self._is_unified_auditing_enabled = is_unified_auditing_enabled
 
     @property
     def database_software_image_id(self):

@@ -180,7 +180,7 @@ class CreateUserDetails(object):
     @property
     def csi(self):
         """
-        **[Required]** Gets the csi of this CreateUserDetails.
+        Gets the csi of this CreateUserDetails.
         CSI associated with the user.
 
 
@@ -204,7 +204,7 @@ class CreateUserDetails(object):
     @property
     def phone(self):
         """
-        **[Required]** Gets the phone of this CreateUserDetails.
+        Gets the phone of this CreateUserDetails.
         Contact number of the user.
 
 
@@ -228,7 +228,7 @@ class CreateUserDetails(object):
     @property
     def timezone(self):
         """
-        **[Required]** Gets the timezone of this CreateUserDetails.
+        Gets the timezone of this CreateUserDetails.
         Timezone of the user.
 
 
@@ -252,7 +252,7 @@ class CreateUserDetails(object):
     @property
     def organization_name(self):
         """
-        **[Required]** Gets the organization_name of this CreateUserDetails.
+        Gets the organization_name of this CreateUserDetails.
         Organization of the user.
 
 

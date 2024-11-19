@@ -110,6 +110,7 @@ from .cloud_vm_cluster_summary import CloudVmClusterSummary
 from .complete_external_backup_job_details import CompleteExternalBackupJobDetails
 from .compute_performance_summary import ComputePerformanceSummary
 from .configure_autonomous_database_vault_key_details import ConfigureAutonomousDatabaseVaultKeyDetails
+from .configure_exascale_exadata_infrastructure_details import ConfigureExascaleExadataInfrastructureDetails
 from .configure_saas_admin_user_details import ConfigureSaasAdminUserDetails
 from .console_connection import ConsoleConnection
 from .console_connection_summary import ConsoleConnectionSummary
@@ -274,6 +275,7 @@ from .exadb_vm_cluster_update import ExadbVmClusterUpdate
 from .exadb_vm_cluster_update_history_entry import ExadbVmClusterUpdateHistoryEntry
 from .exadb_vm_cluster_update_history_entry_summary import ExadbVmClusterUpdateHistoryEntrySummary
 from .exadb_vm_cluster_update_summary import ExadbVmClusterUpdateSummary
+from .exascale_config_details import ExascaleConfigDetails
 from .exascale_db_storage_details import ExascaleDbStorageDetails
 from .exascale_db_storage_input_details import ExascaleDbStorageInputDetails
 from .exascale_db_storage_vault import ExascaleDbStorageVault
@@ -567,6 +569,7 @@ database_type_mapping = {
     "CompleteExternalBackupJobDetails": CompleteExternalBackupJobDetails,
     "ComputePerformanceSummary": ComputePerformanceSummary,
     "ConfigureAutonomousDatabaseVaultKeyDetails": ConfigureAutonomousDatabaseVaultKeyDetails,
+    "ConfigureExascaleExadataInfrastructureDetails": ConfigureExascaleExadataInfrastructureDetails,
     "ConfigureSaasAdminUserDetails": ConfigureSaasAdminUserDetails,
     "ConsoleConnection": ConsoleConnection,
     "ConsoleConnectionSummary": ConsoleConnectionSummary,
@@ -731,6 +734,7 @@ database_type_mapping = {
     "ExadbVmClusterUpdateHistoryEntry": ExadbVmClusterUpdateHistoryEntry,
     "ExadbVmClusterUpdateHistoryEntrySummary": ExadbVmClusterUpdateHistoryEntrySummary,
     "ExadbVmClusterUpdateSummary": ExadbVmClusterUpdateSummary,
+    "ExascaleConfigDetails": ExascaleConfigDetails,
     "ExascaleDbStorageDetails": ExascaleDbStorageDetails,
     "ExascaleDbStorageInputDetails": ExascaleDbStorageInputDetails,
     "ExascaleDbStorageVault": ExascaleDbStorageVault,

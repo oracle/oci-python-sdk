@@ -18,22 +18,6 @@ class CreateLimitItemDetails(CreateItemDetails):
     __ https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm
     """
 
-    #: A constant which can be used with the limit_status property of a CreateLimitItemDetails.
-    #: This constant has a value of "APPROVED"
-    LIMIT_STATUS_APPROVED = "APPROVED"
-
-    #: A constant which can be used with the limit_status property of a CreateLimitItemDetails.
-    #: This constant has a value of "PARTIALLY_APPROVED"
-    LIMIT_STATUS_PARTIALLY_APPROVED = "PARTIALLY_APPROVED"
-
-    #: A constant which can be used with the limit_status property of a CreateLimitItemDetails.
-    #: This constant has a value of "NOT_APPROVED"
-    LIMIT_STATUS_NOT_APPROVED = "NOT_APPROVED"
-
-    #: A constant which can be used with the limit_status property of a CreateLimitItemDetails.
-    #: This constant has a value of "REJECTED"
-    LIMIT_STATUS_REJECTED = "REJECTED"
-
     def __init__(self, **kwargs):
         """
         Initializes a new CreateLimitItemDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.cims.models.CreateLimitItemDetails.type` attribute
@@ -72,11 +56,6 @@ class CreateLimitItemDetails(CreateItemDetails):
             The value to assign to the requested_limit property of this CreateLimitItemDetails.
         :type requested_limit: int
 
-        :param limit_status:
-            The value to assign to the limit_status property of this CreateLimitItemDetails.
-            Allowed values for this property are: "APPROVED", "PARTIALLY_APPROVED", "NOT_APPROVED", "REJECTED"
-        :type limit_status: str
-
         """
         self.swagger_types = {
             'type': 'str',
@@ -86,8 +65,7 @@ class CreateLimitItemDetails(CreateItemDetails):
             'name': 'str',
             'current_limit': 'int',
             'current_usage': 'int',
-            'requested_limit': 'int',
-            'limit_status': 'str'
+            'requested_limit': 'int'
         }
 
         self.attribute_map = {
@@ -98,8 +76,7 @@ class CreateLimitItemDetails(CreateItemDetails):
             'name': 'name',
             'current_limit': 'currentLimit',
             'current_usage': 'currentUsage',
-            'requested_limit': 'requestedLimit',
-            'limit_status': 'limitStatus'
+            'requested_limit': 'requestedLimit'
         }
 
         self._type = None
@@ -110,7 +87,6 @@ class CreateLimitItemDetails(CreateItemDetails):
         self._current_limit = None
         self._current_usage = None
         self._requested_limit = None
-        self._limit_status = None
         self._type = 'limit'
 
     @property
@@ -184,37 +160,6 @@ class CreateLimitItemDetails(CreateItemDetails):
         :type: int
         """
         self._requested_limit = requested_limit
-
-    @property
-    def limit_status(self):
-        """
-        Gets the limit_status of this CreateLimitItemDetails.
-        The current status of the request.
-
-        Allowed values for this property are: "APPROVED", "PARTIALLY_APPROVED", "NOT_APPROVED", "REJECTED"
-
-
-        :return: The limit_status of this CreateLimitItemDetails.
-        :rtype: str
-        """
-        return self._limit_status
-
-    @limit_status.setter
-    def limit_status(self, limit_status):
-        """
-        Sets the limit_status of this CreateLimitItemDetails.
-        The current status of the request.
-
-
-        :param limit_status: The limit_status of this CreateLimitItemDetails.
-        :type: str
-        """
-        allowed_values = ["APPROVED", "PARTIALLY_APPROVED", "NOT_APPROVED", "REJECTED"]
-        if not value_allowed_none_or_none_sentinel(limit_status, allowed_values):
-            raise ValueError(
-                f"Invalid value for `limit_status`, must be None or one of {allowed_values}"
-            )
-        self._limit_status = limit_status
 
     def __repr__(self):
         return formatted_flat_dict(self)

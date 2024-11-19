@@ -1,15 +1,14 @@
 # coding: utf-8
 # Modified Work: Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
-# Copyright 2008-2016 Andrey Petrov and contributors
+# Copyright (c) 2008-2020 Andrey Petrov and contributors
 
 from __future__ import absolute_import
 
 import time
 
-# The default socket timeout, used by httplib to indicate that no timeout was
-# specified by the user
-from socket import _GLOBAL_DEFAULT_TIMEOUT
+# The default socket timeout, used by httplib to indicate that no timeout was; specified by the user
+from socket import _GLOBAL_DEFAULT_TIMEOUT, getdefaulttimeout
 
 from ..exceptions import TimeoutStateError
 
@@ -120,6 +119,10 @@ class Timeout(object):
 
     # __str__ provided for backwards compatibility
     __str__ = __repr__
+
+    @classmethod
+    def resolve_default_timeout(cls, timeout):
+        return getdefaulttimeout() if timeout is cls.DEFAULT_TIMEOUT else timeout
 
     @classmethod
     def _validate_timeout(cls, value, name):

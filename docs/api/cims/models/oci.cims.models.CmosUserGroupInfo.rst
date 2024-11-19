@@ -1,9 +1,9 @@
-ServiceCategories
+CmosUserGroupInfo
 =================
 
 .. currentmodule:: oci.cims.models
 
-.. autoclass:: ServiceCategories
+.. autoclass:: CmosUserGroupInfo
     :show-inheritance:
     :special-members: __init__
     :members:
