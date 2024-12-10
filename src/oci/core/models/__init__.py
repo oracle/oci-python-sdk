@@ -405,10 +405,13 @@ from .launch_create_volume_from_attributes import LaunchCreateVolumeFromAttribut
 from .launch_instance_agent_config_details import LaunchInstanceAgentConfigDetails
 from .launch_instance_availability_config_details import LaunchInstanceAvailabilityConfigDetails
 from .launch_instance_details import LaunchInstanceDetails
+from .launch_instance_licensing_config import LaunchInstanceLicensingConfig
 from .launch_instance_platform_config import LaunchInstancePlatformConfig
 from .launch_instance_shape_config_details import LaunchInstanceShapeConfigDetails
+from .launch_instance_windows_licensing_config import LaunchInstanceWindowsLicensingConfig
 from .launch_options import LaunchOptions
 from .letter_of_authority import LetterOfAuthority
+from .licensing_config import LicensingConfig
 from .list_ip_inventory_details import ListIpInventoryDetails
 from .local_peering_gateway import LocalPeeringGateway
 from .loop_back_drg_attachment_network_details import LoopBackDrgAttachmentNetworkDetails
@@ -532,6 +535,7 @@ from .update_instance_availability_config_details import UpdateInstanceAvailabil
 from .update_instance_configuration_details import UpdateInstanceConfigurationDetails
 from .update_instance_console_connection_details import UpdateInstanceConsoleConnectionDetails
 from .update_instance_details import UpdateInstanceDetails
+from .update_instance_licensing_config import UpdateInstanceLicensingConfig
 from .update_instance_maintenance_event_details import UpdateInstanceMaintenanceEventDetails
 from .update_instance_platform_config import UpdateInstancePlatformConfig
 from .update_instance_pool_details import UpdateInstancePoolDetails
@@ -540,6 +544,7 @@ from .update_instance_shape_config_details import UpdateInstanceShapeConfigDetai
 from .update_instance_source_details import UpdateInstanceSourceDetails
 from .update_instance_source_via_boot_volume_details import UpdateInstanceSourceViaBootVolumeDetails
 from .update_instance_source_via_image_details import UpdateInstanceSourceViaImageDetails
+from .update_instance_windows_licensing_config import UpdateInstanceWindowsLicensingConfig
 from .update_internet_gateway_details import UpdateInternetGatewayDetails
 from .update_ipv6_details import UpdateIpv6Details
 from .update_launch_options import UpdateLaunchOptions
@@ -1014,10 +1019,13 @@ core_type_mapping = {
     "LaunchInstanceAgentConfigDetails": LaunchInstanceAgentConfigDetails,
     "LaunchInstanceAvailabilityConfigDetails": LaunchInstanceAvailabilityConfigDetails,
     "LaunchInstanceDetails": LaunchInstanceDetails,
+    "LaunchInstanceLicensingConfig": LaunchInstanceLicensingConfig,
     "LaunchInstancePlatformConfig": LaunchInstancePlatformConfig,
     "LaunchInstanceShapeConfigDetails": LaunchInstanceShapeConfigDetails,
+    "LaunchInstanceWindowsLicensingConfig": LaunchInstanceWindowsLicensingConfig,
     "LaunchOptions": LaunchOptions,
     "LetterOfAuthority": LetterOfAuthority,
+    "LicensingConfig": LicensingConfig,
     "ListIpInventoryDetails": ListIpInventoryDetails,
     "LocalPeeringGateway": LocalPeeringGateway,
     "LoopBackDrgAttachmentNetworkDetails": LoopBackDrgAttachmentNetworkDetails,
@@ -1141,6 +1149,7 @@ core_type_mapping = {
     "UpdateInstanceConfigurationDetails": UpdateInstanceConfigurationDetails,
     "UpdateInstanceConsoleConnectionDetails": UpdateInstanceConsoleConnectionDetails,
     "UpdateInstanceDetails": UpdateInstanceDetails,
+    "UpdateInstanceLicensingConfig": UpdateInstanceLicensingConfig,
     "UpdateInstanceMaintenanceEventDetails": UpdateInstanceMaintenanceEventDetails,
     "UpdateInstancePlatformConfig": UpdateInstancePlatformConfig,
     "UpdateInstancePoolDetails": UpdateInstancePoolDetails,
@@ -1149,6 +1158,7 @@ core_type_mapping = {
     "UpdateInstanceSourceDetails": UpdateInstanceSourceDetails,
     "UpdateInstanceSourceViaBootVolumeDetails": UpdateInstanceSourceViaBootVolumeDetails,
     "UpdateInstanceSourceViaImageDetails": UpdateInstanceSourceViaImageDetails,
+    "UpdateInstanceWindowsLicensingConfig": UpdateInstanceWindowsLicensingConfig,
     "UpdateInternetGatewayDetails": UpdateInternetGatewayDetails,
     "UpdateIpv6Details": UpdateIpv6Details,
     "UpdateLaunchOptions": UpdateLaunchOptions,

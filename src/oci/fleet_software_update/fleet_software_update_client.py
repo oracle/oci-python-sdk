@@ -3005,7 +3005,7 @@ class FleetSoftwareUpdateClient(object):
         :param str type: (optional)
             A filter to return only resources whose type matches the given type.
 
-            Allowed values are: "STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP"
+            Allowed values are: "STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", "ROLLBACK_MAINTENANCE_CYCLE"
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -3079,7 +3079,7 @@ class FleetSoftwareUpdateClient(object):
                 )
 
         if 'type' in kwargs:
-            type_allowed_values = ["STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP"]
+            type_allowed_values = ["STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", "ROLLBACK_MAINTENANCE_CYCLE"]
             if kwargs['type'] not in type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `type`, must be one of { type_allowed_values }"

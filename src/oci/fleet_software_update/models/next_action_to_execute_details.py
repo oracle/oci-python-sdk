@@ -39,6 +39,10 @@ class NextActionToExecuteDetails(object):
     #: This constant has a value of "CLEANUP"
     TYPE_CLEANUP = "CLEANUP"
 
+    #: A constant which can be used with the type property of a NextActionToExecuteDetails.
+    #: This constant has a value of "ROLLBACK_MAINTENANCE_CYCLE"
+    TYPE_ROLLBACK_MAINTENANCE_CYCLE = "ROLLBACK_MAINTENANCE_CYCLE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new NextActionToExecuteDetails object with values from keyword arguments.
@@ -46,7 +50,7 @@ class NextActionToExecuteDetails(object):
 
         :param type:
             The value to assign to the type property of this NextActionToExecuteDetails.
-            Allowed values for this property are: "STAGE", "PRECHECK_STAGE", "PRECHECK_APPLY", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "STAGE", "PRECHECK_STAGE", "PRECHECK_APPLY", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", "ROLLBACK_MAINTENANCE_CYCLE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -74,7 +78,7 @@ class NextActionToExecuteDetails(object):
         **[Required]** Gets the type of this NextActionToExecuteDetails.
         Type of Exadata Fleet Update Action
 
-        Allowed values for this property are: "STAGE", "PRECHECK_STAGE", "PRECHECK_APPLY", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STAGE", "PRECHECK_STAGE", "PRECHECK_APPLY", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", "ROLLBACK_MAINTENANCE_CYCLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -93,7 +97,7 @@ class NextActionToExecuteDetails(object):
         :param type: The type of this NextActionToExecuteDetails.
         :type: str
         """
-        allowed_values = ["STAGE", "PRECHECK_STAGE", "PRECHECK_APPLY", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP"]
+        allowed_values = ["STAGE", "PRECHECK_STAGE", "PRECHECK_APPLY", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", "ROLLBACK_MAINTENANCE_CYCLE"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

@@ -52,6 +52,10 @@ class UpdateVbInstanceDetails(object):
             The value to assign to the alternate_custom_endpoints property of this UpdateVbInstanceDetails.
         :type alternate_custom_endpoints: list[oci.visual_builder.models.UpdateCustomEndpointDetails]
 
+        :param network_endpoint_details:
+            The value to assign to the network_endpoint_details property of this UpdateVbInstanceDetails.
+        :type network_endpoint_details: oci.visual_builder.models.UpdateNetworkEndpointDetails
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -61,7 +65,8 @@ class UpdateVbInstanceDetails(object):
             'node_count': 'int',
             'is_visual_builder_enabled': 'bool',
             'custom_endpoint': 'UpdateCustomEndpointDetails',
-            'alternate_custom_endpoints': 'list[UpdateCustomEndpointDetails]'
+            'alternate_custom_endpoints': 'list[UpdateCustomEndpointDetails]',
+            'network_endpoint_details': 'UpdateNetworkEndpointDetails'
         }
 
         self.attribute_map = {
@@ -72,7 +77,8 @@ class UpdateVbInstanceDetails(object):
             'node_count': 'nodeCount',
             'is_visual_builder_enabled': 'isVisualBuilderEnabled',
             'custom_endpoint': 'customEndpoint',
-            'alternate_custom_endpoints': 'alternateCustomEndpoints'
+            'alternate_custom_endpoints': 'alternateCustomEndpoints',
+            'network_endpoint_details': 'networkEndpointDetails'
         }
 
         self._display_name = None
@@ -83,6 +89,7 @@ class UpdateVbInstanceDetails(object):
         self._is_visual_builder_enabled = None
         self._custom_endpoint = None
         self._alternate_custom_endpoints = None
+        self._network_endpoint_details = None
 
     @property
     def display_name(self):
@@ -281,6 +288,26 @@ class UpdateVbInstanceDetails(object):
         :type: list[oci.visual_builder.models.UpdateCustomEndpointDetails]
         """
         self._alternate_custom_endpoints = alternate_custom_endpoints
+
+    @property
+    def network_endpoint_details(self):
+        """
+        Gets the network_endpoint_details of this UpdateVbInstanceDetails.
+
+        :return: The network_endpoint_details of this UpdateVbInstanceDetails.
+        :rtype: oci.visual_builder.models.UpdateNetworkEndpointDetails
+        """
+        return self._network_endpoint_details
+
+    @network_endpoint_details.setter
+    def network_endpoint_details(self, network_endpoint_details):
+        """
+        Sets the network_endpoint_details of this UpdateVbInstanceDetails.
+
+        :param network_endpoint_details: The network_endpoint_details of this UpdateVbInstanceDetails.
+        :type: oci.visual_builder.models.UpdateNetworkEndpointDetails
+        """
+        self._network_endpoint_details = network_endpoint_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

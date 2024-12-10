@@ -105,6 +105,10 @@ class UpdateInstanceDetails(object):
             The value to assign to the platform_config property of this UpdateInstanceDetails.
         :type platform_config: oci.core.models.UpdateInstancePlatformConfig
 
+        :param licensing_configs:
+            The value to assign to the licensing_configs property of this UpdateInstanceDetails.
+        :type licensing_configs: list[oci.core.models.UpdateInstanceLicensingConfig]
+
         """
         self.swagger_types = {
             'capacity_reservation_id': 'str',
@@ -125,7 +129,8 @@ class UpdateInstanceDetails(object):
             'availability_config': 'UpdateInstanceAvailabilityConfigDetails',
             'time_maintenance_reboot_due': 'datetime',
             'dedicated_vm_host_id': 'str',
-            'platform_config': 'UpdateInstancePlatformConfig'
+            'platform_config': 'UpdateInstancePlatformConfig',
+            'licensing_configs': 'list[UpdateInstanceLicensingConfig]'
         }
 
         self.attribute_map = {
@@ -147,7 +152,8 @@ class UpdateInstanceDetails(object):
             'availability_config': 'availabilityConfig',
             'time_maintenance_reboot_due': 'timeMaintenanceRebootDue',
             'dedicated_vm_host_id': 'dedicatedVmHostId',
-            'platform_config': 'platformConfig'
+            'platform_config': 'platformConfig',
+            'licensing_configs': 'licensingConfigs'
         }
 
         self._capacity_reservation_id = None
@@ -169,6 +175,7 @@ class UpdateInstanceDetails(object):
         self._time_maintenance_reboot_due = None
         self._dedicated_vm_host_id = None
         self._platform_config = None
+        self._licensing_configs = None
 
     @property
     def capacity_reservation_id(self):
@@ -798,6 +805,30 @@ class UpdateInstanceDetails(object):
         :type: oci.core.models.UpdateInstancePlatformConfig
         """
         self._platform_config = platform_config
+
+    @property
+    def licensing_configs(self):
+        """
+        Gets the licensing_configs of this UpdateInstanceDetails.
+        The list of liscensing configurations with target update values.
+
+
+        :return: The licensing_configs of this UpdateInstanceDetails.
+        :rtype: list[oci.core.models.UpdateInstanceLicensingConfig]
+        """
+        return self._licensing_configs
+
+    @licensing_configs.setter
+    def licensing_configs(self, licensing_configs):
+        """
+        Sets the licensing_configs of this UpdateInstanceDetails.
+        The list of liscensing configurations with target update values.
+
+
+        :param licensing_configs: The licensing_configs of this UpdateInstanceDetails.
+        :type: list[oci.core.models.UpdateInstanceLicensingConfig]
+        """
+        self._licensing_configs = licensing_configs
 
     def __repr__(self):
         return formatted_flat_dict(self)

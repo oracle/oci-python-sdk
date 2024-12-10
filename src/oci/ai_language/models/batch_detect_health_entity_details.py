@@ -20,6 +20,10 @@ class BatchDetectHealthEntityDetails(object):
         Initializes a new BatchDetectHealthEntityDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param alias:
+            The value to assign to the alias property of this BatchDetectHealthEntityDetails.
+        :type alias: str
+
         :param endpoint_id:
             The value to assign to the endpoint_id property of this BatchDetectHealthEntityDetails.
         :type endpoint_id: str
@@ -46,6 +50,7 @@ class BatchDetectHealthEntityDetails(object):
 
         """
         self.swagger_types = {
+            'alias': 'str',
             'endpoint_id': 'str',
             'documents': 'list[TextDocument]',
             'link_ontologies': 'list[str]',
@@ -55,6 +60,7 @@ class BatchDetectHealthEntityDetails(object):
         }
 
         self.attribute_map = {
+            'alias': 'alias',
             'endpoint_id': 'endpointId',
             'documents': 'documents',
             'link_ontologies': 'linkOntologies',
@@ -63,12 +69,37 @@ class BatchDetectHealthEntityDetails(object):
             'profile': 'profile'
         }
 
+        self._alias = None
         self._endpoint_id = None
         self._documents = None
         self._link_ontologies = None
         self._is_detect_assertions = None
         self._is_detect_relationships = None
         self._profile = None
+
+    @property
+    def alias(self):
+        """
+        Gets the alias of this BatchDetectHealthEntityDetails.
+        Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+
+
+        :return: The alias of this BatchDetectHealthEntityDetails.
+        :rtype: str
+        """
+        return self._alias
+
+    @alias.setter
+    def alias(self, alias):
+        """
+        Sets the alias of this BatchDetectHealthEntityDetails.
+        Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+
+
+        :param alias: The alias of this BatchDetectHealthEntityDetails.
+        :type: str
+        """
+        self._alias = alias
 
     @property
     def endpoint_id(self):

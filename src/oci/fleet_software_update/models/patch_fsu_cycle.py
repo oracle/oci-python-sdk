@@ -55,9 +55,18 @@ class PatchFsuCycle(FsuCycle):
             The value to assign to the next_action_to_execute property of this PatchFsuCycle.
         :type next_action_to_execute: list[oci.fleet_software_update.models.NextActionToExecuteDetails]
 
+        :param last_completed_action_id:
+            The value to assign to the last_completed_action_id property of this PatchFsuCycle.
+        :type last_completed_action_id: str
+
+        :param rollback_cycle_state:
+            The value to assign to the rollback_cycle_state property of this PatchFsuCycle.
+            Allowed values for this property are: "ABLE_TO_EXECUTE", "IN_PROGRESS", "FAILED", "NEEDS_ATTENTION", "SUCCEEDED"
+        :type rollback_cycle_state: str
+
         :param last_completed_action:
             The value to assign to the last_completed_action property of this PatchFsuCycle.
-            Allowed values for this property are: "STAGE", "PRECHECK_STAGE", "PRECHECK_APPLY", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP"
+            Allowed values for this property are: "STAGE", "PRECHECK_STAGE", "PRECHECK_APPLY", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", "ROLLBACK_MAINTENANCE_CYCLE"
         :type last_completed_action: str
 
         :param goal_version_details:
@@ -139,6 +148,8 @@ class PatchFsuCycle(FsuCycle):
             'collection_type': 'str',
             'executing_fsu_action_id': 'str',
             'next_action_to_execute': 'list[NextActionToExecuteDetails]',
+            'last_completed_action_id': 'str',
+            'rollback_cycle_state': 'str',
             'last_completed_action': 'str',
             'goal_version_details': 'FsuGoalVersionDetails',
             'batching_strategy': 'BatchingStrategyDetails',
@@ -168,6 +179,8 @@ class PatchFsuCycle(FsuCycle):
             'collection_type': 'collectionType',
             'executing_fsu_action_id': 'executingFsuActionId',
             'next_action_to_execute': 'nextActionToExecute',
+            'last_completed_action_id': 'lastCompletedActionId',
+            'rollback_cycle_state': 'rollbackCycleState',
             'last_completed_action': 'lastCompletedAction',
             'goal_version_details': 'goalVersionDetails',
             'batching_strategy': 'batchingStrategy',
@@ -196,6 +209,8 @@ class PatchFsuCycle(FsuCycle):
         self._collection_type = None
         self._executing_fsu_action_id = None
         self._next_action_to_execute = None
+        self._last_completed_action_id = None
+        self._rollback_cycle_state = None
         self._last_completed_action = None
         self._goal_version_details = None
         self._batching_strategy = None

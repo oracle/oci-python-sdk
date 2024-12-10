@@ -27,6 +27,26 @@ class FsuCycle(object):
     #: This constant has a value of "GI"
     COLLECTION_TYPE_GI = "GI"
 
+    #: A constant which can be used with the rollback_cycle_state property of a FsuCycle.
+    #: This constant has a value of "ABLE_TO_EXECUTE"
+    ROLLBACK_CYCLE_STATE_ABLE_TO_EXECUTE = "ABLE_TO_EXECUTE"
+
+    #: A constant which can be used with the rollback_cycle_state property of a FsuCycle.
+    #: This constant has a value of "IN_PROGRESS"
+    ROLLBACK_CYCLE_STATE_IN_PROGRESS = "IN_PROGRESS"
+
+    #: A constant which can be used with the rollback_cycle_state property of a FsuCycle.
+    #: This constant has a value of "FAILED"
+    ROLLBACK_CYCLE_STATE_FAILED = "FAILED"
+
+    #: A constant which can be used with the rollback_cycle_state property of a FsuCycle.
+    #: This constant has a value of "NEEDS_ATTENTION"
+    ROLLBACK_CYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
+
+    #: A constant which can be used with the rollback_cycle_state property of a FsuCycle.
+    #: This constant has a value of "SUCCEEDED"
+    ROLLBACK_CYCLE_STATE_SUCCEEDED = "SUCCEEDED"
+
     #: A constant which can be used with the last_completed_action property of a FsuCycle.
     #: This constant has a value of "STAGE"
     LAST_COMPLETED_ACTION_STAGE = "STAGE"
@@ -50,6 +70,10 @@ class FsuCycle(object):
     #: A constant which can be used with the last_completed_action property of a FsuCycle.
     #: This constant has a value of "CLEANUP"
     LAST_COMPLETED_ACTION_CLEANUP = "CLEANUP"
+
+    #: A constant which can be used with the last_completed_action property of a FsuCycle.
+    #: This constant has a value of "ROLLBACK_MAINTENANCE_CYCLE"
+    LAST_COMPLETED_ACTION_ROLLBACK_MAINTENANCE_CYCLE = "ROLLBACK_MAINTENANCE_CYCLE"
 
     #: A constant which can be used with the lifecycle_state property of a FsuCycle.
     #: This constant has a value of "CREATING"
@@ -132,9 +156,19 @@ class FsuCycle(object):
             The value to assign to the next_action_to_execute property of this FsuCycle.
         :type next_action_to_execute: list[oci.fleet_software_update.models.NextActionToExecuteDetails]
 
+        :param last_completed_action_id:
+            The value to assign to the last_completed_action_id property of this FsuCycle.
+        :type last_completed_action_id: str
+
+        :param rollback_cycle_state:
+            The value to assign to the rollback_cycle_state property of this FsuCycle.
+            Allowed values for this property are: "ABLE_TO_EXECUTE", "IN_PROGRESS", "FAILED", "NEEDS_ATTENTION", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type rollback_cycle_state: str
+
         :param last_completed_action:
             The value to assign to the last_completed_action property of this FsuCycle.
-            Allowed values for this property are: "STAGE", "PRECHECK_STAGE", "PRECHECK_APPLY", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "STAGE", "PRECHECK_STAGE", "PRECHECK_APPLY", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", "ROLLBACK_MAINTENANCE_CYCLE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type last_completed_action: str
 
@@ -202,6 +236,8 @@ class FsuCycle(object):
             'collection_type': 'str',
             'executing_fsu_action_id': 'str',
             'next_action_to_execute': 'list[NextActionToExecuteDetails]',
+            'last_completed_action_id': 'str',
+            'rollback_cycle_state': 'str',
             'last_completed_action': 'str',
             'goal_version_details': 'FsuGoalVersionDetails',
             'batching_strategy': 'BatchingStrategyDetails',
@@ -227,6 +263,8 @@ class FsuCycle(object):
             'collection_type': 'collectionType',
             'executing_fsu_action_id': 'executingFsuActionId',
             'next_action_to_execute': 'nextActionToExecute',
+            'last_completed_action_id': 'lastCompletedActionId',
+            'rollback_cycle_state': 'rollbackCycleState',
             'last_completed_action': 'lastCompletedAction',
             'goal_version_details': 'goalVersionDetails',
             'batching_strategy': 'batchingStrategy',
@@ -251,6 +289,8 @@ class FsuCycle(object):
         self._collection_type = None
         self._executing_fsu_action_id = None
         self._next_action_to_execute = None
+        self._last_completed_action_id = None
+        self._rollback_cycle_state = None
         self._last_completed_action = None
         self._goal_version_details = None
         self._batching_strategy = None
@@ -484,13 +524,75 @@ class FsuCycle(object):
         self._next_action_to_execute = next_action_to_execute
 
     @property
+    def last_completed_action_id(self):
+        """
+        Gets the last_completed_action_id of this FsuCycle.
+        The `OCID`__ of the latest Action
+        in the Exadata Fleet Update Cycle.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The last_completed_action_id of this FsuCycle.
+        :rtype: str
+        """
+        return self._last_completed_action_id
+
+    @last_completed_action_id.setter
+    def last_completed_action_id(self, last_completed_action_id):
+        """
+        Sets the last_completed_action_id of this FsuCycle.
+        The `OCID`__ of the latest Action
+        in the Exadata Fleet Update Cycle.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param last_completed_action_id: The last_completed_action_id of this FsuCycle.
+        :type: str
+        """
+        self._last_completed_action_id = last_completed_action_id
+
+    @property
+    def rollback_cycle_state(self):
+        """
+        Gets the rollback_cycle_state of this FsuCycle.
+        Current rollback cycle state if rollback maintenance cycle action has been attempted.
+        No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+
+        Allowed values for this property are: "ABLE_TO_EXECUTE", "IN_PROGRESS", "FAILED", "NEEDS_ATTENTION", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The rollback_cycle_state of this FsuCycle.
+        :rtype: str
+        """
+        return self._rollback_cycle_state
+
+    @rollback_cycle_state.setter
+    def rollback_cycle_state(self, rollback_cycle_state):
+        """
+        Sets the rollback_cycle_state of this FsuCycle.
+        Current rollback cycle state if rollback maintenance cycle action has been attempted.
+        No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+
+
+        :param rollback_cycle_state: The rollback_cycle_state of this FsuCycle.
+        :type: str
+        """
+        allowed_values = ["ABLE_TO_EXECUTE", "IN_PROGRESS", "FAILED", "NEEDS_ATTENTION", "SUCCEEDED"]
+        if not value_allowed_none_or_none_sentinel(rollback_cycle_state, allowed_values):
+            rollback_cycle_state = 'UNKNOWN_ENUM_VALUE'
+        self._rollback_cycle_state = rollback_cycle_state
+
+    @property
     def last_completed_action(self):
         """
         Gets the last_completed_action of this FsuCycle.
         The latest Action type that was completed in the Exadata Fleet Update Cycle.
         No value would indicate that the Cycle has not completed any Action yet.
 
-        Allowed values for this property are: "STAGE", "PRECHECK_STAGE", "PRECHECK_APPLY", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STAGE", "PRECHECK_STAGE", "PRECHECK_APPLY", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", "ROLLBACK_MAINTENANCE_CYCLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -510,7 +612,7 @@ class FsuCycle(object):
         :param last_completed_action: The last_completed_action of this FsuCycle.
         :type: str
         """
-        allowed_values = ["STAGE", "PRECHECK_STAGE", "PRECHECK_APPLY", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP"]
+        allowed_values = ["STAGE", "PRECHECK_STAGE", "PRECHECK_APPLY", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", "ROLLBACK_MAINTENANCE_CYCLE"]
         if not value_allowed_none_or_none_sentinel(last_completed_action, allowed_values):
             last_completed_action = 'UNKNOWN_ENUM_VALUE'
         self._last_completed_action = last_completed_action

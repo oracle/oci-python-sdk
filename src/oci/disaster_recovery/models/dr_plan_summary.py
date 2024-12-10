@@ -63,6 +63,22 @@ class DrPlanSummary(object):
     #: This constant has a value of "NEEDS_ATTENTION"
     LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
 
+    #: A constant which can be used with the lifecycle_sub_state property of a DrPlanSummary.
+    #: This constant has a value of "NEEDS_REFRESH"
+    LIFECYCLE_SUB_STATE_NEEDS_REFRESH = "NEEDS_REFRESH"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a DrPlanSummary.
+    #: This constant has a value of "NEEDS_VERIFICATION"
+    LIFECYCLE_SUB_STATE_NEEDS_VERIFICATION = "NEEDS_VERIFICATION"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a DrPlanSummary.
+    #: This constant has a value of "REFRESHING"
+    LIFECYCLE_SUB_STATE_REFRESHING = "REFRESHING"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a DrPlanSummary.
+    #: This constant has a value of "VERIFYING"
+    LIFECYCLE_SUB_STATE_VERIFYING = "VERIFYING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DrPlanSummary object with values from keyword arguments.
@@ -112,6 +128,12 @@ class DrPlanSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param lifecycle_sub_state:
+            The value to assign to the lifecycle_sub_state property of this DrPlanSummary.
+            Allowed values for this property are: "NEEDS_REFRESH", "NEEDS_VERIFICATION", "REFRESHING", "VERIFYING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_sub_state: str
+
         :param life_cycle_details:
             The value to assign to the life_cycle_details property of this DrPlanSummary.
         :type life_cycle_details: str
@@ -140,6 +162,7 @@ class DrPlanSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
+            'lifecycle_sub_state': 'str',
             'life_cycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -157,6 +180,7 @@ class DrPlanSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
+            'lifecycle_sub_state': 'lifecycleSubState',
             'life_cycle_details': 'lifeCycleDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -173,6 +197,7 @@ class DrPlanSummary(object):
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
+        self._lifecycle_sub_state = None
         self._life_cycle_details = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -473,6 +498,40 @@ class DrPlanSummary(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def lifecycle_sub_state(self):
+        """
+        Gets the lifecycle_sub_state of this DrPlanSummary.
+        The current sub state of the DR plan.
+
+        Example: `NEEDS_REFRESH`
+
+        Allowed values for this property are: "NEEDS_REFRESH", "NEEDS_VERIFICATION", "REFRESHING", "VERIFYING", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The lifecycle_sub_state of this DrPlanSummary.
+        :rtype: str
+        """
+        return self._lifecycle_sub_state
+
+    @lifecycle_sub_state.setter
+    def lifecycle_sub_state(self, lifecycle_sub_state):
+        """
+        Sets the lifecycle_sub_state of this DrPlanSummary.
+        The current sub state of the DR plan.
+
+        Example: `NEEDS_REFRESH`
+
+
+        :param lifecycle_sub_state: The lifecycle_sub_state of this DrPlanSummary.
+        :type: str
+        """
+        allowed_values = ["NEEDS_REFRESH", "NEEDS_VERIFICATION", "REFRESHING", "VERIFYING"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_sub_state, allowed_values):
+            lifecycle_sub_state = 'UNKNOWN_ENUM_VALUE'
+        self._lifecycle_sub_state = lifecycle_sub_state
 
     @property
     def life_cycle_details(self):

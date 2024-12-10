@@ -26,6 +26,14 @@ class PiiEntityMask(PiiEntityMasking):
             Allowed values for this property are: "REPLACE", "MASK", "REMOVE"
         :type mode: str
 
+        :param exclude:
+            The value to assign to the exclude property of this PiiEntityMask.
+        :type exclude: list[str]
+
+        :param should_detect:
+            The value to assign to the should_detect property of this PiiEntityMask.
+        :type should_detect: bool
+
         :param masking_character:
             The value to assign to the masking_character property of this PiiEntityMask.
         :type masking_character: str
@@ -41,6 +49,8 @@ class PiiEntityMask(PiiEntityMasking):
         """
         self.swagger_types = {
             'mode': 'str',
+            'exclude': 'list[str]',
+            'should_detect': 'bool',
             'masking_character': 'str',
             'leave_characters_unmasked': 'int',
             'is_unmasked_from_end': 'bool'
@@ -48,12 +58,16 @@ class PiiEntityMask(PiiEntityMasking):
 
         self.attribute_map = {
             'mode': 'mode',
+            'exclude': 'exclude',
+            'should_detect': 'shouldDetect',
             'masking_character': 'maskingCharacter',
             'leave_characters_unmasked': 'leaveCharactersUnmasked',
             'is_unmasked_from_end': 'isUnmaskedFromEnd'
         }
 
         self._mode = None
+        self._exclude = None
+        self._should_detect = None
         self._masking_character = None
         self._leave_characters_unmasked = None
         self._is_unmasked_from_end = None

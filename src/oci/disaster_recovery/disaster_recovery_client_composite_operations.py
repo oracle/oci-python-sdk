@@ -565,6 +565,50 @@ class DisasterRecoveryClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def refresh_dr_plan_and_wait_for_state(self, refresh_dr_plan_details, dr_plan_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.disaster_recovery.DisasterRecoveryClient.refresh_dr_plan` and waits for the :py:class:`~oci.disaster_recovery.models.WorkRequest`
+        to enter the given state(s).
+
+        :param oci.disaster_recovery.models.RefreshDrPlanDetails refresh_dr_plan_details: (required)
+            Details for refreshing a DR plan.
+
+        :param str dr_plan_id: (required)
+            The OCID of the DR plan.
+
+            Example: `ocid1.drplan.oc1..uniqueID`
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.disaster_recovery.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.disaster_recovery.DisasterRecoveryClient.refresh_dr_plan`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.refresh_dr_plan(refresh_dr_plan_details, dr_plan_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def resume_dr_plan_execution_and_wait_for_state(self, resume_dr_plan_execution_details, dr_plan_execution_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.disaster_recovery.DisasterRecoveryClient.resume_dr_plan_execution` and waits for the :py:class:`~oci.disaster_recovery.models.WorkRequest`
@@ -809,6 +853,50 @@ class DisasterRecoveryClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.update_dr_protection_group_role(update_dr_protection_group_role_details, dr_protection_group_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def verify_dr_plan_and_wait_for_state(self, verify_dr_plan_details, dr_plan_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.disaster_recovery.DisasterRecoveryClient.verify_dr_plan` and waits for the :py:class:`~oci.disaster_recovery.models.WorkRequest`
+        to enter the given state(s).
+
+        :param oci.disaster_recovery.models.VerifyDrPlanDetails verify_dr_plan_details: (required)
+            Details for verifying a DR plan.
+
+        :param str dr_plan_id: (required)
+            The OCID of the DR plan.
+
+            Example: `ocid1.drplan.oc1..uniqueID`
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.disaster_recovery.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.disaster_recovery.DisasterRecoveryClient.verify_dr_plan`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.verify_dr_plan(verify_dr_plan_details, dr_plan_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
         lowered_wait_for_states = [w.lower() for w in wait_for_states]

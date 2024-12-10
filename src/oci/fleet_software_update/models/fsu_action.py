@@ -35,6 +35,10 @@ class FsuAction(object):
     #: This constant has a value of "CLEANUP"
     TYPE_CLEANUP = "CLEANUP"
 
+    #: A constant which can be used with the type property of a FsuAction.
+    #: This constant has a value of "ROLLBACK_MAINTENANCE_CYCLE"
+    TYPE_ROLLBACK_MAINTENANCE_CYCLE = "ROLLBACK_MAINTENANCE_CYCLE"
+
     #: A constant which can be used with the lifecycle_state property of a FsuAction.
     #: This constant has a value of "ACCEPTED"
     LIFECYCLE_STATE_ACCEPTED = "ACCEPTED"
@@ -90,6 +94,7 @@ class FsuAction(object):
 
         * :class:`~oci.fleet_software_update.models.CleanupAction`
         * :class:`~oci.fleet_software_update.models.PrecheckAction`
+        * :class:`~oci.fleet_software_update.models.RollbackCycleAction`
         * :class:`~oci.fleet_software_update.models.StageAction`
         * :class:`~oci.fleet_software_update.models.ApplyAction`
         * :class:`~oci.fleet_software_update.models.RollbackAction`
@@ -110,7 +115,7 @@ class FsuAction(object):
 
         :param type:
             The value to assign to the type property of this FsuAction.
-            Allowed values for this property are: "STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", "ROLLBACK_MAINTENANCE_CYCLE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -213,6 +218,9 @@ class FsuAction(object):
         if type == 'PRECHECK':
             return 'PrecheckAction'
 
+        if type == 'ROLLBACK_MAINTENANCE_CYCLE':
+            return 'RollbackCycleAction'
+
         if type == 'STAGE':
             return 'StageAction'
 
@@ -302,7 +310,7 @@ class FsuAction(object):
         **[Required]** Gets the type of this FsuAction.
         Type of Exadata Fleet Update Action.
 
-        Allowed values for this property are: "STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", "ROLLBACK_MAINTENANCE_CYCLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -321,7 +329,7 @@ class FsuAction(object):
         :param type: The type of this FsuAction.
         :type: str
         """
-        allowed_values = ["STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP"]
+        allowed_values = ["STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", "ROLLBACK_MAINTENANCE_CYCLE"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

@@ -81,6 +81,7 @@ Ai Language
     oci.ai_language.models.EvaluationResults
     oci.ai_language.models.HealthEntity
     oci.ai_language.models.HealthEntityDocumentResult
+    oci.ai_language.models.HealthNluModelDetails
     oci.ai_language.models.HierarchicalEntity
     oci.ai_language.models.InputConfiguration
     oci.ai_language.models.InputLocation
@@ -92,6 +93,7 @@ Ai Language
     oci.ai_language.models.LocationDetails
     oci.ai_language.models.MelConcept
     oci.ai_language.models.MelConceptDetails
+    oci.ai_language.models.MetaInfo
     oci.ai_language.models.Model
     oci.ai_language.models.ModelCollection
     oci.ai_language.models.ModelDetails
@@ -123,6 +125,7 @@ Ai Language
     oci.ai_language.models.PreTrainedSentimentAnalysisModelDetails
     oci.ai_language.models.PreTrainedSummarization
     oci.ai_language.models.PreTrainedTextClassificationModelDetails
+    oci.ai_language.models.PreTrainedTranslationModelDetails
     oci.ai_language.models.PreTrainedUniversalModel
     oci.ai_language.models.Profile
     oci.ai_language.models.Project

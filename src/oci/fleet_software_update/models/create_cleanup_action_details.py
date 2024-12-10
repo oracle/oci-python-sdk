@@ -31,7 +31,7 @@ class CreateCleanupActionDetails(CreateFsuActionDetails):
 
         :param type:
             The value to assign to the type property of this CreateCleanupActionDetails.
-            Allowed values for this property are: "STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP"
+            Allowed values for this property are: "STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", "ROLLBACK_MAINTENANCE_CYCLE"
         :type type: str
 
         :param freeform_tags:

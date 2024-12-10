@@ -24,6 +24,10 @@ class UpdateEndpointDetails(object):
             The value to assign to the display_name property of this UpdateEndpointDetails.
         :type display_name: str
 
+        :param alias:
+            The value to assign to the alias property of this UpdateEndpointDetails.
+        :type alias: str
+
         :param description:
             The value to assign to the description property of this UpdateEndpointDetails.
         :type description: str
@@ -47,6 +51,7 @@ class UpdateEndpointDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'alias': 'str',
             'description': 'str',
             'model_id': 'str',
             'inference_units': 'int',
@@ -56,6 +61,7 @@ class UpdateEndpointDetails(object):
 
         self.attribute_map = {
             'display_name': 'displayName',
+            'alias': 'alias',
             'description': 'description',
             'model_id': 'modelId',
             'inference_units': 'inferenceUnits',
@@ -64,6 +70,7 @@ class UpdateEndpointDetails(object):
         }
 
         self._display_name = None
+        self._alias = None
         self._description = None
         self._model_id = None
         self._inference_units = None
@@ -93,6 +100,30 @@ class UpdateEndpointDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def alias(self):
+        """
+        Gets the alias of this UpdateEndpointDetails.
+        Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+
+
+        :return: The alias of this UpdateEndpointDetails.
+        :rtype: str
+        """
+        return self._alias
+
+    @alias.setter
+    def alias(self, alias):
+        """
+        Sets the alias of this UpdateEndpointDetails.
+        Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+
+
+        :param alias: The alias of this UpdateEndpointDetails.
+        :type: str
+        """
+        self._alias = alias
 
     @property
     def description(self):

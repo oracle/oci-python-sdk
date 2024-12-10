@@ -20,6 +20,10 @@ class BatchDetectLanguageTextClassificationDetails(object):
         Initializes a new BatchDetectLanguageTextClassificationDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param alias:
+            The value to assign to the alias property of this BatchDetectLanguageTextClassificationDetails.
+        :type alias: str
+
         :param compartment_id:
             The value to assign to the compartment_id property of this BatchDetectLanguageTextClassificationDetails.
         :type compartment_id: str
@@ -34,20 +38,47 @@ class BatchDetectLanguageTextClassificationDetails(object):
 
         """
         self.swagger_types = {
+            'alias': 'str',
             'compartment_id': 'str',
             'endpoint_id': 'str',
             'documents': 'list[TextDocument]'
         }
 
         self.attribute_map = {
+            'alias': 'alias',
             'compartment_id': 'compartmentId',
             'endpoint_id': 'endpointId',
             'documents': 'documents'
         }
 
+        self._alias = None
         self._compartment_id = None
         self._endpoint_id = None
         self._documents = None
+
+    @property
+    def alias(self):
+        """
+        Gets the alias of this BatchDetectLanguageTextClassificationDetails.
+        Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+
+
+        :return: The alias of this BatchDetectLanguageTextClassificationDetails.
+        :rtype: str
+        """
+        return self._alias
+
+    @alias.setter
+    def alias(self, alias):
+        """
+        Sets the alias of this BatchDetectLanguageTextClassificationDetails.
+        Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+
+
+        :param alias: The alias of this BatchDetectLanguageTextClassificationDetails.
+        :type: str
+        """
+        self._alias = alias
 
     @property
     def compartment_id(self):

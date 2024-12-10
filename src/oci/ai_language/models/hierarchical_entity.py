@@ -20,6 +20,10 @@ class HierarchicalEntity(object):
         Initializes a new HierarchicalEntity object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param meta_info:
+            The value to assign to the meta_info property of this HierarchicalEntity.
+        :type meta_info: oci.ai_language.models.MetaInfo
+
         :param offset:
             The value to assign to the offset property of this HierarchicalEntity.
         :type offset: int
@@ -46,6 +50,7 @@ class HierarchicalEntity(object):
 
         """
         self.swagger_types = {
+            'meta_info': 'MetaInfo',
             'offset': 'int',
             'length': 'int',
             'text': 'str',
@@ -55,6 +60,7 @@ class HierarchicalEntity(object):
         }
 
         self.attribute_map = {
+            'meta_info': 'metaInfo',
             'offset': 'offset',
             'length': 'length',
             'text': 'text',
@@ -63,12 +69,33 @@ class HierarchicalEntity(object):
             'score': 'score'
         }
 
+        self._meta_info = None
         self._offset = None
         self._length = None
         self._text = None
         self._type = None
         self._sub_type = None
         self._score = None
+
+    @property
+    def meta_info(self):
+        """
+        Gets the meta_info of this HierarchicalEntity.
+
+        :return: The meta_info of this HierarchicalEntity.
+        :rtype: oci.ai_language.models.MetaInfo
+        """
+        return self._meta_info
+
+    @meta_info.setter
+    def meta_info(self, meta_info):
+        """
+        Sets the meta_info of this HierarchicalEntity.
+
+        :param meta_info: The meta_info of this HierarchicalEntity.
+        :type: oci.ai_language.models.MetaInfo
+        """
+        self._meta_info = meta_info
 
     @property
     def offset(self):

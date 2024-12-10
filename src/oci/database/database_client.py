@@ -37911,6 +37911,9 @@ class DatabaseClient(object):
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
+        :param oci.database.models.RotateAutonomousContainerDatabaseEncryptionKeyDetails rotate_autonomous_container_database_encryption_key_details: (optional)
+            Key details provided by the user for rotate key operation for Autonomous Database.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -37942,7 +37945,8 @@ class DatabaseClient(object):
             "retry_strategy",
             "if_match",
             "opc_retry_token",
-            "opc_request_id"
+            "opc_request_id",
+            "rotate_autonomous_container_database_encryption_key_details"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -37984,6 +37988,7 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
+                body=kwargs.get('rotate_autonomous_container_database_encryption_key_details'),
                 response_type="AutonomousContainerDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -37995,6 +38000,7 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
+                body=kwargs.get('rotate_autonomous_container_database_encryption_key_details'),
                 response_type="AutonomousContainerDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -38028,6 +38034,9 @@ class DatabaseClient(object):
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
+        :param oci.database.models.RotateAutonomousDatabaseEncryptionKeyDetails rotate_autonomous_database_encryption_key_details: (optional)
+            Key details provided by the user for rotate key operation for Autonomous Database.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -38059,7 +38068,8 @@ class DatabaseClient(object):
             "retry_strategy",
             "if_match",
             "opc_retry_token",
-            "opc_request_id"
+            "opc_request_id",
+            "rotate_autonomous_database_encryption_key_details"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -38101,6 +38111,7 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
+                body=kwargs.get('rotate_autonomous_database_encryption_key_details'),
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -38112,6 +38123,7 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
+                body=kwargs.get('rotate_autonomous_database_encryption_key_details'),
                 response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,

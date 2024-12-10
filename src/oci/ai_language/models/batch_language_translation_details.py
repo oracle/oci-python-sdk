@@ -20,6 +20,18 @@ class BatchLanguageTranslationDetails(object):
         Initializes a new BatchLanguageTranslationDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param alias:
+            The value to assign to the alias property of this BatchLanguageTranslationDetails.
+        :type alias: str
+
+        :param endpoint_id:
+            The value to assign to the endpoint_id property of this BatchLanguageTranslationDetails.
+        :type endpoint_id: str
+
+        :param no_translate:
+            The value to assign to the no_translate property of this BatchLanguageTranslationDetails.
+        :type no_translate: list[str]
+
         :param compartment_id:
             The value to assign to the compartment_id property of this BatchLanguageTranslationDetails.
         :type compartment_id: str
@@ -34,20 +46,101 @@ class BatchLanguageTranslationDetails(object):
 
         """
         self.swagger_types = {
+            'alias': 'str',
+            'endpoint_id': 'str',
+            'no_translate': 'list[str]',
             'compartment_id': 'str',
             'target_language_code': 'str',
             'documents': 'list[TextDocument]'
         }
 
         self.attribute_map = {
+            'alias': 'alias',
+            'endpoint_id': 'endpointId',
+            'no_translate': 'noTranslate',
             'compartment_id': 'compartmentId',
             'target_language_code': 'targetLanguageCode',
             'documents': 'documents'
         }
 
+        self._alias = None
+        self._endpoint_id = None
+        self._no_translate = None
         self._compartment_id = None
         self._target_language_code = None
         self._documents = None
+
+    @property
+    def alias(self):
+        """
+        Gets the alias of this BatchLanguageTranslationDetails.
+        Unique name to identify an endpoint to be used for inferencing
+
+
+        :return: The alias of this BatchLanguageTranslationDetails.
+        :rtype: str
+        """
+        return self._alias
+
+    @alias.setter
+    def alias(self, alias):
+        """
+        Sets the alias of this BatchLanguageTranslationDetails.
+        Unique name to identify an endpoint to be used for inferencing
+
+
+        :param alias: The alias of this BatchLanguageTranslationDetails.
+        :type: str
+        """
+        self._alias = alias
+
+    @property
+    def endpoint_id(self):
+        """
+        Gets the endpoint_id of this BatchLanguageTranslationDetails.
+        The endpoint that has to be used for inferencing.
+
+
+        :return: The endpoint_id of this BatchLanguageTranslationDetails.
+        :rtype: str
+        """
+        return self._endpoint_id
+
+    @endpoint_id.setter
+    def endpoint_id(self, endpoint_id):
+        """
+        Sets the endpoint_id of this BatchLanguageTranslationDetails.
+        The endpoint that has to be used for inferencing.
+
+
+        :param endpoint_id: The endpoint_id of this BatchLanguageTranslationDetails.
+        :type: str
+        """
+        self._endpoint_id = endpoint_id
+
+    @property
+    def no_translate(self):
+        """
+        Gets the no_translate of this BatchLanguageTranslationDetails.
+        List of words not to be translated
+
+
+        :return: The no_translate of this BatchLanguageTranslationDetails.
+        :rtype: list[str]
+        """
+        return self._no_translate
+
+    @no_translate.setter
+    def no_translate(self, no_translate):
+        """
+        Sets the no_translate of this BatchLanguageTranslationDetails.
+        List of words not to be translated
+
+
+        :param no_translate: The no_translate of this BatchLanguageTranslationDetails.
+        :type: list[str]
+        """
+        self._no_translate = no_translate
 
     @property
     def compartment_id(self):

@@ -73,6 +73,10 @@ class CreateVbInstanceDetails(object):
             Allowed values for this property are: "UCM", "GOV", "VB4SAAS"
         :type consumption_model: str
 
+        :param network_endpoint_details:
+            The value to assign to the network_endpoint_details property of this CreateVbInstanceDetails.
+        :type network_endpoint_details: oci.visual_builder.models.NetworkEndpointDetails
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -84,7 +88,8 @@ class CreateVbInstanceDetails(object):
             'is_visual_builder_enabled': 'bool',
             'custom_endpoint': 'CreateCustomEndpointDetails',
             'alternate_custom_endpoints': 'list[CreateCustomEndpointDetails]',
-            'consumption_model': 'str'
+            'consumption_model': 'str',
+            'network_endpoint_details': 'NetworkEndpointDetails'
         }
 
         self.attribute_map = {
@@ -97,7 +102,8 @@ class CreateVbInstanceDetails(object):
             'is_visual_builder_enabled': 'isVisualBuilderEnabled',
             'custom_endpoint': 'customEndpoint',
             'alternate_custom_endpoints': 'alternateCustomEndpoints',
-            'consumption_model': 'consumptionModel'
+            'consumption_model': 'consumptionModel',
+            'network_endpoint_details': 'networkEndpointDetails'
         }
 
         self._display_name = None
@@ -110,6 +116,7 @@ class CreateVbInstanceDetails(object):
         self._custom_endpoint = None
         self._alternate_custom_endpoints = None
         self._consumption_model = None
+        self._network_endpoint_details = None
 
     @property
     def display_name(self):
@@ -363,6 +370,26 @@ class CreateVbInstanceDetails(object):
                 f"Invalid value for `consumption_model`, must be None or one of {allowed_values}"
             )
         self._consumption_model = consumption_model
+
+    @property
+    def network_endpoint_details(self):
+        """
+        Gets the network_endpoint_details of this CreateVbInstanceDetails.
+
+        :return: The network_endpoint_details of this CreateVbInstanceDetails.
+        :rtype: oci.visual_builder.models.NetworkEndpointDetails
+        """
+        return self._network_endpoint_details
+
+    @network_endpoint_details.setter
+    def network_endpoint_details(self, network_endpoint_details):
+        """
+        Sets the network_endpoint_details of this CreateVbInstanceDetails.
+
+        :param network_endpoint_details: The network_endpoint_details of this CreateVbInstanceDetails.
+        :type: oci.visual_builder.models.NetworkEndpointDetails
+        """
+        self._network_endpoint_details = network_endpoint_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

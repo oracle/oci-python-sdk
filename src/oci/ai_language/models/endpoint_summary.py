@@ -15,6 +15,14 @@ class EndpointSummary(object):
     Summary of the language endpoint.
     """
 
+    #: A constant which can be used with the compute_type property of a EndpointSummary.
+    #: This constant has a value of "CPU"
+    COMPUTE_TYPE_CPU = "CPU"
+
+    #: A constant which can be used with the compute_type property of a EndpointSummary.
+    #: This constant has a value of "GPU"
+    COMPUTE_TYPE_GPU = "GPU"
+
     def __init__(self, **kwargs):
         """
         Initializes a new EndpointSummary object with values from keyword arguments.
@@ -23,6 +31,16 @@ class EndpointSummary(object):
         :param id:
             The value to assign to the id property of this EndpointSummary.
         :type id: str
+
+        :param alias:
+            The value to assign to the alias property of this EndpointSummary.
+        :type alias: str
+
+        :param compute_type:
+            The value to assign to the compute_type property of this EndpointSummary.
+            Allowed values for this property are: "CPU", "GPU", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type compute_type: str
 
         :param display_name:
             The value to assign to the display_name property of this EndpointSummary.
@@ -75,6 +93,8 @@ class EndpointSummary(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'alias': 'str',
+            'compute_type': 'str',
             'display_name': 'str',
             'compartment_id': 'str',
             'project_id': 'str',
@@ -91,6 +111,8 @@ class EndpointSummary(object):
 
         self.attribute_map = {
             'id': 'id',
+            'alias': 'alias',
+            'compute_type': 'computeType',
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
             'project_id': 'projectId',
@@ -106,6 +128,8 @@ class EndpointSummary(object):
         }
 
         self._id = None
+        self._alias = None
+        self._compute_type = None
         self._display_name = None
         self._compartment_id = None
         self._project_id = None
@@ -142,6 +166,60 @@ class EndpointSummary(object):
         :type: str
         """
         self._id = id
+
+    @property
+    def alias(self):
+        """
+        Gets the alias of this EndpointSummary.
+        Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+
+
+        :return: The alias of this EndpointSummary.
+        :rtype: str
+        """
+        return self._alias
+
+    @alias.setter
+    def alias(self, alias):
+        """
+        Sets the alias of this EndpointSummary.
+        Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+
+
+        :param alias: The alias of this EndpointSummary.
+        :type: str
+        """
+        self._alias = alias
+
+    @property
+    def compute_type(self):
+        """
+        Gets the compute_type of this EndpointSummary.
+        Compute infra type for endpoint.
+
+        Allowed values for this property are: "CPU", "GPU", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The compute_type of this EndpointSummary.
+        :rtype: str
+        """
+        return self._compute_type
+
+    @compute_type.setter
+    def compute_type(self, compute_type):
+        """
+        Sets the compute_type of this EndpointSummary.
+        Compute infra type for endpoint.
+
+
+        :param compute_type: The compute_type of this EndpointSummary.
+        :type: str
+        """
+        allowed_values = ["CPU", "GPU"]
+        if not value_allowed_none_or_none_sentinel(compute_type, allowed_values):
+            compute_type = 'UNKNOWN_ENUM_VALUE'
+        self._compute_type = compute_type
 
     @property
     def display_name(self):

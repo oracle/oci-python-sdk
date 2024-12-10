@@ -32,6 +32,10 @@ class FsuJobSummary(object):
     TYPE_ROLLBACK_AND_REMOVE_TARGET = "ROLLBACK_AND_REMOVE_TARGET"
 
     #: A constant which can be used with the type property of a FsuJobSummary.
+    #: This constant has a value of "ROLLBACK_MAINTENANCE_CYCLE"
+    TYPE_ROLLBACK_MAINTENANCE_CYCLE = "ROLLBACK_MAINTENANCE_CYCLE"
+
+    #: A constant which can be used with the type property of a FsuJobSummary.
     #: This constant has a value of "CLEANUP"
     TYPE_CLEANUP = "CLEANUP"
 
@@ -83,6 +87,7 @@ class FsuJobSummary(object):
         * :class:`~oci.fleet_software_update.models.StageFsuJobSummary`
         * :class:`~oci.fleet_software_update.models.PrecheckFsuJobSummary`
         * :class:`~oci.fleet_software_update.models.ApplyFsuJobSummary`
+        * :class:`~oci.fleet_software_update.models.RollbackCycleFsuJobSummary`
         * :class:`~oci.fleet_software_update.models.CleanupFsuJobSummary`
         * :class:`~oci.fleet_software_update.models.RollbackFsuJobSummary`
 
@@ -98,7 +103,7 @@ class FsuJobSummary(object):
 
         :param type:
             The value to assign to the type property of this FsuJobSummary.
-            Allowed values for this property are: "STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "ROLLBACK_MAINTENANCE_CYCLE", "CLEANUP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -222,6 +227,9 @@ class FsuJobSummary(object):
         if type == 'APPLY':
             return 'ApplyFsuJobSummary'
 
+        if type == 'ROLLBACK_MAINTENANCE_CYCLE':
+            return 'RollbackCycleFsuJobSummary'
+
         if type == 'CLEANUP':
             return 'CleanupFsuJobSummary'
 
@@ -284,7 +292,7 @@ class FsuJobSummary(object):
         **[Required]** Gets the type of this FsuJobSummary.
         Exadata Fleet Update Job type.
 
-        Allowed values for this property are: "STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "ROLLBACK_MAINTENANCE_CYCLE", "CLEANUP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -303,7 +311,7 @@ class FsuJobSummary(object):
         :param type: The type of this FsuJobSummary.
         :type: str
         """
-        allowed_values = ["STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP"]
+        allowed_values = ["STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "ROLLBACK_MAINTENANCE_CYCLE", "CLEANUP"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

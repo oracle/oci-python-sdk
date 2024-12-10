@@ -20,6 +20,10 @@ class BatchDetectDominantLanguageDetails(object):
         Initializes a new BatchDetectDominantLanguageDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param alias:
+            The value to assign to the alias property of this BatchDetectDominantLanguageDetails.
+        :type alias: str
+
         :param should_ignore_transliteration:
             The value to assign to the should_ignore_transliteration property of this BatchDetectDominantLanguageDetails.
         :type should_ignore_transliteration: bool
@@ -42,6 +46,7 @@ class BatchDetectDominantLanguageDetails(object):
 
         """
         self.swagger_types = {
+            'alias': 'str',
             'should_ignore_transliteration': 'bool',
             'chars_to_consider': 'int',
             'endpoint_id': 'str',
@@ -50,6 +55,7 @@ class BatchDetectDominantLanguageDetails(object):
         }
 
         self.attribute_map = {
+            'alias': 'alias',
             'should_ignore_transliteration': 'shouldIgnoreTransliteration',
             'chars_to_consider': 'charsToConsider',
             'endpoint_id': 'endpointId',
@@ -57,11 +63,36 @@ class BatchDetectDominantLanguageDetails(object):
             'documents': 'documents'
         }
 
+        self._alias = None
         self._should_ignore_transliteration = None
         self._chars_to_consider = None
         self._endpoint_id = None
         self._compartment_id = None
         self._documents = None
+
+    @property
+    def alias(self):
+        """
+        Gets the alias of this BatchDetectDominantLanguageDetails.
+        Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+
+
+        :return: The alias of this BatchDetectDominantLanguageDetails.
+        :rtype: str
+        """
+        return self._alias
+
+    @alias.setter
+    def alias(self, alias):
+        """
+        Sets the alias of this BatchDetectDominantLanguageDetails.
+        Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+
+
+        :param alias: The alias of this BatchDetectDominantLanguageDetails.
+        :type: str
+        """
+        self._alias = alias
 
     @property
     def should_ignore_transliteration(self):

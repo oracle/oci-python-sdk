@@ -49,6 +49,10 @@ class CreateDrPlanDetails(object):
             The value to assign to the dr_protection_group_id property of this CreateDrPlanDetails.
         :type dr_protection_group_id: str
 
+        :param source_plan_id:
+            The value to assign to the source_plan_id property of this CreateDrPlanDetails.
+        :type source_plan_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateDrPlanDetails.
         :type freeform_tags: dict(str, str)
@@ -62,6 +66,7 @@ class CreateDrPlanDetails(object):
             'display_name': 'str',
             'type': 'str',
             'dr_protection_group_id': 'str',
+            'source_plan_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -70,6 +75,7 @@ class CreateDrPlanDetails(object):
             'display_name': 'displayName',
             'type': 'type',
             'dr_protection_group_id': 'drProtectionGroupId',
+            'source_plan_id': 'sourcePlanId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -77,6 +83,7 @@ class CreateDrPlanDetails(object):
         self._display_name = None
         self._type = None
         self._dr_protection_group_id = None
+        self._source_plan_id = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -166,6 +173,34 @@ class CreateDrPlanDetails(object):
         :type: str
         """
         self._dr_protection_group_id = dr_protection_group_id
+
+    @property
+    def source_plan_id(self):
+        """
+        Gets the source_plan_id of this CreateDrPlanDetails.
+        The OCID of the source DR plan that should be cloned.
+
+        Example: `ocid1.drplan.oc1..uniqueID`
+
+
+        :return: The source_plan_id of this CreateDrPlanDetails.
+        :rtype: str
+        """
+        return self._source_plan_id
+
+    @source_plan_id.setter
+    def source_plan_id(self, source_plan_id):
+        """
+        Sets the source_plan_id of this CreateDrPlanDetails.
+        The OCID of the source DR plan that should be cloned.
+
+        Example: `ocid1.drplan.oc1..uniqueID`
+
+
+        :param source_plan_id: The source_plan_id of this CreateDrPlanDetails.
+        :type: str
+        """
+        self._source_plan_id = source_plan_id
 
     @property
     def freeform_tags(self):

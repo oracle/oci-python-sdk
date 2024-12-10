@@ -20,6 +20,10 @@ class BatchDetectLanguageEntitiesDetails(object):
         Initializes a new BatchDetectLanguageEntitiesDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param alias:
+            The value to assign to the alias property of this BatchDetectLanguageEntitiesDetails.
+        :type alias: str
+
         :param compartment_id:
             The value to assign to the compartment_id property of this BatchDetectLanguageEntitiesDetails.
         :type compartment_id: str
@@ -34,20 +38,47 @@ class BatchDetectLanguageEntitiesDetails(object):
 
         """
         self.swagger_types = {
+            'alias': 'str',
             'compartment_id': 'str',
             'endpoint_id': 'str',
             'documents': 'list[TextDocument]'
         }
 
         self.attribute_map = {
+            'alias': 'alias',
             'compartment_id': 'compartmentId',
             'endpoint_id': 'endpointId',
             'documents': 'documents'
         }
 
+        self._alias = None
         self._compartment_id = None
         self._endpoint_id = None
         self._documents = None
+
+    @property
+    def alias(self):
+        """
+        Gets the alias of this BatchDetectLanguageEntitiesDetails.
+        Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+
+
+        :return: The alias of this BatchDetectLanguageEntitiesDetails.
+        :rtype: str
+        """
+        return self._alias
+
+    @alias.setter
+    def alias(self, alias):
+        """
+        Sets the alias of this BatchDetectLanguageEntitiesDetails.
+        Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+
+
+        :param alias: The alias of this BatchDetectLanguageEntitiesDetails.
+        :type: str
+        """
+        self._alias = alias
 
     @property
     def compartment_id(self):

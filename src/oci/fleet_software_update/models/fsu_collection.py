@@ -119,6 +119,10 @@ class FsuCollection(object):
             The value to assign to the lifecycle_details property of this FsuCollection.
         :type lifecycle_details: str
 
+        :param last_completed_fsu_cycle_id:
+            The value to assign to the last_completed_fsu_cycle_id property of this FsuCollection.
+        :type last_completed_fsu_cycle_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this FsuCollection.
         :type freeform_tags: dict(str, str)
@@ -144,6 +148,7 @@ class FsuCollection(object):
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'last_completed_fsu_cycle_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -161,6 +166,7 @@ class FsuCollection(object):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'last_completed_fsu_cycle_id': 'lastCompletedFsuCycleId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -177,6 +183,7 @@ class FsuCollection(object):
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._last_completed_fsu_cycle_id = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -476,6 +483,34 @@ class FsuCollection(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def last_completed_fsu_cycle_id(self):
+        """
+        Gets the last_completed_fsu_cycle_id of this FsuCollection.
+        The `OCID`__ of last completed FSU Cycle.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The last_completed_fsu_cycle_id of this FsuCollection.
+        :rtype: str
+        """
+        return self._last_completed_fsu_cycle_id
+
+    @last_completed_fsu_cycle_id.setter
+    def last_completed_fsu_cycle_id(self, last_completed_fsu_cycle_id):
+        """
+        Sets the last_completed_fsu_cycle_id of this FsuCollection.
+        The `OCID`__ of last completed FSU Cycle.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param last_completed_fsu_cycle_id: The last_completed_fsu_cycle_id of this FsuCollection.
+        :type: str
+        """
+        self._last_completed_fsu_cycle_id = last_completed_fsu_cycle_id
 
     @property
     def freeform_tags(self):
