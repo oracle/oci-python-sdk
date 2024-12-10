@@ -423,10 +423,13 @@ Core Services
     oci.core.models.LaunchInstanceAgentConfigDetails
     oci.core.models.LaunchInstanceAvailabilityConfigDetails
     oci.core.models.LaunchInstanceDetails
+    oci.core.models.LaunchInstanceLicensingConfig
     oci.core.models.LaunchInstancePlatformConfig
     oci.core.models.LaunchInstanceShapeConfigDetails
+    oci.core.models.LaunchInstanceWindowsLicensingConfig
     oci.core.models.LaunchOptions
     oci.core.models.LetterOfAuthority
+    oci.core.models.LicensingConfig
     oci.core.models.ListIpInventoryDetails
     oci.core.models.LocalPeeringGateway
     oci.core.models.LoopBackDrgAttachmentNetworkDetails
@@ -550,6 +553,7 @@ Core Services
     oci.core.models.UpdateInstanceConfigurationDetails
     oci.core.models.UpdateInstanceConsoleConnectionDetails
     oci.core.models.UpdateInstanceDetails
+    oci.core.models.UpdateInstanceLicensingConfig
     oci.core.models.UpdateInstanceMaintenanceEventDetails
     oci.core.models.UpdateInstancePlatformConfig
     oci.core.models.UpdateInstancePoolDetails
@@ -558,6 +562,7 @@ Core Services
     oci.core.models.UpdateInstanceSourceDetails
     oci.core.models.UpdateInstanceSourceViaBootVolumeDetails
     oci.core.models.UpdateInstanceSourceViaImageDetails
+    oci.core.models.UpdateInstanceWindowsLicensingConfig
     oci.core.models.UpdateInternetGatewayDetails
     oci.core.models.UpdateIpv6Details
     oci.core.models.UpdateLaunchOptions

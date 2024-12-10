@@ -1,9 +1,9 @@
-IdcsInfoDetails
+LicensingConfig
 ===============
 
-.. currentmodule:: oci.visual_builder.models
+.. currentmodule:: oci.core.models
 
-.. autoclass:: IdcsInfoDetails
+.. autoclass:: LicensingConfig
     :show-inheritance:
     :special-members: __init__
     :members:

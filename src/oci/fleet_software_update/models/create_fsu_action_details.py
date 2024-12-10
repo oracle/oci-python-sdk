@@ -35,11 +35,16 @@ class CreateFsuActionDetails(object):
     #: This constant has a value of "CLEANUP"
     TYPE_CLEANUP = "CLEANUP"
 
+    #: A constant which can be used with the type property of a CreateFsuActionDetails.
+    #: This constant has a value of "ROLLBACK_MAINTENANCE_CYCLE"
+    TYPE_ROLLBACK_MAINTENANCE_CYCLE = "ROLLBACK_MAINTENANCE_CYCLE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateFsuActionDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.fleet_software_update.models.CreateRollbackCycleApplyActionDetails`
         * :class:`~oci.fleet_software_update.models.CreateApplyActionDetails`
         * :class:`~oci.fleet_software_update.models.CreateStageActionDetails`
         * :class:`~oci.fleet_software_update.models.CreateRollbackActionDetails`
@@ -58,7 +63,7 @@ class CreateFsuActionDetails(object):
 
         :param type:
             The value to assign to the type property of this CreateFsuActionDetails.
-            Allowed values for this property are: "STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP"
+            Allowed values for this property are: "STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", "ROLLBACK_MAINTENANCE_CYCLE"
         :type type: str
 
         :param freeform_tags:
@@ -99,6 +104,9 @@ class CreateFsuActionDetails(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['type']
+
+        if type == 'ROLLBACK_MAINTENANCE_CYCLE':
+            return 'CreateRollbackCycleApplyActionDetails'
 
         if type == 'APPLY':
             return 'CreateApplyActionDetails'
@@ -171,7 +179,7 @@ class CreateFsuActionDetails(object):
         **[Required]** Gets the type of this CreateFsuActionDetails.
         Type of Exadata Fleet Update Action.
 
-        Allowed values for this property are: "STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP"
+        Allowed values for this property are: "STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", "ROLLBACK_MAINTENANCE_CYCLE"
 
 
         :return: The type of this CreateFsuActionDetails.
@@ -189,7 +197,7 @@ class CreateFsuActionDetails(object):
         :param type: The type of this CreateFsuActionDetails.
         :type: str
         """
-        allowed_values = ["STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP"]
+        allowed_values = ["STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", "ROLLBACK_MAINTENANCE_CYCLE"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 f"Invalid value for `type`, must be None or one of {allowed_values}"

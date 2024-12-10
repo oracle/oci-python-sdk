@@ -39,7 +39,7 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "24.11.12"
+    version = "24.12.10"
     oci_compatible_version = "2.129.4"
     thread_lock = threading.Lock()
     collection_ljust = 40
@@ -795,6 +795,20 @@ class ShowOCIService(object):
                 out_value = out_value[0:16]
             return out_value
 
+        except Exception as e:
+            self.__print_error(e)
+
+    ##################################################################################
+    # get values
+    ##################################################################################
+    def get_values(self, v):
+        try:
+            if v is None:
+                return []
+            n = []
+            for x in v:
+                n.append(self.get_value(x))
+            return n
         except Exception as e:
             self.__print_error(e)
 
@@ -1627,7 +1641,7 @@ class ShowOCIService(object):
 
                     # if to read users and groups from the old APIs
                     if self.flags.read_identity_old:
-                        print("\nIdentity Old API (Users and Groups) as requesed...")
+                        print("\nIdentity Old API (Users and Groups) as requested...")
                         self.__load_identity_users_groups(identity, tenancy_id)
                         self.__load_identity_dynamic_groups(identity, tenancy_id)
                         self.__load_identity_providers(identity, tenancy_id)
@@ -1803,7 +1817,7 @@ class ShowOCIService(object):
                                 'id': str(c.id),
                                 'name': str(c.name),
                                 'description': self.get_value(c.description),
-                                'time_created': self.get_value(c.time_created),
+                                'time_created': self.get_date(c.time_created),
                                 'is_accessible': self.get_value(c.is_accessible),
                                 'lifecycle_state': self.get_value(c.lifecycle_state),
                                 'inactive_status': self.get_value(c.inactive_status),
@@ -1828,7 +1842,7 @@ class ShowOCIService(object):
                             'id': str(tenc.id),
                             'name': str(tenc.name),
                             'description': self.get_value(tenc.description),
-                            'time_created': self.get_value(tenc.time_created),
+                            'time_created': self.get_date(tenc.time_created),
                             'is_accessible': self.get_value(tenc.is_accessible),
                             'lifecycle_state': 'ACTIVE',
                             'inactive_status': "",
@@ -1909,7 +1923,7 @@ class ShowOCIService(object):
                     'id': str(compartment.id),
                     'name': str(compartment.name),
                     'description': self.get_value(compartment.description),
-                    'time_created': self.get_value(compartment.time_created),
+                    'time_created': self.get_date(compartment.time_created),
                     'is_accessible': self.get_value(compartment.is_accessible),
                     'lifecycle_state': self.get_value(compartment.lifecycle_state),
                     'inactive_status': self.get_value(compartment.inactive_status),
@@ -2019,7 +2033,7 @@ class ShowOCIService(object):
                     'is_mfa_activated': self.get_value(user.is_mfa_activated),
                     'lifecycle_state': self.get_value(user.lifecycle_state),
                     'inactive_status': self.get_value(user.inactive_status),
-                    'time_created': self.get_value(user.time_created),
+                    'time_created': self.get_date(user.time_created),
                     'identity_provider_id': "",
                     'identity_provider_name': "",
                     'email': self.get_value(user.email),
@@ -2094,7 +2108,7 @@ class ShowOCIService(object):
                         'id': api_key.key_id,
                         'inactive_status': self.get_value(api_key.inactive_status),
                         'lifecycle_state': self.get_value(api_key.lifecycle_state),
-                        'time_created': self.get_value(api_key.time_created)
+                        'time_created': self.get_date(api_key.time_created)
                     })
 
             # return the data
@@ -2138,7 +2152,7 @@ class ShowOCIService(object):
                         'description': token.description,
                         'lifecycle_state': self.get_value(token.lifecycle_state),
                         'inactive_status': self.get_value(token.inactive_status),
-                        'time_created': self.get_value(token.time_created),
+                        'time_created': self.get_date(token.time_created),
                         'time_expires': self.get_value(token.time_expires),
                         'token': token.token
                     })
@@ -2181,7 +2195,7 @@ class ShowOCIService(object):
                         'display_name': secret.display_name,
                         'lifecycle_state': self.get_value(secret.lifecycle_state),
                         'inactive_status': self.get_value(secret.inactive_status),
-                        'time_created': self.get_value(secret.time_created),
+                        'time_created': self.get_date(secret.time_created),
                         'time_expires': self.get_value(secret.time_expires)
                     })
             return datausersecretkey
@@ -2222,8 +2236,8 @@ class ShowOCIService(object):
                         'description': smtp_creds.description,
                         'lifecycle_state': self.get_value(smtp_creds.lifecycle_state),
                         'inactive_status': self.get_value(smtp_creds.inactive_status),
-                        'time_created': self.get_value(smtp_creds.time_created),
-                        'time_expires': self.get_value(smtp_creds.time_expires),
+                        'time_created': self.get_date(smtp_creds.time_created),
+                        'time_expires': self.get_date(smtp_creds.time_expires),
                         'username': smtp_creds.username
                     })
 
@@ -2348,7 +2362,7 @@ class ShowOCIService(object):
                             'domain_name': "",
                             'oci_group_id': self.get_value(ig.group_id),
                             'oci_group_name': "",
-                            'time_created': self.get_value(ig.time_created, trim_date=True),
+                            'time_created': self.get_date(ig.time_created),
                             'lifecycle_state': self.get_value(ig.lifecycle_state)
                         })
 
@@ -2510,7 +2524,7 @@ class ShowOCIService(object):
                     'virtual_source_list': vcn_list,
                     'public_source_list': ns.public_source_list,
                     'services': ns.services,
-                    'time_created': self.get_value(ns.time_created, trim_date=True),
+                    'time_created': self.get_date(ns.time_created),
                     'defined_tags': [] if ns.defined_tags is None else ns.defined_tags,
                     'freeform_tags': [] if ns.freeform_tags is None else ns.freeform_tags
                 })
@@ -2560,7 +2574,7 @@ class ShowOCIService(object):
                     'name': str(tag.name),
                     'description': self.get_value(tag.description),
                     'is_retired': self.get_value(tag.is_retired),
-                    'time_created': self.get_value(tag.time_created),
+                    'time_created': self.get_date(tag.time_created),
                     'is_cost_tracking': self.get_value(tag.is_cost_tracking)
                 }
                 data.append(dataval)
@@ -2619,7 +2633,7 @@ class ShowOCIService(object):
                                 'description': self.get_value(tag.description),
                                 'is_retired': self.get_value(tag.is_retired),
                                 'lifecycle_state': self.get_value(tag.lifecycle_state),
-                                'time_created': self.get_value(tag.time_created),
+                                'time_created': self.get_date(tag.time_created),
                                 'defined_tags': [] if tag.defined_tags is None else tag.defined_tags,
                                 'freeform_tags': [] if tag.freeform_tags is None else tag.freeform_tags
                             }
@@ -2992,7 +3006,7 @@ class ShowOCIService(object):
                         'default_route_table_id': self.get_value(vcn.default_route_table_id),
                         'default_security_list_id': self.get_value(vcn.default_security_list_id),
                         'dns_label': self.get_value(vcn.dns_label),
-                        'time_created': self.get_value(vcn.time_created),
+                        'time_created': self.get_date(vcn.time_created),
                         'vcn_domain_name': self.get_value(vcn.vcn_domain_name),
                         'compartment_name': str(compartment['name']),
                         'compartment_path': str(compartment['path']),
@@ -3062,25 +3076,27 @@ class ShowOCIService(object):
                     continue
 
                 for vlan in vlans:
-                    val = {'id': str(vlan.id),
-                           'vlan': str(vlan.vlan_tag) + " - " + str(vlan.cidr_block) + " - " + str(vlan.display_name),
-                           'availability_domain': self.get_value(vlan.availability_domain),
-                           'cidr_block': self.get_value(vlan.cidr_block),
-                           'vlan_tag': self.get_value(vlan.vlan_tag),
-                           'display_name': self.get_value(vlan.display_name),
-                           'time_created': self.get_value(vlan.time_created),
-                           'lifecycle_state': self.get_value(vlan.lifecycle_state),
-                           'nsg_ids': vlan.nsg_ids,
-                           'route_table_id': self.get_value(vlan.route_table_id),
-                           'vcn_id': self.get_value(vlan.vcn_id),
-                           'compartment_name': str(compartment['name']),
-                           'compartment_path': str(compartment['path']),
-                           'compartment_id': str(compartment['id']),
-                           'defined_tags': [] if vlan.defined_tags is None else vlan.defined_tags,
-                           'freeform_tags': [] if vlan.freeform_tags is None else vlan.freeform_tags,
-                           'region_name': str(self.config['region'])
-                           }
 
+                    val = {
+                        'id': self.get_value(vlan.id),
+                        'vlan': f'{str(vlan.vlan_tag)} - {str(vlan.cidr_block)} - {str(vlan.display_name)}',
+                        'availability_domain': self.get_value(vlan.availability_domain),
+                        'cidr_block': self.get_value(vlan.cidr_block),
+                        'vlan_tag': self.get_value(vlan.vlan_tag),
+                        'display_name': self.get_value(vlan.display_name),
+                        'time_created': self.get_date(vlan.time_created),
+                        'lifecycle_state': self.get_value(vlan.lifecycle_state),
+                        'nsg_ids': self.get_values(vlan.nsg_ids),
+                        'nsg_names': self.__load_core_network_get_nsg_names(vlan.nsg_ids),
+                        'route_table_id': self.get_value(vlan.route_table_id),
+                        'vcn_id': self.get_value(vlan.vcn_id),
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'defined_tags': [] if vlan.defined_tags is None else vlan.defined_tags,
+                        'freeform_tags': [] if vlan.freeform_tags is None else vlan.freeform_tags,
+                        'region_name': str(self.config['region'])
+                    }
                     data.append(val)
                     cnt += 1
 
@@ -3151,7 +3167,7 @@ class ShowOCIService(object):
                            'name': str(igw.display_name),
                            'is_enabled': self.get_value(igw.is_enabled),
                            'route_table_id': self.get_value(igw.route_table_id),
-                           'time_created': self.get_value(igw.time_created),
+                           'time_created': self.get_date(igw.time_created),
                            'defined_tags': [] if igw.defined_tags is None else igw.defined_tags,
                            'freeform_tags': [] if igw.freeform_tags is None else igw.freeform_tags,
                            'compartment_name': str(compartment['name']),
@@ -3232,7 +3248,7 @@ class ShowOCIService(object):
                            'vcn_id': str(lpg.vcn_id),
                            'name': str(lpg.peering_status).ljust(8) + " - " + str(lpg.display_name) + str(cidr),
                            'peering_status': self.get_value(lpg.peering_status),
-                           'time_created': self.get_value(lpg.time_created),
+                           'time_created': self.get_date(lpg.time_created),
                            'display_name': self.get_value(lpg.display_name),
                            'peer_advertised_cidr': self.get_value(lpg.peer_advertised_cidr),
                            'is_cross_tenancy_peering': self.get_value(lpg.is_cross_tenancy_peering),
@@ -3314,7 +3330,7 @@ class ShowOCIService(object):
                     val = {'id': str(rpc.id), 'peer_id': str(rpc.peer_id),
                            'drg_id': self.get_value(rpc.drg_id),
                            'name': self.get_value(rpc.display_name),
-                           'time_created': self.get_value(rpc.time_created),
+                           'time_created': self.get_date(rpc.time_created),
                            'is_cross_tenancy_peering': str(rpc.is_cross_tenancy_peering),
                            'peer_region_name': self.get_value(rpc.peer_region_name),
                            'peer_tenancy_id': self.get_value(rpc.peer_tenancy_id),
@@ -3515,7 +3531,7 @@ class ShowOCIService(object):
                     val = {'id': str(dhcp.id),
                            'vcn_id': self.get_value(dhcp.vcn_id),
                            'name': self.get_value(dhcp.display_name),
-                           'time_created': self.get_value(dhcp.time_created),
+                           'time_created': self.get_date(dhcp.time_created),
                            'options': dhcp_opt,
                            'compartment_name': str(compartment['name']),
                            'compartment_id': str(compartment['id']),
@@ -3753,7 +3769,7 @@ class ShowOCIService(object):
                         'id': self.get_value(sl.id),
                         'vcn_id': self.get_value(sl.vcn_id),
                         'name': self.get_value(sl.display_name),
-                        'time_created': self.get_value(sl.time_created, trim_date=True),
+                        'time_created': self.get_date(sl.time_created),
                         'sec_rules': sec_rules,
                         'compartment_name': str(compartment['name']),
                         'compartment_path': str(compartment['path']),
@@ -3829,7 +3845,7 @@ class ShowOCIService(object):
             'is_valid': self.get_value(security_rule.is_valid),
             'protocol': self.get_value(security_rule.protocol),
             'protocol_name': protocol_name,
-            'time_created': self.get_value(security_rule.time_created),
+            'time_created': self.get_date(security_rule.time_created),
             'src_port_min': "",
             'src_port_max': "",
             'dst_port_min': "",
@@ -3998,18 +4014,20 @@ class ShowOCIService(object):
                 # loop on array
                 # arr = oci.core.models.NetworkSecurityGroup
                 for arr in arrs:
-                    val = {'id': str(arr.id),
-                           'name': self.get_value(arr.display_name),
-                           'vcn_id': self.get_value(arr.vcn_id),
-                           'time_created': self.get_value(arr.time_created),
-                           'compartment_name': str(compartment['name']),
-                           'compartment_path': str(compartment['path']),
-                           'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
-                           'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
-                           'compartment_id': str(compartment['id']),
-                           'region_name': str(self.config['region']),
-                           'sec_rules': []
-                           }
+                    val = {
+                        'id': str(arr.id),
+                        'name': self.get_value(arr.display_name),
+                        'vcn_id': self.get_value(arr.vcn_id),
+                        'time_created': self.get_date(arr.time_created),
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                        'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                        'compartment_id': str(compartment['id']),
+                        'region_name': str(self.config['region']),
+                        'sec_rules': [],
+                        'vnics': []
+                    }
 
                     # loop on NSG
                     arrsecs = []
@@ -4037,6 +4055,34 @@ class ShowOCIService(object):
                     # oci.core.models.SecurityRule
                     for arrsec in arrsecs:
                         val['sec_rules'].append(self.__load_core_network_nsg_secrule(arrsec))
+
+                    # loop on NSG to obtain VNICs, Added 12/01/2024
+                    vnics = []
+                    try:
+                        vnics = oci.pagination.list_call_get_all_results(
+                            virtual_network.list_network_security_group_vnics,
+                            arr.id,
+                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                        ).data
+                    except oci.exceptions.ServiceError as e:
+                        if self.__check_service_error(e, compartment):
+                            self.__load_print_auth_warning("p", False, to_print=self.flags.skip_threads)
+                            errstr += "n"
+                        else:
+                            self.__load_print_error(e, compartment)
+                            errstr += "e"
+                            continue
+                    except Exception as e:
+                        self.__load_print_error(e, compartment)
+                        errstr += "e"
+                        continue
+
+                    for vnic in vnics:
+                        val['vnics'].append({
+                            'resource_id': self.get_value(vnic.resource_id),
+                            'time_associated': self.get_date(vnic.time_associated),
+                            'vnic_id': self.get_value(vnic.vnic_id)
+                        })
 
                     data.append(val)
                     cnt += 1
@@ -4115,7 +4161,7 @@ class ShowOCIService(object):
                            'subnet': (str(subnet.cidr_block) + "  " + availability_domain + (" (Private) " if subnet.prohibit_public_ip_on_vnic else " (Public)")),
                            'availability_domain': availability_domain,
                            'public_private': ("Private" if subnet.prohibit_public_ip_on_vnic else "Public"),
-                           'time_created': self.get_value(subnet.time_created),
+                           'time_created': self.get_date(subnet.time_created),
                            'security_list_ids': [str(es) for es in subnet.security_list_ids],
                            'dhcp_options_id': self.get_value(subnet.dhcp_options_id),
                            'route_table_id': self.get_value(subnet.route_table_id),
@@ -4226,7 +4272,7 @@ class ShowOCIService(object):
                         'is_primary': self.get_value(ip.is_primary),
                         'vlan_id': self.get_value(ip.vlan_id),
                         'subnet_id': self.get_value(ip.subnet_id),
-                        'time_created': self.get_value(ip.time_created)[0:16],
+                        'time_created': self.get_date(ip.time_created),
                         'vnic_id': self.get_value(ip.vnic_id),
                         'defined_tags': [] if ip.defined_tags is None else ip.defined_tags,
                         'freeform_tags': [] if ip.freeform_tags is None else ip.freeform_tags,
@@ -4303,19 +4349,21 @@ class ShowOCIService(object):
                 # loop on all sgws
                 # sgw = oci.core.models.ServiceGateway
                 for sgw in sgws:
-                    val = {'id': str(sgw.id),
-                           'vcn_id': self.get_value(sgw.vcn_id),
-                           'name': self.get_value(sgw.display_name),
-                           'time_created': self.get_value(sgw.time_created),
-                           'block_traffic': self.get_value(sgw.block_traffic),
-                           'route_table_id': self.get_value(sgw.route_table_id),
-                           'services': str(', '.join(x.service_name for x in sgw.services)),
-                           'compartment_name': str(compartment['name']),
-                           'compartment_path': str(compartment['path']),
-                           'compartment_id': str(compartment['id']),
-                           'defined_tags': [] if sgw.defined_tags is None else sgw.defined_tags,
-                           'freeform_tags': [] if sgw.freeform_tags is None else sgw.freeform_tags,
-                           'region_name': str(self.config['region'])}
+                    val = {
+                        'id': str(sgw.id),
+                        'vcn_id': self.get_value(sgw.vcn_id),
+                        'name': self.get_value(sgw.display_name),
+                        'time_created': self.get_date(sgw.time_created),
+                        'block_traffic': self.get_value(sgw.block_traffic),
+                        'route_table_id': self.get_value(sgw.route_table_id),
+                        'services': str(', '.join(x.service_name for x in sgw.services)),
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'defined_tags': [] if sgw.defined_tags is None else sgw.defined_tags,
+                        'freeform_tags': [] if sgw.freeform_tags is None else sgw.freeform_tags,
+                        'region_name': str(self.config['region'])
+                    }
 
                     data.append(val)
                     cnt += 1
@@ -4386,7 +4434,7 @@ class ShowOCIService(object):
                 # nat = oci.core.models.NatGateway.
                 for nat in natgws:
                     val = {'id': str(nat.id), 'vcn_id': str(nat.vcn_id), 'name': str(nat.display_name) + " - " + str(nat.nat_ip),
-                           'time_created': self.get_value(nat.time_created),
+                           'time_created': self.get_date(nat.time_created),
                            'block_traffic': self.get_value(nat.block_traffic),
                            'nat_ip': self.get_value(nat.nat_ip),
                            'display_name': str(nat.display_name),
@@ -4466,10 +4514,10 @@ class ShowOCIService(object):
                 for arr in arrs:
                     if arr.lifecycle_state == oci.core.models.DrgAttachment.LIFECYCLE_STATE_ATTACHED:
                         val = {
-                            'id': str(arr.id),
+                            'id': self.get_value(arr.id),
                             'vcn_id': self.get_value(arr.vcn_id),
                             'drg_id': self.get_value(arr.drg_id),
-                            'time_created': self.get_value(arr.time_created),
+                            'time_created': self.get_date(arr.time_created),
                             'display_name': self.get_value(arr.display_name),
                             'is_cross_tenancy': self.get_value(arr.is_cross_tenancy),
                             'export_drg_route_distribution_id': self.get_value(arr.export_drg_route_distribution_id),
@@ -4566,7 +4614,7 @@ class ShowOCIService(object):
                     if arr.lifecycle_state == oci.core.models.Drg.LIFECYCLE_STATE_AVAILABLE:
                         val = {'id': str(arr.id),
                                'name': str(arr.display_name),
-                               'time_created': self.get_value(arr.time_created),
+                               'time_created': self.get_date(arr.time_created),
                                'redundancy': "",
                                'drg_route_tables': [],
                                'default_export_drg_route_distribution_id': self.get_value(arr.default_export_drg_route_distribution_id),
@@ -4602,7 +4650,7 @@ class ShowOCIService(object):
                                     'id': str(rt.id),
                                     'drg_id': str(arr.id),
                                     'display_name': self.get_value(rt.display_name),
-                                    'time_created': self.get_value(rt.time_created),
+                                    'time_created': self.get_date(rt.time_created),
                                     'route_rules': self.__load_core_network_drg_route_rules(virtual_network, rt.id),
                                     'import_drg_route_distribution_id': self.get_value(rt.import_drg_route_distribution_id),
                                     'is_ecmp_enabled': str(rt.is_ecmp_enabled),
@@ -4745,19 +4793,20 @@ class ShowOCIService(object):
                 # loop on array
                 # arr = oci.core.models.Cpe
                 for arr in arrs:
-                    val = {'id': str(arr.id),
-                           'name': self.get_value(arr.display_name) + " - " + self.get_value(arr.ip_address),
-                           'display_name': self.get_value(arr.display_name),
-                           'ip_address': self.get_value(arr.ip_address),
-                           'time_created': self.get_value(arr.time_created),
-                           'cpe_device_shape_id': self.get_value(arr.cpe_device_shape_id),
-                           'compartment_name': str(compartment['name']),
-                           'compartment_path': str(compartment['path']),
-                           'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
-                           'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
-                           'compartment_id': str(compartment['id']),
-                           'region_name': str(self.config['region'])
-                           }
+                    val = {
+                        'id': str(arr.id),
+                        'name': self.get_value(arr.display_name) + " - " + self.get_value(arr.ip_address),
+                        'display_name': self.get_value(arr.display_name),
+                        'ip_address': self.get_value(arr.ip_address),
+                        'time_created': self.get_date(arr.time_created),
+                        'cpe_device_shape_id': self.get_value(arr.cpe_device_shape_id),
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                        'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                        'compartment_id': str(compartment['id']),
+                        'region_name': str(self.config['region'])
+                    }
                     data.append(val)
                     cnt += 1
 
@@ -4826,26 +4875,27 @@ class ShowOCIService(object):
                     if not self.check_lifecycle_state_active(arr.lifecycle_state):
                         continue
 
-                    val = {'id': str(arr.id),
-                           'name': str(arr.display_name) + " - " + str(arr.ipv4_address),
-                           'display_name': self.get_value(arr.display_name),
-                           'subnet_id': self.get_value(arr.subnet_id),
-                           'subnet_name': "" if arr.subnet_id is None else self.get_network_subnet(arr.subnet_id, True),
-                           'availability_domain': self.get_value(arr.availability_domain),
-                           'ipv4_address': self.get_value(arr.ipv4_address),
-                           'ipv6_address': self.get_value(arr.ipv6_address),
-                           'network_firewall_policy_id': self.get_value(arr.network_firewall_policy_id),
-                           'network_firewall_policy_name': "",
-                           'time_created': self.get_value(arr.time_created),
-                           'time_updated': self.get_value(arr.time_updated),
-                           'lifecycle_state': self.get_value(arr.lifecycle_state),
-                           'compartment_name': str(compartment['name']),
-                           'compartment_path': str(compartment['path']),
-                           'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
-                           'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
-                           'compartment_id': str(compartment['id']),
-                           'region_name': str(self.config['region'])
-                           }
+                    val = {
+                        'id': str(arr.id),
+                        'name': str(arr.display_name) + " - " + str(arr.ipv4_address),
+                        'display_name': self.get_value(arr.display_name),
+                        'subnet_id': self.get_value(arr.subnet_id),
+                        'subnet_name': "" if arr.subnet_id is None else self.get_network_subnet(arr.subnet_id, True),
+                        'availability_domain': self.get_value(arr.availability_domain),
+                        'ipv4_address': self.get_value(arr.ipv4_address),
+                        'ipv6_address': self.get_value(arr.ipv6_address),
+                        'network_firewall_policy_id': self.get_value(arr.network_firewall_policy_id),
+                        'network_firewall_policy_name': "",
+                        'time_created': self.get_date(arr.time_created),
+                        'time_updated': self.get_date(arr.time_updated),
+                        'lifecycle_state': self.get_value(arr.lifecycle_state),
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                        'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                        'compartment_id': str(compartment['id']),
+                        'region_name': str(self.config['region'])
+                    }
 
                     # get name of the policy
                     nwfpolicy = self.search_unique_item(self.C_NETWORK, self.C_NETWORK_FIREWALL_POLICY, 'id', arr.network_firewall_policy_id)
@@ -4922,8 +4972,8 @@ class ShowOCIService(object):
 
                     val = {'id': str(arr.id),
                            'display_name': str(arr.display_name),
-                           'time_created': self.get_value(arr.time_created),
-                           'time_updated': self.get_value(arr.time_updated),
+                           'time_created': self.get_date(arr.time_created),
+                           'time_updated': self.get_date(arr.time_updated),
                            'lifecycle_state': self.get_value(arr.lifecycle_state),
                            'compartment_id': str(compartment['id']),
                            'compartment_name': str(compartment['name']),
@@ -5065,7 +5115,7 @@ class ShowOCIService(object):
                         continue
 
                     val = {'id': str(arr.id), 'name': str(arr.ip_address) + " - " + str(arr.display_name),
-                           'time_created': self.get_value(arr.time_created),
+                           'time_created': self.get_date(arr.time_created),
                            'availability_domain': self.get_value(arr.availability_domain),
                            'hostname_label': self.get_value(arr.hostname_label),
                            'is_primary': self.get_value(arr.is_primary),
@@ -5172,7 +5222,7 @@ class ShowOCIService(object):
                            'reference_comment': self.get_value(arr.reference_comment),
                            'service_type': self.get_value(arr.service_type),
                            'cross_connect_mappings': data_cc,
-                           'type': self.get_value(arr.type), 'time_created': self.get_value(arr.time_created),
+                           'type': self.get_value(arr.type), 'time_created': self.get_date(arr.time_created),
                            'compartment_name': str(compartment['name']),
                            'compartment_id': str(compartment['id']),
                            'compartment_path': str(compartment['path']),
@@ -5276,7 +5326,7 @@ class ShowOCIService(object):
                                            'routing': self.get_value(tunnel.routing),
                                            'cpe_ip': self.get_value(tunnel.cpe_ip),
                                            'vpn_ip': self.get_value(tunnel.vpn_ip),
-                                           'time_created': self.get_value(tunnel.time_created),
+                                           'time_created': self.get_date(tunnel.time_created),
                                            'oracle_can_initiate': self.get_value(tunnel.oracle_can_initiate),
                                            'nat_translation_enabled': self.get_value(tunnel.nat_translation_enabled),
                                            'dpd_mode': self.get_value(tunnel.dpd_mode),
@@ -5343,7 +5393,7 @@ class ShowOCIService(object):
                                'cpe_local_identifier': self.get_value(arr.cpe_local_identifier),
                                'cpe_local_identifier_type': self.get_value(arr.cpe_local_identifier_type),
                                'cpe_id': self.get_value(arr.cpe_id),
-                               'time_created': self.get_value(arr.time_created),
+                               'time_created': self.get_date(arr.time_created),
                                'compartment_name': str(compartment['name']),
                                'compartment_id': str(compartment['id']),
                                'compartment_path': str(compartment['path']),
@@ -5702,7 +5752,7 @@ class ShowOCIService(object):
                         'lifecycle_state': self.get_value(arr.lifecycle_state),
                         'availability_domain': self.get_value(arr.availability_domain),
                         'fault_domain': self.get_value(arr.fault_domain),
-                        'time_created': self.get_value(arr.time_created),
+                        'time_created': self.get_date(arr.time_created),
                         'time_maintenance_reboot_due': self.get_value(arr.time_maintenance_reboot_due),
                         'image_id': self.get_value(arr.image_id),
                         'compartment_name': str(compartment['name']),
@@ -5741,6 +5791,7 @@ class ShowOCIService(object):
                         'launch_remote_data_volume_type': '',
                         'launch_is_pv_encryption_in_transit_enabled': '',
                         'launch_is_consistent_volume_naming_enabled': '',
+                        'are_legacy_imds_endpoints_disabled': '',
                         'platform_type': '',
                         'platform_is_secure_boot_enabled': '',
                         'platform_is_trusted_platform_module_enabled': '',
@@ -6009,7 +6060,7 @@ class ShowOCIService(object):
                         'lifecycle_state': self.get_value(arr.lifecycle_state),
                         'availability_domain': self.get_value(arr.availability_domain),
                         'is_default_reservation': self.get_value(arr.is_default_reservation),
-                        'time_created': str(arr.time_created)[0:16],
+                        'time_created': self.get_date(arr.time_created),
                         'reserved_instance_count': arr.reserved_instance_count,
                         'used_instance_count': arr.used_instance_count,
                         'instances': [],
@@ -6545,7 +6596,7 @@ class ShowOCIService(object):
                                'boot_volume_id': str(arr.boot_volume_id),
                                'instance_id': str(arr.instance_id),
                                'lifecycle_state': self.get_value(arr.lifecycle_state),
-                               'time_created': self.get_value(arr.time_created),
+                               'time_created': self.get_date(arr.time_created),
                                'is_pv_encryption_in_transit_enabled': self.get_value(arr.is_pv_encryption_in_transit_enabled),
                                'encryption_in_transit_type': self.get_value(arr.encryption_in_transit_type),
                                'compartment_name': str(compartment['name']),
@@ -6620,7 +6671,7 @@ class ShowOCIService(object):
                            'volume_id': self.get_value(arr.volume_id),
                            'instance_id': self.get_value(arr.instance_id),
                            'lifecycle_state': self.get_value(arr.lifecycle_state),
-                           'time_created': self.get_value(arr.time_created),
+                           'time_created': self.get_date(arr.time_created),
                            'attachment_type': self.get_value(arr.attachment_type),
                            'device': self.get_value(arr.device),
                            'is_read_only': self.get_value(arr.is_read_only),
@@ -6652,64 +6703,66 @@ class ShowOCIService(object):
     ##########################################################################
     # load Core Network Vnic
     ##########################################################################
-
     def __load_core_compute_vnic(self, virtual_network, vnic_id, compartment):
         data = {}
         try:
             if not vnic_id:
-                return data
+                return {}
 
             # get the vnic
-            vnic = virtual_network.get_vnic(vnic_id).data
+            # Added retry_strategy 12/4/2024
+            vnic = virtual_network.get_vnic(
+                vnic_id,
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
+            # get the subnet from memory
+            subnet = self.search_unique_item(self.C_NETWORK, self.C_NETWORK_SUBNET, 'id', str(vnic.subnet_id))
 
             # add attributes to data
-            data['private_ip'] = str(vnic.private_ip)
-            data['display_name'] = (str(vnic.private_ip) + " (Prv)")
-            data['public_ip'] = ""
-            data['skip_source_dest_check'] = self.get_value(vnic.skip_source_dest_check)
-            data['is_primary'] = self.get_value(vnic.is_primary)
-            data['subnet'] = ""
-            data['hostname_label'] = self.get_value(vnic.hostname_label)
-            data['internal_fqdn'] = ""
-            data['mac_address'] = self.get_value(vnic.mac_address)
-            data['time_created'] = self.get_value(vnic.time_created)
-            data['subnet_id'] = ""
-            data['nsg_ids'] = [x for x in vnic.nsg_ids]
-            data['nsg_names'] = self.__load_core_network_get_nsg_names(vnic.nsg_ids)
-            data['vcn'] = ""
+            data = {
+                'private_ip': str(vnic.private_ip),
+                'name': self.get_value(vnic.private_ip) + " (Prv)",
+                'display_name': self.get_value(vnic.display_name),
+                'public_ip': self.get_value(vnic.public_ip),
+                'skip_source_dest_check': self.get_value(vnic.skip_source_dest_check),
+                'is_primary': self.get_value(vnic.is_primary),
+                'hostname_label': self.get_value(vnic.hostname_label),
+                'internal_fqdn': (str(vnic.hostname_label) + '.' + subnet['dns'] if subnet else ""),
+                'mac_address': self.get_value(vnic.mac_address),
+                'time_created': self.get_date(vnic.time_created),
+                'vcn': (subnet['vcn_name'] + " " + subnet['vcn_cidr']) if subnet else "",
+                'subnet': (subnet['name'] + " " + subnet['cidr_block']) if subnet else "",
+                'subnet_id': subnet['id'] if subnet else "",
+                'subnet_name': subnet['name'] if subnet else "",
+                'nsg_ids': self.get_values(vnic.nsg_ids),
+                'nsg_names': self.__load_core_network_get_nsg_names(vnic.nsg_ids),
+                'ip_addresses': []
+            }
 
-            # search the subnet
-            subnet_display = ""
-            subnet = self.search_unique_item(self.C_NETWORK, self.C_NETWORK_SUBNET, 'id', str(vnic.subnet_id))
-            if subnet:
-                data['subnet'] = subnet['name'] + " " + subnet['cidr_block']
-                data['vcn'] = subnet['vcn_name'] + " " + subnet['vcn_cidr']
-                data['subnet_id'] = subnet['id']
-                subnet_display = ", Subnet (" + data['subnet'] + "), VCN (" + data['vcn'] + ")"
-                data['internal_fqdn'] = str(vnic.hostname_label) + '.' + subnet['dns']
+            # Align VNIC Name display information - Amended 12/1/2024
+            data['name'] += ", " + self.get_value(vnic.public_ip) + " (Pub)" if vnic.public_ip else ""
+            data['name'] += ", Skip=Y" if vnic.skip_source_dest_check else ""
+            data['name'] += ", Primary " if vnic.is_primary else ""
 
-            # check vnic information
-            if vnic.public_ip is not None:
-                data['display_name'] += ", " + self.get_value(vnic.public_ip) + " (Pub)"
-                data['public_ip'] = self.get_value(vnic.public_ip)
+            # Add for Database use
+            data['dbdesc'] = data['name']
 
-            # if source dest
-            if vnic.skip_source_dest_check:
-                data['display_name'] += " - Skip=Y"
-
-            # if primary
-            if vnic.is_primary:
-                data['display_name'] += " - Primary "
-
-            # subnet
-            data['dbdesc'] = data['display_name']
-            data['display_name'] += subnet_display
+            # Add subnet to the name
+            data['name'] += (", Subnet (" + data['subnet'] + "), VCN (" + data['vcn'] + ")") if subnet else ""
 
             # get all private_ip_addresses for vnic
-            data['ip_addresses'] = []
-            private_ip_addresses = virtual_network.list_private_ips(vnic_id=vnic_id).data
+            private_ip_addresses = virtual_network.list_private_ips(
+                vnic_id=vnic_id,
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
             for pip in private_ip_addresses:
-                data['ip_addresses'].append({'ip_address': self.get_value(pip.ip_address), 'id': str(pip.id), 'type': "Private"})
+                data['ip_addresses'].append({
+                    'ip_address': self.get_value(pip.ip_address),
+                    'id': str(pip.id),
+                    'type': "Private"
+                })
 
                 # get public ip assigned to the private ip
                 try:
@@ -6717,7 +6770,11 @@ class ShowOCIService(object):
                     privdetails.private_ip_id = pip.id
                     pub_ip = virtual_network.get_public_ip_by_private_ip_id(privdetails)
                     if pub_ip.status == 200:
-                        data['ip_addresses'].append({'ip_address': self.get_value(pub_ip.data.ip_address), 'id': self.get_value(pub_ip.data.id), 'type': "Public"})
+                        data['ip_addresses'].append({
+                            'ip_address': self.get_value(pub_ip.data.ip_address),
+                            'id': self.get_value(pub_ip.data.id),
+                            'type': "Public"
+                        })
                 except Exception:
                     pass
 
@@ -6787,18 +6844,22 @@ class ShowOCIService(object):
                     if str(arr.lifecycle_state) != oci.core.models.VnicAttachment.LIFECYCLE_STATE_ATTACHED:
                         continue
 
-                    val = {'id': str(arr.id),
-                           'display_name': str(arr.display_name),
-                           'vnic_id': self.get_value(arr.vnic_id),
-                           'vnic_details': self.__load_core_compute_vnic(virtual_network, arr.vnic_id, compartment),
-                           'instance_id': self.get_value(arr.instance_id),
-                           'time_created': self.get_value(arr.time_created),
-                           'nic_index': self.get_value(arr.nic_index),
-                           'subnet_id': self.get_value(arr.subnet_id),
-                           'compartment_name': str(compartment['name']),
-                           'compartment_id': str(compartment['id']),
-                           'compartment_path': str(compartment['path']),
-                           'region_name': str(self.config['region'])}
+                    val = {
+                        'id': self.get_value(arr.id),
+                        'display_name': self.get_value(arr.display_name),
+                        'vnic_id': self.get_value(arr.vnic_id),
+                        'vnic_details': self.__load_core_compute_vnic(virtual_network, arr.vnic_id, compartment),
+                        'instance_id': self.get_value(arr.instance_id),
+                        'time_created': self.get_date(arr.time_created),
+                        'nic_index': self.get_value(arr.nic_index),
+                        'subnet_id': self.get_value(arr.subnet_id),
+                        'subnet_name': self.get_network_subnet(arr.subnet_id),
+                        'subnet': self.get_network_subnet(arr.subnet_id, detailed=True),
+                        'compartment_name': str(compartment['name']),
+                        'compartment_id': str(compartment['id']),
+                        'compartment_path': str(compartment['path']),
+                        'region_name': str(self.config['region'])
+                    }
                     data.append(val)
                     cnt += 1
 
@@ -6910,7 +6971,7 @@ class ShowOCIService(object):
                             'id': str(arr.id),
                             'display_name': str(arr.display_name),
                             'size_in_gbs': self.get_value(arr.size_in_gbs),
-                            'time_created': self.get_value(arr.time_created),
+                            'time_created': self.get_date(arr.time_created),
                             'kms_key_id': self.get_value(arr.kms_key_id),
                             'vpus_per_gb': self.get_value(arr.vpus_per_gb),
                             'is_hydrated': self.get_value(arr.is_hydrated),
@@ -7017,7 +7078,7 @@ class ShowOCIService(object):
                         'id': self.get_value(arr.id),
                         'display_name': self.get_value(arr.display_name),
                         'size_in_gbs': self.get_value(arr.size_in_gbs),
-                        'time_created': self.get_value(arr.time_created),
+                        'time_created': self.get_date(arr.time_created),
                         'kms_key_id': self.get_value(arr.kms_key_id),
                         'volume_group_id': self.get_value(arr.volume_group_id),
                         'volume_group_name': "",
@@ -7124,7 +7185,7 @@ class ShowOCIService(object):
                         'id': str(arr.id),
                         'display_name': self.get_value(arr.display_name),
                         'size_in_gbs': self.get_value(arr.size_in_gbs),
-                        'time_created': self.get_value(arr.time_created),
+                        'time_created': self.get_date(arr.time_created),
                         'volume_ids': [str(a) for a in arr.volume_ids],
                         'compartment_name': str(compartment['name']),
                         'compartment_path': str(compartment['path']),
@@ -7209,7 +7270,7 @@ class ShowOCIService(object):
                            'boot_volume_id': self.get_value(arr.boot_volume_id),
                            'type': self.get_value(arr.type),
                            'source_type': self.get_value(arr.source_type),
-                           'time_created': self.get_value(arr.time_created),
+                           'time_created': self.get_date(arr.time_created),
                            'display_name': self.get_value(arr.display_name),
                            'size_in_gbs': self.get_value(arr.size_in_gbs),
                            'kms_key_id': self.get_value(arr.kms_key_id),
@@ -7307,7 +7368,7 @@ class ShowOCIService(object):
                            'backup_name': "Not Found",
                            'type': str(arr.type),
                            'source_type': self.get_value(arr.source_type),
-                           'time_created': self.get_value(arr.time_created),
+                           'time_created': self.get_date(arr.time_created),
                            'display_name': self.get_value(arr.display_name),
                            'size_in_gbs': self.get_value(arr.size_in_gbs),
                            'unique_size_in_gbs': self.get_value(arr.unique_size_in_gbs),
@@ -7400,7 +7461,7 @@ class ShowOCIService(object):
                            'backup_name': "Not Found",
                            'type': self.get_value(arr.type),
                            'source_type': self.get_value(arr.source_type),
-                           'time_created': self.get_value(arr.time_created),
+                           'time_created': self.get_date(arr.time_created),
                            'display_name': self.get_value(arr.display_name),
                            'size_in_gbs': self.get_value(arr.size_in_gbs),
                            'unique_size_in_gbs': self.get_value(arr.unique_size_in_gbs),
@@ -7500,71 +7561,46 @@ class ShowOCIService(object):
                             errstr += "e"
 
                     # add the rest
-                    val = {'id': str(arr.id),
-                           'shape_name': str(arr.shape_name),
-                           'time_created': str(arr.time_created)[0:16],
-                           'shape_min_mbps': "",
-                           'shape_max_mbps': "",
-                           'display_name': self.get_value(arr.display_name),
-                           'is_private': self.get_value(arr.is_private),
-                           'status': str(status),
-                           'ip_addresses': [(self.get_value(ip.ip_address) + " - " + ("Public" if ip.is_public else "Private") + (" Reserved" if ip.reserved_ip else "")) for ip in arr.ip_addresses],
-                           'compartment_name': str(compartment['name']),
-                           'compartment_path': str(compartment['path']),
-                           'compartment_id': str(compartment['id']),
-                           'nsg_ids': [],
-                           'nsg_names': "",
-                           'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
-                           'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
-                           'region_name': str(self.config['region']),
-                           'subnet_ids': [],
-                           'certificates': '',
-                           'ssl_cipher_suites': [],
-                           'routing_policies': []}
-
-                    # Flexible Shapes
-                    if arr.shape_details:
-                        val['shape_min_mbps'] = self.get_value(arr.shape_details.minimum_bandwidth_in_mbps)
-                        val['shape_max_mbps'] = self.get_value(arr.shape_details.maximum_bandwidth_in_mbps)
-
-                    # certificates
-                    if arr.certificates:
-                        val['certificates'] = self.__get_certificate_info(arr.certificates)
-
-                    # subnets
-                    if arr.subnet_ids:
-                        val['subnet_ids'] = [str(a) for a in arr.subnet_ids]
-
-                    # network_security_group_ids
-                    if arr.network_security_group_ids:
-                        val['nsg_ids'] = [str(a) for a in arr.network_security_group_ids]
-                        val['nsg_names'] = self.__load_core_network_get_nsg_names(arr.network_security_group_ids)
+                    val = {
+                        'id': str(arr.id),
+                        'shape_name': str(arr.shape_name),
+                        'time_created': self.get_date(arr.time_created),
+                        'time_updated': '',
+                        'shape_min_mbps': self.get_value(arr.shape_details.minimum_bandwidth_in_mbps) if arr.shape_details else '',
+                        'shape_max_mbps': self.get_value(arr.shape_details.maximum_bandwidth_in_mbps) if arr.shape_details else '',
+                        'display_name': self.get_value(arr.display_name),
+                        'is_private': self.get_value(arr.is_private),
+                        'status': str(status),
+                        'ip_addresses': [(self.get_value(ip.ip_address) + " - " + ("Public" if ip.is_public else "Private") + (" Reserved" if ip.reserved_ip else "")) for ip in arr.ip_addresses],
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'nsg_ids': self.get_values(arr.network_security_group_ids),
+                        'nsg_names': self.__load_core_network_get_nsg_names(arr.network_security_group_ids),
+                        'lifecycle_state': self.get_value(arr.lifecycle_state),
+                        'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                        'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                        'region_name': str(self.config['region']),
+                        'subnet_ids': self.get_values(arr.subnet_ids),
+                        'certificates': self.__get_certificate_info(arr.certificates) if arr.certificates else '',
+                        'ssl_cipher_suites': [],
+                        'routing_policies': []
+                    }
 
                     # listeners
                     datalis = []
                     for listener in arr.listeners:
                         lo = arr.listeners[listener]
-                        value = {'id': str(listener), 'port': self.get_value(lo.port), 'protocol': self.get_value(lo.protocol),
-                                 'default_backend_set_name': self.get_value(lo.default_backend_set_name), 'ssl_configuration': ""}
-
-                        # check ssl config
-                        if lo.ssl_configuration:
-                            value['ssl_configuration'] = self.get_value(lo.ssl_configuration.certificate_name)
-
-                        # path_route_set_name
-                        value['path_route_set_name'] = []
-                        if lo.path_route_set_name:
-                            value['path_route_set_name'] = self.get_value(lo.path_route_set_name)
-
-                        # rule_set_names
-                        value['rule_set_names'] = []
-                        if lo.rule_set_names:
-                            value['rule_set_names'] = [str(a) for a in lo.rule_set_names]
-
-                        # host names
-                        value['hostname_names'] = []
-                        if lo.hostname_names:
-                            value['hostname_names'] = [str(a) for a in lo.hostname_names]
+                        value = {
+                            'id': str(listener),
+                            'port': self.get_value(lo.port),
+                            'protocol': self.get_value(lo.protocol),
+                            'default_backend_set_name': self.get_value(lo.default_backend_set_name),
+                            'path_route_set_name': self.get_value(lo.path_route_set_name),
+                            'rule_set_names': self.get_values(lo.rule_set_names),
+                            'hostname_names': self.get_values(lo.hostname_names),
+                            'ssl_configuration': self.get_value(lo.ssl_configuration.certificate_name) if lo.ssl_configuration else ''
+                        }
 
                         # add data
                         datalis.append(value)
@@ -7580,10 +7616,16 @@ class ShowOCIService(object):
                         array_path = []
                         if pro.path_routes is not None:
                             for path_route in pro.path_routes:
-                                array_path.append({'path': str(path_route.path), 'backend_set_name': str(path_route.backend_set_name)})
+                                array_path.append({
+                                    'path': str(path_route.path),
+                                    'backend_set_name': str(path_route.backend_set_name)
+                                })
 
                         # add the paths
-                        datapath.append({'name': str(pro.name), 'path_routes': array_path})
+                        datapath.append({
+                            'name': str(pro.name),
+                            'path_routes': array_path
+                        })
 
                     val['path_route'] = datapath
 
@@ -7609,7 +7651,11 @@ class ShowOCIService(object):
                     datahosts = []
                     for hostname in arr.hostnames:
                         ho = arr.hostnames[hostname]
-                        datahosts.append({'name': str(ho.name), 'desc': str(ho.name).ljust(20) + " - " + str(ho.hostname)})
+                        datahosts.append({
+                            'name': str(ho.name),
+                            'desc': str(ho.name).ljust(20) + " - " + str(ho.hostname),
+                            'info': str(ho.name) + ":" + str(ho.hostname)
+                        })
                     val['hostnames'] = datahosts
 
                     # RuleSets
@@ -7702,31 +7748,26 @@ class ShowOCIService(object):
                            'display_name': str(arr.display_name),
                            'lifecycle_state': self.get_value(arr.lifecycle_state),
                            'lifecycle_details': self.get_value(arr.lifecycle_details),
-                           'time_created': self.get_value(arr.time_created)[0:16],
-                           'time_updated': self.get_value(arr.time_updated)[0:16],
+                           'time_created': self.get_date(arr.time_created),
+                           'time_updated': self.get_date(arr.time_updated),
                            'is_private': self.get_value(arr.is_private),
                            'is_preserve_source_destination': self.get_value(arr.is_preserve_source_destination),
                            'nlb_ip_version': self.get_value(arr.nlb_ip_version),
                            'is_symmetric_hash_enabled': self.get_value(arr.is_symmetric_hash_enabled),
                            'subnet_id': self.get_value(arr.subnet_id),
-                           'subnet_name': "" if arr.subnet_id is None else self.get_network_subnet(arr.subnet_id, True),
+                           'subnet_name': self.get_network_subnet(arr.subnet_id, True),
                            'status': str(status),
                            'ip_addresses': [(self.get_value(ip.ip_address) + " - " + ("Public" if ip.is_public else "Private") + (" Reserved" if ip.reserved_ip else "")) for ip in arr.ip_addresses],
                            'compartment_name': str(compartment['name']),
                            'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
-                           'nsg_ids': [],
-                           'nsg_names': "",
+                           'nsg_ids': self.get_values(arr.network_security_group_ids),
+                           'nsg_names': self.__load_core_network_get_nsg_names(arr.network_security_group_ids),
                            'system_tags': [] if arr.system_tags is None else arr.system_tags,
                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                            'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
                            'region_name': str(self.config['region'])
                            }
-
-                    # network_security_group_ids
-                    if arr.network_security_group_ids:
-                        val['nsg_ids'] = [str(a) for a in arr.network_security_group_ids]
-                        val['nsg_names'] = self.__load_core_network_get_nsg_names(arr.network_security_group_ids)
 
                     # listeners
                     datalis = []
@@ -8260,7 +8301,7 @@ class ShowOCIService(object):
                 for arr in buckets:
                     val = {
                         'name': str(arr.name),
-                        'time_created': str(arr.time_created)[0:16],
+                        'time_created': self.get_date(arr.time_created),
                         'compartment_name': str(compartment['name']),
                         'compartment_path': str(compartment['path']),
                         'compartment_id': str(compartment['id']),
@@ -8423,7 +8464,7 @@ class ShowOCIService(object):
                     for fs in file_systems:
                         val = {'id': str(fs.id),
                                'display_name': str(fs.display_name),
-                               'time_created': self.get_value(fs.time_created)[0:16],
+                               'time_created': self.get_date(fs.time_created),
                                'availability_domain': self.get_value(fs.availability_domain),
                                'size_gb': str(round(int(fs.metered_bytes) / 1024 / 1024 / 1024, 1)),
                                'metered_bytes': self.get_value(fs.metered_bytes),
@@ -8525,7 +8566,7 @@ class ShowOCIService(object):
                         val = {'id': str(mt.id),
                                'display_name': self.get_value(mt.display_name),
                                'export_set_id': self.get_value(mt.export_set_id),
-                               'time_created': self.get_value(mt.time_created),
+                               'time_created': self.get_date(mt.time_created),
                                'availability_domain': self.get_value(mt.availability_domain),
                                'private_ip_ids': [],
                                'subnet_id': self.get_value(mt.subnet_id),
@@ -8608,7 +8649,7 @@ class ShowOCIService(object):
                            'export_set_id': self.get_value(es.export_set_id),
                            'file_system_id': self.get_value(es.file_system_id),
                            'path': self.get_value(es.path),
-                           'time_created': self.get_value(es.time_created),
+                           'time_created': self.get_date(es.time_created),
                            'export_set': []}
 
                     # export set
@@ -8833,7 +8874,7 @@ class ShowOCIService(object):
                    'target_resource_id': str(mt.target_resource_id),
                    'maintenance_type': str(mt.maintenance_type),
                    'maintenance_subtype': str(mt.maintenance_subtype),
-                   'maintenance_display': str(mt.display_name) + " ( " + str(mt.maintenance_type) + ", " + str(mt.maintenance_subtype) + ", " + str(mt.lifecycle_state) + " ), Scheduled: " + str(mt.time_scheduled)[0:16] + ((", Execution: " + str(mt.time_started)[0:16] + " - " + str(mt.time_ended)[0:16]) if str(mt.time_started) != 'None' else ""),
+                   'maintenance_display': str(mt.display_name) + " ( " + str(mt.maintenance_type) + ", " + str(mt.maintenance_subtype) + ", " + str(mt.lifecycle_state) + " ), Scheduled: " + self.get_date(mt.time_scheduled) + ((", Execution: " + self.get_date(mt.time_started) + " - " + self.get_date(mt.time_ended)) if str(mt.time_started) != 'None' else ""),
                    'maintenance_alert': ""
                    }
 
@@ -8841,7 +8882,7 @@ class ShowOCIService(object):
             if mt.time_scheduled:
                 delta = mt.time_scheduled.date() - datetime.date.today()
                 if delta.days <= 14 and delta.days >= 0 and not mt.time_started:
-                    val['maintenance_alert'] = "DBSystem Maintenance is in " + str(delta.days).ljust(2, ' ') + " days, on " + str(mt.time_scheduled)[0:16] + " for " + db_system_name
+                    val['maintenance_alert'] = "DBSystem Maintenance is in " + str(delta.days).ljust(2, ' ') + " days, on " + self.get_date(mt.time_scheduled) + " for " + db_system_name
                     self.dbsystem_maintenance.append(val['maintenance_alert'])
             return val
 
@@ -9022,7 +9063,7 @@ class ShowOCIService(object):
                              'corporate_proxy': self.get_value(dbs.corporate_proxy),
                              'dns_server': self.get_value(dbs.dns_server),
                              'ntp_server': self.get_value(dbs.ntp_server),
-                             'time_created': self.get_value(dbs.time_created),
+                             'time_created': self.get_date(dbs.time_created),
                              'lifecycle_state': self.get_value(dbs.lifecycle_state),
                              'lifecycle_details': self.get_value(dbs.lifecycle_details),
                              'csi_number': self.get_value(dbs.csi_number),
@@ -9425,7 +9466,7 @@ class ShowOCIService(object):
                         'availability_domain': self.get_value(dbs.availability_domain),
                         'time_zone': self.get_value(dbs.time_zone),
                         'lifecycle_state': self.get_value(dbs.lifecycle_state),
-                        'time_created': self.get_value(dbs.time_created, trim_date=True),
+                        'time_created': self.get_date(dbs.time_created),
                         'lifecycle_details': self.get_value(dbs.lifecycle_details),
                         'total_size_in_gbs': self.get_value(dbs.high_capacity_database_storage.total_size_in_gbs) if dbs.high_capacity_database_storage else "",
                         'available_size_in_gbs': self.get_value(dbs.high_capacity_database_storage.available_size_in_gbs) if dbs.high_capacity_database_storage else "",
@@ -9533,7 +9574,7 @@ class ShowOCIService(object):
                         'node_count': self.get_value(arr.node_count),
                         'shape': self.get_value(arr.shape),
                         'display_name': self.get_value(arr.display_name),
-                        'time_created': self.get_value(arr.time_created),
+                        'time_created': self.get_date(arr.time_created),
                         'lifecycle_details': self.get_value(arr.lifecycle_details),
                         'time_zone': self.get_value(arr.time_zone),
                         'hostname': self.get_value(arr.hostname),
@@ -9682,7 +9723,7 @@ class ShowOCIService(object):
                         'compute_count': self.get_value(dbs.compute_count),
                         'total_storage_size_in_gbs': self.get_value(dbs.total_storage_size_in_gbs),
                         'available_storage_size_in_gbs': self.get_value(dbs.available_storage_size_in_gbs),
-                        'time_created': self.get_value(dbs.time_created),
+                        'time_created': self.get_date(dbs.time_created),
                         # Added 7/29/2024
                         'cluster_placement_group_id': self.get_value(dbs.cluster_placement_group_id),
                         'subscription_id': self.get_value(dbs.subscription_id),
@@ -9821,11 +9862,13 @@ class ShowOCIService(object):
                         'data_subnet_name': self.get_network_subnet(str(arr.subnet_id)),
                         'data_vcn_name': self.get_network_subnet(str(arr.subnet_id), vcn_name_only=True),
                         'backup_subnet_id': self.get_value(arr.backup_subnet_id),
-                        'backup_subnet': "" if arr.backup_subnet_id is None else self.get_network_subnet(str(arr.backup_subnet_id), True),
-                        'backup_subnet_name': "" if arr.backup_subnet_id is None else self.get_network_subnet(str(arr.backup_subnet_id)),
-                        'backup_vcn_name': "" if arr.backup_subnet_id is None else self.get_network_subnet(str(arr.backup_subnet_id), vcn_name_only=True),
+                        'backup_subnet': self.get_network_subnet(str(arr.backup_subnet_id), True),
+                        'backup_subnet_name': self.get_network_subnet(str(arr.backup_subnet_id)),
+                        'backup_vcn_name': self.get_network_subnet(str(arr.backup_subnet_id), vcn_name_only=True),
                         'nsg_ids': arr.nsg_ids,
-                        'backup_network_nsg_ids': self.get_value(arr.backup_network_nsg_ids),
+                        'nsg_names': self.__load_core_network_get_nsg_names(arr.nsg_ids),
+                        'backup_network_nsg_ids': arr.backup_network_nsg_ids,
+                        'backup_network_nsg_names': self.__load_core_network_get_nsg_names(arr.backup_network_nsg_ids),
                         'last_update_history_entry_id': self.get_value(arr.last_update_history_entry_id),
                         'shape': self.get_value(arr.shape),
                         'listener_port': self.get_value(arr.listener_port),
@@ -9833,7 +9876,7 @@ class ShowOCIService(object):
                         'node_count': self.get_value(arr.node_count),
                         'storage_size_in_gbs': self.get_value(arr.storage_size_in_gbs),
                         'display_name': self.get_value(arr.display_name),
-                        'time_created': self.get_value(arr.time_created),
+                        'time_created': self.get_date(arr.time_created),
                         'lifecycle_details': self.get_value(arr.lifecycle_details),
                         'time_zone': self.get_value(arr.time_zone),
                         'domain': self.get_value(arr.domain),
@@ -10249,7 +10292,7 @@ class ShowOCIService(object):
                         'shape_memory_gb': 0,
                         'shape_storage_tb': 0,
                         'lifecycle_state': self.get_value(dbs.lifecycle_state),
-                        'data_storage_size_in_gbs': "" if dbs.data_storage_size_in_gbs is None else self.get_value(dbs.data_storage_size_in_gbs),
+                        'data_storage_size_in_gbs': self.get_value(dbs.data_storage_size_in_gbs),
                         'availability_domain': self.get_value(dbs.availability_domain),
                         'cpu_core_count': self.get_value(dbs.cpu_core_count),
                         'node_count': ("" if dbs.node_count is None else self.get_value(dbs.node_count)),
@@ -10263,17 +10306,17 @@ class ShowOCIService(object):
                         'data_subnet_name': self.get_network_subnet(str(dbs.subnet_id)),
                         'data_vcn_name': self.get_network_subnet(str(dbs.subnet_id), vcn_name_only=True),
                         'backup_subnet_id': self.get_value(dbs.backup_subnet_id),
-                        'backup_subnet': "" if dbs.backup_subnet_id is None else self.get_network_subnet(str(dbs.backup_subnet_id), True),
-                        'backup_subnet_name': "" if dbs.backup_subnet_id is None else self.get_network_subnet(str(dbs.backup_subnet_id)),
-                        'backup_vcn_name': "" if dbs.backup_subnet_id is None else self.get_network_subnet(str(dbs.backup_subnet_id), vcn_name_only=True),
-                        'scan_dns_record_id': "" if dbs.scan_dns_record_id is None else self.get_value(dbs.scan_dns_record_id),
+                        'backup_subnet': self.get_network_subnet(str(dbs.backup_subnet_id), True),
+                        'backup_subnet_name': self.get_network_subnet(str(dbs.backup_subnet_id)),
+                        'backup_vcn_name': self.get_network_subnet(str(dbs.backup_subnet_id), vcn_name_only=True),
+                        'scan_dns_record_id': self.get_value(dbs.scan_dns_record_id),
                         'listener_port': self.get_value(dbs.listener_port),
-                        'cluster_name': "" if dbs.cluster_name is None else self.get_value(dbs.cluster_name),
+                        'cluster_name': self.get_value(dbs.cluster_name),
                         'database_edition': self.get_value(dbs.database_edition),
                         'compartment_name': str(compartment['name']),
                         'compartment_path': str(compartment['path']),
                         'compartment_id': str(compartment['id']),
-                        'time_created': self.get_value(dbs.time_created),
+                        'time_created': self.get_date(dbs.time_created),
                         'storage_management': "",
                         'sparse_diskgroup': self.get_value(dbs.sparse_diskgroup),
                         'reco_storage_size_in_gb': self.get_value(dbs.reco_storage_size_in_gb),
@@ -10286,11 +10329,11 @@ class ShowOCIService(object):
                         'patches': self.__load_database_dbsystems_patches(database_client, dbs.id),
                         'db_nodes': self.__load_database_dbsystems_dbnodes(database_client, virtual_network, compartment, dbs.id),
                         'db_homes': self.__load_database_dbsystems_dbhomes(dbs.id),
-                        'scan_dns_name': "" if dbs.scan_dns_name is None else str(dbs.scan_dns_name),
-                        'zone_id': str(dbs.zone_id),
-                        'nsg_ids': dbs.nsg_ids,
+                        'scan_dns_name': self.get_value(dbs.scan_dns_name),
+                        'zone_id': self.get_value(dbs.zone_id),
+                        'nsg_ids': self.get_values(dbs.nsg_ids),
                         'nsg_ids_names': self.__load_core_network_get_nsg_names(dbs.nsg_ids),
-                        'backup_network_nsg_ids': dbs.backup_network_nsg_ids,
+                        'backup_network_nsg_ids': self.get_values(dbs.backup_network_nsg_ids),
                         'backup_network_nsg_ids_names': self.__load_core_network_get_nsg_names(dbs.backup_network_nsg_ids),
                         'fault_domains': str(','.join(x for x in dbs.fault_domains)) if dbs.fault_domains else "",
                         'memory_size_in_gbs': self.get_value(dbs.memory_size_in_gbs),
@@ -10400,7 +10443,7 @@ class ShowOCIService(object):
                     'vnic2_details': self.__load_core_compute_vnic(virtual_network, db_node.vnic2_id, compartment),
                     'backup_vnic2_id': self.get_value(db_node.backup_vnic2_id),
                     'backup_vnic2_details': self.__load_core_compute_vnic(virtual_network, db_node.backup_vnic2_id, compartment),
-                    'time_created': self.get_value(db_node.time_created, trim_date=True),
+                    'time_created': self.get_date(db_node.time_created),
                     'additional_details': self.get_value(db_node.additional_details),
                     'defined_tags': [] if db_node.defined_tags is None else db_node.defined_tags,
                     'freeform_tags': [] if db_node.freeform_tags is None else db_node.freeform_tags
@@ -10525,34 +10568,51 @@ class ShowOCIService(object):
             for db in dbs:
                 if not self.check_lifecycle_state_active(db.lifecycle_state):
                     continue
+                bkp = db.db_backup_config
 
                 value = {
                     'id': str(db.id),
-                    'compartment_id': str(db.compartment_id),
-                    'character_set': str(db.character_set),
-                    'ncharacter_set': str(db.ncharacter_set),
-                    'db_home_id': str(db.db_home_id),
-                    'db_name': str(db.db_name),
-                    'pdb_name': "" if db.pdb_name is None else str(db.pdb_name),
-                    'db_workload': str(db.db_workload),
-                    'db_unique_name': str(db.db_unique_name),
-                    'lifecycle_details': str(db.lifecycle_details),
-                    'lifecycle_state': str(db.lifecycle_state),
+                    'compartment_id': self.get_value(db.compartment_id),
+                    'character_set': self.get_value(db.character_set),
+                    'ncharacter_set': self.get_value(db.ncharacter_set),
+                    'db_home_id': self.get_value(db.db_home_id),
+                    'db_name': self.get_value(db.db_name),
+                    'pdb_name': self.get_value(db.pdb_name),
+                    'db_workload': self.get_value(db.db_workload),
+                    'db_unique_name': self.get_value(db.db_unique_name),
+                    'lifecycle_details': self.get_value(db.lifecycle_details),
+                    'lifecycle_state': self.get_value(db.lifecycle_state),
                     'defined_tags': [] if db.defined_tags is None else db.defined_tags,
                     'freeform_tags': [] if db.freeform_tags is None else db.freeform_tags,
-                    'time_created': str(db.time_created),
-                    'last_backup_timestamp': str(db.last_backup_timestamp),
-                    'kms_key_id': str(db.kms_key_id),
-                    'vault_id': str(db.vault_id),
-                    'source_database_point_in_time_recovery_timestamp': str(db.source_database_point_in_time_recovery_timestamp),
-                    'database_software_image_id': str(db.database_software_image_id),
-                    'is_cdb': str(db.is_cdb),
-                    'sid_prefix': str(db.sid_prefix),
+                    'time_created': self.get_date(db.time_created),
+                    'last_backup_timestamp': self.get_date(db.last_backup_timestamp),
+                    'kms_key_id': self.get_value(db.kms_key_id),
+                    'vault_id': self.get_value(db.vault_id),
+                    'source_database_point_in_time_recovery_timestamp': self.get_value(db.source_database_point_in_time_recovery_timestamp),
+                    'database_software_image_id': self.get_value(db.database_software_image_id),
+                    'is_cdb': self.get_value(db.is_cdb),
+                    'sid_prefix': self.get_value(db.sid_prefix),
                     'connection_strings_cdb': "",
-                    'auto_backup_enabled': False,
                     'dataguard': self.__load_database_dbsystems_db_dg(database_client, db.id),
                     'backups': [] if self.flags.skip_backups else self.__load_database_dbsystems_db_backups(database_client, db.id, compartment),
-                    'pdbs': self.__load_database_dbsystems_dbhomes_databases_pdbs(database_client, db.id)
+                    'pdbs': self.__load_database_dbsystems_dbhomes_databases_pdbs(database_client, db.id),
+                    # Added or changed on 11/15/2024
+                    'auto_backup_enabled': self.get_value(db.db_backup_config.auto_backup_enabled) if db.db_backup_config else False,
+                    'kms_key_version_id': self.get_value(db.kms_key_version_id),
+                    'key_store_id': self.get_value(db.key_store_id),
+                    'key_store_wallet_name': self.get_value(db.key_store_wallet_name),
+                    'last_failed_backup_timestamp': self.get_date(db.last_failed_backup_timestamp),
+                    'last_backup_duration_in_seconds': self.get_value(db.last_backup_duration_in_seconds),
+                    'db_backup_config': {
+                        'auto_backup_enabled': self.get_value(bkp.auto_backup_enabled) if bkp else "",
+                        'recovery_window_in_days': self.get_value(bkp.recovery_window_in_days) if bkp else "",
+                        'auto_backup_window': self.get_value(bkp.auto_backup_window) if bkp else "",
+                        'auto_full_backup_window': self.get_value(bkp.auto_full_backup_window) if bkp else "",
+                        'auto_full_backup_day': self.get_value(bkp.auto_full_backup_day) if bkp else "",
+                        'run_immediate_full_backup': self.get_value(bkp.run_immediate_full_backup) if bkp else "",
+                        'backup_deletion_policy': self.get_value(bkp.backup_deletion_policy) if bkp else "",
+                        'backup_destination_type': str(', '.join(self.get_value(x.type) for x in bkp.backup_destination_details)) if bkp and bkp.backup_destination_details else ""
+                    }
                 }
 
                 if db.db_backup_config is not None:
@@ -10616,7 +10676,7 @@ class ShowOCIService(object):
                     'is_restricted': self.get_value(db.is_restricted),
                     'management_status': self.get_value(db.pluggable_database_management_config.management_status) if db.pluggable_database_management_config else "",
                     'is_refreshable_clone': self.get_value(db.refreshable_clone_config.is_refreshable_clone) if db.refreshable_clone_config else "",
-                    'time_created': self.get_value(db.time_created, trim_date=True),
+                    'time_created': self.get_date(db.time_created),
                     'defined_tags': [] if db.defined_tags is None else db.defined_tags,
                     'freeform_tags': [] if db.freeform_tags is None else db.freeform_tags
                 }
@@ -10891,10 +10951,11 @@ class ShowOCIService(object):
                         'subnet_name_full': self.get_network_subnet(str(dbs.subnet_id), True),
                         'subnet_name': self.get_network_subnet(str(dbs.subnet_id)),
                         'nsg_ids': dbs.nsg_ids,
+                        'nsg_names': self.__load_core_network_get_nsg_names(dbs.nsg_ids),
                         'last_update_history_entry_id': str(dbs.last_update_history_entry_id),
                         'lifecycle_state': self.get_value(dbs.lifecycle_state),
-                        'time_created': self.get_value(dbs.time_created),
-                        'time_updated': self.get_value(dbs.time_updated),
+                        'time_created': self.get_date(dbs.time_created),
+                        'time_updated': self.get_date(dbs.time_updated),
                         'cluster_time_zone': self.get_value(dbs.cluster_time_zone),
                         'lifecycle_details': self.get_value(dbs.lifecycle_details),
                         'shape': self.get_value(dbs.shape),
@@ -11136,7 +11197,7 @@ class ShowOCIService(object):
                              'service_console_url': self.get_value(dbs.service_console_url),
                              'connection_strings': "",
                              'connection_urls': self.get_value(dbs.connection_urls),
-                             'time_created': self.get_value(dbs.time_created),
+                             'time_created': self.get_date(dbs.time_created),
                              'compartment_name': str(compartment['name']),
                              'compartment_path': str(compartment['path']),
                              'compartment_id': str(compartment['id']),
@@ -11149,10 +11210,13 @@ class ShowOCIService(object):
                              'is_auto_scaling_enabled': dbs.is_auto_scaling_enabled,
                              'is_dedicated': dbs.is_dedicated,
                              'subnet_id': self.get_value(dbs.subnet_id),
+                             'subnet_name': self.get_network_subnet(dbs.subnet_id),
+                             'subnet': self.get_network_subnet(dbs.subnet_id, detailed=True),
                              'data_safe_status': self.get_value(dbs.data_safe_status),
                              'time_maintenance_begin': self.get_value(dbs.time_maintenance_begin),
                              'time_maintenance_end': self.get_value(dbs.time_maintenance_end),
-                             'nsg_ids': dbs.nsg_ids,
+                             'nsg_ids': self.get_values(dbs.nsg_ids),
+                             'nsg_names': self.__load_core_network_get_nsg_names(dbs.nsg_ids),
                              'private_endpoint': self.get_value(dbs.private_endpoint),
                              'private_endpoint_label': self.get_value(dbs.private_endpoint_label),
                              'backups': [],
@@ -11839,8 +11903,8 @@ class ShowOCIService(object):
                         value['port_x'] = str(mysql.port_x)
                         value['maintenance'] = str(mysql.maintenance.window_start_time) if mysql.maintenance else ""
                         value['channels'] = str(', '.join(str(x.display_name) for x in mysql.channels))
-                        value['time_earliest_recovery_point'] = str(mysql.point_in_time_recovery_details.time_earliest_recovery_point)[0:16] if mysql.point_in_time_recovery_details else ""
-                        value['time_latest_recovery_point'] = str(mysql.point_in_time_recovery_details.time_latest_recovery_point)[0:16] if mysql.point_in_time_recovery_details else ""
+                        value['time_earliest_recovery_point'] = self.get_date(mysql.point_in_time_recovery_details.time_earliest_recovery_point) if mysql.point_in_time_recovery_details else ""
+                        value['time_latest_recovery_point'] = self.get_date(mysql.point_in_time_recovery_details.time_latest_recovery_point) if mysql.point_in_time_recovery_details else ""
 
                     except oci.exceptions.ServiceError as e:
                         if self.__check_service_error(e, compartment):
@@ -11936,7 +12000,7 @@ class ShowOCIService(object):
                         'display_name': self.get_value(backup.display_name),
                         'description': self.get_value(backup.description),
                         'db_system_id': self.get_value(backup.db_system_id),
-                        'time_created': self.get_value(backup.time_created, trim_date=True),
+                        'time_created': self.get_date(backup.time_created),
                         'lifecycle_state': self.get_value(backup.lifecycle_state),
                         'backup_type': self.get_value(backup.backup_type),
                         'creation_type': self.get_value(backup.creation_type),
@@ -12034,8 +12098,8 @@ class ShowOCIService(object):
                     value = {
                         'id': str(pg.id),
                         'display_name': self.get_value(pg.display_name),
-                        'time_created': self.get_value(pg.time_created)[0:16],
-                        'time_updated': self.get_value(pg.time_updated)[0:16],
+                        'time_created': self.get_date(pg.time_created),
+                        'time_updated': self.get_date(pg.time_updated),
                         'lifecycle_state': self.get_value(pg.lifecycle_state),
                         'system_type': self.get_value(pg.system_type),
                         'instance_count': self.get_value(pg.instance_count),
@@ -12081,8 +12145,8 @@ class ShowOCIService(object):
                                     'display_name': self.get_value(ins.display_name),
                                     'availability_domain': self.get_value(ins.availability_domain),
                                     'lifecycle_state': self.get_value(ins.lifecycle_state),
-                                    'time_created': self.get_value(ins.time_created),
-                                    'time_updated': self.get_value(ins.time_updated)
+                                    'time_created': self.get_date(ins.time_created),
+                                    'time_updated': self.get_date(ins.time_updated)
                                 })
 
                             value['admin_username'] = self.get_value(pgv.admin_username)
@@ -12102,14 +12166,15 @@ class ShowOCIService(object):
                             # network_details
                             if pgv.network_details:
                                 value['network_subnet_id'] = self.get_value(pgv.network_details.subnet_id)
+                                value['network_subnet_name'] = self.get_network_subnet(pgv.network_details.subnet_id)
                                 value['network_primary_db_endpoint_private_ip'] = self.get_value(pgv.network_details.primary_db_endpoint_private_ip)
                                 if pgv.network_details.nsg_ids:
-                                    value['network_nsg_ids'] = pgv.network_details.nsg_ids
+                                    value['network_nsg_ids'] = self.get_values(pgv.network_details.nsg_ids)
                                     value['network_nsg_names'] = self.__load_core_network_get_nsg_names(pgv.network_details.nsg_ids)
 
                             # management_policy
                             if pgv.management_policy:
-                                value['management_maintenance_window_start'] = self.get_value(pgv.management_policy.maintenance_window_start)[0:16]
+                                value['management_maintenance_window_start'] = self.get_date(pgv.management_policy.maintenance_window_start)
                                 value['management_backup_policy'] = self.get_value(pgv.management_policy.backup_policy.kind) if pgv.management_policy.backup_policy else ""
 
                             # source
@@ -12209,8 +12274,8 @@ class ShowOCIService(object):
                         'id': self.get_value(backup.id),
                         'display_name': self.get_value(backup.display_name),
                         'db_system_id': self.get_value(backup.db_system_id),
-                        'time_created': self.get_value(backup.time_created, trim_date=True),
-                        'time_updated': self.get_value(backup.time_updated, trim_date=True),
+                        'time_created': self.get_date(backup.time_created),
+                        'time_updated': self.get_date(backup.time_updated),
                         'lifecycle_state': self.get_value(backup.lifecycle_state),
                         'lifecycle_details': self.get_value(backup.lifecycle_details),
                         'source_type': self.get_value(backup.source_type),
@@ -12611,8 +12676,8 @@ class ShowOCIService(object):
                     'alert_policy_type': self.get_value(val.alert_policy_type),
                     'severity': self.get_value(val.severity),
                     'is_user_defined': self.get_value(val.is_user_defined),
-                    'time_created': self.get_value(val.time_created, trim_date=True),
-                    'time_updated': self.get_value(val.time_updated, trim_date=True),
+                    'time_created': self.get_date(val.time_created),
+                    'time_updated': self.get_date(val.time_updated),
                     'lifecycle_state': self.get_value(val.lifecycle_state),
                     'defined_tags': [] if val.defined_tags is None else val.defined_tags,
                     'freeform_tags': [] if val.freeform_tags is None else val.freeform_tags
@@ -12680,7 +12745,7 @@ class ShowOCIService(object):
                         'partially_enabled_msg': self.get_value(spec.partially_enabled_msg)
                     } for spec in val.audit_specifications] if val.audit_specifications else [],
                     'is_data_safe_service_account_excluded': self.get_value(val.is_data_safe_service_account_excluded),
-                    'time_created': self.get_value(val.time_created, trim_date=True),
+                    'time_created': self.get_date(val.time_created),
                     'lifecycle_state': self.get_value(val.lifecycle_state),
                     'lifecycle_details': self.get_value(val.lifecycle_details),
                     'defined_tags': [] if val.defined_tags is None else val.defined_tags,
@@ -12738,7 +12803,7 @@ class ShowOCIService(object):
                     'online_months': self.get_value(val.online_months),
                     'offline_months': self.get_value(val.offline_months),
                     'target_id': self.get_value(val.target_id),
-                    'time_created': self.get_value(val.time_created, trim_date=True),
+                    'time_created': self.get_date(val.time_created),
                     'lifecycle_state': self.get_value(val.lifecycle_state),
                     'lifecycle_details': self.get_value(val.lifecycle_details),
                     'defined_tags': [] if val.defined_tags is None else val.defined_tags,
@@ -12794,7 +12859,7 @@ class ShowOCIService(object):
                     'subnet_id': self.get_value(val.subnet_id),
                     'subnet_name': self.get_network_subnet(val.subnet_id, detailed=True),
                     'vcn_id': self.get_value(val.vcn_id),
-                    'time_created': self.get_value(val.time_created, trim_date=True),
+                    'time_created': self.get_date(val.time_created),
                     'lifecycle_state': self.get_value(val.lifecycle_state),
                     'lifecycle_details': "",
                     'defined_tags': [] if val.defined_tags is None else val.defined_tags,
@@ -12845,7 +12910,7 @@ class ShowOCIService(object):
                     'id': self.get_value(val.id),
                     'display_name': self.get_value(val.display_name),
                     'description': self.get_value(val.description),
-                    'time_created': self.get_value(val.time_created, trim_date=True),
+                    'time_created': self.get_date(val.time_created),
                     'lifecycle_state': self.get_value(val.lifecycle_state),
                     'lifecycle_details': self.get_value(val.lifecycle_details),
                     'defined_tags': [] if val.defined_tags is None else val.defined_tags,
@@ -12981,7 +13046,7 @@ class ShowOCIService(object):
                     'statistics': self.__get_datasafe_security_statistics(val.statistics),
                     # 'target_ids': self.get_values(val.target_ids),
                     'triggered_by': self.get_value(val.triggered_by),
-                    'time_created': self.get_value(val.time_created),
+                    'time_created': self.get_date(val.time_created),
                     'lifecycle_state': self.get_value(val.lifecycle_state),
                     'lifecycle_details': self.get_value(val.lifecycle_details),
                     'defined_tags': [] if val.defined_tags is None else val.defined_tags,
@@ -13043,7 +13108,7 @@ class ShowOCIService(object):
                     'statistics': self.__get_datasafe_map(val.statistics),
                     # 'target_ids': self.get_values(val.target_ids),
                     'triggered_by': self.get_value(val.triggered_by),
-                    'time_created': self.get_value(val.time_created, trim_date=True),
+                    'time_created': self.get_date(val.time_created),
                     'lifecycle_state': self.get_value(val.lifecycle_state),
                     'lifecycle_details': self.get_value(val.lifecycle_details),
                     'defined_tags': [] if val.defined_tags is None else val.defined_tags,
@@ -13103,7 +13168,7 @@ class ShowOCIService(object):
                     'infrastructure_type': self.get_value(tbs.infrastructure_type),
                     'associated_resource_ids': [] if tbs.associated_resource_ids is None else tbs.associated_resource_ids,
                     'associated_resource_names': [],
-                    'time_created': self.get_value(tbs.time_created),
+                    'time_created': self.get_date(tbs.time_created),
                     'lifecycle_state': self.get_value(tbs.lifecycle_state),
                     'lifecycle_details': self.get_value(tbs.lifecycle_details),
                     'defined_tags': [] if tbs.defined_tags is None else tbs.defined_tags,
@@ -13156,7 +13221,7 @@ class ShowOCIService(object):
                 'online_retention_period': self.get_value(config.global_settings.online_retention_period) if config.global_settings else "",
                 'is_enabled': self.get_value(config.is_enabled),
                 'lifecycle_state': self.get_value(config.lifecycle_state),
-                'time_enabled': self.get_value(config.time_enabled, trim_date=True),
+                'time_enabled': self.get_date(config.time_enabled),
                 'url': self.get_value(config.url),
                 'defined_tags': [] if config.defined_tags is None else config.defined_tags,
                 'freeform_tags': [] if config.freeform_tags is None else config.freeform_tags,
@@ -13402,11 +13467,9 @@ class ShowOCIService(object):
                     if arr.endpoint_config:
                         val['endpoint_is_public_ip_enabled'] = self.get_value(arr.endpoint_config.is_public_ip_enabled)
                         val['endpoint_subnet_id'] = self.get_value(arr.endpoint_config.subnet_id)
-                        if arr.endpoint_config.subnet_id:
-                            val['endpoint_subnet_name'] = self.get_network_subnet(arr.endpoint_config.subnet_id)
-                        val['endpoint_nsg_ids'] = arr.endpoint_config.nsg_ids
-                        if arr.endpoint_config.nsg_ids:
-                            val['endpoint_nsg_names'] = self.__load_core_network_get_nsg_names(arr.endpoint_config.nsg_ids)
+                        val['endpoint_subnet_name'] = self.get_network_subnet(arr.endpoint_config.subnet_id)
+                        val['endpoint_nsg_ids'] = self.get_values(arr.endpoint_config.nsg_ids)
+                        val['endpoint_nsg_names'] = self.__load_core_network_get_nsg_names(arr.endpoint_config.nsg_ids)
 
                     # options
                     if arr.options:
@@ -13422,9 +13485,9 @@ class ShowOCIService(object):
 
                     # metadata
                     if arr.metadata:
-                        val['time_created'] = self.get_value(arr.metadata.time_created)[0:16]
-                        val['time_deleted'] = self.get_value(arr.metadata.time_deleted)[0:16]
-                        val['time_updated'] = self.get_value(arr.metadata.time_updated)[0:16]
+                        val['time_created'] = self.get_date(arr.metadata.time_created)
+                        val['time_deleted'] = self.get_date(arr.metadata.time_deleted)
+                        val['time_updated'] = self.get_date(arr.metadata.time_updated)
                         val['created_by_user_id'] = self.get_value(arr.metadata.created_by_user_id)
                         val['deleted_by_user_id'] = self.get_value(arr.metadata.deleted_by_user_id)
                         val['updated_by_user_id'] = self.get_value(arr.metadata.updated_by_user_id)
@@ -13743,26 +13806,28 @@ class ShowOCIService(object):
                     if not self.check_lifecycle_state_active(apig.lifecycle_state):
                         continue
 
-                    val = {'id': str(apig.id),
-                           'display_name': self.get_value(apig.display_name),
-                           'endpoint_type': self.get_value(apig.endpoint_type),
-                           'hostname': self.get_value(apig.hostname),
-                           'subnet_id': self.get_value(apig.subnet_id),
-                           'subnet_name': "",
-                           'nsg_ids': self.get_value(apig.network_security_group_ids),
-                           'nsg_names': str(self.__load_core_network_get_nsg_names(apig.network_security_group_ids)) if apig.network_security_group_ids else "",
-                           'time_created': self.get_value(apig.time_created),
-                           'time_updated': self.get_value(apig.time_updated),
-                           'lifecycle_state': self.get_value(apig.lifecycle_state),
-                           'certificate_id': self.get_value(apig.certificate_id),
-                           'compartment_name': str(compartment['name']),
-                           'compartment_id': str(compartment['id']),
-                           'compartment_path': str(compartment['path']),
-                           'defined_tags': [] if apig.defined_tags is None else apig.defined_tags,
-                           'freeform_tags': [] if apig.freeform_tags is None else apig.freeform_tags,
-                           'region_name': str(self.config['region']),
-                           'deployments': []
-                           }
+                    val = {
+                        'id': str(apig.id),
+                        'display_name': self.get_value(apig.display_name),
+                        'endpoint_type': self.get_value(apig.endpoint_type),
+                        'hostname': self.get_value(apig.hostname),
+                        'subnet_id': self.get_value(apig.subnet_id),
+                        'subnet_name': self.get_network_subnet(apig.subnet_id),
+                        'subnet': self.get_network_subnet(apig.subnet_id, detailed=True),
+                        'nsg_ids': self.get_values(apig.network_security_group_ids),
+                        'nsg_names': self.__load_core_network_get_nsg_names(apig.network_security_group_ids),
+                        'time_created': self.get_date(apig.time_created),
+                        'time_updated': self.get_date(apig.time_updated),
+                        'lifecycle_state': self.get_value(apig.lifecycle_state),
+                        'certificate_id': self.get_value(apig.certificate_id),
+                        'compartment_name': str(compartment['name']),
+                        'compartment_id': str(compartment['id']),
+                        'compartment_path': str(compartment['path']),
+                        'defined_tags': [] if apig.defined_tags is None else apig.defined_tags,
+                        'freeform_tags': [] if apig.freeform_tags is None else apig.freeform_tags,
+                        'region_name': str(self.config['region']),
+                        'deployments': []
+                    }
 
                     # add the data
                     cnt += 1
@@ -13929,8 +13994,8 @@ class ShowOCIService(object):
                         'trace_config_is_enabled': self.get_value(app.trace_config.is_enabled) if app.trace_config else "",
                         'trace_config_domain_id': self.get_value(app.trace_config.domain_id) if app.trace_config else "",
                         'image_policy_is_enabled': self.get_value(app.image_policy_config.is_policy_enabled) if app.image_policy_config else "",
-                        'time_created': self.get_value(app.time_created, trim_date=True),
-                        'time_updated': self.get_value(app.time_updated, trim_date=True),
+                        'time_created': self.get_date(app.time_created),
+                        'time_updated': self.get_date(app.time_updated),
                         'compartment_name': str(compartment['name']),
                         'compartment_id': str(compartment['id']),
                         'compartment_path': str(compartment['path']),
@@ -13988,8 +14053,8 @@ class ShowOCIService(object):
                     'memory_in_mbs': self.get_value(fun.memory_in_mbs),
                     'timeout_in_seconds': self.get_value(fun.timeout_in_seconds),
                     'invoke_endpoint': self.get_value(fun.invoke_endpoint),
-                    'time_created': self.get_value(fun.time_created),
-                    'time_updated': self.get_value(fun.time_updated),
+                    'time_created': self.get_date(fun.time_created),
+                    'time_updated': self.get_date(fun.time_updated),
                     'source_type': self.get_value(fun.source_details.source_type) if fun.source_details else "",
                     'provisioned_strategy': self.get_value(fun.provisioned_concurrency_config.strategy) if fun.provisioned_concurrency_config else "",
                     'trace_config_is_enabled': self.get_value(fun.trace_config.is_enabled) if fun.trace_config else "",
@@ -14102,7 +14167,7 @@ class ShowOCIService(object):
                                   'operation': str(job.operation),
                                   'lifecycle_state': str(job.lifecycle_state),
                                   'time_finished': self.get_value(job.time_finished),
-                                  'time_created': self.get_value(job.time_created)}
+                                  'time_created': self.get_date(job.time_created)}
                         datajob.append(jobval)
 
                     # add the jobs to the array
@@ -14177,7 +14242,7 @@ class ShowOCIService(object):
                     val = {'id': str(sender.id),
                            'email_address': self.get_value(sender.email_address),
                            'lifecycle_state': self.get_value(sender.lifecycle_state),
-                           'time_created': self.get_value(sender.time_created),
+                           'time_created': self.get_date(sender.time_created),
                            'compartment_name': str(compartment['name']),
                            'compartment_id': str(compartment['id']),
                            'compartment_path': str(compartment['path']),
@@ -14254,7 +14319,7 @@ class ShowOCIService(object):
                 for supp in suppressions:
                     val = {'id': str(supp.id),
                            'email_address': self.get_value(supp.email_address),
-                           'time_created': self.get_value(supp.time_created),
+                           'time_created': self.get_date(supp.time_created),
                            'reason': self.get_value(supp.reason),
                            'compartment_name': str(compartment['name']),
                            'compartment_id': str(compartment['id']),
@@ -15860,8 +15925,8 @@ class ShowOCIService(object):
                     val = {
                         'id': str(arr.id),
                         'display_name': self.get_value(arr.display_name),
-                        'time_created': self.get_value(arr.time_created),
-                        'time_updated': self.get_value(arr.time_updated),
+                        'time_created': self.get_date(arr.time_created),
+                        'time_updated': self.get_date(arr.time_updated),
                         'number_of_objects': self.get_value(arr.number_of_objects),
                         'lifecycle_state': self.get_value(arr.lifecycle_state),
                         'lifecycle_details': self.get_value(arr.lifecycle_details),
@@ -15956,7 +16021,7 @@ class ShowOCIService(object):
                     val = {
                         'id': str(arr.id),
                         'display_name': self.get_value(arr.display_name),
-                        'time_created': self.get_value(arr.time_created),
+                        'time_created': self.get_date(arr.time_created),
                         'description': self.get_value(arr.description),
                         'created_by': self.get_value(arr.created_by),
                         'lifecycle_state': self.get_value(arr.lifecycle_state),
@@ -16050,8 +16115,8 @@ class ShowOCIService(object):
                     val = {
                         'id': str(arr.id),
                         'display_name': self.get_value(arr.display_name),
-                        'time_created': self.get_value(arr.time_created),
-                        'time_updated': self.get_value(arr.time_updated),
+                        'time_created': self.get_date(arr.time_created),
+                        'time_updated': self.get_date(arr.time_updated),
                         'language': self.get_value(arr.language),
                         'lifecycle_state': self.get_value(arr.lifecycle_state),
                         'owner_principal_id': self.get_value(arr.owner_principal_id),
@@ -16148,8 +16213,8 @@ class ShowOCIService(object):
                         'display_name': self.get_value(oda.display_name),
                         'description': self.get_value(oda.description),
                         'shape_name': self.get_value(oda.shape_name),
-                        'time_created': self.get_value(oda.time_created),
-                        'time_updated': self.get_value(oda.time_updated),
+                        'time_created': self.get_date(oda.time_created),
+                        'time_updated': self.get_date(oda.time_updated),
                         'lifecycle_state': self.get_value(oda.lifecycle_state),
                         'lifecycle_sub_state': self.get_value(oda.lifecycle_sub_state),
                         'state_message': self.get_value(oda.state_message),
@@ -16253,7 +16318,7 @@ class ShowOCIService(object):
                         'cluster_profile': self.get_value(bds.cluster_profile),
                         'lifecycle_state': self.get_value(bds.lifecycle_state),
                         'is_cloud_sql_configured': self.get_value(bds.is_cloud_sql_configured),
-                        'time_created': self.get_value(bds.time_created),
+                        'time_created': self.get_date(bds.time_created),
                         'compartment_name': str(compartment['name']),
                         'compartment_path': str(compartment['path']),
                         'compartment_id': str(compartment['id']),
@@ -16334,8 +16399,8 @@ class ShowOCIService(object):
                                     'image_id': self.get_value(nd.image_id),
                                     'availability_domain': self.get_value(nd.availability_domain),
                                     'fault_domain': self.get_value(nd.fault_domain),
-                                    'time_created': self.get_value(nd.time_created),
-                                    'time_updated': self.get_value(nd.time_updated),
+                                    'time_created': self.get_date(nd.time_created),
+                                    'time_updated': self.get_date(nd.time_updated),
                                     'ocpus': self.get_value(nd.ocpus),
                                     'memory_in_gbs': self.get_value(nd.memory_in_gbs),
                                     'nvmes': self.get_value(nd.nvmes),
@@ -16374,8 +16439,8 @@ class ShowOCIService(object):
                                 'display_name': self.get_value(ats.display_name),
                                 'lifecycle_state': self.get_value(ats.lifecycle_state),
                                 'node_type': self.get_value(ats.node_type),
-                                'time_created': self.get_value(ats.time_created, trim_date=True),
-                                'time_updated': self.get_value(ats.time_updated, trim_date=True),
+                                'time_created': self.get_date(ats.time_created),
+                                'time_updated': self.get_date(ats.time_updated),
                                 'policy_type': self.get_value(ats.policy_details.policy_type) if ats.policy_details else "",
                                 'policy_trigger_type': self.get_value(ats.policy_details.trigger_type) if ats.policy_details else "",
                                 'policy_action_type': self.get_value(ats.policy_details.action_type) if ats.policy_details else ""
@@ -16468,8 +16533,8 @@ class ShowOCIService(object):
                         'description': self.get_value(di.description),
                         'display_name': self.get_value(di.display_name),
                         'lifecycle_state': self.get_value(di.lifecycle_state),
-                        'time_created': self.get_value(di.time_created),
-                        'time_updated': self.get_value(di.time_updated),
+                        'time_created': self.get_date(di.time_created),
+                        'time_updated': self.get_date(di.time_updated),
                         'compartment_name': str(compartment['name']),
                         'compartment_path': str(compartment['path']),
                         'compartment_id': str(compartment['id']),
@@ -16567,8 +16632,8 @@ class ShowOCIService(object):
                         'display_name': self.get_value(arr.display_name),
                         'lifecycle_state': self.get_value(arr.lifecycle_state),
                         'type': self.get_value(arr.type),
-                        'time_created': self.get_value(arr.time_created),
-                        'time_updated': self.get_value(arr.time_updated),
+                        'time_created': self.get_date(arr.time_created),
+                        'time_updated': self.get_date(arr.time_updated),
                         'unit_count': self.get_value(arr.unit_count),
                         'unit_shape': self.get_value(arr.unit_shape),
                         'capacity_type': self.get_value(arr.capacity_type.unit_shape) if arr.capacity_type else "",
@@ -16799,8 +16864,8 @@ class ShowOCIService(object):
                         'time_hcx_billing_cycle_end': self.get_value(vmware.time_hcx_billing_cycle_end),
                         'time_hcx_license_status_updated': self.get_value(vmware.time_hcx_license_status_updated),
                         'is_single_host_sddc': self.get_value(vmware.is_single_host_sddc) if vmware.is_single_host_sddc else "False",
-                        'time_created': self.get_value(vmware.time_created, trim_date=True),
-                        'time_updated': self.get_value(vmware.time_updated, trim_date=True),
+                        'time_created': self.get_date(vmware.time_created),
+                        'time_updated': self.get_date(vmware.time_updated),
                         'lifecycle_state': self.get_value(vmware.lifecycle_state),
                         'sum_info': "PaaS OCVS SDDC Clusters",
                         'sum_size_gb': self.get_value(vmware.clusters_count),
@@ -16868,8 +16933,8 @@ class ShowOCIService(object):
                                 'esxi_hosts_count': self.get_value(cl.esxi_hosts_count),
                                 'initial_commitment': self.get_value(cl.initial_commitment),
                                 'workload_network_cidr': self.get_value(cl.workload_network_cidr),
-                                'time_created': self.get_value(cl.time_created, trim_date=True),
-                                'time_updated': self.get_value(cl.time_updated, trim_date=True),
+                                'time_created': self.get_date(cl.time_created),
+                                'time_updated': self.get_date(cl.time_updated),
                                 'lifecycle_state': self.get_value(cl.lifecycle_state),
                                 'initial_host_shape_name': self.get_value(cl.initial_host_shape_name),
                                 'initial_host_ocpu_count': self.get_value(cl.initial_host_ocpu_count),
@@ -16915,15 +16980,15 @@ class ShowOCIService(object):
                                             'cluster_id': self.get_value(esxi.cluster_id),
                                             'display_name': self.get_value(esxi.display_name),
                                             'compute_instance_id': self.get_value(esxi.compute_instance_id),
-                                            'time_created': self.get_value(esxi.time_created, trim_date=True),
-                                            'time_updated': self.get_value(esxi.time_updated, trim_date=True),
+                                            'time_created': self.get_date(esxi.time_created),
+                                            'time_updated': self.get_date(esxi.time_updated),
                                             'lifecycle_state': self.get_value(esxi.lifecycle_state),
                                             'current_commitment': self.get_value(esxi.current_commitment),
                                             'next_commitment': self.get_value(esxi.next_commitment),
                                             'billing_contract_end_date': self.get_value(esxi.billing_contract_end_date),
                                             'failed_esxi_host_id': self.get_value(esxi.failed_esxi_host_id),
                                             'replacement_esxi_host_id': self.get_value(esxi.replacement_esxi_host_id),
-                                            'grace_period_end_date': self.get_value(esxi.grace_period_end_date, trim_date=True),
+                                            'grace_period_end_date': self.get_date(esxi.grace_period_end_date),
                                             'vmware_software_version': self.get_value(esxi.vmware_software_version),
                                             'non_upgraded_esxi_host_id': self.get_value(esxi.non_upgraded_esxi_host_id),
                                             'upgraded_replacement_esxi_host_id': self.get_value(esxi.upgraded_replacement_esxi_host_id),
@@ -18060,7 +18125,7 @@ class ShowOCIService(object):
                             'id': self.get_value(item.identifier),
                             'compartment_id': self.get_value(item.compartment_id),
                             'name': self.get_value(item.display_name),
-                            'time_created': self.get_value(item.time_created),
+                            'time_created': self.get_date(item.time_created),
                             'freeform_tags': [] if item.freeform_tags is None else item.freeform_tags,
                             'compartment_name': str(compartment['name']),
                             'compartment_path': str(compartment['path']),
@@ -18560,7 +18625,7 @@ class ShowOCIService(object):
                         'id': str(item.id),
                         'display_name': self.get_value(item.display_name),
                         'description': self.get_value(item.description),
-                        'time_created': self.get_value(item.time_created),
+                        'time_created': self.get_date(item.time_created),
                         'time_last_modified': self.get_value(item.time_last_modified),
                         'is_enabled': self.get_value(item.is_enabled),
                         'configuration_type': self.get_value(item.configuration_type),
@@ -18790,8 +18855,8 @@ class ShowOCIService(object):
                             'issuer_certificate_authority_id': self.get_value(crt.issuer_certificate_authority_id),
                             'name': self.get_value(crt.name),
                             'description': self.get_value(crt.description),
-                            'time_created': self.get_value(crt.time_created, trim_date=True),
-                            'time_of_deletion': self.get_value(crt.time_of_deletion, trim_date=True),
+                            'time_created': self.get_date(crt.time_created),
+                            'time_of_deletion': self.get_date(crt.time_of_deletion),
                             'lifecycle_state': self.get_value(crt.lifecycle_state),
                             'certificate_rules': [{
                                 'rule_type': self.get_value(y.rule_type),
@@ -18800,14 +18865,14 @@ class ShowOCIService(object):
                             } for y in crt.certificate_rules] if crt.certificate_rules else [],
                             'current_certificate_id': self.get_value(vs.certificate_id) if vs else "",
                             'current_serial_number': self.get_value(vs.serial_number) if vs else "",
-                            'current_time_created': self.get_value(vs.time_created, trim_date=True) if vs else "",
+                            'current_time_created': self.get_date(vs.time_created) if vs else "",
                             'current_version_number': self.get_value(vs.version_number) if vs else "",
                             'current_issuer_ca_version_number': self.get_value(vs.issuer_ca_version_number) if vs else "",
                             'current_version_name': self.get_value(vs.version_name) if vs else "",
                             'current_time_of_deletion': self.get_value(vs.time_of_deletion) if vs else "",
-                            'current_validity_not_before': self.get_value(vs.validity.time_of_validity_not_before, trim_date=True) if vs and vs.validity else "",
-                            'current_validity_not_after': self.get_value(vs.validity.time_of_validity_not_after, trim_date=True) if vs and vs.validity else "",
-                            'current_time_of_revocation': self.get_value(vs.revocation_status.time_of_revocation, trim_date=True) if vs and vs.revocation_status else "",
+                            'current_validity_not_before': self.get_date(vs.validity.time_of_validity_not_before) if vs and vs.validity else "",
+                            'current_validity_not_after': self.get_date(vs.validity.time_of_validity_not_after) if vs and vs.validity else "",
+                            'current_time_of_revocation': self.get_date(vs.revocation_status.time_of_revocation) if vs and vs.revocation_status else "",
                             'current_revocation_reason': self.get_value(vs.revocation_status.revocation_reason) if vs and vs.revocation_status else "",
                             'common_name': self.get_value(crt.subject.common_name) if crt.subject else "",
                             'country': self.get_value(crt.subject.country) if crt.subject else "",
@@ -18916,7 +18981,7 @@ class ShowOCIService(object):
                         val = {
                             'id': self.get_value(crt.id),
                             'name': self.get_value(crt.name),
-                            'time_created': self.get_value(crt.time_created, trim_date=True),
+                            'time_created': self.get_date(crt.time_created),
                             'lifecycle_state': self.get_value(crt.lifecycle_state),
                             'certificates_resource_id': self.get_value(crt.certificates_resource_id),
                             'associated_resource_id': self.get_value(crt.associated_resource_id),
@@ -19006,7 +19071,7 @@ class ShowOCIService(object):
                             'id': self.get_value(crt.id),
                             'name': self.get_value(crt.name),
                             'description': self.get_value(crt.description),
-                            'time_created': self.get_value(crt.time_created, trim_date=True),
+                            'time_created': self.get_date(crt.time_created),
                             'lifecycle_state': self.get_value(crt.lifecycle_state),
                             'defined_tags': [] if crt.defined_tags is None else crt.defined_tags,
                             'freeform_tags': [] if crt.freeform_tags is None else crt.freeform_tags,
@@ -19099,8 +19164,8 @@ class ShowOCIService(object):
                             'issuer_certificate_authority_id': self.get_value(crt.issuer_certificate_authority_id),
                             'name': self.get_value(crt.name),
                             'description': self.get_value(crt.description),
-                            'time_created': self.get_value(crt.time_created, trim_date=True),
-                            'time_of_deletion': self.get_value(crt.time_of_deletion, trim_date=True),
+                            'time_created': self.get_date(crt.time_created),
+                            'time_of_deletion': self.get_date(crt.time_of_deletion),
                             'kms_key_id': self.get_value(crt.kms_key_id),
                             'lifecycle_state': self.get_value(crt.lifecycle_state),
                             'certificate_authority_rules': [{
@@ -19111,13 +19176,13 @@ class ShowOCIService(object):
                             'current_certificate_authority_id': self.get_value(vs.certificate_authority_id) if vs else "",
                             'current_issuer_ca_version_number': self.get_value(vs.issuer_ca_version_number) if vs else "",
                             'current_serial_number': self.get_value(vs.serial_number) if vs else "",
-                            'current_time_created': self.get_value(vs.time_created, trim_date=True) if vs else "",
+                            'current_time_created': self.get_date(vs.time_created) if vs else "",
                             'current_version_number': self.get_value(vs.version_number) if vs else "",
                             'current_version_name': self.get_value(vs.version_name) if crt.current_version_summary else "",
-                            'current_time_of_deletion': self.get_value(vs.time_of_deletion, trim_date=True) if crt.current_version_summary else "",
-                            'current_validity_not_before': self.get_value(vs.validity.time_of_validity_not_before, trim_date=True) if vs and vs.validity else "",
-                            'current_validity_not_after': self.get_value(vs.validity.time_of_validity_not_after, trim_date=True) if vs and vs.validity else "",
-                            'current_time_of_revocation': self.get_value(vs.revocation_status.time_of_revocation, trim_date=True) if vs and vs.revocation_status else "",
+                            'current_time_of_deletion': self.get_date(vs.time_of_deletion) if crt.current_version_summary else "",
+                            'current_validity_not_before': self.get_date(vs.validity.time_of_validity_not_before) if vs and vs.validity else "",
+                            'current_validity_not_after': self.get_date(vs.validity.time_of_validity_not_after) if vs and vs.validity else "",
+                            'current_time_of_revocation': self.get_date(vs.revocation_status.time_of_revocation) if vs and vs.revocation_status else "",
                             'current_revocation_reason': self.get_value(vs.revocation_status.revocation_reason) if vs and vs.revocation_status else "",
                             'common_name': self.get_value(crt.subject.common_name) if crt.subject else "",
                             'country': self.get_value(crt.subject.country) if crt.subject else "",
@@ -19255,8 +19320,8 @@ class ShowOCIService(object):
                             'affected_regions': str(', '.join(x for x in ann.affected_regions)),
                             'announcement_type': self.get_value(ann.announcement_type),
                             'is_banner': self.get_value(ann.is_banner),
-                            'time_created': self.get_value(ann.time_created, trim_date=True),
-                            'time_updated': self.get_value(ann.time_updated, trim_date=True),
+                            'time_created': self.get_date(ann.time_created),
+                            'time_updated': self.get_date(ann.time_updated),
                             'environment_name': self.get_value(ann.environment_name),
                             'platform_type': self.get_value(ann.platform_type),
                             'chain_id': self.get_value(ann.chain_id),
@@ -21341,7 +21406,7 @@ class ShowOCIDomains(object):
                         'type': self.get_value(domain.type),
                         'license_type': self.get_value(domain.license_type),
                         'is_hidden_on_login': self.get_value(domain.is_hidden_on_login),
-                        'time_created': self.get_value(domain.time_created)[0:16],
+                        'time_created': self.get_date(domain.time_created),
                         'lifecycle_state': self.get_value(domain.lifecycle_state),
                         'defined_tags': [] if domain.defined_tags is None else domain.defined_tags,
                         'freeform_tags': [] if domain.freeform_tags is None else domain.freeform_tags,
@@ -21354,6 +21419,8 @@ class ShowOCIDomains(object):
                         'authentication_factor_settings': [],
                         'password_policies': [],
                         'policies': [],
+                        'rules': [],
+                        'conditions': [],
                         'compartment_name': str(compartment['name']),
                         'compartment_id': str(compartment['id']),
                         'compartment_path': str(compartment['path'])

@@ -92,6 +92,8 @@ from .object_storage_log_location import ObjectStorageLogLocation
 from .object_storage_script_location import ObjectStorageScriptLocation
 from .object_store_script_precheck_step import ObjectStoreScriptPrecheckStep
 from .pause_dr_plan_execution_details import PauseDrPlanExecutionDetails
+from .refresh_dr_plan_default_details import RefreshDrPlanDefaultDetails
+from .refresh_dr_plan_details import RefreshDrPlanDetails
 from .resume_dr_plan_execution_details import ResumeDrPlanExecutionDetails
 from .retry_dr_plan_execution_details import RetryDrPlanExecutionDetails
 from .run_local_script_user_defined_step import RunLocalScriptUserDefinedStep
@@ -142,6 +144,8 @@ from .update_object_storage_script_location_details import UpdateObjectStorageSc
 from .update_object_store_script_precheck_step_details import UpdateObjectStoreScriptPrecheckStepDetails
 from .update_run_local_script_user_defined_step_details import UpdateRunLocalScriptUserDefinedStepDetails
 from .update_run_object_store_script_user_defined_step_details import UpdateRunObjectStoreScriptUserDefinedStepDetails
+from .verify_dr_plan_default_details import VerifyDrPlanDefaultDetails
+from .verify_dr_plan_details import VerifyDrPlanDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_error_collection import WorkRequestErrorCollection
@@ -239,6 +243,8 @@ disaster_recovery_type_mapping = {
     "ObjectStorageScriptLocation": ObjectStorageScriptLocation,
     "ObjectStoreScriptPrecheckStep": ObjectStoreScriptPrecheckStep,
     "PauseDrPlanExecutionDetails": PauseDrPlanExecutionDetails,
+    "RefreshDrPlanDefaultDetails": RefreshDrPlanDefaultDetails,
+    "RefreshDrPlanDetails": RefreshDrPlanDetails,
     "ResumeDrPlanExecutionDetails": ResumeDrPlanExecutionDetails,
     "RetryDrPlanExecutionDetails": RetryDrPlanExecutionDetails,
     "RunLocalScriptUserDefinedStep": RunLocalScriptUserDefinedStep,
@@ -289,6 +295,8 @@ disaster_recovery_type_mapping = {
     "UpdateObjectStoreScriptPrecheckStepDetails": UpdateObjectStoreScriptPrecheckStepDetails,
     "UpdateRunLocalScriptUserDefinedStepDetails": UpdateRunLocalScriptUserDefinedStepDetails,
     "UpdateRunObjectStoreScriptUserDefinedStepDetails": UpdateRunObjectStoreScriptUserDefinedStepDetails,
+    "VerifyDrPlanDefaultDetails": VerifyDrPlanDefaultDetails,
+    "VerifyDrPlanDetails": VerifyDrPlanDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestErrorCollection": WorkRequestErrorCollection,

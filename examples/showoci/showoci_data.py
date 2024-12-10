@@ -20,7 +20,7 @@ import sys
 
 
 class ShowOCIData(object):
-    version = "24.11.12"
+    version = "24.12.10"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -803,7 +803,6 @@ class ShowOCIData(object):
     ##########################################################################
     # Print Network vcn security groups
     ##########################################################################
-
     def __get_core_network_vcn_security_groups(self, vcn_id):
         data = []
         try:
@@ -816,6 +815,7 @@ class ShowOCIData(object):
                     'compartment_path': nsg['compartment_path'],
                     'compartment_id': nsg['compartment_id'],
                     'sec_rules': [],
+                    'vnics': nsg['vnics'],
                     'time_created': nsg['time_created'],
                     'defined_tags': nsg['defined_tags'],
                     'freeform_tags': nsg['freeform_tags']
@@ -1239,6 +1239,19 @@ class ShowOCIData(object):
             self.__print_error(e)
 
     ##########################################################################
+    # get Subnet Names
+    # 12/1/2024 - Keeping string to avoid breaking json
+    ##########################################################################
+    def __get_core_network_subnet_names(self, subnet_ids):
+        try:
+            ret_val = []
+            for subnet in subnet_ids:
+                ret_val.append(self.__get_core_network_subnet_name(subnet))
+            return ret_val
+        except Exception as e:
+            self.__print_error(e)
+
+    ##########################################################################
     # print network remote peering
     ##########################################################################
     def __get_core_network_remote_peering(self, region_name, compartment):
@@ -1492,7 +1505,6 @@ class ShowOCIData(object):
     ##########################################################################
     # get Core Block boot volume
     ##########################################################################
-
     def __get_core_block_volume_boot(self, bva, compartment_name):
         try:
             value = {}
@@ -1889,6 +1901,7 @@ class ShowOCIData(object):
                     'launch_remote_data_volume_type': instance['launch_remote_data_volume_type'],
                     'launch_is_pv_encryption_in_transit_enabled': instance['launch_is_pv_encryption_in_transit_enabled'],
                     'launch_is_consistent_volume_naming_enabled': instance['launch_is_consistent_volume_naming_enabled'],
+                    'are_legacy_imds_endpoints_disabled': instance['are_legacy_imds_endpoints_disabled'],
                     'platform_type': instance['platform_type'],
                     'platform_is_secure_boot_enabled': instance['platform_is_secure_boot_enabled'],
                     'platform_is_trusted_platform_module_enabled': instance['platform_is_trusted_platform_module_enabled'],
@@ -1938,10 +1951,10 @@ class ShowOCIData(object):
                         comp_text = " (Compartment=" + vnic['compartment_name'] + ")"
 
                     if 'vnic_details' in vnic:
-                        if 'display_name' in vnic['vnic_details']:
+                        if 'name' in vnic['vnic_details']:
                             val = {
                                 'id': vnic['vnic_id'],
-                                'desc': vnic['vnic_details']['display_name'] + str(comp_text),
+                                'desc': vnic['vnic_details']['name'] + str(comp_text),
                                 'details': vnic['vnic_details']
                             }
                             if vnic['vnic_details'] and 'internal_fqdn' in vnic['vnic_details']:
@@ -1949,6 +1962,7 @@ class ShowOCIData(object):
                                     fqdn = vnic['vnic_details']['internal_fqdn']
                             if 'ip_addresses' in vnic['vnic_details']:
                                 val['ip_addresses'] = vnic['vnic_details']['ip_addresses']
+
                             vnicdata.append(val)
 
                 inst['vnic'] = vnicdata
@@ -2217,8 +2231,8 @@ class ShowOCIData(object):
                     'software_storage_size_in_gb': db_node['software_storage_size_in_gb'],
                     'lifecycle_state': db_node['lifecycle_state'],
                     'hostname': db_node['hostname'],
-                    'nsg_names': nsg_names,
                     'nsg_ids': nsg_ids,
+                    'nsg_names': nsg_names,
                     'vnic_id': db_node['vnic_id'],
                     'backup_vnic_id': db_node['backup_vnic_id'],
                     'vnic_details': db_node['vnic_details'],
@@ -2278,7 +2292,7 @@ class ShowOCIData(object):
             return data
 
     ##########################################################################
-    # print database Databases
+    # __get_database_db_databases
     ##########################################################################
     def __get_database_db_databases(self, dbs):
 
@@ -2287,36 +2301,46 @@ class ShowOCIData(object):
 
             for db in dbs:
 
-                backupstr = (" - AutoBck=N" if db['auto_backup_enabled'] else " - AutoBck=Y")
+                backupstr = (" - AutoBck=Y" if db['auto_backup_enabled'] else " - AutoBck=N")
                 pdb_name = db['pdb_name'] + " - " if db['pdb_name'] else ""
-                value = {'name': (str(db['db_name']) + " - " + str(db['db_unique_name']) + " - " +
-                                  pdb_name +
-                                  str(db['db_workload']) + " - " +
-                                  str(db['character_set']) + " - " +
-                                  str(db['ncharacter_set']) + " - " +
-                                  str(db['lifecycle_state']) + backupstr),
-                         'backups': self.__get_database_db_backups(db['backups']) if 'backups' in db else [],
-                         'pdbs': self.__get_database_db_pdbs(db['pdbs']) if 'pdbs' in db else [],
-                         'time_created': db['time_created'],
-                         'defined_tags': db['defined_tags'],
-                         'dataguard': self.__get_database_db_dataguard(db['dataguard']),
-                         'freeform_tags': db['freeform_tags'],
-                         'db_name': db['db_name'],
-                         'pdb_name': pdb_name,
-                         'db_workload': db['db_workload'],
-                         'character_set': db['character_set'],
-                         'ncharacter_set': db['ncharacter_set'],
-                         'db_unique_name': db['db_unique_name'],
-                         'lifecycle_state': db['lifecycle_state'],
-                         'auto_backup_enabled': db['auto_backup_enabled'],
-                         'connection_strings_cdb': db['connection_strings_cdb'],
-                         'source_database_point_in_time_recovery_timestamp': db['source_database_point_in_time_recovery_timestamp'],
-                         'kms_key_id': db['kms_key_id'],
-                         'kms_key_name': self.__get_vault_key_name(db['kms_key_id']),
-                         'vault_id': db['vault_id'],
-                         'last_backup_timestamp': db['last_backup_timestamp'],
-                         'id': db['id']
-                         }
+                value = {
+                    'name': (
+                        str(db['db_name']) + " - " + str(db['db_unique_name']) + " - " +
+                        pdb_name +
+                        str(db['db_workload']) + " - " +
+                        str(db['character_set']) + " - " +
+                        str(db['ncharacter_set']) + " - " +
+                        str(db['lifecycle_state']) + backupstr
+                    ),
+                    'backups': self.__get_database_db_backups(db['backups']) if 'backups' in db else [],
+                    'pdbs': self.__get_database_db_pdbs(db['pdbs']) if 'pdbs' in db else [],
+                    'time_created': db['time_created'],
+                    'defined_tags': db['defined_tags'],
+                    'dataguard': self.__get_database_db_dataguard(db['dataguard']),
+                    'freeform_tags': db['freeform_tags'],
+                    'db_name': db['db_name'],
+                    'pdb_name': pdb_name,
+                    'db_workload': db['db_workload'],
+                    'character_set': db['character_set'],
+                    'ncharacter_set': db['ncharacter_set'],
+                    'db_unique_name': db['db_unique_name'],
+                    'lifecycle_state': db['lifecycle_state'],
+                    'auto_backup_enabled': db['auto_backup_enabled'],
+                    'connection_strings_cdb': db['connection_strings_cdb'],
+                    'source_database_point_in_time_recovery_timestamp': db['source_database_point_in_time_recovery_timestamp'],
+                    'kms_key_id': db['kms_key_id'],
+                    'kms_key_name': self.__get_vault_key_name(db['kms_key_id']),
+                    'vault_id': db['vault_id'],
+                    'last_backup_timestamp': db['last_backup_timestamp'],
+                    'id': db['id'],
+                    # Added 11/15/2024
+                    'kms_key_version_id': db['kms_key_version_id'],
+                    'key_store_id': db['key_store_id'],
+                    'key_store_wallet_name': db['key_store_wallet_name'],
+                    'last_failed_backup_timestamp': db['last_failed_backup_timestamp'],
+                    'last_backup_duration_in_seconds': db['last_backup_duration_in_seconds'],
+                    'db_backup_config': db['db_backup_config']
+                }
 
                 data.append(value)
             return data
@@ -2570,7 +2594,9 @@ class ShowOCIData(object):
                             'backup_subnet_name': vm['backup_subnet_name'],
                             'backup_vcn_name': vm['backup_vcn_name'],
                             'nsg_ids': vm['nsg_ids'],
+                            'nsg_names': vm['nsg_names'],
                             'backup_network_nsg_ids': vm['backup_network_nsg_ids'],
+                            'backup_network_nsg_names': vm['backup_network_nsg_names'],
                             'last_update_history_entry_id': vm['last_update_history_entry_id'],
                             'shape': vm['shape'],
                             'listener_port': vm['listener_port'],
@@ -3207,6 +3233,7 @@ class ShowOCIData(object):
                     'subnet_name_full': vm['subnet_name_full'],
                     'vcn_name': vm['vcn_name'],
                     'nsg_ids': vm['nsg_ids'],
+                    'nsg_names': vm['nsg_names'],
                     'last_update_history_entry_id': vm['last_update_history_entry_id'],
                     'lifecycle_state': vm['lifecycle_state'],
                     'time_created': vm['time_created'],
@@ -3844,30 +3871,32 @@ class ShowOCIData(object):
         try:
             lb = load_balance_obj
             flexible = (str(lb['shape_min_mbps']) + "mbps:" + str(lb['shape_max_mbps']) + "mbps - ") if lb['shape_min_mbps'] else ""
-            data['id'] = str(lb['id'])
-            data['name'] = str(lb['display_name']) + " - " + str(lb['shape_name']) + " - " + flexible + ("(Private)" if lb['is_private'] else "(Public)")
-            data['status'] = lb['status']
-            data['shape_name'] = lb['shape_name']
-            data['shape_min_mbps'] = lb['shape_min_mbps']
-            data['shape_max_mbps'] = lb['shape_max_mbps']
-            data['display_name'] = lb['display_name']
-            data['is_private'] = lb['is_private']
-            data['ips'] = lb['ip_addresses']
-            data['path_route'] = lb['path_route']
-            data['nsg_ids'] = lb['nsg_ids']
-            data['nsg_names'] = lb['nsg_names']
-            data['hostnames'] = [x['desc'] for x in lb['hostnames']]
-            data['rule_sets'] = lb['rule_sets']
-            data['compartment_name'] = lb['compartment_name']
-            data['compartment_path'] = lb['compartment_path']
-            data['compartment_id'] = lb['compartment_id']
-            data['subnet_ids'] = lb['subnet_ids']
-            data['time_created'] = lb['time_created']
-            data['defined_tags'] = lb['defined_tags']
-            data['freeform_tags'] = lb['freeform_tags']
-            data['certificates'] = lb['certificates']
-            data['ssl_cipher_suites'] = lb['ssl_cipher_suites']
-            data['routing_policies'] = lb['routing_policies']
+            data = {
+                'id': str(lb['id']),
+                'name': str(lb['display_name']) + " - " + str(lb['shape_name']) + " - " + flexible + ("(Private)" if lb['is_private'] else "(Public)"),
+                'status': lb['status'],
+                'shape_name': lb['shape_name'],
+                'shape_min_mbps': lb['shape_min_mbps'],
+                'shape_max_mbps': lb['shape_max_mbps'],
+                'display_name': lb['display_name'],
+                'is_private': lb['is_private'],
+                'ips': lb['ip_addresses'],
+                'path_route': lb['path_route'],
+                'nsg_ids': lb['nsg_ids'],
+                'nsg_names': lb['nsg_names'],
+                'hostnames': [x['info'] for x in lb['hostnames']],
+                'rule_sets': lb['rule_sets'],
+                'compartment_name': lb['compartment_name'],
+                'compartment_path': lb['compartment_path'],
+                'compartment_id': lb['compartment_id'],
+                'subnet_ids': lb['subnet_ids'],
+                'time_created': lb['time_created'],
+                'defined_tags': lb['defined_tags'],
+                'freeform_tags': lb['freeform_tags'],
+                'certificates': lb['certificates'],
+                'ssl_cipher_suites': lb['ssl_cipher_suites'],
+                'routing_policies': lb['routing_policies']
+            }
 
             # subnets
             datasub = []
@@ -4165,12 +4194,10 @@ class ShowOCIData(object):
                             'compartment_name': np['compartment_name'],
                             'compartment_path': np['compartment_path'],
                             'compartment_id': np['compartment_id'],
-                            'subnets': [],
-                            'subnet_ids': np['subnet_ids']}
+                            'subnet_ids': np['subnet_ids'],
+                            'subnets': self.__get_core_network_subnet_names(np['subnet_ids'])
+                        }
 
-                        # subnets
-                        for sub in np['subnet_ids']:
-                            nval['subnets'].append(self.__get_core_network_subnet_name(sub))
                         val['node_pools'].append(nval)
 
                     data.append(val)
@@ -4217,8 +4244,8 @@ class ShowOCIData(object):
                         'id': fn['id'],
                         'display_name': fn['display_name'],
                         'lifecycle_state': fn['lifecycle_state'],
-                        'subnets': [],
                         'subnet_ids': fn['subnet_ids'],
+                        'subnets': self.__get_core_network_subnet_names(fn['subnet_ids']),
                         'network_security_group_ids': fn['network_security_group_ids'],
                         'network_security_group_names': fn['network_security_group_names'],
                         'shape': fn['shape'],

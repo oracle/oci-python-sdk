@@ -388,6 +388,8 @@ Database
     oci.database.models.ResourcePoolSummary
     oci.database.models.RestoreAutonomousDatabaseDetails
     oci.database.models.RestoreDatabaseDetails
+    oci.database.models.RotateAutonomousContainerDatabaseEncryptionKeyDetails
+    oci.database.models.RotateAutonomousDatabaseEncryptionKeyDetails
     oci.database.models.RotateAutonomousVmClusterOrdsCertsDetails
     oci.database.models.RotateAutonomousVmClusterSslCertsDetails
     oci.database.models.RotateCloudAutonomousVmClusterOrdsCertsDetails

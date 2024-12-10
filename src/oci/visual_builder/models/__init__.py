@@ -8,14 +8,16 @@ from __future__ import absolute_import
 
 from .application_summary import ApplicationSummary
 from .application_summary_collection import ApplicationSummaryCollection
-from .attachment_details import AttachmentDetails
 from .change_vb_instance_compartment_details import ChangeVbInstanceCompartmentDetails
 from .create_custom_endpoint_details import CreateCustomEndpointDetails
 from .create_vb_instance_details import CreateVbInstanceDetails
 from .custom_endpoint_details import CustomEndpointDetails
-from .idcs_info_details import IdcsInfoDetails
+from .network_endpoint_details import NetworkEndpointDetails
+from .private_endpoint_details import PrivateEndpointDetails
 from .request_summarized_applications_details import RequestSummarizedApplicationsDetails
 from .update_custom_endpoint_details import UpdateCustomEndpointDetails
+from .update_network_endpoint_details import UpdateNetworkEndpointDetails
+from .update_private_endpoint_details import UpdatePrivateEndpointDetails
 from .update_vb_instance_details import UpdateVbInstanceDetails
 from .vb_instance import VbInstance
 from .vb_instance_summary import VbInstanceSummary
@@ -33,14 +35,16 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 visual_builder_type_mapping = {
     "ApplicationSummary": ApplicationSummary,
     "ApplicationSummaryCollection": ApplicationSummaryCollection,
-    "AttachmentDetails": AttachmentDetails,
     "ChangeVbInstanceCompartmentDetails": ChangeVbInstanceCompartmentDetails,
     "CreateCustomEndpointDetails": CreateCustomEndpointDetails,
     "CreateVbInstanceDetails": CreateVbInstanceDetails,
     "CustomEndpointDetails": CustomEndpointDetails,
-    "IdcsInfoDetails": IdcsInfoDetails,
+    "NetworkEndpointDetails": NetworkEndpointDetails,
+    "PrivateEndpointDetails": PrivateEndpointDetails,
     "RequestSummarizedApplicationsDetails": RequestSummarizedApplicationsDetails,
     "UpdateCustomEndpointDetails": UpdateCustomEndpointDetails,
+    "UpdateNetworkEndpointDetails": UpdateNetworkEndpointDetails,
+    "UpdatePrivateEndpointDetails": UpdatePrivateEndpointDetails,
     "UpdateVbInstanceDetails": UpdateVbInstanceDetails,
     "VbInstance": VbInstance,
     "VbInstanceSummary": VbInstanceSummary,

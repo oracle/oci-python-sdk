@@ -26,16 +26,30 @@ class PiiEntityRemove(PiiEntityMasking):
             Allowed values for this property are: "REPLACE", "MASK", "REMOVE"
         :type mode: str
 
+        :param exclude:
+            The value to assign to the exclude property of this PiiEntityRemove.
+        :type exclude: list[str]
+
+        :param should_detect:
+            The value to assign to the should_detect property of this PiiEntityRemove.
+        :type should_detect: bool
+
         """
         self.swagger_types = {
-            'mode': 'str'
+            'mode': 'str',
+            'exclude': 'list[str]',
+            'should_detect': 'bool'
         }
 
         self.attribute_map = {
-            'mode': 'mode'
+            'mode': 'mode',
+            'exclude': 'exclude',
+            'should_detect': 'shouldDetect'
         }
 
         self._mode = None
+        self._exclude = None
+        self._should_detect = None
         self._mode = 'REMOVE'
 
     def __repr__(self):

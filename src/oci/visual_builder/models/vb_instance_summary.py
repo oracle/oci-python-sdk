@@ -128,6 +128,10 @@ class VbInstanceSummary(object):
             The value to assign to the system_tags property of this VbInstanceSummary.
         :type system_tags: dict(str, dict(str, object))
 
+        :param network_endpoint_details:
+            The value to assign to the network_endpoint_details property of this VbInstanceSummary.
+        :type network_endpoint_details: oci.visual_builder.models.NetworkEndpointDetails
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -145,7 +149,8 @@ class VbInstanceSummary(object):
             'consumption_model': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'network_endpoint_details': 'NetworkEndpointDetails'
         }
 
         self.attribute_map = {
@@ -164,7 +169,8 @@ class VbInstanceSummary(object):
             'consumption_model': 'consumptionModel',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'network_endpoint_details': 'networkEndpointDetails'
         }
 
         self._id = None
@@ -183,6 +189,7 @@ class VbInstanceSummary(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._network_endpoint_details = None
 
     @property
     def id(self):
@@ -581,6 +588,26 @@ class VbInstanceSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def network_endpoint_details(self):
+        """
+        Gets the network_endpoint_details of this VbInstanceSummary.
+
+        :return: The network_endpoint_details of this VbInstanceSummary.
+        :rtype: oci.visual_builder.models.NetworkEndpointDetails
+        """
+        return self._network_endpoint_details
+
+    @network_endpoint_details.setter
+    def network_endpoint_details(self, network_endpoint_details):
+        """
+        Sets the network_endpoint_details of this VbInstanceSummary.
+
+        :param network_endpoint_details: The network_endpoint_details of this VbInstanceSummary.
+        :type: oci.visual_builder.models.NetworkEndpointDetails
+        """
+        self._network_endpoint_details = network_endpoint_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

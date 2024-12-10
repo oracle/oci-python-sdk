@@ -36,6 +36,10 @@ class Application(object):
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
 
     #: A constant which can be used with the lifecycle_state property of a Application.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a Application.
     #: This constant has a value of "DELETED"
     LIFECYCLE_STATE_DELETED = "DELETED"
 
@@ -136,7 +140,7 @@ class Application(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Application.
-            Allowed values for this property are: "ACTIVE", "DELETED", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACTIVE", "DELETING", "DELETED", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -792,7 +796,7 @@ class Application(object):
         **[Required]** Gets the lifecycle_state of this Application.
         The current state of this application.
 
-        Allowed values for this property are: "ACTIVE", "DELETED", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACTIVE", "DELETING", "DELETED", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -811,7 +815,7 @@ class Application(object):
         :param lifecycle_state: The lifecycle_state of this Application.
         :type: str
         """
-        allowed_values = ["ACTIVE", "DELETED", "INACTIVE"]
+        allowed_values = ["ACTIVE", "DELETING", "DELETED", "INACTIVE"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

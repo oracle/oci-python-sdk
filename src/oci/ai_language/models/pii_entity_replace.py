@@ -26,6 +26,14 @@ class PiiEntityReplace(PiiEntityMasking):
             Allowed values for this property are: "REPLACE", "MASK", "REMOVE"
         :type mode: str
 
+        :param exclude:
+            The value to assign to the exclude property of this PiiEntityReplace.
+        :type exclude: list[str]
+
+        :param should_detect:
+            The value to assign to the should_detect property of this PiiEntityReplace.
+        :type should_detect: bool
+
         :param replace_with:
             The value to assign to the replace_with property of this PiiEntityReplace.
         :type replace_with: str
@@ -33,15 +41,21 @@ class PiiEntityReplace(PiiEntityMasking):
         """
         self.swagger_types = {
             'mode': 'str',
+            'exclude': 'list[str]',
+            'should_detect': 'bool',
             'replace_with': 'str'
         }
 
         self.attribute_map = {
             'mode': 'mode',
+            'exclude': 'exclude',
+            'should_detect': 'shouldDetect',
             'replace_with': 'replaceWith'
         }
 
         self._mode = None
+        self._exclude = None
+        self._should_detect = None
         self._replace_with = None
         self._mode = 'REPLACE'
 

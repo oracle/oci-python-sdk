@@ -242,6 +242,10 @@ class Instance(object):
             The value to assign to the instance_configuration_id property of this Instance.
         :type instance_configuration_id: str
 
+        :param licensing_configs:
+            The value to assign to the licensing_configs property of this Instance.
+        :type licensing_configs: list[oci.core.models.LicensingConfig]
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -276,7 +280,8 @@ class Instance(object):
             'agent_config': 'InstanceAgentConfig',
             'time_maintenance_reboot_due': 'datetime',
             'platform_config': 'PlatformConfig',
-            'instance_configuration_id': 'str'
+            'instance_configuration_id': 'str',
+            'licensing_configs': 'list[LicensingConfig]'
         }
 
         self.attribute_map = {
@@ -312,7 +317,8 @@ class Instance(object):
             'agent_config': 'agentConfig',
             'time_maintenance_reboot_due': 'timeMaintenanceRebootDue',
             'platform_config': 'platformConfig',
-            'instance_configuration_id': 'instanceConfigurationId'
+            'instance_configuration_id': 'instanceConfigurationId',
+            'licensing_configs': 'licensingConfigs'
         }
 
         self._availability_domain = None
@@ -348,6 +354,7 @@ class Instance(object):
         self._time_maintenance_reboot_due = None
         self._platform_config = None
         self._instance_configuration_id = None
+        self._licensing_configs = None
 
     @property
     def availability_domain(self):
@@ -1292,6 +1299,30 @@ class Instance(object):
         :type: str
         """
         self._instance_configuration_id = instance_configuration_id
+
+    @property
+    def licensing_configs(self):
+        """
+        Gets the licensing_configs of this Instance.
+        List of licensing configurations associated with the instance.
+
+
+        :return: The licensing_configs of this Instance.
+        :rtype: list[oci.core.models.LicensingConfig]
+        """
+        return self._licensing_configs
+
+    @licensing_configs.setter
+    def licensing_configs(self, licensing_configs):
+        """
+        Sets the licensing_configs of this Instance.
+        List of licensing configurations associated with the instance.
+
+
+        :param licensing_configs: The licensing_configs of this Instance.
+        :type: list[oci.core.models.LicensingConfig]
+        """
+        self._licensing_configs = licensing_configs
 
     def __repr__(self):
         return formatted_flat_dict(self)

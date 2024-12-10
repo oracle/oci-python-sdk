@@ -134,11 +134,18 @@ class OkeWorkloadIdentityResourcePrincipalSigner(SecurityTokenSigner):
              "reason": response.reason}, indent=2)))
 
         if not response.ok:
-            raise oci.exceptions.ServiceError(
-                response.status_code,
-                response.reason,
-                response.headers,
-                "Failed to get RPST token from proxymux")
+            if response.status_code == 403:
+                raise oci.exceptions.ServiceError(
+                    response.status_code,
+                    response.reason,
+                    response.headers,
+                    "Please ensure the cluster type is enhanced")
+            else:
+                raise oci.exceptions.ServiceError(
+                    response.status_code,
+                    response.reason,
+                    response.headers,
+                    "Failed to get RPST token from proxymux")
 
         try:
             decoded_response = base64.b64decode(response.content).decode("UTF-8")

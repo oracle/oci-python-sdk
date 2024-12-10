@@ -37,6 +37,7 @@ from .create_non_rolling_batching_strategy_details import CreateNonRollingBatchi
 from .create_patch_fsu_cycle import CreatePatchFsuCycle
 from .create_precheck_action_details import CreatePrecheckActionDetails
 from .create_rollback_action_details import CreateRollbackActionDetails
+from .create_rollback_cycle_apply_action_details import CreateRollbackCycleApplyActionDetails
 from .create_schedule_details import CreateScheduleDetails
 from .create_sequential_batching_strategy_details import CreateSequentialBatchingStrategyDetails
 from .create_service_availability_factor_batching_strategy_details import CreateServiceAvailabilityFactorBatchingStrategyDetails
@@ -117,6 +118,10 @@ from .precheck_fsu_job_summary import PrecheckFsuJobSummary
 from .remove_fsu_collection_targets_details import RemoveFsuCollectionTargetsDetails
 from .rollback_action import RollbackAction
 from .rollback_action_summary import RollbackActionSummary
+from .rollback_cycle_action import RollbackCycleAction
+from .rollback_cycle_action_summary import RollbackCycleActionSummary
+from .rollback_cycle_fsu_job import RollbackCycleFsuJob
+from .rollback_cycle_fsu_job_summary import RollbackCycleFsuJobSummary
 from .rollback_details import RollbackDetails
 from .rollback_fsu_job import RollbackFsuJob
 from .rollback_fsu_job_summary import RollbackFsuJobSummary
@@ -147,6 +152,7 @@ from .update_non_rolling_batching_strategy_details import UpdateNonRollingBatchi
 from .update_patch_fsu_cycle import UpdatePatchFsuCycle
 from .update_precheck_action_details import UpdatePrecheckActionDetails
 from .update_rollback_action_details import UpdateRollbackActionDetails
+from .update_rollback_cycle_action_details import UpdateRollbackCycleActionDetails
 from .update_schedule_details import UpdateScheduleDetails
 from .update_sequential_batching_strategy_details import UpdateSequentialBatchingStrategyDetails
 from .update_service_availability_factor_batching_strategy_details import UpdateServiceAvailabilityFactorBatchingStrategyDetails
@@ -196,6 +202,7 @@ fleet_software_update_type_mapping = {
     "CreatePatchFsuCycle": CreatePatchFsuCycle,
     "CreatePrecheckActionDetails": CreatePrecheckActionDetails,
     "CreateRollbackActionDetails": CreateRollbackActionDetails,
+    "CreateRollbackCycleApplyActionDetails": CreateRollbackCycleApplyActionDetails,
     "CreateScheduleDetails": CreateScheduleDetails,
     "CreateSequentialBatchingStrategyDetails": CreateSequentialBatchingStrategyDetails,
     "CreateServiceAvailabilityFactorBatchingStrategyDetails": CreateServiceAvailabilityFactorBatchingStrategyDetails,
@@ -276,6 +283,10 @@ fleet_software_update_type_mapping = {
     "RemoveFsuCollectionTargetsDetails": RemoveFsuCollectionTargetsDetails,
     "RollbackAction": RollbackAction,
     "RollbackActionSummary": RollbackActionSummary,
+    "RollbackCycleAction": RollbackCycleAction,
+    "RollbackCycleActionSummary": RollbackCycleActionSummary,
+    "RollbackCycleFsuJob": RollbackCycleFsuJob,
+    "RollbackCycleFsuJobSummary": RollbackCycleFsuJobSummary,
     "RollbackDetails": RollbackDetails,
     "RollbackFsuJob": RollbackFsuJob,
     "RollbackFsuJobSummary": RollbackFsuJobSummary,
@@ -306,6 +317,7 @@ fleet_software_update_type_mapping = {
     "UpdatePatchFsuCycle": UpdatePatchFsuCycle,
     "UpdatePrecheckActionDetails": UpdatePrecheckActionDetails,
     "UpdateRollbackActionDetails": UpdateRollbackActionDetails,
+    "UpdateRollbackCycleActionDetails": UpdateRollbackCycleActionDetails,
     "UpdateScheduleDetails": UpdateScheduleDetails,
     "UpdateSequentialBatchingStrategyDetails": UpdateSequentialBatchingStrategyDetails,
     "UpdateServiceAvailabilityFactorBatchingStrategyDetails": UpdateServiceAvailabilityFactorBatchingStrategyDetails,

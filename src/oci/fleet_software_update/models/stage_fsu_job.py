@@ -31,7 +31,7 @@ class StageFsuJob(FsuJob):
 
         :param type:
             The value to assign to the type property of this StageFsuJob.
-            Allowed values for this property are: "STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP"
+            Allowed values for this property are: "STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "ROLLBACK_MAINTENANCE_CYCLE", "CLEANUP"
         :type type: str
 
         :param compartment_id:

@@ -128,14 +128,6 @@ class VbInstance(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type consumption_model: str
 
-        :param idcs_info:
-            The value to assign to the idcs_info property of this VbInstance.
-        :type idcs_info: oci.visual_builder.models.IdcsInfoDetails
-
-        :param attachments:
-            The value to assign to the attachments property of this VbInstance.
-        :type attachments: list[oci.visual_builder.models.AttachmentDetails]
-
         :param service_nat_gateway_ip:
             The value to assign to the service_nat_gateway_ip property of this VbInstance.
         :type service_nat_gateway_ip: str
@@ -151,6 +143,10 @@ class VbInstance(object):
         :param management_vcn_id:
             The value to assign to the management_vcn_id property of this VbInstance.
         :type management_vcn_id: str
+
+        :param network_endpoint_details:
+            The value to assign to the network_endpoint_details property of this VbInstance.
+        :type network_endpoint_details: oci.visual_builder.models.NetworkEndpointDetails
 
         """
         self.swagger_types = {
@@ -170,12 +166,11 @@ class VbInstance(object):
             'custom_endpoint': 'CustomEndpointDetails',
             'alternate_custom_endpoints': 'list[CustomEndpointDetails]',
             'consumption_model': 'str',
-            'idcs_info': 'IdcsInfoDetails',
-            'attachments': 'list[AttachmentDetails]',
             'service_nat_gateway_ip': 'str',
             'management_nat_gateway_ip': 'str',
             'service_vcn_id': 'str',
-            'management_vcn_id': 'str'
+            'management_vcn_id': 'str',
+            'network_endpoint_details': 'NetworkEndpointDetails'
         }
 
         self.attribute_map = {
@@ -195,12 +190,11 @@ class VbInstance(object):
             'custom_endpoint': 'customEndpoint',
             'alternate_custom_endpoints': 'alternateCustomEndpoints',
             'consumption_model': 'consumptionModel',
-            'idcs_info': 'idcsInfo',
-            'attachments': 'attachments',
             'service_nat_gateway_ip': 'serviceNatGatewayIp',
             'management_nat_gateway_ip': 'managementNatGatewayIp',
             'service_vcn_id': 'serviceVcnId',
-            'management_vcn_id': 'managementVcnId'
+            'management_vcn_id': 'managementVcnId',
+            'network_endpoint_details': 'networkEndpointDetails'
         }
 
         self._id = None
@@ -219,12 +213,11 @@ class VbInstance(object):
         self._custom_endpoint = None
         self._alternate_custom_endpoints = None
         self._consumption_model = None
-        self._idcs_info = None
-        self._attachments = None
         self._service_nat_gateway_ip = None
         self._management_nat_gateway_ip = None
         self._service_vcn_id = None
         self._management_vcn_id = None
+        self._network_endpoint_details = None
 
     @property
     def id(self):
@@ -625,50 +618,6 @@ class VbInstance(object):
         self._consumption_model = consumption_model
 
     @property
-    def idcs_info(self):
-        """
-        Gets the idcs_info of this VbInstance.
-
-        :return: The idcs_info of this VbInstance.
-        :rtype: oci.visual_builder.models.IdcsInfoDetails
-        """
-        return self._idcs_info
-
-    @idcs_info.setter
-    def idcs_info(self, idcs_info):
-        """
-        Sets the idcs_info of this VbInstance.
-
-        :param idcs_info: The idcs_info of this VbInstance.
-        :type: oci.visual_builder.models.IdcsInfoDetails
-        """
-        self._idcs_info = idcs_info
-
-    @property
-    def attachments(self):
-        """
-        Gets the attachments of this VbInstance.
-        A list of associated attachments to other services
-
-
-        :return: The attachments of this VbInstance.
-        :rtype: list[oci.visual_builder.models.AttachmentDetails]
-        """
-        return self._attachments
-
-    @attachments.setter
-    def attachments(self, attachments):
-        """
-        Sets the attachments of this VbInstance.
-        A list of associated attachments to other services
-
-
-        :param attachments: The attachments of this VbInstance.
-        :type: list[oci.visual_builder.models.AttachmentDetails]
-        """
-        self._attachments = attachments
-
-    @property
     def service_nat_gateway_ip(self):
         """
         Gets the service_nat_gateway_ip of this VbInstance.
@@ -763,6 +712,26 @@ class VbInstance(object):
         :type: str
         """
         self._management_vcn_id = management_vcn_id
+
+    @property
+    def network_endpoint_details(self):
+        """
+        Gets the network_endpoint_details of this VbInstance.
+
+        :return: The network_endpoint_details of this VbInstance.
+        :rtype: oci.visual_builder.models.NetworkEndpointDetails
+        """
+        return self._network_endpoint_details
+
+    @network_endpoint_details.setter
+    def network_endpoint_details(self, network_endpoint_details):
+        """
+        Sets the network_endpoint_details of this VbInstance.
+
+        :param network_endpoint_details: The network_endpoint_details of this VbInstance.
+        :type: oci.visual_builder.models.NetworkEndpointDetails
+        """
+        self._network_endpoint_details = network_endpoint_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

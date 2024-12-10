@@ -1,9 +1,9 @@
-AttachmentDetails
-=================
+NetworkEndpointDetails
+======================
 
 .. currentmodule:: oci.visual_builder.models
 
-.. autoclass:: AttachmentDetails
+.. autoclass:: NetworkEndpointDetails
     :show-inheritance:
     :special-members: __init__
     :members:

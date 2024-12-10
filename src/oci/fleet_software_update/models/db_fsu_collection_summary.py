@@ -95,6 +95,10 @@ class DbFsuCollectionSummary(FsuCollectionSummary):
             The value to assign to the lifecycle_details property of this DbFsuCollectionSummary.
         :type lifecycle_details: str
 
+        :param last_completed_fsu_cycle_id:
+            The value to assign to the last_completed_fsu_cycle_id property of this DbFsuCollectionSummary.
+        :type last_completed_fsu_cycle_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this DbFsuCollectionSummary.
         :type freeform_tags: dict(str, str)
@@ -126,6 +130,7 @@ class DbFsuCollectionSummary(FsuCollectionSummary):
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'last_completed_fsu_cycle_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
@@ -144,6 +149,7 @@ class DbFsuCollectionSummary(FsuCollectionSummary):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'last_completed_fsu_cycle_id': 'lastCompletedFsuCycleId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
@@ -161,6 +167,7 @@ class DbFsuCollectionSummary(FsuCollectionSummary):
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._last_completed_fsu_cycle_id = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None

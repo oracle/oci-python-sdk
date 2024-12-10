@@ -22,7 +22,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "24.11.12"
+    version = "24.12.10"
 
     ##########################################################################
     # spaces for align
@@ -51,6 +51,22 @@ class ShowOCIOutput(object):
             print("#" + name.center(chars - 2, " ") + "#")
         if bottomBorder:
             print('#' * chars)
+
+    ##########################################################################
+    # list_to_str
+    ##########################################################################
+    def list_to_str(self, v_list, attr=None):
+        try:
+            if not v_list or not isinstance(v_list, (list, tuple)):
+                return ''
+
+            if attr:
+                return str(', '.join(x[attr] for x in v_list))
+            else:
+                return str(', '.join(x for x in v_list))
+
+        except Exception as e:
+            self.__print_error("list_to_str" + (" ATTR='" + attr + "'" if attr else ""), e)
 
     ##########################################################################
     # print_oci_main
@@ -170,11 +186,12 @@ class ShowOCIOutput(object):
     ##########################################################################
     def __print_error(self, msg, e):
         classname = type(self).__name__
+        caller_function = sys._getframe(2).f_code.co_name + ":" + sys._getframe(1).f_code.co_name
 
         if isinstance(e, KeyError):
-            print("\nError in " + classname + ":" + msg + ": KeyError " + str(e.args))
+            print("\nError in " + classname + ":" + caller_function + ":" + msg + ": KeyError " + str(e.args))
         else:
-            print("\nError in " + classname + ":" + msg + ": " + str(e))
+            print("\nError in " + classname + ":" + caller_function + ":" + msg + ": " + str(e))
 
         self.error += 1
 
@@ -1084,9 +1101,9 @@ class ShowOCIOutput(object):
                     if listener['path_route_set_name']:
                         print(self.tabs + "           : Paths: " + listener['path_route_set_name'])
                     if listener['rule_set_names']:
-                        print(self.tabs + "           : Rules: " + str(', '.join(x for x in listener['rule_set_names'])))
+                        print(self.tabs + "           : Rules: " + self.list_to_str(listener['rule_set_names']))
                     if listener['hostname_names']:
-                        print(self.tabs + "           : Hosts: " + str(', '.join(x for x in listener['hostname_names'])))
+                        print(self.tabs + "           : Hosts: " + self.list_to_str(listener['hostname_names']))
                 print("")
 
             # Path route set
@@ -1104,7 +1121,7 @@ class ShowOCIOutput(object):
 
             if 'rule_sets' in lb:
                 for rs in lb['rule_sets']:
-                    print(self.tabs + "RuleSet    : " + rs['name'] + ": " + str(', '.join(x['action'] for x in rs['items'])))
+                    print(self.tabs + "RuleSet    : " + rs['name'] + ": " + self.list_to_str(rs['items'], 'action'))
 
         except Exception as e:
             self.__print_error("__print_load_balancer_details", e)
@@ -1357,7 +1374,7 @@ class ShowOCIOutput(object):
 
                     # databases
                     for db in db_home['databases']:
-                        pdbs = ", PDBS: " + str(', '.join(x['name'] for x in db['pdbs'])) if db['pdbs'] else ""
+                        pdbs = ", PDBS: " + self.list_to_str(db['pdbs'], 'name')
                         print(self.tabs + self.tabs + "   DB : " + db['name'] + pdbs)
 
                         # print data guard
@@ -1585,7 +1602,7 @@ class ShowOCIOutput(object):
 
                         # databases
                         for db in db_home['databases']:
-                            pdbs = ", PDBS: " + str(', '.join(x['name'] for x in db['pdbs'])) if db['pdbs'] else ""
+                            pdbs = ", PDBS: " + self.list_to_str(db['pdbs'], 'name')
                             print(self.tabs + self.tabs + "        DB : " + db['name'] + pdbs)
 
                             # print data guard
@@ -1754,7 +1771,7 @@ class ShowOCIOutput(object):
 
                     # databases
                     for db in db_home['databases']:
-                        pdbs = ", PDBS: " + str(', '.join(x['name'] for x in db['pdbs'])) if db['pdbs'] else ""
+                        pdbs = ", PDBS: " + self.list_to_str(db['pdbs'], 'name')
                         print(self.tabs + self.tabs + " DB : " + db['name'] + pdbs)
 
                         # print data guard
@@ -2926,7 +2943,7 @@ class ShowOCIOutput(object):
                             if vnic['details']['internal_fqdn']:
                                 print(self.tabs2 + "     : Int FQDN     : " + vnic['details']['internal_fqdn'])
                         if 'ip_addresses' in vnic:
-                            print(self.tabs2 + "     : IP Addresses : " + str(', '.join(x['ip_address'] for x in vnic['ip_addresses'])))
+                            print(self.tabs2 + "     : IP Addresses : " + self.list_to_str(vnic['ip_addresses'], 'ip_address'))
 
                 if 'console' in instance:
                     if instance['console']:
@@ -4492,6 +4509,22 @@ class ShowOCICSV(object):
             print("\nError in __add_to_error_array " + str(e))
 
     ##########################################################################
+    # __csv_list_to_str
+    ##########################################################################
+    def __csv_list_to_str(self, v_list, attr=None):
+        try:
+            if not v_list or not isinstance(v_list, (list, tuple)):
+                return ''
+
+            if attr:
+                return str(', '.join(x[attr] for x in v_list))
+            else:
+                return str(', '.join(x for x in v_list))
+
+        except Exception as e:
+            self.__print_error("__csv_list_to_str" + (" ATTR='" + attr + "'" if attr else ""), e)
+
+    ##########################################################################
     # generate_csv
     ##########################################################################
     def generate_csv(self, data, csv_file_header, tenancy, add_date_field=True, csv_columns=""):
@@ -4802,9 +4835,7 @@ class ShowOCICSV(object):
             if not freeform_tag:
                 return ""
 
-            ret_str = str(', '.join(key + "=" + freeform_tag[key] for key in freeform_tag.keys()))
-
-            return ret_str
+            return str(', '.join(key + "=" + freeform_tag[key] for key in freeform_tag.keys()))
 
         except Exception as e:
             self.__print_error("__get_freeform_tags", e)
@@ -5037,13 +5068,13 @@ class ShowOCICSV(object):
                     'tags': str(','.join(x['key'] + "=" + x['value'] for x in var['tags'])),
                     'freeform_tags': self.__get_freeform_tags(var['freeform_tags']),
                     'defined_tags': self.__get_defined_tags(var['defined_tags']),
-                    'phone_numbers': str(','.join(x for x in var['phone_numbers'])),
-                    'ims': str(','.join(x for x in var['ims'])),
-                    'emails': str(','.join(x for x in var['emails'])),
-                    'entitlements': str(','.join(x for x in var['entitlements'])),
-                    'x509_certificates': str(','.join(x for x in var['x509_certificates'])),
-                    'groups': str(','.join(x['display'] for x in var['groups'])),
-                    'groups_ids': str(','.join(x['ocid'] for x in var['groups'])),
+                    'phone_numbers': self.__csv_list_to_str(var['phone_numbers']),
+                    'ims': self.__csv_list_to_str(var['ims']),
+                    'emails': self.__csv_list_to_str(var['emails']),
+                    'entitlements': self.__csv_list_to_str(var['entitlements']),
+                    'x509_certificates': self.__csv_list_to_str(var['x509_certificates']),
+                    'groups': self.__csv_list_to_str(var['groups'], 'display'),
+                    'groups_ids': self.__csv_list_to_str(var['groups'], 'ocid'),
                     'is_federated_user': var['ext_user']['is_federated_user'],
                     'is_authentication_delegated': var['ext_user']['is_authentication_delegated'],
                     'status': var['ext_user']['status'],
@@ -5126,8 +5157,8 @@ class ShowOCICSV(object):
     def __csv_identity_domains_groups(self, groups, domain_name, domain_id):
         try:
             for var in groups:
-                members = "Over 200 members" if len(var['members']) > 200 else str(','.join(x['name'] for x in var['members']))
-                members_ids = "Over 200 members" if len(var['members']) > 200 else str(','.join(x['ocid'] for x in var['members']))
+                members = "Over 200 members" if len(var['members']) > 200 else self.__csv_list_to_str(var['members'], 'name')
+                members_ids = "Over 200 members" if len(var['members']) > 200 else self.__csv_list_to_str(var['members'], 'ocid')
                 data = {
                     'domain_id': domain_id,
                     'domain_name': domain_name,
@@ -5201,8 +5232,8 @@ class ShowOCICSV(object):
                     'matching_rule': var['matching_rule'],
                     'description': var['description'],
                     'display_name': var['display_name'],
-                    'grants': str(','.join(x['value'] for x in var['grants'])),
-                    'dynamic_group_app_roles': str(','.join(x['value'] for x in var['dynamic_group_app_roles'])),
+                    'grants': self.__csv_list_to_str(var['grants'], 'value'),
+                    'dynamic_group_app_roles': self.__csv_list_to_str(var['dynamic_group_app_roles'], 'value'),
                     'freeform_tags': self.__get_freeform_tags(var['freeform_tags']),
                     'defined_tags': self.__get_defined_tags(var['defined_tags'])
                 }
@@ -5238,7 +5269,7 @@ class ShowOCICSV(object):
                     'idcs_last_upgraded_in_release': str(var['idcs_last_upgraded_in_release']),
                     'tags': str(','.join(x['key'] + "=" + x['value'] for x in var['tags'])),
                     'compartment_ocid': var['compartment_ocid'],
-                    'ip_addresses': str(','.join(x['value'] for x in var['ip_addresses']))
+                    'ip_addresses': self.__csv_list_to_str(var['ip_addresses'], 'value')
                 }
 
                 self.csv_identity_domains_network_perimeters.append(data)
@@ -5319,8 +5350,8 @@ class ShowOCICSV(object):
                     'social_authz_url': var['ext_social_idp']['authz_url'],
                     'social_access_token_url': var['ext_social_idp']['access_token_url'],
                     'social_profile_url': var['ext_social_idp']['profile_url'],
-                    'social_scope': str(','.join(x for x in var['ext_social_idp']['scope'])),
-                    'social_admin_scope': str(','.join(x for x in var['ext_social_idp']['admin_scope'])),
+                    'social_scope': self.__csv_list_to_str(var['ext_social_idp']['scope']),
+                    'social_admin_scope': self.__csv_list_to_str(var['ext_social_idp']['admin_scope']),
                     'social_consumer_key': var['ext_social_idp']['consumer_key'],
                     'social_consumer_secret': var['ext_social_idp']['consumer_secret'],
                     'social_service_provider_name': var['ext_social_idp']['service_provider_name'],
@@ -5467,7 +5498,7 @@ class ShowOCICSV(object):
                     'totp_email_otp_validity_duration_in_mins': var['totp_settings']['email_otp_validity_duration_in_mins'],
                     'totp_email_passcode_length': var['totp_settings']['email_passcode_length'],
                     'third_party_duo_security_settings': var['third_party_duo_security_settings'],
-                    'compliance_policy': str(','.join(x['value']for x in var['compliance_policy'])),
+                    'compliance_policy': self.__csv_list_to_str(var['compliance_policy'], 'value'),
                     'fido_attestation': var['ext_fido_auth_factor']['attestation'],
                     'fido_authenticator_selection_attachment': var['ext_fido_auth_factor']['authenticator_selection_attachment'],
                     'fido_authenticator_selection_user_verification': var['ext_fido_auth_factor']['authenticator_selection_user_verification'],
@@ -5635,9 +5666,9 @@ class ShowOCICSV(object):
                     'locked': var['locked'],
                     'rule_groovy': var['rule_groovy'],
                     'rule_return': str(','.join(x['name'] + ':' + x['value'] for x in var['rule_return'])),
-                    'policy_ids': str(','.join(x for x in var['policy_ids'])),
-                    'policy_ids_position': str(','.join(x for x in var['policy_ids_position'])),
-                    'policy_names': str(','.join(x for x in var['policy_names'])),
+                    'policy_ids': self.__csv_list_to_str(var['policy_ids']),
+                    'policy_ids_position': self.__csv_list_to_str(var['policy_ids_position']),
+                    'policy_names': self.__csv_list_to_str(var['policy_names']),
                     'policy_type_ref': var['policy_type']['ref'] if var['policy_type'] else "",
                     'policy_type_value': var['policy_type']['value'] if var['policy_type'] else "",
                     'condition_value': "",
@@ -5769,10 +5800,10 @@ class ShowOCICSV(object):
 
                 value = {
                     'description': ns['description'],
-                    'services': ",".join(ns['services']),
-                    'public_source_list': ",".join(ns['public_source_list']),
-                    'virtual_source_list': ",".join(x['ip_ranges'] for x in ns['virtual_source_list']),
-                    'vcn_ids': ",".join(x['vcn_id'] for x in ns['virtual_source_list']),
+                    'services': self.__csv_list_to_str(ns['services']),
+                    'public_source_list': self.__csv_list_to_str(ns['public_source_list']),
+                    'virtual_source_list': self.__csv_list_to_str(ns['virtual_source_list'], 'ip_ranges'),
+                    'vcn_ids': self.__csv_list_to_str(ns['virtual_source_list'], 'vcn_id'),
                     'freeform_tags': self.__get_freeform_tags(ns['freeform_tags']),
                     'defined_tags': self.__get_defined_tags(ns['defined_tags']),
                     'id': ns['id']
@@ -5890,61 +5921,64 @@ class ShowOCICSV(object):
     def __csv_core_network_vcn_subnet(self, region_name, subnets, vcn, igw, sgw, nat, drg, lpg):
         try:
             for subnet in subnets:
-                data = {'region_name': region_name,
-                        'vcn_name': vcn['display_name'],
-                        'vcn_cidr': "",
-                        'vcn_cidrs': str(','.join(x for x in vcn['cidr_blocks'])),
-                        'vcn_compartment': vcn['compartment_name'],
-                        'vcn_compartment_path': vcn['compartment_path'],
-                        'internet_gateway': igw,
-                        'service_gateway': sgw,
-                        'nat': nat,
-                        'drg': drg,
-                        'local_peering': lpg,
-                        'subnet_name': subnet['name'],
-                        'subnet_cidr': subnet['cidr_block'],
-                        'availability_domain': subnet['availability_domain'],
-                        'subnet_compartment': subnet['compartment_name'],
-                        'subnet_compartment_path': subnet['compartment_path'],
-                        'public_private': subnet['public_private'],
-                        'dhcp_options': subnet['dhcp_options'],
-                        'route': subnet['route'],
-                        'security_list': str(', '.join(x for x in subnet['security_list'])),
-                        'dns': subnet['dns'],
-                        'logs': str(', '.join(x['name'] for x in subnet['logs'])),
-                        'freeform_tags': self.__get_freeform_tags(subnet['freeform_tags']),
-                        'defined_tags': self.__get_defined_tags(subnet['defined_tags']),
-                        'vcn_id': vcn['id'],
-                        'subnet_id': subnet['id']}
+                data = {
+                    'region_name': region_name,
+                    'vcn_name': vcn['display_name'],
+                    'vcn_cidr': "",
+                    'vcn_cidrs': self.__csv_list_to_str(vcn['cidr_blocks']),
+                    'vcn_compartment': vcn['compartment_name'],
+                    'vcn_compartment_path': vcn['compartment_path'],
+                    'internet_gateway': igw,
+                    'service_gateway': sgw,
+                    'nat': nat,
+                    'drg': drg,
+                    'local_peering': lpg,
+                    'subnet_name': subnet['name'],
+                    'subnet_cidr': subnet['cidr_block'],
+                    'availability_domain': subnet['availability_domain'],
+                    'subnet_compartment': subnet['compartment_name'],
+                    'subnet_compartment_path': subnet['compartment_path'],
+                    'public_private': subnet['public_private'],
+                    'dhcp_options': subnet['dhcp_options'],
+                    'route': subnet['route'],
+                    'security_list': self.__csv_list_to_str(subnet['security_list']),
+                    'dns': subnet['dns'],
+                    'logs': self.__csv_list_to_str(subnet['logs'], 'name'),
+                    'freeform_tags': self.__get_freeform_tags(subnet['freeform_tags']),
+                    'defined_tags': self.__get_defined_tags(subnet['defined_tags']),
+                    'vcn_id': vcn['id'],
+                    'subnet_id': subnet['id']
+                }
                 self.csv_network_subnet.append(data)
 
                 # private ips
                 for ip in subnet['private_ips']:
-                    data = {'region_name': region_name,
-                            'vcn_name': vcn['display_name'],
-                            'vcn_cidr': "",
-                            'vcn_cidrs': str(','.join(x for x in vcn['cidr_blocks'])),
-                            'vcn_compartment': vcn['compartment_name'],
-                            'vcn_compartment_path': vcn['compartment_path'],
-                            'subnet_name': subnet['name'],
-                            'subnet_cidr': subnet['cidr_block'],
-                            'subnet_compartment': subnet['compartment_name'],
-                            'subnet_compartment_path': subnet['compartment_path'],
-                            'ip_address': ip['ip_address'],
-                            'display_name': ip['display_name'],
-                            'hostname_label': ip['hostname_label'],
-                            'is_primary': ip['is_primary'],
-                            'time_created': ip['time_created'],
-                            'ip_compartment_name': ip['compartment_name'],
-                            'ip_compartment_path': ip['compartment_path'],
-                            'ip_compartment_id': ip['compartment_id'],
-                            'privateip_id': ip['id'],
-                            'vlan_id': ip['vlan_id'],
-                            'vcn_id': vcn['id'],
-                            'subnet_id': subnet['id'],
-                            'freeform_tags': self.__get_freeform_tags(ip['freeform_tags']),
-                            'defined_tags': self.__get_defined_tags(ip['defined_tags'])
-                            }
+                    data = {
+                        'region_name': region_name,
+                        'vcn_name': vcn['display_name'],
+                        'vcn_cidr': "",
+                        'vcn_cidrs': self.__csv_list_to_str(vcn['cidr_blocks']),
+                        'vcn_compartment': vcn['compartment_name'],
+                        'vcn_compartment_path': vcn['compartment_path'],
+                        'subnet_name': subnet['name'],
+                        'subnet_cidr': subnet['cidr_block'],
+                        'subnet_compartment': subnet['compartment_name'],
+                        'subnet_compartment_path': subnet['compartment_path'],
+                        'ip_address': ip['ip_address'],
+                        'display_name': ip['display_name'],
+                        'hostname_label': ip['hostname_label'],
+                        'is_primary': ip['is_primary'],
+                        'time_created': ip['time_created'],
+                        'ip_compartment_name': ip['compartment_name'],
+                        'ip_compartment_path': ip['compartment_path'],
+                        'ip_compartment_id': ip['compartment_id'],
+                        'privateip_id': ip['id'],
+                        'vlan_id': ip['vlan_id'],
+                        'vcn_id': vcn['id'],
+                        'subnet_id': subnet['id'],
+                        'freeform_tags': self.__get_freeform_tags(ip['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(ip['defined_tags'])
+                    }
 
                     self.csv_network_subnet_prv_ips.append(data)
 
@@ -5965,7 +5999,7 @@ class ShowOCICSV(object):
                         'region_name': region_name,
                         'vcn_name': vcn['display_name'],
                         'vcn_cidr': "",
-                        'vcn_cidrs': str(','.join(x for x in vcn['cidr_blocks'])),
+                        'vcn_cidrs': self.__csv_list_to_str(vcn['cidr_blocks']),
                         'vcn_compartment': vcn['compartment_name'],
                         'vcn_compartment_path': vcn['compartment_path'],
                         'sec_name': sl['name'],
@@ -5999,7 +6033,7 @@ class ShowOCICSV(object):
                             'region_name': region_name,
                             'vcn_name': vcn['display_name'],
                             'vcn_cidr': "",
-                            'vcn_cidrs': str(','.join(x for x in vcn['cidr_blocks'])),
+                            'vcn_cidrs': self.__csv_list_to_str(vcn['cidr_blocks']),
                             'vcn_compartment': vcn['compartment_name'],
                             'vcn_compartment_path': vcn['compartment_path'],
                             'sec_name': sl['name'],
@@ -6054,11 +6088,11 @@ class ShowOCICSV(object):
                     'name': drg['name'],
                     'redundancy': drg['redundancy'],
                     'time_created': drg['time_created'][0:16],
-                    'drg_route_tables': str(', '.join(x['display_name'] for x in drg['drg_route_tables'])),
+                    'drg_route_tables': self.__csv_list_to_str(drg['drg_route_tables'], 'display_name'),
                     'ip_sec_connections': str(', '.join(x['name'] + " " + x['tunnels_status'] for x in drg['ip_sec_connections'])),
-                    'virtual_circuits': str(', '.join(x['name'] for x in drg['virtual_circuits'])),
+                    'virtual_circuits': self.__csv_list_to_str(drg['virtual_circuits'], 'name'),
                     'remote_peerings': str(', '.join(x['name'] + " " + x['peering_status'] for x in drg['remote_peerings'])),
-                    'vcns': str(', '.join(x['name'] for x in drg['vcns'])),
+                    'vcns': self.__csv_list_to_str(drg['vcns'], 'name'),
                     'freeform_tags': self.__get_freeform_tags(drg['freeform_tags']),
                     'defined_tags': self.__get_defined_tags(drg['defined_tags']),
                     'id': drg['id']
@@ -6093,8 +6127,8 @@ class ShowOCICSV(object):
                         'cpe': arr['cpe'],
                         'cpe_local_identifier': arr['cpe_local_identifier'],
                         'cpe_time_created': arr['time_created'][0:16],
-                        'routes': str(', '.join(x for x in arr['routes'])),
-                        'logs': str(', '.join(x['name'] for x in arr['logs'])),
+                        'routes': self.__csv_list_to_str(arr['routes']),
+                        'logs': self.__csv_list_to_str(arr['logs'], 'name'),
                         'drg_id': arr['drg_id'],
                         'cpe_id': arr['cpe_id'],
                         'ipsec_id': arr['id'],
@@ -6146,7 +6180,7 @@ class ShowOCICSV(object):
                     'cross_connect_mappings': arr['cross_connect_mappings'],
                     'type': arr['type'],
                     'drg_route_table': arr['drg_route_table'],
-                    'logs': str(', '.join(x['name'] for x in arr['logs'])),
+                    'logs': self.__csv_list_to_str(arr['logs'], 'name'),
                     'drg_id': arr['drg_id'],
                     'drg_route_table_id': arr['drg_route_table_id'],
                     'time_created': arr['time_created'],
@@ -6234,7 +6268,7 @@ class ShowOCICSV(object):
                         'region_name': region_name,
                         'vcn_name': vcn['display_name'],
                         'vcn_cidr': "",
-                        'vcn_cidrs': str(','.join(x for x in vcn['cidr_blocks'])),
+                        'vcn_cidrs': self.__csv_list_to_str(vcn['cidr_blocks']),
                         'vcn_compartment': vcn['compartment_name'],
                         'vcn_compartment_path': vcn['compartment_path'],
                         'sec_name': sl['name'],
@@ -6265,7 +6299,8 @@ class ShowOCICSV(object):
                         'time_created': sl['time_created'],
                         'vcn_id': vcn['id'],
                         'sec_id': sl['id'],
-                        'id': sl['id'] + ":Empty"
+                        'id': sl['id'] + ":Empty",
+                        'vnics': ""
                     }
                     self.csv_network_security_group.append(data)
 
@@ -6275,7 +6310,7 @@ class ShowOCICSV(object):
                             'region_name': region_name,
                             'vcn_name': vcn['display_name'],
                             'vcn_cidr': "",
-                            'vcn_cidrs': str(','.join(x for x in vcn['cidr_blocks'])),
+                            'vcn_cidrs': self.__csv_list_to_str(vcn['cidr_blocks']),
                             'vcn_compartment': vcn['compartment_name'],
                             'vcn_compartment_path': vcn['compartment_path'],
                             'sec_name': sl['name'],
@@ -6306,7 +6341,8 @@ class ShowOCICSV(object):
                             'time_created': sl['time_created'],
                             'vcn_id': vcn['id'],
                             'sec_id': sl['id'],
-                            'id': sl['id'] + ":" + slr['id']
+                            'id': sl['id'] + ":" + slr['id'],
+                            'vnics': str(';'.join(f'vnic_id={x["vnic_id"]}, time_associated={x["time_associated"]}' for x in sl['vnics']))
                         }
 
                         # check if id is in the list already
@@ -6329,21 +6365,22 @@ class ShowOCICSV(object):
     def __csv_core_network_vcn_dhcp_options(self, region_name, dhcp_options, vcn):
         try:
             for dhcp in dhcp_options:
-                data = {'region_name': region_name,
-                        'vcn_name': vcn['display_name'],
-                        'vcn_cidr': "",
-                        'vcn_cidrs': str(','.join(x for x in vcn['cidr_blocks'])),
-                        'vcn_compartment': vcn['compartment_name'],
-                        'vcn_compartment_path': vcn['compartment_path'],
-                        'dhcp_name': dhcp['name'],
-                        'option_1': "",
-                        'option_2': "",
-                        'dhcp_compartment': dhcp['compartment_name'],
-                        'dhcp_compartment_path': dhcp['compartment_path'],
-                        'time_created': dhcp['time_created'][0:16],
-                        'vcn_id': vcn['id'],
-                        'dhcp_id': dhcp['id']
-                        }
+                data = {
+                    'region_name': region_name,
+                    'vcn_name': vcn['display_name'],
+                    'vcn_cidr': "",
+                    'vcn_cidrs': self.__csv_list_to_str(vcn['cidr_blocks']),
+                    'vcn_compartment': vcn['compartment_name'],
+                    'vcn_compartment_path': vcn['compartment_path'],
+                    'dhcp_name': dhcp['name'],
+                    'option_1': "",
+                    'option_2': "",
+                    'dhcp_compartment': dhcp['compartment_name'],
+                    'dhcp_compartment_path': dhcp['compartment_path'],
+                    'time_created': dhcp['time_created'][0:16],
+                    'vcn_id': vcn['id'],
+                    'dhcp_id': dhcp['id']
+                }
 
                 seq = 0
                 for opt in dhcp['opt']:
@@ -6367,42 +6404,44 @@ class ShowOCICSV(object):
             for rt in route_tables:
 
                 if len(rt['route_rules']) == 0:
-                    data = {'region_name': region_name,
+                    data = {
+                        'region_name': region_name,
+                        'vcn_name': vcn['display_name'],
+                        'vcn_cidr': "",
+                        'vcn_cidrs': self.__csv_list_to_str(vcn['cidr_blocks']),
+                        'vcn_compartment': vcn['compartment_name'],
+                        'vcn_compartment_path': vcn['compartment_path'],
+                        'route_name': rt['name'],
+                        'route_compartment': rt['compartment_name'],
+                        'route_compartment_path': rt['compartment_path'],
+                        'destination': "",
+                        'route': "Empty",
+                        'time_created': rt['time_created'][0:16],
+                        'vcn_id': vcn['id'],
+                        'route_id': rt['id'],
+                        'id': rt['id'] + ":Empty"
+                    }
+                    self.csv_network_routes.append(data)
+
+                else:
+                    for rl in rt['route_rules']:
+                        data = {
+                            'region_name': region_name,
                             'vcn_name': vcn['display_name'],
                             'vcn_cidr': "",
-                            'vcn_cidrs': str(','.join(x for x in vcn['cidr_blocks'])),
+                            'vcn_cidrs': self.__csv_list_to_str(vcn['cidr_blocks']),
                             'vcn_compartment': vcn['compartment_name'],
                             'vcn_compartment_path': vcn['compartment_path'],
                             'route_name': rt['name'],
                             'route_compartment': rt['compartment_name'],
                             'route_compartment_path': rt['compartment_path'],
-                            'destination': "",
-                            'route': "Empty",
+                            'destination': rl['destination'],
+                            'route': rl['desc'],
                             'time_created': rt['time_created'][0:16],
                             'vcn_id': vcn['id'],
                             'route_id': rt['id'],
-                            'id': rt['id'] + ":Empty"
-                            }
-                    self.csv_network_routes.append(data)
-
-                else:
-                    for rl in rt['route_rules']:
-                        data = {'region_name': region_name,
-                                'vcn_name': vcn['display_name'],
-                                'vcn_cidr': "",
-                                'vcn_cidrs': str(','.join(x for x in vcn['cidr_blocks'])),
-                                'vcn_compartment': vcn['compartment_name'],
-                                'vcn_compartment_path': vcn['compartment_path'],
-                                'route_name': rt['name'],
-                                'route_compartment': rt['compartment_name'],
-                                'route_compartment_path': rt['compartment_path'],
-                                'destination': rl['destination'],
-                                'route': rl['desc'],
-                                'time_created': rt['time_created'][0:16],
-                                'vcn_id': vcn['id'],
-                                'route_id': rt['id'],
-                                'id': rt['id'] + ":" + str(hash(rl['desc']))
-                                }
+                            'id': rt['id'] + ":" + str(hash(rl['desc']))
+                        }
 
                         # check if id is in the list already
                         item_exists = False
@@ -6442,24 +6481,24 @@ class ShowOCICSV(object):
                 subnets_cidrs = ""
 
                 if 'igw' in vcn['data']:
-                    igw = str(', '.join(x['name'] for x in vcn['data']['igw']))
+                    igw = self.__csv_list_to_str(vcn['data']['igw'], 'name')
 
                 if 'sgw' in vcn['data']:
                     sgw = str(', '.join(x['name'] + " " + x['services'] for x in vcn['data']['sgw']))
 
                 if 'nat' in vcn['data']:
-                    nat = str(', '.join(x['name'] for x in vcn['data']['nat']))
+                    nat = self.__csv_list_to_str(vcn['data']['nat'], 'name')
 
                 if 'drg_attached' in vcn['data']:
-                    drg = str(', '.join(x['name'] for x in vcn['data']['drg_attached']))
+                    drg = self.__csv_list_to_str(vcn['data']['drg_attached'], 'name')
 
                 if 'local_peering' in vcn['data']:
-                    lpg = str(', '.join(x['name'] for x in vcn['data']['local_peering']))
+                    lpg = self.__csv_list_to_str(vcn['data']['local_peering'], 'name')
 
                 if 'subnets' in vcn['data']:
                     self.__csv_core_network_vcn_subnet(region_name, vcn['data']['subnets'], vcn, igw, sgw, nat, drg, lpg)
-                    subnets = str(', '.join(x['name'] for x in vcn['data']['subnets']))
-                    subnets_cidrs = str(', '.join(x['cidr_block'] for x in vcn['data']['subnets']))
+                    subnets = self.__csv_list_to_str(vcn['data']['subnets'], 'name')
+                    subnets_cidrs = self.__csv_list_to_str(vcn['data']['subnets'], 'cidr_block')
 
                 if 'security_lists' in vcn['data']:
                     self.__csv_core_network_vcn_security_lists(region_name, vcn['data']['security_lists'], vcn)
@@ -6473,22 +6512,24 @@ class ShowOCICSV(object):
                 if 'dhcp_options' in vcn['data']:
                     self.__csv_core_network_vcn_dhcp_options(region_name, vcn['data']['dhcp_options'], vcn)
 
-                data = {'region_name': region_name,
-                        'compartment': vcn['compartment_name'],
-                        'compartment_path': vcn['compartment_path'],
-                        'name': vcn['display_name'],
-                        'cidr': "",
-                        'cidrs': str(','.join(x for x in vcn['cidr_blocks'])),
-                        'internet_gateway': igw,
-                        'service_gateway': sgw,
-                        'nat': nat,
-                        'drg': drg,
-                        'local_peering': lpg,
-                        'subnets': subnets,
-                        'subnets_cidrs': subnets_cidrs,
-                        'freeform_tags': self.__get_freeform_tags(vcn['freeform_tags']),
-                        'defined_tags': self.__get_defined_tags(vcn['defined_tags']),
-                        'vcn_id': vcn['id']}
+                data = {
+                    'region_name': region_name,
+                    'compartment': vcn['compartment_name'],
+                    'compartment_path': vcn['compartment_path'],
+                    'name': vcn['display_name'],
+                    'cidr': "",
+                    'cidrs': self.__csv_list_to_str(vcn['cidr_blocks']),
+                    'internet_gateway': igw,
+                    'service_gateway': sgw,
+                    'nat': nat,
+                    'drg': drg,
+                    'local_peering': lpg,
+                    'subnets': subnets,
+                    'subnets_cidrs': subnets_cidrs,
+                    'freeform_tags': self.__get_freeform_tags(vcn['freeform_tags']),
+                    'defined_tags': self.__get_defined_tags(vcn['defined_tags']),
+                    'vcn_id': vcn['id']
+                }
 
                 self.csv_network_vcn.append(data)
 
@@ -6591,22 +6632,22 @@ class ShowOCICSV(object):
                         'backup_subnet': dbs['backup_subnet'],
                         'backup_subnet_name': dbs['backup_subnet_name'],
                         'backup_vcn_name': dbs['backup_vcn_name'],
-                        'scan_ips': str(', '.join(x for x in dbs['scan_ips'])),
-                        'vip_ips': str(', '.join(x for x in dbs['vip_ips'])),
+                        'scan_ips': self.__csv_list_to_str(dbs['scan_ips']),
+                        'vip_ips': self.__csv_list_to_str(dbs['vip_ips']),
                         'cluster_name': dbs['cluster_name'],
                         'time_created': dbs['time_created'][0:16],
                         'domain': dbs['domain'],
-                        'db_nodes': str(', '.join(x['desc'] for x in dbs['db_nodes'])),
-                        'db_homes': str(', '.join(x['home'] for x in dbs['db_homes'])),
+                        'db_nodes': self.__csv_list_to_str(dbs['db_nodes'], 'desc'),
+                        'db_homes': self.__csv_list_to_str(dbs['db_homes'], 'home'),
                         'freeform_tags': self.__get_freeform_tags(dbs['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(dbs['defined_tags']),
                         'maintenance_window': dbs['maintenance_window']['display'] if dbs['maintenance_window'] else "",
                         'last_maintenance_run': dbs['last_maintenance_run']['maintenance_display'] if dbs['last_maintenance_run'] else "",
                         'next_maintenance_run': dbs['next_maintenance_run']['maintenance_display'] if dbs['next_maintenance_run'] else "",
                         'nsg_ids_names': dbs['nsg_ids_names'],
-                        'nsg_ids': str(', '.join(x for x in dbs['nsg_ids'])) if dbs['nsg_ids'] else "",
+                        'nsg_ids': self.__csv_list_to_str(dbs['nsg_ids']),
                         'backup_network_nsg_ids_names': dbs['backup_network_nsg_ids_names'],
-                        'backup_network_nsg_ids': str(', '.join(x for x in dbs['backup_network_nsg_ids'])) if dbs['backup_network_nsg_ids'] else "",
+                        'backup_network_nsg_ids': self.__csv_list_to_str(dbs['backup_network_nsg_ids']),
                         'memory_size_in_gbs': dbs['memory_size_in_gbs'],
                         'storage_volume_performance_mode': dbs['storage_volume_performance_mode'],
                         'time_zone': dbs['time_zone'],
@@ -6658,18 +6699,25 @@ class ShowOCICSV(object):
                             'backup_subnet': dbs['backup_subnet'],
                             'backup_subnet_name': dbs['backup_subnet_name'],
                             'backup_vcn_name': dbs['backup_vcn_name'],
-                            'scan_ips': str(', '.join(x for x in dbs['scan_ips'])),
-                            'vip_ips': str(', '.join(x for x in dbs['vip_ips'])),
-                            'pdbs': str(', '.join(x['name'] for x in db['pdbs'])),
+                            'scan_ips': self.__csv_list_to_str(dbs['scan_ips']),
+                            'vip_ips': self.__csv_list_to_str(dbs['vip_ips']),
+                            'pdbs': self.__csv_list_to_str(db['pdbs'], 'name'),
                             'cluster_name': dbs['cluster_name'],
                             'vm_name': dbs['display_name'],
                             'time_created': dbs['time_created'][0:16],
                             'domain': dbs['domain'],
                             'auto_backup_enabled': db['auto_backup_enabled'],
-                            'db_nodes': str(', '.join(x['desc'] for x in dbs['db_nodes'])),
+                            'last_failed_backup_timestamp': db['last_failed_backup_timestamp'],
+                            'last_backup_duration_in_seconds': db['last_backup_duration_in_seconds'],
+                            'recovery_window_in_days': db['db_backup_config']['recovery_window_in_days'] if 'db_backup_config' in db else "",
+                            'backup_destination_type': db['db_backup_config']['backup_destination_type'] if 'db_backup_config' in db else "",
+                            'auto_full_backup_day': db['db_backup_config']['auto_full_backup_day'] if 'db_backup_config' in db else "",
+                            'kms_key_id': db['kms_key_id'],
+                            'kms_key_version_id': db['kms_key_version_id'],
+                            'key_store_wallet_name': db['key_store_wallet_name'],
+                            'db_nodes': self.__csv_list_to_str(dbs['db_nodes'], 'desc'),
                             'freeform_tags': self.__get_freeform_tags(db['freeform_tags']),
                             'defined_tags': self.__get_defined_tags(db['defined_tags']),
-                            'kms_key_id': db['kms_key_id'],
                             'vault_id': db['vault_id'],
                             'database_id': db['id'],
                             'id': db['id'],
@@ -6803,12 +6851,12 @@ class ShowOCICSV(object):
                         'backup_subnet': vm['backup_subnet'],
                         'backup_subnet_name': vm['backup_subnet_name'],
                         'backup_vcn_name': vm['backup_vcn_name'],
-                        'scan_ips': str(', '.join(x for x in vm['scan_ips'])),
-                        'vip_ips': str(', '.join(x for x in vm['vip_ips'])),
+                        'scan_ips': self.__csv_list_to_str(vm['scan_ips']),
+                        'vip_ips': self.__csv_list_to_str(vm['vip_ips']),
                         'cluster_name': vm['cluster_name'],
                         'time_created': vm['time_created'][0:16],
                         'domain': vm['domain'],
-                        'db_homes': str(', '.join(x['home'] for x in vm['db_homes'])),
+                        'db_homes': self.__csv_list_to_str(vm['db_homes'], 'home'),
                         'freeform_tags': self.__get_freeform_tags(vm['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(vm['defined_tags']),
                         'id': vm['id'],
@@ -6853,15 +6901,23 @@ class ShowOCICSV(object):
                                     'backup_subnet': vm['backup_subnet'],
                                     'backup_subnet_name': vm['backup_subnet_name'],
                                     'backup_vcn_name': vm['backup_vcn_name'],
-                                    'scan_ips': str(', '.join(x for x in vm['scan_ips'])),
-                                    'vip_ips': str(', '.join(x for x in vm['vip_ips'])),
-                                    'pdbs': str(', '.join(x['name'] for x in db['pdbs'])),
+                                    'scan_ips': self.__csv_list_to_str(vm['scan_ips']),
+                                    'vip_ips': self.__csv_list_to_str(vm['vip_ips']),
+                                    'pdbs': self.__csv_list_to_str(db['pdbs'], 'name'),
                                     'cluster_name': vm['cluster_name'],
                                     'vm_name': vm['display_name'],
                                     'time_created': vm['time_created'][0:16],
                                     'domain': vm['domain'],
                                     'auto_backup_enabled': db['auto_backup_enabled'],
-                                    'db_nodes': str(', '.join(x['desc'] for x in vm['db_nodes'])),
+                                    'last_failed_backup_timestamp': db['last_failed_backup_timestamp'],
+                                    'last_backup_duration_in_seconds': db['last_backup_duration_in_seconds'],
+                                    'recovery_window_in_days': db['db_backup_config']['recovery_window_in_days'] if 'db_backup_config' in db else "",
+                                    'backup_destination_type': db['db_backup_config']['backup_destination_type'] if 'db_backup_config' in db else "",
+                                    'auto_full_backup_day': db['db_backup_config']['auto_full_backup_day'] if 'db_backup_config' in db else "",
+                                    'kms_key_id': db['kms_key_id'],
+                                    'kms_key_version_id': db['kms_key_version_id'],
+                                    'key_store_wallet_name': db['key_store_wallet_name'],
+                                    'db_nodes': self.__csv_list_to_str(vm['db_nodes'], 'desc'),
                                     'freeform_tags': self.__get_freeform_tags(db['freeform_tags']),
                                     'defined_tags': self.__get_defined_tags(db['defined_tags']),
                                     'database_id': db['id'],
@@ -6956,10 +7012,10 @@ class ShowOCICSV(object):
                         'customer_contacts': str(dbs['customer_contacts']),
                         'defined_file_system_configurations': str(dbs['defined_file_system_configurations']),
                         # End Added 7/29/2024
-                        'db_servers': str(', '.join(x['desc'] for x in dbs['db_servers'])),
-                        'db_servers_ids': str(', '.join(x['id'] for x in dbs['db_servers'])),
+                        'db_servers': self.__csv_list_to_str(dbs['db_servers'], 'desc'),
+                        'db_servers_ids': self.__csv_list_to_str(dbs['db_servers'], 'id'),
                         'cluster_count': len(dbs['vm_clusters']),
-                        'cluster_names': str(', '.join(x['display_name'] for x in dbs['vm_clusters'])),
+                        'cluster_names': self.__csv_list_to_str(dbs['vm_clusters'], 'display_name'),
                         'time_created': dbs['time_created'],
                         'freeform_tags': self.__get_freeform_tags(dbs['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(dbs['defined_tags']),
@@ -7002,8 +7058,8 @@ class ShowOCICSV(object):
                             'backup_subnet': vm['backup_subnet'],
                             'backup_subnet_name': vm['backup_subnet_name'],
                             'backup_vcn_name': vm['backup_vcn_name'],
-                            'scan_ips': str(', '.join(x for x in vm['scan_ips'])),
-                            'vip_ips': str(', '.join(x for x in vm['vip_ips'])),
+                            'scan_ips': self.__csv_list_to_str(vm['scan_ips']),
+                            'vip_ips': self.__csv_list_to_str(vm['vip_ips']),
                             'cluster_name': vm['cluster_name'],
                             'time_created': vm['time_created'][0:16],
                             'domain': vm['domain'],
@@ -7017,8 +7073,8 @@ class ShowOCICSV(object):
                             'scan_listener_port_tcp': vm['scan_listener_port_tcp'],
                             'file_system_configuration_details': str(vm['file_system_configuration_details']),
                             # End Added 7/29/2024
-                            'db_nodes': str(', '.join(x['desc'] for x in vm['db_nodes'])),
-                            'db_homes': str(', '.join(x['home'] for x in vm['db_homes'])),
+                            'db_nodes': self.__csv_list_to_str(vm['db_nodes'], 'desc'),
+                            'db_homes': self.__csv_list_to_str(vm['db_homes'], 'home'),
                             'freeform_tags': self.__get_freeform_tags(vm['freeform_tags']),
                             'defined_tags': self.__get_defined_tags(vm['defined_tags']),
                             'maintenance_window': dbs['maintenance_window']['display'] if dbs['maintenance_window'] else "",
@@ -7065,15 +7121,23 @@ class ShowOCICSV(object):
                                     'backup_subnet': vm['backup_subnet'],
                                     'backup_subnet_name': vm['backup_subnet_name'],
                                     'backup_vcn_name': vm['backup_vcn_name'],
-                                    'scan_ips': str(', '.join(x for x in vm['scan_ips'])),
-                                    'vip_ips': str(', '.join(x for x in vm['vip_ips'])),
-                                    'pdbs': str(', '.join(x['name'] for x in db['pdbs'])),
+                                    'scan_ips': self.__csv_list_to_str(vm['scan_ips']),
+                                    'vip_ips': self.__csv_list_to_str(vm['vip_ips']),
+                                    'pdbs': self.__csv_list_to_str(db['pdbs'], 'name'),
                                     'cluster_name': vm['cluster_name'],
                                     'vm_name': vm['display_name'],
                                     'time_created': vm['time_created'][0:16],
                                     'domain': vm['domain'],
                                     'auto_backup_enabled': db['auto_backup_enabled'],
-                                    'db_nodes': str(', '.join(x['desc'] for x in vm['db_nodes'])),
+                                    'last_failed_backup_timestamp': db['last_failed_backup_timestamp'],
+                                    'last_backup_duration_in_seconds': db['last_backup_duration_in_seconds'],
+                                    'recovery_window_in_days': db['db_backup_config']['recovery_window_in_days'] if 'db_backup_config' in db else "",
+                                    'backup_destination_type': db['db_backup_config']['backup_destination_type'] if 'db_backup_config' in db else "",
+                                    'auto_full_backup_day': db['db_backup_config']['auto_full_backup_day'] if 'db_backup_config' in db else "",
+                                    'kms_key_id': db['kms_key_id'],
+                                    'kms_key_version_id': db['kms_key_version_id'],
+                                    'key_store_wallet_name': db['key_store_wallet_name'],
+                                    'db_nodes': self.__csv_list_to_str(vm['db_nodes'], 'desc'),
                                     'freeform_tags': self.__get_freeform_tags(db['freeform_tags']),
                                     'defined_tags': self.__get_defined_tags(db['defined_tags']),
                                     'database_id': db['id'],
@@ -7156,10 +7220,10 @@ class ShowOCICSV(object):
                         'ntp_server': dbs['ntp_server'],
                         'csi_number': dbs['csi_number'],
                         'node_count': len(dbs['db_servers']),
-                        'db_servers': str(', '.join(x['desc'] for x in dbs['db_servers'])),
-                        'db_servers_ids': str(', '.join(x['id'] for x in dbs['db_servers'])),
+                        'db_servers': self.__csv_list_to_str(dbs['db_servers'], 'desc'),
+                        'db_servers_ids': self.__csv_list_to_str(dbs['db_servers'], 'id'),
                         'cluster_count': len(dbs['vm_clusters']),
-                        'cluster_names': str(', '.join(x['display_name'] for x in dbs['vm_clusters'])),
+                        'cluster_names': self.__csv_list_to_str(dbs['vm_clusters'], 'display_name'),
                         'time_created': dbs['time_created'],
                         'freeform_tags': self.__get_freeform_tags(dbs['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(dbs['defined_tags']),
@@ -7207,8 +7271,8 @@ class ShowOCICSV(object):
                             'cluster_name': vm['display_name'],
                             'time_created': vm['time_created'][0:16],
                             'domain': "",
-                            'db_nodes': str(', '.join(x['desc'] for x in vm['db_nodes'])),
-                            'db_homes': str(', '.join(x['home'] for x in vm['db_homes'])),
+                            'db_nodes': self.__csv_list_to_str(vm['db_nodes'], 'desc'),
+                            'db_homes': self.__csv_list_to_str(vm['db_homes'], 'home'),
                             'maintenance_window': dbs['maintenance_window']['display'] if dbs['maintenance_window'] else "",
                             'last_maintenance_run': dbs['last_maintenance_run']['maintenance_display'] if dbs['last_maintenance_run'] else "",
                             'next_maintenance_run': dbs['next_maintenance_run']['maintenance_display'] if dbs['next_maintenance_run'] else "",
@@ -7259,13 +7323,20 @@ class ShowOCICSV(object):
                                     'backup_vcn_name': "",
                                     'scan_ips': "",
                                     'vip_ips': "",
-                                    'pdbs': str(', '.join(x['name'] for x in db['pdbs'])),
+                                    'pdbs': self.__csv_list_to_str(db['pdbs'], 'name'),
                                     'cluster_name': vm['display_name'],
                                     'vm_name': vm['display_name'],
                                     'time_created': vm['time_created'][0:16],
                                     'domain': "",
                                     'auto_backup_enabled': db['auto_backup_enabled'],
-                                    'db_nodes': str(', '.join(x['desc'] for x in vm['db_nodes'])),
+                                    'last_failed_backup_timestamp': db['last_failed_backup_timestamp'],
+                                    'last_backup_duration_in_seconds': db['last_backup_duration_in_seconds'],
+                                    'recovery_window_in_days': db['db_backup_config']['recovery_window_in_days'] if 'db_backup_config' in db else "",
+                                    'backup_destination_type': db['db_backup_config']['backup_destination_type'] if 'db_backup_config' in db else "",
+                                    'auto_full_backup_day': db['db_backup_config']['auto_full_backup_day'] if 'db_backup_config' in db else "",
+                                    'kms_key_version_id': db['kms_key_version_id'],
+                                    'key_store_wallet_name': db['key_store_wallet_name'],
+                                    'db_nodes': self.__csv_list_to_str(vm['db_nodes'], 'desc'),
                                     'kms_key_id': db['kms_key_id'],
                                     'vault_id': db['vault_id'],
                                     'freeform_tags': self.__get_freeform_tags(db['freeform_tags']),
@@ -7445,8 +7516,8 @@ class ShowOCICSV(object):
                         'subnet_name': dbs['subnet_name'] if dbs['subnet_name'] != "None" else "",
                         'private_endpoint': dbs['private_endpoint'] if dbs['private_endpoint'] != "None" else "",
                         'private_endpoint_label': dbs['private_endpoint_label'] if dbs['private_endpoint_label'] != "None" else "",
-                        'nsg_ids': dbs['nsg_ids'] if dbs['nsg_ids'] != "None" else "",
-                        'nsg_names': str(', '.join(x for x in dbs['nsg_names'])),
+                        'nsg_ids': self.__csv_list_to_str(dbs['nsg_ids']),
+                        'nsg_names': self.__csv_list_to_str(dbs['nsg_names']),
                         'whitelisted_ips': dbs['whitelisted_ips'],
                         'service_console_url': dbs['service_console_url'],
                         'connection_strings': dbs['connection_strings'],
@@ -7590,6 +7661,7 @@ class ShowOCICSV(object):
                                     'subnet_name': vm['subnet_name'],
                                     'private_endpoint': db['private_endpoint'],
                                     'private_endpoint_label': db['private_endpoint_label'],
+                                    # Adi - To Check NSG Variables
                                     'nsg_ids': "",
                                     'nsg_names': "",
                                     'whitelisted_ips': db['whitelisted_ips'],
@@ -7824,15 +7896,15 @@ class ShowOCICSV(object):
                     'shape': db['shape_full'],
                     'admin_username': db['admin_username'],
                     'storage_system_type': db['storage_system_type'],
-                    'instances': str(', '.join(x['display_name'] for x in db['instances'])),
+                    'instances': self.__csv_list_to_str(db['instances'], 'display_name'),
                     'storage_is_regionally_durable': db['storage_is_regionally_durable'],
                     'storage_availability_domain': db['storage_availability_domain'],
                     'storage_iops': db['storage_iops'],
                     'network_subnet_id': db['network_subnet_id'],
                     'network_subnet_name': db['network_subnet_name'],
                     'network_primary_db_endpoint_private_ip': db['network_primary_db_endpoint_private_ip'],
-                    'network_nsg_ids': str(', '.join(x for x in db['network_nsg_ids'])),
-                    'network_nsg_names': str(', '.join(x for x in db['network_nsg_names'])),
+                    'network_nsg_ids': self.__csv_list_to_str(db['network_nsg_ids']),
+                    'network_nsg_names': self.__csv_list_to_str(db['network_nsg_names']),
                     'management_maintenance_window_start': db['management_maintenance_window_start'],
                     'management_backup_policy': db['management_backup_policy'],
                     'source_type': db['source_type'],
@@ -7936,7 +8008,7 @@ class ShowOCICSV(object):
             self.__print_error("__csv_database_goldengate", e)
 
     ##########################################################################
-    # __csv_datasafe
+    # __csv_datasafe_get_target_info
     ##########################################################################
     def __csv_datasafe_get_target_info(self, targets, target_id):
         try:
@@ -7971,8 +8043,8 @@ class ShowOCICSV(object):
                         'lifecycle_state': target['lifecycle_state'],
                         'lifecycle_details': target['lifecycle_details'],
                         'time_created': target['time_created'],
-                        'associated_resource_ids': str(','.join(x for x in target['associated_resource_ids'])),
-                        'associated_resource_names': str(','.join(x for x in target['associated_resource_names'])),
+                        'associated_resource_ids': self.__csv_list_to_str(target['associated_resource_ids']),
+                        'associated_resource_names': self.__csv_list_to_str(target['associated_resource_names']),
                         'freeform_tags': self.__get_freeform_tags(target['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(target['defined_tags']),
                         'global_ip_address': config['data_safe_nat_gateway_ip_address'],
@@ -8024,10 +8096,9 @@ class ShowOCICSV(object):
                             'display_name': adt['display_name'],
                             'description': adt['description'],
                             'is_data_safe_service_account_excluded': adt['is_data_safe_service_account_excluded'],
-
                             'audit_policy_category': spc['audit_policy_category'],
                             'audit_policy_name': spc['audit_policy_name'],
-                            'database_policy_names': str(','.join(x for x in spc['database_policy_names'])),
+                            'database_policy_names': self.__csv_list_to_str(spc['database_policy_names']),
                             'enable_status': spc['enable_status'],
                             'enabled_entities': spc['enabled_entities'],
                             'is_created': spc['is_created'],
@@ -8036,7 +8107,6 @@ class ShowOCICSV(object):
                             'is_seeded_in_target': spc['is_seeded_in_target'],
                             'is_view_only': spc['is_view_only'],
                             'partially_enabled_msg': spc['partially_enabled_msg'],
-
                             'time_created': adt['time_created'],
                             'lifecycle_state': adt['lifecycle_state'],
                             'lifecycle_details': adt['lifecycle_details'],
@@ -8121,8 +8191,8 @@ class ShowOCICSV(object):
                         'compartment_path': ds['compartment_path'],
                         'display_name': adt['display_name'],
                         'description': adt['description'],
-                        'ignored_assessment_ids': str(','.join(x for x in adt['ignored_assessment_ids'])),
-                        'ignored_targets': str(','.join(x for x in adt['ignored_targets'])),
+                        'ignored_assessment_ids': self.__csv_list_to_str(adt['ignored_assessment_ids']),
+                        'ignored_targets': self.__csv_list_to_str(adt['ignored_targets']),
                         'is_baseline': adt['is_baseline'],
                         'is_deviated_from_baseline': adt['is_deviated_from_baseline'],
                         'last_compared_baseline_id': adt['last_compared_baseline_id'],
@@ -8153,8 +8223,8 @@ class ShowOCICSV(object):
                         'compartment_path': ds['compartment_path'],
                         'display_name': adt['display_name'],
                         'description': adt['description'],
-                        'ignored_assessment_ids': str(','.join(x for x in adt['ignored_assessment_ids'])),
-                        'ignored_target_ids': str(','.join(x for x in adt['ignored_target_ids'])),
+                        'ignored_assessment_ids': self.__csv_list_to_str(adt['ignored_assessment_ids']),
+                        'ignored_target_ids': self.__csv_list_to_str(adt['ignored_target_ids']),
                         'is_baseline': adt['is_baseline'],
                         'is_deviated_from_baseline': adt['is_deviated_from_baseline'],
                         'last_compared_baseline_id': adt['last_compared_baseline_id'],
@@ -8180,7 +8250,7 @@ class ShowOCICSV(object):
                     self.csv_datasafe_security_assessment.append(arr)
 
         except Exception as e:
-            self.__print_error("__csv_datasafe:" + issue_location, e)
+            self.__print_error("__csv_datasafe: " + issue_location, e)
 
     ##########################################################################
     # database
@@ -8251,17 +8321,18 @@ class ShowOCICSV(object):
                 return
 
             for lt in limits:
-                data = {'region_name': region_name,
-                        'scope_type': lt['scope_type'],
-                        'availability_domain': lt['availability_domain'],
-                        'name': lt['name'],
-                        'description': lt['description'],
-                        'limit_name': lt['limit_name'],
-                        'value': lt['value'],
-                        'used': lt['used'],
-                        'available': lt['available'],
-                        'id': self.tenant_name + ":" + lt['region_name'] + ":" + lt['scope_type'] + ":" + lt['availability_domain'] + ":" + lt['name'] + ":" + lt['limit_name']
-                        }
+                data = {
+                    'region_name': region_name,
+                    'scope_type': lt['scope_type'],
+                    'availability_domain': lt['availability_domain'],
+                    'name': lt['name'],
+                    'description': lt['description'],
+                    'limit_name': lt['limit_name'],
+                    'value': lt['value'],
+                    'used': lt['used'],
+                    'available': lt['available'],
+                    'id': self.tenant_name + ":" + lt['region_name'] + ":" + lt['scope_type'] + ":" + lt['availability_domain'] + ":" + lt['name'] + ":" + lt['limit_name']
+                }
 
                 self.csv_limits.append(data)
 
@@ -8366,7 +8437,7 @@ class ShowOCICSV(object):
 
                 # go over the vnics
                 if 'vnic' in instance:
-                    data['vnic_ids'] = str(', '.join(x['id'] for x in instance['vnic']))
+                    data['vnic_ids'] = self.__csv_list_to_str(instance['vnic'], 'id')
 
                     vnic_num = 0
                     for vnic in instance['vnic']:
@@ -8387,15 +8458,15 @@ class ShowOCICSV(object):
                         data['boot_volume_encryption_in_transit_type'] = bv['encryption_in_transit_type']
 
                 if 'block_volume' in instance:
-                    data['block_volumes'] = str(', '.join(x['display_name'] for x in instance['block_volume']))
-                    data['block_volumes_ids'] = str(', '.join(x['id'] for x in instance['block_volume']))
-                    data['block_volumes_size_gb'] = str('+ '.join(x['size'] for x in instance['block_volume']))
-                    data['block_volumes_b_policy'] = str(', '.join(x['backup_policy'] for x in instance['block_volume']))
-                    data['block_volumes_attachment_type'] = str(', '.join(x['attachment_type'] for x in instance['block_volume']))
-                    data['block_volumes_transit_encryption'] = str(', '.join(x['is_pv_encryption_in_transit_enabled'] for x in instance['block_volume']))
-                    data['block_volumes_iscsi_login_state'] = str(', '.join(x['iscsi_login_state'] for x in instance['block_volume']))
-                    data['block_volumes_is_multipath'] = str(', '.join(x['is_multipath'] for x in instance['block_volume']))
-                    data['block_volumes_is_read_only'] = str(', '.join(x['is_read_only'] for x in instance['block_volume']))
+                    data['block_volumes'] = self.__csv_list_to_str(instance['block_volume'], 'display_name')
+                    data['block_volumes_ids'] = self.__csv_list_to_str(instance['block_volume'], 'id')
+                    data['block_volumes_size_gb'] = self.__csv_list_to_str(instance['block_volume'], 'size')
+                    data['block_volumes_b_policy'] = self.__csv_list_to_str(instance['block_volume'], 'backup_policy')
+                    data['block_volumes_attachment_type'] = self.__csv_list_to_str(instance['block_volume'], 'attachment_type')
+                    data['block_volumes_transit_encryption'] = self.__csv_list_to_str(instance['block_volume'], 'is_pv_encryption_in_transit_enabled')
+                    data['block_volumes_iscsi_login_state'] = self.__csv_list_to_str(instance['block_volume'], 'iscsi_login_state')
+                    data['block_volumes_is_multipath'] = self.__csv_list_to_str(instance['block_volume'], 'is_multipath')
+                    data['block_volumes_is_read_only'] = self.__csv_list_to_str(instance['block_volume'], 'is_read_only')
 
                     bv_total_size = 0
                     for bv in instance['block_volume']:
@@ -8652,65 +8723,68 @@ class ShowOCICSV(object):
                         log_access = log['name']
 
                 # load balancers
-                data = {'region_name': region_name,
+                data = {
+                    'region_name': region_name,
+                    'compartment_name': lb['compartment_name'],
+                    'compartment_path': lb['compartment_path'],
+                    'name': lb['display_name'],
+                    'status': lb['status'],
+                    'shape': lb['shape_name'],
+                    'type': ("Private" if lb['is_private'] else "Public"),
+                    'is_preserve_source_destination': "",
+                    'nlb_ip_version': "",
+                    'is_symmetric_hash_enabled': "",
+                    'ip_addresses': self.__csv_list_to_str(lb['ips']),
+                    'listeners': self.__csv_list_to_str(lb['listeners'], 'desc'),
+                    'log_errors': log_errors,
+                    'log_access': log_access,
+                    'logs': self.__csv_list_to_str(load_balance_obj['logs'], 'name'),
+                    'subnets': self.__csv_list_to_str(lb['subnets']),
+                    'nsg_ids': self.__csv_list_to_str(lb['nsg_ids']),
+                    'nsg_names': self.__csv_list_to_str(lb['nsg_names']),
+                    'time_created': lb['time_created'],
+                    'lb_certificates': lb['certificates'],
+                    'ssl_cipher_suites': self.__csv_list_to_str(lb['ssl_cipher_suites']),
+                    'routing_policies': self.__csv_list_to_str(lb['routing_policies']),
+                    'freeform_tags': self.__get_freeform_tags(lb['freeform_tags']),
+                    'defined_tags': self.__get_defined_tags(lb['defined_tags']),
+                    'loadbalancer_id': lb['id'],
+                    'id': lb['id']
+                }
+                self.csv_load_balancer.append(data)
+                self.__csv_add_service(data, "Load Balancer")
+
+                # listeners
+                for listener in lb['listeners']:
+                    data = {
+                        'region_name': region_name,
                         'compartment_name': lb['compartment_name'],
                         'compartment_path': lb['compartment_path'],
                         'name': lb['display_name'],
                         'status': lb['status'],
                         'shape': lb['shape_name'],
                         'type': ("Private" if lb['is_private'] else "Public"),
-                        'is_preserve_source_destination': "",
-                        'nlb_ip_version': "",
-                        'is_symmetric_hash_enabled': "",
-                        'ip_addresses': str(', '.join(x for x in lb['ips'])),
-                        'listeners': str(', '.join(x['desc'] for x in lb['listeners'])),
+                        'ip_addresses': self.__csv_list_to_str(lb['ips']),
                         'log_errors': log_errors,
                         'log_access': log_access,
-                        'logs': str(', '.join(x['name'] for x in load_balance_obj['logs'])),
-                        'subnets': str(', '.join(x for x in lb['subnets'])),
-                        'nsg_names': lb['nsg_names'],
+                        'logs': self.__csv_list_to_str(load_balance_obj['logs'], 'name'),
+                        'subnets': self.__csv_list_to_str(lb['subnets']),
+                        'listener_name': listener['id'],
+                        'listener_port': listener['port'],
+                        'listener_def_bs': listener['default_backend_set_name'],
+                        'listener_ssl': listener['ssl_configuration'],
+                        'listener_host': self.__csv_list_to_str(listener['hostname_names']),
+                        'listener_path': listener['path_route_set_name'],
+                        'listener_rule': self.__csv_list_to_str(listener['rule_set_names']),
                         'time_created': lb['time_created'],
                         'lb_certificates': lb['certificates'],
-                        'ssl_cipher_suites': str(', '.join(x for x in lb['ssl_cipher_suites'])),
-                        'routing_policies': str(', '.join(x for x in lb['routing_policies'])),
+                        'ssl_cipher_suites': self.__csv_list_to_str(lb['ssl_cipher_suites']),
+                        'routing_policies': self.__csv_list_to_str(lb['routing_policies']),
                         'freeform_tags': self.__get_freeform_tags(lb['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(lb['defined_tags']),
                         'loadbalancer_id': lb['id'],
-                        'id': lb['id']
-                        }
-                self.csv_load_balancer.append(data)
-                self.__csv_add_service(data, "Load Balancer")
-
-                # listeners
-                for listener in lb['listeners']:
-                    data = {'region_name': region_name,
-                            'compartment_name': lb['compartment_name'],
-                            'compartment_path': lb['compartment_path'],
-                            'name': lb['display_name'],
-                            'status': lb['status'],
-                            'shape': lb['shape_name'],
-                            'type': ("Private" if lb['is_private'] else "Public"),
-                            'ip_addresses': str(', '.join(x for x in lb['ips'])),
-                            'log_errors': log_errors,
-                            'log_access': log_access,
-                            'logs': str(', '.join(x['name'] for x in load_balance_obj['logs'])),
-                            'subnets': str(', '.join(x for x in lb['subnets'])),
-                            'listener_name': listener['id'],
-                            'listener_port': listener['port'],
-                            'listener_def_bs': listener['default_backend_set_name'],
-                            'listener_ssl': listener['ssl_configuration'],
-                            'listener_host': str(', '.join(x for x in listener['hostname_names'])),
-                            'listener_path': listener['path_route_set_name'],
-                            'listener_rule': str(', '.join(x for x in listener['rule_set_names'])),
-                            'time_created': lb['time_created'],
-                            'lb_certificates': lb['certificates'],
-                            'ssl_cipher_suites': str(', '.join(x for x in lb['ssl_cipher_suites'])),
-                            'routing_policies': str(', '.join(x for x in lb['routing_policies'])),
-                            'freeform_tags': self.__get_freeform_tags(lb['freeform_tags']),
-                            'defined_tags': self.__get_defined_tags(lb['defined_tags']),
-                            'loadbalancer_id': lb['id'],
-                            'id': lb['id'] + ":" + listener['id']
-                            }
+                        'id': lb['id'] + ":" + listener['id']
+                    }
                     self.csv_load_balancer_listeners.append(data)
 
         except Exception as e:
@@ -8738,15 +8812,16 @@ class ShowOCICSV(object):
                         'status': lb['status'],
                         'time_created': lb['time_created'],
                         'time_updated': lb['time_updated'],
-                        'type': ("Private" if lb['is_private'] else "Public"),
+                        'type': "Private" if lb['is_private'] else "Public",
                         'is_preserve_source_destination': lb['is_preserve_source_destination'],
                         'nlb_ip_version': lb['nlb_ip_version'],
                         'is_symmetric_hash_enabled': lb['is_symmetric_hash_enabled'],
                         'subnets': lb['subnet_name'],
-                        'nsg_names': lb['nsg_names'],
-                        'ip_addresses': str(', '.join(x for x in lb['ips'])),
+                        'nsg_ids': self.__csv_list_to_str(lb['nsg_ids']),
+                        'nsg_names': self.__csv_list_to_str(lb['nsg_names']),
+                        'ip_addresses': self.__csv_list_to_str(lb['ips']),
                         'loadbalancer_id': lb['id'],
-                        'listeners': str(', '.join(x['csvname'] for x in lb['listeners'])),
+                        'listeners': self.__csv_list_to_str(lb['listeners'], 'csvname'),
                         'freeform_tags': self.__get_freeform_tags(lb['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(lb['defined_tags']),
                         'id': lb['id']
@@ -8765,7 +8840,7 @@ class ShowOCICSV(object):
                             'shape': 'Network',
                             'type': ("Private" if lb['is_private'] else "Public"),
                             'subnets': lb['subnet_name'],
-                            'ip_addresses': str(', '.join(x for x in lb['ips'])),
+                            'ip_addresses': self.__csv_list_to_str(lb['ips']),
                             'listener_name': listener['id'],
                             'listener_port': listener['port'],
                             'listener_def_bs': listener['default_backend_set_name'],
@@ -8786,7 +8861,7 @@ class ShowOCICSV(object):
                                     'status': lb['status'],
                                     'shape': 'Network Load Balancer',
                                     'type': ("Private" if lb['is_private'] else "Public"),
-                                    'ip_addresses': str(', '.join(x for x in lb['ips'])),
+                                    'ip_addresses': self.__csv_list_to_str(lb['ips']),
                                     'subnets': lb['subnet_name'],
                                     'bs_name': bs['name'],
                                     'bs_desc': bs['name'],
@@ -8819,37 +8894,38 @@ class ShowOCICSV(object):
                         if 'access' in log['name']:
                             log_access = log['name']
 
-                    data = {'region_name': region_name,
-                            'compartment_name': dp['compartment_name'],
-                            'compartment_path': dp['compartment_path'],
-                            'gw_name': api['display_name'],
-                            'gw_endpoint_type': api['endpoint_type'],
-                            'gw_hostname': api['hostname'],
-                            'gw_subnet_id': api['subnet_id'],
-                            'gw_subnet_name': api['subnet_name'],
-                            'gw_time_created': api['time_created'],
-                            'gw_time_updated': api['time_updated'],
-                            'gw_lifecycle_state': api['lifecycle_state'],
-                            'gw_nsg_ids': api['nsg_ids'],
-                            'gw_nsg_names': api['nsg_names'],
-                            'gw_certificate_id': api['certificate_id'],
-                            'gw_freeform_tags': self.__get_freeform_tags(api['freeform_tags']),
-                            'gw_defined_tags': self.__get_defined_tags(api['defined_tags']),
-                            'dp_display_name': dp['display_name'],
-                            'path_prefix': dp['path_prefix'],
-                            'endpoint': dp['endpoint'],
-                            'lifecycle_state': dp['lifecycle_state'],
-                            'time_created': dp['time_created'],
-                            'time_updated': dp['time_updated'],
-                            'freeform_tags': self.__get_freeform_tags(dp['freeform_tags']),
-                            'defined_tags': self.__get_defined_tags(dp['defined_tags']),
-                            'log_execution': log_execution,
-                            'log_access': log_access,
-                            'logs': str(', '.join(x['name'] for x in dp['logs'])),
-                            'dp_id': dp['id'],
-                            'api_id': api['id'],
-                            'id': api['id']
-                            }
+                    data = {
+                        'region_name': region_name,
+                        'compartment_name': dp['compartment_name'],
+                        'compartment_path': dp['compartment_path'],
+                        'gw_name': api['display_name'],
+                        'gw_endpoint_type': api['endpoint_type'],
+                        'gw_hostname': api['hostname'],
+                        'gw_subnet_id': api['subnet_id'],
+                        'gw_subnet_name': api['subnet_name'],
+                        'gw_time_created': api['time_created'],
+                        'gw_time_updated': api['time_updated'],
+                        'gw_lifecycle_state': api['lifecycle_state'],
+                        'gw_nsg_ids': self.__csv_list_to_str(api['nsg_ids']),
+                        'gw_nsg_names': api['nsg_names'],
+                        'gw_certificate_id': api['certificate_id'],
+                        'gw_freeform_tags': self.__get_freeform_tags(api['freeform_tags']),
+                        'gw_defined_tags': self.__get_defined_tags(api['defined_tags']),
+                        'dp_display_name': dp['display_name'],
+                        'path_prefix': dp['path_prefix'],
+                        'endpoint': dp['endpoint'],
+                        'lifecycle_state': dp['lifecycle_state'],
+                        'time_created': dp['time_created'],
+                        'time_updated': dp['time_updated'],
+                        'freeform_tags': self.__get_freeform_tags(dp['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(dp['defined_tags']),
+                        'log_execution': log_execution,
+                        'log_access': log_access,
+                        'logs': self.__csv_list_to_str(dp['logs'], 'name'),
+                        'dp_id': dp['id'],
+                        'api_id': api['id'],
+                        'id': api['id']
+                    }
                     self.csv_apigw.append(data)
                     self.__csv_add_service(data, "API Gateway", col_name="gw_name")
 
@@ -8880,27 +8956,28 @@ class ShowOCICSV(object):
                         if 'desc' in bs['ssl_cert']:
                             ssl_cert = bs['ssl_cert']['desc']
 
-                        data = {'region_name': region_name,
-                                'compartment_name': lb['compartment_name'],
-                                'compartment_path': lb['compartment_path'],
-                                'name': lb['display_name'],
-                                'status': lb['status'],
-                                'shape': lb['shape_name'],
-                                'type': ("Private" if lb['is_private'] else "Public"),
-                                'ip_addresses': str(', '.join(x for x in lb['ips'])),
-                                'subnets': str(', '.join(x for x in lb['subnets'])),
-                                'bs_name': bs['name'],
-                                'bs_desc': bs['desc'],
-                                'bs_status': bs['status'],
-                                'health_check': bs['health_check']['desc1'] + " " + bs['health_check']['desc2'],
-                                'session_persistence': session_persistence,
-                                'ssl_cert': ssl_cert,
-                                'backend_name': backend['name'],
-                                'backend': backend['desc'],
-                                'backend_ip': backend['ip_address'] + ":" + backend['port'],
-                                'loadbalancer_id': lb['id'],
-                                'id': lb['id'] + ":" + bs['name'] + ":" + backend['name'] + ":" + backend['ip_address'] + ":" + backend['port']
-                                }
+                        data = {
+                            'region_name': region_name,
+                            'compartment_name': lb['compartment_name'],
+                            'compartment_path': lb['compartment_path'],
+                            'name': lb['display_name'],
+                            'status': lb['status'],
+                            'shape': lb['shape_name'],
+                            'type': ("Private" if lb['is_private'] else "Public"),
+                            'ip_addresses': self.__csv_list_to_str(lb['ips']),
+                            'subnets': self.__csv_list_to_str(lb['subnets']),
+                            'bs_name': bs['name'],
+                            'bs_desc': bs['desc'],
+                            'bs_status': bs['status'],
+                            'health_check': bs['health_check']['desc1'] + " " + bs['health_check']['desc2'],
+                            'session_persistence': session_persistence,
+                            'ssl_cert': ssl_cert,
+                            'backend_name': backend['name'],
+                            'backend': backend['desc'],
+                            'backend_ip': backend['ip_address'] + ":" + backend['port'],
+                            'loadbalancer_id': lb['id'],
+                            'id': lb['id'] + ":" + bs['name'] + ":" + backend['name'] + ":" + backend['ip_address'] + ":" + backend['port']
+                        }
                         self.csv_load_balancer_bs.append(data)
 
         except Exception as e:
@@ -8958,7 +9035,7 @@ class ShowOCICSV(object):
                         ex_mount_target = ex['mount_target']
                         if ex_mount_target:
                             for mnt in ex_mount_target:
-                                ip_to_add = str(','.join(x for x in mnt['private_ip_ids']))
+                                ip_to_add = self.__csv_list_to_str(mnt['private_ip_ids'])
                                 if ip_to_add not in mount_ips:
                                     mount_ips += ip_to_add + ","
 
@@ -8975,7 +9052,7 @@ class ShowOCICSV(object):
                             'exports': exports,
                             'export_options': options,
                             'mount_ips': mount_ips,
-                            'snapshots': str(','.join(x for x in fs['snapshots'])),
+                            'snapshots': self.__csv_list_to_str(fs['snapshots']),
                             'freeform_tags': self.__get_freeform_tags(fs['freeform_tags']),
                             'defined_tags': self.__get_defined_tags(fs['defined_tags'])
                             }
@@ -9023,7 +9100,7 @@ class ShowOCICSV(object):
                         'error_message': ar['error_message'],
                         'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(ar['defined_tags']),
-                        'logs': str(', '.join(x['name'] for x in ar['logs']))
+                        'logs': self.__csv_list_to_str(ar['logs'], 'name')
                     }
 
                     self.csv_object_storage_buckets.append(data)
@@ -9296,8 +9373,8 @@ class ShowOCICSV(object):
                         'target_resource_name': ar['target_resource_name'],
                         'inherited_by_compartments': ar['inherited_by_compartments'],
                         'inherited_by_compartments_names': ar['inherited_by_compartments_names'],
-                        'target_detector_recipes': str(', '.join(x['display_name'] for x in ar['target_detector_recipes'])),
-                        'target_responder_recipes': str(', '.join(x['display_name'] for x in ar['target_responder_recipes'])),
+                        'target_detector_recipes': self.__csv_list_to_str(ar['target_detector_recipes'], 'display_name'),
+                        'target_responder_recipes': self.__csv_list_to_str(ar['target_responder_recipes'], 'display_name'),
                         'target_detector_rules': "",
                         'target_responder_rules': "",
                         'recipe_count': ar['recipe_count'],
@@ -9315,7 +9392,7 @@ class ShowOCICSV(object):
                         for dt in ar['target_detector_recipes']:
                             for rule in dt['effective_detector_rules']:
                                 arrrules.append(rule)
-                        data['target_detector_rules'] = str(', '.join(x for x in list(set(arrrules))))
+                        data['target_detector_rules'] = self.__csv_list_to_str(list(set(arrrules)))
 
                     # target_detector_rules
                     if ar['target_responder_recipes']:
@@ -9323,7 +9400,7 @@ class ShowOCICSV(object):
                         for dt in ar['target_responder_recipes']:
                             for rule in dt['effective_responder_rules']:
                                 arrrules.append(rule)
-                        data['target_responder_rules'] = str(', '.join(x for x in list(set(arrrules))))
+                        data['target_responder_rules'] = self.__csv_list_to_str(list(set(arrrules)))
 
                     self.csv_security_cloud_guard.append(data)
 
@@ -9466,7 +9543,7 @@ class ShowOCICSV(object):
                         'kubernetes_version': ar['kubernetes_version'],
                         'compartment_id': ar['compartment_id'],
                         'endpoint_is_public_ip_enabled': ar['endpoint_is_public_ip_enabled'],
-                        'endpoint_nsg_ids': ar['endpoint_nsg_ids'],
+                        'endpoint_nsg_ids': self.__csv_list_to_str(ar['endpoint_nsg_ids']),
                         'endpoint_nsg_names': ar['endpoint_nsg_names'],
                         'endpoint_subnet_id': ar['endpoint_subnet_id'],
                         'endpoint_subnet_name': ar['endpoint_subnet_name'],
@@ -9517,8 +9594,8 @@ class ShowOCICSV(object):
                             'freeform_tags': self.__get_freeform_tags(nd['freeform_tags']),
                             'defined_tags': self.__get_defined_tags(nd['defined_tags']),
                             'vcn': ar['vcn_name'],
-                            'subnets': str(', '.join(x for x in nd['subnets'])),
-                            'subnet_ids': str(', '.join(x for x in nd['subnet_ids'])),
+                            'subnets': self.__csv_list_to_str(nd['subnets']),
+                            'subnet_ids': self.__csv_list_to_str(nd['subnet_ids']),
                             'container_id': ar['id'],
                             'node_pool_id': nd['id'],
                             'vcn_id': ar['vcn_id'],
@@ -9841,15 +9918,16 @@ class ShowOCICSV(object):
                     'compartment_path': ar['compartment_path'],
                     'name': ar['display_name'],
                     'lifecycle_state': ar['lifecycle_state'],
-                    'subnets': str(', '.join(x for x in ar['subnets'])),
+                    'subnets': self.__csv_list_to_str(ar['subnets']),
                     'network_security_group_names': ar['network_security_group_names'],
+                    'network_security_group_ids': self.__csv_list_to_str(ar['network_security_group_ids']),
                     'shape': ar['shape'],
                     'trace_config_is_enabled': ar['trace_config_is_enabled'],
                     'trace_config_domain_id': ar['trace_config_domain_id'],
                     'image_policy_is_enabled': ar['image_policy_is_enabled'],
                     'time_created': ar['time_created'],
                     'time_updated': ar['time_updated'],
-                    'functions': str(', '.join(x['display_name'] for x in ar['functions'])),
+                    'functions': self.__csv_list_to_str(ar['functions'], 'display_name'),
                     'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
                     'defined_tags': self.__get_defined_tags(ar['defined_tags']),
                     'id': ar['id']
@@ -9866,8 +9944,9 @@ class ShowOCICSV(object):
                         'app_name': ar['display_name'],
                         'name': fn['display_name'],
                         'lifecycle_state': fn['lifecycle_state'],
-                        'subnets': str(', '.join(x for x in ar['subnets'])),
+                        'subnets': self.__csv_list_to_str(ar['subnets']),
                         'network_security_group_names': ar['network_security_group_names'],
+                        'network_security_group_ids': self.__csv_list_to_str(ar['network_security_group_ids']),
                         'shape': fn['shape'],
                         'image': fn['image'],
                         'image_digest': fn['image_digest'],
@@ -10140,7 +10219,7 @@ class ShowOCICSV(object):
                         'time_updated': ar['time_updated'],
                         'lifecycle_state': ar['lifecycle_state'],
                         'cluster_query_error': ar['cluster_query_error'],
-                        'clusters': str(', '.join(x['display_name'] for x in ar['clusters'])),
+                        'clusters': self.__csv_list_to_str(ar['clusters'], 'display_name'),
                         'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(ar['defined_tags']),
                         'info': "ocpus:" + str(ar['sddc_ocpus']),
@@ -10641,8 +10720,8 @@ class ShowOCICSV(object):
                         'namespace': ar['namespace'],
                         'query': ar['query'],
                         'severity': ar['severity'],
-                        'destinations': str(', '.join(x for x in ar['destinations'])),
-                        'destinations_names': str(', '.join(x for x in ar['destinations_names'])),
+                        'destinations': self.__csv_list_to_str(ar['destinations']),
+                        'destinations_names': self.__csv_list_to_str(ar['destinations_names']),
                         'is_enabled': ar['is_enabled'],
                         'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(ar['defined_tags']),

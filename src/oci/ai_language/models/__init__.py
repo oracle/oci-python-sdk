@@ -69,6 +69,7 @@ from .evaluation_result_summary import EvaluationResultSummary
 from .evaluation_results import EvaluationResults
 from .health_entity import HealthEntity
 from .health_entity_document_result import HealthEntityDocumentResult
+from .health_nlu_model_details import HealthNluModelDetails
 from .hierarchical_entity import HierarchicalEntity
 from .input_configuration import InputConfiguration
 from .input_location import InputLocation
@@ -80,6 +81,7 @@ from .key_phrase_document_result import KeyPhraseDocumentResult
 from .location_details import LocationDetails
 from .mel_concept import MelConcept
 from .mel_concept_details import MelConceptDetails
+from .meta_info import MetaInfo
 from .model import Model
 from .model_collection import ModelCollection
 from .model_details import ModelDetails
@@ -111,6 +113,7 @@ from .pre_trained_pii_model_details import PreTrainedPiiModelDetails
 from .pre_trained_sentiment_analysis_model_details import PreTrainedSentimentAnalysisModelDetails
 from .pre_trained_summarization import PreTrainedSummarization
 from .pre_trained_text_classification_model_details import PreTrainedTextClassificationModelDetails
+from .pre_trained_translation_model_details import PreTrainedTranslationModelDetails
 from .pre_trained_universal_model import PreTrainedUniversalModel
 from .profile import Profile
 from .project import Project
@@ -210,6 +213,7 @@ ai_language_type_mapping = {
     "EvaluationResults": EvaluationResults,
     "HealthEntity": HealthEntity,
     "HealthEntityDocumentResult": HealthEntityDocumentResult,
+    "HealthNluModelDetails": HealthNluModelDetails,
     "HierarchicalEntity": HierarchicalEntity,
     "InputConfiguration": InputConfiguration,
     "InputLocation": InputLocation,
@@ -221,6 +225,7 @@ ai_language_type_mapping = {
     "LocationDetails": LocationDetails,
     "MelConcept": MelConcept,
     "MelConceptDetails": MelConceptDetails,
+    "MetaInfo": MetaInfo,
     "Model": Model,
     "ModelCollection": ModelCollection,
     "ModelDetails": ModelDetails,
@@ -252,6 +257,7 @@ ai_language_type_mapping = {
     "PreTrainedSentimentAnalysisModelDetails": PreTrainedSentimentAnalysisModelDetails,
     "PreTrainedSummarization": PreTrainedSummarization,
     "PreTrainedTextClassificationModelDetails": PreTrainedTextClassificationModelDetails,
+    "PreTrainedTranslationModelDetails": PreTrainedTranslationModelDetails,
     "PreTrainedUniversalModel": PreTrainedUniversalModel,
     "Profile": Profile,
     "Project": Project,

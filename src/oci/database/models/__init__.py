@@ -376,6 +376,8 @@ from .resource_pool_shape_summary import ResourcePoolShapeSummary
 from .resource_pool_summary import ResourcePoolSummary
 from .restore_autonomous_database_details import RestoreAutonomousDatabaseDetails
 from .restore_database_details import RestoreDatabaseDetails
+from .rotate_autonomous_container_database_encryption_key_details import RotateAutonomousContainerDatabaseEncryptionKeyDetails
+from .rotate_autonomous_database_encryption_key_details import RotateAutonomousDatabaseEncryptionKeyDetails
 from .rotate_autonomous_vm_cluster_ords_certs_details import RotateAutonomousVmClusterOrdsCertsDetails
 from .rotate_autonomous_vm_cluster_ssl_certs_details import RotateAutonomousVmClusterSslCertsDetails
 from .rotate_cloud_autonomous_vm_cluster_ords_certs_details import RotateCloudAutonomousVmClusterOrdsCertsDetails
@@ -835,6 +837,8 @@ database_type_mapping = {
     "ResourcePoolSummary": ResourcePoolSummary,
     "RestoreAutonomousDatabaseDetails": RestoreAutonomousDatabaseDetails,
     "RestoreDatabaseDetails": RestoreDatabaseDetails,
+    "RotateAutonomousContainerDatabaseEncryptionKeyDetails": RotateAutonomousContainerDatabaseEncryptionKeyDetails,
+    "RotateAutonomousDatabaseEncryptionKeyDetails": RotateAutonomousDatabaseEncryptionKeyDetails,
     "RotateAutonomousVmClusterOrdsCertsDetails": RotateAutonomousVmClusterOrdsCertsDetails,
     "RotateAutonomousVmClusterSslCertsDetails": RotateAutonomousVmClusterSslCertsDetails,
     "RotateCloudAutonomousVmClusterOrdsCertsDetails": RotateCloudAutonomousVmClusterOrdsCertsDetails,

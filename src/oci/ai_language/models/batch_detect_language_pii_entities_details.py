@@ -20,6 +20,10 @@ class BatchDetectLanguagePiiEntitiesDetails(object):
         Initializes a new BatchDetectLanguagePiiEntitiesDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param alias:
+            The value to assign to the alias property of this BatchDetectLanguagePiiEntitiesDetails.
+        :type alias: str
+
         :param endpoint_id:
             The value to assign to the endpoint_id property of this BatchDetectLanguagePiiEntitiesDetails.
         :type endpoint_id: str
@@ -42,6 +46,7 @@ class BatchDetectLanguagePiiEntitiesDetails(object):
 
         """
         self.swagger_types = {
+            'alias': 'str',
             'endpoint_id': 'str',
             'compartment_id': 'str',
             'documents': 'list[TextDocument]',
@@ -50,6 +55,7 @@ class BatchDetectLanguagePiiEntitiesDetails(object):
         }
 
         self.attribute_map = {
+            'alias': 'alias',
             'endpoint_id': 'endpointId',
             'compartment_id': 'compartmentId',
             'documents': 'documents',
@@ -57,11 +63,36 @@ class BatchDetectLanguagePiiEntitiesDetails(object):
             'profile': 'profile'
         }
 
+        self._alias = None
         self._endpoint_id = None
         self._compartment_id = None
         self._documents = None
         self._masking = None
         self._profile = None
+
+    @property
+    def alias(self):
+        """
+        Gets the alias of this BatchDetectLanguagePiiEntitiesDetails.
+        Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+
+
+        :return: The alias of this BatchDetectLanguagePiiEntitiesDetails.
+        :rtype: str
+        """
+        return self._alias
+
+    @alias.setter
+    def alias(self, alias):
+        """
+        Sets the alias of this BatchDetectLanguagePiiEntitiesDetails.
+        Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+
+
+        :param alias: The alias of this BatchDetectLanguagePiiEntitiesDetails.
+        :type: str
+        """
+        self._alias = alias
 
     @property
     def endpoint_id(self):

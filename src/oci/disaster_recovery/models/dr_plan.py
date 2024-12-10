@@ -63,6 +63,22 @@ class DrPlan(object):
     #: This constant has a value of "NEEDS_ATTENTION"
     LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
 
+    #: A constant which can be used with the lifecycle_sub_state property of a DrPlan.
+    #: This constant has a value of "NEEDS_REFRESH"
+    LIFECYCLE_SUB_STATE_NEEDS_REFRESH = "NEEDS_REFRESH"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a DrPlan.
+    #: This constant has a value of "NEEDS_VERIFICATION"
+    LIFECYCLE_SUB_STATE_NEEDS_VERIFICATION = "NEEDS_VERIFICATION"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a DrPlan.
+    #: This constant has a value of "REFRESHING"
+    LIFECYCLE_SUB_STATE_REFRESHING = "REFRESHING"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a DrPlan.
+    #: This constant has a value of "VERIFYING"
+    LIFECYCLE_SUB_STATE_VERIFYING = "VERIFYING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DrPlan object with values from keyword arguments.
@@ -106,6 +122,10 @@ class DrPlan(object):
             The value to assign to the peer_region property of this DrPlan.
         :type peer_region: str
 
+        :param source_plan_id:
+            The value to assign to the source_plan_id property of this DrPlan.
+        :type source_plan_id: str
+
         :param plan_groups:
             The value to assign to the plan_groups property of this DrPlan.
         :type plan_groups: list[oci.disaster_recovery.models.DrPlanGroup]
@@ -115,6 +135,12 @@ class DrPlan(object):
             Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
+
+        :param lifecycle_sub_state:
+            The value to assign to the lifecycle_sub_state property of this DrPlan.
+            Allowed values for this property are: "NEEDS_REFRESH", "NEEDS_VERIFICATION", "REFRESHING", "VERIFYING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_sub_state: str
 
         :param life_cycle_details:
             The value to assign to the life_cycle_details property of this DrPlan.
@@ -143,8 +169,10 @@ class DrPlan(object):
             'dr_protection_group_id': 'str',
             'peer_dr_protection_group_id': 'str',
             'peer_region': 'str',
+            'source_plan_id': 'str',
             'plan_groups': 'list[DrPlanGroup]',
             'lifecycle_state': 'str',
+            'lifecycle_sub_state': 'str',
             'life_cycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -161,8 +189,10 @@ class DrPlan(object):
             'dr_protection_group_id': 'drProtectionGroupId',
             'peer_dr_protection_group_id': 'peerDrProtectionGroupId',
             'peer_region': 'peerRegion',
+            'source_plan_id': 'sourcePlanId',
             'plan_groups': 'planGroups',
             'lifecycle_state': 'lifecycleState',
+            'lifecycle_sub_state': 'lifecycleSubState',
             'life_cycle_details': 'lifeCycleDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -178,8 +208,10 @@ class DrPlan(object):
         self._dr_protection_group_id = None
         self._peer_dr_protection_group_id = None
         self._peer_region = None
+        self._source_plan_id = None
         self._plan_groups = None
         self._lifecycle_state = None
+        self._lifecycle_sub_state = None
         self._life_cycle_details = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -444,6 +476,36 @@ class DrPlan(object):
         self._peer_region = peer_region
 
     @property
+    def source_plan_id(self):
+        """
+        Gets the source_plan_id of this DrPlan.
+        If this is a cloned DR plan, the OCID of the source DR plan that was used to clone this DR plan.
+        If this DR plan was not cloned, then the value for this will be `null`.
+
+        Example: `ocid1.drplan.oc1..uniqueID`
+
+
+        :return: The source_plan_id of this DrPlan.
+        :rtype: str
+        """
+        return self._source_plan_id
+
+    @source_plan_id.setter
+    def source_plan_id(self, source_plan_id):
+        """
+        Sets the source_plan_id of this DrPlan.
+        If this is a cloned DR plan, the OCID of the source DR plan that was used to clone this DR plan.
+        If this DR plan was not cloned, then the value for this will be `null`.
+
+        Example: `ocid1.drplan.oc1..uniqueID`
+
+
+        :param source_plan_id: The source_plan_id of this DrPlan.
+        :type: str
+        """
+        self._source_plan_id = source_plan_id
+
+    @property
     def plan_groups(self):
         """
         **[Required]** Gets the plan_groups of this DrPlan.
@@ -496,6 +558,36 @@ class DrPlan(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def lifecycle_sub_state(self):
+        """
+        Gets the lifecycle_sub_state of this DrPlan.
+        The current state of the DR plan.
+
+        Allowed values for this property are: "NEEDS_REFRESH", "NEEDS_VERIFICATION", "REFRESHING", "VERIFYING", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The lifecycle_sub_state of this DrPlan.
+        :rtype: str
+        """
+        return self._lifecycle_sub_state
+
+    @lifecycle_sub_state.setter
+    def lifecycle_sub_state(self, lifecycle_sub_state):
+        """
+        Sets the lifecycle_sub_state of this DrPlan.
+        The current state of the DR plan.
+
+
+        :param lifecycle_sub_state: The lifecycle_sub_state of this DrPlan.
+        :type: str
+        """
+        allowed_values = ["NEEDS_REFRESH", "NEEDS_VERIFICATION", "REFRESHING", "VERIFYING"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_sub_state, allowed_values):
+            lifecycle_sub_state = 'UNKNOWN_ENUM_VALUE'
+        self._lifecycle_sub_state = lifecycle_sub_state
 
     @property
     def life_cycle_details(self):

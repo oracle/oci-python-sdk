@@ -141,6 +141,10 @@ class LaunchInstanceDetails(object):
             The value to assign to the instance_configuration_id property of this LaunchInstanceDetails.
         :type instance_configuration_id: str
 
+        :param licensing_configs:
+            The value to assign to the licensing_configs property of this LaunchInstanceDetails.
+        :type licensing_configs: list[oci.core.models.LaunchInstanceLicensingConfig]
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -172,7 +176,8 @@ class LaunchInstanceDetails(object):
             'launch_volume_attachments': 'list[LaunchAttachVolumeDetails]',
             'is_pv_encryption_in_transit_enabled': 'bool',
             'platform_config': 'LaunchInstancePlatformConfig',
-            'instance_configuration_id': 'str'
+            'instance_configuration_id': 'str',
+            'licensing_configs': 'list[LaunchInstanceLicensingConfig]'
         }
 
         self.attribute_map = {
@@ -205,7 +210,8 @@ class LaunchInstanceDetails(object):
             'launch_volume_attachments': 'launchVolumeAttachments',
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
             'platform_config': 'platformConfig',
-            'instance_configuration_id': 'instanceConfigurationId'
+            'instance_configuration_id': 'instanceConfigurationId',
+            'licensing_configs': 'licensingConfigs'
         }
 
         self._availability_domain = None
@@ -238,6 +244,7 @@ class LaunchInstanceDetails(object):
         self._is_pv_encryption_in_transit_enabled = None
         self._platform_config = None
         self._instance_configuration_id = None
+        self._licensing_configs = None
 
     @property
     def availability_domain(self):
@@ -1186,6 +1193,30 @@ class LaunchInstanceDetails(object):
         :type: str
         """
         self._instance_configuration_id = instance_configuration_id
+
+    @property
+    def licensing_configs(self):
+        """
+        Gets the licensing_configs of this LaunchInstanceDetails.
+        List of licensing configurations associated with target launch values.
+
+
+        :return: The licensing_configs of this LaunchInstanceDetails.
+        :rtype: list[oci.core.models.LaunchInstanceLicensingConfig]
+        """
+        return self._licensing_configs
+
+    @licensing_configs.setter
+    def licensing_configs(self, licensing_configs):
+        """
+        Sets the licensing_configs of this LaunchInstanceDetails.
+        List of licensing configurations associated with target launch values.
+
+
+        :param licensing_configs: The licensing_configs of this LaunchInstanceDetails.
+        :type: list[oci.core.models.LaunchInstanceLicensingConfig]
+        """
+        self._licensing_configs = licensing_configs
 
     def __repr__(self):
         return formatted_flat_dict(self)

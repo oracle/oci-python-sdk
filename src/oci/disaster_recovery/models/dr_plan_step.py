@@ -387,6 +387,14 @@ class DrPlanStep(object):
     #: This constant has a value of "OBJECT_STORAGE_BUCKET_FAILOVER_SETUP_REVERSE_REPLICATION_STANDBY"
     TYPE_OBJECT_STORAGE_BUCKET_FAILOVER_SETUP_REVERSE_REPLICATION_STANDBY = "OBJECT_STORAGE_BUCKET_FAILOVER_SETUP_REVERSE_REPLICATION_STANDBY"
 
+    #: A constant which can be used with the refresh_status property of a DrPlanStep.
+    #: This constant has a value of "STEP_ADDED"
+    REFRESH_STATUS_STEP_ADDED = "STEP_ADDED"
+
+    #: A constant which can be used with the refresh_status property of a DrPlanStep.
+    #: This constant has a value of "STEP_DELETED"
+    REFRESH_STATUS_STEP_DELETED = "STEP_DELETED"
+
     #: A constant which can be used with the error_mode property of a DrPlanStep.
     #: This constant has a value of "STOP_ON_ERROR"
     ERROR_MODE_STOP_ON_ERROR = "STOP_ON_ERROR"
@@ -418,6 +426,12 @@ class DrPlanStep(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
+        :param refresh_status:
+            The value to assign to the refresh_status property of this DrPlanStep.
+            Allowed values for this property are: "STEP_ADDED", "STEP_DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type refresh_status: str
+
         :param display_name:
             The value to assign to the display_name property of this DrPlanStep.
         :type display_name: str
@@ -446,6 +460,7 @@ class DrPlanStep(object):
             'group_id': 'str',
             'member_id': 'str',
             'type': 'str',
+            'refresh_status': 'str',
             'display_name': 'str',
             'error_mode': 'str',
             'timeout': 'int',
@@ -458,6 +473,7 @@ class DrPlanStep(object):
             'group_id': 'groupId',
             'member_id': 'memberId',
             'type': 'type',
+            'refresh_status': 'refreshStatus',
             'display_name': 'displayName',
             'error_mode': 'errorMode',
             'timeout': 'timeout',
@@ -469,6 +485,7 @@ class DrPlanStep(object):
         self._group_id = None
         self._member_id = None
         self._type = None
+        self._refresh_status = None
         self._display_name = None
         self._error_mode = None
         self._timeout = None
@@ -588,6 +605,40 @@ class DrPlanStep(object):
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
+
+    @property
+    def refresh_status(self):
+        """
+        Gets the refresh_status of this DrPlanStep.
+        The DR plan step refresh status.
+
+        Example: `STEP_ADDED`
+
+        Allowed values for this property are: "STEP_ADDED", "STEP_DELETED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The refresh_status of this DrPlanStep.
+        :rtype: str
+        """
+        return self._refresh_status
+
+    @refresh_status.setter
+    def refresh_status(self, refresh_status):
+        """
+        Sets the refresh_status of this DrPlanStep.
+        The DR plan step refresh status.
+
+        Example: `STEP_ADDED`
+
+
+        :param refresh_status: The refresh_status of this DrPlanStep.
+        :type: str
+        """
+        allowed_values = ["STEP_ADDED", "STEP_DELETED"]
+        if not value_allowed_none_or_none_sentinel(refresh_status, allowed_values):
+            refresh_status = 'UNKNOWN_ENUM_VALUE'
+        self._refresh_status = refresh_status
 
     @property
     def display_name(self):

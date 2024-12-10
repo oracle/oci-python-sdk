@@ -31,6 +31,18 @@ class DrPlanGroup(object):
     #: This constant has a value of "USER_DEFINED_PAUSE"
     TYPE_USER_DEFINED_PAUSE = "USER_DEFINED_PAUSE"
 
+    #: A constant which can be used with the refresh_status property of a DrPlanGroup.
+    #: This constant has a value of "GROUP_ADDED"
+    REFRESH_STATUS_GROUP_ADDED = "GROUP_ADDED"
+
+    #: A constant which can be used with the refresh_status property of a DrPlanGroup.
+    #: This constant has a value of "GROUP_DELETED"
+    REFRESH_STATUS_GROUP_DELETED = "GROUP_DELETED"
+
+    #: A constant which can be used with the refresh_status property of a DrPlanGroup.
+    #: This constant has a value of "GROUP_MODIFIED"
+    REFRESH_STATUS_GROUP_MODIFIED = "GROUP_MODIFIED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DrPlanGroup object with values from keyword arguments.
@@ -45,6 +57,12 @@ class DrPlanGroup(object):
             Allowed values for this property are: "USER_DEFINED", "BUILT_IN", "BUILT_IN_PRECHECK", "USER_DEFINED_PAUSE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
+
+        :param refresh_status:
+            The value to assign to the refresh_status property of this DrPlanGroup.
+            Allowed values for this property are: "GROUP_ADDED", "GROUP_DELETED", "GROUP_MODIFIED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type refresh_status: str
 
         :param display_name:
             The value to assign to the display_name property of this DrPlanGroup.
@@ -62,6 +80,7 @@ class DrPlanGroup(object):
         self.swagger_types = {
             'id': 'str',
             'type': 'str',
+            'refresh_status': 'str',
             'display_name': 'str',
             'is_pause_enabled': 'bool',
             'steps': 'list[DrPlanStep]'
@@ -70,6 +89,7 @@ class DrPlanGroup(object):
         self.attribute_map = {
             'id': 'id',
             'type': 'type',
+            'refresh_status': 'refreshStatus',
             'display_name': 'displayName',
             'is_pause_enabled': 'isPauseEnabled',
             'steps': 'steps'
@@ -77,6 +97,7 @@ class DrPlanGroup(object):
 
         self._id = None
         self._type = None
+        self._refresh_status = None
         self._display_name = None
         self._is_pause_enabled = None
         self._steps = None
@@ -142,6 +163,40 @@ class DrPlanGroup(object):
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
+
+    @property
+    def refresh_status(self):
+        """
+        Gets the refresh_status of this DrPlanGroup.
+        The DR plan group refresh status.
+
+        Example: `GROUP_MODIFIED`
+
+        Allowed values for this property are: "GROUP_ADDED", "GROUP_DELETED", "GROUP_MODIFIED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The refresh_status of this DrPlanGroup.
+        :rtype: str
+        """
+        return self._refresh_status
+
+    @refresh_status.setter
+    def refresh_status(self, refresh_status):
+        """
+        Sets the refresh_status of this DrPlanGroup.
+        The DR plan group refresh status.
+
+        Example: `GROUP_MODIFIED`
+
+
+        :param refresh_status: The refresh_status of this DrPlanGroup.
+        :type: str
+        """
+        allowed_values = ["GROUP_ADDED", "GROUP_DELETED", "GROUP_MODIFIED"]
+        if not value_allowed_none_or_none_sentinel(refresh_status, allowed_values):
+            refresh_status = 'UNKNOWN_ENUM_VALUE'
+        self._refresh_status = refresh_status
 
     @property
     def display_name(self):

@@ -104,6 +104,8 @@ Disaster Recovery
     oci.disaster_recovery.models.ObjectStorageScriptLocation
     oci.disaster_recovery.models.ObjectStoreScriptPrecheckStep
     oci.disaster_recovery.models.PauseDrPlanExecutionDetails
+    oci.disaster_recovery.models.RefreshDrPlanDefaultDetails
+    oci.disaster_recovery.models.RefreshDrPlanDetails
     oci.disaster_recovery.models.ResumeDrPlanExecutionDetails
     oci.disaster_recovery.models.RetryDrPlanExecutionDetails
     oci.disaster_recovery.models.RunLocalScriptUserDefinedStep
@@ -154,6 +156,8 @@ Disaster Recovery
     oci.disaster_recovery.models.UpdateObjectStoreScriptPrecheckStepDetails
     oci.disaster_recovery.models.UpdateRunLocalScriptUserDefinedStepDetails
     oci.disaster_recovery.models.UpdateRunObjectStoreScriptUserDefinedStepDetails
+    oci.disaster_recovery.models.VerifyDrPlanDefaultDetails
+    oci.disaster_recovery.models.VerifyDrPlanDetails
     oci.disaster_recovery.models.WorkRequest
     oci.disaster_recovery.models.WorkRequestError
     oci.disaster_recovery.models.WorkRequestErrorCollection

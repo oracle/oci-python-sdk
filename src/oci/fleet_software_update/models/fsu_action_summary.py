@@ -35,6 +35,10 @@ class FsuActionSummary(object):
     #: This constant has a value of "CLEANUP"
     TYPE_CLEANUP = "CLEANUP"
 
+    #: A constant which can be used with the type property of a FsuActionSummary.
+    #: This constant has a value of "ROLLBACK_MAINTENANCE_CYCLE"
+    TYPE_ROLLBACK_MAINTENANCE_CYCLE = "ROLLBACK_MAINTENANCE_CYCLE"
+
     #: A constant which can be used with the lifecycle_state property of a FsuActionSummary.
     #: This constant has a value of "ACCEPTED"
     LIFECYCLE_STATE_ACCEPTED = "ACCEPTED"
@@ -88,6 +92,7 @@ class FsuActionSummary(object):
         Initializes a new FsuActionSummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.fleet_software_update.models.RollbackCycleActionSummary`
         * :class:`~oci.fleet_software_update.models.StageActionSummary`
         * :class:`~oci.fleet_software_update.models.ApplyActionSummary`
         * :class:`~oci.fleet_software_update.models.CleanupActionSummary`
@@ -110,7 +115,7 @@ class FsuActionSummary(object):
 
         :param type:
             The value to assign to the type property of this FsuActionSummary.
-            Allowed values for this property are: "STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", "ROLLBACK_MAINTENANCE_CYCLE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -207,6 +212,9 @@ class FsuActionSummary(object):
         """
         type = object_dictionary['type']
 
+        if type == 'ROLLBACK_MAINTENANCE_CYCLE':
+            return 'RollbackCycleActionSummary'
+
         if type == 'STAGE':
             return 'StageActionSummary'
 
@@ -302,7 +310,7 @@ class FsuActionSummary(object):
         **[Required]** Gets the type of this FsuActionSummary.
         Type of Exadata Fleet Update Action.
 
-        Allowed values for this property are: "STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", "ROLLBACK_MAINTENANCE_CYCLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -321,7 +329,7 @@ class FsuActionSummary(object):
         :param type: The type of this FsuActionSummary.
         :type: str
         """
-        allowed_values = ["STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP"]
+        allowed_values = ["STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP", "ROLLBACK_MAINTENANCE_CYCLE"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

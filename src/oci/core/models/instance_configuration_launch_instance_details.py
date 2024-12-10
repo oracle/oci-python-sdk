@@ -155,6 +155,10 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             The value to assign to the preemptible_instance_config property of this InstanceConfigurationLaunchInstanceDetails.
         :type preemptible_instance_config: oci.core.models.PreemptibleInstanceConfigDetails
 
+        :param licensing_configs:
+            The value to assign to the licensing_configs property of this InstanceConfigurationLaunchInstanceDetails.
+        :type licensing_configs: list[oci.core.models.LaunchInstanceLicensingConfig]
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -182,7 +186,8 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             'preferred_maintenance_action': 'str',
             'instance_options': 'InstanceConfigurationInstanceOptions',
             'availability_config': 'InstanceConfigurationAvailabilityConfig',
-            'preemptible_instance_config': 'PreemptibleInstanceConfigDetails'
+            'preemptible_instance_config': 'PreemptibleInstanceConfigDetails',
+            'licensing_configs': 'list[LaunchInstanceLicensingConfig]'
         }
 
         self.attribute_map = {
@@ -211,7 +216,8 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             'preferred_maintenance_action': 'preferredMaintenanceAction',
             'instance_options': 'instanceOptions',
             'availability_config': 'availabilityConfig',
-            'preemptible_instance_config': 'preemptibleInstanceConfig'
+            'preemptible_instance_config': 'preemptibleInstanceConfig',
+            'licensing_configs': 'licensingConfigs'
         }
 
         self._availability_domain = None
@@ -240,6 +246,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         self._instance_options = None
         self._availability_config = None
         self._preemptible_instance_config = None
+        self._licensing_configs = None
 
     @property
     def availability_domain(self):
@@ -1088,6 +1095,30 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         :type: oci.core.models.PreemptibleInstanceConfigDetails
         """
         self._preemptible_instance_config = preemptible_instance_config
+
+    @property
+    def licensing_configs(self):
+        """
+        Gets the licensing_configs of this InstanceConfigurationLaunchInstanceDetails.
+        List of licensing configurations associated with target launch values.
+
+
+        :return: The licensing_configs of this InstanceConfigurationLaunchInstanceDetails.
+        :rtype: list[oci.core.models.LaunchInstanceLicensingConfig]
+        """
+        return self._licensing_configs
+
+    @licensing_configs.setter
+    def licensing_configs(self, licensing_configs):
+        """
+        Sets the licensing_configs of this InstanceConfigurationLaunchInstanceDetails.
+        List of licensing configurations associated with target launch values.
+
+
+        :param licensing_configs: The licensing_configs of this InstanceConfigurationLaunchInstanceDetails.
+        :type: list[oci.core.models.LaunchInstanceLicensingConfig]
+        """
+        self._licensing_configs = licensing_configs
 
     def __repr__(self):
         return formatted_flat_dict(self)

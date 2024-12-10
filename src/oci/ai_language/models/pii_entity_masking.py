@@ -43,16 +43,30 @@ class PiiEntityMasking(object):
             Allowed values for this property are: "REPLACE", "MASK", "REMOVE"
         :type mode: str
 
+        :param exclude:
+            The value to assign to the exclude property of this PiiEntityMasking.
+        :type exclude: list[str]
+
+        :param should_detect:
+            The value to assign to the should_detect property of this PiiEntityMasking.
+        :type should_detect: bool
+
         """
         self.swagger_types = {
-            'mode': 'str'
+            'mode': 'str',
+            'exclude': 'list[str]',
+            'should_detect': 'bool'
         }
 
         self.attribute_map = {
-            'mode': 'mode'
+            'mode': 'mode',
+            'exclude': 'exclude',
+            'should_detect': 'shouldDetect'
         }
 
         self._mode = None
+        self._exclude = None
+        self._should_detect = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -103,6 +117,54 @@ class PiiEntityMasking(object):
                 f"Invalid value for `mode`, must be None or one of {allowed_values}"
             )
         self._mode = mode
+
+    @property
+    def exclude(self):
+        """
+        Gets the exclude of this PiiEntityMasking.
+        List of offsets/entities to be removed from anonymization.
+
+
+        :return: The exclude of this PiiEntityMasking.
+        :rtype: list[str]
+        """
+        return self._exclude
+
+    @exclude.setter
+    def exclude(self, exclude):
+        """
+        Sets the exclude of this PiiEntityMasking.
+        List of offsets/entities to be removed from anonymization.
+
+
+        :param exclude: The exclude of this PiiEntityMasking.
+        :type: list[str]
+        """
+        self._exclude = exclude
+
+    @property
+    def should_detect(self):
+        """
+        Gets the should_detect of this PiiEntityMasking.
+        To include excluded entities from masking in detected entities or not.
+
+
+        :return: The should_detect of this PiiEntityMasking.
+        :rtype: bool
+        """
+        return self._should_detect
+
+    @should_detect.setter
+    def should_detect(self, should_detect):
+        """
+        Sets the should_detect of this PiiEntityMasking.
+        To include excluded entities from masking in detected entities or not.
+
+
+        :param should_detect: The should_detect of this PiiEntityMasking.
+        :type: bool
+        """
+        self._should_detect = should_detect
 
     def __repr__(self):
         return formatted_flat_dict(self)

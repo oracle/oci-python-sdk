@@ -74,6 +74,12 @@ class MultipartObjectAssembler:
         :param int part_size (optional):
             Override the default part size of 128 MiB, value is in bytes.
 
+        :param str opc_checksum_algorithm (optional):
+            The optional checksum algorithm to use to compute and store the checksum of the body of the HTTP request
+            (or the parts in case of multipart uploads), in addition to the default MD5 checksum.
+
+            Allowed values are: "CRC32C", "SHA256", "SHA384"
+
         :param str if_match (optional):
             The entity tag of the object to match.
 
@@ -129,6 +135,9 @@ class MultipartObjectAssembler:
         self.part_size = DEFAULT_PART_SIZE
         if 'part_size' in kwargs:
             self.part_size = kwargs['part_size']
+        self.opc_checksum_algorithm = None
+        if 'opc_checksum_algorithm' in kwargs:
+            self.opc_checksum_algorithm = kwargs['opc_checksum_algorithm']
         self.if_match = None
         if 'if_match' in kwargs:
             self.if_match = kwargs['if_match']
@@ -420,6 +429,9 @@ class MultipartObjectAssembler:
         if self.opc_sse_kms_key_id:
             kwargs['opc_sse_kms_key_id'] = self.opc_sse_kms_key_id
 
+        if self.opc_checksum_algorithm:
+            kwargs['opc_checksum_algorithm'] = self.opc_checksum_algorithm
+
         # pass on SSE-C values (if any)
         kwargs.update(self.ssec_params)
 
@@ -451,6 +463,9 @@ class MultipartObjectAssembler:
 
         # supply SSE-C key (if any) information to upload-part
         new_kwargs.update(self.ssec_params)
+
+        if self.opc_checksum_algorithm:
+            new_kwargs['opc_checksum_algorithm'] = self.opc_checksum_algorithm
 
         # TODO: Calculate the hash without needing to read the file chunk twice.
         # Calculate the hash before uploading.  The hash will be used

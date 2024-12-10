@@ -49,6 +49,7 @@ Fleet Software Update
     oci.fleet_software_update.models.CreatePatchFsuCycle
     oci.fleet_software_update.models.CreatePrecheckActionDetails
     oci.fleet_software_update.models.CreateRollbackActionDetails
+    oci.fleet_software_update.models.CreateRollbackCycleApplyActionDetails
     oci.fleet_software_update.models.CreateScheduleDetails
     oci.fleet_software_update.models.CreateSequentialBatchingStrategyDetails
     oci.fleet_software_update.models.CreateServiceAvailabilityFactorBatchingStrategyDetails
@@ -129,6 +130,10 @@ Fleet Software Update
     oci.fleet_software_update.models.RemoveFsuCollectionTargetsDetails
     oci.fleet_software_update.models.RollbackAction
     oci.fleet_software_update.models.RollbackActionSummary
+    oci.fleet_software_update.models.RollbackCycleAction
+    oci.fleet_software_update.models.RollbackCycleActionSummary
+    oci.fleet_software_update.models.RollbackCycleFsuJob
+    oci.fleet_software_update.models.RollbackCycleFsuJobSummary
     oci.fleet_software_update.models.RollbackDetails
     oci.fleet_software_update.models.RollbackFsuJob
     oci.fleet_software_update.models.RollbackFsuJobSummary
@@ -159,6 +164,7 @@ Fleet Software Update
     oci.fleet_software_update.models.UpdatePatchFsuCycle
     oci.fleet_software_update.models.UpdatePrecheckActionDetails
     oci.fleet_software_update.models.UpdateRollbackActionDetails
+    oci.fleet_software_update.models.UpdateRollbackCycleActionDetails
     oci.fleet_software_update.models.UpdateScheduleDetails
     oci.fleet_software_update.models.UpdateSequentialBatchingStrategyDetails
     oci.fleet_software_update.models.UpdateServiceAvailabilityFactorBatchingStrategyDetails

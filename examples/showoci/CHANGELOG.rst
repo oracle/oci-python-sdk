@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+24.12.10 - 24.12.10
+=====================
+* Added Vnic information
+* Added retry_strategy to vnic call
+* Improve the code
+
+=====================
+24.11.26 - 24.11.26
+=====================
+* Added few more variables to databases and fixed the autobck flag
+
+=====================
 24.11.12 - 24.11.12
 =====================
 * Added unique id to Vault CSVs

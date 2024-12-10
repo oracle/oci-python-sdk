@@ -20,6 +20,10 @@ class BatchDetectLanguageSentimentsDetails(object):
         Initializes a new BatchDetectLanguageSentimentsDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param alias:
+            The value to assign to the alias property of this BatchDetectLanguageSentimentsDetails.
+        :type alias: str
+
         :param endpoint_id:
             The value to assign to the endpoint_id property of this BatchDetectLanguageSentimentsDetails.
         :type endpoint_id: str
@@ -34,20 +38,47 @@ class BatchDetectLanguageSentimentsDetails(object):
 
         """
         self.swagger_types = {
+            'alias': 'str',
             'endpoint_id': 'str',
             'compartment_id': 'str',
             'documents': 'list[TextDocument]'
         }
 
         self.attribute_map = {
+            'alias': 'alias',
             'endpoint_id': 'endpointId',
             'compartment_id': 'compartmentId',
             'documents': 'documents'
         }
 
+        self._alias = None
         self._endpoint_id = None
         self._compartment_id = None
         self._documents = None
+
+    @property
+    def alias(self):
+        """
+        Gets the alias of this BatchDetectLanguageSentimentsDetails.
+        Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+
+
+        :return: The alias of this BatchDetectLanguageSentimentsDetails.
+        :rtype: str
+        """
+        return self._alias
+
+    @alias.setter
+    def alias(self, alias):
+        """
+        Sets the alias of this BatchDetectLanguageSentimentsDetails.
+        Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+
+
+        :param alias: The alias of this BatchDetectLanguageSentimentsDetails.
+        :type: str
+        """
+        self._alias = alias
 
     @property
     def endpoint_id(self):
