@@ -558,7 +558,7 @@ class CreateMysqlConnectionDetails(CreateConnectionDetails):
     def ssl_key(self):
         """
         Gets the ssl_key of this CreateMysqlConnectionDetails.
-        Client Key \u2013 The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
+        Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
 
 
         :return: The ssl_key of this CreateMysqlConnectionDetails.
@@ -570,7 +570,7 @@ class CreateMysqlConnectionDetails(CreateConnectionDetails):
     def ssl_key(self, ssl_key):
         """
         Sets the ssl_key of this CreateMysqlConnectionDetails.
-        Client Key \u2013 The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
+        Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
 
 
         :param ssl_key: The ssl_key of this CreateMysqlConnectionDetails.

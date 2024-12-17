@@ -48,6 +48,10 @@ class Disk(object):
             The value to assign to the persistent_mode property of this Disk.
         :type persistent_mode: str
 
+        :param is_cbt_enabled:
+            The value to assign to the is_cbt_enabled property of this Disk.
+        :type is_cbt_enabled: bool
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -56,7 +60,8 @@ class Disk(object):
             'uuid_lun': 'str',
             'size_in_mbs': 'int',
             'location': 'str',
-            'persistent_mode': 'str'
+            'persistent_mode': 'str',
+            'is_cbt_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -66,7 +71,8 @@ class Disk(object):
             'uuid_lun': 'uuidLun',
             'size_in_mbs': 'sizeInMBs',
             'location': 'location',
-            'persistent_mode': 'persistentMode'
+            'persistent_mode': 'persistentMode',
+            'is_cbt_enabled': 'isCbtEnabled'
         }
 
         self._name = None
@@ -76,6 +82,7 @@ class Disk(object):
         self._size_in_mbs = None
         self._location = None
         self._persistent_mode = None
+        self._is_cbt_enabled = None
 
     @property
     def name(self):
@@ -244,6 +251,30 @@ class Disk(object):
         :type: str
         """
         self._persistent_mode = persistent_mode
+
+    @property
+    def is_cbt_enabled(self):
+        """
+        Gets the is_cbt_enabled of this Disk.
+        Indicates that CBT (change disk tracking) is enabled for this virtual disk.
+
+
+        :return: The is_cbt_enabled of this Disk.
+        :rtype: bool
+        """
+        return self._is_cbt_enabled
+
+    @is_cbt_enabled.setter
+    def is_cbt_enabled(self, is_cbt_enabled):
+        """
+        Sets the is_cbt_enabled of this Disk.
+        Indicates that CBT (change disk tracking) is enabled for this virtual disk.
+
+
+        :param is_cbt_enabled: The is_cbt_enabled of this Disk.
+        :type: bool
+        """
+        self._is_cbt_enabled = is_cbt_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

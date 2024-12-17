@@ -47,6 +47,10 @@ class DataSciencePrivateEndpoint(object):
     #: This constant has a value of "NOTEBOOK_SESSION"
     DATA_SCIENCE_RESOURCE_TYPE_NOTEBOOK_SESSION = "NOTEBOOK_SESSION"
 
+    #: A constant which can be used with the data_science_resource_type property of a DataSciencePrivateEndpoint.
+    #: This constant has a value of "MODEL_DEPLOYMENT"
+    DATA_SCIENCE_RESOURCE_TYPE_MODEL_DEPLOYMENT = "MODEL_DEPLOYMENT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DataSciencePrivateEndpoint object with values from keyword arguments.
@@ -108,7 +112,7 @@ class DataSciencePrivateEndpoint(object):
 
         :param data_science_resource_type:
             The value to assign to the data_science_resource_type property of this DataSciencePrivateEndpoint.
-            Allowed values for this property are: "NOTEBOOK_SESSION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NOTEBOOK_SESSION", "MODEL_DEPLOYMENT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type data_science_resource_type: str
 
@@ -522,7 +526,7 @@ class DataSciencePrivateEndpoint(object):
         Gets the data_science_resource_type of this DataSciencePrivateEndpoint.
         Data Science resource type.
 
-        Allowed values for this property are: "NOTEBOOK_SESSION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "NOTEBOOK_SESSION", "MODEL_DEPLOYMENT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -541,7 +545,7 @@ class DataSciencePrivateEndpoint(object):
         :param data_science_resource_type: The data_science_resource_type of this DataSciencePrivateEndpoint.
         :type: str
         """
-        allowed_values = ["NOTEBOOK_SESSION"]
+        allowed_values = ["NOTEBOOK_SESSION", "MODEL_DEPLOYMENT"]
         if not value_allowed_none_or_none_sentinel(data_science_resource_type, allowed_values):
             data_science_resource_type = 'UNKNOWN_ENUM_VALUE'
         self._data_science_resource_type = data_science_resource_type

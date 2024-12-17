@@ -23,7 +23,7 @@ class OsCommandQueryProperties(MetricExtensionQueryProperties):
 
         :param collection_method:
             The value to assign to the collection_method property of this OsCommandQueryProperties.
-            Allowed values for this property are: "OS_COMMAND", "SQL", "JMX"
+            Allowed values for this property are: "OS_COMMAND", "SQL", "JMX", "HTTP"
         :type collection_method: str
 
         :param command:

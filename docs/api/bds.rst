@@ -19,6 +19,8 @@ Bds
     :template: autosummary/model_class.rst
 
     oci.bds.models.ActivateBdsMetastoreConfigurationDetails
+    oci.bds.models.ActivateIamUserSyncConfigurationDetails
+    oci.bds.models.ActivateUpstConfigurationDetails
     oci.bds.models.AddAutoScalePolicyDetails
     oci.bds.models.AddAutoScalingConfigurationDetails
     oci.bds.models.AddBlockStorageDetails
@@ -42,6 +44,7 @@ Bds
     oci.bds.models.BatchingBasedPatchingConfigs
     oci.bds.models.BdsApiKey
     oci.bds.models.BdsApiKeySummary
+    oci.bds.models.BdsClusterVersionSummary
     oci.bds.models.BdsInstance
     oci.bds.models.BdsInstanceSummary
     oci.bds.models.BdsMetastoreConfiguration
@@ -56,12 +59,15 @@ Bds
     oci.bds.models.CreateBdsApiKeyDetails
     oci.bds.models.CreateBdsInstanceDetails
     oci.bds.models.CreateBdsMetastoreConfigurationDetails
+    oci.bds.models.CreateIdentityConfigurationDetails
     oci.bds.models.CreateNodeBackupConfigurationDetails
     oci.bds.models.CreateNodeDetails
     oci.bds.models.CreateNodeReplaceConfigurationDetails
     oci.bds.models.CreateResourcePrincipalConfigurationDetails
     oci.bds.models.DayBasedHorizontalScalingScheduleDetails
     oci.bds.models.DayBasedVerticalScalingScheduleDetails
+    oci.bds.models.DeactivateIamUserSyncConfigurationDetails
+    oci.bds.models.DeactivateUpstConfigurationDetails
     oci.bds.models.DefaultError
     oci.bds.models.DisableCertificateDetails
     oci.bds.models.DomainBasedOdhPatchingConfig
@@ -74,6 +80,10 @@ Bds
     oci.bds.models.HorizontalScalingScheduleDetails
     oci.bds.models.HostCertDetails
     oci.bds.models.HostSpecificCertificateDetails
+    oci.bds.models.IamUserSyncConfiguration
+    oci.bds.models.IamUserSyncConfigurationDetails
+    oci.bds.models.IdentityConfiguration
+    oci.bds.models.IdentityConfigurationSummary
     oci.bds.models.InstallOsPatchDetails
     oci.bds.models.InstallPatchDetails
     oci.bds.models.KerberosDetails
@@ -95,6 +105,7 @@ Bds
     oci.bds.models.NodeReplaceConfiguration
     oci.bds.models.NodeReplaceConfigurationSummary
     oci.bds.models.NodeTypeLevelDetails
+    oci.bds.models.NodeTypeShapeConfig
     oci.bds.models.OdhPatchingConfig
     oci.bds.models.OsPatchDetails
     oci.bds.models.OsPatchPackageSummary
@@ -102,6 +113,8 @@ Bds
     oci.bds.models.PatchHistorySummary
     oci.bds.models.PatchSummary
     oci.bds.models.PatchingConfigs
+    oci.bds.models.RefreshConfidentialApplicationDetails
+    oci.bds.models.RefreshUpstTokenExchangeKeytabDetails
     oci.bds.models.RemoveAutoScalingConfigurationDetails
     oci.bds.models.RemoveCloudSqlDetails
     oci.bds.models.RemoveKafkaDetails
@@ -117,6 +130,7 @@ Bds
     oci.bds.models.ScheduleBasedVerticalScalingPolicyDetails
     oci.bds.models.ShapeConfigDetails
     oci.bds.models.StartBdsInstanceDetails
+    oci.bds.models.StartClusterShapeConfigs
     oci.bds.models.StopBdsInstanceDetails
     oci.bds.models.TestBdsMetastoreConfigurationDetails
     oci.bds.models.TestBdsObjectStorageConnectionDetails
@@ -126,6 +140,7 @@ Bds
     oci.bds.models.UpdateAutoScalingConfigurationDetails
     oci.bds.models.UpdateBdsInstanceDetails
     oci.bds.models.UpdateBdsMetastoreConfigurationDetails
+    oci.bds.models.UpdateIdentityConfigurationDetails
     oci.bds.models.UpdateMetricBasedHorizontalScalingPolicyDetails
     oci.bds.models.UpdateMetricBasedVerticalScalingPolicyDetails
     oci.bds.models.UpdateNodeBackupConfigurationDetails
@@ -133,6 +148,8 @@ Bds
     oci.bds.models.UpdateResourcePrincipalConfigurationDetails
     oci.bds.models.UpdateScheduleBasedHorizontalScalingPolicyDetails
     oci.bds.models.UpdateScheduleBasedVerticalScalingPolicyDetails
+    oci.bds.models.UpstConfiguration
+    oci.bds.models.UpstConfigurationDetails
     oci.bds.models.VerticalScalingScheduleDetails
     oci.bds.models.VolumeAttachmentDetail
     oci.bds.models.WorkRequest

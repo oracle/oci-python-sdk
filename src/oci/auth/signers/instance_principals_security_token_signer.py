@@ -12,6 +12,7 @@ from oci._vendor.requests.exceptions import HTTPError
 from oci._vendor.requests.exceptions import ConnectTimeout
 
 import oci.regions
+import os
 import logging
 
 
@@ -24,6 +25,7 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
     the token:
 
     * Using the metadata endpoint for the instance (http://169.254.169.254/opc/v2) we can discover the region the instance is in, its leaf certificate and any intermediate certificates (for requesting the token) and the tenancy (as) that is in the leaf certificate.
+    * You can override the metadata endpoint by overriding the environment variable OCI_METADATA_BASE_URL with an endpoint of your choice
     * The signer leverages X509FederationClient so it can refresh the security token and also get the private key needed to sign requests (via the client's session_key_supplier)
 
     This signer can be used as follows:
@@ -47,7 +49,7 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
 
     :param obj federation_client_retry_strategy: (optional):
         A retry strategy to apply to calls made by the X509FederationClient used by this class. This should be one of the strategies available in
-        the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` is also available and
+        the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_FEDERATION_CLIENT_RETRY_STRATEGY` is also available and
         will be used by the X509FederationClient if no explicit retry strategy is specified.
 
         The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
@@ -59,15 +61,16 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
         the certificate & corresponding private key (if there is one defined for this retriever) from UrlBasedCertificateRetriever,
         region, federation endpoint, and the response for receiving the token from the federation endpoint
     """
-
-    METADATA_URL_BASE = 'http://169.254.169.254/opc/v2'
-    GET_REGION_URL = '{}/instance/region'.format(METADATA_URL_BASE)
-    LEAF_CERTIFICATE_URL = '{}/identity/cert.pem'.format(METADATA_URL_BASE)
-    LEAF_CERTIFICATE_PRIVATE_KEY_URL = '{}/identity/key.pem'.format(METADATA_URL_BASE)
-    INTERMEDIATE_CERTIFICATE_URL = '{}/identity/intermediate.pem'.format(METADATA_URL_BASE)
-    METADATA_AUTH_HEADERS = {'Authorization': 'Bearer Oracle'}
-
     def __init__(self, **kwargs):
+        self.METADATA_URL_BASE_ENV_VAR = 'OCI_METADATA_BASE_URL'
+        self.DEFAULT_METADATA_URL_BASE = 'http://169.254.169.254/opc/v2'
+        self.METADATA_URL_BASE = os.environ.get(self.METADATA_URL_BASE_ENV_VAR, self.DEFAULT_METADATA_URL_BASE)
+        self.GET_REGION_URL = '{}/instance/region'.format(self.METADATA_URL_BASE)
+        self.LEAF_CERTIFICATE_URL = '{}/identity/cert.pem'.format(self.METADATA_URL_BASE)
+        self.LEAF_CERTIFICATE_PRIVATE_KEY_URL = '{}/identity/key.pem'.format(self.METADATA_URL_BASE)
+        self.INTERMEDIATE_CERTIFICATE_URL = '{}/identity/intermediate.pem'.format(self.METADATA_URL_BASE)
+        self.METADATA_AUTH_HEADERS = {'Authorization': 'Bearer Oracle'}
+
         self.logger = logging.getLogger("{}.{}".format(__name__, id(self)))
         self.logger.addHandler(logging.NullHandler())
         if kwargs.get('log_requests'):
@@ -90,22 +93,10 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
                 headers=self.METADATA_AUTH_HEADERS,
                 log_requests=kwargs.get('log_requests'))
         except (HTTPError, ConnectTimeout, oci.exceptions.ServiceError) as e:
-            if e.response and e.response.status_code == 404:
-                InstancePrincipalsSecurityTokenSigner.METADATA_URL_BASE = 'http://169.254.169.254/opc/v1'
-                InstancePrincipalsSecurityTokenSigner.GET_REGION_URL = '{}/instance/region'.format(InstancePrincipalsSecurityTokenSigner.METADATA_URL_BASE)
-                InstancePrincipalsSecurityTokenSigner.LEAF_CERTIFICATE_URL = '{}/identity/cert.pem'.format(InstancePrincipalsSecurityTokenSigner.METADATA_URL_BASE)
-                InstancePrincipalsSecurityTokenSigner.LEAF_CERTIFICATE_PRIVATE_KEY_URL = '{}/identity/key.pem'.format(InstancePrincipalsSecurityTokenSigner.METADATA_URL_BASE)
-                InstancePrincipalsSecurityTokenSigner.INTERMEDIATE_CERTIFICATE_URL = '{}/identity/intermediate.pem'.format(InstancePrincipalsSecurityTokenSigner.METADATA_URL_BASE)
-                self.leaf_certificate_retriever = UrlBasedCertificateRetriever(
-                    certificate_url=self.LEAF_CERTIFICATE_URL,
-                    private_key_url=self.LEAF_CERTIFICATE_PRIVATE_KEY_URL,
-                    retry_strategy=self.retry_strategy,
-                    headers=self.METADATA_AUTH_HEADERS)
-            else:
-                if not e.args:
-                    e.args = ('',)
-                e.args = e.args + ("Instance principals authentication can only be used on OCI compute instances. Please confirm this code is running on an OCI compute instance. See https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm for more info.",)
-                raise e
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ("Instance principals authentication can only be used on OCI compute instances. Please confirm this code is running on an OCI compute instance. See https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm for more info.",)
+            raise e
 
         self.intermediate_certificate_retriever = UrlBasedCertificateRetriever(
             certificate_url=self.INTERMEDIATE_CERTIFICATE_URL,
@@ -143,8 +134,23 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
         if hasattr(self, 'region'):
             return self.region
 
-        self.logger.debug("Requesting region information from : %s " % (self.GET_REGION_URL))
+        if self.retry_strategy:
+            self.retry_strategy.make_retrying_call(self._set_region_from_imds)
+        else:
+            self._set_region_from_imds()
+
+        self.logger.debug(f"Region is set to: {self.region}")
+        return self.region
+
+    def _set_region_from_imds(self):
+        self.logger.debug(f"Requesting region information from IMDS: {self.GET_REGION_URL}")
         response = requests.get(self.GET_REGION_URL, timeout=(10, 60), headers=self.METADATA_AUTH_HEADERS)
+
+        try:
+            response.raise_for_status()
+        except HTTPError as e:
+            raise oci.exceptions.ServiceError(e.response.status_code, e.errno, e.response.headers, str(e))
+
         region_raw = response.text.strip().lower()
 
         # The region can be something like "phx" but internally we expect "us-phoenix-1", "us-ashburn-1" etc.
@@ -152,6 +158,3 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
             self.region = oci.regions.REGIONS_SHORT_NAMES[region_raw]
         else:
             self.region = region_raw
-
-        self.logger.debug("Region is set to : %s " % (self.region))
-        return self.region

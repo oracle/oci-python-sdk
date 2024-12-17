@@ -5159,13 +5159,10 @@ class StackMonitoringClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def list_metric_extensions(self, compartment_id, **kwargs):
+    def list_metric_extensions(self, **kwargs):
         """
         Returns a list of metric extensions
 
-
-        :param str compartment_id: (required)
-            The ID of the compartment in which data is listed.
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a
@@ -5185,12 +5182,15 @@ class StackMonitoringClient(object):
             The field to sort by. Only one sort order may be provided.
             Default order for timeCreated is descending. Default order for resources is ascending.
 
-            Allowed values are: "NAME", "TIME_CREATED"
+            Allowed values are: "NAME", "TIME_CREATED", "ENABLED_ON_RESOURCE_COUNT"
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
 
             Allowed values are: "ASC", "DESC"
+
+        :param str compartment_id: (optional)
+            The ID of the compartment in which data is listed.
 
         :param str resource_type: (optional)
             A filter to return resources based on resource type.
@@ -5210,6 +5210,9 @@ class StackMonitoringClient(object):
 
         :param str enabled_on_resource_id: (optional)
             A filter to return metric extensions based on input resource Id on which metric extension is enabled
+
+        :param str metric_extension_id: (optional)
+            Identifier for the metric extension
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -5234,7 +5237,7 @@ class StackMonitoringClient(object):
         Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/stackmonitoring/list_metric_extensions.py.html>`__ to see an example of how to use list_metric_extensions API.
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
-        required_arguments = ['compartmentId']
+        required_arguments = []
         resource_path = "/metricExtensions"
         method = "GET"
         operation_name = "list_metric_extensions"
@@ -5248,11 +5251,13 @@ class StackMonitoringClient(object):
             "page",
             "sort_by",
             "sort_order",
+            "compartment_id",
             "resource_type",
             "name",
             "status",
             "lifecycle_state",
             "enabled_on_resource_id",
+            "metric_extension_id",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -5261,7 +5266,7 @@ class StackMonitoringClient(object):
                 f"list_metric_extensions got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["NAME", "TIME_CREATED"]
+            sort_by_allowed_values = ["NAME", "TIME_CREATED", "ENABLED_ON_RESOURCE_COUNT"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
@@ -5293,12 +5298,13 @@ class StackMonitoringClient(object):
             "page": kwargs.get("page", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
-            "compartmentId": compartment_id,
+            "compartmentId": kwargs.get("compartment_id", missing),
             "resourceType": kwargs.get("resource_type", missing),
             "name": kwargs.get("name", missing),
             "status": kwargs.get("status", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
-            "enabledOnResourceId": kwargs.get("enabled_on_resource_id", missing)
+            "enabledOnResourceId": kwargs.get("enabled_on_resource_id", missing),
+            "metricExtensionId": kwargs.get("metric_extension_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

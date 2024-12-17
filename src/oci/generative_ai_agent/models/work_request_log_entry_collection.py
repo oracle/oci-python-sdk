@@ -12,8 +12,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestLogEntryCollection(object):
     """
-    **WorkRequestLogEntryCollection**
-
     A list of work request logs. Can contain both logs and other information, such as metadata.
     """
 

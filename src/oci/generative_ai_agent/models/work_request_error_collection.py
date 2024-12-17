@@ -12,8 +12,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestErrorCollection(object):
     """
-    **WorkRequestErrorCollection**
-
     A list of work request errors. Can contain both errors and other information, such as metadata.
     """
 

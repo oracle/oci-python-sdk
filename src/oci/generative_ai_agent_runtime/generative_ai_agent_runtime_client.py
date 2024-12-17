@@ -175,7 +175,7 @@ class GenerativeAiAgentRuntimeClient(object):
         resource_path = "/agentEndpoints/{agentEndpointId}/actions/chat"
         method = "POST"
         operation_name = "chat"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents-client/20240531/Session/Chat"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents-client/20240531/AgentEndpoint/Chat"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

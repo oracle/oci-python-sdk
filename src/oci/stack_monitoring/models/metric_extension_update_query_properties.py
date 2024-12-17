@@ -27,6 +27,10 @@ class MetricExtensionUpdateQueryProperties(object):
     #: This constant has a value of "JMX"
     COLLECTION_METHOD_JMX = "JMX"
 
+    #: A constant which can be used with the collection_method property of a MetricExtensionUpdateQueryProperties.
+    #: This constant has a value of "HTTP"
+    COLLECTION_METHOD_HTTP = "HTTP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MetricExtensionUpdateQueryProperties object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -35,12 +39,13 @@ class MetricExtensionUpdateQueryProperties(object):
         * :class:`~oci.stack_monitoring.models.SqlUpdateQueryProperties`
         * :class:`~oci.stack_monitoring.models.JmxUpdateQueryProperties`
         * :class:`~oci.stack_monitoring.models.OsCommandUpdateQueryProperties`
+        * :class:`~oci.stack_monitoring.models.HttpUpdateQueryProperties`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param collection_method:
             The value to assign to the collection_method property of this MetricExtensionUpdateQueryProperties.
-            Allowed values for this property are: "OS_COMMAND", "SQL", "JMX"
+            Allowed values for this property are: "OS_COMMAND", "SQL", "JMX", "HTTP"
         :type collection_method: str
 
         """
@@ -70,6 +75,9 @@ class MetricExtensionUpdateQueryProperties(object):
 
         if type == 'OS_COMMAND':
             return 'OsCommandUpdateQueryProperties'
+
+        if type == 'HTTP':
+            return 'HttpUpdateQueryProperties'
         else:
             return 'MetricExtensionUpdateQueryProperties'
 
@@ -79,7 +87,7 @@ class MetricExtensionUpdateQueryProperties(object):
         **[Required]** Gets the collection_method of this MetricExtensionUpdateQueryProperties.
         Type of possible collection methods.
 
-        Allowed values for this property are: "OS_COMMAND", "SQL", "JMX"
+        Allowed values for this property are: "OS_COMMAND", "SQL", "JMX", "HTTP"
 
 
         :return: The collection_method of this MetricExtensionUpdateQueryProperties.
@@ -97,7 +105,7 @@ class MetricExtensionUpdateQueryProperties(object):
         :param collection_method: The collection_method of this MetricExtensionUpdateQueryProperties.
         :type: str
         """
-        allowed_values = ["OS_COMMAND", "SQL", "JMX"]
+        allowed_values = ["OS_COMMAND", "SQL", "JMX", "HTTP"]
         if not value_allowed_none_or_none_sentinel(collection_method, allowed_values):
             raise ValueError(
                 f"Invalid value for `collection_method`, must be None or one of {allowed_values}"

@@ -339,7 +339,7 @@ class JobRun(object):
     def project_id(self):
         """
         **[Required]** Gets the project_id of this JobRun.
-        The `OCID`__ of the project to associate the job with.
+        The `OCID`__ of the project to associate the job run with.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -353,7 +353,7 @@ class JobRun(object):
     def project_id(self, project_id):
         """
         Sets the project_id of this JobRun.
-        The `OCID`__ of the project to associate the job with.
+        The `OCID`__ of the project to associate the job run with.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -367,7 +367,7 @@ class JobRun(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this JobRun.
-        The `OCID`__ of the compartment where you want to create the job.
+        The `OCID`__ of the compartment where you want to create the job run.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -381,7 +381,7 @@ class JobRun(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this JobRun.
-        The `OCID`__ of the compartment where you want to create the job.
+        The `OCID`__ of the compartment where you want to create the job run.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -395,7 +395,7 @@ class JobRun(object):
     def job_id(self):
         """
         **[Required]** Gets the job_id of this JobRun.
-        The `OCID`__ of the job run.
+        The `OCID`__ of the job.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -409,7 +409,7 @@ class JobRun(object):
     def job_id(self, job_id):
         """
         Sets the job_id of this JobRun.
-        The `OCID`__ of the job run.
+        The `OCID`__ of the job.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 

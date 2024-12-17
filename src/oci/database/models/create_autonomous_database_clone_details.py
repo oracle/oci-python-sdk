@@ -238,6 +238,10 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
             The value to assign to the db_tools_details property of this CreateAutonomousDatabaseCloneDetails.
         :type db_tools_details: list[oci.database.models.DatabaseTool]
 
+        :param is_backup_retention_locked:
+            The value to assign to the is_backup_retention_locked property of this CreateAutonomousDatabaseCloneDetails.
+        :type is_backup_retention_locked: bool
+
         :param secret_id:
             The value to assign to the secret_id property of this CreateAutonomousDatabaseCloneDetails.
         :type secret_id: str
@@ -308,6 +312,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
             'is_auto_scaling_for_storage_enabled': 'bool',
             'database_edition': 'str',
             'db_tools_details': 'list[DatabaseTool]',
+            'is_backup_retention_locked': 'bool',
             'secret_id': 'str',
             'secret_version_number': 'int',
             'source_id': 'str',
@@ -366,6 +371,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
             'is_auto_scaling_for_storage_enabled': 'isAutoScalingForStorageEnabled',
             'database_edition': 'databaseEdition',
             'db_tools_details': 'dbToolsDetails',
+            'is_backup_retention_locked': 'isBackupRetentionLocked',
             'secret_id': 'secretId',
             'secret_version_number': 'secretVersionNumber',
             'source_id': 'sourceId',
@@ -423,6 +429,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
         self._is_auto_scaling_for_storage_enabled = None
         self._database_edition = None
         self._db_tools_details = None
+        self._is_backup_retention_locked = None
         self._secret_id = None
         self._secret_version_number = None
         self._source_id = None

@@ -12,8 +12,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OciObjectStorageDataSourceConfig(DataSourceConfig):
     """
-    **OciObjectStorageDataSourceConfig**
-
     The details of OCI Search with OpenSearch data source information.
     """
 
@@ -22,6 +20,10 @@ class OciObjectStorageDataSourceConfig(DataSourceConfig):
         Initializes a new OciObjectStorageDataSourceConfig object with values from keyword arguments. The default value of the :py:attr:`~oci.generative_ai_agent.models.OciObjectStorageDataSourceConfig.data_source_config_type` attribute
         of this class is ``OCI_OBJECT_STORAGE`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param should_enable_multi_modality:
+            The value to assign to the should_enable_multi_modality property of this OciObjectStorageDataSourceConfig.
+        :type should_enable_multi_modality: bool
 
         :param data_source_config_type:
             The value to assign to the data_source_config_type property of this OciObjectStorageDataSourceConfig.
@@ -34,15 +36,18 @@ class OciObjectStorageDataSourceConfig(DataSourceConfig):
 
         """
         self.swagger_types = {
+            'should_enable_multi_modality': 'bool',
             'data_source_config_type': 'str',
             'object_storage_prefixes': 'list[ObjectStoragePrefix]'
         }
 
         self.attribute_map = {
+            'should_enable_multi_modality': 'shouldEnableMultiModality',
             'data_source_config_type': 'dataSourceConfigType',
             'object_storage_prefixes': 'objectStoragePrefixes'
         }
 
+        self._should_enable_multi_modality = None
         self._data_source_config_type = None
         self._object_storage_prefixes = None
         self._data_source_config_type = 'OCI_OBJECT_STORAGE'
@@ -50,7 +55,7 @@ class OciObjectStorageDataSourceConfig(DataSourceConfig):
     @property
     def object_storage_prefixes(self):
         """
-        **[Required]** Gets the object_storage_prefixes of this OciObjectStorageDataSourceConfig.
+        Gets the object_storage_prefixes of this OciObjectStorageDataSourceConfig.
         The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
 
 

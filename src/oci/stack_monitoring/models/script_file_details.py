@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ScriptFileDetails(object):
     """
-    Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data
+    Script details applicable to any OS Command based Metric Extension which needs to run a script to collect data. For removing it during update, set its \"content\" property to an empty string. In that case, \"name\" property value is ignored.
     """
 
     def __init__(self, **kwargs):

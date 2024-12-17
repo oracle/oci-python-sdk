@@ -12,8 +12,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataIngestionJob(object):
     """
-    **DataIngestionJob**
-
     When you create a data source, you specify the location of the data files. To make those files usable by an agent, you must download them into the agent's associated knowledge base, a process known as data ingestion. Data ingestion is a process that extracts data from data source documents, converts it into a structured format suitable for analysis, and then stores it in a knowledge base.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see `Getting Started with Policies`__.
@@ -74,6 +72,10 @@ class DataIngestionJob(object):
             The value to assign to the data_source_id property of this DataIngestionJob.
         :type data_source_id: str
 
+        :param knowledge_base_id:
+            The value to assign to the knowledge_base_id property of this DataIngestionJob.
+        :type knowledge_base_id: str
+
         :param data_ingestion_job_statistics:
             The value to assign to the data_ingestion_job_statistics property of this DataIngestionJob.
         :type data_ingestion_job_statistics: oci.generative_ai_agent.models.DataIngestionJobStatistics
@@ -115,6 +117,7 @@ class DataIngestionJob(object):
             'description': 'str',
             'compartment_id': 'str',
             'data_source_id': 'str',
+            'knowledge_base_id': 'str',
             'data_ingestion_job_statistics': 'DataIngestionJobStatistics',
             'time_created': 'datetime',
             'time_updated': 'datetime',
@@ -131,6 +134,7 @@ class DataIngestionJob(object):
             'description': 'description',
             'compartment_id': 'compartmentId',
             'data_source_id': 'dataSourceId',
+            'knowledge_base_id': 'knowledgeBaseId',
             'data_ingestion_job_statistics': 'dataIngestionJobStatistics',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
@@ -146,6 +150,7 @@ class DataIngestionJob(object):
         self._description = None
         self._compartment_id = None
         self._data_source_id = None
+        self._knowledge_base_id = None
         self._data_ingestion_job_statistics = None
         self._time_created = None
         self._time_updated = None
@@ -286,6 +291,34 @@ class DataIngestionJob(object):
         :type: str
         """
         self._data_source_id = data_source_id
+
+    @property
+    def knowledge_base_id(self):
+        """
+        Gets the knowledge_base_id of this DataIngestionJob.
+        The `OCID`__ of the parent KnowledgeBase.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The knowledge_base_id of this DataIngestionJob.
+        :rtype: str
+        """
+        return self._knowledge_base_id
+
+    @knowledge_base_id.setter
+    def knowledge_base_id(self, knowledge_base_id):
+        """
+        Sets the knowledge_base_id of this DataIngestionJob.
+        The `OCID`__ of the parent KnowledgeBase.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param knowledge_base_id: The knowledge_base_id of this DataIngestionJob.
+        :type: str
+        """
+        self._knowledge_base_id = knowledge_base_id
 
     @property
     def data_ingestion_job_statistics(self):

@@ -466,6 +466,10 @@ class AutonomousDatabase(object):
             The value to assign to the autonomous_container_database_id property of this AutonomousDatabase.
         :type autonomous_container_database_id: str
 
+        :param is_backup_retention_locked:
+            The value to assign to the is_backup_retention_locked property of this AutonomousDatabase.
+        :type is_backup_retention_locked: bool
+
         :param time_undeleted:
             The value to assign to the time_undeleted property of this AutonomousDatabase.
         :type time_undeleted: datetime
@@ -873,6 +877,7 @@ class AutonomousDatabase(object):
             'infrastructure_type': 'str',
             'is_dedicated': 'bool',
             'autonomous_container_database_id': 'str',
+            'is_backup_retention_locked': 'bool',
             'time_undeleted': 'datetime',
             'time_created': 'datetime',
             'display_name': 'str',
@@ -999,6 +1004,7 @@ class AutonomousDatabase(object):
             'infrastructure_type': 'infrastructureType',
             'is_dedicated': 'isDedicated',
             'autonomous_container_database_id': 'autonomousContainerDatabaseId',
+            'is_backup_retention_locked': 'isBackupRetentionLocked',
             'time_undeleted': 'timeUndeleted',
             'time_created': 'timeCreated',
             'display_name': 'displayName',
@@ -1124,6 +1130,7 @@ class AutonomousDatabase(object):
         self._infrastructure_type = None
         self._is_dedicated = None
         self._autonomous_container_database_id = None
+        self._is_backup_retention_locked = None
         self._time_undeleted = None
         self._time_created = None
         self._display_name = None
@@ -2236,6 +2243,30 @@ class AutonomousDatabase(object):
         :type: str
         """
         self._autonomous_container_database_id = autonomous_container_database_id
+
+    @property
+    def is_backup_retention_locked(self):
+        """
+        Gets the is_backup_retention_locked of this AutonomousDatabase.
+        Indicates if the Autonomous Database is backup retention locked.
+
+
+        :return: The is_backup_retention_locked of this AutonomousDatabase.
+        :rtype: bool
+        """
+        return self._is_backup_retention_locked
+
+    @is_backup_retention_locked.setter
+    def is_backup_retention_locked(self, is_backup_retention_locked):
+        """
+        Sets the is_backup_retention_locked of this AutonomousDatabase.
+        Indicates if the Autonomous Database is backup retention locked.
+
+
+        :param is_backup_retention_locked: The is_backup_retention_locked of this AutonomousDatabase.
+        :type: bool
+        """
+        self._is_backup_retention_locked = is_backup_retention_locked
 
     @property
     def time_undeleted(self):

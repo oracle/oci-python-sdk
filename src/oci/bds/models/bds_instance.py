@@ -206,6 +206,10 @@ class BdsInstance(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type cluster_profile: str
 
+        :param bds_cluster_version_summary:
+            The value to assign to the bds_cluster_version_summary property of this BdsInstance.
+        :type bds_cluster_version_summary: oci.bds.models.BdsClusterVersionSummary
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -230,7 +234,8 @@ class BdsInstance(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'kms_key_id': 'str',
-            'cluster_profile': 'str'
+            'cluster_profile': 'str',
+            'bds_cluster_version_summary': 'BdsClusterVersionSummary'
         }
 
         self.attribute_map = {
@@ -256,7 +261,8 @@ class BdsInstance(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'kms_key_id': 'kmsKeyId',
-            'cluster_profile': 'clusterProfile'
+            'cluster_profile': 'clusterProfile',
+            'bds_cluster_version_summary': 'bdsClusterVersionSummary'
         }
 
         self._id = None
@@ -282,6 +288,7 @@ class BdsInstance(object):
         self._defined_tags = None
         self._kms_key_id = None
         self._cluster_profile = None
+        self._bds_cluster_version_summary = None
 
     @property
     def id(self):
@@ -844,6 +851,26 @@ class BdsInstance(object):
         if not value_allowed_none_or_none_sentinel(cluster_profile, allowed_values):
             cluster_profile = 'UNKNOWN_ENUM_VALUE'
         self._cluster_profile = cluster_profile
+
+    @property
+    def bds_cluster_version_summary(self):
+        """
+        Gets the bds_cluster_version_summary of this BdsInstance.
+
+        :return: The bds_cluster_version_summary of this BdsInstance.
+        :rtype: oci.bds.models.BdsClusterVersionSummary
+        """
+        return self._bds_cluster_version_summary
+
+    @bds_cluster_version_summary.setter
+    def bds_cluster_version_summary(self, bds_cluster_version_summary):
+        """
+        Sets the bds_cluster_version_summary of this BdsInstance.
+
+        :param bds_cluster_version_summary: The bds_cluster_version_summary of this BdsInstance.
+        :type: oci.bds.models.BdsClusterVersionSummary
+        """
+        self._bds_cluster_version_summary = bds_cluster_version_summary
 
     def __repr__(self):
         return formatted_flat_dict(self)

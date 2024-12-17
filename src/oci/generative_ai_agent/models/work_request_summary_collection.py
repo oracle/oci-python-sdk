@@ -12,8 +12,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestSummaryCollection(object):
     """
-    **WorkRequestSummaryCollection**
-
     A list of work requests. Can contain both work requests and other information, such as metadata.
     """
 

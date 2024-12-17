@@ -10,6 +10,7 @@ from .analyze_document_details import AnalyzeDocumentDetails
 from .analyze_document_result import AnalyzeDocumentResult
 from .analyze_image_details import AnalyzeImageDetails
 from .analyze_image_result import AnalyzeImageResult
+from .analyze_video_result import AnalyzeVideoResult
 from .bounding_polygon import BoundingPolygon
 from .cell import Cell
 from .change_model_compartment_details import ChangeModelCompartmentDetails
@@ -18,6 +19,7 @@ from .create_document_job_details import CreateDocumentJobDetails
 from .create_image_job_details import CreateImageJobDetails
 from .create_model_details import CreateModelDetails
 from .create_project_details import CreateProjectDetails
+from .create_video_job_details import CreateVideoJobDetails
 from .data_science_labeling_dataset import DataScienceLabelingDataset
 from .dataset import Dataset
 from .detected_document_type import DetectedDocumentType
@@ -58,6 +60,7 @@ from .model_summary import ModelSummary
 from .normalized_vertex import NormalizedVertex
 from .object_list_inline_input_location import ObjectListInlineInputLocation
 from .object_location import ObjectLocation
+from .object_property import ObjectProperty
 from .object_storage_dataset import ObjectStorageDataset
 from .object_storage_document_details import ObjectStorageDocumentDetails
 from .object_storage_image_details import ObjectStorageImageDetails
@@ -79,6 +82,30 @@ from .value_number import ValueNumber
 from .value_phone_number import ValuePhoneNumber
 from .value_string import ValueString
 from .value_time import ValueTime
+from .video_face import VideoFace
+from .video_face_detection_feature import VideoFaceDetectionFeature
+from .video_face_frame import VideoFaceFrame
+from .video_face_segment import VideoFaceSegment
+from .video_feature import VideoFeature
+from .video_job import VideoJob
+from .video_label import VideoLabel
+from .video_label_detection_feature import VideoLabelDetectionFeature
+from .video_label_segment import VideoLabelSegment
+from .video_metadata import VideoMetadata
+from .video_object import VideoObject
+from .video_object_detection_feature import VideoObjectDetectionFeature
+from .video_object_frame import VideoObjectFrame
+from .video_object_segment import VideoObjectSegment
+from .video_object_tracking_feature import VideoObjectTrackingFeature
+from .video_segment import VideoSegment
+from .video_text import VideoText
+from .video_text_detection_feature import VideoTextDetectionFeature
+from .video_text_frame import VideoTextFrame
+from .video_text_segment import VideoTextSegment
+from .video_tracked_object import VideoTrackedObject
+from .video_tracked_object_properties import VideoTrackedObjectProperties
+from .video_tracked_object_segment import VideoTrackedObjectSegment
+from .video_tracking_frame import VideoTrackingFrame
 from .word import Word
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
@@ -95,6 +122,7 @@ ai_vision_type_mapping = {
     "AnalyzeDocumentResult": AnalyzeDocumentResult,
     "AnalyzeImageDetails": AnalyzeImageDetails,
     "AnalyzeImageResult": AnalyzeImageResult,
+    "AnalyzeVideoResult": AnalyzeVideoResult,
     "BoundingPolygon": BoundingPolygon,
     "Cell": Cell,
     "ChangeModelCompartmentDetails": ChangeModelCompartmentDetails,
@@ -103,6 +131,7 @@ ai_vision_type_mapping = {
     "CreateImageJobDetails": CreateImageJobDetails,
     "CreateModelDetails": CreateModelDetails,
     "CreateProjectDetails": CreateProjectDetails,
+    "CreateVideoJobDetails": CreateVideoJobDetails,
     "DataScienceLabelingDataset": DataScienceLabelingDataset,
     "Dataset": Dataset,
     "DetectedDocumentType": DetectedDocumentType,
@@ -143,6 +172,7 @@ ai_vision_type_mapping = {
     "NormalizedVertex": NormalizedVertex,
     "ObjectListInlineInputLocation": ObjectListInlineInputLocation,
     "ObjectLocation": ObjectLocation,
+    "ObjectProperty": ObjectProperty,
     "ObjectStorageDataset": ObjectStorageDataset,
     "ObjectStorageDocumentDetails": ObjectStorageDocumentDetails,
     "ObjectStorageImageDetails": ObjectStorageImageDetails,
@@ -164,6 +194,30 @@ ai_vision_type_mapping = {
     "ValuePhoneNumber": ValuePhoneNumber,
     "ValueString": ValueString,
     "ValueTime": ValueTime,
+    "VideoFace": VideoFace,
+    "VideoFaceDetectionFeature": VideoFaceDetectionFeature,
+    "VideoFaceFrame": VideoFaceFrame,
+    "VideoFaceSegment": VideoFaceSegment,
+    "VideoFeature": VideoFeature,
+    "VideoJob": VideoJob,
+    "VideoLabel": VideoLabel,
+    "VideoLabelDetectionFeature": VideoLabelDetectionFeature,
+    "VideoLabelSegment": VideoLabelSegment,
+    "VideoMetadata": VideoMetadata,
+    "VideoObject": VideoObject,
+    "VideoObjectDetectionFeature": VideoObjectDetectionFeature,
+    "VideoObjectFrame": VideoObjectFrame,
+    "VideoObjectSegment": VideoObjectSegment,
+    "VideoObjectTrackingFeature": VideoObjectTrackingFeature,
+    "VideoSegment": VideoSegment,
+    "VideoText": VideoText,
+    "VideoTextDetectionFeature": VideoTextDetectionFeature,
+    "VideoTextFrame": VideoTextFrame,
+    "VideoTextSegment": VideoTextSegment,
+    "VideoTrackedObject": VideoTrackedObject,
+    "VideoTrackedObjectProperties": VideoTrackedObjectProperties,
+    "VideoTrackedObjectSegment": VideoTrackedObjectSegment,
+    "VideoTrackingFrame": VideoTrackingFrame,
     "Word": Word,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,

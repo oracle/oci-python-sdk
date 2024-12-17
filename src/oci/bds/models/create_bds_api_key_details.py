@@ -36,25 +36,32 @@ class CreateBdsApiKeyDetails(object):
             The value to assign to the key_alias property of this CreateBdsApiKeyDetails.
         :type key_alias: str
 
+        :param domain_ocid:
+            The value to assign to the domain_ocid property of this CreateBdsApiKeyDetails.
+        :type domain_ocid: str
+
         """
         self.swagger_types = {
             'user_id': 'str',
             'passphrase': 'str',
             'default_region': 'str',
-            'key_alias': 'str'
+            'key_alias': 'str',
+            'domain_ocid': 'str'
         }
 
         self.attribute_map = {
             'user_id': 'userId',
             'passphrase': 'passphrase',
             'default_region': 'defaultRegion',
-            'key_alias': 'keyAlias'
+            'key_alias': 'keyAlias',
+            'domain_ocid': 'domainOcid'
         }
 
         self._user_id = None
         self._passphrase = None
         self._default_region = None
         self._key_alias = None
+        self._domain_ocid = None
 
     @property
     def user_id(self):
@@ -155,6 +162,30 @@ class CreateBdsApiKeyDetails(object):
         :type: str
         """
         self._key_alias = key_alias
+
+    @property
+    def domain_ocid(self):
+        """
+        Gets the domain_ocid of this CreateBdsApiKeyDetails.
+        Identity domain OCID , where user is present. For default domain , this field will be optional.
+
+
+        :return: The domain_ocid of this CreateBdsApiKeyDetails.
+        :rtype: str
+        """
+        return self._domain_ocid
+
+    @domain_ocid.setter
+    def domain_ocid(self, domain_ocid):
+        """
+        Sets the domain_ocid of this CreateBdsApiKeyDetails.
+        Identity domain OCID , where user is present. For default domain , this field will be optional.
+
+
+        :param domain_ocid: The domain_ocid of this CreateBdsApiKeyDetails.
+        :type: str
+        """
+        self._domain_ocid = domain_ocid
 
     def __repr__(self):
         return formatted_flat_dict(self)

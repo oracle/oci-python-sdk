@@ -12,8 +12,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class KnowledgeBase(object):
     """
-    **KnowledgeBase**
-
     A knowledge base is the base for all the data sources that an agent can use to retrieve information for its responses.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see `Getting Started with Policies`__.
@@ -74,6 +72,10 @@ class KnowledgeBase(object):
             The value to assign to the index_config property of this KnowledgeBase.
         :type index_config: oci.generative_ai_agent.models.IndexConfig
 
+        :param knowledge_base_statistics:
+            The value to assign to the knowledge_base_statistics property of this KnowledgeBase.
+        :type knowledge_base_statistics: oci.generative_ai_agent.models.KnowledgeBaseStatistics
+
         :param time_created:
             The value to assign to the time_created property of this KnowledgeBase.
         :type time_created: datetime
@@ -111,6 +113,7 @@ class KnowledgeBase(object):
             'description': 'str',
             'compartment_id': 'str',
             'index_config': 'IndexConfig',
+            'knowledge_base_statistics': 'KnowledgeBaseStatistics',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
@@ -126,6 +129,7 @@ class KnowledgeBase(object):
             'description': 'description',
             'compartment_id': 'compartmentId',
             'index_config': 'indexConfig',
+            'knowledge_base_statistics': 'knowledgeBaseStatistics',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
@@ -140,6 +144,7 @@ class KnowledgeBase(object):
         self._description = None
         self._compartment_id = None
         self._index_config = None
+        self._knowledge_base_statistics = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
@@ -271,6 +276,26 @@ class KnowledgeBase(object):
         :type: oci.generative_ai_agent.models.IndexConfig
         """
         self._index_config = index_config
+
+    @property
+    def knowledge_base_statistics(self):
+        """
+        Gets the knowledge_base_statistics of this KnowledgeBase.
+
+        :return: The knowledge_base_statistics of this KnowledgeBase.
+        :rtype: oci.generative_ai_agent.models.KnowledgeBaseStatistics
+        """
+        return self._knowledge_base_statistics
+
+    @knowledge_base_statistics.setter
+    def knowledge_base_statistics(self, knowledge_base_statistics):
+        """
+        Sets the knowledge_base_statistics of this KnowledgeBase.
+
+        :param knowledge_base_statistics: The knowledge_base_statistics of this KnowledgeBase.
+        :type: oci.generative_ai_agent.models.KnowledgeBaseStatistics
+        """
+        self._knowledge_base_statistics = knowledge_base_statistics
 
     @property
     def time_created(self):

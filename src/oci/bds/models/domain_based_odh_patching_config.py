@@ -30,19 +30,26 @@ class DomainBasedOdhPatchingConfig(OdhPatchingConfig):
             The value to assign to the wait_time_between_domain_in_seconds property of this DomainBasedOdhPatchingConfig.
         :type wait_time_between_domain_in_seconds: int
 
+        :param tolerance_threshold_per_domain:
+            The value to assign to the tolerance_threshold_per_domain property of this DomainBasedOdhPatchingConfig.
+        :type tolerance_threshold_per_domain: int
+
         """
         self.swagger_types = {
             'patching_config_strategy': 'str',
-            'wait_time_between_domain_in_seconds': 'int'
+            'wait_time_between_domain_in_seconds': 'int',
+            'tolerance_threshold_per_domain': 'int'
         }
 
         self.attribute_map = {
             'patching_config_strategy': 'patchingConfigStrategy',
-            'wait_time_between_domain_in_seconds': 'waitTimeBetweenDomainInSeconds'
+            'wait_time_between_domain_in_seconds': 'waitTimeBetweenDomainInSeconds',
+            'tolerance_threshold_per_domain': 'toleranceThresholdPerDomain'
         }
 
         self._patching_config_strategy = None
         self._wait_time_between_domain_in_seconds = None
+        self._tolerance_threshold_per_domain = None
         self._patching_config_strategy = 'DOMAIN_BASED'
 
     @property
@@ -68,6 +75,30 @@ class DomainBasedOdhPatchingConfig(OdhPatchingConfig):
         :type: int
         """
         self._wait_time_between_domain_in_seconds = wait_time_between_domain_in_seconds
+
+    @property
+    def tolerance_threshold_per_domain(self):
+        """
+        Gets the tolerance_threshold_per_domain of this DomainBasedOdhPatchingConfig.
+        Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+
+
+        :return: The tolerance_threshold_per_domain of this DomainBasedOdhPatchingConfig.
+        :rtype: int
+        """
+        return self._tolerance_threshold_per_domain
+
+    @tolerance_threshold_per_domain.setter
+    def tolerance_threshold_per_domain(self, tolerance_threshold_per_domain):
+        """
+        Sets the tolerance_threshold_per_domain of this DomainBasedOdhPatchingConfig.
+        Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+
+
+        :param tolerance_threshold_per_domain: The tolerance_threshold_per_domain of this DomainBasedOdhPatchingConfig.
+        :type: int
+        """
+        self._tolerance_threshold_per_domain = tolerance_threshold_per_domain
 
     def __repr__(self):
         return formatted_flat_dict(self)

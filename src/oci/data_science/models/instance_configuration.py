@@ -32,22 +32,29 @@ class InstanceConfiguration(object):
             The value to assign to the subnet_id property of this InstanceConfiguration.
         :type subnet_id: str
 
+        :param private_endpoint_id:
+            The value to assign to the private_endpoint_id property of this InstanceConfiguration.
+        :type private_endpoint_id: str
+
         """
         self.swagger_types = {
             'instance_shape_name': 'str',
             'model_deployment_instance_shape_config_details': 'ModelDeploymentInstanceShapeConfigDetails',
-            'subnet_id': 'str'
+            'subnet_id': 'str',
+            'private_endpoint_id': 'str'
         }
 
         self.attribute_map = {
             'instance_shape_name': 'instanceShapeName',
             'model_deployment_instance_shape_config_details': 'modelDeploymentInstanceShapeConfigDetails',
-            'subnet_id': 'subnetId'
+            'subnet_id': 'subnetId',
+            'private_endpoint_id': 'privateEndpointId'
         }
 
         self._instance_shape_name = None
         self._model_deployment_instance_shape_config_details = None
         self._subnet_id = None
+        self._private_endpoint_id = None
 
     @property
     def instance_shape_name(self):
@@ -120,6 +127,30 @@ class InstanceConfiguration(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def private_endpoint_id(self):
+        """
+        Gets the private_endpoint_id of this InstanceConfiguration.
+        The OCID of a Data Science private endpoint.
+
+
+        :return: The private_endpoint_id of this InstanceConfiguration.
+        :rtype: str
+        """
+        return self._private_endpoint_id
+
+    @private_endpoint_id.setter
+    def private_endpoint_id(self, private_endpoint_id):
+        """
+        Sets the private_endpoint_id of this InstanceConfiguration.
+        The OCID of a Data Science private endpoint.
+
+
+        :param private_endpoint_id: The private_endpoint_id of this InstanceConfiguration.
+        :type: str
+        """
+        self._private_endpoint_id = private_endpoint_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

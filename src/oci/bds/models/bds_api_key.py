@@ -78,6 +78,10 @@ class BdsApiKey(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param domain_ocid:
+            The value to assign to the domain_ocid property of this BdsApiKey.
+        :type domain_ocid: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -88,7 +92,8 @@ class BdsApiKey(object):
             'fingerprint': 'str',
             'pemfilepath': 'str',
             'time_created': 'datetime',
-            'lifecycle_state': 'str'
+            'lifecycle_state': 'str',
+            'domain_ocid': 'str'
         }
 
         self.attribute_map = {
@@ -100,7 +105,8 @@ class BdsApiKey(object):
             'fingerprint': 'fingerprint',
             'pemfilepath': 'pemfilepath',
             'time_created': 'timeCreated',
-            'lifecycle_state': 'lifecycleState'
+            'lifecycle_state': 'lifecycleState',
+            'domain_ocid': 'domainOcid'
         }
 
         self._id = None
@@ -112,6 +118,7 @@ class BdsApiKey(object):
         self._pemfilepath = None
         self._time_created = None
         self._lifecycle_state = None
+        self._domain_ocid = None
 
     @property
     def id(self):
@@ -338,6 +345,30 @@ class BdsApiKey(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def domain_ocid(self):
+        """
+        Gets the domain_ocid of this BdsApiKey.
+        Identity domain OCID ,where user is present. For default domain ,this field will be optional.
+
+
+        :return: The domain_ocid of this BdsApiKey.
+        :rtype: str
+        """
+        return self._domain_ocid
+
+    @domain_ocid.setter
+    def domain_ocid(self, domain_ocid):
+        """
+        Sets the domain_ocid of this BdsApiKey.
+        Identity domain OCID ,where user is present. For default domain ,this field will be optional.
+
+
+        :param domain_ocid: The domain_ocid of this BdsApiKey.
+        :type: str
+        """
+        self._domain_ocid = domain_ocid
 
     def __repr__(self):
         return formatted_flat_dict(self)

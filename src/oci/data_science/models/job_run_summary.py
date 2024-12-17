@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class JobRunSummary(object):
     """
-    Summary information for a Job.
+    Summary information for a job run.
     """
 
     #: A constant which can be used with the lifecycle_state property of a JobRunSummary.
@@ -297,7 +297,7 @@ class JobRunSummary(object):
     def project_id(self):
         """
         **[Required]** Gets the project_id of this JobRunSummary.
-        The `OCID`__ of the project to associate the job with.
+        The `OCID`__ of the project to associate the job run with.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -311,7 +311,7 @@ class JobRunSummary(object):
     def project_id(self, project_id):
         """
         Sets the project_id of this JobRunSummary.
-        The `OCID`__ of the project to associate the job with.
+        The `OCID`__ of the project to associate the job run with.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -325,7 +325,7 @@ class JobRunSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this JobRunSummary.
-        The `OCID`__ of the compartment where you want to create the job.
+        The `OCID`__ of the compartment where you want to create the job run.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -339,7 +339,7 @@ class JobRunSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this JobRunSummary.
-        The `OCID`__ of the compartment where you want to create the job.
+        The `OCID`__ of the compartment where you want to create the job run.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -353,7 +353,7 @@ class JobRunSummary(object):
     def job_id(self):
         """
         **[Required]** Gets the job_id of this JobRunSummary.
-        The `OCID`__ of the job run.
+        The `OCID`__ of the job.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -367,7 +367,7 @@ class JobRunSummary(object):
     def job_id(self, job_id):
         """
         Sets the job_id of this JobRunSummary.
-        The `OCID`__ of the job run.
+        The `OCID`__ of the job.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -405,7 +405,7 @@ class JobRunSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this JobRunSummary.
-        The state of the job.
+        The state of the job run.
 
         Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "DELETED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -420,7 +420,7 @@ class JobRunSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this JobRunSummary.
-        The state of the job.
+        The state of the job run.
 
 
         :param lifecycle_state: The lifecycle_state of this JobRunSummary.

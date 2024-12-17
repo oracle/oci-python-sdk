@@ -22,7 +22,6 @@ import os
 # * Retries on the following exception types:-
 #
 #      - timeouts and connection errors
-#      - HTTP 409/IncorrectState, 429s (throttles)
 #      - Any HTTP 5xx except 501
 DEFAULT_FEDERATION_CLIENT_RETRY_STRATEGY = RetryStrategyBuilder() \
     .add_max_attempts(max_attempts=3) \

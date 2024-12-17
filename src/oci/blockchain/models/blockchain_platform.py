@@ -47,6 +47,18 @@ class BlockchainPlatform(object):
     #: This constant has a value of "ENTERPRISE_CUSTOM"
     COMPUTE_SHAPE_ENTERPRISE_CUSTOM = "ENTERPRISE_CUSTOM"
 
+    #: A constant which can be used with the compute_shape property of a BlockchainPlatform.
+    #: This constant has a value of "DIGITAL_ASSETS_MEDIUM"
+    COMPUTE_SHAPE_DIGITAL_ASSETS_MEDIUM = "DIGITAL_ASSETS_MEDIUM"
+
+    #: A constant which can be used with the compute_shape property of a BlockchainPlatform.
+    #: This constant has a value of "DIGITAL_ASSETS_LARGE"
+    COMPUTE_SHAPE_DIGITAL_ASSETS_LARGE = "DIGITAL_ASSETS_LARGE"
+
+    #: A constant which can be used with the compute_shape property of a BlockchainPlatform.
+    #: This constant has a value of "DIGITAL_ASSETS_EXTRA_LARGE"
+    COMPUTE_SHAPE_DIGITAL_ASSETS_EXTRA_LARGE = "DIGITAL_ASSETS_EXTRA_LARGE"
+
     #: A constant which can be used with the platform_shape_type property of a BlockchainPlatform.
     #: This constant has a value of "DEFAULT"
     PLATFORM_SHAPE_TYPE_DEFAULT = "DEFAULT"
@@ -144,7 +156,7 @@ class BlockchainPlatform(object):
 
         :param compute_shape:
             The value to assign to the compute_shape property of this BlockchainPlatform.
-            Allowed values for this property are: "STANDARD", "ENTERPRISE_SMALL", "ENTERPRISE_MEDIUM", "ENTERPRISE_LARGE", "ENTERPRISE_EXTRA_LARGE", "ENTERPRISE_CUSTOM", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "STANDARD", "ENTERPRISE_SMALL", "ENTERPRISE_MEDIUM", "ENTERPRISE_LARGE", "ENTERPRISE_EXTRA_LARGE", "ENTERPRISE_CUSTOM", "DIGITAL_ASSETS_MEDIUM", "DIGITAL_ASSETS_LARGE", "DIGITAL_ASSETS_EXTRA_LARGE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type compute_shape: str
 
@@ -543,9 +555,9 @@ class BlockchainPlatform(object):
     def compute_shape(self):
         """
         **[Required]** Gets the compute_shape of this BlockchainPlatform.
-        Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
+        Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM or DIGITAL_ASSETS_MEDIUM or DIGITAL_ASSETS_LARGE or DIGITAL_ASSETS_EXTRA_LARGE
 
-        Allowed values for this property are: "STANDARD", "ENTERPRISE_SMALL", "ENTERPRISE_MEDIUM", "ENTERPRISE_LARGE", "ENTERPRISE_EXTRA_LARGE", "ENTERPRISE_CUSTOM", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STANDARD", "ENTERPRISE_SMALL", "ENTERPRISE_MEDIUM", "ENTERPRISE_LARGE", "ENTERPRISE_EXTRA_LARGE", "ENTERPRISE_CUSTOM", "DIGITAL_ASSETS_MEDIUM", "DIGITAL_ASSETS_LARGE", "DIGITAL_ASSETS_EXTRA_LARGE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -558,13 +570,13 @@ class BlockchainPlatform(object):
     def compute_shape(self, compute_shape):
         """
         Sets the compute_shape of this BlockchainPlatform.
-        Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
+        Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM or DIGITAL_ASSETS_MEDIUM or DIGITAL_ASSETS_LARGE or DIGITAL_ASSETS_EXTRA_LARGE
 
 
         :param compute_shape: The compute_shape of this BlockchainPlatform.
         :type: str
         """
-        allowed_values = ["STANDARD", "ENTERPRISE_SMALL", "ENTERPRISE_MEDIUM", "ENTERPRISE_LARGE", "ENTERPRISE_EXTRA_LARGE", "ENTERPRISE_CUSTOM"]
+        allowed_values = ["STANDARD", "ENTERPRISE_SMALL", "ENTERPRISE_MEDIUM", "ENTERPRISE_LARGE", "ENTERPRISE_EXTRA_LARGE", "ENTERPRISE_CUSTOM", "DIGITAL_ASSETS_MEDIUM", "DIGITAL_ASSETS_LARGE", "DIGITAL_ASSETS_EXTRA_LARGE"]
         if not value_allowed_none_or_none_sentinel(compute_shape, allowed_values):
             compute_shape = 'UNKNOWN_ENUM_VALUE'
         self._compute_shape = compute_shape

@@ -29,8 +29,10 @@ from .asset_summary import AssetSummary
 from .aws_asset_source import AwsAssetSource
 from .aws_asset_source_summary import AwsAssetSourceSummary
 from .aws_ebs_asset import AwsEbsAsset
+from .aws_ebs_asset_details import AwsEbsAssetDetails
 from .aws_ebs_properties import AwsEbsProperties
 from .aws_ec2_asset import AwsEc2Asset
+from .aws_ec2_asset_details import AwsEc2AssetDetails
 from .aws_ec2_properties import AwsEc2Properties
 from .change_agent_compartment_details import ChangeAgentCompartmentDetails
 from .change_agent_dependency_compartment_details import ChangeAgentDependencyCompartmentDetails
@@ -98,6 +100,7 @@ from .update_aws_ec2_asset_details import UpdateAwsEc2AssetDetails
 from .update_discovery_schedule_details import UpdateDiscoveryScheduleDetails
 from .update_environment_details import UpdateEnvironmentDetails
 from .update_inventory_details import UpdateInventoryDetails
+from .update_plugin_details import UpdatePluginDetails
 from .update_vm_asset_details import UpdateVmAssetDetails
 from .update_vm_ware_asset_source_details import UpdateVmWareAssetSourceDetails
 from .update_vmware_vm_asset_details import UpdateVmwareVmAssetDetails
@@ -143,8 +146,10 @@ cloud_bridge_type_mapping = {
     "AwsAssetSource": AwsAssetSource,
     "AwsAssetSourceSummary": AwsAssetSourceSummary,
     "AwsEbsAsset": AwsEbsAsset,
+    "AwsEbsAssetDetails": AwsEbsAssetDetails,
     "AwsEbsProperties": AwsEbsProperties,
     "AwsEc2Asset": AwsEc2Asset,
+    "AwsEc2AssetDetails": AwsEc2AssetDetails,
     "AwsEc2Properties": AwsEc2Properties,
     "ChangeAgentCompartmentDetails": ChangeAgentCompartmentDetails,
     "ChangeAgentDependencyCompartmentDetails": ChangeAgentDependencyCompartmentDetails,
@@ -212,6 +217,7 @@ cloud_bridge_type_mapping = {
     "UpdateDiscoveryScheduleDetails": UpdateDiscoveryScheduleDetails,
     "UpdateEnvironmentDetails": UpdateEnvironmentDetails,
     "UpdateInventoryDetails": UpdateInventoryDetails,
+    "UpdatePluginDetails": UpdatePluginDetails,
     "UpdateVmAssetDetails": UpdateVmAssetDetails,
     "UpdateVmWareAssetSourceDetails": UpdateVmWareAssetSourceDetails,
     "UpdateVmwareVmAssetDetails": UpdateVmwareVmAssetDetails,

@@ -7,6 +7,8 @@
 from __future__ import absolute_import
 
 from .activate_bds_metastore_configuration_details import ActivateBdsMetastoreConfigurationDetails
+from .activate_iam_user_sync_configuration_details import ActivateIamUserSyncConfigurationDetails
+from .activate_upst_configuration_details import ActivateUpstConfigurationDetails
 from .add_auto_scale_policy_details import AddAutoScalePolicyDetails
 from .add_auto_scaling_configuration_details import AddAutoScalingConfigurationDetails
 from .add_block_storage_details import AddBlockStorageDetails
@@ -30,6 +32,7 @@ from .batching_based_odh_patching_config import BatchingBasedOdhPatchingConfig
 from .batching_based_patching_configs import BatchingBasedPatchingConfigs
 from .bds_api_key import BdsApiKey
 from .bds_api_key_summary import BdsApiKeySummary
+from .bds_cluster_version_summary import BdsClusterVersionSummary
 from .bds_instance import BdsInstance
 from .bds_instance_summary import BdsInstanceSummary
 from .bds_metastore_configuration import BdsMetastoreConfiguration
@@ -44,12 +47,15 @@ from .cluster_details import ClusterDetails
 from .create_bds_api_key_details import CreateBdsApiKeyDetails
 from .create_bds_instance_details import CreateBdsInstanceDetails
 from .create_bds_metastore_configuration_details import CreateBdsMetastoreConfigurationDetails
+from .create_identity_configuration_details import CreateIdentityConfigurationDetails
 from .create_node_backup_configuration_details import CreateNodeBackupConfigurationDetails
 from .create_node_details import CreateNodeDetails
 from .create_node_replace_configuration_details import CreateNodeReplaceConfigurationDetails
 from .create_resource_principal_configuration_details import CreateResourcePrincipalConfigurationDetails
 from .day_based_horizontal_scaling_schedule_details import DayBasedHorizontalScalingScheduleDetails
 from .day_based_vertical_scaling_schedule_details import DayBasedVerticalScalingScheduleDetails
+from .deactivate_iam_user_sync_configuration_details import DeactivateIamUserSyncConfigurationDetails
+from .deactivate_upst_configuration_details import DeactivateUpstConfigurationDetails
 from .default_error import DefaultError
 from .disable_certificate_details import DisableCertificateDetails
 from .domain_based_odh_patching_config import DomainBasedOdhPatchingConfig
@@ -62,6 +68,10 @@ from .force_refresh_resource_principal_details import ForceRefreshResourcePrinci
 from .horizontal_scaling_schedule_details import HorizontalScalingScheduleDetails
 from .host_cert_details import HostCertDetails
 from .host_specific_certificate_details import HostSpecificCertificateDetails
+from .iam_user_sync_configuration import IamUserSyncConfiguration
+from .iam_user_sync_configuration_details import IamUserSyncConfigurationDetails
+from .identity_configuration import IdentityConfiguration
+from .identity_configuration_summary import IdentityConfigurationSummary
 from .install_os_patch_details import InstallOsPatchDetails
 from .install_patch_details import InstallPatchDetails
 from .kerberos_details import KerberosDetails
@@ -83,6 +93,7 @@ from .node_level_details import NodeLevelDetails
 from .node_replace_configuration import NodeReplaceConfiguration
 from .node_replace_configuration_summary import NodeReplaceConfigurationSummary
 from .node_type_level_details import NodeTypeLevelDetails
+from .node_type_shape_config import NodeTypeShapeConfig
 from .odh_patching_config import OdhPatchingConfig
 from .os_patch_details import OsPatchDetails
 from .os_patch_package_summary import OsPatchPackageSummary
@@ -90,6 +101,8 @@ from .os_patch_summary import OsPatchSummary
 from .patch_history_summary import PatchHistorySummary
 from .patch_summary import PatchSummary
 from .patching_configs import PatchingConfigs
+from .refresh_confidential_application_details import RefreshConfidentialApplicationDetails
+from .refresh_upst_token_exchange_keytab_details import RefreshUpstTokenExchangeKeytabDetails
 from .remove_auto_scaling_configuration_details import RemoveAutoScalingConfigurationDetails
 from .remove_cloud_sql_details import RemoveCloudSqlDetails
 from .remove_kafka_details import RemoveKafkaDetails
@@ -105,6 +118,7 @@ from .schedule_based_horizontal_scaling_policy_details import ScheduleBasedHoriz
 from .schedule_based_vertical_scaling_policy_details import ScheduleBasedVerticalScalingPolicyDetails
 from .shape_config_details import ShapeConfigDetails
 from .start_bds_instance_details import StartBdsInstanceDetails
+from .start_cluster_shape_configs import StartClusterShapeConfigs
 from .stop_bds_instance_details import StopBdsInstanceDetails
 from .test_bds_metastore_configuration_details import TestBdsMetastoreConfigurationDetails
 from .test_bds_object_storage_connection_details import TestBdsObjectStorageConnectionDetails
@@ -114,6 +128,7 @@ from .update_auto_scale_policy_details import UpdateAutoScalePolicyDetails
 from .update_auto_scaling_configuration_details import UpdateAutoScalingConfigurationDetails
 from .update_bds_instance_details import UpdateBdsInstanceDetails
 from .update_bds_metastore_configuration_details import UpdateBdsMetastoreConfigurationDetails
+from .update_identity_configuration_details import UpdateIdentityConfigurationDetails
 from .update_metric_based_horizontal_scaling_policy_details import UpdateMetricBasedHorizontalScalingPolicyDetails
 from .update_metric_based_vertical_scaling_policy_details import UpdateMetricBasedVerticalScalingPolicyDetails
 from .update_node_backup_configuration_details import UpdateNodeBackupConfigurationDetails
@@ -121,6 +136,8 @@ from .update_node_replace_configuration_details import UpdateNodeReplaceConfigur
 from .update_resource_principal_configuration_details import UpdateResourcePrincipalConfigurationDetails
 from .update_schedule_based_horizontal_scaling_policy_details import UpdateScheduleBasedHorizontalScalingPolicyDetails
 from .update_schedule_based_vertical_scaling_policy_details import UpdateScheduleBasedVerticalScalingPolicyDetails
+from .upst_configuration import UpstConfiguration
+from .upst_configuration_details import UpstConfigurationDetails
 from .vertical_scaling_schedule_details import VerticalScalingScheduleDetails
 from .volume_attachment_detail import VolumeAttachmentDetail
 from .work_request import WorkRequest
@@ -131,6 +148,8 @@ from .work_request_resource import WorkRequestResource
 # Maps type names to classes for bds services.
 bds_type_mapping = {
     "ActivateBdsMetastoreConfigurationDetails": ActivateBdsMetastoreConfigurationDetails,
+    "ActivateIamUserSyncConfigurationDetails": ActivateIamUserSyncConfigurationDetails,
+    "ActivateUpstConfigurationDetails": ActivateUpstConfigurationDetails,
     "AddAutoScalePolicyDetails": AddAutoScalePolicyDetails,
     "AddAutoScalingConfigurationDetails": AddAutoScalingConfigurationDetails,
     "AddBlockStorageDetails": AddBlockStorageDetails,
@@ -154,6 +173,7 @@ bds_type_mapping = {
     "BatchingBasedPatchingConfigs": BatchingBasedPatchingConfigs,
     "BdsApiKey": BdsApiKey,
     "BdsApiKeySummary": BdsApiKeySummary,
+    "BdsClusterVersionSummary": BdsClusterVersionSummary,
     "BdsInstance": BdsInstance,
     "BdsInstanceSummary": BdsInstanceSummary,
     "BdsMetastoreConfiguration": BdsMetastoreConfiguration,
@@ -168,12 +188,15 @@ bds_type_mapping = {
     "CreateBdsApiKeyDetails": CreateBdsApiKeyDetails,
     "CreateBdsInstanceDetails": CreateBdsInstanceDetails,
     "CreateBdsMetastoreConfigurationDetails": CreateBdsMetastoreConfigurationDetails,
+    "CreateIdentityConfigurationDetails": CreateIdentityConfigurationDetails,
     "CreateNodeBackupConfigurationDetails": CreateNodeBackupConfigurationDetails,
     "CreateNodeDetails": CreateNodeDetails,
     "CreateNodeReplaceConfigurationDetails": CreateNodeReplaceConfigurationDetails,
     "CreateResourcePrincipalConfigurationDetails": CreateResourcePrincipalConfigurationDetails,
     "DayBasedHorizontalScalingScheduleDetails": DayBasedHorizontalScalingScheduleDetails,
     "DayBasedVerticalScalingScheduleDetails": DayBasedVerticalScalingScheduleDetails,
+    "DeactivateIamUserSyncConfigurationDetails": DeactivateIamUserSyncConfigurationDetails,
+    "DeactivateUpstConfigurationDetails": DeactivateUpstConfigurationDetails,
     "DefaultError": DefaultError,
     "DisableCertificateDetails": DisableCertificateDetails,
     "DomainBasedOdhPatchingConfig": DomainBasedOdhPatchingConfig,
@@ -186,6 +209,10 @@ bds_type_mapping = {
     "HorizontalScalingScheduleDetails": HorizontalScalingScheduleDetails,
     "HostCertDetails": HostCertDetails,
     "HostSpecificCertificateDetails": HostSpecificCertificateDetails,
+    "IamUserSyncConfiguration": IamUserSyncConfiguration,
+    "IamUserSyncConfigurationDetails": IamUserSyncConfigurationDetails,
+    "IdentityConfiguration": IdentityConfiguration,
+    "IdentityConfigurationSummary": IdentityConfigurationSummary,
     "InstallOsPatchDetails": InstallOsPatchDetails,
     "InstallPatchDetails": InstallPatchDetails,
     "KerberosDetails": KerberosDetails,
@@ -207,6 +234,7 @@ bds_type_mapping = {
     "NodeReplaceConfiguration": NodeReplaceConfiguration,
     "NodeReplaceConfigurationSummary": NodeReplaceConfigurationSummary,
     "NodeTypeLevelDetails": NodeTypeLevelDetails,
+    "NodeTypeShapeConfig": NodeTypeShapeConfig,
     "OdhPatchingConfig": OdhPatchingConfig,
     "OsPatchDetails": OsPatchDetails,
     "OsPatchPackageSummary": OsPatchPackageSummary,
@@ -214,6 +242,8 @@ bds_type_mapping = {
     "PatchHistorySummary": PatchHistorySummary,
     "PatchSummary": PatchSummary,
     "PatchingConfigs": PatchingConfigs,
+    "RefreshConfidentialApplicationDetails": RefreshConfidentialApplicationDetails,
+    "RefreshUpstTokenExchangeKeytabDetails": RefreshUpstTokenExchangeKeytabDetails,
     "RemoveAutoScalingConfigurationDetails": RemoveAutoScalingConfigurationDetails,
     "RemoveCloudSqlDetails": RemoveCloudSqlDetails,
     "RemoveKafkaDetails": RemoveKafkaDetails,
@@ -229,6 +259,7 @@ bds_type_mapping = {
     "ScheduleBasedVerticalScalingPolicyDetails": ScheduleBasedVerticalScalingPolicyDetails,
     "ShapeConfigDetails": ShapeConfigDetails,
     "StartBdsInstanceDetails": StartBdsInstanceDetails,
+    "StartClusterShapeConfigs": StartClusterShapeConfigs,
     "StopBdsInstanceDetails": StopBdsInstanceDetails,
     "TestBdsMetastoreConfigurationDetails": TestBdsMetastoreConfigurationDetails,
     "TestBdsObjectStorageConnectionDetails": TestBdsObjectStorageConnectionDetails,
@@ -238,6 +269,7 @@ bds_type_mapping = {
     "UpdateAutoScalingConfigurationDetails": UpdateAutoScalingConfigurationDetails,
     "UpdateBdsInstanceDetails": UpdateBdsInstanceDetails,
     "UpdateBdsMetastoreConfigurationDetails": UpdateBdsMetastoreConfigurationDetails,
+    "UpdateIdentityConfigurationDetails": UpdateIdentityConfigurationDetails,
     "UpdateMetricBasedHorizontalScalingPolicyDetails": UpdateMetricBasedHorizontalScalingPolicyDetails,
     "UpdateMetricBasedVerticalScalingPolicyDetails": UpdateMetricBasedVerticalScalingPolicyDetails,
     "UpdateNodeBackupConfigurationDetails": UpdateNodeBackupConfigurationDetails,
@@ -245,6 +277,8 @@ bds_type_mapping = {
     "UpdateResourcePrincipalConfigurationDetails": UpdateResourcePrincipalConfigurationDetails,
     "UpdateScheduleBasedHorizontalScalingPolicyDetails": UpdateScheduleBasedHorizontalScalingPolicyDetails,
     "UpdateScheduleBasedVerticalScalingPolicyDetails": UpdateScheduleBasedVerticalScalingPolicyDetails,
+    "UpstConfiguration": UpstConfiguration,
+    "UpstConfigurationDetails": UpstConfigurationDetails,
     "VerticalScalingScheduleDetails": VerticalScalingScheduleDetails,
     "VolumeAttachmentDetail": VolumeAttachmentDetail,
     "WorkRequest": WorkRequest,

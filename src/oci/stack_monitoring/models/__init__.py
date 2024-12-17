@@ -58,6 +58,9 @@ from .enabled_resource_details import EnabledResourceDetails
 from .encrypted_credentials import EncryptedCredentials
 from .evaluate_baselineable_metric_details import EvaluateBaselineableMetricDetails
 from .evaluate_baselineable_metric_result import EvaluateBaselineableMetricResult
+from .http_query_properties import HttpQueryProperties
+from .http_script_file_details import HttpScriptFileDetails
+from .http_update_query_properties import HttpUpdateQueryProperties
 from .import_oci_telemetry_resources_task_details import ImportOciTelemetryResourcesTaskDetails
 from .jmx_query_properties import JmxQueryProperties
 from .jmx_update_query_properties import JmxUpdateQueryProperties
@@ -130,6 +133,7 @@ from .update_and_propagate_tags_details import UpdateAndPropagateTagsDetails
 from .update_auto_promote_config_details import UpdateAutoPromoteConfigDetails
 from .update_baselineable_metric_details import UpdateBaselineableMetricDetails
 from .update_config_details import UpdateConfigDetails
+from .update_http_script_file_details import UpdateHttpScriptFileDetails
 from .update_license_auto_assign_config_details import UpdateLicenseAutoAssignConfigDetails
 from .update_license_enterprise_extensibility_config_details import UpdateLicenseEnterpriseExtensibilityConfigDetails
 from .update_maintenance_window_details import UpdateMaintenanceWindowDetails
@@ -201,6 +205,9 @@ stack_monitoring_type_mapping = {
     "EncryptedCredentials": EncryptedCredentials,
     "EvaluateBaselineableMetricDetails": EvaluateBaselineableMetricDetails,
     "EvaluateBaselineableMetricResult": EvaluateBaselineableMetricResult,
+    "HttpQueryProperties": HttpQueryProperties,
+    "HttpScriptFileDetails": HttpScriptFileDetails,
+    "HttpUpdateQueryProperties": HttpUpdateQueryProperties,
     "ImportOciTelemetryResourcesTaskDetails": ImportOciTelemetryResourcesTaskDetails,
     "JmxQueryProperties": JmxQueryProperties,
     "JmxUpdateQueryProperties": JmxUpdateQueryProperties,
@@ -273,6 +280,7 @@ stack_monitoring_type_mapping = {
     "UpdateAutoPromoteConfigDetails": UpdateAutoPromoteConfigDetails,
     "UpdateBaselineableMetricDetails": UpdateBaselineableMetricDetails,
     "UpdateConfigDetails": UpdateConfigDetails,
+    "UpdateHttpScriptFileDetails": UpdateHttpScriptFileDetails,
     "UpdateLicenseAutoAssignConfigDetails": UpdateLicenseAutoAssignConfigDetails,
     "UpdateLicenseEnterpriseExtensibilityConfigDetails": UpdateLicenseEnterpriseExtensibilityConfigDetails,
     "UpdateMaintenanceWindowDetails": UpdateMaintenanceWindowDetails,

@@ -12,8 +12,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class KnowledgeBaseSummary(object):
     """
-    **KnowledgeBaseSummary**
-
     Summary information about a knowledge base.
     """
 

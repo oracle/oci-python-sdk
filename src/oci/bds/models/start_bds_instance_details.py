@@ -24,16 +24,23 @@ class StartBdsInstanceDetails(object):
             The value to assign to the cluster_admin_password property of this StartBdsInstanceDetails.
         :type cluster_admin_password: str
 
+        :param start_cluster_shape_configs:
+            The value to assign to the start_cluster_shape_configs property of this StartBdsInstanceDetails.
+        :type start_cluster_shape_configs: oci.bds.models.StartClusterShapeConfigs
+
         """
         self.swagger_types = {
-            'cluster_admin_password': 'str'
+            'cluster_admin_password': 'str',
+            'start_cluster_shape_configs': 'StartClusterShapeConfigs'
         }
 
         self.attribute_map = {
-            'cluster_admin_password': 'clusterAdminPassword'
+            'cluster_admin_password': 'clusterAdminPassword',
+            'start_cluster_shape_configs': 'startClusterShapeConfigs'
         }
 
         self._cluster_admin_password = None
+        self._start_cluster_shape_configs = None
 
     @property
     def cluster_admin_password(self):
@@ -58,6 +65,26 @@ class StartBdsInstanceDetails(object):
         :type: str
         """
         self._cluster_admin_password = cluster_admin_password
+
+    @property
+    def start_cluster_shape_configs(self):
+        """
+        Gets the start_cluster_shape_configs of this StartBdsInstanceDetails.
+
+        :return: The start_cluster_shape_configs of this StartBdsInstanceDetails.
+        :rtype: oci.bds.models.StartClusterShapeConfigs
+        """
+        return self._start_cluster_shape_configs
+
+    @start_cluster_shape_configs.setter
+    def start_cluster_shape_configs(self, start_cluster_shape_configs):
+        """
+        Sets the start_cluster_shape_configs of this StartBdsInstanceDetails.
+
+        :param start_cluster_shape_configs: The start_cluster_shape_configs of this StartBdsInstanceDetails.
+        :type: oci.bds.models.StartClusterShapeConfigs
+        """
+        self._start_cluster_shape_configs = start_cluster_shape_configs
 
     def __repr__(self):
         return formatted_flat_dict(self)

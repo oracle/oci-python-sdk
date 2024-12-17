@@ -70,7 +70,7 @@ class MonthlyCostSummary(object):
     def currency_code(self):
         """
         **[Required]** Gets the currency_code of this MonthlyCostSummary.
-        Currency code as defined by ISO-4217.
+        Currency code
 
 
         :return: The currency_code of this MonthlyCostSummary.
@@ -82,7 +82,7 @@ class MonthlyCostSummary(object):
     def currency_code(self, currency_code):
         """
         Sets the currency_code of this MonthlyCostSummary.
-        Currency code as defined by ISO-4217.
+        Currency code
 
 
         :param currency_code: The currency_code of this MonthlyCostSummary.
