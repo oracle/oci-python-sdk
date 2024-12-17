@@ -12,8 +12,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OciDatabaseConfig(IndexConfig):
     """
-    **OciDatabaseConfig**
-
     The details of the customer Database Connection.
     """
 

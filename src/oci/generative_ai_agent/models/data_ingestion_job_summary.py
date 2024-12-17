@@ -12,8 +12,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataIngestionJobSummary(object):
     """
-    **DataIngestionJobSummary**
-
     Summary information about a data ingestion job.
     """
 

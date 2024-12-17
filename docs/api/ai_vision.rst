@@ -22,6 +22,7 @@ Ai Vision
     oci.ai_vision.models.AnalyzeDocumentResult
     oci.ai_vision.models.AnalyzeImageDetails
     oci.ai_vision.models.AnalyzeImageResult
+    oci.ai_vision.models.AnalyzeVideoResult
     oci.ai_vision.models.BoundingPolygon
     oci.ai_vision.models.Cell
     oci.ai_vision.models.ChangeModelCompartmentDetails
@@ -30,6 +31,7 @@ Ai Vision
     oci.ai_vision.models.CreateImageJobDetails
     oci.ai_vision.models.CreateModelDetails
     oci.ai_vision.models.CreateProjectDetails
+    oci.ai_vision.models.CreateVideoJobDetails
     oci.ai_vision.models.DataScienceLabelingDataset
     oci.ai_vision.models.Dataset
     oci.ai_vision.models.DetectedDocumentType
@@ -70,6 +72,7 @@ Ai Vision
     oci.ai_vision.models.NormalizedVertex
     oci.ai_vision.models.ObjectListInlineInputLocation
     oci.ai_vision.models.ObjectLocation
+    oci.ai_vision.models.ObjectProperty
     oci.ai_vision.models.ObjectStorageDataset
     oci.ai_vision.models.ObjectStorageDocumentDetails
     oci.ai_vision.models.ObjectStorageImageDetails
@@ -91,6 +94,30 @@ Ai Vision
     oci.ai_vision.models.ValuePhoneNumber
     oci.ai_vision.models.ValueString
     oci.ai_vision.models.ValueTime
+    oci.ai_vision.models.VideoFace
+    oci.ai_vision.models.VideoFaceDetectionFeature
+    oci.ai_vision.models.VideoFaceFrame
+    oci.ai_vision.models.VideoFaceSegment
+    oci.ai_vision.models.VideoFeature
+    oci.ai_vision.models.VideoJob
+    oci.ai_vision.models.VideoLabel
+    oci.ai_vision.models.VideoLabelDetectionFeature
+    oci.ai_vision.models.VideoLabelSegment
+    oci.ai_vision.models.VideoMetadata
+    oci.ai_vision.models.VideoObject
+    oci.ai_vision.models.VideoObjectDetectionFeature
+    oci.ai_vision.models.VideoObjectFrame
+    oci.ai_vision.models.VideoObjectSegment
+    oci.ai_vision.models.VideoObjectTrackingFeature
+    oci.ai_vision.models.VideoSegment
+    oci.ai_vision.models.VideoText
+    oci.ai_vision.models.VideoTextDetectionFeature
+    oci.ai_vision.models.VideoTextFrame
+    oci.ai_vision.models.VideoTextSegment
+    oci.ai_vision.models.VideoTrackedObject
+    oci.ai_vision.models.VideoTrackedObjectProperties
+    oci.ai_vision.models.VideoTrackedObjectSegment
+    oci.ai_vision.models.VideoTrackingFrame
     oci.ai_vision.models.Word
     oci.ai_vision.models.WorkRequest
     oci.ai_vision.models.WorkRequestError

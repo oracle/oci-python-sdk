@@ -12,8 +12,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataSourceConfig(object):
     """
-    **DataSourceConfig**
-
     The details of data source.
     """
 
@@ -30,6 +28,10 @@ class DataSourceConfig(object):
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param should_enable_multi_modality:
+            The value to assign to the should_enable_multi_modality property of this DataSourceConfig.
+        :type should_enable_multi_modality: bool
+
         :param data_source_config_type:
             The value to assign to the data_source_config_type property of this DataSourceConfig.
             Allowed values for this property are: "OCI_OBJECT_STORAGE", 'UNKNOWN_ENUM_VALUE'.
@@ -38,13 +40,16 @@ class DataSourceConfig(object):
 
         """
         self.swagger_types = {
+            'should_enable_multi_modality': 'bool',
             'data_source_config_type': 'str'
         }
 
         self.attribute_map = {
+            'should_enable_multi_modality': 'shouldEnableMultiModality',
             'data_source_config_type': 'dataSourceConfigType'
         }
 
+        self._should_enable_multi_modality = None
         self._data_source_config_type = None
 
     @staticmethod
@@ -59,6 +64,30 @@ class DataSourceConfig(object):
             return 'OciObjectStorageDataSourceConfig'
         else:
             return 'DataSourceConfig'
+
+    @property
+    def should_enable_multi_modality(self):
+        """
+        Gets the should_enable_multi_modality of this DataSourceConfig.
+        Flag to enable or disable multi modality such as image processing while ingestion of data. True enable the processing and false exclude the multi modality contents during ingestion.
+
+
+        :return: The should_enable_multi_modality of this DataSourceConfig.
+        :rtype: bool
+        """
+        return self._should_enable_multi_modality
+
+    @should_enable_multi_modality.setter
+    def should_enable_multi_modality(self, should_enable_multi_modality):
+        """
+        Sets the should_enable_multi_modality of this DataSourceConfig.
+        Flag to enable or disable multi modality such as image processing while ingestion of data. True enable the processing and false exclude the multi modality contents during ingestion.
+
+
+        :param should_enable_multi_modality: The should_enable_multi_modality of this DataSourceConfig.
+        :type: bool
+        """
+        self._should_enable_multi_modality = should_enable_multi_modality
 
     @property
     def data_source_config_type(self):

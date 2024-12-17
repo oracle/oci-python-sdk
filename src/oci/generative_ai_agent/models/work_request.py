@@ -12,8 +12,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequest(object):
     """
-    **WorkRequest**
-
     An asynchronous work request. Work requests help you monitor long-running operations. When you start a long-running operation,
     the service creates a work request. A work request is an activity log that lets you track each step in the operation's
     progress. Each work request has an OCID that lets you interact with it programmatically and use it for automation.
@@ -87,6 +85,18 @@ class WorkRequest(object):
     #: This constant has a value of "DELETE_DATA_INGESTION_JOB"
     OPERATION_TYPE_DELETE_DATA_INGESTION_JOB = "DELETE_DATA_INGESTION_JOB"
 
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_TOOL"
+    OPERATION_TYPE_CREATE_TOOL = "CREATE_TOOL"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_TOOL"
+    OPERATION_TYPE_UPDATE_TOOL = "UPDATE_TOOL"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_TOOL"
+    OPERATION_TYPE_DELETE_TOOL = "DELETE_TOOL"
+
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -126,7 +136,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "CREATE_AGENT", "UPDATE_AGENT", "DELETE_AGENT", "MOVE_AGENT", "CREATE_AGENT_ENDPOINT", "UPDATE_AGENT_ENDPOINT", "DELETE_AGENT_ENDPOINT", "MOVE_AGENT_ENDPOINT", "CREATE_DATA_SOURCE", "UPDATE_DATA_SOURCE", "DELETE_DATA_SOURCE", "CREATE_KNOWLEDGE_BASE", "UPDATE_KNOWLEDGE_BASE", "DELETE_KNOWLEDGE_BASE", "MOVE_KNOWLEDGE_BASE", "CREATE_DATA_INGESTION_JOB", "DELETE_DATA_INGESTION_JOB", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_AGENT", "UPDATE_AGENT", "DELETE_AGENT", "MOVE_AGENT", "CREATE_AGENT_ENDPOINT", "UPDATE_AGENT_ENDPOINT", "DELETE_AGENT_ENDPOINT", "MOVE_AGENT_ENDPOINT", "CREATE_DATA_SOURCE", "UPDATE_DATA_SOURCE", "DELETE_DATA_SOURCE", "CREATE_KNOWLEDGE_BASE", "UPDATE_KNOWLEDGE_BASE", "DELETE_KNOWLEDGE_BASE", "MOVE_KNOWLEDGE_BASE", "CREATE_DATA_INGESTION_JOB", "DELETE_DATA_INGESTION_JOB", "CREATE_TOOL", "UPDATE_TOOL", "DELETE_TOOL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -212,7 +222,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         The asynchronous operation tracked by this work request.
 
-        Allowed values for this property are: "CREATE_AGENT", "UPDATE_AGENT", "DELETE_AGENT", "MOVE_AGENT", "CREATE_AGENT_ENDPOINT", "UPDATE_AGENT_ENDPOINT", "DELETE_AGENT_ENDPOINT", "MOVE_AGENT_ENDPOINT", "CREATE_DATA_SOURCE", "UPDATE_DATA_SOURCE", "DELETE_DATA_SOURCE", "CREATE_KNOWLEDGE_BASE", "UPDATE_KNOWLEDGE_BASE", "DELETE_KNOWLEDGE_BASE", "MOVE_KNOWLEDGE_BASE", "CREATE_DATA_INGESTION_JOB", "DELETE_DATA_INGESTION_JOB", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_AGENT", "UPDATE_AGENT", "DELETE_AGENT", "MOVE_AGENT", "CREATE_AGENT_ENDPOINT", "UPDATE_AGENT_ENDPOINT", "DELETE_AGENT_ENDPOINT", "MOVE_AGENT_ENDPOINT", "CREATE_DATA_SOURCE", "UPDATE_DATA_SOURCE", "DELETE_DATA_SOURCE", "CREATE_KNOWLEDGE_BASE", "UPDATE_KNOWLEDGE_BASE", "DELETE_KNOWLEDGE_BASE", "MOVE_KNOWLEDGE_BASE", "CREATE_DATA_INGESTION_JOB", "DELETE_DATA_INGESTION_JOB", "CREATE_TOOL", "UPDATE_TOOL", "DELETE_TOOL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -231,7 +241,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["CREATE_AGENT", "UPDATE_AGENT", "DELETE_AGENT", "MOVE_AGENT", "CREATE_AGENT_ENDPOINT", "UPDATE_AGENT_ENDPOINT", "DELETE_AGENT_ENDPOINT", "MOVE_AGENT_ENDPOINT", "CREATE_DATA_SOURCE", "UPDATE_DATA_SOURCE", "DELETE_DATA_SOURCE", "CREATE_KNOWLEDGE_BASE", "UPDATE_KNOWLEDGE_BASE", "DELETE_KNOWLEDGE_BASE", "MOVE_KNOWLEDGE_BASE", "CREATE_DATA_INGESTION_JOB", "DELETE_DATA_INGESTION_JOB"]
+        allowed_values = ["CREATE_AGENT", "UPDATE_AGENT", "DELETE_AGENT", "MOVE_AGENT", "CREATE_AGENT_ENDPOINT", "UPDATE_AGENT_ENDPOINT", "DELETE_AGENT_ENDPOINT", "MOVE_AGENT_ENDPOINT", "CREATE_DATA_SOURCE", "UPDATE_DATA_SOURCE", "DELETE_DATA_SOURCE", "CREATE_KNOWLEDGE_BASE", "UPDATE_KNOWLEDGE_BASE", "DELETE_KNOWLEDGE_BASE", "MOVE_KNOWLEDGE_BASE", "CREATE_DATA_INGESTION_JOB", "DELETE_DATA_INGESTION_JOB", "CREATE_TOOL", "UPDATE_TOOL", "DELETE_TOOL"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

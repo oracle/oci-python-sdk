@@ -12,8 +12,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class KnowledgeBaseCollection(object):
     """
-    **KnowledgeBaseCollection**
-
     Results of a knowledge base search. Contains both KnowledgeBaseSummary items and other information, such as metadata.
     """
 

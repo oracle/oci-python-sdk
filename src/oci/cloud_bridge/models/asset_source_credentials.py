@@ -88,7 +88,7 @@ class AssetSourceCredentials(object):
         **[Required]** Gets the secret_id of this AssetSourceCredentials.
         The `OCID`__ of the secret in a vault.
         If the type of the credentials is `BASIC`, the secret must contain the username and
-        password in JSON format, which is in the form of `{ \"username\": \"<User>\", \"password\": \"<Password>\" }`.
+        password in JSON format, which is in the form of `{ \"username\": \"<User>\", \"password\": \"example-password\" }`.
         If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and
         secretAccessKey in JSON format,
         which is in the form of `{ \"accessKeyId\": \"<AccessKey>\", \"secretAccessKey\": \"<AccessKeyValue>\" }`.
@@ -107,7 +107,7 @@ class AssetSourceCredentials(object):
         Sets the secret_id of this AssetSourceCredentials.
         The `OCID`__ of the secret in a vault.
         If the type of the credentials is `BASIC`, the secret must contain the username and
-        password in JSON format, which is in the form of `{ \"username\": \"<User>\", \"password\": \"<Password>\" }`.
+        password in JSON format, which is in the form of `{ \"username\": \"<User>\", \"password\": \"example-password\" }`.
         If the type of the credentials is `API_KEY`, the secret must contain the accessKeyId and
         secretAccessKey in JSON format,
         which is in the form of `{ \"accessKeyId\": \"<AccessKey>\", \"secretAccessKey\": \"<AccessKeyValue>\" }`.

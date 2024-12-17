@@ -31,7 +31,7 @@ class SqlQueryProperties(MetricExtensionQueryProperties):
 
         :param collection_method:
             The value to assign to the collection_method property of this SqlQueryProperties.
-            Allowed values for this property are: "OS_COMMAND", "SQL", "JMX", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OS_COMMAND", "SQL", "JMX", "HTTP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type collection_method: str
 

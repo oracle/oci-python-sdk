@@ -40,13 +40,18 @@ class UpdateBdsInstanceDetails(object):
             The value to assign to the kms_key_id property of this UpdateBdsInstanceDetails.
         :type kms_key_id: str
 
+        :param network_config:
+            The value to assign to the network_config property of this UpdateBdsInstanceDetails.
+        :type network_config: oci.bds.models.NetworkConfig
+
         """
         self.swagger_types = {
             'display_name': 'str',
             'bootstrap_script_url': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'kms_key_id': 'str'
+            'kms_key_id': 'str',
+            'network_config': 'NetworkConfig'
         }
 
         self.attribute_map = {
@@ -54,7 +59,8 @@ class UpdateBdsInstanceDetails(object):
             'bootstrap_script_url': 'bootstrapScriptUrl',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'kms_key_id': 'kmsKeyId'
+            'kms_key_id': 'kmsKeyId',
+            'network_config': 'networkConfig'
         }
 
         self._display_name = None
@@ -62,6 +68,7 @@ class UpdateBdsInstanceDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._kms_key_id = None
+        self._network_config = None
 
     @property
     def display_name(self):
@@ -186,6 +193,26 @@ class UpdateBdsInstanceDetails(object):
         :type: str
         """
         self._kms_key_id = kms_key_id
+
+    @property
+    def network_config(self):
+        """
+        Gets the network_config of this UpdateBdsInstanceDetails.
+
+        :return: The network_config of this UpdateBdsInstanceDetails.
+        :rtype: oci.bds.models.NetworkConfig
+        """
+        return self._network_config
+
+    @network_config.setter
+    def network_config(self, network_config):
+        """
+        Sets the network_config of this UpdateBdsInstanceDetails.
+
+        :param network_config: The network_config of this UpdateBdsInstanceDetails.
+        :type: oci.bds.models.NetworkConfig
+        """
+        self._network_config = network_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

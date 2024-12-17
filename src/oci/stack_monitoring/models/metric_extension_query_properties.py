@@ -27,6 +27,10 @@ class MetricExtensionQueryProperties(object):
     #: This constant has a value of "JMX"
     COLLECTION_METHOD_JMX = "JMX"
 
+    #: A constant which can be used with the collection_method property of a MetricExtensionQueryProperties.
+    #: This constant has a value of "HTTP"
+    COLLECTION_METHOD_HTTP = "HTTP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MetricExtensionQueryProperties object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -35,12 +39,13 @@ class MetricExtensionQueryProperties(object):
         * :class:`~oci.stack_monitoring.models.OsCommandQueryProperties`
         * :class:`~oci.stack_monitoring.models.SqlQueryProperties`
         * :class:`~oci.stack_monitoring.models.JmxQueryProperties`
+        * :class:`~oci.stack_monitoring.models.HttpQueryProperties`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param collection_method:
             The value to assign to the collection_method property of this MetricExtensionQueryProperties.
-            Allowed values for this property are: "OS_COMMAND", "SQL", "JMX", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OS_COMMAND", "SQL", "JMX", "HTTP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type collection_method: str
 
@@ -71,6 +76,9 @@ class MetricExtensionQueryProperties(object):
 
         if type == 'JMX':
             return 'JmxQueryProperties'
+
+        if type == 'HTTP':
+            return 'HttpQueryProperties'
         else:
             return 'MetricExtensionQueryProperties'
 
@@ -80,7 +88,7 @@ class MetricExtensionQueryProperties(object):
         **[Required]** Gets the collection_method of this MetricExtensionQueryProperties.
         Type of possible collection methods.
 
-        Allowed values for this property are: "OS_COMMAND", "SQL", "JMX", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OS_COMMAND", "SQL", "JMX", "HTTP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -99,7 +107,7 @@ class MetricExtensionQueryProperties(object):
         :param collection_method: The collection_method of this MetricExtensionQueryProperties.
         :type: str
         """
-        allowed_values = ["OS_COMMAND", "SQL", "JMX"]
+        allowed_values = ["OS_COMMAND", "SQL", "JMX", "HTTP"]
         if not value_allowed_none_or_none_sentinel(collection_method, allowed_values):
             collection_method = 'UNKNOWN_ENUM_VALUE'
         self._collection_method = collection_method

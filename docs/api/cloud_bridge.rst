@@ -47,8 +47,10 @@ Cloud Bridge
     oci.cloud_bridge.models.AwsAssetSource
     oci.cloud_bridge.models.AwsAssetSourceSummary
     oci.cloud_bridge.models.AwsEbsAsset
+    oci.cloud_bridge.models.AwsEbsAssetDetails
     oci.cloud_bridge.models.AwsEbsProperties
     oci.cloud_bridge.models.AwsEc2Asset
+    oci.cloud_bridge.models.AwsEc2AssetDetails
     oci.cloud_bridge.models.AwsEc2Properties
     oci.cloud_bridge.models.ChangeAgentCompartmentDetails
     oci.cloud_bridge.models.ChangeAgentDependencyCompartmentDetails
@@ -116,6 +118,7 @@ Cloud Bridge
     oci.cloud_bridge.models.UpdateDiscoveryScheduleDetails
     oci.cloud_bridge.models.UpdateEnvironmentDetails
     oci.cloud_bridge.models.UpdateInventoryDetails
+    oci.cloud_bridge.models.UpdatePluginDetails
     oci.cloud_bridge.models.UpdateVmAssetDetails
     oci.cloud_bridge.models.UpdateVmWareAssetSourceDetails
     oci.cloud_bridge.models.UpdateVmwareVmAssetDetails

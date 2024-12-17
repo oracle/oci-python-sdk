@@ -4,6 +4,34 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.141.0 - 2024-12-17
+====================
+
+Added 
+----- 
+* Support for backup retention locks on autonomous database create and update operations in the Database service 
+* Support for multi-modality flags in data source in the Generative AI service 
+* Support for knowledge base statistics in the Generative AI service 
+* Support for document id, title and page numbers in citations in the Generative AI service 
+* Support for creating and updating Amazon Web Services (AWS) asset-sources, EC2 and Elastic Block Store (EBS) assets in the Cloud Bridge service 
+* Support for listing Amazon Web Services (AWS) regions available for discovery and migrations in the Cloud Bridge service 
+* Support for stored video analysis in the AI Vision service 
+* Support for HTTP or REST endpoint-based metric extensions in the OCI Monitoring service 
+* Support for metric extension filter in the list metric extensions operation in the OCI Monitoring service 
+* Support for creating and updating private endpoints for model deployments in the Data Science service 
+* Support for OCI Identity user integration in the Big Data service 
+* Support for user principal session tokens in the Big Data service 
+* Support for historical cluster versions in the Big Data service 
+* Support for new SKUs for digital assets editions in the Blockchain Platform service 
+* Support for Zero ETL pipelines in the GoldenGate service   
+
+Breaking 
+-------- 
+* Removed fallback to the deprecated Instance Metadata service (IMDS) V1 endpoint 
+* `INSTANCE_METADATA_URL_CERTIFICATE_RETRIEVER_RETRY_STRATEGY` was modified to do 8 retry attempts and exponential backoff with Jitter between attempts, instead of 3 fixed interval retries  
+* Parameter `compartment_id` in operation `list_metric_extensions` was removed from the `StackMonitoringClient` in the OCI Monitoring service   
+
+====================
 2.140.0 - 2024-12-10
 ====================
 

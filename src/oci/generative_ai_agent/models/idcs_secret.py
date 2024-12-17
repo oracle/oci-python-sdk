@@ -12,8 +12,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class IdcsSecret(SecretDetail):
     """
-    **IdcsSecret**
-
     The details of IDCS configured as OpenID setting in OpenSearch.
     """
 

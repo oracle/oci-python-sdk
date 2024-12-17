@@ -23,6 +23,10 @@ class SqlOutParamDetails(object):
     #: This constant has a value of "ARRAY"
     OUT_PARAM_TYPE_ARRAY = "ARRAY"
 
+    #: A constant which can be used with the out_param_type property of a SqlOutParamDetails.
+    #: This constant has a value of "NO_OUT_PARAM"
+    OUT_PARAM_TYPE_NO_OUT_PARAM = "NO_OUT_PARAM"
+
     def __init__(self, **kwargs):
         """
         Initializes a new SqlOutParamDetails object with values from keyword arguments.
@@ -34,29 +38,36 @@ class SqlOutParamDetails(object):
 
         :param out_param_type:
             The value to assign to the out_param_type property of this SqlOutParamDetails.
-            Allowed values for this property are: "SQL_CURSOR", "ARRAY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SQL_CURSOR", "ARRAY", "NO_OUT_PARAM", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type out_param_type: str
+
+        :param out_param_name:
+            The value to assign to the out_param_name property of this SqlOutParamDetails.
+        :type out_param_name: str
 
         """
         self.swagger_types = {
             'out_param_position': 'int',
-            'out_param_type': 'str'
+            'out_param_type': 'str',
+            'out_param_name': 'str'
         }
 
         self.attribute_map = {
             'out_param_position': 'outParamPosition',
-            'out_param_type': 'outParamType'
+            'out_param_type': 'outParamType',
+            'out_param_name': 'outParamName'
         }
 
         self._out_param_position = None
         self._out_param_type = None
+        self._out_param_name = None
 
     @property
     def out_param_position(self):
         """
         **[Required]** Gets the out_param_position of this SqlOutParamDetails.
-        Position of PL/SQL procedure OUT parameter
+        Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if \"outParamType\" is set to NO_OUT_PARAM value.
 
 
         :return: The out_param_position of this SqlOutParamDetails.
@@ -68,7 +79,7 @@ class SqlOutParamDetails(object):
     def out_param_position(self, out_param_position):
         """
         Sets the out_param_position of this SqlOutParamDetails.
-        Position of PL/SQL procedure OUT parameter
+        Position of PL/SQL procedure OUT parameter. The value of this property is ignored during update, if \"outParamType\" is set to NO_OUT_PARAM value.
 
 
         :param out_param_position: The out_param_position of this SqlOutParamDetails.
@@ -80,9 +91,9 @@ class SqlOutParamDetails(object):
     def out_param_type(self):
         """
         **[Required]** Gets the out_param_type of this SqlOutParamDetails.
-        SQL Type of PL/SQL procedure OUT parameter
+        SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of \"outParamPosition\" will be ignored.
 
-        Allowed values for this property are: "SQL_CURSOR", "ARRAY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SQL_CURSOR", "ARRAY", "NO_OUT_PARAM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -95,16 +106,40 @@ class SqlOutParamDetails(object):
     def out_param_type(self, out_param_type):
         """
         Sets the out_param_type of this SqlOutParamDetails.
-        SQL Type of PL/SQL procedure OUT parameter
+        SQL Type of PL/SQL procedure OUT parameter. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM. In that case, the value of \"outParamPosition\" will be ignored.
 
 
         :param out_param_type: The out_param_type of this SqlOutParamDetails.
         :type: str
         """
-        allowed_values = ["SQL_CURSOR", "ARRAY"]
+        allowed_values = ["SQL_CURSOR", "ARRAY", "NO_OUT_PARAM"]
         if not value_allowed_none_or_none_sentinel(out_param_type, allowed_values):
             out_param_type = 'UNKNOWN_ENUM_VALUE'
         self._out_param_type = out_param_type
+
+    @property
+    def out_param_name(self):
+        """
+        Gets the out_param_name of this SqlOutParamDetails.
+        Name of the Out Parameter
+
+
+        :return: The out_param_name of this SqlOutParamDetails.
+        :rtype: str
+        """
+        return self._out_param_name
+
+    @out_param_name.setter
+    def out_param_name(self, out_param_name):
+        """
+        Sets the out_param_name of this SqlOutParamDetails.
+        Name of the Out Parameter
+
+
+        :param out_param_name: The out_param_name of this SqlOutParamDetails.
+        :type: str
+        """
+        self._out_param_name = out_param_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

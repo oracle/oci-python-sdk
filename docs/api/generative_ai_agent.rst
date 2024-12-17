@@ -52,6 +52,7 @@ Generative Ai Agent
     oci.generative_ai_agent.models.IndexSchema
     oci.generative_ai_agent.models.KnowledgeBase
     oci.generative_ai_agent.models.KnowledgeBaseCollection
+    oci.generative_ai_agent.models.KnowledgeBaseStatistics
     oci.generative_ai_agent.models.KnowledgeBaseSummary
     oci.generative_ai_agent.models.ObjectStoragePrefix
     oci.generative_ai_agent.models.OciDatabaseConfig

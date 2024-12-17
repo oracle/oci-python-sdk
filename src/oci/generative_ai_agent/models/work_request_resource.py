@@ -12,8 +12,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestResource(object):
     """
-    **WorkRequestResource**
-
     A resource created or operated on by a work request.
     """
 

@@ -12,8 +12,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataSourceCollection(object):
     """
-    **DataSourceCollection**
-
     Results of a dataSource search. Contains both DataSourceSummary items and other information, such as metadata.
     """
 

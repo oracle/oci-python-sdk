@@ -268,6 +268,10 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the resource_pool_summary property of this UpdateAutonomousDatabaseDetails.
         :type resource_pool_summary: oci.database.models.ResourcePoolSummary
 
+        :param is_backup_retention_locked:
+            The value to assign to the is_backup_retention_locked property of this UpdateAutonomousDatabaseDetails.
+        :type is_backup_retention_locked: bool
+
         :param scheduled_operations:
             The value to assign to the scheduled_operations property of this UpdateAutonomousDatabaseDetails.
         :type scheduled_operations: list[oci.database.models.ScheduledOperationDetails]
@@ -343,6 +347,7 @@ class UpdateAutonomousDatabaseDetails(object):
             'is_mtls_connection_required': 'bool',
             'resource_pool_leader_id': 'str',
             'resource_pool_summary': 'ResourcePoolSummary',
+            'is_backup_retention_locked': 'bool',
             'scheduled_operations': 'list[ScheduledOperationDetails]',
             'is_auto_scaling_for_storage_enabled': 'bool',
             'database_edition': 'str',
@@ -398,6 +403,7 @@ class UpdateAutonomousDatabaseDetails(object):
             'is_mtls_connection_required': 'isMtlsConnectionRequired',
             'resource_pool_leader_id': 'resourcePoolLeaderId',
             'resource_pool_summary': 'resourcePoolSummary',
+            'is_backup_retention_locked': 'isBackupRetentionLocked',
             'scheduled_operations': 'scheduledOperations',
             'is_auto_scaling_for_storage_enabled': 'isAutoScalingForStorageEnabled',
             'database_edition': 'databaseEdition',
@@ -452,6 +458,7 @@ class UpdateAutonomousDatabaseDetails(object):
         self._is_mtls_connection_required = None
         self._resource_pool_leader_id = None
         self._resource_pool_summary = None
+        self._is_backup_retention_locked = None
         self._scheduled_operations = None
         self._is_auto_scaling_for_storage_enabled = None
         self._database_edition = None
@@ -1913,6 +1920,30 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: oci.database.models.ResourcePoolSummary
         """
         self._resource_pool_summary = resource_pool_summary
+
+    @property
+    def is_backup_retention_locked(self):
+        """
+        Gets the is_backup_retention_locked of this UpdateAutonomousDatabaseDetails.
+        True if the Autonomous Database is backup retention locked.
+
+
+        :return: The is_backup_retention_locked of this UpdateAutonomousDatabaseDetails.
+        :rtype: bool
+        """
+        return self._is_backup_retention_locked
+
+    @is_backup_retention_locked.setter
+    def is_backup_retention_locked(self, is_backup_retention_locked):
+        """
+        Sets the is_backup_retention_locked of this UpdateAutonomousDatabaseDetails.
+        True if the Autonomous Database is backup retention locked.
+
+
+        :param is_backup_retention_locked: The is_backup_retention_locked of this UpdateAutonomousDatabaseDetails.
+        :type: bool
+        """
+        self._is_backup_retention_locked = is_backup_retention_locked
 
     @property
     def scheduled_operations(self):

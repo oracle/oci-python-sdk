@@ -40,6 +40,7 @@ from .index_config import IndexConfig
 from .index_schema import IndexSchema
 from .knowledge_base import KnowledgeBase
 from .knowledge_base_collection import KnowledgeBaseCollection
+from .knowledge_base_statistics import KnowledgeBaseStatistics
 from .knowledge_base_summary import KnowledgeBaseSummary
 from .object_storage_prefix import ObjectStoragePrefix
 from .oci_database_config import OciDatabaseConfig
@@ -96,6 +97,7 @@ generative_ai_agent_type_mapping = {
     "IndexSchema": IndexSchema,
     "KnowledgeBase": KnowledgeBase,
     "KnowledgeBaseCollection": KnowledgeBaseCollection,
+    "KnowledgeBaseStatistics": KnowledgeBaseStatistics,
     "KnowledgeBaseSummary": KnowledgeBaseSummary,
     "ObjectStoragePrefix": ObjectStoragePrefix,
     "OciDatabaseConfig": OciDatabaseConfig,

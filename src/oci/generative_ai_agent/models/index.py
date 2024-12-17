@@ -12,8 +12,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Index(object):
     """
-    **Index**
-
     OCI OpenSearch index details.
     """
 

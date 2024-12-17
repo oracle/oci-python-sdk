@@ -70,6 +70,96 @@ class BdsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def activate_iam_user_sync_configuration_and_wait_for_state(self, bds_instance_id, identity_configuration_id, activate_iam_user_sync_configuration_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.bds.BdsClient.activate_iam_user_sync_configuration` and waits for the :py:class:`~oci.bds.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str bds_instance_id: (required)
+            The OCID of the cluster.
+
+        :param str identity_configuration_id: (required)
+            The OCID of the identity configuration
+
+        :param oci.bds.models.ActivateIamUserSyncConfigurationDetails activate_iam_user_sync_configuration_details: (required)
+            Details for activating a new IAM user sync config.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.bds.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.bds.BdsClient.activate_iam_user_sync_configuration`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.activate_iam_user_sync_configuration(bds_instance_id, identity_configuration_id, activate_iam_user_sync_configuration_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def activate_upst_configuration_and_wait_for_state(self, bds_instance_id, identity_configuration_id, activate_upst_configuration_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.bds.BdsClient.activate_upst_configuration` and waits for the :py:class:`~oci.bds.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str bds_instance_id: (required)
+            The OCID of the cluster.
+
+        :param str identity_configuration_id: (required)
+            The OCID of the identity configuration
+
+        :param oci.bds.models.ActivateUpstConfigurationDetails activate_upst_configuration_details: (required)
+            Details for activating UPST config
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.bds.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.bds.BdsClient.activate_upst_configuration`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.activate_upst_configuration(bds_instance_id, identity_configuration_id, activate_upst_configuration_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def add_auto_scaling_configuration_and_wait_for_state(self, bds_instance_id, add_auto_scaling_configuration_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.bds.BdsClient.add_auto_scaling_configuration` and waits for the :py:class:`~oci.bds.models.WorkRequest`
@@ -613,6 +703,48 @@ class BdsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def create_identity_configuration_and_wait_for_state(self, bds_instance_id, create_identity_configuration_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.bds.BdsClient.create_identity_configuration` and waits for the :py:class:`~oci.bds.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str bds_instance_id: (required)
+            The OCID of the cluster.
+
+        :param oci.bds.models.CreateIdentityConfigurationDetails create_identity_configuration_details: (required)
+            Details for creating an identity configuration
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.bds.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.bds.BdsClient.create_identity_configuration`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_identity_configuration(bds_instance_id, create_identity_configuration_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def create_node_backup_configuration_and_wait_for_state(self, bds_instance_id, create_node_backup_configuration_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.bds.BdsClient.create_node_backup_configuration` and waits for the :py:class:`~oci.bds.models.WorkRequest`
@@ -719,6 +851,96 @@ class BdsClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.create_resource_principal_configuration(bds_instance_id, create_resource_principal_configuration_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def deactivate_iam_user_sync_configuration_and_wait_for_state(self, bds_instance_id, identity_configuration_id, deactivate_iam_user_sync_configuration_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.bds.BdsClient.deactivate_iam_user_sync_configuration` and waits for the :py:class:`~oci.bds.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str bds_instance_id: (required)
+            The OCID of the cluster.
+
+        :param str identity_configuration_id: (required)
+            The OCID of the identity configuration
+
+        :param oci.bds.models.DeactivateIamUserSyncConfigurationDetails deactivate_iam_user_sync_configuration_details: (required)
+            Details for deactivating the IAM user sync config
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.bds.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.bds.BdsClient.deactivate_iam_user_sync_configuration`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.deactivate_iam_user_sync_configuration(bds_instance_id, identity_configuration_id, deactivate_iam_user_sync_configuration_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def deactivate_upst_configuration_and_wait_for_state(self, bds_instance_id, identity_configuration_id, deactivate_upst_configuration_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.bds.BdsClient.deactivate_upst_configuration` and waits for the :py:class:`~oci.bds.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str bds_instance_id: (required)
+            The OCID of the cluster.
+
+        :param str identity_configuration_id: (required)
+            The OCID of the identity configuration
+
+        :param oci.bds.models.DeactivateUpstConfigurationDetails deactivate_upst_configuration_details: (required)
+            Details for deactivating the UPST config
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.bds.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.bds.BdsClient.deactivate_upst_configuration`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.deactivate_upst_configuration(bds_instance_id, identity_configuration_id, deactivate_upst_configuration_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
@@ -860,6 +1082,56 @@ class BdsClientCompositeOperations(object):
         operation_result = None
         try:
             operation_result = self.client.delete_bds_metastore_configuration(bds_instance_id, metastore_config_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def delete_identity_configuration_and_wait_for_state(self, bds_instance_id, identity_configuration_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.bds.BdsClient.delete_identity_configuration` and waits for the :py:class:`~oci.bds.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str bds_instance_id: (required)
+            The OCID of the cluster.
+
+        :param str identity_configuration_id: (required)
+            The OCID of the identity configuration
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.bds.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.bds.BdsClient.delete_identity_configuration`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = None
+        try:
+            operation_result = self.client.delete_identity_configuration(bds_instance_id, identity_configuration_id, **operation_kwargs)
         except oci.exceptions.ServiceError as e:
             if e.status == 404:
                 return WAIT_RESOURCE_NOT_FOUND
@@ -1221,6 +1493,96 @@ class BdsClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.install_patch(bds_instance_id, install_patch_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def refresh_confidential_application_and_wait_for_state(self, bds_instance_id, identity_configuration_id, refresh_confidential_application_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.bds.BdsClient.refresh_confidential_application` and waits for the :py:class:`~oci.bds.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str bds_instance_id: (required)
+            The OCID of the cluster.
+
+        :param str identity_configuration_id: (required)
+            The OCID of the identity configuration
+
+        :param oci.bds.models.RefreshConfidentialApplicationDetails refresh_confidential_application_details: (required)
+            Details for refreshing confidential application
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.bds.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.bds.BdsClient.refresh_confidential_application`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.refresh_confidential_application(bds_instance_id, identity_configuration_id, refresh_confidential_application_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def refresh_upst_token_exchange_keytab_and_wait_for_state(self, bds_instance_id, identity_configuration_id, refresh_upst_token_exchange_keytab_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.bds.BdsClient.refresh_upst_token_exchange_keytab` and waits for the :py:class:`~oci.bds.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str bds_instance_id: (required)
+            The OCID of the cluster.
+
+        :param str identity_configuration_id: (required)
+            The OCID of the identity configuration
+
+        :param oci.bds.models.RefreshUpstTokenExchangeKeytabDetails refresh_upst_token_exchange_keytab_details: (required)
+            Details for refreshing User Principal Session (UPST) token exchange keytab
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.bds.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.bds.BdsClient.refresh_upst_token_exchange_keytab`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.refresh_upst_token_exchange_keytab(bds_instance_id, identity_configuration_id, refresh_upst_token_exchange_keytab_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
@@ -1914,6 +2276,51 @@ class BdsClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.update_bds_metastore_configuration(bds_instance_id, metastore_config_id, update_bds_metastore_configuration_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_identity_configuration_and_wait_for_state(self, bds_instance_id, identity_configuration_id, update_identity_configuration_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.bds.BdsClient.update_identity_configuration` and waits for the :py:class:`~oci.bds.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str bds_instance_id: (required)
+            The OCID of the cluster.
+
+        :param str identity_configuration_id: (required)
+            The OCID of the identity configuration
+
+        :param oci.bds.models.UpdateIdentityConfigurationDetails update_identity_configuration_details: (required)
+            Details for updating an identity configuration
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.bds.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.bds.BdsClient.update_identity_configuration`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_identity_configuration(bds_instance_id, identity_configuration_id, update_identity_configuration_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
         lowered_wait_for_states = [w.lower() for w in wait_for_states]

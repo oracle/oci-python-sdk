@@ -12,8 +12,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AgentEndpointCollection(object):
     """
-    **AgentEndpointCollection**
-
     Results of an agentEndpoint search. Contains both AgentEndpointSummary items and other information, such as metadata.
     """
 

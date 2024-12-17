@@ -12,8 +12,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataIngestionJobCollection(object):
     """
-    **DataIngestionJobCollection**
-
     Results of a data ingestion job search. Contains both DataIngestionJobSummary items and other information, such as metadata.
     """
 

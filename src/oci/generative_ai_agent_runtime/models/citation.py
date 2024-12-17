@@ -28,19 +28,40 @@ class Citation(object):
             The value to assign to the source_location property of this Citation.
         :type source_location: oci.generative_ai_agent_runtime.models.SourceLocation
 
+        :param title:
+            The value to assign to the title property of this Citation.
+        :type title: str
+
+        :param doc_id:
+            The value to assign to the doc_id property of this Citation.
+        :type doc_id: str
+
+        :param page_numbers:
+            The value to assign to the page_numbers property of this Citation.
+        :type page_numbers: list[int]
+
         """
         self.swagger_types = {
             'source_text': 'str',
-            'source_location': 'SourceLocation'
+            'source_location': 'SourceLocation',
+            'title': 'str',
+            'doc_id': 'str',
+            'page_numbers': 'list[int]'
         }
 
         self.attribute_map = {
             'source_text': 'sourceText',
-            'source_location': 'sourceLocation'
+            'source_location': 'sourceLocation',
+            'title': 'title',
+            'doc_id': 'docId',
+            'page_numbers': 'pageNumbers'
         }
 
         self._source_text = None
         self._source_location = None
+        self._title = None
+        self._doc_id = None
+        self._page_numbers = None
 
     @property
     def source_text(self):
@@ -85,6 +106,78 @@ class Citation(object):
         :type: oci.generative_ai_agent_runtime.models.SourceLocation
         """
         self._source_location = source_location
+
+    @property
+    def title(self):
+        """
+        Gets the title of this Citation.
+        The title of the source text, if available.
+
+
+        :return: The title of this Citation.
+        :rtype: str
+        """
+        return self._title
+
+    @title.setter
+    def title(self, title):
+        """
+        Sets the title of this Citation.
+        The title of the source text, if available.
+
+
+        :param title: The title of this Citation.
+        :type: str
+        """
+        self._title = title
+
+    @property
+    def doc_id(self):
+        """
+        Gets the doc_id of this Citation.
+        The id of the retrieved document, if available.
+
+
+        :return: The doc_id of this Citation.
+        :rtype: str
+        """
+        return self._doc_id
+
+    @doc_id.setter
+    def doc_id(self, doc_id):
+        """
+        Sets the doc_id of this Citation.
+        The id of the retrieved document, if available.
+
+
+        :param doc_id: The doc_id of this Citation.
+        :type: str
+        """
+        self._doc_id = doc_id
+
+    @property
+    def page_numbers(self):
+        """
+        Gets the page_numbers of this Citation.
+        The page numbers on the retrieved document, if available.
+
+
+        :return: The page_numbers of this Citation.
+        :rtype: list[int]
+        """
+        return self._page_numbers
+
+    @page_numbers.setter
+    def page_numbers(self, page_numbers):
+        """
+        Sets the page_numbers of this Citation.
+        The page numbers on the retrieved document, if available.
+
+
+        :param page_numbers: The page_numbers of this Citation.
+        :type: list[int]
+        """
+        self._page_numbers = page_numbers
 
     def __repr__(self):
         return formatted_flat_dict(self)

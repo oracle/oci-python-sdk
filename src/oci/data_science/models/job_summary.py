@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class JobSummary(object):
     """
-    Summary information for a Job.
+    Summary information for a job.
     """
 
     #: A constant which can be used with the lifecycle_state property of a JobSummary.

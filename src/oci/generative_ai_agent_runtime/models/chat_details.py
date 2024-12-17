@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChatDetails(object):
     """
-    Chat details.
+    Chat details for managing user interactions and tool executions.
     """
 
     def __init__(self, **kwargs):

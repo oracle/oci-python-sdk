@@ -22,9 +22,6 @@ missing = Sentinel("Missing")
 
 class GenerativeAiAgentClient(object):
     """
-    **Generative AI Agents API**
-
-
     OCI Generative AI Agents is a fully managed service that combines the power of large language models (LLMs) with an intelligent retrieval system to create contextually relevant answers by searching your knowledge base, making your AI applications smart and efficient.
 
     OCI Generative AI Agents supports several ways to onboard your data and then allows you and your customers to interact with your data using a chat interface or API.
@@ -129,8 +126,6 @@ class GenerativeAiAgentClient(object):
 
     def cancel_work_request(self, work_request_id, **kwargs):
         """
-        **CancelWorkRequest**
-
         Cancels a work request.
 
 
@@ -240,8 +235,6 @@ class GenerativeAiAgentClient(object):
 
     def change_agent_compartment(self, agent_id, change_agent_compartment_details, **kwargs):
         """
-        **ChangeAgentCompartment**
-
         Moves an agent into a different compartment within the same tenancy. For information about moving resources between
         compartments, see `Moving Resources to a Different Compartment`__.
 
@@ -369,8 +362,6 @@ class GenerativeAiAgentClient(object):
 
     def change_agent_endpoint_compartment(self, agent_endpoint_id, change_agent_endpoint_compartment_details, **kwargs):
         """
-        **ChangeAgentEndpointCompartment**
-
         Moves an endpoint into a different compartment within the same tenancy. For information about moving resources between
         compartments, see `Moving Resources to a Different Compartment`__.
 
@@ -498,8 +489,6 @@ class GenerativeAiAgentClient(object):
 
     def change_knowledge_base_compartment(self, knowledge_base_id, change_knowledge_base_compartment_details, **kwargs):
         """
-        **ChangeKnowledgeBaseCompartment**
-
         Moves a knowledge base into a different compartment within the same tenancy. For information about moving resources between
         compartments, see `Moving Resources to a Different Compartment`__.
 
@@ -627,8 +616,6 @@ class GenerativeAiAgentClient(object):
 
     def create_agent(self, create_agent_details, **kwargs):
         """
-        **CreateAgent**
-
         Creates an agent.
 
 
@@ -730,8 +717,6 @@ class GenerativeAiAgentClient(object):
 
     def create_agent_endpoint(self, create_agent_endpoint_details, **kwargs):
         """
-        **CreateAgentEndpoint**
-
         Creates an endpoint.
 
 
@@ -833,8 +818,6 @@ class GenerativeAiAgentClient(object):
 
     def create_data_ingestion_job(self, create_data_ingestion_job_details, **kwargs):
         """
-        **CreateDataIngestionJob**
-
         Creates a data ingestion job.
 
 
@@ -936,8 +919,6 @@ class GenerativeAiAgentClient(object):
 
     def create_data_source(self, create_data_source_details, **kwargs):
         """
-        **CreateDataSource**
-
         Creates a data source.
 
 
@@ -1039,8 +1020,6 @@ class GenerativeAiAgentClient(object):
 
     def create_knowledge_base(self, create_knowledge_base_details, **kwargs):
         """
-        **CreateKnowledgeBase**
-
         Creates a knowledge base.
 
 
@@ -1142,8 +1121,6 @@ class GenerativeAiAgentClient(object):
 
     def delete_agent(self, agent_id, **kwargs):
         """
-        **DeleteAgent**
-
         Deletes an agent.
 
 
@@ -1253,8 +1230,6 @@ class GenerativeAiAgentClient(object):
 
     def delete_agent_endpoint(self, agent_endpoint_id, **kwargs):
         """
-        **DeleteAgentEndpoint**
-
         Deletes an endpoint.
 
 
@@ -1364,8 +1339,6 @@ class GenerativeAiAgentClient(object):
 
     def delete_data_ingestion_job(self, data_ingestion_job_id, **kwargs):
         """
-        **DeleteDataIngestionJob**
-
         Deletes a data ingestion job.
 
 
@@ -1475,8 +1448,6 @@ class GenerativeAiAgentClient(object):
 
     def delete_data_source(self, data_source_id, **kwargs):
         """
-        **DeleteDataSource**
-
         Deletes a data source.
 
 
@@ -1586,8 +1557,6 @@ class GenerativeAiAgentClient(object):
 
     def delete_knowledge_base(self, knowledge_base_id, **kwargs):
         """
-        **DeleteKnowledgeBase**
-
         Deletes a knowledge base.
 
 
@@ -1697,8 +1666,6 @@ class GenerativeAiAgentClient(object):
 
     def get_agent(self, agent_id, **kwargs):
         """
-        **GetAgent**
-
         Gets information about an agent.
 
 
@@ -1802,8 +1769,6 @@ class GenerativeAiAgentClient(object):
 
     def get_agent_endpoint(self, agent_endpoint_id, **kwargs):
         """
-        **GetAgentEndpoint**
-
         Gets information about an endpoint.
 
 
@@ -1907,8 +1872,6 @@ class GenerativeAiAgentClient(object):
 
     def get_data_ingestion_job(self, data_ingestion_job_id, **kwargs):
         """
-        **GetDataIngestionJob**
-
         Gets information about a data ingestion job.
 
 
@@ -2012,8 +1975,6 @@ class GenerativeAiAgentClient(object):
 
     def get_data_ingestion_job_log_content(self, data_ingestion_job_id, **kwargs):
         """
-        **GetDataIngestionJobLogContent**
-
         Returns the raw log file for the specified data ingestion job in text format.
 
 
@@ -2117,8 +2078,6 @@ class GenerativeAiAgentClient(object):
 
     def get_data_source(self, data_source_id, **kwargs):
         """
-        **GetDataSource**
-
         Gets information about a data source.
 
 
@@ -2222,8 +2181,6 @@ class GenerativeAiAgentClient(object):
 
     def get_knowledge_base(self, knowledge_base_id, **kwargs):
         """
-        **GetKnowledgeBase**
-
         Gets information about a knowledge base.
 
 
@@ -2327,8 +2284,6 @@ class GenerativeAiAgentClient(object):
 
     def get_work_request(self, work_request_id, **kwargs):
         """
-        **GetWorkRequest**
-
         Gets the details of a work request.
 
 
@@ -2432,8 +2387,6 @@ class GenerativeAiAgentClient(object):
 
     def list_agent_endpoints(self, **kwargs):
         """
-        **ListAgentEndpoints**
-
         Gets a list of endpoints.
 
 
@@ -2607,8 +2560,6 @@ class GenerativeAiAgentClient(object):
 
     def list_agents(self, **kwargs):
         """
-        **ListAgents**
-
         Gets a list of agents.
 
 
@@ -2775,8 +2726,6 @@ class GenerativeAiAgentClient(object):
 
     def list_data_ingestion_jobs(self, **kwargs):
         """
-        **ListDataIngestionJobs**
-
         Gets a list of data ingestion jobs.
 
 
@@ -2950,8 +2899,6 @@ class GenerativeAiAgentClient(object):
 
     def list_data_sources(self, **kwargs):
         """
-        **ListDataSources**
-
         Gets a list of data sources.
 
 
@@ -3125,8 +3072,6 @@ class GenerativeAiAgentClient(object):
 
     def list_knowledge_bases(self, **kwargs):
         """
-        **ListKnowledgeBases**
-
         Gets a list of knowledge bases.
 
 
@@ -3293,8 +3238,6 @@ class GenerativeAiAgentClient(object):
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
-        **ListWorkRequestErrors**
-
         Lists the errors for a work request.
 
 
@@ -3450,8 +3393,6 @@ class GenerativeAiAgentClient(object):
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
-        **ListWorkRequestLogs**
-
         Lists the logs for a work request.
 
 
@@ -3607,8 +3548,6 @@ class GenerativeAiAgentClient(object):
 
     def list_work_requests(self, **kwargs):
         """
-        **ListWorkRequests**
-
         Lists the work requests in a compartment.
 
 
@@ -3782,8 +3721,6 @@ class GenerativeAiAgentClient(object):
 
     def update_agent(self, agent_id, update_agent_details, **kwargs):
         """
-        **UpdateAgent**
-
         Updates an agent.
 
 
@@ -3898,8 +3835,6 @@ class GenerativeAiAgentClient(object):
 
     def update_agent_endpoint(self, agent_endpoint_id, update_agent_endpoint_details, **kwargs):
         """
-        **UpdateAgentEndpoint**
-
         Updates an endpoint.
 
 
@@ -4014,8 +3949,6 @@ class GenerativeAiAgentClient(object):
 
     def update_data_source(self, data_source_id, update_data_source_details, **kwargs):
         """
-        **UpdateDataSource**
-
         Updates a data source.
 
 
@@ -4130,8 +4063,6 @@ class GenerativeAiAgentClient(object):
 
     def update_knowledge_base(self, knowledge_base_id, update_knowledge_base_details, **kwargs):
         """
-        **UpdateKnowledgeBase**
-
         Updates a knowledge base.
 
 

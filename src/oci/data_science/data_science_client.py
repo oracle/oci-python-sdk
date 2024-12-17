@@ -6985,7 +6985,7 @@ class DataScienceClient(object):
         :param str data_science_resource_type: (optional)
             Resource types in the Data Science service such as notebooks.
 
-            Allowed values are: "NOTEBOOK_SESSION"
+            Allowed values are: "NOTEBOOK_SESSION", "MODEL_DEPLOYMENT"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7053,7 +7053,7 @@ class DataScienceClient(object):
                 )
 
         if 'data_science_resource_type' in kwargs:
-            data_science_resource_type_allowed_values = ["NOTEBOOK_SESSION"]
+            data_science_resource_type_allowed_values = ["NOTEBOOK_SESSION", "MODEL_DEPLOYMENT"]
             if kwargs['data_science_resource_type'] not in data_science_resource_type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `data_science_resource_type`, must be one of { data_science_resource_type_allowed_values }"

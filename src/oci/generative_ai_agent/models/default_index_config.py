@@ -12,8 +12,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DefaultIndexConfig(IndexConfig):
     """
-    **DefaultIndexConfig**
-
     The default index is service managed vector store on behalf of the customer.
     """
 

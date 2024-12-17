@@ -67,7 +67,7 @@ class Metadata(object):
                  * libraryVersion
                  * estimatorClass
                  * hyperParameters
-                 * testartifactresults
+                 * testArtifactresults
 
 
         :return: The key of this Metadata.
@@ -86,7 +86,7 @@ class Metadata(object):
                  * libraryVersion
                  * estimatorClass
                  * hyperParameters
-                 * testartifactresults
+                 * testArtifactresults
 
 
         :param key: The key of this Metadata.
@@ -162,7 +162,7 @@ class Metadata(object):
     def category(self):
         """
         Gets the category of this Metadata.
-        Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values \"Performance,Training Profile,Training and Validation Datasets,Training Environment,other\".
+        Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values \"Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other\".
 
 
         :return: The category of this Metadata.
@@ -174,7 +174,7 @@ class Metadata(object):
     def category(self, category):
         """
         Sets the category of this Metadata.
-        Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values \"Performance,Training Profile,Training and Validation Datasets,Training Environment,other\".
+        Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values \"Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other\".
 
 
         :param category: The category of this Metadata.

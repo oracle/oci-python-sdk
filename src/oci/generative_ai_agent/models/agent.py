@@ -12,8 +12,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Agent(object):
     """
-    **Agent**
-
     An agent is an LLM-based autonomous system that understands and generates human-like text, enabling natural-language processing interactions. OCI Generative AI Agents supports retrieval-augmented generation (RAG) agents. A RAG agent connects to a data source, retrieves data, and augments model responses with the information from the data sources to generate more relevant responses.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see `Getting Started with Policies`__.

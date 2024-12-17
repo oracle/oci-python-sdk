@@ -6,6 +6,7 @@ By default, operations exposed in the SDK do not retry, but retries can be set i
 ``retry_strategy`` keyword argument which can be used to set the retry strategy for that operation. This retry strategy could be:
 
 * The default strategy vended by the SDK as :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+* The default federation client retry strategy vended by the SDK for the federation client as :py:data:`~oci.retry.DEFAULT_FEDERATION_CLIENT_RETRY_STRATEGY`
 * The :py:class:`~oci.retry.NoneRetryStrategy`. This will result in no retries being performed for the operation
 * A custom strategy produced via the :py:class:`~oci.retry.RetryStrategyBuilder`
 
@@ -51,7 +52,7 @@ In this strategy we keep some amount of De-correlated Jitter (default 1 second) 
     sleep_time = min(exponential_backoff_sleep_base + random.uniform(0, decorrelated_jitter), max_wait_between_calls_seconds)
 
 Default Retry Strategy
------------------------
+----------------------
 The default retry strategy vended by the SDK has the following attributes:
 
 * 8 total attempts
@@ -67,6 +68,23 @@ The default retry strategy vended by the SDK has the following attributes:
     * Timeouts and connection errors
     * HTTP 409 (IncorrectState)
     * HTTP 429s (throttles)
+    * HTTP 5xx (server errors), except 501
+
+Default Federation Client Retry Strategy
+----------------------------------------
+The default federation client retry strategy for federation client vended by the SDK has the following attributes:
+
+* 3 total attempts
+* Total allowed elapsed time for all requests of 100 seconds
+* Exponential backoff with de-correlated jitter of 1000 ms, using:
+
+    * The base time to use in retry calculations will be 1 second
+    * An exponent of 2. When calculating the next retry time we will raise this to the power of the number of attempts
+    * A maximum wait time between calls of 30 seconds
+
+* Retries on the following exception types:
+
+    * Timeouts and connection errors
     * HTTP 5xx (server errors), except 501
 
 Customizing Retry Strategy

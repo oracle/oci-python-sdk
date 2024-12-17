@@ -70,6 +70,9 @@ Stack Monitoring
     oci.stack_monitoring.models.EncryptedCredentials
     oci.stack_monitoring.models.EvaluateBaselineableMetricDetails
     oci.stack_monitoring.models.EvaluateBaselineableMetricResult
+    oci.stack_monitoring.models.HttpQueryProperties
+    oci.stack_monitoring.models.HttpScriptFileDetails
+    oci.stack_monitoring.models.HttpUpdateQueryProperties
     oci.stack_monitoring.models.ImportOciTelemetryResourcesTaskDetails
     oci.stack_monitoring.models.JmxQueryProperties
     oci.stack_monitoring.models.JmxUpdateQueryProperties
@@ -142,6 +145,7 @@ Stack Monitoring
     oci.stack_monitoring.models.UpdateAutoPromoteConfigDetails
     oci.stack_monitoring.models.UpdateBaselineableMetricDetails
     oci.stack_monitoring.models.UpdateConfigDetails
+    oci.stack_monitoring.models.UpdateHttpScriptFileDetails
     oci.stack_monitoring.models.UpdateLicenseAutoAssignConfigDetails
     oci.stack_monitoring.models.UpdateLicenseEnterpriseExtensibilityConfigDetails
     oci.stack_monitoring.models.UpdateMaintenanceWindowDetails

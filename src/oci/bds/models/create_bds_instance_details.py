@@ -80,6 +80,10 @@ class CreateBdsInstanceDetails(object):
             The value to assign to the cluster_profile property of this CreateBdsInstanceDetails.
         :type cluster_profile: str
 
+        :param bds_cluster_version_summary:
+            The value to assign to the bds_cluster_version_summary property of this CreateBdsInstanceDetails.
+        :type bds_cluster_version_summary: oci.bds.models.BdsClusterVersionSummary
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -96,7 +100,8 @@ class CreateBdsInstanceDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'kms_key_id': 'str',
-            'cluster_profile': 'str'
+            'cluster_profile': 'str',
+            'bds_cluster_version_summary': 'BdsClusterVersionSummary'
         }
 
         self.attribute_map = {
@@ -114,7 +119,8 @@ class CreateBdsInstanceDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'kms_key_id': 'kmsKeyId',
-            'cluster_profile': 'clusterProfile'
+            'cluster_profile': 'clusterProfile',
+            'bds_cluster_version_summary': 'bdsClusterVersionSummary'
         }
 
         self._compartment_id = None
@@ -132,6 +138,7 @@ class CreateBdsInstanceDetails(object):
         self._defined_tags = None
         self._kms_key_id = None
         self._cluster_profile = None
+        self._bds_cluster_version_summary = None
 
     @property
     def compartment_id(self):
@@ -492,6 +499,26 @@ class CreateBdsInstanceDetails(object):
         :type: str
         """
         self._cluster_profile = cluster_profile
+
+    @property
+    def bds_cluster_version_summary(self):
+        """
+        Gets the bds_cluster_version_summary of this CreateBdsInstanceDetails.
+
+        :return: The bds_cluster_version_summary of this CreateBdsInstanceDetails.
+        :rtype: oci.bds.models.BdsClusterVersionSummary
+        """
+        return self._bds_cluster_version_summary
+
+    @bds_cluster_version_summary.setter
+    def bds_cluster_version_summary(self, bds_cluster_version_summary):
+        """
+        Sets the bds_cluster_version_summary of this CreateBdsInstanceDetails.
+
+        :param bds_cluster_version_summary: The bds_cluster_version_summary of this CreateBdsInstanceDetails.
+        :type: oci.bds.models.BdsClusterVersionSummary
+        """
+        self._bds_cluster_version_summary = bds_cluster_version_summary
 
     def __repr__(self):
         return formatted_flat_dict(self)
