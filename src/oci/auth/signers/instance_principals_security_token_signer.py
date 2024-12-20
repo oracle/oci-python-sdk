@@ -61,16 +61,16 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
         the certificate & corresponding private key (if there is one defined for this retriever) from UrlBasedCertificateRetriever,
         region, federation endpoint, and the response for receiving the token from the federation endpoint
     """
-    def __init__(self, **kwargs):
-        self.METADATA_URL_BASE_ENV_VAR = 'OCI_METADATA_BASE_URL'
-        self.DEFAULT_METADATA_URL_BASE = 'http://169.254.169.254/opc/v2'
-        self.METADATA_URL_BASE = os.environ.get(self.METADATA_URL_BASE_ENV_VAR, self.DEFAULT_METADATA_URL_BASE)
-        self.GET_REGION_URL = '{}/instance/region'.format(self.METADATA_URL_BASE)
-        self.LEAF_CERTIFICATE_URL = '{}/identity/cert.pem'.format(self.METADATA_URL_BASE)
-        self.LEAF_CERTIFICATE_PRIVATE_KEY_URL = '{}/identity/key.pem'.format(self.METADATA_URL_BASE)
-        self.INTERMEDIATE_CERTIFICATE_URL = '{}/identity/intermediate.pem'.format(self.METADATA_URL_BASE)
-        self.METADATA_AUTH_HEADERS = {'Authorization': 'Bearer Oracle'}
+    METADATA_URL_BASE_ENV_VAR = 'OCI_METADATA_BASE_URL'
+    DEFAULT_METADATA_URL_BASE = 'http://169.254.169.254/opc/v2'
+    METADATA_URL_BASE = os.environ.get(METADATA_URL_BASE_ENV_VAR, DEFAULT_METADATA_URL_BASE)
+    GET_REGION_URL = '{}/instance/region'.format(METADATA_URL_BASE)
+    LEAF_CERTIFICATE_URL = '{}/identity/cert.pem'.format(METADATA_URL_BASE)
+    LEAF_CERTIFICATE_PRIVATE_KEY_URL = '{}/identity/key.pem'.format(METADATA_URL_BASE)
+    INTERMEDIATE_CERTIFICATE_URL = '{}/identity/intermediate.pem'.format(METADATA_URL_BASE)
+    METADATA_AUTH_HEADERS = {'Authorization': 'Bearer Oracle'}
 
+    def __init__(self, **kwargs):
         self.logger = logging.getLogger("{}.{}".format(__name__, id(self)))
         self.logger.addHandler(logging.NullHandler())
         if kwargs.get('log_requests'):

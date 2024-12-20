@@ -3,6 +3,15 @@ Change Log
 All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
+
+====================
+2.141.1 - 2024-12-20
+====================
+
+Fixed
+-----
+* `Github Issue #728 <https://github.com/oracle/oci-python-sdk/issues/728>`_ for RPv1.1
+
 ====================
 2.141.0 - 2024-12-17
 ====================
@@ -1938,7 +1947,7 @@ Breaking
 * `EmDataLakeClient` was renamed to `EmWarehouseClient` in the Enterprise Manager Warehouse service
 * `EmDataLakeClientCompositeOperations` was renamed to `EmWarehouseClientCompositeOperations` in the Enterprise Manager Warehouse service
 
-=====================
+====================
 2.79.0 - 2022-08-16
 ====================
 
@@ -2063,7 +2072,7 @@ Breaking
 * Parameter `host_type` in operation `list_host_insights` in the Operations Insights service has strict value checking for allowed values. `ValueError` is raised if an invalid value is provided.
 * Parameter `preserve_data_volumes` is removed from operation `terminate_instance` in the Compute service.
  
-=====================
+====================
 2.74.0 - 2022-07-05
 ====================
 
