@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.142.0 - 2025-01-14
+====================
+
+Added
+-----
+* Support for attaching route tables to VNICs and private IPs in the Networking service
+* Support for Cross Cluster Search(CCS) for an opensearch cluster in the OpenSearch service
+* Support for patch-level updates of the autonomous databases after provisioning in the Database service
+
+Breaking
+--------
+* put_object failures for 412 status code have been fixed. This might be a breaking change for customers who have defined a custom exception handler for 412 status code (https://github.com/oracle/oci-python-sdk/issues/622)
+
+====================
 2.141.1 - 2024-12-20
 ====================
 

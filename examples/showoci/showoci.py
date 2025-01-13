@@ -79,6 +79,7 @@
 # - oci.generative_ai.GenerativeAiClient
 # - oci.certificates_management.CertificatesManagementClient
 # - oci.data_safe.DataSafeClient
+# - oci.optimizer.OptimizerClient
 #
 # Modules without CSV yet:
 # - datasciencemodeldeployment
@@ -109,7 +110,6 @@
 # - oci.media_services.MediaServicesClient
 # - oci.opa.OpaInstanceClient
 # - oci.opsi.OperationsInsightsClient
-# - oci.optimizer.OptimizerClient
 # - oci.recovery.DatabaseRecoveryClient
 # - oci.redis.RedisClusterClient
 # - oci.service_mesh.ServiceMeshClient
@@ -128,7 +128,7 @@ import contextlib
 import os
 import time
 
-version = "24.12.10"
+version = "25.01.13"
 
 ##########################################################################
 # check OCI version

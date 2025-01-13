@@ -22,7 +22,7 @@ import sys
 
 
 class ShowOCIOutput(object):
-    version = "24.12.10"
+    version = "25.01.13"
 
     ##########################################################################
     # spaces for align
@@ -1383,7 +1383,7 @@ class ShowOCIOutput(object):
 
                         # print backups
                         for backup in db['backups']:
-                            print(self.tabs + self.tabs + "        " + backup['name'] + " - " + backup['time'] + " - " + backup['size'])
+                            print(self.tabs + self.tabs + "        " + backup['name'] + " - " + backup['time'] + " - DB Size " + backup['size'])
 
                     print(self.tabs + "          : " + '-' * 90)
 
@@ -1611,7 +1611,7 @@ class ShowOCIOutput(object):
 
                             # print backups
                             for backup in db['backups']:
-                                print(self.tabs + self.tabs + "             " + backup['name'] + " - " + backup['time'] + " - " + backup['size'])
+                                print(self.tabs + self.tabs + "             " + backup['name'] + " - " + backup['time'] + " - DB Size " + backup['size'])
 
                         print(self.tabs + "               : " + '-' * 90)
 
@@ -1780,7 +1780,7 @@ class ShowOCIOutput(object):
 
                         # print backups
                         for backup in db['backups']:
-                            print(self.tabs + self.tabs + "      " + backup['name'] + " - " + backup['time'] + " - " + backup['size'])
+                            print(self.tabs + self.tabs + "      " + backup['name'] + " - " + backup['time'] + " - DB Size " + backup['size'])
 
         except Exception as e:
             self.__print_error("__print_database_db_system", e)
@@ -4369,6 +4369,8 @@ class ShowOCICSV(object):
     csv_announcements = []
     csv_errors = []
     csv_resources = []
+    csv_advisor_recommendations = []
+    csv_advisor_resource_actions = []
     csv_functions_apps = []
     csv_functions_fns = []
     csv_certificates = []
@@ -4565,6 +4567,10 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("all_resources", self.csv_resources)
             self.__export_to_csv_file("announcements", self.csv_announcements)
             self.__export_to_csv_file("errors", self.csv_errors)
+
+            self.__export_to_csv_file("advisor_recommendations", self.csv_advisor_recommendations)
+            self.__export_to_csv_file("advisor_resource_actions", self.csv_advisor_resource_actions)
+
             self.__export_to_csv_file("identity_compartments", self.csv_identity_compartments)
             self.__export_to_csv_file("identity_users", self.csv_identity_users)
             self.__export_to_csv_file("identity_network_sources", self.csv_identity_network_sources)
@@ -6780,7 +6786,7 @@ class ShowOCICSV(object):
                     'database_edition': backup['database_edition'],
                     'backup_name': backup['display_name'],
                     'time': backup['time'],
-                    'size': backup['sum_size_gb'],
+                    'size': "",
                     'id': backup['id'],
                     'database_id': backup['database_id'],
                     'kms_key_id': backup['kms_key_id'],
@@ -8423,6 +8429,9 @@ class ShowOCICSV(object):
                         'block_volumes_is_multipath': "",
                         'block_volumes_is_read_only': "",
                         'vnic_ids': "",
+                        'is_cross_numa_node': instance['is_cross_numa_node'],
+                        'launch_mode': instance['launch_mode'],
+                        'licensing_configs': str(instance['licensing_configs']),
                         'freeform_tags': self.__get_freeform_tags(instance['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(instance['defined_tags']),
                         'instance_id': instance['id'],
@@ -10590,6 +10599,12 @@ class ShowOCICSV(object):
             if 'alarms' in data:
                 self.__csv_monitor_alarms(region_name, data['alarms'])
 
+            if 'advisor_recommendations' in data:
+                self.__csv_monitor_advisor_recommendations(data['advisor_recommendations'])
+
+            if 'advisor_resource_actions' in data:
+                self.__csv_monitor_advisor_resource_actions(data['advisor_resource_actions'])
+
         except Exception as e:
             self.__print_error("__csv_monitoring", e)
 
@@ -10631,6 +10646,83 @@ class ShowOCICSV(object):
 
         except Exception as e:
             self.__print_error("__csv_monitor_agents", e)
+
+    ##########################################################################
+    # Advisor Recommendations
+    ##########################################################################
+    def __csv_monitor_advisor_recommendations(self, advisors):
+        try:
+
+            if len(advisors) == 0:
+                return
+
+            if advisors:
+                for ar in advisors:
+
+                    data = {
+                        'category_id': ar['category_id'],
+                        'name': ar['name'],
+                        'description': ar['description'],
+                        'importance': ar['importance'],
+                        'lifecycle_state': ar['lifecycle_state'],
+                        'estimated_cost_saving': ar['estimated_cost_saving'],
+                        'nodes_shapes': str(':'.join(x['status'] + "=" + x['count'] for x in ar['resource_counts'])),
+                        'status': ar['status'],
+                        'time_status_begin': ar['time_status_begin'],
+                        'time_status_end': ar['time_status_end'],
+                        'time_created': ar['time_created'],
+                        'time_updated': ar['time_updated'],
+                        'compartment_id': ar['compartment_id'],
+                        'extended_metadata': str(ar['extended_metadata']),
+                        'id': ar['id']
+                    }
+
+                    self.csv_advisor_recommendations.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_monitor_advisor_recommendations", e)
+
+    ##########################################################################
+    # Advisor Resource Actions
+    ##########################################################################
+    def __csv_monitor_advisor_resource_actions(self, advisors):
+        try:
+
+            if len(advisors) == 0:
+                return
+
+            if advisors:
+                for ar in advisors:
+
+                    data = {
+                        'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
+                        'category_id': ar['category_id'],
+                        'recommendation_id': ar['recommendation_id'],
+                        'recommendation_name': ar['recommendation_name'],
+                        'resource_id': ar['resource_id'],
+                        'name': ar['name'],
+                        'resource_type': ar['resource_type'],
+                        'action_type': ar['action_type'],
+                        'action_description': ar['action_description'],
+                        'action_url': ar['action_url'],
+                        'lifecycle_state': ar['lifecycle_state'],
+                        'estimated_cost_saving': ar['estimated_cost_saving'],
+                        'status': ar['status'],
+                        'time_status_begin': ar['time_status_begin'],
+                        'time_status_end': ar['time_status_end'],
+                        'time_created': ar['time_created'],
+                        'time_updated': ar['time_updated'],
+                        'metadata': str(ar['metadata']),
+                        'extended_metadata': str(ar['extended_metadata']),
+                        'compartment_id': ar['compartment_id'],
+                        'id': ar['id']
+                    }
+
+                    self.csv_advisor_resource_actions.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_monitor_advisor_resource_actions", e)
 
     ##########################################################################
     # Monitor Events
