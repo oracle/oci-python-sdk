@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+25.01.13 - 25.01.13
+=====================
+* Added Cloud Advisor Recommendations - run on root compartment only
+
+=====================
+24.12.17 - 24.12.17
+=====================
+* Change database backup size to source database size
+* Added Licensing type for instance
+
+=====================
 24.12.10 - 24.12.10
 =====================
 * Added Vnic information

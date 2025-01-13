@@ -20,7 +20,7 @@ import sys
 
 
 class ShowOCIData(object):
-    version = "24.12.10"
+    version = "25.01.13"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -1912,6 +1912,7 @@ class ShowOCIData(object):
                     'ipxe_script': instance['ipxe_script'],
                     'launch_mode': instance['launch_mode'],
                     'is_cross_numa_node': instance['is_cross_numa_node'],
+                    'licensing_configs': instance['licensing_configs'],
                     'logs': self.service.get_logging_log(instance['id'])
                 }
 
@@ -2388,11 +2389,9 @@ class ShowOCIData(object):
         try:
 
             for backup in backups:
-                bsize = "None"
-                ssize = ""
+                bsize = ""
                 if backup['database_size_in_gbs']:
                     bsize = "{0:.1f}".format(round(float(backup['database_size_in_gbs']), 1)) + "GB"
-                    ssize = "{0:.1f}".format(round(float(backup['database_size_in_gbs']), 1))
 
                 data.append(
                     {
@@ -2411,8 +2410,10 @@ class ShowOCIData(object):
                         'kms_key_version_id': backup['kms_key_version_id'],
                         'vault_id': backup['vault_id'],
                         'type': backup['type'],
-                        'sum_info': 'Object Storage - DB Backup (GB)',
-                        'sum_size_gb': ssize,
+                        # The database size in gbs is not bakcup size, empty the backup size
+                        # 'sum_info': 'Object Storage - DB Backup (GB)',
+                        'sum_size_gb': "",
+                        'database_size_in_gbs': bsize,
                         'database_id': backup['database_id'],
                         'compartment_id': backup['compartment_id'],
                         'compartment_name': backup['compartment_name'],
@@ -2951,17 +2952,15 @@ class ShowOCIData(object):
             list_db_backups = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_BACKUPS, 'region_name', region_name, 'compartment_id', compartment['id'])
 
             for backup in list_db_backups:
-                bsize = "None"
                 ssize = ""
                 if backup['database_size_in_gbs']:
-                    bsize = "{0:.1f}".format(round(float(backup['database_size_in_gbs']), 1)) + "GB"
                     ssize = "{0:.1f}".format(round(float(backup['database_size_in_gbs']), 1))
 
                 data.append(
                     {
                         'name': str(backup['display_name']) + " - " + str(backup['type']) + " - " + str(backup['lifecycle_state']),
                         'time': str(backup['time_started'])[0:16] + " - " + str(backup['time_ended'])[0:16],
-                        'size': bsize,
+                        'size': "",
                         'id': backup['id'],
                         'display_name': backup['display_name'],
                         'standalone': backup['standalone'],
@@ -2976,12 +2975,11 @@ class ShowOCIData(object):
                         'vault_id': backup['vault_id'],
                         'type': backup['type'],
                         'database_id': backup['database_id'],
+                        'database_size_in_gbs': ssize,
                         'compartment_name': backup['compartment_name'],
                         'compartment_path': backup['compartment_path'],
                         'compartment_id': backup['compartment_id'],
-                        'region_name': backup['region_name'],
-                        'sum_info': 'Object Storage - DB Backup (GB)',
-                        'sum_size_gb': ssize
+                        'region_name': backup['region_name']
                     })
             return data
 
@@ -4311,6 +4309,8 @@ class ShowOCIData(object):
             alarms = self.service.search_multi_items(self.service.C_MONITORING, self.service.C_MONITORING_ALARMS, 'region_name', region_name, 'compartment_id', compartment['id'])
             events = self.service.search_multi_items(self.service.C_MONITORING, self.service.C_MONITORING_EVENTS, 'region_name', region_name, 'compartment_id', compartment['id'])
             agents = self.service.search_multi_items(self.service.C_MONITORING, self.service.C_MONITORING_AGENTS, 'region_name', region_name, 'compartment_id', compartment['id'])
+            advisor_recommendations = self.service.search_multi_items(self.service.C_MONITORING, self.service.C_MONITORING_ADVISOR_RECOMMENDATIONS, 'region_name', region_name, 'compartment_id', compartment['id'])
+            advisor_resource_actions = self.service.search_multi_items(self.service.C_MONITORING, self.service.C_MONITORING_ADVISOR_RESOURCE_ACTIONS, 'region_name', region_name, 'compartment_id', compartment['id'])
             db_managements = self.service.search_multi_items(self.service.C_MONITORING, self.service.C_MONITORING_DB_MANAGEMENT, 'region_name', region_name, 'compartment_id', compartment['id'])
 
             data = {}
@@ -4330,6 +4330,13 @@ class ShowOCIData(object):
             # if agents add it
             if agents:
                 data['agents'] = agents
+
+            # if advisors add it
+            if advisor_recommendations:
+                data['advisor_recommendations'] = advisor_recommendations
+
+            if advisor_resource_actions:
+                data['advisor_resource_actions'] = advisor_resource_actions
 
             # if db_managements add it
             if db_managements:

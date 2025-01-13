@@ -39,8 +39,8 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "24.12.10"
-    oci_compatible_version = "2.129.4"
+    version = "25.01.13"
+    oci_compatible_version = "2.141.1"
     thread_lock = threading.Lock()
     collection_ljust = 40
 
@@ -191,6 +191,8 @@ class ShowOCIService(object):
     C_MONITORING_ALARMS = "alarms"
     C_MONITORING_EVENTS = "events"
     C_MONITORING_AGENTS = "agents"
+    C_MONITORING_ADVISOR_RESOURCE_ACTIONS = "advisor_resource_actions"
+    C_MONITORING_ADVISOR_RECOMMENDATIONS = "advisor_recommendations"
     C_MONITORING_DB_MANAGEMENT = "db_management"
 
     # Notifications
@@ -307,6 +309,7 @@ class ShowOCIService(object):
     EXCLUDE_POSTGRESQL = 'POSTGRESQL'
     EXCLUDE_GOLDENGATE = 'GOLDENGATE'
     EXCLUDE_ANNOUNCEMENT = 'ANNOUNCEMENT'
+    EXCLUDE_ADVISOR = 'ADVISOR'
 
     ##########################################################################
     # Service not yet available - need to remove on availability
@@ -500,6 +503,9 @@ class ShowOCIService(object):
         {'date': '2024-07', 'version': '19.24'},
         {'date': '2024-10', 'version': '19.25'},
         {'date': '2025-01', 'version': '19.26'},
+        {'date': '2025-04', 'version': '19.27'},
+        {'date': '2025-07', 'version': '19.28'},
+        {'date': '2025-10', 'version': '19.29'},
         {'date': '2020-12', 'version': '21.1'},
         {'date': '2021-04', 'version': '21.2'},
         {'date': '2021-07', 'version': '21.3'},
@@ -516,6 +522,10 @@ class ShowOCIService(object):
         {'date': '2024-04', 'version': '21.14'},
         {'date': '2024-07', 'version': '21.15'},
         {'date': '2024-10', 'version': '21.16'},
+        {'date': '2025-01', 'version': '21.17'},
+        {'date': '2025-04', 'version': '21.18'},
+        {'date': '2025-07', 'version': '21.19'},
+        {'date': '2025-10', 'version': '21.20'}
     ]
 
     ##########################################################################
@@ -5802,7 +5812,13 @@ class ShowOCIService(object):
                         'ipxe_script': self.get_value(arr.ipxe_script),
                         'launch_mode': self.get_value(arr.launch_mode),
                         'is_cross_numa_node': self.get_value(arr.is_cross_numa_node),
-                        'extended_metadata': arr.extended_metadata}
+                        'extended_metadata': arr.extended_metadata,
+                        'licensing_configs': [{
+                            'type': self.get_value(x.type),
+                            'license_type': self.get_value(x.license_type),
+                            'os_version': self.get_value(x.os_version)
+                        } for x in arr.licensing_configs] if arr.licensing_configs else []
+                    }
 
                     if arr.launch_options:
                         val['launch_boot_volume_type'] = self.get_value(arr.launch_options.boot_volume_type)
@@ -14427,8 +14443,9 @@ class ShowOCIService(object):
 
         try:
             section_start_time = time.time()
-            print("Monitoring, Notifications, Events, Bastion, Logging, KMS, Limits, Quotas, E-Mail, Budget, Certificates...")
+            print("Monitoring, Notifications, Events, Bastion, Logging, KMS, Limits, Quotas, E-Mail, Budget, Advisors, Certificates...")
 
+            db_cloud_advisor_client = self.__create_client(oci.optimizer.OptimizerClient, key=self.EXCLUDE_ADVISOR)
             monitor_client = self.__create_client(oci.monitoring.MonitoringClient)
             ons_cp_client = self.__create_client(oci.ons.NotificationControlPlaneClient)
             ons_dp_client = self.__create_client(oci.ons.NotificationDataPlaneClient)
@@ -14459,6 +14476,8 @@ class ShowOCIService(object):
             self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_LOGGING)
             self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_KEYS)
             self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_VAULTS)
+            self.__initialize_data_key(self.C_MONITORING, self.C_MONITORING_ADVISOR_RESOURCE_ACTIONS)
+            self.__initialize_data_key(self.C_MONITORING, self.C_MONITORING_ADVISOR_RECOMMENDATIONS)
             self.__initialize_data_key(self.C_MONITORING, self.C_MONITORING_ALARMS)
             self.__initialize_data_key(self.C_MONITORING, self.C_MONITORING_EVENTS)
             self.__initialize_data_key(self.C_MONITORING, self.C_MONITORING_AGENTS)
@@ -14492,6 +14511,8 @@ class ShowOCIService(object):
                 monitor[self.C_MONITORING_EVENTS] += self.__load_monitoring_events(event_client, compartments)
                 monitor[self.C_MONITORING_AGENTS] += self.__load_monitoring_agents(management_agent_client, compartments)
                 monitor[self.C_MONITORING_DB_MANAGEMENT] += self.__load_monitoring_database_management(db_management_client, compartments)
+                monitor[self.C_MONITORING_ADVISOR_RECOMMENDATIONS] += self.__load_monitoring_cloud_advisor_recommendations(db_cloud_advisor_client, tenancy['id'], compartments)
+                monitor[self.C_MONITORING_ADVISOR_RESOURCE_ACTIONS] += self.__load_monitoring_cloud_advisor_resource_actions(db_cloud_advisor_client, compartments)
 
                 notifications[self.C_NOTIFICATIONS_TOPICS] += self.__load_notifications_topics(ons_cp_client, compartments)
                 notifications[self.C_NOTIFICATIONS_SUBSCRIPTIONS] += self.__load_notifications_subscriptions(ons_dp_client, compartments)
@@ -14520,6 +14541,8 @@ class ShowOCIService(object):
             ##########################
             else:
                 with ThreadPoolExecutor(max_workers=self.flags.threads) as executor:
+                    future_MONITORING_ADVISOR_RECOMMENDATIONS = executor.submit(self.__load_monitoring_cloud_advisor_recommendations, db_cloud_advisor_client, tenancy['id'], compartments)
+                    future_MONITORING_ADVISOR_RESOURCE_ACTIONS = executor.submit(self.__load_monitoring_cloud_advisor_resource_actions, db_cloud_advisor_client, compartments)
                     future_MONITORING_ALARMS = executor.submit(self.__load_monitoring_alarms, monitor_client, compartments)
                     future_MONITORING_EVENTS = executor.submit(self.__load_monitoring_events, event_client, compartments)
                     future_MONITORING_AGENTS = executor.submit(self.__load_monitoring_agents, management_agent_client, compartments)
@@ -14542,6 +14565,8 @@ class ShowOCIService(object):
                     future_CERTIFICATE_CA_BUNDLES = executor.submit(self.__load_certificate_ca_bundles, certificates_client, compartments)
                     future_CERTIFICATE_AUTHORITIES = executor.submit(self.__load_certificate_authorities, certificates_client, compartments)
 
+                    monitor[self.C_MONITORING_ADVISOR_RECOMMENDATIONS] += next(as_completed([future_MONITORING_ADVISOR_RECOMMENDATIONS])).result()
+                    monitor[self.C_MONITORING_ADVISOR_RESOURCE_ACTIONS] += next(as_completed([future_MONITORING_ADVISOR_RESOURCE_ACTIONS])).result()
                     monitor[self.C_MONITORING_ALARMS] += next(as_completed([future_MONITORING_ALARMS])).result()
                     monitor[self.C_MONITORING_EVENTS] += next(as_completed([future_MONITORING_EVENTS])).result()
                     monitor[self.C_MONITORING_AGENTS] += next(as_completed([future_MONITORING_AGENTS])).result()
@@ -14677,6 +14702,227 @@ class ShowOCIService(object):
             if not self.__check_request_error(e):
                 self.__print_error(e)
             return data
+        except Exception as e:
+            self.__print_error(e)
+            return data
+
+    ##########################################################################
+    # __load_monitoring_cloud_advisor_recommendation_name
+    ##########################################################################
+    def __load_monitoring_cloud_advisor_recommendation_name(self, cloud_advisor_client, recommendation_id):
+        data = ""
+        try:
+            # check if recommendation is in the array of recommendations
+            for rc in self.data[self.C_MONITORING][self.C_MONITORING_ADVISOR_RECOMMENDATIONS]:
+                if rc['id'] == recommendation_id:
+                    return rc['name']
+
+            # check if recommendation_name already feteched for resource actions
+            for rc in self.data[self.C_MONITORING][self.C_MONITORING_ADVISOR_RESOURCE_ACTIONS]:
+                if rc['recommendation_id'] == recommendation_id and not rc['recommendation_name']:
+                    return rc['recommendation_name']
+
+            # fetch the name
+            rc = cloud_advisor_client.get_recommendation(recommendation_id=recommendation_id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+            if rc:
+                return str(rc.name)
+
+            return ""
+        except oci.exceptions.RequestException as e:
+            if not self.__check_request_error(e):
+                self.__print_error(e)
+            return data
+        except Exception as e:
+            self.__print_error(e)
+            return data
+
+    ##########################################################################
+    # __load_monitoring_cloud_advisor_resource_actions
+    ##########################################################################
+    def __load_monitoring_cloud_advisor_resource_actions(self, cloud_advisor_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            errstr = ""
+            header = "Cloud Advisor Resource Actions"
+            self.__load_print_status_with_threads(header)
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    continue
+
+                items = []
+                try:
+                    items = oci.pagination.list_call_get_all_results(
+                        cloud_advisor_client.list_resource_actions,
+                        compartment_id=compartment['id'],
+                        compartment_id_in_subtree=False,
+                        sort_by="NAME",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if 'go to your home region' in str(e):
+                        errstr = "Can run on home region only, skipping."
+                        self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+                        return data
+                    if self.__check_service_error(e, compartment):
+                        self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                        errstr += "a"
+                        continue
+                    else:
+                        self.__load_print_error(e, compartment)
+                        errstr += "e"
+                        continue
+
+                except Exception as e:
+                    self.__load_print_error(e, compartment)
+                    errstr += "e"
+                    continue
+
+                if self.flags.skip_threads:
+                    print(".", end="")
+
+                # event = oci.events.models.RuleSummary
+                for item in items:
+                    if self.get_value(item.lifecycle_state) == 'TERMINATED':
+                        continue
+                    val = {
+                        'id': str(item.id),
+                        'category_id': self.get_value(item.category_id),
+                        'recommendation_id': self.get_value(item.recommendation_id),
+                        'recommendation_name': self.__load_monitoring_cloud_advisor_recommendation_name(cloud_advisor_client, self.get_value(item.recommendation_id)),
+                        'resource_id': self.get_value(item.resource_id),
+                        'name': self.get_value(item.name),
+                        'resource_type': self.get_value(item.resource_type),
+                        'action_type': self.get_value(item.action.type) if item.action else "",
+                        'action_description': self.get_value(item.action.description) if item.action else "",
+                        'action_url': self.get_value(item.action.url) if item.action else "",
+                        'lifecycle_state': self.get_value(item.lifecycle_state),
+                        'estimated_cost_saving': self.get_value(item.estimated_cost_saving),
+                        'status': self.get_value(item.status),
+                        'time_status_begin': self.get_date(item.time_status_begin),
+                        'time_status_end': self.get_date(item.time_status_end),
+                        'time_created': self.get_date(item.time_created),
+                        'time_updated': self.get_date(item.time_updated),
+                        'metadata': item.metadata if item.metadata else "",
+                        'extended_metadata': item.extended_metadata if item.extended_metadata else "",
+                        'compartment_id': self.get_value(item.compartment_id),
+                        'compartment_name': self.get_value(item.compartment_name),
+                        'compartment_path': str(compartment['path']),
+                        'region_name': str(self.config['region'])
+                    }
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if not self.__check_request_error(e):
+                self.__print_error(e)
+            return data
+        except Exception as e:
+            self.__print_error(e)
+            return data
+
+    ##########################################################################
+    # __load_monitoring_cloud_advisor_recommendations
+    # Lists the Cloud Advisor recommendations that are currently supported
+    ##########################################################################
+    def __load_monitoring_cloud_advisor_recommendations(self, cloud_advisor_client, root_compartment_id, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            errstr = ""
+            header = "Cloud Advisor Recommendations"
+            self.__load_print_status_with_threads(header)
+
+            if not cloud_advisor_client:
+                self.__load_print_thread_exclude(header)
+                return data
+
+            # Check if root compartment in the list to scan
+            scan_compartment = False
+            for c in compartments:
+                if c['id'] == root_compartment_id:
+                    scan_compartment = True
+
+            if not scan_compartment:
+                errstr = "Can run on root compartment only, skipping."
+                self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+                return data
+
+            # Only supported the root compartment
+            # Check if root compartment in the list
+            advisors = oci.pagination.list_call_get_all_results(
+                cloud_advisor_client.list_recommendations,
+                compartment_id=root_compartment_id,
+                compartment_id_in_subtree=True,
+                sort_by="NAME",
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
+            # event = oci.optimizer.models.RecommendationSummary
+            for item in advisors:
+                val = {
+                    'id': str(item.id),
+                    'category_id': self.get_value(item.category_id),
+                    'name': self.get_value(item.name),
+                    'description': self.get_value(item.description),
+                    'importance': self.get_value(item.importance),
+                    'resource_counts': [{
+                        'status': self.get_value(x.status),
+                        'count': self.get_value(x.count)
+                    } for x in item.resource_counts if x.count is not None] if item.resource_counts else [],
+                    'lifecycle_state': self.get_value(item.lifecycle_state),
+                    'estimated_cost_saving': self.get_value(item.estimated_cost_saving),
+                    'status': self.get_value(item.status),
+                    'time_status_begin': self.get_date(item.time_status_begin),
+                    'time_status_end': self.get_date(item.time_status_end),
+                    'time_created': self.get_date(item.time_created),
+                    'time_updated': self.get_date(item.time_updated),
+                    'compartment_id': self.get_value(item.compartment_id),
+                    'extended_metadata': item.extended_metadata,
+                    'region_name': str(self.config['region'])
+                }
+
+                # add the data
+                cnt += 1
+                data.append(val)
+
+            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+            return data
+
+        except oci.exceptions.ServiceError as e:
+            if 'go to your home region' in str(e):
+                errstr = "Can run on home region only, skipping."
+                self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+                return data
+            if self.__check_service_error(e):
+                self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                errstr += "a"
+            else:
+                self.__load_print_error(e)
+                errstr += "e"
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            else:
+                self.__load_print_error(e)
+                return data
         except Exception as e:
             self.__print_error(e)
             return data
