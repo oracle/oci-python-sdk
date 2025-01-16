@@ -1,6 +1,0 @@
-schema_version: 20180708
-name: pythonfn
-version: 0.0.1
-runtime: python
-entrypoint: /python/bin/fdk /function/func.py handler
-memory: 1024

@@ -42,12 +42,12 @@ requires = [
 
 setup(
     name="oci",
-    url="https://docs.oracle.com/en-us/iaas/tools/python/latest/index.html",
+    url="https://docs.oracle.com/en-us/iaas/tools/python/latest/index.html",    
     version=version,
-    description="Oracle Cloud Infrastructure Python SDK",
+    description="Oracle Cloud Infrastructure Python SDK modified by Moviri for use in Dynatrace extensions",
     long_description=readme,
-    author="Oracle",
-    author_email="joe.levy@oracle.com",
+    author="Moviri",
+    author_email="dynatrace_extensions@moviri.com",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     include_package_data=True,
