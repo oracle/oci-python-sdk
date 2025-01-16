@@ -42,7 +42,7 @@ requires = [
 
 setup(
     name="mv_oci_sdk",
-    url="https://docs.oracle.com/en-us/iaas/tools/python/latest/index.html",    
+    url="https://github.com/Moviri/mv-oci-sdk",    
     version=version,
     description="Oracle Cloud Infrastructure Python SDK modified by Moviri for use in Dynatrace extensions",
     long_description=readme,
