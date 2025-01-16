@@ -53,7 +53,7 @@ Once your virtual environment is active, oci can be installed using pip.
 
 ::
 
-    pip install oci
+    pip install mv-oci-sdk
 
 
 ============
