@@ -10,6 +10,7 @@ from .backend import Backend
 from .backend_collection import BackendCollection
 from .backend_details import BackendDetails
 from .backend_health import BackendHealth
+from .backend_operational_status import BackendOperationalStatus
 from .backend_set import BackendSet
 from .backend_set_collection import BackendSetCollection
 from .backend_set_details import BackendSetDetails
@@ -60,6 +61,7 @@ network_load_balancer_type_mapping = {
     "BackendCollection": BackendCollection,
     "BackendDetails": BackendDetails,
     "BackendHealth": BackendHealth,
+    "BackendOperationalStatus": BackendOperationalStatus,
     "BackendSet": BackendSet,
     "BackendSetCollection": BackendSetCollection,
     "BackendSetDetails": BackendSetDetails,

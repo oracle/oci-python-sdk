@@ -64,6 +64,7 @@ Database
     oci.database.models.AutonomousDatabaseWallet
     oci.database.models.AutonomousDbPreviewVersionSummary
     oci.database.models.AutonomousDbVersionSummary
+    oci.database.models.AutonomousDwDatabase
     oci.database.models.AutonomousExadataInfrastructure
     oci.database.models.AutonomousExadataInfrastructureShapeSummary
     oci.database.models.AutonomousExadataInfrastructureSummary
@@ -132,6 +133,7 @@ Database
     oci.database.models.ConvertToPdbDetails
     oci.database.models.ConvertToPdbTargetBase
     oci.database.models.ConvertToRegularPluggableDatabaseDetails
+    oci.database.models.ConvertToStandaloneDetails
     oci.database.models.CreateApplicationVipDetails
     oci.database.models.CreateAutonomousContainerDatabaseDataguardAssociationDetails
     oci.database.models.CreateAutonomousContainerDatabaseDetails
@@ -203,11 +205,15 @@ Database
     oci.database.models.CreateSchedulingPlanDetails
     oci.database.models.CreateSchedulingPolicyDetails
     oci.database.models.CreateSchedulingWindowDetails
+    oci.database.models.CreateStandByDatabaseDetails
+    oci.database.models.CreateStandbyDetails
     oci.database.models.CreateVmClusterDetails
     oci.database.models.CustomerContact
     oci.database.models.DataCollectionOptions
     oci.database.models.DataGuardAssociation
     oci.database.models.DataGuardAssociationSummary
+    oci.database.models.DataGuardGroup
+    oci.database.models.DataGuardGroupMember
     oci.database.models.Database
     oci.database.models.DatabaseConnectionCredentials
     oci.database.models.DatabaseConnectionCredentialsByDetails
@@ -271,6 +277,7 @@ Database
     oci.database.models.EnableExternalPluggableDatabaseOperationsInsightsDetails
     oci.database.models.EnableExternalPluggableDatabaseStackMonitoringDetails
     oci.database.models.EnablePluggableDatabaseManagementDetails
+    oci.database.models.EncryptionKeyLocationDetails
     oci.database.models.EstimatedPatchingTime
     oci.database.models.ExadataDbSystemMigration
     oci.database.models.ExadataDbSystemMigrationSummary
@@ -303,6 +310,7 @@ Database
     oci.database.models.ExternalDatabaseBase
     oci.database.models.ExternalDatabaseConnector
     oci.database.models.ExternalDatabaseConnectorSummary
+    oci.database.models.ExternalHsmEncryptionDetails
     oci.database.models.ExternalMacsConnector
     oci.database.models.ExternalMacsConnectorSummary
     oci.database.models.ExternalNonContainerDatabase
@@ -310,6 +318,7 @@ Database
     oci.database.models.ExternalPluggableDatabase
     oci.database.models.ExternalPluggableDatabaseSummary
     oci.database.models.FailoverDataGuardAssociationDetails
+    oci.database.models.FailoverDataGuardDetails
     oci.database.models.FileSystemConfigurationDetail
     oci.database.models.FlexComponentCollection
     oci.database.models.FlexComponentSummary
@@ -376,6 +385,7 @@ Database
     oci.database.models.RefreshableCloneSummary
     oci.database.models.RegisterAutonomousDatabaseDataSafeDetails
     oci.database.models.ReinstateDataGuardAssociationDetails
+    oci.database.models.ReinstateDataGuardDetails
     oci.database.models.RemoteClonePluggableDatabaseDetails
     oci.database.models.RemoveVirtualMachineFromCloudVmClusterDetails
     oci.database.models.RemoveVirtualMachineFromExadbVmClusterDetails
@@ -412,6 +422,7 @@ Database
     oci.database.models.SetKeyVersionDetails
     oci.database.models.StackMonitoringConfig
     oci.database.models.StoragePerformanceDetails
+    oci.database.models.SwitchOverDataGuardDetails
     oci.database.models.SwitchoverDataGuardAssociationDetails
     oci.database.models.SystemVersionCollection
     oci.database.models.SystemVersionSummary
@@ -432,6 +443,7 @@ Database
     oci.database.models.UpdateConsoleConnectionDetails
     oci.database.models.UpdateConsoleHistoryDetails
     oci.database.models.UpdateDataGuardAssociationDetails
+    oci.database.models.UpdateDataGuardDetails
     oci.database.models.UpdateDatabaseDetails
     oci.database.models.UpdateDatabaseSoftwareImageDetails
     oci.database.models.UpdateDbHomeDetails

@@ -28,6 +28,10 @@ class CreateDatabaseFromBackupDetails(object):
             The value to assign to the backup_tde_password property of this CreateDatabaseFromBackupDetails.
         :type backup_tde_password: str
 
+        :param source_encryption_key_location_details:
+            The value to assign to the source_encryption_key_location_details property of this CreateDatabaseFromBackupDetails.
+        :type source_encryption_key_location_details: oci.database.models.EncryptionKeyLocationDetails
+
         :param admin_password:
             The value to assign to the admin_password property of this CreateDatabaseFromBackupDetails.
         :type admin_password: str
@@ -52,6 +56,7 @@ class CreateDatabaseFromBackupDetails(object):
         self.swagger_types = {
             'backup_id': 'str',
             'backup_tde_password': 'str',
+            'source_encryption_key_location_details': 'EncryptionKeyLocationDetails',
             'admin_password': 'str',
             'db_unique_name': 'str',
             'db_name': 'str',
@@ -62,6 +67,7 @@ class CreateDatabaseFromBackupDetails(object):
         self.attribute_map = {
             'backup_id': 'backupId',
             'backup_tde_password': 'backupTDEPassword',
+            'source_encryption_key_location_details': 'sourceEncryptionKeyLocationDetails',
             'admin_password': 'adminPassword',
             'db_unique_name': 'dbUniqueName',
             'db_name': 'dbName',
@@ -71,6 +77,7 @@ class CreateDatabaseFromBackupDetails(object):
 
         self._backup_id = None
         self._backup_tde_password = None
+        self._source_encryption_key_location_details = None
         self._admin_password = None
         self._db_unique_name = None
         self._db_name = None
@@ -128,6 +135,26 @@ class CreateDatabaseFromBackupDetails(object):
         :type: str
         """
         self._backup_tde_password = backup_tde_password
+
+    @property
+    def source_encryption_key_location_details(self):
+        """
+        Gets the source_encryption_key_location_details of this CreateDatabaseFromBackupDetails.
+
+        :return: The source_encryption_key_location_details of this CreateDatabaseFromBackupDetails.
+        :rtype: oci.database.models.EncryptionKeyLocationDetails
+        """
+        return self._source_encryption_key_location_details
+
+    @source_encryption_key_location_details.setter
+    def source_encryption_key_location_details(self, source_encryption_key_location_details):
+        """
+        Sets the source_encryption_key_location_details of this CreateDatabaseFromBackupDetails.
+
+        :param source_encryption_key_location_details: The source_encryption_key_location_details of this CreateDatabaseFromBackupDetails.
+        :type: oci.database.models.EncryptionKeyLocationDetails
+        """
+        self._source_encryption_key_location_details = source_encryption_key_location_details
 
     @property
     def admin_password(self):

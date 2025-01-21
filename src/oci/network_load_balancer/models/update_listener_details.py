@@ -13,10 +13,10 @@ from oci.decorators import init_model_state_from_kwargs
 class UpdateListenerDetails(object):
     """
     The configuration of the listener.
-    For more information about backend set configuration, see
-    `Managing Network Load Balancer Listeners`__.
+    For more information about listeners, see
+    `Listeners for Network Load Balancers`__.
 
-    __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managinglisteners.htm
+    __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/Listeners/listener-management.htm
     """
 
     #: A constant which can be used with the protocol property of a UpdateListenerDetails.

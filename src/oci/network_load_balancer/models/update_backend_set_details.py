@@ -14,11 +14,11 @@ class UpdateBackendSetDetails(object):
     """
     The configuration details for updating a load balancer backend set.
     For more information about backend set configuration, see
-    `Managing Backend Sets`__.
+    `Backend Sets for Network Load Balancers`__.
 
     **Caution:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
-    __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendsets.htm
+    __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/BackendSets/backend-set-management.htm
     """
 
     #: A constant which can be used with the ip_version property of a UpdateBackendSetDetails.
@@ -50,6 +50,14 @@ class UpdateBackendSetDetails(object):
             The value to assign to the is_instant_failover_enabled property of this UpdateBackendSetDetails.
         :type is_instant_failover_enabled: bool
 
+        :param is_instant_failover_tcp_reset_enabled:
+            The value to assign to the is_instant_failover_tcp_reset_enabled property of this UpdateBackendSetDetails.
+        :type is_instant_failover_tcp_reset_enabled: bool
+
+        :param are_operationally_active_backends_preferred:
+            The value to assign to the are_operationally_active_backends_preferred property of this UpdateBackendSetDetails.
+        :type are_operationally_active_backends_preferred: bool
+
         :param ip_version:
             The value to assign to the ip_version property of this UpdateBackendSetDetails.
             Allowed values for this property are: "IPV4", "IPV6"
@@ -69,6 +77,8 @@ class UpdateBackendSetDetails(object):
             'is_preserve_source': 'bool',
             'is_fail_open': 'bool',
             'is_instant_failover_enabled': 'bool',
+            'is_instant_failover_tcp_reset_enabled': 'bool',
+            'are_operationally_active_backends_preferred': 'bool',
             'ip_version': 'str',
             'backends': 'list[BackendDetails]',
             'health_checker': 'HealthCheckerDetails'
@@ -79,6 +89,8 @@ class UpdateBackendSetDetails(object):
             'is_preserve_source': 'isPreserveSource',
             'is_fail_open': 'isFailOpen',
             'is_instant_failover_enabled': 'isInstantFailoverEnabled',
+            'is_instant_failover_tcp_reset_enabled': 'isInstantFailoverTcpResetEnabled',
+            'are_operationally_active_backends_preferred': 'areOperationallyActiveBackendsPreferred',
             'ip_version': 'ipVersion',
             'backends': 'backends',
             'health_checker': 'healthChecker'
@@ -88,6 +100,8 @@ class UpdateBackendSetDetails(object):
         self._is_preserve_source = None
         self._is_fail_open = None
         self._is_instant_failover_enabled = None
+        self._is_instant_failover_tcp_reset_enabled = None
+        self._are_operationally_active_backends_preferred = None
         self._ip_version = None
         self._backends = None
         self._health_checker = None
@@ -199,6 +213,54 @@ class UpdateBackendSetDetails(object):
         :type: bool
         """
         self._is_instant_failover_enabled = is_instant_failover_enabled
+
+    @property
+    def is_instant_failover_tcp_reset_enabled(self):
+        """
+        Gets the is_instant_failover_tcp_reset_enabled of this UpdateBackendSetDetails.
+        If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover.
+
+
+        :return: The is_instant_failover_tcp_reset_enabled of this UpdateBackendSetDetails.
+        :rtype: bool
+        """
+        return self._is_instant_failover_tcp_reset_enabled
+
+    @is_instant_failover_tcp_reset_enabled.setter
+    def is_instant_failover_tcp_reset_enabled(self, is_instant_failover_tcp_reset_enabled):
+        """
+        Sets the is_instant_failover_tcp_reset_enabled of this UpdateBackendSetDetails.
+        If enabled along with instant failover, the network load balancer will send TCP RST to the clients for the existing connections instead of failing over to a healthy backend. This only applies when using the instant failover.
+
+
+        :param is_instant_failover_tcp_reset_enabled: The is_instant_failover_tcp_reset_enabled of this UpdateBackendSetDetails.
+        :type: bool
+        """
+        self._is_instant_failover_tcp_reset_enabled = is_instant_failover_tcp_reset_enabled
+
+    @property
+    def are_operationally_active_backends_preferred(self):
+        """
+        Gets the are_operationally_active_backends_preferred of this UpdateBackendSetDetails.
+        If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+
+
+        :return: The are_operationally_active_backends_preferred of this UpdateBackendSetDetails.
+        :rtype: bool
+        """
+        return self._are_operationally_active_backends_preferred
+
+    @are_operationally_active_backends_preferred.setter
+    def are_operationally_active_backends_preferred(self, are_operationally_active_backends_preferred):
+        """
+        Sets the are_operationally_active_backends_preferred of this UpdateBackendSetDetails.
+        If enabled, NLB supports active-standby backends. The standby backend takes over the traffic when the active node fails, and continues to serve the traffic even when the old active node is back healthy.
+
+
+        :param are_operationally_active_backends_preferred: The are_operationally_active_backends_preferred of this UpdateBackendSetDetails.
+        :type: bool
+        """
+        self._are_operationally_active_backends_preferred = are_operationally_active_backends_preferred
 
     @property
     def ip_version(self):

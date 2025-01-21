@@ -63,12 +63,12 @@ class UpdateBackendDetails(object):
         The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger
         proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections
         as a server weighted '1'.
-        For more information about load balancing policies, see
-        `How Load Balancing Policies Work`__.
+        For more information about network load balancer policies, see
+        `Network Load Balancer Policies`__.
 
         Example: `3`
 
-        __ https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm
+        __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introduction.htm#Policies
 
 
         :return: The weight of this UpdateBackendDetails.
@@ -83,12 +83,12 @@ class UpdateBackendDetails(object):
         The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger
         proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections
         as a server weighted '1'.
-        For more information about load balancing policies, see
-        `How Load Balancing Policies Work`__.
+        For more information about network load balancer policies, see
+        `Network Load Balancer Policies`__.
 
         Example: `3`
 
-        __ https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm
+        __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introduction.htm#Policies
 
 
         :param weight: The weight of this UpdateBackendDetails.

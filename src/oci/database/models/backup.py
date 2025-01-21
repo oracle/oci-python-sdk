@@ -162,6 +162,10 @@ class Backup(object):
             The value to assign to the key_store_wallet_name property of this Backup.
         :type key_store_wallet_name: str
 
+        :param encryption_key_location_details:
+            The value to assign to the encryption_key_location_details property of this Backup.
+        :type encryption_key_location_details: oci.database.models.EncryptionKeyLocationDetails
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -182,7 +186,8 @@ class Backup(object):
             'kms_key_version_id': 'str',
             'vault_id': 'str',
             'key_store_id': 'str',
-            'key_store_wallet_name': 'str'
+            'key_store_wallet_name': 'str',
+            'encryption_key_location_details': 'EncryptionKeyLocationDetails'
         }
 
         self.attribute_map = {
@@ -204,7 +209,8 @@ class Backup(object):
             'kms_key_version_id': 'kmsKeyVersionId',
             'vault_id': 'vaultId',
             'key_store_id': 'keyStoreId',
-            'key_store_wallet_name': 'keyStoreWalletName'
+            'key_store_wallet_name': 'keyStoreWalletName',
+            'encryption_key_location_details': 'encryptionKeyLocationDetails'
         }
 
         self._id = None
@@ -226,6 +232,7 @@ class Backup(object):
         self._vault_id = None
         self._key_store_id = None
         self._key_store_wallet_name = None
+        self._encryption_key_location_details = None
 
     @property
     def id(self):
@@ -722,6 +729,26 @@ class Backup(object):
         :type: str
         """
         self._key_store_wallet_name = key_store_wallet_name
+
+    @property
+    def encryption_key_location_details(self):
+        """
+        Gets the encryption_key_location_details of this Backup.
+
+        :return: The encryption_key_location_details of this Backup.
+        :rtype: oci.database.models.EncryptionKeyLocationDetails
+        """
+        return self._encryption_key_location_details
+
+    @encryption_key_location_details.setter
+    def encryption_key_location_details(self, encryption_key_location_details):
+        """
+        Sets the encryption_key_location_details of this Backup.
+
+        :param encryption_key_location_details: The encryption_key_location_details of this Backup.
+        :type: oci.database.models.EncryptionKeyLocationDetails
+        """
+        self._encryption_key_location_details = encryption_key_location_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

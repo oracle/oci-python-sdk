@@ -86,10 +86,15 @@ Core Services
     oci.core.models.BootVolumeSourceFromBootVolumeReplicaDetails
     oci.core.models.BulkAddVirtualCircuitPublicPrefixesDetails
     oci.core.models.BulkDeleteVirtualCircuitPublicPrefixesDetails
+    oci.core.models.Byoasn
+    oci.core.models.ByoasnByoipRange
+    oci.core.models.ByoasnCollection
+    oci.core.models.ByoasnSummary
     oci.core.models.ByoipAllocatedRangeCollection
     oci.core.models.ByoipAllocatedRangeSummary
     oci.core.models.ByoipRange
     oci.core.models.ByoipRangeCollection
+    oci.core.models.ByoipRangeOriginAsn
     oci.core.models.ByoipRangeSummary
     oci.core.models.ByoipRangeVcnIpv6AllocationSummary
     oci.core.models.Byoipv6CidrDetails
@@ -101,6 +106,7 @@ Core Services
     oci.core.models.CaptureFilter
     oci.core.models.ChangeBootVolumeBackupCompartmentDetails
     oci.core.models.ChangeBootVolumeCompartmentDetails
+    oci.core.models.ChangeByoasnCompartmentDetails
     oci.core.models.ChangeByoipRangeCompartmentDetails
     oci.core.models.ChangeCaptureFilterCompartmentDetails
     oci.core.models.ChangeClusterNetworkCompartmentDetails
@@ -186,6 +192,7 @@ Core Services
     oci.core.models.CreateAppCatalogSubscriptionDetails
     oci.core.models.CreateBootVolumeBackupDetails
     oci.core.models.CreateBootVolumeDetails
+    oci.core.models.CreateByoasnDetails
     oci.core.models.CreateByoipRangeDetails
     oci.core.models.CreateCapacityReportShapeAvailabilityDetails
     oci.core.models.CreateCapacitySourceDetails
@@ -479,6 +486,7 @@ Core Services
     oci.core.models.ServiceGateway
     oci.core.models.ServiceIdRequestDetails
     oci.core.models.ServiceIdResponseDetails
+    oci.core.models.SetOriginAsnDetails
     oci.core.models.Shape
     oci.core.models.ShapeAccessControlServiceEnabledPlatformOptions
     oci.core.models.ShapeAlternativeObject
@@ -518,6 +526,7 @@ Core Services
     oci.core.models.UpdateBootVolumeBackupDetails
     oci.core.models.UpdateBootVolumeDetails
     oci.core.models.UpdateBootVolumeKmsKeyDetails
+    oci.core.models.UpdateByoasnDetails
     oci.core.models.UpdateByoipRangeDetails
     oci.core.models.UpdateCapacitySourceDetails
     oci.core.models.UpdateCaptureFilterDetails

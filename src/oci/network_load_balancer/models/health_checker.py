@@ -13,9 +13,9 @@ from oci.decorators import init_model_state_from_kwargs
 class HealthChecker(object):
     """
     The health check policy configuration.
-    For more information, see `Editing Health Check Policies`__.
+    For more information, see `Editing Network Load Balancer Health Check Policies`__.
 
-    __ https://docs.cloud.oracle.com/Content/Balance/Tasks/editinghealthcheck.htm
+    __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-management.htm
     """
 
     #: A constant which can be used with the protocol property of a HealthChecker.

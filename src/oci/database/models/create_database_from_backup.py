@@ -33,7 +33,7 @@ class CreateDatabaseFromBackup(CreateDatabaseBase):
 
         :param source:
             The value to assign to the source property of this CreateDatabaseFromBackup.
-            Allowed values for this property are: "NONE", "DB_BACKUP"
+            Allowed values for this property are: "NONE", "DB_BACKUP", "DATAGUARD"
         :type source: str
 
         :param kms_key_id:
