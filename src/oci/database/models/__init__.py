@@ -52,6 +52,7 @@ from .autonomous_database_summary import AutonomousDatabaseSummary
 from .autonomous_database_wallet import AutonomousDatabaseWallet
 from .autonomous_db_preview_version_summary import AutonomousDbPreviewVersionSummary
 from .autonomous_db_version_summary import AutonomousDbVersionSummary
+from .autonomous_dw_database import AutonomousDwDatabase
 from .autonomous_exadata_infrastructure import AutonomousExadataInfrastructure
 from .autonomous_exadata_infrastructure_shape_summary import AutonomousExadataInfrastructureShapeSummary
 from .autonomous_exadata_infrastructure_summary import AutonomousExadataInfrastructureSummary
@@ -120,6 +121,7 @@ from .console_history_summary import ConsoleHistorySummary
 from .convert_to_pdb_details import ConvertToPdbDetails
 from .convert_to_pdb_target_base import ConvertToPdbTargetBase
 from .convert_to_regular_pluggable_database_details import ConvertToRegularPluggableDatabaseDetails
+from .convert_to_standalone_details import ConvertToStandaloneDetails
 from .create_application_vip_details import CreateApplicationVipDetails
 from .create_autonomous_container_database_dataguard_association_details import CreateAutonomousContainerDatabaseDataguardAssociationDetails
 from .create_autonomous_container_database_details import CreateAutonomousContainerDatabaseDetails
@@ -191,11 +193,15 @@ from .create_scheduled_action_details import CreateScheduledActionDetails
 from .create_scheduling_plan_details import CreateSchedulingPlanDetails
 from .create_scheduling_policy_details import CreateSchedulingPolicyDetails
 from .create_scheduling_window_details import CreateSchedulingWindowDetails
+from .create_stand_by_database_details import CreateStandByDatabaseDetails
+from .create_standby_details import CreateStandbyDetails
 from .create_vm_cluster_details import CreateVmClusterDetails
 from .customer_contact import CustomerContact
 from .data_collection_options import DataCollectionOptions
 from .data_guard_association import DataGuardAssociation
 from .data_guard_association_summary import DataGuardAssociationSummary
+from .data_guard_group import DataGuardGroup
+from .data_guard_group_member import DataGuardGroupMember
 from .database import Database
 from .database_connection_credentials import DatabaseConnectionCredentials
 from .database_connection_credentials_by_details import DatabaseConnectionCredentialsByDetails
@@ -259,6 +265,7 @@ from .enable_external_pluggable_database_database_management_details import Enab
 from .enable_external_pluggable_database_operations_insights_details import EnableExternalPluggableDatabaseOperationsInsightsDetails
 from .enable_external_pluggable_database_stack_monitoring_details import EnableExternalPluggableDatabaseStackMonitoringDetails
 from .enable_pluggable_database_management_details import EnablePluggableDatabaseManagementDetails
+from .encryption_key_location_details import EncryptionKeyLocationDetails
 from .estimated_patching_time import EstimatedPatchingTime
 from .exadata_db_system_migration import ExadataDbSystemMigration
 from .exadata_db_system_migration_summary import ExadataDbSystemMigrationSummary
@@ -291,6 +298,7 @@ from .external_container_database_summary import ExternalContainerDatabaseSummar
 from .external_database_base import ExternalDatabaseBase
 from .external_database_connector import ExternalDatabaseConnector
 from .external_database_connector_summary import ExternalDatabaseConnectorSummary
+from .external_hsm_encryption_details import ExternalHsmEncryptionDetails
 from .external_macs_connector import ExternalMacsConnector
 from .external_macs_connector_summary import ExternalMacsConnectorSummary
 from .external_non_container_database import ExternalNonContainerDatabase
@@ -298,6 +306,7 @@ from .external_non_container_database_summary import ExternalNonContainerDatabas
 from .external_pluggable_database import ExternalPluggableDatabase
 from .external_pluggable_database_summary import ExternalPluggableDatabaseSummary
 from .failover_data_guard_association_details import FailoverDataGuardAssociationDetails
+from .failover_data_guard_details import FailoverDataGuardDetails
 from .file_system_configuration_detail import FileSystemConfigurationDetail
 from .flex_component_collection import FlexComponentCollection
 from .flex_component_summary import FlexComponentSummary
@@ -364,6 +373,7 @@ from .refreshable_clone_collection import RefreshableCloneCollection
 from .refreshable_clone_summary import RefreshableCloneSummary
 from .register_autonomous_database_data_safe_details import RegisterAutonomousDatabaseDataSafeDetails
 from .reinstate_data_guard_association_details import ReinstateDataGuardAssociationDetails
+from .reinstate_data_guard_details import ReinstateDataGuardDetails
 from .remote_clone_pluggable_database_details import RemoteClonePluggableDatabaseDetails
 from .remove_virtual_machine_from_cloud_vm_cluster_details import RemoveVirtualMachineFromCloudVmClusterDetails
 from .remove_virtual_machine_from_exadb_vm_cluster_details import RemoveVirtualMachineFromExadbVmClusterDetails
@@ -400,6 +410,7 @@ from .self_mount_details import SelfMountDetails
 from .set_key_version_details import SetKeyVersionDetails
 from .stack_monitoring_config import StackMonitoringConfig
 from .storage_performance_details import StoragePerformanceDetails
+from .switch_over_data_guard_details import SwitchOverDataGuardDetails
 from .switchover_data_guard_association_details import SwitchoverDataGuardAssociationDetails
 from .system_version_collection import SystemVersionCollection
 from .system_version_summary import SystemVersionSummary
@@ -420,6 +431,7 @@ from .update_cloud_vm_cluster_details import UpdateCloudVmClusterDetails
 from .update_console_connection_details import UpdateConsoleConnectionDetails
 from .update_console_history_details import UpdateConsoleHistoryDetails
 from .update_data_guard_association_details import UpdateDataGuardAssociationDetails
+from .update_data_guard_details import UpdateDataGuardDetails
 from .update_database_details import UpdateDatabaseDetails
 from .update_database_software_image_details import UpdateDatabaseSoftwareImageDetails
 from .update_db_home_details import UpdateDbHomeDetails
@@ -513,6 +525,7 @@ database_type_mapping = {
     "AutonomousDatabaseWallet": AutonomousDatabaseWallet,
     "AutonomousDbPreviewVersionSummary": AutonomousDbPreviewVersionSummary,
     "AutonomousDbVersionSummary": AutonomousDbVersionSummary,
+    "AutonomousDwDatabase": AutonomousDwDatabase,
     "AutonomousExadataInfrastructure": AutonomousExadataInfrastructure,
     "AutonomousExadataInfrastructureShapeSummary": AutonomousExadataInfrastructureShapeSummary,
     "AutonomousExadataInfrastructureSummary": AutonomousExadataInfrastructureSummary,
@@ -581,6 +594,7 @@ database_type_mapping = {
     "ConvertToPdbDetails": ConvertToPdbDetails,
     "ConvertToPdbTargetBase": ConvertToPdbTargetBase,
     "ConvertToRegularPluggableDatabaseDetails": ConvertToRegularPluggableDatabaseDetails,
+    "ConvertToStandaloneDetails": ConvertToStandaloneDetails,
     "CreateApplicationVipDetails": CreateApplicationVipDetails,
     "CreateAutonomousContainerDatabaseDataguardAssociationDetails": CreateAutonomousContainerDatabaseDataguardAssociationDetails,
     "CreateAutonomousContainerDatabaseDetails": CreateAutonomousContainerDatabaseDetails,
@@ -652,11 +666,15 @@ database_type_mapping = {
     "CreateSchedulingPlanDetails": CreateSchedulingPlanDetails,
     "CreateSchedulingPolicyDetails": CreateSchedulingPolicyDetails,
     "CreateSchedulingWindowDetails": CreateSchedulingWindowDetails,
+    "CreateStandByDatabaseDetails": CreateStandByDatabaseDetails,
+    "CreateStandbyDetails": CreateStandbyDetails,
     "CreateVmClusterDetails": CreateVmClusterDetails,
     "CustomerContact": CustomerContact,
     "DataCollectionOptions": DataCollectionOptions,
     "DataGuardAssociation": DataGuardAssociation,
     "DataGuardAssociationSummary": DataGuardAssociationSummary,
+    "DataGuardGroup": DataGuardGroup,
+    "DataGuardGroupMember": DataGuardGroupMember,
     "Database": Database,
     "DatabaseConnectionCredentials": DatabaseConnectionCredentials,
     "DatabaseConnectionCredentialsByDetails": DatabaseConnectionCredentialsByDetails,
@@ -720,6 +738,7 @@ database_type_mapping = {
     "EnableExternalPluggableDatabaseOperationsInsightsDetails": EnableExternalPluggableDatabaseOperationsInsightsDetails,
     "EnableExternalPluggableDatabaseStackMonitoringDetails": EnableExternalPluggableDatabaseStackMonitoringDetails,
     "EnablePluggableDatabaseManagementDetails": EnablePluggableDatabaseManagementDetails,
+    "EncryptionKeyLocationDetails": EncryptionKeyLocationDetails,
     "EstimatedPatchingTime": EstimatedPatchingTime,
     "ExadataDbSystemMigration": ExadataDbSystemMigration,
     "ExadataDbSystemMigrationSummary": ExadataDbSystemMigrationSummary,
@@ -752,6 +771,7 @@ database_type_mapping = {
     "ExternalDatabaseBase": ExternalDatabaseBase,
     "ExternalDatabaseConnector": ExternalDatabaseConnector,
     "ExternalDatabaseConnectorSummary": ExternalDatabaseConnectorSummary,
+    "ExternalHsmEncryptionDetails": ExternalHsmEncryptionDetails,
     "ExternalMacsConnector": ExternalMacsConnector,
     "ExternalMacsConnectorSummary": ExternalMacsConnectorSummary,
     "ExternalNonContainerDatabase": ExternalNonContainerDatabase,
@@ -759,6 +779,7 @@ database_type_mapping = {
     "ExternalPluggableDatabase": ExternalPluggableDatabase,
     "ExternalPluggableDatabaseSummary": ExternalPluggableDatabaseSummary,
     "FailoverDataGuardAssociationDetails": FailoverDataGuardAssociationDetails,
+    "FailoverDataGuardDetails": FailoverDataGuardDetails,
     "FileSystemConfigurationDetail": FileSystemConfigurationDetail,
     "FlexComponentCollection": FlexComponentCollection,
     "FlexComponentSummary": FlexComponentSummary,
@@ -825,6 +846,7 @@ database_type_mapping = {
     "RefreshableCloneSummary": RefreshableCloneSummary,
     "RegisterAutonomousDatabaseDataSafeDetails": RegisterAutonomousDatabaseDataSafeDetails,
     "ReinstateDataGuardAssociationDetails": ReinstateDataGuardAssociationDetails,
+    "ReinstateDataGuardDetails": ReinstateDataGuardDetails,
     "RemoteClonePluggableDatabaseDetails": RemoteClonePluggableDatabaseDetails,
     "RemoveVirtualMachineFromCloudVmClusterDetails": RemoveVirtualMachineFromCloudVmClusterDetails,
     "RemoveVirtualMachineFromExadbVmClusterDetails": RemoveVirtualMachineFromExadbVmClusterDetails,
@@ -861,6 +883,7 @@ database_type_mapping = {
     "SetKeyVersionDetails": SetKeyVersionDetails,
     "StackMonitoringConfig": StackMonitoringConfig,
     "StoragePerformanceDetails": StoragePerformanceDetails,
+    "SwitchOverDataGuardDetails": SwitchOverDataGuardDetails,
     "SwitchoverDataGuardAssociationDetails": SwitchoverDataGuardAssociationDetails,
     "SystemVersionCollection": SystemVersionCollection,
     "SystemVersionSummary": SystemVersionSummary,
@@ -881,6 +904,7 @@ database_type_mapping = {
     "UpdateConsoleConnectionDetails": UpdateConsoleConnectionDetails,
     "UpdateConsoleHistoryDetails": UpdateConsoleHistoryDetails,
     "UpdateDataGuardAssociationDetails": UpdateDataGuardAssociationDetails,
+    "UpdateDataGuardDetails": UpdateDataGuardDetails,
     "UpdateDatabaseDetails": UpdateDatabaseDetails,
     "UpdateDatabaseSoftwareImageDetails": UpdateDatabaseSoftwareImageDetails,
     "UpdateDbHomeDetails": UpdateDbHomeDetails,

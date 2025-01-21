@@ -22,6 +22,7 @@ Network Load Balancer
     oci.network_load_balancer.models.BackendCollection
     oci.network_load_balancer.models.BackendDetails
     oci.network_load_balancer.models.BackendHealth
+    oci.network_load_balancer.models.BackendOperationalStatus
     oci.network_load_balancer.models.BackendSet
     oci.network_load_balancer.models.BackendSetCollection
     oci.network_load_balancer.models.BackendSetDetails

@@ -186,6 +186,14 @@ class Database(object):
             The value to assign to the key_store_wallet_name property of this Database.
         :type key_store_wallet_name: str
 
+        :param data_guard_group:
+            The value to assign to the data_guard_group property of this Database.
+        :type data_guard_group: oci.database.models.DataGuardGroup
+
+        :param encryption_key_location_details:
+            The value to assign to the encryption_key_location_details property of this Database.
+        :type encryption_key_location_details: oci.database.models.EncryptionKeyLocationDetails
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -218,7 +226,9 @@ class Database(object):
             'database_management_config': 'CloudDatabaseManagementConfig',
             'sid_prefix': 'str',
             'key_store_id': 'str',
-            'key_store_wallet_name': 'str'
+            'key_store_wallet_name': 'str',
+            'data_guard_group': 'DataGuardGroup',
+            'encryption_key_location_details': 'EncryptionKeyLocationDetails'
         }
 
         self.attribute_map = {
@@ -252,7 +262,9 @@ class Database(object):
             'database_management_config': 'databaseManagementConfig',
             'sid_prefix': 'sidPrefix',
             'key_store_id': 'keyStoreId',
-            'key_store_wallet_name': 'keyStoreWalletName'
+            'key_store_wallet_name': 'keyStoreWalletName',
+            'data_guard_group': 'dataGuardGroup',
+            'encryption_key_location_details': 'encryptionKeyLocationDetails'
         }
 
         self._id = None
@@ -286,6 +298,8 @@ class Database(object):
         self._sid_prefix = None
         self._key_store_id = None
         self._key_store_wallet_name = None
+        self._data_guard_group = None
+        self._encryption_key_location_details = None
 
     @property
     def id(self):
@@ -1088,6 +1102,46 @@ class Database(object):
         :type: str
         """
         self._key_store_wallet_name = key_store_wallet_name
+
+    @property
+    def data_guard_group(self):
+        """
+        Gets the data_guard_group of this Database.
+
+        :return: The data_guard_group of this Database.
+        :rtype: oci.database.models.DataGuardGroup
+        """
+        return self._data_guard_group
+
+    @data_guard_group.setter
+    def data_guard_group(self, data_guard_group):
+        """
+        Sets the data_guard_group of this Database.
+
+        :param data_guard_group: The data_guard_group of this Database.
+        :type: oci.database.models.DataGuardGroup
+        """
+        self._data_guard_group = data_guard_group
+
+    @property
+    def encryption_key_location_details(self):
+        """
+        Gets the encryption_key_location_details of this Database.
+
+        :return: The encryption_key_location_details of this Database.
+        :rtype: oci.database.models.EncryptionKeyLocationDetails
+        """
+        return self._encryption_key_location_details
+
+    @encryption_key_location_details.setter
+    def encryption_key_location_details(self, encryption_key_location_details):
+        """
+        Sets the encryption_key_location_details of this Database.
+
+        :param encryption_key_location_details: The encryption_key_location_details of this Database.
+        :type: oci.database.models.EncryptionKeyLocationDetails
+        """
+        self._encryption_key_location_details = encryption_key_location_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

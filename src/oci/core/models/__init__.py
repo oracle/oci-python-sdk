@@ -68,10 +68,15 @@ from .boot_volume_source_from_boot_volume_details import BootVolumeSourceFromBoo
 from .boot_volume_source_from_boot_volume_replica_details import BootVolumeSourceFromBootVolumeReplicaDetails
 from .bulk_add_virtual_circuit_public_prefixes_details import BulkAddVirtualCircuitPublicPrefixesDetails
 from .bulk_delete_virtual_circuit_public_prefixes_details import BulkDeleteVirtualCircuitPublicPrefixesDetails
+from .byoasn import Byoasn
+from .byoasn_byoip_range import ByoasnByoipRange
+from .byoasn_collection import ByoasnCollection
+from .byoasn_summary import ByoasnSummary
 from .byoip_allocated_range_collection import ByoipAllocatedRangeCollection
 from .byoip_allocated_range_summary import ByoipAllocatedRangeSummary
 from .byoip_range import ByoipRange
 from .byoip_range_collection import ByoipRangeCollection
+from .byoip_range_origin_asn import ByoipRangeOriginAsn
 from .byoip_range_summary import ByoipRangeSummary
 from .byoip_range_vcn_ipv6_allocation_summary import ByoipRangeVcnIpv6AllocationSummary
 from .byoipv6_cidr_details import Byoipv6CidrDetails
@@ -83,6 +88,7 @@ from .capture_console_history_details import CaptureConsoleHistoryDetails
 from .capture_filter import CaptureFilter
 from .change_boot_volume_backup_compartment_details import ChangeBootVolumeBackupCompartmentDetails
 from .change_boot_volume_compartment_details import ChangeBootVolumeCompartmentDetails
+from .change_byoasn_compartment_details import ChangeByoasnCompartmentDetails
 from .change_byoip_range_compartment_details import ChangeByoipRangeCompartmentDetails
 from .change_capture_filter_compartment_details import ChangeCaptureFilterCompartmentDetails
 from .change_cluster_network_compartment_details import ChangeClusterNetworkCompartmentDetails
@@ -168,6 +174,7 @@ from .cpe_device_shape_summary import CpeDeviceShapeSummary
 from .create_app_catalog_subscription_details import CreateAppCatalogSubscriptionDetails
 from .create_boot_volume_backup_details import CreateBootVolumeBackupDetails
 from .create_boot_volume_details import CreateBootVolumeDetails
+from .create_byoasn_details import CreateByoasnDetails
 from .create_byoip_range_details import CreateByoipRangeDetails
 from .create_capacity_report_shape_availability_details import CreateCapacityReportShapeAvailabilityDetails
 from .create_capacity_source_details import CreateCapacitySourceDetails
@@ -461,6 +468,7 @@ from .service import Service
 from .service_gateway import ServiceGateway
 from .service_id_request_details import ServiceIdRequestDetails
 from .service_id_response_details import ServiceIdResponseDetails
+from .set_origin_asn_details import SetOriginAsnDetails
 from .shape import Shape
 from .shape_access_control_service_enabled_platform_options import ShapeAccessControlServiceEnabledPlatformOptions
 from .shape_alternative_object import ShapeAlternativeObject
@@ -500,6 +508,7 @@ from .udp_options import UdpOptions
 from .update_boot_volume_backup_details import UpdateBootVolumeBackupDetails
 from .update_boot_volume_details import UpdateBootVolumeDetails
 from .update_boot_volume_kms_key_details import UpdateBootVolumeKmsKeyDetails
+from .update_byoasn_details import UpdateByoasnDetails
 from .update_byoip_range_details import UpdateByoipRangeDetails
 from .update_capacity_source_details import UpdateCapacitySourceDetails
 from .update_capture_filter_details import UpdateCaptureFilterDetails
@@ -682,10 +691,15 @@ core_type_mapping = {
     "BootVolumeSourceFromBootVolumeReplicaDetails": BootVolumeSourceFromBootVolumeReplicaDetails,
     "BulkAddVirtualCircuitPublicPrefixesDetails": BulkAddVirtualCircuitPublicPrefixesDetails,
     "BulkDeleteVirtualCircuitPublicPrefixesDetails": BulkDeleteVirtualCircuitPublicPrefixesDetails,
+    "Byoasn": Byoasn,
+    "ByoasnByoipRange": ByoasnByoipRange,
+    "ByoasnCollection": ByoasnCollection,
+    "ByoasnSummary": ByoasnSummary,
     "ByoipAllocatedRangeCollection": ByoipAllocatedRangeCollection,
     "ByoipAllocatedRangeSummary": ByoipAllocatedRangeSummary,
     "ByoipRange": ByoipRange,
     "ByoipRangeCollection": ByoipRangeCollection,
+    "ByoipRangeOriginAsn": ByoipRangeOriginAsn,
     "ByoipRangeSummary": ByoipRangeSummary,
     "ByoipRangeVcnIpv6AllocationSummary": ByoipRangeVcnIpv6AllocationSummary,
     "Byoipv6CidrDetails": Byoipv6CidrDetails,
@@ -697,6 +711,7 @@ core_type_mapping = {
     "CaptureFilter": CaptureFilter,
     "ChangeBootVolumeBackupCompartmentDetails": ChangeBootVolumeBackupCompartmentDetails,
     "ChangeBootVolumeCompartmentDetails": ChangeBootVolumeCompartmentDetails,
+    "ChangeByoasnCompartmentDetails": ChangeByoasnCompartmentDetails,
     "ChangeByoipRangeCompartmentDetails": ChangeByoipRangeCompartmentDetails,
     "ChangeCaptureFilterCompartmentDetails": ChangeCaptureFilterCompartmentDetails,
     "ChangeClusterNetworkCompartmentDetails": ChangeClusterNetworkCompartmentDetails,
@@ -782,6 +797,7 @@ core_type_mapping = {
     "CreateAppCatalogSubscriptionDetails": CreateAppCatalogSubscriptionDetails,
     "CreateBootVolumeBackupDetails": CreateBootVolumeBackupDetails,
     "CreateBootVolumeDetails": CreateBootVolumeDetails,
+    "CreateByoasnDetails": CreateByoasnDetails,
     "CreateByoipRangeDetails": CreateByoipRangeDetails,
     "CreateCapacityReportShapeAvailabilityDetails": CreateCapacityReportShapeAvailabilityDetails,
     "CreateCapacitySourceDetails": CreateCapacitySourceDetails,
@@ -1075,6 +1091,7 @@ core_type_mapping = {
     "ServiceGateway": ServiceGateway,
     "ServiceIdRequestDetails": ServiceIdRequestDetails,
     "ServiceIdResponseDetails": ServiceIdResponseDetails,
+    "SetOriginAsnDetails": SetOriginAsnDetails,
     "Shape": Shape,
     "ShapeAccessControlServiceEnabledPlatformOptions": ShapeAccessControlServiceEnabledPlatformOptions,
     "ShapeAlternativeObject": ShapeAlternativeObject,
@@ -1114,6 +1131,7 @@ core_type_mapping = {
     "UpdateBootVolumeBackupDetails": UpdateBootVolumeBackupDetails,
     "UpdateBootVolumeDetails": UpdateBootVolumeDetails,
     "UpdateBootVolumeKmsKeyDetails": UpdateBootVolumeKmsKeyDetails,
+    "UpdateByoasnDetails": UpdateByoasnDetails,
     "UpdateByoipRangeDetails": UpdateByoipRangeDetails,
     "UpdateCapacitySourceDetails": UpdateCapacitySourceDetails,
     "UpdateCaptureFilterDetails": UpdateCaptureFilterDetails,

@@ -31,6 +31,10 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
             The value to assign to the database_admin_password property of this CreateDataGuardAssociationToExistingDbSystemDetails.
         :type database_admin_password: str
 
+        :param source_encryption_key_location_details:
+            The value to assign to the source_encryption_key_location_details property of this CreateDataGuardAssociationToExistingDbSystemDetails.
+        :type source_encryption_key_location_details: oci.database.models.EncryptionKeyLocationDetails
+
         :param protection_mode:
             The value to assign to the protection_mode property of this CreateDataGuardAssociationToExistingDbSystemDetails.
             Allowed values for this property are: "MAXIMUM_AVAILABILITY", "MAXIMUM_PERFORMANCE", "MAXIMUM_PROTECTION"
@@ -69,6 +73,7 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
         self.swagger_types = {
             'database_software_image_id': 'str',
             'database_admin_password': 'str',
+            'source_encryption_key_location_details': 'EncryptionKeyLocationDetails',
             'protection_mode': 'str',
             'transport_type': 'str',
             'creation_type': 'str',
@@ -82,6 +87,7 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
         self.attribute_map = {
             'database_software_image_id': 'databaseSoftwareImageId',
             'database_admin_password': 'databaseAdminPassword',
+            'source_encryption_key_location_details': 'sourceEncryptionKeyLocationDetails',
             'protection_mode': 'protectionMode',
             'transport_type': 'transportType',
             'creation_type': 'creationType',
@@ -94,6 +100,7 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
 
         self._database_software_image_id = None
         self._database_admin_password = None
+        self._source_encryption_key_location_details = None
         self._protection_mode = None
         self._transport_type = None
         self._creation_type = None

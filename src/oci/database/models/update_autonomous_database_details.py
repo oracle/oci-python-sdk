@@ -313,6 +313,10 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the encryption_key property of this UpdateAutonomousDatabaseDetails.
         :type encryption_key: oci.database.models.AutonomousDatabaseEncryptionKeyDetails
 
+        :param is_disconnect_peer:
+            The value to assign to the is_disconnect_peer property of this UpdateAutonomousDatabaseDetails.
+        :type is_disconnect_peer: bool
+
         """
         self.swagger_types = {
             'backup_retention_period_in_days': 'int',
@@ -368,7 +372,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'db_tools_details': 'list[DatabaseTool]',
             'secret_id': 'str',
             'secret_version_number': 'int',
-            'encryption_key': 'AutonomousDatabaseEncryptionKeyDetails'
+            'encryption_key': 'AutonomousDatabaseEncryptionKeyDetails',
+            'is_disconnect_peer': 'bool'
         }
 
         self.attribute_map = {
@@ -425,7 +430,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'db_tools_details': 'dbToolsDetails',
             'secret_id': 'secretId',
             'secret_version_number': 'secretVersionNumber',
-            'encryption_key': 'encryptionKey'
+            'encryption_key': 'encryptionKey',
+            'is_disconnect_peer': 'isDisconnectPeer'
         }
 
         self._backup_retention_period_in_days = None
@@ -482,6 +488,7 @@ class UpdateAutonomousDatabaseDetails(object):
         self._secret_id = None
         self._secret_version_number = None
         self._encryption_key = None
+        self._is_disconnect_peer = None
 
     @property
     def backup_retention_period_in_days(self):
@@ -2169,6 +2176,34 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: oci.database.models.AutonomousDatabaseEncryptionKeyDetails
         """
         self._encryption_key = encryption_key
+
+    @property
+    def is_disconnect_peer(self):
+        """
+        Gets the is_disconnect_peer of this UpdateAutonomousDatabaseDetails.
+        If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database.
+
+        To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
+
+
+        :return: The is_disconnect_peer of this UpdateAutonomousDatabaseDetails.
+        :rtype: bool
+        """
+        return self._is_disconnect_peer
+
+    @is_disconnect_peer.setter
+    def is_disconnect_peer(self, is_disconnect_peer):
+        """
+        Sets the is_disconnect_peer of this UpdateAutonomousDatabaseDetails.
+        If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database.
+
+        To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
+
+
+        :param is_disconnect_peer: The is_disconnect_peer of this UpdateAutonomousDatabaseDetails.
+        :type: bool
+        """
+        self._is_disconnect_peer = is_disconnect_peer
 
     def __repr__(self):
         return formatted_flat_dict(self)

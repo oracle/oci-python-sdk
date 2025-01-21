@@ -103,6 +103,10 @@ class ByoipRange(object):
             The value to assign to the freeform_tags property of this ByoipRange.
         :type freeform_tags: dict(str, str)
 
+        :param origin_asn:
+            The value to assign to the origin_asn property of this ByoipRange.
+        :type origin_asn: oci.core.models.ByoipRangeOriginAsn
+
         :param id:
             The value to assign to the id property of this ByoipRange.
         :type id: str
@@ -151,6 +155,7 @@ class ByoipRange(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
+            'origin_asn': 'ByoipRangeOriginAsn',
             'id': 'str',
             'ipv6_cidr_block': 'str',
             'lifecycle_details': 'str',
@@ -169,6 +174,7 @@ class ByoipRange(object):
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
+            'origin_asn': 'originAsn',
             'id': 'id',
             'ipv6_cidr_block': 'ipv6CidrBlock',
             'lifecycle_details': 'lifecycleDetails',
@@ -186,6 +192,7 @@ class ByoipRange(object):
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
+        self._origin_asn = None
         self._id = None
         self._ipv6_cidr_block = None
         self._lifecycle_details = None
@@ -365,6 +372,26 @@ class ByoipRange(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def origin_asn(self):
+        """
+        Gets the origin_asn of this ByoipRange.
+
+        :return: The origin_asn of this ByoipRange.
+        :rtype: oci.core.models.ByoipRangeOriginAsn
+        """
+        return self._origin_asn
+
+    @origin_asn.setter
+    def origin_asn(self, origin_asn):
+        """
+        Sets the origin_asn of this ByoipRange.
+
+        :param origin_asn: The origin_asn of this ByoipRange.
+        :type: oci.core.models.ByoipRangeOriginAsn
+        """
+        self._origin_asn = origin_asn
 
     @property
     def id(self):

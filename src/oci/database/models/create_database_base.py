@@ -25,12 +25,17 @@ class CreateDatabaseBase(object):
     #: This constant has a value of "DB_BACKUP"
     SOURCE_DB_BACKUP = "DB_BACKUP"
 
+    #: A constant which can be used with the source property of a CreateDatabaseBase.
+    #: This constant has a value of "DATAGUARD"
+    SOURCE_DATAGUARD = "DATAGUARD"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDatabaseBase object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.database.models.CreateNewDatabaseDetails`
+        * :class:`~oci.database.models.CreateStandByDatabaseDetails`
         * :class:`~oci.database.models.CreateDatabaseFromBackup`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -45,7 +50,7 @@ class CreateDatabaseBase(object):
 
         :param source:
             The value to assign to the source property of this CreateDatabaseBase.
-            Allowed values for this property are: "NONE", "DB_BACKUP"
+            Allowed values for this property are: "NONE", "DB_BACKUP", "DATAGUARD"
         :type source: str
 
         :param kms_key_id:
@@ -89,6 +94,9 @@ class CreateDatabaseBase(object):
 
         if type == 'NONE':
             return 'CreateNewDatabaseDetails'
+
+        if type == 'DATAGUARD':
+            return 'CreateStandByDatabaseDetails'
 
         if type == 'DB_BACKUP':
             return 'CreateDatabaseFromBackup'
@@ -158,9 +166,10 @@ class CreateDatabaseBase(object):
         The source of the database:
         Use `NONE` for creating a new database.
         Use `DB_BACKUP` for creating a new database by restoring from a backup.
+        Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup..
         The default is `NONE`.
 
-        Allowed values for this property are: "NONE", "DB_BACKUP"
+        Allowed values for this property are: "NONE", "DB_BACKUP", "DATAGUARD"
 
 
         :return: The source of this CreateDatabaseBase.
@@ -175,13 +184,14 @@ class CreateDatabaseBase(object):
         The source of the database:
         Use `NONE` for creating a new database.
         Use `DB_BACKUP` for creating a new database by restoring from a backup.
+        Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup..
         The default is `NONE`.
 
 
         :param source: The source of this CreateDatabaseBase.
         :type: str
         """
-        allowed_values = ["NONE", "DB_BACKUP"]
+        allowed_values = ["NONE", "DB_BACKUP", "DATAGUARD"]
         if not value_allowed_none_or_none_sentinel(source, allowed_values):
             raise ValueError(
                 f"Invalid value for `source`, must be None or one of {allowed_values}"

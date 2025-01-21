@@ -13,7 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class CreateNetworkLoadBalancerDetails(object):
     """
     The properties that define a network load balancer. For more information, see
-    `Managing a network load balancer`__.
+    `Introduction to Network Load Balancer`__.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized, then
     contact an administrator. If you are an administrator who writes policies to give users access, then see
@@ -23,7 +23,7 @@ class CreateNetworkLoadBalancerDetails(object):
     `About the API`__. For information about available SDKs and tools, see
     `SDKS and Other Tools`__.
 
-    __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingloadbalancer.htm
+    __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introduction.htm
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm
     __ https://docs.cloud.oracle.com/Content/API/Concepts/sdks.htm
@@ -315,13 +315,13 @@ class CreateNetworkLoadBalancerDetails(object):
         A public network load balancer is accessible from the internet, depending on the
         `security list rules`__ for your virtual cloud network. For more information about public and
         private network load balancers,
-        see `How Network Load Balancing Works`__.
+        see `Network Load Balancer Types`__.
         This value is true by default.
 
         Example: `true`
 
         __ https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm
-        __ https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works
+        __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes
 
 
         :return: The is_private of this CreateNetworkLoadBalancerDetails.
@@ -342,13 +342,13 @@ class CreateNetworkLoadBalancerDetails(object):
         A public network load balancer is accessible from the internet, depending on the
         `security list rules`__ for your virtual cloud network. For more information about public and
         private network load balancers,
-        see `How Network Load Balancing Works`__.
+        see `Network Load Balancer Types`__.
         This value is true by default.
 
         Example: `true`
 
         __ https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm
-        __ https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works
+        __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes
 
 
         :param is_private: The is_private of this CreateNetworkLoadBalancerDetails.

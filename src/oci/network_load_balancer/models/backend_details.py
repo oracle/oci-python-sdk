@@ -202,11 +202,11 @@ class BackendDetails(object):
         proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections
         as a server weighted '1'.
         For more information about load balancing policies, see
-        `How Network Load Balancing Policies Work`__.
+        `Network Load Balancer Policies`__.
 
         Example: `3`
 
-        __ https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm
+        __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introduction.htm#Policies
 
 
         :return: The weight of this BackendDetails.
@@ -222,11 +222,11 @@ class BackendDetails(object):
         proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections
         as a server weighted '1'.
         For more information about load balancing policies, see
-        `How Network Load Balancing Policies Work`__.
+        `Network Load Balancer Policies`__.
 
         Example: `3`
 
-        __ https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm
+        __ https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introduction.htm#Policies
 
 
         :param weight: The weight of this BackendDetails.
