@@ -31,6 +31,10 @@ class AlertLogSummary(object):
     #: This constant has a value of "NORMAL"
     MESSAGE_LEVEL_NORMAL = "NORMAL"
 
+    #: A constant which can be used with the message_level property of a AlertLogSummary.
+    #: This constant has a value of "OTHER"
+    MESSAGE_LEVEL_OTHER = "OTHER"
+
     #: A constant which can be used with the message_type property of a AlertLogSummary.
     #: This constant has a value of "UNKNOWN"
     MESSAGE_TYPE_UNKNOWN = "UNKNOWN"
@@ -55,6 +59,10 @@ class AlertLogSummary(object):
     #: This constant has a value of "TRACE"
     MESSAGE_TYPE_TRACE = "TRACE"
 
+    #: A constant which can be used with the message_type property of a AlertLogSummary.
+    #: This constant has a value of "OTHER"
+    MESSAGE_TYPE_OTHER = "OTHER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AlertLogSummary object with values from keyword arguments.
@@ -62,13 +70,13 @@ class AlertLogSummary(object):
 
         :param message_level:
             The value to assign to the message_level property of this AlertLogSummary.
-            Allowed values for this property are: "CRITICAL", "SEVERE", "IMPORTANT", "NORMAL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CRITICAL", "SEVERE", "IMPORTANT", "NORMAL", "OTHER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type message_level: str
 
         :param message_type:
             The value to assign to the message_type property of this AlertLogSummary.
-            Allowed values for this property are: "UNKNOWN", "INCIDENT_ERROR", "ERROR", "WARNING", "NOTIFICATION", "TRACE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "UNKNOWN", "INCIDENT_ERROR", "ERROR", "WARNING", "NOTIFICATION", "TRACE", "OTHER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type message_type: str
 
@@ -120,7 +128,7 @@ class AlertLogSummary(object):
         **[Required]** Gets the message_level of this AlertLogSummary.
         The level of the alert log.
 
-        Allowed values for this property are: "CRITICAL", "SEVERE", "IMPORTANT", "NORMAL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CRITICAL", "SEVERE", "IMPORTANT", "NORMAL", "OTHER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -139,7 +147,7 @@ class AlertLogSummary(object):
         :param message_level: The message_level of this AlertLogSummary.
         :type: str
         """
-        allowed_values = ["CRITICAL", "SEVERE", "IMPORTANT", "NORMAL"]
+        allowed_values = ["CRITICAL", "SEVERE", "IMPORTANT", "NORMAL", "OTHER"]
         if not value_allowed_none_or_none_sentinel(message_level, allowed_values):
             message_level = 'UNKNOWN_ENUM_VALUE'
         self._message_level = message_level
@@ -150,7 +158,7 @@ class AlertLogSummary(object):
         **[Required]** Gets the message_type of this AlertLogSummary.
         The type of alert log message.
 
-        Allowed values for this property are: "UNKNOWN", "INCIDENT_ERROR", "ERROR", "WARNING", "NOTIFICATION", "TRACE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "UNKNOWN", "INCIDENT_ERROR", "ERROR", "WARNING", "NOTIFICATION", "TRACE", "OTHER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -169,7 +177,7 @@ class AlertLogSummary(object):
         :param message_type: The message_type of this AlertLogSummary.
         :type: str
         """
-        allowed_values = ["UNKNOWN", "INCIDENT_ERROR", "ERROR", "WARNING", "NOTIFICATION", "TRACE"]
+        allowed_values = ["UNKNOWN", "INCIDENT_ERROR", "ERROR", "WARNING", "NOTIFICATION", "TRACE", "OTHER"]
         if not value_allowed_none_or_none_sentinel(message_type, allowed_values):
             message_type = 'UNKNOWN_ENUM_VALUE'
         self._message_type = message_type

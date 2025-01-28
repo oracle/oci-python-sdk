@@ -62,6 +62,7 @@ from .awr_db_wait_event_bucket_summary import AwrDbWaitEventBucketSummary
 from .awr_db_wait_event_collection import AwrDbWaitEventCollection
 from .awr_db_wait_event_summary import AwrDbWaitEventSummary
 from .awr_query_result import AwrQueryResult
+from .base_database_ha_details import BaseDatabaseHaDetails
 from .basic_database_connection_string_details import BasicDatabaseConnectionStringDetails
 from .basic_named_credential_content import BasicNamedCredentialContent
 from .basic_preferred_credential import BasicPreferredCredential
@@ -92,8 +93,11 @@ from .create_external_db_system_discovery_details import CreateExternalDbSystemD
 from .create_external_db_system_macs_connector_details import CreateExternalDbSystemMacsConnectorDetails
 from .create_external_exadata_infrastructure_details import CreateExternalExadataInfrastructureDetails
 from .create_external_exadata_storage_connector_details import CreateExternalExadataStorageConnectorDetails
+from .create_external_my_sql_database_connector_details import CreateExternalMySqlDatabaseConnectorDetails
+from .create_external_my_sql_database_details import CreateExternalMySqlDatabaseDetails
 from .create_job_details import CreateJobDetails
 from .create_managed_database_group_details import CreateManagedDatabaseGroupDetails
+from .create_my_sql_database_connector_details import CreateMySqlDatabaseConnectorDetails
 from .create_named_credential_details import CreateNamedCredentialDetails
 from .create_sql_job_details import CreateSqlJobDetails
 from .create_sql_tuning_set_details import CreateSqlTuningSetDetails
@@ -103,6 +107,8 @@ from .cursor_cache_statement_summary import CursorCacheStatementSummary
 from .data_access_container_collection import DataAccessContainerCollection
 from .data_access_container_summary import DataAccessContainerSummary
 from .data_points import DataPoints
+from .database_backup_metrics import DatabaseBackupMetrics
+from .database_backup_summary import DatabaseBackupSummary
 from .database_connection_credentails_by_name import DatabaseConnectionCredentailsByName
 from .database_connection_credentials import DatabaseConnectionCredentials
 from .database_connection_credentials_by_details import DatabaseConnectionCredentialsByDetails
@@ -115,7 +121,12 @@ from .database_diagnostics_and_management_feature_configuration import DatabaseD
 from .database_diagnostics_and_management_feature_details import DatabaseDiagnosticsAndManagementFeatureDetails
 from .database_feature_configuration import DatabaseFeatureConfiguration
 from .database_feature_details import DatabaseFeatureDetails
+from .database_fleet_backup_metrics import DatabaseFleetBackupMetrics
+from .database_fleet_dataguard_metrics import DatabaseFleetDataguardMetrics
+from .database_fleet_ha_overview_metrics import DatabaseFleetHaOverviewMetrics
 from .database_fleet_health_metrics import DatabaseFleetHealthMetrics
+from .database_ha_backup_details import DatabaseHaBackupDetails
+from .database_ha_metrics import DatabaseHaMetrics
 from .database_home_metric_definition import DatabaseHomeMetricDefinition
 from .database_home_metrics import DatabaseHomeMetrics
 from .database_io_aggregate_metrics import DatabaseIOAggregateMetrics
@@ -139,6 +150,7 @@ from .database_storage_aggregate_metrics import DatabaseStorageAggregateMetrics
 from .database_time_aggregate_metrics import DatabaseTimeAggregateMetrics
 from .database_usage_metrics import DatabaseUsageMetrics
 from .datafile import Datafile
+from .dataguard_metrics import DataguardMetrics
 from .dataguard_performance_metrics import DataguardPerformanceMetrics
 from .db_management_analytics_metric import DbManagementAnalyticsMetric
 from .db_management_private_endpoint import DbManagementPrivateEndpoint
@@ -151,6 +163,7 @@ from .disable_automatic_spm_evolve_advisor_task_details import DisableAutomaticS
 from .disable_autonomous_database_management_feature_details import DisableAutonomousDatabaseManagementFeatureDetails
 from .disable_database_management_feature_details import DisableDatabaseManagementFeatureDetails
 from .disable_external_container_database_management_feature_details import DisableExternalContainerDatabaseManagementFeatureDetails
+from .disable_external_mysql_associated_service_details import DisableExternalMysqlAssociatedServiceDetails
 from .disable_external_non_container_database_management_feature_details import DisableExternalNonContainerDatabaseManagementFeatureDetails
 from .disable_external_pluggable_database_management_feature_details import DisableExternalPluggableDatabaseManagementFeatureDetails
 from .disable_high_frequency_automatic_spm_evolve_advisor_task_details import DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails
@@ -177,15 +190,18 @@ from .enable_automatic_spm_evolve_advisor_task_details import EnableAutomaticSpm
 from .enable_autonomous_database_management_feature_details import EnableAutonomousDatabaseManagementFeatureDetails
 from .enable_database_management_feature_details import EnableDatabaseManagementFeatureDetails
 from .enable_external_container_database_management_feature_details import EnableExternalContainerDatabaseManagementFeatureDetails
+from .enable_external_database_management_details import EnableExternalDatabaseManagementDetails
 from .enable_external_db_system_database_management_details import EnableExternalDbSystemDatabaseManagementDetails
 from .enable_external_db_system_stack_monitoring_details import EnableExternalDbSystemStackMonitoringDetails
 from .enable_external_exadata_infrastructure_management_details import EnableExternalExadataInfrastructureManagementDetails
+from .enable_external_mysql_associated_service_details import EnableExternalMysqlAssociatedServiceDetails
 from .enable_external_non_container_database_management_feature_details import EnableExternalNonContainerDatabaseManagementFeatureDetails
 from .enable_external_pluggable_database_management_feature_details import EnableExternalPluggableDatabaseManagementFeatureDetails
 from .enable_high_frequency_automatic_spm_evolve_advisor_task_details import EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails
 from .enable_pluggable_database_management_feature_details import EnablePluggableDatabaseManagementFeatureDetails
 from .enable_sql_plan_baselines_usage_details import EnableSqlPlanBaselinesUsageDetails
 from .entity_discovered import EntityDiscovered
+from .exadata_infrastructure_lifecycle_state_values import ExadataInfrastructureLifecycleStateValues
 from .execution_plan_stats_comparision import ExecutionPlanStatsComparision
 from .external_asm import ExternalAsm
 from .external_asm_collection import ExternalAsmCollection
@@ -268,6 +284,10 @@ from .external_listener_serviced_database import ExternalListenerServicedDatabas
 from .external_listener_summary import ExternalListenerSummary
 from .external_listener_tcp_endpoint import ExternalListenerTcpEndpoint
 from .external_listener_tcps_endpoint import ExternalListenerTcpsEndpoint
+from .external_my_sql_database import ExternalMySqlDatabase
+from .external_my_sql_database_collection import ExternalMySqlDatabaseCollection
+from .external_my_sql_database_connector import ExternalMySqlDatabaseConnector
+from .external_my_sql_database_summary import ExternalMySqlDatabaseSummary
 from .external_pluggable_database_diagnostics_and_management_feature_details import ExternalPluggableDatabaseDiagnosticsAndManagementFeatureDetails
 from .external_pluggable_database_feature_details import ExternalPluggableDatabaseFeatureDetails
 from .external_pluggable_database_lifecycle_management_feature_details import ExternalPluggableDatabaseLifecycleManagementFeatureDetails
@@ -283,6 +303,7 @@ from .fleet_metric_definition import FleetMetricDefinition
 from .fleet_metric_summary_definition import FleetMetricSummaryDefinition
 from .fleet_status_by_category import FleetStatusByCategory
 from .fleet_summary import FleetSummary
+from .ha_metric_definition import HaMetricDefinition
 from .heat_wave_cluster_usage_metrics import HeatWaveClusterUsageMetrics
 from .heat_wave_fleet_by_category import HeatWaveFleetByCategory
 from .heat_wave_fleet_metric_definition import HeatWaveFleetMetricDefinition
@@ -342,8 +363,10 @@ from .modify_pluggable_database_management_feature_details import ModifyPluggabl
 from .modify_snapshot_settings_details import ModifySnapshotSettingsDetails
 from .my_sql_configuration_data_collection import MySqlConfigurationDataCollection
 from .my_sql_configuration_data_summary import MySqlConfigurationDataSummary
+from .my_sql_connector_collection import MySqlConnectorCollection
 from .my_sql_data_collection import MySqlDataCollection
 from .my_sql_data_summary import MySqlDataSummary
+from .my_sql_database_connector_summary import MySqlDatabaseConnectorSummary
 from .my_sql_database_usage_metrics import MySqlDatabaseUsageMetrics
 from .my_sql_fleet_by_category import MySqlFleetByCategory
 from .my_sql_fleet_metric_definition import MySqlFleetMetricDefinition
@@ -451,6 +474,7 @@ from .sql_tuning_task_return import SqlTuningTaskReturn
 from .sql_tuning_task_secret_credential_details import SqlTuningTaskSecretCredentialDetails
 from .sql_tuning_task_sql_detail import SqlTuningTaskSqlDetail
 from .sql_tuning_task_sql_execution_plan_step import SqlTuningTaskSqlExecutionPlanStep
+from .stand_by_database_dataguard_metrics import StandByDatabaseDataguardMetrics
 from .start_sql_tuning_task_details import StartSqlTuningTaskDetails
 from .statements_aggregate_metrics import StatementsAggregateMetrics
 from .system_privilege_collection import SystemPrivilegeCollection
@@ -492,9 +516,12 @@ from .update_external_exadata_storage_connector_details import UpdateExternalExa
 from .update_external_exadata_storage_grid_details import UpdateExternalExadataStorageGridDetails
 from .update_external_exadata_storage_server_details import UpdateExternalExadataStorageServerDetails
 from .update_external_listener_details import UpdateExternalListenerDetails
+from .update_external_my_sql_database_connector_details import UpdateExternalMySqlDatabaseConnectorDetails
+from .update_external_my_sql_database_details import UpdateExternalMySqlDatabaseDetails
 from .update_job_details import UpdateJobDetails
 from .update_managed_database_details import UpdateManagedDatabaseDetails
 from .update_managed_database_group_details import UpdateManagedDatabaseGroupDetails
+from .update_my_sql_database_connector_details import UpdateMySqlDatabaseConnectorDetails
 from .update_named_credential_details import UpdateNamedCredentialDetails
 from .update_named_preferred_credential_details import UpdateNamedPreferredCredentialDetails
 from .update_preferred_credential_details import UpdatePreferredCredentialDetails
@@ -572,6 +599,7 @@ database_management_type_mapping = {
     "AwrDbWaitEventCollection": AwrDbWaitEventCollection,
     "AwrDbWaitEventSummary": AwrDbWaitEventSummary,
     "AwrQueryResult": AwrQueryResult,
+    "BaseDatabaseHaDetails": BaseDatabaseHaDetails,
     "BasicDatabaseConnectionStringDetails": BasicDatabaseConnectionStringDetails,
     "BasicNamedCredentialContent": BasicNamedCredentialContent,
     "BasicPreferredCredential": BasicPreferredCredential,
@@ -602,8 +630,11 @@ database_management_type_mapping = {
     "CreateExternalDbSystemMacsConnectorDetails": CreateExternalDbSystemMacsConnectorDetails,
     "CreateExternalExadataInfrastructureDetails": CreateExternalExadataInfrastructureDetails,
     "CreateExternalExadataStorageConnectorDetails": CreateExternalExadataStorageConnectorDetails,
+    "CreateExternalMySqlDatabaseConnectorDetails": CreateExternalMySqlDatabaseConnectorDetails,
+    "CreateExternalMySqlDatabaseDetails": CreateExternalMySqlDatabaseDetails,
     "CreateJobDetails": CreateJobDetails,
     "CreateManagedDatabaseGroupDetails": CreateManagedDatabaseGroupDetails,
+    "CreateMySqlDatabaseConnectorDetails": CreateMySqlDatabaseConnectorDetails,
     "CreateNamedCredentialDetails": CreateNamedCredentialDetails,
     "CreateSqlJobDetails": CreateSqlJobDetails,
     "CreateSqlTuningSetDetails": CreateSqlTuningSetDetails,
@@ -613,6 +644,8 @@ database_management_type_mapping = {
     "DataAccessContainerCollection": DataAccessContainerCollection,
     "DataAccessContainerSummary": DataAccessContainerSummary,
     "DataPoints": DataPoints,
+    "DatabaseBackupMetrics": DatabaseBackupMetrics,
+    "DatabaseBackupSummary": DatabaseBackupSummary,
     "DatabaseConnectionCredentailsByName": DatabaseConnectionCredentailsByName,
     "DatabaseConnectionCredentials": DatabaseConnectionCredentials,
     "DatabaseConnectionCredentialsByDetails": DatabaseConnectionCredentialsByDetails,
@@ -625,7 +658,12 @@ database_management_type_mapping = {
     "DatabaseDiagnosticsAndManagementFeatureDetails": DatabaseDiagnosticsAndManagementFeatureDetails,
     "DatabaseFeatureConfiguration": DatabaseFeatureConfiguration,
     "DatabaseFeatureDetails": DatabaseFeatureDetails,
+    "DatabaseFleetBackupMetrics": DatabaseFleetBackupMetrics,
+    "DatabaseFleetDataguardMetrics": DatabaseFleetDataguardMetrics,
+    "DatabaseFleetHaOverviewMetrics": DatabaseFleetHaOverviewMetrics,
     "DatabaseFleetHealthMetrics": DatabaseFleetHealthMetrics,
+    "DatabaseHaBackupDetails": DatabaseHaBackupDetails,
+    "DatabaseHaMetrics": DatabaseHaMetrics,
     "DatabaseHomeMetricDefinition": DatabaseHomeMetricDefinition,
     "DatabaseHomeMetrics": DatabaseHomeMetrics,
     "DatabaseIOAggregateMetrics": DatabaseIOAggregateMetrics,
@@ -649,6 +687,7 @@ database_management_type_mapping = {
     "DatabaseTimeAggregateMetrics": DatabaseTimeAggregateMetrics,
     "DatabaseUsageMetrics": DatabaseUsageMetrics,
     "Datafile": Datafile,
+    "DataguardMetrics": DataguardMetrics,
     "DataguardPerformanceMetrics": DataguardPerformanceMetrics,
     "DbManagementAnalyticsMetric": DbManagementAnalyticsMetric,
     "DbManagementPrivateEndpoint": DbManagementPrivateEndpoint,
@@ -661,6 +700,7 @@ database_management_type_mapping = {
     "DisableAutonomousDatabaseManagementFeatureDetails": DisableAutonomousDatabaseManagementFeatureDetails,
     "DisableDatabaseManagementFeatureDetails": DisableDatabaseManagementFeatureDetails,
     "DisableExternalContainerDatabaseManagementFeatureDetails": DisableExternalContainerDatabaseManagementFeatureDetails,
+    "DisableExternalMysqlAssociatedServiceDetails": DisableExternalMysqlAssociatedServiceDetails,
     "DisableExternalNonContainerDatabaseManagementFeatureDetails": DisableExternalNonContainerDatabaseManagementFeatureDetails,
     "DisableExternalPluggableDatabaseManagementFeatureDetails": DisableExternalPluggableDatabaseManagementFeatureDetails,
     "DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails": DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails,
@@ -687,15 +727,18 @@ database_management_type_mapping = {
     "EnableAutonomousDatabaseManagementFeatureDetails": EnableAutonomousDatabaseManagementFeatureDetails,
     "EnableDatabaseManagementFeatureDetails": EnableDatabaseManagementFeatureDetails,
     "EnableExternalContainerDatabaseManagementFeatureDetails": EnableExternalContainerDatabaseManagementFeatureDetails,
+    "EnableExternalDatabaseManagementDetails": EnableExternalDatabaseManagementDetails,
     "EnableExternalDbSystemDatabaseManagementDetails": EnableExternalDbSystemDatabaseManagementDetails,
     "EnableExternalDbSystemStackMonitoringDetails": EnableExternalDbSystemStackMonitoringDetails,
     "EnableExternalExadataInfrastructureManagementDetails": EnableExternalExadataInfrastructureManagementDetails,
+    "EnableExternalMysqlAssociatedServiceDetails": EnableExternalMysqlAssociatedServiceDetails,
     "EnableExternalNonContainerDatabaseManagementFeatureDetails": EnableExternalNonContainerDatabaseManagementFeatureDetails,
     "EnableExternalPluggableDatabaseManagementFeatureDetails": EnableExternalPluggableDatabaseManagementFeatureDetails,
     "EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails": EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails,
     "EnablePluggableDatabaseManagementFeatureDetails": EnablePluggableDatabaseManagementFeatureDetails,
     "EnableSqlPlanBaselinesUsageDetails": EnableSqlPlanBaselinesUsageDetails,
     "EntityDiscovered": EntityDiscovered,
+    "ExadataInfrastructureLifecycleStateValues": ExadataInfrastructureLifecycleStateValues,
     "ExecutionPlanStatsComparision": ExecutionPlanStatsComparision,
     "ExternalAsm": ExternalAsm,
     "ExternalAsmCollection": ExternalAsmCollection,
@@ -778,6 +821,10 @@ database_management_type_mapping = {
     "ExternalListenerSummary": ExternalListenerSummary,
     "ExternalListenerTcpEndpoint": ExternalListenerTcpEndpoint,
     "ExternalListenerTcpsEndpoint": ExternalListenerTcpsEndpoint,
+    "ExternalMySqlDatabase": ExternalMySqlDatabase,
+    "ExternalMySqlDatabaseCollection": ExternalMySqlDatabaseCollection,
+    "ExternalMySqlDatabaseConnector": ExternalMySqlDatabaseConnector,
+    "ExternalMySqlDatabaseSummary": ExternalMySqlDatabaseSummary,
     "ExternalPluggableDatabaseDiagnosticsAndManagementFeatureDetails": ExternalPluggableDatabaseDiagnosticsAndManagementFeatureDetails,
     "ExternalPluggableDatabaseFeatureDetails": ExternalPluggableDatabaseFeatureDetails,
     "ExternalPluggableDatabaseLifecycleManagementFeatureDetails": ExternalPluggableDatabaseLifecycleManagementFeatureDetails,
@@ -793,6 +840,7 @@ database_management_type_mapping = {
     "FleetMetricSummaryDefinition": FleetMetricSummaryDefinition,
     "FleetStatusByCategory": FleetStatusByCategory,
     "FleetSummary": FleetSummary,
+    "HaMetricDefinition": HaMetricDefinition,
     "HeatWaveClusterUsageMetrics": HeatWaveClusterUsageMetrics,
     "HeatWaveFleetByCategory": HeatWaveFleetByCategory,
     "HeatWaveFleetMetricDefinition": HeatWaveFleetMetricDefinition,
@@ -852,8 +900,10 @@ database_management_type_mapping = {
     "ModifySnapshotSettingsDetails": ModifySnapshotSettingsDetails,
     "MySqlConfigurationDataCollection": MySqlConfigurationDataCollection,
     "MySqlConfigurationDataSummary": MySqlConfigurationDataSummary,
+    "MySqlConnectorCollection": MySqlConnectorCollection,
     "MySqlDataCollection": MySqlDataCollection,
     "MySqlDataSummary": MySqlDataSummary,
+    "MySqlDatabaseConnectorSummary": MySqlDatabaseConnectorSummary,
     "MySqlDatabaseUsageMetrics": MySqlDatabaseUsageMetrics,
     "MySqlFleetByCategory": MySqlFleetByCategory,
     "MySqlFleetMetricDefinition": MySqlFleetMetricDefinition,
@@ -961,6 +1011,7 @@ database_management_type_mapping = {
     "SqlTuningTaskSecretCredentialDetails": SqlTuningTaskSecretCredentialDetails,
     "SqlTuningTaskSqlDetail": SqlTuningTaskSqlDetail,
     "SqlTuningTaskSqlExecutionPlanStep": SqlTuningTaskSqlExecutionPlanStep,
+    "StandByDatabaseDataguardMetrics": StandByDatabaseDataguardMetrics,
     "StartSqlTuningTaskDetails": StartSqlTuningTaskDetails,
     "StatementsAggregateMetrics": StatementsAggregateMetrics,
     "SystemPrivilegeCollection": SystemPrivilegeCollection,
@@ -1002,9 +1053,12 @@ database_management_type_mapping = {
     "UpdateExternalExadataStorageGridDetails": UpdateExternalExadataStorageGridDetails,
     "UpdateExternalExadataStorageServerDetails": UpdateExternalExadataStorageServerDetails,
     "UpdateExternalListenerDetails": UpdateExternalListenerDetails,
+    "UpdateExternalMySqlDatabaseConnectorDetails": UpdateExternalMySqlDatabaseConnectorDetails,
+    "UpdateExternalMySqlDatabaseDetails": UpdateExternalMySqlDatabaseDetails,
     "UpdateJobDetails": UpdateJobDetails,
     "UpdateManagedDatabaseDetails": UpdateManagedDatabaseDetails,
     "UpdateManagedDatabaseGroupDetails": UpdateManagedDatabaseGroupDetails,
+    "UpdateMySqlDatabaseConnectorDetails": UpdateMySqlDatabaseConnectorDetails,
     "UpdateNamedCredentialDetails": UpdateNamedCredentialDetails,
     "UpdateNamedPreferredCredentialDetails": UpdateNamedPreferredCredentialDetails,
     "UpdatePreferredCredentialDetails": UpdatePreferredCredentialDetails,

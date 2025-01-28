@@ -60,7 +60,7 @@ class VmClusterSummary(object):
     def vmcluster_name(self):
         """
         **[Required]** Gets the vmcluster_name of this VmClusterSummary.
-        The name of the vm cluster.
+        The name of the VM Cluster.
 
 
         :return: The vmcluster_name of this VmClusterSummary.
@@ -72,7 +72,7 @@ class VmClusterSummary(object):
     def vmcluster_name(self, vmcluster_name):
         """
         Sets the vmcluster_name of this VmClusterSummary.
-        The name of the vm cluster.
+        The name of the VM Cluster.
 
 
         :param vmcluster_name: The vmcluster_name of this VmClusterSummary.
@@ -84,7 +84,7 @@ class VmClusterSummary(object):
     def memory_allocated_in_gbs(self):
         """
         Gets the memory_allocated_in_gbs of this VmClusterSummary.
-        The memory allocated on a vm cluster.
+        The memory allocated on a VM Cluster.
 
 
         :return: The memory_allocated_in_gbs of this VmClusterSummary.
@@ -96,7 +96,7 @@ class VmClusterSummary(object):
     def memory_allocated_in_gbs(self, memory_allocated_in_gbs):
         """
         Sets the memory_allocated_in_gbs of this VmClusterSummary.
-        The memory allocated on a vm cluster.
+        The memory allocated on a VM Cluster.
 
 
         :param memory_allocated_in_gbs: The memory_allocated_in_gbs of this VmClusterSummary.
@@ -108,7 +108,7 @@ class VmClusterSummary(object):
     def cpu_allocated(self):
         """
         Gets the cpu_allocated of this VmClusterSummary.
-        The cpu allocated on a vm cluster.
+        The CPU allocated on a VM Cluster.
 
 
         :return: The cpu_allocated of this VmClusterSummary.
@@ -120,7 +120,7 @@ class VmClusterSummary(object):
     def cpu_allocated(self, cpu_allocated):
         """
         Sets the cpu_allocated of this VmClusterSummary.
-        The cpu allocated on a vm cluster.
+        The CPU allocated on a VM Cluster.
 
 
         :param cpu_allocated: The cpu_allocated of this VmClusterSummary.
@@ -132,7 +132,7 @@ class VmClusterSummary(object):
     def db_nodes_count(self):
         """
         Gets the db_nodes_count of this VmClusterSummary.
-        The number of DB nodes on a vm cluster.
+        The number of DB nodes on a VM Cluster.
 
 
         :return: The db_nodes_count of this VmClusterSummary.
@@ -144,7 +144,7 @@ class VmClusterSummary(object):
     def db_nodes_count(self, db_nodes_count):
         """
         Sets the db_nodes_count of this VmClusterSummary.
-        The number of DB nodes on a vm cluster.
+        The number of DB nodes on a VM Cluster.
 
 
         :param db_nodes_count: The db_nodes_count of this VmClusterSummary.

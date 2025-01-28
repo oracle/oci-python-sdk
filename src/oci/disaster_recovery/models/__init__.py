@@ -37,10 +37,18 @@ from .create_dr_protection_group_member_file_system_details import CreateDrProte
 from .create_dr_protection_group_member_load_balancer_details import CreateDrProtectionGroupMemberLoadBalancerDetails
 from .create_dr_protection_group_member_network_load_balancer_details import CreateDrProtectionGroupMemberNetworkLoadBalancerDetails
 from .create_dr_protection_group_member_object_storage_bucket_details import CreateDrProtectionGroupMemberObjectStorageBucketDetails
+from .create_dr_protection_group_member_oke_cluster_details import CreateDrProtectionGroupMemberOkeClusterDetails
 from .create_dr_protection_group_member_volume_group_details import CreateDrProtectionGroupMemberVolumeGroupDetails
 from .create_file_system_mount_details import CreateFileSystemMountDetails
 from .create_file_system_unmount_details import CreateFileSystemUnmountDetails
 from .create_object_storage_log_location_details import CreateObjectStorageLogLocationDetails
+from .create_oke_backup_location_details import CreateOkeBackupLocationDetails
+from .create_oke_cluster_backup_config_details import CreateOkeClusterBackupConfigDetails
+from .create_oke_cluster_load_balancer_mapping_details import CreateOkeClusterLoadBalancerMappingDetails
+from .create_oke_cluster_managed_node_pool_configuration_details import CreateOkeClusterManagedNodePoolConfigurationDetails
+from .create_oke_cluster_network_load_balancer_mapping_details import CreateOkeClusterNetworkLoadBalancerMappingDetails
+from .create_oke_cluster_vault_mapping_details import CreateOkeClusterVaultMappingDetails
+from .create_oke_cluster_virtual_node_pool_configuration_details import CreateOkeClusterVirtualNodePoolConfigurationDetails
 from .disassociate_dr_protection_group_default_details import DisassociateDrProtectionGroupDefaultDetails
 from .disassociate_dr_protection_group_details import DisassociateDrProtectionGroupDetails
 from .dr_plan import DrPlan
@@ -70,6 +78,7 @@ from .dr_protection_group_member_file_system import DrProtectionGroupMemberFileS
 from .dr_protection_group_member_load_balancer import DrProtectionGroupMemberLoadBalancer
 from .dr_protection_group_member_network_load_balancer import DrProtectionGroupMemberNetworkLoadBalancer
 from .dr_protection_group_member_object_storage_bucket import DrProtectionGroupMemberObjectStorageBucket
+from .dr_protection_group_member_oke_cluster import DrProtectionGroupMemberOkeCluster
 from .dr_protection_group_member_volume_group import DrProtectionGroupMemberVolumeGroup
 from .dr_protection_group_summary import DrProtectionGroupSummary
 from .failover_execution_option_details import FailoverExecutionOptionDetails
@@ -91,6 +100,13 @@ from .network_load_balancer_backend_set_mapping_details import NetworkLoadBalanc
 from .object_storage_log_location import ObjectStorageLogLocation
 from .object_storage_script_location import ObjectStorageScriptLocation
 from .object_store_script_precheck_step import ObjectStoreScriptPrecheckStep
+from .oke_backup_location import OkeBackupLocation
+from .oke_cluster_backup_config import OkeClusterBackupConfig
+from .oke_cluster_load_balancer_mapping import OkeClusterLoadBalancerMapping
+from .oke_cluster_managed_node_pool_configuration import OkeClusterManagedNodePoolConfiguration
+from .oke_cluster_network_load_balancer_mapping import OkeClusterNetworkLoadBalancerMapping
+from .oke_cluster_vault_mapping import OkeClusterVaultMapping
+from .oke_cluster_virtual_node_pool_configuration import OkeClusterVirtualNodePoolConfiguration
 from .pause_dr_plan_execution_details import PauseDrPlanExecutionDetails
 from .refresh_dr_plan_default_details import RefreshDrPlanDefaultDetails
 from .refresh_dr_plan_details import RefreshDrPlanDetails
@@ -132,6 +148,7 @@ from .update_dr_protection_group_member_file_system_details import UpdateDrProte
 from .update_dr_protection_group_member_load_balancer_details import UpdateDrProtectionGroupMemberLoadBalancerDetails
 from .update_dr_protection_group_member_network_load_balancer_details import UpdateDrProtectionGroupMemberNetworkLoadBalancerDetails
 from .update_dr_protection_group_member_object_storage_bucket_details import UpdateDrProtectionGroupMemberObjectStorageBucketDetails
+from .update_dr_protection_group_member_oke_cluster_details import UpdateDrProtectionGroupMemberOkeClusterDetails
 from .update_dr_protection_group_member_volume_group_details import UpdateDrProtectionGroupMemberVolumeGroupDetails
 from .update_dr_protection_group_role_details import UpdateDrProtectionGroupRoleDetails
 from .update_file_system_mount_details import UpdateFileSystemMountDetails
@@ -142,6 +159,13 @@ from .update_local_script_precheck_step_details import UpdateLocalScriptPrecheck
 from .update_object_storage_log_location_details import UpdateObjectStorageLogLocationDetails
 from .update_object_storage_script_location_details import UpdateObjectStorageScriptLocationDetails
 from .update_object_store_script_precheck_step_details import UpdateObjectStoreScriptPrecheckStepDetails
+from .update_oke_backup_location_details import UpdateOkeBackupLocationDetails
+from .update_oke_cluster_backup_config_details import UpdateOkeClusterBackupConfigDetails
+from .update_oke_cluster_load_balancer_mapping_details import UpdateOkeClusterLoadBalancerMappingDetails
+from .update_oke_cluster_managed_node_pool_configuration_details import UpdateOkeClusterManagedNodePoolConfigurationDetails
+from .update_oke_cluster_network_load_balancer_mapping_details import UpdateOkeClusterNetworkLoadBalancerMappingDetails
+from .update_oke_cluster_vault_mapping_details import UpdateOkeClusterVaultMappingDetails
+from .update_oke_cluster_virtual_node_pool_configuration_details import UpdateOkeClusterVirtualNodePoolConfigurationDetails
 from .update_run_local_script_user_defined_step_details import UpdateRunLocalScriptUserDefinedStepDetails
 from .update_run_object_store_script_user_defined_step_details import UpdateRunObjectStoreScriptUserDefinedStepDetails
 from .verify_dr_plan_default_details import VerifyDrPlanDefaultDetails
@@ -188,10 +212,18 @@ disaster_recovery_type_mapping = {
     "CreateDrProtectionGroupMemberLoadBalancerDetails": CreateDrProtectionGroupMemberLoadBalancerDetails,
     "CreateDrProtectionGroupMemberNetworkLoadBalancerDetails": CreateDrProtectionGroupMemberNetworkLoadBalancerDetails,
     "CreateDrProtectionGroupMemberObjectStorageBucketDetails": CreateDrProtectionGroupMemberObjectStorageBucketDetails,
+    "CreateDrProtectionGroupMemberOkeClusterDetails": CreateDrProtectionGroupMemberOkeClusterDetails,
     "CreateDrProtectionGroupMemberVolumeGroupDetails": CreateDrProtectionGroupMemberVolumeGroupDetails,
     "CreateFileSystemMountDetails": CreateFileSystemMountDetails,
     "CreateFileSystemUnmountDetails": CreateFileSystemUnmountDetails,
     "CreateObjectStorageLogLocationDetails": CreateObjectStorageLogLocationDetails,
+    "CreateOkeBackupLocationDetails": CreateOkeBackupLocationDetails,
+    "CreateOkeClusterBackupConfigDetails": CreateOkeClusterBackupConfigDetails,
+    "CreateOkeClusterLoadBalancerMappingDetails": CreateOkeClusterLoadBalancerMappingDetails,
+    "CreateOkeClusterManagedNodePoolConfigurationDetails": CreateOkeClusterManagedNodePoolConfigurationDetails,
+    "CreateOkeClusterNetworkLoadBalancerMappingDetails": CreateOkeClusterNetworkLoadBalancerMappingDetails,
+    "CreateOkeClusterVaultMappingDetails": CreateOkeClusterVaultMappingDetails,
+    "CreateOkeClusterVirtualNodePoolConfigurationDetails": CreateOkeClusterVirtualNodePoolConfigurationDetails,
     "DisassociateDrProtectionGroupDefaultDetails": DisassociateDrProtectionGroupDefaultDetails,
     "DisassociateDrProtectionGroupDetails": DisassociateDrProtectionGroupDetails,
     "DrPlan": DrPlan,
@@ -221,6 +253,7 @@ disaster_recovery_type_mapping = {
     "DrProtectionGroupMemberLoadBalancer": DrProtectionGroupMemberLoadBalancer,
     "DrProtectionGroupMemberNetworkLoadBalancer": DrProtectionGroupMemberNetworkLoadBalancer,
     "DrProtectionGroupMemberObjectStorageBucket": DrProtectionGroupMemberObjectStorageBucket,
+    "DrProtectionGroupMemberOkeCluster": DrProtectionGroupMemberOkeCluster,
     "DrProtectionGroupMemberVolumeGroup": DrProtectionGroupMemberVolumeGroup,
     "DrProtectionGroupSummary": DrProtectionGroupSummary,
     "FailoverExecutionOptionDetails": FailoverExecutionOptionDetails,
@@ -242,6 +275,13 @@ disaster_recovery_type_mapping = {
     "ObjectStorageLogLocation": ObjectStorageLogLocation,
     "ObjectStorageScriptLocation": ObjectStorageScriptLocation,
     "ObjectStoreScriptPrecheckStep": ObjectStoreScriptPrecheckStep,
+    "OkeBackupLocation": OkeBackupLocation,
+    "OkeClusterBackupConfig": OkeClusterBackupConfig,
+    "OkeClusterLoadBalancerMapping": OkeClusterLoadBalancerMapping,
+    "OkeClusterManagedNodePoolConfiguration": OkeClusterManagedNodePoolConfiguration,
+    "OkeClusterNetworkLoadBalancerMapping": OkeClusterNetworkLoadBalancerMapping,
+    "OkeClusterVaultMapping": OkeClusterVaultMapping,
+    "OkeClusterVirtualNodePoolConfiguration": OkeClusterVirtualNodePoolConfiguration,
     "PauseDrPlanExecutionDetails": PauseDrPlanExecutionDetails,
     "RefreshDrPlanDefaultDetails": RefreshDrPlanDefaultDetails,
     "RefreshDrPlanDetails": RefreshDrPlanDetails,
@@ -283,6 +323,7 @@ disaster_recovery_type_mapping = {
     "UpdateDrProtectionGroupMemberLoadBalancerDetails": UpdateDrProtectionGroupMemberLoadBalancerDetails,
     "UpdateDrProtectionGroupMemberNetworkLoadBalancerDetails": UpdateDrProtectionGroupMemberNetworkLoadBalancerDetails,
     "UpdateDrProtectionGroupMemberObjectStorageBucketDetails": UpdateDrProtectionGroupMemberObjectStorageBucketDetails,
+    "UpdateDrProtectionGroupMemberOkeClusterDetails": UpdateDrProtectionGroupMemberOkeClusterDetails,
     "UpdateDrProtectionGroupMemberVolumeGroupDetails": UpdateDrProtectionGroupMemberVolumeGroupDetails,
     "UpdateDrProtectionGroupRoleDetails": UpdateDrProtectionGroupRoleDetails,
     "UpdateFileSystemMountDetails": UpdateFileSystemMountDetails,
@@ -293,6 +334,13 @@ disaster_recovery_type_mapping = {
     "UpdateObjectStorageLogLocationDetails": UpdateObjectStorageLogLocationDetails,
     "UpdateObjectStorageScriptLocationDetails": UpdateObjectStorageScriptLocationDetails,
     "UpdateObjectStoreScriptPrecheckStepDetails": UpdateObjectStoreScriptPrecheckStepDetails,
+    "UpdateOkeBackupLocationDetails": UpdateOkeBackupLocationDetails,
+    "UpdateOkeClusterBackupConfigDetails": UpdateOkeClusterBackupConfigDetails,
+    "UpdateOkeClusterLoadBalancerMappingDetails": UpdateOkeClusterLoadBalancerMappingDetails,
+    "UpdateOkeClusterManagedNodePoolConfigurationDetails": UpdateOkeClusterManagedNodePoolConfigurationDetails,
+    "UpdateOkeClusterNetworkLoadBalancerMappingDetails": UpdateOkeClusterNetworkLoadBalancerMappingDetails,
+    "UpdateOkeClusterVaultMappingDetails": UpdateOkeClusterVaultMappingDetails,
+    "UpdateOkeClusterVirtualNodePoolConfigurationDetails": UpdateOkeClusterVirtualNodePoolConfigurationDetails,
     "UpdateRunLocalScriptUserDefinedStepDetails": UpdateRunLocalScriptUserDefinedStepDetails,
     "UpdateRunObjectStoreScriptUserDefinedStepDetails": UpdateRunObjectStoreScriptUserDefinedStepDetails,
     "VerifyDrPlanDefaultDetails": VerifyDrPlanDefaultDetails,

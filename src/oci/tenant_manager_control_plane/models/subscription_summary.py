@@ -67,6 +67,10 @@ class SubscriptionSummary(object):
             The value to assign to the defined_tags property of this SubscriptionSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this SubscriptionSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'entity_version': 'str',
@@ -76,7 +80,8 @@ class SubscriptionSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -87,7 +92,8 @@ class SubscriptionSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'system_tags': 'systemTags'
         }
 
         self._entity_version = None
@@ -98,6 +104,7 @@ class SubscriptionSummary(object):
         self._time_updated = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -205,7 +212,7 @@ class SubscriptionSummary(object):
     def service_name(self):
         """
         **[Required]** Gets the service_name of this SubscriptionSummary.
-        The type of subscription, such as 'UCM', 'SAAS', 'ERP', 'CRM'.
+        The type of subscription, such as 'CLOUDCM', 'AUTOANALYTICS', 'ERP', 'CRM'.
 
 
         :return: The service_name of this SubscriptionSummary.
@@ -217,7 +224,7 @@ class SubscriptionSummary(object):
     def service_name(self, service_name):
         """
         Sets the service_name of this SubscriptionSummary.
-        The type of subscription, such as 'UCM', 'SAAS', 'ERP', 'CRM'.
+        The type of subscription, such as 'CLOUDCM', 'AUTOANALYTICS', 'ERP', 'CRM'.
 
 
         :param service_name: The service_name of this SubscriptionSummary.
@@ -332,6 +339,32 @@ class SubscriptionSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this SubscriptionSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this SubscriptionSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this SubscriptionSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this SubscriptionSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -32507,6 +32507,9 @@ class DatabaseClient(object):
         :param str name: (optional)
             A filter to return only resources that match the entire name given. The match is not case sensitive.
 
+        :param str shape: (optional)
+            A filter to return only resources that belong to the entire shape name given. The match is not case sensitive.
+
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
 
@@ -32553,6 +32556,7 @@ class DatabaseClient(object):
             "allow_control_chars",
             "retry_strategy",
             "name",
+            "shape",
             "sort_order",
             "sort_by",
             "limit",
@@ -32580,6 +32584,7 @@ class DatabaseClient(object):
         query_params = {
             "compartmentId": compartment_id,
             "name": kwargs.get("name", missing),
+            "shape": kwargs.get("shape", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "limit": kwargs.get("limit", missing),

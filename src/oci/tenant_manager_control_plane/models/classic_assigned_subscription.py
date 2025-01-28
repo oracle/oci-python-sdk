@@ -43,6 +43,22 @@ class ClassicAssignedSubscription(AssignedSubscription):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the managed_by property of a ClassicAssignedSubscription.
+    #: This constant has a value of "APPSMANAGER"
+    MANAGED_BY_APPSMANAGER = "APPSMANAGER"
+
+    #: A constant which can be used with the managed_by property of a ClassicAssignedSubscription.
+    #: This constant has a value of "SERVICEMANAGERPROXY"
+    MANAGED_BY_SERVICEMANAGERPROXY = "SERVICEMANAGERPROXY"
+
+    #: A constant which can be used with the managed_by property of a ClassicAssignedSubscription.
+    #: This constant has a value of "FUSIONAPPS"
+    MANAGED_BY_FUSIONAPPS = "FUSIONAPPS"
+
+    #: A constant which can be used with the managed_by property of a ClassicAssignedSubscription.
+    #: This constant has a value of "MYSERVICES"
+    MANAGED_BY_MYSERVICES = "MYSERVICES"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ClassicAssignedSubscription object with values from keyword arguments. The default value of the :py:attr:`~oci.tenant_manager_control_plane.models.ClassicAssignedSubscription.entity_version` attribute
@@ -149,6 +165,12 @@ class ClassicAssignedSubscription(AssignedSubscription):
             The value to assign to the end_date property of this ClassicAssignedSubscription.
         :type end_date: datetime
 
+        :param managed_by:
+            The value to assign to the managed_by property of this ClassicAssignedSubscription.
+            Allowed values for this property are: "APPSMANAGER", "SERVICEMANAGERPROXY", "FUSIONAPPS", "MYSERVICES", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type managed_by: str
+
         """
         self.swagger_types = {
             'entity_version': 'str',
@@ -174,7 +196,8 @@ class ClassicAssignedSubscription(AssignedSubscription):
             'promotion': 'list[Promotion]',
             'purchase_entitlement_id': 'str',
             'start_date': 'datetime',
-            'end_date': 'datetime'
+            'end_date': 'datetime',
+            'managed_by': 'str'
         }
 
         self.attribute_map = {
@@ -201,7 +224,8 @@ class ClassicAssignedSubscription(AssignedSubscription):
             'promotion': 'promotion',
             'purchase_entitlement_id': 'purchaseEntitlementId',
             'start_date': 'startDate',
-            'end_date': 'endDate'
+            'end_date': 'endDate',
+            'managed_by': 'managedBy'
         }
 
         self._entity_version = None
@@ -228,6 +252,7 @@ class ClassicAssignedSubscription(AssignedSubscription):
         self._purchase_entitlement_id = None
         self._start_date = None
         self._end_date = None
+        self._managed_by = None
         self._entity_version = 'V1'
 
     @property
@@ -619,6 +644,36 @@ class ClassicAssignedSubscription(AssignedSubscription):
         :type: datetime
         """
         self._end_date = end_date
+
+    @property
+    def managed_by(self):
+        """
+        Gets the managed_by of this ClassicAssignedSubscription.
+        Service or component which is used to provision and manage the subscription.
+
+        Allowed values for this property are: "APPSMANAGER", "SERVICEMANAGERPROXY", "FUSIONAPPS", "MYSERVICES", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The managed_by of this ClassicAssignedSubscription.
+        :rtype: str
+        """
+        return self._managed_by
+
+    @managed_by.setter
+    def managed_by(self, managed_by):
+        """
+        Sets the managed_by of this ClassicAssignedSubscription.
+        Service or component which is used to provision and manage the subscription.
+
+
+        :param managed_by: The managed_by of this ClassicAssignedSubscription.
+        :type: str
+        """
+        allowed_values = ["APPSMANAGER", "SERVICEMANAGERPROXY", "FUSIONAPPS", "MYSERVICES"]
+        if not value_allowed_none_or_none_sentinel(managed_by, allowed_values):
+            managed_by = 'UNKNOWN_ENUM_VALUE'
+        self._managed_by = managed_by
 
     def __repr__(self):
         return formatted_flat_dict(self)

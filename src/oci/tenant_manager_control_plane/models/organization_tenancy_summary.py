@@ -102,6 +102,10 @@ class OrganizationTenancySummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type governance_status: str
 
+        :param system_tags:
+            The value to assign to the system_tags property of this OrganizationTenancySummary.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'tenancy_id': 'str',
@@ -111,7 +115,8 @@ class OrganizationTenancySummary(object):
             'time_joined': 'datetime',
             'time_left': 'datetime',
             'is_approved_for_transfer': 'bool',
-            'governance_status': 'str'
+            'governance_status': 'str',
+            'system_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -122,7 +127,8 @@ class OrganizationTenancySummary(object):
             'time_joined': 'timeJoined',
             'time_left': 'timeLeft',
             'is_approved_for_transfer': 'isApprovedForTransfer',
-            'governance_status': 'governanceStatus'
+            'governance_status': 'governanceStatus',
+            'system_tags': 'systemTags'
         }
 
         self._tenancy_id = None
@@ -133,6 +139,7 @@ class OrganizationTenancySummary(object):
         self._time_left = None
         self._is_approved_for_transfer = None
         self._governance_status = None
+        self._system_tags = None
 
     @property
     def tenancy_id(self):
@@ -343,6 +350,32 @@ class OrganizationTenancySummary(object):
         if not value_allowed_none_or_none_sentinel(governance_status, allowed_values):
             governance_status = 'UNKNOWN_ENUM_VALUE'
         self._governance_status = governance_status
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this OrganizationTenancySummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this OrganizationTenancySummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this OrganizationTenancySummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this OrganizationTenancySummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -83,6 +83,10 @@ class ExadataInfrastructure(object):
     #: This constant has a value of "X10M"
     ADDITIONAL_COMPUTE_SYSTEM_MODEL_X10_M = "X10M"
 
+    #: A constant which can be used with the additional_compute_system_model property of a ExadataInfrastructure.
+    #: This constant has a value of "X11M"
+    ADDITIONAL_COMPUTE_SYSTEM_MODEL_X11_M = "X11M"
+
     #: A constant which can be used with the maintenance_slo_status property of a ExadataInfrastructure.
     #: This constant has a value of "OK"
     MAINTENANCE_SLO_STATUS_OK = "OK"
@@ -90,6 +94,14 @@ class ExadataInfrastructure(object):
     #: A constant which can be used with the maintenance_slo_status property of a ExadataInfrastructure.
     #: This constant has a value of "DEGRADED"
     MAINTENANCE_SLO_STATUS_DEGRADED = "DEGRADED"
+
+    #: A constant which can be used with the compute_model property of a ExadataInfrastructure.
+    #: This constant has a value of "ECPU"
+    COMPUTE_MODEL_ECPU = "ECPU"
+
+    #: A constant which can be used with the compute_model property of a ExadataInfrastructure.
+    #: This constant has a value of "OCPU"
+    COMPUTE_MODEL_OCPU = "OCPU"
 
     def __init__(self, **kwargs):
         """
@@ -188,7 +200,7 @@ class ExadataInfrastructure(object):
 
         :param additional_compute_system_model:
             The value to assign to the additional_compute_system_model property of this ExadataInfrastructure.
-            Allowed values for this property are: "X7", "X8", "X8M", "X9M", "X10M", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X7", "X8", "X8M", "X9M", "X10M", "X11M", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type additional_compute_system_model: str
 
@@ -306,6 +318,20 @@ class ExadataInfrastructure(object):
             The value to assign to the exascale_config property of this ExadataInfrastructure.
         :type exascale_config: oci.database.models.ExascaleConfigDetails
 
+        :param database_server_type:
+            The value to assign to the database_server_type property of this ExadataInfrastructure.
+        :type database_server_type: str
+
+        :param storage_server_type:
+            The value to assign to the storage_server_type property of this ExadataInfrastructure.
+        :type storage_server_type: str
+
+        :param compute_model:
+            The value to assign to the compute_model property of this ExadataInfrastructure.
+            Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type compute_model: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -358,7 +384,10 @@ class ExadataInfrastructure(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'is_scheduling_policy_associated': 'bool',
-            'exascale_config': 'ExascaleConfigDetails'
+            'exascale_config': 'ExascaleConfigDetails',
+            'database_server_type': 'str',
+            'storage_server_type': 'str',
+            'compute_model': 'str'
         }
 
         self.attribute_map = {
@@ -412,7 +441,10 @@ class ExadataInfrastructure(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'is_scheduling_policy_associated': 'isSchedulingPolicyAssociated',
-            'exascale_config': 'exascaleConfig'
+            'exascale_config': 'exascaleConfig',
+            'database_server_type': 'databaseServerType',
+            'storage_server_type': 'storageServerType',
+            'compute_model': 'computeModel'
         }
 
         self._id = None
@@ -466,6 +498,9 @@ class ExadataInfrastructure(object):
         self._defined_tags = None
         self._is_scheduling_policy_associated = None
         self._exascale_config = None
+        self._database_server_type = None
+        self._storage_server_type = None
+        self._compute_model = None
 
     @property
     def id(self):
@@ -1021,7 +1056,7 @@ class ExadataInfrastructure(object):
         server resources available for use. For more information, please see [System and Shape Configuration Options]
         (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
 
-        Allowed values for this property are: "X7", "X8", "X8M", "X9M", "X10M", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "X7", "X8", "X8M", "X9M", "X10M", "X11M", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -1042,7 +1077,7 @@ class ExadataInfrastructure(object):
         :param additional_compute_system_model: The additional_compute_system_model of this ExadataInfrastructure.
         :type: str
         """
-        allowed_values = ["X7", "X8", "X8M", "X9M", "X10M"]
+        allowed_values = ["X7", "X8", "X8M", "X9M", "X10M", "X11M"]
         if not value_allowed_none_or_none_sentinel(additional_compute_system_model, allowed_values):
             additional_compute_system_model = 'UNKNOWN_ENUM_VALUE'
         self._additional_compute_system_model = additional_compute_system_model
@@ -1740,6 +1775,84 @@ class ExadataInfrastructure(object):
         :type: oci.database.models.ExascaleConfigDetails
         """
         self._exascale_config = exascale_config
+
+    @property
+    def database_server_type(self):
+        """
+        Gets the database_server_type of this ExadataInfrastructure.
+        The database server type of the Exadata infrastructure.
+
+
+        :return: The database_server_type of this ExadataInfrastructure.
+        :rtype: str
+        """
+        return self._database_server_type
+
+    @database_server_type.setter
+    def database_server_type(self, database_server_type):
+        """
+        Sets the database_server_type of this ExadataInfrastructure.
+        The database server type of the Exadata infrastructure.
+
+
+        :param database_server_type: The database_server_type of this ExadataInfrastructure.
+        :type: str
+        """
+        self._database_server_type = database_server_type
+
+    @property
+    def storage_server_type(self):
+        """
+        Gets the storage_server_type of this ExadataInfrastructure.
+        The storage server type of the Exadata infrastructure.
+
+
+        :return: The storage_server_type of this ExadataInfrastructure.
+        :rtype: str
+        """
+        return self._storage_server_type
+
+    @storage_server_type.setter
+    def storage_server_type(self, storage_server_type):
+        """
+        Sets the storage_server_type of this ExadataInfrastructure.
+        The storage server type of the Exadata infrastructure.
+
+
+        :param storage_server_type: The storage_server_type of this ExadataInfrastructure.
+        :type: str
+        """
+        self._storage_server_type = storage_server_type
+
+    @property
+    def compute_model(self):
+        """
+        Gets the compute_model of this ExadataInfrastructure.
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+
+        Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The compute_model of this ExadataInfrastructure.
+        :rtype: str
+        """
+        return self._compute_model
+
+    @compute_model.setter
+    def compute_model(self, compute_model):
+        """
+        Sets the compute_model of this ExadataInfrastructure.
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+
+
+        :param compute_model: The compute_model of this ExadataInfrastructure.
+        :type: str
+        """
+        allowed_values = ["ECPU", "OCPU"]
+        if not value_allowed_none_or_none_sentinel(compute_model, allowed_values):
+            compute_model = 'UNKNOWN_ENUM_VALUE'
+        self._compute_model = compute_model
 
     def __repr__(self):
         return formatted_flat_dict(self)

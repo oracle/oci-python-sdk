@@ -74,6 +74,10 @@ class LinkSummary(object):
             The value to assign to the time_terminated property of this LinkSummary.
         :type time_terminated: datetime
 
+        :param system_tags:
+            The value to assign to the system_tags property of this LinkSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -82,7 +86,8 @@ class LinkSummary(object):
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
-            'time_terminated': 'datetime'
+            'time_terminated': 'datetime',
+            'system_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -92,7 +97,8 @@ class LinkSummary(object):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
-            'time_terminated': 'timeTerminated'
+            'time_terminated': 'timeTerminated',
+            'system_tags': 'systemTags'
         }
 
         self._id = None
@@ -102,6 +108,7 @@ class LinkSummary(object):
         self._time_created = None
         self._time_updated = None
         self._time_terminated = None
+        self._system_tags = None
 
     @property
     def id(self):
@@ -276,6 +283,32 @@ class LinkSummary(object):
         :type: datetime
         """
         self._time_terminated = time_terminated
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this LinkSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this LinkSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this LinkSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this LinkSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

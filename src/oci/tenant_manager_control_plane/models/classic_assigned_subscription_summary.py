@@ -43,6 +43,22 @@ class ClassicAssignedSubscriptionSummary(AssignedSubscriptionSummary):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the managed_by property of a ClassicAssignedSubscriptionSummary.
+    #: This constant has a value of "APPSMANAGER"
+    MANAGED_BY_APPSMANAGER = "APPSMANAGER"
+
+    #: A constant which can be used with the managed_by property of a ClassicAssignedSubscriptionSummary.
+    #: This constant has a value of "SERVICEMANAGERPROXY"
+    MANAGED_BY_SERVICEMANAGERPROXY = "SERVICEMANAGERPROXY"
+
+    #: A constant which can be used with the managed_by property of a ClassicAssignedSubscriptionSummary.
+    #: This constant has a value of "FUSIONAPPS"
+    MANAGED_BY_FUSIONAPPS = "FUSIONAPPS"
+
+    #: A constant which can be used with the managed_by property of a ClassicAssignedSubscriptionSummary.
+    #: This constant has a value of "MYSERVICES"
+    MANAGED_BY_MYSERVICES = "MYSERVICES"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ClassicAssignedSubscriptionSummary object with values from keyword arguments. The default value of the :py:attr:`~oci.tenant_manager_control_plane.models.ClassicAssignedSubscriptionSummary.entity_version` attribute
@@ -83,6 +99,10 @@ class ClassicAssignedSubscriptionSummary(AssignedSubscriptionSummary):
             The value to assign to the defined_tags property of this ClassicAssignedSubscriptionSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this ClassicAssignedSubscriptionSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ClassicAssignedSubscriptionSummary.
             Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -113,6 +133,12 @@ class ClassicAssignedSubscriptionSummary(AssignedSubscriptionSummary):
             The value to assign to the csi_number property of this ClassicAssignedSubscriptionSummary.
         :type csi_number: str
 
+        :param managed_by:
+            The value to assign to the managed_by property of this ClassicAssignedSubscriptionSummary.
+            Allowed values for this property are: "APPSMANAGER", "SERVICEMANAGERPROXY", "FUSIONAPPS", "MYSERVICES", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type managed_by: str
+
         """
         self.swagger_types = {
             'entity_version': 'str',
@@ -123,13 +149,15 @@ class ClassicAssignedSubscriptionSummary(AssignedSubscriptionSummary):
             'time_updated': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'lifecycle_state': 'str',
             'classic_subscription_id': 'str',
             'is_classic_subscription': 'bool',
             'region_assignment': 'str',
             'start_date': 'datetime',
             'end_date': 'datetime',
-            'csi_number': 'str'
+            'csi_number': 'str',
+            'managed_by': 'str'
         }
 
         self.attribute_map = {
@@ -141,13 +169,15 @@ class ClassicAssignedSubscriptionSummary(AssignedSubscriptionSummary):
             'time_updated': 'timeUpdated',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'lifecycle_state': 'lifecycleState',
             'classic_subscription_id': 'classicSubscriptionId',
             'is_classic_subscription': 'isClassicSubscription',
             'region_assignment': 'regionAssignment',
             'start_date': 'startDate',
             'end_date': 'endDate',
-            'csi_number': 'csiNumber'
+            'csi_number': 'csiNumber',
+            'managed_by': 'managedBy'
         }
 
         self._entity_version = None
@@ -158,6 +188,7 @@ class ClassicAssignedSubscriptionSummary(AssignedSubscriptionSummary):
         self._time_updated = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._lifecycle_state = None
         self._classic_subscription_id = None
         self._is_classic_subscription = None
@@ -165,6 +196,7 @@ class ClassicAssignedSubscriptionSummary(AssignedSubscriptionSummary):
         self._start_date = None
         self._end_date = None
         self._csi_number = None
+        self._managed_by = None
         self._entity_version = 'V1'
 
     @property
@@ -340,6 +372,36 @@ class ClassicAssignedSubscriptionSummary(AssignedSubscriptionSummary):
         :type: str
         """
         self._csi_number = csi_number
+
+    @property
+    def managed_by(self):
+        """
+        Gets the managed_by of this ClassicAssignedSubscriptionSummary.
+        Service or component which is used to provision and manage the subscription.
+
+        Allowed values for this property are: "APPSMANAGER", "SERVICEMANAGERPROXY", "FUSIONAPPS", "MYSERVICES", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The managed_by of this ClassicAssignedSubscriptionSummary.
+        :rtype: str
+        """
+        return self._managed_by
+
+    @managed_by.setter
+    def managed_by(self, managed_by):
+        """
+        Sets the managed_by of this ClassicAssignedSubscriptionSummary.
+        Service or component which is used to provision and manage the subscription.
+
+
+        :param managed_by: The managed_by of this ClassicAssignedSubscriptionSummary.
+        :type: str
+        """
+        allowed_values = ["APPSMANAGER", "SERVICEMANAGERPROXY", "FUSIONAPPS", "MYSERVICES"]
+        if not value_allowed_none_or_none_sentinel(managed_by, allowed_values):
+            managed_by = 'UNKNOWN_ENUM_VALUE'
+        self._managed_by = managed_by
 
     def __repr__(self):
         return formatted_flat_dict(self)

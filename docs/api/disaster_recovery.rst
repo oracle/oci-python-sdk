@@ -49,10 +49,18 @@ Disaster Recovery
     oci.disaster_recovery.models.CreateDrProtectionGroupMemberLoadBalancerDetails
     oci.disaster_recovery.models.CreateDrProtectionGroupMemberNetworkLoadBalancerDetails
     oci.disaster_recovery.models.CreateDrProtectionGroupMemberObjectStorageBucketDetails
+    oci.disaster_recovery.models.CreateDrProtectionGroupMemberOkeClusterDetails
     oci.disaster_recovery.models.CreateDrProtectionGroupMemberVolumeGroupDetails
     oci.disaster_recovery.models.CreateFileSystemMountDetails
     oci.disaster_recovery.models.CreateFileSystemUnmountDetails
     oci.disaster_recovery.models.CreateObjectStorageLogLocationDetails
+    oci.disaster_recovery.models.CreateOkeBackupLocationDetails
+    oci.disaster_recovery.models.CreateOkeClusterBackupConfigDetails
+    oci.disaster_recovery.models.CreateOkeClusterLoadBalancerMappingDetails
+    oci.disaster_recovery.models.CreateOkeClusterManagedNodePoolConfigurationDetails
+    oci.disaster_recovery.models.CreateOkeClusterNetworkLoadBalancerMappingDetails
+    oci.disaster_recovery.models.CreateOkeClusterVaultMappingDetails
+    oci.disaster_recovery.models.CreateOkeClusterVirtualNodePoolConfigurationDetails
     oci.disaster_recovery.models.DisassociateDrProtectionGroupDefaultDetails
     oci.disaster_recovery.models.DisassociateDrProtectionGroupDetails
     oci.disaster_recovery.models.DrPlan
@@ -82,6 +90,7 @@ Disaster Recovery
     oci.disaster_recovery.models.DrProtectionGroupMemberLoadBalancer
     oci.disaster_recovery.models.DrProtectionGroupMemberNetworkLoadBalancer
     oci.disaster_recovery.models.DrProtectionGroupMemberObjectStorageBucket
+    oci.disaster_recovery.models.DrProtectionGroupMemberOkeCluster
     oci.disaster_recovery.models.DrProtectionGroupMemberVolumeGroup
     oci.disaster_recovery.models.DrProtectionGroupSummary
     oci.disaster_recovery.models.FailoverExecutionOptionDetails
@@ -103,6 +112,13 @@ Disaster Recovery
     oci.disaster_recovery.models.ObjectStorageLogLocation
     oci.disaster_recovery.models.ObjectStorageScriptLocation
     oci.disaster_recovery.models.ObjectStoreScriptPrecheckStep
+    oci.disaster_recovery.models.OkeBackupLocation
+    oci.disaster_recovery.models.OkeClusterBackupConfig
+    oci.disaster_recovery.models.OkeClusterLoadBalancerMapping
+    oci.disaster_recovery.models.OkeClusterManagedNodePoolConfiguration
+    oci.disaster_recovery.models.OkeClusterNetworkLoadBalancerMapping
+    oci.disaster_recovery.models.OkeClusterVaultMapping
+    oci.disaster_recovery.models.OkeClusterVirtualNodePoolConfiguration
     oci.disaster_recovery.models.PauseDrPlanExecutionDetails
     oci.disaster_recovery.models.RefreshDrPlanDefaultDetails
     oci.disaster_recovery.models.RefreshDrPlanDetails
@@ -144,6 +160,7 @@ Disaster Recovery
     oci.disaster_recovery.models.UpdateDrProtectionGroupMemberLoadBalancerDetails
     oci.disaster_recovery.models.UpdateDrProtectionGroupMemberNetworkLoadBalancerDetails
     oci.disaster_recovery.models.UpdateDrProtectionGroupMemberObjectStorageBucketDetails
+    oci.disaster_recovery.models.UpdateDrProtectionGroupMemberOkeClusterDetails
     oci.disaster_recovery.models.UpdateDrProtectionGroupMemberVolumeGroupDetails
     oci.disaster_recovery.models.UpdateDrProtectionGroupRoleDetails
     oci.disaster_recovery.models.UpdateFileSystemMountDetails
@@ -154,6 +171,13 @@ Disaster Recovery
     oci.disaster_recovery.models.UpdateObjectStorageLogLocationDetails
     oci.disaster_recovery.models.UpdateObjectStorageScriptLocationDetails
     oci.disaster_recovery.models.UpdateObjectStoreScriptPrecheckStepDetails
+    oci.disaster_recovery.models.UpdateOkeBackupLocationDetails
+    oci.disaster_recovery.models.UpdateOkeClusterBackupConfigDetails
+    oci.disaster_recovery.models.UpdateOkeClusterLoadBalancerMappingDetails
+    oci.disaster_recovery.models.UpdateOkeClusterManagedNodePoolConfigurationDetails
+    oci.disaster_recovery.models.UpdateOkeClusterNetworkLoadBalancerMappingDetails
+    oci.disaster_recovery.models.UpdateOkeClusterVaultMappingDetails
+    oci.disaster_recovery.models.UpdateOkeClusterVirtualNodePoolConfigurationDetails
     oci.disaster_recovery.models.UpdateRunLocalScriptUserDefinedStepDetails
     oci.disaster_recovery.models.UpdateRunObjectStoreScriptUserDefinedStepDetails
     oci.disaster_recovery.models.VerifyDrPlanDefaultDetails

@@ -83,6 +83,10 @@ class ClassicSubscriptionSummary(SubscriptionSummary):
             The value to assign to the defined_tags property of this ClassicSubscriptionSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this ClassicSubscriptionSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param classic_subscription_id:
             The value to assign to the classic_subscription_id property of this ClassicSubscriptionSummary.
         :type classic_subscription_id: str
@@ -123,6 +127,7 @@ class ClassicSubscriptionSummary(SubscriptionSummary):
             'time_updated': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'classic_subscription_id': 'str',
             'is_classic_subscription': 'bool',
             'payment_model': 'str',
@@ -141,6 +146,7 @@ class ClassicSubscriptionSummary(SubscriptionSummary):
             'time_updated': 'timeUpdated',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'classic_subscription_id': 'classicSubscriptionId',
             'is_classic_subscription': 'isClassicSubscription',
             'payment_model': 'paymentModel',
@@ -158,6 +164,7 @@ class ClassicSubscriptionSummary(SubscriptionSummary):
         self._time_updated = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._classic_subscription_id = None
         self._is_classic_subscription = None
         self._payment_model = None

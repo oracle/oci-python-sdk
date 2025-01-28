@@ -37,6 +37,14 @@ class DbSystemShapeSummary(object):
     #: This constant has a value of "AMPERE_FLEX_A1"
     SHAPE_TYPE_AMPERE_FLEX_A1 = "AMPERE_FLEX_A1"
 
+    #: A constant which can be used with the compute_model property of a DbSystemShapeSummary.
+    #: This constant has a value of "ECPU"
+    COMPUTE_MODEL_ECPU = "ECPU"
+
+    #: A constant which can be used with the compute_model property of a DbSystemShapeSummary.
+    #: This constant has a value of "OCPU"
+    COMPUTE_MODEL_OCPU = "OCPU"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DbSystemShapeSummary object with values from keyword arguments.
@@ -120,6 +128,20 @@ class DbSystemShapeSummary(object):
             The value to assign to the min_data_storage_in_t_bs property of this DbSystemShapeSummary.
         :type min_data_storage_in_t_bs: int
 
+        :param display_name:
+            The value to assign to the display_name property of this DbSystemShapeSummary.
+        :type display_name: str
+
+        :param compute_model:
+            The value to assign to the compute_model property of this DbSystemShapeSummary.
+            Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type compute_model: str
+
+        :param are_server_types_supported:
+            The value to assign to the are_server_types_supported property of this DbSystemShapeSummary.
+        :type are_server_types_supported: bool
+
         :param minimum_node_count:
             The value to assign to the minimum_node_count property of this DbSystemShapeSummary.
         :type minimum_node_count: int
@@ -153,6 +175,9 @@ class DbSystemShapeSummary(object):
             'min_db_node_storage_per_node_in_g_bs': 'int',
             'available_data_storage_in_t_bs': 'int',
             'min_data_storage_in_t_bs': 'int',
+            'display_name': 'str',
+            'compute_model': 'str',
+            'are_server_types_supported': 'bool',
             'minimum_node_count': 'int',
             'maximum_node_count': 'int',
             'available_core_count_per_node': 'int'
@@ -178,6 +203,9 @@ class DbSystemShapeSummary(object):
             'min_db_node_storage_per_node_in_g_bs': 'minDbNodeStoragePerNodeInGBs',
             'available_data_storage_in_t_bs': 'availableDataStorageInTBs',
             'min_data_storage_in_t_bs': 'minDataStorageInTBs',
+            'display_name': 'displayName',
+            'compute_model': 'computeModel',
+            'are_server_types_supported': 'areServerTypesSupported',
             'minimum_node_count': 'minimumNodeCount',
             'maximum_node_count': 'maximumNodeCount',
             'available_core_count_per_node': 'availableCoreCountPerNode'
@@ -202,6 +230,9 @@ class DbSystemShapeSummary(object):
         self._min_db_node_storage_per_node_in_g_bs = None
         self._available_data_storage_in_t_bs = None
         self._min_data_storage_in_t_bs = None
+        self._display_name = None
+        self._compute_model = None
+        self._are_server_types_supported = None
         self._minimum_node_count = None
         self._maximum_node_count = None
         self._available_core_count_per_node = None
@@ -667,6 +698,84 @@ class DbSystemShapeSummary(object):
         :type: int
         """
         self._min_data_storage_in_t_bs = min_data_storage_in_t_bs
+
+    @property
+    def display_name(self):
+        """
+        Gets the display_name of this DbSystemShapeSummary.
+        The display name of the shape used for the DB system.
+
+
+        :return: The display_name of this DbSystemShapeSummary.
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        """
+        Sets the display_name of this DbSystemShapeSummary.
+        The display name of the shape used for the DB system.
+
+
+        :param display_name: The display_name of this DbSystemShapeSummary.
+        :type: str
+        """
+        self._display_name = display_name
+
+    @property
+    def compute_model(self):
+        """
+        Gets the compute_model of this DbSystemShapeSummary.
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+
+        Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The compute_model of this DbSystemShapeSummary.
+        :rtype: str
+        """
+        return self._compute_model
+
+    @compute_model.setter
+    def compute_model(self, compute_model):
+        """
+        Sets the compute_model of this DbSystemShapeSummary.
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+
+
+        :param compute_model: The compute_model of this DbSystemShapeSummary.
+        :type: str
+        """
+        allowed_values = ["ECPU", "OCPU"]
+        if not value_allowed_none_or_none_sentinel(compute_model, allowed_values):
+            compute_model = 'UNKNOWN_ENUM_VALUE'
+        self._compute_model = compute_model
+
+    @property
+    def are_server_types_supported(self):
+        """
+        Gets the are_server_types_supported of this DbSystemShapeSummary.
+        If true, the shape supports configurable DB and Storage Server types.
+
+
+        :return: The are_server_types_supported of this DbSystemShapeSummary.
+        :rtype: bool
+        """
+        return self._are_server_types_supported
+
+    @are_server_types_supported.setter
+    def are_server_types_supported(self, are_server_types_supported):
+        """
+        Sets the are_server_types_supported of this DbSystemShapeSummary.
+        If true, the shape supports configurable DB and Storage Server types.
+
+
+        :param are_server_types_supported: The are_server_types_supported of this DbSystemShapeSummary.
+        :type: bool
+        """
+        self._are_server_types_supported = are_server_types_supported
 
     @property
     def minimum_node_count(self):

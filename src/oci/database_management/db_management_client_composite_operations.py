@@ -159,6 +159,45 @@ class DbManagementClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def check_external_my_sql_database_connector_connection_status_and_wait_for_state(self, external_my_sql_database_connector_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_management.DbManagementClient.check_external_my_sql_database_connector_connection_status` and waits for the :py:class:`~oci.database_management.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str external_my_sql_database_connector_id: (required)
+            The OCID of the External MySQL Database Connector.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_management.DbManagementClient.check_external_my_sql_database_connector_connection_status`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.check_external_my_sql_database_connector_connection_status(external_my_sql_database_connector_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def create_db_management_private_endpoint_and_wait_for_state(self, create_db_management_private_endpoint_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.database_management.DbManagementClient.create_db_management_private_endpoint` and waits for the :py:class:`~oci.database_management.models.WorkRequest`
@@ -388,6 +427,51 @@ class DbManagementClientCompositeOperations(object):
             waiter_result = oci.wait_until(
                 self.client,
                 self.client.get_external_exadata_storage_connector(external_exadata_storage_connector_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def create_external_my_sql_database_connector_and_wait_for_state(self, create_external_my_sql_database_connector_details, is_test_connection_param, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_management.DbManagementClient.create_external_my_sql_database_connector` and waits for the :py:class:`~oci.database_management.models.ExternalMySqlDatabaseConnector` acted upon
+        to enter the given state(s).
+
+        :param oci.database_management.models.CreateExternalMySqlDatabaseConnectorDetails create_external_my_sql_database_connector_details: (required)
+            The details required to create an external MySQL database connector resource.
+
+        :param bool is_test_connection_param: (required)
+            Parameter indicating whether database connection needs to be tested.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.ExternalMySqlDatabaseConnector.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_management.DbManagementClient.create_external_my_sql_database_connector`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_external_my_sql_database_connector(create_external_my_sql_database_connector_details, is_test_connection_param, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        external_my_sql_database_connector_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_external_my_sql_database_connector(external_my_sql_database_connector_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -858,6 +942,100 @@ class DbManagementClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def delete_external_my_sql_database_and_wait_for_state(self, external_my_sql_database_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_management.DbManagementClient.delete_external_my_sql_database` and waits for the :py:class:`~oci.database_management.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str external_my_sql_database_id: (required)
+            The OCID of the External MySQL Database.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_management.DbManagementClient.delete_external_my_sql_database`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = None
+        try:
+            operation_result = self.client.delete_external_my_sql_database(external_my_sql_database_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def delete_external_my_sql_database_connector_and_wait_for_state(self, external_my_sql_database_connector_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_management.DbManagementClient.delete_external_my_sql_database_connector` and waits for the :py:class:`~oci.database_management.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str external_my_sql_database_connector_id: (required)
+            The OCID of the External MySQL Database Connector.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_management.DbManagementClient.delete_external_my_sql_database_connector`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = None
+        try:
+            operation_result = self.client.delete_external_my_sql_database_connector(external_my_sql_database_connector_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def delete_job_and_wait_for_state(self, job_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.database_management.DbManagementClient.delete_job` and waits for the :py:class:`~oci.database_management.models.Job` acted upon
@@ -1294,6 +1472,45 @@ class DbManagementClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def disable_external_my_sql_database_management_and_wait_for_state(self, external_my_sql_database_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_management.DbManagementClient.disable_external_my_sql_database_management` and waits for the :py:class:`~oci.database_management.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str external_my_sql_database_id: (required)
+            The OCID of the External MySQL Database.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_management.DbManagementClient.disable_external_my_sql_database_management`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.disable_external_my_sql_database_management(external_my_sql_database_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def disable_external_non_container_database_management_feature_and_wait_for_state(self, external_non_container_database_id, disable_external_non_container_database_management_feature_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.database_management.DbManagementClient.disable_external_non_container_database_management_feature` and waits for the :py:class:`~oci.database_management.models.WorkRequest`
@@ -1670,6 +1887,48 @@ class DbManagementClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.enable_external_exadata_infrastructure_management(external_exadata_infrastructure_id, enable_external_exadata_infrastructure_management_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def enable_external_my_sql_database_management_and_wait_for_state(self, external_my_sql_database_id, enable_external_database_management_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_management.DbManagementClient.enable_external_my_sql_database_management` and waits for the :py:class:`~oci.database_management.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str external_my_sql_database_id: (required)
+            The OCID of the External MySQL Database.
+
+        :param oci.database_management.models.EnableExternalDatabaseManagementDetails enable_external_database_management_details: (required)
+            The details required to enable an external MySQL database resource.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_management.DbManagementClient.enable_external_my_sql_database_management`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.enable_external_my_sql_database_management(external_my_sql_database_id, enable_external_database_management_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
@@ -2621,6 +2880,48 @@ class DbManagementClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.update_external_listener(external_listener_id, update_external_listener_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        if 'opc-work-request-id' not in operation_result.headers:
+            return operation_result
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_external_mysql_database_connector_and_wait_for_state(self, external_my_sql_database_connector_id, update_external_my_sql_database_connector_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database_management.DbManagementClient.update_external_mysql_database_connector` and waits for the :py:class:`~oci.database_management.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str external_my_sql_database_connector_id: (required)
+            The OCID of the External MySQL Database Connector.
+
+        :param oci.database_management.models.UpdateExternalMySqlDatabaseConnectorDetails update_external_my_sql_database_connector_details: (required)
+            The details required to update MySQL database connector resource.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database_management.DbManagementClient.update_external_mysql_database_connector`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_external_mysql_database_connector(external_my_sql_database_connector_id, update_external_my_sql_database_connector_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
